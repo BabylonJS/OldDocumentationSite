@@ -1,0 +1,115 @@
+.searchplayground-content {
+  @include outer-container(80%);
+  padding-bottom: 30px;
+
+  #intro {
+    text-align: center;
+    margin: 8px;
+  }
+
+  .searchplaygroundbar {
+    width: 100%;
+    text-align: center;
+    
+    form {
+      width : 250px;
+      height : 30px;
+      background-color: white;
+      border-radius: 20px;
+      margin: 30px auto;
+
+      input {
+        margin-left: 10px;
+        height : 34px;
+        width : 200px;
+        border-radius: 20px;
+        border: solid 1px #dcdcdc;
+        background-color: transparent;
+        padding: 8px;
+        &:focus {
+          border: solid 1px #dcdcdc;
+          outline: 0;
+        }
+      }
+
+      button {
+        font-size: 1.3em;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .searchHeader {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    text-align: center;
+    margin-bottom: 30px;
+
+    h2{
+      margin: 0;
+      padding: 20px 0;
+    }
+  }
+
+  .pageChangeWrapper {
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: space-around;
+    .pageChangeLink {
+      border: 1px solid $red;
+      padding: 3px 7px;
+      border-radius: 3px;
+
+      &:hover {
+        color: whitesmoke;
+        background-color: $red;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .filters {
+    margin-top : 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .basicFilter {
+      cursor:pointer;
+      padding: 3px 7px;
+      border-radius: 3px;
+
+      font-size: 0.9em;
+      margin : 5px;
+
+      &.enabled {
+        background-color: $red;
+        color: whitesmoke;
+      }
+
+      &.disabled {
+        background-color: darkgrey;
+        color: whitesmoke;
+      }
+
+    }
+  }
+
+  .result {
+
+    margin: 15px 0;
+
+    .resultTitle {
+      font-size: 1.1em;
+      margin: 0;
+    }
+    pre {
+      margin-left: 30px;
+    }
+    .extract {
+
+    }
+  }
+}

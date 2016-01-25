@@ -1,0 +1,39 @@
+include ../includes/header
+    include ../includes/banner
+    #wrapper
+        .statics-banner
+            h1=dataObj.category
+            br
+
+        .horizontal-separator
+        .statics-content
+            .tagList
+                for folder in dataObj.folders
+                    .tagWrapper
+                        .tag(data-name=folder.name)
+                            .tagImage
+                                img(src=folder.img)
+                            .tagDescriptionWrapper
+                                h3.tagTitle=folder.title
+                                span.tagDescription=folder.desc
+            .fileList
+                for folder in dataObj.folders
+                    if(folder.files)
+                        for file, index in folder.files
+                            .fileTitle(class=folder.name class='All')
+                                .fileNumber
+
+                                a(href='./' + dataObj.category + '/'+file.filename)
+                                    =file.title
+                                    .inline-tags
+                                        .inline-tag
+                                            =folder.title
+                .emptyList(style='display:none')
+                    h2
+                        | There is nothing in this category
+
+
+
+
+    include ../includes/footer
+    script(src="/js/statics.js")

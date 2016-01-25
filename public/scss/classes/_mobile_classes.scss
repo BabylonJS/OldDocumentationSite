@@ -1,0 +1,29 @@
+/* MEDIUM SCREEN*/
+@include media($medium-screen) {
+  #classes_classesListByAlpha {
+    @include column-count(3);
+  }
+}
+
+/* SMALL SCREENS VERSION */
+@include media($small-screen) {
+  #classes_classesListByAlpha {
+    @include column-count(2);
+  }
+
+  #classes_classesListByTag{
+    width:100%;
+  }
+
+  .whats-new-banner{
+    padding-top:$bh;
+  }
+}
+
+@include media($x-small-screen) {
+  #classes_classesListByAlpha {
+    @include outer-container(95%);
+
+    @include column-count(1);
+  }
+}

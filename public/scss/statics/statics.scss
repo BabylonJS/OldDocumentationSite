@@ -1,0 +1,159 @@
+.statics-banner {
+  background-image: url("/img/pattern_ban_1.png");
+  background-repeat: repeat;
+  text-align: center;
+  padding: 10px 0;
+
+  h1:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.statics-content {
+  @include outer-container(80%);
+
+  .tagList {
+    position: relative;
+    height: 100%;
+    //width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+
+    .tagWrapper {
+      display: inline-block;
+      width: 280px;
+      padding: 20px 2% 20px;
+
+      .tag {
+        display: flex;
+        flex-flow: column nowrap;
+        border: 2px solid $grey;
+        height: 100%;
+        padding: 5px;
+        cursor: pointer;
+
+        .tagImage {
+          display: block;
+          margin: 0 auto;
+          max-height: 65%;
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+        .tagDescriptionWrapper {
+          flex: auto;
+          background-color: $grey;
+          padding: 4px;
+          //height: 80px;
+          word-break: normal;
+          overflow: hidden;
+
+          .tagTitle {
+            font: $font-title;
+            margin: 0;
+          }
+
+          .tagDescription {
+            font: $font-regular;
+            font-size: 0.75em;
+
+          }
+        }
+
+      }
+
+      .active {
+        border-color: $red;
+      }
+    }
+  }
+
+  .fileList {
+    @include outer-container(70%);
+
+    //box-shadow: 12px 15px 22px -10px #EEE;
+
+    counter-reset: files;
+
+    .emptyList {
+      text-align: center;
+      //display: none;
+    }
+
+    // The tag text
+    .fileTitle {
+
+      padding: 3px;
+      width: 100%;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+
+      .fileNumber {
+        color: $red;
+        margin-right: 15px;
+        font-weight: bold;
+
+        &:before{
+          counter-increment: files;
+          content: counter(files);
+        }
+      }
+
+      a {
+        color: $black;
+        text-decoration: none;
+        //display: inline-block;
+        padding: 5px;
+        border-bottom: 2px dashed $red;
+        flex: auto;
+
+        .inline-tags {
+          margin: 0;
+          padding: 0;
+          right: 24px;
+          display: inline-block;
+          float: right;
+          clear: right;
+
+          .inline-tag {
+            display: inline-block;
+            position: relative;
+            background-color: $red;
+            margin-left: 8px;
+            padding: 0px 4px;
+            color: whitesmoke;
+            text-decoration: none;
+            border-radius: 4px;
+
+          }
+        }
+
+        &:hover {
+          color: whitesmoke;
+          text-decoration: underline;
+          background-color: $red;
+
+          .tag {
+            background-color: whitesmoke;
+            color: $red;
+          }
+        }
+      }
+
+      h3:hover {
+        background-color: $red;
+        color: $grey;
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+}
+

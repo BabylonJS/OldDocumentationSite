@@ -1,0 +1,69 @@
+.bigimage {
+  width:80%;
+  max-width: 300px;
+  margin:10px auto;
+  & img {
+    width:100%;
+  }
+}
+
+.presentation-header{
+  @include outer-container(100%);
+
+  .presentation-img{
+    width:100%;
+    height:1px;
+    background-color: $grey;
+  }
+
+  .bjs-moto{
+    text-align : center;
+    font-size  : 1em;
+    font-weight: normal;
+  }
+}
+
+.bjs-components{
+  @include outer-container(80%);
+
+  .bjs-component{
+    @include span-columns(4);
+    padding : 0px 50px;
+
+    h1{
+      text-align  : center;
+    }
+    p{
+      text-align : center;
+    }
+  }
+}
+
+.bjs-demo{
+  width:100%;
+  h1{
+    text-align  : center;
+  }
+
+  #demo-item{
+    cursor: pointer;
+    position:relative;
+    width:400px;
+    height:250px;
+    text-align: center;
+    max-width: 100%;
+    margin: 10px auto;
+
+    .demo-img{
+      max-width:100%;
+    }
+  }
+}
+
+.getting-started{
+  @include outer-container(80%);
+
+  h1{
+    text-align  : center;
+  }
+}

@@ -1,0 +1,44 @@
+nav.nav-main
+    // Hamburger menu : displayed only in small screens
+    i#mobilemenu.fa.fa-bars
+    // this button only shows on mobile version of a "class" page
+    if currentUrl === '/classes/class'
+        a(href='/classes/' + currentVersion)
+            i#goBackToClassList.fa.fa-arrow-left
+
+    .banner
+        .menu
+            .do-not-hover#home(class={homeClassMobile: currentUrl === '/classes/class'})
+                a(href='/')
+                    | Babylon.js | DOCUMENTATION
+            #whatsnew.item(class={active: currentUrl === '/whats-new'})
+                a(href='/whats-new')
+                    | What's new
+            #general.item(class={active: currentUrl === '/generals'})
+                a(href='/generals')
+                    | General
+            #tutorials.item(class={active: currentUrl === '/tutorials'})
+                a(href='/tutorials')
+                    | Tutorials
+            #exporters.item(class={active: currentUrl === '/exporters'})
+                a(href='/exporters')
+                    | Exporters
+            #extensions.item(class={active: currentUrl === '/extensions'})
+                a(href='/extensions')
+                    | Extensions
+            #classes.item(class={active: (currentUrl === '/classes') || (currentUrl === '/classes/class')})
+                a(href='/classes')
+                    | Classes
+            #playground.item(class={active: currentUrl === '/playground'})
+                a(href='/playground')
+                    | Playground
+        .more
+            .searchbar
+                form(method='get', action='/search')
+                    input(type='text', name='q', placeholder='Search...')
+                    button(type='submit')
+                        i.fa.fa-search
+            .forward
+                div
+                    a(href="http://www.babylonjs.com", target="_blank") babylonjs.com
+                        i.fa.fa-play

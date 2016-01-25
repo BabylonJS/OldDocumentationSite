@@ -1,0 +1,27 @@
+include ../includes/header
+    include ../includes/banner
+    #wrapper.error
+        h1.error_message.
+            404
+        .errorBaseline.
+            Page not found? Weird... It's working on my machine.
+
+        .redirectWrapper
+            .error_choice
+                a(href="javascript:history.back()")
+                    i.fa.fa-arrow-circle-left
+                    | You can go back to the previous page...
+            .error_choice
+                a(href="/")
+                    | ... or you can go back to our homepage.
+                    i.fa.fa-arrow-circle-right
+
+            .error_choice_mobile
+                a(href="javascript:history.back()")
+                    i.fa.fa-arrow-circle-left
+                    |<br/>You can go back to the previous page...
+            .error_choice_mobile
+                a(href="/")
+                    i.fa.fa-arrow-circle-right
+                    |<br/>... or you can go back to our homepage.
+    include ../includes/footer

@@ -1,0 +1,109 @@
+//------------
+// COLORS
+//------------
+$lightgrey : #f6f6f6;
+$grey : #dcdcdc;
+$darkgrey: #9b9b9b;
+$red :#fc4349;
+$black : #333;
+$darker_black : #2D2D2D;
+$yellow: #f8eec7;
+
+//--------------
+// FONTS
+//-------------
+/**
+Usable fonts :
+- inconsolata
+- roboto
+- opensans_regular / opensans_light / opensans_bold
+*/
+@import "fonts";
+
+$fa-font-path: "../fonts/font-awesome";
+
+// Default font for regular text
+$font-regular: "Roboto";
+// Default font for titles
+$font-title: "Open Sans";
+// Defautl font for source code
+$font-code:"Inconsolata";
+
+// Default style for titles
+h1 {
+  font-weight: normal;
+  font-family: $font-title;
+  color:$red;
+}
+h2 {
+  font-weight: normal;
+  font-family: $font-title;
+}
+h3 {
+  font-weight: 300;
+  font-family: $font-title;
+}
+
+// Default style for links
+a {
+  text-decoration : none;
+  color : $red;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+body {
+  padding : 0;
+  margin  : 0;
+  width   : 100%;
+  height  : 100%;
+  font-weight: 300;
+  font-family : $font-regular;
+  //overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+// Font displayed when a code tag is used
+code {
+  font-family: $font-code;
+}
+
+// Hide an element
+.hidden {
+  display : none !important;
+}
+
+// Horizontal separator
+.horizontal-separator{
+  width       : 80%;
+  height      : 0;
+  border-top  : 1px solid $red;
+  font-size   :0;
+  margin      : 0 auto 20px auto;
+}
+
+// text selection ! Fancy :)
+@include selection {
+  background-color: $red;
+  color:$grey;
+}
+
+// Remove text selection
+.no-text-selection {
+  @include user-select(none);
+}
+
+$footer-height : 40px;
+
+// Content wrapper
+#wrapper{
+  background-color: white;
+  margin-bottom: $footer-height;
+}
+
+p {
+  max-width:100%;
+  word-wrap : break-word;
+}

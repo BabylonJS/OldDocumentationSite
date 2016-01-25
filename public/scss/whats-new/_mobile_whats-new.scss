@@ -1,0 +1,16 @@
+/* MOBILE VERSION - WHAT'S NEW */
+@include media($small-screen) {
+  #whats-new{
+    @include outer-container(90%);
+    word-wrap : break-word;
+
+    ul {
+      padding : 0 10px 0 10px;
+      margin:0;
+    }
+  }
+
+  .whats-new-banner{
+    padding-top:$bh;
+  }
+}

@@ -1,0 +1,24 @@
+.whats-new-banner{
+  background-image  : url("/img/pattern_ban_1.png");
+  background-repeat : repeat;
+  text-align  : center;
+  padding     : 10px 0;
+}
+
+#whats-new{
+  @include outer-container(80%);
+  line-height: 25px;
+
+  ul{
+    list-style-type : none;
+    li{
+      ul{
+        li{
+          list-style-type : square;
+        }
+      }
+    }
+  }
+}
+
+@import "mobile_whats-new";

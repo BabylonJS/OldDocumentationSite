@@ -1,0 +1,111 @@
+// Classes version (2.0, 2.1, ...)
+#versionsList {
+  width: 100%;
+  margin: 10px 0px 25px 0px;
+  text-align: center;
+
+  // The selected version
+  .selectedVersion {
+    font-size: 1.4em;
+    color: $red;
+    margin: 5px 10px;
+    font-weight: 400;
+  }
+
+  a {
+    margin: 0 5px;
+  }
+}
+
+//All classes sort by tag
+#classes_classesListByTag {
+
+  @include outer-container(80%);
+
+  // The red banner with the tag name
+  .category {
+    width: 100%;
+    margin: 5px 0px;
+    padding: 0px;
+    @include user-select(none);
+
+    // The tag text
+    .categoryTitle {
+      padding: 3px;
+      height: auto;
+      cursor: pointer;
+      border: white solid 1px;
+
+      &:hover {
+        border: #C1C1C1 solid 1px;
+      }
+
+      h3 {
+        background-color: $red;
+        color: #ffffff;
+        padding: 5px;
+        margin: 0px;
+      }
+    }
+
+    // List of classes for a tag
+    .categoryList {
+      width: 100%;
+      padding: 8px 40px;
+      display: none;
+
+      li {
+        font-size: 1.4em;
+        list-style-type: square;
+        color: #DCDCDC;
+
+        a {
+          font-size: 0.75em;
+          color: #000000;
+        }
+        a:hover {
+          text-decoration: underline;
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+#alphaFilter, #tagFilter {
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+
+  input {
+    //width: 400px;
+    text-align: center;
+  }
+}
+
+// All classes sort alphabetically
+#classes_classesListByAlpha {
+  @include outer-container(80%);
+
+  //display:flex;
+  //flex-flow: row wrap;
+
+  @include column-count(4);
+
+  a {
+    color:$black;
+    text-decoration: none;
+    display: inline-block;
+    padding: 3px;
+    margin: 5px 4px;
+    width:100%;
+
+
+    &:hover {
+      text-decoration: underline;
+      color: white;
+      background-color: $red;
+
+    }
+  }
+}

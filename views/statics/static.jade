@@ -1,0 +1,29 @@
+include ../includes/header
+    include ../includes/banner
+    #wrapper
+        .statics-banner
+            h1=staticContent.category
+        .horizontal-separator
+        .static-content
+            h1!=staticContent.staticName
+            br
+            if(staticContent.toc)
+                .contentTable
+                    .tocHeader
+                        span.tocTitle
+                            i.tocIcon.fa.fa-book
+                            | Table of contents
+                        span.tocToggle
+                            i.fa.fa-arrow-up
+                    .tocContent!=staticContent.toc
+            #staticContent!=staticContent.staticContent
+    include ../includes/footer
+    // HIGHLIGHT JS
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/javascript.min.js')
+    script(src="/js/static.js")
+    script.
+        $('code').each(function(){
+            $(this).text($(this).text().replace(/&nbsp;/gi, ''));
+        });
+        hljs.initHighlightingOnLoad();

@@ -1,0 +1,64 @@
+.static-content{
+  @include outer-container(80%);
+
+
+
+  img {
+    max-width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  table {
+    width : 60%;
+    margin:auto;
+
+    tr {
+      height : 35px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #eeeeee;
+    }
+  }
+
+  .contentTable {
+
+    background-color: whitesmoke;
+    padding: 1px 0;
+
+    .tocHeader{
+      padding: 10px;
+
+      .tocTitle{
+        .tocIcon{
+          margin: 0px 10px;
+        }
+      }
+
+      .tocToggle{
+        cursor: pointer;
+
+        i{
+          padding: 10px;
+          margin-top: -10px;
+          float: right;
+        }
+      }
+    }
+
+    .tocContent{
+
+      ul {
+        list-style-type: decimal;
+         li {
+           padding: 5px 0;
+         }
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,250 @@
+$sidebar_width: 300px;
+
+// Sort by tag or A-Z
+.sorts {
+  width: 100%;
+  text-align: center;
+
+  // Tag or A-Z
+  .order {
+    display: inline-block;
+    background-color: #9B9B9B;
+    text-align: center;
+    margin: 4px 4px 15px 4px;
+    padding: 4px;
+    font-size: 0.8em;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  // Selected sort
+  .selectedOrder {
+    background-color: $red;
+  }
+}
+
+// Resizer
+.classBarResize {
+  position: absolute;
+  left: $sidebar_width;
+  top: 50px;
+  bottom: 40px;
+  cursor: col-resize;
+  width: 3px;
+  z-index: 3;
+  border-left: 1px solid $darkgrey;
+}
+
+.classBar {
+  position: absolute;
+  top: 50px;
+  bottom: 40px;
+  left: 0;
+  background-color: #f9f9f9;
+  width: $sidebar_width;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 2;
+  color: $black;
+
+  #classes_classesListByAlpha {
+    width: 100%;
+    margin-left: 30px;
+  }
+
+  // CLASSES
+  .classesTitle {
+    text-align: center;
+    width: 100%;
+    color: #eee;
+    background-color: $black;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  // Each class text in the sidebar
+  .class {
+    font-size: 1.0em;
+    padding: 5px 0 5px 10px;
+    color: $black;
+    display: block;
+
+
+    &:hover {
+      background-color: $darkgrey;
+      color: white;
+    }
+  }
+}
+
+// MD content of a class
+.classContent {
+  padding: 20px;
+  margin: 0 0 0 $sidebar_width;
+  position: absolute;
+  top: 50px;
+  bottom: 40px;
+  height: auto;
+  width: calc(100% - #{$sidebar_width});
+  overflow-x: auto;
+  overflow-y: auto;
+  z-index: 10;
+
+  #classTitle {
+    @include outer-container(100%);
+    border-bottom: solid 1px $red;
+
+    h1 {
+      @include span-columns(6);
+      padding-bottom: 2px;
+      margin-bottom: 15px;
+      font-size: 1.7em;
+      margin-top: 5px;
+    }
+
+    #selectList {
+      @include span-columns(6);
+      text-align: right;
+      margin-top: 5px;
+      height: 34px;
+      //      border: 1px solid #111;
+      //      border-radius: 3px;
+      overflow: hidden;
+      //      background:  96% / 20% no-repeat #ddd;
+
+      #methodsList {
+        width: 100%;
+        font-size: 1.2em;
+        height: 34px;
+
+        option {
+          padding: 8px;
+        }
+        .cat{
+           padding: 8px 5px;
+           background-color: $darker_black;
+           color: #f5f5f5;
+           font-weight: 300;
+         }
+      }
+    }
+
+  }
+
+  #classTags {
+    margin-top: 10px;
+
+    .classTag {
+      font-size: 0.8em;
+      color: white;
+      margin: 5px;
+      background-color: $red;
+      border-radius: 3px;
+      padding: 5px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  #classMd {
+    // Remove useless lines in the markdown
+    hr {
+      visibility: hidden;
+    }
+
+    // Titles (constructor, members, method
+    h2 {
+      margin-top: 25px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #DCDCDC;
+    }
+
+    // Members and methods names
+    h3 {
+      font-weight: 600;
+    }
+
+    h2, h3 {
+      a {
+        margin: 0px 5px;
+      }
+
+      a.permalink{
+        &.invisible {
+          visibility: hidden;
+        }
+
+      }
+    }
+
+    //"Parameters"
+    h4 {
+      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    // Parameters table
+    table {
+      max-width:100%;
+      overflow-x: scroll;
+      text-align: left;
+      margin-left: 10px;
+
+      thead {
+
+        tr {
+          background-color: #F1F1F1;
+
+          th {
+            padding: 6px 11px;
+            border: 2px solid #DCDCDC;
+          }
+        }
+      }
+
+      tbody {
+
+        tr {
+
+          td {
+            padding: 6px 11px;
+            border: 2px solid #DCDCDC;
+          }
+        }
+        tr:nth-child(2n) {
+          background-color: #F8F8F8;
+        }
+      }
+    }
+
+    // Members/method description
+    p {
+      margin-left: 15px;
+    }
+  }
+}
+
+#classes_classesListByTag.sidemenu {
+  width: 100%;
+}
+
+#classes_classesListByAlpha.sideClassesListByAlpha {
+  @include column-count(1);
+
+  a {
+    margin: 2px 65px 2px 0px;
+  }
+  .selected{
+     background-color: $red;
+     color: whitesmoke;
+  }
+
+}
+
+.highlighted {
+  background-color: $yellow;
+}

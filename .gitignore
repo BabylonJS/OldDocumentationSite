@@ -1,0 +1,5 @@
+.idea
+node_modules
+.svn
+.tmp
+log/exceptions.log

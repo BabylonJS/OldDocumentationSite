@@ -1,0 +1,58 @@
+include includes/header.jade
+    include includes/banner.jade
+    #wrapper
+        .whats-new-banner
+            h1 Playground Search
+        .horizontal-separator
+        .searchplayground-content
+
+            p#intro
+                | Here you can search something in the
+                a(href="http://www.babylonjs-playground.com/", target="_blank")
+                    |  babylon playground
+                |  . To do so, enter a text in the field below.
+
+            .searchplaygroundbar
+                form(method='get', action='/playground')
+                    input(type='text', name='q', placeholder='Search in playgrounds...')
+                    button(type='submit')
+                        i.fa.fa-search
+
+            if(searchTerm != 0)
+                .searchHeader
+                    h2
+                        | #{resultsCount} Results for "<a href="/search?q=#{searchTerm}">#{searchTerm}</a>"
+
+            .pageChangeWrapper
+                if(page - 1 > 0)
+                    a(class="pageChangeLink previousResults", href="/search?q=#{searchTerm}&page=#{ page - 1 <= 0 ? 1 : page - 1}")
+                        | Previous Page
+                if(page * resultMax < resultsCount)
+                    a(class="pageChangeLink nextResults", href="/search?q=#{searchTerm}&page=#{ page*1 + 1 }")
+                        | Next Page
+
+            if(results)
+                each result in results
+                    .result
+                        .resultTitle
+                            a(href="http://www.babylonjs-playground.com/#" + result.Id + "#" + result.Version, target="_blank")
+                                | #{result.Id} : version #{result.Version}
+                            //pre
+                            //    code.JavaScript
+                            //        | #{result.content[0]}
+                            //        | #{result.content[1]}
+                            //        | #{result.content[2]}
+                            //        | #{result.content[3]}
+                            //        | #{result.content[4]}
+
+            .pageChangeWrapper
+                if(page - 1 > 0)
+                    a(class="pageChangeLink previousResults", href="/search?q=#{searchTerm}&page=#{ page - 1 <= 0 ? 1 : page - 1}")
+                        | Previous Page
+
+                if(page * resultMax < resultsCount)
+                    a(class="pageChangeLink nextResults", href="/search?q=#{searchTerm}&page=#{ page*1 + 1 }")
+                        | Next Page
+
+    include includes/footer.jade
+    script(src='/js/search_playground.js')

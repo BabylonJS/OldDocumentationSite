@@ -1,0 +1,60 @@
+#wrapper.error {
+
+
+
+  background-color: white;
+  text-align: center;
+  height: 100%;
+
+  // 404
+  .error_message {
+    color: $red;
+    font-size: 18.1em;
+    margin: 0;
+    font-family: $font-title;
+  }
+
+  // Class not found message
+  .errorBaseline {
+    margin-bottom: 50px;
+    font-size: 1.7em;
+    font-family: $font-title;
+  }
+
+  .redirectWrapper {
+    @include outer-container(80%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-bottom: 60px;
+
+    .error_choice{
+      flex:auto;
+    }
+  }
+
+  .error_link {
+    text-decoration: underline;
+  }
+
+  //.leftie, .rightie {
+
+  cursor: pointer;
+  //    margin:0 auto;
+
+  a {
+    padding: 15px;
+    color: black;
+    &:hover {
+      background-color: $red;
+      color: white;
+    }
+    i {
+      margin: 0 15px 0 15px;
+    }
+  }
+
+  .error_choice_mobile {
+    display: none;
+  }
+}

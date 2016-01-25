@@ -1,0 +1,39 @@
+/* MEDIUM SCREEN*/
+@include media($medium-screen) {
+
+}
+
+/* SMALL SCREENS VERSION */
+@include media($small-screen) {
+  #wrapper.error {
+    .error_message {
+      padding-top: $bh;
+      font-size: 5.1em;
+      margin: 0;
+    }
+
+    //.leftie, .rightie {
+    //  display:none;
+
+    .error_choice_mobile {
+      display: inherit;
+      text-align: center;
+      padding: 0;
+
+      flex:auto;
+
+      i {
+        font-size: 3.1em;
+      }
+    }
+    .error_choice{
+      display: none;
+    }
+
+    a:hover {
+      background-color: white;
+      color: $red;
+    }
+    //}
+  }
+}

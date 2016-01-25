@@ -1,0 +1,15 @@
+/* MEDIUM SCREEN*/
+@include media($medium-screen) {
+  .statics-content{
+    .fileList {
+      @include outer-container(100%);
+    }
+  }
+}
+
+/* SMALL SCREENS VERSION */
+@include media($small-screen) {
+  .statics-banner{
+    padding-top:$bh;
+  }
+}

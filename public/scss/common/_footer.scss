@@ -1,0 +1,45 @@
+.footer {
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $footer-height;
+  z-index:2;
+
+  background-color: $grey;
+  font-size: 0.8em;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-content: center;
+
+  .footer-item {
+    @include span-columns(6 of 12);
+    height: 40px !important;
+    //display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: auto;
+
+    a {
+      color: $black;
+      padding: 12px;
+      display: inline-block;
+      height: 40px !important;
+
+      &:visited {
+        color: $black;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .footer-item:hover {
+    @include transition(all .2s ease-in);
+    background-color: $red;
+  }
+}

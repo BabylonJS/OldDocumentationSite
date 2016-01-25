@@ -1,0 +1,64 @@
+include includes/header.jade
+    include includes/banner.jade
+    #wrapper
+        .whats-new-banner
+            h1 Search
+        .horizontal-separator
+        .search-content
+            if(resultsCount <= 0 || !results)
+                .searchHeader
+                    h2
+                        | Sorry, we found nothing for "#{searchTerm}"
+                if(message)
+                    .errorMessage= message
+            else
+                .searchHeader
+                    h2
+                        | Results for "<a href="/search?q=#{searchTerm}">#{searchTerm}</a>"
+
+            .pageChangeWrapper
+                if(page - 1 > 0)
+                    a(class="pageChangeLink previousResults", href="/search?q=#{searchTerm}&page=#{ page - 1 <= 0 ? 1 : page - 1}")
+                        | Previous Page
+                if(page * resultMax < filteredCount)
+                    a(class="pageChangeLink nextResults", href="/search?q=#{searchTerm}&page=#{ page*1 + 1 }")
+                        | Next Page
+
+            .filters
+                if(availableFilters && availableFilters.length != 0)
+                    if(availableFilters.every(function(f, i){ return f.enabled === false}))
+                        #all.basicFilter.enabled
+                            span all
+                            span  (#{resultsCount})
+                    else
+                        #all.basicFilter.disabled
+                            span all
+                            span  (#{resultsCount})
+                    each filter in availableFilters
+                        if(filter.enabled)
+                            .basicFilter.enabled
+                                span!= (filter.category === '- ' ) ? 'whats-new' : filter.category
+                                span!= ' (' + filter.occurrences + ')'
+                        else
+                            .basicFilter.disabled
+                                span!= (filter.category === '- ' ) ? 'whats-new' : filter.category
+                                span!= ' (' + filter.occurrences + ')'
+
+            if(results)
+                each result in results
+                    .result
+                        .resultTitle
+                            a(href=result.src)
+                                | #{result.version} : #{result.name}
+
+            .pageChangeWrapper
+                if(page - 1 > 0)
+                    a(class="pageChangeLink previousResults", href="/search?q=#{searchTerm}&page=#{ page - 1 <= 0 ? 1 : page - 1}")
+                        | Previous Page
+
+                if(page * resultMax < filteredCount)
+                    a(class="pageChangeLink nextResults", href="/search?q=#{searchTerm}&page=#{ page*1 + 1 }")
+                        | Next Page
+
+    include includes/footer.jade
+    script(src='/js/search.js')

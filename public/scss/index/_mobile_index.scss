@@ -1,0 +1,106 @@
+/* MEDIUM SCREEN*/
+@include media($medium-screen) {
+
+  // In medium screen, the link to babylon.js disapears
+  // The menu bar and the search bar are resized.
+  .nav-main {
+    .banner{
+      .menu {
+        width: 80%;
+      }
+      // searchbar & link to bjs.com
+      .more{
+        width:20%;
+        // link to bjs.com
+        .forward{
+          display : none;
+
+        }
+
+        .searchbar{
+          input{
+            width: 77%;
+          }
+        }
+      }
+    }
+  }
+
+  .bigimage {
+    width:95%;
+    max-width: 400px;
+    margin:10px auto;
+  }
+}
+
+/* SMALL SCREENS VERSION */
+@include media($small-screen) {
+
+  // On small screens, the hamburger menu is displayed,
+  // and the menu bar is removed.
+  // The forward and search bar are also removed.
+  .nav-main {
+    position:fixed;
+    z-index: 5;
+
+    // Display hamburger menu
+    #mobilemenu {
+      display : block !important;
+    }
+
+    #goBackToClassList{
+      display: block !important;
+    }
+
+    // Remove all menu
+    .banner{
+      .menu{
+        width : 100%;
+
+        #home {
+          padding-left : 50px;
+          width:100%;
+          max-width: 100%;
+          text-align:center;
+
+          &.homeClassMobile{
+            padding-left : 70px;
+          }
+        }
+        .item {
+          display : none;
+        }
+      }
+      // searchbar & link to bjs.com
+      .more {
+        display : none;
+      }
+    }
+  }
+
+  .presentation-header{
+    padding-top:$bh;
+  }
+
+  // Remove footer on mobile
+  #wrapper {
+    margin-bottom: 0;
+  }
+  .footer {
+    display : none;
+  }
+
+  // Text are set in columns
+  .bjs-components {
+    @include outer-container(95%);
+    padding: 0;
+    .bjs-component {
+      @include span-columns(6);
+      padding: 0;
+    }
+  }
+  .getting-started {
+    @include outer-container(95%);
+    padding: 0;
+  }
+}

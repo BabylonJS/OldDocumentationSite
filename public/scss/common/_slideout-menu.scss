@@ -1,0 +1,93 @@
+// ----------------------
+// LEFT MENU FOR MOBILE
+// ----------------------
+.slideout-menu{
+  display:none;
+  margin-top: 50px;
+  z-index:0;
+  background-color: $black;
+  font-family: $font-regular;
+
+  // Mobile search bar
+  .searchbar-mobile{
+    display : block;
+
+    margin  : 10px;
+    height  : 30px;
+    width   : 230px;
+
+    background-color  : white;
+    border-radius     : 20px;
+
+    @include display(flex);
+    @include align-items(center);
+
+    input {
+      height  : 30px;
+      width   : 177px;
+      border  : none;
+
+      margin-left       : 10px;
+      background-color  : transparent;
+
+      &:focus {
+        border  : none;
+        outline : 0;
+      }
+    }
+
+    // Search icon
+    button {
+      font-size: 1.2em;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    // Search icon
+    i {
+      font-size: 1.2em;
+      background-color: transparent;
+      cursor: pointer;
+      position: relative;
+      right: 10px;
+    }
+  }
+
+  a{
+    display : block;
+    margin:0;
+    padding:10px 0 10px 10px;
+    border-bottom: 1px solid $darker_black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color : $lightgrey;
+    &:first-of-type {
+      border-top: 1px solid $darker_black;
+    }
+
+    &.active{
+      background-color : $red;
+      color : $lightgrey;
+      i {
+        color : $lightgrey;
+      }
+    }
+    // icons in front of each link
+    i {
+      padding-right : 10px;
+      color : $red;
+    }
+  }
+
+  // useful links
+  .links {
+    margin-top: 50px;
+    a {
+      text-transform: none;
+    }
+    i {
+      color:$lightgrey;
+    }
+  }
+}

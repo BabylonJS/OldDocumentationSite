@@ -1,0 +1,466 @@
+include includes/header.jade
+include includes/banner.jade
+#wrapper
+    //----------------------
+    //-LOGO AND BASELINE
+    //----------------------
+    .presentation-header
+        .presentation-img
+        .bigimage
+            img(src='img/logos/bjs-logo.png')
+        h1.bjs-moto An open source 3D engine based on webGL and Javascript
+    //----------------------
+    //-THREE COLUMNS
+    //----------------------
+    .bjs-components
+        .bjs-component
+            h1 Easy Setup
+            p
+                | Nothing needs to be installed on your computer to develop programs with
+                | BabylonJS. Nothing needs to be installed by the client to run your program.
+                | You can see this excess of simplicity in our <a href="#getting-started">Getting
+                | Started tutorial</a> just below!
+        .bjs-component
+            h1 WebGL
+            p
+                | Web Graphics Library, or WebGL, is a JavaScript API designed to render
+                | interactive 3D computer graphics and 2D graphics within any compatible
+                | web browser, without the use of any plug-ins.
+        .bjs-component
+            h1 Javascript
+            p
+                | Also know as ECMAScript, JavaScript is a dynamic, prototype-based scripting
+                | language, with first-class functions. Widely used on client-side (and sometimes
+                | even server-side, like on this website!), Javascript is the language that
+                | BabylonJS is based on.
+
+    //----------------------
+    //-DEMO
+    //----------------------
+    .bjs-demo
+        h1 See a Babylon.js demo
+        div#demo-item
+            a(href="http://flightarcade.com/", target="_blank")
+                img(src='img/flight_arcade.jpg').demo-img
+
+    .horizontal-separator
+
+    //----------------------
+    //-GETTING STARTED
+    //----------------------
+    .getting-started#getting-started
+        h1 Getting Started
+        p.selection-toggles
+            button#js-start.selection-toggle Javascript
+            button#ts-start.selection-toggle Typescript
+        p.
+            First, <a href="https://github.com/BabylonJS/Babylon.js">download the last version of BabylonJS</a>.
+            Also, check if your browser is WebGL compatible (e.g. Internet Explorer 11+/Firefox 4+/Google Chrome 9+/
+            Opera 15+...). Then create a project folder in which you'll place the last version of BabylonJS and an <code>
+            index.html</code> file, like this:
+        pre
+            code.github.js.
+                yourAwesomeProject
+                    |- index.html
+                    |- babylon.2.1.js
+            code.github.ts.
+                yourAwesomeProject
+                    |- index.html
+                    |- babylon.2.1.js
+                    |- babylon.2.1.d.ts
+        p.
+            We will only code in the <code>index.html</code> file to keep it as simple and concise as possible. The HTML
+            document begins as follow:
+        pre
+            code.html.
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
+                    &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
+                    &lt;!-- link to the last version of babylon --&gt;
+                    &lt;script src="babylon.2.1.debug.js"&gt;&lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;canvas id="renderCanvas"&gt;&lt;/canvas&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+        p.
+            As you can see, we inserted in the <code>&lt;body&gt;</code> a <code>&lt;canvas&gt;</code> element. This
+            <code>&lt;canvas&gt;</code> element will be the place where we'll display the result of our 3D rendering.
+            Insert some style in the <code>&lt;head&gt;</code>:
+        pre
+            code.html.
+                &lt;style&gt;
+                    html, body {
+                        overflow: hidden;
+                        width   : 100%;
+                        height  : 100%;
+                        margin  : 0;
+                        padding : 0;
+                    }
+
+                    #renderCanvas {
+                        width   : 100%;
+                        height  : 100%;
+                        touch-action: none;
+                    }
+                &lt;/style&gt;
+        p.js.
+            We will now write the necessary javascript code to run our demonstration. To begin with, insert at the end
+            of your &lt;body&gt;:
+        p.ts.
+            We will now write the necessary typescript code to run our demonstration. To begin with, create a new file game.ts :
+        pre
+            code.html.js.
+                &lt;script&gt;
+                    window.addEventListener('DOMContentLoaded', function() {
+                        // your code here
+                    });
+                &lt;/script&gt;
+            code.javascript.ts.
+                window.addEventListener('DOMContentLoaded', () =&gt; {
+                    // your code here
+                });
+        p.ts.
+            Don't forget to add the new generated js file in your index.html :
+        pre.ts
+            code.html.
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;script src="game.js"&gt;&lt;/script&gt;
+                &lt;/head&gt;
+                &lt;/html&gt;
+        p.
+            As you can see, we wrap the javascript code inside of a <code>DOMContentLoaded</code> event handler, to be sure
+            that the whole DOM is loaded before doing anything else. The code we'll write after this point is to be placed
+            inside of this wrapper.
+        p.
+            The code we'll show you implements the very basics of every BabylonJS program, meaning the creation of a
+            scene, and the insertion and display of meshes (here, two basic shapes: a sphere and a ground plane). We'll
+            go through it step by step.
+        p.
+            The first step is to get the reference of the canvas element from our HTML document:
+        pre
+            code.javascript.js.
+                var canvas = document.getElementById('renderCanvas');
+            code.javascript.ts.
+                var canvas = &lt;HTMLCanvasElement&gt;document.getElementById('renderCanvas');
+        p.
+            Then, load the Babylon 3D engine:
+        pre
+            code.javascript.js.
+                var engine = new BABYLON.Engine(canvas, true);
+            code.javascript.ts.
+                /// &lt;reference path="babylon.2.2.d.ts" /&gt;
+                var engine = new BABYLON.Engine(canvas, true);
+        P.
+            After that, we create our scene. In order to keep your program compatible with the Babylon.js Playground,
+            we recommend that you insert a "createScene" function at this point. Beside generating a Babylon Scene
+            Object, <code>createScene()</code> is where you will add your basic scene requirements: a camera, a light,
+            and two basic meshes (a sphere and a ground plane).
+        pre
+            code.javascript.
+                var createScene = function() {
+                    // create a basic BJS Scene object
+                    var scene = new BABYLON.Scene(engine);
+
+                    // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
+                    var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 5,-10), scene);
+
+                    // target the camera to scene origin
+                    camera.setTarget(BABYLON.Vector3.Zero());
+
+                    // attach the camera to the canvas
+                    camera.attachControl(canvas, false);
+
+                    // create a basic light, aiming 0,1,0 - meaning, to the sky
+                    var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
+
+                    // create a built-in "sphere" shape; its constructor takes 5 params: name, width, depth, subdivisions, scene
+                    var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
+
+                    // move the sphere upward 1/2 of its height
+                    sphere.position.y = 1;
+
+                    // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
+                    var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
+
+                    // return the created scene
+                    return scene;
+                }
+        p.
+            Now that our <code>createScene()</code> function is ready, we need to call it:
+        pre
+            code.javascript.
+                var scene = createScene();
+        p.
+            The next three javascript lines are very important, as they register a render loop to repeatedly render the
+            scene on the canvas:
+        pre
+            code.javascript.js.
+                engine.runRenderLoop(function() {
+                    scene.render();
+                });
+            code.javascript.ts.
+                engine.runRenderLoop(() =&gt; {
+                    scene.render();
+                });
+        p.
+            Lastly, you should implement a little canvas/window resize event handler, like this:
+        pre
+            code.javascript.js.
+                window.addEventListener('resize', function() {
+                    engine.resize();
+                });
+            code.javascript.ts.
+                window.addEventListener('resize', () =&gt; {
+                    engine.resize();
+                });
+        p.
+            And that's it! Save your files and open <code>index.html</code> with your favorite web browser. You should see the
+            following:
+        div.bigimage
+            a(href="http://www.babylonjs-playground.com/#12S23Y", target="_blank")
+                img(src='img/getting_started_demo.jpg').demo-img
+        p.
+            You can click on the image above to see a live demo on the BabylonJS playground.
+        p.
+            If you have any trouble with this demonstration, feel free to copy-paste the following code in your <code>
+            index.html</code> file:
+        pre
+            code.html.js.
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
+                    &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
+                    &lt;!--- link to the last version of babylon ---&gt;
+                    &lt;script src="babylon.2.1.debug.js"&gt;&lt;/script&gt;
+                    &lt;style&gt;
+                        html, body {
+                            overflow: hidden;
+                            width   : 100%;
+                            height  : 100%;
+                            margin  : 0;
+                            padding : 0;
+                        }
+
+                        #renderCanvas {
+                            width   : 100%;
+                            height  : 100%;
+                            touch-action: none;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;canvas id="renderCanvas"&gt;&lt;/canvas&gt;
+                    &lt;script&gt;
+                        window.addEventListener('DOMContentLoaded', function(){
+                            // get the canvas DOM element
+                            var canvas = document.getElementById('renderCanvas');
+
+                            // load the 3D engine
+                            var engine = new BABYLON.Engine(canvas, true);
+
+                            // createScene function that creates and return the scene
+                            var createScene = function(){
+                                // create a basic BJS Scene object
+                                var scene = new BABYLON.Scene(engine);
+
+                                // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
+                                var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 5,-10), scene);
+
+                                // target the camera to scene origin
+                                camera.setTarget(BABYLON.Vector3.Zero());
+
+                                // attach the camera to the canvas
+                                camera.attachControl(canvas, false);
+
+                                // create a basic light, aiming 0,1,0 - meaning, to the sky
+                                var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
+
+                                // create a built-in "sphere" shape; its constructor takes 5 params: name, width, depth, subdivisions, scene
+                                var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
+
+                                // move the sphere upward 1/2 of its height
+                                sphere.position.y = 1;
+
+                                // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
+                                var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
+
+                                // return the created scene
+                                return scene;
+                            }
+
+                            // call the createScene function
+                            var scene = createScene();
+
+                            // run the render loop
+                            engine.runRenderLoop(function(){
+                                scene.render();
+                            });
+
+                            // the canvas/window resize event handler
+                            window.addEventListener('resize', function(){
+                                engine.resize();
+                            });
+                        });
+                    &lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+            code.html.ts.
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
+                    &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
+                    &lt;!--- link to the last version of babylon ---&gt;
+                    &lt;script src="babylon.2.1.debug.js"&gt;&lt;/script&gt;
+                    &lt;script src="game.js"&gt;&lt;/script&gt;
+                    &lt;style&gt;
+                        html, body {
+                            overflow: hidden;
+                            width   : 100%;
+                            height  : 100%;
+                            margin  : 0;
+                            padding : 0;
+                        }
+
+                        #renderCanvas {
+                            width   : 100%;
+                            height  : 100%;
+                            touch-action: none;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;canvas id="renderCanvas"&gt;&lt;/canvas&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+        p.ts.
+            Then, feel free to copy-paste the following code in your <code>game.ts</code> file:
+        pre.ts
+            code.javascript.
+                window.addEventListener('DOMContentLoaded', () =&gt; {
+                    // get the canvas DOM element
+                    var canvas = &lt;HTMLCanvasElement&gt;document.getElementById('renderCanvas');
+
+                    // load the 3D engine
+                    var engine = new BABYLON.Engine(canvas, true);
+
+                    // createScene function that creates and return the scene
+                    var createScene = function() {
+                        // create a basic BJS Scene object
+                        var scene = new BABYLON.Scene(engine);
+
+                        // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
+                        var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 5,-10), scene);
+
+                        // target the camera to scene origin
+                        camera.setTarget(BABYLON.Vector3.Zero());
+
+                        // attach the camera to the canvas
+                        camera.attachControl(canvas, false);
+
+                        // create a basic light, aiming 0,1,0 - meaning, to the sky
+                        var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
+
+                        // create a built-in "sphere" shape; its constructor takes 5 params: name, width, depth, subdivisions, scene
+                        var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
+
+                        // move the sphere upward 1/2 of its height
+                        sphere.position.y = 1;
+
+                        // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
+                        var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
+
+                        // return the created scene
+                        return scene;
+                    }
+
+                    // call the createScene function
+                    var scene = createScene();
+
+                    // run the render loop
+                    engine.runRenderLoop(() =&gt; {
+                        scene.render();
+                    });
+
+                    // the canvas/window resize event handler
+                    window.addEventListener('resize', () =&gt; {
+                        engine.resize();
+                    });
+                });
+    // HIGHLIGHT JS
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/javascript.min.js')
+    script.
+        hljs.initHighlightingOnLoad();
+    script.
+        var selectedLanguage = 'js';
+        
+        document.getElementById('js-start').addEventListener('click', function() {
+            selectedLanguage = 'js';
+            
+            var hiddenElements = document.getElementsByClassName('ts');
+            var visibleElements = document.getElementsByClassName('js');
+            
+            for (var i = 0; i < hiddenElements.length; i++) {
+                hiddenElements[i].style.display = 'none';
+            }
+            for (var i = 0; i < visibleElements.length; i++) {
+                visibleElements[i].style.display = '';
+            }
+            
+            document.getElementById('js-start').className += ' toggle-selected';
+            document.getElementById('ts-start').className = document.getElementById('ts-start').className.replace(/\btoggle-selected\b/g,'');
+        });
+        
+        document.getElementById('ts-start').addEventListener('click', function() {
+            selectedLanguage = 'ts';
+            
+            var hiddenElements = document.getElementsByClassName('js');
+            var visibleElements = document.getElementsByClassName('ts');
+            
+            for (var i = 0; i < hiddenElements.length; i++) {
+                hiddenElements[i].style.display = 'none';
+            }
+            for (var i = 0; i < visibleElements.length; i++) {
+                visibleElements[i].style.display = '';
+            }
+            
+            document.getElementById('js-start').className = document.getElementById('js-start').className.replace(/\btoggle-selected\b/g,'');
+            document.getElementById('ts-start').className += ' toggle-selected';
+        });
+        
+        var hiddenElements = document.getElementsByClassName('ts');
+        var visibleElements = document.getElementsByClassName('js');
+        
+        for (var i = 0; i < hiddenElements.length; i++) {
+            hiddenElements[i].style.display = 'none';
+        }
+        for (var i = 0; i < visibleElements.length; i++) {
+            visibleElements[i].style.display = '';
+        }
+        
+        document.getElementById('js-start').className += ' toggle-selected';
+        document.getElementById('ts-start').className = document.getElementById('ts-start').className.replace(/\btoggle-selected\b/g,'');
+    style.
+        .selection-toggles {
+            text-align: center;
+        }
+        .selection-toggle {
+            background-color: #f8eec7;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+            border: none;
+        }
+        .toggle-selected {
+            background-color: #fc4349;
+        }
+
+include includes/footer.jade
