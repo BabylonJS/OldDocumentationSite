@@ -346,6 +346,8 @@ Get the world matrix
 
 Rotate this mesh with the given axis and the given angle in the mesh's space
 
+Note: This function will switch the mesh rotation from euler to quaternion. The mesh's "rotation" property, which specifies the rotation in euler, will be not be updated and would, in fact, be set to zero if "rotationQuaternion" property was not set when this function was called.  The mesh's "rotationQuaternion" property will be set to the new rotation.
+
 ####Parameters
  | Name | Type | Description
 ---|---|---|---
