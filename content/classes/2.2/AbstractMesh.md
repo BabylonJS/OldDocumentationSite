@@ -344,7 +344,9 @@ Get the world matrix
 
 ###rotate(axis, amount, space) &rarr; void
 
-Rotate this mesh with the given axis and the given angle in the mesh's space
+Rotate this mesh with the given axis and the given angle in the mesh's space.
+
+The mesh's "rotationQuaternion" property will be set to the new rotation. The mesh's "rotation" property will be set to zero if "rotationQuaternion" property was not set before.
 
 ####Parameters
  | Name | Type | Description
