@@ -32,6 +32,8 @@ Please credit the author if you can!
 | [#7SQDY#1](http://www.babylonjs-playground.com/#7SQDY#1) | Using BABYLON.Path3D | jerome |
 | [#V1BSD](http://www.babylonjs-playground.com/#V1BSD) | Using SSAO Pipeline | Luaacro |
 | [#ILRIF#0](http://www.babylonjs-playground.com/#ILRIF#0) | Using mesh.lookAt | Stvsynrj |
+| [#EEOWP#7](http://www.babylonjs-playground.com/#EEOWP#7) | Fog of war prototype | Unknown |
+
 
 
 
