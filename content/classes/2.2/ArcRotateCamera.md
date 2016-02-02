@@ -19,7 +19,7 @@ class [ArcRotateCamera](/classes/2.2/ArcRotateCamera) extends [TargetCamera](/cl
 
 Create a new [ArcRotateCamera](/classes/2.2/ArcRotateCamera).
  [ArcRotateCamera](/classes/2.2/ArcRotateCamera) is a camera that rotates around a given pivot. It can be controlled with the mouse or touch events (and it also requires hand.js to work)
-A tutorial about [ArcRotateCamera](/classes/2.2/ArcRotateCamera) can be found here
+A tutorial about [ArcRotateCamera](/classes/2.2/ArcRotateCamera) can be found [here](http://doc.babylonjs.com/tutorials/05._Cameras)
 
 ####Parameters
  | Name | Type | Description

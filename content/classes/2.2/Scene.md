@@ -128,7 +128,11 @@ The passed argument are the event and the element concerned with this event
 
 ###onPointerUp : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/2.2/PickingInfo)) =&gt; void
 
+###onPointerPick : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/2.2/PickingInfo)) =&gt; void
 
+Function triggered when the pointer clicks on a Mesh and also releases on the same mesh
+
+If mesh is the same or not is determined by its name
 
 ###cameraToUseForPointers : [Camera](/classes/2.2/Camera)
 

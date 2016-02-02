@@ -45,6 +45,7 @@ Imports meshes using the given url and names
  | scene | [Scene](/classes/2.2/Scene) |  is the instance of [Scene](/classes/2.2/Scene) to append to
 optional | onsuccess | (meshes: [AbstractMesh](/classes/2.2/AbstractMesh)[], particleSystems: [ParticleSystem](/classes/2.2/ParticleSystem)[], skeletons: [Skeleton](/classes/2.2/Skeleton)[]) =&gt; void |  The callback function called when the given file is correctly loaded
 optional | progressCallBack | () =&gt; void |  The function returning the import progress
+optional | onerror | (scene: [Scene](/classes/2.2/Scene), e: any) =&gt; void | The function called on error
 ###static Load(rootUrl, sceneFilename, engine, onsuccess, progressCallBack, onerror) &rarr; void
 
 Load a scene
