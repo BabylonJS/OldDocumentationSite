@@ -122,6 +122,8 @@ A material is defined by the following JSON:
     "ambientTexture": Texture (see below),
     "opacityTexture": Texture (see below),
     "reflectionTexture": Texture (see below),
+    "refractionTexture": Texture (see below),
+    "indexOfRefraction": float,
     "emissiveTexture": Texture (see below),
     "specularTexture": Texture (see below),
     "bumpTexture": Texture (see below),
