@@ -65,9 +65,9 @@ module.exports = {
             },
             function (err) {
                 //Create those categories only if there is something to put inside
-                if (constructorDescription != '') constructorDescription = '##Constructor\n\n' + constructorDescription;
-                if (variablesDescription != '') variablesDescription = '##Members\n\n' + variablesDescription;
-                if (functionsDescription != '') functionsDescription = '##Methods\n\n' + functionsDescription;
+                if (constructorDescription != '') constructorDescription = '## Constructor\n\n' + constructorDescription;
+                if (variablesDescription != '') variablesDescription = '## Members\n\n' + variablesDescription;
+                if (functionsDescription != '') functionsDescription = '## Methods\n\n' + functionsDescription;
 
 
                 classContent =
