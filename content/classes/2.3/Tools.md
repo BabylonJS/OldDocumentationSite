@@ -1,0 +1,434 @@
+---
+ID_PAGE: 25335
+PG_TITLE: Tools
+PG_VERSION: 2.1
+TAGS:
+    - Tools
+---
+## Description
+
+class [Tools](/classes/2.3/Tools)
+
+
+
+## Members
+
+### static  BaseUrl : string
+
+
+
+### static  CorsBehavior : any
+
+
+
+### static  UseFallbackTexture : boolean
+
+
+
+### static  errorsCount : number
+
+
+
+### static  OnNewCacheEntry : (entry: string) =&gt; void
+
+
+
+### static  NoneLogLevel : number
+
+
+
+### static  MessageLogLevel : number
+
+
+
+### static  WarningLogLevel : number
+
+
+
+### static  ErrorLogLevel : number
+
+
+
+### static  AllLogLevel : number
+
+
+
+### static  Log : (message: string) =&gt; void
+
+
+
+### static  Warn : (message: string) =&gt; void
+
+
+
+### static  Error : (message: string) =&gt; void
+
+
+
+### static  LogCache : string
+
+
+
+### static  LogLevels : number
+
+
+
+### static  PerformanceNoneLogLevel : number
+
+
+
+### static  PerformanceUserMarkLogLevel : number
+
+
+
+### static  PerformanceConsoleLogLevel : number
+
+
+
+### static  PerformanceLogLevel : number
+
+
+
+### static  StartPerformanceCounter : (counterName: string, condition: boolean) =&gt; void
+
+
+
+### static  EndPerformanceCounter : (counterName: string, condition: boolean) =&gt; void
+
+
+
+### static  Now : number
+
+
+
+## Methods
+
+### static  Instantiate(className) &rarr; any
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | className | string | 
+
+### static  GetConstructorName(obj) &rarr; any
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | obj | any |   @param obj
+
+### static  ToHex(i) &rarr; string
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | i | number |  
+
+### static  SetImmediate(action) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | action | () =&gt; void |   
+
+### static  IsExponentOfTwo(value) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | number |   
+
+### static  GetExponentOfTwo(value, max) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | number |   
+ | max | number |   @param max
+### static  GetFilename(path) &rarr; string
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | path | string |   @param path
+
+### static  GetDOMTextContent(element) &rarr; string
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | element | HTMLElement |   @param element
+
+### static  ToDegrees(angle) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | angle | number |   The angle to convert
+
+### static  ToRadians(angle) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | angle | number |   The angle to convert
+
+### static  EncodeArrayBufferTobase64(buffer) &rarr; string
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | buffer | ArrayBuffer | 
+
+### static  ExtractMinAndMaxIndexed(positions, indices, indexStart, indexCount) &rarr; { minimum: [Vector3](/classes/2.3/Vector3),  maximum: [Vector3](/classes/2.3/Vector3) }
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | positions | number[] |   A 1-dimension array containing the position to extract. Each position should have 3 coordinates
+ | indices | number[] |   The indices
+ | indexStart | number |   The start index
+### static  ExtractMinAndMax(positions, start, count) &rarr; { minimum: [Vector3](/classes/2.3/Vector3),  maximum: [Vector3](/classes/2.3/Vector3) }
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | positions | number[] |   A 1-dimension array containing the position to extract. Each position should have 3 coordinates
+ | start | number |   The start index
+ | count | number |   The number of position to browse.
+### static  MakeArray(obj, allowsNullUndefined) &rarr; Array&lt;any&gt;
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | obj | any |   @param obj
+optional | allowsNullUndefined | boolean |   @param allowsNullUndefined
+### static  GetPointerPrefix() &rarr; string
+
+
+### static  QueueNewFrame(func) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | func | any |   @param func
+
+### static  RequestFullscreen(element) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | element | any |   @param element
+
+### static  ExitFullscreen() &rarr; void
+
+
+### static  CleanUrl(url) &rarr; string
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | url | string |   The url of this file
+
+### static  LoadImage(url, onload, onerror, database) &rarr; HTMLImageElement
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | url | any |   The url of this file
+ | onload | any |   Callback function to execute when the image is loaded
+ | onerror | any |   Callback function to execute when the image is on error
+### static  LoadFile(url, callback, progressCallBack, database, useArrayBuffer, onError) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | url | string |   The url of this file
+ | callback | (data: any) =&gt; void |   Callback function called after the reading
+optional | progressCallBack | () =&gt; void |   Callback function called during the reading
+optional | database | any |   An indexeDB database.
+optional | useArrayBuffer | boolean |   @param useArrayBuffer
+### static  ReadFileAsDataURL(fileToLoad, callback, progressCallback) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | fileToLoad | any |   The given file
+ | callback | any |   Callback function called after the reading
+ | progressCallback | any |   Callback function during after the reading
+### static  ReadFile(fileToLoad, callback, progressCallBack, useArrayBuffer) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | fileToLoad | any |   The given file
+ | callback | any |   Callback function called after the reading
+ | progressCallBack | any |   Callback function called during the reading
+### static  FileAsURL(content) &rarr; string
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | content | string | 
+
+### static  Clamp(value, min, max) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | number |   
+optional | min | number |   @param min
+optional | max | number |   @param max
+### static  Sign(value) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | number |   
+
+### static  Format(value, decimals) &rarr; string
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | number |   
+optional | decimals | number |   
+### static  CheckExtends(v, min, max) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | v | [Vector3](/classes/2.3/Vector3) |   @param v
+ | min | [Vector3](/classes/2.3/Vector3) |   @param min
+ | max | [Vector3](/classes/2.3/Vector3) |   @param max
+### static  WithinEpsilon(a, b, epsilon) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | a | number |   @param a
+ | b | number |   @param b
+optional | epsilon | number |   
+### static  DeepCopy(source, destination, doNotCopyList, mustCopyList) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | source | any |   @param source
+ | destination | any |   @param destination
+optional | doNotCopyList | string[] |   @param doNotCopyList
+### static  IsEmpty(obj) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | obj | any |   @param obj
+
+### static  RegisterTopRootEvents(events) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | events | { name: string,  handler: EventListener }[] |   @param events
+
+### static  UnregisterTopRootEvents(events) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | events | { name: string,  handler: EventListener }[] |   @param events
+
+### static  DumpFramebuffer(width, height, engine, successCallback) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | width | number |   
+ | height | number |   
+ | engine | [Engine](/classes/2.3/Engine) |   The engine
+### static  CreateScreenshot(engine, camera, size, successCallback) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | engine | [Engine](/classes/2.3/Engine) |   The engine
+ | camera | [Camera](/classes/2.3/Camera) |   The camera
+ | size | any |   The size of the screenshot
+### static  ValidateXHRData(xhr, dataType) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | xhr | XMLHttpRequest |   The given xhr data
+optional | dataType | number |   @param dataType
+### static  ClearLogCache() &rarr; void
+
+

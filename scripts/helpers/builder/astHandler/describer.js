@@ -156,7 +156,7 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
             }
         }
 
-        var parametersHeader = '####Parameters\n' +
+        var parametersHeader = '#### Parameters\n' +
             ' | Name | Type | Description\n' +
             '---|---|---|---\n';
 

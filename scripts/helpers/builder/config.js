@@ -14,13 +14,13 @@ var file = {
      * Note that the file must be name this way :
      * babylon.<your-new-version>.d.ts
      */
-    version        : '2.2',
+    version        : '2.3',
 
     /**
      * The previous version, from which you want to import comments
      * This must match a directory name in the classesLocation
      */
-    previousVersion: '2.1',
+    previousVersion: '2.2',
     init: function(){
         this.name = 'babylon.' + this.version + '.d.ts';
         this.sourceFile = this.classesLocation + this.version + '/' + this.name;

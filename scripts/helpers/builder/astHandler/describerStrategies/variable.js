@@ -9,7 +9,7 @@ module.exports = {
         if (variable.kind() == TypeScript.SyntaxKind.MemberVariableDeclaration) {
             //add static keyword if needed
             if (variable.modifiers.indexOf(TypeScript.PullElementFlags.Static) > -1) {
-                description += 'static ';
+                description += ' static ';
             }
 
             variable = variable.variableDeclarator;
@@ -21,7 +21,7 @@ module.exports = {
         var varType = TypeManager.getReturnString(variable);
         //var varType = variable.typeAnnotation.type;
 
-        description += varName + ' : ' + varType + '\n\n';
+        description += ' '+varName + ' : ' + varType + '\n\n';
 
         return description;
     }

@@ -2,7 +2,7 @@ var TypeScript = require('typescript-services');
 
 module.exports = {
     describe: function(clasS){
-        var description = '##Description\n\n',
+        var description = '## Description\n\n',
             name = clasS.identifier.text(),
             heritageClauses = clasS.heritageClauses.members,
             classExtends = '';
