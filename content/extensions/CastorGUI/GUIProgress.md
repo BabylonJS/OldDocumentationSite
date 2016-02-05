@@ -13,20 +13,20 @@ Name | Type | Description
 
 ##Options
 
-* **w**: width of progress bar (in pixel)
-* **h**: height of progress bar (in pixel)
-* **x**: position left of progress bar (in pixel)
-* **y**: position top of progress bar (in pixel)
-* **min**: min value progress bar =&gt; 0 by default (optional)
-* **max**: max value progress bar =&gt; 100 by default (optional)
+* **w**: Width of progress bar (in pixel)
+* **h**: Height of progress bar (in pixel)
+* **x**: Position left of progress bar (in pixel)
+* **y**: Position top of progress bar (in pixel)
+* **min**: Min value progress bar =&gt; 0 by default (optional)
+* **max**: Max value progress bar =&gt; 100 by default (optional)
 * **value**: Current value of the progress bar =&gt; 0 by default (optional)
-* **border**: border of element =&gt; 0 by default (optional)
-* **borderRadius**: radius border of element =&gt; 5 by default (optional)
-* **background**: background progress bar  =&gt; "rgba(0, 0, 0, 0.2)" by default (optional)
-* **backgroundValue**:  background value progress bar  =&gt; "#0f4fff" by default (optional)
-* **orient**: orientation of the progress bar =&gt; "horizontal" by default (optional)
-* **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **border**: Border of element =&gt; 0 by default (optional)
+* **borderRadius**: Radius border of element =&gt; 5 by default (optional)
+* **background**: Background progress bar  =&gt; "rgba(0, 0, 0, 0.2)" by default (optional)
+* **backgroundValue**: Background value progress bar  =&gt; "#0f4fff" by default (optional)
+* **orient**: Orientation of the progress bar =&gt; "horizontal" by default (optional)
+* **zIndex**: Depth of the element (int) =&gt; 1 by default
+* **tabindex**: Tab order of the field.
 
 ##Methods
 
