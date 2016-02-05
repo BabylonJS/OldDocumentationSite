@@ -459,6 +459,43 @@ The SPS pickability is directly related to the size of its bounding box (please 
 Pickable particle example (no SPS update in the render loop) : http://www.babylonjs-playground.com/#2FPT1A#41  
 Pickable particle example (particle rotation) : http://www.babylonjs-playground.com/#2FPT1A#14  
 
+###Digest a Mesh
+There is another way than adding shapes of meshes used as models to populate the SPS : you can directly "digest" a mesh.  
+To digest a mesh means that the SPS will decompose this mesh geometry and use all its facets to generate the particles. So, by default, a digested mesh generates as many particles as the mesh number of facets.  
+```javascript
+var model = BABYLON.MeshBuilder.CreateTorusKnot('s', {radius: 20, tube: 6, tubularSegments: 64, radialSegments: 128}, scene);
+SPS.digest(model);
+model.dispose();
+SPS.buildMesh();
+```
+Note that in this case, all the generated particles have their property "position" set with some values and no more to (0, 0, 0).  
+This method is obviously compatible with `addShape()` and you can even call it several times with the same model, or different models, in the same SPS.  
+```javascript
+var model = BABYLON.MeshBuilder.CreateTorusKnot('s', {radius: 20, tube: 6, tubularSegments: 64, radialSegments: 128}, scene);
+SPS.addShape(boxModel, 50);
+SPS.digest(model);
+SPS.addShape(sphereModel, 20);
+SPS.digest(model, {number: 10});
+model.dispose();
+sphereModel.dispose();
+boxModel.dispose();
+SPS.buildMesh();
+```
+This method accepts two optional parameters : `facetNb` and `number`  
+* `facetNb` is the number of the mesh facets required to build each particle. By default, the value is set to 1, this means each particle will just be a triangle (a mesh facet). Set to 2 and you'll probably get quads instead.    
+The number of generated particles depends then on the mesh initial number of facets and on the `faceNb` value.  
+This parameter is overriden if the parameter `number` is set.  
+* `number` is the wanted number of particles. `digest()` divides then the mesh into `number` particles of the same size in term of the number of facets used per particle.  
+If `number` is greater than the total number of mesh facets, then this total number is used for the value of `number`.  
+```javascript
+var model = BABYLON.MeshBuilder.CreateTorusKnot('s', {radius: 20, tube: 6, tubularSegments: 64, radialSegments: 128}, scene);
+SPS.digest(model, {facetNb: 10});   // 10 facets per particle whatever their final number
+SPS.digest(model, {number: 200});   // 200 particles whatever their final size
+model.dispose();
+SPS.buildMesh();
+```
+_add PG example here soon_
+
 ###SPS Visibility
 To render the meshes on the screen, BJS uses their bounding box (BBox) : if the BBox is in the frustum, then the mesh is selected to be rendered on the screen. This method is really performant as it avoids to make the GPU compute things that wouldn't be visible. The BBox of each mesh is recomputed when its World Martix is updated.    
 When you create a SPS, unless you use the `positionFunction` at creation time, all its particles are set by default at the position (0, 0, 0). So the size of the SPS mesh is initially the size of its biggest particle, so it is for its BBox.  
