@@ -131,7 +131,24 @@ A material is defined by the following JSON:
     "useLightmapAsShadowmap": boolean, 
     "checkReadyOnlyOnce": boolean
     "useReflectionFresnelFromSpecular": boolean (can be omitted),
-    "useEmissiveAsIllumination": boolean (can be omitted)
+    "useEmissiveAsIllumination": boolean (can be omitted),
+    "diffuseFresnelParameters": Fresnel parameters (see below),
+    "opacityFresnelParameters": Fresnel parameters (see below),
+    "reflectionFresnelParameters": Fresnel parameters (see below),
+    "refractionFresnelParameters": Fresnel parameters (see below),
+    "emissiveFresnelParameters": Fresnel parameters (see below)
+}
+```
+
+## Fresnel parameters
+Fresnel parameters are defined by the following JSON:
+```javascript
+{
+    "isEnabled": boolean,
+    "leftColor": color3,
+    "rightColor": color3,
+    "bias": float,
+    "power": float
 }
 ```
 
