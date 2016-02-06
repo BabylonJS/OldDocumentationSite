@@ -14,15 +14,17 @@ Name | Type | Description
 
 * **x**: position left of text (in pixel)
 * **y**: position top of text (in pixel)
+* **position**: set position "absolute" or "relative"
 * **size**: size the text (int) =&gt; 30 by default (optional)
 * **color**: color the text (string) =&gt; "white" by default (optional)
-* **police**: police font of text (string) =&gt; "Segoe UI" by default (optional) 
+* **police**: police font of text (string) =&gt; "Segoe UI" by default (optional)
 * **text**: value text label (string) =&gt; "CastorGUI" by default
 * **bold**: text bold or no =&gt; "none" by default else "bold"
 * **italic**: text italic or no =&gt; "none" by default else "italic"
-* **centerVertical**: text align center vertical (string) =&gt; "false" by default (optional) 
-* **centerHorizontal**: text align center horizontal (string) =&gt; "false" by default (optional) 
+* **centerVertical**: text align center vertical (string) =&gt; "false" by default (optional)
+* **centerHorizontal**: text align center horizontal (string) =&gt; "false" by default (optional)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
+* **inline**: text inline or no. false by default.
 
 ##Methods
 

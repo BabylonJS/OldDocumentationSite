@@ -6,7 +6,16 @@ Name | Type | Description
 ---|---|---
 **canvas** | object | The element canvas
 **css** | string | The css GUI for all element
+**options** | object | The option of theme GUI for all element
 ---
+
+##Options
+
+### themeRoot
+Root of file css of theme
+
+### themeGUI
+file css of theme
 
 ##Methods
 

@@ -21,9 +21,12 @@ Name | Type | Description
 * **borderRadiusPanel**: radius border of panel (string)  =&gt; "10px" by default
 * **borderPanel**: border of panel (string)  =&gt; "2px solid black" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **overflow**: overflow auto or hidden (auto by default)
 
 ##Methods
+
+###add(element) → void
+add element in the GUIPanel
 
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible (false by default)
