@@ -6,12 +6,13 @@ Babylon.js 1.14 introduced new parameters for the StandardMaterial: _FresnelPara
 
 ![](http://www.babylonjs.com/Screenshots/fresnel.jpg)
 
-There are 4 of them:
+There are 5 of them:
 
 * ```StandardMaterial.diffuseFresnelParameters```
 * ```StandardMaterial.opacityFresnelParameters```
 * ```StandardMaterial.reflectionFresnelParameters```
 * ```StandardMaterial.emissiveFresnelParameters```
+* ```StandardMaterial.refractionFresnelParameters```
 
 ## How fresnel is working
 
@@ -96,5 +97,6 @@ material.opacityFresnelParameters.rightColor = BABYLON.Color3.Black();
 ```
 
 A complete demo can be found here: http://www.babylonjs.com/?FRESNEL
+You can also see a demo of refraction fresnel here: http://www.babylonjs-playground.com/#22KZUW#6
 
 If you want to experiment FresnelParameters, just go here: http://www.babylonjs.com/playground/?19
