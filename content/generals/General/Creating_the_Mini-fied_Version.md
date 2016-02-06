@@ -59,6 +59,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Materials/textures/procedurals/babylon.standardProceduralTexture.js"></script>
     <script src="src/Materials/textures/procedurals/babylon.customProceduralTexture.js"></script>
     <script src="src/Materials/textures/babylon.mirrorTexture.js"></script>
+    <script src="src/Materials/textures/babylon.refractionTexture.js"></script>
     <script src="src/Materials/textures/babylon.dynamicTexture.js"></script>
     <script src="src/Materials/textures/babylon.videoTexture.js"></script>
     <script src="src/Materials/babylon.effect.js"></script>
