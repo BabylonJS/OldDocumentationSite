@@ -512,12 +512,12 @@ optional | updatable | boolean |  &nbsp;
  | Name | Type | Description
 ---|---|---|---
  | name | string |   
- | height | number |   The height of the GroundFromHeightMap
+ | height | number |   The height of cylinder
  | diameterTop | number |   Diameter at top of the cylinder
  | diameterBottom | number |   Diameter at bottom of the cylinder
- | tessellation | number |  &nbsp;
- | subdivisions | any |   The number of subdivisions in the GroundFromHeightMap
- | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
+ | tessellation | number |  Number of faces around the cylinder
+ | subdivisions | any |   The number of subdivisions from bottom to top of the cylinder
+ | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the cylinder
 optional | updatable | any |  &nbsp;
 ### static  CreateTorus(name, diameter, thickness, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
