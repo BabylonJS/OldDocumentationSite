@@ -145,6 +145,10 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Tools/babylon.loadingScreen.js"></script>
     <script src="src/Materials/babylon.pbrMaterial.js"></script>
     <script src="src/Probes/babylon.reflectionProbe.js"></script>
+    <script src="src/tools/hdr/babylon.tools.cubemapToSphericalPolynomial.js"></script>
+    <script src="src/tools/hdr/babylon.tools.panoramaToCubemap.js"></script>
+    <script src="src/tools/hdr/babylon.tools.hdr.js"></script>
+    <script src="src/materials/textures/babylon.hdrCubeTexture.js"></script>
 ```
 
 When working with all files, you can provide the following information to the engine:
