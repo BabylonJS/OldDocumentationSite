@@ -481,16 +481,18 @@ sphereModel.dispose();
 boxModel.dispose();
 SPS.buildMesh();
 ```
-This method accepts two optional parameters : `facetNb` and `number`  
+This method accepts three optional parameters : `facetNb`, `delta` and `number`  
 * `facetNb` is the number of the mesh facets required to build each particle. By default, the value is set to 1, this means each particle will just be a triangle (a mesh facet). Set to 2 and you'll probably get quads instead.    
 The number of generated particles depends then on the mesh initial number of facets and on the `faceNb` value.  
 This parameter is overriden if the parameter `number` is set.  
+* `delta` (default 0), used with `facetNb`, allows to generate each particle with a random size between _facetNb_ and _facetNb + delta_ facets.  
 * `number` is the wanted number of particles. `digest()` divides then the mesh into `number` particles of the same size in term of the number of facets used per particle.  
 If `number` is greater than the total number of mesh facets, then this total number is used for the value of `number`.  
 ```javascript
 var model = BABYLON.MeshBuilder.CreateTorusKnot('s', {radius: 20, tube: 6, tubularSegments: 64, radialSegments: 128}, scene);
 SPS.digest(model, {facetNb: 10});   // 10 facets per particle whatever their final number
 SPS.digest(model, {number: 200});   // 200 particles whatever their final size
+SPS.digest(model, {facetNb: 10, delta: 30});   // between 10 and 40 facets per particle, randomly, whatever their final number
 model.dispose();
 SPS.buildMesh();
 ```
@@ -501,14 +503,28 @@ To render the meshes on the screen, BJS uses their bounding box (BBox) : if the 
 When you create a SPS, unless you use the `positionFunction` at creation time, all its particles are set by default at the position (0, 0, 0). So the size of the SPS mesh is initially the size of its biggest particle, so it is for its BBox.  
 If you animate your particles without updating the SPS mesh World Matrix (ex : the whole SPS doesn't move, rotate or scale), its BBox may keep far more little than the current space occupied by the moving particles. So, if this little BBox gets out of the screen (cam rotation for instance), the whole SPS can then disappear at once !  
 
-In order to manage the SPS visibility, you have some ways : the methods `SPS.refreshVisibleSize()` or `SPS.setVisibilityBox(size)` and the properties `SPS.isAlwaysVisible` (default _false_) or `SPS.isVisibilityBoxLocked` (default _false_)
+In order to manage the SPS visibility, you have some ways : the methods `SPS.refreshVisibleSize()` or `SPS.setVisibilityBox(size)` and the properties `SPS.isAlwaysVisible` (default _false_),`SPS.computeBoundingBox` (default _false_) or `SPS.isVisibilityBoxLocked` (default _false_)
 
-* `SPS.refreshVisibleSize()` : updates the SPS mesh BBox size on demand. This is an intensive computation, so it's better not to use it in the render loop each frame. You could call it once the mesh has reached its maximum size for instance. This the method to use if you have a SPS located its in own space somewhere in your scene, like a particle explosion, a fountain, etc.   
+* `SPS.refreshVisibleSize()` : updates the SPS mesh BBox size on demand. This is an intensive computation, so it's better not to use it in the render loop each frame. You could call it once the mesh has reached its maximum size for instance. This the method to use if you have a SPS located its in own space somewhere in your scene, like a particle explosion, a fountain, etc.  Remember when using this method that it iterates over each mesh vertices. So if your mesh has 20K vertices what is usual with a SPS, it needs 20K iterations.  
+
 *  `SPS.isAlwaysVisible` : if _true_, forces the SPS mesh to be computed by the GPU even if its BBox is not visible. This property is to use when the player evolves inside the SPS (maze, asteroid field) or if the SPS is always bigger than the visible part on the screen. Note that setting it to _true_ doesn't recompute the BBox size, so if you need for some reason (pickability, collisions, etc) to update the BBox, you have to call also at least once `SPS.refreshVisibleSize()`.  
+
+* `SPS.computeBoundingBox` (default _false_) : if set to true, the next calls to `setParticles()` will compute the mesh bounding bow within the same loop than the particle computations. This means this is much more faster than calling `refreshVisibleSize()` and you can use it in the render loop.   
+The reason `refreshVisibleSize()` and `SPS.computeBoundingBox` exist together is that `refreshVisibleSize()`  can be called at any time and doesn't require to call `setParticles()` whereas `SPS.computeBoundingBox` is taken in account for the BBox computation only from a call of `setParticles()`.  
+Note that `SPS.computeBoundingBox` can be set to _true_ or _false_ at any time and will affect only the next calls of `setParticles()`.  
 
 * `SPS.setVisibilityBox(size)` : sets a fixed size to the SPS Mesh BBox whatever its own real size. This may be useful when you know in advance the limits that the visible particles won't overrange. Note that setting a value doesn't prevent any further BBox recomputation.  
 
 * `SPS.isVisibilityBoxLocked` : if _true_, the SPS mesh BBox won't be computed any longer until it is reset to _false_.  
+
+So what method to use ?   
+It depends on your needs.  
+If your SPS is ever everywhere around the camera environment like an asteroid field, you may use `SPS.isAlwaysVisible`.  
+If you need a variable visibility or the pickability, you'll need to set at least once the bounding box.  
+So if your SPS stays within some fixed bounds that you don't know the values, you may use `SPS.refreshVisibleSize()` at least once when the SPS has reached these limits and then lock the visibility box.  
+If the SPS keeps within some known limits, then it is better to use `SPS.setVisibilityBox(size)` with the right value and then to lock the visibility box.  
+At last, if you still need pickability or variable visibility, and don't know how your SPS will evolve, then you might set `SPS.computeBoundingBox` to true.  
+
 
 ###Garbage Collector Concerns  
 In Javascript, the Garbage Collector is usually your friend : it takes care about cleaning up all the not any longer needed variables you could have declared and thus it sets the memory free.  

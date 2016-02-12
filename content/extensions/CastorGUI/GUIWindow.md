@@ -12,27 +12,27 @@ Name | Type | Description
 
 ##Options
 
-* **w**: width of image (in pixel)
-* **h**: height of image (in pixel)
-* **x**: position left of image (in pixel)
-* **y**: position top of image (in pixel)
-* **backgroundColor**: color background of window (string) =&gt; "rgba(0, 0, 0, 0.5)" by default
-* **backgroundImage**: image background of window (string) =&gt; "null" by default
-* **colorContent**: color background of content window (string) =&gt; "rgba(0.5, 0.5, 0.5, 0.1)" by default
-* **imageContent**: image background of content window (string) =&gt; "null" by default
-* **borderWindow**: border of window (string) =&gt; "2px solid black" by default 
-* **borderContent**: border of window (string) =&gt; "0" by default
-* **borderTitle**: border of window (string) =&gt; "1px solid black" by default
-* **radiusWindow**: radius border of dialog (int)  =&gt; 8 by default
-* **colorTitle**: color background title window (string) =&gt; "rgba(0, 0, 0, 0.4)" by default
-* **imageTitle**: image background title window (string) =&gt; "null" by default
-* **heightTitle**: height the title element (int) =&gt; 30 by default
-* **titleTextAlign**: allignment of the title text (string) =&gt; "center" by default
-* **titleColor**: color of the title text (string) =&gt; "white" by default
+* **w**: Width of image (in pixel)
+* **h**: Height of image (in pixel)
+* **x**: Position left of image (in pixel)
+* **y**: Position top of image (in pixel)
+* **backgroundColor**: Color background of window (string) =&gt; "rgba(0, 0, 0, 0.5)" by default
+* **backgroundImage**: Image background of window (string) =&gt; "null" by default
+* **colorContent**: Color background of content window (string) =&gt; "rgba(0.5, 0.5, 0.5, 0.1)" by default
+* **imageContent**: Image background of content window (string) =&gt; "null" by default
+* **borderWindow**: border of window (string) =&gt; "2px solid black" by default
+* **borderTitle**: Border of window (string) =&gt; "1px solid black" by default
+* **radiusWindow**: Radius border of dialog (int)  =&gt; 8 by default
+* **colorTitle**: Color background title window (string) =&gt; "rgba(0, 0, 0, 0.4)" by default
+* **imageTitle**: Image background title window (string) =&gt; "null" by default
+* **heightTitle**: Height the title element (int) =&gt; 30 by default
+* **titleTextAlign**: Allignment of the title text (string) =&gt; "center" by default
+* **titleColor**: Color of the title text (string) =&gt; "white" by default
 * **textTitle**: Text of title (string)  =&gt; true by default
-* **draggable**: window draggable (bool)
-* **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **draggable**: Window draggable (bool)
+* **closeButton**: Button window display (bool)
+* **zIndex**: Depth of the element (int) =&gt; 1 by default
+* **overflow**: overflow auto or hidden (auto by default)
 
 ##Methods
 

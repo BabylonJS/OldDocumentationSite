@@ -24,7 +24,7 @@ Name | Type | Description
 * **borderButton**: border of button (string)  =&gt; "2px solid black" by default
 * **colorText**: color text of button (string)  =&gt; "black" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **tabindex**: Tab order of the field.
 
 ##Methods
 
