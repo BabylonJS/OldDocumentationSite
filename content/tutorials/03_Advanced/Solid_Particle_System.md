@@ -481,16 +481,18 @@ sphereModel.dispose();
 boxModel.dispose();
 SPS.buildMesh();
 ```
-This method accepts two optional parameters : `facetNb` and `number`  
+This method accepts three optional parameters : `facetNb`, `delta` and `number`  
 * `facetNb` is the number of the mesh facets required to build each particle. By default, the value is set to 1, this means each particle will just be a triangle (a mesh facet). Set to 2 and you'll probably get quads instead.    
 The number of generated particles depends then on the mesh initial number of facets and on the `faceNb` value.  
 This parameter is overriden if the parameter `number` is set.  
+* `delta` (default 0), used with `facetNb`, allows to generate each particle with a random size between _facetNb_ and _facetNb + delta_ facets.  
 * `number` is the wanted number of particles. `digest()` divides then the mesh into `number` particles of the same size in term of the number of facets used per particle.  
 If `number` is greater than the total number of mesh facets, then this total number is used for the value of `number`.  
 ```javascript
 var model = BABYLON.MeshBuilder.CreateTorusKnot('s', {radius: 20, tube: 6, tubularSegments: 64, radialSegments: 128}, scene);
 SPS.digest(model, {facetNb: 10});   // 10 facets per particle whatever their final number
 SPS.digest(model, {number: 200});   // 200 particles whatever their final size
+SPS.digest(model, {facetNb: 10, delta: 30});   // between 10 and 40 facets per particle, randomly, whatever their final number
 model.dispose();
 SPS.buildMesh();
 ```
