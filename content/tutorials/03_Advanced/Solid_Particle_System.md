@@ -496,7 +496,7 @@ SPS.digest(model, {facetNb: 10, delta: 30});   // between 10 and 40 facets per p
 model.dispose();
 SPS.buildMesh();
 ```
-Example : http://www.babylonjs-playground.com/#HDHQN  
+Example (click on the torus knot) : http://www.babylonjs-playground.com/#HDHQN  
 
 ###SPS Visibility
 To render the meshes on the screen, BJS uses their bounding box (BBox) : if the BBox is in the frustum, then the mesh is selected to be rendered on the screen. This method is really performant as it avoids to make the GPU compute things that wouldn't be visible. The BBox of each mesh is recomputed when its World Martix is updated.    
