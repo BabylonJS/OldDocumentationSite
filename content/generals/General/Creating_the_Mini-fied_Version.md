@@ -64,6 +64,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Materials/textures/babylon.videoTexture.js"></script>
     <script src="src/Materials/babylon.effect.js"></script>
     <script src="src/Materials/babylon.materialHelper.js"></script>
+    <script src="src/Materials/babylon.fresnelParameters.js"></script>
     <script src="src/Materials/babylon.material.js"></script>
     <script src="src/Materials/babylon.standardMaterial.js"></script>
     <script src="src/Materials/babylon.multiMaterial.js"></script>
