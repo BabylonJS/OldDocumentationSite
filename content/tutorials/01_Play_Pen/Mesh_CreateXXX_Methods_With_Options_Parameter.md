@@ -328,6 +328,23 @@ dashBn|_(number)_  intended number of dashes|200
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
+####LineSystem
+You must set at least the _lines_ property.  
+On update, you must set the _lines_ and _instance_ properties.  
+
+Example :
+```javascript
+lineSystem = BABYLON.MeshBuilder.CreateLineSystem("lineSystem", {lines: myArray, instance: lineSystem});
+// updates the existing instance of lineSystem : no need for the parameter scene here
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+lines|_(Vector3[])_  array of lines, each line being an array of successive Vector3 **REQUIRED** 
+updatable|_(boolean)_ true if the mesh is updatable|false
+instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
+
 ####Ribbon
 You must set at least the _pathArray_ property.  
 On update, you must set the _pathArray_ and _instance_ properties.  
