@@ -8,22 +8,22 @@ There are many IDE out there you can use to contribute to Babylon.js, Visual Stu
 With Visual Studio you will be able to build the library along with your custom code and being able to debug and test both of them.
 
 ## Compilation modes
-Before going further you have to understand there are two compilation modes to build Babylon.js.
+Before going further you have to understand there are two compilation modes available to build Babylon.js.
  
 ### Release mode
 
 You can use the [Gulp](https://github.com/BabylonJS/Babylon.js/tree/master/Tools/Gulp) script to create the main release files (babylon.js, babylon.max.js, babylon.d.ts) that will be stored in the [preview directory](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release). 
 
-This mode is generaly used to build a new version, the compilation takes some time so it's not suitable for developmenent/test roundtrips.
+This mode is generaly used to build a new version soon to be publicly released, the compilation takes some time so it's not suitable for developmenent/test roundtrips.
 
-Also note that you won't be able to debug the TypeScript code of Babylon.js, the debugger will always step into the main JavaScript file (i.e. Babylon.js).
+**Also note that you won't be able to debug the TypeScript code of Babylon.js, the debugger will always step into the main JavaScript file (i.e. Babylon.js).**
  
 ### Development mode
 
-This mode is more suitable when you make changes in the library, instead of relying on Gulp to generate the release files you simple compile all the .ts file into .js (and .js.map) files.
+This mode is more suitable when you make changes in the library, instead of relying on Gulp to generate the release files you simply compile all the .ts files into .js (and .js.map) files.
 
 #### Pros
- * The compilation is fast (it only compile the .ts files to .js, there's no merging/minification)
+ * The compilation is fast (it only compiles the .ts files to .js, there's no merging/minification)
  * You can debug the library in TypeScript, set breakpoints in the .ts files, etc.
 
 #### Cons
@@ -37,10 +37,10 @@ The up-to-date list of the .js files and indications about the Engine's setup ca
 ## Synopsis
 Here are the macro steps of what we're going to do:
  
- - Clone the Babylon.js repository localy
- - Create a Web Application project/solution, move it to the root of the Babylon.js repo and fix it
- - Include the Babylon.js source code in the web project.
- - Create a small TypeScript Sandbox
+ * Clone the Babylon.js repository localy
+ * Create a Web Application project/solution, move it to the root of the Babylon.js repo and fix it
+ * Include the Babylon.js source code in the web project.
+ * Create a small TypeScript Sandbox
 
 
 ## 1) Clone the repositoty
@@ -51,11 +51,11 @@ Use [Cmder](http://cmder.net/) or any Shell, go to the directory you want to clo
 
 ![GIT02](http://i.imgur.com/YhFVMbN.png)
 
-You can find more info about contributing to Babylon.js [here](http://pixelcodr.com/tutos/contribute/contribute.html)
+By the way, you can find more info about contributing to Babylon.js [here](http://pixelcodr.com/tutos/contribute/contribute.html)
 
 ## 2) Create the Visual Studio project
 
-Neither Visual Studio nor GIT like to create the project/repo in a non empty directory, which is a problem for us because we want the Visual Studio project to be in the root directory of the repo.
+Neither Visual Studio nor Git like to create the project/repo in a non empty directory, which is a problem for us because we want the Visual Studio project to be in the root directory of the repo.
 
 So we are going to create the Visual Studio project in a directory inside the repo, then move it one level up.
 
@@ -108,7 +108,7 @@ _add the new one_
 
 ## 3) Include the Babylon.js source code
 
-Now display all files in the solutions to include the ones we care about.
+Now display all files in the solutions by clicking the "Show All Files" button to include the ones we care about.
 
 ![VS09](http://i.imgur.com/RkR1dFU.png)
 
@@ -118,7 +118,7 @@ _We only need the "external references" and "src" folder to compile Babylon.js._
 
 ---
 
-When we included the "src" folder it also included the .js files corresponding to the .ts, we have to remove them from the project as we don't want to see them. The quickest way is to edit the Visual Studio project file.
+When we included the "src" folder it also included the .js files corresponding to the .ts, we have to remove them from the project as we have no use of them. The quickest way is to edit the Visual Studio project file.
 
 We will also fix the referenced nuget packages that are now incorrect because we moved the Visual Studio project one level up.
 
@@ -134,13 +134,13 @@ You need to unload the project from the solution to edit it.
 
 ![VS14](http://i.imgur.com/rMASFHL.png)
 
-_ get rid of all the .js files referenced_
+_get rid of all the .js files referenced_
 
 ---
 
 ![VS15](http://i.imgur.com/xDB1gvI.png)
 
-_do a search/replace of "..\packages" by "packages", replace all occurences.
+_do a search/replace of "..\packages" by "packages", replace all occurences._
 
 ---
 
@@ -156,6 +156,12 @@ Build the solution, all the .ts fils will be compiled to .js file along with .js
 
 ## 4) Create a small sandbox
 
+You can grad the files:
+
+ - [sandbox.ts](https://github.com/nockawa/Documentation/blob/master/content/generals/General/setupVisual/sandbox.ts)
+ - [index.html](https://github.com/nockawa/Documentation/blob/master/content/generals/General/setupVisual/index.html)
+ - [web.config](https://github.com/nockawa/Documentation/blob/master/content/generals/General/setupVisual/Web.config)
+
 Create a new TypeScript file in your project, don't forget to set the following lines:
 
 ```javascript
@@ -164,7 +170,7 @@ BABYLON.Engine.CodeRepository = "/src/";
 BABYLON.Engine.ShadersRepository = "/src/Shaders/";
 ```
 
-These are needed when you don't work with the main .js file, the reason is that the Shader are stored as variable in the main .js file and when you don't use it the Engine must load the .fx files from the web server.
+These are needed when you don't work with the main .js file, the reason is that the Shaders are stored as variables in the main .js file, so when you don't use it the Engine must load the .fx files from the web server in the location you specified. This is why the sources must be stored in a location the web server can serve.
 
 ![VS17](http://i.imgur.com/gcd0WX0.png)
 
@@ -199,3 +205,5 @@ _Add new files types in the web.config_
 _Build, run et voilà !_
 
 You can now debug the source code of Babylon.js along with yours.
+
+![VS22](http://i.imgur.com/vtcjnQm.png)
