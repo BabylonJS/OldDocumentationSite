@@ -39,6 +39,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Cameras/babylon.freeCamera.js"></script>
     <script src="src/Cameras/babylon.touchCamera.js"></script>
     <script src="src/Cameras/babylon.arcRotateCamera.js"></script>
+    <script src="src/Cameras/babylon.universalCamera.js"></script>
     <script src="src/Cameras/babylon.deviceOrientationCamera.js"></script>
     <script src="src/Tools/babylon.gamepads.js"></script> 
     <script src="src/Cameras/babylon.gamepadCamera.js"></script>
