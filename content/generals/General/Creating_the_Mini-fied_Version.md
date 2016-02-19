@@ -125,6 +125,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Mesh/babylon.linesMesh.js"></script>
     <script src="src/Rendering/babylon.outlineRenderer.js"></script>
     <script src="src/Tools/babylon.assetsManager.js"></script>
+    <script src="src/Cameras/VR/babylon.vrCameraMetrics.js"></script>
     <script src="src/Cameras/VR/babylon.vrDeviceOrientationCamera.js"></script>
     <script src="src/Cameras/VR/babylon.webVRCamera.js"></script>
     <script src="src/Tools/babylon.sceneOptimizer.js"></script>
