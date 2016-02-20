@@ -17,6 +17,8 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Tools/babylon.smartCollection.js"></script>
     <script src="src/Tools/babylon.smartArray.js"></script>
     <script src="src/Tools/babylon.tools.js"></script>
+    <script src="src/states/babylon.alphaCullingState.js"></script>
+    <script src="src/states/babylon.depthCullingState.js"></script>
     <script src="src/babylon.engine.js"></script>
     <script src="src/babylon.node.js"></script>
     <script src="src/Tools/babylon.filesInput.js"></script>
