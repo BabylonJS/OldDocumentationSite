@@ -144,6 +144,18 @@ _do a search/replace of "..\packages" by "packages", replace all occurences._
 
 ---
 
+You will also have to add a line below the TypeScriptSourceMap element to enable TypeScriptExperimentalDecorators.
+
+The result should look like this:
+
+```xml
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+```
+
+
+---
+
 Save and reload the project
 
 ![VS16](http://i.imgur.com/AmXRYZj.png)
