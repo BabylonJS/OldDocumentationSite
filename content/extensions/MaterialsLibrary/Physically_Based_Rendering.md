@@ -5,7 +5,7 @@ After following the [standard material tutorial](http://doc.babylonjs.com/tutori
 
 ![Elements](/img/extensions/materials/PBRMaterial.jpg)
 
-[**Playground Demo Scene - PBR Materials**](http://babylonjs-playground.com/#ESBZC)
+[**Playground Demo Scene - PBR Materials**](http://babylonjs-playground.com/#ESBZC#3)
 
 ## What is the point ?!?
 PBR rendering techniques aim to simulate **real life lighting**.
@@ -43,7 +43,7 @@ sphere.material = new BABYLON.PBRMaterial("pbr", scene);
 
 That is done by setting the properties on the material. Let's see what the new PBR parameters are:
 
-* **MicroSurface** (AKA Glossiness or specular power)
+* **MicroSurface** (AKA **Glossiness** or **specular power**)
 
 The micro-surface of a material defines **the way it is reflecting** the incoming lights. It is not defining the amount, only how. A glossy material will tend to reflect the light in the same direction it is incoming. On a Matte one the reflected light will vary in contact of the surface. As I can easily understand the confusion of my explanation, let's take a look at an example (and for more Physically Based Knowledge, [follow the link](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2538579/)):
 
@@ -51,7 +51,7 @@ The micro-surface of a material defines **the way it is reflecting** the incomin
 
 As you can see here, the more glossy the material is (going left to right: 0.5 to 1) the less blurry the reflected environment is.
 
-[**Playground Demo Scene - PBR Glossiness**](http://babylonjs-playground.com/#1LZALU#2)
+[**Playground Demo Scene - PBR Glossiness**](http://babylonjs-playground.com/#1LZALU#5)
 
 ```javascript
 var x = 0;
@@ -82,7 +82,7 @@ materialSphere.reflectivityTexture = texture;
 materialSphere.useMicroSurfaceFromReflectivityMap = true;
 ```
 
-* **Reflectivity** (AKA specular)
+* **Reflectivity** (AKA **specular color**)
 
 The reflectivity of a material defines the **amount of light it is reflecting**. Basically, a black specular will mean almost no reflection and white will be close from a perfect mirror:
 
@@ -90,7 +90,7 @@ The reflectivity of a material defines the **amount of light it is reflecting**.
 
 As you can see here the more specular the material is (going left to right from white to black) the closer to a perfect mirror it is.
 
-[**Playground Demo Scene - PBR Reflectivity**](http://babylonjs-playground.com/#PRRBS#1)
+[**Playground Demo Scene - PBR Reflectivity**](http://babylonjs-playground.com/#PRRBS#2)
 
 ```javascript
 var x = 0;
@@ -117,7 +117,7 @@ for (var j = 0; j < 6; j++) {
 
 **Tips:** To achieve the best results use a specular map stored in a texture:
 ```javascript
-materialSphere.specularTexture = texture;
+materialSphere.reflectivityTexture = texture;
 ```
 
 * **Reflection**
@@ -148,7 +148,7 @@ In order to **simplify debugging** and also to **create animation effects**, a b
 
 As you can see, the texture is being more and more overridden by an overloaded diffuse color when the overloaded diffuse intensity increases (from left to right and 0 to 1).
 
-[**Playground Demo Scene - PBR Overloaded Values**](http://babylonjs-playground.com/#1GELZQ#7)
+[**Playground Demo Scene - PBR Overloaded Values**](http://babylonjs-playground.com/#1GELZQ#9)
 
 ```javascript
 var x = 0;
@@ -199,7 +199,7 @@ pbr.cameraContrast = 1.66;
 
 This highlights the impact of both contrast and exposure on a model (all the other parameters are fixed).
 
-[**Playground Demo Scene - PBR Camera**](http://babylonjs-playground.com/#1Y4YAM#2)
+[**Playground Demo Scene - PBR Camera**](http://babylonjs-playground.com/#1Y4YAM#3)
 
 ## Gamma Correction
 
