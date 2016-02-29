@@ -15,6 +15,8 @@ module.exports = function (app) {
     app.use('/page.php', require('./routes/forward'));
     app.use('/search', require('./routes/search'));
     app.use('/playground', require('./routes/playground'));
+    //let's encrypt
+    app.use('/.well-known/acme-challenge', express.static('/site-wwwroot/.well-known/acme-challenge'));
 
 
     app.use(require('./routes/root'));
