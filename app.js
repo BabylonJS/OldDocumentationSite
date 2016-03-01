@@ -17,7 +17,7 @@ app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(express.static('public'));
 
 //let's encrypt
-app.use('/.well-known/acme-challenge', express.static('/site/wwwroot/.well-known/acme-challenge'));
+app.use('/.well-known', express.static('.well-known'));
 // Set the template engine to jade
 app.set('view engine', 'jade');
 
