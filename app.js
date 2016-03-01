@@ -15,6 +15,9 @@ app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 // Serve static files (css, js, images)
 app.use(express.static('public'));
+
+//let's encrypt
+app.use('/.well-known', express.static('.well-known'));
 // Set the template engine to jade
 app.set('view engine', 'jade');
 
