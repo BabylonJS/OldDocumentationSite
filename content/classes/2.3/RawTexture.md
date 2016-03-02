@@ -14,7 +14,7 @@ class [RawTexture](/classes/2.3/RawTexture) extends [Texture](/classes/2.3/Textu
 
 ## Constructor
 
-##  new [RawTexture](/classes/2.3/RawTexture)(data, width, height, format, scene, generateMipMaps, invertY, samplingMode)
+## new [RawTexture](/classes/2.3/RawTexture)(data, width, height, format, scene, generateMipMaps, invertY, samplingMode)
 
 
 
@@ -45,7 +45,7 @@ optional | invertY | boolean |
 ---|---|---|---
  | data | ArrayBufferView |   
 
-### static  CreateLuminanceTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
+### static CreateLuminanceTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
 
 
 
@@ -58,7 +58,7 @@ optional | invertY | boolean |
  | scene | [Scene](/classes/2.3/Scene) |   
 optional | generateMipMaps | boolean |   
 optional | invertY | boolean |   
-### static  CreateLuminanceAlphaTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
+### static CreateLuminanceAlphaTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
 
 
 
@@ -71,7 +71,7 @@ optional | invertY | boolean |
  | scene | [Scene](/classes/2.3/Scene) |   
 optional | generateMipMaps | boolean |   
 optional | invertY | boolean |   
-### static  CreateAlphaTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
+### static CreateAlphaTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
 
 
 
@@ -84,7 +84,7 @@ optional | invertY | boolean |
  | scene | [Scene](/classes/2.3/Scene) |   
 optional | generateMipMaps | boolean |   
 optional | invertY | boolean |   
-### static  CreateRGBTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
+### static CreateRGBTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
 
 
 
@@ -97,7 +97,7 @@ optional | invertY | boolean |
  | scene | [Scene](/classes/2.3/Scene) |   
 optional | generateMipMaps | boolean |   
 optional | invertY | boolean |   
-### static  CreateRGBATexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
+### static CreateRGBATexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.3/RawTexture)
 
 
 

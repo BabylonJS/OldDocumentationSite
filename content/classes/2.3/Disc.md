@@ -9,7 +9,7 @@ class [Disc](/classes/2.3/Disc) extends _Primitive
 
 ## Constructor
 
-##  new [Disc](/classes/2.3/Disc)(id, scene, radius, tessellation, canBeRegenerated, mesh, side)
+## new [Disc](/classes/2.3/Disc)(id, scene, radius, tessellation, canBeRegenerated, mesh, side)
 
 
 

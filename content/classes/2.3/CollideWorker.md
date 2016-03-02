@@ -13,7 +13,7 @@ class [CollideWorker](/classes/2.3/CollideWorker)
 
 ## Constructor
 
-##  new [CollideWorker](/classes/2.3/CollideWorker)(collider, _collisionCache, finalPosition)
+## new [CollideWorker](/classes/2.3/CollideWorker)(collider, _collisionCache, finalPosition)
 
 
 

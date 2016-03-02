@@ -16,7 +16,7 @@ class [WebVRFreeCamera](/classes/2.3/WebVRFreeCamera) extends [FreeCamera](/clas
 
 ## Constructor
 
-##  new [WebVRFreeCamera](/classes/2.3/WebVRFreeCamera)(name, position, scene, compensateDistortion)
+## new [WebVRFreeCamera](/classes/2.3/WebVRFreeCamera)(name, position, scene, compensateDistortion)
 
 
 

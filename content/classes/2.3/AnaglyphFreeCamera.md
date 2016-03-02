@@ -16,7 +16,7 @@ class [AnaglyphFreeCamera](/classes/2.3/AnaglyphFreeCamera) extends [FreeCamera]
 
 ## Constructor
 
-##  new [AnaglyphFreeCamera](/classes/2.3/AnaglyphFreeCamera)(name, position, interaxialDistance, scene)
+## new [AnaglyphFreeCamera](/classes/2.3/AnaglyphFreeCamera)(name, position, interaxialDistance, scene)
 
 
 

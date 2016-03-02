@@ -9,13 +9,13 @@ TAGS:
 
 class [ConvolutionPostProcess](/classes/2.3/ConvolutionPostProcess) extends [PostProcess](/classes/2.3/PostProcess)
 
-
+Builtin postprocess applying a kernel matrix to every pixel
 
 ## Constructor
 
-##  new [ConvolutionPostProcess](/classes/2.3/ConvolutionPostProcess)(name, kernel, ratio, camera, samplingMode, engine, reusable)
+## new [ConvolutionPostProcess](/classes/2.3/ConvolutionPostProcess)(name, kernel, ratio, camera, samplingMode, engine, reusable)
 
-
+The Postprocess constructor
 
 #### Parameters
  | Name | Type | Description
@@ -30,29 +30,29 @@ optional | engine | [Engine](/classes/2.3/Engine) |   The engine to attach the p
 
 ### kernel : number[]
 
+The kernel matrix
 
+### static EdgeDetect0Kernel : number[]
 
-### static  EdgeDetect0Kernel : number[]
+Edge Detect 0 Kernel
 
+### static EdgeDetect1Kernel : number[]
 
+Edge Detect 1 Kernel
 
-### static  EdgeDetect1Kernel : number[]
+### static EdgeDetect2Kernel : number[]
 
+Edge Detect 2 Kernel
 
+### static SharpenKernel : number[]
 
-### static  EdgeDetect2Kernel : number[]
+Sharpen Kernel
 
+### static EmbossKernel : number[]
 
+Emboss Kernel
 
-### static  SharpenKernel : number[]
-
-
-
-### static  EmbossKernel : number[]
-
-
-
-### static  GaussianKernel : number[]
+### static GaussianKernel : number[]
 
 
 

@@ -7,11 +7,11 @@ PG_VERSION: 2.1
 
 class [SmartArray](/classes/2.3/SmartArray)
 
-
+Create a new smart array
 
 ## Constructor
 
-##  new [SmartArray](/classes/2.3/SmartArray)(capacity)
+## new [SmartArray](/classes/2.3/SmartArray)(capacity)
 
 
 
@@ -24,17 +24,17 @@ class [SmartArray](/classes/2.3/SmartArray)
 
 ### data : Array&lt;T&gt;
 
-
+Array
 
 ### length : number
 
-
+The length of the smart array
 
 ## Methods
 
 ### push(value) &rarr; void
 
-
+Push method. If the length of the smart array is reached, the length of this array is doubled.
 
 #### Parameters
  | Name | Type | Description
@@ -43,7 +43,7 @@ class [SmartArray](/classes/2.3/SmartArray)
 
 ### pushNoDuplicate(value) &rarr; void
 
-
+Push method to avoid any duplicate. If the value is found in the smart array, nothing is done.
 
 #### Parameters
  | Name | Type | Description
@@ -52,7 +52,7 @@ class [SmartArray](/classes/2.3/SmartArray)
 
 ### sort(compareFn) &rarr; void
 
-
+Sort this array with the sort function given in parameter.
 
 #### Parameters
  | Name | Type | Description
@@ -61,10 +61,10 @@ class [SmartArray](/classes/2.3/SmartArray)
 
 ### reset() &rarr; void
 
-
+Reset the length of this smart array
 ### concat(array) &rarr; void
 
-
+Append the given smart array data to this smart array.
 
 #### Parameters
  | Name | Type | Description
@@ -73,7 +73,8 @@ class [SmartArray](/classes/2.3/SmartArray)
 
 ### concatWithNoDuplicate(array) &rarr; void
 
-
+Append the given smart array data to this smart array.
+This function check if each values are not already in the smart array.
 
 #### Parameters
  | Name | Type | Description

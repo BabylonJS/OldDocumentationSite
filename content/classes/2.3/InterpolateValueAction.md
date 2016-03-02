@@ -9,11 +9,17 @@ TAGS:
 
 class [InterpolateValueAction](/classes/2.3/InterpolateValueAction) extends [Action](/classes/2.3/Action)
 
+This action creates an animation to interpolate the current value of a property to a given target.
 
+The supported types are: Float, [Color3](/classes/2.3/Color3), [Vector3](/classes/2.3/Vector3), [Matrix](/classes/2.3/Matrix) and [Quaternion](/classes/2.3/Quaternion)
+
+http://doc.babylonjs.com/tutorials/How_to_use_Actions
+
+http://www.babylonjs-playground.com/?17
 
 ## Constructor
 
-##  new [InterpolateValueAction](/classes/2.3/InterpolateValueAction)(triggerOptions, target, propertyPath, value, duration, condition, stopOtherAnimations, onInterpolationDone)
+## new [InterpolateValueAction](/classes/2.3/InterpolateValueAction)(triggerOptions, target, propertyPath, value, duration, condition, stopOtherAnimations, onInterpolationDone)
 
 
 
@@ -31,19 +37,19 @@ optional | stopOtherAnimations | boolean |
 
 ### propertyPath : string
 
-
+The propertyPath is a string property of your target
 
 ### value : any
 
-
+The target value
 
 ### duration : number
 
-
+The duration for the given interpolation
 
 ### stopOtherAnimations : boolean
 
-
+Set true to stop other animation, false otherwise.
 
 ### onInterpolationDone : () =&gt; void
 

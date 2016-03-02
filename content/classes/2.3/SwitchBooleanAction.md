@@ -13,9 +13,9 @@ class [SwitchBooleanAction](/classes/2.3/SwitchBooleanAction) extends [Action](/
 
 ## Constructor
 
-##  new [SwitchBooleanAction](/classes/2.3/SwitchBooleanAction)(triggerOptions, target, propertyPath, condition)
+## new [SwitchBooleanAction](/classes/2.3/SwitchBooleanAction)(triggerOptions, target, propertyPath, condition)
 
-
+Create a new switch boolean action
 
 #### Parameters
  | Name | Type | Description
@@ -27,7 +27,7 @@ class [SwitchBooleanAction](/classes/2.3/SwitchBooleanAction) extends [Action](/
 
 ### propertyPath : string
 
-
+Defines the path to the property to affect with the action
 
 ## Methods
 

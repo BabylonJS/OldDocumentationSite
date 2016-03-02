@@ -13,7 +13,7 @@ class [StopSoundAction](/classes/2.3/StopSoundAction) extends [Action](/classes/
 
 ## Constructor
 
-##  new [StopSoundAction](/classes/2.3/StopSoundAction)(triggerOptions, sound, condition)
+## new [StopSoundAction](/classes/2.3/StopSoundAction)(triggerOptions, sound, condition)
 
 
 

@@ -49,6 +49,7 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
         comments = '';
 
     var stripNewLines = /^\s+|\s+$/g;
+    var typeOfSearch = "";
 
     //strip new lines before and after the string
     astFormatted = astFormatted.replace(stripNewLines, '');
@@ -59,7 +60,31 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
 
     var hasOldData = this.oldDescription ? true : false;
     if (hasOldData) {
-        var getOldLine = new RegExp(astFormatted + "\\s*((.*\\s*)*?)(?=^#|$)", 'gm');
+
+        var searchString = astFormatted;
+
+        // If it's the class description
+        if (astFormatted.indexOf("## Description") != -1)
+        {
+            typeOfSearch = "class";
+            searchString = "## Description";
+        }
+        // Else if it's a function
+        else if (astFormatted.indexOf("&rarr;") != -1)
+        {
+            typeOfSearch = "function";
+            searchString = astFormatted.substring(0, astFormatted.indexOf("&") + 6);
+        }
+        // Else if it's a member
+        else if (astFormatted.indexOf(":") != -1)
+        {
+            typeOfSearch = "member";
+            searchString = astFormatted.substring(0, astFormatted.indexOf(":"));
+        }
+
+        var getOldLine = new RegExp(searchString + "\\s*((.*\\s*)*?)(?=^#|$)", 'gm');
+        var getOldLineWithoutSpace = new RegExp(searchString.replace(' ','')+ "\\s*((.*\\s*)*?)(?=^#|$)", 'gm');
+
         var getOldParams = /(^([^\n\r]*)\|([^\n\r]*)$)/gm;
 
         var oldLineReged = '';
@@ -70,7 +95,6 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
     for (var i in rawComments) {
         serializedComments += rawComments[i].fullText() + '\n';
     }
-
 
     if (!withParams) {
         var textRegexp = /(?=\*\s)(?!\*\n).*$/gm;
@@ -94,20 +118,37 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
 
         }
 
-        //FIXME Duplicated o_O
+        // TODO : Refactor with the other
         if (!comments && hasOldData) {
+
             oldLineReged = getOldLine.exec(this.oldDescription);
+            if(!oldLineReged) {
+                oldLineReged = getOldLineWithoutSpace.exec(this.oldDescription);
+            }
+
             if (oldLineReged) {
                 oldLineDescription = oldLineReged[1];
-                //Append the old comments to the new
-                comments += oldLineDescription;
+
+                if(typeOfSearch == "class") {
+                    oldLineDescription = oldLineDescription.substring(oldLineDescription.indexOf("\n") + 1);
+                    oldLineDescription = oldLineDescription.substring(oldLineDescription.indexOf("\n") + 1);
+                    comments += oldLineDescription;
+                }
+                else if(typeOfSearch == "member") {
+
+                    comments += oldLineDescription.substring(oldLineDescription.indexOf("\n") + 2);
+                }
+                else {
+                    comments += oldLineDescription;
+                }
 
             }
         }
 
         comments = comments.replace(stripNewLines, '') + '\n\n';
 
-    } else {
+    }
+    else {
         var notParamRegexp = /(?:^\s*\*\s)(?!\@param)(.*)/gm;
         var funParameters = astElement.callSignature.parameterList.parameters.members;
 
@@ -120,13 +161,23 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
             line = notParamRegexp.exec(serializedComments);
         }
 
-
+        // TODO : Refactor with the other
         if (!comments && hasOldData) {
+
             oldLineReged = getOldLine.exec(this.oldDescription);
+            if(!oldLineReged) {
+                oldLineReged = getOldLineWithoutSpace.exec(this.oldDescription);
+            }
+
             if (oldLineReged) {
                 oldLineDescription = oldLineReged[1];
-                //Append the old comments to the new
-                comments += oldLineDescription;
+
+                if(typeOfSearch == "function") {
+                    comments += oldLineDescription.substring(oldLineDescription.indexOf("\n") + 2)
+                }
+                else {
+                    comments += oldLineDescription;
+                }
             }
         }
         comments = comments.replace(stripNewLines, '') + '\n';
@@ -202,6 +253,7 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
             comments += '\n' + parametersHeader + parametersDescription;
         }
     }
+
     return comments;
 };
 

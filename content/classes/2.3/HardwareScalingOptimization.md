@@ -14,7 +14,7 @@ class [HardwareScalingOptimization](/classes/2.3/HardwareScalingOptimization) ex
 
 ## Constructor
 
-##  new [HardwareScalingOptimization](/classes/2.3/HardwareScalingOptimization)(priority, maximumScale)
+## new [HardwareScalingOptimization](/classes/2.3/HardwareScalingOptimization)(priority, maximumScale)
 
 
 

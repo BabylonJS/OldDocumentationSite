@@ -7,13 +7,15 @@ PG_VERSION: 2.1
 
 class [LensFlare](/classes/2.3/LensFlare)
 
+Create a lens Flare to be integrated in a lens flare system.
 
+A tutorial about using lens flare can be found here
 
 ## Constructor
 
-##  new [LensFlare](/classes/2.3/LensFlare)(size, position, color, imgUrl, system)
+## new [LensFlare](/classes/2.3/LensFlare)(size, position, color, imgUrl, system)
 
-
+The [LensFlare](/classes/2.3/LensFlare) class
 
 #### Parameters
  | Name | Type | Description
@@ -26,19 +28,19 @@ class [LensFlare](/classes/2.3/LensFlare)
 
 ### size : number
 
-
+The lens Flare size
 
 ### position : number
 
-
+The lens Flare position
 
 ### color : [Color3](/classes/2.3/Color3)
 
-
+The lens Flare color
 
 ### texture : [Texture](/classes/2.3/Texture)
 
-
+The lens Flare texture
 
 ### dispose : () =&gt; void
 

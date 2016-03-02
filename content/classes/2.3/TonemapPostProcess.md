@@ -9,7 +9,7 @@ class [TonemapPostProcess](/classes/2.3/TonemapPostProcess) extends [PostProcess
 
 ## Constructor
 
-##  new [TonemapPostProcess](/classes/2.3/TonemapPostProcess)(name, operator, exposureAdjustment, camera, samplingMode, engine, textureFormat)
+## new [TonemapPostProcess](/classes/2.3/TonemapPostProcess)(name, operator, exposureAdjustment, camera, samplingMode, engine, textureFormat)
 
 
 

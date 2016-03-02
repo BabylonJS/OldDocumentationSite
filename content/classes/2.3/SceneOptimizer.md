@@ -13,7 +13,7 @@ class [SceneOptimizer](/classes/2.3/SceneOptimizer)
 
 ## Methods
 
-### static  OptimizeAsync(scene, options, onSuccess, onFailure) &rarr; void
+### static OptimizeAsync(scene, options, onSuccess, onFailure) &rarr; void
 
 
 

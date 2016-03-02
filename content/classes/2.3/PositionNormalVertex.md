@@ -11,7 +11,7 @@ class [PositionNormalVertex](/classes/2.3/PositionNormalVertex)
 
 ## Constructor
 
-##  new [PositionNormalVertex](/classes/2.3/PositionNormalVertex)(position, normal)
+## new [PositionNormalVertex](/classes/2.3/PositionNormalVertex)(position, normal)
 
 
 

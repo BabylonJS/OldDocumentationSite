@@ -13,7 +13,7 @@ class [Curve3](/classes/2.3/Curve3)
 
 ## Constructor
 
-##  new [Curve3](/classes/2.3/Curve3)(points)
+## new [Curve3](/classes/2.3/Curve3)(points)
 
 
 
@@ -24,7 +24,7 @@ class [Curve3](/classes/2.3/Curve3)
 
 ## Methods
 
-### static  CreateQuadraticBezier(v0, v1, v2, nbPoints) &rarr; [Curve3](/classes/2.3/Curve3)
+### static CreateQuadraticBezier(v0, v1, v2, nbPoints) &rarr; [Curve3](/classes/2.3/Curve3)
 
 
 
@@ -34,7 +34,7 @@ class [Curve3](/classes/2.3/Curve3)
  | v0 | [Vector3](/classes/2.3/Vector3) |   
  | v1 | [Vector3](/classes/2.3/Vector3) |   
  | v2 | [Vector3](/classes/2.3/Vector3) |   
-### static  CreateCubicBezier(v0, v1, v2, v3, nbPoints) &rarr; [Curve3](/classes/2.3/Curve3)
+### static CreateCubicBezier(v0, v1, v2, v3, nbPoints) &rarr; [Curve3](/classes/2.3/Curve3)
 
 
 
@@ -45,7 +45,7 @@ class [Curve3](/classes/2.3/Curve3)
  | v1 | [Vector3](/classes/2.3/Vector3) |   
  | v2 | [Vector3](/classes/2.3/Vector3) |   
  | v3 | [Vector3](/classes/2.3/Vector3) |   
-### static  CreateHermiteSpline(p1, t1, p2, t2, nbPoints) &rarr; [Curve3](/classes/2.3/Curve3)
+### static CreateHermiteSpline(p1, t1, p2, t2, nbPoints) &rarr; [Curve3](/classes/2.3/Curve3)
 
 
 

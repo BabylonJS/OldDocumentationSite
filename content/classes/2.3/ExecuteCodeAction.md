@@ -13,9 +13,9 @@ class [ExecuteCodeAction](/classes/2.3/ExecuteCodeAction) extends [Action](/clas
 
 ## Constructor
 
-##  new [ExecuteCodeAction](/classes/2.3/ExecuteCodeAction)(triggerOptions, func, condition)
+## new [ExecuteCodeAction](/classes/2.3/ExecuteCodeAction)(triggerOptions, func, condition)
 
-
+Execute your own code when the trigger is raised and the condition is true
 
 #### Parameters
  | Name | Type | Description
@@ -27,7 +27,7 @@ optional | condition | [Condition](/classes/2.3/Condition) |
 
 ### func : (evt: [ActionEvent](/classes/2.3/ActionEvent)) =&gt; void
 
-
+Func
 
 ## Methods
 

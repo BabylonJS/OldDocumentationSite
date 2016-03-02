@@ -11,9 +11,9 @@ class [Viewport](/classes/2.3/Viewport)
 
 ## Constructor
 
-##  new [Viewport](/classes/2.3/Viewport)(x, y, width, height)
+## new [Viewport](/classes/2.3/Viewport)(x, y, width, height)
 
-
+Builds a new [Viewport](/classes/2.3/Viewport) object
 
 #### Parameters
  | Name | Type | Description
@@ -25,19 +25,19 @@ class [Viewport](/classes/2.3/Viewport)
 
 ### x : number
 
-
+The pixel x coordinate of the upper-left corner of the viewport on the render-target surface
 
 ### y : number
 
-
+The pixel y coordinate of the upper-left corner of the viewport on the render-target surface
 
 ### width : number
 
-
+The width of the viewport on the render-target surface in pixels
 
 ### height : number
 
-
+The height of the  viewport on the render-target surface in pixels
 
 ## Methods
 

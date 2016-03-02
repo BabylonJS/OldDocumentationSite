@@ -13,9 +13,9 @@ class [Gamepad](/classes/2.3/Gamepad)
 
 ## Constructor
 
-##  new [Gamepad](/classes/2.3/Gamepad)(id, index, browserGamepad)
+## new [Gamepad](/classes/2.3/Gamepad)(id, index, browserGamepad)
 
-
+Builds a [Gamepad](/classes/2.3/Gamepad) object
 
 #### Parameters
  | Name | Type | Description
@@ -27,29 +27,29 @@ class [Gamepad](/classes/2.3/Gamepad)
 
 ### id : string
 
-
+The gamepad id
 
 ### index : number
 
-
+The gamepad index
 
 ### browserGamepad : any
 
-
+The gamepad browser, sets the sticks axes
 
 ### leftStick : [StickValues](/classes/2.3/StickValues)
 
-
+The left stick values
 
 ### rightStick : [StickValues](/classes/2.3/StickValues)
 
-
+The right stick values
 
 ## Methods
 
 ### onleftstickchanged(callback) &rarr; void
 
-
+Binds an action to the left stick
 
 #### Parameters
  | Name | Type | Description
@@ -58,7 +58,7 @@ class [Gamepad](/classes/2.3/Gamepad)
 
 ### onrightstickchanged(callback) &rarr; void
 
-
+Binds an action to the right stick
 
 #### Parameters
  | Name | Type | Description

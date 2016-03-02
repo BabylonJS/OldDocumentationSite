@@ -13,7 +13,7 @@ class [AnaglyphPostProcess](/classes/2.3/AnaglyphPostProcess) extends [PostProce
 
 ## Constructor
 
-##  new [AnaglyphPostProcess](/classes/2.3/AnaglyphPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
+## new [AnaglyphPostProcess](/classes/2.3/AnaglyphPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
 
 
 

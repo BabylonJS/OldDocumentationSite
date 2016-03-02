@@ -11,7 +11,7 @@ class [Path2](/classes/2.3/Path2)
 
 ## Constructor
 
-##  new [Path2](/classes/2.3/Path2)(x, y)
+## new [Path2](/classes/2.3/Path2)(x, y)
 
 
 
@@ -66,7 +66,7 @@ class [Path2](/classes/2.3/Path2)
 ---|---|---|---
  | normalizedLengthPosition | number |   
 
-### static  StartingAt(x, y) &rarr; [Path2](/classes/2.3/Path2)
+### static StartingAt(x, y) &rarr; [Path2](/classes/2.3/Path2)
 
 
 

@@ -628,6 +628,10 @@
           "filename": "GUICheckbox"
         },
         {
+          "title": "GUIColor",
+          "filename": "GUIColor"
+        },
+        {
           "title": "GUIDialog",
           "filename": "GUIDialog"
         },

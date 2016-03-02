@@ -10,13 +10,15 @@ TAGS:
 
 class [DirectionalLight](/classes/2.3/DirectionalLight) extends [Light](/classes/2.3/Light)
 
+A directional light is defined by a direction.
 
+The light is emitted from everywhere with a specific direction and has an infinite range.
 
 ## Constructor
 
-##  new [DirectionalLight](/classes/2.3/DirectionalLight)(name, direction, scene)
+## new [DirectionalLight](/classes/2.3/DirectionalLight)(name, direction, scene)
 
-
+Creates a [DirectionalLight](/classes/2.3/DirectionalLight) object
 
 #### Parameters
  | Name | Type | Description
@@ -28,11 +30,11 @@ class [DirectionalLight](/classes/2.3/DirectionalLight) extends [Light](/classes
 
 ### direction : [Vector3](/classes/2.3/Vector3)
 
-
+The direction of the light
 
 ### position : [Vector3](/classes/2.3/Vector3)
 
-
+The position of the light, used to calculate shadows
 
 ### transformedPosition : [Vector3](/classes/2.3/Vector3)
 
@@ -53,7 +55,7 @@ class [DirectionalLight](/classes/2.3/DirectionalLight) extends [Light](/classes
 
 ### setDirectionToTarget(target) &rarr; [Vector3](/classes/2.3/Vector3)
 
-
+Returns the normalized vector of the substraction between the given vector and the position of this light
 
 #### Parameters
  | Name | Type | Description
