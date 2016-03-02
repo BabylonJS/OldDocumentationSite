@@ -9,13 +9,15 @@ TAGS:
 
 class [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)
 
+A render effect is a smart postprocess which can manage its own instances itself.
 
+A tutorial about the render pipeline can be found here
 
 ## Constructor
 
-##  new [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)(engine, name, getPostProcess, singleInstance)
+## new [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)(engine, name, getPostProcess, singleInstance)
 
-
+Builds a [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect) object
 
 #### Parameters
  | Name | Type | Description
@@ -27,7 +29,7 @@ class [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)
 
 ### applyParameters : (postProcess: [PostProcess](/classes/2.3/PostProcess)) =&gt; void
 
-
+Applies given postProcess object to the rendrer effect
 
 ### isSupported : boolean
 
@@ -37,7 +39,7 @@ class [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)
 
 ### addPass(renderPass) &rarr; void
 
-
+Adds a new pass to the effect
 
 #### Parameters
  | Name | Type | Description
@@ -46,7 +48,7 @@ class [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)
 
 ### removePass(renderPass) &rarr; void
 
-
+Removes a pass from the effect
 
 #### Parameters
  | Name | Type | Description
@@ -55,7 +57,7 @@ class [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)
 
 ### addRenderEffectAsPass(renderEffect) &rarr; void
 
-
+Adds a render effect as a pass
 
 #### Parameters
  | Name | Type | Description
@@ -64,7 +66,7 @@ class [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)
 
 ### getPass(passName) &rarr; void
 
-
+Returns a pass using its name
 
 #### Parameters
  | Name | Type | Description
@@ -73,7 +75,7 @@ class [PostProcessRenderEffect](/classes/2.3/PostProcessRenderEffect)
 
 ### emptyPasses() &rarr; void
 
-
+Delete all passes
 ### getPostProcess(camera) &rarr; [PostProcess](/classes/2.3/PostProcess)
 
 

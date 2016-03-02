@@ -13,9 +13,9 @@ class [SetValueAction](/classes/2.3/SetValueAction) extends [Action](/classes/2.
 
 ## Constructor
 
-##  new [SetValueAction](/classes/2.3/SetValueAction)(triggerOptions, target, propertyPath, value, condition)
+## new [SetValueAction](/classes/2.3/SetValueAction)(triggerOptions, target, propertyPath, value, condition)
 
-
+Create a new set value action
 
 #### Parameters
  | Name | Type | Description
@@ -28,11 +28,11 @@ class [SetValueAction](/classes/2.3/SetValueAction) extends [Action](/classes/2.
 
 ### propertyPath : string
 
-
+The action property path
 
 ### value : any
 
-
+The action value
 
 ## Methods
 

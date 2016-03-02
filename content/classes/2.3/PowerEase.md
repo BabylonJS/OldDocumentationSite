@@ -13,7 +13,7 @@ class [PowerEase](/classes/2.3/PowerEase) extends [EasingFunction](/classes/2.3/
 
 ## Constructor
 
-##  new [PowerEase](/classes/2.3/PowerEase)(power)
+## new [PowerEase](/classes/2.3/PowerEase)(power)
 
 
 

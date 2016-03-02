@@ -13,9 +13,9 @@ class [SubMesh](/classes/2.3/SubMesh)
 
 ## Constructor
 
-##  new [SubMesh](/classes/2.3/SubMesh)(materialIndex, verticesStart, verticesCount, indexStart, indexCount, mesh, renderingMesh, createBoundingBox)
+## new [SubMesh](/classes/2.3/SubMesh)(materialIndex, verticesStart, verticesCount, indexStart, indexCount, mesh, renderingMesh, createBoundingBox)
 
-
+[SubMesh](/classes/2.3/SubMesh) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -31,27 +31,27 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
 
 ### materialIndex : number
 
-
+The material Index
 
 ### verticesStart : number
 
-
+The vertice sStart
 
 ### verticesCount : number
 
-
+The vertices Count
 
 ### indexStart : any
 
-
+The index Start
 
 ### indexCount : number
 
-
+The index Count
 
 ### linesIndexCount : number
 
-
+The lines Index Count
 
 ### IsGlobal : boolean
 
@@ -61,22 +61,22 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
 
 ### getBoundingInfo() &rarr; [BoundingInfo](/classes/2.3/BoundingInfo)
 
-
+Get bounding info
 ### getMesh() &rarr; [AbstractMesh](/classes/2.3/AbstractMesh)
 
-
+Get mesh
 ### getRenderingMesh() &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Get rendering mesh
 ### getMaterial() &rarr; [Material](/classes/2.3/Material)
 
-
+Get material
 ### refreshBoundingInfo() &rarr; void
 
-
+Refresh bounding info
 ### updateBoundingInfo(world) &rarr; void
 
-
+Update bounding info
 
 #### Parameters
  | Name | Type | Description
@@ -85,7 +85,7 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
 
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
-
+Return true if it is frustum
 
 #### Parameters
  | Name | Type | Description
@@ -103,7 +103,7 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
 
 ### getLinesIndexBuffer(indices, engine) &rarr; WebGLBuffer
 
-
+Get lines index buffer
 
 #### Parameters
  | Name | Type | Description
@@ -112,7 +112,7 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
  | engine | any |   @param engine
 ### canIntersects(ray) &rarr; boolean
 
-
+Can Intersects
 
 #### Parameters
  | Name | Type | Description
@@ -121,7 +121,7 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
 
 ### intersects(ray, positions, indices, fastCheck) &rarr; [IntersectionInfo](/classes/2.3/IntersectionInfo)
 
-
+Intersects
 
 #### Parameters
  | Name | Type | Description
@@ -131,7 +131,7 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
  | indices | number[] |   @param indices
 ### clone(newMesh, newRenderingMesh) &rarr; [SubMesh](/classes/2.3/SubMesh)
 
-
+Create a clone of the subMesh
 
 #### Parameters
  | Name | Type | Description
@@ -140,8 +140,8 @@ optional | renderingMesh | [Mesh](/classes/2.3/Mesh) |   If defined, is used ins
 optional | newRenderingMesh | [Mesh](/classes/2.3/Mesh) |   @param newRenderingMesh
 ### dispose() &rarr; void
 
-
-### static  CreateFromIndices(materialIndex, startIndex, indexCount, mesh, renderingMesh) &rarr; [SubMesh](/classes/2.3/SubMesh)
+Dispose
+### static CreateFromIndices(materialIndex, startIndex, indexCount, mesh, renderingMesh) &rarr; [SubMesh](/classes/2.3/SubMesh)
 
 
 

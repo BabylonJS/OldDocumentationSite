@@ -9,7 +9,7 @@ class [DefaultLoadingScreen](/classes/2.3/DefaultLoadingScreen)
 
 ## Constructor
 
-##  new [DefaultLoadingScreen](/classes/2.3/DefaultLoadingScreen)(_renderingCanvas, _loadingText, _loadingDivBackgroundColor)
+## new [DefaultLoadingScreen](/classes/2.3/DefaultLoadingScreen)(_renderingCanvas, _loadingText, _loadingDivBackgroundColor)
 
 
 

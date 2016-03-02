@@ -9,7 +9,7 @@ Composed of a frame, and an action function
 
 ## Constructor
 
-##  new [AnimationEvent](/classes/2.3/AnimationEvent)(frame, action, onlyOnce)
+## new [AnimationEvent](/classes/2.3/AnimationEvent)(frame, action, onlyOnce)
 
 
 

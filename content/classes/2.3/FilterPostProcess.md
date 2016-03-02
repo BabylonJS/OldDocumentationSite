@@ -13,7 +13,7 @@ class [FilterPostProcess](/classes/2.3/FilterPostProcess) extends [PostProcess](
 
 ## Constructor
 
-##  new [FilterPostProcess](/classes/2.3/FilterPostProcess)(name, kernelMatrix, ratio, camera, samplingMode, engine, reusable)
+## new [FilterPostProcess](/classes/2.3/FilterPostProcess)(name, kernelMatrix, ratio, camera, samplingMode, engine, reusable)
 
 
 

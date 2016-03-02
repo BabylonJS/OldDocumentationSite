@@ -13,7 +13,7 @@ class [ElasticEase](/classes/2.3/ElasticEase) extends [EasingFunction](/classes/
 
 ## Constructor
 
-##  new [ElasticEase](/classes/2.3/ElasticEase)(oscillations, springiness)
+## new [ElasticEase](/classes/2.3/ElasticEase)(oscillations, springiness)
 
 
 

@@ -15,7 +15,7 @@ class [StereoscopicArcRotateCamera](/classes/2.3/StereoscopicArcRotateCamera) ex
 
 ## Constructor
 
-##  new [StereoscopicArcRotateCamera](/classes/2.3/StereoscopicArcRotateCamera)(name, alpha, beta, radius, target, interaxialDistance, isSideBySide, scene)
+## new [StereoscopicArcRotateCamera](/classes/2.3/StereoscopicArcRotateCamera)(name, alpha, beta, radius, target, interaxialDistance, isSideBySide, scene)
 
 
 

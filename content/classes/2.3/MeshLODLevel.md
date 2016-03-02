@@ -13,7 +13,7 @@ class [MeshLODLevel](/classes/2.3/MeshLODLevel)
 
 ## Constructor
 
-##  new [MeshLODLevel](/classes/2.3/MeshLODLevel)(distance, mesh)
+## new [MeshLODLevel](/classes/2.3/MeshLODLevel)(distance, mesh)
 
 
 

@@ -14,9 +14,10 @@ class [DynamicTexture](/classes/2.3/DynamicTexture) extends [Texture](/classes/2
 
 ## Constructor
 
-##  new [DynamicTexture](/classes/2.3/DynamicTexture)(name, options, scene, generateMipMaps, samplingMode)
+## new [DynamicTexture](/classes/2.3/DynamicTexture)(name, options, scene, generateMipMaps, samplingMode)
 
-
+Create a new [DynamicTexture](/classes/2.3/DynamicTexture).
+A tutorial about dynamic textures can be found here : http://blogs.msdn.com/b/eternalcoding/archive/2013/08/12/creating-a-3d-chart-for-your-windows-8-1-app-using-babylon-js.aspx
 
 #### Parameters
  | Name | Type | Description
@@ -44,13 +45,14 @@ class [DynamicTexture](/classes/2.3/DynamicTexture) extends [Texture](/classes/2
 
 ### getContext() &rarr; CanvasRenderingContext2D
 
-
+Get the context
+@return CanvasRenderingContext2D The canvas where the game is rendered
 ### clear() &rarr; void
 
 
 ### update(invertY) &rarr; void
 
-
+Update the dynamic texture
 
 #### Parameters
  | Name | Type | Description
@@ -59,7 +61,7 @@ optional | invertY | boolean |   Invert the text on Y axis
 
 ### drawText(text, x, y, font, color, clearColor, invertY, update) &rarr; void
 
-
+Draw a text on view
 
 #### Parameters
  | Name | Type | Description

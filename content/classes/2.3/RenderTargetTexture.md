@@ -15,7 +15,7 @@ class [RenderTargetTexture](/classes/2.3/RenderTargetTexture) extends [Texture](
 
 ## Constructor
 
-##  new [RenderTargetTexture](/classes/2.3/RenderTargetTexture)(name, size, scene, generateMipMaps, doNotChangeAspectRatio, type, isCube)
+## new [RenderTargetTexture](/classes/2.3/RenderTargetTexture)(name, size, scene, generateMipMaps, doNotChangeAspectRatio, type, isCube)
 
 
 
@@ -34,41 +34,41 @@ optional | type | number |
 
 
 
-### static  REFRESHRATE_RENDER_ONCE : number
+### static REFRESHRATE_RENDER_ONCE : number
 
 
 
-### static  REFRESHRATE_RENDER_ONEVERYFRAME : number
+### static REFRESHRATE_RENDER_ONEVERYFRAME : number
 
 
 
-### static  REFRESHRATE_RENDER_ONEVERYTWOFRAMES : number
+### static REFRESHRATE_RENDER_ONEVERYTWOFRAMES : number
 
 
 
 ### renderList : [AbstractMesh](/classes/2.3/AbstractMesh)[]
 
-
+The render list
 
 ### renderParticles : boolean
 
-
+True to render particles ; False otherwise
 
 ### renderSprites : boolean
 
-
+True to render sprites ; False otherwise
 
 ### coordinatesMode : number
 
-
+The coordinates mode
 
 ### onBeforeRender : (faceIndex: number) =&gt; void
 
-
+Callback function before render
 
 ### onAfterRender : (faceIndex: number) =&gt; void
 
-
+Callback function after render
 
 ### onAfterUnbind : () =&gt; void
 
@@ -80,7 +80,7 @@ optional | type | number |
 
 ### activeCamera : [Camera](/classes/2.3/Camera)
 
-
+The active camera
 
 ### customRenderFunction : (opaqueSubMeshes: [SmartArray](/classes/2.3/SmartArray)&lt;[SubMesh](/classes/2.3/SubMesh)&gt;, transparentSubMeshes: [SmartArray](/classes/2.3/SmartArray)&lt;[SubMesh](/classes/2.3/SubMesh)&gt;, alphaTestSubMeshes: [SmartArray](/classes/2.3/SmartArray)&lt;[SubMesh](/classes/2.3/SubMesh)&gt;, beforeTransparents: () =&gt; void) =&gt; void
 
@@ -88,7 +88,7 @@ optional | type | number |
 
 ### refreshRate : number
 
-
+The rate of refresh
 
 ### canRescale : boolean
 
@@ -98,13 +98,14 @@ optional | type | number |
 
 ### resetRefreshCounter() &rarr; void
 
-
+Reset the refresh counter.
 ### isReady() &rarr; boolean
 
 
 ### getRenderSize() &rarr; number
 
-
+Get the render size
+@return number The render size
 ### scale(ratio) &rarr; void
 
 
@@ -119,7 +120,7 @@ optional | type | number |
 
 ### resize(size, generateMipMaps) &rarr; void
 
-
+Resize the mirror texture
 
 #### Parameters
  | Name | Type | Description
@@ -128,7 +129,7 @@ optional | type | number |
 optional | generateMipMaps | boolean |   True to generate the mipmaps
 ### render(useCameraPostProcess, dumpForDebug) &rarr; void
 
-
+Render the mirror texture
 
 #### Parameters
  | Name | Type | Description

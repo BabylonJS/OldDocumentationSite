@@ -10,13 +10,17 @@ TAGS:
 
 class [SpotLight](/classes/2.3/SpotLight) extends [Light](/classes/2.3/Light)
 
+A spot light is defined by a position, a direction, an angle and an exponent.
 
+These values define a cone of light starting from the position toward the direction.
+
+A tutorial about lights can be found here
 
 ## Constructor
 
-##  new [SpotLight](/classes/2.3/SpotLight)(name, position, direction, angle, exponent, scene)
+## new [SpotLight](/classes/2.3/SpotLight)(name, position, direction, angle, exponent, scene)
 
-
+Creates a new [SpotLight](/classes/2.3/SpotLight) object
 
 #### Parameters
  | Name | Type | Description
@@ -30,19 +34,19 @@ class [SpotLight](/classes/2.3/SpotLight) extends [Light](/classes/2.3/Light)
 
 ### position : [Vector3](/classes/2.3/Vector3)
 
-
+The position of the emitting point
 
 ### direction : [Vector3](/classes/2.3/Vector3)
 
-
+The direction of the light
 
 ### angle : number
 
-
+The size of the spotlight beam
 
 ### exponent : number
 
-
+The speed of the decay of the light with distance
 
 ### transformedPosition : [Vector3](/classes/2.3/Vector3)
 
@@ -83,7 +87,7 @@ optional | faceIndex | number |
 
 ### setDirectionToTarget(target) &rarr; [Vector3](/classes/2.3/Vector3)
 
-
+Changes the light diretion to point to the given point
 
 #### Parameters
  | Name | Type | Description

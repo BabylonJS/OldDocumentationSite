@@ -9,7 +9,7 @@ class [Sphere](/classes/2.3/Sphere) extends _Primitive
 
 ## Constructor
 
-##  new [Sphere](/classes/2.3/Sphere)(id, scene, segments, diameter, canBeRegenerated, mesh, side)
+## new [Sphere](/classes/2.3/Sphere)(id, scene, segments, diameter, canBeRegenerated, mesh, side)
 
 
 
@@ -50,7 +50,7 @@ optional | mesh | [Mesh](/classes/2.3/Mesh) |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedSphere, scene) &rarr; [Sphere](/classes/2.3/Sphere)
+### static Parse(parsedSphere, scene) &rarr; [Sphere](/classes/2.3/Sphere)
 
 
 

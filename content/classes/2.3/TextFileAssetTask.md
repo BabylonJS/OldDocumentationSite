@@ -13,9 +13,9 @@ class [TextFileAssetTask](/classes/2.3/TextFileAssetTask)
 
 ## Constructor
 
-##  new [TextFileAssetTask](/classes/2.3/TextFileAssetTask)(name, url)
+## new [TextFileAssetTask](/classes/2.3/TextFileAssetTask)(name, url)
 
-
+The [TextFileAssetTask](/classes/2.3/TextFileAssetTask) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -26,27 +26,27 @@ class [TextFileAssetTask](/classes/2.3/TextFileAssetTask)
 
 ### name : string
 
-
+The name
 
 ### url : string
 
-
+The url to this text file
 
 ### onSuccess : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh is load successfully
 
 ### onError : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh isn't load successfully
 
 ### isCompleted : boolean
 
-
+True if is completed, false otherwise.
 
 ### text : string
 
-
+The text
 
 ## Methods
 

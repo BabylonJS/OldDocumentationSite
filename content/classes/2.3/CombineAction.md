@@ -13,9 +13,9 @@ class [CombineAction](/classes/2.3/CombineAction) extends [Action](/classes/2.3/
 
 ## Constructor
 
-##  new [CombineAction](/classes/2.3/CombineAction)(triggerOptions, children, condition)
+## new [CombineAction](/classes/2.3/CombineAction)(triggerOptions, children, condition)
 
-
+This action is a container. You can use it to execute many actions simultaneously on the same trigger. The children property must be an array of actions
 
 #### Parameters
  | Name | Type | Description
@@ -27,7 +27,7 @@ optional | condition | [Condition](/classes/2.3/Condition) |   The condition to 
 
 ### children : [Action](/classes/2.3/Action)[]
 
-
+The childrens actions
 
 ## Methods
 

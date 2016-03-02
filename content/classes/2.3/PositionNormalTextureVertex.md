@@ -11,7 +11,7 @@ class [PositionNormalTextureVertex](/classes/2.3/PositionNormalTextureVertex)
 
 ## Constructor
 
-##  new [PositionNormalTextureVertex](/classes/2.3/PositionNormalTextureVertex)(position, normal, uv)
+## new [PositionNormalTextureVertex](/classes/2.3/PositionNormalTextureVertex)(position, normal, uv)
 
 
 

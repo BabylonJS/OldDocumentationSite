@@ -9,7 +9,7 @@ class [Ground](/classes/2.3/Ground) extends _Primitive
 
 ## Constructor
 
-##  new [Ground](/classes/2.3/Ground)(id, scene, width, height, subdivisions, canBeRegenerated, mesh)
+## new [Ground](/classes/2.3/Ground)(id, scene, width, height, subdivisions, canBeRegenerated, mesh)
 
 
 
@@ -50,7 +50,7 @@ optional | canBeRegenerated | boolean |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedGround, scene) &rarr; [Ground](/classes/2.3/Ground)
+### static Parse(parsedGround, scene) &rarr; [Ground](/classes/2.3/Ground)
 
 
 

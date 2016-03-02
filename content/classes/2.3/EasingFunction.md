@@ -13,15 +13,15 @@ class [EasingFunction](/classes/2.3/EasingFunction)
 
 ## Members
 
-### static  EASINGMODE_EASEIN : number
+### static EASINGMODE_EASEIN : number
 
 
 
-### static  EASINGMODE_EASEOUT : number
+### static EASINGMODE_EASEOUT : number
 
 
 
-### static  EASINGMODE_EASEINOUT : number
+### static EASINGMODE_EASEINOUT : number
 
 
 

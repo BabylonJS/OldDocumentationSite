@@ -13,7 +13,7 @@ class [Node](/classes/2.3/Node)
 
 ## Constructor
 
-##  new [Node](/classes/2.3/Node)(name, scene)
+## new [Node](/classes/2.3/Node)(name, scene)
 
 @constructor
 
@@ -26,15 +26,15 @@ class [Node](/classes/2.3/Node)
 
 ### parent : [Node](/classes/2.3/Node)
 
-
+The parent node of the node
 
 ### name : string
 
-
+The name of the node
 
 ### id : string
 
-
+The id of the node
 
 ### uniqueId : number
 
@@ -42,30 +42,30 @@ class [Node](/classes/2.3/Node)
 
 ### state : string
 
-
+The state of the node
 
 ### animations : [Animation](/classes/2.3/Animation)[]
 
-
+The animations of the node
 
 ### onReady : (node: [Node](/classes/2.3/Node)) =&gt; void
 
-
+Called when node is ready
 
 ## Methods
 
 ### getScene() &rarr; [Scene](/classes/2.3/Scene)
 
-
+Get the scene linked to this node
 ### getEngine() &rarr; [Engine](/classes/2.3/Engine)
 
-
+Get the engine linked to this node
 ### getWorldMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Get the world matrix
 ### updateCache(force) &rarr; void
 
-
+Update the cache
 
 #### Parameters
  | Name | Type | Description
@@ -74,10 +74,10 @@ optional | force | boolean |   True to force the update
 
 ### isSynchronizedWithParent() &rarr; boolean
 
-
+Return true if the node is synchronized with parent
 ### isSynchronized(updateCache) &rarr; boolean
 
-
+Return true if the node is synchronized
 
 #### Parameters
  | Name | Type | Description
@@ -86,7 +86,7 @@ optional | updateCache | boolean |   True to update the cache
 
 ### hasNewParent(update) &rarr; boolean
 
-
+Return true if the node has new parent
 
 #### Parameters
  | Name | Type | Description
@@ -186,7 +186,7 @@ optional | speedRatio | number |
 ### serializeAnimationRanges() &rarr; any
 
 
-### static  ParseAnimationRanges(node, parsedNode, scene) &rarr; void
+### static ParseAnimationRanges(node, parsedNode, scene) &rarr; void
 
 
 

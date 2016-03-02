@@ -15,7 +15,7 @@ class [AnaglyphArcRotateCamera](/classes/2.3/AnaglyphArcRotateCamera) extends [A
 
 ## Constructor
 
-##  new [AnaglyphArcRotateCamera](/classes/2.3/AnaglyphArcRotateCamera)(name, alpha, beta, radius, target, interaxialDistance, scene)
+## new [AnaglyphArcRotateCamera](/classes/2.3/AnaglyphArcRotateCamera)(name, alpha, beta, radius, target, interaxialDistance, scene)
 
 
 

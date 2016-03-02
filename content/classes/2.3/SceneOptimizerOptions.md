@@ -13,7 +13,7 @@ class [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)
 
 ## Constructor
 
-##  new [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)(targetFrameRate, trackerDuration)
+## new [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)(targetFrameRate, trackerDuration)
 
 
 
@@ -38,7 +38,7 @@ optional | trackerDuration | number |
 
 ## Methods
 
-### static  LowDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)
+### static LowDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)
 
 
 
@@ -47,7 +47,7 @@ optional | trackerDuration | number |
 ---|---|---|---
 optional | targetFrameRate | number |   
 
-### static  ModerateDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)
+### static ModerateDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)
 
 
 
@@ -56,7 +56,7 @@ optional | targetFrameRate | number |
 ---|---|---|---
 optional | targetFrameRate | number |   
 
-### static  HighDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)
+### static HighDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.3/SceneOptimizerOptions)
 
 
 

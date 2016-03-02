@@ -7,13 +7,13 @@ PG_VERSION: 2.1
 
 class [IntersectionInfo](/classes/2.3/IntersectionInfo)
 
-
+Get information of Intersection between two meshes
 
 ## Constructor
 
-##  new [IntersectionInfo](/classes/2.3/IntersectionInfo)(bu, bv, distance)
+## new [IntersectionInfo](/classes/2.3/IntersectionInfo)(bu, bv, distance)
 
-
+The [IntersectionInfo](/classes/2.3/IntersectionInfo) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -25,15 +25,15 @@ class [IntersectionInfo](/classes/2.3/IntersectionInfo)
 
 ### bu : number
 
-
+Coordinates texture of the mesh represents the x axis
 
 ### bv : number
 
-
+Coordinates texture of the mesh represents the y axis
 
 ### distance : number
 
-
+Represents the distance between the screen the click on the mesh
 
 ### faceId : number
 

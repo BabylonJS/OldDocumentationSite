@@ -13,9 +13,9 @@ class [ValueCondition](/classes/2.3/ValueCondition) extends [Condition](/classes
 
 ## Constructor
 
-##  new [ValueCondition](/classes/2.3/ValueCondition)(actionManager, target, propertyPath, value, operator)
+## new [ValueCondition](/classes/2.3/ValueCondition)(actionManager, target, propertyPath, value, operator)
 
-
+The Value condition constructor
 
 #### Parameters
  | Name | Type | Description
@@ -28,31 +28,31 @@ class [ValueCondition](/classes/2.3/ValueCondition) extends [Condition](/classes
 
 ### propertyPath : string
 
-
+The propertyPath of condition
 
 ### value : any
 
-
+The value of the condition
 
 ### operator : number
 
+The operator of the condition
 
+### static IsEqual : number
 
-### static  IsEqual : number
+isEqual of value condition
 
+### static IsDifferent : number
 
+isDifferent of value condition
 
-### static  IsDifferent : number
+### static IsGreater : number
 
+isGreater of value condition
 
+### static IsLesser : number
 
-### static  IsGreater : number
-
-
-
-### static  IsLesser : number
-
-
+isLesser of value condition
 
 ## Methods
 
