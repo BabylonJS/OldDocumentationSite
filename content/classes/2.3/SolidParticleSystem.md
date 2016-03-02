@@ -9,7 +9,7 @@ Full documentation here : http://doc.babylonjs.com/tutorials/Solid_Particle_Syst
 
 ## Constructor
 
-##  new [SolidParticleSystem](/classes/2.3/SolidParticleSystem)(name, scene, options)
+## new [SolidParticleSystem](/classes/2.3/SolidParticleSystem)(name, scene, options)
 
 Creates a SPS (Solid [Particle](/classes/2.3/Particle) System) object.
 
@@ -57,6 +57,8 @@ optional | options | { updatable: boolean,  isPickable: boolean } |
 
 True if the SPS is set as always visible
 
+
+
 Sets the SPS as always visible or not
 
 doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#sps-visibility
@@ -64,6 +66,8 @@ doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#sps-visibility
 ### isVisibilityBoxLocked : boolean
 
 True if the SPS visibility box is locked. The underlying mesh bounding box is then not updatable any more.
+
+
 
 Sets the SPS visibility box as locked or not. This enables/disables the underlying mesh bounding box updates.
 

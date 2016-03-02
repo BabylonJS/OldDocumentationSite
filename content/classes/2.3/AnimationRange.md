@@ -9,7 +9,7 @@ class [AnimationRange](/classes/2.3/AnimationRange)
 
 ## Constructor
 
-##  new [AnimationRange](/classes/2.3/AnimationRange)(name, from, to)
+## new [AnimationRange](/classes/2.3/AnimationRange)(name, from, to)
 
 
 

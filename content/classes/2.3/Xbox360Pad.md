@@ -15,11 +15,11 @@ class [Xbox360Pad](/classes/2.3/Xbox360Pad) extends [Gamepad](/classes/2.3/Gamep
 
 ### leftTrigger : number
 
-
+Contains a value of the [Xbox360Dpad](/classes/2.3/Xbox360Dpad) enum refering to the left pad's direction
 
 ### rightTrigger : number
 
-
+Contains a value of the [Xbox360Dpad](/classes/2.3/Xbox360Dpad) enum refering to the right pad's direction
 
 ### buttonA : number
 
@@ -81,7 +81,7 @@ class [Xbox360Pad](/classes/2.3/Xbox360Pad) extends [Gamepad](/classes/2.3/Gamep
 
 ### onlefttriggerchanged(callback) &rarr; void
 
-
+Binds an action on the left trigger property change
 
 #### Parameters
  | Name | Type | Description
@@ -90,7 +90,7 @@ class [Xbox360Pad](/classes/2.3/Xbox360Pad) extends [Gamepad](/classes/2.3/Gamep
 
 ### onrighttriggerchanged(callback) &rarr; void
 
-
+Binds an action on the right trigger property change
 
 #### Parameters
  | Name | Type | Description
@@ -99,7 +99,7 @@ class [Xbox360Pad](/classes/2.3/Xbox360Pad) extends [Gamepad](/classes/2.3/Gamep
 
 ### onbuttondown(callback) &rarr; void
 
-
+Binds an action on button pressed
 
 #### Parameters
  | Name | Type | Description
@@ -108,7 +108,7 @@ class [Xbox360Pad](/classes/2.3/Xbox360Pad) extends [Gamepad](/classes/2.3/Gamep
 
 ### onbuttonup(callback) &rarr; void
 
-
+Binds an action on button released
 
 #### Parameters
  | Name | Type | Description
@@ -117,7 +117,7 @@ class [Xbox360Pad](/classes/2.3/Xbox360Pad) extends [Gamepad](/classes/2.3/Gamep
 
 ### ondpaddown(callback) &rarr; void
 
-
+Binds an action on stick pressed
 
 #### Parameters
  | Name | Type | Description
@@ -126,7 +126,7 @@ class [Xbox360Pad](/classes/2.3/Xbox360Pad) extends [Gamepad](/classes/2.3/Gamep
 
 ### ondpadup(callback) &rarr; void
 
-
+Binds an action on stick released
 
 #### Parameters
  | Name | Type | Description

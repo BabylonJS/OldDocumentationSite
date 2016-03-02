@@ -9,13 +9,15 @@ TAGS:
 
 class [RefractionPostProcess](/classes/2.3/RefractionPostProcess) extends [PostProcess](/classes/2.3/PostProcess)
 
+Builtin postprocess applying e refraction texture as a postprocess
 
+A tutorial about post process can be found here
 
 ## Constructor
 
-##  new [RefractionPostProcess](/classes/2.3/RefractionPostProcess)(name, refractionTextureUrl, color, depth, colorLevel, ratio, camera, samplingMode, engine, reusable)
+## new [RefractionPostProcess](/classes/2.3/RefractionPostProcess)(name, refractionTextureUrl, color, depth, colorLevel, ratio, camera, samplingMode, engine, reusable)
 
-
+The Postprocess constructor
 
 #### Parameters
  | Name | Type | Description
@@ -33,15 +35,15 @@ optional | engine | [Engine](/classes/2.3/Engine) |   The engine to attach the p
 
 ### color : [Color3](/classes/2.3/Color3)
 
-
+The base color of the refraction (used to taint the rendering)
 
 ### depth : number
 
-
+The simulated refraction
 
 ### colorLevel : number
 
-
+The coefficient of the base color (0 to remove base color tainting)
 
 ## Methods
 

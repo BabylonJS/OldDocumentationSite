@@ -9,13 +9,13 @@ TAGS:
 
 class [ImageAssetTask](/classes/2.3/ImageAssetTask)
 
-
+Load task on the given image
 
 ## Constructor
 
-##  new [ImageAssetTask](/classes/2.3/ImageAssetTask)(name, url)
+## new [ImageAssetTask](/classes/2.3/ImageAssetTask)(name, url)
 
-
+The [ImageAssetTask](/classes/2.3/ImageAssetTask)
 
 #### Parameters
  | Name | Type | Description
@@ -26,27 +26,27 @@ class [ImageAssetTask](/classes/2.3/ImageAssetTask)
 
 ### name : string
 
-
+The name
 
 ### url : string
 
-
+The url to this image
 
 ### onSuccess : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh is load successfully
 
 ### onError : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh isn't load successfully
 
 ### isCompleted : boolean
 
-
+True if is completed, false otherwise.
 
 ### image : HTMLImageElement
 
-
+The image
 
 ## Methods
 

@@ -15,7 +15,7 @@ class [ProceduralTexture](/classes/2.3/ProceduralTexture) extends [Texture](/cla
 
 ## Constructor
 
-##  new [ProceduralTexture](/classes/2.3/ProceduralTexture)(name, size, fragment, scene, fallbackTexture, generateMipMaps, isCube)
+## new [ProceduralTexture](/classes/2.3/ProceduralTexture)(name, size, fragment, scene, fallbackTexture, generateMipMaps, isCube)
 
 
 

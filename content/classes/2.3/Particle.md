@@ -15,15 +15,15 @@ class [Particle](/classes/2.3/Particle)
 
 ### position : [Vector3](/classes/2.3/Vector3)
 
-
+This particle position
 
 ### direction : [Vector3](/classes/2.3/Vector3)
 
-
+This particle direction
 
 ### color : [Color4](/classes/2.3/Color4)
 
-
+This particle color
 
 ### colorStep : [Color4](/classes/2.3/Color4)
 
@@ -31,19 +31,19 @@ class [Particle](/classes/2.3/Particle)
 
 ### lifeTime : number
 
-
+This particle lifetime
 
 ### age : number
 
-
+This particle age
 
 ### size : number
 
-
+This particle size
 
 ### angle : number
 
-
+This particle angle
 
 ### angularSpeed : number
 

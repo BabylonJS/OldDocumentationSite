@@ -11,7 +11,7 @@ class [SimplificationQueue](/classes/2.3/SimplificationQueue)
 
 ## Constructor
 
-##  new [SimplificationQueue](/classes/2.3/SimplificationQueue)()
+## new [SimplificationQueue](/classes/2.3/SimplificationQueue)()
 
 
 ## Members

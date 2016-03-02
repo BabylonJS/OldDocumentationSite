@@ -9,7 +9,7 @@ class [Ribbon](/classes/2.3/Ribbon) extends _Primitive
 
 ## Constructor
 
-##  new [Ribbon](/classes/2.3/Ribbon)(id, scene, pathArray, closeArray, closePath, offset, canBeRegenerated, mesh, side)
+## new [Ribbon](/classes/2.3/Ribbon)(id, scene, pathArray, closeArray, closePath, offset, canBeRegenerated, mesh, side)
 
 
 

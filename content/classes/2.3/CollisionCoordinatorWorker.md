@@ -13,16 +13,16 @@ class [CollisionCoordinatorWorker](/classes/2.3/CollisionCoordinatorWorker)
 
 ## Constructor
 
-##  new [CollisionCoordinatorWorker](/classes/2.3/CollisionCoordinatorWorker)()
+## new [CollisionCoordinatorWorker](/classes/2.3/CollisionCoordinatorWorker)()
 
 
 ## Members
 
-### static  SerializeMesh : (mesh: [AbstractMesh](/classes/2.3/AbstractMesh)) =&gt; SerializedMesh
+### static SerializeMesh : (mesh: [AbstractMesh](/classes/2.3/AbstractMesh)) =&gt; SerializedMesh
 
 
 
-### static  SerializeGeometry : (geometry: [Geometry](/classes/2.3/Geometry)) =&gt; SerializedGeometry
+### static SerializeGeometry : (geometry: [Geometry](/classes/2.3/Geometry)) =&gt; SerializedGeometry
 
 
 

@@ -13,7 +13,7 @@ class [SoundTrack](/classes/2.3/SoundTrack)
 
 ## Constructor
 
-##  new [SoundTrack](/classes/2.3/SoundTrack)(scene, options)
+## new [SoundTrack](/classes/2.3/SoundTrack)(scene, options)
 
 
 

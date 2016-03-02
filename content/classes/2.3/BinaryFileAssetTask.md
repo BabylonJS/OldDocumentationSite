@@ -7,13 +7,13 @@ PG_VERSION: 2.1
 
 class [BinaryFileAssetTask](/classes/2.3/BinaryFileAssetTask)
 
-
+Load task on the given binary file
 
 ## Constructor
 
-##  new [BinaryFileAssetTask](/classes/2.3/BinaryFileAssetTask)(name, url)
+## new [BinaryFileAssetTask](/classes/2.3/BinaryFileAssetTask)(name, url)
 
-
+The [BinaryFileAssetTask](/classes/2.3/BinaryFileAssetTask)
 
 #### Parameters
  | Name | Type | Description
@@ -24,27 +24,27 @@ class [BinaryFileAssetTask](/classes/2.3/BinaryFileAssetTask)
 
 ### name : string
 
-
+The name
 
 ### url : string
 
-
+The url for this binary file
 
 ### onSuccess : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh is load successfully
 
 ### onError : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh isn't load successfully
 
 ### isCompleted : boolean
 
-
+True if is completed, false otherwise.
 
 ### data : ArrayBuffer
 
-
+The data
 
 ## Methods
 

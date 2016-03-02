@@ -13,9 +13,10 @@ class [MultiMaterial](/classes/2.3/MultiMaterial) extends [Material](/classes/2.
 
 ## Constructor
 
-##  new [MultiMaterial](/classes/2.3/MultiMaterial)(name, scene)
+## new [MultiMaterial](/classes/2.3/MultiMaterial)(name, scene)
 
-
+Create a new [MultiMaterial](/classes/2.3/MultiMaterial).
+A tutorial about multi materials can be found here : http://blogs.msdn.com/b/eternalcoding/archive/2013/07/10/babylon-js-using-multi-materials.aspx
 
 #### Parameters
  | Name | Type | Description
@@ -26,13 +27,13 @@ class [MultiMaterial](/classes/2.3/MultiMaterial) extends [Material](/classes/2.
 
 ### subMaterials : [Material](/classes/2.3/Material)[]
 
-
+Array of sub materials
 
 ## Methods
 
 ### getSubMaterial(index) &rarr; [Material](/classes/2.3/Material)
 
-
+Get a sub material
 
 #### Parameters
  | Name | Type | Description

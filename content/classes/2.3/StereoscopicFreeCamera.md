@@ -16,7 +16,7 @@ class [StereoscopicFreeCamera](/classes/2.3/StereoscopicFreeCamera) extends [Fre
 
 ## Constructor
 
-##  new [StereoscopicFreeCamera](/classes/2.3/StereoscopicFreeCamera)(name, position, interaxialDistance, isSideBySide, scene)
+## new [StereoscopicFreeCamera](/classes/2.3/StereoscopicFreeCamera)(name, position, interaxialDistance, isSideBySide, scene)
 
 
 

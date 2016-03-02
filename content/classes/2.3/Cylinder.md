@@ -9,7 +9,7 @@ class [Cylinder](/classes/2.3/Cylinder) extends _Primitive
 
 ## Constructor
 
-##  new [Cylinder](/classes/2.3/Cylinder)(id, scene, height, diameterTop, diameterBottom, tessellation, subdivisions, canBeRegenerated, mesh, side)
+## new [Cylinder](/classes/2.3/Cylinder)(id, scene, height, diameterTop, diameterBottom, tessellation, subdivisions, canBeRegenerated, mesh, side)
 
 
 
@@ -65,7 +65,7 @@ optional | mesh | [Mesh](/classes/2.3/Mesh) |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedCylinder, scene) &rarr; [Cylinder](/classes/2.3/Cylinder)
+### static Parse(parsedCylinder, scene) &rarr; [Cylinder](/classes/2.3/Cylinder)
 
 
 

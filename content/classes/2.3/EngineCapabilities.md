@@ -9,25 +9,25 @@ TAGS:
 
 class [EngineCapabilities](/classes/2.3/EngineCapabilities)
 
-
+Regroup the different parameters linked to the using browser
 
 ## Members
 
 ### maxTexturesImageUnits : number
 
-
+The maximum textures image
 
 ### maxTextureSize : number
 
-
+The maximum texture size
 
 ### maxCubemapTextureSize : number
 
-
+The maximum cube
 
 ### maxRenderTextureSize : number
 
-
+The maximum render texture size
 
 ### standardDerivatives : boolean
 
@@ -47,7 +47,7 @@ class [EngineCapabilities](/classes/2.3/EngineCapabilities)
 
 ### maxAnisotropy : number
 
-
+The maximum anisotropy for the using browser
 
 ### instancedArrays : any
 

@@ -13,7 +13,7 @@ class [ExponentialEase](/classes/2.3/ExponentialEase) extends [EasingFunction](/
 
 ## Constructor
 
-##  new [ExponentialEase](/classes/2.3/ExponentialEase)(exponent)
+## new [ExponentialEase](/classes/2.3/ExponentialEase)(exponent)
 
 
 

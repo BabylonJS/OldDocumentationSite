@@ -13,9 +13,9 @@ class [Gamepads](/classes/2.3/Gamepads)
 
 ## Constructor
 
-##  new [Gamepads](/classes/2.3/Gamepads)(ongamedpadconnected)
+## new [Gamepads](/classes/2.3/Gamepads)(ongamedpadconnected)
 
-
+Builds a [Gamepads](/classes/2.3/Gamepads) object
 
 #### Parameters
  | Name | Type | Description

@@ -11,9 +11,11 @@ class [Skeleton](/classes/2.3/Skeleton)
 
 ## Constructor
 
-##  new [Skeleton](/classes/2.3/Skeleton)(name, id, scene)
+## new [Skeleton](/classes/2.3/Skeleton)(name, id, scene)
 
-
+A skeleton (BABYLON.[Skeleton](/classes/2.3/Skeleton)) contains a hierarchy of bones (BABYLON.[Bone](/classes/2.3/Bone)).
+All bones can be found into the skeleton.bones array.
+A tutorial about Bones and Skeletons ban be found here
 
 #### Parameters
  | Name | Type | Description
@@ -25,15 +27,15 @@ class [Skeleton](/classes/2.3/Skeleton)
 
 ### name : string
 
-
+Name of the skeleton
 
 ### id : string
 
-
+Name of the skeleton
 
 ### bones : [Bone](/classes/2.3/Bone)[]
 
-
+Array of bones composing the skeleton
 
 ### needInitialSkinMatrix : boolean
 
@@ -106,10 +108,10 @@ optional | loop | boolean |
 optional | speedRatio | number | 
 ### prepare() &rarr; void
 
-
+Prepare bones' skeleton
 ### getAnimatables() &rarr; IAnimatable[]
 
-
+Get the animatables of the skeleton
 ### clone(name, id) &rarr; [Skeleton](/classes/2.3/Skeleton)
 
 
@@ -125,7 +127,7 @@ optional | speedRatio | number |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedSkeleton, scene) &rarr; [Skeleton](/classes/2.3/Skeleton)
+### static Parse(parsedSkeleton, scene) &rarr; [Skeleton](/classes/2.3/Skeleton)
 
 
 

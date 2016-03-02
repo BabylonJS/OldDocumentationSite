@@ -7,13 +7,13 @@ PG_VERSION: 2.1
 
 class [LensFlareSystem](/classes/2.3/LensFlareSystem)
 
-
+Create a lens Flare system
 
 ## Constructor
 
-##  new [LensFlareSystem](/classes/2.3/LensFlareSystem)(name, emitter, scene)
+## new [LensFlareSystem](/classes/2.3/LensFlareSystem)(name, emitter, scene)
 
-
+The lens Flare system
 
 #### Parameters
  | Name | Type | Description
@@ -25,19 +25,19 @@ class [LensFlareSystem](/classes/2.3/LensFlareSystem)
 
 ### name : string
 
-
+The name of the lens Flare system
 
 ### lensFlares : [LensFlare](/classes/2.3/LensFlare)[]
 
-
+Lens flares array containing all lens flares
 
 ### borderLimit : number
 
-
+Lens flare system border limit.
 
 ### meshesSelectionPredicate : (mesh: [Mesh](/classes/2.3/Mesh)) =&gt; boolean
 
-
+Verify that a mesh can receive lens flares.
 
 ### layerMask : number
 
@@ -45,16 +45,16 @@ class [LensFlareSystem](/classes/2.3/LensFlareSystem)
 
 ### isEnabled : boolean
 
-
+Lens flare system is enabled
 
 ## Methods
 
 ### getScene() &rarr; [Scene](/classes/2.3/Scene)
 
-
+Get the scene where the lens flare system is.
 ### getEmitter() &rarr; any
 
-
+Get the emitter
 ### setEmitter(newEmitter) &rarr; void
 
 
@@ -66,10 +66,10 @@ class [LensFlareSystem](/classes/2.3/LensFlareSystem)
 
 ### getEmitterPosition() &rarr; [Vector3](/classes/2.3/Vector3)
 
-
+Get the emitter position. Returns its absolute position if the emitter has an absolute position.
 ### computeEffectivePosition(globalViewport) &rarr; boolean
 
-
+Compute the effective position
 
 #### Parameters
  | Name | Type | Description
@@ -78,11 +78,11 @@ class [LensFlareSystem](/classes/2.3/LensFlareSystem)
 
 ### render() &rarr; boolean
 
-
+Render the lens flare system
 ### dispose() &rarr; void
 
 
-### static  Parse(parsedLensFlareSystem, scene, rootUrl) &rarr; [LensFlareSystem](/classes/2.3/LensFlareSystem)
+### static Parse(parsedLensFlareSystem, scene, rootUrl) &rarr; [LensFlareSystem](/classes/2.3/LensFlareSystem)
 
 
 

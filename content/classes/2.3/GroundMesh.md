@@ -14,9 +14,9 @@ class [GroundMesh](/classes/2.3/GroundMesh) extends [Mesh](/classes/2.3/Mesh)
 
 ## Constructor
 
-##  new [GroundMesh](/classes/2.3/GroundMesh)(name, scene)
+## new [GroundMesh](/classes/2.3/GroundMesh)(name, scene)
 
-
+The [GroundMesh](/classes/2.3/GroundMesh) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -27,11 +27,11 @@ class [GroundMesh](/classes/2.3/GroundMesh) extends [Mesh](/classes/2.3/Mesh)
 
 ### generateOctree : boolean
 
-
+true if this is generated, false if is not
 
 ### subdivisions : number
 
-
+The subdivision of the [GroundMesh](/classes/2.3/GroundMesh)
 
 ## Methods
 

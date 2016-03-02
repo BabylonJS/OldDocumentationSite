@@ -11,7 +11,7 @@ An implementation of a loop for asynchronous functions.
 
 ## Constructor
 
-##  new [AsyncLoop](/classes/2.3/AsyncLoop)(iterations, _fn, _successCallback, offset)
+## new [AsyncLoop](/classes/2.3/AsyncLoop)(iterations, _fn, _successCallback, offset)
 
 Constroctor.
 
@@ -39,7 +39,7 @@ Execute the next iteration. Must be called after the last iteration was finished
 ### breakLoop() &rarr; void
 
 Break the loop and run the success callback.
-### static  Run(iterations, _fn, _successCallback, offset) &rarr; [AsyncLoop](/classes/2.3/AsyncLoop)
+### static Run(iterations, _fn, _successCallback, offset) &rarr; [AsyncLoop](/classes/2.3/AsyncLoop)
 
 Helper function
 
@@ -49,7 +49,7 @@ Helper function
  | iterations | number |   total number of iterations total number of iterations
  | _fn | (asyncLoop: [AsyncLoop](/classes/2.3/AsyncLoop)) =&gt; void |   
  | _successCallback | () =&gt; void |   
-### static  SyncAsyncForLoop(iterations, syncedIterations, fn, callback, breakFunction, timeout) &rarr; void
+### static SyncAsyncForLoop(iterations, syncedIterations, fn, callback, breakFunction, timeout) &rarr; void
 
 A for-loop that will run a given number of iterations synchronous and the rest async.
 

@@ -13,9 +13,9 @@ class [SetStateAction](/classes/2.3/SetStateAction) extends [Action](/classes/2.
 
 ## Constructor
 
-##  new [SetStateAction](/classes/2.3/SetStateAction)(triggerOptions, target, value, condition)
+## new [SetStateAction](/classes/2.3/SetStateAction)(triggerOptions, target, value, condition)
 
-
+Create a new set state action
 
 #### Parameters
  | Name | Type | Description
@@ -27,7 +27,7 @@ class [SetStateAction](/classes/2.3/SetStateAction) extends [Action](/classes/2.
 
 ### value : string
 
-
+The action value
 
 ## Methods
 

@@ -16,7 +16,7 @@ class [VRDeviceOrientationFreeCamera](/classes/2.3/VRDeviceOrientationFreeCamera
 
 ## Constructor
 
-##  new [VRDeviceOrientationFreeCamera](/classes/2.3/VRDeviceOrientationFreeCamera)(name, position, scene, compensateDistortion)
+## new [VRDeviceOrientationFreeCamera](/classes/2.3/VRDeviceOrientationFreeCamera)(name, position, scene, compensateDistortion)
 
 
 

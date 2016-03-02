@@ -14,9 +14,10 @@ class [Camera](/classes/2.3/Camera) extends [Node](/classes/2.3/Node)
 
 ## Constructor
 
-##  new [Camera](/classes/2.3/Camera)(name, position, scene)
+## new [Camera](/classes/2.3/Camera)(name, position, scene)
 
-
+Creates a new [Camera](/classes/2.3/Camera).
+A tutorial about [ArcRotateCamera](/classes/2.3/ArcRotateCamera) can be found here
 
 #### Parameters
  | Name | Type | Description
@@ -28,99 +29,101 @@ class [Camera](/classes/2.3/Camera) extends [Node](/classes/2.3/Node)
 
 ### position : [Vector3](/classes/2.3/Vector3)
 
+Position of the camera
 
-
-### static  PERSPECTIVE_CAMERA : number
-
-
-
-### static  ORTHOGRAPHIC_CAMERA : number
+### static PERSPECTIVE_CAMERA : number
 
 
 
-### static  FOVMODE_VERTICAL_FIXED : number
+### static ORTHOGRAPHIC_CAMERA : number
 
 
 
-### static  FOVMODE_HORIZONTAL_FIXED : number
+### static FOVMODE_VERTICAL_FIXED : number
 
 
 
-### static  RIG_MODE_NONE : number
+### static FOVMODE_HORIZONTAL_FIXED : number
 
 
 
-### static  RIG_MODE_STEREOSCOPIC_ANAGLYPH : number
+### static RIG_MODE_NONE : number
 
 
 
-### static  RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_PARALLEL : number
+### static RIG_MODE_STEREOSCOPIC_ANAGLYPH : number
 
 
 
-### static  RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_CROSSEYED : number
+### static RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_PARALLEL : number
 
 
 
-### static  RIG_MODE_STEREOSCOPIC_OVERUNDER : number
+### static RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_CROSSEYED : number
 
 
 
-### static  RIG_MODE_VR : number
+### static RIG_MODE_STEREOSCOPIC_OVERUNDER : number
+
+
+
+### static RIG_MODE_VR : number
 
 
 
 ### upVector : [Vector3](/classes/2.3/Vector3)
 
-
+[Camera](/classes/2.3/Camera) up
 
 ### orthoLeft : any
 
-
+For orthographic camera, it's the left side of point of view
 
 ### orthoRight : any
 
-
+For orthographic camera, it's the right side of point of view
 
 ### orthoBottom : any
 
-
+For orthegraphic camera, it's the bottom side of point of view
 
 ### orthoTop : any
 
-
+For orthographic camera, it's the top side of point of view
 
 ### fov : number
 
-
+Field of view of the camera
 
 ### minZ : number
 
-
+Minimum distance of view
 
 ### maxZ : number
 
-
+Maximum distance of view
 
 ### inertia : number
 
-
+Inertia of the camera
 
 ### mode : number
 
+0 = PERSPECTIVE
 
+1 = ORTHOGRAPHIC
 
 ### isIntermediate : boolean
 
-
+True if this camera is a subcamera, false otherwise
 
 ### viewport : [Viewport](/classes/2.3/Viewport)
 
-
+The viewport
 
 ### layerMask : number
 
-
+The layerMask
 
 ### fovMode : number
 
@@ -150,7 +153,7 @@ class [Camera](/classes/2.3/Camera) extends [Node](/classes/2.3/Node)
 
 ### attachControl(element) &rarr; void
 
-
+Attach the control and display of the camera to the element
 
 #### Parameters
  | Name | Type | Description
@@ -159,7 +162,7 @@ class [Camera](/classes/2.3/Camera) extends [Node](/classes/2.3/Node)
 
 ### detachControl(element) &rarr; void
 
-
+Detach the control and display of the camera from the element
 
 #### Parameters
  | Name | Type | Description
@@ -168,7 +171,7 @@ class [Camera](/classes/2.3/Camera) extends [Node](/classes/2.3/Node)
 
 ### attachPostProcess(postProcess, insertAt) &rarr; number
 
-
+Attaches a given post process
 
 #### Parameters
  | Name | Type | Description
@@ -177,7 +180,7 @@ class [Camera](/classes/2.3/Camera) extends [Node](/classes/2.3/Node)
 optional | insertAt | number |   Index of postProcess to add
 ### detachPostProcess(postProcess, atIndices) &rarr; number[]
 
-
+Detach a fiven post process
 
 #### Parameters
  | Name | Type | Description
@@ -186,10 +189,10 @@ optional | insertAt | number |   Index of postProcess to add
 optional | atIndices | any |   Index of postProcess to detach
 ### getWorldMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Get the worldMatrix
 ### getViewMatrix(force) &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Get the viewMatrix
 
 #### Parameters
  | Name | Type | Description
@@ -198,7 +201,7 @@ optional | force | boolean |
 
 ### getProjectionMatrix(force) &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Get the projectionMatrix
 
 #### Parameters
  | Name | Type | Description
@@ -238,7 +241,7 @@ May needs to be overridden by children so sub has required properties to be copi
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedCamera, scene) &rarr; [Camera](/classes/2.3/Camera)
+### static Parse(parsedCamera, scene) &rarr; [Camera](/classes/2.3/Camera)
 
 
 
