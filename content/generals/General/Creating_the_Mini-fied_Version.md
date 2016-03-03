@@ -26,6 +26,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Culling/babylon.boundingSphere.js"></script>
     <script src="src/Culling/babylon.boundingBox.js"></script>
     <script src="src/Culling/babylon.boundingInfo.js"></script>
+    <script src="src/Culling/babylon.ray.js"></script>
     <script src="src/Mesh/babylon.abstractMesh.js"></script>
     <script src="src/Lights/babylon.light.js"></script>
     <script src="src/Lights/babylon.pointLight.js"></script>
