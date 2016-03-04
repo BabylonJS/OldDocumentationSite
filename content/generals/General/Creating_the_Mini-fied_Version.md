@@ -102,8 +102,8 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/LensFlare/babylon.lensFlareSystem.js"></script>
     <script src="src/Physics/Plugins/babylon.cannonJSPlugin.js"></script>
     <script src="src/Physics/Plugins/babylon.oimoJSPlugin.js"></script>
-    <script src="src/Physics/babylon.physicsEngine.js"></script>
     <script src="src/Physics/babylon.physicsImpostor.js"></script>
+    <script src="src/Physics/babylon.physicsEngine.js"></script>
     <script src="src/Physics/babylon.physicsJoint.js"></script>
     <script src="src/Tools/babylon.sceneSerializer.js"></script>
     <script src="src/Mesh/babylon.csg.js"></script>
