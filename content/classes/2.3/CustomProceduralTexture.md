@@ -15,7 +15,7 @@ class [CustomProceduralTexture](/classes/2.3/CustomProceduralTexture) extends [P
 
 ## Constructor
 
-##  new [CustomProceduralTexture](/classes/2.3/CustomProceduralTexture)(name, texturePath, size, scene, fallbackTexture, generateMipMaps)
+## new [CustomProceduralTexture](/classes/2.3/CustomProceduralTexture)(name, texturePath, size, scene, fallbackTexture, generateMipMaps)
 
 
 

@@ -13,7 +13,7 @@ class [FilesInput](/classes/2.3/FilesInput)
 
 ## Constructor
 
-##  new [FilesInput](/classes/2.3/FilesInput)(p_engine, p_scene, p_canvas, p_sceneLoadedCallback, p_progressCallback, p_additionnalRenderLoopLogicCallback, p_textureLoadingCallback, p_startingProcessingFilesCallback)
+## new [FilesInput](/classes/2.3/FilesInput)(p_engine, p_scene, p_canvas, p_sceneLoadedCallback, p_progressCallback, p_additionnalRenderLoopLogicCallback, p_textureLoadingCallback, p_startingProcessingFilesCallback)
 
 
 
@@ -29,13 +29,13 @@ class [FilesInput](/classes/2.3/FilesInput)
  | p_textureLoadingCallback | any |   @param p_textureLoadingCallback
 ## Members
 
-### static  FilesTextures : any[]
+### static FilesTextures : any[]
 
+The array that holds the png textures to load
 
+### static FilesToLoad : any[]
 
-### static  FilesToLoad : any[]
-
-
+The array that holds the vnd.ms-dds files to load
 
 ## Methods
 

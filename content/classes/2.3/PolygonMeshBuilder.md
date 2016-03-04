@@ -11,7 +11,7 @@ class [PolygonMeshBuilder](/classes/2.3/PolygonMeshBuilder)
 
 ## Constructor
 
-##  new [PolygonMeshBuilder](/classes/2.3/PolygonMeshBuilder)(name, contours, scene)
+## new [PolygonMeshBuilder](/classes/2.3/PolygonMeshBuilder)(name, contours, scene)
 
 
 
@@ -21,7 +21,7 @@ class [PolygonMeshBuilder](/classes/2.3/PolygonMeshBuilder)
  | name | string |   
  | contours | [Path2](/classes/2.3/Path2) |   
  | scene | [Scene](/classes/2.3/Scene) |   
-##  new [PolygonMeshBuilder](/classes/2.3/PolygonMeshBuilder)(name, contours, scene)
+## new [PolygonMeshBuilder](/classes/2.3/PolygonMeshBuilder)(name, contours, scene)
 
 
 

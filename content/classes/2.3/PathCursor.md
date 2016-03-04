@@ -11,7 +11,7 @@ class [PathCursor](/classes/2.3/PathCursor)
 
 ## Constructor
 
-##  new [PathCursor](/classes/2.3/PathCursor)(path)
+## new [PathCursor](/classes/2.3/PathCursor)(path)
 
 
 

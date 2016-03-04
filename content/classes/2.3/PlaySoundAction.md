@@ -13,7 +13,7 @@ class [PlaySoundAction](/classes/2.3/PlaySoundAction) extends [Action](/classes/
 
 ## Constructor
 
-##  new [PlaySoundAction](/classes/2.3/PlaySoundAction)(triggerOptions, sound, condition)
+## new [PlaySoundAction](/classes/2.3/PlaySoundAction)(triggerOptions, sound, condition)
 
 
 

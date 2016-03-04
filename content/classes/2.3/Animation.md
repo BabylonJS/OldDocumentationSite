@@ -9,11 +9,15 @@ TAGS:
 
 class [Animation](/classes/2.3/Animation)
 
+The animation is based on objects called [Animation](/classes/2.3/Animation).
 
+An [Animation](/classes/2.3/Animation) is defined by various properties and a collection of keys
+
+A tutorial about Animations ban be found here
 
 ## Constructor
 
-##  new [Animation](/classes/2.3/Animation)(name, targetProperty, framePerSecond, dataType, loopMode)
+## new [Animation](/classes/2.3/Animation)(name, targetProperty, framePerSecond, dataType, loopMode)
 
 
 
@@ -28,75 +32,75 @@ class [Animation](/classes/2.3/Animation)
 
 ### name : string
 
-
+Name of the animation
 
 ### targetProperty : string
 
-
+The property to change, for example rotate a [Mesh](/classes/2.3/Mesh) : &quot;rotation.x&quot;
 
 ### framePerSecond : number
 
-
+The number of animation frames per second
 
 ### dataType : number
 
-
+The kind of value affected by the animation : ANIMATIONTYPE_FLOAT, ANIMATIONTYPE_VECTOR3, ANIMATIONTYPE_QUATERNION, ANIMATIONTYPE_MATRIX, ANIMATIONTYPE_COLOR3
 
 ### loopMode : number
 
-
+The loop mode : ANIMATIONLOOPMODE_RELATIVE, NIMATIONLOOPMODE_CYCLE, ANIMATIONLOOPMODE_CONSTANT
 
 ### targetPropertyPath : string[]
 
-
+An array of properties
 
 ### currentFrame : number
 
-
+The current animation key
 
 ### allowMatricesInterpolation : boolean
 
 
 
-### static  ANIMATIONTYPE_FLOAT : number
+### static ANIMATIONTYPE_FLOAT : number
+
+The value affected by the animation is a float
+
+### static ANIMATIONTYPE_VECTOR3 : number
+
+The value affected by the animation is a [Vector3](/classes/2.3/Vector3)
+
+### static ANIMATIONTYPE_VECTOR2 : number
 
 
 
-### static  ANIMATIONTYPE_VECTOR3 : number
+### static ANIMATIONTYPE_QUATERNION : number
 
+The value affected by the animation is a [Quaternion](/classes/2.3/Quaternion)
 
+### static ANIMATIONTYPE_MATRIX : number
 
-### static  ANIMATIONTYPE_VECTOR2 : number
+The value affected by the animation is a [Matrix](/classes/2.3/Matrix)
 
+### static ANIMATIONTYPE_COLOR3 : number
 
+The value affected by the animation is a [Color3](/classes/2.3/Color3)
 
-### static  ANIMATIONTYPE_QUATERNION : number
+### static ANIMATIONLOOPMODE_RELATIVE : number
 
+The animation loops but doesn't reset values and continues animation with values of the previous ending animation
 
+### static ANIMATIONLOOPMODE_CYCLE : number
 
-### static  ANIMATIONTYPE_MATRIX : number
+The animation restarts with the inital values
 
+### static ANIMATIONLOOPMODE_CONSTANT : number
 
-
-### static  ANIMATIONTYPE_COLOR3 : number
-
-
-
-### static  ANIMATIONLOOPMODE_RELATIVE : number
-
-
-
-### static  ANIMATIONLOOPMODE_CYCLE : number
-
-
-
-### static  ANIMATIONLOOPMODE_CONSTANT : number
-
-
+The animation keeps its final value i.e stopped
 
 ## Methods
 
-### static  CreateAndStartAnimation(name, node, targetProperty, framePerSecond, totalFrame, from, to, loopMode, easingFunction, onAnimationEnd) &rarr; [Animatable](/classes/2.3/Animatable)
+### static CreateAndStartAnimation(name, node, targetProperty, framePerSecond, totalFrame, from, to, loopMode, easingFunction, onAnimationEnd) &rarr; [Animatable](/classes/2.3/Animatable)
 
 
 
@@ -112,7 +116,7 @@ class [Animation](/classes/2.3/Animation)
  | to | any |   The frame defining the end of the animation
 optional | loopMode | number |   
 optional | easingFunction | [EasingFunction](/classes/2.3/EasingFunction) |   
-### static  CreateMergeAndStartAnimation(name, node, targetProperty, framePerSecond, totalFrame, from, to, loopMode, easingFunction, onAnimationEnd) &rarr; [Animatable](/classes/2.3/Animatable)
+### static CreateMergeAndStartAnimation(name, node, targetProperty, framePerSecond, totalFrame, from, to, loopMode, easingFunction, onAnimationEnd) &rarr; [Animatable](/classes/2.3/Animatable)
 
 
 
@@ -179,10 +183,11 @@ optional | deleteFrames | boolean |
 
 ### isStopped() &rarr; boolean
 
-
+Tests if the animation is stopped
 ### getKeys() &rarr; any[]
 
-
+Returns the animation keys.
+Every key represents the value of the [Animation](/classes/2.3/Animation) at that key's given time.
 ### getHighestFrame() &rarr; number
 
 
@@ -200,7 +205,7 @@ optional | deleteFrames | boolean |
 
 ### floatInterpolateFunction(startValue, endValue, gradient) &rarr; number
 
-
+Used to interpolate (perform the transition ) between float keys
 
 #### Parameters
  | Name | Type | Description
@@ -210,7 +215,7 @@ optional | deleteFrames | boolean |
  | gradient | number |   
 ### quaternionInterpolateFunction(startValue, endValue, gradient) &rarr; [Quaternion](/classes/2.3/Quaternion)
 
-
+Used to interpolate (perform the transition ) between [Quaternion](/classes/2.3/Quaternion) keys
 
 #### Parameters
  | Name | Type | Description
@@ -220,7 +225,7 @@ optional | deleteFrames | boolean |
  | gradient | number |   
 ### vector3InterpolateFunction(startValue, endValue, gradient) &rarr; [Vector3](/classes/2.3/Vector3)
 
-
+Used to interpolate (perform the transition ) between [Vector3](/classes/2.3/Vector3) keys
 
 #### Parameters
  | Name | Type | Description
@@ -240,7 +245,7 @@ optional | deleteFrames | boolean |
  | gradient | number |   
 ### color3InterpolateFunction(startValue, endValue, gradient) &rarr; [Color3](/classes/2.3/Color3)
 
-
+Used to interpolate (perform the transition ) between [Color3](/classes/2.3/Color3) keys
 
 #### Parameters
  | Name | Type | Description
@@ -260,10 +265,10 @@ optional | deleteFrames | boolean |
  | gradient | number |   
 ### clone() &rarr; [Animation](/classes/2.3/Animation)
 
-
+Clones this animation object
 ### setKeys(values) &rarr; void
 
-
+Adds the keys array to this [Animation](/classes/2.3/Animation) object
 
 #### Parameters
  | Name | Type | Description
@@ -302,7 +307,7 @@ optional | deleteFrames | boolean |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedAnimation) &rarr; [Animation](/classes/2.3/Animation)
+### static Parse(parsedAnimation) &rarr; [Animation](/classes/2.3/Animation)
 
 
 
@@ -311,7 +316,7 @@ optional | deleteFrames | boolean |
 ---|---|---|---
  | parsedAnimation | any | 
 
-### static  AppendSerializedAnimations(source, destination) &rarr; any
+### static AppendSerializedAnimations(source, destination) &rarr; any
 
 
 

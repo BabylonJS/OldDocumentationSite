@@ -9,13 +9,13 @@ TAGS:
 
 class [Condition](/classes/2.3/Condition)
 
-
+A great tutorial right here
 
 ## Constructor
 
-##  new [Condition](/classes/2.3/Condition)(actionManager)
+## new [Condition](/classes/2.3/Condition)(actionManager)
 
-
+The condition constructor
 
 #### Parameters
  | Name | Type | Description

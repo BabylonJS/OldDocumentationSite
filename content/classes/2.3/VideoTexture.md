@@ -14,9 +14,10 @@ class [VideoTexture](/classes/2.3/VideoTexture) extends [Texture](/classes/2.3/T
 
 ## Constructor
 
-##  new [VideoTexture](/classes/2.3/VideoTexture)(name, urls, scene, generateMipMaps, invertY, samplingMode)
+## new [VideoTexture](/classes/2.3/VideoTexture)(name, urls, scene, generateMipMaps, invertY, samplingMode)
 
-
+Create a new [VideoTexture](/classes/2.3/VideoTexture). Several videos can be used on one texture. In this case, all videos are appended.
+A tutorial about video textures can be found here : http://doc.babylonjs.com/page.php?p=22161
 
 #### Parameters
  | Name | Type | Description
@@ -30,7 +31,7 @@ optional | invertY | boolean |   True to invert on Y axis
 
 ### video : HTMLVideoElement
 
-
+The video element
 
 ## Methods
 

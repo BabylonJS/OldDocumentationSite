@@ -13,9 +13,9 @@ class [SetParentAction](/classes/2.3/SetParentAction) extends [Action](/classes/
 
 ## Constructor
 
-##  new [SetParentAction](/classes/2.3/SetParentAction)(triggerOptions, target, parent, condition)
+## new [SetParentAction](/classes/2.3/SetParentAction)(triggerOptions, target, parent, condition)
 
-
+Used to define the parent of a node (camera, light, mesh)
 
 #### Parameters
  | Name | Type | Description

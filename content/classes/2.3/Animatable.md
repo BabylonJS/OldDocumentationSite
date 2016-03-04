@@ -9,13 +9,13 @@ TAGS:
 
 class [Animatable](/classes/2.3/Animatable)
 
-
+Used to access to individual animations
 
 ## Constructor
 
-##  new [Animatable](/classes/2.3/Animatable)(scene, target, fromFrame, toFrame, loopAnimation, speedRatio, onAnimationEnd, animations)
+## new [Animatable](/classes/2.3/Animatable)(scene, target, fromFrame, toFrame, loopAnimation, speedRatio, onAnimationEnd, animations)
 
-
+Builds an [Animatable](/classes/2.3/Animatable) object
 
 #### Parameters
  | Name | Type | Description
@@ -31,31 +31,31 @@ optional | onAnimationEnd | any |   Function triggered on the end of an animatio
 
 ### target : any
 
-
+The animated target
 
 ### fromFrame : number
 
-
+The begining frame of the animation
 
 ### toFrame : number
 
-
+The ending frame of the animation
 
 ### loopAnimation : boolean
 
-
+default : false. Sets if the animation loops or not
 
 ### speedRatio : number
 
-
+default : 1.0. The speed Ratio, lower gives a slower animation
 
 ### onAnimationEnd : any
 
-
+Function to execute on animation end
 
 ### animationStarted : boolean
 
-
+Tests if the animation is in started state
 
 ## Methods
 
@@ -64,7 +64,7 @@ optional | onAnimationEnd | any |   Function triggered on the end of an animatio
 
 ### appendAnimations(target, animations) &rarr; void
 
-
+Append a new animation
 
 #### Parameters
  | Name | Type | Description
@@ -73,7 +73,7 @@ optional | onAnimationEnd | any |   Function triggered on the end of an animatio
  | animations | [Animation](/classes/2.3/Animation)[] |   The animation(s) to apply
 ### getAnimationByTargetProperty(property) &rarr; [Animation](/classes/2.3/Animation)
 
-
+Returns animations that have to given property
 
 #### Parameters
  | Name | Type | Description
@@ -94,10 +94,10 @@ optional | onAnimationEnd | any |   Function triggered on the end of an animatio
 
 ### pause() &rarr; void
 
-
+Pauses the animation
 ### restart() &rarr; void
 
-
+Restarts the animation
 ### stop() &rarr; void
 
 

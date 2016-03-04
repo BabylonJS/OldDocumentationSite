@@ -17,7 +17,7 @@ class [AnaglyphGamepadCamera](/classes/2.3/AnaglyphGamepadCamera) extends [Gamep
 
 ## Constructor
 
-##  new [AnaglyphGamepadCamera](/classes/2.3/AnaglyphGamepadCamera)(name, position, interaxialDistance, scene)
+## new [AnaglyphGamepadCamera](/classes/2.3/AnaglyphGamepadCamera)(name, position, interaxialDistance, scene)
 
 
 

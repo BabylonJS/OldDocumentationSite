@@ -13,7 +13,7 @@ class [Angle](/classes/2.3/Angle)
 
 ## Constructor
 
-##  new [Angle](/classes/2.3/Angle)(radians)
+## new [Angle](/classes/2.3/Angle)(radians)
 
 
 
@@ -34,7 +34,7 @@ class [Angle](/classes/2.3/Angle)
 
 ## Methods
 
-### static  BetweenTwoPoints(a, b) &rarr; [Angle](/classes/2.3/Angle)
+### static BetweenTwoPoints(a, b) &rarr; [Angle](/classes/2.3/Angle)
 
 
 
@@ -43,7 +43,7 @@ class [Angle](/classes/2.3/Angle)
 ---|---|---|---
  | a | [Vector2](/classes/2.3/Vector2) |   
  | b | [Vector2](/classes/2.3/Vector2) |   
-### static  FromRadians(radians) &rarr; [Angle](/classes/2.3/Angle)
+### static FromRadians(radians) &rarr; [Angle](/classes/2.3/Angle)
 
 
 
@@ -52,7 +52,7 @@ class [Angle](/classes/2.3/Angle)
 ---|---|---|---
  | radians | number |   
 
-### static  FromDegrees(degrees) &rarr; [Angle](/classes/2.3/Angle)
+### static FromDegrees(degrees) &rarr; [Angle](/classes/2.3/Angle)
 
 
 

@@ -9,13 +9,13 @@ TAGS:
 
 class [BlurPostProcess](/classes/2.3/BlurPostProcess) extends [PostProcess](/classes/2.3/PostProcess)
 
-
+Builtin postprocess applying a directional blur
 
 ## Constructor
 
-##  new [BlurPostProcess](/classes/2.3/BlurPostProcess)(name, direction, blurWidth, ratio, camera, samplingMode, engine, reusable)
+## new [BlurPostProcess](/classes/2.3/BlurPostProcess)(name, direction, blurWidth, ratio, camera, samplingMode, engine, reusable)
 
-
+The Postprocess constructor
 
 #### Parameters
  | Name | Type | Description
@@ -31,7 +31,7 @@ optional | engine | [Engine](/classes/2.3/Engine) |   The engine to attach the p
 
 ### direction : [Vector2](/classes/2.3/Vector2)
 
-
+The direction of the blur
 
 ### blurWidth : number
 

@@ -14,9 +14,9 @@ class [BoundingSphere](/classes/2.3/BoundingSphere)
 
 ## Constructor
 
-##  new [BoundingSphere](/classes/2.3/BoundingSphere)(minimum, maximum)
+## new [BoundingSphere](/classes/2.3/BoundingSphere)(minimum, maximum)
 
-
+The [BoundingSphere](/classes/2.3/BoundingSphere) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -27,19 +27,19 @@ class [BoundingSphere](/classes/2.3/BoundingSphere)
 
 ### minimum : [Vector3](/classes/2.3/Vector3)
 
-
+The minimum size of the bounding sphere
 
 ### maximum : [Vector3](/classes/2.3/Vector3)
 
-
+The minimum of the bounding sphere
 
 ### center : [Vector3](/classes/2.3/Vector3)
 
-
+The center of the bounding sphere
 
 ### radius : number
 
-
+The radius of the bounding sphere
 
 ### centerWorld : [Vector3](/classes/2.3/Vector3)
 
@@ -53,7 +53,7 @@ class [BoundingSphere](/classes/2.3/BoundingSphere)
 
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
-
+Check if the boundingSphere is in frustum
 
 #### Parameters
  | Name | Type | Description
@@ -62,14 +62,14 @@ class [BoundingSphere](/classes/2.3/BoundingSphere)
 
 ### intersectsPoint(point) &rarr; boolean
 
-
+Check if this bounding sphere intersect the point given in parameter
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | point | [Vector3](/classes/2.3/Vector3) |   The point
 
-### static  Intersects(sphere0, sphere1) &rarr; boolean
+### static Intersects(sphere0, sphere1) &rarr; boolean
 
 
 

@@ -14,9 +14,12 @@ class [Texture](/classes/2.3/Texture) extends [BaseTexture](/classes/2.3/BaseTex
 
 ## Constructor
 
-##  new [Texture](/classes/2.3/Texture)(url, scene, noMipmap, invertY, samplingMode, onLoad, onError, buffer, deleteBuffer)
+## new [Texture](/classes/2.3/Texture)(url, scene, noMipmap, invertY, samplingMode, onLoad, onError, buffer, deleteBuffer)
 
-
+Create a new [Texture](/classes/2.3/Texture).
+You can apply a texture on every material, by giving an image path.
+Don't forgot to check the right path of your image (relative or absolute path). About image format support, it can be JPG, PNG, JPEG, BMP, (every image format available on your browser)
+A tutorial about materials and texture can be found here : http://doc.babylonjs.com/tutorials/04._Materials
 
 #### Parameters
  | Name | Type | Description
@@ -31,103 +34,103 @@ optional | onError | () =&gt; void |
 optional | buffer | any |   
 ## Members
 
-### static  NEAREST_SAMPLINGMODE : number
+### static NEAREST_SAMPLINGMODE : number
+
+Value : 1
+
+### static BILINEAR_SAMPLINGMODE : number
+
+Value : 2
+
+### static TRILINEAR_SAMPLINGMODE : number
+
+Value : 3
+
+### static EXPLICIT_MODE : number
+
+Value : 0
+
+### static SPHERICAL_MODE : number
+
+Value : 1
+
+### static PLANAR_MODE : number
+
+Value : 2
+
+### static CUBIC_MODE : number
+
+Value : 3
+
+### static PROJECTION_MODE : number
+
+Value : 4
+
+### static SKYBOX_MODE : number
+
+Value : 5
+
+### static INVCUBIC_MODE : number
 
 
 
-### static  BILINEAR_SAMPLINGMODE : number
+### static EQUIRECTANGULAR_MODE : number
 
 
 
-### static  TRILINEAR_SAMPLINGMODE : number
+### static FIXED_EQUIRECTANGULAR_MODE : number
 
 
 
-### static  EXPLICIT_MODE : number
+### static CLAMP_ADDRESSMODE : number
 
+Value : 0
 
+### static WRAP_ADDRESSMODE : number
 
-### static  SPHERICAL_MODE : number
+Value : 1
 
+### static MIRROR_ADDRESSMODE : number
 
-
-### static  PLANAR_MODE : number
-
-
-
-### static  CUBIC_MODE : number
-
-
-
-### static  PROJECTION_MODE : number
-
-
-
-### static  SKYBOX_MODE : number
-
-
-
-### static  INVCUBIC_MODE : number
-
-
-
-### static  EQUIRECTANGULAR_MODE : number
-
-
-
-### static  FIXED_EQUIRECTANGULAR_MODE : number
-
-
-
-### static  CLAMP_ADDRESSMODE : number
-
-
-
-### static  WRAP_ADDRESSMODE : number
-
-
-
-### static  MIRROR_ADDRESSMODE : number
-
-
+Value 2
 
 ### url : string
 
-
+URL of the texture
 
 ### uOffset : number
 
-
+U offset of the texture
 
 ### vOffset : number
 
-
+V offset of the texture
 
 ### uScale : number
 
-
+U scale of the texture
 
 ### vScale : number
 
-
+V scale of the texutre
 
 ### uAng : number
 
-
+U angle of the texture
 
 ### vAng : number
 
-
+V angle of the texture
 
 ### wAng : number
 
-
+W angle of the texture
 
 ## Methods
 
 ### delayLoad() &rarr; void
 
-
+Proxy method to delay the texture loading
 ### updateSamplingMode(samplingMode) &rarr; void
 
 
@@ -139,17 +142,19 @@ optional | buffer | any |
 
 ### getTextureMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Get the texture matrix
+@return [Matrix](/classes/2.3/Matrix) The texture matrix
 ### getReflectionTextureMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Get the reflection texture matrix
+@return [Matrix](/classes/2.3/Matrix) The reflection texture matrix
 ### clone() &rarr; [Texture](/classes/2.3/Texture)
 
 
 ### serialize() &rarr; any
 
 
-### static  CreateFromBase64String(data, name, scene, noMipmap, invertY, samplingMode, onLoad, onError) &rarr; [Texture](/classes/2.3/Texture)
+### static CreateFromBase64String(data, name, scene, noMipmap, invertY, samplingMode, onLoad, onError) &rarr; [Texture](/classes/2.3/Texture)
 
 
 
@@ -163,7 +168,7 @@ optional | noMipmap | boolean |
 optional | invertY | boolean |   
 optional | samplingMode | number |   
 optional | onLoad | () =&gt; void |   
-### static  Parse(parsedTexture, scene, rootUrl) &rarr; [BaseTexture](/classes/2.3/BaseTexture)
+### static Parse(parsedTexture, scene, rootUrl) &rarr; [BaseTexture](/classes/2.3/BaseTexture)
 
 
 

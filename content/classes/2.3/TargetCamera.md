@@ -15,9 +15,9 @@ class [TargetCamera](/classes/2.3/TargetCamera) extends [Camera](/classes/2.3/Ca
 
 ## Constructor
 
-##  new [TargetCamera](/classes/2.3/TargetCamera)(name, position, scene)
+## new [TargetCamera](/classes/2.3/TargetCamera)(name, position, scene)
 
-
+Create a new targetCamera
 
 #### Parameters
  | Name | Type | Description
@@ -29,27 +29,27 @@ class [TargetCamera](/classes/2.3/TargetCamera) extends [Camera](/classes/2.3/Ca
 
 ### cameraDirection : [Vector3](/classes/2.3/Vector3)
 
-
+The camera direction
 
 ### cameraRotation : [Vector2](/classes/2.3/Vector2)
 
-
+The camera rotation
 
 ### rotation : [Vector3](/classes/2.3/Vector3)
 
-
+The rotation
 
 ### speed : number
 
-
+The camera speed
 
 ### noRotationConstraint : boolean
 
-
+True : No rotation constraint ; False : Have rotation constraint
 
 ### lockedTarget : any
 
-
+The camera locked target
 
 ## Methods
 
@@ -64,7 +64,7 @@ class [TargetCamera](/classes/2.3/TargetCamera) extends [Camera](/classes/2.3/Ca
 
 ### setTarget(target) &rarr; void
 
-
+Set the target of the targetCamera
 
 #### Parameters
  | Name | Type | Description

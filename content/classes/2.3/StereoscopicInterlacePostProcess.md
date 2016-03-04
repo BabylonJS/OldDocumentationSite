@@ -13,7 +13,7 @@ class [StereoscopicInterlacePostProcess](/classes/2.3/StereoscopicInterlacePostP
 
 ## Constructor
 
-##  new [StereoscopicInterlacePostProcess](/classes/2.3/StereoscopicInterlacePostProcess)(name, camB, postProcessA, isStereoscopicHoriz, samplingMode)
+## new [StereoscopicInterlacePostProcess](/classes/2.3/StereoscopicInterlacePostProcess)(name, camB, postProcessA, isStereoscopicHoriz, samplingMode)
 
 
 

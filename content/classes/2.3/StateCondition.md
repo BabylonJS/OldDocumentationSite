@@ -9,13 +9,13 @@ TAGS:
 
 class [StateCondition](/classes/2.3/StateCondition) extends [Condition](/classes/2.3/Condition)
 
-
+This condition checks the state property of an object and compares it to the given value
 
 ## Constructor
 
-##  new [StateCondition](/classes/2.3/StateCondition)(actionManager, target, value)
+## new [StateCondition](/classes/2.3/StateCondition)(actionManager, target, value)
 
-
+The state condition constructor
 
 #### Parameters
  | Name | Type | Description
@@ -27,7 +27,7 @@ class [StateCondition](/classes/2.3/StateCondition) extends [Condition](/classes
 
 ### value : string
 
-
+The value of the stateCondition
 
 ## Methods
 

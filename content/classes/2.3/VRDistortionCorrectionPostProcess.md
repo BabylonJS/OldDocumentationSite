@@ -13,7 +13,7 @@ class [VRDistortionCorrectionPostProcess](/classes/2.3/VRDistortionCorrectionPos
 
 ## Constructor
 
-##  new [VRDistortionCorrectionPostProcess](/classes/2.3/VRDistortionCorrectionPostProcess)(name, camera, isRightEye, vrMetrics)
+## new [VRDistortionCorrectionPostProcess](/classes/2.3/VRDistortionCorrectionPostProcess)(name, camera, isRightEye, vrMetrics)
 
 
 

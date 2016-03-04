@@ -9,7 +9,7 @@ class [HDRRenderingPipeline](/classes/2.3/HDRRenderingPipeline) extends [PostPro
 
 ## Constructor
 
-##  new [HDRRenderingPipeline](/classes/2.3/HDRRenderingPipeline)(name, scene, ratio, originalPostProcess, cameras)
+## new [HDRRenderingPipeline](/classes/2.3/HDRRenderingPipeline)(name, scene, ratio, originalPostProcess, cameras)
 
 @constructor
 
@@ -25,6 +25,8 @@ optional | originalPostProcess | [PostProcess](/classes/2.3/PostProcess) |
 ### gaussCoeff : number
 
 Public members
+
+
 
 Gaussian blur coefficient
 
@@ -84,7 +86,7 @@ Minimum luminance needed to compute HDR
 
 @type {number}
 
-### static  LUM_STEPS : number
+### static LUM_STEPS : number
 
 
 

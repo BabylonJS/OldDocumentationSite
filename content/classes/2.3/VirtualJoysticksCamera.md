@@ -16,9 +16,9 @@ class [VirtualJoysticksCamera](/classes/2.3/VirtualJoysticksCamera) extends [Fre
 
 ## Constructor
 
-##  new [VirtualJoysticksCamera](/classes/2.3/VirtualJoysticksCamera)(name, position, scene)
+## new [VirtualJoysticksCamera](/classes/2.3/VirtualJoysticksCamera)(name, position, scene)
 
-
+Creates a new [VirtualJoysticksCamera](/classes/2.3/VirtualJoysticksCamera)
 
 #### Parameters
  | Name | Type | Description

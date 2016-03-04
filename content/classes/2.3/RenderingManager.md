@@ -11,9 +11,9 @@ class [RenderingManager](/classes/2.3/RenderingManager)
 
 ## Constructor
 
-##  new [RenderingManager](/classes/2.3/RenderingManager)(scene)
+## new [RenderingManager](/classes/2.3/RenderingManager)(scene)
 
-
+Builds a new Rendering manager object
 
 #### Parameters
  | Name | Type | Description
@@ -22,9 +22,11 @@ class [RenderingManager](/classes/2.3/RenderingManager)
 
 ## Members
 
-### static  MAX_RENDERINGGROUPS : number
+### static MAX_RENDERINGGROUPS : number
 
+The max rendering groups
 
+default : 4
 
 ## Methods
 

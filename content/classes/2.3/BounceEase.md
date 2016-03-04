@@ -13,7 +13,7 @@ class [BounceEase](/classes/2.3/BounceEase) extends [EasingFunction](/classes/2.
 
 ## Constructor
 
-##  new [BounceEase](/classes/2.3/BounceEase)(bounces, bounciness)
+## new [BounceEase](/classes/2.3/BounceEase)(bounces, bounciness)
 
 
 

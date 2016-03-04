@@ -13,7 +13,7 @@ class [AudioEngine](/classes/2.3/AudioEngine)
 
 ## Constructor
 
-##  new [AudioEngine](/classes/2.3/AudioEngine)()
+## new [AudioEngine](/classes/2.3/AudioEngine)()
 
 
 ## Members

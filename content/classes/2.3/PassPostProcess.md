@@ -9,11 +9,11 @@ TAGS:
 
 class [PassPostProcess](/classes/2.3/PassPostProcess) extends [PostProcess](/classes/2.3/PostProcess)
 
-
+Builtin postprocess doing nothing. Used to copy the framebuffer into a postprocess for further use
 
 ## Constructor
 
-##  new [PassPostProcess](/classes/2.3/PassPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
+## new [PassPostProcess](/classes/2.3/PassPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
 
 
 

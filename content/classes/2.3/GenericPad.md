@@ -13,9 +13,9 @@ class [GenericPad](/classes/2.3/GenericPad) extends [Gamepad](/classes/2.3/Gamep
 
 ## Constructor
 
-##  new [GenericPad](/classes/2.3/GenericPad)(id, index, gamepad)
+## new [GenericPad](/classes/2.3/GenericPad)(id, index, gamepad)
 
-
+Builds a [Gamepad](/classes/2.3/Gamepad) object
 
 #### Parameters
  | Name | Type | Description
@@ -27,21 +27,21 @@ class [GenericPad](/classes/2.3/GenericPad) extends [Gamepad](/classes/2.3/Gamep
 
 ### id : string
 
-
+The gamepad id
 
 ### index : number
 
-
+The gamepad index
 
 ### gamepad : any
 
-
+The gamepad object access this way : gamepad.buttons[]
 
 ## Methods
 
 ### onbuttondown(callback) &rarr; void
 
-
+Binds an action to the button pressed, recognized by the button's index in the array
 
 #### Parameters
  | Name | Type | Description
@@ -50,7 +50,7 @@ class [GenericPad](/classes/2.3/GenericPad) extends [Gamepad](/classes/2.3/Gamep
 
 ### onbuttonup(callback) &rarr; void
 
-
+Binds an action to the button released, recognized by the button's index in the array
 
 #### Parameters
  | Name | Type | Description

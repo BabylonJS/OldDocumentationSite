@@ -13,9 +13,9 @@ class [DoNothingAction](/classes/2.3/DoNothingAction) extends [Action](/classes/
 
 ## Constructor
 
-##  new [DoNothingAction](/classes/2.3/DoNothingAction)(triggerOptions, condition)
+## new [DoNothingAction](/classes/2.3/DoNothingAction)(triggerOptions, condition)
 
-
+Do nothing
 
 #### Parameters
  | Name | Type | Description

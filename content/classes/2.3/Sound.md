@@ -13,7 +13,7 @@ class [Sound](/classes/2.3/Sound)
 
 ## Constructor
 
-##  new [Sound](/classes/2.3/Sound)(name, urlOrArrayBuffer, scene, readyToPlayCallback, options)
+## new [Sound](/classes/2.3/Sound)(name, urlOrArrayBuffer, scene, readyToPlayCallback, options)
 
 Create a sound and attach it to a scene
 
@@ -213,7 +213,7 @@ optional | time | number |
 ### getAudioBuffer() &rarr; AudioBuffer
 
 
-### static  Parse(parsedSound, scene, rootUrl, sourceSound) &rarr; [Sound](/classes/2.3/Sound)
+### static Parse(parsedSound, scene, rootUrl, sourceSound) &rarr; [Sound](/classes/2.3/Sound)
 
 
 

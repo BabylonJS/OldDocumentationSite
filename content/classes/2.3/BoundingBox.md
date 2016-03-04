@@ -14,9 +14,9 @@ class [BoundingBox](/classes/2.3/BoundingBox)
 
 ## Constructor
 
-##  new [BoundingBox](/classes/2.3/BoundingBox)(minimum, maximum)
+## new [BoundingBox](/classes/2.3/BoundingBox)(minimum, maximum)
 
-
+The [BoundingBox](/classes/2.3/BoundingBox) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -27,48 +27,48 @@ class [BoundingBox](/classes/2.3/BoundingBox)
 
 ### minimum : [Vector3](/classes/2.3/Vector3)
 
-
+The minimum size of the bounding box
 
 ### maximum : [Vector3](/classes/2.3/Vector3)
 
-
+The maximum size of the bounding box
 
 ### vectors : [Vector3](/classes/2.3/Vector3)[]
 
-
+The vectors of the boundingBox
 
 ### center : [Vector3](/classes/2.3/Vector3)
 
-
+The center of the boundingBox
 
 ### extendSize : [Vector3](/classes/2.3/Vector3)
 
-
+The extend size of the boundingBox
 
 ### directions : [Vector3](/classes/2.3/Vector3)[]
 
-
+The directions of the boundingBox
 
 ### vectorsWorld : [Vector3](/classes/2.3/Vector3)[]
 
-
+The vectors world of the boundingBox
 
 ### minimumWorld : [Vector3](/classes/2.3/Vector3)
 
-
+The minimum world of the boundingBox
 
 ### maximumWorld : [Vector3](/classes/2.3/Vector3)
 
-
+The maximum world of the boundingBox
 
 ## Methods
 
 ### getWorldMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Return this world matrix
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
-
+Returns true if this bounding box is in the given frustrum
 
 #### Parameters
  | Name | Type | Description
@@ -86,7 +86,7 @@ class [BoundingBox](/classes/2.3/BoundingBox)
 
 ### intersectsPoint(point) &rarr; boolean
 
-
+Check if this bounding box intersect the point given in parameter
 
 #### Parameters
  | Name | Type | Description
@@ -95,7 +95,7 @@ class [BoundingBox](/classes/2.3/BoundingBox)
 
 ### intersectsSphere(sphere) &rarr; boolean
 
-
+Check is this bounding box intersects the given sphere
 
 #### Parameters
  | Name | Type | Description
@@ -104,25 +104,25 @@ class [BoundingBox](/classes/2.3/BoundingBox)
 
 ### intersectsMinMax(min, max) &rarr; boolean
 
-
+Check if one of minimum or maximum values are intersected by the bounding box
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | min | [Vector3](/classes/2.3/Vector3) |   The minimum value of this world
  | max | [Vector3](/classes/2.3/Vector3) |   The maximum value of this world
-### static  Intersects(box0, box1) &rarr; boolean
+### static Intersects(box0, box1) &rarr; boolean
 
-
+Check if the two boxes given in parameters intersects each other
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | box0 | [BoundingBox](/classes/2.3/BoundingBox) |   The first box
  | box1 | [BoundingBox](/classes/2.3/BoundingBox) |   The second box
-### static  IntersectsSphere(minPoint, maxPoint, sphereCenter, sphereRadius) &rarr; boolean
+### static IntersectsSphere(minPoint, maxPoint, sphereCenter, sphereRadius) &rarr; boolean
 
-
+Check if the sphere is intersected by the bounding box
 
 #### Parameters
  | Name | Type | Description
@@ -130,7 +130,7 @@ class [BoundingBox](/classes/2.3/BoundingBox)
  | minPoint | [Vector3](/classes/2.3/Vector3) |   @param minPoint
  | maxPoint | [Vector3](/classes/2.3/Vector3) |   @param maxPoint
  | sphereCenter | [Vector3](/classes/2.3/Vector3) |   the sphere center
-### static  IsCompletelyInFrustum(boundingVectors, frustumPlanes) &rarr; boolean
+### static IsCompletelyInFrustum(boundingVectors, frustumPlanes) &rarr; boolean
 
 
 
@@ -139,7 +139,7 @@ class [BoundingBox](/classes/2.3/BoundingBox)
 ---|---|---|---
  | boundingVectors | [Vector3](/classes/2.3/Vector3)[] |   @param boundingVectors
  | frustumPlanes | [Plane](/classes/2.3/Plane)[] |   [Frustum](/classes/2.3/Frustum) planes
-### static  IsInFrustum(boundingVectors, frustumPlanes) &rarr; boolean
+### static IsInFrustum(boundingVectors, frustumPlanes) &rarr; boolean
 
 
 

@@ -9,7 +9,7 @@ class [EdgesRenderer](/classes/2.3/EdgesRenderer)
 
 ## Constructor
 
-##  new [EdgesRenderer](/classes/2.3/EdgesRenderer)(source, epsilon, checkVerticesInsteadOfIndices)
+## new [EdgesRenderer](/classes/2.3/EdgesRenderer)(source, epsilon, checkVerticesInsteadOfIndices)
 
 
 
