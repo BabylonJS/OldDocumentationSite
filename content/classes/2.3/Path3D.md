@@ -11,7 +11,7 @@ class [Path3D](/classes/2.3/Path3D)
 
 ## Constructor
 
-##  new [Path3D](/classes/2.3/Path3D)(path, firstNormal, raw)
+## new [Path3D](/classes/2.3/Path3D)(path, firstNormal, raw)
 
 new [Path3D](/classes/2.3/Path3D)(path, normal, raw)
 

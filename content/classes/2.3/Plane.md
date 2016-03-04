@@ -13,7 +13,7 @@ class [Plane](/classes/2.3/Plane) extends _Primitive
 
 ## Constructor
 
-##  new [Plane](/classes/2.3/Plane)(id, scene, size, canBeRegenerated, mesh, side)
+## new [Plane](/classes/2.3/Plane)(id, scene, size, canBeRegenerated, mesh, side)
 
 
 
@@ -49,7 +49,7 @@ optional | mesh | [Mesh](/classes/2.3/Mesh) |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedPlane, scene) &rarr; [Plane](/classes/2.3/Plane)
+### static Parse(parsedPlane, scene) &rarr; [Plane](/classes/2.3/Plane)
 
 
 

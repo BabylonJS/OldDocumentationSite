@@ -9,13 +9,13 @@ TAGS:
 
 class [Geometry](/classes/2.3/Geometry)
 
-
+The [Geometry](/classes/2.3/Geometry) class
 
 ## Constructor
 
-##  new [Geometry](/classes/2.3/Geometry)(id, scene, vertexData, updatable, mesh)
+## new [Geometry](/classes/2.3/Geometry)(id, scene, vertexData, updatable, mesh)
 
-
+The [Geometry](/classes/2.3/Geometry) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -50,16 +50,16 @@ optional | updatable | boolean |   @param updatable
 
 ### getScene() &rarr; [Scene](/classes/2.3/Scene)
 
-
+Get the scene
 ### getEngine() &rarr; [Engine](/classes/2.3/Engine)
 
-
+Get the engine
 ### isReady() &rarr; boolean
 
-
+True if is ready, false if is not
 ### setAllVerticesData(vertexData, updatable) &rarr; void
 
-
+Set all vertices data
 
 #### Parameters
  | Name | Type | Description
@@ -68,7 +68,7 @@ optional | updatable | boolean |   @param updatable
 optional | updatable | boolean |   @param updatable
 ### setVerticesData(kind, data, updatable, stride) &rarr; void
 
-
+Set vertices data
 
 #### Parameters
  | Name | Type | Description
@@ -78,7 +78,7 @@ optional | updatable | boolean |   @param updatable
 optional | updatable | boolean |   @param updatable
 ### updateVerticesDataDirectly(kind, data, offset) &rarr; void
 
-
+Update vertices data directly
 
 #### Parameters
  | Name | Type | Description
@@ -88,7 +88,7 @@ optional | updatable | boolean |   @param updatable
  | offset | number |   
 ### updateVerticesData(kind, data, updateExtends) &rarr; void
 
-
+Update vertices data
 
 #### Parameters
  | Name | Type | Description
@@ -98,10 +98,10 @@ optional | updatable | boolean |   @param updatable
 optional | updateExtends | boolean |   @param updateExtends
 ### getTotalVertices() &rarr; number
 
-
+Get total vertices
 ### getVerticesData(kind, copyWhenShared) &rarr; number[]
 
-
+Get total vertices data
 
 #### Parameters
  | Name | Type | Description
@@ -110,7 +110,7 @@ optional | updateExtends | boolean |   @param updateExtends
 optional | copyWhenShared | boolean |   
 ### getVertexBuffer(kind) &rarr; [VertexBuffer](/classes/2.3/VertexBuffer)
 
-
+Get vertex buffer for this kind
 
 #### Parameters
  | Name | Type | Description
@@ -119,10 +119,10 @@ optional | copyWhenShared | boolean |
 
 ### getVertexBuffers() &rarr; [VertexBuffer](/classes/2.3/VertexBuffer)[]
 
-
+Get vertex buffers, use all element of vertex buffer
 ### isVerticesDataPresent(kind) &rarr; boolean
 
-
+Return true if vertices data are present
 
 #### Parameters
  | Name | Type | Description
@@ -131,10 +131,10 @@ optional | copyWhenShared | boolean |
 
 ### getVerticesDataKinds() &rarr; string[]
 
-
+Get the kinds of vertices data
 ### setIndices(indices, totalVertices) &rarr; void
 
-
+Set indices
 
 #### Parameters
  | Name | Type | Description
@@ -143,10 +143,10 @@ optional | copyWhenShared | boolean |
 optional | totalVertices | number |   
 ### getTotalIndices() &rarr; number
 
-
+Get all indices
 ### getIndices(copyWhenShared) &rarr; number[]
 
-
+Get the last indices
 
 #### Parameters
  | Name | Type | Description
@@ -155,10 +155,10 @@ optional | copyWhenShared | boolean |
 
 ### getIndexBuffer() &rarr; any
 
-
+Get index buffer
 ### releaseForMesh(mesh, shouldDispose) &rarr; void
 
-
+Release for mesh
 
 #### Parameters
  | Name | Type | Description
@@ -167,7 +167,7 @@ optional | copyWhenShared | boolean |
 optional | shouldDispose | boolean |   true if mesh is dispose, false if is not.
 ### applyToMesh(mesh) &rarr; void
 
-
+Apply to a mesh
 
 #### Parameters
  | Name | Type | Description
@@ -176,7 +176,7 @@ optional | shouldDispose | boolean |   true if mesh is dispose, false if is not.
 
 ### load(scene, onLoaded) &rarr; void
 
-
+Load function
 
 #### Parameters
  | Name | Type | Description
@@ -188,10 +188,10 @@ optional | onLoaded | () =&gt; void |   @param onLoaded
 
 ### dispose() &rarr; void
 
-
+Dispose this geometry object
 ### copy(id) &rarr; [Geometry](/classes/2.3/Geometry)
 
-
+Copy function
 
 #### Parameters
  | Name | Type | Description
@@ -204,19 +204,19 @@ optional | onLoaded | () =&gt; void |   @param onLoaded
 ### serializeVerticeData() &rarr; any
 
 
-### static  ExtractFromMesh(mesh, id) &rarr; [Geometry](/classes/2.3/Geometry)
+### static ExtractFromMesh(mesh, id) &rarr; [Geometry](/classes/2.3/Geometry)
 
-
+Extract From [Mesh](/classes/2.3/Mesh)
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | mesh | [Mesh](/classes/2.3/Mesh) |   the mesh
  | id | string |   Given this id to the new geometry object
-### static  RandomId() &rarr; string
+### static RandomId() &rarr; string
 
 
-### static  ImportGeometry(parsedGeometry, mesh) &rarr; void
+### static ImportGeometry(parsedGeometry, mesh) &rarr; void
 
 
 
@@ -225,7 +225,7 @@ optional | onLoaded | () =&gt; void |   @param onLoaded
 ---|---|---|---
  | parsedGeometry | any | 
  | mesh | [Mesh](/classes/2.3/Mesh) |   the mesh
-### static  Parse(parsedVertexData, scene, rootUrl) &rarr; [Geometry](/classes/2.3/Geometry)
+### static Parse(parsedVertexData, scene, rootUrl) &rarr; [Geometry](/classes/2.3/Geometry)
 
 
 

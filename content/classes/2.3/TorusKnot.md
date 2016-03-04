@@ -9,7 +9,7 @@ class [TorusKnot](/classes/2.3/TorusKnot) extends _Primitive
 
 ## Constructor
 
-##  new [TorusKnot](/classes/2.3/TorusKnot)(id, scene, radius, tube, radialSegments, tubularSegments, p, q, canBeRegenerated, mesh, side)
+## new [TorusKnot](/classes/2.3/TorusKnot)(id, scene, radius, tube, radialSegments, tubularSegments, p, q, canBeRegenerated, mesh, side)
 
 
 
@@ -70,7 +70,7 @@ optional | mesh | [Mesh](/classes/2.3/Mesh) |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedTorusKnot, scene) &rarr; [TorusKnot](/classes/2.3/TorusKnot)
+### static Parse(parsedTorusKnot, scene) &rarr; [TorusKnot](/classes/2.3/TorusKnot)
 
 
 

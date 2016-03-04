@@ -13,9 +13,9 @@ class [Effect](/classes/2.3/Effect)
 
 ## Constructor
 
-##  new [Effect](/classes/2.3/Effect)(baseName, attributesNames, uniformsNames, samplers, engine, defines, fallbacks, onCompiled, onError)
+## new [Effect](/classes/2.3/Effect)(baseName, attributesNames, uniformsNames, samplers, engine, defines, fallbacks, onCompiled, onError)
 
-
+The [Effect](/classes/2.3/Effect) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -32,19 +32,19 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
 
 ### name : any
 
-
+The effect name
 
 ### defines : string
 
-
+The array of defines used by this effect
 
 ### onCompiled : (effect: [Effect](/classes/2.3/Effect)) =&gt; void
 
-
+Function called when given effect are successfully compiled
 
 ### onError : (effect: [Effect](/classes/2.3/Effect), errors: string) =&gt; void
 
-
+Function called when an error occurs
 
 ### onBind : (effect: [Effect](/classes/2.3/Effect)) =&gt; void
 
@@ -54,7 +54,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
 
 
 
-### static  ShadersStore : { }
+### static ShadersStore : { }
 
 
 
@@ -62,16 +62,16 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
 
 ### isReady() &rarr; boolean
 
-
+Function to know if effect is ready
 ### getProgram() &rarr; WebGLProgram
 
-
+Return the shader program linked to this effect
 ### getAttributesNames() &rarr; string[]
 
-
+Return attributes names of the effect
 ### getAttributeLocation(index) &rarr; number
 
-
+Return the attribute location at the specified index
 
 #### Parameters
  | Name | Type | Description
@@ -80,7 +80,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
 
 ### getAttributeLocationByName(name) &rarr; number
 
-
+Return the attribute location at the specified name
 
 #### Parameters
  | Name | Type | Description
@@ -89,10 +89,10 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
 
 ### getAttributesCount() &rarr; number
 
-
+Return the number of attributes
 ### getUniformIndex(uniformName) &rarr; number
 
-
+Return the index of the searched name
 
 #### Parameters
  | Name | Type | Description
@@ -101,7 +101,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
 
 ### getUniform(uniformName) &rarr; WebGLUniformLocation
 
-
+Return searched parameter if exist
 
 #### Parameters
  | Name | Type | Description
@@ -110,13 +110,13 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
 
 ### getSamplers() &rarr; string[]
 
-
+Return samplers
 ### getCompilationError() &rarr; string
 
-
+Return the program compilation error
 ### setTexture(channel, texture) &rarr; void
 
-
+Set the texture to the effect
 
 #### Parameters
  | Name | Type | Description
@@ -125,7 +125,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | texture | [BaseTexture](/classes/2.3/BaseTexture) |   The given texture
 ### setTextureFromPostProcess(channel, postProcess) &rarr; void
 
-
+Set the texture to the effect from post process
 
 #### Parameters
  | Name | Type | Description
@@ -134,7 +134,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | postProcess | [PostProcess](/classes/2.3/PostProcess) |   The given post process
 ### setArray(uniformName, array) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the array given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -170,7 +170,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | array | number[] |   
 ### setMatrices(uniformName, matrices) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the matrice given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -179,7 +179,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | matrices | Float32Array |   The matrices
 ### setMatrix(uniformName, matrix) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the matrix given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -206,7 +206,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | matrix | Float32Array |   the matrix
 ### setFloat(uniformName, value) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the float given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -215,7 +215,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | value | number |   The float
 ### setBool(uniformName, bool) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the boolean given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -224,7 +224,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | bool | boolean |   The boolean
 ### setVector2(uniformName, vector2) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the vector2 given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -233,7 +233,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | vector2 | [Vector2](/classes/2.3/Vector2) |   The vector2
 ### setFloat2(uniformName, x, y) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the float2 given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -243,7 +243,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | y | number |   The value on y axis
 ### setVector3(uniformName, vector3) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the [Vector3](/classes/2.3/Vector3) given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -252,7 +252,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | vector3 | [Vector3](/classes/2.3/Vector3) |   The vector3
 ### setFloat3(uniformName, x, y, z) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the float3 given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -271,7 +271,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | vector4 | [Vector4](/classes/2.3/Vector4) |  
 ### setFloat4(uniformName, x, y, z, w) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the float4 given by its name
 
 #### Parameters
  | Name | Type | Description
@@ -282,7 +282,7 @@ optional | onCompiled | (effect: [Effect](/classes/2.3/Effect)) =&gt; void |   F
  | z | number |   The value on z axis
 ### setColor3(uniformName, color3) &rarr; [Effect](/classes/2.3/Effect)
 
-
+Set the color3 given by its name
 
 #### Parameters
  | Name | Type | Description

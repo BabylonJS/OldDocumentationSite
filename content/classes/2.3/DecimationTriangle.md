@@ -11,7 +11,7 @@ class [DecimationTriangle](/classes/2.3/DecimationTriangle)
 
 ## Constructor
 
-##  new [DecimationTriangle](/classes/2.3/DecimationTriangle)(vertices)
+## new [DecimationTriangle](/classes/2.3/DecimationTriangle)(vertices)
 
 
 

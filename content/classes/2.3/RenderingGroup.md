@@ -11,9 +11,9 @@ class [RenderingGroup](/classes/2.3/RenderingGroup)
 
 ## Constructor
 
-##  new [RenderingGroup](/classes/2.3/RenderingGroup)(index, scene)
+## new [RenderingGroup](/classes/2.3/RenderingGroup)(index, scene)
 
-
+Creates a new rendering group
 
 #### Parameters
  | Name | Type | Description

@@ -9,7 +9,7 @@ class [ReflectionProbe](/classes/2.3/ReflectionProbe)
 
 ## Constructor
 
-##  new [ReflectionProbe](/classes/2.3/ReflectionProbe)(name, size, scene, generateMipMaps)
+## new [ReflectionProbe](/classes/2.3/ReflectionProbe)(name, size, scene, generateMipMaps)
 
 
 

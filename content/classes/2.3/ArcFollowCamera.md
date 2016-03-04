@@ -9,7 +9,7 @@ class [ArcFollowCamera](/classes/2.3/ArcFollowCamera) extends [TargetCamera](/cl
 
 ## Constructor
 
-##  new [ArcFollowCamera](/classes/2.3/ArcFollowCamera)(name, alpha, beta, radius, target, scene)
+## new [ArcFollowCamera](/classes/2.3/ArcFollowCamera)(name, alpha, beta, radius, target, scene)
 
 
 

@@ -14,7 +14,7 @@ class [TextureOptimization](/classes/2.3/TextureOptimization) extends [SceneOpti
 
 ## Constructor
 
-##  new [TextureOptimization](/classes/2.3/TextureOptimization)(priority, maximumSize)
+## new [TextureOptimization](/classes/2.3/TextureOptimization)(priority, maximumSize)
 
 
 

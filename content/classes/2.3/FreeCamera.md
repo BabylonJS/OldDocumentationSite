@@ -16,9 +16,11 @@ class [FreeCamera](/classes/2.3/FreeCamera) extends [TargetCamera](/classes/2.3/
 
 ## Constructor
 
-##  new [FreeCamera](/classes/2.3/FreeCamera)(name, position, scene)
+## new [FreeCamera](/classes/2.3/FreeCamera)(name, position, scene)
 
-
+Create a new free camera.
+You can move around the world with mouse and keyboard
+A tutorial about [FreeCamera](/classes/2.3/FreeCamera) can be found here
 
 #### Parameters
  | Name | Type | Description
@@ -30,45 +32,45 @@ class [FreeCamera](/classes/2.3/FreeCamera) extends [TargetCamera](/classes/2.3/
 
 ### ellipsoid : [Vector3](/classes/2.3/Vector3)
 
-
+The collision ellipsoid used to check collisions with the world
 
 ### keysUp : number[]
 
-
+List of keys to up camera
 
 ### keysDown : number[]
 
-
+List of keys to down camera
 
 ### keysLeft : number[]
 
-
+List of keys to left camera
 
 ### keysRight : number[]
 
-
+List of keys to right camera
 
 ### checkCollisions : boolean
 
-
+True : check collisions ; False : don't check collisions
 
 ### applyGravity : boolean
 
-
+True : apply gravity ; False : don't apply gravity
 
 ### angularSensibility : number
 
-
+The angular sensibility of the camera
 
 ### onCollide : (collidedMesh: [AbstractMesh](/classes/2.3/AbstractMesh)) =&gt; void
 
-
+The function called when this camera collides with the world
 
 ## Methods
 
 ### attachControl(element, noPreventDefault) &rarr; void
 
-
+Attach the camera to an element
 
 #### Parameters
  | Name | Type | Description

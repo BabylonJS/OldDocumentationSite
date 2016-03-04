@@ -7,13 +7,13 @@ PG_VERSION: 2.1
 
 class [Layer](/classes/2.3/Layer)
 
-
+Create a new 2D layer (used to represents backgrounds and/or foregrounds)
 
 ## Constructor
 
-##  new [Layer](/classes/2.3/Layer)(name, imgUrl, scene, isBackground, color)
+## new [Layer](/classes/2.3/Layer)(name, imgUrl, scene, isBackground, color)
 
-
+The [Layer](/classes/2.3/Layer) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -26,19 +26,19 @@ optional | isBackground | boolean |   If set to true, then this layer will be di
 
 ### name : string
 
-
+The layer name
 
 ### texture : [Texture](/classes/2.3/Texture)
 
-
+The texture to display for this layer
 
 ### isBackground : boolean
 
-
+If set to true, then this layer will be displayed as a background.
 
 ### color : [Color4](/classes/2.3/Color4)
 
-
+The color of this layer
 
 ### scale : [Vector2](/classes/2.3/Vector2)
 
@@ -50,7 +50,7 @@ optional | isBackground | boolean |   If set to true, then this layer will be di
 
 ### onDispose : () =&gt; void
 
-
+Dispose
 
 ### alphaBlendingMode : number
 
@@ -60,7 +60,7 @@ optional | isBackground | boolean |   If set to true, then this layer will be di
 
 ### render() &rarr; void
 
-
+Function used to render this layer
 ### dispose() &rarr; void
 
 

@@ -14,9 +14,9 @@ Creates an instance based on a source mesh.
 
 ## Constructor
 
-##  new [InstancedMesh](/classes/2.3/InstancedMesh)(name, source)
+## new [InstancedMesh](/classes/2.3/InstancedMesh)(name, source)
 
-
+The [InstancedMesh](/classes/2.3/InstancedMesh) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -27,19 +27,19 @@ Creates an instance based on a source mesh.
 
 ### receiveShadows : boolean
 
-
+True if the Instanced [Mesh](/classes/2.3/Mesh) got shadows, false if is not
 
 ### material : [Material](/classes/2.3/Material)
 
-
+The material
 
 ### visibility : number
 
-
+The visibility of the Instanced [Mesh](/classes/2.3/Mesh)
 
 ### skeleton : [Skeleton](/classes/2.3/Skeleton)
 
-
+The skeleton
 
 ### renderingGroupId : number
 
@@ -47,13 +47,13 @@ Creates an instance based on a source mesh.
 
 ### sourceMesh : [Mesh](/classes/2.3/Mesh)
 
-
+The sourceMesh
 
 ## Methods
 
 ### getTotalVertices() &rarr; number
 
-
+Get the total vertices of the Instanced [Mesh](/classes/2.3/Mesh)
 ### getVerticesData(kind, copyWhenShared) &rarr; number[]
 
 
@@ -65,7 +65,7 @@ Creates an instance based on a source mesh.
 optional | copyWhenShared | boolean | 
 ### isVerticesDataPresent(kind) &rarr; boolean
 
-
+Is Vertices data present
 
 #### Parameters
  | Name | Type | Description
@@ -74,10 +74,10 @@ optional | copyWhenShared | boolean |
 
 ### getIndices() &rarr; number[]
 
-
+Get Indices
 ### refreshBoundingInfo() &rarr; void
 
-
+Refresh Bounding Info of the Instanced [Mesh](/classes/2.3/Mesh)
 ### getLOD(camera) &rarr; [AbstractMesh](/classes/2.3/AbstractMesh)
 
 
@@ -89,7 +89,7 @@ optional | copyWhenShared | boolean |
 
 ### clone(name, newParent, doNotCloneChildren) &rarr; [InstancedMesh](/classes/2.3/InstancedMesh)
 
-
+Clone this instanced [Mesh](/classes/2.3/Mesh)
 
 #### Parameters
  | Name | Type | Description

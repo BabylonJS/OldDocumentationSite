@@ -13,7 +13,7 @@ class [CubeTexture](/classes/2.3/CubeTexture) extends [BaseTexture](/classes/2.3
 
 ## Constructor
 
-##  new [CubeTexture](/classes/2.3/CubeTexture)(rootUrl, scene, extensions, noMipmap, files)
+## new [CubeTexture](/classes/2.3/CubeTexture)(rootUrl, scene, extensions, noMipmap, files)
 
 
 
@@ -28,15 +28,15 @@ optional | noMipmap | boolean |
 
 ### url : string
 
-
+The texture URL
 
 ### coordinatesMode : number
 
-
+The coordinates mode
 
 ## Methods
 
-### static  CreateFromImages(files, scene, noMipmap) &rarr; [CubeTexture](/classes/2.3/CubeTexture)
+### static CreateFromImages(files, scene, noMipmap) &rarr; [CubeTexture](/classes/2.3/CubeTexture)
 
 
 
@@ -48,14 +48,15 @@ optional | noMipmap | boolean |
 optional | noMipmap | boolean | 
 ### clone() &rarr; [CubeTexture](/classes/2.3/CubeTexture)
 
-
+Clone the cube texture
+@return [CubeTexture](/classes/2.3/CubeTexture) A clone of the cube texture
 ### delayLoad() &rarr; void
 
-
+Delay the texture loading
 ### getReflectionTextureMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
 
-### static  Parse(parsedTexture, scene, rootUrl) &rarr; [CubeTexture](/classes/2.3/CubeTexture)
+### static Parse(parsedTexture, scene, rootUrl) &rarr; [CubeTexture](/classes/2.3/CubeTexture)
 
 
 

@@ -9,13 +9,16 @@ TAGS:
 
 class [PostProcessManager](/classes/2.3/PostProcessManager)
 
+A render effect is a smart postprocess which can manage its own instances itself.
 
+A tutorial about the render pipeline can be found here
 
 ## Constructor
 
-##  new [PostProcessManager](/classes/2.3/PostProcessManager)(scene)
+## new [PostProcessManager](/classes/2.3/PostProcessManager)(scene)
 
-
+Creates a new post process manager.
+A tutorial about post process can be found here
 
 #### Parameters
  | Name | Type | Description

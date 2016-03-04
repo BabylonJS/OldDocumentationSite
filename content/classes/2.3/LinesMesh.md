@@ -10,11 +10,11 @@ TAGS:
 
 class [LinesMesh](/classes/2.3/LinesMesh) extends [Mesh](/classes/2.3/Mesh)
 
-
+The [LinesMesh](/classes/2.3/LinesMesh) class
 
 ## Constructor
 
-##  new [LinesMesh](/classes/2.3/LinesMesh)(name, scene, parent, source, doNotCloneChildren)
+## new [LinesMesh](/classes/2.3/LinesMesh)(name, scene, parent, source, doNotCloneChildren)
 
 
 
@@ -29,29 +29,30 @@ optional | source | [Mesh](/classes/2.3/Mesh) |
 
 ### color : [Color3](/classes/2.3/Color3)
 
-
+The color of the lines [Mesh](/classes/2.3/Mesh)
 
 ### alpha : number
 
-
+The alpha
 
 ### material : [Material](/classes/2.3/Material)
 
-
+The material of the Lines [Mesh](/classes/2.3/Mesh)
 
 ### isPickable : boolean
 
-
+true if is Packable, false otherwise
 
 ### checkCollisions : boolean
 
-
+True if the mesh has collision, false otherwise
 
 ## Methods
 
 ### intersects(ray, fastCheck) &rarr; any
 
-
+Intersects
+if false, infinite ray !
 
 #### Parameters
  | Name | Type | Description

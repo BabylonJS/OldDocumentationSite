@@ -9,13 +9,13 @@ TAGS:
 
 class [TextureAssetTask](/classes/2.3/TextureAssetTask)
 
-
+Load task on the given texture
 
 ## Constructor
 
-##  new [TextureAssetTask](/classes/2.3/TextureAssetTask)(name, url, noMipmap, invertY, samplingMode)
+## new [TextureAssetTask](/classes/2.3/TextureAssetTask)(name, url, noMipmap, invertY, samplingMode)
 
-
+The [TextureAssetTask](/classes/2.3/TextureAssetTask) constructor
 
 #### Parameters
  | Name | Type | Description
@@ -28,39 +28,39 @@ optional | invertY | boolean |   Invert y axis or not
 
 ### name : string
 
-
+The name
 
 ### url : string
 
-
+The url for this texture
 
 ### noMipmap : boolean
 
-
+Set true if you want to activate Mipmap, false otherwise.
 
 ### invertY : boolean
 
-
+Invert the y axis
 
 ### samplingMode : number
 
-
+The sampling mode
 
 ### onSuccess : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh is load successfully
 
 ### onError : (task: IAssetTask) =&gt; void
 
-
+Function call when the mesh isn't load successfully
 
 ### isCompleted : boolean
 
-
+True if is completed, false otherwise.
 
 ### texture : [Texture](/classes/2.3/Texture)
 
-
+The texture
 
 ## Methods
 

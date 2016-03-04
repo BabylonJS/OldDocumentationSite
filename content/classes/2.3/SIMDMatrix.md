@@ -28,7 +28,7 @@ optional | offset | number |
 ---|---|---|---
  | other | [Matrix](/classes/2.3/Matrix) | 
 
-### static  LookAtLHToRefSIMD(eyeRef, targetRef, upRef, result) &rarr; void
+### static LookAtLHToRefSIMD(eyeRef, targetRef, upRef, result) &rarr; void
 
 
 

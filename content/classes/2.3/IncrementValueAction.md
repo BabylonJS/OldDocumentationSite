@@ -13,9 +13,9 @@ class [IncrementValueAction](/classes/2.3/IncrementValueAction) extends [Action]
 
 ## Constructor
 
-##  new [IncrementValueAction](/classes/2.3/IncrementValueAction)(triggerOptions, target, propertyPath, value, condition)
+## new [IncrementValueAction](/classes/2.3/IncrementValueAction)(triggerOptions, target, propertyPath, value, condition)
 
-
+Create a new increment value action
 
 #### Parameters
  | Name | Type | Description
@@ -28,11 +28,11 @@ class [IncrementValueAction](/classes/2.3/IncrementValueAction) extends [Action]
 
 ### propertyPath : string
 
-
+The action property path
 
 ### value : any
 
-
+The action value
 
 ## Methods
 

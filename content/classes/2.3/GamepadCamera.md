@@ -17,9 +17,9 @@ class [GamepadCamera](/classes/2.3/GamepadCamera) extends [UniversalCamera](/cla
 
 ## Constructor
 
-##  new [GamepadCamera](/classes/2.3/GamepadCamera)(name, position, scene)
+## new [GamepadCamera](/classes/2.3/GamepadCamera)(name, position, scene)
 
-
+Create a new [GamepadCamera](/classes/2.3/GamepadCamera)
 
 #### Parameters
  | Name | Type | Description

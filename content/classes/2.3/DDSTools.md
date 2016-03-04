@@ -13,16 +13,16 @@ class [DDSTools](/classes/2.3/DDSTools)
 
 ## Methods
 
-### static  GetDDSInfo(arrayBuffer) &rarr; DDSInfo
+### static GetDDSInfo(arrayBuffer) &rarr; DDSInfo
 
-
+Get info about DDS image files
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | arrayBuffer | any |   @param arrayBuffer
 
-### static  UploadDDSLevels(gl, ext, arrayBuffer, info, loadMipmaps, faces) &rarr; void
+### static UploadDDSLevels(gl, ext, arrayBuffer, info, loadMipmaps, faces) &rarr; void
 
 
 

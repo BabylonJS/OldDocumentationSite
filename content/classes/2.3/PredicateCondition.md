@@ -9,13 +9,13 @@ TAGS:
 
 class [PredicateCondition](/classes/2.3/PredicateCondition) extends [Condition](/classes/2.3/Condition)
 
-
+This condition uses a predicate to determine its state
 
 ## Constructor
 
-##  new [PredicateCondition](/classes/2.3/PredicateCondition)(actionManager, predicate)
+## new [PredicateCondition](/classes/2.3/PredicateCondition)(actionManager, predicate)
 
-
+The predicate condition constructor
 
 #### Parameters
  | Name | Type | Description
@@ -26,7 +26,7 @@ class [PredicateCondition](/classes/2.3/PredicateCondition) extends [Condition](
 
 ### predicate : () =&gt; boolean
 
-
+The predicate
 
 ## Methods
 

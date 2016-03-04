@@ -13,7 +13,7 @@ class [BackEase](/classes/2.3/BackEase) extends [EasingFunction](/classes/2.3/Ea
 
 ## Constructor
 
-##  new [BackEase](/classes/2.3/BackEase)(amplitude)
+## new [BackEase](/classes/2.3/BackEase)(amplitude)
 
 
 

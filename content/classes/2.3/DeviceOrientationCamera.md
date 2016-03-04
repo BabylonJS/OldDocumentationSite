@@ -16,9 +16,10 @@ class [DeviceOrientationCamera](/classes/2.3/DeviceOrientationCamera) extends [F
 
 ## Constructor
 
-##  new [DeviceOrientationCamera](/classes/2.3/DeviceOrientationCamera)(name, position, scene)
+## new [DeviceOrientationCamera](/classes/2.3/DeviceOrientationCamera)(name, position, scene)
 
-
+Create a new [DeviceOrientationCamera](/classes/2.3/DeviceOrientationCamera). It's a camera controlled by device orientation
+A tutorial about [DeviceOrientationCamera](/classes/2.3/DeviceOrientationCamera) can be found here
 
 #### Parameters
  | Name | Type | Description
@@ -30,17 +31,17 @@ class [DeviceOrientationCamera](/classes/2.3/DeviceOrientationCamera) extends [F
 
 ### angularSensibility : number
 
-
+The angular sensibility of the camera
 
 ### moveSensibility : number
 
-
+The move sensibility of the camera
 
 ## Methods
 
 ### attachControl(canvas, noPreventDefault) &rarr; void
 
-
+Attach the camera controls and display to a canvas
 
 #### Parameters
  | Name | Type | Description
