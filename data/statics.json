@@ -608,6 +608,18 @@
           "filename": "GUIText"
         }
       ]
+    },    
+    {
+      "title": "Editor",
+      "name": "Editor",
+      "img": "img/extensions/editor.png",
+      "desc": "Learn how to use the official editor",
+      "files": [
+        {
+          "title": "Editor",
+          "filename": "Editor"
+        }
+      ]
     },
     {
       "title": "CastorGUI",
