@@ -26,6 +26,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Culling/babylon.boundingSphere.js"></script>
     <script src="src/Culling/babylon.boundingBox.js"></script>
     <script src="src/Culling/babylon.boundingInfo.js"></script>
+    <script src="src/Culling/babylon.ray.js"></script>
     <script src="src/Mesh/babylon.abstractMesh.js"></script>
     <script src="src/Lights/babylon.light.js"></script>
     <script src="src/Lights/babylon.pointLight.js"></script>
@@ -101,8 +102,8 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/LensFlare/babylon.lensFlareSystem.js"></script>
     <script src="src/Physics/Plugins/babylon.cannonJSPlugin.js"></script>
     <script src="src/Physics/Plugins/babylon.oimoJSPlugin.js"></script>
-    <script src="src/Physics/babylon.physicsEngine.js"></script>
     <script src="src/Physics/babylon.physicsImpostor.js"></script>
+    <script src="src/Physics/babylon.physicsEngine.js"></script>
     <script src="src/Physics/babylon.physicsJoint.js"></script>
     <script src="src/Tools/babylon.sceneSerializer.js"></script>
     <script src="src/Mesh/babylon.csg.js"></script>
@@ -137,6 +138,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Audio/babylon.audioEngine.js"></script>
     <script src="src/Audio/babylon.sound.js"></script>
     <script src="src/Audio/babylon.soundtrack.js"></script>
+    <script src="src/Debug/babylon.skeletonViewer.js"></script>
     <script src="src/Debug/babylon.debugLayer.js"></script>
     <script src="src/Materials/Textures/babylon.rawTexture.js"></script>
     <script src="src/Mesh/babylon.polygonMesh.js"></script>
