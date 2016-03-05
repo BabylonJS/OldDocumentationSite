@@ -27,4 +27,27 @@
         // jump to the title, with a little vertical offset
         window.scrollTo(0, $selectedElement.offset().top - 50);
     });
+    
 })(jQuery);
+        
+/**
+ * Creates an iframe containing the given playground. 
+ * The link element is used to retrieve the closest div below the link
+ */
+function createIframe(playgroundId, link) {
+    
+    // By default, meta marked add the iframeContainer in the next paragraph...
+    var iframeContainer = $(link).parent().next();
+    if (! iframeContainer.hasClass('iframeContainer')) {
+        // ...but sometimes not.
+        iframeContainer = $(link).next().next();
+    }
+    
+    iframeContainer.css('display', 'block');
+    if (iframeContainer.children().length == 0) {
+        var iframe = $("<iframe>").attr('src', 'http://www.babylonjs-playground.com/frame.html#'+playgroundId);
+        iframeContainer.append(iframe);
+    } else {
+        iframeContainer.empty().css('display', 'none');       
+    }
+}
