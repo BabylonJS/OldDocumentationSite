@@ -131,7 +131,7 @@ BABYLON.Mesh.ExtrudeShape(name, shape, path, scale, rotation, cap, scene, updata
 * **sideOrientation** : the side orientation - _front, back_ or _double_.  
 
 If we change the _scale_ value from 1 to 3 for example (line 84), the initial star is scaled to 3 along the curve : http://www.babylonjs-playground.com/#RF9W9#4  
-If we now change the _rotation_ step value from 0 to _PI / 24_ for example, the curve is twisted this angle at each curve point : http://www.babylonjs-playground.com/#RF9W9#5  
+If we now change the _rotation_ step value from 0 to _PI / 24_ for example, the curve is twisted this angle at each curve point : http://www.babylonjs-playground.com/#RF9W9#218  
 
 Of course, even if you define your 2D shape in the xOy plane as described, the extrusion still works along any path direction : http://www.babylonjs-playground.com/#RF9W9#32    
 
