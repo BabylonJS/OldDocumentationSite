@@ -83,9 +83,12 @@ A camera is defined by the following JSON:
     "autoAnimateFrom": int,
     "autoAnimateTo": int,
     "autoAnimateLoop": boolean (can be omitted),
-    "autoAnimateSpeed": number (can be omitted)
+    "autoAnimateSpeed": number (can be omitted),
+    "inputmgr" : map of camera inputs (can be omitted, see below)
 }
 ```
+## Map of camera inputs
+This is an object literal using the input type as a key, and the input settings as a child object. Each input type has its own properties.
 
 ## Lights
 A light is defined by the following JSON:
