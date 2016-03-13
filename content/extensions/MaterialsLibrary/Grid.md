@@ -8,6 +8,12 @@ A Full Playground example can be found here: [Grid Playground](http://babylonjs-
 
 ## Using the Grid material
 
+As the grid material is a babylonJS extension, it is not included in the main babylon.js file. In order to use the material please download and reference the extencion from the following location:
+[https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.gridMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.gridMaterial.js)
+
+You can also use the minified version for your production projects from:
+[https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.gridMaterial.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.gridMaterial.min.js)
+
 The default grid behaviour does not require any setup and displays a black and white grid on your meshes.
 
 ![](/img/extensions/materials/gridDefault.png)
@@ -54,7 +60,7 @@ You have now noticed on the previous examples that only one on ten lines is stro
  
 Setting it to 2, will make appear one strong line each 2 lines. This is only a scary parameter name for something simple.
 
-![Grid MUF](/img/extensions/materials/gridMUF.png)
+![Grid MUF](/img/extensions/materials/gridMUF.png = 20x20)
 
 [Playground](http://babylonjs-playground.com/#5S6MD#2)
 
