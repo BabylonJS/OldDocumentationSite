@@ -60,7 +60,7 @@ You have now noticed on the previous examples that only one on ten lines is stro
  
 Setting it to 2, will make appear one strong line each 2 lines. This is only a scary parameter name for something simple.
 
-![Grid MUF](/img/extensions/materials/gridMUF.png = 20x20)
+![Grid MUF](/img/extensions/materials/gridMUF.png)
 
 [Playground](http://babylonjs-playground.com/#5S6MD#2)
 
