@@ -179,6 +179,10 @@
         {
           "title": "Creating a custom loading screen",
           "filename": "Creating_a_custom_loading_screen"
+        },
+        {
+          "title": "Customizing camera inputs",
+          "filename": "19._Customizing_Camera_Inputs"
         }
       ]
     },
