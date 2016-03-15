@@ -153,7 +153,7 @@ The last two parameters can be omitted if you just need the default behavior :
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", [path1, path2, ..., pathn], false, false, 0, scene);
 ```
 
-I you need more details about how to deal with this method, you would probably read the [**Parametric Shapes**]() part.
+I you need more details about how to deal with this method, you would probably read the [**Parametric Shapes**](http://doc.babylonjs.com/tutorials/Parametric_Shapes) part.
 
 * ** Creation of a Tube**
 
@@ -176,7 +176,7 @@ The last two parameters can be omitted if you just need the default behavior :
 ```javascript
 var tube = BABYLON.Mesh.CreateTube("tube", [V1, V2, ..., Vn], radius, tesselation, radiusFunction, cap, scene);
 ```
-The tube can also be used as a [**Parametric Shapes**]() by setting a radius function.
+The tube can also be used as a [**Parametric Shapes**](http://doc.babylonjs.com/tutorials/Parametric_Shapes) by setting a radius function.
 
 
 
