@@ -63,6 +63,14 @@ skyMaterial.inclination = 0.5; // The solar inclination, related to the solar az
 skyMaterial.azimuth = 0.25; // The solar azimuth in interval [0, 1]
 ```
 
+Otherwise, if you want to configure the sun position with a BABYLON.Vector3, you can set:
+
+```
+// Manually set the sun position
+skyMaterial.useSunPosition = true; // Do not set sun position from azimuth and inclination
+skyMaterial.sunPosition = new BABYLON.Vector3(0, 100, 0);
+```
+
 ![skyAzimuthInclination](/img/extensions/materials/skyAzimuthInclination.png)
 
 
