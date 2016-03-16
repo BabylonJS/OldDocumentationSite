@@ -43,7 +43,7 @@ These are the main controls of the material. They are helpful to configure the m
 ### Albedo
 The albedo value, also known as diffuse in standard material, controls the main color of the material. It sets up the **surface color** of the object. 
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#0)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#9)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.albedoColor = new BABYLON.Color3(1, 0, 0);
@@ -51,7 +51,7 @@ pbr.albedoColor = new BABYLON.Color3(1, 0, 0);
 
 The albedo value can also be controlled by a texture through a dedicated property.
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#1)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#10)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.albedoColor = texture;
@@ -60,7 +60,7 @@ pbr.albedoColor = texture;
 ### Reflectivity
 The reflectivity color is the PBR equivalent of the specular color in the standard material. This controls the **surface reflectivity** of the material. You could certainly wonder why a color is required and not a coefficent ? If we only had a coefficient, we could only create material from mirror (fully reflective) to matte paper (not reflective at all). The main advantage of a color is to control what channels are reflected by the material. Gold for instance will reflect yellow and not only white.
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#2)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#11)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.reflectivityColor = new BABYLON.Color3(1.0, 1.0, 1.0);
@@ -84,7 +84,7 @@ pbr.microSurface = 0.2; // Rough material like paper.
 
 You should now wonder how to store this value in a texture? The microsurface is a single float parameter and the reflectivity color does not use its alpha channel. This value can then be simply embedded in the alpha channel of the reflectivityTexture.
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#4)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#12)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.reflectivityTexture = new BABYLON.Texture("textures/reflectivity.png", scene);
@@ -104,7 +104,7 @@ Reflection is the easiest to describe, it is **what you can see in a mirror**.
 
 As the reflection is a mandatory part of the material, like the albedo properties, either a color or a texture is configurable.
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#2)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#13)
 ```javascript
 // Creates a reflection texture.
 var reflectionTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);	
@@ -117,7 +117,7 @@ pbr.reflectivityColor = new BABYLON.Color3(1.0, 1.0, 1.0); // White to make the 
 
 In case you do not have any texture to provide or no defined light probes in your scene, the reflection color will be used. You can notice in the following setup with a red albedo but a white reflectivity color (mirror) that the sphere is yellow as defined in the reflection color.
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#5)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#14)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.albedoColor = new BABYLON.Color3(1, 0, 0);
@@ -129,7 +129,7 @@ The diffuse reflection will be described later in the Environment Irradiance sec
 
 Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a litten room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR#1)
+[Demo](http://www.babylonjs-playground.com/#19JGPR#6)
 ```javascript
 glass.reflectionTexture = hdrTexture;
 glass.alpha = 0.5;
@@ -142,7 +142,7 @@ A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR)
+[Demo](http://www.babylonjs-playground.com/#19JGPR#7)
 ```javascript
 var glass = new BABYLON.PBRMaterial("glass", scene);
 glass.reflectionTexture = hdrTexture;
@@ -176,7 +176,7 @@ Diffuse + Reflective <= 1.0
 
 With this in mind, it obviously means the materials need to automatically drop one of them if the sum is bigger than one. As a common standard convention (they sometimes exist in 3D), we chose to decrease the albedo impact if the reflectivity is high.
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#5)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#14)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.albedoColor = new BABYLON.Color3(1, 0, 0);
@@ -193,7 +193,7 @@ Relection + Refraction <= 1.0
 
 Basically, a fully reflective object like a mirror will not let you see through it. You can see it on the example below. Even if the material is defined as fully refractive, the fact that the reflectivity is White (1.0) completely cancels the refractive part of it.
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR#2)
+[Demo](http://www.babylonjs-playground.com/#19JGPR#8)
 ```javascript
  var notGlass = new BABYLON.PBRMaterial("glass", scene);
 notGlass.reflectionTexture = hdrTexture;
@@ -262,9 +262,9 @@ Light Radius has been added as a property of each light and controls the fact th
 
 Why? Simply because if your material is really glossy, each specular highlights (from the direct lights) will only be seen as a simple dot.
 
-Try to spot the dot in the middle of the sphere in the [Demo](http://www.babylonjs-playground.com/#19JGPR#5).
+Try to spot the dot in the middle of the sphere in the [Demo](http://www.babylonjs-playground.com/#19JGPR#10).
 
-Now, increasing the light radius makes this dot wider as you can see on this [Demo](http://www.babylonjs-playground.com/#19JGPR#4) 
+Now, increasing the light radius makes this dot wider as you can see on this [Demo](http://www.babylonjs-playground.com/#19JGPR#11) 
 
 This uses internally a lot of approximation like Tan(theta) is almost theta for small angles so if you try to put bigger radius than a tenth of the light distance you will not see the desired effect.
 
@@ -293,7 +293,7 @@ Those textures are directly stored in Linear Space. If you want to reuse them in
 * noMipmap Forces to not generate the mipmap if true
 * generateHarmonics Specifies wether you want to extract the polynomial harmonics during the generation process
 * useInGammaSpace Specifies if the texture will be use in gamma or linear space (the PBR material requires those texture in linear space, but the standard material would require them in Gamma space)
-* usePMREMGenerator Specifies wether or not to generate the CubeMap through CubeMapGen to avoid seams issue at run time.         
+* usePMREMGenerator Specifies wether or not to generate the CubeMap through CubeMapGen to avoid seams issue at run time.
 
 ### Seamless Cubemap
 Knowing about our new texture format, it is a good time to discuss one annoying issue.
@@ -380,7 +380,7 @@ A few other properties can help you mixing a debug color with the current one de
 
 Basically, I want to overload my albedo texture in yellow by 50 %:
 
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#6)
+[Demo](http://www.babylonjs-playground.com/#1F0M1J#15)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.albedoTexture = texture;
@@ -443,7 +443,7 @@ hdrSkybox.infiniteDistance = true; // Push it at an infinite distance
 
 That is it for the scene setup used in all the samples.
 
-### How to create Metal?
+### How to create a Metal material?
 A metal ball acts as a kind of "dark mirror".
 
 Having following the scene creation, we start from the following point.
@@ -491,7 +491,7 @@ You can now notice the reflection on the side which come from the automatic fres
 
 That's all, you have just created your first PBR material \o/
 
-### How to create Gold?
+### How to create a Gold material?
 We'll try here to create rough gold, which could be compared to metal but yellow-er and rough-er.
 
 So let's tweak the reflectivity and microsurface of the metal from the previous tutorial to be more gold-ish.
@@ -513,7 +513,7 @@ metal.reflectionTexture = seamlessTexture;
 
 And you have already created your second material (only touching a few values).
 
-### How to create Crystal?
+### How to create a Crystal material?
 A crystal ball is an object we can see through and which deforms our view of the environment due to the contact surface changes from air to crystal (not taking into account the other one on the back from crystal to air).
 
 We start again from our scene setup and adds a sphere with a pbr material.
@@ -554,7 +554,7 @@ glass.cameraExposure = 0.66;
 glass.cameraContrast = 1.66;
 ```
 
-## How to create Wood?
+### How to create a Wood material?
 After creating Metal, Gold and Glass, it is obvious how to setup your scene with an HDR Texture, a plank (box) and a PBR material.
 
 I then start from this point (fully grey due to energy conservation as stated in the previous tuto):
@@ -632,7 +632,7 @@ wood.cameraContrast = 1.66;
 
 You have now created your fourth Material.
 
-### How to create Teal Plastic?
+### How to create a Teal Plastic material?
 Reading the other tutorials, you should be able to pretty quickly create plastic. It is a none reflective material, glossy with a uniform color.
 
 So let's start again from a simple setup with one hdr texture for the environment:
