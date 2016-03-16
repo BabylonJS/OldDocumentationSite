@@ -548,8 +548,12 @@
           "filename": "Normal"
         },
         {
-          "title": "Physically Based Rendering",
+          "title": "Introduction to Physically Based Rendering",
           "filename": "Physically_Based_Rendering"
+        },
+        {
+          "title": "Master the Physically Based Rendering",
+          "filename": "Physically_Based_Rendering_Master"
         },
         {
           "title": "Terrain",

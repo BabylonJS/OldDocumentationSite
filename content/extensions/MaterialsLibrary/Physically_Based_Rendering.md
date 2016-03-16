@@ -215,3 +215,7 @@ They are **automatically created** and configured based on the other inputs pass
 
 The emissive and opacity fresnels from tooling are still available in this material.
 
+## Going Further
+
+Please have a read at [Master the PBR](http://doc.babylonjs.com/extensions/Physically_Based_Rendering_Master) for more information on how to use the material.
+
