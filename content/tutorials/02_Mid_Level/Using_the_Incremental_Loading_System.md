@@ -8,4 +8,4 @@ These files can be used just like a standard _.babylon_ scene except that they w
 
 You have to put the _.babylonmeshdata_ and _.babylongeometrydata_ files in the same folder as the _.incremental.babylon_ file.
 
-The Espilit demo on the [main site](http://www.babylonjs.com) uses incremental loading if you want an [example](https://github.com/BabylonJS/Samples/blob/master/index.js#L651).
+The Espilit demo on the [main site](http://www.babylonjs.com) uses incremental loading if you want an [example](https://github.com/BabylonJS/Samples/tree/master/Demos/Espilit).

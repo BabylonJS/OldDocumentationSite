@@ -97,4 +97,4 @@ You can play with the scene and code used in this tutorial... by visiting the Ba
 ## Next step
 Don’t hesitate to use sprites in your scene: they are not resource intensive, and they really can help keep high frame rates in your application.
 
-Now you know how to create a complete simple dynamic scene and it is going to be important to talk about [collisions](http://doc.babylonjs.com/page.php?p=22101).
+Now you know how to create a complete simple dynamic scene and it is going to be important to talk about [collisions](http://doc.babylonjs.com/tutorials/Intersect_Collisions_-_mesh).

@@ -181,7 +181,7 @@ _.createEffectForParticles_ accepts the following parameters:
 - array of additional samplers (for additional textures!)
 
 
-The particle Effect Object is a slightly-modified [Babylon Effect Object](http://doc.babylonjs.com/page.php?p=24951). Also notice that the ShadersStore is a namespace upon this special [Effect Object](http://doc.babylonjs.com/page.php?p=24951). 
+The particle Effect Object is a slightly-modified [Babylon Effect Object](http://doc.babylonjs.com/classes/Effect). Also notice that the ShadersStore is a namespace upon this special [Effect Object](http://doc.babylonjs.com/classes/Effect). 
 
 The Effect Object has many 'setter' methods on it, one of which is _.setFloat_. Notice how it is used in the registerBeforeRender function. This causes the speed of the effect to cycle across about a 20 second time span. We are (the demo author is) varying the time parameter of the fragment shader program... from within the scene's render loop! WE LOVE IT!
 
@@ -250,4 +250,4 @@ You can get even more control over particles by using custom functions:
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
 
-Stay with us, because we are going to learn a new, very interesting thing: [Configuring your environment](http://doc.babylonjs.com/page.php?p=22131).
+Stay with us, because we are going to learn a new, very interesting thing: [Configuring your environment](http://doc.babylonjs.com/tutorials/Environment).
