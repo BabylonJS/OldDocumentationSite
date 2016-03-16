@@ -129,7 +129,7 @@ The diffuse reflection will be described later in the Environment Irradiance sec
 
 Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a litten room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR#6)
+[Demo](http://www.babylonjs-playground.com/#19JGPR#13)
 ```javascript
 glass.reflectionTexture = hdrTexture;
 glass.alpha = 0.5;
@@ -142,7 +142,7 @@ A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR#7)
+[Demo](http://www.babylonjs-playground.com/#19JGPR#12)
 ```javascript
 var glass = new BABYLON.PBRMaterial("glass", scene);
 glass.reflectionTexture = hdrTexture;
