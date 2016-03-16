@@ -11,7 +11,7 @@ class [QuadraticMatrix](/classes/2.3/QuadraticMatrix)
 
 ## Constructor
 
-##  new [QuadraticMatrix](/classes/2.3/QuadraticMatrix)(data)
+## new [QuadraticMatrix](/classes/2.3/QuadraticMatrix)(data)
 
 
 
@@ -70,7 +70,7 @@ optional | data | Array&lt;number&gt; |
 ---|---|---|---
  | matrix | [QuadraticMatrix](/classes/2.3/QuadraticMatrix) |   
 
-### static  FromData(a, b, c, d) &rarr; [QuadraticMatrix](/classes/2.3/QuadraticMatrix)
+### static FromData(a, b, c, d) &rarr; [QuadraticMatrix](/classes/2.3/QuadraticMatrix)
 
 
 
@@ -80,7 +80,7 @@ optional | data | Array&lt;number&gt; |
  | a | number |   
  | b | number |   
  | c | number |   
-### static  DataFromNumbers(a, b, c, d) &rarr; number[]
+### static DataFromNumbers(a, b, c, d) &rarr; number[]
 
 
 

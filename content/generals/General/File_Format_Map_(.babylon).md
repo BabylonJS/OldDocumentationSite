@@ -42,7 +42,13 @@ The global structure of a .babylon file is the following:
     "collisionsEnabled": boolean,
     "physicsEnabled": boolean,
     "physicsGravity": vector3 (defaults to [0,-9.81,0]),
-    "physicsEngine": string ("oimo" or "cannon", defaults to the default engine (oimo)
+    "physicsEngine": string ("oimo" or "cannon", defaults to the default engine (oimo),
+    "animations": array of Animations (see below, can be omitted),
+    "autoAnimate": boolean,
+    "autoAnimateFrom": int,
+    "autoAnimateTo": int,
+    "autoAnimateLoop": boolean (can be omitted),
+    "autoAnimateSpeed": number (can be omitted)
 }
 ```
 ## Cameras
@@ -76,9 +82,13 @@ A camera is defined by the following JSON:
     "autoAnimate": boolean,
     "autoAnimateFrom": int,
     "autoAnimateTo": int,
-    "autoAnimateLoop": boolean (can be omitted)
+    "autoAnimateLoop": boolean (can be omitted),
+    "autoAnimateSpeed": number (can be omitted),
+    "inputmgr" : map of camera inputs (can be omitted, see below)
 }
 ```
+## Map of camera inputs
+This is an object literal using the input type as a key, and the input settings as a child object. Each input type has its own properties.
 
 ## Lights
 A light is defined by the following JSON:
@@ -98,7 +108,13 @@ A light is defined by the following JSON:
     "diffuse": color3,
     "specular": color3,
     "excludedMeshesIds": array of string,
-    "includedOnlyMeshesIds": array of string
+    "includedOnlyMeshesIds": array of string,
+    "animations": array of Animations (see below, can be omitted),
+    "autoAnimate": boolean,
+    "autoAnimateFrom": int,
+    "autoAnimateTo": int,
+    "autoAnimateLoop": boolean (can be omitted),
+    "autoAnimateSpeed": number (can be omitted)
 }
 ```
 
@@ -378,6 +394,7 @@ A mesh is defined by the following JSON:
     "autoAnimateFrom": int,
     "autoAnimateTo": int,
     "autoAnimateLoop": boolean,
+    "autoAnimateSpeed": number (can be omitted)
     "instances": array of Instances (see below, can be omitted),
     "actions": array of actions (see below)
 }
@@ -489,7 +506,13 @@ A particle system is defined by the following JSON:
      "blendMode": int,
      "capacity": int,
      "textureMask": color4,
-     "linkToEmitter": bool
+     "linkToEmitter": bool,
+    "animations": array of Animations (see below, can be omitted),
+    "autoAnimate": boolean,
+    "autoAnimateFrom": int,
+    "autoAnimateTo": int,
+    "autoAnimateLoop": boolean (can be omitted),
+    "autoAnimateSpeed": number (can be omitted)
 }
 ```
 

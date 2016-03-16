@@ -13,7 +13,7 @@ class [DebugLayer](/classes/2.3/DebugLayer)
 
 ## Constructor
 
-##  new [DebugLayer](/classes/2.3/DebugLayer)(scene)
+## new [DebugLayer](/classes/2.3/DebugLayer)(scene)
 
 
 

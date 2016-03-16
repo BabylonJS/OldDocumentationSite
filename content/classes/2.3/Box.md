@@ -9,7 +9,7 @@ class [Box](/classes/2.3/Box) extends _Primitive
 
 ## Constructor
 
-##  new [Box](/classes/2.3/Box)(id, scene, size, canBeRegenerated, mesh, side)
+## new [Box](/classes/2.3/Box)(id, scene, size, canBeRegenerated, mesh, side)
 
 
 
@@ -45,7 +45,7 @@ optional | mesh | [Mesh](/classes/2.3/Mesh) |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedBox, scene) &rarr; [Box](/classes/2.3/Box)
+### static Parse(parsedBox, scene) &rarr; [Box](/classes/2.3/Box)
 
 
 

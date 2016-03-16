@@ -13,7 +13,7 @@ class [Arc2](/classes/2.3/Arc2)
 
 ## Constructor
 
-##  new [Arc2](/classes/2.3/Arc2)(startPoint, midPoint, endPoint)
+## new [Arc2](/classes/2.3/Arc2)(startPoint, midPoint, endPoint)
 
 
 

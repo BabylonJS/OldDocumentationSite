@@ -9,13 +9,13 @@ TAGS:
 
 class [FxaaPostProcess](/classes/2.3/FxaaPostProcess) extends [PostProcess](/classes/2.3/PostProcess)
 
-
+Builtin postprocess applying a full screen antialiasing filter
 
 ## Constructor
 
-##  new [FxaaPostProcess](/classes/2.3/FxaaPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
+## new [FxaaPostProcess](/classes/2.3/FxaaPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
 
-
+The Postprocess constructor
 
 #### Parameters
  | Name | Type | Description
@@ -29,7 +29,7 @@ optional | engine | [Engine](/classes/2.3/Engine) |   The engine to attach the p
 
 ### texelWidth : number
 
-
+Width of the texture element
 
 ### texelHeight : number
 

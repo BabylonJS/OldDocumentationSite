@@ -11,7 +11,7 @@ class [DepthRenderer](/classes/2.3/DepthRenderer)
 
 ## Constructor
 
-##  new [DepthRenderer](/classes/2.3/DepthRenderer)(scene, type)
+## new [DepthRenderer](/classes/2.3/DepthRenderer)(scene, type)
 
 
 

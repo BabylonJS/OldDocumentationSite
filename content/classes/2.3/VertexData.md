@@ -7,21 +7,21 @@ PG_VERSION: 2.1
 
 class [VertexData](/classes/2.3/VertexData)
 
-
+The [VertexData](/classes/2.3/VertexData) class.
 
 ## Members
 
 ### positions : number[]
 
-
+The [VertexData](/classes/2.3/VertexData) position
 
 ### normals : number[]
 
-
+The [VertexData](/classes/2.3/VertexData) normals
 
 ### uvs : number[]
 
-
+The [VertexData](/classes/2.3/VertexData) uvs
 
 ### uvs2 : number[]
 
@@ -45,15 +45,15 @@ class [VertexData](/classes/2.3/VertexData)
 
 ### colors : number[]
 
-
+The [VertexData](/classes/2.3/VertexData) colors
 
 ### matricesIndices : number[]
 
-
+The [VertexData](/classes/2.3/VertexData) matricesIndices
 
 ### matricesWeights : number[]
 
-
+The [VertexData](/classes/2.3/VertexData) matricesWeights
 
 ### matricesIndicesExtra : number[]
 
@@ -65,13 +65,13 @@ class [VertexData](/classes/2.3/VertexData)
 
 ### indices : number[]
 
-
+The [VertexData](/classes/2.3/VertexData) indices
 
 ## Methods
 
 ### set(data, kind) &rarr; void
 
-
+Set the vertex data
 
 #### Parameters
  | Name | Type | Description
@@ -80,7 +80,7 @@ class [VertexData](/classes/2.3/VertexData)
  | kind | string |   @param kind
 ### applyToMesh(mesh, updatable) &rarr; void
 
-
+Apply To mesh
 
 #### Parameters
  | Name | Type | Description
@@ -89,7 +89,7 @@ class [VertexData](/classes/2.3/VertexData)
 optional | updatable | boolean |   @param updatable
 ### applyToGeometry(geometry, updatable) &rarr; void
 
-
+Apply to [Geometry](/classes/2.3/Geometry)
 
 #### Parameters
  | Name | Type | Description
@@ -98,7 +98,7 @@ optional | updatable | boolean |   @param updatable
 optional | updatable | boolean |   @param updatable
 ### updateMesh(mesh, updateExtends, makeItUnique) &rarr; void
 
-
+Update [Mesh](/classes/2.3/Mesh)
 
 #### Parameters
  | Name | Type | Description
@@ -108,7 +108,7 @@ optional | updateExtends | boolean |   Not used here
 optional | makeItUnique | boolean |   Not used here
 ### updateGeometry(geometry, updateExtends, makeItUnique) &rarr; void
 
-
+Update
 
 #### Parameters
  | Name | Type | Description
@@ -118,7 +118,7 @@ optional | updateExtends | boolean |   Not used here
 optional | makeItUnique | boolean |   Not used here
 ### transform(matrix) &rarr; void
 
-
+Transform his vertexdata with the given matri
 
 #### Parameters
  | Name | Type | Description
@@ -127,7 +127,7 @@ optional | makeItUnique | boolean |   Not used here
 
 ### merge(other) &rarr; void
 
-
+Merge this vertex data with the one given in parameter
 
 #### Parameters
  | Name | Type | Description
@@ -137,25 +137,25 @@ optional | makeItUnique | boolean |   Not used here
 ### serialize() &rarr; any
 
 
-### static  ExtractFromMesh(mesh, copyWhenShared) &rarr; [VertexData](/classes/2.3/VertexData)
+### static ExtractFromMesh(mesh, copyWhenShared) &rarr; [VertexData](/classes/2.3/VertexData)
 
-
+Creates a new VertexDataObject with values extracted of the given mesh
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | mesh | [Mesh](/classes/2.3/Mesh) |   @param mesh
 optional | copyWhenShared | boolean |   
-### static  ExtractFromGeometry(geometry, copyWhenShared) &rarr; [VertexData](/classes/2.3/VertexData)
+### static ExtractFromGeometry(geometry, copyWhenShared) &rarr; [VertexData](/classes/2.3/VertexData)
 
-
+Creates a new VertexDataObject with values extracted of the given geometry
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | geometry | [Geometry](/classes/2.3/Geometry) |   @param geometry
 optional | copyWhenShared | boolean |   
-### static  CreateRibbon(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateRibbon(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -164,7 +164,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { pathArray: [Vector3](/classes/2.3/Vector3)[][],  closeArray: boolean,  closePath: boolean,  offset: number,  sideOrientation: number } |  
 
-### static  CreateBox(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateBox(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -173,7 +173,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { size: number,  width: number,  height: number,  depth: number,  faceUV: [Vector4](/classes/2.3/Vector4)[],  faceColors: [Color4](/classes/2.3/Color4)[],  sideOrientation: number } |  
 
-### static  CreateSphere(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateSphere(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -182,7 +182,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { segments: number,  diameter: number,  diameterX: number,  diameterY: number,  diameterZ: number,  arc: number,  slice: number,  sideOrientation: number } |  
 
-### static  CreateCylinder(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateCylinder(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -191,7 +191,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { height: number,  diameterTop: number,  diameterBottom: number,  diameter: number,  tessellation: number,  subdivisions: number,  arc: number,  faceColors: [Color4](/classes/2.3/Color4)[],  faceUV: [Vector4](/classes/2.3/Vector4)[],  hasRings: boolean,  enclose: boolean,  sideOrientation: number } |  
 
-### static  CreateTorus(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateTorus(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -200,7 +200,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { diameter: number,  thickness: number,  tessellation: number,  sideOrientation: number } |  
 
-### static  CreateLines(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateLines(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -209,7 +209,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { points: [Vector3](/classes/2.3/Vector3)[] } |  
 
-### static  CreateDashedLines(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateDashedLines(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -218,7 +218,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { points: [Vector3](/classes/2.3/Vector3)[],  dashSize: number,  gapSize: number,  dashNb: number } |  
 
-### static  CreateGround(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateGround(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -227,7 +227,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { width: number,  height: number,  subdivisions: number } |  
 
-### static  CreateTiledGround(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateTiledGround(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -236,7 +236,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { xmin: number,  zmin: number,  xmax: number,  zmax: number,  subdivisions: { w: number,  h: number },  precision: { w: number,  h: number } } |  
 
-### static  CreateGroundFromHeightMap(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateGroundFromHeightMap(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -245,7 +245,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { width: number,  height: number,  subdivisions: number,  minHeight: number,  maxHeight: number,  buffer: Uint8Array,  bufferWidth: number,  bufferHeight: number } |  
 
-### static  CreatePlane(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreatePlane(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -254,7 +254,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { size: number,  width: number,  height: number,  sideOrientation: number } |  
 
-### static  CreateDisc(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateDisc(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -263,7 +263,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { radius: number,  tessellation: number,  arc: number,  sideOrientation: number } |  
 
-### static  CreateIcoSphere(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateIcoSphere(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -272,7 +272,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { radius: number,  radiusX: number,  radiusY: number,  radiusZ: number,  flat: boolean,  subdivisions: number,  sideOrientation: number } |  
 
-### static  CreatePolyhedron(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreatePolyhedron(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -281,7 +281,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { type: number,  size: number,  sizeX: number,  sizeY: number,  sizeZ: number,  custom: any,  faceUV: [Vector4](/classes/2.3/Vector4)[],  faceColors: [Color4](/classes/2.3/Color4)[],  flat: boolean,  sideOrientation: number } |  
 
-### static  CreateTorusKnot(options) &rarr; [VertexData](/classes/2.3/VertexData)
+### static CreateTorusKnot(options) &rarr; [VertexData](/classes/2.3/VertexData)
 
 
 
@@ -290,7 +290,7 @@ optional | copyWhenShared | boolean |
 ---|---|---|---
  | options | { radius: number,  tube: number,  radialSegments: number,  tubularSegments: number,  p: number,  q: number,  sideOrientation: number } |  
 
-### static  ComputeNormals(positions, indices, normals) &rarr; void
+### static ComputeNormals(positions, indices, normals) &rarr; void
 
 
 
@@ -300,7 +300,7 @@ optional | copyWhenShared | boolean |
  | positions | any |   @param positions
  | indices | any |   @param indices
  | normals | any |   @param normals
-### static  ImportVertexData(parsedVertexData, geometry) &rarr; void
+### static ImportVertexData(parsedVertexData, geometry) &rarr; void
 
 
 

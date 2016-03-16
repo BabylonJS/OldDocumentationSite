@@ -14,7 +14,7 @@ class [Mesh](/classes/2.3/Mesh) extends [AbstractMesh](/classes/2.3/AbstractMesh
 
 ## Constructor
 
-##  new [Mesh](/classes/2.3/Mesh)(name, scene, parent, source, doNotCloneChildren)
+## new [Mesh](/classes/2.3/Mesh)(name, scene, parent, source, doNotCloneChildren)
 
 @constructor
 
@@ -31,49 +31,49 @@ optional | parent | [Node](/classes/2.3/Node) |
 optional | source | [Mesh](/classes/2.3/Mesh) |   
 ## Members
 
-### static  FRONTSIDE : number
+### static FRONTSIDE : number
 
 
 
-### static  BACKSIDE : number
+### static BACKSIDE : number
 
 
 
-### static  DOUBLESIDE : number
+### static DOUBLESIDE : number
 
 
 
-### static  DEFAULTSIDE : number
+### static DEFAULTSIDE : number
 
 
 
-### static  NO_CAP : number
+### static NO_CAP : number
 
 
 
-### static  CAP_START : number
+### static CAP_START : number
 
 
 
-### static  CAP_END : number
+### static CAP_END : number
 
 
 
-### static  CAP_ALL : number
+### static CAP_ALL : number
 
 
 
 ### delayLoadState : number
 
-
+Delay load mesh state
 
 ### instances : [InstancedMesh](/classes/2.3/InstancedMesh)[]
 
-
+Instances [Mesh](/classes/2.3/Mesh)
 
 ### delayLoadingFile : string
 
-
+Delay load mesh file
 
 ### onLODLevelSelection : (distance: number, mesh: [Mesh](/classes/2.3/Mesh), selectedLevel: [Mesh](/classes/2.3/Mesh)) =&gt; void
 
@@ -147,10 +147,10 @@ Remove a mesh from the LOD array
 optional | boundingSphere | [BoundingSphere](/classes/2.3/BoundingSphere) |   
 ### getTotalVertices() &rarr; number
 
-
+Returns the total number of vertices in this mesh
 ### getVerticesData(kind, copyWhenShared) &rarr; number[]
 
-
+Returns the data of a specific vertex buffer
 
 #### Parameters
  | Name | Type | Description
@@ -159,7 +159,7 @@ optional | boundingSphere | [BoundingSphere](/classes/2.3/BoundingSphere) |
 optional | copyWhenShared | boolean |   
 ### getVertexBuffer(kind) &rarr; [VertexBuffer](/classes/2.3/VertexBuffer)
 
-
+Get the vertex buffer
 
 #### Parameters
  | Name | Type | Description
@@ -168,7 +168,7 @@ optional | copyWhenShared | boolean |
 
 ### isVerticesDataPresent(kind) &rarr; boolean
 
-
+Returns true if the kind vertex buffer given in parameter exists for this mesh, false otherwise
 
 #### Parameters
  | Name | Type | Description
@@ -177,13 +177,13 @@ optional | copyWhenShared | boolean |
 
 ### getVerticesDataKinds() &rarr; string[]
 
-
+Get vertices data kinds
 ### getTotalIndices() &rarr; number
 
-
+Get the total indices
 ### getIndices(copyWhenShared) &rarr; number[]
 
-
+Returns the indices of this mesh
 
 #### Parameters
  | Name | Type | Description
@@ -192,10 +192,10 @@ optional | copyWhenShared | boolean |
 
 ### isReady() &rarr; boolean
 
-
+Returns true if this mesh is ready to be rendered, false otherwise.
 ### isDisposed() &rarr; boolean
 
-
+Returns true if this mesh is disposed, false otherwise.
 ### freezeNormals() &rarr; void
 
 
@@ -204,10 +204,10 @@ optional | copyWhenShared | boolean |
 
 ### refreshBoundingInfo() &rarr; void
 
-
+Refresh this mesh bounding infos
 ### subdivide(count) &rarr; void
 
-
+Subdivide this mesh by creating &quot;count&quot; submeshes stored in this.subMeshes
 
 #### Parameters
  | Name | Type | Description
@@ -216,7 +216,7 @@ optional | copyWhenShared | boolean |
 
 ### setVerticesData(kind, data, updatable, stride) &rarr; void
 
-
+Set the vertex buffer data of this mesh
 
 #### Parameters
  | Name | Type | Description
@@ -226,7 +226,7 @@ optional | copyWhenShared | boolean |
 optional | updatable | boolean |  &nbsp;
 ### updateVerticesData(kind, data, updateExtends, makeItUnique) &rarr; void
 
-
+Update a specific kind of vertex buffer
 
 #### Parameters
  | Name | Type | Description
@@ -236,7 +236,7 @@ optional | updatable | boolean |  &nbsp;
 optional | updateExtends | boolean |   @param updateExtends
 ### updateVerticesDataDirectly(kind, data, offset, makeItUnique) &rarr; void
 
-
+Update a specific kind of vertex buffer directly
 
 #### Parameters
  | Name | Type | Description
@@ -255,10 +255,10 @@ optional | offset | number |
 optional | computeNormals | boolean |   
 ### makeGeometryUnique() &rarr; void
 
-
+Make geometry unique
 ### setIndices(indices, totalVertices) &rarr; void
 
-
+Set the indices of this mesh
 
 #### Parameters
  | Name | Type | Description
@@ -267,7 +267,7 @@ optional | computeNormals | boolean |
 optional | totalVertices | number |   
 ### registerBeforeRender(func) &rarr; void
 
-
+Set the callback function to call before starting a frame rendering
 
 #### Parameters
  | Name | Type | Description
@@ -276,7 +276,7 @@ optional | totalVertices | number |
 
 ### unregisterBeforeRender(func) &rarr; void
 
-
+Unregister the callback function which the name is given in parameter
 
 #### Parameters
  | Name | Type | Description
@@ -285,7 +285,7 @@ optional | totalVertices | number |
 
 ### registerAfterRender(func) &rarr; void
 
-
+Set the callback function to call after starting a frame rendering
 
 #### Parameters
  | Name | Type | Description
@@ -294,7 +294,7 @@ optional | totalVertices | number |
 
 ### unregisterAfterRender(func) &rarr; void
 
-
+Unregister the callback function which the name is given in parameter.
 
 #### Parameters
  | Name | Type | Description
@@ -312,16 +312,16 @@ optional | totalVertices | number |
  | enableAlphaMode | boolean |  
 ### getEmittedParticleSystems() &rarr; [ParticleSystem](/classes/2.3/ParticleSystem)[]
 
-
+Returns the list of particle system in which this mesh is the emitter.
 ### getHierarchyEmittedParticleSystems() &rarr; [ParticleSystem](/classes/2.3/ParticleSystem)[]
 
-
+Returns a list of particle system. For all results, at least one descendant of this mesh is the emitter of it.
 ### getChildren() &rarr; [Node](/classes/2.3/Node)[]
 
-
+Returns the list of children of this mesh.
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
-
+Returns true if this mesh is in the frustrum defined by the 6 planes given in parameters
 
 #### Parameters
  | Name | Type | Description
@@ -330,7 +330,7 @@ optional | totalVertices | number |
 
 ### setMaterialByID(id) &rarr; void
 
-
+Set this mesh material within all material present in the scene.
 
 #### Parameters
  | Name | Type | Description
@@ -339,10 +339,10 @@ optional | totalVertices | number |
 
 ### getAnimatables() &rarr; IAnimatable[]
 
-
+Returns an array containing the mesh material if it exists.
 ### bakeTransformIntoVertices(transform) &rarr; void
 
-
+Apply the given transformation to this mesh
 
 #### Parameters
  | Name | Type | Description
@@ -354,7 +354,7 @@ optional | totalVertices | number |
 
 ### clone(name, newParent, doNotCloneChildren) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Clone a mesh
 
 #### Parameters
  | Name | Type | Description
@@ -364,7 +364,7 @@ optional | newParent | [Node](/classes/2.3/Node) |   His parent
 optional | doNotCloneChildren | boolean |   True if you want to clone children, false if you don't want to.
 ### dispose(doNotRecurse) &rarr; void
 
-
+Dispose a mesh
 
 #### Parameters
  | Name | Type | Description
@@ -373,7 +373,7 @@ optional | doNotRecurse | boolean |   @param doNotRecurse
 
 ### applyDisplacementMap(url, minHeight, maxHeight, onSuccess) &rarr; void
 
-
+Apply displacement map
 
 #### Parameters
  | Name | Type | Description
@@ -383,7 +383,7 @@ optional | doNotRecurse | boolean |   @param doNotRecurse
  | maxHeight | number |   The maximum height of the Height map
 ### applyDisplacementMapFromBuffer(buffer, heightMapWidth, heightMapHeight, minHeight, maxHeight) &rarr; void
 
-
+Apply displacement map from the buffer
 
 #### Parameters
  | Name | Type | Description
@@ -394,7 +394,8 @@ optional | doNotRecurse | boolean |   @param doNotRecurse
  | minHeight | number |  &nbsp; minHeight of the new GFHM
 ### convertToFlatShadedMesh() &rarr; void
 
-
+Updates normals and vertices to get a flat shading rendering.
+Warning: This may imply adding vertices to the mesh in order to get exactly 3 vertices per face.
 ### convertToUnIndexedMesh() &rarr; void
 
 
@@ -409,7 +410,7 @@ optional | flipNormals | boolean |
 
 ### createInstance(name) &rarr; [InstancedMesh](/classes/2.3/InstancedMesh)
 
-
+Create a new instance of InstanceMesh
 
 #### Parameters
  | Name | Type | Description
@@ -418,7 +419,7 @@ optional | flipNormals | boolean |
 
 ### synchronizeInstances() &rarr; void
 
-
+Synchronize the instances
 ### simplify(settings, parallelProcessing, simplificationType, successCallback) &rarr; void
 
 Simplify the mesh according to the given array of settings.
@@ -444,7 +445,7 @@ This should be used together with the simplification to avoid disappearing trian
 ---|---|---|---
 optional | successCallback | (mesh: [Mesh](/classes/2.3/Mesh)) =&gt; void |  an optional success callback to be called after the optimization finished.  an optional success callback to be called after the optimization finished. an optional success callback to be called after the optimization finished.
 
-### static  Parse(parsedMesh, scene, rootUrl) &rarr; [Mesh](/classes/2.3/Mesh)
+### static Parse(parsedMesh, scene, rootUrl) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -454,7 +455,7 @@ optional | successCallback | (mesh: [Mesh](/classes/2.3/Mesh)) =&gt; void |  an 
  | parsedMesh | any | 
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
  | rootUrl | string | 
-### static  CreateRibbon(name, pathArray, closeArray, closePath, offset, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateRibbon(name, pathArray, closeArray, closePath, offset, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -469,7 +470,7 @@ optional | successCallback | (mesh: [Mesh](/classes/2.3/Mesh)) =&gt; void |  an 
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
 optional | sideOrientation | number |  &nbsp;
-### static  CreateDisc(name, radius, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateDisc(name, radius, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -481,9 +482,9 @@ optional | sideOrientation | number |  &nbsp;
  | tessellation | number |  &nbsp;
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateBox(name, size, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateBox(name, size, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Create a box with the given properties
 
 #### Parameters
  | Name | Type | Description
@@ -492,9 +493,9 @@ optional | updatable | boolean |  &nbsp;
  | size | number |   
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateSphere(name, segments, diameter, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateSphere(name, segments, diameter, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Create a [Sphere](/classes/2.3/Sphere) with the given properties
 
 #### Parameters
  | Name | Type | Description
@@ -504,24 +505,24 @@ optional | updatable | boolean |  &nbsp;
  | diameter | number |   The diameter of the [Torus](/classes/2.3/Torus)
 optional | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateCylinder(name, height, diameterTop, diameterBottom, tessellation, subdivisions, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateCylinder(name, height, diameterTop, diameterBottom, tessellation, subdivisions, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Create a cylinder with the given properties
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | name | string |   
- | height | number |   The height of cylinder
+ | height | number |   The height of the GroundFromHeightMap
  | diameterTop | number |   Diameter at top of the cylinder
  | diameterBottom | number |   Diameter at bottom of the cylinder
- | tessellation | number |  Number of faces around the cylinder
- | subdivisions | any |   The number of subdivisions from bottom to top of the cylinder
- | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the cylinder
+ | tessellation | number |  &nbsp;
+ | subdivisions | any |   The number of subdivisions in the GroundFromHeightMap
+ | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | any |  &nbsp;
-### static  CreateTorus(name, diameter, thickness, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateTorus(name, diameter, thickness, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Create a [Torus](/classes/2.3/Torus) with the given properties
 
 #### Parameters
  | Name | Type | Description
@@ -532,9 +533,9 @@ optional | updatable | any |  &nbsp;
  | tessellation | number |  &nbsp;
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateTorusKnot(name, radius, tube, radialSegments, tubularSegments, p, q, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateTorusKnot(name, radius, tube, radialSegments, tubularSegments, p, q, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Create a TorusKnut with the given properties
 
 #### Parameters
  | Name | Type | Description
@@ -548,7 +549,7 @@ optional | updatable | boolean |  &nbsp;
  | q | number |   Describes around-the-center (Q) winding numbers
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateLines(name, points, scene, updatable, instance) &rarr; [LinesMesh](/classes/2.3/LinesMesh)
+### static CreateLines(name, points, scene, updatable, instance) &rarr; [LinesMesh](/classes/2.3/LinesMesh)
 
 
 
@@ -559,7 +560,7 @@ optional | updatable | boolean |  &nbsp;
  | points | [Vector3](/classes/2.3/Vector3)[] |   
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateDashedLines(name, points, dashSize, gapSize, dashNb, scene, updatable, instance) &rarr; [LinesMesh](/classes/2.3/LinesMesh)
+### static CreateDashedLines(name, points, dashSize, gapSize, dashNb, scene, updatable, instance) &rarr; [LinesMesh](/classes/2.3/LinesMesh)
 
 
 
@@ -573,7 +574,7 @@ optional | updatable | boolean |  &nbsp;
  | dashNb | number |   
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  ExtrudeShape(name, shape, path, scale, rotation, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
+### static ExtrudeShape(name, shape, path, scale, rotation, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -589,7 +590,7 @@ optional | updatable | boolean |  &nbsp;
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
 optional | sideOrientation | number |  &nbsp;
-### static  ExtrudeShapeCustom(name, shape, path, scaleFunction, rotationFunction, ribbonCloseArray, ribbonClosePath, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
+### static ExtrudeShapeCustom(name, shape, path, scaleFunction, rotationFunction, ribbonCloseArray, ribbonClosePath, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -607,7 +608,7 @@ optional | sideOrientation | number |  &nbsp;
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
 optional | sideOrientation | number |  &nbsp;
-### static  CreateLathe(name, shape, radius, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateLathe(name, shape, radius, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -620,9 +621,9 @@ optional | sideOrientation | number |  &nbsp;
  | tessellation | number |  &nbsp;
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreatePlane(name, size, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreatePlane(name, size, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Create a [Plane](/classes/2.3/Plane) with the given properties
 
 #### Parameters
  | Name | Type | Description
@@ -631,9 +632,9 @@ optional | updatable | boolean |  &nbsp;
  | size | number |   
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateGround(name, width, height, subdivisions, scene, updatable) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateGround(name, width, height, subdivisions, scene, updatable) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+Create a [Ground](/classes/2.3/Ground) with the given properties
 
 #### Parameters
  | Name | Type | Description
@@ -643,9 +644,10 @@ optional | updatable | boolean |  &nbsp;
  | height | number |   The height of the GroundFromHeightMap
  | subdivisions | number |   The number of subdivisions in the GroundFromHeightMap
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
-### static  CreateTiledGround(name, xmin, zmin, xmax, zmax, subdivisions, precision, scene, updatable) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateTiledGround(name, xmin, zmin, xmax, zmax, subdivisions, precision, scene, updatable) &rarr; [Mesh](/classes/2.3/Mesh)
 
-
+; 
+Create a [TiledGround](/classes/2.3/TiledGround) with the given properties
 
 #### Parameters
  | Name | Type | Description
@@ -658,9 +660,9 @@ optional | updatable | boolean |  &nbsp;
  | subdivisions | { w: number,  h: number } |   The number of subdivisions in the GroundFromHeightMap
  | precision | { w: number,  h: number } |   The number of subdivisions in each tile (precision.w : in width; precision.h : in height)
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
-### static  CreateGroundFromHeightMap(name, url, width, height, subdivisions, minHeight, maxHeight, scene, updatable, onReady) &rarr; [GroundMesh](/classes/2.3/GroundMesh)
+### static CreateGroundFromHeightMap(name, url, width, height, subdivisions, minHeight, maxHeight, scene, updatable, onReady) &rarr; [GroundMesh](/classes/2.3/GroundMesh)
 
-
+Create a GroundFromHeightMap
 
 #### Parameters
  | Name | Type | Description
@@ -674,7 +676,7 @@ optional | updatable | boolean |  &nbsp;
  | maxHeight | number |   The maximum height of the Height map
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
-### static  CreateTube(name, path, radius, tessellation, radiusFunction, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateTube(name, path, radius, tessellation, radiusFunction, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -690,7 +692,7 @@ optional | updatable | boolean |  &nbsp;
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
 optional | updatable | boolean |  &nbsp;
 optional | sideOrientation | number |  &nbsp;
-### static  CreatePolyhedron(name, options, scene) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreatePolyhedron(name, options, scene) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -700,7 +702,7 @@ optional | sideOrientation | number |  &nbsp;
  | name | string |   
  | options | { type: number,  size: number,  sizeX: number,  sizeY: number,  sizeZ: number,  custom: any,  faceUV: [Vector4](/classes/2.3/Vector4)[],  faceColors: [Color4](/classes/2.3/Color4)[],  updatable: boolean,  sideOrientation: number } |  
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
-### static  CreateIcoSphere(name, options, scene) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateIcoSphere(name, options, scene) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -710,7 +712,7 @@ optional | sideOrientation | number |  &nbsp;
  | name | string |   
  | options | { radius: number,  flat: boolean,  subdivisions: number,  sideOrientation: number,  updatable: boolean } |  
  | scene | [Scene](/classes/2.3/Scene) |   [Scene](/classes/2.3/Scene) to add the tube
-### static  CreateDecal(name, sourceMesh, position, normal, size, angle) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateDecal(name, sourceMesh, position, normal, size, angle) &rarr; [Mesh](/classes/2.3/Mesh)
 
 
 
@@ -737,7 +739,7 @@ Update the vertex buffers by applying transformation from the bones
 ---|---|---|---
  | skeleton | [Skeleton](/classes/2.3/Skeleton) |  
 
-### static  MinMax(meshes) &rarr; { min: [Vector3](/classes/2.3/Vector3),  max: [Vector3](/classes/2.3/Vector3) }
+### static MinMax(meshes) &rarr; { min: [Vector3](/classes/2.3/Vector3),  max: [Vector3](/classes/2.3/Vector3) }
 
 
 
@@ -746,7 +748,7 @@ Update the vertex buffers by applying transformation from the bones
 ---|---|---|---
  | meshes | [AbstractMesh](/classes/2.3/AbstractMesh)[] |   
 
-### static  Center(meshesOrMinMaxVector) &rarr; [Vector3](/classes/2.3/Vector3)
+### static Center(meshesOrMinMaxVector) &rarr; [Vector3](/classes/2.3/Vector3)
 
 
 
@@ -755,7 +757,7 @@ Update the vertex buffers by applying transformation from the bones
 ---|---|---|---
  | meshesOrMinMaxVector | any |   @param meshesOrMinMaxVector
 
-### static  MergeMeshes(meshes, disposeSource, allow32BitsIndices, meshSubclass) &rarr; [Mesh](/classes/2.3/Mesh)
+### static MergeMeshes(meshes, disposeSource, allow32BitsIndices, meshSubclass) &rarr; [Mesh](/classes/2.3/Mesh)
 
 Merge the array of meshes into a single mesh for performance reasons.
 

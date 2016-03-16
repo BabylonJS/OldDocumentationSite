@@ -9,7 +9,7 @@ class [SolidParticle](/classes/2.3/SolidParticle)
 
 ## Constructor
 
-##  new [SolidParticle](/classes/2.3/SolidParticle)(particleIndex, positionIndex, model, shapeId, idxInShape)
+## new [SolidParticle](/classes/2.3/SolidParticle)(particleIndex, positionIndex, model, shapeId, idxInShape)
 
 
 

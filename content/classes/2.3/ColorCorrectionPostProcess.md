@@ -13,7 +13,7 @@ class [ColorCorrectionPostProcess](/classes/2.3/ColorCorrectionPostProcess) exte
 
 ## Constructor
 
-##  new [ColorCorrectionPostProcess](/classes/2.3/ColorCorrectionPostProcess)(name, colorTableUrl, ratio, camera, samplingMode, engine, reusable)
+## new [ColorCorrectionPostProcess](/classes/2.3/ColorCorrectionPostProcess)(name, colorTableUrl, ratio, camera, samplingMode, engine, reusable)
 
 
 

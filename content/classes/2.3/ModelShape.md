@@ -9,7 +9,7 @@ class [ModelShape](/classes/2.3/ModelShape)
 
 ## Constructor
 
-##  new [ModelShape](/classes/2.3/ModelShape)(id, shape, shapeUV, posFunction, vtxFunction)
+## new [ModelShape](/classes/2.3/ModelShape)(id, shape, shapeUV, posFunction, vtxFunction)
 
 
 

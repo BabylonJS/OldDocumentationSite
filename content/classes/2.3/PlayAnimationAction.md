@@ -13,9 +13,9 @@ class [PlayAnimationAction](/classes/2.3/PlayAnimationAction) extends [Action](/
 
 ## Constructor
 
-##  new [PlayAnimationAction](/classes/2.3/PlayAnimationAction)(triggerOptions, target, from, to, loop, condition)
+## new [PlayAnimationAction](/classes/2.3/PlayAnimationAction)(triggerOptions, target, from, to, loop, condition)
 
-
+Launch an animation on a specified target
 
 #### Parameters
  | Name | Type | Description
@@ -29,15 +29,15 @@ optional | loop | boolean |   True to loop the animation
 
 ### from : number
 
-
+The starting frame index
 
 ### to : number
 
-
+The ending frame index
 
 ### loop : boolean
 
-
+[Animation](/classes/2.3/Animation) loop or not
 
 ## Methods
 

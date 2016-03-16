@@ -11,15 +11,15 @@ class [SIMDHelper](/classes/2.3/SIMDHelper)
 
 ## Members
 
-### static  IsEnabled : boolean
+### static IsEnabled : boolean
 
 
 
 ## Methods
 
-### static  DisableSIMD() &rarr; void
+### static DisableSIMD() &rarr; void
 
 
-### static  EnableSIMD() &rarr; void
+### static EnableSIMD() &rarr; void
 
 

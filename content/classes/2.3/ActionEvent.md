@@ -13,7 +13,7 @@ class [ActionEvent](/classes/2.3/ActionEvent)
 
 ## Constructor
 
-##  new [ActionEvent](/classes/2.3/ActionEvent)(source, pointerX, pointerY, meshUnderPointer, sourceEvent, additionalData)
+## new [ActionEvent](/classes/2.3/ActionEvent)(source, pointerX, pointerY, meshUnderPointer, sourceEvent, additionalData)
 
 @constructor
 
@@ -29,23 +29,23 @@ optional | sourceEvent | any |  the original (browser) event that triggered the 
 
 ### source : any
 
-
+The source of the action event
 
 ### pointerX : number
 
-
+The pointer X position
 
 ### pointerY : number
 
-
+The pointer Y position
 
 ### meshUnderPointer : [AbstractMesh](/classes/2.3/AbstractMesh)
 
-
+The mesh under the pointer position
 
 ### sourceEvent : any
 
-
+The source of the event
 
 ### additionalData : any
 
@@ -53,7 +53,7 @@ optional | sourceEvent | any |  the original (browser) event that triggered the 
 
 ## Methods
 
-### static  CreateNew(source, evt, additionalData) &rarr; [ActionEvent](/classes/2.3/ActionEvent)
+### static CreateNew(source, evt, additionalData) &rarr; [ActionEvent](/classes/2.3/ActionEvent)
 
 Helper function to auto-create an [ActionEvent](/classes/2.3/ActionEvent) from a source mesh.
 
@@ -63,7 +63,7 @@ Helper function to auto-create an [ActionEvent](/classes/2.3/ActionEvent) from a
  | source | [AbstractMesh](/classes/2.3/AbstractMesh) |  The source mesh that triggered the event  the source mesh that triggered the event the source mesh that triggered the event
 optional | evt | Event |  {Event} The original (browser) event  {Event} The original (browser) event {Event} The original (browser) event
 optional | additionalData | any |  
-### static  CreateNewFromSprite(source, scene, evt, additionalData) &rarr; [ActionEvent](/classes/2.3/ActionEvent)
+### static CreateNewFromSprite(source, scene, evt, additionalData) &rarr; [ActionEvent](/classes/2.3/ActionEvent)
 
 Helper function to auto-create an [ActionEvent](/classes/2.3/ActionEvent) from a source mesh.
 
@@ -73,7 +73,7 @@ Helper function to auto-create an [ActionEvent](/classes/2.3/ActionEvent) from a
  | source | [Sprite](/classes/2.3/Sprite) |  The source sprite that triggered the event  the source mesh that triggered the event the source mesh that triggered the event
  | scene | [Scene](/classes/2.3/Scene) |  [Scene](/classes/2.3/Scene) associated with the sprite  the scene where the event occurred the scene where the event occurred
 optional | evt | Event |  {Event} The original (browser) event  {Event} The original (browser) event {Event} The original (browser) event
-### static  CreateNewFromScene(scene, evt) &rarr; [ActionEvent](/classes/2.3/ActionEvent)
+### static CreateNewFromScene(scene, evt) &rarr; [ActionEvent](/classes/2.3/ActionEvent)
 
 Helper function to auto-create an [ActionEvent](/classes/2.3/ActionEvent) from a scene. If triggered by a mesh use [ActionEvent](/classes/2.3/ActionEvent).CreateNew
 

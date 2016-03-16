@@ -11,7 +11,7 @@ class [AndOrNotEvaluator](/classes/2.3/AndOrNotEvaluator)
 
 ## Methods
 
-### static  Eval(query, evaluateCallback) &rarr; boolean
+### static Eval(query, evaluateCallback) &rarr; boolean
 
 
 

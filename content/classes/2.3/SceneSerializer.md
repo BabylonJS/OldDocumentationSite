@@ -9,11 +9,11 @@ TAGS:
 
 class [SceneSerializer](/classes/2.3/SceneSerializer)
 
-
+Serializes a scene
 
 ## Methods
 
-### static  Serialize(scene) &rarr; any
+### static Serialize(scene) &rarr; any
 
 
 
@@ -22,7 +22,7 @@ class [SceneSerializer](/classes/2.3/SceneSerializer)
 ---|---|---|---
  | scene | [Scene](/classes/2.3/Scene) |   The scene
 
-### static  SerializeMesh(toSerialize, withParents, withChildren) &rarr; any
+### static SerializeMesh(toSerialize, withParents, withChildren) &rarr; any
 
 
 

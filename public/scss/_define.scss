@@ -107,3 +107,23 @@ p {
   max-width:100%;
   word-wrap : break-word;
 }
+
+.iframeContainer {
+    $iframeHeight:450px;
+    margin:auto;
+    width:50%;
+    height:$iframeHeight;
+    display:none;
+    
+    iframe {
+        max-height:$iframeHeight;
+        height:100%;
+    }
+}
+.fa-eye {
+    cursor: pointer;
+    &:hover {
+        color:$red;
+        text-decoration: underline;
+    }
+}

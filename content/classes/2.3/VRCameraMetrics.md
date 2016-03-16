@@ -89,6 +89,6 @@ class [VRCameraMetrics](/classes/2.3/VRCameraMetrics)
 
 ## Methods
 
-### static  GetDefault() &rarr; [VRCameraMetrics](/classes/2.3/VRCameraMetrics)
+### static GetDefault() &rarr; [VRCameraMetrics](/classes/2.3/VRCameraMetrics)
 
 

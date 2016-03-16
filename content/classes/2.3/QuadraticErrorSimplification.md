@@ -17,7 +17,7 @@ Ported mostly from QSlim and http://voxels.blogspot.de/2014/05/quadric-mesh-simp
 
 ## Constructor
 
-##  new [QuadraticErrorSimplification](/classes/2.3/QuadraticErrorSimplification)(_mesh)
+## new [QuadraticErrorSimplification](/classes/2.3/QuadraticErrorSimplification)(_mesh)
 
 
 

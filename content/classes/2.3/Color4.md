@@ -9,13 +9,13 @@ TAGS:
 
 class [Color4](/classes/2.3/Color4)
 
-
+Color defined by Red Green Blue, plus the Alpha.
 
 ## Constructor
 
-##  new [Color4](/classes/2.3/Color4)(r, g, b, a)
+## new [Color4](/classes/2.3/Color4)(r, g, b, a)
 
-
+Creates a new RGBA [Color4](/classes/2.3/Color4)
 
 #### Parameters
  | Name | Type | Description
@@ -27,25 +27,25 @@ class [Color4](/classes/2.3/Color4)
 
 ### r : number
 
-
+The red value
 
 ### g : number
 
-
+The green value
 
 ### b : number
 
-
+The blue value
 
 ### a : number
 
-
+The alpha value
 
 ## Methods
 
 ### addInPlace(right) &rarr; [Color4](/classes/2.3/Color4)
 
-
+Adds another [Color4](/classes/2.3/Color4)
 
 #### Parameters
  | Name | Type | Description
@@ -54,10 +54,10 @@ class [Color4](/classes/2.3/Color4)
 
 ### asArray() &rarr; number[]
 
-
+Returns an array representation of the color
 ### toArray(array, index) &rarr; [Color4](/classes/2.3/Color4)
 
-
+Fills an array from a given index with the color's values
 
 #### Parameters
  | Name | Type | Description
@@ -66,7 +66,7 @@ class [Color4](/classes/2.3/Color4)
 optional | index | number |   default : 0 The given index
 ### add(right) &rarr; [Color4](/classes/2.3/Color4)
 
-
+Adds another color and returns the result
 
 #### Parameters
  | Name | Type | Description
@@ -75,7 +75,7 @@ optional | index | number |   default : 0 The given index
 
 ### subtract(right) &rarr; [Color4](/classes/2.3/Color4)
 
-
+Substracts another color and returns the result
 
 #### Parameters
  | Name | Type | Description
@@ -84,7 +84,7 @@ optional | index | number |   default : 0 The given index
 
 ### subtractToRef(right, result) &rarr; [Color4](/classes/2.3/Color4)
 
-
+Substracts another color into a third color
 
 #### Parameters
  | Name | Type | Description
@@ -93,7 +93,7 @@ optional | index | number |   default : 0 The given index
  | result | [Color4](/classes/2.3/Color4) |   The color which hold the result color
 ### scale(scale) &rarr; [Color4](/classes/2.3/Color4)
 
-
+Scales a [Color4](/classes/2.3/Color4)
 
 #### Parameters
  | Name | Type | Description
@@ -102,7 +102,7 @@ optional | index | number |   default : 0 The given index
 
 ### scaleToRef(scale, result) &rarr; [Color4](/classes/2.3/Color4)
 
-
+Scales a [Color4](/classes/2.3/Color4) into an existing [Color4](/classes/2.3/Color4)
 
 #### Parameters
  | Name | Type | Description
@@ -111,10 +111,10 @@ optional | index | number |   default : 0 The given index
  | result | [Color4](/classes/2.3/Color4) |   The color which hold the result color
 ### toString() &rarr; string
 
-
+Returns a string representation of the color
 ### clone() &rarr; [Color4](/classes/2.3/Color4)
 
-
+Clones the color into a new [Color4](/classes/2.3/Color4)
 ### copyFrom(source) &rarr; [Color4](/classes/2.3/Color4)
 
 
@@ -127,7 +127,7 @@ optional | index | number |   default : 0 The given index
 ### toHexString() &rarr; string
 
 
-### static  FromHexString(hex) &rarr; [Color4](/classes/2.3/Color4)
+### static FromHexString(hex) &rarr; [Color4](/classes/2.3/Color4)
 
 
 
@@ -136,19 +136,9 @@ optional | index | number |   default : 0 The given index
 ---|---|---|---
  | hex | string |  
 
-### static  Lerp(left, right, amount) &rarr; [Color4](/classes/2.3/Color4)
+### static Lerp(left, right, amount) &rarr; [Color4](/classes/2.3/Color4)
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | left | [Color4](/classes/2.3/Color4) |   first color
- | right | [Color4](/classes/2.3/Color4) |   second color
- | amount | number |   Weighting factor.
-### static  LerpToRef(left, right, amount, result) &rarr; void
-
-
+Linear interpolation of a color 4
 
 #### Parameters
  | Name | Type | Description
@@ -156,16 +146,26 @@ optional | index | number |   default : 0 The given index
  | left | [Color4](/classes/2.3/Color4) |   first color
  | right | [Color4](/classes/2.3/Color4) |   second color
  | amount | number |   Weighting factor.
-### static  FromArray(array, offset) &rarr; [Color4](/classes/2.3/Color4)
+### static LerpToRef(left, right, amount, result) &rarr; void
 
+Linear interpolation of a color 4 into an existing [Color4](/classes/2.3/Color4)
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | left | [Color4](/classes/2.3/Color4) |   first color
+ | right | [Color4](/classes/2.3/Color4) |   second color
+ | amount | number |   Weighting factor.
+### static FromArray(array, offset) &rarr; [Color4](/classes/2.3/Color4)
+
+Creates new [Color4](/classes/2.3/Color4) from the given array
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | array | number[] |   The given array
 optional | offset | number |   The first index of the array to look at
-### static  FromInts(r, g, b, a) &rarr; [Color4](/classes/2.3/Color4)
+### static FromInts(r, g, b, a) &rarr; [Color4](/classes/2.3/Color4)
 
 
 
@@ -175,7 +175,7 @@ optional | offset | number |   The first index of the array to look at
  | r | number |   The red value (0&lt;r&lt;1)
  | g | number |   The green value (0&lt;g&lt;1)
  | b | number |   The blue value (0&lt;b&lt;1)
-### static  CheckColors4(colors, count) &rarr; number[]
+### static CheckColors4(colors, count) &rarr; number[]
 
 
 

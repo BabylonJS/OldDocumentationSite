@@ -13,60 +13,60 @@
       "desc": "The tutorials of the playpen.",
       "files": [
         {
-          "title": "Creating Basic Scene",
-          "filename": "01._Creating_basic_Scene"
+          "title": "Creating a Basic Scene",
+          "filename": "Creating_a_Basic_Scene"
         },
         {
           "title": "Discover Basic Elements",
-          "filename": "02._Discover_Basic_Elements"
+          "filename": "Discover_Basic_Elements"
         },
         {
           "title": "Materials",
-          "filename": "04._Materials"
+          "filename": "Materials"
         },
         {
           "title": "Cameras",
-          "filename": "05._Cameras"
+          "filename": "Cameras"
         },
         {
           "title": "Lights",
-          "filename": "06._Lights"
+          "filename": "Lights"
         },
         {
           "title": "Animations",
-          "filename": "07._Animations"
+          "filename": "Animations"
         },
         {
           "title": "Sprites",
-          "filename": "08._Sprites"
+          "filename": "Sprites"
         },
         {
           "title": "Cameras, Mesh Collisions and Gravity",
-          "filename": "09._Cameras,_Mesh_Collisions_and_Gravity"
+          "filename": "Cameras,_Mesh_Collisions_and_Gravity"
         },
         {
           "title": "Intersect Collisions - mesh",
-          "filename": "10._Intersect_Collisions_-_mesh"
+          "filename": "Intersect_Collisions_-_mesh"
         },
         {
           "title": "Picking Collisions",
-          "filename": "11._Picking_Collisions"
+          "filename": "Picking_Collisions"
         },
         {
           "title": "Particles",
-          "filename": "12._Particles"
+          "filename": "Particles"
         },
         {
           "title": "Environment",
-          "filename": "13._Environment"
+          "filename": "Environment"
         },
         {
           "title": "Height_Map",
-          "filename": "14._Height_Map"
+          "filename": "Height_Map"
         },
         {
           "title": "Shadows",
-          "filename": "15._Shadows"
+          "filename": "Shadows"
         },
         {
           "title": "Parametric Shapes",
@@ -98,79 +98,79 @@
       "files": [
         {
           "title": "Advanced Texturing",
-          "filename": "01._Advanced_Texturing"
+          "filename": "Advanced_Texturing"
         },
         {
           "title": "Loading a Scene Produced with Blender",
-          "filename": "02._Loading_a_Scene_Produced_with_Blender"
+          "filename": "Loading_a_Scene_Produced_with_Blender"
         },
         {
           "title": "Position, Rotation, Scaling",
-          "filename": "03._Position,_Rotation,_Scaling"
+          "filename": "Position,_Rotation,_Scaling"
         },
         {
           "title": "Unleash the StandardMaterial",
-          "filename": "03._Unleash_the_StandardMaterial"
+          "filename": "Unleash_the_StandardMaterial"
         },
         {
           "title": "More About Lights",
-          "filename": "04._More_About_Lights"
+          "filename": "More_About_Lights"
         },
         {
           "title": "Using Multi-Materials",
-          "filename": "05._Using_Multi-Materials"
+          "filename": "Using_Multi-Materials"
         },
         {
           "title": "Creating a Convincing World",
-          "filename": "06._Creating_a_Convincing_World"
+          "filename": "Creating_a_Convincing_World"
         },
         {
           "title": "Caching Resources in IndexedDB",
-          "filename": "07._Caching_Resources_in_IndexedDB"
+          "filename": "Caching_Resources_in_IndexedDB"
         },
         {
           "title": "Creating a Small 3D Game with Babylon.js",
-          "filename": "08._Creating_a_Small_3D_Game_with_Babylon.js"
+          "filename": "Creating_a_Small_3D_Game_with_Babylon.js"
         },
         {
           "title": "Using the Incremental Loading System",
-          "filename": "09._Using_the_Incremental_Loading_System"
+          "filename": "Using_the_Incremental_Loading_System"
         },
         {
           "title": "Using the Cannon.js Physics Engine",
-          "filename": "10._Using_the_Cannon.js_Physics_Engine"
+          "filename": "Using_the_Cannon.js_Physics_Engine"
         },
         {
           "title": "Using the Oimo.js Physics Engine",
-          "filename": "11._Using_the_Oimo.js_Physics_Engine"
+          "filename": "Using_the_Oimo.js_Physics_Engine"
         },
         {
           "title": "Creating a 3D WebGL Procedural QR-Code Maze with Physics",
-          "filename": "12._Creating_a_3D_WebGL_Procedural_QR-Code_Maze_with_Physics"
+          "filename": "Creating_a_3D_WebGL_Procedural_QR-Code_Maze_with_Physics"
         },
         {
           "title": "Using WebGL to Create Games for the Windows Store",
-          "filename": "13._Using_WebGL_to_Create_Games_for_the_Windows_Store"
+          "filename": "Using_WebGL_to_Create_Games_for_the_Windows_Store"
         },
         {
           "title": "The Babylon.js Sandbox and Editor",
-          "filename": "14._The_Babylon.js_Sandbox_and_Editor"
+          "filename": "The_Babylon.js_Sandbox_and_Editor"
         },
         {
           "title": "Understanding Shaders with Babylon.js and ShaderMaterial",
-          "filename": "15._Understanding_Shaders_with_Babylon.js_and_ShaderMaterial"
+          "filename": "Understanding_Shaders_with_Babylon.js_and_ShaderMaterial"
         },
         {
           "title": "Playing sounds and music",
-          "filename": "16._Playing_sounds_and_music"
+          "filename": "Playing_sounds_and_music"
         },
         {
           "title": "Using decals",
-          "filename": "17._Using_decals"
+          "filename": "Using_decals"
         },
         {
           "title": "Using Parallax Mapping",
-          "filename": "18._Using_parallax_mapping"
+          "filename": "Using_parallax_mapping"
         },
         {
           "title": "Position, Rotate, Translate and Spaces",
@@ -179,6 +179,10 @@
         {
           "title": "Creating a custom loading screen",
           "filename": "Creating_a_custom_loading_screen"
+        },
+        {
+          "title": "Customizing camera inputs",
+          "filename": "Customizing_Camera_Inputs"
         }
       ]
     },
@@ -562,6 +566,10 @@
         {
           "title": "Sky",
           "filename": "Sky"
+        },
+        {
+          "title": "Grid",
+          "filename": "Grid"
         }
       ]
     },
@@ -606,6 +614,18 @@
         {
           "title": "GUIText",
           "filename": "GUIText"
+        }
+      ]
+    },    
+    {
+      "title": "Editor",
+      "name": "Editor",
+      "img": "img/extensions/editor.png",
+      "desc": "Learn how to use the official editor",
+      "files": [
+        {
+          "title": "Editor",
+          "filename": "Editor"
         }
       ]
     },

@@ -13,7 +13,7 @@ class [VolumetricLightScatteringPostProcess](/classes/2.3/VolumetricLightScatter
 
 ## Constructor
 
-##  new [VolumetricLightScatteringPostProcess](/classes/2.3/VolumetricLightScatteringPostProcess)(name, ratio, camera, mesh, samples, samplingMode, engine, reusable, scene)
+## new [VolumetricLightScatteringPostProcess](/classes/2.3/VolumetricLightScatteringPostProcess)(name, ratio, camera, mesh, samples, samplingMode, engine, reusable, scene)
 
 @constructor
 
@@ -121,7 +121,7 @@ Disposes the internal assets and detaches the post-process from the camera
 Returns the render target texture used by the post-process
 
 @return {BABYLON.[RenderTargetTexture](/classes/2.3/RenderTargetTexture)} The render target texture used by the post-process
-### static  CreateDefaultMesh(name, scene) &rarr; [Mesh](/classes/2.3/Mesh)
+### static CreateDefaultMesh(name, scene) &rarr; [Mesh](/classes/2.3/Mesh)
 
 Creates a default mesh for the Volumeric [Light](/classes/2.3/Light) Scattering post-process
 

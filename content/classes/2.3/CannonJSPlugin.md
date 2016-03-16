@@ -13,7 +13,7 @@ class [CannonJSPlugin](/classes/2.3/CannonJSPlugin)
 
 ## Constructor
 
-##  new [CannonJSPlugin](/classes/2.3/CannonJSPlugin)(_useDeltaForWorldStep)
+## new [CannonJSPlugin](/classes/2.3/CannonJSPlugin)(_useDeltaForWorldStep)
 
 
 
@@ -30,13 +30,13 @@ optional | _useDeltaForWorldStep | boolean |
 
 ### updateBodyPosition : (mesh: [AbstractMesh](/classes/2.3/AbstractMesh)) =&gt; void
 
-
+Updates the position of the body using the given mesh rotation
 
 ## Methods
 
 ### initialize(iterations) &rarr; void
 
-
+Initializes the engine
 
 #### Parameters
  | Name | Type | Description
@@ -45,7 +45,7 @@ optional | iterations | number |   default : 10. The bigger are the iterations t
 
 ### runOneStep(delta) &rarr; void
 
-
+Step the physics world forward in time.
 
 #### Parameters
  | Name | Type | Description
@@ -54,7 +54,7 @@ optional | iterations | number |   default : 10. The bigger are the iterations t
 
 ### setGravity(gravity) &rarr; void
 
-
+Applies the given gravity into the world
 
 #### Parameters
  | Name | Type | Description
@@ -66,7 +66,7 @@ optional | iterations | number |   default : 10. The bigger are the iterations t
 
 ### registerMesh(mesh, impostor, options) &rarr; any
 
-
+Registers a mesh
 
 #### Parameters
  | Name | Type | Description
@@ -76,7 +76,7 @@ optional | iterations | number |   default : 10. The bigger are the iterations t
 optional | options | PhysicsBodyCreationOptions |   An object build this way {mass: number, friction: number, restitution: number}
 ### registerMeshesAsCompound(parts, options) &rarr; any
 
-
+Registers meshes as compound
 
 #### Parameters
  | Name | Type | Description
@@ -85,7 +85,7 @@ optional | options | PhysicsBodyCreationOptions |   An object build this way {ma
  | options | PhysicsBodyCreationOptions |   An object build this way {mass: number, friction: number, restitution: number}
 ### unregisterMesh(mesh) &rarr; void
 
-
+Removes a mesh from the workd
 
 #### Parameters
  | Name | Type | Description
@@ -94,7 +94,7 @@ optional | options | PhysicsBodyCreationOptions |   An object build this way {ma
 
 ### applyImpulse(mesh, force, contactPoint) &rarr; void
 
-
+Applies a force to the given mesh
 
 #### Parameters
  | Name | Type | Description
@@ -104,7 +104,7 @@ optional | options | PhysicsBodyCreationOptions |   An object build this way {ma
  | contactPoint | [Vector3](/classes/2.3/Vector3) |   The contact point on the given mesh
 ### createLink(mesh1, mesh2, pivot1, pivot2) &rarr; boolean
 
-
+Create a physical link between two given meshes
 
 #### Parameters
  | Name | Type | Description
@@ -114,7 +114,7 @@ optional | options | PhysicsBodyCreationOptions |   An object build this way {ma
  | pivot1 | [Vector3](/classes/2.3/Vector3) |   The point relative to the center of mass of the first given mesh
 ### dispose() &rarr; void
 
-
+Disposes the [CannonJSPlugin](/classes/2.3/CannonJSPlugin)
 ### isSupported() &rarr; boolean
 
 

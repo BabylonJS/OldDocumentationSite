@@ -9,32 +9,32 @@ TAGS:
 
 class [SceneLoader](/classes/2.3/SceneLoader)
 
-
+This class is used to import .babylon files into the scene
 
 ## Members
 
-### static  ForceFullSceneLoadingForIncremental : boolean
+### static ForceFullSceneLoadingForIncremental : boolean
 
+True to force the full loading of the scene, also to prevent from delaying the texture loading; false otherwise
 
+### static ShowLoadingScreen : boolean
 
-### static  ShowLoadingScreen : boolean
-
-
+True to show the loading screen, false otherwise
 
 ## Methods
 
-### static  RegisterPlugin(plugin) &rarr; void
+### static RegisterPlugin(plugin) &rarr; void
 
-
+Registers a scene loader plugin
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | plugin | ISceneLoaderPlugin |   @param plugin
 
-### static  ImportMesh(meshesNames, rootUrl, sceneFilename, scene, onsuccess, progressCallBack, onerror) &rarr; void
+### static ImportMesh(meshesNames, rootUrl, sceneFilename, scene, onsuccess, progressCallBack, onerror) &rarr; void
 
-
+Imports meshes using the given url and names
 
 #### Parameters
  | Name | Type | Description
@@ -45,7 +45,7 @@ class [SceneLoader](/classes/2.3/SceneLoader)
  | scene | [Scene](/classes/2.3/Scene) |   is the instance of BABYLON.[Scene](/classes/2.3/Scene) to append to is the instance of [Scene](/classes/2.3/Scene) to append to
 optional | onsuccess | (meshes: [AbstractMesh](/classes/2.3/AbstractMesh)[], particleSystems: [ParticleSystem](/classes/2.3/ParticleSystem)[], skeletons: [Skeleton](/classes/2.3/Skeleton)[]) =&gt; void |   The callback function called when the given file is correctly loaded
 optional | progressCallBack | () =&gt; void |   The function returning the import progress
-### static  Load(rootUrl, sceneFilename, engine, onsuccess, progressCallBack, onerror) &rarr; void
+### static Load(rootUrl, sceneFilename, engine, onsuccess, progressCallBack, onerror) &rarr; void
 
 Load a scene
 
@@ -57,7 +57,7 @@ Load a scene
  | engine | [Engine](/classes/2.3/Engine) |  is the instance of BABYLON.[Engine](/classes/2.3/Engine) to use to create the scene  is the instance of BABYLON.[Engine](/classes/2.3/Engine) to use to create the scene is the instance of [Engine](/classes/2.3/Engine) to use to create the scene
 optional | onsuccess | (scene: [Scene](/classes/2.3/Scene)) =&gt; void |   The callback function called when the given file is correctly loaded
 optional | progressCallBack | any |   The function returning the import progress
-### static  Append(rootUrl, sceneFilename, scene, onsuccess, progressCallBack, onerror) &rarr; void
+### static Append(rootUrl, sceneFilename, scene, onsuccess, progressCallBack, onerror) &rarr; void
 
 Append a scene
 

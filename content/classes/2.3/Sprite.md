@@ -13,9 +13,10 @@ class [Sprite](/classes/2.3/Sprite)
 
 ## Constructor
 
-##  new [Sprite](/classes/2.3/Sprite)(name, manager)
+## new [Sprite](/classes/2.3/Sprite)(name, manager)
 
-
+Create a new [Sprite](/classes/2.3/Sprite).
+A tutorial about sprites can be found here
 
 #### Parameters
  | Name | Type | Description
@@ -26,15 +27,15 @@ class [Sprite](/classes/2.3/Sprite)
 
 ### name : string
 
-
+The sprite name
 
 ### position : [Vector3](/classes/2.3/Vector3)
 
-
+The sprite position
 
 ### color : [Color4](/classes/2.3/Color4)
 
-
+The sprite color
 
 ### width : number
 
@@ -46,27 +47,27 @@ class [Sprite](/classes/2.3/Sprite)
 
 ### angle : number
 
-
+The sprite angle
 
 ### cellIndex : number
 
-
+The index of the cell
 
 ### invertU : number
 
-
+True if invert in U axis ; False otherwise
 
 ### invertV : number
 
-
+True if invert in V axis ; False otherwise
 
 ### disposeWhenFinishedAnimating : boolean
 
-
+True if dispose when finished animating ; False otherwise
 
 ### animations : [Animation](/classes/2.3/Animation)[]
 
-
+Animations array
 
 ### isPickable : boolean
 
@@ -78,13 +79,13 @@ class [Sprite](/classes/2.3/Sprite)
 
 ### size : number
 
-
+The sprite size
 
 ## Methods
 
 ### playAnimation(from, to, loop, delay) &rarr; void
 
-
+Function to play the sprite animation
 
 #### Parameters
  | Name | Type | Description
@@ -94,7 +95,7 @@ class [Sprite](/classes/2.3/Sprite)
  | loop | boolean |   True : loop ; False : don't loop
 ### stopAnimation() &rarr; void
 
-
+Function to stop the sprite animation
 ### dispose() &rarr; void
 
 

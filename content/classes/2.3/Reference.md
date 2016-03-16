@@ -7,11 +7,11 @@ PG_VERSION: 2.1
 
 class [Reference](/classes/2.3/Reference)
 
-
+Defines a [Ray](/classes/2.3/Ray)
 
 ## Constructor
 
-##  new [Reference](/classes/2.3/Reference)(vertexId, triangleId)
+## new [Reference](/classes/2.3/Reference)(vertexId, triangleId)
 
 
 

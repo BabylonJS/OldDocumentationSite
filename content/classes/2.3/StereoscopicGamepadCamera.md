@@ -17,7 +17,7 @@ class [StereoscopicGamepadCamera](/classes/2.3/StereoscopicGamepadCamera) extend
 
 ## Constructor
 
-##  new [StereoscopicGamepadCamera](/classes/2.3/StereoscopicGamepadCamera)(name, position, interaxialDistance, isSideBySide, scene)
+## new [StereoscopicGamepadCamera](/classes/2.3/StereoscopicGamepadCamera)(name, position, interaxialDistance, isSideBySide, scene)
 
 
 

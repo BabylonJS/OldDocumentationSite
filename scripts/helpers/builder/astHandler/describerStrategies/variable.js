@@ -9,7 +9,7 @@ module.exports = {
         if (variable.kind() == TypeScript.SyntaxKind.MemberVariableDeclaration) {
             //add static keyword if needed
             if (variable.modifiers.indexOf(TypeScript.PullElementFlags.Static) > -1) {
-                description += ' static ';
+                description += ' static';
             }
 
             variable = variable.variableDeclarator;

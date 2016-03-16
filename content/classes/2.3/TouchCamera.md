@@ -16,9 +16,10 @@ class [TouchCamera](/classes/2.3/TouchCamera) extends [FreeCamera](/classes/2.3/
 
 ## Constructor
 
-##  new [TouchCamera](/classes/2.3/TouchCamera)(name, position, scene)
+## new [TouchCamera](/classes/2.3/TouchCamera)(name, position, scene)
 
-
+Create a new [TouchCamera](/classes/2.3/TouchCamera) (camera controlled by touch with touchscreen)
+A tutorial about [ArcRotateCamera](/classes/2.3/ArcRotateCamera) can be found here
 
 #### Parameters
  | Name | Type | Description
@@ -40,7 +41,7 @@ class [TouchCamera](/classes/2.3/TouchCamera) extends [FreeCamera](/classes/2.3/
 
 ### attachControl(canvas, noPreventDefault) &rarr; void
 
-
+Attach the camera controls and display to a canvas element
 
 #### Parameters
  | Name | Type | Description

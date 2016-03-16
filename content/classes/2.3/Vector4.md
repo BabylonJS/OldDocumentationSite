@@ -13,7 +13,7 @@ class [Vector4](/classes/2.3/Vector4)
 
 ## Constructor
 
-##  new [Vector4](/classes/2.3/Vector4)(x, y, z, w)
+## new [Vector4](/classes/2.3/Vector4)(x, y, z, w)
 
 
 
@@ -295,7 +295,7 @@ optional | epsilon | number |
  | x | number |   
  | y | number |   
  | z | number |   
-### static  FromArray(array, offset) &rarr; [Vector4](/classes/2.3/Vector4)
+### static FromArray(array, offset) &rarr; [Vector4](/classes/2.3/Vector4)
 
 
 
@@ -304,7 +304,7 @@ optional | epsilon | number |
 ---|---|---|---
  | array | number[] |   
 optional | offset | number |   
-### static  FromArrayToRef(array, offset, result) &rarr; void
+### static FromArrayToRef(array, offset, result) &rarr; void
 
 
 
@@ -314,7 +314,7 @@ optional | offset | number |
  | array | number[] |   
  | offset | number |   
  | result | [Vector4](/classes/2.3/Vector4) |   
-### static  FromFloatArrayToRef(array, offset, result) &rarr; void
+### static FromFloatArrayToRef(array, offset, result) &rarr; void
 
 
 
@@ -324,7 +324,7 @@ optional | offset | number |
  | array | Float32Array |   
  | offset | number |   
  | result | [Vector4](/classes/2.3/Vector4) |   
-### static  FromFloatsToRef(x, y, z, w, result) &rarr; void
+### static FromFloatsToRef(x, y, z, w, result) &rarr; void
 
 
 
@@ -335,10 +335,10 @@ optional | offset | number |
  | y | number |   
  | z | number |   
  | w | number |   
-### static  Zero() &rarr; [Vector4](/classes/2.3/Vector4)
+### static Zero() &rarr; [Vector4](/classes/2.3/Vector4)
 
 
-### static  Normalize(vector) &rarr; [Vector4](/classes/2.3/Vector4)
+### static Normalize(vector) &rarr; [Vector4](/classes/2.3/Vector4)
 
 
 
@@ -347,7 +347,7 @@ optional | offset | number |
 ---|---|---|---
  | vector | [Vector4](/classes/2.3/Vector4) |   
 
-### static  NormalizeToRef(vector, result) &rarr; void
+### static NormalizeToRef(vector, result) &rarr; void
 
 
 
@@ -356,7 +356,7 @@ optional | offset | number |
 ---|---|---|---
  | vector | [Vector4](/classes/2.3/Vector4) |   
  | result | [Vector4](/classes/2.3/Vector4) |   
-### static  Minimize(left, right) &rarr; [Vector4](/classes/2.3/Vector4)
+### static Minimize(left, right) &rarr; [Vector4](/classes/2.3/Vector4)
 
 
 
@@ -365,7 +365,7 @@ optional | offset | number |
 ---|---|---|---
  | left | [Vector4](/classes/2.3/Vector4) |   
  | right | [Vector4](/classes/2.3/Vector4) |   
-### static  Maximize(left, right) &rarr; [Vector4](/classes/2.3/Vector4)
+### static Maximize(left, right) &rarr; [Vector4](/classes/2.3/Vector4)
 
 
 
@@ -374,7 +374,7 @@ optional | offset | number |
 ---|---|---|---
  | left | [Vector4](/classes/2.3/Vector4) |   
  | right | [Vector4](/classes/2.3/Vector4) |   
-### static  Distance(value1, value2) &rarr; number
+### static Distance(value1, value2) &rarr; number
 
 
 
@@ -383,7 +383,7 @@ optional | offset | number |
 ---|---|---|---
  | value1 | [Vector4](/classes/2.3/Vector4) |   
  | value2 | [Vector4](/classes/2.3/Vector4) |   
-### static  DistanceSquared(value1, value2) &rarr; number
+### static DistanceSquared(value1, value2) &rarr; number
 
 
 
@@ -392,7 +392,7 @@ optional | offset | number |
 ---|---|---|---
  | value1 | [Vector4](/classes/2.3/Vector4) |   
  | value2 | [Vector4](/classes/2.3/Vector4) |   
-### static  Center(value1, value2) &rarr; [Vector4](/classes/2.3/Vector4)
+### static Center(value1, value2) &rarr; [Vector4](/classes/2.3/Vector4)
 
 
 

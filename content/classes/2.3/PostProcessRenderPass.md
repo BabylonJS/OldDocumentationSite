@@ -9,13 +9,13 @@ TAGS:
 
 class [PostProcessRenderPass](/classes/2.3/PostProcessRenderPass)
 
-
+A render pass is render texture that can be used in differents render effects
 
 ## Constructor
 
-##  new [PostProcessRenderPass](/classes/2.3/PostProcessRenderPass)(scene, name, size, renderList, beforeRender, afterRender)
+## new [PostProcessRenderPass](/classes/2.3/PostProcessRenderPass)(scene, name, size, renderList, beforeRender, afterRender)
 
-
+Builds a new [PostProcessRenderPass](/classes/2.3/PostProcessRenderPass) object
 
 #### Parameters
  | Name | Type | Description
@@ -29,7 +29,7 @@ class [PostProcessRenderPass](/classes/2.3/PostProcessRenderPass)
 
 ### setRenderList(renderList) &rarr; void
 
-
+Updates the render list
 
 #### Parameters
  | Name | Type | Description

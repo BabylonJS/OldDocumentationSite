@@ -11,7 +11,7 @@ class [TGATools](/classes/2.3/TGATools)
 
 ## Methods
 
-### static  GetTGAHeader(data) &rarr; any
+### static GetTGAHeader(data) &rarr; any
 
 
 
@@ -20,7 +20,7 @@ class [TGATools](/classes/2.3/TGATools)
 ---|---|---|---
  | data | Uint8Array |   @param data
 
-### static  UploadContent(gl, data) &rarr; void
+### static UploadContent(gl, data) &rarr; void
 
 
 
