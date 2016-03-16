@@ -58,4 +58,4 @@ You can play with the code used in this tutorial... by visiting [**a demo at our
 ## Next step
 With those two functions, your scenes are becoming a lot more dynamic: you can define a specific reaction to object intersecting and colliding, and begin to introduce physics notions into your scene.
 
-In our next tutorial, you will discover how to [check collisions between your scene and the mouse](http://doc.babylonjs.com/page.php?p=22111).
+In our next tutorial, you will discover how to [check collisions between your scene and the mouse](http://doc.babylonjs.com/tutorials/Picking_Collisions).

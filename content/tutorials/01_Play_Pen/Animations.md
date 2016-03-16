@@ -122,7 +122,7 @@ The ```BABYLON.Animatable``` object also supports the following functions:
 
 These commands will apply to every animation object contained in the Animatable's ._animations array. You can also get access to current running ```BABYLON.Animatable``` objects by using ```scene.getAnimatableByTarget()``` providing the target object.
 
-And you are done! Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;) We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully.
+And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)
 
 **2 - Controlling animations**
 
@@ -162,9 +162,13 @@ Here is a straightforward sample using the **CreateAndStartAnimation()** functio
 ```Javascript
 BABYLON.Animation.CreateAndStartAnimation('boxscale', box1, 'scaling.x', 30, 120, 1.0, 1.5);
 ```
-Pretty straightforward ? :)
+Fast and easy. :)
 
-**4 - Easing functions**
+**4 - Animation Blending**
+
+( work in progress )
+
+**5 - Easing functions**
 
 You can add some behaviors to your animations, using easing functions. 
 If you want more informations about easing functions, here are some useful links : 
@@ -254,7 +258,7 @@ var FunnyEase = (function (_super) {
 You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](http://babylonjs-playground.azurewebsites.net/?20)
 
 
-**5 - Complex animation**
+**6 - Complex animation**
 
 The complex animation lets you choose everything at each frame of the animation (each tick). The code computed at run time must be located in this function:
 ```javascript
@@ -267,12 +271,12 @@ This function can be very useful for complex animation like games, where charact
 
 Don’t hesitate to combine all those types of animations. If well done, it’s very powerful.
 
-Don't forget to [visit our API documentation](http://doc.babylonjs.com/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/page.php?p=24916) class.
+Don't forget to [visit our API documentation](http://doc.babylonjs.com/classes/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/classes/Animation) class.
 
-You can view, edit, and get a zip of the code used in this tutorial... [**right here**](http://babylonjs-playground.azurewebsites.net/?7) ...at the Babylon.js Playground.&nbsp; The demo for the easing section is listed a few lines earlier.
+**7 - Attach events to animations**
 
-## Attach events to animations
-From babylon.js version 2.3, you can attach events to specific frames on an animations.
+From babylon.js version 2.3, you can attach [animation events](http://doc.babylonjs.com/classes/AnimationEvent) to specific frames on an animation.
+
 An event is a function that will be called at a given frame.
 
 It's very simple to do this:
@@ -289,4 +293,4 @@ animation.addEvent(event1);
 And that's it!
 
 ## Next step
-Your scene is now becoming dynamic, and all your meshes can move in all directions! Feel free to try different animations on different objects, then come back and learn all about [**Sprites**](http://doc.babylonjs.com/page.php?p=22082).
+Your scene is now becoming dynamic, and all your meshes can move in all directions! Feel free to try different animations on different objects, then come back and learn all about [**Sprites**](http://doc.babylonjs.com/tutorials/Sprites).

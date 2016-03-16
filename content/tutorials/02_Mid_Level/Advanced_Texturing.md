@@ -14,7 +14,7 @@ These new types of textures are considered advanced because we are not used to d
 
 * **Mirror**
 
-Mirror textures are used to simulate “mirrors” (!) which means that babylon.js will compute the reflection and fill the texture with the results. A mirror texture must be set in the _reflectionTexture_&nbsp; channel of a _StandardMaterial_ :
+Mirror textures are used to simulate “mirrors” (!) which means that babylon.js will compute the reflection and fill the texture with the results. A mirror texture must be set in the _reflectionTexture_ channel of a _StandardMaterial_ :
 
 ```javascript
 var mirrorMaterial = new BABYLON.StandardMaterial("texture4", scene);
@@ -26,13 +26,13 @@ mirrorMaterial.reflectionTexture.renderList = [sphere1, sphere2];
 A _mirrorTexture_ is created with a parameter that specifies the size of the rendering buffer (512x512 here, better reflection quality if increased).
 Then you have to define the reflection plane and a render list (the list of meshes to render inside the mirror).
 
-You can also use a [CubeTexture](http://doc.babylonjs.com/page.php?p=24958) as a reflectionTexture on a StandardMaterial.
+You can also use a [CubeTexture](http://doc.babylonjs.com/classes/CubeTexture) as a reflectionTexture on a StandardMaterial.
 ```javascript
 material.reflectionTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
 ```
-Like the CubeTextures used in skyboxes, the textures/TropicalSunnyDay directory must contain 6 textures, covering all 6 directions of the cube.&nbsp; Each image must be named according to the corresponding CubeTexture face: “TropicalSunnyDay_nx.jpg”, “TropicalSunnyDay_ny.jpg”, “TropicalSunnyDay_nz.jpg”, “TropicalSunnyDay_px.jpg”, “TropicalSunnyDay_py.jpg”, “TropicalSunnyDay_pz.jpg”.
+Like the CubeTextures used in skyboxes, the textures/TropicalSunnyDay directory must contain 6 textures, covering all 6 directions of the cube. Each image must be named according to the corresponding CubeTexture face: “TropicalSunnyDay_nx.jpg”, “TropicalSunnyDay_ny.jpg”, “TropicalSunnyDay_nz.jpg”, “TropicalSunnyDay_px.jpg”, “TropicalSunnyDay_py.jpg”, “TropicalSunnyDay_pz.jpg”.
 
-You can see this nice advanced texturing technique... in [this playground scene](http://babylonjs-playground.azurewebsites.net/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/page.php?p=24956)-enhanced [playground scene](http://babylonjs-playground.azurewebsites.net/#SBTYP), as well.
+You can see this nice advanced texturing technique... in [this playground scene](http://babylonjs-playground.azurewebsites.net/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/FresnelParameters)-enhanced [playground scene](http://babylonjs-playground.azurewebsites.net/#SBTYP), as well.
 
 
 * **Bump Mapping**
@@ -58,7 +58,7 @@ That’s it! The bump texture disturbs/perturbs the normal to produce a result l
 ![finalResult](http://www.babylonjs.com/tutorials/Advanced%20Texturing/2.png)
 
 _Resulting gorgeous bumpy sphere_
-&nbsp;
+
 * **Video**
 
 If you want to display a video in your scene, the Babylon engine has a special texture for that. This special texture works similar to other textures, with the exception of a few parameters. These parameters include video urls (an url array), the size of the video texture (here is 256), the scene, and a final optional boolean that indicates if you want to use [mipmap](http://en.wikipedia.org/wiki/Mipmap) or not.
@@ -68,9 +68,9 @@ Here is an example from our [Flat2009 demo](http://www.babylonjs.com/?9). This p
 ecran.material.diffuseTexture = new BABYLON.VideoTexture("video",
 ["Scenes/Flat2009/babylonjs.mp4", "Scenes/Flat2009/babylonjs.webm"], scene, true);
 ```
-The [_VideoTexture_ object](http://doc.babylonjs.com/page.php?p=24964) accepts an array of videos (to take into account various codecs).&nbsp; The first video in the array that can be loaded... is the one used as content source.&nbsp; Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
+The [_VideoTexture_ object](http://doc.babylonjs.com/classes/VideoTexture) accepts an array of videos (to take into account various codecs). The first video in the array that can be loaded... is the one used as content source. Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
 
-The internal [video DOM object](http://www.w3.org/wiki/HTML/Elements/video) is accessible via the VideoTexture.video property... which allows you to control some characteristics and monitor the status of the video (things such as play, pause, loop, autoplay, etc).&nbsp; See the link above for the full story.
+The internal [video DOM object](http://www.w3.org/wiki/HTML/Elements/video) is accessible via the VideoTexture.video property... which allows you to control some characteristics and monitor the status of the video (things such as play, pause, loop, autoplay, etc). See the link above for the full story.
 
 ![video](http://www.babylonjs.com/tutorials/Advanced%20Texturing/3.png)
 
@@ -133,4 +133,4 @@ Sometimes it is a bit difficult to determine which indices of a mesh should be t
 
 You can view and play-with the demo used in this tutorial... [right here](http://babylonjs-playground.azurewebsites.net/#EKFLA#13).
 
-You might also be interested in our [Unleash the Standard Material](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx) tutorial, and our [basic materials](http://doc.babylonjs.com/page.php?p=22051) tutorial.
+You might also be interested in our [Unleash the Standard Material](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.

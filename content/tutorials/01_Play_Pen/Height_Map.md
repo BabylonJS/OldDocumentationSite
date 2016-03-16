@@ -70,7 +70,7 @@ And now we have a beautiful 3D view of the earth!
 
 ![HeightMap4](http://www.babylonjs.com/tutorials/14%20-%20Height%20map/14-3.png)
 
-In my example, I have added a skybox (like we have learned before [here](http://doc.babylonjs.com/tutorials/13._Environment)), and a spotlight to simulate sun activity.
+In my example, I have added a skybox (like we have learned before [here](http://doc.babylonjs.com/tutorials/Environment)), and a spotlight to simulate sun activity.
 
 Here is another example showing what you can achieve with BabylonJS height maps:
 
@@ -102,4 +102,4 @@ var camerasBorderFunction = function () {
 You may be interested in visiting [**the playground demo**](http://babylonjs-playground.azurewebsites.net/?14) that goes with this tutorial.
 
 ## Next step
-Well done! Your scene looks good now, and you can imagine a lot of new landscapes! One more important thing you need to know is [how to create shadows](http://doc.babylonjs.com/page.php?p=22151). Shadows will give your scene a beautiful rendering effect, don't forget it!
+Well done! Your scene looks good now, and you can imagine a lot of new landscapes! One more important thing you need to know is [how to create shadows](http://doc.babylonjs.com/tutorials/Shadows). Shadows will give your scene a beautiful rendering effect, so don't forget about them!

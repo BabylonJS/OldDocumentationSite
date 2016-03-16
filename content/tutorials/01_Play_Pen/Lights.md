@@ -58,7 +58,7 @@ The angle defines the size (field of illumination) of the spotlight's conical be
 
 ![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/7723.image_5F00_thumb_5F00_11F5CA14.png)
 
-&nbsp;_A simple drawing showing the shape of a spot light_
+_A simple drawing showing the shape of a spot light_
 
 ```javascript
 var light0 = new BABYLON.SpotLight("Spot0", new BABYLON.Vector3(0, 30, -10), new BABYLON.Vector3(0, -1, 0), 0.8, 2, scene);
@@ -122,7 +122,7 @@ You may have heard words like '_normals_' and '_backfaces_' spoken or written, d
 The picture below will help you understand how lights interact with normals and backfaces. The picture shows two planes and two lights. One light is a spot light, the other is a point light. The arrows show the direction of the lighting normals, and these arrows are not visible in a standard scene. They are used in the picture to help illustrate the concept of normals, as are the diamond and cone shapes for the two lights. Let's look at the picture carefully.
 
 ![](http://urbanproductions.com/wingy/babylon/misc/normals03.jpg)
-&nbsp;_A blue back-faced plane and a blue front-faced plane, with a spot light and point light_
+_A blue back-faced plane and a blue front-faced plane, with a spot light and point light_
 
 As you can see, when a standard Babylon.js plane has its backface lit (the left plane), the lights have no affect, because its normals are not facing toward the lights. Conversely, when a standard plane has its frontface lit (the right plane), both lights work perfectly to light the plane, because its normals are facing toward the lights. 
 
@@ -140,6 +140,6 @@ More information about the _.range_ property... coming soon. Stay tuned.
 ## Next Step ##
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!
 
-Although not truly a light, you might be interested in our [Volumetric Light Scattering](http://doc.babylonjs.com/page.php?p=24840) (GodRays) system.
+Although not truly a light, you might be interested in our [Volumetric Light Scattering](http://doc.babylonjs.com/tutorials/Using_the_Volumetric_LightScattering_post-process) (GodRays) system.
 
-Guess what! The next tutorial... is about animation! [Click this and let's go!](http://doc.babylonjs.com/page.php?p=22081)
+Guess what! The next tutorial... is about animation! [Click this and let's go!](http://doc.babylonjs.com/tutorials/Animations)
