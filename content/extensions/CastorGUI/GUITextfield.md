@@ -19,9 +19,15 @@ Name | Type | Description
 * **value**: value of textfield (string)
 * **placeholder**: value by default of textfield (string)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **tabindex**: Tab order of the field.
 
 ##Methods
+
+###getValue() → void
+Get the value element
+
+###setValue() → void
+Set the value element
 
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible

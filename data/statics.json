@@ -169,6 +169,10 @@
           "filename": "17._Using_decals"
         },
         {
+          "title": "Using Parallax Mapping",
+          "filename": "18._Using_parallax_mapping"
+        },
+        {
           "title": "Position, Rotate, Translate and Spaces",
           "filename": "Position,_Rotate,_Translate_and_Spaces"
         },
@@ -624,6 +628,10 @@
           "filename": "GUICheckbox"
         },
         {
+          "title": "GUIColor",
+          "filename": "GUIColor"
+        },
+        {
           "title": "GUIDialog",
           "filename": "GUIDialog"
         },
@@ -736,6 +744,10 @@
         {
           "title": "FileFormat Map (.babylon)",
           "filename": "File_Format_Map_(.babylon)"
+        },
+        {
+          "title": "Setup Visual Studio to contribute to Babylon.js",
+          "filename": "setup_visualStudio"
         },
         {
           "title": "Roadmap",

@@ -18,12 +18,24 @@ Name | Type | Description
 * **x**: position left of select (in pixel)
 * **y**: position top of select (in pixel)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **tabindex**: Tab order of the field.
 
 ##Methods
 
 ###addOptions(value, text) → void
-add option in the GUISelect
+Add option in the GUISelect
+
+###findOptionSelected(bool: withIndex) → void
+Find option selected in the GUISelect
+
+###removeOption(value) → void
+Delete option value in the GUISelect
+
+###changeItem(oldValue, newValue) → void
+Change old value by new value
+
+###selectedItem(item) → void
+Add atribute selected item
 
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible

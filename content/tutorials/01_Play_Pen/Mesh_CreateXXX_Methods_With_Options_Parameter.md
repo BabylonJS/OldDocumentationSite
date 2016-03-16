@@ -243,7 +243,7 @@ type|name|side number
 13|Elongated Pentagonal Dipyramid (J16)|15
 14|Elongated Pentagonal Cupola (J20)|22
 
-If you need to use a custom polyhedron (_URL to the full sample PG here_) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron  
+If you need to use a custom polyhedron (http://www.babylonjs-playground.com/#21QRSK#1 : minimize the code editor with the button "EDITOR-" to see polyhedron names under the mouse pointer) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron  
 Just copy/paste the wanted polyhedron object in your code like this :
 
 ```javascript
@@ -327,6 +327,23 @@ gapSize|_(number)_  size of the gaps|1
 dashBn|_(number)_  intended number of dashes|200
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
+
+####LineSystem
+You must set at least the _lines_ property.  
+On update, you must set the _lines_ and _instance_ properties.  
+
+Example :
+```javascript
+lineSystem = BABYLON.MeshBuilder.CreateLineSystem("lineSystem", {lines: myArray, instance: lineSystem});
+// updates the existing instance of lineSystem : no need for the parameter scene here
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+lines|_(Vector3[])_  array of lines, each line being an array of successive Vector3 **REQUIRED** 
+updatable|_(boolean)_ true if the mesh is updatable|false
+instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
 
 ####Ribbon
 You must set at least the _pathArray_ property.  

@@ -17,9 +17,15 @@ Name | Type | Description
 * **y**: position top of checkbox (in pixel)
 * **size**: size of checkbox (float) =&gt; "1.0" by default
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **tabindex**: Tab order of the field.
 
 ##Methods
+
+###isChecked() → void
+return if element is checked
+
+###setChecked(value) → void
+check element
 
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible

@@ -9,16 +9,16 @@ PG_TITLE: Cheetah3D
 - mesh export with functional transform, naming and parenting
 - multicamera export (only perspective, no support for orthogonal right now)
 - light export with all babylon type managed :
-&nbsp;&nbsp; &nbsp;- Cheetah3D spot light is a babylon spot (duh)
-&nbsp;&nbsp; &nbsp;- Cheetah3D distant light is a babylon directional light
-&nbsp;&nbsp; &nbsp;- Cheetah3D ambiant light is a babylon hemispheric light
-&nbsp;&nbsp; &nbsp;- every other type is a babylon point light
-&nbsp;&nbsp; &nbsp;- supports diffuse and specular color
-&nbsp;&nbsp; &nbsp;- rotations must be on the -Y axis
+  - Cheetah3D spot light is a babylon spot (duh)
+  - Cheetah3D distant light is a babylon directional light
+  - Cheetah3D ambiant light is a babylon hemispheric light
+  - every other type is a babylon point light
+  - supports diffuse and specular color
+  - rotations must be on the -Y axis
 
 - materials export:
-&nbsp;&nbsp; &nbsp;- supports diffuse, emissive and specular color (plus specular power as "shininess")
-&nbsp;&nbsp; &nbsp;- supports only diffuse textures, Cheetah3D api is realy sparse on that
+  - supports diffuse, emissive and specular color (plus specular power as "shininess")
+  - supports only diffuse textures, Cheetah3D api is realy sparse on that
 
 More info on [my blog](http://cubeslam.net/).
 

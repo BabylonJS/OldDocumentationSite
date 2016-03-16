@@ -13,13 +13,20 @@ Name | Type | Description
 
 ##Options
 
-* **x**: position left of radio button (in pixel)
-* **y**: position top of radio button (in pixel)
-* **size**: size of radio button (float) =&gt; "1.0" by default
-* **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
+* **name**: Name to group radio buttons
+* **x**: Position left of radio button (in pixel)
+* **y**: Position top of radio button (in pixel)
+* **size**: Size of radio button (float) =&gt; "1.0" by default
+* **zIndex**: Depth of the element (int) =&gt; 1 by default
+* **tabindex**: Tab order of the field.
 
 ##Methods
+
+###isChecked() → void
+return if element is checked
+
+###setChecked(value) → void
+check element
 
 ###setVisible(bool, fade) → void
 Set this GUI element to visible or invisible

@@ -18,7 +18,6 @@ Name | Type | Description
 * **y**: position top of fieldset (in pixel)
 * **legend**: value legend od the fieldset (string)
 * **zIndex**: depth of the element (int) =&gt; 1 by default
-* **className**: css class to customize the element =&gt; null by default
 
 ##Methods
 

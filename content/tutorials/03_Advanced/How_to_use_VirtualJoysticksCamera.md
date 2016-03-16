@@ -37,31 +37,31 @@ Here is a complete sample that loads the Espilit demo and switches the default c
 ```javascript
 document.addEventListener("DOMContentLoaded", startGame, false);
 function startGame() {
-&nbsp;&nbsp; &nbsp;if (BABYLON.Engine.isSupported()) {
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; var canvas = document.getElementById("renderCanvas");
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; var engine = new BABYLON.Engine(canvas, true);
+  if (BABYLON.Engine.isSupported()) {
+    var canvas = document.getElementById("renderCanvas");
+    var engine = new BABYLON.Engine(canvas, true);
 
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; BABYLON.SceneLoader.Load("Espilit/", "Espilit.babylon", engine, function (newScene) {
+    BABYLON.SceneLoader.Load("Espilit/", "Espilit.babylon", engine, function (newScene) {
 
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; var VJC = new BABYLON.VirtualJoysticksCamera("VJC", newScene.activeCamera.position, newScene);
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; VJC.rotation = newScene.activeCamera.rotation;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; VJC.checkCollisions = newScene.activeCamera.checkCollisions;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; VJC.applyGravity = newScene.activeCamera.applyGravity;
+      var VJC = new BABYLON.VirtualJoysticksCamera("VJC", newScene.activeCamera.position, newScene);
+      VJC.rotation = newScene.activeCamera.rotation;
+      VJC.checkCollisions = newScene.activeCamera.checkCollisions;
+      VJC.applyGravity = newScene.activeCamera.applyGravity;
 
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; // Wait for textures and shaders to be ready
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; newScene.executeWhenReady(function () {
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;newScene.activeCamera = VJC;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Attach camera to canvas inputs
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;newScene.activeCamera.attachControl(canvas);
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;// Once the scene is loaded, just register a render loop to render it
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;engine.runRenderLoop(function () {
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; newScene.render();
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;}),
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; }),
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; }, function (progress) {
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; // To do: give progress feedback to user
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; }),
-&nbsp;&nbsp; &nbsp;}
+      // Wait for textures and shaders to be ready
+      newScene.executeWhenReady(function () {
+        newScene.activeCamera = VJC;
+        // Attach camera to canvas inputs
+        newScene.activeCamera.attachControl(canvas);
+        // Once the scene is loaded, just register a render loop to render it
+        engine.runRenderLoop(function () {
+          newScene.render();
+        }),
+      }),
+    }, function (progress) {
+    // To do: give progress feedback to user
+    }),
+  }
 }
 ```
 

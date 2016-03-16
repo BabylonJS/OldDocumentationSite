@@ -10,12 +10,15 @@ But you may want to work with all basic files. In this case, please download the
 ```
     <script src="src/Math/babylon.math.js"></script>
     <script src="src/Math/babylon.math.simd.js"></script>
+    <script src="src/Tools/babylon.decorators.js"></script>
     <script src="src/Tools/babylon.database.js"></script>
     <script src="src/Tools/babylon.tools.tga.js"></script>
     <script src="src/Tools/babylon.tools.dds.js"></script>
     <script src="src/Tools/babylon.smartCollection.js"></script>
     <script src="src/Tools/babylon.smartArray.js"></script>
     <script src="src/Tools/babylon.tools.js"></script>
+    <script src="src/states/babylon.alphaCullingState.js"></script>
+    <script src="src/states/babylon.depthCullingState.js"></script>
     <script src="src/babylon.engine.js"></script>
     <script src="src/babylon.node.js"></script>
     <script src="src/Tools/babylon.filesInput.js"></script>
@@ -39,6 +42,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Cameras/babylon.freeCamera.js"></script>
     <script src="src/Cameras/babylon.touchCamera.js"></script>
     <script src="src/Cameras/babylon.arcRotateCamera.js"></script>
+    <script src="src/Cameras/babylon.universalCamera.js"></script>
     <script src="src/Cameras/babylon.deviceOrientationCamera.js"></script>
     <script src="src/Tools/babylon.gamepads.js"></script> 
     <script src="src/Cameras/babylon.gamepadCamera.js"></script>
@@ -59,9 +63,12 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Materials/textures/procedurals/babylon.standardProceduralTexture.js"></script>
     <script src="src/Materials/textures/procedurals/babylon.customProceduralTexture.js"></script>
     <script src="src/Materials/textures/babylon.mirrorTexture.js"></script>
+    <script src="src/Materials/textures/babylon.refractionTexture.js"></script>
     <script src="src/Materials/textures/babylon.dynamicTexture.js"></script>
     <script src="src/Materials/textures/babylon.videoTexture.js"></script>
     <script src="src/Materials/babylon.effect.js"></script>
+    <script src="src/Materials/babylon.materialHelper.js"></script>
+    <script src="src/Materials/babylon.fresnelParameters.js"></script>
     <script src="src/Materials/babylon.material.js"></script>
     <script src="src/Materials/babylon.standardMaterial.js"></script>
     <script src="src/Materials/babylon.multiMaterial.js"></script>
@@ -120,6 +127,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Mesh/babylon.linesMesh.js"></script>
     <script src="src/Rendering/babylon.outlineRenderer.js"></script>
     <script src="src/Tools/babylon.assetsManager.js"></script>
+    <script src="src/Cameras/VR/babylon.vrCameraMetrics.js"></script>
     <script src="src/Cameras/VR/babylon.vrDeviceOrientationCamera.js"></script>
     <script src="src/Cameras/VR/babylon.webVRCamera.js"></script>
     <script src="src/Tools/babylon.sceneOptimizer.js"></script>
@@ -144,6 +152,11 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Tools/babylon.loadingScreen.js"></script>
     <script src="src/Materials/babylon.pbrMaterial.js"></script>
     <script src="src/Probes/babylon.reflectionProbe.js"></script>
+    <script src="src/tools/hdr/babylon.tools.pmremGenerator.js"></script>
+    <script src="src/tools/hdr/babylon.tools.cubemapToSphericalPolynomial.js"></script>
+    <script src="src/tools/hdr/babylon.tools.panoramaToCubemap.js"></script>
+    <script src="src/tools/hdr/babylon.tools.hdr.js"></script>
+    <script src="src/materials/textures/babylon.hdrCubeTexture.js"></script>
 ```
 
 When working with all files, you can provide the following information to the engine:
