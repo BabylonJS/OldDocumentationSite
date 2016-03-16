@@ -193,7 +193,7 @@ Relection + Refraction <= 1.0
 
 Basically, a fully reflective object like a mirror will not let you see through it. You can see it on the example below. Even if the material is defined as fully refractive, the fact that the reflectivity is White (1.0) completely cancels the refractive part of it.
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR#8)
+[Demo](http://www.babylonjs-playground.com/#19JGPR#14)
 ```javascript
  var notGlass = new BABYLON.PBRMaterial("glass", scene);
 notGlass.reflectionTexture = hdrTexture;
