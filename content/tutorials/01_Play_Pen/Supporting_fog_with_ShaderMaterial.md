@@ -5,20 +5,20 @@ PG_TITLE: Supporting fog with ShaderMaterial
 In order to support fog in your custom shaders, you will have to add some lines of code in your vertex and pixel shaders.
 
 ##Vertex shader
-First you need to declare a varying variable:
+First, you need to declare a varying variable:
 
 ```
 varying float fFogDistance;
 ```
 
-Then you have compute this value inside the shader:
+Then you have to compute this value inside the shader:
 
 ```
 fFogDistance = (view * worldPosition).z; // This is the distance of the vertex from the point of view of the camera (Camera space)
 ```
 
 ##Pixel shader
-First you need to add the following code to be able to compute the fog accordingly to parameters sent by the scene:
+Next, you need to add the following code to be able to compute the fog accordingly to parameters sent by the scene:
 
 ```
 #define FOGMODE_NONE 0.
@@ -55,7 +55,7 @@ float CalcFogFactor()
 }
 ```
 
-Then inside the shader you have to use this function to get the fog color:
+Then, inside the shader, you have to use this function to get the fog color:
 
 ```
 float fog = CalcFogFactor();

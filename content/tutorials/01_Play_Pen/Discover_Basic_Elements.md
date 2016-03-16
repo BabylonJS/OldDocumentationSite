@@ -244,7 +244,7 @@ var ground = BABYLON.Mesh.CreateGroundFromHeightMap("ground", "heightmap.jpg", 2
 ```
 Parameters are: name, heightmapPath, width, depth, subdivs, minheight, maxheight, scene, updatable, successCallback
 
-HeightMap grounds are easy, but we decided to create a separate tutorial so we could say more about this important Babylon.js feature. Please see our [**HeightMap Tutorial**](http://doc.babylonjs.com/tutorials/14._Height_Map) to learn all about heightMap grounds.
+HeightMap grounds are easy, but we decided to create a separate tutorial so we could say more about this important Babylon.js feature. Please see our [**HeightMap Tutorial**](http://doc.babylonjs.com/tutorials/Height_Map) to learn all about heightMap grounds.
 
 * **Create of a Tiled Ground**
 
@@ -268,9 +268,9 @@ Parameters are: name, xmin, zmin, xmax, zmax, subdivisions = the number of tiles
 Kostar111 was also kind enough to give us a fine tutorial about how to use tiled grounds. [**Click right here**](http://makina-corpus.com/blog/metier/how-to-use-multimaterials-with-a-tiled-ground-in-babylonjs) to view it. At that link, Kostar111 thoroughly explains how the tiled ground works, and also provides some Babylon.js Playground scenes that nicely demonstrate some of its many uses.
 
 ## Wrapping Up ##
-And that’s it! Now you have seen all of our basic elements, and some ways to use them. Keep watching this area of the tutorial for new basic elements, as they are being added quite quickly : you'll find the updated list with all parameter explanations [**in this section**]( http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter  )  
+And that’s it! Now you have seen all of our basic elements, and some ways to use them. Keep watching this area of the tutorial for new basic elements, as they are being added quite quickly : you'll find the updated list with all parameter explanations [**in this section**](http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter). 
 Feel free to imagine a few of your own basic element ideas, and present them on the forum. Help us make our list of basic elements grow, if you can.  
 
 ## Next step ##
 ----
-We saw that we needed a bit of 'positioning' to keep our basic elements from sitting atop one another in the scene. Now let's learn more about positions (sometimes called translations) as well as about rotation and scaling. Ready? Sure you are! [**Click here for the next tutorial.**](http://doc.babylonjs.com/tutorials/04._Materials)
+We saw that we needed a bit of 'positioning' to keep our basic elements from sitting atop one another in the scene. Now let's learn more about positions (sometimes called translations) as well as about rotation and scaling. Ready? Sure you are! [**Click here for the next tutorial.**](http://doc.babylonjs.com/tutorials/Materials)
