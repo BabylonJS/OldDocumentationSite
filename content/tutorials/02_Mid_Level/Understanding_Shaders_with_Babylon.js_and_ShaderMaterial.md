@@ -12,6 +12,6 @@ More additional information
 The ShaderMaterial will automatically add #define in your shader for the following options:
 
 
-* Instances: **"#define INSTANCES"** will be added. You will have to add *"world0"*, *"world1"*, *"world2"*, *"world3"* attributes to you shader like [here](https://github.com/BabylonJS/Babylon.js/blob/master/Babylon/Shaders/default.vertex.fx#L132)
-* Bones: **"#define BONES"**, **"#define x"** (Where x is the number of bones used), **"#define BONES4"** will be added. You need to add *BABYLON.VertexBuffer.MatricesIndicesKind* and *BABYLON.VertexBuffer.MatricesWeightsKind* to your attributes list like [here](https://github.com/BabylonJS/Babylon.js/blob/master/Babylon/Shaders/default.vertex.fx#L137)
+* Instances: **"#define INSTANCES"** will be added. You will have to add *"world0"*, *"world1"*, *"world2"*, *"world3"* attributes to you shader like [here](https://github.com/BabylonJS/Babylon.js/blob/master/src/Shaders/ShadersInclude/instancesVertex.fx)
+* Bones: **"#define NUM_BONE_INFLUENCERS"** will be added. You can then use this value to compute our bone transformation like [here](https://github.com/BabylonJS/Babylon.js/blob/master/src/Shaders/ShadersInclude/bonesVertex.fx). You also need to add *BABYLON.VertexBuffer.MatricesIndicesKind* and *BABYLON.VertexBuffer.MatricesWeightsKind* to your attributes list.
 * Alpha test: **"#define ALPHATEST"** will be added
