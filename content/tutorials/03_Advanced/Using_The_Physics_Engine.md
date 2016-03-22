@@ -140,6 +140,17 @@ In the example above you noticed I kept a reference on the pyhscis impostor atta
 
 The physics impostor holds a set of functions that can be executed on the physics engine's body:
 
+#### Bidirectional transformation linking
+
+The physics impostor synchronizes the physics engine's body and the connected object with each frame.
+That means that changing the object's position or rotation in babylon code will also move the impostor. The impostor is also the one updating the object's position after the physics engine is finished calculating the next step.
+
+Playground example (sphere rotation and position) - http://www.babylonjs-playground.com/#B5BDU
+Notice how the sphere rotates (due to the rotate function), but this rotation is not being taken into account by the phyysics engine.
+
+Playground example (box rotation and position) - http://www.babylonjs-playground.com/#2ADVLV
+In this case the rotation does influence the physics engine due to the geometric shape - a box standing on its edge will need to fall to either side, which influences its velocities.
+
 #### Linear velocity
 
 Simply put the linear velocity is in charge of updating the object's position. a velocity in any axis will cause a movement in its direction.
@@ -200,7 +211,7 @@ Playground example with a different position of the impulse, giving the ball a "
 I can add a callback that will be called when an impostor collides with another impostor. 
 This is how to change the color of an object if it collides against the ground
 
-```javscript
+```javascript
 sphereImpostor.registerOnPhysicsCollide(groundImpostor, function(main, collided) {
     main.object.material.diffuseColor = new BABYLON.Color3(Math.random(), Math.random(), Math.random());
 });
