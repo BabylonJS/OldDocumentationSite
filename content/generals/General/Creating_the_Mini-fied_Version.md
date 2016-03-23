@@ -11,6 +11,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Math/babylon.math.js"></script>
     <script src="src/Math/babylon.math.simd.js"></script>
     <script src="src/Tools/babylon.decorators.js"></script>
+    <script src="src/Tools/babylon.observable.js"></script>    
     <script src="src/Tools/babylon.database.js"></script>
     <script src="src/Tools/babylon.tools.tga.js"></script>
     <script src="src/Tools/babylon.tools.dds.js"></script>
