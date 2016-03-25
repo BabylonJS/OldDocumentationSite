@@ -2,18 +2,16 @@
 ID_PAGE: 22081
 PG_TITLE: 07. Animations
 ---
-## Animation
+# Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 
 ![Elements](http://www.babylonjs.com/tutorials/07%20-%20Animation/07.png)
 
 _Final result_
 
-## How can I do this ?
-
 There are two primary ways of doing animations in your scene. The first is to define a collection of keys and defining your object's situation at each key. The second way is for more complex animations, when you change animation code at run time.
 
-**1 - Basic animation**
+## Basic animation
 
 The animation is based on objects called Animation (!!). An Animation is defined by various properties and a collection of keys. Every key represents the value of the Animation at that key's given time.
 
@@ -36,13 +34,13 @@ var animationBox = new BABYLON.Animation("myAnimation", "scaling.x", 30, BABYLON
 
 Much information is in the parameters:
 
-Parameter 1 - Name of this animation, nothing more.
+**Parameter 1** - Name of this animation, nothing more.
 
-Parameter 2 - The property concerned. This can be any mesh property, depending upon what you want to change. Here we want to scale an object on the X axis, so it will be “scaling.x”.
+**Parameter 2** - The property concerned. This can be any mesh property, depending upon what you want to change. Here we want to scale an object on the X axis, so it will be “scaling.x”.
 
-Parameter 3 - Frames per second requested: highest FPS possible in this animation.
+**Parameter 3** - Frames per second requested: highest FPS possible in this animation.
 
-Parameter 4 - Type of change. Here you decide and enter what kind of value will be modified: is it a float (e.g. a translation), a vector (e.g. a direction), or a quaternion. Exact values are:
+**Parameter 4** - Type of change. Here you decide and enter what kind of value will be modified: is it a float (e.g. a translation), a vector (e.g. a direction), or a quaternion. Exact values are:
 
 * ```BABYLON.Animation.ANIMATIONTYPE_FLOAT```
 * ```BABYLON.Animation.ANIMATIONTYPE_VECTOR2```
@@ -51,7 +49,7 @@ Parameter 4 - Type of change. Here you decide and enter what kind of value will 
 * ```BABYLON.Animation.ANIMATIONTYPE_MATRIX```
 * ```BABYLON.Animation.ANIMATIONTYPE_COLOR3```
 
-Parameter 5. Finally, you have to decide and enter the type of behavior this animation will take at its upper limit (e.g. will it continue on, will it begin again, will it stop at the last key value, etc.):
+**Parameter 5** - Finally, you have to decide and enter the type of behavior this animation will take at its upper limit (e.g. will it continue on, will it begin again, will it stop at the last key value, etc.):
 
 * Use previous values and increment it: ```BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE```
 * Restart from initial value: ```BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE```
@@ -100,7 +98,8 @@ Finally, you can launch your animation in one line of code, at any time in your 
 scene.beginAnimation(box1, 0, 100, true);
 ```
 
-####Parameters for scene.beginAnimation
+**Parameters for scene.beginAnimation:**
+
  | Name | Type | Description
 ---|---|---|---
  | target | any | The target
@@ -124,7 +123,7 @@ These commands will apply to every animation object contained in the Animatable'
 
 And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)
 
-**2 - Controlling animations**
+## Controlling animations
 
 Each Animation has a property called ```currentFrame``` that indicates the current animation key.
 
@@ -144,7 +143,7 @@ BABYLON.Animation.prototype.vector3InterpolateFunction = function (startValue, e
 };
 ```
 
-**3 - Helper function**
+## Helper function
 
 You can use an extended function to create a quick animation:
 
@@ -164,14 +163,20 @@ BABYLON.Animation.CreateAndStartAnimation('boxscale', box1, 'scaling.x', 30, 120
 ```
 Fast and easy. :)
 
-**4 - Animation Blending**
+## Animation Blending
 
-( work in progress )
+As of Babylon.js 2.3+, you can  start an animation with *enableBlending* = true. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
 
-**5 - Easing functions**
+In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position:
+
+http://www.babylonjs-playground.com/#2BLI9T#2
+
+Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running.
+
+## Easing functions
 
 You can add some behaviors to your animations, using easing functions. 
-If you want more informations about easing functions, here are some useful links : 
+If you want more information about easing functions, here are some useful links : 
 - [MSDN Easing functions documentation](http://msdn.microsoft.com/en-us/library/ee308751.aspx)
 - [Easing functions cheat sheet](http://easings.net/fr)
 
@@ -258,7 +263,7 @@ var FunnyEase = (function (_super) {
 You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](http://babylonjs-playground.azurewebsites.net/?20)
 
 
-**6 - Complex animation**
+## Complex animation
 
 The complex animation lets you choose everything at each frame of the animation (each tick). The code computed at run time must be located in this function:
 ```javascript
@@ -271,11 +276,11 @@ This function can be very useful for complex animation like games, where charact
 
 Don’t hesitate to combine all those types of animations. If well done, it’s very powerful.
 
-Don't forget to [visit our API documentation](http://doc.babylonjs.com/classes/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/classes/Animation) class.
+Don't forget to [visit our API documentation](http://doc.babylonjs.com/classes/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/classes/Animation) and [**Babylon.js Animatable**](http://doc.babylonjs.com/classes/Animatable) classes.
 
-**7 - Attach events to animations**
+## Attach events to animations
 
-From babylon.js version 2.3, you can attach [animation events](http://doc.babylonjs.com/classes/AnimationEvent) to specific frames on an animation.
+From Babylon.js version 2.3, you can attach [animation events](http://doc.babylonjs.com/classes/AnimationEvent) to specific frames on an animation.
 
 An event is a function that will be called at a given frame.
 
@@ -292,5 +297,6 @@ animation.addEvent(event1);
 
 And that's it!
 
-## Next step
+**Next step**
+
 Your scene is now becoming dynamic, and all your meshes can move in all directions! Feel free to try different animations on different objects, then come back and learn all about [**Sprites**](http://doc.babylonjs.com/tutorials/Sprites).
