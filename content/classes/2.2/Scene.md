@@ -547,8 +547,8 @@ Will start the animation sequence of a given target
  | Name | Type | Description
 ---|---|---|---
  | target | any |  - the target - the target
- | from | number |  The fps starting frame
- | to | number |  The fps ending frame
+ | from | number |  The starting frame
+ | to | number |  The ending frame
 optional | loop | boolean |  If true, the animation will loop
 optional | speedRatio | number |  default : 1.The speed ratio of this animation
 optional | onAnimationEnd | () =&gt; void |  The function triggered on the end of the animation
@@ -561,8 +561,8 @@ Begins a direct animation (no children animations)
 ---|---|---|---
  | target | any |  - the target
  | animations | [Animation](/classes/2.2/Animation)[] |  An array of animations
- | from | number |  The fps starting frame
- | to | number |  The fps ending frame
+ | from | number |  The starting frame
+ | to | number |  The ending frame
 optional | loop | boolean |  If true, the animation will loop
 optional | speedRatio | number |  default : 1.The speed ratio of this animation
 ###getAnimatableByTarget(target) &rarr; [Animatable](/classes/2.2/Animatable)
