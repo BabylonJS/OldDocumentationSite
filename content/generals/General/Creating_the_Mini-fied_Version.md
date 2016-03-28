@@ -88,6 +88,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Materials/babylon.fresnelParameters.js"></script>
     <script src="src/Materials/babylon.material.js"></script>
     <script src="src/Materials/babylon.standardMaterial.js"></script>
+    <script src="src/Materials/babylon.pbrMaterial.js"></script>
     <script src="src/Materials/babylon.multiMaterial.js"></script>
     <script src="src/Loading/babylon.sceneLoader.js"></script>
     <script src="src/Loading/Plugins/babylon.babylonFileLoader.js"></script>
