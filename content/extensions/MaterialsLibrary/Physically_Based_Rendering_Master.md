@@ -12,13 +12,9 @@ This will be the only picture of the documentation. As a **real sample** would b
 The entire documentation should help you deal with most of the PBR Material setup and explains you how to create a few Materials (Metal, Gold, Crystal, Wood, Plastic).
 
 ## How to install
-As the PBR material is a babylonJS extension, it is not included in the main babylon.js file. In order to use the material, please, download and reference the extension from the following location:
-[https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.pbrMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.pbrMaterial.js)
+As the PBR material is now embedded in the main BabylonJS library, please, follow the [basic tutorial](http://doc.babylonjs.com/tutorials/Creating_a_Basic_Scene) in order to create your first page using the framework.
 
-You can also use the minified version for your production projects from:
-[https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.pbrMaterial.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.pbrMaterial.min.js)
-
-Please, note it also requires the 2.4 preview version.
+Please, note this requires at least the 2.4 preview version.
 
 ## Features
 Here is a small reminder of the PBR material supported features:
