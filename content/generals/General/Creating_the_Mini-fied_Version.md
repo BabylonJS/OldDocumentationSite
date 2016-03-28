@@ -11,6 +11,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Math/babylon.math.js"></script>
     <script src="src/Math/babylon.math.simd.js"></script>
     <script src="src/Tools/babylon.decorators.js"></script>
+    <script src="src/Tools/babylon.observable.js"></script>    
     <script src="src/Tools/babylon.database.js"></script>
     <script src="src/Tools/babylon.tools.tga.js"></script>
     <script src="src/Tools/babylon.tools.dds.js"></script>
@@ -50,6 +51,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/cameras/inputs/babylon.arcrotatecamera.input.mousewheel.js"></script>
     <script src="src/cameras/inputs/babylon.arcrotatecamera.input.pointers.js"></script>
     <script src="src/cameras/inputs/babylon.arcrotatecamera.input.gamepad.js"></script>
+    <script src="src/cameras/inputs/babylon.arcrotatecamera.input.vrdeviceorientation.js"></script>
     <script src="src/Cameras/babylon.targetCamera.js"></script>
     <script src="src/Cameras/babylon.followCamera.js"></script>
     <script src="src/Cameras/babylon.freeCamera.js"></script>
@@ -86,6 +88,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Materials/babylon.fresnelParameters.js"></script>
     <script src="src/Materials/babylon.material.js"></script>
     <script src="src/Materials/babylon.standardMaterial.js"></script>
+    <script src="src/Materials/babylon.pbrMaterial.js"></script>
     <script src="src/Materials/babylon.multiMaterial.js"></script>
     <script src="src/Loading/babylon.sceneLoader.js"></script>
     <script src="src/Loading/Plugins/babylon.babylonFileLoader.js"></script>
@@ -168,7 +171,6 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/PostProcess/babylon.hdrRenderingPipeline.js"></script>
     <script src="src/Rendering/babylon.edgesRenderer.js"></script>
     <script src="src/Tools/babylon.loadingScreen.js"></script>
-    <script src="src/Materials/babylon.pbrMaterial.js"></script>
     <script src="src/Probes/babylon.reflectionProbe.js"></script>
     <script src="src/tools/hdr/babylon.tools.pmremGenerator.js"></script>
     <script src="src/tools/hdr/babylon.tools.cubemapToSphericalPolynomial.js"></script>

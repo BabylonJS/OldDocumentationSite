@@ -36,4 +36,4 @@ Babylon.js can also detect occlusions for you. A mesh can occlude the lens flare
 - has a material
 - isVisible === true
 - isEnabled() === true
-- checkCollisions === true
+- isBlocker === true
