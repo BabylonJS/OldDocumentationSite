@@ -1,9 +1,9 @@
 # Babylon.js Physics Engine - Basic Usage
 
-## Introdution
+## Introduction
 
-Bablon.js has a plugin system for physics engines that enables the user to add phyisics interactions to the scene's objects.
-Unlike the internal collision system, a physics engine calculates objects'  body dynamics and emulates "real-life" interactions between them. So if two objects collide, they will "bounce" off one another, just like you would expect from a real-life object.
+Babylon.js has a plugin system for physics engines that enables the user to add physics interactions to the scene's objects.
+Unlike the internal collision system, a physics engine calculates objects' body dynamics and emulates "real-life" interactions between them. So if two objects collide, they will "bounce" off one another, just like you would expect from a real-life object.
 
 Babylon.js' plugin system allowed us to use well established physics engines and to integrate them into Babylon.js' render loop. Apart from very advanced usage, there is no need to interact directly with the physics engine. Babylon.js does the work for you.
 
@@ -42,7 +42,7 @@ To use OimoJS simply change the 2nd parameter to `new BABYLON.OimoJSPlugin()`:
 scene.enablePhysics(new BABYLON.Vector3(0,-9.81, 0), new BABYLON.OimoJSPlugin());
 ```
 
-Calling this function will create a new BABLON.PhysicsEngine object that will be in charge of handlig the physics interactions.
+Calling this function will create a new BABLON.PhysicsEngine object that will be in charge of handling the physics interactions.
 
 The physics engine is now enabled and is running during the render loop.
 
@@ -59,7 +59,7 @@ Each physics engine has different types of Impostors. The following table shows 
 | Particle      | Particle  | Sphere  | Unknown   |         |
 | Plane         | Plane     | Box     | Plane     | Simulates an unlimited surface. Like a floor that never ends. Consider using Box |
 | Cylinder      | Cylinder  | Cylinder| Cylinder  |         |
-| Mesh          | Mesh      | Box     | Mesh      | Use only when neccessary - will lower performance. Cannon's mesh impostor only collides against sphers and planes |
+| Mesh          | Mesh      | Box     | Mesh      | Use only when necessary - will lower performance. Cannon's mesh impostor only collides against spheres and planes |
 | Heightmap     | Heightmap | Box     | Mesh      |         |
 
 Using simple impostors for complex objects will increase performance but decrease the reality of the scene's physics. Consider when complex impostors (like the mesh or the heightmap) is needed, and when the simpler geometries can be used.
@@ -80,7 +80,7 @@ position: BABYLON.Vector3;
 rotationQuaternion: BABYLON.Quaternion
 ```
 
-An AbstractMesh will be the first choice, of course. But a Solide Particle also applys, and so is a light or certain cameras. I will show how to use an impostor on different object types in the advanced tutorial.
+An AbstractMesh will be the first choice, of course. But a Solid Particle also applies, and so is a light or certain cameras. I will show how to use an impostor on different object types in the advanced tutorial.
 
 #### type
 Type can be one of the following:
@@ -136,7 +136,7 @@ ground.physicsImpostor = new BABYLON.PhysicsImpostor(ground, BABYLON.PhysicsImpo
 Playground example: http://www.babylonjs-playground.com/#BEFOO
 
 ### Further functionality of the Impostor class
-In the example above you noticed I kept a reference on the pyhscis impostor attached to the sphere and the ground. This is not mandatory, but it is recommended to keep a reference of this object in order to interact with the physics body.
+In the example above you noticed I kept a reference on the pyhsics impostor attached to the sphere and the ground. This is not mandatory, but it is recommended to keep a reference of this object in order to interact with the physics body.
 
 The physics impostor holds a set of functions that can be executed on the physics engine's body:
 
@@ -146,7 +146,7 @@ The physics impostor synchronizes the physics engine's body and the connected ob
 That means that changing the object's position or rotation in babylon code will also move the impostor. The impostor is also the one updating the object's position after the physics engine is finished calculating the next step.
 
 Playground example (sphere rotation and position) - http://www.babylonjs-playground.com/#B5BDU
-Notice how the sphere rotates (due to the rotate function), but this rotation is not being taken into account by the phyysics engine.
+Notice how the sphere rotates (due to the rotate function), but this rotation is not being taken into account by the physics engine.
 
 Playground example (box rotation and position) - http://www.babylonjs-playground.com/#2ADVLV
 In this case the rotation does influence the physics engine due to the geometric shape - a box standing on its edge will need to fall to either side, which influences its velocities.
@@ -167,7 +167,7 @@ impostor.setLinearVelocity(new BABYLON.Vector3(0,1,0));
 
 Playground example - http://www.babylonjs-playground.com/#BXII
 
-The pyhscis engine is in charge of calculating the body's velocity. Changing it will not make it fixed, but give it a "push". The physics engine will take the velocity into account and will modify it using gravity and collision interactions.
+The pyhsics engine is in charge of calculating the body's velocity. Changing it will not make it fixed, but give it a "push". The physics engine will take the velocity into account and will modify it using gravity and collision interactions.
 
 #### Angular velocity
 
@@ -233,7 +233,7 @@ Each engine supports different types of joints (which usually have different nam
 
 | Joint Type | Cannon.js | Oimo.js | Energy.js | Notes   |
 |---------------|-----------|---------|-----------|---------|
-| Distance  | Distance | Distance | ---   |  A fixed distance bwtween two impostors |
+| Distance  | Distance | Distance | ---   |  A fixed distance between two impostors |
 | Hinge | Hinge | Hinge | Hinge | A joint allowing rotation on a single axis (much like your knee) |
 | Hinge2| ----  | Wheen  | Hinge2   | A joint allowing rotation on a single axis in two different points |
 | Ball And Socket | Point To Point | Ball | Ball And Socket | A joint allowing one of the objects to rotate around a specific socket (like your hip) |
@@ -241,7 +241,7 @@ Each engine supports different types of joints (which usually have different nam
 
 Cannon has also a special Spring joint that will simulate a spring connected between two impostors.
 
-*A further explanation of the joints (including inlustrations) is soon to be written.*
+*A further explanation of the joints (including illustrations) is soon to be written.*
 
 #### Adding a new joint
 
