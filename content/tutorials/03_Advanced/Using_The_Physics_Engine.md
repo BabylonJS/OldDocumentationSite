@@ -2,8 +2,8 @@
 
 ## Introduction
 
-Babylon.js has a plugin system for physics engines that enables the user to add physics interactions to the scene's objects.
-Unlike the internal collision system, a physics engine calculates objects' body dynamics and emulates "real-life" interactions between them. So if two objects collide, they will "bounce" off one another, just like you would expect from a real-life object.
+Bablon.js has a plugin system for physics engines that enables the user to add physics interactions to the scene's objects.
+Unlike the internal collision system, a physics engine calculates objects'  body dynamics and emulates "real-life" interactions between them. So if two objects collide, they will "bounce" off one another, just like you would expect from a real-life object.
 
 Babylon.js' plugin system allowed us to use well established physics engines and to integrate them into Babylon.js' render loop. Apart from very advanced usage, there is no need to interact directly with the physics engine. Babylon.js does the work for you.
 
@@ -47,7 +47,7 @@ Calling this function will create a new BABLON.PhysicsEngine object that will be
 The physics engine is now enabled and is running during the render loop.
 
 ### Impostors
-To allow interaction between objects the physics engines use an impostor, which is a simpler representation of a complex object. 
+To allow interaction between objects, the physics engines use an impostor, which is a simpler representation of a complex object. 
 An impostor, as a rule, is a rigid body - meaning it cannot be changed during interaction. A sphere will always have the same radius, a box will always have the same length. If you want to change the object, a new impostor will be created.
 
 Each physics engine has different types of Impostors. The following table shows what each engine supports, and what it uses to simulate the missing impostors
@@ -80,7 +80,7 @@ position: BABYLON.Vector3;
 rotationQuaternion: BABYLON.Quaternion
 ```
 
-An AbstractMesh will be the first choice, of course. But a Solid Particle also applies, and so is a light or certain cameras. I will show how to use an impostor on different object types in the advanced tutorial.
+An AbstractMesh will be the first choice, of course. But a Solid Particle also applies, and so does a light or certain cameras. I will show how to use an impostor on different object types in the advanced tutorial.
 
 #### type
 Type can be one of the following:
@@ -136,24 +136,24 @@ ground.physicsImpostor = new BABYLON.PhysicsImpostor(ground, BABYLON.PhysicsImpo
 Playground example: http://www.babylonjs-playground.com/#BEFOO
 
 ### Further functionality of the Impostor class
-In the example above you noticed I kept a reference on the pyhsics impostor attached to the sphere and the ground. This is not mandatory, but it is recommended to keep a reference of this object in order to interact with the physics body.
+In the example above, you noticed I kept a reference of the physics impostor attached to the sphere and the ground. This is not mandatory, but it is recommended to keep a reference of this object in order to interact with the physics body.
 
 The physics impostor holds a set of functions that can be executed on the physics engine's body:
 
 #### Bidirectional transformation linking
 
 The physics impostor synchronizes the physics engine's body and the connected object with each frame.
-That means that changing the object's position or rotation in babylon code will also move the impostor. The impostor is also the one updating the object's position after the physics engine is finished calculating the next step.
+That means that changing the object's position or rotation in Babylon code will also move the impostor. The impostor is also the one updating the object's position after the physics engine is finished calculating the next step.
 
 Playground example (sphere rotation and position) - http://www.babylonjs-playground.com/#B5BDU
 Notice how the sphere rotates (due to the rotate function), but this rotation is not being taken into account by the physics engine.
 
 Playground example (box rotation and position) - http://www.babylonjs-playground.com/#2ADVLV
-In this case the rotation does influence the physics engine due to the geometric shape - a box standing on its edge will need to fall to either side, which influences its velocities.
+In this case, the rotation does influence the physics engine due to the geometric shape - a box standing on its edge will need to fall to either side, which influences its velocities.
 
 #### Linear velocity
 
-Simply put the linear velocity is in charge of updating the object's position. a velocity in any axis will cause a movement in its direction.
+Simply put, the linear velocity is in charge of updating the object's position. A velocity in any axis will cause a movement in its direction.
 To get the object's liner velocity (a BABYLON.Vector3):
 
 ```javscript
@@ -167,7 +167,7 @@ impostor.setLinearVelocity(new BABYLON.Vector3(0,1,0));
 
 Playground example - http://www.babylonjs-playground.com/#BXII
 
-The pyhsics engine is in charge of calculating the body's velocity. Changing it will not make it fixed, but give it a "push". The physics engine will take the velocity into account and will modify it using gravity and collision interactions.
+The physics engine is in charge of calculating the body's velocity. Changing it will not make it fixed, but give it a "push". The physics engine will take the velocity into account and will modify it using gravity and collision interactions.
 
 #### Angular velocity
 
@@ -179,37 +179,37 @@ To get the object's angular velocity (a BABYLON.Quaternion):
 impostor.getAngularVelocity();
 ```
 
-To set the object's liner velocity use:
+To set the object's linear velocity use:
 ```javscript
 impostor.setAngularVelocity(new BABYLON.Quaternion(0,1,0,0));
 ```
 
-playground - http://www.babylonjs-playground.com/#IGM3H
+Playground example - http://www.babylonjs-playground.com/#IGM3H
 
-Same as the linear velocity - setting this value will only for the physics engine to recalculate the body dynamics. The value will not stay fixed.
+Same as the linear velocity - setting this value will only cause the physics engine to recalculate the body dynamics. The value will not stay fixed.
 
 #### Impulses and forces
 
-Applying a force/impulse on a body will change its velocities (liner and angular) according to the body's properties (mass is taken into account, for example).
+Applying a force/impulse on a body will change its velocities (linear and angular) according to the body's properties (mass is taken into account, for example).
 
 Cannon supports both force and impulse (different aspects of the same concept. Read about the difference here - http://www.differencebetween.com/difference-between-impulse-and-vs-force/)
 Oimo only supports impulses. Applying a force will fallback to impulse.
 
-To apply an impulse use the applyImpulse function of the impostor:
+To apply an impulse, use the applyImpulse function of the impostor:
 
 ```javascript
 impostor.applyImpulse(new BABYLON.Vector3(10, 10, 0), sphere.getAbsolutePosition());
 ```
 
-The first variable is the impulse to apply. The second is where on the body itself should the force be applied to. This about a game of pool - you can hit the ball in many positions and the interaction with it will be different. This is the way to simulate that.
+The first variable is the direction and amount of impulse to apply. The second is where on the body itself the force will be applied. Using this in a game of pool - you can hit the ball at various contact point locations and the interaction will vary (sometimes called "using English"). This is the way to simulate that.
 
 Playground example - http://www.babylonjs-playground.com/#26LQEZ
 Playground example with a different position of the impulse, giving the ball a "spin" - http://www.babylonjs-playground.com/#26LQEZ#1
 
 #### Collision callbacks
 
-I can add a callback that will be called when an impostor collides with another impostor. 
-This is how to change the color of an object if it collides against the ground
+You can add a callback function that will be called when an impostor collides with another impostor. 
+This is how to change the color of an object if it collides against the ground.
 
 ```javascript
 sphereImpostor.registerOnPhysicsCollide(groundImpostor, function(main, collided) {
@@ -217,7 +217,7 @@ sphereImpostor.registerOnPhysicsCollide(groundImpostor, function(main, collided)
 });
 ```
 
-Note that in this case I assumed the impostor's body is a mesh with a material.
+Note that in this case, I assumed the impostor's body is a mesh with a material.
 
 Playground example - http://www.babylonjs-playground.com/#1NASOD
 
@@ -227,7 +227,7 @@ Notice that the callback will be executed each and every time both impostors col
 
 #### What are joints?
 
-To connect two impostors together I can now use joints. 
+To connect two impostors together, you can now use joints. 
 Think of the joint as a limitation (or constraint) of either rotation or position (or both) between two impostors. 
 Each engine supports different types of joints (which usually have different names as well):
 
@@ -235,11 +235,11 @@ Each engine supports different types of joints (which usually have different nam
 |---------------|-----------|---------|-----------|---------|
 | Distance  | Distance | Distance | ---   |  A fixed distance between two impostors |
 | Hinge | Hinge | Hinge | Hinge | A joint allowing rotation on a single axis (much like your knee) |
-| Hinge2| ----  | Wheen  | Hinge2   | A joint allowing rotation on a single axis in two different points |
+| Hinge2| ----  | Wheel  | Hinge2   | A joint allowing rotation on a single axis in two different points |
 | Ball And Socket | Point To Point | Ball | Ball And Socket | A joint allowing one of the objects to rotate around a specific socket (like your hip) |
 | Slider | ---- | Slider | Slider | A joint allowing changing the position along a single axis |
 
-Cannon has also a special Spring joint that will simulate a spring connected between two impostors.
+Cannon also has a special Spring joint that will simulate a spring connected between two impostors.
 
 *A further explanation of the joints (including illustrations) is soon to be written.*
 
@@ -250,7 +250,7 @@ To add a new joint the impostor has two help classes:
 ```javascript
 impostor.addJoint(otherImpostor, joint);
 //or
-impostor.createJoing(otherImpostor, jointType, jointData);
+impostor.createJoint(otherImpostor, jointType, jointData);
 ```
 
 Joint types can be selected from the following enum:
@@ -275,11 +275,11 @@ SpringJoint example - http://www.babylonjs-playground.com/#1BHF6C
 
 ### Interaction with the physics engine
 
-using `scene.getPhysicsEngine()` I can get access to functions that will influence the engine directly.
+Using `scene.getPhysicsEngine()`, you can get access to functions that will influence the engine directly.
 
 #### Setting the time step
 
-The physics engine assumes a certain framerate to be taken into account when calculating the interactions.
+The physics engine assumes a certain frame-rate to be taken into account when calculating the interactions.
 The time between each step can be changed to "accelerate" or "slow down" the physics interaction. 
 Here is the same scene with different time steps - accelerating and slowing down:
 
@@ -289,7 +289,7 @@ Speeding up - http://www.babylonjs-playground.com/#2B84TV#2
 
 #### Setting the scene's gravity
 
-I can change the scene's gravity using the physics engine's `setGravity(vector3)` function.
+You can change the scene's gravity using the physics engine's `setGravity(vector3)` function.
 This can be done in real time, even after setting the gravity:
 
 Playground demo (click to toggle positive/negative gravity) - http://www.babylonjs-playground.com/#A2WGF
