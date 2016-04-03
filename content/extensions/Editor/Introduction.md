@@ -2,7 +2,7 @@
 
 ![Introduction](/img/extensions/Editor/editor.png)
 
-For a quick introduction, you can read this post : [https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g](https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g)
+For a quick and complete introduction, you can read this post : [https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g](https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g)
 
 The Babylon.js Editor is the final stage for artists and developers in scene designs.
 It provides several tools not provided (or supported by the exporters) by 3D modelers such as 3ds Max, Blender, etc.
@@ -40,3 +40,14 @@ The Github Repository can be found here: [https://github.com/BabylonJS/Editor](h
 ## Coming in v1.1
 * Setup and test physics simulations inlucing new updates of RaananW
 
+# Now, what is clearly exported?
+* Project configuration (FPS, animated at launch)
+* Particle systems
+* Lens flares
+* Post-processes (not yet serialized in .babylon files)
+* Animations
+* Skies
+* Render target textures
+* Reflection probes (not yet serialized in .babylon files)
+* Materials from Materials Library
+* Actions using Actions Builder (soon in version 1.0)

@@ -646,6 +646,14 @@
         {
             "title": "Creating Cinematic",
             "filename": "Creating_Cinematic"
+        },
+        {
+            "title": "Creating Particle Systems",
+            "filename": "Creating_Particle_Systems"
+        },
+        {
+            "title": "Creating Materials",
+            "filename": "Creating_Materials"
         }
       ]
     },
