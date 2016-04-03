@@ -654,6 +654,10 @@
         {
             "title": "Creating Materials",
             "filename": "Creating_Materials"
+        },
+        {
+            "title": "Managing Materials",
+            "filename": "Managing_Materials"
         }
       ]
     },
