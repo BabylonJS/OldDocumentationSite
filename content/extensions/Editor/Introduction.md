@@ -2,7 +2,7 @@
 
 ![Introduction](/img/extensions/Editor/editor.png)
 
-For a quick and complete introduction, you can read this post : [https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g](https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g)
+For a quick and complete introduction with videos, you can read this post : [https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g](https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g)
 
 The Babylon.js Editor is the final stage for artists and developers in scene designs.
 It provides several tools not provided (or supported by the exporters) by 3D modelers such as 3ds Max, Blender, etc.
