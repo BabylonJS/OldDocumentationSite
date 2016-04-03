@@ -632,8 +632,12 @@
       "desc": "Learn how to use the official editor",
       "files": [
         {
-          "title": "Editor",
-          "filename": "Editor"
+          "title": "Introduction",
+          "filename": "Introduction"
+        },
+        {
+          "title": "Getting Started",
+          "filename": "Getting_Started"
         }
       ]
     },
