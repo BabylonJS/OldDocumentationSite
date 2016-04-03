@@ -638,6 +638,14 @@
         {
           "title": "Getting Started",
           "filename": "Getting_Started"
+        },
+        {
+            "title": "Managing Animations",
+            "filename": "Managing_Animations"
+        },
+        {
+            "title": "Creating Cinematic",
+            "filename": "Creating_Cinematic"
         }
       ]
     },

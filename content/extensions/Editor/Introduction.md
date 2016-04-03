@@ -1,7 +1,6 @@
+# Introduction
 
-#Introduction
-
-![Introduction](/img/extensions/editor.png)
+![Introduction](/img/extensions/Editor/editor.png)
 
 For a quick introduction, you can read this post : [https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g](https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.e1lm87d4g)
 
