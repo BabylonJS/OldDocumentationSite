@@ -1,2 +1,0 @@
-
-**Babylon.js official editor**
