@@ -119,6 +119,18 @@ The ```BABYLON.Animatable``` object also supports the following functions:
 - ```stop()```
 - ```reset()```
 
+Control the previous sample animation by setting the animation to a reference such as a variable:
+
+```javascript
+var newAnimation = scene.beginAnimation(box1, 0, 100, true);
+
+```
+then to pause:
+
+```javascript
+newAnimation.pause();
+```
+
 These commands will apply to every animation object contained in the Animatable's ._animations array. You can also get access to current running ```BABYLON.Animatable``` objects by using ```scene.getAnimatableByTarget()``` providing the target object.
 
 And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)

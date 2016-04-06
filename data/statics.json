@@ -632,8 +632,32 @@
       "desc": "Learn how to use the official editor",
       "files": [
         {
-          "title": "Editor",
-          "filename": "Editor"
+          "title": "Introduction",
+          "filename": "Introduction"
+        },
+        {
+          "title": "Getting Started",
+          "filename": "Getting_Started"
+        },
+        {
+            "title": "Managing Animations",
+            "filename": "Managing_Animations"
+        },
+        {
+            "title": "Creating Cinematic",
+            "filename": "Creating_Cinematic"
+        },
+        {
+            "title": "Creating Particle Systems",
+            "filename": "Creating_Particle_Systems"
+        },
+        {
+            "title": "Creating Materials",
+            "filename": "Creating_Materials"
+        },
+        {
+            "title": "Managing Materials",
+            "filename": "Managing_Materials"
         }
       ]
     },
