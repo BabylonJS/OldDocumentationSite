@@ -9,7 +9,7 @@ Another cool aspect of using this feature is that you can use a non-active camer
 
 # How can we do it?
 
-It's done by simply calling this method: `BABYLON.Tools.CreateScreenshot(engine, camera, size),`
+It's done by simply calling this method: `BABYLON.Tools.CreateScreenshot(engine, camera, size)`.
 You need to provide your BabylonJS engine, the camera you want to use for the rendering, and a size.
 The size parameter is very versatile.  Allow me to show you some examples:
 
@@ -26,7 +26,7 @@ Below is an example with precision 0.5 on my computer (the result is 960x503):
 
 ![HillValley render with precision of 0.5](http://pix.keuse.fr/images/screenhsh.png)
 
-The result will be automatically downloaded if your browser supports it. Otherwise, it will be displayed on a new tab. In any case, it will be a PNG image format. This feature does not yet support antialiasing.
+The result will be automatically downloaded if your browser supports it. Otherwise, it will be displayed on a new tab. In any case, it will be a PNG image format. **This feature does not yet support antialiasing**.
 
 Just for fun, here is a render of Hill Valley using 3840x2160 resolution (4K).
 
