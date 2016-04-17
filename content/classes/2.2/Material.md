@@ -16,7 +16,7 @@ class [Material](/classes/2.2/Material)
 ##new [Material](/classes/2.2/Material)(name, scene, doNotAdd)
 
 Create a new [Material](/classes/2.2/Material).
-Everything to know about material can be found here : http://doc.babylonjs.com/tutorials/04._Materialss
+Everything to know about material can be found here : http://doc.babylonjs.com/tutorials/Materials
 And here : http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx
 
 ####Parameters
