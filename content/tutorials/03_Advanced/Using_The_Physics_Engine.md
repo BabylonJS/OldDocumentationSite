@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Bablon.js has a plugin system for physics engines that enables the user to add physics interactions to the scene's objects.
+Babylon.js has a plugin system for physics engines that enables the user to add physics interactions to the scene's objects.
 Unlike the internal collision system, a physics engine calculates objects'  body dynamics and emulates "real-life" interactions between them. So if two objects collide, they will "bounce" off one another, just like you would expect from a real-life object.
 
 Babylon.js' plugin system allowed us to use well established physics engines and to integrate them into Babylon.js' render loop. Apart from very advanced usage, there is no need to interact directly with the physics engine. Babylon.js does the work for you.
@@ -42,7 +42,7 @@ To use OimoJS simply change the 2nd parameter to `new BABYLON.OimoJSPlugin()`:
 scene.enablePhysics(new BABYLON.Vector3(0,-9.81, 0), new BABYLON.OimoJSPlugin());
 ```
 
-Calling this function will create a new BABLON.PhysicsEngine object that will be in charge of handling the physics interactions.
+Calling this function will create a new BABYLON.PhysicsEngine object that will be in charge of handling the physics interactions.
 
 The physics engine is now enabled and is running during the render loop.
 
