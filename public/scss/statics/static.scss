@@ -12,15 +12,32 @@
   }
 
   table {
-    width : 60%;
-    margin:auto;
+    width : 60%;    
+    text-align: left;
+    margin-left: 0px;
+            
+    thead {
+       tr {
+          background-color: #F1F1F1;
+                    
+          th {
+            padding: 3px 11px;
+            border: 2px solid #DCDCDC
+          }
+       }
+    }
 
     tr {
       height : 35px;
     }
+    
+    td {      
+        padding: 3px 11px;
+        border: 2px solid #DCDCDC;      
+    }
 
     tr:nth-child(even) {
-      background-color: #eeeeee;
+      background-color: #F8F8F8;
     }
   }
 
