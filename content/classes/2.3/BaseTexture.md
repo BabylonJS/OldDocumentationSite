@@ -17,7 +17,7 @@ A tutorial about materials and textures can be found here
 ## new [BaseTexture](/classes/2.3/BaseTexture)(scene)
 
 Create a new [BaseTexture](/classes/2.3/BaseTexture);
-A tutorial about materials and textures can be found here : http://doc.babylonjs.com/tutorials/04._Materials
+A tutorial about materials and textures can be found here : http://doc.babylonjs.com/tutorials/Materials
 
 #### Parameters
  | Name | Type | Description

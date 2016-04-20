@@ -308,7 +308,13 @@ This will turn on Seamless cubemap filtering in all browsers with the TextureLOD
 
 [Demo](http://www.babylonjs-playground.com/#1P98HI#1)
 
-A plan has been made to create an offline tool in order to prefilter your texture offline which would make your entire application more responsive.
+In order to prefilter your texture offline which would make your entire application more responsive, you can now use the babylon [Environment Map Generator](https://github.com/BabylonJS/Extensions/tree/master/EnvironmentMapGenerator) Extension.
+
+To load those preprocessed textures you only have to pass no size parameter to the HDRCubeTexture constructor:
+
+```javascript
+var hdrSeamLessTexture = new BABYLON.HDRCubeTexture("textures/country.babylon.hdr", scene);
+```
 
 More information can also be found on the following [Forum Thread](http://www.html5gamedevs.com/topic/21204-pbrmaterial-shows-hard-edges-of-skybox-macbookpro/#comment-120781).
 
