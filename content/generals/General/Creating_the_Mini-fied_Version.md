@@ -17,6 +17,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Tools/babylon.tools.dds.js"></script>
     <script src="src/Tools/babylon.stringDictionary.js"></script>
     <script src="src/Tools/babylon.smartArray.js"></script>
+    <script src="src/Tools/babylon.dynamicFloatArray.js"></script>
     <script src="src/Tools/babylon.tools.js"></script>
     <script src="src/states/babylon.alphaCullingState.js"></script>
     <script src="src/states/babylon.depthCullingState.js"></script>
