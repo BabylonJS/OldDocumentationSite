@@ -9,7 +9,7 @@ class [Torus](/classes/2.3/Torus) extends _Primitive
 
 ## Constructor
 
-##  new [Torus](/classes/2.3/Torus)(id, scene, diameter, thickness, tessellation, canBeRegenerated, mesh, side)
+## new [Torus](/classes/2.3/Torus)(id, scene, diameter, thickness, tessellation, canBeRegenerated, mesh, side)
 
 
 
@@ -55,7 +55,7 @@ optional | mesh | [Mesh](/classes/2.3/Mesh) |
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedTorus, scene) &rarr; [Torus](/classes/2.3/Torus)
+### static Parse(parsedTorus, scene) &rarr; [Torus](/classes/2.3/Torus)
 
 
 

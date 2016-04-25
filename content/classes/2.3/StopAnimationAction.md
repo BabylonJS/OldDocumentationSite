@@ -13,9 +13,9 @@ class [StopAnimationAction](/classes/2.3/StopAnimationAction) extends [Action](/
 
 ## Constructor
 
-##  new [StopAnimationAction](/classes/2.3/StopAnimationAction)(triggerOptions, target, condition)
+## new [StopAnimationAction](/classes/2.3/StopAnimationAction)(triggerOptions, target, condition)
 
-
+Stop an animation on a specified target.
 
 #### Parameters
  | Name | Type | Description

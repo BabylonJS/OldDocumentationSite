@@ -14,9 +14,9 @@ class [BoundingInfo](/classes/2.3/BoundingInfo)
 
 ## Constructor
 
-##  new [BoundingInfo](/classes/2.3/BoundingInfo)(minimum, maximum)
+## new [BoundingInfo](/classes/2.3/BoundingInfo)(minimum, maximum)
 
-
+The Bounding Info constructor
 
 #### Parameters
  | Name | Type | Description
@@ -27,19 +27,19 @@ class [BoundingInfo](/classes/2.3/BoundingInfo)
 
 ### minimum : [Vector3](/classes/2.3/Vector3)
 
-
+The minimum of the bounding info
 
 ### maximum : [Vector3](/classes/2.3/Vector3)
 
-
+The maximum of the bounding info
 
 ### boundingBox : [BoundingBox](/classes/2.3/BoundingBox)
 
-
+The bounding box of the bounding info
 
 ### boundingSphere : [BoundingSphere](/classes/2.3/BoundingSphere)
 
-
+The bounding sphere of the bounding info
 
 ### isLocked : boolean
 
@@ -58,7 +58,7 @@ class [BoundingInfo](/classes/2.3/BoundingInfo)
 
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
-
+Check if the bounding
 
 #### Parameters
  | Name | Type | Description
@@ -76,7 +76,7 @@ class [BoundingInfo](/classes/2.3/BoundingInfo)
 
 ### intersectsPoint(point) &rarr; boolean
 
-
+Check if the bounding sphere or the bounding box intersect the given point.
 
 #### Parameters
  | Name | Type | Description

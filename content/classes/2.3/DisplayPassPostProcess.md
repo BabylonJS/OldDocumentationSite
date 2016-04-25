@@ -13,7 +13,7 @@ class [DisplayPassPostProcess](/classes/2.3/DisplayPassPostProcess) extends [Pos
 
 ## Constructor
 
-##  new [DisplayPassPostProcess](/classes/2.3/DisplayPassPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
+## new [DisplayPassPostProcess](/classes/2.3/DisplayPassPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
 
 
 

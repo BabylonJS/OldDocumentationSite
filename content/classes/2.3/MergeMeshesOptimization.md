@@ -14,7 +14,7 @@ class [MergeMeshesOptimization](/classes/2.3/MergeMeshesOptimization) extends [S
 
 ## Members
 
-### static  UpdateSelectionTree : boolean
+### static UpdateSelectionTree : boolean
 
 
 

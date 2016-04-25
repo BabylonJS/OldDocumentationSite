@@ -7,11 +7,11 @@ PG_VERSION: 2.1
 
 class [Octree](/classes/2.3/Octree)
 
-
+Data structure class based on space coordinates
 
 ## Constructor
 
-##  new [Octree](/classes/2.3/Octree)(creationFunc, maxBlockCapacity, maxDepth)
+## new [Octree](/classes/2.3/Octree)(creationFunc, maxBlockCapacity, maxDepth)
 
 
 
@@ -25,29 +25,29 @@ optional | maxDepth | number |   @param maxDepth
 
 ### maxDepth : number
 
-
+The maxDepth
 
 ### blocks : Array&lt;[OctreeBlock](/classes/2.3/OctreeBlock)&lt;T&gt;&gt;
 
-
+The blocks
 
 ### dynamicContent : T[]
 
+The dynamic content
 
+### static CreationFuncForMeshes : (entry: [AbstractMesh](/classes/2.3/AbstractMesh), block: [OctreeBlock](/classes/2.3/OctreeBlock)&lt;[AbstractMesh](/classes/2.3/AbstractMesh)&gt;) =&gt; void
 
-### static  CreationFuncForMeshes : (entry: [AbstractMesh](/classes/2.3/AbstractMesh), block: [OctreeBlock](/classes/2.3/OctreeBlock)&lt;[AbstractMesh](/classes/2.3/AbstractMesh)&gt;) =&gt; void
+Create function for Meshes
 
+### static CreationFuncForSubMeshes : (entry: [SubMesh](/classes/2.3/SubMesh), block: [OctreeBlock](/classes/2.3/OctreeBlock)&lt;[SubMesh](/classes/2.3/SubMesh)&gt;) =&gt; void
 
-
-### static  CreationFuncForSubMeshes : (entry: [SubMesh](/classes/2.3/SubMesh), block: [OctreeBlock](/classes/2.3/OctreeBlock)&lt;[SubMesh](/classes/2.3/SubMesh)&gt;) =&gt; void
-
-
+Create function for SubMeshes
 
 ## Methods
 
 ### update(worldMin, worldMax, entries) &rarr; void
 
-
+Update this octree
 
 #### Parameters
  | Name | Type | Description
@@ -57,7 +57,7 @@ optional | maxDepth | number |   @param maxDepth
  | entries | T[] |   @param entries
 ### addMesh(entry) &rarr; void
 
-
+Add a mesh to this octree
 
 #### Parameters
  | Name | Type | Description
@@ -66,7 +66,7 @@ optional | maxDepth | number |   @param maxDepth
 
 ### select(frustumPlanes, allowDuplicate) &rarr; [SmartArray](/classes/2.3/SmartArray)&lt;T&gt;
 
-
+Select octree
 
 #### Parameters
  | Name | Type | Description
@@ -75,7 +75,7 @@ optional | maxDepth | number |   @param maxDepth
 optional | allowDuplicate | boolean |   True if you want to duplicate it, false otherwise.
 ### intersects(sphereCenter, sphereRadius, allowDuplicate) &rarr; [SmartArray](/classes/2.3/SmartArray)&lt;T&gt;
 
-
+Intersects
 
 #### Parameters
  | Name | Type | Description

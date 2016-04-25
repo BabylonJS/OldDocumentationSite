@@ -9,11 +9,11 @@ TAGS:
 
 class [BlackAndWhitePostProcess](/classes/2.3/BlackAndWhitePostProcess) extends [PostProcess](/classes/2.3/PostProcess)
 
-
+Builtin postprocess applying black and white effect
 
 ## Constructor
 
-##  new [BlackAndWhitePostProcess](/classes/2.3/BlackAndWhitePostProcess)(name, ratio, camera, samplingMode, engine, reusable)
+## new [BlackAndWhitePostProcess](/classes/2.3/BlackAndWhitePostProcess)(name, ratio, camera, samplingMode, engine, reusable)
 
 
 

@@ -11,7 +11,7 @@ class [BezierCurve](/classes/2.3/BezierCurve)
 
 ## Methods
 
-### static  interpolate(t, x1, y1, x2, y2) &rarr; number
+### static interpolate(t, x1, y1, x2, y2) &rarr; number
 
 
 

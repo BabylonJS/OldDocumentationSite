@@ -9,18 +9,20 @@ TAGS:
 
 class [PostProcessRenderPipelineManager](/classes/2.3/PostProcessRenderPipelineManager)
 
+Managing all pipelines, allow you to enable or disable an effect, displaying a pass of post process for debugging.
 
+A tutorial about the render pipeline can be found here
 
 ## Constructor
 
-##  new [PostProcessRenderPipelineManager](/classes/2.3/PostProcessRenderPipelineManager)()
+## new [PostProcessRenderPipelineManager](/classes/2.3/PostProcessRenderPipelineManager)()
 
-
+Builds a [PostProcessRenderPipelineManager](/classes/2.3/PostProcessRenderPipelineManager) object
 ## Methods
 
 ### addPipeline(renderPipeline) &rarr; void
 
-
+Adds a pipeline to the pool
 
 #### Parameters
  | Name | Type | Description
@@ -29,7 +31,7 @@ class [PostProcessRenderPipelineManager](/classes/2.3/PostProcessRenderPipelineM
 
 ### attachCamerasToRenderPipeline(renderPipelineName, cameras, unique) &rarr; any
 
-
+Attach a render pipeline to a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -39,7 +41,7 @@ class [PostProcessRenderPipelineManager](/classes/2.3/PostProcessRenderPipelineM
 optional | unique | boolean |   @param unique
 ### attachCamerasToRenderPipeline(renderPipelineName, cameras, unique) &rarr; any
 
-
+Attach a render pipeline to a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -49,7 +51,7 @@ optional | unique | boolean |   @param unique
 optional | unique | boolean |   @param unique
 ### detachCamerasFromRenderPipeline(renderPipelineName, cameras) &rarr; any
 
-
+Detach a render pipeline to a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -58,7 +60,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera) |   The given camera or an array of cameras
 ### detachCamerasFromRenderPipeline(renderPipelineName, cameras) &rarr; any
 
-
+Detach a render pipeline to a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -67,7 +69,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera)[] |   The given camera or an array of cameras
 ### enableEffectInPipeline(renderPipelineName, renderEffectName, cameras) &rarr; any
 
-
+Enable an effect in a pipeline for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -77,7 +79,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera) |   The given camera or an array of cameras
 ### enableEffectInPipeline(renderPipelineName, renderEffectName, cameras) &rarr; any
 
-
+Enable an effect in a pipeline for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -87,7 +89,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera)[] |   The given camera or an array of cameras
 ### disableEffectInPipeline(renderPipelineName, renderEffectName, cameras) &rarr; any
 
-
+Disable an effect in a pipeline for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -97,7 +99,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera) |   The given camera or an array of cameras
 ### disableEffectInPipeline(renderPipelineName, renderEffectName, cameras) &rarr; any
 
-
+Disable an effect in a pipeline for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -107,7 +109,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera)[] |   The given camera or an array of cameras
 ### enableDisplayOnlyPassInPipeline(renderPipelineName, passName, cameras) &rarr; any
 
-
+Enable displaying of a specific pass used in a specific render pipeline, for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -117,7 +119,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera) |   The given camera or an array of cameras
 ### enableDisplayOnlyPassInPipeline(renderPipelineName, passName, cameras) &rarr; any
 
-
+Enable displaying of a specific pass used in a specific render pipeline, for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -127,7 +129,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera)[] |   The given camera or an array of cameras
 ### disableDisplayOnlyPassInPipeline(renderPipelineName, cameras) &rarr; any
 
-
+Disable displaying of a specific pass used in a specific render pipeline, for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description
@@ -136,7 +138,7 @@ optional | unique | boolean |   @param unique
  | cameras | [Camera](/classes/2.3/Camera) |   The given camera or an array of cameras
 ### disableDisplayOnlyPassInPipeline(renderPipelineName, cameras) &rarr; any
 
-
+Disable displaying of a specific pass used in a specific render pipeline, for a list(or unique) of cameras
 
 #### Parameters
  | Name | Type | Description

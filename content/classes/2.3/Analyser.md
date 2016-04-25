@@ -11,7 +11,7 @@ class [Analyser](/classes/2.3/Analyser)
 
 ## Constructor
 
-##  new [Analyser](/classes/2.3/Analyser)(scene)
+## new [Analyser](/classes/2.3/Analyser)(scene)
 
 
 

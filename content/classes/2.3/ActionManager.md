@@ -15,9 +15,9 @@ A single scene can have many [Action](/classes/2.3/Action) Managers to handle pr
 
 ## Constructor
 
-##  new [ActionManager](/classes/2.3/ActionManager)(scene)
+## new [ActionManager](/classes/2.3/ActionManager)(scene)
 
-
+See more about Actions here
 
 #### Parameters
  | Name | Type | Description
@@ -26,77 +26,77 @@ A single scene can have many [Action](/classes/2.3/Action) Managers to handle pr
 
 ## Members
 
-### static  NothingTrigger : number
+### static NothingTrigger : number
+
+Nothing trigger
+
+### static OnPickTrigger : number
+
+On pick trigger
+
+### static OnLeftPickTrigger : number
+
+On left pick trigger
+
+### static OnRightPickTrigger : number
+
+On right pick trigger
+
+### static OnCenterPickTrigger : number
+
+On center pick trigger
+
+### static OnPickDownTrigger : number
 
 
 
-### static  OnPickTrigger : number
+### static OnPickUpTrigger : number
 
 
 
-### static  OnLeftPickTrigger : number
+### static OnLongPressTrigger : number
 
 
 
-### static  OnRightPickTrigger : number
+### static OnPointerOverTrigger : number
+
+On pointer over trigger
+
+### static OnPointerOutTrigger : number
+
+On pointer out trigger
+
+### static OnEveryFrameTrigger : number
+
+On every frame trigger
+
+### static OnIntersectionEnterTrigger : number
+
+On intersection enter trigger
+
+### static OnIntersectionExitTrigger : number
+
+On intersection exit trigger
+
+### static OnKeyDownTrigger : number
+
+On key down trigger
+
+### static OnKeyUpTrigger : number
+
+on key up trigger
+
+### static DragMovementThreshold : number
 
 
 
-### static  OnCenterPickTrigger : number
-
-
-
-### static  OnPickDownTrigger : number
-
-
-
-### static  OnPickUpTrigger : number
-
-
-
-### static  OnLongPressTrigger : number
-
-
-
-### static  OnPointerOverTrigger : number
-
-
-
-### static  OnPointerOutTrigger : number
-
-
-
-### static  OnEveryFrameTrigger : number
-
-
-
-### static  OnIntersectionEnterTrigger : number
-
-
-
-### static  OnIntersectionExitTrigger : number
-
-
-
-### static  OnKeyDownTrigger : number
-
-
-
-### static  OnKeyUpTrigger : number
-
-
-
-### static  DragMovementThreshold : number
-
-
-
-### static  LongPressDelay : number
+### static LongPressDelay : number
 
 
 
 ### actions : [Action](/classes/2.3/Action)[]
 
-
+The actions of the action manager
 
 ### hasPointerTriggers : boolean
 
@@ -114,10 +114,10 @@ Does this action manager has pick triggers
 
 ### dispose() &rarr; void
 
-
+Delete the action manager
 ### getScene() &rarr; [Scene](/classes/2.3/Scene)
 
-
+Get the scene which contains the action manager
 ### hasSpecificTriggers(triggers) &rarr; boolean
 
 Does this action manager handles actions of any of the given triggers
@@ -160,7 +160,7 @@ Process a specific trigger
 ---|---|---|---
  | trigger | number |   The trigger
  | evt | [ActionEvent](/classes/2.3/ActionEvent) |  {BABYLON.[ActionEvent](/classes/2.3/ActionEvent)} the event details to be processed  {BABYLON.[ActionEvent](/classes/2.3/ActionEvent)} the event details to be processed {BABYLON.[ActionEvent](/classes/2.3/ActionEvent)} the event details to be processed
-### static  Parse(parsedActions, object, scene) &rarr; void
+### static Parse(parsedActions, object, scene) &rarr; void
 
 
 

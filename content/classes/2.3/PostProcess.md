@@ -9,11 +9,15 @@ TAGS:
 
 class [PostProcess](/classes/2.3/PostProcess)
 
+Postprocesses allow you to create 2D effects on top of your scene.
 
+A postprocess is linked to a camera and can be part of a chain of postprocesss where each postprocess use the result of the previous one as input for its own processing.
+
+A tutorial about post process can be found here
 
 ## Constructor
 
-##  new [PostProcess](/classes/2.3/PostProcess)(name, fragmentUrl, parameters, samplers, ratio, camera, samplingMode, engine, reusable, defines, textureType)
+## new [PostProcess](/classes/2.3/PostProcess)(name, fragmentUrl, parameters, samplers, ratio, camera, samplingMode, engine, reusable, defines, textureType)
 
 
 
@@ -38,11 +42,11 @@ optional | defines | string |
 
 ### onApply : (effect: [Effect](/classes/2.3/Effect)) =&gt; void
 
-
+[Action](/classes/2.3/Action) to execute just before the postprocess is applied
 
 ### onBeforeRender : (effect: [Effect](/classes/2.3/Effect)) =&gt; void
 
-
+[Action](/classes/2.3/Action) to execute just before the postprocess is rendered
 
 ### onAfterRender : (effect: [Effect](/classes/2.3/Effect)) =&gt; void
 
@@ -50,23 +54,25 @@ optional | defines | string |
 
 ### onSizeChanged : () =&gt; void
 
-
+[Action](/classes/2.3/Action) to execute just before the postprocess' size is changed
 
 ### onActivate : (camera: [Camera](/classes/2.3/Camera)) =&gt; void
 
-
+[Action](/classes/2.3/Action) to execute just before the postprocess is activated
 
 ### width : number
 
-
+default : -1
 
 ### height : number
 
-
+default : -1
 
 ### renderTargetSamplingMode : number
 
+default : [Texture](/classes/2.3/Texture).NEAREST_SAMPLINGMODE
 
+Other possible values : [Texture](/classes/2.3/Texture).BILINEAR_SAMPLINGMODE, [Texture](/classes/2.3/Texture).TRILINEAR_SAMPLINGMODE
 
 ### clearColor : [Color4](/classes/2.3/Color4)
 
@@ -89,10 +95,10 @@ optional | defines | string |
 
 ### isReusable() &rarr; boolean
 
-
+Tests if the Postprocess is set to reusable
 ### activate(camera, sourceTexture) &rarr; void
 
-
+Activates this postprocess to the given camera
 
 #### Parameters
  | Name | Type | Description
@@ -101,7 +107,7 @@ optional | defines | string |
 optional | sourceTexture | WebGLTexture |   Optional textures to add
 ### apply() &rarr; [Effect](/classes/2.3/Effect)
 
-
+Applies this postprocess
 ### dispose(camera) &rarr; void
 
 

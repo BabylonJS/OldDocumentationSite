@@ -9,7 +9,7 @@ class [UniversalCamera](/classes/2.3/UniversalCamera) extends [TouchCamera](/cla
 
 ## Constructor
 
-##  new [UniversalCamera](/classes/2.3/UniversalCamera)(name, position, scene)
+## new [UniversalCamera](/classes/2.3/UniversalCamera)(name, position, scene)
 
 
 

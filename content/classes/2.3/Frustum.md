@@ -7,11 +7,11 @@ PG_VERSION: 2.1
 
 class [Frustum](/classes/2.3/Frustum)
 
-
+Defines the geometric portion of an object between two parallel Planes
 
 ## Methods
 
-### static  GetPlanes(transform) &rarr; [Plane](/classes/2.3/Plane)[]
+### static GetPlanes(transform) &rarr; [Plane](/classes/2.3/Plane)[]
 
 
 
@@ -20,7 +20,7 @@ class [Frustum](/classes/2.3/Frustum)
 ---|---|---|---
  | transform | [Matrix](/classes/2.3/Matrix) |   
 
-### static  GetPlanesToRef(transform, frustumPlanes) &rarr; void
+### static GetPlanesToRef(transform, frustumPlanes) &rarr; void
 
 
 

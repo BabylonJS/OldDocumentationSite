@@ -10,13 +10,17 @@ TAGS:
 
 class [PointLight](/classes/2.3/PointLight) extends [Light](/classes/2.3/Light)
 
+A point light is a light defined by an unique point in world space.
 
+The light is emitted in every direction from this point. A good example of a point light is the sun.
+
+A tutorial about lights can be found here
 
 ## Constructor
 
-##  new [PointLight](/classes/2.3/PointLight)(name, position, scene)
+## new [PointLight](/classes/2.3/PointLight)(name, position, scene)
 
-
+Creates a new [PointLight](/classes/2.3/PointLight) object
 
 #### Parameters
  | Name | Type | Description
@@ -28,7 +32,7 @@ class [PointLight](/classes/2.3/PointLight) extends [Light](/classes/2.3/Light)
 
 ### position : [Vector3](/classes/2.3/Vector3)
 
-
+The position of the emitting point
 
 ### transformedPosition : [Vector3](/classes/2.3/Vector3)
 
@@ -44,7 +48,7 @@ class [PointLight](/classes/2.3/PointLight) extends [Light](/classes/2.3/Light)
 
 ### transferToEffect(effect, positionUniformName) &rarr; void
 
-
+Gives the light to position with the given effect with given position name
 
 #### Parameters
  | Name | Type | Description

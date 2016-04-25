@@ -15,7 +15,7 @@ Represents a scene to be rendered by the engine.
 
 ## Constructor
 
-##  new [Scene](/classes/2.3/Scene)(engine)
+## new [Scene](/classes/2.3/Scene)(engine)
 
 @constructor
 
@@ -26,41 +26,51 @@ Represents a scene to be rendered by the engine.
 
 ## Members
 
-### static  MinDeltaTime : number
+### static MinDeltaTime : number
 
+default : 1.0
 
+In milliseconds, the minimum delta time between two steps
 
-### static  MaxDeltaTime : number
+### static MaxDeltaTime : number
 
+default : 1000.0
 
+In milliseconds, the maximum delta time between two steps
 
-### static  FOGMODE_NONE : number
+### static FOGMODE_NONE : number
 
+The fog is deactivated
 
+### static FOGMODE_EXP : number
 
-### static  FOGMODE_EXP : number
+The fog density is following an exponential function
 
+### static FOGMODE_EXP2 : number
 
+The fog density is following an exponential function faster than FOGMODE_EXP
 
-### static  FOGMODE_EXP2 : number
+### static FOGMODE_LINEAR : number
 
-
-
-### static  FOGMODE_LINEAR : number
-
-
+The fog density is following a linear function.
 
 ### autoClear : boolean
 
+default : true
 
+True to clear the color buffer at each render, false either
 
 ### clearColor : any
 
+default : [Color3](/classes/2.3/Color3)(0.2, 0.2, 0.3)
 
+The color of the scene when cleared
 
 ### ambientColor : [Color3](/classes/2.3/Color3)
 
+default : [Color3](/classes/2.3/Color3)(0, 0, 0)
 
+The scene ambiant color
 
 ### beforeRender : () =&gt; void
 
@@ -82,15 +92,17 @@ A function to be executed when this scene is disposed.
 
 ### beforeCameraRender : (camera: [Camera](/classes/2.3/Camera)) =&gt; void
 
-
+Function triggered before the camera is rendered, with the concerned camera passed in argument
 
 ### afterCameraRender : (camera: [Camera](/classes/2.3/Camera)) =&gt; void
 
-
+Function triggered after the camera is rendered, with the concerned camera passed in argument
 
 ### forceWireframe : boolean
 
+default : false
 
+Forces the wireframe display of meshes
 
 ### forcePointsCloud : boolean
 
@@ -118,7 +130,9 @@ A function to be executed when this scene is disposed.
 
 ### onPointerDown : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/2.3/PickingInfo)) =&gt; void
 
+Function triggered when the pointer interacts with the scene
 
+The passed argument are the event and the element concerned with this event
 
 ### onPointerUp : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/2.3/PickingInfo)) =&gt; void
 
@@ -126,11 +140,13 @@ A function to be executed when this scene is disposed.
 
 ### onPointerPick : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/2.3/PickingInfo)) =&gt; void
 
+Function triggered when the pointer clicks on a [Mesh](/classes/2.3/Mesh) and also releases on the same mesh
 
+If mesh is the same or not is determined by its name
 
 ### cameraToUseForPointers : [Camera](/classes/2.3/Camera)
 
-
+The camera used for pointers
 
 ### fogEnabled : boolean
 
@@ -140,23 +156,35 @@ is fog enabled on this scene.
 
 ### fogMode : number
 
-
+One of the following values : [Scene](/classes/2.3/Scene).FOGMODE_NONE, [Scene](/classes/2.3/Scene).FOGMODE_EXP, [Scene](/classes/2.3/Scene).FOGMODE_EXP2 , [Scene](/classes/2.3/Scene).FOGMODE_LINEAR
 
 ### fogColor : [Color3](/classes/2.3/Color3)
 
+default : [Color3](/classes/2.3/Color3)(0.2, 0.2, 0.3)
 
+The fog color
 
 ### fogDensity : number
 
+default : 0.1
 
+The fog density
 
 ### fogStart : number
 
+default : 0
 
+Used with the [Scene](/classes/2.3/Scene).FOGMODE_LINEAR fogMode
+
+Where the fog starts
 
 ### fogEnd : number
 
+default : 1000.0
 
+Used with the [Scene](/classes/2.3/Scene).FOGMODE_LINEAR fogMode
+
+Where the fog ends
 
 ### shadowsEnabled : boolean
 
@@ -204,11 +232,11 @@ All of the cameras added to this scene.
 
 ### activeCameras : [Camera](/classes/2.3/Camera)[]
 
-
+The array holding the list of active [Camera](/classes/2.3/Camera) instances
 
 ### activeCamera : [Camera](/classes/2.3/Camera)
 
-
+The active camera for this scene
 
 ### meshes : [AbstractMesh](/classes/2.3/AbstractMesh)[]
 
@@ -236,31 +264,31 @@ All of the (abstract) meshes added to this scene.
 
 ### materials : [Material](/classes/2.3/Material)[]
 
-
+The array holding all materials of this scene
 
 ### multiMaterials : [MultiMaterial](/classes/2.3/MultiMaterial)[]
 
-
+The array holding all multimaterials of this scene
 
 ### defaultMaterial : [StandardMaterial](/classes/2.3/StandardMaterial)
 
-
+The default material used on meshes when no material is affected
 
 ### texturesEnabled : boolean
 
-
+True if texture should be enabled, false otherwise
 
 ### textures : [BaseTexture](/classes/2.3/BaseTexture)[]
 
-
+The array holding all textures used in the scene
 
 ### particlesEnabled : boolean
 
-
+True if Particles should be enabled, false otherwise
 
 ### particleSystems : [ParticleSystem](/classes/2.3/ParticleSystem)[]
 
-
+The array holding all particle systems of this scene
 
 ### spritesEnabled : boolean
 
@@ -268,11 +296,11 @@ All of the (abstract) meshes added to this scene.
 
 ### spriteManagers : [SpriteManager](/classes/2.3/SpriteManager)[]
 
-
+The array holding all sprite managers of this scene
 
 ### layers : [Layer](/classes/2.3/Layer)[]
 
-
+The array holding all layers of this scene
 
 ### skeletonsEnabled : boolean
 
@@ -280,7 +308,7 @@ All of the (abstract) meshes added to this scene.
 
 ### skeletons : [Skeleton](/classes/2.3/Skeleton)[]
 
-
+The array holding all skeletons of this scene
 
 ### lensFlaresEnabled : boolean
 
@@ -288,11 +316,11 @@ All of the (abstract) meshes added to this scene.
 
 ### lensFlareSystems : [LensFlareSystem](/classes/2.3/LensFlareSystem)[]
 
-
+The array holding all lensflare systems of this scene
 
 ### collisionsEnabled : boolean
 
-
+True if collisions should be enabled, false otherwise
 
 ### collisionCoordinator : ICollisionCoordinator
 
@@ -300,23 +328,23 @@ All of the (abstract) meshes added to this scene.
 
 ### gravity : [Vector3](/classes/2.3/Vector3)
 
-
+Defines the gravity applied to this scene
 
 ### postProcessesEnabled : boolean
 
-
+True if postProcesses should be enabled, false otherwise
 
 ### postProcessManager : [PostProcessManager](/classes/2.3/PostProcessManager)
 
-
+The post process manager of this scene
 
 ### postProcessRenderPipelineManager : [PostProcessRenderPipelineManager](/classes/2.3/PostProcessRenderPipelineManager)
 
-
+The post process render pipeline manager of this scene
 
 ### renderTargetsEnabled : boolean
 
-
+True if custom render target should be enabled, false otherwise
 
 ### dumpNextRenderTargets : boolean
 
@@ -324,15 +352,15 @@ All of the (abstract) meshes added to this scene.
 
 ### customRenderTargets : [RenderTargetTexture](/classes/2.3/RenderTargetTexture)[]
 
-
+The array holding all custom render targets of this scene
 
 ### useDelayedTextureLoading : boolean
 
-
+True if the texture loading should be delayed, false otherwise
 
 ### importedMeshesFiles : String[]
 
-
+The array holding all imported mesh files
 
 ### probesEnabled : boolean
 
@@ -344,7 +372,7 @@ All of the (abstract) meshes added to this scene.
 
 ### database : any
 
-
+The database this scene is saved into
 
 ### actionManager : [ActionManager](/classes/2.3/ActionManager)
 
@@ -417,70 +445,71 @@ Current on-screen Y position of the pointer
 
 ### getBoundingBoxRenderer() &rarr; [BoundingBoxRenderer](/classes/2.3/BoundingBoxRenderer)
 
-
+Returns the bounding box renderer
 ### getOutlineRenderer() &rarr; [OutlineRenderer](/classes/2.3/OutlineRenderer)
 
-
+Returns the outline rendrer
 ### getEngine() &rarr; [Engine](/classes/2.3/Engine)
 
-
+Returns the engine
 ### getTotalVertices() &rarr; number
 
-
+Returns all the vertices of this scene
 ### getActiveIndices() &rarr; number
 
 
 ### getActiveParticles() &rarr; number
 
-
+Returns all the active particles of this scene
 ### getActiveBones() &rarr; number
 
 
 ### getLastFrameDuration() &rarr; number
 
-
+Returns the duration of the last frame in milliseconds
 ### getEvaluateActiveMeshesDuration() &rarr; number
 
-
+Returns the duration of active meshes in milliseconds
 ### getActiveMeshes() &rarr; [SmartArray](/classes/2.3/SmartArray)&lt;[Mesh](/classes/2.3/Mesh)&gt;
 
-
+Returns the list of acti meshes of this scene
 ### getRenderTargetsDuration() &rarr; number
 
-
+Returns the duration of targets render in milliseconds
 ### getRenderDuration() &rarr; number
 
-
+Returns the duration of the last render in milliseconds
 ### getParticlesDuration() &rarr; number
 
-
+Returns the duration of the last particles processing in milliseconds
 ### getSpritesDuration() &rarr; number
 
-
+Returns the duration of the last sprites processing in milliseconds
 ### getAnimationRatio() &rarr; number
 
-
+Returns the animation ratio (speed)
 ### getRenderId() &rarr; number
 
-
+Returns the render ID of this scene
 ### incrementRenderId() &rarr; void
 
 
 ### attachControl() &rarr; void
 
-
+Attaches mouse/keyboard control to this scene.
+The canvas registering all controls is the canvas used to create the babylon engine.
 ### detachControl() &rarr; void
 
-
+Detaches mouse/keyboard control to this scene
 ### isReady() &rarr; boolean
 
-
+Returns true when the scene is ready to be displayed (all meshes are ready and all materials are ready)
 ### resetCachedMaterial() &rarr; void
 
 
 ### registerBeforeRender(func) &rarr; void
 
-
+Registers in an array the given function which will be executed before rendering the scene
 
 #### Parameters
  | Name | Type | Description
@@ -489,7 +518,7 @@ Current on-screen Y position of the pointer
 
 ### unregisterBeforeRender(func) &rarr; void
 
-
+Removes the given function from the beforeRender array
 
 #### Parameters
  | Name | Type | Description
@@ -516,7 +545,7 @@ Current on-screen Y position of the pointer
 
 ### getWaitingItemsCount() &rarr; number
 
-
+Returns the length of pending data (not ready yet)
 ### executeWhenReady(func) &rarr; void
 
 Registers a function to be executed when the scene is ready.
@@ -540,27 +569,27 @@ Will start the animation sequence of a given target
  | Name | Type | Description
 ---|---|---|---
  | target | any |  - the target  - the target - the target
- | from | number |   The fps starting frame
- | to | number |   The fps ending frame
+ | from | number |   The starting frame
+ | to | number |   The ending frame
 optional | loop | boolean |   If true, the animation will loop
 optional | speedRatio | number |   default : 1.The speed ratio of this animation
 optional | onAnimationEnd | () =&gt; void |   The function triggered on the end of the animation
 ### beginDirectAnimation(target, animations, from, to, loop, speedRatio, onAnimationEnd) &rarr; [Animatable](/classes/2.3/Animatable)
 
-
+Begins a direct animation (no children animations)
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | target | any |   - the target - the target
  | animations | [Animation](/classes/2.3/Animation)[] |   An array of animations
- | from | number |   The fps starting frame
- | to | number |   The fps ending frame
+ | from | number |   The starting frame
+ | to | number |   The ending frame
 optional | loop | boolean |   If true, the animation will loop
 optional | speedRatio | number |   default : 1.The speed ratio of this animation
 ### getAnimatableByTarget(target) &rarr; [Animatable](/classes/2.3/Animatable)
 
-
+Returns the first [Animatable](/classes/2.3/Animatable) instance having the given target in the active animatable array
 
 #### Parameters
  | Name | Type | Description
@@ -580,16 +609,16 @@ Will stop the animation of the given target
 
 ### getViewMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Returns the view [Matrix](/classes/2.3/Matrix)
 ### getProjectionMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Returns the projection [Matrix](/classes/2.3/Matrix)
 ### getTransformMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Returns the transform [Matrix](/classes/2.3/Matrix)
 ### setTransformMatrix(view, projection) &rarr; void
 
-
+Sets the transform matrix by multiplying the given view [Matrix](/classes/2.3/Matrix) by the given projection [Matrix](/classes/2.3/Matrix)
 
 #### Parameters
  | Name | Type | Description
@@ -727,7 +756,7 @@ get a material using its name
 
 ### getCameraByID(id) &rarr; [Camera](/classes/2.3/Camera)
 
-
+Returns the first [Camera](/classes/2.3/Camera) instance using the given id
 
 #### Parameters
  | Name | Type | Description
@@ -855,7 +884,7 @@ Removes an existing geometry
 
 ### getGeometries() &rarr; [Geometry](/classes/2.3/Geometry)[]
 
-
+Returns the list of geometries of this scene
 ### getMeshByID(id) &rarr; [AbstractMesh](/classes/2.3/AbstractMesh)
 
 Get the first added mesh found of a given ID
@@ -920,7 +949,7 @@ Get a the last added node ([Mesh](/classes/2.3/Mesh), [Camera](/classes/2.3/Came
 
 ### getMeshByName(name) &rarr; [AbstractMesh](/classes/2.3/AbstractMesh)
 
-
+Returns the [Mesh](/classes/2.3/Mesh) instance having the given name
 
 #### Parameters
  | Name | Type | Description
@@ -938,7 +967,7 @@ Get a the last added node ([Mesh](/classes/2.3/Mesh), [Camera](/classes/2.3/Came
 
 ### getLastSkeletonByID(id) &rarr; [Skeleton](/classes/2.3/Skeleton)
 
-
+Returns the last instance of [Skeleton](/classes/2.3/Skeleton) using the given id
 
 #### Parameters
  | Name | Type | Description
@@ -947,7 +976,7 @@ Get a the last added node ([Mesh](/classes/2.3/Mesh), [Camera](/classes/2.3/Came
 
 ### getSkeletonById(id) &rarr; [Skeleton](/classes/2.3/Skeleton)
 
-
+Returns the first [Skeleton](/classes/2.3/Skeleton) instance using the given id
 
 #### Parameters
  | Name | Type | Description
@@ -956,7 +985,7 @@ Get a the last added node ([Mesh](/classes/2.3/Mesh), [Camera](/classes/2.3/Came
 
 ### getSkeletonByName(name) &rarr; [Skeleton](/classes/2.3/Skeleton)
 
-
+Returns the first [Skeleton](/classes/2.3/Skeleton) instance corresponding to the given name
 
 #### Parameters
  | Name | Type | Description
@@ -965,7 +994,7 @@ Get a the last added node ([Mesh](/classes/2.3/Mesh), [Camera](/classes/2.3/Came
 
 ### isActiveMesh(mesh) &rarr; boolean
 
-
+Tests if the given mesh is active or not
 
 #### Parameters
  | Name | Type | Description
@@ -974,7 +1003,7 @@ Get a the last added node ([Mesh](/classes/2.3/Mesh), [Camera](/classes/2.3/Came
 
 ### updateTransformMatrix(force) &rarr; void
 
-
+Updates the transform matrix of this scene with the one of the active camera
 
 #### Parameters
  | Name | Type | Description
@@ -983,7 +1012,7 @@ optional | force | boolean |   True to force the transform matrix update even if
 
 ### render() &rarr; void
 
-
+Renders this [Scene](/classes/2.3/Scene)
 ### enableDepthRenderer() &rarr; [DepthRenderer](/classes/2.3/DepthRenderer)
 
 
@@ -998,7 +1027,7 @@ optional | force | boolean |   True to force the transform matrix update even if
 
 ### dispose() &rarr; void
 
-
+Remove of this scene all lights, meshes, cameras, materials, particle systems, spritemanagers.
 ### disposeSounds() &rarr; void
 
 
@@ -1007,7 +1036,7 @@ optional | force | boolean |   True to force the transform matrix update even if
 
 ### createOrUpdateSelectionOctree(maxCapacity, maxDepth) &rarr; [Octree](/classes/2.3/Octree)&lt;[AbstractMesh](/classes/2.3/AbstractMesh)&gt;
 
-
+Creates a new octree for this scene or update it if existing.
 
 #### Parameters
  | Name | Type | Description
@@ -1037,7 +1066,7 @@ optional | maxDepth | number |   default : 2 The maximum depth of the octree
  | camera | [Camera](/classes/2.3/Camera) | 
 ### pick(x, y, predicate, fastCheck, camera) &rarr; [PickingInfo](/classes/2.3/PickingInfo)
 
-
+Launch a ray to try to pick a mesh in the scene
 
 #### Parameters
  | Name | Type | Description
@@ -1059,7 +1088,7 @@ optional | predicate | (sprite: [Sprite](/classes/2.3/Sprite)) =&gt; boolean |  
 optional | fastCheck | boolean |   Launch a fast check only using the bounding boxes. Can be set to null.
 ### pickWithRay(ray, predicate, fastCheck) &rarr; [PickingInfo](/classes/2.3/PickingInfo)
 
-
+Function used to pick a mesh by giving a ray (instead of a position).
 
 #### Parameters
  | Name | Type | Description
@@ -1069,7 +1098,7 @@ optional | fastCheck | boolean |   Launch a fast check only using the bounding b
 optional | fastCheck | boolean |   Launch a fast check only using the bounding boxes. Can be set to null.
 ### setPointerOverMesh(mesh) &rarr; void
 
-
+The action OnPointerOutTrigger and OnPointerOverTrigger are triggered for the given mesh
 
 #### Parameters
  | Name | Type | Description
@@ -1078,10 +1107,10 @@ optional | fastCheck | boolean |   Launch a fast check only using the bounding b
 
 ### getPointerOverMesh() &rarr; [AbstractMesh](/classes/2.3/AbstractMesh)
 
-
+Returns the pointer over the mesh
 ### getPhysicsEngine() &rarr; [PhysicsEngine](/classes/2.3/PhysicsEngine)
 
-
+Returns the physic engine used for this scene
 ### enablePhysics(gravity, plugin) &rarr; boolean
 
 Enables physics to the current scene
@@ -1095,10 +1124,10 @@ optional | gravity | [Vector3](/classes/2.3/Vector3) |   The given gravity
 optional | plugin | IPhysicsEnginePlugin |   default : [OimoJSPlugin](/classes/2.3/OimoJSPlugin). The physics plugin used
 ### disablePhysicsEngine() &rarr; void
 
-
+Delete the physics engine of the scene
 ### isPhysicsEnabled() &rarr; boolean
 
-
+True if a physic engine is defined, false otherwise
 ### setGravity(gravity) &rarr; void
 
 Sets the gravity of the physics engine (and NOT of the scene)
@@ -1110,7 +1139,7 @@ Sets the gravity of the physics engine (and NOT of the scene)
 
 ### createCompoundImpostor(parts, options) &rarr; any
 
-
+Creates an impostor composed of the given parts
 
 #### Parameters
  | Name | Type | Description
@@ -1119,7 +1148,7 @@ Sets the gravity of the physics engine (and NOT of the scene)
  | options | PhysicsBodyCreationOptions |   An object build this way {mass: number, friction: number, restitution: number}
 ### deleteCompoundImpostor(compound) &rarr; void
 
-
+Unregister the compound impostor in the physic engine.
 
 #### Parameters
  | Name | Type | Description
@@ -1131,7 +1160,7 @@ Sets the gravity of the physics engine (and NOT of the scene)
 
 ### getMeshesByTags(tagsQuery, forEach) &rarr; [Mesh](/classes/2.3/Mesh)[]
 
-
+Returns the list of meshes corresponding to the tag query given in parameter
 
 #### Parameters
  | Name | Type | Description
@@ -1140,7 +1169,7 @@ Sets the gravity of the physics engine (and NOT of the scene)
 optional | forEach | (mesh: [AbstractMesh](/classes/2.3/AbstractMesh)) =&gt; void |   
 ### getCamerasByTags(tagsQuery, forEach) &rarr; [Camera](/classes/2.3/Camera)[]
 
-
+Returns the list of cameras corresponding to the tag query given in parameter
 
 #### Parameters
  | Name | Type | Description
@@ -1149,7 +1178,7 @@ optional | forEach | (mesh: [AbstractMesh](/classes/2.3/AbstractMesh)) =&gt; voi
 optional | forEach | (camera: [Camera](/classes/2.3/Camera)) =&gt; void |   
 ### getLightsByTags(tagsQuery, forEach) &rarr; [Light](/classes/2.3/Light)[]
 
-
+Returns the list of lights corresponding to the tag query given in parameter
 
 #### Parameters
  | Name | Type | Description

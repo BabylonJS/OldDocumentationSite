@@ -7,13 +7,15 @@ PG_VERSION: 2.1
 
 class [ShadowGenerator](/classes/2.3/ShadowGenerator)
 
+Shadows are dynamic, they are dynamically generated depending upon a Directionallight.
 
+A tutorial about shadows can be found here
 
 ## Constructor
 
-##  new [ShadowGenerator](/classes/2.3/ShadowGenerator)(mapSize, light)
+## new [ShadowGenerator](/classes/2.3/ShadowGenerator)(mapSize, light)
 
-
+Creates a new [ShadowGenerator](/classes/2.3/ShadowGenerator) object
 
 #### Parameters
  | Name | Type | Description
@@ -22,19 +24,19 @@ class [ShadowGenerator](/classes/2.3/ShadowGenerator)
  | light | IShadowLight |   The light used for the shadow map's computation
 ## Members
 
-### static  FILTER_NONE : number
+### static FILTER_NONE : number
 
+No filter will be used for this shadow
 
+### static FILTER_VARIANCESHADOWMAP : number
 
-### static  FILTER_VARIANCESHADOWMAP : number
+The variance shadowmap will be used for this shadow
 
+### static FILTER_POISSONSAMPLING : number
 
+The poisson sampling filter will be used
 
-### static  FILTER_POISSONSAMPLING : number
-
-
-
-### static  FILTER_BLURVARIANCESHADOWMAP : number
+### static FILTER_BLURVARIANCESHADOWMAP : number
 
 
 
@@ -56,15 +58,15 @@ class [ShadowGenerator](/classes/2.3/ShadowGenerator)
 
 ### filter : number
 
-
+One of the following values : FILTER_NONE, FILTER_VARIANCESHADOWMAP, FILTER_POISSONSAMPLING
 
 ### useVarianceShadowMap : boolean
 
-
+True by default, defines the realtime shadowing algorithm, using the light's point of view
 
 ### usePoissonSampling : boolean
 
-
+Disables the useVarianceShadowMap and activates poisson sampling to soften shadows
 
 ### useBlurVarianceShadowMap : boolean
 
@@ -83,22 +85,22 @@ class [ShadowGenerator](/classes/2.3/ShadowGenerator)
  | useInstances | boolean |   @param useInstances
 ### getShadowMap() &rarr; [RenderTargetTexture](/classes/2.3/RenderTargetTexture)
 
-
+Defines which shadow will be rendered
 ### getShadowMapForRendering() &rarr; [RenderTargetTexture](/classes/2.3/RenderTargetTexture)
 
 
 ### getLight() &rarr; IShadowLight
 
-
+Returns the [DirectionalLight](/classes/2.3/DirectionalLight) of this [ShadowGenerator](/classes/2.3/ShadowGenerator)
 ### getTransformMatrix() &rarr; [Matrix](/classes/2.3/Matrix)
 
-
+Returns the transform matrix of this [ShadowGenerator](/classes/2.3/ShadowGenerator)
 ### getDarkness() &rarr; number
 
-
+Returns the darkness
 ### setDarkness(darkness) &rarr; void
 
-
+Sets the darkness with the given float between 0.0 to 1.0
 
 #### Parameters
  | Name | Type | Description
@@ -107,7 +109,7 @@ class [ShadowGenerator](/classes/2.3/ShadowGenerator)
 
 ### setTransparencyShadow(hasShadow) &rarr; void
 
-
+Defines if the light goes through the object's holes and non opaque surfaces
 
 #### Parameters
  | Name | Type | Description
@@ -120,7 +122,7 @@ class [ShadowGenerator](/classes/2.3/ShadowGenerator)
 ### serialize() &rarr; any
 
 
-### static  Parse(parsedShadowGenerator, scene) &rarr; [ShadowGenerator](/classes/2.3/ShadowGenerator)
+### static Parse(parsedShadowGenerator, scene) &rarr; [ShadowGenerator](/classes/2.3/ShadowGenerator)
 
 
 

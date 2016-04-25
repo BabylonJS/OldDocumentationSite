@@ -83,7 +83,7 @@
         function filterAlphaList(search){
             var reg = new RegExp(search, 'gi');
             $('.classLink').each(function(i, link){
-                if (!reg.exec(link.attributes['data-name'].nodeValue)) {
+                if ((link.attributes['data-name'].nodeValue).search(reg) == -1) {
                     link.className = 'classLink hidden';
                 } else {
                     link.className = 'classLink';

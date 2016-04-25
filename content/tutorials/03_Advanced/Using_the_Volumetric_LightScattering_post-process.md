@@ -95,11 +95,14 @@ vls.mesh.material.diffuseTexture= new BABYLON.Texture(...);
 Feel free to tour some examples of Volumetric LightScattering in the playground :
 
 - [Base demo](http://www.babylonjs-playground.com/?25)
+- [Spherical Harmonics as source](http://babylonjs-playground.azurewebsites.net/#HYFQJ) (hit RUN again and again for this one)
+- [VLS through CSG-created slots](http://babylonjs-playground.azurewebsites.net/#UUXLX#11)
+
+<!-- 
 - [Colorful experiment](http://babylonjs-playground.azurewebsites.net/#1XOMH0)
 - [Video texture as source](http://babylonjs-playground.azurewebsites.net/#1ELQC1)
-- [Spherical Harmonics as source](http://babylonjs-playground.azurewebsites.net/#HYFQJ) (hit RUN again and again for this one)
 - [Particles as source #1](http://babylonjs-playground.azurewebsites.net/#2L5DBX)
-- [Particles as source #2](http://babylonjs-playground.azurewebsites.net/#MYY6S#3)
-- [VLS through CSG-created slots](http://babylonjs-playground.azurewebsites.net/#UUXLX#5)
+- [Particles as source #2](http://babylonjs-playground.azurewebsites.net/#MYY6S#5)
+-->
 
 Have fun !

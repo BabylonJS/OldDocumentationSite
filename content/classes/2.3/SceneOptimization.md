@@ -14,7 +14,7 @@ class [SceneOptimization](/classes/2.3/SceneOptimization)
 
 ## Constructor
 
-##  new [SceneOptimization](/classes/2.3/SceneOptimization)(priority)
+## new [SceneOptimization](/classes/2.3/SceneOptimization)(priority)
 
 
 

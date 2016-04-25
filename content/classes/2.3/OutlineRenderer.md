@@ -11,9 +11,9 @@ class [OutlineRenderer](/classes/2.3/OutlineRenderer)
 
 ## Constructor
 
-##  new [OutlineRenderer](/classes/2.3/OutlineRenderer)(scene)
+## new [OutlineRenderer](/classes/2.3/OutlineRenderer)(scene)
 
-
+Builds an [OutlineRenderer](/classes/2.3/OutlineRenderer) object
 
 #### Parameters
  | Name | Type | Description

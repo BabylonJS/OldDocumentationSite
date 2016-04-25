@@ -11,7 +11,7 @@ class [SimplificationSettings](/classes/2.3/SimplificationSettings)
 
 ## Constructor
 
-##  new [SimplificationSettings](/classes/2.3/SimplificationSettings)(quality, distance, optimizeMesh)
+## new [SimplificationSettings](/classes/2.3/SimplificationSettings)(quality, distance, optimizeMesh)
 
 
 

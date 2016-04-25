@@ -47,7 +47,7 @@ Please note that ```mesh.rotate``` generates a quaternion and then uses ```mesh.
 Sometimes you may know the final orientation you want to give to a mesh in terms of alignment with distant axis, but you don't know what rotation to apply to it to achieve this wanted orientation.  
 There is a way to compute an Euler rotation from a set of axis : 
 ```javascript
-var rot = BABYLON.Vector.RotationFromAxis(axis1, axis2, axis3);
+var rot = BABYLON.Vector3.RotationFromAxis(axis1, axis2, axis3);
 mesh.rotation = rot;
 ```
 where _axis1_, _axis2_ and _axis3_ are three left-handed oriented orthogonal vectors.   

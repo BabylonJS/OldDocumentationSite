@@ -11,7 +11,7 @@ class [DecimationVertex](/classes/2.3/DecimationVertex)
 
 ## Constructor
 
-##  new [DecimationVertex](/classes/2.3/DecimationVertex)(position, id)
+## new [DecimationVertex](/classes/2.3/DecimationVertex)(position, id)
 
 
 

@@ -11,7 +11,7 @@ class [BezierCurveEase](/classes/2.3/BezierCurveEase) extends [EasingFunction](/
 
 ## Constructor
 
-##  new [BezierCurveEase](/classes/2.3/BezierCurveEase)(x1, y1, x2, y2)
+## new [BezierCurveEase](/classes/2.3/BezierCurveEase)(x1, y1, x2, y2)
 
 
 

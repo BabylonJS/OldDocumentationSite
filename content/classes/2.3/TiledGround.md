@@ -9,7 +9,7 @@ class [TiledGround](/classes/2.3/TiledGround) extends _Primitive
 
 ## Constructor
 
-##  new [TiledGround](/classes/2.3/TiledGround)(id, scene, xmin, zmin, xmax, zmax, subdivisions, precision, canBeRegenerated, mesh)
+## new [TiledGround](/classes/2.3/TiledGround)(id, scene, xmin, zmin, xmax, zmax, subdivisions, precision, canBeRegenerated, mesh)
 
 
 

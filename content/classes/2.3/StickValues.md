@@ -11,9 +11,9 @@ class [StickValues](/classes/2.3/StickValues)
 
 ## Constructor
 
-##  new [StickValues](/classes/2.3/StickValues)(x, y)
+## new [StickValues](/classes/2.3/StickValues)(x, y)
 
-
+Builds a [StickValues](/classes/2.3/StickValues) object
 
 #### Parameters
  | Name | Type | Description
@@ -24,7 +24,7 @@ class [StickValues](/classes/2.3/StickValues)
 
 ### x : any
 
-
+The stick associated x object
 
 ### y : any
 

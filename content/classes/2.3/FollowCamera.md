@@ -15,9 +15,9 @@ class [FollowCamera](/classes/2.3/FollowCamera) extends [TargetCamera](/classes/
 
 ## Constructor
 
-##  new [FollowCamera](/classes/2.3/FollowCamera)(name, position, scene)
+## new [FollowCamera](/classes/2.3/FollowCamera)(name, position, scene)
 
-
+Create a new [FollowCamera](/classes/2.3/FollowCamera)
 
 #### Parameters
  | Name | Type | Description
@@ -29,23 +29,23 @@ class [FollowCamera](/classes/2.3/FollowCamera) extends [TargetCamera](/classes/
 
 ### radius : number
 
-
+Radius of the camera
 
 ### rotationOffset : number
 
-
+Rotation offset of the camera
 
 ### heightOffset : number
 
-
+Height offset of the camera
 
 ### cameraAcceleration : number
 
-
+[Camera](/classes/2.3/Camera) acceleration
 
 ### maxCameraSpeed : number
 
-
+Max camera speed
 
 ### target : [AbstractMesh](/classes/2.3/AbstractMesh)
 
