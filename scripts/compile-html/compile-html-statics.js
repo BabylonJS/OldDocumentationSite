@@ -42,7 +42,8 @@ module.exports = function(done){
         "exporters",
         "extensions",
         "generals",
-        "tutorials"
+        "tutorials",
+        "overviews"
     ];
 
     var globalObj = {};

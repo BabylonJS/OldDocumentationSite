@@ -1,4 +1,4 @@
-#Solid Particle System (SPS)
+# Solid Particle System (SPS)
 
 ## Introduction
 

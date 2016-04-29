@@ -43,7 +43,7 @@ mesh.translate(BABYLON.Axis.X, 1.0, BABYLON.Space.WORLD);
 
 Please note that ```mesh.rotate``` generates a quaternion and then uses ```mesh.rotationQuaternion```.
 
-#Generating a rotation from a target system#
+# Generating a rotation from a target system #
 Sometimes you may know the final orientation you want to give to a mesh in terms of alignment with distant axis, but you don't know what rotation to apply to it to achieve this wanted orientation.  
 There is a way to compute an Euler rotation from a set of axis : 
 ```javascript
@@ -60,7 +60,7 @@ With this code, the mesh will be aligned thus :
 example : http://www.babylonjs-playground.com/#VYM1E#5   
 The textured plane mesh is currently aligned with the axis between spheres (axis1) and "faces" the camera : axis2 = camera.position 
 
-#Baking Transform#
+# Baking Transform #
 
 In certain situations you might be interested in applying a transform (position, rotation, scale) directly to the mesh vertices, instead of saving it as a property of the mesh. This is called baking, and can be useful in the following situations:
 
@@ -99,7 +99,7 @@ mesh.updateVerticesData(VertexBuffer.NormalKind, normals, false, false);
 
 Please note that recomputing the normals of your mesh may not be an ideal solution, as the results may be wrong in some parts of the mesh (e.g. seams on a sphere).
 
-#Changing the Frame of Reference#
+# Changing the Frame of Reference #
 
 Every mathematical vector and transformation is expressed in a certain _frame of reference_. This is for example handled by the `BABYLON.Space.LOCAL` and `BABYLON.Space.WORLD` constants used in the `rotate()` and `translate()` functions cited above, or `locallyTranslate()` and other similar functions.
 
