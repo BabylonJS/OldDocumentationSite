@@ -1,0 +1,185 @@
+# Babylon.js 2D Rendering Canvas (Canvas2D)
+Babylon.js is a full featured 3D engine, but the need to handle 2D content is often encoutered when working on games or complex applications.
+It is to provide an answer to this demand that we've develop the Canvas2D feature.
+
+[TOC]
+
+## Features overview
+A Canvas2D is a 2D rectangle with a position and a size, the size can be specified by the user or it is automatically computed to fit its content.
+
+The Canvas can be rendered in two different spaces:
+ - ScreenSpace: it lies above the rendered 3D Scene and is coplanar to the rendering viewport. Its position/rotation/scale is expressed in screen coordinate, with the origin being the top/left corner of the rendering viewport.
+ - WorldSpace: the canvas has a position/rotation/scale that is expressed in World Coordinates, you canvas is like a 2D Rectangle lying in World Space, like any other 3D objects you can find in a 3D Scene.
+
+In order to preserve a good balance between rendering time and memory consumption the user has the possibility to cache in a bitmap the content of a Group. Many caching strategies are predefined, hopefuly for the user to always find what fits the best.
+
+The content of a Canvas is defined by a graph of primitives, they are rendered using Brushes (Border, Fill) &| Textures.
+
+## Basic Types
+Here is the basic types to work with.
+
+### Prim2DBase
+This is the base class for any object that are part of the content graph of a Canvas.
+It features properties such as:
+- Transformation properties: Position/Rotation/Scale. Position being X,Y, Rotation being a number in radian for the rotation along the Z axis, Scale being a number to provide uniform scale.
+- Origin: define the origin of the primitive, default being 0.5,0.5, which is the center of the primitive, 0.0,0.0 would be the top/left corner of the primitive.
+- LevelVisibility: define the visibility set for this particular Primitive, it's **not** the actual visibility in the canvas, see below.
+- The IsVisible property will inform if the Primitive will be rendered or not in the Canvas. The visibility concept is hierarchical, if a Primitive has at least one parent set as not visible, it won't be too.
+- zOrder. While the hierarchy give a sense of Z ordering (children being place above parents), the user can overide it through this property.
+- boundingInfo, every primitive has a bounding information maintained automatically. This info describe a bounding circle (with a Radius) and a bounding box (with a 2D Vector acting as the extent).
+- Parent/Children: to navigate through the graph.
+
+### Group2D
+Acts as a container for its children, has no rendering itself. A group define a new frame of reference, the visibility status will also be applied to its children. Based on the Caching strategy defined at the Canvas level and also the Caching Behavior of the group, its content will be cached to a bitmap or rendered during the viewport rendering.
+
+### Canvas2D
+The main class that describes a Canvas, it derives from Group2D, inheriting its capabilities. A given Canvas belong to a given Scene, it's either defined in ScreenSpace or WorldSpace, may have a Background &| Border.
+
+### RenderablePrim2D
+This is an abstract class, used for primitives that render in the Canvas. This class takes care of the model and instance caching of the rendering resources.
+
+### Brushes
+
+Two TypeScript interface declare the brushes:
+ - IBorder2D: to render a border of the primitive.
+ - IFill2D: to render the content of the primitive.
+
+## Canvas & Group2D caching behaviors
+
+It is critical to understand that Groups are defined either as Renderable or not (say Logical) and Cached or not.
+This is defined by setting the Canvas Caching Strategy and overriding it at a Group Level with its cacheBehavior property.
+
+A Renderable Group will contains the list of the primitive it's responsible to update and render.
+A Logical Group will merely act as a container, a new reference frame which doesn't play a part in the rendering process.
+
+If a Group is Renderable, it can be:
+ - Cached, its whole content until the next Renderable Group down the graph will be Cached into a bitmap.
+ - Not Cached, its whole content until the next Renderable Group down the graph will be rendered every time.
+
+### Canvas Caching Strategy
+
+When a Canvas is created you have to choose a Caching Strategy, one of these:
+- ```CACHESTRATEGY_TOPLEVELGROUPS``` The Canvas itself won't be cached, but each of its direct children group will be cached (so their content, also including sub groups). If you have a Canvas spanning the whole rendering viewport (say 1920*1080 pixels) and the content of the Canvas is only one small Group at the Top Left and another at the Bottom Right of the viewport, then you don't want to cache the whole screen for that less. This mode will only create a cache bitmap for the space taken by the two groups.
+- ```CACHESTRATEGY_ALLGROUPS``` The Canvas and each group will have their own cache, unless you change this behavior using the Group2D.cacheBehavior). This is by far the most memory consuming, but efficient if the content change frequently but at different pace. You can reduce greatly the amount of cache with Group2D.cacheBehavior though.
+- ```CACHESTRATEGY_CANVAS``` Only the Canvas and its whole content will be cached. Simple and efficient if its size is ok for you and its content doesn't change every frame.
+- ```CACHESTRATEGY_DONTCACHE``` Nothing is cached, every primitives are rendered every frame in the Viewport. Note this mode can only be chosen for ScreenSpace Canvas, World Space ones has to be cached at some level.
+
+### Group Cache Behavior
+
+Each instance of Group2D has a cacheBehavior property, with one of the following values:
+- ```GROUPCACHEBEHAVIOR_FOLLOWCACHESTRATEGY``` Follow the strategy defined at the Canvas level, this is the default value.
+- ```GROUPCACHEBEHAVIOR_DONTCACHEOVERRIDE``` Don't cache the Group's content whatever the strategy defines for this group.
+- ```GROUPCACHEBEHAVIOR_CACHEINPARENTGROUP``` Cache the group's content in the first parent group that is cached.
+
+## Architecture
+
+### The Primitive Caching mechanisms
+The challenge behind this feature is to render everything with the minimal amount of Draw Call and to compute/update the data needed for rendering only when necessary.
+
+In order to reduce the WebGL Draw Calls, the architecture was designed to render the highest amount of instances of a given Primitive using the [Instancing feature](https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/) of WebGL.
+
+Several mechanims are implemented to achieve that.
+
+#### Properties Level
+Each Primitive type won't probably be able to render any variations of its instances in a single call, because of the limitations imposed by the Vertex/Fragment Shader. But it's certainly possible to put several instances sharing the same given set of property/value into a single call.
+
+To achieve that we breakdown each property of a primitive into three possible categories:
+1. Model Level: each different value will lead to a specific render model, then one draw call. Two instances having two different values for a given property will lead to two different models to render.
+2. Intance Level: the property can have any kind of value, it won't change the render model assigned to the isntance.
+3. Dynamic Level: the property doesn't play a part in the rendering
+
+For instance the Sprite2D Primitive has the following properties:
+ - texture (model): the texture to use to render the sprite
+ - spriteSize (instance): the size of the sprite
+ - spriteLocation (instance): the location into the texture of the top/left corner of the sprite.
+
+If we have three sprites: A, B, C. A and C are using the same texture, B is using another one. We will end up with two rendering models: one for A and C and another one for B. A and C will be drawn into a single call and B will also have one call for itself.
+
+#### The Model Render Cache class
+When an instance is about to be rendered, we access its Model Render Cache, it's an instance of a class dedicated to this property type which stores all the information to perform the rendering.
+
+For a given type of Primitive there's as many different Model Render Cache instance as there's differents combination of properties declare with the Model Level.
+
+Eeach primitive instance has a modelKey (accessible through the property 'modelKey') which is computed based on the primitive type and the different model level properties name+value.
+
+The Model Render Cache create all the resources to render the list of instances it has. If the user change the value of a property tagged with the Model Level, then its rendering instance will be removed from the old Model Render Cache and a new one will be created into the appropriate one.
+
+A per primitive instance object is also created, it contains all the data that will be stored in the Instancing Array.
+
+A third dedicated type is needed for each primitive type in order to describe these data that will fill the Instancing Array, that's the Instance Data.
+
+To sum up, for the Sprite2D primitive we have:
+- Sprite2D: the main class the user of the Canvas2D deals with to create sprites in the Canvas.
+- Sprite2DRenderCache: a ModelRenderCache<Sprite2DInstanceData> extended class that create the vertex buffer, index buffer, store the texture, the rendering effect, implements the rendering method and also hold the list of all instances using this model and the Instance Array buffer containing the data to send to the GPU during the DrawInstanced call.
+- Sprite2DInstanceData: which extends the InstanceDataBase class and serves as a proxy to declare the properties that will endup in the Instancing Array. The list so far:
+	- For InstanceDataBase: zBias (to compute the depth value), transformX and transformY (to transform the primitive vertices at the right location), origin (needed for the vertices position calculation)
+	- For Sprite2D: topLeftUV (location in the texture of the sprite), sizeUV (size of the sprite), textureSize (to compute the onscreen size of the sprite), frame (for animated sprites, the frame number) and invertY (to invert the texture V coordinates)
+
+#### The InstanceData class
+Luckily for the developer that implements new primitives type, the wiring of the data to take from an instance of a primitive to put in the Instance Array is automatically made.
+For this to happens each primitive type has a dedicated InstanceData class (extending the InstanceData matching the Primitive class it extends) which declare the properties to store in the Instancing Array.
+All you have to do is declaring a property this way:
+```Javascript
+    export class Sprite2DInstanceData extends InstanceDataBase {
+        @instanceData()
+        get topLeftUV(): Vector2 {
+            return null;
+        }
+		...
+    }
+```
+
+The @instanceData decorator will take care of providing a real getter/setter to the property, which will be used to make the wiring.
+
+The primitive based class (Sprite2D in our case) must implements the refreshInstancaData() method which will be called to update the data. This method may contains a little logic/transformation because the properties exposed by the primitive are not necessary represented the same way in the Vertex Shader.
+
+#### Automatic dirty/property change
+Each property in a primitive that is decorated with either @modelLevelProperty, @instanceLevelProperty or @dynamicLevelProperty will have its setter function overloaded in order to provide the following services:
+ - Detect if the change of value will impact the way the primive should be rendered and add it to the list of primitives to update for rendering.
+ - Maintain a dirty flag when this property has a value change between two renders
+ - Dirty the boundingInfo if needed
+ - Notify observers of the data change
+
+The implementer doesn't have to take care of these things, it's free!
+
+### Rendering
+
+Rendering of a Canvas is made is in three parts:
+1. Preparation of the transformation matrices and update the visibility status of each primitive
+2. Preparation of the primitives that are dirty for rendering
+3. Do the rendering
+
+#### Transformation and Visibility update
+This step is done on each primitive that had a position based property that changed, same for visibility.
+Only a part of the graph is traversed, from the primitives that changed down to its children.
+Not change will lead to zero node traversing in the graph.
+
+#### Primitive preparation
+The first time a primitive is to render or when on of its property (tagged with the xxxLevelProperty decorator) changed, it needs to be prepared.
+This is made on a per Renderable Group basis, each Renderable Group are traversed and if one has some dirty primitive it will update their rendering resources optimaly (model change &| instance change). A dirty primitive may lead to a dirty of its children ones, which is also taken care by this stage.
+
+#### Rendering
+Rendering is made by traversing Renderable Groups, respecting the Cached mode. If a group is Cached its content will be displayed by its parent Renderable Group into a Sprite2D targetting the bitmap's content.
+
+If rendering resources are not ready (texture or effect still loading), the primitive will be let as dirty for render and then preparation will be retried next round.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
