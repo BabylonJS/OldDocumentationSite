@@ -9,11 +9,9 @@ Here are the next updates we will *probably* add to babylon.js:
 
 **vNext++:**
 
-* Reflection probe [v2.3]
-* Material library (Water, fire, normal) [v2.3]
-* Logarithmic depth buffer
-* Global illumination light
-* Morph targets
+* Canvas2D
+* Reworked physics engine
+* More than 4 lights per material
 * Sprites collisions
 * Continuous update of octrees using webworkers
 
