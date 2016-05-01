@@ -28,13 +28,13 @@
                     html: '<i class="fa fa-book"></i>Generals'
                 }),
                 $('<a>', {
-                    href: '/overviews',
-                    html: '<i class="fa fa-book"></i>Overviews'
-                }),                
-                $('<a>', {
                     href: '/tutorials',
                     html: '<i class="fa fa-cogs"></i>Tutorials'
                 }),
+                $('<a>', {
+                    href: '/overviews',
+                    html: '<i class="fa fa-book"></i>Overviews'
+                }),                     
                 $('<a>', {
                     href: '/exporters',
                     html: '<i class="fa fa-rocket"></i>Exporters'
