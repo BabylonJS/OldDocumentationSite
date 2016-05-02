@@ -7,6 +7,12 @@
     .banner{
       .menu {
         width: 80%;
+        >div{
+          font-size: 0.8em;
+        }
+        .item{
+          font-size:0.8em;
+        }  
       }
       // searchbar & link to bjs.com
       .more{
@@ -103,4 +109,31 @@
     @include outer-container(95%);
     padding: 0;
   }
+  
+}
+
+@include media(new-breakpoint(max-width 1350px 6)) {
+ .nav-main {
+   .banner{
+     .menu {
+       >div
+         {
+           font-size: 0.8em;
+         }
+       }
+     }
+ }
+}
+
+@include media(new-breakpoint(max-width 1100px 6)) {
+ .nav-main {
+   .banner{
+     .menu {
+       >div
+         {
+           font-size: 0.65em;
+         }
+       }
+     }
+ }
 }
