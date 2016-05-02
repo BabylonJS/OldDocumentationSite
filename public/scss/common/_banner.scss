@@ -55,7 +55,7 @@ $title_width : 300px;
     // The left menu (title + tabs)
     .menu {
       @include display(flex);
-      width : 60%;
+      width : 80%;
       height : $bh;
       @include user-select(none);
 
@@ -101,15 +101,16 @@ $title_width : 300px;
 
       // Only tabs
       .item {
-        width : 100px;
+        width : 130px;
         text-transform: uppercase;
-        font-size : 0.8em;
+        font-size : 0.9em;
         cursor: pointer;
         a {
           text-decoration : none;
           color : black;
           display: inline-block;
           width:100%;
+          text-align: center;
         }
       }
     }
@@ -119,7 +120,7 @@ $title_width : 300px;
       @include display(flex);
       @include justify-content(flex-end);
       @include align-items(center);
-      width : 40%;
+      width : 20%;
       height : $bh;
 
       // Searchbar
