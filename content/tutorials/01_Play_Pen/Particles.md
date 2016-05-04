@@ -26,10 +26,10 @@ Now, we must create a new (not-rendered) ParticleSystem object:
 var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, customEffect);
 ```
 
-        Simple. The first parameter is the name, he second parameter is the maximum number of particles, the third parameter is the scene, and the optional fourth parameter is a reference to a shader effect for the particles, overriding the default shader. I will talk about the fourth parameter further below.
+Simple. The first parameter is the name, he second parameter is the maximum number of particles, the third parameter is the scene, and the optional fourth parameter is a reference to a shader effect for the particles, overriding the default shader. I will talk about the fourth parameter further below.
 
 
-    An important part is to define the texture of each particle. Each one will have the same pattern, so choose carefully which one you want. But keep in mind that a single scene can contain multiple particleSystems, and each one can emit particles with unique texture patterns. Also keep in mind that multiple particle systems can use the same emitter object. 
+An important part is to define the texture of each particle. Each one will have the same pattern, so choose carefully which one you want. But keep in mind that a single scene can contain multiple particleSystems, and each one can emit particles with unique texture patterns. Also keep in mind that multiple particle systems can use the same emitter object. 
 Our particle texture is going to be this one:
 
 ![Flare](http://www.babylonjs.com/tutorials/12%20-%20Particles/Flare.png)
@@ -101,7 +101,7 @@ particleSystem.emitRate = 1000;
 ```javascript
 particleSystem.manualEmitCount = 300;
 ```
-    Be aware that the stream is no longer continuous. This is a one-shot particle emission, so this function overrides the previous “emitRate” parameter.
+Be aware that the stream is no longer continuous. This is a one-shot particle emission, so this function overrides the previous “emitRate” parameter.
 
 * The selected mode for particles. You can choose between “BLENDMODE_ONEONE” (default choice: source color is added to the destination color without alpha affecting the result), and “BLENDMODE_STANDARD” (to blend current color and particle color using particle’s alpha).
 ```javascript
