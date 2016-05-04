@@ -97,7 +97,7 @@ particleSystem.emitRate = 1000;
 
 ![emitRate](http://www.babylonjs.com/tutorials/12%20-%20Particles/12-3.png)
 
-    If you want to launch only a few particles at once, that can be done, as well. For example, if you want to emit only 300 particles:
+If you want to launch only a few particles at once, that can be done, as well. For example, if you want to emit only 300 particles:
 ```javascript
 particleSystem.manualEmitCount = 300;
 ```
