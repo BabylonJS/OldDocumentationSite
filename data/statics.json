@@ -599,7 +599,19 @@
           "filename": "GUIText"
         }
       ]
-    },    
+    },
+    {
+      "title": "Tree Generators",
+      "name": "Tree_Generators",
+      "img": "img/tutorials/trees.png",
+      "desc": "How to generate trees.",
+      "files": [
+        {
+          "title": "SPS Tree Generator",
+          "filename": "SPS_Tree_Generator"
+        }
+      ]
+    },        
     {
       "title": "Editor",
       "name": "Editor",
