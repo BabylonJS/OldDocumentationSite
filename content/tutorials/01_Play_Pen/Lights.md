@@ -10,7 +10,7 @@ _A pretty sphere with multiple lights_
 
 ## How can I do this ?
 
-Lights are used to produce the diffuse and specular color received by each pixel. This color is then used by materials to determine the final color of every pixel. Babylon.js allows you to create and register as many lights as you choose, but know that a single StandardMaterial can only handle 4 simultaneous lights (the first four enabled lights of the scene's lights list).
+Lights are used to produce the diffuse and specular color received by each pixel. This color is then used by materials to determine the final color of every pixel. 
 
 During this tutorial, I will show you how to use every kind of light that is supported by Babylon.js.
 
@@ -136,6 +136,18 @@ As a last note, I want you to know that the left plane's material.backFaceCullin
 light.range = 300;
 ```
 More information about the _.range_ property... coming soon. Stay tuned.
+
+## Limitations ##
+Babylon.js allows you to create and register as many lights as you choose, but know that a single StandardMaterial can only handle a defined number simultaneous lights (by default this value is equal to 4 which means the first four enabled lights of the scene's lights list).
+You can change this number with this code:
+
+```javascript
+var material = new BABYLON.StandardMaterial("mat", scene);
+material.maxsimultaneousLights = 6;
+```
+But beware! Because with more dynamic lights, Babylon.js will generate bigger shaders which may not be compatible with low end devices like mobiles or small tablets. In this case, babylon.js will try to recompile shaders with less lights.
+
+A demo with 6 lights can be found at our 'playground', [right here](http://www.babylonjs-playground.com/#IRVAX#0)
 
 ## Next Step ##
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!

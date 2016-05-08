@@ -143,7 +143,7 @@ Also, the TOC is automatically nested. It means that if you write something like
     ## Secondary title 2
     <insert content here>
     ## Secondary title 3
-    <insert content here>
+    <insert content here> 
 
 You will get the following TOC:
 

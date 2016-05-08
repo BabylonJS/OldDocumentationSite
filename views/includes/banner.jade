@@ -17,12 +17,12 @@ nav.nav-main
             #general.item(class={active: currentUrl === '/generals'})
                 a(href='/generals')
                     | General
-            #overview.item(class={active: currentUrl === '/overviews'})
-                a(href='/overviews')
-                    | Overviews
             #tutorials.item(class={active: currentUrl === '/tutorials'})
                 a(href='/tutorials')
                     | Tutorials
+            #overview.item(class={active: currentUrl === '/overviews'})
+                a(href='/overviews')
+                    | Overviews
             #exporters.item(class={active: currentUrl === '/exporters'})
                 a(href='/exporters')
                     | Exporters
@@ -41,7 +41,3 @@ nav.nav-main
                     input(type='text', name='q', placeholder='Search...')
                     button(type='submit')
                         i.fa.fa-search
-            .forward
-                div
-                    a(href="http://www.babylonjs.com", target="_blank") babylonjs.com
-                        i.fa.fa-play
