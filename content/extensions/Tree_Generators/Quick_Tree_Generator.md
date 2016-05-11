@@ -10,7 +10,7 @@ A demo can be found at: http://www.babylonjs-playground.com/#LG3GS#107
 
 ## How to use it.
 
-Clone or copy the file https://github.com/BabylonJS/Extensions/tree/master/TreeGenerators/SimplePineGenerator
+Clone or copy the file https://github.com/BabylonJS/Extensions/tree/master/TreeGenerators/QuickTreeGenerator
 
 Before using check your version of BABYLONJS versions 2.2 and earlier require line 8 to be active, comment line 9 instead
 BABYLON 2.3 or later leave as is.
