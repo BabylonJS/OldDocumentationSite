@@ -611,8 +611,16 @@
       "desc": "How to generate trees.",
       "files": [
         {
+          "title": "Simple Pine Generator",
+          "filename": "Simple_Pine_Generator"
+        },
+        {
           "title": "SPS Tree Generator",
           "filename": "SPS_Tree_Generator"
+        },
+        {
+          "title": "Quick Tree Generator",
+          "filename": "Quick_Tree_Generator"
         }
       ]
     },        
