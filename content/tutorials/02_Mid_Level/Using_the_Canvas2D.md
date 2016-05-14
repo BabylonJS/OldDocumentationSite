@@ -61,11 +61,11 @@ setInterval(() => {
 }, 10);
 ```
 
-See it live in this [playground](http://babylonjs-playground.com/#272WI1)
+See it live in this [playground](http://babylonjs-playground.com/#272WI1#1)
 
 Explanations:
 1. First part is mostly the same as the first example, but with a bigger size for the canvas.
-2. Then we create a first Rectangle, its parent is the Canvas itself, it's called "rect" and is centered in the Canvas with the position 150,150. The default origin of the Rectanble is 0.5,0.5 which make it at the center of the primitive itself. Then we have a size of 100,100, no fill brush and a grandient border. Finally we change the border thickness and the round radius.
+2. Then we create a first Rectangle, its parent is the Canvas itself, it's called "rect" and is centered in the Canvas with the position 150,150. The default origin of the Rectangle is 0.5,0.5 which make it at the center of the primitive itself. Then we have a size of 100,100, no fill brush and a gradient border. Finally we change the border thickness and the round radius.
 3. We create a second rectangle called "insideRect", which has for parent the first one ("rect"), the position is at the center of its parent (0,0) and with a size of 40,40, we use a solid color brush for the fill content and a custom round radius.
 4. We create a timer that changes the rotation of "rect" every 10ms.
 
@@ -102,7 +102,7 @@ setInterval(() => {
 
 ```
 
-See it live in this [playground](http://babylonjs-playground.com/#1BKDEO#2)
+See it live in this [playground](http://babylonjs-playground.com/#1BKDEO#3)
 
 This time we create a Canvas that will be present **in the scene** and not above, its position is 0,0,0, the rotation is built from yaw/pitch/roll construct, its scene size is 100,100 but the Canvas cached bitmap is scaled 4 times (to achieve better rendering quality).
 
@@ -110,5 +110,5 @@ The result is a rectangle inside the 3D, positioned and oriented as given, with 
 
 ## More playground
 
- - [Rectangle soup](http://babylonjs-playground.com/#OWCCR#3)
+ - [Rectangle soup](http://babylonjs-playground.com/#OWCCR#5)
 
