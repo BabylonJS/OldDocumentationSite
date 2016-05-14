@@ -51,22 +51,24 @@ They will overload the setter you implement to detect when the property's value 
 Once you've chose which Primitive to extend you will create your class. Here's an excerpt of the `Sprite2D` class. Pay attention to the comments for explanation.
 
 ```javascript
-// The @className decorator is mandatory, just give the name of the class, it's neede to build the metadata needed 
-//   to perform cache creation/synchronization in a generic way.
+// The @className decorator is mandatory, just give the name of the class, it's neede to build the metadata
+//   needed to perform cache creation/synchronization in a generic way.
 @className("Sprite2D")
 export class Sprite2D extends RenderablePrim2D {
     // This static define the ID of the only part present in the Primitive. Shape2D would have two of them.
     static SPRITE2D_MAINPARTID = 1;
 
-    // Each property decorated with a @xxxLevelProperty will have to declare one static member like this to store 
-    //  the property metatdata created by the decorator.
+    // Each property decorated with a @xxxLevelProperty will have to declare one static member like this to 
+    //  store the property metatdata created by the decorator.
     public static textureProperty: Prim2DPropInfo;
     public static spriteSizeProperty: Prim2DPropInfo;
 
-    // Define the texture property getter/setter, the decorator used is modelLevel, it's understandable because we can't
-    //  draw two sprites using a different texture in the same draw call. So each different Texture will lead to its own
-    //  ModelRenderCache instance, storing a property reference the appropriate texture.
-    @modelLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 1, pi => Sprite2D.textureProperty = pi)
+    // Define the texture property getter/setter, the decorator used is modelLevel, it's understandable 
+    //  because we can't draw two sprites using a different texture in the same draw call. So each 
+    //  different Texture will lead to its own ModelRenderCache instance, storing a property reference 
+    //  the appropriate texture.
+    @modelLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 1, 
+                        pi => Sprite2D.textureProperty = pi)
     public get texture(): Texture {
         return this._texture;
     }
@@ -75,11 +77,12 @@ export class Sprite2D extends RenderablePrim2D {
         this._texture = value;
     }
 
-    // Define the spriteSize property getter/setter, de decorator used is instanceLevel, no matter the size used the 
-    //  ModelRenderCache won't change, the data will be stored in the InstanceData based object.
-    //  The true at the end of the decorator specify that a change of value on this property must trigger a recomputation
-    //   of the boundingInfo object
-    @instanceLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 2, pi => Sprite2D.spriteSizeProperty = pi, false, true)
+    // Define the spriteSize property getter/setter, de decorator used is instanceLevel, no matter the size
+    //  used the ModelRenderCache won't change, the data will be stored in the InstanceData based object.
+    //  The true at the end of the decorator specify that a change of value on this property must trigger
+    //  a recomputation of the boundingInfo object.
+    @instanceLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 2, 
+                           pi => Sprite2D.spriteSizeProperty = pi, false, true)
     public get spriteSize(): Size {
         return this._size;
     }
@@ -90,15 +93,16 @@ export class Sprite2D extends RenderablePrim2D {
 
     ... more properties declared ...
 
-    // You have to implement this method to compute the boundingInfo based on the appropriate properties of your primitive
+    // You have to implement this method to compute the boundingInfo based on the appropriate properties of 
+    //  your primitive
     protected updateLevelBoundingInfo() {
         BoundingInfo2D.CreateFromSizeToRef(this.spriteSize, this._levelBoundingInfo);
     }
 
-    // A general convention in the Canvas2D feature wants you to avoid creation of instance through constructor, you will
-    //  have to rely on a CreateXXX static method in the Primitive Type. These method will then call the setup method below
-    //  which will perform initialization of this class level and also the based class one through the call to 
-    //  this.setupRenderablePrim2D in this case.
+    // A general convention in the Canvas2D feature wants you to avoid creation of instance through 
+    //  constructor, you will have to rely on a CreateXXX static method in the Primitive Type. These method
+    //  will then call the setup method below which will perform initialization of this class level and 
+    //  also the based class one through the call to this.setupRenderablePrim2D in this case.
     protected setupSprite2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, texture: Texture, spriteSize: Size, spriteLocation: Vector2, invertY: boolean) {
         this.setupRenderablePrim2D(owner, parent, id, position, true);
         this.texture = texture;
@@ -112,7 +116,8 @@ export class Sprite2D extends RenderablePrim2D {
     }
 
     // This is the method the user must call to create an instance of the Sprite2D
-    public static Create(parent: Prim2DBase, id: string, x: number, y: number, texture: Texture, spriteSize: Size, spriteLocation: Vector2, invertY: boolean = false): Sprite2D {
+    public static Create(parent: Prim2DBase, id: string, x: number, y: number, texture: Texture, 
+                spriteSize: Size, spriteLocation: Vector2, invertY: boolean = false): Sprite2D {
         Prim2DBase.CheckParent(parent);
 
         let sprite = new Sprite2D();
@@ -120,18 +125,19 @@ export class Sprite2D extends RenderablePrim2D {
         return sprite;
     }
 
-    // This method is fairly simple in this case, it must create an instance of the ModelRenderCache corresponding to the
-    //  primitive type. The modelKey is a unique string defining this particular instance, it is created from the primitive
-    //  type and the model level property name/value. This is how the engine detect if a model already exist and be used or if
-    //  it must be created.
+    // This method is fairly simple in this case, it must create an instance of the ModelRenderCache 
+    //  corresponding to the primitive type. The modelKey is a unique string defining this particular 
+    //  instance, it is created from the primitive type and the model level property name/value. 
+    // This is how the engine detect if a model already exist and be used or if it must be created.
     protected createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache {
         let renderCache = new Sprite2DRenderCache(this.owner.engine, modelKey, isTransparent);
         return renderCache;
     }
 
-    // This method will be called to setup a ModelRenderCached created by the method above, this is where you will create the
-    //  many rendering resources needed to render all the instances sharing this ModelRenderCache: VertexBuffer, IndexBuffer,
-    //  Effect, Texture, etc. Please pay attention to the comment for the 'this.getDataPartEffectInfo' method call.
+    // This method will be called to setup a ModelRenderCached created by the method above, this is where
+    //  you will create the many rendering resources needed to render all the instances sharing this 
+    //  ModelRenderCache: VertexBuffer, IndexBuffer, Effect, Texture, etc. Please pay attention to the
+    //  comment for the 'this.getDataPartEffectInfo' method call.
     protected setupModelRenderCache(modelRenderCache: ModelRenderCache) {
         let renderCache = <Sprite2DRenderCache>modelRenderCache;
         let engine = this.owner.engine;
@@ -154,28 +160,32 @@ export class Sprite2D extends RenderablePrim2D {
 
         renderCache.texture = this.texture;
 
-        // Creating an Effect is a tricky thing, because all the wiring is defined there, you have to specify the shaders used,
-        //  the attributes, uniform and samplers declared in the Shader and also some defines that will alter the compilation
-        //  of the Shader based on some variations.
-        // Thanks to all the metadata built for the decorators you used on the primitive properties, you can call the
-        //  this.getDataPartEffectInfo method to get most of the data automatically. This method takes the PartID of the data
-        //  you want to retrieve and the attributes that will be mapped from the VertexBuffer you created, in this case we have
-        //  only one vertex buffer, containing one attribute called "index" (intialized by the "vb" Float32Array);
-        // The method will return the attributes, uniforms and defines to inject in the Effect creation. Depending of if the
-        //  Instanced Array WebGL extension is available, some data will be declared either as attribute or uniforms and a 
-        //  specific define will be used to make sure the Shader compile accordingly.
+        // Creating an Effect is a tricky thing, because all the wiring is defined there, you have to 
+        //  specify the shaders used, the attributes, uniform and samplers declared in the Shader and also
+        //  some defines that will alter the compilation of the Shader based on some variations.
+        // Thanks to all the metadata built for the decorators you used on the primitive properties,
+        //   you can call the this.getDataPartEffectInfo method to get most of the data automatically. 
+        // This method takes the PartID of the data you want to retrieve and the attributes that will be
+        //  mapped from the VertexBuffer you created, in this case we have only one vertex buffer, 
+        //  containing one attribute called "index" (intialized by the "vb" Float32Array);
+        // The method will return the attributes, uniforms and defines to inject in the Effect creation.
+        // Depending of if the Instanced Array WebGL extension is available, some data will be declared
+        //  either as attribute or uniforms and a specific define will be used to make sure the Shader
+        //  compile accordingly.
         var ei = this.getDataPartEffectInfo(Sprite2D.SPRITE2D_MAINPARTID, ["index"]);
         renderCache.effect = engine.createEffect({ vertex: "sprite2d", fragment: "sprite2d" }, ei.attributes, ei.uniforms, ["diffuseSampler"], ei.defines, null);
 
         return renderCache;
     }
 
-    // This method must create an array of the InstanceData object dedicated to this primitive type, fairly simple.
+    // This method must create an array of the InstanceData object dedicated to this primitive type, 
+    //  fairly simple.
     protected createInstanceDataParts(): InstanceDataBase[] {
         return [new Sprite2DInstanceData(Sprite2D.SPRITE2D_MAINPARTID)];
     }
 
-    // This method will be triggered by the Rendering Engine when needed to refresh the InstanceData from the Primitive instance.
+    // This method will be triggered by the Rendering Engine when needed to refresh the InstanceData from
+    //  the Primitive instance.
     // You'll get more information in the Instance Data section of this tutorial.
     protected refreshInstanceDataPart(part: InstanceDataBase): boolean {
         if (!super.refreshInstanceDataPart(part)) {
@@ -220,7 +230,8 @@ export class Sprite2DRenderCache extends ModelRenderCache {
     // The index buffer containing two triangles to define the rectangle of the Sprite
     ib: WebGLBuffer;
 
-    // An array of InstancingAttributeInfo which contains the metadata to inject to configure the Instanced Array during rendering
+    // An array of InstancingAttributeInfo which contains the metadata to inject to configure the Instanced
+    //  Array during rendering
     instancingAttributes: InstancingAttributeInfo[];
 
     // The Texture used to render the Sprite
@@ -229,10 +240,12 @@ export class Sprite2DRenderCache extends ModelRenderCache {
     // The Effect used to render the Sprite
     effect: Effect;
 
-    // This is the render method that will be called each time a given Model Render Cache must render all the primitives' instance data it owns. 
+    // This is the render method that will be called each time a given Model Render Cache must render all
+    //  the primitives' instance data it owns. 
     render(instanceInfo: GroupInstanceInfo, context: Render2DContext): boolean {
-        // Do nothing if the shader is still loading/preparing, it's important to make this check and return false because
-        //  the Rendering Engine will know the rendering couldn't be done and it will submit a new one next time.
+        // Do nothing if the shader is still loading/preparing, it's important to make this check and return
+        //  false because the Rendering Engine will know the rendering couldn't be done and it will submit 
+        //  a new one next time.
         // When the content is cached, rendering is performed just once in a texture, it better be good!
         if (!this.effect.isReady() || !this.texture.isReady()) {
             return false;
@@ -259,9 +272,9 @@ export class Sprite2DRenderCache extends ModelRenderCache {
                 this.instancingAttributes = this.loadInstancingAttributes(Sprite2D.SPRITE2D_MAINPARTID, this.effect);
             }
 
-            // Setup the Instanced Array buffer, here as there's only one Part for Sprite2D the _instancesPartsBuffer array
-            //  has only one element which is the Instanced Buffer, we use the instancedAttributes we got earlier to setup
-            //  the bindings.
+            // Setup the Instanced Array buffer, here as there's only one Part for Sprite2D the 
+            //  _instancesPartsBuffer array has only one element which is the Instanced Buffer, we use the
+            //  instancedAttributes we got earlier to setup the bindings.
             engine.updateAndBindInstancesBuffer(instanceInfo._instancesPartsBuffer[0], null, this.instancingAttributes);
 
             // Draw all the instance data
@@ -270,8 +283,9 @@ export class Sprite2DRenderCache extends ModelRenderCache {
             // Unbind the Instanced Buffer
             engine.unBindInstancesBuffer(instanceInfo._instancesPartsBuffer[0], this.instancingAttributes);
         } else {
-            // Fallback in case Instanced Array is not support, it's a for loop that render all instance data, one by one
-            // The setupUnifroms methods take automatically care of the wiring to the Shader uniforms for you.
+            // Fallback in case Instanced Array is not support, it's a for loop that render all instance
+            //  data, one by one The setupUnifroms methods take automatically care of the wiring to the
+            //  Shader uniforms for you.
             for (let i = 0; i < count; i++) {
                 this.setupUniforms(this.effect, 0, instanceInfo._instancesPartsData[0], i);
                 engine.draw(true, 0, 6);
@@ -285,8 +299,8 @@ export class Sprite2DRenderCache extends ModelRenderCache {
         return true;
     }
 
-    // Typicall dispose method, clean up all the resources. Pay attention to the super.dispose() call, if false is returned
-    //  it means the object is already disposed.
+    // Typicall dispose method, clean up all the resources. Pay attention to the super.dispose() call, if
+    //  false is returned it means the object is already disposed.
     public dispose(): boolean {
         if (!super.dispose()) {
             return false;
@@ -481,8 +495,8 @@ void main(void) {
 		vUV.y = 1.0 - vUV.y;
 	}
 
-    // Perform the transformation from a uniform coordinate system (the Sprite was defined in the range [0;1] on both the 
-    //  X and Y axes to the rendering target (the Canvas or a cached texture to update)
+    // Perform the transformation from a uniform coordinate system (the Sprite was defined in the range
+    //  [0;1] on both the X and Y axes to the rendering target (the Canvas or a cached texture to update)
 	vec4 pos;
 	pos.xy = (pos2.xy - origin) * sizeUV * textureSize;
 	pos.z = 1.0;
@@ -544,17 +558,17 @@ export class Shape2D extends RenderablePrim2D {
     static SHAPE2D_BORDERPARTID            = 1;
     static SHAPE2D_FILLPARTID              = 2;
 
-    // There are four category to consider when tagging the propeties (ok, the 6th category being "no category", 
-    //  which is the default)
+    // There are four category to consider when tagging the propeties (ok, the 6th category being 
+    //  "no category", which is the default)
     static SHAPE2D_CATEGORY_BORDER         = "Border";
     static SHAPE2D_CATEGORY_BORDERSOLID    = "BorderSolid";
     static SHAPE2D_CATEGORY_BORDERGRADIENT = "BorderGradient";
     static SHAPE2D_CATEGORY_FILLSOLID      = "FillSolid";
     static SHAPE2D_CATEGORY_FILLGRADIENT   = "FillGradient";
 
-    // It hasn't be mentionned before, but each Property tagged with a @xxxxLevelProperty decorator must be assigned a unique
-    //  id, these static defines the starting ID for all classes that will derive from `Shape2D`, which means `Shape2D` can't
-    //  defines more than 5 properties rightnow.
+    // It hasn't be mentionned before, but each Property tagged with a @xxxxLevelProperty decorator must be
+    //  assigned a unique id, these static defines the starting ID for all classes that will derive from
+    //  `Shape2D`, which means `Shape2D` can't defines more than 5 properties rightnow.
     static SHAPE2D_PROPCOUNT: number = RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 5;
 
     // Border and Fill property are worth to mention, see below why
@@ -563,11 +577,13 @@ export class Shape2D extends RenderablePrim2D {
 
     ...
 
-    // The `true` at the end of the decorator declaration means we won't use the **value** of the `border` property to build
-    //  the ModelKey, but the type of the object assigned instead.
-    // What is means in this case is a ModelRenderCache will be able to render any different SolidColorBrush instances in 
-    //  one call, but GradientColorBrush instance will be handled by another ModelRenderCache.
-    @modelLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 1, pi => Shape2D.borderProperty = pi, true)
+    // The `true` at the end of the decorator declaration means we won't use the **value** of the `border`
+    //  property to build the ModelKey, but the type of the object assigned instead.
+    // What is means in this case is a ModelRenderCache will be able to render any different 
+    //  SolidColorBrush instances in one call, but GradientColorBrush instance will be handled by 
+    //  another ModelRenderCache.
+    @modelLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 1, 
+                        pi => Shape2D.borderProperty = pi, true)
     public get border(): IBrush2D {
         return this._border;
     }
@@ -578,7 +594,8 @@ export class Shape2D extends RenderablePrim2D {
     }
 
     // Same as above, but for the `fill` property.
-    @modelLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 2, pi => Shape2D.fillProperty = pi, true)
+    @modelLevelProperty(RenderablePrim2D.RENDERABLEPRIM2D_PROPCOUNT + 2, 
+                        pi => Shape2D.fillProperty = pi, true)
     public get fill(): IBrush2D {
         return this._fill;
     }
@@ -590,9 +607,11 @@ export class Shape2D extends RenderablePrim2D {
 
     ...
 
-    // This method must be implemented if your Primitive is based on category to define the different available variations.
-    // For the given Data Part we analyze its property and determine the categories that must be used and return them.
-    // The Engine will use it to define the data structure of the Instance Data and to know what is to synchronize.
+    // This method must be implemented if your Primitive is based on category to define the different
+    //  available variations. For the given Data Part we analyze its property and determine the categories
+    //  that must be used and return them.
+    // The Engine will use it to define the data structure of the Instance Data and to know what is to
+    //  synchronize.
     protected getUsedShaderCategories(dataPart: InstanceDataBase): string[] {
         var cat = super.getUsedShaderCategories(dataPart);
 
@@ -744,8 +763,9 @@ export class Rectangle2DRenderCache extends ModelRenderCache {
 
         // Render the Fill Part if any
         if (this.effectFill) {
-            // This line is important! Every properties in the instanceInfo are arrays storing data for the used Parts,
-            //  you have to call this method to get the index to use for each array for the Part Id you care about.
+            // This line is important! Every properties in the instanceInfo are arrays storing data for the
+            //  used Parts, you have to call this method to get the index to use for each array for the Part
+            //  Id you care about.
             let partIndex = instanceInfo._partIndexFromId.get(Shape2D.SHAPE2D_FILLPARTID.toString());
 
             engine.enableEffect(this.effectFill);
@@ -753,16 +773,20 @@ export class Rectangle2DRenderCache extends ModelRenderCache {
             let count = instanceInfo._instancesPartsData[partIndex].usedElementCount;
             if (instanceInfo._owner.owner.supportInstancedArray) {
                 if (!this.instancingFillAttributes) {
-                    // Compute the offset locations of the attributes in the vertex shader that will be mapped to the instance buffer data
-                    this.instancingFillAttributes = this.loadInstancingAttributes(Shape2D.SHAPE2D_FILLPARTID, this.effectFill);
+                    // Compute the offset locations of the attributes in the vertex shader that will be
+                    //  mapped to the instance buffer data
+                    this.instancingFillAttributes = 
+                       this.loadInstancingAttributes(Shape2D.SHAPE2D_FILLPARTID, this.effectFill);
                 }
 
-                engine.updateAndBindInstancesBuffer(instanceInfo._instancesPartsBuffer[partIndex], null, this.instancingFillAttributes);
+                engine.updateAndBindInstancesBuffer(instanceInfo._instancesPartsBuffer[partIndex], null,
+                    this.instancingFillAttributes);
                 engine.draw(true, 0, this.fillIndicesCount, count);
                 engine.unBindInstancesBuffer(instanceInfo._instancesPartsBuffer[partIndex], this.instancingFillAttributes);
             } else {
                 for (let i = 0; i < count; i++) {
-                    this.setupUniforms(this.effectFill, partIndex, instanceInfo._instancesPartsData[partIndex], i);
+                    this.setupUniforms(this.effectFill, partIndex, 
+                          instanceInfo._instancesPartsData[partIndex], i);
                     engine.draw(true, 0, this.fillIndicesCount);                        
                 }
             }
@@ -780,12 +804,14 @@ export class Rectangle2DRenderCache extends ModelRenderCache {
                     this.instancingBorderAttributes = this.loadInstancingAttributes(Shape2D.SHAPE2D_BORDERPARTID, this.effectBorder);
                 }
 
-                engine.updateAndBindInstancesBuffer(instanceInfo._instancesPartsBuffer[partIndex], null, this.instancingBorderAttributes);
+                engine.updateAndBindInstancesBuffer(instanceInfo._instancesPartsBuffer[partIndex], null,
+                    this.instancingBorderAttributes);
                 engine.draw(true, 0, this.borderIndicesCount, count);
                 engine.unBindInstancesBuffer(instanceInfo._instancesPartsBuffer[partIndex], this.instancingBorderAttributes);
             } else {
                 for (let i = 0; i < count; i++) {
-                    this.setupUniforms(this.effectBorder, partIndex, instanceInfo._instancesPartsData[partIndex], i);
+                    this.setupUniforms(this.effectBorder, partIndex, 
+                        instanceInfo._instancesPartsData[partIndex], i);
                     engine.draw(true, 0, this.borderIndicesCount);
                 }
             }
@@ -808,7 +834,8 @@ The Vertex Shader, just for fun:
 #define att uniform
 #endif
 
-// The unique attribute of the Vertex Buffer, note it's declared with attribute and not "att" because it's ALWAYS an attribute!
+// The unique attribute of the Vertex Buffer, note it's declared with attribute and not "att" because it's
+//  ALWAYS an attribute!
 attribute float index;
 
 // Data corresponding to InstanceDataBase
@@ -968,16 +995,18 @@ void main(void) {
 
 #ifdef FillGradient
 	float v = dot(vec4(pos2.xy, 1, 1), fillGradientTY);
-	vColor = mix(fillGradientColor2, fillGradientColor1, v);	// As Y is inverted, Color2 first, then Color1
+    // As Y is inverted, Color2 first, then Color1
+	vColor = mix(fillGradientColor2, fillGradientColor1, v);
 #endif
 
 #ifdef BorderGradient
 	float v = dot(vec4(pos2.xy, 1, 1), borderGradientTY);
-	vColor = mix(borderGradientColor2, borderGradientColor1, v);	// As Y is inverted, Color2 first, then Color1
+    // As Y is inverted, Color2 first, then Color1
+	vColor = mix(borderGradientColor2, borderGradientColor1, v);	
 #endif
 
-    // Transformation from the uniform space (all data were ranged from [0;1] on both X and Y to the target space 
-    //  (canvas or rendering texture used as a cache)
+    // Transformation from the uniform space (all data were ranged from [0;1] on both X and Y to 
+    //  the target space (canvas or rendering texture used as a cache)
 	vec4 pos;
 	pos.xy = (pos2.xy - origin) * properties.xy;
 	pos.z = 1.0;
