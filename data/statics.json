@@ -125,6 +125,10 @@
           "filename": "Creating_a_Convincing_World"
         },
         {
+          "title": "Using the Canvas2D",
+          "filename": "Using_the_Canvas2D"
+        },
+        {
           "title": "Caching Resources in IndexedDB",
           "filename": "Caching_Resources_in_IndexedDB"
         },
@@ -607,8 +611,16 @@
       "desc": "How to generate trees.",
       "files": [
         {
+          "title": "Simple Pine Generator",
+          "filename": "Simple_Pine_Generator"
+        },
+        {
           "title": "SPS Tree Generator",
           "filename": "SPS_Tree_Generator"
+        },
+        {
+          "title": "Quick Tree Generator",
+          "filename": "Quick_Tree_Generator"
         }
       ]
     },        
@@ -777,6 +789,10 @@
         {
           "title": "Playing sounds and music",
           "filename": "Playing_sounds_and_music"
+        },        
+		{
+          "title": "Canvas 2D overview and architecture",
+          "filename": "Using_The_Canvas2D"
         }
       ]
     },
