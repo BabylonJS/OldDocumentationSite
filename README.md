@@ -28,7 +28,7 @@ If you want to edit some styles or see your changes without repeating ```grunt b
 ```grunt serve``` features:
  * Opens automatically the browser at ```localhost:3000```
  * Watcher on markdown
- * Recompile everything on detected change
+ * Recompile everything on detected change 
 
  
 ## How to contribute?
