@@ -348,7 +348,11 @@
         {
           "title": "Optimizing your scene",
           "filename": "Optimizing_your_scene"
-        }        
+        },
+        {
+          "title": "Creating your own primitive type for the Canvas2D",
+          "filename": "How_to_create_your_own_Canvas2D_primitive"
+        }         
       ]
     },
     {
