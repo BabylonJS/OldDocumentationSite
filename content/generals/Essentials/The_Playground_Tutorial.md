@@ -18,7 +18,7 @@ Briefly said, you can enter or modify Javascript-based BabylonJS scene code on t
 ## The Top Menu
 ![](http://urbanproductions.com/wingy/babylon/playground/monaco/playground_tm01b.jpg)
 
-The playground's top menu currently contains 8 buttons:
+The playground's top menu currently contains 11 buttons:
 
 **Run** - The Run button is easy to understand. After you paste-in code to the editor, or after you make changes to the code in the editor, you press **Run**.  This commands the playground to try to render your scene.
 
