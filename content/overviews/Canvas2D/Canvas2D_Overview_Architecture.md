@@ -65,17 +65,17 @@ If a Group is Renderable, it can be:
 ### Canvas Caching Strategy
 
 When a Canvas is created you have to choose a Caching Strategy, one of these:
-- ```CACHESTRATEGY_TOPLEVELGROUPS``` The Canvas itself won't be cached, but each of its direct children group will be cached (so their content, also including sub groups). If you have a Canvas spanning the whole rendering viewport (say 1920*1080 pixels) and the content of the Canvas is only one small Group at the Top Left and another at the Bottom Right of the viewport, then you don't want to cache the whole screen for that less. This mode will only create a cache bitmap for the space taken by the two groups.
-- ```CACHESTRATEGY_ALLGROUPS``` The Canvas and each group will have their own cache, unless you change this behavior using the Group2D.cacheBehavior). This is by far the most memory consuming, but efficient if the content change frequently but at different pace. You can reduce greatly the amount of cache with Group2D.cacheBehavior though.
-- ```CACHESTRATEGY_CANVAS``` Only the Canvas and its whole content will be cached. Simple and efficient if its size is ok for you and its content doesn't change every frame.
-- ```CACHESTRATEGY_DONTCACHE``` Nothing is cached, every primitives are rendered every frame in the Viewport. Note this mode can only be chosen for ScreenSpace Canvas, World Space ones has to be cached at some level.
+- `CACHESTRATEGY_TOPLEVELGROUPS` The Canvas itself won't be cached, but each of its direct children group will be cached (so their content, also including sub groups). If you have a Canvas spanning the whole rendering viewport (say 1920*1080 pixels) and the content of the Canvas is only one small Group at the Top Left and another at the Bottom Right of the viewport, then you don't want to cache the whole screen for that less. This mode will only create a cache bitmap for the space taken by the two groups.
+- `CACHESTRATEGY_ALLGROUPS` The Canvas and each group will have their own cache, unless you change this behavior using the Group2D.cacheBehavior). This is by far the most memory consuming, but efficient if the content change frequently but at different pace. You can reduce greatly the amount of cache with Group2D.cacheBehavior though.
+- `CACHESTRATEGY_CANVAS` Only the Canvas and its whole content will be cached. Simple and efficient if its size is ok for you and its content doesn't change every frame.
+- `CACHESTRATEGY_DONTCACHE` Nothing is cached, every primitives are rendered every frame in the Viewport. Note this mode can only be chosen for ScreenSpace Canvas, World Space ones has to be cached at some level.
 
 ### Group Cache Behavior
 
 Each instance of Group2D has a cacheBehavior property, with one of the following values:
-- ```GROUPCACHEBEHAVIOR_FOLLOWCACHESTRATEGY``` Follow the strategy defined at the Canvas level, this is the default value.
-- ```GROUPCACHEBEHAVIOR_DONTCACHEOVERRIDE``` Don't cache the Group's content whatever the strategy defines for this group.
-- ```GROUPCACHEBEHAVIOR_CACHEINPARENTGROUP``` Cache the group's content in the first parent group that is cached.
+- `GROUPCACHEBEHAVIOR_FOLLOWCACHESTRATEGY` Follow the strategy defined at the Canvas level, this is the default value.
+- `GROUPCACHEBEHAVIOR_DONTCACHEOVERRIDE` Don't cache the Group's content whatever the strategy defines for this group.
+- `GROUPCACHEBEHAVIOR_CACHEINPARENTGROUP` Cache the group's content in the first parent group that is cached.
 
 ## Architecture
 
