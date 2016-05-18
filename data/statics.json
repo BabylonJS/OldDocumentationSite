@@ -793,10 +793,6 @@
         {
           "title": "Playing sounds and music",
           "filename": "Playing_sounds_and_music"
-        },        
-		{
-          "title": "Canvas 2D overview and architecture",
-          "filename": "Using_The_Canvas2D"
         }
       ]
     },
@@ -821,6 +817,10 @@
         {
           "title": "Home",
           "filename": "Canvas2D_Home"
+        },        
+		{
+          "title": "Canvas 2D overview and architecture",
+          "filename": "Canvas2D_Overview_Architecture"
         }
       ]
     }
