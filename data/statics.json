@@ -779,10 +779,6 @@
           "filename": "How_Rotations_and_Translations_Work"
         },
         {
-          "title": "Introduction to Physically Based Rendering",
-          "filename": "Physically_Based_Rendering"
-        },
-        {
           "title": "How to use the Solid Particle System",
           "filename": "Solid_Particle_System"
         },
@@ -793,19 +789,19 @@
         {
           "title": "Playing sounds and music",
           "filename": "Playing_sounds_and_music"
-        },        
-		{
-          "title": "Canvas 2D overview and architecture",
-          "filename": "Using_The_Canvas2D"
         }
       ]
     },
     {
-      "title": "Advanced",
-      "name": "Advanced",
+      "title": "PBR",
+      "name": "PBR",
       "img": "img/tutorials/All.png",
-      "desc": "In deep features exploration",
+      "desc": "All about the Physically Based Rendering material",
       "files": [
+        {
+          "title": "Introduction to Physically Based Rendering",
+          "filename": "Physically_Based_Rendering"
+        },
         {
           "title": "Master the Physically Based Rendering",
           "filename": "Physically_Based_Rendering_Master"
@@ -821,6 +817,10 @@
         {
           "title": "Home",
           "filename": "Canvas2D_Home"
+        },
+        {
+           "title": "Canvas 2D overview and architecture",
+           "filename": "Canvas2D_Overview_Architecture"
         }
       ]
     }
