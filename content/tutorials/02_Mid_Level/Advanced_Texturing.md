@@ -59,6 +59,8 @@ That’s it! The bump texture disturbs/perturbs the normal to produce a result l
 
 _Resulting gorgeous bumpy sphere_
 
+Please note that by default, normal maps are considered to be following DirectX format. If you want to provide OpenGL normal maps, you can just set ```material.useOpenGLNormalMap = true```.
+
 * **Video**
 
 If you want to display a video in your scene, the Babylon engine has a special texture for that. This special texture works similar to other textures, with the exception of a few parameters. These parameters include video urls (an url array), the size of the video texture (here is 256), the scene, and a final optional boolean that indicates if you want to use [mipmap](http://en.wikipedia.org/wiki/Mipmap) or not.
