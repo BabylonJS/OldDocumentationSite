@@ -811,6 +811,18 @@
           "filename": "Physically_Based_Rendering_Master"
         }
       ]
+    },
+    {
+      "title": "Canvas2D",
+      "name": "Canvas2D",
+      "img": "img/tutorials/All.png",
+      "desc": "All about the Canvas2D feature",
+      "files": [
+        {
+          "title": "Home",
+          "filename": "Canvas2D_Home"
+        }
+      ]
     }
   ],
   "generals": [
