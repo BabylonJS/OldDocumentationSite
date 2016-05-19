@@ -29,8 +29,16 @@ typeManager.setTypeManager = function (typeManager) {
  * @param alreadyType boolean telling if the ast is already a type or an ast object
  */
 typeManager.setAstType = function (ast, alreadyType) {
-    if(!alreadyType) var astType = ast.typeAnnotation.type;
-    else var astType = ast;
+    
+    if (!ast.typeAnnotation) {
+        var astType = ast;
+    } else if(!alreadyType){ 
+        var astType = ast.typeAnnotation.type;
+    }
+    else { 
+        this.setTypeManager(plainTypes);
+        return;
+    }
 
     console.log('My kind is', TypeScript.SyntaxKind[astType.kind()]);
 
