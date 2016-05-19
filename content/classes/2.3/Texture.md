@@ -19,7 +19,7 @@ class [Texture](/classes/2.3/Texture) extends [BaseTexture](/classes/2.3/BaseTex
 Create a new [Texture](/classes/2.3/Texture).
 You can apply a texture on every material, by giving an image path.
 Don't forgot to check the right path of your image (relative or absolute path). About image format support, it can be JPG, PNG, JPEG, BMP, (every image format available on your browser)
-A tutorial about materials and texture can be found here : http://doc.babylonjs.com/tutorials/04._Materials
+A tutorial about materials and texture can be found here : http://doc.babylonjs.com/tutorials/Materials
 
 #### Parameters
  | Name | Type | Description

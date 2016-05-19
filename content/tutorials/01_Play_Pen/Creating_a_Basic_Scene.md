@@ -256,4 +256,4 @@ Try to memorize this web page layout, and see how the createScene function is at
 
 Now you are ready to go further and learn how to create more elements like spheres, cylinders, boxes, etc.
 
-Next in the Playpen Series - [**02-Basic elements**](http://doc.babylonjs.com/page.php?p=22011)
+Next in the Playpen Series - [**Basic elements**](http://doc.babylonjs.com/tutorials/Discover_Basic_Elements)

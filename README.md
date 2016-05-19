@@ -28,7 +28,7 @@ If you want to edit some styles or see your changes without repeating ```grunt b
 ```grunt serve``` features:
  * Opens automatically the browser at ```localhost:3000```
  * Watcher on markdown
- * Recompile everything on detected change
+ * Recompile everything on detected change 
 
  
 ## How to contribute?
@@ -36,10 +36,12 @@ If you want to edit some styles or see your changes without repeating ```grunt b
 ### Update content
 If you want to add/update a tutorial, an extension or a class, you have to follow these steps:
 
-1. Head to content folder. All markdowns files are located in this folder.
-2. Edit markdown according to your need
-3. Use ```grunt build```
-4. Pull request :)
+0. Fork the repo with the corresponding icon on Github.
+1. Clone the forked repo on your computer.
+2. Head to content folder. All markdowns files are located in this folder.
+3. Edit markdown according to your need
+4. Use ```grunt build```
+5. Pull request :)
 
 NB: Sections like:
 
@@ -141,7 +143,7 @@ Also, the TOC is automatically nested. It means that if you write something like
     ## Secondary title 2
     <insert content here>
     ## Secondary title 3
-    <insert content here>
+    <insert content here> 
 
 You will get the following TOC:
 

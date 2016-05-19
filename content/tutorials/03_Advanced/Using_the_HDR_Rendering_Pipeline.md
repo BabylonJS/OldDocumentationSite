@@ -2,9 +2,9 @@
 ID_PAGE: 25362
 PG_TITLE: Using the HDR Rendering Pipeline
 ---
-The HDR Rendering pipeline is a set of multiple post-processes. It tends to simulate the eye adaptation to the light and darkness and also simulate the most realistic glare.
+The HDR Rendering pipeline is a set of multiple post-processes. It tends to simulate the eye adaptation to light and dark, and also simulates the most realistic glare.
 
-The train demo (focus on the tunnel) : http://reath.free.fr/HDR/test.html
+The train demo (focus on exiting the tunnel) : http://reath.free.fr/HDR/test.html
 
 ## Instancing the pipeline ##
 
@@ -31,7 +31,7 @@ The Gaussian Blur equation used:
 
 ```hdr.gaussCoeff``` controls the overall effect: ```hdr.gaussCoeff * theEffect```. Default 0.3
  
-```hdr.gaussMean``` is used to ajust the ```x``` value:  ```x - hdr.gaussMean```. Default 1.0
+```hdr.gaussMean``` is used to adjust the ```x``` value:  ```x - hdr.gaussMean```. Default 1.0
 
 ```hdr.gaussStandDev``` controls the gaussian blur standard deviation (sigma). Default 0.8
 
@@ -45,7 +45,7 @@ The bright pass is rendered before the gaussian blur pass. It is used to compute
 
 ### HDR ###
 
-```hdr.exposure``` is used to ajust the colors. High exposures are used to see details in darkness and low exposures in bright areas. Default value is 1.0
+```hdr.exposure``` is used to adjust the colors. High exposures are used to see details in darkness and low exposures in bright areas. Default value is 1.0
 
 ```hdr.minimumLuminance``` is the minimum luminance that the post-process can output. Luminance is >= 0. Default value is 1.0.
 
@@ -55,7 +55,7 @@ The bright pass is rendered before the gaussian blur pass. It is used to compute
 
 ```hdr.luminanceDecreaseRate``` controls the eye adaptation speed to the light Default value is 0.5.
 
-## Example of configuration to get focus on the effect ##
+## Example activation of the HDR effect ##
 
 ```javascript
 var hdr = new BABYLON.HDRRenderingPipeline("hdr", scene, 1.0, [scene.activeCamera]);
