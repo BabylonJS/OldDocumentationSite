@@ -1174,7 +1174,7 @@ declare module BABYLON {
         _getProperty(propertyPath: string): string;
         _getEffectiveTarget(target: any, propertyPath: string): any;
         serialize(parent: any): any;
-        protected _serialize(serializedAction: any, parent?: any): any;
+        _serialize(serializedAction: any, parent?: any): any;
         static _SerializeValueAsString: (value: any) => string;
         static _GetTargetProperty: (target: Scene ) => {
             name: string;
@@ -1320,7 +1320,7 @@ declare module BABYLON {
         _getProperty(propertyPath: string): string;
         _getEffectiveTarget(target: any, propertyPath: string): any;
         serialize(): any;
-        protected _serialize(serializedCondition: any): any;
+        _serialize(serializedCondition: any): any;
     }
     class ValueCondition extends Condition {
         propertyPath: string;
@@ -2484,7 +2484,7 @@ declare module BABYLON {
         /**
          * Protected handler that will be called when the instance is about to be locked.
          */
-        protected onLock(): void;
+        onLock(): void;
     }
     /**
      * This class implements a Brush that will be drawn with a uniform solid color (i.e. the same color everywhere in the content where the brush is assigned to).
@@ -2578,7 +2578,7 @@ declare module BABYLON {
          * @param cachingStrategy Must be CACHESTRATEGY_CANVAS for now
          */
         static CreateWorldSpace(scene: Scene, name: string, position: Vector3, rotation: Quaternion, size: Size, renderScaleFactor?: number, sideOrientation?: number, cachingStrategy?: number, enableInteraction?: boolean): Canvas2D;
-        protected setupCanvas(scene: Scene, name: string, size: Size, isScreenSpace: boolean, cachingstrategy: number, enableInteraction: boolean): void;
+        setupCanvas(scene: Scene, name: string, size: Size, isScreenSpace: boolean, cachingstrategy: number, enableInteraction: boolean): void;
         private _setupInteraction(enable);
         /**
          * Internal method, you should use the Prim2DBase version instead
@@ -2763,12 +2763,12 @@ declare module BABYLON {
         constructor();
         static CreateGroup2D(parent: Prim2DBase, id: string, position: Vector2, size?: Size, cacheBehabior?: number): Group2D;
         static _createCachedCanvasGroup(owner: Canvas2D): Group2D;
-        protected applyCachedTexture(vertexData: VertexData, material: StandardMaterial): void;
+        applyCachedTexture(vertexData: VertexData, material: StandardMaterial): void;
         /**
          * Call this method to remove this Group and its children from the Canvas
          */
         dispose(): boolean;
-        protected setupGroup2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, size?: Size, cacheBehavior?: number): void;
+        setupGroup2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, size?: Size, cacheBehavior?: number): void;
         /**
          * @returns Returns true if the Group render content, false if it's a logical group only
          */
@@ -2791,18 +2791,18 @@ declare module BABYLON {
         cacheBehavior: number;
         _addPrimToDirtyList(prim: Prim2DBase): void;
         _renderCachedCanvas(context: Render2DContext): void;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
-        protected updateLevelBoundingInfo(): void;
-        protected _prepareGroupRender(context: Render2DContext): void;
-        protected _groupRender(context: Render2DContext): void;
+        levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        updateLevelBoundingInfo(): void;
+        _prepareGroupRender(context: Render2DContext): void;
+        _groupRender(context: Render2DContext): void;
         private _bindCacheTarget();
         private _unbindCacheTarget();
-        protected handleGroupChanged(prop: Prim2DPropInfo): void;
+        handleGroupChanged(prop: Prim2DPropInfo): void;
         private detectGroupStates();
-        protected _isRenderableGroup: boolean;
-        protected _isCachedGroup: boolean;
+        _isRenderableGroup: boolean;
+        _isCachedGroup: boolean;
         private _cacheGroupDirty;
-        protected _childrenRenderableGroups: Array<Group2D>;
+        _childrenRenderableGroups: Array<Group2D>;
         private _size;
         private _actualSize;
         private _cacheBehavior;
@@ -2854,13 +2854,13 @@ declare module BABYLON {
         render(instanceInfo: GroupInstanceInfo, context: Render2DContext): boolean;
         addInstanceDataParts(data: InstanceDataBase[]): string;
         removeInstanceData(key: string): void;
-        protected getPartIndexFromId(partId: number): number;
-        protected loadInstancingAttributes(partId: number, effect: Effect): InstancingAttributeInfo[];
+        getPartIndexFromId(partId: number): number;
+        loadInstancingAttributes(partId: number, effect: Effect): InstancingAttributeInfo[];
         private static v2;
         private static v3;
         private static v4;
-        protected setupUniforms(effect: Effect, partIndex: number, data: DynamicFloatArray, elementCount: number): void;
-        protected _engine: Engine;
+        setupUniforms(effect: Effect, partIndex: number, data: DynamicFloatArray, elementCount: number): void;
+        _engine: Engine;
         private _modelKey;
         private _isTransparent;
         isTransparent: boolean;
@@ -3057,7 +3057,7 @@ declare module BABYLON {
     }
     class Prim2DBase extends SmartPropertyPrim {
         static PRIM2DBASE_PROPCOUNT: number;
-        protected setupPrim2DBase(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, isVisible?: boolean): void;
+        setupPrim2DBase(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, isVisible?: boolean): void;
         /**
          * From 'this' primitive, traverse up (from parent to parent) until the given predicate is true
          * @param predicate the predicate to test on each parent
@@ -3144,7 +3144,7 @@ declare module BABYLON {
          * Interaction with the primitive can be create using this Observable. See the PrimitivePointerInfo class for more information
          */
         pointerEventObservable: Observable<PrimitivePointerInfo>;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        levelIntersect(intersectInfo: IntersectInfo2D): boolean;
         /**
          * Capture all the Events of the given PointerId for this primitive.
          * Don't forget to call releasePointerEventsCapture when done.
@@ -3165,28 +3165,28 @@ declare module BABYLON {
         private addChild(child);
         dispose(): boolean;
         getActualZOffset(): number;
-        protected onPrimBecomesDirty(): void;
+        onPrimBecomesDirty(): void;
         _needPrepare(): boolean;
         _prepareRender(context: Render2DContext): void;
         _prepareRenderPre(context: Render2DContext): void;
         _prepareRenderPost(context: Render2DContext): void;
-        protected static CheckParent(parent: Prim2DBase): void;
-        protected updateGlobalTransVisOf(list: Prim2DBase[], recurse: boolean): void;
+        static CheckParent(parent: Prim2DBase): void;
+        updateGlobalTransVisOf(list: Prim2DBase[], recurse: boolean): void;
         private _updateLocalTransform();
-        protected updateGlobalTransVis(recurse: boolean): void;
+        updateGlobalTransVis(recurse: boolean): void;
         private _owner;
         private _parent;
-        protected _children: Array<Prim2DBase>;
+        _children: Array<Prim2DBase>;
         private _renderGroup;
         private _hierarchyDepth;
-        protected _depthLevel: number;
+        _depthLevel: number;
         private _hierarchyDepthOffset;
         private _siblingDepthOffset;
         private _zOrder;
         private _levelVisible;
         _pointerEventObservable: Observable<PrimitivePointerInfo>;
         _boundingInfoDirty: boolean;
-        protected _visibilityChanged: any;
+        _visibilityChanged: any;
         private _isPickable;
         private _isVisible;
         private _id;
@@ -3194,12 +3194,12 @@ declare module BABYLON {
         private _rotation;
         private _scale;
         private _origin;
-        protected _parentTransformStep: number;
-        protected _globalTransformStep: number;
-        protected _globalTransformProcessStep: number;
-        protected _localTransform: Matrix;
-        protected _globalTransform: Matrix;
-        protected _invGlobalTransform: Matrix;
+        _parentTransformStep: number;
+        _globalTransformStep: number;
+        _globalTransformProcessStep: number;
+        _localTransform: Matrix;
+        _globalTransform: Matrix;
+        _invGlobalTransform: Matrix;
     }
 }
 
@@ -3231,16 +3231,16 @@ declare module BABYLON {
         size: Size;
         notRounded: boolean;
         roundRadius: number;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
-        protected updateLevelBoundingInfo(): void;
-        protected setupRectangle2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, size: Size, roundRadius?: number, fill?: IBrush2D, border?: IBrush2D, borderThickness?: number): void;
+        levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        updateLevelBoundingInfo(): void;
+        setupRectangle2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, size: Size, roundRadius?: number, fill?: IBrush2D, border?: IBrush2D, borderThickness?: number): void;
         static Create(parent: Prim2DBase, id: string, x: number, y: number, width: number, height: number, fill?: IBrush2D, border?: IBrush2D): Rectangle2D;
         static CreateRounded(parent: Prim2DBase, id: string, x: number, y: number, width: number, height: number, roundRadius?: number, fill?: IBrush2D, border?: IBrush2D): Rectangle2D;
         static roundSubdivisions: number;
-        protected createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Rectangle2DRenderCache;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
+        setupModelRenderCache(modelRenderCache: ModelRenderCache): Rectangle2DRenderCache;
+        createInstanceDataParts(): InstanceDataBase[];
+        refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _size;
         private _notRounded;
         private _roundRadius;
@@ -3296,30 +3296,30 @@ declare module BABYLON {
         setupRenderablePrim2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, isVisible: boolean): void;
         dispose(): boolean;
         _prepareRenderPre(context: Render2DContext): void;
-        protected getDataPartEffectInfo(dataPartId: number, vertexBufferAttributes: string[]): {
+        getDataPartEffectInfo(dataPartId: number, vertexBufferAttributes: string[]): {
             attributes: string[];
             uniforms: string[];
             defines: string;
         };
-        protected modelRenderCache: ModelRenderCache;
-        protected createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): void;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected getUsedShaderCategories(dataPart: InstanceDataBase): string[];
-        protected beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
-        protected afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        modelRenderCache: ModelRenderCache;
+        createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
+        setupModelRenderCache(modelRenderCache: ModelRenderCache): void;
+        createInstanceDataParts(): InstanceDataBase[];
+        getUsedShaderCategories(dataPart: InstanceDataBase): string[];
+        beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
+        afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
+        refreshInstanceDataPart(part: InstanceDataBase): boolean;
         /**
          * Update the instanceDataBase level properties of a part
          * @param part the part to update
          * @param positionOffset to use in multi part per primitive (e.g. the Text2D has N parts for N letter to display), this give the offset to apply (e.g. the position of the letter from the bottom/left corner of the text). You MUST also set customSize.
          * @param customSize to use in multi part per primitive, this is the size of the overall primitive to display (the bounding rect's size of the Text, for instance). This is mandatory to compute correct transformation based on the Primitive's origin property.
          */
-        protected updateInstanceDataPart(part: InstanceDataBase, positionOffset?: Vector2, customSize?: Size): void;
+        updateInstanceDataPart(part: InstanceDataBase, positionOffset?: Vector2, customSize?: Size): void;
         private _modelRenderCache;
         private _modelRenderInstanceID;
-        protected _instanceDataParts: InstanceDataBase[];
-        protected _isTransparent: boolean;
+        _instanceDataParts: InstanceDataBase[];
+        _isTransparent: boolean;
     }
 }
 
@@ -3340,8 +3340,8 @@ declare module BABYLON {
         fill: IBrush2D;
         borderThickness: number;
         setupShape2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, isVisible: boolean, fill: IBrush2D, border: IBrush2D, borderThickness?: number): void;
-        protected getUsedShaderCategories(dataPart: InstanceDataBase): string[];
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        getUsedShaderCategories(dataPart: InstanceDataBase): string[];
+        refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _updateTransparencyStatus();
         private _border;
         private _borderThickness;
@@ -3401,7 +3401,7 @@ declare module BABYLON {
         private _classContentFactory;
     }
     class SmartPropertyPrim implements IPropertyChanged {
-        protected setupSmartPropertyPrim(): void;
+        setupSmartPropertyPrim(): void;
         propertyChanged: Observable<PropertyChangedInfo>;
         isDisposed: boolean;
         dispose(): boolean;
@@ -3412,22 +3412,22 @@ declare module BABYLON {
         private static _checkUnchanged(curValue, newValue);
         private static propChangedInfo;
         private _handlePropChanged<T>(curValue, newValue, propName, propInfo, typeLevelCompare);
-        protected handleGroupChanged(prop: Prim2DPropInfo): void;
+        handleGroupChanged(prop: Prim2DPropInfo): void;
         checkPropertiesDirty(flags: number): boolean;
-        protected clearPropertiesDirty(flags: number): number;
+        clearPropertiesDirty(flags: number): number;
         levelBoundingInfo: BoundingInfo2D;
-        protected updateLevelBoundingInfo(): void;
-        protected onPrimBecomesDirty(): void;
+        updateLevelBoundingInfo(): void;
+        onPrimBecomesDirty(): void;
         static _hookProperty<T>(propId: number, piStore: (pi: Prim2DPropInfo) => void, typeLevelCompare: boolean, dirtyBoundingInfo: boolean, kind: number): (target: Object, propName: string | symbol, descriptor: TypedPropertyDescriptor<T>) => void;
         private _modelKey;
         string: any;
         private _propInfo;
         private _levelBoundingInfoDirty;
         private _isDisposed;
-        protected _levelBoundingInfo: BoundingInfo2D;
-        protected _boundingInfo: BoundingInfo2D;
-        protected _modelDirty: boolean;
-        protected _instanceDirtyFlags: number;
+        _levelBoundingInfo: BoundingInfo2D;
+        _boundingInfo: BoundingInfo2D;
+        _modelDirty: boolean;
+        _instanceDirtyFlags: number;
     }
     function modelLevelProperty<T>(propId: number, piStore: (pi: Prim2DPropInfo) => void, typeLevelCompare?: boolean, dirtyBoundingInfo?: boolean): (target: Object, propName: string | symbol, descriptor: TypedPropertyDescriptor<T>) => void;
     function instanceLevelProperty<T>(propId: number, piStore: (pi: Prim2DPropInfo) => void, typeLevelCompare?: boolean, dirtyBoundingInfo?: boolean): (target: Object, propName: string | symbol, descriptor: TypedPropertyDescriptor<T>) => void;
@@ -3465,14 +3465,14 @@ declare module BABYLON {
         spriteLocation: Vector2;
         spriteFrame: number;
         invertY: boolean;
-        protected updateLevelBoundingInfo(): void;
-        protected setupSprite2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, texture: Texture, spriteSize: Size, spriteLocation: Vector2, invertY: boolean): void;
+        updateLevelBoundingInfo(): void;
+        setupSprite2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, texture: Texture, spriteSize: Size, spriteLocation: Vector2, invertY: boolean): void;
         static Create(parent: Prim2DBase, id: string, x: number, y: number, texture: Texture, spriteSize: Size, spriteLocation: Vector2, invertY?: boolean): Sprite2D;
         static _createCachedCanvasSprite(owner: Canvas2D, texture: MapTexture, size: Size, pos: Vector2): Sprite2D;
-        protected createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Sprite2DRenderCache;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
+        setupModelRenderCache(modelRenderCache: ModelRenderCache): Sprite2DRenderCache;
+        createInstanceDataParts(): InstanceDataBase[];
+        refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _texture;
         private _size;
         private _location;
@@ -3519,17 +3519,17 @@ declare module BABYLON {
         vAlign: number;
         hAlign: number;
         actualSize: Size;
-        protected fontTexture: FontTexture;
+        fontTexture: FontTexture;
         dispose(): boolean;
-        protected updateLevelBoundingInfo(): void;
-        protected setupText2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, fontName: string, text: string, areaSize: Size, defaultFontColor: Color4, vAlign: any, hAlign: any, tabulationSize: number): void;
+        updateLevelBoundingInfo(): void;
+        setupText2D(owner: Canvas2D, parent: Prim2DBase, id: string, position: Vector2, fontName: string, text: string, areaSize: Size, defaultFontColor: Color4, vAlign: any, hAlign: any, tabulationSize: number): void;
         static Create(parent: Prim2DBase, id: string, x: number, y: number, fontName: string, text: string, defaultFontColor?: Color4, areaSize?: Size, vAlign?: number, hAlign?: number, tabulationSize?: number): Text2D;
-        protected createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Text2DRenderCache;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
-        protected afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        createModelRenderCache(modelKey: string, isTransparent: boolean): ModelRenderCache;
+        setupModelRenderCache(modelRenderCache: ModelRenderCache): Text2DRenderCache;
+        createInstanceDataParts(): InstanceDataBase[];
+        beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
+        afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
+        refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _updateCharCount();
         private _fontTexture;
         private _tabulationSize;
@@ -5860,7 +5860,7 @@ declare module BABYLON {
             _regenerateVertexData(): VertexData;
             copy(id: string): Geometry;
             serialize(): any;
-            static Parse(parsedSphere: any, scene: Scene): Geometry.Primitives.Sphere;
+            static Parse(parsedSphere: any, scene: Scene): Sphere;
         }
         class Disc extends _Primitive {
             radius: number;
@@ -5881,7 +5881,7 @@ declare module BABYLON {
             _regenerateVertexData(): VertexData;
             copy(id: string): Geometry;
             serialize(): any;
-            static Parse(parsedCylinder: any, scene: Scene): Geometry.Primitives.Cylinder;
+            static Parse(parsedCylinder: any, scene: Scene): Cylinder;
         }
         class Torus extends _Primitive {
             diameter: number;
@@ -5892,7 +5892,7 @@ declare module BABYLON {
             _regenerateVertexData(): VertexData;
             copy(id: string): Geometry;
             serialize(): any;
-            static Parse(parsedTorus: any, scene: Scene): Geometry.Primitives.Torus;
+            static Parse(parsedTorus: any, scene: Scene): Torus;
         }
         class Ground extends _Primitive {
             width: number;
@@ -5902,7 +5902,7 @@ declare module BABYLON {
             _regenerateVertexData(): VertexData;
             copy(id: string): Geometry;
             serialize(): any;
-            static Parse(parsedGround: any, scene: Scene): Geometry.Primitives.Ground;
+            static Parse(parsedGround: any, scene: Scene): Ground;
         }
         class TiledGround extends _Primitive {
             xmin: number;
@@ -5934,7 +5934,7 @@ declare module BABYLON {
             _regenerateVertexData(): VertexData;
             copy(id: string): Geometry;
             serialize(): any;
-            static Parse(parsedPlane: any, scene: Scene): Geometry.Primitives.Plane;
+            static Parse(parsedPlane: any, scene: Scene): Plane;
         }
         class TorusKnot extends _Primitive {
             radius: number;
@@ -5948,7 +5948,7 @@ declare module BABYLON {
             _regenerateVertexData(): VertexData;
             copy(id: string): Geometry;
             serialize(): any;
-            static Parse(parsedTorusKnot: any, scene: Scene): Geometry.Primitives.TorusKnot;
+            static Parse(parsedTorusKnot: any, scene: Scene): TorusKnot;
         }
     }
 }
@@ -8473,7 +8473,7 @@ declare module BABYLON {
         type: number;
         jointData: PhysicsJointData;
         private _physicsJoint;
-        protected _physicsPlugin: IPhysicsEnginePlugin;
+        _physicsPlugin: IPhysicsEnginePlugin;
         constructor(type: number, jointData: PhysicsJointData);
         physicsJoint: any;
         physicsPlugin: IPhysicsEnginePlugin;
@@ -9911,23 +9911,23 @@ declare module BABYLON {
          * Call this method when you no longer need the rectangle to be in the map.
          */
         freeContent(): void;
-        protected isUsed: boolean;
-        protected findAndSplitNode(contentSize: Size): PackedRect;
+        isUsed: boolean;
+        findAndSplitNode(contentSize: Size): PackedRect;
         private findNode(size);
         private splitNode(contentSize);
         private attemptDefrag();
         private clearNode();
         private isRecursiveFree;
-        protected evalFreeSize(size: number): number;
-        protected _root: PackedRect;
-        protected _parent: PackedRect;
+        evalFreeSize(size: number): number;
+        _root: PackedRect;
+        _parent: PackedRect;
         private _contentSize;
         private _initialSize;
         private _leftNode;
         private _rightNode;
         private _bottomNode;
         private _pos;
-        protected _size: Size;
+        _size: Size;
     }
     /**
      * The purpose of this class is to pack several Rectangles into a big map, while trying to fit everything as optimally as possible.
