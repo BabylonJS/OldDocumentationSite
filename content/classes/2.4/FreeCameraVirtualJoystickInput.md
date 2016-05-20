@@ -15,34 +15,36 @@ class [FreeCameraVirtualJoystickInput](/classes/2.4/FreeCameraVirtualJoystickInp
 
 ## Methods
 
-### getLeftJoystickundefined &rarr; [VirtualJoystick](/classes/2.4/VirtualJoystick)
+### getLeftJoystick() &rarr; [VirtualJoystick](/classes/2.4/VirtualJoystick)
 
 
-### getRightJoystickundefined &rarr; [VirtualJoystick](/classes/2.4/VirtualJoystick)
+### getRightJoystick() &rarr; [VirtualJoystick](/classes/2.4/VirtualJoystick)
 
 
-### checkInputsundefined &rarr; void
+### checkInputs() &rarr; void
 
 
-### attachControlundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### detachControlundefined &rarr; void
+### attachControl(element, noPreventDefault) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTypeNameundefined &rarr; string
+ | element | HTMLElement | 
+optional | noPreventDefault | boolean | 
+### detachControl(element) &rarr; void
 
 
-### getSimpleNameundefined &rarr; string
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | element | HTMLElement | 
+
+### getTypeName() &rarr; string
+
+
+### getSimpleName() &rarr; string
 
 

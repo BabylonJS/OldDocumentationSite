@@ -21,6 +21,6 @@ This is the class that is used to display a World [Space](/classes/2.4/Space) Ca
  | canvas | [Canvas2D](/classes/2.4/Canvas2D) | 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 

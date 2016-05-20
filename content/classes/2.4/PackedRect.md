@@ -37,10 +37,32 @@ Compute the UV of the top/left, top/right, bottom/right, bottom/left points of t
 
 @returns And array of 4 [Vector2](/classes/2.4/Vector2), containing UV coordinates for the four corners of the Rectangle into the map
 
+### isUsed : boolean
+
+
+
 ## Methods
 
-### freeContentundefined &rarr; void
+### freeContent() &rarr; void
 
 Free this rectangle from the map.
 
 Call this method when you no longer need the rectangle to be in the map.
+### findAndSplitNode(contentSize) &rarr; [PackedRect](/classes/2.4/PackedRect)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | contentSize | [Size](/classes/2.4/Size) | 
+
+### evalFreeSize(size) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | size | number | 
+

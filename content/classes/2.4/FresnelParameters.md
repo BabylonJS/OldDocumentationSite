@@ -33,17 +33,18 @@ Bias of the Fresnel parameters
 
 ## Methods
 
-### cloneundefined &rarr; [FresnelParameters](/classes/2.4/FresnelParameters)
+### clone() &rarr; [FresnelParameters](/classes/2.4/FresnelParameters)
 
 
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 
-### static Parseundefined &rarr; [FresnelParameters](/classes/2.4/FresnelParameters)
+### static Parse(parsedFresnelParameters) &rarr; [FresnelParameters](/classes/2.4/FresnelParameters)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parsedFresnelParameters | any |  
+

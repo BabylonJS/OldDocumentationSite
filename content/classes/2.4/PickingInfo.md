@@ -49,14 +49,15 @@ The faceId of the mesh
 
 ## Methods
 
-### getNormalundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getNormal(useWorldCoordinates, useVerticesNormals) &rarr; [Vector3](/classes/2.4/Vector3)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTextureCoordinatesundefined &rarr; [Vector2](/classes/2.4/Vector2)
+optional | useWorldCoordinates | boolean |    
+optional | useVerticesNormals | boolean |   
+### getTextureCoordinates() &rarr; [Vector2](/classes/2.4/Vector2)
 
 

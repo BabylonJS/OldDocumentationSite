@@ -54,48 +54,51 @@ The parent node of the node
 
 ## Methods
 
-### getSceneundefined &rarr; [Scene](/classes/2.4/Scene)
+### getScene() &rarr; [Scene](/classes/2.4/Scene)
 
+Get the scene linked to this node
+### getEngine() &rarr; [Engine](/classes/2.4/Engine)
 
-### getEngineundefined &rarr; [Engine](/classes/2.4/Engine)
+Get the engine linked to this node
+### getWorldMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
+Get the world matrix
+### updateCache(force) &rarr; void
 
-### getWorldMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### updateCacheundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### isSynchronizedWithParentundefined &rarr; boolean
-
-
-### isSynchronizedundefined &rarr; boolean
-
-
+Update the cache
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### hasNewParentundefined &rarr; boolean
+optional | force | boolean |    True to force the update
 
+### isSynchronizedWithParent() &rarr; boolean
 
+Return true if the node is synchronized with parent
+### isSynchronized(updateCache) &rarr; boolean
+
+Return true if the node is synchronized
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isReadyundefined &rarr; boolean
+optional | updateCache | boolean |    True to update the cache
+
+### hasNewParent(update) &rarr; boolean
+
+Return true if the node has new parent
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | update | boolean |    True to update the node
+
+### isReady() &rarr; boolean
 
 Is this node ready to be used/rendered
 
 @return {boolean} is it ready
-### isEnabledundefined &rarr; boolean
+### isEnabled() &rarr; boolean
 
 Is this node enabled.
 
@@ -104,7 +107,7 @@ If the node has a parent and is enabled, the parent will be inspected as well.
 @return {boolean} whether this node (and its parent) is enabled.
 
 @see setEnabled
-### setEnabledundefined &rarr; void
+### setEnabled(value) &rarr; void
 
 Set the enabled state of this node.
 
@@ -113,8 +116,9 @@ Set the enabled state of this node.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isDescendantOfundefined &rarr; boolean
+ | value | boolean |    True to set the node enable ; False otherwise
+
+### isDescendantOf(ancestor) &rarr; boolean
 
 Is this node a descendant of the given node.
 
@@ -125,8 +129,9 @@ The function will iterate up the hierarchy until the ancestor was found or no mo
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getDescendantsundefined &rarr; [Node](/classes/2.4/Node)[]
+ | ancestor | [Node](/classes/2.4/Node) |    The ancestor node to test
+
+### getDescendants(directDescendantsOnly, predicate) &rarr; [Node](/classes/2.4/Node)[]
 
 Will return all nodes that have this node as ascendant.
 
@@ -135,8 +140,9 @@ Will return all nodes that have this node as ascendant.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getChildrenundefined &rarr; [Node](/classes/2.4/Node)[]
+optional | directDescendantsOnly | boolean | 
+optional | predicate | (node: [Node](/classes/2.4/Node)) =&gt; boolean | : an optional predicate that will be called on every evaluated children, the predicate must return true for a given child to be part of the result, otherwise it will be ignored.
+### getChildren(predicate) &rarr; [Node](/classes/2.4/Node)[]
 
 @Deprecated, legacy support.
 
@@ -145,66 +151,77 @@ use getDecendants instead.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getChildMeshesundefined &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)[]
+optional | predicate | (node: [Node](/classes/2.4/Node)) =&gt; boolean | : an optional predicate that will be called on every evaluated children, the predicate must return true for a given child to be part of the result, otherwise it will be ignored.
+
+### getChildMeshes(directDecendantsOnly, predicate) &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)[]
 
 Get all child-meshes of this node.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimationByNameundefined &rarr; [Animation](/classes/2.4/Animation)
+optional | directDecendantsOnly | boolean | 
+optional | predicate | (node: [Node](/classes/2.4/Node)) =&gt; boolean | 
+### getAnimationByName(name) &rarr; [Animation](/classes/2.4/Animation)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### createAnimationRangeundefined &rarr; void
+ | name | string |    The node identifier
+
+### createAnimationRange(name, from, to) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### deleteAnimationRangeundefined &rarr; void
+ | name | string |    The node identifier
+ | from | number |  
+ | to | number |  
+### deleteAnimationRange(name, deleteFrames) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimationRangeundefined &rarr; [AnimationRange](/classes/2.4/AnimationRange)
+ | name | string |    The node identifier
+optional | deleteFrames | boolean |  
+### getAnimationRange(name) &rarr; [AnimationRange](/classes/2.4/AnimationRange)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### beginAnimationundefined &rarr; void
+ | name | string |    The node identifier
+
+### beginAnimation(name, loop, speedRatio, onAnimationEnd) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeAnimationRangesundefined &rarr; any
+ | name | string |    The node identifier
+optional | loop | boolean |  
+optional | speedRatio | number |  
+### serializeAnimationRanges() &rarr; any
 
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 
-### static ParseAnimationRangesundefined &rarr; void
+### static ParseAnimationRanges(node, parsedNode, scene) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | node | [Node](/classes/2.4/Node) |  
+ | parsedNode | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    The scene linked to this node.

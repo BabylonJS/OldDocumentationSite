@@ -42,49 +42,57 @@ Default value is true, you can set false if you don't want to see the loading sc
 
 ## Methods
 
-### addMeshTaskundefined &rarr; IAssetTask
+### addMeshTask(taskName, meshesNames, rootUrl, sceneFilename) &rarr; IAssetTask
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### addTextFileTaskundefined &rarr; IAssetTask
-
-
+Add and return the new [MeshAssetTask](/classes/2.4/MeshAssetTask)
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addBinaryFileTaskundefined &rarr; IAssetTask
+ | taskName | string |    The task name
+ | meshesNames | any |    The meshes name
+ | rootUrl | string |    The root url of this mesh
+### addTextFileTask(taskName, url) &rarr; IAssetTask
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### addImageTaskundefined &rarr; IAssetTask
-
-
+Add and return the new [TextFileAssetTask](/classes/2.4/TextFileAssetTask)
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addTextureTaskundefined &rarr; IAssetTask
+ | taskName | string |    The task name
+ | url | string |    The url of this texture
+### addBinaryFileTask(taskName, url) &rarr; IAssetTask
 
-
+Add and return the new [BinaryFileAssetTask](/classes/2.4/BinaryFileAssetTask)
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### resetundefined &rarr; [AssetsManager](/classes/2.4/AssetsManager)
+ | taskName | string |    The task name
+ | url | string |    The url of this texture
+### addImageTask(taskName, url) &rarr; IAssetTask
 
+Add and return the new [TextFileAssetTask](/classes/2.4/TextFileAssetTask)
 
-### loadundefined &rarr; [AssetsManager](/classes/2.4/AssetsManager)
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | taskName | string |    The task name
+ | url | string |    The url of this texture
+### addTextureTask(taskName, url, noMipmap, invertY, samplingMode) &rarr; IAssetTask
+
+Add and return the new [TextFileAssetTask](/classes/2.4/TextFileAssetTask)
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | taskName | string |    The task name
+ | url | string |    The url of this texture
+optional | noMipmap | boolean |    Set true if you want to activate Mipmap, false otherwise.
+optional | invertY | boolean |    Invert the y axis
+### reset() &rarr; [AssetsManager](/classes/2.4/AssetsManager)
+
+Reset all tasks
+### load() &rarr; [AssetsManager](/classes/2.4/AssetsManager)
 
 

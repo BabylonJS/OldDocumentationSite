@@ -34,42 +34,43 @@ class [Analyser](/classes/2.4/Analyser)
 
 
 
-### DEBUGCANVASPOS : { undefined: number,  undefined: number }
+### DEBUGCANVASPOS : { x: number,  y: number }
 
 
 
-### DEBUGCANVASSIZE : { undefined: number,  undefined: number }
+### DEBUGCANVASSIZE : { width: number,  height: number }
 
 
 
 ## Methods
 
-### getFrequencyBinCountundefined &rarr; number
+### getFrequencyBinCount() &rarr; number
 
 
-### getByteFrequencyDataundefined &rarr; Uint8Array
+### getByteFrequencyData() &rarr; Uint8Array
 
 
-### getByteTimeDomainDataundefined &rarr; Uint8Array
+### getByteTimeDomainData() &rarr; Uint8Array
 
 
-### getFloatFrequencyDataundefined &rarr; Uint8Array
+### getFloatFrequencyData() &rarr; Uint8Array
 
 
-### drawDebugCanvasundefined &rarr; void
+### drawDebugCanvas() &rarr; void
 
 
-### stopDebugCanvasundefined &rarr; void
+### stopDebugCanvas() &rarr; void
 
 
-### connectAudioNodesundefined &rarr; void
+### connectAudioNodes(inputAudioNode, outputAudioNode) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | inputAudioNode | AudioNode |    
+ | outputAudioNode | AudioNode |    
+### dispose() &rarr; void
 
 

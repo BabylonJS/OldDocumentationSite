@@ -232,69 +232,81 @@ Function to know if bump texture is enabled
 
 ## Methods
 
-### needAlphaBlendingundefined &rarr; boolean
+### needAlphaBlending() &rarr; boolean
 
+Function to know if standard material need alpha blending
+@return boolean True if standard material need alpha blending ; False if not
+### needAlphaTesting() &rarr; boolean
 
-### needAlphaTestingundefined &rarr; boolean
+Function to know if standard material need alpha testing
+@return boolean True if standard material need alpha testing ; False if not
+### getAlphaTestTexture() &rarr; [BaseTexture](/classes/2.4/BaseTexture)
 
+Function to get the alpha test texture
+@return [BaseTexture](/classes/2.4/BaseTexture) The alpha test texture
+### isReady(mesh, useInstances) &rarr; boolean
 
-### getAlphaTestTextureundefined &rarr; [BaseTexture](/classes/2.4/BaseTexture)
+Function to know if standard material is ready
+@return boolean True if is ready ; False if not
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    
+optional | useInstances | boolean |    True to use instances
+### unbind() &rarr; void
 
-### isReadyundefined &rarr; boolean
+Unbind the standard material
+### bindOnlyWorldMatrix(world) &rarr; void
+
+Bind only the world matrix
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | world | [Matrix](/classes/2.4/Matrix) |    
+
+### bind(world, mesh) &rarr; void
+
+Bind the standard material
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | world | [Matrix](/classes/2.4/Matrix) |    
+optional | mesh | [Mesh](/classes/2.4/Mesh) |    
+### getAnimatables() &rarr; IAnimatable[]
+
+Get the animatables
+@reutnr IAnimatables List of animatables
+### dispose(forceDisposeEffect, forceDisposeTextures) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unbindundefined &rarr; void
-
-
-### bindOnlyWorldMatrixundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### bindundefined &rarr; void
+optional | forceDisposeEffect | boolean |    True to force the destroy
+optional | forceDisposeTextures | boolean | 
+### clone(name) &rarr; [StandardMaterial](/classes/2.4/StandardMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimatablesundefined &rarr; IAnimatable[]
+ | name | string |    
+
+### serialize() &rarr; any
 
 
-### disposeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### cloneundefined &rarr; [StandardMaterial](/classes/2.4/StandardMaterial)
+### static Parse(source, scene, rootUrl) &rarr; [StandardMaterial](/classes/2.4/StandardMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
-
-
-### static Parseundefined &rarr; [StandardMaterial](/classes/2.4/StandardMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | source | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    
+ | rootUrl | string |  

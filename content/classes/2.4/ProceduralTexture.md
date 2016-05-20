@@ -48,109 +48,120 @@ optional | generateMipMaps | boolean |
 
 ## Methods
 
-### resetundefined &rarr; void
+### reset() &rarr; void
 
 
-### isReadyundefined &rarr; boolean
+### isReady() &rarr; boolean
 
 
-### resetRefreshCounterundefined &rarr; void
+### resetRefreshCounter() &rarr; void
 
 
-### setFragmentundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getRenderSizeundefined &rarr; number
-
-
-### resizeundefined &rarr; void
+### setFragment(fragment) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setTextureundefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | fragment | any |    
+
+### getRenderSize() &rarr; number
+
+
+### resize(size, generateMipMaps) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setFloatundefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | size | any |    
+ | generateMipMaps | any |    
+### setTexture(name, texture) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setFloatsundefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | name | string |    
+ | texture | [Texture](/classes/2.4/Texture) |    
+### setFloat(name, value) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setColor3undefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | name | string |    
+ | value | number |    
+### setFloats(name, value) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setColor4undefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | name | string |    
+ | value | number[] |    
+### setColor3(name, value) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setVector2undefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | name | string |    
+ | value | [Color3](/classes/2.4/Color3) |    
+### setColor4(name, value) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setVector3undefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | name | string |    
+ | value | [Color4](/classes/2.4/Color4) |    
+### setVector2(name, value) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setMatrixundefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | name | string |    
+ | value | [Vector2](/classes/2.4/Vector2) |    
+### setVector3(name, value) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### renderundefined &rarr; void
+ | name | string |    
+ | value | [Vector3](/classes/2.4/Vector3) |    
+### setMatrix(name, value) &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### cloneundefined &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+ | name | string |    
+ | value | [Matrix](/classes/2.4/Matrix) |    
+### render(useCameraPostProcess) &rarr; void
 
 
-### disposeundefined &rarr; void
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | useCameraPostProcess | boolean |    
+
+### clone() &rarr; [ProceduralTexture](/classes/2.4/ProceduralTexture)
+
+
+### dispose() &rarr; void
 
 

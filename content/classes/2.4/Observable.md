@@ -17,44 +17,49 @@ A given observer can register itself with only Move and Stop (mask = 0x03), then
 
 ## Methods
 
-### addundefined &rarr; [Observer](/classes/2.4/Observer)&lt;T&gt;
+### add(callback, mask, insertFirst) &rarr; [Observer](/classes/2.4/Observer)&lt;T&gt;
 
 Create a new [Observer](/classes/2.4/Observer) with the specified callback
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeundefined &rarr; boolean
+ | callback | (eventData: T, eventState: [EventState](/classes/2.4/EventState)) =&gt; void |  the callback that will be executed for that [Observer](/classes/2.4/Observer)
+optional | mask | number |  the mask used to filter observers
+optional | insertFirst | boolean |  if true the callback will be inserted at the first position, hence executed before the others ones. If false (default behavior) the callback will be inserted at the last position, executed after all the others already present.
+### remove(observer) &rarr; boolean
 
 Remove an [Observer](/classes/2.4/Observer) from the [Observable](/classes/2.4/Observable) object
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeCallbackundefined &rarr; boolean
+ | observer | [Observer](/classes/2.4/Observer)&lt;T&gt; |  the instance of the [Observer](/classes/2.4/Observer) to remove. If it doesn't belong to this [Observable](/classes/2.4/Observable), false will be returned.
+
+### removeCallback(callback) &rarr; boolean
 
 Remove a callback from the [Observable](/classes/2.4/Observable) object
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### notifyObserversundefined &rarr; void
+ | callback | (eventData: T, eventState: [EventState](/classes/2.4/EventState)) =&gt; void |  the callback to remove. If it doesn't belong to this [Observable](/classes/2.4/Observable), false will be returned.
+
+### notifyObservers(eventData, mask) &rarr; void
 
 Notify all Observers by calling their respective callback with the given data
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### hasObserversundefined &rarr; boolean
+ | eventData | T | 
+optional | mask | number | 
+### hasObservers() &rarr; boolean
 
 return true is the [Observable](/classes/2.4/Observable) has at least one [Observer](/classes/2.4/Observer) registered
-### clearundefined &rarr; void
+### clear() &rarr; void
 
 Clear the list of observers
-### cloneundefined &rarr; [Observable](/classes/2.4/Observable)&lt;T&gt;
+### clone() &rarr; [Observable](/classes/2.4/Observable)&lt;T&gt;
 
 Clone the current observable

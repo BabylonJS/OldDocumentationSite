@@ -68,11 +68,13 @@ True if is completed, false otherwise.
 
 ## Methods
 
-### runundefined &rarr; void
+### run(scene, onSuccess, onError) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | scene | [Scene](/classes/2.4/Scene) |    The scene where mesh is.
+ | onSuccess | () =&gt; void |    Function call when the mesh is load successfully
+ | onError | () =&gt; void |    Function call when the mesh isn't load successfully

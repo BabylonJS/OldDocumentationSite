@@ -36,51 +36,77 @@ optional | invertY | boolean |
 
 ## Methods
 
-### updateundefined &rarr; void
+### update(data) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateLuminanceTextureundefined &rarr; [RawTexture](/classes/2.4/RawTexture)
+ | data | ArrayBufferView |    
+
+### static CreateLuminanceTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.4/RawTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateLuminanceAlphaTextureundefined &rarr; [RawTexture](/classes/2.4/RawTexture)
+ | data | ArrayBufferView |    
+ | width | number |    
+ | height | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    
+optional | generateMipMaps | boolean |    
+optional | invertY | boolean |    
+### static CreateLuminanceAlphaTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.4/RawTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateAlphaTextureundefined &rarr; [RawTexture](/classes/2.4/RawTexture)
+ | data | ArrayBufferView |    
+ | width | number |    
+ | height | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    
+optional | generateMipMaps | boolean |    
+optional | invertY | boolean |    
+### static CreateAlphaTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.4/RawTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateRGBTextureundefined &rarr; [RawTexture](/classes/2.4/RawTexture)
+ | data | ArrayBufferView |    
+ | width | number |    
+ | height | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    
+optional | generateMipMaps | boolean |    
+optional | invertY | boolean |    
+### static CreateRGBTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.4/RawTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateRGBATextureundefined &rarr; [RawTexture](/classes/2.4/RawTexture)
+ | data | ArrayBufferView |    
+ | width | number |    
+ | height | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    
+optional | generateMipMaps | boolean |    
+optional | invertY | boolean |    
+### static CreateRGBATexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/2.4/RawTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | data | ArrayBufferView |    
+ | width | number |    
+ | height | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    
+optional | generateMipMaps | boolean |    
+optional | invertY | boolean |    

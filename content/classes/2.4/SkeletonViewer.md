@@ -48,9 +48,9 @@ optional | autoUpdateBonesMatrices | boolean |
 
 ## Methods
 
-### updateundefined &rarr; void
+### update() &rarr; void
 
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 

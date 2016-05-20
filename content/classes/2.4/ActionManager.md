@@ -116,13 +116,13 @@ Does this action manager has pick triggers
 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
+Delete the action manager
+### getScene() &rarr; [Scene](/classes/2.4/Scene)
 
-### getSceneundefined &rarr; [Scene](/classes/2.4/Scene)
-
-
-### hasSpecificTriggersundefined &rarr; boolean
+Get the scene which contains the action manager
+### hasSpecificTriggers(triggers) &rarr; boolean
 
 Does this action manager handles actions of any of the given triggers
 
@@ -131,8 +131,9 @@ Does this action manager handles actions of any of the given triggers
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### hasSpecificTriggerundefined &rarr; boolean
+ | triggers | number[] |    @param triggers
+
+### hasSpecificTrigger(trigger) &rarr; boolean
 
 Does this action manager handles actions of a given trigger
 
@@ -141,8 +142,9 @@ Does this action manager handles actions of a given trigger
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### registerActionundefined &rarr; [Action](/classes/2.4/Action)
+ | trigger | number |    The trigger
+
+### registerAction(action) &rarr; [Action](/classes/2.4/Action)
 
 Registers an action to this action manager
 
@@ -151,36 +153,42 @@ Registers an action to this action manager
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### processTriggerundefined &rarr; void
+ | action | [Action](/classes/2.4/Action) |    The action to register
+
+### processTrigger(trigger, evt) &rarr; void
 
 Process a specific trigger
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | trigger | number |    The trigger
+ | evt | [ActionEvent](/classes/2.4/ActionEvent) |  {BABYLON.[ActionEvent](/classes/2.4/ActionEvent)} the event details to be processed  {BABYLON.[ActionEvent](/classes/2.4/ActionEvent)} the event details to be processed  {BABYLON.[ActionEvent](/classes/2.4/ActionEvent)} the event details to be processed {BABYLON.[ActionEvent](/classes/2.4/ActionEvent)} the event details to be processed
+### serialize(name) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Parseundefined &rarr; void
+ | name | string | 
+
+### static Parse(parsedActions, object, scene) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static GetTriggerNameundefined &rarr; string
+ | parsedActions | any |  
+ | object | [AbstractMesh](/classes/2.4/AbstractMesh) |  
+ | scene | [Scene](/classes/2.4/Scene) |    The scene which contains the new action manager
+### static GetTriggerName(trigger) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | trigger | number |    The trigger
+

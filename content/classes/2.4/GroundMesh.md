@@ -35,15 +35,16 @@ The subdivision of the [GroundMesh](/classes/2.4/GroundMesh)
 
 ## Methods
 
-### optimizeundefined &rarr; void
+### optimize(chunksCount, octreeBlocksSize) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getHeightAtCoordinatesundefined &rarr; number
+ | chunksCount | number |    @param chunksCount
+optional | octreeBlocksSize | number |   
+### getHeightAtCoordinates(x, z) &rarr; number
 
 Returns a height (y) value in the Worl system :
 
@@ -56,8 +57,9 @@ Not pertinent if the ground is rotated.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getNormalAtCoordinatesundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | x | number |    @param x
+ | z | number |    @param z
+### getNormalAtCoordinates(x, z) &rarr; [Vector3](/classes/2.4/Vector3)
 
 Returns a normalized vector ([Vector3](/classes/2.4/Vector3)) orthogonal to the ground
 
@@ -70,8 +72,9 @@ Not pertinent if the ground is rotated.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getNormalAtCoordinatesToRefundefined &rarr; void
+ | x | number |    @param x
+ | z | number |    @param z
+### getNormalAtCoordinatesToRef(x, z, ref) &rarr; void
 
 Updates the [Vector3](/classes/2.4/Vector3) passed a reference with a normalized vector orthogonal to the ground
 
@@ -84,8 +87,10 @@ Not pertinent if the ground is rotated.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateCoordinateHeightsundefined &rarr; void
+ | x | number |    @param x
+ | z | number |    @param z
+ | ref | [Vector3](/classes/2.4/Vector3) |  
+### updateCoordinateHeights() &rarr; void
 
 Force the heights to be recomputed for getHeightAtCoordinates() or getNormalAtCoordinates()
 

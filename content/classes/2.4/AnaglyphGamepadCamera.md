@@ -29,6 +29,6 @@ class [AnaglyphGamepadCamera](/classes/2.4/AnaglyphGamepadCamera) extends [Gamep
  | interaxialDistance | number |    
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

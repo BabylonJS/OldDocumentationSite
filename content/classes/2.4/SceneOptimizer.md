@@ -13,11 +13,13 @@ class [SceneOptimizer](/classes/2.4/SceneOptimizer)
 
 ## Methods
 
-### static OptimizeAsyncundefined &rarr; void
+### static OptimizeAsync(scene, options, onSuccess, onFailure) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | scene | [Scene](/classes/2.4/Scene) |    
+optional | options | [SceneOptimizerOptions](/classes/2.4/SceneOptimizerOptions) |    
+optional | onSuccess | () =&gt; void |    

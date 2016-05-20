@@ -22,6 +22,6 @@ class [StereoscopicUniversalCamera](/classes/2.4/StereoscopicUniversalCamera) ex
  | isStereoscopicSideBySide | boolean | 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

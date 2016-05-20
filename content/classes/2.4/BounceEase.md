@@ -34,11 +34,12 @@ optional | bounciness | number |
 
 ## Methods
 
-### easeInCoreundefined &rarr; number
+### easeInCore(gradient) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | gradient | number |    
+

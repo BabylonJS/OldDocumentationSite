@@ -59,53 +59,57 @@ Tests if the animation is in started state
 
 ## Methods
 
-### getAnimationsundefined &rarr; [Animation](/classes/2.4/Animation)[]
+### getAnimations() &rarr; [Animation](/classes/2.4/Animation)[]
 
 
-### appendAnimationsundefined &rarr; void
+### appendAnimations(target, animations) &rarr; void
+
+Append a new animation
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | target | any |    The target which will be animated
+ | animations | [Animation](/classes/2.4/Animation)[] |    The animation(s) to apply
+### getAnimationByTargetProperty(property) &rarr; [Animation](/classes/2.4/Animation)
+
+Returns animations that have to given property
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | property | string |    The given property
+
+### reset() &rarr; void
+
+
+### enableBlending(blendingSpeed) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimationByTargetPropertyundefined &rarr; [Animation](/classes/2.4/Animation)
+ | blendingSpeed | number | 
+
+### disableBlending() &rarr; void
+
+
+### goToFrame(frame) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### resetundefined &rarr; void
+ | frame | number |  
 
+### pause() &rarr; void
 
-### enableBlendingundefined &rarr; void
+Pauses the animation
+### restart() &rarr; void
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### disableBlendingundefined &rarr; void
-
-
-### goToFrameundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### pauseundefined &rarr; void
-
-
-### restartundefined &rarr; void
-
-
-### stopundefined &rarr; void
+Restarts the animation
+### stop() &rarr; void
 
 

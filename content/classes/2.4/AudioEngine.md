@@ -44,25 +44,27 @@ class [AudioEngine](/classes/2.4/AudioEngine)
 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 
-### getGlobalVolumeundefined &rarr; number
+### getGlobalVolume() &rarr; number
 
 
-### setGlobalVolumeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### connectToAnalyserundefined &rarr; void
+### setGlobalVolume(newVolume) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | newVolume | number |    
+
+### connectToAnalyser(analyser) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | analyser | [Analyser](/classes/2.4/Analyser) |    
+

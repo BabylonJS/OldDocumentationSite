@@ -36,23 +36,25 @@ optional | maxCharCount | number |  the approximative maximum count of character
 
 ## Methods
 
-### static GetCachedFontTextureundefined &rarr; [FontTexture](/classes/2.4/FontTexture)
+### static GetCachedFontTexture(scene, fontName) &rarr; [FontTexture](/classes/2.4/FontTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static ReleaseCachedFontTextureundefined &rarr; void
+ | scene | [Scene](/classes/2.4/Scene) | 
+ | fontName | string | 
+### static ReleaseCachedFontTexture(scene, fontName) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getCharundefined &rarr; [CharInfo](/classes/2.4/CharInfo)
+ | scene | [Scene](/classes/2.4/Scene) | 
+ | fontName | string | 
+### getChar(char) &rarr; [CharInfo](/classes/2.4/CharInfo)
 
 Make sure the given char is present in the font map.
 
@@ -61,23 +63,25 @@ Make sure the given char is present in the font map.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### measureTextundefined &rarr; [Size](/classes/2.4/Size)
+ | char | string |  the character to get or add
+
+### measureText(text, tabulationSize) &rarr; [Size](/classes/2.4/Size)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getContextundefined &rarr; CanvasRenderingContext2D
+ | text | string | 
+optional | tabulationSize | number | 
+### getContext() &rarr; CanvasRenderingContext2D
 
 
-### updateundefined &rarr; void
+### update() &rarr; void
 
 Call this method when you've call getChar() at least one time, this will update the texture if needed.
 
 Don't be afraid to call it, if no new character was added, this method simply does nothing.
-### cloneundefined &rarr; [FontTexture](/classes/2.4/FontTexture)
+### clone() &rarr; [FontTexture](/classes/2.4/FontTexture)
 
 

@@ -20,27 +20,30 @@ class [InstanceClassInfo](/classes/2.4/InstanceClassInfo)
 
 ## Methods
 
-### mapPropertyundefined &rarr; void
+### mapProperty(propInfo, push) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getInstancingAttributeInfosundefined &rarr; [InstancingAttributeInfo](/classes/2.4/InstancingAttributeInfo)[]
+ | propInfo | [InstancePropInfo](/classes/2.4/InstancePropInfo) | 
+ | push | boolean | 
+### getInstancingAttributeInfos(effect, categories) &rarr; [InstancingAttributeInfo](/classes/2.4/InstancingAttributeInfo)[]
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getShaderAttributesundefined &rarr; string[]
+ | effect | [Effect](/classes/2.4/Effect) | 
+ | categories | string[] | 
+### getShaderAttributes(categories) &rarr; string[]
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | categories | string[] | 
+

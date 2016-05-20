@@ -128,15 +128,16 @@ This property is pertinent only for updatable parametric shapes.
 
 ## Methods
 
-### toStringundefined &rarr; string
+### toString(fullDetails) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addLODLevelundefined &rarr; [Mesh](/classes/2.4/Mesh)
+optional | fullDetails | boolean | 
+
+### addLODLevel(distance, mesh) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Add a mesh as LOD level triggered at the given distance.
 
@@ -147,8 +148,9 @@ tuto : http://doc.babylonjs.com/tutorials/How_to_use_LOD
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getLODLevelAtDistanceundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | distance | number |    
+ | mesh | [Mesh](/classes/2.4/Mesh) |    
+### getLODLevelAtDistance(distance) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Returns the LOD level mesh at the passed distance or null if not found.
 
@@ -159,8 +161,9 @@ tuto : http://doc.babylonjs.com/tutorials/How_to_use_LOD
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeLODLevelundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | distance | number |    
+
+### removeLODLevel(mesh) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Remove a mesh from the LOD array
 
@@ -171,8 +174,9 @@ tuto : http://doc.babylonjs.com/tutorials/How_to_use_LOD
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getLODundefined &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
+ | mesh | [Mesh](/classes/2.4/Mesh) |    
+
+### getLOD(camera, boundingSphere) &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
 
 Returns the registered LOD mesh distant from the parameter `camera` position if any, else returns the current mesh.
 
@@ -181,11 +185,12 @@ tuto : http://doc.babylonjs.com/tutorials/How_to_use_LOD
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTotalVerticesundefined &rarr; number
+ | camera | [Camera](/classes/2.4/Camera) |    
+optional | boundingSphere | [BoundingSphere](/classes/2.4/BoundingSphere) |    
+### getTotalVertices() &rarr; number
 
 Returns a positive integer : the total number of vertices within the mesh geometry or zero if the mesh has no geometry.
-### getVerticesDataundefined &rarr; number[]
+### getVerticesData(kind, copyWhenShared) &rarr; number[]
 
 Returns an array of integers or floats, or a Float32Array, depending on the requested `kind` (positions, indices, normals, etc).
 
@@ -222,8 +227,9 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getVertexBufferundefined &rarr; [VertexBuffer](/classes/2.4/VertexBuffer)
+ | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+optional | copyWhenShared | boolean |    
+### getVertexBuffer(kind) &rarr; [VertexBuffer](/classes/2.4/VertexBuffer)
 
 Returns the mesh `[VertexBuffer](/classes/2.4/VertexBuffer)` object from the requested `kind` : positions, indices, normals, etc.
 
@@ -258,8 +264,9 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isVerticesDataPresentundefined &rarr; boolean
+ | kind | any |    The kind of vertex buffer as defined in class Vertex Buffer
+
+### isVerticesDataPresent(kind) &rarr; boolean
 
 Returns a boolean depending on the existence of the Vertex Data for the requested `kind`.
 
@@ -292,8 +299,9 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getVerticesDataKindsundefined &rarr; string[]
+ | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+
+### getVerticesDataKinds() &rarr; string[]
 
 Returns a string : the list of existing `kinds` of Vertex Data for this mesh.
 
@@ -322,12 +330,12 @@ Possible `kind` values :
 - BABYLON.[VertexBuffer](/classes/2.4/VertexBuffer).MatricesWeightsKind
 
 - BABYLON.[VertexBuffer](/classes/2.4/VertexBuffer).MatricesWeightsExtraKind
-### getTotalIndicesundefined &rarr; number
+### getTotalIndices() &rarr; number
 
 Returns a positive integer : the total number of indices in this mesh geometry.
 
 Returns zero if the mesh has no geometry.
-### getIndicesundefined &rarr; number[]
+### getIndices(copyWhenShared) &rarr; number[]
 
 Returns an array of integers or a Int32Array populated with the mesh indices.
 
@@ -338,41 +346,43 @@ Returns an empty array if the mesh has no geometry.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isReadyundefined &rarr; boolean
+optional | copyWhenShared | boolean |    
+
+### isReady() &rarr; boolean
 
 Boolean : true once the mesh is ready after all the delayed process (loading, etc) are complete.
-### isDisposedundefined &rarr; boolean
+### isDisposed() &rarr; boolean
 
 Boolean : true if the mesh has been disposed.
-### freezeNormalsundefined &rarr; void
+### freezeNormals() &rarr; void
 
 This function affects parametric shapes on vertex position update only : ribbons, tubes, etc.
 
 It has no effect at all on other shapes.
 
 It prevents the mesh normals from being recomputed on next `positions` array update.
-### unfreezeNormalsundefined &rarr; void
+### unfreezeNormals() &rarr; void
 
 This function affects parametric shapes on vertex position update only : ribbons, tubes, etc.
 
 It has no effect at all on other shapes.
 
 It reactivates the mesh normals computation if it was previously frozen.
-### refreshBoundingInfoundefined &rarr; void
+### refreshBoundingInfo() &rarr; void
 
 This method recomputes and sets a new `[BoundingInfo](/classes/2.4/BoundingInfo)` to the mesh unless it is locked.
 
 This means the mesh underlying bounding box and sphere are recomputed.
-### subdivideundefined &rarr; void
+### subdivide(count) &rarr; void
 
-
+Subdivide this mesh by creating &quot;count&quot; submeshes stored in this.subMeshes
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setVerticesDataundefined &rarr; void
+ | count | number |    The number of subdivision
+
+### setVerticesData(kind, data, updatable, stride) &rarr; void
 
 Sets the vertex data of the mesh geometry for the requested `kind`.
 
@@ -388,7 +398,9 @@ Note that a new underlying `[VertexBuffer](/classes/2.4/VertexBuffer)` object is
 
 If the `kind` is the `PositionKind`, the mesh `[BoundingInfo](/classes/2.4/BoundingInfo)` is renewed, so the bounding box and sphere, and the mesh World [Matrix](/classes/2.4/Matrix) is recomputed.
 
-         * Possible `kind` values :
+
+
+Possible `kind` values :
 
 - BABYLON.[VertexBuffer](/classes/2.4/VertexBuffer).PositionKind
 
@@ -417,8 +429,10 @@ If the `kind` is the `PositionKind`, the mesh `[BoundingInfo](/classes/2.4/Bound
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateVerticesDataundefined &rarr; void
+ | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | data | number[] |    The new data of vertex buffer
+optional | updatable | boolean |   &nbsp;
+### updateVerticesData(kind, data, updateExtends, makeItUnique) &rarr; void
 
 Updates the existing vertex data of the mesh geometry for the requested `kind`.
 
@@ -432,7 +446,9 @@ If the `kind` is the `PositionKind` and if `updateExtends` is true, the mesh `[B
 
 If the parameter `makeItUnique` is true, a new global geometry is created from this positions and is set to the mesh.
 
-         * Possible `kind` values :
+
+
+Possible `kind` values :
 
 - BABYLON.[VertexBuffer](/classes/2.4/VertexBuffer).PositionKind
 
@@ -461,16 +477,20 @@ If the parameter `makeItUnique` is true, a new global geometry is created from t
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateVerticesDataDirectlyundefined &rarr; void
+ | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | data | number[] |    The new data of vertex buffer
+optional | updateExtends | boolean |    @param updateExtends
+### updateVerticesDataDirectly(kind, data, offset, makeItUnique) &rarr; void
 
 Deprecated since BabylonJS v2.3
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateMeshPositionsundefined &rarr; void
+ | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | data | Float32Array |    The new data of vertex buffer
+optional | offset | number |    
+### updateMeshPositions(positionFunction, computeNormals) &rarr; void
 
 This method updates the vertex positions of an updatable mesh according to the `positionFunction` returned values.
 
@@ -483,11 +503,12 @@ The parameter `computeNormals` is a boolean (default true) to enable/disable the
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### makeGeometryUniqueundefined &rarr; void
+ | positionFunction | any |    
+optional | computeNormals | boolean |    
+### makeGeometryUnique() &rarr; void
 
-
-### setIndicesundefined &rarr; void
+Make geometry unique
+### setIndices(indices, totalVertices) &rarr; void
 
 Sets the mesh indices.
 
@@ -500,8 +521,9 @@ This method creates a new index buffer each call.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### registerBeforeRenderundefined &rarr; void
+ | indices | number[] |    @param indices
+optional | totalVertices | number |    
+### registerBeforeRender(func) &rarr; void
 
 Registers for this mesh a javascript function called just before the rendering process.
 
@@ -510,8 +532,9 @@ This function is passed the current mesh and doesn't return anything.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unregisterBeforeRenderundefined &rarr; void
+ | func | (mesh: [AbstractMesh](/classes/2.4/AbstractMesh)) =&gt; void |    Callback function to delete
+
+### unregisterBeforeRender(func) &rarr; void
 
 Disposes a previously registered javascript function called before the rendering.
 
@@ -520,8 +543,9 @@ This function is passed the current mesh and doesn't return anything.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### registerAfterRenderundefined &rarr; void
+ | func | (mesh: [AbstractMesh](/classes/2.4/AbstractMesh)) =&gt; void |    Callback function to delete
+
+### registerAfterRender(func) &rarr; void
 
 Registers for this mesh a javascript function called just after the rendering is complete.
 
@@ -530,8 +554,9 @@ This function is passed the current mesh and doesn't return anything.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unregisterAfterRenderundefined &rarr; void
+ | func | (mesh: [AbstractMesh](/classes/2.4/AbstractMesh)) =&gt; void |    Callback function to delete
+
+### unregisterAfterRender(func) &rarr; void
 
 Disposes a previously registered javascript function called after the rendering.
 
@@ -540,8 +565,9 @@ This function is passed the current mesh and doesn't return anything.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### renderundefined &rarr; void
+ | func | (mesh: [AbstractMesh](/classes/2.4/AbstractMesh)) =&gt; void |    Callback function to delete
+
+### render(subMesh, enableAlphaMode) &rarr; void
 
 Triggers the draw call for the mesh.
 
@@ -550,22 +576,24 @@ Usually, you don't need to call this method by your own because the mesh renderi
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getEmittedParticleSystemsundefined &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)[]
+ | subMesh | [SubMesh](/classes/2.4/SubMesh) |    The subMesh
+ | enableAlphaMode | boolean |   
+### getEmittedParticleSystems() &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)[]
 
 Returns an array populated with `[ParticleSystem](/classes/2.4/ParticleSystem)` objects whose the mesh is the emitter.
-### getHierarchyEmittedParticleSystemsundefined &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)[]
+### getHierarchyEmittedParticleSystems() &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)[]
 
 Returns an array populated with `[ParticleSystem](/classes/2.4/ParticleSystem)` objects whose the mesh or its children are the emitter.
-### isInFrustumundefined &rarr; boolean
+### isInFrustum(frustumPlanes) &rarr; boolean
 
 Boolean, true is the mesh in the frustum defined by the `[Plane](/classes/2.4/Plane)` objects from the `frustumPlanes` array parameter.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setMaterialByIDundefined &rarr; void
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    [Frustum](/classes/2.4/Frustum) plan of the mesh
+
+### setMaterialByID(id) &rarr; void
 
 Sets the mesh material by the material or multiMaterial `id` property.
 
@@ -576,11 +604,12 @@ This method returns nothing.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimatablesundefined &rarr; IAnimatable[]
+ | id | string |    The ID of the material this mesh should get
+
+### getAnimatables() &rarr; IAnimatable[]
 
 Returns as a new array populated with the mesh material and/or skeleton, if any.
-### bakeTransformIntoVerticesundefined &rarr; void
+### bakeTransformIntoVertices(transform) &rarr; void
 
 Modifies the mesh geometry according to the passed transformation matrix.
 
@@ -595,8 +624,9 @@ Note that, under the hood, this method sets a new [VertexBuffer](/classes/2.4/Ve
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### bakeCurrentTransformIntoVerticesundefined &rarr; void
+ | transform | [Matrix](/classes/2.4/Matrix) |    The transform matrix
+
+### bakeCurrentTransformIntoVertices() &rarr; void
 
 Modifies the mesh geometry according to its own current World [Matrix](/classes/2.4/Matrix).
 
@@ -607,7 +637,7 @@ This method returns nothing but really modifies the mesh even if it's originally
 tuto : tuto : http://doc.babylonjs.com/tutorials/How_Rotations_and_Translations_Work#baking-transform
 
 Note that, under the hood, this method sets a new [VertexBuffer](/classes/2.4/VertexBuffer) each call.
-### cloneundefined &rarr; [Mesh](/classes/2.4/Mesh)
+### clone(name, newParent, doNotCloneChildren, clonePhysicsImpostor) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Returns a new `[Mesh](/classes/2.4/Mesh)` object generated from the current mesh properties.
 
@@ -624,8 +654,10 @@ The parameter `clonePhysicsImpostor` (default `true`)  allows/denies the cloning
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | name | string |    
+optional | newParent | [Node](/classes/2.4/Node) |    His parent
+optional | doNotCloneChildren | boolean |    True if you want to clone children, false if you don't want to.
+### dispose(doNotRecurse) &rarr; void
 
 Disposes the mesh.
 
@@ -634,8 +666,9 @@ This also frees the memory allocated under the hood to all the buffers used by W
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyDisplacementMapundefined &rarr; void
+optional | doNotRecurse | boolean |    @param doNotRecurse
+
+### applyDisplacementMap(url, minHeight, maxHeight, onSuccess) &rarr; void
 
 Modifies the mesh geometry according to a displacement map.
 
@@ -654,8 +687,10 @@ The parameter `onSuccess` is an optional Javascript function to be called just a
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyDisplacementMapFromBufferundefined &rarr; void
+ | url | string |    URL of the GroundFromHeightMap
+ | minHeight | number |   &nbsp; minHeight of the new GFHM
+ | maxHeight | number |    The maximum height of the Height map
+### applyDisplacementMapFromBuffer(buffer, heightMapWidth, heightMapHeight, minHeight, maxHeight) &rarr; void
 
 Modifies the mesh geometry according to a displacementMap buffer.
 
@@ -674,8 +709,11 @@ The parameters `minHeight` and `maxHeight` are the lower and upper limits of the
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### convertToFlatShadedMeshundefined &rarr; void
+ | buffer | Uint8Array |    The buffer
+ | heightMapWidth | number |    The height map width
+ | heightMapHeight | number |    The height map height
+ | minHeight | number |   &nbsp; minHeight of the new GFHM
+### convertToFlatShadedMesh() &rarr; void
 
 Modify the mesh to get a flat shading rendering.
 
@@ -684,7 +722,7 @@ This means each mesh facet will then have its own normals. Usually new vertices 
 This method returns nothing.
 
 Warning : the mesh is really modified even if not set originally as updatable and, under the hood, a new [VertexBuffer](/classes/2.4/VertexBuffer) is allocated.
-### convertToUnIndexedMeshundefined &rarr; void
+### convertToUnIndexedMesh() &rarr; void
 
 This method removes all the mesh indices and add new vertices (duplication) in order to unfold facets into buffers.
 
@@ -693,9 +731,7 @@ In other words, more vertices, no more indices and a single bigger VBO.
 This method returns nothing.
 
 The mesh is really modified even if not set originally as updatable. Under the hood, a new [VertexBuffer](/classes/2.4/VertexBuffer) is allocated.
-
-         */
-### flipFacesundefined &rarr; void
+### flipFaces(flipNormals) &rarr; void
 
 Inverses facet orientations and inverts also the normals with `flipNormals` (default `false`) if true.
 
@@ -706,8 +742,9 @@ Warning : the mesh is really modified even if not set originally as updatable. A
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### createInstanceundefined &rarr; [InstancedMesh](/classes/2.4/InstancedMesh)
+optional | flipNormals | boolean |   
+
+### createInstance(name) &rarr; [InstancedMesh](/classes/2.4/InstancedMesh)
 
 Creates a new `[InstancedMesh](/classes/2.4/InstancedMesh)` object from the mesh model.
 
@@ -732,15 +769,16 @@ Warning : this method is not supported for `Line` mesh and `LineSystem`
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### synchronizeInstancesundefined &rarr; void
+ | name | string |    
+
+### synchronizeInstances() &rarr; void
 
 Synchronises all the mesh instance submeshes to the current mesh submeshes, if any.
 
 After this call, all the mesh instances have the same submeshes than the current mesh.
 
 This method returns nothing.
-### simplifyundefined &rarr; void
+### simplify(settings, parallelProcessing, simplificationType, successCallback) &rarr; void
 
 Simplify the mesh according to the given array of settings.
 
@@ -749,8 +787,10 @@ Function will return immediately and will simplify async. It returns nothing.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### optimizeIndicesundefined &rarr; void
+ | settings | Array&lt;ISimplificationSettings&gt; |  a collection of simplification settings.  a collection of simplification settings.  a collection of simplification settings. a collection of simplification settings.
+optional | parallelProcessing | boolean |  should all levels calculate parallel or one after the other.  should all levels calculate parallel or one after the other.  should all levels calculate parallel or one after the other. should all levels calculate parallel or one after the other.
+optional | simplificationType | [SimplificationType](/classes/2.4/SimplificationType) |    
+### optimizeIndices(successCallback) &rarr; void
 
 Optimization of the mesh's indices, in case a mesh has duplicated vertices.
 
@@ -761,8 +801,9 @@ This should be used together with the simplification to avoid disappearing trian
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Parseundefined &rarr; [Mesh](/classes/2.4/Mesh)
+optional | successCallback | (mesh: [Mesh](/classes/2.4/Mesh)) =&gt; void |  an optional success callback to be called after the optimization finished.  an optional success callback to be called after the optimization finished.  an optional success callback to be called after the optimization finished. an optional success callback to be called after the optimization finished.
+
+### static Parse(parsedMesh, scene, rootUrl) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Returns a new `[Mesh](/classes/2.4/Mesh)` object what is a deep copy of the passed mesh.
 
@@ -773,8 +814,10 @@ The parameter `rootUrl` is a string, it's the root URL to prefix the `delayLoadi
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateRibbonundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | parsedMesh | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+ | rootUrl | string |  
+### static CreateRibbon(name, pathArray, closeArray, closePath, offset, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a ribbon mesh.
 
@@ -782,7 +825,9 @@ Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshB
 
 The ribbon is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
+
+
+Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
 
 The parameter `pathArray` is a required array of paths, what are each an array of successive [Vector3](/classes/2.4/Vector3). The pathArray parameter depicts the ribbon geometry.
 
@@ -805,8 +850,15 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateDiscundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | pathArray | [Vector3](/classes/2.4/Vector3)[][] |    
+ | closeArray | boolean |    
+ | closePath | boolean |    
+ | offset | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+optional | sideOrientation | number |   &nbsp;
+### static CreateDisc(name, radius, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a plane polygonal mesh.  By default, this is a disc.
 
@@ -825,8 +877,12 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateBoxundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | radius | number |    Radius of the tube
+ | tessellation | number |   &nbsp;
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateBox(name, size, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a box mesh.
 
@@ -843,8 +899,11 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateSphereundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | size | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateSphere(name, segments, diameter, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a sphere mesh.
 
@@ -863,8 +922,12 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateCylinderundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | segments | number |    The segments of the sphere
+ | diameter | number |    The diameter of the [Torus](/classes/2.4/Torus)
+optional | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateCylinder(name, height, diameterTop, diameterBottom, tessellation, subdivisions, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a cylinder or a cone mesh.
 
@@ -889,8 +952,15 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTorusundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | height | number |    The height of the GroundFromHeightMap
+ | diameterTop | number |    Diameter at top of the cylinder
+ | diameterBottom | number |    Diameter at bottom of the cylinder
+ | tessellation | number |   &nbsp;
+ | subdivisions | any |    The number of subdivisions in the GroundFromHeightMap
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | any |   &nbsp;
+### static CreateTorus(name, diameter, thickness, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a torus mesh.
 
@@ -911,8 +981,13 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTorusKnotundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | diameter | number |    The diameter of the [Torus](/classes/2.4/Torus)
+ | thickness | number |    The thickness of the [Torus](/classes/2.4/Torus)
+ | tessellation | number |   &nbsp;
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateTorusKnot(name, radius, tube, radialSegments, tubularSegments, p, q, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a torus knot mesh.
 
@@ -935,8 +1010,16 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateLinesundefined &rarr; [LinesMesh](/classes/2.4/LinesMesh)
+ | name | string |    
+ | radius | number |    Radius of the tube
+ | tube | number |    @param tube
+ | radialSegments | number |    @param radialSegments
+ | tubularSegments | number |    @param tubularSegments
+ | p | number |    Describes up-and-down (P) winding numbers
+ | q | number |    Describes around-the-center (Q) winding numbers
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateLines(name, points, scene, updatable, instance) &rarr; [LinesMesh](/classes/2.4/LinesMesh)
 
 Creates a line mesh.
 
@@ -957,8 +1040,11 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateDashedLinesundefined &rarr; [LinesMesh](/classes/2.4/LinesMesh)
+ | name | string |    
+ | points | [Vector3](/classes/2.4/Vector3)[] |    
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateDashedLines(name, points, dashSize, gapSize, dashNb, scene, updatable, instance) &rarr; [LinesMesh](/classes/2.4/LinesMesh)
 
 Creates a dashed line mesh.
 
@@ -985,8 +1071,14 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static ExtrudeShapeundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | points | [Vector3](/classes/2.4/Vector3)[] |    
+ | dashSize | number |    
+ | gapSize | number |    
+ | dashNb | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static ExtrudeShape(name, shape, path, scale, rotation, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates an extruded shape mesh.
 
@@ -994,7 +1086,9 @@ The extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials/Parame
 
 Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
 
-         * Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -1021,8 +1115,16 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static ExtrudeShapeCustomundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | shape | [Vector3](/classes/2.4/Vector3)[] |    
+ | path | [Vector3](/classes/2.4/Vector3)[] |    The tube will follow this points path
+ | scale | number |    
+ | rotation | number |    
+ | cap | number |    Add caps on each side of the tube
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+optional | sideOrientation | number |   &nbsp;
+### static ExtrudeShapeCustom(name, shape, path, scaleFunction, rotationFunction, ribbonCloseArray, ribbonClosePath, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates an custom extruded shape mesh.
 
@@ -1030,7 +1132,9 @@ The custom extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials
 
 Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
 
-         * Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -1081,8 +1185,18 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateLatheundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | shape | [Vector3](/classes/2.4/Vector3)[] |    
+ | path | [Vector3](/classes/2.4/Vector3)[] |    The tube will follow this points path
+ | scaleFunction | Function |    
+ | rotationFunction | Function |    
+ | ribbonCloseArray | boolean |    
+ | ribbonClosePath | boolean |    
+ | cap | number |    Add caps on each side of the tube
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+optional | sideOrientation | number |   &nbsp;
+### static CreateLathe(name, shape, radius, tessellation, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates lathe mesh.
 
@@ -1090,7 +1204,9 @@ The lathe is a shape with a symetry axis : a 2D model shape is rotated around th
 
 Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
 
-         * The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
+
+
+The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
 
 rotated around the Y axis. It's usually a 2D shape, so the [Vector3](/classes/2.4/Vector3) z coordinates are often set to zero.
 
@@ -1107,8 +1223,13 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreatePlaneundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | shape | [Vector3](/classes/2.4/Vector3)[] |    
+ | radius | number |    Radius of the tube
+ | tessellation | number |   &nbsp;
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreatePlane(name, size, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a plane mesh.
 
@@ -1125,8 +1246,11 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateGroundundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | size | number |    
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateGround(name, width, height, subdivisions, scene, updatable) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a ground mesh.
 
@@ -1141,8 +1265,12 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTiledGroundundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | width | number |    The width of the GroundFromHeightMap
+ | height | number |    The height of the GroundFromHeightMap
+ | subdivisions | number |    The number of subdivisions in the GroundFromHeightMap
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+### static CreateTiledGround(name, xmin, zmin, xmax, zmax, subdivisions, precision, scene, updatable) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a tiled ground mesh.
 
@@ -1165,8 +1293,15 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateGroundFromHeightMapundefined &rarr; [GroundMesh](/classes/2.4/GroundMesh)
+ | name | string |    
+ | xmin | number |    The xmin of the [Ground](/classes/2.4/Ground)
+ | zmin | number |    The zmin of the [Ground](/classes/2.4/Ground)
+ | xmax | number |    The xmax of the [Ground](/classes/2.4/Ground)
+ | zmax | number |    The zmax of the [Ground](/classes/2.4/Ground)
+ | subdivisions | { w: number,  h: number } |    The number of subdivisions in the GroundFromHeightMap
+ | precision | { w: number,  h: number } |    The number of subdivisions in each tile (precision.w : in width; precision.h : in height)
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+### static CreateGroundFromHeightMap(name, url, width, height, subdivisions, minHeight, maxHeight, scene, updatable, onReady) &rarr; [GroundMesh](/classes/2.4/GroundMesh)
 
 Creates a ground mesh from a height map.
 
@@ -1195,14 +1330,24 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTubeundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | url | string |    URL of the GroundFromHeightMap
+ | width | number |    The width of the GroundFromHeightMap
+ | height | number |    The height of the GroundFromHeightMap
+ | subdivisions | number |    The number of subdivisions in the GroundFromHeightMap
+ | minHeight | number |   &nbsp; minHeight of the new GFHM
+ | maxHeight | number |    The maximum height of the Height map
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+### static CreateTube(name, path, radius, tessellation, radiusFunction, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a tube mesh.
 
 The tube is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+
+
+Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
 
 The parameter `path` is a required array of successive `[Vector3](/classes/2.4/Vector3)`. It is the curve used as the axis of the tube.
 
@@ -1235,12 +1380,22 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreatePolyhedronundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | path | [Vector3](/classes/2.4/Vector3)[] |    The tube will follow this points path
+ | radius | number |    Radius of the tube
+ | tessellation | number |   &nbsp;
+ | radiusFunction | { (i, distance): number } |   &nbsp;
+ | cap | number |    Add caps on each side of the tube
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+optional | updatable | boolean |   &nbsp;
+optional | sideOrientation | number |   &nbsp;
+### static CreatePolyhedron(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a polyhedron mesh.
 
-         * Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+
+
+Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
 
 The parameter `type` (positive integer, max 14, default 0) sets the polyhedron type to build among the 15 embbeded types. Please refer to the type sheet in the tutorial
 
@@ -1269,8 +1424,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateIcoSphereundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | options | { type: number,  size: number,  sizeX: number,  sizeY: number,  sizeZ: number,  custom: any,  faceUV: [Vector4](/classes/2.4/Vector4)[],  faceColors: [Color4](/classes/2.4/Color4)[],  updatable: boolean,  sideOrientation: number } |   
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+### static CreateIcoSphere(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a sphere based upon an icosahedron with 20 triangular faces which can be subdivided.
 
@@ -1293,8 +1450,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateDecalundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |    
+ | options | { radius: number,  flat: boolean,  subdivisions: number,  sideOrientation: number,  updatable: boolean } |   
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) to add the tube
+### static CreateDecal(name, sourceMesh, position, normal, size, angle) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a decal mesh.
 
@@ -1313,22 +1472,27 @@ The parameter `angle` (float in radian, default 0) sets the angle to rotate the 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setPositionsForCPUSkinningundefined &rarr; Float32Array
+ | name | string |    
+ | sourceMesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    
+ | position | [Vector3](/classes/2.4/Vector3) |    
+ | normal | [Vector3](/classes/2.4/Vector3) |    
+ | size | [Vector3](/classes/2.4/Vector3) |    
+### setPositionsForCPUSkinning() &rarr; Float32Array
 
 @returns original positions used for CPU skinning.  Useful for integrating Morphing with skeletons in same mesh.
-### setNormalsForCPUSkinningundefined &rarr; Float32Array
+### setNormalsForCPUSkinning() &rarr; Float32Array
 
 @returns original normals used for CPU skinning.  Useful for integrating Morphing with skeletons in same mesh.
-### applySkeletonundefined &rarr; [Mesh](/classes/2.4/Mesh)
+### applySkeleton(skeleton) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Update the vertex buffers by applying transformation from the bones
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static MinMaxundefined &rarr; { undefined: [Vector3](/classes/2.4/Vector3),  undefined: [Vector3](/classes/2.4/Vector3) }
+ | skeleton | [Skeleton](/classes/2.4/Skeleton) |   
+
+### static MinMax(meshes) &rarr; { min: [Vector3](/classes/2.4/Vector3),  max: [Vector3](/classes/2.4/Vector3) }
 
 Returns an object `{min: [Vector3](/classes/2.4/Vector3), max: [Vector3](/classes/2.4/Vector3)}`
 
@@ -1337,20 +1501,24 @@ This min and max `[Vector3](/classes/2.4/Vector3)` are the minimum and maximum v
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Centerundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | meshes | [AbstractMesh](/classes/2.4/AbstractMesh)[] |    
+
+### static Center(meshesOrMinMaxVector) &rarr; [Vector3](/classes/2.4/Vector3)
 
 Returns a `[Vector3](/classes/2.4/Vector3)`, the center of the `{min: [Vector3](/classes/2.4/Vector3), max: [Vector3](/classes/2.4/Vector3)}` or the center of MinMax vector3 computed from a mesh array.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static MergeMeshesundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | meshesOrMinMaxVector | any |    @param meshesOrMinMaxVector
+
+### static MergeMeshes(meshes, disposeSource, allow32BitsIndices, meshSubclass) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Merge the array of meshes into a single mesh for performance reasons.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | meshes | Array&lt;[Mesh](/classes/2.4/Mesh)&gt; |    
+optional | disposeSource | boolean |    
+optional | allow32BitsIndices | boolean |    

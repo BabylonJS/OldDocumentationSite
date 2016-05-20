@@ -67,11 +67,35 @@ class [Shape2D](/classes/2.4/Shape2D) extends [RenderablePrim2D](/classes/2.4/Re
 
 ## Methods
 
-### setupShape2Dundefined &rarr; void
+### setupShape2D(owner, parent, id, position, isVisible, fill, border, borderThickness) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | owner | [Canvas2D](/classes/2.4/Canvas2D) | 
+ | parent | [Prim2DBase](/classes/2.4/Prim2DBase) | 
+ | id | string | 
+ | position | [Vector2](/classes/2.4/Vector2) | 
+ | isVisible | boolean | 
+ | fill | IBrush2D | 
+ | border | IBrush2D | 
+### getUsedShaderCategories(dataPart) &rarr; string[]
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | dataPart | [InstanceDataBase](/classes/2.4/InstanceDataBase) | 
+
+### refreshInstanceDataPart(part) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | part | [InstanceDataBase](/classes/2.4/InstanceDataBase) | 
+

@@ -24,6 +24,6 @@ Builds a [Gamepads](/classes/2.4/Gamepads) object
 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 

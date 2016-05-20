@@ -72,25 +72,27 @@ The function called when this camera collides with the world
 
 ## Methods
 
-### attachControlundefined &rarr; void
+### attachControl(element, noPreventDefault) &rarr; void
+
+Attach the camera to an element
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | element | HTMLElement |    The element from where detach the camera
+optional | noPreventDefault | boolean |    @param noPreventDefault
+### detachControl(element) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachControlundefined &rarr; void
+ | element | HTMLElement |    The element from where detach the camera
+
+### dispose() &rarr; void
 
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### disposeundefined &rarr; void
-
-
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

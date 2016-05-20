@@ -20,11 +20,12 @@ A class representing a physics distance joint.
 
 ## Methods
 
-### updateDistanceundefined &rarr; void
+### updateDistance(maxDistance, minDistance) &rarr; void
 
 Update the predefined distance.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | maxDistance | number | 
+optional | minDistance | number | 

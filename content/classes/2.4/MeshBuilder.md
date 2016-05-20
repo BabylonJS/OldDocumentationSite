@@ -9,7 +9,7 @@ class [MeshBuilder](/classes/2.4/MeshBuilder)
 
 ## Methods
 
-### static CreateBoxundefined &rarr; [Mesh](/classes/2.4/Mesh)
+### static CreateBox(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a box mesh.
 
@@ -32,8 +32,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateSphereundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { size: number,  width: number,  height: number,  depth: number,  faceUV: [Vector4](/classes/2.4/Vector4)[],  faceColors: [Color4](/classes/2.4/Color4)[],  sideOrientation: number,  updatable: boolean } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateSphere(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a sphere mesh.
 
@@ -58,8 +60,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateDiscundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { segments: number,  diameter: number,  diameterX: number,  diameterY: number,  diameterZ: number,  arc: number,  slice: number,  sideOrientation: number,  updatable: boolean } |  
+ | scene | any |  
+### static CreateDisc(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a plane polygonal mesh.  By default, this is a disc.
 
@@ -80,8 +84,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateIcoSphereundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { radius: number,  tessellation: number,  arc: number,  updatable: boolean,  sideOrientation: number } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateIcoSphere(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a sphere based upon an icosahedron with 20 triangular faces which can be subdivided.
 
@@ -104,14 +110,18 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateRibbonundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { radius: number,  radiusX: number,  radiusY: number,  radiusZ: number,  flat: boolean,  subdivisions: number,  sideOrientation: number,  updatable: boolean } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateRibbon(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a ribbon mesh.
 
 The ribbon is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
+
+
+Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
 
 The parameter `pathArray` is a required array of paths, what are each an array of successive [Vector3](/classes/2.4/Vector3). The pathArray parameter depicts the ribbon geometry.
 
@@ -134,8 +144,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateCylinderundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { pathArray: [Vector3](/classes/2.4/Vector3)[][],  closeArray: boolean,  closePath: boolean,  offset: number,  updatable: boolean,  sideOrientation: number,  instance: [Mesh](/classes/2.4/Mesh) } |  
+optional | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateCylinder(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a cylinder or a cone mesh.
 
@@ -182,8 +194,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTorusundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { height: number,  diameterTop: number,  diameterBottom: number,  diameter: number,  tessellation: number,  subdivisions: number,  arc: number,  faceColors: [Color4](/classes/2.4/Color4)[],  faceUV: [Vector4](/classes/2.4/Vector4)[],  updatable: boolean,  hasRings: boolean,  enclose: boolean,  sideOrientation: number } |  
+ | scene | any |  
+### static CreateTorus(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a torus mesh.
 
@@ -204,8 +218,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTorusKnotundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { diameter: number,  thickness: number,  tessellation: number,  updatable: boolean,  sideOrientation: number } |  
+ | scene | any |  
+### static CreateTorusKnot(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a torus knot mesh.
 
@@ -228,8 +244,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateLineSystemundefined &rarr; [LinesMesh](/classes/2.4/LinesMesh)
+ | name | string |  
+ | options | { radius: number,  tube: number,  radialSegments: number,  tubularSegments: number,  p: number,  q: number,  updatable: boolean,  sideOrientation: number } |  
+ | scene | any |  
+### static CreateLineSystem(name, options, scene) &rarr; [LinesMesh](/classes/2.4/LinesMesh)
 
 Creates a line system mesh.
 
@@ -254,8 +272,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateLinesundefined &rarr; [LinesMesh](/classes/2.4/LinesMesh)
+ | name | string |  
+ | options | { lines: [Vector3](/classes/2.4/Vector3)[][],  updatable: boolean,  instance: [LinesMesh](/classes/2.4/LinesMesh) } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateLines(name, options, scene) &rarr; [LinesMesh](/classes/2.4/LinesMesh)
 
 Creates a line mesh.
 
@@ -276,8 +296,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateDashedLinesundefined &rarr; [LinesMesh](/classes/2.4/LinesMesh)
+ | name | string |  
+ | options | { points: [Vector3](/classes/2.4/Vector3)[],  updatable: boolean,  instance: [LinesMesh](/classes/2.4/LinesMesh) } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateDashedLines(name, options, scene) &rarr; [LinesMesh](/classes/2.4/LinesMesh)
 
 Creates a dashed line mesh.
 
@@ -304,8 +326,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static ExtrudeShapeundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { points: [Vector3](/classes/2.4/Vector3)[],  dashSize: number,  gapSize: number,  dashNb: number,  updatable: boolean,  instance: [LinesMesh](/classes/2.4/LinesMesh) } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static ExtrudeShape(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates an extruded shape mesh.
 
@@ -313,7 +337,9 @@ The extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials/Parame
 
 tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#extruded-shapes
 
-         * Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -340,8 +366,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static ExtrudeShapeCustomundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { shape: [Vector3](/classes/2.4/Vector3)[],  path: [Vector3](/classes/2.4/Vector3)[],  scale: number,  rotation: number,  cap: number,  updatable: boolean,  sideOrientation: number,  instance: [Mesh](/classes/2.4/Mesh) } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static ExtrudeShapeCustom(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates an custom extruded shape mesh.
 
@@ -349,7 +377,9 @@ The custom extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials
 
 tuto :http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#custom-extruded-shapes
 
-         * Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -400,8 +430,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateLatheundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { shape: [Vector3](/classes/2.4/Vector3)[],  path: [Vector3](/classes/2.4/Vector3)[],  scaleFunction: any,  rotationFunction: any,  ribbonCloseArray: boolean,  ribbonClosePath: boolean,  cap: number,  updatable: boolean,  sideOrientation: number,  instance: [Mesh](/classes/2.4/Mesh) } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateLathe(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates lathe mesh.
 
@@ -409,7 +441,9 @@ The lathe is a shape with a symetry axis : a 2D model shape is rotated around th
 
 tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#lathe
 
-         * The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
+
+
+The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
 
 rotated around the Y axis. It's usually a 2D shape, so the [Vector3](/classes/2.4/Vector3) z coordinates are often set to zero.
 
@@ -432,8 +466,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreatePlaneundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { shape: [Vector3](/classes/2.4/Vector3)[],  radius: number,  tessellation: number,  arc: number,  closed: boolean,  updatable: boolean,  sideOrientation: number,  cap: number } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreatePlane(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a plane mesh.
 
@@ -454,8 +490,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateGroundundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { size: number,  width: number,  height: number,  sideOrientation: number,  updatable: boolean,  sourcePlane: [Plane](/classes/2.4/Plane) } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateGround(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a ground mesh.
 
@@ -470,8 +508,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTiledGroundundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { width: number,  height: number,  subdivisions: number,  updatable: boolean } |  
+ | scene | any |  
+### static CreateTiledGround(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a tiled ground mesh.
 
@@ -494,8 +534,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateGroundFromHeightMapundefined &rarr; [GroundMesh](/classes/2.4/GroundMesh)
+ | name | string |  
+ | options | { xmin: number,  zmin: number,  xmax: number,  zmax: number,  subdivisions: { w: number,  h: number },  precision: { w: number,  h: number },  updatable: boolean } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateGroundFromHeightMap(name, url, options, scene) &rarr; [GroundMesh](/classes/2.4/GroundMesh)
 
 Creates a ground mesh from a height map.
 
@@ -524,14 +566,18 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateTubeundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | url | string |  
+ | options | { width: number,  height: number,  subdivisions: number,  minHeight: number,  maxHeight: number,  updatable: boolean,  onReady: (mesh: [GroundMesh](/classes/2.4/GroundMesh)) =&gt; void } |  
+### static CreateTube(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a tube mesh.
 
 The tube is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#tube
+
+
+tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#tube
 
 The parameter `path` is a required array of successive `[Vector3](/classes/2.4/Vector3)`. It is the curve used as the axis of the tube.
 
@@ -566,12 +612,16 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreatePolyhedronundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { path: [Vector3](/classes/2.4/Vector3)[],  radius: number,  tessellation: number,  radiusFunction: { (i, distance): number },  cap: number,  arc: number,  updatable: boolean,  sideOrientation: number,  instance: [Mesh](/classes/2.4/Mesh) } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreatePolyhedron(name, options, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a polyhedron mesh.
 
-         * tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#polyhedron
+
+
+tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#polyhedron
 
 The parameter `type` (positive integer, max 14, default 0) sets the polyhedron type to build among the 15 embbeded types. Please refer to the type sheet in the tutorial
 
@@ -600,8 +650,10 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateDecalundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | name | string |  
+ | options | { type: number,  size: number,  sizeX: number,  sizeY: number,  sizeZ: number,  custom: any,  faceUV: [Vector4](/classes/2.4/Vector4)[],  faceColors: [Color4](/classes/2.4/Color4)[],  flat: boolean,  updatable: boolean,  sideOrientation: number } |  
+ | scene | [Scene](/classes/2.4/Scene) |  
+### static CreateDecal(name, sourceMesh, options) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a decal mesh.
 
@@ -620,4 +672,6 @@ The parameter `angle` (float in radian, default 0) sets the angle to rotate the 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | name | string |  
+ | sourceMesh | [AbstractMesh](/classes/2.4/AbstractMesh) |  
+ | options | { position: [Vector3](/classes/2.4/Vector3),  normal: [Vector3](/classes/2.4/Vector3),  size: [Vector3](/classes/2.4/Vector3),  angle: number } |  

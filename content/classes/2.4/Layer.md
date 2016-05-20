@@ -88,9 +88,9 @@ An event triggered after rendering the scene
 
 ## Methods
 
-### renderundefined &rarr; void
+### render() &rarr; void
 
-
-### disposeundefined &rarr; void
+Function used to render this layer
+### dispose() &rarr; void
 
 

@@ -59,85 +59,96 @@ The lines Index Count
 
 ## Methods
 
-### getBoundingInfoundefined &rarr; [BoundingInfo](/classes/2.4/BoundingInfo)
+### getBoundingInfo() &rarr; [BoundingInfo](/classes/2.4/BoundingInfo)
 
+Get bounding info
+### getMesh() &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
 
-### getMeshundefined &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
+Get mesh
+### getRenderingMesh() &rarr; [Mesh](/classes/2.4/Mesh)
 
+Get rendering mesh
+### getMaterial() &rarr; [Material](/classes/2.4/Material)
 
-### getRenderingMeshundefined &rarr; [Mesh](/classes/2.4/Mesh)
+Get material
+### refreshBoundingInfo() &rarr; void
 
+Refresh bounding info
+### updateBoundingInfo(world) &rarr; void
 
-### getMaterialundefined &rarr; [Material](/classes/2.4/Material)
+Update bounding info
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | world | [Matrix](/classes/2.4/Matrix) |    @param world
 
-### refreshBoundingInfoundefined &rarr; void
+### isInFrustum(frustumPlanes) &rarr; boolean
 
+Return true if it is frustum
 
-### updateBoundingInfoundefined &rarr; void
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    @param frustumPlanes
+
+### render(enableAlphaMode) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isInFrustumundefined &rarr; boolean
+ | enableAlphaMode | boolean |   
+
+### getLinesIndexBuffer(indices, engine) &rarr; WebGLBuffer
+
+Get lines index buffer
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | indices | number[] |    @param indices
+ | engine | any |    @param engine
+### canIntersects(ray) &rarr; boolean
+
+Can Intersects
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | ray | [Ray](/classes/2.4/Ray) |    The ray
+
+### intersects(ray, positions, indices, fastCheck) &rarr; [IntersectionInfo](/classes/2.4/IntersectionInfo)
+
+Intersects
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | ray | [Ray](/classes/2.4/Ray) |    The ray
+ | positions | [Vector3](/classes/2.4/Vector3)[] |    @param positions
+ | indices | number[] |    @param indices
+### clone(newMesh, newRenderingMesh) &rarr; [SubMesh](/classes/2.4/SubMesh)
+
+Create a clone of the subMesh
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | newMesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    @param newMesh
+optional | newRenderingMesh | [Mesh](/classes/2.4/Mesh) |    @param newRenderingMesh
+### dispose() &rarr; void
+
+Dispose
+### static CreateFromIndices(materialIndex, startIndex, indexCount, mesh, renderingMesh) &rarr; [SubMesh](/classes/2.4/SubMesh)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### renderundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getLinesIndexBufferundefined &rarr; WebGLBuffer
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### canIntersectsundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### intersectsundefined &rarr; [IntersectionInfo](/classes/2.4/IntersectionInfo)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### cloneundefined &rarr; [SubMesh](/classes/2.4/SubMesh)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### disposeundefined &rarr; void
-
-
-### static CreateFromIndicesundefined &rarr; [SubMesh](/classes/2.4/SubMesh)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | materialIndex | number |    The index of the material to use (this index is used to find the correct material Inside the subMaterials collection of a multi-material)
+ | startIndex | number |    Index of the first indice to use
+ | indexCount | number |    The indices count
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    @param mesh

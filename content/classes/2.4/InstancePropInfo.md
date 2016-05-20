@@ -40,19 +40,22 @@ class [InstancePropInfo](/classes/2.4/InstancePropInfo)
 
 ## Methods
 
-### setSizeundefined &rarr; void
+### setSize(val) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### writeDataundefined &rarr; void
+ | val | any | 
+
+### writeData(array, offset, val) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | array | Float32Array | 
+ | offset | number | 
+ | val | any | 

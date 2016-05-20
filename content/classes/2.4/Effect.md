@@ -65,213 +65,242 @@ Function called when an error occurs
 
 ## Methods
 
-### isReadyundefined &rarr; boolean
+### isReady() &rarr; boolean
 
+Function to know if effect is ready
+### getProgram() &rarr; WebGLProgram
 
-### getProgramundefined &rarr; WebGLProgram
+Return the shader program linked to this effect
+### getAttributesNames() &rarr; string[]
 
+Return attributes names of the effect
+### getAttributeLocation(index) &rarr; number
 
-### getAttributesNamesundefined &rarr; string[]
+Return the attribute location at the specified index
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | index | number |    The given index
 
-### getAttributeLocationundefined &rarr; number
+### getAttributeLocationByName(name) &rarr; number
+
+Return the attribute location at the specified name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    The given name
+
+### getAttributesCount() &rarr; number
+
+Return the number of attributes
+### getUniformIndex(uniformName) &rarr; number
+
+Return the index of the searched name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+
+### getUniform(uniformName) &rarr; WebGLUniformLocation
+
+Return searched parameter if exist
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+
+### getSamplers() &rarr; string[]
+
+Return samplers
+### getCompilationError() &rarr; string
+
+Return the program compilation error
+### setTexture(channel, texture) &rarr; void
+
+Set the texture to the effect
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | channel | string |    @param channel
+ | texture | [BaseTexture](/classes/2.4/BaseTexture) |    The given texture
+### setTextureFromPostProcess(channel, postProcess) &rarr; void
+
+Set the texture to the effect from post process
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | channel | string |    @param channel
+ | postProcess | [PostProcess](/classes/2.4/PostProcess) |    The given post process
+### setArray(uniformName, array) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the array given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | array | number[] |    
+### setArray2(uniformName, array) &rarr; [Effect](/classes/2.4/Effect)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAttributeLocationByNameundefined &rarr; number
+ | uniformName | string |    The given uniform name
+ | array | number[] |    
+### setArray3(uniformName, array) &rarr; [Effect](/classes/2.4/Effect)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAttributesCountundefined &rarr; number
-
-
-### getUniformIndexundefined &rarr; number
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getUniformundefined &rarr; WebGLUniformLocation
+ | uniformName | string |    The given uniform name
+ | array | number[] |    
+### setArray4(uniformName, array) &rarr; [Effect](/classes/2.4/Effect)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getSamplersundefined &rarr; string[]
+ | uniformName | string |    The given uniform name
+ | array | number[] |    
+### setMatrices(uniformName, matrices) &rarr; [Effect](/classes/2.4/Effect)
 
+Set the matrice given by its name
 
-### getCompilationErrorundefined &rarr; string
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | matrices | Float32Array |    The matrices
+### setMatrix(uniformName, matrix) &rarr; [Effect](/classes/2.4/Effect)
 
+Set the matrix given by its name
 
-### setTextureundefined &rarr; void
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | matrix | [Matrix](/classes/2.4/Matrix) |    the matrix
+### setMatrix3x3(uniformName, matrix) &rarr; [Effect](/classes/2.4/Effect)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setTextureFromPostProcessundefined &rarr; void
+ | uniformName | string |    The given uniform name
+ | matrix | Float32Array |    the matrix
+### setMatrix2x2(uniformname, matrix) &rarr; [Effect](/classes/2.4/Effect)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setArrayundefined &rarr; [Effect](/classes/2.4/Effect)
+ | uniformname | string |   
+ | matrix | Float32Array |    the matrix
+### setFloat(uniformName, value) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the float given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | value | number |    The float
+### setBool(uniformName, bool) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the boolean given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | bool | boolean |    The boolean
+### setVector2(uniformName, vector2) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the vector2 given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | vector2 | [Vector2](/classes/2.4/Vector2) |    The vector2
+### setFloat2(uniformName, x, y) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the float2 given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | x | number |    The value on x axis
+ | y | number |    The value on y axis
+### setVector3(uniformName, vector3) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the [Vector3](/classes/2.4/Vector3) given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | vector3 | [Vector3](/classes/2.4/Vector3) |    The vector3
+### setFloat3(uniformName, x, y, z) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the float3 given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | x | number |    The value on x axis
+ | y | number |    The value on y axis
+### setVector4(uniformName, vector4) &rarr; [Effect](/classes/2.4/Effect)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setArray2undefined &rarr; [Effect](/classes/2.4/Effect)
+ | uniformName | string |    The given uniform name
+ | vector4 | [Vector4](/classes/2.4/Vector4) |   
+### setFloat4(uniformName, x, y, z, w) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the float4 given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | x | number |    The value on x axis
+ | y | number |    The value on y axis
+ | z | number |    The value on z axis
+### setColor3(uniformName, color3) &rarr; [Effect](/classes/2.4/Effect)
+
+Set the color3 given by its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | uniformName | string |    The given uniform name
+ | color3 | [Color3](/classes/2.4/Color3) |    The color
+### setColor4(uniformName, color3, alpha) &rarr; [Effect](/classes/2.4/Effect)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setArray3undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setArray4undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setMatricesundefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setMatrixundefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setMatrix3x3undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setMatrix2x2undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setFloatundefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setBoolundefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setVector2undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setFloat2undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setVector3undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setFloat3undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setVector4undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setFloat4undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setColor3undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setColor4undefined &rarr; [Effect](/classes/2.4/Effect)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | uniformName | string |    The given uniform name
+ | color3 | [Color3](/classes/2.4/Color3) |    The color
+ | alpha | number |    Alpha is the transparency between 0 and 1.

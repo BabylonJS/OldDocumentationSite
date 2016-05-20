@@ -42,73 +42,81 @@ class [CameraInputsManager](/classes/2.4/CameraInputsManager)
 
 ## Methods
 
-### addundefined &rarr; void
+### add(input) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeundefined &rarr; void
+ | input | ICameraInput&lt;TCamera&gt; | 
+
+### remove(inputToRemove) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeByTypeundefined &rarr; void
+ | inputToRemove | ICameraInput&lt;TCamera&gt; | 
+
+### removeByType(inputType) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### attachInputundefined &rarr; void
+ | inputType | string | 
+
+### attachInput(input) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### attachElementundefined &rarr; void
+ | input | ICameraInput&lt;TCamera&gt; | 
+
+### attachElement(element, noPreventDefault) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachElementundefined &rarr; void
+ | element | HTMLElement | 
+optional | noPreventDefault | boolean | 
+### detachElement(element) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### rebuildInputCheckundefined &rarr; void
+ | element | HTMLElement | 
+
+### rebuildInputCheck() &rarr; void
 
 
-### clearundefined &rarr; void
+### clear() &rarr; void
 
 
-### serializeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### parseundefined &rarr; void
+### serialize(serializedCamera) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | serializedCamera | any | 
+
+### parse(parsedCamera) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | parsedCamera | any | 
+

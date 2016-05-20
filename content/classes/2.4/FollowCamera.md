@@ -53,6 +53,6 @@ Max camera speed
 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

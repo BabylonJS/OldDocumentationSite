@@ -155,130 +155,146 @@ The layerMask
 
 ## Methods
 
-### toStringundefined &rarr; string
+### toString(fullDetails) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getActiveMeshesundefined &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;[Mesh](/classes/2.4/Mesh)&gt;
+optional | fullDetails | boolean | 
+
+### getActiveMeshes() &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;[Mesh](/classes/2.4/Mesh)&gt;
 
 
-### isActiveMeshundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### attachControlundefined &rarr; void
+### isActiveMesh(mesh) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachControlundefined &rarr; void
+ | mesh | [Mesh](/classes/2.4/Mesh) |    
+
+### attachControl(element, noPreventDefault) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### attachPostProcessundefined &rarr; number
+ | element | HTMLElement |    Element to detach control and display
+optional | noPreventDefault | boolean | 
+### detachControl(element) &rarr; void
+
+Detach the control and display of the camera from the element
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | element | HTMLElement |    Element to detach control and display
+
+### attachPostProcess(postProcess, insertAt) &rarr; number
+
+Attaches a given post process
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | postProcess | [PostProcess](/classes/2.4/PostProcess) |    @param postProcess
+optional | insertAt | number |    Index of postProcess to add
+### detachPostProcess(postProcess, atIndices) &rarr; number[]
+
+Detach a fiven post process
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | postProcess | [PostProcess](/classes/2.4/PostProcess) |    @param postProcess
+optional | atIndices | any |    Index of postProcess to detach
+### getWorldMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the worldMatrix
+### getViewMatrix(force) &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the viewMatrix
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | force | boolean |    
+
+### getProjectionMatrix(force) &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the projectionMatrix
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | force | boolean |    
+
+### dispose() &rarr; void
+
+
+### setCameraRigMode(mode, rigParams) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachPostProcessundefined &rarr; number[]
+ | mode | number |    
+ | rigParams | any |    
+### setCameraRigParameter(name, value) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getWorldMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### getViewMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getProjectionMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### disposeundefined &rarr; void
-
-
-### setCameraRigModeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setCameraRigParameterundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### createRigCameraundefined &rarr; [Camera](/classes/2.4/Camera)
+ | name | string |    
+ | value | any |    
+### createRigCamera(name, cameraIndex) &rarr; [Camera](/classes/2.4/Camera)
 
 needs to be overridden by children so sub has required properties to be copied
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | name | string |    
+ | cameraIndex | number |    
+### serialize() &rarr; any
 
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 
-### cloneundefined &rarr; [Camera](/classes/2.4/Camera)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static GetConstructorFromNameundefined &rarr; () =&gt; [Camera](/classes/2.4/Camera)
+### clone(name) &rarr; [Camera](/classes/2.4/Camera)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Parseundefined &rarr; [Camera](/classes/2.4/Camera)
+ | name | string |    
+
+### static GetConstructorFromName(type, name, scene, interaxial_distance, isStereoscopicSideBySide) &rarr; () =&gt; [Camera](/classes/2.4/Camera)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | type | string | 
+ | name | string |    
+ | scene | [Scene](/classes/2.4/Scene) |    The scene linked to this camera
+optional | interaxial_distance | number | 
+### static Parse(parsedCamera, scene) &rarr; [Camera](/classes/2.4/Camera)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | parsedCamera | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    The scene linked to this camera

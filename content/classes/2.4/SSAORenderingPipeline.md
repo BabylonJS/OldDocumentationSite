@@ -98,21 +98,22 @@ The final result is "base + ssao" between [0, 1]
 
 ## Methods
 
-### getBlurHPostProcessundefined &rarr; [BlurPostProcess](/classes/2.4/BlurPostProcess)
+### getBlurHPostProcess() &rarr; [BlurPostProcess](/classes/2.4/BlurPostProcess)
 
 Returns the horizontal blur [PostProcess](/classes/2.4/PostProcess)
 
 @return {BABYLON.[BlurPostProcess](/classes/2.4/BlurPostProcess)} The horizontal blur post-process
-### getBlurVPostProcessundefined &rarr; [BlurPostProcess](/classes/2.4/BlurPostProcess)
+### getBlurVPostProcess() &rarr; [BlurPostProcess](/classes/2.4/BlurPostProcess)
 
 Returns the vertical blur [PostProcess](/classes/2.4/PostProcess)
 
 @return {BABYLON.[BlurPostProcess](/classes/2.4/BlurPostProcess)} The vertical blur post-process
-### disposeundefined &rarr; void
+### dispose(disableDepthRender) &rarr; void
 
 Removes the internal pipeline assets and detatches the pipeline from the scene cameras
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+optional | disableDepthRender | boolean |    
+

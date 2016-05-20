@@ -29,6 +29,6 @@ class [StereoscopicFreeCamera](/classes/2.4/StereoscopicFreeCamera) extends [Fre
  | isStereoscopicSideBySide | boolean | 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

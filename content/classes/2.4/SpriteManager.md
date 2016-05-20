@@ -73,17 +73,19 @@ Called on dispose
 
 ## Methods
 
-### intersectsundefined &rarr; [PickingInfo](/classes/2.4/PickingInfo)
+### intersects(ray, camera, predicate, fastCheck) &rarr; [PickingInfo](/classes/2.4/PickingInfo)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### renderundefined &rarr; void
+ | ray | [Ray](/classes/2.4/Ray) |  
+ | camera | [Camera](/classes/2.4/Camera) |  
+optional | predicate | (sprite: [Sprite](/classes/2.4/Sprite)) =&gt; boolean |  
+### render() &rarr; void
 
-
-### disposeundefined &rarr; void
+Render this sprite manager
+### dispose() &rarr; void
 
 

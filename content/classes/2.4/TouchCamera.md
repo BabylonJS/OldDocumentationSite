@@ -39,6 +39,6 @@ A tutorial about [ArcRotateCamera](/classes/2.4/ArcRotateCamera) can be found he
 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

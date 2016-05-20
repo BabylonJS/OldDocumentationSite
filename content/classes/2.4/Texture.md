@@ -132,39 +132,50 @@ W angle of the texture
 
 ## Methods
 
-### delayLoadundefined &rarr; void
+### delayLoad() &rarr; void
 
-
-### updateSamplingModeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### getReflectionTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### cloneundefined &rarr; [Texture](/classes/2.4/Texture)
-
-
-### static CreateFromBase64Stringundefined &rarr; [Texture](/classes/2.4/Texture)
+Proxy method to delay the texture loading
+### updateSamplingMode(samplingMode) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Parseundefined &rarr; [BaseTexture](/classes/2.4/BaseTexture)
+ | samplingMode | number |    
+
+### getTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the texture matrix
+@return [Matrix](/classes/2.4/Matrix) The texture matrix
+### getReflectionTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the reflection texture matrix
+@return [Matrix](/classes/2.4/Matrix) The reflection texture matrix
+### clone() &rarr; [Texture](/classes/2.4/Texture)
+
+
+### static CreateFromBase64String(data, name, scene, noMipmap, invertY, samplingMode, onLoad, onError) &rarr; [Texture](/classes/2.4/Texture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | data | string |    
+ | name | string |    
+ | scene | [Scene](/classes/2.4/Scene) |    
+optional | noMipmap | boolean |    
+optional | invertY | boolean |    
+optional | samplingMode | number |    
+optional | onLoad | () =&gt; void |    
+### static Parse(parsedTexture, scene, rootUrl) &rarr; [BaseTexture](/classes/2.4/BaseTexture)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | parsedTexture | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    
+ | rootUrl | string |  

@@ -11,35 +11,41 @@ class [Polygon](/classes/2.4/Polygon)
 
 ## Methods
 
-### static Rectangleundefined &rarr; [Vector2](/classes/2.4/Vector2)[]
+### static Rectangle(xmin, ymin, xmax, ymax) &rarr; [Vector2](/classes/2.4/Vector2)[]
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Circleundefined &rarr; [Vector2](/classes/2.4/Vector2)[]
+ | xmin | number |    
+ | ymin | number |    
+ | xmax | number |    
+### static Circle(radius, cx, cy, numberOfSides) &rarr; [Vector2](/classes/2.4/Vector2)[]
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Parseundefined &rarr; [Vector2](/classes/2.4/Vector2)[]
+ | radius | number |    
+optional | cx | number |    
+optional | cy | number |    
+### static Parse(input) &rarr; [Vector2](/classes/2.4/Vector2)[]
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static StartingAtundefined &rarr; [Path2](/classes/2.4/Path2)
+ | input | string |    
+
+### static StartingAt(x, y) &rarr; [Path2](/classes/2.4/Path2)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | x | number |    
+ | y | number |    

@@ -31,19 +31,21 @@ The childrens actions
 
 ## Methods
 
-### executeundefined &rarr; void
+### execute(evt) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | evt | [ActionEvent](/classes/2.4/ActionEvent) |    The event to trigger
+
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any | 
+

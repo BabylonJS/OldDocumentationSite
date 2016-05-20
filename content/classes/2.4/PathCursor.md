@@ -32,38 +32,42 @@ class [PathCursor](/classes/2.4/PathCursor)
 
 ## Methods
 
-### getPointundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getPoint() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### moveAheadundefined &rarr; [PathCursor](/classes/2.4/PathCursor)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### moveBackundefined &rarr; [PathCursor](/classes/2.4/PathCursor)
+### moveAhead(step) &rarr; [PathCursor](/classes/2.4/PathCursor)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### moveundefined &rarr; [PathCursor](/classes/2.4/PathCursor)
+optional | step | number |    
+
+### moveBack(step) &rarr; [PathCursor](/classes/2.4/PathCursor)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### onchangeundefined &rarr; [PathCursor](/classes/2.4/PathCursor)
+optional | step | number |    
+
+### move(step) &rarr; [PathCursor](/classes/2.4/PathCursor)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | step | number |    
+
+### onchange(f) &rarr; [PathCursor](/classes/2.4/PathCursor)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | f | (cursor: [PathCursor](/classes/2.4/PathCursor)) =&gt; void |    
+

@@ -35,7 +35,7 @@ This is the cumulated space, not the biggest available surface. Due to fragmenta
 
 ## Methods
 
-### allocateRectundefined &rarr; [PackedRect](/classes/2.4/PackedRect)
+### allocateRect(size) &rarr; [PackedRect](/classes/2.4/PackedRect)
 
 Allocate a rectangle of a given size in the texture map
 
@@ -44,16 +44,18 @@ Allocate a rectangle of a given size in the texture map
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### freeRectundefined &rarr; void
+ | size | [Size](/classes/2.4/Size) |  the size of the rectangle to allocation
+
+### freeRect(rectInfo) &rarr; void
 
 Free a given rectangle from the texture map
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### bindTextureForRectundefined &rarr; void
+ | rectInfo | [PackedRect](/classes/2.4/PackedRect) |  the instance corresponding to the rect to free.
+
+### bindTextureForRect(rect, clear) &rarr; void
 
 Bind the texture to the rendering engine to render in the zone of a given rectangle.
 
@@ -64,8 +66,9 @@ Don't forget to call unbindTexture when you're done rendering
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### bindTextureForPosSizeundefined &rarr; void
+ | rect | [PackedRect](/classes/2.4/PackedRect) |  the zone to render to
+ | clear | boolean |  true to clear the portion's color/depth data
+### bindTextureForPosSize(pos, size, clear) &rarr; void
 
 Bind the texture to the rendering engine to render in the zone of the given size at the given position.
 
@@ -76,8 +79,10 @@ Don't forget to call unbindTexture when you're done rendering
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unbindTextureundefined &rarr; void
+ | pos | [Vector2](/classes/2.4/Vector2) |  the position into the texture
+ | size | [Size](/classes/2.4/Size) |  the portion to fit the clip space to
+ | clear | boolean |  true to clear the portion's color/depth data
+### unbindTexture(dumpForDebug) &rarr; void
 
 Unbind the texture map from the rendering engine.
 
@@ -86,7 +91,8 @@ Call this method when you're done rendering. A previous call to bindTextureForRe
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### cloneundefined &rarr; [MapTexture](/classes/2.4/MapTexture)
+optional | dumpForDebug | boolean |  if set to true the content of the texture map will be dumped to a picture file that will be sent to the internet browser.
+
+### clone() &rarr; [MapTexture](/classes/2.4/MapTexture)
 
 

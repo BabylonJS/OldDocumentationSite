@@ -109,192 +109,238 @@ The animation keeps its final value i.e stopped
 
 ## Methods
 
-### static CreateAndStartAnimationundefined &rarr; [Animatable](/classes/2.4/Animatable)
+### static CreateAndStartAnimation(name, node, targetProperty, framePerSecond, totalFrame, from, to, loopMode, easingFunction, onAnimationEnd) &rarr; [Animatable](/classes/2.4/Animatable)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateMergeAndStartAnimationundefined &rarr; [Animatable](/classes/2.4/Animatable)
+ | name | string |    
+ | node | [Node](/classes/2.4/Node) |  
+ | targetProperty | string |    
+ | framePerSecond | number |    
+ | totalFrame | number |    
+ | from | any |    The frame defining the begining of the animation
+ | to | any |    The frame defining the end of the animation
+optional | loopMode | number |    
+optional | easingFunction | [EasingFunction](/classes/2.4/EasingFunction) |    
+### static CreateMergeAndStartAnimation(name, node, targetProperty, framePerSecond, totalFrame, from, to, loopMode, easingFunction, onAnimationEnd) &rarr; [Animatable](/classes/2.4/Animatable)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### toStringundefined &rarr; string
+ | name | string |    
+ | node | [Node](/classes/2.4/Node) |  
+ | targetProperty | string |    
+ | framePerSecond | number |    
+ | totalFrame | number |    
+ | from | any |    The frame defining the begining of the animation
+ | to | any |    The frame defining the end of the animation
+optional | loopMode | number |    
+optional | easingFunction | [EasingFunction](/classes/2.4/EasingFunction) |    
+### toString(fullDetails) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addEventundefined &rarr; void
+optional | fullDetails | boolean | 
+
+### addEvent(event) &rarr; void
 
 Add an event to this animation.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeEventsundefined &rarr; void
+ | event | [AnimationEvent](/classes/2.4/AnimationEvent) |  
+
+### removeEvents(frame) &rarr; void
 
 Remove all events found at the given frame
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### createRangeundefined &rarr; void
+ | frame | number |  
+
+### createRange(name, from, to) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### deleteRangeundefined &rarr; void
+ | name | string |    
+ | from | number |    The frame defining the begining of the animation
+ | to | number |    The frame defining the end of the animation
+### deleteRange(name, deleteFrames) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getRangeundefined &rarr; [AnimationRange](/classes/2.4/AnimationRange)
+ | name | string |    
+optional | deleteFrames | boolean |  
+### getRange(name) &rarr; [AnimationRange](/classes/2.4/AnimationRange)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### resetundefined &rarr; void
+ | name | string |    
+
+### reset() &rarr; void
 
 
-### isStoppedundefined &rarr; boolean
+### isStopped() &rarr; boolean
+
+Tests if the animation is stopped
+### getKeys() &rarr; any[]
+
+Returns the animation keys.
+Every key represents the value of the [Animation](/classes/2.4/Animation) at that key's given time.
+### getHighestFrame() &rarr; number
 
 
-### getKeysundefined &rarr; any[]
+### getEasingFunction() &rarr; IEasingFunction
 
 
-### getHighestFrameundefined &rarr; number
-
-
-### getEasingFunctionundefined &rarr; IEasingFunction
-
-
-### setEasingFunctionundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### floatInterpolateFunctionundefined &rarr; number
+### setEasingFunction(easingFunction) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### quaternionInterpolateFunctionundefined &rarr; [Quaternion](/classes/2.4/Quaternion)
+ | easingFunction | [EasingFunction](/classes/2.4/EasingFunction) |    
+
+### floatInterpolateFunction(startValue, endValue, gradient) &rarr; number
+
+Used to interpolate (perform the transition ) between float keys
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | startValue | number |    
+ | endValue | number |    
+ | gradient | number |    
+### quaternionInterpolateFunction(startValue, endValue, gradient) &rarr; [Quaternion](/classes/2.4/Quaternion)
+
+Used to interpolate (perform the transition ) between [Quaternion](/classes/2.4/Quaternion) keys
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | startValue | [Quaternion](/classes/2.4/Quaternion) |    
+ | endValue | [Quaternion](/classes/2.4/Quaternion) |    
+ | gradient | number |    
+### vector3InterpolateFunction(startValue, endValue, gradient) &rarr; [Vector3](/classes/2.4/Vector3)
+
+Used to interpolate (perform the transition ) between [Vector3](/classes/2.4/Vector3) keys
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | startValue | [Vector3](/classes/2.4/Vector3) |    
+ | endValue | [Vector3](/classes/2.4/Vector3) |    
+ | gradient | number |    
+### vector2InterpolateFunction(startValue, endValue, gradient) &rarr; [Vector2](/classes/2.4/Vector2)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### vector3InterpolateFunctionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | startValue | [Vector2](/classes/2.4/Vector2) |    
+ | endValue | [Vector2](/classes/2.4/Vector2) |    
+ | gradient | number |    
+### color3InterpolateFunction(startValue, endValue, gradient) &rarr; [Color3](/classes/2.4/Color3)
+
+Used to interpolate (perform the transition ) between [Color3](/classes/2.4/Color3) keys
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | startValue | [Color3](/classes/2.4/Color3) |    
+ | endValue | [Color3](/classes/2.4/Color3) |    
+ | gradient | number |    
+### matrixInterpolateFunction(startValue, endValue, gradient) &rarr; [Matrix](/classes/2.4/Matrix)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### vector2InterpolateFunctionundefined &rarr; [Vector2](/classes/2.4/Vector2)
+ | startValue | [Matrix](/classes/2.4/Matrix) |    
+ | endValue | [Matrix](/classes/2.4/Matrix) |    
+ | gradient | number |    
+### clone() &rarr; [Animation](/classes/2.4/Animation)
+
+Clones this animation object
+### setKeys(values) &rarr; void
+
+Adds the keys array to this [Animation](/classes/2.4/Animation) object
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | values | Array&lt;any&gt; |    The keys to assign to this object
+
+### setValue(currentValue, blend) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### color3InterpolateFunctionundefined &rarr; [Color3](/classes/2.4/Color3)
+ | currentValue | any |  
+optional | blend | boolean | 
+### goToFrame(frame) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### matrixInterpolateFunctionundefined &rarr; [Matrix](/classes/2.4/Matrix)
+ | frame | number |  
+
+### animate(delay, from, to, loop, speedRatio, blend) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### cloneundefined &rarr; [Animation](/classes/2.4/Animation)
+ | delay | number |    @param delay
+ | from | number |    The frame defining the begining of the animation
+ | to | number |    The frame defining the end of the animation
+ | loop | boolean |    true loop the animation, false either
+ | speedRatio | number | 
+### serialize() &rarr; any
 
 
-### setKeysundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setValueundefined &rarr; void
+### static Parse(parsedAnimation) &rarr; [Animation](/classes/2.4/Animation)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### goToFrameundefined &rarr; void
+ | parsedAnimation | any |  
+
+### static AppendSerializedAnimations(source, destination) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### animateundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### serializeundefined &rarr; any
-
-
-### static Parseundefined &rarr; [Animation](/classes/2.4/Animation)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static AppendSerializedAnimationsundefined &rarr; any
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | source | IAnimatable |  
+ | destination | any |  

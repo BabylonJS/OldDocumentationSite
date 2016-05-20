@@ -31,11 +31,13 @@ class [CollideWorker](/classes/2.4/CollideWorker)
 
 ## Methods
 
-### collideWithWorldundefined &rarr; void
+### collideWithWorld(position, velocity, maximumRetry, excludedMeshUniqueId) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | position | [Vector3](/classes/2.4/Vector3) |    
+ | velocity | [Vector3](/classes/2.4/Vector3) |    
+ | maximumRetry | number |    

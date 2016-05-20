@@ -7,6 +7,8 @@ class [HDRCubeTexture](/classes/2.4/HDRCubeTexture) extends [BaseTexture](/class
 
 This represents a texture coming from an HDR input.
 
+
+
 The only supported format is currently panorama picture stored in RGBE format.
 
 Example of such files can be found on HDRLib: http://hdrlib.com/
@@ -16,8 +18,6 @@ Example of such files can be found on HDRLib: http://hdrlib.com/
 ## new [HDRCubeTexture](/classes/2.4/HDRCubeTexture)(url, scene, size, noMipmap, generateHarmonics, useInGammaSpace, usePMREMGenerator)
 
 Instantiates an HDRTexture from the following parameters.
-
-         * @param url The location of the HDR raw data (Panorama stored in RGBE format)
 
 #### Parameters
  | Name | Type | Description
@@ -50,27 +50,29 @@ This is usefull at run time to apply the good shader.
 
 ## Methods
 
-### cloneundefined &rarr; [HDRCubeTexture](/classes/2.4/HDRCubeTexture)
+### clone() &rarr; [HDRCubeTexture](/classes/2.4/HDRCubeTexture)
 
 
-### delayLoadundefined &rarr; void
+### delayLoad() &rarr; void
 
 
-### getReflectionTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+### getReflectionTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
 
-### static Parseundefined &rarr; [HDRCubeTexture](/classes/2.4/HDRCubeTexture)
+### static Parse(parsedTexture, scene, rootUrl) &rarr; [HDRCubeTexture](/classes/2.4/HDRCubeTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | parsedTexture | any | 
+ | scene | [Scene](/classes/2.4/Scene) | 
+ | rootUrl | string | 
+### serialize() &rarr; any
 
 
-### static generateBabylonHDROnDiskundefined &rarr; void
+### static generateBabylonHDROnDisk(url, size, onError) &rarr; void
 
 Saves as a file the data contained in the texture in a binary format.
 
@@ -83,8 +85,10 @@ as the spherical used in the lighting.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static generateBabylonHDRundefined &rarr; void
+ | url | string |  The HDR file url.
+ | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
+optional | onError | () =&gt; void |  Method called if any error happens during download.
+### static generateBabylonHDR(url, size, callback, onError) &rarr; void
 
 Serializes the data contained in the texture in a binary format.
 
@@ -97,4 +101,6 @@ as the spherical used in the lighting.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | url | string |  The HDR file url.
+ | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
+ | callback | (ArrayBuffer: undefined) =&gt; void | 

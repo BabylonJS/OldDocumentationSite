@@ -31,30 +31,33 @@ Array of sub materials
 
 ## Methods
 
-### getSubMaterialundefined &rarr; [Material](/classes/2.4/Material)
+### getSubMaterial(index) &rarr; [Material](/classes/2.4/Material)
+
+Get a sub material
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | index | any |    Index of the submaterial
+
+### isReady(mesh) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isReadyundefined &rarr; boolean
+optional | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    The mesh with the multi material
+
+### clone(name, cloneChildren) &rarr; [MultiMaterial](/classes/2.4/MultiMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### cloneundefined &rarr; [MultiMaterial](/classes/2.4/MultiMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | name | string |    
+optional | cloneChildren | boolean |  
+### serialize() &rarr; any
 
 

@@ -9,19 +9,21 @@ class [Canvas2DEngineBoundData](/classes/2.4/Canvas2DEngineBoundData)
 
 ## Methods
 
-### GetOrAddModelCacheundefined &rarr; [ModelRenderCache](/classes/2.4/ModelRenderCache)
+### GetOrAddModelCache(key, factory) &rarr; [ModelRenderCache](/classes/2.4/ModelRenderCache)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### DisposeModelRenderCacheundefined &rarr; boolean
+ | key | string | 
+ | factory | (key: string) =&gt; [ModelRenderCache](/classes/2.4/ModelRenderCache) | 
+### DisposeModelRenderCache(modelRenderCache) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | modelRenderCache | [ModelRenderCache](/classes/2.4/ModelRenderCache) | 
+

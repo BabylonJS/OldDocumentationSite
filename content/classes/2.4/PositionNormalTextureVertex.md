@@ -37,6 +37,6 @@ optional | uv | [Vector2](/classes/2.4/Vector2) |
 
 ## Methods
 
-### cloneundefined &rarr; [PositionNormalTextureVertex](/classes/2.4/PositionNormalTextureVertex)
+### clone() &rarr; [PositionNormalTextureVertex](/classes/2.4/PositionNormalTextureVertex)
 
 

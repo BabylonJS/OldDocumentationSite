@@ -11,19 +11,21 @@ class [TGATools](/classes/2.4/TGATools)
 
 ## Methods
 
-### static GetTGAHeaderundefined &rarr; any
+### static GetTGAHeader(data) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static UploadContentundefined &rarr; void
+ | data | Uint8Array |    @param data
+
+### static UploadContent(gl, data) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | gl | WebGLRenderingContext |    @param gl
+ | data | Uint8Array |    @param data

@@ -47,43 +47,48 @@ The bounding sphere of the bounding info
 
 ## Methods
 
-### updateundefined &rarr; void
+### update(world) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isInFrustumundefined &rarr; boolean
+ | world | [Matrix](/classes/2.4/Matrix) |  
+
+### isInFrustum(frustumPlanes) &rarr; boolean
+
+Check if the bounding
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    
+
+### isCompletelyInFrustum(frustumPlanes) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isCompletelyInFrustumundefined &rarr; boolean
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    
+
+### intersectsPoint(point) &rarr; boolean
+
+Check if the bounding sphere or the bounding box intersect the given point.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | point | [Vector3](/classes/2.4/Vector3) |    The point
+
+### intersects(boundingInfo, precise) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### intersectsPointundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### intersectsundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | boundingInfo | [BoundingInfo](/classes/2.4/BoundingInfo) |    The bounding info
+ | precise | boolean |    False : check only bounding volumes, true check point by point

@@ -45,43 +45,50 @@ Create function for SubMeshes
 
 ## Methods
 
-### updateundefined &rarr; void
+### update(worldMin, worldMax, entries) &rarr; void
+
+Update this octree
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | worldMin | [Vector3](/classes/2.4/Vector3) |    the minimum world
+ | worldMax | [Vector3](/classes/2.4/Vector3) |    the maximum world
+ | entries | T[] |    @param entries
+### addMesh(entry) &rarr; void
+
+Add a mesh to this octree
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | entry | T |    @param entry
+
+### select(frustumPlanes, allowDuplicate) &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;T&gt;
+
+Select octree
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    [Frustum](/classes/2.4/Frustum) plan of the mesh
+optional | allowDuplicate | boolean |    True if you want to duplicate it, false otherwise.
+### intersects(sphereCenter, sphereRadius, allowDuplicate) &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;T&gt;
+
+Intersects
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | sphereCenter | [Vector3](/classes/2.4/Vector3) |    The sphere center
+ | sphereRadius | number |    The sphere radius
+optional | allowDuplicate | boolean |    True if you want to duplicate it, false otherwise.
+### intersectsRay(ray) &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;T&gt;
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addMeshundefined &rarr; void
+ | ray | [Ray](/classes/2.4/Ray) |    @param ray
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### selectundefined &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;T&gt;
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### intersectsundefined &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;T&gt;
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### intersectsRayundefined &rarr; [SmartArray](/classes/2.4/SmartArray)&lt;T&gt;
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined

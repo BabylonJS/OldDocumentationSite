@@ -30,6 +30,6 @@ class [StereoscopicGamepadCamera](/classes/2.4/StereoscopicGamepadCamera) extend
  | isStereoscopicSideBySide | boolean | 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

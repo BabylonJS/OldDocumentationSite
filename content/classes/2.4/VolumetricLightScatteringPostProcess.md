@@ -30,7 +30,7 @@ optional | engine | [Engine](/classes/2.4/Engine) |
 optional | reusable | boolean |    
 ## Members
 
-### attachedNode : { undefined: [Vector3](/classes/2.4/Vector3) }
+### attachedNode : { position: [Vector3](/classes/2.4/Vector3) }
 
 If not undefined, the mesh position is computed from the attached node position
 
@@ -96,41 +96,44 @@ Controls the density of each sample
 
 ## Methods
 
-### isReadyundefined &rarr; boolean
+### isReady(subMesh, useInstances) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setCustomMeshPositionundefined &rarr; void
+ | subMesh | [SubMesh](/classes/2.4/SubMesh) |    
+ | useInstances | boolean |    
+### setCustomMeshPosition(position) &rarr; void
 
 Sets the new light position for light scattering effect
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getCustomMeshPositionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | position | [Vector3](/classes/2.4/Vector3) |    
+
+### getCustomMeshPosition() &rarr; [Vector3](/classes/2.4/Vector3)
 
 Returns the light position for light scattering effect
 
 @return {BABYLON.[Vector3](/classes/2.4/Vector3)} The custom light position
-### disposeundefined &rarr; void
+### dispose(camera) &rarr; void
 
 Disposes the internal assets and detaches the post-process from the camera
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getPassundefined &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
+ | camera | [Camera](/classes/2.4/Camera) |    
+
+### getPass() &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
 
 Returns the render target texture used by the post-process
 
 @return {BABYLON.[RenderTargetTexture](/classes/2.4/RenderTargetTexture)} The render target texture used by the post-process
-### static CreateDefaultMeshundefined &rarr; [Mesh](/classes/2.4/Mesh)
+### static CreateDefaultMesh(name, scene) &rarr; [Mesh](/classes/2.4/Mesh)
 
 Creates a default mesh for the Volumeric [Light](/classes/2.4/Light) Scattering post-process
 
@@ -139,4 +142,5 @@ Creates a default mesh for the Volumeric [Light](/classes/2.4/Light) Scattering 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | name | string |    
+ | scene | [Scene](/classes/2.4/Scene) |    

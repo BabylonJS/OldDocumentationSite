@@ -22,19 +22,22 @@ Builds an [OutlineRenderer](/classes/2.4/OutlineRenderer) object
 
 ## Methods
 
-### renderundefined &rarr; void
+### render(subMesh, batch, useOverlay) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isReadyundefined &rarr; boolean
+ | subMesh | [SubMesh](/classes/2.4/SubMesh) |    
+ | batch | _InstancesBatch |    
+optional | useOverlay | boolean |    
+### isReady(subMesh, useInstances) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | subMesh | [SubMesh](/classes/2.4/SubMesh) |    
+ | useInstances | boolean |    

@@ -112,50 +112,57 @@ By default : no delay
 
 ## Methods
 
-### toStringundefined &rarr; string
+### toString() &rarr; string
 
 
-### getSceneundefined &rarr; [Scene](/classes/2.4/Scene)
+### getScene() &rarr; [Scene](/classes/2.4/Scene)
 
+Get the scene which contains the base texture
+@return The scene
+### getTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
-### getTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+Get the texture matrix - return null
+@return null
+### getReflectionTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
+Get the reflection texture matrix - return null
+@return null
+### getInternalTexture() &rarr; WebGLTexture
 
-### getReflectionTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+Get the internal texture
+@return The internal texture
+### isReady() &rarr; boolean
 
+True if the base texture is ready ; False otherwise
+### getSize() &rarr; ISize
 
-### getInternalTextureundefined &rarr; WebGLTexture
+Get the size of the base texture
+@return ISize
+### getBaseSize() &rarr; ISize
 
-
-### isReadyundefined &rarr; boolean
-
-
-### getSizeundefined &rarr; ISize
-
-
-### getBaseSizeundefined &rarr; ISize
-
-
-### scaleundefined &rarr; void
+Get the base size of the base texture
+@return ISize
+### scale(ratio) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### delayLoadundefined &rarr; void
+ | ratio | number |    
+
+### delayLoad() &rarr; void
+
+Do the load delay
+### clone() &rarr; [BaseTexture](/classes/2.4/BaseTexture)
+
+Clone the base texture
+### releaseInternalTexture() &rarr; void
+
+Release the internal texture
+### dispose() &rarr; void
 
 
-### cloneundefined &rarr; [BaseTexture](/classes/2.4/BaseTexture)
-
-
-### releaseInternalTextureundefined &rarr; void
-
-
-### disposeundefined &rarr; void
-
-
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 

@@ -31,11 +31,12 @@ Func
 
 ## Methods
 
-### executeundefined &rarr; void
+### execute(evt) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | evt | [ActionEvent](/classes/2.4/ActionEvent) |    The event to trigger
+

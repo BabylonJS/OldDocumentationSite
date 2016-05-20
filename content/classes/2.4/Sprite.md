@@ -83,17 +83,19 @@ The sprite size
 
 ## Methods
 
-### playAnimationundefined &rarr; void
+### playAnimation(from, to, loop, delay) &rarr; void
 
-
+Function to play the sprite animation
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### stopAnimationundefined &rarr; void
+ | from | number |    Number of the first frame
+ | to | number |    Number of the last frame
+ | loop | boolean |    True : loop ; False : don't loop
+### stopAnimation() &rarr; void
 
-
-### disposeundefined &rarr; void
+Function to stop the sprite animation
+### dispose() &rarr; void
 
 

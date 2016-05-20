@@ -56,17 +56,18 @@ isLesser of value condition
 
 ## Methods
 
-### isValidundefined &rarr; boolean
+### isValid() &rarr; boolean
 
 
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 
-### static GetOperatorNameundefined &rarr; string
+### static GetOperatorName(operator) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | operator | number | 
+

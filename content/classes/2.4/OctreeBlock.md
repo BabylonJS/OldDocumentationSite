@@ -47,46 +47,53 @@ The max point
 
 ## Methods
 
-### addEntryundefined &rarr; void
+### addEntry(entry) &rarr; void
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### addEntriesundefined &rarr; void
-
-
+Add an entry to this octree block. The creationFunc linked to this octreeblock is used on the given entry
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### selectundefined &rarr; void
+ | entry | T |    @param entry
 
+### addEntries(entries) &rarr; void
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### intersectsundefined &rarr; void
-
-
+Add an entries to this octree block.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### intersectsRayundefined &rarr; void
+ | entries | T[] |    @param entries
 
+### select(frustumPlanes, selection, allowDuplicate) &rarr; void
 
+Select
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### createInnerBlocksundefined &rarr; void
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    [Frustum](/classes/2.4/Frustum) plan of the mesh
+ | selection | [SmartArray](/classes/2.4/SmartArray)&lt;T&gt; |    @param selection
+optional | allowDuplicate | boolean |    True if you want to duplicate it, false otherwise.
+### intersects(sphereCenter, sphereRadius, selection, allowDuplicate) &rarr; void
+
+Intersects
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | sphereCenter | [Vector3](/classes/2.4/Vector3) |    The sphere center
+ | sphereRadius | number |    The sphere radius
+ | selection | [SmartArray](/classes/2.4/SmartArray)&lt;T&gt; |    @param selection
+### intersectsRay(ray, selection) &rarr; void
+
+Intersects ray
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | ray | [Ray](/classes/2.4/Ray) |    @param ray
+ | selection | [SmartArray](/classes/2.4/SmartArray)&lt;T&gt; |    @param selection
+### createInnerBlocks() &rarr; void
 
 

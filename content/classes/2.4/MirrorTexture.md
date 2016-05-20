@@ -34,9 +34,9 @@ The plane to apply the mirror texture
 
 ## Methods
 
-### cloneundefined &rarr; [MirrorTexture](/classes/2.4/MirrorTexture)
+### clone() &rarr; [MirrorTexture](/classes/2.4/MirrorTexture)
 
 
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 

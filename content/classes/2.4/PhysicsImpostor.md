@@ -41,6 +41,8 @@ optional | _options | PhysicsImpostorParameters |
 
 Gets the body that holds this impostor. Either its own, or its parent.
 
+
+
 Set the physics body. Used mainly by the physics engine/plugin
 
 ### parent : [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
@@ -55,7 +57,7 @@ this function is executed by the physics engine.
 
 this function is executed by the physics engine.
 
-### onCollide : (e: { undefined: any }) =&gt; void
+### onCollide : (e: { body: any }) =&gt; void
 
 
 
@@ -93,78 +95,84 @@ this function is executed by the physics engine.
 
 ## Methods
 
-### isBodyInitRequiredundefined &rarr; boolean
+### isBodyInitRequired() &rarr; boolean
 
 Should a new body be generated.
-### setScalingUpdatedundefined &rarr; void
+### setScalingUpdated(updated) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### forceUpdateundefined &rarr; void
+ | updated | boolean | 
+
+### forceUpdate() &rarr; void
 
 Force a regeneration of this or the parent's impostor's body.
 
 Use under cautious - This will remove all joints already implemented.
-### resetUpdateFlagsundefined &rarr; void
+### resetUpdateFlags() &rarr; void
 
 
-### getObjectExtendSizeundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getObjectExtendSize() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### getObjectCenterundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getObjectCenter() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### getParamundefined &rarr; any
+### getParam(paramName) &rarr; any
 
 Get a specific parametes from the options parameter.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setParamundefined &rarr; void
+ | paramName | string | 
+
+### setParam(paramName, value) &rarr; void
 
 Sets a specific parameter in the options given to the physics plugin
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setMassundefined &rarr; void
+ | paramName | string | 
+ | value | number | 
+### setMass(mass) &rarr; void
 
 Specifically change the body's mass option. Won't recreate the physics body object
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getLinearVelocityundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | mass | number | 
+
+### getLinearVelocity() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### setLinearVelocityundefined &rarr; void
-
-Set the body's linear velocity.
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getAngularVelocityundefined &rarr; [Vector3](/classes/2.4/Vector3)
-
-
-### setAngularVelocityundefined &rarr; void
+### setLinearVelocity(velocity) &rarr; void
 
 Set the body's linear velocity.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### executeNativeFunctionundefined &rarr; void
+ | velocity | [Vector3](/classes/2.4/Vector3) | 
+
+### getAngularVelocity() &rarr; [Vector3](/classes/2.4/Vector3)
+
+
+### setAngularVelocity(velocity) &rarr; void
+
+Set the body's linear velocity.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | velocity | [Vector3](/classes/2.4/Vector3) | 
+
+### executeNativeFunction(func) &rarr; void
 
 Execute a function with the physics plugin native code.
 
@@ -173,117 +181,132 @@ Provide a function the will have two variables - the world object and the physic
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### registerBeforePhysicsStepundefined &rarr; void
+ | func | (world: any, physicsBody: any) =&gt; void | 
+
+### registerBeforePhysicsStep(func) &rarr; void
 
 Register a function that will be executed before the physics world is stepping forward.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unregisterBeforePhysicsStepundefined &rarr; void
+ | func | (impostor: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
+
+### unregisterBeforePhysicsStep(func) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### registerAfterPhysicsStepundefined &rarr; void
+ | func | (impostor: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
+
+### registerAfterPhysicsStep(func) &rarr; void
 
 Register a function that will be executed after the physics step
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unregisterAfterPhysicsStepundefined &rarr; void
+ | func | (impostor: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
+
+### unregisterAfterPhysicsStep(func) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### registerOnPhysicsCollideundefined &rarr; void
+ | func | (impostor: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
+
+### registerOnPhysicsCollide(collideAgainst, func) &rarr; void
 
 register a function that will be executed when this impostor collides against a different body.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unregisterOnPhysicsCollideundefined &rarr; void
+ | collideAgainst | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | func | (collider: [PhysicsImpostor](/classes/2.4/PhysicsImpostor), collidedAgainst: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
+### unregisterOnPhysicsCollide(collideAgainst, func) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyForceundefined &rarr; void
+ | collideAgainst | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | func | (collider: [PhysicsImpostor](/classes/2.4/PhysicsImpostor), collidedAgainst: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
+### applyForce(force, contactPoint) &rarr; void
 
 Apply a force
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyImpulseundefined &rarr; void
+ | force | [Vector3](/classes/2.4/Vector3) | 
+ | contactPoint | [Vector3](/classes/2.4/Vector3) | 
+### applyImpulse(force, contactPoint) &rarr; void
 
 Apply an impulse
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### createJointundefined &rarr; void
+ | force | [Vector3](/classes/2.4/Vector3) | 
+ | contactPoint | [Vector3](/classes/2.4/Vector3) | 
+### createJoint(otherImpostor, jointType, jointData) &rarr; void
 
 A help function to create a joint.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addJointundefined &rarr; void
+ | otherImpostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | jointType | number | 
+ | jointData | PhysicsJointData | 
+### addJoint(otherImpostor, joint) &rarr; void
 
 Add a joint to this impostor with a different impostor.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### sleepundefined &rarr; void
+ | otherImpostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | joint | [PhysicsJoint](/classes/2.4/PhysicsJoint) | 
+### sleep() &rarr; void
 
 Will keep this body still, in a sleep mode.
-### wakeUpundefined &rarr; void
+### wakeUp() &rarr; void
 
 Wake the body up.
-### cloneundefined &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
+### clone(newObject) &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | newObject | IPhysicsEnabledObject | 
+
+### dispose() &rarr; void
 
 
-### setDeltaPositionundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setDeltaRotationundefined &rarr; void
+### setDeltaPosition(position) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | position | [Vector3](/classes/2.4/Vector3) | 
+
+### setDeltaRotation(rotation) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | rotation | [Quaternion](/classes/2.4/Quaternion) | 
+

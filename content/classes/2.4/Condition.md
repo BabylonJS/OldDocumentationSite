@@ -24,9 +24,9 @@ The condition constructor
 
 ## Methods
 
-### isValidundefined &rarr; boolean
+### isValid() &rarr; boolean
 
 
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 

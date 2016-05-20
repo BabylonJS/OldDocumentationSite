@@ -63,14 +63,15 @@ class [Rectangle2DRenderCache](/classes/2.4/Rectangle2DRenderCache) extends [Mod
 
 ## Methods
 
-### renderundefined &rarr; boolean
+### render(instanceInfo, context) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; boolean
+ | instanceInfo | [GroupInstanceInfo](/classes/2.4/GroupInstanceInfo) | 
+ | context | [Render2DContext](/classes/2.4/Render2DContext) | 
+### dispose() &rarr; boolean
 
 

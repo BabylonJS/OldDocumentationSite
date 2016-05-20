@@ -52,11 +52,12 @@ class [DecimationVertex](/classes/2.4/DecimationVertex)
 
 ## Methods
 
-### updatePositionundefined &rarr; void
+### updatePosition(newPosition) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | newPosition | [Vector3](/classes/2.4/Vector3) |    
+

@@ -37,22 +37,24 @@ optional | mesh | [Mesh](/classes/2.4/Mesh) |
 
 ## Methods
 
-### copyundefined &rarr; [Geometry](/classes/2.4/Geometry)
+### copy(id) &rarr; [Geometry](/classes/2.4/Geometry)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | id | string |   
+
+### serialize() &rarr; any
 
 
-### static Parseundefined &rarr; undefined
+### static Parse(parsedPlane, scene) &rarr; [Plane](/classes/2.4/Plane)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parsedPlane | any |  
+ | scene | [Scene](/classes/2.4/Scene) |   

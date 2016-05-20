@@ -34,17 +34,18 @@ class [Size](/classes/2.4/Size)
 
 ## Methods
 
-### cloneundefined &rarr; [Size](/classes/2.4/Size)
+### clone() &rarr; [Size](/classes/2.4/Size)
 
 
-### equalsundefined &rarr; boolean
+### equals(other) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Zeroundefined &rarr; [Size](/classes/2.4/Size)
+ | other | [Size](/classes/2.4/Size) | 
+
+### static Zero() &rarr; [Size](/classes/2.4/Size)
 
 

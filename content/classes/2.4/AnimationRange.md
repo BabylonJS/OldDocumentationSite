@@ -35,6 +35,6 @@ class [AnimationRange](/classes/2.4/AnimationRange)
 
 ## Methods
 
-### cloneundefined &rarr; [AnimationRange](/classes/2.4/AnimationRange)
+### clone() &rarr; [AnimationRange](/classes/2.4/AnimationRange)
 
 

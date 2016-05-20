@@ -41,6 +41,6 @@ class [ArcFollowCamera](/classes/2.4/ArcFollowCamera) extends [TargetCamera](/cl
 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

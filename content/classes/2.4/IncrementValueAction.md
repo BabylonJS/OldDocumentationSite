@@ -36,14 +36,15 @@ The action value
 
 ## Methods
 
-### executeundefined &rarr; void
+### execute() &rarr; void
 
 
-### serializeundefined &rarr; any
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any | 
+

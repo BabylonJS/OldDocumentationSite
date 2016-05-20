@@ -11,6 +11,8 @@ It can help converting any input color in a desired output one. This can then be
 
 from sepia, black and white to sixties or futuristic rendering...
 
+
+
 The only supported format is currently 3dl.
 
 More information on LUT: https://en.wikipedia.org/wiki/3D_lookup_table/
@@ -20,8 +22,6 @@ More information on LUT: https://en.wikipedia.org/wiki/3D_lookup_table/
 ## new [ColorGradingTexture](/classes/2.4/ColorGradingTexture)(url, scene)
 
 Instantiates a [ColorGradingTexture](/classes/2.4/ColorGradingTexture) from the following parameters.
-
-         * @param url The location of the color gradind data (currently only supporting 3dl)
 
 #### Parameters
  | Name | Type | Description
@@ -36,18 +36,18 @@ The texture URL.
 
 ## Methods
 
-### getTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+### getTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
 Returns the texture matrix used in most of the material.
 
 This is not used in color grading but keep for troubleshooting purpose (easily swap diffuse by colorgrading to look in).
-### cloneundefined &rarr; [ColorGradingTexture](/classes/2.4/ColorGradingTexture)
+### clone() &rarr; [ColorGradingTexture](/classes/2.4/ColorGradingTexture)
 
 Clones the color gradind texture.
-### delayLoadundefined &rarr; void
+### delayLoad() &rarr; void
 
 Called during delayed load for textures.
-### static Parseundefined &rarr; [ColorGradingTexture](/classes/2.4/ColorGradingTexture)
+### static Parse(parsedTexture, scene, rootUrl) &rarr; [ColorGradingTexture](/classes/2.4/ColorGradingTexture)
 
 Parses a color grading texture serialized by Babylon.
 
@@ -56,7 +56,9 @@ Parses a color grading texture serialized by Babylon.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | parsedTexture | any |  The texture information being parsedTexture
+ | scene | [Scene](/classes/2.4/Scene) |  The scene to load the texture in
+ | rootUrl | string |  The root url of the data assets to load
+### serialize() &rarr; any
 
 Serializes the LUT texture to json format.

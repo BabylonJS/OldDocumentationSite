@@ -74,15 +74,16 @@ Returns epsilon value : 0.001, used for approximations
 
 ## Methods
 
-### setGravityundefined &rarr; void
+### setGravity(gravity) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setTimeStepundefined &rarr; void
+ | gravity | [Vector3](/classes/2.4/Vector3) | 
+
+### setTimeStep(newTimeStep) &rarr; void
 
 Set the time step of the physics engine.
 
@@ -95,14 +96,15 @@ To speed it up, 1/30
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+optional | newTimeStep | number | 
+
+### dispose() &rarr; void
+
+Calls the dispose method of the loaded engine
+### getPhysicsPluginName() &rarr; string
 
 
-### getPhysicsPluginNameundefined &rarr; string
-
-
-### addImpostorundefined &rarr; void
+### addImpostor(impostor) &rarr; void
 
 Adding a new impostor for the impostor tracking.
 
@@ -111,8 +113,9 @@ This will be done by the impostor itself.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeImpostorundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+
+### removeImpostor(impostor) &rarr; void
 
 Remove an impostor from the engine.
 
@@ -121,39 +124,46 @@ This impostor and its mesh will not longer be updated by the physics engine.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addJointundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+
+### addJoint(mainImpostor, connectedImpostor, joint) &rarr; void
 
 Add a joint to the physics engine
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeJointundefined &rarr; void
+ | mainImpostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | connectedImpostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | joint | [PhysicsJoint](/classes/2.4/PhysicsJoint) | 
+### removeJoint(mainImpostor, connectedImpostor, joint) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getPhysicsPluginundefined &rarr; IPhysicsEnginePlugin
+ | mainImpostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | connectedImpostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | joint | [PhysicsJoint](/classes/2.4/PhysicsJoint) | 
+### getPhysicsPlugin() &rarr; IPhysicsEnginePlugin
 
 
-### getImpostorForPhysicsObjectundefined &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getImpostorWithPhysicsBodyundefined &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
+### getImpostorForPhysicsObject(object) &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | object | IPhysicsEnabledObject | 
+
+### getImpostorWithPhysicsBody(body) &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | body | any | 
+

@@ -24,6 +24,6 @@ class [VRDeviceOrientationArcRotateCamera](/classes/2.4/VRDeviceOrientationArcRo
  | scene | [Scene](/classes/2.4/Scene) | 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

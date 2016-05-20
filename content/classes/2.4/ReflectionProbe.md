@@ -47,17 +47,18 @@ class [ReflectionProbe](/classes/2.4/ReflectionProbe)
 
 ## Methods
 
-### getSceneundefined &rarr; [Scene](/classes/2.4/Scene)
+### getScene() &rarr; [Scene](/classes/2.4/Scene)
 
 
-### attachToMeshundefined &rarr; void
+### attachToMesh(mesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |  
+
+### dispose() &rarr; void
 
 

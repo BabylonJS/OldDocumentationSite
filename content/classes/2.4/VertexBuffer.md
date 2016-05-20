@@ -79,42 +79,45 @@ The matrice weight kind
 
 ## Methods
 
-### isUpdatableundefined &rarr; boolean
+### isUpdatable() &rarr; boolean
 
+Return true if it's updatable
+### getData() &rarr; number[]
 
-### getDataundefined &rarr; number[]
+Get the data
+### getBuffer() &rarr; WebGLBuffer
 
+Get the buffer
+### getStrideSize() &rarr; number
 
-### getBufferundefined &rarr; WebGLBuffer
+Get stride size
+### create(data) &rarr; void
 
-
-### getStrideSizeundefined &rarr; number
-
-
-### createundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### updateundefined &rarr; void
-
-
+Create a vertex buffer
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateDirectlyundefined &rarr; void
+optional | data | number[] |    [VertexData](/classes/2.4/VertexData) into buffer
 
+### update(data) &rarr; void
 
+Update vertex buffer
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | data | number[] |    [VertexData](/classes/2.4/VertexData) into buffer
+
+### updateDirectly(data, offset) &rarr; void
+
+Update vertex buffer directly
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | data | Float32Array |    [VertexData](/classes/2.4/VertexData) into buffer
+ | offset | number |    
+### dispose() &rarr; void
 
 

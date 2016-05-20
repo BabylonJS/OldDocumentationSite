@@ -58,22 +58,24 @@ optional | mesh | [Mesh](/classes/2.4/Mesh) |
 
 ## Methods
 
-### copyundefined &rarr; [Geometry](/classes/2.4/Geometry)
+### copy(id) &rarr; [Geometry](/classes/2.4/Geometry)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | id | string |   
+
+### serialize() &rarr; any
 
 
-### static Parseundefined &rarr; undefined
+### static Parse(parsedTorusKnot, scene) &rarr; [TorusKnot](/classes/2.4/TorusKnot)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parsedTorusKnot | any |  
+ | scene | [Scene](/classes/2.4/Scene) |   

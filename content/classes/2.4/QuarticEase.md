@@ -13,11 +13,12 @@ class [QuarticEase](/classes/2.4/QuarticEase) extends [EasingFunction](/classes/
 
 ## Methods
 
-### easeInCoreundefined &rarr; number
+### easeInCore(gradient) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | gradient | number |    
+

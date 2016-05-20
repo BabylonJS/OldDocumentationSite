@@ -45,17 +45,20 @@ optional | scale | number |
 
 ## Methods
 
-### isTransparentundefined &rarr; boolean
+### isTransparent() &rarr; boolean
 
 
-### toStringundefined &rarr; string
+### toString() &rarr; string
 
 
-### static BuildKeyundefined &rarr; string
+### static BuildKey(color1, color2, translation, rotation, scale) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | color1 | [Color4](/classes/2.4/Color4) | 
+ | color2 | [Color4](/classes/2.4/Color4) | 
+ | translation | [Vector2](/classes/2.4/Vector2) | 
+ | rotation | number | 

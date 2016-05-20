@@ -51,11 +51,12 @@ This particle angle
 
 ## Methods
 
-### copyToundefined &rarr; void
+### copyTo(other) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | other | [Particle](/classes/2.4/Particle) |    
+

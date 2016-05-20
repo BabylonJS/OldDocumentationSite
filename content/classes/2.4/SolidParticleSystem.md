@@ -26,7 +26,7 @@ Creates a SPS (Solid [Particle](/classes/2.4/Particle) System) object.
 ---|---|---|---
  | name | string |   the SPS name, this will be the underlying mesh name
  | scene | [Scene](/classes/2.4/Scene) |  
-optional | options | { undefined: boolean,  undefined: boolean } |  
+optional | options | { updatable: boolean,  isPickable: boolean } |  
 ## Members
 
 ### particles : [SolidParticle](/classes/2.4/SolidParticle)[]
@@ -61,7 +61,7 @@ This empty object is intended to store some SPS specific or temporary values in 
 
 Please read : http://doc.babylonjs.com/overviews/Solid_Particle_System#garbage-collector-concerns
 
-### pickedParticles : { undefined: number,  undefined: number }[]
+### pickedParticles : { idx: number,  faceId: number }[]
 
 This array is populated when the SPS is set as 'pickable'.
 
@@ -125,12 +125,12 @@ Tells to `setParticles()` to compute or not the mesh bounding box when computing
 
 ## Methods
 
-### buildMeshundefined &rarr; [Mesh](/classes/2.4/Mesh)
+### buildMesh() &rarr; [Mesh](/classes/2.4/Mesh)
 
 Builds the SPS underlying mesh. Returns a standard [Mesh](/classes/2.4/Mesh).
 
 If no model shape was added to the SPS, the returned mesh is just a single triangular plane.
-### digestundefined &rarr; [SolidParticleSystem](/classes/2.4/SolidParticleSystem)
+### digest(mesh, options) &rarr; [SolidParticleSystem](/classes/2.4/SolidParticleSystem)
 
 Digests the mesh and generates as many solid particles in the system as wanted. Returns the SPS.
 
@@ -149,8 +149,9 @@ Thus the particles generated from `digest()` have their property `position` set 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addShapeundefined &rarr; number
+ | mesh | [Mesh](/classes/2.4/Mesh) |   any [Mesh](/classes/2.4/Mesh) object that will be used as a model for the solid particles.
+optional | options | { facetNb: number,  number: number,  delta: number } |  
+### addShape(mesh, nb, options) &rarr; number
 
 Adds some particles to the SPS from the model shape. Returns the shape id.
 
@@ -167,11 +168,13 @@ Please read the doc : http://doc.babylonjs.com/overviews/Solid_Particle_System#c
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### rebuildMeshundefined &rarr; void
+ | mesh | [Mesh](/classes/2.4/Mesh) |   any [Mesh](/classes/2.4/Mesh) object that will be used as a model for the solid particles.
+ | nb | number |   the number of particles to be created from this model
+optional | options | { positionFunction: any,  vertexFunction: any } |  
+### rebuildMesh() &rarr; void
 
 Rebuilds the whole mesh and updates the VBO : custom positions and vertices are recomputed if needed.
-### setParticlesundefined &rarr; void
+### setParticles(start, end, update) &rarr; void
 
 Sets all the particles : this method actually really updates the mesh according to the particle positions, rotations, colors, textures, etc.
 
@@ -182,16 +185,18 @@ Sets all the particles : this method actually really updates the mesh according 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+optional | start | number |  (default 0) the particle index in the particle array where to start to compute the particle property values  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()
+optional | end | number |  (default nbParticle - 1)  the particle index in the particle array where to stop to compute the particle property values  (default nbParticle - 1)  the particle index in the particle array where to stop to compute the particle property values
+optional | update | boolean |  (default true) if the mesh must be finally updated on this call after all the particle computations.  the boolean update value actually passed to setParticles()
+### dispose() &rarr; void
 
 Disposes the SPS
-### refreshVisibleSizeundefined &rarr; void
+### refreshVisibleSize() &rarr; void
 
 Visibilty helper : Recomputes the visible size according to the mesh bounding box
 
 doc : http://doc.babylonjs.com/overviews/Solid_Particle_System#sps-visibility
-### setVisibilityBoxundefined &rarr; void
+### setVisibilityBox(size) &rarr; void
 
 Visibility helper : Sets the size of a visibility box, this sets the underlying mesh bounding box.
 
@@ -202,15 +207,16 @@ doc : http://doc.babylonjs.com/overviews/Solid_Particle_System#sps-visibility
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### initParticlesundefined &rarr; void
+ | size | number |  the size (float) of the visibility box  the size (float) of the visibility box
+
+### initParticles() &rarr; void
 
 This function does nothing. It may be overwritten to set all the particle first values.
 
 The SPS doesn't call this function, you may have to call it by your own.
 
 doc : http://doc.babylonjs.com/overviews/Solid_Particle_System#particle-management
-### recycleParticleundefined &rarr; [SolidParticle](/classes/2.4/SolidParticle)
+### recycleParticle(particle) &rarr; [SolidParticle](/classes/2.4/SolidParticle)
 
 This function does nothing. It may be overwritten to recycle a particle.
 
@@ -221,8 +227,9 @@ doc : http://doc.babylonjs.com/overviews/Solid_Particle_System#particle-manageme
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateParticleundefined &rarr; [SolidParticle](/classes/2.4/SolidParticle)
+ | particle | [SolidParticle](/classes/2.4/SolidParticle) |   the current particle
+
+### updateParticle(particle) &rarr; [SolidParticle](/classes/2.4/SolidParticle)
 
 Updates a particle : this function should  be overwritten by the user.
 
@@ -235,8 +242,9 @@ ex : just set a particle position or velocity and recycle conditions
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateParticleVertexundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | particle | [SolidParticle](/classes/2.4/SolidParticle) |   the current particle
+
+### updateParticleVertex(particle, vertex, pt) &rarr; [Vector3](/classes/2.4/Vector3)
 
 Updates a vertex of a particle : it can be overwritten by the user.
 
@@ -249,8 +257,10 @@ ex : just set a vertex particle position
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### beforeUpdateParticlesundefined &rarr; void
+ | particle | [SolidParticle](/classes/2.4/SolidParticle) |  the current particle  the current particle
+ | vertex | [Vector3](/classes/2.4/Vector3) |  the current index of the current particle  the current index of the current particle
+ | pt | number |  the index of the current vertex in the particle shape  the index of the current vertex in the particle shape
+### beforeUpdateParticles(start, stop, update) &rarr; void
 
 This will be called before any other treatment by `setParticles()` and will be passed three parameters.
 
@@ -259,8 +269,10 @@ This does nothing and may be overwritten by the user.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### afterUpdateParticlesundefined &rarr; void
+optional | start | number |  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()
+optional | stop | number |  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()
+optional | update | boolean |  the boolean update value actually passed to setParticles()  the boolean update value actually passed to setParticles()
+### afterUpdateParticles(start, stop, update) &rarr; void
 
 This will be called  by `setParticles()` after all the other treatments and just before the actual mesh update.
 
@@ -271,4 +283,6 @@ This does nothing and may be overwritten by the user.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+optional | start | number |  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()
+optional | stop | number |  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()
+optional | update | boolean |  the boolean update value actually passed to setParticles()  the boolean update value actually passed to setParticles()

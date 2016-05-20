@@ -39,22 +39,22 @@ optional | raw | boolean |
 
 ## Methods
 
-### getCurveundefined &rarr; [Vector3](/classes/2.4/Vector3)[]
+### getCurve() &rarr; [Vector3](/classes/2.4/Vector3)[]
 
 Returns the [Path3D](/classes/2.4/Path3D) array of successive [Vector3](/classes/2.4/Vector3) designing its curve.
-### getTangentsundefined &rarr; [Vector3](/classes/2.4/Vector3)[]
+### getTangents() &rarr; [Vector3](/classes/2.4/Vector3)[]
 
 Returns an array populated with tangent vectors on each [Path3D](/classes/2.4/Path3D) curve point.
-### getNormalsundefined &rarr; [Vector3](/classes/2.4/Vector3)[]
+### getNormals() &rarr; [Vector3](/classes/2.4/Vector3)[]
 
 Returns an array populated with normal vectors on each [Path3D](/classes/2.4/Path3D) curve point.
-### getBinormalsundefined &rarr; [Vector3](/classes/2.4/Vector3)[]
+### getBinormals() &rarr; [Vector3](/classes/2.4/Vector3)[]
 
 Returns an array populated with binormal vectors on each [Path3D](/classes/2.4/Path3D) curve point.
-### getDistancesundefined &rarr; number[]
+### getDistances() &rarr; number[]
 
 Returns an array populated with distances (float) of the i-th point from the first curve point.
-### updateundefined &rarr; [Path3D](/classes/2.4/Path3D)
+### update(path, firstNormal) &rarr; [Path3D](/classes/2.4/Path3D)
 
 Forces the [Path3D](/classes/2.4/Path3D) tangent, normal, binormal and distance recomputation.
 
@@ -63,4 +63,5 @@ Returns the same object updated.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | path | [Vector3](/classes/2.4/Vector3)[] |    
+optional | firstNormal | [Vector3](/classes/2.4/Vector3) |    

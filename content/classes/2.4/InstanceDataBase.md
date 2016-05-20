@@ -66,12 +66,12 @@ class [InstanceDataBase](/classes/2.4/InstanceDataBase)
 
 ## Methods
 
-### getClassTreeInfoundefined &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;[InstanceClassInfo](/classes/2.4/InstanceClassInfo), [InstancePropInfo](/classes/2.4/InstancePropInfo)&gt;
+### getClassTreeInfo() &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;[InstanceClassInfo](/classes/2.4/InstanceClassInfo), [InstancePropInfo](/classes/2.4/InstancePropInfo)&gt;
 
 
-### allocElementsundefined &rarr; void
+### allocElements() &rarr; void
 
 
-### freeElementsundefined &rarr; void
+### freeElements() &rarr; void
 
 

@@ -40,25 +40,28 @@ The direction of the light
 
 ## Methods
 
-### setDirectionToTargetundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### setDirectionToTarget(target) &rarr; [Vector3](/classes/2.4/Vector3)
+
+Sets the direction of the light using the given target
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | target | [Vector3](/classes/2.4/Vector3) |    The given target to lighten
+
+### getShadowGenerator() &rarr; [ShadowGenerator](/classes/2.4/ShadowGenerator)
+
+Returns null
+### transferToEffect(effect, directionUniformName, groundColorUniformName) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getShadowGeneratorundefined &rarr; [ShadowGenerator](/classes/2.4/ShadowGenerator)
-
-
-### transferToEffectundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getTypeIDundefined &rarr; number
+ | effect | [Effect](/classes/2.4/Effect) |    The given effect
+ | directionUniformName | string |    The direction uniform name
+ | groundColorUniformName | string |    The groundColor uniform name
+### getTypeID() &rarr; number
 
 

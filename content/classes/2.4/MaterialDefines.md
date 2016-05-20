@@ -9,28 +9,30 @@ class [MaterialDefines](/classes/2.4/MaterialDefines)
 
 ## Methods
 
-### rebuildundefined &rarr; void
+### rebuild() &rarr; void
 
 
-### isEqualundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### cloneToundefined &rarr; void
+### isEqual(other) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### resetundefined &rarr; void
+ | other | [MaterialDefines](/classes/2.4/MaterialDefines) |  
+
+### cloneTo(other) &rarr; void
 
 
-### toStringundefined &rarr; string
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | other | [MaterialDefines](/classes/2.4/MaterialDefines) |  
+
+### reset() &rarr; void
+
+
+### toString() &rarr; string
 
 

@@ -25,14 +25,15 @@ Used to define the parent of a node (camera, light, mesh)
  | parent | any |    The object parent
 ## Methods
 
-### executeundefined &rarr; void
+### execute() &rarr; void
 
 
-### serializeundefined &rarr; any
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any |    The object parent
+

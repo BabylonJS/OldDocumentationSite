@@ -47,19 +47,22 @@ class [SphericalHarmonics](/classes/2.4/SphericalHarmonics)
 
 ## Methods
 
-### addLightundefined &rarr; void
+### addLight(direction, color, deltaSolidAngle) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### scaleundefined &rarr; void
+ | direction | [Vector3](/classes/2.4/Vector3) | 
+ | color | [Color3](/classes/2.4/Color3) | 
+ | deltaSolidAngle | number | 
+### scale(scale) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | scale | number | 
+

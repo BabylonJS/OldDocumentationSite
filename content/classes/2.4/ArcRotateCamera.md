@@ -161,58 +161,65 @@ CollisionsRadius
 
 ## Methods
 
-### attachControlundefined &rarr; void
+### attachControl(element, noPreventDefault, useCtrlForPanning) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachControlundefined &rarr; void
+ | element | HTMLElement |    Element to detach from the control
+optional | noPreventDefault | boolean |    @param noPreventDefault
+optional | useCtrlForPanning | boolean |   
+### detachControl(element) &rarr; void
+
+Detach camera control and display from the specified canvas
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | element | HTMLElement |    Element to detach from the control
+
+### rebuildAnglesAndRadius() &rarr; void
+
+
+### setPosition(position) &rarr; void
+
+Set the position of the [ArcRotateCamera](/classes/2.4/ArcRotateCamera)
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | position | [Vector3](/classes/2.4/Vector3) |    The new position of the [ArcRotateCamera](/classes/2.4/ArcRotateCamera)
+
+### setTarget(target) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### rebuildAnglesAndRadiusundefined &rarr; void
+ | target | [Vector3](/classes/2.4/Vector3) |    
 
-
-### setPositionundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setTargetundefined &rarr; void
+### zoomOn(meshes, doNotUpdateMaxZ) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### zoomOnundefined &rarr; void
+optional | meshes | [AbstractMesh](/classes/2.4/AbstractMesh)[] |    Meshes to zoom on
+optional | doNotUpdateMaxZ | boolean |   
+### focusOn(meshesOrMinMaxVectorAndDistance, doNotUpdateMaxZ) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### focusOnundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### createRigCameraundefined &rarr; [Camera](/classes/2.4/Camera)
+ | meshesOrMinMaxVectorAndDistance | any |    @param meshesOrMinMaxVectorAndDistance
+optional | doNotUpdateMaxZ | boolean |   
+### createRigCamera(name, cameraIndex) &rarr; [Camera](/classes/2.4/Camera)
 
 @override
 
@@ -221,10 +228,11 @@ Override [Camera](/classes/2.4/Camera).createRigCamera
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | name | string |    
+ | cameraIndex | number |    
+### dispose() &rarr; void
 
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

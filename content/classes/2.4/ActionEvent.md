@@ -53,27 +53,32 @@ The source of the event
 
 ## Methods
 
-### static CreateNewundefined &rarr; [ActionEvent](/classes/2.4/ActionEvent)
+### static CreateNew(source, evt, additionalData) &rarr; [ActionEvent](/classes/2.4/ActionEvent)
 
 Helper function to auto-create an [ActionEvent](/classes/2.4/ActionEvent) from a source mesh.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateNewFromSpriteundefined &rarr; [ActionEvent](/classes/2.4/ActionEvent)
+ | source | [AbstractMesh](/classes/2.4/AbstractMesh) |  The source mesh that triggered the event  The source sprite that triggered the event  the source mesh that triggered the event the source mesh that triggered the event
+optional | evt | Event |  {Event} The original (browser) event  {Event} The original (browser) event  {Event} The original (browser) event {Event} The original (browser) event
+optional | additionalData | any |   
+### static CreateNewFromSprite(source, scene, evt, additionalData) &rarr; [ActionEvent](/classes/2.4/ActionEvent)
 
 Helper function to auto-create an [ActionEvent](/classes/2.4/ActionEvent) from a source mesh.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateNewFromSceneundefined &rarr; [ActionEvent](/classes/2.4/ActionEvent)
+ | source | [Sprite](/classes/2.4/Sprite) |  The source sprite that triggered the event  The source sprite that triggered the event  the source mesh that triggered the event the source mesh that triggered the event
+ | scene | [Scene](/classes/2.4/Scene) |  [Scene](/classes/2.4/Scene) associated with the sprite  the scene where the event occurred  the scene where the event occurred the scene where the event occurred
+optional | evt | Event |  {Event} The original (browser) event  {Event} The original (browser) event  {Event} The original (browser) event {Event} The original (browser) event
+### static CreateNewFromScene(scene, evt) &rarr; [ActionEvent](/classes/2.4/ActionEvent)
 
 Helper function to auto-create an [ActionEvent](/classes/2.4/ActionEvent) from a scene. If triggered by a mesh use [ActionEvent](/classes/2.4/ActionEvent).CreateNew
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | scene | [Scene](/classes/2.4/Scene) |  the scene where the event occurred  the scene where the event occurred  the scene where the event occurred the scene where the event occurred
+ | evt | Event |  {Event} The original (browser) event  {Event} The original (browser) event  {Event} The original (browser) event {Event} The original (browser) event

@@ -39,22 +39,24 @@ The gamepad object access this way : gamepad.buttons[]
 
 ## Methods
 
-### onbuttondownundefined &rarr; void
+### onbuttondown(callback) &rarr; void
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### onbuttonupundefined &rarr; void
-
-
+Binds an action to the button pressed, recognized by the button's index in the array
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateundefined &rarr; void
+ | callback | (buttonPressed: number) =&gt; void |    The function to execute
+
+### onbuttonup(callback) &rarr; void
+
+Binds an action to the button released, recognized by the button's index in the array
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | callback | (buttonReleased: number) =&gt; void |    The function to execute
+
+### update() &rarr; void
 
 

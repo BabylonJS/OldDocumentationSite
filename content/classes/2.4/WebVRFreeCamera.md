@@ -28,22 +28,24 @@ class [WebVRFreeCamera](/classes/2.4/WebVRFreeCamera) extends [FreeCamera](/clas
  | scene | [Scene](/classes/2.4/Scene) |    
 ## Methods
 
-### attachControlundefined &rarr; void
+### attachControl(element, noPreventDefault) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachControlundefined &rarr; void
+ | element | HTMLElement |    
+optional | noPreventDefault | boolean |    
+### detachControl(element) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTypeNameundefined &rarr; string
+ | element | HTMLElement |    
+
+### getTypeName() &rarr; string
 
 

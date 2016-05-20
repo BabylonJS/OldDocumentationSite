@@ -46,11 +46,12 @@ Ported mostly from QSlim and http://voxels.blogspot.de/2014/05/quadric-mesh-simp
 
 ## Methods
 
-### simplifyundefined &rarr; void
+### simplify(settings, successCallback) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | settings | ISimplificationSettings |    
+ | successCallback | (simplifiedMesh: [Mesh](/classes/2.4/Mesh)) =&gt; void |    

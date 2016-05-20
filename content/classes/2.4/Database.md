@@ -47,22 +47,24 @@ Returns the full location string
 
 ## Methods
 
-### checkManifestFileundefined &rarr; void
+### checkManifestFile() &rarr; void
 
+Checks the manifest file
+### openAsync(successCallback, errorCallback) &rarr; void
 
-### openAsyncundefined &rarr; void
+Tries to use the offline data if the manifest indicates so
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | successCallback | any |    Function to execute when data is successfuly loaded
+ | errorCallback | any |    Function to execute if data could not be loaded
+### loadImageFromDB(url, image) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### loadImageFromDBundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | url | string |    The relative url of the image
+ | image | HTMLImageElement |    The element to put the image into

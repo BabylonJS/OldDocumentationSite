@@ -32,6 +32,6 @@ optional | normal | [Vector3](/classes/2.4/Vector3) |
 
 ## Methods
 
-### cloneundefined &rarr; [PositionNormalVertex](/classes/2.4/PositionNormalVertex)
+### clone() &rarr; [PositionNormalVertex](/classes/2.4/PositionNormalVertex)
 
 

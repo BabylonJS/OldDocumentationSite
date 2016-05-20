@@ -329,106 +329,119 @@ Is check collisions
 
 ## Methods
 
-### toStringundefined &rarr; string
+### toString(fullDetails) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updatePoseMatrixundefined &rarr; void
+optional | fullDetails | boolean | 
+
+### updatePoseMatrix(matrix) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getPoseMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+ | matrix | [Matrix](/classes/2.4/Matrix) |    @param matrix
+
+### getPoseMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
 
-### disableEdgesRenderingundefined &rarr; void
+### disableEdgesRendering() &rarr; void
 
 
-### enableEdgesRenderingundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getLODundefined &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
+### enableEdgesRendering(epsilon, checkVerticesInsteadOfIndices) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTotalVerticesundefined &rarr; number
-
-
-### getIndicesundefined &rarr; number[]
-
-
-### getVerticesDataundefined &rarr; number[]
+optional | epsilon | number |   
+optional | checkVerticesInsteadOfIndices | boolean |   
+### getLOD(camera) &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isVerticesDataPresentundefined &rarr; boolean
+ | camera | [Camera](/classes/2.4/Camera) |    
 
+### getTotalVertices() &rarr; number
 
+Get the total vertices
+### getIndices() &rarr; number[]
 
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getBoundingInfoundefined &rarr; [BoundingInfo](/classes/2.4/BoundingInfo)
+To access the mesh vertices data
+### getVerticesData(kind) &rarr; number[]
 
-
-### getWorldMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### freezeWorldMatrixundefined &rarr; void
-
-
-### unfreezeWorldMatrixundefined &rarr; void
-
-
-### rotateundefined &rarr; void
-
-
+To access the mesh vertices data
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### translateundefined &rarr; void
+ | kind | string |    @param kind
 
+### isVerticesDataPresent(kind) &rarr; boolean
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getAbsolutePositionundefined &rarr; [Vector3](/classes/2.4/Vector3)
-
-
-### setAbsolutePositionundefined &rarr; void
-
-
+Is vertices data present
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### movePOVundefined &rarr; void
+ | kind | string |    @param kind
+
+### getBoundingInfo() &rarr; [BoundingInfo](/classes/2.4/BoundingInfo)
+
+Get the bounding info
+### getWorldMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the world matrix
+### freezeWorldMatrix() &rarr; void
+
+
+### unfreezeWorldMatrix() &rarr; void
+
+
+### rotate(axis, amount, space) &rarr; void
+
+Rotate this mesh with the given axis and the given angle in the mesh's space.
+
+The mesh's "rotationQuaternion" property will be set to the new rotation. The mesh's "rotation" property will be set to zero if "rotationQuaternion" property was not set before.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | axis | [Vector3](/classes/2.4/Vector3) |    the rotation axis
+ | amount | number |    the rotation angle
+optional | space | [Space](/classes/2.4/Space) |    local or global
+### translate(axis, distance, space) &rarr; void
+
+Translate the mesh with the given axis, with the given distance
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | axis | [Vector3](/classes/2.4/Vector3) |    the rotation axis
+ | distance | number |    the distance from the origin to the next position
+optional | space | [Space](/classes/2.4/Space) |    local or global
+### getAbsolutePosition() &rarr; [Vector3](/classes/2.4/Vector3)
+
+Returns the absolute position
+### setAbsolutePosition(absolutePosition) &rarr; void
+
+Set the absolute position
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | absolutePosition | [Vector3](/classes/2.4/Vector3) |    @param absolutePosition
+
+### movePOV(amountRight, amountUp, amountForward) &rarr; void
 
 Perform relative position change from the point of view of behind the front of the mesh.
 
@@ -439,8 +452,10 @@ Supports definition of mesh facing forward or backward.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### calcMovePOVundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | amountRight | number |    
+ | amountUp | number |    
+ | amountForward | number |    
+### calcMovePOV(amountRight, amountUp, amountForward) &rarr; [Vector3](/classes/2.4/Vector3)
 
 Calculate relative position change from the point of view of behind the front of the mesh.
 
@@ -451,8 +466,10 @@ Supports definition of mesh facing forward or backward.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### rotatePOVundefined &rarr; void
+ | amountRight | number |    
+ | amountUp | number |    
+ | amountForward | number |    
+### rotatePOV(flipBack, twirlClockwise, tiltRight) &rarr; void
 
 Perform relative rotation change from the point of view of behind the front of the mesh.
 
@@ -461,8 +478,10 @@ Supports definition of mesh facing forward or backward.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### calcRotatePOVundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | flipBack | number |    
+ | twirlClockwise | number |    
+ | tiltRight | number |    
+### calcRotatePOV(flipBack, twirlClockwise, tiltRight) &rarr; [Vector3](/classes/2.4/Vector3)
 
 Calculate relative rotation change from the point of view of behind the front of the mesh.
 
@@ -471,121 +490,139 @@ Supports definition of mesh facing forward or backward.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setPivotMatrixundefined &rarr; void
+ | flipBack | number |    
+ | twirlClockwise | number |    
+ | tiltRight | number |    
+### setPivotMatrix(matrix) &rarr; void
+
+Set the pivot matrix
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | matrix | [Matrix](/classes/2.4/Matrix) |    @param matrix
+
+### getPivotMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the pivot matrix
+### markAsDirty(property) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getPivotMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+ | property | string |    @param property
 
+### computeWorldMatrix(force) &rarr; [Matrix](/classes/2.4/Matrix)
 
-### markAsDirtyundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### computeWorldMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
+Compute the world matrix, recalculate the world matrix
+@default false
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### registerAfterWorldMatrixUpdateundefined &rarr; void
+optional | force | boolean |    the force direction
+
+### registerAfterWorldMatrixUpdate(func) &rarr; void
 
 If you'd like to be callbacked after the mesh position, rotation or scaling has been updated
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unregisterAfterWorldMatrixUpdateundefined &rarr; void
+ | func | (mesh: [AbstractMesh](/classes/2.4/AbstractMesh)) =&gt; void | : callback function to add   
+
+### unregisterAfterWorldMatrixUpdate(func) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setPositionWithLocalVectorundefined &rarr; void
+ | func | (mesh: [AbstractMesh](/classes/2.4/AbstractMesh)) =&gt; void |    
+
+### setPositionWithLocalVector(vector3) &rarr; void
+
+Set the position with a local vector
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | vector3 | [Vector3](/classes/2.4/Vector3) |    the translation contact information
+
+### getPositionExpressedInLocalSpace() &rarr; [Vector3](/classes/2.4/Vector3)
+
+Get the position in local space
+### locallyTranslate(vector3) &rarr; void
+
+Translate mesh in local space
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | vector3 | [Vector3](/classes/2.4/Vector3) |    the translation contact information
+
+### lookAt(targetPoint, yawCor, pitchCor, rollCor) &rarr; void
+
+Orients a mesh towards a target point. [Mesh](/classes/2.4/Mesh) must be drawn facing user.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | targetPoint | [Vector3](/classes/2.4/Vector3) |    The position (must be in same space as current mesh) to look at
+ | yawCor | number |    yaw (y-axis) correction in radians
+ | pitchCor | number |    pitch (x-axis) correction in radians
+### attachToBone(bone, affectedMesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getPositionExpressedInLocalSpaceundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | bone | [Bone](/classes/2.4/Bone) |   
+ | affectedMesh | [AbstractMesh](/classes/2.4/AbstractMesh) |   
+### detachFromBone() &rarr; void
 
 
-### locallyTranslateundefined &rarr; void
+### isInFrustum(frustumPlanes) &rarr; boolean
+
+Is in frustum
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    is between near frustum plan and far frustum plan view
+
+### isCompletelyInFrustum(camera) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### lookAtundefined &rarr; void
+optional | camera | [Camera](/classes/2.4/Camera) |    
 
+### intersectsMesh(mesh, precise) &rarr; boolean
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### attachToBoneundefined &rarr; void
-
-
+Intersects [Mesh](/classes/2.4/Mesh)
+For precise : default value is false
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachFromBoneundefined &rarr; void
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    The mesh
+optional | precise | boolean |    If true, the abstractMesh is closer to the mesh,
+### intersectsPoint(point) &rarr; boolean
 
-
-### isInFrustumundefined &rarr; boolean
-
-
+Intersects Point
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isCompletelyInFrustumundefined &rarr; boolean
+ | point | [Vector3](/classes/2.4/Vector3) |    the intersect point
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### intersectsMeshundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### intersectsPointundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setPhysicsStateundefined &rarr; any
+### setPhysicsState(impostor, options) &rarr; any
 
 @Deprecated. Use new [PhysicsImpostor](/classes/2.4/PhysicsImpostor) instead.
 
@@ -594,70 +631,77 @@ undefined
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getPhysicsImpostorundefined &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
+optional | impostor | any |    The physics impostor [Sphere](/classes/2.4/Sphere)/[Box](/classes/2.4/Box)/[Plane](/classes/2.4/Plane)
+optional | options | PhysicsImpostorParameters |    @param options
+### getPhysicsImpostor() &rarr; [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
 
-
-### getPhysicsMassundefined &rarr; number
+Get a physics impostor
+### getPhysicsMass() &rarr; number
 
 @Deprecated. Use getPhysicsImpostor().getParam("mass");
-### getPhysicsFrictionundefined &rarr; number
+### getPhysicsFriction() &rarr; number
 
 @Deprecated. Use getPhysicsImpostor().getParam("friction");
-### getPhysicsRestitutionundefined &rarr; number
+### getPhysicsRestitution() &rarr; number
 
 @Deprecated. Use getPhysicsImpostor().getParam("restitution");
-### getPositionInCameraSpaceundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getPositionInCameraSpace(camera) &rarr; [Vector3](/classes/2.4/Vector3)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getDistanceToCameraundefined &rarr; number
+optional | camera | [Camera](/classes/2.4/Camera) |    
+
+### getDistanceToCamera(camera) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyImpulseundefined &rarr; void
+optional | camera | [Camera](/classes/2.4/Camera) |    
 
+### applyImpulse(force, contactPoint) &rarr; void
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setPhysicsLinkWithundefined &rarr; void
-
-
+Apply a force
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updatePhysicsBodyPositionundefined &rarr; void
+ | force | [Vector3](/classes/2.4/Vector3) |    the force direction
+ | contactPoint | [Vector3](/classes/2.4/Vector3) |    the contact point
+### setPhysicsLinkWith(otherMesh, pivot1, pivot2, options) &rarr; void
+
+Link the impostor in order to keep meshes linked
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | otherMesh | [Mesh](/classes/2.4/Mesh) |    the impostor
+ | pivot1 | [Vector3](/classes/2.4/Vector3) |    link the impostor with this mesh
+ | pivot2 | [Vector3](/classes/2.4/Vector3) |    link the impostor with this mesh
+### updatePhysicsBodyPosition() &rarr; void
 
 @Deprecated
-### updatePhysicsBodyundefined &rarr; void
+### updatePhysicsBody() &rarr; void
 
 @Deprecated
 
 Calling this function is not needed anymore.
 
 The physics engine takes care of transofmration automatically.
-### moveWithCollisionsundefined &rarr; void
+### moveWithCollisions(velocity) &rarr; void
 
-
+Move a mesh
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### createOrUpdateSubmeshesOctreeundefined &rarr; [Octree](/classes/2.4/Octree)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;
+ | velocity | [Vector3](/classes/2.4/Vector3) |    change the velocity
+
+### createOrUpdateSubmeshesOctree(maxCapacity, maxDepth) &rarr; [Octree](/classes/2.4/Octree)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;
 
 This function will create an octree to help select the right submeshes for rendering, picking and collisions
 
@@ -666,31 +710,37 @@ Please note that you must have a decent number of submeshes to get performance i
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### intersectsundefined &rarr; [PickingInfo](/classes/2.4/PickingInfo)
+optional | maxCapacity | number |    @param maxCapacity
+optional | maxDepth | number |    @param maxDepth
+### intersects(ray, fastCheck) &rarr; [PickingInfo](/classes/2.4/PickingInfo)
+
+Intersects
+if false, infinite ray !
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | ray | [Ray](/classes/2.4/Ray) |    The ray
+optional | fastCheck | boolean |    if true, stop at the first result
+### clone(name, newParent, doNotCloneChildren) &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
+
+Clone this abstract mesh
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    The new name
+ | newParent | [Node](/classes/2.4/Node) |    @param newParent
+optional | doNotCloneChildren | boolean |    Set true if you want to clone children, false otherwise
+### releaseSubMeshes() &rarr; void
+
+Release submeshes
+### dispose(doNotRecurse) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### cloneundefined &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
+optional | doNotRecurse | boolean |    @param doNotRecurse
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### releaseSubMeshesundefined &rarr; void
-
-
-### disposeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined

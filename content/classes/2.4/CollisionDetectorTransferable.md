@@ -13,27 +13,30 @@ class [CollisionDetectorTransferable](/classes/2.4/CollisionDetectorTransferable
 
 ## Methods
 
-### onInitundefined &rarr; void
+### onInit(payload) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### onUpdateundefined &rarr; void
+ | payload | InitPayload |    
+
+### onUpdate(payload) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### onCollisionundefined &rarr; void
+ | payload | UpdatePayload |    
+
+### onCollision(payload) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | payload | CollidePayload |    
+

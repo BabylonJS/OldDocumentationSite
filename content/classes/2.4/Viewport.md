@@ -41,11 +41,12 @@ The height of the  viewport on the render-target surface in pixels
 
 ## Methods
 
-### toGlobalundefined &rarr; [Viewport](/classes/2.4/Viewport)
+### toGlobal(renderWidth, renderHeight) &rarr; [Viewport](/classes/2.4/Viewport)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | renderWidth | number | 
+ | renderHeight | number | 

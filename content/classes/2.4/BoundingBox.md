@@ -63,86 +63,97 @@ The maximum world of the boundingBox
 
 ## Methods
 
-### getWorldMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+### getWorldMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
-
-### setWorldMatrixundefined &rarr; [BoundingBox](/classes/2.4/BoundingBox)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### isInFrustumundefined &rarr; boolean
+Return this world matrix
+### setWorldMatrix(matrix) &rarr; [BoundingBox](/classes/2.4/BoundingBox)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isCompletelyInFrustumundefined &rarr; boolean
+ | matrix | [Matrix](/classes/2.4/Matrix) | 
+
+### isInFrustum(frustumPlanes) &rarr; boolean
+
+Returns true if this bounding box is in the given frustrum
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    [Frustum](/classes/2.4/Frustum) planes
+
+### isCompletelyInFrustum(frustumPlanes) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### intersectsPointundefined &rarr; boolean
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    [Frustum](/classes/2.4/Frustum) planes
+
+### intersectsPoint(point) &rarr; boolean
+
+Check if this bounding box intersect the point given in parameter
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | point | [Vector3](/classes/2.4/Vector3) |    the point coordinates
+
+### intersectsSphere(sphere) &rarr; boolean
+
+Check is this bounding box intersects the given sphere
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | sphere | [BoundingSphere](/classes/2.4/BoundingSphere) |    The given sphere
+
+### intersectsMinMax(min, max) &rarr; boolean
+
+Check if one of minimum or maximum values are intersected by the bounding box
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | min | [Vector3](/classes/2.4/Vector3) |    The minimum value of this world
+ | max | [Vector3](/classes/2.4/Vector3) |    The maximum value of this world
+### static Intersects(box0, box1) &rarr; boolean
+
+Check if the two boxes given in parameters intersects each other
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | box0 | [BoundingBox](/classes/2.4/BoundingBox) |    The first box
+ | box1 | [BoundingBox](/classes/2.4/BoundingBox) |    The second box
+### static IntersectsSphere(minPoint, maxPoint, sphereCenter, sphereRadius) &rarr; boolean
+
+Check if the sphere is intersected by the bounding box
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | minPoint | [Vector3](/classes/2.4/Vector3) |    @param minPoint
+ | maxPoint | [Vector3](/classes/2.4/Vector3) |    @param maxPoint
+ | sphereCenter | [Vector3](/classes/2.4/Vector3) |    the sphere center
+### static IsCompletelyInFrustum(boundingVectors, frustumPlanes) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### intersectsSphereundefined &rarr; boolean
+ | boundingVectors | [Vector3](/classes/2.4/Vector3)[] |    @param boundingVectors
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    [Frustum](/classes/2.4/Frustum) planes
+### static IsInFrustum(boundingVectors, frustumPlanes) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### intersectsMinMaxundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static Intersectsundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static IntersectsSphereundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static IsCompletelyInFrustumundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static IsInFrustumundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | boundingVectors | [Vector3](/classes/2.4/Vector3)[] |    @param boundingVectors
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    [Frustum](/classes/2.4/Frustum) planes

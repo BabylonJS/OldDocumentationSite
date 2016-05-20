@@ -37,46 +37,51 @@ Applies given postProcess object to the rendrer effect
 
 ## Methods
 
-### addPassundefined &rarr; void
+### addPass(renderPass) &rarr; void
+
+Adds a new pass to the effect
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | renderPass | [PostProcessRenderPass](/classes/2.4/PostProcessRenderPass) |    The pass to remove
+
+### removePass(renderPass) &rarr; void
+
+Removes a pass from the effect
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | renderPass | [PostProcessRenderPass](/classes/2.4/PostProcessRenderPass) |    The pass to remove
+
+### addRenderEffectAsPass(renderEffect) &rarr; void
+
+Adds a render effect as a pass
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | renderEffect | [PostProcessRenderEffect](/classes/2.4/PostProcessRenderEffect) |    The effect to add
+
+### getPass(passName) &rarr; void
+
+Returns a pass using its name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | passName | string |    The given name
+
+### emptyPasses() &rarr; void
+
+Delete all passes
+### getPostProcess(camera) &rarr; [PostProcess](/classes/2.4/PostProcess)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removePassundefined &rarr; void
+optional | camera | [Camera](/classes/2.4/Camera) |    default : this camera
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### addRenderEffectAsPassundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getPassundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### emptyPassesundefined &rarr; void
-
-
-### getPostProcessundefined &rarr; [PostProcess](/classes/2.4/PostProcess)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined

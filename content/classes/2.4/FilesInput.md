@@ -39,22 +39,24 @@ The array that holds the vnd.ms-dds files to load
 
 ## Methods
 
-### monitorElementForDragNDropundefined &rarr; void
+### monitorElementForDragNDrop(p_elementToMonitor) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### loadFilesundefined &rarr; void
+ | p_elementToMonitor | HTMLElement |    It could be the rendering canvas or whatever element on the page
+
+### loadFiles(event) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### reloadundefined &rarr; void
+ | event | any |    
+
+### reload() &rarr; void
 
 

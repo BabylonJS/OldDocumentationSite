@@ -45,12 +45,12 @@ This renderer render list
 
 ## Methods
 
-### resetundefined &rarr; void
+### reset() &rarr; void
 
+Reset the render list
+### render() &rarr; void
 
-### renderundefined &rarr; void
-
-
-### disposeundefined &rarr; void
+The render function
+### dispose() &rarr; void
 
 

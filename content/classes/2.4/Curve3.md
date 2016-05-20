@@ -28,37 +28,45 @@ Tuto : http://doc.babylonjs.com/tutorials/How_to_use_Curve3#curve3-object
 
 ## Methods
 
-### static CreateQuadraticBezierundefined &rarr; [Curve3](/classes/2.4/Curve3)
+### static CreateQuadraticBezier(v0, v1, v2, nbPoints) &rarr; [Curve3](/classes/2.4/Curve3)
 
 Returns a [Curve3](/classes/2.4/Curve3) object along a Quadratic Bezier curve : http://doc.babylonjs.com/tutorials/How_to_use_Curve3#quadratic-bezier-curve
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateCubicBezierundefined &rarr; [Curve3](/classes/2.4/Curve3)
+ | v0 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the origin point of the Quadratic Bezier   
+ | v1 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the control point   
+ | v2 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the end point of the Quadratic Bezier   
+### static CreateCubicBezier(v0, v1, v2, v3, nbPoints) &rarr; [Curve3](/classes/2.4/Curve3)
 
 Returns a [Curve3](/classes/2.4/Curve3) object along a Cubic Bezier curve : http://doc.babylonjs.com/tutorials/How_to_use_Curve3#cubic-bezier-curve
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static CreateHermiteSplineundefined &rarr; [Curve3](/classes/2.4/Curve3)
+ | v0 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the origin point of the Cubic Bezier   
+ | v1 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the first control point   
+ | v2 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the second control point   
+ | v3 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the end point of the Cubic Bezier   
+### static CreateHermiteSpline(p1, t1, p2, t2, nbPoints) &rarr; [Curve3](/classes/2.4/Curve3)
 
 Returns a [Curve3](/classes/2.4/Curve3) object along a Hermite Spline curve : http://doc.babylonjs.com/tutorials/How_to_use_Curve3#hermite-spline
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getPointsundefined &rarr; [Vector3](/classes/2.4/Vector3)[]
+ | p1 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the origin point of the Hermite Spline   
+ | t1 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the tangent vector at the origin point   
+ | p2 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the end point of the Hermite Spline   
+ | t2 | [Vector3](/classes/2.4/Vector3) |  ([Vector3](/classes/2.4/Vector3)) the tangent vector at the end point   
+### getPoints() &rarr; [Vector3](/classes/2.4/Vector3)[]
 
 Returns the [Curve3](/classes/2.4/Curve3) stored array of successive [Vector3](/classes/2.4/Vector3)
-### lengthundefined &rarr; number
+### length() &rarr; number
 
 Returns the computed length (float) of the curve.
-### continueundefined &rarr; [Curve3](/classes/2.4/Curve3)
+### continue(curve) &rarr; [Curve3](/classes/2.4/Curve3)
 
 Returns a new instance of [Curve3](/classes/2.4/Curve3) object : var curve = curveA.continue(curveB);
 
@@ -69,4 +77,5 @@ curveA and curveB keep unchanged.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | curve | [Curve3](/classes/2.4/Curve3) |    
+

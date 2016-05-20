@@ -181,54 +181,58 @@ Mask used to filter a texture color
 
 ## Methods
 
-### recycleParticleundefined &rarr; void
+### recycleParticle(particle) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getCapacityundefined &rarr; number
+ | particle | [Particle](/classes/2.4/Particle) |    
+
+### getCapacity() &rarr; number
+
+Returns the capacity of the particle system
+### isAlive() &rarr; boolean
+
+Returns if the particle system is alive
+### isStarted() &rarr; boolean
+
+Returns if the particle system is started
+### start() &rarr; void
+
+Starts the particle system
+### stop() &rarr; void
+
+Stops the particle system
+### animate() &rarr; void
+
+Animates the particle system
+### render() &rarr; number
 
 
-### isAliveundefined &rarr; boolean
+### dispose() &rarr; void
 
-
-### isStartedundefined &rarr; boolean
-
-
-### startundefined &rarr; void
-
-
-### stopundefined &rarr; void
-
-
-### animateundefined &rarr; void
-
-
-### renderundefined &rarr; number
-
-
-### disposeundefined &rarr; void
-
-
-### cloneundefined &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### serializeundefined &rarr; any
-
-
-### static Parseundefined &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)
+Destroyes this particle system
+### clone(name, newEmitter) &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | name | string |    The name of the cloned [ParticleSystem](/classes/2.4/ParticleSystem)
+ | newEmitter | any |    The given new emitter
+### serialize() &rarr; any
+
+
+### static Parse(parsedParticleSystem, scene, rootUrl) &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | parsedParticleSystem | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    The scene of the particle system
+ | rootUrl | string |  

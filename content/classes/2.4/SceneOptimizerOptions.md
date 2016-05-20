@@ -38,27 +38,30 @@ optional | trackerDuration | number |
 
 ## Methods
 
-### static LowDegradationAllowedundefined &rarr; [SceneOptimizerOptions](/classes/2.4/SceneOptimizerOptions)
+### static LowDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.4/SceneOptimizerOptions)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static ModerateDegradationAllowedundefined &rarr; [SceneOptimizerOptions](/classes/2.4/SceneOptimizerOptions)
+optional | targetFrameRate | number |    
+
+### static ModerateDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.4/SceneOptimizerOptions)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static HighDegradationAllowedundefined &rarr; [SceneOptimizerOptions](/classes/2.4/SceneOptimizerOptions)
+optional | targetFrameRate | number |    
+
+### static HighDegradationAllowed(targetFrameRate) &rarr; [SceneOptimizerOptions](/classes/2.4/SceneOptimizerOptions)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+optional | targetFrameRate | number |    
+

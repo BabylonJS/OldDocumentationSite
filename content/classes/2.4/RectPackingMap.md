@@ -32,7 +32,7 @@ Return the current space free normalized between [0;1]
 
 ## Methods
 
-### addRectundefined &rarr; [PackedRect](/classes/2.4/PackedRect)
+### addRect(size) &rarr; [PackedRect](/classes/2.4/PackedRect)
 
 Add a rectangle, finding the best location to store it into the map
 
@@ -41,4 +41,5 @@ Add a rectangle, finding the best location to store it into the map
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | size | [Size](/classes/2.4/Size) |  the dimension of the rectangle to store
+

@@ -20,29 +20,30 @@ class [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager) extends [C
 
 ## Methods
 
-### addKeyboardundefined &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
+### addKeyboard() &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
 
 
-### addMouseundefined &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
+### addMouse(touchEnabled) &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addGamepadundefined &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
+optional | touchEnabled | boolean | 
+
+### addGamepad() &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
 
 
-### addDeviceOrientationundefined &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
+### addDeviceOrientation() &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
 
 
-### addVRDeviceOrientationundefined &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
+### addVRDeviceOrientation() &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
 
 
-### addTouchundefined &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
+### addTouch() &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
 
 
-### addVirtualJoystickundefined &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
+### addVirtualJoystick() &rarr; [FreeCameraInputsManager](/classes/2.4/FreeCameraInputsManager)
 
 

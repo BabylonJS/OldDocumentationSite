@@ -36,6 +36,6 @@ The video element
 
 ## Methods
 
-### updateundefined &rarr; boolean
+### update() &rarr; boolean
 
 

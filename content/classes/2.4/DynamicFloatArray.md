@@ -62,22 +62,23 @@ Return the size of one element in float
 
 ## Methods
 
-### allocElementundefined &rarr; [DynamicFloatArrayElementInfo](/classes/2.4/DynamicFloatArrayElementInfo)
+### allocElement() &rarr; [DynamicFloatArrayElementInfo](/classes/2.4/DynamicFloatArrayElementInfo)
 
 Allocate an element in the array.
 
 @return the element info instance that contains the offset into the main buffer of the element's location.
 
 Beware, this offset may change when you call pack()
-### freeElementundefined &rarr; void
+### freeElement(elInfo) &rarr; void
 
 Free the element corresponding to the given element info
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### packundefined &rarr; Float32Array
+ | elInfo | [DynamicFloatArrayElementInfo](/classes/2.4/DynamicFloatArrayElementInfo) |  the element that describe the allocated element
+
+### pack() &rarr; Float32Array
 
 This method will pack all the used elements into a linear sequence and put all the free space at the end.
 

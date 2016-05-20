@@ -13,57 +13,63 @@ class [CollisionCache](/classes/2.4/CollisionCache)
 
 ## Methods
 
-### getMeshesundefined &rarr; { undefined: SerializedMesh }
+### getMeshes() &rarr; { [n: number]: SerializedMesh }
 
 
-### getGeometriesundefined &rarr; { undefined: SerializedGeometry }
+### getGeometries() &rarr; { [s: number]: SerializedGeometry }
 
 
-### getMeshundefined &rarr; SerializedMesh
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### addMeshundefined &rarr; void
+### getMesh(id) &rarr; SerializedMesh
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeMeshundefined &rarr; void
+ | id | any |    
+
+### addMesh(mesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getGeometryundefined &rarr; SerializedGeometry
+ | mesh | SerializedMesh |    
+
+### removeMesh(uniqueId) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addGeometryundefined &rarr; void
+ | uniqueId | number |  
+
+### getGeometry(id) &rarr; SerializedGeometry
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeGeometryundefined &rarr; void
+ | id | string |    
+
+### addGeometry(geometry) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | geometry | SerializedGeometry |    
+
+### removeGeometry(id) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | id | string |    
+

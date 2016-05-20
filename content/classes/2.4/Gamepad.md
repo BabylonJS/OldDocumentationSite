@@ -47,22 +47,24 @@ The right stick values
 
 ## Methods
 
-### onleftstickchangedundefined &rarr; void
+### onleftstickchanged(callback) &rarr; void
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### onrightstickchangedundefined &rarr; void
-
-
+Binds an action to the left stick
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateundefined &rarr; void
+ | callback | (values: [StickValues](/classes/2.4/StickValues)) =&gt; void |    The action to bind
+
+### onrightstickchanged(callback) &rarr; void
+
+Binds an action to the right stick
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | callback | (values: [StickValues](/classes/2.4/StickValues)) =&gt; void |    The action to bind
+
+### update() &rarr; void
 
 

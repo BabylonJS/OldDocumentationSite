@@ -38,11 +38,12 @@ optional | mesh | [Mesh](/classes/2.4/Mesh) |
 
 ## Methods
 
-### copyundefined &rarr; [Geometry](/classes/2.4/Geometry)
+### copy(id) &rarr; [Geometry](/classes/2.4/Geometry)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | id | string |  
+

@@ -39,6 +39,6 @@ Create a new [GamepadCamera](/classes/2.4/GamepadCamera)
 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

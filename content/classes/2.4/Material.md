@@ -153,100 +153,114 @@ Default value : False
 
 ## Methods
 
-### toStringundefined &rarr; string
+### toString(fullDetails) &rarr; string
 
 subclasses should override adding information pertainent to themselves
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### freezeundefined &rarr; void
+optional | fullDetails | boolean | 
+
+### freeze() &rarr; void
 
 
-### unfreezeundefined &rarr; void
+### unfreeze() &rarr; void
 
 
-### isReadyundefined &rarr; boolean
+### isReady(mesh, useInstances) &rarr; boolean
+
+Function to know if material is ready
+@return boolean True if ready ; False if not
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    The mesh to bind
+optional | useInstances | boolean |    
+### getEffect() &rarr; [Effect](/classes/2.4/Effect)
+
+Get effect of the material
+@return [Effect](/classes/2.4/Effect) The effect
+### getScene() &rarr; [Scene](/classes/2.4/Scene)
+
+Get the scene which contain the material
+@return [Scene](/classes/2.4/Scene) The scene which contain the material
+### needAlphaBlending() &rarr; boolean
+
+Function to know if alpha is necessary (1.0 = no transparency)
+@return boolean True if alpha blending is needed ; False if not
+### needAlphaTesting() &rarr; boolean
+
+Function to know if alpha testing is necessary
+### getAlphaTestTexture() &rarr; [BaseTexture](/classes/2.4/BaseTexture)
+
+Function to get the alpha test texture
+@return [BaseTexture](/classes/2.4/BaseTexture) The alpha test texture
+### markDirty() &rarr; void
+
+
+### bind(world, mesh) &rarr; void
+
+Function to bind the material
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | world | [Matrix](/classes/2.4/Matrix) |    The world matrix
+optional | mesh | [Mesh](/classes/2.4/Mesh) |    The mesh to bind
+### bindOnlyWorldMatrix(world) &rarr; void
+
+Function to bind only the world matrix
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | world | [Matrix](/classes/2.4/Matrix) |    The world matrix
+
+### unbind() &rarr; void
+
+Function to unbind
+### clone(name) &rarr; [Material](/classes/2.4/Material)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getEffectundefined &rarr; [Effect](/classes/2.4/Effect)
+ | name | string |    Name of the material
+
+### getBindedMeshes() &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)[]
 
 
-### getSceneundefined &rarr; [Scene](/classes/2.4/Scene)
-
-
-### needAlphaBlendingundefined &rarr; boolean
-
-
-### needAlphaTestingundefined &rarr; boolean
-
-
-### getAlphaTestTextureundefined &rarr; [BaseTexture](/classes/2.4/BaseTexture)
-
-
-### markDirtyundefined &rarr; void
-
-
-### bindundefined &rarr; void
+### dispose(forceDisposeEffect, forceDisposeTextures) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### bindOnlyWorldMatrixundefined &rarr; void
+optional | forceDisposeEffect | boolean |    True to force the dispose
+optional | forceDisposeTextures | boolean | 
+### serialize() &rarr; any
+
+
+### static ParseMultiMaterial(parsedMultiMaterial, scene) &rarr; [MultiMaterial](/classes/2.4/MultiMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unbindundefined &rarr; void
-
-
-### cloneundefined &rarr; [Material](/classes/2.4/Material)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getBindedMeshesundefined &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)[]
-
-
-### disposeundefined &rarr; void
+ | parsedMultiMaterial | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    
+### static Parse(parsedMaterial, scene, rootUrl) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
-
-
-### static ParseMultiMaterialundefined &rarr; [MultiMaterial](/classes/2.4/MultiMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static Parseundefined &rarr; any
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | parsedMaterial | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    
+ | rootUrl | string |  

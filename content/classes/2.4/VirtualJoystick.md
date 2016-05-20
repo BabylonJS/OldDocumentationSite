@@ -48,46 +48,51 @@ True is [VirtualJoystick](/classes/2.4/VirtualJoystick) is pressed, false otherw
 
 ## Methods
 
-### setJoystickSensibilityundefined &rarr; void
+### setJoystickSensibility(newJoystickSensibility) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setJoystickColorundefined &rarr; void
+ | newJoystickSensibility | number |    @param newJoystickSensibility
+
+### setJoystickColor(newColor) &rarr; void
 
 Change the color of the virtual joystick
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setActionOnTouchundefined &rarr; void
+ | newColor | string |  a string that must be a CSS color value (like "red") or the hexa value (like "#FF0000")  a string that must be a CSS color value (like "red") or the hexa value (like "#FF0000")  a string that must be a CSS color value (like "red") or the hexa value (like "#FF0000") a string that must be a CSS color value (like &quot;red&quot;) or the hexa value (like &quot;#FF0000&quot;)
 
+### setActionOnTouch(action) &rarr; void
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setAxisForLeftRightundefined &rarr; void
-
-
+Set the action for the button touched
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setAxisForUpDownundefined &rarr; void
+ | action | () =&gt; any |    @param action
 
+### setAxisForLeftRight(axis) &rarr; void
 
+Set the axis for the left and the right
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### releaseCanvasundefined &rarr; void
+ | axis | [JoystickAxis](/classes/2.4/JoystickAxis) |    The given axis
+
+### setAxisForUpDown(axis) &rarr; void
+
+Set the axis for the up and the down
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | axis | [JoystickAxis](/classes/2.4/JoystickAxis) |    The given axis
+
+### releaseCanvas() &rarr; void
 
 

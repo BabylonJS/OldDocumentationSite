@@ -20,7 +20,7 @@ This class represents a dual hinge physics joint (same as wheel joint)
 
 ## Methods
 
-### setMotorundefined &rarr; void
+### setMotor(force, maxForce, motorIndex) &rarr; void
 
 Set the motor values.
 
@@ -29,8 +29,10 @@ Attention, this function is plugin specific. Engines won't react 100% the same.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setLimitundefined &rarr; void
+optional | force | number | 
+optional | maxForce | number | 
+optional | motorIndex | number | 
+### setLimit(upperLimit, lowerLimit, motorIndex) &rarr; void
 
 Set the motor limits.
 
@@ -39,4 +41,6 @@ Attention, this function is plugin specific. Engines won't react 100% the same.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | upperLimit | number | 
+optional | lowerLimit | number | 
+optional | motorIndex | number | 

@@ -27,30 +27,33 @@ class [EasingFunction](/classes/2.4/EasingFunction)
 
 ## Methods
 
-### setEasingModeundefined &rarr; void
+### setEasingMode(easingMode) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getEasingModeundefined &rarr; number
+ | easingMode | number |    
+
+### getEasingMode() &rarr; number
 
 
-### easeInCoreundefined &rarr; number
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### easeundefined &rarr; number
+### easeInCore(gradient) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | gradient | number |    
+
+### ease(gradient) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | gradient | number |    
+

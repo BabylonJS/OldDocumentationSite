@@ -26,6 +26,8 @@ optional | originalPostProcess | [PostProcess](/classes/2.4/PostProcess) |
 
 Public members
 
+
+
 Gaussian blur coefficient
 
 @type {number}
@@ -90,15 +92,15 @@ Minimum luminance needed to compute HDR
 
 ## Methods
 
-### updateundefined &rarr; void
+### update() &rarr; void
 
 Tells the pipeline to update its post-processes
-### getCurrentLuminanceundefined &rarr; number
+### getCurrentLuminance() &rarr; number
 
 Returns the current calculated luminance
-### getOutputLuminanceundefined &rarr; number
+### getOutputLuminance() &rarr; number
 
 Returns the currently drawn luminance
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 Releases the rendering pipeline and its internal effects. Detaches pipeline from cameras

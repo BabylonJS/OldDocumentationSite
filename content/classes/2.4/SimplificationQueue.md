@@ -22,22 +22,24 @@ class [SimplificationQueue](/classes/2.4/SimplificationQueue)
 
 ## Methods
 
-### addTaskundefined &rarr; void
+### addTask(task) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### executeNextundefined &rarr; void
+ | task | ISimplificationTask |    
+
+### executeNext() &rarr; void
 
 
-### runSimplificationundefined &rarr; void
+### runSimplification(task) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | task | ISimplificationTask |    
+

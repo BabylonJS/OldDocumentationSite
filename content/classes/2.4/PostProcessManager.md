@@ -27,14 +27,15 @@ A tutorial about post process can be found here
 
 ## Methods
 
-### directRenderundefined &rarr; void
+### directRender(postProcesses, targetTexture) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | postProcesses | [PostProcess](/classes/2.4/PostProcess)[] |    
+optional | targetTexture | WebGLTexture |    
+### dispose() &rarr; void
 
 

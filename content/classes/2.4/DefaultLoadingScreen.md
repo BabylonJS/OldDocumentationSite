@@ -31,9 +31,9 @@ optional | _loadingDivBackgroundColor | string |
 
 ## Methods
 
-### displayLoadingUIundefined &rarr; void
+### displayLoadingUI() &rarr; void
 
 
-### hideLoadingUIundefined &rarr; void
+### hideLoadingUI() &rarr; void
 
 

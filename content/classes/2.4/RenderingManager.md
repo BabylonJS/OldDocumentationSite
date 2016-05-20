@@ -30,22 +30,25 @@ default : 4
 
 ## Methods
 
-### renderundefined &rarr; void
+### render(customRenderFunction, activeMeshes, renderParticles, renderSprites) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### resetundefined &rarr; void
+ | customRenderFunction | (opaqueSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;, transparentSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;, alphaTestSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;) =&gt; void |    
+ | activeMeshes | [AbstractMesh](/classes/2.4/AbstractMesh)[] |    
+ | renderParticles | boolean |    
+### reset() &rarr; void
 
 
-### dispatchundefined &rarr; void
+### dispatch(subMesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | subMesh | [SubMesh](/classes/2.4/SubMesh) |    
+

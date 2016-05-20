@@ -11,11 +11,14 @@ class [BezierCurve](/classes/2.4/BezierCurve)
 
 ## Methods
 
-### static interpolateundefined &rarr; number
+### static interpolate(t, x1, y1, x2, y2) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | t | number |    
+ | x1 | number |    
+ | y1 | number |    
+ | x2 | number |    

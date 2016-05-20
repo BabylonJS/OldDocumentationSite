@@ -27,14 +27,15 @@ Builds a new [PostProcessRenderPass](/classes/2.4/PostProcessRenderPass) object
  | beforeRender | () =&gt; void |    The function to run before rendering
 ## Methods
 
-### setRenderListundefined &rarr; void
+### setRenderList(renderList) &rarr; void
 
-
+Updates the render list
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getRenderTextureundefined &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
+ | renderList | [Mesh](/classes/2.4/Mesh)[] |    @param renderList
+
+### getRenderTexture() &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
 
 

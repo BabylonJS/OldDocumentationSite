@@ -27,28 +27,30 @@ class [ArcRotateCameraGamepadInput](/classes/2.4/ArcRotateCameraGamepadInput)
 
 ## Methods
 
-### attachControlundefined &rarr; void
+### attachControl(element, noPreventDefault) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachControlundefined &rarr; void
+ | element | HTMLElement | 
+optional | noPreventDefault | boolean | 
+### detachControl(element) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### checkInputsundefined &rarr; void
+ | element | HTMLElement | 
+
+### checkInputs() &rarr; void
 
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 
-### getSimpleNameundefined &rarr; string
+### getSimpleName() &rarr; string
 
 

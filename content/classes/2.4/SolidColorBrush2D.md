@@ -28,9 +28,9 @@ The color used by this instance to render
 
 ## Methods
 
-### isTransparentundefined &rarr; boolean
+### isTransparent() &rarr; boolean
 
 
-### toStringundefined &rarr; string
+### toString() &rarr; string
 
 Return a unique identifier of the instance, which is simply the hexadecimal representation (CSS Style) of the solid color.

@@ -28,6 +28,6 @@ class [AnaglyphFreeCamera](/classes/2.4/AnaglyphFreeCamera) extends [FreeCamera]
  | interaxialDistance | number |    
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

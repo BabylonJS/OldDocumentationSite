@@ -89,6 +89,6 @@ class [VRCameraMetrics](/classes/2.4/VRCameraMetrics)
 
 ## Methods
 
-### static GetDefaultundefined &rarr; [VRCameraMetrics](/classes/2.4/VRCameraMetrics)
+### static GetDefault() &rarr; [VRCameraMetrics](/classes/2.4/VRCameraMetrics)
 
 

@@ -36,54 +36,64 @@ class [CollisionCoordinatorWorker](/classes/2.4/CollisionCoordinatorWorker)
 
 ## Methods
 
-### getNewPositionundefined &rarr; void
+### getNewPosition(position, velocity, collider, maximumRetry, excludedMesh, onNewPosition, collisionIndex) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### initundefined &rarr; void
+ | position | [Vector3](/classes/2.4/Vector3) |    
+ | velocity | [Vector3](/classes/2.4/Vector3) |    
+ | collider | [Collider](/classes/2.4/Collider) |    
+ | maximumRetry | number |    
+ | excludedMesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    
+ | onNewPosition | (collisionIndex: number, newPosition: [Vector3](/classes/2.4/Vector3), collidedMesh: [AbstractMesh](/classes/2.4/AbstractMesh)) =&gt; void |    
+### init(scene) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### destroyundefined &rarr; void
+ | scene | [Scene](/classes/2.4/Scene) |    
+
+### destroy() &rarr; void
 
 
-### onMeshAddedundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### onMeshRemovedundefined &rarr; void
+### onMeshAdded(mesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### onGeometryAddedundefined &rarr; void
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    
+
+### onMeshRemoved(mesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### onGeometryDeletedundefined &rarr; void
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    
+
+### onGeometryAdded(geometry) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | geometry | [Geometry](/classes/2.4/Geometry) |    
+
+### onGeometryDeleted(geometry) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | geometry | [Geometry](/classes/2.4/Geometry) |    
+

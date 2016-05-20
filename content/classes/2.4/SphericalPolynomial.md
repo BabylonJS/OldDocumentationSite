@@ -47,19 +47,21 @@ class [SphericalPolynomial](/classes/2.4/SphericalPolynomial)
 
 ## Methods
 
-### addAmbientundefined &rarr; void
+### addAmbient(color) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static getSphericalPolynomialFromHarmonicsundefined &rarr; [SphericalPolynomial](/classes/2.4/SphericalPolynomial)
+ | color | [Color3](/classes/2.4/Color3) | 
+
+### static getSphericalPolynomialFromHarmonics(harmonics) &rarr; [SphericalPolynomial](/classes/2.4/SphericalPolynomial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | harmonics | [SphericalHarmonics](/classes/2.4/SphericalHarmonics) | 
+

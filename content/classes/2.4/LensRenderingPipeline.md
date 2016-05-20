@@ -18,7 +18,9 @@ class [LensRenderingPipeline](/classes/2.4/LensRenderingPipeline) extends [PostP
 
 @constructor
 
-         * [Effect](/classes/2.4/Effect) parameters are as follow:
+
+
+[Effect](/classes/2.4/Effect) parameters are as follow:
 
 {
 
@@ -50,8 +52,6 @@ class [LensRenderingPipeline](/classes/2.4/LensRenderingPipeline) extends [PostP
 
 Note: if an effect parameter is unset, effect is disabled
 
-         * @param {string} name - The rendering pipeline name
-
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
@@ -81,113 +81,123 @@ The depth-of-field [PostProcess](/classes/2.4/PostProcess) id in the pipeline
 
 ## Methods
 
-### setEdgeBlurundefined &rarr; void
+### setEdgeBlur(amount) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disableEdgeBlurundefined &rarr; void
+ | amount | number |    
+
+### disableEdgeBlur() &rarr; void
 
 
-### setGrainAmountundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### disableGrainundefined &rarr; void
-
-
-### setChromaticAberrationundefined &rarr; void
+### setGrainAmount(amount) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disableChromaticAberrationundefined &rarr; void
+ | amount | number |    
+
+### disableGrain() &rarr; void
 
 
-### setEdgeDistortionundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### disableEdgeDistortionundefined &rarr; void
-
-
-### setFocusDistanceundefined &rarr; void
+### setChromaticAberration(amount) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disableDepthOfFieldundefined &rarr; void
+ | amount | number |    
+
+### disableChromaticAberration() &rarr; void
 
 
-### setApertureundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setDarkenOutOfFocusundefined &rarr; void
+### setEdgeDistortion(amount) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### enablePentagonBokehundefined &rarr; void
+ | amount | number |    
+
+### disableEdgeDistortion() &rarr; void
 
 
-### disablePentagonBokehundefined &rarr; void
-
-
-### enableNoiseBlurundefined &rarr; void
-
-
-### disableNoiseBlurundefined &rarr; void
-
-
-### setHighlightsGainundefined &rarr; void
+### setFocusDistance(amount) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setHighlightsThresholdundefined &rarr; void
+ | amount | number |    
+
+### disableDepthOfField() &rarr; void
+
+
+### setAperture(amount) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disableHighlightsundefined &rarr; void
+ | amount | number |    
+
+### setDarkenOutOfFocus(amount) &rarr; void
 
 
-### disposeundefined &rarr; void
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | amount | number |    
+
+### enablePentagonBokeh() &rarr; void
+
+
+### disablePentagonBokeh() &rarr; void
+
+
+### enableNoiseBlur() &rarr; void
+
+
+### disableNoiseBlur() &rarr; void
+
+
+### setHighlightsGain(amount) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | amount | number |    
+
+### setHighlightsThreshold(amount) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | amount | number |    
+
+### disableHighlights() &rarr; void
+
+
+### dispose(disableDepthRender) &rarr; void
 
 Removes the internal pipeline assets and detaches the pipeline from the scene cameras
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+optional | disableDepthRender | boolean |    
+

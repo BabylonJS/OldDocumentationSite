@@ -34,27 +34,30 @@ class [Angle](/classes/2.4/Angle)
 
 ## Methods
 
-### static BetweenTwoPointsundefined &rarr; [Angle](/classes/2.4/Angle)
+### static BetweenTwoPoints(a, b) &rarr; [Angle](/classes/2.4/Angle)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static FromRadiansundefined &rarr; [Angle](/classes/2.4/Angle)
+ | a | [Vector2](/classes/2.4/Vector2) |    
+ | b | [Vector2](/classes/2.4/Vector2) |    
+### static FromRadians(radians) &rarr; [Angle](/classes/2.4/Angle)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static FromDegreesundefined &rarr; [Angle](/classes/2.4/Angle)
+ | radians | number |    
+
+### static FromDegrees(degrees) &rarr; [Angle](/classes/2.4/Angle)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | degrees | number |    
+

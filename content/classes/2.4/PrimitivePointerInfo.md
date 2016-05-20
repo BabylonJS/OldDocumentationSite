@@ -158,19 +158,21 @@ true if the involved pointer is captured for a particular primitive, false other
 
 ## Methods
 
-### updateRelatedTargetundefined &rarr; void
+### updateRelatedTarget(prim, primPointerPos) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static getEventTypeNameundefined &rarr; string
+ | prim | [Prim2DBase](/classes/2.4/Prim2DBase) | 
+ | primPointerPos | [Vector2](/classes/2.4/Vector2) | 
+### static getEventTypeName(mask) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | mask | number | 
+

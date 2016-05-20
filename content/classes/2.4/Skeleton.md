@@ -43,26 +43,28 @@ Array of bones composing the skeleton
 
 ## Methods
 
-### getTransformMatricesundefined &rarr; Float32Array
+### getTransformMatrices(mesh) &rarr; Float32Array
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getSceneundefined &rarr; [Scene](/classes/2.4/Scene)
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |  
+
+### getScene() &rarr; [Scene](/classes/2.4/Scene)
 
 
-### toStringundefined &rarr; string
+### toString(fullDetails) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getBoneIndexByNameundefined &rarr; number
+optional | fullDetails | boolean | 
+
+### getBoneIndexByName(name) &rarr; number
 
 Get bone's index searching by name
 
@@ -71,86 +73,98 @@ Get bone's index searching by name
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### createAnimationRangeundefined &rarr; void
+ | name | string |    
+
+### createAnimationRange(name, from, to) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### deleteAnimationRangeundefined &rarr; void
+ | name | string |    
+ | from | number |  
+ | to | number |  
+### deleteAnimationRange(name, deleteFrames) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimationRangeundefined &rarr; [AnimationRange](/classes/2.4/AnimationRange)
+ | name | string |    
+optional | deleteFrames | boolean |  
+### getAnimationRange(name) &rarr; [AnimationRange](/classes/2.4/AnimationRange)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimationRangesundefined &rarr; [AnimationRange](/classes/2.4/AnimationRange)[]
+ | name | string |    
+
+### getAnimationRanges() &rarr; [AnimationRange](/classes/2.4/AnimationRange)[]
 
 Returns as an Array, all AnimationRanges defined on this skeleton
-### copyAnimationRangeundefined &rarr; boolean
+### copyAnimationRange(source, name, rescaleAsRequired) &rarr; boolean
 
 note: This is not for a complete retargeting, only between very similar skeleton's with only possible bone length differences
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### returnToRestundefined &rarr; void
+ | source | [Skeleton](/classes/2.4/Skeleton) |  
+ | name | string |    
+optional | rescaleAsRequired | boolean |  
+### returnToRest() &rarr; void
 
 
-### beginAnimationundefined &rarr; [Animatable](/classes/2.4/Animatable)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### prepareundefined &rarr; void
-
-
-### getAnimatablesundefined &rarr; IAnimatable[]
-
-
-### cloneundefined &rarr; [Skeleton](/classes/2.4/Skeleton)
+### beginAnimation(name, loop, speedRatio, onAnimationEnd) &rarr; [Animatable](/classes/2.4/Animatable)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### enableBlendingundefined &rarr; void
+ | name | string |    
+optional | loop | boolean |  
+optional | speedRatio | number |  
+### prepare() &rarr; void
+
+Prepare bones' skeleton
+### getAnimatables() &rarr; IAnimatable[]
+
+Get the animatables of the skeleton
+### clone(name, id) &rarr; [Skeleton](/classes/2.4/Skeleton)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
-
-
-### serializeundefined &rarr; any
-
-
-### static Parseundefined &rarr; [Skeleton](/classes/2.4/Skeleton)
+ | name | string |    
+ | id | string |    
+### enableBlending(blendingSpeed) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+optional | blendingSpeed | number | 
+
+### dispose() &rarr; void
+
+
+### serialize() &rarr; any
+
+
+### static Parse(parsedSkeleton, scene) &rarr; [Skeleton](/classes/2.4/Skeleton)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | parsedSkeleton | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    The scene where the skeleton is

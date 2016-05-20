@@ -39,35 +39,39 @@ class [ClassTreeInfo](/classes/2.4/ClassTreeInfo)
 
 ## Methods
 
-### getLevelOfundefined &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
+### getLevelOf(type) &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getOrAddTypeundefined &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
+ | type | Object | 
+
+### getOrAddType(baseType, type) &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static getundefined &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
+ | baseType | Object | 
+ | type | Object | 
+### static get(type) &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static getOrRegisterundefined &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
+ | type | Object | 
+
+### static getOrRegister(type, classContentFactory) &rarr; [ClassTreeInfo](/classes/2.4/ClassTreeInfo)&lt;TClass, TProp&gt;
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | type | Object | 
+ | classContentFactory | (base: TClass) =&gt; TClass | 

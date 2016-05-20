@@ -51,52 +51,58 @@ The sourceMesh
 
 ## Methods
 
-### getTotalVerticesundefined &rarr; number
+### getTotalVertices() &rarr; number
 
-
-### getVerticesDataundefined &rarr; number[]
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### isVerticesDataPresentundefined &rarr; boolean
+Get the total vertices of the Instanced [Mesh](/classes/2.4/Mesh)
+### getVerticesData(kind, copyWhenShared) &rarr; number[]
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getIndicesundefined &rarr; number[]
+ | kind | string |    @param kind
+optional | copyWhenShared | boolean |  
+### isVerticesDataPresent(kind) &rarr; boolean
 
+Is Vertices data present
 
-### refreshBoundingInfoundefined &rarr; void
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | kind | string |    @param kind
 
+### getIndices() &rarr; number[]
 
-### getLODundefined &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
+Get Indices
+### refreshBoundingInfo() &rarr; void
+
+Refresh Bounding Info of the Instanced [Mesh](/classes/2.4/Mesh)
+### getLOD(camera) &rarr; [AbstractMesh](/classes/2.4/AbstractMesh)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### cloneundefined &rarr; [InstancedMesh](/classes/2.4/InstancedMesh)
+ | camera | [Camera](/classes/2.4/Camera) |    
+
+### clone(name, newParent, doNotCloneChildren) &rarr; [InstancedMesh](/classes/2.4/InstancedMesh)
+
+Clone this instanced [Mesh](/classes/2.4/Mesh)
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    The given name
+ | newParent | [Node](/classes/2.4/Node) |    The parent
+optional | doNotCloneChildren | boolean |    True if you want to clone children, false if you don't want to.
+### dispose(doNotRecurse) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+optional | doNotRecurse | boolean |    @param doNotRecurse
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined

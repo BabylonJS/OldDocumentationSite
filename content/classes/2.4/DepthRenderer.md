@@ -22,17 +22,18 @@ class [DepthRenderer](/classes/2.4/DepthRenderer)
 optional | type | number |    
 ## Methods
 
-### isReadyundefined &rarr; boolean
+### isReady(subMesh, useInstances) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getDepthMapundefined &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
+ | subMesh | [SubMesh](/classes/2.4/SubMesh) |    
+ | useInstances | boolean |    
+### getDepthMap() &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
 
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 

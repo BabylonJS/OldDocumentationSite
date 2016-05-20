@@ -32,28 +32,30 @@ class [ArcRotateCameraVRDeviceOrientationInput](/classes/2.4/ArcRotateCameraVRDe
 
 ## Methods
 
-### attachControlundefined &rarr; void
+### attachControl(element, noPreventDefault) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### checkInputsundefined &rarr; void
+ | element | HTMLElement | 
+optional | noPreventDefault | boolean | 
+### checkInputs() &rarr; void
 
 
-### detachControlundefined &rarr; void
+### detachControl(element) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTypeNameundefined &rarr; string
+ | element | HTMLElement | 
+
+### getTypeName() &rarr; string
 
 
-### getSimpleNameundefined &rarr; string
+### getSimpleName() &rarr; string
 
 

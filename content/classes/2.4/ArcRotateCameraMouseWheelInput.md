@@ -19,25 +19,27 @@ class [ArcRotateCameraMouseWheelInput](/classes/2.4/ArcRotateCameraMouseWheelInp
 
 ## Methods
 
-### attachControlundefined &rarr; void
+### attachControl(element, noPreventDefault) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### detachControlundefined &rarr; void
+ | element | HTMLElement | 
+optional | noPreventDefault | boolean | 
+### detachControl(element) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTypeNameundefined &rarr; string
+ | element | HTMLElement | 
+
+### getTypeName() &rarr; string
 
 
-### getSimpleNameundefined &rarr; string
+### getSimpleName() &rarr; string
 
 

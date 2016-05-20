@@ -36,28 +36,33 @@ The coordinates mode
 
 ## Methods
 
-### static CreateFromImagesundefined &rarr; [CubeTexture](/classes/2.4/CubeTexture)
+### static CreateFromImages(files, scene, noMipmap) &rarr; [CubeTexture](/classes/2.4/CubeTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### delayLoadundefined &rarr; void
+ | files | string[] |  
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) which contain the texture
+optional | noMipmap | boolean |  
+### delayLoad() &rarr; void
+
+Delay the texture loading
+### getReflectionTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
 
 
-### getReflectionTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### static Parseundefined &rarr; [CubeTexture](/classes/2.4/CubeTexture)
+### static Parse(parsedTexture, scene, rootUrl) &rarr; [CubeTexture](/classes/2.4/CubeTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### cloneundefined &rarr; [CubeTexture](/classes/2.4/CubeTexture)
+ | parsedTexture | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) which contain the texture
+ | rootUrl | string |    Link of the texture
+### clone() &rarr; [CubeTexture](/classes/2.4/CubeTexture)
 
-
+Clone the cube texture
+@return [CubeTexture](/classes/2.4/CubeTexture) A clone of the cube texture

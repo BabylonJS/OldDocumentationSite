@@ -17,9 +17,9 @@ class [SIMDHelper](/classes/2.4/SIMDHelper)
 
 ## Methods
 
-### static DisableSIMDundefined &rarr; void
+### static DisableSIMD() &rarr; void
 
 
-### static EnableSIMDundefined &rarr; void
+### static EnableSIMD() &rarr; void
 
 

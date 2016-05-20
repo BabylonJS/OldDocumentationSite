@@ -28,6 +28,6 @@ class [VRDeviceOrientationFreeCamera](/classes/2.4/VRDeviceOrientationFreeCamera
  | scene | [Scene](/classes/2.4/Scene) |    
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

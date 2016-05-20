@@ -28,51 +28,65 @@ optional | data | Array&lt;number&gt; |
 
 ## Methods
 
-### detundefined &rarr; number
+### det(a11, a12, a13, a21, a22, a23, a31, a32, a33) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addInPlaceundefined &rarr; void
+ | a11 | any |    
+ | a12 | any |    
+ | a13 | any |    
+ | a21 | any |    
+ | a22 | any |    
+ | a23 | any |    
+ | a31 | any |    
+ | a32 | any |    
+### addInPlace(matrix) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addArrayInPlaceundefined &rarr; void
+ | matrix | [QuadraticMatrix](/classes/2.4/QuadraticMatrix) |    
+
+### addArrayInPlace(data) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addundefined &rarr; [QuadraticMatrix](/classes/2.4/QuadraticMatrix)
+ | data | Array&lt;number&gt; |    
+
+### add(matrix) &rarr; [QuadraticMatrix](/classes/2.4/QuadraticMatrix)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static FromDataundefined &rarr; [QuadraticMatrix](/classes/2.4/QuadraticMatrix)
+ | matrix | [QuadraticMatrix](/classes/2.4/QuadraticMatrix) |    
+
+### static FromData(a, b, c, d) &rarr; [QuadraticMatrix](/classes/2.4/QuadraticMatrix)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static DataFromNumbersundefined &rarr; number[]
+ | a | number |    
+ | b | number |    
+ | c | number |    
+### static DataFromNumbers(a, b, c, d) &rarr; number[]
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | a | number |    
+ | b | number |    
+ | c | number |    

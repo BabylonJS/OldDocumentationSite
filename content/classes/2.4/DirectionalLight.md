@@ -50,53 +50,58 @@ The direction of the light
 
 ## Methods
 
-### getAbsolutePositionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getAbsolutePosition() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### setDirectionToTargetundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### setDirectionToTarget(target) &rarr; [Vector3](/classes/2.4/Vector3)
+
+Returns the normalized vector of the substraction between the given vector and the position of this light
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | target | [Vector3](/classes/2.4/Vector3) |    The given target
+
+### setShadowProjectionMatrix(matrix, viewMatrix, renderList) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setShadowProjectionMatrixundefined &rarr; void
+ | matrix | [Matrix](/classes/2.4/Matrix) |    
+ | viewMatrix | [Matrix](/classes/2.4/Matrix) |    
+ | renderList | Array&lt;[AbstractMesh](/classes/2.4/AbstractMesh)&gt; |    
+### supportsVSM() &rarr; boolean
+
+
+### needRefreshPerFrame() &rarr; boolean
+
+
+### needCube() &rarr; boolean
+
+
+### getShadowDirection(faceIndex) &rarr; [Vector3](/classes/2.4/Vector3)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### supportsVSMundefined &rarr; boolean
+optional | faceIndex | number |  
+
+### computeTransformedPosition() &rarr; boolean
 
 
-### needRefreshPerFrameundefined &rarr; boolean
-
-
-### needCubeundefined &rarr; boolean
-
-
-### getShadowDirectionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### transferToEffect(effect, directionUniformName) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### computeTransformedPositionundefined &rarr; boolean
-
-
-### transferToEffectundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getTypeIDundefined &rarr; number
+ | effect | [Effect](/classes/2.4/Effect) |    The given effect
+ | directionUniformName | string |    The uniform name
+### getTypeID() &rarr; number
 
 

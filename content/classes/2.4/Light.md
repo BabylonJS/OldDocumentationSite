@@ -69,69 +69,77 @@ Holds the meshes non affected by this light
 
 ## Methods
 
-### toStringundefined &rarr; string
+### toString(fullDetails) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getShadowGeneratorundefined &rarr; [ShadowGenerator](/classes/2.4/ShadowGenerator)
+optional | fullDetails | boolean | 
+
+### getShadowGenerator() &rarr; [ShadowGenerator](/classes/2.4/ShadowGenerator)
+
+Returns the [ShadowGenerator](/classes/2.4/ShadowGenerator) object which allows among other things, meshes to block light
+### getAbsolutePosition() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### getAbsolutePositionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### transferToEffect(effect, uniformName0, uniformName1) &rarr; void
+
+Gives the light to position with the given effect with given position names
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/2.4/Effect) |    The given effect
+optional | uniformName0 | string |    The first uniform name
+optional | uniformName1 | string |    The second uniform name
+### canAffectMesh(mesh) &rarr; boolean
+
+Tests if the given mesh is affectable by this light
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    The given [Mesh](/classes/2.4/Mesh)
+
+### getWorldMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Returns the world matrix
+### dispose() &rarr; void
 
 
-### transferToEffectundefined &rarr; void
+### getTypeID() &rarr; number
+
+
+### clone(name) &rarr; [Light](/classes/2.4/Light)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### canAffectMeshundefined &rarr; boolean
+ | name | string |    The name of the object
+
+### serialize() &rarr; any
+
+
+### static GetConstructorFromName(type, name, scene) &rarr; () =&gt; [Light](/classes/2.4/Light)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getWorldMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### disposeundefined &rarr; void
-
-
-### getTypeIDundefined &rarr; number
-
-
-### cloneundefined &rarr; [Light](/classes/2.4/Light)
+ | type | number | 
+ | name | string |    The name of the object
+ | scene | [Scene](/classes/2.4/Scene) |    The scene to append the light
+### static Parse(parsedLight, scene) &rarr; [Light](/classes/2.4/Light)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
-
-
-### static GetConstructorFromNameundefined &rarr; () =&gt; [Light](/classes/2.4/Light)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static Parseundefined &rarr; [Light](/classes/2.4/Light)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | parsedLight | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    The scene to append the light

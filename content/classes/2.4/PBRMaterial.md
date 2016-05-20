@@ -7,6 +7,8 @@ class [PBRMaterial](/classes/2.4/PBRMaterial) extends [Material](/classes/2.4/Ma
 
 The Physically based material of BJS.
 
+
+
 This offers the main features of a standard PBR material.
 
 For more information, please refer to the documentation :
@@ -18,8 +20,6 @@ http://doc.babylonjs.com/extensions/Physically_Based_Rendering
 ## new [PBRMaterial](/classes/2.4/PBRMaterial)(name, scene)
 
 Instantiates a new [PBRMaterial](/classes/2.4/PBRMaterial) instance.
-
-         * @param name The material name
 
 #### Parameters
  | Name | Type | Description
@@ -314,77 +314,89 @@ If sets to true, normal map will be considered following OpenGL convention.
 
 ## Methods
 
-### needAlphaBlendingundefined &rarr; boolean
+### needAlphaBlending() &rarr; boolean
 
 
-### needAlphaTestingundefined &rarr; boolean
+### needAlphaTesting() &rarr; boolean
 
 
-### getAlphaTestTextureundefined &rarr; [BaseTexture](/classes/2.4/BaseTexture)
+### getAlphaTestTexture() &rarr; [BaseTexture](/classes/2.4/BaseTexture)
 
 
-### static BindLightsundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### isReadyundefined &rarr; boolean
+### static BindLights(scene, mesh, effect, defines, useScalarInLinearSpace, maxSimultaneousLights, usePhysicalLightFalloff) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### unbindundefined &rarr; void
-
-
-### bindOnlyWorldMatrixundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### bindundefined &rarr; void
+ | scene | [Scene](/classes/2.4/Scene) | 
+ | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) | 
+ | effect | [Effect](/classes/2.4/Effect) | 
+ | defines | [MaterialDefines](/classes/2.4/MaterialDefines) | 
+ | useScalarInLinearSpace | boolean | 
+ | maxSimultaneousLights | number | 
+### isReady(mesh, useInstances) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAnimatablesundefined &rarr; IAnimatable[]
+optional | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) | 
+optional | useInstances | boolean | 
+### unbind() &rarr; void
 
 
-### disposeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### cloneundefined &rarr; [PBRMaterial](/classes/2.4/PBRMaterial)
+### bindOnlyWorldMatrix(world) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### serializeundefined &rarr; any
+ | world | [Matrix](/classes/2.4/Matrix) | 
 
-
-### static Parseundefined &rarr; [PBRMaterial](/classes/2.4/PBRMaterial)
+### bind(world, mesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | world | [Matrix](/classes/2.4/Matrix) | 
+optional | mesh | [Mesh](/classes/2.4/Mesh) | 
+### getAnimatables() &rarr; IAnimatable[]
+
+
+### dispose(forceDisposeEffect, forceDisposeTextures) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | forceDisposeEffect | boolean | 
+optional | forceDisposeTextures | boolean | 
+### clone(name) &rarr; [PBRMaterial](/classes/2.4/PBRMaterial)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+
+### serialize() &rarr; any
+
+
+### static Parse(source, scene, rootUrl) &rarr; [PBRMaterial](/classes/2.4/PBRMaterial)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | source | any | 
+ | scene | [Scene](/classes/2.4/Scene) | 
+ | rootUrl | string | 

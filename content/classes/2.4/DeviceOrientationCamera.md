@@ -39,6 +39,6 @@ The move sensibility of the camera
 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

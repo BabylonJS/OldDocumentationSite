@@ -79,54 +79,60 @@ Contains a value of the [Xbox360Dpad](/classes/2.4/Xbox360Dpad) enum refering to
 
 ## Methods
 
-### onlefttriggerchangedundefined &rarr; void
+### onlefttriggerchanged(callback) &rarr; void
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### onrighttriggerchangedundefined &rarr; void
-
-
+Binds an action on the left trigger property change
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### onbuttondownundefined &rarr; void
+ | callback | (value: number) =&gt; void |    The function to execute with the stick passed as argument
 
+### onrighttriggerchanged(callback) &rarr; void
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### onbuttonupundefined &rarr; void
-
-
+Binds an action on the right trigger property change
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### ondpaddownundefined &rarr; void
+ | callback | (value: number) =&gt; void |    The function to execute with the stick passed as argument
 
+### onbuttondown(callback) &rarr; void
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### ondpadupundefined &rarr; void
-
-
+Binds an action on button pressed
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateundefined &rarr; void
+ | callback | (buttonPressed: [Xbox360Button](/classes/2.4/Xbox360Button)) =&gt; void |    The function to execute with the stick passed as argument
+
+### onbuttonup(callback) &rarr; void
+
+Binds an action on button released
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | callback | (buttonReleased: [Xbox360Button](/classes/2.4/Xbox360Button)) =&gt; void |    The function to execute with the stick passed as argument
+
+### ondpaddown(callback) &rarr; void
+
+Binds an action on stick pressed
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | callback | (dPadPressed: [Xbox360Dpad](/classes/2.4/Xbox360Dpad)) =&gt; void |    The function to execute with the stick passed as argument
+
+### ondpadup(callback) &rarr; void
+
+Binds an action on stick released
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | callback | (dPadReleased: [Xbox360Dpad](/classes/2.4/Xbox360Dpad)) =&gt; void |    The function to execute with the stick passed as argument
+
+### update() &rarr; void
 
 

@@ -28,44 +28,50 @@ class [Path2](/classes/2.4/Path2)
 
 ## Methods
 
-### addLineToundefined &rarr; [Path2](/classes/2.4/Path2)
+### addLineTo(x, y) &rarr; [Path2](/classes/2.4/Path2)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### addArcToundefined &rarr; [Path2](/classes/2.4/Path2)
+ | x | number |    
+ | y | number |    
+### addArcTo(midX, midY, endX, endY, numberOfSegments) &rarr; [Path2](/classes/2.4/Path2)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### closeundefined &rarr; [Path2](/classes/2.4/Path2)
+ | midX | number |    
+ | midY | number |    
+ | endX | number |    
+ | endY | number |    
+### close() &rarr; [Path2](/classes/2.4/Path2)
 
 
-### lengthundefined &rarr; number
+### length() &rarr; number
 
 
-### getPointsundefined &rarr; [Vector2](/classes/2.4/Vector2)[]
+### getPoints() &rarr; [Vector2](/classes/2.4/Vector2)[]
 
 
-### getPointAtLengthPositionundefined &rarr; [Vector2](/classes/2.4/Vector2)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static StartingAtundefined &rarr; [Path2](/classes/2.4/Path2)
+### getPointAtLengthPosition(normalizedLengthPosition) &rarr; [Vector2](/classes/2.4/Vector2)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | normalizedLengthPosition | number |    
+
+### static StartingAt(x, y) &rarr; [Path2](/classes/2.4/Path2)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | x | number |    
+ | y | number |    

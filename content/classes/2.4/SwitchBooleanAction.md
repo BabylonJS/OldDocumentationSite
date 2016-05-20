@@ -31,14 +31,15 @@ Defines the path to the property to affect with the action
 
 ## Methods
 
-### executeundefined &rarr; void
+### execute() &rarr; void
 
 
-### serializeundefined &rarr; any
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any | 
+

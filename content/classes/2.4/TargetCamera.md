@@ -57,26 +57,28 @@ The camera locked target
 
 ## Methods
 
-### getFrontPositionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getFrontPosition(distance) &rarr; [Vector3](/classes/2.4/Vector3)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setTargetundefined &rarr; void
+ | distance | number |   
 
+### setTarget(target) &rarr; void
 
+Set the target of the targetCamera
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTargetundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | target | [Vector3](/classes/2.4/Vector3) |    The target position
+
+### getTarget() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### createRigCameraundefined &rarr; [Camera](/classes/2.4/Camera)
+### createRigCamera(name, cameraIndex) &rarr; [Camera](/classes/2.4/Camera)
 
 @override
 
@@ -85,7 +87,8 @@ Override [Camera](/classes/2.4/Camera).createRigCamera
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getTypeNameundefined &rarr; string
+ | name | string |    
+ | cameraIndex | number |    
+### getTypeName() &rarr; string
 
 

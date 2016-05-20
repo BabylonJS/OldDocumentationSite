@@ -25,14 +25,15 @@ Stop an animation on a specified target.
 optional | condition | [Condition](/classes/2.4/Condition) |    The condition to stop the animation
 ## Methods
 
-### executeundefined &rarr; void
+### execute() &rarr; void
 
 
-### serializeundefined &rarr; any
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any | 
+

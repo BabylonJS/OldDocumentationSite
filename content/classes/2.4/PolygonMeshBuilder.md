@@ -33,19 +33,21 @@ class [PolygonMeshBuilder](/classes/2.4/PolygonMeshBuilder)
  | scene | [Scene](/classes/2.4/Scene) |    
 ## Methods
 
-### addHoleundefined &rarr; [PolygonMeshBuilder](/classes/2.4/PolygonMeshBuilder)
+### addHole(hole) &rarr; [PolygonMeshBuilder](/classes/2.4/PolygonMeshBuilder)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### buildundefined &rarr; [Mesh](/classes/2.4/Mesh)
+ | hole | [Vector2](/classes/2.4/Vector2)[] |    
+
+### build(updatable, depth) &rarr; [Mesh](/classes/2.4/Mesh)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+optional | updatable | boolean |    
+optional | depth | number |    

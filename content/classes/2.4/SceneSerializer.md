@@ -13,22 +13,25 @@ Serializes a scene
 
 ## Methods
 
-### static ClearCacheundefined &rarr; void
+### static ClearCache() &rarr; void
 
 
-### static Serializeundefined &rarr; any
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static SerializeMeshundefined &rarr; any
+### static Serialize(scene) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | scene | [Scene](/classes/2.4/Scene) |    The scene
+
+### static SerializeMesh(toSerialize, withParents, withChildren) &rarr; any
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | toSerialize | any |   
+optional | withParents | boolean |   
+optional | withChildren | boolean |   

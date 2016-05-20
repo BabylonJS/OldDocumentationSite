@@ -20,6 +20,6 @@ class [GroupInstanceInfo](/classes/2.4/GroupInstanceInfo)
  | cache | [ModelRenderCache](/classes/2.4/ModelRenderCache) | 
 ## Methods
 
-### disposeundefined &rarr; boolean
+### dispose() &rarr; boolean
 
 

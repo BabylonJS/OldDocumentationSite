@@ -37,9 +37,9 @@ Creates a refraction texture used by refraction channel of the standard material
 
 ## Methods
 
-### cloneundefined &rarr; [RefractionTexture](/classes/2.4/RefractionTexture)
+### clone() &rarr; [RefractionTexture](/classes/2.4/RefractionTexture)
 
 
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 

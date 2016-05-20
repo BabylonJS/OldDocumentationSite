@@ -31,6 +31,6 @@ class [UniversalCamera](/classes/2.4/UniversalCamera) extends [TouchCamera](/cla
 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

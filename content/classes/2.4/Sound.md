@@ -80,131 +80,146 @@ optional | readyToPlayCallback | () =&gt; void |  Provide a callback function if
 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 
-### setAudioBufferundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### updateOptionsundefined &rarr; void
+### setAudioBuffer(audioBuffer) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### switchPanningModelToHRTFundefined &rarr; void
+ | audioBuffer | AudioBuffer |    
 
-
-### switchPanningModelToEqualPowerundefined &rarr; void
-
-
-### connectToSoundTrackAudioNodeundefined &rarr; void
+### updateOptions(options) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setDirectionalConeundefined &rarr; void
+ | options | any |    
+
+### switchPanningModelToHRTF() &rarr; void
+
+
+### switchPanningModelToEqualPower() &rarr; void
+
+
+### connectToSoundTrackAudioNode(soundTrackAudioNode) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | soundTrackAudioNode | AudioNode |    
+
+### setDirectionalCone(coneInnerAngle, coneOuterAngle, coneOuterGain) &rarr; void
 
 Transform this sound into a directional source
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setPositionundefined &rarr; void
+ | coneInnerAngle | number |  [Size](/classes/2.4/Size) of the inner cone in degree  [Size](/classes/2.4/Size) of the inner cone in degree  [Size](/classes/2.4/Size) of the inner cone in degree [Size](/classes/2.4/Size) of the inner cone in degree
+ | coneOuterAngle | number |  [Size](/classes/2.4/Size) of the outer cone in degree  [Size](/classes/2.4/Size) of the outer cone in degree  [Size](/classes/2.4/Size) of the outer cone in degree [Size](/classes/2.4/Size) of the outer cone in degree
+ | coneOuterGain | number |  Volume of the sound outside the outer cone (between 0.0 and 1.0)  Volume of the sound outside the outer cone (between 0.0 and 1.0)  Volume of the sound outside the outer cone (between 0.0 and 1.0) Volume of the sound outside the outer cone (between 0.0 and 1.0)
+### setPosition(newPosition) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setLocalDirectionToMeshundefined &rarr; void
+ | newPosition | [Vector3](/classes/2.4/Vector3) |    
+
+### setLocalDirectionToMesh(newLocalDirection) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateDistanceFromListenerundefined &rarr; void
+ | newLocalDirection | [Vector3](/classes/2.4/Vector3) |    
+
+### updateDistanceFromListener() &rarr; void
 
 
-### setAttenuationFunctionundefined &rarr; void
+### setAttenuationFunction(callback) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### playundefined &rarr; void
+ | callback | (currentVolume: number, currentDistance: number, maxDistance: number, refDistance: number, rolloffFactor: number) =&gt; number |    
+
+### play(time) &rarr; void
 
 Play the sound
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### stopundefined &rarr; void
+optional | time | number |  (optional) Start the sound after X seconds. Start immediately (0) by default.   
+
+### stop(time) &rarr; void
 
 Stop the sound
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### pauseundefined &rarr; void
+optional | time | number |  (optional) Stop the sound after X seconds. Stop immediately (0) by default.   
+
+### pause() &rarr; void
 
 
-### setVolumeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setPlaybackRateundefined &rarr; void
+### setVolume(newVolume, time) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getVolumeundefined &rarr; number
-
-
-### attachToMeshundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### cloneundefined &rarr; [Sound](/classes/2.4/Sound)
-
-
-### getAudioBufferundefined &rarr; AudioBuffer
-
-
-### static Parseundefined &rarr; [Sound](/classes/2.4/Sound)
+ | newVolume | number |    
+optional | time | number |    
+### setPlaybackRate(newPlaybackRate) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | newPlaybackRate | number |    
+
+### getVolume() &rarr; number
+
+
+### attachToMesh(meshToConnectTo) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | meshToConnectTo | [AbstractMesh](/classes/2.4/AbstractMesh) |    
+
+### clone() &rarr; [Sound](/classes/2.4/Sound)
+
+
+### getAudioBuffer() &rarr; AudioBuffer
+
+
+### static Parse(parsedSound, scene, rootUrl, sourceSound) &rarr; [Sound](/classes/2.4/Sound)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | parsedSound | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    
+ | rootUrl | string |  

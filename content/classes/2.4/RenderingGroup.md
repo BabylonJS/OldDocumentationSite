@@ -32,22 +32,24 @@ Creates a new rendering group
 
 ## Methods
 
-### renderundefined &rarr; boolean
+### render(customRenderFunction) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### prepareundefined &rarr; void
+ | customRenderFunction | (opaqueSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;, transparentSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;, alphaTestSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;) =&gt; void |    
+
+### prepare() &rarr; void
 
 
-### dispatchundefined &rarr; void
+### dispatch(subMesh) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | subMesh | [SubMesh](/classes/2.4/SubMesh) |    @param subMesh
+

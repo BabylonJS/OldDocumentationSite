@@ -35,33 +35,36 @@ Number of the trigger
 
 ## Methods
 
-### getTriggerParameterundefined &rarr; any
+### getTriggerParameter() &rarr; any
+
+Get the trigger parameter
+### execute(evt) &rarr; void
+
+Execute the trigger
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | evt | [ActionEvent](/classes/2.4/ActionEvent) |    An event to trigger
+
+### skipToNextActiveAction() &rarr; void
 
 
-### executeundefined &rarr; void
+### then(action) &rarr; [Action](/classes/2.4/Action)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### skipToNextActiveActionundefined &rarr; void
+ | action | [Action](/classes/2.4/Action) |    The action to do
 
-
-### thenundefined &rarr; [Action](/classes/2.4/Action)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### serializeundefined &rarr; any
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any | 
+

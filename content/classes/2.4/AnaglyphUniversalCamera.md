@@ -21,6 +21,6 @@ class [AnaglyphUniversalCamera](/classes/2.4/AnaglyphUniversalCamera) extends [U
  | interaxialDistance | number | 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

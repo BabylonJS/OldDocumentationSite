@@ -31,9 +31,9 @@ The value of the stateCondition
 
 ## Methods
 
-### isValidundefined &rarr; boolean
+### isValid() &rarr; boolean
 
 
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 

@@ -118,36 +118,39 @@ An event triggered after rendering the postprocess
 
 ## Methods
 
-### updateEffectundefined &rarr; void
+### updateEffect(defines) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isReusableundefined &rarr; boolean
+optional | defines | string |    
+
+### isReusable() &rarr; boolean
+
+Tests if the Postprocess is set to reusable
+### markTextureDirty() &rarr; void
 
 
-### markTextureDirtyundefined &rarr; void
+### activate(camera, sourceTexture) &rarr; void
 
+Activates this postprocess to the given camera
 
-### activateundefined &rarr; void
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | camera | [Camera](/classes/2.4/Camera) |    The given camera
+optional | sourceTexture | WebGLTexture |    Optional textures to add
+### apply() &rarr; [Effect](/classes/2.4/Effect)
+
+Applies this postprocess
+### dispose(camera) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyundefined &rarr; [Effect](/classes/2.4/Effect)
+optional | camera | [Camera](/classes/2.4/Camera) |    The given camera
 
-
-### disposeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined

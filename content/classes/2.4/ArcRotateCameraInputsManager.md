@@ -20,18 +20,18 @@ class [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager) 
 
 ## Methods
 
-### addMouseWheelundefined &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
+### addMouseWheel() &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
 
 
-### addPointersundefined &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
+### addPointers() &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
 
 
-### addKeyboardundefined &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
+### addKeyboard() &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
 
 
-### addGamepadundefined &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
+### addGamepad() &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
 
 
-### addVRDeviceOrientationundefined &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
+### addVRDeviceOrientation() &rarr; [ArcRotateCameraInputsManager](/classes/2.4/ArcRotateCameraInputsManager)
 
 

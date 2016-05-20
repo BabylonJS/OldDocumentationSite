@@ -20,7 +20,7 @@ This class represents a single hinge physics joint
 
 ## Methods
 
-### setMotorundefined &rarr; void
+### setMotor(force, maxForce) &rarr; void
 
 Set the motor values.
 
@@ -29,8 +29,9 @@ Attention, this function is plugin specific. Engines won't react 100% the same.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setLimitundefined &rarr; void
+optional | force | number | 
+optional | maxForce | number | 
+### setLimit(upperLimit, lowerLimit) &rarr; void
 
 Set the motor's limits.
 
@@ -39,4 +40,5 @@ Attention, this function is plugin specific. Engines won't react 100% the same.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | upperLimit | number | 
+optional | lowerLimit | number | 

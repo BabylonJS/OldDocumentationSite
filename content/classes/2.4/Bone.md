@@ -42,46 +42,49 @@ Animations of this bone
 
 ## Methods
 
-### getParentundefined &rarr; [Bone](/classes/2.4/Bone)
+### getParent() &rarr; [Bone](/classes/2.4/Bone)
+
+Get the parent bone
+### getLocalMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the local matrix
+### getBaseMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the base matrix
+### getRestPose() &rarr; [Matrix](/classes/2.4/Matrix)
 
 
-### getLocalMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+### returnToRest() &rarr; void
 
 
-### getBaseMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
+### getWorldMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the world matrix
+### getInvertedAbsoluteTransform() &rarr; [Matrix](/classes/2.4/Matrix)
+
+Get the inverted absolute transform
+### getAbsoluteTransform() &rarr; [Matrix](/classes/2.4/Matrix)
 
 
-### getRestPoseundefined &rarr; [Matrix](/classes/2.4/Matrix)
+### updateMatrix(matrix) &rarr; void
+
+Update the bone matrix
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | matrix | [Matrix](/classes/2.4/Matrix) |    The update matrix
+
+### markAsDirty() &rarr; void
 
 
-### returnToRestundefined &rarr; void
-
-
-### getWorldMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### getInvertedAbsoluteTransformundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### getAbsoluteTransformundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### updateMatrixundefined &rarr; void
+### copyAnimationRange(source, rangeName, frameOffset, rescaleAsRequired) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### markAsDirtyundefined &rarr; void
-
-
-### copyAnimationRangeundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | source | [Bone](/classes/2.4/Bone) |  
+ | rangeName | string |  
+ | frameOffset | number |  

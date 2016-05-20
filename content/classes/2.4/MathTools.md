@@ -9,35 +9,41 @@ class [MathTools](/classes/2.4/MathTools)
 
 ## Methods
 
-### static WithinEpsilonundefined &rarr; boolean
+### static WithinEpsilon(a, b, epsilon) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static ToHexundefined &rarr; string
+ | a | number | 
+ | b | number | 
+optional | epsilon | number | 
+### static ToHex(i) &rarr; string
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Signundefined &rarr; number
+ | i | number | 
+
+### static Sign(value) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Clampundefined &rarr; number
+ | value | number | 
+
+### static Clamp(value, min, max) &rarr; number
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | value | number | 
+optional | min | number | 
+optional | max | number | 

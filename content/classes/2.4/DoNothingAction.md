@@ -24,14 +24,15 @@ optional | triggerOptions | any |    The trigger options
 optional | condition | [Condition](/classes/2.4/Condition) |    [Condition](/classes/2.4/Condition) to trigger the action
 ## Methods
 
-### executeundefined &rarr; void
+### execute() &rarr; void
 
 
-### serializeundefined &rarr; any
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any | 
+

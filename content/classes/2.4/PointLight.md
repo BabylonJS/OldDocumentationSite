@@ -40,45 +40,49 @@ The position of the emitting point
 
 ## Methods
 
-### getAbsolutePositionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### getAbsolutePosition() &rarr; [Vector3](/classes/2.4/Vector3)
 
 
-### computeTransformedPositionundefined &rarr; boolean
+### computeTransformedPosition() &rarr; boolean
 
 
-### transferToEffectundefined &rarr; void
+### transferToEffect(effect, positionUniformName) &rarr; void
+
+Gives the light to position with the given effect with given position name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/2.4/Effect) |    The given effect
+ | positionUniformName | string |    The uniform name
+### needCube() &rarr; boolean
+
+
+### supportsVSM() &rarr; boolean
+
+
+### needRefreshPerFrame() &rarr; boolean
+
+
+### getShadowDirection(faceIndex) &rarr; [Vector3](/classes/2.4/Vector3)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### needCubeundefined &rarr; boolean
+optional | faceIndex | number |  
 
-
-### supportsVSMundefined &rarr; boolean
-
-
-### needRefreshPerFrameundefined &rarr; boolean
-
-
-### getShadowDirectionundefined &rarr; [Vector3](/classes/2.4/Vector3)
+### setShadowProjectionMatrix(matrix, viewMatrix, renderList) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setShadowProjectionMatrixundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getTypeIDundefined &rarr; number
+ | matrix | [Matrix](/classes/2.4/Matrix) |  
+ | viewMatrix | [Matrix](/classes/2.4/Matrix) |  
+ | renderList | Array&lt;[AbstractMesh](/classes/2.4/AbstractMesh)&gt; |  
+### getTypeID() &rarr; number
 
 

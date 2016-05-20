@@ -30,6 +30,6 @@ The predicate
 
 ## Methods
 
-### isValidundefined &rarr; boolean
+### isValid() &rarr; boolean
 
 

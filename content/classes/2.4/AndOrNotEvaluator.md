@@ -11,11 +11,12 @@ class [AndOrNotEvaluator](/classes/2.4/AndOrNotEvaluator)
 
 ## Methods
 
-### static Evalundefined &rarr; boolean
+### static Eval(query, evaluateCallback) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | query | string |    !(!tag1) &amp;&amp; !!!tag5
+ | evaluateCallback | (val: any) =&gt; boolean |    A callback function, internally used to return found objects

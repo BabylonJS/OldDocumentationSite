@@ -34,44 +34,48 @@ optional | options | any |
 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 
-### AddSoundundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### RemoveSoundundefined &rarr; void
+### AddSound(sound) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setVolumeundefined &rarr; void
+ | sound | [Sound](/classes/2.4/Sound) |    
+
+### RemoveSound(sound) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### switchPanningModelToHRTFundefined &rarr; void
+ | sound | [Sound](/classes/2.4/Sound) |    
 
-
-### switchPanningModelToEqualPowerundefined &rarr; void
-
-
-### connectToAnalyserundefined &rarr; void
+### setVolume(newVolume) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | newVolume | number |    
+
+### switchPanningModelToHRTF() &rarr; void
+
+
+### switchPanningModelToEqualPower() &rarr; void
+
+
+### connectToAnalyser(analyser) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | analyser | [Analyser](/classes/2.4/Analyser) |    
+

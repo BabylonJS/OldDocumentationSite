@@ -34,177 +34,204 @@ optional | iterations | number |    default : 10. The bigger are the iterations 
 
 ## Methods
 
-### setGravityundefined &rarr; void
+### setGravity(gravity) &rarr; void
+
+Applies the given gravity into the world
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | gravity | [Vector3](/classes/2.4/Vector3) |    The given gravity
+
+### setTimeStep(timeStep) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setTimeStepundefined &rarr; void
+ | timeStep | number | 
+
+### executeStep(delta, impostors) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### executeStepundefined &rarr; void
+ | delta | number |    The fixed time step size to use.
+ | impostors | Array&lt;[PhysicsImpostor](/classes/2.4/PhysicsImpostor)&gt; | 
+### applyImpulse(impostor, force, contactPoint) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyImpulseundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+ | force | [Vector3](/classes/2.4/Vector3) |    The force to apply
+ | contactPoint | [Vector3](/classes/2.4/Vector3) |    The contact point on the given mesh
+### applyForce(impostor, force, contactPoint) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### applyForceundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+ | force | [Vector3](/classes/2.4/Vector3) |    The force to apply
+ | contactPoint | [Vector3](/classes/2.4/Vector3) |    The contact point on the given mesh
+### generatePhysicsBody(impostor) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### generatePhysicsBodyundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+
+### removePhysicsBody(impostor) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removePhysicsBodyundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+
+### generateJoint(impostorJoint) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### generateJointundefined &rarr; void
+ | impostorJoint | PhysicsImpostorJoint | 
+
+### removeJoint(impostorJoint) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### removeJointundefined &rarr; void
+ | impostorJoint | PhysicsImpostorJoint | 
+
+### setTransformationFromPhysicsBody(impostor) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setTransformationFromPhysicsBodyundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+
+### setPhysicsBodyTransformation(impostor, newPosition, newRotation) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setPhysicsBodyTransformationundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+ | newPosition | [Vector3](/classes/2.4/Vector3) | 
+ | newRotation | [Quaternion](/classes/2.4/Quaternion) | 
+### isSupported() &rarr; boolean
+
+
+### setLinearVelocity(impostor, velocity) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### isSupportedundefined &rarr; boolean
-
-
-### setLinearVelocityundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setAngularVelocityundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+ | velocity | [Vector3](/classes/2.4/Vector3) | 
+### setAngularVelocity(impostor, velocity) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getLinearVelocityundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+ | velocity | [Vector3](/classes/2.4/Vector3) | 
+### getLinearVelocity(impostor) &rarr; [Vector3](/classes/2.4/Vector3)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### getAngularVelocityundefined &rarr; [Vector3](/classes/2.4/Vector3)
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+
+### getAngularVelocity(impostor) &rarr; [Vector3](/classes/2.4/Vector3)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setBodyMassundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+
+### setBodyMass(impostor, mass) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### sleepBodyundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+ | mass | number | 
+### sleepBody(impostor) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### wakeUpBodyundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+
+### wakeUpBody(impostor) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateDistanceJointundefined &rarr; void
+ | impostor | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) |    The impostor to use
+
+### updateDistanceJoint(joint, maxDistance, minDistance) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setMotorundefined &rarr; void
+ | joint | [PhysicsJoint](/classes/2.4/PhysicsJoint) | 
+ | maxDistance | number | 
+optional | minDistance | number | 
+### setMotor(joint, speed, maxForce, motorIndex) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setLimitundefined &rarr; void
+ | joint | IMotorEnabledJoint | 
+optional | speed | number | 
+optional | maxForce | number | 
+### setLimit(joint, upperLimit, lowerLimit) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | joint | IMotorEnabledJoint | 
+ | upperLimit | number | 
+optional | lowerLimit | number | 
+### dispose() &rarr; void
 
-
+Disposes the [CannonJSPlugin](/classes/2.4/CannonJSPlugin)

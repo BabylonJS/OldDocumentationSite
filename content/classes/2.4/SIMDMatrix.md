@@ -9,27 +9,32 @@ class [SIMDMatrix](/classes/2.4/SIMDMatrix)
 
 ## Methods
 
-### multiplyToArraySIMDundefined &rarr; void
+### multiplyToArraySIMD(other, result, offset) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### invertToRefSIMDundefined &rarr; [Matrix](/classes/2.4/Matrix)
+ | other | [Matrix](/classes/2.4/Matrix) |  
+ | result | [Matrix](/classes/2.4/Matrix) |  
+optional | offset | number |  
+### invertToRefSIMD(other) &rarr; [Matrix](/classes/2.4/Matrix)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static LookAtLHToRefSIMDundefined &rarr; void
+ | other | [Matrix](/classes/2.4/Matrix) |  
+
+### static LookAtLHToRefSIMD(eyeRef, targetRef, upRef, result) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | eyeRef | [Vector3](/classes/2.4/Vector3) |  
+ | targetRef | [Vector3](/classes/2.4/Vector3) |  
+ | upRef | [Vector3](/classes/2.4/Vector3) |  

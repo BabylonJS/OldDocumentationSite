@@ -46,17 +46,19 @@ class [DebugLayer](/classes/2.4/DebugLayer)
 
 ## Methods
 
-### isVisibleundefined &rarr; boolean
+### isVisible() &rarr; boolean
 
 
-### hideundefined &rarr; void
+### hide() &rarr; void
 
 
-### showundefined &rarr; void
+### show(showUI, camera, rootElement) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+optional | showUI | boolean |    
+optional | camera | [Camera](/classes/2.4/Camera) |    
+optional | rootElement | HTMLElement |  

@@ -25,14 +25,15 @@ class [PlaySoundAction](/classes/2.4/PlaySoundAction) extends [Action](/classes/
 optional | condition | [Condition](/classes/2.4/Condition) |    
 ## Methods
 
-### executeundefined &rarr; void
+### execute() &rarr; void
 
 
-### serializeundefined &rarr; any
+### serialize(parent) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | parent | any | 
+

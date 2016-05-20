@@ -51,27 +51,30 @@ The radius of the bounding sphere
 
 ## Methods
 
-### isInFrustumundefined &rarr; boolean
+### isInFrustum(frustumPlanes) &rarr; boolean
+
+Check if the boundingSphere is in frustum
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | frustumPlanes | [Plane](/classes/2.4/Plane)[] |    the frustum planes
+
+### intersectsPoint(point) &rarr; boolean
+
+Check if this bounding sphere intersect the point given in parameter
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | point | [Vector3](/classes/2.4/Vector3) |    The point
+
+### static Intersects(sphere0, sphere1) &rarr; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### intersectsPointundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### static Intersectsundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | sphere0 | [BoundingSphere](/classes/2.4/BoundingSphere) |    The first sphere
+ | sphere1 | [BoundingSphere](/classes/2.4/BoundingSphere) |    The second sphere

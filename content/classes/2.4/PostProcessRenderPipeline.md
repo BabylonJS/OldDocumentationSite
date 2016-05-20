@@ -35,14 +35,15 @@ Builds a [PostProcessRenderPipeline](/classes/2.4/PostProcessRenderPipeline) obj
 
 ## Methods
 
-### addEffectundefined &rarr; void
+### addEffect(renderEffect) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### disposeundefined &rarr; void
+ | renderEffect | [PostProcessRenderEffect](/classes/2.4/PostProcessRenderEffect) |    The given render effect
+
+### dispose() &rarr; void
 
 

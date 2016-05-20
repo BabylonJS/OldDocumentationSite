@@ -28,148 +28,175 @@ A tutorial abouth ShaderMaterials can be found here : http://blogs.msdn.com/b/et
  | shaderPath | any |    The path to shader files if any
 ## Methods
 
-### needAlphaBlendingundefined &rarr; boolean
+### needAlphaBlending() &rarr; boolean
 
+Function to know if material need alpha blending
+@return boolean True if need alpha blending ; False if not
+### needAlphaTesting() &rarr; boolean
 
-### needAlphaTestingundefined &rarr; boolean
+Function to know if material need alpha testing
+@return boolean True if need alpha testing ; False if not
+### setTexture(name, texture) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
 
+Set a texture to the material
+@return [ShaderMaterial](/classes/2.4/ShaderMaterial) Return a new shaderMaterial
 
-### setTextureundefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | texture | [Texture](/classes/2.4/Texture) |    [Texture](/classes/2.4/Texture) to set to the material
+### setFloat(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+
+Set float to the material
+@return [ShaderMaterial](/classes/2.4/ShaderMaterial) Return a new shaderMaterial
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | value | number |    The matrix
+### setFloats(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+
+Set floats to the material
+@return [ShaderMaterial](/classes/2.4/ShaderMaterial) Return a new shaderMaterial
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | value | number[] |    The matrix
+### setColor3(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+
+Set color3 to the material
+@return [ShaderMaterial](/classes/2.4/ShaderMaterial) Return a new shaderMaterial
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | value | [Color3](/classes/2.4/Color3) |    The matrix
+### setColor4(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+
+Set color4 to the material
+@return [ShaderMaterial](/classes/2.4/ShaderMaterial) Return a new shaderMaterial
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | value | [Color4](/classes/2.4/Color4) |    The matrix
+### setVector2(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+
+Set a vector2 to the material
+@return [ShaderMaterial](/classes/2.4/ShaderMaterial) Return a new shaderMaterial
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | value | [Vector2](/classes/2.4/Vector2) |    The matrix
+### setVector3(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+
+Set a vector3 to the material
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | value | [Vector3](/classes/2.4/Vector3) |    The matrix
+### setVector4(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setFloatundefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+ | name | string |    Name of the matrix
+ | value | [Vector4](/classes/2.4/Vector4) |    The matrix
+### setMatrix(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+
+Set a matrix to the material
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |    Name of the matrix
+ | value | [Matrix](/classes/2.4/Matrix) |    The matrix
+### setMatrix3x3(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setFloatsundefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+ | name | string |    Name of the matrix
+ | value | Float32Array |    The matrix
+### setMatrix2x2(name, value) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setColor3undefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+ | name | string |    Name of the matrix
+ | value | Float32Array |    The matrix
+### isReady(mesh, useInstances) &rarr; boolean
+
+Function to know if the material is ready
+@return True if the material is ready ; False if not
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | mesh | [AbstractMesh](/classes/2.4/AbstractMesh) |    
+optional | useInstances | boolean |    
+### bindOnlyWorldMatrix(world) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setColor4undefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+ | world | [Matrix](/classes/2.4/Matrix) |    [Matrix](/classes/2.4/Matrix) to bind the material
+
+### bind(world, mesh) &rarr; void
+
+Function to bind the material
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | world | [Matrix](/classes/2.4/Matrix) |    [Matrix](/classes/2.4/Matrix) to bind the material
+optional | mesh | [Mesh](/classes/2.4/Mesh) |    
+### clone(name) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setVector2undefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+ | name | string |    Name of the matrix
+
+### dispose(forceDisposeEffect, forceDisposeTextures) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setVector3undefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
+optional | forceDisposeEffect | boolean |    True to force the dispose
+optional | forceDisposeTextures | boolean | 
+### serialize() &rarr; any
+
+
+### static Parse(source, scene, rootUrl) &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### setVector4undefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setMatrixundefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setMatrix3x3undefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### setMatrix2x2undefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### isReadyundefined &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### bindOnlyWorldMatrixundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### bindundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### cloneundefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### disposeundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### serializeundefined &rarr; any
-
-
-### static Parseundefined &rarr; [ShaderMaterial](/classes/2.4/ShaderMaterial)
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
+ | source | any |  
+ | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) which contain this material
+ | rootUrl | string |  

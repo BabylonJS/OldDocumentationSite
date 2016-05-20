@@ -120,53 +120,59 @@ The rate of refresh
 
 ## Methods
 
-### resetRefreshCounterundefined &rarr; void
+### resetRefreshCounter() &rarr; void
+
+Reset the refresh counter.
+### isReady() &rarr; boolean
 
 
-### isReadyundefined &rarr; boolean
+### getRenderSize() &rarr; number
 
-
-### getRenderSizeundefined &rarr; number
-
-
-### scaleundefined &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### getReflectionTextureMatrixundefined &rarr; [Matrix](/classes/2.4/Matrix)
-
-
-### resizeundefined &rarr; void
+Get the render size
+@return number The render size
+### scale(ratio) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### renderundefined &rarr; void
+ | ratio | number |    
+
+### getReflectionTextureMatrix() &rarr; [Matrix](/classes/2.4/Matrix)
+
+
+### resize(size, generateMipMaps) &rarr; void
+
+Resize the mirror texture
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | size | any |    The new size for the texture
+optional | generateMipMaps | boolean |    True to generate the mipmaps
+### render(useCameraPostProcess, dumpForDebug) &rarr; void
+
+Render the mirror texture
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | useCameraPostProcess | boolean |    True to use the camera post process
+optional | dumpForDebug | boolean |    
+### renderToTarget(faceIndex, currentRenderList, useCameraPostProcess, dumpForDebug) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### renderToTargetundefined &rarr; void
+ | faceIndex | number |  
+ | currentRenderList | [AbstractMesh](/classes/2.4/AbstractMesh)[] |  
+ | useCameraPostProcess | boolean |    True to use the camera post process
+### clone() &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
 
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-undefined
-### cloneundefined &rarr; [RenderTargetTexture](/classes/2.4/RenderTargetTexture)
-
-
-### serializeundefined &rarr; any
+### serialize() &rarr; any
 
 

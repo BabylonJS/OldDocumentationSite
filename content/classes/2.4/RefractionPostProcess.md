@@ -47,11 +47,12 @@ The coefficient of the base color (0 to remove base color tainting)
 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose(camera) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | camera | [Camera](/classes/2.4/Camera) |    The given camera
+

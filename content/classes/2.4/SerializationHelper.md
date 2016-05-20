@@ -9,27 +9,31 @@ class [SerializationHelper](/classes/2.4/SerializationHelper)
 
 ## Methods
 
-### static Serializeundefined &rarr; any
+### static Serialize(entity, serializationObject) &rarr; any
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Parseundefined &rarr; T
+ | entity | T | 
+optional | serializationObject | any | 
+### static Parse(creationFunction, source, scene, rootUrl) &rarr; T
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### static Cloneundefined &rarr; T
+ | creationFunction | () =&gt; T | 
+ | source | any | 
+ | scene | [Scene](/classes/2.4/Scene) | 
+### static Clone(creationFunction, source) &rarr; T
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | creationFunction | () =&gt; T | 
+ | source | T | 

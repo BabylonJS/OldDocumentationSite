@@ -30,6 +30,6 @@ class [AnaglyphArcRotateCamera](/classes/2.4/AnaglyphArcRotateCamera) extends [A
  | interaxialDistance | number |    
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

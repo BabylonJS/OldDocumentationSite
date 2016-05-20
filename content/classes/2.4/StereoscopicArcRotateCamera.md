@@ -31,6 +31,6 @@ class [StereoscopicArcRotateCamera](/classes/2.4/StereoscopicArcRotateCamera) ex
  | isStereoscopicSideBySide | boolean | 
 ## Methods
 
-### getTypeNameundefined &rarr; string
+### getTypeName() &rarr; string
 
 

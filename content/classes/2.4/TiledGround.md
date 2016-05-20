@@ -22,8 +22,8 @@ class [TiledGround](/classes/2.4/TiledGround) extends _Primitive
  | zmin | number |   
  | xmax | number |   
  | zmax | number |   
- | subdivisions | { undefined: number,  undefined: number } |   
- | precision | { undefined: number,  undefined: number } |   
+ | subdivisions | { w: number,  h: number } |   
+ | precision | { w: number,  h: number } |   
 optional | canBeRegenerated | boolean |   
 ## Members
 
@@ -43,21 +43,22 @@ optional | canBeRegenerated | boolean |
 
 
 
-### subdivisions : { undefined: number,  undefined: number }
+### subdivisions : { w: number,  h: number }
 
 
 
-### precision : { undefined: number,  undefined: number }
+### precision : { w: number,  h: number }
 
 
 
 ## Methods
 
-### copyundefined &rarr; [Geometry](/classes/2.4/Geometry)
+### copy(id) &rarr; [Geometry](/classes/2.4/Geometry)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
+ | id | string |   
+

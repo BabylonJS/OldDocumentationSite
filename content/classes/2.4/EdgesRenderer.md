@@ -31,9 +31,9 @@ optional | checkVerticesInsteadOfIndices | boolean |
 
 ## Methods
 
-### disposeundefined &rarr; void
+### dispose() &rarr; void
 
 
-### renderundefined &rarr; void
+### render() &rarr; void
 
 

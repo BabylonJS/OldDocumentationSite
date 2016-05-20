@@ -35,20 +35,21 @@ optional | fallbackTexture | [Texture](/classes/2.4/Texture) |
 
 ## Methods
 
-### isReadyundefined &rarr; boolean
+### isReady() &rarr; boolean
 
 
-### renderundefined &rarr; void
+### render(useCameraPostProcess) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-undefined
-### updateTexturesundefined &rarr; void
+optional | useCameraPostProcess | boolean |    
+
+### updateTextures() &rarr; void
 
 
-### updateShaderUniformsundefined &rarr; void
+### updateShaderUniforms() &rarr; void
 
 
