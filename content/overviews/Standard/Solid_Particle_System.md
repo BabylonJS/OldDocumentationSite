@@ -79,21 +79,21 @@ So to better understand how it works, here is a pseudo-code schema :
 ```javascript
 var particles: SolidParticles[] = [array of SolidParticle objects];
 function setParticles() {
-  beforeUpdateParticles();                 // custom function
-  for (var p = 0; p < nbParticles; p++) {
-    updateParticles(particles[p]);         // custom function
-  }
-  updateTheWholeMesh();                   // does the WebGL work
-  afterUpdateParticles();                 // custom function
+    beforeUpdateParticles();                 // custom function
+    for (var p = 0; p < nbParticles; p++) {
+        updateParticles(particles[p]);         // custom function
+    }
+    updateTheWholeMesh();                   // does the WebGL work
+    afterUpdateParticles();                 // custom function
 }
 ```
 So you could call `recycleParticle(particle)` in your own `updateParticle(particle)è function for instance :
 ```javascript
 SPS.updateParticle = function(particle) {
-  particle.velocity--;
-  if (particle.velocity < 0) {
-    particle.alive = false;
-    SPS.recycleParticle(particle);    // call to your own recycle function
+    particle.velocity--;
+    if (particle.velocity < 0) {
+      particle.alive = false;
+      SPS.recycleParticle(particle);    // call to your own recycle function
     }
 }
 ```
@@ -107,19 +107,21 @@ The particle properties that can be set are :
 * **`color`** : Vector4  default = (1, 1, 1, 1)
 * **`scale`** : Vector3  default = (1, 1, 1)
 * **`uvs`** : Vector(4) default = (0,0, 1,1)
+* **`isVisible`** : boolean default = true
 * **`alive`** : boolean  default = true
 
 If you set a particle rotation quaternion, its rotation property will then be ignored.    
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.   
 
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
+Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.      
 
 You can obviously also create your own properties like _acceleration: Vector3_ or _age_, in `initParticles()` for instance.  
 ```javascript
 SPS.initParticles = function() {
-  for (var p = 0; p < SPS.nbParticles; p++) {
-    particles[p].age = Math.random() * 20;
-  }
+    for (var p = 0; p < SPS.nbParticles; p++) {
+      particles[p].age = Math.random() * 20;
+    }
 }
 ```
 You may also access to some read-only properties :   
@@ -294,10 +296,10 @@ You will then to use the `vertexPosition` property, just like you used the `posi
 Your function will be then be called once by `SPS.buildMesh()` for each vertex of each particle object as defined in the former part.
 ```javascript
 var myVertexFunction = function(particle, vertex, i) {
-  // particle : the current particle
-  // vertex : the current vertex, a Vector3
-  // i : index of the vertex in the particle shape
-  vertex.x *= Math.random() + 1;
+    // particle : the current particle
+    // vertex : the current vertex, a Vector3
+    // i : index of the vertex in the particle shape
+    vertex.x *= Math.random() + 1;
 };
 SPS.addShape(box, 150, {vertexFunction: myVertexFunction}); // the 150 boxes will have their vertices moved randomly
 SPS.buildMesh();
@@ -392,15 +394,16 @@ This function will be called for each vertex of each particle and it will be pas
 ```javascript
 SPS.computeParticleVertex = true; // false by default for performance reason
 SPS.updateParticleVertex = function(particle, vertex, v) {
-  // particle : the current particle object
-  // vertex : the current vertex, a Vector3
-  // the index of the current vertex in the particle shape
-  // example :
-  if (particle.shapeID == 1) {
-    vertex.x *= Math.random() + 1;
-    vertex.y *= Math.random() + 1;
-    vertex.z *= Math.random() + 1;
-}
+    // particle : the current particle object
+    // vertex : the current vertex, a Vector3
+    // the index of the current vertex in the particle shape
+    // example :
+    if (particle.shapeID == 1) {
+      vertex.x *= Math.random() + 1;
+      vertex.y *= Math.random() + 1;
+      vertex.z *= Math.random() + 1;
+    }
+};
 ```
 Note well that this vertex update is not stored (the particle shape isn't modified) but just computed in the next call to `setParticles()`. So there is no value accumulation : the vertex coordinates are always the initial ones when entering this function.  
 Note also that the shape reference for each particle is the original shape of the mesh model you passed in `addShape()`, even if you had passed also a custom `vertexFunction` (see in the part : "Going furhter in immutable SPS").  
@@ -409,18 +412,18 @@ So to better understand how it works, here is another global pseudo-code schema 
 ```javascript
 var particles: SolidParticles[] = [array of SolidParticle objects];
 function setParticles() {
-  beforeUpdateParticles();                 // your custom function
-  for (var p = 0; p < nbParticles; p++) {
-    var particle = particles[p];
-    updateParticles(particle);             // your custom position function
-    for(var v = 0; particle.vertices.length; v++) {
-      var vertex = particle.vertices[v];
-      updateParticleVertex(particle, vertex, v);   // your ustom vertex function
-      computeAllTheVertexStuff();
+    beforeUpdateParticles();                 // your custom function
+    for (var p = 0; p < nbParticles; p++) {
+      var particle = particles[p];
+      updateParticles(particle);             // your custom position function
+      for(var v = 0; particle.vertices.length; v++) {
+        var vertex = particle.vertices[v];
+        updateParticleVertex(particle, vertex, v);   // your ustom vertex function
+        computeAllTheVertexStuff();
+      }
     }
-  }
-  updateTheWholeMesh();                   // does the WebGL work
-  afterUpdateParticles();                 // your ustom function
+    updateTheWholeMesh();                   // does the WebGL work
+    afterUpdateParticles();                 // your ustom function
 }
 ```
 Example : http://www.babylonjs-playground.com/#1X7SUN#5  
@@ -445,7 +448,7 @@ SPS.setParticles();                                 // initial SPS draw
 SPS.refreshVisibleSize();                           // force the BBox recomputation
 scene.onPointerDown = function(evt, pickResult) {
     var meshFaceId = pickResult.faceId;             // get the mesh picked face
-    if (faceId == -1) {return;}                     // return if nothing picked
+    if (faceId == -1) { return; }                   // return if nothing picked
     var idx = SPS.pickedParticles[meshFaceId].idx;  // get the picked particle idx from the pickedParticles array
     var p = SPS.particles[idx];                     // get the picked particle
     p.color.r = 1;                                  // turn it red    
@@ -534,9 +537,9 @@ As you know now, `updateParticle()` and `updateParticleVertex()` are called each
 So imagine that you have a SPS with 30 000 particles. What if you code something like that to simulate some particle acceleration :  
 ```javascript
 SPS.updateParticle = function(particle) {
-  var velStep = 0.05;
-  particle.velocity += velStep;
-  // ...
+    var velStep = 0.05;
+    particle.velocity += velStep;
+    // ...
 }
 ```
 The _velStep_ temporary variable will be created 30 000 times and then be requested then for collection by the GC !  
@@ -546,8 +549,8 @@ Just use the SPS `vars` property :
 ```javascript
 SPS.vars.velStep = 0.05;
 SPS.updateParticle = function(particle) {
-  particle.velocity += SPS.vars.velStep;
-  // ...
+    particle.velocity += SPS.vars.velStep;
+    // ...
 }
 ```
 This will allow you to keep these variables in the SPS object only (and as long as the SPS will exist) and to clean them up gracefully when you will dispose it.  
