@@ -28,6 +28,21 @@
         window.scrollTo(0, $selectedElement.offset().top - 50);
     });
     
+    // Prevent scroll in the iframe AND in the main window
+    var s = { insideIframe: false } 
+    $(iframe).mouseenter(function() {
+        s.insideIframe = true;
+        s.scrollX = window.scrollX;
+        s.scrollY = window.scrollY;
+    }).mouseleave(function() {
+        s.insideIframe = false;
+    });
+
+    $(document).scroll(function() {
+        if (s.insideIframe)
+            window.scrollTo(s.scrollX, s.scrollY);
+    });
+    
 })(jQuery);
         
 /**

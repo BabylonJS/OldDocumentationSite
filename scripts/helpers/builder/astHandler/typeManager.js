@@ -29,8 +29,13 @@ typeManager.setTypeManager = function (typeManager) {
  * @param alreadyType boolean telling if the ast is already a type or an ast object
  */
 typeManager.setAstType = function (ast, alreadyType) {
-    if(!alreadyType) var astType = ast.typeAnnotation.type;
-    else var astType = ast;
+    
+    if (!ast.typeAnnotation) {
+        var astType = ast;
+    } else {
+        if(!alreadyType) var astType = ast.typeAnnotation.type;
+        else var astType = ast;
+    }
 
     console.log('My kind is', TypeScript.SyntaxKind[astType.kind()]);
 
@@ -73,17 +78,17 @@ typeManager.setAstType = function (ast, alreadyType) {
 
 typeManager.getParameterString = function (ast, alreadyType) {
     this.setAstType(ast, alreadyType);
-    return alreadyType ? this.typeManager.getParameterString(ast) : this.typeManager.getParameterString(ast.typeAnnotation.type);
+    return (alreadyType || !ast.typeAnnotation)? this.typeManager.getParameterString(ast) : this.typeManager.getParameterString(ast.typeAnnotation.type);
 };
 
 typeManager.getReturnString = function (ast, alreadyType) {
     this.setAstType(ast, alreadyType);
-    return alreadyType ? this.typeManager.getReturnString(ast) : this.typeManager.getReturnString(ast.typeAnnotation.type);
+    return (alreadyType || !ast.typeAnnotation) ? this.typeManager.getReturnString(ast) : this.typeManager.getReturnString(ast.typeAnnotation.type);
 };
 
 typeManager.getDescriptionString = function (ast, description, alreadyType) {
     this.setAstType(ast, alreadyType);
-    return alreadyType ? this.typeManager.getDescriptionString(ast, description) : this.typeManager.getDescriptionString(ast.typeAnnotation.type, description);
+    return (alreadyType || !ast.typeAnnotation) ? this.typeManager.getDescriptionString(ast, description) : this.typeManager.getDescriptionString(ast.typeAnnotation.type, description);
 
 };
 
