@@ -811,11 +811,11 @@
     {
       "title": "Canvas2D",
       "name": "Canvas2D",
-      "img": "img/tutorials/All.png",
+      "img": "img/tutorials/Canvas2D.png",
       "desc": "All about the Canvas2D feature",
       "files": [
         {
-          "title": "Home",
+          "title": "Canvas 2D Home",
           "filename": "Canvas2D_Home"
         },
         {
