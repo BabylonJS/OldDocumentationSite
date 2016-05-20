@@ -1,6 +1,6 @@
 # Canvas2D Tutorial
 
-Firstable, for an overview of the overall feature and its architecture you can right [this documentation](http://doc.babylonjs.com/overviews/Using_The_Canvas2D)
+First, for an overview of the overall feature and its architecture you can right [this documentation](http://doc.babylonjs.com/overviews/Using_The_Canvas2D)
 
 The Canvas2D is the answer to those who need to display 2D content above a 3D Scene (in game UI), which is called a ScreenSpace Canvas or directly inside the Scene as a rectangle containing the Canvas' content, which is called World Space Canvas.
 
@@ -34,7 +34,7 @@ canvas2.backgroundRoundRadius = 50;
 
 var text = BABYLON.Text2D.Create(canvas2, "text", 80, 40, "20pt Arial", "Hello World!", new BABYLON.Color4(0.6, 1.0, 0.6, 1.0));
 ```
-See it live in this [playground](http://babylonjs-playground.com/#2AVSFH)
+See it live in this [playground](http://babylonjs-playground.com/#2AVSFH#8)
 
 The code is pretty self explanatory, but let's run through it:
 1. Create the Canvas in Screen Space, at the position (0,0) width a size of 300 width and 100 height. The content won't be cached, hence redraw at every render of the scene.
@@ -102,7 +102,7 @@ setInterval(() => {
 
 ```
 
-See it live in this [playground](http://babylonjs-playground.com/#1BKDEO#3)
+See it live in this [playground](http://babylonjs-playground.com/#1BKDEO#4)
 
 This time we create a Canvas that will be present **in the scene** and not above, its position is 0,0,0, the rotation is built from yaw/pitch/roll construct, its scene size is 100,100 but the Canvas cached bitmap is scaled 4 times (to achieve better rendering quality).
 
@@ -110,5 +110,5 @@ The result is a rectangle inside the 3D, positioned and oriented as given, with 
 
 ## More playground
 
- - [Rectangle soup](http://babylonjs-playground.com/#OWCCR#5)
+ Just go to the Canvas2D [Home Page](http://doc.babylonjs.com/overviews/Canvas2D_Home). All playgrounds are referenced at the end of the document.
 
