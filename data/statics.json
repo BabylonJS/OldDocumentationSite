@@ -795,7 +795,7 @@
     {
       "title": "PBR",
       "name": "PBR",
-      "img": "img/tutorials/All.png",
+      "img": "img/extensions/materials/PBRMaterial.jpg",
       "desc": "All about the Physically Based Rendering material",
       "files": [
         {
