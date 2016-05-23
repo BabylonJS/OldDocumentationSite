@@ -34,7 +34,7 @@ canvas2.backgroundRoundRadius = 50;
 
 var text = BABYLON.Text2D.Create(canvas2, "text", 80, 40, "20pt Arial", "Hello World!", new BABYLON.Color4(0.6, 1.0, 0.6, 1.0));
 ```
-See it live in this [playground](http://babylonjs-playground.com/#2AVSFH#8)
+See it live in this [playground](http://babylonjs-playground.com/#2AVSFH#9)
 
 The code is pretty self explanatory, but let's run through it:
 1. Create the Canvas in Screen Space, at the position (0,0) width a size of 300 width and 100 height. The content won't be cached, hence redraw at every render of the scene.
@@ -61,7 +61,7 @@ setInterval(() => {
 }, 10);
 ```
 
-See it live in this [playground](http://babylonjs-playground.com/#272WI1#1)
+See it live in this [playground](http://babylonjs-playground.com/#272WI1#2)
 
 Explanations:
 1. First part is mostly the same as the first example, but with a bigger size for the canvas.
@@ -102,7 +102,7 @@ setInterval(() => {
 
 ```
 
-See it live in this [playground](http://babylonjs-playground.com/#1BKDEO#4)
+See it live in this [playground](http://babylonjs-playground.com/#1BKDEO#7)
 
 This time we create a Canvas that will be present **in the scene** and not above, its position is 0,0,0, the rotation is built from yaw/pitch/roll construct, its scene size is 100,100 but the Canvas cached bitmap is scaled 4 times (to achieve better rendering quality).
 
