@@ -1,5 +1,3 @@
-# Handling Babylon.js event: the observable pattern
-
 ## Introduction
 
 Babylon.js provides a lot of events (like scene.beforeRender) and before v2.4 there were not a unified way to handle them.
