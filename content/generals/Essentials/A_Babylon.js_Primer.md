@@ -310,7 +310,7 @@ The creation of the lines object was a bit strange, but it sure was easy to make
 
 As you toured the Babylon.js Playground demo scenes, you surely saw some .position, .rotation, and maybe some .scaling properties being 'set' with values.  Let's take a look at each one:
 
-**POSITION** - Also called translation, every mesh is POSITIONED in a scene using X, Y, and Z settings.  You can think of the .position property... as the mesh's LOCATION.  The link below... is a saved playground scene that illustrates using a mesh's .position property.  Try to open it in a new window or new tab, so you can jump back and forth between this tutorial... and the playground scene:
+**POSITION** - Every mesh is POSITIONED in a scene using X, Y, and Z settings.  You can think of the .position property... as the mesh's LOCATION.  The link below... is a saved playground scene that illustrates using a mesh's .position property.  Try to open it in a new window or new tab, so you can jump back and forth between this tutorial... and the playground scene:
 
 http://babylonjs-playground.azurewebsites.net/#35CPC
 
@@ -320,7 +320,7 @@ Below that, in green text, you will see 3 more lines of Babylon.js code.  You se
 
 Watch this positioning demo scene for some time, if you please.  It will not take long for you to completely understand mesh positioning.  
 
-**ROTATION** - Every mesh is ROTATED in a scene... by setting the amount of spin around the shape's X, Y, and Z axes.  Picture a box with a rod stuck through every side and coming out the opposite side.  There are 6 sides to a box, so there would be 3 rods, an X rod, a Y rod, and a Z rod.  Rotation is the amount (and direction) of spin... AROUND each of these invisible rods.  
+**ROTATION** - Every mesh has a ROTATION in a scene... by setting the amount of spin around the shape's X, Y, and Z axes.  Picture a box with a rod stuck through every side and coming out the opposite side.  There are 6 sides to a box, so there would be 3 rods, an X rod, a Y rod, and a Z rod.  Rotation is the amount (and direction) of spin... AROUND each of these invisible rods.  
 
 Let's take a look at a playground scene that I once created and saved.  In this demo, I made those invisible rods... be visible:
 
