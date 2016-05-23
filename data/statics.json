@@ -789,6 +789,10 @@
         {
           "title": "Playing sounds and music",
           "filename": "Playing_sounds_and_music"
+        },
+        {
+          "title": "Handling Babylon.js events with observables",
+          "filename": "Observables"
         }
       ]
     },
