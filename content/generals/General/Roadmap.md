@@ -9,9 +9,11 @@ Here are the next updates we will *probably* add to babylon.js:
 
 **vNext++:**
 
-* Canvas2D
-* Reworked physics engine
-* More than 4 lights per material
-* Sprites collisions
-* Continuous update of octrees using webworkers
+* Physics: Add support for Ammo.js and Energy.js
+* More primitives for Canvas2D
+* Refactor debugLayer and VirtualJoysticks with Canvas2D
+* WebAudio: Dopller + Convolver
+* Lightmapper
+* Bloom
+* PCSS
 
