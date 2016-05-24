@@ -26,12 +26,12 @@ This section contains useful links for you to get started on different concepts 
 
  - [Base Primitive type](http://doc.babylonjs.com/overviews/Canvas2D_Prim2DBase), all primitive derive from this type.
  - [Group2D](http://doc.babylonjs.com/overviews/Canvas2D_Group2D), define a new frame of reference, have the ability to cache its content for performance sake.
- - Text2D
- - Sprite2D
- - Shape based:
-   - Rectangle2D
-   - Ellipse2D
-   - Lines2D
+ - [Text2D](http://doc.babylonjs.com/overviews/Canvas2D_Text2D)
+ - [Sprite2D](http://doc.babylonjs.com/overviews/Canvas2D_Sprite2D)
+ - [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based:
+   - [Rectangle2D](http://doc.babylonjs.com/overviews/Canvas2D_Rectangle2D)
+   - [Ellipse2D](http://doc.babylonjs.com/overviews/Canvas2D_Ellipse2D)
+   - [Lines2D](http://doc.babylonjs.com/overviews/Canvas2D_Lines2D)
 
 ##Playgrounds referential
 
