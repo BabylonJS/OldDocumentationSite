@@ -10,6 +10,29 @@ To learn about the Design and Architecture of the Canvas2D [go there](http://doc
 
 To learn how to develop your own Primitive type, [it's here](http://doc.babylonjs.com/tutorials/How_to_create_your_own_Canvas2D_primitive).
 
+## General concepts overview
+
+This section contains useful links for you to get started on different concepts that are useful to grasp.
+
+ - Overview of the [Canvas2D](http://doc.babylonjs.com/overviews/Canvas2D_Canvas2D_Type) type
+ - How [Visibility](http://doc.babylonjs.com/overviews/Canvas2D_Visibility) works
+ - How [Z-Order](http://doc.babylonjs.com/overviews/Canvas2D_ZOrder) works
+ - Using the [origin](http://doc.babylonjs.com/overviews/Canvas2D_Origin) of a Primitive
+ - How [positioning, transformation and hierarchy](http://doc.babylonjs.com/overviews/Canvas2D_PosTransHierarchy) work.
+ - How to [interact](http://doc.babylonjs.com/overviews/Canvas2D_Interaction) with Primitives.
+ - The particularities of a [Shape2D](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based Primitive type and how to use [Brushes](http://doc.babylonjs.com/overviews/Canvas2D_Brushes).
+
+### Overview of the different primitive types
+
+ - [Base Primitive type](http://doc.babylonjs.com/overviews/Canvas2D_Prim2DBase), all primitive derive from this type.
+ - [Group2D](http://doc.babylonjs.com/overviews/Canvas2D_Group2D), define a new frame of reference, have the ability to cache its content for performance sake.
+ - Text2D
+ - Sprite2D
+ - Shape based:
+   - Rectangle2D
+   - Ellipse2D
+   - Lines2D
+
 ##Playgrounds referential
 
 [Hello World](http://babylonjs-playground.com/#2AVSFH#9) because we have to start from here!
@@ -31,3 +54,5 @@ To learn how to develop your own Primitive type, [it's here](http://doc.babylonj
 [Animated Sprite2D](http://babylonjs-playground.com/#20MSFF#1)
 
 [Lines2D primitive](http://babylonjs-playground.com/#15C96V)
+
+[Visibility test](http://babylonjs-playground.com/#BDQQX#0)

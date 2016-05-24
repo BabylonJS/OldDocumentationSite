@@ -2,18 +2,23 @@
 Babylon.js is a full featured 3D engine, but the need to handle 2D content is often encountered when working on games or complex applications.
 It is to provide an answer to this demand that we've developed the Canvas2D feature.
 
+Canvas2D in a **non HTML** feature, **100% WebGL** based, developed to serve the purpose of drawing 2D Content.
+
 ### Few useful links
+
+Go to the [Home Page](http://doc.babylonjs.com/overviews/Canvas2D_Home) as a good starting point.
 
 For a first-time learning tutorial [go there](http://doc.babylonjs.com/tutorials/Using_the_Canvas2D).
 
 To learn how to develop your own Primitive type, [it's here](http://doc.babylonjs.com/tutorials/How_to_create_your_own_Canvas2D_primitive).
 
 ## Features overview
-A Canvas2D is a 2D rectangle with a position and a size, the size can be specified by the user or it is automatically computed to fit its content. To follow Open/WebGL standard, the origin of the canvas is at the **bottom/left** corner and not at the top/left as one would suspect.
+A Canvas2D is a 2D rectangle with a position and a size, the size can be specified by the user or it is automatically computed to fit its content. To follow Open/WebGL standard, the origin of the canvas is at the **bottom/left** corner and not at the top/left as one would expect.
 
 The Canvas can be rendered in two different spaces:
- - ScreenSpace: it lies above the rendered 3D Scene and is coplanar to the rendering viewport. Its position/rotation/scale is expressed in screen coordinate, with the origin being the top/left corner of the rendering viewport.
- - WorldSpace: the canvas has a position/rotation/scale that is expressed in World Coordinates, your canvas is like a 2D Rectangle lying in World Space, like any other 3D objects you can find in a 3D Scene.
+
+ - **ScreenSpace**: it lies above the rendered 3D Scene and is coplanar to the rendering viewport. Its position/rotation/scale is expressed in screen coordinate, with the origin being the top/left corner of the rendering viewport.
+ - **WorldSpace**: the canvas has a position/rotation/scale that is expressed in World Coordinates, your canvas is like a 2D Rectangle lying in World Space, like any other 3D objects you can find in a 3D Scene.
 
 In order to preserve a good balance between rendering time and memory consumption the user has the possibility to cache in a bitmap the content of a Group. Many caching strategies are predefined, hopefully for the user to always find what fits him/her the best.
 
@@ -25,6 +30,7 @@ Here is the basic types to work with.
 ### Prim2DBase
 This is the base class for any object that are part of the content graph of a Canvas.
 It features properties such as:
+
 - Transformation properties: Position/Rotation/Scale. Position being X,Y, Rotation being a number in radian for the rotation along the Z axis, Scale being a number to provide uniform scale.
 - Origin: define the origin of the primitive, default being 0.5,0.5, which is the center of the primitive, 0.0,0.0 would be the top/left corner of the primitive.
 - LevelVisibility: define the visibility set for this particular Primitive, it's **not** the actual visibility in the canvas, see below.
@@ -59,12 +65,14 @@ A Renderable Group will contains the list of the primitive it's responsible to u
 A Logical Group will merely act as a container, a new reference frame which doesn't play a part in the rendering process.
 
 If a Group is Renderable, it can be:
+
  - Cached, its whole content until the next Renderable Group down the graph will be Cached into a bitmap.
  - Not Cached, its whole content until the next Renderable Group down the graph will be rendered every time.
 
 ### Canvas Caching Strategy
 
 When a Canvas is created you have to choose a Caching Strategy, one of these:
+
 - `CACHESTRATEGY_TOPLEVELGROUPS` The Canvas itself won't be cached, but each of its direct children group will be cached (so their content, also including sub groups). If you have a Canvas spanning the whole rendering viewport (say 1920*1080 pixels) and the content of the Canvas is only one small Group at the Top Left and another at the Bottom Right of the viewport, then you don't want to cache the whole screen for that less. This mode will only create a cache bitmap for the space taken by the two groups.
 - `CACHESTRATEGY_ALLGROUPS` The Canvas and each group will have their own cache, unless you change this behavior using the Group2D.cacheBehavior). This is by far the most memory consuming, but efficient if the content change frequently but at different pace. You can reduce greatly the amount of cache with Group2D.cacheBehavior though.
 - `CACHESTRATEGY_CANVAS` Only the Canvas and its whole content will be cached. Simple and efficient if its size is ok for you and its content doesn't change every frame.
@@ -73,6 +81,7 @@ When a Canvas is created you have to choose a Caching Strategy, one of these:
 ### Group Cache Behavior
 
 Each instance of Group2D has a cacheBehavior property, with one of the following values:
+
 - `GROUPCACHEBEHAVIOR_FOLLOWCACHESTRATEGY` Follow the strategy defined at the Canvas level, this is the default value.
 - `GROUPCACHEBEHAVIOR_DONTCACHEOVERRIDE` Don't cache the Group's content whatever the strategy defines for this group.
 - `GROUPCACHEBEHAVIOR_CACHEINPARENTGROUP` Cache the group's content in the first parent group that is cached.
@@ -90,11 +99,13 @@ Several mechanisms are implemented to achieve that.
 Each Primitive type won't probably be able to render any variations of its instances in a single call, because of the limitations imposed by the Vertex/Fragment Shader. But it's certainly possible to put several instances sharing the same given set of property/value into a single call.
 
 To achieve that we breakdown each property of a primitive into three possible categories:
+
 1. Model Level: each different value will lead to a specific render model, then one draw call. Two instances having two different values for a given property will lead to two different models to render.
 2. Instance Level: the property can have any kind of value, it won't change the render model assigned to the instance.
 3. Dynamic Level: the property doesn't play a part in the rendering.
 
 For instance the Sprite2D Primitive has the following properties:
+
  - texture (model): the texture to use to render the sprite
  - spriteSize (instance): the size of the sprite
  - spriteLocation (instance): the location into the texture of the top/left corner of the sprite.
@@ -122,6 +133,7 @@ For instance a Rectangle2D has a set of properties for the SolidColorBrush2D (ju
 The Canvas2D will take care of pretty much everything for the developers, creating the data array that will be mapped to the Instanced Array based on what combination is used, synchronize them, inject the right information in the Effect created to render the primitive (Attribute, Uniform, Defines) and setup everything up before the render call is submitted. This flexibility is achieved thanks to the decorator you use to describe a Primitive and its Instance Data.
 
 To sum up, for the Sprite2D primitive we have:
+
 - Sprite2D: the main class the user of the Canvas2D deals with to create sprites in the Canvas.
 - Sprite2DRenderCache: a ModelRenderCache extended class that create the vertex buffer, index buffer, store the texture, the rendering effect, implements the rendering method and also hold the list of all instances using this model. The Instanced Array buffer containing the data to send to the GPU during the DrawInstanced call are store into another class call the GroupInstanceInfo, which is controlled by a Renderable Group and contains all the data the Group is supposed to render for this specific model.
 - Sprite2DInstanceData: which extends the InstanceDataBase class and serves as a proxy to declare the properties that will end up in the Instancing Array. The list so far:
@@ -133,13 +145,13 @@ Luckily for the developer that implements new primitives type, the wiring of the
 For this to happens each primitive type has a dedicated InstanceData class (extending the InstanceData matching the Primitive class it extends) which declare the properties to store in the Instancing Array.
 All you have to do is declaring a property this way:
 ```Javascript
-    export class Sprite2DInstanceData extends InstanceDataBase {
-        @instanceData()
-        get topLeftUV(): Vector2 {
-            return null;
-        }
-		...
+export class Sprite2DInstanceData extends InstanceDataBase {
+    @instanceData()
+    get topLeftUV(): Vector2 {
+        return null;
     }
+	...
+}
 ```
 
 The @instanceData decorator will take care of providing a real getter/setter to the property, which will be used to make the wiring.
@@ -157,7 +169,7 @@ Each property in a primitive that is decorated with either @modelLevelProperty, 
 
 The implementer doesn't have to take care of these things, it's free!
 
-== WARNING: for custom type properties like Vector3 for instance, changing only the .x/y/z won't trigger a property change and nothing will happen. You have to assign a new object for the change to be detected! ==
+**WARNING**: for custom type properties like Vector3 for instance, changing only the .x/y/z won't trigger a property change and nothing will happen. You have to assign a new object for the change to be detected!
 
 ### Rendering
 
