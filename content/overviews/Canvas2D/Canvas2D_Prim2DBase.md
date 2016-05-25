@@ -1,4 +1,4 @@
-# Base Primtive type overview
+# Base Primitive type overview
 
 You won't deal with this type directly, but every class in the Canvas2D Feature extends this type (at the exception of Brushes), so it's good to know about the features it offers.
 
