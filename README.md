@@ -89,6 +89,7 @@ Here is how the object is structured:
                 {
                     "title":'tuto title',      // The title displayed in the list of tutorials 
                     "filename":'tuto title',   // The file name with no spaces, no special chars except underscores, and no extension
+                    "hidden" : true            // Should this file be hidden in the global list ? false by default
                 },
                 ...
               ]
