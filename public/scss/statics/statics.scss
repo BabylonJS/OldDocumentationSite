@@ -22,18 +22,19 @@
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
+    margin-bottom:10px;
 
     .tagWrapper {
       display: inline-block;
       width: 280px;
-      padding: 20px 2% 20px;
+      padding: 5px;
+      text-align:center;
 
       .tag {
         display: flex;
         flex-flow: column nowrap;
         border: 2px solid $grey;
         height: 100%;
-        padding: 5px;
         cursor: pointer;
 
         .tagImage {
@@ -45,7 +46,7 @@
             width: 100%;
           }
         }
-        .tagDescriptionWrapper {
+        .tagDescriptionWrapper { 
           flex: auto;
           background-color: $grey;
           padding: 4px;
@@ -55,14 +56,15 @@
 
           .tagTitle {
             font: $font-title;
+            font-size:0.85em;
             margin: 0;
           }
 
-          .tagDescription {
-            font: $font-regular;
-            font-size: 0.75em;
+          // .tagDescription {
+          //   font: $font-regular;
+          //   font-size: 0.75em;
 
-          }
+          // }
         }
 
       }
