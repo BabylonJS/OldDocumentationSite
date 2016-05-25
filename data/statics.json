@@ -829,77 +829,77 @@
         {
            "title": "Canvas 2D Type",
            "filename": "Canvas2D_Canvas2D_Type",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "How visibility works",
            "filename": "Canvas2D_Visibility",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Z-Order overview",
            "filename": "Canvas2D_ZOrder",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Using the Origin of a Primitive",
            "filename": "Canvas2D_Origin",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "About positioning, transformation and hierarchy",
            "filename": "Canvas2D_PosTransHierarchy",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Interacting with Primitives",
            "filename": "Canvas2D_Interaction",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Shape2D based Primitive types",
            "filename": "Canvas2D_Shape2D",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Brushes Overview",
            "filename": "Canvas2D_Brushes",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Base Primitive type overview",
            "filename": "Canvas2D_Prim2DBase",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Group2D type overview",
            "filename": "Canvas2D_Group2D",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Text2D Primitive overview",
            "filename": "Canvas2D_Text2D",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Sprite2D Primitive overview",
            "filename": "Canvas2D_Sprite2D",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Rectangle2D Shape overview",
            "filename": "Canvas2D_Rectangle2D",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Ellipse2D Shape overview",
            "filename": "Canvas2D_Ellipse2D",
-           "hidde": true 
+           "hidden": true 
         },
         {
            "title": "Lines2D Shape overview",
            "filename": "Canvas2D_Lines2D",
-           "hidde": true 
+           "hidden": true 
         }
       ]
     }
