@@ -112,10 +112,12 @@ p {
     $iframeHeight:450px;
     margin:auto;
     width:50%;
+    min-width:450px;
     height:$iframeHeight;
     display:none;
     
     iframe {
+        min-width:450px;
         max-height:$iframeHeight;
         height:100%;
     }
