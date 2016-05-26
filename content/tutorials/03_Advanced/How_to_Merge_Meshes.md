@@ -3,7 +3,7 @@ ID_PAGE: 22451
 PG_TITLE: How to Merge Meshes
 ---
 
-##Native Babylon.js function
+## Native Babylon.js function
 
 To easily merge a number of meshes to a single mesh use the static `MergeMeshes` of the `Mesh` class:
 
@@ -18,7 +18,7 @@ var newMesh = BABYLON.Mesh.MergeMeshes(arrayOfMeshes[, disposeSource, allow32Bit
 |allow32BitsIndices (optional)| When the sum of the vertices > 64k, this must be set to true.|
 |meshSubclass (optional)| When set, vertices inserted into this Mesh.  Meshes can then be merged into a Mesh sub-class.|
 
-##Use your own merge function
+## Use your own merge function
 
 If you want to merge meshes into a new one using a self implemented function, you can use the following code as basis and improve it to your needs:
 

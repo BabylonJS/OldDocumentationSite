@@ -6,7 +6,7 @@ BabylonJS provides an object to manage some math curves for you : **Curve3**.
 
 This object allow you to generate 3D curves according to some complex math function. You can then get an array of successive points (_Vector3_) representing the curve.
 
-##Quadratic Bezier curve
+## Quadratic Bezier curve
 http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_curves
 
 ![Wikipedia Quadratic Bezier Curve](http://upload.wikimedia.org/wikipedia/commons/3/3d/B%C3%A9zier_2_big.gif)
@@ -28,8 +28,8 @@ var path = bezier2.getPoints();
 var l = bezier2.length();
 ```
 
-##Cubic Bezier curve
-http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Higher-order_curves
+## Cubic Bezier curve
+http://en.wikipedia.org/wiki/B%C3%A9zier_curve# Higher-order_curves
 
 ![Wikipedia Cubic Bezier Curve](http://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
 ```javascript
@@ -54,7 +54,7 @@ Playground example : http://www.babylonjs-playground.com/#1PSZDF#2
 Read from line 50
 
 
-##Hermite spline
+## Hermite spline
 http://en.wikipedia.org/wiki/Cubic_Hermite_spline
 
 ![EScience Hermite](http://escience.anu.edu.au/lecture/cg/Spline/Image/HermiteSpec.gif)
@@ -76,7 +76,7 @@ var path = hermite.getPoints();
 var l = hermite.length();
 ```
 
-##Curve3 object
+## Curve3 object
 You can also instantiate your own Curve3 object from a simple array of successive Vector3.   
 Why would you do this ?   
 Because you can then use the _continue()_ method to stick together many curves whatever their initial origin.   
@@ -137,6 +137,6 @@ var closedCurve = BABYLON.Mesh.CreateLines("closed", continued.getPoints(), scen
 ```
 
 
-example : http://www.babylonjs-playground.com/#2GCEVH  
+example : http://www.babylonjs-playground.com/#2GCEVH
 The orange and yellow curves are Bezier curves.   
 In light blue, these two curves are continued each other and a hermite curve is also added in continuation to close the path.   
