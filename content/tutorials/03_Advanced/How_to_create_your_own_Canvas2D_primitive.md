@@ -433,7 +433,7 @@ This is what the category is all about. It defines which property belong to a gi
 Finally you have to defined the Shader files, these are two files that by convention must be stored in the Src/Shaders folder of babylon.js and be named [shader].vertex.fx and [shader].fragment.fx.
 
 sprite2d.vertex.fx
-```glsl
+```javascript
 // based on if Instanced Array are supported or not, declare the field either as attribute or uniform
 #ifdef Instanced
 #define att attribute
@@ -506,7 +506,7 @@ void main(void) {
 ```
 
 sprite2d.fragment.fx
-```glsl
+```javascript
 varying vec2 vUV;
 uniform sampler2D diffuseSampler;
 
@@ -826,7 +826,7 @@ export class Rectangle2DRenderCache extends ModelRenderCache {
 
 The Vertex Shader, just for fun:
 
-```glsl
+```javascript
 // based on if Instanced Array are supported or not, declare the field either as attribute or uniform
 #ifdef Instanced
 #define att attribute

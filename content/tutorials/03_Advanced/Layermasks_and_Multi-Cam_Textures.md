@@ -2,8 +2,8 @@
 ID_PAGE: 25363
 PG_TITLE: Layermasks and Multi-Cam Textures
 ---
-##Different meshes for multiple cameras using Layermasks#
----
+## Different meshes for multiple cameras using Layermasks
+
 A `layerMask` is a number assigned to each mesh and camera.  It is used at the bit level to indicate whether lights and cameras should shine-upon or show the mesh.  The default value, 0x0FFFFFFF, will cause the mesh to be illuminated and shown by any stock light and camera.
 
 The feature is used primarily when multiple cameras are active at the same time.  If you wish to have a mesh that is always visible on the screen and pickable, e.g. a button, you might add a second camera and light to the scene to exclusively show and light it.  
@@ -30,7 +30,7 @@ scene.activeCameras.push(secondCamera);
 var Button = new BABYLON.Mesh(...);
 Button.layerMask = 0x10000000;
 ```            
-##Lights##
+## Lights
 Unless the material of the meshes for the 2nd camera is purely emissive, this still leaves any light for the button illuminating all the other meshes, and other lights in the scene illuminating the button.  To keep scene lights from illuminating the button, loop through the existing lights, and set the excludeWithLayerMask value:
 ```javascript
 for(var i = scene.lights.length - 1; i >= 0; i--){
@@ -52,7 +52,7 @@ onNewLight = function (newLight, positionInArray, scene) {
     newLight.excludeWithLayerMask = 0x10000000;
 };
 ```  
-##Gun Sight Example##
+## Gun Sight Example
 Here is a simple example of using a 2nd orthographic camera which shows a gun sight.  To keep it simple, emissive material was used to avoid lighting it.  Just copy and paste it into any scene, then call it.  The `layerMask` chosen also allows Babylon's Dialog extension to inter-operate.  Perhaps these could be combined to do a heads-up tank sight with range finder.  
 
 A commercial quality implementation would probably not use `CreateBox()`, since it creates depth faces that cannot be seen straight-on anyway.  It should also take into account a window size change, unless it is a tablet app.
