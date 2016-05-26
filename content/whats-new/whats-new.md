@@ -1,6 +1,6 @@
 Changes list
 ============
-- 2.3.0:
+- 2.3.0: 
   - **Major updates**
     - [Sponza demo](http://www.babylonjs.com/Demos/Sponza/)
     - Support for procedural cube textures [Demo here](http://www.babylonjs.com/Demos/planet/) ([deltakosh](https://github.com/deltakosh))
