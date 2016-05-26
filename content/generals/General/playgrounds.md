@@ -1,11 +1,14 @@
-#Interesting Playgrounds
+---
+PG_TITLE: 03. Position, Rotation, Scaling
+---
 
-In this file, you can discover interesting playground done by the community.
-Do not hesitate to update this file by editing it [directly on Github](https://github.com/BabylonJS/Documentation/tree/master/content/generals/General).
+
+In this page, you can discover interesting playground done by the community.
+Do not hesitate to update this page by editing it [directly on Github](https://github.com/BabylonJS/Documentation/tree/master/content/generals/General).
 
 Please credit the author if you can!
 
-##Beautiful Playgrounds
+## Beautiful Playgrounds
 
 | Id | Title | Author|
 | :------------ |:---------------:| -----:|
@@ -20,7 +23,7 @@ Please credit the author if you can!
 | [External](http://synergy-development.fr/babylonyzer/) | Music analyzer | Stvsynrj & Kohai |
 
 
-##Examples
+## Examples
 
 | Id | Title | Author|
 | :------------ |:---------------:| -----:|
