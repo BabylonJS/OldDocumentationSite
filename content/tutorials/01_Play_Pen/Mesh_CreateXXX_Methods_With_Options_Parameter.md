@@ -1,6 +1,10 @@
-##MeshBuilder CreateXXX() Methods With Options Parameter
-In this tutorial, we will learn how to use the classical _CreateXXX()_ methods with the _options_ parameter instead of the full list of parameters.  
-Indeed, as for BJS 2.3+, all the _CreateXXX()_ methods can be called either by 
+---
+PG_TITLE: Mesh CreateXXX Methods With Options Parameter
+---
+
+## MeshBuilder CreateXXX() Methods With Options Parameter
+In this tutorial, we will learn how to use the classical _CreateXXX()_ methods with the _options_ parameter instead of the full list of parameters.
+Indeed, as for BJS 2.3+, all the _CreateXXX()_ methods can be called either by
 ```javascript
 var mesh = BABYLON.Mesh.CreateMesh(name, param1, param2, param3, ..., scene);
 ```
@@ -11,20 +15,20 @@ var mesh = BABYLON.MeshBuilder.CreateMesh(name, {param1 : val1, param2: val2}, s
 
 Why to use then the _options_ parameter if it only does the same as the parameter list ?
 
-Because it doesn't do just only the same ...  
-Depending on the shape type, it allows to make some (or all) parameters optional or it provides more features to the created mesh.  
+Because it doesn't do just only the same ...
+Depending on the shape type, it allows to make some (or all) parameters optional or it provides more features to the created mesh.
 
-###Fixed Shapes
-We call _fixed shapes_ all the mesh types that are not parametric, it is to say all the mesh types what have an expected final shape.  
-For instance, if we create a _Sphere_ or a _Box_ mesh, we expect to get a spherical or a cubic shape whereas if we create a _Ribbon_ mesh, as it depends upon a data set to be created (the _pathArray_), we can't predict its final shape.  
+### Fixed Shapes
+We call _fixed shapes_ all the mesh types that are not parametric, it is to say all the mesh types what have an expected final shape.
+For instance, if we create a _Sphere_ or a _Box_ mesh, we expect to get a spherical or a cubic shape whereas if we create a _Ribbon_ mesh, as it depends upon a data set to be created (the _pathArray_), we can't predict its final shape.
 
 All fixed shapes can be created by default by using a blank _options_ parameter :
 ```javascript
 var cylinder = BABYLON.MeshBuilder.CreateCylinder("cyl", {}, scene);
 ```
-This means all the _options_ properties are simply optional.  
+This means all the _options_ properties are simply optional.
 
-####Box
+#### Box
 Example :
 ```javascript
 var box = BABYLON.MeshBuilder.CreateBox("box", {height: 5, faceColors: myColors}, scene);
@@ -36,14 +40,14 @@ property|value|default value
 size|_(number)_ size of each box side|1
 height|_(number)_ height size, overwrites _size_ property|size
 width|_(number)_ width size, overwrites _size_ property|size
-depth|_(number)_ depth size,  overwrites _size_ property|size 
+depth|_(number)_ depth size,  overwrites _size_ property|size
 faceColors|_(Color4[])_ array of 6 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
 faceUV|_(Vector4[])_ array of 6 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
 
-####Sphere
+#### Sphere
 Example :
 ```javascript
 var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, diameterX: 3}, scene);
@@ -62,7 +66,7 @@ slice|_(number)_ ratio of the height (longitude) between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-####Cylinder or Cone
+#### Cylinder or Cone
 If you set _diameterTop_ to zero, you get a cone instead of a cylinder.
 Example :
 ```javascript
@@ -85,7 +89,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 To understand how to set _faceUV_ or _faceColors_, please read this by considering 3 faces only : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
 
-####Plane
+#### Plane
 Example :
 ```javascript
 var plane = BABYLON.MeshBuilder.CreatePlane("plane", {width: 5}, scene);
@@ -101,7 +105,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 sourcePlane|_(Plane)_ source plane (math) the mesh will be transformed to|null
 
-####Ground
+#### Ground
 Example :
 ```javascript
 var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivsions: 4}, scene);
@@ -115,12 +119,12 @@ height|_(number)_ size of the height|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 subdivisions|_(number)_ number of square subdivisions|1
 
-####Ground From a Height Map
+#### Ground From a Height Map
 Example :
 ```javascript
 var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("gdhm", url, {width: 6, subdivsions: 4}, scene);
 ```
-Don't forget the _url_ parameter.  
+Don't forget the _url_ parameter.
 
 Properties, all optional :
 
@@ -134,7 +138,7 @@ maxHeigth|_(number)_ maximum altitude|1
 onReady|_(function)_ a callback js function that is called and passed the just built mesh|(mesh) => {return;}
 updatable|_(boolean)_ true if the mesh is updatable|false
 
-####Tiled Ground
+#### Tiled Ground
 Example :
 ```javascript
 var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivsions: {w:4, h:6} }, scene);
@@ -152,9 +156,9 @@ precision|_( {w: number, h: number} )_ number of subdivisions on the height and 
 updatable|_(boolean)_ true if the mesh is updatable|false
 
 
-####Disc
-Remembe you can create any kind of regular plane polygon with _CreateDisc()_  
-Example :  
+#### Disc
+Remembe you can create any kind of regular plane polygon with _CreateDisc()_
+Example :
 ```javascript
 var disc = BABYLON.MeshBuilder.CreateDisc("disc", {tessellation: 3}, scene); // makes a triangle
 ```
@@ -168,7 +172,7 @@ arc|_(number)_ ratio of the circumference between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-####Torus
+#### Torus
 Example :
 ```javascript
 var torus = BABYLON.MeshBuilder.CreateTorus("torus", {thickness: 0.2}, scene);
@@ -183,7 +187,7 @@ tessellation|_(number)_ number of segments along the circle|16
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-####Torus Knot
+#### Torus Knot
 Example :
 ```javascript
 var torus = BABYLON.MeshBuilder.CreateTorusKnot("tk", {}, scene);
@@ -201,7 +205,7 @@ q|_(number)_ number of windings|3
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-####Polyhedron
+#### Polyhedron
 Example :
 ```javascript
 var octahedron = BABYLON.MeshBuilder.CreatePolyhedron("oct", {type: 1, size: 3}, scene);
@@ -223,7 +227,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 To understand how to set _faceUV_ or _faceColors_, please read this by considering the right number of faces of your polyhedron, instead of only 6 for the box : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
 
-#####Provided polyhedron types :
+##### Provided polyhedron types :
 
 type|name|side number
 ----|----|-----------
@@ -243,7 +247,7 @@ type|name|side number
 13|Elongated Pentagonal Dipyramid (J16)|15
 14|Elongated Pentagonal Cupola (J20)|22
 
-If you need to use a custom polyhedron (http://www.babylonjs-playground.com/#21QRSK#1 : minimize the code editor with the button "EDITOR-" to see polyhedron names under the mouse pointer) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron  
+If you need to use a custom polyhedron (http://www.babylonjs-playground.com/#21QRSK#1 : minimize the code editor with the button "EDITOR-" to see polyhedron names under the mouse pointer) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
 Just copy/paste the wanted polyhedron object in your code like this :
 
 ```javascript
@@ -253,7 +257,7 @@ var heptagonalPrism = { "name":"Heptagonal Prism", "category":["Prism"], "vertex
 var mesh = BABYLON.MeshBuilder.CreatePolyhdron("h", {custom: heptagonalPrism}, scene);
 ```
 
-####IcoSphere
+#### IcoSphere
 This a sphere based upon an icosahedron with 20 triangular faces which can be subdivided.
 ```javascript
 var icosphere = BABYLON.MeshBuilder.CreateIcoSphere("ico", {radius: 5, radiusY: 8, subdivisions: 6}, scene);
@@ -272,7 +276,7 @@ flat|_(boolean)_ if true, the mesh faces have their own normals|true
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-####Decals  
+#### Decals
 Example :
 ```javascript
 var decal = BABYLON.MeshBuilder.CreateDecal("decal", mesh,  {position: myPos}, scene);
@@ -287,13 +291,13 @@ position|_(Vector3)_ position of the decal (World coordinates) | (0, 0, 0)
 normal|_(Vector3)_  the normal of the mesh where the decal is applied onto (World coordinates)|Vector3.Up
 size|_(Vector3)_  the x, y, z sizes of the decal|(1, 1, 1)
 angle|_(number)_ the angle to rotate the decal|0
-  
+
 <br/>
-<br/>  
-###Parametric Shapes
-####Lines
-You must set at least the _points_ property.  
-On update, you must set the _points_ and _instance_ properties.  
+<br/>
+### Parametric Shapes
+#### Lines
+You must set at least the _points_ property.
+On update, you must set the _points_ and _instance_ properties.
 
 Example :
 ```javascript
@@ -304,13 +308,13 @@ Properties :
 
 property|value|default value
 --------|-----|-------------
-points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED** 
+points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
-####Dashed Lines
-You must set at least the _points_ property.  
-On update, you must set the _points_ and _instance_ properties.  
+#### Dashed Lines
+You must set at least the _points_ property.
+On update, you must set the _points_ and _instance_ properties.
 
 Example :
 ```javascript
@@ -328,9 +332,9 @@ dashBn|_(number)_  intended number of dashes|200
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
-####LineSystem
-You must set at least the _lines_ property.  
-On update, you must set the _lines_ and _instance_ properties.  
+#### LineSystem
+You must set at least the _lines_ property.
+On update, you must set the _lines_ and _instance_ properties.
 
 Example :
 ```javascript
@@ -341,13 +345,13 @@ Properties :
 
 property|value|default value
 --------|-----|-------------
-lines|_(Vector3[])_  array of lines, each line being an array of successive Vector3 **REQUIRED** 
+lines|_(Vector3[])_  array of lines, each line being an array of successive Vector3 **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
 
-####Ribbon
-You must set at least the _pathArray_ property.  
-On update, you must set the _pathArray_ and _instance_ properties.  
+#### Ribbon
+You must set at least the _pathArray_ property.
+On update, you must set the _pathArray_ and _instance_ properties.
 
 Example :
 ```javascript
@@ -358,7 +362,7 @@ Properties :
 
 property|value|default value
 --------|-----|-------------
-pathArray|_(Vector3[][])_  array of array of Vector3, the array of paths **REQUIRED** 
+pathArray|_(Vector3[][])_  array of array of Vector3, the array of paths **REQUIRED**
 closeArray|_(boolean)_  to force the ribbon to join its last and first paths|false
 closePath|_(boolean)_  to force each ribbon path to join its last and first points|false
 offset|_(number)_  used if the pathArray has one path only|half the path length
@@ -366,9 +370,9 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of a ribbon to be updated|null
 
-####Tube
-You must set at least the _path_ property.  
-On update, you must set the _path_ and _instance_ properties and you can set the _radius_, _radiusFunction_ or _arc_ properties.   
+#### Tube
+You must set at least the _path_ property.
+On update, you must set the _path_ and _instance_ properties and you can set the _radius_, _radiusFunction_ or _arc_ properties.
 
 Example :
 ```javascript
@@ -389,9 +393,9 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of a tube to be updated|null
 
-####Extruded Shapes
+#### Extruded Shapes
 You must set at least the _shape_ and _path_ properties.
-On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _scale_ and _rotation_ properties.   
+On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _scale_ and _rotation_ properties.
 
 Example :
 ```javascript
@@ -411,9 +415,9 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 
-####Custom Extruded Shapes
-You must set at least the _shape_ and _path_ properties.  
-On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _rotationFunction_ or _scaleFunction_ properties.   
+#### Custom Extruded Shapes
+You must set at least the _shape_ and _path_ properties.
+On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _rotationFunction_ or _scaleFunction_ properties.
 
 Example :
 ```javascript
@@ -424,7 +428,7 @@ Properties :
 
 property|value|default value
 --------|-----|-------------
-shape|_(Vector3[])_  array of Vector3, the shape you want to extrude **REQUIRED**| 
+shape|_(Vector3[])_  array of Vector3, the shape you want to extrude **REQUIRED**|
 path|_(Vector3[])_  array of Vector3, the extrusion axis **REQUIRED** |
 scaleFunction|_( function(i, distance) )_  a function returning a scale value from _(i, distance)_ parameters|{return 1;}
 rotationFunction|_( function(i, distance) )_  a function returning a rotation value from _(i, distance)_ parameters|{return 0;}
@@ -435,7 +439,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 
-####Lathe  
+#### Lathe
 You must set at least the _shape_ property.
 
 Example :
@@ -460,5 +464,3 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 <br/>
 <br/>
-  
-
