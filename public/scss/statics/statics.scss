@@ -87,15 +87,22 @@
 
     // The tag text
     .fileTitle {
-
-      padding: 3px;
+      padding: 0px 10px;
+      margin: 3px 0;
+      background: rgb(235, 235, 235);
       width: 100%;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      transition: 0.2s;
+      border-left: 4px solid rgb(80, 80, 80);
+
+      &:hover{
+        background: rgb(220, 220, 220);
+      }
 
       .fileNumber {
-        color: $red;
+        color: rgb(80, 80, 80);
         margin-right: 15px;
         font-weight: bold;
 
@@ -109,8 +116,8 @@
         color: $black;
         text-decoration: none;
         //display: inline-block;
-        padding: 5px;
-        border-bottom: 2px dashed $red;
+        padding: 10px;
+        // border-bottom: 2px dashed $red;
         flex: auto;
 
         .inline-tags {
@@ -124,10 +131,10 @@
           .inline-tag {
             display: inline-block;
             position: relative;
-            background-color: $red;
+            // background-color: $red;
             margin-left: 8px;
             padding: 0px 4px;
-            color: whitesmoke;
+            color: rgb(150, 150, 150);
             text-decoration: none;
             border-radius: 4px;
 
@@ -135,9 +142,9 @@
         }
 
         &:hover {
-          color: whitesmoke;
-          text-decoration: underline;
-          background-color: $red;
+          //color: rgb(150, 150, 150);
+          //text-decoration: underline;
+          // background-color: $red;
 
           .tag {
             background-color: whitesmoke;
@@ -153,7 +160,38 @@
       }
     }
 
+    .\30 1_Play_Pen{
+       border-left: 4px solid rgb(138, 171, 53);
+
+       .fileNumber{
+        color: rgb(138, 171, 53);
+       }
+    }
+
+    .\30 2_Mid_Level{
+      border-left: 4px solid rgb(252, 170, 53);
+
+      .fileNumber{
+        color: rgb(252, 170, 53);
+      }
+    }
+
+    .\30 3_Advanced{
+      border-left: 4px solid $red;
+
+      .fileNumber{
+        color: $red;
+      }
+    }
+
+    .Videos{
+      border-left: 4px solid rgb(122, 79, 193);
+
+      .fileNumber{
+        color: rgb(122, 79, 193);
+      }
+    }
+
   }
 
 }
-
