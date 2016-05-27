@@ -10,7 +10,7 @@ The `origin` property defines where is located the [0,0] coordinate (the origin)
 
 Position and Rotation will be made relative to this origin, so it's important to understand how it works.
 
-:bulb: The default value is [0.5;0.5] which means the origin is at the center of the Primitive. Rotation will be made around this center and position will be relative from this center.
+The default value is [0.5;0.5] which means the origin is at the center of the Primitive. Rotation will be made around this center and position will be relative from this center.
 
 The actual position of the origin point is computed using the `actualSize` property of the Primitive, simply by multiplying the `origin` by `actualSize` then we subtract every coordinate for the Primitive by the resulting value. 
 
@@ -33,7 +33,7 @@ The rectangle is positioned 200 pixel from the bottom/left corner of the Canvas 
 
 The origin is symbolized by the red dot, which  is at the center of the Rectangle and positioned at [200;200] from the bottom/left of the canvas.
 
-:exclamation: Why is it relative from the bottom/left of the Canvas? Because by default the `origin` property of a Canvas is [0;0] and not [0.5;0.5].
+Why is it relative from the bottom/left of the Canvas? Because by default the `origin` property of a Canvas is [0;0] and not [0.5;0.5].
 
 
 ##### Bottom/Left Origin [0;0]

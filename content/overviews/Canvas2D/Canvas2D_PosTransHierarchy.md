@@ -36,7 +36,7 @@ The `rect` object was created with a position of [200;200], the parent of `rect`
 
 If you were to create another Primitive having for parent the `rect` Primitive, the coordinates of this new Primitive will be relative to the `rect`'s origin, which is the red dot at its center.
 
-:bulb: the position of a primitive is always defined from the primitive's origin to the origin of its parent.
+The position of a primitive is always defined from the primitive's origin to the origin of its parent.
 
 ## Transforming
 

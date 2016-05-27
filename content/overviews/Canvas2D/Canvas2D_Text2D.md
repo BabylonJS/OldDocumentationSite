@@ -2,7 +2,7 @@
 
 As its name would suggest, this primitive is used to render text in the Canvas2D (little fact, the Canvas2D feature was born because this requirement and the ambition to extend it to many more things).
 
-:bulb: Text2D rendering is **efficient**/**fast**, it's not based on a render to texture approach (well, a little bit, but not as one would expect). It was designed to be flexible and fast to render. Each letter is rendered using two triangles mapping a FontTexture that contains the font's characters with the coordinates of the character to display.
+Text2D rendering is **efficient**/**fast**, it's not based on a render to texture approach (well, a little bit, but not as one would expect). It was designed to be flexible and fast to render. Each letter is rendered using two triangles mapping a FontTexture that contains the font's characters with the coordinates of the character to display.
 
 ## Features
 
