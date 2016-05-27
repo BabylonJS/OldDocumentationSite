@@ -14,28 +14,29 @@
 
   .tagList {
     position: relative;
-    height: 100%;
-    //width: 80%;
+    width: 80%;
     margin: auto;
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     align-content: stretch;
-    margin-bottom:10px;
 
     .tagWrapper {
-      display: inline-block;
-      width: 280px;
-      padding: 5px;
-      text-align:center;
+      margin : 5px;
+      margin-top : 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: transparent;
 
       .tag {
-        display: flex;
-        flex-flow: column nowrap;
-        border: 2px solid $grey;
-        height: 100%;
-        cursor: pointer;
+        cursor:pointer;
+        border: 0px;
+        padding: 5px;
+
+        border-radius: 3px;
+        background-color: darkgray;
 
         .tagImage {
           display: block;
@@ -46,17 +47,14 @@
             width: 100%;
           }
         }
-        .tagDescriptionWrapper { 
-          flex: auto;
-          background-color: $grey;
-          padding: 4px;
-          //height: 80px;
-          word-break: normal;
-          overflow: hidden;
+        .tagDescriptionWrapper {
+          color: whitesmoke;
+          background-color: transparent;
 
           .tagTitle {
-            font: $font-title;
-            font-size:0.85em;
+            font-family: "Roboto";
+            font-weight: 300;
+            font-size: 0.8em;
             margin: 0;
           }
 
@@ -70,7 +68,7 @@
       }
 
       .active {
-        border-color: $red;
+        background-color: $red;
       }
     }
   }
