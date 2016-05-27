@@ -33,7 +33,7 @@ This section contains useful links for you to get started on different concepts 
    - [Ellipse2D](http://doc.babylonjs.com/overviews/Canvas2D_Ellipse2D)
    - [Lines2D](http://doc.babylonjs.com/overviews/Canvas2D_Lines2D)
 
-##Playgrounds referential
+## Playgrounds referential
 
 [Hello World](http://babylonjs-playground.com/#2AVSFH#9) because we have to start from here!
 
@@ -44,6 +44,8 @@ This section contains useful links for you to get started on different concepts 
 [Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#6) you can select
 
 [Playing with origin and hierarchy](http://babylonjs-playground.com/#DEFP2#1)
+
+[Changing origin](http://babylonjs-playground.com/#DIF54)
 
 [Animation](http://babylonjs-playground.com/#FFTQL#1) Sample relying on the babylon.js animation engine.
 

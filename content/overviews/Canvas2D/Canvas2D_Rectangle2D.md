@@ -2,7 +2,7 @@
 
 This primitive is [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based. It is used to draw a Rectangle, with round corners or not.
 
-:bulb: Rendering Rectangle2D primitive can be insanely fast when the Instanced Array WebGL extension is available. All Rectangle primitives of any kind of width/height/position/roundRadius are rendered into a single draw call as long as they use the same type of brush (i.e. SolidColor or Gradient).
+Rendering Rectangle2D primitive can be insanely fast when the Instanced Array WebGL extension is available. All Rectangle primitives of any kind of width/height/position/roundRadius are rendered into a single draw call as long as they use the same type of brush (i.e. SolidColor or Gradient).
 
 Rectangle of different SolidColorBrush (then different solid color) will be rendered into the single same call, the same apply for GradientColorBrush, many different gradient are rendered into one single call. It's just that SolidColor and Gradient based Rectangles will be drawn into two separated calls.
 
