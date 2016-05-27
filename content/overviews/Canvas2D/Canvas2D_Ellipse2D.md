@@ -2,7 +2,7 @@
 
 This primitive is [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based. It is used to draw an Ellipse/Circle.
 
-:bulb: Rendering Ellipse2D primitive can be insanely fast when the Instanced Array WebGL extension is available. All Ellipse primitives of any kind of width/height/position are rendered into a single draw call as long as they use the same subdivisions count, type of brush (i.e. SolidColor or Gradient). 
+Rendering Ellipse2D primitive can be insanely fast when the Instanced Array WebGL extension is available. All Ellipse primitives of any kind of width/height/position are rendered into a single draw call as long as they use the same subdivisions count, type of brush (i.e. SolidColor or Gradient). 
 
 Ellipse of different SolidColorBrush (then different solid color) will be rendered into the single same call, the same apply for GradientColorBrush, many different gradient are rendered into one single call. It's just that SolidColor and Gradient based Rectangles will be drawn into two separated calls.
 

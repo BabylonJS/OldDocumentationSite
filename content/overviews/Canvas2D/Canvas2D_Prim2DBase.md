@@ -7,7 +7,7 @@ As these feature are pretty important, most of them have dedicated documentation
 ### Identifier
 When creating a primitive you can set the `id` field in the `options` object, the id is a string and will be stored in the primitive. It's purpose, as of today, is purely informational. So it can be omitted at creation.
 
-:bulb: The default value is null, so there's no value set.
+The default value is null, so there's no value set.
 :warning: The id is considered to be immutable, you can only set it at creation time and can't change it afterward.
 
 ### Object graph, hierarchy

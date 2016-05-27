@@ -19,14 +19,14 @@ As you can guess, these two types serve different purposes, ScreenSpace being mo
 ## The Caching Strategy
 In order to preserve a good balance between rendering time and memory consumption the user has the possibility to cache in a bitmap the content of a Group (or the Canvas itself). Many caching strategies are predefined, hopefully for the user to always find what fits him/her the best.
 
-:bulb: **Default behavior**: 
+**Default behavior**: 
 
  - ScreenSpace Canvas uses the `CACHESTRATEGY_DONTCACHE` by default, nothing is cached, the Canvas is rendered at every Scene Render.
  - WorldSpace Canvas uses the only strategy available so far: `CACHESTRATEGY_CANVAS`, the whole content of the Canvas is cached into a bitmap.
 
 #### Available Strategies
 
-:exclamation: Understanding the different Caching Strategies is important when complex Canvas are built and performances start being a real consideration. The default behavior will keep things simple, however if you wish to harness the power of the Canvas2D feature, you need to understand the different caching strategies.
+**Beware** Understanding the different Caching Strategies is important when complex Canvas are built and performances start being a real consideration. The default behavior will keep things simple, however if you wish to harness the power of the Canvas2D feature, you need to understand the different caching strategies.
 
 The different strategies are:
 
