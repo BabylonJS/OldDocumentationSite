@@ -7,7 +7,7 @@ include includes/banner.jade
     .presentation-header
         .presentation-img
         .bigimage
-            img(src='img/logos/bjs-logo.png')
+            img(src='img/logos/logo-babylonjs.png')
         h1.bjs-moto An open source 3D engine based on webGL and Javascript
     //----------------------
     //-THREE COLUMNS
@@ -401,51 +401,51 @@ include includes/banner.jade
         hljs.initHighlightingOnLoad();
     script.
         var selectedLanguage = 'js';
-        
+
         document.getElementById('js-start').addEventListener('click', function() {
             selectedLanguage = 'js';
-            
+
             var hiddenElements = document.getElementsByClassName('ts');
             var visibleElements = document.getElementsByClassName('js');
-            
+
             for (var i = 0; i < hiddenElements.length; i++) {
                 hiddenElements[i].style.display = 'none';
             }
             for (var i = 0; i < visibleElements.length; i++) {
                 visibleElements[i].style.display = '';
             }
-            
+
             document.getElementById('js-start').className += ' toggle-selected';
             document.getElementById('ts-start').className = document.getElementById('ts-start').className.replace(/\btoggle-selected\b/g,'');
         });
-        
+
         document.getElementById('ts-start').addEventListener('click', function() {
             selectedLanguage = 'ts';
-            
+
             var hiddenElements = document.getElementsByClassName('js');
             var visibleElements = document.getElementsByClassName('ts');
-            
+
             for (var i = 0; i < hiddenElements.length; i++) {
                 hiddenElements[i].style.display = 'none';
             }
             for (var i = 0; i < visibleElements.length; i++) {
                 visibleElements[i].style.display = '';
             }
-            
+
             document.getElementById('js-start').className = document.getElementById('js-start').className.replace(/\btoggle-selected\b/g,'');
             document.getElementById('ts-start').className += ' toggle-selected';
         });
-        
+
         var hiddenElements = document.getElementsByClassName('ts');
         var visibleElements = document.getElementsByClassName('js');
-        
+
         for (var i = 0; i < hiddenElements.length; i++) {
             hiddenElements[i].style.display = 'none';
         }
         for (var i = 0; i < visibleElements.length; i++) {
             visibleElements[i].style.display = '';
         }
-        
+
         document.getElementById('js-start').className += ' toggle-selected';
         document.getElementById('ts-start').className = document.getElementById('ts-start').className.replace(/\btoggle-selected\b/g,'');
     style.

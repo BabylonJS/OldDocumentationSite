@@ -4,10 +4,11 @@
 $lightgrey : #f6f6f6;
 $grey : #dcdcdc;
 $darkgrey: #9b9b9b;
-$red :#fc4349;
+$blue : #00AEEF;
 $black : #333;
 $darker_black : #2D2D2D;
 $yellow: #f8eec7;
+$dark : rgb(24, 34, 45);
 
 //--------------
 // FONTS
@@ -33,7 +34,7 @@ $font-code:"Inconsolata";
 h1 {
   font-weight: normal;
   font-family: $font-title;
-  color:$red;
+  color:$blue;
 }
 h2 {
   font-weight: normal;
@@ -47,7 +48,7 @@ h3 {
 // Default style for links
 a {
   text-decoration : none;
-  color : $red;
+  color : $blue;
 
   &:hover{
     text-decoration: underline;
@@ -79,14 +80,14 @@ code {
 .horizontal-separator{
   width       : 80%;
   height      : 0;
-  border-top  : 1px solid $red;
+  border-top  : 1px solid $blue;
   font-size   :0;
   margin      : 0 auto 20px auto;
 }
 
 // text selection ! Fancy :)
 @include selection {
-  background-color: $red;
+  background-color: $blue;
   color:$grey;
 }
 
@@ -115,7 +116,7 @@ p {
     min-width:450px;
     height:$iframeHeight;
     display:none;
-    
+
     iframe {
         min-width:450px;
         max-height:$iframeHeight;
@@ -125,7 +126,7 @@ p {
 .fa-eye {
     cursor: pointer;
     &:hover {
-        color:$red;
+        color:$blue;
         text-decoration: underline;
     }
 }

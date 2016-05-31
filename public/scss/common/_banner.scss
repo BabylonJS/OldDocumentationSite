@@ -49,7 +49,7 @@ $title_width : 300px;
   .banner {
     @include display(flex);
     width : 100%;
-    background-color: $grey;
+    background-color: rgb(34, 44, 55);
     height : $bh;
 
     // The left menu (title + tabs)
@@ -58,6 +58,7 @@ $title_width : 300px;
       width : 80%;
       height : $bh;
       @include user-select(none);
+
 
       // All items : title and tabs
       & > div {
@@ -68,34 +69,30 @@ $title_width : 300px;
         text-align : center;
 
         &.active{
-          background-color : $red;
-          a{
-            color : white;
-          }
+          background-color: $dark;
+
         }
 
         &:hover:not(.do-not-hover) {
+          background-color: $dark;
           @include transition(all .2s ease-in);
-          background-color: $red;
-
-          a{
-            color:white;
-          }
         }
       }
 
       // Title Babylon.js | DOCUMENTATION
       & > div:first-child {
-        background-color: $darkgrey;
         color:white;
         cursor : pointer;
         max-width : $title_width;
         width:$title_width;
 
         a{
-          color: whitesmoke;
+          color: white;
           display: inline-block;
           width:100%;
+        }
+        a:hover{
+          text-decoration: none;
         }
       }
 
@@ -107,7 +104,7 @@ $title_width : 300px;
         cursor: pointer;
         a {
           text-decoration : none;
-          color : black;
+          color : white;
           display: inline-block;
           width:100%;
           text-align: center;
@@ -125,9 +122,9 @@ $title_width : 300px;
 
       // Searchbar
       .searchbar {
-        height : 30px;
+        height : 49px;
         background-color: white;
-        border-radius: 20px;
+        //border-radius: 20px;
         width : 250px;
 
         margin: 0 5px;

@@ -68,7 +68,7 @@
       }
 
       .active {
-        background-color: $red;
+        background-color: $blue;
       }
     }
   }
@@ -117,7 +117,7 @@
         text-decoration: none;
         //display: inline-block;
         padding: 10px;
-        // border-bottom: 2px dashed $red;
+        // border-bottom: 2px dashed $blue;
         flex: auto;
 
         .inline-tags {
@@ -131,7 +131,7 @@
           .inline-tag {
             display: inline-block;
             position: relative;
-            // background-color: $red;
+            // background-color: $blue;
             margin-left: 8px;
             padding: 0px 4px;
             color: rgb(150, 150, 150);
@@ -144,23 +144,23 @@
         &:hover {
           //color: rgb(150, 150, 150);
           //text-decoration: underline;
-          // background-color: $red;
+          // background-color: $blue;
 
           .tag {
             background-color: whitesmoke;
-            color: $red;
+            color: $blue;
           }
         }
       }
 
       h3:hover {
-        background-color: $red;
+        background-color: $blue;
         color: $grey;
         text-decoration: underline;
       }
     }
 
-    .\30 1_Play_Pen{
+    .\30 1_Play_Pen, .Standard, .\33 DSMax, .Loaders, .Essentials{
        border-left: 4px solid rgb(138, 171, 53);
 
        .fileNumber{
@@ -168,7 +168,7 @@
        }
     }
 
-    .\30 2_Mid_Level{
+    .\30 2_Mid_Level, .PBR, .Blender, .BabylonHx, .General{
       border-left: 4px solid rgb(252, 170, 53);
 
       .fileNumber{
@@ -176,19 +176,47 @@
       }
     }
 
-    .\30 3_Advanced{
-      border-left: 4px solid $red;
+    .\30 3_Advanced, .Cheetah3D, .MaterialsLibrary{
+      border-left: 4px solid rgb(231, 75, 59);
 
       .fileNumber{
-        color: $red;
+        color: rgb(231, 75, 59);
       }
     }
 
-    .Videos{
+    .Videos, .Canvas2D, .Unity, .POV{
       border-left: 4px solid rgb(122, 79, 193);
 
       .fileNumber{
         color: rgb(122, 79, 193);
+      }
+    }
+
+    .bGUI{
+      border-left: 4px solid rgb(60, 174, 222);
+      .fileNumber{
+        color: rgb(60, 174, 222);
+      }
+    }
+
+    .Tree_Generators{
+      border-left: 4px solid rgb(216, 81, 53);
+      .fileNumber{
+        color: rgb(216, 81, 53);
+      }
+    }
+
+    .Editor{
+      border-left: 4px solid rgb(197, 109, 184);
+      .fileNumber{
+        color: rgb(197, 109, 184);
+      }
+    }
+
+    .CastorGUI{
+      border-left: 4px solid rgb(109, 176, 42);
+      .fileNumber{
+        color: rgb(109, 176, 42);
       }
     }
 

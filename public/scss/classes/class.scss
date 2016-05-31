@@ -20,7 +20,7 @@ $sidebar_width: 300px;
 
   // Selected sort
   .selectedOrder {
-    background-color: $red;
+    background-color: $blue;
   }
 }
 
@@ -94,7 +94,7 @@ $sidebar_width: 300px;
 
   #classTitle {
     @include outer-container(100%);
-    border-bottom: solid 1px $red;
+    border-bottom: solid 1px $blue;
 
     h1 {
       @include span-columns(6);
@@ -140,7 +140,7 @@ $sidebar_width: 300px;
       font-size: 0.8em;
       color: white;
       margin: 5px;
-      background-color: $red;
+      background-color: $blue;
       border-radius: 3px;
       padding: 5px;
 
@@ -239,7 +239,7 @@ $sidebar_width: 300px;
     margin: 2px 65px 2px 0px;
   }
   .selected{
-     background-color: $red;
+     background-color: $blue;
      color: whitesmoke;
   }
 

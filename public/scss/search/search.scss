@@ -25,13 +25,13 @@
 
     justify-content: space-around;
     .pageChangeLink {
-      border: 1px solid $red;
+      border: 1px solid $blue;
       padding: 3px 7px;
       border-radius: 3px;
 
       &:hover {
         color: whitesmoke;
-        background-color: $red;
+        background-color: $blue;
         text-decoration: none;
       }
     }
@@ -52,7 +52,7 @@
       margin : 5px;
 
       &.enabled {
-        background-color: $red;
+        background-color: $blue;
         color: whitesmoke;
       }
 
