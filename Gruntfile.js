@@ -76,7 +76,10 @@ module.exports = function (grunt) {
             }
         },
         clean        : {
-            json: {
+            json: 
+				{options:{
+                    force: true
+                },
                 src    : [
                     'data/**.json',
                     '!data/static-tags.json',
