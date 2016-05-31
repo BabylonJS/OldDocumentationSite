@@ -67,7 +67,7 @@
     }
 
     &.active{
-      background-color : $red;
+      background-color : $blue;
       color : $lightgrey;
       i {
         color : $lightgrey;
@@ -76,7 +76,7 @@
     // icons in front of each link
     i {
       padding-right : 10px;
-      color : $red;
+      color : $blue;
     }
   }
 

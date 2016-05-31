@@ -68,6 +68,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Rendering/babylon.renderingManager.js"></script>
     <script src="src/Rendering/babylon.renderingGroup.js"></script>
     <script src="src/babylon.scene.js"></script>
+    <script src="src/Mesh/babylon.buffer.js"></script>
     <script src="src/Mesh/babylon.vertexBuffer.js"></script>
     <script src="src/Mesh/babylon.instancedMesh.js"></script>
     <script src="src/Mesh/babylon.mesh.js"></script>
@@ -106,6 +107,8 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Canvas2d/babylon.sprite2d.js"></script>
     <script src="src/Canvas2d/babylon.text2d.js"></script>
     <script src="src/Canvas2d/babylon.canvas2d.js"></script>
+    <script src="src/Canvas2d/babylon.ellipse2d.js"></script>
+    <script src="src/Canvas2d/babylon.lines2d.js"></script>
     <script src="src/Canvas2d/babylon.worldspacecanvas2d.js"></script>
     <script src="src/Loading/babylon.sceneLoader.js"></script>
     <script src="src/Loading/Plugins/babylon.babylonFileLoader.js"></script>
@@ -195,6 +198,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/tools/hdr/babylon.tools.hdr.js"></script>
     <script src="src/materials/textures/babylon.hdrCubeTexture.js"></script>
     <script src="/src/Materials/Textures/babylon.colorGradingTexture.js"></script>
+    <script src="/src/Materials/babylon.colorcurves.js"></script>
 ```
 
 When working with all files, you can provide the following information to the engine:

@@ -1,7 +1,8 @@
 .bigimage {
   width:80%;
-  max-width: 300px;
-  margin:10px auto;
+  max-width: 400px;
+  margin:20px auto;
+  margin-top: 100px;
   & img {
     width:100%;
   }
@@ -23,6 +24,13 @@
   }
 }
 
+.selection-toggle{
+  background-color: $grey !important;
+}
+.toggle-selected{
+  background-color: $dark !important;
+}
+
 .bjs-components{
   @include outer-container(80%);
 
@@ -34,7 +42,7 @@
       text-align  : center;
     }
     p{
-      text-align : center;
+      text-align : justify;
     }
   }
 }
@@ -66,4 +74,10 @@
   h1{
     text-align  : center;
   }
+}
+
+.hljs{
+  background: rgb(240, 240, 240);
+  border-left: 5px solid $blue;
+  padding-left: 15px;
 }

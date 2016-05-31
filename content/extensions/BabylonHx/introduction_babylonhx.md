@@ -5,7 +5,7 @@
 
 ![logo](/img/extensions/BabylonHx/platforms.png)
 
-###WHAT ?
+### WHAT ?
 
 BabylonHx is an ultra-portable lightweight 3D engine.
 It is a port of the excellent BabylonJs 3D engine to the Haxe programming language.
@@ -24,7 +24,7 @@ Simply create Haxe JS project and build it by passing "purejs" parameter to Haxe
 Finally, you can compile BabylonHx engine to JS file and then use it from JavaScript in exactly the same way you would use the original BabylonJS engine. In fact, you can simply replace the original babylon.js file in existing BabylonJS javascript project with the babylon.js file compiled from BabylonHx and everything will work the same.
 
 
-###WHY ?
+### WHY ?
 
 
 Primary reason for doing this port was a practical need for a cross-platform 3D engine. A true 'code once run everywhere' solution - which I finaly got with this port.
@@ -38,6 +38,6 @@ This project is also a sort of my 'give back' to Haxe from which I have benefite
 
 
 
-###HOW ?
+### HOW ?
 
 See the [official website](http://babylonhx.gamestudiohx.com/)

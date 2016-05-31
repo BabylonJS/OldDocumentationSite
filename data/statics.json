@@ -769,6 +769,18 @@
       "desc": "All overviews."
     },
     {
+      "title": "Maps",
+      "name": "Maps",
+      "img": "img/tutorials/All.png",
+      "desc": "Documentation Category Map",
+      "files": [
+        {
+          "title": "Documentation Category Map",
+          "filename": "Documentation_Category_Map"
+        }
+      ]
+    }, 
+    {
       "title": "Standard",
       "name": "Standard",
       "img": "img/tutorials/All.png",
