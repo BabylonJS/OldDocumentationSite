@@ -171,6 +171,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Cameras/VR/babylon.vrDeviceOrientationCamera.js"></script>
     <script src="src/Cameras/VR/babylon.webVRCamera.js"></script>
     <script src="src/Tools/babylon.sceneOptimizer.js"></script>
+    <script src="src/Tools/babylon.earcut.js"></script>
     <script src="src/Mesh/babylon.meshLODLevel.js"></script>
     <script src="src/Audio/babylon.audioEngine.js"></script>
     <script src="src/Audio/babylon.sound.js"></script>
