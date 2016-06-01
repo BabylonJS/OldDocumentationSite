@@ -134,7 +134,7 @@ glass.alpha = 0.5;
 ### Refraction
 Refraction is a little bit like reflection (Please purists, do not kill me now, I only said a little) because it is heavily relying on the environment to change the way the material looks. Basically, if reflection could be compared to seing the sun and cloud on the surface of a lake, refraction would be seing weird shaped fish under the surface (through the water).  
 
-A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/tutorials/01._Advanced_Texturing)
+A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/tutorials/Advanced_Texturing)
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
@@ -152,8 +152,8 @@ You can still notice some reflection on your material. This is due to the energy
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
-* [Normal Map](http://doc.babylonjs.com/tutorials/01._Advanced_Texturing)
-* [Parallax](http://doc.babylonjs.com/tutorials/18._Using_parallax_mapping)
+* [Normal Map](http://doc.babylonjs.com/tutorials/Advanced_Texturing)
+* [Parallax](http://doc.babylonjs.com/tutorials/Using_parallax_mapping)
  
 ## Shadows (as the standard material)
 Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/tutorials/15._Shadows)

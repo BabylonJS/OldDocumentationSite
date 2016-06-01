@@ -843,7 +843,7 @@ The optional parameter `instance` is an instance of an existing [Ribbon](/classe
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -870,7 +870,7 @@ The parameter `tessellation` sets the number of polygon sides (positive integer,
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -892,7 +892,7 @@ The parameter `size` sets the size (float) of each box side (default 1).
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -915,7 +915,7 @@ The parameter `segments` sets the sphere number of horizontal stripes (positive 
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -945,7 +945,7 @@ The parameter `subdivisions` sets the number of rings along the cylinder height 
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -974,7 +974,7 @@ The parameter `tessellation` sets the number of torus sides (postive integer, de
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1003,7 +1003,7 @@ The parameters `p` and `q` are the number of windings on each axis (positive int
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1108,7 +1108,7 @@ Remember you can only change the shape or path point positions, not their number
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1178,7 +1178,7 @@ Remember you can only change the shape or path point positions, not their number
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1216,7 +1216,7 @@ The parameter `tessellation` (positive integer, default 64) is the side number o
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1239,7 +1239,7 @@ The parameter `size` sets the size (float) of both sides of the plane at once (d
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1373,7 +1373,7 @@ The optional parameter `instance` is an instance of an existing Tube object to b
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1417,7 +1417,7 @@ The parameter `flat` (boolean, default true). If set to false, it gives the poly
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1443,7 +1443,7 @@ The parameter `flat` (boolean, default true) gives each side its own normals. Se
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
