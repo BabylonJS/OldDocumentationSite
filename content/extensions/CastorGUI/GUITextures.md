@@ -1,5 +1,5 @@
-##new [GUITextures](#)(id, imageUrl, options, guimanager, callback, append)
-Creates a new GUITextures
+##new [GUITexture](#)(id, imageUrl, options, guimanager, callback, append)
+Creates a new GUITexture
 
 ####Parameters
 Name | Type | Description
@@ -29,4 +29,4 @@ Set this GUI element to visible or invisible
 Returns element if is visible or no
 
 ###dispose() → void
-Dispose the GUITextures, and delete element.
+Dispose the GUITexture, and delete element.
