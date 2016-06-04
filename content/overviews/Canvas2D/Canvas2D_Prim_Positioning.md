@@ -17,6 +17,20 @@ Three concepts are introduced to help on this matter:
     1. Align a given **Edge** of the Primitive to the same kind of Edge of its parent (Left/Right for Horizontal Alignment, Top/Bottom for Vertical Alignment)
     2. **Center** the primitive Width/Height from its parent's Content Area 
     3. **Stretch** (which also will drive the Size property of the Primitive) the primitive Surface Area to fit its parent Content Area on either or both Horizontal/Vertical axes.
+
+### About the PrimitiveThickness type
+
+Both `Margin` and `Padding` properties are defined with the `PrimitiveThickness` type. Let's see what this type can do:
+
+ - It defines values for each edge of a Bounding Rectangle, so we have four set of properties: Top, Left, Right and Bottom.
+ - Each edge helps defining a distance between it and its corresponding one in its containing area (e.g. the Top Edge will define a distance from the parent's Top Edge).
+ - The distance can be expressed in many ways:
+    1. **Pixels**: which is the base unit of the Canvas2D.
+    2. **Percentage**: which will compute the pixel value based on a percentage of the available space.
+    3. **Auto**: this is the default value which means the edge is not taking into consideration to compute the Bounding Rectangle.
+    
+        The opposite edge (Top for Bottom, Right for Left and vice and versa) as well as the Primitive `ActualSize` Width or Height (depending on the concerned axis) will be use to compute the Bounding Rectangle.
+    4. **Inherit**: the edge value will inherit the value of it's parent's equivalent.
  
 ## Primitive Area
 
