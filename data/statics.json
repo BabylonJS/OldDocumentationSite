@@ -565,6 +565,42 @@
       ]
     },
     {
+      "title": "Procedural textures library",
+      "name": "ProceduralTexturesLibrary",
+      "img": "img/extensions/proceduraltextures.jpg",
+      "desc": "Learn how to use procedural textures from Procedural texture library.",
+      "files": [
+        {
+          "title": "Brick",
+          "filename": "BrickProceduralTexture"
+        },
+        {
+          "title": "Cloud",
+          "filename": "CloudProceduralTexture"
+        },
+        {
+          "title": "Fire",
+          "filename": "FireProceduralTexture"
+        },
+        {
+          "title": "Grass",
+          "filename": "GrassProceduralTexture"
+        },
+        {
+          "title": "Marble",
+          "filename": "MarbleProceduralTexture"
+        },
+        {
+          "title": "Road",
+          "filename": "RoadProceduralTexture"
+        },
+        {
+          "title": "Wood",
+          "filename": "WoodProceduralTexture"
+        }
+      ]
+    },
+    {
       "title": "POV",
       "name": "POV",
       "img": "img/extensions/POV.jpg",
