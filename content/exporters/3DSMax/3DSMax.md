@@ -4,6 +4,7 @@ PG_TITLE: 3DSMax
 ---
 # 3DS Max to Babylon.js exporter
 
+You can download the whole exporter by clicking on the last version of the [zip Max2Babylon](https://github.com/BabylonJS/Babylon.js/tree/master/Exporters/3ds%20Max), and clicking on the 'Raw' button of Github.
 This exporter is designed for 3ds Max 2013+. You just have to unzip the content of the archive to [3ds max folder\bin\assemblies]
 
 **After unzipping DLLs, you may have to go through all files, right-click on them, select the Properties menu and click on Unblock button to remove security protection enforce by Windows**
