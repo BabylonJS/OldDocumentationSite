@@ -25,6 +25,16 @@
 
         $('.nextResults').attr('href', nextResultHref);
         $('.previousResults').attr('href', previousResultHref);
+
+        var elems = document.getElementsByClassName("resultTitle");
+        var lastitem = "";
+
+        for(var i = 0; i < elems.length; i++) {
+            if(elems[i].innerText.substr(0,6) != lastitem) {
+                elems[i].parentElement.style.marginTop = "20px";
+                lastitem = elems[i].innerText.substr(0,6);
+            }
+        };
     };
 
     var getQueryVariable = function(element) {
