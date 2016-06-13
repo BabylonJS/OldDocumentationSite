@@ -33,17 +33,18 @@ include includes/header.jade
 
             if(results)
                 each result in results
-                    .result
-                        .resultTitle
-                            a(href="http://www.babylonjs-playground.com/#" + result.Id + "#" + result.Version, target="_blank")
-                                | #{result.Id} : version #{result.Version}
-                            //pre
-                            //    code.JavaScript
-                            //        | #{result.content[0]}
-                            //        | #{result.content[1]}
-                            //        | #{result.content[2]}
-                            //        | #{result.content[3]}
-                            //        | #{result.content[4]}
+                    a(href="http://www.babylonjs-playground.com/#" + result.Id + "#" + result.Version, target="_blank")
+                        .result
+                            .resultTitle
+                                | #{result.Id}
+                                .version Version #{result.Version}
+                                //pre
+                                //    code.JavaScript
+                                //        | #{result.content[0]}
+                                //        | #{result.content[1]}
+                                //        | #{result.content[2]}
+                                //        | #{result.content[3]}
+                                //        | #{result.content[4]}
 
             .pageChangeWrapper
                 if(page - 1 > 0)
