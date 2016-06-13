@@ -18,6 +18,9 @@ var fulltextsearch = require('full-text-search');
 
 var fileSplitter = require('../fileSplitter');
 
+// Folder to exclude from the search
+var toExcludeFromSearch = ['classes', '2.2'];
+
 module.exports = function index(done) {
 
     // create data/search directory if non-existent
@@ -53,7 +56,8 @@ module.exports = function index(done) {
                     var directoryName = allFiles.directories[i].name;
 
                     //Ignore directory classes
-                    if (directoryName === 'classes') {
+                    if (toExcludeFromSearch.indexOf(directoryName) != -1) {
+                        console.log(directoryName, 'excluded');
                         next();
                     }
                     else {
