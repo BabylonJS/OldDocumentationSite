@@ -31,6 +31,6 @@ The rendering quality of the text depends on the Web Browser implementation, rig
 
 ## Example
 
-[Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#1)
+[Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#4)
 
 

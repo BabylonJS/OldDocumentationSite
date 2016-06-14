@@ -36,40 +36,46 @@ This section contains useful links for you to get started on different concepts 
 
 ## Playgrounds referential
 
-#### [Hello World](http://babylonjs-playground.com/#2AVSFH#9) 
+#### [Hello World](http://babylonjs-playground.com/#2AVSFH#19) 
 
 Because we have to start from here!
 
-#### [Two spining Rect](http://babylonjs-playground.com/#272WI1#2) 
+#### [Two spining Rect](http://babylonjs-playground.com/#272WI1#4) 
 
 A little example of the simplest features.
 
 
-#### [Two spining Rect, World Space version](http://babylonjs-playground.com/#1BKDEO#7) 
+#### [Two spining Rect, World Space version](http://babylonjs-playground.com/#1BKDEO#15) 
 
 Same as above but using a World Space Canvas
 
 
-#### [Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#6)
+#### [Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#7)
 
 You can select them also!
 
-#### [Playing with origin and hierarchy](http://babylonjs-playground.com/#DEFP2#1)
+#### [Playing with origin and hierarchy](http://babylonjs-playground.com/#DEFP2#2)
 
-#### [Changing origin](http://babylonjs-playground.com/#DIF54)
+#### [Changing origin](http://babylonjs-playground.com/#DIF54#1)
 
-#### [Animation](http://babylonjs-playground.com/#FFTQL#1) 
+#### [Animation](http://babylonjs-playground.com/#FFTQL#2) 
 
 Sample relying on the babylon.js animation engine.
 
-#### [Simple Interaction](http://babylonjs-playground.com/#UVDG0#1) 
+#### [Simple Interaction](http://babylonjs-playground.com/#UVDG0#66) 
 
 Click on the Button!
 
-#### [Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#1)
+#### [Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#4)
 
-#### [Animated Sprite2D](http://babylonjs-playground.com/#20MSFF#1)
+#### [Animated Sprite2D](http://babylonjs-playground.com/#20MSFF#12)
 
-#### [Lines2D primitive](http://babylonjs-playground.com/#15C96V)
+#### [Lines2D primitive](http://babylonjs-playground.com/#15C96V#4)
 
-#### [Visibility test](http://babylonjs-playground.com/#BDQQX#0)
+#### [Visibility test](http://babylonjs-playground.com/#BDQQX#1)
+
+### [Transparency test](http://babylonjs-playground.com/#7DXYF)
+
+### [StackPanel Layout Test](http://babylonjs-playground.com/#CMZLC#2)
+
+### [Margin & Padding Test](http://babylonjs-playground.com/#2DD9TG#2)
