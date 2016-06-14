@@ -43,6 +43,7 @@ The current version can export the following features:
  * Diffuse color
  * Animations (position)
  * Shadow maps
+ * Light maps
 * **Materials**
  * Name
  * Diffuse color
@@ -55,6 +56,7 @@ The current version can export the following features:
  * Reflection texture
  * Emissive texture
  * Bump texture
+* **Physically based rendering** materials
 * **Multi-materials**
  * Name
  * Child materials
@@ -74,5 +76,6 @@ The current version can export the following features:
  * Check collisions
  * Receive and cast shadows
  * Animations (position, rotation, scaling)
+ * Skeletons
 
 
