@@ -71,5 +71,5 @@ As said above the `localTransform` is relative to the parent's origin and positi
 
 ## Conclusion
 
-A little [example](http://babylonjs-playground.com/#DEFP2#1) to play with!
+A little [example](http://babylonjs-playground.com/#DEFP2#2) to play with!
 
