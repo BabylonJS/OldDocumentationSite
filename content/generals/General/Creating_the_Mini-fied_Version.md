@@ -96,6 +96,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Materials/babylon.pbrMaterial.js"></script>
     <script src="src/Materials/babylon.multiMaterial.js"></script>
     <script src="src/Canvas2d/babylon.bounding2d.js"></script>
+    <script src="src/Canvas2d/babylon.canvas2dLayoutEngine.js"></script>
     <script src="src/Canvas2d/babylon.brushes2d.js"></script>
     <script src="src/Canvas2d/babylon.smartPropertyPrim.js"></script>
     <script src="src/Canvas2d/babylon.prim2dBase.js"></script>
@@ -109,7 +110,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Canvas2d/babylon.canvas2d.js"></script>
     <script src="src/Canvas2d/babylon.ellipse2d.js"></script>
     <script src="src/Canvas2d/babylon.lines2d.js"></script>
-    <script src="src/Canvas2d/babylon.worldspacecanvas2d.js"></script>
+    <script src="src/Canvas2d/babylon.worldspacecanvas2dNode.js"></script>
     <script src="src/Loading/babylon.sceneLoader.js"></script>
     <script src="src/Loading/Plugins/babylon.babylonFileLoader.js"></script>
     <script src="src/Sprites/babylon.spriteManager.js"></script>

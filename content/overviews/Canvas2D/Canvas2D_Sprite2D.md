@@ -22,6 +22,6 @@ Right now this primitive is really simple, but it will evolve in futures release
 
 ## Example
 
-[Animated Sprite2D](http://babylonjs-playground.com/#20MSFF#1)
+[Animated Sprite2D](http://babylonjs-playground.com/#20MSFF#12)
 
 
