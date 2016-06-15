@@ -36,46 +36,20 @@ This section contains useful links for you to get started on different concepts 
 
 ## Playgrounds referential
 
-#### [Hello World](http://babylonjs-playground.com/#2AVSFH#19) 
-
-Because we have to start from here!
-
-#### [Two spining Rect](http://babylonjs-playground.com/#272WI1#4) 
-
-A little example of the simplest features.
-
-
-#### [Two spining Rect, World Space version](http://babylonjs-playground.com/#1BKDEO#15) 
-
-Same as above but using a World Space Canvas
-
-
-#### [Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#7)
-
-You can select them also!
-
-#### [Playing with origin and hierarchy](http://babylonjs-playground.com/#DEFP2#2)
-
-#### [Changing origin](http://babylonjs-playground.com/#DIF54#1)
-
-#### [Animation](http://babylonjs-playground.com/#FFTQL#2) 
-
-Sample relying on the babylon.js animation engine.
-
-#### [Simple Interaction](http://babylonjs-playground.com/#UVDG0#66) 
-
-Click on the Button!
-
-#### [Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#4)
-
-#### [Animated Sprite2D](http://babylonjs-playground.com/#20MSFF#12)
-
-#### [Lines2D primitive](http://babylonjs-playground.com/#15C96V#4)
-
-#### [Visibility test](http://babylonjs-playground.com/#BDQQX#1)
-
-### [Transparency test](http://babylonjs-playground.com/#7DXYF)
-
-### [StackPanel Layout Test](http://babylonjs-playground.com/#CMZLC#2)
-
-### [Margin & Padding Test](http://babylonjs-playground.com/#2DD9TG#2)
+ - [Hello World](http://babylonjs-playground.com/#2AVSFH#35), because we have to start from here!
+ - A little example of the simplest features :[two spining Rect](http://babylonjs-playground.com/#272WI1#6) 
+ - The [World Space version](http://babylonjs-playground.com/#1BKDEO#18) of the two spinning Rectangles.
+ - A [Lots of spining](http://babylonjs-playground.com/#OWCCR#8) Rect/Ellipse!
+ - Playing with [origin and hierarchy](http://babylonjs-playground.com/#DEFP2#3)
+ - Changing [origin](http://babylonjs-playground.com/#DIF54#2)
+ - A simple [Animation](http://babylonjs-playground.com/#FFTQL#3) relying on the babylon.js animation engine.
+ - A simple [interaction](http://babylonjs-playground.com/#UVDG0#67), click on the Button!
+ - Primitives with [Action Manager](http://babylonjs-playground.com/#1ONKPJ#5)
+ - An Animated [Sprite2D](http://babylonjs-playground.com/#20MSFF#16)
+ - Some [Lines2D](http://babylonjs-playground.com/#15C96V#5) primitives
+ - Playing with [Visibility](http://babylonjs-playground.com/#BDQQX#2)
+ - A little [Transparency](http://babylonjs-playground.com/#7DXYF#1) test
+ - Many primitives arranged by a [StackPanel](http://babylonjs-playground.com/#CMZLC#7) using the Layout feature.
+ - How works [Margin & Padding](http://babylonjs-playground.com/#2DD9TG#3)
+ - How to [track](http://babylonjs-playground.com/#1N9RJY#5) a node from the 3D Scene
+ - WorldSpace Canvas on a [custom scene node](http://babylonjs-playground.com/#EPFQG#3)

@@ -32,18 +32,24 @@ This is the base class for any object that are part of the content graph of a Ca
 It features properties such as:
 
 - Transformation properties: Position/Rotation/Scale. Position being X,Y, Rotation being a number in radian for the rotation along the Z axis, Scale being a number to provide uniform scale.
-- Origin: define the origin of the primitive, default being 0.5,0.5, which is the center of the primitive, 0.0,0.0 would be the top/left corner of the primitive.
+- Size: define the 2D size of the primitive, can be a bounding area.
+- There's also actualPosition, actualSize properties that gives the real position and size, after layout and alignment was computed on the primitive. So you should always use these properties on get operations.
+- Origin: define the origin of the primitive, default being 0.5,0.5, which is the center of the primitive, 0.0,0.0 would be the bottom/left corner of the primitive. The origin play a role in the rotation/scaling of the primitive but **not** in its positioning.
 - LevelVisibility: define the visibility set for this particular Primitive, it's **not** the actual visibility in the canvas, see below.
 - The IsVisible property will inform if the Primitive will be rendered or not in the Canvas. The visibility concept is hierarchical, if a Primitive has at least one parent set as not visible, it won't be too.
 - zOrder. While the hierarchy give a sense of Z ordering (children being place above parents), the user can override it through this property.
 - boundingInfo, every primitive has a bounding information maintained automatically. This info describe a bounding circle (with a Radius) and a bounding box (with a 2D Vector acting as the extent).
 - Parent/Children: to navigate through the graph.
+- LayoutEngine: the layout engine use to position/resize the children primitives, if you don't want a layout engine (which is the default behavior), do nothing, the CanvasLayoutEngine will be used by default and it doesn't change position/size of primitives.
+- LayoutArea, LayoutAreaPos define the Area and its position of the zone allocated by the LayoutEngine to the Primitive.
+- ContentArea define the area allocated for the children primitives. The Padding related properties will affect its value.
+- Margin, Padding, MarginAlignment are used by the positioning engine to compute the actualPosition/actualSize of the primitive and also the ContentArea.
 
 ### Group2D
 Acts as a container for its children, has no rendering itself. A group define a new frame of reference, the visibility status will also be applied to its children. Based on the Caching strategy defined at the Canvas level and also the Caching Behavior of the group, its content will be cached to a bitmap or rendered during the viewport rendering.
 
 ### Canvas2D
-The main class that describes a Canvas, it derives from Group2D, inheriting its capabilities. A given Canvas belong to a given Scene, it's either defined in ScreenSpace or WorldSpace, may have a Background &| Border.
+The main class that describes a Canvas, it derives from Group2D, inheriting its capabilities. A given Canvas belong to a given Scene, it's either defined in ScreenSpace or WorldSpace through the use of the ScreenSpaceCanvas2D or WorldSpaceCanvas2D classes, may have a Background &| Border.
 
 ### RenderablePrim2D
 This is an abstract class, used for primitives that render in the Canvas. This class takes care of the model and instance caching of the rendering resources.
@@ -89,7 +95,7 @@ Each instance of Group2D has a cacheBehavior property, with one of the following
 ## Architecture
 
 ### The Primitive Caching mechanisms
-The challenge behind this feature is to render everything with the minimal amount of Draw Call and to compute/update the data needed for rendering only when necessary.
+The challenge behind this feature is to render everything with the minimal amount of Draw calls and to compute/update the data needed for rendering only when necessary (i.e. something changes).
 
 In order to reduce the WebGL Draw Calls, the architecture was designed to render the highest amount of instances of a given Primitive using the [Instanced Array feature](https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/) of WebGL. A fallback is available is the extension is not supported by the browser.
 
@@ -165,6 +171,7 @@ Each property in a primitive that is decorated with either @modelLevelProperty, 
  - Detect if the change of value will impact the way the primitive should be rendered and add it to the list of primitives to update for rendering.
  - Maintain a dirty flag when this property has a value change between two renders
  - Dirty the boundingInfo if needed
+ - Dirty positioning/layout if needed
  - Notify observers of the data change
 
 The implementer doesn't have to take care of these things, it's free!
@@ -174,12 +181,13 @@ The implementer doesn't have to take care of these things, it's free!
 ### Rendering
 
 Rendering of a Canvas is made is in three parts:
-1. Preparation of the transformation matrices and update the visibility status of each primitive
-2. Preparation of the primitives that are dirty for rendering
-3. Do the rendering
 
-#### Transformation and Visibility update
-This step is done on each primitive that had a position based property that changed, same for visibility.
+1. Preparation of the "cached states": positioning, layout update, visibility status, transformation matrices of each primitive
+2. Preparation/update of the WebGL resources of primitives that are dirty for rendering
+3. Do the rendering in three passes: opaque, alpha test, transparency
+
+#### Cached States update
+This step is done on each primitive that had a position, visibility status, positioning/layout based properties that changed.
 Only a part of the graph is traversed, from the primitives that changed down to its children.
 No change will lead to zero node traversing in the graph.
 
@@ -191,3 +199,9 @@ This is made on a per Renderable Group basis, each Renderable Group are traverse
 Rendering is made by traversing Renderable Groups, respecting the Cached mode. If a group is Cached its content will be displayed by its parent Renderable Group into a Sprite2D targeting the bitmap's content.
 
 If rendering resources are not ready (texture or effect still loading), the primitive will be let as dirty for render and then rendering will be retried next round.
+
+Then rendering is made in three passes:
+
+1. Opaque based primitive are rendered, regardless of their depth
+2. AlphaTest based primitives are rendered with blending on to do alpha cut, regardless of their depth
+3. Transparent primitives are rendered. Blending is on, TransparencySegment are computed to group all primitives that shares the same drawing context and which could be drawn using Instanced Array. TransparentSegments are sorted and draw from back to front to ensure a proper blending. If the Z-Order doesn't change the TransparentSegments are kept and reused from a rendering frame to the next.
