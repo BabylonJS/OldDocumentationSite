@@ -5,10 +5,10 @@ You won't deal with this type directly, but every class in the Canvas2D Feature 
 As these feature are pretty important, most of them have dedicated documentation page.
 
 ### Identifier
-When creating a primitive you can set the `id` field in the `options` object, the id is a string and will be stored in the primitive. It's purpose, as of today, is purely informational. So it can be omitted at creation.
+When creating a primitive you can set the `id` field in the `settings` object, the id is a string and will be stored in the primitive, so it can be omitted at creation. From a given primitive you can look for a child primitive from its id using the `findById` method.
 
 The default value is null, so there's no value set.
-:warning: The id is considered to be immutable, you can only set it at creation time and can't change it afterward.
+The id is considered to be immutable, you can only set it at creation time and can't change it afterward.
 
 ### Object graph, hierarchy
 
@@ -28,11 +28,17 @@ You will find more info on the [position, transformation and hierarchy](http://d
 
 To summarize, a Base Primitive have the following properties:
 
- - `position`, a 2D Vector which give the position of the primitive, relative from its parent's own frame of reference.
+ - `position`, a 2D Vector which give the position of the primitive bottom/left corner, relative from its parent's bottom/left corner.
+ - `x`, which is a shortcut to `position.x`, use it instead of changing the `x` of `position` in order to trigger value change.
+ - `y`, which is a shortcut to `position.y`, same remark as above.
  - `rotation`, a angle in radian of the primitive's rotation around the Z axis.
  - `scale`, a number which represent the uniform scale to apply on the primitive.
+ - `actuaPosition` the 'final' position, after layout and positioning engines were processed. Will be equal to `position` if no layout/positioning are used.
+ - `actualX`, which is a shortcut to `actualPosition.x`. use it instead of changing the `x` of `actualPostition` in order to trigger value change.
+ - `actualY`, which is a shortcut to `actualPosition.y`, same remark as above.
+ - `globalTransform`, `invGlobalTransform` and `localTransform` are all Matrix typed properties.
 
-All these properties behave in regard of the origin property set for the Primitive. See the [origin page](http://doc.babylonjs.com/overviews/Canvas2D_Origin) for more information.
+Rotation and Scaling properties behave in regard of the origin property set for the Primitive. See the [origin page](http://doc.babylonjs.com/overviews/Canvas2D_Origin) for more information.
 
 ### Visibility
 
@@ -43,9 +49,13 @@ To summarize:
  - `levelVisible` is get/set property to define the visibility at the primitive's level. Default being `true`, but it won't necessarily means the primitive is visible, if one of its parent is hidden the primitive will be hidden.
  - `isVisible` is a get only property, it defines if the primitive is actually visible or not, based on the `levelVisible` of this primitive **and its parents**.
 
+### Layout and Positioning
+
+ More information can be found in the [dedicated page](http://doc.babylonjs.com/overviews/Canvas2D_Prim_Positioning)
+
 ### ActualSize, BoundingInfo properties.
 
-The `ActualSize` property of type `Size` gives the actual bounding size of the property formed by an axis-aligned bounding rectangle. This information doesn't consider the `origin` property, you just get the width and height of the surface taken by the Primitive.
+The `ActualSize` property of type `Size` gives the actual bounding size of the property formed by an axis-aligned bounding rectangle. 
 
 the `levelBoundingInfo` property give as its name suggest the bounding information of the primitive **without** considering its children, it's about the primitive itself, that's all.
 
