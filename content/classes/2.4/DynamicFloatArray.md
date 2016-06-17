@@ -60,6 +60,14 @@ Return the size of one element in float
 
 @returns the size in float
 
+### compareValueOffset : number
+
+
+
+### sortingAscending : boolean
+
+
+
 ## Methods
 
 ### allocElement() &rarr; [DynamicFloatArrayElementInfo](/classes/2.4/DynamicFloatArrayElementInfo)
@@ -85,3 +93,6 @@ This method will pack all the used elements into a linear sequence and put all t
 Instances of DynamicFloatArrayElement may have their 'offset' member changed as data could be copied from one location to another, so be sure to read/write your data based on the value inside this member after you called pack().
 
 @return the subArray that is the view of the used elements area, you can use it as a source to update a WebGLBuffer
+### sort() &rarr; boolean
+
+

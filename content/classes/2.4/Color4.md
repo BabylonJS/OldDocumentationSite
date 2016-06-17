@@ -109,9 +109,37 @@ Scales a [Color4](/classes/2.4/Color4) into an existing [Color4](/classes/2.4/Co
 ---|---|---|---
  | scale | number |    The scaling factor
  | result | [Color4](/classes/2.4/Color4) |    The color which hold the result color
+### multiply(color) &rarr; [Color4](/classes/2.4/Color4)
+
+Multipy an RGBA [Color4](/classes/2.4/Color4) value by another and return a new [Color4](/classes/2.4/Color4) object
+
+@returns A new [Color4](/classes/2.4/Color4).
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | color | [Color4](/classes/2.4/Color4) |  The [Color4](/classes/2.4/Color4) (RGBA) value to multiply by
+
+### multiplyToRef(color, result) &rarr; [Color4](/classes/2.4/Color4)
+
+Multipy an RGBA [Color4](/classes/2.4/Color4) value by another and push the result in a reference value
+
+@returns the result [Color4](/classes/2.4/Color4).
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | color | [Color4](/classes/2.4/Color4) |  The [Color4](/classes/2.4/Color4) (RGBA) value to multiply by
+ | result | [Color4](/classes/2.4/Color4) |  The [Color4](/classes/2.4/Color4) (RGBA) to fill the result in   The color which hold the result color
 ### toString() &rarr; string
 
 Returns a string representation of the color
+### getClassName() &rarr; string
+
+
+### getHashCode() &rarr; number
+
+
 ### clone() &rarr; [Color4](/classes/2.4/Color4)
 
 Clones the color into a new [Color4](/classes/2.4/Color4)

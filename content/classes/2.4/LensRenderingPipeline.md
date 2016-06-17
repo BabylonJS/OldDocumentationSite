@@ -18,9 +18,7 @@ class [LensRenderingPipeline](/classes/2.4/LensRenderingPipeline) extends [PostP
 
 @constructor
 
-
-
-[Effect](/classes/2.4/Effect) parameters are as follow:
+         * [Effect](/classes/2.4/Effect) parameters are as follow:
 
 {
 
@@ -51,6 +49,8 @@ class [LensRenderingPipeline](/classes/2.4/LensRenderingPipeline) extends [PostP
 }
 
 Note: if an effect parameter is unset, effect is disabled
+
+         * @param {string} name - The rendering pipeline name
 
 #### Parameters
  | Name | Type | Description

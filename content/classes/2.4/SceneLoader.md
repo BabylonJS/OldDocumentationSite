@@ -41,6 +41,10 @@ True to show the loading screen, false otherwise
 
 
 
+### ISceneLoaderPluginAsync : undefined
+
+
+
 ## Methods
 
 ### static GetPluginForExtension(extension) &rarr; ISceneLoaderPlugin

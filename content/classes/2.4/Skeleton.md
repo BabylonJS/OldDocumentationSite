@@ -37,6 +37,10 @@ Name of the skeleton
 
 Array of bones composing the skeleton
 
+### dimensionsAtRest : [Vector3](/classes/2.4/Vector3)
+
+
+
 ### needInitialSkinMatrix : boolean
 
 

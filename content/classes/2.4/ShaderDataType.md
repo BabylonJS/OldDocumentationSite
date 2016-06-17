@@ -12,5 +12,6 @@ Key | Value
 float | 4
 [Color3](/classes/2.4/Color3) | 5
 [Color4](/classes/2.4/Color4) | 6
+[Size](/classes/2.4/Size) | 7
 
 

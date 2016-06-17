@@ -46,6 +46,12 @@ class [Vector4](/classes/2.4/Vector4)
 ### toString() &rarr; string
 
 
+### getClassName() &rarr; string
+
+
+### getHashCode() &rarr; number
+
+
 ### asArray() &rarr; number[]
 
 

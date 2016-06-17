@@ -46,6 +46,15 @@ optional | noPreventDefault | boolean |
 ---|---|---|---
  | element | HTMLElement |    
 
+### requestVRFullscreen(requestPointerlock) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | requestPointerlock | boolean | 
+
 ### getTypeName() &rarr; string
 
 

@@ -9,6 +9,10 @@ class [Sprite2DRenderCache](/classes/2.4/Sprite2DRenderCache) extends [ModelRend
 
 ## Members
 
+### effectsReady : boolean
+
+
+
 ### vb : WebGLBuffer
 
 
@@ -26,6 +30,10 @@ class [Sprite2DRenderCache](/classes/2.4/Sprite2DRenderCache) extends [ModelRend
 
 
 ### effect : [Effect](/classes/2.4/Effect)
+
+
+
+### effectInstanced : [Effect](/classes/2.4/Effect)
 
 
 

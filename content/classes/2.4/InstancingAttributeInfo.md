@@ -29,7 +29,7 @@ normalization of fixed-point data. behavior unclear, use FALSE, default is FALSE
 
 ### offset : number
 
-Offset of the data in the Vertex Buffer acting as the instancing buffer
+Offset of the data in the Vertex [Buffer](/classes/2.4/Buffer) acting as the instancing buffer
 
 ### attributeName : string
 

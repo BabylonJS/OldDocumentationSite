@@ -17,7 +17,7 @@ More information on this format are available here:
 
 https://en.wikipedia.org/wiki/RGBE_image_format
 
-
+         * @param uint8array The binary file stored in  native array.
 
 @return The header information.
 
@@ -32,13 +32,11 @@ Returns the cubemap information (each faces texture data) extracted from an RGBE
 
 This RGBE texture needs to store the information as a panorama.
 
-
-
-More information on this format are available here:
+         * More information on this format are available here:
 
 https://en.wikipedia.org/wiki/RGBE_image_format
 
-
+         * @param buffer The binary file stored in an array buffer.
 
 @return The Cube Map information.
 
@@ -53,13 +51,11 @@ Returns the pixels data extracted from an RGBE texture.
 
 This pixels will be stored left to right up to down in the R G B order in one array.
 
-
-
-More information on this format are available here:
+         * More information on this format are available here:
 
 https://en.wikipedia.org/wiki/RGBE_image_format
 
-
+         * @param uint8array The binary file stored in an array buffer.
 
 @return The pixels data in RGB right to left up to down order.
 

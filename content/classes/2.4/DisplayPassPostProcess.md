@@ -13,7 +13,7 @@ class [DisplayPassPostProcess](/classes/2.4/DisplayPassPostProcess) extends [Pos
 
 ## Constructor
 
-## new [DisplayPassPostProcess](/classes/2.4/DisplayPassPostProcess)(name, ratio, camera, samplingMode, engine, reusable)
+## new [DisplayPassPostProcess](/classes/2.4/DisplayPassPostProcess)(name, options, PostProcessOptions, camera, samplingMode, engine, reusable)
 
 
 
@@ -21,7 +21,7 @@ class [DisplayPassPostProcess](/classes/2.4/DisplayPassPostProcess) extends [Pos
  | Name | Type | Description
 ---|---|---|---
  | name | string |    
- | ratio | number |    
+ | options | number or PostProcessOptions | 
  | camera | [Camera](/classes/2.4/Camera) |    
 optional | samplingMode | number |    
 optional | engine | [Engine](/classes/2.4/Engine) |    

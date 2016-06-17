@@ -17,6 +17,3 @@ The particularity of this class is to call the protected onLock() method when th
 ### lock() &rarr; boolean
 
 
-### onLock() &rarr; void
-
-Protected handler that will be called when the instance is about to be locked.

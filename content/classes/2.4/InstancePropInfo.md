@@ -38,6 +38,10 @@ class [InstancePropInfo](/classes/2.4/InstancePropInfo)
 
 
 
+### delimitedCategory : string
+
+
+
 ## Methods
 
 ### setSize(val) &rarr; void

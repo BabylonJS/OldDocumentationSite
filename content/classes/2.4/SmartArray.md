@@ -41,7 +41,7 @@ Push method. If the length of the smart array is reached, the length of this arr
 ---|---|---|---
  | value | any |    @param value
 
-### pushNoDuplicate(value) &rarr; void
+### pushNoDuplicate(value) &rarr; boolean
 
 Push method to avoid any duplicate. If the value is found in the smart array, nothing is done.
 

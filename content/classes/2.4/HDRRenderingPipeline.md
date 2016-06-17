@@ -26,8 +26,6 @@ optional | originalPostProcess | [PostProcess](/classes/2.4/PostProcess) |
 
 Public members
 
-
-
 Gaussian blur coefficient
 
 @type {number}

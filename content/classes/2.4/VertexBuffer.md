@@ -11,18 +11,21 @@ Creates a new [VertexBuffer](/classes/2.4/VertexBuffer). Methods of [VertexBuffe
 
 ## Constructor
 
-## new [VertexBuffer](/classes/2.4/VertexBuffer)(engine, data, kind, updatable, postponeInternalCreation, stride)
+## new [VertexBuffer](/classes/2.4/VertexBuffer)(engine, data, [Buffer](/classes/2.4/Buffer), kind, updatable, postponeInternalCreation, stride, instanced, offset, size)
 
-[VertexBuffer](/classes/2.4/VertexBuffer) constructor
+
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | engine | any |    @param engine
- | data | number[] |    [VertexData](/classes/2.4/VertexData) into buffer
+ | data | number[] or [Buffer](/classes/2.4/Buffer) |    [VertexData](/classes/2.4/VertexData) into buffer
  | kind | string |    The kind of vertex buffer (defined as static variables in [VertexBuffer](/classes/2.4/VertexBuffer) class)
  | updatable | boolean |    True if the vertex buffer should be dynamic, false otherwise.
 optional | postponeInternalCreation | boolean |    @param postponeInternalCreation
+optional | stride | number | 
+optional | instanced | boolean | 
+optional | offset | number |    
 ## Members
 
 ### static PositionKind : string
@@ -79,6 +82,9 @@ The matrice weight kind
 
 ## Methods
 
+### getKind() &rarr; string
+
+
 ### isUpdatable() &rarr; boolean
 
 Return true if it's updatable
@@ -91,6 +97,15 @@ Get the buffer
 ### getStrideSize() &rarr; number
 
 Get stride size
+### getOffset() &rarr; number
+
+
+### getSize() &rarr; number
+
+
+### getIsInstanced() &rarr; boolean
+
+
 ### create(data) &rarr; void
 
 Create a vertex buffer

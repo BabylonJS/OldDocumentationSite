@@ -32,11 +32,7 @@ class [Sprite2DInstanceData](/classes/2.4/Sprite2DInstanceData) extends [Instanc
 
 
 
-### frame : number
-
-
-
-### invertY : number
+### properties : [Vector3](/classes/2.4/Vector3)
 
 
 

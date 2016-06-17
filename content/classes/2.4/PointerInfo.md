@@ -3,7 +3,7 @@ TAGS:
 ---
 ## Description
 
-class [PointerInfo](/classes/2.4/PointerInfo)
+class [PointerInfo](/classes/2.4/PointerInfo) extends [PointerInfoBase](/classes/2.4/PointerInfoBase)
 
 This type contains all the data related to a pointer event in Babylon.js.
 
@@ -11,7 +11,7 @@ The event member is an instance of PointerEvent for all types except PointerWhee
 
 ## Constructor
 
-## new [PointerInfo](/classes/2.4/PointerInfo)(type, event, pickInfo)
+## new [PointerInfo](/classes/2.4/PointerInfo)(type, event, MouseWheelEvent, pickInfo)
 
 
 
@@ -19,17 +19,9 @@ The event member is an instance of PointerEvent for all types except PointerWhee
  | Name | Type | Description
 ---|---|---|---
  | type | number | 
- | event | PointerEvent | 
+ | event | PointerEvent or MouseWheelEvent | 
  | pickInfo | [PickingInfo](/classes/2.4/PickingInfo) | 
 ## Members
-
-### type : number
-
-
-
-### event : PointerEvent
-
-
 
 ### pickInfo : [PickingInfo](/classes/2.4/PickingInfo)
 

@@ -9,7 +9,7 @@ class [Rectangle2DRenderCache](/classes/2.4/Rectangle2DRenderCache) extends [Mod
 
 ## Constructor
 
-## new [Rectangle2DRenderCache](/classes/2.4/Rectangle2DRenderCache)(engine, modelKey, isTransparent)
+## new [Rectangle2DRenderCache](/classes/2.4/Rectangle2DRenderCache)(engine, modelKey)
 
 
 
@@ -18,8 +18,11 @@ class [Rectangle2DRenderCache](/classes/2.4/Rectangle2DRenderCache) extends [Mod
 ---|---|---|---
  | engine | [Engine](/classes/2.4/Engine) | 
  | modelKey | string | 
- | isTransparent | boolean | 
 ## Members
+
+### effectsReady : boolean
+
+
 
 ### fillVB : WebGLBuffer
 
@@ -41,6 +44,10 @@ class [Rectangle2DRenderCache](/classes/2.4/Rectangle2DRenderCache) extends [Mod
 
 
 
+### effectFillInstanced : [Effect](/classes/2.4/Effect)
+
+
+
 ### borderVB : WebGLBuffer
 
 
@@ -58,6 +65,10 @@ class [Rectangle2DRenderCache](/classes/2.4/Rectangle2DRenderCache) extends [Mod
 
 
 ### effectBorder : [Effect](/classes/2.4/Effect)
+
+
+
+### effectBorderInstanced : [Effect](/classes/2.4/Effect)
 
 
 

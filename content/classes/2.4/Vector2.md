@@ -37,6 +37,12 @@ The second coordinate
 ### toString() &rarr; string
 
 Returns a string representation of the vector
+### getClassName() &rarr; string
+
+
+### getHashCode() &rarr; number
+
+
 ### toArray(array, index) &rarr; [Vector2](/classes/2.4/Vector2)
 
 Fills an array from a given index with the vector's coordinates
@@ -76,6 +82,15 @@ Adds an another vector and returns the result as a new vector
 ---|---|---|---
  | otherVector | [Vector2](/classes/2.4/Vector2) |    
 
+### addToRef(otherVector, result) &rarr; [Vector2](/classes/2.4/Vector2)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | otherVector | [Vector2](/classes/2.4/Vector2) |    
+ | result | [Vector2](/classes/2.4/Vector2) |    The existing vector
 ### addVector3(otherVector) &rarr; [Vector2](/classes/2.4/Vector2)
 
 Adds the vector, the vector3's x and y
@@ -94,6 +109,15 @@ Substracts another vector and returns the result in a new vector
 ---|---|---|---
  | otherVector | [Vector2](/classes/2.4/Vector2) |    
 
+### subtractToRef(otherVector, result) &rarr; [Vector2](/classes/2.4/Vector2)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | otherVector | [Vector2](/classes/2.4/Vector2) |    
+ | result | [Vector2](/classes/2.4/Vector2) |    The existing vector
 ### subtractInPlace(otherVector) &rarr; [Vector2](/classes/2.4/Vector2)
 
 Substracts another vector
@@ -329,6 +353,16 @@ Transforms a vector into a new vector
  | vector | [Vector2](/classes/2.4/Vector2) |    The vector to transform
  | transformation | [Matrix](/classes/2.4/Matrix) |    The transformation matrix
  | result | [Vector2](/classes/2.4/Vector2) |    The existing vector
+### static PointInTriangle(p, p0, p1, p2) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | p | [Vector2](/classes/2.4/Vector2) | 
+ | p0 | [Vector2](/classes/2.4/Vector2) | 
+ | p1 | [Vector2](/classes/2.4/Vector2) | 
 ### static Distance(value1, value2) &rarr; number
 
 Returns the distance between two vectors
@@ -347,3 +381,13 @@ Returns the distance between two vectors
 ---|---|---|---
  | value1 | [Vector2](/classes/2.4/Vector2) |    first vector
  | value2 | [Vector2](/classes/2.4/Vector2) |    second vector
+### static DistanceOfPointFromSegment(p, segA, segB) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | p | [Vector2](/classes/2.4/Vector2) | 
+ | segA | [Vector2](/classes/2.4/Vector2) | 
+ | segB | [Vector2](/classes/2.4/Vector2) | 

@@ -109,7 +109,7 @@ Get lines index buffer
  | Name | Type | Description
 ---|---|---|---
  | indices | number[] |    @param indices
- | engine | any |    @param engine
+ | engine | [Engine](/classes/2.4/Engine) |    @param engine
 ### canIntersects(ray) &rarr; boolean
 
 Can Intersects

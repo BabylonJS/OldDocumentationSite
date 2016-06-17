@@ -5,7 +5,7 @@ TAGS:
 
 class [SolidColorBrush2D](/classes/2.4/SolidColorBrush2D) extends [LockableBase](/classes/2.4/LockableBase)
 
-This class implements a Brush that will be drawn with a uniform solid color (i.e. the same color everywhere in the content where the brush is assigned to).
+
 
 ## Constructor
 
@@ -30,7 +30,7 @@ The color used by this instance to render
 
 ### isTransparent() &rarr; boolean
 
-
+Return true if the brush is transparent, false if it's totally opaque
 ### toString() &rarr; string
 
 Return a unique identifier of the instance, which is simply the hexadecimal representation (CSS Style) of the solid color.

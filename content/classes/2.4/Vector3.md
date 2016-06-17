@@ -42,6 +42,12 @@ The third coordinate
 ### toString() &rarr; string
 
 Returns a string representation of the vector
+### getClassName() &rarr; string
+
+
+### getHashCode() &rarr; number
+
+
 ### asArray() &rarr; number[]
 
 Returns an array representation of the vector

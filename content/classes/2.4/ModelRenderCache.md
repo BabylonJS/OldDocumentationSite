@@ -9,7 +9,7 @@ class [ModelRenderCache](/classes/2.4/ModelRenderCache)
 
 ## Constructor
 
-## new [ModelRenderCache](/classes/2.4/ModelRenderCache)(engine, modelKey, isTransparent)
+## new [ModelRenderCache](/classes/2.4/ModelRenderCache)(engine, modelKey)
 
 
 
@@ -18,7 +18,6 @@ class [ModelRenderCache](/classes/2.4/ModelRenderCache)
 ---|---|---|---
  | engine | [Engine](/classes/2.4/Engine) | 
  | modelKey | string | 
- | isTransparent | boolean | 
 ## Members
 
 ### isDisposed : boolean
@@ -26,10 +25,6 @@ class [ModelRenderCache](/classes/2.4/ModelRenderCache)
 
 
 ### modelKey : string
-
-
-
-### isTransparent : boolean
 
 
 
@@ -70,31 +65,3 @@ Render the model instances
 ---|---|---|---
  | key | string | 
 
-### getPartIndexFromId(partId) &rarr; number
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | partId | number | 
-
-### loadInstancingAttributes(partId, effect) &rarr; [InstancingAttributeInfo](/classes/2.4/InstancingAttributeInfo)[]
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | partId | number | 
- | effect | [Effect](/classes/2.4/Effect) | 
-### setupUniforms(effect, partIndex, data, elementCount) &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | effect | [Effect](/classes/2.4/Effect) | 
- | partIndex | number | 
- | data | [DynamicFloatArray](/classes/2.4/DynamicFloatArray) | 
