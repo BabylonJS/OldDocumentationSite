@@ -7,6 +7,17 @@ class [Shape2D](/classes/2.4/Shape2D) extends [RenderablePrim2D](/classes/2.4/Re
 
 
 
+## Constructor
+
+## new [Shape2D](/classes/2.4/Shape2D)(settings)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | settings | { fill: IBrush2D,  border: IBrush2D,  borderThickness: number } | 
+
 ## Members
 
 ### static SHAPE2D_BORDERPARTID : number
@@ -59,43 +70,9 @@ class [Shape2D](/classes/2.4/Shape2D) extends [RenderablePrim2D](/classes/2.4/Re
 
 ### fill : IBrush2D
 
-
+Get/set the brush to render the Fill part of the Primitive
 
 ### borderThickness : number
 
 
-
-## Methods
-
-### setupShape2D(owner, parent, id, position, isVisible, fill, border, borderThickness) &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | owner | [Canvas2D](/classes/2.4/Canvas2D) | 
- | parent | [Prim2DBase](/classes/2.4/Prim2DBase) | 
- | id | string | 
- | position | [Vector2](/classes/2.4/Vector2) | 
- | isVisible | boolean | 
- | fill | IBrush2D | 
- | border | IBrush2D | 
-### getUsedShaderCategories(dataPart) &rarr; string[]
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | dataPart | [InstanceDataBase](/classes/2.4/InstanceDataBase) | 
-
-### refreshInstanceDataPart(part) &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | part | [InstanceDataBase](/classes/2.4/InstanceDataBase) | 
 

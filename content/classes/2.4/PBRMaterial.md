@@ -7,8 +7,6 @@ class [PBRMaterial](/classes/2.4/PBRMaterial) extends [Material](/classes/2.4/Ma
 
 The Physically based material of BJS.
 
-
-
 This offers the main features of a standard PBR material.
 
 For more information, please refer to the documentation :
@@ -20,6 +18,8 @@ http://doc.babylonjs.com/extensions/Physically_Based_Rendering
 ## new [PBRMaterial](/classes/2.4/PBRMaterial)(name, scene)
 
 Instantiates a new [PBRMaterial](/classes/2.4/PBRMaterial) instance.
+
+         * @param name The material name
 
 #### Parameters
  | Name | Type | Description
@@ -87,6 +87,16 @@ This property is here and not in the camera to allow controlling contrast withou
 Color Grading 2D Lookup [Texture](/classes/2.4/Texture).
 
 This allows special effects like sepia, black and white to sixties rendering style.
+
+### cameraColorCurves : [ColorCurves](/classes/2.4/ColorCurves)
+
+The color grading curves provide additional color adjustmnent that is applied after any color grading transform (3D LUT).
+
+They allow basic adjustment of saturation and small exposure adjustments, along with color filter tinting to provide white balance adjustment or more stylistic effects.
+
+These are similar to controls found in many professional imaging or colorist software. The global controls are applied to the entire image. For advanced tuning, extra controls are provided to adjust the shadow, midtone and highlight areas of the image;
+
+corresponding to low luminance, medium luminance, and high luminance areas respectively.
 
 ### overloadedAmbient : [Color3](/classes/2.4/Color3)
 
@@ -304,9 +314,13 @@ If sets to true, disables all the lights affecting the material.
 
 Number of Simultaneous lights allowed on the material.
 
-### useOpenGLNormalMap : boolean
+### invertNormalMapX : boolean
 
-If sets to true, normal map will be considered following OpenGL convention.
+If sets to true, x component of normal map value will invert (x = 1.0 - x).
+
+### invertNormalMapY : boolean
+
+If sets to true, y component of normal map value will invert (y = 1.0 - y).
 
 ### useLogarithmicDepth : boolean
 

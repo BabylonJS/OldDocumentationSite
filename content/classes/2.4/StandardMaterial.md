@@ -168,9 +168,13 @@ The emissive Fresnel parameters
 
 
 
-### useOpenGLNormalMap : boolean
+### invertNormalMapX : boolean
 
-If sets to true, normal map will be considered following OpenGL convention.
+If sets to true, x component of normal map value will invert (x = 1.0 - x).
+
+### invertNormalMapY : boolean
+
+If sets to true, y component of normal map value will invert (y = 1.0 - y).
 
 ### useLogarithmicDepth : boolean
 

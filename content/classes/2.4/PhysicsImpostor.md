@@ -41,11 +41,13 @@ optional | _options | PhysicsImpostorParameters |
 
 Gets the body that holds this impostor. Either its own, or its parent.
 
-
-
 Set the physics body. Used mainly by the physics engine/plugin
 
 ### parent : [PhysicsImpostor](/classes/2.4/PhysicsImpostor)
+
+
+
+### void : undefined
 
 
 
@@ -219,24 +221,24 @@ Register a function that will be executed after the physics step
 ---|---|---|---
  | func | (impostor: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
 
-### registerOnPhysicsCollide(collideAgainst, func) &rarr; void
+### registerOnPhysicsCollide(collideAgainst, Array, func) &rarr; void
 
 register a function that will be executed when this impostor collides against a different body.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | collideAgainst | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
+ | collideAgainst | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) or Array | 
  | func | (collider: [PhysicsImpostor](/classes/2.4/PhysicsImpostor), collidedAgainst: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
-### unregisterOnPhysicsCollide(collideAgainst, func) &rarr; void
+### unregisterOnPhysicsCollide(collideAgainst, Array, func) &rarr; (collideAgainst, Array, func)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | collideAgainst | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) | 
- | func | (collider: [PhysicsImpostor](/classes/2.4/PhysicsImpostor), collidedAgainst: [PhysicsImpostor](/classes/2.4/PhysicsImpostor)) =&gt; void | 
+ | collideAgainst | [PhysicsImpostor](/classes/2.4/PhysicsImpostor) or Array | 
+ | func | (collider: [PhysicsImpostor](/classes/2.4/PhysicsImpostor), collidedAgainst: [PhysicsImpostor](/classes/2.4/PhysicsImpostor), Array: undefined) =&gt;  | 
 ### applyForce(force, contactPoint) &rarr; void
 
 Apply a force

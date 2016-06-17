@@ -13,7 +13,7 @@ class [AnaglyphPostProcess](/classes/2.4/AnaglyphPostProcess) extends [PostProce
 
 ## Constructor
 
-## new [AnaglyphPostProcess](/classes/2.4/AnaglyphPostProcess)(name, ratio, rigCameras, samplingMode, engine, reusable)
+## new [AnaglyphPostProcess](/classes/2.4/AnaglyphPostProcess)(name, options, PostProcessOptions, rigCameras, samplingMode, engine, reusable)
 
 
 
@@ -21,7 +21,7 @@ class [AnaglyphPostProcess](/classes/2.4/AnaglyphPostProcess) extends [PostProce
  | Name | Type | Description
 ---|---|---|---
  | name | string |    
- | ratio | number |    
+ | options | number or PostProcessOptions | 
  | rigCameras | [Camera](/classes/2.4/Camera)[] | 
 optional | samplingMode | number |    
 optional | engine | [Engine](/classes/2.4/Engine) |    

@@ -83,6 +83,10 @@ The value affected by the animation is a [Vector3](/classes/2.4/Vector3)
 
 
 
+### static ANIMATIONTYPE_SIZE : number
+
+
+
 ### static ANIMATIONTYPE_QUATERNION : number
 
 The value affected by the animation is a [Quaternion](/classes/2.4/Quaternion)
@@ -260,6 +264,16 @@ Used to interpolate (perform the transition ) between [Vector3](/classes/2.4/Vec
 ---|---|---|---
  | startValue | [Vector2](/classes/2.4/Vector2) |    
  | endValue | [Vector2](/classes/2.4/Vector2) |    
+ | gradient | number |    
+### sizeInterpolateFunction(startValue, endValue, gradient) &rarr; [Size](/classes/2.4/Size)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | startValue | [Size](/classes/2.4/Size) |    
+ | endValue | [Size](/classes/2.4/Size) |    
  | gradient | number |    
 ### color3InterpolateFunction(startValue, endValue, gradient) &rarr; [Color3](/classes/2.4/Color3)
 

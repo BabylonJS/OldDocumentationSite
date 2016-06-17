@@ -141,6 +141,12 @@ Tests if two matrices are equal
 ### clone() &rarr; [Matrix](/classes/2.4/Matrix)
 
 Clones a martix
+### getClassName() &rarr; string
+
+
+### getHashCode() &rarr; number
+
+
 ### decompose(scale, rotation, translation) &rarr; boolean
 
 

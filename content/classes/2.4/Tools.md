@@ -195,7 +195,7 @@ Converts an angle in degrees to radian
  | indices | number[] |    The indices
  | indexStart | number |    The start index
  | indexCount | number | 
-### static ExtractMinAndMax(positions, start, count, bias) &rarr; { minimum: [Vector3](/classes/2.4/Vector3),  maximum: [Vector3](/classes/2.4/Vector3) }
+### static ExtractMinAndMax(positions, start, count, bias, stride) &rarr; { minimum: [Vector3](/classes/2.4/Vector3),  maximum: [Vector3](/classes/2.4/Vector3) }
 
 
 
@@ -205,6 +205,25 @@ Converts an angle in degrees to radian
  | positions | number[] |    A 1-dimension array containing the position to extract. Each position should have 3 coordinates
  | start | number |    The start index
  | count | number |    The number of position to browse.
+optional | bias | [Vector2](/classes/2.4/Vector2) | 
+### static Vector2ArrayFeeder(array) &rarr; (i: undefined) =&gt; [Vector2](/classes/2.4/Vector2)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | array | Array&lt;[Vector2](/classes/2.4/Vector2)&gt; | 
+
+### static ExtractMinAndMaxVector2(feeder, bias) &rarr; { minimum: [Vector2](/classes/2.4/Vector2),  maximum: [Vector2](/classes/2.4/Vector2) }
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | feeder | (index: number) =&gt; [Vector2](/classes/2.4/Vector2) | 
+optional | bias | [Vector2](/classes/2.4/Vector2) | 
 ### static MakeArray(obj, allowsNullUndefined) &rarr; Array&lt;any&gt;
 
 Make an array
@@ -226,15 +245,15 @@ Returns the pointer prefix Checks if hand.js is referenced in this project or if
 ---|---|---|---
  | func | any |    @param func
 
-### static RequestFullscreen(element) &rarr; void
+### static RequestFullscreen(element, options) &rarr; void
 
-Request to get the fullscreen
+
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | element | any |    @param element
-
+optional | options | any | 
 ### static ExitFullscreen() &rarr; void
 
 Exit fullscreen
@@ -409,3 +428,25 @@ optional | isType | boolean |
 ---|---|---|---
  | array | Array&lt;T&gt; | 
  | predicate | (item: undefined) =&gt; boolean | 
+### static arrayOrStringFeeder(array) &rarr; (i: undefined) =&gt; number
+
+This method can be used with hashCodeFromStream when your input is an array of values that are either: number, string, boolean or custom type implementing the getHashCode():number method.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | array | any | 
+
+### static hashCodeFromStream(feeder) &rarr; number
+
+Compute the hashCode of a stream of number
+
+To compute the HashCode on a string or an Array of data types implementing the getHashCode() method, use the arrayOrStringFeeder method.
+
+@return the hash code computed
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | feeder | (index: number) =&gt; number |  a callback that will be called until it returns null, each valid returned values will be used to compute the hash code.
+

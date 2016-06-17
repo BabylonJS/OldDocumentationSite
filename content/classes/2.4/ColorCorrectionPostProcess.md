@@ -13,7 +13,7 @@ class [ColorCorrectionPostProcess](/classes/2.4/ColorCorrectionPostProcess) exte
 
 ## Constructor
 
-## new [ColorCorrectionPostProcess](/classes/2.4/ColorCorrectionPostProcess)(name, colorTableUrl, ratio, camera, samplingMode, engine, reusable)
+## new [ColorCorrectionPostProcess](/classes/2.4/ColorCorrectionPostProcess)(name, colorTableUrl, options, PostProcessOptions, camera, samplingMode, engine, reusable)
 
 
 
@@ -22,7 +22,7 @@ class [ColorCorrectionPostProcess](/classes/2.4/ColorCorrectionPostProcess) exte
 ---|---|---|---
  | name | string |    
  | colorTableUrl | string |    
- | ratio | number |    
+ | options | number or PostProcessOptions | 
  | camera | [Camera](/classes/2.4/Camera) |    
 optional | samplingMode | number |    
 optional | engine | [Engine](/classes/2.4/Engine) |    

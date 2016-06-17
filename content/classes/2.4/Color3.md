@@ -42,6 +42,12 @@ blue value
 ### toString() &rarr; string
 
 Returns a string representation of the color
+### getClassName() &rarr; string
+
+
+### getHashCode() &rarr; number
+
+
 ### toArray(array, index) &rarr; [Color3](/classes/2.4/Color3)
 
 Fills an array from a given index with the color's RGB values

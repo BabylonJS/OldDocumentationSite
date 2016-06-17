@@ -33,7 +33,7 @@ The maximum render texture size
 
 
 
-### s3tc : any
+### s3tc : WEBGL_compressed_texture_s3tc
 
 
 
@@ -41,7 +41,7 @@ The maximum render texture size
 
 
 
-### textureAnisotropicFilterExtension : any
+### textureAnisotropicFilterExtension : EXT_texture_filter_anisotropic
 
 
 
@@ -49,7 +49,7 @@ The maximum render texture size
 
 The maximum anisotropy for the using browser
 
-### instancedArrays : any
+### instancedArrays : ANGLE_instanced_arrays
 
 
 

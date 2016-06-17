@@ -171,10 +171,6 @@ Receive shadows
 
 @default false
 
-### actionManager : [ActionManager](/classes/2.4/ActionManager)
-
-The action manager
-
 ### renderOutline : boolean
 
 Render Outline
@@ -250,6 +246,12 @@ The layer mask
 ### alwaysSelectAsActiveMesh : boolean
 
 
+
+### actionManager : [ActionManager](/classes/2.4/ActionManager)
+
+This scene's action manager
+
+@type {BABYLON.[ActionManager](/classes/2.4/ActionManager)}
 
 ### physicsImpostor : undefined
 

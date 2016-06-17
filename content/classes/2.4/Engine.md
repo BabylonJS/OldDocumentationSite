@@ -163,6 +163,10 @@ An array of [Scene](/classes/2.4/Scene)
 
 The number of draw calls submitted last frame
 
+### WebGLTexture : undefined
+
+
+
 ### loadingScreen : ILoadingScreen
 
 
@@ -289,7 +293,7 @@ engine.runRenderLoop(function () {
 ---|---|---|---
  | renderFunction | () =&gt; void |    @param renderFunction
 
-### switchFullscreen(requestPointerLock) &rarr; void
+### switchFullscreen(requestPointerLock, options) &rarr; void
 
 Toggle full screen mode.
 
@@ -297,7 +301,7 @@ Toggle full screen mode.
  | Name | Type | Description
 ---|---|---|---
  | requestPointerLock | boolean |    If true, the user requests a pointer lock
-
+optional | options | any |    Can contains these parameters : generateDepthBuffer, generateMipMaps, samplingMode
 ### clear(color, backBuffer, depthStencil) &rarr; void
 
 Clear the canvas with the given parameters.
@@ -308,6 +312,17 @@ Clear the canvas with the given parameters.
  | color | any |    The clear color used
  | backBuffer | boolean |    True if this method should clear the color buffer
  | depthStencil | boolean |    True if this method should clear the depth buffer
+### scissorClear(x, y, width, height, clearColor) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | x | number |    @param x
+ | y | number |    @param y
+ | width | number |    The width of the rectangle
+ | height | number |    The height of the rectangle
 ### setViewport(viewport, requiredWidth, requiredHeight) &rarr; void
 
 Set the WebGL's viewport
@@ -394,25 +409,25 @@ Flushes the frame buffer
 Restore the default frame buffer
 ### createVertexBuffer(vertices) &rarr; WebGLBuffer
 
-Create a new vertex Buffer object
+Create a new vertex [Buffer](/classes/2.4/Buffer) object
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | vertices | number[] |    The array of vertices
 
-### createDynamicVertexBuffer(capacity) &rarr; WebGLBuffer
+### createDynamicVertexBuffer(vertices) &rarr; WebGLBuffer
 
-Create a dynamic vertex buffer object
+
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | capacity | number |    The size of this dynamic buffer
+ | vertices | number[] |    The array of vertices
 
-### updateDynamicVertexBuffer(vertexBuffer, vertices, offset) &rarr; void
+### updateDynamicVertexBuffer(vertexBuffer, vertices, offset, count) &rarr; void
 
-Updates the given dynamic vertex buffer object
+
 
 #### Parameters
  | Name | Type | Description
@@ -429,9 +444,27 @@ Create a new index buffer
 ---|---|---|---
  | indices | number[] |    @param indices
 
-### bindBuffers(vertexBuffer, indexBuffer, vertexDeclaration, vertexStrideSize, effect) &rarr; void
+### bindArrayBuffer(buffer) &rarr; void
 
-Bind buffer with the given vertexBuffer, indexBuffer, vertexDeclaration vertexStrideSize and effect
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | buffer | WebGLBuffer |    The buffer
+
+### updateArrayBuffer(data) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | data | Float32Array |    
+
+### bindBuffersDirectly(vertexBuffer, indexBuffer, vertexDeclaration, vertexStrideSize, effect) &rarr; void
+
+
 
 #### Parameters
  | Name | Type | Description
@@ -440,16 +473,19 @@ Bind buffer with the given vertexBuffer, indexBuffer, vertexDeclaration vertexSt
  | indexBuffer | WebGLBuffer |    The given index buffer
  | vertexDeclaration | number[] |    The given vertex declaration
  | vertexStrideSize | number |    The given vertex
-### bindMultiBuffers(vertexBuffers, indexBuffer, effect) &rarr; void
+### bindBuffers(vertexBuffers, indexBuffer, effect) &rarr; void
 
-Bind some buffers with the given vertexBuffer, indexBuffer and effect
+
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | vertexBuffers | [VertexBuffer](/classes/2.4/VertexBuffer)[] |    The given vextex buffer
+ | vertexBuffers | { [key: string]: [VertexBuffer](/classes/2.4/VertexBuffer) } |    The given vextex buffer
  | indexBuffer | WebGLBuffer |    The given index buffer
  | effect | [Effect](/classes/2.4/Effect) |    @param effect
+### unbindInstanceAttributes() &rarr; void
+
+
 ### createInstancesBuffer(capacity) &rarr; WebGLBuffer
 
 Create a dynamic instance buffer
@@ -468,25 +504,15 @@ Delete an existing instance buffer
 ---|---|---|---
  | buffer | WebGLBuffer |    The buffer
 
-### updateAndBindInstancesBuffer(instancesBuffer, data, offsetLocations) &rarr; void
+### updateAndBindInstancesBuffer(instancesBuffer, data, offsetLocations, [InstancingAttributeInfo](/classes/2.4/InstancingAttributeInfo)) &rarr; void
 
-Update and bind the given instance buffer
+
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | instancesBuffer | WebGLBuffer |    The instances buffer
  | data | Float32Array |    
- | offsetLocations | number[] |    @param offsetLocations
-### unBindInstancesBuffer(instancesBuffer, offsetLocations) &rarr; void
-
-Unbind the given instance buffer
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | instancesBuffer | WebGLBuffer |    The instances buffer
- | offsetLocations | number[] |    @param offsetLocations
 ### applyStates() &rarr; void
 
 
@@ -765,15 +791,15 @@ Enables or disables the writing or red, blue, green and alpha
 ---|---|---|---
  | enable | boolean |    Set true if the alpha testing is enabled, false otherwise.
 
-### setAlphaMode(mode) &rarr; void
+### setAlphaMode(mode, noDepthWriteChange) &rarr; void
 
-Set the engine alpha mode
+
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | mode | number |    @param mode
-
+optional | noDepthWriteChange | boolean | 
 ### getAlphaMode() &rarr; number
 
 
@@ -840,9 +866,9 @@ optional | onError | () =&gt; void |    Function when error occurs.
  | generateMipMaps | boolean |    True if you want to generate Mipmap, false otherwise.
  | invertY | boolean |    @param invertY
  | samplingMode | number |    
-### createDynamicTexture(width, height, generateMipMaps, samplingMode, forceExponantOfTwo) &rarr; WebGLTexture
+### createDynamicTexture(width, height, generateMipMaps, samplingMode) &rarr; WebGLTexture
 
-Create a new dynamic texture
+
 
 #### Parameters
  | Name | Type | Description
@@ -850,7 +876,6 @@ Create a new dynamic texture
  | width | number |    The width of the rectangle
  | height | number |    The height of the rectangle
  | generateMipMaps | boolean |    True if you want to generate Mipmap, false otherwise.
- | samplingMode | number |    
 ### updateTextureSamplingMode(samplingMode, texture) &rarr; void
 
 
@@ -921,7 +946,7 @@ optional | options | any |    Can contains these parameters : generateDepthBuffe
  | texture | WebGLTexture |    @param texture
  | width | number |    The width of the rectangle
  | height | number |    The height of the rectangle
-### createRawCubeTexture(url, scene, size, format, type, noMipmap, callback, mipmmapGenerator) &rarr; WebGLTexture
+### createRawCubeTexture(url, scene, size, format, type, noMipmap, callback, mipmmapGenerator) &rarr; (url, scene, size, format, type, noMipmap, callback, mipmmapGenerator)
 
 
 

@@ -17,7 +17,7 @@ A tutorial about post process can be found here
 
 ## Constructor
 
-## new [PostProcess](/classes/2.4/PostProcess)(name, fragmentUrl, parameters, samplers, ratio, any, camera, samplingMode, engine, reusable, defines, textureType)
+## new [PostProcess](/classes/2.4/PostProcess)(name, fragmentUrl, parameters, samplers, options, PostProcessOptions, camera, samplingMode, engine, reusable, defines, textureType)
 
 
 
@@ -28,7 +28,7 @@ A tutorial about post process can be found here
  | fragmentUrl | string |    The URL of .fragment.fx file where you will code the GLSL shader used for every pixel of the screen
  | parameters | string[] |    A list of your uniforms parameters
  | samplers | string[] |    A list of additionnal samplers
- | ratio | number or any |    The size of the postprocess (0.5 means that your postprocess will have a width = canvas.width * 0.5 and a height = canvas.height * 0.5)
+ | options | number or PostProcessOptions | 
  | camera | [Camera](/classes/2.4/Camera) |    The given camera
 optional | samplingMode | number |    [Texture](/classes/2.4/Texture).NEAREST_SAMPLINGMODE, [Texture](/classes/2.4/Texture).BILINEAR_SAMPLINGMODE or [Texture](/classes/2.4/Texture).TRILINEAR_SAMPLINGMODE
 optional | engine | [Engine](/classes/2.4/Engine) |    The engine to attach the postprocess.
