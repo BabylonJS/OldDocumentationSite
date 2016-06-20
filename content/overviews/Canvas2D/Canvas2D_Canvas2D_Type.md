@@ -12,7 +12,7 @@ Inheriting the properties of `Group2D`, a Canvas is a 2D rectangle with a positi
 The Canvas can be rendered in two different spaces:
 
  - **ScreenSpace**: it lies above the rendered 3D Scene and is coplanar to the rendering viewport. Its position/rotation/scale is expressed in screen coordinate, with the origin being the top/left corner of the rendering viewport. [Example](http://babylonjs-playground.com/#2AVSFH#35). An instance of the `ScreenSpaceCanvas2D` class must be created.
- - **WorldSpace**: the canvas has a position/rotation/scale that is expressed in World Coordinates, your canvas is like a 2D Rectangle lying in World Space, like any other 3D objects you can find in a 3D Scene. [Example](http://babylonjs-playground.com/#1BKDEO#18). And instance of the `WorldSpaceCanvas2D` class must be created.
+ - **WorldSpace**: the canvas has a position/rotation/scale that is expressed in World Coordinates, your canvas is like a 2D Rectangle lying in World Space, like any other 3D objects you can find in a 3D Scene. [Example](http://babylonjs-playground.com/#1BKDEO#22). And instance of the `WorldSpaceCanvas2D` class must be created.
 
 As you can guess, these two types serve different purposes, ScreenSpace being more adapted to render GUI in your Viewport, WorldSpace being more about taking advantage of the 2D Engine to render content in a 3D Scene **as a part** of the 3D Scene.
 
