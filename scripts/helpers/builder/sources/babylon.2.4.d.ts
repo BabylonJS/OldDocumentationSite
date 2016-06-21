@@ -1186,7 +1186,7 @@ declare module BABYLON {
         _getProperty(propertyPath: string): string;
         _getEffectiveTarget(target: any, propertyPath: string): any;
         serialize(parent: any): any;
-        protected _serialize(serializedAction: any, parent?: any): any;
+        private _serialize(serializedAction: any, parent?: any): any;
         static _SerializeValueAsString: (value: any) => string;
         static _GetTargetProperty: (target: Scene | Node) => {
             name: string;
@@ -1333,7 +1333,7 @@ declare module BABYLON {
         _getProperty(propertyPath: string): string;
         _getEffectiveTarget(target: any, propertyPath: string): any;
         serialize(): any;
-        protected _serialize(serializedCondition: any): any;
+        private _serialize(serializedCondition: any): any;
     }
     class ValueCondition extends Condition {
         propertyPath: string;
@@ -2636,7 +2636,7 @@ declare module BABYLON {
         /**
          * Protected handler that will be called when the instance is about to be locked.
          */
-        protected onLock(): void;
+        private onLock(): void;
     }
     class SolidColorBrush2D extends LockableBase implements IBrush2D {
         constructor(color: Color4, lock?: boolean);
@@ -2746,7 +2746,7 @@ declare module BABYLON {
             backgroundBorder?: IBrush2D ;
             backgroundBorderThickNess?: number;
         });
-        protected _canvasPreInit(settings: any): void;
+        private _canvasPreInit(settings: any): void;
         static hierarchyLevelMaxSiblingCount: number;
         private _setupInteraction(enable);
         /**
@@ -2858,7 +2858,7 @@ declare module BABYLON {
         private _capturedPointers;
         private _scenePrePointerObserver;
         private _scenePointerObserver;
-        protected _worldSpaceNode: Node;
+        private _worldSpaceNode: Node;
         private _mapCounter;
         private _background;
         private _scene;
@@ -2874,7 +2874,7 @@ declare module BABYLON {
         private _supprtInstancedArray;
         private _trackedGroups;
         _renderingSize: Size;
-        protected onPrimBecomesDirty(): void;
+        private onPrimBecomesDirty(): void;
         private static _v;
         private static _m;
         private _updateTrackedNodes();
@@ -3106,8 +3106,8 @@ declare module BABYLON {
         static subdivisionsProperty: Prim2DPropInfo;
         actualSize: Size;
         subdivisions: number;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
-        protected updateLevelBoundingInfo(): void;
+        private levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        private updateLevelBoundingInfo(): void;
         /**
          * Create an Ellipse 2D Shape primitive
          * @param settings a combination of settings, possible ones are
@@ -3168,10 +3168,10 @@ declare module BABYLON {
             paddingBottom?: number ;
             padding?: string;
         });
-        protected createModelRenderCache(modelKey: string): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Ellipse2DRenderCache;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        private createModelRenderCache(modelKey: string): ModelRenderCache;
+        private setupModelRenderCache(modelRenderCache: ModelRenderCache): Ellipse2DRenderCache;
+        private createInstanceDataParts(): InstanceDataBase[];
+        private refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _subdivisions;
     }
 }
@@ -3252,7 +3252,7 @@ declare module BABYLON {
             padding?: string;
         });
         static _createCachedCanvasGroup(owner: Canvas2D): Group2D;
-        protected applyCachedTexture(vertexData: VertexData, material: StandardMaterial): void;
+        private applyCachedTexture(vertexData: VertexData, material: StandardMaterial): void;
         /**
          * Allow you to access the information regarding the cached rectangle of the Group2D into the MapTexture.
          * If the `noWorldSpaceNode` options was used at the creation of a WorldSpaceCanvas, the rendering of the canvas must be made by the caller, so typically you want to bind the cacheTexture property to some material/mesh and you must use the cachedRect.UVs property to get the UV coordinates to use for your quad that will display the Canvas.
@@ -3293,20 +3293,20 @@ declare module BABYLON {
          * Get/set the Scene's Node that should be tracked, the group's position will follow the projected position of the Node.
          */
         trackedNode: Node;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
-        protected updateLevelBoundingInfo(): void;
-        protected _prepareGroupRender(context: PrepareRender2DContext): void;
-        protected _groupRender(): void;
+        private levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        private updateLevelBoundingInfo(): void;
+        private _prepareGroupRender(context: PrepareRender2DContext): void;
+        private _groupRender(): void;
         private _updateTransparentData();
         private _renderTransparentData();
         private _prepareContext(engine, context, gii);
         private _bindCacheTarget();
         private _unbindCacheTarget();
-        protected handleGroupChanged(prop: Prim2DPropInfo): void;
+        private handleGroupChanged(prop: Prim2DPropInfo): void;
         private detectGroupStates();
         private _trackedNode;
-        protected _isRenderableGroup: boolean;
-        protected _isCachedGroup: boolean;
+        private _isRenderableGroup: boolean;
+        private _isCachedGroup: boolean;
         private _cacheGroupDirty;
         private _cacheBehavior;
         private _viewportPosition;
@@ -3405,11 +3405,11 @@ declare module BABYLON {
         private static _prevB;
         private static _curA;
         private static _curB;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
-        protected boundingMin: Vector2;
-        protected boundingMax: Vector2;
-        protected getUsedShaderCategories(dataPart: InstanceDataBase): string[];
-        protected updateLevelBoundingInfo(): void;
+        private levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        private boundingMin: Vector2;
+        private boundingMax: Vector2;
+        private getUsedShaderCategories(dataPart: InstanceDataBase): string[];
+        private updateLevelBoundingInfo(): void;
         /**
          * Create an 2D Lines Shape primitive. The defined lines may be opened or closed (see below)
          * @param points an array that describe the points to use to draw the line, must contain at least two entries.
@@ -3475,7 +3475,7 @@ declare module BABYLON {
             paddingBottom?: number ;
             padding?: string;
         });
-        protected createModelRenderCache(modelKey: string): ModelRenderCache;
+        private createModelRenderCache(modelKey: string): ModelRenderCache;
         private _perp(v, res);
         private _direction(a, b, res);
         private static _miterTps;
@@ -3491,11 +3491,11 @@ declare module BABYLON {
         private _storeIndex(ib, baseOffset, index, vertexIndex);
         private _buildCap(vb, vbi, ib, ibi, pos, thickness, borderThickness, type, capDir, contour);
         private _buildLine(vb, contour, ht, bt?);
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Lines2DRenderCache;
+        private setupModelRenderCache(modelRenderCache: ModelRenderCache): Lines2DRenderCache;
         private _computeLines2D();
         size: Size;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        private createInstanceDataParts(): InstanceDataBase[];
+        private refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private static _noCap;
         private static _roundCap;
         private static _triangleCap;
@@ -3594,13 +3594,13 @@ declare module BABYLON {
         render(instanceInfo: GroupInstanceInfo, context: Render2DContext): boolean;
         addInstanceDataParts(data: InstanceDataBase[]): string;
         removeInstanceData(key: string): void;
-        protected getPartIndexFromId(partId: number): number;
-        protected loadInstancingAttributes(partId: number, effect: Effect): InstancingAttributeInfo[];
+        private getPartIndexFromId(partId: number): number;
+        private loadInstancingAttributes(partId: number, effect: Effect): InstancingAttributeInfo[];
         private static v2;
         private static v3;
         private static v4;
-        protected setupUniforms(effect: Effect, partIndex: number, data: DynamicFloatArray, elementCount: number): void;
-        protected _engine: Engine;
+        private setupUniforms(effect: Effect, partIndex: number, data: DynamicFloatArray, elementCount: number): void;
+        private _engine: Engine;
         private _modelKey;
         _instancesData: StringDictionary<InstanceDataBase[]>;
         private _nextKey;
@@ -4197,7 +4197,7 @@ declare module BABYLON {
          */
         y: number;
         private static boundinbBoxReentrency;
-        protected static nullSize: Size;
+        private static nullSize: Size;
         /**
          * Size of the primitive or its bounding area
          * BEWARE: if you change only size.width or height it won't trigger a property change and you won't have the expected behavior.
@@ -4325,8 +4325,8 @@ declare module BABYLON {
          */
         pointerEventObservable: Observable<PrimitivePointerInfo>;
         findById(id: string): Prim2DBase;
-        protected onZOrderChanged(): void;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        private onZOrderChanged(): void;
+        private levelIntersect(intersectInfo: IntersectInfo2D): boolean;
         /**
          * Capture all the Events of the given PointerId for this primitive.
          * Don't forget to call releasePointerEventsCapture when done.
@@ -4349,26 +4349,26 @@ declare module BABYLON {
          * Dispose the primitive, remove it from its parent.
          */
         dispose(): boolean;
-        protected onPrimBecomesDirty(): void;
+        private onPrimBecomesDirty(): void;
         _needPrepare(): boolean;
         _prepareRender(context: PrepareRender2DContext): void;
         _prepareRenderPre(context: PrepareRender2DContext): void;
         _prepareRenderPost(context: PrepareRender2DContext): void;
-        protected _canvasPreInit(settings: any): void;
-        protected static _isCanvasInit: boolean;
-        protected static CheckParent(parent: Prim2DBase): void;
-        protected updateCachedStatesOf(list: Prim2DBase[], recurse: boolean): void;
+        private _canvasPreInit(settings: any): void;
+        private static _isCanvasInit: boolean;
+        private static CheckParent(parent: Prim2DBase): void;
+        private updateCachedStatesOf(list: Prim2DBase[], recurse: boolean): void;
         private _parentLayoutDirty();
-        protected _setLayoutDirty(): void;
+        private _setLayoutDirty(): void;
         private _checkPositionChange();
-        protected _positioningDirty(): void;
+        private _positioningDirty(): void;
         private _changeLayoutEngine(engine);
         private static _t0;
         private static _t1;
         private static _t2;
         private static _v0;
         private _updateLocalTransform();
-        protected updateCachedStates(recurse: boolean): void;
+        private updateCachedStates(recurse: boolean): void;
         private static _icPos;
         private static _icArea;
         private static _size;
@@ -4387,15 +4387,15 @@ declare module BABYLON {
          * @param initialContentPosition the position of the initial content area to compute, a valid object is passed, you have to set its properties. PLEASE ROUND the values, we're talking about pixels and fraction of them is not a good thing!
          * @param initialContentArea the size of the initial content area to compute, a valid object is passed, you have to set its properties. PLEASE ROUND the values, we're talking about pixels and fraction of them is not a good thing!
          */
-        protected _getInitialContentAreaToRef(primSize: Size, initialContentPosition: Vector2, initialContentArea: Size): void;
+        private _getInitialContentAreaToRef(primSize: Size, initialContentPosition: Vector2, initialContentArea: Size): void;
         private _owner;
         private _parent;
         private _actionManager;
-        protected _children: Array<Prim2DBase>;
+        private _children: Array<Prim2DBase>;
         private _renderGroup;
         private _hierarchyDepth;
-        protected _hierarchyDepthOffset: number;
-        protected _siblingDepthOffset: number;
+        private _hierarchyDepthOffset: number;
+        private _siblingDepthOffset: number;
         private _zOrder;
         private _margin;
         private _padding;
@@ -4404,12 +4404,12 @@ declare module BABYLON {
         private _id;
         private _position;
         private _actualPosition;
-        protected _size: Size;
-        protected _actualSize: Size;
+        private _size: Size;
+        private _actualSize: Size;
         _boundingSize: Size;
-        protected _minSize: Size;
-        protected _maxSize: Size;
-        protected _desiredSize: Size;
+        private _minSize: Size;
+        private _maxSize: Size;
+        private _desiredSize: Size;
         private _layoutEngine;
         private _marginOffset;
         private _parentMargingOffset;
@@ -4420,12 +4420,12 @@ declare module BABYLON {
         private _rotation;
         private _scale;
         private _origin;
-        protected _parentTransformStep: number;
-        protected _globalTransformStep: number;
-        protected _globalTransformProcessStep: number;
-        protected _localTransform: Matrix;
-        protected _globalTransform: Matrix;
-        protected _invGlobalTransform: Matrix;
+        private _parentTransformStep: number;
+        private _globalTransformStep: number;
+        private _globalTransformProcessStep: number;
+        private _localTransform: Matrix;
+        private _globalTransform: Matrix;
+        private _invGlobalTransform: Matrix;
     }
 }
 
@@ -4462,8 +4462,8 @@ declare module BABYLON {
         private static _i0;
         private static _i1;
         private static _i2;
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
-        protected updateLevelBoundingInfo(): void;
+        private levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        private updateLevelBoundingInfo(): void;
         /**
          * Create an Rectangle 2D Shape primitive. May be a sharp rectangle (with sharp corners), or a rounded one.
          * @param settings a combination of settings, possible ones are
@@ -4527,11 +4527,11 @@ declare module BABYLON {
             padding?: string;
         });
         static roundSubdivisions: number;
-        protected createModelRenderCache(modelKey: string): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Rectangle2DRenderCache;
-        protected _getInitialContentAreaToRef(primSize: Size, initialContentPosition: Vector2, initialContentArea: Size): void;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        private createModelRenderCache(modelKey: string): ModelRenderCache;
+        private setupModelRenderCache(modelRenderCache: ModelRenderCache): Rectangle2DRenderCache;
+        private _getInitialContentAreaToRef(primSize: Size, initialContentPosition: Vector2, initialContentArea: Size): void;
+        private createInstanceDataParts(): InstanceDataBase[];
+        private refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _notRounded;
         private _roundRadius;
     }
@@ -4599,7 +4599,7 @@ declare module BABYLON {
         private _createModelRenderCache();
         private _createModelDataParts();
         private _setupModelRenderCache(parts);
-        protected onZOrderChanged(): void;
+        private onZOrderChanged(): void;
         private _updateInstanceDataParts(gii);
         _getFirstIndexInDataBuffer(): number;
         _getLastIndexInDataBuffer(): number;
@@ -4612,39 +4612,39 @@ declare module BABYLON {
          * @param originOffset an offset applied on the current origin before performing the transformation. Depending on which frame of reference your data is expressed you may have to apply a offset. (if you data is expressed from the bottom/left, no offset is required. If it's expressed from the center the a [-0.5;-0.5] offset has to be applied.
          * @param res an allocated Vector2 that will receive the transformed content
          */
-        protected transformPointWithOriginByRef(p: Vector2, originOffset: Vector2, res: Vector2): void;
-        protected transformPointWithOriginToRef(p: Vector2, originOffset: Vector2, res: Vector2): Vector2;
+        private transformPointWithOriginByRef(p: Vector2, originOffset: Vector2, res: Vector2): void;
+        private transformPointWithOriginToRef(p: Vector2, originOffset: Vector2, res: Vector2): Vector2;
         /**
          * Get the info for a given effect based on the dataPart metadata
          * @param dataPartId partId in part list to get the info
          * @param vertexBufferAttributes vertex buffer attributes to manually add
          * @param useInstanced specified if Instanced Array should be used, if null the engine caps will be used (so true if WebGL supports it, false otherwise), but you have the possibility to override the engine capability. However, if you manually set true but the engine does not support Instanced Array, this method will return null
          */
-        protected getDataPartEffectInfo(dataPartId: number, vertexBufferAttributes: string[], useInstanced?: boolean): {
+        private getDataPartEffectInfo(dataPartId: number, vertexBufferAttributes: string[], useInstanced?: boolean): {
             attributes: string[];
             uniforms: string[];
             defines: string;
         };
-        protected modelRenderCache: ModelRenderCache;
-        protected createModelRenderCache(modelKey: string): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): void;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected getUsedShaderCategories(dataPart: InstanceDataBase): string[];
-        protected beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
-        protected afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        private modelRenderCache: ModelRenderCache;
+        private createModelRenderCache(modelKey: string): ModelRenderCache;
+        private setupModelRenderCache(modelRenderCache: ModelRenderCache): void;
+        private createInstanceDataParts(): InstanceDataBase[];
+        private getUsedShaderCategories(dataPart: InstanceDataBase): string[];
+        private beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
+        private afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
+        private refreshInstanceDataPart(part: InstanceDataBase): boolean;
         /**
          * Update the instanceDataBase level properties of a part
          * @param part the part to update
          * @param positionOffset to use in multi part per primitive (e.g. the Text2D has N parts for N letter to display), this give the offset to apply (e.g. the position of the letter from the bottom/left corner of the text).
          */
-        protected updateInstanceDataPart(part: InstanceDataBase, positionOffset?: Vector2): void;
+        private updateInstanceDataPart(part: InstanceDataBase, positionOffset?: Vector2): void;
         private _modelRenderCache;
         private _modelRenderInstanceID;
         private _transparentPrimitiveInfo;
-        protected _instanceDataParts: InstanceDataBase[];
-        protected _isAlphaTest: boolean;
-        protected _isTransparent: boolean;
+        private _instanceDataParts: InstanceDataBase[];
+        private _isAlphaTest: boolean;
+        private _isTransparent: boolean;
     }
 }
 
@@ -4672,8 +4672,8 @@ declare module BABYLON {
             border?: IBrush2D ;
             borderThickness?: number;
         });
-        protected getUsedShaderCategories(dataPart: InstanceDataBase): string[];
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        private getUsedShaderCategories(dataPart: InstanceDataBase): string[];
+        private refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _updateTransparencyStatus();
         private _border;
         private _borderThickness;
@@ -4796,10 +4796,10 @@ declare module BABYLON {
         private static _checkUnchanged(curValue, newValue);
         private static propChangedInfo;
         markAsDirty(propertyName: string): void;
-        protected _boundingBoxDirty(): void;
+        private _boundingBoxDirty(): void;
         private _handlePropChanged<T>(curValue, newValue, propName, propInfo, typeLevelCompare);
-        protected onPrimitivePropertyDirty(propFlagId: number): void;
-        protected handleGroupChanged(prop: Prim2DPropInfo): void;
+        private onPrimitivePropertyDirty(propFlagId: number): void;
+        private handleGroupChanged(prop: Prim2DPropInfo): void;
         /**
          * Check if a given set of properties are dirty or not.
          * @param flags a ORed combination of Prim2DPropInfo.flagId values
@@ -4811,7 +4811,7 @@ declare module BABYLON {
          * @param flags a ORed combination of Prim2DPropInfo.flagId values
          * @return the new set of property still marked as dirty
          */
-        protected clearPropertiesDirty(flags: number): number;
+        private clearPropertiesDirty(flags: number): number;
         _resetPropertiesDirty(): void;
         /**
          * Retrieve the boundingInfo for this Primitive, computed based on the primitive itself and NOT its children
@@ -4820,11 +4820,11 @@ declare module BABYLON {
         /**
          * This method must be overridden by a given Primitive implementation to compute its boundingInfo
          */
-        protected updateLevelBoundingInfo(): void;
+        private updateLevelBoundingInfo(): void;
         /**
          * Property method called when the Primitive becomes dirty
          */
-        protected onPrimBecomesDirty(): void;
+        private onPrimBecomesDirty(): void;
         static _hookProperty<T>(propId: number, piStore: (pi: Prim2DPropInfo) => void, typeLevelCompare: boolean, dirtyBoundingInfo: boolean, kind: number): (target: Object, propName: string , descriptor: TypedPropertyDescriptor<T>) => void;
         /**
          * Add an externally attached data from its key.
@@ -4904,9 +4904,9 @@ declare module BABYLON {
         private _externalData;
         private _modelKey;
         private _propInfo;
-        protected _levelBoundingInfo: BoundingInfo2D;
-        protected _boundingInfo: BoundingInfo2D;
-        protected _instanceDirtyFlags: number;
+        private _levelBoundingInfo: BoundingInfo2D;
+        private _boundingInfo: BoundingInfo2D;
+        private _instanceDirtyFlags: number;
     }
     function modelLevelProperty<T>(propId: number, piStore: (pi: Prim2DPropInfo) => void, typeLevelCompare?: boolean, dirtyBoundingInfo?: boolean): (target: Object, propName: string , descriptor: TypedPropertyDescriptor<T>) => void;
     function instanceLevelProperty<T>(propId: number, piStore: (pi: Prim2DPropInfo) => void, typeLevelCompare?: boolean, dirtyBoundingInfo?: boolean): (target: Object, propName: string , descriptor: TypedPropertyDescriptor<T>) => void;
@@ -4949,12 +4949,12 @@ declare module BABYLON {
          * Get/set if the sprite rendering should be aligned to the target rendering device pixel or not
          */
         alignToPixel: boolean;
-        protected updateLevelBoundingInfo(): void;
+        private updateLevelBoundingInfo(): void;
         /**
          * Get the animatable array (see http://doc.babylonjs.com/tutorials/Animations)
          */
         getAnimatables(): IAnimatable[];
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        private levelIntersect(intersectInfo: IntersectInfo2D): boolean;
         /**
          * Create an 2D Sprite primitive
          * @param texture the texture that stores the sprite to render
@@ -5015,11 +5015,11 @@ declare module BABYLON {
             padding?: string;
         });
         static _createCachedCanvasSprite(owner: Canvas2D, texture: MapTexture, size: Size, pos: Vector2): Sprite2D;
-        protected createModelRenderCache(modelKey: string): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Sprite2DRenderCache;
-        protected createInstanceDataParts(): InstanceDataBase[];
+        private createModelRenderCache(modelKey: string): ModelRenderCache;
+        private setupModelRenderCache(modelRenderCache: ModelRenderCache): Sprite2DRenderCache;
+        private createInstanceDataParts(): InstanceDataBase[];
         private static _prop;
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        private refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _texture;
         private _location;
         private _spriteFrame;
@@ -5065,12 +5065,12 @@ declare module BABYLON {
          * Get the area that bounds the text associated to the primitive
          */
         textSize: Size;
-        protected fontTexture: FontTexture;
+        private fontTexture: FontTexture;
         /**
          * Dispose the primitive, remove it from its parent
          */
         dispose(): boolean;
-        protected updateLevelBoundingInfo(): void;
+        private updateLevelBoundingInfo(): void;
         /**
          * Create a Text primitive
          * @param text the text to display
@@ -5130,13 +5130,13 @@ declare module BABYLON {
             paddingBottom?: number ;
             padding?: string;
         });
-        protected levelIntersect(intersectInfo: IntersectInfo2D): boolean;
-        protected createModelRenderCache(modelKey: string): ModelRenderCache;
-        protected setupModelRenderCache(modelRenderCache: ModelRenderCache): Text2DRenderCache;
-        protected createInstanceDataParts(): InstanceDataBase[];
-        protected beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
-        protected afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
-        protected refreshInstanceDataPart(part: InstanceDataBase): boolean;
+        private levelIntersect(intersectInfo: IntersectInfo2D): boolean;
+        private createModelRenderCache(modelKey: string): ModelRenderCache;
+        private setupModelRenderCache(modelRenderCache: ModelRenderCache): Text2DRenderCache;
+        private createInstanceDataParts(): InstanceDataBase[];
+        private beforeRefreshForLayoutConstruction(part: InstanceDataBase): any;
+        private afterRefreshForLayoutConstruction(part: InstanceDataBase, obj: any): void;
+        private refreshInstanceDataPart(part: InstanceDataBase): boolean;
         private _updateCharCount();
         private _fontTexture;
         private _tabulationSize;
@@ -10346,7 +10346,7 @@ declare module BABYLON {
         type: number;
         jointData: PhysicsJointData;
         private _physicsJoint;
-        protected _physicsPlugin: IPhysicsEnginePlugin;
+        private _physicsPlugin: IPhysicsEnginePlugin;
         constructor(type: number, jointData: PhysicsJointData);
         physicsJoint: any;
         physicsPlugin: IPhysicsEnginePlugin;
@@ -11815,23 +11815,23 @@ declare module BABYLON {
          * Call this method when you no longer need the rectangle to be in the map.
          */
         freeContent(): void;
-        protected isUsed: boolean;
-        protected findAndSplitNode(contentSize: Size): PackedRect;
+        private isUsed: boolean;
+        private findAndSplitNode(contentSize: Size): PackedRect;
         private findNode(size);
         private splitNode(contentSize);
         private attemptDefrag();
         private clearNode();
         private isRecursiveFree;
-        protected evalFreeSize(size: number): number;
-        protected _root: PackedRect;
-        protected _parent: PackedRect;
+        private evalFreeSize(size: number): number;
+        private _root: PackedRect;
+        private _parent: PackedRect;
         private _contentSize;
         private _initialSize;
         private _leftNode;
         private _rightNode;
         private _bottomNode;
         private _pos;
-        protected _size: Size;
+        private _size: Size;
     }
     /**
      * The purpose of this class is to pack several Rectangles into a big map, while trying to fit everything as optimally as possible.

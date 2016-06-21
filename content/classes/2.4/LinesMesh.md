@@ -45,6 +45,8 @@ Default value is 0.1
 
 @returns the intersection Threshold value.
 
+
+
 The intersection Threshold is the margin applied when intersection a segment of the [LinesMesh](/classes/2.4/LinesMesh) with a [Ray](/classes/2.4/Ray).
 
 This margin is expressed in world space coordinates, so its value may vary.

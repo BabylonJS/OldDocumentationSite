@@ -50,3 +50,137 @@ Use this strategy if memory is a concern above rendering performances and/or if 
 
 Note that you can't use this strategy for WorldSpace Canvas, they need at least a top level group caching.
 
+### static hierarchyLevelMaxSiblingCount : number
+
+
+
+### worldSpaceToNodeLocal : (worldPos: [Vector3](/classes/2.4/Vector3)) =&gt; [Vector2](/classes/2.4/Vector2)
+
+If you set your own WorldSpaceNode to display the [Canvas2D](/classes/2.4/Canvas2D) you have to provide your own implementation of this method which computes the local position in the Canvas based on the given 3D World one.
+
+Beware that you have to take under consideration the origin and the renderScaleFactor in your calculations! Good luck!
+
+### scene : [Scene](/classes/2.4/Scene)
+
+Accessor to the [Scene](/classes/2.4/Scene) that owns the Canvas
+
+@returns The instance of the [Scene](/classes/2.4/Scene) object
+
+### engine : [Engine](/classes/2.4/Engine)
+
+Accessor to the [Engine](/classes/2.4/Engine) that drives the [Scene](/classes/2.4/Scene) used by this Canvas
+
+@returns The instance of the [Engine](/classes/2.4/Engine) object
+
+### cachingStrategy : number
+
+Accessor of the Caching Strategy used by this Canvas.
+
+See [Canvas2D](/classes/2.4/Canvas2D).CACHESTRATEGY_xxxx static members for more information
+
+@returns the value corresponding to the used strategy.
+
+### worldSpaceCanvasNode : [Node](/classes/2.4/Node)
+
+Only valid for World [Space](/classes/2.4/Space) Canvas, returns the scene node that displays the canvas
+
+### supportInstancedArray : boolean
+
+Check if the WebGL Instanced Array extension is supported or not
+
+### backgroundFill : IBrush2D
+
+Property that defines the fill object used to draw the background of the Canvas.
+
+Note that Canvas with a Caching Strategy of
+
+@returns If the background is not set, null will be returned, otherwise a valid fill object is returned.
+
+### backgroundBorder : IBrush2D
+
+Property that defines the border object used to draw the background of the Canvas.
+
+@returns If the background is not set, null will be returned, otherwise a valid border object is returned.
+
+### backgroundBorderThickness : number
+
+Property that defines the thickness of the border object used to draw the background of the Canvas.
+
+@returns If the background is not set, null will be returned, otherwise a valid number matching the thickness is returned.
+
+### backgroundRoundRadius : number
+
+You can set the roundRadius of the background
+
+@returns The current roundRadius
+
+### interactionEnabled : boolean
+
+Enable/Disable interaction for this Canvas
+
+When enabled the [Prim2DBase](/classes/2.4/Prim2DBase).pointerEventObservable property will notified when appropriate events occur
+
+## Methods
+
+### isPointerCaptured(pointerId) &rarr; boolean
+
+Determine if the given pointer is captured or not
+
+@return true if it's captured, false otherwise
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | pointerId | number |  the Id of the pointer
+
+### dispose() &rarr; boolean
+
+Don't forget to call the dispose method when you're done with the Canvas instance.
+
+But don't worry, if you dispose its scene, the canvas will be automatically disposed too.
+### static GetSolidColorBrush(color) &rarr; IBrush2D
+
+Get a Solid Color Brush instance matching the given color.
+
+@return A shared instance of the [SolidColorBrush2D](/classes/2.4/SolidColorBrush2D) class that use the given color
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | color | [Color4](/classes/2.4/Color4) |  The color to retrieve
+
+### static GetSolidColorBrushFromHex(hexValue) &rarr; IBrush2D
+
+Get a Solid Color Brush instance matching the given color expressed as a CSS formatted hexadecimal value.
+
+@return A shared instance of the [SolidColorBrush2D](/classes/2.4/SolidColorBrush2D) class that uses the given color
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | hexValue | string | 
+
+### static GetGradientColorBrush(color1, color2, translation, rotation, scale) &rarr; IBrush2D
+
+Get a Gradient Color Brush
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | color1 | [Color4](/classes/2.4/Color4) |  starting color
+ | color2 | [Color4](/classes/2.4/Color4) |  engine color
+optional | translation | [Vector2](/classes/2.4/Vector2) |  translation vector to apply. default is [0;0]
+optional | rotation | number |  rotation in radian to apply to the brush, initial direction is top to bottom. rotation is counter clockwise. default is 0.
+### static GetBrushFromString(brushString) &rarr; IBrush2D
+
+Create a solid or gradient brush from a string value.
+
+ - "solid: #RRGGBBAA" or "#RRGGBBAA"
+
+ - "gradient: #FF808080, #FFFFFFF[, [10:20], 180, 1]" for color1, color2, translation, rotation (degree), scale. The last three are optionals, but if specified must be is this order. "gradient:" can be omitted.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | brushString | string |  should be either
+

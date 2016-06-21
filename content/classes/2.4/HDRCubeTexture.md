@@ -7,6 +7,8 @@ class [HDRCubeTexture](/classes/2.4/HDRCubeTexture) extends [BaseTexture](/class
 
 This represents a texture coming from an HDR input.
 
+
+
 The only supported format is currently panorama picture stored in RGBE format.
 
 Example of such files can be found on HDRLib: http://hdrlib.com/
@@ -16,8 +18,6 @@ Example of such files can be found on HDRLib: http://hdrlib.com/
 ## new [HDRCubeTexture](/classes/2.4/HDRCubeTexture)(url, scene, size, noMipmap, generateHarmonics, useInGammaSpace, usePMREMGenerator)
 
 Instantiates an HDRTexture from the following parameters.
-
-         * @param url The location of the HDR raw data (Panorama stored in RGBE format)
 
 #### Parameters
  | Name | Type | Description

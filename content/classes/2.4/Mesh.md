@@ -402,7 +402,9 @@ Note that a new underlying [VertexBuffer](/classes/2.4/VertexBuffer) object is c
 
 If the `kind` is the `PositionKind`, the mesh [BoundingInfo](/classes/2.4/BoundingInfo) is renewed, so the bounding box and sphere, and the mesh World [Matrix](/classes/2.4/Matrix) is recomputed.
 
-         * Possible `kind` values :
+
+
+Possible `kind` values :
 
 - BABYLON.[VertexBuffer](/classes/2.4/VertexBuffer).PositionKind
 
@@ -457,7 +459,9 @@ If the `kind` is the `PositionKind` and if `updateExtends` is true, the mesh [Bo
 
 If the parameter `makeItUnique` is true, a new global geometry is created from this positions and is set to the mesh.
 
-         * Possible `kind` values :
+
+
+Possible `kind` values :
 
 - BABYLON.[VertexBuffer](/classes/2.4/VertexBuffer).PositionKind
 
@@ -743,8 +747,6 @@ In other words, more vertices, no more indices and a single bigger VBO.
 This method returns nothing.
 
 The mesh is really modified even if not set originally as updatable. Under the hood, a new [VertexBuffer](/classes/2.4/VertexBuffer) is allocated.
-
-         */
 ### flipFaces(flipNormals) &rarr; void
 
 Inverses facet orientations and inverts also the normals with `flipNormals` (default `false`) if true.
@@ -839,7 +841,9 @@ Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBu
 
 The ribbon is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
+
+
+Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
 
 The parameter `pathArray` is a required array of paths, what are each an array of successive [Vector3](/classes/2.4/Vector3). The pathArray parameter depicts the ribbon geometry.
 
@@ -1098,7 +1102,9 @@ The extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials/Parame
 
 Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
-         * Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -1142,7 +1148,9 @@ The custom extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials
 
 Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
-         * Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -1220,7 +1228,9 @@ The lathe is a shape with a symetry axis : a 2D model shape is rotated around th
 
 Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
-         * The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
+
+
+The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
 
 rotated around the Y axis. It's usually a 2D shape, so the [Vector3](/classes/2.4/Vector3) z coordinates are often set to zero.
 
@@ -1365,7 +1375,9 @@ Creates a tube mesh.
 
 The tube is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
+
+
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `path` is a required array of successive [Vector3](/classes/2.4/Vector3). It is the curve used as the axis of the tube.
 
@@ -1415,7 +1427,9 @@ optional | sideOrientation | number |   &nbsp;
 
 Creates a polyhedron mesh.
 
-         * Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
+
+
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `type` (positive integer, max 14, default 0) sets the polyhedron type to build among the 15 embbeded types. Please refer to the type sheet in the tutorial
 

@@ -41,6 +41,8 @@ optional | _options | PhysicsImpostorParameters |
 
 Gets the body that holds this impostor. Either its own, or its parent.
 
+
+
 Set the physics body. Used mainly by the physics engine/plugin
 
 ### parent : [PhysicsImpostor](/classes/2.4/PhysicsImpostor)

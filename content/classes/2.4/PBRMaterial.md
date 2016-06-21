@@ -7,6 +7,8 @@ class [PBRMaterial](/classes/2.4/PBRMaterial) extends [Material](/classes/2.4/Ma
 
 The Physically based material of BJS.
 
+
+
 This offers the main features of a standard PBR material.
 
 For more information, please refer to the documentation :
@@ -18,8 +20,6 @@ http://doc.babylonjs.com/extensions/Physically_Based_Rendering
 ## new [PBRMaterial](/classes/2.4/PBRMaterial)(name, scene)
 
 Instantiates a new [PBRMaterial](/classes/2.4/PBRMaterial) instance.
-
-         * @param name The material name
 
 #### Parameters
  | Name | Type | Description

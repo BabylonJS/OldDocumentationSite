@@ -94,3 +94,52 @@ If the group is part of a WorldSpace Canvas, its content will be drawn in the Ca
 
 When used, the group's content will be cached in the nearest cached parent group/canvas
 
+### cachedRect : [PackedRect](/classes/2.4/PackedRect)
+
+Allow you to access the information regarding the cached rectangle of the [Group2D](/classes/2.4/Group2D) into the [MapTexture](/classes/2.4/MapTexture).
+
+If the `noWorldSpaceNode` options was used at the creation of a WorldSpaceCanvas, the rendering of the canvas must be made by the caller, so typically you want to bind the cacheTexture property to some material/mesh and you must use the cachedRect.UVs property to get the UV coordinates to use for your quad that will display the Canvas.
+
+### cacheTexture : [MapTexture](/classes/2.4/MapTexture)
+
+Access the texture that maintains a cached version of the [Group2D](/classes/2.4/Group2D).
+
+This is useful only if you're not using a WorldSpaceNode for your WorldSpace Canvas and therefore need to perform the rendering yourself.
+
+### isRenderableGroup : boolean
+
+@returns Returns true if the Group render content, false if it's a logical group only
+
+### isCachedGroup : boolean
+
+@returns only meaningful for isRenderableGroup, will be true if the content of the Group is cached into a texture, false if it's rendered every time
+
+### size : [Size](/classes/2.4/Size)
+
+Get/Set the size of the group. If null the size of the group will be determine from its content.
+
+BEWARE: if the Group is a RenderableGroup and its content is cache the texture will be resized each time the group is getting bigger. For performance reason the opposite won't be true: the texture won't shrink if the group does.
+
+### viewportSize : ISize
+
+
+
+### actualSize : [Size](/classes/2.4/Size)
+
+
+
+### cacheBehavior : number
+
+Get/set the Cache Behavior, used in case the Canvas Cache Strategy is set to CACHESTRATEGY_ALLGROUPS. Can be either GROUPCACHEBEHAVIOR_CACHEINPARENTGROUP, GROUPCACHEBEHAVIOR_DONTCACHEOVERRIDE or GROUPCACHEBEHAVIOR_FOLLOWCACHESTRATEGY. See their documentation for more information.
+
+It is critical to understand than you HAVE TO play with this behavior in order to achieve a good performance/memory ratio. Caching all groups would certainly be the worst strategy of all.
+
+### trackedNode : [Node](/classes/2.4/Node)
+
+Get/set the [Scene](/classes/2.4/Scene)'s [Node](/classes/2.4/Node) that should be tracked, the group's position will follow the projected position of the [Node](/classes/2.4/Node).
+
+## Methods
+
+### dispose() &rarr; boolean
+
+Call this method to remove this Group and its children from the Canvas
