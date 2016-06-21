@@ -301,6 +301,8 @@ On update, you must set the _points_ and _instance_ properties.
 
 Example :
 ```javascript
+var lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myArray}, scene);
+// creates an instance
 lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myArray, instance: lines});
 // updates the existing instance of lines : no need for the parameter scene here
 ```
@@ -318,7 +320,9 @@ On update, you must set the _points_ and _instance_ properties.
 
 Example :
 ```javascript
-dashedLines = BABYLON.MeshBuilder.CreateDashedLines("dl", {points: myArray, instance: dashedLines});
+var dashedLines = BABYLON.MeshBuilder.CreateDashedLines("dl", {points: myArray}, scene);
+// creates an instance
+dashedLines = BABYLON.MeshBuilder.CreateDashedLines(null, {points: myArray, instance: dashedLines});
 // updates the existing instance of dashedLines : no need for the parameter scene here
 ```
 Properties :
@@ -338,7 +342,9 @@ On update, you must set the _lines_ and _instance_ properties.
 
 Example :
 ```javascript
-lineSystem = BABYLON.MeshBuilder.CreateLineSystem("lineSystem", {lines: myArray, instance: lineSystem});
+var lineSystem = BABYLON.MeshBuilder.CreateLineSystem("lineSystem", {lines: myArray}, scene);
+// creates an instance
+lineSystem = BABYLON.MeshBuilder.CreateLineSystem(null, {lines: myArray, instance: lineSystem});
 // updates the existing instance of lineSystem : no need for the parameter scene here
 ```
 Properties :
@@ -355,7 +361,9 @@ On update, you must set the _pathArray_ and _instance_ properties.
 
 Example :
 ```javascript
-ribbon = BABYLON.MeshBuilder.CreateRibbon("ribbon", {pathArray: myPaths, instance: ribbon});
+var ribbon = BABYLON.MeshBuilder.CreateRibbon("ribbon", {pathArray: myPaths}, scene);
+// creates an instance
+ribbon = BABYLON.MeshBuilder.CreateRibbon(null, {pathArray: myPaths, instance: ribbon});
 // updates the existing instance of ribbon : no need for the parameter scene
 ```
 Properties :
@@ -369,6 +377,7 @@ offset|_(number)_  used if the pathArray has one path only|half the path length
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of a ribbon to be updated|null
+invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 #### Tube
 You must set at least the _path_ property.
@@ -376,7 +385,9 @@ On update, you must set the _path_ and _instance_ properties and you can set the
 
 Example :
 ```javascript
-tube = BABYLON.MeshBuilder.CreateTube("tube", {path: myPath, instance: tube});
+var tube = BABYLON.MeshBuilder.CreateTube("tube", {path: myPath}, scene);
+// creates an instance
+tube = BABYLON.MeshBuilder.CreateTube(null, {path: myPath, instance: tube});
 // updates the existing instance of tube : no need for the parameter scene
 ```
 Properties :
@@ -392,6 +403,7 @@ arc|_(number)_ ratio of the tube circumference between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of a tube to be updated|null
+invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 #### Extruded Shapes
 You must set at least the _shape_ and _path_ properties.
@@ -399,7 +411,9 @@ On update, you must set the _shape_, _path_ and _instance_ properties and you ca
 
 Example :
 ```javascript
-extruded = BABYLON.MeshBuilder.ExtrudeShape("ext", {shape: myShape, path: myPath, scale: newScale, rotation: newRotation instance: extruded});
+var extruded = BABYLON.MeshBuilder.ExtrudeShape("ext", {shape: myShape, path: myPath}, scene);
+// creates an instance
+extruded = BABYLON.MeshBuilder.ExtrudeShape(null, {shape: myShape, path: myPath, scale: newScale, rotation: newRotation, instance: extruded});
 // updates the existing instance of extruded : no need for the parameter scene
 ```
 Properties :
@@ -414,6 +428,7 @@ cap|_(number)_ extrusion cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
+invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 #### Custom Extruded Shapes
 You must set at least the _shape_ and _path_ properties.
@@ -421,7 +436,9 @@ On update, you must set the _shape_, _path_ and _instance_ properties and you ca
 
 Example :
 ```javascript
-extruded = BABYLON.MeshBuilder.ExtrudeShapeCustom("ext", {shape: myShape, path: myPath, scaleFunction: myScaleF, rotationFunction: myRotF instance: extruded});
+var extruded = BABYLON.MeshBuilder.ExtrudeShapeCustom("ext", {shape: myShape, path: myPath}, scene);
+// creates an instance
+extruded = BABYLON.MeshBuilder.ExtrudeShapeCustom(null, {shape: myShape, path: myPath, scaleFunction: myScaleF, rotationFunction: myRotF, instance: extruded});
 // updates the existing instance of extruded : no need for the parameter scene
 ```
 Properties :
@@ -438,6 +455,7 @@ cap|_(number)_ extrusion cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
+invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 #### Lathe
 You must set at least the _shape_ property.
@@ -458,8 +476,7 @@ cap|_(number)_ tube cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 closed|_(boolean)_ to open/close the lathe circumference, should be set to `false` when used with `arc`|true
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-
-
+invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 
 <br/>
