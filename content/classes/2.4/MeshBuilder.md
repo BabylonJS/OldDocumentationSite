@@ -119,7 +119,9 @@ Creates a ribbon mesh.
 
 The ribbon is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
+
+
+Please read this full tutorial to understand how to design a ribbon : http://doc.babylonjs.com/tutorials/Ribbon_Tutorial
 
 The parameter `pathArray` is a required array of paths, what are each an array of successive [Vector3](/classes/2.4/Vector3). The pathArray parameter depicts the ribbon geometry.
 
@@ -335,7 +337,9 @@ The extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials/Parame
 
 tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#extruded-shapes
 
-         * Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design an extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -373,7 +377,9 @@ The custom extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials
 
 tuto :http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#custom-extruded-shapes
 
-         * Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
+
+
+Please read this full tutorial to understand how to design a custom extruded shape : http://doc.babylonjs.com/tutorials/Parametric_Shapes#extrusion
 
 The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be extruded in its local space : the shape must be designed in the xOy plane and will be
 
@@ -443,7 +449,9 @@ The lathe is a shape with a symetry axis : a 2D model shape is rotated around th
 
 tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#lathe
 
-         * The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
+
+
+The parameter `shape` is a required array of successive [Vector3](/classes/2.4/Vector3). This array depicts the shape to be rotated in its local space : the shape must be designed in the xOy plane and will be
 
 rotated around the Y axis. It's usually a 2D shape, so the [Vector3](/classes/2.4/Vector3) z coordinates are often set to zero.
 
@@ -581,7 +589,9 @@ Creates a tube mesh.
 
 The tube is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-         * tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#tube
+
+
+tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#tube
 
 The parameter `path` is a required array of successive [Vector3](/classes/2.4/Vector3). It is the curve used as the axis of the tube.
 
@@ -627,7 +637,9 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 
 Creates a polyhedron mesh.
 
-         * tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#polyhedron
+
+
+tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#polyhedron
 
 The parameter `type` (positive integer, max 14, default 0) sets the polyhedron type to build among the 15 embbeded types. Please refer to the type sheet in the tutorial
 

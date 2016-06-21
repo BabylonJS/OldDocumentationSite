@@ -11,6 +11,8 @@ It can help converting any input color in a desired output one. This can then be
 
 from sepia, black and white to sixties or futuristic rendering...
 
+
+
 The only supported format is currently 3dl.
 
 More information on LUT: https://en.wikipedia.org/wiki/3D_lookup_table/
@@ -20,8 +22,6 @@ More information on LUT: https://en.wikipedia.org/wiki/3D_lookup_table/
 ## new [ColorGradingTexture](/classes/2.4/ColorGradingTexture)(url, scene)
 
 Instantiates a [ColorGradingTexture](/classes/2.4/ColorGradingTexture) from the following parameters.
-
-         * @param url The location of the color gradind data (currently only supporting 3dl)
 
 #### Parameters
  | Name | Type | Description

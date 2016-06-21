@@ -91,11 +91,14 @@ Forget about the _for{}_ loop, just initialize our _faceUV_ array and set only _
   var faceUV = new Array(6);
   faceUV[4] = new BABYLON.Vector4(0, 0, 1 / hSpriteNb, 1 / vSpriteNb);
 ```
-Only two lines of code only and that's all : http://www.babylonjs-playground.com#1V3CAT# 25  
+Only two lines of code and that's all : http://www.babylonjs-playground.com#1V3CAT#25  
+<br/>
+As we notice it, the default value `(0, 0, 1, 1)` is then applied to the other faces.   
+So if we need, for instance, to display the texture onto one face only, we could then set all the faceUV to `(0, 0, 0, 0)` just before : http://www.babylonjs-playground.com/#1V3CAT#145  
 <br/>
 <br/>
 We could also want to apply two different images from the same texture file onto two different meshes.  
-Nothing easier : http://www.babylonjs-playground.com#1V3CAT# 26    
+Nothing easier : http://www.babylonjs-playground.com#1V3CAT#26    
 Two boxes, two images, but only one texture !
 <br/>
 <br/>
@@ -124,7 +127,7 @@ Then pass this array to the `CreateBox()` method with the new `faceColors` param
 ```
 Simple, isn't it ?  http://www.babylonjs-playground.com#1V3CAT#14  
 
-These colors are BJS Color4-class values. The Color4 alpha values become active if we set `hasVertexAlpha = true` : http://www.babylonjs-playground.com#1V3CAT# 27  
+These colors are BJS Color4-class values. The Color4 alpha values become active if we set `hasVertexAlpha = true` : http://www.babylonjs-playground.com#1V3CAT#27  
 
 We can even combine the vertex colors with a colored material, blue here :  http://www.babylonjs-playground.com#1V3CAT#15  
 

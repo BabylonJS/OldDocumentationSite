@@ -44,6 +44,54 @@ States if the Primitive is dirty and should be rendered again next time.
 
 @returns true is dirty, false otherwise
 
+### levelBoundingInfo : [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
+
+Retrieve the boundingInfo for this Primitive, computed based on the primitive itself and NOT its children
+
+### static flagIsDisposed : number
+
+
+
+### static flagLevelBoundingInfoDirty : number
+
+
+
+### static flagModelDirty : number
+
+
+
+### static flagLayoutDirty : number
+
+
+
+### static flagLevelVisible : number
+
+
+
+### static flagBoundingInfoDirty : number
+
+
+
+### static flagIsPickable : number
+
+
+
+### static flagIsVisible : number
+
+
+
+### static flagVisibilityChanged : number
+
+
+
+### static flagPositioningDirty : number
+
+
+
+### static flagTrackedGroup : number
+
+
+
 ## Methods
 
 ### dispose() &rarr; boolean
@@ -64,4 +112,63 @@ Look at [Sprite2D](/classes/2.4/Sprite2D) for more information
  | Name | Type | Description
 ---|---|---|---
  | propertyName | string | 
+
+### checkPropertiesDirty(flags) &rarr; boolean
+
+Check if a given set of properties are dirty or not.
+
+@return true if at least one property is dirty, false if none of them are.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | flags | number |  a ORed combination of [Prim2DPropInfo](/classes/2.4/Prim2DPropInfo).flagId values
+
+### addExternalData(key, data) &rarr; boolean
+
+Add an externally attached data from its key.
+
+This method call will fail and return false, if such key already exists.
+
+If you don't care and just want to get the data no matter what, use the more convenient getOrAddExternalDataWithFactory() method.
+
+@return true if no such key were already present and the data was added successfully, false otherwise
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | key | string |  the unique key that identifies the data
+ | data | T |  the data object to associate to the key for this [Engine](/classes/2.4/Engine) instance
+### getExternalData(key) &rarr; T
+
+Get an externally attached data from its key
+
+@return the associated data, if present (can be null), or undefined if not present
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | key | string |  the unique key that identifies the data
+
+### getOrAddExternalDataWithFactory(key, factory) &rarr; T
+
+Get an externally attached data from its key, create it using a factory if it's not already present
+
+@return the associated data, can be null if the factory returned null.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | key | string |  the unique key that identifies the data
+ | factory | (k: string) =&gt; T |  the factory that will be called to create the instance if and only if it doesn't exists
+### removeExternalData(key) &rarr; boolean
+
+Remove an externally attached data from the [Engine](/classes/2.4/Engine) instance
+
+@return true if the data was successfully removed, false if it doesn't exist
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | key | any |  the unique key that identifies the data
 

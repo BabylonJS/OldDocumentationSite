@@ -429,7 +429,7 @@ function setParticles() {
 Example : http://www.babylonjs-playground.com/#1X7SUN#5  
 or dancing worms : http://www.babylonjs-playground.com/#1X7SUN#7  
 
-###Pickable Particles
+### Pickable Particles
 You can set your particles as pickable with the parameter `isPickable` (default _false_) when creating your SPS :
 ```javascript
 var SPS = new BABYLON.SolidParticleSystem('SPS', scene, {isPickable: true});
@@ -462,7 +462,7 @@ The SPS pickability is directly related to the size of its bounding box (please 
 Pickable particle example (no SPS update in the render loop) : http://www.babylonjs-playground.com/#2FPT1A#41  
 Pickable particle example (particle rotation) : http://www.babylonjs-playground.com/#2FPT1A#14  
 
-###Digest a Mesh
+### Digest a Mesh
 There is another way than adding shapes of meshes used as models to populate the SPS : you can directly "digest" a mesh.  
 To digest a mesh means that the SPS will decompose this mesh geometry and use all its facets to generate the particles. So, by default, a digested mesh generates as many particles as the mesh number of facets.  
 ```javascript
@@ -501,7 +501,7 @@ SPS.buildMesh();
 ```
 Example (click on the torus knot) : http://www.babylonjs-playground.com/#HDHQN  
 
-###SPS Visibility
+### SPS Visibility
 To render the meshes on the screen, BJS uses their bounding box (BBox) : if the BBox is in the frustum, then the mesh is selected to be rendered on the screen. This method is really performant as it avoids to make the GPU compute things that wouldn't be visible. The BBox of each mesh is recomputed when its World Martix is updated.    
 When you create a SPS, unless you use the `positionFunction` at creation time, all its particles are set by default at the position (0, 0, 0). So the size of the SPS mesh is initially the size of its biggest particle, so it is for its BBox.  
 If you animate your particles without updating the SPS mesh World Matrix (ex : the whole SPS doesn't move, rotate or scale), its BBox may keep far more little than the current space occupied by the moving particles. So, if this little BBox gets out of the screen (cam rotation for instance), the whole SPS can then disappear at once !  
@@ -529,7 +529,7 @@ If the SPS keeps within some known limits, then it is better to use `SPS.setVisi
 At last, if you still need pickability or variable visibility, and don't know how your SPS will evolve, then you might set `SPS.computeBoundingBox` to true.  
 
 
-###Garbage Collector Concerns  
+### Garbage Collector Concerns  
 In Javascript, the Garbage Collector is usually your friend : it takes care about cleaning up all the not any longer needed variables you could have declared and thus it sets the memory free.  
 However, it can sometimes become an awkward friend because it can start its cleaning just while you are displaying a very smooth animation, so it takes the CPU for itself and leaves to you only those nice lags on the screen.  
 So the best to do to avoid this GC unpredictable behavior is to keep as low as possible the creation of temporary objects or variables in the render loop.  
@@ -566,7 +566,7 @@ SPS.vars.myString = "foo"; // just keep setting string values to myString afterw
 Example : From this [article](http://gamedevelopment.tutsplus.com/tutorials/the-three-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444), here is an implementation of a simple particle IA called "flocking" what a behavior of association, then cohesion and separation. This example uses `SPS.vars` to allocate the memory used for results only once instead of in-function temporary variables.     
 http://www.babylonjs-playground.com/#2FPT1A#35   
 
-###Rebuild the mesh
+### Rebuild the mesh
 if a mesh, changed at creation time with `positionFunction` or `vertexFunction` has been then modified with `setParticles()`, it can be rebuild by reapplying the internally stored `positionFunction` or `vertexFunction` functions.  
 Note that only the function are stored, not their results. This means that if one of your function produces different results each call (using `Math.random()` for instance), you won't get back the same SPS mesh shape but another computed shape.  
 ```javascript

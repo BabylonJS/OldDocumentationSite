@@ -1244,7 +1244,7 @@ Delete the physics engine of the scene
 True if a physic engine is defined, false otherwise
 ### setGravity(gravity) &rarr; void
 
-* Sets the gravity of the physics engine (and NOT of the scene)
+Sets the gravity of the physics engine (and NOT of the scene)
 
 #### Parameters
  | Name | Type | Description
