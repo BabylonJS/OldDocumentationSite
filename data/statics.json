@@ -597,6 +597,10 @@
         {
           "title": "Wood",
           "filename": "WoodProceduralTexture"
+        },
+        {
+          "title": "Using the Ascii Art post-process",
+          "filename": "AsciiArtPostProcess"
         }
       ]
     },
