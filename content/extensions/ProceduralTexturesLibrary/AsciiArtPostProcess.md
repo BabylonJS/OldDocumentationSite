@@ -43,13 +43,13 @@ But you could also play with more parameters:
 var postProcess = new BABYLON.AsciiArtPostProcess("AsciiArt", camera, 
     {
         font: "20px Monospace",
-        text: " -+@",
+        characterSet: " -+@",
         mixToNormal: 0.5,
         mixToTile: 0.5        
     });
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#2)
+[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#5)
 
 The availables parameters are:
 
