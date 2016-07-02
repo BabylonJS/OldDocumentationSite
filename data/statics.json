@@ -601,6 +601,10 @@
         {
           "title": "Using the Ascii Art post-process",
           "filename": "AsciiArtPostProcess"
+        },
+        {
+          "title": "Using the Digital Rain post-process",
+          "filename": "DigitalRainPostProcess"
         }
       ]
     },
