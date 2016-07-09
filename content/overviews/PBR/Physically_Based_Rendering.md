@@ -217,5 +217,5 @@ The emissive and opacity fresnels from tooling are still available in this mater
 
 ## Going Further
 
-Please have a read at [Master the PBR](http://doc.babylonjs.com/extensions/Physically_Based_Rendering_Master) for more information on how to use the material.
+Please have a read at [Master the PBR](http://doc.babylonjs.com/overviews/Physically_Based_Rendering_Master) for more information on how to use the material.
 
