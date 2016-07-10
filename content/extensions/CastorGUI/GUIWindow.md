@@ -28,6 +28,7 @@ Name | Type | Description
 * **heightTitle**: Height the title element (int) =&gt; 30 by default
 * **titleTextAlign**: Allignment of the title text (string) =&gt; "center" by default
 * **titleColor**: Color of the title text (string) =&gt; "white" by default
+* **titleFontSize**: size title (int)  =&gt; 12 by default
 * **textTitle**: Text of title (string)  =&gt; true by default
 * **draggable**: Window draggable (bool)
 * **closeButton**: Button window display (bool)

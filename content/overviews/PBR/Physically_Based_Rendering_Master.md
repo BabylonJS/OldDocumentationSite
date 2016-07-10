@@ -1,7 +1,7 @@
 # Master the PBR Materials
 
 ## Introduction
-After following the [PBR Introduction](http://doc.babylonjs.com/extensions/Physically_Based_Rendering), it is a good time to learn how to efficiently use the **PBR Material**. 
+After following the [PBR Introduction](http://doc.babylonjs.com/overviews/Physically_Based_Rendering), it is a good time to learn how to efficiently use the **PBR Material**. 
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
@@ -55,7 +55,7 @@ pbr.albedoColor = texture;
 ```
 
 ### Reflectivity
-The reflectivity color is the PBR equivalent of the specular color in the standard material. This controls the **surface reflectivity** of the material. You could certainly wonder why a color is required and not a coefficent ? If we only had a coefficient, we could only create material from mirror (fully reflective) to matte paper (not reflective at all). The main advantage of a color is to control what channels are reflected by the material. Gold for instance will reflect yellow and not only white.
+The reflectivity color is the PBR equivalent of the specular color in the standard material. This controls the **surface reflectivity** of the material. You could certainly wonder why a color is required and not a coefficient ? If we only had a coefficient, we could only create material from mirror (fully reflective) to matte paper (not reflective at all). The main advantage of a color is to control what channels are reflected by the material. Gold for instance will reflect yellow and not only white.
 
 [Demo](http://www.babylonjs-playground.com/#1F0M1J#11)
 ```javascript
@@ -124,7 +124,7 @@ pbr.reflectionColor = new BABYLON.Color3(1.0, 1.0, 0.0);
 
 The diffuse reflection will be described later in the Environment Irradiance section.
 
-Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a litten room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
+Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a lit room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
 
 [Demo](http://www.babylonjs-playground.com/#19JGPR#13)
 ```javascript
@@ -396,7 +396,7 @@ pbr.cameraColorCurves = curve;
 ```
 
 ## Zero Light Lighting
-If you arrived to this point you should have understood pretty well (I hope so... please, bare with my Frenglish) that the Environment surrounding an object is litten both through Reflection/Refraction and Irradiance.
+If you arrived to this point you should have understood pretty well (I hope so... please, bare with my Frenglish) that the Environment surrounding an object is lit both through Reflection/Refraction and Irradiance.
 
 A really good thing about this is that you do not require lights anymore in your scene. The environment replaces them at some extents. Scene lights will now be really dedicated to cast shadows or will represent lights which are close to the objects like candles or spots...
 
