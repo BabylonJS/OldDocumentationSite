@@ -57,11 +57,11 @@ The reference documentation is more exhaustive but let's summarize them:
 
 ### Example
 
-Please refer to this [example](http://babylonjs-playground.com/#UVDG0#1) for a use of the `pointerEventObservable`
+Please refer to this [example](http://babylonjs-playground.com/#UVDG0#67) for a use of the `pointerEventObservable`
 
 ## Using the Action Manager
 
 Canvas2D is also compliant with the [ActionManager](http://doc.babylonjs.com/tutorials/How_to_use_Actions) of babylon.js. The `actionManager` property let you access the action Manager created for the particular Primitive.
 
 ### Example
-Please refer to this [example](http://babylonjs-playground.com/#1ONKPJ#1) for a use of the Action Manager.
+Please refer to this [example](http://babylonjs-playground.com/#1ONKPJ#5) for a use of the Action Manager.

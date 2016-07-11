@@ -58,6 +58,10 @@ class [SolidParticle](/classes/2.4/SolidParticle)
 
 
 
+### isVisible : boolean
+
+
+
 ### shapeId : number
 
 

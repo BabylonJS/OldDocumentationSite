@@ -1,5 +1,7 @@
 # Creating your own primitive type for the Canvas2D
 
+**WARNING** Documentation outdated, will be updated soon.
+
 So you like to use the Canvas2D feature but there's a primitive type missing and you're willing to contribute!? 
 Great news! 
 

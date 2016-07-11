@@ -15,7 +15,7 @@ The default value is [0.5;0.5] which means the origin is at the center of the Pr
 The actual position of the origin point is computed using the `actualSize` property of the Primitive, simply by multiplying the `origin` by `actualSize` then we subtract every coordinate for the Primitive by the resulting value. 
 
 ## A concrete example
-A example worth a thousand words: take a look at [this one](http://babylonjs-playground.com/#DIF54)
+A example worth a thousand words: take a look at [this one](http://babylonjs-playground.com/#DIF54#2)
 
 In this example we create the following Canvas and Rectangle:
 ```javascript

@@ -1,7 +1,7 @@
 # Master the PBR Materials
 
 ## Introduction
-After following the [PBR Introduction](http://doc.babylonjs.com/extensions/Physically_Based_Rendering), it is a good time to learn how to efficiently use the **PBR Material**. 
+After following the [PBR Introduction](http://doc.babylonjs.com/overviews/Physically_Based_Rendering), it is a good time to learn how to efficiently use the **PBR Material**. 
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
@@ -28,6 +28,7 @@ Here is a small reminder of the PBR material supported features:
 * HDR Texture and Seamless Cubemap (LOD extension required)
 * Environment Irradiance
 * Camera controls: Contrast and Exposure
+* Camera controls: Color Grading and Color Curves
 * Zero Light Lighting
 * Debug Controls
 
@@ -54,7 +55,7 @@ pbr.albedoColor = texture;
 ```
 
 ### Reflectivity
-The reflectivity color is the PBR equivalent of the specular color in the standard material. This controls the **surface reflectivity** of the material. You could certainly wonder why a color is required and not a coefficent ? If we only had a coefficient, we could only create material from mirror (fully reflective) to matte paper (not reflective at all). The main advantage of a color is to control what channels are reflected by the material. Gold for instance will reflect yellow and not only white.
+The reflectivity color is the PBR equivalent of the specular color in the standard material. This controls the **surface reflectivity** of the material. You could certainly wonder why a color is required and not a coefficient ? If we only had a coefficient, we could only create material from mirror (fully reflective) to matte paper (not reflective at all). The main advantage of a color is to control what channels are reflected by the material. Gold for instance will reflect yellow and not only white.
 
 [Demo](http://www.babylonjs-playground.com/#1F0M1J#11)
 ```javascript
@@ -123,7 +124,7 @@ pbr.reflectionColor = new BABYLON.Color3(1.0, 1.0, 0.0);
 
 The diffuse reflection will be described later in the Environment Irradiance section.
 
-Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a litten room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
+Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a lit room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
 
 [Demo](http://www.babylonjs-playground.com/#19JGPR#13)
 ```javascript
@@ -134,7 +135,7 @@ glass.alpha = 0.5;
 ### Refraction
 Refraction is a little bit like reflection (Please purists, do not kill me now, I only said a little) because it is heavily relying on the environment to change the way the material looks. Basically, if reflection could be compared to seing the sun and cloud on the surface of a lake, refraction would be seing weird shaped fish under the surface (through the water).  
 
-A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/tutorials/01._Advanced_Texturing)
+A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/tutorials/Advanced_Texturing)
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
@@ -152,8 +153,8 @@ You can still notice some reflection on your material. This is due to the energy
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
-* [Normal Map](http://doc.babylonjs.com/tutorials/01._Advanced_Texturing)
-* [Parallax](http://doc.babylonjs.com/tutorials/18._Using_parallax_mapping)
+* [Normal Map](http://doc.babylonjs.com/tutorials/Advanced_Texturing)
+* [Parallax](http://doc.babylonjs.com/tutorials/Using_parallax_mapping)
  
 ## Shadows (as the standard material)
 Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/tutorials/15._Shadows)
@@ -350,8 +351,52 @@ pbr.cameraExposure = 0.66;
 pbr.cameraContrast = 1.66;
 ```
 
+## Camera controls: Color Grading and Color Curves
+Due to the issue explained in the previous part (Camera controls: Contrast and Exposure), we are trying as much as we can to keep a one pass only forward rendering.
+
+Knowing the importance in PBR to tweak the camera to the desired effect, we integrated in Babylon JS the support for both Color Grading and Color Curves in the material. 
+
+### Color Grading
+
+For those not familiar with the concept, you can imagine color grading as converting any input color to a different output one : [Wikipedia](https://en.wikipedia.org/wiki/Colour_look-up_table).
+
+This can be used to achieve lots of different effects from sepia to sixties and pixellating. On the following demo, you can see how to change the entire scene to look like a sunset just by adding a color grading texture.
+
+The .3dl format is natively supported in BJS to allow you to directly export your LUT from your favourite edition tool.
+
+[Demo](http://www.babylonjs-playground.com/#B4PW0#2)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+var colorGrading = new BABYLON.ColorGradingTexture("textures/LateSunset.3dl", scene);
+pbr.cameraColorGradingTexture = colorGrading;
+```
+
+### Color Curves
+
+Color cuves is also always part of picture edition tools. So in order to help setting your scene exactly as desired, we embedded them directly as part of the material.
+
+You can through the new ColorCurves class specify the same setup you are used to have in your picture edition tools.
+
+[Demo](http://www.babylonjs-playground.com/#B4PW0#3)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+var curve = new BABYLON.ColorCurves();
+curve.GlobalHue = 200;
+curve.GlobalDensity = 80;
+curve.GlobalSaturation = 80;
+
+curve.HighlightsHue = 20;
+curve.HighlightsDensity = 80;
+curve.HighlightsSaturation = -80;
+
+curve.ShadowsHue = 2;
+curve.ShadowsDensity = 80;
+curve.ShadowsSaturation = 40;
+pbr.cameraColorCurves = curve;
+```
+
 ## Zero Light Lighting
-If you arrived to this point you should have understood pretty well (I hope so... please, bare with my Frenglish) that the Environment surrounding an object is litten both through Reflection/Refraction and Irradiance.
+If you arrived to this point you should have understood pretty well (I hope so... please, bare with my Frenglish) that the Environment surrounding an object is lit both through Reflection/Refraction and Irradiance.
 
 A really good thing about this is that you do not require lights anymore in your scene. The environment replaces them at some extents. Scene lights will now be really dedicated to cast shadows or will represent lights which are close to the objects like candles or spots...
 

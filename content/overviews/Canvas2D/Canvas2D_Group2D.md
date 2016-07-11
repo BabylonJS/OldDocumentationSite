@@ -10,6 +10,7 @@ Future evolution of this class will certainly feature Layout specific features.
 ## Properties
 
  - `size` of type `Size`, optionally defines the size of the Group. If null the size will be determined by the group's content. Default value is null.
+ - `actualSize`, equal to `size` if it was specified or computed from its bounding content.
  - cacheBehavior of type number, define how the group should behave regarding the caching strategy. The possible values are:
     1. `Group2D.GROUPCACHEBEHAVIOR_FOLLOWCACHESTRATEGY`: follow the strategy defined at the Canvas Level.
     2. `Group2D.GROUPCACHEBEHAVIOR_DONTCACHEOVERRIDE`: When used, this group's content won't be cached, no matter which strategy used. If the group is part of a WorldSpace Canvas, its content will be drawn in the Canvas cache bitmap.

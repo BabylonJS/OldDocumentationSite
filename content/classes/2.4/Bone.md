@@ -78,7 +78,7 @@ Update the bone matrix
 ### markAsDirty() &rarr; void
 
 
-### copyAnimationRange(source, rangeName, frameOffset, rescaleAsRequired) &rarr; boolean
+### copyAnimationRange(source, rangeName, frameOffset, rescaleAsRequired, skelDimensionsRatio) &rarr; boolean
 
 
 
@@ -88,3 +88,4 @@ Update the bone matrix
  | source | [Bone](/classes/2.4/Bone) |  
  | rangeName | string |  
  | frameOffset | number |  
+optional | rescaleAsRequired | boolean | 

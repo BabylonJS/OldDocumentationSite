@@ -597,6 +597,14 @@
         {
           "title": "Wood",
           "filename": "WoodProceduralTexture"
+        },
+        {
+          "title": "Using the Ascii Art post-process",
+          "filename": "AsciiArtPostProcess"
+        },
+        {
+          "title": "Using the Digital Rain post-process",
+          "filename": "DigitalRainPostProcess"
         }
       ]
     },
@@ -895,8 +903,13 @@
            "hidden": true 
         },
         {
-           "title": "About positioning, transformation and hierarchy",
+           "title": "About transformation and hierarchy",
            "filename": "Canvas2D_PosTransHierarchy",
+           "hidden": true 
+        },
+        {
+           "title": "About Layout Engine, Alignment and Margin",
+           "filename": "Canvas2D_Prim_Positioning",
            "hidden": true 
         },
         {

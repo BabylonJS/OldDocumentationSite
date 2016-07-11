@@ -108,7 +108,7 @@ Delay load mesh file
 
 ### geometry : [Geometry](/classes/2.4/Geometry)
 
-Returns the mesh internal `[Geometry](/classes/2.4/Geometry)` object.
+Returns the mesh internal [Geometry](/classes/2.4/Geometry) object.
 
 ### isBlocked : boolean
 
@@ -125,6 +125,10 @@ tuto : http://doc.babylonjs.com/tutorials/Discover_Basic_Elements#side-orientati
 Boolean : true if the normals aren't to be recomputed on next mesh `positions` array update.
 
 This property is pertinent only for updatable parametric shapes.
+
+### overridenInstanceCount : number
+
+Overrides instance count. Only applicable when custom instanced InterleavedVertexBuffer are used rather than InstancedMeshs
 
 ## Methods
 
@@ -143,7 +147,7 @@ Add a mesh as LOD level triggered at the given distance.
 
 tuto : http://doc.babylonjs.com/tutorials/How_to_use_LOD
 
-@return {[Mesh](/classes/2.4/Mesh)} this mesh (for chaining)
+@return {[Mesh](/classes/2.4/Mesh)} This mesh (for chaining)
 
 #### Parameters
  | Name | Type | Description
@@ -169,7 +173,7 @@ Remove a mesh from the LOD array
 
 tuto : http://doc.babylonjs.com/tutorials/How_to_use_LOD
 
-@return {[Mesh](/classes/2.4/Mesh)} this mesh (for chaining)
+@return {[Mesh](/classes/2.4/Mesh)} This mesh (for chaining)
 
 #### Parameters
  | Name | Type | Description
@@ -227,11 +231,11 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | kind | string |    The kind of vertex buffer as defined in class Vertex [Buffer](/classes/2.4/Buffer)
 optional | copyWhenShared | boolean |    
 ### getVertexBuffer(kind) &rarr; [VertexBuffer](/classes/2.4/VertexBuffer)
 
-Returns the mesh `[VertexBuffer](/classes/2.4/VertexBuffer)` object from the requested `kind` : positions, indices, normals, etc.
+Returns the mesh [VertexBuffer](/classes/2.4/VertexBuffer) object from the requested `kind` : positions, indices, normals, etc.
 
 Returns `undefined` if the mesh has no geometry.
 
@@ -264,7 +268,7 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | kind | any |    The kind of vertex buffer as defined in class Vertex Buffer
+ | kind | any |    The kind of vertex buffer as defined in class Vertex [Buffer](/classes/2.4/Buffer)
 
 ### isVerticesDataPresent(kind) &rarr; boolean
 
@@ -299,7 +303,7 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | kind | string |    The kind of vertex buffer as defined in class Vertex [Buffer](/classes/2.4/Buffer)
 
 ### getVerticesDataKinds() &rarr; string[]
 
@@ -370,7 +374,7 @@ It has no effect at all on other shapes.
 It reactivates the mesh normals computation if it was previously frozen.
 ### refreshBoundingInfo() &rarr; void
 
-This method recomputes and sets a new `[BoundingInfo](/classes/2.4/BoundingInfo)` to the mesh unless it is locked.
+This method recomputes and sets a new [BoundingInfo](/classes/2.4/BoundingInfo) to the mesh unless it is locked.
 
 This means the mesh underlying bounding box and sphere are recomputed.
 ### subdivide(count) &rarr; void
@@ -386,17 +390,17 @@ Subdivide this mesh by creating &quot;count&quot; submeshes stored in this.subMe
 
 Sets the vertex data of the mesh geometry for the requested `kind`.
 
-If the mesh has no geometry, a new `[Geometry](/classes/2.4/Geometry)` object is set to the mesh and then passed this vertex data.
+If the mesh has no geometry, a new [Geometry](/classes/2.4/Geometry) object is set to the mesh and then passed this vertex data.
 
 The `data` are either a numeric array either a Float32Array.
 
-The parameter `updatable` is passed as is to the underlying `[Geometry](/classes/2.4/Geometry)` object constructor (if initianilly none) or updater.
+The parameter `updatable` is passed as is to the underlying [Geometry](/classes/2.4/Geometry) object constructor (if initianilly none) or updater.
 
 The parameter `stride` is an optional positive integer, it is usually automatically deducted from the `kind` (3 for positions or normals, 2 for UV, etc).
 
-Note that a new underlying `[VertexBuffer](/classes/2.4/VertexBuffer)` object is created each call.
+Note that a new underlying [VertexBuffer](/classes/2.4/VertexBuffer) object is created each call.
 
-If the `kind` is the `PositionKind`, the mesh `[BoundingInfo](/classes/2.4/BoundingInfo)` is renewed, so the bounding box and sphere, and the mesh World [Matrix](/classes/2.4/Matrix) is recomputed.
+If the `kind` is the `PositionKind`, the mesh [BoundingInfo](/classes/2.4/BoundingInfo) is renewed, so the bounding box and sphere, and the mesh World [Matrix](/classes/2.4/Matrix) is recomputed.
 
 
 
@@ -429,9 +433,18 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | kind | string |    The kind of vertex buffer as defined in class Vertex [Buffer](/classes/2.4/Buffer)
  | data | number[] |    The new data of vertex buffer
 optional | updatable | boolean |   &nbsp;
+### setVerticesBuffer(buffer) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | buffer | [VertexBuffer](/classes/2.4/VertexBuffer) |    The buffer
+
 ### updateVerticesData(kind, data, updateExtends, makeItUnique) &rarr; void
 
 Updates the existing vertex data of the mesh geometry for the requested `kind`.
@@ -440,9 +453,9 @@ If the mesh has no geometry, it is simply returned as it is.
 
 The `data` are either a numeric array either a Float32Array.
 
-No new underlying `[VertexBuffer](/classes/2.4/VertexBuffer)` object is created.
+No new underlying [VertexBuffer](/classes/2.4/VertexBuffer) object is created.
 
-If the `kind` is the `PositionKind` and if `updateExtends` is true, the mesh `[BoundingInfo](/classes/2.4/BoundingInfo)` is renewed, so the bounding box and sphere, and the mesh World [Matrix](/classes/2.4/Matrix) is recomputed.
+If the `kind` is the `PositionKind` and if `updateExtends` is true, the mesh [BoundingInfo](/classes/2.4/BoundingInfo) is renewed, so the bounding box and sphere, and the mesh World [Matrix](/classes/2.4/Matrix) is recomputed.
 
 If the parameter `makeItUnique` is true, a new global geometry is created from this positions and is set to the mesh.
 
@@ -477,7 +490,7 @@ Possible `kind` values :
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | kind | string |    The kind of vertex buffer as defined in class Vertex [Buffer](/classes/2.4/Buffer)
  | data | number[] |    The new data of vertex buffer
 optional | updateExtends | boolean |    @param updateExtends
 ### updateVerticesDataDirectly(kind, data, offset, makeItUnique) &rarr; void
@@ -487,7 +500,7 @@ Deprecated since BabylonJS v2.3
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | kind | string |    The kind of vertex buffer as defined in class Vertex Buffer
+ | kind | string |    The kind of vertex buffer as defined in class Vertex [Buffer](/classes/2.4/Buffer)
  | data | Float32Array |    The new data of vertex buffer
 optional | offset | number |    
 ### updateMeshPositions(positionFunction, computeNormals) &rarr; void
@@ -523,6 +536,9 @@ This method creates a new index buffer each call.
 ---|---|---|---
  | indices | number[] |    @param indices
 optional | totalVertices | number |    
+### toLeftHanded() &rarr; void
+
+Invert the geometry to move from a right handed system to a left handed one.
 ### registerBeforeRender(func) &rarr; void
 
 Registers for this mesh a javascript function called just before the rendering process.
@@ -580,13 +596,13 @@ Usually, you don't need to call this method by your own because the mesh renderi
  | enableAlphaMode | boolean |   
 ### getEmittedParticleSystems() &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)[]
 
-Returns an array populated with `[ParticleSystem](/classes/2.4/ParticleSystem)` objects whose the mesh is the emitter.
+Returns an array populated with [ParticleSystem](/classes/2.4/ParticleSystem) objects whose the mesh is the emitter.
 ### getHierarchyEmittedParticleSystems() &rarr; [ParticleSystem](/classes/2.4/ParticleSystem)[]
 
-Returns an array populated with `[ParticleSystem](/classes/2.4/ParticleSystem)` objects whose the mesh or its children are the emitter.
+Returns an array populated with [ParticleSystem](/classes/2.4/ParticleSystem) objects whose the mesh or its children are the emitter.
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
-Boolean, true is the mesh in the frustum defined by the `[Plane](/classes/2.4/Plane)` objects from the `frustumPlanes` array parameter.
+Boolean, true is the mesh in the frustum defined by the [Plane](/classes/2.4/Plane) objects from the `frustumPlanes` array parameter.
 
 #### Parameters
  | Name | Type | Description
@@ -639,7 +655,7 @@ tuto : tuto : http://doc.babylonjs.com/tutorials/How_Rotations_and_Translations_
 Note that, under the hood, this method sets a new [VertexBuffer](/classes/2.4/VertexBuffer) each call.
 ### clone(name, newParent, doNotCloneChildren, clonePhysicsImpostor) &rarr; [Mesh](/classes/2.4/Mesh)
 
-Returns a new `[Mesh](/classes/2.4/Mesh)` object generated from the current mesh properties.
+Returns a new [Mesh](/classes/2.4/Mesh) object generated from the current mesh properties.
 
 This method must not get confused with createInstance().
 
@@ -746,7 +762,7 @@ optional | flipNormals | boolean |
 
 ### createInstance(name) &rarr; [InstancedMesh](/classes/2.4/InstancedMesh)
 
-Creates a new `[InstancedMesh](/classes/2.4/InstancedMesh)` object from the mesh model.
+Creates a new [InstancedMesh](/classes/2.4/InstancedMesh) object from the mesh model.
 
 An instance shares the same properties and the same material than its model.
 
@@ -764,7 +780,7 @@ Only these properties of each instance can then be set individually :
 
 tuto : http://doc.babylonjs.com/tutorials/How_to_use_Instances
 
-Warning : this method is not supported for `Line` mesh and `LineSystem`
+Warning : this method is not supported for Line mesh and LineSystem
 
 #### Parameters
  | Name | Type | Description
@@ -805,7 +821,7 @@ optional | successCallback | (mesh: [Mesh](/classes/2.4/Mesh)) =&gt; void |  an 
 
 ### static Parse(parsedMesh, scene, rootUrl) &rarr; [Mesh](/classes/2.4/Mesh)
 
-Returns a new `[Mesh](/classes/2.4/Mesh)` object what is a deep copy of the passed mesh.
+Returns a new [Mesh](/classes/2.4/Mesh) object what is a deep copy of the passed mesh.
 
 The parameter `parsedMesh` is the mesh to be copied.
 
@@ -821,7 +837,7 @@ The parameter `rootUrl` is a string, it's the root URL to prefix the `delayLoadi
 
 Creates a ribbon mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The ribbon is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
@@ -862,7 +878,7 @@ optional | sideOrientation | number |   &nbsp;
 
 Creates a plane polygonal mesh.  By default, this is a disc.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `radius` sets the radius size (float) of the polygon (default 0.5).
 
@@ -886,7 +902,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a box mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `size` sets the size (float) of each box side (default 1).
 
@@ -907,7 +923,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a sphere mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `diameter` sets the diameter size (float) of the sphere (default 1).
 
@@ -931,7 +947,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a cylinder or a cone mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `height` sets the height size (float) of the cylinder/cone (float, default 2).
 
@@ -964,7 +980,7 @@ optional | updatable | any |   &nbsp;
 
 Creates a torus mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `diameter` sets the diameter size (float) of the torus (default 1).
 
@@ -991,7 +1007,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a torus knot mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `radius` sets the global radius size (float) of the torus knot (default 2).
 
@@ -1023,7 +1039,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a line mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 A line mesh is considered as a parametric shape since it has no predefined original shape. Its shape is determined by the passed array of points as an input parameter.
 
@@ -1048,7 +1064,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a dashed line mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 A dashed line mesh is considered as a parametric shape since it has no predefined original shape. Its shape is determined by the passed array of points as an input parameter.
 
@@ -1084,7 +1100,7 @@ Creates an extruded shape mesh.
 
 The extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 
 
@@ -1130,7 +1146,7 @@ Creates an custom extruded shape mesh.
 
 The custom extrusion is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_Shapes.  It has no predefined shape. Its final shape will depend on the input parameters.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 
 
@@ -1146,11 +1162,15 @@ The parameter `rotationFunction` (JS function) is a custom Javascript function c
 
 and the distance of this point from the begining of the path :
 
-```rotationFunction = function(i, distance) {
+```javascript
 
- // do things
+var rotationFunction = function(i, distance) {
 
- return rotationValue; }```
+    // do things
+
+    return rotationValue; }
+
+```
 
 It must returns a float value that will be the rotation in radians applied to the shape on each path point.
 
@@ -1158,11 +1178,15 @@ The parameter `scaleFunction` (JS function) is a custom Javascript function call
 
 and the distance of this point from the begining of the path :
 
-````scaleFunction = function(i, distance) {
+```javascript
 
-  // do things
+var scaleFunction = function(i, distance) {
 
- return scaleValue;}```
+    // do things
+
+   return scaleValue;}
+
+```
 
 It must returns a float value that will be the scale value applied to the shape on each path point.
 
@@ -1202,7 +1226,7 @@ Creates lathe mesh.
 
 The lathe is a shape with a symetry axis : a 2D model shape is rotated around this axis to design the lathe.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 
 
@@ -1233,7 +1257,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a plane mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `size` sets the size (float) of both sides of the plane at once (default 1).
 
@@ -1254,7 +1278,7 @@ optional | updatable | boolean |   &nbsp;
 
 Creates a ground mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameters `width` and `height` (floats, default 1) set the width and height sizes of the ground.
 
@@ -1274,7 +1298,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 
 Creates a tiled ground mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameters `xmin` and `xmax` (floats, default -1 and 1) set the ground minimum and maximum X coordinates.
 
@@ -1307,7 +1331,7 @@ Creates a ground mesh from a height map.
 
 tuto : http://doc.babylonjs.com/tutorials/14._Height_Map
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `url` sets the URL of the height map image resource.
 
@@ -1321,9 +1345,15 @@ The parameter `maxHeight` (float, default 1) is the maximum altitude on the grou
 
 The parameter `onReady` is a javascript callback function that will be called  once the mesh is just built (the height map download can last some time).
 
-This function is passed the newly built mesh : ```function(mesh) { // do things
+This function is passed the newly built mesh :
 
-return; }```
+```javascript
+
+function(mesh) { // do things
+
+    return; }
+
+```
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -1347,9 +1377,9 @@ The tube is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_
 
 
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
-The parameter `path` is a required array of successive `[Vector3](/classes/2.4/Vector3)`. It is the curve used as the axis of the tube.
+The parameter `path` is a required array of successive [Vector3](/classes/2.4/Vector3). It is the curve used as the axis of the tube.
 
 The parameter `radius` (positive float, default 1) sets the tube radius size.
 
@@ -1361,11 +1391,15 @@ This function is called on each point of the tube path and is passed the index `
 
 It must return a radius value (positive float) :
 
-```var radiusFunction = function(i, distance) {
+```javascript
 
-  // do things
+var radiusFunction = function(i, distance) {
 
-  return radius; }```
+    // do things
+
+    return radius; }
+
+```
 
 The parameter `cap` sets the way the extruded shape is capped. Possible values : BABYLON.[Mesh](/classes/2.4/Mesh).NO_CAP (default), BABYLON.[Mesh](/classes/2.4/Mesh).CAP_START, BABYLON.[Mesh](/classes/2.4/Mesh).CAP_END, BABYLON.[Mesh](/classes/2.4/Mesh).CAP_ALL
 
@@ -1395,7 +1429,7 @@ Creates a polyhedron mesh.
 
 
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `type` (positive integer, max 14, default 0) sets the polyhedron type to build among the 15 embbeded types. Please refer to the type sheet in the tutorial
 
@@ -1409,7 +1443,7 @@ You can build other polyhedron types than the 15 embbeded ones by setting the pa
 
 A `polyhedronObject` is a formatted javascript object. You'll find a full file with pre-set polyhedra here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
 
-You can set the color and the UV of each side of the polyhedron with the parameters `faceColors` (`[Color4](/classes/2.4/Color4)`, default `(1, 1, 1, 1)`) and faceUV (`[Vector4](/classes/2.4/Vector4)`, default `(0, 0, 1, 1)`).
+You can set the color and the UV of each side of the polyhedron with the parameters `faceColors` ([Color4](/classes/2.4/Color4), default `(1, 1, 1, 1)`) and faceUV ([Vector4](/classes/2.4/Vector4), default `(0, 0, 1, 1)`).
 
 To understand how to set `faceUV` or `faceColors`, please read this by considering the right number of faces of your polyhedron, instead of only 6 for the box : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
 
@@ -1431,7 +1465,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 
 Creates a sphere based upon an icosahedron with 20 triangular faces which can be subdivided.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 The parameter `radius` sets the radius size (float) of the icosphere (default 1).
 
@@ -1457,15 +1491,15 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 
 Creates a decal mesh.
 
-Please consider using the same method from the `[MeshBuilder](/classes/2.4/MeshBuilder)` class instead.
+Please consider using the same method from the [MeshBuilder](/classes/2.4/MeshBuilder) class instead.
 
 A decal is a mesh usually applied as a model onto the surface of another mesh. So don't forget the parameter `sourceMesh` depicting the decal.
 
-The parameter `position` (`[Vector3](/classes/2.4/Vector3)`, default `(0, 0, 0)`) sets the position of the decal in World coordinates.
+The parameter `position` ([Vector3](/classes/2.4/Vector3), default `(0, 0, 0)`) sets the position of the decal in World coordinates.
 
-The parameter `normal` (`[Vector3](/classes/2.4/Vector3)`, default `[Vector3](/classes/2.4/Vector3).Up`) sets the normal of the mesh where the decal is applied onto in World coordinates.
+The parameter `normal` ([Vector3](/classes/2.4/Vector3), default `[Vector3](/classes/2.4/Vector3).Up`) sets the normal of the mesh where the decal is applied onto in World coordinates.
 
-The parameter `size` (`[Vector3](/classes/2.4/Vector3)`, default `(1, 1, 1)`) sets the decal scaling.
+The parameter `size` ([Vector3](/classes/2.4/Vector3), default `(1, 1, 1)`) sets the decal scaling.
 
 The parameter `angle` (float in radian, default 0) sets the angle to rotate the decal.
 
@@ -1496,7 +1530,7 @@ Update the vertex buffers by applying transformation from the bones
 
 Returns an object `{min: [Vector3](/classes/2.4/Vector3), max: [Vector3](/classes/2.4/Vector3)}`
 
-This min and max `[Vector3](/classes/2.4/Vector3)` are the minimum and maximum vectors of each mesh bounding box from the passed array, in the World system
+This min and max [Vector3](/classes/2.4/Vector3) are the minimum and maximum vectors of each mesh bounding box from the passed array, in the World system
 
 #### Parameters
  | Name | Type | Description

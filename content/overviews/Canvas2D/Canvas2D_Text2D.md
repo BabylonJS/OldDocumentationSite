@@ -13,15 +13,12 @@ Text2D rendering is **efficient**/**fast**, it's not based on a render to textur
 Soon to be supported:
 
  - Character based color.
- - Alignment of text.
 
 ## Properties
 
  - `fontName`: A [W3C CSS](https://www.w3.org/wiki/CSS/Properties/font) font property used to create the FontTexture used to render the text.
  - `text`: a string property containing the text to render.
  - `areaSize`: a `Size` optional property that represent the area where the text will be rendered. If null the area is computed based on the text content. Default value is null.
- - `vAlign`: a number, one of the Text2D.TEXT2D_VALIGN_XXX value to specify vertical alignment. *not supported right now*
- - `hAlign`: a number, one of the Text2D.TEXT2D_HALIGN_XXX value to specify horizontal alignment. *not supported right now*
 
 ## Remarks
 
@@ -31,6 +28,6 @@ The rendering quality of the text depends on the Web Browser implementation, rig
 
 ## Example
 
-[Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#1)
+[Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#5)
 
 

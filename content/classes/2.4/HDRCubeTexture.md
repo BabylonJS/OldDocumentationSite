@@ -48,6 +48,14 @@ Specifies wether the texture has been generated through the [PMREMGenerator](/cl
 
 This is usefull at run time to apply the good shader.
 
+### void : undefined
+
+
+
+### onError : undefined
+
+
+
 ## Methods
 
 ### clone() &rarr; [HDRCubeTexture](/classes/2.4/HDRCubeTexture)
@@ -72,7 +80,7 @@ This is usefull at run time to apply the good shader.
 ### serialize() &rarr; any
 
 
-### static generateBabylonHDROnDisk(url, size, onError) &rarr; void
+### static generateBabylonHDROnDisk(url, size, onError) &rarr; (url, size, onError)
 
 Saves as a file the data contained in the texture in a binary format.
 
@@ -87,8 +95,8 @@ as the spherical used in the lighting.
 ---|---|---|---
  | url | string |  The HDR file url.
  | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
-optional | onError | () =&gt; void |  Method called if any error happens during download.
-### static generateBabylonHDR(url, size, callback, onError) &rarr; void
+optional | onError | () =&gt; () =&gt; void |  Method called if any error happens during download.
+### static generateBabylonHDR(url, size, callback) &rarr; (url, size, callback)
 
 Serializes the data contained in the texture in a binary format.
 
@@ -103,4 +111,4 @@ as the spherical used in the lighting.
 ---|---|---|---
  | url | string |  The HDR file url.
  | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
- | callback | (ArrayBuffer: undefined) =&gt; void | 
+ | callback | () =&gt; (ArrayBuffer: undefined) =&gt; void | 

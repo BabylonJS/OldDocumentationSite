@@ -38,3 +38,14 @@ The array containing all intersected primitive, in no particular order.
 
 true if at least one primitive intersected during the test
 
+## Methods
+
+### isPrimIntersected(prim) &rarr; [Vector2](/classes/2.4/Vector2)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | prim | [Prim2DBase](/classes/2.4/Prim2DBase) | 
+

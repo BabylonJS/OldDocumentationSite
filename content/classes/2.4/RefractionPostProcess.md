@@ -15,9 +15,9 @@ A tutorial about post process can be found here
 
 ## Constructor
 
-## new [RefractionPostProcess](/classes/2.4/RefractionPostProcess)(name, refractionTextureUrl, color, depth, colorLevel, ratio, camera, samplingMode, engine, reusable)
+## new [RefractionPostProcess](/classes/2.4/RefractionPostProcess)(name, refractionTextureUrl, color, depth, colorLevel, options, PostProcessOptions, camera, samplingMode, engine, reusable)
 
-The Postprocess constructor
+
 
 #### Parameters
  | Name | Type | Description
@@ -27,7 +27,7 @@ The Postprocess constructor
  | color | [Color3](/classes/2.4/Color3) |    The base color of the refraction (used to taint the rendering)
  | depth | number |    The simulated refraction
  | colorLevel | number |    The coefficient of the base color (0 to remove base color tainting)
- | ratio | number |    The size of the postprocess (0.5 means that your postprocess will have a width = canvas.width * 0.5 and a height = canvas.height * 0.5)
+ | options | number or PostProcessOptions | 
  | camera | [Camera](/classes/2.4/Camera) |    The given camera
 optional | samplingMode | number |    [Texture](/classes/2.4/Texture).NEAREST_SAMPLINGMODE, [Texture](/classes/2.4/Texture).BILINEAR_SAMPLINGMODE or [Texture](/classes/2.4/Texture).TRILINEAR_SAMPLINGMODE
 optional | engine | [Engine](/classes/2.4/Engine) |    The engine to attach the postprocess.

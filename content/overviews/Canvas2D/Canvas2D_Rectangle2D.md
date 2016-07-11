@@ -22,7 +22,7 @@ As of today, the intersection does not take into account the empty space created
 
 ## Examples
 
-[Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#6)
+[Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#8)
 
-[Playing with origin and hierarchy](http://babylonjs-playground.com/#DEFP2#1)
+[Playing with origin and hierarchy](http://babylonjs-playground.com/#DEFP2#3)
 

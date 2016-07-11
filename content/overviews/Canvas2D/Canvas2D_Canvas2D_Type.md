@@ -1,20 +1,20 @@
 # Canvas2D type overview
 
-The Canvas2D class is the main class of the feature, it's your starting point.
+The `Canvas2D` class is the main class of the feature, but as there are two types of Canvas, two class are extending it: `ScreenSpaceCanvas2D` and `WorldSpaceCanvas2D`.
 
-This class is extending the Group2D one, so it's also a Primitive in itself and can be considered as such. Although you can't have an instance of Canvas2D which is a child of another Primitive, instances of this class are always meant to be the first object of the Graph.
+`Canvas2D` is extending the `Group2D` one, so it's also a Primitive in itself and can be considered as such. Although you can't have an instance of `Canvas2D` which is a child of another Primitive, instances of this class are always meant to be the first object of the graph.
 
-Inheriting the properties of Group2D, a Canvas is a 2D rectangle with a position and a size, the size can be specified by the user or it is automatically computed to fit its content. To follow Open/WebGL standard, the origin of the canvas is at the **bottom/left** corner and not at the top/left as one would expect.
+Inheriting the properties of `Group2D`, a Canvas is a 2D rectangle with a position and a size, the size can be specified by the user or it is automatically computed to fit its content. To follow Open/WebGL standard, the origin of the canvas is at the **bottom/left** corner and not at the top/left as one would expect.
 
 ## Two types of Canvas
 
 
 The Canvas can be rendered in two different spaces:
 
- - **ScreenSpace**: it lies above the rendered 3D Scene and is coplanar to the rendering viewport. Its position/rotation/scale is expressed in screen coordinate, with the origin being the top/left corner of the rendering viewport. [Example](http://babylonjs-playground.com/#2AVSFH#9).
- - **WorldSpace**: the canvas has a position/rotation/scale that is expressed in World Coordinates, your canvas is like a 2D Rectangle lying in World Space, like any other 3D objects you can find in a 3D Scene. [Example](http://babylonjs-playground.com/#1BKDEO#7).
+ - **ScreenSpace**: it lies above the rendered 3D Scene and is coplanar to the rendering viewport. Its position/rotation/scale is expressed in screen coordinate, with the origin being the top/left corner of the rendering viewport. [Example](http://babylonjs-playground.com/#2AVSFH#35). An instance of the `ScreenSpaceCanvas2D` class must be created.
+ - **WorldSpace**: the canvas has a position/rotation/scale that is expressed in World Coordinates, your canvas is like a 2D Rectangle lying in World Space, like any other 3D objects you can find in a 3D Scene. [Example](http://babylonjs-playground.com/#1BKDEO#22). And instance of the `WorldSpaceCanvas2D` class must be created.
 
-As you can guess, these two types serve different purposes, ScreenSpace being more adapted to render GUI in your Viewport, WorldSpace being more about taking advantage of the 2D Engine to render content in a 3D Scene, **as a part** of the 3D Scene.
+As you can guess, these two types serve different purposes, ScreenSpace being more adapted to render GUI in your Viewport, WorldSpace being more about taking advantage of the 2D Engine to render content in a 3D Scene **as a part** of the 3D Scene.
 
 ## The Caching Strategy
 In order to preserve a good balance between rendering time and memory consumption the user has the possibility to cache in a bitmap the content of a Group (or the Canvas itself). Many caching strategies are predefined, hopefully for the user to always find what fits him/her the best.

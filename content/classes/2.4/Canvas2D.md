@@ -7,6 +7,17 @@ class [Canvas2D](/classes/2.4/Canvas2D) extends [Group2D](/classes/2.4/Group2D)
 
 
 
+## Constructor
+
+## new [Canvas2D](/classes/2.4/Canvas2D)(scene, settings)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | scene | [Scene](/classes/2.4/Scene) | 
+optional | settings | { id: string,  children: Array&lt;[Prim2DBase](/classes/2.4/Prim2DBase)&gt;,  size: [Size](/classes/2.4/Size),  renderScaleFactor: number,  isScreenSpace: boolean,  cachingStrategy: number,  enableInteraction: boolean,  origin: [Vector2](/classes/2.4/Vector2),  isVisible: boolean,  backgroundRoundRadius: number,  backgroundFill: IBrush2D,  backgroundBorder: IBrush2D,  backgroundBorderThickNess: number } | 
 ## Members
 
 ### static CACHESTRATEGY_TOPLEVELGROUPS : number
@@ -39,6 +50,16 @@ Use this strategy if memory is a concern above rendering performances and/or if 
 
 Note that you can't use this strategy for WorldSpace Canvas, they need at least a top level group caching.
 
+### static hierarchyLevelMaxSiblingCount : number
+
+
+
+### worldSpaceToNodeLocal : (worldPos: [Vector3](/classes/2.4/Vector3)) =&gt; [Vector2](/classes/2.4/Vector2)
+
+If you set your own WorldSpaceNode to display the [Canvas2D](/classes/2.4/Canvas2D) you have to provide your own implementation of this method which computes the local position in the Canvas based on the given 3D World one.
+
+Beware that you have to take under consideration the origin and the renderScaleFactor in your calculations! Good luck!
+
 ### scene : [Scene](/classes/2.4/Scene)
 
 Accessor to the [Scene](/classes/2.4/Scene) that owns the Canvas
@@ -59,15 +80,13 @@ See [Canvas2D](/classes/2.4/Canvas2D).CACHESTRATEGY_xxxx static members for more
 
 @returns the value corresponding to the used strategy.
 
-### worldSpaceCanvasNode : [WorldSpaceCanvas2d](/classes/2.4/WorldSpaceCanvas2d)
+### worldSpaceCanvasNode : [Node](/classes/2.4/Node)
 
-Only valid for World [Space](/classes/2.4/Space) Canvas, returns the scene node that display the canvas
+Only valid for World [Space](/classes/2.4/Space) Canvas, returns the scene node that displays the canvas
 
 ### supportInstancedArray : boolean
 
 Check if the WebGL Instanced Array extension is supported or not
-
-@returns {}
 
 ### backgroundFill : IBrush2D
 
@@ -83,6 +102,12 @@ Property that defines the border object used to draw the background of the Canva
 
 @returns If the background is not set, null will be returned, otherwise a valid border object is returned.
 
+### backgroundBorderThickness : number
+
+Property that defines the thickness of the border object used to draw the background of the Canvas.
+
+@returns If the background is not set, null will be returned, otherwise a valid number matching the thickness is returned.
+
 ### backgroundRoundRadius : number
 
 You can set the roundRadius of the background
@@ -95,75 +120,8 @@ Enable/Disable interaction for this Canvas
 
 When enabled the [Prim2DBase](/classes/2.4/Prim2DBase).pointerEventObservable property will notified when appropriate events occur
 
-### hierarchySiblingZDelta : number
-
-Read-only property that return the Z delta to apply for each sibling primitives inside of a given one.
-
-Sibling Primitives are defined in a specific order, the first ones will be draw below the next ones.
-
-This property define the Z value to apply between each sibling Primitive. Current implementation allows 1000 Siblings Primitives per level.
-
-@returns The Z Delta
-
-### hierarchyLevelZFactor : number
-
-Return the Z Factor that will be applied for each new hierarchy level.
-
-@returns The Z Factor
-
 ## Methods
 
-### static CreateScreenSpace(scene, name, pos, size, cachingStrategy, enableInteraction) &rarr; [Canvas2D](/classes/2.4/Canvas2D)
-
-Create a new 2D ScreenSpace Rendering Canvas, it is a 2D rectangle that has a size (width/height) and a position relative to the top/left corner of the screen.
-
-ScreenSpace Canvas will be drawn in the [Viewport](/classes/2.4/Viewport) as a 2D [Layer](/classes/2.4/Layer) lying to the top of the 3D [Scene](/classes/2.4/Scene). Typically used for traditional UI.
-
-All caching strategies will be available.
-
-PLEASE NOTE: the origin of a Screen [Space](/classes/2.4/Space) Canvas is set to [0;0] (bottom/left) which is different than the default origin of a Primitive which is centered [0.5;0.5]
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | scene | [Scene](/classes/2.4/Scene) |  the [Scene](/classes/2.4/Scene) that owns the Canvas
- | name | string |  the name of the Canvas, for information purpose only
- | pos | [Vector2](/classes/2.4/Vector2) |  the position of the canvas, relative from the bottom/left of the scene's viewport
- | size | [Size](/classes/2.4/Size) |  the [Size](/classes/2.4/Size) of the canvas. If null two behaviors depend on the cachingStrategy: if it's CACHESTRATEGY_CACHECANVAS then it will always auto-fit the rendering device, in all the other modes it will fit the content of the Canvas
-optional | cachingStrategy | number |  either CACHESTRATEGY_TOPLEVELGROUPS, CACHESTRATEGY_ALLGROUPS, CACHESTRATEGY_CANVAS, CACHESTRATEGY_DONTCACHE. Please refer to their respective documentation for more information.
-### static CreateWorldSpace(scene, name, position, rotation, size, renderScaleFactor, sideOrientation, cachingStrategy, enableInteraction) &rarr; [Canvas2D](/classes/2.4/Canvas2D)
-
-Create a new 2D WorldSpace Rendering Canvas, it is a 2D rectangle that has a size (width/height) and a world transformation information to place it in the world space.
-
-This kind of canvas can't have its Primitives directly drawn in the [Viewport](/classes/2.4/Viewport), they need to be cached in a bitmap at some point, as a consequence the DONT_CACHE strategy is unavailable. For now only CACHESTRATEGY_CANVAS is supported, but the remaining strategies will be soon.
-
-BE AWARE that the Canvas true dimension will be size*renderScaleFactor, then all coordinates and size will have to be express regarding this size.
-
-TIPS: if you want a renderScaleFactor independent reference of frame, create a child [Group2D](/classes/2.4/Group2D) in the Canvas with position 0,0 and size set to null, then set its scale property to the same amount than the renderScaleFactor, put all your primitive inside using coordinates regarding the size property you pick for the Canvas and you'll be fine.
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | scene | [Scene](/classes/2.4/Scene) |  the [Scene](/classes/2.4/Scene) that owns the Canvas
- | name | string |  the name of the Canvas, for information purpose only
- | position | [Vector3](/classes/2.4/Vector3) |  the position of the Canvas in World [Space](/classes/2.4/Space)
- | rotation | [Quaternion](/classes/2.4/Quaternion) |  the rotation of the Canvas in World [Space](/classes/2.4/Space)
- | size | [Size](/classes/2.4/Size) |  the dimension of the Canvas in World [Space](/classes/2.4/Space)
-optional | renderScaleFactor | number |  A scale factor applied to create the rendering texture that will be mapped in the [Scene](/classes/2.4/Scene) Rectangle. If you set 2 for instance the texture will be twice large in width and height. A greater value will allow to achieve a better rendering quality.
-optional | sideOrientation | number |  Unexpected behavior occur if the value is different from [Mesh](/classes/2.4/Mesh).DEFAULTSIDE right now, so please use this one.
-optional | cachingStrategy | number |  Must be CACHESTRATEGY_CANVAS for now
-### setupCanvas(scene, name, size, isScreenSpace, cachingstrategy, enableInteraction) &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | scene | [Scene](/classes/2.4/Scene) | 
- | name | string | 
- | size | [Size](/classes/2.4/Size) | 
- | isScreenSpace | boolean | 
- | cachingstrategy | number | 
 ### isPointerCaptured(pointerId) &rarr; boolean
 
 Determine if the given pointer is captured or not
@@ -204,12 +162,25 @@ Get a Solid Color Brush instance matching the given color expressed as a CSS for
 
 ### static GetGradientColorBrush(color1, color2, translation, rotation, scale) &rarr; IBrush2D
 
-
+Get a Gradient Color Brush
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | color1 | [Color4](/classes/2.4/Color4) | 
- | color2 | [Color4](/classes/2.4/Color4) | 
-optional | translation | [Vector2](/classes/2.4/Vector2) | 
-optional | rotation | number | 
+ | color1 | [Color4](/classes/2.4/Color4) |  starting color
+ | color2 | [Color4](/classes/2.4/Color4) |  engine color
+optional | translation | [Vector2](/classes/2.4/Vector2) |  translation vector to apply. default is [0;0]
+optional | rotation | number |  rotation in radian to apply to the brush, initial direction is top to bottom. rotation is counter clockwise. default is 0.
+### static GetBrushFromString(brushString) &rarr; IBrush2D
+
+Create a solid or gradient brush from a string value.
+
+ - "solid: #RRGGBBAA" or "#RRGGBBAA"
+
+ - "gradient: #FF808080, #FFFFFFF[, [10:20], 180, 1]" for color1, color2, translation, rotation (degree), scale. The last three are optionals, but if specified must be is this order. "gradient:" can be omitted.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | brushString | string |  should be either
+

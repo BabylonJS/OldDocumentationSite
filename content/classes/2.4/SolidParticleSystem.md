@@ -17,7 +17,7 @@ Creates a SPS (Solid [Particle](/classes/2.4/Particle) System) object.
 
 `scene` ([Scene](/classes/2.4/Scene)) is the scene in which the SPS is added.
 
-`updatableè (default true) : if the SPS must be updatable or immutable.
+`updatable` (default true) : if the SPS must be updatable or immutable.
 
 `isPickable` (default false) : if the solid particles must be pickable.
 
@@ -138,7 +138,7 @@ These particles will have the same geometry than the mesh parts and will be posi
 
 Thus the particles generated from `digest()` have their property `position` set yet.
 
-`mesh` (`[Mesh](/classes/2.4/Mesh)`) is the mesh to be digested
+`mesh` ( [Mesh](/classes/2.4/Mesh) ) is the mesh to be digested
 
 `facetNb` (optional integer, default 1) is the number of mesh facets per particle, this parameter is overriden by the parameter `number` if any
 
@@ -157,7 +157,7 @@ Adds some particles to the SPS from the model shape. Returns the shape id.
 
 Please read the doc : http://doc.babylonjs.com/overviews/Solid_Particle_System#create-an-immutable-sps
 
-`mesh` is any `[Mesh](/classes/2.4/Mesh)` object that will be used as a model for the solid particles.
+`mesh` is any [Mesh](/classes/2.4/Mesh) object that will be used as a model for the solid particles.
 
 `nb` (positive integer) the number of particles to be created from this model
 
@@ -185,9 +185,9 @@ Sets all the particles : this method actually really updates the mesh according 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | start | number |  (default 0) the particle index in the particle array where to start to compute the particle property values  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()
-optional | end | number |  (default nbParticle - 1)  the particle index in the particle array where to stop to compute the particle property values  (default nbParticle - 1)  the particle index in the particle array where to stop to compute the particle property values
-optional | update | boolean |  (default true) if the mesh must be finally updated on this call after all the particle computations.  the boolean update value actually passed to setParticles()
+optional | start | number |  The particle index in the particle array where to start to compute the particle property values _(default 0)_  the particle index in the particle array where to stop to iterate, same than the value passed to setParticle()
+optional | end | number |  The particle index in the particle array where to stop to compute the particle property values _(default nbParticle - 1)_  (default nbParticle - 1)  the particle index in the particle array where to stop to compute the particle property values
+optional | update | boolean |  If the mesh must be finally updated on this call after all the particle computations _(default true)_  the boolean update value actually passed to setParticles()
 ### dispose() &rarr; void
 
 Disposes the SPS

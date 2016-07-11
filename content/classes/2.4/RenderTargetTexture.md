@@ -15,7 +15,7 @@ class [RenderTargetTexture](/classes/2.4/RenderTargetTexture) extends [Texture](
 
 ## Constructor
 
-## new [RenderTargetTexture](/classes/2.4/RenderTargetTexture)(name, size, scene, generateMipMaps, doNotChangeAspectRatio, type, isCube)
+## new [RenderTargetTexture](/classes/2.4/RenderTargetTexture)(name, size, scene, generateMipMaps, doNotChangeAspectRatio, type, isCube, samplingMode)
 
 
 
@@ -28,6 +28,7 @@ class [RenderTargetTexture](/classes/2.4/RenderTargetTexture) extends [Texture](
 optional | generateMipMaps | boolean |    True to generate the mipmaps
 optional | doNotChangeAspectRatio | boolean |    
 optional | type | number |  
+optional | isCube | boolean | 
 ## Members
 
 ### isCube : boolean
@@ -46,9 +47,15 @@ optional | type | number |
 
 
 
+### renderListPredicate : ([AbstractMesh](/classes/2.4/AbstractMesh): undefined) =&gt; boolean
+
+Use this predicate to dynamically define the list of mesh you want to render.
+
+If set, the renderList property will be overwritten.
+
 ### renderList : [AbstractMesh](/classes/2.4/AbstractMesh)[]
 
-The render list
+Use this list to define the list of mesh you want to render.
 
 ### renderParticles : boolean
 
@@ -67,6 +74,10 @@ The coordinates mode
 The active camera
 
 ### customRenderFunction : (opaqueSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;, transparentSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;, alphaTestSubMeshes: [SmartArray](/classes/2.4/SmartArray)&lt;[SubMesh](/classes/2.4/SubMesh)&gt;, beforeTransparents: () =&gt; void) =&gt; void
+
+
+
+### useCameraPostProcesses : boolean
 
 
 

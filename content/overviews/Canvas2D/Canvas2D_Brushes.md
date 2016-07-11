@@ -10,4 +10,4 @@ There are actually two types of brush SolidColor and Gradient. You can access a 
 
 ## Example
 
-[Lines2D primitive](http://babylonjs-playground.com/#15C96V)
+[Lines2D primitive](http://babylonjs-playground.com/#15C96V#5)

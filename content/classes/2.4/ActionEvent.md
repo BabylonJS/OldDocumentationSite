@@ -82,3 +82,13 @@ Helper function to auto-create an [ActionEvent](/classes/2.4/ActionEvent) from a
 ---|---|---|---
  | scene | [Scene](/classes/2.4/Scene) |  the scene where the event occurred  the scene where the event occurred  the scene where the event occurred the scene where the event occurred
  | evt | Event |  {Event} The original (browser) event  {Event} The original (browser) event  {Event} The original (browser) event {Event} The original (browser) event
+### static CreateNewFromPrimitive(prim, pointerPos, evt, additionalData) &rarr; [ActionEvent](/classes/2.4/ActionEvent)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | prim | any | 
+ | pointerPos | [Vector2](/classes/2.4/Vector2) | 
+optional | evt | Event |   {Event} The original (browser) event  {Event} The original (browser) event {Event} The original (browser) event

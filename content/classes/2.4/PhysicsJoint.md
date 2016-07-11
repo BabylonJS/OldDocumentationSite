@@ -78,6 +78,10 @@ It holds a set of functions to control the underlying joint.
 
 
 
+### static LockJoint : number
+
+
+
 ## Methods
 
 ### executeNativeFunction(func) &rarr; void

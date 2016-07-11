@@ -14,9 +14,9 @@ It is understandable that if both `border` and `fill` are optional, at least one
 
 ## Examples
 
-[Lines2D primitive](http://babylonjs-playground.com/#15C96V)
+[Lines2D primitive](http://babylonjs-playground.com/#15C96V#5)
 
-[Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#6) you can select
+[Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#8) you can select
 
 
 

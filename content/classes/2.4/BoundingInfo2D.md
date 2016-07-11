@@ -32,75 +32,73 @@ This is an absolute value in both X and Y of the vector which describe the right
 
 ## Methods
 
-### static CreateFromSize(size, origin) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
+### static CreateFromSize(size) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | size | [Size](/classes/2.4/Size) | 
-optional | origin | [Vector2](/classes/2.4/Vector2) | 
-### static CreateFromRadius(radius, origin) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
-
-
+Create a [BoundingInfo2D](/classes/2.4/BoundingInfo2D) object from a given size
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | radius | number | 
-optional | origin | [Vector2](/classes/2.4/Vector2) | 
-### static CreateFromPoints(points, origin) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
+ | size | [Size](/classes/2.4/Size) |  the size that will be used to set the extend, radius will be computed from it.
 
+### static CreateFromRadius(radius) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | points | [Vector2](/classes/2.4/Vector2)[] | 
-optional | origin | [Vector2](/classes/2.4/Vector2) | 
-### static CreateFromSizeToRef(size, b, origin) &rarr; void
-
-
+Create a [BoundingInfo2D](/classes/2.4/BoundingInfo2D) object from a given radius
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | size | [Size](/classes/2.4/Size) | 
- | b | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) | 
-optional | origin | [Vector2](/classes/2.4/Vector2) | 
-### static CreateFromRadiusToRef(radius, b, origin) &rarr; void
+ | radius | number |  the radius to use, the extent will be computed from it.
 
+### static CreateFromPoints(points) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
 
+Create a [BoundingInfo2D](/classes/2.4/BoundingInfo2D) object from a list of points.
 
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | radius | number | 
- | b | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) | 
-optional | origin | [Vector2](/classes/2.4/Vector2) | 
-### static CreateFromPointsToRef(points, b, origin) &rarr; void
-
-
+The resulted object will be the smallest bounding area that includes all the given points.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | points | [Vector2](/classes/2.4/Vector2)[] | 
- | b | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) | 
-optional | origin | [Vector2](/classes/2.4/Vector2) | 
-### static CreateFromMinMaxToRef(xmin, xmax, ymin, ymax, b, origin) &rarr; void
+ | points | [Vector2](/classes/2.4/Vector2)[] |  an array of points to compute the bounding object from.
 
+### static CreateFromSizeToRef(size, b) &rarr; void
 
+Update a [BoundingInfo2D](/classes/2.4/BoundingInfo2D) object using the given [Size](/classes/2.4/Size) as input
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | xmin | number | 
- | xmax | number | 
- | ymin | number | 
- | ymax | number | 
- | b | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) | 
+ | size | [Size](/classes/2.4/Size) |  the bounding data will be computed from this size.
+ | b | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) |  must be a valid/allocated object, it will contain the result of the operation
+### static CreateFromRadiusToRef(radius, b) &rarr; void
+
+Update a [BoundingInfo2D](/classes/2.4/BoundingInfo2D) object using the given radius as input
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | radius | number |  the bounding data will be computed from this radius
+ | b | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) |  must be a valid/allocated object, it will contain the result of the operation
+### static CreateFromPointsToRef(points, b) &rarr; void
+
+Update a [BoundingInfo2D](/classes/2.4/BoundingInfo2D) object using the given points array as input
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | points | [Vector2](/classes/2.4/Vector2)[] |  the point array to use to update the bounding data
+ | b | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) |  must be a valid/allocated object, it will contain the result of the operation
+### static CreateFromMinMaxToRef(xmin, xmax, ymin, ymax, b) &rarr; void
+
+Update a [BoundingInfo2D](/classes/2.4/BoundingInfo2D) object using the given min/max values as input
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | xmin | number |  the smallest x coordinate
+ | xmax | number |  the biggest x coordinate
+ | ymin | number |  the smallest y coordinate
+ | ymax | number |  the buggest y coordinate
 ### clone() &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
 
 Duplicate this instance and return a new one
@@ -108,15 +106,15 @@ Duplicate this instance and return a new one
 @return the duplicated instance
 ### max() &rarr; [Vector2](/classes/2.4/Vector2)
 
-
+return the max extend of the bounding info
 ### maxToRef(result) &rarr; void
 
-
+Update a vector2 with the max extend of the bounding info
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | result | [Vector2](/classes/2.4/Vector2) | 
+ | result | [Vector2](/classes/2.4/Vector2) |  must be a valid/allocated vector2 that will contain the result of the operation
 
 ### transform(matrix) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
 
@@ -131,7 +129,7 @@ Apply a transformation matrix to this [BoundingInfo2D](/classes/2.4/BoundingInfo
 
 ### union(other) &rarr; [BoundingInfo2D](/classes/2.4/BoundingInfo2D)
 
-Compute the union of this [BoundingInfo2D](/classes/2.4/BoundingInfo2D) with a given one, return a new [BoundingInfo2D](/classes/2.4/BoundingInfo2D) as a result
+Compute the union of this [BoundingInfo2D](/classes/2.4/BoundingInfo2D) with a given one, returns a new [BoundingInfo2D](/classes/2.4/BoundingInfo2D) as a result
 
 @return a new instance containing the result of the union
 
@@ -164,10 +162,14 @@ This is a GC friendly version, try to use it as much as possible, specially if y
  | result | [BoundingInfo2D](/classes/2.4/BoundingInfo2D) |  a VALID [BoundingInfo2D](/classes/2.4/BoundingInfo2D) instance (i.e. allocated) where the result will be stored
 ### doesIntersect(pickPosition) &rarr; boolean
 
+Check if the given point is inside the [BoundingInfo](/classes/2.4/BoundingInfo).
 
+The test is first made on the radius, then inside the rectangle described by the extent
+
+@return true if the point is inside, false otherwise
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | pickPosition | [Vector2](/classes/2.4/Vector2) | 
+ | pickPosition | [Vector2](/classes/2.4/Vector2) |  the position to test
 

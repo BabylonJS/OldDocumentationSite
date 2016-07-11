@@ -9,6 +9,10 @@ class [Text2DRenderCache](/classes/2.4/Text2DRenderCache) extends [ModelRenderCa
 
 ## Members
 
+### effectsReady : boolean
+
+
+
 ### vb : WebGLBuffer
 
 
@@ -26,6 +30,10 @@ class [Text2DRenderCache](/classes/2.4/Text2DRenderCache) extends [ModelRenderCa
 
 
 ### effect : [Effect](/classes/2.4/Effect)
+
+
+
+### effectInstanced : [Effect](/classes/2.4/Effect)
 
 
 

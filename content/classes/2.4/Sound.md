@@ -207,6 +207,9 @@ optional | time | number |
 ---|---|---|---
  | meshToConnectTo | [AbstractMesh](/classes/2.4/AbstractMesh) |    
 
+### detachFromMesh() &rarr; void
+
+
 ### clone() &rarr; [Sound](/classes/2.4/Sound)
 
 

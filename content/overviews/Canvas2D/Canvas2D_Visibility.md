@@ -11,4 +11,4 @@ The properties:
  - `levelVisible` is get/set property to define the visibility at the primitive's level. Default being `true`.
  - `isVisible` is a get only property, it defines if the primitive is actually visible or not, based on the `levelVisible` of this primitive **and its parents**.
 
-[Visibility demo](http://babylonjs-playground.com/#BDQQX#0)
+[Visibility demo](http://babylonjs-playground.com/#BDQQX#2)

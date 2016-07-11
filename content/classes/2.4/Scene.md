@@ -244,7 +244,7 @@ An event triggered when a mesh is removed
 
 This observable event is triggered when any mouse event registered during [Scene](/classes/2.4/Scene).attach() is called BEFORE the 3D engine to process anything (mesh/sprite picking for instance).
 
-You have the possibility to skip the 3D [Engine](/classes/2.4/Engine) process and the call to onPointerObservable by setting PointerInfoBase.skipOnPointerObservable to true
+You have the possibility to skip the 3D [Engine](/classes/2.4/Engine) process and the call to onPointerObservable by setting [PointerInfoBase](/classes/2.4/PointerInfoBase).skipOnPointerObservable to true
 
 ### onPointerObservable : [Observable](/classes/2.4/Observable)&lt;[PointerInfo](/classes/2.4/PointerInfo)&gt;
 

@@ -13,7 +13,7 @@ class [FilterPostProcess](/classes/2.4/FilterPostProcess) extends [PostProcess](
 
 ## Constructor
 
-## new [FilterPostProcess](/classes/2.4/FilterPostProcess)(name, kernelMatrix, ratio, camera, samplingMode, engine, reusable)
+## new [FilterPostProcess](/classes/2.4/FilterPostProcess)(name, kernelMatrix, options, PostProcessOptions, camera, samplingMode, engine, reusable)
 
 
 
@@ -22,7 +22,7 @@ class [FilterPostProcess](/classes/2.4/FilterPostProcess) extends [PostProcess](
 ---|---|---|---
  | name | string |    
  | kernelMatrix | [Matrix](/classes/2.4/Matrix) |    
- | ratio | number |    
+ | options | number or PostProcessOptions | 
 optional | camera | [Camera](/classes/2.4/Camera) |    
 optional | samplingMode | number |    
 optional | engine | [Engine](/classes/2.4/Engine) |    

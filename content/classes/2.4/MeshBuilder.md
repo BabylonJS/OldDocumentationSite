@@ -19,7 +19,7 @@ The parameter `size` sets the size (float) of each box side (default 1).
 
 You can set some different box dimensions by using the parameters `width`, `height` and `depth` (all by default have the same value than `size`).
 
-You can set different colors and different images to each box side by using the parameters `faceColors` (an array of 6 `[Color3](/classes/2.4/Color3)` elements) and `faceUV` (an array of 6 `[Vector4](/classes/2.4/Vector4)` elements).
+You can set different colors and different images to each box side by using the parameters `faceColors` (an array of 6 [Color3](/classes/2.4/Color3) elements) and `faceUV` (an array of 6 [Vector4](/classes/2.4/Vector4) elements).
 
 Please read this tutorial : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
 
@@ -169,7 +169,7 @@ The parameter `enclose`  (boolean, default false) adds two extra faces per subdi
 
 The parameter `arc` (float, default 1) is the ratio (max 1) to apply to the circumference to slice the cylinder.
 
-You can set different colors and different images to each box side by using the parameters `faceColors` (an array of n `[Color3](/classes/2.4/Color3)` elements) and `faceUV` (an array of n `[Vector4](/classes/2.4/Vector4)` elements).
+You can set different colors and different images to each box side by using the parameters `faceColors` (an array of n [Color3](/classes/2.4/Color3) elements) and `faceUV` (an array of n [Vector4](/classes/2.4/Vector4) elements).
 
 The value of n is the number of cylinder faces. If the cylinder has only 1 subdivisions, n equals : top face + cylinder surface + bottom face = 3
 
@@ -391,11 +391,15 @@ The parameter `rotationFunction` (JS function) is a custom Javascript function c
 
 and the distance of this point from the begining of the path :
 
-```rotationFunction = function(i, distance) {
+```javascript
 
- // do things
+var rotationFunction = function(i, distance) {
 
- return rotationValue; }```
+    // do things
+
+    return rotationValue; }
+
+```
 
 It must returns a float value that will be the rotation in radians applied to the shape on each path point.
 
@@ -403,11 +407,15 @@ The parameter `scaleFunction` (JS function) is a custom Javascript function call
 
 and the distance of this point from the begining of the path :
 
-````scaleFunction = function(i, distance) {
+```javascript
 
-  // do things
+var scaleFunction = function(i, distance) {
 
- return scaleValue;}```
+    // do things
+
+    return scaleValue;}
+
+```
 
 It must returns a float value that will be the scale value applied to the shape on each path point.
 
@@ -479,7 +487,7 @@ The parameter `size` sets the size (float) of both sides of the plane at once (d
 
 You can set some different plane dimensions by using the parameters `width` and `height` (both by default have the same value than `size`).
 
-The parameter `sourcePlane` is a `[Plane](/classes/2.4/Plane)` instance. It builds a mesh plane from a Math plane.
+The parameter `sourcePlane` is a [Plane](/classes/2.4/Plane) instance. It builds a mesh plane from a Math plane.
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.4/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.4/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.4/Mesh).DOUBLESIDE
 
@@ -557,9 +565,15 @@ The parameter `maxHeight` (float, default 1) is the maximum altitude on the grou
 
 The parameter `onReady` is a javascript callback function that will be called  once the mesh is just built (the height map download can last some time).
 
-This function is passed the newly built mesh : ```function(mesh) { // do things
+This function is passed the newly built mesh :
 
-return; }```
+```javascript
+
+function(mesh) { // do things
+
+    return; }
+
+```
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -579,7 +593,7 @@ The tube is a parametric shape :  http://doc.babylonjs.com/tutorials/Parametric_
 
 tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#tube
 
-The parameter `path` is a required array of successive `[Vector3](/classes/2.4/Vector3)`. It is the curve used as the axis of the tube.
+The parameter `path` is a required array of successive [Vector3](/classes/2.4/Vector3). It is the curve used as the axis of the tube.
 
 The parameter `radius` (positive float, default 1) sets the tube radius size.
 
@@ -591,11 +605,15 @@ This function is called on each point of the tube path and is passed the index `
 
 It must return a radius value (positive float) :
 
-```var radiusFunction = function(i, distance) {
+```javascript
 
-  // do things
+var radiusFunction = function(i, distance) {
 
-  return radius; }```
+    // do things
+
+    return radius; }
+
+```
 
 The parameter `arc` (positive float, maximum 1, default 1) is the ratio to apply to the tube circumference : 2 x PI x arc.
 
@@ -635,7 +653,7 @@ You can build other polyhedron types than the 15 embbeded ones by setting the pa
 
 A `polyhedronObject` is a formatted javascript object. You'll find a full file with pre-set polyhedra here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
 
-You can set the color and the UV of each side of the polyhedron with the parameters `faceColors` (`[Color4](/classes/2.4/Color4)`, default `(1, 1, 1, 1)`) and faceUV (`[Vector4](/classes/2.4/Vector4)`, default `(0, 0, 1, 1)`).
+You can set the color and the UV of each side of the polyhedron with the parameters `faceColors` ([Color4](/classes/2.4/Color4), default `(1, 1, 1, 1)`) and faceUV ([Vector4](/classes/2.4/Vector4), default `(0, 0, 1, 1)`).
 
 To understand how to set `faceUV` or `faceColors`, please read this by considering the right number of faces of your polyhedron, instead of only 6 for the box : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
 
@@ -661,11 +679,11 @@ tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Pa
 
 A decal is a mesh usually applied as a model onto the surface of another mesh. So don't forget the parameter `sourceMesh` depicting the decal.
 
-The parameter `position` (`[Vector3](/classes/2.4/Vector3)`, default `(0, 0, 0)`) sets the position of the decal in World coordinates.
+The parameter `position` ([Vector3](/classes/2.4/Vector3), default `(0, 0, 0)`) sets the position of the decal in World coordinates.
 
-The parameter `normal` (`[Vector3](/classes/2.4/Vector3)`, default `[Vector3](/classes/2.4/Vector3).Up`) sets the normal of the mesh where the decal is applied onto in World coordinates.
+The parameter `normal` ([Vector3](/classes/2.4/Vector3), default `[Vector3](/classes/2.4/Vector3).Up`) sets the normal of the mesh where the decal is applied onto in World coordinates.
 
-The parameter `size` (`[Vector3](/classes/2.4/Vector3)`, default `(1, 1, 1)`) sets the decal scaling.
+The parameter `size` ([Vector3](/classes/2.4/Vector3), default `(1, 1, 1)`) sets the decal scaling.
 
 The parameter `angle` (float in radian, default 0) sets the angle to rotate the decal.
 

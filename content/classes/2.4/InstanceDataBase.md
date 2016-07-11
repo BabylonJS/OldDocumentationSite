@@ -40,10 +40,6 @@ class [InstanceDataBase](/classes/2.4/InstanceDataBase)
 
 
 
-### origin : [Vector2](/classes/2.4/Vector2)
-
-
-
 ### dataElementCount : number
 
 

@@ -99,11 +99,35 @@
 
   .result {
 
-    margin: 15px 0;
+    padding: 10px 5px;
+    margin: 3px 0;
+    background: #ebebeb;
+    width: 100%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.2s;
+    border-left: 4px solid #00AEEF;
 
     .resultTitle {
+      font-weight: 300;
+      font-family: "Roboto";
       font-size: 1.1em;
       margin: 0;
+      color: black;
+      width: 100%;
+      padding-left: 10px;
+
+      .version {
+        display: inline-block;
+        position: relative;
+        padding-left: 8px;
+        right: 24px;
+        display: inline-block;
+        float: right;
+        clear: right;
+        color: #969696;
+      }
     }
     pre {
       margin-left: 30px;

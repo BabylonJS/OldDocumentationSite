@@ -13,16 +13,16 @@ Builtin postprocess applying a kernel matrix to every pixel
 
 ## Constructor
 
-## new [ConvolutionPostProcess](/classes/2.4/ConvolutionPostProcess)(name, kernel, ratio, camera, samplingMode, engine, reusable)
+## new [ConvolutionPostProcess](/classes/2.4/ConvolutionPostProcess)(name, kernel, options, PostProcessOptions, camera, samplingMode, engine, reusable)
 
-The Postprocess constructor
+
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | name | string |    The postprocess name
  | kernel | number[] |    The matrix to apply
- | ratio | number |    The size of the postprocess (0.5 means that your postprocess will have a width = canvas.width * 0.5 and a height = canvas.height * 0.5)
+ | options | number or PostProcessOptions | 
  | camera | [Camera](/classes/2.4/Camera) |    The scene camera linked to this post process
 optional | samplingMode | number |    [Texture](/classes/2.4/Texture).NEAREST_SAMPLINGMODE, [Texture](/classes/2.4/Texture).BILINEAR_SAMPLINGMODE or [Texture](/classes/2.4/Texture).TRILINEAR_SAMPLINGMODE
 optional | engine | [Engine](/classes/2.4/Engine) |    The engine to attach the postprocess.

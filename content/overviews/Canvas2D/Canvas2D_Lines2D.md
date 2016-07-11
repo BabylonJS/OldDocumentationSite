@@ -14,8 +14,8 @@ Rendering Lines2D primitive won't be as fast as Rectangle2D or Ellipse2D. Due to
  - `points`: a `Array<Vector2>` property that define the list of the points that will make each segment of the line.
  - `fillThickness`: a number that defines the thickness of the line in pixel (when the scale is 1). Default is 1.
  - `closed`: a boolean that if `true` specify a closed line, the first and last point will be joined by a segment. `false` is the default value, the first and last point won't be connected.
- - startCap: a number, one value of the `Lines2D.XxxCap` static property. Define which cap is use for the start of the line. Default value is Lines2D.NoCap.
- - endCap: a number, one value of the `Lines2D.XxxCap` static property. Define which cap is use for the end of the line. Default value is Lines2D.NoCap.
+ - `startCap`: a number, one value of the `Lines2D.XxxCap` static property. Define which cap is use for the start of the line. Default value is Lines2D.NoCap.
+ - `endCap`: a number, one value of the `Lines2D.XxxCap` static property. Define which cap is use for the end of the line. Default value is Lines2D.NoCap.
 
 ## Remarks
 
@@ -31,5 +31,5 @@ The different types of cap are:
 
 ## Examples
 
-[Lines2D primitive](http://babylonjs-playground.com/#15C96V)
+[Lines2D primitive](http://babylonjs-playground.com/#15C96V#5)
 

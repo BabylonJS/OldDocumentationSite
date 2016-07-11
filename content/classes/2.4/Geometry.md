@@ -82,6 +82,15 @@ Set vertices data
  | kind | string |    @param kind
  | data | number[] |    @param data
 optional | updatable | boolean |    @param updatable
+### setVerticesBuffer(buffer) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | buffer | [VertexBuffer](/classes/2.4/VertexBuffer) | 
+
 ### updateVerticesDataDirectly(kind, data, offset) &rarr; void
 
 Update vertices data directly
@@ -123,7 +132,7 @@ Get vertex buffer for this kind
 ---|---|---|---
  | kind | string |    @param kind
 
-### getVertexBuffers() &rarr; [VertexBuffer](/classes/2.4/VertexBuffer)[]
+### getVertexBuffers() &rarr; { [key: string]: [VertexBuffer](/classes/2.4/VertexBuffer) }
 
 Get vertex buffers, use all element of vertex buffer
 ### isVerticesDataPresent(kind) &rarr; boolean
@@ -159,7 +168,7 @@ Get the last indices
 ---|---|---|---
 optional | copyWhenShared | boolean |    
 
-### getIndexBuffer() &rarr; any
+### getIndexBuffer() &rarr; WebGLBuffer
 
 Get index buffer
 ### releaseForMesh(mesh, shouldDispose) &rarr; void
@@ -189,6 +198,9 @@ Load function
 ---|---|---|---
  | scene | [Scene](/classes/2.4/Scene) |    the platform
 optional | onLoaded | () =&gt; void |    @param onLoaded
+### toLeftHanded() &rarr; void
+
+Invert the geometry to move from a right handed system to a left handed one.
 ### isDisposed() &rarr; boolean
 
 
