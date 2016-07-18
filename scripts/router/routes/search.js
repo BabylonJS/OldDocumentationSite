@@ -16,6 +16,7 @@ router.get('/', function (req, res) {
         basicFilters = (req.query.bf + '' || 'all'),
         page = (req.query.page || 1 ) - 1,
         resultMax = (req.query.max || 25),
+        renderType = (req.query.renderType || 'page'),
         keywords = [];
 
     resultMax = parseInt(resultMax);
@@ -69,6 +70,7 @@ router.get('/', function (req, res) {
                             // first occurrence
                             uniqueResults.push({
                                 src: result.src,
+                                url: req.protocol + '://' + req.get('host') + "/" + result.src,
                                 name: result.name,
                                 version: result.version,
                                 occurrences: 1
@@ -141,7 +143,7 @@ router.get('/', function (req, res) {
 
             searchResult = searchResult.slice(begin, end);
 
-            res.render('search', {
+            var resultObject = {
                 searchTerm  : searchTerm,
                 resultsCount: totalCount,
                 filteredCount: filteredCount,
@@ -149,16 +151,28 @@ router.get('/', function (req, res) {
                 results     : searchResult,
                 page        : req.query.page || 1,
                 availableFilters: resultByCat
-            });
+            };
+
+            if(renderType === 'page'){
+                res.render('search', resultObject);
+            } else if(renderType === 'json'){
+                res.json(resultObject);
+            }
         });
 
     } else {
         //default search page
-        res.render('search', {
-            message: "Please try to run a search with at least one word longer than one character",
-            searchTerm: searchTerm,
-            resultsCount: 0
-        });
+        var resultObject = {
+                message: "Please try to run a search with at least one word longer than one character",
+                searchTerm: searchTerm,
+                resultsCount: 0
+            };
+
+        if(renderType === 'page'){
+            res.render('search', resultObject);
+        } else if(renderType === 'json'){
+            res.json(resultObject);
+        }
     }
 });
 
