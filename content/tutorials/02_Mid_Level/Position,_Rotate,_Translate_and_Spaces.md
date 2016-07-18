@@ -41,9 +41,9 @@ Fig 2
 The easiest way of rotating the pilot within the world is ```pilot.rotation = new BABYLON.Vector3(alpha, beta, gamma)``` and this is equivalent to
 
 ```typescript
-pilot.position.x  =  alpha;
-pilot.position.y  =  beta;
-pilot.position.z  =  gamma;
+pilot.rotation.x  =  alpha;
+pilot.rotation.y  =  beta;
+pilot.rotation.z  =  gamma;
 ```
 where alpha, beta and gama are angles in radians that give the rotations
  anti-clockwise about the x, y and z axes respectively when viewed in 
