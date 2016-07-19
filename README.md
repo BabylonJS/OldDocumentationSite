@@ -14,6 +14,7 @@ Before beginning, please be sure to have these packages installed:
 ## Run a local copy of the documentation
  * ```git clone https://github.com/BabylonJS/Documentation.git && cd Documentation```Clone this repository
  * ```npm install``` to install all dependencies
+ * ```grunt build``` to build documentation
  * ```grunt serve``` runs the server and open a tab in your default browser
 
 ## Useful command
