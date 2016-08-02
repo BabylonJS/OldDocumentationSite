@@ -53,3 +53,4 @@ This section contains useful links for you to get started on different concepts 
  - How works [Margin & Padding](http://babylonjs-playground.com/#2DD9TG#3)
  - How to [track a node from the 3D Scene](http://babylonjs-playground.com/#1N9RJY#5) 
  - WorldSpace Canvas on a [custom scene node](http://babylonjs-playground.com/#EPFQG#4)
+ - [Z-Order test](http://babylonjs-playground.com/#1S2MDR#2)
