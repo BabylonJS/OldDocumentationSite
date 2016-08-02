@@ -4,8 +4,8 @@ Each Primitive has a Z Position, which is determined automatically by the Canvas
 
 The actual Z Position can be retrieve by calling the `getActualZOffset` method which return a number between 0 and 1.
 
-- 0 means below everything.
-- 1 means on the top of everything.
+- 1 means below everything.
+- 0 means on the top of everything.
 
 ## Default behavior
 
