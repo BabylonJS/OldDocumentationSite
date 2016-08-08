@@ -11,7 +11,7 @@ You can see a demo of this technique [right here](http://babylonjs-playground.co
 ## What is Parallax Mapping
 Parallax Mapping is an algorithm which, based from a height map, apply an offset on the material's textures in order to accentuate the effect of relief in the geometry's surface.
 
-While this technique is independent from Normal Mapping (a.k.a Bump) it's often used in conjunction with it. The simple reason is that the height map needed to perform Parallax Mapping is most of the time encoded in the Alpha channel of the Normal Map texture.
+While this technique is independent from Normal Mapping (a.k.a Bump) it's often used in conjunction with it. The simple reason is that the height map needed to perform Parallax Mapping is most of the time encoded in the Alpha channel of the Normal Map texture. (A diffuse texture is required for using parallax mapping).
 
 There are many technique that are based on the Parallax Mapping principle, Babylon.js supports two of them.
 
@@ -27,7 +27,6 @@ You can learn more about all the different techniques [here](http://sunandblackc
 
 ## Parallax Mapping with babylon.js
 You can use Parallax Mapping through the following materials:
-
  - [StandardMaterial](http://doc.babylonjs.com/classes/2.3/StandardMaterial)
  - PBRMaterial
 
@@ -41,7 +40,7 @@ You have three property to work with Parallax:
 
 ## Creating Height map
 
-You will find an interesting [tutrial here](https://www.youtube.com/watch?v=Sd5Avnf_JuU) that explains how to create the height map.
+You will find an interesting [tutorial here](https://www.youtube.com/watch?v=Sd5Avnf_JuU) that explains how to create the height map.
 
 If you happen to have normal map and height map in separated files, you can use this [Windows Tool](https://github.com/BabylonJS/Extensions/tree/master/NormalHeightMapTool) to merge them into a single file.
 
