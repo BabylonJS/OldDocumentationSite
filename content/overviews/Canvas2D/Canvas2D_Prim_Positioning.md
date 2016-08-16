@@ -6,6 +6,13 @@ One of the purpose of the [Canvas2D](http://doc.babylonjs.com/overviews/Canvas2D
 
 One key feature that helps making this easier is to provide a Positioning Engine for the primitives (in order to avoid positioning them with absolute coordinates) by relying on a higher level set of features which drive positions and sizes, based on criteria that make more sense to GUI based programming.
 
+To make things clearer you have two distinct modes:
+
+1. Absolute Positioning, you set the `position` property (or `x` & `x` which are shortcuts to position.x & position.y) to specify where your primitive is going to be positioned. By doing this you don't use the positioning engine.
+2. Using the Positioning Engine, you will rely on the properties stated below but **you will not** set the `position` property, the position will be computed by the Positioning Engine and the result will be stored in the `actualPosition` and `actualSize` properties. Setting the `position` property in this mode will lead to unexpected results.
+
+## How positioning works
+
 Three concepts are introduced to help on this matter:
 
  - **Areas**: each primitive has different areas:
