@@ -34,6 +34,13 @@ It means:
  - PrimB-Child2 will be over PrimB-Child1 (and also over what PrimB-Child1 is over).
  - And so on, you get the idea.
 
+### Changing the order between siblings
+For example if you need to move PrimB-Child1 over the top of PrimB-Child2 & PrimB-Child3 all you have to do is call the Prim2DBase.moveChild method like this:
+```
+PrimB.moveChild(PrimB-Child1, PrimB-Child3);
+```
+This call will reorder the list of children to put Child1 after Child3, ensuring a rendering on the top of both Child 2 and 3.
+
 ## Overriding the Z-Order
 
 The `zOrder` property can be set to override the default value computed using the place of the Primitive in the hierarchy. When set the `getActualZOffset` method will return its value.
