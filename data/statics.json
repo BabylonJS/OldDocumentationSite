@@ -352,7 +352,11 @@
         {
           "title": "Creating your own primitive type for the Canvas2D",
           "filename": "How_to_create_your_own_Canvas2D_primitive"
-        }         
+        },
+        {
+          "title": "Using the standard rendering pipeline",
+          "filename": "Using_Standard_Rendering_Pipeline"
+        }
       ]
     },
     {
