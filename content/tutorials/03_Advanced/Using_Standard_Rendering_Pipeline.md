@@ -33,7 +33,7 @@ Highlighted surfaces are following a configured threshold which is a number.
 Each pixel intensity above the given threshold is creating lens imperfections.
 Just set the ".brightThreshold" property:
 ```
-pipeline.brightThreshold = 1.0;
+pipeline.brightThreshold = 0.8;
 ```
 
 ## Highlighted surfaces intensity
@@ -51,7 +51,7 @@ pipeline.exosure = 1.0; // which multiplies the final scene color with the highl
 
 # Setting up the dirty lens effect
 
-Setting up the dirty lens effect
+To add a dirty lens effect, you can set the ".lensTexture" mask texture (background must be black) which will be applied on the screen following the highlighted surfaces:
 ```
 // Just create a new BABYLON.Texture containing the dirty lens mask
 pipeline.lensTexture = new BABYLON.Texture("lensdirt.jpg", scene);
@@ -62,6 +62,7 @@ A dirty lens mask should look like:
 ![DirtyLensTexture](/img/tutorials/advanced/standardRenderingPipeline/lensdirt.jpg)
 
 # Setting up the depth of field
+
 ## Activating the depth of field
 To active the depth of field, simply set the property ".DepthOfFieldEnabled" to true:
 ```
