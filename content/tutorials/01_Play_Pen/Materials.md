@@ -17,7 +17,7 @@ We are so adept at making createScene functions that we can do it in our sleep, 
 function createScene() {
     var scene = new BABYLON.Scene(engine);
     var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 100, 100), scene);
-    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, new BABYLON.Vector3.Zero(), scene);
+    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, BABYLON.Vector3.Zero(), scene);
 
     //Creation of spheres
     var sphere1 = BABYLON.Mesh.CreateSphere("Sphere1", 10.0, 6.0, scene);
