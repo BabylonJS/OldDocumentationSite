@@ -4,7 +4,7 @@ PG_TITLE: 18. Using Parallax Mapping
 ---
 Starting with Babylon.js v2.4, we introduced Parallax Mapping.
 
-You can see a demo of this technique [right here](http://babylonjs-playground.com/#10I31V#8)
+You can see a demo of this technique [right here](http://babylonjs-playground.com/#10I31V#23)
 
 ![Screenshot](http://i.imgur.com/8VBDRPe.png)
 
@@ -43,6 +43,3 @@ You have three property to work with Parallax:
 You will find an interesting [tutorial here](https://www.youtube.com/watch?v=Sd5Avnf_JuU) that explains how to create the height map.
 
 If you happen to have normal map and height map in separated files, you can use this [Windows Tool](https://github.com/BabylonJS/Extensions/tree/master/NormalHeightMapTool) to merge them into a single file.
-
-
-
