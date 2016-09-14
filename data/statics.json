@@ -105,26 +105,6 @@
           "filename": "Advanced_Texturing"
         },
         {
-          "title": "Loading a Scene Produced with Blender",
-          "filename": "Loading_a_Scene_Produced_with_Blender"
-        },
-        {
-          "title": "Unleash the StandardMaterial",
-          "filename": "Unleash_the_StandardMaterial"
-        },
-        {
-          "title": "More About Lights",
-          "filename": "More_About_Lights"
-        },
-        {
-          "title": "Using Multi-Materials",
-          "filename": "Using_Multi-Materials"
-        },
-        {
-          "title": "Creating a Convincing World",
-          "filename": "Creating_a_Convincing_World"
-        },
-        {
           "title": "Using the Canvas2D",
           "filename": "Using_the_Canvas2D"
         },
@@ -133,36 +113,8 @@
           "filename": "Caching_Resources_in_IndexedDB"
         },
         {
-          "title": "Creating a Small 3D Game with Babylon.js",
-          "filename": "Creating_a_Small_3D_Game_with_Babylon.js"
-        },
-        {
           "title": "Using the Incremental Loading System",
           "filename": "Using_the_Incremental_Loading_System"
-        },
-        {
-          "title": "Using the Cannon.js Physics Engine",
-          "filename": "Using_the_Cannon.js_Physics_Engine"
-        },
-        {
-          "title": "Using the Oimo.js Physics Engine",
-          "filename": "Using_the_Oimo.js_Physics_Engine"
-        },
-        {
-          "title": "Creating a 3D WebGL Procedural QR-Code Maze with Physics",
-          "filename": "Creating_a_3D_WebGL_Procedural_QR-Code_Maze_with_Physics"
-        },
-        {
-          "title": "Using WebGL to Create Games for the Windows Store",
-          "filename": "Using_WebGL_to_Create_Games_for_the_Windows_Store"
-        },
-        {
-          "title": "The Babylon.js Sandbox and Editor",
-          "filename": "The_Babylon.js_Sandbox_and_Editor"
-        },
-        {
-          "title": "Understanding Shaders with Babylon.js and ShaderMaterial",
-          "filename": "Understanding_Shaders_with_Babylon.js_and_ShaderMaterial"
         },
         {
           "title": "Using decals",
@@ -279,10 +231,6 @@
         {
           "title": "How to use the Tags System",
           "filename": "How_to_use_the_Tags_System"
-        },
-        {
-          "title": "How to use Tiled Grounds",
-          "filename": "How_to_use_Tiled_Grounds"
         },
         {
           "title": "How to use VirtualJoysticksCamera",
@@ -992,6 +940,10 @@
       "img": "img/tutorials/General.png",
       "desc": "General good things to know",
       "files": [
+        {
+          "title": "Off-Site Tutorials List",
+          "filename": "offsite_tutorials_list"
+        },
         {
           "title": "Interesting Playgrounds",
           "filename": "playgrounds"
