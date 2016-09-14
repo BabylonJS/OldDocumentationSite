@@ -63,6 +63,11 @@ allFurMaterials.furGravity = new BABYLON.Vector3(0, -1, 0);
 
 # Using the fur material without High Level Mode
 
+First, deactivate the high level (activated by default so following line MUST be included):
+```
+furMaterial.highLevelFur = false;
+```
+
 ![Fur material](/img/extensions/materials/fur.png)
 
 Demos can be found at:
@@ -99,7 +104,7 @@ furMaterial.furColor = new BABYLON.Color3(0.44, 0.21, 0.02); // is the default c
 
 # Using textures
 
-##heightTexture
+## heightTexture
 
 A greyscale image can be used to set the fur length. 
 A speckled greyscale image can produce fur like results.
@@ -108,7 +113,7 @@ Any greyscale image with affect the fur length producing a heightMap type effect
 ```
 furMaterial.heightTexture = new BABYLON.Texture("speckles.jpg", scene); // Set the fur length with a texture.
 ```
-##diffuseTexture
+## diffuseTexture
 A texture can also be used to paint the mesh. 
 The leopard fur texture used in the test is by Martin Wegmann from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Leopard_fur.JPG)
 under the [license](https://creativecommons.org/licenses/by-sa/3.0/deed.en)
@@ -120,8 +125,8 @@ furMaterial.diffuseTexture = new BABYLON.Texture("leopard_fur.jpg", scene); // S
 # Meshes where the number of facets is not user controlled on creation.
 
 Demos can be found at:
- http://www.babylonjs-playground.com/#EUCNP#4  (Leopard fur converted to smooth before increasing facets)
- http://www.babylonjs-playground.com/#EUCNP#5  (Leopard fur converted to smooth after increasing facets)
+ http://www.babylonjs-playground.com/#EUCNP#16  (Leopard fur converted to smooth before increasing facets)
+ http://www.babylonjs-playground.com/#EUCNP#17  (Leopard fur converted to smooth after increasing facets)
 
 Unlike the ground mesh where you can supply the number of subdivisions or the sphere mesh where you can supply the number of segments the majority of meshes are created using a minimum number of facets.
 To apply the fur material to these the number of facets per face of the mesh needs to be increased.

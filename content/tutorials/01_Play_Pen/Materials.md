@@ -17,7 +17,7 @@ We are so adept at making createScene functions that we can do it in our sleep, 
 function createScene() {
     var scene = new BABYLON.Scene(engine);
     var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(0, 100, 100), scene);
-    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, new BABYLON.Vector3.Zero(), scene);
+    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, BABYLON.Vector3.Zero(), scene);
 
     //Creation of spheres
     var sphere1 = BABYLON.Mesh.CreateSphere("Sphere1", 10.0, 6.0, scene);
@@ -168,15 +168,224 @@ materialSphere1.backFaceCulling = false;
 * **WireFrame**
 
 You can see your object in wireframe mode... by using:
+
 ```javascript
 materialSphere1.wireframe = true;
- ```
+```
 
 ![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-3.png)
 
 Again, you can see things from this tutorial... come to life... by browsing to [the Babylon.js Playground scene 4](http://www.babylonjs.com/playground/?4).
 
 More information about materials can be found by reading [**Unleash the StandardMaterial**](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx) and also [**Advanced Texturing**](http://doc.babylonjs.com/tutorials/Advanced_Texturing).
+
+
+
+## Textures Available to Playground
+
+The following images are available to use as textures or heightmaps in the playground using
+
+```javascript
+new BABYLON.Texture("textures/name", scene);
+```
+
+albedo.png
+
+amiga.jpg
+
+bloc.jpg
+
+candleopacity.png
+
+cloud.png
+
+co.png
+
+crate.png
+
+distortion.png
+
+earth.jpg
+
+equirectangular.jpg
+
+fire.png
+
+flare.png
+
+floor.png
+
+floor_bump.PNG
+
+fur.jpg
+
+grass.jpg
+
+grass.png
+
+grassn.png
+
+ground.jpg
+
+heightMap.png
+
+heightMapTriPlanar.png
+
+impact.png
+
+invmask.png
+
+Logo.png
+
+mask.png
+
+misc.jpg
+
+mixMap.png
+
+normalMap.jpg
+
+orient.jpg
+
+palm.png
+
+player.png
+
+reflectivity.png
+
+rock.png
+
+rockn.png
+
+roundMask.png
+
+sand.png
+
+specmap.png
+
+specularglossymap.png
+
+sphereMap.png
+
+sun.png
+
+SunDiffuse.png
+
+tree.png
+
+walk.png
+
+waterbump.png
+
+worldHeightMap.jpg
+
+xStrip.jpg
+
+yStrip.jpg
+
+zStrip.jpg
+
+## CubeMap Groups Available to Playground
+
+The following groups of images are available to use as skyboxes in the playground using
+
+```javascript
+new BABYLON.CubeTexture("textures/common part of names", scene);
+```
+skybox_nx.jpg
+
+skybox_ny.jpg
+
+skybox_nx.jpg
+
+skybox_px.jpg
+
+skybox_py.jpg
+
+skybox_pz.jpg
+
+skybox2_nx.jpg
+
+skybox2_ny.jpg
+
+skybox2_nx.jpg
+
+skybox2_px.jpg
+
+skybox2_py.jpg
+
+skybox2_pz.jpg
+
+skybox3_nx.jpg
+
+skybox3_ny.jpg
+
+skybox3_nx.jpg
+
+skybox3_px.jpg
+
+skybox3_py.jpg
+
+skybox3_pz.jpg
+
+skybox4_nx.jpg
+
+skybox4_ny.jpg
+
+skybox4_nx.jpg
+
+skybox4_px.jpg
+
+skybox4_py.jpg
+
+skybox4_pz.jpg
+
+TropicalSunnyDay_nx.jpg
+
+TropicalSunnyDay_ny.jpg
+
+TropicalSunnyDay_nx.jpg
+
+TropicalSunnyDay_px.jpg
+
+TropicalSunnyDay_py.jpg
+
+TropicalSunnyDay_pz.jpg
+
+
+## HDR CubeMaps Available to Playground
+
+The following images are available to use as textures or heightmaps in the playground using
+
+```javascript
+new BABYLON.HDRCubeTexture("textures/name", scene);
+```
+
+country.hdr
+
+environment.babylon.hdr
+
+forest.hdr
+
+night.hdr
+
+parking.hdr
+
+room.hdr
+
+## Other Files Available to Playground in "textures" Directory
+
+babylonjs.mp4
+
+big_buck_bunny.mp4
+
+babylonjs.webm
+
+HorrorBlue.3dl
+
+LateSunset.3dl
+
+
 
 ## Next step
 Great, your scene is looking better than ever with those materials! Later we will see how to use advanced techniques with materials. But for now, we have to learn [**how to use cameras**](http://doc.babylonjs.com/tutorials/Cameras).

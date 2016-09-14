@@ -32,6 +32,17 @@ var engine = new BABYLON.Engine(canvas, antialiasing, null, false);
 
 In the same constructor, you may also want to turn off antialiasing support with the second parameter.
 
+# Using animation ratio
+Babylon.js processes speed depending on the current frame rate.
+
+On low-end devices animations or camera movement may differ from high-end devices. To compensate this you can use:
+
+```
+scene.getAnimationRatio();
+```
+
+The return value is higher on low frame rates.
+
 # Other useful tutorials
 * [Optimizing meshes selection for rendering](http://doc.babylonjs.com/tutorials/Optimizing_Your_Scene_with_Octrees)
 * [How to use scene optimizer](http://doc.babylonjs.com/tutorials/How_to_use_SceneOptimizer)
