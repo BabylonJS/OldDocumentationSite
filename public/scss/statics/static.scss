@@ -1,8 +1,6 @@
 .static-content{
   @include outer-container(80%);
 
-
-
   img {
     max-width: 100%;
   }
@@ -39,6 +37,10 @@
     tr:nth-child(even) {
       background-color: #F8F8F8;
     }
+  }
+  
+  & .beforeWideTable + table {
+    width:100% !important;
   }
 
   .contentTable {

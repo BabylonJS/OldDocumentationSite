@@ -6,6 +6,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
    
 ## Deltakosh - http://eternalcoding.com
 
+<div class='beforeWideTable'></div>
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
@@ -28,6 +29,8 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 ## Davrous - https://www.davrous.com
 
+<div class='beforeWideTable'></div>
+
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
 | [ **Discovering Sponza** ](https://www.davrous.com/2016/02/05/discovering-sponza-by-babylon-js-and-sharing-tips-on-how-to-build-a-cross-platforms-webgl-game/) | Sponza, WebAudio, IndexedDB, Debug, Cross-Platform | David "Davrous" Rousset chronicles his and his team's activities on the innovative Sponza demo, created with Babylon.js.|
@@ -40,6 +43,8 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | [ **The Ultimate 3D Tutorial** ](https://www.davrous.com/2013/06/13/tutorial-series-learning-how-to-write-a-3d-soft-engine-from-scratch-in-c-typescript-or-javascript/) | 3D, Software 3D, SoftEngine,  | This tutorial is about writing a software-based 3D engine.  Although only slightly related to Babylon.js... this is a WONDERFUL 7-part tutorial that is overflowing with great information and illustrations.  Most of it can be applied to Babylon.js. An excellent series of docs! |
 
 ## Temechon - http://www.pixelcodr.com
+
+<div class='beforeWideTable'></div>
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
@@ -54,6 +59,8 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 
 ## Raanan - https://blog.raananweber.com/tag/babylonjs/
+
+<div class='beforeWideTable'></div>
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
@@ -70,12 +77,16 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 ## John C. King (JohnK) - http://countonmaths.blogspot.co.uk
 
+<div class='beforeWideTable'></div>
+
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
 | [ **A Babylon.js Guide** ](http://babylonjsguide.github.io/) | Guide | JohnK is a great teacher, active Babylon.js user, and a swell person, too. Although retired from academia (Math and I.T.), he hasn't really retired at all. Tour the menu buttons (and many useful documents) of John's comprehensive Guide to Babylon.js, and enjoy. Thanks John!
 
 
 ## Célian Garcia (Kostar111) - Home Website Unknown
+
+<div class='beforeWideTable'></div>
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
