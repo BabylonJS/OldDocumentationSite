@@ -6,6 +6,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
    
 ## Deltakosh - http://eternalcoding.com
 
+<div class='beforeWideTable'></div>
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
@@ -28,6 +29,8 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 ## Davrous - https://www.davrous.com
 
+<div class='beforeWideTable'></div>
+
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
 | [ **Discovering Sponza** ](https://www.davrous.com/2016/02/05/discovering-sponza-by-babylon-js-and-sharing-tips-on-how-to-build-a-cross-platforms-webgl-game/) | Sponza, WebAudio, IndexedDB, Debug, Cross-Platform | David "Davrous" Rousset chronicles his and his team's activities on the innovative Sponza demo, created with Babylon.js.|
@@ -41,10 +44,12 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 ## Temechon - http://www.pixelcodr.com
 
+<div class='beforeWideTable'></div>
+
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
 | [ **Using VertexData/VertexBuffer** ](http://www.pixelcodr.com/tutos/trees/trees.html) | VertexData, VertexBuffer, Indices, Vertices, Normals | [Julian "Temechon" Chenard](http://www.pixelcodr.com/aboutme.html) is a fine game programmer, teacher, OOP-master, and a darned nice guy, too.  In this splendid tutorial, Temechon uses the handy Babylon VertexData object, along with blank/updatable mesh... to make lightweight trees.|
-| [ **Contributing to Babylon.js** ]() | Contribute, GitHub | People who are not familiar with source repositories, GitHub, version control, etc... sometimes struggle-with approved methods for open-source contributions. Temechon succeeds in removing those struggles... with this comprehensive tutorial about contributing to Babylon.js. |
+| [ **Contributing to Babylon.js** ](http://www.pixelcodr.com/tutos/contribute/contribute.html) | Contribute, GitHub | People who are not familiar with source repositories, GitHub, version control, etc... sometimes struggle-with approved methods for open-source contributions. Temechon succeeds in removing those struggles... with this comprehensive tutorial about contributing to Babylon.js. |
 | [ **Toad Attack - The Making-Of** ](http://www.pixelcodr.com/tutos/toad_attack/toad_attack.html) | Game | Here is a fantastic two-part "Basics" tutorial about the making of "Toad Attack", one of Temechon's cool games.  Good stuff! |
 | [ **All About ActionManagers** ](http://www.pixelcodr.com/tutos/plane/plane.html) | ActionManager, Actions, Trigger, Predicate | Once upon a time, Deltakosh created an ActionManager class with [great docs](doc.babylonjs.com/tutorials/How_to_use_Actions). In this cool tutorial, Temechon uses it within a complete webGL game. Two tutorials in one! |
 | [ **Old School Oimo Physics** ](http://www.pixelcodr.com/tutos/oimo/oimo.html) | Physics, Oimo, Impostor | Temechon coded much of the original physics "plugins", interfacing third-party physics engines... to Babylon.js. Later, version 2 of the plugins was developed by Raanan Weber (see below), but Raanan ensured that v2 plugins were backwards-compatible with original v1 plugins. So, this older Oimo-based physics tutorial is still quite pertinent. Its code examples still work great. |
@@ -54,6 +59,8 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 
 ## Raanan - https://blog.raananweber.com/tag/babylonjs/
+
+<div class='beforeWideTable'></div>
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
@@ -70,12 +77,16 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 ## John C. King (JohnK) - http://countonmaths.blogspot.co.uk
 
+<div class='beforeWideTable'></div>
+
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
 | [ **A Babylon.js Guide** ](http://babylonjsguide.github.io/) | Guide | JohnK is a great teacher, active Babylon.js user, and a swell person, too. Although retired from academia (Math and I.T.), he hasn't really retired at all. Tour the menu buttons (and many useful documents) of John's comprehensive Guide to Babylon.js, and enjoy. Thanks John!
 
 
 ## Célian Garcia (Kostar111) - Home Website Unknown
+
+<div class='beforeWideTable'></div>
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
