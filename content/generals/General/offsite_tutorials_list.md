@@ -3,7 +3,7 @@
 ## Introduction
 
 Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout the history of Babylon.js, coders and authors have written tutorials and documentation which is stored in places other than at our primary documentation site.  In *this* document, we will attempt to provide links-to and information-about those off-site documents.
-   
+
 ## Deltakosh - http://eternalcoding.com
 
 <div class='beforeWideTable'></div>
@@ -57,7 +57,6 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | [ **First Person Shooter Prototype** ](http://www.pixelcodr.com/tutos/shooter/shooter.html) | OOP, Project, Asset, LayerMask, Viewport, PointerLock | The first-person shooter (FPS) game is one of the most enjoyable and popular game-types in 3D land.  In this gorgeous tutorial, Julian takes us end-to-end through the development process.  As with all of Julian's games and tutorials, he uses Object Oriented Programming (OOP) techniques, which result in re-usable pieces. These OOP pieces streamline work-flow for future games/projects.  |
 | [ **Temechon's Projects Page** ](http://www.pixelcodr.com/projects.html) | Projects | This is not a link to a tutorial, but instead, a link to Temechon's "Projects" web page.  As you can see, Temechon is a prolific game-author, both 2D and 3D.  And we know why he is able to produce game after game, quickly and easily, right?  Yep, OOP... reusable code... he does it well. Borrow his techniques, and you borrow great wisdom. |
 
-
 ## Raanan - https://blog.raananweber.com/tag/babylonjs/
 
 <div class='beforeWideTable'></div>
@@ -83,7 +82,6 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | :--- | :---: | --- |
 | [ **A Babylon.js Guide** ](http://babylonjsguide.github.io/) | Guide | JohnK is a great teacher, active Babylon.js user, and a swell person, too. Although retired from academia (Math and I.T.), he hasn't really retired at all. Tour the menu buttons (and many useful documents) of John's comprehensive Guide to Babylon.js, and enjoy. Thanks John!
 
-
 ## Célian Garcia (Kostar111) - Home Website Unknown
 
 <div class='beforeWideTable'></div>
@@ -94,13 +92,14 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | [ **Working with Babylon.js Terrains** ](https://translate.google.com/translate?hl=en&sl=fr&tl=en&u=http%3A%2F%2Fmakina-corpus.com%2Fblog%2Fmetier%2F2014%2Fvisualiser-des-chemins-de-randonnee-en-3d-grace-a-babylonjs) | Terrain, HeightMap | Kostar111 continues his research into terrain generation, in this 3-part translated tutorial. |
 | [ **Creating Tiled Ground in Babylon.js** ](https://translate.google.com/translate?hl=en&sl=fr&tl=en&u=http%3A%2F%2Fmakina-corpus.com%2Fblog%2Fmetier%2F2014%2Fvisualiser-des-chemins-de-randonnee-en-3d-grace-a-babylonjs) | Terrain, HeightMap, Tile | Kostar111 is back, with this Babylon.js-specific tutorial about creating tiled grounds. No translations, great illustrations, and some very nice playground demos.  Thanks Célian! |
 
-
 ## Rahman Nasimi Asl - https://ir.linkedin.com/in/rahman-nasimi-asl-2a597055
+
+<div class='beforeWideTable'></div>
+
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
 | [ **ShaderBuilder** ](http://cdn.rawgit.com/RNasimiAsl/Extensions/master/ShaderBuilder/Documentation/ShaderBuilderReferences.html) | Shader, Fluent | Rahman is a master of shaders, and a master of assembling shader code... because of his marvelous ShaderBuilder (EASH) extension for Babylon.js.  In this document, Rahman introduces us to the ShaderBuilder magic, and provides some demo scenes.  Be patient with the demo scene loading. |
 | [ **YouTube Tutorials** ](https://www.youtube.com/channel/UC1v47iVFGqTeUJle9viDqKA) | GeometryBuilder, Bandicam | Here is Rahman's YouTube page, where there are 6 videos, all related to Babylon.js. Rahman also introduces us to a very unique mesh generator that he calls Geometry Builder.  We have seen demos, and they are FANTASTIC! |
-
 
 ## Pryme8 - https://pryme8.github.io/NeatFlax/
 
