@@ -178,6 +178,7 @@ But you may want to work with all basic files. In this case, please download the
     <script src="src/Audio/babylon.audioEngine.js"></script>
     <script src="src/Audio/babylon.sound.js"></script>
     <script src="src/Audio/babylon.soundtrack.js"></script>
+    <script src="src/Audio/babylon.highlightlayer.js"></script>
     <script src="src/Debug/babylon.skeletonViewer.js"></script>
     <script src="src/Debug/babylon.debugLayer.js"></script>
     <script src="src/Materials/Textures/babylon.rawTexture.js"></script>
