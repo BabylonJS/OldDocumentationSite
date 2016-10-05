@@ -61,6 +61,69 @@ A dirty lens mask should look like:
 
 ![DirtyLensTexture](/img/tutorials/advanced/standardRenderingPipeline/lensdirt.jpg)
 
+# Setting up the pseudo lens flare
+## Setting up textures
+First, to activate the pseudo lens flare effect, just set the ".LensFlareEnabled" to true:
+```
+// Activating pseudo lens flare effect
+pipeline.LensFlareEnabled = true;
+```
+
+Now, in order to work properly with the dirty lens effect (above), you can set your own dirt texture, which can be the same as the dirty lens effect. For example:
+```
+pipeline.lensTexture = pipeline.lensFlareDirtTexture = new Texture("lensdirt.jpg", scene);
+
+// or
+
+pipeline.lensFlareDirtTexture = new Texture("lens_flare_dirt.jpg", scene);
+```
+
+Now, you can add a "starbust" texture. This will disturb the final result and make it more realistic:
+
+```
+pipeline.lensStarTexture = new Texture("lensstar.jpg", scene);
+```
+
+![StarbustTexture](/img/tutorials/advanced/standardRenderingPipeline/lensstar.png)
+
+which gives:
+
+![StarbustTextureResult](/img/tutorials/advanced/standardRenderingPipeline/lensstarresult.png)
+
+Finally, you can apply a palette of colors which will be used by the post-processes to disburb the lens flare colors:
+
+```
+pipeline.lensColorTexture = new Texture("lenscolor.png", scene);
+```
+
+Color texture like:
+
+
+![LensColorTexture](/img/tutorials/advanced/standardRenderingPipeline/lenscolor.png)
+
+## Setting up parameters
+Once you added the textures, you can customize some parameters that will allow you to customize the final result:
+
+The strength:
+```
+// The strength of the final result of the pseudo lens flare effect
+pipeline.lensFlareStrength = 5; // By default 1.0
+```
+
+The halo width:
+```
+// Sets the width of the halo used to render the pseudo lens flare effect
+pipeline.lensFlareHaloWidth = 1; // By default 0.4;
+```
+![HaloWidth](/img/tutorials/advanced/standardRenderingPipeline/halo_width.png)
+
+The distortion strength:
+
+```
+// The strength related to the lens color texture
+pipeline.lensFlareDistortionStrength = 35; // Default 4.0
+```
+
 # Setting up the depth of field
 
 ## Activating the depth of field
