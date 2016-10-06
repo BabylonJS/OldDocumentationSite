@@ -74,6 +74,17 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | [ **WebWorker-Based Collision Detection in Babylon.js** ](https://blog.raananweber.com/2015/05/26/collisions-using-workers-for-babylonjs/) | WebWorker, Worker, Collision, Messages | Web workers are a method to fork-off :x certain scene tasks... to separate OS threads.  Remember how I mentioned above... that Raanan likes to smooth rough roads?  Collision detection/servicing is one of those webGL rough roads caused by heavy loads.  In this 2-part series, Raanan meticulously analyses the situation, and applies worker threads to attempt improvements. A link to part 2 is provided near the bottom. |
 | [ **Integrating Travis-CI and BabylonJS** ](https://blog.raananweber.com/2015/05/26/travis-ci-and-babylonjs/) | Travis, GitHub, Integration, NodeJS, NPM, Gulp, Grunt, TypeScript | This short tutorial is mostly for those who *build* Babylon.js from TypeScript source.  Travis has many features that assist during the build process, and Raanan shows us how to set it up properly. |
 
+## Andy Beaulieu - http://www.spritehand.com/
+
+<div class='beforeWideTable'></div>
+
+|______________Title______________ | Keywords | Description |
+| :--- | :---: | --- |
+| [**Babylon.js: Physics and Character Animation**](http://www.spritehand.com/2014/08/babylonjs-physics-and-character.html) | Physics | Andy Beaulieu does some substantial early work with adding physics to player characters.  Thanks for sharing it, Andy!|
+| [**Sharing 3D Scans in WebGL using BabylonJS**](http://www.spritehand.com/2014/01/sharing-3d-scans-in-webgl-using.html) | Scan | Here, Andy takes a trip down Scanner's Lane, and brings us along for the ride.|
+| [**Bing 3D Maps using WebGL and BabylonJS**](http://www.spritehand.com/2013/12/bing-3d-maps-using-webgl-and-babylonjs.html) | Map, HeightMap, Bing | In this mini-tutorial, Andy looks at how we can use BabylonJS and WebGL to create a 3D height map and route path, using data from Bing Maps REST Services.|
+| [**Fluid Simulation using BabylonJS and LiquidFun**](http://www.spritehand.com/2016/01/fluid-simulation-using-babylonjs-and.html) | Fluid, SoftBody, LiquiFun  | BabylonJS and LiquidFun allow for the creation of fluid simulations including soft body physics, using JavaScript and WebGL.  Andy is here to tell us all about it. |
+
 ## John C. King (JohnK) - http://countonmaths.blogspot.co.uk
 
 <div class='beforeWideTable'></div>
