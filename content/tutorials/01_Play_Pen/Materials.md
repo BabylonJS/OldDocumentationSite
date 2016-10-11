@@ -177,7 +177,7 @@ materialSphere1.wireframe = true;
 
 Again, you can see things from this tutorial... come to life... by browsing to [the Babylon.js Playground scene 4](http://www.babylonjs.com/playground/?4).
 
-More information about materials can be found by reading [**Unleash the StandardMaterial**](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx) and also [**Advanced Texturing**](http://doc.babylonjs.com/tutorials/Advanced_Texturing).
+More information about materials can be found by reading [**Unleash the StandardMaterial**](https://www.eternalcoding.com/?p=303) and also [**Advanced Texturing**](http://doc.babylonjs.com/tutorials/Advanced_Texturing).
 
 
 

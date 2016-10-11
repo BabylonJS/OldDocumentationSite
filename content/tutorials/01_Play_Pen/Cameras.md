@@ -78,7 +78,7 @@ The next 2 cameras... touch, and gamepad... are somewhat superseded by our new [
 
 * **TouchCamera** - The TouchCamera is a camera that works closely with hand.js, and opens Babylon.js to the modern technology of DOM Gesture Events. Touch is a type a 'gesture', whether it be on a pad or screen, with finger(s), stylus, glove, feet, or laser pointer. Any movement that can be sensed... can be considered a gesture. You can learn all about gestures by visiting [**a wikipedia page that tells all about it**](http://en.wikipedia.org/wiki/Gesture_recognition).
 
-The TouchCamera is specially programmed for nearly all modern gesture-active input devices. Much of its power comes from hand.js. If you would like to learn more about hand.js and its gestures-ready methods, take a look at [**this comprehensive blog entry**](http://blogs.msdn.com/b/eternalcoding/archive/2013/01/16/hand-js-a-polyfill-for-supporting-pointer-events-on-every-browser.aspx) written by our friend and hero David Catuhe.
+The TouchCamera is specially programmed for nearly all modern gesture-active input devices. Much of its power comes from hand.js. If you would like to learn more about hand.js and its gestures-ready methods, take a look at [**this comprehensive blog entry**](https://www.eternalcoding.com/?p=453) written by our friend and hero David Catuhe.
 
 There is much underlying magic to the TouchCamera, but like everything else in Babylon.js, we make it easy and enjoyable for you. Here is how to construct a TouchCamera:
 ```javascript
@@ -99,7 +99,7 @@ var camera = new BABYLON.GamepadCamera("Camera", new BABYLON.Vector3(0, 15, -45)
 ```
 Easy. Many of the powerful properties and methods found on our familiar FreeCamera... are also found on our GamepadCamera. Take notice of the ._angularSensibility_ and ._moveSensibility_ properties, similar to our DeviceOrientationCamera. You can explore all the properties and methods available on the GamepadCamera... at [our API documentation site](http://doc.babylonjs.com/classes/GamepadCamera).
 
-* **DeviceOrientationCamera** - The DeviceOrientationCamera is a camera that is specifically designed to react-to device orientation events. Device orientation is when you tilt your modern mobile device forward or back, left or right, to control cameras or other scene items. And once again, our friend and technology guru David Catuhe has created [**a wonderfully-detailed blog entry**](http://blogs.msdn.com/b/eternalcoding/archive/2013/10/07/understanding-deviceorientation-events-by-creating-a-small-3d-game-with-babylon-js.aspx) to tell us all about it.
+* **DeviceOrientationCamera** - The DeviceOrientationCamera is a camera that is specifically designed to react-to device orientation events. Device orientation is when you tilt your modern mobile device forward or back, left or right, to control cameras or other scene items. And once again, our friend and technology guru David Catuhe has created [**a wonderfully-detailed blog entry**](https://www.eternalcoding.com/?p=213) to tell us all about it.
 
 Again, we we want it to be easy and enjoyable for you. Here is how you construct a Babylon.js DeviceOrientationCamera:
 ```javascript
@@ -134,7 +134,7 @@ scene.activeCamera = camera;
 There you have it. AlexB's cool FollowCamera. Discover all of the other properties and methods... at [**our API documentation site**](http://doc.babylonjs.com/classes/FollowCamera).
 
 
-* **VirtualJoysticksCamera** - The VirtualJoysticksCamera is a camera that is specifically designed to react-to Virtual Joystick events. Virtual Joysticks are on-screen (canvas atop canvas) 2D graphics that are used to control cameras or other scene items. This time, another friend and hero of ours... David Rousset... takes us on [**a video tour with Virtual Joysticks**](https://www.youtube.com/watch?v=53Piiy71lB0), and makes it look easy. That is because it **is** easy. You can also [**read about Virtual Joysticks**](http://blogs.msdn.com/b/davrous/archive/2013/02/22/creating-an-universal-virtual-touch-joystick-working-for-all-touch-models-thanks-to-hand-js.aspx) on David's blog.
+* **VirtualJoysticksCamera** - The VirtualJoysticksCamera is a camera that is specifically designed to react-to Virtual Joystick events. Virtual Joysticks are on-screen (canvas atop canvas) 2D graphics that are used to control cameras or other scene items. This time, another friend and hero of ours... David Rousset... takes us on [**a video tour with Virtual Joysticks**](https://www.youtube.com/watch?v=53Piiy71lB0), and makes it look easy. That is because it **is** easy. You can also [**read about Virtual Joysticks**](https://www.davrous.com/2013/02/22/creating-an-universal-virtual-touch-joystick-working-for-all-touch-models-thanks-to-hand-js/) on David's blog.
 
 With the touch of a touchscreen, or the click of a mouse button, the virtual joysticks activate. Not a bit of extra work for you. Like everything in Babylon.js, we try to make it easy and enjoyable. Here is how to construct a Babylon.js VirtualJoysticksCamera:
 ```javascript
