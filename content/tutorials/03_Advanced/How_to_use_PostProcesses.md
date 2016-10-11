@@ -220,5 +220,5 @@ postProcess4.onApply = function (effect) {
     effect.setFloat("highlightIntensity", 1.0);
 };
 ```
-You might want to read more about shaders and try our CYOS shader editor [**RIGHT HERE**](http://blogs.msdn.com/b/eternalcoding/archive/2014/04/17/learning-shaders-create-your-own-shaders-with-babylon-js.aspx).
+You might want to read more about shaders and try our CYOS shader editor [**RIGHT HERE**](https://www.eternalcoding.com/?p=113).
 
