@@ -32,7 +32,7 @@ var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scen
 light0.diffuse = new BABYLON.Color3(1, 0, 0);
 light0.specular = new BABYLON.Color3(1, 1, 1);
 ```
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/8484.image_5F00_thumb_5F00_53D78E00.png)
+![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/8484.image_thumb_53D78E00.png)
 
 _Red diffuse point light with white specular_
 
@@ -46,7 +46,7 @@ light0.diffuse = new BABYLON.Color3(1, 0, 0);
 light0.specular = new BABYLON.Color3(1, 1, 1);
 ```
 
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/1563.image_5F00_1ECD8F81.png)
+![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/1563.image_1ECD8F81.png)
 
 _Red diffuse directional light with white specular_
 
@@ -56,7 +56,7 @@ A spot light is defined by a position (2nd arg), a direction (3rd arg), an angle
 
 The angle defines the size (field of illumination) of the spotlight's conical beam (in radians), and the exponent defines the speed of the decay of the light with distance (the light's 'reach distance'). Just like the other lights, you can control the color of the light with the *diffuse* and *specular* properties:
 
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/7723.image_5F00_thumb_5F00_11F5CA14.png)
+![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/7723.image_thumb_11F5CA14.png)
 
 _A simple drawing showing the shape of a spot light_
 
@@ -66,7 +66,7 @@ light0.diffuse = new BABYLON.Color3(1, 0, 0);
 light0.specular = new BABYLON.Color3(1, 1, 1);
 ```
 
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/1738.image_5F00_thumb_5F00_18AB6448.png)
+![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/1738.image_thumb_18AB6448.png)
 
 _A red diffuse spot light with white specular, a 0.8 radians-wide cone, and an exponent of 2_
 
@@ -85,7 +85,7 @@ light0.specular = new BABYLON.Color3(1, 1, 1);
 light0.groundColor = new BABYLON.Color3(0, 0, 0);
 ```
 
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/4760.image_5F00_thumb_5F00_058CC84D.png)
+![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/4760.image_thumb_058CC84D.png)
 
 _White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
 

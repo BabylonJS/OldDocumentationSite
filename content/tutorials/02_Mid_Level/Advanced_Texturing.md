@@ -135,4 +135,4 @@ Sometimes it is a bit difficult to determine which indices of a mesh should be t
 
 You can view and play-with the demo used in this tutorial... [right here](http://babylonjs-playground.azurewebsites.net/#EKFLA#13).
 
-You might also be interested in our [Unleash the Standard Material](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.
+You might also be interested in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.
