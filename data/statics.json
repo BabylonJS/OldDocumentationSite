@@ -549,7 +549,15 @@
         {
           "title": "Wood",
           "filename": "WoodProceduralTexture"
-        },
+        }
+      ]
+    },
+    {
+      "title": "Post Process library",
+      "name": "PostProcessLibrary",
+      "img": "img/extensions/postProcess.jpg",
+      "desc": "Learn how to use post processes from Post Process library.",
+      "files": [
         {
           "title": "Using the Ascii Art post-process",
           "filename": "AsciiArtPostProcess"
