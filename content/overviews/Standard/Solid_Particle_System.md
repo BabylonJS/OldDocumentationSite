@@ -548,7 +548,7 @@ You can pass the method `intersectsMesh()` either a solid particle object, eithe
 // for instance, in your SPS.updateParticle(p) function : particle / mesh
 if (p.intersectsMesh(anyMesh)) { // change p velocity vector }
 ```
-Please note that only visible particles can intersect visible other particles or visible meshes. The method `particle.intersectsMesh()` returns `false` for invisble objects.   
+Beware that invisible solid particles can still intersect, exactly like meshes do. So it's up to you to test the particle visibility (`isVisible`), if you want to exclude it from an intersection computation.  
 
 If you prefer, you can even use the `AbstractMesh` method `intersectsMesh()` and pass it a solid particle.  
 ```javascript
