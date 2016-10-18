@@ -563,7 +563,7 @@ The precise mode has a CPU significant cost, so it's not recommended to use it w
 // for instance, in your SPS.updateParticle(p) function : precise mode, mesh / particle
 if (someMesh.intersectsMesh(p, true)) { // change p velocity vector }
 ```
-_(PG example to come here)_
+Example : http://www.babylonjs-playground.com/#10RCC9
 
 
 ### Garbage Collector Concerns  
