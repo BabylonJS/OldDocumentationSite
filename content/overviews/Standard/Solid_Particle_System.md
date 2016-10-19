@@ -105,7 +105,7 @@ The particle properties that can be set are :
 * **`rotationQuaternion`** : Vector3  default = undefined
 * **`velocity`** : Vector3  default = (0, 0, 0)
 * **`color`** : Vector4  default = (1, 1, 1, 1)
-* **`scale`** : Vector3  default = (1, 1, 1)
+* **`scaling`** : Vector3  default = (1, 1, 1)
 * **`uvs`** : Vector(4) default = (0,0, 1,1)
 * **`isVisible`** : boolean default = true
 * **`alive`** : boolean  default = true
@@ -190,7 +190,7 @@ So three steps :
 Just remember that, once the mesh is build, only **`setParticles()`** does then the job : updates the mesh VBO and draws it.
 
 To help you to update each particle status, `setParticle()` will call for each particle `SPS.updateParticle(particle)`.  
-This function doesn't do anything by default, so it is the place were you can implement your particle behavior, with physics if you want. It is passed each particle object in turn, which you can set its initial properties (position, rotation, rotationQuaternion, scale, color, uvs, velocity) or add and set your own if your logic needs it (age ? mass ? etc).  
+This function doesn't do anything by default, so it is the place were you can implement your particle behavior, with physics if you want. It is passed each particle object in turn, which you can set its initial properties (position, rotation, rotationQuaternion, scaling, color, uvs, velocity) or add and set your own if your logic needs it (age ? mass ? etc).  
 So `updateParticle()` just changes the particle data, not the mesh itself. The `setParticles()` process updates the mesh. Fortunately, `setParticles()` calls `updateParticle(particle)` for you.  
 
 If you want to set an initial status, different from the live behavior that you would implement in `SPS.updateParticle(particle)`, you can use `SPS.initParticles()`.  
@@ -263,7 +263,7 @@ property|type|default
 position|Vector3|(0,0,0)
 rotation|Vector3|(0,0,0)
 rotationQuaternion|Quaternion|null, if _rotationQuaternion_ is set, _rotation_ is ignored
-scale|Vector3|(1,1,1)
+scaling|Vector3|(1,1,1)
 color|Color4|null
 uvs|Vector4|(0,0,1,1)
 
@@ -276,14 +276,14 @@ var myBuilder = function(particle, i, s) {
   particle.rotation.y = s / 150;
   particle.position.x = s - 150;
   particle.uvs = new BABYLON.Vector4(0, 0, 0.33, 0.33); // first image from an atlas
-  particle.scale.y = Math.random() + 1;
+  particle.scaling.y = Math.random() + 1;
 }
 var box = BABYLON.MeshBuilder.CreateBox('b', {}, scene);
 var SPS = new BABYLON.SolidParticleSystem('SPS', scene);
 SPS.addShape(box, 150, {positionFunction: myBuilder)}; // myBuilder will be called for each of the 150 boxes
 var mesh = SPS.buildMesh();                       
 ```
-In this former example, each box particle will have its own rotation, position, scale and uvs set once for all at construction time. As the mesh is not updatable, the particles are then not manageable with `setParticles()`.  
+In this former example, each box particle will have its own rotation, position, scaling and uvs set once for all at construction time. As the mesh is not updatable, the particles are then not manageable with `setParticles()`.  
 You've got here a real immutable mesh. You can still translate it, rotate it, scale it globally as any other mesh until you freeze its World Matrix.  
 Example : a town with 80 000 buildings http://www.babylonjs-playground.com/#2FPT1A#36  
 
@@ -563,7 +563,7 @@ The precise mode has a CPU significant cost, so it's not recommended to use it w
 // for instance, in your SPS.updateParticle(p) function : precise mode, mesh / particle
 if (someMesh.intersectsMesh(p, true)) { // change p velocity vector }
 ```
-_(PG example to come here)_
+Example : http://www.babylonjs-playground.com/#10RCC9
 
 
 ### Garbage Collector Concerns  
