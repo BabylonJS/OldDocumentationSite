@@ -535,7 +535,7 @@ For this, you may need to check if the solid particles intersect or not other on
 The SPS provides a simple way to deal with particle intersections. As this feature consumes more memory and CPU, it's disabled by default.  
 Enable it explicitly with the parameter `particleIntersection` when creating your SPS :  
 ```javascript
-var SPS = new SolidParticleSystem("sps", {particleIntersection: true}, scene);
+var SPS = new SolidParticleSystem("sps", scene, {particleIntersection: true});
 ```
 Then you can simply call the method `intersectsMesh(<SolidParticle | AbstractMesh>target)` of any solid particle to check if this particle intersects the _target_.  
 It just will return true or false if the particle intersects or not the target.    
@@ -563,7 +563,13 @@ The precise mode has a CPU significant cost, so it's not recommended to use it w
 // for instance, in your SPS.updateParticle(p) function : precise mode, mesh / particle
 if (someMesh.intersectsMesh(p, true)) { // change p velocity vector }
 ```
-Example : http://www.babylonjs-playground.com/#10RCC9
+Example : http://www.babylonjs-playground.com/#10RCC9  
+
+For a SPS having thousands of particles, computing the bounding box for each particle each frame is still a heavy CPU operation. So, if you need more performance and if you don't mind about the intersection accurary, you may choose to limit the computation to the particle bounding sphere only (a bounding box requires 8 iterations per particle, one for each box vertex) by using the optional boolean parameter `boundingSphereOnly` (default _false_) at SPS creation.  
+```javascript
+var SPS = new SolidParticleSystem("sps", scene, {particleIntersection: true, boundingSphereOnly: true});
+```  
+Example : http://www.babylonjs-playground.com/#2BXZC#2  
 
 
 ### Garbage Collector Concerns  
