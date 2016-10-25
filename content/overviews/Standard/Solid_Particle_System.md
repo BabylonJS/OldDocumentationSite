@@ -569,7 +569,13 @@ For a SPS having thousands of particles, computing the bounding box for each par
 ```javascript
 var SPS = new SolidParticleSystem("sps", scene, {particleIntersection: true, boundingSphereOnly: true});
 ```  
-Example : http://www.babylonjs-playground.com/#2BXZC#2  
+Example : http://www.babylonjs-playground.com/#2BXZC#2   
+In this case, just remember that the particle bounding box isn't computed, only its bouding sphere, so don't test the intersection from a **mesh** object :
+```javascript
+// boundingSphereOnly case :
+mesh.intersectsMesh(particle);  // won't give the right result
+particle.intersectsMesh(mesh);  // will give the right bounding sphere intersection
+```
 
 
 ### Garbage Collector Concerns  
