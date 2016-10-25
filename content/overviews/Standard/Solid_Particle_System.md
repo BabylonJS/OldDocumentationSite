@@ -102,10 +102,10 @@ The particle properties that can be set are :
 
 * **`position`** : Vector3  default = (0, 0, 0)
 * **`rotation`** : Vector3  default = (0, 0, 0)  
-* **`quaternion`** : Vector3  default = undefined
+* **`rotationQuaternion`** : Vector3  default = undefined
 * **`velocity`** : Vector3  default = (0, 0, 0)
 * **`color`** : Vector4  default = (1, 1, 1, 1)
-* **`scale`** : Vector3  default = (1, 1, 1)
+* **`scaling`** : Vector3  default = (1, 1, 1)
 * **`uvs`** : Vector(4) default = (0,0, 1,1)
 * **`isVisible`** : boolean default = true
 * **`alive`** : boolean  default = true
@@ -190,7 +190,7 @@ So three steps :
 Just remember that, once the mesh is build, only **`setParticles()`** does then the job : updates the mesh VBO and draws it.
 
 To help you to update each particle status, `setParticle()` will call for each particle `SPS.updateParticle(particle)`.  
-This function doesn't do anything by default, so it is the place were you can implement your particle behavior, with physics if you want. It is passed each particle object in turn, which you can set its initial properties (position, rotation, quaternion, scale, color, uvs, velocity) or add and set your own if your logic needs it (age ? mass ? etc).  
+This function doesn't do anything by default, so it is the place were you can implement your particle behavior, with physics if you want. It is passed each particle object in turn, which you can set its initial properties (position, rotation, rotationQuaternion, scaling, color, uvs, velocity) or add and set your own if your logic needs it (age ? mass ? etc).  
 So `updateParticle()` just changes the particle data, not the mesh itself. The `setParticles()` process updates the mesh. Fortunately, `setParticles()` calls `updateParticle(particle)` for you.  
 
 If you want to set an initial status, different from the live behavior that you would implement in `SPS.updateParticle(particle)`, you can use `SPS.initParticles()`.  
@@ -262,8 +262,8 @@ property|type|default
 --------|----|-------
 position|Vector3|(0,0,0)
 rotation|Vector3|(0,0,0)
-quaternion|Quaternion|null, if _quaternion_ is set, _rotation_ is ignored
-scale|Vector3|(1,1,1)
+rotationQuaternion|Quaternion|null, if _rotationQuaternion_ is set, _rotation_ is ignored
+scaling|Vector3|(1,1,1)
 color|Color4|null
 uvs|Vector4|(0,0,1,1)
 
@@ -276,14 +276,14 @@ var myBuilder = function(particle, i, s) {
   particle.rotation.y = s / 150;
   particle.position.x = s - 150;
   particle.uvs = new BABYLON.Vector4(0, 0, 0.33, 0.33); // first image from an atlas
-  particle.scale.y = Math.random() + 1;
+  particle.scaling.y = Math.random() + 1;
 }
 var box = BABYLON.MeshBuilder.CreateBox('b', {}, scene);
 var SPS = new BABYLON.SolidParticleSystem('SPS', scene);
 SPS.addShape(box, 150, {positionFunction: myBuilder)}; // myBuilder will be called for each of the 150 boxes
 var mesh = SPS.buildMesh();                       
 ```
-In this former example, each box particle will have its own rotation, position, scale and uvs set once for all at construction time. As the mesh is not updatable, the particles are then not manageable with `setParticles()`.  
+In this former example, each box particle will have its own rotation, position, scaling and uvs set once for all at construction time. As the mesh is not updatable, the particles are then not manageable with `setParticles()`.  
 You've got here a real immutable mesh. You can still translate it, rotate it, scale it globally as any other mesh until you freeze its World Matrix.  
 Example : a town with 80 000 buildings http://www.babylonjs-playground.com/#2FPT1A#36  
 
@@ -527,6 +527,55 @@ If you need a variable visibility or the pickability, you'll need to set at leas
 So if your SPS stays within some fixed bounds that you don't know the values, you may use `SPS.refreshVisibleSize()` at least once when the SPS has reached these limits and then lock the visibility box.  
 If the SPS keeps within some known limits, then it is better to use `SPS.setVisibilityBox(size)` with the right value and then to lock the visibility box.  
 At last, if you still need pickability or variable visibility, and don't know how your SPS will evolve, then you might set `SPS.computeBoundingBox` to true.  
+
+
+### Particle Intersections
+The SPS is physics agnostic. This means you need to implement your own particle behavior if you want to animate them.  
+For this, you may need to check if the solid particles intersect or not other ones or other meshes in the scene. Example : you would know if your particles collide against an obstacle and then make them bounce back.     
+The SPS provides a simple way to deal with particle intersections. As this feature consumes more memory and CPU, it's disabled by default.  
+Enable it explicitly with the parameter `particleIntersection` when creating your SPS :  
+```javascript
+var SPS = new SolidParticleSystem("sps", scene, {particleIntersection: true});
+```
+Then you can simply call the method `intersectsMesh(<SolidParticle | AbstractMesh>target)` of any solid particle to check if this particle intersects the _target_.  
+It just will return true or false if the particle intersects or not the target.    
+```javascript
+// for instance, in your SPS.updateParticle(p) function : particle / particle
+if (p.intersectsMesh(otherParticle)) { // change p velocity vector }
+```
+You can pass the method `intersectsMesh()` either a solid particle object, either a standard BJS mesh. Both work the same.  
+```javascript
+// for instance, in your SPS.updateParticle(p) function : particle / mesh
+if (p.intersectsMesh(anyMesh)) { // change p velocity vector }
+```
+Beware that invisible solid particles can still intersect, exactly like meshes do. So it's up to you to test the particle visibility (`isVisible`), if you want to exclude it from an intersection computation.  
+
+If you prefer, you can even use the `AbstractMesh` method `intersectsMesh()` and pass it a solid particle.  
+```javascript
+// for instance, in your SPS.updateParticle(p) function : mesh / particle
+if (someMesh.intersectsMesh(p)) { // change p velocity vector }
+```
+Under the hood, when creating a SPS with `particleIntersection`, a bounding box and a bouding sphere are given to each solid particle.  
+For performance reasons, the particle intersections are always computed the fastest way, it is to say with Axis Aligned Bounding Boxes (AABB). Please read this : http://doc.babylonjs.com/tutorials/Intersect_Collisions_-_mesh   
+If you use the `AbstractMesh` `intersectsMesh()` method, what allows to force OBB computation (precise mode), only the mesh bounding box will be rotated, not the particle one, so the intersection detection will be just a bit better than in AABB mode.  
+The precise mode has a CPU significant cost, so it's not recommended to use it with solid particles.     
+```javascript
+// for instance, in your SPS.updateParticle(p) function : precise mode, mesh / particle
+if (someMesh.intersectsMesh(p, true)) { // change p velocity vector }
+```
+Example : http://www.babylonjs-playground.com/#10RCC9  
+
+For a SPS having thousands of particles, computing the bounding box for each particle each frame is still a heavy CPU operation. So, if you need more performance and if you don't mind about the intersection accurary, you may choose to limit the computation to the particle bounding sphere only (a bounding box requires 8 iterations per particle, one for each box vertex) by using the optional boolean parameter `boundingSphereOnly` (default _false_) at SPS creation.  
+```javascript
+var SPS = new SolidParticleSystem("sps", scene, {particleIntersection: true, boundingSphereOnly: true});
+```  
+Example : http://www.babylonjs-playground.com/#2BXZC#2   
+In this case, just remember that the particle bounding box isn't computed, only its bouding sphere, so don't test the intersection from a **mesh** object :
+```javascript
+// boundingSphereOnly case :
+mesh.intersectsMesh(particle);  // won't give the right result
+particle.intersectsMesh(mesh);  // will give the right bounding sphere intersection
+```
 
 
 ### Garbage Collector Concerns  

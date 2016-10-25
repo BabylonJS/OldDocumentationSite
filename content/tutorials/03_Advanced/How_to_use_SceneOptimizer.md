@@ -21,7 +21,7 @@ function() {
    // On success
 }, function() {
    // FPS target not reached
-}),
+})
 ```
 
 As you can see, you can provide success/fail callbacks and a set of options.
