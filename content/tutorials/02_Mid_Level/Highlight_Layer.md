@@ -102,7 +102,7 @@ You can notice on the previous scene the white glowing only inside of the sphere
 
 As the highlight layer is not dealing with transparency of alpha blended meshes:
 
-[**Broken transparency Scene**](http://babylonjs-playground.azurewebsites.net/#2FFOYQ#6)
+[**Broken transparency Scene**](http://www.babylonjs-playground.com/#2FFOYQ#6)
 
 You can exclude some of them from the highlight generation process in order to fix this:
 
@@ -110,13 +110,11 @@ You can exclude some of them from the highlight generation process in order to f
 hl.addExcludedMesh(skybox1);
 ```
 
-[**Fixed transparency Scene**](http://babylonjs-playground.azurewebsites.net/#2FFOYQ#7)
+[**Fixed transparency Scene**](http://www.babylonjs-playground.com/#2FFOYQ#7)
 
 ### Multi Camera
 
-By default the highlight layer will apply on all active cameras but if they do not have the same setup this can lead to some nasty bugs:
-
-[**Broken Camera Scene**](http://www.babylonjs-playground.com/#CDHKK#9)
+By default the highlight layer will apply on all active cameras but it creates extra processing on the camera it is not needed.
 
 A chance you can easily specify what camera your highlights are related too in the options:
 
@@ -125,7 +123,7 @@ var hl1 = new BABYLON.HighlightLayer("hl1", scene, {camera: camera});
 hl1.addMesh(sphere, BABYLON.Color3.Green());
 ```
 
-[**Fixed Camera Scene**](http://www.babylonjs-playground.com/#CDHKK#7)
+[**Multi Camera Scene**](http://www.babylonjs-playground.com/#CDHKK#7)
 
 ## Options
 
