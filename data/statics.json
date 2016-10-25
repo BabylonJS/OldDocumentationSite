@@ -135,6 +135,10 @@
         {
           "title": "Ribbon Tutorial",
           "filename": "Ribbon_Tutorial"
+        },
+        {
+          "title": "Highlight Layer",
+          "filename": "Highlight_Layer"
         }
       ]
     },
