@@ -356,6 +356,10 @@
         {
           "title": "3D Programming with WebGL and Babylon.js for Beginners",
           "filename": "Zenva_course"
+        },
+        {
+          "title": "Realtime RTS game development series with Babylon.js",
+          "filename": "RTS_game_development_series"
         }
 
       ]
