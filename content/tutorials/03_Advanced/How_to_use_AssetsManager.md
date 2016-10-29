@@ -17,14 +17,14 @@ var assetsManager = new BABYLON.AssetsManager(scene);
 Then you can add tasks to the manager:
 
 ```javascript
-var meshTask = assetsManager.addMeshTask("skull task", "", "./", "skull.babylon");
+var meshTask = assetsManager.addMeshTask("skull task", "", "scenes/", "skull.babylon");
 ```
 
 Each task provides an ```onSuccess``` and an ```onError``` callback:
 
 ```javascript
 meshTask.onSuccess = function (task) {
-    task.loadedMeshes[0].position = new BABYLON.Vector3(0, 0, 0);
+    task.loadedMeshes[0].position = BABYLON.Vector3.Zero();
 }
 ```
 
@@ -66,16 +66,21 @@ The manager itself provides three callbacks:
 * onTaskError
 
 ```javascript
-assetsManager.onFinish = function (tasks) {
-    engine.runRenderLoop(function () {
+assetsManager.onFinish = function(tasks) {
+    engine.runRenderLoop(function() {
         scene.render();
-    }),
+    });
 };
 ```
 
-Finally, to launch all the tasks, you have to call ```assetsManager.load();```
+Finally, to launch all the tasks, you have to call:
 
-You can see a live demo [here](http://www.babylonjs.com/scenes/assets)
+```javascript
+assetsManager.load();
+```
+
+* You can see a live demo [here](http://www.babylonjs.com/scenes/assets)
+* Playground demo [here](http://www.babylonjs-playground.com/#ZJYNY#0)
 
 ## Using loading screen
 
@@ -83,15 +88,33 @@ By default, the AssetsManager will display a loading screen while loading assets
 
 ![](http://www.babylonjs.com/Screenshots/assets.jpg)
 
-If you want to disable the loading screen, you have to set ```assetsManager.useDefaultLoadingScreen``` to false.
+If you want to disable the loading screen, you have to set to false:
 
-The loading screen will also be displayed while loading a scene using SceneLoader if ```BABYLON.SceneLoader.ShowLoadingScreen``` is set to true (by default).
+```javascript
+assetsManager.useDefaultLoadingScreen = false;
+```
+
+The loading screen will also be displayed while loading a scene using SceneLoader if ```ShowLoadingScreen``` is set to true (by default).
+
+```javascript
+BABYLON.SceneLoader.ShowLoadingScreen = false;
+```
 
 In the same way, you can also display or hide the loading screen manually using these functions:
 
-* ```engine.displayLoadingUI()```
-* ```engine.hideLoadingUI()```
+```javascript
+engine.displayLoadingUI();
+engine.hideLoadingUI();
+```
 
-Loading text is controlled using ```engine.loadingUIText = "text"```
+Loading text is controlled using
 
-Background color is controlled using ```engine.loadingUIBackgroundColor = "red"``` for instance.
+```javascript
+engine.loadingUIText = "text";
+```
+
+Background color is controlled using ```loadingUIBackgroundColor``` for instance.
+
+```javascript
+engine.loadingUIBackgroundColor = "red";
+```
