@@ -113,7 +113,7 @@ Loading text is controlled using
 engine.loadingUIText = "text";
 ```
 
-Background color is controlled using ```loadingUIBackgroundColor``` for instance.
+Background color is controlled using ```loadingUIBackgroundColor``` :
 
 ```javascript
 engine.loadingUIBackgroundColor = "red";
