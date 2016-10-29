@@ -88,7 +88,7 @@ By default, the AssetsManager will display a loading screen while loading assets
 
 ![](http://www.babylonjs.com/Screenshots/assets.jpg)
 
-If you want to disable the loading screen, you have to set to false:
+If you want to disable the loading screen, you have to set ```useDefaultLoadingScreen``` to false:
 
 ```javascript
 assetsManager.useDefaultLoadingScreen = false;
