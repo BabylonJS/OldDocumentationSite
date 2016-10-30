@@ -107,7 +107,7 @@ engine.displayLoadingUI();
 engine.hideLoadingUI();
 ```
 
-Loading text is controlled using
+Loading text is controlled using ```loadingUIText``` :
 
 ```javascript
 engine.loadingUIText = "text";
