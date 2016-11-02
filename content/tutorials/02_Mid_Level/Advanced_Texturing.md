@@ -59,7 +59,19 @@ That’s it! The bump texture disturbs/perturbs the normal to produce a result l
 
 _Resulting gorgeous bumpy sphere_
 
-Please note that by default, normal maps are considered to be following DirectX format. If you want to provide a different convention normal maps, you can just set ```material.invertNormalMapX = true``` or ```material.invertNormalMapY = true```.
+Please note that by default, normal maps are considered to be following babylonjs format. If you want to provide a different convention normal maps, you can just set ```material.invertNormalMapX = true``` or ```material.invertNormalMapY = true```.
+
+-BabylonJS
+x-axis = left
+y-axis = down
+
+-OpenGL
+x-axis = right
+y-axis = up
+
+-DirectX
+x-axis = right
+y-axis = down
 
 * **Video**
 
