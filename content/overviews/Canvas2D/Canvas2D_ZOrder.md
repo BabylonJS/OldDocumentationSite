@@ -4,8 +4,8 @@ Each Primitive has a Z Position, which is determined automatically by the Canvas
 
 The actual Z Position can be retrieve by calling the `getActualZOffset` method which return a number between 0 and 1.
 
-- 0 means below everything.
-- 1 means on the top of everything.
+- 1 means below everything.
+- 0 means on the top of everything.
 
 ## Default behavior
 
@@ -33,6 +33,13 @@ It means:
  - PrimB-Child1 will be over PrimB (and also over what PrimB is over).
  - PrimB-Child2 will be over PrimB-Child1 (and also over what PrimB-Child1 is over).
  - And so on, you get the idea.
+
+### Changing the order between siblings
+For example if you need to move PrimB-Child1 over the top of PrimB-Child2 & PrimB-Child3 all you have to do is call the Prim2DBase.moveChild method like this:
+```
+PrimB.moveChild(PrimB-Child1, PrimB-Child3);
+```
+This call will reorder the list of children to put Child1 after Child3, ensuring a rendering on the top of both Child 2 and 3.
 
 ## Overriding the Z-Order
 

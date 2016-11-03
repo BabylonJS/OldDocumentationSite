@@ -59,7 +59,19 @@ That’s it! The bump texture disturbs/perturbs the normal to produce a result l
 
 _Resulting gorgeous bumpy sphere_
 
-Please note that by default, normal maps are considered to be following DirectX format. If you want to provide a different convention normal maps, you can just set ```material.invertNormalMapX = true``` or ```material.invertNormalMapY = true```.
+Please note that by default, normal maps are considered to be following babylonjs format. If you want to provide a different convention normal maps, you can just set ```material.invertNormalMapX = true``` or ```material.invertNormalMapY = true```.
+
+-BabylonJS
+x-axis = left
+y-axis = down
+
+-OpenGL
+x-axis = right
+y-axis = up
+
+-DirectX
+x-axis = right
+y-axis = down
 
 * **Video**
 
@@ -135,4 +147,4 @@ Sometimes it is a bit difficult to determine which indices of a mesh should be t
 
 You can view and play-with the demo used in this tutorial... [right here](http://babylonjs-playground.azurewebsites.net/#EKFLA#13).
 
-You might also be interested in our [Unleash the Standard Material](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.
+You might also be interested in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.

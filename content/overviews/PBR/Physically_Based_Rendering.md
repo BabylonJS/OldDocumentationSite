@@ -1,7 +1,7 @@
 # PBR Materials
 
 ## Introduction
-After following the [standard material tutorial](http://doc.babylonjs.com/tutorials/Materials) and also excelling in [unleashing its power](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx), it is a good time to go further and look at another emerging kind of materials called **PBR Materials** standing for **Physically Based Rendering Materials**.
+After following the [standard material tutorial](http://doc.babylonjs.com/tutorials/Materials) and also excelling in [unleashing its power](https://www.eternalcoding.com/?p=303), it is a good time to go further and look at another emerging kind of materials called **PBR Materials** standing for **Physically Based Rendering Materials**.
 
 ![Elements](/img/extensions/materials/PBRMaterial.jpg)
 

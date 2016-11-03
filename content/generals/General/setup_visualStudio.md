@@ -112,9 +112,11 @@ Now display all files in the solutions by clicking the "Show All Files" button t
 
 ![VS09](http://i.imgur.com/RkR1dFU.png)
 
-![VS10](http://i.imgur.com/XZ58SpM.png)
+![VS10](http://i.imgur.com/9QKk7qn.png)
 
-_We only need the "external references" and "src" folder to compile Babylon.js._
+_We only need the "src" folder to compile Babylon.js._
+
+Note: that further picture show a "external references" folder in the solution explorer, you don't need that anymore.
 
 ---
 
@@ -146,11 +148,31 @@ _do a search/replace of "..\packages" by "packages", replace all occurences._
 
 You will also have to add a line below the TypeScriptSourceMap element to enable TypeScriptExperimentalDecorators.
 
-The result should look like this:
-
 ```xml
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+```
+
+The result should look like this:
+
+```xml
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>
+    </TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
 ```
 
 

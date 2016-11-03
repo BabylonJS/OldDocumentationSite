@@ -221,10 +221,6 @@
 **Physics Basics**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Physics Engine - Basic Usage](/overviews/Using_The_Physics_Engine)  
 ****  
-**Physics Intermediate**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the Cannon.js Physics Engine](/tutorials/Using_the_Cannon.js_Physics_Engine)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the Oimo.js Physics Engine](/tutorials/Using_the_Oimo.js_Physics_Engine)  
-****  
 **Physics Advanced**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Adding Your Own Physics Engine Plugin to Babylon.js](/tutorials/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)  
 ****  

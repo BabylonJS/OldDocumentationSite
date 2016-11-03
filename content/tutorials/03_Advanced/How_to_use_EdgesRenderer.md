@@ -14,8 +14,17 @@ box.edgesWidth = 4.0;
 box.edgesColor = new BABYLON.Color4(0, 0, 1, 1);
 ```
 
-the ```enableEdgesRendering``` can be called with a custom epsilon (default value is 0.95).
+The ```enableEdgesRendering``` can be called with a custom epsilon (default value is 0.95).
+
+```
+box.enableEdgesRendering(.9999);
+``` 
 
 Dot product is the cosine of the angle between the vectors, so for default epsilon 0.95 the angle is acos(.95) ~= 18 degrees - so if the angle between two faces is less than that no line gets drawn.
 
-You can try it here: http://www.babylonjs-playground.com/#TYAHX#10
+If you need to turn-off edges rendering:
+
+```
+box.disableEdgesRendering();
+```
+You can try edges rendering here: http://www.babylonjs-playground.com/#TYAHX#10

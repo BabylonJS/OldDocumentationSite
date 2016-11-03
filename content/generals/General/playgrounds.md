@@ -36,6 +36,7 @@ Please credit the author if you can!
 | [#V1BSD](http://www.babylonjs-playground.com/#V1BSD) | Using SSAO Pipeline | Luaacro |
 | [#ILRIF#0](http://www.babylonjs-playground.com/#ILRIF#0) | Using mesh.lookAt | Stvsynrj |
 | [#EEOWP#7](http://www.babylonjs-playground.com/#EEOWP#7) | Fog of war prototype | Unknown |
+| [#2DT16W#2](http://babylonjs-playground.azurewebsites.net/#2DT16W#2) | Shadow on transparent textures | Sebavan
 
 
 
