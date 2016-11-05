@@ -17,6 +17,7 @@ router.get('/', function (req, res) {
         page = (req.query.page || 1 ) - 1,
         resultMax = (req.query.max || 25),
         renderType = (req.query.renderType || 'page'),
+        includeAbstracts = (req.query.includeAbstracts || false),
         keywords = [];
 
     resultMax = parseInt(resultMax);
@@ -45,6 +46,10 @@ router.get('/', function (req, res) {
         keywords.push(searchTerm);
     }
 
+    //load statics file
+    if(includeAbstracts)
+        var statics = JSON.parse(fs.readFileSync("data/statics.json"));
+
     // if any keywords in 'keywords', launch search on each element of this array; else
     // render default search page with a message
     if(keywords.length != 0){
@@ -67,6 +72,37 @@ router.get('/', function (req, res) {
 
                     if (reg.test(result.text)){
                         if (!_.some(uniqueResults, {src: result.src})){
+                            var result = {
+                                src: result.src,
+                                url: req.protocol + '://' + req.get('host') + "/" + result.src,
+                                name: result.name,
+                                version: result.version,
+                                occurrences: 1
+                            };
+
+                            if(includeAbstracts){
+                                
+                                var staticCategory = statics[result.version];
+                                var found = false;
+                                if(staticCategory){
+                                    for(var partId = 0; partId < staticCategory.length; partId++){
+                                        var part = staticCategory[partId];
+                                        if(part.files){
+                                            for(var fileId = 0; fileId < part.files.length; fileId++){
+                                                var fileinfo = part.files[fileId];
+                                                if(fileinfo.title === result.name && fileinfo.abstract){
+                                                    result.abstract = fileinfo.abstract;
+                                                    found = true;
+                                                }
+                                            }
+                                            
+                                            if(found)
+                                                break;
+                                        }
+                                    }
+                                }
+                            }
+
                             // first occurrence
                             uniqueResults.push({
                                 src: result.src,
