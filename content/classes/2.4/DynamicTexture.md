@@ -17,13 +17,13 @@ class [DynamicTexture](/classes/2.4/DynamicTexture) extends [Texture](/classes/2
 ## new [DynamicTexture](/classes/2.4/DynamicTexture)(name, options, scene, generateMipMaps, samplingMode)
 
 Create a new [DynamicTexture](/classes/2.4/DynamicTexture).
-A tutorial about dynamic textures can be found here : http://blogs.msdn.com/b/eternalcoding/archive/2013/08/12/creating-a-3d-chart-for-your-windows-8-1-app-using-babylon-js.aspx
+A tutorial about dynamic textures can be found here : [Creating a 3D chart for your Windows 8.1 app using Babylon.js](https://www.eternalcoding.com/?p=253)
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
  | name | string |    Name of the texture
- | options | any |    Options of the dynamic texture
+ | options | see description |   This argument can accept an HTMLCanvasElement, an object with a numeric width and height property, or a number.  If an HTMLCanvasElement, the provided canvas will be used in the texture including its height and width.  If an object with numeric height and width properties is passed, a new canvas will be created internally with the specified height and width.  If a number is provided for this argument, a square canvas and texture will be created with the specified height and width. 
  | scene | [Scene](/classes/2.4/Scene) |    [Scene](/classes/2.4/Scene) which contain the texture
  | generateMipMaps | boolean |    @param generateMipMaps
 ## Members
