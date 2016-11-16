@@ -17,7 +17,7 @@ class [DynamicTexture](/classes/2.3/DynamicTexture) extends [Texture](/classes/2
 ## new [DynamicTexture](/classes/2.3/DynamicTexture)(name, options, scene, generateMipMaps, samplingMode)
 
 Create a new [DynamicTexture](/classes/2.3/DynamicTexture).
-A tutorial about dynamic textures can be found here : http://blogs.msdn.com/b/eternalcoding/archive/2013/08/12/creating-a-3d-chart-for-your-windows-8-1-app-using-babylon-js.aspx
+A tutorial about dynamic textures can be found here : [Creating a 3D chart for your Windows 8.1 app using Babylon.js](https://www.eternalcoding.com/?p=253)
 
 #### Parameters
  | Name | Type | Description
