@@ -104,13 +104,7 @@ router.get('/', function (req, res) {
                             }
 
                             // first occurrence
-                            uniqueResults.push({
-                                src: result.src,
-                                url: req.protocol + '://' + req.get('host') + "/" + result.src,
-                                name: result.name,
-                                version: result.version,
-                                occurrences: 1
-                            });
+                            uniqueResults.push(result);
 
                         } else {
                             // result.src already been added; increment result's counter
