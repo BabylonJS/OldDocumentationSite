@@ -130,6 +130,7 @@ To rotate a bone around an axis, use the rotate function:
 bone.rotate(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
 rotate world space [demo](http://www.babylonjs-playground.com/#D4ZZ8#2)
+
 rotate local space [demo](http://www.babylonjs-playground.com/#D4ZZ8#4)
 
 setAxisAngle, setYawPitchRoll, setRotation, or setRotationMatrix are used to rotate a bone to a specific rotation.
@@ -138,6 +139,7 @@ setAxisAngle, setYawPitchRoll, setRotation, or setRotationMatrix are used to rot
 bone.setAxisAngle(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
 setAxisAngle world space [demo 1](http://www.babylonjs-playground.com/#D4ZZ8#8), [demo 2](http://www.babylonjs-playground.com/#D4ZZ8#9)
+
 setAxisAngle local space [demo 1](http://www.babylonjs-playground.com/#D4ZZ8#10), [demo 2](http://www.babylonjs-playground.com/#D4ZZ8#11)
 ```
 bone.setYawPitchRoll(yaw, pitch, roll, BABYLON.Space.WORLD, mesh);
@@ -154,21 +156,33 @@ bone.setRotationMatrix(rotMat, BABYLON.Space.WORLD, mesh);
 [demo](http://www.babylonjs-playground.com/#I6RJJ#57)
 
 
-Use getRotation or getRotationToRef to get the rotation quaternion of a bone.
+Use getRotation or getRotationToRef to get the Vector3 rotation of a bone.
 
 ```
-var quat = bone.getRotation(BABYLON.Space.WORLD, mesh);
+var rotation = bone.getRotation(BABYLON.Space.WORLD, mesh);
 ```
 ```
-var quat = BABYLON.Quaternion.Identity();
+var rotation = BABYLON.Vector3.Zero();
 
-bone.getRotationToRef(BABYLON.Space.WORLD, mesh, quat);
+bone.getRotationToRef(BABYLON.Space.WORLD, mesh, rotation);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#8)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#12)
+
+Use getRotationQuaternion or getRotationQuaternionToRef to get the Quaternion rotation of a bone.
+
+```
+var rotationQuaternion = bone.getRotationQuaternion(BABYLON.Space.WORLD, mesh);
+```
+```
+var rotationQuaternion = BABYLON.Vector3.Zero();
+
+bone.getRotationQuaternionToRef(BABYLON.Space.WORLD, mesh, rotationQuaternion);
+```
+[demo](http://www.babylonjs-playground.com/#1EVNNB#11)
 
 #### Positioning
 
-To change the position of a bone, you can rotate the parent bone, but you can also leave the parent where it is and diretly modify the position of the bone.
+To change the position of a bone, you can rotate the parent bone, or you can leave the parent where it is and directly modify the position of the bone.
 
 One way to do this is by translating the bone from its current position.
 ```
