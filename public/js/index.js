@@ -73,6 +73,11 @@
                     href: 'http://www.html5gamedevs.com/forum/16-babylonjs',
                     target: '_blank',
                     html: '<i class="fa fa-html5"></i>Forum'
+                }),
+                $('<a>', {
+                    href: 'http://babylonjsguide.github.io/',
+                    target: '_blank',
+                    html: '<i class="fa fa-html5"></i>Guide'
                 })
             ];
 
