@@ -75,6 +75,16 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | [ **WebWorker-Based Collision Detection in Babylon.js** ](https://blog.raananweber.com/2015/05/26/collisions-using-workers-for-babylonjs/) | WebWorker, Worker, Collision, Messages | Web workers are a method to fork-off :x certain scene tasks... to separate OS threads.  Remember how I mentioned above... that Raanan likes to smooth rough roads?  Collision detection/servicing is one of those webGL rough roads caused by heavy loads.  In this 2-part series, Raanan meticulously analyses the situation, and applies worker threads to attempt improvements. A link to part 2 is provided near the bottom. |
 | [ **Integrating Travis-CI and BabylonJS** ](https://blog.raananweber.com/2015/05/26/travis-ci-and-babylonjs/) | Travis, GitHub, Integration, NodeJS, NPM, Gulp, Grunt, TypeScript | This short tutorial is mostly for those who *build* Babylon.js from TypeScript source.  Travis has many features that assist during the build process, and Raanan shows us how to set it up properly. |
 
+
+## Luaacro - https://medium.com/@Luaacro
+
+<div class='beforeWideTable'></div>
+
+|______________Title______________ | Keywords | Description |
+| :--- | :---: | --- |
+| [**Babylon.js Projects Page**](https://medium.com/babylon-js) | Actions Builder, Editor, Electron | Julien Moreau-Mathis is a French programmer and innovator, and he has become a serious BabylonJS superhero. (He's also a darned nice guy) Luaacro is currently deeply involved in the brand new [BJS online editor](https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.coyzy5rvi).  Visit this page that summarizes ALL of his projects, and includes many "about/how-to" documents. |
+
+
 ## Andy Beaulieu - http://www.spritehand.com/
 
 <div class='beforeWideTable'></div>
