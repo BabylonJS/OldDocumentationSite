@@ -194,7 +194,7 @@ If you need to set the bone to a specific location, use setPosition.
 ```
 bone.setPosition(pos, BABYLON.Space.WORLD, mesh);
 ```
-[demo 1] (http://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2] (http://www.babylonjs-playground.com/#1BZJVJ#34)
+[demo 1](http://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2](http://www.babylonjs-playground.com/#1BZJVJ#34)
 
 To get the position of a bone, use getPosition or getPositionToRef.
 ```
@@ -250,13 +250,16 @@ With some bones, you will need to adjust the yaw, pitch, roll to get the bone to
 
 ```
 var target = BABYLON.MeshBuilder.createSphere();
-var lookCtrl = new BABYLON.BoneLookController(characterMesh, headBone, target.position, adjustYaw, adjustPitch, adjustRoll);
+var lookCtrl = new BABYLON.BoneLookController(characterMesh, headBone, target.position, {adjustYaw:Math.PI*.5, adjustPitch:Math.PI*.5, adjustRoll:Math.PI});
 
-lookCtrl.update();
+scene.registerBeforeRender(function(){
 
+   lookCtrl.update();
+
+});
 ```
 
-[demo](http://www.babylonjs-playground.com/#1B1PUZ#13)
+[demo](http://www.babylonjs-playground.com/#1B1PUZ#14)
 
 
 #### BoneIKController
@@ -276,10 +279,18 @@ You most likely will want to parent your character to the pole target mesh so th
 ```
 poleTarget.parent = characterMesh;
 ```
-The BoneIKController constructor takes the mesh of the character, the bone that will be closest to the target, the target, the pole target and the pole angle.
+The BoneIKController constructor takes the mesh of the character, the bone that will be closest to the target, the target, and an options param.  The currently list of options are:
+
+targetMesh,
+poleTargetMesh,
+poleTargetBone,
+poleTargetLocalOffset,
+poleAngle,
+bendAxis,
+maxAngle
 
 ```
-var ikCtrl = new BABYLON.BoneIKController(characterMesh, forearmBone, target, poleTarget, 0);
+var ikCtrl = new BABYLON.BoneIKController(characterMesh, forearmBone, {targetMesh:target, poleTargetMesh:poleTarget, poleAngle:Math.PI});
 ```
 
 To use the controller, simply call the controller's update function before the scene is rendered.
@@ -292,9 +303,9 @@ scene.registerBeforeRender(function(){
 });
 ```
 
-[demo](http://www.babylonjs-playground.com/#1EVNNB#6)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#13)
 
-When you're satisfied with the way the bones are moving, you can hide the target and pole target meshes by setting enabled to false.
+If you used a mesh for a target, you can hide it by setting enabled to false.
 ```
 target.setEnabled(false);
 poleTarget.setEnabled(false);
