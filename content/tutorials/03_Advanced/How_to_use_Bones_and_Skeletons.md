@@ -205,7 +205,7 @@ var pos = BABYLON.Vector3.Zero();
 
 bone.getPositionToRef(BABYLON.Space.WORLD, mesh, pos);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#8)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#14)
 
 #### Scaling
 
