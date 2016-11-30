@@ -125,8 +125,11 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 ## Pryme8 - https://pryme8.github.io/NeatFlax/
 
-Coming soon!
+Many excellent tutorials are located here.  Thanks Andrew!
 
+## Mad Dog Tutorials - https://www.youtube.com/playlist?list=PLOGomoq5sDLtJeX81GFAXppi-VbrVwxav
+
+Five substantial BabylonJS video tutorials which I don't know much about, yet.  Let's go view them.  Author(s) unknown.
 
 ## Everyone/Anyone Else - Coming Soon!
 
