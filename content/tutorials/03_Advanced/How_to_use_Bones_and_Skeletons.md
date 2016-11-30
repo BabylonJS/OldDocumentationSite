@@ -205,7 +205,7 @@ var pos = BABYLON.Vector3.Zero();
 
 bone.getPositionToRef(BABYLON.Space.WORLD, mesh, pos);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#8)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#14)
 
 #### Scaling
 
@@ -259,7 +259,7 @@ scene.registerBeforeRender(function(){
 });
 ```
 
-[demo](http://www.babylonjs-playground.com/#1B1PUZ#14)
+[demo](http://www.babylonjs-playground.com/#1B1PUZ#15)
 
 
 #### BoneIKController
@@ -303,7 +303,7 @@ scene.registerBeforeRender(function(){
 });
 ```
 
-[demo](http://www.babylonjs-playground.com/#1EVNNB#13)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#15)
 
 If you used a mesh for a target, you can hide it by setting enabled to false.
 ```
