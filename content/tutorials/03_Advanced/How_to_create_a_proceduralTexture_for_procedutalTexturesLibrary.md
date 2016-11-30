@@ -2,39 +2,33 @@ This tutorial will guide you through the process of creating a procedural textur
 
 ## Setting up environment
 
-First of all, you need to create a folder for your shader in the /proceduralTextures folder. Let's call it **cloudBis**.
+First of all, you need to create a folder for your shader in the /proceduralTexturesLibrary/src folder. Let's call it **cloudBis**.
 
 Then you need to create your files:
 * babylon.**cloudBis**ProceduralTexture.ts (just copy/paste from babylon.woodProceduralTexture.ts )
 * **cloudBis**ProceduralTexture.fragment.fx (just copy/paste from woodProceduralTexture.fragment.fx )
 
-Then update the config.json to add your files:
+To integrate your new procedural texture to the build process, you have to edit the config.sjonfile in the tools/gulp folder and add an entry in the "proceduralTextureLibrary/libraries" section of the file:
 
 ```
-{
-  "proceduralTextures": [
-	{
-      "file": "proceduralTextures/wood/babylon.woodProceduralTexture.ts",
-      "shaderFiles": [
-        "proceduralTextures/wood/woodProceduralTexture.fragment.fx"
-      ],
-      "output": "babylon.woodProceduralTexture.js"
-    },
-	{
-      "file": "proceduralTextures/cloudBis/babylon.cloudBisProceduralTexture.ts",
-      "shaderFiles": [
-        "proceduralTextures/cloudBis/cloudBisProceduralTexture.fragment.fx"
-      ],
-      "output": "babylon.cloudBisProceduralTexture.js"
-    }
-  ],
-  "build": {
-    "distOutputDirectory": "dist/"
-  }
-}
+  "libraries": [
+    ...
+      {
+        "files": ["../../proceduralTexturesLibrary/src/wood/babylon.woodProceduralTexture.ts"],
+        "shaderFiles": [
+          "../../proceduralTexturesLibrary/src/wood/woodProceduralTexture.fragment.fx"
+        ],
+        "output": "babylon.woodProceduralTexture.js"
+      }
+    ...
+  ]
 ```
 
-To compile your files, just run `gulp()`.
+To build all the procedural textures and generate the *dist* folder, just run from the tools/gulp folder:
+
+```
+gulp proceduralTextureLibrary
+```
 
 ## Update the shaders
 
@@ -146,11 +140,7 @@ module BABYLON {
 
 ## Update the test page
 
-Open *test/index.html* and add this reference:
-
-```
-<script src="../dist/babylon.cloudBisProceduralTexture.js"></script>
-```
+To test your material, open the /proceduralTextureLibrary/index.html page. References are added automatically.
 
 Then add the procedural texture line 192:
 
@@ -229,7 +219,7 @@ The first parameter is the texture object and the second one is an array contain
 
 ## Launch the test server
 
-To test your result, just execute:
+To Launch the server, you can start from the tools/gulp folder:
 
 ```
 gulp webserver

@@ -5,8 +5,8 @@
 ## Using the cloud procedural texture
 
 Cloud procedural texture can be found here: 
-- Normal: [https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.cloudProceduralTexture.js](https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.cloudProceduralTexture.js)
-- Minified : [https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.cloudProceduralTexture.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.cloudProceduralTexture.min.js)
+- Normal: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.cloudProceduralTexture.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.cloudProceduralTexture.js)
+- Minified : [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.cloudProceduralTexture.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.cloudProceduralTexture.min.js)
 
 A demo can be found here: http://www.babylonjs-playground.com/##NQDNM#0
 

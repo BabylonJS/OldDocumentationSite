@@ -2,7 +2,7 @@
 
 ![Fur material high](/img/extensions/materials/furHigh.png)
 
-Fur material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.furMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.furMaterial.js)
+Fur material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.furMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.furMaterial.js)
 
 # Using the High Level mode
 
