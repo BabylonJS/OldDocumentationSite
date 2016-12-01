@@ -74,18 +74,30 @@ Adding the upstream will help syncing back your fork.
 
 Then navigate to the BJS folder and install the BJS required node modules through npm:
 ```
-cd BabylonJS
+cd BabylonJS/Tools/Gulp
 npm install
 ```
 
 You are good to go !!!
 
 ## Debug
-Open VSCode on the newly created BabylonJS folder and launch the test task. This has been hijacked for your convenience and will watch all the files you are modifying as well as web serve the files for development purpose. As you noticed in the VSCode installation you can easily hook it to a keyborad shortcut.
+Open VSCode on the newly created BabylonJS folder and launch the test task. To do so, 3 solutions:
+1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type test. You should be on run test task, so hit enter.
+2. Use the shortcut you previously bind to the command  in your keyboard bindings (default is Ctrl+Alf+Shift+t)
+3. Open a terminal on Tools/Gulp and run `gulp run`
 
-In the VSCode debug tab, chose the section you want to debug and launch the debugger.
+This has been hijacked for your convenience and will watch all the files you are modifying as well as web serve the files for development purpose. As you noticed in the VSCode installation you can easily hook it to a keyboard shortcut.
+
+Once the task is launched you can kill it by repsectively:
+1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type terminate. You should be on Terminate Running Task task, so hit enter.
+2. Use the shortcut you previously bind to the command  in your keyboard bindings (default is Ctrl+Alf+Shift+k)
+3. In the terminal press `Ctrl+c`
+
+In the VSCode debug tab, chose the section you want to debug and launch the debugger (the test task needs to be running).
 
 This will debug alls the TS and js in chrome and stop on your breakpoints setup in those files in VSCode. This debugs all the code from src, materialsLibrary, procceduralTexturesLibrary, postprocessLibrary...
+
+*Hint*: If another chrome sesssion already runs in remote debug on port 9222 the debugger will fail to attach as the port is already open. You will have to close the other remote debug first. 
 
 The main entry points in BJS are:
 
