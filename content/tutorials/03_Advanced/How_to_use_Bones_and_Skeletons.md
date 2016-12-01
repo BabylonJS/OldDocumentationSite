@@ -130,6 +130,7 @@ To rotate a bone around an axis, use the rotate function:
 bone.rotate(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
 rotate world space [demo](http://www.babylonjs-playground.com/#D4ZZ8#2)
+
 rotate local space [demo](http://www.babylonjs-playground.com/#D4ZZ8#4)
 
 setAxisAngle, setYawPitchRoll, setRotation, or setRotationMatrix are used to rotate a bone to a specific rotation.
@@ -138,6 +139,7 @@ setAxisAngle, setYawPitchRoll, setRotation, or setRotationMatrix are used to rot
 bone.setAxisAngle(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
 setAxisAngle world space [demo 1](http://www.babylonjs-playground.com/#D4ZZ8#8), [demo 2](http://www.babylonjs-playground.com/#D4ZZ8#9)
+
 setAxisAngle local space [demo 1](http://www.babylonjs-playground.com/#D4ZZ8#10), [demo 2](http://www.babylonjs-playground.com/#D4ZZ8#11)
 ```
 bone.setYawPitchRoll(yaw, pitch, roll, BABYLON.Space.WORLD, mesh);
@@ -154,21 +156,33 @@ bone.setRotationMatrix(rotMat, BABYLON.Space.WORLD, mesh);
 [demo](http://www.babylonjs-playground.com/#I6RJJ#57)
 
 
-Use getRotation or getRotationToRef to get the rotation quaternion of a bone.
+Use getRotation or getRotationToRef to get the Vector3 rotation of a bone.
 
 ```
-var quat = bone.getRotation(BABYLON.Space.WORLD, mesh);
+var rotation = bone.getRotation(BABYLON.Space.WORLD, mesh);
 ```
 ```
-var quat = BABYLON.Quaternion.Identity();
+var rotation = BABYLON.Vector3.Zero();
 
-bone.getRotationToRef(BABYLON.Space.WORLD, mesh, quat);
+bone.getRotationToRef(BABYLON.Space.WORLD, mesh, rotation);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#8)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#12)
+
+Use getRotationQuaternion or getRotationQuaternionToRef to get the Quaternion rotation of a bone.
+
+```
+var rotationQuaternion = bone.getRotationQuaternion(BABYLON.Space.WORLD, mesh);
+```
+```
+var rotationQuaternion = BABYLON.Vector3.Zero();
+
+bone.getRotationQuaternionToRef(BABYLON.Space.WORLD, mesh, rotationQuaternion);
+```
+[demo](http://www.babylonjs-playground.com/#1EVNNB#11)
 
 #### Positioning
 
-To change the position of a bone, you can rotate the parent bone, but you can also leave the parent where it is and diretly modify the position of the bone.
+To change the position of a bone, you can rotate the parent bone, or you can leave the parent where it is and directly modify the position of the bone.
 
 One way to do this is by translating the bone from its current position.
 ```
@@ -180,7 +194,7 @@ If you need to set the bone to a specific location, use setPosition.
 ```
 bone.setPosition(pos, BABYLON.Space.WORLD, mesh);
 ```
-[demo 1] (http://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2] (http://www.babylonjs-playground.com/#1BZJVJ#34)
+[demo 1](http://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2](http://www.babylonjs-playground.com/#1BZJVJ#34)
 
 To get the position of a bone, use getPosition or getPositionToRef.
 ```
@@ -191,7 +205,7 @@ var pos = BABYLON.Vector3.Zero();
 
 bone.getPositionToRef(BABYLON.Space.WORLD, mesh, pos);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#8)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#14)
 
 #### Scaling
 
@@ -236,13 +250,16 @@ With some bones, you will need to adjust the yaw, pitch, roll to get the bone to
 
 ```
 var target = BABYLON.MeshBuilder.createSphere();
-var lookCtrl = new BABYLON.BoneLookController(characterMesh, headBone, target.position, adjustYaw, adjustPitch, adjustRoll);
+var lookCtrl = new BABYLON.BoneLookController(characterMesh, headBone, target.position, {adjustYaw:Math.PI*.5, adjustPitch:Math.PI*.5, adjustRoll:Math.PI});
 
-lookCtrl.update();
+scene.registerBeforeRender(function(){
 
+   lookCtrl.update();
+
+});
 ```
 
-[demo](http://www.babylonjs-playground.com/#1B1PUZ#13)
+[demo](http://www.babylonjs-playground.com/#1B1PUZ#15)
 
 
 #### BoneIKController
@@ -262,10 +279,18 @@ You most likely will want to parent your character to the pole target mesh so th
 ```
 poleTarget.parent = characterMesh;
 ```
-The BoneIKController constructor takes the mesh of the character, the bone that will be closest to the target, the target, the pole target and the pole angle.
+The BoneIKController constructor takes the mesh of the character, the bone that will be closest to the target, the target, and an options param.  The currently list of options are:
+
+targetMesh,
+poleTargetMesh,
+poleTargetBone,
+poleTargetLocalOffset,
+poleAngle,
+bendAxis,
+maxAngle
 
 ```
-var ikCtrl = new BABYLON.BoneIKController(characterMesh, forearmBone, target, poleTarget, 0);
+var ikCtrl = new BABYLON.BoneIKController(characterMesh, forearmBone, {targetMesh:target, poleTargetMesh:poleTarget, poleAngle:Math.PI});
 ```
 
 To use the controller, simply call the controller's update function before the scene is rendered.
@@ -278,9 +303,9 @@ scene.registerBeforeRender(function(){
 });
 ```
 
-[demo](http://www.babylonjs-playground.com/#1EVNNB#6)
+[demo](http://www.babylonjs-playground.com/#1EVNNB#15)
 
-When you're satisfied with the way the bones are moving, you can hide the target and pole target meshes by setting enabled to false.
+If you used a mesh for a target, you can hide it by setting enabled to false.
 ```
 target.setEnabled(false);
 poleTarget.setEnabled(false);

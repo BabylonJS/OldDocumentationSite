@@ -984,6 +984,10 @@
           "filename": "playgrounds"
         },
         {
+          "title": "How to start to contribute to Babylon.js",
+          "filename": "how_to_start"
+        },
+        {
           "title": "Approved Naming Conventions",
           "filename": "Approved_Naming_Conventions"
         },

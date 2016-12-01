@@ -5,7 +5,7 @@
 ## [~~Playground example - Not yet deployed~~](http://www.babylonjs-playground.com)
 
 
-Gradient material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.gradientMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.gradientMaterial.js)
+Gradient material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.gradientMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.gradientMaterial.js)
 
 ## Using the gradient material
 
