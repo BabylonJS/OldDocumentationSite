@@ -93,7 +93,7 @@ Once the task is launched you can kill it by repsectively:
 2. Use the shortcut you previously bind to the command  in your keyboard bindings (default is Ctrl+Alf+Shift+k)
 3. In the terminal press `Ctrl+c`
 
-In the VSCode debug tab, chose the section you want to debug and launch the debugger (the tes task needs tob e running).
+In the VSCode debug tab, chose the section you want to debug and launch the debugger (the test task needs to be running).
 
 This will debug alls the TS and js in chrome and stop on your breakpoints setup in those files in VSCode. This debugs all the code from src, materialsLibrary, procceduralTexturesLibrary, postprocessLibrary...
 
