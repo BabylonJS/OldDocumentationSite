@@ -150,6 +150,7 @@ The main gulpfile in Tools/Gulp contains a lot of helpfull tasks. So first open 
 * `gulp proceduralTexturesLibrary` generates all the procedural textures files in the dist/preview release folder.
 * `gulp postProcessesLibrary` generates all the post processes files in the dist/preview release folder.
 * `gulp deployLocalDev` regenerates your localDev/src/index.js from the template.
+* `gulp build-custom` will generate your own version of babylon.js. You can specify which modules you want with custom.config.json in /Tools/Gulp folder.
 
 
 
