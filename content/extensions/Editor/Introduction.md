@@ -29,16 +29,17 @@ The Github Repository can be found here: [https://github.com/BabylonJS/Editor](h
 * Create and edit post-process (soon exported in final .babylon scenes)
 * Create and edit render targets (soon exported in final .babylon scenes)
 
-## From v0.9 (current)
+## From v0.9
 * Create and edit materials (complete Babylon.js Materials Library)
 * Import and setup textures to use with materials
 * Live preview of render targets (including shadow maps)
 
-## Coming in v1.0
+## Coming in v1.0 (current)
 * Actions Builder support
 
 ## Coming in v1.1
 * Setup and test physics simulations inlucing new updates of RaananW
+* Shader Materials Builder tool
 
 # Now, what is clearly exported?
 * Project configuration (FPS, animated at launch)
@@ -50,4 +51,5 @@ The Github Repository can be found here: [https://github.com/BabylonJS/Editor](h
 * Render target textures
 * Reflection probes (not yet serialized in .babylon files)
 * Materials from Materials Library
-* Actions using Actions Builder (soon in version 1.0)
+* Actions using Actions Builder
+* Custom metadatas used by extensions (Post-Process Builder, etc.)

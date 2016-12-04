@@ -696,6 +696,14 @@
         {
             "title": "Managing Lens Flare Systems",
             "filename": "Managin_Lens_Flare_Systems"
+        },
+        {
+          "title": "Using the Actions Builder",
+          "filename": "Using_Actions_Builder"
+        },
+        {
+          "title": "Using the Post-Process Builder (for developers)",
+          "filename": "Using_Post_Process_Builder"
         }
       ]
     },
