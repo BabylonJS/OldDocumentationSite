@@ -10,6 +10,7 @@ Just reference the loader in your HTML file:
 <script src="babylon.2.2.js"></script>
 <script src="babylon.glTFFileLoader.js"></script>
 ```
+You can find it [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview release/loaders)
 
 And then, call the scene loader:
 ```
