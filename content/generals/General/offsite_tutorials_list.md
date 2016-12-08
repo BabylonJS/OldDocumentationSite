@@ -131,5 +131,9 @@ Many excellent tutorials are located here.  Thanks Andrew!
 
 Five substantial BabylonJS video tutorials which I don't know much about, yet.  Let's go view them.  Author(s) unknown.
 
+## Serapth/gamefromscratch.com - http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx
+
+Assorted beginner-level text and video tutorials... from our forum friend [Serapth](http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx).  Thanks Serapth!
+
 ## Everyone/Anyone Else - Coming Soon!
 
