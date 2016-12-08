@@ -105,7 +105,8 @@ The main entry points in BJS are:
 2. [Materials Library]("http://localhost:1338/materialsLibrary/index.html"): [http://localhost:1338/materialsLibrary/index.html](http://localhost:1338/materialsLibrary/index.html)
 3. [Post Process Library]("http://localhost:1338/postProcessLibrary/index.html"): [http://localhost:1338/postProcessLibrary/index.html](http://localhost:1338/postProcessLibrary/index.html)
 4. [Procedural Textures Library]("http://localhost:1338/proceduralTexturesLibrary/index.html"): [http://localhost:1338/proceduralTexturesLibrary/index.html](http://localhost:1338/proceduralTexturesLibrary/index.html)
-5. [Local Dev]("http://localhost:1338/localDev/index.html"): [http://localhost:1338/localDev/index.html](http://localhost:1338/localDev/index.html)
+5. [Inspector]("http://localhost:1338/inspector/index.html"): [http://localhost:1338/inspector/index.html](http://localhost:1338/inspector/index.html)
+6. [Local Dev]("http://localhost:1338/localDev/index.html"): [http://localhost:1338/localDev/index.html](http://localhost:1338/localDev/index.html)
 
 All of those allows debugging the source code of bjs directly from typescript.
 
@@ -149,6 +150,8 @@ The main gulpfile in Tools/Gulp contains a lot of helpfull tasks. So first open 
 * `gulp materialsLibrary` generates all the materials files in the dist/preview release folder.
 * `gulp proceduralTexturesLibrary` generates all the procedural textures files in the dist/preview release folder.
 * `gulp postProcessesLibrary` generates all the post processes files in the dist/preview release folder.
+* `gulp canvas2D` generates the canvas2D files in the dist/preview release folder.
+* `gulp inspector` generates the inspector files in the dist/preview release folder.
 * `gulp deployLocalDev` regenerates your localDev/src/index.js from the template.
 
 
