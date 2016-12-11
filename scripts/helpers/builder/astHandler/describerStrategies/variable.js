@@ -16,7 +16,7 @@ module.exports = {
         }
 
         var varName = variable.propertyName.text();
-
+        
         //Extract the variable type
         var varType = TypeManager.getReturnString(variable);
         //var varType = variable.typeAnnotation.type;

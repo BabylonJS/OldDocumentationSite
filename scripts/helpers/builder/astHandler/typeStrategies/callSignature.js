@@ -24,19 +24,33 @@ module.exports = {
 
     },
     getReturnString     : function (astType) {
-        var funParameters = astType.parameterList.parameters.members;
+        var funParameters = null;
+        if (!astType.parameterList) {
+            if (!astType.propertyName) {
+                return "()";
+            } else {
+                funParameters = {0 : astType.propertyName};
+            }
+        } else {
+           funParameters = astType.parameterList.parameters.members;
+        }
         var funSignature = '(';
 
         for (var index in funParameters) {
             var parameter = funParameters[index];
-
-            funSignature += parameter.identifier.text();
-            if (index < funParameters.length - 1) {
-                funSignature += ', ';
+            if (parameter) {                    
+                if (parameter.identifier) {
+                    funSignature += parameter.identifier.text();
+                }
+                if (index < funParameters.length - 1) {
+                    funSignature += ', ';
+                }
             }
+
         }
 
         funSignature += ')';
+        console.log('Current function:', funSignature);
 
         return funSignature;
     },
