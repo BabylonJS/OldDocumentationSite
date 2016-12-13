@@ -101,6 +101,14 @@ scene.onPointerDown = function () {
 ```
 This will start the video on the first tap in the scene. A demo can be found at http://www.babylonjs-playground.com/#CHQ4T#1
 
+Starting with v2.6, we introduced the support for WebRTC. So now you can create a specific VideoTexture which will be connected to your default WebCam:
+
+```javascript
+BABYLON.VideoTexture.CreateFromWebCam(scene, function(videoTexture) {
+}, { maxWidth: 256, maxHeight: 256 });
+```
+The third parameter is optional and can be used to define minWidth, maxWidth, minHeight and maxHeight. These values will be used to constraint the camera resolution.
+
 * **Refraction**
 
 Starting with Babylon.js 2.4, a new channel was added to the StandardMaterial: the refraction channel.
