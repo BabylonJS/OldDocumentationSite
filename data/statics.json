@@ -264,8 +264,8 @@
           "filename": "In-Browser_Mesh_Simplification_(Auto-LOD)"
         },
         {
-          "title": "Layermasks and Multi-cam Textures",
-          "filename": "Layermasks_and_Multi-cam_Textures"
+          "title": "Layermasks and Multi-Cam Textures",
+          "filename": "Layermasks_and_Multi-Cam_Textures"
         },
         {
           "title": "Optimizing Your Scene with Octrees",
@@ -503,7 +503,7 @@
       "files": [
         {
           "title": "Fire",
-          "filename": "fire"
+          "filename": "Fire"
         },
         {
           "title": "Water",
