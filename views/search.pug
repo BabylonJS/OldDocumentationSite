@@ -1,5 +1,5 @@
-include includes/header.jade
-    include includes/banner.jade
+include includes/header.pug
+    include includes/banner.pug
     #wrapper
         .whats-new-banner
             h1 Search
@@ -60,5 +60,5 @@ include includes/header.jade
                     a(class="pageChangeLink nextResults", href="/search?q=#{searchTerm}&page=#{ page*1 + 1 }")
                         | Next Page
 
-    include includes/footer.jade
+    include includes/footer.pug
     script(src='/js/search.js')

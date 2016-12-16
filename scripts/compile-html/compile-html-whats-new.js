@@ -7,7 +7,7 @@
  *                             REQUIREMENTS                              *
  ************************************************************************/
 
-var jade    = require('jade'),
+var pug     = require('pug'),
     fs      = require('fs'),
     marked  = require('meta-marked'),
     path    = require('path'),
@@ -29,7 +29,7 @@ module.exports = function(done) {
         content: html_content
     };
 
-    var htmlRender = jade.renderFile('views/whats-new.jade', options);
+    var htmlRender = pug.renderFile('views/whats-new.pug', options);
     fs.writeFileSync('public/html/whats-new.html', htmlRender);
     logger.info("> Whats-new.html compiled.")
 };
