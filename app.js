@@ -18,8 +18,8 @@ app.use(express.static('public'));
 
 //let's encrypt
 app.use('/.well-known', express.static('.well-known'));
-// Set the template engine to jade
-app.set('view engine', 'jade');
+// Set the template engine to pug
+app.set('view engine', 'pug');
 
 //app.set('view cache', false);
 // Set the views folder to ./views

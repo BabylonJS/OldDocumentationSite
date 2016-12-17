@@ -92,7 +92,7 @@ router.get('/:version', function(req, res) {
                 } else {
                     // render 404 - Page not found
                     logger.error('404 error - Class not found: ' + className);
-                    res.render('errorpages/404_class_not_found.jade', {classname:className});
+                    res.render('errorpages/404_class_not_found.pug', {classname:className});
                 }
             });
         }
@@ -135,7 +135,7 @@ router.get('/:version/:className', function(req, res) {
                 // 404 class not found
                 // render 404 - Class not found
                 logger.error('404 error - File not found: '  + fileName);
-                res.render('errorpages/404_class_not_found.jade', {classname:className});
+                res.render('errorpages/404_class_not_found.pug', {classname:className});
             } else {
                 fileName = path.join('./html/class_' + version, className) + '.html';
 

@@ -6,7 +6,7 @@ var fs      = require('fs'),
     path    = require('path'),
     async   = require('async'),
     _       = require('lodash'),
-    jade    = require('jade'),
+    pug     = require('pug'),
     appRoot = require('app-root-path').path,
     logger  = require(path.join(appRoot, 'config/logger')),
     marked  = require('meta-marked'),
@@ -31,8 +31,8 @@ marked.setOptions({
 });
 
 var __STATICS_LIST__    = path.join(appRoot, 'data/statics.json'),
-    __JADE_STATICS__    = path.join(appRoot, 'views/statics/statics.jade'),
-    __JADE_STATIC__     = path.join(appRoot, 'views/statics/static.jade'),
+    __PUG_STATICS__     = path.join(appRoot, 'views/statics/statics.pug'),
+    __PUG_STATIC__      = path.join(appRoot, 'views/statics/static.pug'),
     __FILES_SOURCE__    = path.join(appRoot, 'content/'),
     __FILES_DEST__      = path.join(appRoot, 'public/html/');
 
@@ -92,7 +92,7 @@ module.exports = function(done){
 };
 
 var createStaticsPage = function(dataObj, category, cb){
-    var statics_page = jade.renderFile(__JADE_STATICS__, {dataObj: dataObj, currentUrl: '/' + category});
+    var statics_page = pug.renderFile(__PUG_STATICS__, {dataObj: dataObj, currentUrl: '/' + category});
 
     fs.writeFile(path.join(__FILES_DEST__, category + '.html'), statics_page, function(writeErr){
         if (writeErr) throw writeErr;
@@ -154,7 +154,7 @@ var createStaticPages = function(staticsContents, category, cb){
             async.each(staticsContents, function(staticContent, callback){
                 var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
                 staticContent['category'] = category;
-                var staticPage = jade.renderFile(path.join(__JADE_STATIC__), {staticContent: staticContent, currentUrl: '/' + category});
+                var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {staticContent: staticContent, currentUrl: '/' + category});
 
                 //logger.info('Page ' + category + '/' + staticContent.staticFileName + '.html about to be compiled.');
                 fs.writeFile(filename, staticPage, function(writeErr){
