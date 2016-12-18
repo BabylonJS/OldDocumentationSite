@@ -22,7 +22,7 @@ fireMaterial.distortionTexture = new BABYLON.Texture("distortion.png", scene);
 fireMaterial.opacityTexture = new BABYLON.Texture("opacity.png", scene);
 
 var plane = BABYLON.Mesh.CreatePlane("fireplane", 1.0, scene);
-plane.material = fire;
+plane.material = fireMaterial;
 ```
 
 The speed of fire flames can be customized like:
