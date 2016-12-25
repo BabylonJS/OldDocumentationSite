@@ -43,7 +43,7 @@ router.get('/whats-new', function (req, res) {
         } else {
             // render 404 - Page not found
             logger.error('404 error - Page not found: public/html/whats-new.html');
-            res.render('errorpages/404.jade', {});
+            res.render('errorpages/404.pug', {});
         }
     });
 });
@@ -75,7 +75,7 @@ router.get('/', function (req, res) {
         } else {
             // render 404 - Page not found
             logger.error('404 error - Page not found: public/html/index.html');
-            res.render('errorpages/404.jade', {});
+            res.render('errorpages/404.pug', {});
         }
     });
 });

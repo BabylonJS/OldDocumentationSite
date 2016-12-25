@@ -4,7 +4,7 @@
 
 ## Using the water material
 
-Water material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.waterMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.waterMaterial.js)
+Water material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.waterMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.waterMaterial.js)
 
 A demo can be found here: http://www.babylonjs-playground.com/#1SLLOJ#20
 

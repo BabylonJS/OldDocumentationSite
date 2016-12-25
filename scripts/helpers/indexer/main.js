@@ -19,7 +19,7 @@ var fulltextsearch = require('full-text-search');
 var fileSplitter = require('../fileSplitter');
 
 // Folder to exclude from the search
-var toExcludeFromSearch = ['classes', '2.2'];
+var toExcludeFromSearch = ['classes', '2.2', '2.3'];
 
 module.exports = function index(done) {
 

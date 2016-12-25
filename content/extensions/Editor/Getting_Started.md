@@ -48,3 +48,36 @@ For a perfect workflow, you should put your Babylon.js scene (with textures and 
 
 To load a saved project with your scene, simply drag’n’drop the project file (“.editorproject”) with the associated scene, and that’s all :)
 
+## Exporting a template
+
+When exporting a template, you are able to export the complete scene (including modifications you made in the editor) on OneDrive or local storage using Electron.
+Once the project has been exported, you can run the file "**run.bat**" or "**run.sh**" which will run a local web server and open the game in your favorite web browser.
+
+**Note: don't forget to install node.js**
+
+![ExportingTemplate](/img/extensions/Editor/GettingStarted/ExportingTemplate.png)
+
+## Testing your game
+
+If you want to preview the result of your game without exporting a template, you can click the button "**Test...**".
+This button allows you to open a new window completely independent of the editor.
+In fact, this will simulate the template you would export using OneDrive or local storage (with Electron).
+
+The differences with the "**Play...**" button:
+* Apply and preview physics simulations
+* Apply and preview actions which call external code
+
+### Adding you own code (for developers)
+
+When exporting a template (on OneDrive or local storage using Electron), the template contains example codes you can plug in your project.
+
+![ExampleCode](/img/extensions/Editor/GettingStarted/ExampleCode.png)
+
+The file "**game.ts**" is the equivalent of you main entry point. The method "**apply**" is automatically called giving the reference
+to the scene: you can do everything you want here.
+
+To test your game using your code, you can run the "**run.bat**" or "**run.sh**" files to launch a local webserver reachable at "http://localhost:8000".
+
+Anyway, when you click the button "**Test...**", the window will try to find the file "http://localhost:8000/libs/game.js" which contains your own code.
+
+You are now able to develop games using the editor and your own code :)

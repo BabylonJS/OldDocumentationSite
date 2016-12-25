@@ -6,7 +6,7 @@
  *                             REQUIREMENTS                              *
  ************************************************************************/
 
-var jade    = require('jade'),
+var pug     = require('pug'),
     fs      = require('fs'),
     path    = require('path'),
     appRoot = require('app-root-path').path,
@@ -26,11 +26,11 @@ function checkDirectorySync(directory) {
  
 module.exports = function(done) {
 	checkDirectorySync("public/html/");
-    var htmlRender = jade.renderFile('views/index.jade', { pretty: false, currentUrl: '/' });
+    var htmlRender = pug.renderFile('views/index.pug', { pretty: false, currentUrl: '/' });
     fs.writeFileSync('public/html/index.html', htmlRender);
     logger.info("> Index.html compiled.");
 
-    htmlRender = jade.renderFile('views/playground.jade', { pretty: false, currentUrl: '/' });
+    htmlRender = pug.renderFile('views/playground.pug', { pretty: false, currentUrl: '/' });
     fs.writeFileSync('public/html/playground.html', htmlRender);
     logger.info("> Playground.html compiled.");
 };

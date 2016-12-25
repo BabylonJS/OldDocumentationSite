@@ -37,6 +37,9 @@ typeManager.setAstType = function (ast, alreadyType) {
         else var astType = ast;
     }
 
+    if (ast.propertyName) {
+        console.log('Current property : ', ast.propertyName._text);
+    }
     console.log('My kind is', TypeScript.SyntaxKind[astType.kind()]);
 
     switch (astType.kind()) {
@@ -83,7 +86,11 @@ typeManager.getParameterString = function (ast, alreadyType) {
 
 typeManager.getReturnString = function (ast, alreadyType) {
     this.setAstType(ast, alreadyType);
-    return (alreadyType || !ast.typeAnnotation) ? this.typeManager.getReturnString(ast) : this.typeManager.getReturnString(ast.typeAnnotation.type);
+    if (alreadyType || !ast.typeAnnotation) {
+        return this.typeManager.getReturnString(ast);
+    } else {
+        return this.typeManager.getReturnString(ast.typeAnnotation.type)
+    }
 };
 
 typeManager.getDescriptionString = function (ast, description, alreadyType) {

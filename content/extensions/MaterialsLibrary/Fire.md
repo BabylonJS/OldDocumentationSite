@@ -4,7 +4,7 @@
 
 ## Using the fire material
 
-Fire material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.fireMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.fireMaterial.js)
+Fire material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.fireMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.fireMaterial.js)
 
 A demo can be found here: http://www.babylonjs-playground.com/#21IIM9#1
 
@@ -22,7 +22,7 @@ fireMaterial.distortionTexture = new BABYLON.Texture("distortion.png", scene);
 fireMaterial.opacityTexture = new BABYLON.Texture("opacity.png", scene);
 
 var plane = BABYLON.Mesh.CreatePlane("fireplane", 1.0, scene);
-plane.material = fire;
+plane.material = fireMaterial;
 ```
 
 The speed of fire flames can be customized like:

@@ -5,8 +5,8 @@
 ## Using the Marble procedural texture
 
 Marble procedural texture can be found here: 
-- Normal: [https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.marbleProceduralTexture.js](https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.marbleProceduralTexture.js)
-- Minified : [https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.marbleProceduralTexture.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/proceduralTexturesLibrary/dist/babylon.marbleProceduralTexture.min.js)
+- Normal: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.js)
+- Minified : [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.min.js)
 
 A demo can be found here: http://www.babylonjs-playground.com/#HS1SK
 

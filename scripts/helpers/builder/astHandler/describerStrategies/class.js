@@ -11,7 +11,13 @@ module.exports = {
             var clause = heritageClauses[index];
 
             if (clause.kind() === TypeScript.SyntaxKind.ExtendsHeritageClause) {
-                classExtends = clause.typeNames.members[0].text();
+                if (clause.typeNames.members[0].text) {
+                    classExtends = clause.typeNames.members[0].text();
+                }else if (clause.typeNames.members[0].name) {
+                    classExtends = clause.typeNames.members[0].name._text;
+                }else {
+                    classExtends = clause.typeNames.members[0].left._text +"."+clause.typeNames.members[0].right._text;
+                }
             }
             //else if (clause.kind() === TypeScript.SyntaxKind.ImplementsHeritageClause) {
             //    classImplements = clause.typeNames.members[0].text();

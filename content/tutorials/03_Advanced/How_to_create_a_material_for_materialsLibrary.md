@@ -2,41 +2,34 @@ This tutorial will guide you through the process of creating a material for the 
 
 ## Setting up environment
 
-First of all, you need to create a folder for your shader in the /materials folder. Let's call it diffuseEmissive.
+First of all, you need to create a folder for your shader in the /materialsLibrary/src folder. Let's call it diffuseEmissive.
 Then you need to create your files:
 * babylon.diffuseEmissiveMaterial.ts (just copy/paste from babylon.simpleMaterial.ts)
 * diffuseEmissive.vertex.fx (just copy/paste from simple.vertex.fx)
 * diffuseEmissive.fragment.fx (just copy/paste from simple.fragment.fx)
 
-Then update the config.json to add your files:
+Then update the config.json file in the tools/gulp and add an entry in the "materialsLibrary/libraries" section of the file:
 
 ```
-{
-  "materials": [
-    {
-      "file": "materials/simple/babylon.simpleMaterial.ts",
-      "shaderFiles": [
-        "materials/simple/simple.vertex.fx",
-        "materials/simple/simple.fragment.fx"
-      ],
-      "output": "babylon.simpleMaterial.js"
-    },
-	{
-      "file": "materials/diffuseEmissive/babylon.diffuseEmissiveMaterial.ts",
-      "shaderFiles": [
-        "materials/diffuseEmissive/diffuseEmissive.vertex.fx",
-        "materials/diffuseEmissive/diffuseEmissive.fragment.fx"
-      ],
-      "output": "babylon.diffuseEmissiveMaterial.js"
-    }
-  ],
-  "build": {
-    "distOutputDirectory": "dist/"
-  }
-}
+  "libraries": [
+    ...
+      {
+        "files": ["../../materialsLibrary/src/gradient/babylon.gradientMaterial.ts"],
+        "shaderFiles": [
+          "../../materialsLibrary/src/gradient/gradient.vertex.fx",
+          "../../materialsLibrary/src/gradient/gradient.fragment.fx"
+        ],
+        "output": "babylon.gradientMaterial.js"
+      }
+      ...
+  ]
 ```
 
-To compile your files, just run `gulp()`.
+To build all materials and generate the *dist* folder, just run from the tools/gulp folder:
+
+```
+gulp materialsLibrary
+```
 
 ## Update the shaders
 
@@ -147,11 +140,7 @@ And you're done for the material! Now it is time to test it.
 
 ## Update the test page
 
-Open *test/index.html* and add this reference:
-
-```
-<script src="../dist/babylon.diffuseEmissiveMaterial.js"></script>
-```
+To test your material, open the /materialsLibrary/index.html page. References are added automatically.
 
 Then add the material at line 120:
 
@@ -188,7 +177,7 @@ gui.add(options, 'material', ['standard', 'simple', 'diffuseEmissive']).onFinish
 
 ## Launch the test server
 
-To test your result, just execute:
+To Launch the server, you can start from the tools/gulp folder:
 
 ```
 gulp webserver

@@ -5,7 +5,7 @@
 ## [Playground example](http://www.babylonjs-playground.com/#1BLVWO)
 
 
-Lava material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.lavaMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/materialsLibrary/dist/babylon.lavaMaterial.js)
+Lava material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.lavaMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.lavaMaterial.js)
 
 ## Using the lava material
 

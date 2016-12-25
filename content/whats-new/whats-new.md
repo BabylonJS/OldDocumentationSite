@@ -117,7 +117,7 @@ Changes list
       - Added parsing / serialization, copying between similar skeletons & better deletion ([Palmer-JC](https://github.com/Palmer-JC))
       - Expanded AnimationRanges for Nodes (Mesh, Lights, Cameras) ([Palmer-JC](https://github.com/Palmer-JC))
       - Support for added to Blender Exporter ([Palmer-JC](https://github.com/Palmer-JC))
-    - Support for glTF files [loader](https://github.com/BabylonJS/Babylon.js/tree/master/loaders/glTF) ([julien-moreau](https://github.com/julien-moreau))
+    - Support for glTF files [loader](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview release/loaders) ([julien-moreau](https://github.com/julien-moreau))
   - **Updates**
     - Audio files are now saved for offline access ([davrous](https://github.com/davrous))
     - New `CubeTexture.CreateFromImages()` ([deltakosh](https://github.com/deltakosh))
