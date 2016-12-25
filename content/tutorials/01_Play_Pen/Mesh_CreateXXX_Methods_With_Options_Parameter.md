@@ -4,7 +4,7 @@ PG_TITLE: Mesh CreateXXX Methods With Options Parameter
 
 ## MeshBuilder CreateXXX() Methods With Options Parameter
 In this tutorial, we will learn how to use the classical _CreateXXX()_ methods with the _options_ parameter instead of the full list of parameters.
-Indeed, as for BJS 2.3+, all the _CreateXXX()_ methods can be called either by
+Indeed, as of BJS 2.3+, all the _CreateXXX()_ methods can be called either by
 ```javascript
 var mesh = BABYLON.Mesh.CreateMesh(name, param1, param2, param3, ..., scene);
 ```
@@ -13,16 +13,14 @@ either by
 var mesh = BABYLON.MeshBuilder.CreateMesh(name, {param1 : val1, param2: val2}, scene);
 ```
 
-Why to use then the _options_ parameter if it only does the same as the parameter list ?
+Then why use the _options_ parameter if it does the same as the parameter list?
 
-Because it doesn't do just only the same ...
-Depending on the shape type, it allows to make some (or all) parameters optional or it provides more features to the created mesh.
+Because it doesn't do EXACTLY the same thing.  Depending on the shape type, it allows making some (or all) parameters optional,  and it _can_ provide access to more available features on the created mesh.  (What one might call 'advanced parameters'.)
 
 ### Fixed Shapes
-We call _fixed shapes_ all the mesh types that are not parametric, it is to say all the mesh types what have an expected final shape.
-For instance, if we create a _Sphere_ or a _Box_ mesh, we expect to get a spherical or a cubic shape whereas if we create a _Ribbon_ mesh, as it depends upon a data set to be created (the _pathArray_), we can't predict its final shape.
+We call _fixed shapes_ all the mesh types that are not parametric. This is to say... all the mesh types what have an expected final shape.  For instance, if we create a _Sphere_ or a _Box_ mesh, we expect to get a spherical or a cubic shape, whereas if we create a _Ribbon_ mesh, it depends upon a data set to be created (the _pathArray_).  We can't predict its final shape.
 
-All fixed shapes can be created by default by using a blank _options_ parameter :
+All fixed shapes can be created by default... by using a blank _options_ parameter :
 ```javascript
 var cylinder = BABYLON.MeshBuilder.CreateCylinder("cyl", {}, scene);
 ```
@@ -281,7 +279,7 @@ Example :
 ```javascript
 var decal = BABYLON.MeshBuilder.CreateDecal("decal", mesh,  {position: myPos}, scene);
 ```
-Don't forget the _mesh_ parameter what is the mesh depicting the decal.
+Don't forget the _mesh_ parameter which is the mesh depicting the decal.
 
 Properties, all optional :
 
@@ -462,7 +460,7 @@ You must set at least the _shape_ property.
 
 Example :
 ```javascript
-var lathe = BABYLON.MeshBuilder.Lathe("lathe", {shape: myShape}, scene);
+var lathe = BABYLON.MeshBuilder.CreateLathe("lathe", {shape: myShape}, scene);
 ```
 Properties :
 
