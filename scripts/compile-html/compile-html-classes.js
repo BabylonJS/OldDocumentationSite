@@ -21,7 +21,7 @@
 var fs       = require('fs'),
     path     = require('path'),
     async    = require('async'),
-    jade     = require('jade'),
+    pug      = require('pug'),
     appRoot  = require('app-root-path').path,
     logger   = require(path.join(appRoot, 'config/logger')),
     marked   = require('meta-marked'),
@@ -72,7 +72,7 @@ marked.setOptions({
 var __CLASSES_LIST__ = path.join(appRoot, 'data/classes.json'),
     __CLASSES_TAGS__ = path.join(appRoot, 'data/classes-tags.json'),
     __HTML_FILES_DESTDIR__  = path.join(appRoot, 'public/html'),
-    __JADE_FILES_ROOTDIR__  = path.join(appRoot, 'views/class'),
+    __PUG_FILES_ROOTDIR__  = path.join(appRoot, 'views/class'),
     __MD_FILES_ROOTDIR__    = path.join(appRoot, 'content/classes');
 
 
@@ -225,7 +225,7 @@ var getTagsLists = function(callback){
 var compileClassesPages = function(versions, version, classesList, tagsList, callback){
     // path of the future rendered 'classes_<bjsVersion>.html' page
     var htmlClassesFilePath = path.join(__HTML_FILES_DESTDIR__, 'classes_' + version + '.html'),
-        jadeViewForClasses = path.join(__JADE_FILES_ROOTDIR__, 'classes.jade');
+        pugViewForClasses = path.join(__PUG_FILES_ROOTDIR__, 'classes.pug');
 
     // options for the Jade compiler
     var optionsClasses = {
@@ -237,7 +237,7 @@ var compileClassesPages = function(versions, version, classesList, tagsList, cal
         classesByTags : tagsList
     };
 
-    fs.writeFile(htmlClassesFilePath, jade.renderFile(jadeViewForClasses, optionsClasses), function(err){
+    fs.writeFile(htmlClassesFilePath, pug.renderFile(pugViewForClasses, optionsClasses), function(err){
         if (err) {
             throw err;
         } else {
@@ -259,7 +259,7 @@ var compileClassPages = function(versions, version, classesList, tagsList, callb
     async.each(classesList, function(className, cbEachClassName){
         var mdFilePath          = path.join(__MD_FILES_ROOTDIR__, version, className + '.md'),
             htmlClassFilePath   = path.join(__HTML_FILES_DESTDIR__, 'class_' + version, className + '.html'),
-            jadeViewForClass    = path.join(__JADE_FILES_ROOTDIR__, 'class.jade');
+            pugViewForClass    = path.join(__PUG_FILES_ROOTDIR__, 'class.pug');
 
         fs.readFile(mdFilePath, {encoding: 'utf-8', flag: 'r'}, function(readMDErr, data){
             if(readMDErr){
@@ -298,7 +298,7 @@ var compileClassPages = function(versions, version, classesList, tagsList, callb
                 };
 
                 //logger.info('public/html/class_' + version + '/' + className + '.html is about to be compiled...');
-                fs.writeFile(htmlClassFilePath, jade.renderFile(jadeViewForClass, optionsClass), function(err){
+                fs.writeFile(htmlClassFilePath, pug.renderFile(pugViewForClass, optionsClass), function(err){
                     if (err) {
                         throw err;
                     } else {

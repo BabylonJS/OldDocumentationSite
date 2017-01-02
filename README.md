@@ -17,6 +17,22 @@ Before beginning, please be sure to have these packages installed:
  * ```grunt build``` to build documentation
  * ```grunt serve``` runs the server and open a tab in your default browser
 
+## Updating a local copy of a fork of the documentation
+See [configure a remote for a fork](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
+and [syncing a fork](https://help.github.com/articles/syncing-a-fork/) for additional github documentation.
+
+ * ```git fetch upstream``` to get the latest upstream copy
+ * ```git checkout master``` to checkout master branch
+ * ```get merge upstream/master``` to merge master with current upstream/master
+ * ```git push``` (optional) to push lastest version to your fork
+ * ```npm install``` to update any dependencies
+ * ```npm prune``` to remove any old dependencies
+
+## Updating a local copy of the documentation
+ * ```git pull``` to get the lastest documentation
+ * ```npm install``` to update any dependencies
+ * ```npm prune``` to remove any old dependencies
+
 ## Useful command
 
 You don't need to edit html yourself: edit markdown files and use:

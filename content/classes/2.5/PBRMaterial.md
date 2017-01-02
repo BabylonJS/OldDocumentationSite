@@ -11,7 +11,7 @@ This offers the main features of a standard PBR material.
 
 For more information, please refer to the documentation :
 
-http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+http://doc.babylonjs.com/overviews/Physically_Based_Rendering
 
 ## Constructor
 

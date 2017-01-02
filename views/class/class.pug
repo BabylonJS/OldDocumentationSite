@@ -20,7 +20,7 @@ include ../includes/header
         #alphaFilter.hidden
             input(type='text' placeholder='Filter class name')
         #classes_classesListByAlpha.sideClassesListByAlpha.hidden
-            - for className in classListByAlpha
+            for className in classListByAlpha
                 a.classLink(href='./'+className data-name=className )= className.replace('_T_','<T>')
 
     // Element to resize the sidebar

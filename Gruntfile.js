@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             //watches content related changes
             content: {
                 files  : ['content/**/*.md', 'data/statics.json', '!data/search/**'],
-                //files  : ['views/**/*.jade', 'content/**/*.md', 'data/statics.json'],
+                //files  : ['views/**/*.pug', 'content/**/*.md', 'data/statics.json'],
                 //recompiles everything but doesn't reindex the search
                 tasks  : [
                     'clean:json',
