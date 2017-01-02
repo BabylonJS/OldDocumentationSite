@@ -52,7 +52,7 @@ Changes list
     - New property in Canvas2D (instances) that contains all instances of canvas2d [Temechon](https://github.com/Temechon)
     - WebVR Camera was updated to be conform with the current specs. ([RaananW](https://github.com/RaananW)) 
     - New "CubeTextureTask" function will allow you to load a CubeTexture in the assetsManager. ([agallouin](https://github.com/AGallouin)) 
-    - Scene.stopAnimation has now an optional second parameter, the name of the animation to kill. Usefull if a mesh has multiple animations. ([agallouin](https://github.com/AGallouin)) 
+    - Scene.stopAnimation has now an optional second parameter, the name of the animation to kill. Usefull if a mesh has multiple animations. ([agallouin](https://github.com/AGallouin))
   - **Bug fixes**
     - Fixed issue with SkeletonViewer not displaying correctly with meshes that have a PoseMatrix ([abow](https://github.com/abow))
     - Fixed issue with Quaternion.toEulerAnglesToRef ([abow](https://github.com/abow))
@@ -81,7 +81,6 @@ Changes list
     - `Text2D`: 
       - Fix bad rendering quality on Chrome
       - Rendering above transparent surface is now blending correctly
-
   - **Breaking changes**
     - FollowCamera.target was renamed to FollowCamera.lockedTarget to avoid conflicts ([deltakosh](https://github.com/deltakosh)) 
     - Removed legacy shaders support ([deltakosh](https://github.com/deltakosh))
