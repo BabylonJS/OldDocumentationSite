@@ -22,6 +22,7 @@ This section contains useful links for you to get started on different concepts 
  - How to use the [Layout Engine, alignment and Margin](http://doc.babylonjs.com/overviews/Canvas2D_Prim_Positioning)
  - How to [interact](http://doc.babylonjs.com/overviews/Canvas2D_Interaction) with Primitives.
  - The particularities of a [Shape2D](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based Primitive type and how to use [Brushes](http://doc.babylonjs.com/overviews/Canvas2D_Brushes).
+ - How to use [AtlasPicture](http://doc.babylonjs.com/overviews/Canvas2D_AtlasPicture) to store/pack many pictures into a big one.
 
 ### Overview of the different primitive types
 
@@ -54,3 +55,5 @@ This section contains useful links for you to get started on different concepts 
  - How to [track a node from the 3D Scene](http://babylonjs-playground.com/#1N9RJY#5) 
  - WorldSpace Canvas on a [custom scene node](http://babylonjs-playground.com/#EPFQG#4)
  - [Z-Order test](http://babylonjs-playground.com/#1S2MDR#2)
+ - [Scale9Sprite](http://babylonjs-playground.azurewebsites.net/#8F4D1#1) feature, more info [here](http://doc.babylonjs.com/overviews/Canvas2D_Sprite2D)
+ - Sprite2D loaded from [AtlasPicture](http://babylonjs-playground.azurewebsites.net/#C1BYN#1)

@@ -943,6 +943,11 @@
            "hidden": true 
         },
         {
+           "title": "Sprite2D Primitive overview",
+           "filename": "Canvas2D_Sprite2D",
+           "hidden": true 
+        },
+        {
            "title": "Rectangle2D Shape overview",
            "filename": "Canvas2D_Rectangle2D",
            "hidden": true 
