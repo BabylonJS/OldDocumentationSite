@@ -943,8 +943,8 @@
            "hidden": true 
         },
         {
-           "title": "Sprite2D Primitive overview",
-           "filename": "Canvas2D_Sprite2D",
+           "title": "Atlas Picture Overview",
+           "filename": "Canvas2D_AtlasPicture",
            "hidden": true 
         },
         {
