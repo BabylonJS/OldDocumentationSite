@@ -116,7 +116,7 @@ The constructor method we will show below... is from [Alex's FollowCamera forum 
 // FollowCamera >> Follow a mesh through your scene
 // Parameters : name, position, scene
     var camera = new BABYLON.FollowCamera("FollowCam", new BABYLON.Vector3(0, 15, -45), scene);
-    camera.target = myMeshObject; // target any mesh or object with a "position" Vector3
+    camera.lockedTarget = myMeshObject; // target any mesh or object with a "position" Vector3
 ```
 The code above... constructs the FollowCamera and adds a target mesh, which is all that is required. But the FollowCamera has some more useful properties that you can set if you choose to do so. Here's a few, with some example values:
 ```javascript
