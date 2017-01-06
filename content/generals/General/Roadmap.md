@@ -11,9 +11,11 @@ Here are the next updates we will *probably* add to babylon.js:
 
 * Physics: Add support for Ammo.js and Energy.js
 * More primitives for Canvas2D
-* Refactor debugLayer and VirtualJoysticks with Canvas2D
-* WebAudio: Dopller + Convolver
-* Lightmapper
-* Bloom
+* Refactor VirtualJoysticks with Canvas2D
+* WebAudio: Doppler + Convolver
+* WebGL2 support
+* Occlusion queries
+* Uniform buffers
+* multisampled render targets
 * PCSS
 
