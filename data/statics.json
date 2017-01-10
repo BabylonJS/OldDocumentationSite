@@ -953,6 +953,11 @@
            "hidden": true 
         },
         {
+           "title": "Canvas2D Rendering",
+           "filename": "Canvas2D_Rendering",
+           "hidden": true 
+        },
+        {
            "title": "Ellipse2D Shape overview",
            "filename": "Canvas2D_Ellipse2D",
            "hidden": true 
