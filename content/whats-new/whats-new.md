@@ -3,6 +3,8 @@ Changes list
 
 ## 2.5.0
   
+### Core Engine
+
 #### Major updates
 
 - New `StandardRenderingPipeline` effect to support screen space lens flare and depth of field. [Demo](http://www.babylonjs.com/Demos/StandardRenderingPipeline/) - ([Julien Moreau-Mathis](https://github.com/julien-moreau))
@@ -44,23 +46,12 @@ Changes list
 - MapTexture: add `supersample` mode to double font quality. ([nockawa](https://github.com/nockawa))
 - New SPS feature : solid particle intersection with other solid particle or with any mesh `particle.intersectsMesh()` ([jerome](https://github.com/jbousquie))
 - New `invertUV` parameter an all ribbon based shapes : ribbon, tube, lathe, basic and custom extrusion ([jerome](https://github.com/jbousquie))
-- Text2D: new `fontSuperSample` setting to use high quality font ([nockawa](https://github.com/nockawa))
 - PerfCounter class added to monitor time/counter and expose min/max/average/lastSecondAverage/current metrics. Updated engine/scene current counter to use this class, exposing new properties as well to access the PerfCounter object ([nockawa](https://github.com/nockawa))
 - Better keyboard event handling which is now done at canvas level and not at window level ([deltakosh](https://github.com/deltakosh)) 
 - New `scene.hoverCursor` property to define a custom cursor when moving mouse over meshes ([deltakosh](https://github.com/deltakosh)) 
 - WebVR Camera was updated to be conform with the current specs. ([RaananW](https://github.com/RaananW)) 
 - New "CubeTextureTask" function will allow you to load a CubeTexture in the assetsManager. ([agallouin](https://github.com/AGallouin)) 
 - Scene.stopAnimation has now an optional second parameter, the name of the animation to kill. Usefull if a mesh has multiple animations. ([agallouin](https://github.com/AGallouin))
-
-##### Canvas2D: ([nockawa](https://github.com/nockawa)) 
-
-- Performance metrics added
-- Text2D super sampling to enhance quality in World Space Canvas
-- World Space Canvas is now rendering in an adaptive way for its resolution to fit the on screen projected one to achieve a good rendering quality
-- Transparent Primitives are now drawn with Instanced Array when supported
-- ScreenSpaceCanvas, `renderingPhase` setting added, allowing you to specify for which camera and which renderingGroup the Canvas will be rendered to. [Playpround](http://babylonjs-playground.com/#RXVJD%232)
-- FontTexture and Text2D now support Signed Distance Field rendering, more info [here](http://www.html5gamedevs.com/topic/22552-canvas2d-main-post/?page=11#comment-149564). There's also a [Playground](http://babylonjs-playground.com/#143CL7#1)
-- New property in Canvas2D (instances) that contains all instances of canvas2d [Temechon](https://github.com/Temechon)
 
 #### Bug fixes
 - Fixed issue with SkeletonViewer not displaying correctly with meshes that have a PoseMatrix ([abow](https://github.com/abow))
@@ -79,7 +70,27 @@ Changes list
 - Fixed camera speed computation ([deltakosh](https://github.com/deltakosh))
 - Fixed bug with instances, LOD and edgesRendering ([deltakosh](https://github.com/deltakosh))
 
-##### Canvas2D: ([nockawa](https://github.com/nockawa))
+#### Breaking changes
+- FollowCamera.target was renamed to FollowCamera.lockedTarget to avoid conflicts ([deltakosh](https://github.com/deltakosh)) 
+- Removed legacy shaders support ([deltakosh](https://github.com/deltakosh))
+
+### Canvas2D
+
+##### Major Updates: ([nockawa](https://github.com/nockawa) unless stated) 
+
+- Performance metrics added
+- Text2D super sampling to enhance quality in World Space Canvas
+- World Space Canvas is now rendering in an adaptive way for its resolution to fit the on screen projected one to achieve a good rendering quality
+- Transparent Primitives are now drawn with Instanced Array when supported
+- ScreenSpaceCanvas, `renderingPhase` setting added, allowing you to specify for which camera and which renderingGroup the Canvas will be rendered to. [Playpround](http://babylonjs-playground.com/#RXVJD%232)
+- FontTexture and Text2D now support Signed Distance Field rendering, more info [here](http://www.html5gamedevs.com/topic/22552-canvas2d-main-post/?page=11#comment-149564). There's also a [Playground](http://babylonjs-playground.com/#143CL7#1)
+- New property in Canvas2D (instances) that contains all instances of canvas2d [Temechon](https://github.com/Temechon)
+
+##### Updates: ([nockawa](https://github.com/nockawa))
+
+- Text2D: new `fontSuperSample` setting to use high quality font ([nockawa](https://github.com/nockawa))
+
+##### Bug Fixes: ([nockawa](https://github.com/nockawa))
 - `WorldSpaceCanvas2D`:
   - Intersection/interaction now works on non squared canvas
 - Primitive:
@@ -92,17 +103,16 @@ Changes list
   - Fix bad rendering quality on Chrome
   - Rendering above transparent surface is now blending correctly
 
-#### Breaking changes
-- FollowCamera.target was renamed to FollowCamera.lockedTarget to avoid conflicts ([deltakosh](https://github.com/deltakosh)) 
-- Removed legacy shaders support ([deltakosh](https://github.com/deltakosh))
-
-##### Canvas2D: ([nockawa](https://github.com/nockawa))
+##### Breaking Changes: ([nockawa](https://github.com/nockawa))
  
  - `WorldSpaceCanvas2D.WorldSpaceRenderScale` is no longer supported (deprecated because of adaptive feature added).
  - Canvas2D now renders its content in three passes: Opaque, Alpha Test and Transparency. Sprite2D was always considered as transparent in the previous release, now it's opaque **unless** you set `hasAlpha` to true to its texture (or if its `actualScale` is less than 1). 
    Text2D will be transparent if you use non Signed Distance Field (SDF) mode or Alpha Test if you do use SDF.
 
+
 ## 2.4.0
+
+### Core Engine
 
 #### Major updates
 - New refraction channel for Standard material (including fresnel support). Refraction texture can be provided by a reflection probe or a refraction texture. [See demo here](http://www.babylonjs.com/Demos/refraction/) ([deltakosh](https://github.com/deltakosh))
@@ -163,19 +173,6 @@ Changes list
 - `Engine.updateDynamicVertexBuffer` now has optional count as well as offset to allow partial updates ([benaadams](https://github.com/benaadams)) 
 - vertex attributes are only disabled if they aren't going to be reeabled by the next draw, to reduce gpu state changes ([benaadams](https://github.com/benaadams)) 
 
-#### Exporters
-- Unity3D exporter: Added support for lightmaps ([davrous](https://github.com/davrous), [deltakosh](https://github.com/deltakosh))
-- Unity3D exporter: Added support for export and run (local webserver) ([davrous](https://github.com/davrous), [deltakosh](https://github.com/deltakosh))
-- Unity exporter now support skeletons ([sebavan](https://github.com/sebavan))
-- Support for 3dsmax 2017 ([deltakosh](https://github.com/deltakosh))
-- Added support for up to 8 bones influences per vertex for 3dsmax exporter ([deltakosh](https://github.com/deltakosh))
-- Added console logging for .babylon file loading & depreciated SceneLoader.Load() in favor of Append() ([jcpalmer](https://github.com/Palmer-JC))
-
-#### API doc
-- class `SolidParticleSystem` documented ([jerome](https://github.com/jbousquie))
-- class `MeshBuilder` documented ([jerome](https://github.com/jbousquie))
-- class `Mesh` documented ([jerome](https://github.com/jbousquie))
-
 #### Bug fixes
 - Fixed bug with billboards and parenting ([deltakosh](https://github.com/deltakosh))
 - Fixed bug with ArcRotateCamera.setTarget ([deltakosh](https://github.com/deltakosh))
@@ -197,7 +194,22 @@ Changes list
 - Internally new `Engine.bindBuffer` is used rather than `gl.bindBuffer` which only binds when the bound buffer is changing ([benaadams](https://github.com/benaadams)) 
 - `DynamicTexture` no longer forces height/width to exponents of 2 if MIP maps are disabled ([dahlbyk](https://github.com/dahlbyk))
 
+### Exporters
+- Unity3D exporter: Added support for lightmaps ([davrous](https://github.com/davrous), [deltakosh](https://github.com/deltakosh))
+- Unity3D exporter: Added support for export and run (local webserver) ([davrous](https://github.com/davrous), [deltakosh](https://github.com/deltakosh))
+- Unity exporter now support skeletons ([sebavan](https://github.com/sebavan))
+- Support for 3dsmax 2017 ([deltakosh](https://github.com/deltakosh))
+- Added support for up to 8 bones influences per vertex for 3dsmax exporter ([deltakosh](https://github.com/deltakosh))
+- Added console logging for .babylon file loading & depreciated SceneLoader.Load() in favor of Append() ([jcpalmer](https://github.com/Palmer-JC))
+
+### API doc
+- class `SolidParticleSystem` documented ([jerome](https://github.com/jbousquie))
+- class `MeshBuilder` documented ([jerome](https://github.com/jbousquie))
+- class `Mesh` documented ([jerome](https://github.com/jbousquie))
+
 ## 2.3.0
+
+### Core Engine
 
 #### Major updates
 - [Sponza demo](http://www.babylonjs.com/Demos/Sponza/)
@@ -321,6 +333,8 @@ Changes list
 
 ## 2.2.0
 
+### Core Engine
+
 #### Major updates
 - Blender can now bake Procedural textures & Cycles materials.  Plus more. See [documentation here](https://github.com/BabylonJS/Babylon.js/tree/master/Exporters/Blender) ([Palmer-JC](https://github.com/Palmer-JC))
 - Meshes can now be attached to bones. See [documentation here](http://doc.babylonjs.com/tutorials/How_to_use_Bones_and_Skeletons) and [sample here](http://www.babylonjs-playground.com/#11BH6Z#18) ([deltakosh](https://github.com/deltakosh))
@@ -385,6 +399,9 @@ Changes list
 - Path3D : fix wrong normal/binormal due to normalization approximations ([jerome](https://github.com/jbousquie))
 
 ## 2.1.0
+
+### Core Engine
+
 #### Major updates
 - Collisions can now be offloaded on webworkers ([raananw](http://www.github.com/raananw))
 - SIMD.js support for math library. See [demo](http://www.babylonjs.com/scenes/simd.html) ([deltakosh](http://www.github.com/deltakosh))
@@ -397,6 +414,7 @@ Changes list
 - New ```BABYLON.Mesh.ExtrudeShape``` and ```BABYLON.Mesh.ExtrudeShapeCustom```. More info [here](http://doc.babylonjs.com/page.php?p=24847) ([jbousquie](https://github.com/jbousquie))
 - New Loaders folder with a first additionnal plugin: [STL](http://doc.babylonjs.com/page.php?p=25109)  ([raananw](http://www.github.com/raananw), [deltakosh](http://www.github.com/deltakosh))
 - Gulp building process revamped, updated and simplified and now includes a config.json ([raananw](http://www.github.com/raananw)) 
+
 #### Updates
 - Better beta angle support for ArcRotateCamera ([raananw](http://www.github.com/raananw))
 - Better video textures support ([deltakosh](http://www.github.com/deltakosh))
@@ -457,6 +475,9 @@ Changes list
 - VideoTexture does not require a size parameter anymore. The new constructor is: ```constructor(name: string, urls: string[], scene: Scene, generateMipMaps = false, invertY = false, samplingMode: number = Texture.TRILINEAR_SAMPLINGMODE)```  ([deltakosh](http://www.github.com/deltakosh))
 
 ## 2.0.0
+
+### Core Engine
+
 #### Major updates
  - Support for WebAudio. More info [here](http://doc.babylonjs.com/page.php?p=24824) ([davrous](http://www.github.com/davrous))
  - Support for Procedural Texture with standard usable samples and custom support. More info [here](http://doc.babylonjs.com/page.php?p=22601) ([meulta](http://www.github.com/meulta))
@@ -518,6 +539,9 @@ Changes list
  - Fixed a bug with CSG and transformations ([deltakosh](http://www.github.com/deltakosh)) 
 
 ## 1.14.0
+
+### Core Engine
+
 #### Major updates
  - New VRDeviceOrientionCamera for cardboard like systems ([demonixis](http://www.github.com/demonixis))
  - New WebVRCamera for WebVR compatible systems ([demonixis](http://www.github.com/demonixis))
@@ -529,6 +553,7 @@ Changes list
  - Fresnel support for diffuse, emissive, opacity and reflection on ```StandardMaterial```. See [demo here](http://www.babylonjs.com/?FRESNEL) and [wiki here](https://github.com/BabylonJS/Babylon.js/wiki/How-to-use-FresnelParameters%3F) ([deltakosh](http://www.github.com/deltakosh))
  - TypeScript declaration file is now available ([deltakosh](http://www.github.com/deltakosh))
  - Binary file format supported. You can use online converter [here](http://www.babylonjs.com/binary) ([r2d2Proton](https://github.com/r2d2Proton))
+
 #### Updates
  
  - New ```mesh.updateVerticesDataDirectly(kind, float32array)``` to update mesh data directly ([deltakosh](http://www.github.com/deltakosh))
@@ -556,6 +581,8 @@ Changes list
  - Fixing tons of bugs with PostProcessRenderPipeline. Wiki updated. ([deltakosh](http://www.github.com/deltakosh)) 
 
 ## 1.13.0
+
+### Core Engine
 
 #### Major updates
 
@@ -588,6 +615,8 @@ Changes list
  - CreateCylinder() : add subdivisions parameter and fix normals bug ([kostar111](https://github.com/kostar111)) 
 
 ## 1.12.0
+
+### Core Engine
 
 #### Major updates
 
@@ -643,6 +672,8 @@ Changes list
 
 ## 1.11.0
 
+### Core Engine
+
 #### Major updates
 
  - New option for mesh: ```mesh.showBoundingBox``` to display mesh's bounding box. You can configure back and front color using ```scene.getBoundingBoxRenderer()```. This function returns a ```BABYLON.BoundingBoxRenderer``` where you can define ```backColor```, ```frontColor``` and ```showBackLines``` ([deltakosh](http://www.github.com/deltakosh))
@@ -668,6 +699,8 @@ Changes list
  - [CYOS](http://www.babylonjs.com/cyos)
 
 ## 1.10.0
+
+### Core Engine
 
 #### Major updates
 
@@ -713,6 +746,8 @@ Changes list
 
 ## 1.9.0
 
+### Core Engine
+
 #### Major updates
 
  - Beta support for scene serialization with ```BABYLON.SceneSerializer.Serialize``` function ([deltakosh](http://www.github.com/deltakosh))
@@ -736,6 +771,8 @@ Changes list
 
 ## 1.8.5
 
+### Core Engine
+
 #### Major updates
 
  - Visual Studio 2013 templates for Windows 8.1 and nuget packages ([pierlag](http://www.github.com/pierlag))
@@ -757,6 +794,8 @@ Changes list
 
 ## 1.8.0
 
+### Core Engine
+
 #### Major updates
 
  - Support for [physics engine](http://www.babylonjs.com/index.html?PHYSICS) thanks to cannon.js ([deltakosh](http://www.github.com/deltakosh))
@@ -770,6 +809,8 @@ Changes list
 
 ## 1.7.3
 
+### Core Engine
+
 #### Updates
 
  - Support for "file://" moniker ([davrous](https://github.com/davrous))
@@ -781,6 +822,8 @@ Changes list
  - Fixing a bug with MSGesture with IE11 on Windows 7 ([deltakosh](http://www.github.com/deltakosh))
 
 ## 1.7.0
+
+### Core Engine
 
 #### Major updates
 
@@ -800,6 +843,8 @@ Changes list
 
 ## 1.6.0
 
+### Core Engine
+
 #### Major updates
 
  - Support for [postprocesses](https://github.com/BabylonJS/Babylon.js/wiki/How-to-use-postprocesses) ([deltakosh](http://www.github.com/deltakosh))
@@ -817,6 +862,8 @@ Changes list
 
 ## 1.5.3
 
+### Core Engine
+
 #### Updates
 
  - New ```lockedTarget``` for freeCamera in order to allow cameras to track moving targets ([deltakosh](http://www.github.com/deltakosh))
@@ -832,6 +879,8 @@ Changes list
 
 ## 1.5.2
 
+### Core Engine
+
 #### Updates
 
  - New ```renderingGroupId``` for SpriteManager ([deltakosh](http://www.github.com/deltakosh))
@@ -843,6 +892,8 @@ Changes list
 
 ## 1.5.1
 
+### Core Engine
+
 #### Updates
 
  - Massive update of typescript files ([jroblak](http://www.github.com/jroblak))
@@ -852,6 +903,8 @@ Changes list
  - Fixing an issue with sprites rendering when no mesh is present ([deltakosh](http://www.github.com/deltakosh))
 
 ## 1.5.0
+
+### Core Engine
 
 #### Major updates
 
@@ -868,6 +921,8 @@ Changes list
 
 ## 1.4.3
 
+### Core Engine
+
 #### Updates
 
  - New ```mesh.setLocalTranslation``` and ```mesh.getLocalTranslation``` functions ([deltakosh](http://www.github.com/deltakosh))
@@ -875,6 +930,8 @@ Changes list
  - ```mesh.rotation``` and ```mesh.rotationQuaternion``` are now two separated functions ([deltakosh](http://www.github.com/deltakosh)) 
 
 # 1.4.2
+
+### Core Engine
 
 #### Bug fixes
  - Fixing an issue with scene.executeWhenReady ([deltakosh](http://www.github.com/deltakosh))
@@ -890,7 +947,9 @@ Changes list
 
 ## 1.4.0
 
- ##### Major features
+### Core Engine
+
+#### Major features
 
  - Bones support ([deltakosh](http://www.github.com/deltakosh)). Bones and animated bones are now supported. They can cast shadows. Bones can be exported from Blender or from FBX
  - Offline support ([davrous](https://github.com/davrous). You can specify to offline assets (scene and textures) to a local IndexedDB. Assets are then loaded once until you change the version on a server-side manifest
@@ -911,62 +970,92 @@ Changes list
  - Fixing a bug with ```scene.pick()``` function ([deltakosh](http://www.github.com/deltakosh))
 
 ## 1.3.2
+
+### Core Engine
  - Fixing a bug with camera.detachControl
 
 ## 1.3.0
+
+### Core Engine
  - Selection octrees
  - Breaking changes: Meshes now use multi vertex buffers (one for each attribute) instead of a big one. This is for more flexibility. The .babylon file format has changed accordingly (no more .vertices property on meshes but .positions, .normals, .colors, .uvs, .uvs2)
 
 ## 1.2.1
+
+### Core Engine
  - Support for PointerLock ()
  - StandardMaterial now supports per-vertex color
  - Blender exporter supports per-vertex color
 
 ## 1.2.0
+
+### Core Engine
  - Major rework of the API to remove GC pressure.
  - FreeCamera: Support for QWERTY keyboards
  - New 3D charting demo
 
 # 1.1.0
+
+### Core Engine
  - Shadow Maps and Variance Shadow Maps
  - Shadows Maps and animations are now exported from Blender
  - Hand.js is no longer required for ArcRotateCamera
  - ArcRotateCamera support pinch/zoom gesture on IE
 
 # 1.0.10
+
+### Core Engine
+
+### Core Engine
  - Using typed arrays for Matrix
  - Improving IE11 support
  - Support for new mesh primitives : Torus and cylinder
 
 ## 1.0.9
+
+### Core Engine
  - Orthographic camera
 
 ## 1.0.8
+
+### Core Engine
  - Adding keyboard support to ArcRotateCamera
  - Starting to use git tag
 
 ## 1.0.7
+
+### Core Engine
  - New demo: Worldmonger
  - Improved IE shaders
 
 ## 1.0.6
+
+### Core Engine
  - Dynamic meshes
  - Skybox
  - Support for high-DPI displays
  - Height maps
 
 ## 1.0.5
+
+### Core Engine
  - Adding color tint for sprites and layers
 
 ## 1.0.4
+
+### Core Engine
  - Various optimizations
  - Fog
  - TypeScript support
 
 ## 1.0.3
+
+### Core Engine
  - Video textures
  - Normal map (bump) 
 
 ## 1.0.2
+
+### Core Engine
  - Spot lights
  - Hemispheric lights
