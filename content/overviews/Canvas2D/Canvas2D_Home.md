@@ -59,3 +59,4 @@ This section contains useful links for you to get started on different concepts 
  - [Scale9Sprite](http://babylonjs-playground.azurewebsites.net/#8F4D1#1) feature, more info [here](http://doc.babylonjs.com/overviews/Canvas2D_Sprite2D)
  - Sprite2D loaded from [AtlasPicture](http://babylonjs-playground.azurewebsites.net/#C1BYN#1)
  - Text rendered using [Signed Distance Field](http://babylonjs-playground.com/#143CL7#1) technique
+ - Using [BMFont](http://www.angelcode.com/products/bmfont/) to render text with [BitmapFont](http://babylonjs-playground.com/#GKBEH)
