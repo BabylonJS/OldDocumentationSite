@@ -179,7 +179,7 @@ This time we create a Canvas that will be present **in the scene** and not above
 
 We also create two buttons and add an observable on the first one to display/hide the second one.
 
-#### Accessing the 3D Scene Node of of World Space Canvas
+#### Accessing the 3D Scene Node of World Space Canvas
 The `canvas` object is **not** a Scene node, to access the actual SceneNode that positions the Canvas and renders it you have to access the `worldSpaceCanvasNode` property of the `Canvas2D` class. This will return you a `Node` based instance that you can manipulate to change how the Canvas behave in the 3D Scene.
 
 ## More playground
