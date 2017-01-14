@@ -46,7 +46,7 @@ pipeline.gaussianCoefficient = 0.25;
 ## Change exposure
 To globally intensify the highlighted surfaces result (before it is merged with the final scene color), you can change the ".exposure" property:
 ```
-pipeline.exosure = 1.0; // which multiplies the final scene color with the highlighted surfaces result
+pipeline.exposure = 1.0; // which multiplies the final scene color with the highlighted surfaces result
 ```
 
 # Setting up the dirty lens effect
