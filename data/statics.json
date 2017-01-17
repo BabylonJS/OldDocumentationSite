@@ -158,6 +158,10 @@
         {
           "title": "Highlight Layer",
           "filename": "Highlight_Layer"
+        },
+        {
+          "title": "Multi-Platform Compressed Textures",
+          "filename": "Multi-Platform_Compressed_Textures"
         }
       ]
     },
