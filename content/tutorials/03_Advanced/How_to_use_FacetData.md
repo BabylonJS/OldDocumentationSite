@@ -164,7 +164,31 @@ A rotating torus knot with facet data enabled and a Solid Particle System (SPS) 
 
 http://www.babylonjs-playground.com/#7ATLX
 
+##### Tweaking the partitioning
+By default, the partitioning is set to 10 subdivisions per axis. These subdivisions are applied to the mesh bounding box.  
+Actually, it's a bit smarter. It divides the biggest bounding box dimension by 10 and adjust the other ones to their ratio to this biggest.  
+Example : if the mesh is sized 200 on X, 100 on Z and 3 on Y, it will subdive X in 10 subdivisions, Z in 5 subdivisions and Y in only 1.  
+10 subdivisions is an arbitrary default value. You can change it according to your mesh geometry.  
+Just keep in mind these two principles :
+
+* the subdivisions (blocks) must be bigger than the facets to get accurate results,
+* the more subdivisions, the fastest the method `getClosestFacetAtCoordinates()`.  
+So if you deal with a huge mesh with plenty for very small facets like the BJS skull, you can easily set the subdivision number to 50, but if you deal with your own ribbon built with only one hundred big facets, you should probably reduce this number to 4.  
+To set the number of subdivisions, just use the property `.partitioningSubdivisions`. It will be taken in account at the next call to `updateFacetData()` and can be changed at will.  
+```javascript
+mesh.partitioningSubdivisions = 50;  // set a bigger value than the default one (integer)
+mesh.updateFacetData();              // now the internal partitioning has 50 blocks per axis
+```
+You can also enlarge a bit the space used by the blocks to have a bigger "detection zone" (remember that if (x, y, z) is outside the block zone, the methods return `null`).  
+By default, the block area is 1% bigger than the mesh bounding box in order to keep a little space between the perimeter blocks and the contained facets.  
+You can set your own value with the property `.partitioningBBoxRatio` (default = 1.01). It will be taken in account at the next call to `updateFacetData()` and can be changed at will.  
+```javascript
+mesh.partitioningBBoxRatio = 1.05;   // 5% bigger than the bounding box instead of 1% bigger
+mesh.updateFacetData();              // now the internal block area if 5% bigger than the bounding box
+```
 
 ##### Updating facet data
+
+_(in progress)_
 
 
