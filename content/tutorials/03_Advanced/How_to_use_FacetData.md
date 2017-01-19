@@ -41,7 +41,7 @@ var pos = mesh.getFacetPosition(50); // returns the world position of the mesh 5
 If you don't want to allocate a new `Vector3` per call, you can use `getFacetPositionToRef(i, ref)` instead.
 ```javascript
 var pos = BABYLON.Vector3.Zero();
-mesh.getFacetPositionToRef(50, ref); // stores the facet world position in the variable "pos"
+mesh.getFacetPositionToRef(50, pos); // stores the facet world position in the variable "pos"
 ```
 
 Actually, in the internal array containing the facet positions, all the stored coordinates are computed in the mesh local space.  
@@ -59,7 +59,7 @@ var norm = mesh.getFacetNormal(50); // returns the world normal of the mesh 50th
 If you don't want to allocate a new `Vector3` per call, you can use `getFacetNormalToRef(i, ref)` instead.
 ```javascript
 var norm = BABYLON.Vector3.Zero();
-mesh.getFacetNormalToRef(50, ref); // stores the facet world normal in the variable "norm"
+mesh.getFacetNormalToRef(50, norm); // stores the facet world normal in the variable "norm"
 ```
 
 Like for the positions, in the internal array containing the facet normals, all the stored coordinates are computed in the mesh local space.  
@@ -80,9 +80,9 @@ var norm = mesh.getFacetNormal(50); // returns the world normal of the mesh 50th
 Displaying all the facet normals of an icosphere : http://www.babylonjs-playground.com/#1YTZAC  
 Just change the mesh shape, torus knot : http://www.babylonjs-playground.com/#1YTZAC#1  
 Smarter : set a box at a distance of 2 from the mesh 10th facet and keep it there, even if the mesh rotates : http://www.babylonjs-playground.com/#1YTZAC#3  
-Of course, you add some translation to the mesh and even some rotation to the box : http://www.babylonjs-playground.com/#1YTZAC#4   
+Of course, you can add some translation to the mesh and even some rotation to the box : http://www.babylonjs-playground.com/#1YTZAC#4   
 
-Note also that the facet index is the same than the facet id used by the pickingInfo object or the faceId used by the SPS when pickable.  
+Note also that the facet index is the same than the facet id `faceId` used by the pickingInfo object or the `faceId` used by the SPS when pickable.  
 Here is an example combining pickingInfo, pickable SPS and facetData facet index : http://www.babylonjs-playground.com/#2FPT1A#119   
 Just click and the ball is positionned at the clicked facet position, not a the clicked point.    
 
@@ -92,7 +92,7 @@ The mesh is logically divided in 3D blocks aligned with the X, Y and Z axis in i
 Here's an illustration about how this logical partitioning looks like : http://www.babylonjs-playground.com/#UZGNA  
 In order to improve the visibility, the planes along the axis Z weren't displayed.  
 As you can see, there's by default 10 subdivisions on each axis.  
-When you call `updateFacetData()`, the indexes of the all the facets are sorted in the partioning array according to the facet belonging of each block.  
+When you call `updateFacetData()`, the indexes of the all the facets are sorted in the partioning array according to the facet belonging to each block.  
 
 Thus you can get all the facet indexes from some local coordinates (x, y, z) with `getFacetsAtLocalCoordinates(x, y, z)`.  
 ```javascript
@@ -102,7 +102,7 @@ if (indexes) {
 }
 ```
 This method returns an array containing the indexes of the facet belonging to the block containing the point at the coordinates (x, y, z).  
-If (x, y, z) aren't in any block or if there are facets in the block containing (x, y, z), it returns `null`.  
+If (x, y, z) aren't in any block or if there is no facet in the block containing (x, y, z), it returns `null`.  
 So you can retrieve this way all the facets near some position and do your own treatment.  
 This method can be called as many times you need, even in the render loop. It doesn't allocate any object in memory.    
 
@@ -129,7 +129,7 @@ if (index) {
     // use the vector3 projected here ...
 }
 ```
-You can even filter the returned facet index.  
+You can even filter the returned facet indexes.  
 Imagine that you want only the facet "facing" the coordinates (x, y, z), it is to say the facet of which the dot product normal * facetPosition_to_(x, y, z) is positive.  
 So just set the fifth parameter `checkFace` to `true` (default `false`) and the sixth parameter `facing?` to `true` (default `true`).  
 ```javascript
@@ -140,7 +140,7 @@ if (index) {
     // use the vector3 projected here ...
 }
 ```
-In contrary, if you just want the closest facet "turning its back" to (x, y, z), set `checkFace` to `true` and `facing?` to `false`.  
+On the contrary, if you just want the closest facet "turning its back" to (x, y, z), set `checkFace` to `true` and `facing?` to `false`.  
 ```javascript
 var projected = BABYLON.Vector3.Zero();
 var index = mesh.getClosestFacetAtCoordinates(x, y, z, projected, true, false); // just the "turning back" closest facet
@@ -161,7 +161,7 @@ if (index) {
 }
 ```
 ###### Note
-As said before, the returned facet index from all these former methods are the same values than the PickingInfo or pickable SPS `faceId` values. 
+As said before, the returned facet indexes from all these former methods are the same values than the PickingInfo or pickable SPS `faceId` values. 
 So, you can easily mix all these features together. Ex : to get the facet normal from a picked mesh.  
 
 ###### Example
