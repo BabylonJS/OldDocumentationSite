@@ -4,7 +4,7 @@ FacetData is a feature that can be enabled on a mesh.
 As it requires some extra memory, it's not enabled by default.  
 This feature provides some methods and properties to access each facet of a mesh, like the facet positions, normals or the ability to retrieve all of a mesh facets in a given zone of the world space.  
 #### What is a mesh facet ?
-We use here the term "facet" not to be confused with the term "face".  
+We use here the term "facet" in order to be not confused with the term "face".  
 A mesh can have some planar faces. For example, a box has 6 sides, so 6 planar squared faces. Each of its faces are drawn at the WebGL level with 2 triangles.  
 We call "facets" these elementary triangles.  
 #### How to enable the facet data ?
@@ -19,7 +19,7 @@ console.log(mesh.facetNb);
 As soon as the feature is enabled, you can get the mesh total number of facets with the read-only property `.facetNb`.  
 
 The method `updateFacetData()` creates two permanent arrays : the mesh facet positions and facet normals.  
-Moreover, it logically divides the mesh according some partitioning and stores all the facets in this partitioning.  
+Moreover, it logically divides the mesh according to some partitioning and stores all the facets in this partitioning.  
 Unless the mesh is updated or morphed afterwards, you don't need to call this method anymore once it has been done.  
 If you don't need this feature any longer, you can disabled it to release the memory with `mesh.disableFacetData()`.  
 ```javascript
@@ -80,7 +80,11 @@ var norm = mesh.getFacetNormal(50); // returns the world normal of the mesh 50th
 Displaying all the facet normals of an icosphere : http://www.babylonjs-playground.com/#1YTZAC  
 Just change the mesh shape, torus knot : http://www.babylonjs-playground.com/#1YTZAC#1  
 Smarter : set a box at a distance of 2 from the mesh 10th facet and keep it there, even if the mesh rotates : http://www.babylonjs-playground.com/#1YTZAC#3  
-Of course, you add some translation to the mesh and even some rotation to the box : http://www.babylonjs-playground.com/#1YTZAC#4  
+Of course, you add some translation to the mesh and even some rotation to the box : http://www.babylonjs-playground.com/#1YTZAC#4   
+
+Note also that the facet index is the same than the facet id used by the pickingInfo object or the faceId used by the SPS when pickable.  
+Here is an example combining pickingInfo, pickable SPS and facetData facet index : http://www.babylonjs-playground.com/#2FPT1A#119   
+Just click and the ball is positionned at the clicked facet position, not a the clicked point.    
 
 ##### Mesh partitioning
 The feature `facetData` provides also another tool called the mesh partitioning.  
@@ -89,7 +93,8 @@ Here's an illustration about how this logical partitioning looks like : http://w
 In order to improve the visibility, the planes along the axis Z weren't displayed.  
 As you can see, there's by default 10 subdivisions on each axis.  
 When you call `updateFacetData()`, the indexes of the all the facets are sorted in the partioning array according to the facet belonging of each block.  
-Then, you get all the facet indexes from some local coordinates (x, y, z) with `getFacetsAtLocalCoordinates(x, y, z)`.  
+
+Thus you can get all the facet indexes from some local coordinates (x, y, z) with `getFacetsAtLocalCoordinates(x, y, z)`.  
 ```javascript
 var indexes = mesh.getFacetsAtLocalCoordinates(x, y, z);    // returns an array containing the facet indexes
 if (indexes) {
@@ -98,10 +103,10 @@ if (indexes) {
 ```
 This method returns an array containing the indexes of the facet belonging to the block containing the point at the coordinates (x, y, z).  
 If (x, y, z) aren't in any block or if there are facets in the block containing (x, y, z), it returns `null`.  
-Thus you can retrieve all the facets near some position and do your own treatment.  
-This method can be called as many times you need, even in the render loop.  
+So you can retrieve this way all the facets near some position and do your own treatment.  
+This method can be called as many times you need, even in the render loop. It doesn't allocate any object in memory.    
 
-Sometimes you don't need all the facets from a given block but only the closest facet to some world, and not local, coordinates.  
+Sometimes you don't need all the facets from a given block but only the closest facet to some world, but not local, coordinates.  
 You can then use the method `getClosestFacetAtCoordinates(x, y, z)` what returns the index of the closest facet to the World coordinates (x, y, z).  
 ```javascript
 var index = mesh.getClosestFacetAtCoordinates(x, y, z); // returns the index of the closest facet to (x, y, z)
@@ -125,7 +130,7 @@ if (index) {
 }
 ```
 You can even filter the returned facet index.  
-Imagine that you want only the facet "facing" the coordinates (x, y, z), it is to say the facet what the dot product normal * facetPosition_to_(x, y, z) is positive.  
+Imagine that you want only the facet "facing" the coordinates (x, y, z), it is to say the facet of which the dot product normal * facetPosition_to_(x, y, z) is positive.  
 So just set the fifth parameter `checkFace` to `true` (default `false`) and the sixth parameter `facing?` to `true` (default `true`).  
 ```javascript
 var projected = BABYLON.Vector3.Zero();
@@ -155,6 +160,10 @@ if (index) {
     // use the vector3 localProj here ...
 }
 ```
+###### Note
+As said before, the returned facet index from all these former methods are the same values than the PickingInfo or pickable SPS `faceId` values. 
+So, you can easily mix all these features together. Ex : to get the facet normal from a picked mesh.  
+
 ###### Example
 A rotating torus knot with facet data enabled and a Solid Particle System (SPS) moving balls with simple custom physics :  
 
@@ -173,22 +182,77 @@ Just keep in mind these two principles :
 
 * the subdivisions (blocks) must be bigger than the facets to get accurate results,
 * the more subdivisions, the fastest the method `getClosestFacetAtCoordinates()`.  
-So if you deal with a huge mesh with plenty for very small facets like the BJS skull, you can easily set the subdivision number to 50, but if you deal with your own ribbon built with only one hundred big facets, you should probably reduce this number to 4.  
+
+So if you deal with a huge mesh with plenty of very small facets like the BJS skull, you can easily set the subdivision number to 50, but if you deal with your own ribbon built with only one hundred big facets, you should probably reduce this number to 4.  
 To set the number of subdivisions, just use the property `.partitioningSubdivisions`. It will be taken in account at the next call to `updateFacetData()` and can be changed at will.  
 ```javascript
 mesh.partitioningSubdivisions = 50;  // set a bigger value than the default one (integer)
 mesh.updateFacetData();              // now the internal partitioning has 50 blocks per axis
 ```
 You can also enlarge a bit the space used by the blocks to have a bigger "detection zone" (remember that if (x, y, z) is outside the block zone, the methods return `null`).  
-By default, the block area is 1% bigger than the mesh bounding box in order to keep a little space between the perimeter blocks and the contained facets.  
+By default, the block area is 1% bigger than the mesh bounding box in order to keep a little space between the peripheric blocks and their contained facets.  
 You can set your own value with the property `.partitioningBBoxRatio` (default = 1.01). It will be taken in account at the next call to `updateFacetData()` and can be changed at will.  
 ```javascript
 mesh.partitioningBBoxRatio = 1.05;   // 5% bigger than the bounding box instead of 1% bigger
 mesh.updateFacetData();              // now the internal block area if 5% bigger than the bounding box
 ```
+In order to understand, here are two examples : 
+ratio = 1.20 (20% bigger)  http://www.babylonjs-playground.com/#UZGNA#1  
+ratio = 080  (20% smaller) http://www.babylonjs-playground.com/#UZGNA#2  
+Those examples aren't pertinent, because the values are too big or too small : the block area is too far from the mesh or inside the mesh.  
+Right values should keep between 1.0 and 1.10.  
 
 ##### Updating facet data
 
-_(in progress)_
+As said in the first part, you need to call once `updateFacetData()` to enable the feature.  
+This is enough if the mesh geometry keep unchanged afterwards.  
+
+Nonetheless, if you update or morph your mesh afterwards, you need to call `updateFacetData()` again to force the partitioning recomputation.  
+```javascript
+var mesh = myBlenderImportedMesh;   // import some mesh from an external source
+mesh.updateFacetData();             // enable facetData
+// ... process here using the mesh with its current geometry and FacetData
+if (condition) {
+    customMorphFunction(mesh);      // update the mesh geometry
+    mesh.updateFacetData();         // update the facet data
+}
+```
+`updateFacetData()` can be called on demand, even in the render loop. However this method as a CPU cost, actually exactly the same than the static method `ComputeNormals()`.  
+So if your mesh has a very huge amount of facets like the BJS skul, this can take some times.  
+
+Some of the provided BJS mesh types are updatable/morphable by their dedicated methods : the parametric shapes and the SPS.  
+
+* the parametric shapes are updatable by calling again the method `CreateXXX()` with the parameter `instance`,
+* the SPS is updated each call to `setParticles()`.
+
+For these specific types of updatable meshes, you don't need to `updateFacetData()` by your own, if the feature is already enabled. 
+It will be done automatically, generally in an optimized way, inside the process loop of the mesh geometry update.  
+```javascript
+var paths = someArrayOfPaths;
+var mesh = BABYLON.MeshBuilder.CreateRibbon("m", {pathArray: paths, updatable: true}, scene); // create an updatable ribbon
+mesh.updateFacetData();    // enable the feature once
+// morphing function : change the ribbon geometry
+var morphRibbon = function(k) {
+    for (var p = 0; p < paths.length; p++) {
+        var path = paths[p];
+        for (var i = 0; i < path.length) {
+            path[i].y = Math.sin(k) * Math.cos(i);
+        }
+    }
+}
+var k = 0.0;
+// render loop
+scene.registerBeforeRender(function() {
+    morphRibbon(k);                     // change the geometry
+    BABYLON.MeshBuilder.CreateRibbon(null, {pathArray: paths, instance: mesh}); // actually morph the ribbon
+    // No need for updateFacetData() here, CreateRibbon() just did it ... faster !
+    k += 0.01;
+});
+```
+Example :   
+Custom simple physics on a dynamically morphed ribbon : http://www.babylonjs-playground.com/#XVGK0#3  
+
+
+
 
 
