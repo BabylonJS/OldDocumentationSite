@@ -312,6 +312,10 @@
           "filename": "How_to_use_Reflection_probes"
         },
         {
+          "title": "How to use Facet Data",
+          "filename": "How_to_use_FacetData"
+        },
+        {
           "title": "Render Scene on a PNG",
           "filename": "Render_Scene_on_a_PNG"
         }
