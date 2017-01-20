@@ -91,7 +91,7 @@ The feature `facetData` provides also another tool called the mesh partitioning.
 The mesh is logically divided in 3D blocks aligned with the X, Y and Z axis in its local space.  
 Here's an illustration about how this logical partitioning looks like : http://www.babylonjs-playground.com/#UZGNA  
 In order to improve the visibility, the planes along the axis Z weren't displayed.  
-As you can see, there's by default 10 subdivisions on each axis.  
+As you can see, there are by default 10 subdivisions on each axis.  
 When you call `updateFacetData()`, the indexes of the all the facets are sorted in the partioning array according to the facet belonging to each block.  
 
 Thus you can get all the facet indexes from some local coordinates (x, y, z) with `getFacetsAtLocalCoordinates(x, y, z)`.  
@@ -119,7 +119,7 @@ Actually the world coordinates (x, y, z) are internally transformed to local coo
 If these local coordinates aren't in any block or if there's no facet in this block, it returns `null`.  
 This method can be called as many times you need, even in the render loop.  
 
-This method can also compute for you the coordinates of the projection of (x, y, z) on the closest facet plane. You can imagine this projection point as the contact point of (x, y, z) on the facet, or the nearest point from (x, y, z) on the facet.  
+This method can also compute for you the coordinates of the orthogonal projection of (x, y, z) on the closest facet plane. You can imagine this projection point as the contact point of (x, y, z) on the facet, or the nearest point from (x, y, z) on the facet.  
 Just pass it a`Vector3` as a reference :
 ```javascript
 var projected = BABYLON.Vector3.Zero();
@@ -130,7 +130,7 @@ if (index) {
 }
 ```
 You can even filter the returned facet indexes.  
-Imagine that you want only the facet "facing" the coordinates (x, y, z), it is to say the facet of which the dot product normal * facetPosition_to_(x, y, z) is positive.  
+Imagine that you want only the facet "facing" the coordinates (x, y, z), it is to say the facet of which the dot product normal * facetPosition_to_(x, y, z)_ is positive.  
 So just set the fifth parameter `checkFace` to `true` (default `false`) and the sixth parameter `facing?` to `true` (default `true`).  
 ```javascript
 var projected = BABYLON.Vector3.Zero();
@@ -161,7 +161,7 @@ if (index) {
 }
 ```
 ###### Note
-As said before, the returned facet indexes from all these former methods are the same values than the PickingInfo or pickable SPS `faceId` values. 
+As said before, the returned facet indexes from all these former methods are the same values than the `PickingInfo` or pickable SPS `faceId` values. 
 So, you can easily mix all these features together. Ex : to get the facet normal from a picked mesh.  
 
 ###### Example
@@ -199,7 +199,7 @@ mesh.updateFacetData();              // now the internal block area if 5% bigger
 In order to understand, here are two examples : 
 ratio = 1.20 (20% bigger)  http://www.babylonjs-playground.com/#UZGNA#1  
 ratio = 080  (20% smaller) http://www.babylonjs-playground.com/#UZGNA#2  
-Those examples aren't pertinent, because the values are too big or too small : the block area is too far from the mesh or inside the mesh.  
+Those examples aren't pertinent, because these values are too big or too small : the block area is too far from the mesh or inside the mesh.  
 Right values should keep between 1.0 and 1.10.  
 
 ##### Updating facet data
@@ -225,7 +225,7 @@ Some of the provided BJS mesh types are updatable/morphable by their dedicated m
 * the parametric shapes are updatable by calling again the method `CreateXXX()` with the parameter `instance`,
 * the SPS is updated each call to `setParticles()`.
 
-For these specific types of updatable meshes, you don't need to `updateFacetData()` by your own, if the feature is already enabled. 
+For these specific types of updatable meshes, you don't need to call `updateFacetData()` by your own, if the feature is already enabled. 
 It will be done automatically, generally in an optimized way, inside the process loop of the mesh geometry update.  
 ```javascript
 var paths = someArrayOfPaths;
