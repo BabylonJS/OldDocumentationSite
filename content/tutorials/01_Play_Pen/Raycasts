@@ -1,6 +1,40 @@
+# Raycasts #
+
 The method scene.pickWithRay throws a ray in your scene. 
 
+
+Predicate function : 
+
+function predicate (mesh){
+
+  return mesh === target;
+
+}
+
+It will return true if the target has been hitten.
+
+
+
+
+
+Global to local space coordinates converting :
+
+ function local(argMesh, argVec){
+
+    var matrix = argMesh.getWorldMatrix();
+    var vector = BABYLON.Vector3.TransformCoordinates(argVec, matrix);
+    return vector;
+
+}// local() 
+
+
+
+
+
+Topics related :
 
 http://www.html5gamedevs.com/topic/26503-scenepickwithray-blues/
 
 http://www.html5gamedevs.com/topic/26602-worldlocalray/
+
+
