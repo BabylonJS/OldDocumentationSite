@@ -18,33 +18,33 @@
  *                             REQUIREMENTS                              *
  ************************************************************************/
 
-var fs       = require('fs'),
-    path     = require('path'),
-    async    = require('async'),
-    pug      = require('pug'),
-    appRoot  = require('app-root-path').path,
-    logger   = require(path.join(appRoot, 'config/logger')),
-    marked   = require('meta-marked'),
+var fs = require('fs'),
+    path = require('path'),
+    async = require('async'),
+    pug = require('pug'),
+    appRoot = require('app-root-path').path,
+    logger = require(path.join(appRoot, 'config/logger')),
+    marked = require('meta-marked'),
     renderer = new marked.Renderer(),
-    toc      = require('marked-toc'),
+    toc = require('marked-toc'),
     tocRenderer = new marked.Renderer(),
-    rimraf   = require('rimraf'),
-    util     = require('util');
+    rimraf = require('rimraf'),
+    util = require('util');
 
 // custom renderer that modifies heading and insert a permalink icon before each title
-renderer.heading = function(text, level, raw){
+renderer.heading = function (text, level, raw) {
     raw_escaped = raw.toLowerCase().replace(/[^\w]+/g, '-');
 
     // if <h2> or <h3>, add permalink icon
-    if(level >= 2 && level <= 3){
-        var link = '<a href="#'+ this.options.headerPrefix + raw_escaped + '" class="invisible permalink">' +
+    if (level >= 2 && level <= 3) {
+        var link = '<a href="#' + this.options.headerPrefix + raw_escaped + '" class="invisible permalink">' +
             '<i class="fa fa-link"></i>' +
             '</a>';
         return '<h' + level + ' id="' + this.options.headerPrefix + raw_escaped + '">'
             + link
             + text
             + '</h' + level + '>\n';
-    // else return default heading rendered by marked
+        // else return default heading rendered by marked
     } else {
         return '<h' + level + ' id="' + this.options.headerPrefix + raw_escaped + '">'
             + raw
@@ -52,7 +52,7 @@ renderer.heading = function(text, level, raw){
     }
 };
 
-tocRenderer.link = function(href, title, text){
+tocRenderer.link = function (href, title, text) {
     return '<option value="' + href.split('#')[1] + '">' + text + '</option>\n';
 };
 
@@ -71,9 +71,9 @@ marked.setOptions({
 
 var __CLASSES_LIST__ = path.join(appRoot, 'data/classes.json'),
     __CLASSES_TAGS__ = path.join(appRoot, 'data/classes-tags.json'),
-    __HTML_FILES_DESTDIR__  = path.join(appRoot, 'public/html'),
-    __PUG_FILES_ROOTDIR__  = path.join(appRoot, 'views/class'),
-    __MD_FILES_ROOTDIR__    = path.join(appRoot, 'content/classes');
+    __HTML_FILES_DESTDIR__ = path.join(appRoot, 'public/html/classes/'),
+    __PUG_FILES_ROOTDIR__ = path.join(appRoot, 'views/class'),
+    __MD_FILES_ROOTDIR__ = path.join(appRoot, 'content/classes');
 
 
 /*************************************************************************
@@ -82,14 +82,22 @@ var __CLASSES_LIST__ = path.join(appRoot, 'data/classes.json'),
 
 module.exports = function (done) {
 
+    //create the classes directory
+    var mainDirPath = path.join(__HTML_FILES_DESTDIR__);
+    try {
+        fs.statSync(mainDirPath);
+    } catch (e) {
+        fs.mkdirSync(mainDirPath);
+    }
+
     // fetch the information we need: the lists of classes sorted by version,
     // and lists of tags sorted by classes then by version
     async.parallel({
         classesLists: getClassesLists,
         tagsLists: getTagsLists
-    }, function(err, lists){
-        if(err) {
-            logger.error(util.inspect(err, {showHidden: false, colors: true}));
+    }, function (err, lists) {
+        if (err) {
+            logger.error(util.inspect(err, { showHidden: false, colors: true }));
         }
 
         // lists = {
@@ -99,22 +107,23 @@ module.exports = function (done) {
 
         var versions = [];
 
-        async.forEachOf(lists.classesLists, function(classes, version, cbVersions){
+        async.forEachOf(lists.classesLists, function (classes, version, cbVersions) {
 
             // FLUSH DIRECTORY /public/html/class_<version>/
-            var dirPath = path.join(__HTML_FILES_DESTDIR__, 'class_' + version);
+            var dirPath = path.join(__HTML_FILES_DESTDIR__, version);
             logger.info(dirPath);
 
-            logger.info('Directory html/class_' + version + ' is about to be cleaned...');
+            logger.info('Directory html/classes/' + version + ' is about to be cleaned...');
 
-            rimraf(dirPath, function(rimrafErr){
-                if(rimrafErr) throw rimrafErr;
+            rimraf(dirPath, function (rimrafErr) {
+                if (rimrafErr) throw rimrafErr;
 
-                logger.info('Directory html/class_' + version + ' is now empty.');
+                logger.info('Directory html/classes/' + version + ' is now empty.');
 
                 // as rimraf flush the directory THEN delete it, we need to recreate it
-                fs.mkdir(dirPath, function(mkdirErr){
-                    if(mkdirErr){
+                logger.info(dirPath);
+                fs.mkdir(dirPath, function (mkdirErr) {
+                    if (mkdirErr) {
                         logger.info('mkdirError!' + mkdirErr);
                         throw mkdirErr;
                     }
@@ -127,9 +136,9 @@ module.exports = function (done) {
                 });
             });
 
-        },function(){
+        }, function () {
             logger.info('About to launch parallel compilation...');
-            async.each(versions, function(version, cbCompile){
+            async.each(versions, function (version, cbCompile) {
 
                 // parallel compilation :-)
                 async.parallel([
@@ -138,9 +147,9 @@ module.exports = function (done) {
                     // lists.tagsLists[version] = list of tags sorted by class, for the specified version of BJS
                     async.apply(compileClassesPages, versions, version, lists.classesLists[version], lists.tagsLists[version]),
                     async.apply(compileClassPages, versions, version, lists.classesLists[version], lists.tagsLists[version])
-                ], function(err){
+                ], function (err) {
                     if (err) {
-                        logger.error(util.inspect(err, {showHidden: false, colors: true}));
+                        logger.error(util.inspect(err, { showHidden: false, colors: true }));
                         throw err;
                     } else {
                         cbCompile();
@@ -148,7 +157,7 @@ module.exports = function (done) {
                 });
                 // end parallel compilation :-(
 
-            }, function(){
+            }, function () {
                 // final callback
                 logger.info('> ALL CLASSES PAGES COMPILED.');
                 done();
@@ -173,9 +182,9 @@ module.exports = function (done) {
  *      <nthBJSVersion>: [ <class1>, <class2>, ..., <classN> ]
  * }
  */
-var getClassesLists = function(callback){
-    fs.readFile(__CLASSES_LIST__, {encoding: 'utf-8', flag: 'r'}, function(err, data){
-        if (err){
+var getClassesLists = function (callback) {
+    fs.readFile(__CLASSES_LIST__, { encoding: 'utf-8', flag: 'r' }, function (err, data) {
+        if (err) {
             logger.error('Error while reading ' + __CLASSES_LIST__ + ': ' + err);
             throw err;
         } else {
@@ -204,9 +213,9 @@ var getClassesLists = function(callback){
  *      }
  * }
  */
-var getTagsLists = function(callback){
-    fs.readFile(__CLASSES_TAGS__, {encoding: 'utf-8', flag: 'r'}, function(err, data){
-        if (err){
+var getTagsLists = function (callback) {
+    fs.readFile(__CLASSES_TAGS__, { encoding: 'utf-8', flag: 'r' }, function (err, data) {
+        if (err) {
             logger.error('Error while reading ' + __CLASSES_TAGS__ + ': ' + err);
             throw err;
         } else {
@@ -222,26 +231,26 @@ var getTagsLists = function(callback){
  * @param tagsList
  * @param callback
  */
-var compileClassesPages = function(versions, version, classesList, tagsList, callback){
+var compileClassesPages = function (versions, version, classesList, tagsList, callback) {
     // path of the future rendered 'classes_<bjsVersion>.html' page
-    var htmlClassesFilePath = path.join(__HTML_FILES_DESTDIR__, 'classes_' + version + '.html'),
+    var htmlClassesFilePath = path.join(__HTML_FILES_DESTDIR__, version + '.html'),
         pugViewForClasses = path.join(__PUG_FILES_ROOTDIR__, 'classes.pug');
 
     // options for the Jade compiler
     var optionsClasses = {
-        pretty        : false,
-        currentUrl    : '/classes',
+        pretty: false,
+        currentUrl: '/classes',
         currentVersion: version,
-        versions      : versions,
+        versions: versions,
         classesByAlpha: classesList,
-        classesByTags : tagsList
+        classesByTags: tagsList
     };
 
-    fs.writeFile(htmlClassesFilePath, pug.renderFile(pugViewForClasses, optionsClasses), function(err){
+    fs.writeFile(htmlClassesFilePath, pug.renderFile(pugViewForClasses, optionsClasses), function (err) {
         if (err) {
             throw err;
         } else {
-            logger.info("> HTML page for classes_" + version + " compiled." );
+            logger.info("> HTML page for classes_" + version + " compiled.");
             callback(null);
         }
     });
@@ -255,14 +264,14 @@ var compileClassesPages = function(versions, version, classesList, tagsList, cal
  * @param tagsList
  * @param callback
  */
-var compileClassPages = function(versions, version, classesList, tagsList, callback){
-    async.each(classesList, function(className, cbEachClassName){
-        var mdFilePath          = path.join(__MD_FILES_ROOTDIR__, version, className + '.md'),
-            htmlClassFilePath   = path.join(__HTML_FILES_DESTDIR__, 'class_' + version, className + '.html'),
-            pugViewForClass    = path.join(__PUG_FILES_ROOTDIR__, 'class.pug');
+var compileClassPages = function (versions, version, classesList, tagsList, callback) {
+    async.each(classesList, function (className, cbEachClassName) {
+        var mdFilePath = path.join(__MD_FILES_ROOTDIR__, version, className + '.md'),
+            htmlClassFilePath = path.join(__HTML_FILES_DESTDIR__, version, className + '.html'),
+            pugViewForClass = path.join(__PUG_FILES_ROOTDIR__, 'class.pug');
 
-        fs.readFile(mdFilePath, {encoding: 'utf-8', flag: 'r'}, function(readMDErr, data){
-            if(readMDErr){
+        fs.readFile(mdFilePath, { encoding: 'utf-8', flag: 'r' }, function (readMDErr, data) {
+            if (readMDErr) {
                 logger.error(readMDErr);
                 throw readMDErr;
             } else {
@@ -286,19 +295,19 @@ var compileClassPages = function(versions, version, classesList, tagsList, callb
                 //});
 
                 var optionsClass = {
-                    pretty          : false,
-                    currentUrl      : '/classes/class',
-                    currentVersion  : version,
+                    pretty: false,
+                    currentUrl: '/classes/class',
+                    currentVersion: version,
                     classListByAlpha: classesList,
-                    classListByTag  : tagsList,
-                    className       : className,
-                    classTags       : markedContent.meta['TAGS'],
-                    content         : markedContent.html
+                    classListByTag: tagsList,
+                    className: className,
+                    classTags: markedContent.meta['TAGS'],
+                    content: markedContent.html
                     //toc             : processedToc
                 };
 
                 //logger.info('public/html/class_' + version + '/' + className + '.html is about to be compiled...');
-                fs.writeFile(htmlClassFilePath, pug.renderFile(pugViewForClass, optionsClass), function(err){
+                fs.writeFile(htmlClassFilePath, pug.renderFile(pugViewForClass, optionsClass), function (err) {
                     if (err) {
                         throw err;
                     } else {
@@ -309,26 +318,26 @@ var compileClassPages = function(versions, version, classesList, tagsList, callb
             }
         });
 
-    }, function(){
+    }, function () {
         // final callback
         logger.info('> All "class" for BJSv' + version + ' pages compiled.');
         callback(null);
     });
 };
 
-var processTocString = function(tocString){
-    if(tocString.match(/^<p>-/)){
+var processTocString = function (tocString) {
+    if (tocString.match(/^<p>-/)) {
         // Members/Methods/constructor
-        if(tocString.match(/>Members</)){
+        if (tocString.match(/>Members</)) {
             return '<option value="members" class="cat">Members</option>';
-        } else if(tocString.match(/>Methods</)){
+        } else if (tocString.match(/>Methods</)) {
             return '<option value="methods" class="cat">Methods</option>';
-        } else if(tocString.match(/>Functions</)){
+        } else if (tocString.match(/>Functions</)) {
             return '<option value="functions" class="cat">Functions</option>';
         } else {
             return false;
         }
-    } else if(tocString.match(/^<p>\*/)){
+    } else if (tocString.match(/^<p>\*/)) {
         return tocString.slice(4, -6);
     }
 };
