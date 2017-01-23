@@ -146,7 +146,7 @@ module.exports = function (grunt) {
             },
             indexer           : {
                 call: function (grunt, options, async) {
-                    require('./scripts/helpers/indexer/main')(async());
+                    require('./scripts/helpers/indexer/azure')(async());
                 }
             }
         }
