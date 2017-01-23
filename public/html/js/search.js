@@ -28,6 +28,7 @@
 
     function runQuery() {
         var query = getQueryVariable('q');
+        var strQuery = decodeURIComponent(query).split('+').join(' ');
         $.getJSON('https://babylonjs-doc.search.windows.net/indexes/documents/docs?api-version=2016-09-01&api-key=DF333E13A6C71B67290E46668C86DD7E&search=' + query).success(function (data) {
             var files = [];
             var categories = [];
@@ -45,7 +46,7 @@
             });
 
             // generate the html. can be nicer but...
-            var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + decodeURIComponent(query) + '</a></h2></div>';
+            var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + strQuery + '</a></h2></div>';
 
             html += '<div class="filters">';
             // add filters:

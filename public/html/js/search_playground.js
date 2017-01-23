@@ -7,10 +7,11 @@
 
     function runQuery() {
         var query = getQueryVariable('q');
+        var strQuery = decodeURIComponent(query).split('+').join(' ');
         var page = +(getQueryVariable('page')) || 0;
         var max = +(getQueryVariable('max')) || 25;
 
-        console.log(query, page);
+        $('.searchplayground-content').append('<div class="searchHeader"><h2>Loading results for ' + strQuery + ' ...</h2></div>');
 
         var postData = JSON.stringify({
             search: query,
@@ -27,7 +28,7 @@
             dataType: "json"
         }).success(function (data) {
 
-            var html = '<div class="searchHeader"><h2>' + data.totalCount + ' Results for <a href="/playground?q=' + query + '">' + query + '</a></h2></div>';
+            var html = '<div class="searchHeader"><h2>' + data.totalCount + ' Results for <a href="/playground?q=' + query + '">' + strQuery + '</a></h2></div>';
 
             var pages = data.pageCount;
             var pageChange = '<div class="pageChangeWrapper" style="margin: 20px;">';
@@ -61,7 +62,7 @@
 
             html += pageChange;
 
-
+            $('.searchHeader').remove();
             $('.searchplayground-content').append(html);
         });
     }
