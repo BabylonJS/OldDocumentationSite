@@ -61,7 +61,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd   : 'public/scss',
-                    dest  : 'public/css',
+                    dest  : 'public/html/css',
                     src   : ['main.scss'],
                     ext   : '.css'
                 }]
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
                     'data/**.json',
                     '!data/static-tags.json',
                     '!data/statics.json',
-                    'public/html/**',
+                    'public/html/**/*.html',
                     '!public/html'
                 ]
             },
