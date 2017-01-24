@@ -89,25 +89,25 @@ Just click and the ball is positionned at the clicked facet position, not a the 
 ##### Mesh partitioning
 The feature `facetData` provides also another tool called the mesh partitioning.  
 The mesh is logically divided in 3D blocks aligned with the X, Y and Z axis in its local space.  
-Here's an illustration about how this logical partitioning looks like : http://www.babylonjs-playground.com/#UZGNA  
+Here's an illustration about how this logical partitioning looks like (please wait until the skull is downloaded) : http://www.babylonjs-playground.com/#UZGNA  
 In order to improve the visibility, the planes along the axis Z weren't displayed.  
 As you can see, there's by default 10 subdivisions on each axis.  
 When you call `updateFacetData()`, the indexes of the all the facets are sorted in the partioning array according to the facet belonging of each block.  
 
-Thus you can get all the facet indexes from some local coordinates (x, y, z) with `getFacetsAtLocalCoordinates(x, y, z)`.  
+Thus you can get all the facet indexes from some local coordinates _(x, y, z)_ with `getFacetsAtLocalCoordinates(x, y, z)`.  
 ```javascript
 var indexes = mesh.getFacetsAtLocalCoordinates(x, y, z);    // returns an array containing the facet indexes
 if (indexes) {
     var worldPos = mesh.getFacetPosition(indexes[0]);       // the world position of the first facet in the block
 }
 ```
-This method returns an array containing the indexes of the facet belonging to the block containing the point at the coordinates (x, y, z).  
-If (x, y, z) aren't in any block or if there are facets in the block containing (x, y, z), it returns `null`.  
+This method returns an array containing the indexes of the facet belonging to the block containing the point at the coordinates _(x, y, z)_.  
+If _(x, y, z)_ aren't in any block or if there's no facet in the block containing _(x, y, z)_, it returns `null`.  
 So you can retrieve this way all the facets near some position and do your own treatment.  
 This method can be called as many times you need, even in the render loop. It doesn't allocate any object in memory.    
 
 Sometimes you don't need all the facets from a given block but only the closest facet to some world, but not local, coordinates.  
-You can then use the method `getClosestFacetAtCoordinates(x, y, z)` what returns the index of the closest facet to the World coordinates (x, y, z).  
+You can then use the method `getClosestFacetAtCoordinates(x, y, z)` what returns the index of the closest facet to the World coordinates _(x, y, z)_.  
 ```javascript
 var index = mesh.getClosestFacetAtCoordinates(x, y, z); // returns the index of the closest facet to (x, y, z)
 if (index) {
@@ -115,11 +115,11 @@ if (index) {
 }
 ```
 The method returns just the index of the closest facet, if any.  
-Actually the world coordinates (x, y, z) are internally transformed to local coordinates in the mesh local system.  
+Actually the world coordinates _(x, y, z)_ are internally transformed to local coordinates in the mesh local system.  
 If these local coordinates aren't in any block or if there's no facet in this block, it returns `null`.  
 This method can be called as many times you need, even in the render loop.  
 
-This method can also compute for you the coordinates of the projection of (x, y, z) on the closest facet plane. You can imagine this projection point as the contact point of (x, y, z) on the facet, or the nearest point from (x, y, z) on the facet.  
+This method can also compute for you the coordinates of the projection of _(x, y, z)_ on the closest facet plane. You can imagine this projection point as the contact point of _(x, y, z)_ on the facet, or the nearest point from _(x, y, z)_ on the facet.  
 Just pass it a`Vector3` as a reference :
 ```javascript
 var projected = BABYLON.Vector3.Zero();
@@ -130,7 +130,7 @@ if (index) {
 }
 ```
 You can even filter the returned facet index.  
-Imagine that you want only the facet "facing" the coordinates (x, y, z), it is to say the facet of which the dot product normal * facetPosition_to_(x, y, z) is positive.  
+Imagine that you want only the facet "facing" the coordinates _(x, y, z)_, it is to say the facet of which the dot product normal * facetPosition_to_(x, y, z) is positive.  
 So just set the fifth parameter `checkFace` to `true` (default `false`) and the sixth parameter `facing?` to `true` (default `true`).  
 ```javascript
 var projected = BABYLON.Vector3.Zero();
@@ -140,7 +140,7 @@ if (index) {
     // use the vector3 projected here ...
 }
 ```
-In contrary, if you just want the closest facet "turning its back" to (x, y, z), set `checkFace` to `true` and `facing?` to `false`.  
+In contrary, if you just want the closest facet "turning its back" to _(x, y, z)_, set `checkFace` to `true` and `facing?` to `false`.  
 ```javascript
 var projected = BABYLON.Vector3.Zero();
 var index = mesh.getClosestFacetAtCoordinates(x, y, z, projected, true, false); // just the "turning back" closest facet
@@ -150,7 +150,7 @@ if (index) {
 }
 ```
 
-If you need it, this method exists also in the mesh local space. Everything is then expressed in the local space : (x, y, z) and the returned coordinates of the projected point.  
+If you need it, this method exists also in the mesh local space. Everything is then expressed in the local space : _(x, y, z)_ and the returned coordinates of the projected point.  
 Just call `getClosestFacetAtLocalCoordinates(x, y, z, projected, checkFace, facing?)` instead.  
 ```javascript
 var localProj = BABYLON.Vector3.Zero();
@@ -189,16 +189,16 @@ To set the number of subdivisions, just use the property `.partitioningSubdivisi
 mesh.partitioningSubdivisions = 50;  // set a bigger value than the default one (integer)
 mesh.updateFacetData();              // now the internal partitioning has 50 blocks per axis
 ```
-You can also enlarge a bit the space used by the blocks to have a bigger "detection zone" (remember that if (x, y, z) is outside the block zone, the methods return `null`).  
+You can also enlarge a bit the space used by the blocks to have a bigger "detection zone" (remember that if _(x, y, z)_ is outside the block zone, the methods return `null`).  
 By default, the block area is 1% bigger than the mesh bounding box in order to keep a little space between the peripheric blocks and their contained facets.  
 You can set your own value with the property `.partitioningBBoxRatio` (default = 1.01). It will be taken in account at the next call to `updateFacetData()` and can be changed at will.  
 ```javascript
 mesh.partitioningBBoxRatio = 1.05;   // 5% bigger than the bounding box instead of 1% bigger
 mesh.updateFacetData();              // now the internal block area if 5% bigger than the bounding box
 ```
-In order to understand, here are two examples : 
-ratio = 1.20 (20% bigger)  http://www.babylonjs-playground.com/#UZGNA#1  
-ratio = 080  (20% smaller) http://www.babylonjs-playground.com/#UZGNA#2  
+In order to understand, here are two examples :   
+ratio = 1.20 (20% bigger)  http://www.babylonjs-playground.com/#UZGNA#1    
+ratio = 0.80  (20% smaller) http://www.babylonjs-playground.com/#UZGNA#2    
 Those examples aren't pertinent, because the values are too big or too small : the block area is too far from the mesh or inside the mesh.  
 Right values should keep between 1.0 and 1.10.  
 
