@@ -30,7 +30,7 @@ You have 3 parameters to fill:
 
 3. The third parameter _**enableTexturesOffline**_ is also a boolean. This time, you will be asking the Babylon engine to load all textures (PNG or JPG files) and store them into the local database of the user. Thus, the textures will be directly streamed from the database rather than the web server.
 
-**Note:** images are loaded using XHR2 in the blob format. Only IE11 and Firefox support the storing of blob data into the IndexedDB. Chrome does not support it yet. That’s why, even if you’re setting “enableTexturesOffline” to true, Chrome will always try to download the textures from the web. Chrome’s users will at least benefit from loading the JSON scene from the DB.
+**Note:** images are loaded using XHR2 in the blob format. IE11, Firefox and Chrome 37+ support the storing of blob data into the IndexedDB. [More details](http://caniuse.com/#search=indexeddb)
 
 ### Samples
 
