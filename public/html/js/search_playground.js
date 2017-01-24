@@ -11,6 +11,11 @@
         var page = +(getQueryVariable('page')) || 0;
         var max = +(getQueryVariable('max')) || 25;
 
+        if (!query) {
+            //$('.searchplayground-content').append('<div class="searchHeader"><h2>No Query Found.</h2></div>');
+            return;
+        }
+
         $('.searchplayground-content').append('<div class="searchHeader"><h2>Loading results for ' + strQuery + ' ...</h2></div>');
 
         var postData = JSON.stringify({
