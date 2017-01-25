@@ -50,6 +50,11 @@ module.exports = function index(done) {
     ];
     */
 
+    if(!process.env.AZURE_API_KEY) {
+        console.log('Skipping azure indexing');
+        return done();
+    }
+
     var promises = Object.keys(statics).map(indexCategory);
 
     // now the classes should be indexed:
@@ -155,7 +160,7 @@ function sendRequestToAzure(values) {
             value: values
         },
         headers: {
-            'api-key': '85AAF9CB1904C8E0006D729C78F2CD8A',
+            'api-key': process.env.AZURE_API_KEY,
             'Content-Type': 'application/json'
         },
         json: true
