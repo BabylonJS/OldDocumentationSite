@@ -754,7 +754,7 @@ Will stop the animation of the given target
  | Name | Type | Description
 ---|---|---|---
  | target | any |  - the target  - the target  - the target  - the target - the target
-optional | animationName | string |  - the name of the animation to stop (all animations will be stopped is empty)
+optional | animationName | string |  - the name of the animation to stop (all animations will be stopped if empty)
 ### getViewMatrix() &rarr; [Matrix](/classes/2.5/Matrix)
 
 Returns the view [Matrix](/classes/2.5/Matrix)
