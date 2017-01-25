@@ -60,7 +60,7 @@ function createIframe(playgroundId, link) {
     
     iframeContainer.css('display', 'block');
     if (iframeContainer.children().length == 0) {
-        var iframe = $("<iframe>").attr('src', 'http://www.babylonjs-playground.com/frame.html#'+playgroundId);
+        var iframe = $("<iframe>").attr('src', '//www.babylonjs-playground.com/frame.html#'+playgroundId);
         iframeContainer.append(iframe);
     } else {
         iframeContainer.empty().css('display', 'none');       
