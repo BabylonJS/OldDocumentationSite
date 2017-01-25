@@ -112,7 +112,7 @@ You can then use the method `getClosestFacetAtCoordinates(x, y, z)` what returns
 ```javascript
 var index = mesh.getClosestFacetAtCoordinates(x, y, z); // returns the index of the closest facet to (x, y, z)
 if (index) {
-    var worldPos = mesh.getFacetPosition(indexes[0]);   // the world position of this facet
+    var worldPos = mesh.getFacetPosition(index);   // the world position of this facet
 }
 ```
 The method returns just the index of the closest facet, if any.  
@@ -126,7 +126,7 @@ Just pass it a`Vector3` as a reference :
 var projected = BABYLON.Vector3.Zero();
 var index = mesh.getClosestFacetAtCoordinates(x, y, z, projected); // sets the point "projected" world coordinates
 if (index) {
-    var worldPos = mesh.getFacetPosition(indexes[0]);              // the world position of this facet
+    var worldPos = mesh.getFacetPosition(index);              // the world position of this facet
     // use the vector3 projected here ...
 }
 ```
@@ -139,7 +139,7 @@ So just set the fifth parameter `checkFace` to `true` (default `false`) and the 
 var projected = BABYLON.Vector3.Zero();
 var index = mesh.getClosestFacetAtCoordinates(x, y, z, projected, true); // just the "facing" closest facet
 if (index) {
-    var worldPos = mesh.getFacetPosition(indexes[0]);                    // the world position of this facet
+    var worldPos = mesh.getFacetPosition(index);                    // the world position of this facet
     // use the vector3 projected here ...
 }
 ```
@@ -150,7 +150,7 @@ On the contrary, if you just want the closest facet "turning its back" to _(x, y
 var projected = BABYLON.Vector3.Zero();
 var index = mesh.getClosestFacetAtCoordinates(x, y, z, projected, true, false); // just the "turning back" closest facet
 if (index) {
-    var worldPos = mesh.getFacetPosition(indexes[0]);                           // the world position of this facet
+    var worldPos = mesh.getFacetPosition(index);                           // the world position of this facet
     // use the vector3 projected here ...
 }
 ```
@@ -161,7 +161,7 @@ Just call `getClosestFacetAtLocalCoordinates(x, y, z, projected, checkFace, faci
 var localProj = BABYLON.Vector3.Zero();
 var index = mesh.getClosestFacetAtLocalCoordinates(x, y, z, localProj); // local projection
 if (index) {
-    var worldPos = mesh.getFacetPosition(indexes[0]);                    // the world position of this facet
+    var worldPos = mesh.getFacetPosition(index);                    // the world position of this facet
     // use the vector3 localProj here ...
 }
 ```
