@@ -6,8 +6,8 @@ You will find more complete information in the [Architecture Overview](http://do
 
 In the Canvas2D library, each Canvas2D instance is also a Group2D and there're two kinds of Group2D:
 
-1) Renderable Group2D: the content of the Group2D is processed for rendering through this Group2D instance.
-2) Logical Group2D: the Group2D is acting more like a Container, a new frame of reference.
+1. Renderable Group2D: the content of the Group2D is processed for rendering through this Group2D instance.
+2. Logical Group2D: the Group2D is acting more like a Container, a new frame of reference.
 
 The Canvas is always a Renderable Group2D, but it can contains children Group2D that are also renderable. 
 
@@ -24,9 +24,9 @@ There are many Caching Behavior for a Cached Renderable Group2D, if you want som
 
 When Primitive are Rendered (either to the 3D Viewport or into a Texture when the content is Cached) their are split into three different groups, one per rendering mode
 
-1) Opaque: Primitives that have no transparency, no alpha test, no texture using alpha channel and an actualOpacity of 1.0 will rendered as Opaque.
-2) Alpha Test: Primitives are rendered with Alpha Test when they have a Texture with a used Alpha Channel but no Alpha Blending required. Basically the Alpha Channel is used to keep or discard a rendered pixel (typically Masking effect).
-3) Transparent: Primitives with an actualOpacity < 1.0, with texture using their alpha channels are rendered with Alpha Blending on in the Transparent pass.
+1. Opaque: Primitives that have no transparency, no alpha test, no texture using alpha channel and an actualOpacity of 1.0 will rendered as Opaque.
+2. Alpha Test: Primitives are rendered with Alpha Test when they have a Texture with a used Alpha Channel but no Alpha Blending required. Basically the Alpha Channel is used to keep or discard a rendered pixel (typically Masking effect).
+3. Transparent: Primitives with an actualOpacity < 1.0, with texture using their alpha channels are rendered with Alpha Blending on in the Transparent pass.
 
 What does this all mean for each Primitives type?
 
