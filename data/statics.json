@@ -891,6 +891,26 @@
            "hidden": true 
         },
         {
+           "title": "Canvas 2D Class Diagram",
+           "filename": "Canvas2D_ClassDiagram",
+           "hidden": true 
+        },
+        {
+           "title": "Canvas 2D Primitive Collision Engine",
+           "filename": "Canvas2D_PCM",
+           "hidden": true 
+        },
+        {
+           "title": "Canvas 2D Design Size",
+           "filename": "Canvas2D_DesignSize",
+           "hidden": true 
+        },
+        {
+           "title": "WireFrame2D Primitive",
+           "filename": "Canvas2D_WireFrame2D",
+           "hidden": true 
+        },
+        {
            "title": "How visibility works",
            "filename": "Canvas2D_Visibility",
            "hidden": true 
