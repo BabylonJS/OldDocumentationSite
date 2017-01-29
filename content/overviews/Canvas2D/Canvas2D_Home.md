@@ -3,6 +3,8 @@
 
 ### Few useful links
 
+Please check the [GitHub main page](https://github.com/BabylonJS/Babylon.js/tree/master/canvas2D) of the Canvas2D library, there's a bunch of useful information out there.
+
 For a first-time learning tutorial [go there](http://doc.babylonjs.com/tutorials/Using_the_Canvas2D).
 
 To learn about the Design and Architecture of the Canvas2D [go there](http://doc.babylonjs.com/overviews/Canvas2D_Overview_Architecture).
@@ -18,7 +20,7 @@ This section contains useful links for you to get started on different concepts 
  - How [Visibility](http://doc.babylonjs.com/overviews/Canvas2D_Visibility) works
  - How [Z-Order](http://doc.babylonjs.com/overviews/Canvas2D_ZOrder) works
  - Using the [origin](http://doc.babylonjs.com/overviews/Canvas2D_Origin) of a Primitive
- - How [rendering](http://doc.babylonjs.com/overviews/Rendering) is working. Rendering Chain, Cache modes, Render Modes (Opaque, Alpha Test, Transparency)
+ - How [rendering](http://doc.babylonjs.com/overviews/Canvas2D_Rendering) is working. Rendering Chain, Cache modes, Render Modes (Opaque, Alpha Test, Transparency)
  - How [positioning, transformation and hierarchy](http://doc.babylonjs.com/overviews/Canvas2D_PosTransHierarchy) work.
  - How to use the [Layout Engine, alignment and Margin](http://doc.babylonjs.com/overviews/Canvas2D_Prim_Positioning)
  - How to [interact](http://doc.babylonjs.com/overviews/Canvas2D_Interaction) with Primitives.
@@ -35,10 +37,12 @@ This section contains useful links for you to get started on different concepts 
    - [Rectangle2D](http://doc.babylonjs.com/overviews/Canvas2D_Rectangle2D)
    - [Ellipse2D](http://doc.babylonjs.com/overviews/Canvas2D_Ellipse2D)
    - [Lines2D](http://doc.babylonjs.com/overviews/Canvas2D_Lines2D)
+ - WireFrame2D **TODO**
 
 ## Playgrounds referential
 
  - Because we have to start from here: [Hello World](http://babylonjs-playground.com/#2AVSFH#35)
+ - All types of Primitives (**TODO**)
  - A little example of the simplest features :[two spinning Rect](http://babylonjs-playground.com/#272WI1#6) 
  - The two spinning Rectangles, [World Space version](http://babylonjs-playground.com/#1BKDEO#22)
  - A [Lots of spinning primitives](http://babylonjs-playground.com/#OWCCR#8)
@@ -56,7 +60,12 @@ This section contains useful links for you to get started on different concepts 
  - How to [track a node from the 3D Scene](http://babylonjs-playground.com/#1N9RJY#5) 
  - WorldSpace Canvas on a [custom scene node](http://babylonjs-playground.com/#EPFQG#4)
  - [Z-Order test](http://babylonjs-playground.com/#1S2MDR#2)
- - [Scale9Sprite](http://babylonjs-playground.azurewebsites.net/#8F4D1#1) feature, more info [here](http://doc.babylonjs.com/overviews/Canvas2D_Sprite2D)
- - Sprite2D loaded from [AtlasPicture](http://babylonjs-playground.azurewebsites.net/#C1BYN#1)
- - Text rendered using [Signed Distance Field](http://babylonjs-playground.com/#143CL7#1) technique
+ - [Scale9Sprite feature](http://doc.babylonjs.com/overviews/Canvas2D_Sprite2D), [playground](http://babylonjs-playground.azurewebsites.net/#8F4D1#1)
+ - Sprite2D loaded from [AtlasPicture](http://babylonjs-playground.com/#C1BYN#1)
+ - Text rendered using [Signed Distance Field technique](http://babylonjs-playground.com/#143CL7#1)
  - Using [BMFont](http://www.angelcode.com/products/bmfont/) to render text with [BitmapFont](http://babylonjs-playground.com/#GKBEH)
+ - Track 3D Scene Nodes with [WorldSpaceCanvas](http://babylonjs-playground.com/#1KYG17#1)
+ - Using the Primitive Collision Manager, [playground](http://babylonjs-playground.com/#1PXWLR#2)
+ - Want to render a ScreenSpaceCanvas below or between 3D Content using [renderingGroupID?](http://babylonjs-playground.com/#RXVJD#2)
+ - How to use the Canvas2D designSize feature (**TODO**)
+ - How to use the WorldSpaceCanvas unitScaleFactor (**TODO**)
