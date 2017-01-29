@@ -16,7 +16,9 @@ To learn how to develop your own Primitive type, [it's here](http://doc.babylonj
 
 This section contains useful links for you to get started on different concepts that are useful to grasp.
 
+ - Class hierarchy [diagram](http://doc.babylonjs.com/overviews/Canvas2D_ClassDiagram)
  - Overview of the [Canvas2D](http://doc.babylonjs.com/overviews/Canvas2D_Canvas2D_Type) type
+ - Using the Canvas' [Design Size](http://doc.babylonjs.com/overviews/Canvas2D_DesignSize) to work with a predefined surface size.
  - How [Visibility](http://doc.babylonjs.com/overviews/Canvas2D_Visibility) works
  - How [Z-Order](http://doc.babylonjs.com/overviews/Canvas2D_ZOrder) works
  - Using the [origin](http://doc.babylonjs.com/overviews/Canvas2D_Origin) of a Primitive
@@ -24,6 +26,7 @@ This section contains useful links for you to get started on different concepts 
  - How [positioning, transformation and hierarchy](http://doc.babylonjs.com/overviews/Canvas2D_PosTransHierarchy) work.
  - How to use the [Layout Engine, alignment and Margin](http://doc.babylonjs.com/overviews/Canvas2D_Prim_Positioning)
  - How to [interact](http://doc.babylonjs.com/overviews/Canvas2D_Interaction) with Primitives.
+ - How to work with the [Primitive Collision Engine](http://doc.babylonjs.com/overviews/Canvas2D_PCM) (PCM)
  - The particularities of a [Shape2D](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based Primitive type and how to use [Brushes](http://doc.babylonjs.com/overviews/Canvas2D_Brushes).
  - How to use [AtlasPicture](http://doc.babylonjs.com/overviews/Canvas2D_AtlasPicture) to store/pack many pictures into a big one.
 
@@ -37,7 +40,7 @@ This section contains useful links for you to get started on different concepts 
    - [Rectangle2D](http://doc.babylonjs.com/overviews/Canvas2D_Rectangle2D)
    - [Ellipse2D](http://doc.babylonjs.com/overviews/Canvas2D_Ellipse2D)
    - [Lines2D](http://doc.babylonjs.com/overviews/Canvas2D_Lines2D)
- - WireFrame2D **TODO**
+ - [WireFrame2D](http://doc.babylonjs.com/overviews/Canvas2D_WireFrame2D)
 
 ## Playgrounds referential
 
