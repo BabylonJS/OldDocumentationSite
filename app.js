@@ -11,10 +11,10 @@ var port = process.env.PORT || 3000;
 
 app.use(compress());
 
-app.use(favicon(__dirname + '/public/img/favicon.ico'));
+app.use(favicon(__dirname + '/public/html/img/favicon.ico'));
 
 // Serve static files (css, js, images)
-app.use(express.static('public'));
+app.use(express.static('public/html'));
 
 //let's encrypt
 app.use('/.well-known', express.static('.well-known'));

@@ -78,14 +78,7 @@ $title_width : 300px;
           @include transition(all .2s ease-in);
         }
       }
-
-      // Title Babylon.js | DOCUMENTATION
-      & > div:first-child {
-        color:white;
-        cursor : pointer;
-        max-width : $title_width;
-        width:$title_width;
-
+      
         a{
           color: white;
           display: inline-block;
@@ -94,6 +87,12 @@ $title_width : 300px;
         a:hover{
           text-decoration: none;
         }
+
+      // Title Babylon.js | DOCUMENTATION
+      & > div:first-child {
+        color:white;
+        cursor : pointer;
+        width:100px;
       }
 
       // Only tabs
