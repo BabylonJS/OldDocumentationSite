@@ -1,38 +1,42 @@
 # Raycasts #
 
 The rays are like sunrays.
-It's used to check collisions between meshes and thin lines.
-For example in a shooting game : the bullets hit walls or enemies.
+It's used to check collision or interesection in the scene between meshes and thin line.
+
+In past tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
+using the function scene.pick(scene.pointerX, scene.pointerY) : 
+http://doc.babylonjs.com/tutorials/picking_collisions
+
+But here we will see that we can throw ray from any point and in any direction. 
+For example a bot in a shooting game : collisions between its bullets and obstacles.
 
 Documentation of classes : 
 
 http://doc.babylonjs.com/classes/2.5/ray
-
 You have first to create a ray.
 
 http://doc.babylonjs.com/classes/2.5/scene
-
 The method scene.pickWithRay() throws a ray in your scene to pick a mesh.
 
 http://doc.babylonjs.com/classes/2.5/pickinginfo
-
 And get the picking info.
+
 
 ----------------
 
 We will detect the first mesh touched by the ray : 
+http://www.babylonjs-playground.com/#KNE0O#4
 
-http://www.babylonjs-playground.com/#KNE0O#2
+First, we set box.isPickable to false to avoid the ray touching the box from the inside (l16).
+Because we set the starting point (origin) of the ray in the center of the box.
 
-First, we set box.isPicable to false to avoid the ray touching the box from the inside because this is its starting point (l16).
-
-The most important part is to get the good directional vector (l64) :
+The most important part is to get the good directional vector (l57) :
 		
-		var forward = new BABYLON.Vector3(0,0,1);		
-	    forward = vecToLocal(forward, box);
+	var forward = new BABYLON.Vector3(0,0,1);		
+	forward = vecToLocal(forward, box);
 	
-	    var direction = forward.subtract(origin);
-	    direction = BABYLON.Vector3.Normalize(direction);
+	var direction = forward.subtract(origin);
+	direction = BABYLON.Vector3.Normalize(direction);
 		
 We want the forward vector relative to the box space and orientation. 
 Then, to get the direction, we subtract it from the origin, the box position.
@@ -40,34 +44,30 @@ Then, to get the direction, we subtract it from the origin, the box position.
 The function vecToLocal is designed to transform a position from a mesh point of view by multiplicating a vector by the mesh matrix.
 
 
-Then, we create the ray with all elements given and a length of 100 for example (l72) : 
+Then, we create the ray with all elements given and a length of 100 for example (l65) : 
 var ray = new BABYLON.Ray(origin, direction, length);
 
-We can draw the ray, here its commented.
+We can draw the ray, here its commented. 
+There will be a new RayHelper class.
 
-Finally, we get the hit point of the ray if it touches a mesh (l75) :
+Finally, we get the hit point of the ray if it touches a mesh (l68) :
 var hit = scene.pickWithRay(ray);
 
 And if a mesh is hitten, we do what we want with the picking info like getting the mesh name, the position of the point etc...
 Here we change its size because it's funnier ! 
 
-
 -----------
-
 
 Now we will see the predicate function. 
 It is used to choose the meshes we want to select :
+http://www.babylonjs-playground.com/#KNE0O#5
 
-http://www.babylonjs-playground.com/#KNE0O#3
-
-I added a new function predicate (l60) :
+I added a new function predicate (l54) :
 
   function predicate(mesh){
-
         if (mesh == box2 || mesh == box){
             return false;
         }
-
         return true;
     }
 
@@ -80,16 +80,20 @@ We avoid also box2 for testing and allow the rest (box3 and box4 by default).
 And the result is, only box3 (the second blue one behind) and box4 will grow.
 So it works fine !  
 
-
 --------
 
 There is one other optional argument to the method pickWithRay.
 It's the boolean fastCheck (true or false).
-Used for precise collision or not (bounding boxes).
+True will return the first mesh that intersects with the ray (in the order of the meshes array), and not the closest mesh to the ray's starting point.
 
 -------
 
-We can use scene.multiPickWithRay.
+We can use scene.multiPickWithRay if we don't want that the ray stops at the first obstacle : 
+http://www.babylonjs-playground.com/#KNE0O#6
+
+The picking result will be an array (l68).
+So we do a loop to change all meshes hitten and you can see that the two blue boxes size change. 
+It's like a strong bullet ! 
 
 -----
 
@@ -101,13 +105,11 @@ Ray.Transform(ray, matrix) → Ray
 Checking intersection :
 Ray.intersectsMesh(mesh, fastCheck) → PickingInfo
 
+
 ----
 
 Topics related :
 
 http://www.html5gamedevs.com/topic/26503-scenepickwithray-blues/
-
 http://www.html5gamedevs.com/topic/26602-worldlocalray/
-
 http://www.html5gamedevs.com/topic/7599-convert-global-coordinates-to-local-coordinates/
-
