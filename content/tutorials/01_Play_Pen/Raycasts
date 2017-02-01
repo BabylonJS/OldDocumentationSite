@@ -3,7 +3,7 @@
 The rays are like sunrays.
 It's used to check collision or interesection in the scene between meshes and thin line.
 
-In past tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
+In the previous tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
 using the function scene.pick(scene.pointerX, scene.pointerY) : 
 http://doc.babylonjs.com/tutorials/picking_collisions
 
@@ -25,6 +25,7 @@ And get the picking info.
 ----------------
 
 We will detect the first mesh touched by the ray : 
+
 http://www.babylonjs-playground.com/#KNE0O#4
 
 First, we set box.isPickable to false to avoid the ray touching the box from the inside (l16).
@@ -58,8 +59,16 @@ Here we change its size because it's funnier !
 
 -----------
 
+You're not forced to set box.isPickable to false, if you need later to check rays intersection on this box for example. 
+You can set the origin point of the vector in front of the box, the direction a little further and the length that you want (l55) :
+
+http://www.babylonjs-playground.com/#KNE0O#7
+
+----
+
 Now we will see the predicate function. 
-It is used to choose the meshes we want to select :
+It is a filter to choose the which meshes will be selectable : 
+
 http://www.babylonjs-playground.com/#KNE0O#5
 
 I added a new function predicate (l54) :
@@ -77,18 +86,19 @@ scene.pickWithRay(ray, predicate);
 The isPickable false argument becomes irrelevant so we have to avoid box.
 We avoid also box2 for testing and allow the rest (box3 and box4 by default).
 
-And the result is, only box3 (the second blue one behind) and box4 will grow.
-So it works fine !  
+And the result is, only box3, the second blue one behind, and box4 will grow.
+So it works fine like if box2 was trasparent for the ray !  
 
 --------
 
 There is one other optional argument to the method pickWithRay.
-It's the boolean fastCheck (true or false).
+It's the boolean fastCheck (true or false by default).
 True will return the first mesh that intersects with the ray (in the order of the meshes array), and not the closest mesh to the ray's starting point.
 
 -------
 
 We can use scene.multiPickWithRay if we don't want that the ray stops at the first obstacle : 
+
 http://www.babylonjs-playground.com/#KNE0O#6
 
 The picking result will be an array (l68).
