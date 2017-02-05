@@ -28,7 +28,7 @@ ______
 
 http://www.babylonjs-playground.com/#KNE0O#4
 
-![Raycast simple](http://image.noelshack.com/fichiers/2017/05/1486292303-01.jpg)
+![Raycast simple](https://cloud.githubusercontent.com/assets/24637259/22629039/5c841cfe-ebdf-11e6-83eb-a1dcbe27c587.jpg)
 
 In all our playgrounds, we will imagine that our character is the main box at the center.
 It will shoot laser beams continually forward and detect which enemy (other boxes) is hitten.
@@ -79,7 +79,7 @@ It is a filter to choose which meshes will be selectable :
 
 http://www.babylonjs-playground.com/#KNE0O#5
 
-![Raycast predicate](http://image.noelshack.com/fichiers/2017/05/1486292725-raycast-predicate.jpg)
+![Raycast predicate](https://cloud.githubusercontent.com/assets/24637259/22629043/5ee23ab2-ebdf-11e6-9ee4-ef227d6a2dda.jpg)
 
 I added a new function predicate (l54) :
 
@@ -115,7 +115,7 @@ We can use *scene.multiPickWithRay* if we don't want that the ray stops at the f
 
 http://www.babylonjs-playground.com/#KNE0O#6
 
-![Raycast multipick](http://image.noelshack.com/fichiers/2017/05/1486292559-multipick.jpg)
+![Raycast multipick](https://cloud.githubusercontent.com/assets/24637259/22629048/61651dcc-ebdf-11e6-86e4-4fdea6f16212.jpg)
 
 The picking result will be an array (l68).
 So we do a loop to change all meshes hitten and you can see that the two blue boxes size change. 
