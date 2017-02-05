@@ -8,7 +8,7 @@ using the function scene.pick(scene.pointerX, scene.pointerY) :
 http://doc.babylonjs.com/tutorials/picking_collisions
 
 But here we will see that we can throw ray from any point and in any direction. 
-For example a bot in a shooting game : collisions between its bullets and obstacles.
+For example in a shooting game at 3rd person view : collisions between our bullets and obstacles.
 
 Documentation of classes : 
 
@@ -22,11 +22,16 @@ http://doc.babylonjs.com/classes/2.5/pickinginfo
 And get the picking info.
 
 
-----------------
+______
 
-We will detect the first mesh touched by the ray : 
+## Detect the first mesh touched by the ray ##
 
 http://www.babylonjs-playground.com/#KNE0O#4
+
+In all our playgrounds, we will imagine that our character is the main box at the center.
+It will shoot laser beams continually forward and detect which enemy (other boxes) is hitten.
+So with the mouse, you don't need to click but move to turn the box with this trigonometry function mousemovef (l34). 
+A ray requires when its created : an origin, a direction and a length. 
 
 First, we set box.isPickable to false to avoid the ray touching the box from the inside (l16).
 Because we set the starting point (origin) of the ray in the center of the box.
@@ -41,9 +46,7 @@ The most important part is to get the good directional vector (l57) :
 		
 We want the forward vector relative to the box space and orientation. 
 Then, to get the direction, we subtract it from the origin, the box position.
-
 The function vecToLocal is designed to transform a position from a mesh point of view by multiplicating a vector by the mesh matrix.
-
 
 Then, we create the ray with all elements given and a length of 100 for example (l65) : 
 var ray = new BABYLON.Ray(origin, direction, length);
@@ -57,17 +60,19 @@ var hit = scene.pickWithRay(ray);
 And if a mesh is hitten, we do what we want with the picking info like getting the mesh name, the position of the point etc...
 Here we change its size because it's funnier ! 
 
------------
+---
 
 You're not forced to set box.isPickable to false, if you need later to check rays intersection on this box for example. 
 You can set the origin point of the vector in front of the box, the direction a little further and the length that you want (l55) :
 
 http://www.babylonjs-playground.com/#KNE0O#7
 
-----
 
-Now we will see the predicate function. 
-It is a filter to choose the which meshes will be selectable : 
+-----
+
+## Predicate function ##
+
+It is a filter to choose which meshes will be selectable : 
 
 http://www.babylonjs-playground.com/#KNE0O#5
 
@@ -89,13 +94,16 @@ We avoid also box2 for testing and allow the rest (box3 and box4 by default).
 And the result is, only box3, the second blue one behind, and box4 will grow.
 So it works fine like if box2 was trasparent for the ray !  
 
---------
+---
 
 There is one other optional argument to the method pickWithRay.
-It's the boolean fastCheck (true or false by default).
+It's the boolean fastCheck (false by default).
 True will return the first mesh that intersects with the ray (in the order of the meshes array), and not the closest mesh to the ray's starting point.
 
--------
+
+-----
+
+## Multi pick ## 
 
 We can use scene.multiPickWithRay if we don't want that the ray stops at the first obstacle : 
 
@@ -105,7 +113,7 @@ The picking result will be an array (l68).
 So we do a loop to change all meshes hitten and you can see that the two blue boxes size change. 
 It's like a strong bullet ! 
 
------
+---
 
 An other method is to use directly the Ray class.
 
@@ -116,7 +124,7 @@ Checking intersection :
 Ray.intersectsMesh(mesh, fastCheck) → PickingInfo
 
 
-----
+_____
 
 Topics related :
 
