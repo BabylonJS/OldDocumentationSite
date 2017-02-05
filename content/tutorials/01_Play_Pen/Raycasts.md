@@ -40,18 +40,19 @@ Because we set the starting point (origin) of the ray in the center of the box.
 
 The most important part is to get the good directional vector (l57) :
 		
-	```var forward = new BABYLON.Vector3(0,0,1);		
+```var forward = new BABYLON.Vector3(0,0,1);		
 	forward = vecToLocal(forward, box);
 	
 	var direction = forward.subtract(origin);
-	direction = BABYLON.Vector3.Normalize(direction);```
+	direction = BABYLON.Vector3.Normalize(direction);
+```
 		
 We want the forward vector relative to the box space and orientation. 
 Then, to get the direction, we subtract it from the origin, the box position.
 The function vecToLocal is designed to transform a position from a mesh point of view by multiplicating a vector by the mesh matrix.
 
 Then, we create the ray with all elements given and a length of 100 for example (l65) : 
-var ray = new BABYLON.Ray(origin, direction, length);
+*var ray = new BABYLON.Ray(origin, direction, length);*
 
 We can draw the ray, here its commented. 
 There will be a new RayHelper class.
@@ -64,7 +65,7 @@ Here we change its size because it's funnier !
 
 ---
 
-You're not forced to set box.isPickable to false, if you need later to check rays intersection on this box for example. 
+**You're not forced to set box.isPickable to false**, if you need later to check rays intersection on this box for example. 
 You can set the origin point of the vector in front of the box, the direction a little further and the length that you want (l55) :
 
 http://www.babylonjs-playground.com/#KNE0O#7
@@ -87,7 +88,8 @@ I added a new function predicate (l54) :
             return false;
         }
         return true;
-    }```
+    }
+```
 
 and in parameter here :  
 *scene.pickWithRay(ray, predicate);*
@@ -109,7 +111,7 @@ True will return the first mesh that intersects with the ray (in the order of th
 
 ## Multi pick ## 
 
-We can use **scene.multiPickWithRay** if we don't want that the ray stops at the first obstacle : 
+We can use *scene.multiPickWithRay* if we don't want that the ray stops at the first obstacle : 
 
 http://www.babylonjs-playground.com/#KNE0O#6
 
@@ -121,7 +123,7 @@ It's like a strong bullet !
 
 ---
 
-An other method is to use directly the Ray class.
+An other method is to use directly the **Ray class**.
 
 To change the ray to a local space :
 *Ray.Transform(ray, matrix) → Ray*
