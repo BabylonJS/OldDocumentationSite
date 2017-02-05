@@ -28,7 +28,7 @@ ______
 
 http://www.babylonjs-playground.com/#KNE0O#4
 
-![Raycast simple](/http://image.noelshack.com/fichiers/2017/05/1486292303-01.jpg)
+![Raycast simple](http://image.noelshack.com/fichiers/2017/05/1486292303-01.jpg)
 
 In all our playgrounds, we will imagine that our character is the main box at the center.
 It will shoot laser beams continually forward and detect which enemy (other boxes) is hitten.
