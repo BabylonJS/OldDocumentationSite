@@ -79,7 +79,7 @@ It is a filter to choose which meshes will be selectable :
 
 http://www.babylonjs-playground.com/#KNE0O#5
 
-![Raycast simple](http://image.noelshack.com/fichiers/2017/05/1486292725-raycast-predicate.jpg)
+![Raycast predicate](http://image.noelshack.com/fichiers/2017/05/1486292725-raycast-predicate.jpg)
 
 I added a new function predicate (l54) :
 
@@ -115,7 +115,7 @@ We can use *scene.multiPickWithRay* if we don't want that the ray stops at the f
 
 http://www.babylonjs-playground.com/#KNE0O#6
 
-![Raycast simple](http://image.noelshack.com/fichiers/2017/05/1486292559-multipick.jpg)
+![Raycast multipick](http://image.noelshack.com/fichiers/2017/05/1486292559-multipick.jpg)
 
 The picking result will be an array (l68).
 So we do a loop to change all meshes hitten and you can see that the two blue boxes size change. 
