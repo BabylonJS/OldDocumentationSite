@@ -139,7 +139,11 @@ Example :
 ```javascript
 mesh.rotate(BABYLON.Axis.X, 1.0, BABYLON.Space.WORLD);
 ```
-Please note that `mesh.rotate()` generates a new quaternion and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0) . 
+Please note that `mesh.rotate()` generates a new quaternion and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
+
+Like `mesh.addRotation()`, this method accumulates also the rotation each call. So, if call it several times, the order really matters : first `rotate(x, 3)` then `rotate(y, 2)` will give a different final orientation than first `rotate(y, 2` then `rotate(x, 3)`.  
+It updates the `mesh.rotationQuaternion` before it is read by the World Matrix.  
+
 
 
 # Generating a rotation from a target system #
