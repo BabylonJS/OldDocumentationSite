@@ -55,6 +55,7 @@ These properties just depict some mesh state before it must be rendered : it's l
 Actually, just before the rendering process, these property values are read and computed in a matrix related to the mesh, called its World Matrix.  
 The mesh World Matrix embbeds all the values to position, rotate and scale the mesh from its local space to the World space.  
 This matrix is then transferred to the GPU what applies all the geometric transformations to each mesh vertex and then renders the whole mesh.  
+The GPU piece of code responsible for this vertex transformation is called the vertex shader.  
 
 So just think about the properties `position` and `rotation` (or `rotationQuaternion`) as the state values to set the mesh in the World for the next render call.  
 
@@ -128,7 +129,7 @@ Something you wouldn't probably have found by yourself just playing with Euler a
 In brief, `addRotation()` accumulates the rotation values each call, allows to choose the rotation order and updates the initial property `rotation` or `rotationQuaternion` values.  
 This rotation is computed in the local space as usual.  
 
-### mesh.rotate()
+### rotate()
 At last, like for the positions, you can also use the most versatile tool : `mesh.rotate(axis, amount, space)`
 
 * `axis` (_Vector3_) is the axis around what the rotation is to be done,
@@ -141,8 +142,16 @@ mesh.rotate(BABYLON.Axis.X, 1.0, BABYLON.Space.WORLD);
 ```
 Please note that `mesh.rotate()` generates a new quaternion and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
 
-Like `mesh.addRotation()`, this method accumulates also the rotation each call. So, if call it several times, the order really matters : first `rotate(x, 3)` then `rotate(y, 2)` will give a different final orientation than first `rotate(y, 2` then `rotate(x, 3)`.  
+Like `mesh.addRotation()`, this method accumulates also the rotation each call. So, if you call it several times, the order really matters : first `rotate(x, 3)` then `rotate(y, 2)` will give a different final orientation than first `rotate(y, 2` then `rotate(x, 3)`.  
 It updates the `mesh.rotationQuaternion` before it is read by the World Matrix.  
+
+## Summary
+
+* The mesh vertices are positioned and rotated GPU side at the render call by the vertex shader.  
+* The vertex shader needs the mesh World matrix in order to compute these transformations.  
+* The mesh World matrix is computed automatically by BJS just before the render call.  
+* Only the last assigned values of the mesh properties `position`, `rotation` or `quaternionRotation` are read at this moment for the matrix computation.  
+* You can set directly these properties before manually and/or you can use helper functions like `translate()`, `rotate()`, `addRotation()`, etc what compute then their values for you.    
 
 
 
@@ -160,7 +169,7 @@ With this code, the mesh will be aligned thus :
 * _axis2_ will become y axis in its local system
 * _axis3_ will become z axis in its local system
 
-example : http://www.babylonjs-playground.com/#VYM1E#5   
+example : http://www.babylonjs-playground.com/#VYM1E#26      
 The textured plane mesh is currently aligned with the axis between spheres (axis1) and "faces" the camera : axis2 = camera.position 
 
 # Baking Transform #
