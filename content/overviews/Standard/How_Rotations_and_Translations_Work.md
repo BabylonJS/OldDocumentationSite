@@ -169,7 +169,7 @@ With this code, the mesh will be aligned thus :
 * _axis2_ will become y axis in its local system
 * _axis3_ will become z axis in its local system
 
-example : http://www.babylonjs-playground.com/#VYM1E#5   
+example : http://www.babylonjs-playground.com/#VYM1E#26      
 The textured plane mesh is currently aligned with the axis between spheres (axis1) and "faces" the camera : axis2 = camera.position 
 
 # Baking Transform #
