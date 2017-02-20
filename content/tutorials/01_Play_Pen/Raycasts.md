@@ -40,7 +40,8 @@ Because we set the starting point (origin) of the ray in the center of the box.
 
 The most important part is to get the good directional vector (l57) :
 		
-```var forward = new BABYLON.Vector3(0,0,1);		
+```
+var forward = new BABYLON.Vector3(0,0,1);		
 	forward = vecToLocal(forward, box);
 	
 	var direction = forward.subtract(origin);
@@ -83,7 +84,8 @@ http://www.babylonjs-playground.com/#KNE0O#5
 
 I added a new function predicate (l54) :
 
-  ```function predicate(mesh){
+  ```
+  function predicate(mesh){
         if (mesh == box2 || mesh == box){
             return false;
         }
@@ -137,5 +139,7 @@ _____
 **Topics related :**
 
 http://www.html5gamedevs.com/topic/26503-scenepickwithray-blues/
+
 http://www.html5gamedevs.com/topic/26602-worldlocalray/
+
 http://www.html5gamedevs.com/topic/7599-convert-global-coordinates-to-local-coordinates/
