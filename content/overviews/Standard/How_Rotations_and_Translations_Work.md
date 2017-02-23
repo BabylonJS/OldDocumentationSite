@@ -171,7 +171,15 @@ With this code, the mesh will be aligned thus :
 
 example : http://www.babylonjs-playground.com/#VYM1E#28        
 The textured plane mesh is currently aligned with the axis between spheres (axis1) and "faces" the camera.  
-`RotationFromAxis()` computes the required rotation value (Vector3) to assign to a mesh in order to rotate it along the passed axes.  
+`RotationFromAxis()` computes the required rotation value (Vector3) to assign to the mesh property `.rotation` in order to rotate it along the passed axes.  
+If you prefer using quaternions instead of Euler angles, then `RotationQuaternionFromAxis()` computes the required rotation value (Quaternion) to assign to the mesh property `.rotationQuaternion` in order to rotate it along the passed axes.  
+The same methods exist also in the `toRef()` version.  
+
+`Vector3.RotationFromAxis()`  
+`Vector3.RotationFromAxisToRef()` 
+`Quaternion.RotationQuaternionFromAxis()`  
+`Quaternion.RotationQuaternionFromAxisToRef()`  
+
 
 # Baking Transform #
 
