@@ -857,6 +857,10 @@
         {
           "title": "Handling Babylon.js events with observables",
           "filename": "Observables"
+        },
+        {
+          "title": "WebGL2 support",
+          "filename": "WebGL2"
         }
       ]
     },
