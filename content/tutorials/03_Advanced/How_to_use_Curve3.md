@@ -57,7 +57,7 @@ Read from line 50
 ## Hermite spline
 http://en.wikipedia.org/wiki/Cubic_Hermite_spline
 
-![EScience Hermite](http://escience.anu.edu.au/lecture/cg/Spline/Image/HermiteSpec.gif)
+![University of British Columbia slide](http://images.slideplayer.com/16/5191319/slides/slide_9.jpg)
 ```javascript
 var hermite = BABYLON.Curve3.CreateHermiteSpline(p1, t1, p2, t2, nbPoints);
 ```
@@ -74,6 +74,27 @@ The _length()_ method returns the curve length.
 ```javascript
 var path = hermite.getPoints();
 var l = hermite.length();
+```
+
+## Catmull-Rom spline  
+https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline  
+
+![Wikibooks Cubic Hermite spline](https://upload.wikimedia.org/wikipedia/commons/1/1c/Finite_difference_spline_example.png)
+```javascript
+var nbPoints = 20;                     // the number of points between each Vector3 control points
+var points = [vec1, vec2, ..., vecN];  // an array of Vector3 the curve must pass through : the control points
+var catmullRom = BABYLON.Curve3.CreateCatmullRomSpline(points, nbPoints);
+```
+* **points** : _Vector3_ an array of Vector3 (the control points) the curve will pass through,
+* **nbPoints** : _number_ the wanted curve number of points between each control point.
+
+This static method returns an instance of _Curve3_.    
+Just use the Curve3 _getPoints()_ method to fill your array : _getPoints()_ returns an array of successive _Vector3_.    
+You can then use it for ribbons, tubes, extrusion paths, etc.    
+The _length()_ method returns the curve length.   
+```javascript
+var path = catmullRom.getPoints();
+var l = catmullRom.length();
 ```
 
 ## Curve3 object
