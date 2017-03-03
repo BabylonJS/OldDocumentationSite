@@ -7,7 +7,9 @@ You can test which version of WebGL is enabled with: `engine.webGLVersion` prope
 
 ## Shaders
 
-When WebGL2 is enabled, the shaders are automatically converted to GLSL v3.0. if you are using custom shaders, the best idea would be to provide GLSL v2.0 shaders. This way your code will work on both contexts.
+When WebGL2 is enabled, the shaders are automatically converted to GLSL v3.0. Babylon.js will then automatically take advantages of extended instruction/uniform counts.
+
+If you are using custom shaders, the best idea would be to provide GLSL v2.0 shaders. This way your code will work on both contexts.
 You can obviously provide only v3.0 shaders but in this case your code will only work when WebGL2 is enabled.
 
 ## Supported features
