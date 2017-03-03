@@ -37,7 +37,7 @@ No MSAA (1 sample)|MSAA (8 samples)
 
 When possible (either on WebGL2 context or when extension is available on WebGL1 context), Babylon.js will use VAO to control rendering. VAO are a kind of geometry objects. Instead of sending all attributes and buffers used by a mesh (one for position, one for normal, one for indices, one for texture coordinates, etc..), you can build a VAO which will keep track of all attributes / buffers used. 
 
-At rendering time, you ust have to set one VAO instead of multiple VBO (vertex buffer object).
+At rendering time, you just have to define one VAO instead of multiple VBO (vertex buffer object).
 
 You can find more details on [Tojicode's blog](http://blog.tojicode.com/2012/10/oesvertexarrayobject-extension.html).
 
