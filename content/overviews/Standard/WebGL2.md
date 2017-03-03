@@ -1,13 +1,13 @@
 ## Introduction
 
 Starting with v3.0, Babylon.js supports rendering using WebGL1 and WebGL2 contexts. 
-The support is transparent for developers. By default the engine tries to get a WebGL2 context. If none is available then a WebGL1 is retrieved.
+The support is transparent for developers. By default the engine tries to get a WebGL2 context. If none is available then a WebGL1 one is retrieved.
 
 You can test which version of WebGL is enabled with: `engine.webGLVersion` property.
 
 ## Shaders
 
-When WebGL2 is enabled, the shaders are automatically converted to GLSL v3.0. Babylon.js will then automatically take advantages of extended instruction/uniform counts.
+When WebGL2 is enabled, the shaders are automatically converted to GLSL v3.0. Babylon.js will then automatically take advantage of extended instruction/uniform counts.
 
 If you are using custom shaders, the best idea would be to provide GLSL v2.0 shaders. This way your code will work on both contexts.
 You can obviously provide only v3.0 shaders but in this case your code will only work when WebGL2 is enabled.
