@@ -49,7 +49,7 @@ router.get('/', function(req, res) {
 router.get('/:version', function(req, res) {
     var version = req.params.version;
 
-    fs.exists('public/html/classes_' + version + '.html', function(exists){
+    fs.exists('public/html/classes/' + version + '.html', function(exists){
         if(exists){
             var options = {
                 root: path.join(appRoot, 'public/')
@@ -60,7 +60,7 @@ router.get('/:version', function(req, res) {
                 'Cache-Control': 'no-cache',
                 'Content-type':'text/html'
             });
-            res.sendFile('./html/classes_' + version + '.html', options);
+            res.sendFile('./html/classes/' + version + '.html', options);
         } else {
             /**
              * Maybe the user written a class without specifying a BJS version; in
@@ -129,7 +129,7 @@ router.get('/:version/:className', function(req, res) {
 
 
     } else {
-        var fileName = path.join('./public/html/class_' + version, className) + '.html';
+        var fileName = path.join('./public/html/classes/' + version, className) + '.html';
         fs.exists(fileName, function(exists){
             if(!exists){
                 // 404 class not found
@@ -137,7 +137,7 @@ router.get('/:version/:className', function(req, res) {
                 logger.error('404 error - File not found: '  + fileName);
                 res.render('errorpages/404_class_not_found.pug', {classname:className});
             } else {
-                fileName = path.join('./html/class_' + version, className) + '.html';
+                fileName = path.join('./html/classes/' + version, className) + '.html';
 
                 var options = {
                     root: path.join(appRoot, 'public/')
