@@ -11,7 +11,7 @@ class [PostProcessRenderEffect](/classes/2.5/PostProcessRenderEffect)
 
 A render effect is a smart postprocess which can manage its own instances itself.
 
-A tutorial about the render pipeline can be found here
+A tutorial about the render pipeline can be found here : https://doc.babylonjs.com/tutorials/using_standard_rendering_pipeline
 
 ## Constructor
 
