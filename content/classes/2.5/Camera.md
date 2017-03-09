@@ -17,7 +17,7 @@ class [Camera](/classes/2.5/Camera) extends [Node](/classes/2.5/Node)
 ## new [Camera](/classes/2.5/Camera)(name, position, scene)
 
 Creates a new [Camera](/classes/2.5/Camera).
-A tutorial about [ArcRotateCamera](/classes/2.5/ArcRotateCamera) can be found here
+A tutorial about [ArcRotateCamera](/classes/2.5/ArcRotateCamera) can be found here : https://doc.babylonjs.com/tutorials/Cameras
 
 #### Parameters
  | Name | Type | Description
