@@ -24,6 +24,8 @@ Three concepts are introduced to help on this matter:
     1. Align a given **Edge** of the Primitive to the same kind of Edge of its parent (Left/Right for Horizontal Alignment, Top/Bottom for Vertical Alignment)
     2. **Center** the primitive Width/Height from its parent's Content Area 
     3. **Stretch** (which also will drive the Size property of the Primitive) the primitive Surface Area to fit its parent Content Area on either or both Horizontal/Vertical axes.
+    
+    **Note**: alignment will consider the actualScale and rotation of the primitive, this [this PG](http://babylonjs-playground.com/#BN6OY) for more detail.
 
 ### About the PrimitiveThickness type
 
