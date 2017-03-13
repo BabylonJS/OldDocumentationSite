@@ -76,7 +76,7 @@ This allows you to use the same code you use for a game based on the FreeCamera 
 
 This also allows the WebVR to be controlled by the same input devices that control the FreeCamera - keyboard, mouse (with rotation exception), XBOX controller and so on. 
 
-### resetting the device's rotation
+### Resetting the device's rotation
 
 The device's "front" position is set by the device itself (it is set during the device's setup and has not a lot to do with WebVR directly). The developer, however, has the ability to change the "front" rotation with a simple function call:
 
