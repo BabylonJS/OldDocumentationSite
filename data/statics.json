@@ -861,6 +861,10 @@
         {
           "title": "WebGL2 support",
           "filename": "WebGL2"
+        },
+        {
+          "title": "Using the WebVR Camera",
+          "filename": "WebVR_Camera"
         }
       ]
     },
