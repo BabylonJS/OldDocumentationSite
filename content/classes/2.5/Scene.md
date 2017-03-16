@@ -54,6 +54,22 @@ The fog density is following an exponential function faster than FOGMODE_EXP
 
 The fog density is following a linear function.
 
+### static DragMovementThreshold : number
+
+The distance in pixel that you have to move to prevent some events
+
+### static LongPressDelay : number
+
+Time in milliseconds to wait to raise long press events if button is still pressed
+
+### static DoubleClickDelay : number
+
+Time in milliseconds with two consecutive clicks will be considered as a double click
+
+### static ExclusiveDoubleClickMode : boolean
+
+If enabled, a double click will not be preceed by a single click
+
 ### autoClear : boolean
 
 default : true

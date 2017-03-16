@@ -34,6 +34,10 @@ Nothing trigger
 
 On pick trigger
 
+### static OnDoublePickTrigger : number
+
+On double pick trigger
+
 ### static OnLeftPickTrigger : number
 
 On left pick trigger
@@ -89,14 +93,6 @@ On key down trigger
 ### static OnKeyUpTrigger : number
 
 on key up trigger
-
-### static DragMovementThreshold : number
-
-
-
-### static LongPressDelay : number
-
-
 
 ### actions : [Action](/classes/2.5/Action)[]
 
