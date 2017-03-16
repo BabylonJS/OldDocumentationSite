@@ -47,6 +47,7 @@ The following list defines triggers associated with meshes:
 
 * `BABYLON.ActionManager.NothingTrigger`: Never raised. Used for sub-actions with `action.then` function.
 * `BABYLON.ActionManager.OnPickTrigger`: Raised when the user touches/clicks on a mesh.
+* `BABYLON.ActionManager.OnDoublePickTrigger`: Raised when the user double touches/clicks on a mesh.
 * `BABYLON.ActionManager.OnPickDownTrigger`: Raised when the user touches/clicks down on a mesh
 * `BABYLON.ActionManager.OnPickUpTrigger`: Raised when the user touches/clicks up on a mesh.
 * `BABYLON.ActionManager.OnPickOutTrigger`: Raised when the user touches/clicks down on a mesh and then move off-of the mesh.

@@ -64,6 +64,11 @@ optional | mask | number |
 ### hasObservers() &rarr; boolean
 
 return true is the [Observable](/classes/2.5/Observable) has at least one [Observer](/classes/2.5/Observer) registered
+
+### hasSpecificMask(mask) &rarr; boolean
+
+return true if the [Observable](/classes/2.5/Observable) has at least one [Observer](/classes/2.5/Observer) registered with this specific mask
+
 ### clear() &rarr; void
 
 Clear the list of observers
