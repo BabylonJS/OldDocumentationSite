@@ -553,6 +553,10 @@
         {
           "title": "Grid",
           "filename": "Grid"
+        },
+        {
+          "title": "Shadow Only",
+          "filename": "ShadowOnly"
         }
       ]
     },
