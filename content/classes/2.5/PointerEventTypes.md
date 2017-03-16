@@ -29,3 +29,11 @@ class [PointerEventTypes](/classes/2.5/PointerEventTypes)
 
 
 
+### static POINTERTAP : number
+
+
+
+### static POINTERDOUBLETAP : number
+
+
+
