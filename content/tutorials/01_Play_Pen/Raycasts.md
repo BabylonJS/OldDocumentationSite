@@ -55,9 +55,6 @@ The function vecToLocal is designed to transform a position from a mesh point of
 Then, we create the ray with all elements given and a length of 100 for example (l65) : 
 *var ray = new BABYLON.Ray(origin, direction, length);*
 
-We can draw the ray, here its commented. 
-There will be a new RayHelper class.
-
 Finally, we get the hit point of the ray if it touches a mesh (l68) :
 *var hit = scene.pickWithRay(ray);*
 
