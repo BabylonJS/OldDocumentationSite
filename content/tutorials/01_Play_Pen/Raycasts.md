@@ -69,16 +69,16 @@ Here we change its size because it's funnier !
 **You're not forced to set box.isPickable to false**, if you need later to check rays intersection on this box for example. 
 You can set the origin point of the vector in front of the box, the direction a little further and the length that you want (l55) :
 
-http://www.babylonjs-playground.com/#KNE0O#7
+http://www.babylonjs-playground.com/#KNE0O#17
 
 
 -----
 
 ## Predicate function ##
 
-It is a filter to choose which meshes will be selectable : 
+It is a filter to choose which meshes will be selectable :
 
-http://www.babylonjs-playground.com/#KNE0O#5
+http://www.babylonjs-playground.com/#KNE0O#18
 
 ![Raycast predicate](/img/tutorials/raycast02.jpg)
 
@@ -100,7 +100,7 @@ The isPickable false argument becomes irrelevant so we have to avoid box.
 We avoid also box2 for testing and allow the rest (box3 and box4 by default).
 
 And the result is, only box3, the second blue one behind, and box4 will grow.
-So it works fine like if box2 was trasparent for the ray !  
+So it works fine like if box2 was transparent for the ray !  
 
 ---
 
@@ -115,7 +115,7 @@ True will return the first mesh that intersects with the ray (in the order of th
 
 We can use *scene.multiPickWithRay* if we don't want that the ray stops at the first obstacle : 
 
-http://www.babylonjs-playground.com/#KNE0O#6
+http://www.babylonjs-playground.com/#KNE0O#19
 
 ![Raycast multipick](/img/tutorials/raycast02.jpg)
 
@@ -133,6 +133,28 @@ To change the ray to a local space :
 Checking intersection :
 *Ray.intersectsMesh(mesh, fastCheck) → PickingInfo*
 
+
+-----
+
+## Debugging ## 
+
+It could be tough to understand where a ray starts and is its direction. To help you debug you can then use the RayHelper.
+
+You can either use a static function to create and show one:
+
+```
+BABYLON.RayHelper.CreateAndShow(ray, scene, new BABYLON.Color3(1, 1, 0.1));
+```
+
+or you can use a more detailled version:
+
+```
+var rayHelper = new BABYLON.RayHelper(ray);
+rayHelper.show(scene);
+```
+
+The helper can also be attached to a mesh to track its direction:
+http://www.babylonjs-playground.com/#ZHDBJ#37
 
 _____
 
