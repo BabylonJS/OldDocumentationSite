@@ -1020,11 +1020,11 @@
         },
         {
           "title": "Debug Layer features",
-          "filename": "Features"
+          "filename": "Debug_layer_features"
         },
         {
           "title": "Customize the debug layer",
-          "filename": "Customize"
+          "filename": "Customize_debug_layer"
         }
       ]
     }
