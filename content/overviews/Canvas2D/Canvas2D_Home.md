@@ -64,7 +64,7 @@ This section contains useful links for you to get started on different concepts 
  - How to [track a node from the 3D Scene](http://babylonjs-playground.com/#1N9RJY#5) 
  - WorldSpace Canvas on a [custom scene node](http://babylonjs-playground.com/#EPFQG#4)
  - [Z-Order test](http://babylonjs-playground.com/#1S2MDR#2)
- - [Scale9Sprite feature](http://doc.babylonjs.com/overviews/Canvas2D_Sprite2D), [playground](http://babylonjs-playground.azurewebsites.net/#8F4D1#1)
+ - [Scale9Sprite feature](http://doc.babylonjs.com/overviews/Canvas2D_Sprite2D), [playground](http://babylonjs-playground.com/#8F4D1#1)
  - Sprite2D loaded from [AtlasPicture](http://babylonjs-playground.com/#C1BYN#1)
  - Text rendered using [Signed Distance Field technique](http://babylonjs-playground.com/#143CL7#1)
  - Using [BMFont](http://www.angelcode.com/products/bmfont/) to render text with [BitmapFont](http://babylonjs-playground.com/#GKBEH)
