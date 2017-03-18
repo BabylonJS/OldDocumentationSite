@@ -619,38 +619,6 @@
       ]
     },
     {
-      "title": "bGUI",
-      "name": "bGUI",
-      "img": "img/extensions/bGUI.png",
-      "desc": "Learn how to use bGUI.",
-      "files": [
-        {
-          "title": "bGUI",
-          "filename": "bGUI"
-        },
-        {
-          "title": "GUIGroup",
-          "filename": "GUIGroup"
-        },
-        {
-          "title": "GUIObject",
-          "filename": "GUIObject"
-        },
-        {
-          "title": "GUIPanel",
-          "filename": "GUIPanel"
-        },
-        {
-          "title": "GUISystem",
-          "filename": "GUISystem"
-        },
-        {
-          "title": "GUIText",
-          "filename": "GUIText"
-        }
-      ]
-    },
-    {
       "title": "Tree Generators",
       "name": "Tree_Generators",
       "img": "img/tutorials/trees.png",
