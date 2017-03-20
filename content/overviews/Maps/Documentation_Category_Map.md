@@ -93,14 +93,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a Small 3D Game with Babylon.js](/tutorials/Creating_a_Small_3D_Game_with_Babylon.js)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using WebGL to Create Games for the Windows Store](/tutorials/Using_WebGL_to_Create_Games_for_the_Windows_Store)  
 ****  
-**GUI -  bGUI**  
-&nbsp;&nbsp;&nbsp;&nbsp;[bGUI](/extensions/bGUI)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIGroup](/extensions/GUIGroup)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIObject](/extensions/GUIObject)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIPanel](/extensions/GUIPanel)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUISystem](/extensions/GUISystem)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIText](/extensions/GUIText)  
-****  
 **GUI -  CastorGUI**  
 &nbsp;&nbsp;&nbsp;&nbsp;[CastorGUI](/extensions/CastorGUI)  
 &nbsp;&nbsp;&nbsp;&nbsp;[GUIButton](/extensions/GUIButton)  

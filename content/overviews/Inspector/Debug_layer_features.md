@@ -30,6 +30,7 @@ Each tab has an index (from 0 to 9, 0 is the Scene tab and 9 is the Camera tab) 
 | Canvas2D | 7 | Display canvas2D information. Only displayed if canvas2D is included in the project | The list of Canvas2D, sorted by their name | The selected canvas2D primitive properties |
 | Material | 8 | Display material data | The list of material, sorted by their names. | The selected material properties |
 | Camera | 9 | Display camera data | The list of camera, sorted by their names. | The selected camera properties |
+| Sound | 10 | Display all sounds | The list of sounds, sorted by their names. | The selected sound properties |
 
 In some tabs, a search bar is available to look for a specific object.
 
@@ -76,5 +77,11 @@ When a list of properties is displayed for an object (example for a mesh below),
 ![camera tools](/img/overviews/debuglayer/cameratools.jpg)
 
 * Make the selected camera the active camera
+
+### Sounds
+
+![sound tools](/img/overviews/debuglayer/soundtools.jpg)
+
+* Play the selected sound
 
 
