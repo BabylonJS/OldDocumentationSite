@@ -68,6 +68,11 @@
           "abstract": "With babylon.js, you can easily know which object has been picked when the user clic anywhere on the scene."
         },
         {
+          "title": "Raycasts",
+          "filename": "Raycasts",
+          "abstract": "Throw a ray in your scene from any point and in any direction to detect objects."
+        },
+        {
           "title": "Particles",
           "filename": "Particles",
           "abstract": "Particles are often small sprites used to simulate hard-to-reproduce phenomena like fire, smoke, water, or abstract visual effects like magic glitter and faery dust."
@@ -114,11 +119,11 @@
       "name": "02_Mid_Level",
       "img": "img/tutorials/02.MidLevelTutorials.png",
       "desc": "Learn how to use cool things.",
-      "files": [        
+      "files": [
         {
           "title": "Position, Rotate, Translate and Spaces",
           "filename": "Position,_Rotate,_Translate_and_Spaces"
-        },        
+        },
         {
           "title": "Advanced Texturing",
           "filename": "Advanced_Texturing"
@@ -158,6 +163,10 @@
         {
           "title": "Highlight Layer",
           "filename": "Highlight_Layer"
+        },
+        {
+          "title": "Multi-Platform Compressed Textures",
+          "filename": "Multi-Platform_Compressed_Textures"
         }
       ]
     },
@@ -170,11 +179,11 @@
         {
           "title": "How to create a material for the materials library",
           "filename": "How_to_create_a_material_for_materialsLibrary"
-        }, 
+        },
         {
           "title": "How to create a procedural texture for the procedural textures library",
           "filename": "How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary"
-        },             
+        },
         {
           "title": "Adding Your Own Physics Engine Plugin to Babylon.js",
           "filename": "Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js"
@@ -280,10 +289,6 @@
           "filename": "Using_depth-of-field_and_other_lens_effects"
         },
         {
-          "title": "Using the Debug Layer",
-          "filename": "Using_the_Debug_Layer"
-        },
-        {
           "title": "Using the HDR Rendering Pipeline",
           "filename": "Using_the_HDR_Rendering_Pipeline"
         },
@@ -308,10 +313,13 @@
           "filename": "How_to_use_Reflection_probes"
         },
         {
+          "title": "How to use Facet Data",
+          "filename": "How_to_use_FacetData"
+        },
+        {
           "title": "Render Scene on a PNG",
           "filename": "Render_Scene_on_a_PNG"
-        }
-        ,
+        },
         {
           "title": "Using logarithmic depth buffer",
           "filename": "Using_logarithmic_depth_buffer"
@@ -380,7 +388,6 @@
           "title": "Realtime RTS game development series with Babylon.js",
           "filename": "RTS_game_development_series"
         }
-
       ]
     }
   ],
@@ -489,10 +496,10 @@
       "img": "img/extensions/BabylonHx/babylonhx.png",
       "desc": "A cross-platform 3D engine",
       "files": [
-          {
-              "title": "Introduction",
-              "filename": "introduction_babylonhx"
-          }
+        {
+          "title": "Introduction",
+          "filename": "introduction_babylonhx"
+        }
       ]
     },
     {
@@ -540,6 +547,10 @@
         {
           "title": "Grid",
           "filename": "Grid"
+        },
+        {
+          "title": "Shadow Only",
+          "filename": "ShadowOnly"
         }
       ]
     },
@@ -608,38 +619,6 @@
       ]
     },
     {
-      "title": "bGUI",
-      "name": "bGUI",
-      "img": "img/extensions/bGUI.png",
-      "desc": "Learn how to use bGUI.",
-      "files": [
-        {
-          "title": "bGUI",
-          "filename": "bGUI"
-        },
-        {
-          "title": "GUIGroup",
-          "filename": "GUIGroup"
-        },
-        {
-          "title": "GUIObject",
-          "filename": "GUIObject"
-        },
-        {
-          "title": "GUIPanel",
-          "filename": "GUIPanel"
-        },
-        {
-          "title": "GUISystem",
-          "filename": "GUISystem"
-        },
-        {
-          "title": "GUIText",
-          "filename": "GUIText"
-        }
-      ]
-    },
-    {
       "title": "Tree Generators",
       "name": "Tree_Generators",
       "img": "img/tutorials/trees.png",
@@ -658,7 +637,7 @@
           "filename": "Quick_Tree_Generator"
         }
       ]
-    },        
+    },
     {
       "title": "Editor",
       "name": "Editor",
@@ -674,28 +653,28 @@
           "filename": "Getting_Started"
         },
         {
-            "title": "Managing Animations",
-            "filename": "Managing_Animations"
+          "title": "Managing Animations",
+          "filename": "Managing_Animations"
         },
         {
-            "title": "Creating Cinematic",
-            "filename": "Creating_Cinematic"
+          "title": "Creating Cinematic",
+          "filename": "Creating_Cinematic"
         },
         {
-            "title": "Creating Particle Systems",
-            "filename": "Creating_Particle_Systems"
+          "title": "Creating Particle Systems",
+          "filename": "Creating_Particle_Systems"
         },
         {
-            "title": "Creating Materials",
-            "filename": "Creating_Materials"
+          "title": "Creating Materials",
+          "filename": "Creating_Materials"
         },
         {
-            "title": "Managing Materials",
-            "filename": "Managing_Materials"
+          "title": "Managing Materials",
+          "filename": "Managing_Materials"
         },
         {
-            "title": "Managing Lens Flare Systems",
-            "filename": "Managin_Lens_Flare_Systems"
+          "title": "Managing Lens Flare Systems",
+          "filename": "Managin_Lens_Flare_Systems"
         },
         {
           "title": "Using the Actions Builder",
@@ -818,7 +797,7 @@
           "filename": "Documentation_Category_Map"
         }
       ]
-    }, 
+    },
     {
       "title": "Standard",
       "name": "Standard",
@@ -844,6 +823,14 @@
         {
           "title": "Handling Babylon.js events with observables",
           "filename": "Observables"
+        },
+        {
+          "title": "WebGL2 support",
+          "filename": "WebGL2"
+        },
+        {
+          "title": "Using the WebVR Camera",
+          "filename": "WebVR_Camera"
         }
       ]
     },
@@ -874,94 +861,144 @@
           "filename": "Canvas2D_Home"
         },
         {
-           "title": "Canvas 2D overview and architecture",
-           "filename": "Canvas2D_Overview_Architecture"
+          "title": "Canvas 2D overview and architecture",
+          "filename": "Canvas2D_Overview_Architecture"
         },
         {
-           "title": "Canvas 2D Type",
-           "filename": "Canvas2D_Canvas2D_Type",
-           "hidden": true 
+          "title": "Canvas 2D Type",
+          "filename": "Canvas2D_Canvas2D_Type",
+          "hidden": true
         },
         {
-           "title": "How visibility works",
-           "filename": "Canvas2D_Visibility",
-           "hidden": true 
+          "title": "Canvas 2D Class Diagram",
+          "filename": "Canvas2D_ClassDiagram",
+          "hidden": true
         },
         {
-           "title": "Z-Order overview",
-           "filename": "Canvas2D_ZOrder",
-           "hidden": true 
+          "title": "Canvas 2D Primitive Collision Engine",
+          "filename": "Canvas2D_PCM",
+          "hidden": true
         },
         {
-           "title": "Using the Origin of a Primitive",
-           "filename": "Canvas2D_Origin",
-           "hidden": true 
+          "title": "Canvas 2D Design Size",
+          "filename": "Canvas2D_DesignSize",
+          "hidden": true
         },
         {
-           "title": "About transformation and hierarchy",
-           "filename": "Canvas2D_PosTransHierarchy",
-           "hidden": true 
+          "title": "WireFrame2D Primitive",
+          "filename": "Canvas2D_WireFrame2D",
+          "hidden": true
         },
         {
-           "title": "About Layout Engine, Alignment and Margin",
-           "filename": "Canvas2D_Prim_Positioning",
-           "hidden": true 
+          "title": "How visibility works",
+          "filename": "Canvas2D_Visibility",
+          "hidden": true
         },
         {
-           "title": "Interacting with Primitives",
-           "filename": "Canvas2D_Interaction",
-           "hidden": true 
+          "title": "Z-Order overview",
+          "filename": "Canvas2D_ZOrder",
+          "hidden": true
         },
         {
-           "title": "Shape2D based Primitive types",
-           "filename": "Canvas2D_Shape2D",
-           "hidden": true 
+          "title": "Using the Origin of a Primitive",
+          "filename": "Canvas2D_Origin",
+          "hidden": true
         },
         {
-           "title": "Brushes Overview",
-           "filename": "Canvas2D_Brushes",
-           "hidden": true 
+          "title": "About transformation and hierarchy",
+          "filename": "Canvas2D_PosTransHierarchy",
+          "hidden": true
         },
         {
-           "title": "Base Primitive type overview",
-           "filename": "Canvas2D_Prim2DBase",
-           "hidden": true 
+          "title": "About Layout Engine, Alignment and Margin",
+          "filename": "Canvas2D_Prim_Positioning",
+          "hidden": true
         },
         {
-           "title": "Group2D type overview",
-           "filename": "Canvas2D_Group2D",
-           "hidden": true 
+          "title": "Interacting with Primitives",
+          "filename": "Canvas2D_Interaction",
+          "hidden": true
         },
         {
-           "title": "Text2D Primitive overview",
-           "filename": "Canvas2D_Text2D",
-           "hidden": true 
+          "title": "Shape2D based Primitive types",
+          "filename": "Canvas2D_Shape2D",
+          "hidden": true
         },
         {
-           "title": "Sprite2D Primitive overview",
-           "filename": "Canvas2D_Sprite2D",
-           "hidden": true 
+          "title": "Brushes Overview",
+          "filename": "Canvas2D_Brushes",
+          "hidden": true
         },
         {
-           "title": "Rectangle2D Shape overview",
-           "filename": "Canvas2D_Rectangle2D",
-           "hidden": true 
+          "title": "Base Primitive type overview",
+          "filename": "Canvas2D_Prim2DBase",
+          "hidden": true
         },
         {
-           "title": "Ellipse2D Shape overview",
-           "filename": "Canvas2D_Ellipse2D",
-           "hidden": true 
+          "title": "Group2D type overview",
+          "filename": "Canvas2D_Group2D",
+          "hidden": true
         },
         {
-           "title": "Lines2D Shape overview",
-           "filename": "Canvas2D_Lines2D",
-           "hidden": true 
+          "title": "Text2D Primitive overview",
+          "filename": "Canvas2D_Text2D",
+          "hidden": true
+        },
+        {
+          "title": "Sprite2D Primitive overview",
+          "filename": "Canvas2D_Sprite2D",
+          "hidden": true
+        },
+        {
+          "title": "Atlas Picture Overview",
+          "filename": "Canvas2D_AtlasPicture",
+          "hidden": true
+        },
+        {
+          "title": "Rectangle2D Shape overview",
+          "filename": "Canvas2D_Rectangle2D",
+          "hidden": true
+        },
+        {
+          "title": "Canvas2D Rendering",
+          "filename": "Canvas2D_Rendering",
+          "hidden": true
+        },
+        {
+          "title": "Ellipse2D Shape overview",
+          "filename": "Canvas2D_Ellipse2D",
+          "hidden": true
+        },
+        {
+          "title": "Lines2D Shape overview",
+          "filename": "Canvas2D_Lines2D",
+          "hidden": true
+        }
+      ]
+    },
+    {
+      "title": "Inspector",
+      "name": "Inspector",
+      "img": "img/tutorials/All.png",
+      "desc": "Inspector description",
+      "files": [
+        {
+          "title": "Using the debug layer",
+          "filename": "Using_the_debuglayer"
+        },
+        {
+          "title": "Debug Layer features",
+          "filename": "Debug_layer_features"
+        },
+        {
+          "title": "Customize the debug layer",
+          "filename": "Customize_debug_layer"
         }
       ]
     }
   ],
   "generals": [
-     {
+    {
       "title": "Essentials",
       "name": "Essentials",
       "img": "img/tutorials/All.png",
@@ -1002,7 +1039,7 @@
         {
           "title": "Creating the Mini-fied Version",
           "filename": "Creating_the_Mini-fied_Version"
-        },        
+        },
         {
           "title": "Framework versions",
           "filename": "Framework_versions"
@@ -1020,7 +1057,6 @@
           "filename": "Roadmap"
         }
       ]
-    }   
+    }
   ]
-
 }

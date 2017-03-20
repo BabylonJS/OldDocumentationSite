@@ -7,9 +7,9 @@ include ../includes/header
         #versionsList
             for version in versions
                 if version == currentVersion
-                    a(href='./'+version)#version.selectedVersion= 'v'+version
+                    a(href='/classes/'+version)#version.selectedVersion= 'v'+version
                 else
-                    a(href='./'+version)#version= 'v'+version
+                    a(href='/classes/'+version)#version= 'v'+version
         .sorts
             span#orderByTags.order Tags
             span#orderByAlpha.order A - Z

@@ -146,10 +146,13 @@ bone.setYawPitchRoll(yaw, pitch, roll, BABYLON.Space.WORLD, mesh);
 ```
 [demo](http://www.babylonjs-playground.com/#I6RJJ#56)
 ```
-bone.setRotation(quat, BABYLON.Space.WORLD, mesh);
+bone.setRotation(rotation, BABYLON.Space.WORLD, mesh);
 ```
-[demo](http://www.babylonjs-playground.com/#I6RJJ#58)
-
+[demo](http://www.babylonjs-playground.com/#I6RJJ#60)
+```
+bone.setRotationQuaternion(quat, BABYLON.Space.WORLD, mesh);
+```
+[demo](http://www.babylonjs-playground.com/#I6RJJ#61)
 ```
 bone.setRotationMatrix(rotMat, BABYLON.Space.WORLD, mesh);
 ```
@@ -221,7 +224,7 @@ bone.setScale(scaleX, scaleY, scaleZ);
 ```
 setScale is used in this [demo](http://www.babylonjs-playground.com/#1EVNNB#10) every frame, because the character's animation resets the scale of the bones.
 
-The last parameter of scale and setScale is scaleChildren.  Set scaleChildren to true if you want the scale to be affect all the children / descendants of the bone.
+The last parameter of scale and setScale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone.
 
 [demo](http://www.babylonjs-playground.com/#1BZJVJ#30)
 

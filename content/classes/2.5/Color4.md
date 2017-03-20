@@ -23,6 +23,7 @@ Creates a new RGBA [Color4](/classes/2.5/Color4)
  | r | number |     The red value (0&lt;r&lt;1)
  | g | number |     The green value (0&lt;g&lt;1)
  | b | number |     The blue value (0&lt;b&lt;1)
+ | a | number |     The alpha value (0&lt;a&lt;1)
 ## Members
 
 ### r : number

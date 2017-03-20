@@ -8,7 +8,10 @@ For instance, you can specify that when the user clicks (or touches) a mesh, an 
 
 # How to use it
 To use actions, you have to attach an `BABYLON.ActionManager` to a mesh or to your scene:
-`mesh.actionManager = new BABYLON.ActionManager(scene);`
+
+```javascript
+mesh.actionManager = new BABYLON.ActionManager(scene);
+```
 
 Once the ActionManager is created, you can start registering actions:
 
@@ -21,8 +24,7 @@ For instance this action will animate the `light.diffuse` property to black in 1
 You can also chain actions:
 
 ```javascript
-mesh.actionManager.registerAction(new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, light, "diffuse", BABYLON.Color3.Black(), 1000))
-        .then(new BABYLON.SetValueAction(BABYLON.ActionManager.NothingTrigger, mesh.material, "wireframe", false));
+mesh.actionManager.registerAction(new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, light, "diffuse", BABYLON.Color3.Black(), 1000)).then(new BABYLON.SetValueAction(BABYLON.ActionManager.NothingTrigger, mesh.material, "wireframe", false));
 ```
 
 In this case, the first click will animate the `light.diffuse` property, the second click will set `mesh.material` to false. The third one will start again and will animate the `light.diffuse` property and so on...
@@ -45,6 +47,7 @@ The following list defines triggers associated with meshes:
 
 * `BABYLON.ActionManager.NothingTrigger`: Never raised. Used for sub-actions with `action.then` function.
 * `BABYLON.ActionManager.OnPickTrigger`: Raised when the user touches/clicks on a mesh.
+* `BABYLON.ActionManager.OnDoublePickTrigger`: Raised when the user double touches/clicks on a mesh.
 * `BABYLON.ActionManager.OnPickDownTrigger`: Raised when the user touches/clicks down on a mesh
 * `BABYLON.ActionManager.OnPickUpTrigger`: Raised when the user touches/clicks up on a mesh.
 * `BABYLON.ActionManager.OnPickOutTrigger`: Raised when the user touches/clicks down on a mesh and then move off-of the mesh.
@@ -63,22 +66,13 @@ The following list defines triggers associated with meshes:
 For intersection triggers, you have to specify the "other" mesh with the following code:
 
 ```javascript
-mesh.actionManager.registerAction(
-
-new BABYLON.SetValueAction({ trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger, parameter: otherMesh }, 
-
-mesh, "scaling", new BABYLON.Vector3(1.2, 1.2, 1.2)));
+mesh.actionManager.registerAction(new BABYLON.SetValueAction({ trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger, parameter: otherMesh }, mesh, "scaling", new BABYLON.Vector3(1.2, 1.2, 1.2)));
 ```
 
 You can as well define if you want to use precise intersections:
 
 ```javascript
-mesh.actionManager.registerAction(
-
-new BABYLON.SetValueAction({ trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger, parameter: { mesh:otherMesh, usePreciseIntersection: true} }, 
-
-mesh, "scaling", new BABYLON.Vector3(1.2, 1.2, 1.2)));
-
+mesh.actionManager.registerAction(new BABYLON.SetValueAction({ trigger: BABYLON.ActionManager.OnIntersectionEnterTrigger, parameter: { mesh:otherMesh, usePreciseIntersection: true} }, mesh, "scaling", new BABYLON.Vector3(1.2, 1.2, 1.2)));
 ```
 
 The following list defines triggers associated with scene:
@@ -95,11 +89,10 @@ scene.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionM
        ...
    }
 }));
-
 scene.actionManager.registerAction(new BABYLON.ExecuteCodeAction({ trigger: BABYLON.ActionManager.OnKeyUpTrigger, parameter: "r" },
   function () {
             ...
-  }));
+}));
 ```
 
 # Actions
@@ -178,25 +171,31 @@ There are three kinds of conditions:
 So basically, let's imagine you want to almost hide a mesh when the user touches it.
 First of all you have to add a `BABYLON.ActionManager` on it:
 
-`mesh.actionManager = new BABYLON.ActionManager(scene);`
+```javascript
+mesh.actionManager = new BABYLON.ActionManager(scene);
+```
 
 Then you can create an action that will be associated with the `BABYLON.ActionManager.OnPickTrigger` trigger. This action will interpolate the ```mesh.visibility``` property to 0.2:
 
-`var action = new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, mesh, "visibility", 0.2, 1000);`
+```javascript
+var action = new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, mesh, "visibility", 0.2, 1000);
+```
 
 Then add this action to the mesh:
 
-`mesh.actionManager.registerAction(action);`
+```javascript
+mesh.actionManager.registerAction(action);
+```
 
 And you're done! Easy, right?
 
 You can also chain another action to restore the `mesh.visibility` property to default value:
 
-`var action = new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, mesh, "visibility", 0.2, 1000);`
-
-`var action2 = new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, mesh, "visibility", 1.0, 1000);`
-
-`mesh.actionManager.registerAction(action).then(action2);`
+```javascript
+var action = new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, mesh, "visibility", 0.2, 1000);
+var action2 = new BABYLON.InterpolateValueAction(BABYLON.ActionManager.OnPickTrigger, mesh, "visibility", 1.0, 1000);
+mesh.actionManager.registerAction(action).then(action2);
+```
 
 In this case, the first click will hide the button, the following click will restore it, and so on...
 

@@ -8,9 +8,13 @@ nav.nav-main
 
     .banner
         .menu
+        
+            .do-not-hover.item(class={homeClassMobile: currentUrl === '/classes/class'})
+                a(href='http://www.babylonjs.com')
+                    | Babylon.js                    
             .do-not-hover#home(class={homeClassMobile: currentUrl === '/classes/class'})
                 a(href='/')
-                    | Babylon.js | DOCUMENTATION
+                    | DOCUMENTATION
             #whatsnew.item(class={active: currentUrl === '/whats-new'})
                 a(href='/whats-new')
                     | What's new

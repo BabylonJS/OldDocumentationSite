@@ -14,7 +14,7 @@ A spot light is defined by a position, a direction, an angle and an exponent.
 
 These values define a cone of light starting from the position toward the direction.
 
-A tutorial about lights can be found here
+A tutorial about lights can be found here : https://doc.babylonjs.com/tutorials/lights
 
 ## Constructor
 

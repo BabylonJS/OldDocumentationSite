@@ -184,18 +184,18 @@
       }
     }
 
+    .Inspector {
+      border-left: 4px solid #E74C3C;
+      .fileNumber{
+        color: #E74C3C;
+      }
+    }
+
     .Videos, .Canvas2D, .Unity, .POV{
       border-left: 4px solid rgb(122, 79, 193);
 
       .fileNumber{
         color: rgb(122, 79, 193);
-      }
-    }
-
-    .bGUI{
-      border-left: 4px solid rgb(60, 174, 222);
-      .fileNumber{
-        color: rgb(60, 174, 222);
       }
     }
 

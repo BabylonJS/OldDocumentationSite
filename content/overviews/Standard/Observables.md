@@ -19,6 +19,7 @@ You have the following method/properties:
 * removeCallback(): same as above but giving the callback instead of the Observer instance
 * notifyObservers(): used to notify all the registered Observers (with a little special feature I'll detail at the end of this post)
 * hasObserver: a property that returns true if at least one Observer is registered
+* hasSpecificMask(mask): a function that returns true if at least one Observer is registered with this mask
 * clear() to remove all Observers
 * clone() to simply clone the object but not the registered Observers.
 
