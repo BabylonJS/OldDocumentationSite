@@ -128,7 +128,7 @@ Shadow generators compare the depth of every pixel with the depth of occluders (
 By default the projection matrix of a light use the minZ and maxZ of the main camera. But you may want to control it in order to get a more precise shadow map by reducing the distance between minZ and maxZ. To do so yu can set `light.shadowMinZ` and `light.shadowMaxZ`.
 
 Here is a complete example:
-http://www.babylonjs-playground.com/#1CXNXC#3
+http://www.babylonjs-playground.com/#1CXNXC#4
 
 We did the following change to get a nice soft self-shadowing rendering:
 - Reduced the distance between MinZ and MaxZ
