@@ -12,6 +12,8 @@ There is more than one format for compressed textures.  Due to the low level imp
 ## The Solution
 Starting with Babylon.js v3.0, the compressed texture formats supported by a browser / device can be [detected](http://renderingpipeline.com/webgl-extension-viewer/).  This is done when ```var engine = new BABLYON.Engine(...);``` is encountered. So now your engine instance knows which compressed formats could be used here.  That does not solve that different devices will report different results though.
 
+You can also use this [playground](http://www.babylonjs-playground.com/#1SCH7H#3) to test which format is supported on your devices.
+
 There is no getting around the fact that you need to provide multiple versions of each texture in different formats(more on that later).  The only way of doing that involves having different files for each of the variants obviously, but the naming structure must be formalized in order to programmatically substitute for the image format file described in a .babylon file.  The image format file of each texture still needs to be on the server as well, in cases when it needs to be used.
 
 ### Khronos Texture Container Format,  [.KTX](https://www.khronos.org/opengles/sdk/tools/KTX/) files
