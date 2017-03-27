@@ -50,7 +50,7 @@ If you set this one to _true_, Variance shadow maps will be disabled. This filte
 shadowGenerator.useExponentialShadowMap = true;
 ```
 It is _true_ by default, because it is useful to decrease the aliasing of the shadow.  But if you want to reduce computation time, feel free to change it.
-You can also control how the exponential shadow map scales depth values by changing the `shadowGenerator.depthScale`. By default the value is ` but you may want to reduce it if the depth scale of your world (the distance between minZ and MaxZ) is small.
+You can also control how the exponential shadow map scales depth values by changing the `shadowGenerator.depthScale`. By default the value is 30.0 but you may want to change it if the depth scale of your world (the distance between minZ and MaxZ) is small.
 
 ### Blur exponential shadow map 
 ```javascript
@@ -93,7 +93,8 @@ Only point, directional and spot lights can cast shadows.
 
 ### Point lights
 Point lights use cubemaps rendering so please be cautious when enabling them as this could lead to some performance issues.
-You can also visit the [point light shadow map playground scene](http://www.babylonjs-playground.com/#LYCSQ#12).
+You can also visit the [point light shadow map playground scene](http://www.babylonjs-playground.com/#LYCSQ#12)
+
 Furthermore BlurExponentialShadowMap is not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
 
 ### Spot lights
@@ -127,7 +128,7 @@ Shadow generators compare the depth of every pixel with the depth of occluders (
 By default the projection matrix of a light use the minZ and maxZ of the main camera. But you may want to control it in order to get a more precise shadow map by reducing the distance between minZ and maxZ. To do so yu can set `light.shadowMinZ` and `light.shadowMaxZ`.
 
 Here is a complete example:
-http://www.babylonjs-playground.com/debug.html#1CXNXC#1
+http://www.babylonjs-playground.com/#1CXNXC#3
 
 We did the following change to get a nice soft self-shadowing rendering:
 - Reduced the distance between MinZ and MaxZ
