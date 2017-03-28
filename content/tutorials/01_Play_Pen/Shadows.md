@@ -124,6 +124,9 @@ shadowGenerator.bias = 0.01;
 ```
 Shadow generators compare the depth of every pixel with the depth of occluders (shadow casters) seen from the light point of view. As we are dealing with low precision textures (when supported Babylon.js will use float textures but low end devices only support int textures), you may want to boost the depth of occluders to facilitate self shadowing (An object casting shadows on itself).
 
+### Back face rendering
+You can improve self shadowing issues by setting `shadowGenerator.forceBackFacesOnly` to true. This will force the shadow geneator to render back faces of your mesh to the shadow map. This can clearly improve the overall precision and reduce the need for a bias.
+
 ### Improving the projection matrix
 By default the projection matrix of a light use the minZ and maxZ of the main camera. But you may want to control it in order to get a more precise shadow map by reducing the distance between minZ and maxZ. To do so yu can set `light.shadowMinZ` and `light.shadowMaxZ`.
 
