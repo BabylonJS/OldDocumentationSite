@@ -9,7 +9,7 @@
         var query = getQueryVariable('q');
         var strQuery = decodeURIComponent(query).split('+').join(' ');
         var page = +(getQueryVariable('page')) || 0;
-        var max = +(getQueryVariable('max')) || 25;
+        var max = +(getQueryVariable('max')) || 24; // Weird bug with 25.
 
         if (!query) {
             //$('.searchplayground-content').append('<div class="searchHeader"><h2>No Query Found.</h2></div>');
