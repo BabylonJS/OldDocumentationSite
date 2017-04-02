@@ -2,10 +2,10 @@
 
 ![idpic1](images/radialCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")
 
-The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, they will be placed alternatively.
+The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, then they will be placed alternatively.
 
 ### Example
-Example of a RadialCloner (see Image) with 24 clones (12 cubes "cube1" and "cube2") distributed with a radius of 6 units in the plane XZ which is default:
+Example of a RadialCloner (see Image) with 24 clones (12 cubes "cube1"/"cube2") distributed aligned with a radius of 6 units in the plane XZ:
 
 `var rc = new BABYLONX.RadialCloner([cube1, cube2], demo.scene, {count:24,radius:6});`
 
@@ -13,10 +13,9 @@ Example of a RadialCloner (see Image) with 24 clones (12 cubes "cube1" and "cube
 `BABYLONX.RadialCloner( meshes, scene[, {optional parameters}])` 
 
 Mandatory Parameter | Description 
--------------------|-------------
+--------------------|------------
 meshes| array of meshes to be cloned
 scene|BABYLON scene
-
 
 Optional Parameter | Description | Default Value
 -------------------|-------------|--------------
@@ -28,3 +27,15 @@ endangle| angle in degrees | 360
 offset| angle in degrees| 0
 useInstances| flag if clones should be technical "clones" or "instances" | true
 plane | object {x,y,z} describing the cloners orientation |{ x: 1, y: 0, z: 1 }
+
+Properties | Description 
+------------|-------------
+count |@see Optional Parameter
+radius| @see Optional Parameter
+align| @see Optional Parameter
+startangle| @see Optional Parameter
+endangle| @see Optional Parameter
+offset| @see Optional Parameter
+root| READONLY, getting an invisibe mesh representing the anchor of the cloner (root node)
+
+
