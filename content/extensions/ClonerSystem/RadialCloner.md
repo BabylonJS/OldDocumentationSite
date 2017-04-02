@@ -2,7 +2,7 @@
 
 ![idpic1](images/radialCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")
 
-The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, then the clones will be placed alternatively. Several parameters controls the position, angle, type and orientation of the clones. The RadialCloner returns an object with one important property: **root**. It is an invisible mesh, the anchor and parent of all generated clones. Transforming this **root** (position/scale/rotation) transforms all underlying clones (childs) at once. The given input meshes will be made inactive during construction, so after construction there will be only one of two possible mesh types: **clones** or **instances**.  
+The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, then the clones will be placed alternatively. Several parameters controls the position, angle, type and orientation of the clones. The RadialCloner returns an object with one important property: **root**. It is an invisible mesh, the anchor and parent of all generated clones. Transforming this **root** (position/scale/rotation) transforms all underlying clones (childs) at once. Most of the input parameters are also available during runtime as properties and are very suitable for animation (tweening). The given input meshes will be made inactive during construction, so after construction there will be only one of two possible mesh types: **clones** or **instances**.  
 
 ### Example
 Example of a RadialCloner with a count of 24 clones (12 cubes cube1/cube2) distributed aligned with a radius of 6 units in the plane XZ:
@@ -13,6 +13,15 @@ Transforming of all clones can be done as you would do with a single mesh:
 
 `rc.root.scaling.y = 2;`
 `rc.root.rotation.x = Math.PI / 4;`
+
+Animation can be done via properties:
+```
+   var frame = 0;
+   scene.registerBeforeRender(function () {
+    frame++;  
+    rc.startangle = 90+Math.sin(frame * .01) *90;
+   });
+```
 
 ### Parameters
 `BABYLONX.RadialCloner( meshes, scene[, {optional parameters}])` 
@@ -25,7 +34,7 @@ scene|BABYLON scene
 Optional Parameter | Description | Default Value
 -------------------|-------------|--------------
 count | the nuber of clones | 3
-radius| radius in units | 3
+radius| radius in world units | 3
 align| flag if clones are aligned against the middle position of the cloner |true
 startangle| angle in degrees | 0
 endangle| angle in degrees | 360
