@@ -4,11 +4,13 @@
 
 The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, they will be placed alternatively.
 
+### Example
 Example of a RadialCloner (see Image) with 24 clones (12 cubes "cube1" and "cube2") distributed with a radius of 6 units in the plane XZ which is default:
 
 `var rc = new BABYLONX.RadialCloner([cube1, cube2], demo.scene, {count:24,radius:6});`
 
-The RadialCloner can be constructed with two mandatory parameters (an array of meshes to clone and the BABYLON scene) and several optional parameters:
+### Parameters
+`BABYLONX.RadialCloner( meshes, scene[, {optional parameters}])` 
 
 Mandatory Parameter | Description 
 -------------------|-------------
