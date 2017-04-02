@@ -5,9 +5,14 @@
 The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, then the clones will be placed alternatively. Several parameters controls the position, angle, type and orientation of the clones. The RadialCloner returns an object with one important property: **root**. It is an invisible mesh, the anchor and parent of all generated clones. Transforming this **root** (position/scale/rotation) transforms all underlying clones (childs) at once. The given input meshes will be made inactive during construction, so after construction there will be only one of two possible mesh types: **clones** or **instances**.  
 
 ### Example
-Example of a RadialCloner (see Image) with **24** clones (12 cubes "cube1"/"cube2") distributed **aligned** with a **radius** of 6 units in the **plane** XZ:
+Example of a RadialCloner with **24** clones (12 cubes "cube1"/"cube2") distributed **aligned** with a **radius** of 6 units in the **plane** XZ:
 
 `var rc = new BABYLONX.RadialCloner([cube1, cube2], demo.scene, {count:24,radius:6});`
+
+Transforming of all clones can be done as you would do with a single mesh:
+
+`rc.root.scaling.y = 2;`
+`rc.root.rotation.x = Math.PI / 4;`
 
 ### Parameters
 `BABYLONX.RadialCloner( meshes, scene[, {optional parameters}])` 
