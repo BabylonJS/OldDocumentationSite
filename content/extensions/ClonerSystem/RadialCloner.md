@@ -1,6 +1,6 @@
 # RadialCloner
 
-![idpic1](images/radialCloner.jpg "RadialCloner")
+![idpic1](images/radialCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")
 
 The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, they will be placed alternatively.
 
