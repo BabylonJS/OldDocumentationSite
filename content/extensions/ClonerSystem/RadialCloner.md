@@ -28,7 +28,7 @@ Animation can be done via properties:
 
 Mandatory Parameter | Description 
 --------------------|------------
-meshes| array of meshes to be cloned, will be made inactive after construction
+meshes| array of meshes to be cloned, meshes will be made inactive after construction
 scene|BABYLON scene
 
 Optional Parameter | Description | Default Value
