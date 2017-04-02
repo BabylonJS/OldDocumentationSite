@@ -2,7 +2,7 @@
 
 ![idpic1](images/radialCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")
 
-The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, then they will be placed alternatively. Several parameters controls the position, angle, type and orientation of the clones. The RadialCloner returns an object with one important property: **root**. It is an invisible mesh, the anchor and parent of all generated clones. The given input meshes will be made inactive during construction, so after construction there will be only one of two posiible mesh types: **clones** or **instances**.  
+The RadialCloner distributes given meshes in a radial manner. If more meshes are provided, then the clones will be placed alternatively. Several parameters controls the position, angle, type and orientation of the clones. The RadialCloner returns an object with one important property: **root**. It is an invisible mesh, the anchor and parent of all generated clones. Transforming this **root** (position/scale/rotation) transforms all underlying clones (childs) at once. The given input meshes will be made inactive during construction, so after construction there will be only one of two possible mesh types: **clones** or **instances**.  
 
 ### Example
 Example of a RadialCloner (see Image) with **24** clones (12 cubes "cube1"/"cube2") distributed **aligned** with a **radius** of 6 units in the **plane** XZ:
