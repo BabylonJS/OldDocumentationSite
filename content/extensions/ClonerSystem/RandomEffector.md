@@ -2,7 +2,7 @@
 
 Each Cloner can have a set of Effectors assigned. At this time of writing, there is only one Effector available, the RandomEffector.
 
-So what does an Effector generally? It influences properties of the clones cloned by a Cloner. The RandomEffector can influence all transfomation properties (scale/rotation/position) with repeatable random values. Different random sequences can be achieved with a different **seed** value. The randomEffector can serve more than one cloner but it has ony one property to control the strength of the random values. Therefore each cloner has a property **sensitivity** to accept either all or only a portion of the cloners strength. 
+So what does an Effector generally? It influences properties of the clones cloned by a Cloner. The RandomEffector can influence all transfomation properties (scale/rotation/position) with repeatable random values. Different random sequences can be achieved with a different **seed** value. The randomEffector can serve more than one cloner but it has only one property to control the strength of the random values. Therefore each cloner has a property **sensitivity** to accept either all or only a portion of the cloners strength. 
 
 ## Example
 
