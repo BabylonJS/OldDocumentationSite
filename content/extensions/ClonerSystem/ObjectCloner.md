@@ -36,3 +36,8 @@ useInstances| flag if clones should be technical "clones" or "instances" | true
 Properties | Description 
 ------------|-------------
 effectors| READONLY, gets a list of Effectors assigned to this Cloner
+
+Methods | Description 
+------------|-------------
+addEffector(effector, sensitivity)| adds an effector to this Cloner and sets the sensitivity (1=full sensitivity, 0=no sensitivity ==ignore effector)
+setEnabled(flag)|set the cloner's root node to the state of the flag (true=enabled) 
