@@ -1,7 +1,7 @@
 
 # LinearCloner
 
-![idpic1](images/radialCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")
+![idpic1](images/linearCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")
 
 The LinearCloner distributes given meshes in a linear manner. If more than one meshes are provided, then the clones will be placed alternatively, clones are chained beginning from the first clone to the last clone. Several parameters controls the position and orientation of the clones. The LinearCloner returns an object with one important property: **root**. It is an invisible mesh, it's the anchor, center and parent of the first generated clone.  Transforming this **root** (position/scale/rotation) affects all underlying clones (childs) at once. Most of the input parameters are also available as properties and they are very suitable for animation (tweening). The given input meshes will be made inactive during construction, so after construction there will be only one of two possible mesh types: BABYLON **clones** or **instances**.  
 *Note:* Input meshes can be BABYLON meshes but other Cloners as well!
