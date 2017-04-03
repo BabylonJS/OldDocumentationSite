@@ -1,15 +1,15 @@
 
 # LinearCloner
 
-![idpic1](images/linearCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")
+![idpic1](images/linearCloner.jpg "LinearCloner's from left to right: scaled, unscaled clones")
 
 The LinearCloner distributes given meshes in a linear manner. If more than one meshes are provided, then the clones will be placed alternatively, clones are chained beginning from the first clone to the last clone. Several parameters controls the position and orientation of the clones. The LinearCloner returns an object with one important property: **root**. It is an invisible mesh, it's the anchor, center and parent of the first generated clone.  Transforming this **root** (position/scale/rotation) affects all underlying clones (childs) at once. Most of the input parameters are also available as properties and they are very suitable for animation (tweening). The given input meshes will be made inactive during construction, so after construction there will be only one of two possible mesh types: BABYLON **clones** or **instances**.  
 *Note:* Input meshes can be BABYLON meshes but other Cloners as well!
 
 ### Example
-Example of a LinearCloner with a count of 24 clones (12 cubes cube1/cube2) distributed aligned with a radius of 6 units in the plane XZ:
+Example of a LinearCloner with a count of 10 clones (5 x cube1, 5 x cube2) with an increment vector of {x:2,y:0,z:-1} :
 
-`var rc = new BABYLONX.RadialCloner([cube1, cube2], demo.scene, {count:24,radius:6});`
+`var lc = new BABYLONX.LinearCloner([cube1, cube2], demo.scene, { iModeStep:true,count:10,P:{x:2,y:0,z:-1} });`
 
 Transforming of all clones can be done as you would do with a single mesh:
 
