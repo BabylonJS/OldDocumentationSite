@@ -639,6 +639,34 @@
       ]
     },
     {
+      "title": "Cloner System",
+      "name": "ClonerSystem",
+      "img": "images/matrixCloner.jpg",
+      "desc": "Cloning meshes systematically",
+      "files": [
+        {
+          "title": "Radial Cloner",
+          "filename": "RadialCloner"
+        },
+        {
+          "title": "Linear Cloner",
+          "filename": "LinearCloner"
+        },
+        {
+          "title": "Matrix Cloner",
+          "filename": "MatrixCloner"
+        }
+        {
+          "title": "Object Cloner",
+          "filename": "ObjectCloner"
+        }
+        {
+          "title": "Random Effector",
+          "filename": "RandomEffector"
+        }
+      ]
+    },    
+    {
       "title": "Editor",
       "name": "Editor",
       "img": "img/extensions/editor.png",
