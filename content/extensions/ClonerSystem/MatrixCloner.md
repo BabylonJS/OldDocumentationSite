@@ -40,3 +40,8 @@ count |READONLY, total number of clones after initialization
 size| @see Optional Parameter
 mcount| @see Optional Parameter
 effectors| READONLY, gets a list of Effectors assigned to this Cloner
+
+Methods | Description 
+------------|-------------
+addEffector(effector, sensitivity)| adds an effector to this Cloner and sets the sensitivity (1=full sensitivity, 0=no sensitivity ==ignore effector)
+setEnabled(flag)|set the cloner's root node to the state of the flag (true=enabled) 
