@@ -49,4 +49,7 @@ offset| @see Optional Parameter
 root| READONLY, getting an invisibe mesh representing the anchor of the cloner (root node)
 effectors| READONLY, gets a list of Effectors assigned to this Cloner
 
-
+Methods | Description 
+------------|-------------
+addEffector(effector, sensitivity)| adds an effector to this Cloner and sets the sensitivity (1=full sensitivity, 0=no sensitivity ==ignore effector)
+setEnabled(flag)|set the cloner's root node to the state of the flag (true=enabled) 
