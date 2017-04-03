@@ -35,7 +35,7 @@ count | the nuber of clones | 3
 offset| offset in world units in the direction of the transform position vector | 0
 growth| weight factor for all transform parameters in percent/100  |1
 P| transform position vector | { x: 0, y: 2, z: 0 }
-S| scale transformation, u=uniform scaling (only x will be evaluated) | { x: 1, y: 1, z: 1, u:false }
+S| scale transformation| { x: 1, y: 1, z: 1}
 R| rotation values in degrees | { x: 0, y: 0, z: 0 }
 iModeRelative| interpolation mode, | false (absolute)
 useInstances| flag if clones should be technical "clones" or "instances" | true
@@ -47,7 +47,7 @@ count |@see Optional Parameter
 offset| @see Optional Parameter
 growth| @see Optional Parameter
 position| @see Optional Parameter P
-scale| scale transformation {x,y,z} (without uniform component)
+scale| @see Optional Parameter S
 rotation| @see Optional Parameter R
 rotation3|rotation values in radians {x,y,z}
 offset| @see Optional Parameter
