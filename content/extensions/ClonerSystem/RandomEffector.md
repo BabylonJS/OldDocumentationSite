@@ -14,4 +14,8 @@ In the following example a RandomEffector is created with a default seed value. 
 
 `reff.rotation = { x: 0, y: 180, z: 0 }; `
 
+`rc.addEffector(reff,1);`
+
+`reff.strength=1;`
+
 In this state, everything is prepared to influence the clone's y-rotation with random values in the range 0-180 degrees. With the function `reff.updateClients()` the clones will be updated. 
