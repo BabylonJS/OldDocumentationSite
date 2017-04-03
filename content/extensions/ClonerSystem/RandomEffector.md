@@ -4,7 +4,7 @@ Each Cloner can have a set of Effectors assigned. At this time of writing, there
 
 So what does an Effector generally? It influences properties of the clones cloned by a Cloner. The RandomEffector can influence all transfomation properties (scale/rotation/position) with repeatable random values. Different random sequences can be achieved with a different **seed** value. The randomEffector can serve more than one cloner but it has only one property to control the strength of the random values. Therefore each cloner has a property **sensitivity** to accept either all or only a portion of the cloners strength. 
 
-Note: the scaling transformation will be done in two different ways depending on the property **uniformScale**: if this property is set to true, only one random value will be used for all three scaling components (x,y,z). If set to false, each direction is scaled independently with an extra random value. 
+*Note:* the scaling transformation will be done in two different ways depending on the property **uniformScale**: if this property is set to true, only one random value will be used for all three scaling components (x,y,z) and the y/z componets of the **scale property** will be ignored. If set to false, each direction is scaled independently with an extra random value. 
 
 ## Example
 
@@ -34,7 +34,7 @@ seed | the seed value for generating different sequences of random values  | 42
 Properties | Description 
 ------------|-------------
 strength |sets the strength of the generator (range 0 to 1)
-uniformScale| this flag contols the scaling transformation: true => only one random number is used for 
+uniformScale| true => all scaling directions with one value, false independently scaling
 position| sets position numbers in the range 0 to {x:number,y:number,z:number}
 scale| sets  the scale numbers in the range 0 to {x:number,y:number,z:number} 
 rotation| sets  the rotation numbers in the range 0 to {x:number,y:number,z:number}
