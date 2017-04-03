@@ -16,9 +16,7 @@ Transforming of all clones can be done as you would do with a single mesh:
 `rc.root.rotation.x = Math.PI / 4;`
 
 Animation can be done via properties:
-```
-BABYLON.Animation.CreateAndStartAnimation('radanimation', rc, 'startangle', 30, 120, 0, 90);
-```
+`BABYLON.Animation.CreateAndStartAnimation('radanimation', rc, 'startangle', 30, 120, 0, 90);`
 
 ### Parameters
 `BABYLONX.RadialCloner( meshes, scene[, {optional parameters}])` 
