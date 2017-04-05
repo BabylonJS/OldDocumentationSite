@@ -29,8 +29,9 @@
         });
 
         $.ajax({
-            url: 'http://localhost:3000/js/toto.json',
-            type: "GET",
+            url: 'http://babylonjs-api2.azurewebsites.net/snippets/',
+            type: "POST",
+            data: postData,
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).error(function (error) {
