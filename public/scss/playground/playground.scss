@@ -8,8 +8,9 @@
   }
 
   .searchplaygroundbar {
-    width: 100%;
+    width: 33%;
     text-align: center;
+    display: inline-block;
 
     form {
       width : 250px;
@@ -109,7 +110,7 @@
     transition: 0.2s;
     border-left: 4px solid #00AEEF;
 
-    .resultTitle {
+    .resultCore {
       font-weight: 300;
       font-family: "Roboto";
       font-size: 1.1em;
@@ -118,22 +119,110 @@
       width: 100%;
       padding-left: 10px;
 
-      .version {
-        display: inline-block;
+      .resultCode {
         position: relative;
-        padding-left: 8px;
-        right: 24px;
         display: inline-block;
-        float: right;
         clear: right;
-        color: #969696;
+        color: $darkgrey;
+        width: 80%;
+        
       }
-    }
-    pre {
-      margin-left: 30px;
-    }
-    .extract {
 
+      .resultDesc{
+        margin-top:1em;
+        margin-bottom: 0.5em;
+      }
+
+      .resultHidden {
+        display: none;
+      }
+
+      .resultLink {
+            display:block;
+        
+            .colorLink{
+              background-color: darken($blue, 5%);
+              border-radius: 3px;
+              padding: 5px;
+              color: white;
+              
+            }
+        }
+
+        
+
+      .resultQuery {
+        background-color: yellow;
+      }
+
+      .resultShow {
+        display: block;
+        margin-top: 20px;
+      }
+
+      .resultTag {
+        display: inline-block;
+        font-size: 0.8em;
+        color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: $blue;
+        border-radius: 3px;
+        padding: 5px;
+
+          a{
+          color: white;
+        }
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        .resultTags {
+          display: inline-block;
+          margin-left: 10%;
+        }
+
+        .resultTitle{
+          display: inline-block;
+          font-family: "Roboto Semibold";
+          width:25%;
+        }
+
+        .version {
+          display: inline-block;
+          position: relative;
+          padding-left: 8px;
+          right: 24px;
+          float: right;
+          clear: right;
+          color: black;
+        }
+
+        .arrowSlide{
+          margin-left: 10px;
+      }
+        /*.playgroundTag {
+        
+
+        .version {
+          display: inline-block;
+          position: relative;
+          padding-left: 8px;
+          right: 24px;
+          display: inline-block;
+          float: right;
+          clear: right;
+          color: #969696;
+        }
+      }
+      pre {
+        margin-left: 30px;
+      }
+      .extract {
+
+      }*/
     }
   }
 }
