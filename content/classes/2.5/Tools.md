@@ -414,7 +414,7 @@ optional | mimeType | string |
  | camera | [Camera](/classes/2.5/Camera) |     The camera
  | size | any |     The size of the screenshot
 optional | successCallback | (data: string) =&gt; void | 
-### static CreateScreenshotUsingRenderTarget(engine, camera, size, successCallback, mimeType) &rarr; void
+### static CreateScreenshotUsingRenderTarget(engine, camera, size, successCallback, mimeType, samples) &rarr; void
 
 
 
@@ -425,6 +425,8 @@ optional | successCallback | (data: string) =&gt; void |
  | camera | [Camera](/classes/2.5/Camera) |     The camera
  | size | any |     The size of the screenshot
 optional | successCallback | (data: string) =&gt; void | 
+optional | mimeType | string | 
+optional | samples | number | Number of samples for MSAA, default 1
 ### static ValidateXHRData(xhr, dataType) &rarr; boolean
 
 
