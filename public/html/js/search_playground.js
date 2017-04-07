@@ -155,7 +155,7 @@
                 }
 
             }
-            hljs.initHighlightingOnLoad();
+            hljs.initHighlighting();
         });
     }
 
@@ -214,7 +214,7 @@
         }
     };
     var findQuery = function (TypeQuery, strTypeResultat, data, page, pageChange, linkType) {
-        var htmlFindQuery = '<div class="searchHeader"><h2> <span id="resultCount">...</span> result(s) for <a href="/playground?' + linkType + '=' + TypeQuery + '">' + strTypeResultat + '</a></h2></div>';
+        var htmlFindQuery = '<div class="searchHeader"><h2> <span id="resultCount">...</span> result(s)  for <a href="/playground?' + linkType + '=' + TypeQuery + '">' + strTypeResultat + '</a></h2></div>';
         var pages = 10;
         pageChange = '<div class="pageChangeWrapper" style="margin: 20px;">';
         if (page > 0) {
@@ -348,7 +348,7 @@
 
         result = result.concat(words.slice(startIndex, index));
         result = result.concat(words.slice(index, stopIndex));
-        originalText = '...<br>'+result.join(' ')+'<br>...'; // join back
+        originalText = '<br>'+result.join(' '); // join back
 
         return originalText;
     }
