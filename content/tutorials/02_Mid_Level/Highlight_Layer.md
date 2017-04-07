@@ -6,6 +6,14 @@ If you ever needed it, this tutorial is made for you.
 
 ## How to use ?
 
+Before anything else, you must ensure that your engine was created with stencil on: 
+
+```
+var engine = new BABYLON.Engine(canvas, true, { stencil: true });
+```
+
+The HighlightLayer relies on stencil to determine which part of the image it needs to paint.
+
 ### Default Use Case
 
 In the most basic shape, you only need to instantiate one highlight layer in your scene and add the meshes you want to highlight in it.
