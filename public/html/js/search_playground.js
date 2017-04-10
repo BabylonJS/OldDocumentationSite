@@ -84,13 +84,16 @@
 
                         // Create html div with Code research
 
-                        html += createHTMLResultDiv(s, id, JSON.parse(s.jsonPayload).code, strCode);
+                        var parsedPayload = JSON.parse(s.jsonPayload);
+                        if(parsedPayload.code) {
+                            html += createHTMLResultDiv(s, id, parsedPayload.code, strCode);
+                        }
 
                     }
 
                     //Tags research
                     if (tagsQuery) {
-                        if ((s.tags) && (s.tags.toUpperCase().includes(strTags.toUpperCase()))) {
+                        if ((s.tags) && (s.tags.toUpperCase().search(strTags.toUpperCase()))) {
                             // Create html div with Tags research
 
                             html += createHTMLResultDiv(s, id, s.tags, strTags);
@@ -99,11 +102,11 @@
 
                     //Title or description research
                     if (query) {
-                        if ((s.name) && (s.name.includes(strQuery))) {
+                        if ((s.name) && (s.name.search(strQuery))) {
                             // Create html div with Title research
                             html += createHTMLResultDiv(s, id, s.name, strQuery);
                         }
-                        else if ((s.description) && (s.description.includes(strQuery))) {
+                        else if ((s.description) && (s.description.search(strQuery))) {
                             // Create html div with Description research
                             html += createHTMLResultDiv(s, id, s.description, strQuery);
                         }
@@ -273,17 +276,24 @@
         htmlResultDiv += '<div class="resultCode">';
         var searchedWords = strTypeResultat.split(' '); // N searched words
 
-        searchedWords.forEach(word => {
-            if (JSON.parse(s.jsonPayload).code) {
-                if (JSON.parse(s.jsonPayload).code.includes(word)) {
+        var parsedPayload = JSON.parse(s.jsonPayload);
+        if(parsedPayload.code) {
+            searchedWords.forEach(word => {
+                if (parsedPayload.code.search(word) != -1) {
                     var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
                     for (var w of searchedWords) {
-                        var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
+                        var parsedCode = parsedPayload.code
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;");
+                        var codeReplace = replaceAll(w, parsedCode, nbWordsBeforeAfter);
                         htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
                     }
                 }
-            }
-        });
+            });
+        }
 
 
 
@@ -351,10 +361,9 @@
                 stopIndex = wordsLower.length;
             }
 
-
             result = result.concat(words.slice(startIndex, index));
             result = result.concat(words.slice(index, stopIndex));
-            originalText = '<br>' + result.join(' '); // join back
+            originalText = result.join(' '); // join back
         }
         return originalText;
     };
