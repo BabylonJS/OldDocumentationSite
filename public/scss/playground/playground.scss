@@ -186,7 +186,8 @@
 
         .resultTitle{
           display: inline-block;
-          font-family: "Roboto Semi-bold";
+          font-family: "Roboto";
+          font-weight: 500;
           width:25%;
         }
 
@@ -203,26 +204,45 @@
         .arrowSlide{
           margin-left: 10px;
       }
-        /*.playgroundTag {
-        
-
-        .version {
-          display: inline-block;
-          position: relative;
-          padding-left: 8px;
-          right: 24px;
-          display: inline-block;
-          float: right;
-          clear: right;
-          color: #969696;
+      .show {
+        display:block;
         }
-      }
-      pre {
-        margin-left: 30px;
-      }
-      .extract {
-
-      }*/
     }
+    .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
   }
 }

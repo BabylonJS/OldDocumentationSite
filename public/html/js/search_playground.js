@@ -33,6 +33,7 @@
             //$('.searchplayground-content').append('<div class="searchHeader"><h2>No Query Found.</h2></div>');
             return;
         }
+
         $('.searchplayground-content').append('<div class="searchHeader"><h2>Loading results for ' + finalQuery + ' ...</h2></div>');
 
         var postData = JSON.stringify({
@@ -140,6 +141,7 @@
             for (var indexResultat = 0; indexResultat < max; indexResultat++) {
                 var resultCoreDiv = document.getElementById("resultTitleCore" + indexResultat);
                 if (resultCoreDiv) {
+                    //document.getElementById("buttonDropdown" + indexResultat).addEventListener("click", toggleDropdown);
                     resultCoreDiv.onclick = function () {
                         // Show/Hide resultTitleExtra
                         var index = this.id.replace("resultTitleCore", "");
@@ -167,7 +169,7 @@
         // retrieve current page number
         var searchTerm = getQueryVariable('q');
         var page = getQueryVariable('page') || '1';
-        var max = getQueryVariable('max') || 25;
+        var max = getQueryVariable('max') || '25';
         var bf = getQueryVariable('bf') || 'all';
 
         var previousPage = parseInt(page) - 1,
@@ -243,18 +245,21 @@
         }
 
         htmlResultDiv += '</div>';
-        //Tags
+        //Tags 
         if (s.tags) {
             htmlResultDiv += '<div class="resultTags">'
             var TagTable = s.tags.split(",");
             TagTable.forEach(function (element) {
+                element = element.trim();
                 htmlResultDiv += '<div class="resultTag"> <a href="https://doc.babylonjs.com/playground?tag=' + element + '"target="_blank"> ' + element + '</a></div>';
             }, this);
-            htmlResultDiv += '</div>'
+            htmlResultDiv += '</div>';
         }
 
-        htmlResultDiv += '<div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+        htmlResultDiv += '<div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i>';
 
+        // End 
+        htmlResultDiv += '</div>';
         // End resultTitleCore
         htmlResultDiv += '</div>';
 
@@ -275,7 +280,7 @@
 
         searchedWords.forEach(word => {
             if (JSON.parse(s.jsonPayload).code) {
-                if (JSON.parse(s.jsonPayload).code.includes(word)) {
+                if (JSON.parse(s.jsonPayload).code.toLowerCase().includes(word.toLowerCase())) {
                     var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
                     for (var w of searchedWords) {
                         var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
@@ -314,6 +319,15 @@
         htmlResultExtraDiv += '<a href="https://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">';
         htmlResultExtraDiv += '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
         htmlResultExtraDiv += '</a>';
+        htmlResultExtraDiv += '</div>';
+        htmlResultExtraDiv += '<div class="dropdown">'
+        htmlResultExtraDiv += '<button id="buttonDropdown' + id + '" class="dropbtn"></button>'
+        htmlResultExtraDiv += '<div id="version" class="dropdown-content">';
+        for (var i = 0; i < id; i++) {
+            htmlResultExtraDiv += '<a href="">Version ' + i + '</a>';
+        }
+
+        htmlResultExtraDiv += '</div>';
         htmlResultExtraDiv += '</div>';
 
         return htmlResultExtraDiv;
@@ -372,6 +386,26 @@
         for (var i = 0; i < this.length; i++) {
             if (this[i].indexOf(term) != -1) {
                 return parseInt(i, 10);
+            }
+        }
+    }
+
+    var toggleDropdown = function () {
+        console.log("toggle");
+        document.getElementById("version").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
             }
         }
     }
