@@ -39,9 +39,67 @@ target.setPositions(...);
 target.setNormals(...);
 ```
 
-Once done, you can specify the influence of a specific target with `target.influence = 0.25'
+Once done, you can specify the influence of a specific target with `target.influence = 0.25`
 
 Targets with influence = 0 are disabled.
 
+Here is a complete example with 4 targets:
+
+```
+var scramble = function(data) {
+    for (index = 0; index < data.length; index ++) {
+        data[index] += 0.1 * Math.random();
+    }
+}
+
+// Main sphere
+var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
+
+// Let's create some targets
+var sphere2 = BABYLON.Mesh.CreateSphere("sphere2", 16, 2, scene);
+sphere2.setEnabled(false);
+sphere2.updateMeshPositions(scramble);
+
+var sphere3 = BABYLON.Mesh.CreateSphere("sphere3", 16, 2, scene);
+sphere3.setEnabled(false);
+
+sphere3.scaling = new BABYLON.Vector3(2.1, 3.5, 1.0);
+sphere3.bakeCurrentTransformIntoVertices();
+
+var sphere4 = BABYLON.Mesh.CreateSphere("sphere4", 16, 2, scene);
+sphere4.setEnabled(false);
+sphere4.updateMeshPositions(scramble);
+
+var sphere5 = BABYLON.Mesh.CreateSphere("sphere5", 16, 2, scene);
+sphere5.setEnabled(false);
+
+sphere5.scaling = new BABYLON.Vector3(1.0, 0.1, 1.0);
+sphere5.bakeCurrentTransformIntoVertices();    
+
+// Create a manager and affect it to the sphere
+var manager = new BABYLON.MorphTargetManager();
+sphere.morphTargetManager = manager;
+
+// Add the targets
+var target0 = BABYLON.MorphTarget.FromMesh(sphere2, "sphere2", 0.25);
+manager.addTarget(target0);
+
+var target1 = BABYLON.MorphTarget.FromMesh(sphere3, "sphere3", 0.25);
+manager.addTarget(target1);
+
+var target2 = BABYLON.MorphTarget.FromMesh(sphere4, "sphere4", 0.25);
+manager.addTarget(target2);   
+
+var target3 = BABYLON.MorphTarget.FromMesh(sphere5, "sphere5", 0.25);
+manager.addTarget(target3);      
+```
+
+At any time, you can remove a target with `manager.removeTarget(target)`
+
 ### Limitations
-Please be aware that most of the browsers are limited to 16 attributes per mesh. Adding a single morph target to a mesh add 2 new attributes (position + normal). This could quickly go beyond the max attributes limitation.
+
+* Please be aware that most of the browsers are limited to 16 attributes per mesh. Adding a single morph target to a mesh add 2 new attributes (position + normal). This could quickly go beyond the max attributes limitation.
+* All targets within a same manager must have the same vertices count
+* A mesh and its MorphTargetManager must have the same vertices count
+
+
