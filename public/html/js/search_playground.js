@@ -187,7 +187,7 @@
                 elems[i].parentElement.style.marginTop = "20px";
                 lastitem = elems[i].innerText.substr(0, 6);
             }
-        };
+        }
     };
 
     var getQueryVariable = function (element) {
@@ -232,26 +232,32 @@
 
         //Code included in the research with research highlighted.
         htmlResultDiv += '<div id="resultTitleCore' + id + '">';
-        
+
         // Title playground
         if (!s.name) {
-            htmlResultDiv += '<div class="resultTitle">' + s.id + '</div> <div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+            htmlResultDiv += '<div class="resultTitle">' + s.id;
         }
         else {
-            htmlResultDiv += '<div class="resultTitle">' + s.name + ' : (' + s.id + ')</div> <div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+            htmlResultDiv += '<div class="resultTitle">' + s.name + ' : (' + s.id + ')';
         }
+
         htmlResultDiv += '</div>';
-        
+
         //Tags
         if (s.tags) {
             htmlResultDiv += '<div class="resultTags">';
-            var TagTable = s.tags.split(";");
+            var TagTable = s.tags.split(",");
             TagTable.forEach(function (element) {
                 htmlResultDiv += '<div class="resultTag"> <a href="https://doc.babylonjs.com/playground?tag=' + element + '" target="_blank"> ' + element + '</a></div>';
             }, this);
             htmlResultDiv += '</div>'
         }
-        
+
+        htmlResultDiv += '<div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+
+        // End resultTitleCore
+        htmlResultDiv += '</div>';
+
         // The hidden div, that is displayed by clicking on it
         htmlResultDiv += '<div class="resultHidden" id="resultExtra' + id + '">';
 
@@ -265,24 +271,32 @@
 
         // Code
         htmlResultDiv += '<div class="resultCode">';
-
         var searchedWords = strTypeResultat.split(' '); // N searched words
-        var nbWordsBeforeAfter = searchedWords.length == 1 ? 20:10;
-        for (var w of searchedWords) {
 
-            var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
-            htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
-        }
-        
+        searchedWords.forEach(word => {
+            if (JSON.parse(s.jsonPayload).code) {
+                if (JSON.parse(s.jsonPayload).code.includes(word)) {
+                    var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
+                    for (var w of searchedWords) {
+                        var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
+                        htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
+                    }
+                }
+            }
+        });
+
+
+
         // End code
+
         htmlResultDiv += '</div>';
 
         // Create link
         htmlResultDiv += createLinkToPlayground(s, id);
-        
+
         // End hidden div
         htmlResultDiv += '</div>';
-        
+
         // End result core
         htmlResultDiv += '</div>';
 
@@ -293,7 +307,7 @@
     };
 
 
-    var createLinkToPlayground = function (s, id) {
+    var createLinkToPlayground = function (s) {
 
         //Links
         return '<div class="resultLink">'
@@ -303,46 +317,34 @@
             + '</div>';
     };
 
-    var replaceCode = function (str, search, replacement) {
-        if (str) {
-            return str.replace(new RegExp(search, 'g'), replacement);
-        }
-    };
-
     var replaceAll = function (search, originalText, precision) {
-        var finalText = "";
-        var text = originalText.toLowerCase();
-        search = search.toLowerCase();
+        if (originalText) {
+            search = search.toLowerCase();
 
-        var count = 0;
-        var srchl = search.length;
+            let regExp = new RegExp(search, 'gi');
+            originalText = originalText.replace(regExp, '<span class="resultQuery">' + search + '</span>');
 
-        let regExp = new RegExp(search, 'gi');
-        originalText = originalText.replace(regExp, '<span class="resultQuery">' + search + '</span>');
+            var wordsLower = originalText.toLowerCase().split(" "),
+                words = originalText.split(" "),
+                index = wordsLower.firstOccurance(search.toLowerCase()),
+                result = [],
+                startIndex, stopIndex;
 
-        var originalTextLower = originalText.toLowerCase();
+            startIndex = index - precision;
+            if (startIndex < 0) {
+                startIndex = 0;
+            }
 
-        var wordsLower = originalTextLower.split(" "),
-            words = originalText.split(" "),
-            index = wordsLower.firstOccurance(search.toLowerCase()),
-            result = [],
-            startIndex, stopIndex;
+            stopIndex = index + precision + 1;
+            if (stopIndex > wordsLower.length) {
+                stopIndex = wordsLower.length;
+            }
 
-        startIndex = index - precision;
-        if (startIndex < 0) {
-            startIndex = 0;
+
+            result = result.concat(words.slice(startIndex, index));
+            result = result.concat(words.slice(index, stopIndex));
+            originalText = '<br>' + result.join(' '); // join back
         }
-
-        stopIndex = index + precision + 1;
-        if (stopIndex > wordsLower.length) {
-            stopIndex = wordsLower.length;
-        }
-
-
-        result = result.concat(words.slice(startIndex, index));
-        result = result.concat(words.slice(index, stopIndex));
-        originalText = '<br>'+result.join(' '); // join back
-
         return originalText;
     };
 
