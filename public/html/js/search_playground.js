@@ -49,7 +49,7 @@
         var html = '';
 
         $.ajax({
-            url: 'http://babylonjs-api2.azurewebsites.net/snippets/search/' + queryType,
+            url: 'https://babylonjs-api2.azurewebsites.net/snippets/search/' + queryType,
             type: "POST",
             data: postData,
             contentType: "application/json; charset=utf-8",
@@ -116,7 +116,7 @@
             }
             html += pageChange;
             $.ajax({
-                url: 'http://babylonjs-api2.azurewebsites.net/snippets/count/' + queryType,
+                url: 'https://babylonjs-api2.azurewebsites.net/snippets/count/' + queryType,
                 type: "POST",
                 data: numberData,
                 contentType: "application/json; charset=utf-8",
@@ -233,26 +233,31 @@
 
         //Code included in the research with research highlighted.
         htmlResultDiv += '<div id="resultTitleCore' + id + '">';
-        
+
         // Title playground
         if (!s.name) {
-            htmlResultDiv += '<div class="resultTitle">' + s.id + '</div> <div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+            htmlResultDiv += '<div class="resultTitle">' + s.id;
         }
         else {
-            htmlResultDiv += '<div class="resultTitle">' + s.name + ' : (' + s.id + ')</div> <div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+            htmlResultDiv += '<div class="resultTitle">' + s.name + ' : (' + s.id + ')';
         }
+
         htmlResultDiv += '</div>';
-        
         //Tags
         if (s.tags) {
             htmlResultDiv += '<div class="resultTags">'
-            var TagTable = s.tags.split(";");
+            var TagTable = s.tags.split(",");
             TagTable.forEach(function (element) {
-                htmlResultDiv += '<div class="resultTag"> <a href="http://doc.babylonjs.com/playground?tag=' + element + '"target="_blank"> ' + element + '</a></div>';
+                htmlResultDiv += '<div class="resultTag"> <a href="https://doc.babylonjs.com/playground?tag=' + element + '"target="_blank"> ' + element + '</a></div>';
             }, this);
             htmlResultDiv += '</div>'
         }
-        
+
+        htmlResultDiv += '<div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+
+        // End resultTitleCore
+        htmlResultDiv += '</div>';
+
         // The hidden div, that is displayed by clicking on it
         htmlResultDiv += '<div class="resultHidden" id="resultExtra' + id + '">'
 
@@ -266,24 +271,32 @@
 
         // Code
         htmlResultDiv += '<div class="resultCode">';
-
         var searchedWords = strTypeResultat.split(' '); // N searched words
-        var nbWordsBeforeAfter = searchedWords.length==1?20:10;
-        for (var w of searchedWords) {
 
-            var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
-            htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
-        }
-        
+        searchedWords.forEach(word => {
+            if (JSON.parse(s.jsonPayload).code) {
+                if (JSON.parse(s.jsonPayload).code.includes(word)) {
+                    var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
+                    for (var w of searchedWords) {
+                        var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
+                        htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
+                    }
+                }
+            }
+        });
+
+
+
         // End code
+
         htmlResultDiv += '</div>';
 
         // Create link
         htmlResultDiv += createLinkToPlayground(s, id);
-        
+
         // End hidden div
         htmlResultDiv += '</div>';
-        
+
         // End result core
         htmlResultDiv += '</div>';
 
@@ -298,7 +311,7 @@
 
         //Links
         var htmlResultExtraDiv = '<div class="resultLink">'
-        htmlResultExtraDiv += '<a href="http://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">';
+        htmlResultExtraDiv += '<a href="https://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">';
         htmlResultExtraDiv += '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
         htmlResultExtraDiv += '</a>';
         htmlResultExtraDiv += '</div>';
@@ -314,42 +327,43 @@
 
     var replaceAll = function (search, originalText, precision) {
         finalText = "";
-        var text = originalText.toLowerCase();
-        search = search.toLowerCase();
+        if (originalText) {
+            var text = originalText.toLowerCase();
+            search = search.toLowerCase();
 
-        var index = 0;
-        var count = 0;
-        var srchl = search.length;
-        var result = null;
-        var spanBefore = '<span class="resultQuery">',
-            spanAfter = '</span>';
+            var index = 0;
+            var count = 0;
+            var srchl = search.length;
+            var result = null;
+            var spanBefore = '<span class="resultQuery">',
+                spanAfter = '</span>';
 
-        let regExp = new RegExp(search, 'gi');
-        originalText = originalText.replace(regExp, spanBefore+search+spanAfter);
+            let regExp = new RegExp(search, 'gi');
+            originalText = originalText.replace(regExp, spanBefore + search + spanAfter);
 
-        var originalTextLower = originalText.toLowerCase();
+            var originalTextLower = originalText.toLowerCase();
 
-        var wordsLower = originalTextLower.split(" "),
-            words = originalText.split(" "),
-            index = wordsLower.firstOccurance(search.toLowerCase()),
-            result = [],
-            startIndex, stopIndex;
+            var wordsLower = originalTextLower.split(" "),
+                words = originalText.split(" "),
+                index = wordsLower.firstOccurance(search.toLowerCase()),
+                result = [],
+                startIndex, stopIndex;
 
-        startIndex = index - precision;
-        if (startIndex < 0) {
-            startIndex = 0;
+            startIndex = index - precision;
+            if (startIndex < 0) {
+                startIndex = 0;
+            }
+
+            stopIndex = index + precision + 1;
+            if (stopIndex > wordsLower.length) {
+                stopIndex = wordsLower.length;
+            }
+
+
+            result = result.concat(words.slice(startIndex, index));
+            result = result.concat(words.slice(index, stopIndex));
+            originalText = '<br>' + result.join(' '); // join back
         }
-
-        stopIndex = index + precision + 1;
-        if (stopIndex > wordsLower.length) {
-            stopIndex = wordsLower.length;
-        }
-
-
-        result = result.concat(words.slice(startIndex, index));
-        result = result.concat(words.slice(index, stopIndex));
-        originalText = '<br>'+result.join(' '); // join back
-
         return originalText;
     }
 
