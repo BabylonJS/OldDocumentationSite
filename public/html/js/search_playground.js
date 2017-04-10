@@ -139,9 +139,30 @@
 
             // Add listerners on results
             for (var indexResultat = 0; indexResultat < max; indexResultat++) {
+                console.log(indexResultat);
+                if (indexResultat) {
+                    var selectedVersion = document.getElementById("buttonDropdown" + indexResultat);
+                    if (selectedVersion) {
+                        var versionLink = selectedVersion.options[selectedVersion.selectedIndex].value;
+                        var selectLink = document.getElementById("buttonDropdown" + indexResultat);
+
+                        selectLink.addEventListener("change", function () {
+                            for (var i = 0; i < max; i++) {
+                                console.log(i);
+                                if (document.getElementById("linkplayground" + i)) {
+                                    console.log("test");
+                                    var linkPlayground = document.getElementById("linkplayground" + i).href;
+                                    linkPlayground = linkPlayground.slice(0, linkPlayground.lastIndexOf('#')) + "#" + versionLink;
+                                    document.getElementById("linkplayground" + i).href = linkPlayground;
+                                }
+                            }
+                        });
+
+                    }
+                }
                 var resultCoreDiv = document.getElementById("resultTitleCore" + indexResultat);
                 if (resultCoreDiv) {
-                    //document.getElementById("buttonDropdown" + indexResultat).addEventListener("click", toggleDropdown);
+
                     resultCoreDiv.onclick = function () {
                         // Show/Hide resultTitleExtra
                         var index = this.id.replace("resultTitleCore", "");
@@ -311,26 +332,37 @@
         return htmlResultDiv;
     }
 
-
     var createLinkToPlayground = function (s, id) {
-
-        //Links
         var htmlResultExtraDiv = '<div class="resultLink">'
-        htmlResultExtraDiv += '<a href="https://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">';
-        htmlResultExtraDiv += '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
-        htmlResultExtraDiv += '</a>';
-        htmlResultExtraDiv += '</div>';
-        htmlResultExtraDiv += '<div class="dropdown">'
-        htmlResultExtraDiv += '<button id="buttonDropdown' + id + '" class="dropbtn"></button>'
-        htmlResultExtraDiv += '<div id="version" class="dropdown-content">';
-        for (var i = 0; i < id; i++) {
-            htmlResultExtraDiv += '<a href="">Version ' + i + '</a>';
+        htmlResultExtraDiv += '<select id="buttonDropdown' + id + '" class="dropbtn">'
+        for (var i = 0; i <= s.version; i++) {
+            htmlResultExtraDiv += '<option value = ' + i + '>Version ' + i + '</option>';
+        }
+        htmlResultExtraDiv += '</select>';
+
+
+        let obj = JSON.parse(s.jsonPayload);
+
+        if (obj.pixelShader) {
+            // This is a link to CYOS
+            //Links
+
+            //for (var id=0; id < s.)
+            htmlResultExtraDiv += '<a href="https://www.babylonjs.com/cyos/#' + s.id + '#' + s.version + '" id="linkplayground' + id + '" target="_blank">';
+            htmlResultExtraDiv += '<span class="colorLink"> CYOS <i class="fa fa-external-link-square" aria-hidden="true"></i></span>';
+            htmlResultExtraDiv += '</a>';
+        } else {
+            //Links
+
+            htmlResultExtraDiv += '<a href="https://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" id="linkplayground' + id + '" target="_blank">';
+            htmlResultExtraDiv += '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
+            htmlResultExtraDiv += '</a>';
         }
 
+        // End of resultLink
         htmlResultExtraDiv += '</div>';
-        htmlResultExtraDiv += '</div>';
-
         return htmlResultExtraDiv;
+
     }
 
     var replaceCode = function (str, search, replacement) {
@@ -386,26 +418,6 @@
         for (var i = 0; i < this.length; i++) {
             if (this[i].indexOf(term) != -1) {
                 return parseInt(i, 10);
-            }
-        }
-    }
-
-    var toggleDropdown = function () {
-        console.log("toggle");
-        document.getElementById("version").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
             }
         }
     }
