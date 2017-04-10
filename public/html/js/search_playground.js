@@ -319,12 +319,23 @@
 
     var createLinkToPlayground = function (s) {
 
-        //Links
-        return '<div class="resultLink">'
-            + '<a href="https://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">'
-            + '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
-            + '</a>'
-            + '</div>';
+        let obj = JSON.parse(s.jsonPayload);
+        if (obj.pixelShader) {
+            // This is a link to CYOS
+            //Links
+            return '<div class="resultLink">'
+                + '<a href="https://www.babylonjs.com/cyos/#' + s.id + '#' + s.version + '" target="_blank">'
+                + '<span class="colorLink"> CYOS <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
+                + '</a>'
+                + '</div>';
+        } else {
+            //Links
+            return '<div class="resultLink">'
+                + '<a href="https://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">'
+                + '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
+                + '</a>'
+                + '</div>';
+        }
     };
 
     var replaceAll = function (search, originalText, precision) {
