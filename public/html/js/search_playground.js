@@ -8,13 +8,12 @@
     function runQuery() {
         var query = getQueryVariable('q');
         var tagsQuery = getQueryVariable('tag');
-        var codeQuery = getQueryVariable('code')
+        var codeQuery = getQueryVariable('code');
         var strQuery = decodeURIComponent(query).split('+').join(' ');
         var strTags = decodeURIComponent(tagsQuery).split('+').join(' ');
         var strCode = decodeURIComponent(codeQuery).split('+').join(' ');
         var page = +(getQueryVariable('page')) || 0;
         var max = +(getQueryVariable('max')) || 25;
-        var numberResults = 0;
         var finalQuery = '';
         var queryType = '';
         if (strQuery != 'false') {
@@ -27,7 +26,7 @@
         }
         else if (strCode != 'false') {
             queryType = 'code/';
-            finalQuery = strCode.split(' ').join(' AND ');;
+            finalQuery = strCode.split(' ').join(' AND ');
         }
         if (!query && !tagsQuery && !codeQuery) {
             //$('.searchplayground-content').append('<div class="searchHeader"><h2>No Query Found.</h2></div>');
@@ -46,10 +45,8 @@
             search: finalQuery
         });
 
-        var html = '';
-
         $.ajax({
-            url: 'http://babylonjs-api2.azurewebsites.net/snippets/search/' + queryType,
+            url: 'https://babylonjs-api2.azurewebsites.net/snippets/search/' + queryType,
             type: "POST",
             data: postData,
             contentType: "application/json; charset=utf-8",
@@ -57,18 +54,20 @@
         }).error(function (error) {
             console.log(error);
         }).success(function (data) {
+            var html = '';
+
             //If we collect data, show our number of results and buttons to change pages
             var pageChange = '';
             if (query) {
-                var html = findQuery(query, strQuery, data, page, pageChange, 'q')[0];
+                html = findQuery(query, strQuery, data, page, pageChange, 'q')[0];
                 pageChange = findQuery(query, strQuery, data, page, pageChange, 'q')[1];
             }
             else if (tagsQuery) {
-                var html = findQuery(tagsQuery, strTags, data, page, pageChange, 'tag')[0];
+                html = findQuery(tagsQuery, strTags, data, page, pageChange, 'tag')[0];
                 pageChange = findQuery(tagsQuery, strTags, data, page, pageChange, 'tag')[1];
             }
             else if (codeQuery) {
-                var html = findQuery(codeQuery, strCode, data, page, pageChange, 'code')[0];
+                html = findQuery(codeQuery, strCode, data, page, pageChange, 'code')[0];
                 pageChange = findQuery(codeQuery, strCode, data, page, pageChange, 'code')[1];
             }
             pageChange += '</div>';
@@ -85,13 +84,16 @@
 
                         // Create html div with Code research
 
-                        html += createHTMLResultDiv(s, id, JSON.parse(s.jsonPayload).code, strCode);
+                        var parsedPayload = JSON.parse(s.jsonPayload);
+                        if(parsedPayload.code) {
+                            html += createHTMLResultDiv(s, id, parsedPayload.code, strCode);
+                        }
 
                     }
 
                     //Tags research
                     if (tagsQuery) {
-                        if ((s.tags) && (s.tags.toUpperCase().includes(strTags.toUpperCase()))) {
+                        if ((s.tags) && (s.tags.toUpperCase().search(strTags.toUpperCase()))) {
                             // Create html div with Tags research
 
                             html += createHTMLResultDiv(s, id, s.tags, strTags);
@@ -100,11 +102,11 @@
 
                     //Title or description research
                     if (query) {
-                        if ((s.name) && (s.name.includes(strQuery))) {
+                        if ((s.name) && (s.name.search(strQuery))) {
                             // Create html div with Title research
                             html += createHTMLResultDiv(s, id, s.name, strQuery);
                         }
-                        else if ((s.description) && (s.description.includes(strQuery))) {
+                        else if ((s.description) && (s.description.search(strQuery))) {
                             // Create html div with Description research
                             html += createHTMLResultDiv(s, id, s.description, strQuery);
                         }
@@ -116,7 +118,7 @@
             }
             html += pageChange;
             $.ajax({
-                url: 'http://babylonjs-api2.azurewebsites.net/snippets/count/' + queryType,
+                url: 'https://babylonjs-api2.azurewebsites.net/snippets/count/' + queryType,
                 type: "POST",
                 data: numberData,
                 contentType: "application/json; charset=utf-8",
@@ -188,7 +190,7 @@
                 elems[i].parentElement.style.marginTop = "20px";
                 lastitem = elems[i].innerText.substr(0, 6);
             }
-        };
+        }
     };
 
     var getQueryVariable = function (element) {
@@ -225,7 +227,7 @@
             pageChange += '<a id="nextPageButton" style="display:none" class="pageChangeLink nextResults" href="/playground?' + linkType + '=' + TypeQuery + '&page=' + (page + 1) + '">Next Page</a>';
         }
         return [htmlFindQuery, pageChange];
-    }
+    };
 
     var createHTMLResultDiv = function (s, id, TypeResearch, strTypeResultat) {
         var htmlResultDiv = '<div class="result">';
@@ -233,28 +235,34 @@
 
         //Code included in the research with research highlighted.
         htmlResultDiv += '<div id="resultTitleCore' + id + '">';
-        
+
         // Title playground
         if (!s.name) {
-            htmlResultDiv += '<div class="resultTitle">' + s.id + '</div> <div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+            htmlResultDiv += '<div class="resultTitle">' + s.id;
         }
         else {
-            htmlResultDiv += '<div class="resultTitle">' + s.name + ' : (' + s.id + ')</div> <div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+            htmlResultDiv += '<div class="resultTitle">' + s.name + ' : (' + s.id + ')';
         }
+
         htmlResultDiv += '</div>';
-        
+
         //Tags
         if (s.tags) {
-            htmlResultDiv += '<div class="resultTags">'
-            var TagTable = s.tags.split(";");
+            htmlResultDiv += '<div class="resultTags">';
+            var TagTable = s.tags.split(",");
             TagTable.forEach(function (element) {
-                htmlResultDiv += '<div class="resultTag"> <a href="http://doc.babylonjs.com/playground?tag=' + element + '"target="_blank"> ' + element + '</a></div>';
+                htmlResultDiv += '<div class="resultTag"> <a href="https://doc.babylonjs.com/playground?tag=' + element + '" target="_blank"> ' + element + '</a></div>';
             }, this);
             htmlResultDiv += '</div>'
         }
-        
+
+        htmlResultDiv += '<div class="version">Version ' + s.version + '<i class="arrowSlide fa fa-caret-down" id="showHide' + id + '" aria-hidden="true"></i></div>';
+
+        // End resultTitleCore
+        htmlResultDiv += '</div>';
+
         // The hidden div, that is displayed by clicking on it
-        htmlResultDiv += '<div class="resultHidden" id="resultExtra' + id + '">'
+        htmlResultDiv += '<div class="resultHidden" id="resultExtra' + id + '">';
 
         //Description
         if (s.description) {
@@ -266,24 +274,39 @@
 
         // Code
         htmlResultDiv += '<div class="resultCode">';
-
         var searchedWords = strTypeResultat.split(' '); // N searched words
-        var nbWordsBeforeAfter = searchedWords.length==1?20:10;
-        for (var w of searchedWords) {
 
-            var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
-            htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
+        var parsedPayload = JSON.parse(s.jsonPayload);
+        if(parsedPayload.code) {
+            searchedWords.forEach(word => {
+                if (parsedPayload.code.search(word) != -1) {
+                    var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
+                    for (var w of searchedWords) {
+                        var parsedCode = parsedPayload.code
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;");
+                        var codeReplace = replaceAll(w, parsedCode, nbWordsBeforeAfter);
+                        htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
+                    }
+                }
+            });
         }
-        
+
+
+
         // End code
+
         htmlResultDiv += '</div>';
 
         // Create link
         htmlResultDiv += createLinkToPlayground(s, id);
-        
+
         // End hidden div
         htmlResultDiv += '</div>';
-        
+
         // End result core
         htmlResultDiv += '</div>';
 
@@ -291,67 +314,59 @@
         htmlResultDiv += '</div>';
 
         return htmlResultDiv;
-    }
+    };
 
 
-    var createLinkToPlayground = function (s, id) {
+    var createLinkToPlayground = function (s) {
 
-        //Links
-        var htmlResultExtraDiv = '<div class="resultLink">'
-        htmlResultExtraDiv += '<a href="http://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">';
-        htmlResultExtraDiv += '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
-        htmlResultExtraDiv += '</a>';
-        htmlResultExtraDiv += '</div>';
-
-        return htmlResultExtraDiv;
-    }
-
-    var replaceCode = function (str, search, replacement) {
-        if (str) {
-            return str.replace(new RegExp(search, 'g'), replacement);
+        let obj = JSON.parse(s.jsonPayload);
+        if (obj.pixelShader) {
+            // This is a link to CYOS
+            //Links
+            return '<div class="resultLink">'
+                + '<a href="https://www.babylonjs.com/cyos/#' + s.id + '#' + s.version + '" target="_blank">'
+                + '<span class="colorLink"> CYOS <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
+                + '</a>'
+                + '</div>';
+        } else {
+            //Links
+            return '<div class="resultLink">'
+                + '<a href="https://www.babylonjs-playground.com/#' + s.id + '#' + s.version + '" target="_blank">'
+                + '<span class="colorLink"> Playground <i class="fa fa-external-link-square" aria-hidden="true"></i></span>'
+                + '</a>'
+                + '</div>';
         }
     };
 
     var replaceAll = function (search, originalText, precision) {
-        finalText = "";
-        var text = originalText.toLowerCase();
-        search = search.toLowerCase();
+        if (originalText) {
+            search = search.toLowerCase();
 
-        var index = 0;
-        var count = 0;
-        var srchl = search.length;
-        var result = null;
-        var spanBefore = '<span class="resultQuery">',
-            spanAfter = '</span>';
+            let regExp = new RegExp(search, 'gi');
+            originalText = originalText.replace(regExp, '<span class="resultQuery">' + search + '</span>');
 
-        let regExp = new RegExp(search, 'gi');
-        originalText = originalText.replace(regExp, spanBefore+search+spanAfter);
+            var wordsLower = originalText.toLowerCase().split(" "),
+                words = originalText.split(" "),
+                index = wordsLower.firstOccurance(search.toLowerCase()),
+                result = [],
+                startIndex, stopIndex;
 
-        var originalTextLower = originalText.toLowerCase();
+            startIndex = index - precision;
+            if (startIndex < 0) {
+                startIndex = 0;
+            }
 
-        var wordsLower = originalTextLower.split(" "),
-            words = originalText.split(" "),
-            index = wordsLower.firstOccurance(search.toLowerCase()),
-            result = [],
-            startIndex, stopIndex;
+            stopIndex = index + precision + 1;
+            if (stopIndex > wordsLower.length) {
+                stopIndex = wordsLower.length;
+            }
 
-        startIndex = index - precision;
-        if (startIndex < 0) {
-            startIndex = 0;
+            result = result.concat(words.slice(startIndex, index));
+            result = result.concat(words.slice(index, stopIndex));
+            originalText = result.join(' '); // join back
         }
-
-        stopIndex = index + precision + 1;
-        if (stopIndex > wordsLower.length) {
-            stopIndex = wordsLower.length;
-        }
-
-
-        result = result.concat(words.slice(startIndex, index));
-        result = result.concat(words.slice(index, stopIndex));
-        originalText = '<br>'+result.join(' '); // join back
-
         return originalText;
-    }
+    };
 
     // Finds the first occurance of our research
     Array.prototype.firstOccurance = function (term) {
