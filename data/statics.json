@@ -213,6 +213,10 @@
           "filename": "How_to_use_Bones_and_Skeletons"
         },
         {
+          "title": "How to use Morph targets",
+          "filename": "How_to_use_MorphTargets"
+        },
+        {
           "title": "How to use Curve3",
           "filename": "How_to_use_Curve3"
         },
