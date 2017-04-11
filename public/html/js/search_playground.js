@@ -88,7 +88,7 @@
 
                         // Create html div with Code research
                         var codeToDisplay = JSON.parse(s.jsonPayload);
-                        var type='';
+                        var type = '';
                         if (codeToDisplay.code) {
                             type = '';
                             codeToDisplay = codeToDisplay.code;
@@ -264,7 +264,7 @@
     }
 
     var createHTMLResultDiv = function (s, id, codeToDisplay, strTypeResultat, type) {
-        var htmlResultDiv = '<div class="result '+type+'">';
+        var htmlResultDiv = '<div class="result ' + type + '">';
         htmlResultDiv += '<div class="resultCore">';
 
         //Code included in the research with research highlighted.
@@ -316,7 +316,13 @@
             if (codeToDisplay.toLowerCase().includes(word.toLowerCase())) {
                 var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
                 for (var w of searchedWords) {
-                    var codeReplace = replaceAll(w, codeToDisplay, nbWordsBeforeAfter);
+                    var parsedCode = codeToDisplay
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+                    var codeReplace = replaceAll(w, parsedCode, nbWordsBeforeAfter);
                     htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
                 }
             }
@@ -348,10 +354,10 @@
         htmlResultExtraDiv += '<select id="buttonDropdown' + id + '" class="dropbtn">'
         var selected = "";
         for (var i = 0; i <= s.version; i++) {
-            if (i==s.version) {
+            if (i == s.version) {
                 selected = " selected";
             }
-            htmlResultExtraDiv += '<option '+selected+' value = ' + i + '>Version ' + i + '</option>';
+            htmlResultExtraDiv += '<option ' + selected + ' value = ' + i + '>Version ' + i + '</option>';
         }
         htmlResultExtraDiv += '</select>';
 
