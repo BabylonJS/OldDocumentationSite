@@ -110,6 +110,10 @@
     transition: 0.2s;
     border-left: 4px solid #00AEEF;
 
+    &.cyos {      
+        border-left: 4px solid #E74C3C;
+    }
+
     .resultCore {
       font-weight: 300;
       font-family: "Roboto";
