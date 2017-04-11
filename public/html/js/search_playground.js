@@ -138,27 +138,28 @@
             $('.searchplayground-content').append(html);
 
             // Add listerners on results
+            var selectedVersion = [];
             for (var indexResultat = 0; indexResultat < max; indexResultat++) {
-                console.log(indexResultat);
+
                 if (indexResultat) {
-                    var selectedVersion = document.getElementById("buttonDropdown" + indexResultat);
-                    if (selectedVersion) {
-                        var versionLink = selectedVersion.options[selectedVersion.selectedIndex].value;
-                        var selectLink = document.getElementById("buttonDropdown" + indexResultat);
-
-                        selectLink.addEventListener("change", function () {
-                            for (var i = 0; i < max; i++) {
-                                console.log(i);
-                                if (document.getElementById("linkplayground" + i)) {
-                                    console.log("test");
-                                    var linkPlayground = document.getElementById("linkplayground" + i).href;
-                                    linkPlayground = linkPlayground.slice(0, linkPlayground.lastIndexOf('#')) + "#" + versionLink;
-                                    document.getElementById("linkplayground" + i).href = linkPlayground;
+                    selectedVersion[indexResultat] = document.getElementById("buttonDropdown" + indexResultat);
+                    selectedVersion.forEach(function (version) {
+                        if (version) {
+                            var versionLink = version.options[version.selectedIndex].value;
+                            version.addEventListener("change", function () {
+                                versionLink = version.options[version.selectedIndex].value;
+                                for (var i = 0; i < max; i++) {
+                                    if (document.getElementById("linkplayground" + i)) {
+                                        var linkPlayground = document.getElementById("linkplayground" + i).href;
+                                        linkPlayground = linkPlayground.slice(0, linkPlayground.lastIndexOf('#')) + "#" + versionLink;
+                                        document.getElementById("linkplayground" + i).href = linkPlayground;
+                                    }
                                 }
-                            }
-                        });
+                            });
 
-                    }
+                        }
+                    });
+
                 }
                 var resultCoreDiv = document.getElementById("resultTitleCore" + indexResultat);
                 if (resultCoreDiv) {
