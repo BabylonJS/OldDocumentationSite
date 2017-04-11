@@ -13,6 +13,24 @@ Once frozen, the shader will remain unchanged even if you change material's prop
 material.unfreeze();
 ```
 
+# Reducing world matrices computation
+Every mesh has a world matrix to specify its position / rotation / scaling. This matrix is evaluated on every frame. You can improve performances by freezing this matrix. Any subsequent changes to position / rotation / scaling will then be ignore:
+
+```
+mesh.freezeWorldMatrix();
+```
+
+You can unfreeze a mesh with:
+
+```
+mesh.unfreezeWorldMatrix();
+```
+
+# Reducing draw calls
+As soon as you can please use instances as they are drawn with one single draw call: http://doc.babylonjs.com/tutorials/how_to_use_instances
+
+If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
+
 # Using unindexed meshes
 By default Babylon.js uses indexed meshes where vertices can be reuse by faces. When vertex reuse is low and when vertex structure is fairly simple (like just a position and a normal) then you may want to unfold your vertices and stop using indices:
 
@@ -46,3 +64,4 @@ The return value is higher on low frame rates.
 # Other useful tutorials
 * [Optimizing meshes selection for rendering](http://doc.babylonjs.com/tutorials/Optimizing_Your_Scene_with_Octrees)
 * [How to use scene optimizer](http://doc.babylonjs.com/tutorials/How_to_use_SceneOptimizer)
+* [Optimizing your scene with octrees](http://doc.babylonjs.com/tutorials/optimizing_your_scene_with_octrees)
