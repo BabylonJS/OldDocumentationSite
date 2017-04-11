@@ -58,18 +58,20 @@
         }).error(function (error) {
             console.log(error);
         }).success(function (data) {
+            var html = '';
+
             //If we collect data, show our number of results and buttons to change pages
             var pageChange = '';
             if (query) {
-                var html = findQuery(query, strQuery, data, page, pageChange, 'q')[0];
+                html = findQuery(query, strQuery, data, page, pageChange, 'q')[0];
                 pageChange = findQuery(query, strQuery, data, page, pageChange, 'q')[1];
             }
             else if (tagsQuery) {
-                var html = findQuery(tagsQuery, strTags, data, page, pageChange, 'tag')[0];
+                html = findQuery(tagsQuery, strTags, data, page, pageChange, 'tag')[0];
                 pageChange = findQuery(tagsQuery, strTags, data, page, pageChange, 'tag')[1];
             }
             else if (codeQuery) {
-                var html = findQuery(codeQuery, strCode, data, page, pageChange, 'code')[0];
+                html = findQuery(codeQuery, strCode, data, page, pageChange, 'code')[0];
                 pageChange = findQuery(codeQuery, strCode, data, page, pageChange, 'code')[1];
             }
             pageChange += '</div>';
@@ -85,14 +87,24 @@
                     if (codeQuery) {
 
                         // Create html div with Code research
+                        var codeToDisplay = JSON.parse(s.jsonPayload);
+                        var type='';
+                        if (codeToDisplay.code) {
+                            type = '';
+                            codeToDisplay = codeToDisplay.code;
+                        } else {
+                            // CYOS
+                            type = 'cyos';
+                            codeToDisplay = codeToDisplay.vertexShader + "\n" + codeToDisplay.pixelShader;
+                        }
 
-                        html += createHTMLResultDiv(s, id, JSON.parse(s.jsonPayload).code, strCode);
+                        html += createHTMLResultDiv(s, id, codeToDisplay, strCode, type);
 
                     }
 
                     //Tags research
                     if (tagsQuery) {
-                        if ((s.tags) && (s.tags.toUpperCase().includes(strTags.toUpperCase()))) {
+                        if ((s.tags) && (s.tags.toUpperCase().search(strTags.toUpperCase()))) {
                             // Create html div with Tags research
 
                             html += createHTMLResultDiv(s, id, s.tags, strTags);
@@ -101,11 +113,11 @@
 
                     //Title or description research
                     if (query) {
-                        if ((s.name) && (s.name.includes(strQuery))) {
+                        if ((s.name) && (s.name.toUpperCase().search(strQuery.toUpperCase()))) {
                             // Create html div with Title research
                             html += createHTMLResultDiv(s, id, s.name, strQuery);
                         }
-                        else if ((s.description) && (s.description.includes(strQuery))) {
+                        else if ((s.description) && (s.description.toUpperCase().search(strQuery.toUpperCase()))) {
                             // Create html div with Description research
                             html += createHTMLResultDiv(s, id, s.description, strQuery);
                         }
@@ -251,8 +263,8 @@
         return [htmlFindQuery, pageChange];
     }
 
-    var createHTMLResultDiv = function (s, id, TypeResearch, strTypeResultat) {
-        var htmlResultDiv = '<div class="result">';
+    var createHTMLResultDiv = function (s, id, codeToDisplay, strTypeResultat, type) {
+        var htmlResultDiv = '<div class="result '+type+'">';
         htmlResultDiv += '<div class="resultCore">';
 
         //Code included in the research with research highlighted.
@@ -301,13 +313,11 @@
         var searchedWords = strTypeResultat.split(' '); // N searched words
 
         searchedWords.forEach(word => {
-            if (JSON.parse(s.jsonPayload).code) {
-                if (JSON.parse(s.jsonPayload).code.toLowerCase().includes(word.toLowerCase())) {
-                    var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
-                    for (var w of searchedWords) {
-                        var codeReplace = replaceAll(w, JSON.parse(s.jsonPayload).code, nbWordsBeforeAfter);
-                        htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
-                    }
+            if (codeToDisplay.toLowerCase().includes(word.toLowerCase())) {
+                var nbWordsBeforeAfter = searchedWords.length == 1 ? 20 : 10;
+                for (var w of searchedWords) {
+                    var codeReplace = replaceAll(w, codeToDisplay, nbWordsBeforeAfter);
+                    htmlResultDiv += '<pre><code class="lang-javascript"> <span id=textToReplace' + id + '>' + codeReplace + '</span></code></pre>';
                 }
             }
         });
@@ -336,8 +346,12 @@
     var createLinkToPlayground = function (s, id) {
         var htmlResultExtraDiv = '<div class="resultLink">'
         htmlResultExtraDiv += '<select id="buttonDropdown' + id + '" class="dropbtn">'
+        var selected = "";
         for (var i = 0; i <= s.version; i++) {
-            htmlResultExtraDiv += '<option value = ' + i + '>Version ' + i + '</option>';
+            if (i==s.version) {
+                selected = " selected";
+            }
+            htmlResultExtraDiv += '<option '+selected+' value = ' + i + '>Version ' + i + '</option>';
         }
         htmlResultExtraDiv += '</select>';
 
