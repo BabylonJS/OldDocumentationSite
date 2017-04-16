@@ -89,6 +89,7 @@ animationBox.setKeys(keys);
 * Link this animation to our box:
 
 ```javascript
+box1.animations = [];
 box1.animations.push(animationBox);
 ```
 
