@@ -1,3 +1,10 @@
+@include media($small-screen) {
 .search-content{
   word-break: break-all;
+}
+.searchplaygroundbar {
+      width: 100%;
+      text-align: center;
+      display: block;
+  }
 }
