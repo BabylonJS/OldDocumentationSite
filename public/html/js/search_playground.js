@@ -2,13 +2,18 @@
 
     $(document).ready(function () {
 
+        if(localStorage.getItem('docBabylon_lastSearch') != false) {
+            document.getElementById("lastSearch").innerHTML = 'Your last search : <a href="http://doc.babylonjs.com/playground?code='
+                + localStorage.getItem('docBabylon_lastSearch') + '">' + localStorage.getItem('docBabylon_lastSearch') + '</a>';
+        }
+
         runQuery();
     });
 
     function runQuery() {
         var query = getQueryVariable('q');
         var tagsQuery = getQueryVariable('tag');
-        var codeQuery = getQueryVariable('code')
+        var codeQuery = getQueryVariable('code');
         var strQuery = decodeURIComponent(query).split('+').join(' ');
         var strTags = decodeURIComponent(tagsQuery).split('+').join(' ');
         var strCode = decodeURIComponent(codeQuery).split('+').join(' ');
@@ -20,13 +25,16 @@
         if (strQuery != 'false') {
             queryType = 'name/';
             finalQuery = strQuery;
+            localStorage.setItem("docBabylon_lastSearch", strQuery);
         }
         else if (strTags != 'false') {
             queryType = 'tags/';
             finalQuery = strTags;
+            localStorage.setItem("docBabylon_lastSearch", strTags);
         }
         else if (strCode != 'false') {
             queryType = 'code/';
+            localStorage.setItem("docBabylon_lastSearch", strCode);
             finalQuery = strCode.split(' ').join(' AND ');;
         }
         if (!query && !tagsQuery && !codeQuery) {
@@ -81,6 +89,7 @@
             // now the results...
 
             var id = 0;
+
             if (data) {
                 data.forEach(function (s) {
                     //Code research
@@ -261,7 +270,7 @@
             pageChange += '<a id="nextPageButton" style="display:none" class="pageChangeLink nextResults" href="/playground?' + linkType + '=' + TypeQuery + '&page=' + (page + 1) + '">Next Page</a>';
         }
         return [htmlFindQuery, pageChange];
-    }
+    };
 
     var createHTMLResultDiv = function (s, id, codeToDisplay, strTypeResultat, type) {
         var htmlResultDiv = '<div class="result ' + type + '">';
@@ -347,7 +356,7 @@
         htmlResultDiv += '</div>';
 
         return htmlResultDiv;
-    }
+    };
 
     var createLinkToPlayground = function (s, id) {
         var htmlResultExtraDiv = '<div class="resultLink">'
@@ -384,7 +393,7 @@
         htmlResultExtraDiv += '</div>';
         return htmlResultExtraDiv;
 
-    }
+    };
 
     var replaceCode = function (str, search, replacement) {
         if (str) {
@@ -430,9 +439,14 @@
             result = result.concat(words.slice(startIndex, index));
             result = result.concat(words.slice(index, stopIndex));
             originalText = '<br>' + result.join(' '); // join back
+
+            if(originalText.length < 500)
+                return originalText;
+            else
+                return "Code too long to be displayed.";
         }
-        return originalText;
-    }
+        else return "";
+    };
 
     // Finds the first occurance of our research
     Array.prototype.firstOccurance = function (term) {
