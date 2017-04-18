@@ -6,11 +6,16 @@
     text-align: center;
     margin: 8px;
   }
+  #lastSearch {
+    text-align: center;
+    margin: 8px;
+  }
 
   .searchplaygroundbar {
     width: 33%;
     text-align: center;
-    display: inline-block;
+    display: inline-table;
+    margin-bottom: -30px;
 
     form {
       width : 250px;
