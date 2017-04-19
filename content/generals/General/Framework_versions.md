@@ -18,6 +18,6 @@ Please do not use it in production environment as the file size is really import
 
 This is the complete version of babylon.js. File size is less than 250KB when gizipped. This version is aimed for production.
 
-## No worker version: *babylon.worker.js*
+## Worker version: *babylon.worker.js*
 
 This version of babylon.js includes web worker support for collision. File size is less than 300KB when gizipped. This version is aimed for production.
