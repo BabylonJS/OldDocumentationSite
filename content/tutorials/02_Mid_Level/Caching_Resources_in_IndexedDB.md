@@ -24,7 +24,7 @@ When you’re loading a scene using the Babylon engine, one of the first things 
 
 You have 3 parameters to fill:
 
-1. The first one is _**version**_ and must be an integer. It’s simply the current version of your assets. If you’re changing it, the Babylon engine will detect that change during the next reload of your scene.&nbsp; This will force a complete reload &amp;amp; update of all the assets into the browser’s database. This can be useful is you want to be sure that the client browser is using up-to-date textures or scene description recently put on your web server.
+1. The first one is _**version**_ and must be an integer. It’s simply the current version of your assets. If you’re changing it, the Babylon engine will detect that change during the next reload of your scene. This will force a complete reload amp; update of all the assets into the browser’s database. This can be useful is you want to be sure that the client browser is using up-to-date textures or scene description recently put on your web server.
 
 2. The second parameter _**enableSceneOffline**_ is a boolean. If set to true, you will be asking to load the JSON associated with your scene (the file with the .babylon extension) and store it into the local database of the user. Next time the user loads the game, the scene description will be directly loaded from the DB rather than from the hosting web server.
 
