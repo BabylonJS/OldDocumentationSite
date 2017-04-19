@@ -8,12 +8,12 @@ In this tutorial, we are going to learn how to create basic elements using Babyl
 
 ![Elements](http://urbanproductions.com/wingy/babylon/misc/tut02pic.jpg)
 
-[**Playground Demo Scene 2 - Seven basic shapes/mesh**](http://babylonjs-playground.azurewebsites.net/?2)
+[**Playground Demo Scene 2 - Seven basic shapes/mesh**](http://www.babylonjs-playground.com/?2)
 
 ## How can I do this ?
-An easy way to get started using basic elements... is by visiting [**Playground Demo Scene 02**](http://babylonjs-playground.azurewebsites.net/?2).  You might wish to use the 'Get .zip' choice on its top menu.  The index.html that you will receive in that zip... contains everything you will need to start making basic elements.  Remember that link, as we will talk more about it.
+An easy way to get started using basic elements... is by visiting [**Playground Demo Scene 02**](http://www.babylonjs-playground.com/?2).  You might wish to use the 'Get .zip' choice on its top menu.  The index.html that you will receive in that zip... contains everything you will need to start making basic elements.  Remember that link, as we will talk more about it.
 
-I'm sure you have already read the  [**Babylon.js Primer**](http://doc.babylonjs.com/generals/A_Babylon.js_Primer) and the  [**previous tutorial**](http://doc.babylonjs.com/tutorials/Creating_a_Basic_Scene), and thus you know how to format scene files.  So, we won't talk about that, here.  We are going to go step by step through [**Playground Demo Scene 02**](http://babylonjs-playground.azurewebsites.net/?2).  Open that link in a new tab or window, and then come back here, and we'll get started.
+I'm sure you have already read the  [**Babylon.js Primer**](http://doc.babylonjs.com/generals/A_Babylon.js_Primer) and the  [**previous tutorial**](http://doc.babylonjs.com/tutorials/Creating_a_Basic_Scene), and thus you know how to format scene files.  So, we won't talk about that, here.  We are going to go step by step through [**Playground Demo Scene 02**](http://www.babylonjs-playground.com/?2).  Open that link in a new tab or window, and then come back here, and we'll get started.
 
 Starting with the box, we create various basic elements, and then position them at the end of the function (to keep them from being atop one another).  Let's talk about each of the basic shapes/meshes.  
 
@@ -225,7 +225,7 @@ Because this value creates twice the vertices of a frontside mesh. In other term
 
 
 ### More Basic Elements - Grounds
-Up to this point, we have been talking about basic elements from our [**Playground Demo Scene 02**](http://babylonjs-playground.azurewebsites.net/?2), but a few important mesh shapes (basic elements) are not included in that demo scene.  They are each ways of making 'ground' in Babylon.js.  Let's take a look: 
+Up to this point, we have been talking about basic elements from our [**Playground Demo Scene 02**](http://www.babylonjs-playground.com/?2), but a few important mesh shapes (basic elements) are not included in that demo scene.  They are each ways of making 'ground' in Babylon.js.  Let's take a look: 
 
 * **Creation of a Ground**
 

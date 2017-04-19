@@ -273,7 +273,7 @@ var FunnyEase = (function (_super) {
   return FunnyEase;
 })(BABYLON.EasingFunction);
 ```
-You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](http://babylonjs-playground.azurewebsites.net/?20)
+You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](http://www.babylonjs-playground.com/?20)
 
 
 ## Complex animation

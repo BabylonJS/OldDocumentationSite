@@ -110,7 +110,7 @@ The following list will help you understand which categories your meshes will be
 
 Occasionally, you may have some of your meshes falling into the wrong category, e.g. an alpha tested mesh unnecessarily marked as alpha blended, or a mesh staying opaque when it shouldn't. This will give you weird glitches, which can sometimes be very annoying. You should refer to this article to check how your meshes and materials properties are set.
 
-You're welcome to use this [playground example](http://babylonjs-playground.azurewebsites.net/#1PHYB0#6) to experiment on the different things explained here. Pressing F9 will switch between normal render and depth buffer render.
+You're welcome to use this [playground example](http://www.babylonjs-playground.com/#1PHYB0#6) to experiment on the different things explained here. Pressing F9 will switch between normal render and depth buffer render.
 
 
 ## Things To Do And Not To Do
