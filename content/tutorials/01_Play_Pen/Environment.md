@@ -126,7 +126,7 @@ scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
 ```
 See, we told you it was easy.
 
-If you want to see and play with the playground scene for this tutorial, you can [**click right here**](http://babylonjs-playground.azurewebsites.net/?13).
+If you want to see and play with the playground scene for this tutorial, you can [**click right here**](http://www.babylonjs-playground.com/?13).
 
 ## Next step
 You should have a beautiful scene now, but except from your 3D models, your world is pretty flat, and that’s a shame for your scene. So, in our next environment tutorial, we are going to transform your flat ground into beautiful mountains. To learn this, go [here!](http://doc.babylonjs.com/tutorials/Height_Map)

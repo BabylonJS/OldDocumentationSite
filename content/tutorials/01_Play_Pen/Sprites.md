@@ -92,7 +92,7 @@ Finally, if you want to go to a specific image (e.g. the last one, when the char
 player.cellIndex = 44;
 ```
 
-You can play with the scene and code used in this tutorial... by visiting the Babylon.js [**Playground sprites demo**](http://babylonjs-playground.azurewebsites.net/?8).
+You can play with the scene and code used in this tutorial... by visiting the Babylon.js [**Playground sprites demo**](http://www.babylonjs-playground.com/?8).
 
 ## Next step
 Don’t hesitate to use sprites in your scene: they are not resource intensive, and they really can help keep high frame rates in your application.

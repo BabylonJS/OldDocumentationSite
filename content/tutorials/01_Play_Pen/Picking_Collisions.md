@@ -43,7 +43,7 @@ if (pickResult.hit) {
 ```
 Fast, and easy, isn’t it?
 
-Feel free to play with this scene... [at our online playground](http://babylonjs-playground.azurewebsites.net/?11).
+Feel free to play with this scene... [at our online playground](http://www.babylonjs-playground.com/?11).
 
 ## Advanced Picking Features
 

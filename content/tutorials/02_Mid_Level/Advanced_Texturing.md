@@ -6,7 +6,7 @@ You have already seen how you can apply textures on meshes, but here you are goi
 
 ![AdvancedTexturing](http://www.babylonjs.com/tutorials/Advanced%20Texturing/0.png)
 
-A picture from our [Advanced Texturing playground demo](http://babylonjs-playground.azurewebsites.net/#EKFLA#13).
+A picture from our [Advanced Texturing playground demo](http://www.babylonjs-playground.com/#EKFLA#13).
 
 ## How can I do this ?
 
@@ -32,7 +32,7 @@ material.reflectionTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay"
 ```
 Like the CubeTextures used in skyboxes, the textures/TropicalSunnyDay directory must contain 6 textures, covering all 6 directions of the cube. Each image must be named according to the corresponding CubeTexture face: “TropicalSunnyDay_nx.jpg”, “TropicalSunnyDay_ny.jpg”, “TropicalSunnyDay_nz.jpg”, “TropicalSunnyDay_px.jpg”, “TropicalSunnyDay_py.jpg”, “TropicalSunnyDay_pz.jpg”.
 
-You can see this nice advanced texturing technique... in [this playground scene](http://babylonjs-playground.azurewebsites.net/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/FresnelParameters)-enhanced [playground scene](http://babylonjs-playground.azurewebsites.net/#SBTYP), as well.
+You can see this nice advanced texturing technique... in [this playground scene](http://www.babylonjs-playground.com/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/FresnelParameters)-enhanced [playground scene](http://www.babylonjs-playground.com/#SBTYP), as well.
 
 
 * **Bump Mapping**
@@ -153,6 +153,6 @@ Using a dedicated texture, multi materials can be assigned to one single mesh. I
 Sometimes it is a bit difficult to determine which indices of a mesh should be textured by which of the multiple textures. David Catuhe has provided a comprehensive post about multi materials... on his blog:
 [http://blogs.msdn.com/b/eternalcoding/archive/2013/07/10/babylon-js-using-multi-materials.aspx](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/10/babylon-js-using-multi-materials.aspx)
 
-You can view and play-with the demo used in this tutorial... [right here](http://babylonjs-playground.azurewebsites.net/#EKFLA#13).
+You can view and play-with the demo used in this tutorial... [right here](http://www.babylonjs-playground.com/#EKFLA#13).
 
 You might also be interested in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.

@@ -27,7 +27,7 @@ Pay attention to the following things:
  - The Data Format you must selected is "JSON (Array)", at the time being that's the only format supported, but you'll see below that you can create your own loader to support more data formats.
  - The "Allow rotation" setting must not be selected as it's not supported by Canvas2D right now.
 
-  Once your done, click Publish to generated both files. Look at [this playground](http://babylonjs-playground.azurewebsites.net/#C1BYN#1) for a sample.
+  Once your done, click Publish to generated both files. Look at [this playground](http://www.babylonjs-playground.com/#C1BYN#1) for a sample.
 
   ## Using from the code
 
