@@ -172,7 +172,6 @@ This file starts like this:
         "filename": "babylon.max.js",
         "minFilename": "babylon.js",
         "minWorkerFilename": "babylon.worker.js",
-        "minCoreFilename": "babylon.core.js",
         "declarationFilename": "babylon.d.ts",
         "declarationModuleFilename": "babylon.module.d.ts",
         "outputDirectory": "../../dist/preview release",
