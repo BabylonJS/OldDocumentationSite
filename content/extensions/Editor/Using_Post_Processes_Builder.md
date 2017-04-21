@@ -1,4 +1,4 @@
-# Using the Post-Process Builder
+# Using the Post-Processes Builder
 
 ## Creating post-processes
 
@@ -14,9 +14,23 @@ Features available:
 
 ## Using the editor to preview your post-processes
 
+![PreviewPostProcessBuilder](/img/extensions/Editor/PostProcessBuilder/PreviewPostProcessBuilder.png)
+
 To preview the post-process you just developed, you can click the button "**Apply Chain**" on the toolbar, or directly push **CTRL + B**.
 
 Also, if you want to apply the chain on the current scene, just click the button "**Apply chain on scene**"
+
+## Showing the shader errors
+
+When the shader is unable to compile, you can use the output console to see what is happening.
+
+![ErrorPostProcessBuilder](/img/extensions/Editor/PostProcessBuilder/ErrorPostProcessBuilder.png)
+
+## Reordering post-processes chain
+
+You can reorder the post-processes chain using the list. Just drag'n'drop the items by clicking on the line number
+
+![ReorderPostProcessBuilder](/img/extensions/Editor/PostProcessBuilder/ReorderPostProcessBuilder.png)
 
 ## The sampler "originalSampler"
 

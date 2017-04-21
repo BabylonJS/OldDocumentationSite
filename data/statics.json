@@ -714,7 +714,11 @@
         },
         {
           "title": "Using the Post-Process Builder (for developers)",
-          "filename": "Using_Post_Process_Builder"
+          "filename": "Using_Post_Processes_Builder"
+        },
+        {
+          "title": "Using the Materials Builder (for developers)",
+          "filename": "Using_Materials_Builder"
         }
       ]
     },
