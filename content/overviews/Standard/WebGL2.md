@@ -23,6 +23,7 @@ Multisample render targets|Rendertarget textures can be multisampled to get anti
 Standard derivatives|Standard derivatites are used in Babylon.js to help compute realtime bump|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives)|[Demo](http://www.babylonjs.com/Demos/Bump/)|[Documentation](http://doc.babylonjs.com/tutorials/advanced_texturing)
 Texture LOD|Used by PRBMaterial to simulate microsurface|Yes through an [extension](https://www.khronos.org/registry/OpenGL/extensions/EXT/EXT_shader_texture_lod.txt)|[Demo](http://www.babylonjs.com/Demos/HDRMap/)|[Documentation](http://doc.babylonjs.com/overviews/physically_based_rendering)
 Vertex array objects (VAO)|A Vertex Array Object (or VAO) is an object that describes how the vertex attributes are stored in a Vertex Buffer Object (or VBO)|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/)|N/A. Every rendering is done with VAO by default|[See below](http://doc.babylonjs.com/overviews/webgl2#vertex-array-objects)
+Uniform buffer objects (UBO)| An uniform buffer object (or UBO) let you specify a group of uniforms from a buffer|No. Uniforms are handled independently on WebGL1 context|N/A. Materials supporting UBO automatically uses them|[See below](http://doc.babylonjs.com/overviews/webgl2#uniform-buffer-objects)
 
 ## Multisample render targets
 
@@ -43,3 +44,9 @@ At rendering time, you just have to define one VAO instead of multiple VBO (vert
 
 You can find more details on [Tojicode's blog](http://blog.tojicode.com/2012/10/oesvertexarrayobject-extension.html).
 
+## Uniform buffer objets
+On WebGL1 context all uniforms are sent to GPU independently. This means that if your shader uses 16 matrices, you will call WebGL API 16 times to update all matrices before using your shader.
+
+On WebGL2 context, you can use a UBO to set the values in a typed array all inside JavaScript. This means that it's much faster. When all the values are set you can then send them to the GPU with only one call.
+
+You can find more details on [WebGL 2 specification](https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.16)
