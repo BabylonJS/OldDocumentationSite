@@ -33,13 +33,14 @@ They are respectively for dealing with the Typescript language and the build too
 *Hint:* if you are developping on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it).
 
 ### Visual Studio Code
-TRying to be Opens source and OS agnostic, we chose to support VSCode which offer the quickest approach to get started. For the ones amongst you with already another choice, it is worth giving it a try and see what it brings as the heavy integration has been managed for you.
+Trying to be Opens source and OS agnostic, we chose to support VSCode which offer the quickest approach to get started. For the ones amongst you with already another choice, it is worth giving it a try and see what it brings as the heavy integration has been managed for you.
 
 You can install VSCode from their site: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 Once install, a few pluggins will help you having the best experience. You can search for them in the extension tab (Ctrl+Shift+d):
 1. Debugger for Chrome (also installing chrome will help but I guess this is already done)
 2. Shader language support for VS Code (syntax highlighting ang autocompletion in glsl shader)
+3. [This extension](https://marketplace.visualstudio.com/items?itemName=julianchen.babylon-js-viewer) can be used to display the content of a babylon file directly in vscode. It can be useful if you want to quickly check if your artist made a good job with object and their names :)
 
 Finally, I would recommand adding a few shortcuts to your environment. Follow the [guide](https://code.visualstudio.com/docs/customization/keybindings#_customizing-shortcuts):
  1. To configure keyboard shortcuts the way you want, go to the menu under File > Preferences > Keyboard Shortcuts. (Code > Preferences > Keyboard Shortcuts on Mac)
@@ -58,6 +59,7 @@ Finally, I would recommand adding a few shortcuts to your environment. Follow th
 This will make the main commands quicker to access. Do not hesitate to adapt the bindings to your Preferences.
 
 ![keybindings](/img/tutorials/howToStart/keybindings.png)
+
 
 ## Installation
 You are now all setup, and only a few steps from debugging. You now need to clone the project from github. Open a command line, move to the folder that will contain bjs and type:
