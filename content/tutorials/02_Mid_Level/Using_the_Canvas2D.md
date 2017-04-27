@@ -54,7 +54,7 @@ var canvas = new BABYLON.ScreenSpaceCanvas2D(scene, {
     ]
 });
 ```
-See it live in this [playground](http://babylonjs-playground.com/#2AVSFH#35)
+See it live in this [playground](http://www.babylonjs-playground.com/#2AVSFH#35)
 
 The code is pretty self explanatory, but let's run through it:
 
@@ -96,7 +96,7 @@ var timerId = setInterval(function () {
 }, 10);
 ```
 
-See it live in this [playground](http://babylonjs-playground.com/#272WI1#6)
+See it live in this [playground](http://www.babylonjs-playground.com/#272WI1#6)
 
 Explanations:
 
@@ -173,7 +173,7 @@ var timerId = setInterval(function () {
 
 ```
 
-See it live in this [playground](http://babylonjs-playground.com/#1BKDEO#22)
+See it live in this [playground](http://www.babylonjs-playground.com/#1BKDEO#22)
 
 This time we create a Canvas that will be present **in the scene** and not above, its position is 0,0,0, the rotation is built from yaw/pitch/roll construct, its scene size is 100,100 but the Canvas cached bitmap is scaled 8 times (to achieve a much better rendering quality).
 
