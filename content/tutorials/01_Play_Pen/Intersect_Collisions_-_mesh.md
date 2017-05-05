@@ -53,7 +53,7 @@ if (balloon3.intersectsPoint(pointToIntersect)){
 
 We defined a precise point in our scene, and if our balloon intersects this point, wherever on the balloon, then the event is raised and we change the color of the balloon.
 
-You can play with the code used in this tutorial... by visiting [**a demo at our playground**](http://babylonjs-playground.azurewebsites.net/?10).
+You can play with the code used in this tutorial... by visiting [**a demo at our playground**](http://www.babylonjs-playground.com/?10).
 
 ## Next step
 With those two functions, your scenes are becoming a lot more dynamic: you can define a specific reaction to object intersecting and colliding, and begin to introduce physics notions into your scene.

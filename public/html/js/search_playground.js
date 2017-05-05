@@ -114,7 +114,7 @@
 
                     //Tags research
                     if (tagsQuery) {
-                        if ((s.tags) && (s.tags.toUpperCase().search(strTags.toUpperCase()))) {
+                        if ((s.tags) && (s.tags.toUpperCase().search(strTags.toUpperCase()) != -1)) {
                             // Create html div with Tags research
 
                             html += createHTMLResultDiv(s, id, s.tags, strTags);
@@ -123,11 +123,11 @@
 
                     //Title or description research
                     if (query) {
-                        if ((s.name) && (s.name.toUpperCase().search(strQuery.toUpperCase()))) {
+                        if ((s.name) && (s.name.toUpperCase().search(strQuery.toUpperCase()) != -1)) {
                             // Create html div with Title research
                             html += createHTMLResultDiv(s, id, s.name, strQuery);
                         }
-                        else if ((s.description) && (s.description.toUpperCase().search(strQuery.toUpperCase()))) {
+                        else if ((s.description) && (s.description.toUpperCase().search(strQuery.toUpperCase()) != -1)) {
                             // Create html div with Description research
                             html += createHTMLResultDiv(s, id, s.description, strQuery);
                         }

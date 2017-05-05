@@ -5,7 +5,7 @@ PG_TITLE: 15. Shadows
 ## Introduction
 
 In this tutorial, we are going to learn how to create shadows in Babylon JS. Shadows are now becoming dynamic, and they are now dynamically generated depending upon a light.
-You might want to visit [**the playground scene**](http://babylonjs-playground.azurewebsites.net/?15) for this tutorial.
+You might want to visit [**the playground scene**](http://www.babylonjs-playground.com/?15) for this tutorial.
 
 
 ![Shadows](http://www.babylonjs.com/tutorials/15%20-%20Shadows/15.png)
