@@ -4,7 +4,7 @@ PG_TITLE: Using the standard rendering pipeline
 
 # Introduction
 
-Link to the playground : [http://babylonjs-playground.com/#FRUD8#1](http://babylonjs-playground.com/#FRUD8#1)
+Link to the playground : [http://babylonjs-playground.com/#FRUD8#2](http://babylonjs-playground.com/#FRUD8#2)
 
 This rendering pipeline tends to simulate a chain of famous post-process effects such as
 * Lens imperfections (surexposed surfaces are highlighted)
@@ -140,6 +140,6 @@ To manipulate depth of field, you can set the distance to blur by setting the ".
 pipeline.depthOfFieldDistance = 20;
 ```
 
-Playground example : [http://babylonjs-playground.com/#LB63T#1](http://babylonjs-playground.com/#LB63T#1)
+Playground example : [http://babylonjs-playground.com/#LB63T#2](http://babylonjs-playground.com/#LB63T#2)
 
 **note: Activating the depth of field will active the depth renderer of Babylon.js, which can have an impact on performances**
