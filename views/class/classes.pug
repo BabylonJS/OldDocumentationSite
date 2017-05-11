@@ -18,7 +18,7 @@ include ../includes/header
         #classes_classesListByAlpha.hidden
             //TODO Add switch layout buttons
             for className in classesByAlpha
-                a(href!='./'+currentVersion+'/'+className data-name=className class="classLink")= className.replace('_T_','<T>')
+                a(href!='./'+className data-name=className class="classLink")= className.replace('_T_','<T>')
         #tagFilter.hidden
             input(type='text' placeholder='Filter tag name')
         //List the classes categories
@@ -31,7 +31,7 @@ include ../includes/header
                         //List the classes of a category
                         each bClass in bClasses
                             li
-                                a(href='./'+currentVersion+'/'+bClass)= bClass
+                                a(href='./'+bClass)= bClass
     include ../includes/footer
 
     script(src="/js/classes.js")

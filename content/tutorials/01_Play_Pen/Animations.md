@@ -80,6 +80,31 @@ var keys = [];
   });
 ```
 
+For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent and outTangent values to use spline interpolations instead of linear interpolations:
+
+```javascript
+  var keys = []; 
+
+  keys.push({
+    frame: 0,
+    value: BABYLON.Vector3.Zero()
+    outTangent: new BABYLON.Vector3(1, 0, 0)
+  });
+
+  keys.push({
+    frame: 20,
+    inTangent: new BABYLON.Vector3(1, 0, 0),
+    value: new BABYLON.Vector3(1, 1, 1),
+    outTangent: new BABYLON.Vector3(-1, 0, 0)
+  });
+
+  keys.push({
+    frame: 100,
+    inTangent: new BABYLON.Vector3(-1, 0, 0),
+    value: BABYLON.Vector3.Zero()
+  });
+```
+
 Next, two important steps:
 * Adding the animation array to the animation object:
 
@@ -101,11 +126,11 @@ scene.beginAnimation(box1, 0, 100, true);
 
 **Parameters for scene.beginAnimation:**
 
- | Name | Type | Description
----|---|---|---
- | target | any | The target
- | from | number | The fps starting frame
- | to | number | The fps ending frame
+| Name | Type | Description
+|---|---|---
+| target | any | The target
+| from | number | The fps starting frame
+| to | number | The fps ending frame
 optional | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE)
 optional | speedRatio | number | default : 1. The speed ratio of this animation
 optional | onAnimationEnd | () => void | The function triggered on the end of the animation (also dependent upon ANIMATIONLOOPMODE)
@@ -155,6 +180,19 @@ BABYLON.Animation.prototype.vector3InterpolateFunction = function (startValue, e
   return BABYLON.Vector3.Lerp(startValue, endValue, gradient);
 };
 ```
+
+Here is the list of functions that you can change:
+
+* floatInterpolateFunction
+* quaternionInterpolateFunction
+* quaternionInterpolateFunctionWithTangents
+* vector3InterpolateFunction
+* vector3InterpolateFunctionWithTangents
+* vector2InterpolateFunction
+* vector2InterpolateFunctionWithTangents
+* sizeInterpolateFunction
+* color3InterpolateFunction
+* matrixInterpolateFunction
 
 ## Helper function
 
@@ -210,6 +248,7 @@ Here are the predefined easing functions you can use :
 
 You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates. 
 There are three possible values you can give for EasingMode: 
+
 - ```BABYLON.EasingFunction.EASINGMODE_EASEIN``` : Interpolation follows the mathematical formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEOUT``` : Interpolation follows 100% interpolation minus the output of the formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEINOUT``` : Interpolation uses EaseIn for the first half of the animation and EaseOut for the second half.

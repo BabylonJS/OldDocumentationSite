@@ -56,8 +56,8 @@ Note: GridLayout is not available yet, the only second layout is the StackPanelL
 
 ## Some playgrounds
 
-- [StackPanel](http://babylonjs-playground.com/#CMZLC#7)
-- [Margin & Padding](http://babylonjs-playground.com/#2DD9TG#3)
+- [StackPanel](http://www.babylonjs-playground.com/#CMZLC#7)
+- [Margin & Padding](http://www.babylonjs-playground.com/#2DD9TG#3)
 
 
 

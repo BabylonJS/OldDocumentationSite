@@ -2,7 +2,8 @@
 
     $(document).ready(function () {
 
-        if(localStorage.getItem('docBabylon_lastSearch') != false) {
+        if(localStorage.getItem('docBabylon_lastSearch') != false
+        && localStorage.getItem('docBabylon_lastSearch') != null) {
             document.getElementById("lastSearch").innerHTML = 'Your last search : <a href="http://doc.babylonjs.com/playground?code='
                 + localStorage.getItem('docBabylon_lastSearch') + '">' + localStorage.getItem('docBabylon_lastSearch') + '</a>';
         }

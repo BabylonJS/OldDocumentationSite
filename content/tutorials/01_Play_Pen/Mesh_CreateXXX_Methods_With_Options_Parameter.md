@@ -106,7 +106,7 @@ sourcePlane|_(Plane)_ source plane (math) the mesh will be transformed to|null
 #### Ground
 Example :
 ```javascript
-var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivsions: 4}, scene);
+var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivisions: 4}, scene);
 ```
 Properties, all optional :
 
@@ -120,7 +120,7 @@ subdivisions|_(number)_ number of square subdivisions|1
 #### Ground From a Height Map
 Example :
 ```javascript
-var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("gdhm", url, {width: 6, subdivsions: 4}, scene);
+var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("gdhm", url, {width: 6, subdivisions: 4}, scene);
 ```
 Don't forget the _url_ parameter.
 
@@ -139,7 +139,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 #### Tiled Ground
 Example :
 ```javascript
-var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivsions: {w:4, h:6} }, scene);
+var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivisions: {w:4, h:6} }, scene);
 ```
 Properties, all optional :
 
