@@ -7,16 +7,9 @@ PG_TITLE: 15. Shadows
 In this tutorial, we are going to learn how to create shadows in Babylon JS. Shadows are now becoming dynamic, and they are now dynamically generated depending upon a light.
 You might want to visit [**the playground scene**](http://www.babylonjs-playground.com/?15) for this tutorial.
 
-
-![Shadows](http://www.babylonjs.com/tutorials/15%20-%20Shadows/15.png)
-
-_Final result_
-
 ## How can I do this ?
 
-Shadows are easy to generate using the babylon.js “ShadowGenerator”. This function uses a shadow map: a map of your scene generated from the light’s point of view, as you can see here:
-
-![Shadows2](http://www.babylonjs.com/tutorials/15%20-%20Shadows/15-1.png)
+Shadows are easy to generate using the babylon.js “ShadowGenerator”. This function uses a shadow map: a map of your scene generated from the light’s point of view.
 
 The two parameters used by the shadow generator are: the size of the shadow map, and which light is used for the shadow map's computation.
 ```javascript
