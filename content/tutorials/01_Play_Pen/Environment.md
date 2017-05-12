@@ -6,7 +6,7 @@ PG_TITLE: 13. Environment
 
 You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive tutorials that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.
 
-![Environment](http://www.babylonjs.com/tutorials/13%20-%20Environment/13.png)
+![Environment](/img/tutorials/13.jpg)
 
 _A picture showing Babylon.js fog in action_
 
@@ -51,8 +51,6 @@ By default, `scene.ambientColor` is set to `Color3(0, 0, 0)`, which means there 
 
 To give a perfect illusion of a beautiful sunny sky, we are going to create a simple box, but with a special texture.
 
-![Skybox](http://www.babylonjs.com/tutorials/13%20-%20Environment/13-1.png)
-
 First, our box, nothing new, just take notice of the disabled [backface culling](http://en.wikipedia.org/wiki/Back-face_culling):
 ```javascript
 var skybox = BABYLON.Mesh.CreateBox("skyBox", 100.0, scene);
@@ -81,8 +79,6 @@ skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 (More about reflectionTextures can be found in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial.)
 
 In that `/skybox` directory, we must find 6 sky textures, one for each face of our box. Each image must be named per the corresponding face: “skybox_nx.png”, “skybox_ny.png”, “skybox_nz.png”, “skybox_px.png”, “skybox_py.png”, “skybox_pz.png”.
-
-![Skybox](http://www.babylonjs.com/tutorials/13%20-%20Environment/13-2.png)
 
 If you want some free skybox texture samples, point your browser to: http://3delyvisions.co/skf1.htm (look at licenses before use, please.) As you can see by those examples, skybox textures need not be textures of sky alone. Buildings, hills, mountains, trees, lakes, planets, stars, you name it (all can be used nicely) as part of skybox textures.
 
