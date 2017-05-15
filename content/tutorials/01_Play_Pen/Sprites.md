@@ -6,7 +6,7 @@ In this tutorial, we are going to learn how to manipulate Sprites. Sprites are 2
 
 Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees. 
 
-![Elements](http://www.babylonjs.com/tutorials/08%20-%20Sprites/08.png)
+![Elements](/img/tutorials/Sprites/08.png)
 
 _Final result_
 
@@ -36,7 +36,7 @@ var spriteManagerPlayer = new BABYLON.SpriteManager("playerManagr","Assets/Playe
 
 This time, we only want 2 instances, and we said that our sprite’s size is 64. Here is what our image looks like:
 
-![Elements](http://www.babylonjs.com/tutorials/08%20-%20Sprites/08-1.png)
+![Elements](/img/tutorials/Sprites/08-1.png)
 
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
@@ -76,7 +76,7 @@ One of the advantages of sprites is animations. You only have to load one large 
 
 Here is what a complete sprite image looks like:
 
-![Elements](http://www.babylonjs.com/tutorials/08%20-%20Sprites/08-2.png)
+![Elements](/img/tutorials/Sprites/08-2.png)
 
 This will animate our players in more than 40 positions, depending upon the situation (walking, jumping,…). Babylon's engine is automatically reading sprites on more than one line, so the engine does the work for you :)
 

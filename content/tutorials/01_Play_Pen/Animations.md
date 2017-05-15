@@ -5,7 +5,7 @@ PG_TITLE: 07. Animations
 # Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 
-![Elements](http://www.babylonjs.com/tutorials/07%20-%20Animation/07.png)
+![Elements](/img/tutorials/Animations/07.png)
 
 _Final result_
 
@@ -289,7 +289,7 @@ For purpose, here is a good reference to create your curve algorithm : [http://c
 
 Here is a pretty cool implementation using the bezier curve algorithm :
 
-![](http://www.dotmim.com/sitefiles/babylon/bezier.jpg)
+![](/img/tutorials/Animations/bezier.jpg)
 
 ```Javascript
 var bezierEase = new BABYLON.BezierCurveEase(0.32, -0.73, 0.69, 1.59);
