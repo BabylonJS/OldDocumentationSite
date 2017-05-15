@@ -1,1 +1,8 @@
-/classes              /classes/2.5
+/classes                                    /classes/2.5
+
+/tutorials/01._Advanced_Texturing           /tutorials/advanced_texturing
+/tutorials/02._Discover_Basic_Elements      /tutorials/discover_basic_elements
+/tutorials/08._Sprites                      /tutorials/sprites
+/tutorials/12._Particles                    /tutorials/particles
+/tutorials/14._Height_Map                   /tutorials/height_map
+/tutorials/15._Shadows                      /tutorials/shadows
