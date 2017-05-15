@@ -6,7 +6,7 @@ PG_TITLE: 14. Height Map
 
 In this tutorial, our goal is to understand height maps, and to learn how to generate realistic grounds.
 
-![HeightMap](http://www.babylonjs.com/tutorials/14%20-%20Height%20map/14.png)
+![HeightMap](/img/tutorials/HeightMap/14.png)
 
 _Final result_
 
@@ -24,7 +24,7 @@ var groundPlane = BABYLON.Mesh.CreatePlane("groundPlane", 200.0, scene);
 groundPlane.material = groundMaterial;
 ```
 
-![HeightMap2](http://www.babylonjs.com/tutorials/14%20-%20Height%20map/14-1.png)
+![HeightMap2](/img/tutorials/HeightMap/14-1.png)
 
 _Our material, a texture, applied to the plane_
 
@@ -32,7 +32,7 @@ _Our material, a texture, applied to the plane_
 
 Understanding height maps is the main objective of this tutorial. A height map is simply a greyscale image like the one we are going to use:
 
-![HeightMap3](http://www.babylonjs.com/tutorials/14%20-%20Height%20map/worldHeightMap.jpg)
+![HeightMap3](/img/tutorials/HeightMap/worldHeightMap.jpg)
 
 This image will now be used to generate our ground, using the different variants of gray of our picture. This image is the elevation data for your ground. Each pixel’s color is interpreted as a distance of displacement or “height” from the “floor” of your mesh. So, the whiter the pixel is, the taller your mountain will be.
 
@@ -53,7 +53,7 @@ Many parameters here:
 * > _Height_
 * _Number of subdivisions_: increase the complexity of this mesh in order to improve the visual quality of it:
 
-![HeightMap4](http://www.babylonjs.com/tutorials/14%20-%20Height%20map/14-2.png)
+![HeightMap4](/img/tutorials/HeightMap/14-2.png)
 
 * _Minimum height_ : The lowest level of the mesh
 * _Maximum height_ : the highest level of the mesh
@@ -68,13 +68,13 @@ ground.material = groundMaterial;
 
 And now we have a beautiful 3D view of the earth!
 
-![HeightMap4](http://www.babylonjs.com/tutorials/14%20-%20Height%20map/14-3.png)
+![HeightMap4](/img/tutorials/HeightMap/14-3.png)
 
 In my example, I have added a skybox (like we have learned before [here](http://doc.babylonjs.com/tutorials/Environment)), and a spotlight to simulate sun activity.
 
 Here is another example showing what you can achieve with BabylonJS height maps:
 
-![HeightMap5](http://www.babylonjs.com/tutorials/14%20-%20Height%20map/14-4.png)
+![HeightMap5](/img/tutorials/HeightMap/14-4.png)
 
 * **Tips**
 
