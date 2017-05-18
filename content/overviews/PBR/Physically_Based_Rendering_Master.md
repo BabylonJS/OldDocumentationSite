@@ -157,7 +157,7 @@ Normal mapping and Parallax are supported in the exact same way than the standar
 * [Parallax](http://doc.babylonjs.com/tutorials/Using_parallax_mapping)
  
 ## Shadows (as the standard material)
-Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/tutorials/15._Shadows)
+Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/tutorials/shadows)
 
 ## Energy Conservation
 In physics, Energy conservation is a really important rule modifying the way we can represent our lighting approximations.

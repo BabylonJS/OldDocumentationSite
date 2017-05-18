@@ -4,7 +4,7 @@ PG_TITLE: How to use FresnelParameters
 ---
 Babylon.js 1.14 introduced new parameters for the StandardMaterial: _FresnelParameters_.
 
-![](http://www.babylonjs.com/Screenshots/fresnel.jpg)
+![](/img/tutorials/Fresnel/fresnel.jpg)
 
 There are 5 of them:
 
@@ -33,7 +33,7 @@ material.reflectionFresnelParameters.leftColor = BABYLON.Color3.White();
 material.reflectionFresnelParameters.rightColor = BABYLON.Color3.Black();
 ```
 
-![](http://www.babylonjs.com/forumpics/fresnel01.jpg)
+![](/img/tutorials/Fresnel/fresnel01.jpg)
 
 Conversely, if you only want reflection in the center:
 
@@ -42,7 +42,7 @@ material.reflectionFresnelParameters.leftColor = BABYLON.Color3.Black();
 material.reflectionFresnelParameters.rightColor = BABYLON.Color3.White();
 ```
 
-![](http://www.babylonjs.com/forumpics/fresnel02.jpg)
+![](/img/tutorials/Fresnel/fresnel02.jpg)
 
 By using ```bias``` and ```power``` properties, you can control how the fresnel is computed along the surface of the object according to this formula:
 
@@ -61,7 +61,7 @@ material.reflectionFresnelParameters.power = 4;
 
 ...generates the following rendering:
 
-![](http://www.babylonjs.com/forumpics/fresnel03.jpg)
+![](/img/tutorials/Fresnel/fresnel03.jpg)
 
 ## How to use it
 

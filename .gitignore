@@ -13,3 +13,4 @@ data/forward.json
 public/html/*
 
 !public/html/img/
+.history/

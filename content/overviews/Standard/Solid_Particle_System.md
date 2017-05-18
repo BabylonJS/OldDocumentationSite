@@ -53,7 +53,7 @@ SPS.billboard = true; // or false by default
 SPS.setParticles();
 ```
 `SPS.billboard` is a boolean (default _false_). If set to _true_, all the particles will face the cam and their _x_ and _y_ rotation values will be ignored.  
-This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/tutorials/12._Particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/08._Sprites) which are more performant in 2D computation.  
+This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) which are more performant in 2D computation.  
 In order to display the SPS in billboard mode, you need to call `SPS.setParticles()` within the `scene.registerBeforeRender()` function.  
 
 Here is an example with plane particles in billboard mode : http://www.babylonjs-playground.com/#WCDZS#7    
@@ -198,7 +198,7 @@ This function doesn't do anything, you have to implement it.
 It doesn't draw the mesh, it just changes the particle initial status that will be taken in account by the next `SPS.setParticle()` call.
 The same thing with `SPS.recycleParticle(particle)` what is not called automatically and that you have to implement by your own and to call when you need.  
 
-Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/tutorials/12._Particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/08._Sprites) :  
+Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) :  
 
 The Particle System is the most performant in terms of speed and of particle quantity.  
 The particles are 2D quads, have all the same texture and colour. They ever face the screen, so they can have only a z-axis rotation. They aren't z-sorted and aren't pickable.  
