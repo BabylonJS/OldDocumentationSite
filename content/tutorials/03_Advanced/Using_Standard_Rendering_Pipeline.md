@@ -124,6 +124,35 @@ The distortion strength:
 pipeline.lensFlareDistortionStrength = 35; // Default 4.0
 ```
 
+# Setting up Luminance Adaptation
+
+The standard rendering pipeline now allows you to compute luminance adaptation. This process tends to simulate real life events:
+it means that if you focus on a higly brighted zone, the camera will adapt itself. In another words, this technique allows you to create
+glare effects and it is also linked to what we call "*HDR*"
+
+## Customizing luminance adaptation
+First, let's activate the luminance adatation:
+
+```
+pipeline.HDREnabled = true;
+```
+
+That's all! Now, let's customize some properties:
+
+```
+// 1.0 is the default value. In dark zones, the camera will tend to adapt luminance
+// and get the global image less dark. More the value is near 0.0, more the image will be bright
+pipeline.hdrMinimumLuminance = 1.0;
+
+// 0.5 is the default value. This simply sets the speed when the camera adapts the luminosity
+// in bright zones
+pipeline.hdrDecreaseRate = 0.5;
+
+// 0.5 is the default value. This simply sets the speed when the camera adapts the luminosity
+// in dark zones
+pipeline.hdrIncreaseRate = 0.5;
+```
+
 # Setting up the depth of field
 
 ## Activating the depth of field
