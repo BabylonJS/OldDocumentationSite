@@ -555,6 +555,10 @@
         {
           "title": "Shadow Only",
           "filename": "ShadowOnly"
+        },
+        {
+          "title": "Cell Shading",
+          "filename": "Cell"
         }
       ]
     },
