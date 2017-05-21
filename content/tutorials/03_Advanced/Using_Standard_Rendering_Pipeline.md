@@ -171,4 +171,25 @@ pipeline.depthOfFieldDistance = 20;
 
 Playground example : [http://babylonjs-playground.com/#LB63T#2](http://babylonjs-playground.com/#LB63T#2)
 
-**note: Activating the depth of field will active the depth renderer of Babylon.js, which can have an impact on performances**
+**note: Activating the depth of field will activate the depth renderer of Babylon.js, which can have an impact on performances**
+
+# Setting up the Motion Blur
+As a demo, you have a look at https://www.youtube.com/watch?v=14Ejsj1_ywM
+
+Motion Blur simply tries to blur the overall image when the camera moves fast.
+
+## Customizing Motion Blur
+```
+// Enable motion blur in the pipeline
+pipeline.MotionBlurEnabled = true;
+
+// Default value is 1.0. More the motion strength is high, more the blur will be high
+pipeline.motionStrength = 0.5;
+
+// Default value is 64.0. This property represents the quality of the effect. More the value is high
+// more the blur will be high quality. 64.0 is enough to have a beautiful result
+pipeline.motionBlurSamples = 32.0;
+```
+
+
+**note: Activating the Motion Blur will activate the depth renderer of Babylon.js, which can have an impact on performances**
