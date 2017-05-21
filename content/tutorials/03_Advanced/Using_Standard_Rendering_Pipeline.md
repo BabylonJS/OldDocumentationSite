@@ -124,6 +124,35 @@ The distortion strength:
 pipeline.lensFlareDistortionStrength = 35; // Default 4.0
 ```
 
+# Setting up Luminance Adaptation
+
+The standard rendering pipeline now allows you to compute luminance adaptation. This process tends to simulate real life events:
+it means that if you focus on a higly brighted zone, the camera will adapt itself. In another words, this technique allows you to create
+glare effects and it is also linked to what we call "*HDR*"
+
+## Customizing luminance adaptation
+First, let's activate the luminance adatation:
+
+```
+pipeline.HDREnabled = true;
+```
+
+That's all! Now, let's customize some properties:
+
+```
+// 1.0 is the default value. In dark zones, the camera will tend to adapt luminance
+// and get the global image less dark. More the value is near 0.0, more the image will be bright
+pipeline.hdrMinimumLuminance = 1.0;
+
+// 0.5 is the default value. This simply sets the speed when the camera adapts the luminosity
+// in bright zones
+pipeline.hdrDecreaseRate = 0.5;
+
+// 0.5 is the default value. This simply sets the speed when the camera adapts the luminosity
+// in dark zones
+pipeline.hdrIncreaseRate = 0.5;
+```
+
 # Setting up the depth of field
 
 ## Activating the depth of field
@@ -142,4 +171,25 @@ pipeline.depthOfFieldDistance = 20;
 
 Playground example : [http://babylonjs-playground.com/#LB63T#2](http://babylonjs-playground.com/#LB63T#2)
 
-**note: Activating the depth of field will active the depth renderer of Babylon.js, which can have an impact on performances**
+**note: Activating the depth of field will activate the depth renderer of Babylon.js, which can have an impact on performances**
+
+# Setting up the Motion Blur
+As a demo, you have a look at https://www.youtube.com/watch?v=14Ejsj1_ywM
+
+Motion Blur simply tries to blur the overall image when the camera moves fast.
+
+## Customizing Motion Blur
+```
+// Enable motion blur in the pipeline
+pipeline.MotionBlurEnabled = true;
+
+// Default value is 1.0. More the motion strength is high, more the blur will be high
+pipeline.motionStrength = 0.5;
+
+// Default value is 64.0. This property represents the quality of the effect. More the value is high
+// more the blur will be high quality. 64.0 is enough to have a beautiful result
+pipeline.motionBlurSamples = 32.0;
+```
+
+
+**note: Activating the Motion Blur will activate the depth renderer of Babylon.js, which can have an impact on performances**
