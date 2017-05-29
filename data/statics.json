@@ -354,35 +354,35 @@
       "files": [
         {
           "title": "3D on the Web Understanding the Basics",
-          "filename": "01._3D_on_the_Web_Understanding_the_Basics"
+          "filename": "3D_on_the_Web_Understanding_the_Basics"
         },
         {
           "title": "WebGL Basics",
-          "filename": "02._WebGL_Basics"
+          "filename": "WebGL_Basics"
         },
         {
           "title": "Using Babylon.js for Beginners",
-          "filename": "03._Using_Babylon.js_for_Beginners"
+          "filename": "Using_Babylon.js_for_Beginners"
         },
         {
           "title": "Understanding Materials and Inputs",
-          "filename": "04._Understanding_Materials_and_Inputs"
+          "filename": "Understanding_Materials_and_Inputs"
         },
         {
           "title": "Game Pipeline Integration with Babylon.js",
-          "filename": "05._Game_Pipeline_Integration_with_Babylon.js"
+          "filename": "Game_Pipeline_Integration_with_Babylon.js"
         },
         {
           "title": "Loading Assets",
-          "filename": "06._Loading_Assets"
+          "filename": "Loading_Assets"
         },
         {
           "title": "Babylon.js Advanced Features",
-          "filename": "07._Babylon.js_Advanced_Features"
+          "filename": "Babylon.js_Advanced_Features"
         },
         {
           "title": "Special Effects",
-          "filename": "08._Special_Effects"
+          "filename": "Special_Effects"
         },
         {
           "title": "Video courses",
