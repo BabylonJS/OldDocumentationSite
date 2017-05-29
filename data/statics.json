@@ -125,6 +125,10 @@
           "filename": "Position,_Rotate,_Translate_and_Spaces"
         },
         {
+          "title": "Using PolygonMeshBuilder",
+          "filename": "PolygonMeshBuilder"
+        },
+        {
           "title": "Advanced Texturing",
           "filename": "Advanced_Texturing"
         },
