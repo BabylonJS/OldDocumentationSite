@@ -6,7 +6,7 @@ You have already seen how you can apply textures on meshes, but here you are goi
 
 ![AdvancedTexturing](/img/tutorials/Advanced%20Texturing/0.png)
 
-A picture from our [Advanced Texturing playground demo](http://www.babylonjs-playground.com/#EKFLA#13).
+A picture from our [Advanced Texturing playground demo](http://www.babylonjs-playground.com/#EKFLA#13)
 
 ## How can I do this ?
 
