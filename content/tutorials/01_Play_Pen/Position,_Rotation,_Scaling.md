@@ -6,7 +6,7 @@ PG_TITLE: 03. Position, Rotation, Scaling
 
 In this tutorial, we are going to learn how to position, scale and rotate any kind of objects that you created in our last tutorial. We will also set a parent and start to understand how parenting affects position, rotation and scaling.
 
-![Elements]/img/tutorials/Rotation%20and%20scaling/03.png)
+![Elements](/img/tutorials/Rotation%20and%20scaling/03.png)
 
 [**Playground Demo Scene 3 - Positioned, Scaled, and Rotated Boxes**](http://www.babylonjs-playground.com/?3)
 
