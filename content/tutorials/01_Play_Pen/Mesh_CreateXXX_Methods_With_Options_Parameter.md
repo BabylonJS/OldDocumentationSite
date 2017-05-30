@@ -476,6 +476,42 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
+#### Polygon
+You must set at least the _shape_ property.
+
+Example :
+```javascript
+var polygon = BABYLON.MeshBuilder.CreatePolygon("polygon", {shape: myShape}, scene);
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+
+#### Extruded Polygon
+You must set at least the _shape_ and _depth_ properties.
+
+Example :
+```javascript
+var polygon = BABYLON.MeshBuilder.ExtrudePolygon("polygon", {shape: myShape, depth: 2}, scene);
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+depth|_(number)_  the depth of the extrusion **REQUIRED** |
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 
 <br/>
 <br/>

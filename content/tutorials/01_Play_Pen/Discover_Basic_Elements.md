@@ -70,6 +70,26 @@ Parameters are: name, height, diamTop, diamBottom, tessellation, heightSubdivs, 
 ```javascript
 var cylinder = BABYLON.Mesh.CreateCylinder("cylinder", 3, 3, 3, 6, 1, scene);
 ```
+* **Creation of a Polygon**
+
+```javascript
+var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], scene, [[V1, V2, ..., Vn], [V1, V2, ..., Vn], ....[V1, V2, ..., Vn]], false, BABYLON.Mesh.DEFAULTSIDE);
+```
+
+Parameters are: name, [array of comma-separated vectors],  scene, [array of array of comma-separated vectors], updatable and the optional side orientation (see below). The last three parameters can be omitted if you just need the default behavior :
+```javascript
+var polygon = BABYLON.Mesh.CreateCylinder("cylinder", [V1, V2, ..., Vn], scene);
+```
+* **Extrusion of a Polygon**
+
+```javascript
+var polygon = BABYLON.Mesh.ExtrudePolygon("polygon", [V1, V2, ..., Vn], 2, scene, [[V1, V2, ..., Vn], [V1, V2, ..., Vn], ....[V1, V2, ..., Vn]], false, BABYLON.Mesh.DEFAULTSIDE);
+```
+
+Parameters are: name, [array of comma-separated vectors], depth, scene, [array of array of comma-separated vectors], updatable and the optional side orientation (see below). The last three parameters can be omitted if you just need the default behavior :
+```javascript
+var polygon = BABYLON.Mesh.CreateCylinder("cylinder", [V1, V2, ..., Vn], 2, scene);
+```
 
 * **Creation of a Torus**
 
