@@ -875,6 +875,10 @@
         {
           "title": "Using the WebVR Camera",
           "filename": "WebVR_Camera"
+        },
+        {
+          "title": "Integrate user interface with Babylon.GUI",
+          "filename": "GUI"
         }
       ]
     },
