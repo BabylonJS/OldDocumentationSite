@@ -87,7 +87,7 @@ textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can b
 A button can be used to interact with your user. 
 Please see the events chapter to see how to connect your events with your buttons.
 
-There are two kinds of buttons available out of the box:
+There are three kinds of buttons available out of the box:
 
 * ImageButton: An image button is a button made with an image and a text. You can create one with:
 
@@ -97,13 +97,21 @@ var button = BABYLON.GUI.Button.CreateImageButton("but", "Click Me", "textures/g
 
 You can try it here: http://babylonjs-playground.com/#XCPP9Y#3
 
-* SimpleButton: The simple button
+* SimpleButton: A simple button with text only
 
 ```
 var button = BABYLON.GUI.Button.CreateSimpleButton("but", "Click Me");
 ```
 
 You can try it here: http://babylonjs-playground.com/#XCPP9Y#4
+
+* ImageOnlyButton:
+
+```
+var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png");
+```
+
+You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#28
 
 #### Visual animations
 By default a button will change its opacity on pointerover and will change it scale when clicked.
@@ -161,6 +169,8 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_NONE: Use original size
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
+
+You can change image source at any time with `image.source="myimage.jpg"`.
 
 Here is an example of an image: http://babylonjs-playground.com/#XCPP9Y#7
 
@@ -227,32 +237,34 @@ Here is an example of how to use alignments: http://babylonjs-playground.com/#XC
 ### Position and size
 You can set controls' position with the following properties:
 
-Property|Type|Default
---------|----|-------
-left|valueAndUnit|0
-top|valueAndUnit|0
+Property|Type|Default|Default unit
+--------|----|-------|------------
+left|valueAndUnit|0|Pixel
+top|valueAndUnit|0|Pixel
 
 Size can be set with:
 
-Property|Type|Default
---------|----|-------
-width|valueAndUnit|100%
-height|valueAndUnit|100%
+Property|Type|Default|Default unit
+--------|----|-------|------------
+width|valueAndUnit|100%|Percentage
+height|valueAndUnit|100%|Percentage
 
 Margins can be set with:
 
-Property|Type|Default
---------|----|-------
-marginTop|valueAndUnit|0px
-marginBottom|valueAndUnit|0px
-marginLeft|valueAndUnit|0px
-marginRight|valueAndUnit|0px
+Property|Type|Default|Default unit
+--------|----|-------|------------
+marginTop|valueAndUnit|0px|Pixel
+marginBottom|valueAndUnit|0px|Pixel
+marginLeft|valueAndUnit|0px|Pixel
+marginRight|valueAndUnit|0px|Pixel
 
 Please note that margins are inside the control. This means that the usableWidth = width - marginLeft - marginRight. Same for usableHeight = height - marginTop - marginBottom.
 
 All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
 To set value as percentage, use this construct: `control.left = "50%"`
+
+You can also not define the unit (In this cade the default unit will be used): `control.width = 50` (which is equivalent to `control.width = "50%"`)
 
 Here is an example of how to use positions and sizes: http://babylonjs-playground.com/#XCPP9Y#14
 
