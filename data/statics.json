@@ -878,7 +878,7 @@
         },
         {
           "title": "Integrate user interface with Babylon.GUI",
-          "filename": "GUI"
+          "filename": "Gui"
         }
       ]
     },
