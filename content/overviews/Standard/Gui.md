@@ -201,7 +201,7 @@ You can also define that a control is invisble to events (so you can click throu
 
 Here is an example of how to use observables: http://babylonjs-playground.com/#XCPP9Y#12
 
-### alignments
+### Alignments
 You can define the alignments used by your control with the following properties:
 
 Property|Default|Comments
