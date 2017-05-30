@@ -22,7 +22,7 @@ Babylon.GUI has two modes:
 var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
 ```
 
-Here is an example of a simple fullscreen mode GUI: http://playground.babylonjs.com/#XCPP9Y#1
+Here is an example of a simple fullscreen mode GUI: http://babylonjs-playground.com/#XCPP9Y#1
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. Pointer down and up events will be intercepted. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
@@ -30,7 +30,7 @@ Here is an example of a simple fullscreen mode GUI: http://playground.babylonjs.
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
-Here is an example of a simple texture mode GUI: http://playground.babylonjs.com/#ZI9AK7#1
+Here is an example of a simple texture mode GUI: http://babylonjs-playground.com/#ZI9AK7#1
 
 Once you have an AdvancedDynamicTexture object, you can start adding controls.
 
@@ -52,7 +52,7 @@ zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 
 ### TextBlock
 
-The TextBlock is a simple control used to display text: http://playground.babylonjs.com/#XCPP9Y#2
+The TextBlock is a simple control used to display text: http://babylonjs-playground.com/#XCPP9Y#2
 
 Here are the properties you can define:
 
@@ -76,7 +76,7 @@ There are two kinds of buttons available out of the box:
 var button = BABYLON.GUI.Button.CreateImageButton("but", "Click Me", "textures/grass.png");
 ```
 
-You can try it here: http://playground.babylonjs.com/#XCPP9Y#3
+You can try it here: http://babylonjs-playground.com/#XCPP9Y#3
 
 * SimpleButton: The simple button
 
@@ -84,7 +84,7 @@ You can try it here: http://playground.babylonjs.com/#XCPP9Y#3
 var button = BABYLON.GUI.Button.CreateSimpleButton("but", "Click Me");
 ```
 
-You can try it here: http://playground.babylonjs.com/#XCPP9Y#4
+You can try it here: http://babylonjs-playground.com/#XCPP9Y#4
 
 #### Visual animations
 By default a button will change its opacity on pointerover and will change it scale when clicked.
@@ -133,7 +133,7 @@ y2|number|0|Y coordinate of the second point
 dash|array of numbers|Empty array|Defines the size of the dashes
 lineWidth|number|1|Width in pixel
 
-Here is an example of a line: http://playground.babylonjs.com/#XCPP9Y#6
+Here is an example of a line: http://babylonjs-playground.com/#XCPP9Y#6
 
 ### Image
 
@@ -143,7 +143,7 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
 
-Here is an example of an image: http://playground.babylonjs.com/#XCPP9Y#7
+Here is an example of an image: http://babylonjs-playground.com/#XCPP9Y#7
 
 ## Containers
 
@@ -158,7 +158,7 @@ Property|Type|Default|Comments
 thickness|number|1|Thickness of the border
 cornerRadius|number|0|Radius of each corner. Used to create rounded rectangles
 
-Here is an example of a rectangle control: http://playground.babylonjs.com/#XCPP9Y#8
+Here is an example of a rectangle control: http://babylonjs-playground.com/#XCPP9Y#8
 
 ### Ellipse
 The Ellipse is a ellipsoidal container with the following properties:
@@ -167,7 +167,7 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 thickness|number|1|Thickness of the border
 
-Here is an example of an ellipse control: http://playground.babylonjs.com/#XCPP9Y#10
+Here is an example of an ellipse control: http://babylonjs-playground.com/#XCPP9Y#10
 
 ### StackPanel
 
@@ -176,7 +176,7 @@ All children must have a defined width or height (depending on the orientation).
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
-Here is an example of a StackPanel: http://playground.babylonjs.com/#XCPP9Y#11
+Here is an example of a StackPanel: http://babylonjs-playground.com/#XCPP9Y#11
 
 ## General properties
 
@@ -193,7 +193,7 @@ onPointerUpObservable|Raised when pointer is up on the control.
 
 You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
-Here is an example of how to use observables: http://playground.babylonjs.com/#XCPP9Y#12
+Here is an example of how to use observables: http://babylonjs-playground.com/#XCPP9Y#12
 
 ### alignments
 You can define the alignments used by your control with the following properties:
@@ -203,7 +203,7 @@ Property|Default|Comments
 horizontalAlignment|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center.
 verticalAlignment|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom and center.
 
-Here is an example of how to use alignments: http://playground.babylonjs.com/#XCPP9Y#13
+Here is an example of how to use alignments: http://babylonjs-playground.com/#XCPP9Y#13
 
 ### Position and size
 You can set controls' position with the following properties:
@@ -235,19 +235,19 @@ All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
 To set value as percentage, use this construct: `control.left = "50%"`
 
-Here is an example of how to use positions and sizes: http://playground.babylonjs.com/#XCPP9Y#14
+Here is an example of how to use positions and sizes: http://babylonjs-playground.com/#XCPP9Y#14
 
 ### Tracking positions
 All controls can be moved to track position of a mesh.
 To do this, just call `control.linkWithMesh(mesh)`. You can then offset the position with `control.linkOffsetX` and `control.linkOffsetY`.
 
-Here is an example of a trackable label: http://playground.babylonjs.com/#XCPP9Y#16
+Here is an example of a trackable label: http://babylonjs-playground.com/#XCPP9Y#16
 
 Please note that controls that want to track position of a mesh must be at root level (at AdvancedDynamicTexture level).
 
 For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control. 
 
-With these 2 options, you can create a complete trackable label: http://playground.babylonjs.com/#XCPP9Y#20
+With these 2 options, you can create a complete trackable label: http://babylonjs-playground.com/#XCPP9Y#20
 
 ### Rotation and Scaling
 
@@ -261,5 +261,5 @@ scaleY|number|1|
 transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
 transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
 
-Here is an example of how to use rotation and scaling: http://playground.babylonjs.com/#XCPP9Y#22
+Here is an example of how to use rotation and scaling: http://babylonjs-playground.com/#XCPP9Y#22
 
