@@ -56,6 +56,19 @@ fontName|string|Arial|Font name can be inherited. This means that if you set it 
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 
+Controls can be added directly to the AdvancedDynamicTexture or to a container with:
+
+```
+container.addControl(control);
+```
+
+They can be removed with:
+
+```
+container.removeControl(control);
+```
+
+
 ### TextBlock
 
 The TextBlock is a simple control used to display text: http://babylonjs-playground.com/#XCPP9Y#2
