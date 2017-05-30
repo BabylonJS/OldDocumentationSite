@@ -4,10 +4,16 @@ The Babylon.js GUI library is an extension you can use to generate interactive u
 It is build on top of the DynamicTexture.
 
 The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release/gui.
+
 And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui.
+
+You can find a complete demo here: http://www.babylonjs.com/demos/gui/
+
+![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
 
 ## Introduction
 Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface. It is an alternate option to [Canvas2D](http://doc.babylonjs.com/overviews/canvas2d_home).
+
 The main difference is that Canvas2D is full GPU oriented (text constructrion, animations, etc..) where Babylon.GUI relies on HTML canvas API.
 
 While it could be seen as a less performant aproach, it is also more flexible. Furthermore, HTML canvas is also GPU accelerated on most recent browsers.
