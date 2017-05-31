@@ -169,6 +169,9 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_NONE: Use original size
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
+* BABYLON.GUI.Image.STRETCH_EXTEND: Scale the container to adapt to the image size.
+
+You may want to have the Image control adapt its size to the source image. TO do so just call `image.autoScale = true`.
 
 You can change image source at any time with `image.source="myimage.jpg"`.
 
