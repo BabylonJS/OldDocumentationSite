@@ -487,8 +487,8 @@ Properties :
 
 property|value|default value
 --------|-----|-------------
-shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
-holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+shape|_(Vector3[])_  array of Vector3 in XoZ plane ie Vector3.(x ,0, z), the shape you want a polygon of **REQUIRED** |
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3  in XoZ plane ie Vector3.(x ,0, z)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
@@ -505,9 +505,9 @@ Properties :
 
 property|value|default value
 --------|-----|-------------
-shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+shape|_(Vector3[])_  array of Vector3  in XoZ plane ie Vector3.(x ,0, z), the shape you want to extrude **REQUIRED** |
 depth|_(number)_  the depth of the extrusion **REQUIRED** |
-holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 in XoZ plane ie Vector3.(x ,0, z)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
