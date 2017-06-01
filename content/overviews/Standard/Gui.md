@@ -268,7 +268,7 @@ All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
 To set value as percentage, use this construct: `control.left = "50%"`
 
-You can also not define the unit (In this case the default unit will be used): `control.width = 50` (which is equivalent to `control.width = "50%"`)
+You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
 
 Here is an example of how to use positions and sizes: http://www.babylonjs-playground.com/#XCPP9Y#14
 
