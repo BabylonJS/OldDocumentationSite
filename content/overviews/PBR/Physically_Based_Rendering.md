@@ -140,40 +140,6 @@ You can see here all the elements being lit by the reflection map. Playing with 
 
 [**Playground Demo Scene - PBR Reflection**](http://www.babylonjs-playground.com/#1HQPOD#2)
 
-* **Overloaded Values**
-
-In order to **simplify debugging** and also to **create animation effects**, a bunch of overloaded parameters are available in the material. All of them are controlled by an intensity parameter going from 0 to 1. It specifies how much the overloaded value is used... (not sure I am clear enough to be honest, let's try again) The intensity value is the gradient amount between the actual value and the overloaded one (still not clear? see illustration):
-
-![Elements](/img/extensions/materials/PBRMaterialOverloadedValues.jpg)
-
-As you can see, the texture is being more and more overridden by an overloaded diffuse color when the overloaded diffuse intensity increases (from left to right and 0 to 1).
-
-[**Playground Demo Scene - PBR Overloaded Values**](http://babylonjs-playground.com/#1GELZQ#9)
-
-```javascript
-var x = 0;
-for (var j = 0; j < 6; j++) {
-	var overloadedIntensity = j / 5;
-		
-	//Creation of a sphere
-	var sphere = BABYLON.Mesh.CreateSphere("Sphere_" + j, 10.0, 9.0, scene);
-	sphere.position.x = x;
-		
-	//Creation of a material
-	var materialSphere = new BABYLON.PBRMaterial("Material_" + j, scene);
-	materialSphere.albedoTexture = new BABYLON.Texture("Textures/Amiga");
-	materialSphere.overloadedAlbedo = new BABYLON.Color3(0, 0, 1);
-	materialSphere.overloadedAlbedoIntensity = overloadedIntensity;
-
-	//Attach the material to the sphere
-	sphere.material = materialSphere;
-
-	x = x - 15;
-}
-```
-
-All the overloaded properties are beginning by overloaded to easily find them in the PBRMaterial class.
-
 ## Ligthing Intensity
 
 In order to allow finer grain control of the lighting, the following properties have been added in the material.
