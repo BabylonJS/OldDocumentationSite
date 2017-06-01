@@ -99,6 +99,9 @@ var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], scene, [[
 ```
 
 Parameters are: name, [array of comma-separated vectors],  scene, [array of array of comma-separated vectors], updatable and the optional side orientation (see below). The last three parameters can be omitted if you just need the default behavior :
+
+NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z);
+
 ```javascript
 var polygon = BABYLON.Mesh.CreateCylinder("cylinder", [V1, V2, ..., Vn], scene);
 ```
@@ -111,6 +114,9 @@ var polygon = BABYLON.Mesh.ExtrudePolygon("polygon", [V1, V2, ..., Vn], 2, scene
 ```
 
 Parameters are: name, [array of comma-separated vectors], depth, scene, [array of array of comma-separated vectors], updatable and the optional side orientation (see below). The last three parameters can be omitted if you just need the default behavior :
+
+NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z);
+
 ```javascript
 var polygon = BABYLON.Mesh.CreateCylinder("polygon", [V1, V2, ..., Vn], 2, scene);
 ```
