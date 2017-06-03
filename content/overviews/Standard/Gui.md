@@ -144,7 +144,26 @@ iconImage.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
 result.addControl(iconImage);            
 
 return result;
-```            
+```  
+
+### Slider
+
+The slider is used to control a value within a range.
+You can specify the range with `slider.minimum` and `slider.maximum`.
+
+The value itself is specified with `slider.value` and will raise an observable everytime it is changed (`slider.onValueChangedObservable`).
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+borderColor|string|white|Color used to render the border of the thumb
+foreground|string|green|Foreground color
+background|string|black|Background color
+barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
+thumbWidth|valueAndUnit|30px|Width of the thumb
+
+Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
 ### Line
 
