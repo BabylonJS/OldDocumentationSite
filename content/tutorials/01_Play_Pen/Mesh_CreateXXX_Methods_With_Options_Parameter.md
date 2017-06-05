@@ -481,16 +481,24 @@ You must set at least the _shape_ property.
 
 Example :
 ```javascript
-var polygon = BABYLON.MeshBuilder.CreatePolygon("polygon", {shape: myShape}, scene);
+var polygon = BABYLON.MeshBuilder.CreatePolygon("polygon", {shape: myShape, sideOrientation: BABYLON.Mesh.DOUBLESIDE, frontUVs: myFrontUVs, backUVs: myBackUVs}, scene);
 ```
 Properties :
 
 property|value|default value
 --------|-----|-------------
-shape|_(Vector3[])_  array of Vector3 in XoZ plane ie Vector3.(x ,0, z), the shape you want a polygon of **REQUIRED** |
-holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3  in XoZ plane ie Vector3.(x ,0, z)
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option**
+backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option**
+
+Both frontUVs and backUVs have the form Vector4(u0,v0,u1,v1) with 0&gt;=  u0,v0,u1,v1 &lt;= 1 and 
+(u0, v0) are the bottom left coordinates and (u1, v1) the top right coordinates of the clipping rectangle 
+of the image.
+
+[A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#2)
 
 Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 
@@ -499,17 +507,25 @@ You must set at least the _shape_ and _depth_ properties.
 
 Example :
 ```javascript
-var polygon = BABYLON.MeshBuilder.ExtrudePolygon("polygon", {shape: myShape, depth: 2}, scene);
+var polygon = BABYLON.MeshBuilder.ExtrudePolygon("polygon", {shape: myShape, depth: 2, faceUV: myUVs}, scene);
 ```
 Properties :
 
 property|value|default value
 --------|-----|-------------
-shape|_(Vector3[])_  array of Vector3  in XoZ plane ie Vector3.(x ,0, z), the shape you want to extrude **REQUIRED** |
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
 depth|_(number)_  the depth of the extrusion **REQUIRED** |
-holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 in XoZ plane ie Vector3.(x ,0, z)
+faceColors|_(Color4[])_ array of 3 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
+faceUV|_(Vector4[])_ array of 3 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+
+To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
+
+face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
+
+[Playground Example of Extruded Polygon](http://www.babylonjs-playground.com/#RNCYVM#2)
 
 Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 
