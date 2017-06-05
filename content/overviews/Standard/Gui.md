@@ -146,6 +146,23 @@ result.addControl(iconImage);
 return result;
 ```  
 
+### Checkbox
+
+The checkbox is used to control a boolean value.
+You can specify the value with `checkbox.isChecked`.
+
+Changing the `isChecked` property will raise an observable called `checkbox.onIsCheckedChangedObservable`.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+color|string|white|Foreground color
+background|string|black|Background color
+checkSizeRatio|number|0.8|Define the ratio used to compute the size of the inner checkbox (0.8 by default, which means the inner checkbox size is equal to 80% of the control itself)
+
+Here is an example of a checkbox: https://www.babylonjs-playground.com/#U9AC0N#2
+
 ### Slider
 
 The slider is used to control a value within a range.
@@ -158,7 +175,7 @@ The control is rendered using the following properties:
 Property|Type|Default|Comments
 --------|----|-------|--------
 borderColor|string|white|Color used to render the border of the thumb
-foreground|string|green|Foreground color
+color|string|white|Foreground color
 background|string|black|Background color
 barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
 thumbWidth|valueAndUnit|30px|Width of the thumb
@@ -327,3 +344,8 @@ transformCenterY|number|0.5|Define the center of transformation on Y axis. Value
 
 Here is an example of how to use rotation and scaling: http://www.babylonjs-playground.com/#XCPP9Y#22
 
+## Helpers
+
+To reduce the amount of code required to achieve frequent tasks you can use the following helpers:
+
+* `BABYLON.GUI.Control.AddHeader(control, text, size, options { isHorizontal, controlFirst })`: This function will create a StackPanel (horizontal or vertical based on options) and will add your control plus a TextBlock in it. Options can also be used to specify if the control is inserted first of after the header. Depending on the orientation, size will either specify the widht or the height used for the TextBlock.
