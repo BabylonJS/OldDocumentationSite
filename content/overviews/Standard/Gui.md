@@ -40,6 +40,103 @@ Here is an example of a simple texture mode GUI: http://www.babylonjs-playground
 
 Once you have an AdvancedDynamicTexture object, you can start adding controls.
 
+## General properties
+
+### Events
+All controls have the following observables:
+
+Observables|Comments
+-----------|--------
+onPointerMoveObservable|Raised when the cursor moves over the control. Only available on fullscreen mode
+onPointerEnterObservable|Raised when the cursor enters the control. Only available on fullscreen mode
+onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
+onPointerDownObservable|Raised when pointer is down on the control.
+onPointerUpObservable|Raised when pointer is up on the control.
+
+You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
+
+Here is an example of how to use observables: http://www.babylonjs-playground.com/#XCPP9Y#12
+
+### Alignments
+You can define the alignments used by your control with the following properties:
+
+Property|Default|Comments
+--------|-------|--------
+horizontalAlignment|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center.
+verticalAlignment|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom and center.
+
+Here is an example of how to use alignments: http://www.babylonjs-playground.com/#XCPP9Y#13
+
+### Position and size
+You can set controls' position with the following properties:
+
+Property|Type|Default|Default unit
+--------|----|-------|------------
+left|valueAndUnit|0|Pixel
+top|valueAndUnit|0|Pixel
+
+Size can be set with:
+
+Property|Type|Default|Default unit
+--------|----|-------|------------
+width|valueAndUnit|100%|Percentage
+height|valueAndUnit|100%|Percentage
+
+Margins can be set with:
+
+Property|Type|Default|Default unit
+--------|----|-------|------------
+marginTop|valueAndUnit|0px|Pixel
+marginBottom|valueAndUnit|0px|Pixel
+marginLeft|valueAndUnit|0px|Pixel
+marginRight|valueAndUnit|0px|Pixel
+
+Please note that margins are inside the control. This means that the usableWidth = width - marginLeft - marginRight. Same for usableHeight = height - marginTop - marginBottom.
+
+All these properties can be defined using pixel or percentage as unit.
+To set value as pixel, use this construct: `control.left = "50px"`
+To set value as percentage, use this construct: `control.left = "50%"`
+
+You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
+
+Here is an example of how to use positions and sizes: http://www.babylonjs-playground.com/#XCPP9Y#14
+
+### Tracking positions
+All controls can be moved to track position of a mesh.
+To do this, just call `control.linkWithMesh(mesh)`. You can then offset the position with `control.linkOffsetX` and `control.linkOffsetY`.
+
+Here is an example of a trackable label: http://www.babylonjs-playground.com/#XCPP9Y#16
+
+Please note that controls that want to track position of a mesh must be at root level (at AdvancedDynamicTexture level).
+
+For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control. 
+
+With these 2 options, you can create a complete trackable label: http://www.babylonjs-playground.com/#XCPP9Y#20
+
+### Adaptive scaling
+You can decide to define your UI with a fixed resolution.
+To define this resolution, just set `myAdvancedDynamicTexture.idealWidth = 600` **or** `myAdvancedDynamicTexture.idealHeight = 400`.
+
+If both are set, the idealWidth will be used.
+
+When ideal resolution is set, all values expressed **in pixels** are considered relatively to this resolution and scaled accordingly to match the current resolution.
+
+Here is an example of how to use horizontal adaptive scaling: http://www.babylonjs-playground.com/#XCPP9Y#39
+
+### Rotation and Scaling
+
+Controls can be transformed with the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+rotation|number|0|Value is in radians
+scaleX|number|1|
+scaleY|number|1|
+transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
+transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
+
+Here is an example of how to use rotation and scaling: http://www.babylonjs-playground.com/#XCPP9Y#22
+
 ## Controls
 
 A control is an abstraction of a piece of UI. There are two kinds of controls: 
@@ -225,7 +322,7 @@ The Rectangle is a rectangular container with the following properties:
 Property|Type|Default|Comments
 --------|----|-------|--------
 thickness|number|1|Thickness of the border
-cornerRadius|number|0|Radius of each corner. Used to create rounded rectangles
+cornerRadius|number|0|Size in pixel of each corner. Used to create rounded rectangles
 
 Here is an example of a rectangle control: http://www.babylonjs-playground.com/#XCPP9Y#8
 
@@ -246,103 +343,6 @@ All children must have a defined width or height (depending on the orientation).
 The height (or width) of the StackPanel is defined automatically based on children.
 
 Here is an example of a StackPanel: http://www.babylonjs-playground.com/#XCPP9Y#11
-
-## General properties
-
-### Events
-All controls have the following observables:
-
-Observables|Comments
------------|--------
-onPointerMoveObservable|Raised when the cursor moves over the control. Only available on fullscreen mode
-onPointerEnterObservable|Raised when the cursor enters the control. Only available on fullscreen mode
-onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
-onPointerDownObservable|Raised when pointer is down on the control.
-onPointerUpObservable|Raised when pointer is up on the control.
-
-You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
-
-Here is an example of how to use observables: http://www.babylonjs-playground.com/#XCPP9Y#12
-
-### Alignments
-You can define the alignments used by your control with the following properties:
-
-Property|Default|Comments
---------|-------|--------
-horizontalAlignment|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center.
-verticalAlignment|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom and center.
-
-Here is an example of how to use alignments: http://www.babylonjs-playground.com/#XCPP9Y#13
-
-### Position and size
-You can set controls' position with the following properties:
-
-Property|Type|Default|Default unit
---------|----|-------|------------
-left|valueAndUnit|0|Pixel
-top|valueAndUnit|0|Pixel
-
-Size can be set with:
-
-Property|Type|Default|Default unit
---------|----|-------|------------
-width|valueAndUnit|100%|Percentage
-height|valueAndUnit|100%|Percentage
-
-Margins can be set with:
-
-Property|Type|Default|Default unit
---------|----|-------|------------
-marginTop|valueAndUnit|0px|Pixel
-marginBottom|valueAndUnit|0px|Pixel
-marginLeft|valueAndUnit|0px|Pixel
-marginRight|valueAndUnit|0px|Pixel
-
-Please note that margins are inside the control. This means that the usableWidth = width - marginLeft - marginRight. Same for usableHeight = height - marginTop - marginBottom.
-
-All these properties can be defined using pixel or percentage as unit.
-To set value as pixel, use this construct: `control.left = "50px"`
-To set value as percentage, use this construct: `control.left = "50%"`
-
-You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
-
-Here is an example of how to use positions and sizes: http://www.babylonjs-playground.com/#XCPP9Y#14
-
-### Tracking positions
-All controls can be moved to track position of a mesh.
-To do this, just call `control.linkWithMesh(mesh)`. You can then offset the position with `control.linkOffsetX` and `control.linkOffsetY`.
-
-Here is an example of a trackable label: http://www.babylonjs-playground.com/#XCPP9Y#16
-
-Please note that controls that want to track position of a mesh must be at root level (at AdvancedDynamicTexture level).
-
-For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control. 
-
-With these 2 options, you can create a complete trackable label: http://www.babylonjs-playground.com/#XCPP9Y#20
-
-### Adaptive scaling
-You can decide to define your UI with a fixed resolution.
-To define this resolution, just set `myAdvancedDynamicTexture.idealWidth = 600` **or** `myAdvancedDynamicTexture.idealHeight = 400`.
-
-If both are set, the idealWidth will be used.
-
-When ideal resolution is set, all values expressed **in pixels** are considered relatively to this resolution and scaled accordingly to match the current resolution.
-
-Here is an example of how to use horizontal adaptive scaling: http://www.babylonjs-playground.com/#XCPP9Y#39
-
-### Rotation and Scaling
-
-Controls can be transformed with the following properties:
-
-Property|Type|Default|Comments
---------|----|-------|--------
-rotation|number|0|Value is in radians
-scaleX|number|1|
-scaleY|number|1|
-transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
-transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
-
-Here is an example of how to use rotation and scaling: http://www.babylonjs-playground.com/#XCPP9Y#22
 
 ## Helpers
 
