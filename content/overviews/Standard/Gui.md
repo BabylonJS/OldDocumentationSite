@@ -135,6 +135,8 @@ scaleY|number|1|
 transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
 transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
 
+**Please be aawre that transformations are done at rendering level so after all computations.** This means that alignment or positioning will be done first without taking transform in account.
+
 Here is an example of how to use rotation and scaling: http://www.babylonjs-playground.com/#XCPP9Y#22
 
 ## Controls
