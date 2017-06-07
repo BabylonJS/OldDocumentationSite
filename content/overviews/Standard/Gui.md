@@ -82,16 +82,16 @@ Property|Type|Default|Default unit
 width|valueAndUnit|100%|Percentage
 height|valueAndUnit|100%|Percentage
 
-Margins can be set with:
+Paddings can be set with:
 
 Property|Type|Default|Default unit
 --------|----|-------|------------
-marginTop|valueAndUnit|0px|Pixel
-marginBottom|valueAndUnit|0px|Pixel
-marginLeft|valueAndUnit|0px|Pixel
-marginRight|valueAndUnit|0px|Pixel
+paddingTop|valueAndUnit|0px|Pixel
+paddingBottom|valueAndUnit|0px|Pixel
+paddingLeft|valueAndUnit|0px|Pixel
+paddingRight|valueAndUnit|0px|Pixel
 
-Please note that margins are inside the control. This means that the usableWidth = width - marginLeft - marginRight. Same for usableHeight = height - marginTop - marginBottom.
+Please note that paddings are inside the control. This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
 
 All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
@@ -232,7 +232,7 @@ var result = new Button(name);
 var textBlock = new BABYLON.GUI.TextBlock(name + "_button", text);
 textBlock.textWrapping = true;
 textBlock.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
-textBlock.marginLeft = "20%";
+textBlock.paddingLeft = "20%";
 result.addControl(textBlock);   
 
 // Adding image
