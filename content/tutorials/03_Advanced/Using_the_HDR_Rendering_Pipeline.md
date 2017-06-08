@@ -2,6 +2,9 @@
 ID_PAGE: 25362
 PG_TITLE: Using the HDR Rendering Pipeline
 ---
+
+## Note: HDR Rendering Pipeline has been removed since version 3.0. You should now use the [Standard Rendering Pipeline](http://doc.babylonjs.com/tutorials/using_standard_rendering_pipeline)
+
 The HDR Rendering pipeline is a set of multiple post-processes. It tends to simulate the eye adaptation to light and dark, and also simulates the most realistic glare.
 
 The train demo (focus on exiting the tunnel) : http://reath.free.fr/HDR/test.html
