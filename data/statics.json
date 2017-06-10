@@ -495,18 +495,6 @@
       ]
     },
     {
-      "title": "BabylonHx",
-      "name": "BabylonHx",
-      "img": "img/extensions/BabylonHx/babylonhx.png",
-      "desc": "A cross-platform 3D engine",
-      "files": [
-        {
-          "title": "Introduction",
-          "filename": "introduction_babylonhx"
-        }
-      ]
-    },
-    {
       "title": "Materials library",
       "name": "MaterialsLibrary",
       "img": "img/extensions/materials.jpg",
