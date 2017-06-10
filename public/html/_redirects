@@ -18,3 +18,25 @@
 
 /overviews/canvas2d_home                                    /extensions/canvas2d_home 
 /overviews/canvas2d_overview_architecture                   /extensions/canvas2d_overview_architecture 
+/overviews/canvas2d_classdiagram                            /extensions/canvas2d_classdiagram
+/overviews/canvas2d_canvas2d_type                           /extensions/canvas2d_canvas2d_type    
+/overviews/canvas2d_pcm                                     /extensions/canvas2d_pcm
+/overviews/canvas2d_designsize                              /extensions/canvas2d_designsize
+/overviews/canvas2d_wireframe2d                             /extensions/canvas2d_wireframe2d
+/overviews/canvas2d_visibility                              /extensions/canvas2d_visibility
+/overviews/canvas2d_zorder                                  /extensions/canvas2d_zorder
+/overviews/canvas2d_origin                                  /extensions/canvas2d_origin
+/overviews/canvas2d_postranshierarchy                       /extensions/canvas2d_postranshierarchy
+/overviews/canvas2d_prim_positioning                        /extensions/canvas2d_prim_positioning
+/overviews/canvas2d_interaction                             /extensions/canvas2d_interaction
+/overviews/canvas2d_shape2d                                 /extensions/canvas2d_shape2d
+/overviews/canvas2d_brushes                                 /extensions/canvas2d_brushes
+/overviews/canvas2d_prim2dbase                              /extensions/canvas2d_prim2dbase
+/overviews/canvas2d_group2d                                 /extensions/canvas2d_group2d
+/overviews/canvas2d_text2d                                  /extensions/canvas2d_text2d
+/overviews/canvas2d_sprite2d                                /extensions/canvas2d_sprite2d
+/overviews/canvas2d_atlaspicture                            /extensions/canvas2d_atlaspicture
+/overviews/canvas2d_rectangle2d                             /extensions/canvas2d_rectangle2d
+/overviews/canvas2d_rendering                               /extensions/canvas2d_rendering
+/overviews/canvas2d_ellipse2d                               /extensions/canvas2d_ellipse2d
+/overviews/canvas2d_lines2d                                 /extensions/canvas2d_lines2d
