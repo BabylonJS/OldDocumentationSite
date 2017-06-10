@@ -895,7 +895,7 @@
           "filename": "WebVR_Camera"
         },
         {
-          "title": "Integrate user interface with Babylon.GUI",
+          "title": "Babylon.GUI: How to create 2D and 3D UI",
           "filename": "Gui"
         }
       ]
