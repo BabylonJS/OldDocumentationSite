@@ -36,10 +36,10 @@ The different strategies are:
 - `CACHESTRATEGY_ALLGROUPS` The Canvas and each group will have their own cache, unless you change this behavior using the Group2D.cacheBehavior). This is by far the most memory consuming, but efficient if the content change frequently but at different pace. You can reduce greatly the amount of cache with Group2D.cacheBehavior though.
 
 ## The Canvas' Object Graph
-The content of a Canvas is defined by a graph of primitives, there are many kind of primitives, they are summarized in the [Home page](http://doc.babylonjs.com/overviews/Canvas2D_Home).
+The content of a Canvas is defined by a graph of primitives, there are many kind of primitives, they are summarized in the [Home page](http://doc.babylonjs.com/extensions/Canvas2D_Home).
 
-The [Position, Transformation and Hierarchy page](http://doc.babylonjs.com/overviews/Canvas2D_PosTransHierarchy) will help you to learn more about how this object's graph works.
+The [Position, Transformation and Hierarchy page](http://doc.babylonjs.com/extensions/Canvas2D_PosTransHierarchy) will help you to learn more about how this object's graph works.
 
 ## A Canvas is also a Group
 
-So it's useful to know about the different features that a [Group](http://doc.babylonjs.com/overviews/Canvas2D_Group2D) offers and also the [Primitive Base](http://doc.babylonjs.com/overviews/Canvas2D_Prim2DBase) type.
+So it's useful to know about the different features that a [Group](http://doc.babylonjs.com/extensions/Canvas2D_Group2D) offers and also the [Primitive Base](http://doc.babylonjs.com/extensions/Canvas2D_Prim2DBase) type.

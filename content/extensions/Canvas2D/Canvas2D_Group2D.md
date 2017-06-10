@@ -3,7 +3,7 @@
 Group2D is a non renderable Primitive which is mainly used to fulfill two purposes:
 
 1. Define a new frame of reference, through the known `position`, `rotation`, `scale` and `origin` properties.
-2. Depending of the [Canvas2D](http://doc.babylonjs.com/overviews/Canvas2D_Canvas2D_Type) Caching Strategy used, a Group2D can define if its content will be cached into a bitmap or not.
+2. Depending of the [Canvas2D](http://doc.babylonjs.com/extensions/Canvas2D_Canvas2D_Type) Caching Strategy used, a Group2D can define if its content will be cached into a bitmap or not.
 
 Future evolution of this class will certainly feature Layout specific features.
 

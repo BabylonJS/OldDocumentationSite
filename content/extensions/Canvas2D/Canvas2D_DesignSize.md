@@ -3,7 +3,7 @@
 When you use a ScreenSpace Canvas with no given size at its construction, this canvas will take all the space of the rendering viewport, which is ideal for fullscreen games for instances.
 But the size of the Viewport in fullscreen is dependent of the device's resolution, so from here you have two choices
 
-1. Relying on the [layout and positioning](http://doc.babylonjs.com/overviews/canvas2d_prim_positioning) engines to compute the position and size of your primitives, which is ideal when you're working with vectorial primitives mostly.
+1. Relying on the [layout and positioning](http://doc.babylonjs.com/extensions/Canvas2D_prim_positioning) engines to compute the position and size of your primitives, which is ideal when you're working with vectorial primitives mostly.
 2. Relying on absolute positioning by manually setting the `position`, `x`, `y`, `size`, `width` or `height` properties of your primitives, which is ideal if you're working a lot with bitmap or a fixed positioned UI.
 
 But when you're willing to work with 2. an issue arise when working in fullcreen: you're faced with multiple resolutions. That's where the designSize mode shows its purpose.

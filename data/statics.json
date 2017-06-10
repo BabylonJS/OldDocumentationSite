@@ -729,18 +729,6 @@
       ]
     },
     {
-      "title": "POV",
-      "name": "POV",
-      "img": "img/extensions/POV.jpg",
-      "desc": "Learn how to use POV.",
-      "files": [
-        {
-          "title": "POV",
-          "filename": "POV"
-        }
-      ]
-    },
-    {
       "title": "Tree Generators",
       "name": "Tree_Generators",
       "img": "img/tutorials/trees.png",
@@ -895,7 +883,7 @@
           "filename": "WebVR_Camera"
         },
         {
-          "title": "Integrate user interface with Babylon.GUI",
+          "title": "Babylon.GUI: How to create 2D and 3D UI",
           "filename": "Gui"
         }
       ]

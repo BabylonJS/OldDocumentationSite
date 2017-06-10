@@ -28,7 +28,7 @@ Canvas2D in a **non HTML** feature, **100% WebGL** based, developed to serve the
 
 ### Few useful links
 
-Go to the [Home Page](http://doc.babylonjs.com/overviews/Canvas2D_Home) as a good starting point.
+Go to the [Home Page](http://doc.babylonjs.com/extensions/Canvas2D_Home) as a good starting point.
 
 For a first-time learning tutorial [go there](http://doc.babylonjs.com/tutorials/Using_the_Canvas2D).
 

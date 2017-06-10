@@ -1,8 +1,8 @@
 # Canvas2D Tutorial
 
-First, for an overview of the overall feature and its architecture you can read [this documentation](http://doc.babylonjs.com/overviews/Canvas2D_Overview_Architecture)
+First, for an overview of the overall feature and its architecture you can read [this documentation](http://doc.babylonjs.com/extensions/Canvas2D_Overview_Architecture)
 
-The overview [Home Page](http://doc.babylonjs.com/overviews/Canvas2D_Home) is also a good place to learn the many different concepts.
+The overview [Home Page](http://doc.babylonjs.com/extensions/Canvas2D_Home) is also a good place to learn the many different concepts.
 
 The Canvas2D is the answer to those who need to display 2D content above a 3D Scene (in game UI), which is called a ScreenSpace Canvas or directly inside the Scene as a rectangle containing the Canvas' content, which is called World Space Canvas.
 
@@ -184,5 +184,5 @@ The `canvas` object is **not** a Scene node, to access the actual SceneNode that
 
 ## More playground
 
- Just go to the Canvas2D [Home Page](http://doc.babylonjs.com/overviews/Canvas2D_Home). All playgrounds are referenced at the end of the document.
+ Just go to the Canvas2D [Home Page](http://doc.babylonjs.com/extensions/Canvas2D_Home). All playgrounds are referenced at the end of the document.
 
