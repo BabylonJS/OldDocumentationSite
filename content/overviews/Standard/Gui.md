@@ -258,9 +258,27 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 color|string|white|Foreground color
 background|string|black|Background color
-checkSizeRatio|number|0.8|Define the ratio used to compute the size of the inner checkbox (0.8 by default, which means the inner checkbox size is equal to 80% of the control itself)
+checkSizeRatio|number|0.8|Define the ratio used to compute the size of the inner checkbox (0.8 by default, which means the inner check size is equal to 80% of the control itself)
 
 Here is an example of a checkbox: https://www.babylonjs-playground.com/#U9AC0N#2
+
+### RadioButton
+
+The radio button is used to define a value among a list by using a group of radio buttons where only one can be true.
+You can specify the selected value with `radiobutton.isChecked`.
+
+Changing the `isChecked` property will raise an observable called `checkbox.onIsCheckedChangedObservable`. Furthermore, if you select a radio button, all other radio buttons within the same group will turn to false.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+color|string|white|Foreground color
+background|string|black|Background color
+checkSizeRatio|number|0.8|Define the ratio used to compute the size of the inner checkbox (0.8 by default, which means the inner check size is equal to 80% of the control itself)
+group|string|empty string|Use the group property to gather radio buttons working on the same value set
+
+Here is an example of a radiobutton: https://www.babylonjs-playground.com/#U9AC0N#13
 
 ### Slider
 
