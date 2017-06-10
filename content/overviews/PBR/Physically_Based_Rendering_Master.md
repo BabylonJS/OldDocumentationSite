@@ -377,21 +377,21 @@ Color cuves is also always part of picture edition tools. So in order to help se
 
 You can through the new ColorCurves class specify the same setup you are used to have in your picture edition tools.
 
-[Demo](http://www.babylonjs-playground.com/#B4PW0#3)
+[Demo](http://www.babylonjs-playground.com/#B4PW0#4)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 var curve = new BABYLON.ColorCurves();
-curve.GlobalHue = 200;
-curve.GlobalDensity = 80;
-curve.GlobalSaturation = 80;
+curve.globalHue = 200;
+curve.globalDensity = 80;
+curve.globalSaturation = 80;
 
-curve.HighlightsHue = 20;
-curve.HighlightsDensity = 80;
-curve.HighlightsSaturation = -80;
+curve.highlightsHue = 20;
+curve.highlightsDensity = 80;
+curve.highlightsSaturation = -80;
 
-curve.ShadowsHue = 2;
-curve.ShadowsDensity = 80;
-curve.ShadowsSaturation = 40;
+curve.shadowsHue = 2;
+curve.shadowsDensity = 80;
+curve.shadowsSaturation = 40;
 pbr.cameraColorCurves = curve;
 ```
 
