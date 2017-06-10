@@ -68,19 +68,19 @@ Babylon.js comes with a set of ready to use postprocesses.
 var postProcess = new BABYLON.PassPostProcess("Scene copy", 1.0, camera);
 ```
 
-* Black and white: apply a black and white effect:
+* **Black and white**: apply a black and white effect:
 
 ```javascript
 var postProcess = new BABYLON.BlackAndWhitePostProcess("bandw", 1.0, camera);
 ```
 
-* Blur: apply a directional blur:
+* **Blur**: apply a directional blur:
 
 ```javascript
 var postProcess = new BABYLON.BlurPostProcess("Horizontal blur", new BABYLON.Vector2(1.0, 0), blurWidth, 0.25, camera);
 ```
 
-* Convolution: apply a kernel matrix to every pixel:
+* **Convolution**: apply a kernel matrix to every pixel:
 
 ```javascript
 var sepiaKernelMatrix = BABYLON.Matrix.FromValues(
@@ -92,19 +92,34 @@ var sepiaKernelMatrix = BABYLON.Matrix.FromValues(
 var postProcess = new BABYLON.ConvolutionPostProcess("Sepia", sepiaKernelMatrix, 1.0, camera);
 ```
 
-* FXAA: apply a full screen antialiasing filter:
+* **FXAA**: apply a full screen antialiasing filter:
 
 ```javascript
 var postProcess = new BABYLON.FxaaPostProcess("fxaa", 1.0, camera);
 ```
 
-* Highlights: apply a full screen highlight filter which will increment the luminosity of highlihts in your scene:
+* **Highlights**: apply a full screen highlight filter which will increment the luminosity of highlihts in your scene:
 
 ```javascript
 var postProcess = new BABYLON.HighlightsPostProcess("highlights", 1.0, camera);
 ```
 
-* ImageProcessingPostProcess: apply a complete range of special effects:
+* **Tonemap**: apply a full screen tone mapping filter:
+
+```javascript
+var postProcess = new BABYLON.TonemapPostProcess("tonemap", BABYLON.TonemappingOperator.Hable, 0.8, 1.0, camera);
+```
+The second parameter helps defining which operator will be used among the following ones:
+* BABYLON.TonemappingOperator.Hable
+* BABYLON.TonemappingOperator.Reinhard
+* BABYLON.TonemappingOperator.HejiDawson
+* BABYLON.TonemappingOperator.Photographic
+
+The third parameter define the exposure adjustement.
+
+You can find a demo here: https://www.babylonjs-playground.com/debug.html#J9H084#8
+
+* **ImageProcessing**: apply a complete range of special effects:
 
 ```javascript
 var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, camera);
@@ -127,7 +142,7 @@ You can also use this postprocess to enable a vignette effect. The vignette is p
 
 You can find a demo of the vignette here: https://www.babylonjs-playground.com/debug.html#J9H084#7
 
-* Refraction: apply a refraction texture:
+* **Refraction**: apply a refraction texture:
 
 ```javascript
 var postProcess = new BABYLON.RefractionPostProcess("Refraction", "refMap.jpg", new BABYLON.Color3(1.0, 1.0, 1.0), 0.5, 0.5, 1.0, camera);
@@ -142,7 +157,7 @@ _color_ is the base color of the refraction (used to taint the rendering)
 _depth_ is the simulated refraction depth
 _colorLevel_ is the coefficient of the base color (0 to remove base color tainting)
 
-* Color Correction: apply a color filter:
+* **Color Correction**: apply a color filter:
 
 ```javascript
 var postProcess = new BABYLON.ColorCorrectionPostProcess("color_correction", "./table.png", 1.0, camera);
