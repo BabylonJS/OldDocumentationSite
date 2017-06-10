@@ -488,11 +488,13 @@ Properties :
 property|value|default value
 --------|-----|-------------
 shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
-holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 | []
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option**
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option**
+frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+
+All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
 Both frontUVs and backUVs have the form Vector4(u0,v0,u1,v1) with 0&gt;=  u0,v0,u1,v1 &lt;= 1 and 
 (u0, v0) are the bottom left coordinates and (u1, v1) the top right coordinates of the clipping rectangle 
@@ -517,9 +519,11 @@ shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
 depth|_(number)_  the depth of the extrusion **REQUIRED** |
 faceColors|_(Color4[])_ array of 3 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
 faceUV|_(Vector4[])_ array of 3 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
-holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 | [] 
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+
+All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
 To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
 
