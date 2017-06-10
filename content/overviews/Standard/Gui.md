@@ -16,7 +16,7 @@ Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface
 
 The main difference is that Canvas2D is full GPU oriented (text constructrion, animations, etc..) where Babylon.GUI relies on HTML canvas API.
 
-While it could be seen as a less performant aproach, it is also more flexible. Furthermore, HTML canvas is also GPU accelerated on most recent browsers.
+While it could be seen as a less performant approach, it is also more flexible. Furthermore, HTML canvas is also GPU accelerated on most recent browsers.
 
 ## AdvancedDynamicTexture
 To begin with Babylon.GUI, you first need an AdvancedDynamicTexture object.
@@ -28,7 +28,7 @@ Babylon.GUI has two modes:
 var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
 ```
 
-Here is an example of a simple fullscreen mode GUI: http://babylonjs-playground.com/#XCPP9Y#1
+Here is an example of a simple fullscreen mode GUI: http://www.babylonjs-playground.com/#XCPP9Y#1
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. Pointer down and up events will be intercepted. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
@@ -36,9 +36,108 @@ Here is an example of a simple fullscreen mode GUI: http://babylonjs-playground.
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
-Here is an example of a simple texture mode GUI: http://babylonjs-playground.com/#ZI9AK7#1
+Here is an example of a simple texture mode GUI: http://www.babylonjs-playground.com/#ZI9AK7#1
 
 Once you have an AdvancedDynamicTexture object, you can start adding controls.
+
+## General properties
+
+### Events
+All controls have the following observables:
+
+Observables|Comments
+-----------|--------
+onPointerMoveObservable|Raised when the cursor moves over the control. Only available on fullscreen mode
+onPointerEnterObservable|Raised when the cursor enters the control. Only available on fullscreen mode
+onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
+onPointerDownObservable|Raised when pointer is down on the control.
+onPointerUpObservable|Raised when pointer is up on the control.
+
+You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
+
+Here is an example of how to use observables: http://www.babylonjs-playground.com/#XCPP9Y#12
+
+### Alignments
+You can define the alignments used by your control with the following properties:
+
+Property|Default|Comments
+--------|-------|--------
+horizontalAlignment|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center.
+verticalAlignment|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom and center.
+
+Here is an example of how to use alignments: http://www.babylonjs-playground.com/#XCPP9Y#13
+
+### Position and size
+You can set controls' position with the following properties:
+
+Property|Type|Default|Default unit
+--------|----|-------|------------
+left|valueAndUnit|0|Pixel
+top|valueAndUnit|0|Pixel
+
+Size can be set with:
+
+Property|Type|Default|Default unit
+--------|----|-------|------------
+width|valueAndUnit|100%|Percentage
+height|valueAndUnit|100%|Percentage
+
+Paddings can be set with:
+
+Property|Type|Default|Default unit
+--------|----|-------|------------
+paddingTop|valueAndUnit|0px|Pixel
+paddingBottom|valueAndUnit|0px|Pixel
+paddingLeft|valueAndUnit|0px|Pixel
+paddingRight|valueAndUnit|0px|Pixel
+
+Please note that paddings are inside the control. This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
+
+All these properties can be defined using pixel or percentage as unit.
+To set value as pixel, use this construct: `control.left = "50px"`
+To set value as percentage, use this construct: `control.left = "50%"`
+
+You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
+
+Here is an example of how to use positions and sizes: http://www.babylonjs-playground.com/#XCPP9Y#14
+
+### Tracking positions
+All controls can be moved to track position of a mesh.
+To do this, just call `control.linkWithMesh(mesh)`. You can then offset the position with `control.linkOffsetX` and `control.linkOffsetY`.
+
+Here is an example of a trackable label: http://www.babylonjs-playground.com/#XCPP9Y#16
+
+Please note that controls that want to track position of a mesh must be at root level (at AdvancedDynamicTexture level).
+
+For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control. 
+
+With these 2 options, you can create a complete trackable label: http://www.babylonjs-playground.com/#XCPP9Y#20
+
+### Adaptive scaling
+You can decide to define your UI with a fixed resolution.
+To define this resolution, just set `myAdvancedDynamicTexture.idealWidth = 600` **or** `myAdvancedDynamicTexture.idealHeight = 400`.
+
+If both are set, the idealWidth will be used.
+
+When ideal resolution is set, all values expressed **in pixels** are considered relatively to this resolution and scaled accordingly to match the current resolution.
+
+Here is an example of how to use horizontal adaptive scaling: http://www.babylonjs-playground.com/#XCPP9Y#39
+
+### Rotation and Scaling
+
+Controls can be transformed with the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+rotation|number|0|Value is in radians
+scaleX|number|1|
+scaleY|number|1|
+transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
+transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
+
+**Please be aawre that transformations are done at rendering level so after all computations.** This means that alignment or positioning will be done first without taking transform in account.
+
+Here is an example of how to use rotation and scaling: http://www.babylonjs-playground.com/#XCPP9Y#22
 
 ## Controls
 
@@ -56,9 +155,23 @@ fontName|string|Arial|Font name can be inherited. This means that if you set it 
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 
+Controls can be added directly to the AdvancedDynamicTexture or to a container with:
+
+```
+container.addControl(control);
+```
+
+They can be removed with:
+
+```
+container.removeControl(control);
+```
+
+You can also control the control visibility with `control.isVisible = false`.
+
 ### TextBlock
 
-The TextBlock is a simple control used to display text: http://babylonjs-playground.com/#XCPP9Y#2
+The TextBlock is a simple control used to display text: http://www.babylonjs-playground.com/#XCPP9Y#2
 
 Here are the properties you can define:
 
@@ -74,7 +187,7 @@ textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can b
 A button can be used to interact with your user. 
 Please see the events chapter to see how to connect your events with your buttons.
 
-There are two kinds of buttons available out of the box:
+There are three kinds of buttons available out of the box:
 
 * ImageButton: An image button is a button made with an image and a text. You can create one with:
 
@@ -82,15 +195,23 @@ There are two kinds of buttons available out of the box:
 var button = BABYLON.GUI.Button.CreateImageButton("but", "Click Me", "textures/grass.png");
 ```
 
-You can try it here: http://babylonjs-playground.com/#XCPP9Y#3
+You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#3
 
-* SimpleButton: The simple button
+* SimpleButton: A simple button with text only
 
 ```
 var button = BABYLON.GUI.Button.CreateSimpleButton("but", "Click Me");
 ```
 
-You can try it here: http://babylonjs-playground.com/#XCPP9Y#4
+You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#4
+
+* ImageOnlyButton:
+
+```
+var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png");
+```
+
+You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#28
 
 #### Visual animations
 By default a button will change its opacity on pointerover and will change it scale when clicked.
@@ -111,7 +232,7 @@ var result = new Button(name);
 var textBlock = new BABYLON.GUI.TextBlock(name + "_button", text);
 textBlock.textWrapping = true;
 textBlock.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
-textBlock.marginLeft = "20%";
+textBlock.paddingLeft = "20%";
 result.addControl(textBlock);   
 
 // Adding image
@@ -122,7 +243,61 @@ iconImage.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
 result.addControl(iconImage);            
 
 return result;
-```            
+```  
+
+### Checkbox
+
+The checkbox is used to control a boolean value.
+You can specify the value with `checkbox.isChecked`.
+
+Changing the `isChecked` property will raise an observable called `checkbox.onIsCheckedChangedObservable`.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+color|string|white|Foreground color
+background|string|black|Background color
+checkSizeRatio|number|0.8|Define the ratio used to compute the size of the inner checkbox (0.8 by default, which means the inner check size is equal to 80% of the control itself)
+
+Here is an example of a checkbox: https://www.babylonjs-playground.com/#U9AC0N#2
+
+### RadioButton
+
+The radio button is used to define a value among a list by using a group of radio buttons where only one can be true.
+You can specify the selected value with `radiobutton.isChecked`.
+
+Changing the `isChecked` property will raise an observable called `checkbox.onIsCheckedChangedObservable`. Furthermore, if you select a radio button, all other radio buttons within the same group will turn to false.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+color|string|white|Foreground color
+background|string|black|Background color
+checkSizeRatio|number|0.8|Define the ratio used to compute the size of the inner checkbox (0.8 by default, which means the inner check size is equal to 80% of the control itself)
+group|string|empty string|Use the group property to gather radio buttons working on the same value set
+
+Here is an example of a radiobutton: https://www.babylonjs-playground.com/#U9AC0N#13
+
+### Slider
+
+The slider is used to control a value within a range.
+You can specify the range with `slider.minimum` and `slider.maximum`.
+
+The value itself is specified with `slider.value` and will raise an observable everytime it is changed (`slider.onValueChangedObservable`).
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+borderColor|string|white|Color used to render the border of the thumb
+color|string|white|Foreground color
+background|string|black|Background color
+barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
+thumbWidth|valueAndUnit|30px|Width of the thumb
+
+Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
 ### Line
 
@@ -139,7 +314,7 @@ y2|number|0|Y coordinate of the second point
 dash|array of numbers|Empty array|Defines the size of the dashes
 lineWidth|number|1|Width in pixel
 
-Here is an example of a line: http://babylonjs-playground.com/#XCPP9Y#6
+Here is an example of a line: http://www.babylonjs-playground.com/#XCPP9Y#6
 
 ### Image
 
@@ -148,8 +323,13 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_NONE: Use original size
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
+* BABYLON.GUI.Image.STRETCH_EXTEND: Scale the container to adapt to the image size.
 
-Here is an example of an image: http://babylonjs-playground.com/#XCPP9Y#7
+You may want to have the Image control adapt its size to the source image. TO do so just call `image.autoScale = true`.
+
+You can change image source at any time with `image.source="myimage.jpg"`.
+
+Here is an example of an image: http://www.babylonjs-playground.com/#XCPP9Y#7
 
 ## Containers
 
@@ -162,9 +342,9 @@ The Rectangle is a rectangular container with the following properties:
 Property|Type|Default|Comments
 --------|----|-------|--------
 thickness|number|1|Thickness of the border
-cornerRadius|number|0|Radius of each corner. Used to create rounded rectangles
+cornerRadius|number|0|Size in pixel of each corner. Used to create rounded rectangles
 
-Here is an example of a rectangle control: http://babylonjs-playground.com/#XCPP9Y#8
+Here is an example of a rectangle control: http://www.babylonjs-playground.com/#XCPP9Y#8
 
 ### Ellipse
 The Ellipse is a ellipsoidal container with the following properties:
@@ -173,7 +353,7 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 thickness|number|1|Thickness of the border
 
-Here is an example of an ellipse control: http://babylonjs-playground.com/#XCPP9Y#10
+Here is an example of an ellipse control: http://www.babylonjs-playground.com/#XCPP9Y#10
 
 ### StackPanel
 
@@ -182,90 +362,10 @@ All children must have a defined width or height (depending on the orientation).
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
-Here is an example of a StackPanel: http://babylonjs-playground.com/#XCPP9Y#11
+Here is an example of a StackPanel: http://www.babylonjs-playground.com/#XCPP9Y#11
 
-## General properties
+## Helpers
 
-### Events
-All controls have the following observables:
+To reduce the amount of code required to achieve frequent tasks you can use the following helpers:
 
-Observables|Comments
------------|--------
-onPointerMoveObservable|Raised when the cursor moves over the control. Only available on fullscreen mode
-onPointerEnterObservable|Raised when the cursor enters the control. Only available on fullscreen mode
-onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
-onPointerDownObservable|Raised when pointer is down on the control.
-onPointerUpObservable|Raised when pointer is up on the control.
-
-You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
-
-Here is an example of how to use observables: http://babylonjs-playground.com/#XCPP9Y#12
-
-### Alignments
-You can define the alignments used by your control with the following properties:
-
-Property|Default|Comments
---------|-------|--------
-horizontalAlignment|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center.
-verticalAlignment|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom and center.
-
-Here is an example of how to use alignments: http://babylonjs-playground.com/#XCPP9Y#13
-
-### Position and size
-You can set controls' position with the following properties:
-
-Property|Type|Default
---------|----|-------
-left|valueAndUnit|0
-top|valueAndUnit|0
-
-Size can be set with:
-
-Property|Type|Default
---------|----|-------
-width|valueAndUnit|100%
-height|valueAndUnit|100%
-
-Margins can be set with:
-
-Property|Type|Default
---------|----|-------
-marginTop|valueAndUnit|0px
-marginBottom|valueAndUnit|0px
-marginLeft|valueAndUnit|0px
-marginRight|valueAndUnit|0px
-
-Please note that margins are inside the control. This means that the usableWidth = width - marginLeft - marginRight. Same for usableHeight = height - marginTop - marginBottom.
-
-All these properties can be defined using pixel or percentage as unit.
-To set value as pixel, use this construct: `control.left = "50px"`
-To set value as percentage, use this construct: `control.left = "50%"`
-
-Here is an example of how to use positions and sizes: http://babylonjs-playground.com/#XCPP9Y#14
-
-### Tracking positions
-All controls can be moved to track position of a mesh.
-To do this, just call `control.linkWithMesh(mesh)`. You can then offset the position with `control.linkOffsetX` and `control.linkOffsetY`.
-
-Here is an example of a trackable label: http://babylonjs-playground.com/#XCPP9Y#16
-
-Please note that controls that want to track position of a mesh must be at root level (at AdvancedDynamicTexture level).
-
-For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control. 
-
-With these 2 options, you can create a complete trackable label: http://babylonjs-playground.com/#XCPP9Y#20
-
-### Rotation and Scaling
-
-Controls can be transformed with the following properties:
-
-Property|Type|Default|Comments
---------|----|-------|--------
-rotation|number|0|Value is in radians
-scaleX|number|1|
-scaleY|number|1|
-transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
-transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
-
-Here is an example of how to use rotation and scaling: http://babylonjs-playground.com/#XCPP9Y#22
-
+* `BABYLON.GUI.Control.AddHeader(control, text, size, options { isHorizontal, controlFirst })`: This function will create a StackPanel (horizontal or vertical based on options) and will add your control plus a TextBlock in it. Options can also be used to specify if the control is inserted first of after the header. Depending on the orientation, size will either specify the widht or the height used for the TextBlock.
