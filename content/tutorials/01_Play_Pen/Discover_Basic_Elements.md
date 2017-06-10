@@ -98,12 +98,12 @@ You can learn more about torus knots... [**RIGHT HERE**](http://en.wikipedia.org
 var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], scene, [[V1, V2, ..., Vn], [V1, V2, ..., Vn], ....[V1, V2, ..., Vn]], false, BABYLON.Mesh.DEFAULTSIDE);
 ```
 
-Parameters are: name, [array of comma-separated vectors],  scene, [array of array of comma-separated vectors], updatable and the optional side orientation (see below). The last three parameters can be omitted if you just need the default behavior :
+Parameters are: name, polygon shape as an array of comma-separated vectors,  scene, optional holes as an array of an array of comma-separated vectors, optional updatable and the optional side orientation. The last three parameters can be omitted if you just need the default behavior :
 
 NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z);
 
 ```javascript
-var polygon = BABYLON.Mesh.CreateCylinder("cylinder", [V1, V2, ..., Vn], scene);
+var polygon = BABYLON.Mesh.CreatePolygon("cylinder", [V1, V2, ..., Vn], scene);
 ```
 Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 
@@ -113,12 +113,12 @@ Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 var polygon = BABYLON.Mesh.ExtrudePolygon("polygon", [V1, V2, ..., Vn], 2, scene, [[V1, V2, ..., Vn], [V1, V2, ..., Vn], ....[V1, V2, ..., Vn]], false, BABYLON.Mesh.DEFAULTSIDE);
 ```
 
-Parameters are: name, [array of comma-separated vectors], depth, scene, [array of array of comma-separated vectors], updatable and the optional side orientation (see below). The last three parameters can be omitted if you just need the default behavior :
+Parameters are: name, polygon shape as an array of comma-separated vectors, depth, scene, optional holes as an array of an array of comma-separated vectors, optional updatable and the optional side orientation. The last three parameters can be omitted if you just need the default behavior :
 
-NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z);
+NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
 ```javascript
-var polygon = BABYLON.Mesh.CreateCylinder("polygon", [V1, V2, ..., Vn], 2, scene);
+var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], 2, scene);
 ```
 
 Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
