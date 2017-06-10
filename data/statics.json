@@ -729,18 +729,6 @@
       ]
     },
     {
-      "title": "POV",
-      "name": "POV",
-      "img": "img/extensions/POV.jpg",
-      "desc": "Learn how to use POV.",
-      "files": [
-        {
-          "title": "POV",
-          "filename": "POV"
-        }
-      ]
-    },
-    {
       "title": "Tree Generators",
       "name": "Tree_Generators",
       "img": "img/tutorials/trees.png",
