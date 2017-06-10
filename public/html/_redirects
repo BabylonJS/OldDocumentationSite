@@ -15,3 +15,6 @@
 /tutorials/06._loading_assets                               /tutorials/loading_assets
 /tutorials/07._babylon.js_advanced_features                 /tutorials/babylon.js_advanced_features
 /tutorials/08._special_effects                              /tutorials/special_effects
+
+/overviews/canvas2d_home                                    /extensions/canvas2d_home 
+/overviews/canvas2d_overview_architecture                   /extensions/canvas2d_overview_architecture 
