@@ -2,7 +2,7 @@
 
 ## Overview of principle
 
-One of the purpose of the [Canvas2D](http://doc.babylonjs.com/overviews/Canvas2D_Home) feature is to use it to build Graphical User Interfaces.
+One of the purpose of the [Canvas2D](http://doc.babylonjs.com/extensions/Canvas2D_Home) feature is to use it to build Graphical User Interfaces.
 
 One key feature that helps making this easier is to provide a Positioning Engine for the primitives (in order to avoid positioning them with absolute coordinates) by relying on a higher level set of features which drive positions and sizes, based on criteria that make more sense to GUI based programming.
 

@@ -12,7 +12,7 @@ The id is considered to be immutable, you can only set it at creation time and c
 
 ### Object graph, hierarchy
 
-You will find more info on the [position, transformation and hierarchy](http://doc.babylonjs.com/overviews/Canvas2D_PosTransHierarchy) page.
+You will find more info on the [position, transformation and hierarchy](http://doc.babylonjs.com/extensions/Canvas2D_PosTransHierarchy) page.
 
 To summarize, a Base Primitive have the following properties:
 
@@ -20,11 +20,11 @@ To summarize, a Base Primitive have the following properties:
 - `parent` which points to the direct parent that owns it.
 - `children` an array of the direct children Primitives.
 - `hierarchyDepth` a number given the depth in the hierarchy tree of the Primitive. The Canvas being 0, its direct children being 1, their children 2, and so on.
-- `zOrder`, enables to override the default Z behavior. See this [page](http://doc.babylonjs.com/overviews/Canvas2D_ZOrder) for more information.
+- `zOrder`, enables to override the default Z behavior. See this [page](http://doc.babylonjs.com/extensions/Canvas2D_ZOrder) for more information.
 
 ### Transformation properties
 
-You will find more info on the [position, transformation and hierarchy](http://doc.babylonjs.com/overviews/Canvas2D_PosTransHierarchy) page.
+You will find more info on the [position, transformation and hierarchy](http://doc.babylonjs.com/extensions/Canvas2D_PosTransHierarchy) page.
 
 To summarize, a Base Primitive have the following properties:
 
@@ -38,11 +38,11 @@ To summarize, a Base Primitive have the following properties:
  - `actualY`, which is a shortcut to `actualPosition.y`, same remark as above.
  - `globalTransform`, `invGlobalTransform` and `localTransform` are all Matrix typed properties.
 
-Rotation and Scaling properties behave in regard of the origin property set for the Primitive. See the [origin page](http://doc.babylonjs.com/overviews/Canvas2D_Origin) for more information.
+Rotation and Scaling properties behave in regard of the origin property set for the Primitive. See the [origin page](http://doc.babylonjs.com/extensions/Canvas2D_Origin) for more information.
 
 ### Visibility
 
-More information can be found in the [Visibility](http://doc.babylonjs.com/overviews/Canvas2D_Visibility) page.
+More information can be found in the [Visibility](http://doc.babylonjs.com/extensions/Canvas2D_Visibility) page.
 
 To summarize:
 
@@ -51,7 +51,7 @@ To summarize:
 
 ### Layout and Positioning
 
- More information can be found in the [dedicated page](http://doc.babylonjs.com/overviews/Canvas2D_Prim_Positioning)
+ More information can be found in the [dedicated page](http://doc.babylonjs.com/extensions/Canvas2D_Prim_Positioning)
 
 ### ActualSize, BoundingInfo properties.
 
@@ -68,7 +68,7 @@ The bounding info is defined by:
 
 ### Interaction properties
 
-You will find more information in the [dedicated page](http://doc.babylonjs.com/overviews/Canvas2D_Interaction).
+You will find more information in the [dedicated page](http://doc.babylonjs.com/extensions/Canvas2D_Interaction).
 
 To summarize:
 

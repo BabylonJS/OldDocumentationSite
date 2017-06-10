@@ -1,6 +1,6 @@
 # Canvas2D Rendering
 
-You will find more complete information in the [Architecture Overview](http://doc.babylonjs.com/overviews/Canvas2D_Overview_Architecture) page.
+You will find more complete information in the [Architecture Overview](http://doc.babylonjs.com/extensions/Canvas2D_Overview_Architecture) page.
 
 ## Rendering chain
 
@@ -18,7 +18,7 @@ For instance, this the case of when the TOPLEVELGROUPS caching mode is used: all
 ## Renderable Group2D's cache modes
 When a Group2D is renderable you can define if its content will be drawn to the canvas at each render (then it's the DONTCACHE behavior) or if its content will be cached into a bitmap for its content to be rendered only when needed: this is the Cached Mode.
 
-There are many Caching Behavior for a Cached Renderable Group2D, if you want some information about it I strongly encourage you to read the appropriate section in the [Architecture Overview](http://doc.babylonjs.com/overviews/Canvas2D_Overview_Architecture) page.
+There are many Caching Behavior for a Cached Renderable Group2D, if you want some information about it I strongly encourage you to read the appropriate section in the [Architecture Overview](http://doc.babylonjs.com/extensions/Canvas2D_Overview_Architecture) page.
 
 ## Rendering Modes
 
@@ -52,6 +52,6 @@ All Shape2D primitives (Rectangle2D, Ellipse2D, Lines2D, ...) are following this
 
   Transparent Primitives must be sorted by their Z order to be rendered from the further one to the nearest one. When the ANGLE_Instance Array Extension is supported: TransparentSegment are built and Transparent Segment is drawn into one Draw Call if it contains more than 5 primitives (otherwise it's more efficient to render with *x* Draw Calls for *x* instances).
   
-  A TransparentSegment contains primitives instances that share the same Rendering Model (see the [Architecture Overview](http://doc.babylonjs.com/overviews/Canvas2D_Overview_Architecture) for mode explanation) and which are consecutive in their Z order.
+  A TransparentSegment contains primitives instances that share the same Rendering Model (see the [Architecture Overview](http://doc.babylonjs.com/extensions/Canvas2D_Overview_Architecture) for mode explanation) and which are consecutive in their Z order.
 
   To summarize: Transparent is rendered as efficiently as possible, but it still potentially waaaaaay more Draw Calls than Opaque or Alpha Test.

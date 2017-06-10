@@ -1,6 +1,6 @@
 # Ellipse2D Shape overview
 
-This primitive is [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based. It is used to draw an Ellipse/Circle.
+This primitive is [Shape](http://doc.babylonjs.com/extensions/Canvas2D_Shape2D) based. It is used to draw an Ellipse/Circle.
 
 Rendering Ellipse2D primitive can be insanely fast when the Instanced Array WebGL extension is available. All Ellipse primitives of any kind of width/height/position are rendered into a single draw call as long as they use the same subdivisions count, type of brush (i.e. SolidColor or Gradient). 
 
@@ -13,7 +13,7 @@ Ellipse of different SolidColorBrush (then different solid color) will be render
 
 ## Remarks
 
-This type inherit all the properties of the [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) class.
+This type inherit all the properties of the [Shape](http://doc.babylonjs.com/extensions/Canvas2D_Shape2D) class.
 
 ## Examples
 

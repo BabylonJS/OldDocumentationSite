@@ -1,6 +1,6 @@
 # Rectangle2D Shape overview
 
-This primitive is [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based. It is used to draw a Rectangle, with round corners or not.
+This primitive is [Shape](http://doc.babylonjs.com/extensions/Canvas2D_Shape2D) based. It is used to draw a Rectangle, with round corners or not.
 
 Rendering Rectangle2D primitive can be insanely fast when the Instanced Array WebGL extension is available. All Rectangle primitives of any kind of width/height/position/roundRadius are rendered into a single draw call as long as they use the same type of brush (i.e. SolidColor or Gradient).
 
@@ -16,7 +16,7 @@ Rectangle of different SolidColorBrush (then different solid color) will be rend
 
 Right now the round subdivision is a static property that is equal to 16: this the count of vertices (and triangles) used to draw one rounded corner.
 
-This type inherit all the properties of the [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) class.
+This type inherit all the properties of the [Shape](http://doc.babylonjs.com/extensions/Canvas2D_Shape2D) class.
 
 As of today, the intersection does not take into account the empty space created but the round corner.
 

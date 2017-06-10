@@ -1,6 +1,6 @@
 # How visibility works
 
-The Canvas is made of a graph of objects, each object (a Primitive) has one direct parent and a list of children ([more info](http://doc.babylonjs.com/overviews/Canvas2D_PosTransHierarchy)).
+The Canvas is made of a graph of objects, each object (a Primitive) has one direct parent and a list of children ([more info](http://doc.babylonjs.com/extensions/Canvas2D_PosTransHierarchy)).
 
 The visibility status of a given primitive is defined by its `levelVisible` property and **the one of all its parents** (direct and indirect).
 

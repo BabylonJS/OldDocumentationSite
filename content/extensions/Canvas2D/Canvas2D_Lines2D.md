@@ -1,6 +1,6 @@
 # Lines2D Shape overview
 
-This primitive is [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) based. It is used to draw an Line made of a succession of segments.
+This primitive is [Shape](http://doc.babylonjs.com/extensions/Canvas2D_Shape2D) based. It is used to draw an Line made of a succession of segments.
 
 Rendering Lines2D primitive won't be as fast as Rectangle2D or Ellipse2D. Due to the nature of the primitive one draw call is needed for each defined list of points. If you have many instances using the same list of points the rendering will be done in one draw call (when Instanced Array WebGL extension is supported), otherwise it's one draw call per point list.
 
@@ -19,7 +19,7 @@ Rendering Lines2D primitive won't be as fast as Rectangle2D or Ellipse2D. Due to
 
 ## Remarks
 
-This type inherit all the properties of the [Shape](http://doc.babylonjs.com/overviews/Canvas2D_Shape2D) class.
+This type inherit all the properties of the [Shape](http://doc.babylonjs.com/extensions/Canvas2D_Shape2D) class.
 
 The different types of cap are:
  - RoundCap: to make the line edge round, with a diameter equal to the line thickness.
