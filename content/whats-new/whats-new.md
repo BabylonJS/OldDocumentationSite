@@ -11,7 +11,6 @@ Changes list
 - New `HighlightLayer` object to enable highlights rendering. [Demo](http://www.babylonjs.com/Demos/Highlights/) - ([sebavan](https://github.com/sebavan))
 - Babylon.js now supports right handed system with ```scene.useRightHandedSystem = true``` ([deltakosh](https://github.com/deltakosh))
 - Babylon.js is now compiled with [optimize-js](https://github.com/nolanlawson/optimize-js) to get faster initial load ([deltakosh](https://github.com/deltakosh))
-- Canvas2D moved to a separate folder in main repo. Now you need to also include babylon.cavans2d.js to get Canvas2D features ([deltakosh](https://github.com/deltakosh))
 - New BoneIKController [Demo](http://www.babylonjs-playground.com/#1EVNNB#15) ([abow](https://github.com/abow))
 - New BoneLookController [Demo](http://www.babylonjs-playground.com/#1B1PUZ#15) ([abow](https://github.com/abow))
 - You can now build your own version of babylon.js with `gulp build-custom` [Doc](http://doc.babylonjs.com/generals/how_to_start) ([deltakosh](https://github.com/deltakosh))
@@ -74,42 +73,6 @@ Changes list
 - FollowCamera.target was renamed to FollowCamera.lockedTarget to avoid conflicts ([deltakosh](https://github.com/deltakosh)) 
 - Removed legacy shaders support ([deltakosh](https://github.com/deltakosh))
 
-### Canvas2D
-
-##### Major Updates: ([nockawa](https://github.com/nockawa) unless stated) 
-
-- Performance metrics added
-- Text2D super sampling to enhance quality in World Space Canvas
-- World Space Canvas is now rendering in an adaptive way for its resolution to fit the on screen projected one to achieve a good rendering quality
-- Transparent Primitives are now drawn with Instanced Array when supported
-- ScreenSpaceCanvas, `renderingPhase` setting added, allowing you to specify for which camera and which renderingGroup the Canvas will be rendered to. [Playpround](http://babylonjs-playground.com/#RXVJD%232)
-- FontTexture and Text2D now support Signed Distance Field rendering, more info [here](http://www.html5gamedevs.com/topic/22552-canvas2d-main-post/?page=11#comment-149564). There's also a [Playground](http://babylonjs-playground.com/#143CL7#1)
-- New property in Canvas2D (instances) that contains all instances of canvas2d [Temechon](https://github.com/Temechon)
-
-##### Updates: ([nockawa](https://github.com/nockawa))
-
-- Text2D: new `fontSuperSample` setting to use high quality font ([nockawa](https://github.com/nockawa))
-
-##### Bug Fixes: ([nockawa](https://github.com/nockawa))
-- `WorldSpaceCanvas2D`:
-  - Intersection/interaction now works on non squared canvas
-- Primitive:
-  - `ZOrder` fixed in Primitives created inline
-  - Z-Order is now correctly distributed along the whole canvas object graph
-- `Sprite2D`: 
-  - texture size is now set by default as expected
-  - can have no `id` set
-- `Text2D`: 
-  - Fix bad rendering quality on Chrome
-  - Rendering above transparent surface is now blending correctly
-
-##### Breaking Changes: ([nockawa](https://github.com/nockawa))
- 
- - `WorldSpaceCanvas2D.WorldSpaceRenderScale` is no longer supported (deprecated because of adaptive feature added).
- - Canvas2D now renders its content in three passes: Opaque, Alpha Test and Transparency. Sprite2D was always considered as transparent in the previous release, now it's opaque **unless** you set `hasAlpha` to true to its texture (or if its `actualScale` is less than 1). 
-   Text2D will be transparent if you use non Signed Distance Field (SDF) mode or Alpha Test if you do use SDF.
-
-
 ## 2.4.0
 
 ### Core Engine
@@ -128,7 +91,7 @@ Changes list
 - Added a new VR camera : VRDeviceOrientationArcRotateCamera ([temechon](https://github.com/Temechon))
 - Moved PBR Material to core ([deltakosh](https://github.com/deltakosh))
 - StandardMaterial.maxSimultaneousLights can define how many dynamic lights the material can handle. [Demo here](http://www.babylonjs-playground.com/#IRVAX#10) ([deltakosh](https://github.com/deltakosh))
-- Introduced Canvas2D feature: a 2D engine to render primitives, sprites in 2D, text. Canvas2D can be displayed in Screen Space (above the 3D scene) or in World Space to be a part of the Scene. [overview](http://doc.babylonjs.com/overviews/Using_The_Canvas2D), [tutorial](http://doc.babylonjs.com/tutorials/Using_the_Canvas2D) ([nockawa](https://github.com/nockawa))
+- Introduced Canvas2D feature: a 2D engine to render primitives, sprites in 2D, text. Canvas2D can be displayed in Screen Space (above the 3D scene) or in World Space to be a part of the Scene. [overview](http://doc.babylonjs.com/extensions/Using_The_Canvas2D), [tutorial](http://doc.babylonjs.com/tutorials/Using_the_Canvas2D) ([nockawa](https://github.com/nockawa))
 - Added two new types of Texture: FontTexture and MapTexture ([quick doc](http://www.html5gamedevs.com/topic/22565-two-new-texture-types-fonttexture-and-maptexture/)) ([nockawa](https://github.com/nockawa))
 - Added a dynamic [2D Bin Packing Algorithm](http://stackoverflow.com/questions/8762569/how-is-2d-bin-packing-achieved-programmatically), ([more info here](http://www.html5gamedevs.com/topic/22565-two-new-texture-types-fonttexture-and-maptexture/)) ([nockawa](https://github.com/nockawa))
 - Physics engine was completely rewritten, including both plugins for Oimo.js and Cannon.js. [overview](http://doc.babylonjs.com/overviews/Using_The_Physics_Engine) ([RaananW](https://github.com/RaananW))

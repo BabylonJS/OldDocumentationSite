@@ -3,7 +3,7 @@
 
 ### Few useful links
 
-Please check the [GitHub main page](https://github.com/BabylonJS/Babylon.js/tree/master/canvas2D) of the Canvas2D library, there's a bunch of useful information out there.
+Please check the [GitHub main page](https://github.com/BabylonJS/Extensions/blob/master/canvas2D) of the Canvas2D library, there's a bunch of useful information out there.
 
 For a first-time learning tutorial [go there](http://doc.babylonjs.com/tutorials/Using_the_Canvas2D).
 

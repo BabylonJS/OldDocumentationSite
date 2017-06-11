@@ -49,4 +49,4 @@ If you already have Atlas Data File of another format, you can develop a plugin 
 2) At run-time, call `AtlasPictureInfoFactory.addLoader()` to add your loader.
 3) Use the `AtlasPictureInfoFactory.loadFromUrl()` to load your file.
 
-You'll find more information in the [source code](https://github.com/BabylonJS/Babylon.js/blob/master/canvas2D/src/Engine/babylon.atlasPicture.ts).
+You'll find more information in the [source code](https://github.com/BabylonJS/Extensions/blob/master/canvas2D/src/Engine/babylon.atlasPicture.ts).
