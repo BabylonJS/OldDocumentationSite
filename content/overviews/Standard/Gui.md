@@ -12,7 +12,7 @@ You can find a complete demo here: http://www.babylonjs.com/demos/gui/
 ![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
 
 ## Introduction
-Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface. It is an alternate option to [Canvas2D](http://doc.babylonjs.com/extensions/Canvas2D_home).
+Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface. It is an alternative to [Canvas2D](http://doc.babylonjs.com/extensions/Canvas2D_home).
 
 The main difference is that Canvas2D is full GPU oriented (text constructrion, animations, etc..) where Babylon.GUI relies on HTML canvas API.
 
