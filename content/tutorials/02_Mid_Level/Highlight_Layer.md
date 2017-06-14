@@ -36,7 +36,7 @@ If you wish, you could also use the emissive texture as a source for the highlig
 hl1.addMesh(sphere, BABYLON.Color3.Black(), true);
 ```
 
-[**Playground Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#5)
+[**Playground Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#57)
 
 You can notice here that one side of the sphere is glowing in yellow whereas the other one is grey. The color is not uniform.
 
