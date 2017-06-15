@@ -127,10 +127,9 @@ var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, came
 
 You have several options available:
 * colorGradingTexture: Used to provide a color grading texture applied on your scene. Demo: https://www.babylonjs-playground.com/#J9H084
-* colorCurves: Used to provide several properties to change colors. More [details here](http://doc.babylonjs.com/overviews/physically_based_rendering_master#color-curves). Demo: https://www.babylonjs-playground.com/debug.html#J9H084#1
-* cameraContrast: Used to change the contrast. Demo: https://www.babylonjs-playground.com/debug.html#J9H084#2
-* cameraExposureValue: Used to change the exposure of the image. Demo: https://www.babylonjs-playground.com/debug.html#J9H084#3
-* cameraToneMappingEnabled: Turn it on to enable tone mapping. Demo: https://www.babylonjs-playground.com/debug.html#J9H084#4
+* colorCurves: Used to provide several properties to change colors. More [details here](http://doc.babylonjs.com/overviews/physically_based_rendering_master#color-curves). Demo: https://www.babylonjs-playground.com/#J9H084#1
+* cameraContrast: Used to change the contrast. Demo: https://www.babylonjs-playground.com/#J9H084#2
+* cameraExposureValue: Used to change the exposure of the image. Demo: https://www.babylonjs-playground.com/#J9H084#3
 
 You can also use this postprocess to enable a vignette effect. The vignette is positioned thanks to the following parameters:
 * vignetteStretch: 0 by default
@@ -140,7 +139,19 @@ You can also use this postprocess to enable a vignette effect. The vignette is p
 * vignetteColor: Color4 value to define the overall color
 * vignetteBlendMode: BABYLON.ImageProcessingPostProcess.VIGNETTEMODE_MULTIPLY or BABYLON.ImageProcessingPostProcess.VIGNETTEMODE_OPAQUE
 
+All features can be turned on and off with the following booleans:
+* colorCurvesEnabled
+* vignetteEnabled
+* cameraToneMappingEnabled
+
 You can find a demo of the vignette here: https://www.babylonjs-playground.com/debug.html#J9H084#7
+
+The image processing post process is also included in a rendering pipeline: the DefaultRenderingPipeline. This pipeline adds support for FXAA and bloom on top of the image processing. You can find a complete interactive demo here: https://www.babylonjs-playground.com/#Y3C0HQ
+
+You can turn pipeline features on and off with the following booleans:
+* fxaaEnabled
+* bloomEnabled
+* imageProcessingEnabled
 
 * **Refraction**: apply a refraction texture:
 
