@@ -364,6 +364,22 @@ The height (or width) of the StackPanel is defined automatically based on childr
 
 Here is an example of a StackPanel: http://www.babylonjs-playground.com/#XCPP9Y#11
 
+### ColorPicker
+
+The color picker control allows users to set colors in your scene.
+
+Whenever a user interacts with the color picker an observable is triggered (`colorPicker.onValueChangedObservable`) which returns the current value (Color3) of the color picker.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+size|string or number|"200px"|The size, width, and height property will always be the same value since the color picker can only be a square.
+
+
+Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE
+
+
 ## Helpers
 
 To reduce the amount of code required to achieve frequent tasks you can use the following helpers:
