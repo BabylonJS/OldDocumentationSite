@@ -377,7 +377,7 @@ Property|Type|Default|Comments
 size|string or number|"200px"|The size, width, and height property will always be the same value since the color picker can only be a square.
 
 
-Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE
+Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE#1
 
 
 ## Helpers
