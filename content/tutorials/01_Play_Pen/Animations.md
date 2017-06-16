@@ -134,7 +134,7 @@ scene.beginAnimation(box1, 0, 100, true);
 optional | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE)
 optional | speedRatio | number | default : 1. The speed ratio of this animation
 optional | onAnimationEnd | () => void | The function triggered on the end of the animation (also dependent upon ANIMATIONLOOPMODE)
-optional | animatable | [Animatable](http://doc.babylonjs.com/classes/Animatable) | An optional specific animation
+optional | animatable | [Animatable](http://doc.babylonjs.com/classes/2.5/animatable) | An optional specific animation
 ---
 
 This function returns a ```BABYLON.Animatable``` object that you can use to get access to individual animations (for instance using ```getAnimationByTargetProperty``` function).
@@ -328,11 +328,11 @@ This function can be very useful for complex animation like games, where charact
 
 Don’t hesitate to combine all those types of animations. If well done, it’s very powerful.
 
-Don't forget to [visit our API documentation](http://doc.babylonjs.com/classes/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/classes/Animation) and [**Babylon.js Animatable**](http://doc.babylonjs.com/classes/Animatable) classes.
+Don't forget to [visit our API documentation](http://doc.babylonjs.com/classes/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/classes/2.5/animation) and [**Babylon.js Animatable**](http://doc.babylonjs.com/classes/2.5/animatable) classes.
 
 ## Attach events to animations
 
-From Babylon.js version 2.3, you can attach [animation events](http://doc.babylonjs.com/classes/AnimationEvent) to specific frames on an animation.
+From Babylon.js version 2.3, you can attach [animation events](http://doc.babylonjs.com/classes/2.5/animationevent) to specific frames on an animation.
 
 An event is a function that will be called at a given frame.
 
