@@ -124,6 +124,12 @@ Finally, you can launch your animation in one line of code, at any time in your 
 scene.beginAnimation(box1, 0, 100, true);
 ```
 
+You can also run your animation in reverse by swapping the From and To frames:
+
+```javascript
+scene.beginAnimation(box1, 100, 0, true);
+```
+
 **Parameters for scene.beginAnimation:**
 
 | Name | Type | Description
