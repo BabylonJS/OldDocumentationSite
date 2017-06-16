@@ -26,6 +26,8 @@ mirrorMaterial.reflectionTexture.renderList = [sphere1, sphere2];
 A _mirrorTexture_ is created with a parameter that specifies the size of the rendering buffer (512x512 here, better reflection quality if increased).
 Then you have to define the reflection plane and a render list (the list of meshes to render inside the mirror).
 
+Mirrors can be blurred if you set `mirror.blurKernel = 32`. You can also control the resolution of the blur relatively to the size of the mirror with `mirror.blurRatio = 0.5`.
+
 You can also use a [CubeTexture](http://doc.babylonjs.com/classes/CubeTexture) as a reflectionTexture on a StandardMaterial.
 ```javascript
 material.reflectionTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
