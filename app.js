@@ -11,7 +11,7 @@ var port = process.env.PORT || 3000;
 
 app.use(compress());
 
-app.use(favicon(__dirname + '/public/html/img/favicon.ico'));
+app.use(favicon('http://www.babylonjs.com/img/favicon/favicon.ico'));
 
 // Serve static files (css, js, images)
 app.use(express.static('public/html'));

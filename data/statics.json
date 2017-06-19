@@ -339,6 +339,10 @@
         {
           "title": "Using the standard rendering pipeline",
           "filename": "Using_Standard_Rendering_Pipeline"
+        },
+        {
+          "title": "Using the default rendering pipeline",
+          "filename": "Using_Default_Rendering_Pipeline"
         }
       ]
     },
