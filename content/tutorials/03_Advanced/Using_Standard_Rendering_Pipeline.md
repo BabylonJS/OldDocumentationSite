@@ -22,7 +22,7 @@ var pipeline = new BABYLON.StandardRenderingPipeline(
     scene, // The scene instance
     1.0, // The rendering pipeline ratio
     null, // The original post-process that the pipeline will be based on
-    [camera] // The list of cameras to be attched to
+    [camera] // The list of cameras to be attached to
 );
 ```
 
@@ -192,4 +192,4 @@ pipeline.motionBlurSamples = 32.0;
 ```
 
 
-**note: Activating the Motion Blur will activate the depth renderer of Babylon.js, which can have an impact on performances**
+**note: Activating the Motion Blur will activate the depth renderer of Babylon.js, which can have an impact on performance**
