@@ -109,6 +109,8 @@ Here is an example of a trackable label: http://www.babylonjs-playground.com/#XC
 
 Please note that controls that want to track position of a mesh must be at root level (at AdvancedDynamicTexture level).
 
+You can also move a control to a specific coordinates in your scene with `control.moveToVector3(position)`. Please note that the control will not stick with the vector if you change it afterwards.
+
 For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control. 
 
 With these 2 options, you can create a complete trackable label: http://www.babylonjs-playground.com/#XCPP9Y#20
