@@ -17,5 +17,5 @@ This type inherit all the properties of the [Shape](http://doc.babylonjs.com/ext
 
 ## Examples
 
-[Lots of spining Rect/Ellipse!](http://babylonjs-playground.com/#OWCCR#8)
+[Lots of spining Rect/Ellipse!](https://www.babylonjs-playground.com/#OWCCR#8)
 

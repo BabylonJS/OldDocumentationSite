@@ -4,7 +4,7 @@ PG_TITLE: 18. Using Parallax Mapping
 ---
 Starting with Babylon.js v2.4, we introduced Parallax Mapping.
 
-You can see a demo of this technique [right here](http://babylonjs-playground.com/#10I31V#23)
+You can see a demo of this technique [right here](https://www.babylonjs-playground.com/#10I31V#23)
 
 ![Screenshot](http://i.imgur.com/8VBDRPe.png)
 

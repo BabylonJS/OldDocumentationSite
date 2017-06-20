@@ -5,7 +5,7 @@ After following the [standard material tutorial](http://doc.babylonjs.com/tutori
 
 ![Elements](/img/extensions/materials/PBRMaterial.jpg)
 
-[**Playground Demo Scene - PBR Materials**](http://babylonjs-playground.com/#ESBZC#3)
+[**Playground Demo Scene - PBR Materials**](https://www.babylonjs-playground.com/#ESBZC#3)
 
 ## What is the point ?!?
 PBR rendering techniques aim to simulate **real life lighting**.
@@ -51,7 +51,7 @@ The micro-surface of a material defines **the way it is reflecting** the incomin
 
 As you can see here, the more glossy the material is (going left to right: 0.5 to 1) the less blurry the reflected environment is.
 
-[**Playground Demo Scene - PBR Glossiness**](http://babylonjs-playground.com/#1LZALU#5)
+[**Playground Demo Scene - PBR Glossiness**](https://www.babylonjs-playground.com/#1LZALU#5)
 
 ```javascript
 var x = 0;
@@ -90,7 +90,7 @@ The reflectivity of a material defines the **amount of light it is reflecting**.
 
 As you can see here the more specular the material is (going left to right from white to black) the closer to a perfect mirror it is.
 
-[**Playground Demo Scene - PBR Reflectivity**](http://babylonjs-playground.com/#PRRBS#2)
+[**Playground Demo Scene - PBR Reflectivity**](https://www.babylonjs-playground.com/#PRRBS#2)
 
 ```javascript
 var x = 0;
@@ -165,7 +165,7 @@ pbr.cameraContrast = 1.66;
 
 This highlights the impact of both contrast and exposure on a model (all the other parameters are fixed).
 
-[**Playground Demo Scene - PBR Camera**](http://babylonjs-playground.com/#1Y4YAM#3)
+[**Playground Demo Scene - PBR Camera**](https://www.babylonjs-playground.com/#1Y4YAM#3)
 
 ## Gamma Correction
 

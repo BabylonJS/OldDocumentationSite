@@ -25,7 +25,7 @@ Three concepts are introduced to help on this matter:
     2. **Center** the primitive Width/Height from its parent's Content Area 
     3. **Stretch** (which also will drive the Size property of the Primitive) the primitive Surface Area to fit its parent Content Area on either or both Horizontal/Vertical axes.
     
-    **Note**: alignment will consider the actualScale and rotation of the primitive, this [this PG](http://babylonjs-playground.com/#BN6OY) for more detail.
+    **Note**: alignment will consider the actualScale and rotation of the primitive, this [this PG](https://www.babylonjs-playground.com/#BN6OY) for more detail.
 
 ### About the PrimitiveThickness type
 
