@@ -31,5 +31,5 @@ The different types of cap are:
 
 ## Examples
 
-[Lines2D primitive](http://babylonjs-playground.com/#15C96V#5)
+[Lines2D primitive](https://www.babylonjs-playground.com/#15C96V#5)
 

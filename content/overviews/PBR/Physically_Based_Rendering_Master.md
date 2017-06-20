@@ -5,7 +5,7 @@ After following the [PBR Introduction](http://doc.babylonjs.com/overviews/Physic
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
-[**Playground Demo Scene - PBR Materials**](http://babylonjs-playground.com/#ESBZC#3)
+[**Playground Demo Scene - PBR Materials**](https://www.babylonjs-playground.com/#ESBZC#3)
 
 This will be the only picture of the documentation. As a **real sample** would be better than a picture, please, do not hesitate to click on the eye aside of each playground links to see the live examples embedded in the page.
 
@@ -73,7 +73,7 @@ pbr.reflectivityTexture = new BABYLON.Color3(1.0, 1.0, 1.0); // White is represe
 ### MicroSurface
 The microsurface controls how **"shiny" or "glossy"** the material is. This value (between 0 and 1) will basically adjust a material from being fully rough (0) to fully glossy (1).
 
-[Demo](http://babylonjs-playground.com/#1LZALU#5)
+[Demo](https://www.babylonjs-playground.com/#1LZALU#5)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.microSurface = 0.2; // Rough material like paper.
@@ -344,7 +344,7 @@ One of the outstanding WebGL issue is the lack of MSAA on texture render target.
 
 In order to work around those issues and increase performance we integrated as part of the material two optional controls for both **contrast** and **exposure**. This enables you to do photographic tone mapping and deals with the contrast directly from the material.
 
-[Demo](http://babylonjs-playground.com/#1Y4YAM#3)
+[Demo](https://www.babylonjs-playground.com/#1Y4YAM#3)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.cameraExposure = 0.66;
@@ -681,4 +681,4 @@ plastic.cameraExposure = 0.66;
 plastic.cameraContrast = 1.66;
 ```
 
-That is it for the PBR and I hope you arrived to this line not completely asleep. You are now totally able to create the [**Playground Demo Scene - PBR Materials**](http://babylonjs-playground.com/#ESBZC#3) on your own.
+That is it for the PBR and I hope you arrived to this line not completely asleep. You are now totally able to create the [**Playground Demo Scene - PBR Materials**](https://www.babylonjs-playground.com/#ESBZC#3) on your own.

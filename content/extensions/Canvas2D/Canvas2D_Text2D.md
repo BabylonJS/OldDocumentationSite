@@ -14,7 +14,7 @@ In this mode you have three different rendering qualities
 
 1) Standard: the FontTexture will be created with a standard resolution
 2) SuperSampled: using the `fontSuperSample` setting with `true` at the Text2D construction you will have a FontTexture that will be created using a 2x2 pixels for a regular font pixel. So the texture will take four time the memory space than the standard mode but the rendering quality will be better.
-3) Signed Distance Field: using the `fontSignedDistanceField` setting with `true` at the Text2D construction you will have a FontTexture that will be created using the Signed Distance Field (SDF) algorithm. More about this algo [here](http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf). See the [Playground](http://babylonjs-playground.com/#143CL7#1).
+3) Signed Distance Field: using the `fontSignedDistanceField` setting with `true` at the Text2D construction you will have a FontTexture that will be created using the Signed Distance Field (SDF) algorithm. More about this algo [here](http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf). See the [Playground](https://www.babylonjs-playground.com/#143CL7#1).
 
 #### Which mode to use?
 
@@ -32,7 +32,7 @@ BMFont is a software that can be found [here](http://www.angelcode.com/products/
 
 To use a BitmapFont with Text2D you must before create an instance of the `BitmapFontTexture`, then passing the texture as a parameter of the `bitmapFontTexture` setting during the construction of the Text2D.
 
-See a [playground here](http://babylonjs-playground.com/#GKBEH)
+See a [playground here](https://www.babylonjs-playground.com/#GKBEH)
 
 ## Features
 
@@ -61,6 +61,6 @@ The rendering quality of the text depends on the Web Browser implementation, rig
 
 ## Example
 
-[Primitive with Action Manager](http://babylonjs-playground.com/#1ONKPJ#5)
+[Primitive with Action Manager](https://www.babylonjs-playground.com/#1ONKPJ#5)
 
 
