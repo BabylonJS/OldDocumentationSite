@@ -28,13 +28,13 @@ Then you have to define the reflection plane and a render list (the list of mesh
 
 Mirrors can be blurred if you set `mirror.blurKernel = 32`. You can also control the resolution of the blur relatively to the size of the mirror with `mirror.blurRatio = 0.5`.
 
-You can also use a [CubeTexture](http://doc.babylonjs.com/classes/CubeTexture) as a reflectionTexture on a StandardMaterial.
+You can also use a [CubeTexture](http://doc.babylonjs.com/classes/3.0/CubeTexture) as a reflectionTexture on a StandardMaterial.
 ```javascript
 material.reflectionTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
 ```
 Like the CubeTextures used in skyboxes, the textures/TropicalSunnyDay directory must contain 6 textures, covering all 6 directions of the cube. Each image must be named according to the corresponding CubeTexture face: “TropicalSunnyDay_nx.jpg”, “TropicalSunnyDay_ny.jpg”, “TropicalSunnyDay_nz.jpg”, “TropicalSunnyDay_px.jpg”, “TropicalSunnyDay_py.jpg”, “TropicalSunnyDay_pz.jpg”.
 
-You can see this nice advanced texturing technique... in [this playground scene](http://www.babylonjs-playground.com/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/FresnelParameters)-enhanced [playground scene](http://www.babylonjs-playground.com/#SBTYP), as well.
+You can see this nice advanced texturing technique... in [this playground scene](http://www.babylonjs-playground.com/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/3.0/FresnelParameters)-enhanced [playground scene](http://www.babylonjs-playground.com/#SBTYP), as well.
 
 
 * **Bump Mapping**
@@ -84,7 +84,7 @@ Here is an example from our [Flat2009 demo](http://www.babylonjs.com/?9). This p
 ecran.material.diffuseTexture = new BABYLON.VideoTexture("video",
 ["Scenes/Flat2009/babylonjs.mp4", "Scenes/Flat2009/babylonjs.webm"], scene, true);
 ```
-The [_VideoTexture_ object](http://doc.babylonjs.com/classes/VideoTexture) accepts an array of videos (to take into account various codecs). The first video in the array that can be loaded... is the one used as content source. Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
+The [_VideoTexture_ object](http://doc.babylonjs.com/classes/3.0/VideoTexture) accepts an array of videos (to take into account various codecs). The first video in the array that can be loaded... is the one used as content source. Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
 
 The internal [video DOM object](http://www.w3.org/wiki/HTML/Elements/video) is accessible via the VideoTexture.video property... which allows you to control some characteristics and monitor the status of the video (things such as play, pause, loop, autoplay, etc). See the link above for the full story.
 

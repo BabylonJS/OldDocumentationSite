@@ -12,13 +12,13 @@ For example in a shooting game at 3rd person view : collisions between our bulle
 
 **Documentation of classes :**
 
-http://doc.babylonjs.com/classes/2.5/ray
+http://doc.babylonjs.com/classes/3.0/ray
 You have first to create a ray.
 
-http://doc.babylonjs.com/classes/2.5/scene
+http://doc.babylonjs.com/classes/3.0/scene
 The method scene.pickWithRay() throws a ray in your scene to pick a mesh.
 
-http://doc.babylonjs.com/classes/2.5/pickinginfo
+http://doc.babylonjs.com/classes/3.0/pickinginfo
 And get the picking info.
 
 
