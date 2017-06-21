@@ -335,7 +335,7 @@ You can change image source at any time with `image.source="myimage.jpg"`.
 
 You can also define which part of the source image you want to use with the following properties:
 * sourceLeft: x coordinate in the source image (in pixel)
-* sourceTopt: y coordinate in the source image (in pixel)
+* sourceTop: y coordinate in the source image (in pixel)
 * sourceWidth: width of the source image you want to use (in pixel)
 * sourceTopt: height of the source image you want to use (in pixel)
 
