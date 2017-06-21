@@ -12,7 +12,7 @@ _A picture showing Babylon.js fog in action_
 
 ## How can I do this?
 
-We will talk about that nice fog effect, shortly. First, I want to introduce you to two interesting properties on the [scene class object](http://doc.babylonjs.com/classes/Scene):
+We will talk about that nice fog effect, shortly. First, I want to introduce you to two interesting properties on the [scene class object](http://doc.babylonjs.com/classes/3.0/Scene):
 
 * `scene.clearColor` - changes the 'background' color.
 * `scene.ambientColor` - changes the color used in several effects, including ambient lighting.
