@@ -329,9 +329,15 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
 * BABYLON.GUI.Image.STRETCH_EXTEND: Scale the container to adapt to the image size.
 
-You may want to have the Image control adapt its size to the source image. TO do so just call `image.autoScale = true`.
+You may want to have the Image control adapt its size to the source image. To do so just call `image.autoScale = true`.
 
 You can change image source at any time with `image.source="myimage.jpg"`.
+
+You can also define which part of the source image you want to use with the following properties:
+* sourceLeft: x coordinate in the source image (in pixel)
+* sourceTop: y coordinate in the source image (in pixel)
+* sourceWidth: width of the source image you want to use (in pixel)
+* sourceTopt: height of the source image you want to use (in pixel)
 
 Here is an example of an image: http://www.babylonjs-playground.com/#XCPP9Y#7
 
