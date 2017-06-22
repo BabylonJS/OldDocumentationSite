@@ -118,12 +118,14 @@ For Line control, you can also attach the second point to a control with `line.c
 With these 2 options, you can create a complete trackable label: http://www.babylonjs-playground.com/#XCPP9Y#20
 
 ### Adaptive scaling
-You can decide to define your UI with a fixed resolution.
+When in fullscreen UI, you can decide to define your UI with a fixed resolution.
 To define this resolution, just set `myAdvancedDynamicTexture.idealWidth = 600` **or** `myAdvancedDynamicTexture.idealHeight = 400`.
 
 If both are set, the idealWidth will be used.
 
 When ideal resolution is set, all values expressed **in pixels** are considered relatively to this resolution and scaled accordingly to match the current resolution.
+
+Even when ideal size is set, the fullscreen UI will be rendered at the same resolution of your canvas, but you can decide (mostly for performance reason) to force the texture to use the ideal size for resolution as well. To do so, just call `myAdvancedDynamicTexture.renderAtIdealSize = true`.
 
 Here is an example of how to use horizontal adaptive scaling: http://www.babylonjs-playground.com/#XCPP9Y#39
 
