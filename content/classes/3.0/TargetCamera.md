@@ -78,3 +78,17 @@ Set the target of the targetCamera
 ### getTarget() &rarr; [Vector3](/classes/3.0/Vector3)
 
 Return the current target position of the camera. This value is expressed in local space.
+### createRigCamera(name, cameraIndex) &rarr; [Camera](/classes/3.0/Camera)
+
+@override
+
+Override [Camera](/classes/3.0/Camera).createRigCamera
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |      
+ | cameraIndex | number |      
+### getClassName() &rarr; string
+
+

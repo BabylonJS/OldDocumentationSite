@@ -7,6 +7,19 @@ class [PBRBaseSimpleMaterial](/classes/3.0/PBRBaseSimpleMaterial) extends [PBRBa
 
 
 
+## Constructor
+
+## new [PBRBaseSimpleMaterial](/classes/3.0/PBRBaseSimpleMaterial)(name, scene)
+
+Instantiates a new [PBRMaterial](/classes/3.0/PBRMaterial) instance.
+
+         * @param name The material name
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |  The material name
+ | scene | [Scene](/classes/3.0/Scene) |  The scene the material will be use in.
 ## Members
 
 ### maxSimultaneousLights : number
@@ -53,3 +66,23 @@ Occlusion [Texture](/classes/3.0/Texture) of the material (adding extra occlusio
 
 Defines the alpha limits in alpha test mode.
 
+### transparencyMode : number
+
+Gets the current transparency mode.
+
+Sets the transparency mode of the material.
+
+### doubleSided : boolean
+
+Gets the current double sided mode.
+
+If sets to true and backfaceCulling is false, normals will be flipped on the backside.
+
+## Methods
+
+### needAlphaBlending() &rarr; boolean
+
+Specifies wether or not the meshes using this material should be rendered in alpha blend mode.
+### needAlphaTesting() &rarr; boolean
+
+Specifies wether or not the meshes using this material should be rendered in alpha test mode.
