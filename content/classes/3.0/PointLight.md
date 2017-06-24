@@ -82,3 +82,14 @@ Returns a new [Vector3](/classes/3.0/Vector3) aligned with the [PointLight](/cla
 ---|---|---|---
 optional | faceIndex | number |    
 
+### transferToEffect(effect, lightIndex) &rarr; [PointLight](/classes/3.0/PointLight)
+
+Sets the passed [Effect](/classes/3.0/Effect) "effect" with the [PointLight](/classes/3.0/PointLight) transformed position (or position, if none) and passed name (string).
+
+Returns the [PointLight](/classes/3.0/PointLight).
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.0/Effect) |      The given effect
+ | lightIndex | string | 

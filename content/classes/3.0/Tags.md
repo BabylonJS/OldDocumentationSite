@@ -7,7 +7,7 @@ PG_VERSION: 2.1
 
 class [Tags](/classes/3.0/Tags)
 
-[Tags](/classes/3.0/Tags) can be added to ANY javascript object (not necessarily reserved to BabylonJS) by calling Tags.AddTagsTo
+[Tags](/classes/3.0/Tags) can be added to ANY javascript object (not necessarily reserved to BabylonJS) by calling [Tags](/classes/3.0/Tags).AddTagsTo
 
 [Tags](/classes/3.0/Tags).MatchesQuery can be used to check if a javascript object matches a "boolean" query<br/>
 

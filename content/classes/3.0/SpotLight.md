@@ -66,3 +66,14 @@ Returns the string "[SpotLight](/classes/3.0/SpotLight)".
 ### getTypeID() &rarr; number
 
 Returns the integer 2.
+### transferToEffect(effect, lightIndex) &rarr; [SpotLight](/classes/3.0/SpotLight)
+
+Sets the passed [Effect](/classes/3.0/Effect) object with the [SpotLight](/classes/3.0/SpotLight) transfomed position (or position if not parented) and normalized direction.
+
+Return the [SpotLight](/classes/3.0/SpotLight).
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.0/Effect) |      The given effect
+ | lightIndex | string | 

@@ -44,3 +44,36 @@ The ground color
 
 The direction of the light
 
+## Methods
+
+### getClassName() &rarr; string
+
+Returns the string "[HemisphericLight](/classes/3.0/HemisphericLight)".
+### setDirectionToTarget(target) &rarr; [Vector3](/classes/3.0/Vector3)
+
+Sets the [HemisphericLight](/classes/3.0/HemisphericLight) direction towards the passed target ([Vector3](/classes/3.0/Vector3)).
+
+Returns the updated direction.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | target | [Vector3](/classes/3.0/Vector3) |      The given target to lighten
+
+### getShadowGenerator() &rarr; [ShadowGenerator](/classes/3.0/ShadowGenerator)
+
+Returns null
+### transferToEffect(effect, lightIndex) &rarr; [HemisphericLight](/classes/3.0/HemisphericLight)
+
+Sets the passed [Effect](/classes/3.0/Effect) object with the [HemisphericLight](/classes/3.0/HemisphericLight) normalized direction and color and the passed name (string).
+
+Returns the [HemisphericLight](/classes/3.0/HemisphericLight).
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.0/Effect) |      The given effect
+ | lightIndex | string | 
+### getTypeID() &rarr; number
+
+Returns the integer 3.

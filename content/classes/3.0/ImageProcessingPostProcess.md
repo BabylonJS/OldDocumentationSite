@@ -88,3 +88,11 @@ optional | reusable | boolean |
 
 
 
+### static VIGNETTEMODE_MULTIPLY : number
+
+
+
+### static VIGNETTEMODE_OPAQUE : number
+
+
+

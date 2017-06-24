@@ -7,6 +7,17 @@ class [WebVRController](/classes/3.0/WebVRController) extends [PoseEnabledContro
 
 
 
+## Constructor
+
+## new [WebVRController](/classes/3.0/WebVRController)(vrGamepad)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | vrGamepad | any | 
+
 ## Members
 
 ### onTriggerStateChangedObservable : [Observable](/classes/3.0/Observable)&lt;ExtendedGamepadButton&gt;
@@ -27,5 +38,39 @@ class [WebVRController](/classes/3.0/WebVRController) extends [PoseEnabledContro
 
 ### onPadValuesChangedObservable : [Observable](/classes/3.0/Observable)&lt;[StickValues](/classes/3.0/StickValues)&gt;
 
+
+
+### pad : [StickValues](/classes/3.0/StickValues)
+
+
+
+### hand : string
+
+
+
+### any : ()
+
+
+
+### abstract : ()
+
+
+
+### any : ()
+
+
+
+## Methods
+
+### onButtonStateChange(callback) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | callback | (controlledIndex: number, buttonIndex: number, state: ExtendedGamepadButton) =&gt; void | 
+
+### update() &rarr; void
 
 

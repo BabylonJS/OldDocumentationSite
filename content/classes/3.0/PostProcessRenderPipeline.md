@@ -16,3 +16,34 @@ A render pipeline can be managed by enabling and disabling some effects and disp
 
 A tutorial about the render pipeline can be found here : https://doc.babylonjs.com/tutorials/using_standard_rendering_pipeline
 
+## Constructor
+
+## new [PostProcessRenderPipeline](/classes/3.0/PostProcessRenderPipeline)(engine, name)
+
+Builds a [PostProcessRenderPipeline](/classes/3.0/PostProcessRenderPipeline) object
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | engine | [Engine](/classes/3.0/Engine) |      The used engine
+ | name | string |      The name of the object
+## Members
+
+### isSupported : boolean
+
+
+
+## Methods
+
+### addEffect(renderEffect) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | renderEffect | [PostProcessRenderEffect](/classes/3.0/PostProcessRenderEffect) |      The given render effect
+
+### dispose() &rarr; void
+
+

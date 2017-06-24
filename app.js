@@ -1,7 +1,7 @@
-var express  = require('express');
-var app      = express();
+var express = require('express');
+var app = express();
 var compress = require('compression');
-var favicon  = require('serve-favicon');
+var favicon = require('serve-favicon');
 
 
 
@@ -11,7 +11,7 @@ var port = process.env.PORT || 3000;
 
 app.use(compress());
 
-app.use(favicon('http://www.babylonjs.com/img/favicon/favicon.ico'));
+app.use(favicon(__dirname + '/public/html/img/favicon.ico'));
 
 // Serve static files (css, js, images)
 app.use(express.static('public/html'));

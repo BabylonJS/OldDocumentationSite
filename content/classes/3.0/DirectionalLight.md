@@ -56,3 +56,14 @@ Returns the string "[DirectionalLight](/classes/3.0/DirectionalLight)".
 ### getTypeID() &rarr; number
 
 Returns the integer 1.
+### transferToEffect(effect, lightIndex) &rarr; [DirectionalLight](/classes/3.0/DirectionalLight)
+
+Sets the passed [Effect](/classes/3.0/Effect) object with the [DirectionalLight](/classes/3.0/DirectionalLight) transformed position (or position if not parented) and the passed name.
+
+Returns the [DirectionalLight](/classes/3.0/DirectionalLight).
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.0/Effect) |      The given effect
+ | lightIndex | string | 
