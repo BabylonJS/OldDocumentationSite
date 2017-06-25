@@ -94,7 +94,6 @@ http://www.babylonjs-playground.com/#QKQHS
 
 This time, I would like you to press the **Get .zip** button.  The playground will open a small panel allowing you to download this scene.  Save the zip file in some new empty folder on your home computer.  Now use an UNZIP utility program to unzip it.  Notice that there is one file in the folder, called index.html.  Please load that file into a text editor or programming editor.  Does it look like the big picture above?  Sure it does.  ANY scene from the Babylon.js playground, including its pre-installed demo scenes, can be brought to your home with the **Get .zip** button.  Most of them will look very similar to the big picture, above.
 
-There is a tutorial for the Babylon.js playground.  Just [**click here**](http://doc.babylonjs.com/page.php?p=22631).
 
 Wow, this is a lot of information, isn't it?  You have learned what a scene file (the big picture) looks like, you have learned about its important createScene() function and how copy'n'paste portable it is.  You have seen a createScene() function in the Babylon.js playground, and you have been introduced to the playground's RUN, SAVE, and Get .zip buttons.
 

@@ -84,4 +84,4 @@ This tutorial's createScene() can be viewed and experimented-with... by visiting
 
 
 ## Next step
-Now you know how to create and move objects in a scene, but all your meshes have the same 'skin'. Not for long, if you read our next tutorial about materials. [**Go to the Materials Tutorial**](http://doc.babylonjs.com/page.php?p=22051)
+Now you know how to create and move objects in a scene, but all your meshes have the same 'skin'. Not for long, if you read our next tutorial about materials.

@@ -17,7 +17,7 @@ BABYLON.Bone = function (name, skeleton, parentBone, matrix)
 
 Inside a skeleton, bones can be found inside the ```skeleton.bones``` array.
 
-A bone can contain [animations](http://doc.babylonjs.com/page.php?p=22081) to animate its ```matrix``` property.
+A bone can contain animations to animate its ```matrix``` property.
 
 ### Preparing mesh
 A skeleton can be applied to a mesh through the ```mesh.skeleton``` property.
