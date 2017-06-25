@@ -43,7 +43,6 @@ Or you can assign an opacity texture to its material (even if the opacity textur
  material_base.opacityTexture = material_base.diffuseTexture;
 ```
 
-To know more about alpha-blending and how alpha-blended meshes are handled, please refer to this article: http://doc.babylonjs.com/page.php?p=25100
 
 
 # Examples #

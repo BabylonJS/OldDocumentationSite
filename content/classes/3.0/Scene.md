@@ -11,7 +11,6 @@ class [Scene](/classes/3.0/Scene)
 
 Represents a scene to be rendered by the engine.
 
-@see http://doc.babylonjs.com/page.php?p=21911
 
 ## Constructor
 
@@ -785,7 +784,6 @@ Will start the animation sequence of a given target
 
 @see BABYLON.[Animatable](/classes/3.0/Animatable)
 
-@see http://doc.babylonjs.com/page.php?p=22081
 
 #### Parameters
  | Name | Type | Description

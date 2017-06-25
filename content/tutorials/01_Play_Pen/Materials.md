@@ -53,7 +53,7 @@ That is done by setting the properties on the material.  Let's see what they ar
 
 * **Transparency** (alpha channel)
 
-Alpha compositing and transparency in general can be a bit complex. A specific article about that can be found [here](page.php?p=25100). You might also want to read [the wikipedia page about it](http://en.wikipedia.org/wiki/Alpha_compositing).  You will encounter even more uses for it when you enjoy the BabylonJS particle system, and BabylonJS sprites system. 
+Alpha compositing and transparency in general can be a bit complex. You might also want to read [the wikipedia page about it](http://en.wikipedia.org/wiki/Alpha_compositing).  You will encounter even more uses for it when you enjoy the BabylonJS particle system, and BabylonJS sprites system. 
 
  Alpha transparency, written in percent (%), can be applied to a material in this way:
 ```javascript

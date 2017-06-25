@@ -342,7 +342,6 @@ http://www.babylonjs-playground.com/#2AH4YH#2
 
 ## Manipulating sound loaded from a .babylon file##
 
-Our *.babylon* file format can describe the sounds to load. It’s documented here: http://doc.babylonjs.com/page.php?p=22661 
 
 Currently only our 3DS Max exporter can export sounds directly to *.babylon*. 
 
