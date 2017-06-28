@@ -171,6 +171,10 @@
         {
           "title": "Multi-Platform Compressed Textures",
           "filename": "Multi-Platform_Compressed_Textures"
+        },
+        {
+          "title": "BabylonJS in an Ionic Angular app",
+          "filename": "BabylonJS_and_Ionic_Angular"
         }
       ]
     },
