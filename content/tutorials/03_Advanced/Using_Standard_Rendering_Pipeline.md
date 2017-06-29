@@ -4,14 +4,15 @@ PG_TITLE: Using the standard rendering pipeline
 
 # Introduction
 
-Link to the playground : [https://www.babylonjs-playground.com/#FRUD8#2](https://www.babylonjs-playground.com/#FRUD8#2)
-
 This rendering pipeline tends to simulate a chain of famous post-process effects such as
 * Lens imperfections (surexposed surfaces are highlighted)
 * Dirty lens effect
 * Depth of field
+* Motion Blur
+* Volumetric Lights
 
-In future, this rendering pipeline will be able to receive external post-processes, orderable, to be enriched like pseudo lens flare post-process or whatever.
+Simple playground : [https://www.babylonjs-playground.com/#FRUD8#2](https://www.babylonjs-playground.com/#FRUD8#2)
+Full playground: [http://www.babylonjs-playground.com/#X3XD2C](http://www.babylonjs-playground.com/#X3XD2C)
 
 # Creating the rendering pipeline
 
@@ -34,13 +35,6 @@ Each pixel intensity above the given threshold is creating lens imperfections.
 Just set the ".brightThreshold" property:
 ```
 pipeline.brightThreshold = 0.8;
-```
-
-## Highlighted surfaces intensity
-To intensify the highlighted surfaces, just configure the ".gaussianCoefficient" property.
-As a reference, the value 0.3 should be enough for a good result.
-```
-pipeline.gaussianCoefficient = 0.25;
 ```
 
 ## Change exposure
@@ -191,5 +185,29 @@ pipeline.motionStrength = 0.5;
 pipeline.motionBlurSamples = 32.0;
 ```
 
+**note: Activating the Motion Blur will activate the depth renderer of Babylon.js, which can have an impact on performances**
 
-**note: Activating the Motion Blur will activate the depth renderer of Babylon.js, which can have an impact on performance**
+# Setting up volumetric lights
+Volumetric Lights, as seen in the playground available in introduction can be computed with a post-process.
+
+**note: Volumetric Lights require to have the multiple render targets support, basically WebGL 2 support**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UKdWPj7VRu0" frameborder="0" allowfullscreen></iframe>
+
+## Customizing volumetric lights
+```
+// Enable Volumetric Lights computation in the pipeline
+pipeline.VLSEnabled = true;
+
+// First, give the source light to the pipeline which must be a spot light or a directional light
+// The volumetric lights post-process needs a shadow map in order to work: it is used to test obstacles for the light rays
+// Then, the source light mush have a shadows generator:
+pipeline.sourceLight = <SpotLight> scene.getLightByName("spotLight");
+
+// This represents the intensity of fog in the air. In other words, the light rays intensity in the shadow
+pipeline.volumetricLightPower = 4;
+
+// This represents the overall quality of the volumetric lights post-process in interval [0, 100].
+// The default value is 50.0 and is enough for a good result
+pipeline.volumetricLightStepsCount = 50;
+```
