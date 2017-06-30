@@ -12,7 +12,7 @@ This rendering pipeline tends to simulate a chain of famous post-process effects
 * Volumetric Lights
 
 Simple playground : [https://www.babylonjs-playground.com/#FRUD8#2](https://www.babylonjs-playground.com/#FRUD8#2)
-Full playground: [http://www.babylonjs-playground.com/#X3XD2C](http://www.babylonjs-playground.com/#X3XD2C)
+Full playground: [http://www.babylonjs-playground.com/#X3XD2C](http://www.babylonjs-playground.com/#X3XD2C#1)
 
 # Creating the rendering pipeline
 
