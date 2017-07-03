@@ -128,7 +128,7 @@ The third parameter define the exposure adjustement.
 You can find a demo here: https://www.babylonjs-playground.com/debug.html#J9H084#8
 
 ## ImageProcessing
-Apply a complete range of special effects:
+Apply a complete range of special image treaments:
 
 ```javascript
 var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, camera);
