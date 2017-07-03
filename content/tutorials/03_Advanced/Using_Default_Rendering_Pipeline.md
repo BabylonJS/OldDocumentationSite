@@ -1,6 +1,6 @@
 # Introduction
 
-You can find a complete example of this pipeline in our playground : [https://www.babylonjs-playground.com/#Y3C0HQ#0](https://www.babylonjs-playground.com/#Y3C0HQ#0)
+You can find a complete example of this pipeline in our playground : [https://www.babylonjs-playground.com/#5XB8YT#1](https://www.babylonjs-playground.com/#5XB8YT#1)
 
 The default rendering pipeline provides visual improvements to enhance the output of your scene:
 * Antialiasing
