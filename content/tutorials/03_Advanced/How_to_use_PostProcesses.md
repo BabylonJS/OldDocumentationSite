@@ -128,7 +128,7 @@ The third parameter define the exposure adjustement.
 You can find a demo here: https://www.babylonjs-playground.com/debug.html#J9H084#8
 
 ## ImageProcessing
-Apply a complete range of special effects:
+Apply a complete range of special image treaments:
 
 ```javascript
 var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, camera);
@@ -168,7 +168,6 @@ Here is an example of a global configuration: https://www.babylonjs-playground.c
 Furthermore, as they share the same configuration, you can just dispose a postprocess you were using and automatically the image processing will be done at materials level. So here is an example of a configuration done at scene level, but with no postprocess to use it: https://www.babylonjs-playground.com/#J9H084#14 (As you can see the processing is then done by the material itself).
 
 You can also decide to instantiate your own configuration and affect it to your material or to your postprocess with `postProcess.imageProcessingConfiguration = new BABYLON.ImageProcessingConfiguration()`. In this case, you will be able to configure this object independantly.
-
 
 ### Default rendering pipeline
 
