@@ -24,10 +24,10 @@ Each tab has an index (from 0 to 9, 0 is the Scene tab and 9 is the Camera tab) 
 | Console | 1 | Display console messages | Hook all console.log messages | Display all logs related to babylon.js (callled with BABYLON.Tools.Log) |
 | Stats | 2 | Display statistics data | Display stats | | 
 | Textures | 3 | Display all textures | The list of textures available in the scene (images, render target textures, map textures, font textures and dynamic textures) | The texture image. You can right-click - open in a new tab to have perfect dimensions |
-| Mesh | 4 | Display mesh data | The list of mesh, sorted by their names. | The selected mesh properties |
-| Shader | 5 |Display vertex and fragment shader | A combo list with all custom shaders | The vertex and fragment shaders |
-| Light | 6 | Display light data | The list of light, sorted by their names. | The selected light properties |
-| Canvas2D | 7 | Display canvas2D information. Only displayed if canvas2D is included in the project | The list of Canvas2D, sorted by their name | The selected canvas2D primitive properties |
+| GUI | 4 | Display GUI information. Only displayed if BABYLON.GUI is included in the project | The list of BABYLON.GUI, sorted by their name | The selected BABYLON.GUI primitive properties |
+| Mesh | 5 | Display mesh data | The list of mesh, sorted by their names. | The selected mesh properties |
+| Shader | 6 |Display vertex and fragment shader | A combo list with all custom shaders | The vertex and fragment shaders |
+| Light | 7 | Display light data | The list of light, sorted by their names. | The selected light properties |
 | Material | 8 | Display material data | The list of material, sorted by their names. | The selected material properties |
 | Camera | 9 | Display camera data | The list of camera, sorted by their names. | The selected camera properties |
 | Sound | 10 | Display all sounds | The list of sounds, sorted by their names. | The selected sound properties |
@@ -58,13 +58,12 @@ When a list of properties is displayed for an object (example for a mesh below),
 
 * Switch on/off the light
 
-### Canvas2D
+### GUI
 
-![canvas2D tools](/img/overviews/debuglayer/canvas2Dtools.jpg)
+![GUI tools](/img/overviews/debuglayer/GUItools.jpg)
 
 * Display all children of the selected primitive
 * Display/hide the selected primitive
-* Display/hide the canvas 2D debug tool
 
 ### Material
 
