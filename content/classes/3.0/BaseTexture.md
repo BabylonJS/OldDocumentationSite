@@ -53,9 +53,11 @@ By default : 1
 
 ### coordinatesIndex : number
 
-The coordinates index
+The coordinates index.
+Defines which UV channel is to be used when mapping this Texture onto a Mesh.
+(0 : uv, 1 : uv2, 2 : uv3...)
 
-By default : 0
+By default : 0 (mesh.uv channel)
 
 ### coordinatesMode : number
 
