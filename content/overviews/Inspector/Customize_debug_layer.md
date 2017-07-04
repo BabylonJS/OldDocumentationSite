@@ -9,7 +9,7 @@ As all the code of the debug layer lies in Babylon.js repository, you have first
 In a terminal, type : 
 ```
 cd Tools/Gulp
-gulp typescript canvas2D
+gulp typescript
 ```
 
 # Run the test task

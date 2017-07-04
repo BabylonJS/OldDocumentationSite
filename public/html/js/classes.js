@@ -18,6 +18,16 @@
         var orderByAlphaButton      = $("#orderByAlpha");
 
         /**
+         * Change all links in case we are debugging the documentation as localhost
+         */
+        if(location.hostname === "localhost"){
+            $('.checkLocal').each(function() {
+                var linkStr = $(this).attr('href');
+                $(this).attr('href', '.' + linkStr.substr(linkStr.lastIndexOf('/'), linkStr.length));
+            });
+        }
+
+        /**
          * Display the list of classes, ordered by name
          */
         function showClassesByAlpha(evt) {

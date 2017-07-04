@@ -12,6 +12,13 @@
         scrollToList();
     });
 
+    if(location.hostname === "localhost"){
+        $('.checkLocal').each(function() {
+            var linkStr = $(this).attr('href');
+            $(this).attr('href', '.' + linkStr.substr(linkStr.lastIndexOf('/'), linkStr.length));
+        });
+    }
+
     function toggleEmptyDiv(){
         if ($('.fileTitle:visible').length == 0) $('.emptyList').fadeIn();
         else $('.emptyList').fadeOut();

@@ -113,7 +113,7 @@ Please note that controls that want to track position of a mesh must be at root 
 
 You can also move a control to a specific coordinates in your scene with `control.moveToVector3(position)`. Please note that the control will not stick with the vector if you change it afterwards.
 
-For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control. 
+For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control.
 
 With these 2 options, you can create a complete trackable label: http://www.babylonjs-playground.com/#XCPP9Y#20
 
@@ -147,9 +147,9 @@ Here is an example of how to use rotation and scaling: http://www.babylonjs-play
 
 ## Controls
 
-A control is an abstraction of a piece of UI. There are two kinds of controls: 
+A control is an abstraction of a piece of UI. There are two kinds of controls:
 * Pure controls: A pure control defines an action or an information useful for the user. It could be a TextBlock or a Button.
-* Containers: Containers are used to organize your UI. They can contain other controls or containers. 
+* Containers: Containers are used to organize your UI. They can contain other controls or containers.
 
 All controls share the following properties:
 
@@ -157,7 +157,7 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 alpha|number|1|Between 0 and 1. 0 means completely transparent. 1 means fully opaque
 color|string|Black|Foreground color
-fontName|string|Arial|Font name can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
+fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 
@@ -184,13 +184,13 @@ Here are the properties you can define:
 Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
-textWrapping|boolean|false|Can be set to true to enable text wrapping. 
+textWrapping|boolean|false|Can be set to true to enable text wrapping.
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
 
 ### Button
 
-A button can be used to interact with your user. 
+A button can be used to interact with your user.
 Please see the events chapter to see how to connect your events with your buttons.
 
 There are three kinds of buttons available out of the box:
@@ -324,7 +324,7 @@ Here is an example of a line: http://www.babylonjs-playground.com/#XCPP9Y#6
 
 ### Image
 
-Use the image control to display an image in your UI. 
+Use the image control to display an image in your UI.
 You can control the stretch used by the image with `image.stretch` property. You can set it to one of these values:
 * BABYLON.GUI.Image.STRETCH_NONE: Use original size
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
