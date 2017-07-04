@@ -25,9 +25,6 @@ app.set('view engine', 'pug');
 // Set the views folder to ./views
 app.set('views', './views');
 
-//Load th search index into the app
-app.locals.indexes = require('./scripts/loadIndexes')('data/search');
-
 //require all routes, index.js is called by default
 require('./scripts/router')(app);
 
