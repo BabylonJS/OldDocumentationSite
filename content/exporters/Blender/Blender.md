@@ -10,7 +10,7 @@ An extension named [Tower of Babel](https://github.com/BabylonJS/Extensions/tree
 
 ## Features: 
 
-* Cameras
+* Cameras ([detailed documentation](Doc/cameras))
   * Name
   * Position
   * Target
@@ -88,3 +88,7 @@ An extension named [Tower of Babel](https://github.com/BabylonJS/Extensions/tree
   * Bones (armatures) and bones' actions
     * Variable Max Bone Influencers / vertex
   * Actions exported as AnimationRanges
+* World  ([detailed documentation](Doc/world))
+  * Horizon Color
+  * Ambient Color
+  * Mist
