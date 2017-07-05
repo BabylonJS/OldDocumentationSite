@@ -65,7 +65,7 @@ So playing with _offset_, _closeArray_, or other parameters, you can easily get 
     * BABYLON.Mesh.FRONTSIDE
     * BABYLON.Mesh.BACKSIDE
     * BABYLON.Mesh.DOUBLESIDE  
-    see full explanation about _sideOrientation_ parameter in [**02-Basic elements**](http://doc.babylonjs.com/page.php?p=22011)
+    see full explanation about _sideOrientation_ parameter in `Basic elements`
 
 If you need more details about ribbon uses, you might want to read the [Ribbon Tutorial]() part.
 

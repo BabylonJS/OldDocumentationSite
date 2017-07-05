@@ -23,7 +23,7 @@ Then, you only need to instantiate the post process attach to your main camera t
 var postProcess = new BABYLON.DigitalRainPostProcess("DigitalRain", camera);
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#6)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#6)
 
 ## Going further
 
@@ -34,7 +34,7 @@ The first you can do is changing the font used in the post process.
 var postProcess = new BABYLON.DigitalRainPostProcess("DigitalRain", camera, "3px Monospace");
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#7)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#7)
 
 But you could also play with more parameters:
 
@@ -48,7 +48,7 @@ var postProcess = new BABYLON.DigitalRainPostProcess("DigitalRain", camera,
     });
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#8)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#8)
 
 The availables parameters are:
 
@@ -69,5 +69,5 @@ scene.registerBeforeRender(function() {
 });
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#9)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#9)
 

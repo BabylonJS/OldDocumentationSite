@@ -5,7 +5,7 @@ After following the [PBR Introduction](http://doc.babylonjs.com/overviews/Physic
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
-[**Playground Demo Scene - PBR Materials**](http://babylonjs-playground.com/#ESBZC#3)
+[**Playground Demo Scene - PBR Materials**](https://www.babylonjs-playground.com/#ESBZC#3)
 
 This will be the only picture of the documentation. As a **real sample** would be better than a picture, please, do not hesitate to click on the eye aside of each playground links to see the live examples embedded in the page.
 
@@ -73,7 +73,7 @@ pbr.reflectivityTexture = new BABYLON.Color3(1.0, 1.0, 1.0); // White is represe
 ### MicroSurface
 The microsurface controls how **"shiny" or "glossy"** the material is. This value (between 0 and 1) will basically adjust a material from being fully rough (0) to fully glossy (1).
 
-[Demo](http://babylonjs-playground.com/#1LZALU#5)
+[Demo](https://www.babylonjs-playground.com/#1LZALU#5)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.microSurface = 0.2; // Rough material like paper.
@@ -157,7 +157,7 @@ Normal mapping and Parallax are supported in the exact same way than the standar
 * [Parallax](http://doc.babylonjs.com/tutorials/Using_parallax_mapping)
  
 ## Shadows (as the standard material)
-Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/tutorials/15._Shadows)
+Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/tutorials/shadows)
 
 ## Energy Conservation
 In physics, Energy conservation is a really important rule modifying the way we can represent our lighting approximations.
@@ -344,7 +344,7 @@ One of the outstanding WebGL issue is the lack of MSAA on texture render target.
 
 In order to work around those issues and increase performance we integrated as part of the material two optional controls for both **contrast** and **exposure**. This enables you to do photographic tone mapping and deals with the contrast directly from the material.
 
-[Demo](http://babylonjs-playground.com/#1Y4YAM#3)
+[Demo](https://www.babylonjs-playground.com/#1Y4YAM#3)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.cameraExposure = 0.66;
@@ -377,21 +377,21 @@ Color cuves is also always part of picture edition tools. So in order to help se
 
 You can through the new ColorCurves class specify the same setup you are used to have in your picture edition tools.
 
-[Demo](http://www.babylonjs-playground.com/#B4PW0#3)
+[Demo](http://www.babylonjs-playground.com/#B4PW0#4)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 var curve = new BABYLON.ColorCurves();
-curve.GlobalHue = 200;
-curve.GlobalDensity = 80;
-curve.GlobalSaturation = 80;
+curve.globalHue = 200;
+curve.globalDensity = 80;
+curve.globalSaturation = 80;
 
-curve.HighlightsHue = 20;
-curve.HighlightsDensity = 80;
-curve.HighlightsSaturation = -80;
+curve.highlightsHue = 20;
+curve.highlightsDensity = 80;
+curve.highlightsSaturation = -80;
 
-curve.ShadowsHue = 2;
-curve.ShadowsDensity = 80;
-curve.ShadowsSaturation = 40;
+curve.shadowsHue = 2;
+curve.shadowsDensity = 80;
+curve.shadowsSaturation = 40;
 pbr.cameraColorCurves = curve;
 ```
 
@@ -416,36 +416,13 @@ pbr.environmentIntensity = 1.0;
 Those two lighting ways are additive in the material.
 
 ## Debug Controls
-All of this is a lot of information and can from time to time be cumbersome to troubleshoot. To help, here is a list of properties you can rely on during your scene setup:
+All of this is a lot of information and can from time to time be cumbersome to troubleshoot. To help, here is a few properties you can rely on during your scene setup:
 
+* directIntensity: Controls the amount of diffuse and specular the material is reflecting.
+* emissiveIntensity: Controls the level of emissive light the material is emitting.
+* environmentIntensity: Controls the level of the reflected light from the environment.
 * specularIntensity : Controls the intensity of the specular highlights creating by the four lights in the scene.
 * disableBumpMap : As stated in the name, it disable/enable the normal map only on this material.
-* overloadedShadowIntensity : Controls the intensity of the shadow casted on the material.
-* overloadedShadeIntensity : Controls he intensity of the shade created by the lambertian coefficient on the material.
-
-A few other properties can help you mixing a debug color with the current one defined in the material, for instance you could overload an albedo texture with a flat color during debug. In order to chose how much you want to overload, each of the following properties have their intensity paired. 
-
-Basically, I want to overload my albedo texture in yellow by 50 %:
-
-[Demo](http://www.babylonjs-playground.com/#1F0M1J#15)
-```javascript
-var pbr = new BABYLON.PBRMaterial("pbr", scene);
-pbr.albedoTexture = texture;
-pbr.reflectivityColor = new BABYLON.Color3(0.3, 0.3, 0.3);
-pbr.overloadedAlbedo = new BABYLON.Color3(1.0, 1.0, 0.0); // sets the albedo debug to yellow
-pbr.overloadedAlbedoIntensity = 0.5; // sets the impact of the debug to 50 %
-```
-
-* overloadedAmbient/overloadedAmbientIntensity : Overload the current Ambient setup
-* overloadedAlbedo/overloadedAlbedoIntensity : Overload the current Albedo setup
-* overloadedReflectivity/overloadedReflectivityIntensity : Overload the current Reflectivity setup
-* overloadedEmissive/overloadedEmissiveIntensity : Overload the current Emissive setup
-* overloadedReflection/overloadedReflectionIntensity : Overload the current Reflection Albedo
-* overloadedMicroSurface/overloadedMicroSurfaceIntensity : Overload the current Microsurface Albedo
-
-And this was the most repetitive paragraph ever made and generated by hand !!!
-
-All of this done, it is time to have more fun with concrete examples.
 
 ## Material Creation Tutorials
 The following section will detail how to create some of the commonly used type of material in BJS. All of them will rely on the same scene setup.
@@ -704,4 +681,4 @@ plastic.cameraExposure = 0.66;
 plastic.cameraContrast = 1.66;
 ```
 
-That is it for the PBR and I hope you arrived to this line not completely asleep. You are now totally able to create the [**Playground Demo Scene - PBR Materials**](http://babylonjs-playground.com/#ESBZC#3) on your own.
+That is it for the PBR and I hope you arrived to this line not completely asleep. You are now totally able to create the [**Playground Demo Scene - PBR Materials**](https://www.babylonjs-playground.com/#ESBZC#3) on your own.

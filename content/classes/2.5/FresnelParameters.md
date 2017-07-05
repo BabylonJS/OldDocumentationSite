@@ -25,11 +25,13 @@ RightColor of the Fresnel parameters
 
 ### bias : number
 
+default is 0
+
 Bias of the Fresnel parameters
 
 ### power : number
 
-
+default is 1
 
 ## Methods
 

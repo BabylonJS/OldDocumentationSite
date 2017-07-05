@@ -1,5 +1,9 @@
 /**
  * The purpose of this file is to generate the new doc by also migrating the existing comments
+ * 
+ * BEFORE RUNNING THIS SCRIPT, BE SURE TO : 
+ * - Remove all 'readonly attributes from the srouce file'
+ * - Replace all 'protected' modifier by 'private'
  *
  * @type {exports}
  */
@@ -23,7 +27,7 @@ var msg = {
 //TODO delete dir when error is raised
 async.waterfall([
     async.constant(msg),
-    function setNewDirpath(msg, cb){
+    function setNewDirpath(msg, cb) {
         var newDirPath = path.join(msg.file.classesLocation, msg.file.version);
         msg.flash = {
             path: newDirPath
@@ -33,7 +37,7 @@ async.waterfall([
     fsHandler.exists,
     //fsHandler.deleteDir,
     fsHandler.createDir,
-    function setSourceFilePath(msg, cb){
+    function setSourceFilePath(msg, cb) {
         var newFilePath = path.join(msg.file.location, msg.file.name);
         msg.flash = {
             path: newFilePath
@@ -41,12 +45,12 @@ async.waterfall([
         cb(null, msg);
     },
     fsHandler.readFile,
-    function setSourceFileData(msg, cb){
+    function setSourceFileData(msg, cb) {
         msg.sourceFileData = msg.flash.readData;
         cb(null, msg);
     },
     dtsParser.buildTree,
-    function setSourceTree(msg, tree, cb){
+    function setSourceTree(msg, tree, cb) {
         msg.flash = {
             ast: tree
         };
@@ -54,7 +58,7 @@ async.waterfall([
     },
     dtsParser.visitTree,
     resetFlash,
-    function setnewClassesDirpath(msg, cb){
+    function setnewClassesDirpath(msg, cb) {
         var newDirPath = path.join(msg.file.classesLocation, msg.file.version);
         msg.flash = {
             path: newDirPath
@@ -66,12 +70,12 @@ async.waterfall([
 ], outputConsole);
 
 //Function executed once the waterfall has finished
-function outputConsole (err, data){
-    if(err) console.log ('Unexpected problem : ', err);
+function outputConsole(err, data) {
+    if (err) console.log('Unexpected problem : ', err);
     else console.log('Everything was fine ');
 }
 
-function resetFlash (msg, cb){
+function resetFlash(msg, cb) {
     msg.flash = {};
     cb(null, msg);
 }

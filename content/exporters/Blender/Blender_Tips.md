@@ -2,6 +2,7 @@
 ID_PAGE: 25095
 PG_TITLE: Blender Tips
 ---
+
 Since Babylon and Blender often do things differently, it can sometimes be a pain working with both of them together. Here's a few tips that will smooth things out a bit.
 
 ## Geometry
@@ -24,11 +25,12 @@ Now, you're cube looks ugly. You have to set up its sharpness, by adding an *edg
 
 
 
-##Quickly Export
+## Quickly Export
 
 If you go to *File* > *export* and right click on babylon, you can select *Create Shortcut*, and make a easy to use shortcut to export to babylon! For example, you can use *Ctrl-E*.
 
 ![quick-export-shortcut](http://doc.babylonjs.com/img/exporters/blender/quick-export-shortcut.png)
+
 
 
 ## Armatures

@@ -53,7 +53,7 @@ SPS.billboard = true; // or false by default
 SPS.setParticles();
 ```
 `SPS.billboard` is a boolean (default _false_). If set to _true_, all the particles will face the cam and their _x_ and _y_ rotation values will be ignored.  
-This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/tutorials/12._Particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/08._Sprites) which are more performant in 2D computation.  
+This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) which are more performant in 2D computation.  
 In order to display the SPS in billboard mode, you need to call `SPS.setParticles()` within the `scene.registerBeforeRender()` function.  
 
 Here is an example with plane particles in billboard mode : http://www.babylonjs-playground.com/#WCDZS#7    
@@ -198,7 +198,7 @@ This function doesn't do anything, you have to implement it.
 It doesn't draw the mesh, it just changes the particle initial status that will be taken in account by the next `SPS.setParticle()` call.
 The same thing with `SPS.recycleParticle(particle)` what is not called automatically and that you have to implement by your own and to call when you need.  
 
-Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/tutorials/12._Particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/08._Sprites) :  
+Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) :  
 
 The Particle System is the most performant in terms of speed and of particle quantity.  
 The particles are 2D quads, have all the same texture and colour. They ever face the screen, so they can have only a z-axis rotation. They aren't z-sorted and aren't pickable.  
@@ -591,29 +591,28 @@ particle.intersectsMesh(mesh);  // will give the right bounding sphere intersect
 ### Garbage Collector Concerns  
 In Javascript, the Garbage Collector is usually your friend : it takes care about cleaning up all the not any longer needed variables you could have declared and thus it sets the memory free.  
 However, it can sometimes become an awkward friend because it can start its cleaning just while you are displaying a very smooth animation, so it takes the CPU for itself and leaves to you only those nice lags on the screen.  
-So the best to do to avoid this GC unpredictable behavior is to keep as low as possible the creation of temporary objects or variables in the render loop.  
-As you know now, `updateParticle()` and `updateParticleVertex()` are called each frame for each particle or each particle vertex. 
-So imagine that you have a SPS with 30 000 particles. What if you code something like that to simulate some particle acceleration :  
+In order to avoid unpredictable GC pauses, it's best to avoid allocating new objects in loops that execute often, where particles are created or updated.  
+For example, `updateParticle()` and `updateParticleVertex()` are often called each frame for each particle or each particle vertex. Now imagine that you have a SPS with 30 000 particles. Suppose you write code like this to add a particle acceleration :  
 ```javascript
 SPS.updateParticle = function(particle) {
-    var velStep = 0.05;
-    particle.velocity += velStep;
+    var accel = new BABYLON.Vector3(0, 0.5, 0);
+    particle.velocity = particle.velocity.add(accel);
     // ...
 }
 ```
-The _velStep_ temporary variable will be created 30 000 times and then be requested then for collection by the GC !  
-So it is better to declare once _velStep_ outside the `udpateParticle()` method.  
-The SPS provides to you a way to declare once all your variable needed for it at its own level instead of creating global variables.  
-Just use the SPS `vars` property :
+Code like the above would create two new `Vector3` objects each call, or 60 000 new objects over the course of the update. And although modern JS engines are quite good at cleaning up short-lived objects, it's best not to unnecessarily strain the GC this way.  
+Instead, make your update loops reuse variables that were declared outside the loop, and don't call any methods inside the loop that create new objects:
 ```javascript
-SPS.vars.velStep = 0.05;
+var accel = new BABYLON.Vector3(0, 0.5, 0);
 SPS.updateParticle = function(particle) {
-    particle.velocity += SPS.vars.velStep;
+    particle.velocity.addInPlace(accel);
     // ...
 }
 ```
-This will allow you to keep these variables in the SPS object only (and as long as the SPS will exist) and to clean them up gracefully when you will dispose it.  
+SPS also has a `vars` property, which is an object that you can use to store any variables you want to reuse. Any variables you store there will share the SPS' lifecycle, and get cleaned up when you dispose it:
 ```javascript
+SPS.vars.tempVector = new BABYLON.Vector3(0, 0, 0);
+// ...
 SPS.dispose();  // cleans explicitly all your SPS.vars !
 ```
 A good JS practice for the compiler is to **never** change the variable type once it has been set :

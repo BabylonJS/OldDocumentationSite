@@ -92,6 +92,37 @@ var knot = BABYLON.Mesh.CreateTorusKnot("knot", 2, 0.5, 128, 64, 2, 3, scene);
 ```
 You can learn more about torus knots... [**RIGHT HERE**](http://en.wikipedia.org/wiki/Torus_knot).
 
+* **Creation of a Polygon**
+
+```javascript
+var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], scene, [[V1, V2, ..., Vn], [V1, V2, ..., Vn], ....[V1, V2, ..., Vn]], false, BABYLON.Mesh.DEFAULTSIDE);
+```
+
+Parameters are: name, polygon shape as an array of comma-separated vectors,  scene, optional holes as an array of an array of comma-separated vectors, optional updatable and the optional side orientation. The last three parameters can be omitted if you just need the default behavior :
+
+NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z);
+
+```javascript
+var polygon = BABYLON.Mesh.CreatePolygon("cylinder", [V1, V2, ..., Vn], scene);
+```
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+
+* **Extrusion of a Polygon**
+
+```javascript
+var polygon = BABYLON.Mesh.ExtrudePolygon("polygon", [V1, V2, ..., Vn], 2, scene, [[V1, V2, ..., Vn], [V1, V2, ..., Vn], ....[V1, V2, ..., Vn]], false, BABYLON.Mesh.DEFAULTSIDE);
+```
+
+Parameters are: name, polygon shape as an array of comma-separated vectors, depth, scene, optional holes as an array of an array of comma-separated vectors, optional updatable and the optional side orientation. The last three parameters can be omitted if you just need the default behavior :
+
+NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
+
+```javascript
+var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], 2, scene);
+```
+
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+
 * **Creation of a Lines Mesh**
 
 ```javascript

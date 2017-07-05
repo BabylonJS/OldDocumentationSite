@@ -7,16 +7,9 @@ PG_TITLE: 15. Shadows
 In this tutorial, we are going to learn how to create shadows in Babylon JS. Shadows are now becoming dynamic, and they are now dynamically generated depending upon a light.
 You might want to visit [**the playground scene**](http://www.babylonjs-playground.com/?15) for this tutorial.
 
-
-![Shadows](http://www.babylonjs.com/tutorials/15%20-%20Shadows/15.png)
-
-_Final result_
-
 ## How can I do this ?
 
-Shadows are easy to generate using the babylon.js “ShadowGenerator”. This function uses a shadow map: a map of your scene generated from the light’s point of view, as you can see here:
-
-![Shadows2](http://www.babylonjs.com/tutorials/15%20-%20Shadows/15-1.png)
+Shadows are easy to generate using the babylon.js “ShadowGenerator”. This function uses a shadow map: a map of your scene generated from the light’s point of view.
 
 The two parameters used by the shadow generator are: the size of the shadow map, and which light is used for the shadow map's computation.
 ```javascript
@@ -49,8 +42,8 @@ If you set this one to _true_, Variance shadow maps will be disabled. This filte
 ```javascript
 shadowGenerator.useExponentialShadowMap = true;
 ```
-It is _true_ by default, because it is useful to decrease the aliasing of the shadow.  But if you want to reduce computation time, feel free to change it.
-You can also control how the exponential shadow map scales depth values by changing the `shadowGenerator.depthScale`. By default the value is 30.0 but you may want to change it if the depth scale of your world (the distance between minZ and MaxZ) is small.
+It is _true_ by default, because it is useful to decrease the aliasing of the shadow.  But if you want to reduce computation time, feel free to turn it off.
+You can also control how the exponential shadow map scales depth values by changing the `shadowGenerator.depthScale`. By default the value is 50.0 but you may want to change it if the depth scale of your world (the distance between minZ and MaxZ) is small.
 
 ### Blur exponential shadow map 
 ```javascript
@@ -58,10 +51,31 @@ shadowGenerator.useBlurExponentialShadowMap = true;
 ```
 This is the better soften shadow filter but the slower as well. It uses blurred exponential shadow map.
 
-The quality of the blur is defined by two properties:
+The quality of the blur is defined by the following properties:
 
-* shadowGenerator.blurScale: Define the scale used to downscale the shadow map before applying the blur postprocess. By default, the value is 2
-* shadowGenerator.blurBoxOffset: Define the offset of the box's edge used to apply the blur. By default, the value is 1 (Meaning the box will go from -1 to 1 in bot direction resulting in 9 values read by the blur postprocess).
+* `shadowGenerator.blurScale`: Define the scale used to downscale the shadow map before applying the blur postprocess. By default, the value is 2
+* `shadowGenerator.blurBoxOffset`: Define the offset of the box's edge used to apply the blur. By default, the value is 1 (Meaning the box will go from -1 to 1 in bot direction resulting in 9 values read by the blur postprocess).
+* `shadowGenerator.useKernelBlur`: You can decide to use kernel blur instead of box blur. While a bit more expensive, the quality of the shadow is far better with kernel blur. You can control the kernel size with `shadowGenerator.blurKernel`
+
+Here is an example of blurred shadows: https://www.babylonjs-playground.com/#IIZ9UU
+
+### Close exponential shadow map
+Starting with Babylon.js 3.0, we introduced a new way of doing exponential shadow map to deal with self shadowing issues: The Close Exponential Shadow Map (CESM).
+With CESM, you can get accurate self-shadowing but you will need to define additionnal parameters:
+* You must provide the smallest range of depth values from your light by setting `light.shadowMinZ` and `light.shadowMaxZ`. The smaller the range is, the better the shadow will be.
+* You must ensure that the light is as close as possible to the shadow casters.
+
+You can enable CESM with:
+```javascript
+shadowGenerator.useCloseExponentialShadowMap = true;
+```
+
+or if you want blurred shadows:
+```javascript
+shadowGenerator.useBlurCloseExponentialShadowMap = true;
+```
+
+Here is an example of how CESM works: https://www.babylonjs-playground.com/#0TG0TB
 
 ## Examples
 
@@ -95,14 +109,18 @@ Only point, directional and spot lights can cast shadows.
 Point lights use cubemaps rendering so please be cautious when enabling them as this could lead to some performance issues.
 You can also visit the [point light shadow map playground scene](http://www.babylonjs-playground.com/#LYCSQ#12)
 
-Furthermore BlurExponentialShadowMap is not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
+Furthermore BlurExponentialShadowMap and CloseBlurExponentialShadowMap are not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
+
+TO optimize rendering, you can also decide to use the point light like a unlimited spot light if you are sure that all shadow casters are on the same side of the light. To do so, just specify a direction for your light and automatically Babylon.js will use a simple texture for the shadow map instead of the cubemap.
 
 ### Spot lights
 Spot lights use perspective projection to compute the shadow map.
 
 ### Directional lights
 Directional lights use orthogonal projection. Light's position is evaluated automatically for you to get the best shadow map possible. You can control this behavior by turning `light.autoUpdateExtends` off.
-You can control also the size of the projection window by modifying ```light.shadowOrthoScale``` (0.1 by default which means that the projection window is increase by 10% from the optimal size).
+You can control also the size of the projection window by modifying one of those properties:
+* `light.shadowOrthoScale`: 0.1 by default which means that the projection window is increase by 10% from the optimal size.
+* `light.shadowFrustumSize`: Off by default with a value of 0. You can specify a value which will be used to define the square size of the frustum to use.
 
 The light's position, as well as the positions of the mesh that you have pushed into the renderlist, determine where the shadows will appear.
 
@@ -127,18 +145,11 @@ Shadow generators compare the depth of every pixel with the depth of occluders (
 ### Back face rendering
 You can improve self shadowing issues by setting `shadowGenerator.forceBackFacesOnly` to true. This will force the shadow geneator to render back faces of your mesh to the shadow map. This can clearly improve the overall precision and reduce the need for a bias.
 
-### Improving the projection matrix
-By default the projection matrix of a light use the minZ and maxZ of the main camera. But you may want to control it in order to get a more precise shadow map by reducing the distance between minZ and maxZ. To do so yu can set `light.shadowMinZ` and `light.shadowMaxZ`.
+### Improving the projection matrix precision
+By default the projection matrix of a light uses the minZ and maxZ of the main camera. But you may want to control it in order to get a more precise shadow map by reducing the distance between minZ and maxZ. To do so yu can set `light.shadowMinZ` and `light.shadowMaxZ`.
 
-Here is a complete example:
-http://www.babylonjs-playground.com/#1CXNXC#4
-
-We did the following change to get a nice soft self-shadowing rendering:
-- Reduced the distance between MinZ and MaxZ
-- Increased the bias a bit to fight against shadow acne
-- Boost the depthScale to get more precision
-
-The main idea is then to first reduce the distance between MinZ and MaxZ and at the same time increment the depthScale (you will have to experiment to find values that best suit your needs).
+### Use the best option for self-shadowing
+As mentioned earlier, if you want blurred shadows on a self-shadowing object, the best option will probably to go with close exponential shadow map.
 
 ## Next step
 Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](http://doc.babylonjs.com/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [http://www.html5gamedevs.com/forum/16-babylonjs](http://www.html5gamedevs.com/forum/16-babylonjs). See you there.

@@ -10,6 +10,8 @@ data/classes.json
 data/forward.json
 
 !public/html
+!public/js
 public/html/*
 
 !public/html/img/
+.history/

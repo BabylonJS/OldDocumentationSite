@@ -1,7 +1,7 @@
-var express  = require('express');
-var app      = express();
+var express = require('express');
+var app = express();
 var compress = require('compression');
-var favicon  = require('serve-favicon');
+var favicon = require('serve-favicon');
 
 
 
@@ -24,9 +24,6 @@ app.set('view engine', 'pug');
 //app.set('view cache', false);
 // Set the views folder to ./views
 app.set('views', './views');
-
-//Load th search index into the app
-app.locals.indexes = require('./scripts/loadIndexes')('data/search');
 
 //require all routes, index.js is called by default
 require('./scripts/router')(app);

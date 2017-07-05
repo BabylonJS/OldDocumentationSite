@@ -6,7 +6,7 @@ PG_TITLE: 03. Position, Rotation, Scaling
 
 In this tutorial, we are going to learn how to position, scale and rotate any kind of objects that you created in our last tutorial. We will also set a parent and start to understand how parenting affects position, rotation and scaling.
 
-![Elements](http://www.babylonjs.com/tutorials/03%20-%20Rotation%20and%20scaling/03.png)
+![Elements](/img/tutorials/Rotation%20and%20scaling/03.png)
 
 [**Playground Demo Scene 3 - Positioned, Scaled, and Rotated Boxes**](http://www.babylonjs-playground.com/?3)
 
@@ -84,4 +84,4 @@ This tutorial's createScene() can be viewed and experimented-with... by visiting
 
 
 ## Next step
-Now you know how to create and move objects in a scene, but all your meshes have the same 'skin'. Not for long, if you read our next tutorial about materials. [**Go to the Materials Tutorial**](http://doc.babylonjs.com/page.php?p=22051)
+Now you know how to create and move objects in a scene, but all your meshes have the same 'skin'. Not for long, if you read our next tutorial about materials.

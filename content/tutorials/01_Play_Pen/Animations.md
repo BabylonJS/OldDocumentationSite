@@ -5,7 +5,7 @@ PG_TITLE: 07. Animations
 # Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 
-![Elements](http://www.babylonjs.com/tutorials/07%20-%20Animation/07.png)
+![Elements](/img/tutorials/Animations/07.png)
 
 _Final result_
 
@@ -80,6 +80,31 @@ var keys = [];
   });
 ```
 
+For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent and outTangent values to use spline interpolations instead of linear interpolations:
+
+```javascript
+  var keys = []; 
+
+  keys.push({
+    frame: 0,
+    value: BABYLON.Vector3.Zero()
+    outTangent: new BABYLON.Vector3(1, 0, 0)
+  });
+
+  keys.push({
+    frame: 20,
+    inTangent: new BABYLON.Vector3(1, 0, 0),
+    value: new BABYLON.Vector3(1, 1, 1),
+    outTangent: new BABYLON.Vector3(-1, 0, 0)
+  });
+
+  keys.push({
+    frame: 100,
+    inTangent: new BABYLON.Vector3(-1, 0, 0),
+    value: BABYLON.Vector3.Zero()
+  });
+```
+
 Next, two important steps:
 * Adding the animation array to the animation object:
 
@@ -99,17 +124,23 @@ Finally, you can launch your animation in one line of code, at any time in your 
 scene.beginAnimation(box1, 0, 100, true);
 ```
 
+You can also run your animation in reverse by swapping the From and To frames:
+
+```javascript
+scene.beginAnimation(box1, 100, 0, true);
+```
+
 **Parameters for scene.beginAnimation:**
 
- | Name | Type | Description
----|---|---|---
- | target | any | The target
- | from | number | The fps starting frame
- | to | number | The fps ending frame
+| Name | Type | Description
+|---|---|---
+| target | any | The target
+| from | number | The fps starting frame
+| to | number | The fps ending frame
 optional | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE)
 optional | speedRatio | number | default : 1. The speed ratio of this animation
 optional | onAnimationEnd | () => void | The function triggered on the end of the animation (also dependent upon ANIMATIONLOOPMODE)
-optional | animatable | [Animatable](http://doc.babylonjs.com/classes/Animatable) | An optional specific animation
+optional | animatable | [Animatable](http://doc.babylonjs.com/classes/3.0/animatable) | An optional specific animation
 ---
 
 This function returns a ```BABYLON.Animatable``` object that you can use to get access to individual animations (for instance using ```getAnimationByTargetProperty``` function).
@@ -155,6 +186,19 @@ BABYLON.Animation.prototype.vector3InterpolateFunction = function (startValue, e
   return BABYLON.Vector3.Lerp(startValue, endValue, gradient);
 };
 ```
+
+Here is the list of functions that you can change:
+
+* floatInterpolateFunction
+* quaternionInterpolateFunction
+* quaternionInterpolateFunctionWithTangents
+* vector3InterpolateFunction
+* vector3InterpolateFunctionWithTangents
+* vector2InterpolateFunction
+* vector2InterpolateFunctionWithTangents
+* sizeInterpolateFunction
+* color3InterpolateFunction
+* matrixInterpolateFunction
 
 ## Helper function
 
@@ -210,6 +254,7 @@ Here are the predefined easing functions you can use :
 
 You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates. 
 There are three possible values you can give for EasingMode: 
+
 - ```BABYLON.EasingFunction.EASINGMODE_EASEIN``` : Interpolation follows the mathematical formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEOUT``` : Interpolation follows 100% interpolation minus the output of the formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEINOUT``` : Interpolation uses EaseIn for the first half of the animation and EaseOut for the second half.
@@ -250,7 +295,7 @@ For purpose, here is a good reference to create your curve algorithm : [http://c
 
 Here is a pretty cool implementation using the bezier curve algorithm :
 
-![](http://www.dotmim.com/sitefiles/babylon/bezier.jpg)
+![](/img/tutorials/Animations/bezier.jpg)
 
 ```Javascript
 var bezierEase = new BABYLON.BezierCurveEase(0.32, -0.73, 0.69, 1.59);
@@ -289,11 +334,11 @@ This function can be very useful for complex animation like games, where charact
 
 Don’t hesitate to combine all those types of animations. If well done, it’s very powerful.
 
-Don't forget to [visit our API documentation](http://doc.babylonjs.com/classes/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/classes/Animation) and [**Babylon.js Animatable**](http://doc.babylonjs.com/classes/Animatable) classes.
+Don't forget to [visit our API documentation](http://doc.babylonjs.com/classes/) in order to learn more about the [**Babylon.js Animation**](http://doc.babylonjs.com/classes/3.0/animation) and [**Babylon.js Animatable**](http://doc.babylonjs.com/classes/3.0/animatable) classes.
 
 ## Attach events to animations
 
-From Babylon.js version 2.3, you can attach [animation events](http://doc.babylonjs.com/classes/AnimationEvent) to specific frames on an animation.
+From Babylon.js version 2.3, you can attach [animation events](http://doc.babylonjs.com/classes/3.0/animationevent) to specific frames on an animation.
 
 An event is a function that will be called at a given frame.
 
