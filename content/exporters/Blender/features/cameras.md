@@ -4,20 +4,20 @@ PG_TITLE: Cameras
 
 # Cameras
 
-![cameras properties panel](img/exporters/blender/cameras/cameras-properties-panel.png)
+![cameras-properties-panel](img/exporters/blender/cameras/cameras-properties-panel.png)
 
-[BJS doc](http://doc.babylonjs.com/classes/2.5/camera)
+[BJS-doc](http://doc.babylonjs.com/classes/2.5/camera)
 
 ## Lens
 
-![lens](img/exporters/blender/cameras/lens.png)
+![lens](http://doc.babylonjs.com/img/exporters/blender/cameras/lens.png)
 
 * Field of View: fov 
 * Clipping: minZ & maxZ 
 
 ## Exporter panel
 
-![exporter-cameras-options](img/exporters/blender/cameras/exporter-cameras-options.png)
+![exporter-cameras-options](http://doc.babylonjs.com/img/exporters/blender/cameras/exporter-cameras-options.png)
 
 -   Camera Type: choose between:
     -   Arc Rotate
