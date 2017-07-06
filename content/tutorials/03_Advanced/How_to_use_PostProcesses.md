@@ -78,11 +78,18 @@ var postProcess = new BABYLON.BlackAndWhitePostProcess("bandw", 1.0, camera);
 ```
 
 ## Blur
-Apply a directional blur:
+Apply a directional blur using a kernel based blur:
 
 ```javascript
-var postProcess = new BABYLON.BlurPostProcess("Horizontal blur", new BABYLON.Vector2(1.0, 0), blurWidth, 0.25, camera);
+var postProcess = new BABYLON.BlurPostProcess("Horizontal blur", new BABYLON.Vector2(1.0, 0), kernel, 0.25, camera);
 ```
+
+The kernel value will define the ideal number of taps done by the postprocess. The postprocess will then adapt the kernel based on screen size and DPI resolution.
+
+For instance here is an example with a kernel value of 32: https://www.babylonjs-playground.com/#FBH4J7#3
+Or 256: https://www.babylonjs-playground.com/#FBH4J7#4
+
+Obviously, as usual, try to stay reasonable with kernel size as it will impact the overall rendering speed.
 
 ## Convolution
 Apply a kernel matrix to every pixel:
