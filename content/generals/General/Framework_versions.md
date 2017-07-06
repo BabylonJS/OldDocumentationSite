@@ -4,9 +4,10 @@
 
 Babylon.js files can be found on our CDN:
 
-* http://cdn.babylonjs.com/2-5/babylon.js 
-* http://cdn.babylonjs.com/2-5/babylon.max.js 
-* http://cdn.babylonjs.com/2-5/babylon.noworker.js 
+* https://cdn.babylonjs.com/babylon.2.5.js
+* https://cdn.babylonjs.com/babylon.2.5.max.js
+* https://cdn.babylonjs.com/babylon.2.5.noworker.js
+* https://cdn.babylonjs.com/babylon.2.5.core.js
 
 
 ## Unminified version: *babylon.max.js*
