@@ -347,7 +347,11 @@
         {
           "title": "Using the default rendering pipeline",
           "filename": "Using_Default_Rendering_Pipeline"
-        }
+        },
+        {
+          "title": "How materials work",
+          "filename": "How_materials_work"
+        }       
       ]
     },
     {
