@@ -50,7 +50,9 @@ By default, `scene.ambientColor` is set to `Color3(0, 0, 0)`, which means there 
 ### Skybox
 
 To give a perfect illusion of a beautiful sunny sky, we are going to create a simple box, but with a special texture.
+There is two ways to create a skybox. Let's start with the manual one to understand how things work under the hood and then we will be able to use the automatic one.
 
+#### Manual creation
 First, our box, nothing new, just take notice of the disabled [backface culling](http://en.wikipedia.org/wiki/Back-face_culling):
 ```javascript
 var skybox = BABYLON.Mesh.CreateBox("skyBox", 100.0, scene);
@@ -67,8 +69,7 @@ skybox.infiniteDistance = true;
 
 Now we must remove all light reflections on our box (the sun doesn't reflect on the sky!):
 ```javascript
-skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
-skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+skyboxMaterial.disableLighting = true;
 ```
 
 Next, we apply our special sky texture to it. This texture must have been prepared to be a skybox, in a dedicated directory, named “skybox” in our example:
@@ -82,6 +83,12 @@ In that `/skybox` directory, we must find 6 sky textures, one for each face of o
 
 If you want some free skybox texture samples, point your browser to: http://3delyvisions.co/skf1.htm (look at licenses before use, please.) As you can see by those examples, skybox textures need not be textures of sky alone. Buildings, hills, mountains, trees, lakes, planets, stars, you name it (all can be used nicely) as part of skybox textures.
 
+You can also use dds files to specify your skybox. These special files can contain all information required to setup a cube texture:
+
+```javascript
+skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", scene);
+```
+
 Final note, if you want your skybox to render behind everything else, set the skybox's `renderingGroupId` to `0`, and every other renderable object's `renderingGroupId` greater than zero, for example:
 ```javascript
 skybox.renderingGroupId = 0;
@@ -91,6 +98,27 @@ myMesh.renderingGroupId = 1;
 ```
 
 More info about rendering groups and rendering order can be found [here](http://doc.babylonjs.com/tutorials/Transparency_and_How_Meshes_Are_Rendered).
+
+#### Automatic creation
+Now that we understand how a skybox can be created let's move to a simpler way:
+
+```javascript
+var envTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", scene);
+scene.createDefaultSkybox(envTexture, true, 1000);
+```
+
+As you can see, the scene has a helper to create a skybox for you. You just need to specify a texture and define if you want to use a PBRMaterial (second parameter to true) or a StandardMaterial (default value).
+
+The third parameter defines the scale of your skybox (this value depends on the scale of your scene). It is set to 1000 by default.
+
+Here is an example: https://www.babylonjs-playground.com/#BH23ZD
+
+You can also define your environment texture on the scene itself. THis way the texture will also be used by PBRMaterials as the default environment texture:
+
+```javascript
+scene.environmentTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", scene);
+scene.createDefaultSkybox(envTexture);
+```
 
 ### Fog
 
