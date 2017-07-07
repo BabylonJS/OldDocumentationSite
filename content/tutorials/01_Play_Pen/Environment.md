@@ -111,7 +111,7 @@ As you can see, the scene has a helper to create a skybox for you. You just need
 
 The third parameter defines the scale of your skybox (this value depends on the scale of your scene). It is set to 1000 by default.
 
-Here is an example: https://www.babylonjs-playground.com/#BH23ZD
+Here is an example: https://www.babylonjs-playground.com/#BH23ZD#1
 
 You can also define your environment texture on the scene itself. THis way the texture will also be used by PBRMaterials as the default environment texture:
 
