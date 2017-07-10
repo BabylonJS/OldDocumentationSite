@@ -8,11 +8,11 @@ You have already seen how you can apply textures on meshes, but here you are goi
 
 A picture from our [Advanced Texturing playground demo](http://www.babylonjs-playground.com/#EKFLA#13)
 
-## How can I do this ?
+# How can I do this ?
 
 These new types of textures are considered advanced because we are not used to dealing with them, but you’ll see that it is very easy to create them with JavaScript and Babylon.js!
 
-* **Mirror**
+## Mirror
 
 Mirror textures are used to simulate “mirrors” (!) which means that babylon.js will compute the reflection and fill the texture with the results. A mirror texture must be set in the _reflectionTexture_ channel of a _StandardMaterial_ :
 
@@ -37,7 +37,7 @@ Like the CubeTextures used in skyboxes, the textures/TropicalSunnyDay directory 
 You can see this nice advanced texturing technique... in [this playground scene](http://www.babylonjs-playground.com/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/3.0/FresnelParameters)-enhanced [playground scene](http://www.babylonjs-playground.com/#SBTYP), as well.
 
 
-* **Bump Mapping**
+## Bump Mapping
 
 Bump mapping is a technique in computer graphics to make a rendered surface look more realistic without modifying surface geometry. This is only a texture modification, so computation is the same but rendering is much better, have a look:
 
@@ -75,7 +75,7 @@ y-axis = up
 x-axis = right
 y-axis = down
 
-* **Video**
+## Video
 
 If you want to display a video in your scene, the Babylon engine has a special texture for that. This special texture works similar to other textures, with the exception of a few parameters. These parameters include video urls (an url array), the size of the video texture (here is 256), the scene, and a final optional boolean that indicates if you want to use [mipmap](http://en.wikipedia.org/wiki/Mipmap) or not.
 
@@ -111,7 +111,7 @@ BABYLON.VideoTexture.CreateFromWebCam(scene, function(videoTexture) {
 ```
 The third parameter is optional and can be used to define minWidth, maxWidth, minHeight and maxHeight. These values will be used to constraint the camera resolution.
 
-* **Refraction**
+## Refraction
 
 Starting with Babylon.js 2.4, a new channel was added to the StandardMaterial: the refraction channel.
 
@@ -146,7 +146,7 @@ Index of refraction cab be controlled with `material.indexOfRefraction` (which i
 
 You can see a live demo here: http://www.babylonjs.com/Demos/refraction 
 
-* **Multi Materials**
+## Multi Materials
 
 Using a dedicated texture, multi materials can be assigned to one single mesh. It can be useful if you want your mesh to look different at different locations along its width, height, or depth. (such as a cutaway cross-section of the Earth's mantle).
 
