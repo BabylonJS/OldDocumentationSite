@@ -3,185 +3,155 @@
 ## Introduction
 After following the [standard material tutorial](http://doc.babylonjs.com/tutorials/Materials) and also excelling in [unleashing its power](https://www.eternalcoding.com/?p=303), it is a good time to go further and look at another emerging kind of materials called **PBR Materials** standing for **Physically Based Rendering Materials**.
 
-![Elements](/img/extensions/materials/PBRMaterial.jpg)
-
-[**Playground Demo Scene - PBR Materials**](https://www.babylonjs-playground.com/#ESBZC#3)
-
-## What is the point ?!?
 PBR rendering techniques aim to simulate **real life lighting**.
 
-PBR is a grouping of techniques; it does not force you to choose one in particular. For this we have chosen to mix several: [Disney](http://blog.selfshadow.com/publications/s2012-shading-course/burley/s2012_pbs_disney_brdf_slides_v2.pdf), [Ashkimin Shirley BRDF](http://www.cs.utah.edu/~shirley/papers/jgtbrdf.pdf) and [Ashkimin Shirley Microfacets](http://www.cs.utah.edu/~shirley/papers/facets.pdf).
+PBR is a grouping of techniques; it does not force you to choose one in particular. Among others, we can cite some like: 
+* [Disney](http://blog.selfshadow.com/publications/s2012-shading-course/burley/s2012_pbs_disney_brdf_slides_v2.pdf)
+* [Ashkimin Shirley BRDF](http://www.cs.utah.edu/~shirley/papers/jgtbrdf.pdf)
+* [Ashkimin Shirley Microfacets](http://www.cs.utah.edu/~shirley/papers/facets.pdf).
 
-This material is addressing:
-1. [Gamma Correction](https://en.wikipedia.org/wiki/Gamma_correction)
-2. [HDR](https://en.wikipedia.org/wiki/High-dynamic-range_rendering)
-3. [Integrated Fresnel](http://viscorbel.com/vray-materials-theory/)
-4. [Monochrome Energy Conservation](http://www.neilblevins.com/cg_education/energy_conservation/energy_conservation.htm)
-5. [Glossiness and Reflectivity](http://viscorbel.com/vray-materials-theory/)
+In Babylon.js, PBR is done thanks to PBRMaterial. This material contains all features required by modern physically based rendering. For beginners we also created two additional materials to simplify your first contact with PBR. If you want to directly dig into the richer version, please have a read at [Master the PBR](http://doc.babylonjs.com/overviews/Physically_Based_Rendering_Master) for more information on how to use the main material.
 
-Enjoying the [**KISS principle**](https://en.wikipedia.org/wiki/KISS_principle), the overall idea of the new Babylon material is to reduce the set of usually available parameters, to make it more **developer friendly**, but still keeping enough control. For some offline renderers, the number of scalar parameters can be huge but even if they all have their place, they can sometimes be tricky to use and hard to manage due to the overall number of possible combinations.
+You can find a complete demo of the PBRMaterial [here](http://www.babylonjs.com/demos/pbrglossy/)
 
-You can also refer to this video for a short but really helpful introduction to [PBR](https://www.youtube.com/watch?v=7NjGETJMZvY) from Crytek.
+![pbrsample](/img/pbr.jpg)
 
-## How can I do this?
-As you are already really familiar with the Babylon Standard Material now we'll only try to address here the main differences and as the simplest setup; your only changes will be to instantiate a **PBRMaterial** instead of a **StandardMaterial**.
+The two additional materials are `PBRMetallicRoughnessMaterial` and `PBRSpecularGlossinessMaterial`. They both implement a specific convention based on GLTF specifications:
+* Metallic roughness convention: https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md#metallic-roughness-material (This is the recommended convention)
+* Specular glossiness convention: https://github.com/KhronosGroup/glTF/blob/master/extensions/Khronos/KHR_materials_pbrSpecularGlossiness/README.md
+
+## PBRMetallicRoughnessMaterial
+
+This material is based on five main values:
+* baseColor / baseTexture: The base color has two different interpretations depending on the value of metalness. When the material is a metal, the base color is the specific measured reflectance value at normal incidence (F0). For a non-metal the base color represents the reflected diffuse color of the material.
+* metallic: Specifies the metallic scalar value of the material. Can also be used to scale the metalness values of the metallic texture.
+* roughness: Specifies the roughness scalar value of the material. Can also be used to scale the roughness values of the metallic texture.
+* metallicRoughnessTexture: Texture containing both the metallic value in the B channel and the roughness value in the G channel to keep better precision. Ambient occlusion can also be saved in R channel.
+* environmentTexture: texture
+
+As you are already really familiar with the Babylon Standard Material now we'll only try to address here the main differences and as the simplest setup; your only changes will be to instantiate a **PBRMetallicRoughnessMaterial** instead of a **StandardMaterial**.
 
 ```javascript
-var pbr = new BABYLON.PBRMaterial("pbr", scene);
+var pbr = new BABYLON.PBRMetallicRoughnessMaterial("pbr", scene);
 ```
 
 Apply this material to the object of your choice, e.g.:
 ```javascript
 sphere.material = pbr;
 ```
-Or, create and apply all in one step:
+
+Now you can define the physical based values of your material to get a great look and feel:
 ```javascript
-sphere.material = new BABYLON.PBRMaterial("pbr", scene);
+pbr.baseColor = new BABYLON.Color3(1.000, 0.766, 0.336);
+pbr.metallic = 0;
+pbr.roughness = 1.0;
+```
+You can see a [live version here](https://www.babylonjs-playground.com/#2FDQT5)
+
+With this specific configuration, you can see that there is no reflection at all (metallic set to 0) and no specular (roughness set to 1).
+
+If we want to introduce more reflection we can just do the opposite:
+```javascript
+pbr.baseColor = new BABYLON.Color3(1.000, 0.766, 0.336);
+pbr.metallic = 1.0;
+pbr.roughness = 0;
 ```
 
-> "So how can I adjust my material to give the perfect look to my object?"
-
-That is done by setting the properties on the material. Let's see what the new PBR parameters are:
-
-* **MicroSurface** (AKA **Glossiness** or **specular power**)
-
-The micro-surface of a material defines **the way it is reflecting** the incoming lights. It is not defining the amount, only how. A glossy material will tend to reflect the light in the same direction it is incoming. On a Matte one the reflected light will vary in contact of the surface. As I can easily understand the confusion of my explanation, let's take a look at an example (and for more Physically Based Knowledge, [follow the link](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2538579/)):
-
-![Elements](/img/extensions/materials/PBRMaterialGlossiness.jpg)
-
-As you can see here, the more glossy the material is (going left to right: 0.5 to 1) the less blurry the reflected environment is.
-
-[**Playground Demo Scene - PBR Glossiness**](https://www.babylonjs-playground.com/#1LZALU#5)
-
+But in this case we need something to reflect. To define this environment, just add this line:
 ```javascript
-var x = 0;
-var reflectivity = 0.7;
-for (var j = 0; j < 6; j++) {
-	var microSurface = j / 5;
-		
-	//Creation of a sphere
-	var sphere = BABYLON.Mesh.CreateSphere("Sphere_" + j, 10.0, 9.0, scene);
-	sphere.position.x = x;
-		
-	//Creation of a material
-	var materialSphere = new BABYLON.PBRMaterial("Material_" + j, scene);
-	materialSphere.albedoColor = new BABYLON.Color3(0.2, 0.9, 1.0);
-	materialSphere.reflectivityColor = new BABYLON.Color3(reflectivity, reflectivity, reflectivity);
-	materialSphere.microSurface = microSurface;
-
-	//Attach the material to the sphere
-	sphere.material = materialSphere;
-
-	x = x - 15;
-}
+pbr.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("/textures/environment.dds", scene);
 ```
 
-**Tips:** To achieve the best results, you can store the glossiness in the alpha channel of the reflectivity map (this prevents having a constant gloss on one material):
+This call will create all required data used by the materials to produce final output.
+
+You can see a [live version here](https://www.babylonjs-playground.com/#2FDQT5#11)
+
+Perhaps a bit too reflective now, so let's add more roughness to give it a more golden look: 
 ```javascript
-materialSphere.reflectivityTexture = texture;
-materialSphere.useMicroSurfaceFromReflectivityMap = true;
+pbr.baseColor = new BABYLON.Color3(1.0, 0.766, 0.336);
+pbr.metallic = 1.0;
+pbr.roughness = 0.4;
+pbr.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("/textures/environment.dds", scene);
 ```
 
-* **Reflectivity** (AKA **specular color**)
+You can see a [live version here](https://www.babylonjs-playground.com/#2FDQT5#12)
 
-The reflectivity of a material defines the **amount of light it is reflecting**. Basically, a black specular will mean almost no reflection and white will be close from a perfect mirror:
-
-![Elements](/img/extensions/materials/PBRMaterialSpecular.jpg)
-
-As you can see here the more specular the material is (going left to right from white to black) the closer to a perfect mirror it is.
-
-[**Playground Demo Scene - PBR Reflectivity**](https://www.babylonjs-playground.com/#PRRBS#2)
-
+To get more precise over how metallic and roughness on your object, you can also specify the metallicRoughnessTexture:
 ```javascript
-var x = 0;
-var microSurface = 0.98;
-for (var j = 0; j < 6; j++) {
-	var reflectivity = j / 5;
-		
-	//Creation of a sphere
-	var sphere = BABYLON.Mesh.CreateSphere("Sphere_" + j, 10.0, 9.0, scene);
-	sphere.position.x = x;
-		
-	//Creation of a material
-	var materialSphere = new BABYLON.PBRMaterial("Material_" + j, scene);
-	materialSphere.albedoColor = new BABYLON.Color3(0.2, 0.9, 1.0);
-	materialSphere.reflectivityColor = new BABYLON.Color3(reflectivity, reflectivity, reflectivity);
-	materialSphere.microSurface = microSurface;
-
-	//Attach the material to the sphere
-	sphere.material = materialSphere;
-
-	x = x - 15;
-}
+pbr.baseColor = new BABYLON.Color3(1.0, 0.766, 0.336);
+pbr.metallic = 1.0; // set to 1 to only use it from the metallicRoughnessTexture
+pbr.roughness = 1.0; // set to 1 to only use it from the metallicRoughnessTexture
+pbr.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("/textures/environment.dds", scene);
+pbr.metallicRoughnessTexture = new BABYLON.Texture("/textures/mr.jpg", scene);
 ```
 
-**Tips:** To achieve the best results use a specular map stored in a texture:
+You can see a [live version here](https://www.babylonjs-playground.com/#2FDQT5#13)
+
+## PBRSpecularGlossinessMaterial
+
+This material is based on five main values:
+* diffuseColor / diffuseTexture: Specifies the diffuse color of the material.
+* specularColor: Specifies the specular color of the material. This indicates how reflective is the material (none to mirror).
+* glossiness: Specifies the glossiness of the material. This indicates "how sharp is the reflection".
+* specularGlossinessTexture: Specifies both the specular color RGB and the glossiness A of the material per pixels.
+* environmentTexture: texture
+
+The setup of this material is comparable to the one used for PBRMetallicRoughnessMaterial:
 ```javascript
-materialSphere.reflectivityTexture = texture;
+var pbr = new BABYLON.PBRSpecularGlossinessMaterial("pbr", scene);
+pbr.diffuseColor = new BABYLON.Color3(1.0, 0.766, 0.336);
+pbr.specularColor = new BABYLON.Color3(1.0, 0.766, 0.336);
+pbr.glossiness = 0.4;
+pbr.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("/textures/environment.dds", scene);
 ```
 
-* **Reflection**
+You can see a [live version here](https://www.babylonjs-playground.com/#Z1VL3V#5).
 
-The key purpose of a PBR material is to **conserve the energy** (not emitting more light than it receives). If a lot of light is reflected from the environment the diffuse reflected light will drop. This means that without Reflection Map the material would be black if the specular is close to white (reflecting nothing). This is why we introduce in the material a **Reflection Color** parameter to ensure the material still works without Reflection texture.
-
+The specularGlossinessTexture can then (like the metallicRoughnessTexture texture) be used to provide more control over specular and glossiness:
 ```javascript
-var pbr = new BABYLON.PBRMaterial("pbr", scene);
-pbr.reflectionColor = new BABYLON.Color3(1.0, 0.0, 0.0);
+pbr.diffuseColor = new BABYLON.Color3(1.0, 0.766, 0.336);
+pbr.specularColor = new BABYLON.Color3(1.0, 1.0, 1.0);
+pbr.glossiness = 1.0;
+pbr.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("/textures/environment.dds", scene);
+pbr.specularGlossinessTexture = new BABYLON.Texture("/textures/sg.png", scene);
 ```
 
-**Tips:** To achieve the best results, use a reflection texture created from the new reflection probes:
+You can see a [live version here](https://www.babylonjs-playground.com/#Z1VL3V#4).
+
+## Light setup
+
+Dynamic lights are an important part of your PBR setup. You can decide to have no light and only use the environment texture to light your scene or you can decide to add additional light sources to enhance your rendering.
+
+By default light intensities are computed using the inverse squared distance from the source. This is a type of falloff that is pretty close from what light does in real life. So the further you are, the bigger your intensity will need to be to reach a surface.
+
+To even go further, the intensity you define on the lights follows physics notions:
+
+* Point and Spot lights are defined in luminous intensity (candela, m/sr)
+* Directionnal and Hemispheric lights in illuminance (nit, cd/m2)
+
+You'll find more info about how dynamic lighting works in the [Master the PBR](http://doc.babylonjs.com/overviews/Physically_Based_Rendering_Master)
+
+
+## Env map
+As you have seen before, you must provide a DDS file (containing a cube texture) to define a compatible environment. This is the highly recommended way to setup the environment texture.
+
+### Creating a dds environment file from an HDR image
+We recommend using IBLBaker: [https://github.com/derkreature/IBLBaker](https://github.com/derkreature/IBLBaker)
+After cloning the repo, you will be able to go to /bin64 folder and launch IBLBaker.exe.
+
+Now use the "Load environment" button to load a HDR image (Try one from [HDRLib](http://hdrlib.com/))
+
+We recommend to play with the environment scale to define the correct brightness you want.
+You may also want to reduce the output size by setting the specular resolution to 128 or 256:
+
+![iblbaker](/img/iblbaker.jpg)
+
+Once you are satisfied with the overall result, just click on "save environment" button and you are good to go!
+
+### Using a pure cube texture
+While using a dds cube texture is the best option, you may want to still rely on classic cube texture (mostly for size reason).
+So you can still do this as well:
 ```javascript
-pbr.reflectionTexture = texture;
+pbr.environmentTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
 ```
-
-![Elements](/img/extensions/materials/PBRMaterialReflection.jpg)
-
-You can see here all the elements being lit by the reflection map. Playing with the specular color and glossiness one can also achieve interesting results as you can see on the different meshes.
-
-[**Playground Demo Scene - PBR Reflection**](http://www.babylonjs-playground.com/#1HQPOD#2)
-
-## Ligthing Intensity
-
-In order to allow finer grain control of the lighting, the following properties have been added in the material.
-
-- directIntensity: Controls the amount of diffuse and specular the material is reflecting.
-- emissiveIntensity: Controls the level of emissive light the material is emitting.
-- environmentIntensity: Controls the level of the reflected light from the environment.
-- specularIntensity: As the material is still using a blinn phong like higlights computation, this can help dropping the specular level of the material without impacting the reflectivity.
-
-## Camera Control (In the material... WTF ?)
-
-One of the outstanding WebGL issue is the lack of MSAA on texture render target... **Aghhhhhh!** (feel better now :)). This prevents a simple way to get a good looking scene via post processing. Also there is no universal support of full precision floating point render targets.
-
-In order to work around those issues and increase performance we integrated as part of the material two optional controls for both **contrast** and **exposure**. This enables you to do photographic tone mapping and deals with the contrast directly from the material.
-
-```javascript
-var pbr = new BABYLON.PBRMaterial("pbr", scene);
-pbr.cameraExposure = 0.66;
-pbr.cameraContrast = 1.66;
-```
-
-![Elements](/img/extensions/materials/PBRMaterialCamera.jpg)
-
-This highlights the impact of both contrast and exposure on a model (all the other parameters are fixed).
-
-[**Playground Demo Scene - PBR Camera**](https://www.babylonjs-playground.com/#1Y4YAM#3)
-
-## Gamma Correction
-
-In order to ensure the light equations are working accurately the PBR material could be called "Gamma Correct" in the way all the inputs requiring correction are converted to **linear space** before working with them and then finally encoded back in **Gamma Space** before rendering.
-
-This process is totally transparent for the user but it is still good to know it takes place in the material (Helps to know if you are struggling to find out why it is dark or bright, for instance, if you are using linear input and decode in post processing!).
-
-## Where are my Fresnels?
-
-As PBR materials are based on a good **light distribution** (close to real life lighting), the diffuse, specular and reflection fresnels are not optional anymore. They are part of the material and integrated in all cases.
-
-They are **automatically created** and configured based on the other inputs passed through the material. You then do not need to configure them hence why we removed them from the material.
-
-The emissive and opacity fresnels from tooling are still available in this material.
-
-## Going Further
-
-Please have a read at [Master the PBR](http://doc.babylonjs.com/overviews/Physically_Based_Rendering_Master) for more information on how to use the material.
-
+In this case you won't be able to get HDR rendering and some visual artifacts may appear (mostly when using glossiness or roughness).
