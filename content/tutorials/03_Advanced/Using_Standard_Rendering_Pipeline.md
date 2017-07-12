@@ -43,6 +43,12 @@ To globally intensify the highlighted surfaces result (before it is merged with 
 pipeline.exposure = 1.0; // which multiplies the final scene color with the highlighted surfaces result
 ```
 
+## Blur width
+The blur width (or kernel size) can be customized and is by default equal to 512
+```
+pipeline.exposure = 128; // Blur is less expansive and is less spreaded
+```
+
 # Setting up the dirty lens effect
 
 To add a dirty lens effect, you can set the ".lensTexture" mask texture (background must be black) which will be applied on the screen following the highlighted surfaces:
