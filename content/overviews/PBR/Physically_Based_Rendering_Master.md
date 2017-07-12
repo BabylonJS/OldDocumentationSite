@@ -56,11 +56,11 @@ You can see a [live version here](https://www.babylonjs-playground.com/#2FDQT5#1
 
 Once the conversion done, let's see the custom options available on this version:
 
-* useRoughnessFromMetallicTextureAlpha: the metallic texture contains the roughness information in its alpha channel.
-* useRoughnessFromMetallicTextureGreen: the metallic texture contains the roughness information in its green channel (useRoughnessFromMetallicTextureAlpha needs to be false).
-* useMetallnessFromMetallicTextureBlue: the metallic texture contains the metallic information in its blue channel (it is considered in the red channel by default).
-* useAmbientOcclusionFromMetallicTextureRed: the metallic texture contains the ambient occlusion information in its alpha channel.
-* useAmbientInGrayScale: the ambient occlusion is forced to read only from the red red channel of the ambient texture or from the red channel of the metallic texture.
+* **useRoughnessFromMetallicTextureAlpha**: the metallic texture contains the roughness information in its alpha channel.
+* **useRoughnessFromMetallicTextureGreen**: the metallic texture contains the roughness information in its green channel (useRoughnessFromMetallicTextureAlpha needs to be false).
+* **useMetallnessFromMetallicTextureBlue**: the metallic texture contains the metallic information in its blue channel (it is considered in the red channel by default).
+* **useAmbientOcclusionFromMetallicTextureRed**: the metallic texture contains the ambient occlusion information in its alpha channel.
+* **useAmbientInGrayScale**: the ambient occlusion is forced to read only from the red red channel of the ambient texture or from the red channel of the metallic texture.
 
 ## From SpecularGlossiness To PBRMaterial
 To begin with the SpecularGlossiness you can start with this [documentation](http://doc.babylonjs.com/overviews/physically_based_rendering#pbrspecularglossinessmaterial).
@@ -91,10 +91,10 @@ You can see a [live version here](https://www.babylonjs-playground.com/#Z1VL3V#8
 
 Once the conversion done, let's see the custom options available on this version:
 
-* microSurfaceTexture: Enables the ability to store the glossiness on the red channel of a separate texture.
-* useAlphaFromAlbedoTexture: the opacity information is contained in the alpha channel of the albedo texture.
-* useMicroSurfaceFromReflectivityMapAlpha: the reflectivity texture contains the microSurface or glossiness information in its alpha channel.
-* useAmbientInGrayScale: the ambient occlusion is forced to read only from the red red channel of the ambient texture or from the red channel of the metallic texture.
+* **microSurfaceTexture**: Enables the ability to store the glossiness on the red channel of a separate texture.
+* **useAlphaFromAlbedoTexture**: the opacity information is contained in the alpha channel of the albedo texture.
+* **useMicroSurfaceFromReflectivityMapAlpha**: the reflectivity texture contains the microSurface or glossiness information in its alpha channel.
+* **useAmbientInGrayScale**: the ambient occlusion is forced to read only from the red red channel of the ambient texture or from the red channel of the metallic texture.
 
 ## Opacity
 Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a lit room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
