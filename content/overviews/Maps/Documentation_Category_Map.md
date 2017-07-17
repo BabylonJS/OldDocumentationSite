@@ -111,7 +111,6 @@
 **Loader Intermediate**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Caching Resources in IndexedDB](/tutorials/Caching_Resources_in_IndexedDB)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a custom loading screen](/tutorials/Creating_a_custom_loading_screen)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Loading a Scene Produced with Blender](/tutorials/Loading_a_Scene_Produced_with_Blender)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the Incremental Loading System](/tutorials/Using_the_Incremental_Loading_System)  
 ****  
 **Loader Advanced**  

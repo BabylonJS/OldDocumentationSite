@@ -23,7 +23,16 @@ Now, you're cube looks ugly. You have to set up its sharpness, by adding an *edg
 ![blender-sharp-edges](http://doc.babylonjs.com/img/exporters/blender/blender-smooth-shading-sharpness.png)
 
 
+## Cameras
 
+### ArcRotate
+
+When choosing arc rotate camera type, you have to add a target to your camera. 
+
+To do that:
+
+* first select your camera, then its target (object or empty for example),
+* press `Ctrl` + `T` > `Track To Constraint`.
 
 ## Quickly Export
 
