@@ -151,5 +151,16 @@ By default the projection matrix of a light uses the minZ and maxZ of the main c
 ### Use the best option for self-shadowing
 As mentioned earlier, if you want blurred shadows on a self-shadowing object, the best option will probably to go with close exponential shadow map.
 
+### Frustum edge falloff
+Depending on how you setup your shadow generator, you could face weird falloff when an object is near the edges of the shadow map. To elegantly fix this issue, you can set a property named frustumEdgeFalloff:
+
+```javascript
+ shadowGenerator.frustumEdgeFalloff = 1.0;
+```
+
+This property controls the extent to which the shadows fade out at the edge of the frustum. It is used only by directional and spot lights. By default, the value is set to 0 (no falloff) and 1.0 (complete falloff).
+
+You can find an example here: https://www.babylonjs-playground.com/#Y5IZCF
+
 ## Next step
 Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](http://doc.babylonjs.com/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [http://www.html5gamedevs.com/forum/16-babylonjs](http://www.html5gamedevs.com/forum/16-babylonjs). See you there.
