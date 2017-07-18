@@ -987,10 +987,6 @@
         {
           "title": "Setup Visual Studio to contribute to Babylon.js",
           "filename": "setup_visualStudio"
-        },
-        {
-          "title": "Roadmap",
-          "filename": "Roadmap"
         }
       ]
     }
