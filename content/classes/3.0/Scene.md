@@ -793,7 +793,7 @@ Will start the animation sequence of a given target
  | to | number |      The ending frame
 optional | loop | boolean |      If true, the animation will loop
 optional | speedRatio | number |      default : 1.The speed ratio of this animation
-optional | onAnimationEnd | () =&gt; void |      The function triggered on the end of the animation
+optional | onAnimationEnd | () =&gt; void |      The function triggered on the end of the animation, even if the animation is manually stopped
 ### beginDirectAnimation(target, animations, from, to, loop, speedRatio, onAnimationEnd) &rarr; [Animatable](/classes/3.0/Animatable)
 
 Begins a direct animation (no children animations)
