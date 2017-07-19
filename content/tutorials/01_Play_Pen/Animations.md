@@ -139,7 +139,7 @@ scene.beginAnimation(box1, 100, 0, true);
 | to | number | The fps ending frame
 optional | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE)
 optional | speedRatio | number | default : 1. The speed ratio of this animation
-optional | onAnimationEnd | () => void | The function triggered on the end of the animation (also dependent upon ANIMATIONLOOPMODE)
+optional | onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE)
 optional | animatable | [Animatable](http://doc.babylonjs.com/classes/3.0/animatable) | An optional specific animation
 ---
 

@@ -26,7 +26,7 @@ optional | fromFrame | number |      default : 0
 optional | toFrame | number |      default : 100
 optional | loopAnimation | boolean |      default : false
 optional | speedRatio | number |      default : 1.0
-optional | onAnimationEnd | any |      Function triggered on the end of an animation
+optional | onAnimationEnd | any |      The function triggered on the end of the animation, even if the animation is manually stopped
 ## Members
 
 ### target : any
@@ -51,7 +51,7 @@ default : 1.0. The speed Ratio, lower gives a slower animation
 
 ### onAnimationEnd : any
 
-Function to execute on animation end
+Function to execute on animation end (or when it is manually stopped)
 
 ### animationStarted : boolean
 
