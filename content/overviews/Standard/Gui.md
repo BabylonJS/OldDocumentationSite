@@ -30,13 +30,19 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 Here is an example of a simple fullscreen mode GUI: http://www.babylonjs-playground.com/#XCPP9Y#1
 
-* Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. Pointer down and up events will be intercepted. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
+* Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
 ```
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
 Here is an example of a simple texture mode GUI: http://www.babylonjs-playground.com/#ZI9AK7#1
+
+Please note that handling pointer move events could be costly on complex meshes, so you can turn off supporting pointer move events with a fourth parameter:
+
+```
+var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024, false);
+```
 
 Once you have an AdvancedDynamicTexture object, you can start adding controls.
 
