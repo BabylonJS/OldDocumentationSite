@@ -164,7 +164,7 @@ var ps = new BABYLON.ParticleSystem("particles", 2000, scene, **customEffect**);
 
 The customEffect is a type of BABYLON.Effect used to target a valid shader program.
 
-The primary author of Babylon.js was kind enough to make us [a fantastic playground demo of a particle system using a fragment shader effect](http://www.babylonjs-playground.com/#1ASENS). Visit that link, and you can see a fragment shader program that has been stored in a shader store. Notice the line:
+The primary author of Babylon.js was kind enough to make us [a fantastic playground demo of a particle system using a fragment shader effect](https://www.babylonjs-playground.com/#1ASENS#43). Visit that link, and you can see a fragment shader program that has been stored in a shader store. Notice the line:
 
 ```javascript
 BABYLON.Effect.ShadersStore["myParticleFragmentShader"] = [...]
