@@ -139,7 +139,7 @@ As you have seen before, you must provide a DDS file (containing a cube texture)
 We recommend using IBLBaker: [https://github.com/derkreature/IBLBaker](https://github.com/derkreature/IBLBaker)
 After cloning the repo, you will be able to go to /bin64 folder and launch IBLBaker.exe.
 
-Now use the "Load environment" button to load a HDR image (Try one from [HDRLib](http://hdrlib.com/))
+Now use the "Load environment" button to load a HDR image (Try one from [HDRLib](http://hdrlib.com/) or [there](https://github.com/sbtron/BabylonJS-glTFLoader/tree/master/src/images) as well)
 
 We recommend to play with the environment scale to define the correct brightness you want.
 You may also want to reduce the output size by setting the specular resolution to 128 or 256:
