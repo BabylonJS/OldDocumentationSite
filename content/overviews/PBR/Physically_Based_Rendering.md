@@ -146,7 +146,9 @@ You may also want to reduce the output size by setting the specular resolution t
 
 ![iblbaker](/img/iblbaker.jpg)
 
-Once you are satisfied with the overall result, just click on "save environment" button and you are good to go!
+Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! 
+
+** Please do not forget to write full name with extension in order to make the save works correctly **
 
 ### Using a pure cube texture
 While using a dds cube texture is the best option, you may want to still rely on classic cube texture (mostly for size reason).
