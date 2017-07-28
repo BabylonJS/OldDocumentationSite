@@ -6,7 +6,7 @@ You have already seen how you can apply textures on meshes, but here you are goi
 
 ![AdvancedTexturing](/img/tutorials/Advanced%20Texturing/0.png)
 
-A picture from our [Advanced Texturing playground demo](http://www.babylonjs-playground.com/#EKFLA#13)
+A picture from our [Advanced Texturing playground demo]( https://www.babylonjs-playground.com/#EKFLA#13)
 
 # How can I do this ?
 
@@ -34,7 +34,7 @@ material.reflectionTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay"
 ```
 Like the CubeTextures used in skyboxes, the textures/TropicalSunnyDay directory must contain 6 textures, covering all 6 directions of the cube. Each image must be named according to the corresponding CubeTexture face: “TropicalSunnyDay_nx.jpg”, “TropicalSunnyDay_ny.jpg”, “TropicalSunnyDay_nz.jpg”, “TropicalSunnyDay_px.jpg”, “TropicalSunnyDay_py.jpg”, “TropicalSunnyDay_pz.jpg”.
 
-You can see this nice advanced texturing technique... in [this playground scene](http://www.babylonjs-playground.com/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/3.0/FresnelParameters)-enhanced [playground scene](http://www.babylonjs-playground.com/#SBTYP), as well.
+You can see this nice advanced texturing technique... in [this playground scene]( https://www.babylonjs-playground.com/#IRZYH), and in this [Fresnel](http://doc.babylonjs.com/classes/3.0/FresnelParameters)-enhanced [playground scene]( https://www.babylonjs-playground.com/#SBTYP), as well.
 
 
 ## Bump Mapping
@@ -101,7 +101,7 @@ scene.onPointerDown = function () {
   videoTexture.video.play();
 }
 ```
-This will start the video on the first tap in the scene. A demo can be found at http://www.babylonjs-playground.com/#CHQ4T#1
+This will start the video on the first tap in the scene. A demo can be found at  https://www.babylonjs-playground.com/#CHQ4T#1
 
 Starting with v2.6, we introduced the support for WebRTC. So now you can create a specific VideoTexture which will be connected to your default WebCam:
 
@@ -128,7 +128,7 @@ probe.renderList.push(blueSphere);
 probe.renderList.push(mirror);
 mainMaterial.refractionTexture = probe.cubeTexture;
 ```
-See a demo here: http://www.babylonjs-playground.com/#22KZUW#3
+See a demo here:  https://www.babylonjs-playground.com/#22KZUW#3
 
 But you can also use a RefractionTexture as source of refraction when you deal with a flat object. RefractionTexture works like mirror texture where you need to define a clip plane:
 ```javascript
@@ -140,7 +140,7 @@ refractionTexture.refractionPlane = new BABYLON.Plane(0, 0, -1, 0);
 refractionTexture.depth = 2.0;
 ```
 Depth parameter defines the depth value used to offset the refraction.
-See a demo here: http://www.babylonjs-playground.com/#22KZUW#15
+See a demo here:  https://www.babylonjs-playground.com/#22KZUW#15
 
 Index of refraction cab be controlled with `material.indexOfRefraction` (which is 1.05 by default).
 
@@ -155,6 +155,6 @@ Using a dedicated texture, multi materials can be assigned to one single mesh. I
 Sometimes it is a bit difficult to determine which indices of a mesh should be textured by which of the multiple textures. David Catuhe has provided a comprehensive post about multi materials... on his blog:
 [http://blogs.msdn.com/b/eternalcoding/archive/2013/07/10/babylon-js-using-multi-materials.aspx](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/10/babylon-js-using-multi-materials.aspx)
 
-You can view and play-with the demo used in this tutorial... [right here](http://www.babylonjs-playground.com/#EKFLA#13).
+You can view and play-with the demo used in this tutorial... [right here]( https://www.babylonjs-playground.com/#EKFLA#13).
 
 You might also be interested in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.

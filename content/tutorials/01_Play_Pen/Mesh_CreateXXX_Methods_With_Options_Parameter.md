@@ -245,7 +245,7 @@ type|name|side number
 13|Elongated Pentagonal Dipyramid (J16)|15
 14|Elongated Pentagonal Cupola (J20)|22
 
-If you need to use a custom polyhedron (http://www.babylonjs-playground.com/#21QRSK#1 : minimize the code editor with the button "EDITOR-" to see polyhedron names under the mouse pointer) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
+If you need to use a custom polyhedron ( https://www.babylonjs-playground.com/#21QRSK#1 : minimize the code editor with the button "EDITOR-" to see polyhedron names under the mouse pointer) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
 Just copy/paste the wanted polyhedron object in your code like this :
 
 ```javascript
@@ -529,7 +529,7 @@ To understand how to set _faceUV_ or _faceColors_, please read this : http://doc
 
 face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
 
-[Playground Example of Extruded Polygon](http://www.babylonjs-playground.com/#RNCYVM#2)
+[Playground Example of Extruded Polygon]( https://www.babylonjs-playground.com/#RNCYVM#2)
 
 Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 

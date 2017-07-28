@@ -77,19 +77,19 @@ mesh.computeWorldMatrix(true);      // force the world matrix computation
 var norm = mesh.getFacetNormal(50); // returns the world normal of the mesh 50th facet
 ```
 ###### Examples :  
-Displaying all the facet normals of an icosphere : http://www.babylonjs-playground.com/#1YTZAC  
-Just change the mesh shape, torus knot : http://www.babylonjs-playground.com/#1YTZAC#1  
-Smarter : set a box at a distance of 2 from the mesh 10th facet and keep it there, even if the mesh rotates : http://www.babylonjs-playground.com/#1YTZAC#3  
-Of course, you can add some translation to the mesh and even some rotation to the box : http://www.babylonjs-playground.com/#1YTZAC#4   
+Displaying all the facet normals of an icosphere :  https://www.babylonjs-playground.com/#1YTZAC  
+Just change the mesh shape, torus knot :  https://www.babylonjs-playground.com/#1YTZAC#1  
+Smarter : set a box at a distance of 2 from the mesh 10th facet and keep it there, even if the mesh rotates :  https://www.babylonjs-playground.com/#1YTZAC#3  
+Of course, you can add some translation to the mesh and even some rotation to the box :  https://www.babylonjs-playground.com/#1YTZAC#4   
 
 Note also that the facet index is the same than the facet id `faceId` used by the pickingInfo object or the `faceId` used by the SPS when pickable.  
-Here is an example combining pickingInfo, pickable SPS and facetData facet index : http://www.babylonjs-playground.com/#2FPT1A#119   
+Here is an example combining pickingInfo, pickable SPS and facetData facet index :  https://www.babylonjs-playground.com/#2FPT1A#119   
 Just click and the ball is positionned at the clicked facet position, not a the clicked point.    
 
 ##### Mesh partitioning
 The feature `facetData` provides also another tool called the mesh partitioning.  
 The mesh is logically divided in 3D blocks aligned with the X, Y and Z axis in its local space.  
-Here's an illustration about how this logical partitioning looks like (please wait until the skull is downloaded) : http://www.babylonjs-playground.com/#UZGNA  
+Here's an illustration about how this logical partitioning looks like (please wait until the skull is downloaded) :  https://www.babylonjs-playground.com/#UZGNA  
 In order to improve the visibility, the planes along the axis Z weren't displayed.  
 As you can see, there are by default 10 subdivisions on each axis.  
 When you call `updateFacetData()`, the indexes of the all the facets are sorted in the partioning array according to the facet belonging to each block.  
@@ -176,7 +176,7 @@ A rotating torus knot with facet data enabled and a Solid Particle System (SPS) 
 * get the torus closest facet to the particle,
 * if any, bounce back the particle.    
 
-http://www.babylonjs-playground.com/#7ATLX
+ https://www.babylonjs-playground.com/#7ATLX
 
 ##### Tweaking the partitioning
 By default, the partitioning is set to 10 subdivisions per axis. These subdivisions are applied to the mesh bounding box.  
@@ -203,8 +203,8 @@ mesh.updateFacetData();              // now the internal block area if 5% bigger
 ```
 
 In order to understand, here are two examples :   
-ratio = 1.20 (20% bigger)  http://www.babylonjs-playground.com/#UZGNA#1    
-ratio = 0.80  (20% smaller) http://www.babylonjs-playground.com/#UZGNA#2    
+ratio = 1.20 (20% bigger)   https://www.babylonjs-playground.com/#UZGNA#1    
+ratio = 0.80  (20% smaller)  https://www.babylonjs-playground.com/#UZGNA#2    
 Those examples aren't pertinent, because the values are too big or too small : the block area is too far from the mesh or inside the mesh.  
 Right values should keep between 1.0 and 1.10.  
 
@@ -256,7 +256,7 @@ scene.registerBeforeRender(function() {
 });
 ```
 Example :   
-Custom simple physics on a dynamically morphed ribbon : http://www.babylonjs-playground.com/#XVGK0#3  
+Custom simple physics on a dynamically morphed ribbon :  https://www.babylonjs-playground.com/#XVGK0#3  
 
 
 

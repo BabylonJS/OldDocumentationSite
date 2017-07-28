@@ -26,7 +26,7 @@ hl.addMesh(sphere, BABYLON.Color3.Green());
 
 The highlight color is driven by the second parameter of the addMesh method.
 
-[**Playground Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#0)
+[**Playground Demo Scene**]( https://www.babylonjs-playground.com/#1KUJ0A#0)
 
 ### Emissive Input
 
@@ -36,7 +36,7 @@ If you wish, you could also use the emissive texture as a source for the highlig
 hl1.addMesh(sphere, BABYLON.Color3.Black(), true);
 ```
 
-[**Playground Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#57)
+[**Playground Demo Scene**]( https://www.babylonjs-playground.com/#1KUJ0A#57)
 
 You can notice here that one side of the sphere is glowing in yellow whereas the other one is grey. The color is not uniform.
 
@@ -53,7 +53,7 @@ hl.addMesh(sphere, BABYLON.Color3.Green());
 hl.addMesh(ground, BABYLON.Color3.Red());
 ```
 
-[**Overlapping Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#1)
+[**Overlapping Demo Scene**]( https://www.babylonjs-playground.com/#1KUJ0A#1)
 
 This is the default behavior optimized for performances. If you are running your scenes on fast enough machine, you can create several highlight layers to workaround the issue:
 
@@ -65,7 +65,7 @@ var hl2 = new BABYLON.HighlightLayer("hl2", scene);
 hl2.addMesh(ground, BABYLON.Color3.Red());
 ```
 
-[**Overlapping Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#2)
+[**Overlapping Demo Scene**]( https://www.babylonjs-playground.com/#1KUJ0A#2)
 
 ### Blur Size
 
@@ -85,7 +85,7 @@ scene.registerBeforeRender(() => {
 });
 ```
 
-[**Blur Size Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#4)
+[**Blur Size Demo Scene**]( https://www.babylonjs-playground.com/#1KUJ0A#4)
 
 ### Inner vs Outer Glow 
 
@@ -102,7 +102,7 @@ hl2.addMesh(ground, BABYLON.Color3.Red());
 hl2.innerGlow = false;
 ```
 
-[**Glow Demo Scene**](http://www.babylonjs-playground.com/#1KUJ0A#3)
+[**Glow Demo Scene**]( https://www.babylonjs-playground.com/#1KUJ0A#3)
 
 You can notice on the previous scene the white glowing only inside of the sphere and the red only outside of the plane.
 
@@ -110,7 +110,7 @@ You can notice on the previous scene the white glowing only inside of the sphere
 
 As the highlight layer is not dealing with transparency of alpha blended meshes:
 
-[**Broken transparency Scene**](http://www.babylonjs-playground.com/#2FFOYQ#6)
+[**Broken transparency Scene**]( https://www.babylonjs-playground.com/#2FFOYQ#6)
 
 You can exclude some of them from the highlight generation process in order to fix this:
 
@@ -118,7 +118,7 @@ You can exclude some of them from the highlight generation process in order to f
 hl.addExcludedMesh(skybox1);
 ```
 
-[**Fixed transparency Scene**](http://www.babylonjs-playground.com/#2FFOYQ#7)
+[**Fixed transparency Scene**]( https://www.babylonjs-playground.com/#2FFOYQ#7)
 
 ### Multi Camera
 
@@ -131,7 +131,7 @@ var hl1 = new BABYLON.HighlightLayer("hl1", scene, {camera: camera});
 hl1.addMesh(sphere, BABYLON.Color3.Green());
 ```
 
-[**Multi Camera Scene**](http://www.babylonjs-playground.com/#CDHKK#7)
+[**Multi Camera Scene**]( https://www.babylonjs-playground.com/#CDHKK#7)
 
 ## Options
 

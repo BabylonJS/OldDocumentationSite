@@ -33,7 +33,7 @@ knot00.removeLODLevel(knot02);
 knot00.removeLODLevel(null);
 ```
 
-Try: [LOD playground](http://www.babylonjs-playground.com/#QE7KM)
+Try: [LOD playground]( https://www.babylonjs-playground.com/#QE7KM)
 
 ## Using LOD and instances
 By default, instances will use LOD defined on root mesh. You do not have to specify anything on instances:
@@ -64,4 +64,4 @@ for (var x = -count; x <= count; x++) {
 }
 ```
 
-Try: [LOD and instances playground](http://www.babylonjs-playground.com/#14ESWC)
+Try: [LOD and instances playground]( https://www.babylonjs-playground.com/#14ESWC)

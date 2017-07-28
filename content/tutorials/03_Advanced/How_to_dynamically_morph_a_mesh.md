@@ -44,7 +44,7 @@ for(var i = -20; i < 20; i++) {
 }
 var mesh = BABYLON.Mesh.CreateRibbon("ribbon", pathArray, false, false, 0, scene, true, sideO);
 ```
-example : http://www.babylonjs-playground.com/#1MSEBT  _(please rotate the cam to see it)_
+example :  https://www.babylonjs-playground.com/#1MSEBT  _(please rotate the cam to see it)_
 
 The important key to notice is that we set the **_updatable_** parameter to **_true_** in the _CreateRibbon()_ method : the one just between the _scene_ and the _sideO_ parameters.   
 
@@ -78,7 +78,7 @@ You can also use the other call signature :
 mesh = BABYLON.MeshBuilder.CreateRibbon(null, {pathArray: pathArray, instance: mesh});
 ```
 
-example : http://www.babylonjs-playground.com/#1MSEBT#1
+example :  https://www.babylonjs-playground.com/#1MSEBT#1
 
 Well, we just updated our ribbon's shape once for now.   
 
@@ -114,7 +114,7 @@ scene.registerBeforeRender(function() {
 });
 ```
 
-example : http://www.babylonjs-playground.com/#1MSEBT#3
+example :  https://www.babylonjs-playground.com/#1MSEBT#3
 
 
 ### Lines and DashedLines
@@ -138,8 +138,8 @@ dashedlines = BABYLON.MeshBuilder.CreateDashedLines(null, {points: points2, inst
 ```
 We can, of course, set the update method within the render loop.
 
-example lines : http://www.babylonjs-playground.com/#24PQRQ
-dashed lines : http://www.babylonjs-playground.com/#XKYAE#3
+example lines :  https://www.babylonjs-playground.com/#24PQRQ
+dashed lines :  https://www.babylonjs-playground.com/#XKYAE#3
 
 ### Tube
 ##### _tube updatable parameters : path, radius, radiusFunction_
@@ -167,7 +167,7 @@ tube = BABYLON.Mesh.CreateTube(null, path2, null, null, radiusFunction2, null, n
 tube = BABYLON.MeshBuilder.CreateTube(null, {path: path2, radiusFunction: radiusFunction2, instance: tube});
 ```
 
-Example : http://www.babylonjs-playground.com/#ACKC2#1
+Example :  https://www.babylonjs-playground.com/#ACKC2#1
 As you can read at line 53, the _radiusFunction_ is redefined here at each iteration in the _registerBeforeRender_ loop because it uses the value of the incrementing parameter _k_ : the radius changes according to each path point position and according to k varying in the time.
 
 
@@ -219,7 +219,7 @@ var ext = BABYLON.Mesh.ExtrudeShape("ext", shape1, path1, scale1, rotation1, cap
 ext = BABYLON.Mesh.ExtrudeShapeCustom(null, shape2, path2, myScale2, myRotation2, null, null, null, null, null, null, ext);
 ```
 
-Example : http://www.babylonjs-playground.com/#20IBWW
+Example :  https://www.babylonjs-playground.com/#20IBWW
 
 
 ### Other shapes : updateMeshPositions
@@ -243,7 +243,7 @@ var positionFunction = function(positions) {
 };
 box.updateMeshPositions(positionFunction, true);
 ```
-Example : http://www.babylonjs-playground.com/#1UZIZC#6
+Example :  https://www.babylonjs-playground.com/#1UZIZC#6
 
 
 ### More speed : freezeNormals !

@@ -25,7 +25,7 @@ var music = new BABYLON.Sound("Music", "music.wav", scene, null, { loop: true, a
 
 You can test this first sample into our playground: 
 
-http://www.babylonjs-playground.com/#PCY1J
+ https://www.babylonjs-playground.com/#PCY1J
 
 ## Handling the 'ready to play' callback function##
 
@@ -48,7 +48,7 @@ This code loads the “*music.wav*” file from the web server, decode it and pl
 
 Test it on our playground: 
 
-http://www.babylonjs-playground.com/#PCY1J#1
+ https://www.babylonjs-playground.com/#PCY1J#1
 
 ## Playing a sound on mouse click or keydown##
 
@@ -75,7 +75,7 @@ window.addEventListener("keydown", function (evt) {
 
 Test it on our playground: 
 
-http://www.babylonjs-playground.com/#PCY1J#4
+ https://www.babylonjs-playground.com/#PCY1J#4
 
 ## Some basic properties##
 
@@ -134,7 +134,7 @@ function soundReady() {
 
 Test it on our playground: 
 
-http://www.babylonjs-playground.com/#PCY1J#6
+ https://www.babylonjs-playground.com/#PCY1J#6
 
 ## Loading a sound from an ArrayBuffer##
 
@@ -167,7 +167,7 @@ function soundReadyToBePlayed() {
 
 Test it on our playground: 
 
-http://www.babylonjs-playground.com/#PCY1J#2
+ https://www.babylonjs-playground.com/#PCY1J#2
 
 ## Loading a sound using the Assets Manager##
 
@@ -210,7 +210,7 @@ assetsManager.load();
 
 Test it on our playground: 
 
-http://www.babylonjs-playground.com/#PCY1J#8
+ https://www.babylonjs-playground.com/#PCY1J#8
 
 ## Creating a spatial 3D sound##
 
@@ -247,7 +247,7 @@ music.setPosition(new BABYLON.Vector3(100, 0, 0));
 
 To have a better understanding, please have a look to this sample into our playground: 
 
-http://www.babylonjs-playground.com/#2AH4YH
+ https://www.babylonjs-playground.com/#2AH4YH
 
 Move into the scene using keyboard & mouse. Each sound is represented by a purple sphere. When you’re entering a sphere, you’ll start hearing one the music. The sound is louder at the center of the sphere and fall down to 0 when leaving the sphere.
 
@@ -268,7 +268,7 @@ Calling the *attachToMesh()* function on a sound will transform it automatically
 
 Put your headphone and launch this sample into our playground:
 
-http://www.babylonjs-playground.com/index.html?23
+ https://www.babylonjs-playground.com/index.html?23
 
 ## Creating a spatial directional 3D sound##
 
@@ -297,7 +297,7 @@ Outer angle of the cone must be superior or equal to the inner angle, otherwise 
 
 You can play with this sample from our playground to better understand the output: 
 
-http://www.babylonjs-playground.com/#1BO0YS
+ https://www.babylonjs-playground.com/#1BO0YS
 
 Move into the 3D scene. If you’re inside the space defined by the grey cone, you should hear the music, if not you’ll not hear it as the **coneOuterGain** is set to 0. 
 
@@ -332,13 +332,13 @@ In this example, the logic is a bit weird as the volume is louder the farther yo
 
 Play with it in our Playground: 
 
-http://www.babylonjs-playground.com/#1YIXEO
+ https://www.babylonjs-playground.com/#1YIXEO
 
 Moreover, Firefox has currently a bug in their Web Audio implementation in handling properly linear attenuation. This can be fixed by using the Babylon.js default linear custom attenuation.
 
 Here’s a previous sample code that now works properly in Firefox: 
 
-http://www.babylonjs-playground.com/#2AH4YH#2
+ https://www.babylonjs-playground.com/#2AH4YH#2
 
 ## Manipulating sound loaded from a .babylon file##
 
@@ -432,6 +432,6 @@ You can also call yourself the analyser functions to create your own usage of it
 
 Here is a full sample: 
 
-http://www.babylonjs-playground.com/#PTV7W#1
+ https://www.babylonjs-playground.com/#PTV7W#1
 
 ![Image Analyser Debug Canvas](http://az612410.vo.msecnd.net/wwwbabylonjs/doc/3Danalyser.png)

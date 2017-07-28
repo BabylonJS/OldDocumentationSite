@@ -77,5 +77,5 @@ shaderMaterial.onBind = function(mat, mesh) {
 
 And, you are done :)
 
-Please find an example [here](http://www.babylonjs-playground.com/#11GAIH#17)
+Please find an example [here]( https://www.babylonjs-playground.com/#11GAIH#17)
 

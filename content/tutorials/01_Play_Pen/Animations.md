@@ -226,7 +226,7 @@ As of Babylon.js 2.3+, you can  start an animation with *enableBlending* = true.
 
 In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position:
 
-http://www.babylonjs-playground.com/#2BLI9T#2
+ https://www.babylonjs-playground.com/#2BLI9T#2
 
 Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running.
 
@@ -318,7 +318,7 @@ var FunnyEase = (function (_super) {
   return FunnyEase;
 })(BABYLON.EasingFunction);
 ```
-You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](http://www.babylonjs-playground.com/?20)
+You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**]( https://www.babylonjs-playground.com/?20)
 
 
 ## Complex animation

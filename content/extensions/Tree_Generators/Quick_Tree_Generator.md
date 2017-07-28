@@ -6,7 +6,7 @@ The function QuickTreeGenerator uses a sphere with randomized vertices to genera
 
 It is based on Julian Temechon's tutorial on the VertexData object http://www.pixelcodr.com/tutos/trees/trees.html
 
-A demo can be found at: http://www.babylonjs-playground.com/#LG3GS#107
+A demo can be found at:  https://www.babylonjs-playground.com/#LG3GS#107
 
 ## How to use it.
 

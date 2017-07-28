@@ -99,7 +99,7 @@ Once the conversion done, let's see the custom options available on this version
 ## Opacity
 Another interesting addition to the reflection is the ability to keep the most luminous part of the reflection over transparent surface... Yeah, it does not make much sense... Actually if you look through a window at night from a lit room, you can see the reflection of lights or TV on the glass. This is the same for reflection in the PBR Material. A special property `pbr.useRadianceOverAlpha = true;` has been added to allow you to control this effect. Not only reflection (AKA radiance) but specular highlights can be seen on top of transparency.
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR#13)
+[Demo]( https://www.babylonjs-playground.com/#19JGPR#13)
 ```javascript
 glass.reflectionTexture = hdrTexture;
 glass.alpha = 0.5;
@@ -118,7 +118,7 @@ A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
-[Demo](http://www.babylonjs-playground.com/#19JGPR#12)
+[Demo]( https://www.babylonjs-playground.com/#19JGPR#12)
 ```javascript
 var glass = new BABYLON.PBRMaterial("glass", scene);
 glass.reflectionTexture = hdrTexture;
@@ -190,9 +190,9 @@ Light Radius has been added as a property of each light and controls the fact th
 
 Why? Simply because if your material is really glossy, each specular highlights (from the direct lights) will only be seen as a simple dot.
 
-Try to spot the dot in the middle of the sphere in the [Demo](http://www.babylonjs-playground.com/#19JGPR#10).
+Try to spot the dot in the middle of the sphere in the [Demo]( https://www.babylonjs-playground.com/#19JGPR#10).
 
-Now, increasing the light radius makes this dot wider as you can see on this [Demo](http://www.babylonjs-playground.com/#19JGPR#11) 
+Now, increasing the light radius makes this dot wider as you can see on this [Demo]( https://www.babylonjs-playground.com/#19JGPR#11) 
 
 This uses internally a lot of approximation like Tan(theta) is almost theta for small angles so if you try to put bigger radius than a tenth of the light distance you will not see the desired effect.
 

@@ -2,7 +2,7 @@
 
 ![Screenshot](/img/extensions/materials/gradient.jpg)
 
-## [~~Playground example - Not yet deployed~~](http://www.babylonjs-playground.com)
+## [~~Playground example - Not yet deployed~~]( https://www.babylonjs-playground.com)
 
 
 Gradient material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.gradientMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.gradientMaterial.js)

@@ -14,8 +14,8 @@ For instance you can use morph targets to simulate the opening of a mouth. The i
 
 You can find live examples here: 
 
-- With Standard Material: http://www.babylonjs-playground.com/#HPV2TZ#2 
-- With PBR Material: http://www.babylonjs-playground.com/#HPV2TZ#4 
+- With Standard Material:  https://www.babylonjs-playground.com/#HPV2TZ#2 
+- With PBR Material:  https://www.babylonjs-playground.com/#HPV2TZ#4 
 
 ### Using morph targets
 To use morph targets, you first have to create a `MorphTargetManager` and affect it to a mesh:

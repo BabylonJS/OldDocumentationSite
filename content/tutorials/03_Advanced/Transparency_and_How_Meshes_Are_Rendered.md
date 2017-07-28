@@ -110,7 +110,7 @@ The following list will help you understand which categories your meshes will be
 
 Occasionally, you may have some of your meshes falling into the wrong category, e.g. an alpha tested mesh unnecessarily marked as alpha blended, or a mesh staying opaque when it shouldn't. This will give you weird glitches, which can sometimes be very annoying. You should refer to this article to check how your meshes and materials properties are set.
 
-You're welcome to use this [playground example](http://www.babylonjs-playground.com/#1PHYB0#6) to experiment on the different things explained here. Pressing F9 will switch between normal render and depth buffer render.
+You're welcome to use this [playground example]( https://www.babylonjs-playground.com/#1PHYB0#6) to experiment on the different things explained here. Pressing F9 will switch between normal render and depth buffer render.
 
 
 ## Things To Do And Not To Do
@@ -130,9 +130,9 @@ This may help you with visible seams between meshes and other similar issues.
 
 ## Concave meshes and transparency
 
-The transparent concave meshes render obvisouly with the same rules than explained before : http://www.babylonjs-playground.com/#1PLV5Z  
-For some reasons (example : camera flying from outside to inside a sphere), you may want to remove the backface culling in order to also render the back side of the mesh : http://www.babylonjs-playground.com/#1PLV5Z#1  
+The transparent concave meshes render obvisouly with the same rules than explained before :  https://www.babylonjs-playground.com/#1PLV5Z  
+For some reasons (example : camera flying from outside to inside a sphere), you may want to remove the backface culling in order to also render the back side of the mesh :  https://www.babylonjs-playground.com/#1PLV5Z#1  
 As you can notice, the transparency rendering rules may lead to some weird things making some parts of the mesh geometries visible.  
-In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` : http://www.babylonjs-playground.com/#1PLV5Z#2  
+In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` :  https://www.babylonjs-playground.com/#1PLV5Z#2  
 
 *(to be expanded)*

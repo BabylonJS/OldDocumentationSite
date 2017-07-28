@@ -19,7 +19,7 @@ Sprite2D is a primitive to display a bitmap content of a Texture.
  - `scale9` see below for more information.
 
 ### Scale9Sprite feature
-Since the 2.6 version of Babylon the Sprite2D primitive support the Scale9Sprite feature, this [example](http://www.babylonjs-playground.com/#8F4D1#1) will show you how it works.
+Since the 2.6 version of Babylon the Sprite2D primitive support the Scale9Sprite feature, this [example]( https://www.babylonjs-playground.com/#8F4D1#1) will show you how it works.
 
 You can also find more info/explanation about the Scale9 technique [here](http://yannickloriot.com/2013/03/9-patch-technique-in-cocos2d/).
 
