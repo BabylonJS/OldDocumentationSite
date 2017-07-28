@@ -5,7 +5,7 @@ PG_TITLE: 15. Shadows
 ## Introduction
 
 In this tutorial, we are going to learn how to create shadows in Babylon JS. Shadows are now becoming dynamic, and they are now dynamically generated depending upon a light.
-You might want to visit [**the playground scene**](http://www.babylonjs-playground.com/?15) for this tutorial.
+You might want to visit [**the playground scene**]( https://www.babylonjs-playground.com/?15) for this tutorial.
 
 ## How can I do this ?
 
@@ -80,7 +80,7 @@ Here is an example of how CESM works: https://www.babylonjs-playground.com/#0TG0
 ## Examples
 
 You can find a live example here: 
-http://www.babylonjs-playground.com/#20FROK#2
+ https://www.babylonjs-playground.com/#20FROK#2
 
 Please find here pictures of various filters used with a spot light:
 
@@ -107,7 +107,7 @@ Only point, directional and spot lights can cast shadows.
 
 ### Point lights
 Point lights use cubemaps rendering so please be cautious when enabling them as this could lead to some performance issues.
-You can also visit the [point light shadow map playground scene](http://www.babylonjs-playground.com/#LYCSQ#12)
+You can also visit the [point light shadow map playground scene]( https://www.babylonjs-playground.com/#LYCSQ#12)
 
 Furthermore BlurExponentialShadowMap and CloseBlurExponentialShadowMap are not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
 

@@ -39,7 +39,7 @@ scene.onBeforeRenderObservable.add(function () {
 });
 ```
 
-And here is the associated playground: http://www.babylonjs-playground.com/#UP2O8#0
+And here is the associated playground:  https://www.babylonjs-playground.com/#UP2O8#0
 
 If you want to later remove your observer, you just need to capture it after calling add, then use it with remove:
 
@@ -53,7 +53,7 @@ var observer = scene.onBeforeRenderObservable.add(function () {
 	
 scene.onBeforeRenderObservable.remove(observer);
 ```
-And here is the associated playground: http://www.babylonjs-playground.com/#UP2O8#1
+And here is the associated playground:  https://www.babylonjs-playground.com/#UP2O8#1
 
 ## Where are they?
 Babylon.js uses them a lot! Here is the current list (as of v2.4) of available observables:

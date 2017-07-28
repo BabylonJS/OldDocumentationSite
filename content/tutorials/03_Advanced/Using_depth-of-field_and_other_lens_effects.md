@@ -9,7 +9,7 @@ BABYLON.LensRenderingPipeline is a predefined chain of postprocesses that helps 
 _An example of what can be achieved with this postprocess pipeline._
 
 
-You can see a live example of it here: [http://www.babylonjs-playground.com/#DX6AV#4](http://www.babylonjs-playground.com/#DX6AV#4)
+You can see a live example of it here: [ https://www.babylonjs-playground.com/#DX6AV#4]( https://www.babylonjs-playground.com/#DX6AV#4)
 
 Three post-processes are used in the pipeline:
 

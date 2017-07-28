@@ -24,5 +24,5 @@ This function takes the following parameters:
 
 
 You can play with a sample here (Try to click on the cat):
-http://www.babylonjs-playground.com/#1BAPRM
+ https://www.babylonjs-playground.com/#1BAPRM
 

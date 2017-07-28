@@ -4,7 +4,7 @@
 
 ## Playground example
 
-A Playground example can be found here: [Terrain Playground](http://www.babylonjs-playground.com/#E6OZX#7)
+A Playground example can be found here: [Terrain Playground]( https://www.babylonjs-playground.com/#E6OZX#7)
 
 ## Using the terrain material
 

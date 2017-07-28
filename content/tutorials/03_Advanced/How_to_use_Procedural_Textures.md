@@ -227,4 +227,4 @@ var customProcText = new BABYLON.CustomProceduralTexture("customtext", linesShad
 
 **Note :** when using ShaderStore or DOM Element shader for custom procedural textures : the config.json file is not needed anymore and you can just use setFloat or setVector3 (and so on), and setTexture on the CustomProceduralTexture will give values and Sampler2D to the shader code.
 
-Feel free to play with this scene... [at our online playground](http://www.babylonjs-playground.com/#24C4KC#17).
+Feel free to play with this scene... [at our online playground]( https://www.babylonjs-playground.com/#24C4KC#17).

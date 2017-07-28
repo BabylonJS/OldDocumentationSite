@@ -50,7 +50,7 @@ var path = bezier3.getPoints();
 var l = bezier3.length();
 ```
 
-Playground example : http://www.babylonjs-playground.com/#1PSZDF#2
+Playground example :  https://www.babylonjs-playground.com/#1PSZDF#2
 Read from line 50
 
 
@@ -158,6 +158,6 @@ var closedCurve = BABYLON.Mesh.CreateLines("closed", continued.getPoints(), scen
 ```
 
 
-example : http://www.babylonjs-playground.com/#2GCEVH
+example :  https://www.babylonjs-playground.com/#2GCEVH
 The orange and yellow curves are Bezier curves.   
 In light blue, these two curves are continued each other and a hermite curve is also added in continuation to close the path.   

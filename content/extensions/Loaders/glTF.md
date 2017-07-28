@@ -2,7 +2,7 @@
 
 [glTF1 Demo](http://babylonjs-extras.azurewebsites.net/glTF.html)
 
-[glTF2 Playground example](http://www.babylonjs-playground.com/#6MZV8R)
+[glTF2 Playground example]( https://www.babylonjs-playground.com/#6MZV8R)
 
 # Usage
 The glTF file loader is a SceneLoader plugin.

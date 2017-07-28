@@ -8,12 +8,12 @@ In this tutorial, we are going to learn how to create basic elements using Babyl
 
 ![Elements](http://urbanproductions.com/wingy/babylon/misc/tut02pic.jpg)
 
-[**Playground Demo Scene 2 - Seven basic shapes/mesh**](http://www.babylonjs-playground.com/?2)
+[**Playground Demo Scene 2 - Seven basic shapes/mesh**]( https://www.babylonjs-playground.com/?2)
 
 ## How can I do this ?
-An easy way to get started using basic elements... is by visiting [**Playground Demo Scene 02**](http://www.babylonjs-playground.com/?2).  You might wish to use the 'Get .zip' choice on its top menu.  The index.html that you will receive in that zip... contains everything you will need to start making basic elements.  Remember that link, as we will talk more about it.
+An easy way to get started using basic elements... is by visiting [**Playground Demo Scene 02**]( https://www.babylonjs-playground.com/?2).  You might wish to use the 'Get .zip' choice on its top menu.  The index.html that you will receive in that zip... contains everything you will need to start making basic elements.  Remember that link, as we will talk more about it.
 
-I'm sure you have already read the  [**Babylon.js Primer**](http://doc.babylonjs.com/generals/A_Babylon.js_Primer) and the  [**previous tutorial**](http://doc.babylonjs.com/tutorials/Creating_a_Basic_Scene), and thus you know how to format scene files.  So, we won't talk about that, here.  We are going to go step by step through [**Playground Demo Scene 02**](http://www.babylonjs-playground.com/?2).  Open that link in a new tab or window, and then come back here, and we'll get started.
+I'm sure you have already read the  [**Babylon.js Primer**](http://doc.babylonjs.com/generals/A_Babylon.js_Primer) and the  [**previous tutorial**](http://doc.babylonjs.com/tutorials/Creating_a_Basic_Scene), and thus you know how to format scene files.  So, we won't talk about that, here.  We are going to go step by step through [**Playground Demo Scene 02**]( https://www.babylonjs-playground.com/?2).  Open that link in a new tab or window, and then come back here, and we'll get started.
 
 Starting with the box, we create various basic elements, and then position them at the end of the function (to keep them from being atop one another).  Let's talk about each of the basic shapes/meshes.  
 
@@ -232,13 +232,13 @@ This parameter is optional. If not given, the DEFAULT value is set.
 
 For instance, imagine you create a basic shape like a box, a sphere or a plane, and you don't give it a material.   
 If you go behind the plane or inside the box or the sphere, you will notice that the faces aren't visible any longer : Babylon.js mesh are often constructed with the default side orientation _FRONTSIDE_. This means that each side only has a front view.  
-Test it : http://www.babylonjs-playground.com/#14RNAU#4  
+Test it :  https://www.babylonjs-playground.com/#14RNAU#4  
 
 If you apply a test material to your mesh, set _material.backFaceCulling = false;_, and light it up, you will notice that the back (or internal) face... is now visible, but it doesn't reflect the light.  Same reason : the default side orientation is still _FRONTSIDE_.  
 *(You can disable _backFaceCulling_ with this _sideOrientation_ value)*
 
 Now, just change the _sideOrientation_ parameter in your mesh constructor... to _BABYLON.Mesh.BACKSIDE_.  (Remove your test material, too.)  You can only see the backs of planes, or only see the insides (internal faces) of the box and sphere.  
-Test it : http://www.babylonjs-playground.com/#14RNAU#5
+Test it :  https://www.babylonjs-playground.com/#14RNAU#5
 
 If you give your mesh some material, you can see that the light now only reflects on the back face (plane) or only inside (box, sphere, etc).  
 *(you can disable _backFaceCulling_ with this _sideOrientation_ value)*
@@ -246,7 +246,7 @@ If you give your mesh some material, you can see that the light now only reflect
 
 At last, change the _sideOrientation_ parameter to _BABYLON.Mesh.DOUBLESIDE_.  
 As you guessed, the mesh faces are now visible on both sides. And if you give it a material, the light then reflects from both sides, too.  
-Test it : http://www.babylonjs-playground.com/#14RNAU#6   
+Test it :  https://www.babylonjs-playground.com/#14RNAU#6   
 
 So why not always use _BABYLON.Mesh.DOUBLESIDE_ by default ?  
 
@@ -256,7 +256,7 @@ Because this value creates twice the vertices of a frontside mesh. In other term
 
 
 ### More Basic Elements - Grounds
-Up to this point, we have been talking about basic elements from our [**Playground Demo Scene 02**](http://www.babylonjs-playground.com/?2), but a few important mesh shapes (basic elements) are not included in that demo scene.  They are each ways of making 'ground' in Babylon.js.  Let's take a look: 
+Up to this point, we have been talking about basic elements from our [**Playground Demo Scene 02**]( https://www.babylonjs-playground.com/?2), but a few important mesh shapes (basic elements) are not included in that demo scene.  They are each ways of making 'ground' in Babylon.js.  Let's take a look: 
 
 * **Creation of a Ground**
 
@@ -266,7 +266,7 @@ var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
 
 Parameters are: name, width, depth, subdivs, scene
 
-Our [**Playground Demo Scene 01**](http://www.babylonjs-playground.com/?1) uses a CreateGround constructor... so you can see one in action by using the above link.
+Our [**Playground Demo Scene 01**]( https://www.babylonjs-playground.com/?1) uses a CreateGround constructor... so you can see one in action by using the above link.
 
 * **Creation of a Ground From HeightMap**
 

@@ -147,7 +147,7 @@ material.maxsimultaneousLights = 6;
 ```
 But beware! Because with more dynamic lights, Babylon.js will generate bigger shaders which may not be compatible with low end devices like mobiles or small tablets. In this case, babylon.js will try to recompile shaders with less lights.
 
-A demo with 6 lights can be found at our 'playground', [right here](http://www.babylonjs-playground.com/#IRVAX#0)
+A demo with 6 lights can be found at our 'playground', [right here]( https://www.babylonjs-playground.com/#IRVAX#0)
 
 ## Next step
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!

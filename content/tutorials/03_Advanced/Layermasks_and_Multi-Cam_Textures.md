@@ -115,5 +115,5 @@ function addGunSight(scene){
 ```
 
 See it in action:  
-http://www.babylonjs-playground.com/index.html#2GXKNW#18
+ https://www.babylonjs-playground.com/index.html#2GXKNW#18
 

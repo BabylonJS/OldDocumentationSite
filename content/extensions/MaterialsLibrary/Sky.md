@@ -16,7 +16,7 @@ In other words, for example, determine how the light (from sun) is scattered by 
 
 ## Playground example
 
-A Playground example can be found here: [Animate the sky](http://www.babylonjs-playground.com/#E6OZX#122)
+A Playground example can be found here: [Animate the sky]( https://www.babylonjs-playground.com/#E6OZX#122)
 
 Just press the following keys:
 * 1: Set Day

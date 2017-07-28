@@ -8,10 +8,10 @@ Here is the model inspired from  : http://www.cs.cmu.edu/afs/andrew/scs/cs/15-4
 
 Each triplet can then be used as a local system coordinate. You could set for example a camera on each normal sliding along a curve.
 
-Here is a simple example of the visualisation of the triplets on a sinus curve : http://www.babylonjs-playground.com/#2DLXYB  
+Here is a simple example of the visualisation of the triplets on a sinus curve :  https://www.babylonjs-playground.com/#2DLXYB  
 Please zoom in and rotate : tangents in red, normals in blue, binormal in green.  
 
-Another example to show how the triplets slightly rotate when the curve goes more into depth  : http://www.babylonjs-playground.com/#2DLXYB#1  
+Another example to show how the triplets slightly rotate when the curve goes more into depth  :  https://www.babylonjs-playground.com/#2DLXYB#1  
 
 Path3D creation :
 ```javascript

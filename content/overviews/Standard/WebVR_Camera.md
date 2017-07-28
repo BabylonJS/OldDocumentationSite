@@ -253,7 +253,7 @@ Just like the WebVR camera, the controllers export their (right handed!!) raw po
 
 ## WebVR Demo ?!?!?
 
-http://www.babylonjs-playground.com/#5MV04
+ https://www.babylonjs-playground.com/#5MV04
 
 Enjoy!
 

@@ -51,4 +51,4 @@ Here is a screenshot showing the previously mentioned blend modes:
 
 ![Available Blend Modes](http://i.imgur.com/2KTXUjT.png)
 
-This playground scene showcases the available blend modes in action: [http://www.babylonjs-playground.com/#1MSIXB#4](http://www.babylonjs-playground.com/#1MSIXB#4)
+This playground scene showcases the available blend modes in action: [ https://www.babylonjs-playground.com/#1MSIXB#4]( https://www.babylonjs-playground.com/#1MSIXB#4)

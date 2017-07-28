@@ -8,7 +8,7 @@ This tutorial is going to talk about the particle system in BabylonJS. Particles
 
 ![Particles](/img/tutorials/Particles/12.png)
 
-A picture of [the playground's ParticleSystem demo](http://www.babylonjs-playground.com/?12)
+A picture of [the playground's ParticleSystem demo]( https://www.babylonjs-playground.com/?12)
 
 ## How can I do this ?
 
@@ -156,7 +156,7 @@ And naturally stop it:
 particleSystem.stop();
 ```
 
-Feel free to play with this scene... [**at our online playground**](http://www.babylonjs-playground.com/?12).
+Feel free to play with this scene... [**at our online playground**]( https://www.babylonjs-playground.com/?12).
 
 ### customEffect (the fourth parameter in the constructor)
 
