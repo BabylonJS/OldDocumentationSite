@@ -131,7 +131,7 @@ This can be done very easily by following these steps:
 8. Head to content\classes
 9. Make sure there is no folder named like the version you want to build
 10. Open your command shell and run ```npm run build```
-10. Rebuild the doc: ```grunt build```
+11. Rebuild the doc: ```grunt build```
 
 ### How to structure your document to get a functional Table Of Content (TOC)
 
