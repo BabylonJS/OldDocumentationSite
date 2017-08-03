@@ -6,7 +6,7 @@ PG_TITLE: 04. Materials
 
 Now that you can create different basic mesh elements anywhere in the scene, we are going to give those meshes some materials, to define how those mesh look.
 
-![Elements](http://www.babylonjs.com/tutorials/04%20-%20Materials/04.png)
+![Elements](/img/tutorials/Materials/04.png)
 
 [**Playground Demo Scene 4 - Materials**](http://www.babylonjs.com/playground/?4)
 
@@ -53,7 +53,7 @@ That is done by setting the properties on the material.  Let's see what they ar
 
 * **Transparency** (alpha channel)
 
-Alpha compositing and transparency in general can be a bit complex. A specific article about that can be found [here](page.php?p=25100). You might also want to read [the wikipedia page about it](http://en.wikipedia.org/wiki/Alpha_compositing).  You will encounter even more uses for it when you enjoy the BabylonJS particle system, and BabylonJS sprites system. 
+Alpha compositing and transparency in general can be a bit complex. You might also want to read [the wikipedia page about it](http://en.wikipedia.org/wiki/Alpha_compositing).  You will encounter even more uses for it when you enjoy the BabylonJS particle system, and BabylonJS sprites system. 
 
  Alpha transparency, written in percent (%), can be applied to a material in this way:
 ```javascript
@@ -72,7 +72,7 @@ Or, you can use a texture:
 materialSphere1.diffuseTexture = new BABYLON.Texture("grass.png", scene);
 ```
 
-![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-1.png)
+![tof](/img/tutorials/Materials/04-1.png)
 
 **More About Textures:** Be sure to use the correct path to your image (relative or absolute path). Supported image formats include JPG, PNG, JPEG, BMP, GIF… (every image format supported by your browser).
 
@@ -159,7 +159,7 @@ Simply put, “back-face culling” determines whether or not a StandardMaterial
 
 In this example, the texture has some alpha, and back-face culling is set to false for the front sphere... in order to see its black inside face:
 
-![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-2.png)
+![tof](/img/tutorials/Materials/04-2.png)
 
 ```javascript
 materialSphere1.backFaceCulling = false;
@@ -173,7 +173,7 @@ You can see your object in wireframe mode... by using:
 materialSphere1.wireframe = true;
 ```
 
-![tof](http://www.babylonjs.com/tutorials/04%20-%20Materials/04-3.png)
+![tof](/img/tutorials/Materials/04-3.png)
 
 Again, you can see things from this tutorial... come to life... by browsing to [the Babylon.js Playground scene 4](http://www.babylonjs.com/playground/?4).
 

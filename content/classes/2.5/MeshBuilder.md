@@ -25,7 +25,7 @@ Please read this tutorial : http://doc.babylonjs.com/tutorials/CreateBox_Per_Fac
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -53,7 +53,7 @@ You can create an unclosed sphere on its height with the parameter `slice` (posi
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -77,7 +77,7 @@ You can create an unclosed polygon with the parameter `arc` (positive float, def
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -103,7 +103,7 @@ The parameter `flat` (boolean, default true) gives each side its own normals. Se
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -135,7 +135,7 @@ The optional parameter `instance` is an instance of an existing [Ribbon](/classe
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The optional parameter `invertUV` (boolean, default false) swaps in the geometry the U and V coordinates to apply a texture.
 
@@ -187,7 +187,7 @@ Example how to set colors and textures on a sliced cylinder : http://www.html5ga
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -211,7 +211,7 @@ The parameter `tessellation` sets the number of torus sides (postive integer, de
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -237,7 +237,7 @@ The parameters `p` and `q` are the number of windings on each axis (positive int
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -357,7 +357,7 @@ Remember you can only change the shape or path point positions, not their number
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The optional parameter `invertUV` (boolean, default false) swaps in the geometry the U and V coordinates to apply a texture.
 
@@ -429,7 +429,7 @@ Remember you can only change the shape or path point positions, not their number
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The optional parameter `invertUV` (boolean, default false) swaps in the geometry the U and V coordinates to apply a texture.
 
@@ -465,7 +465,7 @@ The parameter `cap` sets the way the extruded shape is capped. Possible values :
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The optional parameter `invertUV` (boolean, default false) swaps in the geometry the U and V coordinates to apply a texture.
 
@@ -491,7 +491,7 @@ The parameter `sourcePlane` is a [Plane](/classes/2.5/Plane) instance. It builds
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 
@@ -549,7 +549,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 
 Creates a ground mesh from a height map.
 
-tuto : http://doc.babylonjs.com/tutorials/14._Height_Map
+tuto : http://doc.babylonjs.com/tutorials/height_map
 
 tuto : http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#ground-from-a-height-map
 
@@ -621,7 +621,7 @@ The optional parameter `instance` is an instance of an existing Tube object to b
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The optional parameter `invertUV` (boolean, default false) swaps in the geometry the U and V coordinates to apply a texture.
 
@@ -659,7 +659,7 @@ The parameter `flat` (boolean, default true). If set to false, it gives the poly
 
 You can also set the mesh side orientation with the values : BABYLON.[Mesh](/classes/2.5/Mesh).FRONTSIDE (default), BABYLON.[Mesh](/classes/2.5/Mesh).BACKSIDE or BABYLON.[Mesh](/classes/2.5/Mesh).DOUBLESIDE
 
-Detail here : http://doc.babylonjs.com/tutorials/02._Discover_Basic_Elements#side-orientation
+Detail here : http://doc.babylonjs.com/tutorials/discover_basic_elements#side-orientation
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
 

@@ -1,1 +1,42 @@
-/classes              /classes/2.5
+/classes                                    /classes/3.0
+
+/tutorials/01._advanced_texturing           /tutorials/advanced_texturing
+/tutorials/02._discover_basic_elements      /tutorials/discover_basic_elements
+/tutorials/08._sprites                      /tutorials/sprites
+/tutorials/12._particles                    /tutorials/particles
+/tutorials/14._height_map                   /tutorials/height_map
+/tutorials/15._shadows                      /tutorials/shadows
+
+/tutorials/01._3d_on_the_web_understanding_the_basics       /tutorials/3d_on_the_web_understanding_the_basics
+/tutorials/02._webgl_basics                                 /tutorials/webgl_basics
+/tutorials/03._using_babylon.js_for_beginners               /tutorials/using_babylon.js_for_beginners
+/tutorials/04._understanding_materials_and_inputs           /tutorials/understanding_materials_and_inputs
+/tutorials/05._game_pipeline_integration_with_babylon.js    /tutorials/game_pipeline_integration_with_babylon.js
+/tutorials/06._loading_assets                               /tutorials/loading_assets
+/tutorials/07._babylon.js_advanced_features                 /tutorials/babylon.js_advanced_features
+/tutorials/08._special_effects                              /tutorials/special_effects
+
+/overviews/canvas2d_home                                    /extensions/canvas2d_home 
+/overviews/canvas2d_overview_architecture                   /extensions/canvas2d_overview_architecture 
+/overviews/canvas2d_classdiagram                            /extensions/canvas2d_classdiagram
+/overviews/canvas2d_canvas2d_type                           /extensions/canvas2d_canvas2d_type    
+/overviews/canvas2d_pcm                                     /extensions/canvas2d_pcm
+/overviews/canvas2d_designsize                              /extensions/canvas2d_designsize
+/overviews/canvas2d_wireframe2d                             /extensions/canvas2d_wireframe2d
+/overviews/canvas2d_visibility                              /extensions/canvas2d_visibility
+/overviews/canvas2d_zorder                                  /extensions/canvas2d_zorder
+/overviews/canvas2d_origin                                  /extensions/canvas2d_origin
+/overviews/canvas2d_postranshierarchy                       /extensions/canvas2d_postranshierarchy
+/overviews/canvas2d_prim_positioning                        /extensions/canvas2d_prim_positioning
+/overviews/canvas2d_interaction                             /extensions/canvas2d_interaction
+/overviews/canvas2d_shape2d                                 /extensions/canvas2d_shape2d
+/overviews/canvas2d_brushes                                 /extensions/canvas2d_brushes
+/overviews/canvas2d_prim2dbase                              /extensions/canvas2d_prim2dbase
+/overviews/canvas2d_group2d                                 /extensions/canvas2d_group2d
+/overviews/canvas2d_text2d                                  /extensions/canvas2d_text2d
+/overviews/canvas2d_sprite2d                                /extensions/canvas2d_sprite2d
+/overviews/canvas2d_atlaspicture                            /extensions/canvas2d_atlaspicture
+/overviews/canvas2d_rectangle2d                             /extensions/canvas2d_rectangle2d
+/overviews/canvas2d_rendering                               /extensions/canvas2d_rendering
+/overviews/canvas2d_ellipse2d                               /extensions/canvas2d_ellipse2d
+/overviews/canvas2d_lines2d                                 /extensions/canvas2d_lines2d

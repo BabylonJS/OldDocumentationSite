@@ -9,7 +9,7 @@ The last collision type could be very useful for you: it’s picking an object w
 Let’s see how we can get your mouse position transposed in your 3D scene by this gun shooting example:
 
 
-![Picking](http://www.babylonjs.com/tutorials/11%20-%20Collisions%20PickResult/11.png)
+![Picking](/img/tutorials/Collisions%20PickResult/11.png)
 
 _Final result_
 
@@ -43,7 +43,7 @@ if (pickResult.hit) {
 ```
 Fast, and easy, isn’t it?
 
-Feel free to play with this scene... [at our online playground](http://babylonjs-playground.azurewebsites.net/?11).
+Feel free to play with this scene... [at our online playground]( https://www.babylonjs-playground.com/?11).
 
 ## Advanced Picking Features
 

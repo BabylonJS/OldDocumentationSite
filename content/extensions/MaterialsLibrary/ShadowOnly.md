@@ -8,7 +8,7 @@ The goal of the ShadowOnlyMaterial is to display only shadows casted by a light 
 
 ShadowOnly material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.shadowOnlyMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.shadowOnlyMaterial.js)
 
-A demo can be found here: http://babylonjs-playground.com/#OBGRK#31
+A demo can be found here: https://www.babylonjs-playground.com/#1KF7V1
 
 ## Using the ShadowOnly material
 

@@ -17,7 +17,7 @@ BABYLON.Bone = function (name, skeleton, parentBone, matrix)
 
 Inside a skeleton, bones can be found inside the ```skeleton.bones``` array.
 
-A bone can contain [animations](http://doc.babylonjs.com/page.php?p=22081) to animate its ```matrix``` property.
+A bone can contain animations to animate its ```matrix``` property.
 
 ### Preparing mesh
 A skeleton can be applied to a mesh through the ```mesh.skeleton``` property.
@@ -114,7 +114,7 @@ sword.attachToBone(skeleton.bones[34], character);
 ```
 
 Please note that you also need to specify on which mesh the bone is currently applied.
-You can find a sample [here](http://www.babylonjs-playground.com/#11BH6Z#18)
+You can find a sample [here]( https://www.babylonjs-playground.com/#11BH6Z#18)
 
 ### Rotating, Positioning, and Scaling bones
 
@@ -129,34 +129,34 @@ To rotate a bone around an axis, use the rotate function:
 ```
 bone.rotate(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
-rotate world space [demo](http://www.babylonjs-playground.com/#D4ZZ8#2)
+rotate world space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#2)
 
-rotate local space [demo](http://www.babylonjs-playground.com/#D4ZZ8#4)
+rotate local space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#4)
 
 setAxisAngle, setYawPitchRoll, setRotation, or setRotationMatrix are used to rotate a bone to a specific rotation.
 
 ```
 bone.setAxisAngle(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
-setAxisAngle world space [demo 1](http://www.babylonjs-playground.com/#D4ZZ8#8), [demo 2](http://www.babylonjs-playground.com/#D4ZZ8#9)
+setAxisAngle world space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#8), [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#9)
 
-setAxisAngle local space [demo 1](http://www.babylonjs-playground.com/#D4ZZ8#10), [demo 2](http://www.babylonjs-playground.com/#D4ZZ8#11)
+setAxisAngle local space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#10), [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#11)
 ```
 bone.setYawPitchRoll(yaw, pitch, roll, BABYLON.Space.WORLD, mesh);
 ```
-[demo](http://www.babylonjs-playground.com/#I6RJJ#56)
+[demo]( https://www.babylonjs-playground.com/#I6RJJ#56)
 ```
 bone.setRotation(rotation, BABYLON.Space.WORLD, mesh);
 ```
-[demo](http://www.babylonjs-playground.com/#I6RJJ#60)
+[demo]( https://www.babylonjs-playground.com/#I6RJJ#60)
 ```
 bone.setRotationQuaternion(quat, BABYLON.Space.WORLD, mesh);
 ```
-[demo](http://www.babylonjs-playground.com/#I6RJJ#61)
+[demo]( https://www.babylonjs-playground.com/#I6RJJ#61)
 ```
 bone.setRotationMatrix(rotMat, BABYLON.Space.WORLD, mesh);
 ```
-[demo](http://www.babylonjs-playground.com/#I6RJJ#57)
+[demo]( https://www.babylonjs-playground.com/#I6RJJ#57)
 
 
 Use getRotation or getRotationToRef to get the Vector3 rotation of a bone.
@@ -169,7 +169,7 @@ var rotation = BABYLON.Vector3.Zero();
 
 bone.getRotationToRef(BABYLON.Space.WORLD, mesh, rotation);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#12)
+[demo]( https://www.babylonjs-playground.com/#1EVNNB#12)
 
 Use getRotationQuaternion or getRotationQuaternionToRef to get the Quaternion rotation of a bone.
 
@@ -181,7 +181,7 @@ var rotationQuaternion = BABYLON.Vector3.Zero();
 
 bone.getRotationQuaternionToRef(BABYLON.Space.WORLD, mesh, rotationQuaternion);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#11)
+[demo]( https://www.babylonjs-playground.com/#1EVNNB#11)
 
 #### Positioning
 
@@ -191,13 +191,13 @@ One way to do this is by translating the bone from its current position.
 ```
 bone.translate(x, y, z, BABYLON.Space.WORLD, mesh);
 ```
-[demo](http://www.babylonjs-playground.com/#1BZJVJ#32)
+[demo]( https://www.babylonjs-playground.com/#1BZJVJ#32)
 
 If you need to set the bone to a specific location, use setPosition.
 ```
 bone.setPosition(pos, BABYLON.Space.WORLD, mesh);
 ```
-[demo 1](http://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2](http://www.babylonjs-playground.com/#1BZJVJ#34)
+[demo 1]( https://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2]( https://www.babylonjs-playground.com/#1BZJVJ#34)
 
 To get the position of a bone, use getPosition or getPositionToRef.
 ```
@@ -208,7 +208,7 @@ var pos = BABYLON.Vector3.Zero();
 
 bone.getPositionToRef(BABYLON.Space.WORLD, mesh, pos);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#14)
+[demo]( https://www.babylonjs-playground.com/#1EVNNB#14)
 
 #### Scaling
 
@@ -216,17 +216,17 @@ You can scale a bone on the local x, y, z axes of the bone.
 ```
 bone.scale(scaleX, scaleY, scaleZ);
 ```
-[demo](http://www.babylonjs-playground.com/#1EVNNB#9)
+[demo]( https://www.babylonjs-playground.com/#1EVNNB#9)
 
 The setScale function is used to set a bone to a certain scale value.
 ```
 bone.setScale(scaleX, scaleY, scaleZ);
 ```
-setScale is used in this [demo](http://www.babylonjs-playground.com/#1EVNNB#10) every frame, because the character's animation resets the scale of the bones.
+setScale is used in this [demo]( https://www.babylonjs-playground.com/#1EVNNB#10) every frame, because the character's animation resets the scale of the bones.
 
 The last parameter of scale and setScale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone.
 
-[demo](http://www.babylonjs-playground.com/#1BZJVJ#30)
+[demo]( https://www.babylonjs-playground.com/#1BZJVJ#30)
 
 Use getScale or getScaleToRef to get the current scale of a bone.
 
@@ -262,7 +262,7 @@ scene.registerBeforeRender(function(){
 });
 ```
 
-[demo](http://www.babylonjs-playground.com/#1B1PUZ#15)
+[demo]( https://www.babylonjs-playground.com/#1B1PUZ#15)
 
 
 #### BoneIKController
@@ -306,7 +306,7 @@ scene.registerBeforeRender(function(){
 });
 ```
 
-[demo](http://www.babylonjs-playground.com/#1EVNNB#15)
+[demo]( https://www.babylonjs-playground.com/#1EVNNB#15)
 
 If you used a mesh for a target, you can hide it by setting enabled to false.
 ```

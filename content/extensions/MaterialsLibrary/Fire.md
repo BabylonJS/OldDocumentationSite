@@ -6,7 +6,7 @@
 
 Fire material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.fireMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.fireMaterial.js)
 
-A demo can be found here: http://www.babylonjs-playground.com/#21IIM9#1
+A demo can be found here:  https://www.babylonjs-playground.com/#21IIM9#1
 
 The fire material works with 3 textures:
 - The diffuse texture (fire texture)

@@ -22,7 +22,7 @@ pilot.position.y  =  y;
 pilot.position.z  =  z;
 ```
 
-See [Demo 1](http://www.babylonjs-playground.com/#UMR7M#5)
+See [Demo 1]( https://www.babylonjs-playground.com/#UMR7M#5)
 
 In this case a mathematician and game designer will agree 
 
@@ -53,7 +53,7 @@ Now a mathematician begins to get a little worried. Rotations are not commutativ
 
 A rotation of PI/2 about the y (vertical axis) is achieved by ```pilot.rotation =  new BABYLON.Vector3(0, Math.PI/2, 0);```
 
-See [Demo 2](http://www.babylonjs-playground.com/#UMR7M#27) and Fig 3.
+See [Demo 2]( https://www.babylonjs-playground.com/#UMR7M#27) and Fig 3.
 
 ![](https://lh3.googleusercontent.com/-yiEQHWq-Rnc/VW2qzX3rTgI/AAAAAAAAAEI/gE8n7Jf-AdQ/s210/fig3.jpg)
 Fig 3
@@ -72,7 +72,7 @@ You get the same result as just doing
 pilot.rotation = new new BABYLON.Vector3( Math.PI/2, 0, 0);
 ```
 
-This can be seen in [Demo 3](http://www.babylonjs-playground.com/#UMR7M#25) by commenting out pilot.rotation lines in turn.
+This can be seen in [Demo 3]( https://www.babylonjs-playground.com/#UMR7M#25) by commenting out pilot.rotation lines in turn.
 
 Just as pilot.position sets a position vector based from the world origin (0, 0, 0) so pilot.rotation sets, say, an 'orientation vector' starting from a local orientation matching the world orientation of (0, 0, 0). It is the last set rotation that is achieved.
 
@@ -93,15 +93,15 @@ pilot.rotation.y  =  alpha;
 ```
 since the rendering is done after the angles are set. In other words the order of setting rotations for x, y and z is not important.
 
-[Demo 4](http://www.babylonjs-playground.com/#UMR7M#11) shows an example with alpha = beta = gamma = PI/2 with the result is shown in Fig 4. 
+[Demo 4]( https://www.babylonjs-playground.com/#UMR7M#11) shows an example with alpha = beta = gamma = PI/2 with the result is shown in Fig 4. 
 
 ![](https://lh3.googleusercontent.com/-8hFr6rL0-AM/VW2qz8n4mMI/AAAAAAAAAEE/tqCnYgrRKLY/s210/fig4.jpg)
 Fig 4
 
 
-Commenting out different groups of lines in [Demo 4](http://www.babylonjs-playground.com/#UMR7M#11) shows that the order in which the x, y and z rotations are set makes no difference to the result.  The actual order is rotation around y first, then x then z.
+Commenting out different groups of lines in [Demo 4]( https://www.babylonjs-playground.com/#UMR7M#11) shows that the order in which the x, y and z rotations are set makes no difference to the result.  The actual order is rotation around y first, then x then z.
 
-To see that the rotations are around the local axis use [Demo 4](http://www.babylonjs-playground.com/#UMR7M#11) and 
+To see that the rotations are around the local axis use [Demo 4]( https://www.babylonjs-playground.com/#UMR7M#11) and 
 
 Step 1 comment out all rotation
 Step 2 comment out all rotations except 
@@ -150,7 +150,7 @@ you can use pilot.translate(vector, distance, space) to move the pilot the given
 
 The world space is set using BABYLON.Space.WORLD
 
-[Demo 5](http://www.babylonjs-playground.com/#UMR7M#14) using the vectors (3, 3, 3) and (2, 4, 1) with a distance of 1 shows that in the world space pilot.translate behaves like pilot.position set to these vectors.
+[Demo 5]( https://www.babylonjs-playground.com/#UMR7M#14) using the vectors (3, 3, 3) and (2, 4, 1) with a distance of 1 shows that in the world space pilot.translate behaves like pilot.position set to these vectors.
 
 Experimenting with the distance shows that the pilot moves distance * vector length.
 
@@ -166,7 +166,7 @@ The local space is set using BABYLON.Space.LOCAL.
 
 In the local space translate behaves as would a mathematical translate. That is, a sequence of translations is an accumulation of direction vectors as opposed to the setting of a position vector.
 
-[Demo 6](http://www.babylonjs-playground.com/#UMR7M#15) shows how the translation (3, 3, 3) followed by the translation (2, 4, 1) results in the translation (5, 7, 4).
+[Demo 6]( https://www.babylonjs-playground.com/#UMR7M#15) shows how the translation (3, 3, 3) followed by the translation (2, 4, 1) results in the translation (5, 7, 4).
 
 ### Rotate ###
 
@@ -178,9 +178,9 @@ NOTE
 
 #### The world space ####
 
-Rotations take place around the world-local-axes and are accumulative. This can be seen in [Demo 7](http://www.babylonjs-playground.com/#UMR7M#16).
+Rotations take place around the world-local-axes and are accumulative. This can be seen in [Demo 7]( https://www.babylonjs-playground.com/#UMR7M#16).
 
-Commenting the correct lines in [Demo 7](http://www.babylonjs-playground.com/#UMR7M#16) gives the sequence in Figs 6a, b, c, d.
+Commenting the correct lines in [Demo 7]( https://www.babylonjs-playground.com/#UMR7M#16) gives the sequence in Figs 6a, b, c, d.
 
 ![](https://lh3.googleusercontent.com/-5ti2Ahyaszg/VW2q1qwIOnI/AAAAAAAAADc/4Vomi3kXUvU/s210/fig6a.jpg)
 1[](https://lh3.googleusercontent.com/-oNmkqraiIkg/VW2q2OmbCsI/AAAAAAAAADk/Y8_s5Y35byo/s210/fig6b.jpg)
@@ -202,7 +202,7 @@ Fig 6d
 
 #### The local space ####
 
-[Demo 8](http://www.babylonjs-playground.com/#UMR7M#17) shows that the rotations take place around the local-axes and are accumulative. The stages are shown in Figs 7a, b, c, d, e
+[Demo 8]( https://www.babylonjs-playground.com/#UMR7M#17) shows that the rotations take place around the local-axes and are accumulative. The stages are shown in Figs 7a, b, c, d, e
 
 ![](https://lh3.googleusercontent.com/-9LHIGaanKrU/VW2q3T2kXFI/AAAAAAAAAEc/0Q0-fQr9SiE/s210/fig7a.jpg)
 ![](https://lh3.googleusercontent.com/-dpp79sOIFMg/VW2q3wemWSI/AAAAAAAAAEM/AoWev1t4ODU/s210/fig7b.jpg)
@@ -232,7 +232,7 @@ So what happens when pilot.translate is applied in the local space after rotatio
 
 Firstly when rotating in the world space the word-local-axes are used for rotation and these are then also used for pilot.translate(vector, distance, BABYLON.Space.LOCAL). See Figs 8a, b
 
-[Demo 9](http://www.babylonjs-playground.com/#UMR7M#20) can be used to play with WORLD rotations followed by LOCAL translations
+[Demo 9]( https://www.babylonjs-playground.com/#UMR7M#20) can be used to play with WORLD rotations followed by LOCAL translations
 
 ![](https://lh3.googleusercontent.com/-dFoKaUKuhco/VW2q6JTUs7I/AAAAAAAAAFA/Hys5M-c3F5k/s210/fig8a.jpg)
 ![](https://lh3.googleusercontent.com/-Di1IAnzgGeo/VW2q6VjteKI/AAAAAAAAAE4/_cV4zZnFnw8/s210/fig8b.jpg)
@@ -251,14 +251,14 @@ Fig 9 shows that the translation of (0, 0, -2) is still along the world-local-ax
 
 ![](https://lh3.googleusercontent.com/-F7SPrEzEACQ/VW2q7WOGJPI/AAAAAAAAAFE/UuZBKbLX4I8/s210/fig9.jpg)
 
-[Demo 10](http://www.babylonjs-playground.com/#UMR7M#36) can be used to play with LOCAL rotations followed by LOCAL translations.
+[Demo 10]( https://www.babylonjs-playground.com/#UMR7M#36) can be used to play with LOCAL rotations followed by LOCAL translations.
 
 
 #### What if you want to translate using the local axes following rotations? ####
 
 You use pilot.locallyTranslate(vector), where vector is a BABYLON.Vector3 giving the required translation.
 
-##### [Demo 11](http://www.babylonjs-playground.com/#UMR7M#35) can be used to play with WORLD rotations followed by translations applied locally. #####
+##### [Demo 11]( https://www.babylonjs-playground.com/#UMR7M#35) can be used to play with WORLD rotations followed by translations applied locally. #####
 
 Figs 10 a, b, c and d show the pilot rotations around the world-local-axes.
 
@@ -288,7 +288,7 @@ Fig 10d
 ![](https://lh3.googleusercontent.com/-g_R9L8SWcJ0/VW2qwXAKfLI/AAAAAAAAAB8/bI9zYIE33uU/s210/fig12.jpg)Fig 12
 
 
-##### [Demo 12](http://www.babylonjs-playground.com/#UMR7M#37) can be used to play with LOCAL rotations followed by translations applied locally. #####
+##### [Demo 12]( https://www.babylonjs-playground.com/#UMR7M#37) can be used to play with LOCAL rotations followed by translations applied locally. #####
 
 Figs 13 a, b, c and d show the pilot rotations around the local-axes.
 

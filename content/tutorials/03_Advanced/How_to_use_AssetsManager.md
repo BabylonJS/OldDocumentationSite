@@ -80,7 +80,7 @@ assetsManager.load();
 ```
 
 * You can see a live demo [here](http://www.babylonjs.com/scenes/assets)
-* Playground demo [here](http://www.babylonjs-playground.com/#ZJYNY#0)
+* Playground demo [here]( https://www.babylonjs-playground.com/#ZJYNY#0)
 
 ## Using loading screen
 

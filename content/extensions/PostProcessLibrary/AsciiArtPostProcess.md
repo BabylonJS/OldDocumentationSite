@@ -23,7 +23,7 @@ Then, you only need to instantiate the post process attach to your main camera t
 var postProcess = new BABYLON.AsciiArtPostProcess("AsciiArt", camera);
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#0)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#0)
 
 ## Going further
 
@@ -34,7 +34,7 @@ The first you can do is changing the font used in the post process.
 var postProcess = new BABYLON.AsciiArtPostProcess("AsciiArt", camera, "10px Monospace");
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#1)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#1)
 
 But you could also play with more parameters:
 
@@ -49,7 +49,7 @@ var postProcess = new BABYLON.AsciiArtPostProcess("AsciiArt", camera,
     });
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#5)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#5)
 
 The availables parameters are:
 
@@ -71,5 +71,5 @@ scene.registerBeforeRender(function() {
 });
 ```
 
-[**Playground Demo Scene**](http://babylonjs-playground.com/#2I28SC#3)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#2I28SC#3)
 

@@ -8,7 +8,7 @@ Fire procedural texture can be found here:
 - Normal: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.fireProceduralTexture.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.fireProceduralTexture.js)
 - Minified : [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.fireProceduralTexture.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.fireProceduralTexture.min.js)
 
-A demo can be found here: http://www.babylonjs-playground.com/#KM3TC
+A demo can be found here:  https://www.babylonjs-playground.com/#KM3TC
 
 This texture has 4 parameters :
 - **time** can be set manually(float) if autoGenerateTime(boolean) is set to false. It is used inside the fire shader to animate it

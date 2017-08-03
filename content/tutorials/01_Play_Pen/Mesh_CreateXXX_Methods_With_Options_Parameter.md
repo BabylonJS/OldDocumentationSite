@@ -106,7 +106,7 @@ sourcePlane|_(Plane)_ source plane (math) the mesh will be transformed to|null
 #### Ground
 Example :
 ```javascript
-var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivsions: 4}, scene);
+var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivisions: 4}, scene);
 ```
 Properties, all optional :
 
@@ -120,7 +120,7 @@ subdivisions|_(number)_ number of square subdivisions|1
 #### Ground From a Height Map
 Example :
 ```javascript
-var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("gdhm", url, {width: 6, subdivsions: 4}, scene);
+var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("gdhm", url, {width: 6, subdivisions: 4}, scene);
 ```
 Don't forget the _url_ parameter.
 
@@ -139,7 +139,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 #### Tiled Ground
 Example :
 ```javascript
-var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivsions: {w:4, h:6} }, scene);
+var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivisions: {w:4, h:6} }, scene);
 ```
 Properties, all optional :
 
@@ -245,7 +245,7 @@ type|name|side number
 13|Elongated Pentagonal Dipyramid (J16)|15
 14|Elongated Pentagonal Cupola (J20)|22
 
-If you need to use a custom polyhedron (http://www.babylonjs-playground.com/#21QRSK#1 : minimize the code editor with the button "EDITOR-" to see polyhedron names under the mouse pointer) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
+If you need to use a custom polyhedron ( https://www.babylonjs-playground.com/#21QRSK#1 : minimize the code editor with the button "EDITOR-" to see polyhedron names under the mouse pointer) instead of the provided ones, you will find the full sample file here : https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
 Just copy/paste the wanted polyhedron object in your code like this :
 
 ```javascript
@@ -476,6 +476,62 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
+#### Polygon
+You must set at least the _shape_ property.
+
+Example :
+```javascript
+var polygon = BABYLON.MeshBuilder.CreatePolygon("polygon", {shape: myShape, sideOrientation: BABYLON.Mesh.DOUBLESIDE, frontUVs: myFrontUVs, backUVs: myBackUVs}, scene);
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 | []
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+
+All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
+
+Both frontUVs and backUVs have the form Vector4(u0,v0,u1,v1) with 0&gt;=  u0,v0,u1,v1 &lt;= 1 and 
+(u0, v0) are the bottom left coordinates and (u1, v1) the top right coordinates of the clipping rectangle 
+of the image.
+
+[A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#2)
+
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+
+#### Extruded Polygon
+You must set at least the _shape_ and _depth_ properties.
+
+Example :
+```javascript
+var polygon = BABYLON.MeshBuilder.ExtrudePolygon("polygon", {shape: myShape, depth: 2, faceUV: myUVs}, scene);
+```
+Properties :
+
+property|value|default value
+--------|-----|-------------
+shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
+depth|_(number)_  the depth of the extrusion **REQUIRED** |
+faceColors|_(Color4[])_ array of 3 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
+faceUV|_(Vector4[])_ array of 3 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
+holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 | [] 
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE
+
+All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
+
+To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
+
+face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
+
+[Playground Example of Extruded Polygon]( https://www.babylonjs-playground.com/#RNCYVM#2)
+
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
 
 <br/>
 <br/>

@@ -53,82 +53,12 @@ router.get('/', function (req, res) {
     // if any keywords in 'keywords', launch search on each element of this array; else
     // render default search page with a message
     if(keywords.length != 0){
-
         var searchResult = []; // the set of result to be rendered on the page
         var resultByCat = []; // an array that will contain the number of result per category
 
         async.each(keywords, function(keyword, cb1){
-
-            async.eachSeries(req.app.locals.indexes, function(index, cb2){
-
-                var results = index.search(keyword);
-
-                var uniqueResults = [];
-
-                async.eachSeries(results, function(result, cb3){
-                    result = processSearchResult(result);
-
-                    var reg = new RegExp(_.escapeRegExp(keyword), 'i');
-
-                    if (reg.test(result.text)){
-                        if (!_.some(uniqueResults, {src: result.src})){
-                            var result = {
-                                src: result.src,
-                                url: req.protocol + '://' + req.get('host') + "/" + result.src,
-                                name: result.name,
-                                version: result.version,
-                                occurrences: 1
-                            };
-
-                            if(includeAbstracts){
-                                
-                                var staticCategory = statics[result.version];
-                                var found = false;
-                                if(staticCategory){
-                                    for(var partId = 0; partId < staticCategory.length; partId++){
-                                        var part = staticCategory[partId];
-                                        if(part.files){
-                                            for(var fileId = 0; fileId < part.files.length; fileId++){
-                                                var fileinfo = part.files[fileId];
-                                                if(fileinfo.title === result.name && fileinfo.abstract){
-                                                    result.abstract = fileinfo.abstract;
-                                                    found = true;
-                                                }
-                                            }
-                                            
-                                            if(found)
-                                                break;
-                                        }
-                                    }
-                                }
-                            }
-
-                            // first occurrence
-                            uniqueResults.push(result);
-
-                        } else {
-                            // result.src already been added; increment result's counter
-                            var i = _.findIndex(uniqueResults, function(r){
-                                return r.src === result.src;
-                            });
-
-                            uniqueResults[i].occurrences += 1;
-
-                        }
-                    }
-
-                    cb3();
-
-                }, function(){
-                    if(uniqueResults.length > 0){
-                        searchResult = searchResult.concat(uniqueResults);
-                    }
-                    cb2();
-                });
-
-            }, function(){
-                cb1();
-            });
+        
+            cb1();
 
         }, function(){
 

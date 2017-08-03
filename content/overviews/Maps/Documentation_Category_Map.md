@@ -3,9 +3,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a Basic Scene](/tutorials/Creating_a_Basic_Scene)  
 &nbsp;&nbsp;&nbsp;&nbsp;[The Playground Tutorial](/generals/The_Playground_Tutorial)  
 ****  
-**BabylonHx**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Introduction](/extensions/introduction_babylonhx)  
-****  
 **Bones Advanced**  
 &nbsp;&nbsp;&nbsp;&nbsp;[How to use Bones and Skeletons](/tutorials/How_to_use_Bones_and_Skeletons)  
 ****  
@@ -21,11 +18,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Using depth-of-field and other lens effects](/tutorials/Using_depth-of-field_and_other_lens_effects)  
 ****  
 **Canvas2d Basics**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Canvas 2D overview and architecture](/overviews/Canvas2D_Overview_Architecture)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Canvas 2D overview and architecture](/extensions/Canvas2D_Overview_Architecture)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the Canvas2D](/tutorials/Using_the_Canvas2D)  
 ****  
 **Canvas2d Intermediate**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Canvas 2D Home](/overviews/Canvas2D_Home)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Canvas 2D Home](/extensions/Canvas2D_Home)  
 ****  
 **Canvas2d Advanced**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating your own primitive type for the Canvas2D](/tutorials/How_to_create_your_own_Canvas2D_primitive)  
@@ -93,28 +90,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a Small 3D Game with Babylon.js](/tutorials/Creating_a_Small_3D_Game_with_Babylon.js)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using WebGL to Create Games for the Windows Store](/tutorials/Using_WebGL_to_Create_Games_for_the_Windows_Store)  
 ****  
-**GUI -  CastorGUI**  
-&nbsp;&nbsp;&nbsp;&nbsp;[CastorGUI](/extensions/CastorGUI)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIButton](/extensions/GUIButton)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUICheckbox](/extensions/GUICheckbox)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIColor](/extensions/GUIColor)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIDialog](/extensions/GUIDialog)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIFieldset](/extensions/GUIFieldset)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIGroup](/extensions/GUIGroup)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUILabel](/extensions/GUILabel)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIManager](/extensions/GUIManager)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIMeter](/extensions/GUIMeter)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIPanel](/extensions/GUIPanel)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIProgress](/extensions/GUIProgress)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIRadio](/extensions/GUIRadio)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUISelect](/extensions/GUISelect)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUISlider](/extensions/GUISlider)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUISpinner](/extensions/GUISpinner)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIText](/extensions/GUIText)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUITextarea](/extensions/GUITextarea)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUITextfield](/extensions/GUITextfield)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUITextures](/extensions/GUITextures)  
-&nbsp;&nbsp;&nbsp;&nbsp;[GUIWindow](/extensions/GUIWindow)  
+**GUI**  
+&nbsp;&nbsp;&nbsp;&nbsp;[Bbaylon GUI](/overview/gui)  
 ****  
 **Lights Basics**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Lights](/tutorials/Lights)  
@@ -134,7 +111,6 @@
 **Loader Intermediate**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Caching Resources in IndexedDB](/tutorials/Caching_Resources_in_IndexedDB)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a custom loading screen](/tutorials/Creating_a_custom_loading_screen)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Loading a Scene Produced with Blender](/tutorials/Loading_a_Scene_Produced_with_Blender)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the Incremental Loading System](/tutorials/Using_the_Incremental_Loading_System)  
 ****  
 **Loader Advanced**  
@@ -257,13 +233,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[The Babylon.js Sandbox and Editor](/tutorials/The_Babylon.js_Sandbox_and_Editor)  
 ****  
 **Videos**  
-&nbsp;&nbsp;&nbsp;&nbsp;[3D on the Web Understanding the Basics](/tutorials/01._3D_on_the_Web_Understanding_the_Basics)  
+&nbsp;&nbsp;&nbsp;&nbsp;[3D on the Web Understanding the Basics](/tutorials/3D_on_the_Web_Understanding_the_Basics)  
 &nbsp;&nbsp;&nbsp;&nbsp;[3D Programming with WebGL and Babylon.js for Beginners](/tutorials/Zenva_course)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Babylon.js Advanced Features](/tutorials/07._Babylon.js_Advanced_Features)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Game Pipeline Integration with Babylon.js](/tutorials/05._Game_Pipeline_Integration_with_Babylon.js)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Loading Assets](/tutorials/06._Loading_Assets)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Special Effects](/tutorials/08._Special_Effects)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Understanding Materials and Inputs](/tutorials/04._Understanding_Materials_and_Inputs)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Using Babylon.js for Beginners](/tutorials/03._Using_Babylon.js_for_Beginners)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Babylon.js Advanced Features](/tutorials/Babylon.js_Advanced_Features)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Game Pipeline Integration with Babylon.js](/tutorials/Game_Pipeline_Integration_with_Babylon.js)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Loading Assets](/tutorials/Loading_Assets)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Special Effects](/tutorials/Special_Effects)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Understanding Materials and Inputs](/tutorials/Understanding_Materials_and_Inputs)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Using Babylon.js for Beginners](/tutorials/Using_Babylon.js_for_Beginners)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Video courses](/tutorials/Video_courses)  
-&nbsp;&nbsp;&nbsp;&nbsp;[WebGL Basics](/tutorials/02._WebGL_Basics)  
+&nbsp;&nbsp;&nbsp;&nbsp;[WebGL Basics](/tutorials/WebGL_Basics)  

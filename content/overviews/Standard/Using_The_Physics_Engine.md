@@ -133,7 +133,7 @@ sphere.physicsImpostor = new BABYLON.PhysicsImpostor(sphere, BABYLON.PhysicsImpo
 ground.physicsImpostor = new BABYLON.PhysicsImpostor(ground, BABYLON.PhysicsImpostor.BoxImpostor, { mass: 0, restitution: 0.9 }, scene);
 ```
 
-Playground example: http://www.babylonjs-playground.com/#BEFOO
+Playground example:  https://www.babylonjs-playground.com/#BEFOO
 
 ### Further functionality of the Impostor class
 In the example above, you noticed I kept a reference of the physics impostor attached to the sphere and the ground. This is not mandatory, but it is recommended to keep a reference of this object in order to interact with the physics body.
@@ -145,10 +145,10 @@ The physics impostor holds a set of functions that can be executed on the physic
 The physics impostor synchronizes the physics engine's body and the connected object with each frame.
 That means that changing the object's position or rotation in Babylon code will also move the impostor. The impostor is also the one updating the object's position after the physics engine is finished calculating the next step.
 
-Playground example (sphere rotation and position) - http://www.babylonjs-playground.com/#B5BDU
+Playground example (sphere rotation and position) -  https://www.babylonjs-playground.com/#B5BDU
 Notice how the sphere rotates (due to the rotate function), but this rotation is not being taken into account by the physics engine.
 
-Playground example (box rotation and position) - http://www.babylonjs-playground.com/#2ADVLV
+Playground example (box rotation and position) -  https://www.babylonjs-playground.com/#2ADVLV
 In this case, the rotation does influence the physics engine due to the geometric shape - a box standing on its edge will need to fall to either side, which influences its velocities.
 
 #### Linear velocity
@@ -165,7 +165,7 @@ To set the object's linear velocity use:
 impostor.setLinearVelocity(new BABYLON.Vector3(0,1,0));
 ```
 
-Playground example - http://www.babylonjs-playground.com/#BXII
+Playground example -  https://www.babylonjs-playground.com/#BXII
 
 The physics engine is in charge of calculating the body's velocity. Changing it will not make it fixed, but give it a "push". The physics engine will take the velocity into account and will modify it using gravity and collision interactions.
 
@@ -184,7 +184,7 @@ To set the object's linear velocity use:
 impostor.setAngularVelocity(new BABYLON.Quaternion(0,1,0,0));
 ```
 
-Playground example - http://www.babylonjs-playground.com/#IGM3H
+Playground example -  https://www.babylonjs-playground.com/#IGM3H
 
 Same as the linear velocity - setting this value will only cause the physics engine to recalculate the body dynamics. The value will not stay fixed.
 
@@ -203,8 +203,8 @@ impostor.applyImpulse(new BABYLON.Vector3(10, 10, 0), sphere.getAbsolutePosition
 
 The first variable is the direction and amount of impulse to apply. The second is where on the body itself the force will be applied. Using this in a game of pool - you can hit the ball at various contact point locations and the interaction will vary (sometimes called "using English"). This is the way to simulate that.
 
-Playground example - http://www.babylonjs-playground.com/#26LQEZ
-Playground example with a different position of the impulse, giving the ball a "spin" - http://www.babylonjs-playground.com/#26LQEZ#1
+Playground example -  https://www.babylonjs-playground.com/#26LQEZ
+Playground example with a different position of the impulse, giving the ball a "spin" -  https://www.babylonjs-playground.com/#26LQEZ#1
 
 #### Collision callbacks
 
@@ -219,7 +219,7 @@ sphereImpostor.registerOnPhysicsCollide(groundImpostor, function(main, collided)
 
 Note that in this case, I assumed the impostor's body is a mesh with a material.
 
-Playground example - http://www.babylonjs-playground.com/#1NASOD
+Playground example -  https://www.babylonjs-playground.com/#1NASOD
 
 Notice that the callback will be executed each and every time both impostors collide, but will stop when they are touching (when the sphere no longer bounces).
 
@@ -270,8 +270,8 @@ Babylon has 3 help-classes to add joints:
 
 `BABYLON.DistanceJoint` , `BABYLON.HingeJoint`, `BABYLON.Hinge2Joint`.
 
-DistanceJoint playground - http://www.babylonjs-playground.com/#26QVLZ 
-SpringJoint example - http://www.babylonjs-playground.com/#1BHF6C
+DistanceJoint playground -  https://www.babylonjs-playground.com/#26QVLZ 
+SpringJoint example -  https://www.babylonjs-playground.com/#1BHF6C
 
 ### Interaction with the physics engine
 
@@ -283,13 +283,13 @@ The physics engine assumes a certain frame-rate to be taken into account when ca
 The time between each step can be changed to "accelerate" or "slow down" the physics interaction. 
 Here is the same scene with different time steps - accelerating and slowing down:
 
-Default time step - http://www.babylonjs-playground.com/#2B84TV
-Slowing down - http://www.babylonjs-playground.com/#2B84TV#1
-Speeding up - http://www.babylonjs-playground.com/#2B84TV#2
+Default time step -  https://www.babylonjs-playground.com/#2B84TV
+Slowing down -  https://www.babylonjs-playground.com/#2B84TV#1
+Speeding up -  https://www.babylonjs-playground.com/#2B84TV#2
 
 #### Setting the scene's gravity
 
 You can change the scene's gravity using the physics engine's `setGravity(vector3)` function.
 This can be done in real time, even after setting the gravity:
 
-Playground demo (click to toggle positive/negative gravity) - http://www.babylonjs-playground.com/#A2WGF
+Playground demo (click to toggle positive/negative gravity) -  https://www.babylonjs-playground.com/#A2WGF

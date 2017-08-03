@@ -53,13 +53,13 @@ SPS.billboard = true; // or false by default
 SPS.setParticles();
 ```
 `SPS.billboard` is a boolean (default _false_). If set to _true_, all the particles will face the cam and their _x_ and _y_ rotation values will be ignored.  
-This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/tutorials/12._Particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/08._Sprites) which are more performant in 2D computation.  
+This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) which are more performant in 2D computation.  
 In order to display the SPS in billboard mode, you need to call `SPS.setParticles()` within the `scene.registerBeforeRender()` function.  
 
-Here is an example with plane particles in billboard mode : http://www.babylonjs-playground.com/#WCDZS#7    
-The same but with plane particle rotations and no billboard mode : http://www.babylonjs-playground.com/#WCDZS#1  
-The same with solid particles, boxes and tetrahedrons : http://www.babylonjs-playground.com/#WCDZS#2  
-Another one with colors and rotations : http://www.babylonjs-playground.com/#2FPT1A#9  
+Here is an example with plane particles in billboard mode :  https://www.babylonjs-playground.com/#WCDZS#7    
+The same but with plane particle rotations and no billboard mode :  https://www.babylonjs-playground.com/#WCDZS#1  
+The same with solid particles, boxes and tetrahedrons :  https://www.babylonjs-playground.com/#WCDZS#2  
+Another one with colors and rotations :  https://www.babylonjs-playground.com/#2FPT1A#9  
 
 
 ### Particle Management
@@ -198,7 +198,7 @@ This function doesn't do anything, you have to implement it.
 It doesn't draw the mesh, it just changes the particle initial status that will be taken in account by the next `SPS.setParticle()` call.
 The same thing with `SPS.recycleParticle(particle)` what is not called automatically and that you have to implement by your own and to call when you need.  
 
-Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/tutorials/12._Particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/08._Sprites) :  
+Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) :  
 
 The Particle System is the most performant in terms of speed and of particle quantity.  
 The particles are 2D quads, have all the same texture and colour. They ever face the screen, so they can have only a z-axis rotation. They aren't z-sorted and aren't pickable.  
@@ -222,7 +222,7 @@ In order to have only one draw call to the GPU, these three systems use only one
 ## Advanced Features
 ### Create an immutable SPS
 You may have to create many similar objects in your scene that won't change afterwards : buildings in the distance, asteroids, scraps, etc. It may thus be useful to use the SPS to set only one mesh in your scene, so one draw call for the rendering.  
-Example : http://www.babylonjs-playground.com/#2FPT1A#5  
+Example :  https://www.babylonjs-playground.com/#2FPT1A#5  
 
 You can achieve this by two different ways.  
 * You can just build your SPS as explained before and then call just once `setParticles()`, before and outside the render loop, to set your particles where and how you need.  
@@ -285,7 +285,7 @@ var mesh = SPS.buildMesh();
 ```
 In this former example, each box particle will have its own rotation, position, scaling and uvs set once for all at construction time. As the mesh is not updatable, the particles are then not manageable with `setParticles()`.  
 You've got here a real immutable mesh. You can still translate it, rotate it, scale it globally as any other mesh until you freeze its World Matrix.  
-Example : a town with 80 000 buildings http://www.babylonjs-playground.com/#2FPT1A#36  
+Example : a town with 80 000 buildings  https://www.babylonjs-playground.com/#2FPT1A#36  
 
 Note that this feature (modifying the mesh at construction time) is not directly related to the mesh `updatable` parameter. This means you can use it even with a default _updatable_ mesh although it is easier to set the particles the classical war with `setParticles()`.  
 
@@ -308,7 +308,7 @@ Of course you can use the both properties together :
 ```javascript
 SPS.addShape(box, 150, {vertexFunction: myVertexFunction, positionFunction: myPositionFunction});
 ```
-Example with asteroids : http://www.babylonjs-playground.com/#2FPT1A#2  
+Example with asteroids :  https://www.babylonjs-playground.com/#2FPT1A#2  
 
 Note that you can also create some immutable objects rendered with only one draw call by using either `MergeMesh()` ([tutorial](http://doc.babylonjs.com/tutorials/How_to_Merge_Meshes)), etheir [Instances](http://doc.babylonjs.com/tutorials/How_to_use_Instances).
 <br/>
@@ -383,8 +383,8 @@ SPS.mesh.material.useAlphaFromDiffuseTexture = true;
 ```
 Please read this [documentation](http://doc.babylonjs.com/tutorials/Transparency_and_How_Meshes_Are_Rendered) for transparency concerns.  
 
-Color and UVs example : http://www.babylonjs-playground.com/#WCDZS#8  
-Texture with alpha : http://www.babylonjs-playground.com/#WCDZS#9  
+Color and UVs example :  https://www.babylonjs-playground.com/#WCDZS#8  
+Texture with alpha :  https://www.babylonjs-playground.com/#WCDZS#9  
 
 <br/>
 ### Update Each Particle Shape
@@ -426,8 +426,8 @@ function setParticles() {
     afterUpdateParticles();                 // your ustom function
 }
 ```
-Example : http://www.babylonjs-playground.com/#1X7SUN#5  
-or dancing worms : http://www.babylonjs-playground.com/#1X7SUN#7  
+Example :  https://www.babylonjs-playground.com/#1X7SUN#5  
+or dancing worms :  https://www.babylonjs-playground.com/#1X7SUN#7  
 
 ### Pickable Particles
 You can set your particles as pickable with the parameter `isPickable` (default _false_) when creating your SPS :
@@ -459,8 +459,8 @@ scene.onPointerDown = function(evt, pickResult) {
 };
 ```
 The SPS pickability is directly related to the size of its bounding box (please read 'SPS Visibility' part). So, in order to make sure your particles will be pickable, don't forget to force, at least once, the bounding box size recomputation once the particles are set in the space with `setParticles()`.  
-Pickable particle example (no SPS update in the render loop) : http://www.babylonjs-playground.com/#2FPT1A#41  
-Pickable particle example (particle rotation) : http://www.babylonjs-playground.com/#2FPT1A#14  
+Pickable particle example (no SPS update in the render loop) :  https://www.babylonjs-playground.com/#2FPT1A#41  
+Pickable particle example (particle rotation) :  https://www.babylonjs-playground.com/#2FPT1A#14  
 
 ### Digest a Mesh
 There is another way than adding shapes of meshes used as models to populate the SPS : you can directly "digest" a mesh.  
@@ -499,7 +499,7 @@ SPS.digest(model, {facetNb: 10, delta: 30});   // between 10 and 40 facets per p
 model.dispose();
 SPS.buildMesh();
 ```
-Example (click on the torus knot) : http://www.babylonjs-playground.com/#HDHQN  
+Example (click on the torus knot) :  https://www.babylonjs-playground.com/#HDHQN  
 
 ### SPS Visibility
 To render the meshes on the screen, BJS uses their bounding box (BBox) : if the BBox is in the frustum, then the mesh is selected to be rendered on the screen. This method is really performant as it avoids to make the GPU compute things that wouldn't be visible. The BBox of each mesh is recomputed when its World Martix is updated.    
@@ -563,13 +563,13 @@ The precise mode has a CPU significant cost, so it's not recommended to use it w
 // for instance, in your SPS.updateParticle(p) function : precise mode, mesh / particle
 if (someMesh.intersectsMesh(p, true)) { // change p velocity vector }
 ```
-Example : http://www.babylonjs-playground.com/#10RCC9  
+Example :  https://www.babylonjs-playground.com/#10RCC9  
 
 For a SPS having thousands of particles, computing the bounding box for each particle each frame is still a heavy CPU operation. So, if you need more performance and if you don't mind about the intersection accurary, you may choose to limit the computation to the particle bounding sphere only (a bounding box requires 8 iterations per particle, one for each box vertex) by using the optional boolean parameter `boundingSphereOnly` (default _false_) at SPS creation.  
 ```javascript
 var SPS = new SolidParticleSystem("sps", scene, {particleIntersection: true, boundingSphereOnly: true});
 ```  
-Example : http://www.babylonjs-playground.com/#2BXZC#2   
+Example :  https://www.babylonjs-playground.com/#2BXZC#2   
 
 As you may know, a mesh -so a solid particle- is inside its bounding box and its bounding box is inside its bounding sphere. So the bounding sphere is bigger than the bounding box, what is bigger than the mesh.  
 If your particles look like some some tiny spherical objects and if you use the `boundingSphereOnly` mode, you would probably like to tweak the bounding sphere to make it closer to the embedded particle.  
@@ -578,7 +578,7 @@ Imagine that your particle is a spherical shape with a radius of R.  Its boundin
 ```javascript
 var SPS = new SolidParticleSystem("sps", scene, {particleIntersection: true, boundingSphereOnly: true, bSphereRadiusFactor: 1 / Math.sqrt(3)});
 ```
-Example : http://www.babylonjs-playground.com/#29F0EG#2  
+Example :  https://www.babylonjs-playground.com/#29F0EG#2  
 
 At last, in case you are using the `boundingSphereOnly` mode, just remember that the particle bounding box isn't computed, only its bouding sphere, so don't test the intersection from a **mesh** object :
 ```javascript
@@ -591,29 +591,28 @@ particle.intersectsMesh(mesh);  // will give the right bounding sphere intersect
 ### Garbage Collector Concerns  
 In Javascript, the Garbage Collector is usually your friend : it takes care about cleaning up all the not any longer needed variables you could have declared and thus it sets the memory free.  
 However, it can sometimes become an awkward friend because it can start its cleaning just while you are displaying a very smooth animation, so it takes the CPU for itself and leaves to you only those nice lags on the screen.  
-So the best to do to avoid this GC unpredictable behavior is to keep as low as possible the creation of temporary objects or variables in the render loop.  
-As you know now, `updateParticle()` and `updateParticleVertex()` are called each frame for each particle or each particle vertex. 
-So imagine that you have a SPS with 30 000 particles. What if you code something like that to simulate some particle acceleration :  
+In order to avoid unpredictable GC pauses, it's best to avoid allocating new objects in loops that execute often, where particles are created or updated.  
+For example, `updateParticle()` and `updateParticleVertex()` are often called each frame for each particle or each particle vertex. Now imagine that you have a SPS with 30 000 particles. Suppose you write code like this to add a particle acceleration :  
 ```javascript
 SPS.updateParticle = function(particle) {
-    var velStep = 0.05;
-    particle.velocity += velStep;
+    var accel = new BABYLON.Vector3(0, 0.5, 0);
+    particle.velocity = particle.velocity.add(accel);
     // ...
 }
 ```
-The _velStep_ temporary variable will be created 30 000 times and then be requested then for collection by the GC !  
-So it is better to declare once _velStep_ outside the `udpateParticle()` method.  
-The SPS provides to you a way to declare once all your variable needed for it at its own level instead of creating global variables.  
-Just use the SPS `vars` property :
+Code like the above would create two new `Vector3` objects each call, or 60 000 new objects over the course of the update. And although modern JS engines are quite good at cleaning up short-lived objects, it's best not to unnecessarily strain the GC this way.  
+Instead, make your update loops reuse variables that were declared outside the loop, and don't call any methods inside the loop that create new objects:
 ```javascript
-SPS.vars.velStep = 0.05;
+var accel = new BABYLON.Vector3(0, 0.5, 0);
 SPS.updateParticle = function(particle) {
-    particle.velocity += SPS.vars.velStep;
+    particle.velocity.addInPlace(accel);
     // ...
 }
 ```
-This will allow you to keep these variables in the SPS object only (and as long as the SPS will exist) and to clean them up gracefully when you will dispose it.  
+SPS also has a `vars` property, which is an object that you can use to store any variables you want to reuse. Any variables you store there will share the SPS' lifecycle, and get cleaned up when you dispose it:
 ```javascript
+SPS.vars.tempVector = new BABYLON.Vector3(0, 0, 0);
+// ...
 SPS.dispose();  // cleans explicitly all your SPS.vars !
 ```
 A good JS practice for the compiler is to **never** change the variable type once it has been set :
@@ -623,7 +622,7 @@ SPS.vars.myInt = 5;        // just keep setting integer values to myInt afterwar
 SPS.vars.myString = "foo"; // just keep setting string values to myString afterwards
 ```
 Example : From this [article](http://gamedevelopment.tutsplus.com/tutorials/the-three-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444), here is an implementation of a simple particle IA called "flocking" what a behavior of association, then cohesion and separation. This example uses `SPS.vars` to allocate the memory used for results only once instead of in-function temporary variables.     
-http://www.babylonjs-playground.com/#2FPT1A#35   
+ https://www.babylonjs-playground.com/#2FPT1A#35   
 
 ### Rebuild the mesh
 if a mesh, changed at creation time with `positionFunction` or `vertexFunction` has been then modified with `setParticles()`, it can be rebuild by reapplying the internally stored `positionFunction` or `vertexFunction` functions.  

@@ -14,9 +14,26 @@ include includes/header.pug
 
             .searchplaygroundbar
                 form(method='get', action='/playground')
-                    input(type='text', name='q', placeholder='Search in playgrounds...')
+                    input(type='text', name='q', placeholder='Search in titles, desc...')
                     button(type='submit')
                         i.fa.fa-search
 
+            .searchplaygroundbar
+                form(method='get', action='/playground')
+                    input(type='text', name='tag', placeholder='Search in tags...')
+                    button(type='submit')
+                        i.fa.fa-search
+
+            .searchplaygroundbar
+                form(method='get', action='/playground')
+                    input(type='text', name='code', placeholder='Search in code...')
+                    button(type='submit')
+                        i.fa.fa-search
+
+            p#lastSearch
+
     include includes/footer.pug
+    // HIGHLIGHT JS
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/javascript.min.js')
     script(src='/js/search_playground.js')

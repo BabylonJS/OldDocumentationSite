@@ -4,7 +4,7 @@
 
 ## Playground Example
 
-A Playground example can be found here: [Tri-Planar Playground](http://www.babylonjs-playground.com/#E6OZX#9)
+A Playground example can be found here: [Tri-Planar Playground]( https://www.babylonjs-playground.com/#E6OZX#9)
 
 Press "1" to activate the Tri-Planar material (by default)
 Press "2" to active the default material

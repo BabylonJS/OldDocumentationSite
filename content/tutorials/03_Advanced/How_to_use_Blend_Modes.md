@@ -43,7 +43,6 @@ Or you can assign an opacity texture to its material (even if the opacity textur
  material_base.opacityTexture = material_base.diffuseTexture;
 ```
 
-To know more about alpha-blending and how alpha-blended meshes are handled, please refer to this article: http://doc.babylonjs.com/page.php?p=25100
 
 
 # Examples #
@@ -52,4 +51,4 @@ Here is a screenshot showing the previously mentioned blend modes:
 
 ![Available Blend Modes](http://i.imgur.com/2KTXUjT.png)
 
-This playground scene showcases the available blend modes in action: [http://www.babylonjs-playground.com/#1MSIXB#4](http://www.babylonjs-playground.com/#1MSIXB#4)
+This playground scene showcases the available blend modes in action: [ https://www.babylonjs-playground.com/#1MSIXB#4]( https://www.babylonjs-playground.com/#1MSIXB#4)

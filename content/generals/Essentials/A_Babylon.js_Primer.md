@@ -20,7 +20,7 @@ Simply put, you will need to use a browser that supports WebGL and has Javascrip
 | [**BabylonJS Main Website**](http://www.babylonjs.com/) |  Many great demos and useful links near the bottom |
 | [**BabylonJS Forum**](http://www.html5gamedevs.com/forum/16-babylonjs) | Ask questions, help others, meet great friends |
 | [**BabylonJS Documentation**](http://doc.babylonjs.com) | Our fantastic docs site |
-| [**BabylonJS Playground**](http://babylonjs-playground.azurewebsites.net) |  On-line white-boarding and scene-testing app |
+| [**BabylonJS Playground**]( https://www.babylonjs-playground.com) |  On-line white-boarding and scene-testing app |
 
 ## Scene File Layout ##
 
@@ -77,7 +77,7 @@ See the 'createScene' function in the left-side code editing window?  Does it lo
 
 Let's pretend that you have been working on a scene file at home, and after many tries, you just cannot get it to work properly.  You could copy your home createScene function, then visit the playground, press its **CLEAR** button to empty its editor window, and then paste YOUR createScene function into the editor. Press the playground's **RUN** button and see if it works.  If it does not work, you can do some changes in the editor window, and hit **RUN** again... and again, and again.  Experiment with it there, and if you still cannot get it to work, you can press the **SAVE** button.  When you do that, the playground will give your scene a unique URL.  It will look something like this:
 
-http://babylonjs-playground.azurewebsites.net/#QKQHS
+ https://www.babylonjs-playground.com/#QKQHS
 
 Now you can bookmark that unique URL, and then visit the Babylon.js forum at:
 
@@ -90,11 +90,10 @@ This is called white-boarding.  It is an easy way to allow many people to work o
 ## More About The Playground ##
 Once again let's visit the saved playground scene that I sent you to, above.
 
-http://babylonjs-playground.azurewebsites.net/#QKQHS
+ https://www.babylonjs-playground.com/#QKQHS
 
 This time, I would like you to press the **Get .zip** button.  The playground will open a small panel allowing you to download this scene.  Save the zip file in some new empty folder on your home computer.  Now use an UNZIP utility program to unzip it.  Notice that there is one file in the folder, called index.html.  Please load that file into a text editor or programming editor.  Does it look like the big picture above?  Sure it does.  ANY scene from the Babylon.js playground, including its pre-installed demo scenes, can be brought to your home with the **Get .zip** button.  Most of them will look very similar to the big picture, above.
 
-There is a tutorial for the Babylon.js playground.  Just [**click here**](http://doc.babylonjs.com/page.php?p=22631).
 
 Wow, this is a lot of information, isn't it?  You have learned what a scene file (the big picture) looks like, you have learned about its important createScene() function and how copy'n'paste portable it is.  You have seen a createScene() function in the Babylon.js playground, and you have been introduced to the playground's RUN, SAVE, and Get .zip buttons.
 
@@ -104,7 +103,7 @@ You are becoming a Babylon.js TOOLS expert.  When I say 'tools', I mean... you h
  
 I would like you to visit the Babylon.js Playground once again (open in a new window or new tab, if possible), but this time we will visit its base URL at:
 
-http://babylonjs-playground.azurewebsites.net
+ https://www.babylonjs-playground.com
 
 Notice the button that is currently labeled **Basic Scene**.  (It is actually called the Scene Selector button, but it is currently LABELED 'Basic Scene')
 
@@ -312,7 +311,7 @@ As you toured the Babylon.js Playground demo scenes, you surely saw some .positi
 
 **POSITION** - Every mesh is POSITIONED in a scene using X, Y, and Z settings.  You can think of the .position property... as the mesh's LOCATION.  The link below... is a saved playground scene that illustrates using a mesh's .position property.  Try to open it in a new window or new tab, so you can jump back and forth between this tutorial... and the playground scene:
 
-http://babylonjs-playground.azurewebsites.net/#35CPC
+ https://www.babylonjs-playground.com/#35CPC
 
 In the yellow text at the top of the scene, you will see the Babylon.js one-line way to set mybox.position (using our friend... the Vector3 value object).
 
@@ -324,13 +323,13 @@ Watch this positioning demo scene for some time, if you please.  It will not tak
 
 Let's take a look at a playground scene that I once created and saved.  In this demo, I made those invisible rods... be visible:
 
-http://babylonjs-playground.azurewebsites.net/#YIT1S
+ https://www.babylonjs-playground.com/#YIT1S
 
 Take some time to carefully watch that scene.  Like the last demo scene, the yellow text shows a Vector3 being used to set the .rotation property with some computer-generated values.  The box is shown doing positive and negative rotations around each of the 3 axes.  Under the yellow text... you again see the green text...  showing the 3 'discrete' ways to set the box's .rotation property with values.  I bet you understand this completely, don't you?  Easy.
 
 **SCALING** - Scaling... is stretching or shrinking... along any of the 3 scene axes.  Let's jump right into a saved playground scene that demonstrates scaling:
 
-http://babylonjs-playground.azurewebsites.net/#1VMQNH
+ https://www.babylonjs-playground.com/#1VMQNH
 
 Again, take some time to watch the scene.  And once more, the yellow text shows the one-line Vector3 way of setting a mesh's .scaling, or you can use one or more of the discrete ways of setting scaling... shown in the green text. You may have noticed that scaling values are never negative.  It would be illogical to use a negative scaling value, and if you decide to use some negative values, unexpected results may occur.
 

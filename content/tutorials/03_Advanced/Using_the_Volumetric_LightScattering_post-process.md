@@ -3,7 +3,7 @@ ID_PAGE: 24840
 PG_TITLE: Using the Volumetric LightScattering post-process
 ---
 BABYLON.VolumetricLightScatteringPostProcess is a post-process that will compute the light scattering according to a light source mesh.
-Don't hesitate to perform your tests using the playground [here](http://www.babylonjs-playground.com/?25)
+Don't hesitate to perform your tests using the playground [here]( https://www.babylonjs-playground.com/?25)
 
 ## How to use it ? Easily ##
 
@@ -94,15 +94,15 @@ vls.mesh.material.diffuseTexture= new BABYLON.Texture(...);
 
 Feel free to tour some examples of Volumetric LightScattering in the playground :
 
-- [Base demo](http://www.babylonjs-playground.com/?25)
-- [Spherical Harmonics as source](http://babylonjs-playground.azurewebsites.net/#HYFQJ) (hit RUN again and again for this one)
-- [VLS through CSG-created slots](http://babylonjs-playground.azurewebsites.net/#UUXLX#11)
+- [Base demo]( https://www.babylonjs-playground.com/?25)
+- [Spherical Harmonics as source]( https://www.babylonjs-playground.com/#HYFQJ) (hit RUN again and again for this one)
+- [VLS through CSG-created slots]( https://www.babylonjs-playground.com/#UUXLX#11)
 
 <!-- 
-- [Colorful experiment](http://babylonjs-playground.azurewebsites.net/#1XOMH0)
-- [Video texture as source](http://babylonjs-playground.azurewebsites.net/#1ELQC1)
-- [Particles as source #1](http://babylonjs-playground.azurewebsites.net/#2L5DBX)
-- [Particles as source #2](http://babylonjs-playground.azurewebsites.net/#MYY6S#5)
+- [Colorful experiment]( https://www.babylonjs-playground.com/#1XOMH0)
+- [Video texture as source]( https://www.babylonjs-playground.com/#1ELQC1)
+- [Particles as source #1]( https://www.babylonjs-playground.com/#2L5DBX)
+- [Particles as source #2]( https://www.babylonjs-playground.com/#MYY6S#5)
 -->
 
 Have fun !

@@ -56,6 +56,14 @@ The color of this layer
 
 
 
+### layerMask : number
+
+The layer mask
+
+@default 0xFFFFFFFF
+
+
+
 ### onDisposeObservable : [Observable](/classes/2.5/Observable)&lt;[Layer](/classes/2.5/Layer)&gt;
 
 An event triggered when the layer is disposed.

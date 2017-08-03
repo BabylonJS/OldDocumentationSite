@@ -125,6 +125,10 @@
           "filename": "Position,_Rotate,_Translate_and_Spaces"
         },
         {
+          "title": "Using PolygonMeshBuilder",
+          "filename": "PolygonMeshBuilder"
+        },
+        {
           "title": "Advanced Texturing",
           "filename": "Advanced_Texturing"
         },
@@ -167,6 +171,10 @@
         {
           "title": "Multi-Platform Compressed Textures",
           "filename": "Multi-Platform_Compressed_Textures"
+        },
+        {
+          "title": "BabylonJS in an Ionic Angular app",
+          "filename": "BabylonJS_and_Ionic_Angular"
         }
       ]
     },
@@ -211,6 +219,10 @@
         {
           "title": "How to use Bones and Skeletons",
           "filename": "How_to_use_Bones_and_Skeletons"
+        },
+        {
+          "title": "How to use Morph targets",
+          "filename": "How_to_use_MorphTargets"
         },
         {
           "title": "How to use Curve3",
@@ -289,10 +301,6 @@
           "filename": "Using_depth-of-field_and_other_lens_effects"
         },
         {
-          "title": "Using the HDR Rendering Pipeline",
-          "filename": "Using_the_HDR_Rendering_Pipeline"
-        },
-        {
           "title": "Using the SSAO rendering pipeline",
           "filename": "Using_the_SSAO_rendering_pipeline"
         },
@@ -335,7 +343,15 @@
         {
           "title": "Using the standard rendering pipeline",
           "filename": "Using_Standard_Rendering_Pipeline"
-        }
+        },
+        {
+          "title": "Using the default rendering pipeline",
+          "filename": "Using_Default_Rendering_Pipeline"
+        },
+        {
+          "title": "How materials work",
+          "filename": "How_materials_work"
+        }       
       ]
     },
     {
@@ -346,35 +362,35 @@
       "files": [
         {
           "title": "3D on the Web Understanding the Basics",
-          "filename": "01._3D_on_the_Web_Understanding_the_Basics"
+          "filename": "3D_on_the_Web_Understanding_the_Basics"
         },
         {
           "title": "WebGL Basics",
-          "filename": "02._WebGL_Basics"
+          "filename": "WebGL_Basics"
         },
         {
           "title": "Using Babylon.js for Beginners",
-          "filename": "03._Using_Babylon.js_for_Beginners"
+          "filename": "Using_Babylon.js_for_Beginners"
         },
         {
           "title": "Understanding Materials and Inputs",
-          "filename": "04._Understanding_Materials_and_Inputs"
+          "filename": "Understanding_Materials_and_Inputs"
         },
         {
           "title": "Game Pipeline Integration with Babylon.js",
-          "filename": "05._Game_Pipeline_Integration_with_Babylon.js"
+          "filename": "Game_Pipeline_Integration_with_Babylon.js"
         },
         {
           "title": "Loading Assets",
-          "filename": "06._Loading_Assets"
+          "filename": "Loading_Assets"
         },
         {
           "title": "Babylon.js Advanced Features",
-          "filename": "07._Babylon.js_Advanced_Features"
+          "filename": "Babylon.js_Advanced_Features"
         },
         {
           "title": "Special Effects",
-          "filename": "08._Special_Effects"
+          "filename": "Special_Effects"
         },
         {
           "title": "Video courses",
@@ -431,10 +447,6 @@
         {
           "title": "Installing the Babylon Exporter",
           "filename": "Installing__the_Babylon_Exporter"
-        },
-        {
-          "title": "Working with Blender",
-          "filename": "Working_with_Blender"
         }
       ]
     },
@@ -491,18 +503,6 @@
       ]
     },
     {
-      "title": "BabylonHx",
-      "name": "BabylonHx",
-      "img": "img/extensions/BabylonHx/babylonhx.png",
-      "desc": "A cross-platform 3D engine",
-      "files": [
-        {
-          "title": "Introduction",
-          "filename": "introduction_babylonhx"
-        }
-      ]
-    },
-    {
       "title": "Materials library",
       "name": "MaterialsLibrary",
       "img": "img/extensions/materials.jpg",
@@ -551,6 +551,10 @@
         {
           "title": "Shadow Only",
           "filename": "ShadowOnly"
+        },
+        {
+          "title": "Cell Shading",
+          "filename": "Cell"
         }
       ]
     },
@@ -603,250 +607,6 @@
         {
           "title": "Using the Digital Rain post-process",
           "filename": "DigitalRainPostProcess"
-        }
-      ]
-    },
-    {
-      "title": "POV",
-      "name": "POV",
-      "img": "img/extensions/POV.jpg",
-      "desc": "Learn how to use POV.",
-      "files": [
-        {
-          "title": "POV",
-          "filename": "POV"
-        }
-      ]
-    },
-    {
-      "title": "Tree Generators",
-      "name": "Tree_Generators",
-      "img": "img/tutorials/trees.png",
-      "desc": "How to generate trees.",
-      "files": [
-        {
-          "title": "Simple Pine Generator",
-          "filename": "Simple_Pine_Generator"
-        },
-        {
-          "title": "SPS Tree Generator",
-          "filename": "SPS_Tree_Generator"
-        },
-        {
-          "title": "Quick Tree Generator",
-          "filename": "Quick_Tree_Generator"
-        }
-      ]
-    },
-    {
-      "title": "Editor",
-      "name": "Editor",
-      "img": "img/extensions/editor.png",
-      "desc": "Learn how to use the official editor",
-      "files": [
-        {
-          "title": "Introduction",
-          "filename": "Introduction"
-        },
-        {
-          "title": "Getting Started",
-          "filename": "Getting_Started"
-        },
-        {
-          "title": "Managing Animations",
-          "filename": "Managing_Animations"
-        },
-        {
-          "title": "Creating Cinematic",
-          "filename": "Creating_Cinematic"
-        },
-        {
-          "title": "Creating Particle Systems",
-          "filename": "Creating_Particle_Systems"
-        },
-        {
-          "title": "Creating Materials",
-          "filename": "Creating_Materials"
-        },
-        {
-          "title": "Managing Materials",
-          "filename": "Managing_Materials"
-        },
-        {
-          "title": "Managing Lens Flare Systems",
-          "filename": "Managin_Lens_Flare_Systems"
-        },
-        {
-          "title": "Using the Actions Builder",
-          "filename": "Using_Actions_Builder"
-        },
-        {
-          "title": "Using the Post-Process Builder (for developers)",
-          "filename": "Using_Post_Process_Builder"
-        }
-      ]
-    },
-    {
-      "title": "CastorGUI",
-      "name": "CastorGUI",
-      "img": "img/extensions/CastorGUI.png",
-      "desc": "Learn how to use CastorGUI.",
-      "files": [
-        {
-          "title": "CastorGUI",
-          "filename": "CastorGUI"
-        },
-        {
-          "title": "GUIButton",
-          "filename": "GUIButton"
-        },
-        {
-          "title": "GUICheckbox",
-          "filename": "GUICheckbox"
-        },
-        {
-          "title": "GUIColor",
-          "filename": "GUIColor"
-        },
-        {
-          "title": "GUIDialog",
-          "filename": "GUIDialog"
-        },
-        {
-          "title": "GUIFieldset",
-          "filename": "GUIFieldset"
-        },
-        {
-          "title": "GUIGroup",
-          "filename": "GUIGroup"
-        },
-        {
-          "title": "GUILabel",
-          "filename": "GUILabel"
-        },
-        {
-          "title": "GUIManager",
-          "filename": "GUIManager"
-        },
-        {
-          "title": "GUIMeter",
-          "filename": "GUIMeter"
-        },
-        {
-          "title": "GUIPanel",
-          "filename": "GUIPanel"
-        },
-        {
-          "title": "GUIProgress",
-          "filename": "GUIProgress"
-        },
-        {
-          "title": "GUIRadio",
-          "filename": "GUIRadio"
-        },
-        {
-          "title": "GUISelect",
-          "filename": "GUISelect"
-        },
-        {
-          "title": "GUISlider",
-          "filename": "GUISlider"
-        },
-        {
-          "title": "GUISpinner",
-          "filename": "GUISpinner"
-        },
-        {
-          "title": "GUIText",
-          "filename": "GUIText"
-        },
-        {
-          "title": "GUITextarea",
-          "filename": "GUITextarea"
-        },
-        {
-          "title": "GUITextfield",
-          "filename": "GUITextfield"
-        },
-        {
-          "title": "GUITextures",
-          "filename": "GUITextures"
-        },
-        {
-          "title": "GUIWindow",
-          "filename": "GUIWindow"
-        }
-      ]
-    }
-  ],
-  "overviews": [
-    {
-      "title": "All",
-      "name": "All",
-      "img": "img/tutorials/All.png",
-      "desc": "All overviews."
-    },
-    {
-      "title": "Maps",
-      "name": "Maps",
-      "img": "img/tutorials/All.png",
-      "desc": "Documentation Category Map",
-      "files": [
-        {
-          "title": "Documentation Category Map",
-          "filename": "Documentation_Category_Map"
-        }
-      ]
-    },
-    {
-      "title": "Standard",
-      "name": "Standard",
-      "img": "img/tutorials/All.png",
-      "desc": "First level feature exploration",
-      "files": [
-        {
-          "title": "How Rotations and Translations Work",
-          "filename": "How_Rotations_and_Translations_Work"
-        },
-        {
-          "title": "How to use the Solid Particle System",
-          "filename": "Solid_Particle_System"
-        },
-        {
-          "title": "Physics Engine - Basic Usage",
-          "filename": "Using_The_Physics_Engine"
-        },
-        {
-          "title": "Playing sounds and music",
-          "filename": "Playing_sounds_and_music"
-        },
-        {
-          "title": "Handling Babylon.js events with observables",
-          "filename": "Observables"
-        },
-        {
-          "title": "WebGL2 support",
-          "filename": "WebGL2"
-        },
-        {
-          "title": "Using the WebVR Camera",
-          "filename": "WebVR_Camera"
-        }
-      ]
-    },
-    {
-      "title": "PBR",
-      "name": "PBR",
-      "img": "img/extensions/materials/PBRMaterial.jpg",
-      "desc": "All about the Physically Based Rendering material",
-      "files": [
-        {
-          "title": "Introduction to Physically Based Rendering",
-          "filename": "Physically_Based_Rendering"
-        },
-        {
-          "title": "Master the Physically Based Rendering",
-          "filename": "Physically_Based_Rendering_Master"
         }
       ]
     },
@@ -977,6 +737,182 @@
       ]
     },
     {
+      "title": "Tree Generators",
+      "name": "Tree_Generators",
+      "img": "img/tutorials/trees.png",
+      "desc": "How to generate trees.",
+      "files": [
+        {
+          "title": "Simple Pine Generator",
+          "filename": "Simple_Pine_Generator"
+        },
+        {
+          "title": "SPS Tree Generator",
+          "filename": "SPS_Tree_Generator"
+        },
+        {
+          "title": "Quick Tree Generator",
+          "filename": "Quick_Tree_Generator"
+        }
+      ]
+    },
+    {
+      "title": "Cloner System",
+      "name": "ClonerSystem",
+      "img": "images/matrixCloner.jpg",
+      "desc": "Cloning meshes systematically",
+      "files": [
+        {
+          "title": "Radial Cloner",
+          "filename": "RadialCloner"
+        },
+        {
+          "title": "Linear Cloner",
+          "filename": "LinearCloner"
+        },
+        {
+          "title": "Matrix Cloner",
+          "filename": "MatrixCloner"
+        },
+        {
+          "title": "Object Cloner",
+          "filename": "ObjectCloner"
+        },
+        {
+          "title": "Random Effector",
+          "filename": "RandomEffector"
+        }
+      ]
+    },    
+    {
+      "title": "Editor",
+      "name": "Editor",
+      "img": "img/extensions/editor.png",
+      "desc": "Learn how to use the official editor",
+      "files": [
+        {
+          "title": "Introduction",
+          "filename": "Introduction"
+        },
+        {
+          "title": "Getting Started",
+          "filename": "Getting_Started"
+        },
+        {
+          "title": "Managing Animations",
+          "filename": "Managing_Animations"
+        },
+        {
+          "title": "Creating Cinematic",
+          "filename": "Creating_Cinematic"
+        },
+        {
+          "title": "Creating Particle Systems",
+          "filename": "Creating_Particle_Systems"
+        },
+        {
+          "title": "Creating Materials",
+          "filename": "Creating_Materials"
+        },
+        {
+          "title": "Managing Materials",
+          "filename": "Managing_Materials"
+        },
+        {
+          "title": "Managing Lens Flare Systems",
+          "filename": "Managin_Lens_Flare_Systems"
+        },
+        {
+          "title": "Using the Actions Builder",
+          "filename": "Using_Actions_Builder"
+        },
+        {
+          "title": "Using the Post-Process Builder (for developers)",
+          "filename": "Using_Post_Processes_Builder"
+        },
+        {
+          "title": "Using the Materials Builder (for developers)",
+          "filename": "Using_Materials_Builder"
+        }
+      ]
+    }   
+  ],
+  "overviews": [
+    {
+      "title": "All",
+      "name": "All",
+      "img": "img/tutorials/All.png",
+      "desc": "All overviews."
+    },
+    {
+      "title": "Maps",
+      "name": "Maps",
+      "img": "img/tutorials/All.png",
+      "desc": "Documentation Category Map",
+      "files": [
+        {
+          "title": "Documentation Category Map",
+          "filename": "Documentation_Category_Map"
+        }
+      ]
+    },
+    {
+      "title": "Standard",
+      "name": "Standard",
+      "img": "img/tutorials/All.png",
+      "desc": "First level feature exploration",
+      "files": [
+        {
+          "title": "How Rotations and Translations Work",
+          "filename": "How_Rotations_and_Translations_Work"
+        },
+        {
+          "title": "How to use the Solid Particle System",
+          "filename": "Solid_Particle_System"
+        },
+        {
+          "title": "Physics Engine - Basic Usage",
+          "filename": "Using_The_Physics_Engine"
+        },
+        {
+          "title": "Playing sounds and music",
+          "filename": "Playing_sounds_and_music"
+        },
+        {
+          "title": "Handling Babylon.js events with observables",
+          "filename": "Observables"
+        },
+        {
+          "title": "WebGL2 support",
+          "filename": "WebGL2"
+        },
+        {
+          "title": "Using the WebVR Camera",
+          "filename": "WebVR_Camera"
+        },
+        {
+          "title": "Babylon.GUI: How to create 2D and 3D UI",
+          "filename": "Gui"
+        }
+      ]
+    },
+    {
+      "title": "PBR",
+      "name": "PBR",
+      "img": "img/extensions/materials/PBRMaterial.jpg",
+      "desc": "All about the Physically Based Rendering material",
+      "files": [
+        {
+          "title": "Introduction to Physically Based Rendering",
+          "filename": "Physically_Based_Rendering"
+        },
+        {
+          "title": "Master the Physically Based Rendering",
+          "filename": "Physically_Based_Rendering_Master"
+        }
+      ]
+    },
+    {
       "title": "Inspector",
       "name": "Inspector",
       "img": "img/tutorials/All.png",
@@ -1029,7 +965,7 @@
           "filename": "playgrounds"
         },
         {
-          "title": "How to start to contribute to Babylon.js",
+          "title": "How to start contributing to Babylon.js",
           "filename": "how_to_start"
         },
         {
@@ -1051,10 +987,6 @@
         {
           "title": "Setup Visual Studio to contribute to Babylon.js",
           "filename": "setup_visualStudio"
-        },
-        {
-          "title": "Roadmap",
-          "filename": "Roadmap"
         }
       ]
     }

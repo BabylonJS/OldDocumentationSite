@@ -54,12 +54,12 @@ include includes/banner.pug
             code.github.js.
                 yourAwesomeProject
                     |- index.html
-                    |- babylon.2.3.js
+                    |- babylon.js
             code.github.ts.
                 yourAwesomeProject
                     |- index.html
-                    |- babylon.2.3.js
-                    |- babylon.2.3.d.ts
+                    |- babylon.js
+                    |- babylon.d.ts
         p.
             We will only code in the <code>index.html</code> file to keep it as simple and concise as possible. The HTML
             document begins as follow:
@@ -71,7 +71,7 @@ include includes/banner.pug
                     &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
                     &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
                     &lt;!-- link to the last version of babylon --&gt;
-                    &lt;script src="babylon.2.3.debug.js"&gt;&lt;/script&gt;
+                    &lt;script src="babylon.2.5.js"&gt;&lt;/script&gt;
                 &lt;/head&gt;
                 &lt;body&gt;
                     &lt;canvas id="renderCanvas"&gt;&lt;/canvas&gt;
@@ -149,13 +149,13 @@ include includes/banner.pug
                     // create a basic light, aiming 0,1,0 - meaning, to the sky
                     var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
 
-                    // create a built-in "sphere" shape; its constructor takes 5 params: name, width, depth, subdivisions, scene
+                    // create a built-in "sphere" shape; its constructor takes 4 params: name, subdivisions, radius, scene
                     var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
 
                     // move the sphere upward 1/2 of its height
                     sphere.position.y = 1;
 
-                    // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
+                    // create a built-in "ground" shape; its constructor takes 5 params: name, width, height, subdivisions and scene
                     var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
 
                     // return the created scene
