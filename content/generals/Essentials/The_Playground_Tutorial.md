@@ -90,7 +90,7 @@ If you save that scene again... the URL will increment, and look like this:
 
 (Again, be sure to bookmark this URL so you can easily return to it later)
 
-And lastly, if you want to load a specific pre-installed demo scene, such as the #12 Particles demo, you can use a URL that looks like this:
+If you want to load a specific pre-installed demo scene, such as the #12 Particles demo, you can use a URL that looks like this:
 
  https://www.babylonjs-playground.com/?12
 
@@ -99,6 +99,11 @@ And lastly, if you want to load a specific pre-installed demo scene, such as the
 **Maintaining Your Focus**  
 Sometimes, you will run a scene and use your cursor keys and mouse in the rendering canvas, and then want to 'focus' back to the editor... to make some more code changes.  Often, you will need to mouse-click somewhere in the editor area to give the editor focus again.  Once the editor has focus, your cursor keys will, once again, move the editor's cursor.  This happens most often when a Babylon FreeCamera is the active camera.
 
+**Wrong Error Line-Numbers in Console**
+The BJS Playground uses a "mini-fied" (compressed) version of BabylonJS, by default. This causes framework errors seen in the console... to have useless line numbers and click-throughs. If you wish to have GOOD line numbers and click-throughs for Playground console errors, activate the playground in _debug mode_.  Use URLS like these:
+
+https://www.babylonjs-playground.com/debug#PBVEM#140
+https://www.babylonjs-playground.com/debug.html
 
 **And... That's A Wrap**  
 Hey, thanks for reading this tutorial and for discovering the BabylonJS playground.  We are very proud of it, and we think you will enjoy using it.  This tutorial is still quite new, and will likely be changing often.  Be sure to check back for updates and future features.
