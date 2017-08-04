@@ -1,6 +1,6 @@
 ---
 ID_PAGE: 20
-PG_TITLE: How to use 3DS Max plugin
+PG_TITLE: 3DSMax
 ---
 # Installing the 3DS Max plugin 
 
