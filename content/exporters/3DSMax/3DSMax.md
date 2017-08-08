@@ -44,13 +44,13 @@ Congratulations! You did it!
 
 * _Lights_
     * Omni / spot / directional / Ambient(Hemispheric)
-    * Shadows maps for directional lights (Variance shadow maps can be actived by checking [ABsoulte Map Bias] in light properties)
+    * Shadows maps for directional lights (Variance shadow maps can be actived by checking [Absolute Map Bias] in light properties)
     * Inclusion / exclusion lists
     * Position / direction
     * Intensity
     * Diffuse
     * Specular
-    * Animations: Position, Direction, intensity
+    * Animations: Position, direction, intensity
 
 * _Meshes_
     * Visibility

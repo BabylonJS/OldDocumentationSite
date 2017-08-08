@@ -345,7 +345,7 @@ You can also define which part of the source image you want to use with the foll
 * sourceLeft: x coordinate in the source image (in pixel)
 * sourceTop: y coordinate in the source image (in pixel)
 * sourceWidth: width of the source image you want to use (in pixel)
-* sourceTopt: height of the source image you want to use (in pixel)
+* sourceHeight: height of the source image you want to use (in pixel)
 
 Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
 
