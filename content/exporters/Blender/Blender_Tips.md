@@ -22,6 +22,16 @@ Now, you're cube looks ugly. You have to set up its sharpness, by adding an *edg
 
 ![blender-sharp-edges](http://doc.babylonjs.com/img/exporters/blender/blender-smooth-shading-sharpness.png)
 
+## Materials
+
+### Color conversion
+
+You will quickly notice that colors are not very similar when exported from Blender to BJS. This is due to a Blender correction according to a disply device.
+To cancel this conversion, simply set *Display Device* to *None*:
+
+![blender-color-management](http://doc.babylonjs.com/img/exporters/blender/color-management.png)
+
+![blender-color-management-comparison](http://doc.babylonjs.com/img/exporters/blender/color-management-comparison.png)
 
 ## Cameras
 
