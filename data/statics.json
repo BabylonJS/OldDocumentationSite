@@ -893,6 +893,10 @@
         {
           "title": "Babylon.GUI: How to create 2D and 3D UI",
           "filename": "Gui"
+        },
+        {
+          "title": "Behaviors",
+          "filename": "Behaviors"
         }
       ]
     },
