@@ -39,7 +39,23 @@ camera.useBouncingBehavior = true;
 
 You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14
 
-###  Framing behavior
+###  AutoRotation behavior
+The autoRotation behavior (`BABYLON.AutoRotationBehavior`) is designed to create a smooth rotation of an **ArcRotateCamera** when there is no user interaction.
+
+This behavior can be configured with the following properties:
+* `idleRotationSpeed`: Speed at which the camera rotates around the model
+* `idleRotationWaitTime`: Time (in milliseconds) to wait after user interaction before the camera starts rotating
+* `idleRotationSpinupTime`: Time (milliseconds) to take to spin up to the full idle rotation speed
+* `zoomStopsAnimation`: Flag that indicates if user zooming should stop animation
+
+
+You can easily turn on this behavior on an ArcRotateCamera with the following code:
+
+```
+camera.useAutoRotationBehavior = true;
+```
+
+You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14#1
 
 
 
