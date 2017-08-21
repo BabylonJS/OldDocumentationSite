@@ -6,7 +6,7 @@ PG_TITLE: Blender
 
 The Blender export plugin can be found on [github repository](http://github.com/BabylonJS/Babylon.js/tree/master/Exporters/Blender).
 
-An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter, see its readme to know about its functionnalities.
+An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter. It exports JavaScript modules with in-line geometry and simplifies the loading process. See its readme or that of the [QueuedInterpolation](https://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation) extension, which it is part of, to know more about its functionalities, and access its proper documentation.
 
 ## Features:
 
