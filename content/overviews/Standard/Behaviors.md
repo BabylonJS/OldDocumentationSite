@@ -75,6 +75,7 @@ This behavior can be configured with the following properties:
 * `elevationReturnWaitTime`: Define the delay (in milliseconds) taken before the camera returns to the default beta position (1000 by default)
 * `zoomStopsAnimation`: Define if user zooming should stop animation
 * `framingTime`: Define the transition time when framing the mesh, in milliseconds (1500 by default)
+* `isUserIsMoving`: Gets a value indicating if the user is moving the camera
 
 You can easily turn on this behavior on an ArcRotateCamera with the following code:
 
