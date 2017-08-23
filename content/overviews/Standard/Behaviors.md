@@ -66,7 +66,7 @@ It is also useful if you want to prevent the camera to go under a virtual horizo
 This behavior can be configured with the following properties:
 * `mode`: The behavior can be configured to:
  * `BABYLON.FramingBehavior.IgnoreBoundsSizeMode`: The camera can move all the way towards the mesh
- * `BABYLON.FramingBehavior.FitFrustumSidesMode`: The camera is not allowed to zoom closer to the mesh than the point at which the adjusted bounding sphere touches the frustum sides
+ * `BABYLON.FramingBehavior.FitFrustumSidesMode`: The camera is not allowed to zoom closer to the mesh than the point at which the adjusted bounding sphere touches the frustum sides. This is the default mode.
 * `radiusScale`: Define the scale applied to the radius (1 by default)
 * `positionY`: Define the Y offset of the primary mesh from the camera's focus (0 by default)
 * `defaultElevation`: Define the angle above/below the horizontal plane to return to when the return to default elevation idle behaviour is triggered, in radians (0.3 by default)
