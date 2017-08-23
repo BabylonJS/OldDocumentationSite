@@ -50,6 +50,7 @@ This behavior can be configured with the following properties:
 * `idleRotationWaitTime`: Time (in milliseconds) to wait after user interaction before the camera starts rotating
 * `idleRotationSpinupTime`: Time (milliseconds) to take to spin up to the full idle rotation speed
 * `zoomStopsAnimation`: Flag that indicates if user zooming should stop animation
+* `rotationInProgress`: Gets a value indicating if the camera is currently rotating because of this behavior
 
 You can easily turn on this behavior on an ArcRotateCamera with the following code:
 
