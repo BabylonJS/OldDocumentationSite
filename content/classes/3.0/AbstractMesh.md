@@ -359,6 +359,38 @@ Property checkCollisions : Boolean, whether the camera should check the collisio
 
 Default `false`.
 
+### occlusionType: number
+
+This property is responsible for starting the occlusion query within the Mesh or not, this property is also used to determine what should happen when the occlusionRetryCount is reached. It has supports 3 values:
+
+OCCLUSION_TYPE_NONE (Default Value): this option means no occlusion query whith the Mesh.
+
+OCCLUSION_TYPE_OPTIMISITC: this option is means use occlusion query and if occlusionRetryCount is reached and the query is broken show the mesh.
+
+OCCLUSION_TYPE_STRICT: this option is means use occlusion query and if occlusionRetryCount is reached and the query is broken restore the last state of the mesh occlusion if the mesh was visible then show the mesh if was hidden then hide don't show.
+
+### isOccluded : boolean
+
+Property isOccluded : Gets or sets whether the mesh is occluded or not, it is used also to set the intial state of the mesh to be occluded or not.
+
+### occlusionQueryAlgorithmType : number
+
+This property determines the type of occlusion query algorithm to run in WebGl, you can use:
+
+AbstractMesh.OCCLUSION_ALGORITHM_TYPE_ACCURATE which is mapped to GL_ANY_SAMPLES_PASSED.
+
+or
+
+AbstractMesh.OCCLUSION_ALGORITHM_TYPE_CONSERVATIVE (Default Value) which is mapped to GL_ANY_SAMPLES_PASSED_CONSERVATIVE which is a false positive algorithm that is faster than GL_ANY_SAMPLES_PASSED but less accurate.
+[More Info](https://www.khronos.org/opengl/wiki/Query_Object#Occlusion_queries)
+
+
+### occlusionRetryCount : number
+
+This number indicates the number of allowed retries before stop the occlusion query, this is useful if the occlusion query is taking long time before to the query result is retireved, the query result indicates if the object is visible within the scene or not and based on that Babylon.Js engine decideds to show or hide the object.
+
+The default value is -1 which means don't break the query and wait till the result.
+
 ### this : undefined
 
 
