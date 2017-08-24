@@ -73,7 +73,7 @@ This behavior can be configured with the following properties:
  * `BABYLON.FramingBehavior.IgnoreBoundsSizeMode`: The camera can move all the way towards the mesh
  * `BABYLON.FramingBehavior.FitFrustumSidesMode`: The camera is not allowed to zoom closer to the mesh than the point at which the adjusted bounding sphere touches the frustum sides. This is the default mode.
 * `radiusScale`: Define the scale applied to the radius (1 by default)
-* `positionY`: Define the Y offset of the primary mesh from the camera's focus (0 by default)
+* `positionScale`: the scale to apply on Y axis to position camera focus. 0.5 by default which means the center of the bounding box
 * `defaultElevation`: Define the angle above/below the horizontal plane to return to when the return to default elevation idle behaviour is triggered, in radians (0.3 by default)
 * `elevationReturnTime`: Define the time (in milliseconds) taken to return to the default beta position (1500 by default). Negative value indicates camera should not return to default
 * `elevationReturnWaitTime`: Define the delay (in milliseconds) taken before the camera returns to the default beta position (1000 by default)
