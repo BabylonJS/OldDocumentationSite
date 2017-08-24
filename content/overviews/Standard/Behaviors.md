@@ -40,6 +40,8 @@ You can easily turn on this behavior on an ArcRotateCamera with the following co
 camera.useBouncingBehavior = true;
 ```
 
+Once created you can get a direct access to the behavior with `camera.bouncingBehavior`.
+
 You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14
 
 ###  AutoRotation behavior
@@ -57,6 +59,8 @@ You can easily turn on this behavior on an ArcRotateCamera with the following co
 ```
 camera.useAutoRotationBehavior = true;
 ```
+
+Once created you can get a direct access to the behavior with `camera.autoRotationBehavior`.
 
 You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14#1
 
@@ -82,6 +86,8 @@ You can easily turn on this behavior on an ArcRotateCamera with the following co
 ```
 camera.useFramingBehavior = true;
 ```
+
+Once created you can get a direct access to the behavior with `camera.framingBehavior`.
 
 You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14#2
 
