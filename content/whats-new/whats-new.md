@@ -27,7 +27,8 @@ Changes list
  - New DefaultRenderingPipeline to enable image processing effect. [Demo](https://www.babylonjs-playground.com/#5XB8YT#1) ([deltakosh](https://github.com/deltakosh))
  - New image processing postprocess. [Doc here](http://doc.babylonjs.com/tutorials/how_to_use_postprocesses#imageprocessing) ([deltakosh](https://github.com/deltakosh))
  - Spector.js New WebGL debugger: [more info here](http://spector.babylonjs.com) ([Sebastien Vandenberghe](https://github.com/sebavan))
- - New blur mode for mirrors. [Demo](https://www.babylonjs-playground.com/#9I6NX1) ([deltakosh](https://github.com/deltakosh)) 
+ - New blur mode for mirrors. [Demo](https://www.babylonjs-playground.com/#9I6NX1) ([deltakosh](https://github.com/deltakosh))
+ - Occlusion Queries. [Demo](http://www.babylonjs-playground.com/#QDAZ80#3) ([IbraheemOsama](https://github.com/IbraheemOsama))  
 
 ### Updates
 - Added `syncBoneWithImpostor()` and `syncImpostorWithBone()` to PhysicsImpostor to help with creating ragdoll effects. [Demo](http://playground.babylonjs.com/#PM5MFS#5) ([abow](https://github.com/abow))
