@@ -61,6 +61,6 @@ In Babylon.js, our first use of this technique is to render a geometry buffer of
 
 Occlusion queries detect whether a Mesh is visible in the current scene or not, and based on that the Mesh get drawn or not. Occlusion queries is useful when you have an expensive object on the scene and you want to make sure that it will get drawn if it is visible to the camera and it is not behind any opaque object. BabylonJs provides an implementation for Occlusion queries using property occlusionType in AbstractMesh Class
 
-[Babylon.js occlusion queries overview](occlusionquery)
+[Babylon.js Occlusion Queries Overview](occlusionquery)
 
 [WebGL 2 Occlusion Queries](https://www.khronos.org/opengl/wiki/Query_Object#Occlusion_queries)
