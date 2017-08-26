@@ -1,17 +1,17 @@
 ## Introduction
 
-Babylon.js v3.1 introduced a new feature: Occlusion Query.
-Occlusion query detect whether a Mesh is visible in the current scene or not, and based on that the Mesh get drawn or not. Occlusion query is useful when you have an expensive object on the scene and you want to make sure that it will get drawn if it is visible to the camera and it is not behind any opaque object.
-BabylonJs provides an implementation for Occlusion Query using property occlusionType in AbstractMesh Class
+Babylon.js v3.1 introduced a new feature: Occlusion Queries.
+Occlusion Queries detect whether a Mesh is visible in the current scene or not, and based on that the Mesh get drawn or not. Occlusion Queries is useful when you have an expensive object on the scene and you want to make sure that it will get drawn if it is visible to the camera and it is not behind any opaque object.
+BabylonJs provides an implementation for Occlusion Queries using property occlusionType in AbstractMesh Class
 
-## How occlusion query works behind scenes
+## How Occlusion Queries works behind scenes
 
-Babylon.js engine draw a light transparent bounding box on the targeted Mesh before drawing the object and create a query to check with WebGl engine if the bounding box is visible or not. if the box is visible, the object gets drawn if not the object is not drawn, Occlusion query is asynchronous and usually the query result of the object is not available in the current frame and because of this the object is drawn based on a query result of previous frame, the user wouldn't notice the difference unless your FPS is too low.
+Babylon.js engine draw a light transparent bounding box on the targeted Mesh before drawing the object and create a query to check with WebGl engine if the bounding box is visible or not. if the box is visible, the object gets drawn if not the object is not drawn, Occlusion Queries is asynchronous and usually the query result of the object is not available in the current frame and because of this the object is drawn based on a query result of previous frame, the user wouldn't notice the difference unless your FPS is too low.
 
-[Occlusion Query Demo](http://www.babylonjs-playground.com/#QDAZ80#3)
+[Occlusion Queries Demo](http://www.babylonjs-playground.com/#QDAZ80#3)
 # Basics
 
-To use the occlusion query on a Mesh
+To use the Occlusion Queries on a Mesh
 
 ```
 var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
@@ -28,7 +28,7 @@ sphere.isOccluded = true;
 
 # Advanced
 
-As described earlier the occlusion query result is asynchronous and it may take some time to get the result and because of this the object would take many frames to be loaded waiting for the query result. In this case you can use property `occlusionRetryCount` to set the number of waiting frames before query get broken. Once a break happens you will need to decide whether to draw the object or to maintain its state, property `occlusionType` is used for this reason as you have 2 options
+As described earlier the Occlusion Queries result is asynchronous and it may take some time to get the result and because of this the object would take many frames to be loaded waiting for the query result. In this case you can use property `occlusionRetryCount` to set the number of waiting frames before query get broken. Once a break happens you will need to decide whether to draw the object or to maintain its state, property `occlusionType` is used for this reason as you have 2 options
 1) OCCLUSION_TYPE_OPTIMISITC: this option will render the mesh if a break is happened.
 2) OCCLUSION_TYPE_STRICT: this option will restore the last state of the object whether visible continue as visible or hidden continue as hidden.
 
@@ -39,6 +39,6 @@ sphere.occlusionRetryCount = 10;
 sphere.occlusionType = BABYLON.AbstractMesh.OCCLUSION_TYPE_STRICT;
 ```
 
-In Babylon.js you can also set the WebGl occlusion query algorithm type using property `occlusionQueryAlgorithmType` for more into check AbstractMesh Class [documentations](/classes/3.0/AbstractMesh#occlusionqueryalgorithmtype-number)
+In Babylon.js you can also set the WebGl Occlusion Queries algorithm type using property `occlusionQueryAlgorithmType` for more into check AbstractMesh Class [documentations](/classes/3.0/AbstractMesh#occlusionqueryalgorithmtype-number)
 
 You can find a live demo here: http://www.babylonjs-playground.com/#QDAZ80#3
