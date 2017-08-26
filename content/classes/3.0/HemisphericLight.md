@@ -14,7 +14,7 @@ Hemispheric light represents a simple and easy way to simulate realistic ambient
 
 An hemispheric light is defined by a direction to the sky and by 3 colors: one for the diffuse (the sky color), one for the ground (the color when the pixel is not towards the sky) and one for the specular.
 
-A tutorial about lights can be found here : https://doc.babylonjs.com/tutorials/lights
+A tutorial about lights can be found here : https://doc.babylonjs.com/how_to/lights
 
 ## Constructor
 
@@ -26,7 +26,7 @@ The [HemisphericLight](/classes/3.0/HemisphericLight) simulates the ambient envi
 
 The [HemisphericLight](/classes/3.0/HemisphericLight) can't cast shadows.
 
-Documentation : http://doc.babylonjs.com/tutorials/lights
+Documentation : http://doc.babylonjs.com/how_to/lights
 
 #### Parameters
  | Name | Type | Description

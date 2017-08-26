@@ -1,20 +1,20 @@
 /classes                                    /classes/3.0
 
-/tutorials/01._advanced_texturing           /tutorials/advanced_texturing
-/tutorials/02._discover_basic_elements      /tutorials/discover_basic_elements
-/tutorials/08._sprites                      /tutorials/sprites
-/tutorials/12._particles                    /tutorials/particles
-/tutorials/14._height_map                   /tutorials/height_map
-/tutorials/15._shadows                      /tutorials/shadows
+/how_to/01._advanced_texturing           /how_to/advanced_texturing
+/how_to/02._discover_basic_elements      /how_to/discover_basic_elements
+/how_to/08._sprites                      /how_to/sprites
+/how_to/12._particles                    /how_to/particles
+/how_to/14._height_map                   /how_to/height_map
+/how_to/15._shadows                      /how_to/shadows
 
-/tutorials/01._3d_on_the_web_understanding_the_basics       /tutorials/3d_on_the_web_understanding_the_basics
-/tutorials/02._webgl_basics                                 /tutorials/webgl_basics
-/tutorials/03._using_babylon.js_for_beginners               /tutorials/using_babylon.js_for_beginners
-/tutorials/04._understanding_materials_and_inputs           /tutorials/understanding_materials_and_inputs
-/tutorials/05._game_pipeline_integration_with_babylon.js    /tutorials/game_pipeline_integration_with_babylon.js
-/tutorials/06._loading_assets                               /tutorials/loading_assets
-/tutorials/07._babylon.js_advanced_features                 /tutorials/babylon.js_advanced_features
-/tutorials/08._special_effects                              /tutorials/special_effects
+/how_to/01._3d_on_the_web_understanding_the_basics       /how_to/3d_on_the_web_understanding_the_basics
+/how_to/02._webgl_basics                                 /how_to/webgl_basics
+/how_to/03._using_babylon.js_for_beginners               /how_to/using_babylon.js_for_beginners
+/how_to/04._understanding_materials_and_inputs           /how_to/understanding_materials_and_inputs
+/how_to/05._game_pipeline_integration_with_babylon.js    /how_to/game_pipeline_integration_with_babylon.js
+/how_to/06._loading_assets                               /how_to/loading_assets
+/how_to/07._babylon.js_advanced_features                 /how_to/babylon.js_advanced_features
+/how_to/08._special_effects                              /how_to/special_effects
 
 /overviews/canvas2d_home                                    /extensions/canvas2d_home 
 /overviews/canvas2d_overview_architecture                   /extensions/canvas2d_overview_architecture 

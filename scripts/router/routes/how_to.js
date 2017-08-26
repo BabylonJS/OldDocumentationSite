@@ -25,7 +25,7 @@ router.get('/', function(req, res) {
         'Cache-Control': 'no-cache',
         'Content-type':'text/html'
     });
-    res.sendFile('./tutorials.html', options);
+    res.sendFile('./how_to.html', options);
 });
 
 router.get('/:tutorial', function(req, res){
@@ -35,14 +35,14 @@ router.get('/:tutorial', function(req, res){
 
     var tutorial = req.params.tutorial;
 
-    fs.exists(path.join('public/html/tutorials/', tutorial +'.html'), function (exists) {
+    fs.exists(path.join('public/html/how_to/', tutorial +'.html'), function (exists) {
         if (exists) {
             res.status(200);
             res.set({
                 'Cache-Control': 'no-cache',
                 'Content-type':'text/html'
             });
-            res.sendFile('./tutorials/'+ tutorial +'.html', options);
+            res.sendFile('./how_to/'+ tutorial +'.html', options);
         } else {
             res.status(404).render('errorpages/404');
         }

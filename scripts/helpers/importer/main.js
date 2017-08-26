@@ -1,5 +1,5 @@
 /**
- * Imports tutorials exporters and extension files from old site
+ * Imports how_to exporters and extension files from old site
  * @type {async|exports|module.exports}
  */
 

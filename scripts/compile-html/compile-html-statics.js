@@ -1,5 +1,5 @@
 /**
- * This file compile HTML files for the exporters, the extensions, and the tutorials.
+ * This file compile HTML files for the exporters, the extensions, and the how_to.
  */
 
 var fs      = require('fs'),
@@ -42,7 +42,7 @@ module.exports = function(done){
         "exporters",
         "extensions",
         "generals",
-        "tutorials",
+        "how_to",
         "overviews"
     ];
 

@@ -4,7 +4,7 @@ PG_TITLE: 05. Cameras
 ---
 # Babylon.js Cameras #
 
-In any Babylon.js scene, you can create as many cameras as you wish, but only one camera can be active at a time (unless you are using [multi-viewports](http://doc.babylonjs.com/tutorials/How_to_use_Multi-Views)).
+In any Babylon.js scene, you can create as many cameras as you wish, but only one camera can be active at a time (unless you are using [multi-viewports](http://doc.babylonjs.com/how_to/How_to_use_Multi-Views)).
 
 Camera management in Babylon.js is pretty simple : first you create one of the camera listed below, then you attach it to canvas mouse and touch inputs (see **Wrapping Up** section).
 
@@ -144,7 +144,7 @@ With the touch of a touchscreen, or the click of a mouse button, the virtual joy
 ```
 The VirtualJoysticksCamera also uses a FreeCamera as its basis, so all the properties and methods of our familiar FreeCamera... are found on our VirtualJoysticksCamera as well. 
 
-We have a [special tutorial dedicated to the VirtualJoysticksCamera](http://doc.babylonjs.com/tutorials/How_to_use_VirtualJoysticksCamera).
+We have a [special tutorial dedicated to the VirtualJoysticksCamera](http://doc.babylonjs.com/how_to/How_to_use_VirtualJoysticksCamera).
 
 You can explore all the properties and methods available on the VirtualJoysticksCamera... at [**our API documentation site**](http://doc.babylonjs.com/classes/3.0/VirtualJoysticksCamera).
 
@@ -175,7 +175,7 @@ You can learn all about anaglyphs by visiting a [Wikipedia page that explains it
 var camera = new BABYLON.VRDeviceOrientationFreeCamera ("Camera", new BABYLON.Vector3 (-6.7, 1.2, -1.3), scene, 0);
 ```
 
-Here is a [playground demo]( https://www.babylonjs-playground.com/#DZTQH#2) that uses it, as well as showing some top secret tricks for making the camera initialize to certain angles.  It also introduces our new [Composable Inputs](http://doc.babylonjs.com/tutorials/Customizing_Camera_Inputs) for cameras.  More about that... a bit further along.
+Here is a [playground demo]( https://www.babylonjs-playground.com/#DZTQH#2) that uses it, as well as showing some top secret tricks for making the camera initialize to certain angles.  It also introduces our new [Composable Inputs](http://doc.babylonjs.com/how_to/Customizing_Camera_Inputs) for cameras.  More about that... a bit further along.
 
 The VRDeviceOrientationFreeCamera uses FreeCamera as its basis, so all of the properties and methods of FreeCamera... are also found on our VRDeviceOrientationFreeCamera.
 
@@ -215,7 +215,7 @@ By default _noPreventDefault_ is set to false, meaning that _preventDefault()_ i
 
 FreeCamera and ArcRotateCamera rely upon user inputs to move the camera. If you are happy with the camera presets Babylon.js is giving you, like the GamepadCamera, just stick with it.
 
-If you want to change user inputs based upon user preferences, customize one of the existing presets, or use your own input mechanisms.  Those cameras have an input manager that is designed for those advanced scenarios. Read [customizing camera inputs](http://doc.babylonjs.com/tutorials/Customizing_Camera_Inputs) to learn more about tweaking inputs on your cameras.
+If you want to change user inputs based upon user preferences, customize one of the existing presets, or use your own input mechanisms.  Those cameras have an input manager that is designed for those advanced scenarios. Read [customizing camera inputs](http://doc.babylonjs.com/how_to/Customizing_Camera_Inputs) to learn more about tweaking inputs on your cameras.
 
 ## Next step
-You have now learned how to use many cameras, and learned some advanced input options available on our two most-used cameras. You can control how you see your scene, you can choose your input and viewing devices, and you now know how to move cameras around. To give your scene a more realistic effect, we are now going to learn [**how to manage lights**](http://doc.babylonjs.com/tutorials/Lights). See you soon.
+You have now learned how to use many cameras, and learned some advanced input options available on our two most-used cameras. You can control how you see your scene, you can choose your input and viewing devices, and you now know how to move cameras around. To give your scene a more realistic effect, we are now going to learn [**how to manage lights**](http://doc.babylonjs.com/how_to/Lights). See you soon.

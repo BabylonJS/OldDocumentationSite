@@ -1,16 +1,16 @@
 {
-  "tutorials": [
+  "how_to": [
     {
       "title": "All",
       "name": "All",
-      "img": "img/tutorials/All.png",
-      "desc": "All the tutorials."
+      "img": "img/how_to/All.png",
+      "desc": "All the how_to."
     },
     {
-      "title": "The Play Pen Tutorials",
+      "title": "The Play Pen How To...",
       "name": "01_Play_Pen",
-      "img": "img/tutorials/01.ThePlayPenTutorials.png",
-      "desc": "The tutorials of the playpen.",
+      "img": "img/how_to/01.ThePlayPenTutorials.png",
+      "desc": "The how_to of the playpen.",
       "files": [
         {
           "title": "Creating a Basic Scene",
@@ -115,9 +115,9 @@
       ]
     },
     {
-      "title": "Mid Level Tutorials",
+      "title": "Mid Level How To...",
       "name": "02_Mid_Level",
-      "img": "img/tutorials/02.MidLevelTutorials.png",
+      "img": "img/how_to/02.MidLevelTutorials.png",
       "desc": "Learn how to use cool things.",
       "files": [
         {
@@ -177,7 +177,7 @@
     {
       "title": "More Advanced Features",
       "name": "03_Advanced",
-      "img": "img/tutorials/03.MoreAdvancedFeatures.png",
+      "img": "img/how_to/03.MoreAdvancedFeatures.png",
       "desc": "Some hard things.",
       "files": [
         {
@@ -349,7 +349,7 @@
     {
       "title": "Videos",
       "name": "Videos",
-      "img": "img/tutorials/Video.png",
+      "img": "img/how_to/Video.png",
       "desc": "Video courses.",
       "files": [
         {
@@ -605,7 +605,7 @@
     {
       "title": "Tree Generators",
       "name": "Tree_Generators",
-      "img": "img/tutorials/trees.png",
+      "img": "img/how_to/trees.png",
       "desc": "How to generate trees.",
       "files": [
         {
@@ -707,13 +707,13 @@
     {
       "title": "All",
       "name": "All",
-      "img": "img/tutorials/All.png",
+      "img": "img/how_to/All.png",
       "desc": "All overviews."
     },
     {
       "title": "Maps",
       "name": "Maps",
-      "img": "img/tutorials/All.png",
+      "img": "img/how_to/All.png",
       "desc": "Documentation Category Map",
       "files": [
         {
@@ -725,7 +725,7 @@
     {
       "title": "Standard",
       "name": "Standard",
-      "img": "img/tutorials/All.png",
+      "img": "img/how_to/All.png",
       "desc": "First level feature exploration",
       "files": [
         {
@@ -789,7 +789,7 @@
     {
       "title": "Inspector",
       "name": "Inspector",
-      "img": "img/tutorials/All.png",
+      "img": "img/how_to/All.png",
       "desc": "Inspector description",
       "files": [
         {
@@ -811,7 +811,7 @@
     {
       "title": "Essentials",
       "name": "Essentials",
-      "img": "img/tutorials/All.png",
+      "img": "img/how_to/All.png",
       "desc": "Beginner? start here!",
       "files": [
         {
@@ -827,11 +827,11 @@
     {
       "title": "General",
       "name": "General",
-      "img": "img/tutorials/General.png",
+      "img": "img/how_to/General.png",
       "desc": "General good things to know",
       "files": [
         {
-          "title": "Off-Site Tutorials List",
+          "title": "Off-Site How To... List",
           "filename": "offsite_tutorials_list"
         },
         {

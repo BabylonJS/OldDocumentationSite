@@ -19,7 +19,7 @@ class [TouchCamera](/classes/2.5/TouchCamera) extends [FreeCamera](/classes/2.5/
 ## new [TouchCamera](/classes/2.5/TouchCamera)(name, position, scene)
 
 Create a new [TouchCamera](/classes/2.5/TouchCamera) (camera controlled by touch with touchscreen)
-A tutorial about [ArcRotateCamera](/classes/2.5/ArcRotateCamera) can be found here : https://doc.babylonjs.com/tutorials/Cameras
+A tutorial about [ArcRotateCamera](/classes/2.5/ArcRotateCamera) can be found here : https://doc.babylonjs.com/how_to/Cameras
 
 #### Parameters
  | Name | Type | Description

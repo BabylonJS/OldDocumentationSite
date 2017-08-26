@@ -2,7 +2,7 @@
 
 Morph targets are a new feature introduced with Babylon.js v3.0.
 
-![Morph Target Before](/img/tutorials/morphtargets0.jpg) ![Morph Target After](/img/tutorials/morphtargets.jpg)
+![Morph Target Before](/img/how_to/morphtargets0.jpg) ![Morph Target After](/img/how_to/morphtargets.jpg)
 
 ### Basics
 Meshes can be deformed by using morph targets. A morph target must be built from a mesh with the **EXACT** same amount of vertices as the original mesh.

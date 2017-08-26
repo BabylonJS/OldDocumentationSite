@@ -152,6 +152,6 @@ A demo with 6 lights can be found at our 'playground', [right here]( https://www
 ## Next step
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!
 
-Although not truly a light, you might be interested in our [Volumetric Light Scattering](http://doc.babylonjs.com/tutorials/Using_the_Volumetric_LightScattering_post-process) (GodRays) system.
+Although not truly a light, you might be interested in our [Volumetric Light Scattering](http://doc.babylonjs.com/how_to/Using_the_Volumetric_LightScattering_post-process) (GodRays) system.
 
-Guess what! The next tutorial... is about animation! [Click this and let's go!](http://doc.babylonjs.com/tutorials/Animations)
+Guess what! The next tutorial... is about animation! [Click this and let's go!](http://doc.babylonjs.com/how_to/Animations)

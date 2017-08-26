@@ -4,9 +4,9 @@ PG_TITLE: 13. Environment
 ---
 ## Introduction
 
-You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive tutorials that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.
+You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive how_to that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.
 
-![Environment](/img/tutorials/13.jpg)
+![Environment](/img/how_to/13.jpg)
 
 _A picture showing Babylon.js fog in action_
 
@@ -97,7 +97,7 @@ skybox.renderingGroupId = 0;
 myMesh.renderingGroupId = 1;
 ```
 
-More info about rendering groups and rendering order can be found [here](http://doc.babylonjs.com/tutorials/Transparency_and_How_Meshes_Are_Rendered).
+More info about rendering groups and rendering order can be found [here](http://doc.babylonjs.com/how_to/Transparency_and_How_Meshes_Are_Rendered).
 
 #### Automatic creation
 Now that we understand how a skybox can be created let's move to a simpler way:
@@ -153,4 +153,4 @@ See, we told you it was easy.
 If you want to see and play with the playground scene for this tutorial, you can [**click right here**]( https://www.babylonjs-playground.com/?13).
 
 ## Next step
-You should have a beautiful scene now, but except from your 3D models, your world is pretty flat, and that’s a shame for your scene. So, in our next environment tutorial, we are going to transform your flat ground into beautiful mountains. To learn this, go [here!](http://doc.babylonjs.com/tutorials/Height_Map)
+You should have a beautiful scene now, but except from your 3D models, your world is pretty flat, and that’s a shame for your scene. So, in our next environment tutorial, we are going to transform your flat ground into beautiful mountains. To learn this, go [here!](http://doc.babylonjs.com/how_to/Height_Map)

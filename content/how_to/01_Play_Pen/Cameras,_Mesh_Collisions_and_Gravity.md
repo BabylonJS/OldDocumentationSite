@@ -109,4 +109,4 @@ camera.collisionRadius = new BABYLON.Vector3(0.5, 0.5, 0.5)
 ```
 
 ## Next step
-Great, now you can develop a real FPS game! But maybe you would like to know when a mesh is in collision with another mesh? Good, because that is exactly the purpose of our [next tutorial](http://doc.babylonjs.com/tutorials/Intersect_Collisions_-_mesh).
+Great, now you can develop a real FPS game! But maybe you would like to know when a mesh is in collision with another mesh? Good, because that is exactly the purpose of our [next tutorial](http://doc.babylonjs.com/how_to/Intersect_Collisions_-_mesh).

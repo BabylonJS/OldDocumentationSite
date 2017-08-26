@@ -13,7 +13,7 @@ In this tutorial, we are going to learn how to create basic elements using Babyl
 ## How can I do this ?
 An easy way to get started using basic elements... is by visiting [**Playground Demo Scene 02**]( https://www.babylonjs-playground.com/?2).  You might wish to use the 'Get .zip' choice on its top menu.  The index.html that you will receive in that zip... contains everything you will need to start making basic elements.  Remember that link, as we will talk more about it.
 
-I'm sure you have already read the  [**Babylon.js Primer**](http://doc.babylonjs.com/generals/A_Babylon.js_Primer) and the  [**previous tutorial**](http://doc.babylonjs.com/tutorials/Creating_a_Basic_Scene), and thus you know how to format scene files.  So, we won't talk about that, here.  We are going to go step by step through [**Playground Demo Scene 02**]( https://www.babylonjs-playground.com/?2).  Open that link in a new tab or window, and then come back here, and we'll get started.
+I'm sure you have already read the  [**Babylon.js Primer**](http://doc.babylonjs.com/generals/A_Babylon.js_Primer) and the  [**previous tutorial**](http://doc.babylonjs.com/how_to/Creating_a_Basic_Scene), and thus you know how to format scene files.  So, we won't talk about that, here.  We are going to go step by step through [**Playground Demo Scene 02**]( https://www.babylonjs-playground.com/?2).  Open that link in a new tab or window, and then come back here, and we'll get started.
 
 Starting with the box, we create various basic elements, and then position them at the end of the function (to keep them from being atop one another).  Let's talk about each of the basic shapes/meshes.  
 
@@ -105,7 +105,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 ```javascript
 var polygon = BABYLON.Mesh.CreatePolygon("cylinder", [V1, V2, ..., Vn], scene);
 ```
-Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/how_to/polygonmeshbuilder)
 
 * **Extrusion of a Polygon**
 
@@ -121,7 +121,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], 2, scene);
 ```
 
-Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/how_to/polygonmeshbuilder)
 
 * **Creation of a Lines Mesh**
 
@@ -146,7 +146,7 @@ Parameters are : name, [array of Vectors3], dashSize, gapSize, dashNumber, scene
 As for Lines, a line along the vectors3 will be displayed in space. It will try to set _dashNumber_ strokes on this line depending on the length of each segment between two successive vectors3.    
 _dashSize_ and _gapSize_ are relative to each other dash and gap sizes within these strokes.   
 
-You might also be interested in our new [LinesSystem](http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter#linesystem).
+You might also be interested in our new [LinesSystem](http://doc.babylonjs.com/how_to/Mesh_CreateXXX_Methods_With_Options_Parameter#linesystem).
 
 
 * **Creation of a Ribbon**
@@ -184,7 +184,7 @@ The last two parameters can be omitted if you just need the default behavior :
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", [path1, path2, ..., pathn], false, false, 0, scene);
 ```
 
-I you need more details about how to deal with this method, you would probably read the [**Parametric Shapes**](http://doc.babylonjs.com/tutorials/Parametric_Shapes) part.
+I you need more details about how to deal with this method, you would probably read the [**Parametric Shapes**](http://doc.babylonjs.com/how_to/Parametric_Shapes) part.
 
 * ** Creation of a Tube**
 
@@ -207,7 +207,7 @@ The last two parameters can be omitted if you just need the default behavior :
 ```javascript
 var tube = BABYLON.Mesh.CreateTube("tube", [V1, V2, ..., Vn], radius, tesselation, radiusFunction, cap, scene);
 ```
-The tube can also be used as a [**Parametric Shapes**](http://doc.babylonjs.com/tutorials/Parametric_Shapes) by setting a radius function.
+The tube can also be used as a [**Parametric Shapes**](http://doc.babylonjs.com/how_to/Parametric_Shapes) by setting a radius function.
 
 
 
@@ -275,7 +275,7 @@ var ground = BABYLON.Mesh.CreateGroundFromHeightMap("ground", "heightmap.jpg", 2
 ```
 Parameters are: name, heightmapPath, width, depth, subdivs, minheight, maxheight, scene, updatable, successCallback
 
-HeightMap grounds are easy, but we decided to create a separate tutorial so we could say more about this important Babylon.js feature. Please see our [**HeightMap Tutorial**](http://doc.babylonjs.com/tutorials/Height_Map) to learn all about heightMap grounds.
+HeightMap grounds are easy, but we decided to create a separate tutorial so we could say more about this important Babylon.js feature. Please see our [**HeightMap Tutorial**](http://doc.babylonjs.com/how_to/Height_Map) to learn all about heightMap grounds.
 
 * **Create of a Tiled Ground**
 
@@ -299,9 +299,9 @@ Parameters are: name, xmin, zmin, xmax, zmax, subdivisions = the number of tiles
 Kostar111 was also kind enough to give us a fine tutorial about how to use tiled grounds. [**Click right here**](http://makina-corpus.com/blog/metier/how-to-use-multimaterials-with-a-tiled-ground-in-babylonjs) to view it. At that link, Kostar111 thoroughly explains how the tiled ground works, and also provides some Babylon.js Playground scenes that nicely demonstrate some of its many uses.
 
 ## Wrapping Up ##
-And that’s it! Now you have seen all of our basic elements, and some ways to use them. Keep watching this area of the tutorial for new basic elements, as they are being added quite quickly : you'll find the updated list with all parameter explanations [**in this section**](http://doc.babylonjs.com/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter). 
+And that’s it! Now you have seen all of our basic elements, and some ways to use them. Keep watching this area of the tutorial for new basic elements, as they are being added quite quickly : you'll find the updated list with all parameter explanations [**in this section**](http://doc.babylonjs.com/how_to/Mesh_CreateXXX_Methods_With_Options_Parameter). 
 Feel free to imagine a few of your own basic element ideas, and present them on the forum. Help us make our list of basic elements grow, if you can.  
 
 ## Next step ##
 ----
-We saw that we needed a bit of 'positioning' to keep our basic elements from sitting atop one another in the scene. Now let's learn more about positions (sometimes called translations) as well as about rotation and scaling. Ready? Sure you are! [**Click here for the next tutorial.**](http://doc.babylonjs.com/tutorials/Materials)
+We saw that we needed a bit of 'positioning' to keep our basic elements from sitting atop one another in the scene. Now let's learn more about positions (sometimes called translations) as well as about rotation and scaling. Ready? Sure you are! [**Click here for the next tutorial.**](http://doc.babylonjs.com/how_to/Materials)

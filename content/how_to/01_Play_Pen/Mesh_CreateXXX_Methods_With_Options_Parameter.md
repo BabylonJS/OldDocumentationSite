@@ -43,7 +43,7 @@ faceColors|_(Color4[])_ array of 6 _Color4_, one per box face|Color4(1, 1, 1, 1)
 faceUV|_(Vector4[])_ array of 6 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
+To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/how_to/CreateBox_Per_Face_Textures_And_Colors
 
 #### Sphere
 Example :
@@ -85,7 +85,7 @@ faceUV|_(Vector4[])_ array of 3 _Vector4_, 0 : bottom cap, 1 : cylinder tube, 2 
 arc|_(number)_ ratio of the circumference between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-To understand how to set _faceUV_ or _faceColors_, please read this by considering 3 faces only : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
+To understand how to set _faceUV_ or _faceColors_, please read this by considering 3 faces only : http://doc.babylonjs.com/how_to/CreateBox_Per_Face_Textures_And_Colors
 
 #### Plane
 Example :
@@ -223,7 +223,7 @@ faceUV|_(Vector4[])_ array of _Vector4_, one per face| UVs(0, 0, 1, 1) for each 
 flat|_(boolean)_ if false, a polyhedron has a single global face, _faceUV_ and _faceColors_ are ignored|true
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-To understand how to set _faceUV_ or _faceColors_, please read this by considering the right number of faces of your polyhedron, instead of only 6 for the box : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
+To understand how to set _faceUV_ or _faceColors_, please read this by considering the right number of faces of your polyhedron, instead of only 6 for the box : http://doc.babylonjs.com/how_to/CreateBox_Per_Face_Textures_And_Colors
 
 ##### Provided polyhedron types :
 
@@ -502,7 +502,7 @@ of the image.
 
 [A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#2)
 
-Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/how_to/polygonmeshbuilder)
 
 #### Extruded Polygon
 You must set at least the _shape_ and _depth_ properties.
@@ -525,13 +525,13 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
+To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/how_to/CreateBox_Per_Face_Textures_And_Colors
 
 face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
 
 [Playground Example of Extruded Polygon]( https://www.babylonjs-playground.com/#RNCYVM#2)
 
-Uses [PolygonMeshBuilder](http://doc.babylonjs.com/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](http://doc.babylonjs.com/how_to/polygonmeshbuilder)
 
 <br/>
 <br/>

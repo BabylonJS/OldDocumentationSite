@@ -4,7 +4,7 @@ PG_TITLE: 01. Advanced Texturing
 ---
 You have already seen how you can apply textures on meshes, but here you are going one step further, with more complex textures like mirrors, videos, bump mapping, and multi-texture.
 
-![AdvancedTexturing](/img/tutorials/Advanced%20Texturing/0.png)
+![AdvancedTexturing](/img/how_to/Advanced%20Texturing/0.png)
 
 A picture from our [Advanced Texturing playground demo]( https://www.babylonjs-playground.com/#EKFLA#13)
 
@@ -41,11 +41,11 @@ You can see this nice advanced texturing technique... in [this playground scene]
 
 Bump mapping is a technique in computer graphics to make a rendered surface look more realistic without modifying surface geometry. This is only a texture modification, so computation is the same but rendering is much better, have a look:
 
-![bumpMap](/img/tutorials/Advanced%20Texturing/1.png)
+![bumpMap](/img/how_to/Advanced%20Texturing/1.png)
 
 The bump texture simulates bumps and dents using a map called a normal map.
 
-![normalMap](/img/tutorials/Advanced%20Texturing/normalMap.jpg)
+![normalMap](/img/how_to/Advanced%20Texturing/normalMap.jpg)
 
 _A normal map_
 
@@ -57,7 +57,7 @@ bumpMaterial.bumpTexture = new BABYLON.Texture("normalMap.jpg", scene);
 
 That’s it! The bump texture disturbs/perturbs the normal to produce a result like this, where you should recognize our normal map:
 
-![finalResult](/img/tutorials/Advanced%20Texturing/2.png)
+![finalResult](/img/how_to/Advanced%20Texturing/2.png)
 
 _Resulting gorgeous bumpy sphere_
 
@@ -88,7 +88,7 @@ The [_VideoTexture_ object](http://doc.babylonjs.com/classes/3.0/VideoTexture) a
 
 The internal [video DOM object](http://www.w3.org/wiki/HTML/Elements/video) is accessible via the VideoTexture.video property... which allows you to control some characteristics and monitor the status of the video (things such as play, pause, loop, autoplay, etc). See the link above for the full story.
 
-![video](/img/tutorials/Advanced%20Texturing/3.png)
+![video](/img/how_to/Advanced%20Texturing/3.png)
 
 Even though we are working with advanced texturing techniques, _VideoTexture_ works in conjunction with a StandardMaterial. Simply put, it needs to have some light. As a handy alternative or video illumination assistant, you may want to set an _emissiveColor_ on the base material of the mesh.
 ```javascript
@@ -150,11 +150,11 @@ You can see a live demo here: http://www.babylonjs.com/Demos/refraction
 
 Using a dedicated texture, multi materials can be assigned to one single mesh. It can be useful if you want your mesh to look different at different locations along its width, height, or depth. (such as a cutaway cross-section of the Earth's mantle).
 
-![multimap](/img/tutorials/Advanced%20Texturing/4.png)
+![multimap](/img/how_to/Advanced%20Texturing/4.png)
 
 Sometimes it is a bit difficult to determine which indices of a mesh should be textured by which of the multiple textures. David Catuhe has provided a comprehensive post about multi materials... on his blog:
 [http://blogs.msdn.com/b/eternalcoding/archive/2013/07/10/babylon-js-using-multi-materials.aspx](http://blogs.msdn.com/b/eternalcoding/archive/2013/07/10/babylon-js-using-multi-materials.aspx)
 
 You can view and play-with the demo used in this tutorial... [right here]( https://www.babylonjs-playground.com/#EKFLA#13).
 
-You might also be interested in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, and our [basic materials](http://doc.babylonjs.com/tutorials/Materials) tutorial.
+You might also be interested in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, and our [basic materials](http://doc.babylonjs.com/how_to/Materials) tutorial.

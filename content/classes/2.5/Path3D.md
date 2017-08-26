@@ -17,7 +17,7 @@ new [Path3D](/classes/2.5/Path3D)(path, normal, raw)
 
 Creates a [Path3D](/classes/2.5/Path3D). A [Path3D](/classes/2.5/Path3D) is a logical math object, so not a mesh.
 
-please read the description in the tutorial :  http://doc.babylonjs.com/tutorials/How_to_use_Path3D
+please read the description in the tutorial :  http://doc.babylonjs.com/how_to/How_to_use_Path3D
 
 path : an array of [Vector3](/classes/2.5/Vector3), the curve axis of the [Path3D](/classes/2.5/Path3D)
 

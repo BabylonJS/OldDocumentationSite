@@ -6,7 +6,7 @@ var config = {
     loadPageUrl: 'load_page.php?id=',
     links      : [
         //{type: 'classes', link: 'load_pages.php?index=3'},
-        {type: 'tutorials', link: 'load_pages.php?index=1'},
+        {type: 'how_to', link: 'load_pages.php?index=1'},
         {type: 'exporters', link: 'load_pages.php?index=0'},
         {type: 'extensions', link: 'load_pages.php?index=4'}
     ],

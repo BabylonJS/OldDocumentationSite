@@ -16,7 +16,7 @@ This color is then used by materials to determine the final color of every pixel
 
 Babylon.js allows you to create and register as many lights as you want but beware because the [StandardMaterial](/classes/2.5/StandardMaterial) can handle only 4 simultaneous lights (the first four enabled lights of the lights list)
 
-A tutorial about lights can be found here : https://doc.babylonjs.com/tutorials/ligths
+A tutorial about lights can be found here : https://doc.babylonjs.com/how_to/ligths
 
 ## Constructor
 

@@ -64,7 +64,7 @@ The JS code you see inside the green section... will be talked about soon.  Main
 ### The createScene() Function - Purple Section ###
 The purple section of the big picture... is the createScene() 'function'... a Javascript 'function'.  It is the most important section of a 'single HTML file' Babylon.js scene.  You are not required to use a createScene() function in your Javascript code, but please do... in these early days of your webGL learning.  I have some magic to show you... which is available if you keep most of your scene code... inside a function called createScene().  (Like the one shown in the big picture.)
 
-Inside the createScene() function (the purple section)... we will be doing the actual Babylon.js commands and directives that cause beautiful webGL to happen.  The rest of the big picture sections... are simply helpers and preparations... for the fantastic purple section... the createScene() function.  Remember its name, because I will be mentioning it often in many Playpen Series tutorials.  It will become your best friend.  This I can promise.
+Inside the createScene() function (the purple section)... we will be doing the actual Babylon.js commands and directives that cause beautiful webGL to happen.  The rest of the big picture sections... are simply helpers and preparations... for the fantastic purple section... the createScene() function.  Remember its name, because I will be mentioning it often in many Playpen Series how_to.  It will become your best friend.  This I can promise.
 
 ## A Visit to The Playground ##
 We have worked hard and learned much, so we deserve some playground time, at the Babylon.js Playground web site.  Here is a scene that I once created and then saved... at the playground:
@@ -119,7 +119,7 @@ To be honest, a light is not an absolute requirement.  If the mesh in a scene...
 
 **2. A Shape.**  A shape is also called a **mesh**.  Every scene needs something to be viewed, right?  Cameras are invisible, and so are lights.  Every scene needs a mesh, or many.  There is no limit to the number of mesh in your scene.  A mesh can be one of the many shapes that are built-in to Babylon.js, or it can be a shape that you plotted yourself using Babylon's VertexData system, or it can be a mesh that has been 'imported' into the scene... from a modeling package such as Blender or 3D Studio Max.
 
-You can learn many more things about Babylon.js scenes... in the other [tutorials and documentation](http://doc.babylonjs.com/).  And don't forget to look at the 'createScene()' functions of the playground's pre-installed demo scenes.  The Babylon.js playground is a learning wonderland, and it is a whole lot of fun, too.
+You can learn many more things about Babylon.js scenes... in the other [how_to and documentation](http://doc.babylonjs.com/).  And don't forget to look at the 'createScene()' functions of the playground's pre-installed demo scenes.  The Babylon.js playground is a learning wonderland, and it is a whole lot of fun, too.
 
 ## Babylon.js Objects, Properties, Methods, and Values ##
 
@@ -373,4 +373,4 @@ Easy.  Most of these things you already know, don't you?  I thought so.
 
 ## Hey, you made it! ##
 
-You are finally at the bottom of this tutorial.  It was a long, but fun trip, wasn't it?  Things will be easy from now on.  The next tutorial in the Playpen Series tutorials... is about building a very basic scene.  I think it will be quite easy and fast, for you.  You have graduated from tutorial #0... this tutorial.  You are already a Babylon.js expert.
+You are finally at the bottom of this tutorial.  It was a long, but fun trip, wasn't it?  Things will be easy from now on.  The next tutorial in the Playpen Series how_to... is about building a very basic scene.  I think it will be quite easy and fast, for you.  You have graduated from tutorial #0... this tutorial.  You are already a Babylon.js expert.

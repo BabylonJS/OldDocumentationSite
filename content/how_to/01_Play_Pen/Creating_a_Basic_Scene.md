@@ -123,7 +123,7 @@ So now, add this entire createScene function to your web page:
   };  // End of createScene function
 ```
 
-Yes, that is quite a function, but do not let it scare you.  You will learn more about the parameters and properties for lights, cameras, and built-in shapes... in the tutorials to come.  The main thing to know is that our createScene function has all requirements complete.  It contains:  
+Yes, that is quite a function, but do not let it scare you.  You will learn more about the parameters and properties for lights, cameras, and built-in shapes... in the how_to to come.  The main thing to know is that our createScene function has all requirements complete.  It contains:  
 
 *  a Babylon Scene object
 *  a camera that has been attached
@@ -247,7 +247,7 @@ Here is what the entire web page should look like:
 
 ## Moving On ##
 
-From this point forward in the Basic Series tutorials, I will mostly talk about things that are contained in the createScene function (the part between the dashed lines). I will assume that you already know how to insert a createScene function into a Babylon.js HTML5 scene document (like the one above).
+From this point forward in the Basic Series how_to, I will mostly talk about things that are contained in the createScene function (the part between the dashed lines). I will assume that you already know how to insert a createScene function into a Babylon.js HTML5 scene document (like the one above).
 
 Try to memorize this web page layout, and see how the createScene function is at the heart of it. After you have spent some time using the Babylon.js Playground, you will see how createScene() is portable, and can be easily copied and pasted TO and FROM the playground editor window. This will allow others to help you with problems, and will also allow you to help others with their problems.
 
@@ -256,4 +256,4 @@ Try to memorize this web page layout, and see how the createScene function is at
 
 Now you are ready to go further and learn how to create more elements like spheres, cylinders, boxes, etc.
 
-Next in the Playpen Series - [**Basic elements**](http://doc.babylonjs.com/tutorials/Discover_Basic_Elements)
+Next in the Playpen Series - [**Basic elements**](http://doc.babylonjs.com/how_to/Discover_Basic_Elements)

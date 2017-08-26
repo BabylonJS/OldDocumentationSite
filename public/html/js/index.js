@@ -28,8 +28,8 @@
                     html: '<i class="fa fa-book"></i>Generals'
                 }),
                 $('<a>', {
-                    href: '/tutorials',
-                    html: '<i class="fa fa-cogs"></i>Tutorials'
+                    href: '/how_to',
+                    html: '<i class="fa fa-cogs"></i>How To...'
                 }),
                 $('<a>', {
                     href: '/overviews',

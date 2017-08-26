@@ -27,7 +27,7 @@ mesh.unfreezeWorldMatrix();
 ```
 
 # Reducing draw calls
-As soon as you can please use instances as they are drawn with one single draw call: http://doc.babylonjs.com/tutorials/how_to_use_instances
+As soon as you can please use instances as they are drawn with one single draw call: http://doc.babylonjs.com/how_to/how_to_use_instances
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
 
@@ -61,7 +61,7 @@ scene.getAnimationRatio();
 
 The return value is higher on low frame rates.
 
-# Other useful tutorials
-* [Optimizing meshes selection for rendering](http://doc.babylonjs.com/tutorials/Optimizing_Your_Scene_with_Octrees)
-* [How to use scene optimizer](http://doc.babylonjs.com/tutorials/How_to_use_SceneOptimizer)
-* [Optimizing your scene with octrees](http://doc.babylonjs.com/tutorials/optimizing_your_scene_with_octrees)
+# Other useful how_to
+* [Optimizing meshes selection for rendering](http://doc.babylonjs.com/how_to/Optimizing_Your_Scene_with_Octrees)
+* [How to use scene optimizer](http://doc.babylonjs.com/how_to/How_to_use_SceneOptimizer)
+* [Optimizing your scene with octrees](http://doc.babylonjs.com/how_to/optimizing_your_scene_with_octrees)

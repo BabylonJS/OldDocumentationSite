@@ -10,11 +10,11 @@ Given the corner points of a polygon in the XoY plane the PolygonMeshBuilder con
 
 The polygon and any holes inside it must be simple, that is no overlapping sides. Holes should be wholly inside the polygon and should not be too close to the sides of the polygon or to each other.
 
-![Safe Construction](/img/tutorials/PolyMeshBuild/pmberr1.jpg)
+![Safe Construction](/img/how_to/PolyMeshBuild/pmberr1.jpg)
 
-![Unsafe Construction](/img/tutorials/PolyMeshBuild/pmberr2.jpg)
+![Unsafe Construction](/img/how_to/PolyMeshBuild/pmberr2.jpg)
 
-![Unsafe Construction](/img/tutorials/PolyMeshBuild/pmberr3.jpg)
+![Unsafe Construction](/img/how_to/PolyMeshBuild/pmberr3.jpg)
 
 ## Construction
 

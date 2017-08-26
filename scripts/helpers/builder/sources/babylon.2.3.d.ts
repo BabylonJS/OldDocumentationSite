@@ -4966,7 +4966,7 @@ declare module BABYLON {
 
 declare module BABYLON {
     /**
-    * Full documentation here : http://doc.babylonjs.com/tutorials/Solid_Particle_System
+    * Full documentation here : http://doc.babylonjs.com/how_to/Solid_Particle_System
     */
     class SolidParticleSystem implements IDisposable {
         particles: SolidParticle[];
@@ -5055,7 +5055,7 @@ declare module BABYLON {
         private _addParticle(idx, idxpos, model, shapeId, idxInShape);
         /**
         * Adds some particles to the SPS from the model shape.
-        * Please read the doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#create-an-immutable-sps
+        * Please read the doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#create-an-immutable-sps
         * @param mesh any Mesh object that will be used as a model for the solid particles.
         * @param nb the number of particles to be created from this model
         * @param positionFunction an optional javascript function to called for each particle on SPS creation
@@ -5087,13 +5087,13 @@ declare module BABYLON {
         dispose(): void;
         /**
         *  Visibilty helper : Recomputes the visible size according to the mesh bounding box
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#sps-visibility
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
         */
         refreshVisibleSize(): void;
         /** Visibility helper : Sets the size of a visibility box, this sets the underlying mesh bounding box.
         * @param size the size (float) of the visibility box
         * note : this doesn't lock the SPS mesh bounding box.
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#sps-visibility
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
         */
         setVisibilityBox(size: number): void;
         /**
@@ -5101,7 +5101,7 @@ declare module BABYLON {
         */
         /**
         * Sets the SPS as always visible or not
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#sps-visibility
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
         */
         isAlwaysVisible: boolean;
         /**
@@ -5109,7 +5109,7 @@ declare module BABYLON {
         */
         /**
         * Sets the SPS visibility box as locked or not. This enables/disables the underlying mesh bounding box updates.
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#sps-visibility
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
         */
         isVisibilityBoxLocked: boolean;
         /**
@@ -5139,19 +5139,19 @@ declare module BABYLON {
         /**
         * This function does nothing. It may be overwritten to set all the particles first values.
         * The SPS doesn't call this function, you may have to call it by your own.
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#particle-management
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#particle-management
         */
         initParticles(): void;
         /**
         * This function does nothing. It may be overwritten to recycle a particle.
         * The SPS doesn't call this function, you may have to call it by your own.
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#particle-management
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#particle-management
         */
         recycleParticle(particle: SolidParticle): SolidParticle;
         /**
         * Updates a particle : this function should  be overwritten by the user.
         * It is called on each particle by setParticles(). This is the place to code each particle behavior.
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#particle-management
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#particle-management
         * ex : just set a particle position or velocity and recycle conditions
         */
         updateParticle(particle: SolidParticle): SolidParticle;
@@ -5161,7 +5161,7 @@ declare module BABYLON {
         * @param particle the current particle
         * @param vertex the current index of the current particle
         * @param pt the index of the current vertex in the particle shape
-        * doc : http://doc.babylonjs.com/tutorials/Solid_Particle_System#update-each-particle-shape
+        * doc : http://doc.babylonjs.com/how_to/Solid_Particle_System#update-each-particle-shape
         * ex : just set a vertex particle position
         */
         updateParticleVertex(particle: SolidParticle, vertex: Vector3, pt: number): Vector3;

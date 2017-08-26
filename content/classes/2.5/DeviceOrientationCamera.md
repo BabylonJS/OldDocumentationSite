@@ -19,7 +19,7 @@ class [DeviceOrientationCamera](/classes/2.5/DeviceOrientationCamera) extends [F
 ## new [DeviceOrientationCamera](/classes/2.5/DeviceOrientationCamera)(name, position, scene)
 
 Create a new [DeviceOrientationCamera](/classes/2.5/DeviceOrientationCamera). It's a camera controlled by device orientation
-A tutorial about [DeviceOrientationCamera](/classes/2.5/DeviceOrientationCamera) can be found here : https://doc.babylonjs.com/tutorials/Cameras
+A tutorial about [DeviceOrientationCamera](/classes/2.5/DeviceOrientationCamera) can be found here : https://doc.babylonjs.com/how_to/Cameras
 
 #### Parameters
  | Name | Type | Description

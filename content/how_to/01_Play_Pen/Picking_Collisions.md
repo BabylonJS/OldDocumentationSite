@@ -9,7 +9,7 @@ The last collision type could be very useful for you: it’s picking an object w
 Let’s see how we can get your mouse position transposed in your 3D scene by this gun shooting example:
 
 
-![Picking](/img/tutorials/Collisions%20PickResult/11.png)
+![Picking](/img/how_to/Collisions%20PickResult/11.png)
 
 _Final result_
 
@@ -78,4 +78,4 @@ Possible uses include:
 ## Next step
 This collision method is convenient in a lot of situations. Once you understand mouse pick events, you can begin using that functionality to advance your application’s development.
 
-Now you should know everything about collisions, so it’s time to move on to a classic effect in 3D : [particles](http://doc.babylonjs.com/tutorials/Particles).
+Now you should know everything about collisions, so it’s time to move on to a classic effect in 3D : [particles](http://doc.babylonjs.com/how_to/Particles).

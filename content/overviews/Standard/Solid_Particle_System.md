@@ -53,7 +53,7 @@ SPS.billboard = true; // or false by default
 SPS.setParticles();
 ```
 `SPS.billboard` is a boolean (default _false_). If set to _true_, all the particles will face the cam and their _x_ and _y_ rotation values will be ignored.  
-This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) which are more performant in 2D computation.  
+This is rather useful if you display only plane particles. However, if you deal only with 2D particles you should consider to use the [BJS Particle System](http://doc.babylonjs.com/how_to/particles) or the [Sprite Manager](http://doc.babylonjs.com/how_to/sprites) which are more performant in 2D computation.  
 In order to display the SPS in billboard mode, you need to call `SPS.setParticles()` within the `scene.registerBeforeRender()` function.  
 
 Here is an example with plane particles in billboard mode :  https://www.babylonjs-playground.com/#WCDZS#7    
@@ -198,7 +198,7 @@ This function doesn't do anything, you have to implement it.
 It doesn't draw the mesh, it just changes the particle initial status that will be taken in account by the next `SPS.setParticle()` call.
 The same thing with `SPS.recycleParticle(particle)` what is not called automatically and that you have to implement by your own and to call when you need.  
 
-Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/tutorials/particles) or the [Sprite Manager](http://doc.babylonjs.com/tutorials/sprites) :  
+Remember finally that there are also some other means to deal with particles in BJS like the [Particle System](http://doc.babylonjs.com/how_to/particles) or the [Sprite Manager](http://doc.babylonjs.com/how_to/sprites) :  
 
 The Particle System is the most performant in terms of speed and of particle quantity.  
 The particles are 2D quads, have all the same texture and colour. They ever face the screen, so they can have only a z-axis rotation. They aren't z-sorted and aren't pickable.  
@@ -212,7 +212,7 @@ The SPS is a BJS mesh.
 Its particles are just parts of this big mesh. They can be planar, from a simple triangle to any planar polygon, or/and 3D solid. They face the screen only in `billboard` mode (maybe you should use the SPS in billboard mode only if the two previous means don't yet fit your needs as they are more performant for 2D). You can merge 2D and 3D particles in the same SPS and give them rotation in the space. Each particle can have its own color (vertex color) and own image from a single common texture. They are z-sorted and alpha-blended like any other BJS mesh. They are also pickable. They even have normals and reflect the light. Actually, all the features accessible to a mesh are accessible to the SPS.  
 The SPS provides no behavior but only methods to access and to set each particle.  
 
-About transparency and mesh rendering, you could read this [documentation](http://doc.babylonjs.com/tutorials/Transparency_and_How_Meshes_Are_Rendered).  
+About transparency and mesh rendering, you could read this [documentation](http://doc.babylonjs.com/how_to/Transparency_and_How_Meshes_Are_Rendered).  
 
 In order to have only one draw call to the GPU, these three systems use only one material/texture for all their particles.  
 <br/>
@@ -310,7 +310,7 @@ SPS.addShape(box, 150, {vertexFunction: myVertexFunction, positionFunction: myPo
 ```
 Example with asteroids :  https://www.babylonjs-playground.com/#2FPT1A#2  
 
-Note that you can also create some immutable objects rendered with only one draw call by using either `MergeMesh()` ([tutorial](http://doc.babylonjs.com/tutorials/How_to_Merge_Meshes)), etheir [Instances](http://doc.babylonjs.com/tutorials/How_to_use_Instances).
+Note that you can also create some immutable objects rendered with only one draw call by using either `MergeMesh()` ([tutorial](http://doc.babylonjs.com/how_to/How_to_Merge_Meshes)), etheir [Instances](http://doc.babylonjs.com/how_to/How_to_use_Instances).
 <br/>
 <br/>
 
@@ -337,7 +337,7 @@ Example 2 : you could keep, say, the first 5000 particles as unused ones and com
 In the SPS, you can set a color or/and a different image per particle.  
 #### Colors
 The colors are the Vertex colors, the color related to the vertices themselves. This means that, if you also use a colored material, the vertex colors and the material colors will mix nicely.  
-Unless you want to change the particle color, the particle will be given at creation the vertex color of their model if any. If the model has different vertex color per face (example : [a box with different face colors](http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors)), these colors are saved and all the particles built with this model will look like the model.  
+Unless you want to change the particle color, the particle will be given at creation the vertex color of their model if any. If the model has different vertex color per face (example : [a box with different face colors](http://doc.babylonjs.com/how_to/CreateBox_Per_Face_Textures_And_Colors)), these colors are saved and all the particles built with this model will look like the model.  
 However, if you change the color of particle, the particle is then given this lone color. In other words, you can only set one single color for each particle (no more face color).  
 The particle colors are `BJS Color4` object.  
 You can set them with the `particle.color` property. Please note that if you want to set this property at SPS creation time with the `positionFunction` parameter (`new SolidParticleSystem("name", {positionFunction: myColorSettings}`), the particle colors are initially `null`, since if you want to set it within the `updateParticle(particle)` method the particle colors are either the model colors if any, either white `Color4(1, 1, 1, 1)`.  
@@ -381,7 +381,7 @@ Or even use the alpha channel of the texture image :
 ```javascript
 SPS.mesh.material.useAlphaFromDiffuseTexture = true;
 ```
-Please read this [documentation](http://doc.babylonjs.com/tutorials/Transparency_and_How_Meshes_Are_Rendered) for transparency concerns.  
+Please read this [documentation](http://doc.babylonjs.com/how_to/Transparency_and_How_Meshes_Are_Rendered) for transparency concerns.  
 
 Color and UVs example :  https://www.babylonjs-playground.com/#WCDZS#8  
 Texture with alpha :  https://www.babylonjs-playground.com/#WCDZS#9  
@@ -556,7 +556,7 @@ If you prefer, you can even use the `AbstractMesh` method `intersectsMesh()` and
 if (someMesh.intersectsMesh(p)) { // change p velocity vector }
 ```
 Under the hood, when creating a SPS with `particleIntersection`, a bounding box and a bouding sphere are given to each solid particle.  
-For performance reasons, the particle intersections are always computed the fastest way, it is to say with Axis Aligned Bounding Boxes (AABB). Please read this : http://doc.babylonjs.com/tutorials/Intersect_Collisions_-_mesh   
+For performance reasons, the particle intersections are always computed the fastest way, it is to say with Axis Aligned Bounding Boxes (AABB). Please read this : http://doc.babylonjs.com/how_to/Intersect_Collisions_-_mesh   
 If you use the `AbstractMesh` `intersectsMesh()` method, what allows to force OBB computation (precise mode), only the mesh bounding box will be rotated, not the particle one, so the intersection detection will be just a bit better than in AABB mode.  
 The precise mode has a CPU significant cost, so it's not recommended to use it with solid particles.     
 ```javascript
@@ -621,7 +621,7 @@ SPS.vars.myFloat = 0.01;   // just keep setting float values to myFloat afterwar
 SPS.vars.myInt = 5;        // just keep setting integer values to myInt afterwards
 SPS.vars.myString = "foo"; // just keep setting string values to myString afterwards
 ```
-Example : From this [article](http://gamedevelopment.tutsplus.com/tutorials/the-three-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444), here is an implementation of a simple particle IA called "flocking" what a behavior of association, then cohesion and separation. This example uses `SPS.vars` to allocate the memory used for results only once instead of in-function temporary variables.     
+Example : From this [article](http://gamedevelopment.tutsplus.com/how_to/the-three-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444), here is an implementation of a simple particle IA called "flocking" what a behavior of association, then cohesion and separation. This example uses `SPS.vars` to allocate the memory used for results only once instead of in-function temporary variables.     
  https://www.babylonjs-playground.com/#2FPT1A#35   
 
 ### Rebuild the mesh
