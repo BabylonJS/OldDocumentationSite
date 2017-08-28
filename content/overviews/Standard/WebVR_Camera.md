@@ -33,7 +33,7 @@ Just like any other camera, to get the camera working correctly with user input 
 
 `camera.attachControl(canvas, true);`
 
-This will, however, only work on all browsers. Chromium (and probably the rest of the browsers soon) only support attaching the VR device to the scene during a user interaction (a mouse click, for example). To get that working correctly, a simple solution would be:
+This will, however, won't work on all browsers. Chromium (and probably the rest of the browsers soon) only support attaching the VR device to the scene during a user interaction (a mouse click, for example). To get that working correctly, a simple solution would be:
 
 ```javascript
 scene.onPointerDown = function () {

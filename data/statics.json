@@ -765,7 +765,7 @@
           "filename": "Behaviors"
         },
         {
-          "title": "Occlusion Query",
+          "title": "Occlusion Queries",
           "filename": "OcclusionQuery"
         }
       ]

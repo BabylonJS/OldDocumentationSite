@@ -8,7 +8,7 @@ A behavior is a simple class that can be attached to a node where it will provid
 A behavior is defined by the following interface:
 * `name`: Return the name of the behavior
 * `attach(node)`: This function will be called when a behavior is attached to a node. This is where the behavior will hook into useful events
-* `detach(node)`: This function will be called when a behavior is detached from a node. The behavior must clear any associated resources and unhook all events
+* `detach()`: This function will be called when a behavior is detached from the previously attached node. The behavior must clear any associated resources and unhook all events
 
 If behaviors rely on animation, the following **static** properties will be available:
 * `EasingFunction`: Define the easing function used animations
