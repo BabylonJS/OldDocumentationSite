@@ -2,7 +2,7 @@
 
 # Tools bar
 
-![toolbar](/img/overviews/debuglayer/toolbar.jpg)
+![toolbar](/img/features/debuglayer/toolbar.jpg)
 
 Several tools are available, from left to right : 
 * Refresh the current tab - *As the debug layer can be created before some information are available, this tool is here to refresh displayed data according to the last version of the game scene*
@@ -14,7 +14,7 @@ Several tools are available, from left to right :
 
 # Tab bar
 
-![tabbar](/img/overviews/debuglayer/tabbar.jpg)
+![tabbar](/img/features/debuglayer/tabbar.jpg)
 
 Each tab has an index (from 0 to 9, 0 is the Scene tab and 9 is the Camera tab) and correspond to a specific feature.
 
@@ -39,13 +39,13 @@ In some tabs, a search bar is available to look for a specific object.
 ## Manual property update
 When a list of properties is displayed for an object (example for a mesh below), the developer can update manually these properties by clicking on it, updating the new value and press 'Enter'.
 
-![mesh details](/img/overviews/debuglayer/meshdetails.jpg)
+![mesh details](/img/features/debuglayer/meshdetails.jpg)
 
 ## Tree Tools
 
  ### Mesh
  
-![mesh tools](/img/overviews/debuglayer/meshtools.jpg)
+![mesh tools](/img/features/debuglayer/meshtools.jpg)
 
 * Make visible/invisible the selected mesh
 * Display/remove mesh axis
@@ -54,32 +54,32 @@ When a list of properties is displayed for an object (example for a mesh below),
 
  ### Light
  
-![light tools](/img/overviews/debuglayer/lighttools.jpg)
+![light tools](/img/features/debuglayer/lighttools.jpg)
 
 * Switch on/off the light
 
 ### GUI
 
-![GUI tools](/img/overviews/debuglayer/GUItools.jpg)
+![GUI tools](/img/features/debuglayer/GUItools.jpg)
 
 * Display all children of the selected primitive
 * Display/hide the selected primitive
 
 ### Material
 
-![material tools](/img/overviews/debuglayer/materialtools.jpg)
+![material tools](/img/features/debuglayer/materialtools.jpg)
 
 * Display the selected texture with the mouse cursor - *Works only for images textures*
 
 ### Camera
 
-![camera tools](/img/overviews/debuglayer/cameratools.jpg)
+![camera tools](/img/features/debuglayer/cameratools.jpg)
 
 * Make the selected camera the active camera
 
 ### Sounds
 
-![sound tools](/img/overviews/debuglayer/soundtools.jpg)
+![sound tools](/img/features/debuglayer/soundtools.jpg)
 
 * Play the selected sound
 

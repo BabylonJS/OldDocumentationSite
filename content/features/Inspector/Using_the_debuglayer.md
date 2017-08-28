@@ -11,7 +11,7 @@ From version 3.0, this debug layer has been replaced by an complete inspector, t
 * Material list
 * ... and much more
 
-![debug layer overview](/img/overviews/debuglayer/debuglayer.jpg)
+![debug layer feature](/img/features/debuglayer/debuglayer.jpg)
 
 Each feature is represented on a tab: 
 * Mesh tab

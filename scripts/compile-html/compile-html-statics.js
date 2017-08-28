@@ -43,7 +43,7 @@ module.exports = function(done){
         "extensions",
         "generals",
         "how_to",
-        "overviews"
+        "features"
     ];
 
     var globalObj = {};

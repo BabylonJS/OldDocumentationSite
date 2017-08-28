@@ -46,7 +46,7 @@ module.exports = function index(done) {
         "extensions",
         "generals",
         "how_to",
-        "overviews"
+        "features"
     ];
     */
 

@@ -143,7 +143,7 @@ var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, came
 
 You have several options available:
 * colorGradingTexture: Used to provide a color grading texture applied on your scene. Demo: https://www.babylonjs-playground.com/#J9H084
-* colorCurves: Used to provide several properties to change colors. More [details here](http://doc.babylonjs.com/overviews/physically_based_rendering_master#color-curves). Demo: https://www.babylonjs-playground.com/#J9H084#12
+* colorCurves: Used to provide several properties to change colors. More [details here](http://doc.babylonjs.com/features/physically_based_rendering_master#color-curves). Demo: https://www.babylonjs-playground.com/#J9H084#12
 * contrast: 1.0 by default. Used to change the contrast. Demo: https://www.babylonjs-playground.com/#J9H084#9
 * exposure: 1.0 by default. Used to change the exposure of the image. Demo: https://www.babylonjs-playground.com/#J9H084#10
 

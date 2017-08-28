@@ -703,12 +703,12 @@
       ]
     }   
   ],
-  "overviews": [
+  "features": [
     {
       "title": "All",
       "name": "All",
       "img": "img/how_to/All.png",
-      "desc": "All overviews."
+      "desc": "All features."
     },
     {
       "title": "Maps",

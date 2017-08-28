@@ -32,8 +32,8 @@
                     html: '<i class="fa fa-cogs"></i>How To...'
                 }),
                 $('<a>', {
-                    href: '/overviews',
-                    html: '<i class="fa fa-book"></i>Overviews'
+                    href: '/features',
+                    html: '<i class="fa fa-book"></i>Features'
                 }),                     
                 $('<a>', {
                     href: '/exporters',
