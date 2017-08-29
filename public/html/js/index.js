@@ -28,6 +28,10 @@
                     html: '<i class="fa fa-book"></i>Generals'
                 }),
                 $('<a>', {
+                    href: '/babylon101',
+                    html: '<i class="fa fa-book"></i>Babylon 101'
+                }), 
+                $('<a>', {
                     href: '/how_to',
                     html: '<i class="fa fa-cogs"></i>How To...'
                 }),
