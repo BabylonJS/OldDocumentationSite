@@ -114,7 +114,10 @@ If you set a particle rotation quaternion, its rotation property will then be ig
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.   
 
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
-Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.      
+Please note also that, even a particle is invisible (_isVisible_ set to _false_), it's no longer computed in the particle loop, until reset as visible, in order to improve the SPS performances.    
+Setting a particle as inactive or dead (_alive_ set to _false_) has almost the same behavior (no more computation within the loop) but also freezes the particle in its current status, including its visibility, until reactivated.  
+Both inactive and invisible particles can't be picked.   
+
 
 You can obviously also create your own properties like _acceleration: Vector3_ or _age_, in `initParticles()` for instance.  
 ```javascript
@@ -461,6 +464,8 @@ scene.onPointerDown = function(evt, pickResult) {
 The SPS pickability is directly related to the size of its bounding box (please read 'SPS Visibility' part). So, in order to make sure your particles will be pickable, don't forget to force, at least once, the bounding box size recomputation once the particles are set in the space with `setParticles()`.  
 Pickable particle example (no SPS update in the render loop) :  https://www.babylonjs-playground.com/#2FPT1A#41  
 Pickable particle example (particle rotation) :  https://www.babylonjs-playground.com/#2FPT1A#14  
+
+Remember that both inactive and invisible particles can't be picked.
 
 ### Digest a Mesh
 There is another way than adding shapes of meshes used as models to populate the SPS : you can directly "digest" a mesh.  
