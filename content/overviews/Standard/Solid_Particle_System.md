@@ -116,7 +116,10 @@ If you set your SPS in billboard mode, you should only set a `rotation.z` value.
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
 Please note also that, even a particle is invisible (_isVisible_ set to _false_), it's no longer computed in the particle loop, until reset as visible, in order to improve the SPS performances.    
 Setting a particle as inactive or dead (_alive_ set to _false_) has almost the same behavior (no more computation within the loop) but also freezes the particle in its current status, including its visibility, until reactivated.  
+Moreover setting a particle as dead overwrittes all the other settings. If you set a particle rotation in the same time that you set it as dead, then the rotation is ignored.  
 Both inactive and invisible particles can't be picked.   
+
+In this example, a new particle is set to dead each frame : http://playground.babylonjs.com/#M1VM8T  
 
 
 You can obviously also create your own properties like _acceleration: Vector3_ or _age_, in `initParticles()` for instance.  
@@ -149,7 +152,7 @@ You have access to some SPS properties :
 
 Here again, you can add your own properties like _capacity_ or _rate_ if needed.
 
-If you don't need some given features (ex : particle colors), you can disable/enable them at any time (disabling a feature will improve the performance) : 
+If you don't need some given features (ex : particle colors), you can disable/enable them at any time. Disabling a feature will improve the performance, especially the rotation computation what is the heaviest one among those activated by default : 
 ```javascript
 SPS.computeParticleRotation = false;       // prevents from computing particle.rotation
 SPS.computeParticleTexture = false;        // prevents from computing particle.uvs
@@ -157,7 +160,8 @@ SPS.computeParticleColor = false;          // prevents from computing particle.c
 SPS.computeParticleVertex = false;         // prevents from calling the custom updateParticleVertex() function
 ```
 All these properties, except `SPS.computeParticleVertex`, are enabled set to _true_ by default. These affect the `SPS.setParticles()` process only.   
-If these properties are set to _false_, they don't prevent from using the related feature (ie : the particles can still have a color even if `SPS.computeParticleColor` is set to _false_), they just prevent from updating the value of the particle property on the next `setParticle()` call.  
+If these properties are set to _false_, they don't prevent from using the related feature (ie : the particles can still have a color even if `SPS.computeParticleColor` is set to _false_), they just prevent from updating the value of the particle property on the next `setParticle()` call.   
+
 Example : if your particles have colors, you can set their colors wihtin the `initParticles()` call and you can call then once the `setParticles()` method to set these colors. If you need to animate them later on and these colors don't change, just set then `SPS.computeParticleColor` to _false_ once before runing the render loop which will call `setParticles()` each frame.  
 If you are familiar with how BJS works, you could compare the SPS and its mesh creation to some classical BJS mesh creation (vertex and indice settings) and the particle management to the World Matrix computation (rotation, scaling, positioning).  
 
@@ -188,7 +192,7 @@ So three steps :
 
   * SPS and its mesh creation
   * compute your particle behavior
-  * call setParticles() to update the mesh and draw it
+  * call `setParticles()` to update the mesh and draw it
 
 Just remember that, once the mesh is build, only **`setParticles()`** does then the job : updates the mesh VBO and draws it.
 
@@ -334,6 +338,8 @@ Example 1 : you may want to update your 10K particle mesh only every three frame
 * frame 3 : `setParticles(6601, 9999, true)` computes everything for particles from 6601 to 9999 and finally updates the mesh.  
 
 Example 2 : you could keep, say, the first 5000 particles as unused ones and compute the particle behavior only for the 5000 lasts in your global pool.  
+
+Remember also that setting some particles as inactive (_alive = false_) is another way to speed up the SPS loop.  
 
 
 ### Colors and UVs
