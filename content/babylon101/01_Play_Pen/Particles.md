@@ -6,7 +6,7 @@ PG_TITLE: 14. Particles
 
 This tutorial is going to talk about the particle system in BabylonJS. Particles are often small sprites used to simulate hard-to-reproduce phenomena like fire, smoke, water, or abstract visual effects like magic glitter and faery dust.
 
-![Particles](/img/tutorials/Particles/12.png)
+![Particles](/img/how_to/Particles/12.png)
 
 A picture of [the playground's ParticleSystem demo]( https://www.babylonjs-playground.com/?12)
 
@@ -32,7 +32,7 @@ Simple. The first parameter is the name, he second parameter is the maximum numb
 An important part is to define the texture of each particle. Each one will have the same pattern, so choose carefully which one you want. But keep in mind that a single scene can contain multiple particleSystems, and each one can emit particles with unique texture patterns. Also keep in mind that multiple particle systems can use the same emitter object. 
 Our particle texture is going to be this one:
 
-![Flare](/img/tutorials/Particles/Flare.png)
+![Flare](/img/how_to/Particles/Flare.png)
 
 To define the particle’s texture, add a line like this:
 ```javascript
@@ -49,7 +49,7 @@ particleSystem.textureMask = new BABYLON.Color4(0.1, 0.8, 0.8, 1.0);
 
 This is the output of this configuration:
 
-![TextureMask](/img/tutorials/Particles/12-1.png)
+![TextureMask](/img/how_to/Particles/12-1.png)
 
 The last main thing to do is to define our emitter that we talked about earlier:
 ```javascript
@@ -66,7 +66,7 @@ particleSystem.minEmitBox = new BABYLON.Vector3(-1, 0, 0); // Starting all From
 
 As you can see, particles are emitted from different positions along the X-axis:
 
-![EmitBox](/img/tutorials/Particles/12-2.png)
+![EmitBox](/img/how_to/Particles/12-2.png)
 
 * Now you can give some colors to your particles. Color one and two are combined, and “colorDead” is the color that the particle takes-on just before it disappears.
 ```javascript
@@ -95,7 +95,7 @@ particleSystem.maxLifeTime = 1.5;
 particleSystem.emitRate = 1000;
 ```
 
-![emitRate](/img/tutorials/Particles/12-3.png)
+![emitRate](/img/how_to/Particles/12-3.png)
 
 If you want to launch only a few particles at once, that can be done, as well. For example, if you want to emit only 300 particles:
 ```javascript
@@ -120,7 +120,7 @@ particleSystem.direction1 = new BABYLON.Vector3(-7, 8, 3);
 particleSystem.direction2 = new BABYLON.Vector3(7, 8, -3);
 ```
 
-![emitRate](/img/tutorials/Particles/12-4.png)
+![emitRate](/img/how_to/Particles/12-4.png)
 
 * AngularSpeed. You can define a Z-axis rotation for each particle (in radian):
 ```javascript
@@ -257,5 +257,5 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 ## Basic - L1
 
 [Mesh Overview](/overviews/Shapes)  
-[Solid Particle System](/tutorials/Solid_Particle_System)
+[Solid Particle System](/how_to/Solid_Particle_System)
 

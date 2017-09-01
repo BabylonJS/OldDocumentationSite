@@ -84,19 +84,19 @@ You can find a live example here:
 
 Please find here pictures of various filters used with a spot light:
 
-![Hard shadows](/img/tutorials/hardshadows.jpg)
+![Hard shadows](/img/how_to/hardshadows.jpg)
 
 *No filter*
 
-![Poisson](/img/tutorials/poisson.jpg)
+![Poisson](/img/how_to/poisson.jpg)
 
 *Poisson sampling*
 
-![ESM](/img/tutorials/esm.jpg)
+![ESM](/img/how_to/esm.jpg)
 
 *Exponential Shadow Map*
 
-![BlurESM](/img/tutorials/bluresm.jpg)
+![BlurESM](/img/how_to/bluresm.jpg)
 
 *Blur Exponential Shadow Map*
 

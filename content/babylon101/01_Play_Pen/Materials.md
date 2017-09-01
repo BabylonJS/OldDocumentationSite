@@ -53,7 +53,7 @@ To give an idea how material diffuse color reacts to diffuse light color the fol
 
 react to white, red, green and blue diffuse spot lights. Notice how the viewing angle adjusts the lighting.
 
-![ Spot Light](/img/tutorials/Materials/spots1.png)
+![ Spot Light](/img/how_to/Materials/spots1.png)
 
 ### Ambient Color Example
 In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
@@ -61,7 +61,7 @@ The first sphere has no ambient color, the middle has red ambient color defined 
 has material with green ambient color. The scene ambient color, which must be present, is white. When a scene ambient color component is set to 0, for example red, then whatever the value for red in the material 
 ambient color it will have no effect. 
 
-![Ambient](/img/tutorials/Materials/ambient1.png)
+![Ambient](/img/how_to/Materials/ambient1.png)
 
 ### Transparent Color Example
 Transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
@@ -97,7 +97,7 @@ In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all
 The first sphere has a diffuse texture, the middle an emissive texture and the one on the right 
 has material with red diffuse color an an ambient texture.
 
-![Texture](/img/tutorials/Materials/texture1.png)
+![Texture](/img/how_to/Materials/texture1.png)
 
 ### Transparent Texture Examples
 As for colors the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
@@ -109,7 +109,7 @@ var myMaterial.alpha = 0.5;
 In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
 which has a transparent background;
 
-![A dog](/img/tutorials/Materials/dog.png)
+![A dog](/img/how_to/Materials/dog.png)
 
 In this case we set the _hasAlpha_ property of the **texture** to true.
 ```javascript
@@ -130,7 +130,7 @@ When _backFaceCulling_ is false the back faces are not removed during rendering 
 
 | Back Face Culling True | Back Face Culling False |
 |-----|--------|
-| ![BFC True](/img/tutorials/Materials/bfc2.png) | ![BFC False](/img/tutorials/Materials/bfc1.png) |
+| ![BFC True](/img/how_to/Materials/bfc2.png) | ![BFC False](/img/how_to/Materials/bfc1.png) |
 
 [Playground Example Back Face Culling True](http://www.babylonjs-playground.com/#YDO1F#20)
 
@@ -139,7 +139,7 @@ You can see a mesh in wireframe mode by using:
 ```javascript
 materialSphere1.wireframe = true;
  ```
-![wireframe](/img/tutorials/Materials/04-3.png)
+![wireframe](/img/how_to/Materials/04-3.png)
 
 
 ## Next step

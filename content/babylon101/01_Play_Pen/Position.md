@@ -8,12 +8,12 @@ There are two frames of reference that BabylonJS uses with a mesh, the **world a
 In all diagrams and playgrounds X axis is red, Y axis is Green and Z axis is blue. 
 In all examples a non symmetrical mesh, the pilot, will be used. 
 
-![The Pilot](/img/tutorials/Mesh/pilot.jpg)
+![The Pilot](/img/how_to/Mesh/pilot.jpg)
 The Pilot
 
 When the pilot is created its position and rotation are both set to (0, 0, 0), its scaling to (1, 1, 1) and all frames of reference coincide.
 
-![Creation of Pilot](/img/tutorials/Mesh//pilot1.jpg)
+![Creation of Pilot](/img/how_to/Mesh//pilot1.jpg)
 
 ## Position
 
@@ -37,7 +37,7 @@ The local and world axes remain in the same orientation.
 
 ## Rotation
 
-WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and there are many varying conventions for applying rotations. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/tutorials/Applying_Rotations.html)
+WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and there are many varying conventions for applying rotations. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/how_to/Applying_Rotations.html)
 
 In BabylonJS 
 
@@ -85,9 +85,9 @@ pilot.rotation.x  =  alpha;
 
 The following diagrams show that applying a rotation of PI/2 in the axis order, z, x, y  or  y, x, z  give the same result.
 
-![Rotations  XYZ](/img/tutorials/Mesh/expected.jpg)
+![Rotations  XYZ](/img/how_to/Mesh/expected.jpg)
 
-![Rotations YXZ ](/img/tutorials/Mesh/actualyxz.jpg)
+![Rotations YXZ ](/img/how_to/Mesh/actualyxz.jpg)
 
 
 This consistency of order y, x, z for **local axes**  or z, x, y for **world axes** can be further checked out in the following playground by re-ordering and/or commenting out lines 38, 39 and 40

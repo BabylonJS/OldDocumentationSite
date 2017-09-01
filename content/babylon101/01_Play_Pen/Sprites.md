@@ -9,7 +9,7 @@ In this tutorial, we are going to learn how to manipulate Sprites. Sprites are 2
 
 Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees. 
 
-![Elements](/img/tutorials/Sprites/08.png)
+![Elements](/img/how_to/Sprites/08.png)
 
 _Final result_
 
@@ -39,7 +39,7 @@ var spriteManagerPlayer = new BABYLON.SpriteManager("playerManagr","Assets/Playe
 
 This time, we only want 2 instances, and we said that our sprite’s size is 64. Here is what our image looks like:
 
-![Elements](/img/tutorials/Sprites/08-1.png)
+![Elements](/img/how_to/Sprites/08-1.png)
 
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
@@ -79,7 +79,7 @@ One of the advantages of sprites is animations. You only have to load one large 
 
 Here is what a complete sprite image looks like:
 
-![Elements](/img/tutorials/Sprites/08-2.png)
+![Elements](/img/how_to/Sprites/08-2.png)
 
 This will animate our players in more than 40 positions, depending upon the situation (walking, jumping,…). Babylon's engine is automatically reading sprites on more than one line, so the engine does the work for you :)
 
@@ -97,10 +97,8 @@ player.cellIndex = 44;
 
 You can play with the scene and code used in this tutorial... by visiting the Babylon.js [**Playground sprites demo**]( https://www.babylonjs-playground.com/?8).
 
-## Next step
-Don’t hesitate to use sprites in your scene: they are not resource intensive, and they really can help keep high frame rates in your application.
-
-Now you know how to create a complete simple dynamic scene and it is going to be important to talk about [collisions](/babylon101/Cameras,_Mesh_Collisions_and_Gravity).
+## Next Step
+Having learnt about sprites, so it’s time to move on to use them in a classic effect in 3D : [particles](/babylon101/Particles).
 
 # Further Reading
 

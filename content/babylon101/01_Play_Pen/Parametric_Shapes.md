@@ -10,7 +10,7 @@ The appearance of the set shapes can generally be determined by their name. This
 
 ## Updatable
 
-Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/tutorials/Updating_Vertices.html).
+Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/how_to/Updating_Vertices.html).
 
 When in addition the shape has an instance parameter in its options then its shape can be updated by using MeshBuilder with instance set to the name of the shape. 
 
@@ -272,7 +272,7 @@ of the image.
 
 [A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#2)
 
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## Extruded Non Regular Polygon
 You must set at least the _shape_ and _depth_ properties.
@@ -295,13 +295,13 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-To understand how to set _faceUV_ or _faceColors_, please read this : /tutorials/CreateBox_Per_Face_Textures_And_Colors
+To understand how to set _faceUV_ or _faceColors_, please read this : /how_to/CreateBox_Per_Face_Textures_And_Colors
 
 face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
 
 [Playground Example of Extruded Polygon](http://www.babylonjs-playground.com/#RNCYVM#2)
 
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 # Further Reading
 
@@ -312,19 +312,19 @@ Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
 ## Mid Level - L2
 
 [Basic Shapes](/babylon101/Discover_Basic_Elements.html)   
-[Polyhedra Shapes](/tutorials/Polyhedra_Shapes.html)
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes.html)
 
 ## More Advanced - L3
    
-[Ribbons In Detail](/tutorials/Ribbon_Tutorial.html)  
-[Maths Makes Ribbons](/tutorials/Maths_Make_Ribbons.html)  
-[Decals](/tutorials/Decals.html) 
+[Ribbons In Detail](/how_to/Ribbon_Tutorial.html)  
+[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons.html)  
+[Decals](/how_to/Decals.html) 
 
 # Legacy Creation of Parametric Shapes
 
 * **Creation of a Ribbon**
 
-For details on what it is and how it is constructed you might want to read the [**Ribbon Tutorial**](/tutorials/Ribbon_Tutorial)
+For details on what it is and how it is constructed you might want to read the [**Ribbon Tutorial**](/how_to/Ribbon_Tutorial)
 
 ```javascript
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", [path1, path2, ..., pathn], false, false, 0, scene, false, BABYLON.Mesh.DEFAULTSIDE);
@@ -400,7 +400,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 ```javascript
 var polygon = BABYLON.Mesh.CreatePolygon("cylinder", [V1, V2, ..., Vn], scene);
 ```
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 * **Extrusion of a Non Regular Polygon**
 
@@ -416,7 +416,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], 2, scene);
 ```
 
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 * **Creation of a Lines Mesh**
 

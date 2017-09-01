@@ -10,7 +10,7 @@ It's used to check collision or intersection in the scene between meshes and thi
 
 In the previous tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
 using the function scene.pick(scene.pointerX, scene.pointerY) : 
-http://doc.babylonjs.com/tutorials/picking_collisions
+http://doc.babylonjs.com/how_to/picking_collisions
 
 But here we will see that we can throw ray from any point and in any direction. 
 For example in a shooting game at 3rd person view : collisions between our bullets and obstacles.
@@ -32,7 +32,7 @@ ______
 
  https://www.babylonjs-playground.com/#KNE0O#4
 
-![Raycast simple](/img/tutorials/raycast01.jpg)
+![Raycast simple](/img/how_to/raycast01.jpg)
 
 In all our playgrounds, we will imagine that our character is the main box at the center.
 It will shoot laser beams continually forward and detect which enemy (other boxes) is hitten.
@@ -81,7 +81,7 @@ It is a filter to choose which meshes will be selectable :
 
  https://www.babylonjs-playground.com/#KNE0O#18
 
-![Raycast predicate](/img/tutorials/raycast02.jpg)
+![Raycast predicate](/img/how_to/raycast02.jpg)
 
 I added a new function predicate (l54) :
 
@@ -118,7 +118,7 @@ We can use *scene.multiPickWithRay* if we don't want that the ray stops at the f
 
  https://www.babylonjs-playground.com/#KNE0O#19
 
-![Raycast multipick](/img/tutorials/raycast02.jpg)
+![Raycast multipick](/img/how_to/raycast02.jpg)
 
 The picking result will be an array (l68).
 So we do a loop to change all meshes hitten and you can see that the two blue boxes size change. 
@@ -157,10 +157,11 @@ rayHelper.show(scene);
 The helper can also be attached to a mesh to track its direction:
  https://www.babylonjs-playground.com/#ZHDBJ#37
 
-_____
+## Next step
 
-## Next Step
-Now you should know everything about collisions, so it’s time to move on to a classic effect in 3D : [particles](/babylon101/Particles).
+ [**Sprites**](/babylon101/Sprites).
+
+
 
 # Further Reading
 

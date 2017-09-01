@@ -4,9 +4,9 @@ PG_TITLE: 15. Environment
 ---
 # Environment
 
-You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive tutorials that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.
+You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive how_to that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.
 
-![Environment](/img/tutorials/13.jpg)
+![Environment](/img/how_to/13.jpg)
 
 _A picture showing Babylon.js fog in action_
 
@@ -97,7 +97,7 @@ skybox.renderingGroupId = 0;
 myMesh.renderingGroupId = 1;
 ```
 
-More info about rendering groups and rendering order can be found [here](/tutorials/Transparency_and_How_Meshes_Are_Rendered).
+More info about rendering groups and rendering order can be found [here](/how_to/Transparency_and_How_Meshes_Are_Rendered).
 
 #### Automatic creation
 Now that we understand how a skybox can be created let's move to a simpler way:

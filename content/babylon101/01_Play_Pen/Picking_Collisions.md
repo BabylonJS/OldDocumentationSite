@@ -9,7 +9,7 @@ In picking an object with your mouse the main difficulty is to click on a 3D obj
 Let’s see how we can get your mouse position transposed in your 3D scene by this gun shooting example:
 
 
-![Picking](/img/tutorials/Collisions%20PickResult/11.png)
+![Picking](/img/how_to/Collisions%20PickResult/11.png)
 
 _Final result_
 

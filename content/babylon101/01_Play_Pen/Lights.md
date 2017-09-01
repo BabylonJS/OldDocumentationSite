@@ -132,7 +132,7 @@ As you can see, the lights only affect the front face and not the back face.
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!
 
 
-Guess what! The next tutorial... is about animation! [Click this and let's go!](http://doc.babylonjs.com/tutorials/Animations)
+Guess what! The next tutorial... is about animation! [Click this and let's go!](http://doc.babylonjs.com/how_to/Animations)
 
 # Further Reading
 

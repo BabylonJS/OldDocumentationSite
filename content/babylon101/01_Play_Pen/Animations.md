@@ -5,7 +5,7 @@ PG_TITLE: 08. Animations
 # Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 
-![Elements](/img/tutorials/Animations/07.png)
+![Elements](/img/how_to/Animations/07.png)
 
 _Final result_
 
@@ -295,7 +295,7 @@ For purpose, here is a good reference to create your curve algorithm : [http://c
 
 Here is a pretty cool implementation using the bezier curve algorithm :
 
-![](/img/tutorials/Animations/bezier.jpg)
+![](/img/how_to/Animations/bezier.jpg)
 
 ```Javascript
 var bezierEase = new BABYLON.BezierCurveEase(0.32, -0.73, 0.69, 1.59);
@@ -397,7 +397,7 @@ And that's it!
 
 ## Next step
 
-Your scene is now becoming dynamic, and all your meshes can move in all directions! Feel free to try different animations on different objects, then come back and learn all about [**Sprites**](/babylon101/Sprites).
+Now you know how to create a complete simple dynamic scene and it is going to be important to talk about [collisions](/babylon101/Cameras,_Mesh_Collisions_and_Gravity).
 
 # Further Reading
 
