@@ -41,6 +41,8 @@ width|_(number)_ width size, overwrites _size_ property|size
 depth|_(number)_ depth size,  overwrites _size_ property|size
 faceColors|_(Color4[])_ array of 6 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
 faceUV|_(Vector4[])_ array of 6 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 To understand how to set _faceUV_ or _faceColors_, please read this : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
@@ -61,6 +63,8 @@ diameterY|_(number)_ diameter on Y axis, overwrites _diameter_ property|diameter
 diameterZ|_(number)_ diameter on Z axis, overwrites _diameter_ property|diameter
 arc|_(number)_ ratio of the circumference (latitude) between 0 and 1|1
 slice|_(number)_ ratio of the height (longitude) between 0 and 1|1
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
@@ -83,6 +87,8 @@ subdivisions|_(number)_ number of rings|1
 faceColors|_(Color4[])_ array of 3 _Color4_, 0 : bottom cap, 1 : cylinder tube, 2 : top cap|Color4(1, 1, 1, 1) for each face
 faceUV|_(Vector4[])_ array of 3 _Vector4_, 0 : bottom cap, 1 : cylinder tube, 2 : top cap| UVs(0, 0, 1, 1) for each face
 arc|_(number)_ ratio of the circumference between 0 and 1|1
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 To understand how to set _faceUV_ or _faceColors_, please read this by considering 3 faces only : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
@@ -99,6 +105,8 @@ property|value|default value
 size|_(number)_ side size of the plane|1
 width|_(number)_ size of the width|size
 height|_(number)_ size of the height|size
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 sourcePlane|_(Plane)_ source plane (math) the mesh will be transformed to|null
@@ -167,6 +175,8 @@ property|value|default value
 radius|_(number)_ the radius of the disc or polygon|0.5
 tessellation|_(number)_ the number of disc/polygon sides|64
 arc|_(number)_ ratio of the circumference between 0 and 1|1
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
@@ -182,6 +192,8 @@ property|value|default value
 diameter|_(number)_ diameter of the torus|1
 thickness|_(number)_ thickness of its tube|0.5
 tessellation|_(number)_ number of segments along the circle|16
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
@@ -200,6 +212,8 @@ radialSegments|_(number)_ number of radial segments|32
 tubularSegments|_(number)_ number of tubular segments|32
 p|_(number)_ number of windings|2
 q|_(number)_ number of windings|3
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
@@ -221,6 +235,8 @@ custom|_(polygonObjectReference)_ a polyhedron object, overwrites the _type_ pro
 faceColors|_(Color4[])_ array of _Color4_, one per face|Color4(1, 1, 1, 1) for each side
 faceUV|_(Vector4[])_ array of _Vector4_, one per face| UVs(0, 0, 1, 1) for each side
 flat|_(boolean)_ if false, a polyhedron has a single global face, _faceUV_ and _faceColors_ are ignored|true
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 To understand how to set _faceUV_ or _faceColors_, please read this by considering the right number of faces of your polyhedron, instead of only 6 for the box : http://doc.babylonjs.com/tutorials/CreateBox_Per_Face_Textures_And_Colors
@@ -372,6 +388,8 @@ pathArray|_(Vector3[][])_  array of array of Vector3, the array of paths **REQUI
 closeArray|_(boolean)_  to force the ribbon to join its last and first paths|false
 closePath|_(boolean)_  to force each ribbon path to join its last and first points|false
 offset|_(number)_  used if the pathArray has one path only|half the path length
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of a ribbon to be updated|null
@@ -398,6 +416,8 @@ tessellation|_(number)_  the number of radial segments|64
 radiusFunction|_( function(i, distance) )_  a function returning a radius value from _(i, distance)_ parameters|null
 cap|_(number)_ tube cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 arc|_(number)_ ratio of the tube circumference between 0 and 1|1
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of a tube to be updated|null
@@ -423,6 +443,8 @@ path|_(Vector3[])_  array of Vector3, the extrusion axis **REQUIRED** |
 scale|_(number)_  the value to scale the shape|1
 rotation|_(number)_  the value to rotate the shape each step along the path|0
 cap|_(number)_ extrusion cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
@@ -450,6 +472,8 @@ rotationFunction|_( function(i, distance) )_  a function returning a rotation va
 ribbonClosePath|_(boolean)_ the underlying ribbon _closePath_ parameter value|false
 ribbonCloseArray|_(boolean)_ the underlying ribbon _closeArray_ parameter value|false
 cap|_(number)_ extrusion cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
@@ -472,6 +496,8 @@ tessellation|_(number)_  the number of iteration around the lathe|64
 arc|_(number)_ ratio of the circumference between 0 and 1|1
 cap|_(number)_ tube cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 closed|_(boolean)_ to open/close the lathe circumference, should be set to `false` when used with `arc`|true
+frontUV|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the front side|Vector4(0, 0, 1 , 1)
+back|_(Vector4)_ for double-sided meshes, the part of the texture image to crop and stick on the back side|Vector4(0, 0, 1 , 1)
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
