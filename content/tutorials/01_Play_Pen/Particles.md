@@ -137,6 +137,7 @@ particleSystem.updateSpeed = 0.005;
 ```
 
 * Duration. You can set the amount of time the particle system is running (depends of the overall speed above).
+
 ```javascript
 particleSystem.targetStopDuration = 5;
 ```
