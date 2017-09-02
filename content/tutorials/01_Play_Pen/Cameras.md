@@ -70,6 +70,14 @@ If required you can also totally deactivate panning by setting :
    scene.activeCamera.panningSensibility = 0;
 ```
 
+## State
+
+Camera state can be stored in order to restore it later. The state of a camera includes position, rotation and FOV.
+To store the current state, just call `camera.storeState()`. 
+To restore it, call `camera.restoreState()`.
+
+You can find a live example here: https://www.babylonjs-playground.com/#GH5SVN#1
+
 ## Unique Purpose Cameras
 
 There are some Babylon.js cameras that have unique purposes. I will try to explain their purposes as we examine each camera and their constructors.
