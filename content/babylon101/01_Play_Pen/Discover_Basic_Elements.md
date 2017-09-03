@@ -7,7 +7,7 @@ PG_TITLE: 02. Set Shapes
 
 These are shapes that usually already have names in everyday use. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. You will have to wait for the next section to learn how to create shapes that have no everyday names but are formed through data sets and parameters. These are termed _parametric shapes_.
 
-In the 101 course you will only use the set shapes of boxes, spheres, planes and ground. Also this course will concentrate on the _MeshBuilder_ method of shape creation rather than the older legacy _Mesh_ method. How to create all the set shapes using either method can be found by doing [Further Reading](#Further_Reading). The advantages and disadvantages of both methods will be discussed in those pages.
+In the 101 course you will only use the set shapes of boxes, spheres, planes and ground and just use the _MeshBuilder_ method of shape creation rather than the older legacy _Mesh_ method. How to create all the set shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further_reading).
 
 ## MeshBuilder Method
 
@@ -132,10 +132,10 @@ There are four possible values for this option :
   * BABYLON.Mesh.DOUBLESIDE,
   * BABYLON.Mesh.DEFAULT which is the default value and equals FRONTSIDE currently.
 
-As well as the playground example of a plane above checkout the following one as well.  
+By moving your screen pointer left and right to rotate the planes, in the following examples, you can compare between DEFAULT and DOUBLESIDE.   
+[Playground Example of a DEFAULT Plane](https://www.babylonjs-playground.com/#LXZPJK)
 [Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
 
-By moving your screen pointer left and right to rotate the planes you can compare between DEFAULT and DOUBLESIDE.
 
 ## Front and Back UV
 
@@ -143,7 +143,7 @@ When a mesh has a sideOrientation option present and it is set to DOUBLESIDE the
 
 ## Coming Soon 
 
-When you create a mesh it is always centered at the origin and in line wuth the axes. You will want to give it a different position and rotation. Cannot wait then skip the next step and go off to [How to Change Position and Rotation](/babylon101/Position)
+When you create a mesh it is always centered at the origin and in line with the axes. You will want to give it a different position and rotation. Cannot wait then skip the next step and go off to [How to Change Position and Rotation](/babylon101/Position)
 
 # Next Step 
 
@@ -151,7 +151,9 @@ Now you have some of the set shapes under your belt find out about [Shapes Less 
 
 # Further Reading
 
-[How to Create Set Shapes with MeshBuilder](/how_to/Shapes)  
-[How to Create Set Shapes Legacy Method](/how_to/Legacy_Shapes) 
+## Basic - L1
+[How to Create Set Shapes with MeshBuilder](/how_to/Set_Shapes)  
+[How to Create Set Shapes Legacy Method](/how_to/Legacy_Shapes)  
+[Advantages and Disadvantages](/features/Shapes)
 
 

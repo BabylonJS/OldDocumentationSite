@@ -6,7 +6,8 @@ PG_TITLE: CreateBox Per Face Textures And Colors
 
 In this tutorial, we will learn how to use the _faceUV_ and _faceColors_ parameters of the `MeshBuilder.CreateBox()` method in order to set a different texture or color per box face.
 
-
+https://www.babylonjs-playground.com/#WG9OY#4
+https://www.babylonjs-playground.com/#WG9OY#3    front and back new section needed
 ### Textures
 
 

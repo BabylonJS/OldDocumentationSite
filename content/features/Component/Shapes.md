@@ -1,47 +1,77 @@
 ---
-PG_TITLE: 3D Shapes
+PG_TITLE: A Wide Range of Mesh Types and Features
 ---
 
-# 3D Shapes
+# Meshes
 
 In the 3D virtual world shapes are built from meshes, lots of trangular facets joined together, each facet made from three vertices.
 
-![A mesh](/img/overviews/scene/custom1.jpg)
+![A mesh](/features/scene/custom1.jpg)
 
-Babylon.js provides a way to create many predefined 3D and 2D shapes, set shapes, very quickly. These are boxes, spheres, cylinders, cones, planes, polygons, toruses, knots, and polyhedra. In addition it is also possible to create more shapes using extrusion and lathe techniques. Another useful mesh is the ground mesh, a plane that you can divide into subdivisions and with a couple of basic techniques turn it into a simple terrain.
+Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 
-When none of these work to produce the shape you need then you can custom your own mesh with the tools Babylon.js provides.
+Specialist meshes such as sprites and particles are also available.[LINK]
 
-## Create a Mesh
+## Types
 
-Since Babylon.js version 2.3 there are two techniques to use to create a predefined shapes.
+There are two types of predefined meshes, [set shapes](/how_to/Set_Shapes) and [parametric shapes](/how_to/Parametric Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
 
-From BJS 2.3 onwards a mesh is created using MeshBuilder. Meshes are created using the using the following format where &lt;Mesh&gt; is replaced with the required shape
+Mention has already been made of the horizonal plane called the ground which is your common flat everyday surface like a floor. You will be pleased to know that it comes in other varieties to provide an outside terrain with rolling hills and valleys. For a view from a distance terrain you use [GroundFromAHeightMap](/babylon101/Height_Map). If you literally want rolling hills add the extension [dynamic terrain][/Extension/dynamic_terrain] which gives you an infinite landscape to fly over.
+
+
+## Ways of Creating a Predefined Mesh
+
+Since Babylon.js version 2.3 there are two techniques to use to create a predefined mesh. Using the newest technique a mesh is created using the _MeshBuilder_ method where meshes are created with the following format and &lt;Mesh&gt; is replaced with the required type of mesh.
 
 ```javascript
 var mesh = BABYLON.MeshBuilder.Create<Mesh>(name, {param1 : val1, param2: val2}, scene);
 ```
 
-This method has the advantages of making all (or some) of the parameters optional depending on the mesh and provides more features than the legacy method.
-
-The legacy method which has the form 
+The older or legacy method which has the form 
 
 ```javascript
 var mesh = BABYLON.Mesh.Create<Mesh>(name, param1, param2, ..., scene, optional_parameter1, ........);
 ```
-is still available and will often be seen in Playground examples.
+and is still available and will often be seen in Playground examples.
 
-For example creating a cylinder with a diameter of 3 top and bottom, height 5 with 24 radial sections and 1 ring can use either of 
+The _MeshBuilder_ method has the advantages of making all (or some) of the parameters optional depending on the mesh and provides more features than the legacy method. Using default values for the shapes the only parameters need for mesh creation is a name, which can be blank and an empty object.
+
+For example to create a box which is an unit cube all that is needed is
 
 ```javascript
-var cylinder = BABYLON.MeshBuilder.CreateCylinder("cylinder", {diameter:3, height: 5}, scene);
-
-//or
-
-var cylinder = BABYLON.Mesh.CreateCylinder("cylinder", 5, 3, 3, 24, 1, scene);
+var box = BABYLON.MeshBuilder.CreateBox("", {});
 ```
-This is because 24 radial sections and 1 ring are the default values using MeshBuilder. With different values for the top and bottom diameters and 16 radial sections and 10 rings it would be
 
+[Playground Example Default Box](https://www.babylonjs-playground.com/#3QW4J1#2)
+
+However, You will find most people will still write
+
+```javascript
+var box = BABYLON.MeshBuilder.CreateBox("", {}, scene);
+```
+since the ability to drop the scene parameter is fairly recent, not well know, old habits die hard and if you transfer your code to a project with more than one scene then missing it out can cause confusion. But if you are working with just one scene, and most people are, and you are happy to do so you can leave it out.
+
+With the legacy method the scene parameter must be present, you can only create a box that is a cube and if you wanted a cuboid you needed to apply scaling, which is some circumastance could prove tricky. However it can be fairly quick to type.
+
+For example if you want an updatable cuboid with different dimensions in all directions that is doublesided so you can view it from the inside and outside then using _MeshBuilder_ requires
+
+```javascript
+var box = BABYLON.MeshBuilder.CreateBox("", {height: 6, width: 4, depth: 2, updatable: true, sideOrientation: BABYLON.Mesh.DOUBLESIDE});
+```
+
+whereas the legacy method needs
+
+```javascript
+var box = BABYLON.Mesh.CreateBox("box", 1, scene, true, BABYLON.Mesh.DOUBLESIDE);
+box.scaling = new BABYLON.Vector3(4, 6, 2);
+```
+and the scene prameter is necessary to position the updatable and sideOrientation parameters correctly.
+
+Also using _MeshBuilder_ you can apply different colors and images to individual faces of meshes that have distinct faces (for example a box does but a sphere does not). [LINK NEEDED]. This is not possible with the legacy method.
+
+For a second example consider the creation of a truncated cone with a diameter of 3 top and and 6 at the bottom, with height 5 constructed using 16 radial sections and 10 vertical subdivisions.
+
+**MeshBuilder**
 ```javascript
 var options = {
     diameterTop:3, 
@@ -50,107 +80,79 @@ var options = {
     tessellations: 16, 
     subdivisions: 10
 }
-var cylinder = BABYLON.MeshBuilder.CreateCylinder("myCylinder", options, scene);
+var cylinder = BABYLON.MeshBuilder.CreateCylinder("myCylinder", options);
+```
 
-//or
-
+**Legacy**
+```javascript
 var cylinder = BABYLON.Mesh.CreateCylinder("myCylinder", 5, 3, 6, 16, 10, scene);
 ```
 
-Should you want to make changes to the cylinder after its creation then the **updatable** parameter has to be set to true.
+## Creating a Custom Mesh
 
-```javascript
-var options = {
-    diameterTop:3, 
-    diameterBottom: 6, 
-    height: 5, 
-    tessellations: 16, 
-    subdivisions: 10,
-    updatable: true
-}
-var cylinder = BABYLON.MeshBuilder.CreateCylinder("myCylinder", options, scene);
-
-//or
-
-var cylinder = BABYLON.Mesh.CreateCylinder("myCylinder", 5, 3, 6, 16, 10, scene, true);
-```
-## Polyhedra
-
-A large set of polyhedra are available some by just using a type number others need you to find and copy a data set from a file of data matched to a polyhedron name. Easier than it sounds just follow the link in Further Reading.
-
-## Parametric Meshes. 
-
-Rather than having a fixed shape as does a box or cylinder, parametric shapes are generated by path setting, ribbons, extrusion or lathing techniques allowing you to generate a wide variety of shapes. Want to make your own paths then you can with curve3D which gives you the chance to use Bezier curves and Hermite splines.
-
-## Custom Mesh
-
-To create your own custom mesh requires you to know the internal data structure of a mesh and how to transfer details of your shape to this structure by setting the positions and normals of the vertices making up each triangular facet. Morphing an existing mesh through updating vertices is yet another way to get the shape you want. With a little mathematics knowledge this is quite straight forward should you wish to do it. 
+To create your own custom mesh requires you to know the internal data structure of a mesh and how to transfer details of your shape to this structure by setting the positions and normals of the vertices making up each triangular facet.  With a little mathematics knowledge this is quite straight forward should you wish to do it. 
 
 Want to know more about the facets that make up a mesh then enabling _FacetData_ is just for you. You can obtain a facets position and its mathematical normal for example. 
 
-You will find the links to tutorials, on all of these, below.
+You will find the links to how_to, on all of these, below.
 
-## Morphing
+## Other Mesh Features
 
-Morphing, or distoring the shape, of a mesh is possible by changing the positions of existing vertices, provided the mesh's updatable parameter is set to _true_. From Babylon.js version 3.0 it is also possible to morph a mesh by setting a target. This is done by creating a copy of the mesh, the target, distorting the target and then adjusting the influence of the target mesh from 0 to 1.
+### Copying a Mesh
 
-## Lots of the Same Mesh in a Scene
+The following features reduce the number of draw calls. When you want a number of meshes that share the same geometry and material, you can create one mesh and then obtain many instances of that mesh and re-position each and rotate each seperately. When you want many meshes with the same geometry but having different materials then Babylon.js provides you with the facility to clone a mesh. 
 
-You can create instances of any mesh which are identical to the original sharing the same geometry and material. Sometime you will need clones of a mesh instead, these have the same shape as the original mesh as they share the same material but you can give each clone a new material. Want a very large number of elements all the same and bursting across the screen very quickly then checkout particles, which are 2D meshes or sprites. For very many identical 3D meshes that can be positioned and rotated individually and are fast then the solid particle system (SPS) is for you.
+Another way available to you, especially if you want a very large number of identical meshes is to use particles. You have the option of using 2D meshes or sprites or f or very many identical 3D meshes that can be positioned and rotated individually and are fast then the solid particle system (SPS) is for you.
+
+### Collide with a Camera, another Mesh, a Ray or Pointer
+
+When you are moving around a scene in a _first person shooter_  manner then you want to be able to react if an object is blocking the way. You can as [Camera Collision](LINK) is a provided facility. As is the [Intersection of Meshes](LINK), [Raycasting](LINK) and [Pointer Clicked on Mesh](LINK)
 
 
-## Making a Character with Moveable Limbs
+### Accessing Mesh Data, Morphing or Updating
 
-Then you will need to know all about bones and skeletons.
+The facility to read data on the facets making up a mesh and also the vertices making up each facet of the mesh is available for all meshes. This data can be over written to update an existing mesh, **provided** the mesh was created as updatable (the mesh's updatable parameter is set to _true_) in the first place and no change is made in the number of vertices. For more information see [Updating Vertices](/tutorials/Updating_Vertices.html). 
 
-## Decals
+Some parametric shapes have an instance parameter in its _MeshBuilder_ options and can be updated by setting the instance option the initially created parametric shape. Currently all the parametric shapes, except for the Lathe and Polygon (both Create and Extend), can have their mesh updated in this way.
 
-Cover your mesh with stamps or transfers.
-
-## Mesh Collisions
-
-Babylon.js is able to detect when the bounding boxes of two meshes intersect and so you are able to tell if meshes are in collsion. When, for example, you want to check whether a line from a particular point will collide or intersect a mesh then this is possible by ray casting, using the length and vector direction of the line as a ray.
-
-## User Mesh Picking
-
-There are facilities for a user to pick a mesh by clicking on it or touching it and obtain information about the mesh.
+From Babylon.js version 3.0 morphing, or distoring a mesh through a number of transitions, is possible by creating a copy of the mesh, the target, updating the target and then adjusting the influence of the target mesh from 0 to 1.
 
 # Further Reading
 
-[Set the Position, Rotation and Scale of a Mesh](/overviews/Position,_Rotation,_Scaling)
+[Set the Position, Rotation and Scale of a Mesh](/features/Position,_Rotation,_Scaling)
 
 ## Basic - L1  
 [Meshes 101](/babylon101/Discover_Basic_Elements)   
-[Parametric Meshes 101](/babylon101/Parametric_Shapes)  
+[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
 [Sprites 101](/babylon101/Sprites)  
 [Particles 101](/babylon101/Particles)  
 [Mesh Collisions 101](/babylon101/Intersect_Collisions_-_mesh)  
 [Mesh Picking 101](/babylon101/Picking_Collisions)   
 [Ray Casting 101](/babylon101/Raycasts)  
-[Polyhedra](/tutorials/Polyhedra_Shapes)   
-[Using Decals](/tutorials/Decals)  
-[How to Use the Solid Particle System](/tutorials/Solid_Particle_System)  
+[Polyhedra](/how_to/Polyhedra_Shapes)   
+[Using Decals](/how_to/Decals)  
+[How to Use the Solid Particle System](/how_to/Solid_Particle_System)  
 
 ## Mid Level - L2  
-[Using PolygonMeshBuilder](/tutorials/PolygonMeshBuilder)  
-[Ribbon Tutorial](/tutorials/Ribbon_Tutorial)  
-[Highlight Layer](/tutorials/Highlight_Layer)  
+[Using PolygonMeshBuilder](/how_to/PolygonMeshBuilder)  
+[Ribbon Tutorial](/how_to/Ribbon_Tutorial)  
+[Highlight Layer](/how_to/Highlight_Layer)  
 
 ## More Advanced - L3
-[How to use Instances](/tutorials/How_to_use_Instances)  
-[How to Merge Meshes](/tutorials/How_to_Merge_Meshes)  
-[Mathematics and Ribbons](/tutorials/Maths_Make_Ribbons)  
-[How to use Curve3](/tutorials/How_to_use_Curve3)  
-[How to use Path3D](/tutorials/How_to_use_Path3D)  
-[How to use Facet Data](/tutorials/How_to_use_FacetData)  
-[How to use LOD](/tutorials/How_to_use_LOD)  
-[How to Dynamically Morph a Mesh](/tutorials/How_to_dynamically_morph_a_mesh)  
-[How to use Morph Targets](/tutorials/How_to_use_MorphTargets)  
-[How to use Bones and Skeletons](/tutorials/How_to_use_Bones_and_Skeletons)  
-[How to use EdgesRenderer](/tutorials/How_to_use_EdgesRenderer)  
-[Creating Custom Meshes](/tutorials/Custom)  
-[Facet Normals](/tutorials/Normals)  
-[Updating Vertices](/tutorials/Updating_Vertices)
+[How to use Instances](/how_to/How_to_use_Instances)  
+[How to Merge Meshes](/how_to/How_to_Merge_Meshes)  
+[Mathematics and Ribbons](/how_to/Maths_Make_Ribbons)  
+[How to use Curve3](/how_to/How_to_use_Curve3)  
+[How to use Path3D](/how_to/How_to_use_Path3D)  
+[How to use Facet Data](/how_to/How_to_use_FacetData)  
+[How to use LOD](/how_to/How_to_use_LOD)  
+[How to Dynamically Morph a Mesh](/how_to/How_to_dynamically_morph_a_mesh)  
+[How to use Morph Targets](/how_to/How_to_use_MorphTargets)  
+[How to use Bones and Skeletons](/how_to/How_to_use_Bones_and_Skeletons)  
+[How to use EdgesRenderer](/how_to/How_to_use_EdgesRenderer)  
+[Creating Custom Meshes](/how_to/Custom)  
+[Facet Normals](/how_to/Normals)  
+[Updating Vertices](/how_to/Updating_Vertices)
 
  
 

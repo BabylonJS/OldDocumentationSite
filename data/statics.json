@@ -110,6 +110,33 @@
       "desc": "All the how_to."
     },
     {
+      "title": "Mesh",
+      "name": "mesh",
+      "desc": "Mesh How To",
+      "files": [    
+        {
+          "title": "Create Set Shapes",
+          "level": 1,
+          "filename": "Set_Shapes"
+        },
+        {
+          "title": "Create Parametric Shapes",
+          "level": 1,
+          "filename": "Parametric_Shapes"
+        },
+                {
+          "title": "Create Set Shapes - Legacy",
+          "level": 1,
+          "filename": "Legacy_Set"
+        },
+        {
+          "title": "Create Parametric Shapes - Legacy",
+          "level": 1,
+          "filename": "Legacy_Param"
+        }
+      ]
+    },
+    {
       "title": "The Play Pen How To...",
       "name": "01_Play_Pen",
       "img": "img/how_to/01.ThePlayPenTutorials.png",
@@ -194,11 +221,6 @@
           "title": "Shadows",
           "filename": "Shadows",
           "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
-        },
-        {
-          "title": "Parametric Shapes",
-          "filename": "Parametric_Shapes",
-          "abstract": "Parametric shapes are a special kind of meshes. Their final shape depend upon some parameters. You can create a ribon using this for instance."
         },
         {
           "title": "Supporting fog with ShaderMaterial",
@@ -812,6 +834,53 @@
       "name": "All",
       "img": "img/how_to/All.png",
       "desc": "All features."
+    },
+    {
+      "title": "Component",
+      "name": "Component",
+      "desc": "Elements of babylon.js",
+      "files": [
+        {
+          "title": "Scene",
+          "filename": "Scene"
+        },
+        {
+          "title": "Wide Range of Meshes",
+          "filename": "Shapes"
+        },
+        {
+          "title": "Position, Rotation, Scaling",
+          "filename": "Position,_Rotation,_Scaling"
+        },
+        {
+          "title": "Materials",
+          "filename": "Materials"
+        },
+        {
+          "title": "Cameras",
+          "filename": "Cameras"
+        },
+        {
+          "title": "Lights and Shadows",
+          "filename": "Lights"
+        },
+        {
+          "title": "Animations",
+          "filename": "Animations"
+        },
+        {
+          "title": "Environment",
+          "filename": "Environment"
+        },
+        {
+          "title": "Events",
+          "filename": "Events"
+        },
+        {
+          "title": "Behaviors",
+          "filename": "behaviour"
+        }
+      ]
     },
     {
       "title": "Maps",
