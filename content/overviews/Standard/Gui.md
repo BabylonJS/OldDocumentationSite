@@ -190,9 +190,38 @@ Here are the properties you can define:
 Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
-textWrapping|boolean|false|Can be set to true to enable text wrapping.
+textWrapping|boolean|false|Can be set to true to enable text wrapping
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+
+### InputText
+
+The InputText is a control used to let users insert text in a single line: https://www.babylonjs-playground.com/#UWS0TS
+
+Here are the properties you can define:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+text|string|null|Text to display
+color|string|white|Foreground color
+background|string|black|Background color
+focusedBackground|string|black|Background color to use when the control is focused
+autoStretchWidth|boolean|true|The control will resize horizontally to adapt to text size
+maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
+margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
+thickness|number|1|Thickness of the border
+
+The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
+
+Please note that the InputText has pretty limited edition support. Here are the supported keys:
+* Delete
+* Backspace
+* Home
+* End
+* Enter
+* Left / Right (used to move the cursor)
+
+Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard.
 
 ### Button
 
