@@ -39,9 +39,9 @@ router.get('/', function (req, res) {
                     res.end();
                     break;
 
-                case 'exporters':
+                case 'resources':
                     res.writeHead(301, {
-                        Location: (req.socket.encrypted ? 'https://' : 'http://') + req.headers.host + '/exporters/' + forwardData.name
+                        Location: (req.socket.encrypted ? 'https://' : 'http://') + req.headers.host + '/resources/' + forwardData.name
                     });
                     res.end();
                     break;

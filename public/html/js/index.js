@@ -40,8 +40,8 @@
                     html: '<i class="fa fa-book"></i>Features'
                 }),                     
                 $('<a>', {
-                    href: '/exporters',
-                    html: '<i class="fa fa-rocket"></i>Exporters'
+                    href: '/resources',
+                    html: '<i class="fa fa-rocket"></i>Resources'
                 }),
                 $('<a>', {
                     href: '/extensions',

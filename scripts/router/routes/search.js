@@ -149,7 +149,7 @@ var processSearchResult = function(r){
     if(r.name == 'whats-new' ) {
         version = '- ';
         r.src = 'whats-new'
-    } //Remove the classes/ but keep the 1.14 and exporters !
+    } //Remove the classes/ but keep the 1.14 and resources !
     else if (version.indexOf('/') != -1) version = version.substr(version.indexOf('/') + 1);
 
     r.version = version;
@@ -202,7 +202,7 @@ var uniquify = function(searchResult){
  { category: '2.0', occurrences: 6 },
  { category: '2.1', occurrences: 6 },
  { category: '2.2-alpha', occurrences: 6 },
- { category: 'exporters', occurrences: 3 },
+ { category: 'resources', occurrences: 3 },
  { category: 'generals', occurrences: 3 },
  { category: 'what\'s new', occurrences: 1 }
  ]

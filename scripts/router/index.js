@@ -11,7 +11,7 @@ module.exports = function (app) {
     app.use('/babylon101', require('./routes/babylon101'));
     app.use('/how_to', require('./routes/how_to'));
     app.use('/extensions', require('./routes/extensions'));
-    app.use('/exporters', require('./routes/exporters'));
+    app.use('/resources', require('./routes/resources'));
     app.use('/features', require('./routes/features'));
     app.use('/generals', require('./routes/generals'));
     app.use('/page.php', require('./routes/forward'));

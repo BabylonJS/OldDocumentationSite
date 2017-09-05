@@ -7,7 +7,7 @@ var config = {
     links      : [
         //{type: 'classes', link: 'load_pages.php?index=3'},
         {type: 'how_to', link: 'load_pages.php?index=1'},
-        {type: 'exporters', link: 'load_pages.php?index=0'},
+        {type: 'resources', link: 'load_pages.php?index=0'},
         {type: 'extensions', link: 'load_pages.php?index=4'}
     ],
     //list of the ids of the pages to exclude for this script

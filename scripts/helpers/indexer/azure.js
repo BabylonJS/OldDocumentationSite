@@ -42,8 +42,8 @@ module.exports = function index(done) {
 
     /*
     var staticCategories = [
-        "exporters",
-        "extensions",
+        "resources",
+        "resources",
         "generals",
         "how_to",
         "features"

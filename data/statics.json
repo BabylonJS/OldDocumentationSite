@@ -137,105 +137,45 @@
       ]
     },
     {
-      "title": "The Play Pen How To...",
-      "name": "01_Play_Pen",
-      "img": "img/how_to/01.ThePlayPenTutorials.png",
-      "desc": "The how_to of the playpen.",
+      "title": "Environment",
+      "name": "environment",
+      "desc": "Environment How To",
+      "files": [    
+        {
+          "title": "Support Fog with ShaderMaterial",
+          "level": 2,
+          "filename": "Supporting_fog_with_ShaderMaterial"
+        }
+      ]
+    },
+    {
+      "title": "Importer",
+      "name": "Importer",
+      "desc": "Files that can be loaded into BJS",
       "files": [
         {
-          "title": "Creating a Basic Scene",
-          "filename": "Creating_a_Basic_Scene",
-          "abstract": "Everything in babylon.js is managed inside of a scene. It holds every objects that are going to be used to render your 3D elements."
+          "title": "Load an STL File",
+          "filename": "STL"
         },
         {
-          "title": "Discover Basic Elements",
-          "filename": "Discover_Basic_Elements",
-          "abstract": "With babylon.js you can use a lot of different basic 3D elements. They are available by default to help you create cubes, spheres, etc."
+          "title": "Load an OBJ File",
+          "filename": "OBJ"
         },
         {
-          "title": "Materials",
-          "filename": "Materials",
-          "abstract": "Materials are the basis of how your meshes look like. It is used to define a color or a texture on a 3D Object for instance."
+          "title": "Load a glTF File",
+          "filename": "glTF"
         },
         {
-          "title": "Cameras",
-          "filename": "Cameras",
-          "abstract": "To be able to see your 3D objects you have to set a camera. You position this camera in the scene and you define the direction where it 'looks'."
+          "title": "Use Incremental Loading",
+          "filename": "Using_the_Incremental_Loading_System"
         },
         {
-          "title": "Lights",
-          "filename": "Lights",
-          "abstract": "Lights are used to produce the diffuse and specular color received by each pixel. This color is then used by materials to determine the final color of every pixel."
+          "title": "Create Your Own File Importer",
+          "filename": "How_to_Create_Your_Own_File_Importer"
         },
         {
-          "title": "Position, Rotation, Scaling",
-          "filename": "Position,_Rotation,_Scaling",
-          "abstract": "This tutorial, we are going to learn how to position, scale and rotate any kind of objects in a 3D scene."
-        },
-        {
-          "title": "Animations",
-          "filename": "Animations",
-          "abstract": "You use animations to put dynamics in a 3D scene. This tutorial help you learn how to tell your computer to move your meshes in any way you choose."
-        },
-        {
-          "title": "Sprites",
-          "filename": "Sprites",
-          "abstract": "Sprites are 2D image/animation, and we will use them to display an image with alpha channel. Sprites always face the camera. Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees."
-        },
-        {
-          "title": "Cameras, Mesh Collisions and Gravity",
-          "filename": "Cameras,_Mesh_Collisions_and_Gravity",
-          "abstract": "Did you ever play a FPS (First Person Shooter) game? In this tutorial, you learn how to to simulate the same camera movements: the camera is on the floor, in collision with the ground, and potentially in collision with any objects in the scene."
-        },
-        {
-          "title": "Intersect Collisions - mesh",
-          "filename": "Intersect_Collisions_-_mesh",
-          "abstract": "In dynamic scenes, objects are moving and interacting with each other. To get the best rendering, you will want to know when your meshes are in contact with each other. In this tutorial, you will discover how the collision system works."
-        },
-        {
-          "title": "Picking Collisions",
-          "filename": "Picking_Collisions",
-          "abstract": "With babylon.js, you can easily know which object has been picked when the user clic anywhere on the scene."
-        },
-        {
-          "title": "Raycasts",
-          "filename": "Raycasts",
-          "abstract": "Throw a ray in your scene from any point and in any direction to detect objects."
-        },
-        {
-          "title": "Particles",
-          "filename": "Particles",
-          "abstract": "Particles are often small sprites used to simulate hard-to-reproduce phenomena like fire, smoke, water, or abstract visual effects like magic glitter and faery dust."
-        },
-        {
-          "title": "Environment",
-          "filename": "Environment",
-          "abstract": "This tutorial talk about scene environment factors and effects. We will start off with simple scene clearColor (background color), then talk briefly about scene ambientColor, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes."
-        },
-        {
-          "title": "Height_Map",
-          "filename": "Height_Map",
-          "abstract": "A height map is a greyscale image which is used to generate ground, using the different variants of gray of our picture. This image is the elevation data for your ground. Each pixel’s color is interpreted as a distance of displacement or 'height' from the 'floor' of your mesh. So, the whiter the pixel is, the taller your mountain will be."
-        },
-        {
-          "title": "Shadows",
-          "filename": "Shadows",
-          "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
-        },
-        {
-          "title": "Supporting fog with ShaderMaterial",
-          "filename": "Supporting_fog_with_ShaderMaterial",
-          "abstract": "This tutorial explains how to support fog in your custom shaders. You will have to add some lines of code in your vertex and pixel shaders."
-        },
-        {
-          "title": "CreateBox per face colors and textures tutorial",
-          "filename": "CreateBox_Per_Face_Textures_And_Colors",
-          "abstract": "In this tutorial, you will learn how to use the faceUV and faceColors parameters of the MeshBuilder.CreateBox() method in order to set a different texture or color per box face."
-        },
-        {
-          "title": "Mesh CreateXXX Methods With Options Parameter",
-          "filename": "Mesh_CreateXXX_Methods_With_Options_Parameter",
-          "abstract": "In this tutorial, you will learn how to use the classical CreateXXX() methods with the options parameter instead of the full list of parameters."
+          "title": "Load Files with Assests Manager",
+          "filename": "How_to_use_AssetsManager"
         }
       ]
     },
@@ -524,70 +464,132 @@
       ]
     }
   ],
-  "exporters": [
+  "resources": [
     {
       "title": "All",
       "name": "All",
-      "img": "img/exporters/all.jpg",
-      "desc": "All the exporters."
+      "img": "img/resources/all.jpg",
+      "desc": "All the resources."
     },
     {
-      "title": "3DSMax",
-      "name": "3DSMax",
-      "img": "img/exporters/3DSMax.jpg",
-      "desc": "Learn how to export from 3DSMax",
+      "title": "Editor",
+      "name": "Editor",
+      "img": "img/extensions/editor.png",
+      "desc": "Learn how to use the official editor",
+      "files": [
+        {
+          "title": "Introduction",
+          "filename": "Introduction"
+        },
+        {
+          "title": "Getting Started",
+          "filename": "Getting_Started"
+        },
+        {
+          "title": "Managing Animations",
+          "filename": "Managing_Animations"
+        },
+        {
+          "title": "Creating Cinematic",
+          "filename": "Creating_Cinematic"
+        },
+        {
+          "title": "Creating Particle Systems",
+          "filename": "Creating_Particle_Systems"
+        },
+        {
+          "title": "Creating Materials",
+          "filename": "Creating_Materials"
+        },
+        {
+          "title": "Managing Materials",
+          "filename": "Managing_Materials"
+        },
+        {
+          "title": "Managing Lens Flare Systems",
+          "filename": "Managin_Lens_Flare_Systems"
+        },
+        {
+          "title": "Using the Actions Builder",
+          "filename": "Using_Actions_Builder"
+        },
+        {
+          "title": "Using the Post-Process Builder (for developers)",
+          "filename": "Using_Post_Processes_Builder"
+        },
+        {
+          "title": "Using the Materials Builder (for developers)",
+          "filename": "Using_Materials_Builder"
+        }
+      ]
+    },   
+    {
+      "title": "Exporter",
+      "name": "Exporter",
+      "desc": "Applications that can Export files for BJS",
       "files": [
         {
           "title": "3DSMax",
           "filename": "3DSMax"
         },
         {
-          "title": "Bones influences per vertex",
+          "title": "3DMAX Reduce Bone Influence Count",
           "filename": "Bones_influences_per_vertex"
-        }
-      ]
-    },
-    {
-      "title": "Blender",
-      "name": "Blender",
-      "img": "img/exporters/Blender.jpg",
-      "desc": "Learn how to export from Blender",
-      "files": [
+        },
         {
           "title": "Blender",
           "filename": "Blender"
         },
         {
-          "title": "Blender tips",
+          "title": "Blender Tips",
           "filename": "Blender_Tips"
         },
         {
-          "title": "Installing the Babylon Exporter",
+          "title": "Blender - How To Install the Exporter",
           "filename": "Installing__the_Babylon_Exporter"
-        }
-      ]
-    },
-    {
-      "title": "Cheetah3D",
-      "name": "Cheetah3D",
-      "img": "img/exporters/Cheetah3D.png",
-      "desc": "Learn how to export from Cheetah3D",
-      "files": [
+        },
         {
           "title": "Cheetah3D",
           "filename": "Cheetah3D"
+        },
+        {
+          "title": "Unity",
+          "filename": "Unity"
         }
       ]
     },
     {
-      "title": "Unity",
-      "name": "Unity",
-      "img": "img/exporters/Unity.jpg",
-      "desc": "Learn how to export from Unity.",
+      "title": "Reference",
+      "name": "Reference",
+      "desc": "Useful References",
       "files": [
         {
-          "title": "Unity",
-          "filename": "Unity"
+          "title": "BJS Code Constants",
+          "filename": "Constants"
+        },
+        {
+          "title": "Creating the Mini-fied Version",
+          "filename": "Creating_the_Mini-fied_Version"
+        },
+        {
+          "title": "Framework versions",
+          "filename": "Framework_versions"
+        },
+        {
+          "title": "FileFormat Map (.babylon)",
+          "filename": "File_Format_Map_(.babylon)"
+        },
+        {
+          "title": "WebGL2",
+          "filename": "WebGL2"
+        },
+        {
+          "title": "Off-Site Tutorials List",
+          "filename": "offsite_tutorials_list"
+        },
+        {
+          "title": "How to Use Tags in Babylon.js",
+          "filename": "Tags"
         }
       ]
     }
@@ -598,26 +600,6 @@
       "name": "All",
       "img": "img/extensions/tagImage.png",
       "desc": "All the extensions."
-    },
-    {
-      "title": "Loaders",
-      "name": "Loaders",
-      "img": "img/extensions/loaders.jpg",
-      "desc": "Learn how to use loaders.",
-      "files": [
-        {
-          "title": "STL",
-          "filename": "STL"
-        },
-        {
-          "title": "OBJ",
-          "filename": "OBJ"
-        },
-        {
-          "title": "glTF",
-          "filename": "glTF"
-        }
-      ]
     },
     {
       "title": "Materials library",
@@ -987,10 +969,6 @@
       "desc": "Beginner? start here!",
       "files": [
         {
-          "title": "A Babylon.js Primer",
-          "filename": "A_Babylon.js_Primer"
-        },
-        {
           "title": "The Playground Tutorial",
           "filename": "The_Playground_Tutorial"
         }
@@ -1003,10 +981,6 @@
       "desc": "General good things to know",
       "files": [
         {
-          "title": "Off-Site How To... List",
-          "filename": "offsite_tutorials_list"
-        },
-        {
           "title": "Interesting Playgrounds",
           "filename": "playgrounds"
         },
@@ -1017,18 +991,6 @@
         {
           "title": "Approved Naming Conventions",
           "filename": "Approved_Naming_Conventions"
-        },
-        {
-          "title": "Creating the Mini-fied Version",
-          "filename": "Creating_the_Mini-fied_Version"
-        },
-        {
-          "title": "Framework versions",
-          "filename": "Framework_versions"
-        },
-        {
-          "title": "FileFormat Map (.babylon)",
-          "filename": "File_Format_Map_(.babylon)"
         },
         {
           "title": "Setup Visual Studio to contribute to Babylon.js",

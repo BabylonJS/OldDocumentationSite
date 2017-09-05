@@ -28,7 +28,8 @@ var config      = {
         links      : [
             {type: 'classes', link: 'load_pages.php?index=3'},
             {type: 'how_to', link: 'load_pages.php?index=1'},
-            {type: 'exporters', link: 'load_pages.php?index=0'},
+            {type: 'resources', link: 'load_pages.php?index=0'},
+            {type: 'resources', link: 'load_pages.php?index=0'},
             {type: 'extensions', link: 'load_pages.php?index=4'}
         ]
     },
@@ -70,7 +71,7 @@ module.exports = function(done) {
 
                     } else {
                         if(meta && meta.ID_PAGE){
-                            // type: exporters || extensions || how_to
+                            // type: resources || extensions || how_to
                             metaList[meta.ID_PAGE.toString()] = {
                                 "type": link.type,
                                 "name": sanitize(meta.PG_TITLE).trim().replace(/\s/g, '_')

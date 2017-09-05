@@ -1,5 +1,5 @@
 /**
- * This file compile HTML files for the exporters, the extensions, and the how_to.
+ * This file compile HTML files for the resources, the extensions, and the how_to.
  */
 
 var fs      = require('fs'),
@@ -40,7 +40,7 @@ var __STATICS_LIST__    = path.join(appRoot, 'data/statics.json'),
 module.exports = function(done){
     var staticCategories = [
         "babylon101",
-        "exporters",
+        "resources",
         "extensions",
         "generals",
         "how_to",
