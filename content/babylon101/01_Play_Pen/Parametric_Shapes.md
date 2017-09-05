@@ -94,7 +94,7 @@ Most but not all parametric shapes can have their shape updated in this way by u
 
 # Next Step
 
-In the previous section, about set shapes, you saw that when created they sit on top of each other at the origin. That is often the case with parametric shapes as well. So its time to move on to position meshes where needed and also find out about rotation and scaling. Ready? Sure you are! [Position, Rotation and Scaling](/babylon101/Position,_Rotation,_Scaling)
+In the previous section, about set shapes, you saw that when created they sit on top of each other at the origin. That is often the case with parametric shapes as well. So its time to move on to position meshes where needed and also find out about rotation and scaling. Ready? Sure you are! [Position, Rotation and Scaling](/babylon101/Position)
 
 # Further Reading
 
