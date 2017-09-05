@@ -98,8 +98,8 @@ In the previous section, about set shapes, you saw that when created they sit on
 
 # Further Reading
 
-[How to Create Parametric Shapes with MeshBuilder](/how_to/Shapes)  
-[How to Create Parametric Shapes Legacy Method](/how_to/Legacy_Shapes) 
+[How to Create Parametric Shapes with MeshBuilder](/how_to/Parametric_Shapes)  
+[How to Create Parametric Shapes Legacy Method](/how_to/Legacy_Param) 
 
 
 

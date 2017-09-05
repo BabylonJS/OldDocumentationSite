@@ -10,13 +10,13 @@ Bump mapping is a technique to simulate bump and dents on a rendered surface. Th
 The means to do this can be found on the web, a search for 'normal map generator' will bring up free and paid for methods of doing this. 
 
 
-![Image](/img/tutorials/Materials/bump_photo.png) &nbsp;&nbsp;&nbsp;&nbsp;![normalMap](/img/tutorials/Materials/bump_normal.png)
+![Image](/img/how_to/Materials/bump_photo.png) &nbsp;&nbsp;&nbsp;&nbsp;![normalMap](/img/how_to/Materials/bump_normal.png)
 
 Original Image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Normal Map from Image
 
 A bump map can be used with a color; with its original image or another image as below.
 
-![Bump Example](/img/tutorials/Materials/bump_spheres.png)
+![Bump Example](/img/how_to/Materials/bump_spheres.png)
 
 ### Creating a Bump Map Example
 Just add a _bumpTexture_ to any existing textures.
@@ -42,11 +42,11 @@ myMaterial.invertNormalMapY = true
 The opacity of a material can be graded using an image with varying tranparency. The following PNG image with 
 a transparency gradient can be applied to a material using _opacityTexture_
 
-![Opacity Map](/img/tutorials/Materials/degrade_map.png)
+![Opacity Map](/img/how_to/Materials/degrade_map.png)
 
 with the same gradient applied to the material as in the image below.
 
-![Opacity Material](/img/tutorials/Materials/degraded_plane.png)
+![Opacity Material](/img/how_to/Materials/degraded_plane.png)
 
 [Playground Example of Opacity](http://www.babylonjs-playground.com/#20OAV9#24)
 
@@ -61,7 +61,7 @@ myMaterial.opacityTexture = new BABYLON.Texture("PATH TO NORMAL MAP", scene);
 When a material is applied to a mesh the image used for a texture is positioned according to coordinates. 
 Rather than x, y which are already in use for the 3D axes the letters u and v are used for the coordinates.
 
-![uv axes](/img/tutorials/Materials/crate.png)
+![uv axes](/img/how_to/Materials/crate.png)
 
 To tile an image you use the _uScale_ and/or _vScale_ properties, of the texture, to set the number of tiles in each direction.
 

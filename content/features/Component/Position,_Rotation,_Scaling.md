@@ -29,7 +29,7 @@ When a mesh is created the **world axes** and the **local axes** coincide. As a 
 
 ## Setting Methods
 
-![Elements](/img/tutorials/Rotation%20and%20scaling/03.png)
+![Elements](/img/how_to/Rotation%20and%20scaling/03.png)
 
 [Playground Example - Positioned, Scaled, and Rotated Boxes](http://www.babylonjs-playground.com/?3)
 
@@ -187,25 +187,25 @@ It is also possible to change the center of rotation by setting a pivot point.
  
 ## Basic - L1  
 [Positions, rotations, scaling 101](/babylon101/Position)  
-[Rotation Around an Axis](/tutorials/Axis)
+[Rotation Around an Axis](/how_to/Axis)
 
 
 
 ## Mid Level - L2
 
-[Position, Rotate, Translate and Spaces](/tutorials/Position,_Rotate,_Translate_and_Spaces)
+[Position, Rotate, Translate and Spaces](/how_to/Position,_Rotate,_Translate_and_Spaces)
  
 ## More Advanced - L3
 
-[Translate and Rotate in Detail](/tutorials/Rotate)  
-[Using a Pivot](/tutorials/Pivots)  
-[Rotation Around an Axis Through a Pivot](/tutorials/Pivot)  
-[Euler Angles and Quaternions](/tutorials/Euler_Angles)  
-[Applying Rotation Conventions](/tutorials/Applying_Rotations)  
-[Aligning Rotation to Target](/tutorials/Rotation_Target)  
-[Frame of Reference](/tutorials/Frame_Of_Reference)  
-[Baking Transformations](/tutorials/Baking_Transformations)  
-[In-Browser Mesh Simplification (Auto-LOD)](/tutorials/In-Browser_Mesh_Simplification)  
+[Translate and Rotate in Detail](/how_to/Rotate)  
+[Using a Pivot](/how_to/Pivots)  
+[Rotation Around an Axis Through a Pivot](/how_to/Pivot)  
+[Euler Angles and Quaternions](/how_to/Euler_Angles)  
+[Applying Rotation Conventions](/how_to/Applying_Rotations)  
+[Aligning Rotation to Target](/how_to/Rotation_Target)  
+[Frame of Reference](/how_to/Frame_Of_Reference)  
+[Baking Transformations](/how_to/Baking_Transformations)  
+[In-Browser Mesh Simplification (Auto-LOD)](/how_to/In-Browser_Mesh_Simplification)  
 
 ## Gamelet
 

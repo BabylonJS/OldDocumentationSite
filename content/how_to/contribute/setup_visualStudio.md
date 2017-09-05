@@ -192,9 +192,9 @@ Build the solution, all the .ts fils will be compiled to .js file along with .js
 
 You can grad the files:
 
- - [sandbox.ts](/tutorials/setupVisual/sandbox.ts)
- - [index.html](/tutorials/setupVisual/index.html)
- - [web.config](/tutorials/setupVisual/Web.config)
+ - [sandbox.ts](/how_to/setupVisual/sandbox.ts)
+ - [index.html](/how_to/setupVisual/index.html)
+ - [web.config](/how_to/setupVisual/Web.config)
 
 Create a new TypeScript file in your project, don't forget to set the following lines:
 

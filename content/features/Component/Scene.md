@@ -16,17 +16,17 @@ What else might you expect of your scene? You might expect to be able to
 
 ## Basic - L1
 
-[Environment](/overviews/Environment)
+[Environment](/features/Environment)
 
 ## Mid Level - L2
 
-[Custom Loading Screen](/tutorials/Creating_a_custom_loading_screen)
+[Custom Loading Screen](/how_to/Creating_a_custom_loading_screen)
 
 ## More Advanced - L3
 
-[Using the Scene Optimizer](/tutorials/How_to_use_SceneOptimizer)  
-[Ways to Optimize a Scene](/tutorials/Optimizing_your_scene)  
-[Using Octrees to Optimize a Scene](/tutorials/Optimizing_Your_Scene_with_Octrees)  
-[Optimizing with Cached Resources](/tutorials/Caching_Resources_in_IndexedDB)  
-[Output Scene Capture](/tutorials/Render_Scene_on_a_PNG)
+[Using the Scene Optimizer](/how_to/How_to_use_SceneOptimizer)  
+[Ways to Optimize a Scene](/how_to/Optimizing_your_scene)  
+[Using Octrees to Optimize a Scene](/how_to/Optimizing_Your_Scene_with_Octrees)  
+[Optimizing with Cached Resources](/how_to/Caching_Resources_in_IndexedDB)  
+[Output Scene Capture](/how_to/Render_Scene_on_a_PNG)
 

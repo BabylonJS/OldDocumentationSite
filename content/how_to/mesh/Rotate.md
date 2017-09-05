@@ -38,13 +38,13 @@ Examples of these types of issues are provided in the guide to translate and rot
 
 Since translate and rotate are about movement all examples are animated and in all examples a non symmetrical mesh, the pilot, will be used.. 
 
-![The Pilot](/img/tutorials/Mesh/pilot.jpg)
+![The Pilot](/img/how_to/Mesh/pilot.jpg)
 The Pilot
 
 When the pilot is created its position and rotation are both set to (0, 0, 0) and all frames of reference 
 coincide.
 
-![Creation of Pilot](/img/tutorials/Mesh/pilot1.jpg)
+![Creation of Pilot](/img/how_to/Mesh/pilot1.jpg)
 
 For translate and rotate the change can be specified to take place in the world space or in local space as follows. 
 

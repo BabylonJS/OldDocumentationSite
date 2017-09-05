@@ -8,7 +8,7 @@ In all the diagrams the red box gives the local origin, the grey box shows the i
 
 Rotations of a mesh always take place around its local origin. In other words the local origin of the mesh is the pivot of the mesh.
 
-![Rotation about Local Origin](/img/tutorials/Mesh/pivot0.jpg)
+![Rotation about Local Origin](/img/how_to/Mesh/pivot0.jpg)
 
 There are times when you would like to rotate a mesh around a different pivot point.
 
@@ -29,7 +29,7 @@ mesh.setPivotMatrix(BABYLON.Matrix.Translation(x, y, z));
 
 Create a box.
 
-![Initial Creation of The Box](/img/tutorials/Mesh/pivot1.jpg)  
+![Initial Creation of The Box](/img/how_to/Mesh/pivot1.jpg)  
 
 You now want the box to rotate not about the centre but about the front lower right corner, which has coordinates (4, -2, -1).
 
@@ -40,16 +40,16 @@ greenBox.setPivotMatrix(BABYLON.Matrix.Translation(-4, 2, 1));
 ```
 Giving
 
-![Setting the Pivot Matrix](/img/tutorials/Mesh/pivot3.jpg)
+![Setting the Pivot Matrix](/img/how_to/Mesh/pivot3.jpg)
 
 If you now want the box back in its starting position you will need to place the local origin of the box at (4, -2, -1) to take 
 into account the translation of the box relative to the pivot.
 
-![original position](/img/tutorials/Mesh/pivot2.jpg)
+![original position](/img/how_to/Mesh/pivot2.jpg)
 
 Now when you apply a rotation it will be about the pivot
 
-![rotated](/img/tutorials/Mesh/pivot4.jpg)
+![rotated](/img/how_to/Mesh/pivot4.jpg)
 
 [Playground Example - Pivoted Mesh](http://www.babylonjs-playground.com/#AGXDE#1)
 
@@ -154,6 +154,6 @@ The following sequence of playgrounds shows setting the first pivot point, rotat
 
 ## More Advanced - L3
 
-[Rotation Around an Axis Through a Pivot](/tutorials/Pivot)
+[Rotation Around an Axis Through a Pivot](/how_to/Pivot)
 
 

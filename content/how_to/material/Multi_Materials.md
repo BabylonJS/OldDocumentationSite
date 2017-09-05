@@ -6,7 +6,7 @@ PG_TITLE: Multi Materials
 
 A multi-material is used to apply different materials to different parts of the same object as you can see below
 
-![Multi Material Sphere](/img/tutorials/Materials/multi.png)
+![Multi Material Sphere](/img/how_to/Materials/multi.png)
 
 
 To be able to define a multi-materials you first have to define some standard materials:

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout the history of Babylon.js, coders and authors have written tutorials and documentation which is stored in places other than at our primary documentation site.  In *this* document, we will attempt to provide links-to and information-about those off-site documents.
+Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout the history of Babylon.js, coders and authors have written how_to and documentation which is stored in places other than at our primary documentation site.  In *this* document, we will attempt to provide links-to and information-about those off-site documents.
 
 ## Deltakosh - http://eternalcoding.com
 
@@ -10,7 +10,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 |______________Title______________ | Keywords | Description |
 | :--- | :---: | --- |
-| [ **What's New - Babylon.js 2.4** ](https://www.eternalcoding.com/?p=2764) | Canvas2D, RefractionTexture, CubeMap, HDR, Lights, Physics, Unity3D, Parallax, Shader Includes | In this fine document, David Catuhe takes us on a tour of the most exciting new features of Babylon.js version 2.4.  David includes some nice demos, brief overviews, and tasty illustrations.  Deltakosh knows how to create a great looking document.  I think you will agree.|
+| [ **What's New - Babylon.js 2.4** ](https://www.eternalcoding.com/?p=2764) | Canvas2D, RefractionTexture, CubeMap, HDR, Lights, Physics, Unity3D, Parallax, Shader Includes | In this fine document, David Catuhe takes us on a tour of the most exciting new features of Babylon.js version 2.4.  David includes some nice demos, brief features, and tasty illustrations.  Deltakosh knows how to create a great looking document.  I think you will agree.|
 | [ **Going Further - Babylon.js 2.3** ](https://www.eternalcoding.com/?p=2331) | PointLight, Shadow, WebGL2, Sponza | In this info-file, Deltakosh tells us all about Dynamic Point Light Shadows which is a great new feature of Babylon.js 2.3. He also covers aspects of the fantastic Sponza Demo, which demonstrates this new DPLS feature. |
 | [ **What's New - Babylon.js 2.1** ](https://www.eternalcoding.com/?p=1901) | Unity5, Decals, SIMD, Collisions, WebWorkers, Shadows, Parametric Shapes, PostProcess | The Babylon.js 2.1 release brought many new  features, and we love them all. Deltakosh introduces us to the very best of them, giving credit to the contributors who made them happen. He often refuses to give himself credit, but we know how much of HIS life is dedicated to contributions - almost all of it. |
 | [ **What's New - Babylon.js 2.0** ](https://www.eternalcoding.com/?p=1883) | WebAudio, Volumetric, VLS, SceneOptimizer, Occlusion, SSAO, Level of Detail, LOD, Instanced Bones | Babylon.js 2.2 was a release chocked-full of new, powerful features. These features have become our new best friends, and you can hear the happiness in Deltakosh's words, as he takes us on a brief tour. |
@@ -52,10 +52,10 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | [ **Using VertexData/VertexBuffer** ](http://www.pixelcodr.com/tutos/trees/trees.html) | VertexData, VertexBuffer, Indices, Vertices, Normals | [Julian "Temechon" Chenard](http://www.pixelcodr.com/aboutme.html) is a fine game programmer, teacher, OOP-master, and a darned nice guy, too.  In this splendid tutorial, Temechon uses the handy Babylon VertexData object, along with blank/updatable mesh... to make lightweight trees.|
 | [ **Contributing to Babylon.js** ](http://www.pixelcodr.com/tutos/contribute/contribute.html) | Contribute, GitHub | People who are not familiar with source repositories, GitHub, version control, etc... sometimes struggle-with approved methods for open-source contributions. Temechon succeeds in removing those struggles... with this comprehensive tutorial about contributing to Babylon.js. |
 | [ **Toad Attack - The Making-Of** ](http://www.pixelcodr.com/tutos/toad_attack/toad_attack.html) | Game | Here is a fantastic two-part "Basics" tutorial about the making of "Toad Attack", one of Temechon's cool games.  Good stuff! |
-| [ **All About ActionManagers** ](http://www.pixelcodr.com/tutos/plane/plane.html) | ActionManager, Actions, Trigger, Predicate | Once upon a time, Deltakosh created an ActionManager class with [great docs](/tutorials/how_to_use_actions). In this cool tutorial, Temechon uses it within a complete webGL game. Two tutorials in one! |
+| [ **All About ActionManagers** ](http://www.pixelcodr.com/tutos/plane/plane.html) | ActionManager, Actions, Trigger, Predicate | Once upon a time, Deltakosh created an ActionManager class with [great docs](/how_to/how_to_use_actions). In this cool tutorial, Temechon uses it within a complete webGL game. Two how_to in one! |
 | [ **Old School Oimo Physics** ](http://www.pixelcodr.com/tutos/oimo/oimo.html) | Physics, Oimo, Impostor | Temechon coded much of the original physics "plugins", interfacing third-party physics engines... to Babylon.js. Later, version 2 of the plugins was developed by Raanan Weber (see below), but Raanan ensured that v2 plugins were backwards-compatible with original v1 plugins. So, this older Oimo-based physics tutorial is still quite pertinent. Its code examples still work great. |
 | [ **More Oimo - Impulses & Velocities** ](http://www.pixelcodr.com/tutos/physics/physics.html) | Physics, Oimo, AngularVelocity, LinearVelocity, ApplyImpulse | In this slightly-advanced Oimo physics tutorial, Temechon shows us how to "force the issue"... adding energy and direction to Oimo's physics impostors. This tutorial is based-upon the v1 Oimo plugin, but again, due to backwards-compatibility, all code examples work fine with the v2 plugins, as well.  It's all good! |
-| [ **First Person Shooter Prototype** ](http://www.pixelcodr.com/tutos/shooter/shooter.html) | OOP, Project, Asset, LayerMask, Viewport, PointerLock | The first-person shooter (FPS) game is one of the most enjoyable and popular game-types in 3D land.  In this gorgeous tutorial, Julian takes us end-to-end through the development process.  As with all of Julian's games and tutorials, he uses Object Oriented Programming (OOP) techniques, which result in re-usable pieces. These OOP pieces streamline work-flow for future games/projects.  |
+| [ **First Person Shooter Prototype** ](http://www.pixelcodr.com/tutos/shooter/shooter.html) | OOP, Project, Asset, LayerMask, Viewport, PointerLock | The first-person shooter (FPS) game is one of the most enjoyable and popular game-types in 3D land.  In this gorgeous tutorial, Julian takes us end-to-end through the development process.  As with all of Julian's games and how_to, he uses Object Oriented Programming (OOP) techniques, which result in re-usable pieces. These OOP pieces streamline work-flow for future games/projects.  |
 | [ **Temechon's Projects Page** ](http://www.pixelcodr.com/projects.html) | Projects | This is not a link to a tutorial, but instead, a link to Temechon's "Projects" web page.  As you can see, Temechon is a prolific game-author, both 2D and 3D.  And we know why he is able to produce game after game, quickly and easily, right?  Yep, OOP... reusable code... he does it well. Borrow his techniques, and you borrow great wisdom. |
 
 ## Raanan - https://blog.raananweber.com/tag/babylonjs/
@@ -125,15 +125,15 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 ## Pryme8 - https://pryme8.github.io/NeatFlax/
 
-Many excellent tutorials are located here.  Thanks Andrew!
+Many excellent how_to are located here.  Thanks Andrew!
 
 ## Mad Dog Tutorials - https://www.youtube.com/playlist?list=PLOGomoq5sDLtJeX81GFAXppi-VbrVwxav
 
-Five substantial BabylonJS video tutorials which I don't know much about, yet.  Let's go view them.  Author(s) unknown.
+Five substantial BabylonJS video how_to which I don't know much about, yet.  Let's go view them.  Author(s) unknown.
 
 ## Serapth/gamefromscratch.com - http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx
 
-Assorted beginner-level text and video tutorials... from our forum friend [Serapth](http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx).  Thanks Serapth!
+Assorted beginner-level text and video how_to... from our forum friend [Serapth](http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx).  Thanks Serapth!
 
 ## Everyone/Anyone Else - Coming Soon!
 

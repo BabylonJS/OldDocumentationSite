@@ -9,7 +9,7 @@ The appearance of the set shapes can generally be determined by their name. This
 
 ## Updatable
 
-Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/tutorials/Updating_Vertices.html).
+Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/how_to/Updating_Vertices.html).
 
 When in addition the shape has an instance parameter in its options then its shape can be updated by using MeshBuilder with instance set to the name of the shape. 
 
@@ -271,7 +271,7 @@ of the image.
 
 [A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#2)
 
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## Extruded Non Regular Polygon
 You must set at least the _shape_ and _depth_ properties.
@@ -294,30 +294,30 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-To understand how to set _faceUV_ or _faceColors_, please read this : /tutorials/CreateBox_Per_Face_Textures_And_Colors
+To understand how to set _faceUV_ or _faceColors_, please read this : /how_to/CreateBox_Per_Face_Textures_And_Colors
 
 face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
 
 [Playground Example of Extruded Polygon](http://www.babylonjs-playground.com/#RNCYVM#2)
 
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 # Further Reading
 
 ## Basic - L1
 
-[Mesh Overview](/overviews/Shapes)
+[Mesh Overview](/features/Shapes)
 
 ## Mid Level - L2
 
 [Basic Shapes](/babylon101/Discover_Basic_Elements.html)   
-[Polyhedra Shapes](/tutorials/Polyhedra_Shapes.html)
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes.html)
 
 ## More Advanced - L3
    
-[Ribbons In Detail](/tutorials/Ribbon_Tutorial.html)  
-[Maths Makes Ribbons](/tutorials/Maths_Make_Ribbons.html)  
-[Decals](/tutorials/Decals.html) 
+[Ribbons In Detail](/how_to/Ribbon_Tutorial.html)  
+[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons.html)  
+[Decals](/how_to/Decals.html) 
 
 
 

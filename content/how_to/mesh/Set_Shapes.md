@@ -204,7 +204,7 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 
 # How to Update MOVE TO UPDATING VERTICES
 
-Where a set shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/tutorials/Updating_Vertices.html)
+Where a set shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/how_to/Updating_Vertices.html)
 
 
 ##How to Set Front and Back UVs with Side Orientation MOVE TO OWN PAGE
@@ -249,7 +249,7 @@ Because this value creates twice the vertices of a frontside mesh. In other term
 
 
 ## Wrapping Up 
-And that’s it! Now you have seen all of our basic elements, and some ways to use them. Keep watching this area of the tutorial for new basic elements, as they are being added quite quickly : you'll find the updated list with all parameter explanations [**in this section**](/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter). 
+And that’s it! Now you have seen all of our basic elements, and some ways to use them. Keep watching this area of the tutorial for new basic elements, as they are being added quite quickly : you'll find the updated list with all parameter explanations [**in this section**](/how_to/Mesh_CreateXXX_Methods_With_Options_Parameter). 
 Feel free to imagine a few of your own basic element ideas, and present them on the forum. Help us make our list of basic elements grow, if you can.  
 
 ## Next Step 
@@ -258,6 +258,6 @@ These are just the basic shapes we can create with Babylon.js. Ready for more va
 
 # Further Reading
 
-[Mesh Overview](/overviews/Shapes)
+[Mesh Overview](/features/Shapes)
 
 

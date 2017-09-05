@@ -48,13 +48,13 @@ This can be achieved using the multi-view approach which splits the screen into 
 ## Basic - L1
 [Cameras 101](/babylon101/Cameras)  
 [Camera Mesh Collisions 101](/babylon101/Cameras,_Mesh_Collisions_and_Gravity)  
-[Camera Behaviours](/tutorials/Camera_Behaviors)
+[Camera Behaviours](/how_to/Camera_Behaviors)
 
 ## Mid Level - L2
-[Customizing Camera Inputs](/tutorials/Customizing_Camera_Inputs) 
+[Customizing Camera Inputs](/how_to/Customizing_Camera_Inputs) 
 
 ## More Advanced - L3    
-[Multi-Views](/tutorials/How_to_use_Multi-Views)  
-[Layermasks and Multi-Camera Textures](/tutorials/Layermasks_and_Multi-Cam_Textures)  
-[Web Virtual Reality Camera](/tutorials/WebVR_Camera) 
+[Multi-Views](/how_to/How_to_use_Multi-Views)  
+[Layermasks and Multi-Camera Textures](/how_to/Layermasks_and_Multi-Cam_Textures)  
+[Web Virtual Reality Camera](/how_to/WebVR_Camera) 
 

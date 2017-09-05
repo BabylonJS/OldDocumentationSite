@@ -153,7 +153,7 @@ Now you have some of the set shapes under your belt find out about [Shapes Less 
 
 ## Basic - L1
 [How to Create Set Shapes with MeshBuilder](/how_to/Set_Shapes)  
-[How to Create Set Shapes Legacy Method](/how_to/Legacy_Shapes)  
+[How to Create Set Shapes Legacy Method](/how_to/Legacy_Set)  
 [Advantages and Disadvantages](/features/Shapes)
 
 

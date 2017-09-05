@@ -15,7 +15,7 @@ Whether the material is a color or a texture there are different ways it can rea
 3. Emissive - the color or texture of the material as if self lit;
 4. Ambient - the color or texture of the material lit by the environmental background lighting.
 
-Diffuse and Specular material require a [light source](/overviews/Lights) to be created.  
+Diffuse and Specular material require a [light source](/features/Lights) to be created.  
 Ambient color requires the ambient color of the scene to be set, giving the environmental background lighting.
 ```javascript
 scene.ambientColor = new BABYLON.Color3(1, 1, 1);
@@ -147,7 +147,7 @@ Great, your scene is looking better than ever with those materials! Later we wil
 
 # Further Reading
 
-[Materials Overview](/overviews/Materials)
+[Materials Overview](/features/Materials)
 
 
 

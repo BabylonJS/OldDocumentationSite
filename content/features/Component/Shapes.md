@@ -111,7 +111,7 @@ When you are moving around a scene in a _first person shooter_  manner then you 
 
 ### Accessing Mesh Data, Morphing or Updating
 
-The facility to read data on the facets making up a mesh and also the vertices making up each facet of the mesh is available for all meshes. This data can be over written to update an existing mesh, **provided** the mesh was created as updatable (the mesh's updatable parameter is set to _true_) in the first place and no change is made in the number of vertices. For more information see [Updating Vertices](/tutorials/Updating_Vertices.html). 
+The facility to read data on the facets making up a mesh and also the vertices making up each facet of the mesh is available for all meshes. This data can be over written to update an existing mesh, **provided** the mesh was created as updatable (the mesh's updatable parameter is set to _true_) in the first place and no change is made in the number of vertices. For more information see [Updating Vertices](/how_to/Updating_Vertices.html). 
 
 Some parametric shapes have an instance parameter in its _MeshBuilder_ options and can be updated by setting the instance option the initially created parametric shape. Currently all the parametric shapes, except for the Lathe and Polygon (both Create and Extend), can have their mesh updated in this way.
 

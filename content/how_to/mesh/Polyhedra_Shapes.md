@@ -27,7 +27,7 @@ flat|_(boolean)_ if false, a polyhedron has a single global face, _faceUV_ and _
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-To understand how to set _faceUV_ or _faceColors_, please read about [Face Colors and Textures for a Box](/tutorials/CreateBox_Per_Face_Textures_And_Colors) taking into account the right number of faces of your polyhedron, instead of only 6 for a box. 
+To understand how to set _faceUV_ or _faceColors_, please read about [Face Colors and Textures for a Box](/how_to/CreateBox_Per_Face_Textures_And_Colors) taking into account the right number of faces of your polyhedron, instead of only 6 for a box. 
 
 
 ### Provided Polyhedron Types :
@@ -89,13 +89,13 @@ and one with animation: http://www.babylonjs-playground.com/#E3TVT#1
 ## Updatable
 
 Where a polyhedral shape has an updatable parameter in its options it means that it is possible to alter the data associated 
-with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/tutorials/Updating_Vertices.html)
+with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/how_to/Updating_Vertices.html)
 
 # Further Reading
 
 ## Mid Level - L2  
 [Set Shapes](/babylon101/Discover_Basic_Elements)  
 [Parametric Shapes](/babylon101/Parametric_Shapes)  
-[Ribbons In Detail](/tutorials/Ribbon_Tutorial)  
-[Maths Makes Ribbons](/tutorials/Maths_Make_Ribbons)  
-[Decals](/tutorials/Decals) 
+[Ribbons In Detail](/how_to/Ribbon_Tutorial)  
+[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
+[Decals](/how_to/Decals) 

@@ -17,7 +17,7 @@ Methods 1, 2 and 3 use [BABYLON.ShaderMaterial](/advanced/Shader_Material.html) 
 This site allows you to write code for a Vertex Shader and a Fragment Shader and see the results on a variety of meshes. 
 Downloading a zip file produces a folder containing and index.html file and some image files for texture.
 
-![CYOS Screen](/img/tutorials/Shaders/cyos1.jpg);
+![CYOS Screen](/img/how_to/Shaders/cyos1.jpg);
 
 The index.html file contains the shader code in the correct format to apply as a material.
 

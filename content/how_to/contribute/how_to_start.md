@@ -12,7 +12,7 @@ If you do not already have a git client, you can install one from [Git](https://
 
 *Hint:* if you are developping on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it and embed a git client).
 
-![cmder](/img/tutorials/howToStart/cmder.png)
+![cmder](/img/how_to/howToStart/cmder.png)
 
 Once done, you can open a command line and configure git globally:
 ```
@@ -58,7 +58,7 @@ Finally, I would recommand adding a few shortcuts to your environment. Follow th
 
 This will make the main commands quicker to access. Do not hesitate to adapt the bindings to your Preferences.
 
-![keybindings](/img/tutorials/howToStart/keybindings.png)
+![keybindings](/img/how_to/howToStart/keybindings.png)
 
 
 ## Installation
@@ -114,7 +114,7 @@ The main entry points in BJS are:
 
 All of those allows debugging the source code of bjs directly from typescript.
 
-![debug](/img/tutorials/howToStart/debug.png)
+![debug](/img/how_to/howToStart/debug.png)
 
 If you wish testing the fully compiled version instead of independant files simply append ?dist=true in the different urls.
 

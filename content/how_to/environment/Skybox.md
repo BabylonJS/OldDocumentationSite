@@ -11,11 +11,11 @@ The name for each image should have a common part followed by a position given b
 it is on the positive (p) or negative (n) x, y or z axis.
 
 Example Images
-![Skybox](/img/tutorials/skybox.png)
+![Skybox](/img/how_to/skybox.png)
 
 Notice that the images match seamlessly at the edges of the box.
 
-![Seamless Skybox](/img/tutorials/skybox1.png)
+![Seamless Skybox](/img/how_to/skybox1.png)
 
 Skybox images can be found on the web by searching for skybox images. Generally these are single images in the form of a net of a box and you will 
 need to seperate them into individual images and save each.

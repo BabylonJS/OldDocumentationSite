@@ -17,7 +17,7 @@ var uvs = mesh.getVerticesData(BABYLON.VertexBuffer.UVKind);
 
 var indices = mesh.getIndices();
 ```
-Each set of data is an array of numbers as detailed in [Creating Custom Meshes](/tutorials/Custom.html). 
+Each set of data is an array of numbers as detailed in [Creating Custom Meshes](/how_to/Custom.html). 
 
 For example positions will be an array such as [-5, 2, -3, -7, -2, -3, -3, -2, -3, 5, 2, 3, 7, -2, 3, 3, -2, 3] and the  
 indices array such as [0, 1, 2, 3, 4, 5] giving the following table.
@@ -57,6 +57,6 @@ vertexData.applyToMesh(customMesh, true);
 
 # Further Reading
 
-[Custom Meshes](/tutorials/Custom.html)  
-[Normals in BJS](/tutorials/Normals.html)
+[Custom Meshes](/how_to/Custom.html)  
+[Normals in BJS](/how_to/Normals.html)
 

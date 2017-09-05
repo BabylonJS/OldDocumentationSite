@@ -8,7 +8,7 @@ BabylonJS allows you to create many many meshes and apply material to them quite
 Sometimes it may be useful to know more on how this is achieved. Any attempt to answer the question of how colours and textures are applied to a mesh must start with looking at the construction of a mesh.
 Below is a simple wireframe cube which has 8 vertices.
 
-![Wireframe](/img/tutorials/Materials/box1.jpg)
+![Wireframe](/img/how_to/Materials/box1.jpg)
 
 The cube is constructed from 12 facets or triangles, each face having 2 facets.
 
@@ -18,11 +18,11 @@ The colour or texture for each facet is determined from those assigned to its ve
 
 Assigning red to each of the vertices of the facet 3, 2, 6 results in a red facet
 
-![Red Facet](/img/tutorials/Materials/redVert.jpg)
+![Red Facet](/img/how_to/Materials/redVert.jpg)
 
 Assigning red to vertex 3, green to vertex 2 and blue to vertex 6 results in a graduated colour image
 
-![Graduated Facet](/img/tutorials/Materials/gradVert.jpg)
+![Graduated Facet](/img/how_to/Materials/gradVert.jpg)
 
 ## Textures at Vertices
 
@@ -48,7 +48,7 @@ There are two solutions both of which require additional facets.
 
 Replace a shared edges with a face. For example taking the shared edge 3, 7 and replacing with a face gives
 
-![Extra Face](/img/tutorials/Materials/box2.jpg)
+![Extra Face](/img/how_to/Materials/box2.jpg)
 
 Now vertices 8 and 9 can be assigned green or (1, 1) and (1, 0) and so face 3, 2, 6, 7 can be red or have the start of the image and face 0, 8, 9, 4 can be green or have the end of the image with no conflict. 
 Of course facets 8, 9, 7 and 3, 7, 8 will have graduated fill or messd up images but by setting vertices 8 and 3 to have the same position and also 9 and 7 to have the same position 
@@ -60,7 +60,7 @@ Spheres, cylinders and other self joining meshes use this method.
 
 In this case each face has its own set of indices for its vertices, so each face can have a different material applied. 
 
-![Individual Faces](/img/tutorials/Materials/box3.jpg)
+![Individual Faces](/img/how_to/Materials/box3.jpg)
 
 Again correct coincident positioning of vertices leads to a solid looking mesh. Think of the mesh as being made of individual faces that are brought together to form a whole.
 

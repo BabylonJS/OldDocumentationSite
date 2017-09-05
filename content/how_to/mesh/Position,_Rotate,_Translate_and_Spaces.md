@@ -325,6 +325,6 @@ Fig 13d
 
 ## More Advanced - L3
 
-[Using Pivots](/tutorials/Pivots)   
-[Rotate About a Pivot Other than the Local Origin](/tutorials/Pivot)  
-[Translate and Rotate in Detail](/tutorials/Rotate)
+[Using Pivots](/how_to/Pivots)   
+[Rotate About a Pivot Other than the Local Origin](/how_to/Pivot)  
+[Translate and Rotate in Detail](/how_to/Rotate)

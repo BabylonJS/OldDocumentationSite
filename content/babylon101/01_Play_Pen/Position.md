@@ -107,6 +107,6 @@ Now you know how to create and move objects in a scene, but all your meshes have
 
 # Further Reading
 
-[Rotate and Translate Overview](/overviews/Position,_Rotation,_Scaling)  
+[Rotate and Translate Overview](/features/Position,_Rotation,_Scaling)  
 
 

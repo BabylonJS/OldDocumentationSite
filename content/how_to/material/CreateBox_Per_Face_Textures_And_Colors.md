@@ -19,13 +19,13 @@ Well, I'm about to talk about atlases here, but remember it's only an example to
 
 Let's start...
 
-<<<<<<< HEAD:content/tutorials/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
+<<<<<<< HEAD:content/how_to/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
 We create a rectangular box by using the `options` parameters line 43 and 50 :  https://www.babylonjs-playground.com#1V3CAT#10  
 Then we set the texture as a value on a material as usual :  https://www.babylonjs-playground.com#1V3CAT#11    
 =======
 We create a rectangular box by using the `options` parameters line 43 and 50 : http://www.babylonjs-playground.com/#1V3CAT#10  
 Then we set the texture as a value on a material as usual : http://www.babylonjs-playground.com/#1V3CAT#11    
->>>>>>> developed:content/tutorials/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
+>>>>>>> developed:content/how_to/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
 Nothing new until now, right ?  
 
 Let's go on.
@@ -75,11 +75,11 @@ Then, to pass this array to the `CreateBox()` method, just add a parameter calle
   var box = BABYLON.MeshBuilder.CreateBox('box', options, scene);
   box.material = mat;
 ```
-<<<<<<< HEAD:content/tutorials/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
+<<<<<<< HEAD:content/how_to/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
 Here's the result :  https://www.babylonjs-playground.com#1V3CAT#12  
 =======
 Here's the result : http://www.babylonjs-playground.com/#1V3CAT#12  
->>>>>>> developed:content/tutorials/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
+>>>>>>> developed:content/how_to/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
 Quite easy, isn't it ?  
 <br/>
 <br/>
@@ -92,11 +92,11 @@ This face is the box face 4 (just make attempts to discover the box geometry). W
   faceUV[f].y = faceUV[f].w;
   faceUV[f].w = temp;
 ```
-<<<<<<< HEAD:content/tutorials/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
+<<<<<<< HEAD:content/how_to/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
 And now, his head is in on the right :  https://www.babylonjs-playground.com#1V3CAT#13  
 =======
 And now, his head is in on the right : http://www.babylonjs-playground.com/#1V3CAT#13  
->>>>>>> developed:content/tutorials/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
+>>>>>>> developed:content/how_to/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
 <br/>
 <br/>
 Obviously, we aren't not required to set every box face.  
@@ -106,7 +106,7 @@ Forget about the _for{}_ loop, just initialize our _faceUV_ array and set only _
   var faceUV = new Array(6);
   faceUV[4] = new BABYLON.Vector4(0, 0, 1 / hSpriteNb, 1 / vSpriteNb);
 ```
-<<<<<<< HEAD:content/tutorials/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
+<<<<<<< HEAD:content/how_to/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
 Only two lines of code and that's all :  https://www.babylonjs-playground.com#1V3CAT#25  
 <br/>
 As we notice it, the default value `(0, 0, 1, 1)` is then applied to the other faces.   
@@ -124,18 +124,18 @@ So if we need, for instance, to display the texture onto one face only, we could
 <br/>
 We could also want to apply two different images from the same texture file onto two different meshes.  
 Nothing easier : http://www.babylonjs-playground.com/#1V3CAT#26    
->>>>>>> developed:content/tutorials/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
+>>>>>>> developed:content/how_to/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
 Two boxes, two images, but only one texture !
 <br/>
 <br/>
 
 ## Colors
 
-<<<<<<< HEAD:content/tutorials/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
+<<<<<<< HEAD:content/how_to/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
 Let's go back to our initial rectangular box :  https://www.babylonjs-playground.com#1V3CAT#10   
 =======
 Let's go back to our initial rectangular box : http://www.babylonjs-playground.com/#1V3CAT#10   
->>>>>>> developed:content/tutorials/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
+>>>>>>> developed:content/how_to/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
 We are about to apply the same principle here not with textures, but with colors.  
 Let's define a 6 element array _faceColors_ (6 box faces) and just set the color of the faces we want with `Colors4`.  
 ```javascript
@@ -155,7 +155,7 @@ Then pass this array to the `CreateBox()` method with the new `faceColors` param
 
   var box = BABYLON.MeshBuilder.CreateBox('box', options, scene);
 ```
-<<<<<<< HEAD:content/tutorials/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
+<<<<<<< HEAD:content/how_to/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
 Simple, isn't it ?   https://www.babylonjs-playground.com#1V3CAT#14  
 
 These colors are BJS Color4-class values. The Color4 alpha values become active if we set `hasVertexAlpha = true` :  https://www.babylonjs-playground.com#1V3CAT#27  
@@ -167,7 +167,7 @@ Simple, isn't it ?  http://www.babylonjs-playground.com/#1V3CAT#14
 These colors are BJS Color4-class values. The Color4 alpha values become active if we set `hasVertexAlpha = true` : http://www.babylonjs-playground.com/#1V3CAT#27  
 
 We can even combine the vertex colors with a colored material, blue here :  http://www.babylonjs-playground.com/#1V3CAT#15  
->>>>>>> developed:content/tutorials/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
+>>>>>>> developed:content/how_to/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
 
 And finally we can also mix per-face colors with per-face textures, and/or mix either of those... with the material's standard colors. :  
 ```javascript
@@ -179,11 +179,11 @@ And finally we can also mix per-face colors with per-face textures, and/or mix e
     faceColors : faceColors
   };
 ```
-<<<<<<< HEAD:content/tutorials/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
+<<<<<<< HEAD:content/how_to/01_Play_Pen/CreateBox_Per_Face_Textures_And_Colors.md
 Enjoy :  https://www.babylonjs-playground.com#1V3CAT#16  
 =======
 Enjoy : http://www.babylonjs-playground.com/#1V3CAT#16  
->>>>>>> developed:content/tutorials/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
+>>>>>>> developed:content/how_to/CBmaterial/CreateBox_Per_Face_Textures_And_Colors.md
 
 No need for submaterials or submeshes, when seeking such simple things as box-side materials.
 

@@ -19,23 +19,23 @@ The BabylonJS method is much closer to stop motion.
 
 Using an animated gif file a sequence of images, _frames_ are combined to give the impression of movement.
 
-![Horse - Frames](/img/overviews/animation/horse_frames.jpg)
+![Horse - Frames](/img/features/animation/horse_frames.jpg)
 
-![Horse Animation](/img/overviews/animation/Horse_gif_slow.gif) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Horse_gif_slow.gif)
+![Horse Animation](/img/features/animation/Horse_gif_slow.gif) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Horse_gif_slow.gif)
 
 Each individual image is one _frame_ of the animation.
 
 Software used to create an animated gif often gives the opportunity to set a time for each frame to be displayed - 0.2 seconds in the 
 example below.
 
-![Horse - Rate](/img/overviews/animation/horse_rate.jpg)
+![Horse - Rate](/img/features/animation/horse_rate.jpg)
 
 ### Stop Motion Animation
 
 This way takes a physical object which is photographed, changed slightly and then re-photographed. This is done repeatedly to form a series of images, each of which 
 becomes one _frame_. 
 
-![Lego Stop Motion](/img/overviews/animation/stop_motion.jpg) from [NYFA](https://www.nyfa.edu/student-resources/wp-content/uploads/2015/02/5860045_orig.jpg)
+![Lego Stop Motion](/img/features/animation/stop_motion.jpg) from [NYFA](https://www.nyfa.edu/student-resources/wp-content/uploads/2015/02/5860045_orig.jpg)
 
 During the design the creator will need to consider how long a sequence will take and how smooth it needs to be. The smoother the movement the more frames are required. 
 This together with the timing of the sequence will give the frames per second. Also knowing the object's start position and end position and how many frames are required 
@@ -59,7 +59,7 @@ The extent of the changes and when they take place are set in an array of key fr
 
 ## Terminology
 
-The following terms will have the given meaning within the tutorials about animating.
+The following terms will have the given meaning within the how_to about animating.
 
 * _Performer_ an item that can be animated, could be a mesh, a light or camera for example.
 
@@ -94,7 +94,7 @@ In this _game clip_ a box, the _performer_ is to slide between two places once e
 
 The first stage design is to sketch what is needed at key time points, a little like an animated gif design.
 
-![key frames](/img/overviews/animation/ani1.jpg)
+![key frames](/img/features/animation/ani1.jpg)
 
 After one second the box should be in its new position and one second later in its start position. This sequence is then continually repeated.
 
@@ -193,11 +193,11 @@ scene.beginDirectAnimation(target, animations, start frame, end frame, loop);
 ## Basic - L1
 
 [Animation 101](/babylon101/Animations)  
-[Combining Animations](/tutorials/Combine.html)
+[Combining Animations](/how_to/Combine.html)
 
 ## Mid Level - L2
 
-[A Sequence of Animations](/tutorials/Sequence.html)  
+[A Sequence of Animations](/how_to/Sequence.html)  
     
     
     

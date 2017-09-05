@@ -102,6 +102,6 @@ Having learnt about sprites, so it’s time to move on to use them in a classic 
 
 # Further Reading
 
-[Mesh Overview](/overviews/Shapes)
+[Mesh Overview](/features/Shapes)
 
 

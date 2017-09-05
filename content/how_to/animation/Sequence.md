@@ -21,7 +21,7 @@ Spot Lights - with spheres to show position
 
 ### Sequence Timetable
 
-![Time Table](/img/tutorials/Animations/seq1.jpg)
+![Time Table](/img/how_to/Animations/seq1.jpg)
 
 For each performer you create an animation with key points for each timed event.
 ### Animations

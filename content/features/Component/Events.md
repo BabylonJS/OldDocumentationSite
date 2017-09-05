@@ -16,8 +16,8 @@ Using actions events are managed with the _actionManager_ along with triggers su
 
 # Further Reading
 
-[How to Use Actions](/tutorials/How_to_use_Actions)  
-[Observables](/tutorials/Observables)
+[How to Use Actions](/how_to/How_to_use_Actions)  
+[Observables](/how_to/Observables)
 
 
 

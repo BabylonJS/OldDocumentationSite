@@ -18,13 +18,13 @@ You can find here the list of supported features and the backward compatibility 
 
 Feature|Description|WebGL1 compatibility|Demo|More info
 --|--|--|--|--
-Depth Frag|Used to compute logarithmic depth buffer|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/)|[PG]( https://www.babylonjs-playground.com/#1180R5#15)|[Documentation](http://doc.babylonjs.com/tutorials/using_logarithmic_depth_buffer)
-Multisample render targets|Rendertarget textures can be multisampled to get antialiasing effect|No. Has no effect on WebGL1 context|[PG]( https://www.babylonjs-playground.com/#12MKMN)|[See below](http://doc.babylonjs.com/overviews/webgl2#multisample-render-targets)
-Standard derivatives|Standard derivatites are used in Babylon.js to help compute realtime bump|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives)|[Demo](http://www.babylonjs.com/Demos/Bump/)|[Documentation](http://doc.babylonjs.com/tutorials/advanced_texturing)
-Texture LOD|Used by PRBMaterial to simulate microsurface|Yes through an [extension](https://www.khronos.org/registry/OpenGL/extensions/EXT/EXT_shader_texture_lod.txt)|[Demo](http://www.babylonjs.com/Demos/HDRMap/)|[Documentation](http://doc.babylonjs.com/overviews/physically_based_rendering)
-Vertex array objects (VAO)|A Vertex Array Object (or VAO) is an object that describes how the vertex attributes are stored in a Vertex Buffer Object (or VBO)|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/)|N/A. Every rendering is done with VAO by default|[See below](http://doc.babylonjs.com/overviews/webgl2#vertex-array-objects)
-Uniform buffer objects (UBO)| An uniform buffer object (or UBO) let you specify a group of uniforms from a buffer|No. Uniforms are handled independently on WebGL1 context|N/A. Materials supporting UBO automatically uses them|[See below](http://doc.babylonjs.com/overviews/webgl2#uniform-buffer-objects)
-Multiple Render Target (MRT)| Several Render Targets can be rendered in the same draw call.|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers)|[Demo]( https://www.babylonjs-playground.com/#NZ6P07)|[See below](http://doc.babylonjs.com/overviews/webgl2#multiple-render-target)
+Depth Frag|Used to compute logarithmic depth buffer|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/)|[PG]( https://www.babylonjs-playground.com/#1180R5#15)|[Documentation](http://doc.babylonjs.com/how_to/using_logarithmic_depth_buffer)
+Multisample render targets|Rendertarget textures can be multisampled to get antialiasing effect|No. Has no effect on WebGL1 context|[PG]( https://www.babylonjs-playground.com/#12MKMN)|[See below](http://doc.babylonjs.com/features/webgl2#multisample-render-targets)
+Standard derivatives|Standard derivatites are used in Babylon.js to help compute realtime bump|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives)|[Demo](http://www.babylonjs.com/Demos/Bump/)|[Documentation](http://doc.babylonjs.com/how_to/advanced_texturing)
+Texture LOD|Used by PRBMaterial to simulate microsurface|Yes through an [extension](https://www.khronos.org/registry/OpenGL/extensions/EXT/EXT_shader_texture_lod.txt)|[Demo](http://www.babylonjs.com/Demos/HDRMap/)|[Documentation](http://doc.babylonjs.com/features/physically_based_rendering)
+Vertex array objects (VAO)|A Vertex Array Object (or VAO) is an object that describes how the vertex attributes are stored in a Vertex Buffer Object (or VBO)|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/)|N/A. Every rendering is done with VAO by default|[See below](http://doc.babylonjs.com/features/webgl2#vertex-array-objects)
+Uniform buffer objects (UBO)| An uniform buffer object (or UBO) let you specify a group of uniforms from a buffer|No. Uniforms are handled independently on WebGL1 context|N/A. Materials supporting UBO automatically uses them|[See below](http://doc.babylonjs.com/features/webgl2#uniform-buffer-objects)
+Multiple Render Target (MRT)| Several Render Targets can be rendered in the same draw call.|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers)|[Demo]( https://www.babylonjs-playground.com/#NZ6P07)|[See below](http://doc.babylonjs.com/features/webgl2#multiple-render-target)
 
 ## Multisample render targets
 
@@ -35,7 +35,7 @@ Here is an example of a mirror (512x512) with and without multisampling:
  
 No MSAA (1 sample)|MSAA (8 samples)
 ---|---
-![Title](/img/overviews/nomsaa.jpg)|![Title](/img/overviews/msaa.jpg)
+![Title](/img/features/nomsaa.jpg)|![Title](/img/features/msaa.jpg)
 
 ## Vertex array objects
 

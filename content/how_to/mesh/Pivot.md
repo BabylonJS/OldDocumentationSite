@@ -80,7 +80,7 @@ scene.registerAfterRender(function() {
 
 ## More Advanced - L3
 
-[Using a Pivot](/tutorials/Pivots)
+[Using a Pivot](/how_to/Pivots)
 
 
 

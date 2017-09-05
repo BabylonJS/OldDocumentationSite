@@ -15,14 +15,14 @@ changing directions within the normals array affect how it is lit.
 
 # Normals and Minimum Vertices
 
-![Wireframe](/img/tutorials/Mesh/box1.jpg)
+![Wireframe](/img/how_to/Mesh/box1.jpg)
 
 The box above has 8 vertices. If we want to keep the indices to the minimum they will be 0, 1, 2, 3, 4, 5, 6, 7. 
 Facets 0, 3, 7 and 3, 7, 6 and 0, 3, 2 all have vertex 3 in common and vertex 3 can only have one 
 entry in the normals array associated with it. How does BabylonJS calculate the 'normal' for vertex 3? 
 The diagram below shows that the average of the three mathematical normals at each vertex is used.
 
-![Normals](/img/tutorials/Mesh/box4.jpg)
+![Normals](/img/how_to/Mesh/box4.jpg)
 
 NOTE each of the triples in the normals array is often referred to as a normal even though they are not strictly speaking 
 the mathematical normal.
@@ -48,11 +48,11 @@ There are times, such as needing each face of a box to be covered in a [differen
 when it is better to have the box constructed from seperate faces each of which are contructed by two facets and no two faces 
 sharing a vertex indices. They will of course share vertex positions.
 
-![Seperate Faces](/img/tutorials/Mesh/box3.jpg)
+![Seperate Faces](/img/how_to/Mesh/box3.jpg)
 
 In BabylonJS this can be achieved using the *convertToFlatShadedMesh* function. The results are shown below.
 
-![Flat Shaded Normals](/img/tutorials/Mesh/box5.jpg)
+![Flat Shaded Normals](/img/how_to/Mesh/box5.jpg)
 
 ## Table of Indices, Positions and Normals for Flat Shaded Box
 
@@ -96,7 +96,7 @@ shows the individual faces making up the sphere.
 
 # Further Reading
 
-[Custom Meshes](/tutorials/Custom.html)  
-[Updating Vertices](/tutorials/Updating_Vertices.html)
+[Custom Meshes](/how_to/Custom.html)  
+[Updating Vertices](/how_to/Updating_Vertices.html)
 
 

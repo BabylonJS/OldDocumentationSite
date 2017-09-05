@@ -6,7 +6,7 @@ PG_TITLE: 04. Reflections and Refractions
 Using reflection textures can simulate mirror like material and recfraction textures can simulate looking through glass or water.
 
 ## Reflection
-Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/tutorials/Skybox)
+Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/how_to/Skybox)
 
 This sets the _relectionTexture_ to a _CubeTexture_ and the _coordinatesMode_ of the _relectionTexture_ to SKYBOX_Mode as in
 
@@ -18,7 +18,7 @@ skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 By default six jpeg images are passed to a _CubeTexture_. The images are named in this form, commonPart\_px.jpg, commonPart\_nx.jpg, 
 commonPart\_py.jpg, commonPart\_ny.jpg, commonPart\_pz.jpg, commonPart\_nz.jpg corresponding to the positions shown below.
 
-![CubeTexture Positions](/img/tutorials/Materials/cubetexture1.png)
+![CubeTexture Positions](/img/how_to/Materials/cubetexture1.png)
 
 When doing this for a skybox the box created is given a large size (1000 in the skybox example above) but _CubeTexture_ can be used with any size box and is one 
 way of applying different textures to each side of a cube. Notice that as we are dealing with a small box and we are viewing it from the outside _backFaceCulling_ can be set to _true_. This is not 
@@ -29,7 +29,7 @@ not be rendered should _backFaceCulling = true_. However we still need to use _r
 var box = BABYLON.MeshBuilder.CreateBox("Box", {}, scene);
 var boxMaterial = new BABYLON.StandardMaterial("mat", scene);
 boxMaterial.backFaceCulling = true;
-boxMaterial.reflectionTexture = new BABYLON.CubeTexture("http://babylonjsguide.github.io/img/tutorials/Materials/tutorials/Materials/tutorials/Materials/cubeSide", scene);
+boxMaterial.reflectionTexture = new BABYLON.CubeTexture("http://babylonjsguide.github.io/img/how_to/Materials/how_to/Materials/how_to/Materials/cubeSide", scene);
 boxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 boxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 boxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
@@ -52,7 +52,7 @@ High Dynamic Range (HDR) images are panoramic images that cover an entire field 
 
 Below is an HDR image of a room
 
-![Room](/img/tutorials/Materials/room.png)
+![Room](/img/how_to/Materials/room.png)
 
 Replace the following line
 ```javascript
@@ -68,11 +68,11 @@ skyboxMaterial.reflectionTexture = new BABYLON.HDRCubeTexture("PATH TO HDR IMAGE
 ### Spherical Reflection Texture
 Not only can a cube texture can be applied to a sphere so can a plane single image.
 
-![Squares](/img/tutorials/Materials/reflectest.png)
+![Squares](/img/how_to/Materials/reflectest.png)
 
 The above image was applied to each of four spheres, one as a diffuse texture and the other three with _reflectionTexture_ but different _coordinatesMode_. The resuls are below.
 
-![Reflecion on Spheres](/img/tutorials/Materials/modes.png)
+![Reflecion on Spheres](/img/how_to/Materials/modes.png)
 
 |   |   |
 |-----|-----|

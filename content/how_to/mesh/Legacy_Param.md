@@ -6,7 +6,7 @@ PG_TITLE: Parametric Shapes Legacy Method
 
 ## Ribbon
 
-For details on what it is and how it is constructed you might want to read the [Ribbon Tutorial](/tutorials/Ribbon_Tutorial)
+For details on what it is and how it is constructed you might want to read the [Ribbon Tutorial](/how_to/Ribbon_Tutorial)
 
 ```javascript
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", [path1, path2, ..., pathn], false, false, 0, scene, false, BABYLON.Mesh.DEFAULTSIDE);
@@ -82,7 +82,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 ```javascript
 var polygon = BABYLON.Mesh.CreatePolygon("cylinder", [V1, V2, ..., Vn], scene);
 ```
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## Extrusion of a Non Regular Polygon
 
@@ -98,7 +98,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], 2, scene);
 ```
 
-Uses [PolygonMeshBuilder](/tutorials/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## Lines Mesh
 

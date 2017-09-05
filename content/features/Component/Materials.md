@@ -148,28 +148,28 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 
 ## Basic - L1
 [Materials 101](/babylon101/Materials)  
-[Bumps, Opacity, Tiling textures](/tutorials/More_Materials)  
-[Multi Materials](/tutorials/Multi_Materials)  
+[Bumps, Opacity, Tiling textures](/how_to/More_Materials)  
+[Multi Materials](/how_to/Multi_Materials)  
 
 ## Mid Level - L2
-[Using Parallax Mapping](/tutorials/Using_parallax_mapping)  
+[Using Parallax Mapping](/how_to/Using_parallax_mapping)  
 
 ## More Advanced - L3
-[Reflection and Refraction](/tutorials/Reflect)  
-[Fresnel Parameters](/tutorials/How_to_use_FresnelParameters)  
-[Procedural textures](/tutorials/How_to_use_Procedural_Textures)  
-[Transparency and Rendering](/tutorials/Transparency_and_How_Meshes_Are_Rendered)  
-[DepthRenderer](/tutorials/How_to_use_DepthRenderer_to_get_depth_values)  
-[Blending](/tutorials/How_to_use_Blend_Modes)  
-[How Materials are Applied to Vertices](/tutorials/Facets)  
-[How Materials Work](/tutorials/How_materials_work)  
-[Multi-Platform Compressed Textures](/tutorials/Multi-Platform_Compressed_Textures)
+[Reflection and Refraction](/how_to/Reflect)  
+[Fresnel Parameters](/how_to/How_to_use_FresnelParameters)  
+[Procedural textures](/how_to/How_to_use_Procedural_Textures)  
+[Transparency and Rendering](/how_to/Transparency_and_How_Meshes_Are_Rendered)  
+[DepthRenderer](/how_to/How_to_use_DepthRenderer_to_get_depth_values)  
+[Blending](/how_to/How_to_use_Blend_Modes)  
+[How Materials are Applied to Vertices](/how_to/Facets)  
+[How Materials Work](/how_to/How_materials_work)  
+[Multi-Platform Compressed Textures](/how_to/Multi-Platform_Compressed_Textures)
 
-[Introduction to Shaders](/tutorials/ShaderIntro)  
-[Putting Shader Code in Babylon.js](/tutorials/Putting)  
-[Shader Material](/tutorials/Shader_Material)  
-[Example A Vertical Wave with Shader Code](/tutorials/Writing1)  
-[Example Fireworks with Shader Code](/tutorials/Writing2)
+[Introduction to Shaders](/how_to/ShaderIntro)  
+[Putting Shader Code in Babylon.js](/how_to/Putting)  
+[Shader Material](/how_to/Shader_Material)  
+[Example A Vertical Wave with Shader Code](/how_to/Writing1)  
+[Example Fireworks with Shader Code](/how_to/Writing2)
 
 
 

@@ -27,7 +27,7 @@ mesh.unfreezeWorldMatrix();
 ```
 
 # Reducing draw calls
-As soon as you can please use instances as they are drawn with one single draw call: http://doc.babylonjs.com/tutorials/how_to_use_instances
+As soon as you can please use instances as they are drawn with one single draw call: http://doc.babylonjs.com/how_to/how_to_use_instances
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
 
@@ -65,5 +65,5 @@ The return value is higher on low frame rates.
 
 ## More Advanced - L3
 
-[How to use scene optimizer](/tutorials/How_to_use_SceneOptimizer)  
-[Optimizing your scene with octrees](/tutorials/optimizing_your_scene_with_octrees)
+[How to use scene optimizer](/how_to/How_to_use_SceneOptimizer)  
+[Optimizing your scene with octrees](/how_to/optimizing_your_scene_with_octrees)
