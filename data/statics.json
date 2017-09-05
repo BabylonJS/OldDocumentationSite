@@ -1004,26 +1004,6 @@
           "filename": "Physically_Based_Rendering_Master"
         }
       ]
-    },
-    {
-      "title": "Inspector",
-      "name": "Inspector",
-      "img": "img/how_to/All.png",
-      "desc": "Inspector description",
-      "files": [
-        {
-          "title": "Using the debug layer",
-          "filename": "Using_the_debuglayer"
-        },
-        {
-          "title": "Debug Layer features",
-          "filename": "Debug_layer_features"
-        },
-        {
-          "title": "Customize the debug layer",
-          "filename": "Customize_debug_layer"
-        }
-      ]
     }
   ]
 }
