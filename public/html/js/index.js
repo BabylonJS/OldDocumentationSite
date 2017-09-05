@@ -24,10 +24,6 @@
                     html: '<i class="fa fa-file-text-o"></i>What\'s new?'
                 }),
                 $('<a>', {
-                    href: '/generals',
-                    html: '<i class="fa fa-book"></i>Generals'
-                }),
-                $('<a>', {
                     href: '/babylon101',
                     html: '<i class="fa fa-book"></i>Babylon 101'
                 }), 

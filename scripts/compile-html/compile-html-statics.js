@@ -42,7 +42,6 @@ module.exports = function(done){
         "babylon101",
         "resources",
         "extensions",
-        "generals",
         "how_to",
         "features"
     ];

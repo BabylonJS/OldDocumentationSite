@@ -110,6 +110,21 @@
       "desc": "All the how_to."
     },
     {
+      "title": "Playground",
+      "name": "PGsupport",
+      "desc": "Making the most of the playground",
+      "files": [    
+        {
+          "title": "The Debug Layer in Projects",
+          "filename": "debug_layer"
+        },
+        {
+          "title": "Customize The Debug Layer",
+          "filename": "Customize_debug_layer"
+        }
+      ]
+    },
+    {
       "title": "Mesh",
       "name": "mesh",
       "desc": "Mesh How To",
@@ -591,6 +606,14 @@
       "desc": "Useful References",
       "files": [
         {
+          "title": "Interesting Playgrounds",
+          "filename": "playgrounds"
+        },
+        {
+          "title": "Available Textures in the Playground",
+          "filename": "Playground_Textures"
+        },
+        {
           "title": "BJS Code Constants",
           "filename": "Constants"
         },
@@ -892,6 +915,21 @@
       ]
     },
     {
+      "title": "Playground",
+      "name": "PGsupport",
+      "desc": "The playground and how to use it",
+      "files": [
+        {
+          "title": "Introduction to the Playground",
+          "filename": "Playground"
+        },
+        {
+          "title": "The Debug Layer",
+          "filename": "Playground_debuglayer"
+        }
+      ]
+    },
+    {
       "title": "Maps",
       "name": "Maps",
       "img": "img/how_to/All.png",
@@ -984,32 +1022,6 @@
         {
           "title": "Customize the debug layer",
           "filename": "Customize_debug_layer"
-        }
-      ]
-    }
-  ],
-  "generals": [
-    {
-      "title": "Essentials",
-      "name": "Essentials",
-      "img": "img/how_to/All.png",
-      "desc": "Beginner? start here!",
-      "files": [
-        {
-          "title": "The Playground Tutorial",
-          "filename": "The_Playground_Tutorial"
-        }
-      ]
-    },
-    {
-      "title": "General",
-      "name": "General",
-      "img": "img/how_to/General.png",
-      "desc": "General good things to know",
-      "files": [
-        {
-          "title": "Interesting Playgrounds",
-          "filename": "playgrounds"
         }
       ]
     }

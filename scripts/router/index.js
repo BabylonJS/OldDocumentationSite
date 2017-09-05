@@ -13,7 +13,6 @@ module.exports = function (app) {
     app.use('/extensions', require('./routes/extensions'));
     app.use('/resources', require('./routes/resources'));
     app.use('/features', require('./routes/features'));
-    app.use('/generals', require('./routes/generals'));
     app.use('/page.php', require('./routes/forward'));
     app.use('/search', require('./routes/search'));
     app.use('/playground', require('./routes/playground'));
