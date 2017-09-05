@@ -1,7 +1,7 @@
 # Master the PBR Materials
 
 ## Introduction
-After following the [PBR Introduction](http://doc.babylonjs.com/features/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
+After following the [PBR Introduction](/overviews/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
@@ -12,10 +12,10 @@ This will be the only picture of the documentation. As a **real sample** would b
 The entire documentation should help you deal with most of the PBR Material setup.
 
 ## How to install
-As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](http://doc.babylonjs.com/how_to/Creating_a_Basic_Scene) in order to create your first page using the framework.
+As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](/tutorials/Creating_a_Basic_Scene) in order to create your first page using the framework.
 
 ## Why
-After looking at the [PBR Introduction](http://doc.babylonjs.com/features/Physically_Based_Rendering) you may want to gain more control or use more features in your material setup like:
+After looking at the [PBR Introduction](/overviews/Physically_Based_Rendering) you may want to gain more control or use more features in your material setup like:
 * Refraction
 * Standard Light Falloff
 * LightMaps
@@ -27,7 +27,7 @@ The **PBRMaterial** is here to address this concern and can work in either a Spe
 
 ## From MetallicRoughness To PBRMaterial
 
-To start with the MetallicRoughness, you can take a look at the [documentation](http://doc.babylonjs.com/features/physically_based_rendering#pbrmetallicroughnessmaterial).
+To start with the MetallicRoughness, you can take a look at the [documentation](/overviews/physically_based_rendering#pbrmetallicroughnessmaterial).
 
 In order to setup the PBRMaterial in Metallic/Roughness mode, at least one of the following properties has to be set (else it by default works in Specular/Glossiness):
 * metallic
@@ -60,10 +60,10 @@ Once the conversion done, let's see the custom options available on this version
 * **useRoughnessFromMetallicTextureGreen**: the metallic texture contains the roughness information in its green channel (useRoughnessFromMetallicTextureAlpha needs to be false).
 * **useMetallnessFromMetallicTextureBlue**: the metallic texture contains the metallic information in its blue channel (it is considered in the red channel by default).
 * **useAmbientOcclusionFromMetallicTextureRed**: the metallic texture contains the ambient occlusion information in its red channel.
-* **useAmbientInGrayScale**: the ambient occlusion is forced to read only from the red red channel of the ambient texture or from the red channel of the metallic texture.
+* **useAmbientInGrayScale**: the ambient occlusion is forced to read only from the red channel of the ambient texture or from the red channel of the metallic texture.
 
 ## From SpecularGlossiness To PBRMaterial
-To begin with the SpecularGlossiness you can start with this [documentation](http://doc.babylonjs.com/features/physically_based_rendering#pbrspecularglossinessmaterial).
+To begin with the SpecularGlossiness you can start with this [documentation](/overviews/physically_based_rendering#pbrspecularglossinessmaterial).
 
 The exact opposite of the previous chapter has to be followed in order to setup the PBRMaterial in Specular/Glossiness mode. The following properties need to be null or undefined:
 * metallic
@@ -114,7 +114,7 @@ This behaviour can be turned off through the properties:
 ## Refraction
 Refraction is a little bit like reflection (Please purists, do not kill me now, I only said a little) because it is heavily relying on the environment to change the way the material looks. Basically, if reflection could be compared to seing the sun and cloud on the surface of a lake, refraction would be seing weird shaped fish under the surface (through the water).  
 
-A great tutorial on the refraction is available [Here](http://doc.babylonjs.com/how_to/Advanced_Texturing)
+A great tutorial on the refraction is available [Here](/tutorials/Advanced_Texturing)
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
@@ -132,14 +132,14 @@ You can still notice some reflection on your material. This is due to the energy
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
-* [Normal Map](http://doc.babylonjs.com/how_to/Advanced_Texturing)
-* [Parallax](http://doc.babylonjs.com/how_to/Using_parallax_mapping)
+* [Normal Map](/tutorials/Advanced_Texturing)
+* [Parallax](/tutorials/Using_parallax_mapping)
 
 ## LightMaps
 LightMaps are available in the same way they are in the standardMaterial by affecting a texture to the ```lightmapTexture``` property. This can also be used as a shadowMap instead by switching the dedicated control flag ```useLightmapAsShadowmap``` to true.
 
 ## Image Processing
-The Processing Configuration can be applied directly on the material as explained in the [image processing documentation](http://doc.babylonjs.com/how_to/how_to_use_postprocesses#imageprocessing).
+The Processing Configuration can be applied directly on the material as explained in the [image processing documentation](/tutorials/how_to_use_postprocesses#imageprocessing).
  
 ## Light Setup
 Always considering what "Nature does", we reconsidered the BJS light falloff effect in the PBR Material.
@@ -197,4 +197,4 @@ Now, increasing the light radius makes this dot wider as you can see on this [De
 This uses internally a lot of approximation like Tan(theta) is almost theta for small angles so if you try to put bigger radius than a tenth of the light distance you will not see the desired effect.
 
 ## Shadows (as the standard material)
-Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](http://doc.babylonjs.com/how_to);
+Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/tutorials);

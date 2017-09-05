@@ -125,6 +125,43 @@
       ]
     },
     {
+      "title": "Scene",
+      "name": "scene",
+      "desc": "The Scene",
+      "files": [    
+        {
+          "title": "Creating a custom loading screen",
+          "level": 2,
+          "filename": "Creating_a_custom_loading_screen"
+        },
+        {
+          "title": "How to use SceneOptimizer",
+          "level": 3,
+          "filename": "How_to_use_SceneOptimizer"
+        },
+                {
+          "title": "Optimizing your scene",
+          "level": 3,
+          "filename": "Optimizing_your_scene"
+        },
+        {
+          "title": "Optimizing Your Scene with Octrees",
+          "level": 3,
+          "filename": "Optimizing_Your_Scene_with_Octrees"
+        },
+        {
+          "title": "Optimizing with Cached Resources",
+          "level": 3,
+          "filename": "Caching_Resources_in_IndexedDB"
+        },
+        {
+          "title": "Render Scene on a PNG",
+          "level": 3,
+          "filename": "Render_Scene_on_a_PNG"
+        }
+      ]
+    },
+    {
       "title": "Mesh",
       "name": "mesh",
       "desc": "Mesh How To",
@@ -148,18 +185,447 @@
           "title": "Create Parametric Shapes - Legacy",
           "level": 1,
           "filename": "Legacy_Param"
+        },
+        {
+          "title": "Polyhedra",
+          "level": 1,
+          "filename": "Polyhedra_Shapes"
+        },
+        {
+          "title": "Rotation Around an Axis",
+          "level": 1,
+          "filename": "Axis"
+        },
+        {
+          "title": "Using decals",
+          "level": 1,
+          "filename": "Decals"
+        },
+        {
+          "title": "How to Use the Solid Particle System",
+          "level": 1,
+          "filename": "Solid_Particle_System"
+        },
+        {
+          "title": "Translate, Rotate and Spaces",
+          "level": 2,
+          "filename": "Position,_Rotate,_Translate_and_Spaces"
+        },
+        {
+          "title": "Using PolygonMeshBuilder",
+          "level": 2,
+          "filename": "PolygonMeshBuilder"
+        },
+        {
+          "title": "Ribbon Tutorial",
+          "level": 2,
+          "filename": "Ribbon_Tutorial"
+        },
+        {
+          "title": "Highlight Layer",
+          "level": 2,
+          "filename": "Highlight_Layer"
+        },
+        {
+          "title": "How to use Instances",
+          "level": 3,
+          "filename": "How_to_use_Instances"
+        },
+        {
+          "title": "How to Merge Meshes",
+          "level": 3,
+          "filename": "How_to_Merge_Meshes"
+        },
+        {
+          "title": "Mathematics and Ribbons",
+          "level": 3,
+          "filename": "Maths_Make_Ribbons"
+        },
+        {
+          "title": "How to use Curve3",
+          "level": 3,
+          "filename": "How_to_use_Curve3"
+        },
+        {
+          "title": "How to use Path3D",
+          "level": 3,
+          "filename": "How_to_use_Path3D"
+        },
+        {
+          "title": "How to use Facet Data",
+          "level": 3,
+          "filename": "How_to_use_FacetData"
+        },
+        {
+          "title": "How to use LOD",
+          "level": 3,
+          "filename": "How_to_use_LOD"
+        },
+        {
+          "title": "How to dynamically morph a mesh",
+          "level": 3,
+          "filename": "How_to_dynamically_morph_a_mesh"
+        },
+        {
+          "title": "How to use Morph targets",
+          "level": 3,
+          "filename": "How_to_use_MorphTargets"
+        },
+        {
+          "title": "How to use Bones and Skeletons",
+          "level": 3,
+          "filename": "How_to_use_Bones_and_Skeletons"
+        },
+        {
+          "title": "Translate and Rotate Details",
+          "level": 3,
+          "filename": "Rotate"
+        },
+        {
+          "title": "Using a Pivot",
+          "level": 3,
+          "filename": "Pivots"
+        },
+        {
+          "title": "Rotation Around an Axis Through a Pivot",
+          "level": 3,
+          "filename": "Pivot"
+        },
+        {
+          "title": "Euler Angles and Quaternions",
+          "level": 3,
+          "filename": "Euler_Angles"
+        },
+        {
+          "title": "Applying Rotation Conventions",
+          "level": 3,
+          "filename": "Applying_Rotations"
+        },
+        {
+          "title": "Aligning Rotation to Target",
+          "level": 3,
+          "filename": "Rotation_Target"
+        },
+        {
+          "title": "Frame of Reference",
+          "level": 3,
+          "filename": "Frame_Of_Reference"
+        },
+        {
+          "title": "Baking Transformations",
+          "level": 3,
+          "filename": "Baking_Transformations"
+        },
+        {
+          "title": "In-Browser Mesh Simplification (Auto-LOD)",
+          "level": 3,
+          "filename": "In-Browser_Mesh_Simplification"
+        },
+        {
+          "title": "How to use EdgesRenderer",
+          "level": 3,
+          "filename": "How_to_use_EdgesRenderer"
+        },
+        {
+          "title": "Creating Custom Meshes",
+          "level": 3,
+          "filename": "Custom"
+        },
+        {
+          "title": "Facet Normals",
+          "level": 3,
+          "filename": "Normals"
+        },
+        {
+          "title": "Updating Vertices",
+          "level": 3,
+          "filename": "Updating_Vertices"
         }
+      ]
+    },
+    {
+      "title": "Material",
+      "name": "material",
+      "desc": "Material Tutorials.",
+      "files": [
+        {
+          "title": "Bump, Opacity, Tiling",
+          "level": 1,
+          "filename": "More_Materials"
+        },
+        {
+          "title": "Multi-Materials",
+          "level": 1,
+          "filename": "Multi_Materials"
+        },
+        {
+          "title": "CreateBox with face colors and textures",
+          "level": 1,
+          "filename": "CreateBox_Per_Face_Textures_And_Colors",
+          "abstract": "In this tutorial, you will learn how to use the faceUV and faceColors parameters of the MeshBuilder.CreateBox() method in order to set a different texture or color per box face."
+        },
+        {
+          "title": "Using Parallax Mapping",
+          "level": 2,
+          "filename": "Using_parallax_mapping"
+        },
+        {
+          "title": "Reflections and Refractions",
+          "level": 3,
+          "filename": "Reflect"
+        },
+        {
+          "title": "How to use FresnelParameters",
+          "level": 3,
+          "filename": "How_to_use_FresnelParameters"
+        },
+        {
+          "title": "How to use Procedural Textures",
+          "level": 3,
+          "filename": "How_to_use_Procedural_Textures"
+        },
+        {
+          "title": "Transparency and How Meshes Are Rendered",
+          "level": 3,
+          "filename": "Transparency_and_How_Meshes_Are_Rendered"
+        },
+        {
+          "title": "How to use DepthRenderer to get Depth Values",
+          "level": 3,
+          "filename": "How_to_use_DepthRenderer_to_get_depth_values"
+        },
+        {
+          "title": "Using Logarithmic Depth Buffer",
+          "level": 3,
+          "filename": "Using_logarithmic_depth_buffer"
+        },
+        {
+          "title": "How to use Blend Modes",
+          "level": 3,
+          "filename": "How_to_use_Blend_Modes"
+        },
+        {
+          "title": "How Materials are Applied to Vertices",
+          "level": 3,
+          "filename": "Facets"
+        },
+        {
+          "title": "How materials work",
+          "level": 3,
+          "filename": "How_materials_work"
+        },
+        {
+          "title": "Multi-Platform Compressed Textures",
+          "level": 3,
+          "filename": "Multi-Platform_Compressed_Textures"
+        } 
+      ]
+    },
+    {
+      "title": "Camera",
+      "name": "camera",
+      "desc": "Camera Tutorials.",
+      "files": [
+        {
+          "title": "Camera Behaviors",
+          "level": 1,
+          "filename": "Camera_Behaviors"
+        },
+        {
+          "title": "Customizing Camera Inputs",
+          "level": 2,
+          "filename": "Customizing_Camera_Inputs"
+        },
+        {
+          "title": "Multi-Views",
+          "level": 3,
+          "filename": "How_to_use_Multi-Views"
+        },
+        {
+          "title": "Layermasks and Multi-Camera Textures",
+          "level": 3,
+          "filename": "Layermasks_and_Multi-Cam_Textures"
+        },
+        {
+          "title": "Using the WebVR Camera",
+          "level": 3,
+          "filename": "WebVR_Camera"
+        }
+      ]
+    },
+    {
+      "title": "Light",
+      "name": "light",
+      "desc": "Light Tutorials.",
+      "files": [
+        {
+          "title": "Using the Volumetric LightScattering post-process",
+          "level": 3,
+          "filename": "Using_the_Volumetric_LightScattering_post-process"
+        } 
+      ]
+    },
+    {
+      "title": "Audio",
+      "name": "audio",
+      "desc": "Audio Tutorials.",
+      "files": [
+        {
+          "title": "A Sequence of Animations",
+          "level": 2,
+          "filename": "sounds_and_music"
+        } 
+      ]
+    },
+    {
+      "title": "Animation",
+      "name": "animation",
+      "desc": "Animation Tutorials.",
+      "files": [
+        {
+          "title": "Combining Animations",
+          "level": 1,
+          "filename": "Combine"
+        }, 
+        {
+          "title": "A Sequence of Animations",
+          "level": 2,
+          "filename": "Sequence"
+        } 
       ]
     },
     {
       "title": "Environment",
       "name": "environment",
-      "desc": "Environment How To",
-      "files": [    
+      "desc": "Environment Tutorials.",
+      "files": [
+        {
+          "title": "Introduction to Physically Based Rendering",
+          "level": 2,
+          "filename": "Physically_Based_Rendering"
+        },
+        {
+          "title": "Using a Skybox",
+          "level": 2,
+          "filename": "Skybox"
+        },
+        {
+          "title": "Master Physically Based Rendering",
+          "level": 3,
+          "filename": "Physically_Based_Rendering_Master"
+        },        
         {
           "title": "Support Fog with ShaderMaterial",
-          "level": 2,
+          "level": 3,
           "filename": "Supporting_fog_with_ShaderMaterial"
+        },
+        {
+          "title": "How to use Lens Flares",
+          "level": 3,
+          "filename": "How_to_use_Lens_Flares"
+        },
+        {
+          "title": "How to use Reflection Probes",
+          "level": 3,
+          "filename": "How_to_use_Reflection_probes"
+        }
+      ]
+    },
+    {
+      "title": "Shaders",
+       "name": "shaders",
+       "desc": "Using Shaders",
+       "files": [
+         {
+           "title": "Introduction to Shaders",
+           "filename": "ShaderIntro"
+         },
+         {
+           "title": "Putting Shader Code in BJS",
+           "filename": "Putting"
+         },
+         {
+           "title": "Shader Material",
+           "filename": "Shader_Material"
+         },
+         {
+           "title": "A Vertical Wave with Shader Code",
+           "filename": "Writing1"
+         },
+         {
+           "title": "Fireworks with Shader Code",
+           "filename": "Writing2"
+         }
+       ]
+    },
+    {
+      "title": "Events",
+      "name": "events",
+      "desc": "Events",
+      "files": [
+        {
+          "title": "How to Use Actions",
+          "level": 2,
+          "filename": "How_to_use_Actions"
+        },
+        {
+          "title": "Observables",
+          "level": 2,
+          "filename": "Observables"
+        }
+      ]
+    },
+    {
+      "title": "Physics Engines",
+      "name": "Physics",
+      "desc": "Physic Engines",
+      "files": [
+        {
+          "title": "Using a Physics Engine",
+          "level": 1,
+          "filename": "Using_The_Physics_Engine"
+        },
+        {
+          "title": "Your Own Physics Engine Plugin",
+          "level": 3,
+          "filename": "Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js"
+        }
+      ]
+    },
+    {
+      "title": "Post Processes",
+      "name": "Post_Process",
+      "desc": "Post Processes",
+      "files": [
+        {
+          "title": "How to use PostProcesses",
+          "level": 3,
+          "filename": "How_to_use_PostProcesses"
+        },
+        {
+          "title": "How to use PostProcessRenderPipeline",
+          "level": 3,
+          "filename": "How_to_use_PostProcessRenderPipeline"
+        },
+        {
+          "title": "Using the SSAO rendering pipeline",
+          "level": 3,
+          "filename": "Using_the_SSAO_rendering_pipeline"
+        }, 
+        {
+          "title": "Using the standard rendering pipeline",
+          "level": 3,
+          "filename": "Using_Standard_Rendering_Pipeline"
+        },
+        {
+          "title": "Using the default rendering pipeline",
+          "level": 3,
+          "filename": "Using_Default_Rendering_Pipeline"
+        },
+        {
+          "title": "Using depth-of-field and other lens effects",
+          "level": 3,
+          "filename": "Using_depth-of-field_and_other_lens_effects"
         }
       ]
     },
@@ -195,235 +661,14 @@
       ]
     },
     {
-      "title": "Mid Level How To...",
-      "name": "02_Mid_Level",
-      "img": "img/how_to/02.MidLevelTutorials.png",
-      "desc": "Learn how to use cool things.",
+      "title": "GUI",
+      "name": "GUI",
+      "desc": "Babylon.GUI",
       "files": [
         {
-          "title": "Position, Rotate, Translate and Spaces",
-          "filename": "Position,_Rotate,_Translate_and_Spaces"
-        },
-        {
-          "title": "Using PolygonMeshBuilder",
-          "filename": "PolygonMeshBuilder"
-        },
-        {
-          "title": "Advanced Texturing",
-          "filename": "Advanced_Texturing"
-        },
-        {
-          "title": "Caching Resources in IndexedDB",
-          "filename": "Caching_Resources_in_IndexedDB"
-        },
-        {
-          "title": "Using the Incremental Loading System",
-          "filename": "Using_the_Incremental_Loading_System"
-        },
-        {
-          "title": "Using decals",
-          "filename": "Using_decals"
-        },
-        {
-          "title": "Using Parallax Mapping",
-          "filename": "Using_parallax_mapping"
-        },
-        {
-          "title": "Creating a custom loading screen",
-          "filename": "Creating_a_custom_loading_screen"
-        },
-        {
-          "title": "Customizing camera inputs",
-          "filename": "Customizing_Camera_Inputs"
-        },
-        {
-          "title": "Ribbon Tutorial",
-          "filename": "Ribbon_Tutorial"
-        },
-        {
-          "title": "Highlight Layer",
-          "filename": "Highlight_Layer"
-        },
-        {
-          "title": "Multi-Platform Compressed Textures",
-          "filename": "Multi-Platform_Compressed_Textures"
-        },
-        {
-          "title": "BabylonJS in an Ionic Angular app",
-          "filename": "BabylonJS_and_Ionic_Angular"
+          "title": "Use the Babylon GUI",
+          "filename": "Gui"
         }
-      ]
-    },
-    {
-      "title": "More Advanced Features",
-      "name": "03_Advanced",
-      "img": "img/how_to/03.MoreAdvancedFeatures.png",
-      "desc": "Some hard things.",
-      "files": [
-        {
-          "title": "How to create a material for the materials library",
-          "filename": "How_to_create_a_material_for_materialsLibrary"
-        },
-        {
-          "title": "How to create a procedural texture for the procedural textures library",
-          "filename": "How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary"
-        },
-        {
-          "title": "Adding Your Own Physics Engine Plugin to Babylon.js",
-          "filename": "Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js"
-        },
-        {
-          "title": "How to Create Your Own File Importer",
-          "filename": "How_to_Create_Your_Own_File_Importer"
-        },
-        {
-          "title": "How to dynamically morph a mesh",
-          "filename": "How_to_dynamically_morph_a_mesh"
-        },
-        {
-          "title": "How to Merge Meshes",
-          "filename": "How_to_Merge_Meshes"
-        },
-        {
-          "title": "How to use Actions",
-          "filename": "How_to_use_Actions"
-        },
-        {
-          "title": "How to use AssetsManager",
-          "filename": "How_to_use_AssetsManager"
-        },
-        {
-          "title": "How to use Bones and Skeletons",
-          "filename": "How_to_use_Bones_and_Skeletons"
-        },
-        {
-          "title": "How to use Morph targets",
-          "filename": "How_to_use_MorphTargets"
-        },
-        {
-          "title": "How to use Curve3",
-          "filename": "How_to_use_Curve3"
-        },
-        {
-          "title": "How to use DepthRenderer to get depth values",
-          "filename": "How_to_use_DepthRenderer_to_get_depth_values"
-        },
-        {
-          "title": "How to use FresnelParameters",
-          "filename": "How_to_use_FresnelParameters"
-        },
-        {
-          "title": "How to use Instances",
-          "filename": "How_to_use_Instances"
-        },
-        {
-          "title": "How to use Lens Flares",
-          "filename": "How_to_use_Lens_Flares"
-        },
-        {
-          "title": "How to use LOD",
-          "filename": "How_to_use_LOD"
-        },
-        {
-          "title": "How to use Multi-Views",
-          "filename": "How_to_use_Multi-Views"
-        },
-        {
-          "title": "How to use Path3D",
-          "filename": "How_to_use_Path3D"
-        },
-        {
-          "title": "How to use PostProcesses",
-          "filename": "How_to_use_PostProcesses"
-        },
-        {
-          "title": "How to use Procedural Textures",
-          "filename": "How_to_use_Procedural_Textures"
-        },
-        {
-          "title": "How to use PostProcessRenderPipeline",
-          "filename": "How_to_use_PostProcessRenderPipeline"
-        },
-        {
-          "title": "How to use SceneOptimizer",
-          "filename": "How_to_use_SceneOptimizer"
-        },
-        {
-          "title": "How to use the Tags System",
-          "filename": "How_to_use_the_Tags_System"
-        },
-        {
-          "title": "How to use VirtualJoysticksCamera",
-          "filename": "How_to_use_VirtualJoysticksCamera"
-        },
-        {
-          "title": "In-Browser Mesh Simplification (Auto-LOD)",
-          "filename": "In-Browser_Mesh_Simplification_(Auto-LOD)"
-        },
-        {
-          "title": "Layermasks and Multi-Cam Textures",
-          "filename": "Layermasks_and_Multi-Cam_Textures"
-        },
-        {
-          "title": "Optimizing Your Scene with Octrees",
-          "filename": "Optimizing_Your_Scene_with_Octrees"
-        },
-        {
-          "title": "Transparency and How Meshes Are Rendered",
-          "filename": "Transparency_and_How_Meshes_Are_Rendered"
-        },
-        {
-          "title": "Using depth-of-field and other lens effects",
-          "filename": "Using_depth-of-field_and_other_lens_effects"
-        },
-        {
-          "title": "Using the SSAO rendering pipeline",
-          "filename": "Using_the_SSAO_rendering_pipeline"
-        },
-        {
-          "title": "Using the Volumetric LightScattering post-process",
-          "filename": "Using_the_Volumetric_LightScattering_post-process"
-        },
-        {
-          "title": "How to use EdgesRenderer",
-          "filename": "How_to_use_EdgesRenderer"
-        },
-        {
-          "title": "How to use Blend Modes",
-          "filename": "How_to_use_Blend_Modes"
-        },
-        {
-          "title": "How to use Reflection Probes",
-          "filename": "How_to_use_Reflection_probes"
-        },
-        {
-          "title": "How to use Facet Data",
-          "filename": "How_to_use_FacetData"
-        },
-        {
-          "title": "Render Scene on a PNG",
-          "filename": "Render_Scene_on_a_PNG"
-        },
-        {
-          "title": "Using logarithmic depth buffer",
-          "filename": "Using_logarithmic_depth_buffer"
-        },
-        {
-          "title": "Optimizing your scene",
-          "filename": "Optimizing_your_scene"
-        },
-        {
-          "title": "Using the standard rendering pipeline",
-          "filename": "Using_Standard_Rendering_Pipeline"
-        },
-        {
-          "title": "Using the default rendering pipeline",
-          "filename": "Using_Default_Rendering_Pipeline"
-        },
-        {
-          "title": "How materials work",
-          "filename": "How_materials_work"
-        }       
       ]
     },
     {
