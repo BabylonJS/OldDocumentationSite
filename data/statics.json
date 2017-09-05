@@ -412,6 +412,33 @@
       ]
     },
     {
+      "title": "Contribute",
+      "name": "contribute",
+      "desc": "Suporting and Developing the Framework",
+      "files": [
+        {
+          "title": "Start Contributing to Babylon.js",
+          "filename": "how_to_start"
+        },
+        {
+          "title": "Setup Visual Studio to Contribute to Babylon.js",
+          "filename": "setup_visualStudio"
+        },
+        {
+          "title": "Follow Approved Naming Conventions",
+          "filename": "Approved_Naming_Conventions"
+        },
+        {
+          "title": "Create a Material for the Materials Library",
+          "filename": "How_to_create_a_material_for_materialsLibrary"
+        },
+        {
+          "title": "Create a Procedural Texture for the Procedural Textures Library",
+          "filename": "How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary"
+        }
+      ]
+    },    
+    {
       "title": "Videos",
       "name": "Videos",
       "img": "img/how_to/Video.png",
@@ -983,18 +1010,6 @@
         {
           "title": "Interesting Playgrounds",
           "filename": "playgrounds"
-        },
-        {
-          "title": "How to start contributing to Babylon.js",
-          "filename": "how_to_start"
-        },
-        {
-          "title": "Approved Naming Conventions",
-          "filename": "Approved_Naming_Conventions"
-        },
-        {
-          "title": "Setup Visual Studio to contribute to Babylon.js",
-          "filename": "setup_visualStudio"
         }
       ]
     }

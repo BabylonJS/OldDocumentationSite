@@ -31,7 +31,7 @@ This mode is more suitable when you make changes in the library, instead of rely
  * A particular setup of the engine has to be made to make sure it works. 
  * The whole library source files must be accessible and served by the Web Server.
 
-The up-to-date list of the .js files and indications about the Engine's setup can be found [here](http://doc.babylonjs.com/generals/Creating_the_Mini-fied_Version)
+The up-to-date list of the .js files and indications about the Engine's setup can be found [here](/generals/Creating_the_Mini-fied_Version)
 
 
 ## Synopsis
@@ -192,9 +192,9 @@ Build the solution, all the .ts fils will be compiled to .js file along with .js
 
 You can grad the files:
 
- - [sandbox.ts](https://github.com/nockawa/Documentation/blob/master/content/generals/General/setupVisual/sandbox.ts)
- - [index.html](https://github.com/nockawa/Documentation/blob/master/content/generals/General/setupVisual/index.html)
- - [web.config](https://github.com/nockawa/Documentation/blob/master/content/generals/General/setupVisual/Web.config)
+ - [sandbox.ts](/tutorials/setupVisual/sandbox.ts)
+ - [index.html](/tutorials/setupVisual/index.html)
+ - [web.config](/tutorials/setupVisual/Web.config)
 
 Create a new TypeScript file in your project, don't forget to set the following lines:
 
@@ -212,7 +212,7 @@ _TypeScript file_
 
 ---
 
-Create a HTML file that will reference all the .js file of Babylon.js (the list can be found [here](http://doc.babylonjs.com/generals/Creating_the_Mini-fied_Version))
+Create a HTML file that will reference all the .js file of Babylon.js (the list can be found [here](/generals/Creating_the_Mini-fied_Version))
 
 ![VS18](http://i.imgur.com/srkwpF5.png)
 

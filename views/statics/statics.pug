@@ -8,15 +8,16 @@ include ../includes/header
         .statics-content
             .tagList
                 for folder in dataObj.folders
-                    .tagWrapper
-                        .tag(data-name=folder.name)
-                            .tagDescriptionWrapper
-                                h3.tagTitle=folder.title
+                    if(!folder.hidden)
+                        .tagWrapper
+                            .tag(data-name=folder.name)
+                                .tagDescriptionWrapper
+                                    h3.tagTitle=folder.title
             .fileList
                 for folder in dataObj.folders
                     if(folder.files)
                         for file, index in folder.files
-                            if(!file.hidden)
+                            if(!file.hidden && !folder.hidden)
                                 .fileTitle(class=folder.name class='All')
                                     .fileNumber
 
@@ -24,7 +25,10 @@ include ../includes/header
                                         =file.title
                                         .inline-tags
                                             .inline-tag
-                                                =folder.title
+                                                if(file.level)
+                                                    =folder.title + " - L" + file.level
+                                                else
+                                                    =folder.title
 
                 .emptyList(style='display:none')
                     h2
