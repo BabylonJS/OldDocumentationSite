@@ -213,6 +213,14 @@ thickness|number|1|Thickness of the border
 
 The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
 
+The control provides several observables to track its state:
+
+Observables|Comments
+-----------|--------
+onTextChangedObservable|Raised when the text has changed
+onFocusObservable|Raised when the control loses the focus
+onBlurObservable|Raised when the control gets the focus
+
 Please note that the InputText has pretty limited edition support. Here are the supported keys:
 * Delete
 * Backspace
