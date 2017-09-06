@@ -31,6 +31,10 @@ As soon as you can please use instances as they are drawn with one single draw c
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
 
+# Using depth pre-pass
+When dealing with complex scenes, it could be useful to use depth pre-pass. This technique will render designated meshes only in the depth buffer to leverage early depth test rejection. This could be used for instance when a scene contains meshes with advanced shaders.
+To enable a depth pre-pass for a mesh, just call `mesh.material.needDepthPrePass = true`.
+
 # Using unindexed meshes
 By default Babylon.js uses indexed meshes where vertices can be reuse by faces. When vertex reuse is low and when vertex structure is fairly simple (like just a position and a normal) then you may want to unfold your vertices and stop using indices:
 
