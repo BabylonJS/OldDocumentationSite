@@ -140,6 +140,6 @@ The transparent concave meshes render obvisouly with the same rules than explain
 For some reasons (example : camera flying from outside to inside a sphere), you may want to remove the backface culling in order to also render the back side of the mesh :  https://www.babylonjs-playground.com/#1PLV5Z#1  
 As you can notice, the transparency rendering rules may lead to some weird things making some parts of the mesh geometries visible.  
 In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` :  https://www.babylonjs-playground.com/#1PLV5Z#2  
-Other option will be to really on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#15
+Other option will be to rely on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#15
 
 *(to be expanded)*
