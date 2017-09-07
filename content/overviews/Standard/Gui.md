@@ -410,6 +410,26 @@ defaultButtonPaddingBottom|2px
 defaultButtonColor|#DDD
 defaultButtonBackground|#070707
 
+You can also override each property by providing an array containing properties for keys (or null):
+
+```
+addKeysRow(["a", "b"], [null, { width: "200px"}]);
+```
+
+You can define each default properties based on the following layout:
+```
+class KeyPropertySet {
+      width?: string;
+      height?: string;
+      paddingLeft?: string;
+      paddingRight?: string;
+      paddingTop?: string;
+      paddingBottom?: string;
+      color?: string;
+      background?: string;
+  }
+```
+
 The VirtualKeyboard provides a static method to create a default layout:
 
 ```
