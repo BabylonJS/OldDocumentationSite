@@ -229,7 +229,7 @@ Please note that the InputText has pretty limited edition support. Here are the 
 * Enter
 * Left / Right (used to move the cursor)
 
-Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard.
+Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard. On mobile, the InputText will use the `prompt()` command to get user input. You can define the title of the prompt by setting `control.promptMessage`.
 
 ### Button
 
@@ -385,6 +385,50 @@ You can also define which part of the source image you want to use with the foll
 * sourceHeight: height of the source image you want to use (in pixel)
 
 Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
+
+### VirtualKeyboard
+
+The VirtualKeyboard is a control used to display simple onscreen keyboard. This is mostly useful with WebVR scenarios where the user cannot easily use his keyboard.
+
+You can define the keys provided by the keyboard with the following code:
+
+```
+var keyboard = new BABYLON.GUI.VirtualKeyboard();
+keyboard.addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+```
+
+Every key will be created using default values specified by the following properties:
+
+Property|Default
+--------|----
+defaultButtonWidth|40px
+defaultButtonHeight|40px
+defaultButtonPaddingLeft|2px
+defaultButtonPaddingRight|2px
+defaultButtonPaddingTop|2px
+defaultButtonPaddingBottom|2px
+defaultButtonColor|#DDD
+defaultButtonBackground|#070707
+
+The VirtualKeyboard provides a static method to create a default layout:
+
+```
+var keyboard = BABYLON.GUI.VirtualKeyboard.CreateDefaultLayout();
+```
+
+The default layout is equivalent to:
+
+```
+addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+addKeysRow(["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]);
+addKeysRow(["a", "s", "d", "f", "g", "h", "j", "k", "l",";","'","\u21B5"]);
+addKeysRow(["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
+addKeysRow([" "], [{ width: "200px"}]);
+```
+
+Every time a key is pressed the `onKeyPressObservable` observable is triggered. But you can also rely on `keyboard.connect(inputText)` to automatically connect a VirtualKeyboard to an InputText. In this case, the keyboard will only appear when the InputText will be focused and all key pressed events will be sent to the InputText.
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#S7L7FE
 
 ## Containers
 
