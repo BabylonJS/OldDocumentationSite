@@ -390,6 +390,8 @@ Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
 
 The VirtualKeyboard is a control used to display simple onscreen keyboard. This is mostly useful with WebVR scenarios where the user cannot easily use his keyboard.
 
+#### Keys
+
 You can define the keys provided by the keyboard with the following code:
 
 ```
@@ -416,7 +418,7 @@ You can also override each property by providing an array containing properties 
 addKeysRow(["a", "b"], [null, { width: "200px"}]);
 ```
 
-You can define each default properties based on the following layout:
+You can define each default properties based on the following class:
 ```
 class KeyPropertySet {
       width?: string;
@@ -429,6 +431,8 @@ class KeyPropertySet {
       background?: string;
   }
 ```
+
+#### Layouts
 
 The VirtualKeyboard provides a static method to create a default layout:
 
@@ -446,6 +450,7 @@ addKeysRow(["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
 addKeysRow([" "], [{ width: "200px"}]);
 ```
 
+#### Events
 Every time a key is pressed the `onKeyPressObservable` observable is triggered. But you can also rely on `keyboard.connect(inputText)` to automatically connect a VirtualKeyboard to an InputText. In this case, the keyboard will only appear when the InputText will be focused and all key pressed events will be sent to the InputText.
 
 You can find a complete demo here: https://www.babylonjs-playground.com/#S7L7FE
