@@ -10,7 +10,7 @@ In the 3D virtual world shapes are built from meshes, lots of trangular facets j
 
 Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 
-Specialist meshes such as sprites and particles are also available.[LINK]
+Specialist meshes such as [sprites](/babylon101/Sprites) and [particles](/babylon101/Particles) are also available.
 
 ## Types
 
@@ -67,7 +67,7 @@ box.scaling = new BABYLON.Vector3(4, 6, 2);
 ```
 and the scene prameter is necessary to position the updatable and sideOrientation parameters correctly.
 
-Also using _MeshBuilder_ you can apply different colors and images to individual faces of meshes that have distinct faces (for example a box does but a sphere does not). [LINK NEEDED]. This is not possible with the legacy method.
+Also using _MeshBuilder_ you can [apply different colors and images to individual faces](/how_to/CreateBox_Per_Face_Textures_And_Colors) of meshes that have distinct faces (for example a box does but a sphere does not). This is not possible with the legacy method.
 
 For a second example consider the creation of a truncated cone with a diameter of 3 top and and 6 at the bottom, with height 5 constructed using 16 radial sections and 10 vertical subdivisions.
 
@@ -106,7 +106,7 @@ Another way available to you, especially if you want a very large number of iden
 
 ### Collide with a Camera, another Mesh, a Ray or Pointer
 
-When you are moving around a scene in a _first person shooter_  manner then you want to be able to react if an object is blocking the way. You can as [Camera Collision](LINK) is a provided facility. As is the [Intersection of Meshes](LINK), [Raycasting](LINK) and [Pointer Clicked on Mesh](LINK)
+When you are moving around a scene in a _first person shooter_  manner then you want to be able to react if an object is blocking the way. You can as [Camera Collision](/babylon101/Cameras,_Mesh_Collisions_and_Gravity) is a provided facility. As is the [Intersection of Meshes](/babylon101/Intersect_Collisions_-_mesh), [Raycasting](/babylon101/Raycasts) and [Pointer Clicked on Mesh](/babylon101/Picking_Collisions)
 
 
 ### Accessing Mesh Data, Morphing or Updating

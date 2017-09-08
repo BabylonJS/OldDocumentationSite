@@ -5,9 +5,9 @@ PG_TITLE: 02. Set Shapes
 
 # Set Shapes
 
-These are shapes that usually already have names in everyday use and theor form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.
+These are shapes that usually already have names in everyday use and their form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.
 
-Brief about front/bak updating and sideorientation LINK to own pages
+The _MeshBuilder_ method uses a number of options that you can set or just settle for the default values. Whilst some options such as size or diameter have an obvious meaning others such as updatable or faceUV require [Further Reading](#further-reading).
 
 # How To Create Set Shapes using MeshBuilder
 
@@ -259,5 +259,13 @@ These are just the basic shapes we can create with Babylon.js. Ready for more va
 # Further Reading
 
 [Mesh Overview](/features/Shapes)
+
+## How To Make the Most of Options
+
+[Side Orientation]
+[Updatable](/how_to/Updating_Vertices)
+[Face UV and Face Colors]((/how_to/CreateBox_Per_Face_Textures_And_Colors)  
+[Front and Back UV](LINK)  
+
 
 

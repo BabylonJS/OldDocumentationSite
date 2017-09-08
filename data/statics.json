@@ -176,7 +176,7 @@
           "level": 1,
           "filename": "Parametric_Shapes"
         },
-                {
+        {
           "title": "Create Set Shapes - Legacy",
           "level": 1,
           "filename": "Legacy_Set"
@@ -359,7 +359,7 @@
           "filename": "Multi_Materials"
         },
         {
-          "title": "CreateBox with face colors and textures",
+          "title": "Apply Material to Individual Faces",
           "level": 1,
           "filename": "CreateBox_Per_Face_Textures_And_Colors",
           "abstract": "In this tutorial, you will learn how to use the faceUV and faceColors parameters of the MeshBuilder.CreateBox() method in order to set a different texture or color per box face."

@@ -52,7 +52,7 @@ type|name|side number
 
 ## Custom Polyhedra
 
-If you need to use a custom polyhedron visit https://www.babylonjs-playground.com/#21QRSK#14 : minimize the code editor by unchecking box by Editor under Settings and note the polyhedron names under the mouse pointer. 
+If you need to use a custom polyhedron visit https://www.babylonjs-playground.com/#21QRSK#15 : minimize the code editor by unchecking box by Editor under Settings and note the polyhedron names under the mouse pointer. 
 The data for each name can be found in the polyhedra.js file here https://github.com/BabylonJS/Extensions/tree/master/Polyhedron
 Find the name and copy/paste the wanted polyhedron object in your code like this :
 

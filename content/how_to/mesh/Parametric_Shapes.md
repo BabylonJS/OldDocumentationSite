@@ -7,6 +7,8 @@ PG_TITLE: Parametric Shapes
 ## Names
 The appearance of the set shapes can generally be determined by their name. This is not true of parametric shapes which through their parameters can be bent, and twisted and turned. 
 
+The _MeshBuilder_ method uses a number of options that you can set or just settle for the default values. Whilst some options such as size or diameter have an obvious meaning others such as updataable or faceUV require [Further Reading](#further-reading).
+
 ## Updatable
 
 Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/how_to/Updating_Vertices.html).
@@ -326,6 +328,15 @@ Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 We saw from crating basic elements that we needed a bit of 'positioning' to keep our elements from sitting atop one another in the scene. Now let's learn more about positions (sometimes called translations) as well as about rotation and scaling. Ready? Sure you are! [**Click here for the next tutorial.**](/babylon101/Position,_Rotation,_Scaling)
 
 
+# Further Reading
 
+[Mesh Overview](/features/Shapes)
+
+## How To Make the Most of Options
+
+[Side Orientation]
+[Updatable](/how_to/Updating_Vertices)
+[Face UV and Face Colors]((/how_to/CreateBox_Per_Face_Textures_And_Colors)  
+[Front and Back UV](LINK)  
 
 

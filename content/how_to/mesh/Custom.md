@@ -60,6 +60,8 @@ Usually a normal to a plane is a vector that is at right angles to a plane and f
 BabylonJS will calculate normals for a facet and for free standing facets not sharing any vertices with another facet 
 the normals will be mathematical normals. For more on how normals affect lighting see [Normals](/advanced/Normals.html).
 
+
+
 ### Calculating
 
 Normals are calculated on the vertexData object using the ComputeNormal method which takes arrays for positions, indices and normals as parameters.
@@ -84,6 +86,12 @@ vertexData.indices = indices;
 vertexData.normals = normals; //Assignment of normal to vertexData added
 
 vertexData.applyToMesh(customMesh);
+```
+
+*Note: * When creating your own custom mesh to make it updatable you need to add a second parameter with value true when applying the mesh to  the vertex data.
+
+```javascript
+vertexData.applyToMesh(customMesh, true);
 ```
 
 give the array normals = [ 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1]

@@ -115,9 +115,5 @@ function addGunSight(scene){
 ```
 
 See it in action:  
-<<<<<<< HEAD:content/how_to/03_Advanced/Layermasks_and_Multi-Cam_Textures.md
  https://www.babylonjs-playground.com/index.html#2GXKNW#18
-=======
-https://www.babylonjs-playground.com/#AHH4NG
->>>>>>> developed:content/how_to/CAcamera/Layermasks_and_Multi-Cam_Textures.md
 

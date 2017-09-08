@@ -93,11 +93,11 @@ does that.
 
 ### More Than One Material on a Mesh
 
-Possible? Of course it is. All meshes can use the **multi-material** approach of dividing the mesh into submeshes and using a different color or texture on each sub-mesh.
+Possible? Of course it is. All meshes can use the [multi-material](/how_to/Multi_Materials) approach of dividing the mesh into submeshes and using a different color or texture on each sub-mesh.
 
 [Playground Example Multi-Mesh with Color](https://www.babylonjs-playground.com/#NZ4GG2)
 
-Meshes that have distinct faces or surfaces such as a box or cylinder and are built using the BABYLON.MeshBuilder.Create..... method can color or texture these faces individually. When using texture material one image file which is composed of multiple images forms the basis for the texture. This is done using arrays  _faceUV_ or _faceColors_.
+Meshes that have distinct faces or surfaces such as a box or cylinder and are built using the BABYLON.MeshBuilder.Create&lt;Mesh&gt; method can have [color or texture applied to these faces individually]((/how_to/CreateBox_Per_Face_Textures_And_Colors). When using texture material one image file which is composed of multiple images forms the basis for the texture. This is done using arrays  _faceUV_ or _faceColors_.
 
 [Playground Example faceUV on Cylinder](https://www.babylonjs-playground.com/#VA2AC#1)
 
@@ -150,6 +150,7 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 [Materials 101](/babylon101/Materials)  
 [Bumps, Opacity, Tiling textures](/how_to/More_Materials)  
 [Multi Materials](/how_to/Multi_Materials)  
+[Individual Faces](/how_to/CreateBox_Per_Face_Textures_And_Colors) 
 
 ## Mid Level - L2
 [Using Parallax Mapping](/how_to/Using_parallax_mapping)  
