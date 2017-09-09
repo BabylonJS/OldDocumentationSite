@@ -26,6 +26,21 @@ You can unfreeze a mesh with:
 mesh.unfreezeWorldMatrix();
 ```
 
+# Freezing the active meshes
+If you are CPU bound, you can decide to keep the list of active meshes unchanged and then free the time spent by the CPU to determine active meshes:
+
+```
+scene.freezeActiveMeshes();
+```
+
+You can unfreeze the active meshes with:
+
+```
+scene.unfreezeActiveMeshes();
+```
+
+Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
+
 # Reducing draw calls
 As soon as you can please use instances as they are drawn with one single draw call: http://doc.babylonjs.com/tutorials/how_to_use_instances
 
