@@ -7,25 +7,24 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-        watch        : {
+        watch: {
             options: {
                 livereload: true
             },
-            files:[],
+            files: [],
             //watches content related changes
             content: {
-                files  : ['content/**/*.md', 'data/statics.json', '!data/search/**'],
+                files: ['content/**/*.md', 'data/statics.json', '!data/search/**'],
                 //files  : ['views/**/*.pug', 'content/**/*.md', 'data/statics.json'],
                 //recompiles everything but doesn't reindex the search
-                tasks  : [
+                tasks: [
                     'clean:json',
                     'execute:compileTagsClasses',
                     'execute:createListClasses',
                     'execute:compileIndex',
                     'execute:compileWhatsNew',
                     'execute:compileHtmlClasses',
-                    'execute:compileHtmlStatics',
-                    'execute:forwarder'
+                    'execute:compileHtmlStatics'
                 ],
                 //As a very heavy task, put a little debounce of two seconds
                 options: {
@@ -50,37 +49,38 @@ module.exports = function (grunt) {
             }
         },
         // Sass Config
-        sass         : {
+        sass: {
             options: {
                 cacheLocation: '.tmp/.sass-cache'
             },
-            dev    : {
+            dev: {
                 options: {
                     style: 'compressed'
                 },
                 files: [{
                     expand: true,
-                    cwd   : 'public/scss',
-                    dest  : 'public/html/css',
-                    src   : ['main.scss'],
-                    ext   : '.css'
+                    cwd: 'public/scss',
+                    dest: 'public/html/css',
+                    src: ['main.scss'],
+                    ext: '.css'
                 }]
             }
         },
         // Express Config
-        express      : {
+        express: {
             dev: {
                 options: {
                     script: 'server.js'
                 }
             }
         },
-        clean        : {
-            json: 
-				{options:{
+        clean: {
+            json:
+            {
+                options: {
                     force: true
                 },
-                src    : [
+                src: [
                     'data/**.json',
                     '!data/static-tags.json',
                     '!data/statics.json',
@@ -89,15 +89,15 @@ module.exports = function (grunt) {
                 ]
             },
             indexes: {
-                options:{
+                options: {
                     force: true
                 },
                 src: [
                     'data/search/**/*'
                 ]
             },
-            tmp : {
-                options:{
+            tmp: {
+                options: {
                     force: true
                 },
                 src: [
@@ -105,29 +105,29 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        execute      : {
+        execute: {
             compileTagsClasses: {
                 options: {
                     module: true
                 },
-                src    : ['./scripts/compile-tags/compile-tags-classes.js']
+                src: ['./scripts/compile-tags/compile-tags-classes.js']
             },
-            createListClasses : {
+            createListClasses: {
                 call: function (grunt, options, async) {
                     require('./scripts/create-list/create-list-classes.js')(async());
                 }
             },
-            compileIndex      : {
+            compileIndex: {
                 options: {
                     module: true
                 },
-                src    : ['./scripts/compile-html/compile-html-index.js']
+                src: ['./scripts/compile-html/compile-html-index.js']
             },
-            compileWhatsNew   : {
+            compileWhatsNew: {
                 options: {
                     module: true
                 },
-                src    : ['./scripts/compile-html/compile-html-whats-new.js']
+                src: ['./scripts/compile-html/compile-html-whats-new.js']
             },
             compileHtmlStatics: {
                 call: function (grunt, options, async) {
@@ -139,12 +139,7 @@ module.exports = function (grunt) {
                     require('./scripts/compile-html/compile-html-classes')(async());
                 }
             },
-            forwarder         : {
-                call: function (grunt, options, async) {
-                    require('./scripts/create-forward')(async());
-                }
-            },
-            indexer           : {
+            indexer: {
                 call: function (grunt, options, async) {
                     require('./scripts/helpers/indexer/azure')(async());
                 }
@@ -166,7 +161,6 @@ module.exports = function (grunt) {
         'execute:compileWhatsNew',
         'execute:compileHtmlClasses',
         'execute:compileHtmlStatics',
-        'execute:forwarder',
         'clean:indexes',
         'execute:indexer',
         'clean:tmp'
