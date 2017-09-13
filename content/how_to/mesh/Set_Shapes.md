@@ -7,9 +7,15 @@ PG_TITLE: 02. Set Shapes
 
 These are shapes that usually already have names in everyday use and their form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.
 
-The _MeshBuilder_ method uses a number of options that you can set or just settle for the default values. Whilst some options such as size or diameter have an obvious meaning others such as updatable or faceUV require [Further Reading](#further-reading).
+The _MeshBuilder_ method uses a number of options that you can set or you can just settle for the default values. Whilst some options such as size or diameter have an obvious meaning others such as updatable or faceUV require [Further Reading](#further-reading) to fully understand what they are and how to use them.
 
 # How To Create Set Shapes using MeshBuilder
+
+To create all the set shapes you just follow the pattern 
+
+```javascript
+var mesh = BABYLON.MeshBuilder.Create<Shape Name>("name", options, scene);
+```
 
 ## Box
 Example :
@@ -33,6 +39,7 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 [Playground Example of a Box](https://www.babylonjs-playground.com/#3QW4J1#1)
 
 ## Sphere
+Different values for _diameterX_, _diameterY_ and diameterZ_ lead to an ellipsoid.
 Example :
 ```javascript
 var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, diameterX: 3}, scene);
@@ -49,11 +56,14 @@ arc|_(number)_ ratio of the circumference (latitude) between 0 and 1|1
 slice|_(number)_ ratio of the height (longitude) between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0, 0, 1,1) 
+frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0, 0, 1,1)
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0, 0, 1,1) 
 
+[Playground Example of a Sphere](https://www.babylonjs-playground.com/#K6M44R#2)
+
 ## Cylinder or Cone
-If you set _diameterTop_ to zero, you get a cone instead of a cylinder.
+If you set _diameterTop_ to zero, you get a cone instead of a cylinder, with different values for _diameterTop_ and _diameterBottom_ you get a truncated cone.
+
 Example :
 ```javascript
 var cone = BABYLON.MeshBuilder.CreateCylinder("cone", {diameterTop: 0, tessellation: 4}, scene);
@@ -75,12 +85,16 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
+[Playground Example of a Cone](https://www.babylonjs-playground.com/#CWPN2T)
+
 ## Plane
+
+A flat surface parallel to XoY plane.
+
 Example :
 ```javascript
 var plane = BABYLON.MeshBuilder.CreatePlane("plane", {width: 5}, scene);
 ```
-
 
 option|value|default value
 --------|-----|-------------
@@ -93,46 +107,15 @@ sourcePlane|_(Plane)_ source plane (math) the mesh will be transformed to|null
 frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
-## Ground
-Example :
-```javascript
-var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivsions: 4}, scene);
-```
-
-
-option|value|default value
---------|-----|-------------
-width|_(number)_ size of the width|1
-height|_(number)_ size of the height|1
-updatable|_(boolean)_ true if the mesh is updatable|false
-subdivisions|_(number)_ number of square subdivisions|1
-
-## Ground From a Height Map
-Example :
-```javascript
-var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("gdhm", url, {width: 6, subdivsions: 4}, scene);
-```
-Don't forget the _url_ parameter.
-
-
-
-option|value|default value
---------|-----|-------------
-width|_(number)_ size of the map width|10
-height|_(number)_ size of the map height|10
-subdivisions|_(number)_ number of map subdivisions|1
-minHeight|_(number)_ minimum altitude|0
-maxHeigth|_(number)_ maximum altitude|1
-onReady|_(function)_ a callback js function that is called and passed the just built mesh|(mesh) => {return;}
-updatable|_(boolean)_ true if the mesh is updatable|false
+[Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
 
 ## Disc
-Remember you can create any kind of regular plane polygon with _CreateDisc()_
+You can create any kind of regular polygon with _CreateDisc()_, the number of sides is dependent on the value given to _tessellation_. The larger this value the closer to an actual disc. Using the arc option you can create a sector.
+
 Example :
 ```javascript
 var disc = BABYLON.MeshBuilder.CreateDisc("disc", {tessellation: 3}, scene); // makes a triangle
 ```
-
 
 option|value|default value
 --------|-----|-------------
@@ -142,12 +125,13 @@ arc|_(number)_ ratio of the circumference between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
+[Playground Example of a Sector of Dodecagon](https://www.babylonjs-playground.com/#DJF437)
+
 ## Torus
 Example :
 ```javascript
 var torus = BABYLON.MeshBuilder.CreateTorus("torus", {thickness: 0.2}, scene);
 ```
-
 
 option|value|default value
 --------|-----|-------------
@@ -159,12 +143,13 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
+[Playground Example Using Thickness to Create a Hoop and a Donut](https://www.babylonjs-playground.com/#A7SVB6)
+
 ## Torus Knot
 Example :
 ```javascript
 var torus = BABYLON.MeshBuilder.CreateTorusKnot("tk", {}, scene);
 ```
-
 
 option|value|default value
 --------|-----|-------------
@@ -179,14 +164,50 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
-[A Playground Example of the above Shapes](http://www.babylonjs-playground.com/#165IV6#6)
+[A Playground Example of a Torus Knot](https://www.babylonjs-playground.com/#K9UC68)
+
+
+## Ground
+
+A flat horizontal surface parallel to the plane XoZ subdivided into sections.
+Example :
+```javascript
+var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivsions: 4}, scene);
+```
+
+option|value|default value
+--------|-----|-------------
+width|_(number)_ size of the width|1
+height|_(number)_ size of the height|1
+updatable|_(boolean)_ true if the mesh is updatable|false
+subdivisions|_(number)_ number of square subdivisions|1
+
+[Playground Example of Ground](https://www.babylonjs-playground.com/#MJ6YSM)
+
+## Ground From a Height Map
+Example :
+```javascript
+var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("gdhm", url, {width: 6, subdivisions: 4}, scene);
+```
+Don't forget the _url_ parameter, which is the link to the heightmap file, a greyscale file where lighter areas will be displayed higher than darker areas.
+
+option|value|default value
+--------|-----|-------------
+width|_(number)_ size of the map width|10
+height|_(number)_ size of the map height|10
+subdivisions|_(number)_ number of map subdivisions|1
+minHeight|_(number)_ minimum altitude|0
+maxHeigth|_(number)_ maximum altitude|1
+onReady|_(function)_ a callback js function that is called and passed the just built mesh|(mesh) => {return;}
+updatable|_(boolean)_ true if the mesh is updatable|false
+
+[Playground Example Ground From Height Map](https://www.babylonjs-playground.com/#MJ6YSM#1)
 
 ## Tiled Ground
 Example :
 ```javascript
 var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivsions: {w:4, h:6} }, scene);
 ```
-
 
 option|value|default value
 --------|-----|-------------
@@ -198,63 +219,9 @@ subdivisions|_( {w: number, h: number} )_ number of subdivisions (tiles) on the 
 precision|_( {w: number, h: number} )_ number of subdivisions on the height and the width of each tile|{w: 2, h: 2}
 updatable|_(boolean)_ true if the mesh is updatable|false
 
-[Example of Tiled Ground](http://www.babylonjs-playground.com/#1XBLWB#147).
+[Playground Example of Tiled Ground](http://www.babylonjs-playground.com/#1XBLWB#147).
 
 Full explanation of creating a tiled ground by its original code writer [here](http://makina-corpus.com/blog/metier/2014/how-to-use-multimaterials-with-a-tiled-ground-in-babylonjs). 
-
-# How to Update MOVE TO UPDATING VERTICES
-
-Where a set shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/how_to/Updating_Vertices.html)
-
-
-##How to Set Front and Back UVs with Side Orientation MOVE TO OWN PAGE
-
-When a mesh is created, an optional side orientation is given to it.  
-The side orientation is used to give visibility and/or light reflection to each side of the mesh.  
-There are four possible values for this parameter :  
-
-  * BABYLON.Mesh.FRONTSIDE,
-  * BABYLON.Mesh.BACKSIDE,
-  * BABYLON.Mesh.DOUBLESIDE,
-  * BABYLON.Mesh.DEFAULT which is the default value and equals FRONTSIDE currently.
-
-This parameter is optional. If not given, the DEFAULT value is set.
-
-*(We assume the backFaceCulling is enabled by default)*  
-
-For instance, imagine you create a basic shape like a box, a sphere or a plane, and you don't give it a material.   
-If you go behind the plane or inside the box or the sphere, you will notice that the faces aren't visible any longer : Babylon.js mesh are often constructed with the default side orientation _FRONTSIDE_. This means that each side only has a front view.  
-Test it : http://www.babylonjs-playground.com/#14RNAU#4  
-
-If you apply a test material to your mesh, set _material.backFaceCulling = false;_, and light it up, you will notice that the back (or internal) face... is now visible, but it doesn't reflect the light.  Same reason : the default side orientation is still _FRONTSIDE_.  
-*(You can disable _backFaceCulling_ with this _sideOrientation_ value)*
-
-Now, just change the _sideOrientation_ parameter in your mesh constructor... to _BABYLON.Mesh.BACKSIDE_.  (Remove your test material, too.)  You can only see the backs of planes, or only see the insides (internal faces) of the box and sphere.  
-Test it : http://www.babylonjs-playground.com/#14RNAU#5
-
-If you give your mesh some material, you can see that the light now only reflects on the back face (plane) or only inside (box, sphere, etc).  
-*(you can disable _backFaceCulling_ with this _sideOrientation_ value)*
-
-
-At last, change the _sideOrientation_ parameter to _BABYLON.Mesh.DOUBLESIDE_.  
-As you guessed, the mesh faces are now visible on both sides. And if you give it a material, the light then reflects from both sides, too.  
-Test it : http://www.babylonjs-playground.com/#14RNAU#6   
-
-So why not always use _BABYLON.Mesh.DOUBLESIDE_ by default ?  
-
-Because this value creates twice the vertices of a frontside mesh. In other terms, your mesh will be twice heavier.  
-*(you shouldn't disable _backFaceCulling_ with _BABYLON.Mesh.DOUBLESIDE_ value)*
-
-
-
-
-## Wrapping Up 
-And that’s it! Now you have seen all of our basic elements, and some ways to use them. Keep watching this area of the tutorial for new basic elements, as they are being added quite quickly : you'll find the updated list with all parameter explanations [**in this section**](/how_to/Mesh_CreateXXX_Methods_With_Options_Parameter). 
-Feel free to imagine a few of your own basic element ideas, and present them on the forum. Help us make our list of basic elements grow, if you can.  
-
-## Next Step 
-----
-These are just the basic shapes we can create with Babylon.js. Ready for more variation in our shapes?  Sure you are! [**Click here for the next tutorial.**](/babylon101/Parametric_Shapes)
 
 # Further Reading
 
@@ -262,10 +229,23 @@ These are just the basic shapes we can create with Babylon.js. Ready for more va
 
 ## How To Make the Most of Options
 
-[Side Orientation]
-[Updatable](/how_to/Updating_Vertices)
-[Face UV and Face Colors]((/how_to/CreateBox_Per_Face_Textures_And_Colors)  
-[Front and Back UV](LINK)  
+[Side Orientation](/babylon101/Discover_Basic_Elements#side-orientation)  
+[Updatable](/how_to/Updating_Vertices)  
+[Face UV and Face Colors](/how_to/CreateBox_Per_Face_Textures_And_Colors)  
+[Front and Back UV](/how_to/FrontandBackUV)
+
+## Basic - L1
+
+[Mesh Overview](/features/Shapes)
+
+## Mid Level - L2
+
+[Basic Shapes](/babylon101/Discover_Basic_Elements)   
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes)
+
+## More Advanced - L3
+
+[Decals](/how_to/Decals) 
 
 
 

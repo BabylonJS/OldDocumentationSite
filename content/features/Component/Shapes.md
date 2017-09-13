@@ -94,7 +94,7 @@ To create your own custom mesh requires you to know the internal data structure 
 
 Want to know more about the facets that make up a mesh then enabling _FacetData_ is just for you. You can obtain a facets position and its mathematical normal for example. 
 
-You will find the links to how_to, on all of these, below.
+[Further Reading](#further-readin) will show you how to do all of these.
 
 ## Other Mesh Features
 
@@ -119,8 +119,6 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 
 # Further Reading
 
-[Set the Position, Rotation and Scale of a Mesh](/features/Position,_Rotation,_Scaling)
-
 ## Basic - L1  
 [Meshes 101](/babylon101/Discover_Basic_Elements)   
 [Parametric Shapes 101](/babylon101/Parametric_Shapes)  
@@ -132,6 +130,7 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 [Polyhedra](/how_to/Polyhedra_Shapes)   
 [Using Decals](/how_to/Decals)  
 [How to Use the Solid Particle System](/how_to/Solid_Particle_System)  
+[Set the Position, Rotation and Scale of a Mesh](/features/Position,_Rotation,_Scaling)
 
 ## Mid Level - L2  
 [Using PolygonMeshBuilder](/how_to/PolygonMeshBuilder)  

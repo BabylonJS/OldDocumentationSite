@@ -365,6 +365,11 @@
           "abstract": "In this tutorial, you will learn how to use the faceUV and faceColors parameters of the MeshBuilder.CreateBox() method in order to set a different texture or color per box face."
         },
         {
+          "title": "Apply Different Material to Front and Back",
+          "level": 1,
+          "filename": "FrontandBackUV"
+        },
+        {
           "title": "Using Parallax Mapping",
           "level": 2,
           "filename": "Using_parallax_mapping"

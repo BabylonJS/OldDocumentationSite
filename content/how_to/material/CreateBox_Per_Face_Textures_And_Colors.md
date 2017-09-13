@@ -306,15 +306,9 @@ Also note that because of how a cylinder's mesh is constructed the horizontal co
 
 ## Extruded Polygon
 
-An extruded polygon has three surfaces top, bottom and extruded sides, face 0 is the bottom, face 1 the extruded sides and face 2 the top.
+An extruded polygon has three surfaces top, bottom and extruded sides, face 0 is the top, face 1 the extruded sides and face 2 the bottom.
 
-The texture atlas used in making a wall is below.
-
-![Wall](http://i.imgur.com/OrdRedm.jpg)
-
-The brickwork is for the outer wall and the stripes for the wallpaper on the inner wall.
-
-[Playground Example Extruded Wall](https://www.babylonjs-playground.com/#RNCYVM#30)
+[Playground Example of Extruded Polygons for a House](http://www.babylonjs-playground.com/#RNCYVM#2)
 
 ## Polyhedra.
 

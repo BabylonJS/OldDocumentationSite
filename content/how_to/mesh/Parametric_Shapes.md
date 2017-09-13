@@ -2,25 +2,29 @@
 PG_TITLE: Parametric Shapes
 ---
 
-# How To Create Parametric Shapes
 
-## Names
-The appearance of the set shapes can generally be determined by their name. This is not true of parametric shapes which through their parameters can be bent, and twisted and turned. 
+# Parametric Shapes
+Unlike set shapes the form of a parametric shape cannot generally be determined by their name as it depends on the parametric values applied to the shape.
 
-The _MeshBuilder_ method uses a number of options that you can set or just settle for the default values. Whilst some options such as size or diameter have an obvious meaning others such as updataable or faceUV require [Further Reading](#further-reading).
+The _MeshBuilder_ method uses a number of options that you can set or just settle for the default values. Whilst some options such as size or diameter have an obvious meaning, some such as instance require an explanation before proceeding. Others such as frontUV require [Further Reading](#further-reading).
 
-## Updatable
+## Instance
 
-Where a parametric shape has an updatable parameter in its options it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [Updating Vertices](/how_to/Updating_Vertices.html).
+When in addition the shape has an instance parameter in its options then its shape can be updated by changing the options' values and then using MeshBuilder with instance set to the name of the shape, provided the following conditions are met
 
-When in addition the shape has an instance parameter in its options then its shape can be updated by using MeshBuilder with instance set to the name of the shape. 
+1. the updatable option is set to true;
+2. the number of elements within any array used for an option remains the same;
 
 In practice all the parametric shapes, except for the Lathe and Polygon (both Create and Extend), can have their shape updated in this way by using the already created instance of the mesh.
 
+Where it is possible two playground examples will be given, the first creating a mesh and the second updating it with the instance option.
+
+# How To Create Parametric Shapes
+
 ## Lines
 Creates a continguous series of line segments from a list of points.
-You must set at least the _points_ property.
-On update, you must set the _points_ and _instance_ properties.
+You must set at least the _points_ option.
+On update, you must set the _points_ and _instance_ options.
 
 Example :
 ```javascript
@@ -29,22 +33,28 @@ var lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myArray}, scene);
 
 // updates the existing instance of lines : no need for the parameter scene here
 lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myArray, instance: lines});
-
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
-[A Playground Example of Lines](http://www.babylonjs-playground.com/#165IV6#8)
+[Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#64)
+[Playground Update of the Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
+
+Lines are colored with a color property
+
+```javascript
+lines.color = new BABYLON.Color3(1, 0, 0);
+```
+[Playground Example of Colored Lines](https://www.babylonjs-playground.com/#165IV6#78)
 
 ## Dashed Lines
-Creates a continguous series of dashed line segments from a list of points.
-You must set at least the _points_ property.
-On update, you must set the _points_ and _instance_ properties.
+Creates a contiguous series of dashed line segments from a list of points.
+You must set at least the _points_ option.
+On update, you must set the _points_ and _instance_ options. Any other option will not be changed.
 
 Example :
 ```javascript
@@ -54,9 +64,8 @@ var dashedLines = BABYLON.MeshBuilder.CreateDashedLines("dl", {points: myArray},
 // updates the existing instance of dashedLines : no need for the parameter scene here
 dashedLines = BABYLON.MeshBuilder.CreateDashedLines("dl", {points: myArray, instance: dashedLines});
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED** |
 dashSize|_(number)_  size of the dashes|3
@@ -65,12 +74,20 @@ dashBn|_(number)_  intended number of dashes|200
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
-[A Playground Example of Dashed Lines](http://www.babylonjs-playground.com/#165IV6#9)
+[A Playground Example of Dashed Lines](https://www.babylonjs-playground.com/#165IV6#76)
+[A Playground Update of Dashed Lines](https://www.babylonjs-playground.com/#165IV6#77)
+
+Dashed lines are colored with a color property
+
+```javascript
+lines.color = new BABYLON.Color3(1, 0, 0);
+```
+[Playground Example of Colored Dashed Lines](https://www.babylonjs-playground.com/#165IV6#79)
 
 ## Line System  
-A system of lines that are independent of each other and may exist in their own space.
-You must set at least the _lines_ property.
-On update, you must set the _lines_ and _instance_ properties.
+A system of non-contiguous lines that are independent of each other and may exist in their own space.
+You must set at least the _lines_ option.
+On update, you must set the _lines_ and _instance_ options.
 
 Example :
 ```javascript
@@ -81,19 +98,26 @@ var lineSystem = BABYLON.MeshBuilder.CreateLineSystem("lineSystem", {lines: myAr
 lineSystem = BABYLON.MeshBuilder.CreateLineSystem("lineSystem", {lines: myArray, instance: lineSystem});
 
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 lines|_(Vector3[])_  array of lines, each line being an array of successive Vector3 **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
 
-[A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#8)
+[A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#66)
+[A Playground Update of the Linesystem](http://www.babylonjs-playground.com/#165IV6#10)
+
+A line system is colored with a color property
+
+```javascript
+linesystem.color = new BABYLON.Color3(1, 0, 0);
+```
+[Playground Example of Colored Line System](https://www.babylonjs-playground.com/#165IV6#80)
 
 ## Ribbon
-You must set at least the _pathArray_ property.
-On update, you must set the _pathArray_ and _instance_ properties.
+You must set at least the _pathArray_ option.
+On update, you must set the _pathArray_ and _instance_ options.
 
 Example :
 ```javascript
@@ -103,9 +127,8 @@ var ribbon = BABYLON.MeshBuilder.CreateRibbon("ribbon", {pathArray: myPaths}, sc
 // updates the existing instance of ribbon : no need for the parameter scene
 ribbon = BABYLON.MeshBuilder.CreateRibbon("ribbon", {pathArray: myPaths, instance: ribbon});
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 pathArray|_(Vector3[][])_  array of array of Vector3, the array of paths **REQUIRED**
 closeArray|_(boolean)_  to force the ribbon to join its last and first paths|false
@@ -118,11 +141,12 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of a ribbon to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Ribbon](http://www.babylonjs-playground.com/#165IV6#13)
+[A Playground Example of a Ribbon](http://www.babylonjs-playground.com/#165IV6#65)
+[A Playground Update of the Ribbon](http://www.babylonjs-playground.com/#165IV6#13)
 
 ## Tube
-You must set at least the _path_ property.
-On update, you must set the _path_ and _instance_ properties and you can set the _radius_, _radiusFunction_ or _arc_ properties.
+You must set at least the _path_ option.
+On update, you must set the _path_ and _instance_ options and you can set the _radius_, _radiusFunction_ or _arc_ options.
 
 Example :
 ```javascript
@@ -133,9 +157,8 @@ var tube = BABYLON.MeshBuilder.CreateTube("tube", {path: myPath}, scene);
 tube = BABYLON.MeshBuilder.CreateTube("tube", {path: myPath, instance: tube});
 
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 path|_(Vector3[])_  array of Vector3, the path of the tube **REQUIRED** |
 radius|_(number)_  the radius of the tube|1
@@ -150,16 +173,15 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of a tube to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Tube](http://www.babylonjs-playground.com/#165IV6#15)
+[A Playground Example of a Tube](http://www.babylonjs-playground.com/#165IV6#68)
+[A Playground Update of the Tube](http://www.babylonjs-playground.com/#165IV6#67)
 
 ## Extruded Shapes
-You must set at least the _shape_ and _path_ properties.
-On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _scale_ and _rotation_ properties.
+You must set at least the _shape_ and _path_ options.
+On update, you must set the _shape_, _path_ and _instance_ options and you can set the _scale_ and _rotation_ options.
 
 In whatever direction you want to extrude the shape the design of the shape should be based on coordinates 
-in the XOY plane, ie the z component should be 0. Some twisting to this base shape can be applied by leaving the x and y components 
-unchanged but allowing the z component to be non zero but not taking the shape too far from generally lying in th XOY plane. Otherwise 
-results will not be as you might expect.
+in the XOY plane, ie the z component should be 0. Some twisting to this base shape can be applied by leaving the x and y components unchanged but allowing the z component to be non zero but not taking the shape too far from generally lying in th XOY plane. Otherwise results will not be as you might expect.
 
 Example :
 ```javascript
@@ -170,9 +192,8 @@ var extruded = BABYLON.MeshBuilder.ExtrudeShape("ext", {shape: myShape, path: my
 extruded = BABYLON.MeshBuilder.ExtrudeShape("ext", {shape: myShape, path: myPath, scale: newScale, rotation: newRotation instance: extruded});
 
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 shape|_(Vector3[])_  array of Vector3, the shape you want to extrude **REQUIRED** |
 path|_(Vector3[])_  array of Vector3, the extrusion axis **REQUIRED** |
@@ -186,13 +207,16 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Shape in XOY plane in Z direction with Rotation](http://www.babylonjs-playground.com/#165IV6#16)
-[A Playground Example of the Same Shape in XOY plane in Y direction with Rotation](http://www.babylonjs-playground.com/#165IV6#18)
-[A Playground Example of a Shape in YOZ plane in Z direction with Rotation - Strange!](http://www.babylonjs-playground.com/#165IV6#19)
+[Playground Example of an Extrusion in Z direction](https://www.babylonjs-playground.com/#165IV6#69)
+[Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#16)
+
+[Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
+[Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
+
 
 ## Custom Extruded Shapes
-You must set at least the _shape_ and _path_ properties.
-On update, you must set the _shape_, _path_ and _instance_ properties and you can set the _rotationFunction_ or _scaleFunction_ properties.
+You must set at least the _shape_ and _path_ options.
+On update, you must set the _shape_, _path_ and _instance_ options and you can set the _rotationFunction_ or _scaleFunction_ options.
 
 Example :
 ```javascript
@@ -202,9 +226,8 @@ var extruded = BABYLON.MeshBuilder.ExtrudeShapeCustom("ext", {shape: myShape, pa
 // updates the existing instance of extruded : no need for the parameter scene
 extruded = BABYLON.MeshBuilder.ExtrudeShapeCustom("ext", {shape: myShape, path: myPath, scaleFunction: myScaleF, rotationFunction: myRotF instance: extruded});
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 shape|_(Vector3[])_  array of Vector3, the shape you want to extrude **REQUIRED**|
 path|_(Vector3[])_  array of Vector3, the extrusion axis **REQUIRED** |
@@ -220,18 +243,18 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Custom Extruded Shape](http://www.babylonjs-playground.com/#165IV6#17)
+[Playground Example of a Custom Extruded Shape](https://www.babylonjs-playground.com/#165IV6#71)
+[Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](http://www.babylonjs-playground.com/#165IV6#17)
 
 ## Lathe
-You must set at least the _shape_ property.
+You must set at least the _shape_ option.
 
 Example :
 ```javascript
 var lathe = BABYLON.MeshBuilder.CreateLathe("lathe", {shape: myShape}, scene);
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
 radius|_(number)_  the value to radius of the lathe|1
@@ -245,18 +268,18 @@ frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Me
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Lathe](http://www.babylonjs-playground.com/#165IV6#12)
+[Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#73)
+[Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#72)
 
 ## Non Regular Polygon
-You must set at least the _shape_ property.
+You must set at least the _shape_ option.
 
 Example :
 ```javascript
 var polygon = BABYLON.MeshBuilder.CreatePolygon("polygon", {shape: myShape, sideOrientation: BABYLON.Mesh.DOUBLESIDE, frontUVs: myFrontUVs, backUVs: myBackUVs}, scene);
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
 holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 | []
@@ -267,24 +290,19 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-Both frontUVs and backUVs have the form Vector4(u0,v0,u1,v1) with 0&gt;=  u0,v0,u1,v1 &lt;= 1 and 
-(u0, v0) are the bottom left coordinates and (u1, v1) the top right coordinates of the clipping rectangle 
-of the image.
-
-[A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#2)
+[A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#6)
 
 Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## Extruded Non Regular Polygon
-You must set at least the _shape_ and _depth_ properties.
+You must set at least the _shape_ and _depth_ options.
 
 Example :
 ```javascript
 var polygon = BABYLON.MeshBuilder.ExtrudePolygon("polygon", {shape: myShape, depth: 2, faceUV: myUVs}, scene);
 ```
-Properties :
 
-property|value|default value
+option|value|default value
 --------|-----|-------------
 shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
 depth|_(number)_  the depth of the extrusion **REQUIRED** |
@@ -296,15 +314,18 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-To understand how to set _faceUV_ or _faceColors_, please read this : /how_to/CreateBox_Per_Face_Textures_And_Colors
-
-face 0 is top polygon, 1 is side of extruded polygon and 2 is bottom polygon
-
-[Playground Example of Extruded Polygon](http://www.babylonjs-playground.com/#RNCYVM#2)
+[Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
 
 Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 # Further Reading
+
+## How To Make the Most of Options
+
+[Side Orientation](/babylon101/Discover_Basic_Elements#side-orientation)  
+[Updatable](/how_to/Updating_Vertices)  
+[Face UV and Face Colors](/how_to/CreateBox_Per_Face_Textures_And_Colors)  
+[Front and Back UV](/how_to/FrontandBackUV)
 
 ## Basic - L1
 
@@ -312,31 +333,16 @@ Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## Mid Level - L2
 
-[Basic Shapes](/babylon101/Discover_Basic_Elements.html)   
-[Polyhedra Shapes](/how_to/Polyhedra_Shapes.html)
+[Basic Shapes](/babylon101/Discover_Basic_Elements)   
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes)
 
 ## More Advanced - L3
    
-[Ribbons In Detail](/how_to/Ribbon_Tutorial.html)  
-[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons.html)  
-[Decals](/how_to/Decals.html) 
+[Ribbons In Detail](/how_to/Ribbon_Tutorial)  
+[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
+[Decals](/how_to/Decals) 
 
 
 
-## Next Step
-----
-We saw from crating basic elements that we needed a bit of 'positioning' to keep our elements from sitting atop one another in the scene. Now let's learn more about positions (sometimes called translations) as well as about rotation and scaling. Ready? Sure you are! [**Click here for the next tutorial.**](/babylon101/Position,_Rotation,_Scaling)
-
-
-# Further Reading
-
-[Mesh Overview](/features/Shapes)
-
-## How To Make the Most of Options
-
-[Side Orientation]
-[Updatable](/how_to/Updating_Vertices)
-[Face UV and Face Colors]((/how_to/CreateBox_Per_Face_Textures_And_Colors)  
-[Front and Back UV](LINK)  
 
 

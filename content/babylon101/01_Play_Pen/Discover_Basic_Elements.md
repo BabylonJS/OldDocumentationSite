@@ -7,7 +7,7 @@ PG_TITLE: 02. Set Shapes
 
 These are shapes that usually already have names in everyday use. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. You will have to wait for the next section to learn how to create shapes that have no everyday names but are formed through data sets and parameters. These are termed _parametric shapes_.
 
-In the 101 course you will only use the set shapes of boxes, spheres, planes and ground and just use the _MeshBuilder_ method of shape creation rather than the older legacy _Mesh_ method. How to create all the set shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further_reading).
+In the 101 course you will only meet a limited number of set shapes, starting on this page with boxes, spheres, planes and ground. Also you will just use the _MeshBuilder_ method of shape creation rather than the older legacy _Mesh_ method. How to create all the set shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further_reading).
 
 ## MeshBuilder Method
 
@@ -114,7 +114,7 @@ A variation on _CreateGround_ is [_CreateGroundFromHeightMap_](/babylon101/Heigh
 
 ## Face Colors or UV
 
-This is only available on a limited number of meshes that have distinct faces such as a box but not a sphere. This allows you to give each face for those meshes an individual color or image. [Find out about Face Colors and UV](LINK).
+This is only available on a limited number of meshes that have distinct faces such as a box but not a sphere. This allows you to give each face for those meshes an individual color or image. [Find out about Face Colors and UV](/how_to/CreateBox_Per_Face_Textures_And_Colors).
 
 ## Updatable
 

@@ -5,7 +5,7 @@ PG_TITLE: 03. Parametric Shapes
 
 # Parametric Shapes
 
-These shapes or meshes are determined by parameters or mathematical data. They include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. In the 101 course you will only makes lines and you will just use the _MeshBuilder_ method rather than the older legacy _Mesh_ method. How to create all the parametric shapes using either method can be found by doing [Further Reading](#further_reading). The advantages and disadvantages of both methods will be discussed in those pages.
+These shapes or meshes are determined by parameters or mathematical data. They include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. In the 101 course you will only meet lines and you will just use the _MeshBuilder_ method rather than the older legacy _Mesh_ method. How to create all the parametric shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further_reading). 
 
 ## Lines
 
@@ -75,7 +75,7 @@ Lines and Dashed Lines have an updatable option. When this is _true_ it is possi
 
 ### Instance Option
 
-They also have an instance option which means there is an alternative way to update the path of the lines just by passing a new set of points. For this to work the original lines creation must have the updatable option as _true_ and the lines created are passed as the value of the option instance. The number of points in the array MUST stay the same. In the instance case the _scene_ parameter is not used.
+Lines also have an instance option which means there is an alternative way to update the path of the lines just by passing a new set of points. For this to work the original lines creation must have the updatable option as _true_ and the lines created are passed as the value of the option instance. The number of points in the array MUST stay the same. 
 
 Example :
 ```javascript
@@ -87,9 +87,7 @@ lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myNewArray, instance: 
 ```
 [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
 
-When in addition the shape has an instance parameter in its options then its shape can be updated by using MeshBuilder with instance set to the name of the shape. 
-
-Most but not all parametric shapes can have their shape updated in this way by using the already created instance of the mesh.
+Most but not all parametric shapes have the _instance_ option and so can have their mesh updated in this way.
 
 
 # Next Step
@@ -99,7 +97,8 @@ In the previous section, about set shapes, you saw that when created they sit on
 # Further Reading
 
 [How to Create Parametric Shapes with MeshBuilder](/how_to/Parametric_Shapes)  
-[How to Create Parametric Shapes Legacy Method](/how_to/Legacy_Param) 
+[How to Create Parametric Shapes Legacy Method](/how_to/Legacy_Param)  
+[Advantages and Disadvantages](/features/Shapes#ways-of-creating-a-predefined-mesh)
 
 
 
