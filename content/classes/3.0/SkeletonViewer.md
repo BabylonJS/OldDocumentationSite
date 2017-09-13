@@ -5,7 +5,7 @@ TAGS:
 
 class [SkeletonViewer](/classes/3.0/SkeletonViewer)
 
-Demo available here: http://www.babylonjs-playground.com/#1BZJVJ#8
+Demo available here:  https://www.babylonjs-playground.com/#1BZJVJ#8
 
 ## Constructor
 

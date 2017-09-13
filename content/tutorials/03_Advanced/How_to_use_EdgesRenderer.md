@@ -27,4 +27,4 @@ If you need to turn-off edges rendering:
 ```
 box.disableEdgesRendering();
 ```
-You can try edges rendering here: http://www.babylonjs-playground.com/#TYAHX#10
+You can try edges rendering here:  https://www.babylonjs-playground.com/#TYAHX#10

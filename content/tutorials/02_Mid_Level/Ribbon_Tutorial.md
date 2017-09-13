@@ -10,9 +10,9 @@ _paths with different lengths_
 
 
 It's not mandatory that all paths have the same length.  
-In this example, _path2_ and _path3_ are longer than _path1_ and _path4_ : http://www.babylonjs-playground.com/#88AZQ   
+In this example, _path2_ and _path3_ are longer than _path1_ and _path4_ :  https://www.babylonjs-playground.com/#88AZQ   
 As you can see, the final ribbon adjust to different lengths. The rule is they all start from first path points and each intermediate ribbon then stops at first of its both constituting paths end.   
-There is also no incidence on light reflection for ribbon with different length paths : http://www.babylonjs-playground.com/#88AZQ#1  
+There is also no incidence on light reflection for ribbon with different length paths :  https://www.babylonjs-playground.com/#88AZQ#1  
 Therefore you **can't add a texture** for now to a ribbon constructed with different length paths.  
 This is due to the fact that the nested ribbon texturing algorithm only knows how to deal with a unique length for all paths. Indeed, as a ribbon is a parametric shape, so unpredictable, it's assumed that we could unwrap a volumic ribbon (so each one of its paths) onto a full rectangular image and this assumption keeps consistency only with the same length for all paths.  
 
@@ -25,19 +25,19 @@ The ribbon mesh provides two ways to automatically close an unclosed shape.
 * _closeArray_ parameter : this will add an extra unit ribbon between the last path and the first path of your _pathArray_.  
 * _closePath_ parameter : this will join the last and first points of each _path_ in your _pathArray_.  
 
-Here's an unclosed ribbon : http://www.babylonjs-playground.com/#3XMWZ#1
+Here's an unclosed ribbon :  https://www.babylonjs-playground.com/#3XMWZ#1
 ```javascript
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", paths, false, false, 0, scene, false, BABYLON.Mesh.BACKSIDE);
 ```
 Don't mind about how it is mathematically built. This is not the topic.  
 
-The same closed ribbon with _closeArray_ set to _true_ : http://www.babylonjs-playground.com/#3XMWZ#2
+The same closed ribbon with _closeArray_ set to _true_ :  https://www.babylonjs-playground.com/#3XMWZ#2
 ```javascript
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", paths, true, false, 0, scene, false, BABYLON.Mesh.BACKSIDE);
 ```
 As you can see, when rotating the camera, there is no edge on the ribbon surface. The light reflects continuously.  
 
-If we now apply a texture to this automatically closed ribbon : http://www.babylonjs-playground.com/#3XMWZ#3  
+If we now apply a texture to this automatically closed ribbon :  https://www.babylonjs-playground.com/#3XMWZ#3  
 You can notice that the texture isn't stretched on the surface added by the automatic closing.  
 
 The reason of this behavior is that, with ribbon _closeXXX_ parameters, priority is given on normals (the tools that compute light reflection) over textures.  
@@ -48,11 +48,11 @@ A simple way is just to re-push the first _path_ at the end of the _pathArray_
 paths.push(paths[0]);
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", paths, false, false, 0, scene, false, BABYLON.Mesh.BACKSIDE);
 ```
-Example : http://www.babylonjs-playground.com/#3XMWZ#4  
+Example :  https://www.babylonjs-playground.com/#3XMWZ#4  
 
 Obviously, the same rules and workarounds apply to the _closePath_ parameter.  
-automatically _path_ closed : http://www.babylonjs-playground.com/#3XMWZ#5  
-then textured : http://www.babylonjs-playground.com/#3XMWZ#6  
+automatically _path_ closed :  https://www.babylonjs-playground.com/#3XMWZ#5  
+then textured :  https://www.babylonjs-playground.com/#3XMWZ#6  
 
 
 
@@ -107,7 +107,7 @@ for (var k = -20; k <= 20; k++) {
 }
 ```
 Right ?   
-http://www.babylonjs-playground.com/#1HSC2O   
+ https://www.babylonjs-playground.com/#1HSC2O   
 
 Let's now imagine, you create the same path array 10 times on the z-axis with _z = t_ :   
 ```javascript
@@ -124,9 +124,9 @@ for (var t = 0; t < 10; t++) {
 }
 ```
 What do we get now ?   
-http://www.babylonjs-playground.com/#1HSC2O#1   
+ https://www.babylonjs-playground.com/#1HSC2O#1   
 An array _paths_ filled with 10 similar _paths_.  
-Just what is needed to create a ribbon : http://www.babylonjs-playground.com/#1HSC2O#2   
+Just what is needed to create a ribbon :  https://www.babylonjs-playground.com/#1HSC2O#2   
 If you now change slightly each path equation so they aren't all similar, say, by dividing _y_ by _t_ :  
 ```javascript
 var paths = [];
@@ -141,8 +141,8 @@ for (var t = 1; t < 10; t++) {
   paths.push(path);
 }
 ```
-You immediatly get a set of different paths along the z-axis : http://www.babylonjs-playground.com/#1HSC2O#8   
-So a more complex ribbon : http://www.babylonjs-playground.com/#1HSC2O#9     
+You immediatly get a set of different paths along the z-axis :  https://www.babylonjs-playground.com/#1HSC2O#8   
+So a more complex ribbon :  https://www.babylonjs-playground.com/#1HSC2O#9     
 
 At last, if we change a bit _x_ and _z_ variation to scale the curve, we can get a nice parabolic shape :   
 ```javascript
@@ -158,10 +158,10 @@ for (var t = 1; t < 10; t++) {
   paths.push(path);
 }
 ```
-http://www.babylonjs-playground.com/#1HSC2O#10    
+ https://www.babylonjs-playground.com/#1HSC2O#10    
 Quick fun ?    
-multiply _y_ by _Math.sin(t)_ to make it wave : http://www.babylonjs-playground.com/#1HSC2O#11    
-or funnier : http://www.babylonjs-playground.com/#1HSC2O#12    
+multiply _y_ by _Math.sin(t)_ to make it wave :  https://www.babylonjs-playground.com/#1HSC2O#11    
+or funnier :  https://www.babylonjs-playground.com/#1HSC2O#12    
 I couldn't stop playing ...  
 
 ### Summary
@@ -202,7 +202,7 @@ for (var i = 0; i < pi2; i += step ) {
   }
 path.push(path[0]);       // to close the circle
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1#1   
+demo :  https://www.babylonjs-playground.com/#E6IX1#1   
 
 Now, you add circles along the y-axis, making the radius evolving with another angle _p_ varying from the sphere south pole -PI / 2 to its north pole +PI /2. These circles (path) are stored in an array called _paths_ :     
 ```javascript
@@ -223,9 +223,9 @@ for (var p = -Math.PI / 2; p < Math.PI / 2; p += step / 2) {
     paths.push(path);
 }
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1  
+demo :  https://www.babylonjs-playground.com/#E6IX1  
 
-Let's apply a ribbon to these paths : http://www.babylonjs-playground.com/#E6IX1#2   
+Let's apply a ribbon to these paths :  https://www.babylonjs-playground.com/#E6IX1#2   
 You get (almost) a sphere.  
 To get a nice full sphere, you need to complete the missing point at north pole and set the ribbon _closePath_ parameter to true instead of manually close each circle after the former iteration :   
 ```javascript
@@ -237,7 +237,7 @@ paths.push(lastPath);
    
 var sphere = BABYLON.Mesh.CreateRibbon("sph", paths, false, true ,  0, scene);
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1#3  
+demo :  https://www.babylonjs-playground.com/#E6IX1#3  
 Pretty much maths and iterations o far to get a simple sphere, isn't it ?  
 This is why you should really use the BJS provided sphere if you only want a sphere !  
  
@@ -246,7 +246,7 @@ Remember : the _for_ loop iterating on _p_ is for the south to north pole angle.
 ```javascript
 for (var p = -Math.PI / 2; p < Math.PI / 2 - 1.5; p += step / 2) {
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1#4   
+demo :  https://www.babylonjs-playground.com/#E6IX1#4   
 Quite easy. You just derivated the initial sphere into another shape you wouldn't have got another way.   
 
 Now, you can keep the original pole angle limit PI / 2 but add a new behavior : if a certain angle limit is reached, then inverse the y radius around this limit.  
@@ -265,19 +265,19 @@ for (var p = -Math.PI / 2; p < Math.PI / 2; p += step / 2) {
   paths.push(path);
 } 
 ```
-demo :  http://www.babylonjs-playground.com/#E6IX1#5   
+demo :   https://www.babylonjs-playground.com/#E6IX1#5   
 
 Let's change the initial _for_ loop limits now :  
 ```javascript
 for (var p = -Math.PI / 2 + 0.5; p < Math.PI / 2  - 0.5; p += step / 2) {
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1#6  
+demo :  https://www.babylonjs-playground.com/#E6IX1#6  
 Well, is this still a sphere ?   
 Let's close the ribbon :
 ```javascript
 var sphere = BABYLON.Mesh.CreateRibbon("sph", paths, true, true ,  0, scene);
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1#7   
+demo :  https://www.babylonjs-playground.com/#E6IX1#7   
 Well, it's no longer a sphere, but a symetric shape you could probably have got in a simpler way with a Tube mesh or with CSG ... or not.  
 Since you wrote the initial sphere maths code, you've added until now very few changes to get this derivated shape.
 Too symetric, not enough, ok ? let's morph it once more so you get out the CSG or Tube way :  let's moderate _x_ with an extra _cosinus_ function
@@ -289,7 +289,7 @@ for (var i = 0; i < pi2; i += step ) {
   path.push( new BABYLON.Vector3(x, y, z) );
 }
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1#8  
+demo :  https://www.babylonjs-playground.com/#E6IX1#8  
 You are now in the real Ribbon world !
 Want more ? let's moderate _y_ with another _cosinus_ function and multiply _z_ by 2 (why ? why not !).
 ```javascript
@@ -300,7 +300,7 @@ for (var i = 0; i < pi2; i += step ) {
   path.push( new BABYLON.Vector3(x, y, z) );
 }
 ```
-demo : http://www.babylonjs-playground.com/#E6IX1#9  
+demo :  https://www.babylonjs-playground.com/#E6IX1#9  
 
 
 

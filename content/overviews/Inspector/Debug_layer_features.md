@@ -6,7 +6,7 @@
 
 Several tools are available, from left to right : 
 * Refresh the current tab - *As the debug layer can be created before some information are available, this tool is here to refresh displayed data according to the last version of the game scene*
-* Display mesh names - *Display mesh names on the screen, using Canvas2D*
+* Display mesh names - *Display mesh names on the screen, using BABYLON.GUI*
 * Pick a mesh - *A click on a tool and a click on a 3D object display the mesh tab, with the selected mesh opened*
 * Popup mode - *Open the debug layer in a popup - Not available on Edge for security reasons*
 * Pause mode - *All properties are refreshed automatically every 200ms. This tool pauses and resumes the automatic property refresh.*

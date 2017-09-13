@@ -56,7 +56,7 @@ box.checkCollisions = true;
 
 That’s it! Easy!
 
-You can play with the scene used in this tutorial... by visiting the Babylon.js [**playground demo**](http://www.babylonjs-playground.com/#4HUQQ).
+You can play with the scene used in this tutorial... by visiting the Babylon.js [**playground demo**]( https://www.babylonjs-playground.com/#4HUQQ).
 
 Now, your camera is going to fall on the y-axis until it collides with the ground. And, your camera will collide with the box when you move it too near to it.
 

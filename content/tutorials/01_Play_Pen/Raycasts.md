@@ -26,7 +26,7 @@ ______
 
 ## Detect the first mesh touched by the ray ##
 
-http://www.babylonjs-playground.com/#KNE0O#4
+ https://www.babylonjs-playground.com/#KNE0O#4
 
 ![Raycast simple](/img/tutorials/raycast01.jpg)
 
@@ -66,7 +66,7 @@ Here we change its size because it's funnier !
 **You're not forced to set box.isPickable to false**, if you need later to check rays intersection on this box for example. 
 You can set the origin point of the vector in front of the box, the direction a little further and the length that you want (l55) :
 
-http://www.babylonjs-playground.com/#KNE0O#17
+ https://www.babylonjs-playground.com/#KNE0O#17
 
 
 -----
@@ -75,7 +75,7 @@ http://www.babylonjs-playground.com/#KNE0O#17
 
 It is a filter to choose which meshes will be selectable :
 
-http://www.babylonjs-playground.com/#KNE0O#18
+ https://www.babylonjs-playground.com/#KNE0O#18
 
 ![Raycast predicate](/img/tutorials/raycast02.jpg)
 
@@ -112,7 +112,7 @@ True will return the first mesh that intersects with the ray (in the order of th
 
 We can use *scene.multiPickWithRay* if we don't want that the ray stops at the first obstacle : 
 
-http://www.babylonjs-playground.com/#KNE0O#19
+ https://www.babylonjs-playground.com/#KNE0O#19
 
 ![Raycast multipick](/img/tutorials/raycast02.jpg)
 
@@ -151,7 +151,7 @@ rayHelper.show(scene);
 ```
 
 The helper can also be attached to a mesh to track its direction:
-http://www.babylonjs-playground.com/#ZHDBJ#37
+ https://www.babylonjs-playground.com/#ZHDBJ#37
 
 _____
 

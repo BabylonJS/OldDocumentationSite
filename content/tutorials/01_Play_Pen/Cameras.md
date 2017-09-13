@@ -70,6 +70,14 @@ If required you can also totally deactivate panning by setting :
    scene.activeCamera.panningSensibility = 0;
 ```
 
+## State
+
+Camera state can be stored in order to restore it later. The state of a camera includes position, rotation and FOV.
+To store the current state, just call `camera.storeState()`. 
+To restore it, call `camera.restoreState()`.
+
+You can find a live example here: https://www.babylonjs-playground.com/#GH5SVN#1
+
 ## Unique Purpose Cameras
 
 There are some Babylon.js cameras that have unique purposes. I will try to explain their purposes as we examine each camera and their constructors.
@@ -175,7 +183,7 @@ You can learn all about anaglyphs by visiting a [Wikipedia page that explains it
 var camera = new BABYLON.VRDeviceOrientationFreeCamera ("Camera", new BABYLON.Vector3 (-6.7, 1.2, -1.3), scene, 0);
 ```
 
-Here is a [playground demo](http://www.babylonjs-playground.com/#DZTQH#2) that uses it, as well as showing some top secret tricks for making the camera initialize to certain angles.  It also introduces our new [Composable Inputs](http://doc.babylonjs.com/tutorials/Customizing_Camera_Inputs) for cameras.  More about that... a bit further along.
+Here is a [playground demo]( https://www.babylonjs-playground.com/#DZTQH#3) that uses it, as well as showing some top secret tricks for making the camera initialize to certain angles.  It also introduces our new [Composable Inputs](http://doc.babylonjs.com/tutorials/Customizing_Camera_Inputs) for cameras.  More about that... a bit further along.
 
 The VRDeviceOrientationFreeCamera uses FreeCamera as its basis, so all of the properties and methods of FreeCamera... are also found on our VRDeviceOrientationFreeCamera.
 

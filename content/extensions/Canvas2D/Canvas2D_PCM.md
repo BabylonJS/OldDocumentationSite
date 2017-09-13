@@ -1,4 +1,0 @@
-# Primitive Collision Engine
-
-TODO
-

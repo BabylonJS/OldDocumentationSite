@@ -8,7 +8,7 @@ In this tutorial, we are going to learn how to position, scale and rotate any ki
 
 ![Elements](/img/tutorials/Rotation%20and%20scaling/03.png)
 
-[**Playground Demo Scene 3 - Positioned, Scaled, and Rotated Boxes**](http://www.babylonjs-playground.com/?3)
+[**Playground Demo Scene 3 - Positioned, Scaled, and Rotated Boxes**]( https://www.babylonjs-playground.com/?3)
 
 ## How can I do this ?
 As usual, we are beginning a createScene function by including the basic elements of a scene:

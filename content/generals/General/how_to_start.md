@@ -189,7 +189,7 @@ This file starts like this:
                 "additionalCameras", "postProcesses", "renderingPipeline", "depthRenderer", "additionalPostProcesses",
                 "bones", "hdr", "polygonMesh", "csg", "lensFlares", "physics", "textureFormats", "debug", "morphTargets",
                 "colorCurves", "octrees", "simd", "vr", "virtualJoystick", "optimizations", "highlights", "assetsManager",
-                "mapTexture", "dynamicFloatArray", "serialization", "probes", "layer"
+                "mapTexture", "dynamicFloatArray", "serialization", "probes", "layer", "textureTools", "cameraBehaviors"
         ],
         "minimal": ["meshBuilder", "standardMaterial", "freeCamera", "hemisphericLight"]
     },
@@ -264,5 +264,7 @@ Here is the list of available workloads:
 | serialization | Contains SceneSerializer |
 | probes | Contains ReflectionProbe |
 | layer | Contains Layer |
+| textureTools | Contains TextureTools |
+| cameraBehaviors | Contains all camera behaviors |
 
 

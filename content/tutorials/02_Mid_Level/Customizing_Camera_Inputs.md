@@ -105,4 +105,4 @@ interface ICameraInput<TCamera extends BABYLON.Camera> {
 
 Composable inputs is new, powerful, flexible, and extensible.  Familiarize yourself with its simple interface, and you will enjoy more and better camera control than ever before.
 
-You can find an example here: http://www.babylonjs-playground.com/#1WFOOA#2
+You can find an example here:  https://www.babylonjs-playground.com/#1WFOOA#2

@@ -5,7 +5,7 @@ PG_TITLE: 15. Shadows
 ## Introduction
 
 In this tutorial, we are going to learn how to create shadows in Babylon JS. Shadows are now becoming dynamic, and they are now dynamically generated depending upon a light.
-You might want to visit [**the playground scene**](http://www.babylonjs-playground.com/?15) for this tutorial.
+You might want to visit [**the playground scene**]( https://www.babylonjs-playground.com/?15) for this tutorial.
 
 ## How can I do this ?
 
@@ -80,7 +80,7 @@ Here is an example of how CESM works: https://www.babylonjs-playground.com/#0TG0
 ## Examples
 
 You can find a live example here: 
-http://www.babylonjs-playground.com/#20FROK#2
+ https://www.babylonjs-playground.com/#20FROK#2
 
 Please find here pictures of various filters used with a spot light:
 
@@ -107,7 +107,7 @@ Only point, directional and spot lights can cast shadows.
 
 ### Point lights
 Point lights use cubemaps rendering so please be cautious when enabling them as this could lead to some performance issues.
-You can also visit the [point light shadow map playground scene](http://www.babylonjs-playground.com/#LYCSQ#12)
+You can also visit the [point light shadow map playground scene]( https://www.babylonjs-playground.com/#LYCSQ#12)
 
 Furthermore BlurExponentialShadowMap and CloseBlurExponentialShadowMap are not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
 
@@ -150,6 +150,17 @@ By default the projection matrix of a light uses the minZ and maxZ of the main c
 
 ### Use the best option for self-shadowing
 As mentioned earlier, if you want blurred shadows on a self-shadowing object, the best option will probably to go with close exponential shadow map.
+
+### Frustum edge falloff
+Depending on how you setup your shadow generator, you could face weird falloff when an object is near the edges of the shadow map. To elegantly fix this issue, you can set a property named frustumEdgeFalloff:
+
+```javascript
+ shadowGenerator.frustumEdgeFalloff = 1.0;
+```
+
+This property controls the extent to which the shadows fade out at the edge of the frustum. It is used only by directional and spot lights. By default, the value is set to 0 (no falloff) and 1.0 (complete falloff).
+
+You can find an example here: https://www.babylonjs-playground.com/#Y5IZCF
 
 ## Next step
 Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](http://doc.babylonjs.com/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [http://www.html5gamedevs.com/forum/16-babylonjs](http://www.html5gamedevs.com/forum/16-babylonjs). See you there.

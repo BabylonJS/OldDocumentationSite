@@ -10,7 +10,7 @@ This base tree is used in two different ways.
     
   ![Base Tree to Full Tree Sequence ](/img/extensions/trees/baseToFull.png)  
   
-  A demo can be found at: http://www.babylonjs-playground.com/#1LXNS9#4 
+  A demo can be found at:  https://www.babylonjs-playground.com/#1LXNS9#4 
 
 ## How to use it.
 

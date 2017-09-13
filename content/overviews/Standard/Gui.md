@@ -28,15 +28,21 @@ Babylon.GUI has two modes:
 var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
 ```
 
-Here is an example of a simple fullscreen mode GUI: http://www.babylonjs-playground.com/#XCPP9Y#1
+Here is an example of a simple fullscreen mode GUI:  https://www.babylonjs-playground.com/#XCPP9Y#1
 
-* Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. Pointer down and up events will be intercepted. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
+* Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
 ```
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
-Here is an example of a simple texture mode GUI: http://www.babylonjs-playground.com/#ZI9AK7#1
+Here is an example of a simple texture mode GUI:  https://www.babylonjs-playground.com/#ZI9AK7#1
+
+Please note that handling pointer move events could be costly on complex meshes, so you can turn off supporting pointer move events with a fourth parameter:
+
+```
+var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024, false);
+```
 
 Once you have an AdvancedDynamicTexture object, you can start adding controls.
 
@@ -57,7 +63,7 @@ You can also define that a control is invisble to events (so you can click throu
 
 Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a Vector2 parameter containing the pointer coordinates. If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
 
-Here is an example of how to use observables: http://www.babylonjs-playground.com/#XCPP9Y#121
+Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#121
 
 ### Alignments
 You can define the alignments used by your control with the following properties:
@@ -67,7 +73,7 @@ Property|Default|Comments
 horizontalAlignment|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center.
 verticalAlignment|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom and center.
 
-Here is an example of how to use alignments: http://www.babylonjs-playground.com/#XCPP9Y#13
+Here is an example of how to use alignments:  https://www.babylonjs-playground.com/#XCPP9Y#13
 
 ### Position and size
 You can set controls' position with the following properties:
@@ -101,13 +107,13 @@ To set value as percentage, use this construct: `control.left = "50%"`
 
 You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
 
-Here is an example of how to use positions and sizes: http://www.babylonjs-playground.com/#XCPP9Y#14
+Here is an example of how to use positions and sizes:  https://www.babylonjs-playground.com/#XCPP9Y#14
 
 ### Tracking positions
 All controls can be moved to track position of a mesh.
 To do this, just call `control.linkWithMesh(mesh)`. You can then offset the position with `control.linkOffsetX` and `control.linkOffsetY`.
 
-Here is an example of a trackable label: http://www.babylonjs-playground.com/#XCPP9Y#16
+Here is an example of a trackable label:  https://www.babylonjs-playground.com/#XCPP9Y#16
 
 Please note that controls that want to track position of a mesh must be at root level (at AdvancedDynamicTexture level).
 
@@ -115,7 +121,7 @@ You can also move a control to a specific coordinates in your scene with `contro
 
 For Line control, you can also attach the second point to a control with `line.connectedControl = control`. In this case the `x2` and `y2` properties are used to offset the second point from the connected control.
 
-With these 2 options, you can create a complete trackable label: http://www.babylonjs-playground.com/#XCPP9Y#20
+With these 2 options, you can create a complete trackable label:  https://www.babylonjs-playground.com/#XCPP9Y#20
 
 ### Adaptive scaling
 When in fullscreen UI, you can decide to define your UI with a fixed resolution.
@@ -127,7 +133,7 @@ When ideal resolution is set, all values expressed **in pixels** are considered 
 
 Even when ideal size is set, the fullscreen UI will be rendered at the same resolution of your canvas, but you can decide (mostly for performance reason) to force the texture to use the ideal size for resolution as well. To do so, just call `myAdvancedDynamicTexture.renderAtIdealSize = true`.
 
-Here is an example of how to use horizontal adaptive scaling: http://www.babylonjs-playground.com/#XCPP9Y#39
+Here is an example of how to use horizontal adaptive scaling:  https://www.babylonjs-playground.com/#XCPP9Y#39
 
 ### Rotation and Scaling
 
@@ -143,7 +149,7 @@ transformCenterY|number|0.5|Define the center of transformation on Y axis. Value
 
 **Please be aawre that transformations are done at rendering level so after all computations.** This means that alignment or positioning will be done first without taking transform in account.
 
-Here is an example of how to use rotation and scaling: http://www.babylonjs-playground.com/#XCPP9Y#22
+Here is an example of how to use rotation and scaling:  https://www.babylonjs-playground.com/#XCPP9Y#22
 
 ## Controls
 
@@ -177,16 +183,53 @@ You can also control the control visibility with `control.isVisible = false`.
 
 ### TextBlock
 
-The TextBlock is a simple control used to display text: http://www.babylonjs-playground.com/#XCPP9Y#2
+The TextBlock is a simple control used to display text:  https://www.babylonjs-playground.com/#XCPP9Y#2
 
 Here are the properties you can define:
 
 Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
-textWrapping|boolean|false|Can be set to true to enable text wrapping.
+textWrapping|boolean|false|Can be set to true to enable text wrapping
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+
+### InputText
+
+The InputText is a control used to let users insert text in a single line: https://www.babylonjs-playground.com/#UWS0TS
+
+Here are the properties you can define:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+text|string|null|Text to display
+color|string|white|Foreground color
+background|string|black|Background color
+focusedBackground|string|black|Background color to use when the control is focused
+autoStretchWidth|boolean|true|The control will resize horizontally to adapt to text size
+maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
+margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
+thickness|number|1|Thickness of the border
+
+The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
+
+The control provides several observables to track its state:
+
+Observables|Comments
+-----------|--------
+onTextChangedObservable|Raised when the text has changed
+onFocusObservable|Raised when the control loses the focus
+onBlurObservable|Raised when the control gets the focus
+
+Please note that the InputText has pretty limited edition support. Here are the supported keys:
+* Delete
+* Backspace
+* Home
+* End
+* Enter
+* Left / Right (used to move the cursor)
+
+Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard. On mobile, the InputText will use the `prompt()` command to get user input. You can define the title of the prompt by setting `control.promptMessage`.
 
 ### Button
 
@@ -201,7 +244,7 @@ There are three kinds of buttons available out of the box:
 var button = BABYLON.GUI.Button.CreateImageButton("but", "Click Me", "textures/grass.png");
 ```
 
-You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#3
+You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#3
 
 * SimpleButton: A simple button with text only
 
@@ -209,7 +252,7 @@ You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#3
 var button = BABYLON.GUI.Button.CreateSimpleButton("but", "Click Me");
 ```
 
-You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#4
+You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#4
 
 * ImageOnlyButton:
 
@@ -217,7 +260,7 @@ You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#4
 var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png");
 ```
 
-You can try it here: http://www.babylonjs-playground.com/#XCPP9Y#28
+You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
 
 #### Visual animations
 By default a button will change its opacity on pointerover and will change it scale when clicked.
@@ -320,7 +363,7 @@ y2|number|0|Y coordinate of the second point
 dash|array of numbers|Empty array|Defines the size of the dashes
 lineWidth|number|1|Width in pixel
 
-Here is an example of a line: http://www.babylonjs-playground.com/#XCPP9Y#6
+Here is an example of a line:  https://www.babylonjs-playground.com/#XCPP9Y#6
 
 ### Image
 
@@ -339,9 +382,78 @@ You can also define which part of the source image you want to use with the foll
 * sourceLeft: x coordinate in the source image (in pixel)
 * sourceTop: y coordinate in the source image (in pixel)
 * sourceWidth: width of the source image you want to use (in pixel)
-* sourceTopt: height of the source image you want to use (in pixel)
+* sourceHeight: height of the source image you want to use (in pixel)
 
-Here is an example of an image: http://www.babylonjs-playground.com/#XCPP9Y#7
+Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
+
+### VirtualKeyboard
+
+The VirtualKeyboard is a control used to display simple onscreen keyboard. This is mostly useful with WebVR scenarios where the user cannot easily use his keyboard.
+
+#### Keys
+
+You can define the keys provided by the keyboard with the following code:
+
+```
+var keyboard = new BABYLON.GUI.VirtualKeyboard();
+keyboard.addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+```
+
+Every key will be created using default values specified by the following properties:
+
+Property|Default
+--------|----
+defaultButtonWidth|40px
+defaultButtonHeight|40px
+defaultButtonPaddingLeft|2px
+defaultButtonPaddingRight|2px
+defaultButtonPaddingTop|2px
+defaultButtonPaddingBottom|2px
+defaultButtonColor|#DDD
+defaultButtonBackground|#070707
+
+You can also override each property by providing an array containing properties for keys (or null):
+
+```
+addKeysRow(["a", "b"], [null, { width: "200px"}]);
+```
+
+You can define each default properties based on the following class:
+```
+class KeyPropertySet {
+      width?: string;
+      height?: string;
+      paddingLeft?: string;
+      paddingRight?: string;
+      paddingTop?: string;
+      paddingBottom?: string;
+      color?: string;
+      background?: string;
+  }
+```
+
+#### Layouts
+
+The VirtualKeyboard provides a static method to create a default layout:
+
+```
+var keyboard = BABYLON.GUI.VirtualKeyboard.CreateDefaultLayout();
+```
+
+The default layout is equivalent to:
+
+```
+addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+addKeysRow(["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]);
+addKeysRow(["a", "s", "d", "f", "g", "h", "j", "k", "l",";","'","\u21B5"]);
+addKeysRow(["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
+addKeysRow([" "], [{ width: "200px"}]);
+```
+
+#### Events
+Every time a key is pressed the `onKeyPressObservable` observable is triggered. But you can also rely on `keyboard.connect(inputText)` to automatically connect a VirtualKeyboard to an InputText. In this case, the keyboard will only appear when the InputText will be focused and all key pressed events will be sent to the InputText.
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#S7L7FE
 
 ## Containers
 
@@ -356,7 +468,7 @@ Property|Type|Default|Comments
 thickness|number|1|Thickness of the border
 cornerRadius|number|0|Size in pixel of each corner. Used to create rounded rectangles
 
-Here is an example of a rectangle control: http://www.babylonjs-playground.com/#XCPP9Y#8
+Here is an example of a rectangle control:  https://www.babylonjs-playground.com/#XCPP9Y#8
 
 ### Ellipse
 The Ellipse is a ellipsoidal container with the following properties:
@@ -365,7 +477,7 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 thickness|number|1|Thickness of the border
 
-Here is an example of an ellipse control: http://www.babylonjs-playground.com/#XCPP9Y#10
+Here is an example of an ellipse control:  https://www.babylonjs-playground.com/#XCPP9Y#10
 
 ### StackPanel
 
@@ -374,7 +486,7 @@ All children must have a defined width or height (depending on the orientation).
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
-Here is an example of a StackPanel: http://www.babylonjs-playground.com/#XCPP9Y#11
+Here is an example of a StackPanel:  https://www.babylonjs-playground.com/#XCPP9Y#11
 
 ### ColorPicker
 

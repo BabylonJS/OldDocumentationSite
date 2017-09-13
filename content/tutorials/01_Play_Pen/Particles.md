@@ -8,7 +8,7 @@ This tutorial is going to talk about the particle system in BabylonJS. Particles
 
 ![Particles](/img/tutorials/Particles/12.png)
 
-A picture of [the playground's ParticleSystem demo](http://www.babylonjs-playground.com/?12)
+A picture of [the playground's ParticleSystem demo]( https://www.babylonjs-playground.com/?12)
 
 ## How can I do this ?
 
@@ -137,6 +137,7 @@ particleSystem.updateSpeed = 0.005;
 ```
 
 * Duration. You can set the amount of time the particle system is running (depends of the overall speed above).
+
 ```javascript
 particleSystem.targetStopDuration = 5;
 ```
@@ -156,7 +157,7 @@ And naturally stop it:
 particleSystem.stop();
 ```
 
-Feel free to play with this scene... [**at our online playground**](http://www.babylonjs-playground.com/?12).
+Feel free to play with this scene... [**at our online playground**]( https://www.babylonjs-playground.com/?12).
 
 ### customEffect (the fourth parameter in the constructor)
 
@@ -164,7 +165,7 @@ var ps = new BABYLON.ParticleSystem("particles", 2000, scene, **customEffect**);
 
 The customEffect is a type of BABYLON.Effect used to target a valid shader program.
 
-The primary author of Babylon.js was kind enough to make us [a fantastic playground demo of a particle system using a fragment shader effect](http://www.babylonjs-playground.com/#1ASENS). Visit that link, and you can see a fragment shader program that has been stored in a shader store. Notice the line:
+The primary author of Babylon.js was kind enough to make us [a fantastic playground demo of a particle system using a fragment shader effect](https://www.babylonjs-playground.com/#1ASENS#43). Visit that link, and you can see a fragment shader program that has been stored in a shader store. Notice the line:
 
 ```javascript
 BABYLON.Effect.ShadersStore["myParticleFragmentShader"] = [...]

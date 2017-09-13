@@ -15,7 +15,7 @@ The supported types are: Float, [Color3](/classes/3.0/Color3), [Vector3](/classe
 
 http://doc.babylonjs.com/tutorials/How_to_use_Actions
 
-http://www.babylonjs-playground.com/?17
+ https://www.babylonjs-playground.com/?17
 
 ## Constructor
 

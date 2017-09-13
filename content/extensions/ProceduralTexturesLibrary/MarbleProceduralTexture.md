@@ -8,7 +8,7 @@ Marble procedural texture can be found here:
 - Normal: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.js)
 - Minified : [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.min.js)
 
-A demo can be found here: http://www.babylonjs-playground.com/#HS1SK
+A demo can be found here:  https://www.babylonjs-playground.com/#HS1SK
 
 This texture has 4 parameters :
 - **numberOfTilesHeight** controls the number of tiles in height (Int)

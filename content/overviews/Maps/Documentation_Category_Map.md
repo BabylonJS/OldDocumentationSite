@@ -91,7 +91,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Using WebGL to Create Games for the Windows Store](/tutorials/Using_WebGL_to_Create_Games_for_the_Windows_Store)  
 ****  
 **GUI**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Bbaylon GUI](/overview/gui)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Babylon GUI](/overviews/gui)  
 ****  
 **Lights Basics**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Lights](/tutorials/Lights)  
@@ -111,7 +111,6 @@
 **Loader Intermediate**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Caching Resources in IndexedDB](/tutorials/Caching_Resources_in_IndexedDB)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Creating a custom loading screen](/tutorials/Creating_a_custom_loading_screen)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Loading a Scene Produced with Blender](/tutorials/Loading_a_Scene_Produced_with_Blender)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using the Incremental Loading System](/tutorials/Using_the_Incremental_Loading_System)  
 ****  
 **Loader Advanced**  

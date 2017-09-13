@@ -18,13 +18,14 @@ You can find here the list of supported features and the backward compatibility 
 
 Feature|Description|WebGL1 compatibility|Demo|More info
 --|--|--|--|--
-Depth Frag|Used to compute logarithmic depth buffer|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/)|[PG](http://www.babylonjs-playground.com/#1180R5#15)|[Documentation](http://doc.babylonjs.com/tutorials/using_logarithmic_depth_buffer)
-Multisample render targets|Rendertarget textures can be multisampled to get antialiasing effect|No. Has no effect on WebGL1 context|[PG](http://www.babylonjs-playground.com/#12MKMN)|[See below](http://doc.babylonjs.com/overviews/webgl2#multisample-render-targets)
+Depth Frag|Used to compute logarithmic depth buffer|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/)|[PG]( https://www.babylonjs-playground.com/#1180R5#15)|[Documentation](http://doc.babylonjs.com/tutorials/using_logarithmic_depth_buffer)
+Multisample render targets|Rendertarget textures can be multisampled to get antialiasing effect|No. Has no effect on WebGL1 context|[PG]( https://www.babylonjs-playground.com/#12MKMN)|[See below](http://doc.babylonjs.com/overviews/webgl2#multisample-render-targets)
 Standard derivatives|Standard derivatites are used in Babylon.js to help compute realtime bump|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives)|[Demo](http://www.babylonjs.com/Demos/Bump/)|[Documentation](http://doc.babylonjs.com/tutorials/advanced_texturing)
 Texture LOD|Used by PRBMaterial to simulate microsurface|Yes through an [extension](https://www.khronos.org/registry/OpenGL/extensions/EXT/EXT_shader_texture_lod.txt)|[Demo](http://www.babylonjs.com/Demos/HDRMap/)|[Documentation](http://doc.babylonjs.com/overviews/physically_based_rendering)
 Vertex array objects (VAO)|A Vertex Array Object (or VAO) is an object that describes how the vertex attributes are stored in a Vertex Buffer Object (or VBO)|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/)|N/A. Every rendering is done with VAO by default|[See below](http://doc.babylonjs.com/overviews/webgl2#vertex-array-objects)
 Uniform buffer objects (UBO)| An uniform buffer object (or UBO) let you specify a group of uniforms from a buffer|No. Uniforms are handled independently on WebGL1 context|N/A. Materials supporting UBO automatically uses them|[See below](http://doc.babylonjs.com/overviews/webgl2#uniform-buffer-objects)
-Multiple Render Target (MRT)| Several Render Targets can be rendered in the same draw call.|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers)|[Demo](http://www.babylonjs-playground.com/#NZ6P07)|[See below](http://doc.babylonjs.com/overviews/webgl2#multiple-render-target)
+Multiple Render Target (MRT)| Several Render Targets can be rendered in the same draw call.|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers)|[Demo]( https://www.babylonjs-playground.com/#NZ6P07)|[See below](http://doc.babylonjs.com/overviews/webgl2#multiple-render-target)
+Occlusion Queries| Occlusion queries detect whether a Mesh is visible in the current scene or not|Yes through an [extension](https://www.khronos.org/opengl/wiki/Query_Object#Occlusion_queries)|[Demo](http://www.babylonjs-playground.com/#QDAZ80#3)|[See below](WebGL2#occlusion-queries)
 
 ## Multisample render targets
 
@@ -57,3 +58,10 @@ On former WebGL1, one draw call meant 1 target texture. Now you can bind several
 
 In Babylon.js, our first use of this technique is to render a geometry buffer of the scene.
 
+## Occlusion queries 
+
+Occlusion queries detect whether a Mesh is visible in the current scene or not, and based on that the Mesh get drawn or not. Occlusion queries is useful when you have an expensive object on the scene and you want to make sure that it will get drawn if it is visible to the camera and it is not behind any opaque object. BabylonJs provides an implementation for Occlusion queries using property occlusionType in AbstractMesh Class
+
+[Babylon.js Occlusion Queries Overview](occlusionquery)
+
+[WebGL 2 Occlusion Queries](https://www.khronos.org/opengl/wiki/Query_Object#Occlusion_queries)

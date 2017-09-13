@@ -37,10 +37,10 @@ The rotation is computed in the mesh local space.
 The order you assign the `rotation` property values doesn't matter (`.z` before `.x` for instance) since BJS computes the final mesh rotation always in the same order : around Y first, then around X, finally around Z.  
 In order to understand this order, here's a short sequence showing how this happens in the World (white axis) :   
 
-* a box is set at the origin, unrotated, its local system is showed with red (x), green (y) and blue (z) lines : http://www.babylonjs-playground.com/#BEXX0#1   
-* then it's rotated for PI/3 radians around its local Y axis : http://www.babylonjs-playground.com/#BEXX0#2  
-* then it's rotated for PI/4 radians around its local X axis : http://www.babylonjs-playground.com/#BEXX0#3  
-* finally it's rotated for PI/6 radians around its local Z axis : http://www.babylonjs-playground.com/#BEXX0#4  
+* a box is set at the origin, unrotated, its local system is showed with red (x), green (y) and blue (z) lines :  https://www.babylonjs-playground.com/#BEXX0#1   
+* then it's rotated for PI/3 radians around its local Y axis :  https://www.babylonjs-playground.com/#BEXX0#2  
+* then it's rotated for PI/4 radians around its local X axis :  https://www.babylonjs-playground.com/#BEXX0#3  
+* finally it's rotated for PI/6 radians around its local Z axis :  https://www.babylonjs-playground.com/#BEXX0#4  
 
 The property `rotation` will be used if the property `rotationQuaternion` is `null` (default behavior).  
 The property `rotationQuaternion` only is used if both are set.  
@@ -118,7 +118,7 @@ mesh.addRotation(x1, 0, 0).addRotation(0, 0, z2).addRotation(0, y3, 0);
 // the mesh rotation property is computed for you
 console.log(mesh.rotation);
 ```
-Example : http://www.babylonjs-playground.com/#1PON40#6
+Example :  https://www.babylonjs-playground.com/#1PON40#6
 
 The left box is the model box. The central box is rotated as usual for PI/3 around X and PI/4 around Y. The BJS rotation order makes it rotate first around Y, then around X.  
 The right box is given an initial rotation for PI/3 around X, then a rotation step is added for PI/4 around Y. You can see that the final orientation differs.  
@@ -169,7 +169,7 @@ With this code, the mesh will be aligned thus :
 * _axis2_ will become y axis in its local system
 * _axis3_ will become z axis in its local system
 
-example : http://www.babylonjs-playground.com/#VYM1E#28        
+example :  https://www.babylonjs-playground.com/#VYM1E#28        
 The textured plane mesh is currently aligned with the axis between spheres (axis1) and "faces" the camera.  
 `RotationFromAxis()` computes the required rotation value (Vector3) to assign to the mesh property `.rotation` in order to rotate it along the passed axes.  
 If you prefer using quaternions instead of Euler angles, then `RotationQuaternionFromAxis()` computes the required rotation value (Quaternion) to assign to the mesh property `.rotationQuaternion` in order to rotate it along the passed axes.  

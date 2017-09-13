@@ -189,101 +189,101 @@ The following images are available to use as textures or heightmaps in the playg
 new BABYLON.Texture("textures/name", scene);
 ```
 
-albedo.png
+* albedo.png
 
-amiga.jpg
+* amiga.jpg
 
-bloc.jpg
+* bloc.jpg
 
-candleopacity.png
+* candleopacity.png
 
-cloud.png
+* cloud.png
 
-co.png
+* co.png
 
-crate.png
+* crate.png
 
-distortion.png
+* distortion.png
 
-earth.jpg
+* earth.jpg
 
-equirectangular.jpg
+* equirectangular.jpg
 
-fire.png
+* fire.png
 
-flare.png
+* flare.png
 
-floor.png
+* floor.png
 
-floor_bump.PNG
+* floor_bump.PNG
 
-fur.jpg
+* fur.jpg
 
-grass.jpg
+* grass.jpg
 
-grass.png
+* grass.png
 
-grassn.png
+* grassn.png
 
-ground.jpg
+* ground.jpg
 
-heightMap.png
+* heightMap.png
 
-heightMapTriPlanar.png
+* heightMapTriPlanar.png
 
-impact.png
+* impact.png
 
-invmask.png
+* invmask.png
 
-Logo.png
+* Logo.png
 
-mask.png
+* mask.png
 
-misc.jpg
+* misc.jpg
 
-mixMap.png
+* mixMap.png
 
-normalMap.jpg
+* normalMap.jpg
 
-orient.jpg
+* orient.jpg
 
-palm.png
+* palm.png
 
-player.png
+* player.png
 
-reflectivity.png
+* reflectivity.png
 
-rock.png
+* rock.png
 
-rockn.png
+* rockn.png
 
-roundMask.png
+* roundMask.png
 
-sand.png
+* sand.png
 
-specmap.png
+* specmap.png
 
-specularglossymap.png
+* specularglossymap.png
 
-sphereMap.png
+* sphereMap.png
 
-sun.png
+* sun.png
 
-SunDiffuse.png
+* SunDiffuse.png
 
-tree.png
+* tree.png
 
-walk.png
+* walk.png
 
-waterbump.png
+* waterbump.png
 
-worldHeightMap.jpg
+* worldHeightMap.jpg
 
-xStrip.jpg
+* xStrip.jpg
 
-yStrip.jpg
+* yStrip.jpg
 
-zStrip.jpg
+* zStrip.jpg
 
 ## CubeMap Groups Available to Playground
 
@@ -292,65 +292,65 @@ The following groups of images are available to use as skyboxes in the playgroun
 ```javascript
 new BABYLON.CubeTexture("textures/common part of names", scene);
 ```
-skybox_nx.jpg
+* skybox_nx.jpg
 
-skybox_ny.jpg
+* skybox_ny.jpg
 
-skybox_nx.jpg
+* skybox_nx.jpg
 
-skybox_px.jpg
+* skybox_px.jpg
 
-skybox_py.jpg
+* skybox_py.jpg
 
-skybox_pz.jpg
+* skybox_pz.jpg
 
-skybox2_nx.jpg
+* skybox2_nx.jpg
 
-skybox2_ny.jpg
+* skybox2_ny.jpg
 
-skybox2_nx.jpg
+* skybox2_nx.jpg
 
-skybox2_px.jpg
+* skybox2_px.jpg
 
-skybox2_py.jpg
+* skybox2_py.jpg
 
-skybox2_pz.jpg
+* skybox2_pz.jpg
 
-skybox3_nx.jpg
+* skybox3_nx.jpg
 
-skybox3_ny.jpg
+* skybox3_ny.jpg
 
-skybox3_nx.jpg
+* skybox3_nx.jpg
 
-skybox3_px.jpg
+* skybox3_px.jpg
 
-skybox3_py.jpg
+* skybox3_py.jpg
 
-skybox3_pz.jpg
+* skybox3_pz.jpg
 
-skybox4_nx.jpg
+* skybox4_nx.jpg
 
-skybox4_ny.jpg
+* skybox4_ny.jpg
 
-skybox4_nx.jpg
+* skybox4_nx.jpg
 
-skybox4_px.jpg
+* skybox4_px.jpg
 
-skybox4_py.jpg
+* skybox4_py.jpg
 
-skybox4_pz.jpg
+* skybox4_pz.jpg
 
-TropicalSunnyDay_nx.jpg
+* TropicalSunnyDay_nx.jpg
 
-TropicalSunnyDay_ny.jpg
+* TropicalSunnyDay_ny.jpg
 
-TropicalSunnyDay_nx.jpg
+* TropicalSunnyDay_nx.jpg
 
-TropicalSunnyDay_px.jpg
+* TropicalSunnyDay_px.jpg
 
-TropicalSunnyDay_py.jpg
+* TropicalSunnyDay_py.jpg
 
-TropicalSunnyDay_pz.jpg
+* TropicalSunnyDay_pz.jpg
 
 
 ## HDR CubeMaps Available to Playground
@@ -361,17 +361,26 @@ The following images are available to use as textures or heightmaps in the playg
 new BABYLON.HDRCubeTexture("textures/name", scene);
 ```
 
-country.hdr
+* country.hdr
 
-environment.babylon.hdr
+* environment.babylon.hdr
 
-forest.hdr
+* forest.hdr
 
-night.hdr
+* night.hdr
 
-parking.hdr
+* parking.hdr
 
-room.hdr
+* room.hdr
+
+## Environment textures
+The following images are available to use as environment texture using
+
+```javascript
+BABYLON.CubeTexture.CreateFromPrefilteredData("/textures/environment.dds", scene);
+```
+
+* environment.dds
 
 ## Other Files Available to Playground in "textures" Directory
 
@@ -384,7 +393,6 @@ babylonjs.webm
 HorrorBlue.3dl
 
 LateSunset.3dl
-
 
 
 ## Next step

@@ -443,8 +443,26 @@
 
             if(originalText.length < 500)
                 return originalText;
-            else
-                return "Code too long to be displayed.";
+            else{
+                // String before the word
+                var wordsString  = "";
+                wordsString = wordsString.concat(words.slice(startIndex, index));
+
+                // start index
+                var begIndex = wordsString.length - 250;
+                if(begIndex < 0){
+                    begIndex = 0;
+                }
+
+                // Size of the substring to extract
+                var size = 500;
+                if(size + begIndex  > originalText.length){
+                    size = originalText.length - begIndex;
+                }
+                
+                // if more than 500 characters, only return the substring around the word 
+                return  originalText.substr(begIndex, size);
+            }
         }
         else return "";
     };

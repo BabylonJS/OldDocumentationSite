@@ -73,15 +73,15 @@ Zoom in and out to see the effect, watch the number of active vertices closely.
 
 Simplifying spheres. Materials of the spheres will be set after simplification ended completely.
 
-http://www.babylonjs-playground.com/#1ED15P#1
+ https://www.babylonjs-playground.com/#1ED15P#1
 
 Simplifying a color-based complex mesh. An alert window will pop when simplification is over. This mesh will also take time to load and requires optimization.
 
 With global mesh optimization - 
-http://www.babylonjs-playground.com/#2JBSNA#3
+ https://www.babylonjs-playground.com/#2JBSNA#3
 
 With optimization during simplification - 
-http://www.babylonjs-playground.com/#2JBSNA#4
+ https://www.babylonjs-playground.com/#2JBSNA#4
 
 # Rules, Quirks and things to pay attention to
 
@@ -129,7 +129,7 @@ mesh.optimizeIndices(function() {
 });
 ```
 This option alters(!) the mesh's indices order. It is faster, but might change the UV coordinates of vertices of the mesh. If that is the case, use:
-2. optimization during simplification - The Simplification Settings now include a new variable : optimizeMesh, which is a boolean that defaults to false. If set to true, a non-altering mesh optimization will run during the mesh's preparation for decimation. The simplification will run on a temporary array of vertices and will correlate the new vertices' positions with the old uv/color information. This is the better option, but also the slower option (will be noticeable with very large meshes like the demo skull - http://www.babylonjs-playground.com/#2JBSNA#4).
+2. optimization during simplification - The Simplification Settings now include a new variable : optimizeMesh, which is a boolean that defaults to false. If set to true, a non-altering mesh optimization will run during the mesh's preparation for decimation. The simplification will run on a temporary array of vertices and will correlate the new vertices' positions with the old uv/color information. This is the better option, but also the slower option (will be noticeable with very large meshes like the demo skull -  https://www.babylonjs-playground.com/#2JBSNA#4).
 
 Check which one of the methods works best for you. Both have their up and down sides, for better results use the 2nd option (set optimizeMesh to true in the settings).
 

@@ -2,7 +2,7 @@
 
 ![Screenshot](/img/extensions/materials/normal.jpg)
 
-## [Playgound Example](http://www.babylonjs-playground.com/#22VQKB)
+## [Playgound Example]( https://www.babylonjs-playground.com/#22VQKB)
 
 ## Using the normal material
 

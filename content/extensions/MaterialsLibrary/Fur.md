@@ -6,7 +6,7 @@ Fur material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/ma
 
 # Using the High Level mode
 
-A demo can be found at: http://www.babylonjs-playground.com/#2322Y7#0 
+A demo can be found at:  https://www.babylonjs-playground.com/#2322Y7#0 
 
 Fur materials have always been subjects of a lot of theories and conferences with multiple implementations thanks to multiple technologies.
 Here, with WebGL, we decided to choose one of these implementations, not hard to use and pretty smart (with performances) with simple models
@@ -71,8 +71,8 @@ furMaterial.highLevelFur = false;
 ![Fur material](/img/extensions/materials/fur.png)
 
 Demos can be found at:
- http://www.babylonjs-playground.com/#EUCNP#6  (Basic)
- http://www.babylonjs-playground.com/#EUCNP#7  (Uses heightmaps)
+  https://www.babylonjs-playground.com/#EUCNP#6  (Basic)
+  https://www.babylonjs-playground.com/#EUCNP#7  (Uses heightmaps)
 
 
 The fur material needs a high number of the triangular facets that make up a mesh to work well.
@@ -125,8 +125,8 @@ furMaterial.diffuseTexture = new BABYLON.Texture("leopard_fur.jpg", scene); // S
 # Meshes where the number of facets is not user controlled on creation.
 
 Demos can be found at:
- http://www.babylonjs-playground.com/#EUCNP#16  (Leopard fur converted to smooth before increasing facets)
- http://www.babylonjs-playground.com/#EUCNP#17  (Leopard fur converted to smooth after increasing facets)
+  https://www.babylonjs-playground.com/#EUCNP#16  (Leopard fur converted to smooth before increasing facets)
+  https://www.babylonjs-playground.com/#EUCNP#17  (Leopard fur converted to smooth after increasing facets)
 
 Unlike the ground mesh where you can supply the number of subdivisions or the sphere mesh where you can supply the number of segments the majority of meshes are created using a minimum number of facets.
 To apply the fur material to these the number of facets per face of the mesh needs to be increased.

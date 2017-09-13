@@ -34,5 +34,10 @@ Using 3DS Max, you can create instances of a mesh by just creating a clone insta
 
 ![](http://www.html5gamedevs.com/uploads/monthly_11_2014/post-5292-0-54659600-1415793353.jpg)
 
-## Demo
+# Limitations
+You can use instances with LOD but one limitation will apply in this case: You will have to hide the root objects.
+Here is an example where LODs reuse instances:
+https://www.babylonjs-playground.com/#0720FC#10
+
+# Demo
 http://www.babylonjs.com/?INSTANCES

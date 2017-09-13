@@ -20,7 +20,7 @@ To achieve today’s animated scene, we begin by creating our environment:
 ```javascript
 function createScene() {
   //Here... your basic scene as before: [scene, light, camera]
-  
+
   //Create a box
   var box1 = BABYLON.Mesh.CreateBox("Box1", 10.0, scene);
   box1.position.x = -20;
@@ -59,7 +59,7 @@ Now that we have our Animation object, it is time to say how those values will b
 
 ```javascript
 // An array with all animation keys
-var keys = []; 
+var keys = [];
 
 //At the animation key 0, the value of scaling is "1"
   keys.push({
@@ -83,7 +83,7 @@ var keys = [];
 For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent and outTangent values to use spline interpolations instead of linear interpolations:
 
 ```javascript
-  var keys = []; 
+  var keys = [];
 
   keys.push({
     frame: 0,
@@ -139,7 +139,7 @@ scene.beginAnimation(box1, 100, 0, true);
 | to | number | The fps ending frame
 optional | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE)
 optional | speedRatio | number | default : 1. The speed ratio of this animation
-optional | onAnimationEnd | () => void | The function triggered on the end of the animation (also dependent upon ANIMATIONLOOPMODE)
+optional | onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE)
 optional | animatable | [Animatable](http://doc.babylonjs.com/classes/3.0/animatable) | An optional specific animation
 ---
 
@@ -222,24 +222,24 @@ Fast and easy. :)
 
 ## Animation Blending
 
-As of Babylon.js 2.3+, you can  start an animation with *enableBlending* = true. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
+As of Babylon.js 2.3+, you can  start an animation with *enableBlending* = true. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device.
 
 In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position:
 
-http://www.babylonjs-playground.com/#2BLI9T#2
+ https://www.babylonjs-playground.com/#2BLI9T#2
 
 Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running.
 
 ## Easing functions
 
-You can add some behaviors to your animations, using easing functions. 
-If you want more information about easing functions, here are some useful links : 
+You can add some behaviors to your animations, using easing functions.
+If you want more information about easing functions, here are some useful links :
 - [MSDN Easing functions documentation](http://msdn.microsoft.com/en-us/library/ee308751.aspx)
 - [Easing functions cheat sheet](http://easings.net/fr)
 
 All those easing functions are implemented in BABYLON allowing you to apply custom mathematical formulas to your animations.
 
-Here are the predefined easing functions you can use : 
+Here are the predefined easing functions you can use :
 - ```BABYLON.CircleEase()```
 - ```BABYLON.BackEase(amplitude)```
 - ```BABYLON.BounceEase(bounces, bounciness)```
@@ -252,8 +252,8 @@ Here are the predefined easing functions you can use :
 - ```BABYLON.QuinticEase()```
 - ```BABYLON.SineEase()```
 
-You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates. 
-There are three possible values you can give for EasingMode: 
+You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates.
+There are three possible values you can give for EasingMode:
 
 - ```BABYLON.EasingFunction.EASINGMODE_EASEIN``` : Interpolation follows the mathematical formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEOUT``` : Interpolation follows 100% interpolation minus the output of the formula associated with the easing function.
@@ -290,7 +290,7 @@ torus.animations.push(animationTorus);
 scene.beginAnimation(torus, 0, 120, true);
 ```
 
-You can play with bezier curve algorithm too, using the **BezierCurveEase(x1, y1, x2, y2)** function. 
+You can play with bezier curve algorithm too, using the **BezierCurveEase(x1, y1, x2, y2)** function.
 For purpose, here is a good reference to create your curve algorithm : [http://cubic-bezier.com](http://cubic-bezier.com)
 
 Here is a pretty cool implementation using the bezier curve algorithm :
@@ -318,7 +318,7 @@ var FunnyEase = (function (_super) {
   return FunnyEase;
 })(BABYLON.EasingFunction);
 ```
-You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](http://www.babylonjs-playground.com/?20)
+You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**]( https://www.babylonjs-playground.com/?20)
 
 
 ## Complex animation
@@ -354,6 +354,46 @@ animation.addEvent(event1);
 ```
 
 And that's it!
+
+## Deterministic lockstep
+Sometimes it is important to make sure animations, physics and game logic code are in sync and decoupled by frame-rate variance. This might be useful to be able to replay how a scene evolved, given the same initial condition and inputs, or to minimize differences on multiple clients in a multi-user environment.
+
+The principle is to quantize the state execution time, by updating the state at a fixed frequency with discrete time steps, keeping an accumulator so to carry over exceeding time to the next frame update.
+
+To achieve this, Babylon engine needs to be created passing the following two options:
+
+```javascript
+this.engine = new BABYLON.Engine(theCanvas, true, {
+  deterministicLockstep: true,
+  lockstepMaxSteps: 4
+});
+```
+This way, the scene will render quantizing physics and animation steps by discrete chunks of the timeStep amount, as set in the physics engine. For example:
+```javascript
+var physEngine = new BABYLON.CannonJSPlugin(false);
+newScene.enablePhysics(this.gravity, physEngine);
+physEngine.setTimeStep(1/60);
+```
+With the code above, the engine will run discrete steps at 60Hz (0.01666667s) and, in case of a late frame render time, it will try to calculate a maximum of 4 steps (lockstepMaxSteps) to recover eventual accumulated delay, before rendering the frame.
+
+Note that when explicitly creating the CannonJSPlugin, it is important to pass false as _useDeltaForWorldStep parameter in its constructor, to disable CannonJS internal accumulator.
+
+To run logic code in sync with the steps, there are the two following observables on the scene:
+
+```javascript
+newScene.onBeforeStepObservable.add(function(theScene){
+  console.log("Performing game logic, BEFORE animations and physics for stepId: "+theScene.getStepId());
+});
+
+newScene.onAfterStepObservable.add(function(theScene){
+  console.log("Performing game logic, AFTER animations and physics for stepId: "+theScene.getStepId());
+});
+```
+Using them allows to run arbitrary logic code before and after animations and physics are updated.
+
+In the following example you can see in console the stepId in which the sphere is considered at rest and the rotation value for the rotating box. Multiple runs will always result in the same values, whatever the frame-rate.
+
+https://www.babylonjs-playground.com/#DU4FPJ#3
 
 **Next step**
 
