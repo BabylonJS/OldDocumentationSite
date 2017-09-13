@@ -152,26 +152,83 @@ $sidebar_width: 300px;
 
   #classMd {
     // Remove useless lines in the markdown
+    background-color:#F8F8F8;
+
+    
+
     hr {
       visibility: hidden;
     }
 
     // Titles (constructor, members, method
     h2 {
-      margin-top: 25px;
+       
+      margin-top: 42px;
       padding-bottom: 2px;
       border-bottom: 1px solid #DCDCDC;
+      color:white;
+      background-color:#333333;
+      font-weight:300;
+      margin-left:5px;
+      
+    }
+    h2{
+       &:hover{
+            cursor:pointer;
+        }
     }
 
-    // Members and methods names
-    h3 {
-      font-weight: 600;
+    .classHeader {
+        position:relative;
+
+        &.folded:after {
+          position:absolute;
+          right : 50px;
+          top : 50%;
+          transform : translateY(-50%);
+           font-family: "FontAwesome";
+           content: "\f107";
+           color:white;
+        }
+        &.collapsed:after {
+          position:absolute;
+          right : 50px;
+          top : 50%;
+          transform : translateY(-50%);
+           font-family: "FontAwesome";
+           content: "\f106";
+           color:white;
+        }
     }
 
+    #description {
+      @extend .classHeader;
+    }
+
+    #constructor {
+       @extend .classHeader;
+    }
+
+    #members {
+           @extend .classHeader;
+    }
+
+    #methods {
+            @extend .classHeader;
+    }
+
+    #constructor + h2 {        
+      background-color:white;
+      color:black;
+
+    }
+
+    
     h2, h3 {
       a {
         margin: 0px 5px;
-      }
+        font-weight:normal;
+        }
 
       a.permalink{
         &.invisible {
@@ -180,28 +237,42 @@ $sidebar_width: 300px;
 
       }
     }
+    // Members and methods names
+    h3 {
+     font-weight: 600;
+      border-bottom: 1px solid #ccc;
+     margin: 45px 0px 0 20px;
+     padding-bottom : 8px;
+
+     a {
+        // margin-left : -20px;
+     }
+       }
+
 
     //"Parameters"
-    h4 {
-      margin-left: 15px;
+    h4 { 
+      margin-left: 26px;
       font-weight: 600;
-    }
+      border-bottom: 1px solid #777;
+       }
 
     // Parameters table
     table {
       max-width:100%;
       overflow-x: scroll;
       text-align: left;
-      margin-left: 10px;
+      margin: 40px 0 40px 26px;
 
       thead {
 
         tr {
-          background-color: #F1F1F1;
-
+          background-color: #333333;
+            color:white;
           th {
             padding: 6px 11px;
-            border: 2px solid #DCDCDC;
+            border: 2px solid #868686;
+            font-weight:300;
           }
         }
       }
@@ -212,7 +283,7 @@ $sidebar_width: 300px;
 
           td {
             padding: 6px 11px;
-            border: 2px solid #DCDCDC;
+            border: 2px solid #868686;
           }
         }
         tr:nth-child(2n) {
@@ -223,7 +294,9 @@ $sidebar_width: 300px;
 
     // Members/method description
     p {
-      margin-left: 15px;
+      margin: 5px 15px 5px 15px;
+      background-color:#F8F8F8;
+
     }
   }
 }
