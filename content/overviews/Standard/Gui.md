@@ -164,6 +164,7 @@ Property|Type|Default|Comments
 alpha|number|1|Between 0 and 1. 0 means completely transparent. 1 means fully opaque
 color|string|Black|Foreground color
 fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
+fontStyle|string|Empty string|Can be inherited. Value can be "italic", "bold" or "oblique"
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 
