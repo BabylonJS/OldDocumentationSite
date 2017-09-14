@@ -119,3 +119,14 @@ var tiledGround = BABYLON.Mesh.CreateTiledGround("Tiled Ground", -3, -3, 3, 3, s
 Parameters are: name, xmin, zmin, xmax, zmax, subdivisions = the number of tiles. (subdivisions.w : in width; subdivisions.h: in height), precision = the number of subdivisions inside a tile. (precision.w : in width; precision.h: in height), scene, updatable.
 
 Kostar111 was also kind enough to give us a fine tutorial about how to use tiled grounds. [Click right here](http://makina-corpus.com/blog/metier/how-to-use-multimaterials-with-a-tiled-ground-in-babylonjs) to view it. At that link, Kostar111 thoroughly explains how the tiled ground works, and also provides some Babylon.js Playground scenes that nicely demonstrate some of its many uses.
+
+# Further Reading
+
+## Basic - L1
+
+[Mesh Overview](/features/Shapes)  
+[Set Shapes 101](/babylon101/Discover_Basic_Elements)  
+[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
+[Set Shapes](/how_to/Set_Shapes)  
+[Parametric Shapes](/how_to/Parametric_Shapes)  
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes)  

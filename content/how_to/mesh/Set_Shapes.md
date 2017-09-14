@@ -225,8 +225,6 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 
 # Further Reading
 
-[Mesh Overview](/features/Shapes)
-
 ## How To Make the Most of Options
 
 [Side Orientation](/babylon101/Discover_Basic_Elements#side-orientation)  
@@ -236,16 +234,19 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 
 ## Basic - L1
 
-[Mesh Overview](/features/Shapes)
-
-## Mid Level - L2
-
-[Basic Shapes](/babylon101/Discover_Basic_Elements)   
-[Polyhedra Shapes](/how_to/Polyhedra_Shapes)
-
-## More Advanced - L3
-
+[Mesh Overview](/features/Shapes)  
+[Set Shapes 101](/babylon101/Discover_Basic_Elements)  
+[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
+[Parametric Shapes](/how_to/Parametric_Shapes)  
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes)  
 [Decals](/how_to/Decals) 
 
+## Mid Level - L2
+ 
+[Ribbons In Detail](/how_to/Ribbon_Tutorial)
+
+## More Advanced - L3
+   
+[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
 
 

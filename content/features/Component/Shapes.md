@@ -6,7 +6,7 @@ PG_TITLE: A Wide Range of Mesh Types and Features
 
 In the 3D virtual world shapes are built from meshes, lots of trangular facets joined together, each facet made from three vertices.
 
-![A mesh](/features/scene/custom1.jpg)
+![A mesh](/img/features/scene/custom1.jpg)
 
 Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 

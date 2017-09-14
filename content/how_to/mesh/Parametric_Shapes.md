@@ -329,19 +329,20 @@ Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## Basic - L1
 
-[Mesh Overview](/features/Shapes)
+[Mesh Overview](/features/Shapes)  
+[Set Shapes 101](/babylon101/Discover_Basic_Elements)  
+[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
+[Set Shapes](/how_to/Set_Shapes)  
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes)  
+[Decals](/how_to/Decals) 
 
 ## Mid Level - L2
-
-[Basic Shapes](/babylon101/Discover_Basic_Elements)   
-[Polyhedra Shapes](/how_to/Polyhedra_Shapes)
+ 
+[Ribbons In Detail](/how_to/Ribbon_Tutorial)
 
 ## More Advanced - L3
    
-[Ribbons In Detail](/how_to/Ribbon_Tutorial)  
 [Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
-[Decals](/how_to/Decals) 
-
 
 
 

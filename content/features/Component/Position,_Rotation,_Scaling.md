@@ -2,9 +2,9 @@
 ID_PAGE: 22041
 PG_TITLE: 04. Position, Rotation, Scaling
 ---
-# Position, Rotation, Scaling
+# Extensive Ways to Position, Rotate and Scale
 
-Having created a mesh it is then possible to set its position, rotation and scale. Using the MeshBuilder method makes it less likely that scaling will be needed as dimensions in the x, y and z directions can be set during creation.
+Having created a mesh it is then possible to set its position, rotation and scale. _Using the MeshBuilder_ method makes it less likely that scaling will be needed as dimensions in the x, y and z directions can be set during creation.
 
 For example to create a box with width 2, height 3 and depth 1 requires
 
@@ -188,7 +188,6 @@ It is also possible to change the center of rotation by setting a pivot point.
 ## Basic - L1  
 [Positions, rotations, scaling 101](/babylon101/Position)  
 [Rotation Around an Axis](/how_to/Axis)
-
 
 
 ## Mid Level - L2

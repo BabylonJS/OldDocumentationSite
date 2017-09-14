@@ -2,16 +2,32 @@
 PG_TITLE: 04 Position and Rotation
 ---
 
-# Frames of Reference
+# Position, Rotation and Scaling
 
-There are two frames of reference that BabylonJS uses with a mesh, the **world axes** and the **local axes**. 
-In all diagrams and playgrounds X axis is red, Y axis is Green and Z axis is blue. 
-In all examples a non symmetrical mesh, the pilot, will be used. 
+The 101 course only considers the setting of a meshes _position_, _rotation_ and _scaling_. [Further Reading](#further-reading) will show you a range of methods to translate and rotate a mesh by a given amount.
+
+Whatever the methods used they require a frame of reference, a means to describe the position, rotation or scaling and something to help visualize the effects of applying these. The visualization will be helped by the **Pilot** a constructed asymmetric shape.
 
 ![The Pilot](/img/how_to/Mesh/pilot.jpg)
 The Pilot
 
-When the pilot is created its position and rotation are both set to (0, 0, 0), its scaling to (1, 1, 1) and all frames of reference coincide.
+## Frames of Reference
+
+There are two frames of reference that Babylon.js uses, the **world axes** and the **local axes**. The origin of the **world axes** never changes.
+
+In all diagrams and playgrounds X axis is red, Y axis is Green and Z axis is blue. 
+
+When meshes are created their center is placed at the origin of the **word axes** and their position is always placed relative to the **word axes**.
+
+The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. Rotations and scaling of a mesh are done with the centers of rotation and enlargement at the origin of the **local axes**.
+
+## Vectors
+
+All positions, rotations and scaling are give as 3 dimensional vectors using _new BABYLON.Vector3(x, y, z)_ and can be set separately.
+
+## The Pilot
+
+Following its creation the pilot's position is at the world origin with rotation zero for all axes and its scaling is one, both **world axes** and the pilot's **local axes** coincide.
 
 ![Creation of Pilot](/img/how_to/Mesh//pilot1.jpg)
 
@@ -33,11 +49,13 @@ pilot.position.z  =  4;
 
 The local and world axes remain in the same orientation.
 
-[Playground Example for Position](http://www.babylonjs-playground.com/#1ZMJQV#1)
+![pilot position](/img/babylon101/pilot1.jpg)
+
+[Playground Example for Position](https://www.babylonjs-playground.com/#UBWFJT#2)
 
 ## Rotation
 
-WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and there are many varying conventions for applying rotations. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/how_to/Applying_Rotations.html)
+WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/how_to/Applying_Rotations.html).
 
 In BabylonJS 
 
@@ -49,23 +67,37 @@ Rotations are set using
 or
 
 ```javascript
-pilot.rotation.x  =  alpha;
-pilot.rotation.y  =  beta;
-pilot.rotation.z  =  gamma;
+pilot.rotation.x  =  alpha; //rotation around x axis
+pilot.rotation.y  =  beta; //rotation around y axis
+pilot.rotation.z  =  gamma; //rotation around z axis
 ```
+where alpha, beta and gamma are angles measured in radians.
 
-**with the following conventions**
+PAUSE FOR THOUGHT Immediately since three rotations are given about three different axes you need to ask in which order are they applied about which frames of reference and in which direction.
 
-All rotations are in radians and are anticlockwise when looking in the direction of the positive axes.
+Either of the following two conventions can be considered as being used by rotation in Babylon.js since both lead to the same outcome.
 
-Rotation turns about the centre of rotation at the origin of the **local axes** and rotation with reference axes parallel to the **world axes** using a vector ( alpha, beta, gamma) or individual components. 
-Where alpha is the rotation about the x axis, beta about the y axis  and gamma about the z axis. 
+### Convention 1 - **Local Axes**
 
-Rotations are carried out by Babylon.js about the **local axes** and they are always applied in the order y, x, z.
+For **local axes** using _rotation_ turns the mesh with the centre of rotation at the origin of the **local axes** in the axes order y, x, z about the **local axes**. All rotations are anticlockwise when looking in the direction of the positive axis. 
 
-However on the other hand should you think of the rotations as being about the **world axes** then they are always applied in the order z, x, y.
+The following sequence of images shows the initial starting position of the pilot followed by a rotation of &pi;/2 about the local y axis, then &pi;/2 about the local x axis and finally a rotation of &pi;/2 about the local z axis.
 
-However you think about it the following all produce the same orientation
+![start](/img/babylon101/pilotL0.jpg)  ![Y](/img/babylon101/pilotL2.jpg)  ![X](/img/babylon101/pilotL3.jpg)  ![Z](/img/babylon101/pilotL4.jpg)  
+
+### Convention 2 - **World Axes**
+
+Compared to convention 1 the center of rotation does not change but the axes of rotation do.
+
+For **world axes** using _rotation_ turns the mesh with the centre of rotation at the origin of the **local axes** in the axes order z, x, y about axes parallel to the **world axes**. All rotations are anticlockwise when looking in the direction of the positive axis. 
+
+The following sequence of images shows the initial starting position of the pilot followed by a rotation of &pi;/2 about the world z axis, then &pi;/2 about the world x axis and finally a rotation of &pi;/2 about the world y axis.
+
+![start](/img/babylon101/pilotL1.jpg)  ![Y](/img/babylon101/pilotW2.jpg)  ![X](/img/babylon101/pilotW3.jpg)  ![Z](/img/babylon101/pilotW4.jpg)  
+
+### Summary
+
+For _rotation_ whichever way you think about it the results are the same and the following all produce the same outcome
 
 ```javascript
 pilot.rotation = new BABYLON.Vector3(alpha, beta, gamma);
@@ -83,11 +115,6 @@ pilot.rotation.z  =  gamma;
 pilot.rotation.x  =  alpha;
 ```
 
-The following diagrams show that applying a rotation of PI/2 in the axis order, z, x, y  or  y, x, z  give the same result.
-
-![Rotations  XYZ](/img/how_to/Mesh/expected.jpg)
-
-![Rotations YXZ ](/img/how_to/Mesh/actualyxz.jpg)
 
 
 This consistency of order y, x, z for **local axes**  or z, x, y for **world axes** can be further checked out in the following playground by re-ordering and/or commenting out lines 38, 39 and 40

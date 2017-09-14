@@ -266,3 +266,14 @@ Finally, shapes don't have to be centered in the local coordinate system. 
 A centered shape will be extruded symmetrically centered along the path axis. An un-centered shape will be extruded offset from the path axis.  
 
 Easy way to generate strange shapes : http://www.babylonjs-playground.com/#RF9W9#47   
+
+# Further Reading
+
+## Basic - L1
+
+[Mesh Overview](/features/Shapes)  
+[Set Shapes 101](/babylon101/Discover_Basic_Elements)  
+[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
+[Set Shapes](/how_to/Set_Shapes)  
+[Parametric Shapes](/how_to/Parametric_Shapes)  
+[Polyhedra Shapes](/how_to/Polyhedra_Shapes)  
