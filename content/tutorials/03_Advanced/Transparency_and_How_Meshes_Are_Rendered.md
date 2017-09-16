@@ -23,18 +23,19 @@ This is what a depth buffer looks like for a scene which contains only opaque me
 ## General Order
 
 Before actually drawing meshes on the screen, BabylonJS puts them in the following categories, which are presented in the order in which they are drawn:
+1. **Depth pre-pass meshes**
 
-1. **Opaque meshes**
+2. **Opaque meshes**
 
-2. **Alpha tested meshes**
+3. **Alpha tested meshes**
 
-3. **Alpha blended meshes**, sorted by depth (= distance to camera)
+4. **Alpha blended meshes**, sorted by depth (= distance to camera)
 
-4. **Sprites** (handled by SpriteManager)
+5. **Sprites** (handled by SpriteManager)
 
-5. **Particles** (handled by ParticleSystem)
+6. **Particles** (handled by ParticleSystem)
 
-Categories 4 and 5 are self-explanatory. Note that they are always drawn after all the other meshes, and that they do not use any depth buffer that may have been previously created. These simply cannot be hidden by regular meshes.
+Categories 5 and 6 are self-explanatory. Note that they are always drawn after all the other meshes, and that they do not use any depth buffer that may have been previously created. These simply cannot be hidden by regular meshes.
 
 ## Rendering Groups
 
@@ -63,7 +64,12 @@ Keep in mind that this property works only for alpha-blended mesh, and has absol
 
 # Opaque or Transparent?
 
-How your meshes are categorized may be very important for the final aspect of your scene. Let's take a closer look at the way categories 1 to 3 are defined.
+How your meshes are categorized may be very important for the final aspect of your scene. Let's take a closer look at the way categories 1 to 4 are defined.
+
+### Depth pre-pass meshes
+
+The depth pre-pass meshes define an additional rendering pass for meshes. During this pass, meshes are only rendered to depth buffer. The depth pre-pass meshes are not exclusive. A mesh can have a depth pre-pass and an opaque or alpha blend pass. The enable the depth pre-pass for a mesh, jsut call `mesh.material.needDepthPrePass = true`.
+The goal is either to optimize the scene by rendering meshes to the depth buffer to reduce overdraw or to help reducing alpha blending sorting issues.
 
 ### Opaque Meshes
 
@@ -79,7 +85,7 @@ A pixel is considered transparent if its alpha value is < 0.4, and opaque if not
 
 These meshes have translucent parts that may have an alpha value of 0.0 (completely transparent) to 1.0 (completely opaque). Their color is blended with what's behind them to reflect that. These meshes are sorted by depth, based on the center of their bounding sphere. This does not prevent some problems when several alpha-blended meshes overlap.
 
-Also, note that backface culling is pretty much obligatory for alpha blended meshes, otherwise polygons from the front and the back of the objects will be garbled.
+Also, note that backface culling is pretty much obligatory for alpha blended meshes, otherwise polygons from the front and the back of the objects will be garbled (unless you use a depth pre-pass)
 
 This is what a depth buffer looks like for a scene that contains each of those type of meshes:
 ![All kinds of meshes](http://i.imgur.com/l0XIlKv.png)
@@ -134,5 +140,6 @@ The transparent concave meshes render obvisouly with the same rules than explain
 For some reasons (example : camera flying from outside to inside a sphere), you may want to remove the backface culling in order to also render the back side of the mesh :  https://www.babylonjs-playground.com/#1PLV5Z#1  
 As you can notice, the transparency rendering rules may lead to some weird things making some parts of the mesh geometries visible.  
 In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` :  https://www.babylonjs-playground.com/#1PLV5Z#2  
+Other option will be to rely on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#16
 
 *(to be expanded)*

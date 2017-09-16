@@ -33,7 +33,7 @@ Just like any other camera, to get the camera working correctly with user input 
 
 `camera.attachControl(canvas, true);`
 
-This will, however, only work on all browsers. Chromium (and probably the rest of the browsers soon) only support attaching the VR device to the scene during a user interaction (a mouse click, for example). To get that working correctly, a simple solution would be:
+This will, however, won't work on all browsers. Chromium (and probably the rest of the browsers soon) only support attaching the VR device to the scene during a user interaction (a mouse click, for example). To get that working correctly, a simple solution would be:
 
 ```javascript
 scene.onPointerDown = function () {
@@ -110,13 +110,7 @@ Each VR device currently available (Oculus rift and vive) has controllers that c
 
 During the WebVRFreeCamera initialization it will attempt to attach the controllers and detect them if found. If found, the controllers will be located at `camera.controllers` which is an array that will either have a length of 2 or 0. If the controllers are attached and were not detected, you could also try to manually call `camera.initControllers()` at a future time.
 
-To fire a callback when the controllers are found you can use the optional `camera.onControllersAttached` callback:
-
-```javascript
-onControllersAttached = function(controllers) {
-    console.log(controllers.length === 2); // outputs true;
-}
-```
+To fire a callback when the controllers are found you can use the optional `camera.onControllersAttachedObservable` observable.
 
 Initializing the controllers using the camera will also attach them to the camera, which will allow moving the controllers together with the WebVR camera, if moved by the user.
 
@@ -226,15 +220,18 @@ Note that this will create a new quaternion to the mesh .
 
 The controllers can also be initialized without using a WebVR camera, which means - you can use them to control your regular WebGL game or 3D application.
 
-To do that, simply initialize the Gamepads Class:
+To do that, simply add some observer to the general gamepad manager:
 
 ```javascript
 
-new BABYLON.Gamepads((gp) => {
-    if (gp.type === BABYLON.Gamepad.POSE_ENABLED) {
-        // Do something with the controller!
-    }
+var manager = this.camera.getScene().gamepadManager;
+manager.onGamepadConnectedObservable.add(function(gamepad){
+});  
+
+manager.onGamepadDisconnectedObservable.add(function(gamepad){
 });
+
+var gamepad = manager.getGamepadByType(Gamepad.XBOX);
 
 ```
 
@@ -280,7 +277,7 @@ Enjoy!
     Ah, I know this problem. 
 
     1. Try pressing the left and right buttons of the vive controller, or the pad button of the oculus touch. This should turn them on and make them visible.
-    2. Make sure you called `camera.initControllers()` !
+    2. Make sure you called `camera.attachControl()` !
     3. open your console, search for errors.
     4. type `navigator.getGamepads()` in your console. Is the list empty? are there controllers in the list? what controllers?
     5. make sure the gamepad extensions is enabled in your browser! Check https://mozvr.com/ for installation instructions.
