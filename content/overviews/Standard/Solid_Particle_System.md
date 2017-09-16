@@ -684,10 +684,3 @@ particleSystem.endSpriteCellID = 44;
 particleSystem.spriteCellHeight = 64;
 particleSystem.spriteCellWidth = 64;
 ```
-
-
-
-
-
-
-
