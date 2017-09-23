@@ -644,3 +644,43 @@ SPS.rebuildMesh();
 Except in some very specific cases, you might not need to use this function.  
 
 
+### Particle Animation
+Starting from Babylon.js v3.1 particle system will allow particle animation using animation sheet.
+[Sample Demo](http://www.babylonjs-playground.com/#CLN02N#3)
+To enable particle animation in `ParticleSystem` you pass a true parameter in the `ParticleSystem` constructor, the default value for is false then assign the `particleTexture`
+
+```javascript
+var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
+particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
+                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
+```
+
+After that you need to set some details the `ParticleSystem` will use to do the animation, the first properties are `spriteCellHeight` and `spriteCellWidth` which are the cell width and height for each sprite in the animation sheet. then you can choose which is the starting and ending cell for your sheet using properties `startSpriteCellID` and `endSpriteCellID`.
+
+Here comes the tricky part regarding the number of loops the particle will make before it gets disposed from the scene, if you enable `spriteCellLoop` by set the property to true and property `spriteCellChangeSpeed` to the speed you want, the system will loop the animation sheet from `startSpriteCellID` till `endSpriteCellID` then loop again till the sheet get disposed. if `spriteCellLoop` is false then once the sheet reachs `endSpriteCellID` the particle will use this cell till it get disposed from the scene.
+
+```javascript
+var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
+particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
+                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
+
+particleSystem.startSpriteCellID = 0;
+particleSystem.endSpriteCellID = 44;
+particleSystem.spriteCellHeight = 64;
+particleSystem.spriteCellWidth = 64;
+particleSystem.spriteCellLoop = true;
+particleSystem.spriteCellChangeSpeed = 4; // default is zero
+```
+
+If you want your particle animation to match the life time of the particle set property `spriteCellChangeSpeed` to zero (default) after that the `ParticleSystem` will calculate how to sync between the animation sheet and particle life time so the first sprite will `startSpriteCellID` and the last will be `endSpriteCellID`.
+
+```javascript
+var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
+particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
+                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
+
+particleSystem.startSpriteCellID = 0;
+particleSystem.endSpriteCellID = 44;
+particleSystem.spriteCellHeight = 64;
+particleSystem.spriteCellWidth = 64;
+```

@@ -207,6 +207,8 @@ text|string|null|Text to display
 color|string|white|Foreground color
 background|string|black|Background color
 focusedBackground|string|black|Background color to use when the control is focused
+placeholderText|string|null|Text to display as placeholder (when there is no text defined and the control is not focused)
+placeholderColor|string|gray|Foreground color to use when the placeholder text is displayed
 autoStretchWidth|boolean|true|The control will resize horizontally to adapt to text size
 maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
 margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
