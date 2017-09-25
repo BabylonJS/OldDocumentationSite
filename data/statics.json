@@ -343,7 +343,7 @@
         {
           "title": "How materials work",
           "filename": "How_materials_work"
-        }       
+        }
       ]
     },
     {
@@ -649,7 +649,7 @@
           "filename": "RandomEffector"
         }
       ]
-    },    
+    },
     {
       "title": "Editor",
       "name": "Editor",
@@ -701,7 +701,7 @@
           "filename": "Using_Materials_Builder"
         }
       ]
-    }   
+    }
   ],
   "overviews": [
     {
@@ -767,6 +767,10 @@
         {
           "title": "Occlusion Queries",
           "filename": "OcclusionQuery"
+        },
+        {
+          "title": "NPM Support",
+          "filename": "NPM_Support"
         }
       ]
     },
