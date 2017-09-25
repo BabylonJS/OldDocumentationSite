@@ -182,4 +182,13 @@ To Launch the server, you can start from the tools/gulp folder:
 ```
 gulp webserver
 ```
+## Using the material with Babylon.js file loader
 
+Babylon.js file format supports the use of custom material. You must provide a `serialize()` and a `Parse()` functions alongside with a `getClassName()` function. 
+To let the loader knows about your material, you will also need to add the following line to the code using your material:
+
+```
+Tools.RegisteredExternalClasses["MyMaterial"] = MyMaterial;
+```
+
+This code will add your class to the list of supported external classes so that the loader will be able to instantiate it when loading a .babylon file with a reference to your material.
