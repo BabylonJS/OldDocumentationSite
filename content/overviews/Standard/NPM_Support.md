@@ -20,7 +20,7 @@ We offer babaylon.js' core and its modules as npm packages. The following are av
 
 ## Basic usage
 
-Babylon's core and modules tae care of setting the dependencies between themselves, so the developer simply needs to import or require them to get everything working.
+Babylon's core and modules take care of setting the dependencies between themselves, so the developer simply needs to import or require them to get everything working.
 
 ### Installing Babylon.js
 
