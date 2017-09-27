@@ -66,6 +66,17 @@ An exception is the GUI library, which has its own namespace. It can therefore b
 import * as GUI from 'babylonjs-gui';
 ```
 
+### using require()
+
+If you prefer not to use es6-import syntax, you can use require in order to import babylon into your project:
+
+```
+let BABYLON = require('babylonjs');
+let GUI = require('babylonjs-gui');
+let materials = require('babylonjs-materials'); // unused variable
+```
+
+
 ## TypeScript support
 
 Being written in TypeScript, Babylon.js will always support TypeScript developers. We provide a declaration file in each package, that either extends the BABYLON namespace or declares a new namespace that can be used during development.
@@ -123,24 +134,7 @@ module.exports = {
 
 ## External libraries
 
-Due to the way BABYLON is currently built, the global variable (window) is being used internally. In order to have BABYLON's external dependencies, such as Cannon or Oimo include them in the window object after importing them.
-
-An example with oimo:
-
-```
-npm install --save oimo
-```
-
-And:
-
-```
-import * as OIMO from 'oimo';
-window.OIMO = OIMO;
-
-// In TypeScript: 
-(<any>window).OIMO = OIMO;
-```
-You will need to add "window" support to your tsconfig.json (which you should have already done, actually), adding "dom" in compileOptions.lib
+Cannon and Oimo (both physics engines) are being delivered as dependencies when installing babylonjs using npm. There is no need to install them on your own.
 
 
 ## Questions and Troubleshooting
@@ -153,3 +147,9 @@ You will need to add "window" support to your tsconfig.json (which you should ha
 ### Even thou I use only a few classes from the BABYLON namespace, the entire Babylon module is included
 
 Due to the way BabylonJS is built, Tree-Shaking is currently not quite possible. Babylon's internal objects have deep connections with one another, which is not easy to change. That means, that your built JS file will be at least Babylon.js' minified size.
+
+### Naming is different than what the documentation states!
+
+Our documentation always refers to the BABYLON namespace. We therefore always use this namespace when talking about objects/classes, and also use this namespace when talking about the GUI.
+
+When using es-6 imports or require, you are the one responsible to setting the namespace in accordance to your needs. Pay attention when changing it and when copying code from the Playground.
