@@ -44,6 +44,10 @@
                     html: '<i class="fa fa-wrench"></i>Extensions'
                 }),
                 $('<a>', {
+                    href: '/samples',
+                    html: '<i class="fa fa-book"></i>Samples'
+                }),
+                $('<a>', {
                     href: '/classes',
                     html: '<i class="fa fa-files-o"></i>Classes'
                 }),

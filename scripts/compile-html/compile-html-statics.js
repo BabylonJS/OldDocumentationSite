@@ -43,6 +43,7 @@ module.exports = function(done){
         "resources",
         "extensions",
         "how_to",
+        "samples",
         "features"
     ];
 

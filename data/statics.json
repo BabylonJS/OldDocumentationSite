@@ -282,12 +282,12 @@
           "filename": "Rotate"
         },
         {
-          "title": "Using a Pivot",
+          "title": "Set and Use a Pivot",
           "level": 3,
           "filename": "Pivots"
         },
         {
-          "title": "Rotation Around an Axis Through a Pivot",
+          "title": "Rotate Around an Axis About a Point",
           "level": 3,
           "filename": "Pivot"
         },
@@ -1110,6 +1110,111 @@
       ]
     }   
   ],
+  "samples": [
+    {
+       "title": "All",
+       "name": "All",
+       "desc": "All the Samples."
+    },
+    {
+      "title": "Introduction",
+       "name": "introduction",
+       "desc": "Introduction to Samples",
+       "files": [
+         {
+           "title": "Introduction to Samples",
+           "filename": "Introduction"
+         }
+       ]
+    },
+    {
+      "title": "Gamelet",
+       "name": "gamelets",
+       "desc": "Gamelets",
+       "files": [
+         {
+           "title": "A Sequence of Animations",
+           "level": 1,
+           "filename": "Sequence"
+         },
+         {
+           "title": "Simple Car Following Path",
+           "level": 2,
+           "filename": "Car_Path"
+         },
+         {
+           "title": "Build a House from a Floorplan",
+           "level": 2,
+           "filename": "House"
+         },
+         {
+           "title": "Making a Simple Driven Car",
+           "level": 3,
+           "filename": "Car_Driven"
+         },
+         {
+           "title": "Collisions Introduction",
+           "level": 3,
+           "filename": "Collide_Intro"
+         },
+         {
+           "title": "Collision Issues",
+           "level": 3,
+           "filename": "Issues"
+         },
+         {
+           "title": "Simple Particle Collisions on a Grid",
+           "level": 3,
+           "filename": "Grid_Moves"
+         },
+         {
+           "title": "Slow Particle Collisions",
+           "level": 3,
+           "filename": "Slow_Collide"
+         },
+         {
+           "title": "Freely Moving Particle Collisions",
+           "level": 3,
+           "filename": "Free_Collide"
+         }
+       ]
+    },
+    {
+      "title": "Snippet",
+       "name": "snippets",
+       "desc": "Code Snippets",
+       "files": [
+         {
+           "title": "Minimise Vertices",
+           "filename": "Minimise_Vertices"
+         },
+         {
+           "title": "Increasing Facets",
+           "filename": "Increasing_Facets"
+         },
+         {
+           "title": "Show Vertex Normals",
+           "filename": "Normals"
+         },
+         {
+          "title": "Arc Between Vectors",
+          "filename": "Sector"
+         },
+         {
+           "title": "Display Path3D Curve",
+           "filename": "Path3D"
+         },
+         {
+          "title": "Placing a Pivot",
+          "filename": "Pivot"
+         },
+         {
+           "title": "Display World Axes",
+           "filename": "World_Axes"
+         }
+       ]
+    }
+   ],
   "features": [
     {
       "title": "All",
@@ -1131,7 +1236,7 @@
           "filename": "Shapes"
         },
         {
-          "title": "Extensive Ways to Position, Rotate and Scale",
+          "title": "Positioning, Rotating, Scaling",
           "filename": "Position,_Rotation,_Scaling"
         },
         {

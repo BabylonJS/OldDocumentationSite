@@ -2,7 +2,7 @@
 PG_TITLE: Translate and Rotate in Detail
 ---
 
-# Frames of Reference
+# Frames of Reference 
 
 Two frames of reference are used **world axes** and **local axes** .  
 The frame of reference used depends whether translate and rotate take place on the *world space* or the *local space*.  

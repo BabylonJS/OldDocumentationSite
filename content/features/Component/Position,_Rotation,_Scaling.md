@@ -2,90 +2,38 @@
 ID_PAGE: 22041
 PG_TITLE: 04. Position, Rotation, Scaling
 ---
-# Extensive Ways to Position, Rotate and Scale
+# Positioning, Rotating and Scaling 
 
-Having created a mesh it is then possible to set its position, rotation and scale. _Using the MeshBuilder_ method makes it less likely that scaling will be needed as dimensions in the x, y and z directions can be set during creation.
+There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/babylon101/position#frames-of-reference), either the **world axes** or the **local axes**, is being used. 
 
-For example to create a box with width 2, height 3 and depth 1 requires
+Prior to the _MeshBuilder_ method of creating a mesh the only way to produce a cuboid or ellipsoid, for example, was to create a cube and sphere and scale them in one dimension or another. This could produce difficulties with subsequent manipulations of a mesh. Since using _MeshBuilder_ allows you to set different sizes for meshes in the x, y and z directions these difficuties with [scaling](/babylon101/position#scaling) no longer arise. 
 
-```javascript
-var box = BABYLON.MeshBuilder.CreateBox("box", {width:2, height:3, depth:1}, scene);
+There are two types of tactic to position and rotate a mesh; one type is the **set-at** tactic and the other is **move-by**. [Position](babylon101/position#position) and [rotation](/babylon101/position#rotation) are both of the **set at** type, the values being given set the actual position and rotation of the mesh. On the other hand [addRotation](babylon101/position#sequencing-rotations) is a **move-by** type since it adds the given rotation around one axis to the current rotation of the mesh. You can read aboout more **set-at** and **move-by** types below.
 
-//or for the legacy method
+## Set-At Methods
 
-var box = BABYLON.Mesh.CreateBox("box", 1, scene);
-box.scaling.x = 2;
-box.scaling.y = 3;
-```
-[Playground Example Scaling](http://www.babylonjs-playground.com/#1VMQNH)
-
-It is also possible to translate or rotate a mesh from its given position and rotation by a vector or an angle respectively.
-
-## Frames of Reference
-
-There are two frames of reference one the **world axes** in *world space* and the other the **local axes** in *local space*. 
-When a mesh is created the **world axes** and the **local axes** coincide. As a mesh moves the **local axes** move with it. 
- 
-
-## Setting Methods
-
-![Elements](/img/how_to/Rotation%20and%20scaling/03.png)
-
-[Playground Example - Positioned, Scaled, and Rotated Boxes](http://www.babylonjs-playground.com/?3)
-
-Using these methods the position and orientation of the mesh is set by the values given. The initial position and orientation of a mesh when first created is (0, 0, 0). Position is given in terms of the **world axes** and rotation is computed using **local axes**. 
-
-The order you assign the rotation property values doesn't matter (`.z` before `.x` for instance) since the final mesh rotation is always calculated in the  order - around Y first, then around X, finally around Z - using the **local space**.  If you think in terms of **world space** then the order used is - around Z first, then around X, finally around Y
-
-### Position
-
-You can easily position any boxes in the scene, anywhere you like. For example:
-
-```javascript
-//Positioning the boxes
-box1.position = new BABYLON.Vector3(-20, 0, 0);
-box2.position.x = -10; // or box2.position = new BABYLON.Vector3(-10,0,0);
-box3.position.y = 0;
-```
-A three dimension vector (x, y, z) in Babylon.js is created by using new BABYLON.Vector3(x, y, z) with assigned values for x, y and z.
-
-[Playground Example Position](http://www.babylonjs-playground.com/#35CPC)
+In addition to  _position_, which places a mesh accoring to the **world axes**, and _rotation_ which sets the orientation with [Euler angles](/how_to/Euler_Angles), the following are available to set a mesh's position and rotation.
 
 ### Position using Local Axes
 
-This method sets the position with reference to the origin of the **world axes** and the orientation of the **local axes**. 
+This _setPositionWithLocalVector_ method sets the position with reference to **local space** which is a frame of reference that uses the origin of the **world axes** and axes parallel to those of the mesh's **local axes**. 
 
 ```javascript
 mesh.setPositionWithLocalVector(new BABYLON.Vector3(x, y, z));
 ```
-[Playground Example setPositionWithLocalVector](https://www.babylonjs-playground.com/#EYZE4Q)
+[Playground Example setPositionWithLocalVector](https://www.babylonjs-playground.com/#EYZE4Q#2)
 
-In order to obtain the current position of the object in local space use
+In order to obtain the current position of the object in **local space** use
 
 ```javascript
 var localPosition = mesh.getPositionExpressedInLocalSpace();
 ```
 
-### Rotation 
-
-All angles are in radians
-
-```javascript
-//Rotate the box around the x axis
-box1.rotation.x = Math.PI/4; // or box1.rotation = new BABYLON.Vector3(Math.PI/4,0,0);
-
-//Rotate the box around the y axis
-box2.rotation.y = Math.PI/6;
-```
-In this case the vector (alpha, beta, gamma), where x = alpha, y = beta, z = gamma, means a rotation around x of alpha, around y of beta and around z of gamma.
-
-[Playground Example Rotation](http://www.babylonjs-playground.com/#YIT1S)
-
 ### RotationQuaternion
 
 All angles are in radians
 
-A rotationQuaternion sets the orientation of a mesh by a rotation around a given axis. It is a four dimensional vector 0f the form (x, y, z, w). The most straight forward way to use a rotationQuaternion is as follows
+A rotationQuaternion sets the orientation of a mesh by a rotation around a given axis. It is a four dimensional vector of the form (x, y, z, w). The most straight forward way to use a rotationQuaternion is as follows
 
 ```javascript
 var axis = new BABYLON.Vector3(1, 1, 1);
@@ -94,62 +42,82 @@ var quaternion = new BABYLON.Quaternion.RotationAxis(axis, angle);
 mesh.rotationQuaternion = quaternion;
 ```
 
-The default for rotationQuaternion is _undefined_ .  
+The default for rotationQuaternion is _undefined_ . 
+
+[Playground Example rotationQuaternion](https://www.babylonjs-playground.com/#EYZE4Q#3) 
 
 **Note** : You MUST set and use rotationQuaternion when creating physics objects because physics engines rely only on them.
 
-[Playground Example rotationQuaternion](https://www.babylonjs-playground.com/#1ST43U#44)
+## Move-By Methods
 
+These methods add the given value (positive or negative) to the current position or orientation of the mesh. In the case of _position_ and _rotation_ and _rotationQuaternion_. This can be done by actually adding values using '+=' or `-=" to individual components or using vector addition. The following animated playgrounds show examples.
 
-## Transforming Methods
+[Playground Animation - Position](https://www.babylonjs-playground.com/#66EBY3)
+[Playground Animation - Rotation](https://www.babylonjs-playground.com/#1ST43U#47)
+[Playground Animation  - Rotation Along Straight Horizontal Path](https://www.babylonjs-playground.com/#92EYG#12)
+[Playground Animation - rotationQuaternion](https://www.babylonjs-playground.com/#1ST43U#44)
 
-The two transformations translate and rotate add a vector and a rotation, repectively to current position and orientations. Doing this with a sequence of translates or rotates accumulates on the mesh.
+For rotating the most straight forward **move-by** method is [addRotation](babylon101/position#sequencing-rotations) which increments the orientation of a mesh about one of the **local axes**.
 
-In which space translation or rotation takes place can for some methods be specified.
+[Playground Animation - addRotation](https://www.babylonjs-playground.com/#EYZE4Q#5)
 
-The **world space** is set using BABYLON.Space.WORLD
+The following playground shows you how to use _addRotation_ to construct wheels.
 
-The **local space** is set using BABYLON.Space.LOCAL
+[Playground Example - Wheels](http://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
+
+The other ways below move by the values given in the parameters.
 
 ### Locally Translate
 
-To translate in local space you can use
+This method moves, or more strictly translates, a mesh along the **local axes**
 
 ```javascript
 mesh.locallyTranslate(new BABYLON.Vector3(x, y, z));
 ```
 [Playground Example locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#1)
+[Playground Animation locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#4)
 
 ## Translate
-To translate a mesh a direction, distance and space need to be specified. 
+
+Mathematically a translation is a single vector which gives the direction and distance that an object moves by. The _translate_ method in BABYLON.js requires three parameters direction, distance and space.
+
+The space parameter allows you to state whether _translate_ uses the **world axes** or the **local axes** and takes the values BABYLON.Space.WORLD and BABYLON.Space.LOCAL respectively.
+
+By allowing direction and distance to be given Babylon.js gives you the opportunity to easily move a mesh along one the the axes x, y, or z. This is because Babylon.js supplies three constant unit vectors along each axis; these are BABYLON.Axis.X, BABYLON.Axis.Y and BABYLON.Axis.Z. So moving a distance 2 along the y axis becomes
 
 ```javascript
-pilot.translate(BABYLON.Axis.Y, 2, BABYLON.Space.WORLD);
-
-pilot.translate(new BABYLON.Vector3(-1, 3, -2), 3, BABYLON.Space.LOCAL);
+mesh.translate(BABYLON.Axis.Y, 2, BABYLON.Space.WORLD);
 ```
-
-[Playground Example - Translate](http://www.babylonjs-playground.com/#1JLGFP) 
-
-### AddRotation
-
-A simple and straight forward way to sequence rotations in the order you wish in **local space** only .
+for the **world axes** and 
 
 ```javascript
-mesh.addRotation(Math.PI/2, 0, 0).addRotation(0, Math.PI/4, 0).addRotation(0, 0, Math.PI/6, 0);
+mesh.translate(BABYLON.Axis.Y, 2, BABYLON.Space.LOCAL);
 ```
 
-Whatever the current rotation of the mesh this will rotate it further first around the *local X axis*, followed by a rotation around the *local Y axis* followed by a rotation around the *local Z axis*.
+It is also possible to supply other unit vectors and a distance.
 
-In the first of the following two playgrounds the sequence of boxes shows the result of applying a rotation around the *local Z axis*, followed by a rotation around the *local Y axis* followed by a rotation around the *local X axis*. The second example shows how addRotation can be used to add wheels to a car body.
+```javascript
+mesh.translate(new BABYLON.Vector3(-1, 3, -2).normalize(), 10, BABYLON.Space.LOCAL);
+```
 
-[Playground Example - Addition of Rotations](http://www.babylonjs-playground.com/#1PON40#8)  
-[Playground Example - Wheels](http://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
+Alternatively, if you wish just to supply a vector giving the whole of the translation use a unit distance
+
+```javascript
+mesh.translate(new BABYLON.Vector3(-1, 3, -2), 1, BABYLON.Space.WORLD);
+```
+
+Generally the total distance moved given vector v and distance d as parameters will be |v|d, so using
+
+```javascript
+mesh.translate(new BABYLON.Vector3(-6, 3, -2), 5, BABYLON.Space.WORLD);
+```
+
+will move the mesh a distance of 35 units in the direction (-6, 3, -2) since |(-6, 3, -2)| = &#x221a;49 = 7 and 7 * 5 = 35
 
 ## Rotate
-To rotate a mesh an axis, angle and the space specified are needed. The axis is given as any vector(x, y, z) and this is taken as the line passing through the origin of the local axes.  In other words the mesh spins at its current position.
+To rotate a mesh an axis, angle and the space are needed. The center of rotation is the origin of the **local axes** and the axis is given as any vector(x, y, z) and passes through the center of rotation.  In other words the mesh spins at its current position. Changing the position of the center of rotation can be done by using a parent or a [pivot](/how-to/Pivot).
 
-For convenience unit vectors in the positive directions of the x, y and z axes are pre-defined as the constants BABYLON.Axis.X, BABYLON.Axis.Y and BABYLON.Axis.Z respectively.
+The axes BABYLON.Axis.X, BABYLON.Axis.Y and BABYLON.Axis.Z may be used. The frame of reference for the axis can be the **world axes** or the **local axes**.
 
 ```javascript
 pilot.rotate(BABYLON.Axis.Y, Math.PI / 2, BABYLON.Space.WORLD);
@@ -157,7 +125,9 @@ pilot.rotate(BABYLON.Axis.Y, Math.PI / 2, BABYLON.Space.WORLD);
 pilot.rotate(new BABYLON.Vector3(-1, 3, -10), 7 * Math.PI / 12, BABYLON.Space.LOCAL);
 ```
 
-[Playground Example - Rotate](http://www.babylonjs-playground.com/#1JLGFP#3)
+**Note:**  `mesh.rotate()` generates a new quaternion and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
+
+[Playground Animation - Rotate](https://www.babylonjs-playground.com/#66EBY3#3)
 
 ## Change of Origin
 
@@ -197,8 +167,8 @@ It is also possible to change the center of rotation by setting a pivot point.
 ## More Advanced - L3
 
 [Translate and Rotate in Detail](/how_to/Rotate)  
-[Using a Pivot](/how_to/Pivots)  
-[Rotation Around an Axis Through a Pivot](/how_to/Pivot)  
+[How To Set and Use a Pivot](/how_to/Pivots)  
+[How To Rotate Around an Axis About a Point](/how_to/Pivot)  
 [Euler Angles and Quaternions](/how_to/Euler_Angles)  
 [Applying Rotation Conventions](/how_to/Applying_Rotations)  
 [Aligning Rotation to Target](/how_to/Rotation_Target)  
