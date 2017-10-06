@@ -22,72 +22,68 @@ Every light can be activated or deactivated by calling its *setEnabled(true/fals
 Here we go... with our 4 cool Babylon.js light types:
 
 - **The Point Light**
+    A point light is a light defined by an unique point in world space. The light is emitted in every direction from this point. A good example of a point light is the sun.
 
-A point light is a light defined by an unique point in world space. The light is emitted in every direction from this point. A good example of a point light is the sun.
+    You can control the color of any light... with the *diffuse* and *specular* properties:
 
-You can control the color of any light... with the *diffuse* and *specular* properties:
+    ```javascript
+    var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scene);
+    light0.diffuse = new BABYLON.Color3(1, 0, 0);
+    light0.specular = new BABYLON.Color3(1, 1, 1);
+    ```
+    ![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/8484.image_thumb_53D78E00.png)
 
-```javascript
-var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scene);
-light0.diffuse = new BABYLON.Color3(1, 0, 0);
-light0.specular = new BABYLON.Color3(1, 1, 1);
-```
-![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/8484.image_thumb_53D78E00.png)
-
-_Red diffuse point light with white specular_
+    _Red diffuse point light with white specular_
 
 - **The Directional Light**
+    A directional light is defined by a direction (what a surprise!). The light is emitted from everywhere... toward a specific direction, and has an infinite range. By default, the directional light is created at origin (0,0,0) position. Like a point light, you can control the color of the light with the *diffuse* and *specular* properties:
 
-A directional light is defined by a direction (what a surprise!). The light is emitted from everywhere... toward a specific direction, and has an infinite range. By default, the directional light is created at origin (0,0,0) position. Like a point light, you can control the color of the light with the *diffuse* and *specular* properties:
+    ```javascript
+    var light0 = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(0, -1, 0), scene);
+    light0.diffuse = new BABYLON.Color3(1, 0, 0);
+    light0.specular = new BABYLON.Color3(1, 1, 1);
+    ```
 
-```javascript
-var light0 = new BABYLON.DirectionalLight("Dir0", new BABYLON.Vector3(0, -1, 0), scene);
-light0.diffuse = new BABYLON.Color3(1, 0, 0);
-light0.specular = new BABYLON.Color3(1, 1, 1);
-```
+    ![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/1563.image_1ECD8F81.png)
 
-![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/1563.image_1ECD8F81.png)
-
-_Red diffuse directional light with white specular_
+    _Red diffuse directional light with white specular_
 
 - **The Spot Light**
+    A spot light is defined by a position (2nd arg), a direction (3rd arg), an angle (4th arg), and an exponent (5th arg). These values define a cone of light starting from the position, emitting toward the direction. 
 
-A spot light is defined by a position (2nd arg), a direction (3rd arg), an angle (4th arg), and an exponent (5th arg). These values define a cone of light starting from the position, emitting toward the direction. 
+    The angle defines the size (field of illumination) of the spotlight's conical beam (in radians), and the exponent defines the speed of the decay of the light with distance (the light's 'reach distance'). Just like the other lights, you can control the color of the light with the *diffuse* and *specular* properties:
 
-The angle defines the size (field of illumination) of the spotlight's conical beam (in radians), and the exponent defines the speed of the decay of the light with distance (the light's 'reach distance'). Just like the other lights, you can control the color of the light with the *diffuse* and *specular* properties:
+    ![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/7723.image_thumb_11F5CA14.png)
 
-![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/7723.image_thumb_11F5CA14.png)
+    _A simple drawing showing the shape of a spot light_
 
-_A simple drawing showing the shape of a spot light_
+    ```javascript
+    var light0 = new BABYLON.SpotLight("Spot0", new BABYLON.Vector3(0, 30, -10), new BABYLON.Vector3(0, -1, 0), 0.8, 2, scene);
+    light0.diffuse = new BABYLON.Color3(1, 0, 0);
+    light0.specular = new BABYLON.Color3(1, 1, 1);
+    ```
 
-```javascript
-var light0 = new BABYLON.SpotLight("Spot0", new BABYLON.Vector3(0, 30, -10), new BABYLON.Vector3(0, -1, 0), 0.8, 2, scene);
-light0.diffuse = new BABYLON.Color3(1, 0, 0);
-light0.specular = new BABYLON.Color3(1, 1, 1);
-```
+    ![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/1738.image_thumb_18AB6448.png)
 
-![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/1738.image_thumb_18AB6448.png)
-
-_A red diffuse spot light with white specular, a 0.8 radians-wide cone, and an exponent of 2_
+    _A red diffuse spot light with white specular, a 0.8 radians-wide cone, and an exponent of 2_
 
 - **The Hemispheric Light**
+    A hemispheric light is an easy way to simulate realistic ambient environment light. A hemispheric light is defined by a direction to the sky (the 2nd arg in the constructor) and by 3 colors: one for the diffuse (the sky color - for pixels/faces facing upward), one for the ground (the color for pixels/faces facing downward), and one for the specular.
 
-A hemispheric light is an easy way to simulate realistic ambient environment light. A hemispheric light is defined by a direction to the sky (the 2nd arg in the constructor) and by 3 colors: one for the diffuse (the sky color - for pixels/faces facing upward), one for the ground (the color for pixels/faces facing downward), and one for the specular.
+    Above, I used the terms 'upward' and 'downward', but keep in mind that the direction to the sky (the 2nd arg in the constructor) can be set to any direction. The direction to the sky is often straight upward (0, 1, 0). We are simulating light from a cloudy sky, but even on cloudy days, the sun crosses the sky above the clouds. So, you could tilt this light slightly toward the east for cloudy morning skies, and slightly toward the west for cloudy evening skies. This is a soft light that cannot produce shadows.
 
-Above, I used the terms 'upward' and 'downward', but keep in mind that the direction to the sky (the 2nd arg in the constructor) can be set to any direction. The direction to the sky is often straight upward (0, 1, 0). We are simulating light from a cloudy sky, but even on cloudy days, the sun crosses the sky above the clouds. So, you could tilt this light slightly toward the east for cloudy morning skies, and slightly toward the west for cloudy evening skies. This is a soft light that cannot produce shadows.
+    Now, back to creating the useful and interesting hemispheric light:
 
-Now, back to creating the useful and interesting hemispheric light:
+    ```javascript
+    var light0 = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(0, 1, 0), scene);
+    light0.diffuse = new BABYLON.Color3(1, 1, 1);
+    light0.specular = new BABYLON.Color3(1, 1, 1);
+    light0.groundColor = new BABYLON.Color3(0, 0, 0);
+    ```
 
-```javascript
-var light0 = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(0, 1, 0), scene);
-light0.diffuse = new BABYLON.Color3(1, 1, 1);
-light0.specular = new BABYLON.Color3(1, 1, 1);
-light0.groundColor = new BABYLON.Color3(0, 0, 0);
-```
+    ![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/4760.image_thumb_058CC84D.png)
 
-![](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/44/73/metablogapi/4760.image_thumb_058CC84D.png)
-
-_White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
+    _White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
 
 Our [web site](http://www.babylonjs.com/) has a nice lights demo in the Features Tests section, and a similar lights demo can be found at our 'playground', [right here](http://www.babylonjs.com/playground/?06).
 
