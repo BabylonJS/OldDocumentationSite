@@ -4,7 +4,7 @@ PG_TITLE: 04. Position, Rotation, Scaling
 ---
 # Positioning, Rotating and Scaling 
 
-There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/babylon101/position#frames-of-reference), either the **world axes** or the **local axes**, is being used. 
+There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/how_to/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
 
 Prior to the _MeshBuilder_ method of creating a mesh the only way to produce a cuboid or ellipsoid, for example, was to create a cube and sphere and scale them in one dimension or another. This could produce difficulties with subsequent manipulations of a mesh. Since using _MeshBuilder_ allows you to set different sizes for meshes in the x, y and z directions these difficuties with [scaling](/babylon101/position#scaling) no longer arise. 
 
@@ -12,7 +12,7 @@ There are two types of tactic to position and rotate a mesh; one type is the **s
 
 ## Set-At Methods
 
-In addition to  _position_, which places a mesh accoring to the **world axes**, and _rotation_ which sets the orientation with [Euler angles](/how_to/Euler_Angles), the following are available to set a mesh's position and rotation.
+In addition to  _position_, which places a mesh accoring to the **world axes**, and _rotation_ which sets the orientation with [Euler angles](/resources/Rotation_Conventions), the following are available to set a mesh's position and rotation.
 
 ### Position using Local Axes
 
@@ -33,7 +33,7 @@ var localPosition = mesh.getPositionExpressedInLocalSpace();
 
 All angles are in radians
 
-A rotationQuaternion sets the orientation of a mesh by a rotation around a given axis. It is a four dimensional vector of the form (x, y, z, w). The most straight forward way to use a rotationQuaternion is as follows
+A [rotationQuaternion](/resources/Rotation_Conventions) sets the orientation of a mesh by a rotation around a given axis. It is a four dimensional vector of the form (x, y, z, w). The most straight forward way to use a rotationQuaternion is as follows
 
 ```javascript
 var axis = new BABYLON.Vector3(1, 1, 1);
@@ -69,7 +69,7 @@ The other ways below move by the values given in the parameters.
 
 ### Locally Translate
 
-This method moves, or more strictly translates, a mesh along the **local axes**
+This method moves, or more strictly translates, a mesh using the **local axes**
 
 ```javascript
 mesh.locallyTranslate(new BABYLON.Vector3(x, y, z));
@@ -77,7 +77,7 @@ mesh.locallyTranslate(new BABYLON.Vector3(x, y, z));
 [Playground Example locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#1)
 [Playground Animation locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#4)
 
-## Translate
+### Translate
 
 Mathematically a translation is a single vector which gives the direction and distance that an object moves by. The _translate_ method in BABYLON.js requires three parameters direction, distance and space.
 
@@ -93,6 +93,7 @@ for the **world axes** and
 ```javascript
 mesh.translate(BABYLON.Axis.Y, 2, BABYLON.Space.LOCAL);
 ```
+for the **local axes**.
 
 It is also possible to supply other unit vectors and a distance.
 
@@ -114,8 +115,8 @@ mesh.translate(new BABYLON.Vector3(-6, 3, -2), 5, BABYLON.Space.WORLD);
 
 will move the mesh a distance of 35 units in the direction (-6, 3, -2) since |(-6, 3, -2)| = &#x221a;49 = 7 and 7 * 5 = 35
 
-## Rotate
-To rotate a mesh an axis, angle and the space are needed. The center of rotation is the origin of the **local axes** and the axis is given as any vector(x, y, z) and passes through the center of rotation.  In other words the mesh spins at its current position. Changing the position of the center of rotation can be done by using a parent or a [pivot](/how-to/Pivot).
+### Rotate
+To rotate a mesh an axis, angle and the space are needed. The center of rotation is the origin of the **local axes** and the axis is given as any vector(x, y, z) and passes through the center of rotation.  In other words the mesh spins at its current position. Changing the position of the center of rotation can be done by using a parent or a [pivot](/how_to/Pivot).
 
 The axes BABYLON.Axis.X, BABYLON.Axis.Y and BABYLON.Axis.Z may be used. The frame of reference for the axis can be the **world axes** or the **local axes**.
 
@@ -125,13 +126,13 @@ pilot.rotate(BABYLON.Axis.Y, Math.PI / 2, BABYLON.Space.WORLD);
 pilot.rotate(new BABYLON.Vector3(-1, 3, -10), 7 * Math.PI / 12, BABYLON.Space.LOCAL);
 ```
 
-**Note:**  `mesh.rotate()` generates a new quaternion and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
+**Note:**  `mesh.rotate()` generates a new [quaternion](/resources/Rotation_Conventions) and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
 
 [Playground Animation - Rotate](https://www.babylonjs-playground.com/#66EBY3#3)
 
 ## Change of Origin
 
-Should you wish to position, rotate or scale a mesh about a point other than its own _local origin_ then this can be done either using a parent or a pivot. More information in Further Reading.
+Should you wish to position, rotate or scale a mesh about a point other than its own _local origin_ then this can be done either using [a parent or a pivot](/how_to/Pivot) or by coordinate transformation.
 
 ### Parent
 
@@ -142,15 +143,27 @@ Assigning a mesh a parent changes the **world space** for its children. Any chan
 childMesh.parent = parentMesh;
 ```
 
-[Playground Example Change of Origin Parent](https://www.babylonjs-playground.com/#1JLGFP#7)
-
 **Note** : Parent-child hierarchies are evaluated on every frame. So any position, rotation and scaling transformations made to the parent prior to assigning it to children will also be applied to the children when the parent is assigned. It usually makes sense not to rotate or move a child until after you've assigned it to the parent.
 
 ### Pivot
 
-It is also possible to change the center of rotation by setting a pivot point.  
+Setting a [pivot point](/how_to/Pivots) changes the local origin of a mesh and positioning, rotation and scaling transformations are based on the pivot.
 
-[Playground Example Change of Origin Pivot](https://www.babylonjs-playground.com/#1JLGFP#19)
+```javascript
+mesh.setPivotPoint(Vector3);
+```
+
+### Transform Coordinates
+
+This method allows you to [transform coordinates](/how_to/Transform_Coordinates) without assigning a parent or a pivot, though it is often more straight forward to do so. 
+
+The change from a local position to a global position is achieved using
+
+```javascript
+mesh.computeWorldMatrix();
+var matrix = mesh.getWorldMatrix();
+var global_position = BABYLON.Vector3.TransformCoordinates(local_position, matrix);
+```
 
 
 # Further Reading
@@ -169,11 +182,12 @@ It is also possible to change the center of rotation by setting a pivot point.
 [Translate and Rotate in Detail](/how_to/Rotate)  
 [How To Set and Use a Pivot](/how_to/Pivots)  
 [How To Rotate Around an Axis About a Point](/how_to/Pivot)  
-[Euler Angles and Quaternions](/how_to/Euler_Angles)  
-[Applying Rotation Conventions](/how_to/Applying_Rotations)  
+[How To Use a Parent](/how_to/Parenting)  
+[How To Transform Coordinates](/how_to/Transform_Coordinates)  
+[Euler Angles and Quaternions](/resources/Rotation_Conventions)  
 [Aligning Rotation to Target](/how_to/Rotation_Target)  
-[Frame of Reference](/how_to/Frame_Of_Reference)  
-[Baking Transformations](/how_to/Baking_Transformations)  
+[Frame of Reference](/resources/Frame_Of_Reference)  
+[Baking Transformations](/resources/Baking_Transformations)  
 [In-Browser Mesh Simplification (Auto-LOD)](/how_to/In-Browser_Mesh_Simplification)  
 
 ## Gamelet

@@ -292,29 +292,19 @@
           "filename": "Pivot"
         },
         {
-          "title": "Euler Angles and Quaternions",
+          "title": "Use a Parent",
           "level": 3,
-          "filename": "Euler_Angles"
+          "filename": "Parenting"
         },
         {
-          "title": "Applying Rotation Conventions",
+          "title": "Transform Coordinates",
           "level": 3,
-          "filename": "Applying_Rotations"
+          "filename": "Transform_Coordinates"
         },
         {
           "title": "Aligning Rotation to Target",
           "level": 3,
           "filename": "Rotation_Target"
-        },
-        {
-          "title": "Frame of Reference",
-          "level": 3,
-          "filename": "Frame_Of_Reference"
-        },
-        {
-          "title": "Baking Transformations",
-          "level": 3,
-          "filename": "Baking_Transformations"
         },
         {
           "title": "In-Browser Mesh Simplification (Auto-LOD)",
@@ -850,6 +840,25 @@
         }
       ]
     },
+    {
+      "title": "Manual",
+      "name": "Manual",
+      "desc": "Technical Details for BJS",
+      "files": [
+        {
+          "title": "Euler Angles and Quaternions",
+          "filename": "Rotation_Conventions"
+        },
+        {
+          "title": "Frame of Reference",
+          "filename": "Frame_Of_Reference"
+        },
+        {
+          "title": "Baking Transformations",
+          "filename": "Baking_Transformations"
+        }
+      ]
+    },    
     {
       "title": "Reference",
       "name": "Reference",
