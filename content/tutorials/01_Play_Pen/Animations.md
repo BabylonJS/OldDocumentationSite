@@ -107,16 +107,15 @@ For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent an
 
 Next, two important steps:
 * Adding the animation array to the animation object:
+  ```javascript
+  animationBox.setKeys(keys);
+  ```
 
-```javascript
-animationBox.setKeys(keys);
-```
 * Link this animation to our box:
-
-```javascript
-box1.animations = [];
-box1.animations.push(animationBox);
-```
+  ```javascript
+  box1.animations = [];
+  box1.animations.push(animationBox);
+  ```
 
 Finally, you can launch your animation in one line of code, at any time in your application:
 
@@ -132,15 +131,15 @@ scene.beginAnimation(box1, 100, 0, true);
 
 **Parameters for scene.beginAnimation:**
 
-| Name | Type | Description
-|---|---|---
-| target | any | The target
-| from | number | The fps starting frame
-| to | number | The fps ending frame
-optional | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE)
-optional | speedRatio | number | default : 1. The speed ratio of this animation
-optional | onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE)
-optional | animatable | [Animatable](http://doc.babylonjs.com/classes/3.0/animatable) | An optional specific animation
+| Name | Type | Description | Optional |
+|---|---|---|---|
+| target | any | The target | No
+| from | number | The fps starting frame | No
+| to | number | The fps ending frame | No
+| loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE) | Yes
+| speedRatio | number | default : 1. The speed ratio of this animation | Yes
+| onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE) | Yes
+| animatable | [Animatable](http://doc.babylonjs.com/classes/3.0/animatable) | An optional specific animation | Yes
 ---
 
 This function returns a ```BABYLON.Animatable``` object that you can use to get access to individual animations (for instance using ```getAnimationByTargetProperty``` function).
