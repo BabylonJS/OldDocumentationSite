@@ -164,6 +164,7 @@ Property|Type|Default|Comments
 alpha|number|1|Between 0 and 1. 0 means completely transparent. 1 means fully opaque
 color|string|Black|Foreground color
 fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
+fontStyle|string|Empty string|Can be inherited. Value can be "italic", "bold" or "oblique"
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 
@@ -190,9 +191,48 @@ Here are the properties you can define:
 Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
-textWrapping|boolean|false|Can be set to true to enable text wrapping.
+textWrapping|boolean|false|Can be set to true to enable text wrapping
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+
+### InputText
+
+The InputText is a control used to let users insert text in a single line: https://www.babylonjs-playground.com/#UWS0TS
+
+Here are the properties you can define:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+text|string|null|Text to display
+color|string|white|Foreground color
+background|string|black|Background color
+focusedBackground|string|black|Background color to use when the control is focused
+placeholderText|string|null|Text to display as placeholder (when there is no text defined and the control is not focused)
+placeholderColor|string|gray|Foreground color to use when the placeholder text is displayed
+autoStretchWidth|boolean|true|The control will resize horizontally to adapt to text size
+maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
+margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
+thickness|number|1|Thickness of the border
+
+The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
+
+The control provides several observables to track its state:
+
+Observables|Comments
+-----------|--------
+onTextChangedObservable|Raised when the text has changed
+onFocusObservable|Raised when the control loses the focus
+onBlurObservable|Raised when the control gets the focus
+
+Please note that the InputText has pretty limited edition support. Here are the supported keys:
+* Delete
+* Backspace
+* Home
+* End
+* Enter
+* Left / Right (used to move the cursor)
+
+Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard. On mobile, the InputText will use the `prompt()` command to get user input. You can define the title of the prompt by setting `control.promptMessage`.
 
 ### Button
 
@@ -348,6 +388,75 @@ You can also define which part of the source image you want to use with the foll
 * sourceHeight: height of the source image you want to use (in pixel)
 
 Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
+
+### VirtualKeyboard
+
+The VirtualKeyboard is a control used to display simple onscreen keyboard. This is mostly useful with WebVR scenarios where the user cannot easily use his keyboard.
+
+#### Keys
+
+You can define the keys provided by the keyboard with the following code:
+
+```
+var keyboard = new BABYLON.GUI.VirtualKeyboard();
+keyboard.addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+```
+
+Every key will be created using default values specified by the following properties:
+
+Property|Default
+--------|----
+defaultButtonWidth|40px
+defaultButtonHeight|40px
+defaultButtonPaddingLeft|2px
+defaultButtonPaddingRight|2px
+defaultButtonPaddingTop|2px
+defaultButtonPaddingBottom|2px
+defaultButtonColor|#DDD
+defaultButtonBackground|#070707
+
+You can also override each property by providing an array containing properties for keys (or null):
+
+```
+addKeysRow(["a", "b"], [null, { width: "200px"}]);
+```
+
+You can define each default properties based on the following class:
+```
+class KeyPropertySet {
+      width?: string;
+      height?: string;
+      paddingLeft?: string;
+      paddingRight?: string;
+      paddingTop?: string;
+      paddingBottom?: string;
+      color?: string;
+      background?: string;
+  }
+```
+
+#### Layouts
+
+The VirtualKeyboard provides a static method to create a default layout:
+
+```
+var keyboard = BABYLON.GUI.VirtualKeyboard.CreateDefaultLayout();
+```
+
+The default layout is equivalent to:
+
+```
+addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+addKeysRow(["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]);
+addKeysRow(["a", "s", "d", "f", "g", "h", "j", "k", "l",";","'","\u21B5"]);
+addKeysRow(["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
+addKeysRow([" "], [{ width: "200px"}]);
+```
+
+#### Events
+Every time a key is pressed the `onKeyPressObservable` observable is triggered. But you can also rely on `keyboard.connect(inputText)` to automatically connect a VirtualKeyboard to an InputText. In this case, the keyboard will only appear when the InputText will be focused and all key pressed events will be sent to the InputText.
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#S7L7FE
 
 ## Containers
 

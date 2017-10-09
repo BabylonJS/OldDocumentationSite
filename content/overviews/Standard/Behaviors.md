@@ -8,7 +8,7 @@ A behavior is a simple class that can be attached to a node where it will provid
 A behavior is defined by the following interface:
 * `name`: Return the name of the behavior
 * `attach(node)`: This function will be called when a behavior is attached to a node. This is where the behavior will hook into useful events
-* `detach(node)`: This function will be called when a behavior is detached from a node. The behavior must clear any associated resources and unhook all events
+* `detach()`: This function will be called when a behavior is detached from the previously attached node. The behavior must clear any associated resources and unhook all events
 
 If behaviors rely on animation, the following **static** properties will be available:
 * `EasingFunction`: Define the easing function used animations
@@ -40,6 +40,8 @@ You can easily turn on this behavior on an ArcRotateCamera with the following co
 camera.useBouncingBehavior = true;
 ```
 
+Once created you can get a direct access to the behavior with `camera.bouncingBehavior`.
+
 You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14
 
 ###  AutoRotation behavior
@@ -50,12 +52,15 @@ This behavior can be configured with the following properties:
 * `idleRotationWaitTime`: Time (in milliseconds) to wait after user interaction before the camera starts rotating
 * `idleRotationSpinupTime`: Time (milliseconds) to take to spin up to the full idle rotation speed
 * `zoomStopsAnimation`: Flag that indicates if user zooming should stop animation
+* `rotationInProgress`: Gets a value indicating if the camera is currently rotating because of this behavior
 
 You can easily turn on this behavior on an ArcRotateCamera with the following code:
 
 ```
 camera.useAutoRotationBehavior = true;
 ```
+
+Once created you can get a direct access to the behavior with `camera.autoRotationBehavior`.
 
 You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14#1
 
@@ -66,20 +71,23 @@ It is also useful if you want to prevent the camera to go under a virtual horizo
 This behavior can be configured with the following properties:
 * `mode`: The behavior can be configured to:
  * `BABYLON.FramingBehavior.IgnoreBoundsSizeMode`: The camera can move all the way towards the mesh
- * `BABYLON.FramingBehavior.FitFrustumSidesMode`: The camera is not allowed to zoom closer to the mesh than the point at which the adjusted bounding sphere touches the frustum sides
+ * `BABYLON.FramingBehavior.FitFrustumSidesMode`: The camera is not allowed to zoom closer to the mesh than the point at which the adjusted bounding sphere touches the frustum sides. This is the default mode.
 * `radiusScale`: Define the scale applied to the radius (1 by default)
-* `positionY`: Define the Y offset of the primary mesh from the camera's focus (0 by default)
+* `positionScale`: the scale to apply on Y axis to position camera focus. 0.5 by default which means the center of the bounding box
 * `defaultElevation`: Define the angle above/below the horizontal plane to return to when the return to default elevation idle behaviour is triggered, in radians (0.3 by default)
 * `elevationReturnTime`: Define the time (in milliseconds) taken to return to the default beta position (1500 by default). Negative value indicates camera should not return to default
 * `elevationReturnWaitTime`: Define the delay (in milliseconds) taken before the camera returns to the default beta position (1000 by default)
 * `zoomStopsAnimation`: Define if user zooming should stop animation
 * `framingTime`: Define the transition time when framing the mesh, in milliseconds (1500 by default)
+* `isUserIsMoving`: Gets a value indicating if the user is moving the camera
 
 You can easily turn on this behavior on an ArcRotateCamera with the following code:
 
 ```
 camera.useFramingBehavior = true;
 ```
+
+Once created you can get a direct access to the behavior with `camera.framingBehavior`.
 
 You can find a live demo here: https://www.babylonjs-playground.com/#6FBD14#2
 

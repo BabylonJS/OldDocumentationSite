@@ -343,7 +343,7 @@
         {
           "title": "How materials work",
           "filename": "How_materials_work"
-        }       
+        }
       ]
     },
     {
@@ -649,7 +649,7 @@
           "filename": "RandomEffector"
         }
       ]
-    },    
+    },
     {
       "title": "Editor",
       "name": "Editor",
@@ -701,7 +701,99 @@
           "filename": "Using_Materials_Builder"
         }
       ]
-    }   
+    },
+    {
+      "title": "CastorGUI",
+      "name": "CastorGUI",
+      "img": "img/extensions/CastorGUI.png",
+      "desc": "Learn how to use CastorGUI.",
+      "files": [
+        {
+          "title": "CastorGUI",
+          "filename": "CastorGUI"
+        },
+        {
+          "title": "GUIButton",
+          "filename": "GUIButton"
+        },
+        {
+          "title": "GUICheckbox",
+          "filename": "GUICheckbox"
+        },
+        {
+          "title": "GUIColor",
+          "filename": "GUIColor"
+        },
+        {
+          "title": "GUIDialog",
+          "filename": "GUIDialog"
+        },
+        {
+          "title": "GUIFieldset",
+          "filename": "GUIFieldset"
+        },
+        {
+          "title": "GUIGroup",
+          "filename": "GUIGroup"
+        },
+        {
+          "title": "GUILabel",
+          "filename": "GUILabel"
+        },
+        {
+          "title": "GUIManager",
+          "filename": "GUIManager"
+        },
+        {
+          "title": "GUIMeter",
+          "filename": "GUIMeter"
+        },
+        {
+          "title": "GUIPanel",
+          "filename": "GUIPanel"
+        },
+        {
+          "title": "GUIProgress",
+          "filename": "GUIProgress"
+        },
+        {
+          "title": "GUIRadio",
+          "filename": "GUIRadio"
+        },
+        {
+          "title": "GUISelect",
+          "filename": "GUISelect"
+        },
+        {
+          "title": "GUISlider",
+          "filename": "GUISlider"
+        },
+        {
+          "title": "GUISpinner",
+          "filename": "GUISpinner"
+        },
+        {
+          "title": "GUIText",
+          "filename": "GUIText"
+        },
+        {
+          "title": "GUITextarea",
+          "filename": "GUITextarea"
+        },
+        {
+          "title": "GUITextfield",
+          "filename": "GUITextfield"
+        },
+        {
+          "title": "GUITextures",
+          "filename": "GUITextures"
+        },
+        {
+          "title": "GUIWindow",
+          "filename": "GUIWindow"
+        }
+      ]
+    }
   ],
   "overviews": [
     {
@@ -763,6 +855,14 @@
         {
           "title": "Behaviors",
           "filename": "Behaviors"
+        },
+        {
+          "title": "Occlusion Queries",
+          "filename": "OcclusionQuery"
+        },
+        {
+          "title": "NPM Support",
+          "filename": "NPM_Support"
         }
       ]
     },
