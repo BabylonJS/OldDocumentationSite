@@ -147,7 +147,7 @@ scaleY|number|1|
 transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
 transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
 
-**Please be aawre that transformations are done at rendering level so after all computations.** This means that alignment or positioning will be done first without taking transform in account.
+**Please be aware that transformations are done at rendering level so after all computations.** This means that alignment or positioning will be done first without taking transform in account.
 
 Here is an example of how to use rotation and scaling:  https://www.babylonjs-playground.com/#XCPP9Y#22
 
@@ -512,3 +512,7 @@ Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2
 To reduce the amount of code required to achieve frequent tasks you can use the following helpers:
 
 * `BABYLON.GUI.Control.AddHeader(control, text, size, options { isHorizontal, controlFirst })`: This function will create a StackPanel (horizontal or vertical based on options) and will add your control plus a TextBlock in it. Options can also be used to specify if the control is inserted first of after the header. Depending on the orientation, size will either specify the widht or the height used for the TextBlock.
+
+## Focus management
+
+The current focused control can be found using `advancedDynamicTexture.focusedControl`. You can also manually move the focus to a focusable control by calling `advancedDynamicTexture.moveFocusToControl(control)`.
