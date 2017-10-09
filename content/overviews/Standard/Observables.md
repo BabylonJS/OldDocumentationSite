@@ -55,6 +55,16 @@ scene.onBeforeRenderObservable.remove(observer);
 ```
 And here is the associated playground:  https://www.babylonjs-playground.com/#UP2O8#1
 
+### Context
+Starting with Babylon.js v3.1, you can also add the scope to apply to observers when they are notified.
+
+To do so just add a fourth parameter to the add function:
+```
+scene.onPointerObservable.add(this.onPickDown, BABYLON.PointerEventTypes.POINTERDOWN, false, this);
+```
+
+You can test it here: http://playground.babylonjs.com/#012I9K
+
 ## Where are they?
 Babylon.js uses them a lot! Here is the current list (as of v2.4) of available observables:
 

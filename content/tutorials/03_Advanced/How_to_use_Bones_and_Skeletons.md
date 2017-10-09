@@ -36,7 +36,7 @@ finalMatrix = worldMatrix * (bonesMatrices[index0] * weight0 + bonesMatrices[ind
 On low-end hardware, the maximum bones influences per vertex is reduced to 3.
 
 ### Loading bones
-Skeletons and bones can be loaded from .babylon files (FBX and Blender exporter support bones generation).
+Skeletons and bones can be loaded from .babylon files.
 
 Here is a sample of how to load a boned mesh and how to launch skeleton animation:
 
