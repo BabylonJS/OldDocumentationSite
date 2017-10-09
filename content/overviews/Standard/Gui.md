@@ -61,9 +61,9 @@ onPointerUpObservable|Raised when pointer is up on the control.
 
 You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
-Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a Vector2 parameter containing the pointer coordinates. If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
+Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a `Vector2WithInfo` parameter containing the pointer coordinates (x, y) and the index of the button pressed (buttonIndex). If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
 
-Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#121
+Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#281
 
 ### Alignments
 You can define the alignments used by your control with the following properties:
