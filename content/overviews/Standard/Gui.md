@@ -61,9 +61,9 @@ onPointerUpObservable|Raised when pointer is up on the control.
 
 You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
-Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a Vector2 parameter containing the pointer coordinates. If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
+Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a `Vector2WithInfo` parameter containing the pointer coordinates (x, y) and the index of the button pressed (buttonIndex). If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
 
-Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#121
+Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#281
 
 ### Alignments
 You can define the alignments used by your control with the following properties:
@@ -80,24 +80,24 @@ You can set controls' position with the following properties:
 
 Property|Type|Default|Default unit
 --------|----|-------|------------
-left|valueAndUnit|0|Pixel
-top|valueAndUnit|0|Pixel
+left|ValueAndUnit|0|Pixel
+top|ValueAndUnit|0|Pixel
 
 Size can be set with:
 
 Property|Type|Default|Default unit
 --------|----|-------|------------
-width|valueAndUnit|100%|Percentage
-height|valueAndUnit|100%|Percentage
+width|ValueAndUnit|100%|Percentage
+height|ValueAndUnit|100%|Percentage
 
 Paddings can be set with:
 
 Property|Type|Default|Default unit
 --------|----|-------|------------
-paddingTop|valueAndUnit|0px|Pixel
-paddingBottom|valueAndUnit|0px|Pixel
-paddingLeft|valueAndUnit|0px|Pixel
-paddingRight|valueAndUnit|0px|Pixel
+paddingTop|ValueAndUnit|0px|Pixel
+paddingBottom|ValueAndUnit|0px|Pixel
+paddingLeft|ValueAndUnit|0px|Pixel
+paddingRight|ValueAndUnit|0px|Pixel
 
 Please note that paddings are inside the control. This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
 
@@ -105,7 +105,9 @@ All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
 To set value as percentage, use this construct: `control.left = "50%"`
 
-You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
+You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`).
+
+For all properties of type ValueAndUnit, you can find an associated readonly property named xxxInPixels. For instance, `left` works with `leftInPixels` which is a the left property in pixels. So if left = "50%" and the control's parent width is 150px then leftInPixels will be 75.
 
 Here is an example of how to use positions and sizes:  https://www.babylonjs-playground.com/#XCPP9Y#14
 
@@ -210,8 +212,8 @@ focusedBackground|string|black|Background color to use when the control is focus
 placeholderText|string|null|Text to display as placeholder (when there is no text defined and the control is not focused)
 placeholderColor|string|gray|Foreground color to use when the placeholder text is displayed
 autoStretchWidth|boolean|true|The control will resize horizontally to adapt to text size
-maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
-margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
+maxWidth|ValueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
+margin|ValueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
 thickness|number|1|Thickness of the border
 
 The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
@@ -346,8 +348,8 @@ Property|Type|Default|Comments
 borderColor|string|white|Color used to render the border of the thumb
 color|string|white|Foreground color
 background|string|black|Background color
-barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
-thumbWidth|valueAndUnit|30px|Width of the thumb
+barOffset|ValueAndUnit|5px|Offset used vertically to draw the background bar
+thumbWidth|ValueAndUnit|30px|Width of the thumb
 
 Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
