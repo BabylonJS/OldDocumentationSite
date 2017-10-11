@@ -65,53 +65,15 @@ scene.onPointerObservable.add(this.onPickDown, BABYLON.PointerEventTypes.POINTER
 
 You can test it here: http://playground.babylonjs.com/#012I9K
 
-## Where are they?
-Babylon.js uses them a lot! Here is the current list (as of v2.4) of available observables:
+### MultiObserver
+Starting with Babylon.js v3.1, you can watch multiple observables simultaneously with theMultiObserver class:
 
-* scene.onDisposeObservable
-* scene.onBeforeRenderObservable
-* scene.onAfterRenderObservable
-* scene.onReadyObservable
-* scene.onBeforeCameraRenderObservable
-* scene.onAfterCameraRenderObservable
-* scene.onNewCameraAddedObservable
-* scene.onCameraRemovedObservable
-* scene.onNewLightAddedObservable
-* scene.onLightRemovedObservable
-* scene.onNewGeometryAddedObservable
-* scene.onGeometryRemovedObservable
-* scene.onNewMeshAddedObservable
-* scene.onMeshRemovedObservable
-* scene.onPrePointerObservable
-* scene.onPointerObservable
-* layer.onDisposeObservable
-* layer.onBeforeRenderObservable
-* layer.onAfterRenderObservable
-* material.onDisposeObservable
-* material.onBindObservable
-* baseTexture.onDisposeObservable
-* renderTargetTexture.onAfterUnbindObservable
-* renderTargetTexture.onBeforeRenderObservable
-* renderTargetTexture.onAfterRenderObservable
-* renderTargetTexture.onClearObservable
-* abstractMesh.onDisposeObservable
-* abstractMesh.onCollideObservable
-* abstractMesh.onCollisionPositionChangeObservable
-* abstractMesh.onAfterWorldMatrixUpdateObservable
-* mesh.onBeforeRenderObservable
-* mesh.onAfterRenderObservable
-* mesh.onBeforeDrawObservable
-* particleSystem.onDisposeObservable
-* postProcess.onActivateObservable
-* postProcess.onSizeChangedObservable
-* postProcess.onApplyObservable
-* postProcess.onBeforeRenderObservable
-* postProcess.onAfterRenderObservable.
-* spriteManager.onDisposeObservable
+```
+var watcher = BABYLON.MultiObserver.Watch([button.onPointerDownObservable, button2.onPointerDownObservable], function(info) {
+	console.log(info.x);
+});
+```
 
+The MultiObserver will handle the observers for you. You will just need to call watcher.dispose() when done with the observables to free all observers.
 
-
-
-
-
-
+You can test it here: https://www.babylonjs-playground.com/#YENXH1
