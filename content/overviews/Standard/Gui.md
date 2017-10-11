@@ -216,7 +216,7 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
 color|string|white|Foreground color
-background|string|black|Background color
+background|string|#222222|Background color
 focusedBackground|string|black|Background color to use when the control is focused
 placeholderText|string|null|Text to display as placeholder (when there is no text defined and the control is not focused)
 placeholderColor|string|gray|Foreground color to use when the placeholder text is displayed
