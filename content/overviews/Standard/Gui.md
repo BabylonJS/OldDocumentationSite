@@ -194,8 +194,17 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
 textWrapping|boolean|false|Can be set to true to enable text wrapping
+resizeToFit|boolean|false|Can be set to true to enable resize to fit
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+
+#### Resize to Fit
+
+When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
+
+This property allows you to change the text and font of a TextBlock without having to worry about manually setting the estimated rendered width and height.
+
+**Notice that textWrapping is ignored when resizeToFit is set to true.** It doesn't make sense logically for both properties to be used at the same time as they contradict each other.
 
 ### InputText
 
@@ -207,7 +216,7 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
 color|string|white|Foreground color
-background|string|black|Background color
+background|string|#222222|Background color
 focusedBackground|string|black|Background color to use when the control is focused
 placeholderText|string|null|Text to display as placeholder (when there is no text defined and the control is not focused)
 placeholderColor|string|gray|Foreground color to use when the placeholder text is displayed
