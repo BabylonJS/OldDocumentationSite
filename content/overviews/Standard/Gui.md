@@ -194,8 +194,16 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
 textWrapping|boolean|false|Can be set to true to enable text wrapping
+resizeToFit|boolean|false|Can be set to true to enable resize to fit
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+
+#### Resize to Fit
+
+When Resize to Fit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
+This property allows you to change the text and font of a TextBlock without having to worry about guessing the rendered width and height.
+
+**Notice that textWrapping is ignored when resizeToFit is set to true.** It doesn't make sense logically for both properties to be used at the same time as they contradict each other.
 
 ### InputText
 
