@@ -158,7 +158,6 @@ The main gulpfile in Tools/Gulp contains a lot of helpfull tasks. So first open 
 * `gulp materialsLibrary` generates all the materials files in the dist/preview release folder.
 * `gulp proceduralTexturesLibrary` generates all the procedural textures files in the dist/preview release folder.
 * `gulp postProcessesLibrary` generates all the post processes files in the dist/preview release folder.
-* `gulp canvas2D` generates the canvas2D files in the dist/preview release folder.
 * `gulp inspector` generates the inspector files in the dist/preview release folder.
 * `gulp deployLocalDev` regenerates your localDev/src/index.js from the template.
 
