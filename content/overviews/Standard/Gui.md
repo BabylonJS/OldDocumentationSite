@@ -200,6 +200,12 @@ resizeToFit|boolean|false|Can be set to true to enable resize to fit
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
 
+The control currently provides 1 observable:
+
+Observables|Comments
+-----------|--------
+onTextChangedObservable|Raised when the text has changed
+
 #### Resize to Fit
 
 When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
