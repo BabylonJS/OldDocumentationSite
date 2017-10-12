@@ -12,11 +12,9 @@ You can find a complete demo here: http://www.babylonjs.com/demos/gui/
 ![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
 
 ## Introduction
-Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface. It is an alternative to [Canvas2D](http://doc.babylonjs.com/extensions/Canvas2D_home).
+Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface.
 
-The main difference is that Canvas2D is full GPU oriented (text constructrion, animations, etc..) where Babylon.GUI relies on HTML canvas API.
-
-While it could be seen as a less performant approach, it is also more flexible. Furthermore, HTML canvas is also GPU accelerated on most recent browsers.
+The user interface can be full screen or projected onto any 3d object.
 
 ## AdvancedDynamicTexture
 To begin with Babylon.GUI, you first need an AdvancedDynamicTexture object.
@@ -58,6 +56,8 @@ onPointerEnterObservable|Raised when the cursor enters the control. Only availab
 onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
 onPointerDownObservable|Raised when pointer is down on the control.
 onPointerUpObservable|Raised when pointer is up on the control.
+onDirtyObservable|Raised when the control is marked as dirty.
+onAfterDrawObservable|Raised after control is drawn.
 
 You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
