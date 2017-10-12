@@ -58,6 +58,8 @@ onPointerEnterObservable|Raised when the cursor enters the control. Only availab
 onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
 onPointerDownObservable|Raised when pointer is down on the control.
 onPointerUpObservable|Raised when pointer is up on the control.
+onDirtyObservable|Raised when the control is marked as dirty.
+onAfterDrawObservable|Raised after control is drawn.
 
 You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
