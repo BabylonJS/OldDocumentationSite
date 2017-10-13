@@ -256,7 +256,7 @@ Furthermore, please note that due to JavaScript platform limitation, the InputTe
 A button can be used to interact with your user.
 Please see the events chapter to see how to connect your events with your buttons.
 
-There are three kinds of buttons available out of the box:
+There are four kinds of buttons available out of the box:
 
 * ImageButton: An image button is a button made with an image and a text. You can create one with:
 
@@ -265,6 +265,15 @@ var button = BABYLON.GUI.Button.CreateImageButton("but", "Click Me", "textures/g
 ```
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#3
+
+* ImageWithCenterTextButton: An image button made with a image background and a centered text.
+
+```
+var button = BABYLON.GUI.Button.CreateImageWithCenterTextButton("but", "Click Me", "textures/grass.png");
+```
+
+You can try it here:  https://www.babylonjs-playground.com/#PLTRBV
+
 
 * SimpleButton: A simple button with text only
 
