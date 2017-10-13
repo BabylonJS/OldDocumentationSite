@@ -272,7 +272,7 @@ You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#3
 var button = BABYLON.GUI.Button.CreateImageWithCenterTextButton("but", "Click Me", "textures/grass.png");
 ```
 
-You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#288 // Should be updated when available.
+You can try it here:  https://www.babylonjs-playground.com/#PLTRBV
 
 
 * SimpleButton: A simple button with text only
