@@ -4,7 +4,7 @@ PG_TITLE: 3DSMax
 ---
 # Installing the 3DS Max plugin 
 
-The plugin is designed for 3DS Max 2015 or later. To download it, go to the Github project (https://github.com/BabylonJS/Babylon.js), click on the folder _Exporters_, then on the folder _3ds Max_.  
+The plugin is designed for 3DS Max 2015 or later. To download it, go to the Github project (https://github.com/BabylonJS/Exporters/tree/master/3ds%20Max).  
 
 ![github](/img/exporters/3DSMax/1_github.jpg)
 
