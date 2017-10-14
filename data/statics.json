@@ -292,11 +292,6 @@
           "filename": "Transform_Coordinates"
         },
         {
-          "title": "Aligning Rotation to Target",
-          "level": 3,
-          "filename": "Rotation_Target"
-        },
-        {
           "title": "In-Browser Mesh Simplification (Auto-LOD)",
           "level": 3,
           "filename": "In-Browser_Mesh_Simplification"

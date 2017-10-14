@@ -4,18 +4,17 @@ PG_TITLE: How To Use Translations and Rotations
 
 # How To Use Translations and Rotations
 
-All positioning, translating, rotating and scaling take place within a frame of reference determined by the [world matrix](/resources/Frame_Of_Reference). Sometimes the code you write does not produce the translation or rotation you expect and you need to do some [troubleshooting](resources/How_Rotations_and_Translations_work).
-
+All positioning, translating, rotating and scaling take place within a frame of reference determined by the [world matrix](/resources/Frame_Of_Reference). 
 
 ## Frames of Reference 
 
-In Babylon.js two frames of reference are used **world space** using **world axes** and **local space** using **local axes**. [Position](/babylon101/position#position) uses the **world space**  and [addRotation](#add-rotation) uses the **local space**. 
+In Babylon.js two frames of reference are used **world space** using **world axes** and **local space** using **local axes**. [Position](/babylon101/position#position) uses the **world space**  and [addRotation](#add-rotations) uses the **local space**. 
 
 Unlike [rotation](/babylon101/position#rotation) which determines the order of rotations and sets the mesh at the given angles [rotate](#rotate) allows you to set the order of rotations, adds the angle to the current rotation and the frame of reference to use.
 
 Unlike [position](/babylon101/position#position) which sets the mesh to the values give [translate](#translate) moves the mesh in the given direction by the distance give and frame of reference used.
 
-For _translate_ and _rotate_ the space used is used is handled by the `BABYLON.Space.WORLD` and `BABYLON.Space.LOCAL` constants respectively. 
+For _translate_ and _rotate_ the space used is handled by the `BABYLON.Space.WORLD` and `BABYLON.Space.LOCAL` constants respectively. 
 
 Unless [reset](/features/Position,_Rotation,_Scaling#change-of-origin), the center of transformation is at the local origin of the mesh at the time of its creation.
 
@@ -30,7 +29,7 @@ This asymmetric mesh will be used in the playgrounds to illustrate translations 
 
 The general form for _rotate_ is
 
-'''javascript
+```javascript
 mesh.rotate(axis, angle, frame of reference)
 ```
 where axis is a vector giving the axis of rotation, angle is in radians and frame of reference is either `BABYLON.Space.WORLD` or `BABYLON.Space.LOCAL`
@@ -68,7 +67,7 @@ The following playground shows the difference between using rotate with **world 
 
 [Playgound Animation - World and Local Different](https://www.babylonjs-playground.com/#LLNE9E#1)
 
-**Note:**  `mesh.rotate()` generates a new [quaternion](/resources/Rotation_Conventions) and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
+**Note:**  `mesh.rotate()` generates a new [quaternion](/resources/Rotation_Conventions#quaternions) and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
 
 ## Translate
 
@@ -105,7 +104,8 @@ pilot.translate(direction, 6, BABYLON.Space.LOCAL);
 
 [Rotation](/babylon101/position#rotation) imposes the rotation order YXZ in **local space** using [Euler angles](/resources/Rotation_Conventions). This constraint can quickly make it complicated to calculate the required Euler angles to achieve a given final mesh orientation. This is especially so since rotations aren't commutative operations. This means that rotating a mesh first around X, then around Z will lead to a different orientation than rotating it first around Z and then around X with the same values.  
 
-As an example if you create a mesh and rotate it &pi;/3 about the X axis, then rotate it &pi;/4 about the local Y axis the Euler angles needed to use with _rotation_ are  x: 0.6590580358264089, y: 1.1071487177940904, z: 0.8860771237926136
+As an example if you create a mesh and rotate it &pi;/3 about the X axis, then rotate it &pi;/4 about the local Y axis the Euler angles needed to use with _rotation_ are  
+x: 0.6590580358264089, y: 1.1071487177940904, z: 0.8860771237926136
 
 Checking the console in the following playground will give you these value. The leftmost mesh is the start position, the middle after using rotation with Euler Angles x: &pi;/3, y: &pi;/4, z: 0 and the right most after applying the rotations in order &pi;/3 about the X axis, about the local Y axis.
 
@@ -142,7 +142,7 @@ mesh.addRotation(Math.PI / 2, 0, 0).addRotation(0, 0, Math.PI / 4).addRotation(0
 ## How To Generate a Rotation from a Target System 
 
 ### Using Euler Angles
-Given a quaternion it is possible to find the [Euler angles](/resources/Rotation_Conventions). Sometimes however all you might know is a set of axes you want to align to. There is a feature of Babylon.js that allows you to [align axes](/features/Position,_Rotate,_Translate_and_Spaces#align-axes) by finding the particular rotation you need. 
+Given a quaternion it is possible to find the [Euler angles](/resources/Rotation_Conventions). Sometimes however all you might know is a set of axes you want to align to. There is a feature of Babylon.js that allows you to [align axes](/features/Position,_Rotation,_Scaling#align-axes) by finding the particular rotation you need. 
 
 The way to compute an Euler rotation from a set of axes is to use _RotationFromAxis_.
 
@@ -151,11 +151,11 @@ var orientation = BABYLON.Vector3.RotationFromAxis(axis1, axis2, axis3);
 mesh.rotation = orientation;
 ```
 
-In the following playgrounds the stationary purple plane and red, green and blue axes show how the view changes as the camera moves. The red and green spheres are fixed relative to these axes. The 2D plane with an arrow drawn on it has a length th same as the distance between the red and green spheres. 
+In the following playgrounds the stationary purple plane and red, green and blue axes show how the view changes as the camera moves. The red and green spheres are fixed relative to these axes. The 2D plane with an arrow drawn on it has a length the same as the distance between the red and green spheres. 
 
 In the initialising playground the arrow plane is also stationary.
 
-[Playground Example - Initialising](https://www.babylonjs-playground.com/indexstable#VYM1E#30)
+[Playground Example - Initialising](https://www.babylonjs-playground.com/#VYM1E#32)
 
 The requirement is for the arrow plane to rotate such that 
 
@@ -166,7 +166,7 @@ keeping its third axis, which lies on the plane, perpendicular to the camera len
 
 In this way the camera always faces the arrow plane as can be seen in the next playground.
 
-[Playground Example - Aligning Axes](https://www.babylonjs-playground.com/indexstable#VYM1E#32) 
+[Playground Example - Aligning Axes](https://www.babylonjs-playground.com/#VYM1E#32) 
 
 This is achieved by forming axis 1 to join the spheres
 
@@ -198,7 +198,27 @@ The `toRef()` method is also available.
 `Quaternion.RotationQuaternionFromAxisToRef()`  
 
 # Further Reading
+ 
+## Basic - L1  
+[Positions, rotations, scaling 101](/babylon101/Position)  
+ 
+## More Advanced - L3
+
+[How To Use Translations and Rotations](/how_to/Rotate)  
+[How To Set and Use a Pivot](/how_to/Pivots)  
+[How To Rotate Around an Axis About a Point](/how_to/Pivot)  
+[How To Use Path3D](/how_to/How_to_use_Path3D)  
+[How To Use a Parent](/how_to/Parenting)  
+[How To Transform Coordinates](/how_to/Transform_Coordinates)  
+[Euler Angles and Quaternions](/resources/Rotation_Conventions)  
+[Aligning Rotation to Target](/how_to/rotate#how-to-generate-a-rotation-from-a-target-system)  
+[Frame of Reference](/resources/Frame_Of_Reference)  
+[Baking Transformations](/resources/Baking_Transformations)  
+[In-Browser Mesh Simplification (Auto-LOD)](/how_to/In-Browser_Mesh_Simplification)  
 
 ## Gamelet
 
+[A Simple Car Following a Path](/samples/Car_Path)  
 [Making A Simple Driven Car using Translate and Rotate](/samples/Car_Driven)
+
+

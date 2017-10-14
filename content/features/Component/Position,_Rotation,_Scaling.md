@@ -4,11 +4,11 @@ PG_TITLE: 04. Position, Rotation, Scaling
 ---
 # Positioning, Rotating and Scaling 
 
-There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/how_to/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
+There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/features/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
 
 Prior to the _MeshBuilder_ method of creating a mesh the only way to produce a cuboid or ellipsoid, for example, was to create a cube and sphere and scale them in one dimension or another. This could produce difficulties with subsequent manipulations of a mesh. Since using _MeshBuilder_ allows you to set different sizes for meshes in the x, y and z directions these difficuties with [scaling](/babylon101/position#scaling) no longer arise. 
 
-There are two types of tactic to position and rotate a mesh; one type is the **set-at** tactic and the other is **move-by**. [Position](babylon101/position#position) and [rotation](/babylon101/position#rotation) are both of the **set at** type, the values being given set the actual position and rotation of the mesh. On the other hand [addRotation](babylon101/position#sequencing-rotations) is a **move-by** type since it adds the given rotation around one axis to the current rotation of the mesh. You can read about more **set-at** and **move-by** types below.
+There are two types of tactic to position and rotate a mesh; one type is the **set-at** tactic and the other is **move-by**. [Position](/babylon101/position#position) and [rotation](/babylon101/position#rotation) are both of the **set at** type, the values being given set the actual position and rotation of the mesh. On the other hand [addRotation](/babylon101/position#sequencing-rotations) is a **move-by** type since it adds the given rotation around one axis to the current rotation of the mesh. You can read about more **set-at** and **move-by** types below.
 
 ## Set-At Methods
 
@@ -33,7 +33,7 @@ var localPosition = mesh.getPositionExpressedInLocalSpace();
 
 All angles are in radians
 
-A [rotationQuaternion](/resources/Rotation_Conventions) sets the orientation of a mesh by a rotation around a given axis. It is a four dimensional vector of the form (x, y, z, w). The most straight forward way to use a rotationQuaternion is as follows
+A [rotationQuaternion](/resources/Rotation_Conventions#quaternions) sets the orientation of a mesh by a rotation around a given axis. It is a four dimensional vector of the form (x, y, z, w). The most straight forward way to use a rotationQuaternion is as follows
 
 ```javascript
 var axis = new BABYLON.Vector3(1, 1, 1);
@@ -50,7 +50,7 @@ The default for rotationQuaternion is _undefined_ . When a _rotationQuaternion_ 
 
 ## Align Axes
 
-When you want to rotate a camera or mesh so that its lines up with a set of given axes you can use the _RotationFromAxis_ method to find the needed [Euler angles](/resources/Rotation_Conventions) to use with _rotation_ as follows
+When you want to rotate a camera or mesh so that it lines up with a set of given axes you can use the [RotationFromAxis](/how_to/rotate#how-to-generate-a-rotation-from-a-target-system) method to find the needed [Euler angles](/resources/Rotation_Conventions) to use with _rotation_ as follows
 
 ```javascript
 var orientation = BABYLON.Vector3.RotationFromAxis(axis1, axis2, axis3);
@@ -144,7 +144,7 @@ pilot.rotate(BABYLON.Axis.Y, Math.PI / 2, BABYLON.Space.WORLD);
 pilot.rotate(new BABYLON.Vector3(-1, 3, -10), 7 * Math.PI / 12, BABYLON.Space.LOCAL);
 ```
 
-**Note:**  `mesh.rotate()` generates a new [quaternion](/resources/Rotation_Conventions) and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
+**Note:**  `mesh.rotate()` generates a new [quaternion](/resources/Rotation_Conventions#quaternions) and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
 
 [Playground Animation - Rotate](https://www.babylonjs-playground.com/#66EBY3#3)
 
@@ -183,28 +183,21 @@ var matrix = mesh.getWorldMatrix();
 var global_position = BABYLON.Vector3.TransformCoordinates(local_position, matrix);
 ```
 
-
 # Further Reading
  
 ## Basic - L1  
 [Positions, rotations, scaling 101](/babylon101/Position)  
-[Rotation Around an Axis](/how_to/Axis)
-
-
-## Mid Level - L2
-
-
  
 ## More Advanced - L3
 
-[Translate and Rotate in Detail](/how_to/Rotate)  
+[How To Use Translations and Rotations](/how_to/Rotate)  
 [How To Set and Use a Pivot](/how_to/Pivots)  
-[How To Rotate Around an Axis About a Point](/how_to/Pivot) 
-[How To Use Path3D](/how_to/How_to_use_Path3D) 
+[How To Rotate Around an Axis About a Point](/how_to/Pivot)  
+[How To Use Path3D](/how_to/How_to_use_Path3D)  
 [How To Use a Parent](/how_to/Parenting)  
 [How To Transform Coordinates](/how_to/Transform_Coordinates)  
 [Euler Angles and Quaternions](/resources/Rotation_Conventions)  
-[Aligning Rotation to Target](/how_to/Rotation_Target)  
+[Aligning Rotation to Target](/how_to/rotate#how-to-generate-a-rotation-from-a-target-system)  
 [Frame of Reference](/resources/Frame_Of_Reference)  
 [Baking Transformations](/resources/Baking_Transformations)  
 [In-Browser Mesh Simplification (Auto-LOD)](/how_to/In-Browser_Mesh_Simplification)  
