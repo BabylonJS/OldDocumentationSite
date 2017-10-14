@@ -6,7 +6,7 @@ PG_TITLE: Installing  the Babylon Exporter
 
 **A. Getting the files**
 
-1. Download and unzip the Babylon.js files from [main repo](https://github.com/BabylonJS/Exporters/tree/master/Blender). You can unzip the files to any suitable drive or directory.
+1. Download and unzip the Babylon.js files (Blender2Babylon-*.*.zip) from [main repo](https://github.com/BabylonJS/Exporters/tree/master/Blender). You can unzip the files to any suitable drive or directory.
 2. Browse through the unzipped files and directories to find the Blender exporter and the latest version of Babylon.js. In the case of the exporter you are looking for a file named : *io\_export\_babylon.py*
 3. Note where the two files are and as a precaution make backup copies somewhere else on your hard drive. 
 

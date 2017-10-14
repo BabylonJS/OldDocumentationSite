@@ -7,8 +7,11 @@ Unity 5 to Babylon.js exporter
 
 ## Installation
 The plugin folder can be found here: https://github.com/BabylonJS/Exporters/tree/master/Unity%205/Deprecated
+
 ** Please note that we are working on a [new version](https://github.com/BabylonJS/Exporters/tree/master/Unity%205/EditorToolkit) but there is not documentation yet**
+
 You just need to copy/paste the plugin folder inside the **assets** folder of your project folder. Unity 5 will then detect the plugin, compile it and add a "BabylonJS" menu.
+
 Using this menu you will be able to export the current scene to a .babylon file format.
 
 ## Usage
