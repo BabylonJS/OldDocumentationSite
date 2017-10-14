@@ -8,6 +8,10 @@ Unlike set shapes the form of a parametric shape cannot generally be determined 
 
 The _MeshBuilder_ method uses a number of options that you can set or just settle for the default values. Whilst some options such as size or diameter have an obvious meaning, some such as instance require an explanation before proceeding. Others such as frontUV require [Further Reading](#further-reading).
 
+## Paths
+
+Many parametric shapes require an array of vectors to form a path as one of its parameters. As well as obtaining this array of points by hand there are some [curves](/how_to/How_to_use_Curve3), such as a Bezier curve, that can be generated within Babylon.js and the path vectors extracted. 
+
 ## Instance
 
 When in addition the shape has an instance parameter in its options then its shape can be updated by changing the options' values and then using MeshBuilder with instance set to the name of the shape, provided the following conditions are met
@@ -268,8 +272,8 @@ frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Me
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#73)
-[Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#72)
+[Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#72)
+[Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
 
 ## Non Regular Polygon
 You must set at least the _shape_ option.
@@ -343,6 +347,7 @@ Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 ## More Advanced - L3
    
 [Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
+[How To Draw 3D Curves](/how_to/How_to_use_Curve3)
 
 
 

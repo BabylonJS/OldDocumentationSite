@@ -192,11 +192,6 @@
           "filename": "Polyhedra_Shapes"
         },
         {
-          "title": "Rotation Around an Axis",
-          "level": 1,
-          "filename": "Axis"
-        },
-        {
           "title": "Using decals",
           "level": 1,
           "filename": "Decals"
@@ -205,11 +200,6 @@
           "title": "How to Use the Solid Particle System",
           "level": 1,
           "filename": "Solid_Particle_System"
-        },
-        {
-          "title": "Translate, Rotate and Spaces",
-          "level": 2,
-          "filename": "Position,_Rotate,_Translate_and_Spaces"
         },
         {
           "title": "Using PolygonMeshBuilder",
@@ -242,7 +232,7 @@
           "filename": "Maths_Make_Ribbons"
         },
         {
-          "title": "How to use Curve3",
+          "title": "How To Draw Curves",
           "level": 3,
           "filename": "How_to_use_Curve3"
         },
@@ -277,7 +267,7 @@
           "filename": "How_to_use_Bones_and_Skeletons"
         },
         {
-          "title": "Translate and Rotate Details",
+          "title": "How To Use Translations and Rotations",
           "level": 3,
           "filename": "Rotate"
         },
@@ -320,11 +310,6 @@
           "title": "Creating Custom Meshes",
           "level": 3,
           "filename": "Custom"
-        },
-        {
-          "title": "Facet Normals",
-          "level": 3,
-          "filename": "Normals"
         },
         {
           "title": "Updating Vertices",
@@ -856,6 +841,10 @@
         {
           "title": "Baking Transformations",
           "filename": "Baking_Transformations"
+        },
+        {
+          "title": "Vertex Normals",
+          "filename": "Normals"
         }
       ]
     },    
@@ -1311,10 +1300,6 @@
       "img": "img/how_to/All.png",
       "desc": "First level feature exploration",
       "files": [
-        {
-          "title": "How Rotations and Translations Work",
-          "filename": "How_Rotations_and_Translations_Work"
-        },
         {
           "title": "How to use the Solid Particle System",
           "filename": "Solid_Particle_System"

@@ -3,11 +3,11 @@ ID_PAGE: 45094
 PG_TITLE: Normals
 ---
 
-# Facet Normals
+# Vertex Normals
 
-For an individual facet BabylonJS computes its normals as mathematical normals, at right angle to the facet. 
-However there is no necessity for them to be set at right angles. In the following two playgrounds see how the 
-changing directions within the normals array affect how it is lit.
+Each triangular facet of a mesh comprises three vertices. For an individual facet BabylonJS computes its normals as mathematical normals, at right angle to the facet. However there is no necessity for them to be set at right angles and for curved shapes such as a sphere they are not. In the case of a sphere they are set as the mathematical normal of the sphere surface rather than that of the flat facets of the mesh that create the sphere. Vertex normals are used by the [shader code](/how_to/shaderintro) in calculating how the mesh is lit.
+
+In the following two playgrounds see how the changing directions within the normals array affect how it is lit.
 
 [Playground Example Showing Normals Varying in Unison](http://www.babylonjs-playground.com/#VKBJN#18)
 
@@ -24,8 +24,8 @@ The diagram below shows that the average of the three mathematical normals at ea
 
 ![Normals](/img/how_to/Mesh/box4.jpg)
 
-NOTE each of the triples in the normals array is often referred to as a normal even though they are not strictly speaking 
-the mathematical normal.
+**NOTE:** each of the triples in the normals array is referred to as a normal even though they are not strictly speaking 
+the mathematical normal of the facet they belong to. They could however be the mathematical normal of the intended surface of the shape at that position.
 
 Besides minimising the number of vertices needed there are other advantages as will be seen when creating a sphere.
 
@@ -89,8 +89,7 @@ index| position | normal
 
 # Advantage of Shared Normals
 
-Sharing normals means that the shader produces a rounder looking sphere. Applying the function *converToFlatShadedMesh* 
-shows the individual faces making up the sphere.
+Sharing normals means that the shader produces a rounder looking sphere since the vertex normals are the mathematical normals of the sphere surface. Applying the function *converToFlatShadedMesh* shows the individual faces making up the sphere. For a flat shaded sphere the normals of each facet are the mathematical normals of the facet.
 
 [Playground Example Comparing Shading of Spheres](http://www.babylonjs-playground.com/#1H7L5C#38)
 

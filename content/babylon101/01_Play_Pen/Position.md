@@ -1,5 +1,5 @@
 ---
-PG_TITLE: 04 Position and Rotation
+PG_TITLE: 04 Position, Rotation and Scaling
 ---
 
 # Position, Rotation and Scaling
@@ -55,7 +55,7 @@ The local and world axes remain in the same orientation.
 
 ## Rotation
 
-WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/how_to/Applying_Rotations.html).
+WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/how_to/rotation_conventions).
 
 In BabylonJS 
 
@@ -125,9 +125,9 @@ pilot.rotation.x  =  alpha;
 
 The question now is what to do if you want a sequence of rotations that starts with one about the x axis, then about the y axis then about the z axis?
 
-For rotations about **local axes** Babylon.js has a straight forward method. For **world axes** read [this](LINK)
+For **world axes** you use the [rotate method](/features/Position,_Rotation,_Scaling)) For rotations about **local axes** Babylon.js has both the _rotate_ method and _addRotation_ method. 
 
-You can chain a sequence of rotations using the _addRotation_ method. This method provides for one rotation value about one axis which are applied from the first to the last use as the following example shows.
+You can chain a sequence of rotations using the _addRotation_. This method provides for one rotation value about one axis a series of which can be applied from the first to the last as the following example shows.
 
 ```javascript 
 mesh.addRotation(Math.PI/2, 0, 0).addRotation(0, Math.PI/2, 0).addRotation(0, 0, Math.PI/2);

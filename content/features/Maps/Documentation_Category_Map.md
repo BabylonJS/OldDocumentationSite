@@ -161,7 +161,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Position, Rotation, Scaling](/how_to/Position,_Rotation,_Scaling)  
 ****  
 **Mesh Intermediate**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Position, Rotate, Translate and Spaces](/how_to/Position,_Rotate,_Translate_and_Spaces)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Ribbon Tutorial](/how_to/Ribbon_Tutorial)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using decals](/how_to/Using_decals)  
 ****  

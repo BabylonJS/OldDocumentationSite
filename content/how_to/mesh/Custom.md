@@ -289,12 +289,11 @@ In the playground below clicking on next will cycle you through a variety of val
 
 ### Notes on Playground
 The camera has been disabled for this playground. The uv values are shown and the relative index are shown on the texture image. 
-One day this might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh 
-the [arrangement of facets](/advanced/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
+One day this playground might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh the [arrangement of facets](/advanced/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
 
 # Further Reading
 
-[Updating Vertices](/tutorials/Updating_Vertices.html)  
-[Normals in BJS](/tutorials/Normals.html)
+[How To Update Vertices](/how_to/Updating_Vertices.html)  
+[Normals in BJS](/resources/Normals.html)
 
 

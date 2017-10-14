@@ -114,7 +114,7 @@ Finally, after these, add code to call the scene, to enable the engine to contin
 
                 /******* End of the create scene function ******/	
         
-                var scene = createScene; //Call the createScene function
+                var scene = createScene(); //Call the createScene function
 
 	        engine.runRenderLoop(function () { // Register a render loop to repeatedly render the scene
 	                scene.render();

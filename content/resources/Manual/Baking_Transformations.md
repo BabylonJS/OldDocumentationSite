@@ -4,30 +4,124 @@ PG_TITLE: Baking Transformations
 
 # Baking Transformations
 
-In certain situations you might be interested in applying a transform (position, rotation, scale) directly to the mesh vertices, instead of saving it as a property of the mesh. This is called baking, and can be useful in the following situations:
+Usually, within Babylon.js, the translations, rotations and scaling of a mesh change its world matrix only and the vertex position data of a mesh is left unchanged. In certain situations you might be interested in applying a transform (position, rotation, scale) directly to the mesh vertices, instead of saving it as a the world matrix property of the mesh. This is called baking, and can be useful in the following situations:
 
 - building a set of static geometry
 - randomizing a series of mesh copies
 - mirroring a mesh along an axis
 - etc.
 
-Two methods can be used for this process:
+Any matrix can be used for this process including the current world matrix.
 
-`bakeTransformIntoVertices(transform: Matrix)`: this will bake the provided matrix directly into the mesh vertices. For example:
+## Any Matrix
 
+Using _bakeTransformIntoVertices_  will bake the provided matrix directly into the mesh vertices changing their values but leaving the world matrix unchanged.
+
+A box is created, rotated and positioned giving the following world matrix and vertex data.
 ```
-// this will permanently mirror the mesh along the Y axis, while leaving the transform properties untouched
+World Matrix
+-0.01	-0.01	1.00    0.00
+-0.01	 1.00	0.00    0.00
+-1.00	-0.01  -0.01    0.00
+ 1.00	 2.00	3.00    1.00
+
+Vertex Positions    		
+ 1.00	-1.00	 1.00	
+-1.00	-1.00	 1.00	
+-1.00	 1.00	 1.00	
+ 1.00	 1.00	 1.00	
+ 1.00	 1.00	-1.00	
+-1.00	 1.00	-1.00	
+-1.00	-1.00	-1.00	
+ 1.00	-1.00	-1.00	
+```
+
+then _bakeTransformIntoVertices_ is used with the world matrix
+
+```javascript
+box.bakeTransformIntoVertices(box.getWorldMatrix());
+```
+resulting in this world matrix and vertex data.
+```	
+World Matrix		
+-0.01	-0.01	1.00    0.00
+-0.01	 1.00	0.00    0.00
+-1.00	-0.01  -0.01    0.00
+ 1.00	 2.00	3.00    1.00
+
+Vertex Positions 			
+0.00	0.99	3.99	
+0.00	1.00	1.99	
+0.00	3.00	2.00	
+0.01	3.00	4.00	
+1.99	3.00	4.00	
+2.00	3.00	2.00	
+2.00	1.00	2.00	
+2.00	1.00	4.00	
+```
+
+Of course you do not have to use the world matrix, this code.
+
+```javascript
 var matrix = BABYLON.Matrix.Scaling(1, -1, 1);
 mesh.bakeTransformIntoVertices(matrix);
 ```
+will permanently mirror the mesh along the Y axis, while leaving the world matrix untouched.
 
-`bakeCurrentTransformIntoVertices()`: this will bake the current transform properties of the mesh into the vertices, and clear those properties. This includes _rotation_, _translation_ and _scaling_.
+## Current World Matrix
 
-Note: scaling a mesh will often give unrealistic results for lighting, since the normals will simply be scaled along and not properly recomputed. This is illustrated in the following picture: 
+You can set the vertex positions based on any transformations that have been applied to a mesh and reset the world matrix to the identity matrix with _bakeCurrentTransformIntoVertices_. 
+
+A box is created, rotated and positioned giving the following world matrix and vertex data.
+
+```
+World Matrix
+-0.01	-0.01	1.00      0.00
+-0.01	 1.00	0.00      0.00
+-1.00	-0.01  -0.01      0.00
+ 1.00	 2.00	3.00      1.00
+
+Vertex Positions 			
+ 1.00	-1.00	 1.00	
+-1.00	-1.00	 1.00	
+-1.00	 1.00	 1.00	
+ 1.00	 1.00	 1.00	
+ 1.00	 1.00	-1.00	
+-1.00	 1.00	-1.00	
+-1.00	-1.00	-1.00	
+ 1.00	-1.00	-1.00	
+```
+then _bakeCurrentTransformIntoVertices_ is applied to the box
+
+```javascript
+box.bakeCurrentTransformIntoVertices();
+```
+resulting in this world matrix and vertex data.
+```	
+World Matrix		
+1.00	0.00	0.00	0.00
+0.00	1.00	0.00	0.00
+0.00	0.00	1.00	0.00
+0.00	0.00	0.00	1.00
+
+Vertex Positions 			
+0.00	0.99	3.99	
+0.00	1.00	1.99	
+0.00	3.00	2.00	
+0.01	3.00	4.00	
+1.99	3.00	4.00	
+2.00	3.00	2.00	
+2.00	1.00	2.00	
+2.00	1.00	4.00	
+```
+
+## Use With Scaling
+
+When baking scaling the normals are simply scaled in their current direction and so baking a scale can often give unrealistic results for lighting. To correct this normals need to be recomputed. This is illustrated in the following picture: 
 
 ![Normals illustration](http://i.imgur.com/18wDAH7.png) 
 
-_In the above picture, you can see an untransformed mesh on the left, the same mesh scaled along the X axis in the middle and on the right, the mesh with its normals correctly recomputed._
+_In the above picture, you can see an untransformed mesh on the left, the same mesh with a baked scaling along the X axis in the middle and on the right, the mesh with its normals correctly recomputed._
 
 
 You can do a recomputation of your normals like so:
@@ -39,5 +133,12 @@ BABYLON.VertexData.ComputeNormals(positions, indices, normals);
 mesh.updateVerticesData(VertexBuffer.NormalKind, normals, false, false);
 ```
 
-Please note that recomputing the normals of your mesh may not be an ideal solution, as the results may be wrong in some parts of the mesh (e.g. seams on a sphere).
+**Note:**  recomputing the normals of your mesh may not be an ideal solution, as the results may be wrong in some parts of the mesh (e.g. seams on a sphere).
 
+# Further Reading
+
+[Vertex Normals](/resources/normals)  
+
+##Advanced - Level 3
+
+[How To Update Vertex Data](/how_to/updating_vertices)

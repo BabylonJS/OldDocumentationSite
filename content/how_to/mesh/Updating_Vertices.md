@@ -58,5 +58,5 @@ vertexData.applyToMesh(customMesh, true);
 # Further Reading
 
 [Custom Meshes](/how_to/Custom.html)  
-[Normals in BJS](/how_to/Normals.html)
+[Normals in BJS](/resources/Normals)
 

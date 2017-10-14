@@ -2,37 +2,65 @@
 ID_PAGE: 25090
 PG_TITLE: How to use Path3D
 ---
-**Path3D** is a math object.  
-Given an array of successive _Vector3_, it allows you to construct a path in space by computing on each point a triplet of vectors, the tangent, the normal and the binormal to keep direction and consistency (reduction of rotations).  
-Here is the model inspired from  : http://www.cs.cmu.edu/afs/andrew/scs/cs/15-462/web/old/asst2camera.html  
 
-Each triplet can then be used as a local system coordinate. You could set for example a camera on each normal sliding along a curve.
+# How To Use Path3D
 
-Here is a simple example of the visualisation of the triplets on a sinus curve :  https://www.babylonjs-playground.com/#2DLXYB  
-Please zoom in and rotate : tangents in red, normals in blue, binormal in green.  
+A _Path3D_ is a mathematical object created from a sequence of position vectors of points on a curve. Once obtained a Path3D can be used to determine the triplet of vectors tangent, normal and binormal of the curve for each of those those points. Each triplet can then be used as a local system coordinate. You could set, for example, the camera direction to the normal as it follows the curve.
 
-Another example to show how the triplets slightly rotate when the curve goes more into depth  :  https://www.babylonjs-playground.com/#2DLXYB#1  
+  
+A _Path3D_ object is simple to construct as follows
 
-Path3D creation :
 ```javascript
 var points = [v1, v2, ..., vn];          // array of Vector3
 var path3d = new BABYLON.Path3D(points);
 ```
 
-You can then get the triplets. Each following methods return an array of _Vector3_ which are respectively on each curve point the tangent, normal and binormal vectors :
+You can then get the array of tangents, normals and binormals as follows
+
 ```javascript
 var tangents = path3D.getTangents();
 var normals = path3D.getNormals();
 var binormals = path3D.getBinormals();
 ```
 
-There are also two other methods : one returning the _curve_ which is actually a copy of the initial _Vector3_ array given to create the path3D object and the other one returning the distance of each points from the first curve point (distance = zero) as a simple array of numeric values (the distances).
+each element of the arrays is a _Vector3_ .
+
+[Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#0)
+
+Please zoom in and rotate : tangents in red, normals in blue, binormal in green.  
+
+Notice, in the next exxample, how the the triplets slightly rotate when the curve goes more into depth.  
+[Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#1)
+
+Whilst at any point on the curve there is only one tangent there can be an infinte number or normals and hence binormals. If the default one does not suit you it is possible to [set the normal direction](#set_the_normal)
+
+
+## Path3D Methods
+
+As well as _getTangents_, _getNormals_ and _getBinormals_ there are three other methods of _Path3D_.
+
+### Get Curve Points
+
+The _getCurve_ method returns a copy of the initial _Vector3_ array given to create the path3D object. 
+
 ```javascript
-var curve = path3d.getCurve();
+var curvePoints = path3d.getCurve();
+```
+
+### Get Distances
+
+The _getDistances_ method returns an array of distances from one curve point to the next in order of points and with 0 being th first distance.
+
+For the array of points [(1, 2, 1), (4, 8, 3)] the array of distances is [0, 7]. 
+
+```javascript
 var distances = path3d.getDistances();
 ```
 
-In order to avoid memory re-allocation (in the render loop for instance) since the given _points_ array is internally copied, you can update an existing _Path3D_ object with its _update()_ method :
+### Update
+
+In order to avoid memory re-allocation (when in the render loop for example) since the given _points_ array is internally copied, you can update an existing _Path3D_ object with its _update()_ method.
+
 ```javascript
 var points1 = [v1, v2, ..., vn];          // array of Vector3
 var path3d = new BABYLON.Path3D(points1);
@@ -41,8 +69,15 @@ path3D.update(points2);
 ```
 Tangents, normals and bi-normals are thus recomputed for this new path.
 
+## Set The Normal
 
-If you need to give a fixed orientation to the normal on the first path point, you can pass an extra Vector3 as parameter on creation or update :
+For any vector there are an infinte number of vectors at right angles to it. 
+
+![Multiple Normals](/img/how_to/Mesh/tangentnormals.jpg)
+
+In creating a _Path3D_ object Babylon.js assigns a default direction for the normal. If you want to set the direction of the normal yourself, you need to pass a vector for a second parameter to _Path3D_ on creation or on update.
+
+
 ```javascript
 var initialVector = new BABYLON.Vector3(0, 1, 0);
 var otherVector = new BABYLON.Vector3(0, 0, 1);
@@ -52,6 +87,21 @@ var path3d = new BABYLON.Path3D(points, initialVector);
 path3d.update(points, otherVector);
 ```
 
-The first normal will then be the projection of your parameter vector onto the plane orthogonal to the first tangent at the first point position. 
-In a simplest way, this is a mean to have a "vertical" (or quite vertical, depending on the path) first normal for instance.
+The normal will be the projection of your parameter vector onto the plane orthogonal to the tangent at the point position. 
 
+As can been in the diagram below, when the parameter is a vertical vector (black), this is projected onto the plane orthoganal to the tangent vector (red) to form the normal (green).
+
+![Curve Normal](/img/how_to/planenormal.jpg)
+
+The playground example shows what happens as the vector setting the normal direction is rotated.
+
+[Playground Animation - Path3D with Rotating Normals](https://www.babylonjs-playground.com/#8ICWNU)
+
+
+# Further Reading
+
+# Basic - Level 1
+[How To Create Parametric Shapes](/how_to/parametric_shapes)
+
+## More Advanced - Level 3
+[How To Draw Curves](/how_to/How_to_use_Curve3) 

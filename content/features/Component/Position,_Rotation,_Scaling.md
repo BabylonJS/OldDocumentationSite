@@ -8,11 +8,11 @@ There are a variety of ways within Babylon.js to position, rotate and scale a me
 
 Prior to the _MeshBuilder_ method of creating a mesh the only way to produce a cuboid or ellipsoid, for example, was to create a cube and sphere and scale them in one dimension or another. This could produce difficulties with subsequent manipulations of a mesh. Since using _MeshBuilder_ allows you to set different sizes for meshes in the x, y and z directions these difficuties with [scaling](/babylon101/position#scaling) no longer arise. 
 
-There are two types of tactic to position and rotate a mesh; one type is the **set-at** tactic and the other is **move-by**. [Position](babylon101/position#position) and [rotation](/babylon101/position#rotation) are both of the **set at** type, the values being given set the actual position and rotation of the mesh. On the other hand [addRotation](babylon101/position#sequencing-rotations) is a **move-by** type since it adds the given rotation around one axis to the current rotation of the mesh. You can read aboout more **set-at** and **move-by** types below.
+There are two types of tactic to position and rotate a mesh; one type is the **set-at** tactic and the other is **move-by**. [Position](babylon101/position#position) and [rotation](/babylon101/position#rotation) are both of the **set at** type, the values being given set the actual position and rotation of the mesh. On the other hand [addRotation](babylon101/position#sequencing-rotations) is a **move-by** type since it adds the given rotation around one axis to the current rotation of the mesh. You can read about more **set-at** and **move-by** types below.
 
 ## Set-At Methods
 
-In addition to  _position_, which places a mesh accoring to the **world axes**, and _rotation_ which sets the orientation with [Euler angles](/resources/Rotation_Conventions), the following are available to set a mesh's position and rotation.
+In addition to  _position_, which places a mesh according to the **world axes**, and _rotation_ which sets the orientation with [Euler angles](/resources/Rotation_Conventions), the following are available to set a mesh's position and rotation.
 
 ### Position using Local Axes
 
@@ -42,11 +42,29 @@ var quaternion = new BABYLON.Quaternion.RotationAxis(axis, angle);
 mesh.rotationQuaternion = quaternion;
 ```
 
-The default for rotationQuaternion is _undefined_ . 
+The default for rotationQuaternion is _undefined_ . When a _rotationQuaternion_ is set the value of _rotation_ is set to (0, 0, 0).
 
 [Playground Example rotationQuaternion](https://www.babylonjs-playground.com/#EYZE4Q#3) 
 
 **Note** : You MUST set and use rotationQuaternion when creating physics objects because physics engines rely only on them.
+
+## Align Axes
+
+When you want to rotate a camera or mesh so that its lines up with a set of given axes you can use the _RotationFromAxis_ method to find the needed [Euler angles](/resources/Rotation_Conventions) to use with _rotation_ as follows
+
+```javascript
+var orientation = BABYLON.Vector3.RotationFromAxis(axis1, axis2, axis3);
+mesh.rotation = orientation;
+```
+where _axis1_, _axis2_ and _axis3_ are three left-handed orthogonal vectors and the mesh will be aligned with   
+
+* _axis1_ as the x axis in its local system
+* _axis2_ as the y axis in its local system
+* _axis3_ as the z axis in its local system
+
+Using this a plane can be made to follow a curve so it lies parallel or perpendicular to the curve as it does so. In the following example a set of points is used to generate and draw a curve and a [3D path](/how_to/How_to_use_Path3D) is created. Babylon.js provides the way to obtain the normal, tangent and binormal from the _Path3D_ object at each of the points used to generate it. These form a set of orthangonal vectors, and depending on the order they are used, a plane can be made to follow and track the shape of the curve. All six orders are used in the example, the top one [0] has the plane tangental to the curve and the fourth one down [3] is perpendicular to the curve. Others can twist the plane at certain points. 
+
+[Playground Animation - RotationFromAxis](https://www.babylonjs-playground.com/#1PX9G0)
 
 ## Move-By Methods
 
@@ -54,10 +72,10 @@ These methods add the given value (positive or negative) to the current position
 
 [Playground Animation - Position](https://www.babylonjs-playground.com/#66EBY3)
 [Playground Animation - Rotation](https://www.babylonjs-playground.com/#1ST43U#47)
-[Playground Animation  - Rotation Along Straight Horizontal Path](https://www.babylonjs-playground.com/#92EYG#12)
+[Playground Animation  - Rotation Along Straight Horizontal Path](https://www.babylonjs-playground.com/#92EYG#13)
 [Playground Animation - rotationQuaternion](https://www.babylonjs-playground.com/#1ST43U#44)
 
-For rotating the most straight forward **move-by** method is [addRotation](babylon101/position#sequencing-rotations) which increments the orientation of a mesh about one of the **local axes**.
+For rotating the most straight forward **move-by** method is [addRotation](/babylon101/position#sequencing-rotations) which increments the orientation of a mesh about one of the **local axes**.
 
 [Playground Animation - addRotation](https://www.babylonjs-playground.com/#EYZE4Q#5)
 
@@ -132,11 +150,11 @@ pilot.rotate(new BABYLON.Vector3(-1, 3, -10), 7 * Math.PI / 12, BABYLON.Space.LO
 
 ## Change of Origin
 
-Should you wish to position, rotate or scale a mesh about a point other than its own _local origin_ then this can be done either using [a parent or a pivot](/how_to/Pivot) or by coordinate transformation.
+Should you wish to position, rotate or scale a mesh about a point other than its own _local origin_ then this can be done either using [a parent or a pivot](/how_to/Pivot) or by [coordinate transformation](/how_to/transform_coordinates).
 
 ### Parent
 
-Assigning a mesh a parent changes the **world space** for its children. Any change in position, orientation or scale of the parent will be applied to its children. Setting the position, rotation or scaling of a child will be done using the **local space** of the parent as the child's **world space**. 
+Assigning a mesh a [parent](/how_to/parenting) changes the **world space** for its children. Any change in position, orientation or scale of the parent will be applied to its children. Setting the position, rotation or scaling of a child will be done using the **local space** of the parent as the child's **world space**. 
 
 
 ```javascript
@@ -175,13 +193,14 @@ var global_position = BABYLON.Vector3.TransformCoordinates(local_position, matri
 
 ## Mid Level - L2
 
-[Position, Rotate, Translate and Spaces](/how_to/Position,_Rotate,_Translate_and_Spaces)
+
  
 ## More Advanced - L3
 
 [Translate and Rotate in Detail](/how_to/Rotate)  
 [How To Set and Use a Pivot](/how_to/Pivots)  
-[How To Rotate Around an Axis About a Point](/how_to/Pivot)  
+[How To Rotate Around an Axis About a Point](/how_to/Pivot) 
+[How To Use Path3D](/how_to/How_to_use_Path3D) 
 [How To Use a Parent](/how_to/Parenting)  
 [How To Transform Coordinates](/how_to/Transform_Coordinates)  
 [Euler Angles and Quaternions](/resources/Rotation_Conventions)  
