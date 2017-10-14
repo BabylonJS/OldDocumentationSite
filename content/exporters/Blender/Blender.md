@@ -4,7 +4,7 @@ PG_TITLE: Blender
 ---
 # Blender to Babylon.js exporter
 
-The Blender export plugin can be found on [github repository](http://github.com/BabylonJS/Babylon.js/tree/master/Exporters/Blender).
+The Blender export plugin can be found on [github repository](https://github.com/BabylonJS/Exporters/tree/master/Blender).
 
 An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter, see its readme to know about its functionnalities.
 
