@@ -247,6 +247,6 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 
 ## More Advanced - L3
    
-[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
+[Maths Makes Ribbons](/resources/Maths_Make_Ribbons)  
 
 

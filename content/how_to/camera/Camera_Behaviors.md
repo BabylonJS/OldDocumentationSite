@@ -2,7 +2,7 @@
 PG_TITLE: Camera Behaviours
 ---
 
-# Camera Behaviors
+# Apply Camera Behaviors
 
 ## Bouncing behavior
 The bouncing behavior (`BABYLON.BouncingBehavior`) is designed to produce a small bouncing effect when an **ArcRotateCamera** reaches the lowerRadiusLimit or the upperRadiusLimit.

@@ -175,7 +175,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[How to use Tiled Grounds](/how_to/How_to_use_Tiled_Grounds)  
 &nbsp;&nbsp;&nbsp;&nbsp;[In-Browser Mesh Simplification (Auto-LOD)](/how_to/In-Browser_Mesh_Simplification_%28Auto-LOD%29)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Optimizing Your Scene with Octrees](/how_to/Optimizing_Your_Scene_with_Octrees)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Transparency and How Meshes Are Rendered](/how_to/Transparency_and_How_Meshes_Are_Rendered)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Transparency and How Meshes Are Rendered](/resources/Transparency_and_How_Meshes_Are_Rendered)  
 ****  
 **Particles Basics**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Particles](/how_to/Particles)  

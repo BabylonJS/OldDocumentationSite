@@ -1,6 +1,12 @@
+---
+PG_TITLE: How Materials Work
+---
+
+# How Materials Work
+
 Materials are an encapsulation on top of shaders. They provide a simple way to configure and share shaders. 
 
-# Cache and compilation
+## Cache and compilation
 The first time a material is created, an internal object named effect will be created. The effect is the host for the vertex and pixel (fragment) shaders.
 These shaders have to be compiled by the GPU from plain text to GPU machine code.
 
@@ -10,7 +16,7 @@ As the process is a bit expensive, once compiled an effect will remain in memory
 
 Everytime you will change a property of a material (like adding a texture or enabling an option), a new effect will be compiled unless an equivalent can be found in the cache.
 
-# Improving user experience
+# Improving User Experience
 
 ## Precompilation
 By default, materials are compiled only when required. But you may want to precompile everything before running your rendering in order to get the smoother experience possible.

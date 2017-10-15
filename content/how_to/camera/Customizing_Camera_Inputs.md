@@ -3,7 +3,7 @@ ID_PAGE: 29000
 PG_TITLE: 19. Customizing Camera Inputs
 ---
 
-# Customizing Camera Inputs
+# How To Customize Camera Inputs
 
 Every Babylon.js camera will automatically handle inputs for you, once you call the camera's attachControl function. You can revoke the control by using the detachControl function. Most Babylon.js experts use a two-step process to activate and attach a camera:
 

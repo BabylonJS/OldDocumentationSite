@@ -2,6 +2,9 @@
 ID_PAGE: 25363
 PG_TITLE: Layermasks and Multi-Cam Textures
 ---
+
+# How To Use Layermasks and Multi-Camera Textures
+
 ## Different meshes for multiple cameras using Layermasks
 
 A `layerMask` is a number assigned to each mesh and camera.  It is used at the bit level to indicate whether lights and cameras should shine-upon or show the mesh.  The default value, 0x0FFFFFFF, will cause the mesh to be illuminated and shown by any stock light and camera.

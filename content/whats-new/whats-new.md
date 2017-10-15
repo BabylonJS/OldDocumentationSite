@@ -18,7 +18,7 @@ Changes list
  - New `VideoTexture.CreateFromWebCam` to generate video texture using WebRTC. [Demo](https://www.babylonjs-playground.com#1R77YT#11) ([Sebastien Vandenberghe](https://github.com/sebavan)) / ([deltakosh](https://github.com/deltakosh))
  - New Facet Data feature ([jerome](https://github.com/jbousquie))
  - babylon.fontTexture.ts was moved from babylon.js to canvas2D ([nockawa](https://github.com/nockawa))
- - Multi-platform Compressed Textures for Desktops & Mobile Devices with fall back.  Batch (dos) scripts to convert entire directories of .jpg's & .png's [Doc](http://doc.babylonjs.com/how_to/multi-platform_compressed_textures) ([jcpalmer](https://github.com/Palmer-JC))
+ - Multi-platform Compressed Textures for Desktops & Mobile Devices with fall back.  Batch (dos) scripts to convert entire directories of .jpg's & .png's [Doc](http://doc.babylonjs.com/resources/Multi-Platform_Compressed_Textures) ([jcpalmer](https://github.com/Palmer-JC))
  - All deprecated functions and properties were removed ([deltakosh](https://github.com/deltakosh))
  - New build system based on workloads. [More info here](http://doc.babylonjs.com/generals/how_to_start#custom-builds) ([deltakosh](https://github.com/deltakosh))
  - New `Cell Shading` material added into `Materials Library` [Demo](http://www.babylonjs.com/Demos/CellShading/) ([Julien Moreau-Mathis](https://github.com/julien-moreau))
@@ -32,7 +32,7 @@ Changes list
 ### Updates
 - Added `syncBoneWithImpostor()` and `syncImpostorWithBone()` to PhysicsImpostor to help with creating ragdoll effects. [Demo](http://playground.babylonjs.com/#PM5MFS#5) ([abow](https://github.com/abow))
 - New automatic creation mode for skybox. [Doc here](http://doc.babylonjs.com/how_to/environment#automatic-creation) ([deltakosh](https://github.com/deltakosh))
-- New way to force compilation of materials. [Doc here](http://doc.babylonjs.com/how_to/How_materials_work) ([deltakosh](https://github.com/deltakosh))
+- New way to force compilation of materials. [Doc here](http://doc.babylonjs.com/resources/How_materials_work) ([deltakosh](https://github.com/deltakosh))
 - Added a Physics tab to the inspector ([abow](https://github.com/abow))
 - New Debug.PhysicsViewer class for viewing PhysicsImpostors. [Demo]( https://www.babylonjs-playground.com/#CA51CM#2) ([abow](https://github.com/abow))
 - New ColorPicker for GUI. [Demo](https://www.babylonjs-playground.com/#91I2RE#1) ([abow](https://github.com/abow))

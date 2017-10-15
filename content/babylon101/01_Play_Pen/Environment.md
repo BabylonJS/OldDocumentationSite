@@ -97,7 +97,7 @@ skybox.renderingGroupId = 0;
 myMesh.renderingGroupId = 1;
 ```
 
-More info about rendering groups and rendering order can be found [here](/how_to/Transparency_and_How_Meshes_Are_Rendered).
+More info about rendering groups and rendering order can be found [here](/resources/Transparency_and_How_Meshes_Are_Rendered).
 
 #### Automatic creation
 Now that we understand how a skybox can be created let's move to a simpler way:

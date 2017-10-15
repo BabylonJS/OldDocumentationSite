@@ -212,7 +212,7 @@ The SPS is a BJS mesh.
 Its particles are just parts of this big mesh. They can be planar, from a simple triangle to any planar polygon, or/and 3D solid. They face the screen only in `billboard` mode (maybe you should use the SPS in billboard mode only if the two previous means don't yet fit your needs as they are more performant for 2D). You can merge 2D and 3D particles in the same SPS and give them rotation in the space. Each particle can have its own color (vertex color) and own image from a single common texture. They are z-sorted and alpha-blended like any other BJS mesh. They are also pickable. They even have normals and reflect the light. Actually, all the features accessible to a mesh are accessible to the SPS.  
 The SPS provides no behavior but only methods to access and to set each particle.  
 
-About transparency and mesh rendering, you could read this [documentation](/how_to/Transparency_and_How_Meshes_Are_Rendered).  
+About transparency and mesh rendering, you could read this [documentation](/resources/Transparency_and_How_Meshes_Are_Rendered).  
 
 In order to have only one draw call to the GPU, these three systems use only one material/texture for all their particles.  
 <br/>
@@ -381,7 +381,7 @@ Or even use the alpha channel of the texture image :
 ```javascript
 SPS.mesh.material.useAlphaFromDiffuseTexture = true;
 ```
-Please read this [documentation](/how_to/Transparency_and_How_Meshes_Are_Rendered) for transparency concerns.  
+Please read this [documentation](/resources/Transparency_and_How_Meshes_Are_Rendered) for transparency concerns.  
 
 Color and UVs example :  https://www.babylonjs-playground.com/#WCDZS#8  
 Texture with alpha :  https://www.babylonjs-playground.com/#WCDZS#9  

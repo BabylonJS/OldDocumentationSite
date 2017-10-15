@@ -346,7 +346,7 @@ Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
 
 ## More Advanced - L3
    
-[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
+[Maths Makes Ribbons](/resources/Maths_Make_Ribbons)  
 [How To Draw 3D Curves](/how_to/How_to_use_Curve3)
 
 

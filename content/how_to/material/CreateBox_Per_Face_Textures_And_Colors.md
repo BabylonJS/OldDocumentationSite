@@ -20,7 +20,7 @@ A texture atlas also know as a _sprite sheet_ or _sprite atlas_ contains a range
 
 In this atlas there are 24 different images in a 4 rows of 6 a way of mapping each sprite onto an individual face is needed. 
 
-This map will just follow the way [texture images are mapped onto a mesh usually](/how_to/Facets).
+This map will just follow the way [texture images are mapped onto a mesh usually](/resources/Facets).
 
 The U coordinate goes horizontally left to right from 0 to 1.
 

@@ -2,9 +2,11 @@
 ID_PAGE: 22231
 PG_TITLE: 07. Caching Resources in IndexedDB
 ---
+
+# How To Optimize Using Cached Resoures
 Starting with the **1.4 release** of Babylon.JS, you can now very easily indicate that you want to **cache the resources associated with your scene/game** inside the local **IndexedDB** of the browser. It can enhance the gamer experience as the JSON and textures files can be directly loaded from the database rather than from the web.
 
-### Usage
+## Usage
 
 To enable offline support, the first thing you need to do is create a _**.manifest**_ file associated with your scene. It should be named _NameOfYourScene.babylon.manifest_.
 
@@ -32,7 +34,7 @@ You have 3 parameters to fill:
 
 **Note:** images are loaded using XHR2 in the blob format. IE11, Firefox and Chrome 37+ support the storing of blob data into the IndexedDB. [More details](http://caniuse.com/#search=indexeddb)
 
-### Samples
+## Samples
 
 Most of the samples on our website are configured to use offline for their scene and textures: [www.babylonjs.com](http://www.babylonjs.com) . For instance, you can try the Espilit scene. The scene is described in _espilit.babylon_ and the associated manifest file is _espilit.babylon.manifest_.
 

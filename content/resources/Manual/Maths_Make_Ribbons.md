@@ -3,7 +3,7 @@ ID_PAGE: 925088
 PG_TITLE: Maths Makes Ribbons
 ---
 
-# Maths Makes Ribbons
+# Mathematics and Ribbons
 
 Mathematics is very useful for drawing paths in space and so can be applied to ribbons. 
 

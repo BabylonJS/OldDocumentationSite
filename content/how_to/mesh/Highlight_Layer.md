@@ -1,4 +1,8 @@
-# Using the HighlightLayer
+---
+PG_TITLE: How To HighLight
+---
+
+# How To Highlight a Mesh
 
 How often did you search to highlight some of your meshes in a scene ? Sounds easy at first but quickly becomes an issue dealing with edges, blur and antialiasing.
 

@@ -1,7 +1,7 @@
 ---
-PG_TITLE: Combining Animations
+PG_TITLE: How To Combine Animations
 ---
-# Combining Animations
+# How To Combine Animations
 
 ## Concurrent
 

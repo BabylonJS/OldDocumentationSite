@@ -1,8 +1,8 @@
 ---
-PG_TITLE: More On Textures
+PG_TITLE: How To Apply Bumps, Opacity and Tiling
 ---
 
-# More On Textures
+# How To Apply Bumps, Opacity and Tiling
 A range of effects can be achieved with textures using a few extra lines of code.
 
 ## Bump Map

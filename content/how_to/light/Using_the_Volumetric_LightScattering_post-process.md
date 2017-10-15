@@ -2,6 +2,8 @@
 ID_PAGE: 24840
 PG_TITLE: Using the Volumetric LightScattering post-process
 ---
+
+# How To Use the Volumetric LightScattering post-process
 BABYLON.VolumetricLightScatteringPostProcess is a post-process that will compute the light scattering according to a light source mesh.
 Don't hesitate to perform your tests using the playground [here]( https://www.babylonjs-playground.com/?25)
 

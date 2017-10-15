@@ -140,7 +140,7 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 ## More Advanced - L3
 [How to use Instances](/how_to/How_to_use_Instances)  
 [How to Merge Meshes](/how_to/How_to_Merge_Meshes)  
-[Mathematics and Ribbons](/how_to/Maths_Make_Ribbons)  
+[Mathematics and Ribbons](/resources/Maths_Make_Ribbons)  
 [How to use Curve3](/how_to/How_to_use_Curve3)  
 [How to use Path3D](/how_to/How_to_use_Path3D)  
 [How to use Facet Data](/how_to/How_to_use_FacetData)  

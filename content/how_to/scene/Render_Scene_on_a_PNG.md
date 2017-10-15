@@ -2,12 +2,14 @@
 ID_PAGE: 22691
 PG_TITLE: Render Scene on a PNG
 ---
-# Why is it better than "ctrl + prt scr" screenshot?
+
+# How To Render a Scene to a PNG
+
+First you may ask why is it better than "ctrl + prt scr" screenshot?
 
 With a standard ctrl + print screen keypress, you can't create screenshots with higher resolutions than your screen resolution. With BabylonJS screenshot feature, you can. There is no problem with creating a 1920x1080 screenshot on a 800x600 screen (provided the graphics card is powerful enough to compute it).
 Another cool aspect of using this feature is that you can use a non-active camera to create the screenshot, so you can produce many screenshots, without switching cameras!
 
-# How can we do it?
 
 It's done by simply calling this method: `BABYLON.Tools.CreateScreenshot(engine, camera, size)`.
 You need to provide your BabylonJS engine, the camera you want to use for the rendering, and a size.

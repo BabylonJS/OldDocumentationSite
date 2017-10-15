@@ -1,7 +1,10 @@
 ---
 ID_PAGE: 22581
-PG_TITLE: How to use SceneOptimizer
+PG_TITLE: How To Use SceneOptimizer
 ---
+
+# How To Use SceneOptimizer
+
 Rendering a scene on a browser is a great experience because you can reach a lot of different users and hardware. But the main associated caveat is that you can encounter very low end devices.
 
 The SceneOptimizer tool is designed to help you reach a specific framerate by gracefully degrading rendering quality at runtime.

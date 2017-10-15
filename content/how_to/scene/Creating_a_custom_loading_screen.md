@@ -1,3 +1,9 @@
+---
+PG_TITLE: How To Create a Custom Loading Screen
+---
+
+# How To Create a Custom Loading Screen
+
 Starting with Babylon.js 2.3 the loading screen (the screen used when loading assets or a scene) can be changed by the developer.
 
 To create a new loading screen, you will have to create a simple class, implementing the following interface:

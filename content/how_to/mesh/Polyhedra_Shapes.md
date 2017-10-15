@@ -1,10 +1,11 @@
 ---
-PG_TITLE: Polyhedra Shapes
+PG_TITLE: How to Create Polyhedra
 ---
-# Polyhedra Shapes
+
+# How To Create Polyhedra
 
 There are fifteen polyhedra that can be created simply by setting its type number from 0 to 14, and one, the icosphere that is created by name to which more variations can be applied. 
-However there are plenty more to choose from, just follow the instructions under Custom Polyhedra.
+However there are plenty more to choose from, just follow the instructions under [Custom Polyhedra](#custom-polyhedra).
 
 ## Polyhedron
 Example :
@@ -97,5 +98,5 @@ with each vertex of the mesh and so alter the shape of the mesh. For more inform
 [Set Shapes](/babylon101/Discover_Basic_Elements)  
 [Parametric Shapes](/babylon101/Parametric_Shapes)  
 [Ribbons In Detail](/how_to/Ribbon_Tutorial)  
-[Maths Makes Ribbons](/how_to/Maths_Make_Ribbons)  
+[Maths Makes Ribbons](/resources/Maths_Make_Ribbons)  
 [Decals](/how_to/Decals) 

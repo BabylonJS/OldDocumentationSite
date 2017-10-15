@@ -1,9 +1,9 @@
 ---
-PG_TITLE: 04. Reflections and Refractions
+PG_TITLE: 04. How To Obtain Reflections and Refractions
 ---
 
-# Mirrors and Glass
-Using reflection textures can simulate mirror like material and recfraction textures can simulate looking through glass or water.
+# How To Obtain Reflections and Refractions
+Using reflection textures can simulate mirror like material and refraction textures can simulate looking through glass or water.
 
 ## Reflection
 Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/how_to/Skybox)

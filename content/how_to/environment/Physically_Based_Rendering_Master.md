@@ -1,4 +1,8 @@
-# Master the PBR Materials
+---
+PG_TITLE: How To Master the PBR Materials
+---
+
+# How To Master the PBR Materials
 
 ## Introduction
 After following the [PBR Introduction](/features/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
