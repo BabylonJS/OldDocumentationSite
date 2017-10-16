@@ -65,6 +65,21 @@ Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPoi
 
 Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#281
 
+#### Bubbling Phase
+`onPointerMoveObservable`, `onPointerEnterObservable`, `onPointerDownObservable`, `onPointerUpObservable` have a bubbling phase.
+When an event is notified in one of these observables inside a control, it'll subsequently be notified from the same observable in its parent, recursively, until there are no more parents.
+
+The EventState passed as the second argument to the callback contains the properties `target` and `currentTarget` that allow you to track the bubbling phase.
+
+#### Parameters
+ | Property | Type | Comments
+---|---|---|--- 
+optional | target | any | The object that originally notified the event
+optional | currentTarget | any | The current object in the bubbling phase
+
+Here is an example of bubbling:
+http://www.babylonjs-playground.com/#7EPK2H
+
 ### Alignments
 You can define the alignments used by your control with the following properties:
 

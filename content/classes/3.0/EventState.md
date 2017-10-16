@@ -18,6 +18,8 @@ If the callback of a given [Observer](/classes/3.0/Observer) set skipNextObserve
 ---|---|---|---
  | mask | number |   
 optional | skipNextObservers | boolean |   
+optional | target | any | The object that originally notified the event
+optional | currentTarget | any | The current object in the bubbling phase
 ## Members
 
 ### skipNextObservers : boolean
@@ -28,9 +30,17 @@ An [Observer](/classes/3.0/Observer) can set this property to true to prevent su
 
 Get the mask value that were used to trigger the event corresponding to this [EventState](/classes/3.0/EventState) object
 
+### target : boolean
+
+Can optionally be set to the object that originally notified the event.
+
+### currentTarget : boolean
+
+Can optionally be set to the current object in the bubbling phase of the event.
+
 ## Methods
 
-### initalize(mask, skipNextObservers) &rarr; [EventState](/classes/3.0/EventState)
+### initalize(mask, skipNextObservers, target, currentTarget) &rarr; [EventState](/classes/3.0/EventState)
 
 
 
@@ -39,3 +49,5 @@ Get the mask value that were used to trigger the event corresponding to this [Ev
 ---|---|---|---
  | mask | number |   
 optional | skipNextObservers | boolean |   
+optional | target | any | The object that originally notified the event
+optional | currentTarget | any | The current object in the bubbling phase

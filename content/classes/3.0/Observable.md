@@ -50,7 +50,7 @@ Remove a callback from the [Observable](/classes/3.0/Observable) object
 ---|---|---|---
  | callback | (eventData: T, eventState: [EventState](/classes/3.0/EventState)) =&gt; void |  the callback to remove. If it doesn't belong to this [Observable](/classes/3.0/Observable), false will be returned.  the callback to remove. If it doesn't belong to this [Observable](/classes/3.0/Observable), false will be returned.  the callback to remove. If it doesn't belong to this [Observable](/classes/3.0/Observable), false will be returned.
 
-### notifyObservers(eventData, mask) &rarr; boolean
+### notifyObservers(eventData, mask, target, currentTarget) &rarr; boolean
 
 Notify all Observers by calling their respective callback with the given data
 
@@ -61,6 +61,8 @@ Will return true if all observers were executed, false if an observer set skipNe
 ---|---|---|---
  | eventData | T |   
 optional | mask | number |   
+optional | target | any | The object that originally notified the event
+optional | currentTarget | any | The current object in the bubbling phase
 ### hasObservers() &rarr; boolean
 
 return true is the [Observable](/classes/3.0/Observable) has at least one [Observer](/classes/3.0/Observer) registered
