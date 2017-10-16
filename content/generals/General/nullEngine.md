@@ -7,7 +7,7 @@ It can be used to:
 - Run a server side version of your application / game
 - Use specific Babylon.js services (like gltf loaders for instance)
 
-To run a headless version of Babylon.js, just run:
+To use a headless version of Babylon.js, just run:
 
 ```
 var engine = new BABYLON.NullEngine();
