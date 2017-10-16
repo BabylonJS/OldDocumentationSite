@@ -80,4 +80,3 @@ Does this observable handles observer registered with a given mask
  | Name | Type | Description
 ---|---|---|---
 optional | mask | number |   
-
