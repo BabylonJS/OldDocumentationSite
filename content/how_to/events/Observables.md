@@ -1,6 +1,8 @@
 ---
-PG_TITLE: Observables
+PG_TITLE: How to Use Observables
 ---
+
+# How To Use Observables
 
 ## Introduction
 
@@ -26,8 +28,7 @@ You have the following method/properties:
 * clone() to simply clone the object but not the registered Observers.
 
 ## Observer
-An Observer is created when you call the Observable.add() method. 
-When you no longer want to be notified, you call Observable.remove() giving the same object.
+An Observer is created when you call the Observable.add() method. When you no longer want to be notified, you call Observable.remove() giving the same object.
 
 ## Example!
 Given code to be run on every frame before the scene starts the rendering:

@@ -3,11 +3,10 @@ ID_PAGE: 22531
 PG_TITLE: How to use Actions
 ---
 
-# Actions
+# How to use Actions
 
 Actions are a simple way to add interactions in your scenes. An action is launched when its trigger is fired. For instance, you can specify that when the user clicks (or touches) a mesh, an action is executed.
 
-## How to Use It.
 To use actions, you have to attach an `BABYLON.ActionManager` to a mesh or to your scene:
 
 ```javascript

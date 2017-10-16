@@ -2,6 +2,7 @@
 PG_TITLE: How to use Reflection probes
 ---
 
+# How to use Reflection probes
 ![Reflection Probes example](/img/reflectionProbe.jpg)
 
 Reflection probes are used to dynamically generate cube maps that can the be used as reflection textures for instance.

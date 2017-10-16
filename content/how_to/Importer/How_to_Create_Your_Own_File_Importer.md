@@ -2,6 +2,8 @@
 ID_PAGE: 22491
 PG_TITLE: How to Create Your Own File Importer
 ---
+
+# How to Create Your Own File Importer
 By default, babylon.js comes with an importer for .babylon files.
 
 You can also create your own importer by providing a specific object to the ```BABYLON.SceneLoader.RegisterPlugin``` function.

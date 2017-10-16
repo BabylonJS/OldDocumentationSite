@@ -72,8 +72,9 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 [Using the default rendering pipeline](/how_to/Using_Default_Rendering_Pipeline)  
 [Using depth-of-field and other lens effects](/how_to/Using_depth-of-field_and_other_lens_effects)
 
-[Introduction to Shaders](/how_to/ShaderIntro)  
-[Putting Shader Code in Babylon.js](/how_to/Putting)  
-[Shader Material](/how_to/Shader_Material)  
-[Example A Vertical Wave with Shader Code](/how_to/Writing1)  
-[Example Fireworks with Shader Code](/how_to/Writing2)
+
+[Introduction to Shaders](/resources/ShaderIntro)  
+[How To Put Shader Code in Babylon.js](/how_to/Putting)  
+[How To Use ShaderMaterial](/how_to/Shader_Material)  
+[Example A Vertical Wave with Shader Code](/samples/Writing1)  
+[Example Fireworks with Shader Code](/samples/Writing2)

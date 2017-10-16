@@ -2,6 +2,9 @@
 ID_PAGE: 24841
 PG_TITLE: Using depth-of-field and other lens effects
 ---
+
+# How To Use Depth-of-field and other Lens Effects
+
 BABYLON.LensRenderingPipeline is a predefined chain of postprocesses that helps achieving photograph-like realism.
 
 

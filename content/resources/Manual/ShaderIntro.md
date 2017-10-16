@@ -9,9 +9,9 @@ in an extremely fast way.
 
 ## Suggested Pre-Reading
 
-[Custom Meshes](/advanced/Custom.html)  
-[Normals in BJS](/advanced/Normals.html)
-[Updating Vertices](/advanced/Updating_Vertices.html)
+[Custom Meshes](/how_to/Custom.html)  
+[Normals in BJS](/resources/Normals.html)
+[Updating Vertices](/how_to/Updating_Vertices.html)
 
 ## An Overview
 
@@ -135,6 +135,6 @@ More details on this can be found below.
 
 # Further Reading
 
-[Putting Shader Code in BabylonJS](/advanced/Putting.html)  
-[ShaderMaterial Object](/advanced/Shader_Material.html)
+[Putting Shader Code in BabylonJS](/how_to/Putting.html)  
+[ShaderMaterial Object](/how_to/Shader_Material.html)
 

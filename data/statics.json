@@ -470,7 +470,7 @@
           "filename": "Supporting_fog_with_ShaderMaterial"
         },
         {
-          "title": "How to use Lens Flares",
+          "title": "Use Lens Flares",
           "level": 3,
           "filename": "How_to_use_Lens_Flares"
         },
@@ -487,24 +487,12 @@
        "desc": "Using Shaders",
        "files": [
          {
-           "title": "Introduction to Shaders",
-           "filename": "ShaderIntro"
-         },
-         {
-           "title": "Putting Shader Code in BJS",
+           "title": "Put Shader Code in BJS",
            "filename": "Putting"
          },
          {
-           "title": "Shader Material",
+           "title": "Use ShaderMaterial",
            "filename": "Shader_Material"
-         },
-         {
-           "title": "A Vertical Wave with Shader Code",
-           "filename": "Writing1"
-         },
-         {
-           "title": "Fireworks with Shader Code",
-           "filename": "Writing2"
          }
        ]
     },
@@ -514,12 +502,12 @@
       "desc": "Events",
       "files": [
         {
-          "title": "How to Use Actions",
+          "title": "Use Actions",
           "level": 2,
           "filename": "How_to_use_Actions"
         },
         {
-          "title": "Observables",
+          "title": "Use Observables",
           "level": 2,
           "filename": "Observables"
         }
@@ -531,12 +519,12 @@
       "desc": "Physic Engines",
       "files": [
         {
-          "title": "Using a Physics Engine",
+          "title": "Use a Physics Engine",
           "level": 1,
           "filename": "Using_The_Physics_Engine"
         },
         {
-          "title": "Your Own Physics Engine Plugin",
+          "title": "Add Your Own Physics Engine Plugin",
           "level": 3,
           "filename": "Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js"
         }
@@ -548,32 +536,32 @@
       "desc": "Post Processes",
       "files": [
         {
-          "title": "How to use PostProcesses",
+          "title": "Use PostProcesses",
           "level": 3,
           "filename": "How_to_use_PostProcesses"
         },
         {
-          "title": "How to use PostProcessRenderPipeline",
+          "title": "Use PostProcessRenderPipeline",
           "level": 3,
           "filename": "How_to_use_PostProcessRenderPipeline"
         },
         {
-          "title": "Using the SSAO rendering pipeline",
+          "title": "Use the SSAO rendering pipeline",
           "level": 3,
           "filename": "Using_the_SSAO_rendering_pipeline"
         }, 
         {
-          "title": "Using the standard rendering pipeline",
+          "title": "Use the standard rendering pipeline",
           "level": 3,
           "filename": "Using_Standard_Rendering_Pipeline"
         },
         {
-          "title": "Using the default rendering pipeline",
+          "title": "Use the default rendering pipeline",
           "level": 3,
           "filename": "Using_Default_Rendering_Pipeline"
         },
         {
-          "title": "Using depth-of-field and other lens effects",
+          "title": "Use depth-of-field and other lens effects",
           "level": 3,
           "filename": "Using_depth-of-field_and_other_lens_effects"
         }
@@ -820,6 +808,10 @@
           "title": "Multi-Platform Compressed Textures",
           "level": 3,
           "filename": "Multi-Platform_Compressed_Textures"
+        },
+        {
+          "title": "Introduction to Shaders",
+          "filename": "ShaderIntro"
         },    
         {
           "title": "Euler Angles and Quaternions",
@@ -1165,6 +1157,14 @@
            "title": "Freely Moving Particle Collisions",
            "level": 3,
            "filename": "Free_Collide"
+         },
+         {
+           "title": "Fireworks with Shader Code",
+           "filename": "Writing2"
+         },
+         {
+           "title": "A Vertical Wave with Shader Code",
+           "filename": "Writing1"
          }
        ]
     },

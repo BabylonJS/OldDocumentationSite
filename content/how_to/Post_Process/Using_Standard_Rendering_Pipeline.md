@@ -1,5 +1,5 @@
 ---
-PG_TITLE: Using the standard rendering pipeline
+PG_TITLE: How To Use the standard rendering pipeline
 ---
 
 # Introduction

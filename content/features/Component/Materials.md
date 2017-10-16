@@ -166,11 +166,12 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 [How Materials Work](/resources/How_materials_work)  
 [Multi-Platform Compressed Textures](/resources/Multi-Platform_Compressed_Textures)
 
-[Introduction to Shaders](/how_to/ShaderIntro)  
-[Putting Shader Code in Babylon.js](/how_to/Putting)  
-[Shader Material](/how_to/Shader_Material)  
-[Example A Vertical Wave with Shader Code](/how_to/Writing1)  
-[Example Fireworks with Shader Code](/how_to/Writing2)
+
+[Introduction to Shaders](/resources/ShaderIntro)  
+[How To Put Shader Code in Babylon.js](/how_to/Putting)  
+[How To Use ShaderMaterial](/how_to/Shader_Material)  
+[Example A Vertical Wave with Shader Code](/samples/Writing1)  
+[Example Fireworks with Shader Code](/samples/Writing2)
 
 
 

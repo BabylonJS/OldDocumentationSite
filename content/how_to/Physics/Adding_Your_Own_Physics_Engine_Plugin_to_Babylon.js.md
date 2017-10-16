@@ -2,9 +2,10 @@
 ID_PAGE: 22511
 PG_TITLE: Adding Your Own Physics Engine Plugin to Babylon.js
 ---
-Basically Babylon.js comes with a plugin already defined for cannon.js
 
-# Define your plugin
+# How To Add Your Own Physics Engine
+
+## Define your plugin
 You can create your own plugin by creating a class that provides the following interface:
 
 * ```function initialize()```: Must initialize your engine
@@ -35,7 +36,7 @@ You can create your own plugin by creating a class that provides the following i
 
 For implementation details, you can refer to cannon.js plugin: https://github.com/BabylonJS/Babylon.js/blob/master/Babylon/Physics/Plugins/babylon.cannonJSPlugin.js
 
-# Using your plugin
+## Using your plugin
 When you launch the physics simulation, you can add a new parameter to ```enablePhysics``` function to indicate which plugin to use:
 
 ```javascript
