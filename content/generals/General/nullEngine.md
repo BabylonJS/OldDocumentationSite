@@ -7,6 +7,8 @@ It can be used to:
 - Run a server side version of your application / game
 - Use specific Babylon.js services (like gltf loaders for instance)
 
+## General
+
 To use a headless version of Babylon.js, just run:
 
 ```
@@ -51,6 +53,8 @@ BABYLON.SceneLoader.ImportMesh("", "https://playground.babylonjs.com/scenes/", "
 
 ```
 
+## Configuration
+
 You can specifiy some options to the NullEngine constructor:
 
 ```
@@ -63,4 +67,12 @@ var engine = new BABYLON.NullEngine({
 
 With `renderWidth` and `renderHeight` you can define the size of the virtual canvas used to simulate the render surface.
 With `textureSize`, you can define the size of all textures (which will be all black) used by the NullEngine.
+
+## Troubleshooting
+
+While the goal of the NullEngine is to completely replace the Engine class, some features cannot be used server side:
+* camera.attachControl cannot be used as it requires a HTML eLement
+* DynamicTexture cannot be used as they rely on HTML canvas
+
+Furthermore as we already mentioned earlier, you need to provide an implementation of the XmlHttpRequest class.
 
