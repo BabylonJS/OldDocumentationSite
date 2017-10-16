@@ -72,10 +72,10 @@ When an event is notified in one of these observables inside a control, it'll su
 The EventState passed as the second argument to the callback contains the properties `target` and `currentTarget` that allow you to track the bubbling phase.
 
 #### Parameters
- | Property | Type | Comments
----|---|---|--- 
-optional | target | any | The object that originally notified the event
-optional | currentTarget | any | The current object in the bubbling phase
+Property|Type|Default|Comments
+--------|----|-------|--------
+target|any|null|The object that originally notified the event
+currentTarget|any|null|The current object in the bubbling phase
 
 Here is an example of bubbling:
 http://www.babylonjs-playground.com/#7EPK2H
