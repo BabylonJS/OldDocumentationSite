@@ -4,7 +4,7 @@ PG_TITLE: About the Course
 
 # The Course
 
-The Babylon 101 course will lead you on a step by step journey to produce scene that use some of the basic features of the Babylon Engine. On the way there will references for more details at each stage.
+The Babylon 101 course will lead you on a step by step journey to produce scenes that use some of the basic features of the Babylon Engine. On the way there will references for more details at each stage.
 
 So you can get started without any fuss the course starts out with the [First Step](/babylon101/First) by showing you how to use the Playgound to create a scene. Throughout the course you will find examples built in the Playground ready for you to explore and edit. You can of course write your own code in the Playground, just click on the NEW button, edit and write your code and hit the RUN button. 
 

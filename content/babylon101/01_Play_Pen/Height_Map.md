@@ -50,6 +50,9 @@ _Our material, a texture, applied to the plane_
   * _Width_
   * _Height_
   * _Number of subdivisions_: increase the complexity of this mesh in order to improve the visual quality of it
+
+  ![HeightMap4](/img/how_to/HeightMap/14-2.png)
+
   * _Minimum height_ : The lowest level of the mesh
   * _Maximum height_ : the highest level of the mesh
   * _Scene_: the actual scene
@@ -63,13 +66,13 @@ _Our material, a texture, applied to the plane_
 
   And now we have a beautiful 3D view of the earth!
 
-  ![HeightMap4](/img/tutorials/HeightMap/14-3.png)
+  ![HeightMap4](/img/how_to/HeightMap/14-3.png)
 
-  In my example, I have added a skybox (like we have learned before [here](http://doc.babylonjs.com/tutorials/Environment)), and a spotlight to simulate sun activity.
+  In my example, I have added a skybox (like we have learned before [here](/how_to/Environment)), and a spotlight to simulate sun activity.
 
   Here is another example showing what you can achieve with BabylonJS height maps:
 
-  ![HeightMap5](/img/tutorials/HeightMap/14-4.png)
+  ![HeightMap5](/img/how_to/HeightMap/14-4.png)
 
 * **Tips**
   When the user is manipulating the camera, it can be awkward if he can see under the ground, or if he zooms-out outside the skybox. So, to avoid that kind of situation, we can constrain the camera movement:
