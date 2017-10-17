@@ -49,7 +49,7 @@ scene.onPointerDown = function () {
 
 What it does is attach control once the user click on the canvas, and disables the onPointerDown callback.
 
-This can be done with an HTML or a Canvas2D button as well, and using vanilla javascript event listeners. Any intentional user interaction is allowed. A mouse-move event will not trigger it, so don't bother trying. A simple example would be:
+This can be done with an HTML or a GUI button as well, and using vanilla javascript event listeners. Any intentional user interaction is allowed. A mouse-move event will not trigger it, so don't bother trying. A simple example would be:
 
 ```javascript
 // after creating a button with vrButton as ID:

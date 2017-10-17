@@ -12,11 +12,9 @@ You can find a complete demo here: http://www.babylonjs.com/demos/gui/
 ![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
 
 ## Introduction
-Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface. It is an alternative to [Canvas2D](http://doc.babylonjs.com/extensions/Canvas2D_home).
+Babylon.GUI uses a DynamicTexture to generate a fully functionnal user interface.
 
-The main difference is that Canvas2D is full GPU oriented (text constructrion, animations, etc..) where Babylon.GUI relies on HTML canvas API.
-
-While it could be seen as a less performant approach, it is also more flexible. Furthermore, HTML canvas is also GPU accelerated on most recent browsers.
+The user interface can be full screen or projected onto any 3d object.
 
 ## AdvancedDynamicTexture
 To begin with Babylon.GUI, you first need an AdvancedDynamicTexture object.
@@ -58,12 +56,29 @@ onPointerEnterObservable|Raised when the cursor enters the control. Only availab
 onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
 onPointerDownObservable|Raised when pointer is down on the control.
 onPointerUpObservable|Raised when pointer is up on the control.
+onDirtyObservable|Raised when the control is marked as dirty.
+onAfterDrawObservable|Raised after control is drawn.
 
 You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
-Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a Vector2 parameter containing the pointer coordinates. If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
+Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a `Vector2WithInfo` parameter containing the pointer coordinates (x, y) and the index of the button pressed (buttonIndex). If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
 
-Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#121
+Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#281
+
+#### Bubbling Phase
+`onPointerMoveObservable`, `onPointerEnterObservable`, `onPointerDownObservable`, `onPointerUpObservable` have a bubbling phase.
+When an event is notified in one of these observables inside a control, it'll subsequently be notified from the same observable in its parent, recursively, until there are no more parents.
+
+The EventState passed as the second argument to the callback contains the properties `target` and `currentTarget` that allow you to track the bubbling phase.
+
+#### Parameters
+Property|Type|Default|Comments
+--------|----|-------|--------
+target|any|null|The object that originally notified the event
+currentTarget|any|null|The current object in the bubbling phase
+
+Here is an example of bubbling:
+http://www.babylonjs-playground.com/#7EPK2H
 
 ### Alignments
 You can define the alignments used by your control with the following properties:
@@ -80,24 +95,24 @@ You can set controls' position with the following properties:
 
 Property|Type|Default|Default unit
 --------|----|-------|------------
-left|valueAndUnit|0|Pixel
-top|valueAndUnit|0|Pixel
+left|ValueAndUnit|0|Pixel
+top|ValueAndUnit|0|Pixel
 
 Size can be set with:
 
 Property|Type|Default|Default unit
 --------|----|-------|------------
-width|valueAndUnit|100%|Percentage
-height|valueAndUnit|100%|Percentage
+width|ValueAndUnit|100%|Percentage
+height|ValueAndUnit|100%|Percentage
 
 Paddings can be set with:
 
 Property|Type|Default|Default unit
 --------|----|-------|------------
-paddingTop|valueAndUnit|0px|Pixel
-paddingBottom|valueAndUnit|0px|Pixel
-paddingLeft|valueAndUnit|0px|Pixel
-paddingRight|valueAndUnit|0px|Pixel
+paddingTop|ValueAndUnit|0px|Pixel
+paddingBottom|ValueAndUnit|0px|Pixel
+paddingLeft|ValueAndUnit|0px|Pixel
+paddingRight|ValueAndUnit|0px|Pixel
 
 Please note that paddings are inside the control. This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
 
@@ -105,7 +120,9 @@ All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
 To set value as percentage, use this construct: `control.left = "50%"`
 
-You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
+You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`).
+
+For all properties of type ValueAndUnit, you can find an associated readonly property named xxxInPixels. For instance, `left` works with `leftInPixels` which is a the left property in pixels. So if left = "50%" and the control's parent width is 150px then leftInPixels will be 75.
 
 Here is an example of how to use positions and sizes:  https://www.babylonjs-playground.com/#XCPP9Y#14
 
@@ -147,7 +164,7 @@ scaleY|number|1|
 transformCenterX|number|0.5|Define the center of transformation on X axis. Value is between 0 and 1
 transformCenterY|number|0.5|Define the center of transformation on Y axis. Value is between 0 and 1
 
-**Please be aawre that transformations are done at rendering level so after all computations.** This means that alignment or positioning will be done first without taking transform in account.
+**Please be aware that transformations are done at rendering level so after all computations.** This means that alignment or positioning will be done first without taking transform in account.
 
 Here is an example of how to use rotation and scaling:  https://www.babylonjs-playground.com/#XCPP9Y#22
 
@@ -164,6 +181,7 @@ Property|Type|Default|Comments
 alpha|number|1|Between 0 and 1. 0 means completely transparent. 1 means fully opaque
 color|string|Black|Foreground color
 fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
+fontStyle|string|Empty string|Can be inherited. Value can be "italic", "bold" or "oblique"
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 
@@ -190,16 +208,70 @@ Here are the properties you can define:
 Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
-textWrapping|boolean|false|Can be set to true to enable text wrapping.
+textWrapping|boolean|false|Can be set to true to enable text wrapping
+resizeToFit|boolean|false|Can be set to true to enable resize to fit
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+
+The control currently provides 1 observable:
+
+Observables|Comments
+-----------|--------
+onTextChangedObservable|Raised when the text has changed
+
+#### Resize to Fit
+
+When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
+
+This property allows you to change the text and font of a TextBlock without having to worry about manually setting the estimated rendered width and height.
+
+**Notice that textWrapping is ignored when resizeToFit is set to true.** It doesn't make sense logically for both properties to be used at the same time as they contradict each other.
+
+### InputText
+
+The InputText is a control used to let users insert text in a single line: https://www.babylonjs-playground.com/#UWS0TS
+
+Here are the properties you can define:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+text|string|null|Text to display
+color|string|white|Foreground color
+background|string|#222222|Background color
+focusedBackground|string|black|Background color to use when the control is focused
+placeholderText|string|null|Text to display as placeholder (when there is no text defined and the control is not focused)
+placeholderColor|string|gray|Foreground color to use when the placeholder text is displayed
+autoStretchWidth|boolean|true|The control will resize horizontally to adapt to text size
+maxWidth|ValueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
+margin|ValueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
+thickness|number|1|Thickness of the border
+
+The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
+
+The control provides several observables to track its state:
+
+Observables|Comments
+-----------|--------
+onTextChangedObservable|Raised when the text has changed
+onFocusObservable|Raised when the control loses the focus
+onBlurObservable|Raised when the control gets the focus
+
+Please note that the InputText has pretty limited edition support. Here are the supported keys:
+* Delete
+* Backspace
+* Home
+* End
+* Enter
+* Left / Right (used to move the cursor)
+
+Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard. On mobile, the InputText will use the `prompt()` command to get user input. You can define the title of the prompt by setting `control.promptMessage`.
 
 ### Button
 
 A button can be used to interact with your user.
 Please see the events chapter to see how to connect your events with your buttons.
 
-There are three kinds of buttons available out of the box:
+There are four kinds of buttons available out of the box:
 
 * ImageButton: An image button is a button made with an image and a text. You can create one with:
 
@@ -208,6 +280,15 @@ var button = BABYLON.GUI.Button.CreateImageButton("but", "Click Me", "textures/g
 ```
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#3
+
+* ImageWithCenterTextButton: An image button made with a image background and a centered text.
+
+```
+var button = BABYLON.GUI.Button.CreateImageWithCenterTextButton("but", "Click Me", "textures/grass.png");
+```
+
+You can try it here:  https://www.babylonjs-playground.com/#PLTRBV
+
 
 * SimpleButton: A simple button with text only
 
@@ -306,8 +387,8 @@ Property|Type|Default|Comments
 borderColor|string|white|Color used to render the border of the thumb
 color|string|white|Foreground color
 background|string|black|Background color
-barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
-thumbWidth|valueAndUnit|30px|Width of the thumb
+barOffset|ValueAndUnit|5px|Offset used vertically to draw the background bar
+thumbWidth|ValueAndUnit|30px|Width of the thumb
 
 Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
@@ -348,6 +429,75 @@ You can also define which part of the source image you want to use with the foll
 * sourceHeight: height of the source image you want to use (in pixel)
 
 Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
+
+### VirtualKeyboard
+
+The VirtualKeyboard is a control used to display simple onscreen keyboard. This is mostly useful with WebVR scenarios where the user cannot easily use his keyboard.
+
+#### Keys
+
+You can define the keys provided by the keyboard with the following code:
+
+```
+var keyboard = new BABYLON.GUI.VirtualKeyboard();
+keyboard.addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+```
+
+Every key will be created using default values specified by the following properties:
+
+Property|Default
+--------|----
+defaultButtonWidth|40px
+defaultButtonHeight|40px
+defaultButtonPaddingLeft|2px
+defaultButtonPaddingRight|2px
+defaultButtonPaddingTop|2px
+defaultButtonPaddingBottom|2px
+defaultButtonColor|#DDD
+defaultButtonBackground|#070707
+
+You can also override each property by providing an array containing properties for keys (or null):
+
+```
+addKeysRow(["a", "b"], [null, { width: "200px"}]);
+```
+
+You can define each default properties based on the following class:
+```
+class KeyPropertySet {
+      width?: string;
+      height?: string;
+      paddingLeft?: string;
+      paddingRight?: string;
+      paddingTop?: string;
+      paddingBottom?: string;
+      color?: string;
+      background?: string;
+  }
+```
+
+#### Layouts
+
+The VirtualKeyboard provides a static method to create a default layout:
+
+```
+var keyboard = BABYLON.GUI.VirtualKeyboard.CreateDefaultLayout();
+```
+
+The default layout is equivalent to:
+
+```
+addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
+addKeysRow(["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]);
+addKeysRow(["a", "s", "d", "f", "g", "h", "j", "k", "l",";","'","\u21B5"]);
+addKeysRow(["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
+addKeysRow([" "], [{ width: "200px"}]);
+```
+
+#### Events
+Every time a key is pressed the `onKeyPressObservable` observable is triggered. But you can also rely on `keyboard.connect(inputText)` to automatically connect a VirtualKeyboard to an InputText. In this case, the keyboard will only appear when the InputText will be focused and all key pressed events will be sent to the InputText.
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#S7L7FE
 
 ## Containers
 
@@ -403,3 +553,7 @@ Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2
 To reduce the amount of code required to achieve frequent tasks you can use the following helpers:
 
 * `BABYLON.GUI.Control.AddHeader(control, text, size, options { isHorizontal, controlFirst })`: This function will create a StackPanel (horizontal or vertical based on options) and will add your control plus a TextBlock in it. Options can also be used to specify if the control is inserted first of after the header. Depending on the orientation, size will either specify the widht or the height used for the TextBlock.
+
+## Focus management
+
+The current focused control can be found using `advancedDynamicTexture.focusedControl`. You can also manually move the focus to a focusable control by calling `advancedDynamicTexture.moveFocusToControl(control)`.

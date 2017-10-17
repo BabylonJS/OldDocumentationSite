@@ -11,14 +11,14 @@ Creates a new [VertexBuffer](/classes/3.0/VertexBuffer). Methods of [VertexBuffe
 
 ## Constructor
 
-## new [VertexBuffer](/classes/3.0/VertexBuffer)(engine, data, Float32Array, [Buffer](/classes/3.0/Buffer), kind, updatable, postponeInternalCreation, stride, instanced, offset, size)
+## new [VertexBuffer](/classes/3.0/VertexBuffer)(engine:[BABYLON.Engine](/classes/3.0/Engine), data:Float32Array | [Buffer](/classes/3.0/Buffer), kind:string, updatable:boolean, postponeInternalCreation:boolean, stride:number, instanced:boolean, offset:number, size:number)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | engine | any |      @param engine
+ | engine | any |  engine
  | data | number[] or Float32Array or [Buffer](/classes/3.0/Buffer) |      [VertexData](/classes/3.0/VertexData) into buffer
  | kind | string |      The kind of vertex buffer (defined as static variables in [VertexBuffer](/classes/3.0/VertexBuffer) class)
  | updatable | boolean |      True if the vertex buffer should be dynamic, false otherwise.

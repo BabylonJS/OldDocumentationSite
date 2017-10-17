@@ -21,6 +21,10 @@ Next, you have to define which shadows will be rendered. Here we want the shadow
 shadowGenerator.getShadowMap().renderList.push(torus);
 ```
 
+Introduced with babylon.js v3.1, there are two new helper functions to deal with shadow casters:
+* `addShadowCaster(mesh, includeDescendants)`: Helper function to add a mesh and its descendants to the list of shadow casters
+* `removeShadowCaster(mesh, includeDescendants)`: Helper function to remove a mesh and its descendants from the list of shadow casters
+
 And finally, you will have to define where the shadows will be displayed... by setting a mesh parameter to true:
 ```javascript
 ground.receiveShadows = true;
