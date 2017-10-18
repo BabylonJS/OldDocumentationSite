@@ -1,19 +1,168 @@
 /classes                                    /classes/3.0
 
-/how_to/01._advanced_texturing           /how_to/advanced_texturing
-/how_to/02._discover_basic_elements      /how_to/discover_basic_elements
-/how_to/08._sprites                      /how_to/sprites
-/how_to/12._particles                    /how_to/particles
-/how_to/14._height_map                   /how_to/height_map
-/how_to/15._shadows                      /how_to/shadows
+/tutorials/01._advanced_texturing           /how_to/more_materials
+/tutorials/02._discover_basic_elements      /babylon101/discover_basic_elements
+/tutorials/08._sprites                      /babylon101/sprites
+/tutorials/12._particles                    /babylon101/particles
+/tutorials/14._height_map                   /babylon101/height_map
+/tutorials/15._shadows                      /babylon101/shadows
 
-/how_to/01._3d_on_the_web_understanding_the_basics       /how_to/3d_on_the_web_understanding_the_basics
-/how_to/02._webgl_basics                                 /how_to/webgl_basics
-/how_to/03._using_babylon.js_for_beginners               /how_to/using_babylon.js_for_beginners
-/how_to/04._understanding_materials_and_inputs           /how_to/understanding_materials_and_inputs
-/how_to/05._game_pipeline_integration_with_babylon.js    /how_to/game_pipeline_integration_with_babylon.js
-/how_to/06._loading_assets                               /how_to/loading_assets
-/how_to/07._babylon.js_advanced_features                 /how_to/babylon.js_advanced_features
-/how_to/08._special_effects                              /how_to/special_effects
+/tutorials/01._3d_on_the_web_understanding_the_basics       /how_to/3d_on_the_web_understanding_the_basics
+/tutorials/02._webgl_basics                                 /how_to/webgl_basics
+/tutorials/03._using_babylon.js_for_beginners               /how_to/using_babylon.js_for_beginners
+/tutorials/04._understanding_materials_and_inputs           /how_to/understanding_materials_and_inputs
+/tutorials/05._game_pipeline_integration_with_babylon.js    /how_to/game_pipeline_integration_with_babylon.js
+/tutorials/06._loading_assets                               /how_to/loading_assets
+/tutorials/07._babylon.js_advanced_features                 /how_to/babylon.js_advanced_features
+/tutorials/08._special_effects                              /how_to/special_effects
+
+
+/overviews/debug_layer_features                         /features/playground_debuglayer
+/overviews/Behaviors                                    /features/Behaviors
+/overviews/How_Rotations_and_Translations_Work          /features/Position,_Rotation,_Scaling
+/overviews/OcclusionQuery                               /features/OcclusionQuery
+/overviews/WebGL2                                       /features/WebGL2
+
+/overviews/WebVR_Camera                               /how_to/WebVR_Camera
+/overviews/Gui                                        /how_to/Gui
+/overviews/Solid_Particle_System                      /how_to/Solid_Particle_System
+/overviews/Playing_sounds_and_music                   /how_to/Playing_sounds_and_music
+/overviews/Physically_Based_Rendering                 /how_to/Physically_Based_Rendering
+/overviews/Physically_Based_Rendering_Master          /how_to/Physically_Based_Rendering_Master
+/overviews/Using_The_Physics_Engine                   /how_to/Using_The_Physics_Engine
+/overviews/using_the_debuglayer                       /how_to/debug_layer
+/overviews/customize_debug_layer                      /how_to/customize_debug_layer
+/overviews/Observables                                /how_to/Observables
+
+/tutorials/animations                                    /babylon101/animations
+/tutorials/cameras                                       /babylon101/cameras
+/tutorials/Cameras,_Mesh_Collisions_and_Gravity          /babylon101/Cameras,_Mesh_Collisions_and_Gravity
+/tutorials/Creating_a_Basic_Scene                        /babylon101/First
+/tutorials/discover_basic_elements                       /babylon101/discover_basic_elements
+/tutorials/environment                                   /babylon101/environment
+/tutorials/height_map                                    /babylon101/height_map
+/tutorials/intersect_collisions_-_mesh                   /babylon101/intersect_collisions_-_mesh
+/tutorials/lights                                        /babylon101/lights
+/tutorials/materials                                     /babylon101/materials
+/tutorials/Parametric_Shapes                             /babylon101/Parametric_Shapes
+/tutorials/particles                                     /babylon101/particles
+/tutorials/picking_collisions                            /babylon101/picking_collisions
+/tutorials/Position,_Rotation,_Scaling                   /babylon101/position
+/tutorials/raycasts                                      /babylon101/raycasts
+/tutorials/shadows                                       /babylon101/shadows
+/tutorials/sprites                                       /babylon101/sprites
+
+
+/tutorials/3D_on_the_Web_Understanding_the_Basics                       /how_to/3D_on_the_Web_Understanding_the_Basics
+/tutorials/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js          /how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js
+/tutorials/Advanced_Texturing                                           /how_to/more_materials
+/tutorials/Babylon.js_Advanced_Features                                 /how_to/Babylon.js_Advanced_Features
+/tutorials/Caching_Resources_in_IndexedDB                               /how_to/Caching_Resources_in_IndexedDB
+/tutorials/Creating_a_custom_loading_screen                             /how_to/Creating_a_custom_loading_screen
+/tutorials/Customizing_Camera_Inputs                                    /how_to/Customizing_Camera_Inputs
+/tutorials/Game_Pipeline_Integration_with_Babylon.js                    /how_to/Game_Pipeline_Integration_with_Babylon.js
+/tutorials/Highlight_Layer                                              /how_to/Highlight_Layer
+
+/tutorials/How_to_create_a_material_for_materialsLibrary                          /how_to/How_to_create_a_material_for_materialsLibrary
+/tutorials/How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary        /how_to/How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary
+/tutorials/How_to_Create_Your_Own_File_Importer                                   /how_to/How_to_Create_Your_Own_File_Importer
+/tutorials/How_to_dynamically_morph_a_mesh                                        /how_to/How_to_dynamically_morph_a_mesh
+/tutorials/How_to_Merge_Meshes                                                    /how_to/How_to_Merge_Meshes
+/tutorials/How_to_use_Actions                                                     /how_to/How_to_use_Actions
+/tutorials/How_to_use_AssetsManager                                               /how_to/How_to_use_AssetsManager
+/tutorials/How_to_use_Blend_Modes                                                 /how_to/How_to_use_Blend_Modes
+/tutorials/How_to_use_Bones_and_Skeletons                                         /how_to/How_to_use_Bones_and_Skeletons
+/tutorials/How_to_use_Curve3                                                      /how_to/How_to_use_Curve3
+/tutorials/How_to_use_DepthRenderer_to_get_depth_values                           /how_to/How_to_use_DepthRenderer_to_get_depth_values
+/tutorials/How_to_use_EdgesRenderer                                               /how_to/How_to_use_EdgesRenderer
+/tutorials/How_to_use_FacetData                                                   /how_to/How_to_use_FacetData
+/tutorials/How_to_use_FresnelParameters                                           /how_to/How_to_use_FresnelParameters
+/tutorials/How_to_use_Instances                                                   /how_to/How_to_use_Instances
+/tutorials/How_to_use_Lens_Flares                                                 /how_to/How_to_use_Lens_Flares
+/tutorials/How_to_use_LOD                                                         /how_to/How_to_use_LOD
+/tutorials/How_to_use_MorphTargets                                                /how_to/How_to_use_MorphTargets
+/tutorials/How_to_use_Multi-Views                                                 /how_to/How_to_use_Multi-Views
+/tutorials/How_to_use_Path3D                                                      /how_to/How_to_use_Path3D
+/tutorials/How_to_use_PostProcesses                                               /how_to/How_to_use_PostProcesses
+/tutorials/How_to_use_PostProcessRenderPipeline                                   /how_to/How_to_use_PostProcessRenderPipeline
+/tutorials/How_to_use_Procedural_Textures                                         /how_to/How_to_use_Procedural_Textures
+/tutorials/How_to_use_Reflection_probes                                           /how_to/How_to_use_Reflection_probes
+/tutorials/How_to_use_SceneOptimizer                                              /how_to/How_to_use_SceneOptimizer
+/tutorials/How_to_use_the_Tags_System                                             /how_to/How_to_use_the_Tags_System
+/tutorials/How_to_use_VirtualJoysticksCamera                                      /how_to/How_to_use_VirtualJoysticksCamera
+/tutorials/In-Browser_Mesh_Simplification_(Auto-LOD)                              /how_to/In-Browser_Mesh_Simplification_(Auto-LOD)
+/tutorials/Layermasks_and_Multi-Cam_Textures                                      /how_to/Layermasks_and_Multi-Cam_Textures
+/tutorials/Loading_Assets                                                         /how_to/Loading_Assets
+/tutorials/Optimizing_your_scene                                                  /how_to/Optimizing_your_scene
+/tutorials/Optimizing_Your_Scene_with_Octrees                                     /how_to/Optimizing_Your_Scene_with_Octrees
+/tutorials/PolygonMeshBuilder                                                     /how_to/PolygonMeshBuilder
+/tutorials/Position,_Rotate,_Translate_and_Spaces                                 /how_to/Position,_Rotate,_Translate_and_Spaces
+/tutorials/Render_Scene_on_a_PNG                                                  /how_to/Render_Scene_on_a_PNG
+/tutorials/Ribbon_Tutorial                                                        /how_to/Ribbon_Tutorial
+/tutorials/RTS_game_development_series                                            /how_to/RTS_game_development_series
+/tutorials/Special_Effects                                                        /how_to/Special_Effects
+/tutorials/Understanding_Materials_and_Inputs                                     /how_to/Understanding_Materials_and_Inputs
+/tutorials/Using_Babylon.js_for_Beginners                                         /how_to/Using_Babylon.js_for_Beginners
+/tutorials/Using_decals                                                           /how_to/Using_decals
+/tutorials/Using_Default_Rendering_Pipeline                                       /how_to/Using_Default_Rendering_Pipeline
+/tutorials/Using_depth-of-field_and_other_lens_effects                            /how_to/Using_depth-of-field_and_other_lens_effects
+/tutorials/Using_logarithmic_depth_buffer                                         /how_to/Using_logarithmic_depth_buffer
+/tutorials/Using_parallax_mapping                                                 /how_to/Using_parallax_mapping
+/tutorials/Using_Standard_Rendering_Pipeline                                      /how_to/Using_Standard_Rendering_Pipeline
+/tutorials/Using_the_Incremental_Loading_System                                   /how_to/Using_the_Incremental_Loading_System
+/tutorials/Using_the_SSAO_rendering_pipeline                                      /how_to/Using_the_SSAO_rendering_pipeline
+/tutorials/Using_the_Volumetric_LightScattering_post-process                      /how_to/Using_the_Volumetric_LightScattering_post-process
+/tutorials/Video_courses                                                          /how_to/Video_courses
+/tutorials/WebGL_Basics                                                           /how_to/WebGL_Basics
+/tutorials/Zenva_course                                                           /how_to/Zenva_course
+/tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter                          /how_to/Set_Shapes
+/tutorials/CreateBox_Per_Face_Textures_And_Colors                                 /how_to/CreateBox_Per_Face_Textures_And_Colors
+/tutorials/Supporting_fog_with_ShaderMaterial                                     /how_to/Supporting_fog_with_ShaderMaterial
+
+/tutorials/Transparency_and_How_Meshes_Are_Rendered          /resources/Transparency_and_How_Meshes_Are_Rendered
+/tutorials/How_materials_work                                /resources/How_materials_work
+/tutorials/BabylonJS_and_Ionic_Angular                       /resources/BabylonJS_and_Ionic_Angular
+/tutorials/Multi-Platform_Compressed_Textures                /resources/Multi-Platform_Compressed_Textures
+
+/extensions/glTF         /how_to/glTF
+/extensions/OBJ          /how_to/OBJ
+/extensions/STL          /how_to/STL
+
+ /extensions/Creating_Cinematic             /resources/Creating_Cinematic
+ /extensions/Creating_Materials             /resources/Creating_Materials
+ /extensions/Creating_Particle_Systems      /resources/Creating_Particle_Systems
+ /extensions/Getting_Started                /resources/Getting_Started
+ /extensions/Introduction                   /resources/Introduction
+ /extensions/Managin_Lens_Flare_Systems     /resources/Managin_Lens_Flare_Systems
+ /extensions/Managing_Animations            /resources/Managing_Animations
+ /extensions/Managing_Materials             /resources/Managing_Materials
+ /extensions/Using_Actions_Builder          /resources/Using_Actions_Builder
+ /extensions/Using_Materials_Builder        /resources/Using_Materials_Builder
+ /extensions/Using_Post_Processes_Builder   /resources/Using_Post_Processes_Builder
+
+/exporters/3DSMax                               /resources/3DSMax
+/exporters/Blender                              /resources/Blender
+/exporters/Blender_Tips                         /resources/Blender_Tips
+/exporters/Bones_influences_per_vertex          /resources/Bones_influences_per_vertex
+/exporters/Cheetah3D                            /resources/Cheetah3D
+/exporters/Installing__the_Babylon_Exporter     /resources/Installing__the_Babylon_Exporter
+/exporters/Tags                                 /resources/Tags
+/exporters/Unity                                /resources/Unity
+/exporters/WebGL2                               /resources/WebGL2
+
+/generals/A_Babylon.js_Primer          /babylon101/About101
+
+/generals/The_Playground_Tutorial      /features/Playground
+
+/generals/File_Format_Map_(.babylon)          /resources/File_Format_Map_(.babylon)
+/generals/Creating_the_Mini-fied_Version      /resources/Creating_the_Mini-fied_Version
+/generals/Framework_versions                  /resources/Framework_versions
+/generals/offsite_tutorials_list              /resources/offsite_tutorials_list
+/generals/playgrounds                         /resources/playgrounds
+
+/generals/Approved_Naming_Conventions          /how_to/Approved_Naming_Conventions
+/generals/how_to_start                         /how_to/how_to_start
+/generals/setup_visualStudio                   /how_to/setup_visualStudio
+
 
 
