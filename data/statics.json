@@ -417,6 +417,10 @@
           "filename": "3DSMax"
         },
         {
+          "title": "3DS Max to glTF",
+          "filename": "3DSMax_to_glTF"
+        },
+        {
           "title": "Bones influences per vertex",
           "filename": "Bones_influences_per_vertex"
         }
