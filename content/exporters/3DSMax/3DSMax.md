@@ -165,7 +165,7 @@ The log panel indicates in real time which mesh has been exported, which materia
 
 ## Camera
 
-If you want to test your scene right away by using the button Export & Run, your scene should have a camera created. Otherwise, the log panel will display the warning “No camera defined”. 
+If you want to test your scene right away by using the button Export & Run, your scene should have a camera created. Otherwise, the log panel will display the warning “No camera defined” and a default one would be created at runtime but won't be exported in .babylon file. 
 
 If you have more than one camera, the first one will be set as activeCamera in Babylon. 
 
