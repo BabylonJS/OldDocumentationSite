@@ -1,17 +1,14 @@
 ---
-PG_TITLE: Animatiion
+PG_TITLE: Animation of Objects
 ---
 
 # Animation
 
-One way to animate things in BabylonJS is to change their properties within a scene.registerBeforeRender or scene.registerAfterRender loop. You will find many 
-of the Playground examples within the Guide using this method. However BabylonJS also provides animating methods based on a timed frame system. Given the right data 
-BabylonJS calculates and draws a specific frame of the animation at a specific time independently of the scene rendering rate.
+One way to animate things in BabylonJS is to change their properties within a scene.registerBeforeRender or scene.registerAfterRender loop. You will find many of the playground examples within the documentation using this method. However BabylonJS also provides animating methods based on a timed frame system. Given the right data BabylonJS calculates and draws a specific frame of the animation at a specific time independently of the scene rendering rate.
 
 ## Ways of Animating
 
-To help understand how BabylonJS goes about animating, consider a couple of different ways that animating is done, their similarities and differences. The designer 
-of both has to consider, the action wanted, timing, the number of frames needed to produce the required fluidity and key points within the sequence.
+To help understand how BabylonJS goes about animating, consider a couple of different ways that animating is done, their similarities and differences. The designer of both has to consider, the action wanted, timing, the number of frames needed to produce the required fluidity and key points within the sequence.
 
 The BabylonJS method is much closer to stop motion.
 

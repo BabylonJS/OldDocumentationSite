@@ -13,7 +13,7 @@ As you move around a world using the Universal Camera you will want to know if t
 
 ## Arc Rotate Camera
 
- This camera acts like a satellite around a target and always points towards the target position. Its radius and longitudinal and latitudinal rotation can be changed to set its position as well as giving a vector position.
+ This camera acts like a satellite in orbit around a target and always points towards the target position. Its radius and longitudinal and latitudinal rotation can be changed to set its position as well as giving a vector position.
 
 ## Follow Camera
 

@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Behaviour
+PG_TITLE: Behavior
 ---
 
-# Behaviour
+# Behavior
 
 Babylon.js v3.1 introduced a new component based tools: the behaviors.
 A behavior is a simple class that can be attached to a node where it will provide a specific set of features. Features will be triggered by defined events. 

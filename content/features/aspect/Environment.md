@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Environment
+PG_TITLE: Realistic Environments
 ---
 
-# Environment
+# Realistic Environments
 
 An environment is more than just basic shapes, basic textures and basic lighting in a scene. A realistic environment would have a sky, uneven terrain, shadows and perhaps water, fog and different lighting effects. Some of these effects such as adding a sky, uneven ground and fog are handled quite simply and are described in Environment 101. Others require a shader and some are post processes. Some of these are provided for in the Babylon.js engine itself others have to be loaded separately as extensions.
 
@@ -12,22 +12,38 @@ This can be achieved with a _skybox_ object, a large cube that has its inner fac
 
 ## Uneven Terrain
 
-The most straight forward way is to apply an height map image to the ground object. This greyscale pixels of such an image provide the values for the height of the ground. Do you want a very large, or infinite terrain, then Babylon.js provides an extension to do this using a Dynamic Terrain.
+The most straight forward way is to apply an [height map](/babylon101/Height_Map) image to the ground object. This greyscale pixels of such an image provide the values for the height of the ground.
+
+![HeightMap5](/img/how_to/HeightMap/14-4S.png)
+
+## Dynamic Terrain
+
+Do you want a very large, or infinite terrain, then Babylon.js provides an extension to do this using a Dynamic Terrain.
+The Dynamic Terrain is a mesh and a 3D data map of geographic positions giving planar and height coordinates. The mesh stays in place and morphs according to the current world camera position and a data map. This gives the illusion of being able to fly around the terrain. 
+
+[Playground Example Early Prototype](https://www.babylonjs-playground.com/#21MVDH#1)
+
+Now a fully developed extension.
+
+[Playground Example Around the World](https://www.babylonjs-playground.com/#FJNR5#190)
+
+Remember to click in display area before using keys. 
+
 
 ## Shadows
-For shadows a _shadowGenerator_ object is needed. A mesh can then produce a shadow by adding it to a rendering list of the _shadowGenerator_. There is also an extension, **shadows only**,  that allows shadows on a transparent mesh.
+For [shadows](/babylon101/shadows) a _shadowGenerator_ object is needed. A mesh can then produce a shadow by adding it to a rendering list of the _shadowGenerator_. There is also an extension, [shadows only](/extensions/ShadowOnly),  that allows shadows on a transparent mesh.
 
 ## Fog 
 
-Though it can be a complicated procedure to form a fog effect a fairly simple method is described in Environment 101. The effect can be extended further by customising a shader.
+Though it can be a complicated procedure to form a fog effect a fairly simple method is described in [Environment 101](/babylon101/Environment#fog). The effect can be extended further by customising a shader.
 
 ## Physically Based Rendering Materials
 
-World objects do not all absorb and reflect light in the same way. A metal sculture and a concrete one behave completely differently under the same lights. Physically based rendering materials go a long way to allow you to differentiate between the different substances you might want in your project.
+World objects do not all absorb and reflect light in the same way. A metal sculture and a concrete one behave completely differently under the same lights. [Physically based rendering](/how_to/Physically_Based_Rendering) materials go a long way to allow you to differentiate between the different substances you might want in your project.
 
 ## Light Effects
 
-As well as fog, shadows, reflection and reflection it is also possible to give the effects of light scattering and lens flare.
+As well as fog, shadows, reflection and reflection it is also possible to give the effects of [light scattering](/how_to/Using_the_Volumetric_LightScattering_post-process) and [lens flare](/how_to/How_to_use_Lens_Flares).
 
 ## Post Processes
  
@@ -53,7 +69,9 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 ## Mid Level - L2
 
 [Introduction to Physically Based Rendering Materials](/how_to/Physically_Based_Rendering)  
-[Skybox](/how_to/Skybox)
+[Skybox](/how_to/Skybox)  
+[Dynamic Terrain](/extensions/Dynamic_Terrain)  
+[Dynamic Terrain Examples](/extensions/DT_Examples)
 
 ## More Advanced - L3
 
@@ -78,3 +96,4 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 [How To Use ShaderMaterial](/how_to/Shader_Material)  
 [Example A Vertical Wave with Shader Code](/samples/Writing1)  
 [Example Fireworks with Shader Code](/samples/Writing2)
+

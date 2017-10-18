@@ -1,5 +1,5 @@
 ---
-PG_TITLE: A Wide Range of Mesh Types and Features
+PG_TITLE: A Wide Range of Mesh Types
 ---
 
 # Meshes
@@ -10,7 +10,7 @@ In the 3D virtual world shapes are built from meshes, lots of trangular facets j
 
 Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 
-Specialist meshes such as [sprites](/babylon101/Sprites) and [particles](/babylon101/Particles) are also available.
+Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/how_to/Solid_Particle_System) are also available.
 
 ## Types
 

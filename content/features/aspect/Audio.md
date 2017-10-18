@@ -9,3 +9,6 @@ The sound engine offers ambient, spatialized and directional sound.
 
 # Further Reading
 
+[How To Play Sounds and Music](/how_to/Playing_sounds_and_music)
+
+

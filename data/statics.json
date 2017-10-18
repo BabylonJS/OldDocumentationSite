@@ -423,7 +423,7 @@
         {
           "title": "Play Sounds and Music",
           "level": 2,
-          "filename": "sounds_and_music"
+          "filename": "playing_sounds_and_music"
         } 
       ]
     },
@@ -507,7 +507,7 @@
           "filename": "How_to_use_Actions"
         },
         {
-          "title": "Use Observables",
+          "title": "Handle Events with Observables",
           "level": 2,
           "filename": "Observables"
         }
@@ -858,10 +858,6 @@
         {
           "title": "FileFormat Map (.babylon)",
           "filename": "File_Format_Map_(.babylon)"
-        },
-        {
-          "title": "WebGL2",
-          "filename": "WebGL2"
         },
         {
           "title": "Off-Site Tutorials List",
@@ -1303,16 +1299,16 @@
       "desc": "All features."
     },
     {
-      "title": "Component",
-      "name": "Component",
+      "title": "Aspect",
+      "name": "aspect",
       "desc": "Elements of babylon.js",
       "files": [
         {
-          "title": "Scene",
+          "title": "Scene Creation and Optimization",
           "filename": "Scene"
         },
         {
-          "title": "Wide Range of Meshes",
+          "title": "A Range of Meshes",
           "filename": "Shapes"
         },
         {
@@ -1320,32 +1316,36 @@
           "filename": "Position,_Rotation,_Scaling"
         },
         {
-          "title": "Materials",
+          "title": "Configurable Materials",
           "filename": "Materials"
         },
         {
-          "title": "Cameras",
+          "title": "Powerful Camera Types",
           "filename": "Cameras"
         },
         {
-          "title": "Lights and Shadows",
+          "title": "Light and Shadow Effects",
           "filename": "Lights"
         },
         {
-          "title": "Animations",
+          "title": "Animation of Objects",
           "filename": "Animations"
         },
         {
-          "title": "Environment",
+          "title": "Realistic Environments",
           "filename": "Environment"
         },
         {
-          "title": "Events",
+          "title": "Event Handling",
           "filename": "Events"
         },
         {
           "title": "Behaviors",
           "filename": "behaviour"
+        },
+        {
+          "title": "Occlusion Queries",
+          "filename": "OcclusionQuery"
         }
       ]
     },
@@ -1365,82 +1365,37 @@
       ]
     },
     {
-      "title": "Maps",
-      "name": "Maps",
-      "img": "img/how_to/All.png",
-      "desc": "Documentation Category Map",
+      "title": "GUI",
+      "name": "GUI",
+      "desc": "Graphical User Interfaces",
       "files": [
         {
-          "title": "Documentation Category Map",
-          "filename": "Documentation_Category_Map"
+          "title": "Graphic User Interfaces",
+          "filename": "gui"
         }
       ]
     },
     {
-      "title": "Standard",
-      "name": "Standard",
+      "title": "Support",
+      "name": "Support",
       "img": "img/how_to/All.png",
       "desc": "First level feature exploration",
       "files": [
         {
-          "title": "Server Side Engine",
+          "title": "Server Side",
           "filename": "nullEngine"
         },
         {
-          "title": "How to use the Solid Particle System",
-          "filename": "Solid_Particle_System"
+          "title": "Physics Engine",
+          "filename": "Physics_Engine"
         },
         {
-          "title": "Physics Engine - Basic Usage",
-          "filename": "Using_The_Physics_Engine"
-        },
-        {
-          "title": "Playing sounds and music",
-          "filename": "Playing_sounds_and_music"
-        },
-        {
-          "title": "Handling Babylon.js events with observables",
-          "filename": "Observables"
-        },
-        {
-          "title": "WebGL2 support",
+          "title": "WebGL2",
           "filename": "WebGL2"
         },
         {
-          "title": "Using the WebVR Camera",
-          "filename": "WebVR_Camera"
-        },
-        {
-          "title": "Babylon.GUI: How to create 2D and 3D UI",
-          "filename": "Gui"
-        },
-        {
-          "title": "Behaviors",
-          "filename": "Behaviors"
-        },
-        {
-          "title": "Occlusion Queries",
-          "filename": "OcclusionQuery"
-        },
-        {
-          "title": "NPM Support",
+          "title": "NPM",
           "filename": "NPM_Support"
-        }
-      ]
-    },
-    {
-      "title": "PBR",
-      "name": "PBR",
-      "img": "img/extensions/materials/PBRMaterial.jpg",
-      "desc": "All about the Physically Based Rendering material",
-      "files": [
-        {
-          "title": "Introduction to Physically Based Rendering",
-          "filename": "Physically_Based_Rendering"
-        },
-        {
-          "title": "Master the Physically Based Rendering",
-          "filename": "Physically_Based_Rendering_Master"
         }
       ]
     }

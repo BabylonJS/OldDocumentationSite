@@ -4,7 +4,7 @@ PG_TITLE: How to Use a Physics Engine
 
 # How to Use a Physics Engine
 
-## Introduction
+## Introduction 
 
 Babylon.js has a plugin system for physics engines that enables the user to add physics interactions to the scene's objects.
 Unlike the internal collision system, a physics engine calculates objects'  body dynamics and emulates "real-life" interactions between them. So if two objects collide, they will "bounce" off one another, just like you would expect from a real-life object.
