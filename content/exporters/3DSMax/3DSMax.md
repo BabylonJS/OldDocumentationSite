@@ -8,7 +8,7 @@ The plugin is designed for 3DS Max 2015 or later. To download it, go to the Gith
 
 ![github](/img/exporters/3DSMax/1_github.jpg)
 
-In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Max2Babylon-XX.zip_ (where XX is the exporter version, currently 0.10.0). Click on the zip file, and click on the _Download_ button. 
+In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Max2Babylon-XX.zip_ (where XX is the exporter version, currently 0.20.0). Click on the zip file, and click on the _Download_ button. 
 
 ![github download](/img/exporters/3DSMax/2_github_dl.jpg)
 
@@ -40,7 +40,7 @@ Congratulations! You did it!
     * Collisions (*)
     * Position
     * Target / Rotation
-    * Animations: Position, Fov
+    * Animations: Position, Target, Fov
 
 * _Lights_
     * Omni / spot / directional / Ambient(Hemispheric)
@@ -50,7 +50,7 @@ Congratulations! You did it!
     * Intensity
     * Diffuse
     * Specular
-    * Animations: Position, direction, intensity
+    * Animations: Position, direction, intensity, diffuse
 
 * _Meshes_
     * Visibility
@@ -61,7 +61,9 @@ Congratulations! You did it!
     * Position / rotation / scaling
     * Smoothing groups
     * Skin
-    * Geometry (position, normal, texture coordinates (2 channels))
+    * Geometry (position, normal, color, texture coordinates (2 channels))
+    * Instances
+    * Morph targets
     * Show Bounding box and submeshes bounding boxes (*)
     * Animations: Position, scaling, rotation, visibility, bones
 
@@ -76,6 +78,7 @@ Congratulations! You did it!
     * Opacity texture
     * Reflection texture
     * Fresnel for diffuse, emissive, opacity and reflection
+    * Physical materials (PBR)
 
 * _Textures_
     * UV offset / scaling / angle
@@ -190,6 +193,11 @@ Animations are exported by sampling keyframes which can generate a lot of data. 
 
 To ensure that bones are correctly exported, you have to use the Skin modifier. Skin should be positioned at origin. [More info here](http://doc.babylonjs.com/exporters/Bones_influences_per_vertex)
 
+## Physical materials
+
+In 3DS MAX, metallic and roughness are split in 2 textures. When exporting to babylon, those maps are combined together.
+The process is mimic from glTF. [More info here](https://doc.babylonjs.com/exporters/3DSMax_to_glTF#pbr-materials)
+
 ## Texture transparency 
 
 Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 
@@ -204,6 +212,6 @@ First, create the model you will be using in the Key class. I choose to create a
 
 ![key](/img/exporters/3DSMax/12_key.jpg)
 
-The only thing left to do is to export this key as a Babylon file, and we’re done with 3DS Max. As the animation is going from frame 0 to frame 80, the Babylon properties for this file have to be updated. And we’re done! 
+The only thing left to do is to export this key as a Babylon file, and we’re done with 3DS Max. As the animation is going from frame 0 to frame 80, the Babylon properties for this object have to be updated. And we’re done! 
 
 ![animation](/img/exporters/3DSMax/13_animation.jpg)
