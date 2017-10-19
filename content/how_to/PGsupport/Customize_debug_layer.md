@@ -10,11 +10,11 @@ Before following any of the steps below knowing how to customizing Babylon.js in
 
 This can be gained by reading
 
-[How to Start Contributing to Babylon.js](/how_to/how_to_start)
+[How to Start Contributing to Babylon.js](/How_To/how_to_start)
 
 In addition for those using Visual Studio as an IDE you can read 
 
-[Setup Visual Studio to contribute to Babylon.js](/how_to/setup_visualStudio)
+[Setup Visual Studio to contribute to Babylon.js](/How_To/setup_visualStudio)
 
 
 ## Setting the project
@@ -70,4 +70,4 @@ Where element1 and element2 are two HTML div, and direction is either 'vertical'
 # Further Reading
 
 [The Debug Layer Features](/features/playground_debuglayer)  
-[How To use The Debug Layer in Projects](/how_to/debug_layer)     
+[How To use The Debug Layer in Projects](/How_To/debug_layer)     

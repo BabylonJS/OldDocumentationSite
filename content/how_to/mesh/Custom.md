@@ -292,7 +292,7 @@ One day this playground might improve. You will get some idea of how to achieve 
 
 # Further Reading
 
-[How To Update Vertices](/how_to/Updating_Vertices.html)  
+[How To Update Vertices](/How_To/Updating_Vertices.html)  
 [Normals in BJS](/resources/Normals.html)
 
 

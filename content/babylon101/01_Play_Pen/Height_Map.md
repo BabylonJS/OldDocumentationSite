@@ -68,7 +68,7 @@ _Our material, a texture, applied to the plane_
 
   ![HeightMap4](/img/how_to/HeightMap/14-3.png)
 
-  In my example, I have added a skybox (like we have learned before [here](/how_to/Environment)), and a spotlight to simulate sun activity.
+  In my example, I have added a skybox (like we have learned before [here](/How_To/Environment)), and a spotlight to simulate sun activity.
 
   Here is another example showing what you can achieve with BabylonJS height maps:
 

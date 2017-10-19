@@ -45,7 +45,7 @@ module.exports = function index(done) {
         "resources",
         "resources",
         "generals",
-        "how_to",
+        "How_To",
         "features"
     ];
     */

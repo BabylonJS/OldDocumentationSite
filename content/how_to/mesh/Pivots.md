@@ -147,6 +147,6 @@ The following sequence of playgrounds shows setting the first pivot point, rotat
 
 ## More Advanced - L3
 
-[How To Rotate Around an Axis about a Point](/how_to/Pivot)
+[How To Rotate Around an Axis about a Point](/How_To/Pivot)
 
 

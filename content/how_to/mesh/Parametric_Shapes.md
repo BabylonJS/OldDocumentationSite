@@ -10,7 +10,7 @@ The _MeshBuilder_ method uses a number of options that you can set or just settl
 
 ## Paths
 
-Many parametric shapes require an array of vectors to form a path as one of its parameters. As well as obtaining this array of points by hand there are some [curves](/how_to/How_to_use_Curve3), such as a Bezier curve, that can be generated within Babylon.js and the path vectors extracted. 
+Many parametric shapes require an array of vectors to form a path as one of its parameters. As well as obtaining this array of points by hand there are some [curves](/How_To/How_to_use_Curve3), such as a Bezier curve, that can be generated within Babylon.js and the path vectors extracted. 
 
 ## Instance
 
@@ -296,7 +296,7 @@ All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie o
 
 [A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#6)
 
-Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
 ## Extruded Non Regular Polygon
 You must set at least the _shape_ and _depth_ options.
@@ -320,34 +320,34 @@ All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie o
 
 [Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
 
-Uses [PolygonMeshBuilder](/how_to/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
 # Further Reading
 
 ## How To Make the Most of Options
 
 [Side Orientation](/babylon101/Discover_Basic_Elements#side-orientation)  
-[Updatable](/how_to/Updating_Vertices)  
-[Face UV and Face Colors](/how_to/CreateBox_Per_Face_Textures_And_Colors)  
-[Front and Back UV](/how_to/FrontandBackUV)
+[Updatable](/How_To/Updating_Vertices)  
+[Face UV and Face Colors](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
+[Front and Back UV](/How_To/FrontandBackUV)
 
 ## Basic - L1
 
 [Mesh Overview](/features/Shapes)  
 [Set Shapes 101](/babylon101/Discover_Basic_Elements)  
 [Parametric Shapes 101](/babylon101/Parametric_Shapes)  
-[Set Shapes](/how_to/Set_Shapes)  
-[Polyhedra Shapes](/how_to/Polyhedra_Shapes)  
-[Decals](/how_to/Decals) 
+[Set Shapes](/How_To/Set_Shapes)  
+[Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Decals](/How_To/Decals) 
 
 ## Mid Level - L2
  
-[Ribbons In Detail](/how_to/Ribbon_Tutorial)
+[Ribbons In Detail](/How_To/Ribbon_Tutorial)
 
 ## More Advanced - L3
    
 [Maths Makes Ribbons](/resources/Maths_Make_Ribbons)  
-[How To Draw 3D Curves](/how_to/How_to_use_Curve3)
+[How To Draw 3D Curves](/How_To/How_to_use_Curve3)
 
 
 

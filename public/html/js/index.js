@@ -28,7 +28,7 @@
                     html: '<i class="fa fa-book"></i>Babylon 101'
                 }), 
                 $('<a>', {
-                    href: '/how_to',
+                    href: '/How_To',
                     html: '<i class="fa fa-cogs"></i>How To...'
                 }),
                 $('<a>', {

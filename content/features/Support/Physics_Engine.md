@@ -31,8 +31,8 @@ Collisions between two imposters P<sub>0</sub> and P<sub>1</sub> is handled by s
 
 ## Basic - L1
 
-[Using a Physics Engine](/how_to/Using_The_Physics_Engine)
+[Using a Physics Engine](/How_To/Using_The_Physics_Engine)
 
 ## More Advanced - L3
 
-[Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)
+[Add Your Own Physics Engine](/How_To/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)

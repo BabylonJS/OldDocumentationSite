@@ -16,7 +16,7 @@ class [SpriteManager](/classes/3.0/SpriteManager)
 ## new [SpriteManager](/classes/3.0/SpriteManager)(name, imgUrl, capacity, cellSize, scene, epsilon, samplingMode)
 
 Create a new [SpriteManager](/classes/3.0/SpriteManager)
-A tutorial about sprites can be found here : https://doc.babylonjs.com/how_to/Sprites
+A tutorial about sprites can be found here : https://doc.babylonjs.com/How_To/Sprites
 
 #### Parameters
  | Name | Type | Description

@@ -270,11 +270,11 @@ demo :  https://www.babylonjs-playground.com/#E6IX1#9
 ## Basic - L1
 
 [Parametric Shapes](/babylon101/Parametric_Shapes.html)  
-[Polyhedra Shapes](/how_to/Polyhedra_Shapes.html)  
-[Decals](/how_to/Decals.html) 
+[Polyhedra Shapes](/How_To/Polyhedra_Shapes.html)  
+[Decals](/How_To/Decals.html) 
 
 ## Mid Level - L2 
-[Ribbons In Detail](/how_to/Ribbon_Tutorial.html)  
+[Ribbons In Detail](/How_To/Ribbon_Tutorial.html)  
 
 
   

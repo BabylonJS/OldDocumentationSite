@@ -188,7 +188,7 @@ In light blue, these two curves are continued each other and a hermite curve is 
 # Further Reading
 
 # Basic - Level 1
-[How To Create Parametric Shapes](/how_to/parametric_shapes)
+[How To Create Parametric Shapes](/How_To/parametric_shapes)
 
 ## More Advanced - Level 3
-[How To Use Path3D](/how_to/How_to_use_Path3D)  
+[How To Use Path3D](/How_To/How_to_use_Path3D)  

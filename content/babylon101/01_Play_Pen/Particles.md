@@ -297,5 +297,5 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 ## Basic - L1
 
 [Mesh Overview](/features/Shapes)  
-[Solid Particle System](/how_to/Solid_Particle_System)
+[Solid Particle System](/How_To/Solid_Particle_System)
 

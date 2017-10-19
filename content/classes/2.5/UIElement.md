@@ -102,7 +102,7 @@ class [UIElement](/classes/2.0/UIElement) extends [SmartPropertyBase](/classes/2
 
 ### animations : Animation[]
 
-Animation array, more info: http://doc.babylonjs.com/how_to/Animations
+Animation array, more info: http://doc.babylonjs.com/How_To/Animations
 
 ### ownerWindow : [Window](/classes/2.0/Window)
 

@@ -141,4 +141,4 @@ mesh.updateVerticesData(VertexBuffer.NormalKind, normals, false, false);
 
 ##Advanced - Level 3
 
-[How To Update Vertex Data](/how_to/updating_vertices)
+[How To Update Vertex Data](/How_To/updating_vertices)

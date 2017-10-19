@@ -9,7 +9,7 @@ class [ShadowGenerator](/classes/3.0/ShadowGenerator)
 
 Shadows are dynamic, they are dynamically generated depending upon a Directionallight.
 
-A tutorial about shadows can be found here : https://doc.babylonjs.com/how_to/shadows
+A tutorial about shadows can be found here : https://doc.babylonjs.com/How_To/shadows
 
 ## Constructor
 
@@ -27,7 +27,7 @@ Required parameters :
 
 - `light` : the light object generating the shadows.
 
-Documentation : http://doc.babylonjs.com/how_to/shadows
+Documentation : http://doc.babylonjs.com/How_To/shadows
 
 #### Parameters
  | Name | Type | Description

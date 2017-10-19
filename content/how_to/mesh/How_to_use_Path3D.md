@@ -101,7 +101,7 @@ The playground example shows what happens as the vector setting the normal direc
 # Further Reading
 
 # Basic - Level 1
-[How To Create Parametric Shapes](/how_to/parametric_shapes)
+[How To Create Parametric Shapes](/How_To/parametric_shapes)
 
 ## More Advanced - Level 3
-[How To Draw Curves](/how_to/How_to_use_Curve3) 
+[How To Draw Curves](/How_To/How_to_use_Curve3) 

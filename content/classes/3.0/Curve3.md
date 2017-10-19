@@ -19,7 +19,7 @@ A [Curve3](/classes/3.0/Curve3) object is a logical object, so not a mesh, to ha
 
 A [Curve3](/classes/3.0/Curve3) is designed from a series of successive [Vector3](/classes/3.0/Vector3).
 
-Tuto : http://doc.babylonjs.com/how_to/How_to_use_Curve3#curve3-object
+Tuto : http://doc.babylonjs.com/How_To/How_to_use_Curve3#curve3-object
 
 #### Parameters
  | Name | Type | Description
@@ -30,7 +30,7 @@ Tuto : http://doc.babylonjs.com/how_to/How_to_use_Curve3#curve3-object
 
 ### static CreateQuadraticBezier(v0, v1, v2, nbPoints) &rarr; [Curve3](/classes/3.0/Curve3)
 
-Returns a [Curve3](/classes/3.0/Curve3) object along a Quadratic Bezier curve : http://doc.babylonjs.com/how_to/How_to_use_Curve3#quadratic-bezier-curve
+Returns a [Curve3](/classes/3.0/Curve3) object along a Quadratic Bezier curve : http://doc.babylonjs.com/How_To/How_to_use_Curve3#quadratic-bezier-curve
 
 #### Parameters
  | Name | Type | Description
@@ -40,7 +40,7 @@ Returns a [Curve3](/classes/3.0/Curve3) object along a Quadratic Bezier curve : 
  | v2 | [Vector3](/classes/3.0/Vector3) |  ([Vector3](/classes/3.0/Vector3)) the end point of the Quadratic Bezier  ([Vector3](/classes/3.0/Vector3)) the second control point  ([Vector3](/classes/3.0/Vector3)) the second control point   
 ### static CreateCubicBezier(v0, v1, v2, v3, nbPoints) &rarr; [Curve3](/classes/3.0/Curve3)
 
-Returns a [Curve3](/classes/3.0/Curve3) object along a Cubic Bezier curve : http://doc.babylonjs.com/how_to/How_to_use_Curve3#cubic-bezier-curve
+Returns a [Curve3](/classes/3.0/Curve3) object along a Cubic Bezier curve : http://doc.babylonjs.com/How_To/How_to_use_Curve3#cubic-bezier-curve
 
 #### Parameters
  | Name | Type | Description
@@ -51,7 +51,7 @@ Returns a [Curve3](/classes/3.0/Curve3) object along a Cubic Bezier curve : http
  | v3 | [Vector3](/classes/3.0/Vector3) |  ([Vector3](/classes/3.0/Vector3)) the end point of the Cubic Bezier  ([Vector3](/classes/3.0/Vector3)) the end point of the Cubic Bezier  ([Vector3](/classes/3.0/Vector3)) the end point of the Cubic Bezier   
 ### static CreateHermiteSpline(p1, t1, p2, t2, nbPoints) &rarr; [Curve3](/classes/3.0/Curve3)
 
-Returns a [Curve3](/classes/3.0/Curve3) object along a Hermite Spline curve : http://doc.babylonjs.com/how_to/How_to_use_Curve3#hermite-spline
+Returns a [Curve3](/classes/3.0/Curve3) object along a Hermite Spline curve : http://doc.babylonjs.com/How_To/How_to_use_Curve3#hermite-spline
 
 #### Parameters
  | Name | Type | Description

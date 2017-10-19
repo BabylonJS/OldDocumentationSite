@@ -14,7 +14,7 @@ A point light is a light defined by an unique point in world space.
 
 The light is emitted in every direction from this point. A good example of a point light is the sun.
 
-A tutorial about lights can be found here : https://doc.babylonjs.com/how_to/lights
+A tutorial about lights can be found here : https://doc.babylonjs.com/How_To/lights
 
 ## Constructor
 
@@ -34,7 +34,7 @@ var pointLight = new BABYLON.[PointLight](/classes/3.0/PointLight)("pl", camera.
 
 ```
 
-Documentation : http://doc.babylonjs.com/how_to/lights
+Documentation : http://doc.babylonjs.com/How_To/lights
 
 #### Parameters
  | Name | Type | Description

@@ -15,7 +15,7 @@ class [Skeleton](/classes/2.5/Skeleton)
 
 A skeleton (BABYLON.[Skeleton](/classes/2.5/Skeleton)) contains a hierarchy of bones (BABYLON.[Bone](/classes/2.5/Bone)).
 All bones can be found into the skeleton.bones array.
-A tutorial about Bones and Skeletons ban be found here : https://doc.babylonjs.com/how_to/how_to_use_bones_and_skeletons
+A tutorial about Bones and Skeletons ban be found here : https://doc.babylonjs.com/How_To/how_to_use_bones_and_skeletons
 
 #### Parameters
  | Name | Type | Description

@@ -64,4 +64,4 @@ scene.debugLayer.show({
 # Further Reading
 
 [The Debug Layer Features](/features/playground_debuglayer)  
-[How To Customize the Debug Layer](/how_to/customize_debug_layer)  
+[How To Customize the Debug Layer](/How_To/customize_debug_layer)  

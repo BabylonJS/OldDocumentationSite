@@ -1,5 +1,5 @@
 /**
- * This file compile HTML files for the resources, the extensions, and the how_to.
+ * This file compile HTML files for the resources, the extensions, and the How_To.
  */
 
 var fs      = require('fs'),
@@ -42,7 +42,7 @@ module.exports = function(done){
         "babylon101",
         "resources",
         "extensions",
-        "how_to",
+        "How_To",
         "samples",
         "features"
     ];

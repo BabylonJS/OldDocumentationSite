@@ -11,7 +11,7 @@ class [PostProcessRenderPipelineManager](/classes/2.5/PostProcessRenderPipelineM
 
 Managing all pipelines, allow you to enable or disable an effect, displaying a pass of post process for debugging.
 
-A tutorial about the render pipeline can be found here : https://doc.babylonjs.com/how_to/using_standard_rendering_pipeline
+A tutorial about the render pipeline can be found here : https://doc.babylonjs.com/How_To/using_standard_rendering_pipeline
 
 ## Constructor
 

@@ -20,7 +20,7 @@ class [FreeCamera](/classes/2.5/FreeCamera) extends [TargetCamera](/classes/2.5/
 
 Create a new free camera.
 You can move around the world with mouse and keyboard
-A tutorial about [FreeCamera](/classes/2.5/FreeCamera) can be found here : https://doc.babylonjs.com/how_to/Cameras
+A tutorial about [FreeCamera](/classes/2.5/FreeCamera) can be found here : https://doc.babylonjs.com/How_To/Cameras
 
 #### Parameters
  | Name | Type | Description

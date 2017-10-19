@@ -32,9 +32,9 @@ router.get('/', function (req, res) {
 
         if (forwardData && forwardData.type) {
             switch (forwardData.type) {
-                case 'how_to':
+                case 'How_To':
                     res.writeHead(301, {
-                        Location: (req.socket.encrypted ? 'https://' : 'http://') + req.headers.host + '/how_to/' + forwardData.name
+                        Location: (req.socket.encrypted ? 'https://' : 'http://') + req.headers.host + '/How_To/' + forwardData.name
                     });
                     res.end();
                     break;

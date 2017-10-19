@@ -61,4 +61,4 @@ the set method depending on the type passed.
 # Further Reading
 
 [Introduction To Shaders in BabylonJS](/resources/ShaderIntro)  
-[How To Put Shader Code in BabylonJS](/how_to/Putting.html)
+[How To Put Shader Code in BabylonJS](/How_To/Putting.html)

@@ -71,7 +71,7 @@ instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
 ### Updatable Option
 
-Lines and Dashed Lines have an updatable option. When this is _true_ it is possible to alter the data associated with each vertex of the Lines and so alter the path of the Lines. For more information see [Updating Vertices](/how_to/Updating_Vertices.html).
+Lines and Dashed Lines have an updatable option. When this is _true_ it is possible to alter the data associated with each vertex of the Lines and so alter the path of the Lines. For more information see [Updating Vertices](/How_To/Updating_Vertices.html).
 
 ### Instance Option
 
@@ -96,8 +96,8 @@ In the previous section, about set shapes, you saw that when created they sit on
 
 # Further Reading
 
-[How to Create Parametric Shapes with MeshBuilder](/how_to/Parametric_Shapes)  
-[How to Create Parametric Shapes Legacy Method](/how_to/Legacy_Param)  
+[How to Create Parametric Shapes with MeshBuilder](/How_To/Parametric_Shapes)  
+[How to Create Parametric Shapes Legacy Method](/How_To/Legacy_Param)  
 [Advantages and Disadvantages](/features/Shapes#ways-of-creating-a-predefined-mesh)
 
 

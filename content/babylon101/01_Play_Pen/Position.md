@@ -19,7 +19,7 @@ In all diagrams and playgrounds X axis is red, Y axis is Green and Z axis is blu
 
 When meshes are created their center is placed at the origin of the **word axes** and their position is always placed relative to the **word axes**.
 
-The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. The centers of rotation and enlargement for a mesh are at the origin of the **local axes**, however by setting a [pivot point](/how_to/Pivots) they can be changed to that point.
+The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. The centers of rotation and enlargement for a mesh are at the origin of the **local axes**, however by setting a [pivot point](/How_To/Pivots) they can be changed to that point.
 
 ## Vectors
 
@@ -55,7 +55,7 @@ The local and world axes remain in the same orientation.
 
 ## Rotation
 
-WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/how_to/rotation_conventions).
+WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/How_To/rotation_conventions).
 
 In BabylonJS 
 

@@ -293,13 +293,13 @@ The new virtual reality camera
     var camera = new BABYLON.WebVRFreeCamera("WVR", new BABYLON.Vector3(0, 1, -15), scene);
 ```
 
-This camera deseves a page to itself so here it is [Using the WebVR Camera](/how_to/WebVR_Camera);
+This camera deseves a page to itself so here it is [Using the WebVR Camera](/How_To/WebVR_Camera);
 
 ## Customizing inputs
 
 The cameras rely upon user inputs to move the camera. If you are happy with the camera presets Babylon.js is giving you, just stick with it.
 
-If you want to change user inputs based upon user preferences, customize one of the existing presets, or use your own input mechanisms.  Those cameras have an input manager that is designed for those advanced scenarios. Read [customizing camera inputs](/how_to/Customizing_Camera_Inputs) to learn more about tweaking inputs on your cameras.
+If you want to change user inputs based upon user preferences, customize one of the existing presets, or use your own input mechanisms.  Those cameras have an input manager that is designed for those advanced scenarios. Read [customizing camera inputs](/How_To/Customizing_Camera_Inputs) to learn more about tweaking inputs on your cameras.
 
 ## Next step
 You have now learned how to use many cameras, and learned some advanced input options available on our two most-used cameras. You can control how you see your scene, you can choose your input and viewing devices, and you now know how to move cameras around. To give your scene a more realistic effect, we are now going to learn [**how to manage lights**](/babylon101/Lights). See you soon.

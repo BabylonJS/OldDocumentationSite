@@ -44,7 +44,7 @@ This post process effect can produce rays of light as scattered by the meshes it
 
 ## More Advanced - L3
 
-[Light Scattering](/how_to/Using_the_Volumetric_LightScattering_post-process)  
+[Light Scattering](/How_To/Using_the_Volumetric_LightScattering_post-process)  
 [Shadows Only](/extensions/ShadowOnly)
 
 

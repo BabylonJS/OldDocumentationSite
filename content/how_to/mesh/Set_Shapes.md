@@ -228,22 +228,22 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 ## How To Make the Most of Options
 
 [Side Orientation](/babylon101/Discover_Basic_Elements#side-orientation)  
-[Updatable](/how_to/Updating_Vertices)  
-[Face UV and Face Colors](/how_to/CreateBox_Per_Face_Textures_And_Colors)  
-[Front and Back UV](/how_to/FrontandBackUV)
+[Updatable](/How_To/Updating_Vertices)  
+[Face UV and Face Colors](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
+[Front and Back UV](/How_To/FrontandBackUV)
 
 ## Basic - L1
 
 [Mesh Overview](/features/Shapes)  
 [Set Shapes 101](/babylon101/Discover_Basic_Elements)  
 [Parametric Shapes 101](/babylon101/Parametric_Shapes)  
-[Parametric Shapes](/how_to/Parametric_Shapes)  
-[Polyhedra Shapes](/how_to/Polyhedra_Shapes)  
-[Decals](/how_to/Decals) 
+[Parametric Shapes](/How_To/Parametric_Shapes)  
+[Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Decals](/How_To/Decals) 
 
 ## Mid Level - L2
  
-[Ribbons In Detail](/how_to/Ribbon_Tutorial)
+[Ribbons In Detail](/How_To/Ribbon_Tutorial)
 
 ## More Advanced - L3
    

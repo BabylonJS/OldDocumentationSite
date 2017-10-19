@@ -56,7 +56,7 @@ The extent of the changes and when they take place are set in an array of key fr
 
 ## Terminology
 
-The following terms will have the given meaning within the how_to about animating.
+The following terms will have the given meaning within the How_To about animating.
 
 * _Performer_ an item that can be animated, could be a mesh, a light or camera for example.
 
@@ -190,11 +190,11 @@ scene.beginDirectAnimation(target, animations, start frame, end frame, loop);
 ## Basic - L1
 
 [Animation 101](/babylon101/Animations)  
-[Combining Animations](/how_to/Combine.html)
+[Combining Animations](/How_To/Combine.html)
 
 ## Mid Level - L2
 
-[A Sequence of Animations](/how_to/Sequence.html)  
+[A Sequence of Animations](/How_To/Sequence.html)  
     
     
     

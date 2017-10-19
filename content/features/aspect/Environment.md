@@ -39,11 +39,11 @@ Though it can be a complicated procedure to form a fog effect a fairly simple me
 
 ## Physically Based Rendering Materials
 
-World objects do not all absorb and reflect light in the same way. A metal sculture and a concrete one behave completely differently under the same lights. [Physically based rendering](/how_to/Physically_Based_Rendering) materials go a long way to allow you to differentiate between the different substances you might want in your project.
+World objects do not all absorb and reflect light in the same way. A metal sculture and a concrete one behave completely differently under the same lights. [Physically based rendering](/How_To/Physically_Based_Rendering) materials go a long way to allow you to differentiate between the different substances you might want in your project.
 
 ## Light Effects
 
-As well as fog, shadows, reflection and reflection it is also possible to give the effects of [light scattering](/how_to/Using_the_Volumetric_LightScattering_post-process) and [lens flare](/how_to/How_to_use_Lens_Flares).
+As well as fog, shadows, reflection and reflection it is also possible to give the effects of [light scattering](/How_To/Using_the_Volumetric_LightScattering_post-process) and [lens flare](/How_To/How_to_use_Lens_Flares).
 
 ## Post Processes
  
@@ -68,32 +68,32 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 
 ## Mid Level - L2
 
-[Introduction to Physically Based Rendering Materials](/how_to/Physically_Based_Rendering)  
-[Skybox](/how_to/Skybox)  
+[Introduction to Physically Based Rendering Materials](/How_To/Physically_Based_Rendering)  
+[Skybox](/How_To/Skybox)  
 [Dynamic Terrain](/extensions/Dynamic_Terrain)  
 [Dynamic Terrain Examples](/extensions/DT_Examples)
 
 ## More Advanced - L3
 
-[Master Physically Based Rendering Materials](/how_to/Physically_Based_Rendering_Master)  
-[Fog using Custom Shader](/how_to/Supporting_fog_with_ShaderMaterial)  
+[Master Physically Based Rendering Materials](/How_To/Physically_Based_Rendering_Master)  
+[Fog using Custom Shader](/How_To/Supporting_fog_with_ShaderMaterial)  
 [Shadows Only](/extensions/ShadowOnly)   
-[Light Scattering](/how_to/Using_the_Volumetric_LightScattering_post-process)  
-[Lens Flare](/how_to/How_to_use_Lens_Flares)  
-[Reflection and Refraction](/how_to/Reflect)  
-[Reflection Probes](/how_to/How_to_use_Reflection_probes)
+[Light Scattering](/How_To/Using_the_Volumetric_LightScattering_post-process)  
+[Lens Flare](/How_To/How_to_use_Lens_Flares)  
+[Reflection and Refraction](/How_To/Reflect)  
+[Reflection Probes](/How_To/How_to_use_Reflection_probes)
 
-[How to use PostProcesses](/how_to/How_to_use_PostProcesses)  
-[How to use PostProcessRenderPipeline](/how_to/How_to_use_PostProcessRenderPipeline)  
-[Using the SSAO rendering pipeline](/how_to/Using_the_SSAO_rendering_pipeline)  
-[Using the standard rendering pipeline](/how_to/Using_Standard_Rendering_Pipeline)  
-[Using the default rendering pipeline](/how_to/Using_Default_Rendering_Pipeline)  
-[Using depth-of-field and other lens effects](/how_to/Using_depth-of-field_and_other_lens_effects)
+[How to use PostProcesses](/How_To/How_to_use_PostProcesses)  
+[How to use PostProcessRenderPipeline](/How_To/How_to_use_PostProcessRenderPipeline)  
+[Using the SSAO rendering pipeline](/How_To/Using_the_SSAO_rendering_pipeline)  
+[Using the standard rendering pipeline](/How_To/Using_Standard_Rendering_Pipeline)  
+[Using the default rendering pipeline](/How_To/Using_Default_Rendering_Pipeline)  
+[Using depth-of-field and other lens effects](/How_To/Using_depth-of-field_and_other_lens_effects)
 
 
 [Introduction to Shaders](/resources/ShaderIntro)  
-[How To Put Shader Code in Babylon.js](/how_to/Putting)  
-[How To Use ShaderMaterial](/how_to/Shader_Material)  
+[How To Put Shader Code in Babylon.js](/How_To/Putting)  
+[How To Use ShaderMaterial](/How_To/Shader_Material)  
 [Example A Vertical Wave with Shader Code](/samples/Writing1)  
 [Example Fireworks with Shader Code](/samples/Writing2)
 

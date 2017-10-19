@@ -11,14 +11,14 @@ class [PostProcessManager](/classes/3.0/PostProcessManager)
 
 A render effect is a smart postprocess which can manage its own instances itself.
 
-A tutorial about the render pipeline can be found here : https://doc.babylonjs.com/how_to/using_standard_rendering_pipeline
+A tutorial about the render pipeline can be found here : https://doc.babylonjs.com/How_To/using_standard_rendering_pipeline
 
 ## Constructor
 
 ## new [PostProcessManager](/classes/3.0/PostProcessManager)(scene)
 
 Creates a new post process manager.
-A tutorial about post process can be found here : https://doc.babylonjs.com/how_to/how_to_use_postprocessrenderpipeline
+A tutorial about post process can be found here : https://doc.babylonjs.com/How_To/how_to_use_postprocessrenderpipeline
 
 #### Parameters
  | Name | Type | Description

@@ -8,7 +8,7 @@
     {
       "title": "101",
       "name": "01_Play_Pen",
-      "desc": "The how_to of 101.",
+      "desc": "The How_To of 101.",
       "files": [
         {
           "title": "About This Course",
@@ -102,12 +102,12 @@
       ]  
     }
   ],
-  "how_to": [
+  "How_To": [
     {
       "title": "All",
       "name": "All",
-      "img": "img/how_to/All.png",
-      "desc": "All the how_to."
+      "img": "img/How_To/All.png",
+      "desc": "All the How_To."
     },
     {
       "title": "Playground",
@@ -639,7 +639,7 @@
     {
       "title": "Videos",
       "name": "Videos",
-      "img": "img/how_to/Video.png",
+      "img": "img/How_To/Video.png",
       "desc": "Video courses.",
       "files": [
         {
@@ -988,7 +988,7 @@
     {
       "title": "Tree Generators",
       "name": "Tree_Generators",
-      "img": "img/how_to/trees.png",
+      "img": "img/How_To/trees.png",
       "desc": "How to generate trees.",
       "files": [
         {
@@ -1295,7 +1295,7 @@
     {
       "title": "All",
       "name": "All",
-      "img": "img/how_to/All.png",
+      "img": "img/How_To/All.png",
       "desc": "All features."
     },
     {
@@ -1378,7 +1378,7 @@
     {
       "title": "Support",
       "name": "Support",
-      "img": "img/how_to/All.png",
+      "img": "img/How_To/All.png",
       "desc": "First level feature exploration",
       "files": [
         {

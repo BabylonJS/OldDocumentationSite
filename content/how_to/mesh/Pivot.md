@@ -6,7 +6,7 @@ PG_TITLE: Rotation Around an Axis About a Center of Rotation
 
 Rotation needs two things specifying, they are an axis and a center of rotation with the axis passing through the center of rotation. An axis is defined by a direction vector and the center of rotation a position vector. In Babylon.js when a mesh is created the center of rotation defaults to the the local origin of the mesh which is the mesh's position. Using [rotation](/babylon101/Position#rotation) the axis is specified through the Euler angles alpha, beta, gamma, and using [rotationQuaternion](/features/Position,_Rotation,_Scaling#rotationquaternion) and [rotate](/features/Position,_Rotation,_Scaling#rotate) it is specified explicitly. 
 
-There are two ways to change a center of rotation different to the local origin, these are using a parent and [setting a pivot](/how_to/Pivots).
+There are two ways to change a center of rotation different to the local origin, these are using a parent and [setting a pivot](/How_To/Pivots).
 
 Together an axis and a center of rotation define a straight line in space and in the following animated playgrounds this line is shown in white. The asymmetric pilot mesh is used to demonstrate the rotation.
 
@@ -40,7 +40,7 @@ sphere.rotate(axis, angle, BABYLON.Space.WORLD);
 
 ## How To Use a Pivot as a Center of Rotation
 
-As described in [How to Set a Pivot](/how_to/Pivots#how-to-set-mesh-and-pivot-position-at-the-same-time) set the pivot and the pilot in their wanted positions by placing the pilot where the pivot is going to be and setting the pivot translation using the displacement of the pilot position from the pivot position.
+As described in [How to Set a Pivot](/How_To/Pivots#how-to-set-mesh-and-pivot-position-at-the-same-time) set the pivot and the pilot in their wanted positions by placing the pilot where the pivot is going to be and setting the pivot translation using the displacement of the pilot position from the pivot position.
 
 ```javascript
 var CoR_At = new BABYLON.Vector3(1, 3, 2);
@@ -92,7 +92,7 @@ Done this way any movement of the pivot is done by moving the parent mesh repres
 
 ## More Advanced - L3
 
-[Using a Pivot](/how_to/Pivots)
+[Using a Pivot](/How_To/Pivots)
 
 
 

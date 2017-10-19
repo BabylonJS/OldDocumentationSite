@@ -10,11 +10,11 @@ In the 3D virtual world shapes are built from meshes, lots of trangular facets j
 
 Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 
-Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/how_to/Solid_Particle_System) are also available.
+Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/How_To/Solid_Particle_System) are also available.
 
 ## Types
 
-There are two types of predefined meshes, [set shapes](/how_to/Set_Shapes) and [parametric shapes](/how_to/Parametric Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
+There are two types of predefined meshes, [set shapes](/How_To/Set_Shapes) and [parametric shapes](/How_To/Parametric Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
 
 Mention has already been made of the horizonal plane called the ground which is your common flat everyday surface like a floor. You will be pleased to know that it comes in other varieties to provide an outside terrain with rolling hills and valleys. For a view from a distance terrain you use [GroundFromAHeightMap](/babylon101/Height_Map). If you literally want rolling hills add the extension [dynamic terrain][/Extension/dynamic_terrain] which gives you an infinite landscape to fly over.
 
@@ -67,7 +67,7 @@ box.scaling = new BABYLON.Vector3(4, 6, 2);
 ```
 and the scene prameter is necessary to position the updatable and sideOrientation parameters correctly.
 
-Also using _MeshBuilder_ you can [apply different colors and images to individual faces](/how_to/CreateBox_Per_Face_Textures_And_Colors) of meshes that have distinct faces (for example a box does but a sphere does not). This is not possible with the legacy method.
+Also using _MeshBuilder_ you can [apply different colors and images to individual faces](/How_To/CreateBox_Per_Face_Textures_And_Colors) of meshes that have distinct faces (for example a box does but a sphere does not). This is not possible with the legacy method.
 
 For a second example consider the creation of a truncated cone with a diameter of 3 top and and 6 at the bottom, with height 5 constructed using 16 radial sections and 10 vertical subdivisions.
 
@@ -111,7 +111,7 @@ When you are moving around a scene in a _first person shooter_  manner then you 
 
 ### Accessing Mesh Data, Morphing or Updating
 
-The facility to read data on the facets making up a mesh and also the vertices making up each facet of the mesh is available for all meshes. This data can be over written to update an existing mesh, **provided** the mesh was created as updatable (the mesh's updatable parameter is set to _true_) in the first place and no change is made in the number of vertices. For more information see [Updating Vertices](/how_to/Updating_Vertices.html). 
+The facility to read data on the facets making up a mesh and also the vertices making up each facet of the mesh is available for all meshes. This data can be over written to update an existing mesh, **provided** the mesh was created as updatable (the mesh's updatable parameter is set to _true_) in the first place and no change is made in the number of vertices. For more information see [Updating Vertices](/How_To/Updating_Vertices.html). 
 
 Some parametric shapes have an instance parameter in its _MeshBuilder_ options and can be updated by setting the instance option the initially created parametric shape. Currently all the parametric shapes, except for the Lathe and Polygon (both Create and Extend), can have their mesh updated in this way.
 
@@ -127,31 +127,31 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 [Mesh Collisions 101](/babylon101/Intersect_Collisions_-_mesh)  
 [Mesh Picking 101](/babylon101/Picking_Collisions)   
 [Ray Casting 101](/babylon101/Raycasts)  
-[Polyhedra](/how_to/Polyhedra_Shapes)   
-[Using Decals](/how_to/Decals)  
-[How to Use the Solid Particle System](/how_to/Solid_Particle_System)  
+[Polyhedra](/How_To/Polyhedra_Shapes)   
+[Using Decals](/How_To/Decals)  
+[How to Use the Solid Particle System](/How_To/Solid_Particle_System)  
 [Set the Position, Rotation and Scale of a Mesh](/features/Position,_Rotation,_Scaling)
 
 ## Mid Level - L2  
-[Using PolygonMeshBuilder](/how_to/PolygonMeshBuilder)  
-[Ribbon Tutorial](/how_to/Ribbon_Tutorial)  
-[Highlight Layer](/how_to/Highlight_Layer)  
+[Using PolygonMeshBuilder](/How_To/PolygonMeshBuilder)  
+[Ribbon Tutorial](/How_To/Ribbon_Tutorial)  
+[Highlight Layer](/How_To/Highlight_Layer)  
 
 ## More Advanced - L3
-[How to use Instances](/how_to/How_to_use_Instances)  
-[How to Merge Meshes](/how_to/How_to_Merge_Meshes)  
+[How to use Instances](/How_To/How_to_use_Instances)  
+[How to Merge Meshes](/How_To/How_to_Merge_Meshes)  
 [Mathematics and Ribbons](/resources/Maths_Make_Ribbons)  
-[How to use Curve3](/how_to/How_to_use_Curve3)  
-[How to use Path3D](/how_to/How_to_use_Path3D)  
-[How to use Facet Data](/how_to/How_to_use_FacetData)  
-[How to use LOD](/how_to/How_to_use_LOD)  
-[How to Dynamically Morph a Mesh](/how_to/How_to_dynamically_morph_a_mesh)  
-[How to use Morph Targets](/how_to/How_to_use_MorphTargets)  
-[How to use Bones and Skeletons](/how_to/How_to_use_Bones_and_Skeletons)  
-[How to use EdgesRenderer](/how_to/How_to_use_EdgesRenderer)  
-[Creating Custom Meshes](/how_to/Custom)  
-[Facet Normals](/how_to/Normals)  
-[Updating Vertices](/how_to/Updating_Vertices)
+[How to use Curve3](/How_To/How_to_use_Curve3)  
+[How to use Path3D](/How_To/How_to_use_Path3D)  
+[How to use Facet Data](/How_To/How_to_use_FacetData)  
+[How to use LOD](/How_To/How_to_use_LOD)  
+[How to Dynamically Morph a Mesh](/How_To/How_to_dynamically_morph_a_mesh)  
+[How to use Morph Targets](/How_To/How_to_use_MorphTargets)  
+[How to use Bones and Skeletons](/How_To/How_to_use_Bones_and_Skeletons)  
+[How to use EdgesRenderer](/How_To/How_to_use_EdgesRenderer)  
+[Creating Custom Meshes](/How_To/Custom)  
+[Facet Normals](/How_To/Normals)  
+[Updating Vertices](/How_To/Updating_Vertices)
 
  
 

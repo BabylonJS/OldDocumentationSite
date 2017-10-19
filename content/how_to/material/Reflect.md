@@ -6,7 +6,7 @@ PG_TITLE: 04. How To Obtain Reflections and Refractions
 Using reflection textures can simulate mirror like material and refraction textures can simulate looking through glass or water.
 
 ## Reflection
-Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/how_to/Skybox)
+Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/How_To/Skybox)
 
 This sets the _relectionTexture_ to a _CubeTexture_ and the _coordinatesMode_ of the _relectionTexture_ to SKYBOX_Mode as in
 
@@ -29,7 +29,7 @@ not be rendered should _backFaceCulling = true_. However we still need to use _r
 var box = BABYLON.MeshBuilder.CreateBox("Box", {}, scene);
 var boxMaterial = new BABYLON.StandardMaterial("mat", scene);
 boxMaterial.backFaceCulling = true;
-boxMaterial.reflectionTexture = new BABYLON.CubeTexture("http://babylonjsguide.github.io/img/how_to/Materials/how_to/Materials/how_to/Materials/cubeSide", scene);
+boxMaterial.reflectionTexture = new BABYLON.CubeTexture("http://babylonjsguide.github.io/img/how_to/Materials/How_To/Materials/How_To/Materials/cubeSide", scene);
 boxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 boxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 boxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);

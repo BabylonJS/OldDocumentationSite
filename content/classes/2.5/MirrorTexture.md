@@ -18,7 +18,7 @@ class [MirrorTexture](/classes/2.5/MirrorTexture) extends [RenderTargetTexture](
 ## new [MirrorTexture](/classes/2.5/MirrorTexture)(name, size, scene, generateMipMaps)
 
 Create a new [MirrorTexture](/classes/2.5/MirrorTexture).
-A tutorial about advanced texturing can be found here : http://doc.babylonjs.com/how_to/Advanced_Texturing
+A tutorial about advanced texturing can be found here : http://doc.babylonjs.com/How_To/Advanced_Texturing
 
 #### Parameters
  | Name | Type | Description

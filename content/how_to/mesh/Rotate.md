@@ -204,17 +204,17 @@ The `toRef()` method is also available.
  
 ## More Advanced - L3
 
-[How To Use Translations and Rotations](/how_to/Rotate)  
-[How To Set and Use a Pivot](/how_to/Pivots)  
-[How To Rotate Around an Axis About a Point](/how_to/Pivot)  
-[How To Use Path3D](/how_to/How_to_use_Path3D)  
-[How To Use a Parent](/how_to/Parenting)  
-[How To Transform Coordinates](/how_to/Transform_Coordinates)  
+[How To Use Translations and Rotations](/How_To/Rotate)  
+[How To Set and Use a Pivot](/How_To/Pivots)  
+[How To Rotate Around an Axis About a Point](/How_To/Pivot)  
+[How To Use Path3D](/How_To/How_to_use_Path3D)  
+[How To Use a Parent](/How_To/Parenting)  
+[How To Transform Coordinates](/How_To/Transform_Coordinates)  
 [Euler Angles and Quaternions](/resources/Rotation_Conventions)  
-[Aligning Rotation to Target](/how_to/rotate#how-to-generate-a-rotation-from-a-target-system)  
+[Aligning Rotation to Target](/How_To/rotate#how-to-generate-a-rotation-from-a-target-system)  
 [Frame of Reference](/resources/Frame_Of_Reference)  
 [Baking Transformations](/resources/Baking_Transformations)  
-[In-Browser Mesh Simplification (Auto-LOD)](/how_to/In-Browser_Mesh_Simplification)  
+[In-Browser Mesh Simplification (Auto-LOD)](/How_To/In-Browser_Mesh_Simplification)  
 
 ## Gamelet
 

@@ -9,7 +9,7 @@ class [LensFlare](/classes/2.5/LensFlare)
 
 Create a lens Flare to be integrated in a lens flare system.
 
-A tutorial about using lens flare can be found here : https://doc.babylonjs.com/how_to/how_to_use_lens_flares
+A tutorial about using lens flare can be found here : https://doc.babylonjs.com/How_To/how_to_use_lens_flares
 
 ## Constructor
 

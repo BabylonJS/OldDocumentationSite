@@ -48,7 +48,7 @@ scene.unfreezeActiveMeshes();
 Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
 
 ## Reducing draw calls
-As soon as you can please use [instances](/how_to/how_to_use_instances) as they are drawn with one single draw call.
+As soon as you can please use [instances](/How_To/how_to_use_instances) as they are drawn with one single draw call.
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
 
@@ -97,6 +97,6 @@ If you created resources that need to be rebuilt (like vertex buffers or index b
 
 ## More Advanced - L3
 
-[How to Use Scene Optimizer](/how_to/How_to_use_SceneOptimizer)  
-[How To Optimize Your Scene With Octrees](/how_to/optimizing_your_scene_with_octrees)
+[How to Use Scene Optimizer](/How_To/How_to_use_SceneOptimizer)  
+[How To Optimize Your Scene With Octrees](/How_To/optimizing_your_scene_with_octrees)
 

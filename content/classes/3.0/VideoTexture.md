@@ -18,7 +18,7 @@ class [VideoTexture](/classes/3.0/VideoTexture) extends [Texture](/classes/3.0/T
 
 Creates a video texture.
 
-Sample : https://doc.babylonjs.com/how_to/01._Advanced_Texturing
+Sample : https://doc.babylonjs.com/How_To/01._Advanced_Texturing
 
 #### Parameters
  | Name | Type | Description

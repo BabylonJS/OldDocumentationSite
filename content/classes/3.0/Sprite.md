@@ -16,7 +16,7 @@ class [Sprite](/classes/3.0/Sprite)
 ## new [Sprite](/classes/3.0/Sprite)(name, manager)
 
 Create a new [Sprite](/classes/3.0/Sprite).
-A tutorial about sprites can be found here : https://doc.babylonjs.com/how_to/Sprites
+A tutorial about sprites can be found here : https://doc.babylonjs.com/How_To/Sprites
 
 #### Parameters
  | Name | Type | Description

@@ -32,4 +32,4 @@ Currently the list of behaviors available in babylon.js core are camera behaviou
 
 ## Basic - L1
 
-[Camera Behaviours](/how_to/Camera_Behaviors)
+[Camera Behaviours](/How_To/Camera_Behaviors)

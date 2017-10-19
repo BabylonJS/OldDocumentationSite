@@ -10,7 +10,7 @@ It's used to check collision or intersection in the scene between meshes and thi
 
 In the previous tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
 using the function scene.pick(scene.pointerX, scene.pointerY) : 
-http://doc.babylonjs.com/how_to/picking_collisions
+http://doc.babylonjs.com/How_To/picking_collisions
 
 But here we will see that we can throw ray from any point and in any direction. 
 For example in a shooting game at 3rd person view : collisions between our bullets and obstacles.

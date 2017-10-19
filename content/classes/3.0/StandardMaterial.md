@@ -16,7 +16,7 @@ class [StandardMaterial](/classes/3.0/StandardMaterial) extends [PushMaterial](/
 ## new [StandardMaterial](/classes/3.0/StandardMaterial)(name, scene)
 
 Create a new [StandardMaterial](/classes/3.0/StandardMaterial).
-Everything to know about materials can be found here : http://doc.babylonjs.com/how_to/Materials
+Everything to know about materials can be found here : http://doc.babylonjs.com/How_To/Materials
 And here : http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx
 
 #### Parameters

@@ -5,7 +5,7 @@ PG_TITLE: How To Start with Physically Based Rendering
 # How To Start with Physically Based Rendering
 
 ## Introduction
-After following the [standard material tutorial](/how_to/Materials) and also excelling in [unleashing its power](https://www.eternalcoding.com/?p=303), it is a good time to go further and look at another emerging kind of materials called **PBR Materials** standing for **Physically Based Rendering Materials**.
+After following the [standard material tutorial](/How_To/Materials) and also excelling in [unleashing its power](https://www.eternalcoding.com/?p=303), it is a good time to go further and look at another emerging kind of materials called **PBR Materials** standing for **Physically Based Rendering Materials**.
 
 PBR rendering techniques aim to simulate **real life lighting**.
 

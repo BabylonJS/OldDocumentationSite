@@ -92,7 +92,7 @@ This is what a depth buffer looks like for a scene that contains each of those t
 
 *In this scene, the sphere is alpha tested, the base blocks are opaque and the pillars are alpha blended.*
 
-The following list will help you understand which categories your meshes will be put into. For more information on each of the properties mentioned here, take a look at the [Materials Tutorial](/how_to/Materials).
+The following list will help you understand which categories your meshes will be put into. For more information on each of the properties mentioned here, take a look at the [Materials Tutorial](/How_To/Materials).
 
 **Alpha blended meshes:**
 
@@ -124,7 +124,7 @@ You're welcome to use this [playground example]( https://www.babylonjs-playgroun
 - Make sure your alpha blended meshes do not intersect, as this will inevitably lead to render glitches.
 - Avoid having heavily-stretched alpha blended meshes (i.e. large planes); since the center of its bounding sphere is used for depth sorting, doing this may result in a mesh being sorted as far away from the camera but actually closer to many other meshes.
 - Use alpha test as much as possible; this may look perfect for a pixel art style, or if the transparent parts boundaries are straight horizontal or vertical lines.
-- To get rid of jagged edges on your alpha tested meshes, use anti-aliasing for your scene ([FxaaPostProcess](/how_to/How_to_use_PostProcesses)); when using anti-aliasing, you can even disable the built-in smoothing of WebGL when creating the engine object:
+- To get rid of jagged edges on your alpha tested meshes, use anti-aliasing for your scene ([FxaaPostProcess](/How_To/How_to_use_PostProcesses)); when using anti-aliasing, you can even disable the built-in smoothing of WebGL when creating the engine object:
 
 `engine = new BABYLON.Engine(canvas, false); // built-in smoothing will be disabled`
 

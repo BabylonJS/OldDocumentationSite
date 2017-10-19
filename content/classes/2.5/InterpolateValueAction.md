@@ -13,7 +13,7 @@ This action creates an animation to interpolate the current value of a property 
 
 The supported types are: Float, [Color3](/classes/2.5/Color3), [Vector3](/classes/2.5/Vector3), [Matrix](/classes/2.5/Matrix) and [Quaternion](/classes/2.5/Quaternion)
 
-http://doc.babylonjs.com/how_to/How_to_use_Actions
+http://doc.babylonjs.com/How_To/How_to_use_Actions
 
  https://www.babylonjs-playground.com/?17
 

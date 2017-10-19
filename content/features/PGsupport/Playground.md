@@ -99,8 +99,8 @@ Whenever a scene in the playground needs the use of keys to move an object, such
  
 [Textures Directly Available to the Playground](/resources/Playground_Textures.html)  
 [The Debug Layer Features](/features/playground_debuglayer)  
-[How to Use The Debug Layer in Projects](/how_to/debug_layer)  
-[How To Customize the Debug Layer](/how_to/customize_debug_layer)  
+[How to Use The Debug Layer in Projects](/How_To/debug_layer)  
+[How To Customize the Debug Layer](/How_To/customize_debug_layer)  
 
 
 

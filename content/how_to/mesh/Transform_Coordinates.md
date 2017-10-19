@@ -4,7 +4,7 @@ PG_TITLE: Coordinate Transformation
 
 # How To Use Coordinate Transformation
 
-This method for these examples can be directly compared to [the use of a parent](/how_to/Parenting) 
+This method for these examples can be directly compared to [the use of a parent](/How_To/Parenting) 
 
 ## Satellite
 
@@ -59,5 +59,5 @@ The building will be an array of boxes. Leaving the boxes as separate meshes wou
 
 # Further Reading
 
-[How To Use a Parent](/how_to/Parenting)  
+[How To Use a Parent](/How_To/Parenting)  
 [Frame of Reference](resources/Frame_Of_Reference)
