@@ -29,11 +29,11 @@ We are going to talk about the scene above. The first and second sphere (balloon
 
   To avoid costly calculation by checking many details on a mesh, Babylon engine creates a bounding box around the object, and tests for intersection between this box, and the colliding mesh. Here is an example of a bounding box:
 
-  ![Collisions](/img/tutorials/Collisions%20Intersect/10-1.png)
+  ![Collisions](/img/how_to/Collisions%20Intersect/10-1.png)
 
   But this bounding box can be more or less precise, and that’s why we have our second parameter. In short, if this parameter is set to true (false by default), then the bounding box is closer to the mesh (OBB bounding type), but it’s a more costly calculation. Be aware that this type of bounding box is especially useful when your mesh is rotated to an angle.
 
-  ![Collisions](/img/tutorials/Collisions%20Intersect/10-2.png)
+  ![Collisions](/img/how_to/Collisions%20Intersect/10-2.png)
 
   So think about the collisions details you need before to choose.
 

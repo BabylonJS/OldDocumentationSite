@@ -112,7 +112,7 @@ index|normal
 
 Clearly the normals for each facet are pointing in the opposite directions, they all point away from the origin. 
 
-![Normal Direction](/img/tutorials/Mesh/normals1.jpg)
+![Normal Direction](/img/how_to/Mesh/normals1.jpg)
 
 Looking from the origin towards facet 3, 4, 5 then the order in the indices array 3, 4, 5 around the facet is clockwise.
 Looking from the origin towards facet 0, 1, 2 then the order in the indices array 0, 1, 2 around the facet is also clockwise.
@@ -141,13 +141,13 @@ Removing the wireframe effect then:
 
 1. Camera looking in positive z direction
 
-![Positive Z Direction](/img/tutorials/Mesh/normals3.jpg)
+![Positive Z Direction](/img/how_to/Mesh/normals3.jpg)
 
 Black facet cannot be seen.
 
 2. Camera looking in negative z direction
 
-![Negative Z Direction](/img/tutorials/Mesh/normals4.jpg)
+![Negative Z Direction](/img/how_to/Mesh/normals4.jpg)
 
 White facet not seen.
 
@@ -159,7 +159,7 @@ To draw the back face of a mesh turn backFaceCulling to false for the material b
 mat.backFaceCulling = false;
 ```
 
-![Both Facets](/img/tutorials/Mesh/normals5.jpg)
+![Both Facets](/img/how_to/Mesh/normals5.jpg)
 
 Comment line 41 out in the following to see back face culling happening.
 
@@ -230,13 +230,13 @@ Think of any image, to be applied as a texture, as having a pair of axes set at 
 (u, v as x and y are used for position axes). The origin being the left hand bottom corner of the image, the top being at v = 1 and the right hand edge at u = 1 as 
 in the diagram below.
 
-![Image with uv axes](/img/tutorials/Mesh/uv1.jpg)
+![Image with uv axes](/img/how_to/Mesh/uv1.jpg)
 
 For simplication the following only uses the facet 0, 1, 2
 
 Each vertex of the facet is assigned a uv coordinate pair from the image. 
 
-![Image with uv triangle](/img/tutorials/Mesh/uv2.jpg)
+![Image with uv triangle](/img/how_to/Mesh/uv2.jpg)
 
 index|color
 -----|-------------
@@ -268,7 +268,7 @@ vertexData.applyToMesh(customMesh);
 ```
 results in 
 
-![Result on Facet](/img/tutorials/Mesh/uv3.jpg)
+![Result on Facet](/img/how_to/Mesh/uv3.jpg)
 
 Note that the image is skewed since the shape of the triangular facet and that on the image do not match.
 
@@ -280,7 +280,7 @@ var vertexData.colors = colors;
 ```
 gives 
 
-![Result on Facet with red color added](/img/tutorials/Mesh/uv4.jpg)
+![Result on Facet with red color added](/img/how_to/Mesh/uv4.jpg)
 
 In the playground below clicking on next will cycle you through a variety of values for the uv coordinates.
 
