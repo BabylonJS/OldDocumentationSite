@@ -1034,58 +1034,6 @@
       ]
     },
     {
-      "title": "Editor",
-      "name": "Editor",
-      "img": "img/extensions/editor.png",
-      "desc": "Learn how to use the official editor",
-      "files": [
-        {
-          "title": "Introduction",
-          "filename": "Introduction"
-        },
-        {
-          "title": "Getting Started",
-          "filename": "Getting_Started"
-        },
-        {
-          "title": "Managing Animations",
-          "filename": "Managing_Animations"
-        },
-        {
-          "title": "Creating Cinematic",
-          "filename": "Creating_Cinematic"
-        },
-        {
-          "title": "Creating Particle Systems",
-          "filename": "Creating_Particle_Systems"
-        },
-        {
-          "title": "Creating Materials",
-          "filename": "Creating_Materials"
-        },
-        {
-          "title": "Managing Materials",
-          "filename": "Managing_Materials"
-        },
-        {
-          "title": "Managing Lens Flare Systems",
-          "filename": "Managin_Lens_Flare_Systems"
-        },
-        {
-          "title": "Using the Actions Builder",
-          "filename": "Using_Actions_Builder"
-        },
-        {
-          "title": "Using the Post-Process Builder (for developers)",
-          "filename": "Using_Post_Processes_Builder"
-        },
-        {
-          "title": "Using the Materials Builder (for developers)",
-          "filename": "Using_Materials_Builder"
-        }
-      ]
-    },
-    {
       "title": "CastorGUI",
       "name": "CastorGUI",
       "img": "img/extensions/CastorGUI.png",

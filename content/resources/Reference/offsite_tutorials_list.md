@@ -96,14 +96,6 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 | [**Bing 3D Maps using WebGL and BabylonJS**](http://www.spritehand.com/2013/12/bing-3d-maps-using-webgl-and-babylonjs.html) | Map, HeightMap, Bing | In this mini-tutorial, Andy looks at how we can use BabylonJS and WebGL to create a 3D height map and route path, using data from Bing Maps REST Services.|
 | [**Fluid Simulation using BabylonJS and LiquidFun**](http://www.spritehand.com/2016/01/fluid-simulation-using-babylonjs-and.html) | Fluid, SoftBody, LiquiFun  | BabylonJS and LiquidFun allow for the creation of fluid simulations including soft body physics, using JavaScript and WebGL.  Andy is here to tell us all about it. |
 
-## John C. King (JohnK) - http://countonmaths.blogspot.co.uk
-
-<div class='beforeWideTable'></div>
-
-|______________Title______________ | Keywords | Description |
-| :--- | :---: | --- |
-| [ **A Babylon.js Guide** ](http://babylonjsguide.github.io/) | Guide | JohnK is a great teacher, active Babylon.js user, and a swell person, too. Although retired from academia (Math and I.T.), he hasn't really retired at all. Tour the menu buttons (and many useful documents) of John's comprehensive Guide to Babylon.js, and enjoy. Thanks John!
-
 ## Célian Garcia (Kostar111) - Home Website Unknown
 
 <div class='beforeWideTable'></div>
