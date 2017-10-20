@@ -114,7 +114,13 @@ If you set a particle rotation quaternion, its rotation property will then be ig
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.   
 
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
-Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.      
+Please note also that, even a particle is invisible (_isVisible_ set to _false_), it's no longer computed in the particle loop, until reset as visible, in order to improve the SPS performances.    
+Setting a particle as inactive or dead (_alive_ set to _false_) has almost the same behavior (no more computation within the loop) but also freezes the particle in its current status, including its visibility, until reactivated.  
+Moreover setting a particle as dead overwrittes all the other settings. If you set a particle rotation in the same time that you set it as dead, then the rotation is ignored.  
+Both inactive and invisible particles can't be picked.   
+
+In this example, a new particle is set to dead each frame : http://playground.babylonjs.com/#M1VM8T  
+
 
 You can obviously also create your own properties like _acceleration: Vector3_ or _age_, in `initParticles()` for instance.  
 ```javascript
@@ -146,7 +152,7 @@ You have access to some SPS properties :
 
 Here again, you can add your own properties like _capacity_ or _rate_ if needed.
 
-If you don't need some given features (ex : particle colors), you can disable/enable them at any time (disabling a feature will improve the performance) : 
+If you don't need some given features (ex : particle colors), you can disable/enable them at any time. Disabling a feature will improve the performance, especially the rotation computation what is the heaviest one among those activated by default : 
 ```javascript
 SPS.computeParticleRotation = false;       // prevents from computing particle.rotation
 SPS.computeParticleTexture = false;        // prevents from computing particle.uvs
@@ -154,7 +160,8 @@ SPS.computeParticleColor = false;          // prevents from computing particle.c
 SPS.computeParticleVertex = false;         // prevents from calling the custom updateParticleVertex() function
 ```
 All these properties, except `SPS.computeParticleVertex`, are enabled set to _true_ by default. These affect the `SPS.setParticles()` process only.   
-If these properties are set to _false_, they don't prevent from using the related feature (ie : the particles can still have a color even if `SPS.computeParticleColor` is set to _false_), they just prevent from updating the value of the particle property on the next `setParticle()` call.  
+If these properties are set to _false_, they don't prevent from using the related feature (ie : the particles can still have a color even if `SPS.computeParticleColor` is set to _false_), they just prevent from updating the value of the particle property on the next `setParticle()` call.   
+
 Example : if your particles have colors, you can set their colors wihtin the `initParticles()` call and you can call then once the `setParticles()` method to set these colors. If you need to animate them later on and these colors don't change, just set then `SPS.computeParticleColor` to _false_ once before runing the render loop which will call `setParticles()` each frame.  
 If you are familiar with how BJS works, you could compare the SPS and its mesh creation to some classical BJS mesh creation (vertex and indice settings) and the particle management to the World Matrix computation (rotation, scaling, positioning).  
 
@@ -185,7 +192,7 @@ So three steps :
 
   * SPS and its mesh creation
   * compute your particle behavior
-  * call setParticles() to update the mesh and draw it
+  * call `setParticles()` to update the mesh and draw it
 
 Just remember that, once the mesh is build, only **`setParticles()`** does then the job : updates the mesh VBO and draws it.
 
@@ -332,6 +339,8 @@ Example 1 : you may want to update your 10K particle mesh only every three frame
 
 Example 2 : you could keep, say, the first 5000 particles as unused ones and compute the particle behavior only for the 5000 lasts in your global pool.  
 
+Remember also that setting some particles as inactive (_alive = false_) is another way to speed up the SPS loop.  
+
 
 ### Colors and UVs
 In the SPS, you can set a color or/and a different image per particle.  
@@ -462,6 +471,8 @@ The SPS pickability is directly related to the size of its bounding box (please 
 Pickable particle example (no SPS update in the render loop) :  https://www.babylonjs-playground.com/#2FPT1A#41  
 Pickable particle example (particle rotation) :  https://www.babylonjs-playground.com/#2FPT1A#14  
 
+Remember that both inactive and invisible particles can't be picked.
+
 ### Digest a Mesh
 There is another way than adding shapes of meshes used as models to populate the SPS : you can directly "digest" a mesh.  
 To digest a mesh means that the SPS will decompose this mesh geometry and use all its facets to generate the particles. So, by default, a digested mesh generates as many particles as the mesh number of facets.  
@@ -528,6 +539,38 @@ So if your SPS stays within some fixed bounds that you don't know the values, yo
 If the SPS keeps within some known limits, then it is better to use `SPS.setVisibilityBox(size)` with the right value and then to lock the visibility box.  
 At last, if you still need pickability or variable visibility, and don't know how your SPS will evolve, then you might set `SPS.computeBoundingBox` to true.  
 
+### Transparency Concerns   
+As you know, the SPS is a standard mesh.  
+
+Applying the transparency to a standard mesh leads to well-known issues, not when visualizing other opaque or transparent meshes through this current transparent mesh, but when visualizing some parts of this transparent mesh through itself.   
+Indeed, when passing the mesh geometry to the GPU, this one draws the mesh in the order the mesh facets are sorted in the `indices` array : first triangle, second one then, etc ... whatever the position of the camera.   
+The shader only respects the geometry order and this geometry is fixed.  
+
+As the SPS is a standard mesh, it has the same issue when dealing with transparent particles (rotate the camera) : http://playground.babylonjs.com/#EPBTB7#3
+
+A parameter allows to sort the internal mesh geometry live according to the current camera position : http://playground.babylonjs.com/#EPBTB7#2
+
+It sorts the SPS particles only, not all the facets, for performance reasons.
+
+To enable it, just create your SPS with the parameter `enableDepthSort` to `true`. By default, each next call to `setParticles()` will then sort the particles according to the camera global position.
+
+If for some reasons (immobile camera and sps),  you want to stop (or reactivate) the sort on the next calls to `setParticles()`, just set the property `sps.depthSortParticles` to `false` (or `true` to reactivate it) .
+
+```javascript
+// create a particle depth sort enabled SPS
+var sps = new BABYLON.SolidParticleSystem("sps", scene, {enableDepthSort: true});
+
+// then later, only do ...
+sps.setParticles();   // and the particle are depth sorted each call
+
+// We can skip the sorting at any time (or reactive it) : sps and camera not moving anymore
+sps.depthSortParticles = false;  // true by default when enableDepthSort is set to true
+```
+**Notes :**  
+
+* This feature is CPU intensive, so call `setParticles()` with `depthSortParticles` set to true only when needed.  
+* This feature requires the SPS to be updatable, so it can't work with an immutable SPS.  
+* This features needs to sort all the particles from the pool, so it won't lead to weird results if you call `setParticles(start, end)` on some particles only.  
 
 ### Particle Intersections
 The SPS is physics agnostic. This means you need to implement your own particle behavior if you want to animate them.  
@@ -631,5 +674,3 @@ Note that only the function are stored, not their results. This means that if on
 SPS.rebuildMesh();
 ```
 Except in some very specific cases, you might not need to use this function.  
-
-

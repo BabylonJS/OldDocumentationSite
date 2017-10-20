@@ -4,10 +4,6 @@ PG_TITLE: 09. Cameras, Mesh Collisions and Gravity
 ---
 Did you ever play a FPS (First Person Shooter) game? In this tutorial, we are going to simulate the same camera movements: the camera is on the floor, in collision with the ground, and potentially in collision with any objects in the scene.
 
-![Elements](https://camo.githubusercontent.com/7422be3bf5ae147243aa3d29d9660a0210530201/687474703a2f2f7777772e626162796c6f6e6a732e636f6d2f7475746f7269616c732f30392532302d253230436f6c6c6973696f6e73253230477261766974792f30392e706e67)
-
-_Final result_
-
 ## How can I do this ?
 
 To replicate this movement, we have to do 3 simple steps:
@@ -56,7 +52,7 @@ box.checkCollisions = true;
 
 That’s it! Easy!
 
-You can play with the scene used in this tutorial... by visiting the Babylon.js [**playground demo**]( https://www.babylonjs-playground.com/#4HUQQ).
+You can play with the scene used in this tutorial... by visiting the Babylon.js [**playground demo**]( https://www.babylonjs-playground.com/#4HUQQ)
 
 Now, your camera is going to fall on the y-axis until it collides with the ground. And, your camera will collide with the box when you move it too near to it.
 

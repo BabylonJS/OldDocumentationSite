@@ -17,16 +17,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[How to use VirtualJoysticksCamera](/tutorials/How_to_use_VirtualJoysticksCamera)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Using depth-of-field and other lens effects](/tutorials/Using_depth-of-field_and_other_lens_effects)  
 ****  
-**Canvas2d Basics**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Canvas 2D overview and architecture](/extensions/Canvas2D_Overview_Architecture)  
-&nbsp;&nbsp;&nbsp;&nbsp;[Using the Canvas2D](/tutorials/Using_the_Canvas2D)  
-****  
-**Canvas2d Intermediate**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Canvas 2D Home](/extensions/Canvas2D_Home)  
-****  
-**Canvas2d Advanced**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Creating your own primitive type for the Canvas2D](/tutorials/How_to_create_your_own_Canvas2D_primitive)  
-****  
 **Collisions Basics**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Cameras, Mesh Collisions and Gravity](/tutorials/Cameras,_Mesh_Collisions_and_Gravity)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Intersect Collisions - mesh](/tutorials/Intersect_Collisions_-_mesh)  
@@ -91,7 +81,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Using WebGL to Create Games for the Windows Store](/tutorials/Using_WebGL_to_Create_Games_for_the_Windows_Store)  
 ****  
 **GUI**  
-&nbsp;&nbsp;&nbsp;&nbsp;[Bbaylon GUI](/overview/gui)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Babylon GUI](/overviews/gui)  
 ****  
 **Lights Basics**  
 &nbsp;&nbsp;&nbsp;&nbsp;[Lights](/tutorials/Lights)  

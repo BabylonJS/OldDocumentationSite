@@ -26,10 +26,29 @@ You can unfreeze a mesh with:
 mesh.unfreezeWorldMatrix();
 ```
 
+# Freezing the active meshes
+If you are CPU bound, you can decide to keep the list of active meshes unchanged and then free the time spent by the CPU to determine active meshes:
+
+```
+scene.freezeActiveMeshes();
+```
+
+You can unfreeze the active meshes with:
+
+```
+scene.unfreezeActiveMeshes();
+```
+
+Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
+
 # Reducing draw calls
 As soon as you can please use instances as they are drawn with one single draw call: http://doc.babylonjs.com/tutorials/how_to_use_instances
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
+
+# Using depth pre-pass
+When dealing with complex scenes, it could be useful to use depth pre-pass. This technique will render designated meshes only in the depth buffer to leverage early depth test rejection. This could be used for instance when a scene contains meshes with advanced shaders.
+To enable a depth pre-pass for a mesh, just call `mesh.material.needDepthPrePass = true`.
 
 # Using unindexed meshes
 By default Babylon.js uses indexed meshes where vertices can be reuse by faces. When vertex reuse is low and when vertex structure is fairly simple (like just a position and a normal) then you may want to unfold your vertices and stop using indices:
@@ -60,6 +79,13 @@ scene.getAnimationRatio();
 ```
 
 The return value is higher on low frame rates.
+
+# Handling WebGL context lost
+Starting with version 3.1, Babylon.js can handle [WebGL context lost event](https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.13). This event is raised by the browser when the GPU needs to be taken away from your code. This can happen for instance when using WebVR in hybrid scenario (with multiple GPU). In this case, Babylon.js has to recreate ALL low level resources (including textures, shaders, program, buffers, etc.). The process is entirely transparent and done under the hood by Babylon.js.
+
+As a developer you should not be concerned by this mechanism. However, to support this scenario, Babylon.js may need an additional amount of memory to keep track of resources creation. If you do not need to support WebGL context lost event, you can turn off the tracking by instantiating your engine with doNotHandleContextLost option set to true.
+
+If you created resources that need to be rebuilt (like vertex buffers or index buffers), you can use the `engine.onContextLostObservable` and `engine.onContextRestoredObservable` observables to keep track of the context lost and context restored events.
 
 # Other useful tutorials
 * [Optimizing meshes selection for rendering](http://doc.babylonjs.com/tutorials/Optimizing_Your_Scene_with_Octrees)

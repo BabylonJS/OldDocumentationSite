@@ -40,6 +40,27 @@ renderer.heading = function (text, level, raw) {
         var link = '<a href="#' + this.options.headerPrefix + raw_escaped + '" class="invisible permalink">' +
             '<i class="fa fa-link"></i>' +
             '</a>';
+
+        var textArray = text.split(':'); // [static parameter_name, :, parameter_type]
+        if (textArray.length >= 2 && textArray.length <= 3) {
+            // Then it's a parameter
+            var parameter_name = textArray[0].split(' '); // [static, parameter_name]
+            if (parameter_name.length > 1) {
+                // then a 'static' is present
+                text = parameter_name[0] + ' <span class="parameterName">' + parameter_name[1] + '</span> ' + ': <span class="parameterType">' + textArray[textArray.length - 1] + '</span>';
+            } else {
+                // then a 'static' is present
+                text = '<span class="parameterName">' + parameter_name[0] + '</span> ' + ': <span class="parameterType">' + textArray[textArray.length - 1] + '</span>';
+            }
+        } else {
+            var textArray = text.split('&rarr;'); // [method_name, method_type] 
+            if (textArray.length >= 2) {
+                // Then it's a method
+                var parameter_name = textArray[0];
+                text = '<span class="parameterName">' + parameter_name + '</span> ' + '→ <span class="parameterType">' + textArray[textArray.length - 1] + '</span>';
+            }
+        }
+
         return '<h' + level + ' id="' + this.options.headerPrefix + raw_escaped + '">'
             + link
             + text

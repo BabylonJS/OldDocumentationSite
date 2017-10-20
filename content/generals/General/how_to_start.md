@@ -158,7 +158,6 @@ The main gulpfile in Tools/Gulp contains a lot of helpfull tasks. So first open 
 * `gulp materialsLibrary` generates all the materials files in the dist/preview release folder.
 * `gulp proceduralTexturesLibrary` generates all the procedural textures files in the dist/preview release folder.
 * `gulp postProcessesLibrary` generates all the post processes files in the dist/preview release folder.
-* `gulp canvas2D` generates the canvas2D files in the dist/preview release folder.
 * `gulp inspector` generates the inspector files in the dist/preview release folder.
 * `gulp deployLocalDev` regenerates your localDev/src/index.js from the template.
 
@@ -189,7 +188,7 @@ This file starts like this:
                 "additionalCameras", "postProcesses", "renderingPipeline", "depthRenderer", "additionalPostProcesses",
                 "bones", "hdr", "polygonMesh", "csg", "lensFlares", "physics", "textureFormats", "debug", "morphTargets",
                 "colorCurves", "octrees", "simd", "vr", "virtualJoystick", "optimizations", "highlights", "assetsManager",
-                "mapTexture", "dynamicFloatArray", "serialization", "probes", "layer"
+                "mapTexture", "dynamicFloatArray", "serialization", "probes", "layer", "textureTools", "cameraBehaviors"
         ],
         "minimal": ["meshBuilder", "standardMaterial", "freeCamera", "hemisphericLight"]
     },
@@ -264,5 +263,7 @@ Here is the list of available workloads:
 | serialization | Contains SceneSerializer |
 | probes | Contains ReflectionProbe |
 | layer | Contains Layer |
+| textureTools | Contains TextureTools |
+| cameraBehaviors | Contains all camera behaviors |
 
 

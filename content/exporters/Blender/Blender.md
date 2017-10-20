@@ -4,7 +4,7 @@ PG_TITLE: Blender
 ---
 # Blender to Babylon.js exporter
 
-The Blender export plugin can be found on [github repository](http://github.com/BabylonJS/Babylon.js/tree/master/Exporters/Blender).
+The Blender export plugin can be found on [github repository](https://github.com/BabylonJS/Exporters/tree/master/Blender).
 
 An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter, see its readme to know about its functionnalities.
 
@@ -46,7 +46,7 @@ An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/
 
 | Blender | BJS equivalent |
 | --- | --- |
-| ![constraints](img/exporters/blender/object/constraints.png) | <ul><li>Track To: useful when using ArcRotate camera [(tip)](http://doc.babylonjs.com/exporters/blender_tips#arcrotate)</li></ul>|
+| ![constraints](img/exporters/blender/constraints/constraints.png) | <ul><li>Track To: useful when using ArcRotate camera [(tip)](http://doc.babylonjs.com/exporters/blender_tips#arcrotate)</li></ul>|
 
 ### Cameras
 
@@ -114,7 +114,7 @@ An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/
 
 | Blender | BJS equivalent | 
 |---|---|
-| | |
+| Node Editor</br>![cycles node](img/exporters/blender/materials/cycles-node01.png) | Exporter will do automatic baking, and try to detect some nodes:</br> <ul><li>Diffuse BSDF</li><li>Ambient Occlusion</li></ul> |
 
 ### Textures
 
@@ -133,22 +133,6 @@ An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/
 | Texture Type</br>![type-image](img/exporters/blender/textures/type-image.png) | <ul><li>as seen above, this name is only used in Blender<li><li>texture type:<ul><li>for image file, choose *Image or Movie*</li><li>for procedural textures, choose any one but *voxel data*, *point density*, *ocean*</li></ul></li></ul> |
 | Image</br>![image](img/exporters/blender/textures/image.png) | <ul><li>texture filename will be texture name in BJS</li></ul> | 
 | Image Sampling</br>![image-sampling](img/exporters/blender/textures/image-sampling.png) | <ul><li>Use Alpha: hasAlpha</li></ul> | 
-| Image Mapping</br>![image-mapping](img/exporters/blender/textures/image-mapping.png) | <ul><li>Extension: choosing *Clip* will set Wrap value to 0</li></ul> | 
-
-#### Cycles Render
-
-| Blender | BJS equivalent | 
-|---|---|
-| | |
-
-
-  * Name
-  * Associated file
-  * Level
-  * Use alpha
-  * uOffset / voffset
-  * uScale / uScale
-  * uAng / vAng / Wang
-  * WrapU / WrapV
-  * Coordinates index
-  * Texture in-lining to .babylon file
+| Image Mapping</br>![image-mapping](img/exporters/blender/textures/image-mapping.png) | <ul><li>Extension: choosing *Clip* will set Wrap value to 0</li></ul> |
+| Mapping</br>![mapping](img/exporters/blender/textures/mapping.png) | <ul><li>Coordinates: choosing between <ul><li>UV: [EXPLICIT_MODE](http://doc.babylonjs.com/classes/3.0/texture#static-explicit_mode-number)</li><li>Reflection: by setting *Projection* to *Sphere*, you gain access to spheremaps through [SPHERICAL_MODE](http://doc.babylonjs.com/classes/3.0/texture#static-spherical_mode-number)</li></ul></li><li>Offset X and Y: [uOffset](http://doc.babylonjs.com/classes/3.0/texture#uoffset-number) and [vOffset](http://doc.babylonjs.com/classes/3.0/texture#voffset-number)</li><li>Size X and Y: [uScale](http://doc.babylonjs.com/classes/3.0/texture#uscale-number) and [vScale](http://doc.babylonjs.com/classes/3.0/texture#vscale-number)</li></ul> |
+| Influence</br>![influence](img/exporters/blender/textures/influence.png) | Be sure to enable only one influence by texture, to avoid automatic baking. |
