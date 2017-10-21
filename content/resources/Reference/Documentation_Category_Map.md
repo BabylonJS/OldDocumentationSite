@@ -1,9 +1,9 @@
-[A](#A) [B](#B) [C](#C) [D](#D) [E](#E) [F](#F) [G](#G) [H](#H) [I](#I) J K [L](#L) [M](#M) [N](#N) [O](#O) [P](#P) Q [R](#R) [S](#S) [T](#T) [U](#U) [V](#V) [W](#W) X Y Z
+<a name = "top"></a>[A](#A) [B](#B) [C](#C) [D](#D) [E](#E) [F](#F) [G](#G) [H](#H) [I](#I) J K [L](#L) [M](#M) [N](#N) [O](#O) [P](#P) Q [R](#R) [S](#S) [T](#T) [U](#U) [V](#V) [W](#W) X Y Z
 ********
 [3DMAX Reduce Bone Influence Count](/resources/Bones_influences_per_vertex)  
 [3DSMax](/resources/3DSMax)  
 ********
-<a name = "A">**A**</a>
+<a name = "A">**A**</a><span style = "float:right">[top](#top)</span>
 
 [About The 101 Course](/babylon101/About101)  
 [Actions](/How_To/How_to_use_Actions)  
@@ -15,7 +15,7 @@
 [Ascii Art, Post Process](/extensions/AsciiArtPostProcess)  
 [Assests Manager, File Loading](/How_To/How_to_use_AssetsManager)  
 ********
-<a name = "B">**B**</a>
+<a name = "B">**B**</a><span style = "float:right">[top](#top)</span>
 
 [Babylon GUI](/How_To/Gui)  
 [Back Face Culling](/babylon101/Materials#back-face-culling)  
@@ -33,7 +33,7 @@
 [Build a House from a Floorplan](/samples/House)  
 [Bump Map Material](/How_To/More_Materials#bump-map)  
 ********
-<a name = "C">**C**</a>
+<a name = "C">**C**</a><span style = "float:right">[top](#top)</span>
 
 [Camera Behaviors](/How_To/Camera_Behaviors)  
 [Camera Inputs, Custom](/How_To/Customizing_Camera_Inputs)  
@@ -76,11 +76,11 @@
 [Contribute, Approved Naming Conventions](/How_To/Approved_Naming_Conventions)  
 [Contribute, Start](/How_To/how_to_start)  
 [Create a Custom Loading Screen](/How_To/Creating_a_custom_loading_screen)  
-[Custom Extruded Shapes Mesh Using MeshBuilder](/How_To/Parametric_Shapes#custom-extruded-shapes) too many set shapes                    
+[Custom Extruded Shapes Mesh Using MeshBuilder](/How_To/Parametric_Shapes#custom-extruded-shapes)  
 [Cylinder Mesh Using MeshBuilder](/How_To/Set_Shapes#cylinder)  
 [Cylinder or Cone Mesh with Legacy Method](/How_To/Legacy_Set#cylinder-or-cone)  
 ********
-<a name = "D">**D**</a>
+<a name = "D">**D**</a><span style = "float:right">[top](#top)</span>
 
 [Dashed Lines Mesh Using MeshBuilder](/How_To/Parametric_Shapes#dashed-lines)  
 [Dashed Lines Mesh with Legacy Method](/How_To/Legacy_Param#dashed-lines)  
@@ -98,7 +98,7 @@
 [Display World Axes, Snippet](/samples/World_Axes)  
 [Draw Curves](/How_To/How_to_use_Curve3)  
 ********
-<a name = "E">**E**</a>
+<a name = "E">**E**</a><span style = "float:right">[top](#top)</span>
 
 [Edges Rendering](/How_To/How_to_use_EdgesRenderer)  
 [Editor, Creating Cinematic](/resources/Creating_Cinematic)  
@@ -119,7 +119,7 @@
 [Extruded Shapes Mesh Using MeshBuilder](/How_To/Parametric_Shapes#extruded-shapes)  
 [Extruded Shapes Mesh with Legacy Method](/How_To/Legacy_Param#extruded-shapes)  
 ********
-<a name = "F">**F**</a>
+<a name = "F">**F**</a><span style = "float:right">[top](#top)</span>
 
 [Facet Data](/How_To/How_to_use_FacetData)  
 [File Importer, Own](/How_To/How_to_Create_Your_Own_File_Importer)  
@@ -134,7 +134,7 @@
 [FresnelParameters](/How_To/How_to_use_FresnelParameters)  
 [Fur, Material](/extensions/Fur)  
 ********
-<a name = "G">**G**</a>
+<a name = "G">**G**</a><span style = "float:right">[top](#top)</span>
 
 [glTF File, Loading](/How_To/glTF)  
 [Gradient, Material](/extensions/Gradient)  
@@ -148,19 +148,19 @@
 [Ground using Heightmap](/babylon101/Height_Map)  
 [GUIs, Overview](/features/gui)  
 ********
-<a name = "H">**H**</a>
+<a name = "H">**H**</a><span style = "float:right">[top](#top)</span>
 
 [Hemispheric Light](/babylon101/Lights#the-hemispheric-light)  
 [Highlight a Mesh](/How_To/Highlight_Layer)  
 [HTML Template](/babylon101/First#your-first-html)  
 ********
-<a name = "I">**I**</a>
+<a name = "I">**I**</a><span style = "float:right">[top](#top)</span>
 
 [Increasing Facets, Snippet](/samples/Increasing_Facets)  
 [Incremental Loading](/How_To/Using_the_Incremental_Loading_System)  
 [Instances](/How_To/How_to_use_Instances)  
 ********
-<a name = "L">**L**</a>
+<a name = "L">**L**</a><span style = "float:right">[top](#top)</span>
 
 [Lathe Mesh Using MeshBuilder](/How_To/Parametric_Shapes#lathe)  
 [Lava, Material](/extensions/Lava)  
@@ -180,13 +180,13 @@
 [LOD](/How_To/How_to_use_LOD)  
 [Logarithmic Depth Buffer](/How_To/Using_logarithmic_depth_buffer)  
 ********
-<a name = "M">**M**</a>
+<a name = "M">**M**</a><span style = "float:right">[top](#top)</span>
 
 [Making a Simple Driven Car](/samples/Car_Driven)  
 [Marble, Procedural Texturel](/extensions/MarbleProceduralTexture)  
 [Material for Library, Contribute](/How_To/How_to_create_a_material_for_materialsLibrary)  
 [Material, Different Front and Back](/How_To/FrontandBackUV)  
-[Material, Individual Mesh Faces](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
+[Material, Inspanidual Mesh Faces](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
 [Materials, Applying to Vertices](/resources/Facets)  
 [Materials, How They Work](/resources/How_materials_work)  
 [Materials, Overview](/features/Materials)  
@@ -206,14 +206,14 @@
 [Multi-Platform Compressed Textures](/resources/Multi-Platform_Compressed_Textures)  
 [Multi-Views](/How_To/How_to_use_Multi-Views)  
 ********
-<a name = "N">**N**</a>
+<a name = "N">**N**</a><span style = "float:right">[top](#top)</span>
 
 [Non Regular Polygon Mesh Using MeshBuilder](/How_To/Parametric_Shapes#non-regular-polygon)  
 [Non Regular Polygon Mesh with Legacy Method](/How_To/Legacy_Param#non-regular-polygon)  
 [Normal, Material](/extensions/Normal)  
 [NPM, Using](/features/NPM_Support)  
 ********
-<a name = "O">**O**</a> 
+<a name = "O">**O**</a><span style = "float:right">[top](#top)</span> 
 
 [OBJ File, Loading](/How_To/OBJ)  
 [Object Cloner](/extensions/ObjectCloner)  
@@ -225,7 +225,7 @@
 [Optimize using Cached Resources](/How_To/Caching_Resources_in_IndexedDB)  
 [Optimize Using SceneOptimizer](/How_To/How_to_use_SceneOptimizer)  
 ********
-<a name = "P">**P**</a>
+<a name = "P">**P**</a><span style = "float:right">[top](#top)</span>
 
 [Parallax Mapping](/How_To/Using_parallax_mapping)  
 [Parent](/How_To/Parenting)  
@@ -258,7 +258,7 @@
 [Procedural Texture for  Library, Contribute](/How_To/How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary)  
 [Procedural Textures](/How_To/How_to_use_Procedural_Textures)  
 ********
-<a name = "R">**R**</a>
+<a name = "R">**R**</a><span style = "float:right">[top](#top)</span>
 
 [Radial Cloner](/extensions/RadialCloner)  
 [Random Effector, Cloner](/extensions/RandomEffector)  
@@ -281,7 +281,7 @@
 [Rotating, Overview](/features/Position,_Rotation,_Scaling)  
 [Rotation](/babylon101/Position#rotation)  
 ********
-<a name = "S">**S**</a>
+<a name = "S">**S**</a><span style = "float:right">[top](#top)</span>
 
 [Samples, Overview](/samples/Introduction)  
 [Scaling](/babylon101/Position#scaling)  
@@ -313,7 +313,7 @@
 [Sprites](/babylon101/Sprites)  
 [STL File, Loading](/How_To/STL)  
 ********
-<a name = "T">**T**</a>
+<a name = "T">**T**</a><span style = "float:right">[top](#top)</span>
 
 [Tags in BJS](/resources/Tags)  
 [Terrain, Material](/extensions/Terrain)  
@@ -337,7 +337,7 @@
 [Tube Mesh with Legacy Method](/How_To/Legacy_Param#tube)  
 [Tutorials, Off-Site](/resources/offsite_tutorials_list)  
 ********
-<a name = "U">**U**</a>
+<a name = "U">**U**</a><span style = "float:right">[top](#top)</span>
 
 [Unity](/resources/Unity)  
 [Universal Camera](/babylon101/Cameras#universal-camera)  
@@ -345,7 +345,7 @@
 [Vertex Normals](/resources/Normals)  
 [Video, 3D on the Web Understanding the Basics](/How_To/3D_on_the_Web_Understanding_the_Basics)  
 ********
-<a name = "V">**V**</a>
+<a name = "V">**V**</a><span style = "float:right">[top](#top)</span>
 
 [Video, 3D Programming with WebGL and Babylon.js for Beginners](/How_To/Zenva_course)  
 [Video, Babylon.js Advanced Features](/How_To/Babylon.js_Advanced_Features)  
@@ -361,7 +361,7 @@
 [Visual Studio, Setup for Contributing to BJS](/How_To/setup_visualStudio)  
 [Volumetric Light Scattering](/How_To/Using_the_Volumetric_LightScattering_post-process)  
 ********
-<a name = "W">**W**</a>
+<a name = "W">**W**</a><span style = "float:right">[top](#top)</span>
 
 [Water, Material](/extensions/Water)  
 [WebGL2](/features/WebGL2)  
