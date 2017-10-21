@@ -77,7 +77,7 @@ White hemispheric light with a black groundColor is a useful lighting method.
 
 _White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
 
-## Interacting Lights
+### Interacting Lights Colors
 [Playground example of interacting spot lights](http://www.babylonjs-playground.com/#20OAV9#9)  
 
 ## Limitations 

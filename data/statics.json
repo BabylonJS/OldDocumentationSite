@@ -836,6 +836,10 @@
       "desc": "Useful References",
       "files": [
         {
+          "title": "Index",
+          "filename": "Documentation_Category_Map"
+        },
+        {
           "title": "Interesting Playgrounds",
           "filename": "playgrounds"
         },

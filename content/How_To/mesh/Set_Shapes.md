@@ -109,7 +109,7 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 
 [Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
 
-## Disc
+## Disc or Regular Polygon
 You can create any kind of regular polygon with _CreateDisc()_, the number of sides is dependent on the value given to _tessellation_. The larger this value the closer to an actual disc. Using the arc option you can create a sector.
 
 Example :

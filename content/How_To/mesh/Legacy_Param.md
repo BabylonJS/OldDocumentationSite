@@ -100,7 +100,7 @@ var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], 2, scene)
 
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
-## Lines Mesh
+## Lines
 
 ```javascript
 var lines = BABYLON.Mesh.CreateLines("lines", [
@@ -114,7 +114,7 @@ Parameters are: name, [array of comma-separated vectors], scene.
 
 I could explain how the Lines Mesh constructor works, but I think you can see how it works just by looking at the demo code above.  Notice the [ and ].  Those are the enclosing tokens for an array, yet another kind of Javascript value.  The first vector3 of the array is the starting location for drawing lines.  After that, a comma, and then the next vector3 location... indicating where the line is drawing-to next.  Then, another comma, and another vector3 to a new location.  You can add as many vectors as you wish, but notice that the LAST vector3 does not have a comma following it.  Please make your array of vectors be formatted similarly.    
 
-## Creation of DashedLines Mesh
+## Dashed Lines
 
 ```javascript
 var dashedlines = BABYLON.Mesh.CreateDashedLines("dashedLines", [v1, v2, ... vn], dashSize, gapSize, dashNb, scene);
@@ -123,7 +123,7 @@ Parameters are : name, [array of Vectors3], dashSize, gapSize, dashNumber, scene
 As for Lines, a line along the vectors3 will be displayed in space. It will try to set _dashNumber_ strokes on this line depending on the length of each segment between two successive vectors3.    
 _dashSize_ and _gapSize_ are relative to each other dash and gap sizes within these strokes.    
 
-## Extrusion
+## Extruded Shape
 What is extrusion ?  
 Extrusion is the way to transform a 2D shape into a volumic shape.  
 Let's imagine that you define a star shape by filling an array with successive _Vector3_. In order to have a 2D shape, you only set these points in the xOy plane, so every z coordinate is zero.  

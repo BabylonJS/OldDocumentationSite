@@ -205,11 +205,11 @@ This is a camera specifically designed to react to device orientation events suc
 This is specifically designed to react to Virtual Joystick events. 
 Virtual Joysticks are on-screen 2D graphics that are used to control the camera or other scene items. 
  
-## Requires
+### Requires
 
 The third-party file [hand.js](http://handjs.codeplex.com/releases/view/119684).
 
-## Read
+### Read
 
 [Virtual Joysticks David Rousset Blog](http://blogs.msdn.com/b/davrous/archive/2013/02/22/creating-an-universal-virtual-touch-joystick-working-for-all-touch-models-thanks-to-hand-js.aspx) on David's blog.
  

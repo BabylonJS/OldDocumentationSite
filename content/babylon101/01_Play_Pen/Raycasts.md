@@ -159,7 +159,7 @@ The helper can also be attached to a mesh to track its direction:
 
 ## Next step
 
- [**Sprites**](/babylon101/Sprites).
+Often it is sufficient to have some 2D shapes in you scene and [**sprites**](/babylon101/Sprites) are next.
 
 
 

@@ -34,7 +34,7 @@ Parameters are: name, size, and scene to attach the mesh, updatable? (if the mes
 var plane = BABYLON.Mesh.CreatePlane("plane", 10.0, scene);
 ```
 
-# Disc (or a regular polygon)
+# Disc or Regular Polygon
 ```javascript
 var disc = BABYLON.Mesh.CreateDisc("disc", 5, 30, scene, false, BABYLON.Mesh.DEFAULTSIDE);
 ```
@@ -99,7 +99,7 @@ Parameters are: name, heightmapPath, width, depth, subdivs, minheight, maxheight
 
 HeightMap grounds are easy, but we decided to create a separate tutorial so we could say more about this important Babylon.js feature. Please see our [HeightMap Tutorial](/babylon101/Height_Map) to learn all about heightMap grounds.
 
-# Create of a Tiled Ground
+# Tiled Ground
 
 Thanks to forum user Kostar111 for this handy Tiled Ground constructor. Here is the basic code needed to create a tiled ground.
 
