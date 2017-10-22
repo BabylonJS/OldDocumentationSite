@@ -64,9 +64,9 @@ particleSystem.minEmitBox = new BABYLON.Vector3(-1, 0, 0); // Starting all From
     particleSystem.maxEmitBox = new BABYLON.Vector3(1, 0, 0); // To...
 ```
 
-As you can see, particles are emitted from different positions along the X-axis:
+  As you can see, particles are emitted from different positions along the X-axis:
 
-![EmitBox](/img/tutorials/Particles/12-2.png)
+  ![EmitBox](/img/tutorials/Particles/12-2.png)
 
 * Now you can give some colors to your particles. Color one and two are combined, and “colorDead” is the color that the particle takes-on just before it disappears.
 ```javascript
@@ -91,17 +91,16 @@ particleSystem.maxLifeTime = 1.5;
 ```
 
 * Emit rate. This is the density of particles, the rate of particle flow:
-```javascript
-particleSystem.emitRate = 1000;
-```
+  ```javascript
+  particleSystem.emitRate = 1000;
+  ```
+  ![emitRate](/img/tutorials/Particles/12-3.png)
 
-![emitRate](/img/tutorials/Particles/12-3.png)
-
-If you want to launch only a few particles at once, that can be done, as well. For example, if you want to emit only 300 particles:
-```javascript
-particleSystem.manualEmitCount = 300;
-```
-Be aware that the stream is no longer continuous. This is a one-shot particle emission, so this function overrides the previous “emitRate” parameter.
+  If you want to launch only a few particles at once, that can be done, as well. For example, if you want to emit only 300 particles:
+  ```javascript
+  particleSystem.manualEmitCount = 300;
+  ```
+  Be aware that the stream is no longer continuous. This is a one-shot particle emission, so this function overrides the previous “emitRate” parameter.
 
 * The selected mode for particles. You can choose between “BLENDMODE_ONEONE” (default choice: source color is added to the destination color without alpha affecting the result), and “BLENDMODE_STANDARD” (to blend current color and particle color using particle’s alpha).
 ```javascript
@@ -115,12 +114,12 @@ particleSystem.gravity = new BABYLON.Vector3(0, -9.81, 0);
 ```
 
 * Direction. Random direction of each particle after it has been emitted, between direction1 and direction2 vectors.
-```javascript
-particleSystem.direction1 = new BABYLON.Vector3(-7, 8, 3);
-particleSystem.direction2 = new BABYLON.Vector3(7, 8, -3);
-```
+  ```javascript
+  particleSystem.direction1 = new BABYLON.Vector3(-7, 8, 3);
+  particleSystem.direction2 = new BABYLON.Vector3(7, 8, -3);
+  ```
 
-![emitRate](/img/tutorials/Particles/12-4.png)
+  ![emitRate](/img/tutorials/Particles/12-4.png)
 
 * AngularSpeed. You can define a Z-axis rotation for each particle (in radian):
 ```javascript
@@ -129,15 +128,13 @@ particleSystem.maxAngularSpeed = Math.PI;
 ```
 
 * Speed/Strength. You can define the power of emitting particles, and the overall motion speed (0.01 is default update speed, faster updates = faster animation).
-```javascript
-particleSystem.minEmitPower = 1;
-particleSystem.maxEmitPower = 3;
-
-particleSystem.updateSpeed = 0.005;
-```
+  ```javascript
+  particleSystem.minEmitPower = 1;
+  particleSystem.maxEmitPower = 3;
+  particleSystem.updateSpeed = 0.005;
+  ```
 
 * Duration. You can set the amount of time the particle system is running (depends of the overall speed above).
-
 ```javascript
 particleSystem.targetStopDuration = 5;
 ```
@@ -161,11 +158,12 @@ Feel free to play with this scene... [**at our online playground**]( https://www
 
 ### customEffect (the fourth parameter in the constructor)
 
-var ps = new BABYLON.ParticleSystem("particles", 2000, scene, **customEffect**);
+_var ps = new BABYLON.ParticleSystem("particles", 2000, scene, **customEffect**);_
 
 The customEffect is a type of BABYLON.Effect used to target a valid shader program.
 
-The primary author of Babylon.js was kind enough to make us [a fantastic playground demo of a particle system using a fragment shader effect](https://www.babylonjs-playground.com/#1ASENS#43). Visit that link, and you can see a fragment shader program that has been stored in a shader store. Notice the line:
+The primary author of Babylon.js was kind enough to make us [a fantastic playground demo of a particle system using a fragment shader effect](https://www.babylonjs-playground.com/#1ASENS#43)
+Visit that link, and you can see a fragment shader program that has been stored in a shader store. Notice the line:
 
 ```javascript
 BABYLON.Effect.ShadersStore["myParticleFragmentShader"] = [...]
@@ -247,6 +245,46 @@ You can get even more control over particles by using custom functions:
          } 
     }
 
+## Particle Animation
+Starting from Babylon.js v3.1 particle system will allow particle animation using animation sheet.
+[Sample Demo](http://www.babylonjs-playground.com/#CLN02N#3)
+To enable particle animation in `ParticleSystem` you pass a true parameter in the `ParticleSystem` constructor, the default value for is false then assign the `particleTexture`
+
+```javascript
+var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
+particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
+                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
+```
+
+After that you need to set some details the `ParticleSystem` will use to do the animation, the first properties are `spriteCellHeight` and `spriteCellWidth` which are the cell width and height for each sprite in the animation sheet. then you can choose which is the starting and ending cell for your sheet using properties `startSpriteCellID` and `endSpriteCellID`.
+
+Here comes the tricky part regarding the number of loops the particle will make before it gets disposed from the scene, if you enable `spriteCellLoop` by set the property to true and property `spriteCellChangeSpeed` to the speed you want, the system will loop the animation sheet from `startSpriteCellID` till `endSpriteCellID` then loop again till the sheet get disposed. if `spriteCellLoop` is false then once the sheet reachs `endSpriteCellID` the particle will use this cell till it get disposed from the scene.
+
+```javascript
+var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
+particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
+                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
+
+particleSystem.startSpriteCellID = 0;
+particleSystem.endSpriteCellID = 44;
+particleSystem.spriteCellHeight = 64;
+particleSystem.spriteCellWidth = 64;
+particleSystem.spriteCellLoop = true;
+particleSystem.spriteCellChangeSpeed = 4; // default is zero
+```
+
+If you want your particle animation to match the life time of the particle set property `spriteCellChangeSpeed` to zero (default) after that the `ParticleSystem` will calculate how to sync between the animation sheet and particle life time so the first sprite will `startSpriteCellID` and the last will be `endSpriteCellID`.
+
+```javascript
+var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
+particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
+                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
+
+particleSystem.startSpriteCellID = 0;
+particleSystem.endSpriteCellID = 44;
+particleSystem.spriteCellHeight = 64;
+particleSystem.spriteCellWidth = 64;
+```
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.

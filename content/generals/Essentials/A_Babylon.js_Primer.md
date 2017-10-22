@@ -347,11 +347,11 @@ Once you have that folder made, you can use the 4 links shown below... to get co
 
 [**hand.js**](http://www.babylonjs.com/hand.minified-1.2.js)  <= right-click... save link/target
 
-[**cannon.js**](http://www.babylonjs.com/cannon.js)  <= right-click... save link/target
+[**cannon.js**](http://cdn.babylonjs.com/cannon.js)  <= right-click... save link/target
 
-[**oimo.js**](http://www.babylonjs.com/oimo.js)  <= right-click... save link/target
+[**oimo.js**](http://cdn.babylonjs.com/oimo.js)  <= right-click... save link/target
 
-[**babylon.js**](http://www.babylonjs.com/babylon.js)   <= right-click... save link/target
+[**babylon.js**](http://cdn.babylonjs.com/babylon.js)   <= right-click... save link/target
 
 Store each of those files into the new js folder.  Also, you might want to copy them to some other folder as well, for using later.  Try to remember to repeat these actions fairly often, maybe once per month, to ensure that you are always using a reasonably fresh version of The Big 4 files.  Babylon.js is always evolving.  New features are being added very quickly, and you want your home versions of The Big 4... to be fresh, so you can take advantage of those new features.
 

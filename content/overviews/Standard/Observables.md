@@ -9,7 +9,7 @@ Users that want to have their own piece of code running in response of such even
 
 So we are here with two classes (In typescript):
 
-### Observable\<T\>
+### Observable
 The implementer uses it to create a property which will trigger all the registered observers.The Generic type T is used to communicate a given data type from the Observable to the Observer.
 
 You have the following method/properties:
@@ -23,7 +23,7 @@ You have the following method/properties:
 * clear() to remove all Observers
 * clone() to simply clone the object but not the registered Observers.
 
-### Observer\<T\> 
+### Observer
 An instance of this class is created when you call the Observable.add() method to create a new Observer. 
 When you no longer want to be notified, you call Observable.remove() giving the same object and you're done!
 
@@ -55,53 +55,25 @@ scene.onBeforeRenderObservable.remove(observer);
 ```
 And here is the associated playground:  https://www.babylonjs-playground.com/#UP2O8#1
 
-## Where are they?
-Babylon.js uses them a lot! Here is the current list (as of v2.4) of available observables:
+### Context
+Starting with Babylon.js v3.1, you can also add the scope to apply to observers when they are notified.
 
-* scene.onDisposeObservable
-* scene.onBeforeRenderObservable
-* scene.onAfterRenderObservable
-* scene.onReadyObservable
-* scene.onBeforeCameraRenderObservable
-* scene.onAfterCameraRenderObservable
-* scene.onNewCameraAddedObservable
-* scene.onCameraRemovedObservable
-* scene.onNewLightAddedObservable
-* scene.onLightRemovedObservable
-* scene.onNewGeometryAddedObservable
-* scene.onGeometryRemovedObservable
-* scene.onNewMeshAddedObservable
-* scene.onMeshRemovedObservable
-* scene.onPrePointerObservable
-* scene.onPointerObservable
-* layer.onDisposeObservable
-* layer.onBeforeRenderObservable
-* layer.onAfterRenderObservable
-* material.onDisposeObservable
-* material.onBindObservable
-* baseTexture.onDisposeObservable
-* renderTargetTexture.onAfterUnbindObservable
-* renderTargetTexture.onBeforeRenderObservable
-* renderTargetTexture.onAfterRenderObservable
-* renderTargetTexture.onClearObservable
-* abstractMesh.onDisposeObservable
-* abstractMesh.onCollideObservable
-* abstractMesh.onCollisionPositionChangeObservable
-* abstractMesh.onAfterWorldMatrixUpdateObservable
-* mesh.onBeforeRenderObservable
-* mesh.onAfterRenderObservable
-* mesh.onBeforeDrawObservable
-* particleSystem.onDisposeObservable
-* postProcess.onActivateObservable
-* postProcess.onSizeChangedObservable
-* postProcess.onApplyObservable
-* postProcess.onBeforeRenderObservable
-* postProcess.onAfterRenderObservable.
-* spriteManager.onDisposeObservable
+To do so just add a fourth parameter to the add function:
+```
+scene.onPointerObservable.add(this.onPickDown, BABYLON.PointerEventTypes.POINTERDOWN, false, this);
+```
 
+You can test it here: http://playground.babylonjs.com/#012I9K
 
+### MultiObserver
+Starting with Babylon.js v3.1, you can watch multiple observables simultaneously with theMultiObserver class:
 
+```
+var watcher = BABYLON.MultiObserver.Watch([button.onPointerDownObservable, button2.onPointerDownObservable], function(info) {
+	console.log(info.x);
+});
+```
 
+The MultiObserver will handle the observers for you. You will just need to call watcher.dispose() when done with the observables to free all observers.
 
-
-
+You can test it here: https://www.babylonjs-playground.com/#YENXH1

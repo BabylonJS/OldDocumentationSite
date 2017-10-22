@@ -539,6 +539,38 @@ So if your SPS stays within some fixed bounds that you don't know the values, yo
 If the SPS keeps within some known limits, then it is better to use `SPS.setVisibilityBox(size)` with the right value and then to lock the visibility box.  
 At last, if you still need pickability or variable visibility, and don't know how your SPS will evolve, then you might set `SPS.computeBoundingBox` to true.  
 
+### Transparency Concerns   
+As you know, the SPS is a standard mesh.  
+
+Applying the transparency to a standard mesh leads to well-known issues, not when visualizing other opaque or transparent meshes through this current transparent mesh, but when visualizing some parts of this transparent mesh through itself.   
+Indeed, when passing the mesh geometry to the GPU, this one draws the mesh in the order the mesh facets are sorted in the `indices` array : first triangle, second one then, etc ... whatever the position of the camera.   
+The shader only respects the geometry order and this geometry is fixed.  
+
+As the SPS is a standard mesh, it has the same issue when dealing with transparent particles (rotate the camera) : http://playground.babylonjs.com/#EPBTB7#3
+
+A parameter allows to sort the internal mesh geometry live according to the current camera position : http://playground.babylonjs.com/#EPBTB7#2
+
+It sorts the SPS particles only, not all the facets, for performance reasons.
+
+To enable it, just create your SPS with the parameter `enableDepthSort` to `true`. By default, each next call to `setParticles()` will then sort the particles according to the camera global position.
+
+If for some reasons (immobile camera and sps),  you want to stop (or reactivate) the sort on the next calls to `setParticles()`, just set the property `sps.depthSortParticles` to `false` (or `true` to reactivate it) .
+
+```javascript
+// create a particle depth sort enabled SPS
+var sps = new BABYLON.SolidParticleSystem("sps", scene, {enableDepthSort: true});
+
+// then later, only do ...
+sps.setParticles();   // and the particle are depth sorted each call
+
+// We can skip the sorting at any time (or reactive it) : sps and camera not moving anymore
+sps.depthSortParticles = false;  // true by default when enableDepthSort is set to true
+```
+**Notes :**  
+
+* This feature is CPU intensive, so call `setParticles()` with `depthSortParticles` set to true only when needed.  
+* This feature requires the SPS to be updatable, so it can't work with an immutable SPS.  
+* This features needs to sort all the particles from the pool, so it won't lead to weird results if you call `setParticles(start, end)` on some particles only.  
 
 ### Particle Intersections
 The SPS is physics agnostic. This means you need to implement your own particle behavior if you want to animate them.  
@@ -642,45 +674,3 @@ Note that only the function are stored, not their results. This means that if on
 SPS.rebuildMesh();
 ```
 Except in some very specific cases, you might not need to use this function.  
-
-
-### Particle Animation
-Starting from Babylon.js v3.1 particle system will allow particle animation using animation sheet.
-[Sample Demo](http://www.babylonjs-playground.com/#CLN02N#3)
-To enable particle animation in `ParticleSystem` you pass a true parameter in the `ParticleSystem` constructor, the default value for is false then assign the `particleTexture`
-
-```javascript
-var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
-particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
-                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
-```
-
-After that you need to set some details the `ParticleSystem` will use to do the animation, the first properties are `spriteCellHeight` and `spriteCellWidth` which are the cell width and height for each sprite in the animation sheet. then you can choose which is the starting and ending cell for your sheet using properties `startSpriteCellID` and `endSpriteCellID`.
-
-Here comes the tricky part regarding the number of loops the particle will make before it gets disposed from the scene, if you enable `spriteCellLoop` by set the property to true and property `spriteCellChangeSpeed` to the speed you want, the system will loop the animation sheet from `startSpriteCellID` till `endSpriteCellID` then loop again till the sheet get disposed. if `spriteCellLoop` is false then once the sheet reachs `endSpriteCellID` the particle will use this cell till it get disposed from the scene.
-
-```javascript
-var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
-particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
-                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
-
-particleSystem.startSpriteCellID = 0;
-particleSystem.endSpriteCellID = 44;
-particleSystem.spriteCellHeight = 64;
-particleSystem.spriteCellWidth = 64;
-particleSystem.spriteCellLoop = true;
-particleSystem.spriteCellChangeSpeed = 4; // default is zero
-```
-
-If you want your particle animation to match the life time of the particle set property `spriteCellChangeSpeed` to zero (default) after that the `ParticleSystem` will calculate how to sync between the animation sheet and particle life time so the first sprite will `startSpriteCellID` and the last will be `endSpriteCellID`.
-
-```javascript
-var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
-particleSystem.particleTexture = new BABYLON.Texture("textures/player.png", scene, true,
-                    false, BABYLON.Texture.TRILINEAR_SAMPLINGMODE);
-
-particleSystem.startSpriteCellID = 0;
-particleSystem.endSpriteCellID = 44;
-particleSystem.spriteCellHeight = 64;
-particleSystem.spriteCellWidth = 64;
-```

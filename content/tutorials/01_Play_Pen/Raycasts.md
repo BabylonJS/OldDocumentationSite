@@ -31,7 +31,7 @@ ______
 ![Raycast simple](/img/tutorials/raycast01.jpg)
 
 In all our playgrounds, we will imagine that our character is the main box at the center.
-It will shoot laser beams continually forward and detect which enemy (other boxes) is hitten.
+It will shoot laser beams continually forward and detect which enemy (other boxes) is hit.
 So with the mouse, you don't need to click but move to turn the box with this trigonometry function mousemovef (l34). 
 A ray requires when its created : an origin, a direction and a length. 
 
@@ -58,7 +58,7 @@ Then, we create the ray with all elements given and a length of 100 for example 
 Finally, we get the hit point of the ray if it touches a mesh (l68) :
 *var hit = scene.pickWithRay(ray);*
 
-And if a mesh is hitten, we do what we want with the picking info like getting the mesh name, the position of the point etc...
+And if a mesh is hit, we do what we want with the picking info like getting the mesh name, the position of the point etc...
 Here we change its size because it's funnier ! 
 
 ---
@@ -117,7 +117,7 @@ We can use *scene.multiPickWithRay* if we don't want that the ray stops at the f
 ![Raycast multipick](/img/tutorials/raycast02.jpg)
 
 The picking result will be an array (l68).
-So we do a loop to change all meshes hitten and you can see that the two blue boxes size change. 
+So we do a loop to change all meshes hit and you can see that the two blue boxes size change. 
 It's like a strong bullet ! 
 
 ---

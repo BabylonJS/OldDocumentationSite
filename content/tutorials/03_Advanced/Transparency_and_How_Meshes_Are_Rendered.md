@@ -133,6 +133,9 @@ This may help you with visible seams between meshes and other similar issues.
 - Do not forget to enable backface culling with alpha blended meshes!
 - Use rendering groups to have better control over the order in which your meshes are displayed. These are especially useful if you know that some meshes will be above others 100% of the time (for example, an overlayed UI drawn on top of the scene).
 - A mesh's alphaIndex property can be very useful as well, since they allow you to override the depth sorting of alpha-blended meshes. Also this property does not suffer from the same limitation as Rendering Groups (4 layers at most), and only has an effect on alpha-blended meshes.
+- You can rely on `needDepthPrePass` to help fixing issues with self transparency.
+- You can also use `separateCullingPass` on materials to force the engine to render the transparent objects in 2 passes: first the back faces and then the front faces. This can help a lot with self transparency.
+
 
 ## Concave meshes and transparency
 
