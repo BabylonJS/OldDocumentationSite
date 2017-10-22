@@ -96,7 +96,6 @@
 /tutorials/Optimizing_your_scene                                                  /How_To/Optimizing_your_scene
 /tutorials/Optimizing_Your_Scene_with_Octrees                                     /How_To/Optimizing_Your_Scene_with_Octrees
 /tutorials/PolygonMeshBuilder                                                     /How_To/PolygonMeshBuilder
-/tutorials/Position,_Rotate,_Translate_and_Spaces                                 /How_To/Position,_Rotate,_Translate_and_Spaces
 /tutorials/Render_Scene_on_a_PNG                                                  /How_To/Render_Scene_on_a_PNG
 /tutorials/Ribbon_Tutorial                                                        /How_To/Ribbon_Tutorial
 /tutorials/RTS_game_development_series                                            /How_To/RTS_game_development_series
@@ -118,6 +117,8 @@
 /tutorials/Mesh_CreateXXX_Methods_With_Options_Parameter                          /How_To/Set_Shapes
 /tutorials/CreateBox_Per_Face_Textures_And_Colors                                 /How_To/CreateBox_Per_Face_Textures_And_Colors
 /tutorials/Supporting_fog_with_ShaderMaterial                                     /How_To/Supporting_fog_with_ShaderMaterial
+
+/tutorials/Position,_Rotate,_Translate_and_Spaces                                 /features/Position,_Rotate,_Translate_and_Spaces
 
 /tutorials/Transparency_and_How_Meshes_Are_Rendered          /resources/Transparency_and_How_Meshes_Are_Rendered
 /tutorials/How_materials_work                                /resources/How_materials_work
