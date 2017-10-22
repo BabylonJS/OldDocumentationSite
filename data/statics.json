@@ -882,6 +882,21 @@
       "desc": "All the extensions."
     },
     {
+      "title": "Dynamic Terrains",
+      "name": "Terrains",
+      "desc": "Very Large Terrains",
+      "files": [
+        {
+          "title": "How to Use Dynamic Terrain",
+          "filename": "Dynamic_Terrain"
+        },
+        {
+          "title": "Examples",
+          "filename": "DT_Examples"
+        }
+      ]
+    },
+    {
       "title": "Materials library",
       "name": "MaterialsLibrary",
       "img": "img/extensions/materials.jpg",

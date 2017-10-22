@@ -316,6 +316,8 @@
 <a name = "T">**T**</a><span style = "float:right">[top](#top)</span>
 
 [Tags in BJS](/resources/Tags)  
+[Terrain, Dynamic](/extensions/Dynamic_Terrain)  
+[Terrain, Dynamic, Examples](/extensions/DT_Examples)    
 [Terrain, Material](/extensions/Terrain)  
 [Texture Material](/babylon101/Materials#texture)  
 [Tiled Ground Mesh Using MeshBuilder](/How_To/Set_Shapes#tiled-ground)  
