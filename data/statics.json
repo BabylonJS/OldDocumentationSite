@@ -758,6 +758,10 @@
           "filename": "3DSMax"
         },
         {
+          "title": "3DSMax to glTF",
+          "filename": "3DSMax_to_glTF"
+        },
+        {
           "title": "3DMAX Reduce Bone Influence Count",
           "filename": "Bones_influences_per_vertex"
         },
