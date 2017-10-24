@@ -16,7 +16,7 @@ class [StandardMaterial](/classes/2.5/StandardMaterial) extends [Material](/clas
 ## new [StandardMaterial](/classes/2.5/StandardMaterial)(name, scene)
 
 Create a new [StandardMaterial](/classes/2.5/StandardMaterial).
-Everything to know about materials can be found here : http://doc.babylonjs.com/tutorials/Materials
+Everything to know about materials can be found here : http://doc.babylonjs.com/How_To/Materials
 And here : http://blogs.msdn.com/b/eternalcoding/archive/2013/07/01/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game.aspx
 
 #### Parameters

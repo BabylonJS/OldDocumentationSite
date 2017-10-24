@@ -55,9 +55,9 @@ router.get('/extensions', function (req, res) {
 });
 
 // PAGE EXTENSIONS
-router.get('/exporters', function (req, res) {
+router.get('/resources', function (req, res) {
     // render the page
-    res.render('exporters/exporters');
+    res.render('resources/resources');
 });
 
 /**************

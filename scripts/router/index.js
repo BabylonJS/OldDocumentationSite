@@ -8,11 +8,12 @@ var util = require('util');
  */
 module.exports = function (app) {
     app.use('/classes', require('./routes/classes'));
-    app.use('/tutorials', require('./routes/tutorials'));
+    app.use('/babylon101', require('./routes/babylon101'));
+    app.use('/How_To', require('./routes/How_To'));
     app.use('/extensions', require('./routes/extensions'));
-    app.use('/exporters', require('./routes/exporters'));
-    app.use('/overviews', require('./routes/overviews'));
-    app.use('/generals', require('./routes/generals'));
+    app.use('/resources', require('./routes/resources'));
+    app.use('/samples', require('./routes/samples'));
+    app.use('/features', require('./routes/features'));
     app.use('/page.php', require('./routes/forward'));
     app.use('/search', require('./routes/search'));
     app.use('/playground', require('./routes/playground'));
