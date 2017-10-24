@@ -32,52 +32,52 @@ Congratulations! You did it!
     * Fog
 
 * _Cameras_
-    * Fov
-    * MinZ
-    * MaxZ
-    * Speed (*)
-    * Inertia (*)
-    * Collisions (*)
-    * Position
-    * Target / Rotation
-    * Animations: Position, Target, Fov
+    * Fov
+    * MinZ
+    * MaxZ
+    * Speed (*)
+    * Inertia (*)
+    * Collisions (*)
+    * Position
+    * Target / Rotation
+    * Animations: Position, Target, Fov
 
 * _Lights_
-    * Omni / spot / directional / Ambient(Hemispheric)
-    * Shadows maps for directional lights (Variance shadow maps can be actived by checking [Absolute Map Bias] in light properties)
-    * Inclusion / exclusion lists
-    * Position / direction
-    * Intensity
-    * Diffuse
-    * Specular
-    * Animations: Position, direction, intensity, diffuse
+    * Omni / spot / directional / Ambient(Hemispheric)
+    * Shadows maps for directional lights (Variance shadow maps can be actived by checking [Absolute Map Bias] in light properties)
+    * Inclusion / exclusion lists
+    * Position / direction
+    * Intensity
+    * Diffuse
+    * Specular
+    * Animations: Position, direction, intensity, diffuse
 
 * _Meshes_
-    * Visibility
-    * Renderable
-    * Shadows
-    * Collisions (*)
-    * Pickable (*)
-    * Position / rotation / scaling
-    * Smoothing groups
-    * Skin
-    * Geometry (position, normal, color, texture coordinates (2 channels))
+    * Visibility
+    * Renderable
+    * Shadows
+    * Collisions (*)
+    * Pickable (*)
+    * Position / rotation / scaling
+    * Smoothing groups
+    * Skin
+    * Geometry (position, normal, color, texture coordinates (2 channels))
     * Instances
     * Morph targets
-    * Show Bounding box and submeshes bounding boxes (*)
-    * Animations: Position, scaling, rotation, visibility, bones
+    * Show Bounding box and submeshes bounding boxes (*)
+    * Animations: Position, scaling, rotation, visibility, bones
 
 * _Materials_
-    * Multi-materials
-    * Alpha
-    * Diffuse color and texture
-    * Ambient color and texture
-    * Specular color and texture
-    * Bump
-    * Emissive color and texture
-    * Opacity texture
-    * Reflection texture
-    * Fresnel for diffuse, emissive, opacity and reflection
+    * Multi-materials
+    * Alpha
+    * Diffuse color and texture
+    * Ambient color and texture
+    * Specular color and texture
+    * Bump
+    * Emissive color and texture
+    * Opacity texture
+    * Reflection texture
+    * Fresnel for diffuse, emissive, opacity and reflection
     * Physical materials (PBR)
 
 * _Textures_

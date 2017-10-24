@@ -2,8 +2,8 @@
 
     $(document).ready(function () {
 
-        if(localStorage.getItem('docBabylon_lastSearch') != false
-        && localStorage.getItem('docBabylon_lastSearch') != null) {
+        if (localStorage.getItem('docBabylon_lastSearch') != false
+            && localStorage.getItem('docBabylon_lastSearch') != null) {
             document.getElementById("lastSearch").innerHTML = 'Your last search : <a href="http://doc.babylonjs.com/playground?code='
                 + localStorage.getItem('docBabylon_lastSearch') + '">' + localStorage.getItem('docBabylon_lastSearch') + '</a>';
         }
@@ -96,19 +96,24 @@
                     //Code research
                     if (codeQuery) {
 
-                        // Create html div with Code research
-                        var codeToDisplay = JSON.parse(s.jsonPayload);
-                        var type = '';
-                        if (codeToDisplay.code) {
-                            type = '';
-                            codeToDisplay = codeToDisplay.code;
-                        } else {
-                            // CYOS
-                            type = 'cyos';
-                            codeToDisplay = codeToDisplay.vertexShader + "\n" + codeToDisplay.pixelShader;
-                        }
+                        try {
+                            // Create html div with Code research
+                            var codeToDisplay = JSON.parse(s.jsonPayload);
+                            var type = '';
+                            if (codeToDisplay.code) {
+                                type = '';
+                                codeToDisplay = codeToDisplay.code;
+                            } else {
+                                // CYOS
+                                type = 'cyos';
+                                codeToDisplay = codeToDisplay.vertexShader + "\n" + codeToDisplay.pixelShader;
+                            }
 
-                        html += createHTMLResultDiv(s, id, codeToDisplay, strCode, type);
+                            html += createHTMLResultDiv(s, id, codeToDisplay, strCode, type);
+                        }
+                        catch(ex) {
+                            console.log("A parsing error occured. Please, report this issue on the BabylonJS documentation github with the searched term. Thanks a lot!");
+                        }
 
                     }
 
@@ -441,27 +446,27 @@
             result = result.concat(words.slice(index, stopIndex));
             originalText = '<br>' + result.join(' '); // join back
 
-            if(originalText.length < 500)
+            if (originalText.length < 500)
                 return originalText;
-            else{
+            else {
                 // String before the word
-                var wordsString  = "";
+                var wordsString = "";
                 wordsString = wordsString.concat(words.slice(startIndex, index));
 
                 // start index
                 var begIndex = wordsString.length - 250;
-                if(begIndex < 0){
+                if (begIndex < 0) {
                     begIndex = 0;
                 }
 
                 // Size of the substring to extract
                 var size = 500;
-                if(size + begIndex  > originalText.length){
+                if (size + begIndex > originalText.length) {
                     size = originalText.length - begIndex;
                 }
-                
+
                 // if more than 500 characters, only return the substring around the word 
-                return  originalText.substr(begIndex, size);
+                return originalText.substr(begIndex, size);
             }
         }
         else return "";

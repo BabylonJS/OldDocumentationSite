@@ -561,7 +561,6 @@ sps.depthSortParticles = false;  // true by default when enableDepthSort is set 
 * This feature requires the SPS to be updatable, so it can't work with an immutable SPS.  
 * This features needs to sort all the particles from the pool, so it won't lead to weird results if you call `setParticles(start, end)` on some particles only.  
 
-
 ### Particle Intersections
 The SPS is physics agnostic. This means you need to implement your own particle behavior if you want to animate them.  
 For this, you may need to check if the solid particles intersect or not other ones or other meshes in the scene. Example : you would know if your particles collide against an obstacle and then make them bounce back.     

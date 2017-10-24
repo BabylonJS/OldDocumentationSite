@@ -90,8 +90,6 @@ BABYLON.GLTFFileLoader.HomogeneousCoordinates = true; // false by default
 * Import geometries
     * From binary files
     * From base64 buffers
-* Import lights
-* Import cameras
 * Import and set custom shaders (if no shaders, the Babylon.js default material is applied)
     * Automatically bind attributes
     * Automatically bind matrices
@@ -104,4 +102,4 @@ BABYLON.GLTFFileLoader.HomogeneousCoordinates = true; // false by default
 * Handle dummy nodes (empty nodes)
 
 ## To improve
-* Test on more models
+* Test on more models. You can experiment your own models using the [3DS MAX exporter to glTF format](https://doc.babylonjs.com/exporters/3DSMax_to_glTF).
