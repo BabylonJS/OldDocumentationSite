@@ -160,7 +160,7 @@
       }
     }
 
-    .\30 1_Play_Pen, .Standard, .\33 DSMax, .Loaders, .Essentials{
+    .\30 1_Play_Pen, .PGsupport, .Editor, .introduction, .environment, .Videos{
        border-left: 4px solid rgb(138, 171, 53);
 
        .fileNumber{
@@ -168,7 +168,7 @@
        }
     }
 
-    .\30 2_Mid_Level, .PBR, .Blender, .BabylonHx, .General{
+    .scene, .Exporter, .ProceduralTexturesLibrary, .gamelets, .aspect, .shaders{
       border-left: 4px solid rgb(252, 170, 53);
 
       .fileNumber{
@@ -176,7 +176,7 @@
       }
     }
 
-    .\30 3_Advanced, .Cheetah3D, .MaterialsLibrary{
+    .mesh, .Manual, .PostProcessLibrary, .snippets, .support, .events{
       border-left: 4px solid rgb(231, 75, 59);
 
       .fileNumber{
@@ -184,14 +184,14 @@
       }
     }
 
-    .Inspector {
+    .material, .Reference, .Tree_Generators, .Physics{
       border-left: 4px solid #E74C3C;
       .fileNumber{
         color: #E74C3C;
       }
     }
 
-    .Videos, .Canvas2D, .Unity, .POV{
+    .camera, .ClonerSystem, .Post_Process{
       border-left: 4px solid rgb(122, 79, 193);
 
       .fileNumber{
@@ -199,21 +199,21 @@
       }
     }
 
-    .Tree_Generators{
+    .light, .Post_Process{
       border-left: 4px solid rgb(216, 81, 53);
       .fileNumber{
         color: rgb(216, 81, 53);
       }
     }
 
-    .Editor{
+    .audio, .GUI, .CastorGUI{
       border-left: 4px solid rgb(197, 109, 184);
       .fileNumber{
         color: rgb(197, 109, 184);
       }
     }
 
-    .CastorGUI{
+    .animation, .MaterialsLibrary, .contribute{
       border-left: 4px solid rgb(109, 176, 42);
       .fileNumber{
         color: rgb(109, 176, 42);
