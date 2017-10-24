@@ -20,7 +20,7 @@ class [SmartPropertyPrim](/classes/2.0/SmartPropertyPrim) extends [SmartProperty
 
 ### animations : Animation[]
 
-Animation array, more info: http://doc.babylonjs.com/tutorials/Animations
+Animation array, more info: http://doc.babylonjs.com/How_To/Animations
 
 ### modelKey : string
 
