@@ -191,12 +191,12 @@ Animations are exported by sampling keyframes which can generate a lot of data. 
 
 ## Consideration about bones
 
-To ensure that bones are correctly exported, you have to use the Skin modifier. Skin should be positioned at origin. [More info here](http://doc.babylonjs.com/exporters/Bones_influences_per_vertex)
+To ensure that bones are correctly exported, you have to use the Skin modifier. Skin should be positioned at origin. [More info here](/resources/Bones_influences_per_vertex)
 
 ## Physical materials
 
 In 3DS MAX, metallic and roughness are split in 2 textures. When exporting to babylon, those maps are combined together.
-The process is mimic from glTF. [More info here](resources/3DSMax_to_glTF#pbr-materials)
+The process is mimic from glTF. [More info here](/resources/3DSMax_to_glTF#pbr-materials)
 
 ## Texture transparency 
 

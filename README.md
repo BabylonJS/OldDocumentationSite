@@ -74,13 +74,14 @@ Wherever you find these, please don't touch them :)
 
 ### Add a new content
 Categories classify the content, it is implemented and can be seen in:
-    * [How_To](http://doc.babylonjs.com/How_To)
-    * [exporters](http://doc.babylonjs.com/exporters)
+    * [How To](http://doc.babylonjs.com/How_To)
+    * [Features](http://doc.babylonjs.com/features)
+    * [resources](http://doc.babylonjs.com/resources)
     * [extensions](http://doc.babylonjs.com/extensions)
     
 If you want to add your own:
 
-1. Head to the root of exporters or extensions or How_To
+1. Head to the root of How To, features, resources or extensions or How_To
 2. Create a new folder (or use an existing one)
 3. Fill it with your markdown
 4. Head to data/statics.json
@@ -113,7 +114,8 @@ Here is how the object is structured:
             },
             ...
         ],
-        "exporters": [],                       // Mandatory
+        "features": [],                       // Mandatory
+        "resources": [],                       // Mandatory
         "extensions": []                       // Mandatory
     }
 
@@ -135,7 +137,7 @@ This can be done very easily by following these steps:
 
 ### How to structure your document to get a functional Table Of Content (TOC)
 
-A TOC is automatically generated on the compilation of the general, How_To, exporters and extensions md files into HTML.
+A TOC is automatically generated on the compilation of the general, How_To, features, resources and extensions md files into HTML.
 In order to get a functional TOC, you need to follow two very simple rules:
     * every markdown lines beginning by a series "#" will be included in the TOC
     * DO NOT put a link inside of your heading

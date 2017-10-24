@@ -102,4 +102,4 @@ BABYLON.GLTFFileLoader.HomogeneousCoordinates = true; // false by default
 * Handle dummy nodes (empty nodes)
 
 ## To improve
-* Test on more models. You can experiment your own models using the [3DS MAX exporter to glTF format](https://doc.babylonjs.com/exporters/3DSMax_to_glTF).
+* Test on more models. You can experiment your own models using the [3DS MAX exporter to glTF format](/resources/3DSMax_to_glTF).
