@@ -1,6 +1,8 @@
 # How to export 3DS MAX scene as glTF
 
-With the babylon plugin for 3DS MAX, you can also export your project to glTF 2.0 format (https://github.com/KhronosGroup/glTF/).
+If you have not already installed the babylon plugin for 3DS MAX, you can find all instructions [here](https://doc.babylonjs.com/exporters/3dsmax) as well as general information about the plugin.
+
+With this plugin, you can also export your project to glTF 2.0 format (https://github.com/KhronosGroup/glTF/).
 
 All you need to do is choose __gltf__ as __Output format__.
 
