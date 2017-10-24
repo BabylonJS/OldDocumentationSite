@@ -63,16 +63,63 @@ Note that the conversion duration scales with images size and may have a severe 
 
 ## PBR materials
 
-PBR materials as defined in glTF use a combined map of metallic and roughness, while in 3DS MAX those data are split into 2 textures.
+The physical materials are exported to glTF format as PBR materials.
 
-Thus, a combined map is created when exporting Physical materials. Its name starts with the material's one and is exported to the same folder as other outputs.
+Involved parameters are highlighted bellow and described in following sections.
 
-![glTF metallic roughness combined](/img/exporters/3DSMax/15_gltf_metallic_roughness_combined.jpg)
+![3DS MAX physical material parameters](/img/exporters/3DSMax/18_3dsmax_physical_materials_parameters.png)
 
-In 3DS MAX, metallic and roughness maps are black and white images (R=G=B).
-For glTF, metallic is stored in blue channel, roughness in green.
+Remember that in 3DS MAX, when a map is assigned to a parameter, the basic parameter value is ignored. This behaviour is kept when exporting.
+
+### Base color and Transparency
+
+Only the color of base color is used. The weight of base color is ignored.
+
+Only the weight of transparency is used. The color of the transparency is ignored, as well as other parameters (depth, thin-walled, transparency roughness).
+
+In glTF format, the transparency is expressed in alpha (alpha = 1 - transparency).
+
+The base color RGB and the alpha A are merged together into a single color RGBA:
+
+![glTF base color and alpha maps combined](/img/exporters/3DSMax/16_gltf_baseColor_alpha_combined.jpg)
+
+The 2 maps must have same sizes to be merged successfully.
 
 Note that the duration of this process scales with images size and may have a severe impact on export duration.
+
+The basic parameter value is used as default value when binded map is not provided:
+
+![glTF base color map and transparency weight combined](/img/exporters/3DSMax/17_gltf_baseColor_transparencyWeight_combined.jpg)
+
+### Metalness and Roughness
+
+The metalness is used.
+
+The roughness of the material is used. It can be inverted to mean Glossiness - this also affects roughness map. The IOR parameter is ignored.
+
+The metalness and roughness maps are combined together:
+
+![glTF metalness and roughness maps combined](/img/exporters/3DSMax/15_gltf_metallic_roughness_combined.jpg)
+
+In 3DS MAX, metalness and roughness maps are black and white images (R=G=B).
+
+In glTF format, metalness is stored in blue channel, roughness in green.
+
+The 2 maps must have same sizes to be merged successfully.
+
+Note that the duration of this process scales with images size and may have a severe impact on export duration.
+
+Like for base color and transparency, the basic parameter value is used as default value when binded map is not provided.
+
+### Emission
+
+The exported emission color value is computed based on all 4 parameters: emission weight, color, luminance and Kelvin.
+
+However, the exported emission color map is identical to the specified one in generic map. This mean that emisson weight, luminance and Kelvin __are not__ used. The emission map is assumed to be precomputed.
+
+### Bump map
+
+The bump map (or normal map) and its weight are used.
 
 # What you should know
 
@@ -94,6 +141,12 @@ To do it simply, a root node named "root" is added to the scene. All nodes are s
 
 In glTF, a skin is binded to a node. The skeleton (root bone) of a skin should be positioned at origin, without rotation or scaling. The node to which is applied the skin is responsible of its transformation (translation, rotation, scale).
 
+## Environment texture
+
+To enjoy PBR material rendering, you should have an environmnent texture in your scene. The plugin exports the environment map if any is provided in 3DS MAX.
+
+However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
+
 #  Try it out!  #
 
-Export your own scene from 3DS MAX to gltf format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [babylon loader](https://doc.babylonjs.com/extensions/gltf).
+Export your own scene from 3DS MAX to glTF format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [babylon loader](https://doc.babylonjs.com/extensions/gltf).
