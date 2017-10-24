@@ -26,6 +26,7 @@ Vertex array objects (VAO)|A Vertex Array Object (or VAO) is an object that desc
 Uniform buffer objects (UBO)| An uniform buffer object (or UBO) let you specify a group of uniforms from a buffer|No. Uniforms are handled independently on WebGL1 context|N/A. Materials supporting UBO automatically uses them|[See below](http://doc.babylonjs.com/features/webgl2#uniform-buffer-objects)
 Multiple Render Target (MRT)| Several Render Targets can be rendered in the same draw call.|Yes through an [extension](https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers)|[Demo]( https://www.babylonjs-playground.com/#NZ6P07)|[See below](http://doc.babylonjs.com/features/webgl2#multiple-render-target)
 Occlusion Queries| Occlusion queries detect whether a Mesh is visible in the current scene or not|Yes through an [extension](https://www.khronos.org/opengl/wiki/Query_Object#Occlusion_queries)|[Demo](http://www.babylonjs-playground.com/#QDAZ80#3)|[See below](WebGL2#occlusion-queries)
+3D Textures| 3D textures are textures with a 3rd dimension. You can see them as multiple 2D textures where every texture is a slice in the 3d texture.|No. Cannot be created in WebGL1|This feature will automatically be used when possible.|[See below](WebGL2#3d-textures)
 
 ## Multisample render targets
 
@@ -65,3 +66,8 @@ Occlusion queries detect whether a Mesh is visible in the current scene or not, 
 [Babylon.js Occlusion Queries Feature](occlusionquery)
 
 [WebGL 2 Occlusion Queries](https://www.khronos.org/opengl/wiki/Query_Object#Occlusion_queries)
+
+## 3D textures
+3D textures are mostly used for volumetric effects like color grading, fire, smoke, etc. WebGL 2 support for 3D textures is as good as that for 2D textures. 
+
+So far Babylon.js will use them for color grading texture: https://www.babylonjs-playground.com/#17VHYI#2
