@@ -1,6 +1,6 @@
 # How to export 3DS MAX scene as glTF
 
-If you have not already installed the babylon plugin for 3DS MAX, you can find all instructions [here](https://doc.babylonjs.com/exporters/3dsmax) as well as general information about the plugin.
+If you have not already installed the babylon plugin for 3DS MAX, you can find all instructions [here](/resources/3dsmax) as well as general information about the plugin.
 
 With this plugin, you can also export your project to glTF 2.0 format (https://github.com/KhronosGroup/glTF/).
 
@@ -17,7 +17,7 @@ To export to a single .glb file, choose __glb__ as __Output format__.
 
 ## Exported features
 
-Since the plugin first exports to babylon then converts it to glTF, glTF features are a subset of the [babylon ones](resources/3dsmax#features).
+Since the plugin first exports to babylon then converts it to glTF, glTF features are a subset of the [babylon ones](/resources/3dsmax#features).
 
 * _Cameras_
     * zfar
@@ -149,4 +149,4 @@ However, glTF format does not support this feature and the environment map needs
 
 #  Try it out!  #
 
-Export your own scene from 3DS MAX to glTF format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [babylon loader](https://doc.babylonjs.com/extensions/gltf).
+Export your own scene from 3DS MAX to glTF format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [babylon loader](/how_to/gltf).

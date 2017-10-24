@@ -100,8 +100,7 @@ All the available blend modes are listed below:
 
 The scene properties allow you to do these things:
 * Set the scene gravity
-* __Export quaternions for all nodes instead of Euler angles__.
-It’s important to notice this last option is selected by default. If this option is selected, an exported model rotation won’t be updated by setting its `rotation` parameter. Instead, you will have to use the `rotationQuaternion` parameter.
+* __Export quaternions for all nodes instead of Euler angles__. If this option is selected, an exported model rotation won’t be updated by setting its `rotation` parameter. Instead, you will have to use the `rotationQuaternion` parameter.
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
  
@@ -198,7 +197,7 @@ To ensure that bones are correctly exported, you have to use the Skin modifier. 
 
 ## Physical materials
 
-The handling of physical materials is mimic from glTF format. [Detailed explanations here](https://doc.babylonjs.com/exporters/3DSMax_to_glTF#pbr-materials)
+The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#pbr-materials)
 
 ## Texture transparency 
 
