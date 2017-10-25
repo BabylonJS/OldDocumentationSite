@@ -12,7 +12,7 @@ This document will introduce everything from the tools installation to debugging
 ### Git Client
 If you do not already have a git client, you can install one from [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-*Hint:* if you are developping on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it and embed a git client).
+*Hint:* if you are developing on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it and embed a git client).
 
 ![cmder](/img/how_to/howToStart/cmder.png)
 
