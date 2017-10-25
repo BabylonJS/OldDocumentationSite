@@ -32,10 +32,12 @@ module.exports = function (app) {
 
     // Handle 500
     app.use(function (error, req, res, next) {
-        logger.error('500 Error at ' + error.path + ' - ' + util.inspect(error, {showHidden: false, colors: true}));
+        logger.error('500 Error at ' + error.path + ' - ' + util.inspect(error, {
+            showHidden: false,
+            colors: true
+        }));
         res.status(500);
         res.render('errorpages/500.pug', {});
     });
 
 };
-
