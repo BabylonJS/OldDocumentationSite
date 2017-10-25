@@ -3,8 +3,11 @@
     $(document).ready(function () {
 
         if (localStorage.getItem('docBabylon_lastSearch') != false
-            && localStorage.getItem('docBabylon_lastSearch') != null) {
-            document.getElementById("lastSearch").innerHTML = 'Your last search : <a href="http://doc.babylonjs.com/playground?code='
+            && localStorage.getItem('docBabylon_lastSearch') != null
+            && localStorage.getItem('docBabylon_lastSearch_type') != false
+            && localStorage.getItem('docBabylon_lastSearch_type') != null) {
+            document.getElementById('lastSearch').innerHTML = 'Your last search : <a href="http://doc.babylonjs.com/playground?'
+                + localStorage.getItem('docBabylon_lastSearch_type') + '='
                 + localStorage.getItem('docBabylon_lastSearch') + '">' + localStorage.getItem('docBabylon_lastSearch') + '</a>';
         }
 
@@ -26,17 +29,23 @@
         if (strQuery != 'false') {
             queryType = 'name/';
             finalQuery = strQuery;
+            localStorage.setItem("docBabylon_lastSearch_type", "name");
             localStorage.setItem("docBabylon_lastSearch", strQuery);
+            document.getElementsByName('q')[0].value = strQuery;
         }
         else if (strTags != 'false') {
             queryType = 'tags/';
             finalQuery = strTags;
+            localStorage.setItem("docBabylon_lastSearch_type", "tags");
             localStorage.setItem("docBabylon_lastSearch", strTags);
+            document.getElementsByName('tag')[0].value = strQuery;
         }
         else if (strCode != 'false') {
             queryType = 'code/';
+            localStorage.setItem("docBabylon_lastSearch_type", "code");
             localStorage.setItem("docBabylon_lastSearch", strCode);
             finalQuery = strCode.split(' ').join(' AND ');;
+            document.getElementsByName('code')[0].value = strQuery;
         }
         if (!query && !tagsQuery && !codeQuery) {
             //$('.searchplayground-content').append('<div class="searchHeader"><h2>No Query Found.</h2></div>');

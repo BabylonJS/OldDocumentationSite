@@ -74,13 +74,14 @@ Wherever you find these, please don't touch them :)
 
 ### Add a new content
 Categories classify the content, it is implemented and can be seen in:
-    * [tutorials](http://doc.babylonjs.com/tutorials)
-    * [exporters](http://doc.babylonjs.com/exporters)
+    * [How To](http://doc.babylonjs.com/How_To)
+    * [Features](http://doc.babylonjs.com/features)
+    * [resources](http://doc.babylonjs.com/resources)
     * [extensions](http://doc.babylonjs.com/extensions)
     
 If you want to add your own:
 
-1. Head to the root of exporters or extensions or tutorials
+1. Head to the root of How To, features, resources or extensions or How_To
 2. Create a new folder (or use an existing one)
 3. Fill it with your markdown
 4. Head to data/statics.json
@@ -96,15 +97,15 @@ The three root arrays are mandatory, when displayed, object's order is kept.
 Here is how the object is structured:
 
     {
-        "tutorials": [                         // Mandatory
-            {                                  // This object represents a folder inside the tutorials folder 
+        "How_To": [                         // Mandatory
+            {                                  // This object represents a folder inside the How_To folder 
               "title": "title displayed",      // The title displayed in the list of folders 
               "name": "foldername",            // The folder name with no spaces, no special chars except underscores
-              "img": "img/tutorials/name.jpg", // Place your image inside the public/img/tutorials/
+              "img": "img/How_To/name.jpg", // Place your image inside the public/img/how_to/
               "desc": "my great tutos serie",  // This is the description of the folder, don't make it too long :)
               "files": [                       // This is the list of files inside your folder
                 {
-                    "title":'tuto title',      // The title displayed in the list of tutorials 
+                    "title":'tuto title',      // The title displayed in the list of How_To 
                     "filename":'tuto title',   // The file name with no spaces, no special chars except underscores, and no extension
                     "hidden" : true            // Should this file be hidden in the global list ? false by default
                 },
@@ -113,7 +114,8 @@ Here is how the object is structured:
             },
             ...
         ],
-        "exporters": [],                       // Mandatory
+        "features": [],                       // Mandatory
+        "resources": [],                       // Mandatory
         "extensions": []                       // Mandatory
     }
 
@@ -135,7 +137,7 @@ This can be done very easily by following these steps:
 
 ### How to structure your document to get a functional Table Of Content (TOC)
 
-A TOC is automatically generated on the compilation of the general, tutorials, exporters and extensions md files into HTML.
+A TOC is automatically generated on the compilation of the general, How_To, features, resources and extensions md files into HTML.
 In order to get a functional TOC, you need to follow two very simple rules:
     * every markdown lines beginning by a series "#" will be included in the TOC
     * DO NOT put a link inside of your heading
