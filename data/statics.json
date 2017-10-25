@@ -1237,8 +1237,8 @@
       "desc": "All features."
     },
     {
-      "title": "Aspect",
-      "name": "aspect",
+      "title": "Component",
+      "name": "component",
       "desc": "Elements of babylon.js",
       "files": [{
           "title": "Scene Creation and Optimization",
