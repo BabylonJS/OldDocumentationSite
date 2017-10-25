@@ -13,7 +13,7 @@ The animation is based on objects called [Animation](/classes/3.0/Animation).
 
 An [Animation](/classes/3.0/Animation) is defined by various properties and a collection of keys
 
-A tutorial about Animations ban be found here : https://doc.babylonjs.com/tutorials/animations
+A tutorial about Animations ban be found here : https://doc.babylonjs.com/How_To/animations
 
 ## Constructor
 

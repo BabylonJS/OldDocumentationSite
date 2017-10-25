@@ -42,11 +42,11 @@ module.exports = function index(done) {
 
     /*
     var staticCategories = [
-        "exporters",
-        "extensions",
+        "resources",
+        "resources",
         "generals",
-        "tutorials",
-        "overviews"
+        "How_To",
+        "features"
     ];
     */
 

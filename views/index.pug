@@ -14,13 +14,19 @@ include includes/banner.pug
     //----------------------
     .bjs-components
         .bjs-component
-            h1 Easy Setup
+            h1 Easy to Try and Setup
             p
-                | Nothing needs to be installed on your computer to develop programs with
-                | BabylonJS. Nothing needs to be installed by the client to run your program.
-                | You can see this excess of simplicity in our <a href="#getting-started">Getting
-                | Started tutorial</a> just below! Then find out more and get an overview
-                | of possibilities by checking out the <a href = "overviews/Documentation_Category_Map"> documentation map</a>.
+                | The quickest way to see how to use the engine is to head
+                | to the <a href="/babylon101/first">First Steps</a>.
+                | For your own HTML project nothing needs to be installed on your 
+                | computer and nothing needs to be installed by a client 
+                | to run your program. 
+                | See how simple it is with the <a href="#getting-started">getting started tutorial</a> below.
+                | 
+                | Check out the <a href = "/resources/Documentation_Category_Map">Index</a> or the <a href = "/features">Features Section</a> to see what is available.
+                | Build your first scene and develop it by following the <a href = "/babylon101">Babylon 101 Course</a>
+                | Then move on the find out <a href = "/how_to">how to</a> do more.
+                | An <a href="#documentation_overview">overview</a> of the documentation is at the bottom of the page.
         .bjs-component
             h1 WebGL
             p
@@ -38,6 +44,17 @@ include includes/banner.pug
     .horizontal-separator
 
     //----------------------
+    //-GETTING STARTED WITH DOCUMENTATION OVERVIEW
+    //----------------------
+    .getting-started#documentation_overview
+         h1.bjs-moto Documentation Overview
+            .bigimage
+            img(src='img/overview.jpg')
+    
+    
+    .horizontal-separator
+
+    //----------------------
     //-GETTING STARTED
     //----------------------
     .getting-started#getting-started
@@ -46,19 +63,19 @@ include includes/banner.pug
             button#js-start.selection-toggle Javascript
             button#ts-start.selection-toggle Typescript
         p.
-            First, <a href="https://github.com/BabylonJS/Babylon.js">download the last version of BabylonJS</a>.
-            Also, check if your browser is WebGL compatible (e.g. Internet Explorer 11+/Firefox 4+/Google Chrome 9+/
-            Opera 15+...). Then create a project folder in which you'll place the last version of BabylonJS and an <code>
-            index.html</code> file, like this:
+            First, check if your browser is WebGL compatible (e.g. Internet Explorer 11+/Firefox 4+/Google Chrome 9+/
+            Opera 15+...). The example project below uses BabylonJS stored on the web. To download this and other versions, 
+            including previews of the one currently under development vist <a href="https://github.com/BabylonJS/Babylon.js#cdn">BabylonJS CDN</a>. 
+            Then you can develop locally.
+            <br>
+            Now create a project folder with an <code>index.html</code> file, like this:
         pre
             code.github.js.
                 yourAwesomeProject
                     |- index.html
-                    |- babylon.js
             code.github.ts.
                 yourAwesomeProject
                     |- index.html
-                    |- babylon.js
                     |- babylon.d.ts
         p.
             We will only code in the <code>index.html</code> file to keep it as simple and concise as possible. The HTML
@@ -71,7 +88,7 @@ include includes/banner.pug
                     &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
                     &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
                     &lt;!-- link to the last version of babylon --&gt;
-                    &lt;script src="babylon.2.5.js"&gt;&lt;/script&gt;
+                    &lt;script src="https://cdn.babylonjs.com/babylon.js"&gt;&lt;/script&gt;
                 &lt;/head&gt;
                 &lt;body&gt;
                     &lt;canvas id="renderCanvas"&gt;&lt;/canvas&gt;
@@ -99,13 +116,13 @@ include includes/banner.pug
                     }
                 &lt;/style&gt;
         p.js.
-            We will now write the necessary javascript code to run our demonstration. To begin with, insert at the end
+            Now some javascript code to run our project. To begin with, insert at the end
             of your &lt;body&gt;:
         pre.js
             code.html.js.
                 &lt;script&gt;
                     window.addEventListener('DOMContentLoaded', function() {
-                        // your code here
+                        // All the following code is entered here
                     });
                 &lt;/script&gt;
         p.js.
@@ -113,8 +130,7 @@ include includes/banner.pug
             that the whole DOM is loaded before doing anything else. The code we'll write after this point is to be placed
             inside of this wrapper.
         p.js.
-            The code we'll show you implements the very basics of every BabylonJS program, meaning the creation of a
-            scene, and the insertion and display of meshes (here, two basic shapes: a sphere and a ground plane). We'll
+            This project implements the very basics of every BabylonJS program, a scene and two shapes, a sphere and a ground plane. We'll
             go through it step by step.
         p.js.
             The first step is to get the reference of the canvas element from our HTML document:
@@ -127,10 +143,8 @@ include includes/banner.pug
             code.javascript.js.
                 var engine = new BABYLON.Engine(canvas, true);
         p.js.
-            After that, we create our scene. In order to keep your program compatible with the Babylon.js Playground,
-            we recommend that you insert a "createScene" function at this point. Beside generating a Babylon Scene
-            Object, <code>createScene()</code> is where you will add your basic scene requirements: a camera, a light,
-            and two basic meshes (a sphere and a ground plane).
+            Now our scene, which needs a camera and a light as well as the shapes. To generate the scene you use 
+            a <code>createScene()</code> function.
         pre.js
             code.javascript.js.
                 var createScene = function() {
@@ -138,7 +152,7 @@ include includes/banner.pug
                     var scene = new BABYLON.Scene(engine);
 
                     // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
-                    var camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 5,-10), scene);
+                    var camera = new BABYLON.FreeCamera('camera', new BABYLON.Vector3(0, 5,-10), scene);
 
                     // target the camera to scene origin
                     camera.setTarget(BABYLON.Vector3.Zero());
@@ -149,14 +163,14 @@ include includes/banner.pug
                     // create a basic light, aiming 0,1,0 - meaning, to the sky
                     var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
 
-                    // create a built-in "sphere" shape; its constructor takes 4 params: name, subdivisions, radius, scene
-                    var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
+                    // create a built-in "sphere" shape; 
+                    var sphere = BABYLON.MeshBuilder.CreateSphere('sphere', {segments:16, diameter:2}, scene);
 
                     // move the sphere upward 1/2 of its height
                     sphere.position.y = 1;
 
-                    // create a built-in "ground" shape; its constructor takes 5 params: name, width, height, subdivisions and scene
-                    var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
+                    // create a built-in "ground" shape; 
+                    var ground = BABYLON.Mesh.CreateGround('ground1', {height:6, width:6, subdivisions: 2}, scene);
 
                     // return the created scene
                     return scene;
@@ -175,17 +189,17 @@ include includes/banner.pug
                     scene.render();
                 });
         p.js.
-            Lastly, you should implement a little canvas/window resize event handler, like this:
+            Lastly, you should implement a canvas/window resize event handler, like this:
         pre.js
             code.javascript.js.
                 window.addEventListener('resize', function() {
                     engine.resize();
                 });
         p.ts.
-            We will now write the necessary Typescript code to run our demonstration.
-            To begin with, create a new file <code>game.ts</code> with <code>Game</code>
+            We will now add the necessary Typescript code to run our demonstration.
+            To begin with, create a new file <code>game.ts</code> with the <code>Game</code>
             class with a <code>constructor</code> and two methods, <code>createScene<c/ode>
-            and <code>animate</code>. And add a Event Listener for <code>DOMContentLoaded</code>
+            and <code>doRender</code>. Then add an Event Listener for <code>DOMContentLoaded</code>
             which will instantiate the <code>Game</code>, create the scene and start the animation :
         pre.ts
             code.javascript.ts.
@@ -196,7 +210,7 @@ include includes/banner.pug
                   createScene() : void {
                   }
 
-                  animate() : void {
+                  doRender() : void {
                   }
                 }
 
@@ -208,11 +222,11 @@ include includes/banner.pug
                   game.createScene();
 
                   // start animation
-                  game.animate();
+                  game.doRender();
                 });
         p.ts.
-            Next we'll add the instance variables needed for our game. These will
-            all be private so, following the Babylon js <a href="http://doc.babylonjs.com/generals/Approved_Naming_Conventions">
+            Next add the instance variables needed for our game. These will
+            all be private so, following the Babylon js <a href="/How_To/Approved_Naming_Conventions">
             coding guidelines</a>, they'll all begin an underscore :
         pre.ts.
             code.javascript.ts.
@@ -256,22 +270,22 @@ include includes/banner.pug
                this._light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), this._scene);
 
                // create a built-in "sphere" shape; with 16 segments and diameter of 2
-               let sphere = BABYLON.MeshBuilder.CreateSphere('sphere1',
+               let sphere = BABYLON.MeshBuilder.CreateSphere('sphere',
                                         {segments: 16, diameter: 2}, this._scene);
 
                // move the sphere upward 1/2 of its height
                sphere.position.y = 1;
 
                // create a built-in "ground" shape
-               let ground = BABYLON.MeshBuilder.CreateGround('ground1',
+               let ground = BABYLON.MeshBuilder.CreateGround('ground',
                                         {width: 6, height: 6, subdivisions: 2}, this._scene);
             }
         p.ts.
-            Next we'll implement <code>animate</code>, which also takes no
+            Now implement <code>doRender</code>, which also takes no
             parameters and returns nothing. This routine starts the rendering
             loop and adds the resize Event Listener :
         pre.ts.
-            animate() : void {
+            doRender() : void {
               // run the render loop
               this._engine.runRenderLoop(() => {
                   this._scene.render();
@@ -300,7 +314,6 @@ include includes/banner.pug
                 yourAwesomeProject
                     |- index.html
                     |- game.ts
-                    |- babylon.2.3.js
                     |- babylon.2.3.d.ts
         p.ts.
             Now compile <code>game.ts</code> which will output <code>game.js</code>:
@@ -315,7 +328,6 @@ include includes/banner.pug
                     |- index.html
                     |- game.js
                     |- game.ts
-                    |- babylon.2.3.js
                     |- babylon.2.3.d.ts
         p.
             And that's it! Save your files and open <code>index.html</code> with your favorite web browser. You should see the
@@ -482,7 +494,7 @@ include includes/banner.pug
                                         {width: 6, height: 6, subdivisions: 2}, this._scene);
               }
 
-              animate() : void {
+              doRender() : void {
                 // run the render loop
                 this._engine.runRenderLoop(() => {
                     this._scene.render();
@@ -503,7 +515,7 @@ include includes/banner.pug
               game.createScene();
 
               // start animation
-              game.animate();
+              game.doRender();
             });
     // HIGHLIGHT JS
     script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js')
@@ -574,5 +586,13 @@ include includes/banner.pug
         .toggle-selected {
             background-color: #fc4349;
         }
+
+
+
+
+
+           
+ 
+        
 
 include includes/footer.pug

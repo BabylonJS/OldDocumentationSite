@@ -24,7 +24,7 @@ The directional light is emitted from everywhere in the given direction.
 
 It can cast shawdows.
 
-Documentation : http://doc.babylonjs.com/tutorials/lights
+Documentation : http://doc.babylonjs.com/How_To/lights
 
 #### Parameters
  | Name | Type | Description
