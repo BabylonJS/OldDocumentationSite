@@ -106,6 +106,7 @@ The particle properties that can be set are :
 * **`velocity`** : Vector3  default = (0, 0, 0)
 * **`color`** : Vector4  default = (1, 1, 1, 1)
 * **`scaling`** : Vector3  default = (1, 1, 1)
+* **`pivot`** : Vector3 default = (0, 0, 0)
 * **`uvs`** : Vector(4) default = (0,0, 1,1)
 * **`isVisible`** : boolean default = true
 * **`alive`** : boolean  default = true
@@ -114,6 +115,9 @@ If you set a particle rotation quaternion, its rotation property will then be ig
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.   
 
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
+The particle `pivot` vector is the translation applied to the particle in its local space before it is rotated. The rotation is always computed around the local space origin. This property is used like a translation matrix that you would apply to some mesh pivot matrix.  
+Example : http://playground.babylonjs.com/#LXXL6Y   
+1000 tetrahedron satellites orbiting around 1000 rotating boxes.  
 Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.      
 
 You can obviously also create your own properties like _acceleration: Vector3_ or _age_, in `initParticles()` for instance.  
@@ -264,6 +268,7 @@ position|Vector3|(0,0,0)
 rotation|Vector3|(0,0,0)
 rotationQuaternion|Quaternion|null, if _rotationQuaternion_ is set, _rotation_ is ignored
 scaling|Vector3|(1,1,1)
+pivot|Vector3|(0,0,0)
 color|Color4|null
 uvs|Vector4|(0,0,1,1)
 
