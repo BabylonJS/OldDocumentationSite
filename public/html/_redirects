@@ -118,7 +118,7 @@
 /tutorials/CreateBox_Per_Face_Textures_And_Colors                                 /How_To/CreateBox_Per_Face_Textures_And_Colors
 /tutorials/Supporting_fog_with_ShaderMaterial                                     /How_To/Supporting_fog_with_ShaderMaterial
 
-/tutorials/Position,_Rotate,_Translate_and_Spaces                                 /features/Position,_Rotate,_Translate_and_Spaces
+/tutorials/Position,_Rotate,_Translate_and_Spaces                                 /features/position,_rotation,_scaling
 
 /tutorials/Transparency_and_How_Meshes_Are_Rendered          /resources/Transparency_and_How_Meshes_Are_Rendered
 /tutorials/How_materials_work                                /resources/How_materials_work

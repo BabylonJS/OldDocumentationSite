@@ -31,21 +31,21 @@
             finalQuery = strQuery;
             localStorage.setItem("docBabylon_lastSearch_type", "name");
             localStorage.setItem("docBabylon_lastSearch", strQuery);
-            document.getElementsByName('q')[0].value = strQuery;
+            document.getElementsByName('q')[2].value = strQuery;
         }
         else if (strTags != 'false') {
             queryType = 'tags/';
             finalQuery = strTags;
             localStorage.setItem("docBabylon_lastSearch_type", "tags");
             localStorage.setItem("docBabylon_lastSearch", strTags);
-            document.getElementsByName('tag')[0].value = strQuery;
+            document.getElementsByName('tag')[0].value = strTags;
         }
         else if (strCode != 'false') {
             queryType = 'code/';
             localStorage.setItem("docBabylon_lastSearch_type", "code");
             localStorage.setItem("docBabylon_lastSearch", strCode);
+            document.getElementsByName('code')[0].value = strCode;
             finalQuery = strCode.split(' ').join(' AND ');;
-            document.getElementsByName('code')[0].value = strQuery;
         }
         if (!query && !tagsQuery && !codeQuery) {
             //$('.searchplayground-content').append('<div class="searchHeader"><h2>No Query Found.</h2></div>');
