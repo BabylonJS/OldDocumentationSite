@@ -17007,7 +17007,7 @@ declare module BABYLON {
      *
      * This offers the main features of a standard PBR material.
      * For more information, please refer to the documentation :
-     * http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+     * http://doc.babylonjs.com/How_To/Physically_Based_Rendering
      */
     abstract class PBRBaseMaterial extends PushMaterial {
         /**
@@ -17361,7 +17361,7 @@ declare module BABYLON {
      *
      * This offers the main features of a standard PBR material.
      * For more information, please refer to the documentation :
-     * http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+     * http://doc.babylonjs.com/How_To/Physically_Based_Rendering
      */
     class PBRMaterial extends PBRBaseMaterial {
         private static _PBRMATERIAL_OPAQUE;
