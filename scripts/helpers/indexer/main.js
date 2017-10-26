@@ -103,7 +103,7 @@ function indexDirectory(files, currentDirectory, newDir, cb) {
                             var src = path.join(fileInfo.parentDir, path.basename(fileInfo.name, '.md')).replace(changeSlashes, '/');
                         } else {
 
-                            //remove the folder name between tutorials ane the tuto name, for example
+                            //remove the folder name between How_To ane the tuto name, for example
                             var src = path.join(fileInfo.parentDir.substr(0, fileInfo.parentDir.indexOf(path.sep)), path.basename(fileInfo.name, '.md')).replace(changeSlashes, '/');
                         }
                         search.add({
