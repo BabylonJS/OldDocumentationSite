@@ -142,6 +142,7 @@
  /extensions/Using_Materials_Builder        /resources/Using_Materials_Builder
  /extensions/Using_Post_Processes_Builder   /resources/Using_Post_Processes_Builder
 
+/exporters                                      /resources
 /exporters/3DSMax                               /resources/3DSMax
 /exporters/Blender                              /resources/Blender
 /exporters/Blender_Tips                         /resources/Blender_Tips
@@ -169,5 +170,5 @@
 /features/Solid_Particle_System                 /how_to/solid_particle_system
 /extensions/Physically_Based_Rendering          /how_to/physically_based_rendering
 
-
+ 
 
