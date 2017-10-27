@@ -94,7 +94,7 @@ assetsManager.onTaskErrorObservable.add(function(task) {
 
 ### Manager callbacks and observables
 
-The manager itself provides three callbacks:
+The manager itself provides four callbacks:
 * onFinish
 * onProgress
 * onTaskSuccess
@@ -112,7 +112,7 @@ assetsManager.onFinish = function(tasks) {
 };
 ```
 
-The manager also allows you to use observers in order to handle onFinish, onTaskSuccess and onTaskError:
+The manager also allows you to use observers in order to handle onFinish, onProgress, onTaskSuccess and onTaskError:
 * onTaskSuccessObservable - registered observers will be executed when a single task finished successfully. 
 * onTaskErrorObservable - registered observers will be executed when a single task failed.
 * onProgressObservable - registered observers will be executed when a single task finished successfully or failed.
