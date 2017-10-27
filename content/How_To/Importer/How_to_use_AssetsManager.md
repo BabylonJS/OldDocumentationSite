@@ -94,12 +94,17 @@ assetsManager.onTaskErrorObservable.add(function(task) {
 
 ### Manager callbacks and observables
 
-The manager itself provides three callbacks:
+The manager itself provides four callbacks:
 * onFinish
+* onProgress
 * onTaskSuccess
 * onTaskError
 
 ```javascript
+assetsManager.onProgress = function(remainingCount, totalCount, lastFinishedTask) {
+	engine.loadingUIText = 'We are loading the scene. ' + remainingCount + ' out of ' + totalCount + ' items still need to be loaded.';
+};
+
 assetsManager.onFinish = function(tasks) {
     engine.runRenderLoop(function() {
         scene.render();
@@ -107,9 +112,10 @@ assetsManager.onFinish = function(tasks) {
 };
 ```
 
-The manager also allows you to use observers in order to handle onFinish, onTaskSuccess and onTaskError:
+The manager also allows you to use observers in order to handle onFinish, onProgress, onTaskSuccess and onTaskError:
 * onTaskSuccessObservable - registered observers will be executed when a single task finished successfully. 
 * onTaskErrorObservable - registered observers will be executed when a single task failed.
+* onProgressObservable - registered observers will be executed when a single task finished successfully or failed.
 * onTasksDoneObservable - registered observers will be execute when all tasks' executions are done (success or failed!)
 
 ```javascript
