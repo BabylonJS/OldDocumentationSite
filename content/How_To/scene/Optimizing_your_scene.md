@@ -98,21 +98,21 @@ Instrumentation is a key tool when you want to optimize a scene. It will help yo
 
 ### EngineInstrumentation
 The EngineInstrumentation class allows you to get the following counters:
-* GPU frame time: Time (in nanoseconds) spent by the GPU to render a single frame. Must be turned on with `instrumentation.captureGPUFrameTime = true`.
-* Shader compilation time: Time (in milliseconds) spend by the CPU to compile all shaders. Must be turned on with `instrumentation.captureShaderCompilationTime = true`.
+* *GPU frame time*: Time (in nanoseconds) spent by the GPU to render a single frame. Must be turned on with `instrumentation.captureGPUFrameTime = true`.
+* *Shader compilation time*: Time (in milliseconds) spend by the CPU to compile all shaders. Must be turned on with `instrumentation.captureShaderCompilationTime = true`.
 
 Here is an example of how to use engine instrumentation:
 https://www.babylonjs-playground.com/#HH8T00
 
 Please note that each counter is accessible using multiple entry points:
-* gpuFrameTimeCounter: Gets the perf counter used for GPU frame time
-* currentGPUFrameTime: Gets the current GPU frame time (in nanoseconds)
-* averageGPUFrameTime: Gets the average GPU frame time (in nanoseconds)
-* shaderCompilationTimeCounter: Gets the perf counter used for shader compilation time
-* currentShaderCompilationTime: Gets the current shader compilation time (in milliseconds)
-* averageShaderCompilationTime: Gets the average shader compilation time (in milliseconds)
-* totalShaderCompilationTime: Gets the total shader compilation time (in milliseconds)
-* compiledShadersCount: Gets the number of compiled shaders
+* *gpuFrameTimeCounter*: Gets the perf counter used for GPU frame time
+* *currentGPUFrameTime*: Gets the current GPU frame time (in nanoseconds)
+* *averageGPUFrameTime*: Gets the average GPU frame time (in nanoseconds)
+* *shaderCompilationTimeCounter*: Gets the perf counter used for shader compilation time
+* *currentShaderCompilationTime*: Gets the current shader compilation time (in milliseconds)
+* *averageShaderCompilationTime*: Gets the average shader compilation time (in milliseconds)
+* *totalShaderCompilationTime*: Gets the total shader compilation time (in milliseconds)
+* *compiledShadersCount*: Gets the number of compiled shaders
 
 # Further Reading
 
