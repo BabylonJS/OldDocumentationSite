@@ -102,17 +102,9 @@ The EngineInstrumentation class allows you to get the following counters:
 * *Shader compilation time*: Time (in milliseconds) spend by the CPU to compile all shaders. Must be turned on with `instrumentation.captureShaderCompilationTime = true`.
 
 Here is an example of how to use engine instrumentation:
-https://www.babylonjs-playground.com/#HH8T00
+https://www.babylonjs-playground.com/#HH8T00#1
 
-Please note that each counter is accessible using multiple entry points:
-* *gpuFrameTimeCounter*: Gets the perf counter used for GPU frame time
-* *currentGPUFrameTime*: Gets the current GPU frame time (in nanoseconds)
-* *averageGPUFrameTime*: Gets the average GPU frame time (in nanoseconds)
-* *shaderCompilationTimeCounter*: Gets the perf counter used for shader compilation time
-* *currentShaderCompilationTime*: Gets the current shader compilation time (in milliseconds)
-* *averageShaderCompilationTime*: Gets the average shader compilation time (in milliseconds)
-* *totalShaderCompilationTime*: Gets the total shader compilation time (in milliseconds)
-* *compiledShadersCount*: Gets the number of compiled shaders
+Please note that each counter is *PerfCounter* object which can provide multiple properties like average, total, min, max, count, etc.
 
 # Further Reading
 
