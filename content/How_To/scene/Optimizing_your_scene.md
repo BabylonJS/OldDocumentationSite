@@ -110,7 +110,11 @@ Please note that each counter is *PerfCounter* object which can provide multiple
 The SceneInstrumentation class allows you to get the following counters (per scene):
 * *activeMeshesEvaluationTimeCounter*: Time (in milliseconds) spent to evaluable active meshes (based on active camra frustum). Must be turned on with `instrumentation.captureActiveMeshesEvaluationTime = true`.
 * *renderTargetsRenderTimeCounter*: Time (in milliseconds) spent to render all render target textures. Must be turned on with `instrumentation.captureRenderTargetsRenderTime = true`.
+* *drawCallsCounter*: Number of draw calls (actual calls to engine.draw) per frame. A good advice is to keep this number as small as possible.
 * *frameTimeCounter*: Time (in milliseconds) spent to render an entire frame (including all cameras). Must be turned on with `instrumentation.captureFrameTime = true`.
+* *interFrameTimeCounter*: Time (in milliseconds) spent between two frames. Must be turned on with `instrumentation.captureInterFrameTime = true`.
+* *particlesRenderTimeCounter*: Time (in milliseconds) spent rendering particles (including animations). Must be turned on with `instrumentation.captureParticlesRenderTime = true`.
+* *spritesRenderTimeCounter*: Time (in milliseconds) spent rendering sprites. Must be turned on with `instrumentation.captureSpritesRenderTime = true`.
 
 Here is an example of how to use scene instrumentation:
 
