@@ -312,6 +312,7 @@ color|string|white|Foreground color
 background|string|black|Background color
 barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
 thumbWidth|valueAndUnit|30px|Width of the thumb
+isThumbCircle|boolean|false|Indicates if the thumb should be a circle (square if false)
 
 Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
