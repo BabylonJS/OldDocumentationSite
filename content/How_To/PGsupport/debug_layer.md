@@ -27,7 +27,7 @@ BABYLON.DebugLayer.InspectorURL = 'http://myurl/babylon.inspector.bundle.js';
 To use the debug layer when your project is stored and run **locally** with an **internet connection** then you need to load the debug layer directly
 
 ```html
-<script src=https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js`></script>
+<script src=https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js></script>
 ```
 
 To use the debug layer **locally** with no internet connection you will need to obtain a copy of the file from
