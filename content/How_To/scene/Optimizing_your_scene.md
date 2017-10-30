@@ -117,8 +117,6 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 * *particlesRenderTimeCounter*: Time (in milliseconds) spent rendering particles (including animations). Must be turned on with `instrumentation.captureParticlesRenderTime = true`.
 * *spritesRenderTimeCounter*: Time (in milliseconds) spent rendering sprites. Must be turned on with `instrumentation.captureSpritesRenderTime = true`.
 
-Here is an example of how to use scene instrumentation:
-
 # Further Reading
 
 ## More Advanced - L3
