@@ -98,13 +98,21 @@ Instrumentation is a key tool when you want to optimize a scene. It will help yo
 
 ### EngineInstrumentation
 The EngineInstrumentation class allows you to get the following counters:
-* *GPU frame time*: Time (in nanoseconds) spent by the GPU to render a single frame. Must be turned on with `instrumentation.captureGPUFrameTime = true`.
-* *Shader compilation time*: Time (in milliseconds) spend by the CPU to compile all shaders. Must be turned on with `instrumentation.captureShaderCompilationTime = true`.
+* *gpuFrameTimeCounter*: Time (in nanoseconds) spent by the GPU to render a single frame. Must be turned on with `instrumentation.captureGPUFrameTime = true`.
+* *shaderCompilationTimeCounter*: Time (in milliseconds) spent by the CPU to compile all shaders. Must be turned on with `instrumentation.captureShaderCompilationTime = true`.
 
 Here is an example of how to use engine instrumentation:
 https://www.babylonjs-playground.com/#HH8T00#1
 
 Please note that each counter is *PerfCounter* object which can provide multiple properties like average, total, min, max, count, etc.
+
+### SceneInstrumentation
+The SceneInstrumentation class allows you to get the following counters (per scene):
+* *activeMeshesEvaluationTimeCounter*: Time (in milliseconds) spent to evaluable active meshes (based on active camra frustum). Must be turned on with `instrumentation.captureActiveMeshesEvaluationTime = true`.
+* *renderTargetsRenderTimeCounter*: Time (in milliseconds) spent to render all render target textures. Must be turned on with `instrumentation.captureRenderTargetsRenderTime = true`.
+* *frameTimeCounter*: Time (in milliseconds) spent to render an entire frame (including all cameras). Must be turned on with `instrumentation.captureFrameTime = true`.
+
+Here is an example of how to use scene instrumentation:
 
 # Further Reading
 
