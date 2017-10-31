@@ -72,22 +72,54 @@ Are YAML meta description for files, this is used to make some link between the 
 
 Wherever you find these, please don't touch them :)
 
-### Add a new content
-Categories classify the content, it is implemented and can be seen in:
+### New Content
+Categories classify the content. 
+
+#### Categories
+
+* Babylon101 - This is an introductory course for Babylon.js that takes users on a step by step journey through many basic features of the Babylon engine. Links on each page takes the reader to extra or related details. This means that although the course can be followed in a linear fashion it is not restricted to being read in this way. The idea is that this heading will stand by itself with no further sub sections.
+
+* How To - Usually this will consist of sub sections that descibe with words, pictures, examples and playgrounds how to contribute, apply or use a feature of the Babylon engine. For consistency use titles that complete a sentence starting How to ....
+
+* Features - These list and describe the features available with the Babylon.js system, that is the engine, extensions and any other resources that provide support for it and its use. Generally descriptions will be brief with lins to more detail. However there will be occasions when descriptions need to wander into `how to` territory to ensure clarity of understanding.
+
+* Extensions - This section provides details on user written code which extend Babylon.js and have to be loaded in addition to Babylon.js. Such code is found in the [extensions](https://github.com/BabylonJS/Extensions) repository.
+
+* Resources - These provide additional areas of support for Babylon.js and include
+    * Reference - Useful information or summary 
+    * Editor - An editor specificlly designed for Babylon.js 
+    * Manual - Technical details about Babylon.js or a feature that are not strictly necessary in learning how to apply or use a feature but provide extra understanding.
+    * Exporter - An external 3D application that allows files to be saved in a way that they can be loaded into a Babylon.js project.
+    * Library - An external application that can be integrated with Babylon.js.
+
+    Within descriptions in the resources section there will be details of how to apply and use features of a resource. This is different to the 'How to..' section which is limited to Babylon.js itself.
+
+* Samples - Small project examples or useful functions.        
+
+
+They are implemented and can be seen in:
+    * [Babylon 101](http://doc.babylonjs.com/babylon101)
     * [How To](http://doc.babylonjs.com/How_To)
     * [Features](http://doc.babylonjs.com/features)
     * [resources](http://doc.babylonjs.com/resources)
     * [extensions](http://doc.babylonjs.com/extensions)
+    * [samples](http://doc.babylonjs.com/samples)
     
-If you want to add your own:
 
-1. Head to the root of How To, features, resources or extensions or How_To
+### Adding Content
+If you want to add your own content:
+
+1. Head to the root of How To, features, resources, samples or extensions or How_To
 2. Create a new folder (or use an existing one)
 3. Fill it with your markdown
 4. Head to data/statics.json
 5. Add your folder and files
 6. Use ```grunt build```
 7. Pull request :)
+
+
+
+
 
 
 #### statics.json structure
