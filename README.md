@@ -87,7 +87,7 @@ Categories classify the content.
 
 * Resources - These provide additional areas of support for Babylon.js and include
     * Reference - Useful information or summary 
-    * Editor - An editor specificlly designed for Babylon.js 
+    * Editor - An editor specifically designed for Babylon.js 
     * Manual - Technical details about Babylon.js or a feature that are not strictly necessary in learning how to apply or use a feature but provide extra understanding.
     * Exporter - An external 3D application that allows files to be saved in a way that they can be loaded into a Babylon.js project.
     * Library - An external application that can be integrated with Babylon.js.

@@ -19,7 +19,7 @@
 
 
 /overviews/debug_layer_features                         /features/playground_debuglayer
-/overviews/Behaviors                                    /features/Behaviors
+/overviews/Behaviors                                    /features/Behaviours
 /overviews/How_Rotations_and_Translations_Work          /features/Position,_Rotation,_Scaling
 /overviews/OcclusionQuery                               /features/OcclusionQuery
 /overviews/WebGL2                                       /features/WebGL2
