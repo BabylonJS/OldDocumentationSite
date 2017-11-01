@@ -150,7 +150,8 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 [Materials 101](/babylon101/Materials)  
 [Bumps, Opacity, Tiling textures](/How_To/More_Materials)  
 [Multi Materials](/How_To/Multi_Materials)  
-[Individual Faces](/How_To/CreateBox_Per_Face_Textures_And_Colors) 
+[Individual Faces](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
+[Video Texture](/How_To/video_texture)
 
 ## Mid Level - L2
 [Using Parallax Mapping](/How_To/Using_parallax_mapping)  

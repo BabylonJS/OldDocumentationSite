@@ -16423,7 +16423,7 @@ declare module BABYLON {
         private _setTextureReady;
         /**
          * Creates a video texture.
-         * Sample : https://doc.babylonjs.com/How_To/01._Advanced_Texturing
+         * Sample : https://doc.babylonjs.com/How_To/video_texture
          * @param {Array} urlsOrVideo can be used to provide an array of urls or an already setup HTML video element.
          * @param {BABYLON.Scene} scene is obviously the current scene.
          * @param {boolean} generateMipMaps can be used to turn on mipmaps (Can be expensive for videoTextures because they are often updated).

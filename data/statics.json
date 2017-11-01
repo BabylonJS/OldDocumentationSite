@@ -125,17 +125,6 @@
       ]
     },
     {
-      "title": "Reactjs",
-      "name": "reactjs",
-      "desc": "How to use Babylon.js with ReactJS",
-      "files": [
-        {
-          "title": "How to use Babylon.js with ReactJS",
-          "filename": "BabylonJS_and_ReactJS"
-        }
-      ]
-    },
-    {
       "title": "Scene",
       "name": "scene",
       "desc": "The Scene",
@@ -328,6 +317,11 @@
           "title": "Apply Bumps, Opacity and Tiling",
           "level": 1,
           "filename": "More_Materials"
+        },
+        {
+          "title": "Add Video Texture",
+          "level": 1,
+          "filename": "video_texture"
         },
         {
           "title": "Use Multi-Materials",
@@ -756,6 +750,21 @@
         {
           "title": "Using the Materials Builder (for developers)",
           "filename": "Using_Materials_Builder"
+        }
+      ]
+    },
+    {
+      "title": "Library",
+      "name": "Library",
+      "desc": "External Application for Integration with BJS",
+      "files": [
+        {
+          "title": "How to use BabylonJS in an Ionic Angular app",
+          "filename": "BabylonJS_and_Ionic_Angular"
+        },
+        {
+          "title": "How to use Babylon.js with ReactJS",
+          "filename": "BabylonJS_and_ReactJS"
         }
       ]
     },

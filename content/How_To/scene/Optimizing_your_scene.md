@@ -116,6 +116,7 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 * *interFrameTimeCounter*: Time (in milliseconds) spent between two frames. Must be turned on with `instrumentation.captureInterFrameTime = true`.
 * *particlesRenderTimeCounter*: Time (in milliseconds) spent rendering particles (including animations). Must be turned on with `instrumentation.captureParticlesRenderTime = true`.
 * *spritesRenderTimeCounter*: Time (in milliseconds) spent rendering sprites. Must be turned on with `instrumentation.captureSpritesRenderTime = true`.
+* *physicsTimeCounter*: Time (in milliseconds) spent simulating physics. Must be turned on with `instrumentation.capturePhysicsTime = true`.
 
 # Further Reading
 
