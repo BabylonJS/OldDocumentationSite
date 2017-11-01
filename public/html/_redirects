@@ -17,6 +17,22 @@
 /tutorials/07._babylon.js_advanced_features                 /How_To/babylon.js_advanced_features
 /tutorials/08._special_effects                              /How_To/special_effects
 
+/tutorials/advanced_texturing           /How_To/more_materials
+/tutorials/discover_basic_elements      /babylon101/discover_basic_elements
+/tutorials/sprites                      /babylon101/sprites
+/tutorials/particles                    /babylon101/particles
+/tutorials/height_map                   /babylon101/height_map
+/tutorials/shadows                      /babylon101/shadows
+
+/tutorials/3d_on_the_web_understanding_the_basics       /How_To/3d_on_the_web_understanding_the_basics
+/tutorials/webgl_basics                                 /How_To/webgl_basics
+/tutorials/using_babylon.js_for_beginners               /How_To/using_babylon.js_for_beginners
+/tutorials/understanding_materials_and_inputs           /How_To/understanding_materials_and_inputs
+/tutorials/game_pipeline_integration_with_babylon.js    /How_To/game_pipeline_integration_with_babylon.js
+/tutorials/loading_assets                               /How_To/loading_assets
+/tutorials/babylon.js_advanced_features                 /How_To/babylon.js_advanced_features
+/tutorials/special_effects                              /How_To/special_effects
+
 
 /overviews/debug_layer_features                         /features/playground_debuglayer
 /overviews/Behaviors                                    /features/Behaviours

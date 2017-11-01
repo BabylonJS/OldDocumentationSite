@@ -319,6 +319,11 @@
           "filename": "More_Materials"
         },
         {
+          "title": "Add Video Texture",
+          "level": 1,
+          "filename": "video_texture"
+        },
+        {
           "title": "Use Multi-Materials",
           "level": 1,
           "filename": "Multi_Materials"
