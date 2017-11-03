@@ -70,7 +70,7 @@
             // and now the rest
             categories.forEach(function (cat) {
                 var numOfFiles = files.filter(function (f) { return f.version === cat }).length;
-                html += '<div class="basicFilter disabled"  data-version="' + cat + '"><span>' + cat + '</span><span>(' + numOfFiles + ')</span></div>';
+                html += '<div class="basicFilter disabled"  data-version="' + cat + '"><span>' + cat.replace(/_/, " ") + '</span><span>(' + numOfFiles + ')</span></div>';
             });
 
             html += '</div>';
@@ -80,7 +80,7 @@
                 html += '<div class="result" data-version="' + f.version + '">';
                 html += '<div class="resultTitle">';
 
-                html += '<a href="' + f.src + '">' + f.version + ' : ' + f.name + '</a>';
+                html += '<a href="' + f.src + '">' + f.version.replace(/_/, " ") + ' : ' + f.name + '</a>';
 
                 html += '</div>';
                 html += '</div>';

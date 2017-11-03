@@ -73,4 +73,8 @@ Setting it to 0.1 will then reinforce the effect of the main lines (by dropping 
 
 [Playground](https://www.babylonjs-playground.com/#5S6MD#3)
 
+** gridOffset **
+The offset vector3 will shift the cells of the grid by a set amount.
+[Playground](https://playground.babylonjs.com/#URSDPL#1)
+
  

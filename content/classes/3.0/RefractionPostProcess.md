@@ -11,7 +11,7 @@ class [RefractionPostProcess](/classes/3.0/RefractionPostProcess) extends [PostP
 
 Builtin postprocess applying e refraction texture as a postprocess
 
-A tutorial about post process can be found here : https://doc.babylonjs.com/tutorials/how_to_use_postprocessrenderpipeline
+A tutorial about post process can be found here : https://doc.babylonjs.com/How_To/how_to_use_postprocessrenderpipeline
 
 ## Constructor
 
