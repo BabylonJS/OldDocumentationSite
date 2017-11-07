@@ -356,6 +356,12 @@ You can also define which part of the source image you want to use with the foll
 
 Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
 
+You can use animation sheet in the image using properties `image.cellId`, `image.cellWidth`, `image.cellHeight`. [example](https://www.babylonjs-playground.com/#K60448)
+You can also apply stretch to animation sheet using `image.stretch` property.
+
+[example 1](https://www.babylonjs-playground.com/#K60448#1)
+[example 2](https://www.babylonjs-playground.com/#K60448#2)
+
 ## Containers
 
 The containers are controls used to host other controls. Use them to organize your UI.

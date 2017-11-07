@@ -39,9 +39,9 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Animations: Position, scaling, rotation
 
 * _Materials_
-    * Base color factor and texture
-    * Metallic and roughness factors
-    * Combined MetallicRoughness texture
+    * Base color
+    * Metalness and roughness
+    * Emission, ambient occlusion
     * Multi-materials
 
 * _Textures_
@@ -116,6 +116,10 @@ Like for base color and transparency, the basic parameter value is used as defau
 The exported emission color value is computed based on all 4 parameters: emission weight, color, luminance and Kelvin.
 
 However, the exported emission color map is identical to the specified one in generic map. This mean that emisson weight, luminance and Kelvin __are not__ used. The emission map is assumed to be precomputed.
+
+### Ambient occlusion
+
+The diffuse roughness map is used as ambient occlusion.
 
 ### Bump map
 
