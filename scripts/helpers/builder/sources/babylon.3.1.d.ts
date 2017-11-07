@@ -17007,7 +17007,7 @@ declare module BABYLON {
      *
      * This offers the main features of a standard PBR material.
      * For more information, please refer to the documentation :
-     * http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+     * http://doc.babylonjs.com/How_To/Physically_Based_Rendering
      */
     abstract class PBRBaseMaterial extends PushMaterial {
         /**
@@ -17361,7 +17361,7 @@ declare module BABYLON {
      *
      * This offers the main features of a standard PBR material.
      * For more information, please refer to the documentation :
-     * http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+     * http://doc.babylonjs.com/How_To/Physically_Based_Rendering
      */
     class PBRMaterial extends PBRBaseMaterial {
         private static _PBRMATERIAL_OPAQUE;
@@ -18412,7 +18412,7 @@ declare module BABYLON {
         private _setTextureReady;
         /**
          * Creates a video texture.
-         * Sample : https://doc.babylonjs.com/tutorials/01._Advanced_Texturing
+         * Sample : https://doc.babylonjs.com/How_To/video_texture
          * @param {Array} urlsOrVideo can be used to provide an array of urls or an already setup HTML video element.
          * @param {BABYLON.Scene} scene is obviously the current scene.
          * @param {boolean} generateMipMaps can be used to turn on mipmaps (Can be expensive for videoTextures because they are often updated).

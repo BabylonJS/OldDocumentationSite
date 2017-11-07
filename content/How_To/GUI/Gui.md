@@ -34,6 +34,8 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 Here is an example of a simple fullscreen mode GUI:  https://www.babylonjs-playground.com/#XCPP9Y#1
 
+**Please note that only one fullscreen mode GUI is allowed per scene**
+
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
 ```
@@ -312,6 +314,7 @@ color|string|white|Foreground color
 background|string|black|Background color
 barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
 thumbWidth|valueAndUnit|30px|Width of the thumb
+isThumbCircle|boolean|false|Indicates if the thumb should be a circle (square if false)
 
 Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
@@ -352,6 +355,12 @@ You can also define which part of the source image you want to use with the foll
 * sourceHeight: height of the source image you want to use (in pixel)
 
 Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
+
+You can use animation sheet in the image using properties `image.cellId`, `image.cellWidth`, `image.cellHeight`. [example](https://www.babylonjs-playground.com/#K60448)
+You can also apply stretch to animation sheet using `image.stretch` property.
+
+[example 1](https://www.babylonjs-playground.com/#K60448#1)
+[example 2](https://www.babylonjs-playground.com/#K60448#2)
 
 ## Containers
 

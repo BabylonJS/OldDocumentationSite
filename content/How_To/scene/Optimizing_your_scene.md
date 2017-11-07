@@ -93,6 +93,31 @@ As a developer you should not be concerned by this mechanism. However, to suppor
 
 If you created resources that need to be rebuilt (like vertex buffers or index buffers), you can use the `engine.onContextLostObservable` and `engine.onContextRestoredObservable` observables to keep track of the context lost and context restored events.
 
+## Instrumentation
+Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optmize what needs to be optimized.
+
+### EngineInstrumentation
+The EngineInstrumentation class allows you to get the following counters:
+* *gpuFrameTimeCounter*: Time (in nanoseconds) spent by the GPU to render a single frame. Must be turned on with `instrumentation.captureGPUFrameTime = true`.
+* *shaderCompilationTimeCounter*: Time (in milliseconds) spent by the CPU to compile all shaders. Must be turned on with `instrumentation.captureShaderCompilationTime = true`.
+
+Here is an example of how to use engine instrumentation:
+https://www.babylonjs-playground.com/#HH8T00#1
+
+Please note that each counter is *PerfCounter* object which can provide multiple properties like average, total, min, max, count, etc.
+
+### SceneInstrumentation
+The SceneInstrumentation class allows you to get the following counters (per scene):
+* *activeMeshesEvaluationTimeCounter*: Time (in milliseconds) spent to evaluable active meshes (based on active camra frustum). Must be turned on with `instrumentation.captureActiveMeshesEvaluationTime = true`.
+* *renderTargetsRenderTimeCounter*: Time (in milliseconds) spent to render all render target textures. Must be turned on with `instrumentation.captureRenderTargetsRenderTime = true`.
+* *drawCallsCounter*: Number of draw calls (actual calls to engine.draw) per frame. A good advice is to keep this number as small as possible.
+* *frameTimeCounter*: Time (in milliseconds) spent to process an entire frame (including animations, physics, render targets, special fx, etc.). Must be turned on with `instrumentation.captureFrameTime = true`.
+* *renderTimeCounter*: Time (in milliseconds) spent to render a frame. Must be turned on with `instrumentation.captureRenderTime = true`.
+* *interFrameTimeCounter*: Time (in milliseconds) spent between two frames. Must be turned on with `instrumentation.captureInterFrameTime = true`.
+* *particlesRenderTimeCounter*: Time (in milliseconds) spent rendering particles (including animations). Must be turned on with `instrumentation.captureParticlesRenderTime = true`.
+* *spritesRenderTimeCounter*: Time (in milliseconds) spent rendering sprites. Must be turned on with `instrumentation.captureSpritesRenderTime = true`.
+* *physicsTimeCounter*: Time (in milliseconds) spent simulating physics. Must be turned on with `instrumentation.capturePhysicsTime = true`.
+
 # Further Reading
 
 ## More Advanced - L3

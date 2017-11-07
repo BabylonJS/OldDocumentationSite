@@ -10,6 +10,8 @@ module.exports = function (app) {
     app.use('/classes', require('./routes/classes'));
     app.use('/babylon101', require('./routes/babylon101'));
     app.use('/How_To', require('./routes/How_To'));
+    // backward compatibility
+    app.use('/tutorials', require('./routes/How_To'));
     app.use('/extensions', require('./routes/extensions'));
     app.use('/resources', require('./routes/resources'));
     app.use('/samples', require('./routes/samples'));
@@ -32,10 +34,12 @@ module.exports = function (app) {
 
     // Handle 500
     app.use(function (error, req, res, next) {
-        logger.error('500 Error at ' + error.path + ' - ' + util.inspect(error, {showHidden: false, colors: true}));
+        logger.error('500 Error at ' + error.path + ' - ' + util.inspect(error, {
+            showHidden: false,
+            colors: true
+        }));
         res.status(500);
         res.render('errorpages/500.pug', {});
     });
 
 };
-

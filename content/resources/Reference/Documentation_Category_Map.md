@@ -159,6 +159,7 @@
 [Increasing Facets, Snippet](/samples/Increasing_Facets)  
 [Incremental Loading](/How_To/Using_the_Incremental_Loading_System)  
 [Instances](/How_To/How_to_use_Instances)  
+[Ionic Angular](/resources/BabylonJS_and_Ionic_Angular)  
 ********
 <a name = "L">**L**</a><span style = "float:right">[top](#top)</span>
 
@@ -263,6 +264,7 @@
 [Radial Cloner](/extensions/RadialCloner)  
 [Random Effector, Cloner](/extensions/RandomEffector)  
 [Raycasts](/babylon101/Raycasts)  
+[Reactjs](/resources/BabylonJS_and_ReactJS)
 [Reflection Material](/How_To/Reflect#reflection)  
 [Reflection Probes](/How_To/How_to_use_Reflection_probes)  
 [Refraction, Material](/How_To/Reflec#refractiont)  
