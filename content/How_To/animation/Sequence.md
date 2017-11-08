@@ -185,4 +185,12 @@ scene.beginDirectAnimation(spotLights[1], [lightDimmer.clone()], 0, 25 * frameRa
 
 [Playground Example of the Cartoon](http://www.babylonjs-playground.com/#2L26P1#8)
 
+# Further Reading
 
+## Basic
+
+[Introduction to Animating](/basics/Starter.html)
+
+## Advanced
+
+[Combining Animations](/How_To/Combine.html)  

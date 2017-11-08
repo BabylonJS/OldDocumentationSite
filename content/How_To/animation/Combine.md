@@ -166,4 +166,4 @@ var nextAnimation = function() {
 
 ## Advanced
 
-[A Sequence of Animations](/gamelets/Sequence.html)  
+[A Sequence of Animations](/How_To/Sequence.html)  
