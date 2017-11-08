@@ -800,6 +800,10 @@
         {
           "title": "Cheetah3D",
           "filename": "Cheetah3D"
+        },
+        {
+          "title": "3D Text",
+          "filename": "3Dtext"
         }
       ]
     },
