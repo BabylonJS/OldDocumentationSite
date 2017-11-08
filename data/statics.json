@@ -1192,11 +1192,6 @@
       "desc": "Gamelets",
       "files": [
         {
-          "title": "A Sequence of Animations",
-          "level": 1,
-          "filename": "Sequence"
-        },
-        {
           "title": "Simple Car Following Path",
           "level": 2,
           "filename": "Car_Path"
