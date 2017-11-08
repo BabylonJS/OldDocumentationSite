@@ -189,8 +189,8 @@ scene.beginDirectAnimation(spotLights[1], [lightDimmer.clone()], 0, 25 * frameRa
 
 ## Basic
 
-[Introduction to Animating](/basics/Starter.html)
+[Introduction to Animating](/babylon101/animations)
 
 ## Advanced
 
-[Combining Animations](/How_To/Combine.html)  
+[A Sequence of Animations](/How_To/combine)   
