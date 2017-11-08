@@ -800,15 +800,66 @@
         {
           "title": "Cheetah3D",
           "filename": "Cheetah3D"
-        },
-        {
-          "title": "Unity",
-          "filename": "Unity"
-        },
-        {
-          "title": "3D Text",
-          "filename": "3Dtext"
         }
+      ]
+    },
+    {
+      "title": "Unity",
+      "name": "Unity",
+      "desc": "Learn how to export from Unity.",
+      "files": [
+        {
+          "title": "Introduction",
+          "filename": "Intro"
+        },
+        {
+          "title": "Export Panel",
+          "filename": "Exporter"
+        },
+        {
+          "title": "Getting Started",
+          "filename": "Projects"
+        },
+        {
+          "title": "Script Components",
+          "filename": "01_ScriptComponents"
+        },
+        {
+          "title": "Scene Manager",
+          "filename": "02_SceneManager"
+        },
+        {
+          "title": "Shader Materials",
+          "filename": "03_ShaderMaterials"
+        },
+        {
+          "title": "Collision Meshes",
+          "filename": "04_CollisionMeshes"
+        },
+        {
+          "title": "Terrain Builder",
+          "filename": "05_TerrainBuilder"
+        },
+        {
+          "title": "Animation State",
+          "filename": "06_AnimationState"
+        },
+        {
+          "title": "Runtime Prefabs",
+          "filename": "07_RuntimePrefabs"
+        },
+        {
+          "title": "Static Batching",
+          "filename": "08_StaticBatching"
+        },
+        {
+          "title": "Navigation Mesh",
+          "filename": "09_NavigationMesh"
+        },
+        {
+          "title": "Babylon Art Tools",
+          "filename": "10_BabylonArtTools"
+        }        
       ]
     },
     {
