@@ -150,6 +150,14 @@ Finally the mirrorMaterial can be applied to the glass.
 glass.material = mirrorMaterial;
 ```
 
+#### Blurring the Reflection
+_MirrorTexture_ can support blurred rendering with either:
+
+* adaptiveBlurKernel: setting this value to something other than 0 will blur the texture with a specified kernel (the bigger the blurrier). The value will be adapted to the viewport size.
+* blurKernel: same as adaptiveBlurKernel property but the value is not adapted to viewport size.
+
+[Playground Example - Reflection Blur](https://www.babylonjs-playground.com/#LVTTQX#1)	
+
 ## Refraction
 In this case an object behind glass or under water for example can have its position and size changed by the refraction of light.
 
