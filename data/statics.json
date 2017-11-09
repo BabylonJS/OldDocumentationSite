@@ -800,6 +800,10 @@
         {
           "title": "Cheetah3D",
           "filename": "Cheetah3D"
+        },
+        {
+          "title": "3D Text",
+          "filename": "3Dtext"
         }
       ]
     },
@@ -1246,11 +1250,6 @@
       "name": "gamelets",
       "desc": "Gamelets",
       "files": [
-        {
-          "title": "A Sequence of Animations",
-          "level": 1,
-          "filename": "Sequence"
-        },
         {
           "title": "Simple Car Following Path",
           "level": 2,
