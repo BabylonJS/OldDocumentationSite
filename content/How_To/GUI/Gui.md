@@ -183,6 +183,10 @@ color|string|Black|Foreground color
 fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
+shadowBlur|number|0|the amount of blur that is applied to the drop shadow
+shadowOffsetX|number|0|the offset of the shadow on the x axis
+shadowOffsetY|number|0|the offset of the shadow on the y axis
+shadowColor|string|"#000"|the color of the shadow
 
 Controls can be added directly to the AdvancedDynamicTexture or to a container with:
 
