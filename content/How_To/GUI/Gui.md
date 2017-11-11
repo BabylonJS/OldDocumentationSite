@@ -34,6 +34,17 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 Here is an example of a simple fullscreen mode GUI:  https://www.babylonjs-playground.com/#XCPP9Y#1
 
+Foreground & background:
+The fullscreen mode can be rendered in either the foreground or the background of a scene.
+It can be set like this:
+```
+// true == foreground (default)
+// false == background
+var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI", foreground? : Boolean );
+// it can also be changed on the go:
+    advancedTexture.isForeground = false;
+```
+
 **Please note that only one fullscreen mode GUI is allowed per scene**
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
