@@ -98,103 +98,103 @@ Native JavaScript Libraries (renamed to .bjs) that are included anywhere in the 
 ## Supported Unity Features
 
 * **Scene**
-* Assets
-* Metadata
+ * Assets
+ * Metadata
 * **Cameras**
-* Name
-* Position
-* Target
-* FOV
-* LOD Groups
-* Clip Range Start
-* Clip Range End
-* Check Collisions
-* Gravity
-* Ellipsoid
-* Animations (Position)
+ * Name
+ * Position
+ * Target
+ * FOV
+ * LOD Groups
+ * Clip Range Start
+ * Clip Range End
+ * Check Collisions
+ * Gravity
+ * Ellipsoid
+ * Animations (Position)
 * **Lights**
-* Type (Point, Directional, Spot)
-* Name
-* Position
-* Direction
-* Spot Angle
-* Intensity
-* Diffuse Color
-* Animations (Position)
-* Shadow Maps
-* Light Maps
+ * Type (Point, Directional, Spot)
+ * Name
+ * Position
+ * Direction
+ * Spot Angle
+ * Intensity
+ * Diffuse Color
+ * Animations (Position)
+ * Shadow Maps
+ * Light Maps
 * **Materials**
-* Name
-* Diffuse Color
-* Specular Color
-* Specular Power
-* Emissive Color
-* Alpha
-* Backface Culling
-* Diffuse Texture
-* Reflection Texture
-* Emissive Texture
-* Bump Texture
+ * Name
+ * Diffuse Color
+ * Specular Color
+ * Specular Power
+ * Emissive Color
+ * Alpha
+ * Backface Culling
+ * Diffuse Texture
+ * Reflection Texture
+ * Emissive Texture
+ * Bump Texture
 * **Physically Based Rendering**
-* Metallic Setup
-* Specular Setup
+ * Metallic Setup
+ * Specular Setup
 * **Multi-Materials**
-* Name
-* Child Materials
+ * Name
+ * Child Materials
 * **Textures**
-* Name
-* Associated File
-* Use Alpha
-* uOffset / voffset
-* uScale / uScale
+ * Name
+ * Associated File
+ * Use Alpha
+ * uOffset / voffset
+ * uScale / uScale
 * **Meshes**
-* Name
-* Geometry (Positions &amp; Normals)
-* Position
-* Rotation
-* Scaling
-* Texture Coordinates (2 Channels)
-* Check Collisions
-* Receive &amp; Cast Shadows
-* Animations (Position, Rotation, Scaling)
-* Skeletons (Shared Cloning)
+ * Name
+ * Geometry (Positions &amp; Normals)
+ * Position
+ * Rotation
+ * Scaling
+ * Texture Coordinates (2 Channels)
+ * Check Collisions
+ * Receive &amp; Cast Shadows
+ * Animations (Position, Rotation, Scaling)
+ * Skeletons (Shared Cloning)
 * **Shaders**
-* Vertex Shaders
-* Fragment Shaders
-* Particle Shaders
-* Custom Shaders
+ * Vertex Shaders
+ * Fragment Shaders
+ * Particle Shaders
+ * Custom Shaders
 * **Layers**
-* Object Layers
-* Static Layers
-* Prefab Layers
-* Custom Layers
+ * Object Layers
+ * Static Layers
+ * Prefab Layers
+ * Custom Layers
 * **Tagging**
-* Object Tag Name
-* Custom Tag Names
+ * Object Tag Name
+ * Custom Tag Names
 * **Terrains**
-* Multiple Terrains
-* Splatmap Textures
-* Tree Instances
-* Grass Patches (Coming Soon)
-* Detail Prototypes (Coming Soon)
+ * Multiple Terrains
+ * Splatmap Textures
+ * Tree Instances
+ * Grass Patches (Coming Soon)
+ * Detail Prototypes (Coming Soon)
 * **Components**
-* Mesh Filter
-* Mesh Renderer
-* Skinned Mesh Renderer
+ * Mesh Filter
+ * Mesh Renderer
+ * Skinned Mesh Renderer
 * **Collisions**
-* Box Collider
-* Sphere Collider
-* Capsule Collider
-* Mesh Collider
-* Wheel Collider
-* Terrain Collider
+ * Box Collider
+ * Sphere Collider
+ * Capsule Collider
+ * Mesh Collider
+ * Wheel Collider
+ * Terrain Collider
 * **Navigation**
-* Navigation Mesh
-* Nav Mesh Agent
-* Off Mesh Link
-* Nav Mesh Obstacle
+ * Navigation Mesh
+ * Nav Mesh Agent
+ * Off Mesh Link
+ * Nav Mesh Obstacle
 * **Miscellaneous**
-* Tree Component
-* Terrain Component
-* Animator Component
-* Animation Component
+ * Tree Component
+ * Terrain Component
+ * Animator Component
+ * Animation Component
