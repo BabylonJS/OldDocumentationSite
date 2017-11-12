@@ -34,6 +34,17 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 Here is an example of a simple fullscreen mode GUI:  https://www.babylonjs-playground.com/#XCPP9Y#1
 
+Foreground & background:
+The fullscreen mode can be rendered in either the foreground or the background of a scene.
+It can be set like this:
+```
+// true == foreground (default)
+// false == background
+var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI", foreground? : Boolean );
+// it can also be changed on the go:
+    advancedTexture.isForeground = false;
+```
+
 **Please note that only one fullscreen mode GUI is allowed per scene**
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
@@ -172,6 +183,10 @@ color|string|Black|Foreground color
 fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
 fontSize|number|18|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
+shadowBlur|number|0|the amount of blur that is applied to the drop shadow
+shadowOffsetX|number|0|the offset of the shadow on the x axis
+shadowOffsetY|number|0|the offset of the shadow on the y axis
+shadowColor|string|"#000"|the color of the shadow
 
 Controls can be added directly to the AdvancedDynamicTexture or to a container with:
 
@@ -197,8 +212,24 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 text|string|null|Text to display
 textWrapping|boolean|false|Can be set to true to enable text wrapping.
+resizeToFit|boolean|false|Can be set to true to enable resize to fit.
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+
+The control currently provides 1 observable:
+
+Observables|Comments
+-----------|--------
+onTextChangedObservable|Raised when the text has changed
+
+#### Resize to Fit
+
+When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
+
+This property allows you to change the text and font of a TextBlock without having to worry about manually setting the estimated rendered width and height.
+
+**Notice that textWrapping is ignored when resizeToFit is set to true.** It doesn't make sense logically for both properties to be used at the same time as they contradict each other.
+
 
 ### InputText
 
