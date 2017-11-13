@@ -60,6 +60,18 @@ We put the funciton in registerBeforeRender() so that it gets continually update
     });
 ```
 
+In order for the reticle to move with the VR Camera as well as the Web camera, we have to change the reticle's parent whenever we enter VR mode. 
+
+```javascript
+    VRHelper.onEnteringVR = function() {
+         console.log(VRHelper.currentVRCamera);
+         reticle.parent = VRHelper.currentVRCamera;
+    }
+    VRHelper.onExitingVR = function() {
+         reticle.parent = camera;
+    }
+```
+
 #### Ways To Improve
 You could improve this reticle a number of ways. As mentioned previously, providing better feedback to the user with interactable options is one of the key factors in making an effective reticle. Additionally, a 2D reticle that rotates with the surface of what the user is looking at gives a more concrete picture of where the user is looking in 3D space. 
 
@@ -108,12 +120,13 @@ Spatializing a sound in Babylon.js can be as simple as marking the BABYLON.Sound
 A more in depth guide can be found [here](https://doc.babylonjs.com/how_to/playing_sounds_and_music#creating-a-spatial-3d-sound). 
 
 Afterwards, we make sure to attach the sound to our moving box, and register the sound to play when the box is clicked. 
+> Note: Whenever you attach a sound to a mesh it automatically converts it into a spatial sound. 
 
 ```javascript
 
     /*Spatial Sound Effect*/
     var SFX = new BABYLON.Sound("gunshot", "sounds/gunshot.wav", scene, 
-        null, { maxDistance: 50, loop: false, autoplay: false, spatialSound: true });
+        null, { maxDistance: 50, loop: false, autoplay: false, spatialSound: true }); //no need to set spatialSound if attaching to a mesh
 
     SFX.attachToMesh(blubox);
 
@@ -124,6 +137,6 @@ Afterwards, we make sure to attach the sound to our moving box, and register the
 ## The Finished Game
 The full code, featuring the sections mentioned above and including the rest of the game scene, can be found below. 
 
-[Full Playground Example](https://www.babylonjs-playground.com/#KJ8ZRZ)
+[Full Playground Example](https://www.babylonjs-playground.com/#KJ8ZRZ#2)
 
 
