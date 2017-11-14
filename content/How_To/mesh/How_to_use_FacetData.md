@@ -266,6 +266,34 @@ Example :
 Custom simple physics on a dynamically morphed ribbon :  https://www.babylonjs-playground.com/#XVGK0#3  
 
 
+### Facet Depth Sort  
 
+ As you may know, for performance reasons, the facets of a given mesh are always drawn in the same order. This comes to visual issues when the mesh is transparent, concave and is no longer oriented in the right place from the camera :
 
+http://playground.babylonjs.com/#FWKUY0 
+
+This new feature solves the self transparency issue by sorting the mesh facets from some location (the camera position by default) just before drawing them.  
+The mesh is **required** to be `updatable`.  
+The depth sort is done on each call to `updateFacetData()`. It can be disabled at any time to save CPU cycles if the mesh and the camera don't move any more.  
+Usage : 
+```javascript
+// the mesh must be updatable
+var mesh = BABYLON.MeshBuilder.CreateTorusKnot("mesh", {updatable: true}, scene);
+mesh.material = mat;                         // transparent material
+mesh.mustDepthSortFacets = true;             // enable the depth sort, can be disabled at any time
+
+scene.registerBeforeRender(function() {
+mesh.updateFacetData();     // sort the facets each frame
+```
+Example : http://playground.babylonjs.com/#FWKUY0#1   
+Depth sorted on the left, standard on the right.  
+
+If don't need the depth sort once enabled, you can simply stop to call `updateFacetData()`.  
+If for some reasons, you still need to call `updateFacetData()` but you don't need the depth sort any longer, just disabled it with `mesh.mustDepthSortFacets = false`.   
+In both cases, the facet will keep the last given order.  
+
+Note that if your mesh is a SPS (Solid Particle System), it's better to not enable the facet depth sort in the same time than the particle depth sort, simply because the underlying sort is done twice, so more CPU used and no gain.   
+In this case, just choose what kind of sorting is better for you : at particle level (faster) or at facet level (more accurate).  
+
+As the facet depth sort reorganizes the mesh indices, it **can't work** with the sub-materials.   
 
