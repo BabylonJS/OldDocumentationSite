@@ -551,7 +551,9 @@ To enable it, just create your SPS with the parameter `enableDepthSort` to `true
 If for some reasons (immobile camera and sps),  you want to stop (or reactivate) the sort on the next calls to `setParticles()`, just set the property `sps.depthSortParticles` to `false` (or `true` to reactivate it) .   
 
 Note well that is better to not enable the particle depth sort and the [facet depth sort](http://doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort) in the same time, else the sort process wil be executed twice with no final gain.  
-So just choose what kind of sorting you need : at particle level (faster) or at facet level (more accurate).   
+So just choose what kind of sorting you need : at particle level (faster) or at facet level (more accurate).  
+
+Note also that the particle sort **can't work** with the MultiMaterials.  
 
 ```javascript
 // create a particle depth sort enabled SPS
