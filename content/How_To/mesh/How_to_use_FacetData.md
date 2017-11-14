@@ -295,5 +295,5 @@ In both cases, the facet will keep the last given order.
 Note that if your mesh is a SPS (Solid Particle System), it's better to not enable the facet depth sort in the same time than the particle depth sort, simply because the underlying sort is done twice, so more CPU used and no gain.   
 In this case, just choose what kind of sorting is better for you : at particle level (faster) or at facet level (more accurate).  
 
-As the facet depth sort reorganizes the mesh indices, it **can't work** with the sub-materials.   
+As the facet depth sort reorganizes the mesh indices, it **can't work** with the MultiMaterials.   
 
