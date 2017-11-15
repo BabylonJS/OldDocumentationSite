@@ -817,7 +817,7 @@
           "filename": "Intro"
         },
         {
-          "title": "Export Panel",
+          "title": "Export Panels",
           "filename": "Exporter"
         },
         {
@@ -863,7 +863,7 @@
         {
           "title": "Babylon Art Tools",
           "filename": "10_BabylonArtTools"
-        }        
+        }
       ]
     },
     {
@@ -1224,6 +1224,22 @@
         {
           "title": "GUIWindow",
           "filename": "GUIWindow"
+        }
+      ]
+    },
+    {
+      "title": "Babylon Viewer",
+      "name": "Viewer",
+      "img": "img/extensions/editor.png",
+      "desc": "Learn how to use the babylon viewer.",
+      "files": [
+        {
+          "title": "The Babylon Viewer",
+          "filename": "The_Babylon_Viewer"
+        },
+        {
+          "title": "Configuring The Viewer",
+          "filename": "Configuring_the_viewer"
         }
       ]
     }
