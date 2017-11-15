@@ -133,7 +133,7 @@ To even go further, the intensity you define on the lights follows physics notio
 * Point and Spot lights are defined in luminous intensity (candela, m/sr)
 * Directionnal and Hemispheric lights in illuminance (nit, cd/m2)
 
-You'll find more info about how dynamic lighting works in the [Master the PBR](/features/Physically_Based_Rendering_Master#light-setup)
+You'll find more info about how dynamic lighting works in the [Master the PBR](/how_to/Physically_Based_Rendering_Master#light-setup)
 
 
 ## Env map
