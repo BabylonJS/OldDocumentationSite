@@ -239,6 +239,49 @@ let viewer = new BabylonViewer.DefaultViewer(domElement, {
 
 In this case, the HTML attributes will be ignored(!) and the DOM element will simply serve as the container of the Babylon scene.
 
+### Registering your own configuration parser using the mapper manager
+
+As shown, the Babylon viewer has 3 types of configuration parsers for you to choose from - "html", "dom", and "json". Those mappers are registered in the mapper manager, exposed in the BabylonViewer namespace.
+
+The mapper manager can be extended. If you have your own type of configuration, or want to support further file types, you can create your own mapper and register it with the mapper. Later on, you can define the type of mapper the configuration will be read with, using the configuration.type variable in the viewer's configuration. 
+
+Let's build a pseudo YAML loader and register it:
+
+First, we implement the IMapper interface:
+
+```javascript
+
+// In TypeScript
+class YAMLMapper implements IMapper {
+    map(yaml: YAMLThing): ViewerConfiguration {
+        return this.convertToYaml(yaml);
+    }
+
+    // so, this needs to be actually implemented...
+    convertYamlToJson(yaml) {}
+}
+
+// in JavaScript
+
+let yamlMapper = {
+    map : function(yaml) {
+        return yaml.toJson();
+    }
+}
+```
+
+Afterwards, we need to register it with the mapperManager:
+
+```javascript
+BabylonViewer.mapperManager.registerMapper('yaml', yamlMapper);
+```
+
+And finally, we need to tell the manager which mapper to use:
+
+```html
+<babylon extends="minimal" scene.debug="true" engine.antialiasing="false" model="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration.url="http://example.com/viewerConfig.yaml" configuration.mapper="yaml"></babylon>
+```
+
 ## The full configuration interface
 
 The configuration interfaces pasted are from version `0.2.0` of the viewer. To see the latest options see [https://github.com/BabylonJS/Babylon.js/blob/master/Viewer/src/configuration/configuration.ts](https://github.com/BabylonJS/Babylon.js/blob/master/Viewer/src/configuration/configuration.ts)
