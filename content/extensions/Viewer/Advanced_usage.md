@@ -123,3 +123,11 @@ viewer.onSceneInitObservable.add(function(scene) {
     return scene;
 });
 ```
+
+## Enabling the debug layer
+
+To enable the debug layer, simply add scene.debug="true" to your html tag:
+
+```html
+<babylon extends="minimal" scene.debug="true" model="https://playground.babylonjs.com/scenes/Rabbit.babylon"></babylon>
+```
