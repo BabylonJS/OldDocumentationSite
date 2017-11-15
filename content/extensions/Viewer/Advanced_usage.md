@@ -1,5 +1,5 @@
 ---
-PG_TITLE: Viewer - Advanced usgae
+PG_TITLE: Viewer - Advanced usage
 ---
 # Advanced usage, tips and tricks
 
