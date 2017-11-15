@@ -207,6 +207,7 @@ export interface EventCallback {
 To register for event listening, load the template using the template manager and add an observer to the `onEventTriggered` observable:
 
 ```javascript
+// viewer is a viewer instance. See Advanced Usage for further details on how to get it.
 let navbar = viewer.templateManager.getTemplate('navBar');
 // let's be safe!
 if (!navbar) return;
