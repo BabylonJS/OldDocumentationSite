@@ -21,7 +21,7 @@ The viewer automatically serves all of Babylon's loaders, and currently supports
 ## Getting the viewer
 
 The latest stable viewer version can always be found at [https://viewer.babylonjs.com/viewer.js](https://viewer.babylonjs.com/viewer.js).
-The viewer exposes `BabylonViewer` to the window object, which can be used to interact with all viewers on the current page. For further details see `Advanced Usage`.
+The viewer exposes `BabylonViewer` to the window object, which can be used to interact with all viewers on the current page. For further details see [Advanced usage](//doc.babylonjs.com/extensions/Advanced_usage).
 
 It will soon be available on NPM as well for developers wishing to extend it.
 
@@ -59,8 +59,7 @@ This will load the model(s) from Rabbit.babylon and will show them using the def
 
 ## Further details
 
-* Configuring the viewer
-* Extending the viewer
-* The templating system
-* Advanced usage
-* Further examples
+* [Configuring the viewer](//doc.babylonjs.com/extensions/Configuring_the_viewer)
+* [The templating system](//doc.babylonjs.com/extensions/The_templating_system)
+* [Advanced usage](//doc.babylonjs.com/extensions/Advanced_usage)
+* [Further examples](//doc.babylonjs.com/extensions/Viewer_examples)

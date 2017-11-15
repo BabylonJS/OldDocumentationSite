@@ -1240,6 +1240,18 @@
         {
           "title": "Configuring The Viewer",
           "filename": "Configuring_the_viewer"
+        },
+        {
+          "title": "The viewer templating system",
+          "filename": "The_templating_system"
+        },
+        {
+          "title": "Advanced usage",
+          "filename": "Advanced_usage"
+        },
+        {
+          "title": "Viewer examples",
+          "filename": "Viewer_examples"
         }
       ]
     }

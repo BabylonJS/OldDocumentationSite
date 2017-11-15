@@ -215,7 +215,7 @@ the file <http://example.com/viewerConfig.json> will be loaded into the configur
 
 ### Configuring using JavaScript
 
-Further discussed in `Advanced Usage`, JavaScript can be used to initialize a viewer. When initializing a viewer using JavaScript, you can provide the initial configuration that will be used with this viewer:
+Further discussed in [Advanced usage](//doc.babylonjs.com/extensions/Advanced_usage), JavaScript can be used to initialize a viewer. When initializing a viewer using JavaScript, you can provide the initial configuration that will be used with this viewer:
 
 ```javascript
 
