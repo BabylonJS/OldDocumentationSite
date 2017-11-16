@@ -145,6 +145,12 @@ To do it simply, a root node named "root" is added to the scene. All nodes are s
 
 In glTF, a skin is binded to a node. The skeleton (root bone) of a skin should be positioned at origin, without rotation or scaling. The node to which is applied the skin is responsible of its transformation (translation, rotation, scale).
 
+## Textures image format
+
+glTF 2.0 only supports the following image formats: jpg and png. You are adviced to use those formats for your textures when exporting to glTF.
+
+Note that the exporter also supports textures with bmp, gif, tga, tif and dds formats. But, those textures will be automatically converted to png/jpg by the exporter to follow glTF specifications.
+
 ## Environment texture
 
 To enjoy PBR material rendering, you should have an environmnent texture in your scene. The plugin exports the environment map if any is provided in 3DS MAX.
