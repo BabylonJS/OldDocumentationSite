@@ -20,7 +20,7 @@ The viewer automatically serves all of Babylon's loaders, and currently supports
 
 ## Getting the viewer
 
-The latest stable viewer version can always be found at [https://viewer.babylonjs.com/viewer.js](https://viewer.babylonjs.com/viewer.js).
+The latest stable viewer version can always be found at [https://viewer.babylonjs.com/viewer.js](https://viewer.babylonjs.com/viewer.js). Minified version at [https://viewer.babylonjs.com/viewer.min.js](https://viewer.babylonjs.com/viewer.min.js).
 The viewer exposes `BabylonViewer` to the window object, which can be used to interact with all viewers on the current page. For further details see [Advanced usage](//doc.babylonjs.com/extensions/Advanced_usage).
 
 It will soon be available on NPM as well for developers wishing to extend it.
@@ -49,7 +49,7 @@ Consider we want to display Babylon's rabbit model on a website. To do that we s
 
     <body>
         <babylon model="https://playground.babylonjs.com/scenes/Rabbit.babylon"></babylon>
-        <script src="https://viewer.babylonjs.com/viewer.js"></script>
+        <script src="https://viewer.babylonjs.com/viewer.min.js"></script>
     </body>
 
 </html>
