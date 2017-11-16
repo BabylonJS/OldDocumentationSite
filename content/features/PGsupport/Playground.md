@@ -91,6 +91,8 @@ etc.
 
 Any errors in your playground are flagged with a red pop-up box containing limited information. After making an adjustment to your code, you need not close the compilation error pop-up.  It should close automatically at the next RUN, if all errors have been corrected.
 
+Please note that you can name your main function `delayCreateScene` instead of `createScene` if you want to return a scene without a camera (because for instance you plan to load a scene using SceneLoader).
+
 ## Focus
 
 Whenever a scene in the playground needs the use of keys to move an object, such as a mesh or camera, around then the rendering area needs to have the focus. After running the playground ensure that the render area has the focus by clicking inside it before using the keys. 

@@ -292,7 +292,6 @@
 [Scene Creation and Optimization](/features/Scene)  
 [Screenshot a Scene to a PNG](/How_To/Render_Scene_on_a_PNG)  
 [Sequence Animations](/How_To/Sequence)  
-[Sequence of Animations](/samples/Sequence)  
 [Server Side, BJS](/features/nullEngine)  
 [Shader Code into BJS](/How_To/Putting)  
 [Shader Code, Fireworks](/samples/Writing2)  

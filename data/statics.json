@@ -800,6 +800,10 @@
         {
           "title": "Cheetah3D",
           "filename": "Cheetah3D"
+        },
+        {
+          "title": "3D Text",
+          "filename": "3Dtext"
         }
       ]
     },
@@ -813,7 +817,7 @@
           "filename": "Intro"
         },
         {
-          "title": "Export Panel",
+          "title": "Export Panels",
           "filename": "Exporter"
         },
         {
@@ -859,7 +863,7 @@
         {
           "title": "Babylon Art Tools",
           "filename": "10_BabylonArtTools"
-        }        
+        }
       ]
     },
     {
@@ -1222,6 +1226,34 @@
           "filename": "GUIWindow"
         }
       ]
+    },
+    {
+      "title": "Babylon Viewer",
+      "name": "Viewer",
+      "img": "img/extensions/editor.png",
+      "desc": "Learn how to use the babylon viewer.",
+      "files": [
+        {
+          "title": "The Babylon Viewer",
+          "filename": "The_Babylon_Viewer"
+        },
+        {
+          "title": "Configuring The Viewer",
+          "filename": "Configuring_the_viewer"
+        },
+        {
+          "title": "The viewer templating system",
+          "filename": "The_templating_system"
+        },
+        {
+          "title": "Advanced usage",
+          "filename": "Advanced_usage"
+        },
+        {
+          "title": "Viewer examples",
+          "filename": "Viewer_examples"
+        }
+      ]
     }
   ],
   "samples": [
@@ -1246,11 +1278,6 @@
       "name": "gamelets",
       "desc": "Gamelets",
       "files": [
-        {
-          "title": "A Sequence of Animations",
-          "level": 1,
-          "filename": "Sequence"
-        },
         {
           "title": "Simple Car Following Path",
           "level": 2,
