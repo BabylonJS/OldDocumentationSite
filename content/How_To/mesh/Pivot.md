@@ -6,7 +6,7 @@ PG_TITLE: Rotation Around an Axis About a Center of Rotation
 
 Rotation needs two things specifying, they are an axis and a center of rotation with the axis passing through the center of rotation. An axis is defined by a direction vector and the center of rotation a position vector. In Babylon.js when a mesh is created the center of rotation defaults to the the local origin of the mesh which is the mesh's position. Using [rotation](/babylon101/Position#rotation) the axis is specified through the Euler angles alpha, beta, gamma, and using [rotationQuaternion](/features/Position,_Rotation,_Scaling#rotationquaternion) and [rotate](/features/Position,_Rotation,_Scaling#rotate) it is specified explicitly. 
 
-There are three ways to change a center of rotation different to the local origin, these are using TransformNode, a parent and [setting a pivot](/How_To/Pivots).
+There are three ways to change a center of rotation different to the local origin, these are using a [TransformNode](/How_To/TransformNode), a parent and [setting a pivot](/How_To/Pivots).
 
 Together an axis and a center of rotation define a straight line in space and in the following animated playgrounds this line is shown in white. The asymmetric pilot mesh is used to demonstrate the rotation.
 
