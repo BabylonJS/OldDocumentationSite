@@ -28,7 +28,7 @@ Where it is possible two playground examples will be given, the first creating a
 ## Lines
 Creates a continguous series of line segments from a list of points.
 You must set at least the _points_ option.
-On update, you must set the _points_ and _instance_ options.
+On update, you must set the _points_ and _instance_ options. You can also set the _colors_ option if previously set at construction time.  
 
 Example :
 ```javascript
@@ -44,6 +44,8 @@ option|value|default value
 points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
+colors|_(Color4[])_ array of Color4, each point color|null
+useVertexColor|_(boolean)_ true if the alpha values from the former array must be used|false
 
 [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#64)
 [Playground Update of the Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
@@ -91,7 +93,7 @@ lines.color = new BABYLON.Color3(1, 0, 0);
 ## Line System  
 A system of non-contiguous lines that are independent of each other and may exist in their own space.
 You must set at least the _lines_ option.
-On update, you must set the _lines_ and _instance_ options.
+On update, you must set the _lines_ and _instance_ options. You can also set the _colors_ option if previously set at construction time.  
 
 Example :
 ```javascript
@@ -108,6 +110,8 @@ option|value|default value
 lines|_(Vector3[])_  array of lines, each line being an array of successive Vector3 **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
+colors|_(Color4[])_ array of Color4, each point color|null
+useVertexColor|_(boolean)_ true if the alpha values from the former array must be used|false
 
 [A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#66)
 [A Playground Update of the Linesystem](http://www.babylonjs-playground.com/#165IV6#10)
