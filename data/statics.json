@@ -465,6 +465,11 @@
           "filename": "Skybox"
         },
         {
+          "title": "Background Material",
+          "level": 2,
+          "filename": "BackgroundMaterial"
+        },
+        {
           "title": "Master Physically Based Rendering",
           "level": 3,
           "filename": "Physically_Based_Rendering_Master"
@@ -478,6 +483,11 @@
           "title": "Use Lens Flares",
           "level": 3,
           "filename": "How_to_use_Lens_Flares"
+        },
+        {
+          "title": "How to use Reflection Probes",
+          "level": 3,
+          "filename": "How_to_use_Reflection_probes"
         },
         {
           "title": "How to use Reflection Probes",
