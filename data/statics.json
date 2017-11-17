@@ -653,6 +653,10 @@
         {
           "title": "Create a Procedural Texture for the Procedural Textures Library",
           "filename": "How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary"
+        },
+        {
+          "title": "Write a Playground Based Tutorial",
+          "filename": "playground_tutorials"
         }
       ]
     },

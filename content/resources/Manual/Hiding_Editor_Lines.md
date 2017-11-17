@@ -24,7 +24,7 @@ Context code will be used to add axes to show the world and local frames of refe
 
 ## Basic Code
 
-The usual template form of setting up the playground with , scene, camer and lights
+The usual template form of setting up the playground with , scene, camera and lights
 ```javascript
 var createScene = function() {
     var scene = new BABYLON.Scene(engine);
