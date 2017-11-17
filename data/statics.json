@@ -925,6 +925,14 @@
         {
           "title": "Vertex Normals",
           "filename": "Normals"
+        },
+        {
+          "title": "Starter Guide for PBT",
+          "filename": "Hiding_Editor_Lines"
+        },
+        {
+          "title": "Intermediate Guide for PBT",
+          "filename": "PBT_Writing"
         }
       ]
     },

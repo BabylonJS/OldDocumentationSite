@@ -7,12 +7,12 @@ This type of playground takes a student step by step through a feature of Babylo
 
 Below are two PBT examples to give you an idea of what is possible.
 
-ex1  
-ex2
+[Playground Tutorial Example - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
+[Playground Tutorial Example - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
 
-However since they are uneditable it is not possible to see how they are written. Their full code together with documentation on writing them are provide as examples of creating PBTs in the links below.
+However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are below.
 
-Link 1  
+[Starter Guide](/resources/hiding_editor_lines)
 Link 2
 
 # Creating a PBT

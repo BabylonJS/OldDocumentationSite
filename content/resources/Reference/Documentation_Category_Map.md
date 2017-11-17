@@ -249,6 +249,8 @@
 [Playground, Available Textures](/resources/Playground_Textures)  
 [Playground, Introduction](/features/Playground)  
 [Playgrounds, Interesting Ones](/resources/playgrounds)  
+[Playgrounds, PBT Starter](/resources/Hiding_Editor_Lines)  
+[Playgrounds, PBT Intermediate](/resources/PBT_Writing)  
 [Point Light](/babylon101/Lights#the-point-light)  
 [Polygon Mesh Builder](/How_To/PolygonMeshBuilder)  
 [Polyhedral Meshes](/How_To/Polyhedra_Shapes)  
