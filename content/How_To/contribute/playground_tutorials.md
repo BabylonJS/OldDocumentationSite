@@ -12,8 +12,8 @@ Below are two PBT examples to give you an idea of what is possible.
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are below.
 
-[Starter Guide](/resources/hiding_editor_lines)
-Link 2
+[Starter Guide](/resources/hiding_editor_lines)  
+[Intermediate Guide](/resources/PBT_Writing)
 
 # Creating a PBT
 To help in the coding of a PBT several functions are provided to manipulate the text in the playground editor and to create basic dialogue boxes using the Babylon.GUI. While editor manipulation needs the functions provided any method of writing a user interface that works with Babylon.js is possible. 
@@ -243,10 +243,10 @@ git clone https://github.com/BabylonJS/Babylon.js.git
 In the Babylon.js directory install gulp globally  
 ![gulp install](/img/how_to/pbt1.png)
 
-Change to the Playground directory and npm install
+Change to the Playground directory and npm install  
 ![monaco install](/img/how_to/pbt2.png)
 
-Change to the Tools/Gulp directory and npm install
+Change to the Tools/Gulp directory and npm install  
 ![npm install](/img/how_to/pbt3.png)
 
 To write a tutorial use your favourite IDE (VSCode for example) to open the Playground directory. Inside this there is a `scripts` folder, save your Javascript tutorial code in this folder. Also in this folder is a `scripts.txt` file that lists all the files in the `scripts` folder and makes then accessible to the *Scenes* drop down list at the top right of the playground. Add your file name to the list. Now you can write and edit your file, run a local version of the playground and by choosing it from the list test it. 
