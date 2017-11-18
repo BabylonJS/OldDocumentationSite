@@ -207,9 +207,14 @@
           "filename": "PolygonMeshBuilder"
         },
         {
-          "title": "How To Create a Ribbon",
+          "title": "Create a Ribbon",
           "level": 2,
           "filename": "Ribbon_Tutorial"
+        },
+        {
+          "title": "Use a TransformNode",
+          "level": 2,
+          "filename": "TransformNode"
         },
         {
           "title": "Highlight a Mesh",
@@ -465,6 +470,11 @@
           "filename": "Skybox"
         },
         {
+          "title": "Background Material",
+          "level": 2,
+          "filename": "BackgroundMaterial"
+        },
+        {
           "title": "Master Physically Based Rendering",
           "level": 3,
           "filename": "Physically_Based_Rendering_Master"
@@ -478,6 +488,11 @@
           "title": "Use Lens Flares",
           "level": 3,
           "filename": "How_to_use_Lens_Flares"
+        },
+        {
+          "title": "How to use Reflection Probes",
+          "level": 3,
+          "filename": "How_to_use_Reflection_probes"
         },
         {
           "title": "How to use Reflection Probes",
@@ -638,6 +653,10 @@
         {
           "title": "Create a Procedural Texture for the Procedural Textures Library",
           "filename": "How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary"
+        },
+        {
+          "title": "Write a Playground Based Tutorial",
+          "filename": "playground_tutorials"
         }
       ]
     },
@@ -765,6 +784,10 @@
         {
           "title": "How to use Babylon.js with ReactJS",
           "filename": "BabylonJS_and_ReactJS"
+        },
+        {
+          "title": "How to use Babylon.js inside React Native",
+          "filename": "BabylonJS_and_React_Native"
         }
       ]
     },
@@ -910,6 +933,14 @@
         {
           "title": "Vertex Normals",
           "filename": "Normals"
+        },
+        {
+          "title": "Starter Guide for PBT",
+          "filename": "Hiding_Editor_Lines"
+        },
+        {
+          "title": "Intermediate Guide for PBT",
+          "filename": "PBT_Writing"
         }
       ]
     },

@@ -51,6 +51,8 @@
 /overviews/customize_debug_layer                      /How_To/customize_debug_layer
 /overviews/Observables                                /How_To/Observables
 
+/overviews/Documentation_Category_Map                 /resources/Documentation_Category_Map
+
 /tutorials/animations                                    /babylon101/animations
 /tutorials/cameras                                       /babylon101/cameras
 /tutorials/Cameras,_Mesh_Collisions_and_Gravity          /babylon101/Cameras,_Mesh_Collisions_and_Gravity
