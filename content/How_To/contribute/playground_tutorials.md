@@ -90,11 +90,23 @@ _replaceText_ inserts text in the given line from the start to end position.
 ```javascript
 pbt.replaceText(12, 3, 8, "WORLD"); // On line 12 replaces the characters from 3 to 8 with WORD
 ```
-_hideLines_ hides the lines passed as start and end pairs in an array. Each call to _hideLines_ only hides those lines given in the array. 
+_hideLines_ hides the lines passed as start and end pairs in an array. Each call to _hideLines_ only hides those lines given in the array all other lines become shown. 
 ```javascript
-pbt.hideLines([27, 27]); //hides line 27 only
-pbt.hideLines([3, 15]); //hides lines 3 to 15 inclusive only
-pbt.hide([10, 17, 25, 31]); //hides lines 10 to 17 and lines 25 only
+pbt.hideLines([27, 27]); //hides line 27 only, all other lines are displayed
+pbt.hideLines([3, 15]); //hides lines 3 to 15 inclusive only, all other lines are displayed
+pbt.hideLines([10, 17, 25, 31]); //hides lines 10 to 17 and lines 25 to 31 only, all other lines are displayed
+```
+_hideRange_ hides the range of lines passed as start and end pairs in an array. The method _hideRange_ adds the range of lines given to lines already hidden.  
+```javascript
+pbt.hideRange([27, 27]); //hides line 27 together with already hidden lines
+pbt.hideRange([3, 15]); //hides lines 3 to 15 together with already hidden lines
+pbt.hideRange([10, 17, 25, 31]); //hides lines 10 to 17 and lines 25  to 31 together with already hidden lines
+```
+_showRange_ displays the range of lines passed as start and end pairs in an array. The method _showRange_ only affects the given line range.
+```javascript
+pbt.showRange([27, 27]); //displays line 27 together with already displayed lines
+pbt.showRange([3, 15]); //displays lines 3 to 15 inclusive together with already displayed lines
+pbt.showRange([10, 17, 25, 31]); //displays lines 10 to 17 and lines 25 to 31 together with already displayed lines
 ```
 ### Line Fetch
 
