@@ -5,7 +5,7 @@ PG_TITLE: Background Material
 # Background Material
 
 ## Introduction
-As fully litten materials are not always desired in a scene setup. We are introducing a new unlit and fast material to help addressing the constraints you may have with standard or PBT materials.
+As fully lit materials are not always desired in a scene. We are introducing a new unlit and fast material to help addressing the constraints you may have with standard or PBR materials.
 
 The background material is fully unlit but can still receive shadows or be subject to image processing information. This makes it the best fit to use as a skybox or ground material.
 
@@ -71,7 +71,7 @@ backgroundMaterial.reflectionTexture = mirror;
 You can see a [live version here](https://www.babylonjs-playground.com/#G3HSAW#9)
 
 ### Reflection Fresnel
-As we can both use reflection and diffuse, it would feel more real to see more the reflection at grazing angles:
+As we can both use reflection and diffuse, reflection fresnel can help feeling more immersed in the experience:
 
 ```javascript
 var backgroundMaterial = new BABYLON.BackgroundMaterial("backgroundMaterial", scene);
@@ -114,5 +114,5 @@ This can help faking light spots color independantly for instance.
 
 You can see a [live version here](https://www.babylonjs-playground.com/#G3HSAW#11)
 
-## Environemt
+## Environment
 Going further, you can take a look at the [Environment documentation](/babylon101/babylon101/Environment.md#skybox-and-ground) where you can find information on how to speed up the setup of your scene with a skybox and a ground.
