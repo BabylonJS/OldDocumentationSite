@@ -210,6 +210,45 @@ The first variable is the direction and amount of impulse to apply. The second i
 Playground example -  https://www.babylonjs-playground.com/#26LQEZ
 Playground example with a different position of the impulse, giving the ball a "spin" -  https://www.babylonjs-playground.com/#26LQEZ#1
 
+#### Radial explosion impulse/force & gravitational fields
+
+You have the ability to create radial explosions & gravitational forces. 
+
+The forces are never applied to impostors that have mass equal 0 (the ground for example).
+
+```javascript
+var physicsHelper = new BABYLON.PhysicsHelper(scene);
+
+var origin = BABYLON.Vector3(0, 0, 0);
+var radius = 10;
+var strength = 20;
+var fallof = BABYLON.PhysicsRadialImpulseFallof.Linear; // or BABYLON.PhysicsRadialImpulseFallof.Constant
+
+var explosionEvent = physicsHelper.applyRadialExplosionImpulse( // or .applyRadialExplosionForce
+    origin,
+    radius,
+    strength,
+    fallof
+);
+
+// or
+
+var gravitationalFieldEvent = physicsHelper.gravitationalField(
+    origin,
+    radius,
+    strength,
+    fallof
+);
+gravitationalFieldEvent.enable(); // need to call, if you want to activate the gravitational field.
+setTimeout(function (gravitationalFieldEvent) { gravitationalFieldEvent.disable(); }, 3000, gravitationalFieldEvent);
+```
+
+In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.cleanup()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `radialSphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
+
+*For a more detailed explanation, please take a look at the playground example below*
+
+Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#2
+
 #### Collision callbacks
 
 You can add a callback function that will be called when an impostor collides with another impostor. 
