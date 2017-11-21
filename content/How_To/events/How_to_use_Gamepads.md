@@ -16,47 +16,51 @@ gamepadManager.onGamepadDisconnectedObservable.add((gamepad, state)=>{
 ```
 
 # Gamepad events
-Once a gamepad is available event listeners can be added to handle the gamepad's inputs
+Once a gamepad is available, event listeners can be added to handle the gamepad's inputs
 ```javascript
-gamepad.onButtonDownObservable.add((button, state)=>{
-    //Button has been pressed
-    console.log(button)
-})
-gamepad.onleftstickchanged((values)=>{
-    //Left stick has been moved
-    console.log(values.x+" "+values.y)
-})
+gamepadManager.onGamepadConnectedObservable.add((gamepad, state)=>{
+    gamepad.onButtonDownObservable.add((button, state)=>{
+        //Button has been pressed
+        console.log(button)
+    })
+    gamepad.onleftstickchanged((values)=>{
+        //Left stick has been moved
+        console.log(values.x+" "+values.y)
+    })
+}
 ```
 
 # Gamepad types
-Depending on the type of controller handle any of it's unique properties:
+Depending on the type of controller, handle any of it's unique properties:
 ```javascript
-if (gamepad instanceof BABYLON.Xbox360Pad) {
-    gamepad.onButtonDownObservable.add((button, state)=>{
-        console.log(BABYLON.Xbox360Button[button])
-    })
-}
-if (gamepad instanceof BABYLON.PoseEnabledController) {
-    gamepad.onMainButtonStateChangedObservable.add((button, state)=>{
-        console.log(button.value)
-    })
+gamepadManager.onGamepadConnectedObservable.add((gamepad, state)=>{
+    if (gamepad instanceof BABYLON.Xbox360Pad) {
+        gamepad.onButtonDownObservable.add((button, state)=>{
+            console.log(BABYLON.Xbox360Button[button])
+        })
+    }
+    if (gamepad instanceof BABYLON.PoseEnabledController) {
+        gamepad.onMainButtonStateChangedObservable.add((button, state)=>{
+            console.log(button.value)
+        })
+        var position = gamepad.devicePosition
+        var rotation = gamepad.deviceRotationQuaternion
+    }
 }
 ```
 
 # Check a gamepad's current state
 At any time, a gamepad's current state can be checked with the gamepads properties:
 ```javascript
-if(gamepad && gamepad instanceof BABYLON.Xbox360Pad){
-    if(gamepad.buttonA){
-        sphere.position.y+=0.05
+scene.registerBeforeRender(function () {
+    if(gamepad instanceof BABYLON.Xbox360Pad){
+        if(gamepad.buttonA){
+            sphere.position.y+=0.05
+        }
+        sphere.position.x+=gamepad.leftStick.x*0.05
     }
-    sphere.position.x+=gamepad.leftStick.x*0.05
-}else if(gamepad && gamepad instanceof BABYLON.GenericController){
-    sphere.position.x+=gamepad.leftStick.x*0.05
-}else if(gamepad && gamepad instanceof BABYLON.PoseEnabledController){
-    sphere.position.x += gamepad.leftStick.x*0.05
 }
 ```
 
-[Playground Example](http://playground.babylonjs.com/#U3XJTB#2)
+[Playground Example](http://playground.babylonjs.com/#U3XJTB#4)
 
