@@ -115,4 +115,4 @@ This can help faking light spots color independantly for instance.
 You can see a [live version here](https://www.babylonjs-playground.com/#G3HSAW#11)
 
 ## Environment
-Going further, you can take a look at the [Environment documentation](/babylon101/babylon101/Environment.md#skybox-and-ground) where you can find information on how to speed up the setup of your scene with a skybox and a ground.
+Going further, you can take a look at the [Environment documentation](babylon101/environment#skybox-and-ground) where you can find information on how to speed up the setup of your scene with a skybox and a ground.
