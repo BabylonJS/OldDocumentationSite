@@ -179,54 +179,37 @@ var pbt = new PBT();
 The results of these functions called by the GUI buttons depend whether the the button has just been checked or unchecked. The variables 'boxHideCode' and 'animHideCode' keep the next state of the buttons. They also contain 'Sculpt' code.
 ```javascript
     var hideBoxCode = function() {
-    var ranges = [];
-    if(boxHideCode) {
-         ranges.push(13, 28); // Sculpt Code
-         if(!animHideCode) {
-            ranges.push(37, 48); // Sculpt Code
-         }
+        var ranges = [13, 28];
+        if(boxHideCode) {
+            pbt.hideRange(ranges); //Sculpt code
+        }
+        else {
+            pbt.showRange(ranges); //Sculpt code
+        }
+        boxHideCode = !boxHideCode;
     }
-    else {
-         if(!animHideCode) {
-            ranges.push(37, 48); // Sculpt Code
-         }
-    }
-    ranges.push(30, 35, 50, 178); //Sculpt Code
-    pbt.hideLines(ranges);  // Sculpt Code
-    boxHideCode = !boxHideCode;
-}
 
-var hideAnimCode = function() {
-    var ranges = [];
-    if(animHideCode) {
-        ranges = [];
-        if(!boxHideCode) {
-            ranges.push(13, 28); // Sculpt Code
-         }
-        ranges.push(37, 48); // Sculpt Code
+    var hideAnimCode = function() {
+        var ranges = [37, 48];
+        if(animHideCode) {
+            pbt.hideRange(ranges); //Sculpt code
+        }
+        else {
+            pbt.showRange(ranges); //Sculpt code
+        }
+        animHideCode = !animHideCode;
     }
-    else {
-        ranges = [];
-        if(!boxHideCode) {
-            ranges.push(13, 28); // Sculpt Code
-         }
-    }
-    ranges.push(30, 35, 50, 178); // Sculpt Code
-    pbt.hideLines(ranges); // Sculpt Code
-    animHideCode = !animHideCode;
-}
 ```
 
 GUI creation Code
 ```javascript
 var boxH = new pbt.ButtonGroup("Box Code");
 var boxHideCode = true;
-var animHideCode = false;
-boxH.addButton("Hide Box Code", hideBoxCode, true);
+boxH.addButton("Hide", hideBoxCode, true);
 
 var animH = new pbt.ButtonGroup("Anim Code");
-animHideCode = true; 
-animH.addButton("Hide Anim Code", hideAnimCode, true);
+var animHideCode = true; 
+animH.addButton("Hide", hideAnimCode, true);
 
 var selector = new pbt.SelectionDialog({groups:[boxH, animH]});
 ```
@@ -234,16 +217,16 @@ var selector = new pbt.SelectionDialog({groups:[boxH, animH]});
 ## Sculpt Code
 ```javascript
 pbt.clearDecorLines();
-pbt.setDecorLines([29, 29, 37, 48]);
+    pbt.setDecorLines([29, 29, 37, 48]);
         
-pbt.hideLines([13, 28, 30, 177]);
+pbt.hideLines([13, 28, 30, 35, 37, 48, 49, 162]);
 pbt.hideMenu();
 ```
 
 # Live Example
 
 The working playground using the above code.
-[Playground Tutorial Example - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
+[Playground Tutorial Example - Hiding Lines](https://www.babylonjs-playground.com/#Y33LF1)
 
 # Further Reading
 
