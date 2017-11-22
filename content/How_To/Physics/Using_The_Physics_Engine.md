@@ -114,13 +114,17 @@ Options is a JSON. The interface is as follows:
         friction?: number;
         restitution?: number;
         nativeOptions?: any;
+        ignoreParent?: boolean;
+        disableBidirectionalTransformation?: boolean;
     }
 ```
 
 * mass: The only mandatory parameters is mass, which is the object's mass in kg. A `0` as a value will create a static impostor - good for floors.
-* friction: is the impostor's friction when colliding against other impostors. 
+* friction: is the impostor's friction when colliding against other impostors.
 * restitution: is the amount of force the body will "give back" when colliding. A low value will create no bounce, a value of 1 will be a very bouncy interaction.
 * nativeOptions: is a JSON with native options of the selected physics plugin. More about it in the advanced tutorial.
+* ignoreParent: when using babylon's parenting system, the physics engine will use the compound system. To avoid using the compound system, set this flag to true. More about it in the advanced tutorial.
+* disableBidirectionalTransformation: will disable the bidirectional transformation update. Setting this will make sure the physics engine ignores changes made to the mesh's position and rotation (and will increase performance a bit)
 
 #### scene
 
@@ -278,8 +282,8 @@ Notice that the callback will be executed each and every time both impostors col
 
 #### What are joints
 
-To connect two impostors together, you can now use joints. 
-Think of the joint as a limitation (or constraint) of either rotation or position (or both) between two impostors. 
+To connect two impostors together, you can now use joints.
+Think of the joint as a limitation (or constraint) of either rotation or position (or both) between two impostors.
 Each engine supports different types of joints (which usually have different names as well):
 
 | Joint Type | Cannon.js | Oimo.js | Energy.js | Notes   |
@@ -291,8 +295,6 @@ Each engine supports different types of joints (which usually have different nam
 | Slider | ---- | Slider | Slider | A joint allowing changing the position along a single axis |
 
 Cannon also has a special Spring joint that will simulate a spring connected between two impostors.
-
-*A further explanation of the joints (including illustrations) is soon to be written.*
 
 #### Adding a new joint
 
@@ -324,6 +326,30 @@ Babylon has 3 help-classes to add joints:
 DistanceJoint playground -  https://www.babylonjs-playground.com/#26QVLZ 
 SpringJoint example -  https://www.babylonjs-playground.com/#1BHF6C
 
+#### Setting the joint data
+
+The physics joint data interface looks like this:
+
+```javascript
+interface PhysicsJointData {
+    mainPivot?: Vector3;
+    connectedPivot?: Vector3;
+    mainAxis?: Vector3,
+    connectedAxis?: Vector3,
+    collision?: boolean
+    nativeParams?: any; //Native Oimo/Cannon data
+}
+```
+
+* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: http://www.babylonjs-playground.com/#BGUY#3
+* connectedPivot: is the point on the connected mesh (the mesh creating the joint) to which the constraint will be connected.
+* mainAxis: the axis on the main object on which the constraint will work. http://www.babylonjs-playground.com/#BGUY#5
+* connectedAxis: the axis on the connected object on which the constraint will work.
+* collision: should the two connected objects also collide with each other. The objects are sometimes forced to be close by and this can prevent constant collisions between them.
+* nativParams: further parameters that will be delivered to the constraint without a filter. Those are native parameters of the specific physics engine you chose.
+
+You can read further about joint data in this blog article : https://blog.raananweber.com/2016/09/06/webgl-car-physics-using-babylon-js-and-oimo-js/
+
 ### Interaction with the physics engine
 
 Using `scene.getPhysicsEngine()`, you can get access to functions that will influence the engine directly.
@@ -331,7 +357,7 @@ Using `scene.getPhysicsEngine()`, you can get access to functions that will infl
 #### Setting the time step
 
 The physics engine assumes a certain frame-rate to be taken into account when calculating the interactions.
-The time between each step can be changed to "accelerate" or "slow down" the physics interaction. 
+The time between each step can be changed to "accelerate" or "slow down" the physics interaction.
 Here is the same scene with different time steps - accelerating and slowing down:
 
 Default time step -  https://www.babylonjs-playground.com/#2B84TV
