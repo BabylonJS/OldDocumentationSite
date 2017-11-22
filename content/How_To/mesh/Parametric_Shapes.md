@@ -45,7 +45,7 @@ points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 colors|_(Color4[])_ array of Color4, each point color|null
-useVertexColor|_(boolean)_ true if the alpha values from the former array must be used|false
+useVertexColor|_(boolean)_ false if the alpha blending is not required (faster)|true
 
 [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#64)
 [Playground Update of the Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
@@ -111,7 +111,7 @@ lines|_(Vector3[])_  array of lines, each line being an array of successive Vect
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
 colors|_(Color4[])_ array of Color4, each point color|null
-useVertexColor|_(boolean)_ true if the alpha values from the former array must be used|false
+useVertexColor|_(boolean)_ false if the alpha blending is not required (faster)|true
 
 [A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#66)
 [A Playground Update of the Linesystem](http://www.babylonjs-playground.com/#165IV6#10)
