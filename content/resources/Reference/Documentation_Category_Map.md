@@ -137,6 +137,7 @@
 <a name = "G">**G**</a><span style = "float:right">[top](#top)</span>
 
 [glTF File, Loading](/How_To/glTF)  
+[Gamespads, Using](how_to/how_to_use_gamepads)  
 [Gradient, Material](/extensions/Gradient)  
 [Grass, Procedural Texture](/extensions/GrassProceduralTexture)  
 [Grid, Material](/extensions/Grid)  
