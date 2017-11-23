@@ -19,29 +19,29 @@ The size parameter is very versatile, it can be a simple number or an object.
 
 ## Examples of Results
 
-Starting with a view of part of the screen showing the canvas there then follows a sequence of images taken usen CreateScreenshot
+Starting with a view of part of the screen showing the canvas there then follows a sequence of images taken using CreateScreenshot
 
-![Actual Screen](/img/how_to/scene/shss.png)
+![Actual Screen](/img/how_to/scene/shss.png)  
 View of Part of Screen Showing Canvas Used
 
-![size = 200](/img/how_to/scene/sh200x200.png)
+![size = 200](/img/how_to/scene/sh200x200.png)  
 `BABYLON.Tools.CreateScreenshot(engine, camera, 200)`
 
-![size = 800](/img/how_to/scene/sh800x800.png)
+![size = 800](/img/how_to/scene/sh800x800.png)  
 `BABYLON.Tools.CreateScreenshot(engine, camera, 800)`
 
-![size = 1600](/img/how_to/scene/sh1600x1600.png)
+![size = 1600](/img/how_to/scene/sh1600x1600.png)  
 `BABYLON.Tools.CreateScreenshot(engine, camera, 1600)`
 
-![size = {width:800, height:400}](/img/how_to/scene/sh800x400.png)
+![size = {width:800, height:400}](/img/how_to/scene/sh800x400.png)  
 `BABYLON.Tools.CreateScreenshot(engine, camera, {width:800, height:400})`
 
 Precision can be used as a multiplier of the screen resolution.
 
-![size = {precision: 0.5}](/img/how_to/scene/sh400p05.png)
+![size = {precision: 0.5}](/img/how_to/scene/sh400p05.png)  
 `BABYLON.Tools.CreateScreenshot(engine, camera, {precision: 0.5})`
 
-![size = {precision: 2}](/img/how_to/scene/sh400p20.png)
+![size = {precision: 2}](/img/how_to/scene/sh400p20.png)  
 `BABYLON.Tools.CreateScreenshot(engine, camera, {precision: 2})`
 
 ## Pixel Density
