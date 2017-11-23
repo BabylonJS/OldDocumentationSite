@@ -67,7 +67,7 @@ Once the conversion done, let's see the custom options available on this version
 * **useAmbientInGrayScale**: the ambient occlusion is forced to read only from the red channel of the ambient texture or from the red channel of the metallic texture.
 
 ## From SpecularGlossiness To PBRMaterial
-To begin with the SpecularGlossiness you can start with this [documentation](/features/physically_based_rendering#pbrspecularglossinessmaterial).
+To begin with the SpecularGlossiness you can start with this [documentation](/How_To/physically_based_rendering#pbrspecularglossinessmaterial).
 
 The exact opposite of the previous chapter has to be followed in order to setup the PBRMaterial in Specular/Glossiness mode. The following properties need to be null or undefined:
 * metallic
@@ -201,4 +201,4 @@ Now, increasing the light radius makes this dot wider as you can see on this [De
 This uses internally a lot of approximation like Tan(theta) is almost theta for small angles so if you try to put bigger radius than a tenth of the light distance you will not see the desired effect.
 
 ## Shadows (as the standard material)
-Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/How_To);
+Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/babylon101/shadows);

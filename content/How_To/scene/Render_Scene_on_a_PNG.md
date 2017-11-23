@@ -24,16 +24,16 @@ Starting with a view of part of the screen showing the canvas there then follows
 ![Actual Screen](/img/how_to/scene/shss.png)
 View of Part of Screen Showing Canvas Used
 
-![size = 200](/img/how_to/scene/ss200x200.png)
+![size = 200](/img/how_to/scene/sh200x200.png)
 `BABYLON.Tools.CreateScreenshot(engine, camera, 200)`
 
-![size = 800](/img/how_to/scene/ss800x800.png)
+![size = 800](/img/how_to/scene/sh800x800.png)
 `BABYLON.Tools.CreateScreenshot(engine, camera, 800)`
 
-![size = 1600](/img/how_to/scene/ss1600x1600.png)
+![size = 1600](/img/how_to/scene/sh1600x1600.png)
 `BABYLON.Tools.CreateScreenshot(engine, camera, 1600)`
 
-![size = {width:800, height:400}](/img/how_to/scene/ss800x400.png)
+![size = {width:800, height:400}](/img/how_to/scene/sh800x400.png)
 `BABYLON.Tools.CreateScreenshot(engine, camera, {width:800, height:400})`
 
 Precision can be used as a multiplier of the screen resolution.
