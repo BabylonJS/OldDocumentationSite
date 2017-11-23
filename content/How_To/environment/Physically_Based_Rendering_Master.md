@@ -5,7 +5,7 @@ PG_TITLE: How To Master the PBR Materials
 # How To Master the PBR Materials
 
 ## Introduction
-After following the [PBR Introduction](/features/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
+After following the [PBR Introduction](/How_To/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
@@ -16,10 +16,10 @@ This will be the only picture of the documentation. As a **real sample** would b
 The entire documentation should help you deal with most of the PBR Material setup.
 
 ## How to install
-As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](/How_To/Creating_a_Basic_Scene) in order to create your first page using the framework.
+As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](/babylon101/first) in order to create your first page using the framework.
 
 ## Why
-After looking at the [PBR Introduction](/features/Physically_Based_Rendering) you may want to gain more control or use more features in your material setup like:
+After looking at the [PBR Introduction](/How_to/Physically_Based_Rendering) you may want to gain more control or use more features in your material setup like:
 * Refraction
 * Standard Light Falloff
 * LightMaps
@@ -31,7 +31,7 @@ The **PBRMaterial** is here to address this concern and can work in either a Spe
 
 ## From MetallicRoughness To PBRMaterial
 
-To start with the MetallicRoughness, you can take a look at the [documentation](/features/physically_based_rendering#pbrmetallicroughnessmaterial).
+To start with the MetallicRoughness, you can take a look at the [documentation](/How_To/physically_based_rendering#pbrmetallicroughnessmaterial).
 
 In order to setup the PBRMaterial in Metallic/Roughness mode, at least one of the following properties has to be set (else it by default works in Specular/Glossiness):
 * metallic
