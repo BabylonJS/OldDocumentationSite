@@ -30,6 +30,8 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 Here is an example of a simple fullscreen mode GUI:  https://www.babylonjs-playground.com/#XCPP9Y#1
 
+By default the ratio between rendering resolution and texture size is 1. But you can force it to different values with `advancedTexture.renderScale`. This could be useful if you want crisper texts for instance.
+
 Foreground & background:
 The fullscreen mode can be rendered in either the foreground or the background of a scene.
 It can be set like this:
