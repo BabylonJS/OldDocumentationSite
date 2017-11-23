@@ -549,6 +549,11 @@
           "filename": "Using_The_Physics_Engine"
         },
         {
+          "title": "Using advanced physics features",
+          "level": 2,
+          "filename": "Using_Advanced_Physics_Features.md"
+        },
+        {
           "title": "Add Your Own Physics Engine Plugin",
           "level": 3,
           "filename": "Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js"
