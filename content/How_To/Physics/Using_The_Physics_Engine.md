@@ -4,7 +4,7 @@ PG_TITLE: How to Use a Physics Engine
 
 # How to Use a Physics Engine
 
-## Introduction 
+## Introduction
 
 Babylon.js has a plugin system for physics engines that enables the user to add physics interactions to the scene's objects.
 Unlike the internal collision system, a physics engine calculates objects'  body dynamics and emulates "real-life" interactions between them. So if two objects collide, they will "bounce" off one another, just like you would expect from a real-life object.
@@ -13,13 +13,13 @@ Babylon.js' plugin system allowed us to use well established physics engines and
 
 This tutorial will show the basic usage of the physics system.
 
-## What physics engine are integrated?
+## What physics engine are integrated
 
 There are plugins for 3 physics engines:
 
 1. Cannon.js - a wonderful physics engine written entirely in JavaScript
-2. Oimo.js - a JS port of the lightweight Oimo physics engine
-3. Energy.js - (Soon to go public) - a JS port of a C++ physics engine.
+1. Oimo.js - a JS port of the lightweight Oimo physics engine
+1. Energy.js - (Not yet publicly available) - a JS port of a C++ physics engine
 
 Each engine has its own features and its own way of calculating the body dynamics. We at Babylon.js tried collecting the common usage of all engines and provide an easy-to-use interface to them.
 
@@ -35,7 +35,9 @@ var gravityVector = new BABYLON.Vector3(0,-9.81, 0);
 var physicsPlugin = new BABYLON.CannonJSPlugin();
 scene.enablePhysics(gravityVector, physicsPlugin);
 ```
+
 Both parameters are optional. The default parameters are shown in the example. This is the same as calling:
+
 ```javascript
 scene.enablePhysics();
 ```
@@ -51,6 +53,7 @@ Calling this function will create a new BABYLON.PhysicsEngine object that will b
 The physics engine is now enabled and is running during the render loop.
 
 ### Impostors
+
 To allow interaction between objects, the physics engines use an impostor, which is a simpler representation of a complex object. 
 An impostor, as a rule, is a rigid body - meaning it cannot be changed during interaction. A sphere will always have the same radius, a box will always have the same length. If you want to change the object, a new impostor will be created.
 
@@ -77,9 +80,10 @@ new BABYLON.PhysicsImpostor(object: IPhysicsEnabledObject, type: number, options
 ```
 
 #### object
+
 You will notice that I keep on writing object and not mesh, and that the first parameter is not a mesh but an interface (IPhysicsEnabledObject). It is possible to assign an impostor to any Babylon object that has at least two parameters:
 
-```
+```javascript
 position: BABYLON.Vector3;
 rotationQuaternion: BABYLON.Quaternion
 ```
@@ -87,6 +91,7 @@ rotationQuaternion: BABYLON.Quaternion
 An AbstractMesh will be the first choice, of course. But a Solid Particle also applies, and so does a light or certain cameras. I will show how to use an impostor on different object types in the advanced tutorial.
 
 #### type
+
 Type can be one of the following:
 
 ```javascript
@@ -100,6 +105,7 @@ BABYLON.PhysicsImpostor.HeightmapImpostor;
 ```
 
 #### options
+
 Options is a JSON. The interface is as follows:
 
 ```javascript
@@ -108,13 +114,17 @@ Options is a JSON. The interface is as follows:
         friction?: number;
         restitution?: number;
         nativeOptions?: any;
+        ignoreParent?: boolean;
+        disableBidirectionalTransformation?: boolean;
     }
 ```
 
 * mass: The only mandatory parameters is mass, which is the object's mass in kg. A `0` as a value will create a static impostor - good for floors.
-* friction: is the impostor's friction when colliding against other impostors. 
+* friction: is the impostor's friction when colliding against other impostors.
 * restitution: is the amount of force the body will "give back" when colliding. A low value will create no bounce, a value of 1 will be a very bouncy interaction.
 * nativeOptions: is a JSON with native options of the selected physics plugin. More about it in the advanced tutorial.
+* ignoreParent: when using babylon's parenting system, the physics engine will use the compound system. To avoid using the compound system, set this flag to true. More about it in the advanced tutorial.
+* disableBidirectionalTransformation: will disable the bidirectional transformation update. Setting this will make sure the physics engine ignores changes made to the mesh's position and rotation (and will increase performance a bit)
 
 #### scene
 
@@ -140,6 +150,7 @@ ground.physicsImpostor = new BABYLON.PhysicsImpostor(ground, BABYLON.PhysicsImpo
 Playground example:  https://www.babylonjs-playground.com/#BEFOO
 
 ### Further functionality of the Impostor class
+
 In the example above, you noticed I kept a reference of the physics impostor attached to the sphere and the ground. This is not mandatory, but it is recommended to keep a reference of this object in order to interact with the physics body.
 
 The physics impostor holds a set of functions that can be executed on the physics engine's body:
@@ -160,12 +171,13 @@ In this case, the rotation does influence the physics engine due to the geometri
 Simply put, the linear velocity is in charge of updating the object's position. A velocity in any axis will cause a movement in its direction.
 To get the object's liner velocity (a BABYLON.Vector3):
 
-```javscript
+```javascript
 impostor.getLinearVelocity();
 ```
 
 To set the object's linear velocity use:
-```javscript
+
+```javascript
 impostor.setLinearVelocity(new BABYLON.Vector3(0,1,0));
 ```
 
@@ -179,12 +191,12 @@ If the linear velocity was changing the position, the angular velocity is changi
 
 To get the object's angular velocity (a BABYLON.Quaternion):
 
-```javscript
+```javascript
 impostor.getAngularVelocity();
 ```
 
 To set the object's linear velocity use:
-```javscript
+```javascript
 impostor.setAngularVelocity(new BABYLON.Quaternion(0,1,0,0));
 ```
 
@@ -222,13 +234,13 @@ var physicsHelper = new BABYLON.PhysicsHelper(scene);
 var origin = BABYLON.Vector3(0, 0, 0);
 var radius = 10;
 var strength = 20;
-var fallof = BABYLON.PhysicsRadialImpulseFallof.Linear; // or BABYLON.PhysicsRadialImpulseFallof.Constant
+var falloff = BABYLON.PhysicsRadialImpulseFallof.Linear; // or BABYLON.PhysicsRadialImpulseFallof.Constant
 
 var explosionEvent = physicsHelper.applyRadialExplosionImpulse( // or .applyRadialExplosionForce
     origin,
     radius,
     strength,
-    fallof
+    falloff
 );
 
 // or
@@ -237,17 +249,30 @@ var gravitationalFieldEvent = physicsHelper.gravitationalField(
     origin,
     radius,
     strength,
-    fallof
+    falloff
 );
 gravitationalFieldEvent.enable(); // need to call, if you want to activate the gravitational field.
 setTimeout(function (gravitationalFieldEvent) { gravitationalFieldEvent.disable(); }, 3000, gravitationalFieldEvent);
+
+// or
+
+var updraftEvent = physicsHelper.updraft(
+    origin,
+    radius,
+    strength,
+    height,
+    BABYLON.PhysicsUpdraftMode.Center // or BABYLON.PhysicsUpdraftMode.Perpendicular
+);
+updraftEvent.enable();
+setTimeout(function (updraftEvent) { updraftEvent.disable(); }, 5000, updraftEvent);
 ```
 
-In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.dispose()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `radialSphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
+In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.cleanup()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `sphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
 
-*For a more detailed explanation, please take a look at the playground example below*
+*For a more detailed explanation, please take a look at the playground example below.*
 
-Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#3
+Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#4
+Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#2
 
 #### Collision callbacks
 
@@ -268,10 +293,10 @@ Notice that the callback will be executed each and every time both impostors col
 
 ### Physics Joints
 
-#### What are joints?
+#### What are joints
 
-To connect two impostors together, you can now use joints. 
-Think of the joint as a limitation (or constraint) of either rotation or position (or both) between two impostors. 
+To connect two impostors together, you can now use joints.
+Think of the joint as a limitation (or constraint) of either rotation or position (or both) between two impostors.
 Each engine supports different types of joints (which usually have different names as well):
 
 | Joint Type | Cannon.js | Oimo.js | Energy.js | Notes   |
@@ -283,8 +308,6 @@ Each engine supports different types of joints (which usually have different nam
 | Slider | ---- | Slider | Slider | A joint allowing changing the position along a single axis |
 
 Cannon also has a special Spring joint that will simulate a spring connected between two impostors.
-
-*A further explanation of the joints (including illustrations) is soon to be written.*
 
 #### Adding a new joint
 
@@ -298,7 +321,7 @@ impostor.createJoint(otherImpostor, jointType, jointData);
 
 Joint types can be selected from the following enum:
 
-```javscript
+```javascript
 BABYLON.PhysicsJoint.DistanceJoint;
 BABYLON.PhysicsJoint.HingeJoint;
 BABYLON.PhysicsJoint.BallAndSocketJoint;
@@ -316,6 +339,30 @@ Babylon has 3 help-classes to add joints:
 DistanceJoint playground -  https://www.babylonjs-playground.com/#26QVLZ 
 SpringJoint example -  https://www.babylonjs-playground.com/#1BHF6C
 
+#### Setting the joint data
+
+The physics joint data interface looks like this:
+
+```javascript
+interface PhysicsJointData {
+    mainPivot?: Vector3;
+    connectedPivot?: Vector3;
+    mainAxis?: Vector3,
+    connectedAxis?: Vector3,
+    collision?: boolean
+    nativeParams?: any; //Native Oimo/Cannon data
+}
+```
+
+* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: http://www.babylonjs-playground.com/#BGUY#3
+* connectedPivot: is the point on the connected mesh (the mesh creating the joint) to which the constraint will be connected.
+* mainAxis: the axis on the main object on which the constraint will work. http://www.babylonjs-playground.com/#BGUY#5
+* connectedAxis: the axis on the connected object on which the constraint will work.
+* collision: should the two connected objects also collide with each other. The objects are sometimes forced to be close by and this can prevent constant collisions between them.
+* nativParams: further parameters that will be delivered to the constraint without a filter. Those are native parameters of the specific physics engine you chose.
+
+You can read further about joint data in this blog article : https://blog.raananweber.com/2016/09/06/webgl-car-physics-using-babylon-js-and-oimo-js/
+
 ### Interaction with the physics engine
 
 Using `scene.getPhysicsEngine()`, you can get access to functions that will influence the engine directly.
@@ -323,7 +370,7 @@ Using `scene.getPhysicsEngine()`, you can get access to functions that will infl
 #### Setting the time step
 
 The physics engine assumes a certain frame-rate to be taken into account when calculating the interactions.
-The time between each step can be changed to "accelerate" or "slow down" the physics interaction. 
+The time between each step can be changed to "accelerate" or "slow down" the physics interaction.
 Here is the same scene with different time steps - accelerating and slowing down:
 
 Default time step -  https://www.babylonjs-playground.com/#2B84TV
