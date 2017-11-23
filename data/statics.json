@@ -527,6 +527,11 @@
           "filename": "How_to_use_Actions"
         },
         {
+          "title": "Use GamePads",
+          "level": 2,
+          "filename": "How_to_use_Gamepads"
+        },
+        {
           "title": "Handle Events with Observables",
           "level": 2,
           "filename": "Observables"
