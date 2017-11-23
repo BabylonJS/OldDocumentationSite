@@ -125,6 +125,8 @@ sphere.physicsImpostor = new BABYLON.PhysicsImpostor(sphere, BABYLON.PhysicsImpo
 
 The mass will be accumulated. So this single physics body's mass will be 4. `sphere2`'s physics impostor will be "disabled" and will be joined to `sphere`'s impostor, which is the main impostor. To apply impulses, set the liner velocity etc', use `sphere.physicsImpostor`.
 
+https://playground.babylonjs.com/#PRHF00#6
+
 An advanced example of compounds can be seen here - https://playground.babylonjs.com/#5W5B6W#3 . The boxes connected to the disc are connected using Babylon's parenting system.
 
 ### ignoreParent
