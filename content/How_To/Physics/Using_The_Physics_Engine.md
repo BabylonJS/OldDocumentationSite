@@ -234,7 +234,7 @@ var physicsHelper = new BABYLON.PhysicsHelper(scene);
 var origin = BABYLON.Vector3(0, 0, 0);
 var radius = 10;
 var strength = 20;
-var falloff = BABYLON.PhysicsRadialImpulseFallof.Linear; // or BABYLON.PhysicsRadialImpulseFallof.Constant
+var falloff = BABYLON.PhysicsRadialImpulseFalloff.Linear; // or BABYLON.PhysicsRadialImpulseFalloff.Constant
 
 var explosionEvent = physicsHelper.applyRadialExplosionImpulse( // or .applyRadialExplosionForce
     origin,
@@ -267,12 +267,13 @@ updraftEvent.enable();
 setTimeout(function (updraftEvent) { updraftEvent.disable(); }, 5000, updraftEvent);
 ```
 
-In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.cleanup()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `sphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
+In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.dispose()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `sphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
 
 *For a more detailed explanation, please take a look at the playground example below.*
 
-Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#4
-Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#2
+Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#6
+
+Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#3
 
 #### Collision callbacks
 
