@@ -72,14 +72,6 @@ Precision can be used as a multiplier of the screen resolution.
 ![size = {precision: 2}](/img/how_to/scene/sh400p20.png)  
 `BABYLON.Tools.CreateScreenshot(engine, camera, {precision: 2})`
 
-### Pixel Density
-
-The following image of the canvas on screen and the resulting screenshot using 'precision: 8' show that although the image is 8 times larger the pixel density stays the same.
-
-![Screen Canvas](/img/how_to/scene/sbss.png)
-
-![Enlarged Image](/img/how_to/scene/sbp80.png)
-
 
 ## CreateScreenshotUsingRenderTarget
 As for the other method it's done by simply calling this method: `BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, size)`.
@@ -131,6 +123,14 @@ BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera2, 400)
 to produce
 
 ![secondcamera](/img/how_to/scene/fc.png) 
+
+## Pixel Density
+
+The following image of the canvas on screen and the resulting screenshot using 'precision: 8' show that although the image is 8 times larger the pixel density stays the same.
+
+![Screen Canvas](/img/how_to/scene/sbss.png)
+
+![Enlarged Image](/img/how_to/scene/sbp80.png)
 
 
 ## Gif Creation
