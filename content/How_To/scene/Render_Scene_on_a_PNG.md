@@ -47,7 +47,7 @@ The size parameter is very versatile, it can be a simple number or an object.
 
 ### Examples of Results
 
-Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using CreateScreenshot
+Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using `CreateScreenshot`
 
 ![Actual Screen](/img/how_to/scene/shss.png)  
 View of Part of Screen Showing Canvas Used
@@ -87,30 +87,50 @@ You need to provide your BabylonJS engine, the camera you want to use for the re
 
 Again the size parameter is very versatile and can be a simple number or an object. However you will see differences in the results using the same parameters as before.
 
+### Examples of Results
+
+Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using CreateScreenshot
+
 Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using CreateScreenshot
 
 ![Actual Screen](/img/how_to/scene/shss.png)  
 View of Part of Screen Showing Canvas Used
 
 ![size = 200](/img/how_to/scene/rt200x200.png)  
-`BABYLON.Tools.CreateScreenrtotUsingRenderTarget(engine, camera, 200)`
+`BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, 200)`
 
 ![size = 800](/img/how_to/scene/rt800x800.png)  
-`BABYLON.Tools.CreateScreenrtotUsingRenderTarget(engine, camera, 800)`
+`BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, 800)`
 
 ![size = 1600](/img/how_to/scene/rt1600x1600.png)  
-`BABYLON.Tools.CreateScreenrtotUsingRenderTarget(engine, camera, 1600)`
+`BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, 1600)`
 
 ![size = {width:800, height:400}](/img/how_to/scene/rt800x400.png)  
-`BABYLON.Tools.CreateScreenrtotUsingRenderTarget(engine, camera, {width:800, height:400})` canvas imaged sized as given.
+`BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, {width:800, height:400})` canvas imaged sized as given.
 
 Precision can be used as a multiplier of the screen resolution.
 
 ![size = {precision: 0.5}](/img/how_to/scene/rt400p05.png)  
-`BABYLON.Tools.CreateScreenrtotUsingRenderTarget(engine, camera, {precision: 0.5})`
+`BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, {precision: 0.5})`
 
 ![size = {precision: 2}](/img/how_to/scene/rt400p20.png)  
-`BABYLON.Tools.CreateScreenrtotUsingRenderTarget(engine, camera, {precision: 2})`
+`BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, {precision: 2})`
+
+### Alternative Camera
+
+The `CreateScreenshotUsingRenderTarget` has an extra facility, the camera used does not have to be the active camera.
+
+While the active camera is showing the scene as in the above examples you can use this
+
+```javascript
+var camera2 = new BABYLON.FreeCamera("camera2", new BABYLON.Vector3(0, 200, 0), scene);
+camera2.setTarget(BABYLON.Vector3.Zero());
+    
+BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera2, 400)
+```
+to produce
+
+![secondcamera](/img/how_to/scene/fc.png) 
 
 
 ## Gif Creation
