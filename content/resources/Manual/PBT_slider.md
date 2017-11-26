@@ -125,7 +125,7 @@ pbt.hideLines([13, 28, 30, 69]);
 # Live Examples
 
 The working playground using the above code.
-[Playground Tutorial Example - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
+[Playground Tutorial - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
 
 # Further Reading
 

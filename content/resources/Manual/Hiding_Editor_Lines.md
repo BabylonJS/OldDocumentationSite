@@ -226,7 +226,7 @@ pbt.hideMenu();
 # Live Example
 
 The working playground using the above code.
-[Playground Tutorial Example - Hiding Lines](https://www.babylonjs-playground.com/#Y33LF1)
+[Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#Y33LF1)
 
 # Further Reading
 

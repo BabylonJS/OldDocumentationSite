@@ -5,15 +5,15 @@ PG_TITLE: How To Write a PBT
 # Playground Based Tutorials
 This type of playground takes a student step by step through a feature of Babylon.js at the same time as higlighting the code used by that feature. The whole of the code exists in the playground editor but any distracting code can be hidden from the user. Generally the student should not be given the facility to edit the code or to use all features of the playground since doing so would destroy the tutorial they are trying to follow. 
 
-Below are two PBT examples to give you an idea of what is possible.
+Below are three PBT examples to give you an idea of what is possible.
 
-[Playground Tutorial Example - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
-[Playground Tutorial Example - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
-[Playground Tutorial Example - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
+[Playground Tutorial - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
+[Playground Tutorial - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
+[Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are below.
 
-[Starter Guide](/resources/hiding_editor_lines)
+[Starter Guide](/resources/hiding_editor_lines)  
 [Slider Guide](/resources/PBT_slider)  
 [Intermediate Guide](/resources/PBT_Writing)
 

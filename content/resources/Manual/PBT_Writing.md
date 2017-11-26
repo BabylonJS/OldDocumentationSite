@@ -496,7 +496,7 @@ pbt.hideLines([26, 1008]);
 # Live Example
 
 The working playground using the above code.
-[Playground Tutorial Example - Difference Between .rotation and .rotate](https://www.babylonjs-playground.com/#KNSQD7)
+[Playground Tutorial - Difference Between .rotation and .rotate](https://www.babylonjs-playground.com/#KNSQD7)
 
 # Further Reading
 

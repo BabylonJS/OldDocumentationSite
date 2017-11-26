@@ -949,6 +949,10 @@
                     "filename": "Hiding_Editor_Lines"
                 },
                 {
+                    "title": "Using a Slider Guide for PBT",
+                    "filename": "PBT_slider"
+                },
+                {
                     "title": "Intermediate Guide for PBT",
                     "filename": "PBT_Writing"
                 }
