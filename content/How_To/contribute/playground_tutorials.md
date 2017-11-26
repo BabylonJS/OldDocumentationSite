@@ -8,12 +8,15 @@ This type of playground takes a student step by step through a feature of Babylo
 Below are two PBT examples to give you an idea of what is possible.
 
 [Playground Tutorial Example - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
+[Playground Tutorial Example - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
 [Playground Tutorial Example - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are below.
 
-[Starter Guide](/resources/hiding_editor_lines)  
+[Starter Guide](/resources/hiding_editor_lines)
+[Slider Guide](/resources/PBT_slider)  
 [Intermediate Guide](/resources/PBT_Writing)
+
 
 # Creating a PBT
 To help in the coding of a PBT several functions are provided to manipulate the text in the playground editor and to create basic dialogue boxes using the Babylon.GUI. While editor manipulation needs the functions provided any method of writing a user interface that works with Babylon.js is possible. 

@@ -500,4 +500,6 @@ The working playground using the above code.
 
 # Further Reading
 
-[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)
+[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
+[Starter Guide](/resources/hiding_editor_lines)  
+[Slider Guide](/resources/PBT_slider)   

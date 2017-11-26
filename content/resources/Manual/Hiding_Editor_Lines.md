@@ -230,6 +230,7 @@ The working playground using the above code.
 
 # Further Reading
 
-[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)
-
+[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
+[Slider Guide](/resources/PBT_slider)    
+[Intermediate Guide](/resources/PBT_Writing)
 
