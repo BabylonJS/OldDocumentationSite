@@ -167,7 +167,7 @@ This callback is a function that takes the image data provided by the method and
 
 For example when you have rendered this scene
 
-![Box and sky][/img/how_to/scene/bx1.png]
+![Box and sky](/img/how_to/scene/bx1.png)
 
 by triggering either of these
 
@@ -186,5 +186,5 @@ BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camera, 200, function(da
 ```
 you obtain
 
-![Box with sky texture and sky][/img/how_to/scene/bx2.png]
+![Box with sky texture and sky](/img/how_to/scene/bx2.png)
 
