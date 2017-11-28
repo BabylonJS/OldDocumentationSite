@@ -1,5 +1,5 @@
 ---
-PG_TITLE: How To Write a PBT
+PG_TITLE: Write a PBT
 ---
 
 # Playground Based Tutorials
