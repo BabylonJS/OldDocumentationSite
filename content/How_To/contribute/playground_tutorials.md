@@ -1,19 +1,22 @@
 ---
-PG_TITLE: How To Write a PBT
+PG_TITLE: Write a PBT
 ---
 
 # Playground Based Tutorials
 This type of playground takes a student step by step through a feature of Babylon.js at the same time as higlighting the code used by that feature. The whole of the code exists in the playground editor but any distracting code can be hidden from the user. Generally the student should not be given the facility to edit the code or to use all features of the playground since doing so would destroy the tutorial they are trying to follow. 
 
-Below are two PBT examples to give you an idea of what is possible.
+Below are three PBT examples to give you an idea of what is possible.
 
-[Playground Tutorial Example - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
-[Playground Tutorial Example - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
+[Playground Tutorial - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
+[Playground Tutorial - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
+[Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are below.
 
 [Starter Guide](/resources/hiding_editor_lines)  
+[Slider Guide](/resources/PBT_slider)  
 [Intermediate Guide](/resources/PBT_Writing)
+
 
 # Creating a PBT
 To help in the coding of a PBT several functions are provided to manipulate the text in the playground editor and to create basic dialogue boxes using the Babylon.GUI. While editor manipulation needs the functions provided any method of writing a user interface that works with Babylon.js is possible. 
@@ -90,11 +93,23 @@ _replaceText_ inserts text in the given line from the start to end position.
 ```javascript
 pbt.replaceText(12, 3, 8, "WORLD"); // On line 12 replaces the characters from 3 to 8 with WORD
 ```
-_hideLines_ hides the lines passed as start and end pairs in an array. Each call to _hideLines_ only hides those lines given in the array. 
+_hideLines_ hides the lines passed as start and end pairs in an array. Each call to _hideLines_ only hides those lines given in the array all other lines become shown. 
 ```javascript
-pbt.hideLines([27, 27]); //hides line 27 only
-pbt.hideLines([3, 15]); //hides lines 3 to 15 inclusive only
-pbt.hide([10, 17, 25, 31]); //hides lines 10 to 17 and lines 25 only
+pbt.hideLines([27, 27]); //hides line 27 only, all other lines are displayed
+pbt.hideLines([3, 15]); //hides lines 3 to 15 inclusive only, all other lines are displayed
+pbt.hideLines([10, 17, 25, 31]); //hides lines 10 to 17 and lines 25 to 31 only, all other lines are displayed
+```
+_hideRange_ hides the range of lines passed as start and end pairs in an array. The method _hideRange_ adds the range of lines given to lines already hidden.  
+```javascript
+pbt.hideRange([27, 27]); //hides line 27 together with already hidden lines
+pbt.hideRange([3, 15]); //hides lines 3 to 15 together with already hidden lines
+pbt.hideRange([10, 17, 25, 31]); //hides lines 10 to 17 and lines 25  to 31 together with already hidden lines
+```
+_showRange_ displays the range of lines passed as start and end pairs in an array. The method _showRange_ only affects the given line range.
+```javascript
+pbt.showRange([27, 27]); //displays line 27 together with already displayed lines
+pbt.showRange([3, 15]); //displays lines 3 to 15 inclusive together with already displayed lines
+pbt.showRange([10, 17, 25, 31]); //displays lines 10 to 17 and lines 25 to 31 together with already displayed lines
 ```
 ### Line Fetch
 

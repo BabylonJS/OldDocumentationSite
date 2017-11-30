@@ -549,7 +549,7 @@
                     "filename": "Using_The_Physics_Engine"
                 },
                 {
-                    "title": "Using advanced physics features",
+                    "title": "Use Advanced Physics Features",
                     "level": 2,
                     "filename": "Using_Advanced_Physics_Features"
                 },
@@ -947,6 +947,10 @@
                 {
                     "title": "Starter Guide for PBT",
                     "filename": "Hiding_Editor_Lines"
+                },
+                {
+                    "title": "Using a Slider Guide for PBT",
+                    "filename": "PBT_slider"
                 },
                 {
                     "title": "Intermediate Guide for PBT",
