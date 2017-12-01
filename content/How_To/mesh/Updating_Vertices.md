@@ -44,6 +44,12 @@ mesh.updateVerticesData(BABYLON.VertexBuffer.UVKind, uvs);
 
 *Note: * When creating your own custom mesh to make it updatable you need to add a second parameter with value true when applying the mesh to  the vertex data.
 
+When a mesh is created, the normal for each face is created smoothly to match the intended shape such as a sphere. To flatten the normals to make the mesh flatly shaded convertToFlatShadedMesh can be used.
+```javascript
+sphere.convertToFlatShadedMesh()
+```
+See [Example](https://www.babylonjs-playground.com/#H05E9H)
+
 ```javascript
 vertexData.applyToMesh(customMesh, true);
 ```
