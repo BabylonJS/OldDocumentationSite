@@ -470,6 +470,9 @@
 
                 // Size of the substring to extract
                 var size = 500;
+                var lastSpanIndex = originalText.lastIndexOf("</span>"); // Avoid to cut a span and end with weird html things.
+                if(lastSpanIndex > 500)
+                    size = lastSpanIndex + 8;
                 if (size + begIndex > originalText.length) {
                     size = originalText.length - begIndex;
                 }
