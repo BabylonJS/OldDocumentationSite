@@ -105,7 +105,7 @@ pbt.hideRange([27, 27]); //hides line 27 together with already hidden lines
 pbt.hideRange([3, 15]); //hides lines 3 to 15 together with already hidden lines
 pbt.hideRange([10, 17, 25, 31]); //hides lines 10 to 17 and lines 25  to 31 together with already hidden lines
 ```
-_showRange_ displays the range of lines passed as start and end pairs in an array. The method _showRange_ only affects the given line range.
+_showRange_ displays the range of lines passed as start and end pairs in an array. The method _showRange_ only affects the given line range if previously hidden using _hideRange_ with the same line range.
 ```javascript
 pbt.showRange([27, 27]); //displays line 27 together with already displayed lines
 pbt.showRange([3, 15]); //displays lines 3 to 15 inclusive together with already displayed lines
