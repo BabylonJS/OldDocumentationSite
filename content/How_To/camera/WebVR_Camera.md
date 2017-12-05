@@ -196,11 +196,13 @@ controller.onTriggerStateChangedObservable.add(function (stateObject) {
 
 The Windows Mixed Reality controller supports:
 
-1. touchpad - pressed, touch and axis values. Mapped to `onTouchpadButtonStateChangedObservable`
-2. trigger - pressed and value. Mapped to `onTriggerStateChangedObservable`
-3. grip button - pressed. Mapped to `onMainButtonStateChangedObservable` and `onGripButtonStateChangedObservable` (aliases)
-4. menu button - pressed. Mapped to `onSecondaryButtonStateChangedObservable` and `onMenuButtonStateChangedObservable` (aliases).
-5. Thumb stick - press, value = pressed (0,1). Mapped to `onPadStateChangedObservable`.
+1. Thumb stick axis - axis values. Mapped to `onPadValuesChangedObservable`.
+2. Thumb stick press - pressed. Mapped to `onPadStateChangedObservable`.
+3. Touchpad axis - axis values. Mapped to `onTouchpadValuesChangedObservable` and `onTrackpadValuesChangedObservable` (aliases).
+4. Touchpad press - pressed and touch. Mapped to `onTouchpadButtonStateChangedObservable` and `onTrackpadChangedObservable` (aliases).
+5. Trigger - pressed and value. Mapped to `onTriggerStateChangedObservable`
+6. Grip button - pressed. Mapped to `onMainButtonStateChangedObservable` and `onGripButtonStateChangedObservable` (aliases)
+7. Menu button - pressed. Mapped to `onSecondaryButtonStateChangedObservable` and `onMenuButtonStateChangedObservable` (aliases).
 
 **Vive Controller mapping**
 
