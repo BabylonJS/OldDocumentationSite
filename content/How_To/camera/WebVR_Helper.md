@@ -58,12 +58,23 @@ vrHelper.onControllerMeshLoaded.add((webVRController)=>{
 # Mesh selected event
 
 As the user selects an object with their gaze or controller the NewMeshSelected event will occur.
+Note: This only works after teleportation has been enabled.
 ```javascript
 vrHelper.onNewMeshSelected.add((mesh)=>{
     // Mesh has been selected
 });
 ```
-Note: This only works after teleportation has been enabled.
+This will return the single closest mesh that was selected. 
+
+You can add your own filtering logic with meshSelectionPredicate. See [example](http://playground.babylonjs.com/#JA1ND3#12).
+```javascript
+vrHelper.meshSelectionPredicate = (mesh) => {
+    if (mesh.name.indexOf("Flags") !== -1) {
+        return true;
+    }
+    return false;
+};
+```
 
 # Examples
 
