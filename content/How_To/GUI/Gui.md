@@ -281,6 +281,14 @@ var button = BABYLON.GUI.Button.CreateImageButton("but", "Click Me", "textures/g
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#3
 
+* ImageWithCenterTextButton: An image button made with a image background and a centered text overlay.
+
+```
+var button = BABYLON.GUI.Button.CreateImageWithCenterTextButton("but", "Click Me", "textures/grass.png");
+```
+
+You can try it here:  https://www.babylonjs-playground.com/#PLTRBV
+
 * SimpleButton: A simple button with text only
 
 ```
