@@ -25,15 +25,12 @@ class [RenderingManager](/classes/3.1/RenderingManager)
 ### static MAX_RENDERINGGROUPS : number
 
 The max id used for rendering groups (not included)
-
 ### static MIN_RENDERINGGROUPS : number
 
 The min id used for rendering groups (included)
-
 ### static AUTOCLEAR : boolean
 
 Used to globally prevent autoclearing scenes.
-
 ## Methods
 
 ### render(customRenderFunction, activeMeshes, renderParticles, renderSprites) &rarr; void

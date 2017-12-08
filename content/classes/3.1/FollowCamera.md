@@ -30,25 +30,19 @@ class [FollowCamera](/classes/3.1/FollowCamera) extends [TargetCamera](/classes/
 ### radius : number
 
 
-
 ### rotationOffset : number
-
 
 
 ### heightOffset : number
 
 
-
 ### cameraAcceleration : number
-
 
 
 ### maxCameraSpeed : number
 
 
-
 ### lockedTarget : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
-
 
 
 ## Methods

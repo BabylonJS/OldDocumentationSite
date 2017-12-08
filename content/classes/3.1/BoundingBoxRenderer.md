@@ -28,17 +28,13 @@ class [BoundingBoxRenderer](/classes/3.1/BoundingBoxRenderer)
 ### frontColor : [Color3](/classes/3.1/Color3)
 
 
-
 ### backColor : [Color3](/classes/3.1/Color3)
-
 
 
 ### showBackLines : boolean
 
 
-
 ### renderList : [SmartArray](/classes/3.1/SmartArray)&lt;[BoundingBox](/classes/3.1/BoundingBox)&gt;
-
 
 
 ## Methods

@@ -34,53 +34,40 @@ optional | onError | Nullable&lt;(effect: [Effect](/classes/3.1/Effect), errors:
 ### name : any
 
 
-
 ### defines : string
-
 
 
 ### onCompiled : Nullable&lt;(effect: [Effect](/classes/3.1/Effect)) =&gt; void&gt;
 
 
-
 ### onError : Nullable&lt;(effect: [Effect](/classes/3.1/Effect), errors: string) =&gt; void&gt;
-
 
 
 ### onBind : Nullable&lt;(effect: [Effect](/classes/3.1/Effect)) =&gt; void&gt;
 
 
-
 ### uniqueId : number
-
 
 
 ### onCompileObservable : [Observable](/classes/3.1/Observable)&lt;[Effect](/classes/3.1/Effect)&gt;
 
 
-
 ### onErrorObservable : [Observable](/classes/3.1/Observable)&lt;[Effect](/classes/3.1/Effect)&gt;
-
 
 
 ### onBindObservable : [Observable](/classes/3.1/Observable)&lt;[Effect](/classes/3.1/Effect)&gt;
 
 
-
 ### key : string
-
 
 
 ### isSupported : boolean
 
 
-
 ### static ShadersStore : { [key: string]: string }
 
 
-
 ### static IncludesShadersStore : { [key: string]: string }
-
 
 
 ## Methods
@@ -149,8 +136,9 @@ optional | onError | Nullable&lt;(effect: [Effect](/classes/3.1/Effect), errors:
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (effect: [Effect](/classes/3.1/Effect)) =&gt; void | 
+ | func |  | effect | [Effect](/classes/3.1/Effect) | 
 
+ | 
 ### setTexture(channel, texture) &rarr; void
 
 

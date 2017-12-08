@@ -27,13 +27,10 @@ optional | condition | [Condition](/classes/3.1/Condition) |
 ### triggerOptions : any
 
 
-
 ### trigger : number
 
 
-
 ### onBeforeExecuteObservable : [Observable](/classes/3.1/Observable)&lt;[Action](/classes/3.1/Action)&gt;
-
 
 
 ## Methods

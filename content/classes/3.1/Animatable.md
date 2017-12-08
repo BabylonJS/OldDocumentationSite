@@ -32,29 +32,22 @@ optional | onAnimationEnd | Nullable&lt;() =&gt; void&gt; |
 ### target : any
 
 
-
 ### fromFrame : number
-
 
 
 ### toFrame : number
 
 
-
 ### loopAnimation : boolean
-
 
 
 ### onAnimationEnd : Nullable&lt;() =&gt; void&gt;
 
 
-
 ### animationStarted : boolean
 
 
-
 ### speedRatio : number
-
 
 
 ## Methods

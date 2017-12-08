@@ -38,53 +38,40 @@ optional | indexParameters | any |
 ### name : string
 
 
-
 ### width : number
-
 
 
 ### height : number
 
 
-
 ### renderTargetSamplingMode : number
-
 
 
 ### clearColor : [Color4](/classes/3.1/Color4)
 
 
-
 ### autoClear : boolean
-
 
 
 ### alphaMode : number
 
 
-
 ### alphaConstants : [Color4](/classes/3.1/Color4)
-
 
 
 ### enablePixelPerfectMode : boolean
 
 
-
 ### scaleMode : number
-
 
 
 ### alwaysForcePOT : boolean
 
 
-
 ### samples : number
 
 
-
 ### adaptScaleToCurrentViewport : boolean
-
 
 
 ### onActivateObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
@@ -92,65 +79,81 @@ optional | indexParameters | any |
 An event triggered when the postprocess is activated.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onActivate : (camera: [Camera](/classes/3.1/Camera)) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | camera | [Camera](/classes/3.1/Camera) | 
 
 ### onSizeChangedObservable : [Observable](/classes/3.1/Observable)&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 An event triggered when the postprocess changes its size.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onSizeChanged : (postProcess: [PostProcess](/classes/3.1/PostProcess)) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
 
 ### onApplyObservable : [Observable](/classes/3.1/Observable)&lt;[Effect](/classes/3.1/Effect)&gt;
 
 An event triggered when the postprocess applies its effect.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onApply : (effect: [Effect](/classes/3.1/Effect)) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.1/Effect) | 
 
 ### onBeforeRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Effect](/classes/3.1/Effect)&gt;
 
 An event triggered before rendering the postprocess
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onBeforeRender : (effect: [Effect](/classes/3.1/Effect)) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.1/Effect) | 
 
 ### onAfterRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Effect](/classes/3.1/Effect)&gt;
 
 An event triggered after rendering the postprocess
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onAfterRender : (efect: [Effect](/classes/3.1/Effect)) =&gt; void
 
 
 
-### outputTexture : [InternalTexture](/classes/3.1/InternalTexture)
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | efect | [Effect](/classes/3.1/Effect) | 
 
+### outputTexture : [InternalTexture](/classes/3.1/InternalTexture)
 
 
 ### texelSize : [Vector2](/classes/3.1/Vector2)
 
 
-
 ### isSupported : boolean
 
 
-
 ### aspectRatio : number
-
 
 
 ## Methods
@@ -184,7 +187,10 @@ optional | defines | Nullable&lt;string&gt; |
 optional | uniforms | Nullable&lt;string[]&gt; | 
 optional | samplers | Nullable&lt;string[]&gt; | 
 optional | indexParameters | any | 
-optional | onCompiled | (effect: [Effect](/classes/3.1/Effect)) =&gt; void | 
+optional | onCompiled |  | effect | [Effect](/classes/3.1/Effect) | 
+
+ | 
+optional | onError |  | effect | [Effect](/classes/3.1/Effect) | 
 ### isReusable() &rarr; boolean
 
 

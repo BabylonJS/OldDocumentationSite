@@ -30,29 +30,22 @@ class [TargetCamera](/classes/3.1/TargetCamera) extends [Camera](/classes/3.1/Ca
 ### cameraDirection : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### cameraRotation : [Vector2](/classes/3.1/Vector2)
-
 
 
 ### rotation : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### rotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
-
 
 
 ### speed : number
 
 
-
 ### noRotationConstraint : boolean
 
 
-
 ### lockedTarget : any
-
 
 
 ## Methods

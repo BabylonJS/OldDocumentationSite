@@ -26,13 +26,10 @@ optional | uv | [Vector2](/classes/3.1/Vector2) |
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### normal : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### uv : [Vector2](/classes/3.1/Vector2)
-
 
 
 ## Methods

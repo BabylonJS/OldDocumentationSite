@@ -29,9 +29,7 @@ class [IncrementValueAction](/classes/3.1/IncrementValueAction) extends [Action]
 ### propertyPath : string
 
 
-
 ### value : any
-
 
 
 ## Methods

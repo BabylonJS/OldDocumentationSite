@@ -27,9 +27,7 @@ optional | springiness | number |
 ### oscillations : number
 
 
-
 ### springiness : number
-
 
 
 ## Methods

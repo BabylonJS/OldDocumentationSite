@@ -23,8 +23,6 @@ class [KeyboardInfo](/classes/3.1/KeyboardInfo)
 ### type : number
 
 
-
 ### event : KeyboardEvent
-
 
 

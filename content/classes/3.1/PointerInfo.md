@@ -26,4 +26,3 @@ The event member is an instance of PointerEvent for all types except PointerWhee
 ### pickInfo : Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)&gt;
 
 
-

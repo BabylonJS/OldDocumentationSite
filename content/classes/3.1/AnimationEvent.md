@@ -17,23 +17,19 @@ Composed of a frame, and an action function
  | Name | Type | Description
 ---|---|---|---
  | frame | number | 
- | action | () =&gt; void | 
+ | action |  | 
 optional | onlyOnce | boolean | 
 ## Members
 
 ### frame : number
 
 
-
 ### action : () =&gt; void
-
 
 
 ### onlyOnce : boolean
 
 
-
 ### isDone : boolean
-
 
 

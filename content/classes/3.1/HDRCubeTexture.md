@@ -29,35 +29,30 @@ optional | noMipmap | boolean |  Forces to not generate the mipmap if true
 optional | generateHarmonics | boolean |  Specifies wether you want to extract the polynomial harmonics during the generation process
 optional | useInGammaSpace | boolean |  Specifies if the texture will be use in gamma or linear space (the PBR material requires those texture in linear space, but the standard material would require them in Gamma space)
 optional | usePMREMGenerator | boolean |  Specifies wether or not to generate the CubeMap through CubeMapGen to avoid seams issue at run time.
-optional | onLoad | () =&gt; void | 
+optional | onLoad |  | 
+optional | onError | optional | message | string | 
 ## Members
 
 ### url : string
 
 The texture URL.
-
 ### coordinatesMode : number
 
 The texture coordinates mode. As this texture is stored in a cube format, please modify carefully.
-
 ### isPMREM : boolean
 
 Specifies wether the texture has been generated through the PMREMGenerator tool.
 
 This is usefull at run time to apply the good shader.
-
 ### isBlocking : boolean
 
 Gets wether or not the texture is blocking during loading.
 
 Sets wether or not the texture is blocking during loading.
-
-### void : undefined
-
+### void : () =&gt; void
 
 
-### onError : undefined
-
+### onError : () =&gt; void
 
 
 ## Methods
@@ -108,7 +103,7 @@ as the spherical used in the lighting.
 ---|---|---|---
  | url | string |  The HDR file url.
  | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
-optional | onError | () =&gt; () =&gt; void |  Method called if any error happens during download.
+optional | onError |  |  Method called if any error happens during download.
 ### static generateBabylonHDR(url, size, callback) &rarr; (url, size, callback)
 
 Serializes the data contained in the texture in a binary format.
@@ -124,4 +119,4 @@ as the spherical used in the lighting.
 ---|---|---|---
  | url | string |  The HDR file url.
  | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
- | callback | () =&gt; (ArrayBuffer: ArrayBuffer) =&gt; void | 
+ | callback |  | 

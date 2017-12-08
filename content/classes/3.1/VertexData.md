@@ -14,117 +14,88 @@ class [VertexData](/classes/3.1/VertexData)
 ### positions : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### normals : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### tangents : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### uvs : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### uvs2 : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### uvs3 : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### uvs4 : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### uvs5 : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### uvs6 : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### colors : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### matricesIndices : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### matricesWeights : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### matricesIndicesExtra : number[]
 
 
-
 ### Float32Array : undefined
-
 
 
 ### matricesWeightsExtra : number[]
 
 
-
 ### Float32Array : undefined
 
 
-
 ### indices : IndicesArray
-
 
 
 ## Methods

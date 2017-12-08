@@ -27,7 +27,6 @@ optional | amplitude | number |
 ### amplitude : number
 
 
-
 ## Methods
 
 ### easeInCore(gradient) &rarr; number

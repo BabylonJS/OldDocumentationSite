@@ -27,9 +27,7 @@ optional | options | any |
 ### id : number
 
 
-
 ### soundCollection : Array&lt;[Sound](/classes/3.1/Sound)&gt;
-
 
 
 ## Methods

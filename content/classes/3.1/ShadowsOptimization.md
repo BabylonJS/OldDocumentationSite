@@ -18,3 +18,8 @@ class [ShadowsOptimization](/classes/3.1/ShadowsOptimization) extends [SceneOpti
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | scene | [Scene](/classes/3.1/Scene) | 
+

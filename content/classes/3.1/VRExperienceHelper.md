@@ -23,21 +23,22 @@ optional | webVROptions | WebVROptions |
 ### webVROptions : WebVROptions
 
 
-
 ### onEnteringVR : () =&gt; void
 
 
-
 ### onExitingVR : () =&gt; void
-
 
 
 ### onControllerMeshLoaded : (controller: [WebVRController](/classes/3.1/WebVRController)) =&gt; void
 
 
 
-### position : [Vector3](/classes/3.1/Vector3)
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | controller | [WebVRController](/classes/3.1/WebVRController) | 
 
+### position : [Vector3](/classes/3.1/Vector3)
 
 
 ## Methods

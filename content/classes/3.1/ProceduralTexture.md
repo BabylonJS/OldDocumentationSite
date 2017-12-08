@@ -33,17 +33,13 @@ optional | generateMipMaps | boolean |
 ### isCube : boolean
 
 
-
 ### isEnabled : boolean
-
 
 
 ### onGenerated : () =&gt; void
 
 
-
 ### refreshRate : number
-
 
 
 ## Methods

@@ -23,29 +23,22 @@ class [WindowsMotionController](/classes/3.1/WindowsMotionController) extends [W
 ### static GAMEPAD_ID_PREFIX : string
 
 
-
 ### onTrackpadChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
-
 
 
 ### onTriggerButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
 
 
-
 ### onMenuButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
-
 
 
 ### onGripButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
 
 
-
 ### onThumbstickButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
 
 
-
 ### onTouchpadButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
-
 
 
 ## Methods
@@ -61,8 +54,9 @@ Implements abstract method on [WebVRController](/classes/3.1/WebVRController) cl
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) |  scene in which to add meshes
-optional | meshLoaded | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void |  optional callback function that will be called if the mesh loads successfully.
-optional | forceDefault | boolean | 
+optional | meshLoaded |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
+ |  optional callback function that will be called if the mesh loads successfully.
 ### getForwardRay(length) &rarr; [Ray](/classes/3.1/Ray)
 
 

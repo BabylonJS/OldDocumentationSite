@@ -33,7 +33,6 @@ Instantiates a [ColorGradingTexture](/classes/3.1/ColorGradingTexture) from the 
 ### url : string
 
 The texture URL.
-
 ## Methods
 
 ### getTextureMatrix() &rarr; [Matrix](/classes/3.1/Matrix)

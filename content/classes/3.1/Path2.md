@@ -25,7 +25,6 @@ Creates a [Path2](/classes/3.1/Path2) object from the starting 2D coordinates x 
 ### closed : boolean
 
 
-
 ## Methods
 
 ### addLineTo(x, y) &rarr; [Path2](/classes/3.1/Path2)

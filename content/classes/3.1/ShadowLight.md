@@ -12,33 +12,32 @@ class [ShadowLight](/classes/3.1/ShadowLight) extends [Light](/classes/3.1/Light
 ### void : undefined
 
 
-
 ### position : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### direction : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### shadowMinZ : number
 
 
-
 ### shadowMaxZ : number
-
 
 
 ### customProjectionMatrixBuilder : (viewMatrix: [Matrix](/classes/3.1/Matrix), renderList: Array&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;, result: [Matrix](/classes/3.1/Matrix)) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | viewMatrix | [Matrix](/classes/3.1/Matrix) | 
+ | renderList | Array&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; | 
+ | result | [Matrix](/classes/3.1/Matrix) | 
 ### transformedPosition : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### transformedDirection : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods

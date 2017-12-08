@@ -32,29 +32,22 @@ optional | renderingMesh | [Mesh](/classes/3.1/Mesh) |
 ### materialIndex : number
 
 
-
 ### verticesStart : number
-
 
 
 ### verticesCount : number
 
 
-
 ### indexStart : number
-
 
 
 ### indexCount : number
 
 
-
 ### linesIndexCount : number
 
 
-
 ### IsGlobal : boolean
-
 
 
 ## Methods

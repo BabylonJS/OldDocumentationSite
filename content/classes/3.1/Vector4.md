@@ -28,17 +28,13 @@ Creates a [Vector4](/classes/3.1/Vector4) object from the passed floats.
 ### x : number
 
 
-
 ### y : number
-
 
 
 ### z : number
 
 
-
 ### w : number
-
 
 
 ## Methods

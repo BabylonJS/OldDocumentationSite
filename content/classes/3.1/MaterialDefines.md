@@ -12,7 +12,6 @@ class [MaterialDefines](/classes/3.1/MaterialDefines)
 ### isDirty : boolean
 
 
-
 ## Methods
 
 ### markAsProcessed() &rarr; void

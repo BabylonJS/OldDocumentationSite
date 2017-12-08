@@ -18,3 +18,8 @@ class [LensFlaresOptimization](/classes/3.1/LensFlaresOptimization) extends [Sce
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | scene | [Scene](/classes/3.1/Scene) | 
+

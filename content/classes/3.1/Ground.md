@@ -27,13 +27,10 @@ optional | canBeRegenerated | boolean |
 ### width : number
 
 
-
 ### height : number
 
 
-
 ### subdivisions : number
-
 
 
 ## Methods

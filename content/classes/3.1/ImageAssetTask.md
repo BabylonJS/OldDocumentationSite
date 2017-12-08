@@ -27,13 +27,10 @@ class [ImageAssetTask](/classes/3.1/ImageAssetTask) extends [AbstractAssetTask](
 ### name : string
 
 
-
 ### url : string
 
 
-
 ### image : HTMLImageElement
-
 
 
 ## Methods
@@ -46,5 +43,7 @@ class [ImageAssetTask](/classes/3.1/ImageAssetTask) extends [AbstractAssetTask](
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onSuccess | () =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+ | onError | optional | message | string | 
+optional | exception | any | 
+

@@ -28,27 +28,21 @@ class [BoundingInfo](/classes/3.1/BoundingInfo)
 ### minimum : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### maximum : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### boundingBox : [BoundingBox](/classes/3.1/BoundingBox)
 
 
-
 ### boundingSphere : [BoundingSphere](/classes/3.1/BoundingSphere)
-
 
 
 ### isLocked : boolean
 
 
-
 ### diagonalLength : number
 
 Gets the world distance between the min and max points of the bounding box
-
 ## Methods
 
 ### update(world) &rarr; void

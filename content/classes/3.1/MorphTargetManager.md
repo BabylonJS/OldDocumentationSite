@@ -23,29 +23,22 @@ optional | scene | [Scene](/classes/3.1/Scene) |
 ### uniqueId : number
 
 
-
 ### vertexCount : number
-
 
 
 ### supportsNormals : boolean
 
 
-
 ### supportsTangents : boolean
-
 
 
 ### numTargets : number
 
 
-
 ### numInfluencers : number
 
 
-
 ### influences : Float32Array
-
 
 
 ## Methods

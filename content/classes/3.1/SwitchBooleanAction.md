@@ -28,7 +28,6 @@ class [SwitchBooleanAction](/classes/3.1/SwitchBooleanAction) extends [Action](/
 ### propertyPath : string
 
 
-
 ## Methods
 
 ### execute() &rarr; void

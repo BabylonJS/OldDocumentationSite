@@ -28,17 +28,13 @@ class [GroundMesh](/classes/3.1/GroundMesh) extends [Mesh](/classes/3.1/Mesh)
 ### generateOctree : boolean
 
 
-
 ### subdivisions : number
-
 
 
 ### subdivisionsX : number
 
 
-
 ### subdivisionsY : number
-
 
 
 ## Methods

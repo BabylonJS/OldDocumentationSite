@@ -28,29 +28,22 @@ Creates an instance based on a source mesh.
 ### receiveShadows : boolean
 
 
-
 ### material : [Material](/classes/3.1/Material)
-
 
 
 ### visibility : number
 
 
-
 ### skeleton : [Skeleton](/classes/3.1/Skeleton)
-
 
 
 ### renderingGroupId : number
 
 
-
 ### sourceMesh : [Mesh](/classes/3.1/Mesh)
 
 
-
 ### Float32Array : undefined
-
 
 
 ## Methods

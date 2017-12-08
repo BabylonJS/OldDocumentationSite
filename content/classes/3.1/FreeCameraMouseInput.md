@@ -23,17 +23,13 @@ optional | touchEnabled | boolean |
 ### touchEnabled : boolean
 
 
-
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
-
 
 
 ### buttons : number[]
 
 
-
 ### angularSensibility : number
-
 
 
 ## Methods

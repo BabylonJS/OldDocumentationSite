@@ -23,7 +23,6 @@ class [RayHelper](/classes/3.1/RayHelper)
 ### ray : Nullable&lt;[Ray](/classes/3.1/Ray)&gt;
 
 
-
 ## Methods
 
 ### static CreateAndShow(ray, scene, color) &rarr; [RayHelper](/classes/3.1/RayHelper)

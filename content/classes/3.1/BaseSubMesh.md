@@ -12,7 +12,6 @@ class [BaseSubMesh](/classes/3.1/BaseSubMesh)
 ### effect : Nullable&lt;[Effect](/classes/3.1/Effect)&gt;
 
 
-
 ## Methods
 
 ### setEffect(effect, defines) &rarr; void

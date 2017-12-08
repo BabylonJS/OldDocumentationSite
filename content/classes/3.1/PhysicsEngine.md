@@ -27,9 +27,7 @@ optional | _physicsPlugin | IPhysicsEnginePlugin |
 ### gravity : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### static Epsilon : number
-
 
 
 ## Methods

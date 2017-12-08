@@ -37,13 +37,10 @@ Documentation : http://doc.babylonjs.com/tutorials/lights
 Fix frustum size for the shadow generation. This is disabled if the value is 0.
 
 Specifies a fix frustum size for the shadow generation.
-
 ### shadowOrthoScale : number
 
 
-
 ### autoUpdateExtends : boolean
-
 
 
 ## Methods

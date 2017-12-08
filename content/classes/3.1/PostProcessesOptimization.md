@@ -19,3 +19,8 @@ class [PostProcessesOptimization](/classes/3.1/PostProcessesOptimization) extend
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | scene | [Scene](/classes/3.1/Scene) | 
+
