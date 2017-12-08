@@ -24,25 +24,19 @@ optional | target | any |
 ### skipNextObservers : boolean
 
 An [Observer](/classes/3.1/Observer) can set this property to true to prevent subsequent observers of being notified
-
 ### mask : number
 
 Get the mask value that were used to trigger the event corresponding to this [EventState](/classes/3.1/EventState) object
-
 ### target : undefined
 
 The object that originally notified the event
-
 ### any : undefined
-
 
 
 ### currentTarget : undefined
 
 The current object in the bubbling phase
-
 ### any : undefined
-
 
 
 ## Methods

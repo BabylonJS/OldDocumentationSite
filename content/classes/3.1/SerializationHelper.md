@@ -25,7 +25,7 @@ optional | serializationObject | any |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | creationFunction | () =&gt; T | 
+ | creationFunction |  | 
  | source | any | 
  | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static Clone(creationFunction, source) &rarr; T
@@ -35,7 +35,7 @@ optional | serializationObject | any |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | creationFunction | () =&gt; T | 
+ | creationFunction |  | 
  | source | T | 
 ### static Instanciate(creationFunction, source) &rarr; T
 
@@ -44,5 +44,5 @@ optional | serializationObject | any |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | creationFunction | () =&gt; T | 
+ | creationFunction |  | 
  | source | T | 

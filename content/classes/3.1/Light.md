@@ -36,7 +36,6 @@ material.lightmapTexture adds or multiplies
 (depends on material.useLightmapAsShadowmap)
 
 after every other light calculations.
-
 ### static LIGHTMAP_SPECULAR : number
 
 material.lightmapTexture as only diffuse lighting from this light
@@ -44,7 +43,6 @@ material.lightmapTexture as only diffuse lighting from this light
 adds pnly specular lighting from this light
 
 adds dynamic shadows
-
 ### static LIGHTMAP_SHADOWSONLY : number
 
 material.lightmapTexture as only lighting
@@ -52,7 +50,6 @@ material.lightmapTexture as only lighting
 no light calculation from this light
 
 only adds dynamic shadows from this light
-
 ### static INTENSITYMODE_AUTOMATIC : number
 
 Each light type uses the default quantity according to its type:
@@ -60,53 +57,40 @@ Each light type uses the default quantity according to its type:
      point/spot lights use luminous intensity
 
      directional lights use illuminance
-
 ### static INTENSITYMODE_LUMINOUSPOWER : number
 
 lumen (lm)
-
 ### static INTENSITYMODE_LUMINOUSINTENSITY : number
 
 candela (lm/sr)
-
 ### static INTENSITYMODE_ILLUMINANCE : number
 
 lux (lm/m^2)
-
 ### static INTENSITYMODE_LUMINANCE : number
 
 nit (cd/m^2)
-
 ### static LIGHTTYPEID_POINTLIGHT : number
 
 [Light](/classes/3.1/Light) type const id of the point light.
-
 ### static LIGHTTYPEID_DIRECTIONALLIGHT : number
 
 [Light](/classes/3.1/Light) type const id of the directional light.
-
 ### static LIGHTTYPEID_SPOTLIGHT : number
 
 [Light](/classes/3.1/Light) type const id of the spot light.
-
 ### static LIGHTTYPEID_HEMISPHERICLIGHT : number
 
 [Light](/classes/3.1/Light) type const id of the hemispheric light.
-
 ### diffuse : [Color3](/classes/3.1/Color3)
-
 
 
 ### specular : [Color3](/classes/3.1/Color3)
 
 
-
 ### intensity : number
 
 
-
 ### range : number
-
 
 
 ### intensityMode : number
@@ -118,15 +102,12 @@ This is only relevant with PBR Materials where the light intensity can be define
 Sets the photometric scale used to interpret the intensity.
 
 This is only relevant with PBR Materials where the light intensity can be defined in a physical way.
-
 ### radius : number
 
 Gets the light radius used by PBR Materials to simulate soft area lights.
 
 sets the light radius used by PBR Materials to simulate soft area lights.
-
 ### renderPriority : number
-
 
 
 ### shadowEnabled : boolean
@@ -134,25 +115,19 @@ sets the light radius used by PBR Materials to simulate soft area lights.
 Defines wether or not the shadows are enabled for this light. This can help turning off/on shadow without detaching
 
 the current shadow generator.
-
 ### includedOnlyMeshes : [AbstractMesh](/classes/3.1/AbstractMesh)[]
-
 
 
 ### excludedMeshes : [AbstractMesh](/classes/3.1/AbstractMesh)[]
 
 
-
 ### excludeWithLayerMask : number
-
 
 
 ### includeOnlyWithLayerMask : number
 
 
-
 ### lightmapMode : number
-
 
 
 ## Methods

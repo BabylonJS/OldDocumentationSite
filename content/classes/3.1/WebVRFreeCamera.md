@@ -31,41 +31,31 @@ class [WebVRFreeCamera](/classes/3.1/WebVRFreeCamera) extends [FreeCamera](/clas
 ### rawPose : Nullable&lt;DevicePose&gt;
 
 
-
 ### devicePosition : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### deviceRotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
 
 
-
 ### deviceScaleFactor : number
-
 
 
 ### controllers : Array&lt;[WebVRController](/classes/3.1/WebVRController)&gt;
 
 
-
 ### onControllersAttachedObservable : [Observable](/classes/3.1/Observable)&lt;[WebVRController](/classes/3.1/WebVRController)[]&gt;
-
 
 
 ### onControllerMeshLoadedObservable : [Observable](/classes/3.1/Observable)&lt;[WebVRController](/classes/3.1/WebVRController)&gt;
 
 
-
 ### rigParenting : boolean
-
 
 
 ### leftController : Nullable&lt;[WebVRController](/classes/3.1/WebVRController)&gt;
 
 
-
 ### rightController : Nullable&lt;[WebVRController](/classes/3.1/WebVRController)&gt;
-
 
 
 ## Methods

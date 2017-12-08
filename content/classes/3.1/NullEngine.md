@@ -437,7 +437,7 @@ optional | requiredHeight | number |
 ---|---|---|---
  | texture | [InternalTexture](/classes/3.1/InternalTexture) | 
 optional | disableGenerateMipMaps | boolean | 
-optional | onBeforeUnbind | () =&gt; void | 
+optional | onBeforeUnbind |  | 
 ### createDynamicVertexBuffer(vertices, Float32Array) &rarr; WebGLBuffer
 
 

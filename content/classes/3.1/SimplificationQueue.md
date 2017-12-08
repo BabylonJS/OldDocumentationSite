@@ -19,7 +19,6 @@ class [SimplificationQueue](/classes/3.1/SimplificationQueue)
 ### running : boolean
 
 
-
 ## Methods
 
 ### addTask(task) &rarr; void

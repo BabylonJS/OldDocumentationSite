@@ -29,35 +29,33 @@ optional | updatable | boolean |
 ### id : string
 
 
-
 ### delayLoadState : number
 
 
-
 ### delayLoadingFile : Nullable&lt;string&gt;
-
 
 
 ### onGeometryUpdated : (geometry: [Geometry](/classes/3.1/Geometry), kind: string) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | geometry | [Geometry](/classes/3.1/Geometry) | 
+optional | kind | string | 
 ### boundingBias : [Vector2](/classes/3.1/Vector2)
 
 The Bias Vector to apply on the bounding elements (box/sphere), the max extend is computed as v += v * bias.x + bias.y, the min is computed as v -= v * bias.x + bias.y
 
 @returns The Bias Vector
-
 ### extend : { minimum: [Vector3](/classes/3.1/Vector3),  maximum: [Vector3](/classes/3.1/Vector3) }
-
 
 
 ### doNotSerialize : boolean
 
 
-
 ### Float32Array : undefined
-
 
 
 ## Methods
@@ -234,7 +232,7 @@ optional | shouldDispose | boolean |
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | onLoaded | () =&gt; void | 
+optional | onLoaded |  | 
 ### toLeftHanded() &rarr; void
 
 Invert the geometry to move from a right handed system to a left handed one.

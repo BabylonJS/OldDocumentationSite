@@ -30,25 +30,19 @@ optional | mesh | Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt; |
 ### height : number
 
 
-
 ### diameterTop : number
-
 
 
 ### diameterBottom : number
 
 
-
 ### tessellation : number
-
 
 
 ### subdivisions : number
 
 
-
 ### side : number
-
 
 
 ## Methods

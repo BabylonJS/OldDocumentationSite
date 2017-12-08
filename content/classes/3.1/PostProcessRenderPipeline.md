@@ -28,7 +28,6 @@ class [PostProcessRenderPipeline](/classes/3.1/PostProcessRenderPipeline)
 ### isSupported : boolean
 
 
-
 ## Methods
 
 ### getClassName() &rarr; string

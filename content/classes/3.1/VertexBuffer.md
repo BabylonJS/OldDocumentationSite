@@ -31,61 +31,46 @@ optional | offset | number |
 ### Float32Array : ()
 
 
-
 ### static PositionKind : string
-
 
 
 ### static NormalKind : string
 
 
-
 ### static TangentKind : string
-
 
 
 ### static UVKind : string
 
 
-
 ### static UV2Kind : string
-
 
 
 ### static UV3Kind : string
 
 
-
 ### static UV4Kind : string
-
 
 
 ### static UV5Kind : string
 
 
-
 ### static UV6Kind : string
-
 
 
 ### static ColorKind : string
 
 
-
 ### static MatricesIndicesKind : string
-
 
 
 ### static MatricesWeightsKind : string
 
 
-
 ### static MatricesIndicesExtraKind : string
 
 
-
 ### static MatricesWeightsExtraKind : string
-
 
 
 ## Methods

@@ -21,33 +21,25 @@ class [AudioEngine](/classes/3.1/AudioEngine)
 ### canUseWebAudio : boolean
 
 
-
 ### masterGain : GainNode
-
 
 
 ### WarnedWebAudioUnsupported : boolean
 
 
-
 ### unlocked : boolean
-
 
 
 ### onAudioUnlocked : () =&gt; any
 
 
-
 ### isMP3supported : boolean
-
 
 
 ### isOGGsupported : boolean
 
 
-
 ### audioContext : Nullable&lt;AudioContext&gt;
-
 
 
 ## Methods

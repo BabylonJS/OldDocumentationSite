@@ -33,16 +33,13 @@ optional | reusable | boolean |
 ### direction : [Vector2](/classes/3.1/Vector2)
 
 
-
 ### kernel : number
 
 Gets the length in pixels of the blur sample region
 
 Sets the length in pixels of the blur sample region
-
 ### packedFloat : boolean
 
 Gets wether or not the blur is unpacking/repacking floats
 
 Sets wether or not the blur needs to unpack/repack floats
-

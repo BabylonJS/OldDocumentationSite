@@ -22,10 +22,15 @@ SPS internal tool, don't use it manually.
  | shape | [Vector3](/classes/3.1/Vector3)[] | 
  | indicesLength | number | 
  | shapeUV | number[] | 
- | posFunction | (particle: [SolidParticle](/classes/3.1/SolidParticle), i: number, s: number) =&gt; void | 
+ | posFunction |  | particle | [SolidParticle](/classes/3.1/SolidParticle) | 
+ | i | number | 
+ | s | number | 
+
+ | 
+ | vtxFunction |  | particle | [SolidParticle](/classes/3.1/SolidParticle) | 
+ | vertex | [Vector3](/classes/3.1/Vector3) | 
 ## Members
 
 ### shapeID : number
-
 
 

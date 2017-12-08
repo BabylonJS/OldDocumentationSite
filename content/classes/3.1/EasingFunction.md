@@ -16,13 +16,10 @@ class [EasingFunction](/classes/3.1/EasingFunction)
 ### static EASINGMODE_EASEIN : number
 
 
-
 ### static EASINGMODE_EASEOUT : number
 
 
-
 ### static EASINGMODE_EASEINOUT : number
-
 
 
 ## Methods

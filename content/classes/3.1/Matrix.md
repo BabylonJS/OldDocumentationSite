@@ -19,9 +19,7 @@ class [Matrix](/classes/3.1/Matrix)
 ### updateFlag : number
 
 
-
 ### m : Float32Array
-
 
 
 ### static Identity : [Matrix](/classes/3.1/Matrix)
@@ -29,7 +27,6 @@ class [Matrix](/classes/3.1/Matrix)
 Static identity matrix to be used as  matrix
 
 Must not be updated.
-
 ## Methods
 
 ### isIdentity(considerAsTextureMatrix) &rarr; boolean

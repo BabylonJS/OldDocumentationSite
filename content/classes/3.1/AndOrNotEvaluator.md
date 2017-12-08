@@ -19,4 +19,5 @@ class [AndOrNotEvaluator](/classes/3.1/AndOrNotEvaluator)
  | Name | Type | Description
 ---|---|---|---
  | query | string | 
- | evaluateCallback | (val: any) =&gt; boolean | 
+ | evaluateCallback |  | val | any | 
+

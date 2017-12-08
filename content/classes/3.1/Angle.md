@@ -27,11 +27,9 @@ Creates an [Angle](/classes/3.1/Angle) object of "radians" radians (float).
 ### degrees : () =&gt; number
 
 Returns the [Angle](/classes/3.1/Angle) value in degrees (float).
-
 ### radians : () =&gt; number
 
 Returns the [Angle](/classes/3.1/Angle) value in radians (float).
-
 ## Methods
 
 ### static BetweenTwoPoints(a, b) &rarr; [Angle](/classes/3.1/Angle)

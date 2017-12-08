@@ -29,25 +29,19 @@ optional | invertY | boolean |
 ### name : string
 
 
-
 ### url : string
-
 
 
 ### noMipmap : boolean
 
 
-
 ### invertY : boolean
-
 
 
 ### samplingMode : number
 
 
-
 ### texture : [Texture](/classes/3.1/Texture)
-
 
 
 ## Methods
@@ -60,5 +54,7 @@ optional | invertY | boolean |
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onSuccess | () =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+ | onError | optional | message | string | 
+optional | exception | any | 
+

@@ -33,7 +33,6 @@ optional | invertY | boolean |
 ### format : number
 
 
-
 ## Methods
 
 ### update(data) &rarr; void

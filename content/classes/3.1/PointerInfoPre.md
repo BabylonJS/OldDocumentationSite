@@ -26,8 +26,6 @@ Set the skipOnPointerObservable property to true if you want the engine to stop 
 ### localPosition : [Vector2](/classes/3.1/Vector2)
 
 
-
 ### skipOnPointerObservable : boolean
-
 
 

@@ -32,185 +32,145 @@ class [ArcRotateCamera](/classes/3.1/ArcRotateCamera) extends [TargetCamera](/cl
 ### alpha : number
 
 
-
 ### beta : number
-
 
 
 ### radius : number
 
 
-
 ### target : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### inertialAlphaOffset : number
 
 
-
 ### inertialBetaOffset : number
-
 
 
 ### inertialRadiusOffset : number
 
 
-
 ### lowerAlphaLimit : Nullable&lt;number&gt;
-
 
 
 ### upperAlphaLimit : Nullable&lt;number&gt;
 
 
-
 ### lowerBetaLimit : number
-
 
 
 ### upperBetaLimit : number
 
 
-
 ### lowerRadiusLimit : Nullable&lt;number&gt;
-
 
 
 ### upperRadiusLimit : Nullable&lt;number&gt;
 
 
-
 ### inertialPanningX : number
-
 
 
 ### inertialPanningY : number
 
 
-
 ### pinchToPanMaxDistance : number
-
 
 
 ### panningDistanceLimit : Nullable&lt;number&gt;
 
 
-
 ### panningOriginTarget : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### panningInertia : number
 
 
-
 ### angularSensibilityX : number
-
 
 
 ### angularSensibilityY : number
 
 
-
 ### pinchPrecision : number
-
 
 
 ### pinchDeltaPercentage : number
 
 
-
 ### panningSensibility : number
-
 
 
 ### keysUp : number[]
 
 
-
 ### keysDown : number[]
-
 
 
 ### keysLeft : number[]
 
 
-
 ### keysRight : number[]
-
 
 
 ### wheelPrecision : number
 
 
-
 ### wheelDeltaPercentage : number
-
 
 
 ### zoomOnFactor : number
 
 
-
 ### targetScreenOffset : [Vector2](/classes/3.1/Vector2)
-
 
 
 ### allowUpsideDown : boolean
 
 
-
 ### inputs : [ArcRotateCameraInputsManager](/classes/3.1/ArcRotateCameraInputsManager)
-
 
 
 ### panningAxis : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### bouncingBehavior : Nullable&lt;[BouncingBehavior](/classes/3.1/BouncingBehavior)&gt;
-
 
 
 ### useBouncingBehavior : boolean
 
 
-
 ### framingBehavior : Nullable&lt;[FramingBehavior](/classes/3.1/FramingBehavior)&gt;
-
 
 
 ### useFramingBehavior : boolean
 
 
-
 ### autoRotationBehavior : Nullable&lt;[AutoRotationBehavior](/classes/3.1/AutoRotationBehavior)&gt;
-
 
 
 ### useAutoRotationBehavior : boolean
 
 
-
 ### onMeshTargetChangedObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
-
 
 
 ### onCollide : (collidedMesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void
 
 
 
-### checkCollisions : boolean
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | collidedMesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
+### checkCollisions : boolean
 
 
 ### collisionRadius : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### doNotUpdateMaxZ : undefined
-
 
 
 ## Methods

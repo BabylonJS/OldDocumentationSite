@@ -34,13 +34,10 @@ optional | engine | [Engine](/classes/3.1/Engine) |
 ### color : [Color3](/classes/3.1/Color3)
 
 
-
 ### depth : number
 
 
-
 ### colorLevel : number
-
 
 
 ## Methods

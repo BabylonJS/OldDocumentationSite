@@ -30,25 +30,19 @@ optional | sourceEvent | any |  the original (browser) event that triggered the 
 ### source : any
 
 
-
 ### pointerX : number
-
 
 
 ### pointerY : number
 
 
-
 ### meshUnderPointer : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
-
 
 
 ### sourceEvent : any
 
 
-
 ### additionalData : any
-
 
 
 ## Methods

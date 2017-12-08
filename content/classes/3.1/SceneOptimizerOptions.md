@@ -27,13 +27,10 @@ optional | trackerDuration | number |
 ### targetFrameRate : number
 
 
-
 ### trackerDuration : number
 
 
-
 ### optimizations : [SceneOptimization](/classes/3.1/SceneOptimization)[]
-
 
 
 ## Methods

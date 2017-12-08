@@ -12,17 +12,13 @@ class [ArcRotateCameraGamepadInput](/classes/3.1/ArcRotateCameraGamepadInput)
 ### camera : [ArcRotateCamera](/classes/3.1/ArcRotateCamera)
 
 
-
 ### gamepad : Nullable&lt;[Gamepad](/classes/3.1/Gamepad)&gt;
-
 
 
 ### gamepadRotationSensibility : number
 
 
-
 ### gamepadMoveSensibility : number
-
 
 
 ## Methods

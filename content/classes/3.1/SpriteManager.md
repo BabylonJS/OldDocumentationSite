@@ -31,33 +31,25 @@ optional | epsilon | number |
 ### name : string
 
 
-
 ### sprites : [Sprite](/classes/3.1/Sprite)[]
-
 
 
 ### renderingGroupId : number
 
 
-
 ### layerMask : number
-
 
 
 ### fogEnabled : boolean
 
 
-
 ### isPickable : boolean
-
 
 
 ### cellWidth : number
 
 
-
 ### cellHeight : number
-
 
 
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[SpriteManager](/classes/3.1/SpriteManager)&gt;
@@ -65,13 +57,10 @@ optional | epsilon | number |
 An event triggered when the manager is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onDispose : () =&gt; void
 
 
-
 ### texture : [Texture](/classes/3.1/Texture)
-
 
 
 ## Methods
@@ -85,7 +74,9 @@ An event triggered when the manager is disposed.
 ---|---|---|---
  | ray | [Ray](/classes/3.1/Ray) | 
  | camera | [Camera](/classes/3.1/Camera) | 
-optional | predicate | (sprite: [Sprite](/classes/3.1/Sprite)) =&gt; boolean | 
+optional | predicate |  | sprite | [Sprite](/classes/3.1/Sprite) | 
+
+ | 
 ### render() &rarr; void
 
 

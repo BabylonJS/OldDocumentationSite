@@ -31,7 +31,6 @@ optional | samplingMode | number |
 ### canRescale : boolean
 
 
-
 ## Methods
 
 ### scale(ratio) &rarr; void

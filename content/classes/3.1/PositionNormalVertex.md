@@ -25,9 +25,7 @@ optional | normal | [Vector3](/classes/3.1/Vector3) |
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### normal : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods

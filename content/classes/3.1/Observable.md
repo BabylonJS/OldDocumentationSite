@@ -24,8 +24,9 @@ A given observer can register itself with only Move and Stop (mask = 0x03), then
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | onObserverAdded | (observer: [Observer](/classes/3.1/Observer)&lt;T&gt;) =&gt; void | 
+optional | onObserverAdded |  | observer | [Observer](/classes/3.1/Observer)&lt;T&gt; | 
 
+ | 
 ## Methods
 
 ### add(callback, mask, insertFirst, scope) &rarr; Nullable&lt;[Observer](/classes/3.1/Observer)&lt;T&gt;&gt;
@@ -35,7 +36,10 @@ Create a new [Observer](/classes/3.1/Observer) with the specified callback
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (eventData: T, eventState: [EventState](/classes/3.1/EventState)) =&gt; void |  the callback that will be executed for that [Observer](/classes/3.1/Observer)
+ | callback |  | eventData | T | 
+ | eventState | [EventState](/classes/3.1/EventState) | 
+
+ |  the callback that will be executed for that [Observer](/classes/3.1/Observer)
 optional | mask | number |  the mask used to filter observers
 optional | insertFirst | boolean |  if true the callback will be inserted at the first position, hence executed before the others ones. If false (default behavior) the callback will be inserted at the last position, executed after all the others already present.
 ### remove(observer) &rarr; boolean
@@ -54,7 +58,8 @@ Remove a callback from the [Observable](/classes/3.1/Observable) object
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (eventData: T, eventState: [EventState](/classes/3.1/EventState)) =&gt; void |  the callback to remove. If it doesn't belong to this [Observable](/classes/3.1/Observable), false will be returned.
+ | callback |  | eventData | T | 
+ | eventState | [EventState](/classes/3.1/EventState) | 
 
 ### notifyObservers(eventData, mask, target, currentTarget) &rarr; boolean
 

@@ -30,13 +30,10 @@ optional | loop | boolean |
 ### from : number
 
 
-
 ### to : number
 
 
-
 ### loop : boolean
-
 
 
 ## Methods

@@ -12,7 +12,6 @@ class [FreeCameraVirtualJoystickInput](/classes/3.1/FreeCameraVirtualJoystickInp
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
 
 
-
 ## Methods
 
 ### getLeftJoystick() &rarr; [VirtualJoystick](/classes/3.1/VirtualJoystick)

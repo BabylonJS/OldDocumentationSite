@@ -23,26 +23,23 @@ class [OctreeBlock](/classes/3.1/OctreeBlock)
  | capacity | number | 
  | depth | number | 
  | maxDepth | number | 
+ | creationFunc |  | entry | T | 
+ | block | [OctreeBlock](/classes/3.1/OctreeBlock)&lt;T&gt; | 
 ## Members
 
 ### entries : T[]
 
 
-
 ### blocks : Array&lt;[OctreeBlock](/classes/3.1/OctreeBlock)&lt;T&gt;&gt;
-
 
 
 ### capacity : number
 
 
-
 ### minPoint : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### maxPoint : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods

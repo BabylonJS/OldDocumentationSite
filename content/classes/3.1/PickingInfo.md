@@ -14,37 +14,28 @@ class [PickingInfo](/classes/3.1/PickingInfo)
 ### hit : boolean
 
 
-
 ### distance : number
-
 
 
 ### pickedPoint : Nullable&lt;[Vector3](/classes/3.1/Vector3)&gt;
 
 
-
 ### pickedMesh : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
-
 
 
 ### bu : number
 
 
-
 ### bv : number
-
 
 
 ### faceId : number
 
 
-
 ### subMeshId : number
 
 
-
 ### pickedSprite : Nullable&lt;[Sprite](/classes/3.1/Sprite)&gt;
-
 
 
 ## Methods

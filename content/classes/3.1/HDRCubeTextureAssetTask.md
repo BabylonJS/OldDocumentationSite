@@ -27,33 +27,25 @@ optional | useInGammaSpace | boolean |
 ### name : string
 
 
-
 ### url : string
-
 
 
 ### size : number
 
 
-
 ### noMipmap : boolean
-
 
 
 ### generateHarmonics : boolean
 
 
-
 ### useInGammaSpace : boolean
-
 
 
 ### usePMREMGenerator : boolean
 
 
-
 ### texture : [HDRCubeTexture](/classes/3.1/HDRCubeTexture)
-
 
 
 ## Methods
@@ -66,5 +58,7 @@ optional | useInGammaSpace | boolean |
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onSuccess | () =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+ | onError | optional | message | string | 
+optional | exception | any | 
+

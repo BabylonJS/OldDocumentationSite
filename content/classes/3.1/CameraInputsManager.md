@@ -23,21 +23,16 @@ class [CameraInputsManager](/classes/3.1/CameraInputsManager)
 ### attached : CameraInputsMap&lt;TCamera&gt;
 
 
-
 ### attachedElement : Nullable&lt;HTMLElement&gt;
-
 
 
 ### noPreventDefault : boolean
 
 
-
 ### camera : TCamera
 
 
-
 ### checkInputs : () =&gt; void
-
 
 
 ## Methods

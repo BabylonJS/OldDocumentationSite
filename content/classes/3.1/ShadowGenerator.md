@@ -40,81 +40,61 @@ optional | useFullFloatFirst | boolean |
 ### static FILTER_NONE : number
 
 
-
 ### static FILTER_POISSONSAMPLING : number
-
 
 
 ### static FILTER_EXPONENTIALSHADOWMAP : number
 
 
-
 ### static FILTER_BLUREXPONENTIALSHADOWMAP : number
-
 
 
 ### static FILTER_CLOSEEXPONENTIALSHADOWMAP : number
 
 
-
 ### static FILTER_BLURCLOSEEXPONENTIALSHADOWMAP : number
-
 
 
 ### bias : number
 
 
-
 ### blurBoxOffset : number
-
 
 
 ### blurScale : number
 
 
-
 ### blurKernel : number
-
 
 
 ### useKernelBlur : boolean
 
 
-
 ### depthScale : number
-
 
 
 ### filter : number
 
 
-
 ### usePoissonSampling : boolean
-
 
 
 ### useVarianceShadowMap : boolean
 
 
-
 ### useBlurVarianceShadowMap : boolean
-
 
 
 ### useExponentialShadowMap : boolean
 
 
-
 ### useBlurExponentialShadowMap : boolean
-
 
 
 ### useCloseExponentialShadowMap : boolean
 
 
-
 ### useBlurCloseExponentialShadowMap : boolean
-
 
 
 ### frustumEdgeFalloff : number
@@ -122,9 +102,7 @@ optional | useFullFloatFirst | boolean |
 Controls the extent to which the shadows fade out at the edge of the frustum
 
 Used only by directionals and spots
-
 ### forceBackFacesOnly : boolean
-
 
 
 ## Methods
@@ -188,8 +166,9 @@ Force shader compilation including textures ready check
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | onCompiled | (generator: [ShadowGenerator](/classes/3.1/ShadowGenerator)) =&gt; void | 
-optional | options | { useInstances: boolean } | 
+ | onCompiled |  | generator | [ShadowGenerator](/classes/3.1/ShadowGenerator) | 
+
+ | 
 ### isReady(subMesh, useInstances) &rarr; boolean
 
 Boolean : true when the [ShadowGenerator](/classes/3.1/ShadowGenerator) is finally computed.

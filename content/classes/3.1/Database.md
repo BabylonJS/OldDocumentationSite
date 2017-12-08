@@ -21,32 +21,39 @@ class [Database](/classes/3.1/Database)
  | Name | Type | Description
 ---|---|---|---
  | urlToScene | string | 
- | callbackManifestChecked | (checked: boolean) =&gt; any | 
+ | callbackManifestChecked |  | checked | boolean | 
+
 ## Members
 
 ### static IsUASupportingBlobStorage : boolean
 
 
-
 ### static IDBStorageEnabled : boolean
-
 
 
 ### enableSceneOffline : boolean
 
 
-
 ### enableTexturesOffline : boolean
-
 
 
 ### static parseURL : (url: string) =&gt; string
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | url | string | 
+
 ### static ReturnFullUrlLocation : (url: string) =&gt; string
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | url | string | 
 
 ## Methods
 
@@ -60,8 +67,8 @@ class [Database](/classes/3.1/Database)
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | successCallback | () =&gt; void | 
- | errorCallback | () =&gt; void | 
+ | successCallback |  | 
+ | errorCallback |  | 
 ### loadImageFromDB(url, image) &rarr; void
 
 
@@ -79,6 +86,8 @@ class [Database](/classes/3.1/Database)
  | Name | Type | Description
 ---|---|---|---
  | url | string | 
- | sceneLoaded | (data: any) =&gt; void | 
-optional | progressCallBack | (data: any) =&gt; void | 
-optional | errorCallback | () =&gt; void | 
+ | sceneLoaded |  | data | any | 
+
+ | 
+optional | progressCallBack |  | data | any | 
+optional | errorCallback |  | 

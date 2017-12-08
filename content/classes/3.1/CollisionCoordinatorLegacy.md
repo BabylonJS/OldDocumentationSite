@@ -25,7 +25,11 @@ class [CollisionCoordinatorLegacy](/classes/3.1/CollisionCoordinatorLegacy)
  | collider | [Collider](/classes/3.1/Collider) | 
  | maximumRetry | number | 
  | excludedMesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
- | onNewPosition | (collisionIndex: number, newPosition: [Vector3](/classes/3.1/Vector3), collidedMesh: Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;) =&gt; void | 
+ | onNewPosition |  | collisionIndex | number | 
+ | newPosition | [Vector3](/classes/3.1/Vector3) | 
+ | collidedMesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; | 
+
+ | 
 ### init(scene) &rarr; void
 
 

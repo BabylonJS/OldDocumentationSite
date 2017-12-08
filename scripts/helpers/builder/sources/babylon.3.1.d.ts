@@ -6971,8 +6971,8 @@ declare module BABYLON {
         /**
          * Wrapper for updateUniform.
          * @method updateMatrix3x3
-         * @param {string} name Name of the uniform, as used in the uniform block in the shader.
-         * @param {Float32Array} matrix
+         * @param name Name of the uniform, as used in the uniform block in the shader.
+         * @param matrix
          */
         updateMatrix3x3: (name: string, matrix: Float32Array) => void;
         /**

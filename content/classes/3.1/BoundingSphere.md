@@ -28,25 +28,19 @@ class [BoundingSphere](/classes/3.1/BoundingSphere)
 ### minimum : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### maximum : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### center : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### radius : number
-
 
 
 ### centerWorld : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### radiusWorld : number
-
 
 
 ## Methods

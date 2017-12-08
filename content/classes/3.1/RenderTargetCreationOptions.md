@@ -12,40 +12,30 @@ Define options used to create a render target texture
 ### generateMipMaps : undefined
 
 
-
 ### boolean : undefined
-
 
 
 ### generateDepthBuffer : undefined
 
 
-
 ### boolean : undefined
-
 
 
 ### generateStencilBuffer : undefined
 
 
-
 ### boolean : undefined
-
 
 
 ### type : undefined
 
 
-
 ### number : undefined
-
 
 
 ### samplingMode : undefined
 
 
-
 ### number : undefined
-
 
 

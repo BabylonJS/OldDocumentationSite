@@ -32,7 +32,6 @@ optional | fallbackTexture | [Texture](/classes/3.1/Texture) |
 ### animate : boolean
 
 
-
 ## Methods
 
 ### isReady() &rarr; boolean

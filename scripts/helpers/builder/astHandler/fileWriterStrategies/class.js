@@ -7,7 +7,7 @@ var TypeScript = require('typescript-services'),
     variableDescriber = require('../describerStrategies/variable');
 
 module.exports = {
-    init : function (msg, cb) {
+    init: function (msg, cb) {
         msg.astName = msg.flash.ast.identifier.text();
         msg.ast = msg.flash.ast;
         console.log('whoo so class !', msg.astName);
@@ -45,7 +45,7 @@ module.exports = {
                         if (vd.modifiers.indexOf(TypeScript.PullElementFlags.Private) > -1
                             || vd.variableDeclarator.propertyName.text().charAt(0) == '_') break;
 
-                        variablesDescription += Describer.setDescriber(variableDescriber).describe(vd);
+                        variablesDescription += Describer.setDescriber(variableDescriber).describe(vd, true);
                         break;
                     case TypeScript.SyntaxKind.MemberFunctionDeclaration:
                         var fd = me;

@@ -25,43 +25,36 @@ optional | frameSampleSize | number |  The number of samples required to saturat
 Returns the average frame time in milliseconds over the sliding window (or the subset of frames sampled so far)
 
 @return Average frame time in milliseconds
-
 ### averageFrameTimeVariance : number
 
 Returns the variance frame time in milliseconds over the sliding window (or the subset of frames sampled so far)
 
 @return Frame time variance in milliseconds squared
-
 ### instantaneousFrameTime : number
 
 Returns the frame time of the most recent frame
 
 @return Frame time in milliseconds
-
 ### averageFPS : number
 
 Returns the average framerate in frames per second over the sliding window (or the subset of frames sampled so far)
 
 @return Framerate in frames per second
-
 ### instantaneousFPS : number
 
 Returns the average framerate in frames per second using the most recent frame time
 
 @return Framerate in frames per second
-
 ### isSaturated : boolean
 
 Returns true if enough samples have been taken to completely fill the sliding window
 
 @return true if saturated
-
 ### isEnabled : boolean
 
 Returns true if sampling is enabled
 
 @return true if enabled
-
 ## Methods
 
 ### sampleFrame(timeMs) &rarr; void

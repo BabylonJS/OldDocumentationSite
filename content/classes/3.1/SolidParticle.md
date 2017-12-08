@@ -44,59 +44,45 @@ Don't create particles manually, use instead the Solid [Particle](/classes/3.1/P
 ### idx : number
 
 
-
 ### color : [Color4](/classes/3.1/Color4)
-
 
 
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### rotation : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### rotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
 
 
-
 ### scaling : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### uvs : [Vector4](/classes/3.1/Vector4)
 
 
-
 ### velocity : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### alive : boolean
 
 
-
 ### isVisible : boolean
-
 
 
 ### shapeId : number
 
 
-
 ### idxInShape : number
-
 
 
 ### scale : [Vector3](/classes/3.1/Vector3)
 
 legacy support, changed scale to scaling
-
 ### quaternion : [Quaternion](/classes/3.1/Quaternion)
 
 legacy support, changed quaternion to rotationQuaternion
-
 ## Methods
 
 ### intersectsMesh(target, [SolidParticle](/classes/3.1/SolidParticle)) &rarr; boolean

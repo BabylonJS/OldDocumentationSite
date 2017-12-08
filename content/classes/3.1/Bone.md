@@ -29,33 +29,25 @@ optional | baseMatrix | Nullable&lt;[Matrix](/classes/3.1/Matrix)&gt; |
 ### name : string
 
 
-
 ### children : [Bone](/classes/3.1/Bone)[]
-
 
 
 ### animations : [Animation](/classes/3.1/Animation)[]
 
 
-
 ### length : number
-
 
 
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### rotation : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### rotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
 
 
-
 ### scaling : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods

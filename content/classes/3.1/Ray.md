@@ -26,13 +26,10 @@ optional | length | number |
 ### origin : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### direction : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### length : number
-
 
 
 ## Methods

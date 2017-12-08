@@ -27,8 +27,6 @@ class [MeshLODLevel](/classes/3.1/MeshLODLevel)
 ### distance : number
 
 
-
 ### mesh : [Mesh](/classes/3.1/Mesh)
-
 
 

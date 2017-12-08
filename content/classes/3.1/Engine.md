@@ -28,365 +28,274 @@ optional | options | EngineOptions |  - further options to be sent to the getCon
 ### static Instances : [Engine](/classes/3.1/Engine)[]
 
 
-
 ### static LastCreatedEngine : Nullable&lt;[Engine](/classes/3.1/Engine)&gt;
-
 
 
 ### static LastCreatedScene : Nullable&lt;[Scene](/classes/3.1/Scene)&gt;
 
 
-
 ### static NEVER : number
-
 
 
 ### static ALWAYS : number
 
 
-
 ### static LESS : number
-
 
 
 ### static EQUAL : number
 
 
-
 ### static LEQUAL : number
-
 
 
 ### static GREATER : number
 
 
-
 ### static GEQUAL : number
-
 
 
 ### static NOTEQUAL : number
 
 
-
 ### static KEEP : number
-
 
 
 ### static REPLACE : number
 
 
-
 ### static INCR : number
-
 
 
 ### static DECR : number
 
 
-
 ### static INVERT : number
-
 
 
 ### static INCR_WRAP : number
 
 
-
 ### static DECR_WRAP : number
-
 
 
 ### static ALPHA_DISABLE : number
 
 
-
 ### static ALPHA_ONEONE : number
-
 
 
 ### static ALPHA_ADD : number
 
 
-
 ### static ALPHA_COMBINE : number
-
 
 
 ### static ALPHA_SUBTRACT : number
 
 
-
 ### static ALPHA_MULTIPLY : number
-
 
 
 ### static ALPHA_MAXIMIZED : number
 
 
-
 ### static ALPHA_PREMULTIPLIED : number
-
 
 
 ### static ALPHA_PREMULTIPLIED_PORTERDUFF : number
 
 
-
 ### static ALPHA_INTERPOLATE : number
-
 
 
 ### static ALPHA_SCREENMODE : number
 
 
-
 ### static DELAYLOADSTATE_NONE : number
-
 
 
 ### static DELAYLOADSTATE_LOADED : number
 
 
-
 ### static DELAYLOADSTATE_LOADING : number
-
 
 
 ### static DELAYLOADSTATE_NOTLOADED : number
 
 
-
 ### static TEXTUREFORMAT_ALPHA : number
-
 
 
 ### static TEXTUREFORMAT_LUMINANCE : number
 
 
-
 ### static TEXTUREFORMAT_LUMINANCE_ALPHA : number
-
 
 
 ### static TEXTUREFORMAT_RGB : number
 
 
-
 ### static TEXTUREFORMAT_RGBA : number
-
 
 
 ### static TEXTURETYPE_UNSIGNED_INT : number
 
 
-
 ### static TEXTURETYPE_FLOAT : number
-
 
 
 ### static TEXTURETYPE_HALF_FLOAT : number
 
 
-
 ### static SCALEMODE_FLOOR : number
-
 
 
 ### static SCALEMODE_NEAREST : number
 
 
-
 ### static SCALEMODE_CEILING : number
-
 
 
 ### static Version : string
 
 
-
 ### static CollisionsEpsilon : number
-
 
 
 ### static CodeRepository : string
 
 
-
 ### static ShadersRepository : string
-
 
 
 ### forcePOTTextures : boolean
 
 
-
 ### isFullscreen : boolean
-
 
 
 ### isPointerLock : boolean
 
 
-
 ### cullBackFaces : boolean
-
 
 
 ### renderEvenInBackground : boolean
 
 
-
 ### preventCacheWipeBetweenFrames : boolean
-
 
 
 ### enableOfflineSupport : boolean
 
 
-
 ### scenes : [Scene](/classes/3.1/Scene)[]
-
 
 
 ### postProcesses : [PostProcess](/classes/3.1/PostProcess)[]
 
 
-
 ### onResizeObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
 
 [Observable](/classes/3.1/Observable) event triggered each time the rendering canvas is resized
-
 ### onCanvasBlurObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
 
 [Observable](/classes/3.1/Observable) event triggered each time the canvas loses focus
-
 ### onCanvasFocusObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
 
 [Observable](/classes/3.1/Observable) event triggered each time the canvas gains focus
-
 ### onCanvasPointerOutObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
 
 [Observable](/classes/3.1/Observable) event triggered each time the canvas receives pointerout event
-
 ### onBeforeTextureInitObservable : [Observable](/classes/3.1/Observable)&lt;[Texture](/classes/3.1/Texture)&gt;
 
 [Observable](/classes/3.1/Observable) event triggered before each texture is initialized
-
 ### isInVRExclusivePointerMode : boolean
-
 
 
 ### disableUniformBuffers : boolean
 
 
-
 ### supportsUniformBuffers : boolean
-
 
 
 ### needPOTTextures : boolean
 
 
-
 ### badOS : boolean
-
 
 
 ### badDesktopOS : boolean
 
 
-
 ### static audioEngine : [AudioEngine](/classes/3.1/AudioEngine)
-
 
 
 ### onVRDisplayChangedObservable : [Observable](/classes/3.1/Observable)&lt;IDisplayChangedEventArgs&gt;
 
 
-
 ### onVRRequestPresentComplete : [Observable](/classes/3.1/Observable)&lt;boolean&gt;
-
 
 
 ### onVRRequestPresentStart : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
 
 
-
 ### onContextLostObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
-
 
 
 ### onContextRestoredObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
 
 
-
 ### disablePerformanceMonitorInBackground : boolean
 
 Turn this value on if you want to pause FPS computation when in background
-
 ### performanceMonitor : [PerformanceMonitor](/classes/3.1/PerformanceMonitor)
-
 
 
 ### texturesSupported : Array&lt;string&gt;
 
 
-
 ### textureFormatInUse : Nullable&lt;string&gt;
-
 
 
 ### currentViewport : Nullable&lt;[Viewport](/classes/3.1/Viewport)&gt;
 
 
-
 ### emptyTexture : [InternalTexture](/classes/3.1/InternalTexture)
-
 
 
 ### emptyCubeTexture : [InternalTexture](/classes/3.1/InternalTexture)
 
 
-
 ### webGLVersion : number
-
 
 
 ### isStencilEnable : boolean
 
 Returns true if the stencil buffer has been enabled through the creation option of the context.
-
 ### drawCalls : number
 
-The number of draw calls submitted last frame */
 
 ### drawCallsPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
 
 
-
-### onLoad : undefined
-
+### onLoad : () =&gt; void
 
 
 ### loadingScreen : ILoadingScreen
 
 
-
 ### loadingUIText : string
-
 
 
 ### loadingUIBackgroundColor : string
 
 
-
-### void : undefined
-
+### void : () =&gt; void
 
 
-### void : undefined
-
+### void : () =&gt; void
 
 
 ## Methods
@@ -399,7 +308,8 @@ Will flag all materials in all scenes in all engines as dirty to trigger new sha
  | Name | Type | Description
 ---|---|---|---
  | flag | number | 
-optional | predicate | (mat: [Material](/classes/3.1/Material)) =&gt; boolean | 
+optional | predicate |  | mat | [Material](/classes/3.1/Material) | 
+
 ### resetTextureCache() &rarr; void
 
 
@@ -599,7 +509,7 @@ stop executing a render loop function and remove it from the execution array
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | renderFunction | () =&gt; void | 
+optional | renderFunction |  | 
 
 ### runRenderLoop(renderFunction) &rarr; void
 
@@ -616,7 +526,7 @@ engine.runRenderLoop(function () {
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | renderFunction | () =&gt; void | 
+ | renderFunction |  | 
 
 ### switchFullscreen(requestPointerLock) &rarr; void
 
@@ -733,7 +643,7 @@ optional | requiredHeight | number |
 ---|---|---|---
  | texture | [InternalTexture](/classes/3.1/InternalTexture) | 
 optional | disableGenerateMipMaps | boolean | 
-optional | onBeforeUnbind | () =&gt; void | 
+optional | onBeforeUnbind |  | 
 ### generateMipMapsForCubemap(texture) &rarr; void
 
 
@@ -991,8 +901,11 @@ optional | instancesCount | number |
 optional | samplers | string[] |  An array of string used to represent textures
 optional | defines | string | 
 optional | fallbacks | [EffectFallbacks](/classes/3.1/EffectFallbacks) | 
-optional | onCompiled | (effect: [Effect](/classes/3.1/Effect)) =&gt; void | 
-optional | onError | (effect: [Effect](/classes/3.1/Effect), errors: string) =&gt; void | 
+optional | onCompiled |  | effect | [Effect](/classes/3.1/Effect) | 
+
+ | 
+optional | onError |  | effect | [Effect](/classes/3.1/Effect) | 
+ | errors | string | 
 ### createEffectForParticles(fragmentName, uniformsNames, samplers, defines, fallbacks, onCompiled, onError) &rarr; [Effect](/classes/3.1/Effect)
 
 
@@ -1005,7 +918,10 @@ optional | uniformsNames | string[] |
 optional | samplers | string[] | 
 optional | defines | string | 
 optional | fallbacks | [EffectFallbacks](/classes/3.1/EffectFallbacks) | 
-optional | onCompiled | (effect: [Effect](/classes/3.1/Effect)) =&gt; void | 
+optional | onCompiled |  | effect | [Effect](/classes/3.1/Effect) | 
+
+ | 
+optional | onError |  | effect | [Effect](/classes/3.1/Effect) | 
 ### createRawShaderProgram(vertexCode, fragmentCode, context) &rarr; WebGLProgram
 
 
@@ -1534,7 +1450,9 @@ optional | options | [RenderTargetCreationOptions](/classes/3.1/RenderTargetCrea
  | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
  | scale | number | 
  | offset | number | 
- | onLoad | (internalTexture: Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt;) =&gt; void | 
+ | onLoad |  | internalTexture | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt; | 
+
+ | 
 optional | onError | Nullable&lt;(message: string, exception: any) =&gt; void&gt; | 
 optional | format | number | 
 ### createCubeTexture(rootUrl, scene, files, noMipmap, onLoad, onError, format, forcedExtension) &rarr; [InternalTexture](/classes/3.1/InternalTexture)
@@ -1591,7 +1509,9 @@ optional | compression | Nullable&lt;string&gt; |
  | format | number | 
  | type | number | 
  | noMipmap | boolean | 
- | callback | (ArrayBuffer: ArrayBuffer) =&gt; ArrayBufferView[] | 
+ | callback |  | ArrayBuffer | ArrayBuffer | 
+
+ | 
 ### Nullable() &rarr; ()
 
 
@@ -1682,7 +1602,8 @@ Get an externaly attached data from its key, create it using a factory if it's n
  | Name | Type | Description
 ---|---|---|---
  | key | string |  the unique key that identifies the data
- | factory | (k: string) =&gt; T |  the factory that will be called to create the instance if and only if it doesn't exists
+ | factory |  | k | string | 
+
 ### removeExternalData(key) &rarr; boolean
 
 Remove an externaly attached data from the [Engine](/classes/3.1/Engine) instance
@@ -1716,7 +1637,7 @@ Remove an externaly attached data from the [Engine](/classes/3.1/Engine) instanc
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | () =&gt; (event: WebGLContextEvent) =&gt; void | 
+ | callback |  | 
 
 ### attachContextRestoredEvent(callback) &rarr; (callback)
 
@@ -1725,7 +1646,7 @@ Remove an externaly attached data from the [Engine](/classes/3.1/Engine) instanc
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | () =&gt; (event: WebGLContextEvent) =&gt; void | 
+ | callback |  | 
 
 ### getVertexShaderSource(program) &rarr; Nullable&lt;string&gt;
 

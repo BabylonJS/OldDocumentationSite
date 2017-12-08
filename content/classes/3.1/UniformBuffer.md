@@ -35,126 +35,119 @@ Wrapper for updateUniform.
 
 @method updateMatrix3x3
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {Float32Array} matrix
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string |  Name of the uniform, as used in the uniform block in the shader.
+ | matrix | Float32Array | 
 ### updateMatrix2x2 : (name: string, matrix: Float32Array) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {Float32Array} matrix
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | matrix | Float32Array | 
 ### updateFloat : (name: string, x: number) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {number} x
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | x | number | 
 ### updateFloat2 : (name: string, x: number, y: number, suffix: string) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {number} x
-
-@param {number} y
-
-@param {string} [suffix] Suffix to add to the uniform name.
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | x | number | 
+ | y | number | 
 ### updateFloat3 : (name: string, x: number, y: number, z: number, suffix: string) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {number} x
-
-@param {number} y
-
-@param {number} z
-
-@param {string} [suffix] Suffix to add to the uniform name.
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | x | number | 
+ | y | number | 
+ | z | number | 
 ### updateFloat4 : (name: string, x: number, y: number, z: number, w: number, suffix: string) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {number} x
-
-@param {number} y
-
-@param {number} z
-
-@param {number} w
-
-@param {string} [suffix] Suffix to add to the uniform name.
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | x | number | 
+ | y | number | 
+ | z | number | 
+ | w | number | 
 ### updateMatrix : (name: string, mat: [Matrix](/classes/3.1/Matrix)) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {[Matrix](/classes/3.1/Matrix)} A 4x4 matrix.
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | mat | [Matrix](/classes/3.1/Matrix) | 
 ### updateVector3 : (name: string, vector: [Vector3](/classes/3.1/Vector3)) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {[Vector3](/classes/3.1/Vector3)} vector
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | vector | [Vector3](/classes/3.1/Vector3) | 
 ### updateVector4 : (name: string, vector: [Vector4](/classes/3.1/Vector4)) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {[Vector4](/classes/3.1/Vector4)} vector
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | vector | [Vector4](/classes/3.1/Vector4) | 
 ### updateColor3 : (name: string, color: [Color3](/classes/3.1/Color3), suffix: string) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {[Color3](/classes/3.1/Color3)} color
-
-@param {string} [suffix] Suffix to add to the uniform name.
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | color | [Color3](/classes/3.1/Color3) | 
+optional | suffix | string | 
 ### updateColor4 : (name: string, color: [Color3](/classes/3.1/Color3), alpha: number, suffix: string) =&gt; void
 
 Wrapper for updateUniform.
 
-@param {string} name Name of the uniform, as used in the uniform block in the shader.
-
-@param {[Color3](/classes/3.1/Color3)} color
-
-@param {number} alpha
-
-@param {string} [suffix] Suffix to add to the uniform name.
-
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | color | [Color3](/classes/3.1/Color3) | 
+ | alpha | number | 
 ### useUbo : boolean
 
 Indicates if the buffer is using the WebGL2 UBO implementation,
 
 or just falling back on setUniformXXX calls.
-
 ### isSync : boolean
 
 Indicates if the WebGL underlying uniform buffer is in sync
 
 with the javascript cache data.
-
 ## Methods
 
 ### isDynamic() &rarr; boolean

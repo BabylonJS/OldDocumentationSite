@@ -31,4 +31,3 @@ optional | engine | [Engine](/classes/3.1/Engine) |
 ### kernelMatrix : [Matrix](/classes/3.1/Matrix)
 
 
-

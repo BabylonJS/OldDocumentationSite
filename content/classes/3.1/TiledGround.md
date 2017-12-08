@@ -30,25 +30,19 @@ optional | canBeRegenerated | boolean |
 ### xmin : number
 
 
-
 ### zmin : number
-
 
 
 ### xmax : number
 
 
-
 ### zmax : number
-
 
 
 ### subdivisions : { w: number,  h: number }
 
 
-
 ### precision : { w: number,  h: number }
-
 
 
 ## Methods

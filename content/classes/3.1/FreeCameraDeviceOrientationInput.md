@@ -17,7 +17,6 @@ class [FreeCameraDeviceOrientationInput](/classes/3.1/FreeCameraDeviceOrientatio
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
 
 
-
 ## Methods
 
 ### attachControl(element, noPreventDefault) &rarr; void

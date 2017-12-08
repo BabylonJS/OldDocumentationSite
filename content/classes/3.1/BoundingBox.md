@@ -28,45 +28,34 @@ class [BoundingBox](/classes/3.1/BoundingBox)
 ### minimum : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### maximum : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### vectors : [Vector3](/classes/3.1/Vector3)[]
 
 
-
 ### center : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### centerWorld : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### extendSize : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### extendSizeWorld : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### directions : [Vector3](/classes/3.1/Vector3)[]
-
 
 
 ### vectorsWorld : [Vector3](/classes/3.1/Vector3)[]
 
 
-
 ### minimumWorld : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### maximumWorld : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods

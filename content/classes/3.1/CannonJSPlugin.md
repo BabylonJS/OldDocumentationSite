@@ -27,13 +27,10 @@ optional | iterations | number |
 ### world : any
 
 
-
 ### name : string
 
 
-
 ### BJSCANNON : any
-
 
 
 ## Methods

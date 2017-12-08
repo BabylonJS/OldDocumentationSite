@@ -28,17 +28,13 @@ optional | mesh | Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt; |
 ### diameter : number
 
 
-
 ### thickness : number
-
 
 
 ### tessellation : number
 
 
-
 ### side : number
-
 
 
 ## Methods

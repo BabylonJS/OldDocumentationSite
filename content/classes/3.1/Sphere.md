@@ -27,13 +27,10 @@ optional | mesh | Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt; |
 ### segments : number
 
 
-
 ### diameter : number
 
 
-
 ### side : number
-
 
 
 ## Methods
