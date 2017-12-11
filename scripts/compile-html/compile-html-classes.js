@@ -42,7 +42,7 @@ renderer.heading = function (text, level, raw) {
             '</a>';
 
         var textArray = text.split(':'); // [static parameter_name, :, parameter_type]
-        if (textArray.length >= 2 && textArray.length <= 3) {
+        if (textArray.length >= 2 && textArray.length < 3) {
             // Then it's a parameter
             var parameter_name = textArray[0].split(' '); // [static, parameter_name]
             if (parameter_name.length > 1) {
