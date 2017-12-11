@@ -45,6 +45,8 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 **Please note that only one fullscreen mode GUI is allowed per scene**
 
+The fullscreen mode is not intented to be used with WebVR as it is a pure 2d rendering. For WebVR scenario you will have to use the texture mode below.
+
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
 ```
