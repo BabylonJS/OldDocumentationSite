@@ -29,41 +29,31 @@ Represents a scene to be rendered by the engine.
 ### static MinDeltaTime : number
 
 
-
 ### static MaxDeltaTime : number
-
 
 
 ### static FOGMODE_NONE : number
 
-The fog is deactivated */
 
 ### static FOGMODE_EXP : number
 
-The fog density is following an exponential function */
 
 ### static FOGMODE_EXP2 : number
 
-The fog density is following an exponential function faster than FOGMODE_EXP */
 
 ### static FOGMODE_LINEAR : number
 
-The fog density is following a linear function. */
 
 ### autoClear : boolean
-
 
 
 ### autoClearDepthAndStencil : boolean
 
 
-
 ### clearColor : [Color4](/classes/3.1/Color4)
 
 
-
 ### ambientColor : [Color3](/classes/3.1/Color3)
-
 
 
 ### environmentTexture : [BaseTexture](/classes/3.1/BaseTexture)
@@ -79,7 +69,6 @@ this is easier to reference from here than from all the materials.
 As in the majority of the scene they are the same (exception for multi room and so on),
 
 this is easier to set here than in all the materials.
-
 ### imageProcessingConfiguration : [ImageProcessingConfiguration](/classes/3.1/ImageProcessingConfiguration)
 
 Default image processing configuration used either in the rendering
@@ -90,38 +79,29 @@ As in the majority of the scene they are the same (exception for multi camera),
 
 this is easier to reference from here than from all the materials and post process.
 
-No setter as we it is a shared configuration, you can set the values instead.
-
+         * No setter as we it is a shared configuration, you can set the values instead.
 ### forceWireframe : boolean
-
 
 
 ### forcePointsCloud : boolean
 
 
-
 ### forceShowBoundingBoxes : boolean
-
 
 
 ### clipPlane : [Plane](/classes/3.1/Plane)
 
 
-
 ### animationsEnabled : boolean
-
 
 
 ### constantlyUpdateMeshUnderPointer : boolean
 
 
-
 ### hoverCursor : string
 
 
-
 ### defaultCursor : string
-
 
 
 ### preventDefaultOnPointerDown : boolean
@@ -129,13 +109,10 @@ No setter as we it is a shared configuration, you can set the values instead.
 This is used to call preventDefault() on pointer down
 
 in order to block unwanted artifacts like system double clicks
-
 ### metadata : any
 
 
-
 ### loadingPluginName : string
-
 
 
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
@@ -143,45 +120,36 @@ in order to block unwanted artifacts like system double clicks
 An event triggered when the scene is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onDispose : () =&gt; void
 
-A function to be executed when this scene is disposed. */
 
 ### onBeforeRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
 
 An event triggered before rendering the scene
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### beforeRender : Nullable&lt;() =&gt; void&gt;
 
-A function to be executed before rendering this scene */
 
 ### onAfterRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
 
 An event triggered after rendering the scene
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### afterRender : Nullable&lt;() =&gt; void&gt;
 
-A function to be executed after rendering this scene */
 
 ### onReadyObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
 
 An event triggered when the scene is ready
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onBeforeCameraRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
 
 An event triggered before rendering a camera
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### beforeCameraRender : () =&gt; void
-
 
 
 ### onAfterCameraRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
@@ -189,9 +157,7 @@ An event triggered before rendering a camera
 An event triggered after rendering a camera
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### afterCameraRender : () =&gt; void
-
 
 
 ### onNewCameraAddedObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
@@ -199,61 +165,51 @@ An event triggered after rendering a camera
 An event triggered when a camera is created
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onCameraRemovedObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
 
 An event triggered when a camera is removed
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onNewLightAddedObservable : [Observable](/classes/3.1/Observable)&lt;[Light](/classes/3.1/Light)&gt;
 
 An event triggered when a light is created
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onLightRemovedObservable : [Observable](/classes/3.1/Observable)&lt;[Light](/classes/3.1/Light)&gt;
 
 An event triggered when a light is removed
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onNewGeometryAddedObservable : [Observable](/classes/3.1/Observable)&lt;[Geometry](/classes/3.1/Geometry)&gt;
 
 An event triggered when a geometry is created
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onGeometryRemovedObservable : [Observable](/classes/3.1/Observable)&lt;[Geometry](/classes/3.1/Geometry)&gt;
 
 An event triggered when a geometry is removed
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onNewMeshAddedObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 An event triggered when a mesh is created
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onMeshRemovedObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 An event triggered when a mesh is removed
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onBeforeStepObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
 
 An event triggered before calculating deterministic simulation step
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onAfterStepObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
 
 An event triggered after calculating deterministic simulation step
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onRenderingGroupObservable : [Observable](/classes/3.1/Observable)&lt;[RenderingGroupInfo](/classes/3.1/RenderingGroupInfo)&gt;
 
 This [Observable](/classes/3.1/Observable) will be triggered for each stage of each renderingGroup of each rendered camera.
@@ -261,41 +217,73 @@ This [Observable](/classes/3.1/Observable) will be triggered for each stage of e
 The RenderinGroupInfo class contains all the information about the context in which the observable is called
 
 If you wish to register an [Observer](/classes/3.1/Observer) only for a given set of renderingGroup, use the mask with a combination of the renderingGroup index elevated to the power of two (1 for renderingGroup 0, 2 for renderingrOup1, 4 for 2 and 8 for 3)
-
 ### animations : [Animation](/classes/3.1/Animation)[]
-
 
 
 ### pointerDownPredicate : ([Mesh](/classes/3.1/Mesh): [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | [Mesh](/classes/3.1/Mesh) | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
 ### pointerUpPredicate : ([Mesh](/classes/3.1/Mesh): [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | [Mesh](/classes/3.1/Mesh) | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
 ### pointerMovePredicate : ([Mesh](/classes/3.1/Mesh): [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | [Mesh](/classes/3.1/Mesh) | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
 ### onPointerMove : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/3.1/PickingInfo)) =&gt; void
 
-Deprecated. Use onPointerObservable instead */
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | evt | PointerEvent | 
+ | pickInfo | [PickingInfo](/classes/3.1/PickingInfo) | 
 ### onPointerDown : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/3.1/PickingInfo)) =&gt; void
 
-Deprecated. Use onPointerObservable instead */
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | evt | PointerEvent | 
+ | pickInfo | [PickingInfo](/classes/3.1/PickingInfo) | 
 ### onPointerUp : (evt: PointerEvent, pickInfo: Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)&gt;) =&gt; void
 
-Deprecated. Use onPointerObservable instead */
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | evt | PointerEvent | 
+ | pickInfo | Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)&gt; | 
 ### onPointerPick : (evt: PointerEvent, pickInfo: [PickingInfo](/classes/3.1/PickingInfo)) =&gt; void
 
-Deprecated. Use onPointerObservable instead */
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | evt | PointerEvent | 
+ | pickInfo | [PickingInfo](/classes/3.1/PickingInfo) | 
 ### gamepadManager : [GamepadManager](/classes/3.1/GamepadManager)
-
 
 
 ### onPrePointerObservable : [Observable](/classes/3.1/Observable)&lt;[PointerInfoPre](/classes/3.1/PointerInfoPre)&gt;
@@ -303,79 +291,60 @@ Deprecated. Use onPointerObservable instead */
 This observable event is triggered when any ponter event is triggered. It is registered during [Scene](/classes/3.1/Scene).attachControl() and it is called BEFORE the 3D engine process anything (mesh/sprite picking for instance).
 
 You have the possibility to skip the process and the call to onPointerObservable by setting [PointerInfoPre](/classes/3.1/PointerInfoPre).skipOnPointerObservable to true
-
 ### onPointerObservable : [Observable](/classes/3.1/Observable)&lt;[PointerInfo](/classes/3.1/PointerInfo)&gt;
 
 [Observable](/classes/3.1/Observable) event triggered each time an input event is received from the rendering canvas
-
 ### unTranslatedPointer : [Vector2](/classes/3.1/Vector2)
-
 
 
 ### static DragMovementThreshold : number
 
-The distance in pixel that you have to move to prevent some events */
 
 ### static LongPressDelay : number
 
-Time in milliseconds to wait to raise long press events if button is still pressed */
 
 ### static DoubleClickDelay : number
 
-Time in milliseconds with two consecutive clicks will be considered as a double click */
 
 ### static ExclusiveDoubleClickMode : boolean
 
-If you need to check double click without raising a single click at first click, enable this flag */
 
 ### cameraToUseForPointers : Nullable&lt;[Camera](/classes/3.1/Camera)&gt;
 
-Define this parameter if you are using multiple cameras and you want to specify which one should be used for pointer position */
 
 ### onPreKeyboardObservable : [Observable](/classes/3.1/Observable)&lt;[KeyboardInfoPre](/classes/3.1/KeyboardInfoPre)&gt;
 
 This observable event is triggered when any keyboard event si raised and registered during [Scene](/classes/3.1/Scene).attachControl()
 
 You have the possibility to skip the process and the call to onKeyboardObservable by setting [KeyboardInfoPre](/classes/3.1/KeyboardInfoPre).skipOnPointerObservable to true
-
 ### onKeyboardObservable : [Observable](/classes/3.1/Observable)&lt;[KeyboardInfo](/classes/3.1/KeyboardInfo)&gt;
 
 [Observable](/classes/3.1/Observable) event triggered each time an keyboard event is received from the hosting window
-
 ### useRightHandedSystem : boolean
-
 
 
 ### fogEnabled : boolean
 
 is fog enabled on this scene.
-
 ### fogMode : number
-
 
 
 ### fogColor : [Color3](/classes/3.1/Color3)
 
 
-
 ### fogDensity : number
-
 
 
 ### fogStart : number
 
 
-
 ### fogEnd : number
-
 
 
 ### shadowsEnabled : boolean
 
 
-
 ### lightsEnabled : boolean
-
 
 
 ### lights : [Light](/classes/3.1/Light)[]
@@ -385,18 +354,14 @@ All of the lights added to this scene.
 @see BABYLON.[Light](/classes/3.1/Light)
 
 @type {BABYLON.[Light](/classes/3.1/Light)[]}
-
 ### cameras : [Camera](/classes/3.1/Camera)[]
 
-All of the cameras added to this scene. */
 
 ### activeCameras : [Camera](/classes/3.1/Camera)[]
 
-All of the active cameras added to this scene. */
 
 ### activeCamera : Nullable&lt;[Camera](/classes/3.1/Camera)&gt;
 
-The current active camera */
 
 ### meshes : [AbstractMesh](/classes/3.1/AbstractMesh)[]
 
@@ -405,131 +370,97 @@ All of the (abstract) meshes added to this scene.
 @see BABYLON.[AbstractMesh](/classes/3.1/AbstractMesh)
 
 @type {BABYLON.[AbstractMesh](/classes/3.1/AbstractMesh)[]}
-
 ### materials : [Material](/classes/3.1/Material)[]
-
 
 
 ### multiMaterials : [MultiMaterial](/classes/3.1/MultiMaterial)[]
 
 
-
 ### defaultMaterial : [Material](/classes/3.1/Material)
 
-The default material used on meshes when no material is affected */
-
-The default material used on meshes when no material is affected */
 
 ### texturesEnabled : boolean
-
 
 
 ### textures : [BaseTexture](/classes/3.1/BaseTexture)[]
 
 
-
 ### particlesEnabled : boolean
-
 
 
 ### particleSystems : IParticleSystem[]
 
 
-
 ### spritesEnabled : boolean
-
 
 
 ### spriteManagers : [SpriteManager](/classes/3.1/SpriteManager)[]
 
 
-
 ### layers : [Layer](/classes/3.1/Layer)[]
-
 
 
 ### highlightLayers : [HighlightLayer](/classes/3.1/HighlightLayer)[]
 
 
-
 ### skeletonsEnabled : boolean
-
 
 
 ### skeletons : [Skeleton](/classes/3.1/Skeleton)[]
 
 
-
 ### morphTargetManagers : [MorphTargetManager](/classes/3.1/MorphTargetManager)[]
-
 
 
 ### lensFlaresEnabled : boolean
 
 
-
 ### lensFlareSystems : [LensFlareSystem](/classes/3.1/LensFlareSystem)[]
-
 
 
 ### collisionsEnabled : boolean
 
 
-
 ### collisionCoordinator : ICollisionCoordinator
-
 
 
 ### gravity : [Vector3](/classes/3.1/Vector3)
 
-Defines the gravity applied to this scene */
 
 ### postProcesses : [PostProcess](/classes/3.1/PostProcess)[]
-
 
 
 ### postProcessesEnabled : boolean
 
 
-
 ### postProcessManager : [PostProcessManager](/classes/3.1/PostProcessManager)
-
 
 
 ### postProcessRenderPipelineManager : [PostProcessRenderPipelineManager](/classes/3.1/PostProcessRenderPipelineManager)
 
 
-
 ### renderTargetsEnabled : boolean
-
 
 
 ### dumpNextRenderTargets : boolean
 
 
-
 ### customRenderTargets : [RenderTargetTexture](/classes/3.1/RenderTargetTexture)[]
-
 
 
 ### useDelayedTextureLoading : boolean
 
 
-
 ### importedMeshesFiles : String[]
-
 
 
 ### probesEnabled : boolean
 
 
-
 ### reflectionProbes : [ReflectionProbe](/classes/3.1/ReflectionProbe)[]
 
 
-
 ### database : [Database](/classes/3.1/Database)
-
 
 
 ### actionManager : [ActionManager](/classes/3.1/ActionManager)
@@ -537,49 +468,37 @@ Defines the gravity applied to this scene */
 This scene's action manager
 
 @type {BABYLON.[ActionManager](/classes/3.1/ActionManager)}
-
 ### proceduralTexturesEnabled : boolean
-
 
 
 ### soundTracks : [SoundTrack](/classes/3.1/SoundTrack)[]
 
 
-
 ### mainSoundTrack : [SoundTrack](/classes/3.1/SoundTrack)
-
 
 
 ### VRHelper : [VRExperienceHelper](/classes/3.1/VRExperienceHelper)
 
 
-
 ### simplificationQueue : [SimplificationQueue](/classes/3.1/SimplificationQueue)
-
 
 
 ### animationTimeScale : number
 
 
-
 ### frustumPlanes : [Plane](/classes/3.1/Plane)[]
-
 
 
 ### requireLightSorting : boolean
 
 
-
 ### debugLayer : [DebugLayer](/classes/3.1/DebugLayer)
-
 
 
 ### workerCollisions : boolean
 
 
-
 ### selectionOctree : [Octree](/classes/3.1/Octree)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
-
 
 
 ### meshUnderPointer : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
@@ -587,81 +506,62 @@ This scene's action manager
 The mesh that is currently under the pointer.
 
 @return {BABYLON.[AbstractMesh](/classes/3.1/AbstractMesh)} mesh under the pointer/mouse cursor or null if none.
-
 ### pointerX : number
 
 Current on-screen X position of the pointer
 
 @return {number} X position of the pointer
-
 ### pointerY : number
 
 Current on-screen Y position of the pointer
 
 @return {number} Y position of the pointer
-
 ### totalVerticesPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
-
 
 
 ### totalActiveIndicesPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
 
 
-
 ### activeParticlesPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
-
 
 
 ### activeBonesPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
 
 
-
 ### interFramePerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
-
 
 
 ### lastFramePerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
 
 
-
 ### evaluateActiveMeshesDurationPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
-
 
 
 ### renderDurationPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
 
 
-
 ### particlesDurationPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
-
 
 
 ### spriteDuractionPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
 
 
-
 ### Animatables : [Animatable](/classes/3.1/Animatable)[]
-
 
 
 ### uid : string
 
 Return a unique id as a string which can serve as an identifier for the scene
-
 ### this : ()
-
 
 
 ### audioEnabled : boolean
 
 
-
 ### headphone : boolean
 
 
-
 ### isDisposed : boolean
-
 
 
 ## Methods
@@ -813,7 +713,7 @@ optional | attachMove | boolean |  defines if you want to attach events to point
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | () =&gt; void | 
+ | func |  | 
 
 ### unregisterBeforeRender(func) &rarr; void
 
@@ -822,7 +722,7 @@ optional | attachMove | boolean |  defines if you want to attach events to point
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | () =&gt; void | 
+ | func |  | 
 
 ### registerAfterRender(func) &rarr; void
 
@@ -831,7 +731,7 @@ optional | attachMove | boolean |  defines if you want to attach events to point
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | () =&gt; void | 
+ | func |  | 
 
 ### unregisterAfterRender(func) &rarr; void
 
@@ -840,7 +740,7 @@ optional | attachMove | boolean |  defines if you want to attach events to point
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | () =&gt; void | 
+ | func |  | 
 
 ### getWaitingItemsCount() &rarr; number
 
@@ -852,7 +752,7 @@ Registers a function to be executed when the scene is ready.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | () =&gt; void | 
+ | func |  | 
 
 ### beginAnimation(target, from, to, loop, speedRatio, onAnimationEnd, animatable) &rarr; [Animatable](/classes/3.1/Animatable)
 
@@ -870,7 +770,7 @@ See BABYLON.[Animatable](/classes/3.1/Animatable)
  | to | number | 
 optional | loop | boolean | 
 optional | speedRatio | number | 
-optional | onAnimationEnd | () =&gt; void | 
+optional | onAnimationEnd |  | 
 ### beginDirectAnimation(target, animations, from, to, loop, speedRatio, onAnimationEnd) &rarr; [Animatable](/classes/3.1/Animatable)
 
 
@@ -1390,7 +1290,8 @@ Get an externaly attached data from its key, create it using a factory if it's n
  | Name | Type | Description
 ---|---|---|---
  | key | string |  the unique key that identifies the data
- | factory | (k: string) =&gt; T |  the factory that will be called to create the instance if and only if it doesn't exists
+ | factory |  | k | string | 
+
 ### removeExternalData(key) &rarr; boolean
 
 Remove an externaly attached data from the [Engine](/classes/3.1/Engine) instance
@@ -1501,7 +1402,9 @@ optional | camera | [Camera](/classes/3.1/Camera) |
 ---|---|---|---
  | x | number |  position on screen
  | y | number |  position on screen
-optional | predicate | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean |  Predicate function used to determine eligible meshes. Can be set to null. In this case, a mesh must be enabled, visible and with isPickable set to true
+optional | predicate |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
+ |  Predicate function used to determine eligible meshes. Can be set to null. In this case, a mesh must be enabled, visible and with isPickable set to true
 optional | fastCheck | boolean |  Launch a fast check only using the bounding boxes. Can be set to null.
 ### pickSprite(x, y, predicate, fastCheck, camera) &rarr; Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)&gt;
 
@@ -1512,7 +1415,9 @@ optional | fastCheck | boolean |  Launch a fast check only using the bounding bo
 ---|---|---|---
  | x | number |  position on screen
  | y | number |  position on screen
-optional | predicate | (sprite: [Sprite](/classes/3.1/Sprite)) =&gt; boolean |  Predicate function used to determine eligible sprites. Can be set to null. In this case, a sprite must have isPickable set to true
+optional | predicate |  | sprite | [Sprite](/classes/3.1/Sprite) | 
+
+ |  Predicate function used to determine eligible sprites. Can be set to null. In this case, a sprite must have isPickable set to true
 optional | fastCheck | boolean |  Launch a fast check only using the bounding boxes. Can be set to null.
 ### pickWithRay(ray, predicate, fastCheck) &rarr; Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)&gt;
 
@@ -1522,8 +1427,9 @@ optional | fastCheck | boolean |  Launch a fast check only using the bounding bo
  | Name | Type | Description
 ---|---|---|---
  | ray | [Ray](/classes/3.1/Ray) |  The ray to use to pick meshes
- | predicate | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean |  Predicate function used to determine eligible sprites. Can be set to null. In this case, a sprite must have isPickable set to true
-optional | fastCheck | boolean |  Launch a fast check only using the bounding boxes. Can be set to null.
+ | predicate |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
+ |  Predicate function used to determine eligible sprites. Can be set to null. In this case, a sprite must have isPickable set to true
 ### multiPick(x, y, predicate, camera) &rarr; Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)[]&gt;
 
 Launch a ray to try to pick a mesh in the scene
@@ -1533,7 +1439,9 @@ Launch a ray to try to pick a mesh in the scene
 ---|---|---|---
  | x | number |  X position on screen
  | y | number |  Y position on screen
-optional | predicate | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean |  Predicate function used to determine eligible meshes. Can be set to null. In this case, a mesh must be enabled, visible and with isPickable set to true
+optional | predicate |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
+ |  Predicate function used to determine eligible meshes. Can be set to null. In this case, a mesh must be enabled, visible and with isPickable set to true
 ### multiPickWithRay(ray, predicate) &rarr; Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)[]&gt;
 
 Launch a ray to try to pick a mesh in the scene
@@ -1542,7 +1450,8 @@ Launch a ray to try to pick a mesh in the scene
  | Name | Type | Description
 ---|---|---|---
  | ray | [Ray](/classes/3.1/Ray) |  [Ray](/classes/3.1/Ray) to use
- | predicate | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean |  Predicate function used to determine eligible meshes. Can be set to null. In this case, a mesh must be enabled, visible and with isPickable set to true
+ | predicate |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
 ### setPointerOverMesh(mesh) &rarr; void
 
 
@@ -1633,7 +1542,8 @@ optional | webVROptions | WebVROptions |
  | Name | Type | Description
 ---|---|---|---
  | tagsQuery | string | 
-optional | forEach | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void | 
+optional | forEach |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
 ### getCamerasByTags(tagsQuery, forEach) &rarr; [Camera](/classes/3.1/Camera)[]
 
 
@@ -1642,7 +1552,8 @@ optional | forEach | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; voi
  | Name | Type | Description
 ---|---|---|---
  | tagsQuery | string | 
-optional | forEach | (camera: [Camera](/classes/3.1/Camera)) =&gt; void | 
+optional | forEach |  | camera | [Camera](/classes/3.1/Camera) | 
+
 ### getLightsByTags(tagsQuery, forEach) &rarr; [Light](/classes/3.1/Light)[]
 
 
@@ -1651,7 +1562,8 @@ optional | forEach | (camera: [Camera](/classes/3.1/Camera)) =&gt; void |
  | Name | Type | Description
 ---|---|---|---
  | tagsQuery | string | 
-optional | forEach | (light: [Light](/classes/3.1/Light)) =&gt; void | 
+optional | forEach |  | light | [Light](/classes/3.1/Light) | 
+
 ### getMaterialByTags(tagsQuery, forEach) &rarr; [Material](/classes/3.1/Material)[]
 
 
@@ -1660,7 +1572,8 @@ optional | forEach | (light: [Light](/classes/3.1/Light)) =&gt; void |
  | Name | Type | Description
 ---|---|---|---
  | tagsQuery | string | 
-optional | forEach | (material: [Material](/classes/3.1/Material)) =&gt; void | 
+optional | forEach |  | material | [Material](/classes/3.1/Material) | 
+
 ### setRenderingOrder(renderingGroupId, opaqueSortCompareFn, alphaTestSortCompareFn, transparentSortCompareFn) &rarr; void
 
 Overrides the default sort function applied in the renderging group to prepare the meshes.
@@ -1695,4 +1608,5 @@ Will flag all materials as dirty to trigger new shader compilation
  | Name | Type | Description
 ---|---|---|---
  | flag | number | 
-optional | predicate | (mat: [Material](/classes/3.1/Material)) =&gt; boolean |  If not null, it will be used to specifiy if a material has to be marked as dirty
+optional | predicate |  | mat | [Material](/classes/3.1/Material) | 
+

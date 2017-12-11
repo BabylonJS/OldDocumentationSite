@@ -26,9 +26,7 @@ optional | postponeInternalCreation | boolean |
 ### Float32Array : ()
 
 
-
 ### instanceDivisor : number
-
 
 
 ## Methods

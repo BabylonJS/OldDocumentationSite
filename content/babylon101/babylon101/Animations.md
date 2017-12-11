@@ -221,11 +221,11 @@ Fast and easy. :)
 
 ## Animation Blending
 
-As of Babylon.js 2.3+, you can  start an animation with *enableBlending* = true. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
+As of Babylon.js 2.3+, you can start an animation with *enableBlending* = true. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
 
 In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position:
 
- https://www.babylonjs-playground.com/#2BLI9T#2
+ https://www.babylonjs-playground.com/#2BLI9T#174
 
 Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running.
 
@@ -236,7 +236,7 @@ If you want more information about easing functions, here are some useful links 
 - [MSDN Easing functions documentation](http://msdn.microsoft.com/en-us/library/ee308751.aspx)
 - [Easing functions cheat sheet](http://easings.net/fr)
 
-All those easing functions are implemented in BABYLON allowing you to apply custom mathematical formulas to your animations.
+All those easing functions are implemented in BABYLON, allowing you to apply custom mathematical formulas to your animations.
 
 Here are the predefined easing functions you can use : 
 - ```BABYLON.CircleEase()```
@@ -386,9 +386,9 @@ newScene.onAfterStepObservable.add(function(theScene){
   console.log("Performing game logic, AFTER animations and physics for stepId: "+theScene.getStepId());
 });
 ```
-Using them allows to run arbitrary logic code before and after animations and physics are updated.
+Using them allows running arbitrary logic code before and after animations and physics are updated.
 
-In the following example you can see in console the stepId in which the sphere is considered at rest and the rotation value for the rotating box. Multiple runs will always result in the same values, whatever the frame-rate.
+In the following example, you can see in console the stepId in which the sphere is considered at rest and the rotation value for the rotating box. Multiple runs will always result in the same values, whatever the frame-rate.
 
 https://www.babylonjs-playground.com/#DU4FPJ#3
 

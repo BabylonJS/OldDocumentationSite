@@ -23,25 +23,19 @@ optional | influence | number |
 ### name : string
 
 
-
 ### animations : [Animation](/classes/3.1/Animation)[]
-
 
 
 ### onInfluenceChanged : [Observable](/classes/3.1/Observable)&lt;boolean&gt;
 
 
-
 ### influence : number
-
 
 
 ### hasNormals : boolean
 
 
-
 ### hasTangents : boolean
-
 
 
 ## Methods

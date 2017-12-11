@@ -24,7 +24,7 @@ class [PostProcessRenderPass](/classes/3.1/PostProcessRenderPass)
  | name | string | 
  | size | number | 
  | renderList | [Mesh](/classes/3.1/Mesh)[] | 
- | beforeRender | () =&gt; void | 
+ | beforeRender |  | 
 ## Methods
 
 ### setRenderList(renderList) &rarr; void

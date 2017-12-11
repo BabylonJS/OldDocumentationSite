@@ -24,9 +24,7 @@ optional | checkVerticesInsteadOfIndices | boolean |
 ### edgesWidthScalerForOrthographic : number
 
 
-
 ### edgesWidthScalerForPerspective : number
-
 
 
 ## Methods

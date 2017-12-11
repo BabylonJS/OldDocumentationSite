@@ -27,13 +27,10 @@ class [TextFileAssetTask](/classes/3.1/TextFileAssetTask) extends [AbstractAsset
 ### name : string
 
 
-
 ### url : string
 
 
-
 ### text : string
-
 
 
 ## Methods
@@ -46,5 +43,7 @@ class [TextFileAssetTask](/classes/3.1/TextFileAssetTask) extends [AbstractAsset
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onSuccess | () =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+ | onError | optional | message | string | 
+optional | exception | any | 
+

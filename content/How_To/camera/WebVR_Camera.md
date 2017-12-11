@@ -2,17 +2,19 @@
 
 Since v2.5 Babylon.js support WebVR using the WebVRFreeCamera.
 
-In Babylon v3.0 we fully support the WebVR 1.1 specifications (https://w3c.github.io/webvr/) which is supported by the latest version of chromium and firefox nightly, and planning to support WebVR 1.0 for legacy systems, such as GearVR.
+In Babylon v3.0 we fully support the WebVR 1.1 specifications (https://w3c.github.io/webvr/) which is supported by the latest version of Microsoft Edge, Chromium and Firefox, and planning to support WebVR 1.0 for legacy systems, such as GearVR.
 
-The WebVR camera is Babylon's simple interface to interaction with the HTC Vive and Oculus Rift.
+The WebVR camera is Babylon's simple interface to interaction with Windows Mixed Reality, HTC Vive and Oculus Rift.
 
-Babylon.js also supports the VR devices' controllers - The HTC vive's controllers and the Oculus touch - using the gamepad extension. Further details below.
+Babylon.js also supports the VR devices' controllers - The Windows Mixed Reality controllers, HTC Vive's controllers and the Oculus touch - using the gamepad extension. Further details below.
+
+To quickly get started creating WebVR scene the [WebVR Experience Helper](/how_to/WebVR_Helper) class can be used to automatically setup the WebVR camera and enable other features such as teleportation out of the box. 
 
 ## Browser support
 
 ### WebVR
 
-WebVR 1.1 is enabled in specific versions of chromium, firefox nightly, and soon Microsoft Edge. To get constant status updates, please visit WebVR rocks at https://webvr.rocks/ . We support any browser that implements WebVR 1.1. 
+WebVR 1.1 is enabled in specific versions of Microsoft Edge, Chromium and Firefox. To get constant status updates, please visit WebVR rocks at https://webvr.rocks/ . We support any browser that implements WebVR 1.1. 
 
 ### WebVR controllers
 
@@ -33,7 +35,7 @@ Just like any other camera, to get the camera working correctly with user input 
 
 `camera.attachControl(canvas, true);`
 
-This will, however, only work on all browsers. Chromium (and probably the rest of the browsers soon) only support attaching the VR device to the scene during a user interaction (a mouse click, for example). To get that working correctly, a simple solution would be:
+Most browsers only support attaching the VR device to the scene during a user interaction (a mouse click, for example). To get that working correctly, a simple solution would be:
 
 ```javascript
 scene.onPointerDown = function () {
@@ -104,7 +106,7 @@ export interface DevicePose {
 
 ## The Gamepad Extensions support (WebVR controllers)
 
-Each VR device currently available (Oculus rift and vive) has controllers that complement its usage. Both the vive controllers and the oculus touch controllers are supported by using the gamepad extensions.
+Each VR device currently available (Windows Mixed Reality, Oculus Rift and Vive) has controllers that complement its usage. Windows Mixed Reality controllers, Vive controllers and the Oculus touch controllers are supported by using the gamepad extensions.
 
 ### Init controllers
 
@@ -122,13 +124,15 @@ Initializing the controllers using the camera will also attach them to the camer
 
 ### Using the controllers
 
-There are two high level implementations that are automatically assigned to a WebVR controller:
+There are a few high level implementations that are automatically assigned to a WebVR controller:
 
-`OculusTouchController` for the oculus touch
+`WindowsMotionController` for the Windows Mixed Reality controllers.
 
-`ViveController` for the vive controllers.
+`OculusTouchController` for the Oculus touch
 
-Both extend the `WebVRController` class, which extends the `PoseEnabledController`.
+`ViveController` for the Vive controllers.
+
+each extends the `WebVRController` class, which extends the `PoseEnabledController`.
 
 To cut a long story short - Each controller is assigned the same set of functions, with the only different being the button mappings. The type of the device can be retrieved using `controller.controllerType`, which has the following values:
 
@@ -136,6 +140,7 @@ To cut a long story short - Each controller is assigned the same set of function
 export enum PoseEnabledControllerType {
     VIVE,
     OCULUS,
+    WINDOWS,
     GENERIC
 }
 ```
@@ -156,7 +161,7 @@ interface ExtendedGamepadButton extends GamepadButton {
 
 These values will be sent to the observers of any specific button when either on of them was changed.
 
-The controllers also have Axes-data, which can be compared to the stick value of an x-box controller. They consist of a 2D vector (with x and y values). Both the oculus (the touchpad) and the oculus touch (the center trackpad) can omit stick values. Stick values (SHOULD BE) are between -1, -1 and 1, 1, with 0,0 being the default value.
+The controllers also have Axes-data, which can be compared to the stick value of an x-box controller. They consist of a 2D vector (with x and y values). Stick values (SHOULD BE) are between -1, -1 and 1, 1, with 0,0 being the default value.
 
 * Not all buttons of each controller support all 3 values, but all 3 will always be provided. For example, the Vive's trigger doesn't support "touched", which will always be false, but will send the value data when pressed (a percentage of the press from 0 to 1). 
 * Having a value does not automatically mean that "pressed" is set to true. The oculus controllers, for example, will only set the trigger's "pressed" to true when the value exceeds 0.15 (15% pressed).
@@ -186,6 +191,18 @@ controller.onTriggerStateChangedObservable.add(function (stateObject) {
 ```
 
 
+
+**Windows Mixed Reality Controller mapping**
+
+The Windows Mixed Reality controller supports:
+
+1. Thumb stick axis - axis values. Mapped to `onPadValuesChangedObservable`.
+2. Thumb stick press - pressed. Mapped to `onPadStateChangedObservable`.
+3. Touchpad axis - axis values. Mapped to `onTouchpadValuesChangedObservable` and `onTrackpadValuesChangedObservable` (aliases).
+4. Touchpad press - pressed and touch. Mapped to `onTouchpadButtonStateChangedObservable` and `onTrackpadChangedObservable` (aliases).
+5. Trigger - pressed and value. Mapped to `onTriggerStateChangedObservable`
+6. Grip button - pressed. Mapped to `onMainButtonStateChangedObservable` and `onGripButtonStateChangedObservable` (aliases)
+7. Menu button - pressed. Mapped to `onSecondaryButtonStateChangedObservable` and `onMenuButtonStateChangedObservable` (aliases).
 
 **Vive Controller mapping**
 
@@ -251,9 +268,11 @@ Just like the WebVR camera, the controllers export their (right handed!!) raw po
 * When using the oculus rift, pay attention that the oculus controller (this little )
 * To further read about WebVR try https://mozvr.com/ .
 
-## WebVR Demo ?!?!?
+## Examples
 
- https://www.babylonjs-playground.com/#5MV04
+ - [Helmet](https://www.babylonjs-playground.com/#G46RP6#2)
+ - [Basic Scene](https://www.babylonjs-playground.com/#5MV04)
+ 
 
 Enjoy!
 

@@ -28,28 +28,39 @@ class [AssetsManager](/classes/3.1/AssetsManager)
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | tasks | IAssetTask[] | 
+
 ### onTaskSuccess : (task: IAssetTask) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | IAssetTask | 
 
 ### onTaskError : (task: IAssetTask) =&gt; void
 
 
 
-### onTaskSuccessObservable : [Observable](/classes/3.1/Observable)&lt;IAssetTask&gt;
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | IAssetTask | 
 
+### onTaskSuccessObservable : [Observable](/classes/3.1/Observable)&lt;IAssetTask&gt;
 
 
 ### onTaskErrorObservable : [Observable](/classes/3.1/Observable)&lt;IAssetTask&gt;
 
 
-
 ### onTasksDoneObservable : [Observable](/classes/3.1/Observable)&lt;IAssetTask[]&gt;
 
 
-
 ### useDefaultLoadingScreen : boolean
-
 
 
 ## Methods

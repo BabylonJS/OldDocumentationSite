@@ -91,7 +91,7 @@ myMaterial.ambientTexture = new BABYLON.Texture("PATH TO IMAGE", scene);
 
 mesh.material = myMaterial;
 ```
-
+Note: When no normals are specified, Babylon's standard material will compute the normals.
 ### Texture Example
 In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has a diffuse texture, the middle an emissive texture and the one on the right 

@@ -47,6 +47,6 @@ The building will be an array of boxes with each box parented to the disc.
 # Further Reading
 
 [How To Transform Coordinates](/How_To/Transform_Coordinates)  
-[Frame of Reference](resources/Frame_Of_Reference)
+[Frame of Reference](/resources/Frame_Of_Reference)
 
 

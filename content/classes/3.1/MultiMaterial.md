@@ -27,7 +27,6 @@ class [MultiMaterial](/classes/3.1/MultiMaterial) extends [Material](/classes/3.
 ### subMaterials : [Material](/classes/3.1/Material)[]
 
 
-
 ## Methods
 
 ### getSubMaterial(index) &rarr; [Material](/classes/3.1/Material)

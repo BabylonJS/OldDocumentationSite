@@ -25,17 +25,13 @@ optional | leftJoystick | boolean |
 ### reverseLeftRight : boolean
 
 
-
 ### reverseUpDown : boolean
-
 
 
 ### deltaPosition : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### pressed : boolean
-
 
 
 ## Methods
@@ -65,7 +61,7 @@ Change the color of the virtual joystick
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | action | () =&gt; any | 
+ | action |  | 
 
 ### setAxisForLeftRight(axis) &rarr; void
 

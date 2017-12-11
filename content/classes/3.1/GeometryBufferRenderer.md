@@ -23,13 +23,10 @@ optional | ratio | number |
 ### renderList : [Mesh](/classes/3.1/Mesh)[]
 
 
-
 ### isSupported : boolean
 
 
-
 ### enablePosition : boolean
-
 
 
 ## Methods

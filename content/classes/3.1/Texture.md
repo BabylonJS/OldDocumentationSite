@@ -35,161 +35,121 @@ optional | deleteBuffer | boolean |
 ### static NEAREST_SAMPLINGMODE : number
 
 
-
 ### static NEAREST_NEAREST_MIPLINEAR : number
-
 
 
 ### static BILINEAR_SAMPLINGMODE : number
 
 
-
 ### static LINEAR_LINEAR_MIPNEAREST : number
-
 
 
 ### static TRILINEAR_SAMPLINGMODE : number
 
 
-
 ### static LINEAR_LINEAR_MIPLINEAR : number
-
 
 
 ### static NEAREST_NEAREST_MIPNEAREST : number
 
 
-
 ### static NEAREST_LINEAR_MIPNEAREST : number
-
 
 
 ### static NEAREST_LINEAR_MIPLINEAR : number
 
 
-
 ### static NEAREST_LINEAR : number
-
 
 
 ### static NEAREST_NEAREST : number
 
 
-
 ### static LINEAR_NEAREST_MIPNEAREST : number
-
 
 
 ### static LINEAR_NEAREST_MIPLINEAR : number
 
 
-
 ### static LINEAR_LINEAR : number
-
 
 
 ### static LINEAR_NEAREST : number
 
 
-
 ### static EXPLICIT_MODE : number
-
 
 
 ### static SPHERICAL_MODE : number
 
 
-
 ### static PLANAR_MODE : number
-
 
 
 ### static CUBIC_MODE : number
 
 
-
 ### static PROJECTION_MODE : number
-
 
 
 ### static SKYBOX_MODE : number
 
 
-
 ### static INVCUBIC_MODE : number
-
 
 
 ### static EQUIRECTANGULAR_MODE : number
 
 
-
 ### static FIXED_EQUIRECTANGULAR_MODE : number
-
 
 
 ### static FIXED_EQUIRECTANGULAR_MIRRORED_MODE : number
 
 
-
 ### static CLAMP_ADDRESSMODE : number
-
 
 
 ### static WRAP_ADDRESSMODE : number
 
 
-
 ### static MIRROR_ADDRESSMODE : number
-
 
 
 ### url : Nullable&lt;string&gt;
 
 
-
 ### uOffset : number
-
 
 
 ### vOffset : number
 
 
-
 ### uScale : number
-
 
 
 ### vScale : number
 
 
-
 ### uAng : number
-
 
 
 ### vAng : number
 
 
-
 ### wAng : number
-
 
 
 ### noMipmap : boolean
 
 
-
 ### isBlocking : boolean
-
 
 
 ### samplingMode : number
 
 
-
 ### onLoadObservable : [Observable](/classes/3.1/Observable)&lt;[Texture](/classes/3.1/Texture)&gt;
-
 
 
 ## Methods

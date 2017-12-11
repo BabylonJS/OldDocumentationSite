@@ -12,9 +12,7 @@ class [ArcRotateCameraMouseWheelInput](/classes/3.1/ArcRotateCameraMouseWheelInp
 ### camera : [ArcRotateCamera](/classes/3.1/ArcRotateCamera)
 
 
-
 ### wheelPrecision : number
-
 
 
 ### wheelDeltaPercentage : number
@@ -22,7 +20,6 @@ class [ArcRotateCameraMouseWheelInput](/classes/3.1/ArcRotateCameraMouseWheelInp
 wheelDeltaPercentage will be used instead of wheelPrecision if different from 0.
 
 It defines the percentage of current camera.radius to use as delta when wheel is used.
-
 ## Methods
 
 ### attachControl(element, noPreventDefault) &rarr; void

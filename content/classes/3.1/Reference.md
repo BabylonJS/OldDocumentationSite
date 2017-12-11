@@ -25,8 +25,6 @@ class [Reference](/classes/3.1/Reference)
 ### vertexId : number
 
 
-
 ### triangleId : number
-
 
 

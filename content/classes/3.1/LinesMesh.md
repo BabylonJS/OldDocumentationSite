@@ -31,13 +31,10 @@ optional | doNotCloneChildren | boolean |
 ### useVertexColor : boolean
 
 
-
 ### color : [Color3](/classes/3.1/Color3)
 
 
-
 ### alpha : number
-
 
 
 ### intersectionThreshold : number
@@ -53,15 +50,10 @@ Default value is 0.1
 The intersection Threshold is the margin applied when intersection a segment of the [LinesMesh](/classes/3.1/LinesMesh) with a [Ray](/classes/3.1/Ray).
 
 This margin is expressed in world space coordinates, so its value may vary.
-
-@param value the new threshold to apply
-
 ### material : [Material](/classes/3.1/Material)
 
 
-
 ### checkCollisions : boolean
-
 
 
 ## Methods

@@ -30,91 +30,74 @@ optional | options | IHighlightLayerOptions |  Sets of none mandatory options to
 ### name : string
 
 
-
 ### static neutralColor : [Color4](/classes/3.1/Color4)
 
 The neutral color used during the preparation of the glow effect.
 
 This is black by default as the blend operation is a blend operation.
-
 ### static glowingMeshStencilReference : number
 
 Stencil value used for glowing meshes.
-
 ### static normalMeshStencilReference : number
 
 Stencil value used for the other meshes in the scene.
-
 ### innerGlow : boolean
 
 Specifies whether or not the inner glow is ACTIVE in the layer.
-
 ### outerGlow : boolean
 
 Specifies whether or not the outer glow is ACTIVE in the layer.
-
 ### isEnabled : boolean
 
 Specifies wether the highlight layer is enabled or not.
-
 ### blurHorizontalSize : number
 
 Gets the horizontal size of the blur.
 
 Specifies the horizontal size of the blur.
-
 ### blurVerticalSize : number
 
 Gets the vertical size of the blur.
 
 Specifies the vertical size of the blur.
-
 ### camera : Nullable&lt;[Camera](/classes/3.1/Camera)&gt;
 
 Gets the camera attached to the layer.
-
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[HighlightLayer](/classes/3.1/HighlightLayer)&gt;
 
 An event triggered when the highlight layer has been disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onBeforeRenderMainTextureObservable : [Observable](/classes/3.1/Observable)&lt;[HighlightLayer](/classes/3.1/HighlightLayer)&gt;
 
 An event triggered when the highlight layer is about rendering the main texture with the glowy parts.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onBeforeBlurObservable : [Observable](/classes/3.1/Observable)&lt;[HighlightLayer](/classes/3.1/HighlightLayer)&gt;
 
 An event triggered when the highlight layer is being blurred.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onAfterBlurObservable : [Observable](/classes/3.1/Observable)&lt;[HighlightLayer](/classes/3.1/HighlightLayer)&gt;
 
 An event triggered when the highlight layer has been blurred.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onBeforeComposeObservable : [Observable](/classes/3.1/Observable)&lt;[HighlightLayer](/classes/3.1/HighlightLayer)&gt;
 
 An event triggered when the glowing blurred texture is being merged in the scene.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onAfterComposeObservable : [Observable](/classes/3.1/Observable)&lt;[HighlightLayer](/classes/3.1/HighlightLayer)&gt;
 
 An event triggered when the glowing blurred texture has been merged in the scene.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onSizeChangedObservable : [Observable](/classes/3.1/Observable)&lt;[HighlightLayer](/classes/3.1/HighlightLayer)&gt;
 
 An event triggered when the highlight layer changes its size.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ## Methods
 
 ### render() &rarr; void

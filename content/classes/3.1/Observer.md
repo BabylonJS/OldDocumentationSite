@@ -16,20 +16,25 @@ Represent an [Observer](/classes/3.1/Observer) registered to a given [Observable
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (eventData: Nullable&lt;T&gt;, eventState: [EventState](/classes/3.1/EventState)) =&gt; void | 
+ | callback |  | eventData | Nullable&lt;T&gt; | 
+ | eventState | [EventState](/classes/3.1/EventState) | 
+
+ | 
  | mask | number | 
-optional | scope | any | 
 ## Members
 
 ### callback : (eventData: Nullable&lt;T&gt;, eventState: [EventState](/classes/3.1/EventState)) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | eventData | Nullable&lt;T&gt; | 
+ | eventState | [EventState](/classes/3.1/EventState) | 
 ### mask : number
 
 
-
 ### scope : any
-
 
 

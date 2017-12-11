@@ -25,8 +25,11 @@ class [CubeTexture](/classes/3.1/CubeTexture) extends [BaseTexture](/classes/3.1
 optional | extensions | string[] | 
 optional | noMipmap | boolean | 
 optional | files | string[] | 
-optional | onLoad | () =&gt; void | 
-optional | onError | (message: string, exception: any) =&gt; void | 
+optional | onLoad |  | 
+optional | onError | optional | message | string | 
+optional | exception | any | 
+
+ | 
 optional | format | number | 
 optional | prefiltered | boolean | 
 ## Members
@@ -34,9 +37,7 @@ optional | prefiltered | boolean |
 ### url : string
 
 
-
 ### coordinatesMode : number
-
 
 
 ## Methods

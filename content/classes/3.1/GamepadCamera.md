@@ -32,9 +32,7 @@ class [GamepadCamera](/classes/3.1/GamepadCamera) extends [UniversalCamera](/cla
 ### gamepadAngularSensibility : number
 
 
-
 ### gamepadMoveSensibility : number
-
 
 
 ## Methods

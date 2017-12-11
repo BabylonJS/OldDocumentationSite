@@ -25,25 +25,19 @@ class [MultiRenderTarget](/classes/3.1/MultiRenderTarget) extends [RenderTargetT
 ### isSupported : boolean
 
 
-
 ### textures : [Texture](/classes/3.1/Texture)[]
-
 
 
 ### depthTexture : [Texture](/classes/3.1/Texture)
 
 
-
 ### wrapU : number
-
 
 
 ### wrapV : number
 
 
-
 ### samples : number
-
 
 
 ## Methods

@@ -12,13 +12,10 @@ class [PoseEnabledControllerHelper](/classes/3.1/PoseEnabledControllerHelper)
 ### [WindowsMotionController](/classes/3.1/WindowsMotionController) : undefined
 
 
-
 ### [ViveController](/classes/3.1/ViveController) : undefined
 
 
-
 ### [GenericController](/classes/3.1/GenericController) : undefined
-
 
 
 ## Methods

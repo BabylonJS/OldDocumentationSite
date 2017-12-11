@@ -16,12 +16,9 @@ class [Axis](/classes/3.1/Axis)
 ### static X : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### static Y : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### static Z : [Vector3](/classes/3.1/Vector3)
-
 
 

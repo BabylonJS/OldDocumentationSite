@@ -23,9 +23,7 @@ optional | scaleLines | number |
 ### scene : Nullable&lt;[Scene](/classes/3.1/Scene)&gt;
 
 
-
 ### scaleLines : number
-
 
 
 ## Methods

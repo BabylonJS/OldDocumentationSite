@@ -31,45 +31,34 @@ optional | rightStickX | number |
 ### id : string
 
 
-
 ### index : number
-
 
 
 ### browserGamepad : any
 
 
-
 ### type : number
-
 
 
 ### static GAMEPAD : number
 
 
-
 ### static GENERIC : number
-
 
 
 ### static XBOX : number
 
 
-
 ### static POSE_ENABLED : number
-
 
 
 ### isConnected : boolean
 
 
-
 ### leftStick : [StickValues](/classes/3.1/StickValues)
 
 
-
 ### rightStick : [StickValues](/classes/3.1/StickValues)
-
 
 
 ## Methods
@@ -81,8 +70,9 @@ optional | rightStickX | number |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (values: [StickValues](/classes/3.1/StickValues)) =&gt; void | 
+ | callback |  | values | [StickValues](/classes/3.1/StickValues) | 
 
+ | 
 ### onrightstickchanged(callback) &rarr; void
 
 
@@ -90,8 +80,9 @@ optional | rightStickX | number |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (values: [StickValues](/classes/3.1/StickValues)) =&gt; void | 
+ | callback |  | values | [StickValues](/classes/3.1/StickValues) | 
 
+ | 
 ### update() &rarr; void
 
 

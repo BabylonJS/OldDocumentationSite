@@ -30,9 +30,7 @@ Creates a refraction texture used by refraction channel of the standard material
 ### refractionPlane : [Plane](/classes/3.1/Plane)
 
 
-
 ### depth : number
-
 
 
 ## Methods

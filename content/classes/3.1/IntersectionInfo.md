@@ -26,20 +26,15 @@ class [IntersectionInfo](/classes/3.1/IntersectionInfo)
 ### bu : Nullable&lt;number&gt;
 
 
-
 ### bv : Nullable&lt;number&gt;
-
 
 
 ### distance : number
 
 
-
 ### faceId : number
 
 
-
 ### subMeshId : number
-
 
 

@@ -28,69 +28,53 @@ class [AbstractMesh](/classes/3.1/AbstractMesh) extends [Node](/classes/3.1/Node
 ### static OCCLUSION_TYPE_NONE : number
 
 
-
 ### static OCCLUSION_TYPE_OPTIMISTIC : number
-
 
 
 ### static OCCLUSION_TYPE_STRICT : number
 
 
-
 ### static OCCLUSION_ALGORITHM_TYPE_ACCURATE : number
-
 
 
 ### static OCCLUSION_ALGORITHM_TYPE_CONSERVATIVE : number
 
 
-
 ### static BILLBOARDMODE_NONE : number
-
 
 
 ### static BILLBOARDMODE_X : number
 
 
-
 ### static BILLBOARDMODE_Y : number
-
 
 
 ### static BILLBOARDMODE_Z : number
 
 
-
 ### static BILLBOARDMODE_ALL : number
-
 
 
 ### facetNb : number
 
 Read-only : the number of facets in the mesh
-
 ### partitioningSubdivisions : number
 
 The number (integer) of subdivisions per axis in the partioning space
-
 ### partitioningBBoxRatio : number
 
 The ratio (float) to apply to the bouding box size to set to the partioning space.
 
 Ex : 1.01 (default) the partioning space is 1% bigger than the bounding box.
-
 ### isFacetDataEnabled : boolean
 
 Read-only boolean : is the feature facetData enabled ?
-
 ### onCollideObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 An event triggered when this mesh collides with another one
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onCollide : () =&gt; void
-
 
 
 ### onCollisionPositionChangeObservable : [Observable](/classes/3.1/Observable)&lt;[Vector3](/classes/3.1/Vector3)&gt;
@@ -98,9 +82,7 @@ An event triggered when this mesh collides with another one
 An event triggered when the collision's position changes
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onCollisionPositionChange : () =&gt; void
-
 
 
 ### onAfterWorldMatrixUpdateObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
@@ -108,19 +90,15 @@ An event triggered when the collision's position changes
 An event triggered after the world matrix is updated
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onMaterialChangedObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 An event triggered when material is changed
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### definedFacingForward : boolean
 
 
-
 ### position : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### occlusionQueryAlgorithmType : number
@@ -134,7 +112,6 @@ or
 [AbstractMesh](/classes/3.1/AbstractMesh).OCCLUSION_ALGORITHM_TYPE_CONSERVATIVE (Default Value) which is mapped to GL_ANY_SAMPLES_PASSED_CONSERVATIVE which is a false positive algorithm that is faster than GL_ANY_SAMPLES_PASSED but less accurate.
 
 for more info check WebGl documentations
-
 ### occlusionType : number
 
 This property is responsible for starting the occlusion query within the [Mesh](/classes/3.1/Mesh) or not, this property is also used     to determine what should happen when the occlusionRetryCount is reached. It has supports 3 values:
@@ -144,181 +121,137 @@ OCCLUSION_TYPE_NONE (Default Value): this option means no occlusion query whith 
 OCCLUSION_TYPE_OPTIMISTIC: this option is means use occlusion query and if occlusionRetryCount is reached and the query is broken show the mesh.
 
 OCCLUSION_TYPE_STRICT: this option is means use occlusion query and if occlusionRetryCount is reached and the query is broken restore the last state of the mesh occlusion if the mesh was visible then show the mesh if was hidden then hide don't show.
-
 ### occlusionRetryCount : number
 
 This number indicates the number of allowed retries before stop the occlusion query, this is useful if the        occlusion query is taking long time before to the query result is retireved, the query result indicates if the object is visible within the scene or not and based on that Babylon.Js engine decideds to show or hide the object.
 
 The default value is -1 which means don't break the query and wait till the result.
-
 ### isOccluded : boolean
 
 Property isOccluded : Gets or sets whether the mesh is occluded or not, it is used also to set the intial state of the mesh to be occluded or not.
-
 ### isOcclusionQueryInProgress : boolean
 
 Flag to check the progress status of the query
-
 ### billboardMode : number
-
 
 
 ### visibility : number
 
 
-
 ### alphaIndex : number
-
 
 
 ### infiniteDistance : boolean
 
 
-
 ### isVisible : boolean
-
 
 
 ### isPickable : boolean
 
 
-
 ### showBoundingBox : boolean
-
 
 
 ### showSubMeshesBoundingBox : boolean
 
 
-
 ### isBlocker : boolean
-
 
 
 ### enablePointerMoveEvents : boolean
 
 
-
 ### renderingGroupId : number
-
 
 
 ### material : [Material](/classes/3.1/Material)
 
 
-
 ### receiveShadows : boolean
-
 
 
 ### renderOutline : boolean
 
 
-
 ### outlineColor : [Color3](/classes/3.1/Color3)
-
 
 
 ### outlineWidth : number
 
 
-
 ### renderOverlay : boolean
-
 
 
 ### overlayColor : [Color3](/classes/3.1/Color3)
 
 
-
 ### overlayAlpha : number
-
 
 
 ### hasVertexAlpha : boolean
 
 
-
 ### useVertexColors : boolean
-
 
 
 ### computeBonesUsingShaders : boolean
 
 
-
 ### numBoneInfluencers : number
-
 
 
 ### applyFog : boolean
 
 
-
 ### scalingDeterminant : number
-
 
 
 ### useOctreeForRenderingSelection : boolean
 
 
-
 ### useOctreeForPicking : boolean
-
 
 
 ### useOctreeForCollisions : boolean
 
 
-
 ### layerMask : number
-
 
 
 ### alwaysSelectAsActiveMesh : boolean
 
 True if the mesh must be rendered in any case.
-
 ### actionManager : Nullable&lt;[ActionManager](/classes/3.1/ActionManager)&gt;
 
 This scene's action manager
 
 @type {BABYLON.[ActionManager](/classes/3.1/ActionManager)}
-
 ### physicsImpostor : Nullable&lt;[PhysicsImpostor](/classes/3.1/PhysicsImpostor)&gt;
-
 
 
 ### ellipsoid : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### ellipsoidOffset : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### collisionMask : number
 
 
-
 ### collisionGroup : number
-
 
 
 ### edgesWidth : number
 
 
-
 ### edgesColor : [Color4](/classes/3.1/Color4)
-
 
 
 ### subMeshes : [SubMesh](/classes/3.1/SubMesh)[]
 
 
-
 ### skeleton : Nullable&lt;[Skeleton](/classes/3.1/Skeleton)&gt;
-
 
 
 ### rotation : [Vector3](/classes/3.1/Vector3)
@@ -328,13 +261,11 @@ Rotation property : a [Vector3](/classes/3.1/Vector3) depicting the rotation val
 If rotation quaternion is set, this [Vector3](/classes/3.1/Vector3) will (almost always) be the Zero vector!
 
 Default : (0.0, 0.0, 0.0)
-
 ### scaling : [Vector3](/classes/3.1/Vector3)
 
 Scaling property : a [Vector3](/classes/3.1/Vector3) depicting the mesh scaling along each local axis X, Y, Z.
 
 Default : (1.0, 1.0, 1.0)
-
 ### rotationQuaternion : Nullable&lt;[Quaternion](/classes/3.1/Quaternion)&gt;
 
 Rotation [Quaternion](/classes/3.1/Quaternion) property : this a [Quaternion](/classes/3.1/Quaternion) object depicting the mesh rotation by using a unit quaternion.
@@ -342,19 +273,15 @@ Rotation [Quaternion](/classes/3.1/Quaternion) property : this a [Quaternion](/c
 It's null by default.
 
 If set, only the rotationQuaternion is then used to compute the mesh rotation and its property `.rotation\ is then ignored and set to (0.0, 0.0, 0.0)
-
 ### isBlocked : boolean
 
 Returns true if the mesh is blocked. Used by the class [Mesh](/classes/3.1/Mesh).
 
 Returns the boolean `false` by default.
-
 ### Float32Array : undefined
 
 
-
 ### useBones : boolean
-
 
 
 ### worldMatrixFromCache : [Matrix](/classes/3.1/Matrix)
@@ -362,15 +289,12 @@ Returns the boolean `false` by default.
 Returns directly the last state of the mesh World matrix.
 
 A [Matrix](/classes/3.1/Matrix) is returned.
-
 ### absolutePosition : [Vector3](/classes/3.1/Vector3)
 
 Returns the current mesh absolute position.
 
 Retuns a [Vector3](/classes/3.1/Vector3).
-
 ### this : ()
-
 
 
 ### isWorldMatrixFrozen : boolean
@@ -378,15 +302,12 @@ Retuns a [Vector3](/classes/3.1/Vector3).
 True if the World matrix has been frozen.
 
 Returns a boolean.
-
 ### checkCollisions : boolean
 
 Property checkCollisions : Boolean, whether the camera should check the collisions against the mesh.
 
 Default `false`.
-
 ### this : undefined
-
 
 
 ## Methods
@@ -841,8 +762,9 @@ If you'd like to be called back after the mesh position, rotation or scaling has
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void | : callback function to add
+ | func |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
+ | : callback function to add
 ### unregisterAfterWorldMatrixUpdate(func) &rarr; [AbstractMesh](/classes/3.1/AbstractMesh)
 
 Removes a registered callback function.
@@ -852,8 +774,9 @@ Returns the [AbstractMesh](/classes/3.1/AbstractMesh).
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void | 
+ | func |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
+ | 
 ### setPositionWithLocalVector(vector3) &rarr; [AbstractMesh](/classes/3.1/AbstractMesh)
 
 Sets the mesh position in its local space.

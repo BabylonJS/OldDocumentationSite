@@ -27,77 +27,58 @@ class [BaseTexture](/classes/3.1/BaseTexture)
 ### static DEFAULT_ANISOTROPIC_FILTERING_LEVEL : number
 
 
-
 ### name : string
-
 
 
 ### hasAlpha : boolean
 
 
-
 ### getAlphaFromRGB : boolean
-
 
 
 ### level : number
 
 
-
 ### coordinatesIndex : number
-
 
 
 ### coordinatesMode : number
 
 
-
 ### wrapU : number
-
 
 
 ### wrapV : number
 
 
-
 ### anisotropicFilteringLevel : number
-
 
 
 ### isCube : boolean
 
 
-
 ### gammaSpace : boolean
-
 
 
 ### invertZ : boolean
 
 
-
 ### lodLevelInAlpha : boolean
-
 
 
 ### lodGenerationOffset : number
 
 
-
 ### lodGenerationScale : number
-
 
 
 ### isRenderTarget : boolean
 
 
-
 ### uid : string
 
 
-
 ### animations : [Animation](/classes/3.1/Animation)[]
-
 
 
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
@@ -105,33 +86,25 @@ class [BaseTexture](/classes/3.1/BaseTexture)
 An event triggered when the texture is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onDispose : () =&gt; void
-
 
 
 ### delayLoadState : number
 
 
-
 ### isBlocking : boolean
-
 
 
 ### canRescale : boolean
 
 
-
 ### textureType : number
-
 
 
 ### textureFormat : number
 
 
-
 ### sphericalPolynomial : Nullable&lt;[SphericalPolynomial](/classes/3.1/SphericalPolynomial)&gt;
-
 
 
 ## Methods
@@ -207,4 +180,4 @@ optional | faceIndex | number |
  | Name | Type | Description
 ---|---|---|---
  | textures | [BaseTexture](/classes/3.1/BaseTexture)[] | 
- | callback | () =&gt; void | 
+ | callback |  | 

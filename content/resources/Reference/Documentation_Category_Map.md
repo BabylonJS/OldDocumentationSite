@@ -137,6 +137,7 @@
 <a name = "G">**G**</a><span style = "float:right">[top](#top)</span>
 
 [glTF File, Loading](/How_To/glTF)  
+[Gamespads, Using](how_to/how_to_use_gamepads)  
 [Gradient, Material](/extensions/Gradient)  
 [Grass, Procedural Texture](/extensions/GrassProceduralTexture)  
 [Grid, Material](/extensions/Grid)  
@@ -159,6 +160,7 @@
 [Increasing Facets, Snippet](/samples/Increasing_Facets)  
 [Incremental Loading](/How_To/Using_the_Incremental_Loading_System)  
 [Instances](/How_To/How_to_use_Instances)  
+[Ionic Angular](/resources/BabylonJS_and_Ionic_Angular)  
 ********
 <a name = "L">**L**</a><span style = "float:right">[top](#top)</span>
 
@@ -248,6 +250,8 @@
 [Playground, Available Textures](/resources/Playground_Textures)  
 [Playground, Introduction](/features/Playground)  
 [Playgrounds, Interesting Ones](/resources/playgrounds)  
+[Playgrounds, PBT Starter](/resources/Hiding_Editor_Lines)  
+[Playgrounds, PBT Intermediate](/resources/PBT_Writing)  
 [Point Light](/babylon101/Lights#the-point-light)  
 [Polygon Mesh Builder](/How_To/PolygonMeshBuilder)  
 [Polyhedral Meshes](/How_To/Polyhedra_Shapes)  
@@ -263,6 +267,7 @@
 [Radial Cloner](/extensions/RadialCloner)  
 [Random Effector, Cloner](/extensions/RandomEffector)  
 [Raycasts](/babylon101/Raycasts)  
+[Reactjs](/resources/BabylonJS_and_ReactJS)
 [Reflection Material](/How_To/Reflect#reflection)  
 [Reflection Probes](/How_To/How_to_use_Reflection_probes)  
 [Refraction, Material](/How_To/Reflec#refractiont)  
@@ -290,7 +295,6 @@
 [Scene Creation and Optimization](/features/Scene)  
 [Screenshot a Scene to a PNG](/How_To/Render_Scene_on_a_PNG)  
 [Sequence Animations](/How_To/Sequence)  
-[Sequence of Animations](/samples/Sequence)  
 [Server Side, BJS](/features/nullEngine)  
 [Shader Code into BJS](/How_To/Putting)  
 [Shader Code, Fireworks](/samples/Writing2)  
@@ -328,6 +332,7 @@
 [Torus Mesh Using MeshBuilder](/How_To/Set_Shapes#torus)  
 [Torus Mesh with Legacy Method](/How_To/Legacy_Set#torus)  
 [Transform Coordinates](/How_To/Transform_Coordinates)  
+[TransformNode](/How_To/TransformNode)  
 [Translate](/How_To/Rotate)  
 [Transparency and Meshes Rendering](/resources/Transparency_and_How_Meshes_Are_Rendered)  
 [Transparent Material](/babylon101/Materials#transparent-texture-examples)  

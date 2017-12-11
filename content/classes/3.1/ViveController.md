@@ -23,13 +23,10 @@ class [ViveController](/classes/3.1/ViveController) extends [WebVRController](/c
 ### onLeftButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
 
 
-
 ### onRightButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
 
 
-
 ### onMenuButtonStateChangedObservable : [Observable](/classes/3.1/Observable)&lt;ExtendedGamepadButton&gt;
-
 
 
 ## Methods
@@ -42,4 +39,5 @@ class [ViveController](/classes/3.1/ViveController) extends [WebVRController](/c
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | meshLoaded | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void | 
+optional | meshLoaded |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+

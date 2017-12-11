@@ -29,81 +29,61 @@ A single scene can have many [Action](/classes/3.1/Action) Managers to handle pr
 ### static NothingTrigger : number
 
 
-
 ### static OnPickTrigger : number
-
 
 
 ### static OnLeftPickTrigger : number
 
 
-
 ### static OnRightPickTrigger : number
-
 
 
 ### static OnCenterPickTrigger : number
 
 
-
 ### static OnPickDownTrigger : number
-
 
 
 ### static OnDoublePickTrigger : number
 
 
-
 ### static OnPickUpTrigger : number
-
 
 
 ### static OnPickOutTrigger : number
 
 
-
 ### static OnLongPressTrigger : number
-
 
 
 ### static OnPointerOverTrigger : number
 
 
-
 ### static OnPointerOutTrigger : number
-
 
 
 ### static OnEveryFrameTrigger : number
 
 
-
 ### static OnIntersectionEnterTrigger : number
-
 
 
 ### static OnIntersectionExitTrigger : number
 
 
-
 ### static OnKeyDownTrigger : number
-
 
 
 ### static OnKeyUpTrigger : number
 
 
-
 ### static Triggers : { [key: string]: number }
-
 
 
 ### actions : [Action](/classes/3.1/Action)[]
 
 
-
 ### hoverCursor : string
-
 
 
 ### hasPointerTriggers : boolean
@@ -111,25 +91,21 @@ A single scene can have many [Action](/classes/3.1/Action) Managers to handle pr
 Does this action manager has pointer triggers
 
 @return {boolean} whether or not it has pointer triggers
-
 ### hasPickTriggers : boolean
 
 Does this action manager has pick triggers
 
 @return {boolean} whether or not it has pick triggers
-
 ### static HasTriggers : boolean
 
 Does exist one action manager with at least one trigger
 
 @return {boolean} whether or not it exists one action manager with one trigger
-
 ### static HasPickTriggers : boolean
 
 Does exist one action manager with at least one pick trigger
 
 @return {boolean} whether or not it exists one action manager with one pick trigger
-
 ## Methods
 
 ### dispose() &rarr; void

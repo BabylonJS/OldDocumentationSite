@@ -19,16 +19,16 @@ Constroctor.
  | Name | Type | Description
 ---|---|---|---
  | iterations | number |  the number of iterations.
- | _fn | (asyncLoop: [AsyncLoop](/classes/3.1/AsyncLoop)) =&gt; void |  the function to run each iteration
- | _successCallback | () =&gt; void |  the callback that will be called upon succesful execution
+ | _fn |  | asyncLoop | [AsyncLoop](/classes/3.1/AsyncLoop) | 
+
+ |  the function to run each iteration
+ | _successCallback |  |  the callback that will be called upon succesful execution
 ## Members
 
 ### iterations : number
 
 
-
 ### index : number
-
 
 
 ## Methods
@@ -47,8 +47,10 @@ Helper function
  | Name | Type | Description
 ---|---|---|---
  | iterations | number | 
- | _fn | (asyncLoop: [AsyncLoop](/classes/3.1/AsyncLoop)) =&gt; void | 
- | _successCallback | () =&gt; void | 
+ | _fn |  | asyncLoop | [AsyncLoop](/classes/3.1/AsyncLoop) | 
+
+ | 
+ | _successCallback |  | 
 ### static SyncAsyncForLoop(iterations, syncedIterations, fn, callback, breakFunction, timeout) &rarr; void
 
 A for-loop that will run a given number of iterations synchronous and the rest async.
@@ -60,6 +62,8 @@ A for-loop that will run a given number of iterations synchronous and the rest a
 ---|---|---|---
  | iterations | number |  total number of iterations
  | syncedIterations | number |  number of synchronous iterations in each async iteration.
- | fn | (iteration: number) =&gt; void |  the function to call each iteration.
- | callback | () =&gt; void |  a success call back that will be called when iterating stops.
-optional | breakFunction | () =&gt; boolean |  a break condition (optional)
+ | fn |  | iteration | number | 
+
+ |  the function to call each iteration.
+ | callback |  |  a success call back that will be called when iterating stops.
+optional | breakFunction |  |  a break condition (optional)

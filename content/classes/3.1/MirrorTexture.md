@@ -33,21 +33,16 @@ optional | samplingMode | number |
 ### mirrorPlane : [Plane](/classes/3.1/Plane)
 
 
-
 ### blurRatio : number
-
 
 
 ### blurKernel : number
 
 
-
 ### blurKernelX : number
 
 
-
 ### blurKernelY : number
-
 
 
 ## Methods

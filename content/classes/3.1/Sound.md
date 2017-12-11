@@ -29,53 +29,40 @@ optional | readyToPlayCallback | Nullable&lt;() =&gt; void&gt; |  Provide a call
 ### name : string
 
 
-
 ### autoplay : boolean
-
 
 
 ### loop : boolean
 
 
-
 ### useCustomAttenuation : boolean
-
 
 
 ### soundTrackId : number
 
 
-
 ### spatialSound : boolean
-
 
 
 ### refDistance : number
 
 
-
 ### rolloffFactor : number
-
 
 
 ### maxDistance : number
 
 
-
 ### distanceModel : string
-
 
 
 ### onended : () =&gt; any
 
 
-
 ### isPlaying : boolean
 
 
-
 ### isPaused : boolean
-
 
 
 ## Methods
@@ -157,7 +144,11 @@ Transform this sound into a directional source
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (currentVolume: number, currentDistance: number, maxDistance: number, refDistance: number, rolloffFactor: number) =&gt; number | 
+ | callback |  | currentVolume | number | 
+ | currentDistance | number | 
+ | maxDistance | number | 
+ | refDistance | number | 
+ | rolloffFactor | number | 
 
 ### play(time, offset) &rarr; void
 

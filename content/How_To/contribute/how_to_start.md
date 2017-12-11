@@ -3,14 +3,16 @@
 ## Introduction
 Development Ecosystem in Web is becoming more and more difficult to chose due to the diversity of tools and Frameworks. If you want to get started on BJS, we chose to support a set of tools to simplify your first steps with it. This can also be use on a daily basis for your contribution development.
 
-This document will introduce everything from the tools installation to debugging in BJS. Thid is meant to be OS agnostic to allow developping the same way on Windows, Mac and Linux. 
+This document will introduce everything from the tools installation to debugging in BJS. This is meant to be OS agnostic, allowing users to develop the same way on Windows, Mac and Linux. 
+
+*NOTE:* If you're looking to contribute to the Documentation, please use [this guide](http://www.html5gamedevs.com/topic/16365-contributing-to-documentation-101/). 
 
 ## Pre-Requisite
 
 ### Git Client
 If you do not already have a git client, you can install one from [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-*Hint:* if you are developping on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it and embed a git client).
+*Hint:* if you are developing on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it and embed a git client).
 
 ![cmder](/img/how_to/howToStart/cmder.png)
 
@@ -21,28 +23,28 @@ git config --global user.email johndoe@example.com
 ```
 
 ### NodeJS and NPM 
-The second step is to install nodejs and its package manager. This will be your best friends and the platform helping achieving a X-platform dev experience: [https://nodejs.org/en/](https://nodejs.org/en/).
+The second step is to install nodejs and its package manager. These will be your best friends and help you achieve a X-platform dev experience: [https://nodejs.org/en/](https://nodejs.org/en/).
 
 ### Typescript and Gulp  
-Once both git and npm are installed in your environment, please install in global the both major BJS dev dependencies by launching those command lines:
+Once both git and npm are installed in your environment, please globally install both major BJS dev dependencies by launching those command lines:
 1. npm install -g typescript
 2. npm install -g gulp
 
 They are respectively for dealing with the Typescript language and the build tools used in the project.
 
-*Hint:* if you are developping on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it).
+*Hint:* if you are developing on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it).
 
 ### Visual Studio Code
-Trying to be Opens source and OS agnostic, we chose to support VSCode which offer the quickest approach to get started. For the ones amongst you with already another choice, it is worth giving it a try and see what it brings as the heavy integration has been managed for you.
+Trying to be Open Source and OS agnostic, we chose to support VSCode which offers the quickest approach to get started. For those amongst you with another choice, it is worth giving it a try to see what it brings as the heavy integration has been managed for you.
 
 You can install VSCode from their site: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-Once install, a few pluggins will help you having the best experience. You can search for them in the extension tab (Ctrl+Shift+d):
+Once installed, a few pluggins will help you having the best experience. You can search for them in the extension tab (Ctrl+Shift+d):
 1. Debugger for Chrome (also installing chrome will help but I guess this is already done)
-2. Shader language support for VS Code (syntax highlighting ang autocompletion in glsl shader)
-3. [This extension](https://marketplace.visualstudio.com/items?itemName=julianchen.babylon-js-viewer) can be used to display the content of a babylon file directly in vscode. It can be useful if you want to quickly check if your artist made a good job with object and their names :)
+2. Shader language support for VS Code (syntax highlighting and autocompletion in glsl shader)
+3. [This extension](https://marketplace.visualstudio.com/items?itemName=julianchen.babylon-js-viewer) can be used to display the content of a babylon file directly in vscode. It can be useful if you want to quickly check if your artist did a good job with object and their names :)
 
-Finally, I would recommand adding a few shortcuts to your environment. Follow the [guide](https://code.visualstudio.com/docs/customization/keybindings#_customizing-shortcuts):
+Finally, I would recommend adding a few shortcuts to your environment. Follow the [guide](https://code.visualstudio.com/docs/customization/keybindings#_customizing-shortcuts):
  1. To configure keyboard shortcuts the way you want, go to the menu under File > Preferences > Keyboard Shortcuts. (Code > Preferences > Keyboard Shortcuts on Mac)
  2. In the left side, add:
  ```
@@ -56,7 +58,7 @@ Finally, I would recommand adding a few shortcuts to your environment. Follow th
 ]
 ```
 
-This will make the main commands quicker to access. Do not hesitate to adapt the bindings to your Preferences.
+This will make the main commands quicker to access. Do not hesitate to adapt the bindings to your preferences.
 
 ![keybindings](/img/how_to/howToStart/keybindings.png)
 
@@ -85,21 +87,21 @@ You are good to go !!!
 ## Debug
 Open VSCode on the newly created BabylonJS folder and launch the test task. To do so, 3 solutions:
 1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type test. You should be on run test task, so hit enter.
-2. Use the shortcut you previously bind to the command  in your keyboard bindings (default is Ctrl+Alf+Shift+t)
+2. Use the shortcut you previously bind to the command in your keyboard bindings (default is Ctrl+Alt+Shift+t)
 3. Open a terminal on Tools/Gulp and run `gulp run`
 
-This has been hijacked for your convenience and will watch all the files you are modifying as well as web serve the files for development purpose. As you noticed in the VSCode installation you can easily hook it to a keyboard shortcut.
+This has been hijacked for your convenience and will watch all the files you are modifying as well as web serve the files for development purpose. As you noticed in the VSCode installation you can easily hook it up to a keyboard shortcut.
 
 Once the task is launched you can kill it by repsectively:
 1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type terminate. You should be on Terminate Running Task task, so hit enter.
-2. Use the shortcut you previously bind to the command  in your keyboard bindings (default is Ctrl+Alf+Shift+k)
+2. Use the shortcut you previously bind to the command in your keyboard bindings (default is Ctrl+Alt+Shift+k)
 3. In the terminal press `Ctrl+c`
 
 In the VSCode debug tab, chose the section you want to debug and launch the debugger (the test task needs to be running).
 
-This will debug alls the TS and js in chrome and stop on your breakpoints setup in those files in VSCode. This debugs all the code from src, materialsLibrary, procceduralTexturesLibrary, postprocessLibrary...
+This will debug all the TS and js in chrome and stop on your breakpoints setup in those files in VSCode. This debugs all the code from src, materialsLibrary, procceduralTexturesLibrary, postprocessLibrary...
 
-*Hint*: If another chrome sesssion already runs in remote debug on port 9222 the debugger will fail to attach as the port is already open. You will have to close the other remote debug first. 
+*Hint*: If another chrome session is already running on remote debug on port 9222 the debugger will fail to attach as the port is already open. You will have to close the other remote debug first. 
 
 The main entry points in BJS are:
 
@@ -112,11 +114,11 @@ The main entry points in BJS are:
 7. [Local Dev]("http://localhost:1338/localDev/index.html"): [http://localhost:1338/localDev/index.html](http://localhost:1338/localDev/index.html)
 8. [Build validation]("http://localhost:1338/tests/validation/index.html"): [http://localhost:1338/tests/validation/index.html](http://localhost:1338/tests/validation/index.html)
 
-All of those allows debugging the source code of bjs directly from typescript.
+All of those allow debugging the source code of bjs directly from typescript.
 
 ![debug](/img/how_to/howToStart/debug.png)
 
-If you wish testing the fully compiled version instead of independant files simply append ?dist=true in the different urls.
+If you wish to test the fully compiled version instead of independant files simply append ?dist=true in the different urls.
 
 You could also test against the minified version by choosing ?dist=min. this will work on all the referenced URLs.
 
@@ -126,7 +128,7 @@ Once the test task (gulp run) has been launched through gulp or VSCode, any TS o
 *Hint*: You may need to refresh the code before adding back a new breakpoint. 
 
 ## Local Dev
-In order to simplify the quick testing and development. You can copy paste playgrounds code in the devLocal/src/index.js file . The entire devLocal/src folder is git ignored and is meant to be your local test folder.
+In order to simplify the quick testing and development, you can copy paste playgrounds code in the devLocal/src/index.js file. The entire devLocal/src folder is git ignored and is meant to be your local test folder.
 
 You can launch it through: [Local Dev]("http://localhost:1338/localDev/index.html"): [http://localhost:1338/localDev/index.html](http://localhost:1338/localDev/index.html)
 
@@ -138,7 +140,7 @@ As using only one test file is annoying, feel free to add index.1.js, index.2.js
 
 To launch index.{number}.js simply append in the url sample={number} so for launching index.3.js against the unminified released files, use: http://localhost:1338/localDev/index.html?dist=true&sample=3
 
-This should help playing andd debugging locally.
+This should help playing and debugging locally.
 
 ## Validate changes
 As part of your testing process, it is highly recommended to launch the build validator: http://localhost:1338/tests/validation/index.htm.
@@ -265,5 +267,36 @@ Here is the list of available workloads:
 | layer | Contains Layer |
 | textureTools | Contains TextureTools |
 | cameraBehaviors | Contains all camera behaviors |
+| instrumentation | Contains instrumentation classes |
+| backgroundMaterial | Contains the backgroundMaterial |
+| environmentHelper | Contains environmentHelper |
 
+## Adding files
+In order to add more files to the codebase you will have to edit the config.json file from /tools/gulp folder.
+If you add files to the core, you will need to reference them in the core workload. Do not forget to also reference your shaders and shaderIncludes.
 
+If you plan to add files to a satellite project (like the postProcessLibrary), you will have to add them to the associated entry, like this one for the postProcessLibrary:
+```
+ "postProcessesLibrary": {
+        "libraries": [
+            {
+                "files": [
+                    "../../postProcessLibrary/src/asciiArt/babylon.asciiArtPostProcess.ts"
+                ],
+                "shaderFiles": [
+                    "../../postProcessLibrary/src/asciiArt/asciiart.fragment.fx"
+                ],
+                "output": "babylon.asciiArtPostProcess.js"
+            },
+            {
+                "files": [
+                    "../../postProcessLibrary/src/digitalRain/babylon.digitalRainPostProcess.ts"
+                ],
+                "shaderFiles": [
+                    "../../postProcessLibrary/src/digitalRain/digitalrain.fragment.fx"
+                ],
+                "output": "babylon.digitalRainPostProcess.js"
+            }
+        ]
+}
+```    

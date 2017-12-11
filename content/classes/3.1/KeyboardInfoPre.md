@@ -25,4 +25,3 @@ Set the skipOnKeyboardObservable property to true if you want the engine to stop
 ### skipOnPointerObservable : boolean
 
 
-

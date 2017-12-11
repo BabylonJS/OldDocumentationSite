@@ -24,9 +24,7 @@ optional | _loadingDivBackgroundColor | string |
 ### loadingUIText : string
 
 
-
 ### loadingUIBackgroundColor : string
-
 
 
 ## Methods

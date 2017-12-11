@@ -31,28 +31,21 @@ optional | engine | [Engine](/classes/3.1/Engine) |
 ### kernel : number[]
 
 
-
 ### static EdgeDetect0Kernel : number[]
-
 
 
 ### static EdgeDetect1Kernel : number[]
 
 
-
 ### static EdgeDetect2Kernel : number[]
-
 
 
 ### static SharpenKernel : number[]
 
 
-
 ### static EmbossKernel : number[]
 
 
-
 ### static GaussianKernel : number[]
-
 
 

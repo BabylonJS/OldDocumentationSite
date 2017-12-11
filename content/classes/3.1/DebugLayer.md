@@ -27,7 +27,6 @@ class [DebugLayer](/classes/3.1/DebugLayer)
 ### static InspectorURL : string
 
 
-
 ## Methods
 
 ### isVisible() &rarr; boolean

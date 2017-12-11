@@ -29,169 +29,127 @@ class [Camera](/classes/3.1/Camera) extends [Node](/classes/3.1/Node)
 ### inputs : [CameraInputsManager](/classes/3.1/CameraInputsManager)&lt;[Camera](/classes/3.1/Camera)&gt;
 
 
-
 ### static PERSPECTIVE_CAMERA : number
-
 
 
 ### static ORTHOGRAPHIC_CAMERA : number
 
 
-
 ### static FOVMODE_VERTICAL_FIXED : number
-
 
 
 ### static FOVMODE_HORIZONTAL_FIXED : number
 
 
-
 ### static RIG_MODE_NONE : number
-
 
 
 ### static RIG_MODE_STEREOSCOPIC_ANAGLYPH : number
 
 
-
 ### static RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_PARALLEL : number
-
 
 
 ### static RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_CROSSEYED : number
 
 
-
 ### static RIG_MODE_STEREOSCOPIC_OVERUNDER : number
-
 
 
 ### static RIG_MODE_VR : number
 
 
-
 ### static RIG_MODE_WEBVR : number
-
 
 
 ### static ForceAttachControlToAlwaysPreventDefault : boolean
 
 
-
 ### static UseAlternateWebVRRendering : boolean
-
 
 
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### upVector : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### orthoLeft : Nullable&lt;number&gt;
 
 
-
 ### orthoRight : Nullable&lt;number&gt;
-
 
 
 ### orthoBottom : Nullable&lt;number&gt;
 
 
-
 ### orthoTop : Nullable&lt;number&gt;
-
 
 
 ### fov : number
 
 
-
 ### minZ : number
-
 
 
 ### maxZ : number
 
 
-
 ### inertia : number
-
 
 
 ### mode : number
 
 
-
 ### isIntermediate : boolean
-
 
 
 ### viewport : [Viewport](/classes/3.1/Viewport)
 
 
-
 ### layerMask : number
-
 
 
 ### fovMode : number
 
 
-
 ### cameraRigMode : number
-
 
 
 ### interaxialDistance : number
 
 
-
 ### isStereoscopicSideBySide : boolean
-
 
 
 ### customRenderTargets : [RenderTargetTexture](/classes/3.1/RenderTargetTexture)[]
 
 
-
 ### onViewMatrixChangedObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
-
 
 
 ### onProjectionMatrixChangedObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
 
 
-
 ### onAfterCheckInputsObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
-
 
 
 ### onRestoreStateObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
 
 
-
 ### globalPosition : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### rigCameras : [Camera](/classes/3.1/Camera)[]
 
 
-
 ### rigPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
-
 
 
 ### leftCamera : Nullable&lt;[FreeCamera](/classes/3.1/FreeCamera)&gt;
 
 
-
 ### rightCamera : Nullable&lt;[FreeCamera](/classes/3.1/FreeCamera)&gt;
-
 
 
 ## Methods

@@ -27,37 +27,34 @@ class [Node](/classes/3.1/Node)
 ### name : string
 
 
-
 ### id : string
-
 
 
 ### uniqueId : number
 
 
-
 ### state : string
-
 
 
 ### metadata : any
 
 
-
 ### doNotSerialize : boolean
 
 
-
 ### animations : [Animation](/classes/3.1/Animation)[]
-
 
 
 ### onReady : (node: [Node](/classes/3.1/Node)) =&gt; void
 
 
 
-### parent : Nullable&lt;[Node](/classes/3.1/Node)&gt;
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | node | [Node](/classes/3.1/Node) | 
 
+### parent : Nullable&lt;[Node](/classes/3.1/Node)&gt;
 
 
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[Node](/classes/3.1/Node)&gt;
@@ -65,13 +62,10 @@ class [Node](/classes/3.1/Node)
 An event triggered when the mesh is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onDispose : () =&gt; void
 
 
-
 ### behaviors : Behavior&lt;[Node](/classes/3.1/Node)&gt;[]
-
 
 
 ## Methods
@@ -193,7 +187,8 @@ Will return all nodes that have this node as ascendant.
  | Name | Type | Description
 ---|---|---|---
 optional | directDescendantsOnly | boolean | 
-optional | predicate | (node: [Node](/classes/3.1/Node)) =&gt; boolean | : an optional predicate that will be called on every evaluated children, the predicate must return true for a given child to be part of the result, otherwise it will be ignored.
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
+
 ### getChildMeshes(directDecendantsOnly, predicate) &rarr; [AbstractMesh](/classes/3.1/AbstractMesh)[]
 
 Get all child-meshes of this node.
@@ -202,7 +197,8 @@ Get all child-meshes of this node.
  | Name | Type | Description
 ---|---|---|---
 optional | directDecendantsOnly | boolean | 
-optional | predicate | (node: [Node](/classes/3.1/Node)) =&gt; boolean | 
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
+
 ### getChildren(predicate) &rarr; [Node](/classes/3.1/Node)[]
 
 Get all direct children of this node.
@@ -210,8 +206,9 @@ Get all direct children of this node.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | predicate | (node: [Node](/classes/3.1/Node)) =&gt; boolean | 
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
 
+ | 
 ### getAnimationByName(name) &rarr; Nullable&lt;[Animation](/classes/3.1/Animation)&gt;
 
 
