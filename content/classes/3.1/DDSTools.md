@@ -16,7 +16,6 @@ class [DDSTools](/classes/3.1/DDSTools)
 ### static StoreLODInAlphaChannel : boolean
 
 
-
 ## Methods
 
 ### static GetDDSInfo(arrayBuffer) &rarr; DDSInfo

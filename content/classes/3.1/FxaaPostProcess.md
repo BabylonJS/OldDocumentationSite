@@ -31,8 +31,6 @@ optional | reusable | boolean |
 ### texelWidth : number
 
 
-
 ### texelHeight : number
-
 
 

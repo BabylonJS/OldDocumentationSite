@@ -25,21 +25,16 @@ class [Analyser](/classes/3.1/Analyser)
 ### SMOOTHING : number
 
 
-
 ### FFT_SIZE : number
-
 
 
 ### BARGRAPHAMPLITUDE : number
 
 
-
 ### DEBUGCANVASPOS : { x: number,  y: number }
 
 
-
 ### DEBUGCANVASSIZE : { width: number,  height: number }
-
 
 
 ## Methods

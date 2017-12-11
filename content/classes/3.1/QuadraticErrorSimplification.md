@@ -31,17 +31,13 @@ Ported mostly from QSlim and http://voxels.blogspot.de/2014/05/quadric-mesh-simp
 ### syncIterations : number
 
 
-
 ### aggressiveness : number
-
 
 
 ### decimationIterations : number
 
 
-
 ### boundingBoxEpsilon : number
-
 
 
 ## Methods
@@ -54,4 +50,5 @@ Ported mostly from QSlim and http://voxels.blogspot.de/2014/05/quadric-mesh-simp
  | Name | Type | Description
 ---|---|---|---
  | settings | ISimplificationSettings | 
- | successCallback | (simplifiedMesh: [Mesh](/classes/3.1/Mesh)) =&gt; void | 
+ | successCallback |  | simplifiedMesh | [Mesh](/classes/3.1/Mesh) | 
+

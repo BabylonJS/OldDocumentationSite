@@ -5,7 +5,7 @@ TAGS:
 
 class [SolidParticleSystem](/classes/3.0/SolidParticleSystem)
 
-Full documentation here : http://doc.babylonjs.com/features/Solid_Particle_System
+Full documentation here : http://doc.babylonjs.com/How_To/Solid_Particle_System
 
 ## Constructor
 
@@ -71,7 +71,7 @@ The SPS mesh. It's a standard BJS [Mesh](/classes/3.0/Mesh), so all the methods 
 
 This empty object is intended to store some SPS specific or temporary values in order to lower the Garbage Collector activity.
 
-Please read : http://doc.babylonjs.com/features/Solid_Particle_System#garbage-collector-concerns
+Please read : http://doc.babylonjs.com/How_To/Solid_Particle_System#garbage-collector-concerns
 
 ### pickedParticles : { idx: number,  faceId: number }[]
 
@@ -85,19 +85,19 @@ Each element of this array is an object `{idx: int, faceId: int}`.
 
 `faceId` is the picked face index counted within this particle.
 
-Please read : http://doc.babylonjs.com/features/Solid_Particle_System#pickable-particles
+Please read : http://doc.babylonjs.com/How_To/Solid_Particle_System#pickable-particles
 
 ### isAlwaysVisible : boolean
 
 Sets the SPS as always visible or not
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#sps-visibility
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#sps-visibility
 
 ### isVisibilityBoxLocked : boolean
 
 Sets the SPS visibility box as locked or not. This enables/disables the underlying mesh bounding box updates.
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#sps-visibility
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#sps-visibility
 
 ### computeParticleRotation : boolean
 
@@ -167,7 +167,7 @@ optional | options | { facetNb: number,  number: number,  delta: number } |
 
 Adds some particles to the SPS from the model shape. Returns the shape id.
 
-Please read the doc : http://doc.babylonjs.com/features/Solid_Particle_System#create-an-immutable-sps
+Please read the doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#create-an-immutable-sps
 
 `mesh` is any [Mesh](/classes/3.0/Mesh) object that will be used as a model for the solid particles.
 
@@ -213,7 +213,7 @@ Returns nothing.
 
 Visibilty helper : Recomputes the visible size according to the mesh bounding box
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#sps-visibility
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#sps-visibility
 
 Returns the SPS.
 ### setVisibilityBox(size) &rarr; void
@@ -222,7 +222,7 @@ Visibility helper : Sets the size of a visibility box, this sets the underlying 
 
 note : this doesn't lock the SPS mesh bounding box.
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#sps-visibility
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#sps-visibility
 
 #### Parameters
  | Name | Type | Description
@@ -235,14 +235,14 @@ This function does nothing. It may be overwritten to set all the particle first 
 
 The SPS doesn't call this function, you may have to call it by your own.
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#particle-management
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#particle-management
 ### recycleParticle(particle) &rarr; [SolidParticle](/classes/3.0/SolidParticle)
 
 This function does nothing. It may be overwritten to recycle a particle.
 
 The SPS doesn't call this function, you may have to call it by your own.
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#particle-management
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#particle-management
 
 #### Parameters
  | Name | Type | Description
@@ -255,7 +255,7 @@ Updates a particle : this function should  be overwritten by the user.
 
 It is called on each particle by `setParticles()`. This is the place to code each particle behavior.
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#particle-management
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#particle-management
 
 ex : just set a particle position or velocity and recycle conditions
 
@@ -270,7 +270,7 @@ Updates a vertex of a particle : it can be overwritten by the user.
 
 This will be called on each vertex particle by `setParticles()` if `computeParticleVertex` is set to true only.
 
-doc : http://doc.babylonjs.com/features/Solid_Particle_System#update-each-particle-shape
+doc : http://doc.babylonjs.com/How_To/Solid_Particle_System#update-each-particle-shape
 
 ex : just set a vertex particle position
 

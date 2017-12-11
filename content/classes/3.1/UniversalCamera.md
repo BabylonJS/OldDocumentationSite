@@ -24,9 +24,7 @@ class [UniversalCamera](/classes/3.1/UniversalCamera) extends [TouchCamera](/cla
 ### gamepadAngularSensibility : number
 
 
-
 ### gamepadMoveSensibility : number
-
 
 
 ## Methods

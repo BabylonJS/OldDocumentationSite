@@ -32,25 +32,19 @@ optional | stopOtherAnimations | boolean |
 ### propertyPath : string
 
 
-
 ### value : any
-
 
 
 ### duration : number
 
 
-
 ### stopOtherAnimations : boolean
-
 
 
 ### onInterpolationDone : () =&gt; void
 
 
-
 ### onInterpolationDoneObservable : [Observable](/classes/3.1/Observable)&lt;[InterpolateValueAction](/classes/3.1/InterpolateValueAction)&gt;
-
 
 
 ## Methods

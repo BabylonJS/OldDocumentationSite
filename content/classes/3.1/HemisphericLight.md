@@ -35,9 +35,7 @@ Documentation : http://doc.babylonjs.com/tutorials/lights
 ### groundColor : [Color3](/classes/3.1/Color3)
 
 
-
 ### direction : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods

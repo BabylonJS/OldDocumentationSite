@@ -25,25 +25,19 @@ optional | autoUpdateBonesMatrices | boolean |
 ### skeleton : [Skeleton](/classes/3.1/Skeleton)
 
 
-
 ### mesh : [AbstractMesh](/classes/3.1/AbstractMesh)
-
 
 
 ### autoUpdateBonesMatrices : boolean
 
 
-
 ### renderingGroupId : number
-
 
 
 ### color : [Color3](/classes/3.1/Color3)
 
 
-
 ### isEnabled : boolean
-
 
 
 ## Methods

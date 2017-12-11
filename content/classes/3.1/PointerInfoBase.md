@@ -23,12 +23,9 @@ class [PointerInfoBase](/classes/3.1/PointerInfoBase)
 ### type : number
 
 
-
 ### event : PointerEvent
 
 
-
 ### MouseWheelEvent : undefined
-
 
 

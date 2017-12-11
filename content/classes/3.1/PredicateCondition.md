@@ -21,11 +21,10 @@ class [PredicateCondition](/classes/3.1/PredicateCondition) extends [Condition](
  | Name | Type | Description
 ---|---|---|---
  | actionManager | [ActionManager](/classes/3.1/ActionManager) | 
- | predicate | () =&gt; boolean | 
+ | predicate |  | 
 ## Members
 
 ### predicate : () =&gt; boolean
-
 
 
 ## Methods

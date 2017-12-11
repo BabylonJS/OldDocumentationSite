@@ -5,7 +5,7 @@ PG_TITLE: How To Master the PBR Materials
 # How To Master the PBR Materials
 
 ## Introduction
-After following the [PBR Introduction](/features/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
+After following the [PBR Introduction](/How_To/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
@@ -16,10 +16,10 @@ This will be the only picture of the documentation. As a **real sample** would b
 The entire documentation should help you deal with most of the PBR Material setup.
 
 ## How to install
-As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](/How_To/Creating_a_Basic_Scene) in order to create your first page using the framework.
+As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](/babylon101/first) in order to create your first page using the framework.
 
 ## Why
-After looking at the [PBR Introduction](/features/Physically_Based_Rendering) you may want to gain more control or use more features in your material setup like:
+After looking at the [PBR Introduction](/How_to/Physically_Based_Rendering) you may want to gain more control or use more features in your material setup like:
 * Refraction
 * Standard Light Falloff
 * LightMaps
@@ -31,7 +31,7 @@ The **PBRMaterial** is here to address this concern and can work in either a Spe
 
 ## From MetallicRoughness To PBRMaterial
 
-To start with the MetallicRoughness, you can take a look at the [documentation](/features/physically_based_rendering#pbrmetallicroughnessmaterial).
+To start with the MetallicRoughness, you can take a look at the [documentation](/How_To/physically_based_rendering#pbrmetallicroughnessmaterial).
 
 In order to setup the PBRMaterial in Metallic/Roughness mode, at least one of the following properties has to be set (else it by default works in Specular/Glossiness):
 * metallic
@@ -67,7 +67,7 @@ Once the conversion done, let's see the custom options available on this version
 * **useAmbientInGrayScale**: the ambient occlusion is forced to read only from the red channel of the ambient texture or from the red channel of the metallic texture.
 
 ## From SpecularGlossiness To PBRMaterial
-To begin with the SpecularGlossiness you can start with this [documentation](/features/physically_based_rendering#pbrspecularglossinessmaterial).
+To begin with the SpecularGlossiness you can start with this [documentation](/How_To/physically_based_rendering#pbrspecularglossinessmaterial).
 
 The exact opposite of the previous chapter has to be followed in order to setup the PBRMaterial in Specular/Glossiness mode. The following properties need to be null or undefined:
 * metallic
@@ -118,7 +118,7 @@ This behaviour can be turned off through the properties:
 ## Refraction
 Refraction is a little bit like reflection (Please purists, do not kill me now, I only said a little) because it is heavily relying on the environment to change the way the material looks. Basically, if reflection could be compared to seing the sun and cloud on the surface of a lake, refraction would be seing weird shaped fish under the surface (through the water).  
 
-A great tutorial on the refraction is available [Here](/How_To/Advanced_Texturing)
+A great tutorial on the refraction is available [Here](/How_To/reflect#refraction)
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
@@ -136,7 +136,7 @@ You can still notice some reflection on your material. This is due to the energy
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
-* [Normal Map](/How_To/Advanced_Texturing)
+* [Normal Map](/How_To/more_materials)
 * [Parallax](/How_To/Using_parallax_mapping)
 
 ## LightMaps
@@ -201,4 +201,4 @@ Now, increasing the light radius makes this dot wider as you can see on this [De
 This uses internally a lot of approximation like Tan(theta) is almost theta for small angles so if you try to put bigger radius than a tenth of the light distance you will not see the desired effect.
 
 ## Shadows (as the standard material)
-Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/How_To);
+Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/babylon101/shadows);

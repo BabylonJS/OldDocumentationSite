@@ -10,6 +10,8 @@ module.exports = function (app) {
     app.use('/classes', require('./routes/classes'));
     app.use('/babylon101', require('./routes/babylon101'));
     app.use('/How_To', require('./routes/How_To'));
+    // backward compatibility
+    app.use('/tutorials', require('./routes/How_To'));
     app.use('/extensions', require('./routes/extensions'));
     app.use('/resources', require('./routes/resources'));
     app.use('/samples', require('./routes/samples'));

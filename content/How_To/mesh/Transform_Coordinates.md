@@ -60,4 +60,4 @@ The building will be an array of boxes. Leaving the boxes as separate meshes wou
 # Further Reading
 
 [How To Use a Parent](/How_To/Parenting)  
-[Frame of Reference](resources/Frame_Of_Reference)
+[Frame of Reference](/resources/Frame_Of_Reference)

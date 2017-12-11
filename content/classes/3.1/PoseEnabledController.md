@@ -23,33 +23,25 @@ class [PoseEnabledController](/classes/3.1/PoseEnabledController) extends [Gamep
 ### devicePosition : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### deviceRotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
-
 
 
 ### deviceScaleFactor : number
 
 
-
 ### position : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### rotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
 
 
-
 ### controllerType : [PoseEnabledControllerType](/classes/3.1/PoseEnabledControllerType)
-
 
 
 ### rawPose : DevicePose
 
 
-
 ### mesh : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
-
 
 
 ## Methods

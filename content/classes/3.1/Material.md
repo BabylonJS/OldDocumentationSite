@@ -28,97 +28,85 @@ optional | doNotAdd | boolean |
 ### static TriangleFillMode : number
 
 
-
 ### static WireFrameFillMode : number
-
 
 
 ### static PointFillMode : number
 
 
-
 ### static ClockWiseSideOrientation : number
-
 
 
 ### static CounterClockWiseSideOrientation : number
 
 
-
 ### static TextureDirtyFlag : number
-
 
 
 ### static LightDirtyFlag : number
 
 
-
 ### static FresnelDirtyFlag : number
-
 
 
 ### static AttributesDirtyFlag : number
 
 
-
 ### static MiscDirtyFlag : number
-
 
 
 ### id : string
 
 
-
 ### name : string
-
 
 
 ### checkReadyOnEveryCall : boolean
 
 
-
 ### checkReadyOnlyOnce : boolean
-
 
 
 ### state : string
 
 
-
 ### alpha : number
-
 
 
 ### backFaceCulling : boolean
 
 
-
 ### sideOrientation : number
-
 
 
 ### onCompiled : (effect: [Effect](/classes/3.1/Effect)) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.1/Effect) | 
+
 ### onError : (effect: [Effect](/classes/3.1/Effect), errors: string) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.1/Effect) | 
+ | errors | string | 
 ### getRenderTargetTextures : () =&gt; [SmartArray](/classes/3.1/SmartArray)&lt;[RenderTargetTexture](/classes/3.1/RenderTargetTexture)&gt;
-
 
 
 ### doNotSerialize : boolean
 
 
-
 ### storeEffectOnSubMeshes : boolean
 
 
-
 ### animations : Array&lt;[Animation](/classes/3.1/Animation)&gt;
-
 
 
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[Material](/classes/3.1/Material)&gt;
@@ -126,9 +114,7 @@ optional | doNotAdd | boolean |
 An event triggered when the material is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onDispose : () =&gt; void
-
 
 
 ### onBindObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
@@ -136,63 +122,54 @@ An event triggered when the material is disposed.
 An event triggered when the material is bound.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onBind : ([Mesh](/classes/3.1/Mesh): [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | [Mesh](/classes/3.1/Mesh) | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
 ### onUnBindObservable : [Observable](/classes/3.1/Observable)&lt;[Material](/classes/3.1/Material)&gt;
 
 An event triggered when the material is unbound.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### alphaMode : number
-
 
 
 ### needDepthPrePass : boolean
 
 
-
 ### disableDepthWrite : boolean
-
 
 
 ### forceDepthWrite : boolean
 
 
-
 ### separateCullingPass : boolean
-
 
 
 ### fogEnabled : boolean
 
 
-
 ### pointSize : number
-
 
 
 ### zOffset : number
 
 
-
 ### wireframe : boolean
-
 
 
 ### pointsCloud : boolean
 
 
-
 ### fillMode : number
 
 
-
 ### isFrozen : boolean
-
 
 
 ## Methods
@@ -342,8 +319,9 @@ Force shader compilation including textures ready check
  | Name | Type | Description
 ---|---|---|---
  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
- | onCompiled | (material: [Material](/classes/3.1/Material)) =&gt; void | 
-optional | options | { alphaTest: boolean,  clipPlane: boolean } | 
+ | onCompiled |  | material | [Material](/classes/3.1/Material) | 
+
+ | 
 ### markAsDirty(flag) &rarr; void
 
 

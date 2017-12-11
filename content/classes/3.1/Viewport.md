@@ -26,17 +26,13 @@ Creates a [Viewport](/classes/3.1/Viewport) object located at (x, y) and sized (
 ### x : number
 
 
-
 ### y : number
-
 
 
 ### width : number
 
 
-
 ### height : number
-
 
 
 ## Methods

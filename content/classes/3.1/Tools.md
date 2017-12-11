@@ -16,13 +16,10 @@ class [Tools](/classes/3.1/Tools)
 ### static BaseUrl : string
 
 
-
 ### static CorsBehavior : any
 
 
-
 ### static UseFallbackTexture : boolean
-
 
 
 ### static RegisteredExternalClasses : { [key: string]: Object }
@@ -30,85 +27,106 @@ class [Tools](/classes/3.1/Tools)
 Use this object to register external classes like custom textures or material
 
 to allow the laoders to instantiate them
-
 ### static PreprocessUrl : (url: string) =&gt; string
 
 
 
-### static errorsCount : number
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | url | string | 
 
+### static errorsCount : number
 
 
 ### static OnNewCacheEntry : (entry: string) =&gt; void
 
 
 
-### static NoneLogLevel : number
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | entry | string | 
 
+### static NoneLogLevel : number
 
 
 ### static MessageLogLevel : number
 
 
-
 ### static WarningLogLevel : number
-
 
 
 ### static ErrorLogLevel : number
 
 
-
 ### static AllLogLevel : number
-
 
 
 ### static Log : (message: string) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | message | string | 
+
 ### static Warn : (message: string) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | message | string | 
 
 ### static Error : (message: string) =&gt; void
 
 
 
-### static LogCache : string
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | message | string | 
 
+### static LogCache : string
 
 
 ### static LogLevels : number
 
 
-
 ### static PerformanceNoneLogLevel : number
-
 
 
 ### static PerformanceUserMarkLogLevel : number
 
 
-
 ### static PerformanceConsoleLogLevel : number
 
 
-
 ### static PerformanceLogLevel : number
-
 
 
 ### static StartPerformanceCounter : (counterName: string, condition: boolean) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | counterName | string | 
+optional | condition | boolean | 
 ### static EndPerformanceCounter : (counterName: string, condition: boolean) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | counterName | string | 
+optional | condition | boolean | 
 ### static Now : number
-
 
 
 ## Methods
@@ -141,7 +159,7 @@ Interpolates between a and b via alpha
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | action | () =&gt; void | 
+ | action |  | 
 
 ### static IsExponentOfTwo(value) &rarr; boolean
 
@@ -277,8 +295,9 @@ optional | bias | Nullable&lt;[Vector2](/classes/3.1/Vector2)&gt; |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | feeder | (index: number) =&gt; [Vector2](/classes/3.1/Vector2) | 
-optional | bias | Nullable&lt;[Vector2](/classes/3.1/Vector2)&gt; | 
+ | feeder |  | index | number | 
+
+ | 
 ### static MakeArray(obj, allowsNullUndefined) &rarr; Nullable&lt;Array&lt;any&gt;&gt;
 
 
@@ -298,7 +317,7 @@ optional | allowsNullUndefined | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | () =&gt; void |  - the function to be called
+ | func |  |  - the function to be called
 optional | requester | any |  - the object that will request the next frame. Falls back to window.
 ### static RequestFullscreen(element) &rarr; void
 
@@ -338,8 +357,11 @@ optional | requester | any |  - the object that will request the next frame. Fal
  | Name | Type | Description
 ---|---|---|---
  | url | any | 
- | onLoad | (img: HTMLImageElement) =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onLoad |  | img | HTMLImageElement | 
+
+ | 
+ | onError | optional | message | string | 
+optional | exception | any | 
 ### static LoadFile(url, callback, progressCallBack, database, useArrayBuffer, onError) &rarr; XMLHttpRequest
 
 
@@ -348,10 +370,13 @@ optional | requester | any |  - the object that will request the next frame. Fal
  | Name | Type | Description
 ---|---|---|---
  | url | string | 
- | callback | (data: any) =&gt; void | 
-optional | progressCallBack | (data: any) =&gt; void | 
+ | callback |  | data | any | 
+
+ | 
+optional | progressCallBack |  | data | any | 
 optional | database | [Database](/classes/3.1/Database) | 
 optional | useArrayBuffer | boolean | 
+optional | onError | optional | request | XMLHttpRequest | 
 ### static LoadScript(scriptUrl, onSuccess, onError) &rarr; void
 
 Load a script (identified by an url). When the url returns, the
@@ -362,8 +387,10 @@ content of this file is added into a new script element, attached to the DOM (bo
  | Name | Type | Description
 ---|---|---|---
  | scriptUrl | string | 
- | onSuccess | () =&gt; void | 
-optional | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+optional | onError | optional | message | string | 
+optional | exception | any | 
+
 ### static ReadFileAsDataURL(fileToLoad, callback, progressCallback, MSBaseReader, ev) &rarr; (fileToLoad, callback, progressCallback, MSBaseReader, ev)
 
 
@@ -372,8 +399,10 @@ optional | onError | (message: string, exception: any) =&gt; void |
  | Name | Type | Description
 ---|---|---|---
  | fileToLoad | Blob | 
- | callback | (data: any) =&gt; void | 
- | progressCallback | () =&gt;  or MSBaseReader | 
+ | callback |  | data | any | 
+
+ | 
+ | progressCallback |  or MSBaseReader | 
 ### static ReadFile(fileToLoad, callback, progressCallBack, MSBaseReader, ev) &rarr; (fileToLoad, callback, progressCallBack, MSBaseReader, ev)
 
 
@@ -382,8 +411,10 @@ optional | onError | (message: string, exception: any) =&gt; void |
  | Name | Type | Description
 ---|---|---|---
  | fileToLoad | File | 
- | callback | (data: any) =&gt; void | 
-optional | progressCallBack | () =&gt;  or MSBaseReader | 
+ | callback |  | data | any | 
+
+ | 
+optional | progressCallBack |  or MSBaseReader | 
 ### static FileAsURL(content) &rarr; string
 
 
@@ -459,7 +490,9 @@ optional | doNotCopyList | string[] |
  | width | number | 
  | height | number | 
  | engine | [Engine](/classes/3.1/Engine) | 
-optional | successCallback | (data: string) =&gt; void | 
+optional | successCallback |  | data | string | 
+
+ | 
 ### static EncodeScreenshotCanvasData(successCallback, mimeType) &rarr; void
 
 
@@ -467,8 +500,9 @@ optional | successCallback | (data: string) =&gt; void |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | successCallback | (data: string) =&gt; void | 
-optional | mimeType | string | 
+optional | successCallback |  | data | string | 
+
+ | 
 ### static CreateScreenshot(engine, camera, size, successCallback, mimeType) &rarr; void
 
 
@@ -479,7 +513,9 @@ optional | mimeType | string |
  | engine | [Engine](/classes/3.1/Engine) | 
  | camera | [Camera](/classes/3.1/Camera) | 
  | size | any | 
-optional | successCallback | (data: string) =&gt; void | 
+optional | successCallback |  | data | string | 
+
+ | 
 ### static CreateScreenshotUsingRenderTarget(engine, camera, size, successCallback, mimeType, samples) &rarr; void
 
 
@@ -490,7 +526,9 @@ optional | successCallback | (data: string) =&gt; void |
  | engine | [Engine](/classes/3.1/Engine) | 
  | camera | [Camera](/classes/3.1/Camera) | 
  | size | any | 
-optional | successCallback | (data: string) =&gt; void | 
+optional | successCallback |  | data | string | 
+
+ | 
 optional | mimeType | string | 
 ### static ValidateXHRData(xhr, dataType) &rarr; boolean
 
@@ -535,7 +573,8 @@ optional | isType | boolean |
  | Name | Type | Description
 ---|---|---|---
  | array | Array&lt;T&gt; | 
- | predicate | (item: T) =&gt; boolean | 
+ | predicate |  | item | T | 
+
 ### static getFullClassName(object, isType) &rarr; Nullable&lt;string&gt;
 
 This method will return the name of the full name of the class, including its owning module (if any).
@@ -569,5 +608,6 @@ To compute the HashCode on a string or an Array of data types implementing the g
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | feeder | (index: number) =&gt; number |  a callback that will be called until it returns null, each valid returned values will be used to compute the hash code.
+ | feeder |  | index | number | 
 
+ |  a callback that will be called until it returns null, each valid returned values will be used to compute the hash code.

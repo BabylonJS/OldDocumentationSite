@@ -17,17 +17,13 @@ class [ArcRotateCameraVRDeviceOrientationInput](/classes/3.1/ArcRotateCameraVRDe
 ### camera : [ArcRotateCamera](/classes/3.1/ArcRotateCamera)
 
 
-
 ### alphaCorrection : number
-
 
 
 ### betaCorrection : number
 
 
-
 ### gammaCorrection : number
-
 
 
 ## Methods

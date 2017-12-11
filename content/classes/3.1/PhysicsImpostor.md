@@ -24,37 +24,28 @@ optional | _options | PhysicsImpostorParameters |
 ### object : IPhysicsEnabledObject
 
 
-
 ### type : number
-
 
 
 ### static DEFAULT_OBJECT_SIZE : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### static IDENTITY_QUATERNION : [Quaternion](/classes/3.1/Quaternion)
-
 
 
 ### isDisposed : boolean
 
 
-
 ### mass : number
-
 
 
 ### friction : number
 
 
-
 ### restitution : number
 
 
-
 ### uniqueId : number
-
 
 
 ### physicsBody : any
@@ -62,61 +53,58 @@ optional | _options | PhysicsImpostorParameters |
 Gets the body that holds this impostor. Either its own, or its parent.
 
 Set the physics body. Used mainly by the physics engine/plugin
-
 ### parent : [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
-
 
 
 ### void : undefined
 
 
-
 ### beforeStep : () =&gt; void
 
 this function is executed by the physics engine.
-
 ### afterStep : () =&gt; void
 
 this function is executed by the physics engine.
-
 ### onCollideEvent : (collider: undefined, collidedWith: undefined) =&gt; void
 
 Legacy collision detection event support
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | collider | undefined | 
+ | collidedWith | undefined | 
 ### onCollide : (e: { body: any }) =&gt; void
 
 
 
-### static NoImpostor : number
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | e | { body: any } | 
 
+### static NoImpostor : number
 
 
 ### static SphereImpostor : number
 
 
-
 ### static BoxImpostor : number
-
 
 
 ### static PlaneImpostor : number
 
 
-
 ### static MeshImpostor : number
-
 
 
 ### static CylinderImpostor : number
 
 
-
 ### static ParticleImpostor : number
 
 
-
 ### static HeightmapImpostor : number
-
 
 
 ## Methods
@@ -207,7 +195,8 @@ Provide a function the will have two variables - the world object and the physic
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (world: any, physicsBody: any) =&gt; void | 
+ | func |  | world | any | 
+ | physicsBody | any | 
 
 ### registerBeforePhysicsStep(func) &rarr; void
 
@@ -216,8 +205,9 @@ Register a function that will be executed before the physics world is stepping f
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (impostor: [PhysicsImpostor](/classes/3.1/PhysicsImpostor)) =&gt; void | 
+ | func |  | impostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
 
+ | 
 ### unregisterBeforePhysicsStep(func) &rarr; void
 
 
@@ -225,8 +215,9 @@ Register a function that will be executed before the physics world is stepping f
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (impostor: [PhysicsImpostor](/classes/3.1/PhysicsImpostor)) =&gt; void | 
+ | func |  | impostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
 
+ | 
 ### registerAfterPhysicsStep(func) &rarr; void
 
 Register a function that will be executed after the physics step
@@ -234,8 +225,9 @@ Register a function that will be executed after the physics step
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (impostor: [PhysicsImpostor](/classes/3.1/PhysicsImpostor)) =&gt; void | 
+ | func |  | impostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
 
+ | 
 ### unregisterAfterPhysicsStep(func) &rarr; void
 
 
@@ -243,8 +235,9 @@ Register a function that will be executed after the physics step
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (impostor: [PhysicsImpostor](/classes/3.1/PhysicsImpostor)) =&gt; void | 
+ | func |  | impostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
 
+ | 
 ### registerOnPhysicsCollide(collideAgainst, Array, func) &rarr; void
 
 register a function that will be executed when this impostor collides against a different body.
@@ -253,7 +246,9 @@ register a function that will be executed when this impostor collides against a 
  | Name | Type | Description
 ---|---|---|---
  | collideAgainst | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) or Array | 
- | func | (collider: [PhysicsImpostor](/classes/3.1/PhysicsImpostor), collidedAgainst: [PhysicsImpostor](/classes/3.1/PhysicsImpostor)) =&gt; void | 
+ | func |  | collider | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
+ | collidedAgainst | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
+
 ### unregisterOnPhysicsCollide(collideAgainst, Array, func) &rarr; (collideAgainst, Array, func)
 
 
@@ -262,7 +257,8 @@ register a function that will be executed when this impostor collides against a 
  | Name | Type | Description
 ---|---|---|---
  | collideAgainst | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) or Array | 
- | func | (collider: [PhysicsImpostor](/classes/3.1/PhysicsImpostor), collidedAgainst: [PhysicsImpostor](/classes/3.1/PhysicsImpostor), Array: undefined) =&gt;  | 
+ | func |  | collider | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
+ | collidedAgainst | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) or Array | 
 ### applyForce(force, contactPoint) &rarr; void
 
 Apply a force

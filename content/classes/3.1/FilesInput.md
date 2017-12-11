@@ -22,22 +22,30 @@ class [FilesInput](/classes/3.1/FilesInput)
 ---|---|---|---
  | engine | [Engine](/classes/3.1/Engine) | 
  | scene | [Scene](/classes/3.1/Scene) | 
- | sceneLoadedCallback | (sceneFile: File, scene: [Scene](/classes/3.1/Scene)) =&gt; void | 
- | progressCallback | (progress: ProgressEvent) =&gt; void | 
- | additionalRenderLoopLogicCallback | () =&gt; void | 
- | textureLoadingCallback | (remaining: number) =&gt; void | 
- | startingProcessingFilesCallback | () =&gt; void | 
- | onReloadCallback | (sceneFile: File) =&gt; void | 
+ | sceneLoadedCallback |  | sceneFile | File | 
+
+ | 
+ | progressCallback |  | progress | ProgressEvent | 
+ | additionalRenderLoopLogicCallback |  | 
+ | textureLoadingCallback |  | remaining | number | 
+ | startingProcessingFilesCallback |  | 
+ | onReloadCallback |  | sceneFile | File | 
+ | errorCallback |  | sceneFile | File | 
 ## Members
 
 ### static FilesToLoad : { [key: string]: File }
-
 
 
 ### onProcessFileCallback : (file: File, name: string, extension: string) =&gt; 
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | file | File | 
+ | name | string | 
+ | extension | string | 
 ## Methods
 
 ### monitorElementForDragNDrop(elementToMonitor) &rarr; void

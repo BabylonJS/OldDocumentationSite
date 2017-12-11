@@ -39,9 +39,9 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Animations: Position, scaling, rotation
 
 * _Materials_
-    * Base color factor and texture
-    * Metallic and roughness factors
-    * Combined MetallicRoughness texture
+    * Base color
+    * Metalness and roughness
+    * Emission, ambient occlusion
     * Multi-materials
 
 * _Textures_
@@ -117,6 +117,10 @@ The exported emission color value is computed based on all 4 parameters: emissio
 
 However, the exported emission color map is identical to the specified one in generic map. This mean that emisson weight, luminance and Kelvin __are not__ used. The emission map is assumed to be precomputed.
 
+### Ambient occlusion
+
+The diffuse roughness map is used as ambient occlusion.
+
 ### Bump map
 
 The bump map (or normal map) and its weight are used.
@@ -140,6 +144,12 @@ To do it simply, a root node named "root" is added to the scene. All nodes are s
 ## Consideration about skins
 
 In glTF, a skin is binded to a node. The skeleton (root bone) of a skin should be positioned at origin, without rotation or scaling. The node to which is applied the skin is responsible of its transformation (translation, rotation, scale).
+
+## Textures image format
+
+glTF 2.0 only supports the following image formats: jpg and png. You are adviced to use those formats for your textures when exporting to glTF.
+
+Note that the exporter also supports textures with bmp, gif, tga, tif and dds formats. But, those textures will be automatically converted to png/jpg by the exporter to follow glTF specifications.
 
 ## Environment texture
 

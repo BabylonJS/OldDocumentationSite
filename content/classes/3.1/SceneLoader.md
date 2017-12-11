@@ -16,45 +16,34 @@ class [SceneLoader](/classes/3.1/SceneLoader)
 ### static NO_LOGGING : number
 
 
-
 ### static MINIMAL_LOGGING : number
-
 
 
 ### static SUMMARY_LOGGING : number
 
 
-
 ### static DETAILED_LOGGING : number
-
 
 
 ### static ForceFullSceneLoadingForIncremental : boolean
 
 
-
 ### static ShowLoadingScreen : boolean
-
 
 
 ### static loggingLevel : number
 
 
-
 ### static CleanBoneMatrixWeights : boolean
-
 
 
 ### static OnPluginActivatedObservable : [Observable](/classes/3.1/Observable)&lt;ISceneLoaderPlugin&gt;
 
 
-
 ### ISceneLoaderPluginAsync : undefined
 
 
-
 ### ISceneLoaderPluginAsync : undefined
-
 
 
 ## Methods
@@ -99,8 +88,13 @@ Load a scene
  | rootUrl | string |  a string that defines the root url for scene and resources
  | sceneFilename | any |  a string that defines the name of the scene file. can start with "data:" following by the stringified version of the scene
  | engine | [Engine](/classes/3.1/Engine) |  is the instance of BABYLON.[Engine](/classes/3.1/Engine) to use to create the scene
-optional | onSuccess | (scene: [Scene](/classes/3.1/Scene)) =&gt; void |  a callback with the scene when import succeeds
-optional | onProgress | (event: ProgressEvent) =&gt; void |  a callback with a progress event for each file being loaded
+optional | onSuccess |  | scene | [Scene](/classes/3.1/Scene) | 
+
+ |  a callback with a progress event for each file being loaded
+optional | onProgress |  | event | ProgressEvent | 
+optional | onError |  | scene | [Scene](/classes/3.1/Scene) | 
+ | message | string | 
+optional | exception | any | 
 ### static Append(rootUrl, sceneFilename, scene, onSuccess, onProgress, onError) &rarr; void
 
 Append a scene
@@ -111,5 +105,10 @@ Append a scene
  | rootUrl | string |  a string that defines the root url for scene and resources
  | sceneFilename | any |  a string that defines the name of the scene file. can start with "data:" following by the stringified version of the scene
  | scene | [Scene](/classes/3.1/Scene) |  is the instance of BABYLON.[Scene](/classes/3.1/Scene) to append to
-optional | onSuccess | (scene: [Scene](/classes/3.1/Scene)) =&gt; void |  a callback with the scene when import succeeds
-optional | onProgress | (event: ProgressEvent) =&gt; void |  a callback with a progress event for each file being loaded
+optional | onSuccess |  | scene | [Scene](/classes/3.1/Scene) | 
+
+ |  a callback with a progress event for each file being loaded
+optional | onProgress |  | event | ProgressEvent | 
+optional | onError |  | scene | [Scene](/classes/3.1/Scene) | 
+ | message | string | 
+optional | exception | any | 

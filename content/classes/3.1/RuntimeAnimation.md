@@ -23,9 +23,7 @@ class [RuntimeAnimation](/classes/3.1/RuntimeAnimation)
 ### currentFrame : number
 
 
-
 ### animation : [Animation](/classes/3.1/Animation)
-
 
 
 ## Methods

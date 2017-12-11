@@ -27,9 +27,7 @@ optional | alphaTestSortCompareFn | Nullable&lt;(a: [SubMesh](/classes/3.1/SubMe
 ### index : number
 
 
-
 ### onBeforeTransparentRendering : () =&gt; void
-
 
 
 ### opaqueSortCompareFn : Nullable&lt;(a: [SubMesh](/classes/3.1/SubMesh), b: [SubMesh](/classes/3.1/SubMesh)) =&gt; number&gt;
@@ -37,19 +35,16 @@ optional | alphaTestSortCompareFn | Nullable&lt;(a: [SubMesh](/classes/3.1/SubMe
 Set the opaque sort comparison function.
 
 If null the sub meshes will be render in the order they were created
-
 ### alphaTestSortCompareFn : Nullable&lt;(a: [SubMesh](/classes/3.1/SubMesh), b: [SubMesh](/classes/3.1/SubMesh)) =&gt; number&gt;
 
 Set the alpha test sort comparison function.
 
 If null the sub meshes will be render in the order they were created
-
 ### transparentSortCompareFn : Nullable&lt;(a: [SubMesh](/classes/3.1/SubMesh), b: [SubMesh](/classes/3.1/SubMesh)) =&gt; number&gt;
 
 Set the transparent sort comparison function.
 
 If null the sub meshes will be render in the order they were created
-
 ## Methods
 
 ### render(customRenderFunction, renderSprites, renderParticles, activeMeshes) &rarr; void

@@ -27,9 +27,7 @@ Creates a new [Vector2](/classes/3.1/Vector2) from the passed x and y coordinate
 ### x : number
 
 
-
 ### y : number
-
 
 
 ## Methods

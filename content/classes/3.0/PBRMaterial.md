@@ -11,7 +11,7 @@ This offers the main features of a standard PBR material.
 
 For more information, please refer to the documentation :
 
-http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+http://doc.babylonjs.com/How_To/Physically_Based_Rendering
 
 ## Constructor
 
@@ -224,7 +224,7 @@ A light for instance can be thought as emissive.
 
 ### useAlphaFromAlbedoTexture : boolean
 
-Secifies that the alpha is coming form the albedo channel alpha channel.
+Specifies that the alpha is coming form the albedo channel alpha channel.
 
 ### useSpecularOverAlpha : boolean
 

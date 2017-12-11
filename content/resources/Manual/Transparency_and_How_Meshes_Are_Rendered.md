@@ -135,7 +135,7 @@ This may help you with visible seams between meshes and other similar issues.
 - A mesh's alphaIndex property can be very useful as well, since they allow you to override the depth sorting of alpha-blended meshes. Also this property does not suffer from the same limitation as Rendering Groups (4 layers at most), and only has an effect on alpha-blended meshes.
 - You can rely on `needDepthPrePass` to help fixing issues with self transparency.
 - You can also use `separateCullingPass` on materials to force the engine to render the transparent objects in 2 passes: first the back faces and then the front faces. This can help a lot with self transparency.
-
+- To prevent both the cost of either `needDepthPrePass` or `separateCullingPass` if the sum of your alpha stays below 1.0, you can change the alphaMode of the mesh to either `Engine.ALPHA_PREMULTIPLIED` or `Engine.ALPHA_PREMULTIPLIED_PORTERDUFF` which prevent the need of ordering the triangles.
 
 ## Concave meshes and transparency
 
@@ -143,6 +143,12 @@ The transparent concave meshes render obvisouly with the same rules than explain
 For some reasons (example : camera flying from outside to inside a sphere), you may want to remove the backface culling in order to also render the back side of the mesh :  https://www.babylonjs-playground.com/#1PLV5Z#1  
 As you can notice, the transparency rendering rules may lead to some weird things making some parts of the mesh geometries visible.  
 In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` :  https://www.babylonjs-playground.com/#1PLV5Z#2  
-Other option will be to rely on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#16
+Other option will be to rely on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#16  
 
-*(to be expanded)*
+At last, if you accept to spend some CPU cycles to get a correct self transparency, you can use the FacetData feature and enable the facet depth sort : http://doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort   
+
+Eaxmple : http://playground.babylonjs.com/#FWKUY0#1  
+Depth sorted on the left, standard on the right.  
+
+
+

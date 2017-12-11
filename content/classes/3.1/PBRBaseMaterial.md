@@ -25,7 +25,6 @@ Instantiates a new [PBRMaterial](/classes/3.1/PBRMaterial) instance.
 ### useLogarithmicDepth : boolean
 
 
-
 ## Methods
 
 ### getClassName() &rarr; string

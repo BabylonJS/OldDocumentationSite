@@ -25,8 +25,6 @@ class [StickValues](/classes/3.1/StickValues)
 ### x : number
 
 
-
 ### y : number
-
 
 

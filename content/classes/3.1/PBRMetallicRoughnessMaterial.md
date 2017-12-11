@@ -35,31 +35,26 @@ When the material is a metal, the base color is the specific measured reflectanc
 at normal incidence (F0). For a non-metal the base color represents the reflected diffuse color
 
 of the material.
-
 ### baseTexture : [BaseTexture](/classes/3.1/BaseTexture)
 
 Base texture of the metallic workflow. It contains both the baseColor information in RGB as
 
 well as opacity information in the alpha channel.
-
 ### metallic : number
 
 Specifies the metallic scalar value of the material.
 
 Can also be used to scale the metalness values of the metallic texture.
-
 ### roughness : number
 
 Specifies the roughness scalar value of the material.
 
 Can also be used to scale the roughness values of the metallic texture.
-
 ### metallicRoughnessTexture : [BaseTexture](/classes/3.1/BaseTexture)
 
 [Texture](/classes/3.1/Texture) containing both the metallic value in the B channel and the
 
 roughness value in the G channel to keep better precision.
-
 ## Methods
 
 ### getClassName() &rarr; string

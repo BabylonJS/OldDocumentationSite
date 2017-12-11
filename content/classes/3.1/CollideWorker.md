@@ -28,7 +28,6 @@ class [CollideWorker](/classes/3.1/CollideWorker)
 ### collider : [Collider](/classes/3.1/Collider)
 
 
-
 ## Methods
 
 ### collideWithWorld(position, velocity, maximumRetry, excludedMeshUniqueId) &rarr; void

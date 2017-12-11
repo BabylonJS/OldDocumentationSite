@@ -26,17 +26,13 @@ class [ArcFollowCamera](/classes/3.1/ArcFollowCamera) extends [TargetCamera](/cl
 ### alpha : number
 
 
-
 ### beta : number
-
 
 
 ### radius : number
 
 
-
 ### target : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
-
 
 
 ## Methods

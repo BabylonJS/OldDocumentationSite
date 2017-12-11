@@ -46,8 +46,8 @@ var mesh = vls.mesh;
 By default, the post-process is computing the light scattering using the internal mesh position.  You can modify and set a custom position using (typically for the floor as the internal mesh):
 
 ```
-vls.useCustomLightPosition = true;
-vls.setLightPosition(new BABYLON.Vector3(5.0, 0.0, 5.0));
+vls.useCustomMeshPosition = true;
+vls.setCustomMeshPosition(new BABYLON.Vector3(5.0, 0.0, 5.0));
 ```
 
 **Warning: If the custom light position is too far from the light source, the result will be distorted **
@@ -55,7 +55,7 @@ vls.setLightPosition(new BABYLON.Vector3(5.0, 0.0, 5.0));
 You can access the custom position using:
 
 ```
-var position = vls.getLightPosition();
+var position = vls.getCustomMeshPosition();
 ```
 
 To customize the light scattering, you can modify the vertical direction of the light rays. If _invert_ is set true, the rays will go downward. Upward, if invert is set false.

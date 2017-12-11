@@ -195,6 +195,14 @@ Animations are exported by sampling keyframes which can generate a lot of data. 
 
 To ensure that bones are correctly exported, you have to use the Skin modifier. Skin should be positioned at origin. [More info here](/resources/Bones_influences_per_vertex)
 
+## Textures image format
+
+Babylon engine fully supports the following image formats: jpg, bmp, png, gif, tga. You are adviced to use those formats for your textures when exporting to Babylon.
+
+Note that the exporter also supports textures with tif and dds formats. But, those textures will be automatically converted to png by the exporter to ensure compatibility with the Babylon engine.
+
+About dds format, Babylon engine partially supports this format depending on compression. To avoid any issue with this format, the exporter automatically converts it to png as stated previously. As an exception, the dds format is allowed for the environmnent texture and will not be automatically converted.
+
 ## Physical materials
 
 The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#pbr-materials)

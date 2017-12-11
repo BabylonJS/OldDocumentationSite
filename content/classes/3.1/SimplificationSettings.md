@@ -26,12 +26,9 @@ optional | optimizeMesh | boolean |
 ### quality : number
 
 
-
 ### distance : number
 
 
-
 ### optimizeMesh : boolean
-
 
 

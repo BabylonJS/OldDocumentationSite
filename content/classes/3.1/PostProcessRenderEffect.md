@@ -22,15 +22,19 @@ class [PostProcessRenderEffect](/classes/3.1/PostProcessRenderEffect)
 ---|---|---|---
  | engine | [Engine](/classes/3.1/Engine) | 
  | name | string | 
- | getPostProcess | () =&gt; [PostProcess](/classes/3.1/PostProcess) | 
+ | getPostProcess |  | 
 ## Members
 
 ### applyParameters : (postProcess: [PostProcess](/classes/3.1/PostProcess)) =&gt; void
 
 
 
-### isSupported : boolean
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
 
+### isSupported : boolean
 
 
 ## Methods

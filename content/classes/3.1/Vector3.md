@@ -32,13 +32,10 @@ It can represent etiher the coordinates of a point the space, either a direction
 ### x : number
 
 
-
 ### y : number
 
 
-
 ### z : number
-
 
 
 ## Methods
