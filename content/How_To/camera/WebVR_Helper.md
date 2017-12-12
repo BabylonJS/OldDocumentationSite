@@ -59,6 +59,27 @@ vrHelper.onControllerMeshLoaded.add((webVRController)=>{
 });
 ```
 
+# Accessing vr device position and rotation
+
+Position and rotation in Babylon space can be accessed through the webVRCamera's devicePosition and deviceRotationQuaternion
+```javascript
+// Left and right hand position/rotation
+if(vrHelper.webVRCamera.leftController){
+    leftHand.position = vrHelper.webVRCamera.leftController.devicePosition.clone()
+    leftHand.rotationQuaternion = vrHelper.webVRCamera.leftController.deviceRotationQuaternion.clone()
+}
+if(vrHelper.webVRCamera.rightController){
+    rightHand.position = vrHelper.webVRCamera.rightController.devicePosition.clone()
+    rightHand.rotationQuaternion = vrHelper.webVRCamera.rightController.deviceRotationQuaternion.clone()
+}
+
+// Head position/rotation
+head.position = vrHelper.webVRCamera.devicePosition.clone()
+head.rotationQuaternion = vrHelper.webVRCamera.deviceRotationQuaternion.clone()
+```
+
+See [Example](https://www.babylonjs-playground.com/#VIGXA3#7)
+
 # Mesh selected event
 
 As the user selects an object with their gaze or controller the NewMeshSelected event will occur.
