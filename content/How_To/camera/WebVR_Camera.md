@@ -103,7 +103,13 @@ export interface DevicePose {
 }
 ```
 
-
+Note: Raw pose values are not modified based on the webVRCamera's rotation or position. To reference modified position and rotation in Babylon space, use the devicePosition and deviceRotationQuaternion fields.
+```javascript
+webVRCamera.devicePosition
+webVRCamera.deviceRotationQuaternion
+webVRCamera.leftController.devicePosition
+webVRCamera.leftController.deviceRotationQuaternion
+```
 ## The Gamepad Extensions support (WebVR controllers)
 
 Each VR device currently available (Windows Mixed Reality, Oculus Rift and Vive) has controllers that complement its usage. Windows Mixed Reality controllers, Vive controllers and the Oculus touch controllers are supported by using the gamepad extensions.

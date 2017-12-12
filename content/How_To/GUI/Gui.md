@@ -499,7 +499,7 @@ The default layout is equivalent to:
 addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
 addKeysRow(["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]);
 addKeysRow(["a", "s", "d", "f", "g", "h", "j", "k", "l",";","'","\u21B5"]);
-addKeysRow(["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
+addKeysRow(["\u21E7", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
 addKeysRow([" "], [{ width: "200px"}]);
 ```
 
