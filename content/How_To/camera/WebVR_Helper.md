@@ -110,4 +110,4 @@ Scenes:
 
 Games:
  - [Minecraft JMJ](https://www.babylonjs-playground.com/#32DWVS#4)
- - [Fruit Ninja](https://www.babylonjs-playground.com/#92RIZ6#51)
+ - [Fruit Ninja](https://playground.babylonjs.com/#FAXLY2)
