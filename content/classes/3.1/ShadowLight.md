@@ -9,6 +9,9 @@ class [ShadowLight](/classes/3.1/ShadowLight) extends [Light](/classes/3.1/Light
 
 ## Members
 
+### abstract : undefined
+
+
 ### void : undefined
 
 

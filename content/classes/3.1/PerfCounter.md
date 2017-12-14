@@ -43,6 +43,9 @@ Returns the current value
 ### total : number
 
 
+### count : number
+
+
 ## Methods
 
 ### fetchNewFrame() &rarr; void

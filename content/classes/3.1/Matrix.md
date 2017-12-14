@@ -22,9 +22,9 @@ class [Matrix](/classes/3.1/Matrix)
 ### m : Float32Array
 
 
-### static Identity : [Matrix](/classes/3.1/Matrix)
+### static IdentityReadOnly : [Matrix](/classes/3.1/Matrix)
 
-Static identity matrix to be used as  matrix
+Static identity matrix to be used as matrix
 
 Must not be updated.
 ## Methods
@@ -311,6 +311,22 @@ Returns the updated [Matrix](/classes/3.1/Matrix).
 ---|---|---|---
  | index | number | 
  | row | [Vector4](/classes/3.1/Vector4) | 
+### transpose() &rarr; [Matrix](/classes/3.1/Matrix)
+
+Compute the transpose of the matrix.
+
+Returns a new [Matrix](/classes/3.1/Matrix).
+### transposeToRef(result) &rarr; [Matrix](/classes/3.1/Matrix)
+
+Compute the transpose of the matrix.
+
+Returns the current matrix.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | result | [Matrix](/classes/3.1/Matrix) | 
+
 ### setRowFromFloats(index, x, y, z, w) &rarr; [Matrix](/classes/3.1/Matrix)
 
 Sets the index-th row of the current matrix with the passed 4 x float values.
@@ -774,6 +790,15 @@ Returns a new [Matrix](/classes/3.1/Matrix).
 ---|---|---|---
  | matrix | [Matrix](/classes/3.1/Matrix) | 
 
+### static TransposeToRef(matrix, result) &rarr; void
+
+Compute the transpose of the passed [Matrix](/classes/3.1/Matrix) and store it in the result matrix.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | matrix | [Matrix](/classes/3.1/Matrix) | 
+ | result | [Matrix](/classes/3.1/Matrix) | 
 ### static Reflection(plane) &rarr; [Matrix](/classes/3.1/Matrix)
 
 Returns a new [Matrix](/classes/3.1/Matrix) as the reflection  matrix across the passed plane.

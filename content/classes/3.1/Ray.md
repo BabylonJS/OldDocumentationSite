@@ -111,6 +111,22 @@ Intersection test between the ray and a given segment whithin a given tolerance 
  | sega | [Vector3](/classes/3.1/Vector3) |  the first point of the segment to test the intersection against
  | segb | [Vector3](/classes/3.1/Vector3) |  the second point of the segment to test the intersection against
  | threshold | number |  the tolerance margin, if the ray doesn't intersect the segment but is close to the given threshold, the intersection is successful
+### update(x, y, viewportWidth, viewportHeight, world, view, projection) &rarr; [Ray](/classes/3.1/Ray)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | x | number | 
+ | y | number | 
+ | viewportWidth | number | 
+ | viewportHeight | number | 
+ | world | [Matrix](/classes/3.1/Matrix) | 
+ | view | [Matrix](/classes/3.1/Matrix) | 
+### static Zero() &rarr; [Ray](/classes/3.1/Ray)
+
+
 ### static CreateNew(x, y, viewportWidth, viewportHeight, world, view, projection) &rarr; [Ray](/classes/3.1/Ray)
 
 

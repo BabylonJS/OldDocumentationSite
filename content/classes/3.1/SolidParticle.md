@@ -35,7 +35,7 @@ Don't create particles manually, use instead the Solid [Particle](/classes/3.1/P
  | particleIndex | number | 
  | positionIndex | number | 
  | indiceIndex | number | 
- | model | [ModelShape](/classes/3.1/ModelShape) | 
+ | model | Nullable&lt;[ModelShape](/classes/3.1/ModelShape)&gt; | 
  | shapeId | number | 
  | idxInShape | number | 
  | sps | [SolidParticleSystem](/classes/3.1/SolidParticleSystem) | 
@@ -44,7 +44,7 @@ Don't create particles manually, use instead the Solid [Particle](/classes/3.1/P
 ### idx : number
 
 
-### color : [Color4](/classes/3.1/Color4)
+### color : Nullable&lt;[Color4](/classes/3.1/Color4)&gt;
 
 
 ### position : [Vector3](/classes/3.1/Vector3)
@@ -53,7 +53,7 @@ Don't create particles manually, use instead the Solid [Particle](/classes/3.1/P
 ### rotation : [Vector3](/classes/3.1/Vector3)
 
 
-### rotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
+### rotationQuaternion : Nullable&lt;[Quaternion](/classes/3.1/Quaternion)&gt;
 
 
 ### scaling : [Vector3](/classes/3.1/Vector3)
@@ -63,6 +63,9 @@ Don't create particles manually, use instead the Solid [Particle](/classes/3.1/P
 
 
 ### velocity : [Vector3](/classes/3.1/Vector3)
+
+
+### pivot : [Vector3](/classes/3.1/Vector3)
 
 
 ### alive : boolean
@@ -80,7 +83,7 @@ Don't create particles manually, use instead the Solid [Particle](/classes/3.1/P
 ### scale : [Vector3](/classes/3.1/Vector3)
 
 legacy support, changed scale to scaling
-### quaternion : [Quaternion](/classes/3.1/Quaternion)
+### quaternion : Nullable&lt;[Quaternion](/classes/3.1/Quaternion)&gt;
 
 legacy support, changed quaternion to rotationQuaternion
 ## Methods

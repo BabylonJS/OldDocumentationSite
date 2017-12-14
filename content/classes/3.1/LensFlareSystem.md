@@ -35,14 +35,14 @@ class [LensFlareSystem](/classes/3.1/LensFlareSystem)
 ### viewportBorder : number
 
 
-### meshesSelectionPredicate : (mesh: [Mesh](/classes/3.1/Mesh)) =&gt; boolean
+### meshesSelectionPredicate : (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | mesh | [Mesh](/classes/3.1/Mesh) | 
+ | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
 ### layerMask : number
 

@@ -150,3 +150,6 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 ### update() &rarr; void
 
 
+### dispose() &rarr; void
+
+

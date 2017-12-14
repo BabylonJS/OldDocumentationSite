@@ -221,6 +221,12 @@ class [StandardMaterialDefines](/classes/3.1/StandardMaterialDefines) extends [M
 ### NUM_MORPH_INFLUENCERS : number
 
 
+### NONUNIFORMSCALING : boolean
+
+
+### PREMULTIPLYALPHA : boolean
+
+
 ### IMAGEPROCESSING : boolean
 
 
@@ -243,6 +249,9 @@ class [StandardMaterialDefines](/classes/3.1/StandardMaterialDefines) extends [M
 
 
 ### COLORGRADING : boolean
+
+
+### COLORGRADING3D : boolean
 
 
 ### SAMPLER3DGREENDEPTH : boolean

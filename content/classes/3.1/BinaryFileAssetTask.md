@@ -31,6 +31,25 @@ class [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask) extends [AbstractA
 ### data : ArrayBuffer
 
 
+### onSuccess : (task: [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask)) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask) | 
+
+### onError : (task: [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask), message: string, exception: any) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask) | 
+optional | message | string | 
+optional | exception | any | 
 ## Methods
 
 ### runTask(scene, onSuccess, onError) &rarr; void

@@ -26,7 +26,7 @@ class [ProceduralTexture](/classes/3.1/ProceduralTexture) extends [Texture](/cla
  | size | any | 
  | fragment | any | 
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | fallbackTexture | [Texture](/classes/3.1/Texture) | 
+optional | fallbackTexture | Nullable&lt;[Texture](/classes/3.1/Texture)&gt; | 
 optional | generateMipMaps | boolean | 
 ## Members
 

@@ -39,7 +39,7 @@ class [ReflectionProbe](/classes/3.1/ReflectionProbe)
 ### cubeTexture : [RenderTargetTexture](/classes/3.1/RenderTargetTexture)
 
 
-### renderList : [AbstractMesh](/classes/3.1/AbstractMesh)[]
+### renderList : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)[]&gt;
 
 
 ## Methods

@@ -51,10 +51,16 @@ class [BaseTexture](/classes/3.1/BaseTexture)
 ### wrapV : number
 
 
+### wrapR : number
+
+
 ### anisotropicFilteringLevel : number
 
 
 ### isCube : boolean
+
+
+### is3D : boolean
 
 
 ### gammaSpace : boolean

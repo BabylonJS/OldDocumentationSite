@@ -214,7 +214,7 @@ optional | noPreventDefault | boolean |
 ---|---|---|---
  | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
 optional | insertAt | Nullable&lt;number&gt; | 
-### detachPostProcess(postProcess, atIndices) &rarr; number[]
+### detachPostProcess(postProcess) &rarr; void
 
 
 
@@ -222,7 +222,7 @@ optional | insertAt | Nullable&lt;number&gt; |
  | Name | Type | Description
 ---|---|---|---
  | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
-optional | atIndices | any | 
+
 ### getWorldMatrix() &rarr; [Matrix](/classes/3.1/Matrix)
 
 
@@ -364,6 +364,9 @@ needs to be overridden by children so sub has required properties to be copied
  | name | string | 
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | interaxial_distance | number | 
+### computeWorldMatrix() &rarr; [Matrix](/classes/3.1/Matrix)
+
+
 ### static Parse(parsedCamera, scene) &rarr; [Camera](/classes/3.1/Camera)
 
 

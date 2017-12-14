@@ -17,7 +17,7 @@ class [MergeMeshesOptimization](/classes/3.1/MergeMeshesOptimization) extends [S
 ### static UpdateSelectionTree : boolean
 
 
-### apply : (scene: [Scene](/classes/3.1/Scene), updateSelectionTree: boolean) =&gt; boolean
+### apply : (scene: [Scene](/classes/3.1/Scene), updateSelectionTree: boolean, undefined: undefined) =&gt; boolean
 
 
 
@@ -25,4 +25,4 @@ class [MergeMeshesOptimization](/classes/3.1/MergeMeshesOptimization) extends [S
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | updateSelectionTree | boolean | 
+optional | updateSelectionTree | boolean or undefined | 

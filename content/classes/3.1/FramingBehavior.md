@@ -77,6 +77,9 @@ The camera can move all the way towards the mesh.
 The camera is not allowed to zoom closer to the mesh than the point at which the adjusted bounding sphere touches the frustum sides
 ## Methods
 
+### init() &rarr; void
+
+
 ### attach(camera) &rarr; void
 
 
@@ -97,6 +100,26 @@ Targets the given mesh and updates zoom level accordingly.
  | Name | Type | Description
 ---|---|---|---
  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) |   The mesh to target.
+optional | focusOnOriginXZ | boolean |  Determines if the camera should focus on 0 in the X and Z axis instead of the mesh
+optional | onAnimationEnd | Nullable&lt;() =&gt; void&gt; |  Callback triggered at the end of the framing animation
+### zoomOnMeshHierarchy(mesh, focusOnOriginXZ, onAnimationEnd) &rarr; void
+
+Targets the given mesh with its children and updates zoom level accordingly.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) |   The mesh to target.
+optional | focusOnOriginXZ | boolean |  Determines if the camera should focus on 0 in the X and Z axis instead of the mesh
+optional | onAnimationEnd | Nullable&lt;() =&gt; void&gt; |  Callback triggered at the end of the framing animation
+### zoomOnMeshesHierarchy(meshes, focusOnOriginXZ, onAnimationEnd) &rarr; void
+
+Targets the given meshes with their children and updates zoom level accordingly.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | meshes | [AbstractMesh](/classes/3.1/AbstractMesh)[] |   The mesh to target.
 optional | focusOnOriginXZ | boolean |  Determines if the camera should focus on 0 in the X and Z axis instead of the mesh
 optional | onAnimationEnd | Nullable&lt;() =&gt; void&gt; |  Callback triggered at the end of the framing animation
 ### zoomOnBoundingInfo(minimumWorld, maximumWorld, focusOnOriginXZ, onAnimationEnd) &rarr; void

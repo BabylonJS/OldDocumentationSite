@@ -36,14 +36,14 @@ class [CollisionCoordinatorWorker](/classes/3.1/CollisionCoordinatorWorker)
 ---|---|---|---
  | geometry | [Geometry](/classes/3.1/Geometry) | 
 
-### onMeshUpdated : (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void
+### onMeshUpdated : (transformNode: [TransformNode](/classes/3.1/TransformNode)) =&gt; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+ | transformNode | [TransformNode](/classes/3.1/TransformNode) | 
 
 ### onGeometryUpdated : (geometry: [Geometry](/classes/3.1/Geometry)) =&gt; void
 

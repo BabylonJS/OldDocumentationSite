@@ -9,7 +9,7 @@ class [ImageProcessingPostProcess](/classes/3.1/ImageProcessingPostProcess) exte
 
 ## Constructor
 
-## new [ImageProcessingPostProcess](/classes/3.1/ImageProcessingPostProcess)(name, options, PostProcessOptions, camera, samplingMode, engine, reusable, textureType)
+## new [ImageProcessingPostProcess](/classes/3.1/ImageProcessingPostProcess)(name, options, PostProcessOptions, camera, samplingMode, engine, reusable, textureType, imageProcessingConfiguration)
 
 
 
@@ -18,10 +18,11 @@ class [ImageProcessingPostProcess](/classes/3.1/ImageProcessingPostProcess) exte
 ---|---|---|---
  | name | string | 
  | options | number or PostProcessOptions | 
-optional | camera | [Camera](/classes/3.1/Camera) | 
+optional | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
 optional | samplingMode | number | 
 optional | engine | [Engine](/classes/3.1/Engine) | 
 optional | reusable | boolean | 
+optional | textureType | number | 
 ## Members
 
 ### imageProcessingConfiguration : [ImageProcessingConfiguration](/classes/3.1/ImageProcessingConfiguration)
@@ -31,7 +32,7 @@ Gets the image processing configuration used either in this material.
 Sets the Default image processing configuration used either in the this material.
 
          * If sets to null, the scene one is in use.
-### colorCurves : [ColorCurves](/classes/3.1/ColorCurves)
+### colorCurves : Nullable&lt;[ColorCurves](/classes/3.1/ColorCurves)&gt;
 
 Gets Color curves setup used in the effect if colorCurvesEnabled is set to true .
 
@@ -41,7 +42,7 @@ Sets Color curves setup used in the effect if colorCurvesEnabled is set to true 
 Gets wether the color curves effect is enabled.
 
 Sets wether the color curves effect is enabled.
-### colorGradingTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### colorGradingTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 Gets Color grading LUT texture used in the effect if colorGradingEnabled is set to true.
 

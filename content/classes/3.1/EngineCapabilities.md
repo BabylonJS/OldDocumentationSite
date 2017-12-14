@@ -109,3 +109,9 @@ Regroup several parameters relative to the browser in use
 ### colorBufferFloat : boolean
 
 
+### timerQuery : EXT_disjoint_timer_query
+
+
+### canUseTimestampForTimerQuery : boolean
+
+

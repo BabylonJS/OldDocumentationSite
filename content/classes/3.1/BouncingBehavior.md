@@ -36,6 +36,9 @@ Sets a value indicating if the lowerRadiusTransitionRange and upperRadiusTransit
 Transition ranges will be set to 5% of the bounding box diagonal in world space
 ## Methods
 
+### init() &rarr; void
+
+
 ### attach(camera) &rarr; void
 
 

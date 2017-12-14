@@ -54,6 +54,15 @@ Gets the world distance between the min and max points of the bounding box
 ---|---|---|---
  | world | [Matrix](/classes/3.1/Matrix) | 
 
+### centerOn(center, extend) &rarr; [BoundingInfo](/classes/3.1/BoundingInfo)
+
+Recreate the bounding info to be centered around a specific point given a specific extend.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | center | [Vector3](/classes/3.1/Vector3) |  New center of the bounding info
+ | extend | [Vector3](/classes/3.1/Vector3) |  New extend of the bounding info
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
 

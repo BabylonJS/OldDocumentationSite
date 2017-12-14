@@ -19,8 +19,8 @@ class [Layer](/classes/3.1/Layer)
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | imgUrl | string | 
- | scene | [Scene](/classes/3.1/Scene) | 
+ | imgUrl | Nullable&lt;string&gt; | 
+ | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 optional | isBackground | boolean | 
 ## Members
 

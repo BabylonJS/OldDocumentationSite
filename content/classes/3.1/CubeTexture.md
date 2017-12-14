@@ -22,14 +22,11 @@ class [CubeTexture](/classes/3.1/CubeTexture) extends [BaseTexture](/classes/3.1
 ---|---|---|---
  | rootUrl | string | 
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | extensions | string[] | 
+optional | extensions | Nullable&lt;string[]&gt; | 
 optional | noMipmap | boolean | 
-optional | files | string[] | 
-optional | onLoad |  | 
-optional | onError | optional | message | string | 
-optional | exception | any | 
-
- | 
+optional | files | Nullable&lt;string[]&gt; | 
+optional | onLoad | Nullable&lt;() =&gt; void&gt; | 
+optional | onError | Nullable&lt;(message: string, exception: any) =&gt; void&gt; | 
 optional | format | number | 
 optional | prefiltered | boolean | 
 ## Members

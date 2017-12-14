@@ -27,7 +27,7 @@ class [GPUParticleSystem](/classes/3.1/GPUParticleSystem)
 ### id : string
 
 
-### emitter : [AbstractMesh](/classes/3.1/AbstractMesh)
+### emitter : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 
 ### [Vector3](/classes/3.1/Vector3) : undefined
@@ -49,6 +49,12 @@ An event triggered when the system is disposed.
 ### isStarted() &rarr; boolean
 
 
+### start() &rarr; void
+
+
+### stop() &rarr; void
+
+
 ### animate() &rarr; void
 
 
@@ -61,7 +67,7 @@ An event triggered when the system is disposed.
 ### dispose() &rarr; void
 
 
-### clone(name, newEmitter) &rarr; [GPUParticleSystem](/classes/3.1/GPUParticleSystem)
+### clone(name, newEmitter) &rarr; Nullable&lt;[GPUParticleSystem](/classes/3.1/GPUParticleSystem)&gt;
 
 
 

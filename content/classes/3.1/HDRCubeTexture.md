@@ -29,8 +29,7 @@ optional | noMipmap | boolean |  Forces to not generate the mipmap if true
 optional | generateHarmonics | boolean |  Specifies wether you want to extract the polynomial harmonics during the generation process
 optional | useInGammaSpace | boolean |  Specifies if the texture will be use in gamma or linear space (the PBR material requires those texture in linear space, but the standard material would require them in Gamma space)
 optional | usePMREMGenerator | boolean |  Specifies wether or not to generate the CubeMap through CubeMapGen to avoid seams issue at run time.
-optional | onLoad |  | 
-optional | onError | optional | message | string | 
+optional | onLoad | Nullable&lt;() =&gt; void&gt; | 
 ## Members
 
 ### url : string
@@ -49,7 +48,7 @@ This is usefull at run time to apply the good shader.
 Gets wether or not the texture is blocking during loading.
 
 Sets wether or not the texture is blocking during loading.
-### void : () =&gt; void
+### void : undefined
 
 
 ### onError : () =&gt; void
@@ -75,7 +74,7 @@ Sets wether or not the texture is blocking during loading.
 ---|---|---|---
  | value | [Matrix](/classes/3.1/Matrix) | 
 
-### static Parse(parsedTexture, scene, rootUrl) &rarr; [HDRCubeTexture](/classes/3.1/HDRCubeTexture)
+### static Parse(parsedTexture, scene, rootUrl) &rarr; Nullable&lt;[HDRCubeTexture](/classes/3.1/HDRCubeTexture)&gt;
 
 
 
@@ -103,7 +102,7 @@ as the spherical used in the lighting.
 ---|---|---|---
  | url | string |  The HDR file url.
  | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
-optional | onError |  |  Method called if any error happens during download.
+optional | onError | Nullable&lt;() =&gt; () =&gt; void&gt; |  Method called if any error happens during download.
 ### static generateBabylonHDR(url, size, callback) &rarr; (url, size, callback)
 
 Serializes the data contained in the texture in a binary format.
@@ -120,3 +119,6 @@ as the spherical used in the lighting.
  | url | string |  The HDR file url.
  | size | number |  The size of the texture data to generate (one of the cubemap face desired width).
  | callback |  | 
+### Nullable() &rarr; ()
+
+

@@ -22,6 +22,6 @@ class [DisplayPassPostProcess](/classes/3.1/DisplayPassPostProcess) extends [Pos
 ---|---|---|---
  | name | string | 
  | options | number or PostProcessOptions | 
- | camera | [Camera](/classes/3.1/Camera) | 
+ | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
 optional | samplingMode | number | 
 optional | engine | [Engine](/classes/3.1/Engine) | 

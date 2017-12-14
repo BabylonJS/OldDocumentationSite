@@ -13,7 +13,7 @@ or not.
 
 ## Members
 
-### colorCurves : [ColorCurves](/classes/3.1/ColorCurves)
+### colorCurves : Nullable&lt;[ColorCurves](/classes/3.1/ColorCurves)&gt;
 
 Color curves setup used in the effect if colorCurvesEnabled is set to true
 ### colorCurvesEnabled : boolean
@@ -21,7 +21,7 @@ Color curves setup used in the effect if colorCurvesEnabled is set to true
 Gets wether the color curves effect is enabled.
 
 Sets wether the color curves effect is enabled.
-### colorGradingTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### colorGradingTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 Color grading LUT texture used in the effect if colorGradingEnabled is set to true
 ### colorGradingEnabled : boolean
@@ -89,6 +89,11 @@ Sets wether the vignette effect is enabled.
 Gets wether the image processing is applied through a post process or not.
 
 Sets wether the image processing is applied through a post process or not.
+### isEnabled : boolean
+
+Gets wether the image processing is enabled or not.
+
+Sets wether the image processing is enabled or not.
 ### onUpdateParameters : [Observable](/classes/3.1/Observable)&lt;[ImageProcessingConfiguration](/classes/3.1/ImageProcessingConfiguration)&gt;
 
 An event triggered when the configuration changes and requires Shader to Update some parameters.

@@ -50,3 +50,13 @@ class [OculusTouchController](/classes/3.1/OculusTouchController) extends [WebVR
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | meshLoaded |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
+### handleButtonChange(buttonIdx, state, changes) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | buttonIdx | number | 
+ | state | ExtendedGamepadButton | 
+ | changes | GamepadButtonChanges | 

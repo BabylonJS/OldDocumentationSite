@@ -89,10 +89,13 @@ this is easier to reference from here than from all the materials and post proce
 ### forceShowBoundingBoxes : boolean
 
 
-### clipPlane : [Plane](/classes/3.1/Plane)
+### clipPlane : Nullable&lt;[Plane](/classes/3.1/Plane)&gt;
 
 
 ### animationsEnabled : boolean
+
+
+### useConstantAnimationDeltaTime : boolean
 
 
 ### constantlyUpdateMeshUnderPointer : boolean
@@ -125,7 +128,7 @@ An event triggered when the scene is disposed.
 
 ### onBeforeRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
 
-An event triggered before rendering the scene
+An event triggered before rendering the scene (right after animations and physics)
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
 ### beforeRender : Nullable&lt;() =&gt; void&gt;
@@ -139,6 +142,36 @@ An event triggered after rendering the scene
 ### afterRender : Nullable&lt;() =&gt; void&gt;
 
 
+### onBeforeAnimationsObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered before animating the scene
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onAfterAnimationsObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered after animations processing
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onBeforeDrawPhaseObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered before draw calls are ready to be sent
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onAfterDrawPhaseObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered after draw calls have been sent
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onBeforePhysicsObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when physic simulation is about to be run
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onAfterPhysicsObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when physic simulation has been done
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
 ### onReadyObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
 
 An event triggered when the scene is ready
@@ -160,6 +193,49 @@ An event triggered after rendering a camera
 ### afterCameraRender : () =&gt; void
 
 
+### onBeforeActiveMeshesEvaluationObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when active meshes evaluation is about to start
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onAfterActiveMeshesEvaluationObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when active meshes evaluation is done
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onBeforeParticlesRenderingObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when particles rendering is about to start
+
+Note: This event can be trigger more than once per frame (because particles can be rendered by render target textures as well)
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onAfterParticlesRenderingObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when particles rendering is done
+
+Note: This event can be trigger more than once per frame (because particles can be rendered by render target textures as well)
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onBeforeSpritesRenderingObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when sprites rendering is about to start
+
+Note: This event can be trigger more than once per frame (because sprites can be rendered by render target textures as well)
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onAfterSpritesRenderingObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when sprites rendering is done
+
+Note: This event can be trigger more than once per frame (because sprites can be rendered by render target textures as well)
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onDataLoadedObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when [SceneLoader](/classes/3.1/SceneLoader).Append or [SceneLoader](/classes/3.1/SceneLoader).Load or [SceneLoader](/classes/3.1/SceneLoader).ImportMesh were successfully executed
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
 ### onNewCameraAddedObservable : [Observable](/classes/3.1/Observable)&lt;[Camera](/classes/3.1/Camera)&gt;
 
 An event triggered when a camera is created
@@ -190,6 +266,16 @@ An event triggered when a geometry is created
 An event triggered when a geometry is removed
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onNewTransformNodeAddedObservable : [Observable](/classes/3.1/Observable)&lt;[TransformNode](/classes/3.1/TransformNode)&gt;
+
+An event triggered when a transform node is created
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### onTransformNodeRemovedObservable : [Observable](/classes/3.1/Observable)&lt;[TransformNode](/classes/3.1/TransformNode)&gt;
+
+An event triggered when a transform node is removed
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
 ### onNewMeshAddedObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 An event triggered when a mesh is created
@@ -198,6 +284,20 @@ An event triggered when a mesh is created
 ### onMeshRemovedObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 An event triggered when a mesh is removed
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### OnBeforeRenderTargetsRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when render targets are about to be rendered
+
+Can happen multiple times per frame.
+
+@type {BABYLON.[Observable](/classes/3.1/Observable)}
+### OnAfterRenderTargetsRenderObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
+
+An event triggered when render targets were rendered.
+
+Can happen multiple times per frame.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
 ### onBeforeStepObservable : [Observable](/classes/3.1/Observable)&lt;[Scene](/classes/3.1/Scene)&gt;
@@ -363,6 +463,13 @@ All of the lights added to this scene.
 ### activeCamera : Nullable&lt;[Camera](/classes/3.1/Camera)&gt;
 
 
+### transformNodes : [TransformNode](/classes/3.1/TransformNode)[]
+
+All of the tranform nodes added to this scene.
+
+@see BABYLON.[TransformNode](/classes/3.1/TransformNode)
+
+@type {BABYLON.[TransformNode](/classes/3.1/TransformNode)[]}
 ### meshes : [AbstractMesh](/classes/3.1/AbstractMesh)[]
 
 All of the (abstract) meshes added to this scene.
@@ -528,22 +635,25 @@ Current on-screen Y position of the pointer
 ### activeBonesPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
 
 
-### interFramePerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
+### interFramePerfCounter : Nullable&lt;[PerfCounter](/classes/3.1/PerfCounter)&gt;
 
 
-### lastFramePerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
+### lastFramePerfCounter : Nullable&lt;[PerfCounter](/classes/3.1/PerfCounter)&gt;
 
 
-### evaluateActiveMeshesDurationPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
+### evaluateActiveMeshesDurationPerfCounter : Nullable&lt;[PerfCounter](/classes/3.1/PerfCounter)&gt;
 
 
-### renderDurationPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
+### renderDurationPerfCounter : Nullable&lt;[PerfCounter](/classes/3.1/PerfCounter)&gt;
 
 
-### particlesDurationPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
+### particlesDurationPerfCounter : Nullable&lt;[PerfCounter](/classes/3.1/PerfCounter)&gt;
 
 
-### spriteDuractionPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
+### spriteDuractionPerfCounter : Nullable&lt;[PerfCounter](/classes/3.1/PerfCounter)&gt;
+
+
+### isLoading : boolean
 
 
 ### Animatables : [Animatable](/classes/3.1/Animatable)[]
@@ -804,6 +914,9 @@ Will stop the animation of the given target
 ---|---|---|---
  | target | any |  - the target
 optional | animationName | string |  - the name of the animation to stop (all animations will be stopped is empty)
+### stopAllAnimations() &rarr; void
+
+Stops and removes all animations that have been applied to the scene
 ### getViewMatrix() &rarr; [Matrix](/classes/3.1/Matrix)
 
 
@@ -845,6 +958,24 @@ optional | animationName | string |  - the name of the animation to stop (all an
  | Name | Type | Description
 ---|---|---|---
  | toRemove | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
+### addTransformNode(newTransformNode) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | newTransformNode | [TransformNode](/classes/3.1/TransformNode) | 
+
+### removeTransformNode(toRemove) &rarr; number
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | toRemove | [TransformNode](/classes/3.1/TransformNode) | 
 
 ### removeSkeleton(toRemove) &rarr; number
 
@@ -1129,6 +1260,26 @@ Get the first added mesh found of a given ID
 ---|---|---|---
  | id | string | 
 
+### getTransformNodeByID(id) &rarr; Nullable&lt;[TransformNode](/classes/3.1/TransformNode)&gt;
+
+Get the first added transform node found of a given ID
+
+@return {BABYLON.[TransformNode](/classes/3.1/TransformNode)|null} the transform node found or null if not found at all.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | id | string | 
+
+### getTransformNodesByID(id) &rarr; Array&lt;[TransformNode](/classes/3.1/TransformNode)&gt;
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | id | string | 
+
 ### getMeshByUniqueID(uniqueId) &rarr; Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 Get a mesh with its auto-generated unique id
@@ -1181,6 +1332,15 @@ Get a the last added node ([Mesh](/classes/3.1/Mesh), [Camera](/classes/3.1/Came
  | name | string | 
 
 ### getMeshByName(name) &rarr; Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+
+### getTransformNodeByName(name) &rarr; Nullable&lt;[TransformNode](/classes/3.1/TransformNode)&gt;
 
 
 
@@ -1383,7 +1543,19 @@ optional | maxDepth | number |
  | y | number | 
  | world | [Matrix](/classes/3.1/Matrix) | 
  | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
-### createPickingRayInCameraSpace(x, y, camera) &rarr; Nullable&lt;[Ray](/classes/3.1/Ray)&gt;
+### createPickingRayToRef(x, y, world, result, camera, cameraViewSpace) &rarr; [Scene](/classes/3.1/Scene)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | x | number | 
+ | y | number | 
+ | world | [Matrix](/classes/3.1/Matrix) | 
+ | result | [Ray](/classes/3.1/Ray) | 
+ | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
+### createPickingRayInCameraSpace(x, y, camera) &rarr; [Ray](/classes/3.1/Ray)
 
 
 
@@ -1393,6 +1565,16 @@ optional | maxDepth | number |
  | x | number | 
  | y | number | 
 optional | camera | [Camera](/classes/3.1/Camera) | 
+### createPickingRayInCameraSpaceToRef(x, y, result, camera) &rarr; [Scene](/classes/3.1/Scene)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | x | number | 
+ | y | number | 
+ | result | [Ray](/classes/3.1/Ray) | 
 ### pick(x, y, predicate, fastCheck, camera) &rarr; Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)&gt;
 
 
@@ -1525,14 +1707,23 @@ optional | attachCameraControls | boolean |
 optional | environmentTexture | [BaseTexture](/classes/3.1/BaseTexture) | 
 optional | pbr | boolean | 
 optional | scale | number | 
-### createDefaultVRExperience(webVROptions) &rarr; void
+### createDefaultEnvironment(options) &rarr; Nullable&lt;[EnvironmentHelper](/classes/3.1/EnvironmentHelper)&gt;
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | webVROptions | WebVROptions | 
+ | options | Partial&lt;IEnvironmentHelperOptions&gt; | 
+
+### createDefaultVRExperience(webVROptions) &rarr; [VRExperienceHelper](/classes/3.1/VRExperienceHelper)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | webVROptions | VRExperienceHelperOptions | 
 
 ### getMeshesByTags(tagsQuery, forEach) &rarr; [Mesh](/classes/3.1/Mesh)[]
 

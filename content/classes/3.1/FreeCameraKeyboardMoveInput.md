@@ -42,7 +42,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### checkInputs() &rarr; void
 

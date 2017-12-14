@@ -13,7 +13,7 @@ class [Animation](/classes/3.1/Animation)
 
 ## Constructor
 
-## new [Animation](/classes/3.1/Animation)(name, targetProperty, framePerSecond, dataType, loopMode, enableBlending)
+## new [Animation](/classes/3.1/Animation)(name, targetProperty, framePerSecond, dataType, loopMode, undefined, enableBlending, undefined)
 
 
 
@@ -24,7 +24,7 @@ class [Animation](/classes/3.1/Animation)
  | targetProperty | string | 
  | framePerSecond | number | 
  | dataType | number | 
-optional | loopMode | number | 
+optional | loopMode | number or undefined | 
 ## Members
 
 ### name : string
@@ -42,7 +42,13 @@ optional | loopMode | number |
 ### loopMode : number
 
 
+### undefined : undefined
+
+
 ### enableBlending : boolean
+
+
+### undefined : undefined
 
 
 ### static AllowMatricesInterpolation : boolean

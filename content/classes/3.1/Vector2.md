@@ -41,7 +41,7 @@ Returns the string "[Vector2](/classes/3.1/Vector2)"
 ### getHashCode() &rarr; number
 
 Returns the [Vector2](/classes/3.1/Vector2) hash code as a number.
-### toArray(array, Float32Array, index) &rarr; [Vector2](/classes/3.1/Vector2)
+### toArray(array, index) &rarr; [Vector2](/classes/3.1/Vector2)
 
 Sets the [Vector2](/classes/3.1/Vector2) coordinates in the passed array or Float32Array from the passed index.
 
@@ -50,7 +50,7 @@ Returns the [Vector2](/classes/3.1/Vector2).
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | array | number[] or Float32Array | 
+ | array | FloatArray | 
 optional | index | number | 
 ### asArray() &rarr; number[]
 

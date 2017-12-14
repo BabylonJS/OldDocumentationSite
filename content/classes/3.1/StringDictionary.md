@@ -19,6 +19,9 @@ The value can be anything including 'null' but except 'undefined'
 ### count : number
 
 
+### null : undefined
+
+
 ## Methods
 
 ### copyFrom(source) &rarr; void

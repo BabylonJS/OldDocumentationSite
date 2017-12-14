@@ -56,3 +56,6 @@ class [GenericPad](/classes/3.1/GenericPad) extends [Gamepad](/classes/3.1/Gamep
 ### update() &rarr; void
 
 
+### dispose() &rarr; void
+
+

@@ -152,7 +152,7 @@ class [ArcRotateCamera](/classes/3.1/ArcRotateCamera) extends [TargetCamera](/cl
 ### useAutoRotationBehavior : boolean
 
 
-### onMeshTargetChangedObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
+### onMeshTargetChangedObservable : [Observable](/classes/3.1/Observable)&lt;Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;&gt;
 
 
 ### onCollide : (collidedMesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void

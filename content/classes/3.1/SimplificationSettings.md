@@ -11,7 +11,7 @@ class [SimplificationSettings](/classes/3.1/SimplificationSettings)
 
 ## Constructor
 
-## new [SimplificationSettings](/classes/3.1/SimplificationSettings)(quality, distance, optimizeMesh)
+## new [SimplificationSettings](/classes/3.1/SimplificationSettings)(quality, distance, optimizeMesh, undefined)
 
 
 
@@ -20,7 +20,6 @@ class [SimplificationSettings](/classes/3.1/SimplificationSettings)
 ---|---|---|---
  | quality | number | 
  | distance | number | 
-optional | optimizeMesh | boolean | 
 ## Members
 
 ### quality : number
@@ -30,5 +29,8 @@ optional | optimizeMesh | boolean |
 
 
 ### optimizeMesh : boolean
+
+
+### undefined : undefined
 
 

@@ -59,7 +59,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### getClassName() &rarr; string
 

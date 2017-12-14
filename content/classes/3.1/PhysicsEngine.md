@@ -110,6 +110,9 @@ Add a joint to the physics engine
 ### getPhysicsPlugin() &rarr; IPhysicsEnginePlugin
 
 
+### getImpostors() &rarr; Array&lt;[PhysicsImpostor](/classes/3.1/PhysicsImpostor)&gt;
+
+
 ### getImpostorForPhysicsObject(object) &rarr; Nullable&lt;[PhysicsImpostor](/classes/3.1/PhysicsImpostor)&gt;
 
 

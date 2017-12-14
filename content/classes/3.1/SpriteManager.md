@@ -65,7 +65,7 @@ An event triggered when the manager is disposed.
 
 ## Methods
 
-### intersects(ray, camera, predicate, fastCheck) &rarr; [PickingInfo](/classes/3.1/PickingInfo)
+### intersects(ray, camera, predicate, fastCheck) &rarr; Nullable&lt;[PickingInfo](/classes/3.1/PickingInfo)&gt;
 
 
 

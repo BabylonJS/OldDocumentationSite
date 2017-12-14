@@ -18,3 +18,9 @@ class [NullEngineOptions](/classes/3.1/NullEngineOptions)
 ### textureSize : number
 
 
+### deterministicLockstep : boolean
+
+
+### lockstepMaxSteps : number
+
+

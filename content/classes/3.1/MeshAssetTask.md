@@ -47,6 +47,25 @@ class [MeshAssetTask](/classes/3.1/MeshAssetTask) extends [AbstractAssetTask](/c
 ### loadedSkeletons : Array&lt;[Skeleton](/classes/3.1/Skeleton)&gt;
 
 
+### onSuccess : (task: [MeshAssetTask](/classes/3.1/MeshAssetTask)) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [MeshAssetTask](/classes/3.1/MeshAssetTask) | 
+
+### onError : (task: [MeshAssetTask](/classes/3.1/MeshAssetTask), message: string, exception: any) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [MeshAssetTask](/classes/3.1/MeshAssetTask) | 
+optional | message | string | 
+optional | exception | any | 
 ## Methods
 
 ### runTask(scene, onSuccess, onError) &rarr; void

@@ -70,7 +70,7 @@ Will return true if all observers were executed, false if an observer set skipNe
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | eventData | Nullable&lt;T&gt; | 
+ | eventData | T | 
 optional | mask | number | 
 optional | target | any | 
 ### notifyObserver(observer, eventData, mask) &rarr; void

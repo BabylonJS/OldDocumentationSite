@@ -166,7 +166,7 @@ Force shader compilation including textures ready check
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | onCompiled |  | generator | [ShadowGenerator](/classes/3.1/ShadowGenerator) | 
+optional | onCompiled |  | generator | [ShadowGenerator](/classes/3.1/ShadowGenerator) | 
 
  | 
 ### isReady(subMesh, useInstances) &rarr; boolean

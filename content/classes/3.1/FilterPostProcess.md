@@ -23,7 +23,7 @@ class [FilterPostProcess](/classes/3.1/FilterPostProcess) extends [PostProcess](
  | name | string | 
  | kernelMatrix | [Matrix](/classes/3.1/Matrix) | 
  | options | number or PostProcessOptions | 
-optional | camera | [Camera](/classes/3.1/Camera) | 
+ | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
 optional | samplingMode | number | 
 optional | engine | [Engine](/classes/3.1/Engine) | 
 ## Members

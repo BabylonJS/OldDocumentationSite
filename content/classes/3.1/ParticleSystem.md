@@ -23,7 +23,7 @@ class [ParticleSystem](/classes/3.1/ParticleSystem)
  | name | string | 
  | capacity | number | 
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | customEffect | [Effect](/classes/3.1/Effect) | 
+optional | customEffect | Nullable&lt;[Effect](/classes/3.1/Effect)&gt; | 
 optional | _isAnimationSheetEnabled | boolean | 
 ## Members
 
@@ -45,7 +45,7 @@ optional | _isAnimationSheetEnabled | boolean |
 ### renderingGroupId : number
 
 
-### emitter : [AbstractMesh](/classes/3.1/AbstractMesh)
+### emitter : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 
 ### [Vector3](/classes/3.1/Vector3) : undefined
@@ -90,7 +90,7 @@ optional | _isAnimationSheetEnabled | boolean |
 ### maxAngularSpeed : number
 
 
-### particleTexture : [Texture](/classes/3.1/Texture)
+### particleTexture : Nullable&lt;[Texture](/classes/3.1/Texture)&gt;
 
 
 ### layerMask : number
@@ -119,7 +119,7 @@ An event triggered when the system is disposed.
 ---|---|---|---
  | particles | [Particle](/classes/3.1/Particle)[] | 
 
-### onAnimationEnd : () =&gt; void
+### onAnimationEnd : Nullable&lt;() =&gt; void&gt;
 
 
 ### blendMode : number
@@ -196,15 +196,9 @@ An event triggered when the system is disposed.
 ### isAnimationSheetEnabled : Boolean
 
 
-### appendParticleVertexes : (offset: number, particle: [Particle](/classes/3.1/Particle)) =&gt; void
+### appendParticleVertexes : Nullable&lt;(offset: number, particle: [Particle](/classes/3.1/Particle)) =&gt; void&gt;
 
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | offset | number | 
- | particle | [Particle](/classes/3.1/Particle) | 
 ## Methods
 
 ### recycleParticle(particle) &rarr; void
