@@ -10,12 +10,14 @@ Below are three PBT examples to give you an idea of what is possible.
 [Playground Tutorial - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
 [Playground Tutorial - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
 [Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
+[Playground Tutorial - Camera Collisions and Input Customization](https://www.babylonjs-playground.com/#97EYJW)
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are below.
 
 [Starter Guide](/resources/hiding_editor_lines)  
 [Slider Guide](/resources/PBT_slider)  
-[Intermediate Guide](/resources/PBT_Writing)
+[Intermediate Guide](/resources/PBT_Writing)  
+[Advanced Guide](/resources/PBT_previous_and_next)
 
 
 # Creating a PBT
