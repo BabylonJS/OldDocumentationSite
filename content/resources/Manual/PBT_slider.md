@@ -131,4 +131,5 @@ The working playground using the above code.
 
 [Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
 [Starter Guide](/resources/hiding_editor_lines)    
-[Intermediate Guide](/resources/PBT_Writing)
+[Intermediate Guide](/resources/PBT_Writing)  
+[Advanced Guide](/resources/PBT_previous_and_next)

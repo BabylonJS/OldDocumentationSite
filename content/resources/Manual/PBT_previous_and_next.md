@@ -260,4 +260,13 @@ In block 19:
 2. *prev.style.visibility = "visible"* and *next.style.visibility = "visible"* since if the extra details in block 1900: are accessed then *prev.style.visibility = "hidden"* and if block 1901: is accessed *next.style.visibility = "hidden"*. A return from either 1900: or 1901: will still result in *prev* and *next* being visible.
 
 
+# Live Examples
 
+The working playground using the above code.
+[Playground Tutorial - Camera Collisions and Input Customisation](https://www.babylonjs-playground.com/#U825TZ)
+
+# Further Reading
+
+[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
+[Starter Guide](/resources/hiding_editor_lines)    
+[Intermediate Guide](/resources/PBT_Writing)
