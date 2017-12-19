@@ -210,7 +210,7 @@ Here are the properties you can define:
 
 Property|Type|Default|Comments
 --------|----|-------|--------
-lineSpacing|valueAndUnit|0px|Can bet set to configure vertical spacing between text lines
+lineSpacing|valueAndUnit|0px|Can be set to configure vertical spacing between text lines
 text|string|null|Text to display
 textWrapping|boolean|false|Can be set to true to enable text wrapping.
 resizeToFit|boolean|false|Can be set to true to enable resize to fit.
