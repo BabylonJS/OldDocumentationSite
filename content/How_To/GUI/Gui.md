@@ -210,6 +210,7 @@ Here are the properties you can define:
 
 Property|Type|Default|Comments
 --------|----|-------|--------
+lineSpacing|valueAndUnit|0px|Can be set to configure vertical spacing between text lines
 text|string|null|Text to display
 textWrapping|boolean|false|Can be set to true to enable text wrapping.
 resizeToFit|boolean|false|Can be set to true to enable resize to fit.
@@ -222,7 +223,15 @@ Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
 
-#### Resize to Fit
+### Line spacing
+
+You can configure vertical line spacing between lines in pixels or percentage values.
+
+**lineSpacing should be used with textWrapping set to true.**
+
+You can try it here: http://www.babylonjs-playground.com/#44KYLP
+
+### Resize to Fit
 
 When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
 
