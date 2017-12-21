@@ -25,6 +25,9 @@ optional | antialias | boolean |
 optional | options | EngineOptions |  - further options to be sent to the getContext function
 ## Members
 
+### static WebGL2UniformBuffersExceptionList : string[]
+
+
 ### static Instances : [Engine](/classes/3.1/Engine)[]
 
 
@@ -220,6 +223,18 @@ optional | options | EngineOptions |  - further options to be sent to the getCon
 ### supportsUniformBuffers : boolean
 
 
+### onBeginFrameObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
+
+[Observable](/classes/3.1/Observable) raised when the engine begins a new frame
+### onEndFrameObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
+
+[Observable](/classes/3.1/Observable) raised when the engine ends the current frame
+### onBeforeShaderCompilationObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
+
+[Observable](/classes/3.1/Observable) raised when the engine is about to compile a shader
+### onAfterShaderCompilationObservable : [Observable](/classes/3.1/Observable)&lt;[Engine](/classes/3.1/Engine)&gt;
+
+[Observable](/classes/3.1/Observable) raised when the engine has jsut compiled a shader
 ### needPOTTextures : boolean
 
 
@@ -265,6 +280,9 @@ Turn this value on if you want to pause FPS computation when in background
 ### emptyTexture : [InternalTexture](/classes/3.1/InternalTexture)
 
 
+### emptyTexture3D : [InternalTexture](/classes/3.1/InternalTexture)
+
+
 ### emptyCubeTexture : [InternalTexture](/classes/3.1/InternalTexture)
 
 
@@ -277,10 +295,19 @@ Returns true if the stencil buffer has been enabled through the creation option 
 ### drawCalls : number
 
 
-### drawCallsPerfCounter : [PerfCounter](/classes/3.1/PerfCounter)
+### drawCallsPerfCounter : Nullable&lt;[PerfCounter](/classes/3.1/PerfCounter)&gt;
 
 
-### onLoad : () =&gt; void
+### options : boolean
+
+
+### [RenderTargetCreationOptions](/classes/3.1/RenderTargetCreationOptions) : undefined
+
+
+### [InternalTexture](/classes/3.1/InternalTexture) : undefined
+
+
+### onLoad : undefined
 
 
 ### loadingScreen : ILoadingScreen
@@ -373,7 +400,7 @@ optional | useScreen | boolean |
 ### getCaps() &rarr; [EngineCapabilities](/classes/3.1/EngineCapabilities)
 
 
-### getDepthFunction() &rarr; number
+### getDepthFunction() &rarr; Nullable&lt;number&gt;
 
 
 ### setDepthFunction(depthFunc) &rarr; void
@@ -494,6 +521,15 @@ optional | useScreen | boolean |
  | operation | number | 
 
 ### setDitheringState(value) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | boolean | 
+
+### setRasterizerState(value) &rarr; void
 
 
 
@@ -659,23 +695,25 @@ optional | onBeforeUnbind |  |
 ### restoreDefaultFramebuffer() &rarr; void
 
 
-### createUniformBuffer(elements, Float32Array) &rarr; WebGLBuffer
+### createUniformBuffer(elements) &rarr; WebGLBuffer
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | elements | number[] or Float32Array | 
-### createDynamicUniformBuffer(elements, Float32Array) &rarr; WebGLBuffer
+ | elements | FloatArray | 
+
+### createDynamicUniformBuffer(elements) &rarr; WebGLBuffer
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | elements | number[] or Float32Array | 
-### updateUniformBuffer(uniformBuffer, elements, Float32Array, offset, count) &rarr; void
+ | elements | FloatArray | 
+
+### updateUniformBuffer(uniformBuffer, elements, offset, count) &rarr; void
 
 
 
@@ -683,24 +721,26 @@ optional | onBeforeUnbind |  |
  | Name | Type | Description
 ---|---|---|---
  | uniformBuffer | WebGLBuffer | 
- | elements | number[] or Float32Array | 
+ | elements | FloatArray | 
 optional | offset | number | 
-### createVertexBuffer(vertices, Float32Array) &rarr; WebGLBuffer
+### createVertexBuffer(vertices) &rarr; WebGLBuffer
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | vertices | number[] or Float32Array | 
-### createDynamicVertexBuffer(vertices, Float32Array) &rarr; WebGLBuffer
+ | vertices | FloatArray | 
+
+### createDynamicVertexBuffer(vertices) &rarr; WebGLBuffer
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | vertices | number[] or Float32Array | 
+ | vertices | FloatArray | 
+
 ### updateDynamicIndexBuffer(indexBuffer, indices, offset) &rarr; void
 
 
@@ -711,7 +751,7 @@ optional | offset | number |
  | indexBuffer | WebGLBuffer | 
  | indices | IndicesArray | 
 optional | offset | number | 
-### updateDynamicVertexBuffer(vertexBuffer, vertices, Float32Array, offset, count) &rarr; void
+### updateDynamicVertexBuffer(vertexBuffer, vertices, offset, count) &rarr; void
 
 
 
@@ -719,7 +759,7 @@ optional | offset | number |
  | Name | Type | Description
 ---|---|---|---
  | vertexBuffer | WebGLBuffer | 
- | vertices | number[] or Float32Array | 
+ | vertices | FloatArray | 
 optional | offset | number | 
 ### createIndexBuffer(indices, updatable) &rarr; WebGLBuffer
 
@@ -922,7 +962,7 @@ optional | onCompiled |  | effect | [Effect](/classes/3.1/Effect) |
 
  | 
 optional | onError |  | effect | [Effect](/classes/3.1/Effect) | 
-### createRawShaderProgram(vertexCode, fragmentCode, context) &rarr; WebGLProgram
+### createRawShaderProgram(vertexCode, fragmentCode, context, transformFeedbackVaryings) &rarr; WebGLProgram
 
 
 
@@ -932,7 +972,7 @@ optional | onError |  | effect | [Effect](/classes/3.1/Effect) |
  | vertexCode | string | 
  | fragmentCode | string | 
 optional | context | WebGLRenderingContext | 
-### createShaderProgram(vertexCode, fragmentCode, defines, context) &rarr; WebGLProgram
+### createShaderProgram(vertexCode, fragmentCode, defines, context, transformFeedbackVaryings) &rarr; WebGLProgram
 
 
 
@@ -942,6 +982,7 @@ optional | context | WebGLRenderingContext |
  | vertexCode | string | 
  | fragmentCode | string | 
  | defines | Nullable&lt;string&gt; | 
+optional | context | WebGLRenderingContext | 
 ### getUniforms(shaderProgram, uniformsNames) &rarr; Nullable&lt;WebGLUniformLocation&gt;[]
 
 
@@ -967,7 +1008,7 @@ optional | context | WebGLRenderingContext |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | effect | [Effect](/classes/3.1/Effect) | 
+ | effect | Nullable&lt;[Effect](/classes/3.1/Effect)&gt; | 
 
 ### setIntArray(uniform, array) &rarr; void
 
@@ -1335,34 +1376,36 @@ Usually called from BABYLON.[Texture](/classes/3.1/Texture).ts.  Passed informat
  | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 optional | samplingMode | number | 
 optional | onLoad | Nullable&lt;() =&gt; void&gt; | 
-optional | onError | Nullable&lt;() =&gt; void&gt; | 
+optional | onError | Nullable&lt;(message: string, exception: any) =&gt; void&gt; | 
 optional | buffer | Nullable&lt;ArrayBuffer&gt; or HTMLImageElement | 
 optional | fallBack | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt; | 
-### updateRawTexture(texture, data, format, invertY, compression) &rarr; void
+### updateRawTexture(texture, data, format, invertY, compression, type) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | texture | [InternalTexture](/classes/3.1/InternalTexture) | 
- | data | ArrayBufferView | 
+ | texture | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt; | 
+ | data | Nullable&lt;ArrayBufferView&gt; | 
  | format | number | 
  | invertY | boolean | 
-### createRawTexture(data, width, height, format, generateMipMaps, invertY, samplingMode, compression) &rarr; [InternalTexture](/classes/3.1/InternalTexture)
+optional | compression | Nullable&lt;string&gt; | 
+### createRawTexture(data, width, height, format, generateMipMaps, invertY, samplingMode, compression, type) &rarr; [InternalTexture](/classes/3.1/InternalTexture)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | data | ArrayBufferView | 
+ | data | Nullable&lt;ArrayBufferView&gt; | 
  | width | number | 
  | height | number | 
  | format | number | 
  | generateMipMaps | boolean | 
  | invertY | boolean | 
  | samplingMode | number | 
+optional | compression | Nullable&lt;string&gt; | 
 ### createDynamicTexture(width, height, generateMipMaps, samplingMode) &rarr; [InternalTexture](/classes/3.1/InternalTexture)
 
 
@@ -1389,7 +1432,7 @@ optional | fallBack | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | texture | [InternalTexture](/classes/3.1/InternalTexture) | 
+ | texture | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt; | 
  | canvas | HTMLCanvasElement | 
  | invertY | boolean | 
 optional | premulAlpha | boolean | 
@@ -1400,18 +1443,18 @@ optional | premulAlpha | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | texture | [InternalTexture](/classes/3.1/InternalTexture) | 
+ | texture | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt; | 
  | video | HTMLVideoElement | 
  | invertY | boolean | 
-### createRenderTargetTexture(size, options, [RenderTargetCreationOptions](/classes/3.1/RenderTargetCreationOptions)) &rarr; [InternalTexture](/classes/3.1/InternalTexture)
+### createRenderTargetTexture(size) &rarr; (size)
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | size | any | 
- | options | boolean or [RenderTargetCreationOptions](/classes/3.1/RenderTargetCreationOptions) | 
+ | size | number | 
+
 ### createMultipleRenderTarget(size, options) &rarr; [InternalTexture](/classes/3.1/InternalTexture)[]
 
 
@@ -1450,9 +1493,7 @@ optional | options | [RenderTargetCreationOptions](/classes/3.1/RenderTargetCrea
  | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
  | scale | number | 
  | offset | number | 
- | onLoad |  | internalTexture | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt; | 
-
- | 
+optional | onLoad | Nullable&lt;(internalTexture: Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt;) =&gt; void&gt; | 
 optional | onError | Nullable&lt;(message: string, exception: any) =&gt; void&gt; | 
 optional | format | number | 
 ### createCubeTexture(rootUrl, scene, files, noMipmap, onLoad, onError, format, forcedExtension) &rarr; [InternalTexture](/classes/3.1/InternalTexture)
@@ -1532,7 +1573,7 @@ optional | compression | Nullable&lt;string&gt; |
  | Name | Type | Description
 ---|---|---|---
  | channel | number | 
- | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
+ | postProcess | Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt; | 
 ### unbindAllTextures() &rarr; void
 
 
@@ -1705,7 +1746,7 @@ Remove an externaly attached data from the [Engine](/classes/3.1/Engine) instanc
 ---|---|---|---
  | query | WebGLQuery | 
 
-### beginQuery(algorithmType, query) &rarr; void
+### beginOcclusionQuery(algorithmType, query) &rarr; [Engine](/classes/3.1/Engine)
 
 
 
@@ -1714,7 +1755,7 @@ Remove an externaly attached data from the [Engine](/classes/3.1/Engine) instanc
 ---|---|---|---
  | algorithmType | number | 
  | query | WebGLQuery | 
-### endQuery(algorithmType) &rarr; [Engine](/classes/3.1/Engine)
+### endOcclusionQuery(algorithmType) &rarr; [Engine](/classes/3.1/Engine)
 
 
 
@@ -1722,6 +1763,69 @@ Remove an externaly attached data from the [Engine](/classes/3.1/Engine) instanc
  | Name | Type | Description
 ---|---|---|---
  | algorithmType | number | 
+
+### startTimeQuery() &rarr; Nullable&lt;_TimeToken&gt;
+
+
+### endTimeQuery(token) &rarr; int
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | token | _TimeToken | 
+
+### createTransformFeedback() &rarr; WebGLTransformFeedback
+
+
+### deleteTransformFeedback(value) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | WebGLTransformFeedback | 
+
+### bindTransformFeedback(value) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | Nullable&lt;WebGLTransformFeedback&gt; | 
+
+### beginTransformFeedback(usePoints) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | usePoints | boolean | 
+
+### endTransformFeedback() &rarr; void
+
+
+### setTranformFeedbackVaryings(program, value) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | program | WebGLProgram | 
+ | value | string[] | 
+### bindTransformFeedbackBuffer(value) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | value | Nullable&lt;WebGLBuffer&gt; | 
 
 ### static isSupported() &rarr; boolean
 

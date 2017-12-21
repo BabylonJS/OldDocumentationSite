@@ -49,15 +49,6 @@ class [SmartArray](/classes/3.1/SmartArray)
  | func |  | content | T | 
 
  | 
-### pushNoDuplicate(value) &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | value | T | 
-
 ### sort(compareFn) &rarr; void
 
 
@@ -75,15 +66,6 @@ class [SmartArray](/classes/3.1/SmartArray)
 
 
 ### concat(array) &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | array | any | 
-
-### concatWithNoDuplicate(array) &rarr; void
 
 
 

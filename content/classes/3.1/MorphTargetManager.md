@@ -16,7 +16,7 @@ class [MorphTargetManager](/classes/3.1/MorphTargetManager)
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 
 ## Members
 

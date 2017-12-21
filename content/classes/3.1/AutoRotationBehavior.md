@@ -37,6 +37,9 @@ Sets the time (milliseconds) to take to spin up to the full idle rotation speed.
 Gets a value indicating if the camera is currently rotating because of this behavior
 ## Methods
 
+### init() &rarr; void
+
+
 ### attach(camera) &rarr; void
 
 

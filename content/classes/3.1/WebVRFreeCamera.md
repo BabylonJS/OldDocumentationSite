@@ -52,6 +52,19 @@ class [WebVRFreeCamera](/classes/3.1/WebVRFreeCamera) extends [FreeCamera](/clas
 ### rigParenting : boolean
 
 
+### deviceDistanceToRoomGround : () =&gt; number
+
+
+### useStandingMatrix : (callback: (bool: boolean) =&gt; void) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | callback |  | bool | boolean | 
+
+ | 
 ### leftController : Nullable&lt;[WebVRController](/classes/3.1/WebVRController)&gt;
 
 
@@ -122,6 +135,9 @@ optional | noPreventDefault | boolean |
 
 
 ### resetToCurrentRotation() &rarr; void
+
+
+### update() &rarr; void
 
 
 ### initControllers() &rarr; void

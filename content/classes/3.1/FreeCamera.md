@@ -31,6 +31,9 @@ class [FreeCamera](/classes/3.1/FreeCamera) extends [TargetCamera](/classes/3.1/
 ### ellipsoid : [Vector3](/classes/3.1/Vector3)
 
 
+### ellipsoidOffset : [Vector3](/classes/3.1/Vector3)
+
+
 ### checkCollisions : boolean
 
 

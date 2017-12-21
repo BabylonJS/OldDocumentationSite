@@ -11,7 +11,7 @@ This offers the main features of a standard PBR material.
 
 For more information, please refer to the documentation :
 
-http://doc.babylonjs.com/How_To/Physically_Based_Rendering
+http://doc.babylonjs.com/extensions/Physically_Based_Rendering
 
 ## Constructor
 
@@ -147,7 +147,7 @@ Materials half opaque for instance using refraction could benefit from this cont
 
 ### useAlphaFromAlbedoTexture : boolean
 
-Specifies that the alpha is coming form the albedo channel alpha channel.
+Specifies that the alpha is coming form the albedo channel alpha channel for alpha blending.
 ### forceAlphaTest : boolean
 
 Enforces alpha test in opaque or blend mode in order to improve the performances of some situations.
@@ -221,16 +221,16 @@ If sets to true, y component of normal map value will invert (y = 1.0 - y).
 ### twoSidedLighting : boolean
 
 If sets to true and backfaceCulling is false, normals will be flipped on the backside.
-### preMultiplyAlpha : boolean
-
-Specifies that the alpha is premultiplied before output (this enables alpha premultiplied blending).
-
-in your scene composition.
 ### useAlphaFresnel : boolean
 
 A fresnel is applied to the alpha of the model to ensure grazing angles edges are not alpha tested.
 
-And/Or occlude the blended part.
+And/Or occlude the blended part. (alpha is converted to gamma to compute the fresnel)
+### useLinearAlphaFresnel : boolean
+
+A fresnel is applied to the alpha of the model to ensure grazing angles edges are not alpha tested.
+
+And/Or occlude the blended part. (alpha stays linear to compute the fresnel)
 ### environmentBRDFTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 A fresnel is applied to the alpha of the model to ensure grazing angles edges are not alpha tested.
@@ -239,8 +239,16 @@ And/Or occlude the blended part.
 ### forceNormalForward : boolean
 
 Force normal to face away from face.
+### useHorizonOcclusion : boolean
 
-(Temporary internal fix to remove before 3.1)
+This parameters will enable/disable Horizon occlusion to prevent normal maps to look shiny when the normal
+
+makes the reflect vector face the model (under horizon).
+### useRadianceOcclusion : boolean
+
+This parameters will enable/disable radiance occlusion by preventing the radiance to lit
+
+too much the area relying on ambient texture to define their ambient occlusion.
 ### imageProcessingConfiguration : [ImageProcessingConfiguration](/classes/3.1/ImageProcessingConfiguration)
 
 Gets the image processing configuration used either in this material.
@@ -281,12 +289,12 @@ This corresponds to a photographic exposure.
 Gets The camera contrast used on this material.
 
 Sets The camera contrast used on this material.
-### cameraColorGradingTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### cameraColorGradingTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 Gets the Color Grading 2D Lookup [Texture](/classes/3.1/Texture).
 
 Sets the Color Grading 2D Lookup [Texture](/classes/3.1/Texture).
-### cameraColorCurves : [ColorCurves](/classes/3.1/ColorCurves)
+### cameraColorCurves : Nullable&lt;[ColorCurves](/classes/3.1/ColorCurves)&gt;
 
 The color grading curves provide additional color adjustmnent that is applied after any color grading transform (3D LUT).
 

@@ -41,3 +41,21 @@ class [ViveController](/classes/3.1/ViveController) extends [WebVRController](/c
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | meshLoaded |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
+### handleButtonChange(buttonIdx, state, changes) &rarr; void
+
+Vive mapping:
+
+0: touchpad
+
+1: trigger
+
+2: left AND right buttons
+
+3: menu button
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | buttonIdx | number | 
+ | state | ExtendedGamepadButton | 
+ | changes | GamepadButtonChanges | 

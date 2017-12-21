@@ -9,6 +9,15 @@ class [MaterialHelper](/classes/3.1/MaterialHelper)
 
 ## Methods
 
+### static BindEyePosition(effect, scene) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | effect | [Effect](/classes/3.1/Effect) | 
+ | scene | [Scene](/classes/3.1/Scene) | 
 ### static PrepareDefinesForMergedUV(texture, defines, key) &rarr; void
 
 
@@ -52,7 +61,7 @@ class [MaterialHelper](/classes/3.1/MaterialHelper)
  | engine | [Engine](/classes/3.1/Engine) | 
  | defines | any | 
  | useInstances | boolean | 
-### static PrepareDefinesForAttributes(mesh, defines, useVertexColor, useBones, useMorphTargets) &rarr; boolean
+### static PrepareDefinesForAttributes(mesh, defines, useVertexColor, useBones, useMorphTargets, useVertexAlpha) &rarr; boolean
 
 
 
@@ -63,6 +72,7 @@ class [MaterialHelper](/classes/3.1/MaterialHelper)
  | defines | any | 
  | useVertexColor | boolean | 
  | useBones | boolean | 
+optional | useMorphTargets | boolean | 
 ### static PrepareDefinesForLights(scene, mesh, defines, specularSupported, maxSimultaneousLights, disableLighting) &rarr; boolean
 
 
@@ -85,7 +95,7 @@ optional | maxSimultaneousLights | number |
  | uniformsListOrOptions | string[] or [EffectCreationOptions](/classes/3.1/EffectCreationOptions) | 
 optional | samplersList | string[] | 
 optional | defines | any | 
-### static HandleFallbacksForShadows(defines, fallbacks, maxSimultaneousLights) &rarr; void
+### static HandleFallbacksForShadows(defines, fallbacks, maxSimultaneousLights, rank) &rarr; number
 
 
 
@@ -174,8 +184,8 @@ optional | maxSimultaneousLights | number |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
- | effect | [Effect](/classes/3.1/Effect) | 
+optional | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+optional | effect | [Effect](/classes/3.1/Effect) | 
 ### static BindMorphTargetParameters(abstractMesh, effect) &rarr; void
 
 

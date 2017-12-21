@@ -165,7 +165,7 @@ optional | onError | Nullable&lt;(effect: [Effect](/classes/3.1/Effect), errors:
  | Name | Type | Description
 ---|---|---|---
  | channel | string | 
- | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
+ | postProcess | Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt; | 
 ### bindUniformBuffer(buffer, name) &rarr; void
 
 

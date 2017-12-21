@@ -65,6 +65,9 @@ optional | readyToPlayCallback | Nullable&lt;() =&gt; void&gt; |  Provide a call
 ### isPaused : boolean
 
 
+### null : ()
+
+
 ## Methods
 
 ### dispose() &rarr; void

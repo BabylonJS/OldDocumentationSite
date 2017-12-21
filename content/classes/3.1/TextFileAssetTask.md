@@ -33,6 +33,25 @@ class [TextFileAssetTask](/classes/3.1/TextFileAssetTask) extends [AbstractAsset
 ### text : string
 
 
+### onSuccess : (task: [TextFileAssetTask](/classes/3.1/TextFileAssetTask)) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [TextFileAssetTask](/classes/3.1/TextFileAssetTask) | 
+
+### onError : (task: [TextFileAssetTask](/classes/3.1/TextFileAssetTask), message: string, exception: any) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [TextFileAssetTask](/classes/3.1/TextFileAssetTask) | 
+optional | message | string | 
+optional | exception | any | 
 ## Methods
 
 ### runTask(scene, onSuccess, onError) &rarr; void

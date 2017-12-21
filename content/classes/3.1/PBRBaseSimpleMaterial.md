@@ -55,27 +55,31 @@ Occlusion [Texture](/classes/3.1/Texture) of the material (adding extra occlusio
 ### alphaCutOff : number
 
 Defines the alpha limits in alpha test mode.
-### transparencyMode : number
-
-Gets the current transparency mode.
-
-Sets the transparency mode of the material.
 ### doubleSided : boolean
 
 Gets the current double sided mode.
 
 If sets to true and backfaceCulling is false, normals will be flipped on the backside.
+### lightmapTexture : [BaseTexture](/classes/3.1/BaseTexture)
+
+
+### useLightmapAsShadowmap : boolean
+
+
 ## Methods
 
-### needAlphaBlending() &rarr; boolean
-
-Specifies wether or not the meshes using this material should be rendered in alpha blend mode.
-### needAlphaTesting() &rarr; boolean
-
-Specifies wether or not the meshes using this material should be rendered in alpha test mode.
 ### getActiveTextures() &rarr; [BaseTexture](/classes/3.1/BaseTexture)[]
 
 Return the active textures of the material.
+### hasTexture(texture) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | texture | [BaseTexture](/classes/3.1/BaseTexture) | 
+
 ### getClassName() &rarr; string
 
 

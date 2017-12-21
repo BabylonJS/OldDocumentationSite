@@ -33,6 +33,25 @@ class [ImageAssetTask](/classes/3.1/ImageAssetTask) extends [AbstractAssetTask](
 ### image : HTMLImageElement
 
 
+### onSuccess : (task: [ImageAssetTask](/classes/3.1/ImageAssetTask)) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [ImageAssetTask](/classes/3.1/ImageAssetTask) | 
+
+### onError : (task: [ImageAssetTask](/classes/3.1/ImageAssetTask), message: string, exception: any) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [ImageAssetTask](/classes/3.1/ImageAssetTask) | 
+optional | message | string | 
+optional | exception | any | 
 ## Methods
 
 ### runTask(scene, onSuccess, onError) &rarr; void

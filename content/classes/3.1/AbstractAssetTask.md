@@ -9,28 +9,37 @@ class [AbstractAssetTask](/classes/3.1/AbstractAssetTask)
 
 ## Constructor
 
-## new [AbstractAssetTask](/classes/3.1/AbstractAssetTask)()
+## new [AbstractAssetTask](/classes/3.1/AbstractAssetTask)(name)
 
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
 
 ## Members
 
-### onSuccess : (task: IAssetTask) =&gt; void
+### name : string
+
+
+### onSuccess : (task: any) =&gt; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | task | IAssetTask | 
+ | task | any | 
 
-### onError : (task: IAssetTask, message: string, exception: any) =&gt; void
+### onError : (task: any, message: string, exception: any) =&gt; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | task | IAssetTask | 
+ | task | any | 
 optional | message | string | 
 optional | exception | any | 
 ### isCompleted : boolean

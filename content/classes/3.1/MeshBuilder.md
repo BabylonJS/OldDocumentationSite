@@ -36,7 +36,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 ---|---|---|---
  | name | string | 
  | options | { size: number,  width: number,  height: number,  depth: number,  faceUV: [Vector4](/classes/3.1/Vector4)[],  faceColors: [Color4](/classes/3.1/Color4)[],  sideOrientation: number,  frontUVs: [Vector4](/classes/3.1/Vector4),  backUVs: [Vector4](/classes/3.1/Vector4),  updatable: boolean } | 
- | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static CreateSphere(name, options, scene) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Creates a sphere mesh.
@@ -92,7 +92,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 ---|---|---|---
  | name | string | 
  | options | { radius: number,  tessellation: number,  arc: number,  updatable: boolean,  sideOrientation: number,  frontUVs: [Vector4](/classes/3.1/Vector4),  backUVs: [Vector4](/classes/3.1/Vector4) } | 
- | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static CreateIcoSphere(name, options, scene) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Creates a sphere based upon an icosahedron with 20 triangular faces which can be subdivided.
@@ -166,7 +166,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 ---|---|---|---
  | name | string | 
  | options | { pathArray: [Vector3](/classes/3.1/Vector3)[][],  closeArray: boolean,  closePath: boolean,  offset: number,  updatable: boolean,  sideOrientation: number,  frontUVs: [Vector4](/classes/3.1/Vector4),  backUVs: [Vector4](/classes/3.1/Vector4),  instance: [Mesh](/classes/3.1/Mesh),  invertUV: boolean,  uvs: [Vector2](/classes/3.1/Vector2)[],  colors: [Color4](/classes/3.1/Color4)[] } | 
-optional | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static CreateCylinder(name, options, scene) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Creates a cylinder or a cone mesh.
@@ -289,6 +289,10 @@ The parameter `lines` is an array of lines, each line being an array of successi
 
 The optional parameter `instance` is an instance of an existing LineSystem object to be updated with the passed `lines` parameter. The way to update it is the same than for
 
+The optional parameter `colors` is an array of line colors, each line colors being an array of successive [Color4](/classes/3.1/Color4), one per line point.
+
+The optional parameter `useVertexAlpha' is to be set to `false` (default `true`) when you don't need the alpha blending (faster).
+
 updating a simple Line mesh, you just need to update every line in the `lines` array : http://doc.babylonjs.com/tutorials/How_to_dynamically_morph_a_mesh#lines-and-dashedlines
 
 When updating an instance, remember that only line point positions can change, not the number of points, neither the number of lines.
@@ -299,7 +303,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | options | { lines: [Vector3](/classes/3.1/Vector3)[][],  updatable: boolean,  instance: [LinesMesh](/classes/3.1/LinesMesh) } | 
+ | options | { lines: [Vector3](/classes/3.1/Vector3)[][],  updatable: boolean,  instance: Nullable&lt;[LinesMesh](/classes/3.1/LinesMesh)&gt;,  colors: Nullable&lt;[Color4](/classes/3.1/Color4)[][]&gt;,  useVertexAlpha: boolean } | 
  | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static CreateLines(name, options, scene) &rarr; [LinesMesh](/classes/3.1/LinesMesh)
 
@@ -315,6 +319,10 @@ The parameter `points` is an array successive [Vector3](/classes/3.1/Vector3).
 
 The optional parameter `instance` is an instance of an existing LineMesh object to be updated with the passed `points` parameter : http://doc.babylonjs.com/tutorials/How_to_dynamically_morph_a_mesh#lines-and-dashedlines
 
+The optional parameter `colors` is an array of successive [Color4](/classes/3.1/Color4), one per line point.
+
+The optional parameter `useVertexAlpha' is to be set to `false` (default `true`) when you don't need alpha blending (faster).
+
 When updating an instance, remember that only point positions can change, not the number of points.
 
 The mesh can be set to updatable with the boolean parameter `updatable` (default false) if its internal geometry is supposed to change once created.
@@ -323,7 +331,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | options | { points: [Vector3](/classes/3.1/Vector3)[],  updatable: boolean,  instance: Nullable&lt;[LinesMesh](/classes/3.1/LinesMesh)&gt; } | 
+ | options | { points: [Vector3](/classes/3.1/Vector3)[],  updatable: boolean,  instance: Nullable&lt;[LinesMesh](/classes/3.1/LinesMesh)&gt;,  colors: [Color4](/classes/3.1/Color4)[],  useVertexAlpha: boolean } | 
 optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static CreateDashedLines(name, options, scene) &rarr; [LinesMesh](/classes/3.1/LinesMesh)
 
@@ -354,7 +362,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 ---|---|---|---
  | name | string | 
  | options | { points: [Vector3](/classes/3.1/Vector3)[],  dashSize: number,  gapSize: number,  dashNb: number,  updatable: boolean,  instance: [LinesMesh](/classes/3.1/LinesMesh) } | 
- | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static ExtrudeShape(name, options, scene) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Creates an extruded shape mesh.
@@ -396,7 +404,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 ---|---|---|---
  | name | string | 
  | options | { shape: [Vector3](/classes/3.1/Vector3)[],  path: [Vector3](/classes/3.1/Vector3)[],  scale: number,  rotation: number,  cap: number,  updatable: boolean,  sideOrientation: number,  frontUVs: [Vector4](/classes/3.1/Vector4),  backUVs: [Vector4](/classes/3.1/Vector4),  instance: [Mesh](/classes/3.1/Mesh),  invertUV: boolean } | 
- | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ### static ExtrudeShapeCustom(name, options, scene) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Creates an custom extruded shape mesh.

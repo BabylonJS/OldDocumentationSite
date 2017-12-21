@@ -7,6 +7,11 @@ class [Scalar](/classes/3.1/Scalar)
 
 
 
+## Members
+
+### static TwoPi : number
+
+Two pi constants convenient for computation.
 ## Methods
 
 ### static WithinEpsilon(a, b, epsilon) &rarr; boolean
@@ -239,3 +244,14 @@ This function returns number that corresponds to the percentage in a given range
  | percent | number | 
  | min | number | 
  | max | number | 
+### static NormalizeRadians(angle) &rarr; number
+
+Returns the angle converted to equivalent value between -Math.PI and Math.PI radians.
+
+@return The converted angle.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | angle | number |  The angle to normalize in radian.
+

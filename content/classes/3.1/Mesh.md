@@ -26,9 +26,9 @@ class [Mesh](/classes/3.1/Mesh) extends [AbstractMesh](/classes/3.1/AbstractMesh
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 optional | parent | Nullable&lt;[Node](/classes/3.1/Node)&gt; | 
-optional | source | [Mesh](/classes/3.1/Mesh) | 
+optional | source | Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt; | 
 optional | doNotCloneChildren | boolean | 
 ## Members
 
@@ -93,7 +93,7 @@ An event triggered before drawing the mesh
  | distance | number | 
  | mesh | [Mesh](/classes/3.1/Mesh) | 
  | selectedLevel | [Mesh](/classes/3.1/Mesh) | 
-### morphTargetManager : [MorphTargetManager](/classes/3.1/MorphTargetManager)
+### morphTargetManager : Nullable&lt;[MorphTargetManager](/classes/3.1/MorphTargetManager)&gt;
 
 
 ### overrideMaterialSideOrientation : Nullable&lt;number&gt;
@@ -107,12 +107,9 @@ An event triggered before drawing the mesh
 True if the mesh has some Levels Of Details (LOD).
 
 Returns a boolean.
-### geometry : [Geometry](/classes/3.1/Geometry)
+### geometry : Nullable&lt;[Geometry](/classes/3.1/Geometry)&gt;
 
 Returns the mesh internal [Geometry](/classes/3.1/Geometry) object.
-### Float32Array : undefined
-
-
 ### isBlocked : boolean
 
 
@@ -151,7 +148,7 @@ tuto : http://doc.babylonjs.com/tutorials/How_to_use_LOD
 ---|---|---|---
  | distance | number | 
  | mesh | [Mesh](/classes/3.1/Mesh) | 
-### getLODLevelAtDistance(distance) &rarr; [Mesh](/classes/3.1/Mesh)
+### getLODLevelAtDistance(distance) &rarr; Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt;
 
 Returns the LOD level mesh at the passed distance or null if not found.
 
@@ -193,7 +190,7 @@ optional | boundingSphere | [BoundingSphere](/classes/3.1/BoundingSphere) |
 ### getTotalVertices() &rarr; number
 
 Returns a positive integer : the total number of vertices within the mesh geometry or zero if the mesh has no geometry.
-### getVerticesData(kind, copyWhenShared, forceCopy) &rarr; number[]
+### getVerticesData(kind, copyWhenShared, forceCopy) &rarr; Nullable&lt;FloatArray&gt;
 
 Returns an array of integers or floats, or a Float32Array, depending on the requested `kind` (positions, indices, normals, etc).
 
@@ -235,11 +232,11 @@ Possible `kind` values :
  | kind | string | 
 optional | copyWhenShared | boolean | 
 optional | forceCopy | boolean | 
-### getVertexBuffer(kind) &rarr; [VertexBuffer](/classes/3.1/VertexBuffer)
+### getVertexBuffer(kind) &rarr; Nullable&lt;[VertexBuffer](/classes/3.1/VertexBuffer)&gt;
 
 Returns the mesh [VertexBuffer](/classes/3.1/VertexBuffer) object from the requested `kind` : positions, indices, normals, etc.
 
-Returns `undefined` if the mesh has no geometry.
+Returns `null` if the mesh has no geometry.
 
 Possible `kind` values :
 
@@ -307,6 +304,41 @@ Possible `kind` values :
 ---|---|---|---
  | kind | string | 
 
+### isVertexBufferUpdatable(kind) &rarr; boolean
+
+Returns a boolean defining if the vertex data for the requested `kind` is updatable.
+
+Possible `kind` values :
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).PositionKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UVKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV2Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV3Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV4Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV5Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV6Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).ColorKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesIndicesKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesIndicesExtraKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesWeightsKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesWeightsExtraKind
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | kind | string | 
+
 ### getVerticesDataKinds() &rarr; string[]
 
 Returns a string : the list of existing `kinds` of Vertex Data for this mesh.
@@ -341,7 +373,7 @@ Possible `kind` values :
 Returns a positive integer : the total number of indices in this mesh geometry.
 
 Returns zero if the mesh has no geometry.
-### getIndices(copyWhenShared) &rarr; IndicesArray
+### getIndices(copyWhenShared) &rarr; Nullable&lt;IndicesArray&gt;
 
 Returns an array of integers or a typed array (Int32Array, Uint32Array, Uint16Array) populated with the mesh indices.
 
@@ -391,7 +423,7 @@ Returns the [Mesh](/classes/3.1/Mesh).
 ---|---|---|---
  | count | number | 
 
-### setVerticesData(kind, data, Float32Array, updatable, stride) &rarr; [Mesh](/classes/3.1/Mesh)
+### setVerticesData(kind, data, updatable, stride) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Sets the vertex data of the mesh geometry for the requested `kind`.
 
@@ -439,7 +471,7 @@ If the `kind` is the `PositionKind`, the mesh [BoundingInfo](/classes/3.1/Boundi
  | Name | Type | Description
 ---|---|---|---
  | kind | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
 optional | updatable | boolean | 
 ### markVerticesDataAsUpdatable(kind, updatable) &rarr; void
 
@@ -461,7 +493,7 @@ Returns the [Mesh](/classes/3.1/Mesh).
 ---|---|---|---
  | buffer | [VertexBuffer](/classes/3.1/VertexBuffer) | 
 
-### updateVerticesData(kind, data, Float32Array, updateExtends, makeItUnique) &rarr; [Mesh](/classes/3.1/Mesh)
+### updateVerticesData(kind, data, updateExtends, makeItUnique) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Updates the existing vertex data of the mesh geometry for the requested `kind`.
 
@@ -507,7 +539,7 @@ If the parameter `makeItUnique` is true, a new global geometry is created from t
  | Name | Type | Description
 ---|---|---|---
  | kind | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
 optional | updateExtends | boolean | 
 ### updateMeshPositions(positionFunction, computeNormals) &rarr; [Mesh](/classes/3.1/Mesh)
 
@@ -524,9 +556,9 @@ Returns the [Mesh](/classes/3.1/Mesh).
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | positionFunction |  | data | number[] or Float32Array | 
+ | positionFunction |  | data | FloatArray | 
+
  | 
-optional | computeNormals | boolean | 
 ### makeGeometryUnique() &rarr; [Mesh](/classes/3.1/Mesh)
 
 Creates a un-shared specific occurence of the geometry for the mesh.
@@ -538,6 +570,8 @@ Sets the mesh indices.
 
 Expects an array populated with integers or a typed array (Int32Array, Uint32Array, Uint16Array).
 
+Type is Uint16Array by default unless the mesh has more than 65536 vertices.
+
 If the mesh has no geometry, a new [Geometry](/classes/3.1/Geometry) object is created and set to the mesh.
 
 This method creates a new index buffer each call.
@@ -548,7 +582,7 @@ Returns the [Mesh](/classes/3.1/Mesh).
  | Name | Type | Description
 ---|---|---|---
  | indices | IndicesArray | 
- | totalVertices | Nullable&lt;number&gt; | 
+optional | totalVertices | Nullable&lt;number&gt; | 
 optional | updatable | boolean | 
 ### updateIndices(indices, offset) &rarr; [Mesh](/classes/3.1/Mesh)
 
@@ -695,7 +729,7 @@ The mesh World [Matrix](/classes/3.1/Matrix) is then reset.
 
 This method returns nothing but really modifies the mesh even if it's originally not set as updatable.
 
-tuto : tuto : http://doc.babylonjs.com/tutorials/How_Rotations_and_Translations_Work#baking-transform
+tuto : tuto : http://doc.babylonjs.com/resources/baking_transformations
 
 Note that, under the hood, this method sets a new [VertexBuffer](/classes/3.1/VertexBuffer) each call.
 
@@ -720,17 +754,19 @@ The parameter `clonePhysicsImpostor` (default `true`)  allows/denies the cloning
  | name | string | 
 optional | newParent | [Node](/classes/3.1/Node) | 
 optional | doNotCloneChildren | boolean | 
-### dispose(doNotRecurse) &rarr; void
+### dispose(doNotRecurse, disposeMaterialAndTextures) &rarr; void
 
-Disposes the mesh.
+Disposes the [Mesh](/classes/3.1/Mesh).
 
-This also frees the memory allocated under the hood to all the buffers used by WebGL.
+By default, all the mesh children are also disposed unless the parameter `doNotRecurse` is set to `true`.
+
+Returns nothing.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
 optional | doNotRecurse | boolean | 
-
+optional | disposeMaterialAndTextures | boolean | 
 ### applyDisplacementMap(url, minHeight, maxHeight, onSuccess, uvOffset, uvScale) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Modifies the mesh geometry according to a displacement map.
@@ -901,9 +937,9 @@ optional | successCallback | optional | mesh | [Mesh](/classes/3.1/Mesh) |
 
 ### static Parse(parsedMesh, scene, rootUrl) &rarr; [Mesh](/classes/3.1/Mesh)
 
-Returns a new [Mesh](/classes/3.1/Mesh) object what is a deep copy of the passed mesh.
+Returns a new [Mesh](/classes/3.1/Mesh) object parsed from the source provided.
 
-The parameter `parsedMesh` is the mesh to be copied.
+The parameter `parsedMesh` is the source.
 
 The parameter `rootUrl` is a string, it's the root URL to prefix the `delayLoadingFile` property with
 
@@ -913,7 +949,7 @@ The parameter `rootUrl` is a string, it's the root URL to prefix the `delayLoadi
  | parsedMesh | any | 
  | scene | [Scene](/classes/3.1/Scene) | 
  | rootUrl | string | 
-### static CreateRibbon(name, pathArray, closeArray, closePath, offset, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/3.1/Mesh)
+### static CreateRibbon(name, pathArray, closeArray, undefined, closePath, offset, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Creates a ribbon mesh.
 
@@ -946,7 +982,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 ---|---|---|---
  | name | string | 
  | pathArray | [Vector3](/classes/3.1/Vector3)[][] | 
- | closeArray | boolean | 
+ | closeArray | boolean or undefined | 
  | closePath | boolean | 
  | offset | number | 
 optional | scene | [Scene](/classes/3.1/Scene) | 
@@ -974,7 +1010,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
  | name | string | 
  | radius | number | 
  | tessellation | number | 
-optional | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 optional | updatable | boolean | 
 ### static CreateBox(name, size, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/3.1/Mesh)
 
@@ -995,7 +1031,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
 ---|---|---|---
  | name | string | 
  | size | number | 
-optional | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 optional | updatable | boolean | 
 ### static CreateSphere(name, segments, diameter, scene, updatable, sideOrientation) &rarr; [Mesh](/classes/3.1/Mesh)
 
@@ -1170,7 +1206,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
  | dashSize | number | 
  | gapSize | number | 
  | dashNb | number | 
-optional | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 optional | updatable | boolean | 
 ### static CreatePolygon(name, shape, scene, holes, updatable, sideOrientation) &rarr; [Mesh](/classes/3.1/Mesh)
 
@@ -1252,7 +1288,7 @@ The mesh can be set to updatable with the boolean parameter `updatable` (default
  | scale | number | 
  | rotation | number | 
  | cap | number | 
-optional | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 optional | updatable | boolean | 
 optional | sideOrientation | number | 
 ### static ExtrudeShapeCustom(name, shape, path, scaleFunction, rotationFunction, ribbonCloseArray, ribbonClosePath, cap, scene, updatable, sideOrientation, instance) &rarr; [Mesh](/classes/3.1/Mesh)
@@ -1656,7 +1692,7 @@ Returns a [Vector3](/classes/3.1/Vector3), the center of the `{min:` [Vector3](/
  | Name | Type | Description
 ---|---|---|---
  | meshesOrMinMaxVector | { min: [Vector3](/classes/3.1/Vector3),  max: [Vector3](/classes/3.1/Vector3) } or [AbstractMesh](/classes/3.1/AbstractMesh) | 
-### static MergeMeshes(meshes, disposeSource, allow32BitsIndices, meshSubclass, subdivideWithSubMeshes) &rarr; [Mesh](/classes/3.1/Mesh)
+### static MergeMeshes(meshes, disposeSource, allow32BitsIndices, meshSubclass, subdivideWithSubMeshes) &rarr; Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt;
 
 Merge the array of meshes into a single mesh for performance reasons.
 

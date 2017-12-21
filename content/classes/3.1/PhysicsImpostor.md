@@ -9,7 +9,7 @@ class [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 ## Constructor
 
-## new [PhysicsImpostor](/classes/3.1/PhysicsImpostor)(object, type, _options, _scene)
+## new [PhysicsImpostor](/classes/3.1/PhysicsImpostor)(object, type, _options, _scene, undefined)
 
 
 
@@ -53,7 +53,7 @@ optional | _options | PhysicsImpostorParameters |
 Gets the body that holds this impostor. Either its own, or its parent.
 
 Set the physics body. Used mainly by the physics engine/plugin
-### parent : [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
+### parent : Nullable&lt;[PhysicsImpostor](/classes/3.1/PhysicsImpostor)&gt;
 
 
 ### void : undefined
@@ -65,15 +65,9 @@ this function is executed by the physics engine.
 ### afterStep : () =&gt; void
 
 this function is executed by the physics engine.
-### onCollideEvent : (collider: undefined, collidedWith: undefined) =&gt; void
+### onCollideEvent : Nullable&lt;(collider: undefined, collidedWith: undefined) =&gt; void&gt;
 
 Legacy collision detection event support
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | collider | undefined | 
- | collidedWith | undefined | 
 ### onCollide : (e: { body: any }) =&gt; void
 
 
@@ -162,7 +156,7 @@ Specifically change the body's mass option. Won't recreate the physics body obje
 ---|---|---|---
  | mass | number | 
 
-### getLinearVelocity() &rarr; [Vector3](/classes/3.1/Vector3)
+### getLinearVelocity() &rarr; Nullable&lt;[Vector3](/classes/3.1/Vector3)&gt;
 
 
 ### setLinearVelocity(velocity) &rarr; void
@@ -172,9 +166,9 @@ Specifically change the body's mass option. Won't recreate the physics body obje
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | velocity | [Vector3](/classes/3.1/Vector3) | 
+ | velocity | Nullable&lt;[Vector3](/classes/3.1/Vector3)&gt; | 
 
-### getAngularVelocity() &rarr; [Vector3](/classes/3.1/Vector3)
+### getAngularVelocity() &rarr; Nullable&lt;[Vector3](/classes/3.1/Vector3)&gt;
 
 
 ### setAngularVelocity(velocity) &rarr; void
@@ -184,7 +178,7 @@ Specifically change the body's mass option. Won't recreate the physics body obje
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | velocity | [Vector3](/classes/3.1/Vector3) | 
+ | velocity | Nullable&lt;[Vector3](/classes/3.1/Vector3)&gt; | 
 
 ### executeNativeFunction(func) &rarr; void
 
@@ -259,7 +253,10 @@ register a function that will be executed when this impostor collides against a 
  | collideAgainst | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) or Array | 
  | func |  | collider | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
  | collidedAgainst | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) or Array | 
-### applyForce(force, contactPoint) &rarr; void
+### getParentsRotation() &rarr; [Quaternion](/classes/3.1/Quaternion)
+
+
+### applyForce(force, contactPoint) &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 Apply a force
 
@@ -268,7 +265,7 @@ Apply a force
 ---|---|---|---
  | force | [Vector3](/classes/3.1/Vector3) | 
  | contactPoint | [Vector3](/classes/3.1/Vector3) | 
-### applyImpulse(force, contactPoint) &rarr; void
+### applyImpulse(force, contactPoint) &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 Apply an impulse
 
@@ -277,7 +274,7 @@ Apply an impulse
 ---|---|---|---
  | force | [Vector3](/classes/3.1/Vector3) | 
  | contactPoint | [Vector3](/classes/3.1/Vector3) | 
-### createJoint(otherImpostor, jointType, jointData) &rarr; void
+### createJoint(otherImpostor, jointType, jointData) &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 A help function to create a joint.
 
@@ -287,7 +284,7 @@ A help function to create a joint.
  | otherImpostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
  | jointType | number | 
  | jointData | PhysicsJointData | 
-### addJoint(otherImpostor, joint) &rarr; void
+### addJoint(otherImpostor, joint) &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 Add a joint to this impostor with a different impostor.
 
@@ -296,13 +293,13 @@ Add a joint to this impostor with a different impostor.
 ---|---|---|---
  | otherImpostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
  | joint | [PhysicsJoint](/classes/3.1/PhysicsJoint) | 
-### sleep() &rarr; void
+### sleep() &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 Will keep this body still, in a sleep mode.
-### wakeUp() &rarr; void
+### wakeUp() &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 Wake the body up.
-### clone(newObject) &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
+### clone(newObject) &rarr; Nullable&lt;[PhysicsImpostor](/classes/3.1/PhysicsImpostor)&gt;
 
 
 
@@ -332,7 +329,7 @@ Wake the body up.
 ---|---|---|---
  | rotation | [Quaternion](/classes/3.1/Quaternion) | 
 
-### getBoxSizeToRef(result) &rarr; void
+### getBoxSizeToRef(result) &rarr; [PhysicsImpostor](/classes/3.1/PhysicsImpostor)
 
 
 

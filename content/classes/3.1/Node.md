@@ -21,7 +21,7 @@ class [Node](/classes/3.1/Node)
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ## Members
 
 ### name : string
@@ -189,14 +189,24 @@ Will return all nodes that have this node as ascendant.
 optional | directDescendantsOnly | boolean | 
 optional | predicate |  | node | [Node](/classes/3.1/Node) | 
 
-### getChildMeshes(directDecendantsOnly, predicate) &rarr; [AbstractMesh](/classes/3.1/AbstractMesh)[]
+### getChildMeshes(directDescendantsOnly, predicate) &rarr; [AbstractMesh](/classes/3.1/AbstractMesh)[]
 
 Get all child-meshes of this node.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | directDecendantsOnly | boolean | 
+optional | directDescendantsOnly | boolean | 
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
+
+### getChildTransformNodes(directDescendantsOnly, predicate) &rarr; [TransformNode](/classes/3.1/TransformNode)[]
+
+Get all child-transformNodes of this node.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | directDescendantsOnly | boolean | 
 optional | predicate |  | node | [Node](/classes/3.1/Node) | 
 
 ### getChildren(predicate) &rarr; [Node](/classes/3.1/Node)[]
@@ -258,6 +268,15 @@ optional | loop | boolean |
 optional | speedRatio | number | 
 ### serializeAnimationRanges() &rarr; any
 
+
+### computeWorldMatrix(force) &rarr; [Matrix](/classes/3.1/Matrix)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | force | boolean | 
 
 ### dispose() &rarr; void
 

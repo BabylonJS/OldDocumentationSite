@@ -211,7 +211,7 @@ optional | useInstances | boolean |
  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
  | subMesh | [BaseSubMesh](/classes/3.1/BaseSubMesh) | 
 optional | useInstances | boolean | 
-### getEffect() &rarr; [Effect](/classes/3.1/Effect)
+### getEffect() &rarr; Nullable&lt;[Effect](/classes/3.1/Effect)&gt;
 
 
 ### getScene() &rarr; [Scene](/classes/3.1/Scene)
@@ -220,10 +220,19 @@ optional | useInstances | boolean |
 ### needAlphaBlending() &rarr; boolean
 
 
+### needAlphaBlendingForMesh(mesh) &rarr; boolean
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
 ### needAlphaTesting() &rarr; boolean
 
 
-### getAlphaTestTexture() &rarr; [BaseTexture](/classes/3.1/BaseTexture)
+### getAlphaTestTexture() &rarr; Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
 ### markDirty() &rarr; void
@@ -299,7 +308,7 @@ optional | mesh | [Mesh](/classes/3.1/Mesh) |
 ---|---|---|---
  | texture | [BaseTexture](/classes/3.1/BaseTexture) | 
 
-### clone(name) &rarr; [Material](/classes/3.1/Material)
+### clone(name) &rarr; Nullable&lt;[Material](/classes/3.1/Material)&gt;
 
 
 
@@ -319,7 +328,7 @@ Force shader compilation including textures ready check
  | Name | Type | Description
 ---|---|---|---
  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
- | onCompiled |  | material | [Material](/classes/3.1/Material) | 
+optional | onCompiled |  | material | [Material](/classes/3.1/Material) | 
 
  | 
 ### markAsDirty(flag) &rarr; void

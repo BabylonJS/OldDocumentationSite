@@ -151,6 +151,15 @@ class [ShaderMaterial](/classes/3.1/ShaderMaterial) extends [Material](/classes/
 ---|---|---|---
  | name | string | 
  | value | Float32Array | 
+### setArray2(name, value) &rarr; [ShaderMaterial](/classes/3.1/ShaderMaterial)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | name | string | 
+ | value | number[] | 
 ### setArray3(name, value) &rarr; [ShaderMaterial](/classes/3.1/ShaderMaterial)
 
 

@@ -32,6 +32,9 @@ optional | influence | number |
 ### influence : number
 
 
+### hasPositions : boolean
+
+
 ### hasNormals : boolean
 
 
@@ -40,37 +43,40 @@ optional | influence | number |
 
 ## Methods
 
-### setPositions(data, number) &rarr; void
+### setPositions(data) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | data | Float32Array or number | 
-### getPositions() &rarr; Float32Array
+ | data | Nullable&lt;FloatArray&gt; | 
+
+### getPositions() &rarr; Nullable&lt;FloatArray&gt;
 
 
-### setNormals(data, number) &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | data | Float32Array or number | 
-### getNormals() &rarr; Float32Array
-
-
-### setTangents(data, number) &rarr; void
+### setNormals(data) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | data | Float32Array or number | 
-### getTangents() &rarr; Float32Array
+ | data | Nullable&lt;FloatArray&gt; | 
+
+### getNormals() &rarr; Nullable&lt;FloatArray&gt;
+
+
+### setTangents(data) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | data | Nullable&lt;FloatArray&gt; | 
+
+### getTangents() &rarr; Nullable&lt;FloatArray&gt;
 
 
 ### serialize() &rarr; any

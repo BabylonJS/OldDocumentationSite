@@ -24,31 +24,31 @@ class [StandardMaterial](/classes/3.1/StandardMaterial) extends [PushMaterial](/
  | scene | [Scene](/classes/3.1/Scene) | 
 ## Members
 
-### diffuseTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### diffuseTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
-### ambientTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### ambientTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
-### opacityTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### opacityTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
 ### reflectionTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
-### emissiveTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### emissiveTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
-### specularTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### specularTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
-### bumpTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### bumpTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
-### lightmapTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### lightmapTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
-### refractionTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### refractionTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
 ### ambientColor : [Color3](/classes/3.1/Color3)
@@ -178,12 +178,12 @@ This corresponds to a photographic exposure.
 Gets The camera contrast used on this material.
 
 Sets The camera contrast used on this material.
-### cameraColorGradingTexture : [BaseTexture](/classes/3.1/BaseTexture)
+### cameraColorGradingTexture : Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 Gets the Color Grading 2D Lookup [Texture](/classes/3.1/Texture).
 
 Sets the Color Grading 2D Lookup [Texture](/classes/3.1/Texture).
-### cameraColorCurves : [ColorCurves](/classes/3.1/ColorCurves)
+### cameraColorCurves : Nullable&lt;[ColorCurves](/classes/3.1/ColorCurves)&gt;
 
 The color grading curves provide additional color adjustmnent that is applied after any color grading transform (3D LUT).
 
@@ -258,7 +258,7 @@ corresponding to low luminance, medium luminance, and high luminance areas respe
 ### needAlphaTesting() &rarr; boolean
 
 
-### getAlphaTestTexture() &rarr; [BaseTexture](/classes/3.1/BaseTexture)
+### getAlphaTestTexture() &rarr; Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt;
 
 
 ### isReadyForSubMesh(mesh, subMesh, useInstances) &rarr; boolean

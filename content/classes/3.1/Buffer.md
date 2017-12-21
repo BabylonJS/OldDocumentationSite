@@ -9,7 +9,7 @@ class [Buffer](/classes/3.1/Buffer)
 
 ## Constructor
 
-## new [Buffer](/classes/3.1/Buffer)(engine, data, Float32Array, updatable, stride, postponeInternalCreation, instanced)
+## new [Buffer](/classes/3.1/Buffer)(engine, data, updatable, stride, postponeInternalCreation, instanced)
 
 
 
@@ -17,14 +17,11 @@ class [Buffer](/classes/3.1/Buffer)
  | Name | Type | Description
 ---|---|---|---
  | engine | any | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
  | updatable | boolean | 
  | stride | number | 
 optional | postponeInternalCreation | boolean | 
 ## Members
-
-### Float32Array : ()
-
 
 ### instanceDivisor : number
 
@@ -44,7 +41,7 @@ optional | postponeInternalCreation | boolean |
 ### isUpdatable() &rarr; boolean
 
 
-### getData() &rarr; Nullable&lt;number[]&gt;
+### getData() &rarr; Nullable&lt;FloatArray&gt;
 
 
 ### getBuffer() &rarr; Nullable&lt;WebGLBuffer&gt;
@@ -56,22 +53,24 @@ optional | postponeInternalCreation | boolean |
 ### getIsInstanced() &rarr; boolean
 
 
-### create(data, Float32Array) &rarr; void
+### create(data) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | data | Nullable&lt;number[]&gt; or Float32Array | 
-### update(data, Float32Array) &rarr; void
+optional | data | Nullable&lt;FloatArray&gt; | 
+
+### update(data) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
+
 ### updateDirectly(data, offset, vertexCount) &rarr; void
 
 

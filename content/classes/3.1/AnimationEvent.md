@@ -9,7 +9,7 @@ Composed of a frame, and an action function
 
 ## Constructor
 
-## new [AnimationEvent](/classes/3.1/AnimationEvent)(frame, action, onlyOnce)
+## new [AnimationEvent](/classes/3.1/AnimationEvent)(frame, action, onlyOnce, undefined)
 
 
 
@@ -18,7 +18,6 @@ Composed of a frame, and an action function
 ---|---|---|---
  | frame | number | 
  | action |  | 
-optional | onlyOnce | boolean | 
 ## Members
 
 ### frame : number
@@ -28,6 +27,9 @@ optional | onlyOnce | boolean |
 
 
 ### onlyOnce : boolean
+
+
+### undefined : undefined
 
 
 ### isDone : boolean

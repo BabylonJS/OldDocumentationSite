@@ -50,10 +50,16 @@ class [InternalTexture](/classes/3.1/InternalTexture)
 ### static DATASOURCE_CUBEPREFILTERED : number
 
 
+### static DATASOURCE_RAW3D : number
+
+
 ### isReady : boolean
 
 
 ### isCube : boolean
+
+
+### is3D : boolean
 
 
 ### url : string
@@ -83,10 +89,16 @@ class [InternalTexture](/classes/3.1/InternalTexture)
 ### height : number
 
 
+### depth : number
+
+
 ### baseWidth : number
 
 
 ### baseHeight : number
+
+
+### baseDepth : number
 
 
 ### invertY : boolean
@@ -103,15 +115,16 @@ class [InternalTexture](/classes/3.1/InternalTexture)
 ### incrementReferences() &rarr; void
 
 
-### updateSize(width, height) &rarr; void
+### updateSize(width, height, depth) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | width | number | 
- | height | number | 
+ | width | int | 
+ | height | int | 
+optional | depth | int | 
 ### dispose() &rarr; void
 
 

@@ -960,6 +960,10 @@
                 {
                     "title": "Intermediate Guide for PBT",
                     "filename": "PBT_Writing"
+                },
+                {
+                    "title": "Advanced Guide for PBT",
+                    "filename": "PBT_previous_and_next"
                 }
             ]
         },
@@ -975,6 +979,10 @@
                 {
                     "title": "Interesting Playgrounds",
                     "filename": "playgrounds"
+                },
+                {
+                    "title": "Playground Based Tutorials",
+                    "filename": "PBT"
                 },
                 {
                     "title": "Available Textures in the Playground",

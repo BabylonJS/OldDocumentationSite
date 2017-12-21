@@ -44,6 +44,9 @@ class [WebVRController](/classes/3.1/WebVRController) extends [PoseEnabledContro
 ### defaultModel : [AbstractMesh](/classes/3.1/AbstractMesh)
 
 
+### abstract : ()
+
+
 ### void : ()
 
 

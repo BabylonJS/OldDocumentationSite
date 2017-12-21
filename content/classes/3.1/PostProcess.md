@@ -59,6 +59,9 @@ optional | indexParameters | any |
 ### alphaConstants : [Color4](/classes/3.1/Color4)
 
 
+### animations : [Animation](/classes/3.1/Animation)[]
+
+
 ### enablePixelPerfectMode : boolean
 
 
@@ -79,14 +82,8 @@ optional | indexParameters | any |
 An event triggered when the postprocess is activated.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-### onActivate : (camera: [Camera](/classes/3.1/Camera)) =&gt; void
+### onActivate : Nullable&lt;(camera: [Camera](/classes/3.1/Camera)) =&gt; void&gt;
 
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | camera | [Camera](/classes/3.1/Camera) | 
 
 ### onSizeChangedObservable : [Observable](/classes/3.1/Observable)&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
@@ -204,7 +201,7 @@ optional | onError |  | effect | [Effect](/classes/3.1/Effect) |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | camera | [Camera](/classes/3.1/Camera) | 
+ | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
 optional | sourceTexture | Nullable&lt;[InternalTexture](/classes/3.1/InternalTexture)&gt; | 
 optional | forceDepthStencil | boolean | 
 ### apply() &rarr; Nullable&lt;[Effect](/classes/3.1/Effect)&gt;

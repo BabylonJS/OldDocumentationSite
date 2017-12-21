@@ -127,5 +127,5 @@ class [CSG](/classes/3.1/CSG)
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | material | [Material](/classes/3.1/Material) | 
+ | material | Nullable&lt;[Material](/classes/3.1/Material)&gt; | 
  | scene | [Scene](/classes/3.1/Scene) | 

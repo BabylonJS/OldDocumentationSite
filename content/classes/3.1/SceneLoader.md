@@ -46,6 +46,18 @@ class [SceneLoader](/classes/3.1/SceneLoader)
 ### ISceneLoaderPluginAsync : undefined
 
 
+### ISceneLoaderPluginFactory : undefined
+
+
+### ISceneLoaderPluginAsync : undefined
+
+
+### ISceneLoaderPluginAsync : undefined
+
+
+### ISceneLoaderPluginAsync : undefined
+
+
 ## Methods
 
 ### static GetPluginForExtension(extension) &rarr; ISceneLoaderPlugin
@@ -65,7 +77,7 @@ class [SceneLoader](/classes/3.1/SceneLoader)
  | Name | Type | Description
 ---|---|---|---
  | plugin | ISceneLoaderPlugin or ISceneLoaderPluginAsync | 
-### static ImportMesh(meshNames, rootUrl, sceneFilename, scene, onSuccess, onProgress, onError) &rarr; void
+### static ImportMesh(meshNames, rootUrl, sceneFilename, scene, onSuccess, onProgress, onError, pluginExtension) &rarr; Nullable&lt;ISceneLoaderPlugin&gt;
 
 Import meshes into a scene
 
@@ -78,7 +90,8 @@ Import meshes into a scene
  | scene | [Scene](/classes/3.1/Scene) |  the instance of BABYLON.[Scene](/classes/3.1/Scene) to append to
 optional | onSuccess | Nullable&lt;(meshes: [AbstractMesh](/classes/3.1/AbstractMesh)[], particleSystems: [ParticleSystem](/classes/3.1/ParticleSystem)[], skeletons: [Skeleton](/classes/3.1/Skeleton)[]) =&gt; void&gt; |  a callback with a list of imported meshes, particleSystems, and skeletons when import succeeds
 optional | onProgress | Nullable&lt;(event: ProgressEvent) =&gt; void&gt; |  a callback with a progress event for each file being loaded
-### static Load(rootUrl, sceneFilename, engine, onSuccess, onProgress, onError) &rarr; void
+optional | onError | Nullable&lt;(scene: [Scene](/classes/3.1/Scene), message: string, exception: any) =&gt; void&gt; |  a callback with the scene, a message, and possibly an exception when import fails
+### static Load(rootUrl, sceneFilename, engine, onSuccess, onProgress, onError, pluginExtension) &rarr; Nullable&lt;ISceneLoaderPlugin&gt;
 
 Load a scene
 
@@ -90,12 +103,12 @@ Load a scene
  | engine | [Engine](/classes/3.1/Engine) |  is the instance of BABYLON.[Engine](/classes/3.1/Engine) to use to create the scene
 optional | onSuccess |  | scene | [Scene](/classes/3.1/Scene) | 
 
- |  a callback with a progress event for each file being loaded
+ |  a callback with the scene, a message, and possibly an exception when import fails
 optional | onProgress |  | event | ProgressEvent | 
 optional | onError |  | scene | [Scene](/classes/3.1/Scene) | 
  | message | string | 
 optional | exception | any | 
-### static Append(rootUrl, sceneFilename, scene, onSuccess, onProgress, onError) &rarr; void
+### static Append(rootUrl, sceneFilename, scene, onSuccess, onProgress, onError, pluginExtension) &rarr; Nullable&lt;ISceneLoaderPlugin&gt;
 
 Append a scene
 
@@ -107,7 +120,7 @@ Append a scene
  | scene | [Scene](/classes/3.1/Scene) |  is the instance of BABYLON.[Scene](/classes/3.1/Scene) to append to
 optional | onSuccess |  | scene | [Scene](/classes/3.1/Scene) | 
 
- |  a callback with a progress event for each file being loaded
+ |  a callback with the scene, a message, and possibly an exception when import fails
 optional | onProgress |  | event | ProgressEvent | 
 optional | onError |  | scene | [Scene](/classes/3.1/Scene) | 
  | message | string | 

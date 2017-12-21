@@ -70,7 +70,7 @@ class [OctreeBlock](/classes/3.1/OctreeBlock)
  | Name | Type | Description
 ---|---|---|---
  | frustumPlanes | [Plane](/classes/3.1/Plane)[] | 
- | selection | [SmartArray](/classes/3.1/SmartArray)&lt;T&gt; | 
+ | selection | [SmartArrayNoDuplicate](/classes/3.1/SmartArrayNoDuplicate)&lt;T&gt; | 
 optional | allowDuplicate | boolean | 
 ### intersects(sphereCenter, sphereRadius, selection, allowDuplicate) &rarr; void
 
@@ -81,7 +81,7 @@ optional | allowDuplicate | boolean |
 ---|---|---|---
  | sphereCenter | [Vector3](/classes/3.1/Vector3) | 
  | sphereRadius | number | 
- | selection | [SmartArray](/classes/3.1/SmartArray)&lt;T&gt; | 
+ | selection | [SmartArrayNoDuplicate](/classes/3.1/SmartArrayNoDuplicate)&lt;T&gt; | 
 ### intersectsRay(ray, selection) &rarr; void
 
 
@@ -90,7 +90,7 @@ optional | allowDuplicate | boolean |
  | Name | Type | Description
 ---|---|---|---
  | ray | [Ray](/classes/3.1/Ray) | 
- | selection | [SmartArray](/classes/3.1/SmartArray)&lt;T&gt; | 
+ | selection | [SmartArrayNoDuplicate](/classes/3.1/SmartArrayNoDuplicate)&lt;T&gt; | 
 ### createInnerBlocks() &rarr; void
 
 

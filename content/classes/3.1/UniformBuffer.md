@@ -38,7 +38,7 @@ Wrapper for updateUniform.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | name | string |  Name of the uniform, as used in the uniform block in the shader.
+ | name | string | 
  | matrix | Float32Array | 
 ### updateMatrix2x2 : (name: string, matrix: Float32Array) =&gt; void
 
@@ -261,7 +261,7 @@ Updates the WebGL Uniform [Buffer](/classes/3.1/Buffer) on the GPU.
 If the `dynamic` flag is set to true, no cache comparison is done.
 
 Otherwise, the buffer will be updated only if the cache differs.
-### updateUniform(uniformName, data, Float32Array, size) &rarr; void
+### updateUniform(uniformName, data, size) &rarr; void
 
 Updates the value of an uniform. The `update` method must be called afterwards to make it effective in the GPU.
 
@@ -269,7 +269,7 @@ Updates the value of an uniform. The `update` method must be called afterwards t
  | Name | Type | Description
 ---|---|---|---
  | uniformName | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
  | size | number | 
 ### setTexture(name, texture) &rarr; void
 
@@ -279,8 +279,8 @@ Sets a sampler uniform on the effect.
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | texture | [BaseTexture](/classes/3.1/BaseTexture) | 
-### updateUniformDirectly(uniformName, data, Float32Array) &rarr; void
+ | texture | Nullable&lt;[BaseTexture](/classes/3.1/BaseTexture)&gt; | 
+### updateUniformDirectly(uniformName, data) &rarr; void
 
 Directly updates the value of the uniform in the cache AND on the GPU.
 
@@ -288,7 +288,7 @@ Directly updates the value of the uniform in the cache AND on the GPU.
  | Name | Type | Description
 ---|---|---|---
  | uniformName | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
 ### bindToEffect(effect, name) &rarr; void
 
 Binds this uniform buffer to an effect.

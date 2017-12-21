@@ -157,14 +157,39 @@ The helper is providing a wide range of options during its creation:
 * *cameraContrast*: The value of the contrast to apply to the scene.
 * *toneMappingEnabled*: Specifies wether or not tonemapping should be enabled in the scene.
 
-After creation you can reach all the created elements on the helper:
+For instance to prevent the creation of the Skybox, one would use:
 
 ```javascript
-var helper = scene.createDefaultEnvironment();
-helper.ground. [...]
+var helper = scene.createDefaultEnvironment({
+    createSkybox: false
+});
 ```
 
-The environment helper is relying exclusively on the [BackgroundMaterial](/How_To/environment/BackgroundMaterial.md) to be as efficient as possible.
+This is as simple as enabling ground reflection:
+
+```javascript
+var helper = scene.createDefaultEnvironment({
+    enableGroundMirror: true
+});
+```
+
+After creation you can reach all the created elements on the helper:
+* *rotMesh*: A root node used to group the skybox and the ground to allow transforming them both at once.
+* *skybox*: The Skybox Mesh.
+* *skyboxMaterial*: The Skybox Material.
+* *skyboxTexture*: The Skybox Texture.
+* *ground*: The ground Mesh.
+* *groundMaterial*: The ground Material.
+* *groundTexture*: The ground Texture.
+* *groundMirror*: the ground mirror texture.
+
+So for instance dispose the ground after creation of the environment would be:
+```javascript
+var helper = scene.createDefaultEnvironment();
+helper.ground.dispose();
+```
+
+The environment helper is relying exclusively on the [BackgroundMaterial](/How_To/BackgroundMaterial.md) to be as efficient as possible.
 
 You can see a [live version here](https://www.babylonjs-playground.com/#10D6YT#35)
 

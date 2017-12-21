@@ -24,30 +24,21 @@ class [EffectCreationOptions](/classes/3.1/EffectCreationOptions)
 ### defines : any
 
 
-### fallbacks : [EffectFallbacks](/classes/3.1/EffectFallbacks)
+### fallbacks : Nullable&lt;[EffectFallbacks](/classes/3.1/EffectFallbacks)&gt;
 
 
-### onCompiled : (effect: [Effect](/classes/3.1/Effect)) =&gt; void
+### onCompiled : Nullable&lt;(effect: [Effect](/classes/3.1/Effect)) =&gt; void&gt;
 
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | effect | [Effect](/classes/3.1/Effect) | 
-
-### onError : (effect: [Effect](/classes/3.1/Effect), errors: string) =&gt; void
+### onError : Nullable&lt;(effect: [Effect](/classes/3.1/Effect), errors: string) =&gt; void&gt;
 
 
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | effect | [Effect](/classes/3.1/Effect) | 
- | errors | string | 
 ### indexParameters : any
 
 
 ### maxSimultaneousLights : number
+
+
+### transformFeedbackVaryings : Nullable&lt;string[]&gt;
 
 

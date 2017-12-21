@@ -27,7 +27,7 @@ optional | noMipmap | boolean |
 optional | invertY | boolean | 
 optional | samplingMode | number | 
 optional | onLoad | Nullable&lt;() =&gt; void&gt; | 
-optional | onError | Nullable&lt;(message: string, esception: any) =&gt; void&gt; | 
+optional | onError | Nullable&lt;(message: string, exception: any) =&gt; void&gt; | 
 optional | buffer | any | 
 optional | deleteBuffer | boolean | 
 ## Members
