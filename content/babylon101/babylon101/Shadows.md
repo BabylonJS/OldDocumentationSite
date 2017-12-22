@@ -166,5 +166,21 @@ This property controls the extent to which the shadows fade out at the edge of t
 
 You can find an example here: https://www.babylonjs-playground.com/#Y5IZCF
 
+### Freezing shadows in static world
+
+In case you have a static game world (objects which cast shadows) - there is no need to do the same shadow calculations 60 times per second. It could be enough to create and place a shadowMap only once. This greatly improves performance, allowing higher values of shadowMap's resolution.
+
+Shadow generators can be frozen with:
+
+```javascript
+shadowGenerator.getShadowMap().refreshRate = BABYLON.RenderTargetTexture.REFRESHRATE_RENDER_ONCE;
+```
+
+Ask the light to not recompute shadow position with:
+
+```javascript
+light.autoUpdateExtends = false;
+```
+
 ## Next step
 Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [http://www.html5gamedevs.com/forum/16-babylonjs](http://www.html5gamedevs.com/forum/16-babylonjs). See you there.
