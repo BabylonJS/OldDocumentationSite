@@ -58,8 +58,8 @@ This is the better soften shadow filter but the slower as well. It uses blurred 
 The quality of the blur is defined by the following properties:
 
 * `shadowGenerator.blurScale`: Define the scale used to downscale the shadow map before applying the blur postprocess. By default, the value is 2
-* `shadowGenerator.blurBoxOffset`: Define the offset of the box's edge used to apply the blur. By default, the value is 1 (Meaning the box will go from -1 to 1 in bot direction resulting in 9 values read by the blur postprocess).
-* `shadowGenerator.useKernelBlur`: You can decide to use kernel blur instead of box blur. While a bit more expensive, the quality of the shadow is far better with kernel blur. You can control the kernel size with `shadowGenerator.blurKernel`
+* `shadowGenerator.blurBoxOffset`: Define the offset of the box's edge used to apply the blur. By default, the value is 1 (Meaning the box will go from -1 to 1 in both directions resulting in 9 values read by the blur postprocess).
+* `shadowGenerator.useKernelBlur`: You can decide to use kernel blur instead of box blur. While a bit more expensive, the quality of the shadow is far better with kernel blur. You can control the kernel size with `shadowGenerator.blurKernel`, which default value is 1.
 
 Here is an example of blurred shadows: https://www.babylonjs-playground.com/#IIZ9UU
 
@@ -165,6 +165,22 @@ Depending on how you setup your shadow generator, you could face weird falloff w
 This property controls the extent to which the shadows fade out at the edge of the frustum. It is used only by directional and spot lights. By default, the value is set to 0 (no falloff) and 1.0 (complete falloff).
 
 You can find an example here: https://www.babylonjs-playground.com/#Y5IZCF
+
+### Freezing shadows in static world
+
+In case you have a static game world (objects which cast shadows) - there is no need to do the same shadow calculations 60 times per second. It could be enough to create and place a shadowMap only once. This greatly improves performance, allowing higher values of shadowMap's resolution.
+
+Shadow generators can be frozen with:
+
+```javascript
+shadowGenerator.getShadowMap().refreshRate = BABYLON.RenderTargetTexture.REFRESHRATE_RENDER_ONCE;
+```
+
+Ask the light to not recompute shadow position with:
+
+```javascript
+light.autoUpdateExtends = false;
+```
 
 ## Next step
 Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [http://www.html5gamedevs.com/forum/16-babylonjs](http://www.html5gamedevs.com/forum/16-babylonjs). See you there.
