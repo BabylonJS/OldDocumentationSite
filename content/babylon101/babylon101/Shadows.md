@@ -162,9 +162,9 @@ Depending on how you setup your shadow generator, you could face weird falloff w
  shadowGenerator.frustumEdgeFalloff = 1.0;
 ```
 
-This property controls the extent to which the shadows fade out at the edge of the frustum. It is used only by directional and spot lights. By default, the value is set to 0 (no falloff) and 1.0 (complete falloff).
-
 You can find an example here: https://www.babylonjs-playground.com/#Y5IZCF
+
+This property controls the extent to which the shadows fade out at the edge of the frustum. It is used only by directional and spot lights. By default, the value is set to 0 (no falloff) and 1.0 (complete falloff).
 
 ### Freezing shadows in static world
 
