@@ -18,7 +18,7 @@
 /tutorials/08._special_effects                              /How_To/special_effects
 
 /overviews/debug_layer_features                         /features/playground_debuglayer
-/overviews/Behaviors                                    /features/Behaviours
+/overviews/Behaviors                                    /features/Behaviour
 /overviews/How_Rotations_and_Translations_Work          /features/Position,_Rotation,_Scaling
 /overviews/OcclusionQuery                               /features/OcclusionQuery
 /overviews/WebGL2                                       /features/WebGL2
