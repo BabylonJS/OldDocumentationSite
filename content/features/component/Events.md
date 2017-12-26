@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Event Handling
+title: Event Handling
+abstract: ''
+slug: events
 ---
+
 
 # Event Handling
 

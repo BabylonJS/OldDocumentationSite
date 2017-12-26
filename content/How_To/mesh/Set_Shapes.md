@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22011
 PG_TITLE: 02. Set Shapes
+title: Create Set Shapes
+abstract: ''
+slug: set-shapes
+redirects:
+  - /tutorials/mesh_createxxx_methods_with_options_parameter
 ---
+
 
 # Set Shapes
 

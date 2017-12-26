@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Rotation Conventions
+title: Euler Angles and Quaternions
+abstract: ''
+slug: rotation-conventions
 ---
+
 
 # Rotation Conventions
 

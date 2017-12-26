@@ -1,6 +1,15 @@
 ---
 PG_TITLE: Apply Material to Faces
+title: Apply Material to Individual Faces
+abstract: >-
+  In this tutorial, you will learn how to use the faceUV and faceColors
+  parameters of the MeshBuilder.CreateBox() method in order to set a different
+  texture or color per box face.
+slug: create-box-per-face-textures-and-colors
+redirects:
+  - /tutorials/createbox_per_face_textures_and_colors
 ---
+
 
 # How To Map Material to Individual Mesh Faces
 

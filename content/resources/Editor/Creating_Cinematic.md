@@ -1,3 +1,10 @@
+---
+title: Creating Cinematic
+abstract: ''
+slug: creating-cinematic
+redirects:
+  - /extensions/creating_cinematic
+---
 # Creating Cinematic
 
 ## Setting up cinematic mode

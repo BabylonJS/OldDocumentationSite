@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Dynamic Terrain Examples
+title: Examples
+abstract: ''
+slug: dt-examples
 ---
+
 
 # Dynamic Terrain Examples
 

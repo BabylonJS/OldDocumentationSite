@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To Use PolygonMeshBuilder
+title: Use PolygonMeshBuilder
+abstract: ''
+slug: polygon-mesh-builder
+redirects:
+  - /tutorials/polygonmeshbuilder
 ---
+
 
 # How To Use PolygonMeshBuilder
 

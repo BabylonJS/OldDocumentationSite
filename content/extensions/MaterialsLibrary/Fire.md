@@ -1,3 +1,8 @@
+---
+title: Fire
+abstract: ''
+slug: fire
+---
 # Fire material
 
 ![Fire material](/img/extensions/materials/fire.png)

@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To HighLight
+title: Highlight a Mesh
+abstract: ''
+slug: highlight-layer
+redirects:
+  - /tutorials/highlight_layer
 ---
+
 
 # How To Highlight a Mesh
 

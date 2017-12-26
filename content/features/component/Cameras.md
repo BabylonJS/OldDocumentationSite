@@ -1,6 +1,12 @@
 ---
 PG_TITLE: Cameras
+title: Powerful Camera Types
+abstract: ''
+slug: cameras
+redirects:
+  - /tutorials/how_to_use_virtualjoystickscamera
 ---
+
 # Cameras
 
 There are a range of cameras to use with Babylon.js, Probably the two most used are the universal and arcRotate cameras. As the use of virtual reality increase so will the use of cameras for this purpose.

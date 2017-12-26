@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How to use Reflection probes
+title: How to use Reflection Probes
+abstract: ''
+slug: how-to-use-reflection-probes
+redirects:
+  - /tutorials/how_to_use_reflection_probes
 ---
+
 
 # How to use Reflection probes
 ![Reflection Probes example](/img/reflectionProbe.jpg)

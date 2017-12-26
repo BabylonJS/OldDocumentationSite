@@ -1,3 +1,8 @@
+---
+title: GUIText
+abstract: ''
+slug: guitext
+---
 # GUIText
 
 ## new GUIText(id, options, guimanager, append)

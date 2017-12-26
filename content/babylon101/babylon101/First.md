@@ -1,6 +1,14 @@
 ---
 PG_TITLE: 01. First Steps
+title: First Steps
+abstract: >-
+  Everything in babylon.js is managed inside of a scene. It holds every objects
+  that are going to be used to render your 3D elements.
+slug: first
+redirects:
+  - /tutorials/creating_a_basic_scene
 ---
+
 
 # First Steps
 

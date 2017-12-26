@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To Master the PBR Materials
+title: Master Physically Based Rendering
+abstract: ''
+slug: physically-based-rendering-master
+redirects:
+  - /overviews/physically_based_rendering_master
 ---
+
 
 # How To Master the PBR Materials
 

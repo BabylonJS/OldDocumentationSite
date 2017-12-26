@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Realistic Environments
+title: Realistic Environments
+abstract: ''
+slug: environment
 ---
+
 
 # Realistic Environments
 

@@ -1,6 +1,14 @@
 ---
-PG_TITLE: 04 Position, Rotation and Scaling
+PG_TITLE: '04 Position, Rotation and Scaling'
+title: Position and Rotation
+abstract: >-
+  This tutorial, we are going to learn how to position  and rotate any kind of
+  objects in a 3D scene.
+slug: position
+redirects:
+  - '/tutorials/position,_rotation,_scaling'
 ---
+
 
 # Position, Rotation and Scaling
 

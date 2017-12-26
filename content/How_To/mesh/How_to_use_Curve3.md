@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 25091
 PG_TITLE: How to use Curve3
+title: Draw Curves
+abstract: ''
+slug: how-to-use-curve-3
+redirects:
+  - /tutorials/how_to_use_curve3
 ---
+
 
 # How To Draw Curves
 

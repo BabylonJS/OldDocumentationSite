@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Make 3D Text
+title: 3D Text
+abstract: ''
+slug: 3dtext
 ---
+
 
 # Make 3D Text
 

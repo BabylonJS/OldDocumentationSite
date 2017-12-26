@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Introduction to Colliding Complex Shapes
+title: Collisions Introduction
+abstract: ''
+slug: collide-intro
 ---
+
 
 # Introduction to Colliding Complex Shapes
 

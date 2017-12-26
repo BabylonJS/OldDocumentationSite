@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22491
 PG_TITLE: How to Create Your Own File Importer
+title: Create Your Own File Importer
+abstract: ''
+slug: how-to-create-your-own-file-importer
+redirects:
+  - /tutorials/how_to_create_your_own_file_importer
 ---
+
 
 # How to Create Your Own File Importer
 By default, babylon.js comes with an importer for .babylon files.

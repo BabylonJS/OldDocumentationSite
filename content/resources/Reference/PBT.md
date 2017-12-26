@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Playground Based Tutorials
+title: Playground Based Tutorials
+abstract: ''
+slug: pbt
 ---
+
 
 # A list of Playground Based Tutorials.
 

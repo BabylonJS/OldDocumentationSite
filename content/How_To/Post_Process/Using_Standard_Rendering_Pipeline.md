@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To Use the standard rendering pipeline
+title: Use the standard rendering pipeline
+abstract: ''
+slug: using-standard-rendering-pipeline
+redirects:
+  - /tutorials/using_standard_rendering_pipeline
 ---
+
 
 # Introduction
 

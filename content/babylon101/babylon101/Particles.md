@@ -1,7 +1,17 @@
 ---
 ID_PAGE: 22121
 PG_TITLE: 14. Particles
+title: Particles
+abstract: >-
+  Particles are often small sprites used to simulate hard-to-reproduce phenomena
+  like fire, smoke, water, or abstract visual effects like magic glitter and
+  faery dust.
+slug: particles
+redirects:
+  - /tutorials/12._particles
+  - /tutorials/particles
 ---
+
 # Particles
 
 This tutorial is going to talk about the particle system in BabylonJS. Particles are often small sprites used to simulate hard-to-reproduce phenomena like fire, smoke, water, or abstract visual effects like magic glitter and faery dust.

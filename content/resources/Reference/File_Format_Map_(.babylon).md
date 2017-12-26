@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22661
 PG_TITLE: File Format Map (.babylon)
+title: FileFormat Map (.babylon)
+abstract: ''
+slug: file-format-map-_babylon
+redirects:
+  - /generals/file_format_map_(.babylon)
 ---
+
 **Babylon.js** uses a JSON file format for describing scenes.
 
 You can find the complete loader code here:

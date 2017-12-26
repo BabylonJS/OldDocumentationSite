@@ -1,6 +1,12 @@
 ---
 PG_TITLE: Playground Debuglayer
+title: The Debug Layer
+abstract: ''
+slug: playground-debuglayer
+redirects:
+  - /overviews/debug_layer_features
 ---
+
 
 # Playground Debug Layer
 

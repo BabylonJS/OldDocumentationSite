@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Making a Simple Driven Car
+title: Making a Simple Driven Car
+abstract: ''
+slug: car-driven
 ---
+
 
 # Making a Simple Driven Car
 This is to show a practical use of translate, rotate and  using a parent.

@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22431
 PG_TITLE: How to use PostProcesses
+title: Use PostProcesses
+abstract: ''
+slug: how-to-use-post-processes
+redirects:
+  - /tutorials/how_to_use_postprocesses
 ---
+
 
 # How To Use PostProcess
 Postprocesses allow you to create 2D effects on top of your scene.

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Displays a Path3D Curve
+title: Display Path3D Curve
+abstract: ''
+slug: path-3d
 ---
+
 
 # Displays a Path3D Curve.
 This snippet displays a path3D curve and for on each point its tangent, normal and binormal in red, green and blue respectively. 

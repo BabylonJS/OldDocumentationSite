@@ -1,3 +1,10 @@
+---
+title: Off-Site Tutorials List
+abstract: ''
+slug: offsite-tutorials-list
+redirects:
+  - /generals/offsite_tutorials_list
+---
 # Babylon.js Off-Site Tutorials and Documents
 
 ## Introduction

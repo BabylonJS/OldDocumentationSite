@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22531
 PG_TITLE: How to use Actions
+title: Use Actions
+abstract: ''
+slug: how-to-use-actions
+redirects:
+  - /tutorials/how_to_use_actions
 ---
+
 
 # How to use Actions
 

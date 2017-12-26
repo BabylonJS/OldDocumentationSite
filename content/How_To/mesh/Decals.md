@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 25094
 PG_TITLE: 17. Decals
+title: Use decals
+abstract: ''
+slug: decals
+redirects:
+  - /tutorials/using_decals
 ---
+
 
 # How to Use Decals
 

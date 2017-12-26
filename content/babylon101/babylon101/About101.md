@@ -1,6 +1,12 @@
 ---
 PG_TITLE: About the Course
+title: About This Course
+abstract: ''
+slug: about-101
+redirects:
+  - /generals/a_babylon.js_primer
 ---
+
 
 # The Course
 

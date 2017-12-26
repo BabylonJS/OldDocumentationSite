@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Rotation Around an Axis About a Center of Rotation
+title: Rotate Around an Axis About a Point
+abstract: ''
+slug: pivot
 ---
+
 
 # How To Rotate Around an Axis About a Point
 

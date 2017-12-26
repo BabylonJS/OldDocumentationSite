@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Samples
+title: Introduction to Samples
+abstract: ''
+slug: introduction
 ---
+
 
 # Samples
 

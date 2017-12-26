@@ -1,3 +1,10 @@
+---
+title: How to use BabylonJS in an Ionic Angular app
+abstract: ''
+slug: babylon-js-and-ionic-angular
+redirects:
+  - /tutorials/babylonjs_and_ionic_angular
+---
 # BabylonJS in an Ionic Angular app.
 ## A brief example showing how to use BabylonJS in an Ionic 2 application ##
 

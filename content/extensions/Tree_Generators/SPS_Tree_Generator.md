@@ -1,3 +1,8 @@
+---
+title: SPS Tree Generator
+abstract: ''
+slug: sps-tree-generator
+---
 # SPS Tree Generator
 
 ![Generated Tree ](/img/extensions/trees/genTree.png)

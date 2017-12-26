@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 24833
 PG_TITLE: 07. Babylon.js Advanced Features
+title: Babylon.js Advanced Features
+abstract: ''
+slug: babylon_js-advanced-features
+redirects:
+  - /tutorials/07._babylon.js_advanced_features
+  - /tutorials/babylon.js_advanced_features
 ---
+
 Discover the power of the physics engine and create your own shader.
 
 ** Agenda **

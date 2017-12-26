@@ -1,7 +1,16 @@
 ---
 ID_PAGE: 22011
 PG_TITLE: 02. Set Shapes
+title: Discover Basic Elements
+abstract: >-
+  With babylon.js you can use a lot of different basic 3D elements. They are
+  available by default to help you create cubes, spheres, etc.
+slug: discover-basic-elements
+redirects:
+  - /tutorials/02._discover_basic_elements
+  - /tutorials/discover_basic_elements
 ---
+
 
 # Set Shapes 101
 

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Set Shapes Legacy Method
+title: Create Set Shapes - Legacy
+abstract: ''
+slug: legacy-set
 ---
+
 
 # How To Create Set Shapes using Legacy Method
 

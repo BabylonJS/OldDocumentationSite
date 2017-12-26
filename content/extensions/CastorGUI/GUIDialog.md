@@ -1,3 +1,8 @@
+---
+title: GUIDialog
+abstract: ''
+slug: guidialog
+---
 # GUIDialog
 
 ## new GUIDialog(id, options, guimanager, callback, append)

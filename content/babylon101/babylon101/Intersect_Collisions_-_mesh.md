@@ -1,7 +1,17 @@
 ---
 ID_PAGE: 22101
 PG_TITLE: 11. Intersect Collisions - mesh
+title: Intersect Collisions - mesh
+abstract: >-
+  In dynamic scenes, objects are moving and interacting with each other. To get
+  the best rendering, you will want to know when your meshes are in contact with
+  each other. In this tutorial, you will discover how the collision system
+  works.
+slug: intersect-collisions-mesh
+redirects:
+  - /tutorials/intersect_collisions_-_mesh
 ---
+
 # Mesh Collisions
 
 In dynamic scenes, objects are moving and interacting with each other. To get the best rendering, you will want to know when your meshes are in contact with each other. In this tutorial, we are going to discover how the collision system works.

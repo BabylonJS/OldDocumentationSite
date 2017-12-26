@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Starter Guide for Writing Playground Based Tutorials
+title: Starter Guide for PBT
+abstract: ''
+slug: hiding-editor-lines
 ---
+
 
 # General Points on Playground Based Tutorial Writing
 

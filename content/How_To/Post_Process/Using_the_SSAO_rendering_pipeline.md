@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 24837
 PG_TITLE: How To Use the SSAO rendering pipeline
+title: Use the SSAO rendering pipeline
+abstract: ''
+slug: using-the-ssao-rendering-pipeline
+redirects:
+  - /tutorials/using_the_ssao_rendering_pipeline
 ---
+
 
 # How To Use the SSAO rendering pipeline
 

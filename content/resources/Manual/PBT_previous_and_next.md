@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Advanced Guide for Writing Playground Based Tutorials
+title: Advanced Guide for PBT
+abstract: ''
+slug: pbt-previous-and-next
 ---
+
 
 # General Points on Playground Based Tutorial Writing
 

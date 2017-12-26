@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To Create a Custom Loading Screen
+title: Create a custom loading screen
+abstract: ''
+slug: creating-a-custom-loading-screen
+redirects:
+  - /tutorials/creating_a_custom_loading_screen
 ---
+
 
 # How To Create a Custom Loading Screen
 

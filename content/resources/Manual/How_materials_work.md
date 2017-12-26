@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How Materials Work
+title: How materials work
+abstract: ''
+slug: how-materials-work
+redirects:
+  - /tutorials/how_materials_work
 ---
+
 
 # How Materials Work
 

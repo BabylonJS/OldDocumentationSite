@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Vertical Wave with Vertex Shader
+title: A Vertical Wave with Shader Code
+abstract: ''
+slug: writing-1
 ---
+
 
 # Vertical Wave with Vertex Shader
 

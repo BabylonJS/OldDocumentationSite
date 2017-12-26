@@ -1,7 +1,17 @@
 ---
 ID_PAGE: 22131
 PG_TITLE: 15. Environment
+title: Environment
+abstract: >-
+  This tutorial talk about scene environment factors and effects. We will start
+  off with simple scene clearColor (background color), then talk briefly about
+  scene ambientColor, then on to 6-texture skyboxes, and then fog to give an
+  illusion of depth to your scenes.
+slug: environment
+redirects:
+  - /tutorials/environment
 ---
+
 # Environment
 
 You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive How_To that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.

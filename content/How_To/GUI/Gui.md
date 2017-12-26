@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To Use Babylon.GUI
+title: Use the Babylon GUI
+abstract: ''
+slug: gui
+redirects:
+  - /overviews/gui
 ---
+
 
 # How To Use Babylon.GUI
 

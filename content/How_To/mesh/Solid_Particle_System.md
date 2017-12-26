@@ -1,3 +1,11 @@
+---
+title: Use the Solid Particle System
+abstract: ''
+slug: solid-particle-system
+redirects:
+  - /overviews/solid_particle_system
+  - /features/solid_particle_system
+---
 # Solid Particle System (SPS)
 
 ## Introduction

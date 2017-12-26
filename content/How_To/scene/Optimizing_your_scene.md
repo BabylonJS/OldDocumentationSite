@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To Optimize Your Scene
+title: Optimize your scene
+abstract: ''
+slug: optimizing-your-scene
+redirects:
+  - /tutorials/optimizing_your_scene
 ---
+
 
 # How To Optimize Your Scene
 

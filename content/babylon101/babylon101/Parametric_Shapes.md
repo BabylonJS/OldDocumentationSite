@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 24847
 PG_TITLE: 03. Parametric Shapes
+title: Parametric Shapes
+abstract: >-
+  Parametric shapes are a special kind of meshes. Their final shape depend upon
+  some parameters. You can create a ribon using this for instance.
+slug: parametric-shapes
+redirects:
+  - /tutorials/parametric_shapes
 ---
+
 
 # Parametric Shapes 101
 

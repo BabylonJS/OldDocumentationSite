@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How To Use a Parent
+title: Use a Parent
+abstract: ''
+slug: parenting
 ---
+
 
 # How To Use a Parent
 

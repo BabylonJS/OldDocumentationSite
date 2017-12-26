@@ -1,6 +1,12 @@
 ---
 PG_TITLE: Customize The Debug Layer
+title: Customize The Debug Layer
+abstract: ''
+slug: customize-debug-layer
+redirects:
+  - /overviews/customize_debug_layer
 ---
+
 
 # Customize The Debug Layer
 

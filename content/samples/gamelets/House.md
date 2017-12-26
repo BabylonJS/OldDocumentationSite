@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Build a House from Plans
+title: Build a House from a Floorplan
+abstract: ''
+slug: house
 ---
+
 
 # Build a House from Plans.
 

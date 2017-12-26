@@ -1,3 +1,10 @@
+---
+title: Creating Particle Systems
+abstract: ''
+slug: creating-particle-systems
+redirects:
+  - /extensions/creating_particle_systems
+---
 # Creating Particles Systems
 
 ## Adding particles systems

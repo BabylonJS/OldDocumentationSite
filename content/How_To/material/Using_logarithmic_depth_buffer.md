@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How To Use Logarithmic Depth Buffer
+title: Use Logarithmic Depth Buffer
+abstract: ''
+slug: using-logarithmic-depth-buffer
+redirects:
+  - /tutorials/using_logarithmic_depth_buffer
 ---
+
 
 # How To Use Logarithmic Depth Buffer
 Pretty much every 3D programmer runs into depth buffer issues sooner or later. 

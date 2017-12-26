@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Putting Shader Code in BabylonJS
+title: Put Shader Code in BJS
+abstract: ''
+slug: putting
 ---
+
 
 # Putting Shader Code in BabylonJS
 Here are four ways of putting shader code into your scene:

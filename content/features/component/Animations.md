@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Animation of Objects
+title: Animation of Objects
+abstract: ''
+slug: animations
 ---
+
 
 # Animation
 

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Using Sliders with Playground Based Tutorials
+title: Using a Slider Guide for PBT
+abstract: ''
+slug: pbt-slider
 ---
+
 
 # General Points on Playground Based Tutorial Writing
 

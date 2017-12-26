@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Slow Particles
+title: Slow Particle Collisions
+abstract: ''
+slug: slow-collide
 ---
+
 
 # Slow Particles
 

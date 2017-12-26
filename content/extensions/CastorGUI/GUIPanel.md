@@ -1,3 +1,8 @@
+---
+title: GUIPanel
+abstract: ''
+slug: guipanel
+---
 # GUIPanel
 
 ## new GUIPanel(id, options, guimanager, append)

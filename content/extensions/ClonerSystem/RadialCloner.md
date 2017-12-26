@@ -1,3 +1,8 @@
+---
+title: Radial Cloner
+abstract: ''
+slug: radial-cloner
+---
 # RadialCloner
 
 ![idpic1](/img/extensions/clonerSystem/radialCloner.jpg "RadialCloner's from left to right: aligned, unaligned, aligned clones")

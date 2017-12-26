@@ -1,3 +1,8 @@
+---
+title: GUIFieldset
+abstract: ''
+slug: guifieldset
+---
 # GUIFieldset
 
 ## new GUIFieldset(id, options, guimanager, append)

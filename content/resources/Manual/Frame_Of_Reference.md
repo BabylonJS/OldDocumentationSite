@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Frame of Reference
+title: Frame of Reference
+abstract: ''
+slug: frame-of-reference
 ---
+
 
 # Frame of Reference
 

@@ -1,3 +1,8 @@
+---
+title: GUITextarea
+abstract: ''
+slug: guitextarea
+---
 # GUITextarea
 
 ## new GUITextarea(id, options, guimanager, append)

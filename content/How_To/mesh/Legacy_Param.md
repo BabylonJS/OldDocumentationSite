@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Parametric Shapes Legacy Method
+title: Create Parametric Shapes - Legacy
+abstract: ''
+slug: legacy-param
 ---
+
 
 # How To Create Parametric Shapes using Legacy Method
 

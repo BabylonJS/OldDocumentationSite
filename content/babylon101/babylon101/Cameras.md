@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 22061
 PG_TITLE: Cameras
+title: Cameras
+abstract: >-
+  To be able to see your 3D objects you have to set a camera. You position this
+  camera in the scene and you define the direction where it 'looks'.
+slug: cameras
+redirects:
+  - /tutorials/cameras
 ---
+
 # Cameras
 
 Of the many cameras available in Babylon.js the two most use are probably - the Universal Camera used for First Person Movement and the Arc Rotate Camera which is an orbital camera. Though with the advent of WebVR this may change.

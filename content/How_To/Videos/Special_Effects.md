@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 24834
 PG_TITLE: 08. Special Effects
+title: Special Effects
+abstract: ''
+slug: special-effects
+redirects:
+  - /tutorials/08._special_effects
+  - /tutorials/special_effects
 ---
+
 Get a look at shadows, lens flares, bones, and physics.
 
 ** Agenda **

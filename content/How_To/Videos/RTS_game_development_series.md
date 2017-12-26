@@ -1,3 +1,10 @@
+---
+title: Realtime RTS game development series with Babylon.js
+abstract: ''
+slug: rts-game-development-series
+redirects:
+  - /tutorials/rts_game_development_series
+---
 Hello, my name is Nikos and I run a YouTube channel catering for programmers.
 
 Have you ever wanted to build an awesome RTS game using Babylon.js?

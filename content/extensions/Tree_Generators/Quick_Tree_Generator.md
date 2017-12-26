@@ -1,3 +1,8 @@
+---
+title: Quick Tree Generator
+abstract: ''
+slug: quick-tree-generator
+---
 # Quick Tree Generator
 
 ![Generated Tree ](/img/extensions/trees/quick1.png)

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: A Wide Range of Mesh Types
+title: A Range of Meshes
+abstract: ''
+slug: shapes
 ---
+
 
 # Meshes
 

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How Materials are Applied to Vertices
+title: How Materials are Applied to Vertices
+abstract: ''
+slug: facets
 ---
+
 
 # Materials and Vertices
 

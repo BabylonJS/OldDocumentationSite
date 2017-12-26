@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22441
 PG_TITLE: How to use PostProcessRenderPipeline
+title: Use PostProcessRenderPipeline
+abstract: ''
+slug: how-to-use-post-process-render-pipeline
+redirects:
+  - /tutorials/how_to_use_postprocessrenderpipeline
 ---
+
 
 # How to use PostProcessRenderPipeline
 Post Process Renders pipelines allow you to create a chain of post processes and attach it to a camera.

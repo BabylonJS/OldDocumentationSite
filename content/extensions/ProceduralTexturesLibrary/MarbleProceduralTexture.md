@@ -1,3 +1,8 @@
+---
+title: Marble
+abstract: ''
+slug: marble-procedural-texture
+---
 # Marble Procedural texture
 
 ![Marble Procedural texture](/img/extensions/proceduraltextures/marblept.png)

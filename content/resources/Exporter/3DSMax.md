@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 20
 PG_TITLE: 3DSMax
+title: 3DSMax
+abstract: ''
+slug: 3dsmax
+redirects:
+  - /exporters/3dsmax
 ---
+
 # How To Install the 3DS Max plugin 
 
 The plugin is designed for 3DS Max 2015 or later. To download it, go to the Github project (https://github.com/BabylonJS/Exporters/tree/master/3ds%20Max).  

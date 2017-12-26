@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Minimising Vertices in a Mesh
+title: Minimise Vertices
+abstract: ''
+slug: minimise-vertices
 ---
+
 
 # Minimising Mesh Vertices
 

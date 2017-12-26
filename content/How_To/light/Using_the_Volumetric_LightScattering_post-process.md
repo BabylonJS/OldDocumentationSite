@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 24840
 PG_TITLE: Using the Volumetric LightScattering post-process
+title: Use the Volumetric LightScattering post-process
+abstract: ''
+slug: using-the-volumetric-light-scattering-post-process
+redirects:
+  - /tutorials/using_the_volumetric_lightscattering_post-process
 ---
+
 
 # How To Use the Volumetric LightScattering post-process
 BABYLON.VolumetricLightScatteringPostProcess is a post-process that will compute the light scattering according to a light source mesh.

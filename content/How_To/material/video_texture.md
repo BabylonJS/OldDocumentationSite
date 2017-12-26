@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How To Add Video as a Texture
+title: Add Video Texture
+abstract: ''
+slug: video-texture
 ---
+
 
 # How To Add Video as a Texture
 

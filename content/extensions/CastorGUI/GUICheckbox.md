@@ -1,3 +1,8 @@
+---
+title: GUICheckbox
+abstract: ''
+slug: guicheckbox
+---
 # GUICheckbox
 
 ## new GUICheckbox(id, options, guimanager, callback, append)

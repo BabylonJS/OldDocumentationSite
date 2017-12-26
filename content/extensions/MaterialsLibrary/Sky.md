@@ -1,3 +1,8 @@
+---
+title: Sky
+abstract: ''
+slug: sky
+---
 # Sky material
 
 ![Sky Material](/img/extensions/materials/sky.png)

@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 25096
-PG_TITLE: How to dynamically morph a mesh 
+PG_TITLE: How to dynamically morph a mesh
+title: Dynamically morph a mesh
+abstract: ''
+slug: how-to-dynamically-morph-a-mesh
+redirects:
+  - /tutorials/how_to_dynamically_morph_a_mesh
 ---
+
 
 # What is morphing ?
 

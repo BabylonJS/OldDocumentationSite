@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Parametric Shapes
+title: Create Parametric Shapes
+abstract: ''
+slug: parametric-shapes
 ---
+
 
 
 # Parametric Shapes

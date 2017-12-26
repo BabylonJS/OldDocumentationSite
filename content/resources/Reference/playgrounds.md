@@ -1,6 +1,12 @@
 ---
 PG_TITLE: Interesting Playgrounds
+title: Interesting Playgrounds
+abstract: ''
+slug: playgrounds
+redirects:
+  - /generals/playgrounds
 ---
+
 
 
 In this page, you can discover interesting playground done by the community.

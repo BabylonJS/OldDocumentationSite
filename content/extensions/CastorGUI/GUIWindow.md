@@ -1,3 +1,8 @@
+---
+title: GUIWindow
+abstract: ''
+slug: guiwindow
+---
 # GUIWindow
 
 ## new GUIWindow(id, imageUrl, options, guimanager)

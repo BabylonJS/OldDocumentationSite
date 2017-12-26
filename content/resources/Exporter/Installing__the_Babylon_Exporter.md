@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 24821
 PG_TITLE: Installing the Babylon Exporter
+title: Blender - How To Install the Exporter
+abstract: ''
+slug: installing-the-babylon-exporter
+redirects:
+  - /exporters/installing__the_babylon_exporter
 ---
+
 ### Loading Babylon Exporter addon into Blender ###
 
 **A. Getting the files**

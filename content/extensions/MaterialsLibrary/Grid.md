@@ -1,3 +1,8 @@
+---
+title: Grid
+abstract: ''
+slug: grid
+---
 # Grid material
 
 ![Grid Material](/img/extensions/materials/grid.png)

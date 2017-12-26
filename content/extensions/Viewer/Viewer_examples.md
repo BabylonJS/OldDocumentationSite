@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Viewer examples
+title: Viewer examples
+abstract: ''
+slug: viewer-examples
 ---
+
 
 # Viewer examples
 

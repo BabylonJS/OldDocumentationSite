@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Lights and Shadows
+title: Light and Shadow Effects
+abstract: ''
+slug: lights
 ---
+
 
 # Lights and Shadows
 Lights are of course necessary to see the meshes and affect brightness and colour. All meshes will be lit by a light unless specifically excluded from being lit. Light will pass through all meshes and will produce shadows only when shadow generation is set on the mesh. The default number of lights allowed is four but this can be increased. 

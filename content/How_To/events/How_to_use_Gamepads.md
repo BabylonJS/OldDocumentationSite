@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How to use GamePads
+title: Use GamePads
+abstract: ''
+slug: how-to-use-gamepads
 ---
+
 
 # Gamepad Manager
 First create a GamepadManager:

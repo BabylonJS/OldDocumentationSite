@@ -1,6 +1,10 @@
 ---
 PG_TITLE: BabylonJS Constants
+title: BJS Code Constants
+abstract: ''
+slug: constants
 ---
+
 
 # BabylonJS Constants
 

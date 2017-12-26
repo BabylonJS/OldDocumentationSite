@@ -1,6 +1,12 @@
 ---
 PG_TITLE: Behavior
+title: Behaviors
+abstract: ''
+slug: behaviour
+redirects:
+  - /overviews/behaviors
 ---
+
 
 # Behavior
 

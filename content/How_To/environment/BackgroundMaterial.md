@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Background Material
+title: Background Material
+abstract: ''
+slug: background-material
 ---
+
 
 # Background Material
 

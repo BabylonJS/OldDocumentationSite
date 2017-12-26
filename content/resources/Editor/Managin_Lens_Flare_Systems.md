@@ -1,3 +1,10 @@
+---
+title: Managing Lens Flare Systems
+abstract: ''
+slug: managin-lens-flare-systems
+redirects:
+  - /extensions/managin_lens_flare_systems
+---
 # Creating Lens Flare Systems
 
 ## Adding a lens flare system

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How To Use a Pivot
+title: Set and Use a Pivot
+abstract: ''
+slug: pivots
 ---
+
 
 # A Pivot
 

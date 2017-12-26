@@ -1,6 +1,13 @@
 ---
-PG_TITLE: How To Apply Bumps, Opacity and Tiling
+PG_TITLE: 'How To Apply Bumps, Opacity and Tiling'
+title: 'Apply Bumps, Opacity and Tiling'
+abstract: ''
+slug: more-materials
+redirects:
+  - /tutorials/01._advanced_texturing
+  - /tutorials/advanced_texturing
 ---
+
 
 # How To Apply Bumps, Opacity and Tiling
 A range of effects can be achieved with textures using a few extra lines of code.

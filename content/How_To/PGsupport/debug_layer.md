@@ -1,6 +1,12 @@
 ---
 PG_TITLE: The Debug Layer
+title: Display and Use the Debug Layer
+abstract: ''
+slug: debug-layer
+redirects:
+  - /overviews/using_the_debuglayer
 ---
+
 
 # How to Display and Use The Debug Layer
 

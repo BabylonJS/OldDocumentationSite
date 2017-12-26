@@ -1,7 +1,16 @@
 ---
 ID_PAGE: 22071
 PG_TITLE: 06. Lights
+title: Lights
+abstract: >-
+  Lights are used to produce the diffuse and specular color received by each
+  pixel. This color is then used by materials to determine the final color of
+  every pixel.
+slug: lights
+redirects:
+  - /tutorials/lights
 ---
+
 
 # Lights
 Lights are used, as you would expect, to affect how meshes are seen, in terms of both illumination and colour. 

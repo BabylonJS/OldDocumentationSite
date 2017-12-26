@@ -1,3 +1,8 @@
+---
+title: Export Panels
+abstract: ''
+slug: exporter
+---
 
 **Note:** The scene exporter panel is the primary toolkit interface. It must be opened or docked to enable the toolkit features during project development.
 

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How To Sequence Animations
+title: Sequence Animations
+abstract: ''
+slug: sequence
 ---
+
 
 # How To Sequence Animations
 One straight forward method of combining a number of clips to form a cartoon is to give start times to each animation clip.

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Textures Available To the  Playground
+title: Available Textures in the Playground
+abstract: ''
+slug: playground-textures
 ---
+
 
 # Textures Available To the Playground
 

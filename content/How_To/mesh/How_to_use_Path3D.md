@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 25090
 PG_TITLE: How to use Path3D
+title: Use Path3D
+abstract: ''
+slug: how-to-use-path-3d
+redirects:
+  - /tutorials/how_to_use_path3d
 ---
+
 
 # How To Use Path3D
 

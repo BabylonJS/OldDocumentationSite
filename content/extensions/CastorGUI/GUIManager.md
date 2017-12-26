@@ -1,3 +1,8 @@
+---
+title: GUIManager
+abstract: ''
+slug: guimanager
+---
 # GUIManager
 
 ## new GUIManager(canvas, css)

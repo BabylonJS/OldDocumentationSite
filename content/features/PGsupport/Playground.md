@@ -1,6 +1,12 @@
 ---
 PG_TITLE: The Playground
+title: Introduction to the Playground
+abstract: ''
+slug: playground
+redirects:
+  - /generals/the_playground_tutorial
 ---
+
 
 # The Playground
 

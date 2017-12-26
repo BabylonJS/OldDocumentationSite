@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Simple Particle Collisions Using a Grid
+title: Simple Particle Collisions on a Grid
+abstract: ''
+slug: grid-moves
 ---
+
 
 # Simple Particle Collisions Using a Grid
 

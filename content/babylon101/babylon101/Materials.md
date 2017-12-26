@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 22051
 PG_TITLE: 05. Materials
+title: Materials
+abstract: >-
+  Materials are the basis of how your meshes look like. It is used to define a
+  color or a texture on a 3D Object for instance.
+slug: materials
+redirects:
+  - /tutorials/materials
 ---
+
 
 # Materials
 Materials allow you to cover your meshes in color and texture and they need light to be seen. One material can be used to cover as many meshes as you wish.

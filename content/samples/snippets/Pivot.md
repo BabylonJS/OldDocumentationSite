@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Centres of Rotation and Enlargement
+title: Placing a Pivot
+abstract: ''
+slug: pivot
 ---
+
 
 # Rotating and Enlarging Relative to a Centre.
 The following two code snippets give the opportunity to place a centre of rotation or enlargement, or pivot, at any time and have a mesh rotate or enlarge relative to that centre.

@@ -1,3 +1,10 @@
+---
+title: How to use Babylon.js with ReactJS
+abstract: ''
+slug: babylon-js-and-react-js
+redirects:
+  - /how_to/babylonjs_and_reactjs
+---
 # BabylonJS with ReactJS.
 ## A brief example showing how to use BabylonJS with ReactJS ##
 

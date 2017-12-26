@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Show Mesh Vertex Normals
+title: Show Vertex Normals
+abstract: ''
+slug: normals
 ---
+
 
 # Show Mesh Vertex Normals
 This snippet allows you to add lines showing the normals for each vertex of a mesh. The colour and size of the lines can be set.

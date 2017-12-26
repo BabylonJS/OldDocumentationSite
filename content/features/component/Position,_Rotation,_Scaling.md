@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 22041
-PG_TITLE: 04. Position, Rotation, Scaling
+PG_TITLE: '04. Position, Rotation, Scaling'
+title: 'Positioning, Rotating, Scaling'
+abstract: ''
+slug: position_-rotation_-scaling
+redirects:
+  - /overviews/how_rotations_and_translations_work
+  - '/tutorials/position,_rotate,_translate_and_spaces'
 ---
+
 # Positioning, Rotating and Scaling 
 
 There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/features/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 

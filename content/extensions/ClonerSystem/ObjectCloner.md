@@ -1,3 +1,8 @@
+---
+title: Object Cloner
+abstract: ''
+slug: object-cloner
+---
 
 
 # ObjectCloner

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How To Update Vertices
+title: Update Vertices
+abstract: ''
+slug: updating-vertices
 ---
+
 
 # How To Update Vertices
 

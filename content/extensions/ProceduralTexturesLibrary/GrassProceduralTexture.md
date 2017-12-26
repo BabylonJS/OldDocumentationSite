@@ -1,3 +1,8 @@
+---
+title: Grass
+abstract: ''
+slug: grass-procedural-texture
+---
 # Grass Procedural texture
 
 ![Grass Procedural texture](/img/extensions/proceduraltextures/grasspt.png)

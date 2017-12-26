@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 25089
 PG_TITLE: Bones influences per vertex
+title: 3DMAX Reduce Bone Influence Count
+abstract: ''
+slug: bones-influences-per-vertex
+redirects:
+  - /exporters/bones_influences_per_vertex
 ---
+
 This is a common error you may have when working with bones:
 
 *"Too many bones influences per vertex: 5. Babylon.js only support 4 bones influences per vertex."*

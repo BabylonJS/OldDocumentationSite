@@ -1,3 +1,8 @@
+---
+title: Random Effector
+abstract: ''
+slug: random-effector
+---
 # RandomEffector
 
 Each Cloner can have a set of Effectors assigned. At this time of writing, there is only one Effector available, the RandomEffector.

@@ -1,3 +1,8 @@
+---
+title: GUIColor
+abstract: ''
+slug: guicolor
+---
 # GUIColor
 
 ## new GUIColor(id, options, guimanager, callback, append)

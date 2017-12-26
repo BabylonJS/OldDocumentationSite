@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 22111
 PG_TITLE: 12. Picking Collisions
+title: Picking Collisions
+abstract: >-
+  With babylon.js, you can easily know which object has been picked when the
+  user clic anywhere on the scene.
+slug: picking-collisions
+redirects:
+  - /tutorials/picking_collisions
 ---
+
 # Picking Collisions
 
 In picking an object with your mouse the main difficulty is to click on a 3D object whereas your screen is a flat 2D display.

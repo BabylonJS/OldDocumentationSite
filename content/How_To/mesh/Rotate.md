@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How To Use Translations and Rotations
+title: Use Translations and Rotations
+abstract: ''
+slug: rotate
 ---
+
 
 # How To Use Translations and Rotations
 

@@ -1,6 +1,10 @@
 ---
 PG_TITLE: FrontUV and BackUV
+title: Apply Different Material to Front and Back
+abstract: ''
+slug: frontand-back-uv
 ---
+
 
 # How to Have Different Textures on the Front and Back of a Mesh
 

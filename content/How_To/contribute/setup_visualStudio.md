@@ -1,6 +1,58 @@
 ---
-Setup Visual Studio to contribute to Babylon.js
+'0': S
+'1': e
+'2': t
+'3': u
+'4': p
+'5': ' '
+'6': V
+'7': i
+'8': s
+'9': u
+'10': a
+'11': l
+'12': ' '
+'13': S
+'14': t
+'15': u
+'16': d
+'17': i
+'18': o
+'19': ' '
+'20': t
+'21': o
+'22': ' '
+'23': c
+'24': o
+'25': 'n'
+'26': t
+'27': r
+'28': i
+'29': b
+'30': u
+'31': t
+'32': e
+'33': ' '
+'34': t
+'35': o
+'36': ' '
+'37': B
+'38': a
+'39': b
+'40': 'y'
+'41': l
+'42': o
+'43': 'n'
+'44': .
+'45': j
+'46': s
+title: Setup Visual Studio to Contribute to Babylon.js
+abstract: ''
+slug: setup-visual-studio
+redirects:
+  - /generals/setup_visualstudio
 ---
+
 
 ## Why?
 There are many IDE out there you can use to contribute to Babylon.js, Visual Studio being one of them.

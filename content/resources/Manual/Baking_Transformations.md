@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Baking Transformations
+title: Baking Transformations
+abstract: ''
+slug: baking-transformations
 ---
+
 
 # Baking Transformations
 

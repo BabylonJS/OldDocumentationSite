@@ -1,3 +1,10 @@
+---
+title: Use the WebVR Camera
+abstract: ''
+slug: web-vr-camera
+redirects:
+  - /overviews/webvr_camera
+---
 ## Introduction
 
 Since v2.5 Babylon.js support WebVR using the WebVRFreeCamera.

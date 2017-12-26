@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How to Create Polyhedra
+title: Create Polyhedra
+abstract: ''
+slug: polyhedra-shapes
 ---
+
 
 # How To Create Polyhedra
 

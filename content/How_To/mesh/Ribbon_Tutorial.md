@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 25088
 PG_TITLE: Ribbons in Detail
+title: Create a Ribbon
+abstract: ''
+slug: ribbon-tutorial
+redirects:
+  - /tutorials/ribbon_tutorial
 ---
+
 # How To Create a Ribbon
 By looking in detail a clearer understanding can be gained.
 

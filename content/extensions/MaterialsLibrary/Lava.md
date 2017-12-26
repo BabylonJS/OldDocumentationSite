@@ -1,3 +1,8 @@
+---
+title: Lava
+abstract: ''
+slug: lava
+---
 # Lava material
 
 ![Screenshot](/img/extensions/materials/lava.jpg)

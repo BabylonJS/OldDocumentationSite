@@ -1,3 +1,8 @@
+---
+title: Tri-Planar Mapping
+abstract: ''
+slug: tri-planar-mapping
+---
 # Tri-Planar Mapping Material
 
 ![Tri-Planar Mapping Material](/img/extensions/materials/triPlanar.jpg)

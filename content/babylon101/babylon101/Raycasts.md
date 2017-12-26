@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 22151
 PG_TITLE: 13. Raycasts
+title: Raycasts
+abstract: >-
+  Throw a ray in your scene from any point and in any direction to detect
+  objects.
+slug: raycasts
+redirects:
+  - /tutorials/raycasts
 ---
+
 
 # Raycasts 
 

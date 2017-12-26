@@ -1,3 +1,10 @@
+---
+title: Create a Material for the Materials Library
+abstract: ''
+slug: how-to-create-a-material-for-materials-library
+redirects:
+  - /tutorials/how_to_create_a_material_for_materialslibrary
+---
 This tutorial will guide you through the process of creating a material for the [materials library](https://github.com/BabylonJS/Babylon.js/tree/master/materialsLibrary)
 
 ## Setting up environment

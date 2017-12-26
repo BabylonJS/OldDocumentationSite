@@ -1,3 +1,8 @@
+---
+title: Getting Started
+abstract: ''
+slug: projects
+---
 
 Download the [Editor Toolkit](https://github.com/BabylonJS/Exporters/tree/master/Unity%205/EditorToolkit/Redist/Asset%20Store-5.x/BabylonJS) and use **Import Package** to install into current project. Alternatively, you can download the [Source Version](https://github.com/BabylonJS/Exporters/tree/master/Unity%205/EditorToolkit). You just need to copy/paste the **Babylon** folder inside the **Assets** folder of your unity game project folder. Once installed, unity will detect the plugin, compile it and add the toolkit [Export Panels](Exporter) to your project.
 

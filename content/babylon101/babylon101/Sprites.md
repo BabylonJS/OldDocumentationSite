@@ -1,7 +1,18 @@
 ---
 ID_PAGE: 22082
 PG_TITLE: 09. Sprites
+title: Sprites
+abstract: >-
+  Sprites are 2D image/animation, and we will use them to display an image with
+  alpha channel. Sprites always face the camera. Nowadays, sprites are often
+  used to display animated characters, and for particles, and to simulate 3D
+  complex objects like trees.
+slug: sprites
+redirects:
+  - /tutorials/08._sprites
+  - /tutorials/sprites
 ---
+
 
 # Sprites
 

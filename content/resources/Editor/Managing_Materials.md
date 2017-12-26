@@ -1,3 +1,10 @@
+---
+title: Managing Materials
+abstract: ''
+slug: managing-materials
+redirects:
+  - /extensions/managing_materials
+---
 # Managing Materials
 
 ## Managing Materials

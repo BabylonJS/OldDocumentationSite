@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 22081
 PG_TITLE: 08. Animations
+title: Animations
+abstract: >-
+  You use animations to put dynamics in a 3D scene. This tutorial help you learn
+  how to tell your computer to move your meshes in any way you choose.
+slug: animations
+redirects:
+  - /tutorials/animations
 ---
+
 # Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 

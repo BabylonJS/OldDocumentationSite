@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Intermediate Guide for Writing Playground Based Tutorials
+title: Intermediate Guide for PBT
+abstract: ''
+slug: pbt-writing
 ---
+
 
 # General Points on Playground Based Tutorial Writing
 

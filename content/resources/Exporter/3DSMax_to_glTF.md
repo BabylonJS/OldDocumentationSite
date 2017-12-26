@@ -1,3 +1,8 @@
+---
+title: 3DSMax to glTF
+abstract: ''
+slug: 3dsmax-to-gl-tf
+---
 # How to export 3DS MAX scene as glTF
 
 If you have not already installed the babylon plugin for 3DS MAX, you can find all instructions [here](/resources/3dsmax) as well as general information about the plugin.

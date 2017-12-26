@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22581
 PG_TITLE: How To Use SceneOptimizer
+title: Use SceneOptimizer
+abstract: ''
+slug: how-to-use-scene-optimizer
+redirects:
+  - /tutorials/how_to_use_sceneoptimizer
 ---
+
 
 # How To Use SceneOptimizer
 

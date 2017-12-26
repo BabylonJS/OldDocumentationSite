@@ -1,6 +1,10 @@
 ---
 PG_TITLE: Dynamic Terrain
+title: How to Use Dynamic Terrain
+abstract: ''
+slug: dynamic-terrain
 ---
+
 
 # Dynamic Terrain
 

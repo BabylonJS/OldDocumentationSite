@@ -1,6 +1,10 @@
 ---
 PG_TITLE: How To Combine Animations
+title: Combine Animations
+abstract: ''
+slug: combine
 ---
+
 # How To Combine Animations
 
 ## Concurrent

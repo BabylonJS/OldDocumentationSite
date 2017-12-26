@@ -1,3 +1,8 @@
+---
+title: Cloud
+abstract: ''
+slug: cloud-procedural-texture
+---
 # Cloud Procedural texture
 
 ![Cloud Procedural texture](/img/extensions/proceduraltextures/cloudpt.png)
