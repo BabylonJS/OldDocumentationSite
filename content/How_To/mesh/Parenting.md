@@ -5,10 +5,9 @@ abstract: ''
 slug: parenting
 ---
 
-
 # How To Use a Parent
 
-The parent method for these examples can be directly compared to [transforming coordinates](/How_To/Transform_Coordinates) 
+The parent method for these examples can be directly compared to [transforming coordinates](/how-to/mesh/transform-coordinates) 
 
 ## Satellite
 
@@ -50,7 +49,7 @@ The building will be an array of boxes with each box parented to the disc.
 
 # Further Reading
 
-[How To Transform Coordinates](/How_To/Transform_Coordinates)  
-[Frame of Reference](/resources/Frame_Of_Reference)
+[How To Transform Coordinates](/how-to/mesh/transform-coordinates)  
+[Frame of Reference](/resources/manual/frame-of-reference)
 
 

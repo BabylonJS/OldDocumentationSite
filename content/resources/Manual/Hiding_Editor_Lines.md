@@ -5,7 +5,6 @@ abstract: ''
 slug: hiding-editor-lines
 ---
 
-
 # General Points on Playground Based Tutorial Writing
 
 Writing any PBT involves different sections code. These are
@@ -234,8 +233,8 @@ The working playground using the above code.
 
 # Further Reading
 
-[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
-[Slider Guide](/resources/PBT_slider)    
-[Intermediate Guide](/resources/PBT_Writing)  
-[Advanced Guide](/resources/PBT_previous_and_next)
+[Playground Based Tutorial Writing Overview](/how-to/contribute/playground-tutorials)  
+[Slider Guide](/resources/manual/pbt-slider)    
+[Intermediate Guide](/resources/manual/pbt-writing)  
+[Advanced Guide](/resources/manual/pbt-previous-and-next)
 

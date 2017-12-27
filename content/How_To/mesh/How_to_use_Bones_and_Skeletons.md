@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_use_bones_and_skeletons
 ---
 
-
 # Bones and Skeletons
 Babylon.js supports bones animations for your meshes.
 

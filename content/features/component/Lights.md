@@ -5,7 +5,6 @@ abstract: ''
 slug: lights
 ---
 
-
 # Lights and Shadows
 Lights are of course necessary to see the meshes and affect brightness and colour. All meshes will be lit by a light unless specifically excluded from being lit. Light will pass through all meshes and will produce shadows only when shadow generation is set on the mesh. The default number of lights allowed is four but this can be increased. 
 
@@ -43,13 +42,13 @@ This post process effect can produce rays of light as scattered by the meshes it
 
 ## Basic - L1
 
-[Lights 101](/babylon101/Lights)  
-[Shadows 101](/babylon101/shadows)
+[Lights 101](/babylon-101/babylon-101/lights)  
+[Shadows 101](/babylon-101/babylon-101/shadows)
 
 ## More Advanced - L3
 
-[Light Scattering](/How_To/Using_the_Volumetric_LightScattering_post-process)  
-[Shadows Only](/extensions/ShadowOnly)
+[Light Scattering](/how-to/light/using-the-volumetric-light-scattering-post-process)  
+[Shadows Only](/extensions/materials-library/shadow-only)
 
 
    

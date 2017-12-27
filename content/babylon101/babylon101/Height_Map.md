@@ -111,4 +111,4 @@ _Our material, a texture, applied to the plane_
 You may be interested in visiting [**the playground demo**]( https://www.babylonjs-playground.com/?14) that goes with this tutorial.
 
 ## Next step
-Well done! Your scene looks good now, and you can imagine a lot of new landscapes! One more important thing you need to know is [how to create shadows](/babylon101/Shadows). Shadows will give your scene a beautiful rendering effect, so don't forget about them!
+Well done! Your scene looks good now, and you can imagine a lot of new landscapes! One more important thing you need to know is [how to create shadows](/babylon-101/babylon-101/shadows). Shadows will give your scene a beautiful rendering effect, so don't forget about them!

@@ -5,7 +5,6 @@ abstract: ''
 slug: the-templating-system
 ---
 
-
 # The viewer templating system
 
 The viewer has a simple integrated templating system for you to use and extend. Using the templating system you can decide how the viewer components, such as the navbar, the error screen, help screen and so on, look like.

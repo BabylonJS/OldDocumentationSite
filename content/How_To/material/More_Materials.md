@@ -8,7 +8,6 @@ redirects:
   - /tutorials/advanced_texturing
 ---
 
-
 # How To Apply Bumps, Opacity and Tiling
 A range of effects can be achieved with textures using a few extra lines of code.
 

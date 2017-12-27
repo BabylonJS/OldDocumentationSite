@@ -5,7 +5,6 @@ abstract: ''
 slug: transform-node
 ---
 
-
 # A TransformNode
 
 A TransformNode is an object that is not rendered but can be used as a center of transformation. This can decrease memory usage and increase rendering speed compared to using an empty mesh as a parent and is less complicated than using a pivot matrix.
@@ -91,6 +90,6 @@ Obviously scaling has no effect on lights or cameras. Scaling takes place relati
 
 ## More Advanced - L3
 
-[How To Rotate Around an Axis about a Point](/How_To/Pivot)
+[How To Rotate Around an Axis about a Point](/how-to/mesh/pivot)
 
 

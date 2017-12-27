@@ -5,7 +5,6 @@ abstract: ''
 slug: increasing-facets
 ---
 
-
 # Increasing Facets of a Mesh
 
 The effect that a shader, for example, can have on a mesh depends on the number of facets the mesh has. Some meshes 

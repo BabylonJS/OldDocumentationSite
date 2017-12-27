@@ -7,7 +7,6 @@ redirects:
   - /tutorials/using_default_rendering_pipeline
 ---
 
-
 # Introduction
 
 You can find a complete example of this pipeline in our playground : [https://www.babylonjs-playground.com/#5XB8YT#1](https://www.babylonjs-playground.com/#5XB8YT#1)

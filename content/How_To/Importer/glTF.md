@@ -7,7 +7,6 @@ redirects:
   - /extensions/gltf
 ---
 
-
 # glTF File Import
 
 [Demo](http://www.babylonjs-playground.com/#WGZLGJ)

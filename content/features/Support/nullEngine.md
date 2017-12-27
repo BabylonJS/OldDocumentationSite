@@ -5,6 +5,7 @@ slug: null-engine
 redirects:
   - /generals/nullengine
 ---
+
 Starting with Babylon.js v3.1, we introduced the NullEngine which is a version of the main Babylon.js engine but we no need for a webgl capable device.
 
 The NullEngine will not produce any rendering and thus can be used in a node / server side environment.

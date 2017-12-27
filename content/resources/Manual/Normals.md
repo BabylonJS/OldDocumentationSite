@@ -6,7 +6,6 @@ abstract: ''
 slug: normals
 ---
 
-
 # Vertex Normals
 
 Each triangular facet of a mesh comprises three vertices. For an individual facet BabylonJS computes its normals as mathematical normals, at right angle to the facet. However there is no necessity for them to be set at right angles and for curved shapes such as a sphere they are not. In the case of a sphere they are set as the mathematical normal of the sphere surface rather than that of the flat facets of the mesh that create the sphere. Vertex normals are used by the [shader code](/How_To/shaderintro) in calculating how the mesh is lit.

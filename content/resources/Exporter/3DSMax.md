@@ -199,7 +199,7 @@ Animations are exported by sampling keyframes which can generate a lot of data. 
 
 ## Consideration about bones
 
-To ensure that bones are correctly exported, you have to use the Skin modifier. Skin should be positioned at origin. [More info here](/resources/Bones_influences_per_vertex)
+To ensure that bones are correctly exported, you have to use the Skin modifier. Skin should be positioned at origin. [More info here](/resources/exporter/bones-influences-per-vertex)
 
 ## Textures image format
 

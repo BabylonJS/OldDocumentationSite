@@ -7,7 +7,6 @@ redirects:
   - /overviews/using_the_physics_engine
 ---
 
-
 # How to Use a Physics Engine
 
 ## Introduction

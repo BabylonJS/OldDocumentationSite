@@ -7,7 +7,6 @@ redirects:
   - /extensions/obj
 ---
 
-
 # OBJ File Import
 
 [Demo](http://www.babylonjs-playground.com/#28YUR5)

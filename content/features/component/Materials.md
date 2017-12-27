@@ -5,7 +5,6 @@ abstract: ''
 slug: materials
 ---
 
-
 # Materials
 Materials give your meshes color and texture. Materials can be opaque or have different degrees of transparency. When you form one material in Babylon.js it can be used to cover as many meshes as you wish, the only requirement is a light to be seen by. Their reaction to light can be diffuse, specular, emissive or ambient.
 
@@ -97,7 +96,7 @@ does that.
 
 ### More Than One Material on a Mesh
 
-Possible? Of course it is. All meshes can use the [multi-material](/How_To/Multi_Materials) approach of dividing the mesh into submeshes and using a different color or texture on each sub-mesh.
+Possible? Of course it is. All meshes can use the [multi-material](/how-to/material/multi-materials) approach of dividing the mesh into submeshes and using a different color or texture on each sub-mesh.
 
 [Playground Example Multi-Mesh with Color](https://www.babylonjs-playground.com/#NZ4GG2)
 
@@ -151,32 +150,32 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 # Further Reading
 
 ## Basic - L1
-[Materials 101](/babylon101/Materials)  
-[Bumps, Opacity, Tiling textures](/How_To/More_Materials)  
-[Multi Materials](/How_To/Multi_Materials)  
-[Individual Faces](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
-[Video Texture](/How_To/video_texture)
+[Materials 101](/babylon-101/babylon-101/materials)  
+[Bumps, Opacity, Tiling textures](/how-to/material/more-materials)  
+[Multi Materials](/how-to/material/multi-materials)  
+[Individual Faces](/how-to/material/create-box-per-face-textures-and-colors)  
+[Video Texture](/how-to/material/video-texture)
 
 ## Mid Level - L2
-[Using Parallax Mapping](/How_To/Using_parallax_mapping)  
+[Using Parallax Mapping](/how-to/material/using-parallax-mapping)  
 
 ## More Advanced - L3
-[Reflection and Refraction](/How_To/Reflect)  
-[Fresnel Parameters](/How_To/How_to_use_FresnelParameters)  
-[Procedural textures](/How_To/How_to_use_Procedural_Textures)  
-[Transparency and Rendering](/resources/Transparency_and_How_Meshes_Are_Rendered)  
-[DepthRenderer](/How_To/How_to_use_DepthRenderer_to_get_depth_values)  
-[Blending](/How_To/How_to_use_Blend_Modes)  
-[How Materials are Applied to Vertices](/resources/Facets)  
-[How Materials Work](/resources/How_materials_work)  
-[Multi-Platform Compressed Textures](/resources/Multi-Platform_Compressed_Textures)
+[Reflection and Refraction](/how-to/material/reflect)  
+[Fresnel Parameters](/how-to/material/how-to-use-fresnel-parameters)  
+[Procedural textures](/how-to/material/how-to-use-procedural-textures)  
+[Transparency and Rendering](/resources/manual/transparency-and-how-meshes-are-rendered)  
+[DepthRenderer](/how-to/material/how-to-use-depth-renderer-to-get-depth-values)  
+[Blending](/how-to/material/how-to-use-blend-modes)  
+[How Materials are Applied to Vertices](/resources/manual/facets)  
+[How Materials Work](/resources/manual/how-materials-work)  
+[Multi-Platform Compressed Textures](/resources/manual/multi-platform-compressed-textures)
 
 
-[Introduction to Shaders](/resources/ShaderIntro)  
-[How To Put Shader Code in Babylon.js](/How_To/Putting)  
-[How To Use ShaderMaterial](/How_To/Shader_Material)  
-[Example A Vertical Wave with Shader Code](/samples/Writing1)  
-[Example Fireworks with Shader Code](/samples/Writing2)
+[Introduction to Shaders](/resources/manual/shader-intro)  
+[How To Put Shader Code in Babylon.js](/how-to/shaders/putting)  
+[How To Use ShaderMaterial](/how-to/shaders/shader-material)  
+[Example A Vertical Wave with Shader Code](/samples/gamelets/writing-1)  
+[Example Fireworks with Shader Code](/samples/gamelets/writing-2)
 
 
 

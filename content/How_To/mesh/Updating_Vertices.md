@@ -5,7 +5,6 @@ abstract: ''
 slug: updating-vertices
 ---
 
-
 # How To Update Vertices
 
 ## Vertex Data
@@ -68,5 +67,5 @@ vertexData.applyToMesh(customMesh, true);
 # Further Reading
 
 [Custom Meshes](/How_To/Custom.html)  
-[Normals in BJS](/resources/Normals)
+[Normals in BJS](/resources/manual/normals)
 

@@ -3,6 +3,7 @@ title: NPM
 abstract: ''
 slug: npm-support
 ---
+
 ## Introduction
 
 The NPM package manager is one of the best way to define and organize your project's dependencies. Parallel to traditional javascript development (including a script in a 'script' HTML Tag), using npm packages allows you to use tools like Webpack or Browserify to pack your project and (continuously) deliver it.

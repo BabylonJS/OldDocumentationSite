@@ -8,7 +8,6 @@ redirects:
   - /tutorials/caching_resources_in_indexeddb
 ---
 
-
 # How To Optimize Using Cached Resoures
 Starting with the **1.4 release** of Babylon.JS, you can now very easily indicate that you want to **cache the resources associated with your scene/game** inside the local **IndexedDB** of the browser. It can enhance the gamer experience as the JSON and textures files can be directly loaded from the database rather than from the web.
 

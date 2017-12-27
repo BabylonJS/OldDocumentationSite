@@ -166,8 +166,8 @@ var nextAnimation = function() {
 
 ## Basic
 
-[Introduction to Animating](/babylon101/animations)
+[Introduction to Animating](/babylon-101/babylon-101/animations)
 
 ## Advanced
 
-[A Sequence of Animations](/How_To/sequence)  
+[A Sequence of Animations](/how-to/animation/sequence)  

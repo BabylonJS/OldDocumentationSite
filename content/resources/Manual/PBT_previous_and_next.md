@@ -5,7 +5,6 @@ abstract: ''
 slug: pbt-previous-and-next
 ---
 
-
 # General Points on Playground Based Tutorial Writing
 
 Writing any PBT involves different sections code. These are
@@ -271,6 +270,6 @@ The working playground using the above code.
 
 # Further Reading
 
-[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
-[Starter Guide](/resources/hiding_editor_lines)    
-[Intermediate Guide](/resources/PBT_Writing)
+[Playground Based Tutorial Writing Overview](/how-to/contribute/playground-tutorials)  
+[Starter Guide](/resources/manual/hiding-editor-lines)    
+[Intermediate Guide](/resources/manual/pbt-writing)

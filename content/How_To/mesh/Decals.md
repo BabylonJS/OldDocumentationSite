@@ -8,7 +8,6 @@ redirects:
   - /tutorials/using_decals
 ---
 
-
 # How to Use Decals
 
 ![Decal](http://www.babylonjs.com/screenshots/decals.jpg)
@@ -34,5 +33,5 @@ angle|_(number)_ the angle to rotate the decal|0
 
 # Further Reading
 
-[Basic Shapes](/babylon101/Discover_Basic_Elements) 
+[Basic Shapes](/babylon-101/babylon-101/discover-basic-elements) 
  

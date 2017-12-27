@@ -5,6 +5,7 @@ slug: getting-started
 redirects:
   - /extensions/getting_started
 ---
+
 # Getting started
 
 ## The User Interface

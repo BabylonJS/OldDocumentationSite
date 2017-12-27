@@ -10,7 +10,6 @@ redirects:
   - /tutorials/materials
 ---
 
-
 # Materials
 Materials allow you to cover your meshes in color and texture and they need light to be seen. One material can be used to cover as many meshes as you wish.
 
@@ -23,7 +22,7 @@ Whether the material is a color or a texture there are different ways it can rea
 3. Emissive - the color or texture of the material as if self lit;
 4. Ambient - the color or texture of the material lit by the environmental background lighting.
 
-Diffuse and Specular material require a [light source](/features/Lights) to be created.  
+Diffuse and Specular material require a [light source](/features/component/lights) to be created.  
 Ambient color requires the ambient color of the scene to be set, giving the environmental background lighting.
 ```javascript
 scene.ambientColor = new BABYLON.Color3(1, 1, 1);
@@ -151,11 +150,11 @@ materialSphere1.wireframe = true;
 
 
 ## Next step
-Great, your scene is looking better than ever with those materials! Later we will see how to use advanced techniques with materials. But for now, we have to learn [**how to use cameras**](/babylon101/Cameras).
+Great, your scene is looking better than ever with those materials! Later we will see how to use advanced techniques with materials. But for now, we have to learn [**how to use cameras**](/babylon-101/babylon-101/cameras).
 
 # Further Reading
 
-[Materials Overview](/features/Materials)
+[Materials Overview](/features/component/materials)
 
 
 

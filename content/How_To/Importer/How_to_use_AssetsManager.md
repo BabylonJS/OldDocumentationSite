@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_use_assetsmanager
 ---
 
-
 # How To Load Files with Assests Manager
 
 In order to help developers load multiple assets, Babylon.js (starting with version 1.14) introduced the AssetsManager class.

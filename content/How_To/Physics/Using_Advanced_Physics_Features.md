@@ -5,7 +5,6 @@ abstract: ''
 slug: using-advanced-physics-features
 ---
 
-
 # How To Use Advanced Physics Features
 
 ## The Heightmap

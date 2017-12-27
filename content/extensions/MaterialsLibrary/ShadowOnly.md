@@ -3,6 +3,7 @@ title: Shadow Only
 abstract: ''
 slug: shadow-only
 ---
+
 # ShadowOnly material
 
 ## General

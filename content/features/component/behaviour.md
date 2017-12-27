@@ -7,7 +7,6 @@ redirects:
   - /overviews/behaviors
 ---
 
-
 # Behavior
 
 Babylon.js v3.1 introduced a new component based tools: the behaviors.
@@ -39,4 +38,4 @@ Currently the list of behaviors available in babylon.js core are camera behaviou
 
 ## Basic - L1
 
-[Camera Behaviours](/How_To/Camera_Behaviors)
+[Camera Behaviours](/how-to/camera/camera-behaviors)

@@ -8,7 +8,6 @@ redirects:
   - /tutorials/in-browser_mesh_simplification_(auto-lod)
 ---
 
-
 # Simplify a Mesh with Auto-LOD
 
 ## About

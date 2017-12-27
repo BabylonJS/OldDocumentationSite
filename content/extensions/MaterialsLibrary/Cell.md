@@ -3,6 +3,7 @@ title: Cell Shading
 abstract: ''
 slug: cell
 ---
+
 # Cell material
 
 ![Toon material](/img/extensions/materials/toon.png)

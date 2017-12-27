@@ -5,7 +5,6 @@ abstract: ''
 slug: collide-intro
 ---
 
-
 # Introduction to Colliding Complex Shapes
 
 In these tutorials a complex shape is one constructed from spheres of the same size in such a way that any one sphere 

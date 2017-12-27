@@ -5,7 +5,6 @@ abstract: ''
 slug: constants
 ---
 
-
 # BabylonJS Constants
 
 

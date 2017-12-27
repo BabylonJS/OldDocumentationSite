@@ -7,7 +7,6 @@ redirects:
   - /overviews/gui
 ---
 
-
 # How To Use Babylon.GUI
 
 The Babylon.js GUI library is an extension you can use to generate interactive user interface.

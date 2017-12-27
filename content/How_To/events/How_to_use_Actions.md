@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_use_actions
 ---
 
-
 # How to use Actions
 
 Actions are a simple way to add interactions in your scenes. An action is launched when its trigger is fired. For instance, you can specify that when the user clicks (or touches) a mesh, an action is executed.

@@ -5,7 +5,6 @@ abstract: ''
 slug: rotation-conventions
 ---
 
-
 # Rotation Conventions
 
 There are several methods of achieving rotations within BabylonJS all of which use a particular convention.

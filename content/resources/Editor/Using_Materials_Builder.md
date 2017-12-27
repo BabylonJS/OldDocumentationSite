@@ -5,6 +5,7 @@ slug: using-materials-builder
 redirects:
   - /extensions/using_materials_builder
 ---
+
 # Using the Materials Builder
 
 ## Opening the Materials Builder

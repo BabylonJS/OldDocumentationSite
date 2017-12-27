@@ -5,7 +5,6 @@ abstract: ''
 slug: multi-materials
 ---
 
-
 # How To use Multi Materials
 
 A multi-material is used to apply different materials to different parts of the same object as you can see below

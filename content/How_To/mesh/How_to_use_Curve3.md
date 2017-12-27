@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_use_curve3
 ---
 
-
 # How To Draw Curves
 
 If you want to draw a circular path then it easy enough to generate the points, in the XY plane, for this using
@@ -194,7 +193,7 @@ In light blue, these two curves are continued each other and a hermite curve is 
 # Further Reading
 
 # Basic - Level 1
-[How To Create Parametric Shapes](/How_To/parametric_shapes)
+[How To Create Parametric Shapes](/how-to/mesh/parametric-shapes)
 
 ## More Advanced - Level 3
-[How To Use Path3D](/How_To/How_to_use_Path3D)  
+[How To Use Path3D](/how-to/mesh/how-to-use-path-3d)  

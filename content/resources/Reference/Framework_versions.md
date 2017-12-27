@@ -5,6 +5,7 @@ slug: framework-versions
 redirects:
   - /generals/framework_versions
 ---
+
 **Babylon.js** comes with different versions that you can find in the /dist folder of the [repository](https://github.com/BabylonJS/Babylon.js/tree/master/dist):
 
 ## CDN

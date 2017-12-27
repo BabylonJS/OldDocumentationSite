@@ -5,7 +5,6 @@ abstract: ''
 slug: grid-moves
 ---
 
-
 # Simple Particle Collisions Using a Grid
 
 In this case an attempt is made to produce a box that will contain many particles, each a sphere of the same diameter and mass. The idea is for the particles  to move around colliding with each other and the walls of the box, with the speed for each particle along its x axis, along its y axis and along its z axis being equal to the diameter of the particle or zero and for collisions to only take place if particles just touch the walls or each other. 

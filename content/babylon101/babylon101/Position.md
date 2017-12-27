@@ -9,7 +9,6 @@ redirects:
   - '/tutorials/position,_rotation,_scaling'
 ---
 
-
 # Position, Rotation and Scaling
 
 The 101 course only considers the setting of a mesh's _position_, _rotation_ and _scaling_. [Further Reading](#further-reading) will show you a range of methods to translate and rotate a mesh by a given amount.
@@ -27,7 +26,7 @@ In all diagrams and playgrounds X axis is red, Y axis is Green and Z axis is blu
 
 When meshes are created their center is placed at the origin of the **word axes** and their position is always placed relative to the **word axes**.
 
-The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. The centers of rotation and enlargement for a mesh are at the origin of the **local axes**, however by using either a TransformNode or a matrix to set a [pivot point](/How_To/Pivots) they can be changed to that point.
+The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. The centers of rotation and enlargement for a mesh are at the origin of the **local axes**, however by using either a TransformNode or a matrix to set a [pivot point](/how-to/mesh/pivots) they can be changed to that point.
 
 ## Vectors
 
@@ -133,7 +132,7 @@ pilot.rotation.x  =  alpha;
 
 The question now is what to do if you want a sequence of rotations that starts with one about the x axis, then about the y axis then about the z axis?
 
-For **world axes** you use the [rotate method](/features/Position,_Rotation,_Scaling)) For rotations about **local axes** Babylon.js has both the _rotate_ method and _addRotation_ method. 
+For **world axes** you use the [rotate method](/features/component/position_-rotation_-scaling)) For rotations about **local axes** Babylon.js has both the _rotate_ method and _addRotation_ method. 
 
 You can chain a sequence of rotations using the _addRotation_. This method provides for one rotation value about one axis a series of which can be applied from the first to the last as the following example shows.
 
@@ -168,10 +167,10 @@ mesh.scaling = new BABYLON.Vector3(scale_x, scale_y, scale_z);
 
 
 ## Next step
-Now you know how to create and move objects in a scene, but all your meshes have the same 'skin'. Not for long, if you read our next tutorial about [materials](/babylon101/materials).
+Now you know how to create and move objects in a scene, but all your meshes have the same 'skin'. Not for long, if you read our next tutorial about [materials](/babylon-101/babylon-101/materials).
 
 # Further Reading
 
-[Rotate and Translate Overview](/features/Position,_Rotation,_Scaling)  
+[Rotate and Translate Overview](/features/component/position_-rotation_-scaling)  
 
 

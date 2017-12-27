@@ -5,6 +5,7 @@ slug: using-actions-builder
 redirects:
   - /extensions/using_actions_builder
 ---
+
 # Using Actions Builder
 
 ## The Actions Builder tool

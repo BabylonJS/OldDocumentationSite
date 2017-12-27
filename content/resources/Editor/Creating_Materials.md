@@ -5,6 +5,7 @@ slug: creating-materials
 redirects:
   - /extensions/creating_materials
 ---
+
 # Creating Materials
 
 ## Modifying Materials

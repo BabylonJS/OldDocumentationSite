@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_merge_meshes
 ---
 
-
 ## Native Babylon.js function
 
 To easily merge a number of meshes to a single mesh use the static `MergeMeshes` of the `Mesh` class:

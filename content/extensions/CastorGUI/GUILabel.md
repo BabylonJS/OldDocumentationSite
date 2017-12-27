@@ -3,6 +3,7 @@ title: GUILabel
 abstract: ''
 slug: guilabel
 ---
+
 # GUILabel
 
 ## new GUILabel(id, options, guimanager, append)

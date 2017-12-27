@@ -5,7 +5,6 @@ abstract: ''
 slug: sequence
 ---
 
-
 # How To Sequence Animations
 One straight forward method of combining a number of clips to form a cartoon is to give start times to each animation clip.
 
@@ -193,8 +192,8 @@ scene.beginDirectAnimation(spotLights[1], [lightDimmer.clone()], 0, 25 * frameRa
 
 ## Basic
 
-[Introduction to Animating](/babylon101/animations)
+[Introduction to Animating](/babylon-101/babylon-101/animations)
 
 ## Advanced
 
-[A Sequence of Animations](/How_To/combine)   
+[A Sequence of Animations](/how-to/animation/combine)   

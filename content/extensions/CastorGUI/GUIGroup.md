@@ -3,6 +3,7 @@ title: GUIGroup
 abstract: ''
 slug: guigroup
 ---
+
 # GUIGroup
 
 ## new GUIGroup(id, options, guimanager)

@@ -3,6 +3,7 @@ title: Fire
 abstract: ''
 slug: fire-procedural-texture
 ---
+
 # Fire Procedural texture
 
 ![Fire Procedural texture](/img/extensions/proceduraltextures/firept.png)

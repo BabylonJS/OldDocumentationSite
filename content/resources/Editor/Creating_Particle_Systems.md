@@ -5,6 +5,7 @@ slug: creating-particle-systems
 redirects:
   - /extensions/creating_particle_systems
 ---
+
 # Creating Particles Systems
 
 ## Adding particles systems

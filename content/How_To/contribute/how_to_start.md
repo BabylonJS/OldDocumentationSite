@@ -5,6 +5,7 @@ slug: how-to-start
 redirects:
   - /generals/how_to_start
 ---
+
 # How to start
 
 ## Introduction

@@ -5,7 +5,6 @@ abstract: ''
 slug: background-material
 ---
 
-
 # Background Material
 
 ## Introduction

@@ -7,7 +7,6 @@ redirects:
   - /overviews/observables
 ---
 
-
 # How To Use Observables
 
 ## Introduction

@@ -7,7 +7,6 @@ redirects:
   - /tutorials/using_standard_rendering_pipeline
 ---
 
-
 # Introduction
 
 This rendering pipeline tends to simulate a chain of famous post-process effects such as

@@ -5,7 +5,6 @@ abstract: ''
 slug: camera-behaviors
 ---
 
-
 # Apply Camera Behaviors
 
 ## Bouncing behavior

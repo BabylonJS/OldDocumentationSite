@@ -5,7 +5,6 @@ abstract: ''
 slug: house
 ---
 
-
 # Build a House from Plans.
 
 Starting with a polygon as the footprint, a house is built by giving the footprint thickness (ply), extruding and adding door and window spaces at given positions.

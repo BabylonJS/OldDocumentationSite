@@ -5,7 +5,6 @@ abstract: ''
 slug: putting
 ---
 
-
 # Putting Shader Code in BabylonJS
 Here are four ways of putting shader code into your scene:
 

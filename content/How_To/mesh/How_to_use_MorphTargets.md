@@ -7,7 +7,6 @@ redirects:
   - /tutorials/how_to_use_morphtargets
 ---
 
-
 # Morph targets
 
 Morph targets are a new feature introduced with Babylon.js v3.0.

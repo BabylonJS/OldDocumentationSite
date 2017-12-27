@@ -5,7 +5,6 @@ abstract: ''
 slug: the-babylon-viewer
 ---
 
-
 # The Babylon.js viewer extension
 
 ## Why do we need the viewer

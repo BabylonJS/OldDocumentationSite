@@ -5,7 +5,6 @@ abstract: ''
 slug: animations
 ---
 
-
 # Animation
 
 One way to animate things in BabylonJS is to change their properties within a scene.registerBeforeRender or scene.registerAfterRender loop. You will find many of the playground examples within the documentation using this method. However BabylonJS also provides animating methods based on a timed frame system. Given the right data BabylonJS calculates and draws a specific frame of the animation at a specific time independently of the scene rendering rate.
@@ -193,7 +192,7 @@ scene.beginDirectAnimation(target, animations, start frame, end frame, loop);
 
 ## Basic - L1
 
-[Animation 101](/babylon101/Animations)  
+[Animation 101](/babylon-101/babylon-101/animations)  
 [Combining Animations](/How_To/Combine.html)
 
 ## Mid Level - L2

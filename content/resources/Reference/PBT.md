@@ -5,7 +5,6 @@ abstract: ''
 slug: pbt
 ---
 
-
 # A list of Playground Based Tutorials.
 
 | Title| Description | Full Code | Author|

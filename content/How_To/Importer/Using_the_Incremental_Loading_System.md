@@ -8,7 +8,6 @@ redirects:
   - /tutorials/using_the_incremental_loading_system
 ---
 
-
 # How To Use the Incremental Loading System
 
 In order to support incremental loading (introduced by v1.5.0), you just have to go to [this page](https://github.com/BabylonJS/Babylon.js/tree/master/Tools/MakeIncremental) in order to get a tool to convert your .babylon file to a .incremental.babylon file alongside associated resources (_.babylonmeshdata_ and _.babylongeometrydata_ files).

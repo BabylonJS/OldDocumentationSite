@@ -7,11 +7,10 @@ redirects:
   - /overviews/physically_based_rendering_master
 ---
 
-
 # How To Master the PBR Materials
 
 ## Introduction
-After following the [PBR Introduction](/How_To/Physically_Based_Rendering), it is a good time to learn more about the **PBRMaterial**. 
+After following the [PBR Introduction](/how-to/environment/physically-based-rendering), it is a good time to learn more about the **PBRMaterial**. 
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
@@ -22,10 +21,10 @@ This will be the only picture of the documentation. As a **real sample** would b
 The entire documentation should help you deal with most of the PBR Material setup.
 
 ## How to install
-As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](/babylon101/first) in order to create your first page using the framework.
+As the PBR material is embedded in the BabylonJS library, please, follow the [basic tutorial](/babylon-101/babylon-101/first) in order to create your first page using the framework.
 
 ## Why
-After looking at the [PBR Introduction](/How_to/Physically_Based_Rendering) you may want to gain more control or use more features in your material setup like:
+After looking at the [PBR Introduction](/how-to/environment/physically-based-rendering) you may want to gain more control or use more features in your material setup like:
 * Refraction
 * Standard Light Falloff
 * LightMaps
@@ -142,8 +141,8 @@ You can still notice some reflection on your material. This is due to the energy
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
-* [Normal Map](/How_To/more_materials)
-* [Parallax](/How_To/Using_parallax_mapping)
+* [Normal Map](/how-to/material/more-materials)
+* [Parallax](/how-to/material/using-parallax-mapping)
 
 ## LightMaps
 LightMaps are available in the same way they are in the standardMaterial by affecting a texture to the ```lightmapTexture``` property. This can also be used as a shadowMap instead by switching the dedicated control flag ```useLightmapAsShadowmap``` to true.
@@ -207,4 +206,4 @@ Now, increasing the light radius makes this dot wider as you can see on this [De
 This uses internally a lot of approximation like Tan(theta) is almost theta for small angles so if you try to put bigger radius than a tenth of the light distance you will not see the desired effect.
 
 ## Shadows (as the standard material)
-Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/babylon101/shadows);
+Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/babylon-101/babylon-101/shadows);

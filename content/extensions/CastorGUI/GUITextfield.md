@@ -3,6 +3,7 @@ title: GUITextfield
 abstract: ''
 slug: guitextfield
 ---
+
 # GUITextfield
 
 ## new GUITextfield(id, options, guimanager, append)

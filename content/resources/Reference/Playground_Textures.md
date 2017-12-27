@@ -5,7 +5,6 @@ abstract: ''
 slug: playground-textures
 ---
 
-
 # Textures Available To the Playground
 
 This list of files are in the textures folder of the Playground and can be loaded as Textures, CubeTextures or HDRCubeTextures

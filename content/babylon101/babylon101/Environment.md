@@ -107,7 +107,7 @@ skybox.renderingGroupId = 0;
 myMesh.renderingGroupId = 1;
 ```
 
-More info about rendering groups and rendering order can be found [here](/resources/Transparency_and_How_Meshes_Are_Rendered).
+More info about rendering groups and rendering order can be found [here](/resources/manual/transparency-and-how-meshes-are-rendered).
 
 #### Automatic creation
 Now that we understand how a skybox can be created let's move to a simpler way:
@@ -236,8 +236,8 @@ See, we told you it was easy.
 If you want to see and play with the playground scene for this tutorial, you can [**click right here**]( https://www.babylonjs-playground.com/?13).
 
 ## Next step
-You should have a beautiful scene now, but except from your 3D models, your world is pretty flat, and that’s a shame for your scene. So, in our next environment tutorial, we are going to transform your flat ground into beautiful mountains. To learn this, go [here!](/babylon101/Height_Map)
+You should have a beautiful scene now, but except from your 3D models, your world is pretty flat, and that’s a shame for your scene. So, in our next environment tutorial, we are going to transform your flat ground into beautiful mountains. To learn this, go [here!](/babylon-101/babylon-101/height-map)
 
 # Further Reading
 
-[Environment Overview](/features/Environment)
+[Environment Overview](/features/component/environment)

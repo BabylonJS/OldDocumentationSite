@@ -53,7 +53,6 @@ redirects:
   - /generals/setup_visualstudio
 ---
 
-
 ## Why?
 There are many IDE out there you can use to contribute to Babylon.js, Visual Studio being one of them.
 
@@ -83,7 +82,7 @@ This mode is more suitable when you make changes in the library, instead of rely
  * A particular setup of the engine has to be made to make sure it works. 
  * The whole library source files must be accessible and served by the Web Server.
 
-The up-to-date list of the .js files and indications about the Engine's setup can be found [here](/generals/Creating_the_Mini-fied_Version)
+The up-to-date list of the .js files and indications about the Engine's setup can be found [here](/resources/reference/creating-the-mini-fied-version)
 
 
 ## Synopsis
@@ -264,7 +263,7 @@ _TypeScript file_
 
 ---
 
-Create a HTML file that will reference all the .js file of Babylon.js (the list can be found [here](/generals/Creating_the_Mini-fied_Version))
+Create a HTML file that will reference all the .js file of Babylon.js (the list can be found [here](/resources/reference/creating-the-mini-fied-version))
 
 ![VS18](http://i.imgur.com/srkwpF5.png)
 

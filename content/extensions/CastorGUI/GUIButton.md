@@ -3,6 +3,7 @@ title: GUIButton
 abstract: ''
 slug: guibutton
 ---
+
 # GUIButton
 
 ## new GUIButton(id, options, guimanager, callback, append)

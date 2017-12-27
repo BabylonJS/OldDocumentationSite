@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_create_your_own_file_importer
 ---
 
-
 # How to Create Your Own File Importer
 By default, babylon.js comes with an importer for .babylon files.
 

@@ -8,7 +8,6 @@ redirects:
   - /tutorials/mesh_createxxx_methods_with_options_parameter
 ---
 
-
 # Set Shapes
 
 These are shapes that usually already have names in everyday use and their form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.
@@ -234,25 +233,25 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 ## How To Make the Most of Options
 
 [Side Orientation](/babylon101/Discover_Basic_Elements#side-orientation)  
-[Updatable](/How_To/Updating_Vertices)  
-[Face UV and Face Colors](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
-[Front and Back UV](/How_To/FrontandBackUV)
+[Updatable](/how-to/mesh/updating-vertices)  
+[Face UV and Face Colors](/how-to/material/create-box-per-face-textures-and-colors)  
+[Front and Back UV](/how-to/material/frontand-back-uv)
 
 ## Basic - L1
 
-[Mesh Overview](/features/Shapes)  
-[Set Shapes 101](/babylon101/Discover_Basic_Elements)  
-[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
-[Parametric Shapes](/How_To/Parametric_Shapes)  
-[Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
-[Decals](/How_To/Decals) 
+[Mesh Overview](/features/component/shapes)  
+[Set Shapes 101](/babylon-101/babylon-101/discover-basic-elements)  
+[Parametric Shapes 101](/babylon-101/babylon-101/parametric-shapes)  
+[Parametric Shapes](/how-to/mesh/parametric-shapes)  
+[Polyhedra Shapes](/how-to/mesh/polyhedra-shapes)  
+[Decals](/how-to/mesh/decals) 
 
 ## Mid Level - L2
  
-[Ribbons In Detail](/How_To/Ribbon_Tutorial)
+[Ribbons In Detail](/how-to/mesh/ribbon-tutorial)
 
 ## More Advanced - L3
    
-[Maths Makes Ribbons](/resources/Maths_Make_Ribbons)  
+[Maths Makes Ribbons](/resources/manual/maths-make-ribbons)  
 
 

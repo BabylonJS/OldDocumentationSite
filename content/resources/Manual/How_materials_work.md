@@ -7,7 +7,6 @@ redirects:
   - /tutorials/how_materials_work
 ---
 
-
 # How Materials Work
 
 Materials are an encapsulation on top of shaders. They provide a simple way to configure and share shaders. 

@@ -5,7 +5,6 @@ abstract: ''
 slug: car-path
 ---
 
-
 # Making a Simple Car
 This is to show the practical use of rotate. 
 

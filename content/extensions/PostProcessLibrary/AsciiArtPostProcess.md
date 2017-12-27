@@ -3,6 +3,7 @@ title: Using the Ascii Art post-process
 abstract: ''
 slug: ascii-art-post-process
 ---
+
 # Using the Ascii Art post-process
 
 How cool (... or nerd - ish) could it be to render all your BJS scene in Ascii ART?

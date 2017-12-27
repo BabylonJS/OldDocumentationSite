@@ -5,13 +5,12 @@ abstract: ''
 slug: car-driven
 ---
 
-
 # Making a Simple Driven Car
 This is to show a practical use of translate, rotate and  using a parent.
 
 ## The Design
 
-The car will be designed in the same way as for the [Simple Car](/samples/Car_Path). In this case the car will be flatter and the view will be from behind 
+The car will be designed in the same way as for the [Simple Car](/samples/gamelets/car-path). In this case the car will be flatter and the view will be from behind 
 the car and this will be fixed as the camera will not be attached to the canvas. The front wheels will be further away from the side of the body 
 to allow them to turn, each will have its own pivot. The car will be driven forward using the space bar as an accelerator up to a maximum speed. 
 The front wheels will be steered with A and D. The rotation of the wheels will be matched with the speed of the car. 

@@ -6,7 +6,6 @@ abstract: ''
 slug: maths-make-ribbons
 ---
 
-
 # Mathematics and Ribbons
 
 Mathematics is very useful for drawing paths in space and so can be applied to ribbons. 

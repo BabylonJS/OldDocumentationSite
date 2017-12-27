@@ -3,6 +3,7 @@ title: GUIRadio
 abstract: ''
 slug: guiradio
 ---
+
 # GUIRadio
 
 ## new GUIRadio(id, options, guimanager, callback, append)

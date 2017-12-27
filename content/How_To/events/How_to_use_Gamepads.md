@@ -5,7 +5,6 @@ abstract: ''
 slug: how-to-use-gamepads
 ---
 
-
 # Gamepad Manager
 First create a GamepadManager:
 ```javascript

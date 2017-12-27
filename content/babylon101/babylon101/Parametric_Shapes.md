@@ -10,7 +10,6 @@ redirects:
   - /tutorials/parametric_shapes
 ---
 
-
 # Parametric Shapes 101
 
 These shapes or meshes are determined by parameters or mathematical data. They include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. In the 101 course you will only meet lines and you will just use the _MeshBuilder_ method rather than the older legacy _Mesh_ method. How to create all the parametric shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further_reading). 
@@ -102,12 +101,12 @@ Most but not all parametric shapes have the _instance_ option and so can have th
 
 # Next Step
 
-In the previous section, about set shapes, you saw that when created they sit on top of each other at the origin. That is often the case with parametric shapes as well. So its time to move on to position meshes where needed and also find out about rotation and scaling. Ready? Sure you are! [Position, Rotation and Scaling](/babylon101/Position)
+In the previous section, about set shapes, you saw that when created they sit on top of each other at the origin. That is often the case with parametric shapes as well. So its time to move on to position meshes where needed and also find out about rotation and scaling. Ready? Sure you are! [Position, Rotation and Scaling](/babylon-101/babylon-101/position)
 
 # Further Reading
 
-[How to Create Parametric Shapes with MeshBuilder](/How_To/Parametric_Shapes)  
-[How to Create Parametric Shapes Legacy Method](/How_To/Legacy_Param)  
+[How to Create Parametric Shapes with MeshBuilder](/how-to/mesh/parametric-shapes)  
+[How to Create Parametric Shapes Legacy Method](/how-to/mesh/legacy-param)  
 [Advantages and Disadvantages](/features/Shapes#ways-of-creating-a-predefined-mesh)
 
 

@@ -8,7 +8,6 @@ redirects:
   - /tutorials/render_scene_on_a_png
 ---
 
-
 # How To Render a Scene to a PNG
 
 First you may ask why is it better than "ctrl + prt scr" screenshot or the Snippet app?

@@ -5,7 +5,6 @@ abstract: ''
 slug: dynamic-terrain
 ---
 
-
 # Dynamic Terrain
 
 The Dynamic Terrain is an extension that provides a way to display a large terrain dynamically morphed from a map of 3D data.  
@@ -801,7 +800,7 @@ We used here the parameters `i`, `j` and the vertex `position` property.
 
 # Further Reading
 
-[Dynamic Terrain Examples](/extensions/DT_Examples)
+[Dynamic Terrain Examples](/extensions/terrains/dt-examples)
 
 
  

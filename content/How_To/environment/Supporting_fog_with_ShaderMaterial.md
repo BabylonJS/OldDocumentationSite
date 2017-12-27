@@ -8,7 +8,6 @@ redirects:
   - /tutorials/supporting_fog_with_shadermaterial
 ---
 
-
 # How To Support Fog with ShaderMaterial
 In order to support fog in your custom shaders, you will have to add some lines of code in your vertex and pixel shaders.
 

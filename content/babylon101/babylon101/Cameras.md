@@ -22,12 +22,12 @@ camera.attachControl(canvas, true);
 The second parameter is optional and defaults to **false**. When **false** then default actions on a canvas event are prevented. Set to true to allow canvas default actions. 
 
 **Notes** 
-1. A [Gamepad](/How_To/how_to_use_gamepads) may be used a a controller.
+1. A [Gamepad](/how-to/events/how-to-use-gamepads) may be used a a controller.
 2. For touch control either [PEP](https://github.com/jquery/PEP) or [hand.js](https://github.com/Deltakosh/handjs) is needed.
 
 ## Universal Camera
 
-This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or [gamepad](/How_To/how_to_use_gamepads) depending on the input device used, with no need for the contoller to be specified. This extends and replaces the [Free Camera](/classes/3.0/freecamera), the [Touch Camera](/classes/3.0/touchcamera) and the [Gamepad Camera](classes/3.0/gamepadcamera) which are all still available.
+This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or [gamepad](/how-to/events/how-to-use-gamepads) depending on the input device used, with no need for the contoller to be specified. This extends and replaces the [Free Camera](/classes/3.0/freecamera), the [Touch Camera](/classes/3.0/touchcamera) and the [Gamepad Camera](classes/3.0/gamepadcamera) which are all still available.
 
 The Universal Camera is now the default camera used by Babylon.js if nothing is specified, and it’s your best choice if you’d like to have a FPS-like control in your scene.  
 All demos on babylonjs.com are based upon that feature. Plug a Xbox controller into your PC and using it you’ll still be able to navigate most of the demos.
@@ -40,7 +40,7 @@ The default actions are
 
 3. touch - swipe left and right to move camera left and right, swipe up and down to move it forward and backwards;
 
-4. [gamepad](/How_To/how_to_use_gamepads) - corresponds to device.
+4. [gamepad](/how-to/events/how-to-use-gamepads) - corresponds to device.
 
 **Note** - Using keys in the Playground requires you to click inside the rendering area to give it the focus.
 
@@ -303,17 +303,17 @@ The new virtual reality camera
     var camera = new BABYLON.WebVRFreeCamera("WVR", new BABYLON.Vector3(0, 1, -15), scene);
 ```
 
-This camera deseves a page to itself so here it is [Using the WebVR Camera](/How_To/WebVR_Camera);
+This camera deseves a page to itself so here it is [Using the WebVR Camera](/how-to/camera/web-vr-camera);
 
 ## Customizing inputs
 
 The cameras rely upon user inputs to move the camera. If you are happy with the camera presets Babylon.js is giving you, just stick with it.
 
-If you want to change user inputs based upon user preferences, customize one of the existing presets, or use your own input mechanisms.  Those cameras have an input manager that is designed for those advanced scenarios. Read [customizing camera inputs](/How_To/Customizing_Camera_Inputs) to learn more about tweaking inputs on your cameras.
+If you want to change user inputs based upon user preferences, customize one of the existing presets, or use your own input mechanisms.  Those cameras have an input manager that is designed for those advanced scenarios. Read [customizing camera inputs](/how-to/camera/customizing-camera-inputs) to learn more about tweaking inputs on your cameras.
 
 ## Next step
-You have now learned how to use many cameras, and learned some advanced input options available on our two most-used cameras. You can control how you see your scene, you can choose your input and viewing devices, and you now know how to move cameras around. To give your scene a more realistic effect, we are now going to learn [**how to manage lights**](/babylon101/Lights). See you soon.
+You have now learned how to use many cameras, and learned some advanced input options available on our two most-used cameras. You can control how you see your scene, you can choose your input and viewing devices, and you now know how to move cameras around. To give your scene a more realistic effect, we are now going to learn [**how to manage lights**](/babylon-101/babylon-101/lights). See you soon.
 
 # Further Reading
 
-[Cameras Overview](/features/Cameras)
+[Cameras Overview](/features/component/cameras)

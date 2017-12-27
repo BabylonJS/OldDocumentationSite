@@ -78,10 +78,10 @@ The same rules and workarounds apply to the _closePath_ parameter.
 
 ## Mid Level - L2
 
-[Parametric Shapes](/babylon101/Parametric_Shapes)  
-[Polyhedra Shapes](/How_To/Polyhedra_Shapes)
+[Parametric Shapes](/babylon-101/babylon-101/parametric-shapes)  
+[Polyhedra Shapes](/how-to/mesh/polyhedra-shapes)
 
 ## More Advanced - L3
 
-[Maths Makes Ribbons](/resources/Maths_Make_Ribbons)   
-[Decals](/How_To/Decals) 
+[Maths Makes Ribbons](/resources/manual/maths-make-ribbons)   
+[Decals](/how-to/mesh/decals) 

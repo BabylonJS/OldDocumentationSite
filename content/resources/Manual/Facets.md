@@ -5,7 +5,6 @@ abstract: ''
 slug: facets
 ---
 
-
 # Materials and Vertices
 
 BabylonJS allows you to create many many meshes and apply material to them quite simply and in a range of ways. 

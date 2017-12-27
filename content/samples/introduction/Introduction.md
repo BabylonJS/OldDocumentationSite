@@ -5,7 +5,6 @@ abstract: ''
 slug: introduction
 ---
 
-
 # Samples
 
 Samples are of two different forms, gamelets and snippets. 

@@ -84,10 +84,10 @@ Possible uses include:
 
 
 ## Next step
-This collision method is convenient in a lot of situations. Once you understand mouse pick events, you can begin using that functionality to advance your application’s development. Now it is time to learn how to find where a thin line collides or intersects with a mesh using [raycasts](/babylon101/Raycasts)
+This collision method is convenient in a lot of situations. Once you understand mouse pick events, you can begin using that functionality to advance your application’s development. Now it is time to learn how to find where a thin line collides or intersects with a mesh using [raycasts](/babylon-101/babylon-101/raycasts)
 
 # Further Reading
 
-[Cameras Overview](/features/Cameras)
+[Cameras Overview](/features/component/cameras)
 
  

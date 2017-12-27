@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_use_lens_flares
 ---
 
-
 # How to use Lens Flares
 
 Babylon.js allows you to simply create lens flares effect:

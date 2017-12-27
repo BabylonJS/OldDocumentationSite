@@ -5,7 +5,6 @@ abstract: ''
 slug: shader-intro
 ---
 
-
 # Introduction to Shaders in BabylonJS
 A shader is a program processed by the Graphical Processing Unit (GPU) to produce a screen image by manipulating data to 
 produce individual pixels. The GPU is optimised, through parallel processing, to deal with these thousand of operations 

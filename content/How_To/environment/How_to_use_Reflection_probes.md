@@ -7,7 +7,6 @@ redirects:
   - /tutorials/how_to_use_reflection_probes
 ---
 
-
 # How to use Reflection probes
 ![Reflection Probes example](/img/reflectionProbe.jpg)
 

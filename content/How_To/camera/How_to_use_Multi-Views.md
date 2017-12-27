@@ -8,7 +8,6 @@ redirects:
   - /tutorials/how_to_use_multi-views
 ---
 
-
 # How To Use Multi Views
 Babylon.js is able to render multi views of the same scene.
 

@@ -5,7 +5,6 @@ abstract: ''
 slug: minimise-vertices
 ---
 
-
 # Minimising Mesh Vertices
 
 This function will remove some indices and vertices from a mesh. It removes facets where two of its vertices 

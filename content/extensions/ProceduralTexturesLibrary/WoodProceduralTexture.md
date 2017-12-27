@@ -3,6 +3,7 @@ title: Wood
 abstract: ''
 slug: wood-procedural-texture
 ---
+
 # Wood Procedural texture
 
 ![Wood Procedural texture](/img/extensions/proceduraltextures/woodpt.png)

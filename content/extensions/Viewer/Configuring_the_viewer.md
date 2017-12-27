@@ -5,7 +5,6 @@ abstract: ''
 slug: configuring-the-viewer
 ---
 
-
 # Configuring the viewer
 
 (Almost) every aspect of the viewer can be configured. The configuration is expressed using a TypeScript interface that is a JSON-like object describing the data that can be provided.

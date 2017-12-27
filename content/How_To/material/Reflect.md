@@ -5,12 +5,11 @@ abstract: ''
 slug: reflect
 ---
 
-
 # How To Obtain Reflections and Refractions
 Using reflection textures can simulate mirror like material and refraction textures can simulate looking through glass or water.
 
 ## Reflection
-Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/How_To/Skybox)
+Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/how-to/environment/skybox)
 
 This sets the _relectionTexture_ to a _CubeTexture_ and the _coordinatesMode_ of the _relectionTexture_ to SKYBOX_Mode as in
 

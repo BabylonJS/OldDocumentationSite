@@ -8,7 +8,6 @@ redirects:
   - /extensions/physically_based_rendering
 ---
 
-
 # How To Start with Physically Based Rendering
 
 ## Introduction

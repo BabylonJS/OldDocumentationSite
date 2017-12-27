@@ -4,7 +4,6 @@ abstract: ''
 slug: object-cloner
 ---
 
-
 # ObjectCloner
 
 ![idpic1](/img/extensions/clonerSystem/objectcloner.jpg "ObjectCloner")

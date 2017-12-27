@@ -5,7 +5,6 @@ abstract: ''
 slug: dt-examples
 ---
 
-
 # Dynamic Terrain Examples
 
 ## FreeCamera on the Ground
@@ -87,4 +86,4 @@ Let's don't worry if this feature seems complex to understand and let's just rem
 
 # Further Reading
 
-[Dynamic Terrain](/extensions/Dynamic_Terrain) 
+[Dynamic Terrain](/extensions/terrains/dynamic-terrain) 

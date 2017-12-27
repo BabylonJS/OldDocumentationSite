@@ -8,7 +8,6 @@ redirects:
   - /tutorials/using_parallax_mapping
 ---
 
-
 # How To Use Parallax Mapping
 Starting with Babylon.js v2.4, we introduced Parallax Mapping.
 

@@ -5,10 +5,9 @@ abstract: ''
 slug: rotate
 ---
 
-
 # How To Use Translations and Rotations
 
-All [positioning, rotating and scaling](/features/Position,_Rotation,_Scaling) take place within a frame of reference determined by the [world matrix](/resources/Frame_Of_Reference). 
+All [positioning, rotating and scaling](/features/component/position_-rotation_-scaling) take place within a frame of reference determined by the [world matrix](/resources/manual/frame-of-reference). 
 
 ## Frames of Reference 
 
@@ -106,7 +105,7 @@ pilot.translate(direction, 6, BABYLON.Space.LOCAL);
 
 ## Add Rotations
 
-[Rotation](/babylon101/position#rotation) imposes the rotation order YXZ in **local space** using [Euler angles](/resources/Rotation_Conventions). This constraint can quickly make it complicated to calculate the required Euler angles to achieve a given final mesh orientation. This is especially so since rotations aren't commutative operations. This means that rotating a mesh first around X, then around Z will lead to a different orientation than rotating it first around Z and then around X with the same values.  
+[Rotation](/babylon101/position#rotation) imposes the rotation order YXZ in **local space** using [Euler angles](/resources/manual/rotation-conventions). This constraint can quickly make it complicated to calculate the required Euler angles to achieve a given final mesh orientation. This is especially so since rotations aren't commutative operations. This means that rotating a mesh first around X, then around Z will lead to a different orientation than rotating it first around Z and then around X with the same values.  
 
 As an example if you create a mesh and rotate it &pi;/3 about the X axis, then rotate it &pi;/4 about the local Y axis the Euler angles needed to use with _rotation_ are  
 x: 0.6590580358264089, y: 1.1071487177940904, z: 0.8860771237926136
@@ -146,7 +145,7 @@ mesh.addRotation(Math.PI / 2, 0, 0).addRotation(0, 0, Math.PI / 4).addRotation(0
 ## How To Generate a Rotation from a Target System 
 
 ### Using Euler Angles
-Given a quaternion it is possible to find the [Euler angles](/resources/Rotation_Conventions). Sometimes however all you might know is a set of axes you want to align to. There is a feature of Babylon.js that allows you to [align axes](/features/Position,_Rotation,_Scaling#align-axes) by finding the particular rotation you need. 
+Given a quaternion it is possible to find the [Euler angles](/resources/manual/rotation-conventions). Sometimes however all you might know is a set of axes you want to align to. There is a feature of Babylon.js that allows you to [align axes](/features/Position,_Rotation,_Scaling#align-axes) by finding the particular rotation you need. 
 
 The way to compute an Euler rotation from a set of axes is to use _RotationFromAxis_.
 
@@ -204,25 +203,25 @@ The `toRef()` method is also available.
 # Further Reading
  
 ## Basic - L1  
-[Positions, rotations, scaling 101](/babylon101/Position)  
+[Positions, rotations, scaling 101](/babylon-101/babylon-101/position)  
  
 ## More Advanced - L3
 
-[How To Use Translations and Rotations](/How_To/Rotate)  
-[How To Set and Use a Pivot](/How_To/Pivots)  
-[How To Rotate Around an Axis About a Point](/How_To/Pivot)  
-[How To Use Path3D](/How_To/How_to_use_Path3D)  
-[How To Use a Parent](/How_To/Parenting)  
-[How To Transform Coordinates](/How_To/Transform_Coordinates)  
-[Euler Angles and Quaternions](/resources/Rotation_Conventions)  
+[How To Use Translations and Rotations](/how-to/mesh/rotate)  
+[How To Set and Use a Pivot](/how-to/mesh/pivots)  
+[How To Rotate Around an Axis About a Point](/how-to/mesh/pivot)  
+[How To Use Path3D](/how-to/mesh/how-to-use-path-3d)  
+[How To Use a Parent](/how-to/mesh/parenting)  
+[How To Transform Coordinates](/how-to/mesh/transform-coordinates)  
+[Euler Angles and Quaternions](/resources/manual/rotation-conventions)  
 [Aligning Rotation to Target](/How_To/rotate#how-to-generate-a-rotation-from-a-target-system)  
-[Frame of Reference](/resources/Frame_Of_Reference)  
-[Baking Transformations](/resources/Baking_Transformations)  
-[In-Browser Mesh Simplification (Auto-LOD)](/How_To/In-Browser_Mesh_Simplification)  
+[Frame of Reference](/resources/manual/frame-of-reference)  
+[Baking Transformations](/resources/manual/baking-transformations)  
+[In-Browser Mesh Simplification (Auto-LOD)](/how-to/mesh/in-browser-mesh-simplification)  
 
 ## Gamelet
 
-[A Simple Car Following a Path](/samples/Car_Path)  
-[Making A Simple Driven Car using Translate and Rotate](/samples/Car_Driven)
+[A Simple Car Following a Path](/samples/gamelets/car-path)  
+[Making A Simple Driven Car using Translate and Rotate](/samples/gamelets/car-driven)
 
 

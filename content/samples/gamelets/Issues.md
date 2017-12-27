@@ -5,7 +5,6 @@ abstract: ''
 slug: issues
 ---
 
-
 # Collision Issues
 
 ## Checking for an Intersect

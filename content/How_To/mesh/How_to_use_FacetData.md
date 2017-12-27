@@ -7,7 +7,6 @@ redirects:
   - /tutorials/how_to_use_facetdata
 ---
 
-
 # Facet Data
 
 ## What is FacetData ?

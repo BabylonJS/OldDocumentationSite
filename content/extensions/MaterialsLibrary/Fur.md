@@ -3,6 +3,7 @@ title: Fur
 abstract: ''
 slug: fur
 ---
+
 # Fur material
 
 ![Fur material high](/img/extensions/materials/furHigh.png)

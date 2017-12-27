@@ -5,7 +5,6 @@ abstract: ''
 slug: world-axes
 ---
 
-
 # World Axes.
 This snippet displays the world axes. The X axis is red, the Y axis green and the Z axis blue. The length of the axes may be set with the size parameter.
 

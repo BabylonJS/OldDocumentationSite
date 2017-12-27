@@ -5,7 +5,6 @@ abstract: ''
 slug: polyhedra-shapes
 ---
 
-
 # How To Create Polyhedra
 
 There are fifteen polyhedra that can be created simply by setting its type number from 0 to 14, and one, the icosphere that is created by name to which more variations can be applied. 
@@ -32,7 +31,7 @@ flat|_(boolean)_ if false, a polyhedron has a single global face, _faceUV_ and _
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-To understand how to set _faceUV_ or _faceColors_, please read about [Face Colors and Textures for a Box](/How_To/CreateBox_Per_Face_Textures_And_Colors) taking into account the right number of faces of your polyhedron, instead of only 6 for a box. 
+To understand how to set _faceUV_ or _faceColors_, please read about [Face Colors and Textures for a Box](/how-to/material/create-box-per-face-textures-and-colors) taking into account the right number of faces of your polyhedron, instead of only 6 for a box. 
 
 
 ### Provided Polyhedron Types :
@@ -99,8 +98,8 @@ with each vertex of the mesh and so alter the shape of the mesh. For more inform
 # Further Reading
 
 ## Mid Level - L2  
-[Set Shapes](/babylon101/Discover_Basic_Elements)  
-[Parametric Shapes](/babylon101/Parametric_Shapes)  
-[Ribbons In Detail](/How_To/Ribbon_Tutorial)  
-[Maths Makes Ribbons](/resources/Maths_Make_Ribbons)  
-[Decals](/How_To/Decals) 
+[Set Shapes](/babylon-101/babylon-101/discover-basic-elements)  
+[Parametric Shapes](/babylon-101/babylon-101/parametric-shapes)  
+[Ribbons In Detail](/how-to/mesh/ribbon-tutorial)  
+[Maths Makes Ribbons](/resources/manual/maths-make-ribbons)  
+[Decals](/how-to/mesh/decals) 

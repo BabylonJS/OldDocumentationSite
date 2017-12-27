@@ -7,8 +7,6 @@ redirects:
   - /generals/playgrounds
 ---
 
-
-
 In this page, you can discover interesting playground done by the community.
 Do not hesitate to update this page by editing it [directly on Github](https://github.com/BabylonJS/Documentation/tree/master/content/generals/General).
 

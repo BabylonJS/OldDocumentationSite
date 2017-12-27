@@ -10,7 +10,6 @@ redirects:
   - /tutorials/createbox_per_face_textures_and_colors
 ---
 
-
 # How To Map Material to Individual Mesh Faces
 
 This method is only available when creating a mesh using the _MeshBuilder_ method.
@@ -29,7 +28,7 @@ A texture atlas also know as a _sprite sheet_ or _sprite atlas_ contains a range
 
 In this atlas there are 24 different images in a 4 rows of 6 a way of mapping each sprite onto an individual face is needed. 
 
-This map will just follow the way [texture images are mapped onto a mesh usually](/resources/Facets).
+This map will just follow the way [texture images are mapped onto a mesh usually](/resources/manual/facets).
 
 The U coordinate goes horizontally left to right from 0 to 1.
 
