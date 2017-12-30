@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Animation of Objects
+title: Animation of Objects
+abstract: ''
+slug: animations
 ---
 
 # Animation
@@ -189,7 +192,7 @@ scene.beginDirectAnimation(target, animations, start frame, end frame, loop);
 
 ## Basic - L1
 
-[Animation 101](/babylon101/Animations)  
+[Animation 101](/babylon-101/babylon-101/animations)  
 [Combining Animations](/How_To/Combine.html)
 
 ## Mid Level - L2

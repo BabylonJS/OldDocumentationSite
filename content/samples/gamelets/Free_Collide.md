@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Free Particles
+title: Freely Moving Particle Collisions
+abstract: ''
+slug: free-collide
 ---
 
 # Free Particles

@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Advanced Physics Features
+title: Use Advanced Physics Features
+abstract: ''
+slug: using-advanced-physics-features
 ---
 
 # How To Use Advanced Physics Features

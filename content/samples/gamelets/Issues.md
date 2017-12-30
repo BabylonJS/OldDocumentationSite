@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Collision Issues
+title: Collision Issues
+abstract: ''
+slug: issues
 ---
 
 # Collision Issues

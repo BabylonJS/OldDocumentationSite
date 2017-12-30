@@ -1,5 +1,10 @@
 ---
 PG_TITLE: The Playground
+title: Introduction to the Playground
+abstract: ''
+slug: playground
+redirects:
+  - /generals/the_playground_tutorial
 ---
 
 # The Playground
@@ -100,9 +105,9 @@ Whenever a scene in the playground needs the use of keys to move an object, such
 # Further Reading
  
 [Textures Directly Available to the Playground](/resources/Playground_Textures.html)  
-[The Debug Layer Features](/features/playground_debuglayer)  
-[How to Use The Debug Layer in Projects](/How_To/debug_layer)  
-[How To Customize the Debug Layer](/How_To/customize_debug_layer)  
+[The Debug Layer Features](/features/pgsupport/playground-debuglayer)  
+[How to Use The Debug Layer in Projects](/how-to/pgsupport/debug-layer)  
+[How To Customize the Debug Layer](/how-to/pgsupport/customize-debug-layer)  
 
 
 

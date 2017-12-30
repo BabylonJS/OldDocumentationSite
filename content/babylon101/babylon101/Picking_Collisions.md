@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 22111
 PG_TITLE: 12. Picking Collisions
+title: Picking Collisions
+abstract: >-
+  With babylon.js, you can easily know which object has been picked when the
+  user clic anywhere on the scene.
+slug: picking-collisions
+redirects:
+  - /tutorials/picking_collisions
 ---
+
 # Picking Collisions
 
 In picking an object with your mouse the main difficulty is to click on a 3D object whereas your screen is a flat 2D display.
@@ -76,10 +84,10 @@ Possible uses include:
 
 
 ## Next step
-This collision method is convenient in a lot of situations. Once you understand mouse pick events, you can begin using that functionality to advance your application’s development. Now it is time to learn how to find where a thin line collides or intersects with a mesh using [raycasts](/babylon101/Raycasts)
+This collision method is convenient in a lot of situations. Once you understand mouse pick events, you can begin using that functionality to advance your application’s development. Now it is time to learn how to find where a thin line collides or intersects with a mesh using [raycasts](/babylon-101/babylon-101/raycasts)
 
 # Further Reading
 
-[Cameras Overview](/features/Cameras)
+[Cameras Overview](/features/component/cameras)
 
  

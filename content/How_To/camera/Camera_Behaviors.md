@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Camera Behaviours
+title: Apply Camera Behaviors
+abstract: ''
+slug: camera-behaviors
 ---
 
 # Apply Camera Behaviors

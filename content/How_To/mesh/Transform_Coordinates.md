@@ -1,10 +1,13 @@
 ---
 PG_TITLE: Coordinate Transformation
+title: Transform Coordinates
+abstract: ''
+slug: transform-coordinates
 ---
 
 # How To Use Coordinate Transformation
 
-This method for these examples can be directly compared to [the use of a parent](/How_To/Parenting) 
+This method for these examples can be directly compared to [the use of a parent](/how-to/mesh/parenting) 
 
 ## Satellite
 
@@ -59,5 +62,5 @@ The building will be an array of boxes. Leaving the boxes as separate meshes wou
 
 # Further Reading
 
-[How To Use a Parent](/How_To/Parenting)  
-[Frame of Reference](/resources/Frame_Of_Reference)
+[How To Use a Parent](/how-to/mesh/parenting)  
+[Frame of Reference](/resources/manual/frame-of-reference)

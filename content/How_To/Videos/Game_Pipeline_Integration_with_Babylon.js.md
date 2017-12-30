@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 24831
 PG_TITLE: 05. Game Pipeline Integration with Babylon.js
+title: Game Pipeline Integration with Babylon.js
+abstract: ''
+slug: game-pipeline-integration-with-babylon_js
+redirects:
+  - /tutorials/05._game_pipeline_integration_with_babylon.js
+  - /tutorials/game_pipeline_integration_with_babylon.js
 ---
+
 Working with Blender, using Sandbox, and exploring 3ds Max.
 
 ** Agenda **

@@ -1,3 +1,9 @@
+---
+title: GUISlider
+abstract: ''
+slug: guislider
+---
+
 # GUISlider
 
 ## new GUISlider(id, options, guimanager, callback, append)

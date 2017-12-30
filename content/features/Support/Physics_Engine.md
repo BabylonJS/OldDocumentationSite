@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Physics Engine Support
+title: Physics Engine
+abstract: ''
+slug: physics-engine
 ---
 
 # Physics Engine Support
@@ -31,8 +34,8 @@ Collisions between two imposters P<sub>0</sub> and P<sub>1</sub> is handled by s
 
 ## Basic - L1
 
-[Using a Physics Engine](/How_To/Using_The_Physics_Engine)
+[Using a Physics Engine](/how-to/physics/using-the-physics-engine)
 
 ## More Advanced - L3
 
-[Add Your Own Physics Engine](/How_To/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)
+[Add Your Own Physics Engine](/how-to/physics/adding-your-own-physics-engine-plugin-to-babylon_js)

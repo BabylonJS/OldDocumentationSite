@@ -1,5 +1,10 @@
 ---
 PG_TITLE: Facet data
+title: Use Facet Data
+abstract: ''
+slug: how-to-use-facet-data
+redirects:
+  - /tutorials/how_to_use_facetdata
 ---
 
 # Facet Data

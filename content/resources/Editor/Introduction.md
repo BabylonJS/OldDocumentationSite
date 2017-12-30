@@ -1,3 +1,11 @@
+---
+title: Introduction
+abstract: ''
+slug: introduction
+redirects:
+  - /extensions/introduction
+---
+
 # Introduction
 
 ![Introduction](/img/extensions/Editor/editor.png)

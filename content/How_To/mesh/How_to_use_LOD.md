@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22591
 PG_TITLE: How to use LOD
+title: Use LOD
+abstract: ''
+slug: how-to-use-lod
+redirects:
+  - /tutorials/how_to_use_lod
 ---
+
 Babylon.js comes with an integrated support for level of detail.
 
 This feature allows you to specify different meshes based on distance to viewer.

@@ -1,5 +1,10 @@
 ---
 PG_TITLE: glTF
+title: Load a glTF File
+abstract: ''
+slug: gl-tf
+redirects:
+  - /extensions/gltf
 ---
 
 # glTF File Import

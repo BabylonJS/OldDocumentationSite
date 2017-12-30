@@ -1,5 +1,8 @@
 ---
 PG_TITLE: How To Update Vertices
+title: Update Vertices
+abstract: ''
+slug: updating-vertices
 ---
 
 # How To Update Vertices
@@ -64,5 +67,5 @@ vertexData.applyToMesh(customMesh, true);
 # Further Reading
 
 [Custom Meshes](/How_To/Custom.html)  
-[Normals in BJS](/resources/Normals)
+[Normals in BJS](/resources/manual/normals)
 

@@ -1,5 +1,8 @@
 ---
 PG_TITLE: The viewer templating system
+title: The viewer templating system
+abstract: ''
+slug: the-templating-system
 ---
 
 # The viewer templating system

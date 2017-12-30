@@ -1,5 +1,8 @@
 ---
 PG_TITLE: World Axes
+title: Display World Axes
+abstract: ''
+slug: world-axes
 ---
 
 # World Axes.

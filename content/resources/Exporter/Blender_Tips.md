@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 25095
 PG_TITLE: Blender Tips
+title: Blender Tips
+abstract: ''
+slug: blender-tips
+redirects:
+  - /exporters/blender_tips
 ---
 
 Since Babylon and Blender often do things differently, it can sometimes be a pain working with both of them together. Here's a few tips that will smooth things out a bit.

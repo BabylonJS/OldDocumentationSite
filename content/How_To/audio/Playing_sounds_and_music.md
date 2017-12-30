@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 24824
 PG_TITLE: 16. Playing sounds and music
+title: Play Sounds and Music
+abstract: ''
+slug: playing-sounds-and-music
+redirects:
+  - /overviews/playing_sounds_and_music
 ---
 
 # How To Play Sounds and Music

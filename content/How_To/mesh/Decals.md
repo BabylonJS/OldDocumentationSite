@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 25094
 PG_TITLE: 17. Decals
+title: Use decals
+abstract: ''
+slug: decals
+redirects:
+  - /tutorials/using_decals
 ---
 
 # How to Use Decals
@@ -28,5 +33,5 @@ angle|_(number)_ the angle to rotate the decal|0
 
 # Further Reading
 
-[Basic Shapes](/babylon101/Discover_Basic_Elements) 
+[Basic Shapes](/babylon-101/babylon-101/discover-basic-elements) 
  

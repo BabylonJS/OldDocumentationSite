@@ -1,5 +1,8 @@
 ---
 PG_TITLE: How To Use a Skybox
+title: Use a Skybox
+abstract: ''
+slug: skybox
 ---
 
 # How To Use a Skybox

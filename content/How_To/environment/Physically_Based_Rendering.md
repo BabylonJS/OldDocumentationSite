@@ -1,5 +1,11 @@
 ---
 PG_TITLE: How To Start with Physically Based Rendering
+title: Start with Physically Based Rendering
+abstract: ''
+slug: physically-based-rendering
+redirects:
+  - /overviews/physically_based_rendering
+  - /extensions/physically_based_rendering
 ---
 
 # How To Start with Physically Based Rendering

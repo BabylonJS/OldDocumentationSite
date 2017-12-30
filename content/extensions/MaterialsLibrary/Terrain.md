@@ -1,3 +1,9 @@
+---
+title: Terrain
+abstract: ''
+slug: terrain
+---
+
 # Terrain material
 
 ![Terrain Material](/img/extensions/materials/terrain.jpg)

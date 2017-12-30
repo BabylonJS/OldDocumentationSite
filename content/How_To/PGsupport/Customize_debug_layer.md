@@ -1,5 +1,10 @@
 ---
 PG_TITLE: Customize The Debug Layer
+title: Customize The Debug Layer
+abstract: ''
+slug: customize-debug-layer
+redirects:
+  - /overviews/customize_debug_layer
 ---
 
 # Customize The Debug Layer
@@ -10,16 +15,16 @@ Before following any of the steps below knowing how to customizing Babylon.js in
 
 This can be gained by reading
 
-[How to Start Contributing to Babylon.js](/How_To/how_to_start)
+[How to Start Contributing to Babylon.js](/how-to/contribute/how-to-start)
 
 In addition for those using Visual Studio as an IDE you can read 
 
-[Setup Visual Studio to contribute to Babylon.js](/How_To/setup_visualStudio)
+[Setup Visual Studio to contribute to Babylon.js](/how-to/contribute/setup-visual-studio)
 
 
 ## Setting the project
 
-As all the code of the debug layer lies in Babylon.js repository, you have first to follow [this tutorial](/generals/how_to_start) to setting up your IDE.
+As all the code of the debug layer lies in Babylon.js repository, you have first to follow [this tutorial](/how-to/contribute/how-to-start) to setting up your IDE.
 
 
 ## Compile the library
@@ -69,5 +74,5 @@ Where element1 and element2 are two HTML div, and direction is either 'vertical'
 
 # Further Reading
 
-[The Debug Layer Features](/features/playground_debuglayer)  
-[How To use The Debug Layer in Projects](/How_To/debug_layer)     
+[The Debug Layer Features](/features/pgsupport/playground-debuglayer)  
+[How To use The Debug Layer in Projects](/how-to/pgsupport/debug-layer)     

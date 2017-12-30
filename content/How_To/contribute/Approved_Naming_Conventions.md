@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 22671
 PG_TITLE: Approved Naming Conventions
+title: Follow Approved Naming Conventions
+abstract: ''
+slug: approved-naming-conventions
+redirects:
+  - /generals/approved_naming_conventions
 ---
+
 If you want to contribute to babylon.js (What an *excellent* idea!), you should attempt to align your code with the following naming conventions:
 
 

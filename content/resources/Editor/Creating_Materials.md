@@ -1,3 +1,11 @@
+---
+title: Creating Materials
+abstract: ''
+slug: creating-materials
+redirects:
+  - /extensions/creating_materials
+---
+
 # Creating Materials
 
 ## Modifying Materials

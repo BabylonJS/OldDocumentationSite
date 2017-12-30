@@ -1,3 +1,9 @@
+---
+title: Brick
+abstract: ''
+slug: brick-procedural-texture
+---
+
 # Brick Procedural texture
 
 ![Brick Procedural texture](/img/extensions/proceduraltextures/brickpt.png)

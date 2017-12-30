@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 24832
 PG_TITLE: 06. Loading Assets
+title: Loading Assets
+abstract: ''
+slug: loading-assets
+redirects:
+  - /tutorials/06._loading_assets
+  - /tutorials/loading_assets
 ---
+
 Load your scene, meshes, and assets. And take a look at offline mode.
 
 ** Agenda **

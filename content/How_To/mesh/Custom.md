@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Creating Custom Meshes
+title: Create Custom Meshes
+abstract: ''
+slug: custom
 ---
 
 # How to Create a Mesh from Scratch

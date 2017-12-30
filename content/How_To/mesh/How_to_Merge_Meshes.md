@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 22451
 PG_TITLE: How to Merge Meshes
+title: Merge Meshes
+abstract: ''
+slug: how-to-merge-meshes
+redirects:
+  - /tutorials/how_to_merge_meshes
 ---
 
 ## Native Babylon.js function

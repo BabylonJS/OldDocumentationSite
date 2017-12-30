@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Arc Between Vectors
+title: Arc Between Vectors
+abstract: ''
+slug: sector
 ---
 
 # Draw an Arc Between Two Vectors

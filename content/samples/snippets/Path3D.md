@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Displays a Path3D Curve
+title: Display Path3D Curve
+abstract: ''
+slug: path-3d
 ---
 
 # Displays a Path3D Curve.

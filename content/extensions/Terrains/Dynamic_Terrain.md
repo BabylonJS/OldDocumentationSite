@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Dynamic Terrain
+title: How to Use Dynamic Terrain
+abstract: ''
+slug: dynamic-terrain
 ---
 
 # Dynamic Terrain
@@ -797,7 +800,7 @@ We used here the parameters `i`, `j` and the vertex `position` property.
 
 # Further Reading
 
-[Dynamic Terrain Examples](/extensions/DT_Examples)
+[Dynamic Terrain Examples](/extensions/terrains/dt-examples)
 
 
  

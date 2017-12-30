@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Increasing Facets of a Mesh
+title: Increasing Facets
+abstract: ''
+slug: increasing-facets
 ---
 
 # Increasing Facets of a Mesh

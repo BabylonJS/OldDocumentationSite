@@ -1,3 +1,9 @@
+---
+title: Simple Pine Generator
+abstract: ''
+slug: simple-pine-generator
+---
+
 # Simple Pine Tree Generator
 
 ![Generated Tree ](/img/extensions/trees/pine1.png)

@@ -1,7 +1,19 @@
 ---
 ID_PAGE: 22141
 PG_TITLE: 16. Height Map
+title: Height_Map
+abstract: >-
+  A height map is a greyscale image which is used to generate ground, using the
+  different variants of gray of our picture. This image is the elevation data
+  for your ground. Each pixel’s color is interpreted as a distance of
+  displacement or 'height' from the 'floor' of your mesh. So, the whiter the
+  pixel is, the taller your mountain will be.
+slug: height-map
+redirects:
+  - /tutorials/14._height_map
+  - /tutorials/height_map
 ---
+
 ## Introduction
 
 In this tutorial, our goal is to understand height maps, and to learn how to generate realistic grounds.
@@ -99,4 +111,4 @@ _Our material, a texture, applied to the plane_
 You may be interested in visiting [**the playground demo**]( https://www.babylonjs-playground.com/?14) that goes with this tutorial.
 
 ## Next step
-Well done! Your scene looks good now, and you can imagine a lot of new landscapes! One more important thing you need to know is [how to create shadows](/babylon101/Shadows). Shadows will give your scene a beautiful rendering effect, so don't forget about them!
+Well done! Your scene looks good now, and you can imagine a lot of new landscapes! One more important thing you need to know is [how to create shadows](/babylon-101/babylon-101/shadows). Shadows will give your scene a beautiful rendering effect, so don't forget about them!

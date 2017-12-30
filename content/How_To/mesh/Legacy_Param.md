@@ -1,12 +1,15 @@
 ---
 PG_TITLE: Parametric Shapes Legacy Method
+title: Create Parametric Shapes - Legacy
+abstract: ''
+slug: legacy-param
 ---
 
 # How To Create Parametric Shapes using Legacy Method
 
 ## Ribbon
 
-For details on what it is and how it is constructed you might want to read the [Ribbon Tutorial](/How_To/Ribbon_Tutorial)
+For details on what it is and how it is constructed you might want to read the [Ribbon Tutorial](/how-to/mesh/ribbon-tutorial)
 
 ```javascript
 var ribbon = BABYLON.Mesh.CreateRibbon("ribbon", [path1, path2, ..., pathn], false, false, 0, scene, false, BABYLON.Mesh.DEFAULTSIDE);
@@ -82,7 +85,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 ```javascript
 var polygon = BABYLON.Mesh.CreatePolygon("cylinder", [V1, V2, ..., Vn], scene);
 ```
-Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how-to/mesh/polygon-mesh-builder)
 
 ## Extrusion of a Non Regular Polygon
 
@@ -98,7 +101,7 @@ NOTE all vectors are Vector3 and should be in the XoZ plane, ie of the form BABY
 var polygon = BABYLON.Mesh.CreatePolygon("polygon", [V1, V2, ..., Vn], 2, scene);
 ```
 
-Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
+Uses [PolygonMeshBuilder](/how-to/mesh/polygon-mesh-builder)
 
 ## Lines
 
@@ -271,9 +274,9 @@ Easy way to generate strange shapes : http://www.babylonjs-playground.com/#RF9W9
 
 ## Basic - L1
 
-[Mesh Overview](/features/Shapes)  
-[Set Shapes 101](/babylon101/Discover_Basic_Elements)  
-[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
-[Set Shapes](/How_To/Set_Shapes)  
-[Parametric Shapes](/How_To/Parametric_Shapes)  
-[Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Mesh Overview](/features/component/shapes)  
+[Set Shapes 101](/babylon-101/babylon-101/discover-basic-elements)  
+[Parametric Shapes 101](/babylon-101/babylon-101/parametric-shapes)  
+[Set Shapes](/how-to/mesh/set-shapes)  
+[Parametric Shapes](/how-to/mesh/parametric-shapes)  
+[Polyhedra Shapes](/how-to/mesh/polyhedra-shapes)  

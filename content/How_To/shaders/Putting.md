@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Putting Shader Code in BabylonJS
+title: Put Shader Code in BJS
+abstract: ''
+slug: putting
 ---
 
 # Putting Shader Code in BabylonJS

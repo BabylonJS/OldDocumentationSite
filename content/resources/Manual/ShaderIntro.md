@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Introduction To Shaders in BabylonJS
+title: Introduction to Shaders
+abstract: ''
+slug: shader-intro
 ---
 
 # Introduction to Shaders in BabylonJS

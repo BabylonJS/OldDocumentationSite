@@ -1,5 +1,10 @@
 ---
 PG_TITLE: Compressed Textures for GPU
+title: Multi-Platform Compressed Textures
+abstract: ''
+slug: multi-platform-compressed-textures
+redirects:
+  - /tutorials/multi-platform_compressed_textures
 ---
 
 # Compressed Textures for GPU

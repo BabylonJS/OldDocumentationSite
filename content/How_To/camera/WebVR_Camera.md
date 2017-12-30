@@ -1,3 +1,11 @@
+---
+title: Use the WebVR Camera
+abstract: ''
+slug: web-vr-camera
+redirects:
+  - /overviews/webvr_camera
+---
+
 ## Introduction
 
 Since v2.5 Babylon.js support WebVR using the WebVRFreeCamera.
@@ -8,7 +16,7 @@ The WebVR camera is Babylon's simple interface to interaction with Windows Mixed
 
 Babylon.js also supports the VR devices' controllers - The Windows Mixed Reality controllers, HTC Vive's controllers and the Oculus touch - using the gamepad extension. Further details below.
 
-To quickly get started creating WebVR scene the [WebVR Experience Helper](/how_to/WebVR_Helper) class can be used to automatically setup the WebVR camera and enable other features such as teleportation out of the box. 
+To quickly get started creating WebVR scene the [WebVR Experience Helper](/how-to/camera/web-vr-helper) class can be used to automatically setup the WebVR camera and enable other features such as teleportation out of the box. 
 
 ## Browser support
 

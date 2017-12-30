@@ -1,5 +1,8 @@
 ---
 PG_TITLE: A Wide Range of Mesh Types
+title: A Range of Meshes
+abstract: ''
+slug: shapes
 ---
 
 # Meshes
@@ -10,13 +13,13 @@ In the 3D virtual world shapes are built from meshes, lots of trangular facets j
 
 Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 
-Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/How_To/Solid_Particle_System) are also available.
+Specialist meshes such as [sprites](/babylon-101/babylon-101/sprites), [2D particles](/babylon-101/babylon-101/particles) and [3D solid particles](/how-to/mesh/solid-particle-system) are also available.
 
 ## Types
 
-There are two types of predefined meshes, [set shapes](/How_To/Set_Shapes) and [parametric shapes](/How_To/Parametric Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
+There are two types of predefined meshes, [set shapes](/how-to/mesh/set-shapes) and [parametric shapes](/How_To/Parametric Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
 
-Mention has already been made of the horizonal plane called the ground which is your common flat everyday surface like a floor. You will be pleased to know that it comes in other varieties to provide an outside terrain with rolling hills and valleys. For a view from a distance terrain you use [GroundFromAHeightMap](/babylon101/Height_Map). If you literally want rolling hills add the extension [dynamic terrain][/Extension/dynamic_terrain] which gives you an infinite landscape to fly over.
+Mention has already been made of the horizonal plane called the ground which is your common flat everyday surface like a floor. You will be pleased to know that it comes in other varieties to provide an outside terrain with rolling hills and valleys. For a view from a distance terrain you use [GroundFromAHeightMap](/babylon-101/babylon-101/height-map). If you literally want rolling hills add the extension [dynamic terrain][/Extension/dynamic_terrain] which gives you an infinite landscape to fly over.
 
 
 ## Ways of Creating a Predefined Mesh
@@ -67,7 +70,7 @@ box.scaling = new BABYLON.Vector3(4, 6, 2);
 ```
 and the scene prameter is necessary to position the updatable and sideOrientation parameters correctly.
 
-Also using _MeshBuilder_ you can [apply different colors and images to individual faces](/How_To/CreateBox_Per_Face_Textures_And_Colors) of meshes that have distinct faces (for example a box does but a sphere does not). This is not possible with the legacy method.
+Also using _MeshBuilder_ you can [apply different colors and images to individual faces](/how-to/material/create-box-per-face-textures-and-colors) of meshes that have distinct faces (for example a box does but a sphere does not). This is not possible with the legacy method.
 
 For a second example consider the creation of a truncated cone with a diameter of 3 top and and 6 at the bottom, with height 5 constructed using 16 radial sections and 10 vertical subdivisions.
 
@@ -106,7 +109,7 @@ Another way available to you, especially if you want a very large number of iden
 
 ### Collide with a Camera, another Mesh, a Ray or Pointer
 
-When you are moving around a scene in a _first person shooter_  manner then you want to be able to react if an object is blocking the way. You can as [Camera Collision](/babylon101/Cameras,_Mesh_Collisions_and_Gravity) is a provided facility. As is the [Intersection of Meshes](/babylon101/Intersect_Collisions_-_mesh), [Raycasting](/babylon101/Raycasts) and [Pointer Clicked on Mesh](/babylon101/Picking_Collisions)
+When you are moving around a scene in a _first person shooter_  manner then you want to be able to react if an object is blocking the way. You can as [Camera Collision](/babylon-101/babylon-101/cameras_-mesh-collisions-and-gravity) is a provided facility. As is the [Intersection of Meshes](/babylon-101/babylon-101/intersect-collisions-mesh), [Raycasting](/babylon-101/babylon-101/raycasts) and [Pointer Clicked on Mesh](/babylon-101/babylon-101/picking-collisions)
 
 
 ### Accessing Mesh Data, Morphing or Updating
@@ -120,38 +123,38 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 # Further Reading
 
 ## Basic - L1  
-[Meshes 101](/babylon101/Discover_Basic_Elements)   
-[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
-[Sprites 101](/babylon101/Sprites)  
-[Particles 101](/babylon101/Particles)  
-[Mesh Collisions 101](/babylon101/Intersect_Collisions_-_mesh)  
-[Mesh Picking 101](/babylon101/Picking_Collisions)   
-[Ray Casting 101](/babylon101/Raycasts)  
-[Polyhedra](/How_To/Polyhedra_Shapes)   
-[Using Decals](/How_To/Decals)  
-[How to Use the Solid Particle System](/How_To/Solid_Particle_System)  
-[Set the Position, Rotation and Scale of a Mesh](/features/Position,_Rotation,_Scaling)
+[Meshes 101](/babylon-101/babylon-101/discover-basic-elements)   
+[Parametric Shapes 101](/babylon-101/babylon-101/parametric-shapes)  
+[Sprites 101](/babylon-101/babylon-101/sprites)  
+[Particles 101](/babylon-101/babylon-101/particles)  
+[Mesh Collisions 101](/babylon-101/babylon-101/intersect-collisions-mesh)  
+[Mesh Picking 101](/babylon-101/babylon-101/picking-collisions)   
+[Ray Casting 101](/babylon-101/babylon-101/raycasts)  
+[Polyhedra](/how-to/mesh/polyhedra-shapes)   
+[Using Decals](/how-to/mesh/decals)  
+[How to Use the Solid Particle System](/how-to/mesh/solid-particle-system)  
+[Set the Position, Rotation and Scale of a Mesh](/features/component/position_-rotation_-scaling)
 
 ## Mid Level - L2  
-[Using PolygonMeshBuilder](/How_To/PolygonMeshBuilder)  
-[Ribbon Tutorial](/How_To/Ribbon_Tutorial)  
-[Highlight Layer](/How_To/Highlight_Layer)  
+[Using PolygonMeshBuilder](/how-to/mesh/polygon-mesh-builder)  
+[Ribbon Tutorial](/how-to/mesh/ribbon-tutorial)  
+[Highlight Layer](/how-to/mesh/highlight-layer)  
 
 ## More Advanced - L3
-[How to use Instances](/How_To/How_to_use_Instances)  
-[How to Merge Meshes](/How_To/How_to_Merge_Meshes)  
-[Mathematics and Ribbons](/resources/Maths_Make_Ribbons)  
-[How to use Curve3](/How_To/How_to_use_Curve3)  
-[How to use Path3D](/How_To/How_to_use_Path3D)  
-[How to use Facet Data](/How_To/How_to_use_FacetData)  
-[How to use LOD](/How_To/How_to_use_LOD)  
-[How to Dynamically Morph a Mesh](/How_To/How_to_dynamically_morph_a_mesh)  
-[How to use Morph Targets](/How_To/How_to_use_MorphTargets)  
-[How to use Bones and Skeletons](/How_To/How_to_use_Bones_and_Skeletons)  
-[How to use EdgesRenderer](/How_To/How_to_use_EdgesRenderer)  
-[Creating Custom Meshes](/How_To/Custom)  
+[How to use Instances](/how-to/mesh/how-to-use-instances)  
+[How to Merge Meshes](/how-to/mesh/how-to-merge-meshes)  
+[Mathematics and Ribbons](/resources/manual/maths-make-ribbons)  
+[How to use Curve3](/how-to/mesh/how-to-use-curve-3)  
+[How to use Path3D](/how-to/mesh/how-to-use-path-3d)  
+[How to use Facet Data](/how-to/mesh/how-to-use-facet-data)  
+[How to use LOD](/how-to/mesh/how-to-use-lod)  
+[How to Dynamically Morph a Mesh](/how-to/mesh/how-to-dynamically-morph-a-mesh)  
+[How to use Morph Targets](/how-to/mesh/how-to-use-morph-targets)  
+[How to use Bones and Skeletons](/how-to/mesh/how-to-use-bones-and-skeletons)  
+[How to use EdgesRenderer](/how-to/mesh/how-to-use-edges-renderer)  
+[Creating Custom Meshes](/how-to/mesh/custom)  
 [Facet Normals](/How_To/Normals)  
-[Updating Vertices](/How_To/Updating_Vertices)
+[Updating Vertices](/how-to/mesh/updating-vertices)
 
  
 

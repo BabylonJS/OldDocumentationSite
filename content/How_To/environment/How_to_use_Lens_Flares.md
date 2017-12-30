@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 22471
 PG_TITLE: How to use Lens Flares
+title: Use Lens Flares
+abstract: ''
+slug: how-to-use-lens-flares
+redirects:
+  - /tutorials/how_to_use_lens_flares
 ---
 
 # How to use Lens Flares

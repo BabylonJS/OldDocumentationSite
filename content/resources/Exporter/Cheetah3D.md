@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 24441
 PG_TITLE: Cheetah3D
+title: Cheetah3D
+abstract: ''
+slug: cheetah-3d
+redirects:
+  - /exporters/cheetah3d
 ---
+
 ## Cheetah2Babylon
 
 [Cheetah 3D](http://www.cheetah3d.com/) exporter for [Babylon.JS](http://babylonjs.com/) .babylon scene files. Currently supports the following :

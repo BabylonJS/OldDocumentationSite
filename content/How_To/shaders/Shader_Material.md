@@ -1,5 +1,8 @@
 ---
 PG_TITLE: ShaderMaterial
+title: Use ShaderMaterial
+abstract: ''
+slug: shader-material
 ---
 
 # ShaderMaterial
@@ -60,5 +63,5 @@ the set method depending on the type passed.
 
 # Further Reading
 
-[Introduction To Shaders in BabylonJS](/resources/ShaderIntro)  
+[Introduction To Shaders in BabylonJS](/resources/manual/shader-intro)  
 [How To Put Shader Code in BabylonJS](/How_To/Putting.html)

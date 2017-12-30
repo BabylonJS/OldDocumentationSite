@@ -1,6 +1,14 @@
 ---
 ID_PAGE: 22071
 PG_TITLE: 06. Lights
+title: Lights
+abstract: >-
+  Lights are used to produce the diffuse and specular color received by each
+  pixel. This color is then used by materials to determine the final color of
+  every pixel.
+slug: lights
+redirects:
+  - /tutorials/lights
 ---
 
 # Lights
@@ -132,8 +140,8 @@ As you can see, the lights only affect the front face and not the back face.
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!
 
 
-Guess what! The next tutorial... is about animation! [Click this and let's go!](/babylon101/Animations)
+Guess what! The next tutorial... is about animation! [Click this and let's go!](/babylon-101/babylon-101/animations)
 
 # Further Reading
 
-[Lights Overview](/features/Lights)
+[Lights Overview](/features/component/lights)

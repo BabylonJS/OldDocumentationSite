@@ -1,5 +1,10 @@
 ---
 PG_TITLE: How To Optimize Your Scene
+title: Optimize your scene
+abstract: ''
+slug: optimizing-your-scene
+redirects:
+  - /tutorials/optimizing_your_scene
 ---
 
 # How To Optimize Your Scene
@@ -48,7 +53,7 @@ scene.unfreezeActiveMeshes();
 Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
 
 ## Reducing draw calls
-As soon as you can please use [instances](/How_To/how_to_use_instances) as they are drawn with one single draw call.
+As soon as you can please use [instances](/how-to/mesh/how-to-use-instances) as they are drawn with one single draw call.
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
 
@@ -123,6 +128,6 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 
 ## More Advanced - L3
 
-[How to Use Scene Optimizer](/How_To/How_to_use_SceneOptimizer)  
-[How To Optimize Your Scene With Octrees](/How_To/optimizing_your_scene_with_octrees)
+[How to Use Scene Optimizer](/how-to/scene/how-to-use-scene-optimizer)  
+[How To Optimize Your Scene With Octrees](/how-to/scene/optimizing-your-scene-with-octrees)
 

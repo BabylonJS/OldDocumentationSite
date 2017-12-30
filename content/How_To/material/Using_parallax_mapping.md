@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 25094
 PG_TITLE: 18. Using Parallax Mapping
+title: Use Parallax Mapping
+abstract: ''
+slug: using-parallax-mapping
+redirects:
+  - /tutorials/using_parallax_mapping
 ---
 
 # How To Use Parallax Mapping

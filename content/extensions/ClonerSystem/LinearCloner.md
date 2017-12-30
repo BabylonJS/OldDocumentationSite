@@ -1,3 +1,8 @@
+---
+title: Linear Cloner
+abstract: ''
+slug: linear-cloner
+---
 
 # LinearCloner
 

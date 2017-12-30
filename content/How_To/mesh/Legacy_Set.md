@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Set Shapes Legacy Method
+title: Create Set Shapes - Legacy
+abstract: ''
+slug: legacy-set
 ---
 
 # How To Create Set Shapes using Legacy Method
@@ -97,7 +100,7 @@ var ground = BABYLON.Mesh.CreateGroundFromHeightMap("ground", "heightmap.jpg", 2
 ```
 Parameters are: name, heightmapPath, width, depth, subdivs, minheight, maxheight, scene, updatable, successCallback
 
-HeightMap grounds are easy, but we decided to create a separate tutorial so we could say more about this important Babylon.js feature. Please see our [HeightMap Tutorial](/babylon101/Height_Map) to learn all about heightMap grounds.
+HeightMap grounds are easy, but we decided to create a separate tutorial so we could say more about this important Babylon.js feature. Please see our [HeightMap Tutorial](/babylon-101/babylon-101/height-map) to learn all about heightMap grounds.
 
 # Tiled Ground
 
@@ -124,9 +127,9 @@ Kostar111 was also kind enough to give us a fine tutorial about how to use tiled
 
 ## Basic - L1
 
-[Mesh Overview](/features/Shapes)  
-[Set Shapes 101](/babylon101/Discover_Basic_Elements)  
-[Parametric Shapes 101](/babylon101/Parametric_Shapes)  
-[Set Shapes](/How_To/Set_Shapes)  
-[Parametric Shapes](/How_To/Parametric_Shapes)  
-[Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Mesh Overview](/features/component/shapes)  
+[Set Shapes 101](/babylon-101/babylon-101/discover-basic-elements)  
+[Parametric Shapes 101](/babylon-101/babylon-101/parametric-shapes)  
+[Set Shapes](/how-to/mesh/set-shapes)  
+[Parametric Shapes](/how-to/mesh/parametric-shapes)  
+[Polyhedra Shapes](/how-to/mesh/polyhedra-shapes)  

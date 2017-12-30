@@ -1,5 +1,10 @@
 ---
 PG_TITLE: How to Use Observables
+title: Handle Events with Observables
+abstract: ''
+slug: observables
+redirects:
+  - /overviews/observables
 ---
 
 # How To Use Observables

@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Centres of Rotation and Enlargement
+title: Placing a Pivot
+abstract: ''
+slug: pivot
 ---
 
 # Rotating and Enlarging Relative to a Centre.

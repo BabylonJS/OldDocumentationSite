@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Lights and Shadows
+title: Light and Shadow Effects
+abstract: ''
+slug: lights
 ---
 
 # Lights and Shadows
@@ -39,13 +42,13 @@ This post process effect can produce rays of light as scattered by the meshes it
 
 ## Basic - L1
 
-[Lights 101](/babylon101/Lights)  
-[Shadows 101](/babylon101/shadows)
+[Lights 101](/babylon-101/babylon-101/lights)  
+[Shadows 101](/babylon-101/babylon-101/shadows)
 
 ## More Advanced - L3
 
-[Light Scattering](/How_To/Using_the_Volumetric_LightScattering_post-process)  
-[Shadows Only](/extensions/ShadowOnly)
+[Light Scattering](/how-to/light/using-the-volumetric-light-scattering-post-process)  
+[Shadows Only](/extensions/materials-library/shadow-only)
 
 
    

@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Realistic Environments
+title: Realistic Environments
+abstract: ''
+slug: environment
 ---
 
 # Realistic Environments
@@ -12,7 +15,7 @@ This can be achieved with a _skybox_ object, a large cube that has its inner fac
 
 ## Uneven Terrain
 
-The most straight forward way is to apply an [height map](/babylon101/Height_Map) image to the ground object. This greyscale pixels of such an image provide the values for the height of the ground.
+The most straight forward way is to apply an [height map](/babylon-101/babylon-101/height-map) image to the ground object. This greyscale pixels of such an image provide the values for the height of the ground.
 
 ![HeightMap5](/img/how_to/HeightMap/14-4S.png)
 
@@ -31,7 +34,7 @@ Remember to click in display area before using keys.
 
 
 ## Shadows
-For [shadows](/babylon101/shadows) a _shadowGenerator_ object is needed. A mesh can then produce a shadow by adding it to a rendering list of the _shadowGenerator_. There is also an extension, [shadows only](/extensions/ShadowOnly),  that allows shadows on a transparent mesh.
+For [shadows](/babylon-101/babylon-101/shadows) a _shadowGenerator_ object is needed. A mesh can then produce a shadow by adding it to a rendering list of the _shadowGenerator_. There is also an extension, [shadows only](/extensions/materials-library/shadow-only),  that allows shadows on a transparent mesh.
 
 ## Fog 
 
@@ -39,11 +42,11 @@ Though it can be a complicated procedure to form a fog effect a fairly simple me
 
 ## Physically Based Rendering Materials
 
-World objects do not all absorb and reflect light in the same way. A metal sculture and a concrete one behave completely differently under the same lights. [Physically based rendering](/How_To/Physically_Based_Rendering) materials go a long way to allow you to differentiate between the different substances you might want in your project.
+World objects do not all absorb and reflect light in the same way. A metal sculture and a concrete one behave completely differently under the same lights. [Physically based rendering](/how-to/environment/physically-based-rendering) materials go a long way to allow you to differentiate between the different substances you might want in your project.
 
 ## Light Effects
 
-As well as fog, shadows, reflection and reflection it is also possible to give the effects of [light scattering](/How_To/Using_the_Volumetric_LightScattering_post-process) and [lens flare](/How_To/How_to_use_Lens_Flares).
+As well as fog, shadows, reflection and reflection it is also possible to give the effects of [light scattering](/how-to/light/using-the-volumetric-light-scattering-post-process) and [lens flare](/how-to/environment/how-to-use-lens-flares).
 
 ## Post Processes
  
@@ -60,40 +63,40 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 
 ## Basic - L1
 
-[Environment 101](/babylon101/Environment)  
-[Height Maps 101](/babylon101/Height_Map)   
-[Shadows 101](/babylon101/shadows)  
-[Lights 101](/babylon101/Lights)  
-[Materials](/features/Materials)
+[Environment 101](/babylon-101/babylon-101/environment)  
+[Height Maps 101](/babylon-101/babylon-101/height-map)   
+[Shadows 101](/babylon-101/babylon-101/shadows)  
+[Lights 101](/babylon-101/babylon-101/lights)  
+[Materials](/features/component/materials)
 
 ## Mid Level - L2
 
-[Introduction to Physically Based Rendering Materials](/How_To/Physically_Based_Rendering)  
-[Skybox](/How_To/Skybox)  
-[Dynamic Terrain](/extensions/Dynamic_Terrain)  
-[Dynamic Terrain Examples](/extensions/DT_Examples)
+[Introduction to Physically Based Rendering Materials](/how-to/environment/physically-based-rendering)  
+[Skybox](/how-to/environment/skybox)  
+[Dynamic Terrain](/extensions/terrains/dynamic-terrain)  
+[Dynamic Terrain Examples](/extensions/terrains/dt-examples)
 
 ## More Advanced - L3
 
-[Master Physically Based Rendering Materials](/How_To/Physically_Based_Rendering_Master)  
-[Fog using Custom Shader](/How_To/Supporting_fog_with_ShaderMaterial)  
-[Shadows Only](/extensions/ShadowOnly)   
-[Light Scattering](/How_To/Using_the_Volumetric_LightScattering_post-process)  
-[Lens Flare](/How_To/How_to_use_Lens_Flares)  
-[Reflection and Refraction](/How_To/Reflect)  
-[Reflection Probes](/How_To/How_to_use_Reflection_probes)
+[Master Physically Based Rendering Materials](/how-to/environment/physically-based-rendering-master)  
+[Fog using Custom Shader](/how-to/environment/supporting-fog-with-shader-material)  
+[Shadows Only](/extensions/materials-library/shadow-only)   
+[Light Scattering](/how-to/light/using-the-volumetric-light-scattering-post-process)  
+[Lens Flare](/how-to/environment/how-to-use-lens-flares)  
+[Reflection and Refraction](/how-to/material/reflect)  
+[Reflection Probes](/how-to/environment/how-to-use-reflection-probes)
 
-[How to use PostProcesses](/How_To/How_to_use_PostProcesses)  
-[How to use PostProcessRenderPipeline](/How_To/How_to_use_PostProcessRenderPipeline)  
-[Using the SSAO rendering pipeline](/How_To/Using_the_SSAO_rendering_pipeline)  
-[Using the standard rendering pipeline](/How_To/Using_Standard_Rendering_Pipeline)  
-[Using the default rendering pipeline](/How_To/Using_Default_Rendering_Pipeline)  
-[Using depth-of-field and other lens effects](/How_To/Using_depth-of-field_and_other_lens_effects)
+[How to use PostProcesses](/how-to/post-process/how-to-use-post-processes)  
+[How to use PostProcessRenderPipeline](/how-to/post-process/how-to-use-post-process-render-pipeline)  
+[Using the SSAO rendering pipeline](/how-to/post-process/using-the-ssao-rendering-pipeline)  
+[Using the standard rendering pipeline](/how-to/post-process/using-standard-rendering-pipeline)  
+[Using the default rendering pipeline](/how-to/post-process/using-default-rendering-pipeline)  
+[Using depth-of-field and other lens effects](/how-to/post-process/using-depth-of-field-and-other-lens-effects)
 
 
-[Introduction to Shaders](/resources/ShaderIntro)  
-[How To Put Shader Code in Babylon.js](/How_To/Putting)  
-[How To Use ShaderMaterial](/How_To/Shader_Material)  
-[Example A Vertical Wave with Shader Code](/samples/Writing1)  
-[Example Fireworks with Shader Code](/samples/Writing2)
+[Introduction to Shaders](/resources/manual/shader-intro)  
+[How To Put Shader Code in Babylon.js](/how-to/shaders/putting)  
+[How To Use ShaderMaterial](/how-to/shaders/shader-material)  
+[Example A Vertical Wave with Shader Code](/samples/gamelets/writing-1)  
+[Example Fireworks with Shader Code](/samples/gamelets/writing-2)
 

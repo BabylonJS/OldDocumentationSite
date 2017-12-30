@@ -1,6 +1,13 @@
 ---
 PG_TITLE: Tags for Babylon.js Objects
+title: How to Use Tags in Babylon.js
+abstract: ''
+slug: tags
+redirects:
+  - /tutorials/how_to_use_the_tags_system
+  - /exporters/tags
 ---
+
 ## Concepts
 
 Tag? You may already have heard or read this word before. Let's see some generic concepts.

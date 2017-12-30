@@ -1,12 +1,17 @@
 ---
 PG_TITLE: About the Course
+title: About This Course
+abstract: ''
+slug: about-101
+redirects:
+  - /generals/a_babylon.js_primer
 ---
 
 # The Course
 
 The Babylon 101 course will lead you on a step by step journey to produce scenes that use some of the basic features of the Babylon Engine. On the way there will references for more details at each stage.
 
-So you can get started without any fuss the course starts out with the [First Step](/babylon101/First) by showing you how to use the Playgound to create a scene. Throughout the course you will find examples built in the Playground ready for you to explore and edit. You can of course write your own code in the Playground, just click on the NEW button, edit and write your code and hit the RUN button. 
+So you can get started without any fuss the course starts out with the [First Step](/babylon-101/babylon-101/first) by showing you how to use the Playgound to create a scene. Throughout the course you will find examples built in the Playground ready for you to explore and edit. You can of course write your own code in the Playground, just click on the NEW button, edit and write your code and hit the RUN button. 
 
 In this [playground example](https://www.babylonjs-playground.com/#K6M44R#1) you will see that this scene contains a camera, lights and a sphere. A sphere being one the shapes readily available for you to add into your scene. Many more shapes, or meshes as they should be called, are available for you to easily create. In addition to the well known fixed shapes such as boxes, sphere and cylinders it is also possible to create shapes using techniques such as extrusion and lathing. The next two steps of the course show how to add some of these.
 
@@ -22,5 +27,5 @@ Other improvements to your scene environment are next. They include adding sky o
 
 # Next
 
-[Take the First Step](/babylon101/First)
+[Take the First Step](/babylon-101/babylon-101/first)
 

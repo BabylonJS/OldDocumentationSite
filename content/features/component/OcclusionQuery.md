@@ -1,3 +1,11 @@
+---
+title: Occlusion Queries
+abstract: ''
+slug: occlusion-query
+redirects:
+  - /overviews/occlusionquery
+---
+
 ## Introduction
 
 Babylon.js v3.1 introduced a new feature: Occlusion Queries.

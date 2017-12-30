@@ -1,3 +1,9 @@
+---
+title: GUISelect
+abstract: ''
+slug: guiselect
+---
+
 # GUISelect
 
 ## new GUISelect(id, options, guimanager, callback, append)

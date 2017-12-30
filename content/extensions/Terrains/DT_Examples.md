@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Dynamic Terrain Examples
+title: Examples
+abstract: ''
+slug: dt-examples
 ---
 
 # Dynamic Terrain Examples
@@ -83,4 +86,4 @@ Let's don't worry if this feature seems complex to understand and let's just rem
 
 # Further Reading
 
-[Dynamic Terrain](/extensions/Dynamic_Terrain) 
+[Dynamic Terrain](/extensions/terrains/dynamic-terrain) 

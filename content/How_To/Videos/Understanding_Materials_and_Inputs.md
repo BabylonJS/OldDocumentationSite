@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 24830
 PG_TITLE: 04. Understanding Materials and Inputs
+title: Understanding Materials and Inputs
+abstract: ''
+slug: understanding-materials-and-inputs
+redirects:
+  - /tutorials/04._understanding_materials_and_inputs
+  - /tutorials/understanding_materials_and_inputs
 ---
+
 Learn about materials, shaders and how to work with inputs.
 
 ** Agenda **

@@ -1,6 +1,12 @@
 ---
 PG_TITLE: How to use EdgesRenderer
+title: Use EdgesRenderer
+abstract: ''
+slug: how-to-use-edges-renderer
+redirects:
+  - /tutorials/how_to_use_edgesrenderer
 ---
+
 BABYLON.EdgesRenderer is a tool used to render edges on top of a mesh. Edges are rendered between two faces if the dot product of their normals is less than epsilon.
 
 ![](/img/edgesRenderer.jpg)

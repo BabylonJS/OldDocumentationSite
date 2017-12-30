@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 22231
 PG_TITLE: 07. Caching Resources in IndexedDB
+title: Optimize using Cached Resources
+abstract: ''
+slug: caching-resources-in-indexed-db
+redirects:
+  - /tutorials/caching_resources_in_indexeddb
 ---
 
 # How To Optimize Using Cached Resoures

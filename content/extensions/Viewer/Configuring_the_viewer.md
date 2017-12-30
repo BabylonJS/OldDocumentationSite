@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Configuring the viewer
+title: Configuring The Viewer
+abstract: ''
+slug: configuring-the-viewer
 ---
 
 # Configuring the viewer

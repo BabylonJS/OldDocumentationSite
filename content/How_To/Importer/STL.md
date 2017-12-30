@@ -1,7 +1,13 @@
 ---
 ID_PAGE: 25109
 PG_TITLE: STL
+title: Load an STL File
+abstract: ''
+slug: stl
+redirects:
+  - /extensions/stl
 ---
+
 # STL File Import
 
 You can find the STL loader [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview release/loaders)

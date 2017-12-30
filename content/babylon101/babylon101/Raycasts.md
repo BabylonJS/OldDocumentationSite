@@ -1,6 +1,13 @@
 ---
 ID_PAGE: 22151
 PG_TITLE: 13. Raycasts
+title: Raycasts
+abstract: >-
+  Throw a ray in your scene from any point and in any direction to detect
+  objects.
+slug: raycasts
+redirects:
+  - /tutorials/raycasts
 ---
 
 # Raycasts 
@@ -159,7 +166,7 @@ The helper can also be attached to a mesh to track its direction:
 
 ## Next step
 
-Often it is sufficient to have some 2D shapes in you scene and [**sprites**](/babylon101/Sprites) are next.
+Often it is sufficient to have some 2D shapes in you scene and [**sprites**](/babylon-101/babylon-101/sprites) are next.
 
 
 
@@ -167,7 +174,7 @@ Often it is sufficient to have some 2D shapes in you scene and [**sprites**](/ba
 
 ## Basic - L1
 
-[Mesh Overview](/features/Shapes)
+[Mesh Overview](/features/component/shapes)
 
 ## External
 

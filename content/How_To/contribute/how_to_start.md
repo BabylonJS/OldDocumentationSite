@@ -1,3 +1,11 @@
+---
+title: Start Contributing to Babylon.js
+abstract: ''
+slug: how-to-start
+redirects:
+  - /generals/how_to_start
+---
+
 # How to start
 
 ## Introduction

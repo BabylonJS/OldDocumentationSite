@@ -1,3 +1,9 @@
+---
+title: Gradient
+abstract: ''
+slug: gradient
+---
+
 # Gradient material
 
 ![Screenshot](/img/extensions/materials/gradient.jpg)

@@ -1,5 +1,10 @@
 ---
 PG_TITLE: Morph Targets
+title: Use Morph targets
+abstract: ''
+slug: how-to-use-morph-targets
+redirects:
+  - /tutorials/how_to_use_morphtargets
 ---
 
 # Morph targets

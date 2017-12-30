@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 24827
 PG_TITLE: 01. 3D on the Web Understanding the Basics
+title: 3D on the Web Understanding the Basics
+abstract: ''
+slug: 3d-on-the-web-understanding-the-basics
+redirects:
+  - /tutorials/01._3d_on_the_web_understanding_the_basics
+  - /tutorials/3d_on_the_web_understanding_the_basics
 ---
+
 Explore 3D basics, and take a look at 3D without hardware (creating a software engine).
 
 **Agenda**:

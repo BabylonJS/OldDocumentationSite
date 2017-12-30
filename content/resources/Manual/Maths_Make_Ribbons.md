@@ -1,6 +1,9 @@
 ---
 ID_PAGE: 925088
 PG_TITLE: Maths Makes Ribbons
+title: Mathematics and Ribbons
+abstract: ''
+slug: maths-make-ribbons
 ---
 
 # Mathematics and Ribbons

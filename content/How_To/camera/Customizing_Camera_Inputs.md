@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 29000
 PG_TITLE: 19. Customizing Camera Inputs
+title: Customize Camera Inputs
+abstract: ''
+slug: customizing-camera-inputs
+redirects:
+  - /tutorials/customizing_camera_inputs
 ---
 
 # How To Customize Camera Inputs

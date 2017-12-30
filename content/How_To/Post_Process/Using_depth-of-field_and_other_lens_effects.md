@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 24841
 PG_TITLE: Using depth-of-field and other lens effects
+title: Use depth-of-field and other lens effects
+abstract: ''
+slug: using-depth-of-field-and-other-lens-effects
+redirects:
+  - /tutorials/using_depth-of-field_and_other_lens_effects
 ---
 
 # How To Use Depth-of-field and other Lens Effects

@@ -1,7 +1,17 @@
 ---
 ID_PAGE: 22121
 PG_TITLE: 14. Particles
+title: Particles
+abstract: >-
+  Particles are often small sprites used to simulate hard-to-reproduce phenomena
+  like fire, smoke, water, or abstract visual effects like magic glitter and
+  faery dust.
+slug: particles
+redirects:
+  - /tutorials/12._particles
+  - /tutorials/particles
 ---
+
 # Particles
 
 This tutorial is going to talk about the particle system in BabylonJS. Particles are often small sprites used to simulate hard-to-reproduce phenomena like fire, smoke, water, or abstract visual effects like magic glitter and faery dust.
@@ -290,12 +300,12 @@ particleSystem.spriteCellWidth = 64;
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
 
-Stay with us, because we are going to learn a new, very interesting thing: [Configuring your environment](/babylon101/Environment).
+Stay with us, because we are going to learn a new, very interesting thing: [Configuring your environment](/babylon-101/babylon-101/environment).
 
 # Further Reading
 
 ## Basic - L1
 
-[Mesh Overview](/features/Shapes)  
-[Solid Particle System](/How_To/Solid_Particle_System)
+[Mesh Overview](/features/component/shapes)  
+[Solid Particle System](/how-to/mesh/solid-particle-system)
 

@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Baking Transformations
+title: Baking Transformations
+abstract: ''
+slug: baking-transformations
 ---
 
 # Baking Transformations
@@ -137,8 +140,8 @@ mesh.updateVerticesData(VertexBuffer.NormalKind, normals, false, false);
 
 # Further Reading
 
-[Vertex Normals](/resources/normals)  
+[Vertex Normals](/resources/manual/normals)  
 
 ##Advanced - Level 3
 
-[How To Update Vertex Data](/How_To/updating_vertices)
+[How To Update Vertex Data](/how-to/mesh/updating-vertices)

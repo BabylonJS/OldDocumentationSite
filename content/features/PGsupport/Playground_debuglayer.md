@@ -1,5 +1,10 @@
 ---
 PG_TITLE: Playground Debuglayer
+title: The Debug Layer
+abstract: ''
+slug: playground-debuglayer
+redirects:
+  - /overviews/debug_layer_features
 ---
 
 # Playground Debug Layer
@@ -136,7 +141,7 @@ As for a scene the displayed list of properties for a sound can be updated manua
 
 # Further Reading
 
-[How To Use The Debug Layer in Projects](/How_To/debug_layer)   
-[How To Customize the Debug Layer](/How_To/customize_debug_layer)  
+[How To Use The Debug Layer in Projects](/how-to/pgsupport/debug-layer)   
+[How To Customize the Debug Layer](/how-to/pgsupport/customize-debug-layer)  
 
 

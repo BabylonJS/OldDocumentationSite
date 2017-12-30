@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 22691
 PG_TITLE: Render Scene on a PNG
+title: Render a Scene to a PNG
+abstract: ''
+slug: render-scene-on-a-png
+redirects:
+  - /tutorials/render_scene_on_a_png
 ---
 
 # How To Render a Scene to a PNG

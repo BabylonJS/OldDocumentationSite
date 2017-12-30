@@ -1,3 +1,9 @@
+---
+title: GUISpinner
+abstract: ''
+slug: guispinner
+---
+
 # GUISpinner
 
 ## new GUISpinner(id, options, guimanager, callback, append)

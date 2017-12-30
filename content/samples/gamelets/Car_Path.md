@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Making a Simple Car
+title: Simple Car Following Path
+abstract: ''
+slug: car-path
 ---
 
 # Making a Simple Car

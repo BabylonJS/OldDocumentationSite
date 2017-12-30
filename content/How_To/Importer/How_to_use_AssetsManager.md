@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 22551
 PG_TITLE: How to use AssetsManager
+title: Load Files with Assests Manager
+abstract: ''
+slug: how-to-use-assets-manager
+redirects:
+  - /tutorials/how_to_use_assetsmanager
 ---
 
 # How To Load Files with Assests Manager

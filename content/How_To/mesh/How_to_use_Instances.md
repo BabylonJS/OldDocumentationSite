@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 22571
 PG_TITLE: How to use Instances
+title: Use Instances
+abstract: ''
+slug: how-to-use-instances
+redirects:
+  - /tutorials/how_to_use_instances
 ---
 
 # How to use Instances

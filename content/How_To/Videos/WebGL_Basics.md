@@ -1,7 +1,14 @@
 ---
 ID_PAGE: 24828
 PG_TITLE: 02. WebGL Basics
+title: WebGL Basics
+abstract: ''
+slug: web-gl-basics
+redirects:
+  - /tutorials/02._webgl_basics
+  - /tutorials/webgl_basics
 ---
+
 Think of this as a WebGL 101 course, with a look at geometries and shaders, resources, and performance considerations.
 
 ** Agenda **

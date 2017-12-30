@@ -1,3 +1,9 @@
+---
+title: Normal
+abstract: ''
+slug: normal
+---
+
 # Normal material
 
 ![Screenshot](/img/extensions/materials/normal.jpg)

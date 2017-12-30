@@ -1,5 +1,10 @@
 ---
 PG_TITLE: OBJ Import
+title: Load an OBJ File
+abstract: ''
+slug: obj
+redirects:
+  - /extensions/obj
 ---
 
 # OBJ File Import

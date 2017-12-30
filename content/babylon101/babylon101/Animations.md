@@ -1,7 +1,15 @@
 ---
 ID_PAGE: 22081
 PG_TITLE: 08. Animations
+title: Animations
+abstract: >-
+  You use animations to put dynamics in a 3D scene. This tutorial help you learn
+  how to tell your computer to move your meshes in any way you choose.
+slug: animations
+redirects:
+  - /tutorials/animations
 ---
+
 # Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 
@@ -396,8 +404,8 @@ And that's it!
 
 ## Next step
 
-Now you know how to create a complete simple dynamic scene and it is going to be important to talk about [collisions](/babylon101/Cameras,_Mesh_Collisions_and_Gravity).
+Now you know how to create a complete simple dynamic scene and it is going to be important to talk about [collisions](/babylon-101/babylon-101/cameras_-mesh-collisions-and-gravity).
 
 # Further Reading
 
-[Animation Overview](/features/Animations)
+[Animation Overview](/features/component/animations)

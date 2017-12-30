@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 25090
 PG_TITLE: How to use Path3D
+title: Use Path3D
+abstract: ''
+slug: how-to-use-path-3d
+redirects:
+  - /tutorials/how_to_use_path3d
 ---
 
 # How To Use Path3D
@@ -101,7 +106,7 @@ The playground example shows what happens as the vector setting the normal direc
 # Further Reading
 
 # Basic - Level 1
-[How To Create Parametric Shapes](/How_To/parametric_shapes)
+[How To Create Parametric Shapes](/how-to/mesh/parametric-shapes)
 
 ## More Advanced - Level 3
-[How To Draw Curves](/How_To/How_to_use_Curve3) 
+[How To Draw Curves](/how-to/mesh/how-to-use-curve-3) 

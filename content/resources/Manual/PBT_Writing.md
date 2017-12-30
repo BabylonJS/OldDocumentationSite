@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Intermediate Guide for Writing Playground Based Tutorials
+title: Intermediate Guide for PBT
+abstract: ''
+slug: pbt-writing
 ---
 
 # General Points on Playground Based Tutorial Writing
@@ -64,7 +67,7 @@ redBlock.rotate(BABYLON.Axis.Z, Math.PI/2, BABYLON.Space.WORLD);
 ```
 
 ## Context Code
-As in the [starter guide](/resources/hiding_editor_lines) this includes code to create world and local axes and function calls to them.
+As in the [starter guide](/resources/manual/hiding-editor-lines) this includes code to create world and local axes and function calls to them.
 
 It also includes the code to carry out any rotations slowly. The rotations in the focus code are carried out immediately with no chance of a student seeing what happens. So whilst the focus is on the code in the editor the context code does the work. 
 
@@ -500,7 +503,7 @@ The working playground using the above code.
 
 # Further Reading
 
-[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
-[Starter Guide](/resources/hiding_editor_lines)  
-[Advanced Guide](/resources/PBT_previous_and_next)  
-[Slider Guide](/resources/PBT_slider)   
+[Playground Based Tutorial Writing Overview](/how-to/contribute/playground-tutorials)  
+[Starter Guide](/resources/manual/hiding-editor-lines)  
+[Advanced Guide](/resources/manual/pbt-previous-and-next)  
+[Slider Guide](/resources/manual/pbt-slider)   

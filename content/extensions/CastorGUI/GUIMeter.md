@@ -1,3 +1,9 @@
+---
+title: GUIMeter
+abstract: ''
+slug: guimeter
+---
+
 # GUIMeter
 
 ## new GUIMeter(id, options, guimanager, callback, append)

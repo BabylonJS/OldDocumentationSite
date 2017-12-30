@@ -1,3 +1,11 @@
+---
+title: Create a Procedural Texture for the Procedural Textures Library
+abstract: ''
+slug: how-to-create-a-procedural-texture-for-procedutal-textures-library
+redirects:
+  - /tutorials/how_to_create_a_proceduraltexture_for_procedutaltextureslibrary
+---
+
 This tutorial will guide you through the process of creating a procedural texture for the [procedural textures library](https://github.com/BabylonJS/Babylon.js/tree/master/proceduralTexturesLibrary)
 
 ## Setting up environment

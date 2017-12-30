@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 25363
 PG_TITLE: Layermasks and Multi-Cam Textures
+title: Use Layermasks and Multi-Camera Textures
+abstract: ''
+slug: layermasks-and-multi-cam-textures
+redirects:
+  - /tutorials/layermasks_and_multi-cam_textures
 ---
 
 # How To Use Layermasks and Multi-Camera Textures

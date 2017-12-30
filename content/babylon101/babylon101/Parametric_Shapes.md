@@ -1,6 +1,13 @@
 ---
 ID_PAGE: 24847
 PG_TITLE: 03. Parametric Shapes
+title: Parametric Shapes
+abstract: >-
+  Parametric shapes are a special kind of meshes. Their final shape depend upon
+  some parameters. You can create a ribon using this for instance.
+slug: parametric-shapes
+redirects:
+  - /tutorials/parametric_shapes
 ---
 
 # Parametric Shapes 101
@@ -94,12 +101,12 @@ Most but not all parametric shapes have the _instance_ option and so can have th
 
 # Next Step
 
-In the previous section, about set shapes, you saw that when created they sit on top of each other at the origin. That is often the case with parametric shapes as well. So its time to move on to position meshes where needed and also find out about rotation and scaling. Ready? Sure you are! [Position, Rotation and Scaling](/babylon101/Position)
+In the previous section, about set shapes, you saw that when created they sit on top of each other at the origin. That is often the case with parametric shapes as well. So its time to move on to position meshes where needed and also find out about rotation and scaling. Ready? Sure you are! [Position, Rotation and Scaling](/babylon-101/babylon-101/position)
 
 # Further Reading
 
-[How to Create Parametric Shapes with MeshBuilder](/How_To/Parametric_Shapes)  
-[How to Create Parametric Shapes Legacy Method](/How_To/Legacy_Param)  
+[How to Create Parametric Shapes with MeshBuilder](/how-to/mesh/parametric-shapes)  
+[How to Create Parametric Shapes Legacy Method](/how-to/mesh/legacy-param)  
 [Advantages and Disadvantages](/features/Shapes#ways-of-creating-a-predefined-mesh)
 
 

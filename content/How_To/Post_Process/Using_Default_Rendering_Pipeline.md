@@ -1,5 +1,10 @@
 ---
 PG_TITLE: How To Use the Default Rendering Pipeline
+title: Use the default rendering pipeline
+abstract: ''
+slug: using-default-rendering-pipeline
+redirects:
+  - /tutorials/using_default_rendering_pipeline
 ---
 
 # Introduction

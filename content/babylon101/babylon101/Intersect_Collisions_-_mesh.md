@@ -1,7 +1,17 @@
 ---
 ID_PAGE: 22101
 PG_TITLE: 11. Intersect Collisions - mesh
+title: Intersect Collisions - mesh
+abstract: >-
+  In dynamic scenes, objects are moving and interacting with each other. To get
+  the best rendering, you will want to know when your meshes are in contact with
+  each other. In this tutorial, you will discover how the collision system
+  works.
+slug: intersect-collisions-mesh
+redirects:
+  - /tutorials/intersect_collisions_-_mesh
 ---
+
 # Mesh Collisions
 
 In dynamic scenes, objects are moving and interacting with each other. To get the best rendering, you will want to know when your meshes are in contact with each other. In this tutorial, we are going to discover how the collision system works.
@@ -57,8 +67,8 @@ You can play with the code used in this tutorial... by visiting [**a demo at our
 
 With those two functions, your scenes are becoming a lot more dynamic: you can define a specific reaction to object intersecting and colliding, and begin to introduce physics notions into your scene.
 
-In our next tutorial, you will discover how to [check collisions between your scene and the mouse](/babylon101/Picking_Collisions).
+In our next tutorial, you will discover how to [check collisions between your scene and the mouse](/babylon-101/babylon-101/picking-collisions).
 
 # Further Reading
 
-[Cameras Overview](/features/Cameras)
+[Cameras Overview](/features/component/cameras)

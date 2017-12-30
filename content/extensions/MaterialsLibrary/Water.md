@@ -1,3 +1,9 @@
+---
+title: Water
+abstract: ''
+slug: water
+---
+
 # Water material
 
 ![Water material](/img/extensions/materials/water.jpg)

@@ -1,6 +1,15 @@
 ---
 ID_PAGE: 22091
-PG_TITLE: 10. Cameras, Mesh Collisions and Gravity
+PG_TITLE: '10. Cameras, Mesh Collisions and Gravity'
+title: 'Cameras, Mesh Collisions and Gravity'
+abstract: >-
+  Did you ever play a FPS (First Person Shooter) game? In this tutorial, you
+  learn how to to simulate the same camera movements: the camera is on the
+  floor, in collision with the ground, and potentially in collision with any
+  objects in the scene.
+slug: cameras_-mesh-collisions-and-gravity
+redirects:
+  - '/tutorials/cameras,_mesh_collisions_and_gravity'
 ---
 
 # Cameras, Mesh Collisions and Gravity
@@ -114,8 +123,8 @@ camera.collisionRadius = new BABYLON.Vector3(0.5, 0.5, 0.5)
 ```
 
 ## Next step
-Great, now you can develop a real FPS game! But maybe you would like to know when a mesh is in collision with another mesh? Good, because that is exactly the purpose of our [next tutorial](/babylon101/Intersect_Collisions_-_mesh).
+Great, now you can develop a real FPS game! But maybe you would like to know when a mesh is in collision with another mesh? Good, because that is exactly the purpose of our [next tutorial](/babylon-101/babylon-101/intersect-collisions-mesh).
 
 # Further Reading
 
-[Cameras Overview](/features/Cameras)
+[Cameras Overview](/features/component/cameras)

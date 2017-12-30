@@ -1,5 +1,8 @@
 ---
 PG_TITLE: The Babylon.js Viewer
+title: The Babylon Viewer
+abstract: ''
+slug: the-babylon-viewer
 ---
 
 # The Babylon.js viewer extension

@@ -1,3 +1,9 @@
+---
+title: GUIProgress
+abstract: ''
+slug: guiprogress
+---
+
 # GUIProgress
 
 ## new GUIProgress(id, options, guimanager, callback, append)

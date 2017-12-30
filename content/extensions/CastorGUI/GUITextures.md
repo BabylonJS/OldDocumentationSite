@@ -1,3 +1,9 @@
+---
+title: GUITextures
+abstract: ''
+slug: guitextures
+---
+
 # GUITexture
 
 ## new GUITexture(id, imageUrl, options, guimanager, callback, append)

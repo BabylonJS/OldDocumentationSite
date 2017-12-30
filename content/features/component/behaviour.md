@@ -1,5 +1,10 @@
 ---
 PG_TITLE: Behavior
+title: Behaviors
+abstract: ''
+slug: behaviour
+redirects:
+  - /overviews/behaviors
 ---
 
 # Behavior
@@ -33,4 +38,4 @@ Currently the list of behaviors available in babylon.js core are camera behaviou
 
 ## Basic - L1
 
-[Camera Behaviours](/How_To/Camera_Behaviors)
+[Camera Behaviours](/how-to/camera/camera-behaviors)

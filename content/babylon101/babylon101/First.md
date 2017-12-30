@@ -1,5 +1,12 @@
 ---
 PG_TITLE: 01. First Steps
+title: First Steps
+abstract: >-
+  Everything in babylon.js is managed inside of a scene. It holds every objects
+  that are going to be used to render your 3D elements.
+slug: first
+redirects:
+  - /tutorials/creating_a_basic_scene
 ---
 
 # First Steps
@@ -11,7 +18,7 @@ Babylon.JS is a great way to code a 3D environment on the web using the HTML5 ca
 This is the quickest and easiest way to make your own scene. Creating a 3D scene is easy, simply add a camera, lights and 3D shapes (meshes) and you are away. 
 
 The [Playground](http://babylonjs-playground.com) is web site which has everything you need to create 
-your own scene or edit an existing one. [More on the Playground](/features/Playground).
+your own scene or edit an existing one. [More on the Playground](/features/pgsupport/playground).
 
 A template for creating a scene within the playground is;
 
@@ -139,7 +146,7 @@ Finally, after these, add code to call the scene, to enable the engine to contin
 
 # Next Step
 
-Now you are ready to go further and learn how to create more shapes like spheres, cylinders, boxes, etc. by visiting [Set Shapes](/babylon101/Discover_Basic_Elements)
+Now you are ready to go further and learn how to create more shapes like spheres, cylinders, boxes, etc. by visiting [Set Shapes](/babylon-101/babylon-101/discover-basic-elements)
 
 # Further Reading External
 [BabylonJS Forum](http://www.html5gamedevs.com/forum/16-babylonjs)  

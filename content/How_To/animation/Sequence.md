@@ -1,5 +1,8 @@
 ---
 PG_TITLE: How To Sequence Animations
+title: Sequence Animations
+abstract: ''
+slug: sequence
 ---
 
 # How To Sequence Animations
@@ -189,8 +192,8 @@ scene.beginDirectAnimation(spotLights[1], [lightDimmer.clone()], 0, 25 * frameRa
 
 ## Basic
 
-[Introduction to Animating](/babylon101/animations)
+[Introduction to Animating](/babylon-101/babylon-101/animations)
 
 ## Advanced
 
-[A Sequence of Animations](/How_To/combine)   
+[A Sequence of Animations](/how-to/animation/combine)   

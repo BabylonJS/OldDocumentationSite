@@ -1,7 +1,16 @@
 ---
 ID_PAGE: 22151
 PG_TITLE: 17. Shadows
+title: Shadows
+abstract: >-
+  In babylon.js shadows are now becoming dynamic, and they are now dynamically
+  generated depending upon a light.
+slug: shadows
+redirects:
+  - /tutorials/15._shadows
+  - /tutorials/shadows
 ---
+
 ## Introduction
 
 In this tutorial, we are going to learn how to create shadows in Babylon JS. Shadows are now becoming dynamic, and they are now dynamically generated depending upon a light.

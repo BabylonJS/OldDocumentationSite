@@ -1,6 +1,14 @@
 ---
 ID_PAGE: 22011
 PG_TITLE: 02. Set Shapes
+title: Discover Basic Elements
+abstract: >-
+  With babylon.js you can use a lot of different basic 3D elements. They are
+  available by default to help you create cubes, spheres, etc.
+slug: discover-basic-elements
+redirects:
+  - /tutorials/02._discover_basic_elements
+  - /tutorials/discover_basic_elements
 ---
 
 # Set Shapes 101
@@ -110,11 +118,11 @@ subdivisions|_(number)_ number of square subdivisions|1
 
 [Playground Example of Ground](https://www.babylonjs-playground.com/#MJ6YSM)
 
-A variation on _CreateGround_ is [_CreateGroundFromHeightMap_](/babylon101/Height_map) which lets you form undulating ground rather than a flat plane.
+A variation on _CreateGround_ is [_CreateGroundFromHeightMap_](/babylon-101/babylon-101/height-map) which lets you form undulating ground rather than a flat plane.
 
 ## Face Colors or UV
 
-This is only available on a limited number of meshes that have distinct faces such as a box but not a sphere. This allows you to give each face for those meshes an individual color or image. [Find out about Face Colors and UV](/How_To/CreateBox_Per_Face_Textures_And_Colors).
+This is only available on a limited number of meshes that have distinct faces such as a box but not a sphere. This allows you to give each face for those meshes an individual color or image. [Find out about Face Colors and UV](/how-to/material/create-box-per-face-textures-and-colors).
 
 ## Updatable
 
@@ -143,17 +151,17 @@ When a mesh has a sideOrientation option present and it is set to DOUBLESIDE the
 
 ## Coming Soon 
 
-When you create a mesh it is always centered at the origin and in line with the axes. You will want to give it a different position and rotation. Cannot wait then skip the next step and go off to [How to Change Position and Rotation](/babylon101/Position)
+When you create a mesh it is always centered at the origin and in line with the axes. You will want to give it a different position and rotation. Cannot wait then skip the next step and go off to [How to Change Position and Rotation](/babylon-101/babylon-101/position)
 
 # Next Step 
 
-Now you have some of the set shapes under your belt find out about [Shapes Less Set in Their Ways](/babylon101/Parametric_Shapes)
+Now you have some of the set shapes under your belt find out about [Shapes Less Set in Their Ways](/babylon-101/babylon-101/parametric-shapes)
 
 # Further Reading
 
 ## Basic - L1
-[How to Create Set Shapes with MeshBuilder](/How_To/Set_Shapes)  
-[How to Create Set Shapes Legacy Method](/How_To/Legacy_Set)  
+[How to Create Set Shapes with MeshBuilder](/how-to/mesh/set-shapes)  
+[How to Create Set Shapes Legacy Method](/how-to/mesh/legacy-set)  
 [Advantages and Disadvantages](/features/Shapes#ways-of-creating-a-predefined-mesh)
 
 

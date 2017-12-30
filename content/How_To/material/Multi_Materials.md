@@ -1,5 +1,8 @@
 ---
 PG_TITLE: How To Use Multi Materials
+title: Use Multi-Materials
+abstract: ''
+slug: multi-materials
 ---
 
 # How To use Multi Materials

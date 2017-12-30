@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Fireworks with Shaders
+title: Fireworks with Shader Code
+abstract: ''
+slug: writing-2
 ---
 
 # Fireworks with Shaders

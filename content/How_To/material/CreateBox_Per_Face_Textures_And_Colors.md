@@ -1,5 +1,13 @@
 ---
 PG_TITLE: Apply Material to Faces
+title: Apply Material to Individual Faces
+abstract: >-
+  In this tutorial, you will learn how to use the faceUV and faceColors
+  parameters of the MeshBuilder.CreateBox() method in order to set a different
+  texture or color per box face.
+slug: create-box-per-face-textures-and-colors
+redirects:
+  - /tutorials/createbox_per_face_textures_and_colors
 ---
 
 # How To Map Material to Individual Mesh Faces
@@ -20,7 +28,7 @@ A texture atlas also know as a _sprite sheet_ or _sprite atlas_ contains a range
 
 In this atlas there are 24 different images in a 4 rows of 6 a way of mapping each sprite onto an individual face is needed. 
 
-This map will just follow the way [texture images are mapped onto a mesh usually](/resources/Facets).
+This map will just follow the way [texture images are mapped onto a mesh usually](/resources/manual/facets).
 
 The U coordinate goes horizontally left to right from 0 to 1.
 

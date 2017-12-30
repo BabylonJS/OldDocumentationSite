@@ -1,6 +1,9 @@
 ---
 ID_PAGE: 45094
 PG_TITLE: Normals
+title: Vertex Normals
+abstract: ''
+slug: normals
 ---
 
 # Vertex Normals

@@ -1,5 +1,8 @@
 ---
 PG_TITLE: Show Mesh Vertex Normals
+title: Show Vertex Normals
+abstract: ''
+slug: normals
 ---
 
 # Show Mesh Vertex Normals

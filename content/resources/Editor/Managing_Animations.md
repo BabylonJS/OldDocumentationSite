@@ -1,3 +1,11 @@
+---
+title: Managing Animations
+abstract: ''
+slug: managing-animations
+redirects:
+  - /extensions/managing_animations
+---
+
 # Managing Animations
 
 ## Introduction

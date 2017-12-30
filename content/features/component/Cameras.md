@@ -1,6 +1,12 @@
 ---
 PG_TITLE: Cameras
+title: Powerful Camera Types
+abstract: ''
+slug: cameras
+redirects:
+  - /tutorials/how_to_use_virtualjoystickscamera
 ---
+
 # Cameras
 
 There are a range of cameras to use with Babylon.js, Probably the two most used are the universal and arcRotate cameras. As the use of virtual reality increase so will the use of cameras for this purpose.
@@ -46,15 +52,15 @@ This can be achieved using the multi-view approach which splits the screen into 
 # Further Reading
 
 ## Basic - L1
-[Cameras 101](/babylon101/Cameras)  
-[Camera Mesh Collisions 101](/babylon101/Cameras,_Mesh_Collisions_and_Gravity)  
-[Camera Behaviours](/How_To/Camera_Behaviors)
+[Cameras 101](/babylon-101/babylon-101/cameras)  
+[Camera Mesh Collisions 101](/babylon-101/babylon-101/cameras_-mesh-collisions-and-gravity)  
+[Camera Behaviours](/how-to/camera/camera-behaviors)
 
 ## Mid Level - L2
-[Customizing Camera Inputs](/How_To/Customizing_Camera_Inputs) 
+[Customizing Camera Inputs](/how-to/camera/customizing-camera-inputs) 
 
 ## More Advanced - L3    
-[Multi-Views](/How_To/How_to_use_Multi-Views)  
-[Layermasks and Multi-Camera Textures](/How_To/Layermasks_and_Multi-Cam_Textures)  
-[Web Virtual Reality Camera](/How_To/WebVR_Camera) 
+[Multi-Views](/how-to/camera/how-to-use-multi-views)  
+[Layermasks and Multi-Camera Textures](/how-to/camera/layermasks-and-multi-cam-textures)  
+[Web Virtual Reality Camera](/how-to/camera/web-vr-camera) 
 

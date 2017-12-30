@@ -1,5 +1,8 @@
 ---
 PG_TITLE: How To Use a TransformNode
+title: Use a TransformNode
+abstract: ''
+slug: transform-node
 ---
 
 # A TransformNode
@@ -87,6 +90,6 @@ Obviously scaling has no effect on lights or cameras. Scaling takes place relati
 
 ## More Advanced - L3
 
-[How To Rotate Around an Axis about a Point](/How_To/Pivot)
+[How To Rotate Around an Axis about a Point](/how-to/mesh/pivot)
 
 

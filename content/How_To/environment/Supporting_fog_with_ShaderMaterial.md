@@ -1,6 +1,11 @@
 ---
 ID_PAGE: 25101
 PG_TITLE: Supporting fog with ShaderMaterial
+title: Support Fog with ShaderMaterial
+abstract: ''
+slug: supporting-fog-with-shader-material
+redirects:
+  - /tutorials/supporting_fog_with_shadermaterial
 ---
 
 # How To Support Fog with ShaderMaterial
