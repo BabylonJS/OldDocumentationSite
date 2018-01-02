@@ -263,7 +263,8 @@ Applying the plan leads to
 [The Code for Build From Plans](/samples/House_Use)
 
 ## Level 1
-
 [Extruded Non Regular Polygon](/how_to/parametric_shapes#extruded-non-regular-polygon)  
+
+## Level 2
 [Polygon Mesh Builder](/How_To/PolygonMeshBuilder)
 

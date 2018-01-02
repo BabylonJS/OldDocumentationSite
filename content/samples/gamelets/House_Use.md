@@ -656,6 +656,7 @@ BABYLON.PolygonMeshBuilder.prototype.wallBuilder = function (w0, w1) {
 [Developing the Code for Build From Plans](/samples/House)
 
 ## Level 1
-
 [Extruded Non Regular Polygon](/how_to/parametric_shapes#extruded-non-regular-polygon)  
+
+## Level 2
 [Polygon Mesh Builder](/How_To/PolygonMeshBuilder)
