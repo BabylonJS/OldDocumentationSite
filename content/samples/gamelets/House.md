@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Build a House from Plans
+PG_TITLE: Developing Build a House from Plans
 ---
 
-# Build a House from Plans.
+# Developing Build a House from Plans.
 
 Starting with a polygon as the footprint, a house is built by giving the footprint thickness (ply), extruding and adding door and window spaces at given positions.
 
@@ -258,5 +258,7 @@ Applying the plan leads to
 
 [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#2)
 
+# Further Reading
 
+[The Code for Build From Plans](/samples/House_Use)
 

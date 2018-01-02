@@ -30,7 +30,8 @@
 [Box Mesh with Legacy Method](/How_To/Legacy_Set#box)  
 [Box Mesh](/babylon101/Discover_Basic_Elements#box)  
 [Brick, Procedural Texture](/extensions/BrickProceduralTexture)  
-[Build a House from a Floorplan](/samples/House)  
+[Build a House from a Floorplan - Development](/samples/House) 
+[Build a House from a Floorplan - Using](/samples/House_Use)  
 [Bump Map Material](/How_To/More_Materials#bump-map)  
 ********
 <a name = "C">**C**</a><span style = "float:right">[top](#top)</span>

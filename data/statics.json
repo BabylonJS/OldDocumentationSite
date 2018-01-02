@@ -1342,7 +1342,12 @@
                     "filename": "Car_Path"
                 },
                 {
-                    "title": "Build a House from a Floorplan",
+                    "title": "Using Build a House from a Floorplan",
+                    "level": 2,
+                    "filename": "House_Use"
+                },
+                {
+                    "title": "Developing Build a House from a Floorplan",
                     "level": 2,
                     "filename": "House"
                 },
