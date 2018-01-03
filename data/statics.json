@@ -453,6 +453,11 @@
                     "filename": "Combine"
                 },
                 {
+                    "title": "Group Animations",
+                    "level": 1,
+                    "filename": "Group"
+                },
+                {
                     "title": "Sequence Animations",
                     "level": 2,
                     "filename": "Sequence"
