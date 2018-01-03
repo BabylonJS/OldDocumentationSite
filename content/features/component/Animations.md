@@ -190,6 +190,7 @@ scene.beginDirectAnimation(target, animations, start frame, end frame, loop);
 ## Basic - L1
 
 [Animation 101](/babylon101/Animations)  
+[Grouping Animations](/How_To/Group)  
 [Combining Animations](/How_To/Combine.html)
 
 ## Mid Level - L2

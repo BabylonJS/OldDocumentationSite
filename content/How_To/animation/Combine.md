@@ -162,7 +162,8 @@ var nextAnimation = function() {
 
 ## Basic
 
-[Introduction to Animating](/babylon101/animations)
+[Introduction to Animating](/babylon101/animations)  
+[Grouping Animations](/How_To/Group)
 
 ## Advanced
 

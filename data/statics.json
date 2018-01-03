@@ -453,6 +453,11 @@
                     "filename": "Combine"
                 },
                 {
+                    "title": "Group Animations",
+                    "level": 1,
+                    "filename": "Group"
+                },
+                {
                     "title": "Sequence Animations",
                     "level": 2,
                     "filename": "Sequence"
@@ -1342,7 +1347,12 @@
                     "filename": "Car_Path"
                 },
                 {
-                    "title": "Build a House from a Floorplan",
+                    "title": "Using Build a House from a Floorplan",
+                    "level": 2,
+                    "filename": "House_Use"
+                },
+                {
+                    "title": "Developing Build a House from a Floorplan",
                     "level": 2,
                     "filename": "House"
                 },
