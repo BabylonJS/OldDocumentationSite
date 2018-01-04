@@ -47,7 +47,7 @@ When WebVR controllers are not connected, the user will teleport to where the us
 
 Teleportation has two observables you can subscribe to:
 
-onBeforeCameraTeleport: Observable raised when teleportation is requested, receiving target Vector3 position as parameters:
+onBeforeCameraTeleport: Observable raised when teleportation is requested, receiving target Vector3 position as parameter:
 
 ```javascript
 vrHelper.onBeforeCameraTeleport.add((targetPosition) => {
