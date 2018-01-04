@@ -43,6 +43,34 @@ When WebVR controllers are connected, the teleportation will be based on where t
 
 When WebVR controllers are not connected, the user will teleport to where the user is looking and teleportation can be triggered with an Xbox controller. 
 
+## Teleportation events
+
+Teleportation has two observables you can subscribe to:
+
+onBeforeCameraTeleport: Observable raised when teleportation is requested, receiving target Vector3 position as parameters:
+
+```javascript
+vrHelper.onBeforeCameraTeleport.add((targetPosition) => {
+     //Raised before camera is teleported
+});
+```
+
+onAfterCameraTeleport: Observable raised when teleportation animation finishes, receiving target Vector3 position as parameter:
+
+
+```javascript
+vrHelper.onAfterCameraTeleport.add((targetPosition) => {
+     //Raised after teleportation animation finishes
+});
+```
+
+To enable teleportation in the scene, create a mesh that the user should be able to teleport to and then enable teleportation with that mesh's name.
+
+```javascript
+var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
+vrHelper.enableTeleportation({floorMeshName: "ground"});
+```
+
 ## Accessing cameras
 
 The VR and non-VR camera can be accessed from the helper to handle any application specific logic.
@@ -116,17 +144,6 @@ vrHelper.meshSelectionPredicate = (mesh) => {
     return false;
 };
 ```
-
-## Selected mesh unselected event
-
-As the user unselects an object with their gaze or controller the onSelectedMeshUnselected event will occur.
-
-```javascript
-vrHelper.onSelectedMeshUnselected.add((mesh)=>{
-    // Mesh has been unselected
-});
-```
-
 
 ## Examples
 
