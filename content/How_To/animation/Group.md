@@ -1,7 +1,7 @@
 ---
 PG_TITLE: How To Group Animations
 ---
-# How To Group Animationsas
+# How To Group Animations
 
 An `AnimationGroup` allows you to link together animations and meshes and play them, pause them and stop them as a group.
 
