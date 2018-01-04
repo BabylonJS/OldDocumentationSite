@@ -5,7 +5,7 @@ PG_TITLE: How To Start with Physically Based Rendering
 # How To Start with Physically Based Rendering
 
 ## Introduction
-After following the [standard material tutorial](/How_To/Materials) and also excelling in [unleashing its power](https://www.eternalcoding.com/?p=303), it is a good time to go further and look at another emerging kind of materials called **PBR Materials** standing for **Physically Based Rendering Materials**.
+After following the [standard material tutorial](/babylon101/materials) and also excelling in [unleashing its power](https://www.eternalcoding.com/?p=303), it is a good time to go further and look at another emerging kind of materials called **PBR Materials** standing for **Physically Based Rendering Materials**.
 
 PBR rendering techniques aim to simulate **real life lighting**.
 
@@ -14,7 +14,7 @@ PBR is a grouping of techniques; it does not force you to choose one in particul
 * [Ashkimin Shirley BRDF](http://www.cs.utah.edu/~shirley/papers/jgtbrdf.pdf)
 * [Ashkimin Shirley Microfacets](http://www.cs.utah.edu/~shirley/papers/facets.pdf).
 
-In Babylon.js, PBR is done thanks to PBRMaterial. This material contains all features required by modern physically based rendering. For beginners we also created two additional materials to simplify your first contact with PBR. If you want to directly dig into the richer version, please have a read at [Master the PBR](/features/Physically_Based_Rendering_Master) for more information on how to use the main material.
+In Babylon.js, PBR is done thanks to PBRMaterial. This material contains all features required by modern physically based rendering. For beginners we also created two additional materials to simplify your first contact with PBR. If you want to directly dig into the richer version, please have a read at [Master the PBR](/how_to/physically_based_rendering_master) for more information on how to use the main material.
 
 You can find a complete demo of the PBRMaterial [here](http://www.babylonjs.com/demos/pbrglossy/)
 
