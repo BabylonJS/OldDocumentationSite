@@ -145,6 +145,16 @@ vrHelper.meshSelectionPredicate = (mesh) => {
 };
 ```
 
+## Selected mesh unselected event
+ 
+As the user unselects an object with their gaze or controller the onSelectedMeshUnselected event will occur.
+ 
+```javascript
+vrHelper.onSelectedMeshUnselected.add((mesh) => {
+    // Mesh has been unselected
+});
+``` 
+
 ## Examples
 
 Scenes:
