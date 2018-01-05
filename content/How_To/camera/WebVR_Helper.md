@@ -121,10 +121,30 @@ head.rotationQuaternion = vrHelper.webVRCamera.deviceRotationQuaternion.clone()
 
 See [Example](https://www.babylonjs-playground.com/#VIGXA3#7)
 
-## Mesh selected event
+## Gaze and interaction
 
-As the user selects an object with their gaze or controller the NewMeshSelected event will occur.
-Note: This only works after teleportation has been enabled.
+Gaze and interactions can be enabled through the enableInteractions method. See [example](http://playground.babylonjs.com/#JA1ND3#40)
+
+```javascript
+vrHelper.enableInteractions();
+```
+
+This will start casting a ray from either the user's camera or controllers. Where this ray intersects a mesh in the scene a small gaze mesh will be placed to indicate to the user what is currently selected.
+
+To filter which meshes the gaze can intersect with, the raySelectionPredicate can be used:
+
+```javascript
+vrHelper.raySelectionPredicate = (mesh) => {
+    if (mesh.name.indexOf("Flags") !== -1) {
+        return true;
+    }
+    return false;
+};
+```
+This will cause the user's gaze to pass through any mesh which results in the raySelectionPredicate returning false.
+
+As the user moves between meshes with their gaze, the onNewMeshSelected event will occur.
+Note: This only works after interactions have been enabled.
 
 ```javascript
 vrHelper.onNewMeshSelected.add((mesh)=>{
@@ -134,26 +154,24 @@ vrHelper.onNewMeshSelected.add((mesh)=>{
 
 This will return the single closest mesh that was selected. 
 
-You can add your own filtering logic with meshSelectionPredicate. See [example](http://playground.babylonjs.com/#JA1ND3#12).
-
-```javascript
-vrHelper.meshSelectionPredicate = (mesh) => {
-    if (mesh.name.indexOf("Flags") !== -1) {
-        return true;
-    }
-    return false;
-};
-```
-
-## Selected mesh unselected event
- 
-As the user unselects an object with their gaze or controller the onSelectedMeshUnselected event will occur.
+As the user unselects a mesh with their gaze or controller, the onSelectedMeshUnselected event will occur.
  
 ```javascript
 vrHelper.onSelectedMeshUnselected.add((mesh) => {
     // Mesh has been unselected
 });
 ``` 
+
+You can add your own filtering logic with meshSelectionPredicate.
+Note: This will be applied after the raySelectionPredicate.
+```javascript
+vrHelper.meshSelectionPredicate = (mesh) => {
+    if (mesh.name.indexOf("Flags01") !== -1) {
+        return true;
+    }
+    return false;
+};
+```
 
 ## Examples
 
