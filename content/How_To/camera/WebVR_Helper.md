@@ -129,7 +129,7 @@ Gaze and interactions can be enabled through the enableInteractions method. See 
 vrHelper.enableInteractions();
 ```
 
-This will start casting a ray from either the user's camera or controllers. Where this ray intersects a mesh in the scene a small gaze mesh will be placed to indicate to the user what is currently selected.
+This will start casting a ray from either the user's camera or controllers. Where this ray intersects a mesh in the scene, a small gaze mesh will be placed to indicate to the user what is currently selected.
 
 To filter which meshes the gaze can intersect with, the raySelectionPredicate can be used:
 
