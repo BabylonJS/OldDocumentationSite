@@ -43,6 +43,34 @@ When WebVR controllers are connected, the teleportation will be based on where t
 
 When WebVR controllers are not connected, the user will teleport to where the user is looking and teleportation can be triggered with an Xbox controller. 
 
+## Teleportation events
+
+Teleportation has two observables you can subscribe to:
+
+onBeforeCameraTeleport: Observable raised when teleportation is requested, receiving target Vector3 position as parameter:
+
+```javascript
+vrHelper.onBeforeCameraTeleport.add((targetPosition) => {
+     //Raised before camera is teleported
+});
+```
+
+onAfterCameraTeleport: Observable raised when teleportation animation finishes, receiving target Vector3 position as parameter:
+
+
+```javascript
+vrHelper.onAfterCameraTeleport.add((targetPosition) => {
+     //Raised after teleportation animation finishes
+});
+```
+
+To enable teleportation in the scene, create a mesh that the user should be able to teleport to and then enable teleportation with that mesh's name.
+
+```javascript
+var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
+vrHelper.enableTeleportation({floorMeshName: "ground"});
+```
+
 ## Accessing cameras
 
 The VR and non-VR camera can be accessed from the helper to handle any application specific logic.
@@ -93,10 +121,30 @@ head.rotationQuaternion = vrHelper.webVRCamera.deviceRotationQuaternion.clone()
 
 See [Example](https://www.babylonjs-playground.com/#VIGXA3#7)
 
-## Mesh selected event
+## Gaze and interaction
 
-As the user selects an object with their gaze or controller the NewMeshSelected event will occur.
-Note: This only works after teleportation has been enabled.
+Gaze and interactions can be enabled through the enableInteractions method. See [example](http://playground.babylonjs.com/#JA1ND3#40)
+
+```javascript
+vrHelper.enableInteractions();
+```
+
+This will start casting a ray from either the user's camera or controllers. Where this ray intersects a mesh in the scene, a small gaze mesh will be placed to indicate to the user what is currently selected.
+
+To filter which meshes the gaze can intersect with, the raySelectionPredicate can be used:
+
+```javascript
+vrHelper.raySelectionPredicate = (mesh) => {
+    if (mesh.name.indexOf("Flags") !== -1) {
+        return true;
+    }
+    return false;
+};
+```
+This will cause the user's gaze to pass through any mesh which results in the raySelectionPredicate returning false.
+
+As the user moves between meshes with their gaze, the onNewMeshSelected event will occur.
+Note: This only works after interactions have been enabled.
 
 ```javascript
 vrHelper.onNewMeshSelected.add((mesh)=>{
@@ -106,11 +154,19 @@ vrHelper.onNewMeshSelected.add((mesh)=>{
 
 This will return the single closest mesh that was selected. 
 
-You can add your own filtering logic with meshSelectionPredicate. See [example](http://playground.babylonjs.com/#JA1ND3#12).
+As the user unselects a mesh with their gaze or controller, the onSelectedMeshUnselected event will occur.
+ 
+```javascript
+vrHelper.onSelectedMeshUnselected.add((mesh) => {
+    // Mesh has been unselected
+});
+``` 
 
+You can add your own filtering logic with meshSelectionPredicate.
+Note: This will be applied after the raySelectionPredicate.
 ```javascript
 vrHelper.meshSelectionPredicate = (mesh) => {
-    if (mesh.name.indexOf("Flags") !== -1) {
+    if (mesh.name.indexOf("Flags01") !== -1) {
         return true;
     }
     return false;
