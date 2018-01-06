@@ -29,21 +29,16 @@ optional | mesh | [Mesh](/classes/3.1/Mesh) |
 ### pathArray : [Vector3](/classes/3.1/Vector3)[][]
 
 
-
 ### closeArray : boolean
-
 
 
 ### closePath : boolean
 
 
-
 ### offset : number
 
 
-
 ### side : number
-
 
 
 ## Methods

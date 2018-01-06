@@ -26,33 +26,31 @@ class [LensFlareSystem](/classes/3.1/LensFlareSystem)
 ### name : string
 
 
-
 ### lensFlares : [LensFlare](/classes/3.1/LensFlare)[]
-
 
 
 ### borderLimit : number
 
 
-
 ### viewportBorder : number
 
 
+### meshesSelectionPredicate : (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; boolean
 
-### meshesSelectionPredicate : (mesh: [Mesh](/classes/3.1/Mesh)) =&gt; boolean
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
 ### layerMask : number
-
 
 
 ### id : string
 
 
-
 ### isEnabled : boolean
-
 
 
 ## Methods

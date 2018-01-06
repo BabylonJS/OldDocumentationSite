@@ -19,223 +19,169 @@ class [StandardRenderingPipeline](/classes/3.1/StandardRenderingPipeline) extend
  | name | string | 
  | scene | [Scene](/classes/3.1/Scene) | 
  | ratio | number | 
-optional | originalPostProcess | [PostProcess](/classes/3.1/PostProcess) | 
+optional | originalPostProcess | Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt; | 
 ## Members
 
-### originalPostProcess : [PostProcess](/classes/3.1/PostProcess)
+### originalPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 Public members
-
-### downSampleX4PostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### downSampleX4PostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-### brightPassPostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### brightPassPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
 ### blurHPostProcesses : [PostProcess](/classes/3.1/PostProcess)[]
 
 
-
 ### blurVPostProcesses : [PostProcess](/classes/3.1/PostProcess)[]
 
 
-
-### textureAdderPostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### textureAdderPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-### volumetricLightPostProcess : [PostProcess](/classes/3.1/PostProcess)
+### volumetricLightPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-
-### volumetricLightSmoothXPostProcess : [BlurPostProcess](/classes/3.1/BlurPostProcess)
-
+### volumetricLightSmoothXPostProcess : Nullable&lt;[BlurPostProcess](/classes/3.1/BlurPostProcess)&gt;
 
 
-### volumetricLightSmoothYPostProcess : [BlurPostProcess](/classes/3.1/BlurPostProcess)
+### volumetricLightSmoothYPostProcess : Nullable&lt;[BlurPostProcess](/classes/3.1/BlurPostProcess)&gt;
 
 
-
-### volumetricLightMergePostProces : [PostProcess](/classes/3.1/PostProcess)
-
+### volumetricLightMergePostProces : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-### volumetricLightFinalPostProcess : [PostProcess](/classes/3.1/PostProcess)
+### volumetricLightFinalPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-
-### luminancePostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### luminancePostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
 ### luminanceDownSamplePostProcesses : [PostProcess](/classes/3.1/PostProcess)[]
 
 
-
-### hdrPostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### hdrPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-### textureAdderFinalPostProcess : [PostProcess](/classes/3.1/PostProcess)
+### textureAdderFinalPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-
-### lensFlareFinalPostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### lensFlareFinalPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-### hdrFinalPostProcess : [PostProcess](/classes/3.1/PostProcess)
+### hdrFinalPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-
-### lensFlarePostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### lensFlarePostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-### lensFlareComposePostProcess : [PostProcess](/classes/3.1/PostProcess)
+### lensFlareComposePostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-
-### motionBlurPostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### motionBlurPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
-### depthOfFieldPostProcess : [PostProcess](/classes/3.1/PostProcess)
-
+### depthOfFieldPostProcess : Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
 ### brightThreshold : number
 
 
-
 ### blurWidth : number
-
 
 
 ### horizontalBlur : boolean
 
 
-
 ### exposure : number
 
 
-
-### lensTexture : [Texture](/classes/3.1/Texture)
-
+### lensTexture : Nullable&lt;[Texture](/classes/3.1/Texture)&gt;
 
 
 ### volumetricLightCoefficient : number
 
 
-
 ### volumetricLightPower : number
-
 
 
 ### volumetricLightBlurScale : number
 
 
-
-### sourceLight : [SpotLight](/classes/3.1/SpotLight)
-
+### sourceLight : Nullable&lt;[SpotLight](/classes/3.1/SpotLight)&gt;
 
 
 ### [DirectionalLight](/classes/3.1/DirectionalLight) : undefined
 
 
-
 ### hdrMinimumLuminance : number
-
 
 
 ### hdrDecreaseRate : number
 
 
-
 ### hdrIncreaseRate : number
 
 
-
-### lensColorTexture : [Texture](/classes/3.1/Texture)
-
+### lensColorTexture : Nullable&lt;[Texture](/classes/3.1/Texture)&gt;
 
 
 ### lensFlareStrength : number
 
 
-
 ### lensFlareGhostDispersal : number
-
 
 
 ### lensFlareHaloWidth : number
 
 
-
 ### lensFlareDistortionStrength : number
 
 
-
-### lensStarTexture : [Texture](/classes/3.1/Texture)
-
+### lensStarTexture : Nullable&lt;[Texture](/classes/3.1/Texture)&gt;
 
 
-### lensFlareDirtTexture : [Texture](/classes/3.1/Texture)
-
+### lensFlareDirtTexture : Nullable&lt;[Texture](/classes/3.1/Texture)&gt;
 
 
 ### depthOfFieldDistance : number
 
 
-
 ### depthOfFieldBlurWidth : number
-
 
 
 ### motionStrength : number
 
 
-
 ### animations : [Animation](/classes/3.1/Animation)[]
-
 
 
 ### BloomEnabled : boolean
 
 
-
 ### DepthOfFieldEnabled : boolean
-
 
 
 ### LensFlareEnabled : boolean
 
 
-
 ### HDREnabled : boolean
-
 
 
 ### VLSEnabled : boolean
 
 
-
 ### MotionBlurEnabled : boolean
-
 
 
 ### volumetricLightStepsCount : number
 
 
-
 ### motionBlurSamples : number
 
 
-
 ### static LuminanceSteps : number
-
 
 
 ## Methods

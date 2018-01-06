@@ -12,21 +12,16 @@ class [ArcRotateCameraPointersInput](/classes/3.1/ArcRotateCameraPointersInput)
 ### camera : [ArcRotateCamera](/classes/3.1/ArcRotateCamera)
 
 
-
 ### buttons : number[]
-
 
 
 ### angularSensibilityX : number
 
 
-
 ### angularSensibilityY : number
 
 
-
 ### pinchPrecision : number
-
 
 
 ### pinchDeltaPercentage : number
@@ -34,21 +29,16 @@ class [ArcRotateCameraPointersInput](/classes/3.1/ArcRotateCameraPointersInput)
 pinchDeltaPercentage will be used instead of pinchPrecision if different from 0.
 
 It defines the percentage of current camera.radius to use as delta when pinch zoom is used.
-
 ### panningSensibility : number
-
 
 
 ### multiTouchPanning : boolean
 
 
-
 ### multiTouchPanAndZoom : boolean
 
 
-
 ### pinchInwards : boolean
-
 
 
 ## Methods
@@ -69,7 +59,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### getClassName() &rarr; string
 

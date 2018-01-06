@@ -28,9 +28,7 @@ class [GenericPad](/classes/3.1/GenericPad) extends [Gamepad](/classes/3.1/Gamep
 ### onButtonDownObservable : [Observable](/classes/3.1/Observable)&lt;number&gt;
 
 
-
 ### onButtonUpObservable : [Observable](/classes/3.1/Observable)&lt;number&gt;
-
 
 
 ## Methods
@@ -42,8 +40,9 @@ class [GenericPad](/classes/3.1/GenericPad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (buttonPressed: number) =&gt; void | 
+ | callback |  | buttonPressed | number | 
 
+ | 
 ### onbuttonup(callback) &rarr; void
 
 
@@ -51,8 +50,12 @@ class [GenericPad](/classes/3.1/GenericPad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (buttonReleased: number) =&gt; void | 
+ | callback |  | buttonReleased | number | 
 
+ | 
 ### update() &rarr; void
+
+
+### dispose() &rarr; void
 
 

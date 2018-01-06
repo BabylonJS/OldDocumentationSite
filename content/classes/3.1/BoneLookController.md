@@ -48,55 +48,42 @@ Create a [BoneLookController](/classes/3.1/BoneLookController)
 ### target : [Vector3](/classes/3.1/Vector3)
 
 The target [Vector3](/classes/3.1/Vector3) that the bone will look at.
-
 ### mesh : [AbstractMesh](/classes/3.1/AbstractMesh)
 
 The mesh that the bone is attached to.
-
 ### bone : [Bone](/classes/3.1/Bone)
 
 The bone that will be looking to the target.
-
 ### upAxis : [Vector3](/classes/3.1/Vector3)
 
 The up axis of the coordinate system that is used when the bone is rotated.
-
 ### upAxisSpace : [Space](/classes/3.1/Space)
 
 The space that the up axis is in - BABYLON.[Space](/classes/3.1/Space).BONE, BABYLON.[Space](/classes/3.1/Space).LOCAL (default), or BABYLON.[Space](/classes/3.1/Space).WORLD.
-
 ### adjustYaw : number
 
 Used to make an adjustment to the yaw of the bone.
-
 ### adjustPitch : number
 
 Used to make an adjustment to the pitch of the bone.
-
 ### adjustRoll : number
 
 Used to make an adjustment to the roll of the bone.
-
 ### slerpAmount : number
 
 The amount to slerp (spherical linear interpolation) to the target.  Set this to a value between 0 and 1 (a value of 1 disables slerp).
-
 ### minYaw : number
 
 Get/set the minimum yaw angle that the bone can look to.
-
 ### maxYaw : number
 
 Get/set the maximum yaw angle that the bone can look to.
-
 ### minPitch : number
 
 Get/set the minimum pitch angle that the bone can look to.
-
 ### maxPitch : number
 
 Get/set the maximum pitch angle that the bone can look to.
-
 ## Methods
 
 ### update() &rarr; void

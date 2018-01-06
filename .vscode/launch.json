@@ -7,8 +7,8 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceRoot}/server.js",
+            "name": "Doc builder",
+            "program": "${workspaceRoot}/scripts/helpers/builder/main.js",
             "cwd": "${workspaceRoot}"
         },
         {

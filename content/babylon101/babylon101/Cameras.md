@@ -74,15 +74,6 @@ Whether using the keyboard, mouse or touch swipes left right directions change _
 
 ```javascript
 
-// Parameters : name, position, scene
-    var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
-
-// Targets the camera to a particular position. In this case the scene origin
-    camera.setTarget(BABYLON.Vector3.Zero());
-
-// Attach the camera to the canvas
-    camera.attachControl(canvas, true);
-
 // Parameters: alpha, beta, radius, target position, scene
 	var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
 

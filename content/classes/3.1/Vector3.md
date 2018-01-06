@@ -32,15 +32,15 @@ It can represent etiher the coordinates of a point the space, either a direction
 ### x : number
 
 
-
 ### y : number
-
 
 
 ### z : number
 
 
+### isNonUniform : boolean
 
+Return true is the vector is non uniform meaning x, y or z are not all the same.
 ## Methods
 
 ### toString() &rarr; string
@@ -55,7 +55,7 @@ Returns the Vector hash code.
 ### asArray() &rarr; number[]
 
 Returns a new array with three elements : the coordinates the [Vector3](/classes/3.1/Vector3).
-### toArray(array, Float32Array, index) &rarr; [Vector3](/classes/3.1/Vector3)
+### toArray(array, index) &rarr; [Vector3](/classes/3.1/Vector3)
 
 Populates the passed array or Float32Array from the passed index with the successive coordinates of the [Vector3](/classes/3.1/Vector3).
 
@@ -64,7 +64,7 @@ Returns the [Vector3](/classes/3.1/Vector3).
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | array | number[] or Float32Array | 
+ | array | FloatArray | 
 optional | index | number | 
 ### toQuaternion() &rarr; [Quaternion](/classes/3.1/Quaternion)
 
@@ -309,6 +309,24 @@ Returns the squared length of the [Vector3](/classes/3.1/Vector3) (float).
 Normalize the current [Vector3](/classes/3.1/Vector3).
 
 Returns the updated [Vector3](/classes/3.1/Vector3).
+
+/!\ In place operation.
+### normalizeToNew() &rarr; [Vector3](/classes/3.1/Vector3)
+
+Normalize the current [Vector3](/classes/3.1/Vector3) to a new vector.
+
+@returns the new [Vector3](/classes/3.1/Vector3).
+### normalizeToRef(reference) &rarr; [Vector3](/classes/3.1/Vector3)
+
+Normalize the current [Vector3](/classes/3.1/Vector3) to the reference.
+
+@returns the updated [Vector3](/classes/3.1/Vector3).
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | reference | [Vector3](/classes/3.1/Vector3) | 
+
 ### clone() &rarr; [Vector3](/classes/3.1/Vector3)
 
 Returns a new [Vector3](/classes/3.1/Vector3) copied from the current [Vector3](/classes/3.1/Vector3).
@@ -638,6 +656,34 @@ Sets the passed vector "result" with the normalization of the passed first vecto
  | viewportHeight | number | 
  | world | [Matrix](/classes/3.1/Matrix) | 
  | view | [Matrix](/classes/3.1/Matrix) | 
+### static UnprojectToRef(source, viewportWidth, viewportHeight, world, view, projection, result) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | source | [Vector3](/classes/3.1/Vector3) | 
+ | viewportWidth | number | 
+ | viewportHeight | number | 
+ | world | [Matrix](/classes/3.1/Matrix) | 
+ | view | [Matrix](/classes/3.1/Matrix) | 
+ | projection | [Matrix](/classes/3.1/Matrix) | 
+### static UnprojectFloatsToRef(sourceX, sourceY, sourceZ, viewportWidth, viewportHeight, world, view, projection, result) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | sourceX | float | 
+ | sourceY | float | 
+ | sourceZ | float | 
+ | viewportWidth | number | 
+ | viewportHeight | number | 
+ | world | [Matrix](/classes/3.1/Matrix) | 
+ | view | [Matrix](/classes/3.1/Matrix) | 
+ | projection | [Matrix](/classes/3.1/Matrix) | 
 ### static Minimize(left, right) &rarr; [Vector3](/classes/3.1/Vector3)
 
 

@@ -25,11 +25,9 @@ constructor
 ### average : number
 
 Current average
-
 ### variance : number
 
 Current variance
-
 ## Methods
 
 ### add(v) &rarr; void

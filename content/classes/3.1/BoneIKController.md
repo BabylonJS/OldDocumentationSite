@@ -24,41 +24,31 @@ optional | options | { targetMesh: [AbstractMesh](/classes/3.1/AbstractMesh),  p
 ### targetMesh : [AbstractMesh](/classes/3.1/AbstractMesh)
 
 
-
 ### poleTargetMesh : [AbstractMesh](/classes/3.1/AbstractMesh)
-
 
 
 ### poleTargetBone : Nullable&lt;[Bone](/classes/3.1/Bone)&gt;
 
 
-
 ### targetPosition : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### poleTargetPosition : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### poleTargetLocalOffset : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### poleAngle : number
 
 
-
 ### mesh : [AbstractMesh](/classes/3.1/AbstractMesh)
-
 
 
 ### slerpAmount : number
 
 
-
 ### maxAngle : number
-
 
 
 ## Methods

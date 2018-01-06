@@ -29,9 +29,7 @@ class [SetValueAction](/classes/3.1/SetValueAction) extends [Action](/classes/3.
 ### propertyPath : string
 
 
-
 ### value : any
-
 
 
 ## Methods

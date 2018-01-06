@@ -13,7 +13,7 @@ class [InterpolateValueAction](/classes/3.1/InterpolateValueAction) extends [Act
 
 ## Constructor
 
-## new [InterpolateValueAction](/classes/3.1/InterpolateValueAction)(triggerOptions, target, propertyPath, value, duration, condition, stopOtherAnimations, onInterpolationDone)
+## new [InterpolateValueAction](/classes/3.1/InterpolateValueAction)(triggerOptions, target, propertyPath, value, duration, condition, stopOtherAnimations, undefined, onInterpolationDone)
 
 
 
@@ -26,31 +26,34 @@ class [InterpolateValueAction](/classes/3.1/InterpolateValueAction) extends [Act
  | value | any | 
 optional | duration | number | 
 optional | condition | [Condition](/classes/3.1/Condition) | 
-optional | stopOtherAnimations | boolean | 
+optional | stopOtherAnimations | boolean or undefined | 
 ## Members
 
 ### propertyPath : string
 
 
-
 ### value : any
-
 
 
 ### duration : number
 
 
-
 ### stopOtherAnimations : boolean
 
 
+### undefined : undefined
 
-### onInterpolationDone : () =&gt; void
 
+### onInterpolationDone : () =&gt; () =&gt; void
+
+
+### undefined : () =&gt; void
 
 
 ### onInterpolationDoneObservable : [Observable](/classes/3.1/Observable)&lt;[InterpolateValueAction](/classes/3.1/InterpolateValueAction)&gt;
 
+
+### undefined : () =&gt; void
 
 
 ## Methods

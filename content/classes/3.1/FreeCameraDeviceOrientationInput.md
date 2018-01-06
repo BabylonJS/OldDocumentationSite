@@ -17,7 +17,6 @@ class [FreeCameraDeviceOrientationInput](/classes/3.1/FreeCameraDeviceOrientatio
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
 
 
-
 ## Methods
 
 ### attachControl(element, noPreventDefault) &rarr; void
@@ -36,7 +35,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### checkInputs() &rarr; void
 

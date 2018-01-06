@@ -14,21 +14,16 @@ class [FresnelParameters](/classes/3.1/FresnelParameters)
 ### isEnabled : boolean
 
 
-
 ### leftColor : [Color3](/classes/3.1/Color3)
-
 
 
 ### rightColor : [Color3](/classes/3.1/Color3)
 
 
-
 ### bias : number
 
 
-
 ### power : number
-
 
 
 ## Methods

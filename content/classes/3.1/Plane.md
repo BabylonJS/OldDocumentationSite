@@ -30,9 +30,7 @@ optional | mesh | Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt; |
 ### size : number
 
 
-
 ### side : number
-
 
 
 ## Methods

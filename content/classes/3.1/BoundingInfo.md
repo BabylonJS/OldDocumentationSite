@@ -28,27 +28,21 @@ class [BoundingInfo](/classes/3.1/BoundingInfo)
 ### minimum : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### maximum : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### boundingBox : [BoundingBox](/classes/3.1/BoundingBox)
 
 
-
 ### boundingSphere : [BoundingSphere](/classes/3.1/BoundingSphere)
-
 
 
 ### isLocked : boolean
 
 
-
 ### diagonalLength : number
 
 Gets the world distance between the min and max points of the bounding box
-
 ## Methods
 
 ### update(world) &rarr; void
@@ -60,6 +54,15 @@ Gets the world distance between the min and max points of the bounding box
 ---|---|---|---
  | world | [Matrix](/classes/3.1/Matrix) | 
 
+### centerOn(center, extend) &rarr; [BoundingInfo](/classes/3.1/BoundingInfo)
+
+Recreate the bounding info to be centered around a specific point given a specific extend.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | center | [Vector3](/classes/3.1/Vector3) |  New center of the bounding info
+ | extend | [Vector3](/classes/3.1/Vector3) |  New extend of the bounding info
 ### isInFrustum(frustumPlanes) &rarr; boolean
 
 

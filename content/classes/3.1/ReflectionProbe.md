@@ -24,29 +24,22 @@ class [ReflectionProbe](/classes/3.1/ReflectionProbe)
 ### name : string
 
 
-
 ### invertYAxis : boolean
-
 
 
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### samples : number
-
 
 
 ### refreshRate : number
 
 
-
 ### cubeTexture : [RenderTargetTexture](/classes/3.1/RenderTargetTexture)
 
 
-
-### renderList : [AbstractMesh](/classes/3.1/AbstractMesh)[]
-
+### renderList : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)[]&gt;
 
 
 ## Methods

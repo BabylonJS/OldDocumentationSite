@@ -28,17 +28,13 @@ Creates a [Vector4](/classes/3.1/Vector4) object from the passed floats.
 ### x : number
 
 
-
 ### y : number
-
 
 
 ### z : number
 
 
-
 ### w : number
-
 
 
 ## Methods
@@ -55,7 +51,7 @@ Returns the [Vector4](/classes/3.1/Vector4) hash code.
 ### asArray() &rarr; number[]
 
 Returns a new array populated with 4 elements : the [Vector4](/classes/3.1/Vector4) coordinates.
-### toArray(array, Float32Array, index) &rarr; [Vector4](/classes/3.1/Vector4)
+### toArray(array, index) &rarr; [Vector4](/classes/3.1/Vector4)
 
 Populates the passed array from the passed index with the [Vector4](/classes/3.1/Vector4) coordinates.
 
@@ -64,7 +60,7 @@ Returns the [Vector4](/classes/3.1/Vector4).
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | array | number[] or Float32Array | 
+ | array | FloatArray | 
 optional | index | number | 
 ### addInPlace(otherVector) &rarr; [Vector4](/classes/3.1/Vector4)
 

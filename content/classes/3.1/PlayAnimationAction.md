@@ -13,7 +13,7 @@ class [PlayAnimationAction](/classes/3.1/PlayAnimationAction) extends [Action](/
 
 ## Constructor
 
-## new [PlayAnimationAction](/classes/3.1/PlayAnimationAction)(triggerOptions, target, from, to, loop, condition)
+## new [PlayAnimationAction](/classes/3.1/PlayAnimationAction)(triggerOptions, target, from, to, loop, undefined, condition)
 
 
 
@@ -24,19 +24,19 @@ class [PlayAnimationAction](/classes/3.1/PlayAnimationAction) extends [Action](/
  | target | any | 
  | from | number | 
  | to | number | 
-optional | loop | boolean | 
+optional | loop | boolean or undefined | 
 ## Members
 
 ### from : number
 
 
-
 ### to : number
-
 
 
 ### loop : boolean
 
+
+### undefined : undefined
 
 
 ## Methods

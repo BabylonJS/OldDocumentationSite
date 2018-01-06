@@ -66,19 +66,16 @@ optional | ratio | number |
 The chromatic aberration [PostProcess](/classes/3.1/PostProcess) id in the pipeline
 
 @type {string}
-
 ### HighlightsEnhancingEffect : string
 
 The highlights enhancing [PostProcess](/classes/3.1/PostProcess) id in the pipeline
 
 @type {string}
-
 ### LensDepthOfFieldEffect : string
 
 The depth-of-field [PostProcess](/classes/3.1/PostProcess) id in the pipeline
 
 @type {string}
-
 ## Methods
 
 ### setEdgeBlur(amount) &rarr; void

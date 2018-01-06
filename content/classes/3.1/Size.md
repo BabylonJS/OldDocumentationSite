@@ -23,15 +23,12 @@ Creates a [Size](/classes/3.1/Size) object from the passed width and height (flo
 ### width : number
 
 
-
 ### height : number
-
 
 
 ### surface : number
 
 Returns the surface of the [Size](/classes/3.1/Size) : width * height (float).
-
 ## Methods
 
 ### toString() &rarr; string

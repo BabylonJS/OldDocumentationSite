@@ -23,9 +23,7 @@ class [GenericController](/classes/3.1/GenericController) extends [WebVRControll
 ### static MODEL_BASE_URL : string
 
 
-
 ### static MODEL_FILENAME : string
-
 
 
 ## Methods
@@ -38,4 +36,15 @@ class [GenericController](/classes/3.1/GenericController) extends [WebVRControll
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | meshLoaded | (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void | 
+optional | meshLoaded |  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
+### handleButtonChange(buttonIdx, state, changes) &rarr; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | buttonIdx | number | 
+ | state | ExtendedGamepadButton | 
+ | changes | GamepadButtonChanges | 

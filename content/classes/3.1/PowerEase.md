@@ -27,7 +27,6 @@ optional | power | number |
 ### power : number
 
 
-
 ## Methods
 
 ### easeInCore(gradient) &rarr; number

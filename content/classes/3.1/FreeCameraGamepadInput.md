@@ -12,17 +12,13 @@ class [FreeCameraGamepadInput](/classes/3.1/FreeCameraGamepadInput)
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
 
 
-
 ### gamepad : Nullable&lt;[Gamepad](/classes/3.1/Gamepad)&gt;
-
 
 
 ### gamepadAngularSensibility : number
 
 
-
 ### gamepadMoveSensibility : number
-
 
 
 ## Methods
@@ -43,7 +39,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### checkInputs() &rarr; void
 

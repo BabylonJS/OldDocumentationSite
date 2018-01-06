@@ -16,9 +16,10 @@ The value can be anything including 'null' but except 'undefined'
 ### undefined : undefined
 
 
-
 ### count : number
 
+
+### null : undefined
 
 
 ## Methods
@@ -59,7 +60,8 @@ The factory will only be invoked if there's no data for the given key.
  | Name | Type | Description
 ---|---|---|---
  | key | string |  the given key to get the matching value from
- | factory | (key: string) =&gt; T |  the factory that will create the value if the key is not present in the dictionary.
+ | factory |  | key | string | 
+
 ### getOrAdd(key, val) &rarr; T
 
 Get a value from its key if present in the dictionary otherwise add it
@@ -134,7 +136,8 @@ Note that you can remove any element in this dictionary in the callback implemen
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (key: string, val: T) =&gt; void |  the callback to execute on a given key/value pair
+ | callback |  | key | string | 
+ | val | T | 
 
 ### first(callback) &rarr; TRes
 
@@ -147,5 +150,6 @@ Note that you can remove any element in this dictionary in the callback implemen
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (key: string, val: T) =&gt; TRes |  the callback to execute, if it return a valid T instanced object the enumeration will stop and the object will be returned
+ | callback |  | key | string | 
+ | val | T | 
 

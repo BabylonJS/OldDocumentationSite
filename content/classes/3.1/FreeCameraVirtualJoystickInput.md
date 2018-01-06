@@ -12,7 +12,6 @@ class [FreeCameraVirtualJoystickInput](/classes/3.1/FreeCameraVirtualJoystickInp
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
 
 
-
 ## Methods
 
 ### getLeftJoystick() &rarr; [VirtualJoystick](/classes/3.1/VirtualJoystick)
@@ -40,7 +39,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### getClassName() &rarr; string
 

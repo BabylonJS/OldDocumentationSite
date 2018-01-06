@@ -31,9 +31,7 @@ class [TouchCamera](/classes/3.1/TouchCamera) extends [FreeCamera](/classes/3.1/
 ### touchAngularSensibility : number
 
 
-
 ### touchMoveSensibility : number
-
 
 
 ## Methods

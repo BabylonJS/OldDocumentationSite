@@ -33,7 +33,6 @@ Instantiates a [ColorGradingTexture](/classes/3.1/ColorGradingTexture) from the 
 ### url : string
 
 The texture URL.
-
 ## Methods
 
 ### getTextureMatrix() &rarr; [Matrix](/classes/3.1/Matrix)
@@ -47,7 +46,7 @@ Clones the color gradind texture.
 ### delayLoad() &rarr; void
 
 Called during delayed load for textures.
-### static Parse(parsedTexture, scene, rootUrl) &rarr; [ColorGradingTexture](/classes/3.1/ColorGradingTexture)
+### static Parse(parsedTexture, scene, rootUrl) &rarr; Nullable&lt;[ColorGradingTexture](/classes/3.1/ColorGradingTexture)&gt;
 
 Parses a color grading texture serialized by Babylon.
 

@@ -29,38 +29,42 @@ optional | updatable | boolean |
 ### id : string
 
 
-
 ### delayLoadState : number
 
 
-
 ### delayLoadingFile : Nullable&lt;string&gt;
-
 
 
 ### onGeometryUpdated : (geometry: [Geometry](/classes/3.1/Geometry), kind: string) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | geometry | [Geometry](/classes/3.1/Geometry) | 
+optional | kind | string | 
 ### boundingBias : [Vector2](/classes/3.1/Vector2)
 
 The Bias Vector to apply on the bounding elements (box/sphere), the max extend is computed as v += v * bias.x + bias.y, the min is computed as v -= v * bias.x + bias.y
 
 @returns The Bias Vector
-
 ### extend : { minimum: [Vector3](/classes/3.1/Vector3),  maximum: [Vector3](/classes/3.1/Vector3) }
-
 
 
 ### doNotSerialize : boolean
 
 
-
-### Float32Array : undefined
-
-
-
 ## Methods
+
+### static CreateGeometryForMesh(mesh) &rarr; [Geometry](/classes/3.1/Geometry)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | mesh | [Mesh](/classes/3.1/Mesh) | 
 
 ### getScene() &rarr; [Scene](/classes/3.1/Scene)
 
@@ -80,7 +84,7 @@ The Bias Vector to apply on the bounding elements (box/sphere), the max extend i
 ---|---|---|---
  | vertexData | [VertexData](/classes/3.1/VertexData) | 
 optional | updatable | boolean | 
-### setVerticesData(kind, data, Float32Array, updatable, stride) &rarr; void
+### setVerticesData(kind, data, updatable, stride) &rarr; void
 
 
 
@@ -88,7 +92,7 @@ optional | updatable | boolean |
  | Name | Type | Description
 ---|---|---|---
  | kind | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
 optional | updatable | boolean | 
 ### removeVerticesData(kind) &rarr; void
 
@@ -118,7 +122,7 @@ optional | updatable | boolean |
  | kind | string | 
  | data | Float32Array | 
  | offset | number | 
-### updateVerticesData(kind, data, Float32Array, updateExtends) &rarr; void
+### updateVerticesData(kind, data, updateExtends) &rarr; void
 
 
 
@@ -126,12 +130,12 @@ optional | updatable | boolean |
  | Name | Type | Description
 ---|---|---|---
  | kind | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
 optional | updateExtends | boolean | 
 ### getTotalVertices() &rarr; number
 
 
-### getVerticesData(kind, copyWhenShared, forceCopy) &rarr; Nullable&lt;number[]&gt;
+### getVerticesData(kind, copyWhenShared, forceCopy) &rarr; Nullable&lt;FloatArray&gt;
 
 
 
@@ -143,7 +147,33 @@ optional | copyWhenShared | boolean |
 optional | forceCopy | boolean | 
 ### isVertexBufferUpdatable(kind) &rarr; boolean
 
+Returns a boolean defining if the vertex data for the requested `kind` is updatable.
 
+Possible `kind` values :
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).PositionKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UVKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV2Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV3Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV4Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV5Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).UV6Kind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).ColorKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesIndicesKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesIndicesExtraKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesWeightsKind
+
+- BABYLON.[VertexBuffer](/classes/3.1/VertexBuffer).MatricesWeightsExtraKind
 
 #### Parameters
  | Name | Type | Description
@@ -234,7 +264,7 @@ optional | shouldDispose | boolean |
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
-optional | onLoaded | () =&gt; void | 
+optional | onLoaded |  | 
 ### toLeftHanded() &rarr; void
 
 Invert the geometry to move from a right handed system to a left handed one.

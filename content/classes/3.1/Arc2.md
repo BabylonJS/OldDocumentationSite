@@ -28,32 +28,24 @@ Creates an Arc object from the three passed points : start, middle and end.
 ### startPoint : [Vector2](/classes/3.1/Vector2)
 
 
-
 ### midPoint : [Vector2](/classes/3.1/Vector2)
-
 
 
 ### endPoint : [Vector2](/classes/3.1/Vector2)
 
 
-
 ### centerPoint : [Vector2](/classes/3.1/Vector2)
-
 
 
 ### radius : number
 
 
-
 ### angle : [Angle](/classes/3.1/Angle)
-
 
 
 ### startAngle : [Angle](/classes/3.1/Angle)
 
 
-
 ### orientation : [Orientation](/classes/3.1/Orientation)
-
 
 

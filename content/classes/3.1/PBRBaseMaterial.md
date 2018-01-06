@@ -25,7 +25,11 @@ Instantiates a new [PBRMaterial](/classes/3.1/PBRMaterial) instance.
 ### useLogarithmicDepth : boolean
 
 
+### transparencyMode : Nullable&lt;number&gt;
 
+Gets the current transparency mode.
+
+Sets the transparency mode of the material.
 ## Methods
 
 ### getClassName() &rarr; string
@@ -33,10 +37,19 @@ Instantiates a new [PBRMaterial](/classes/3.1/PBRMaterial) instance.
 
 ### needAlphaBlending() &rarr; boolean
 
+Specifies whether or not this material should be rendered in alpha blend mode.
+### needAlphaBlendingForMesh(mesh) &rarr; boolean
+
+Specifies whether or not this material should be rendered in alpha blend mode for the given mesh.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
 ### needAlphaTesting() &rarr; boolean
 
-
+Specifies whether or not this material should be rendered in alpha test mode.
 ### getAlphaTestTexture() &rarr; [BaseTexture](/classes/3.1/BaseTexture)
 
 

@@ -9,9 +9,9 @@ var TypeManager = require('./typeManager');
 var file = require('../config').file;
 
 var Describer = {
-    fileName      : '',
+    fileName: '',
     oldDescription: '',
-    describer     : ''
+    describer: ''
 };
 
 Describer.setFileName = function (fileName) {
@@ -90,7 +90,15 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
     }
     else {
         var notParamRegexp = /(?:^\s*\*\s)(?!\@param)(.*)/gm;
-        var funParameters = astElement.callSignature.parameterList.parameters.members;
+        var funParameters = '';
+        if (astElement.callSignature) {
+            funParameters = astElement.callSignature.parameterList.parameters.members;
+        }
+        if (astElement.variableDeclarator && astElement.variableDeclarator.typeAnnotation) {
+            if (astElement.variableDeclarator.typeAnnotation.type.kind() === TypeScript.SyntaxKind.FunctionType) {
+                funParameters = astElement.variableDeclarator.typeAnnotation.type.parameterList.parameters.members;
+            }
+        }
 
         var line = notParamRegexp.exec(serializedComments);
 
@@ -109,7 +117,11 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
 
         var parametersDescription = '';
 
-        parametersDescription += TypeManager.getDescriptionString(astElement.callSignature, serializedComments, true);
+        if (astElement.callSignature) {
+            parametersDescription += TypeManager.getDescriptionString(astElement.callSignature, serializedComments, true);
+        } else if (astElement.variableDeclarator && astElement.variableDeclarator.typeAnnotation) {
+            parametersDescription += TypeManager.getDescriptionString(astElement.variableDeclarator.typeAnnotation.type, serializedComments, true);
+        }
         parametersDescription += "\n";
 
         /**
@@ -122,18 +134,18 @@ Describer.getComments = function (astElement, astFormatted, withParams) {
 
         while (searchBreak != -1) {
             var line = parametersDescription.substring(0, searchBreak);
-            var start = line.indexOf("|")+1;
-            var end = line.substr(line.indexOf("|")+1).indexOf("|")-1 + start;
+            var start = line.indexOf("|") + 1;
+            var end = line.substr(line.indexOf("|") + 1).indexOf("|") - 1 + start;
             var name = line.substring(start, end);
 
             paramDescLine[name] = line;
-            parametersDescription = parametersDescription.slice(searchBreak+1, parametersDescription.length-1);
+            parametersDescription = parametersDescription.slice(searchBreak + 1, parametersDescription.length - 1);
 
             searchBreak = parametersDescription.search(/\n/);
         }
 
         parametersDescription = "";
-        for(var index in paramDescLine) {
+        for (var index in paramDescLine) {
             // Just add the new one
             parametersDescription += paramDescLine[index] + "\n";
         }
@@ -152,15 +164,15 @@ Describer.getMetas = function () {
     var beginMetasToken = '---';
     var endMetasToken = '##';
     var oldMetas = this.oldDescription.substring(0, this.oldDescription.indexOf(endMetasToken, this.oldDescription.indexOf(beginMetasToken)) + endMetasToken.length);
-    if(oldMetas) {
+    if (oldMetas) {
         // Delete the '##' found and replace it with a newline
-        oldMetas = oldMetas.substring(0, oldMetas.lastIndexOf('---')+3);
+        oldMetas = oldMetas.substring(0, oldMetas.lastIndexOf('---') + 3);
         oldMetas += '\n';
     }
 
     var defaultMetas = '---\nTAGS:\n---\n';
 
-    return (oldMetas ? oldMetas: defaultMetas);
+    return (oldMetas ? oldMetas : defaultMetas);
 };
 
 function stripMdLinks(mdData) {

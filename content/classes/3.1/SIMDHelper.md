@@ -14,7 +14,6 @@ class [SIMDHelper](/classes/3.1/SIMDHelper)
 ### static IsEnabled : boolean
 
 
-
 ## Methods
 
 ### static DisableSIMD() &rarr; void

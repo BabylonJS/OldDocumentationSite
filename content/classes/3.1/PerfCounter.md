@@ -25,29 +25,25 @@ For count you first have to call fetchNewFrame() to notify the start of a new fr
 ### static Enabled : boolean
 
 
-
 ### min : number
 
 Returns the smallest value ever
-
 ### max : number
 
 Returns the biggest value ever
-
 ### average : number
 
 Returns the average value since the performance counter is running
-
 ### lastSecAverage : number
 
 Returns the average value of the last second the counter was monitored
-
 ### current : number
 
 Returns the current value
-
 ### total : number
 
+
+### count : number
 
 
 ## Methods

@@ -18,7 +18,7 @@ class [VideoTexture](/classes/3.1/VideoTexture) extends [Texture](/classes/3.1/T
 
 Creates a video texture.
 
-Sample : [Video Texture](https://doc.babylonjs.com/How_To/video_texture)
+Sample : https://doc.babylonjs.com/tutorials/01._Advanced_Texturing
 
 #### Parameters
  | Name | Type | Description
@@ -31,7 +31,6 @@ optional | invertY | boolean |
 ## Members
 
 ### video : HTMLVideoElement
-
 
 
 ## Methods
@@ -50,5 +49,6 @@ optional | invertY | boolean |
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onReady | (videoTexture: [VideoTexture](/classes/3.1/VideoTexture)) =&gt; void | 
- | constraints | { minWidth: number,  maxWidth: number,  minHeight: number,  maxHeight: number,  deviceId: string } | 
+ | onReady |  | videoTexture | [VideoTexture](/classes/3.1/VideoTexture) | 
+
+ | 

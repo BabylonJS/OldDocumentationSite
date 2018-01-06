@@ -27,7 +27,6 @@ optional | exponent | number |
 ### exponent : number
 
 
-
 ## Methods
 
 ### easeInCore(gradient) &rarr; number

@@ -14,77 +14,58 @@ class [VRCameraMetrics](/classes/3.1/VRCameraMetrics)
 ### hResolution : number
 
 
-
 ### vResolution : number
-
 
 
 ### hScreenSize : number
 
 
-
 ### vScreenSize : number
-
 
 
 ### vScreenCenter : number
 
 
-
 ### eyeToScreenDistance : number
-
 
 
 ### lensSeparationDistance : number
 
 
-
 ### interpupillaryDistance : number
-
 
 
 ### distortionK : number[]
 
 
-
 ### chromaAbCorrection : number[]
-
 
 
 ### postProcessScaleFactor : number
 
 
-
 ### lensCenterOffset : number
-
 
 
 ### compensateDistortion : boolean
 
 
-
 ### aspectRatio : number
-
 
 
 ### aspectRatioFov : number
 
 
-
 ### leftHMatrix : [Matrix](/classes/3.1/Matrix)
-
 
 
 ### rightHMatrix : [Matrix](/classes/3.1/Matrix)
 
 
-
 ### leftPreViewMatrix : [Matrix](/classes/3.1/Matrix)
 
 
-
 ### rightPreViewMatrix : [Matrix](/classes/3.1/Matrix)
-
 
 
 ## Methods

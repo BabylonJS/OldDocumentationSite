@@ -28,29 +28,19 @@ Creates an instance based on a source mesh.
 ### receiveShadows : boolean
 
 
-
-### material : [Material](/classes/3.1/Material)
-
+### material : Nullable&lt;[Material](/classes/3.1/Material)&gt;
 
 
 ### visibility : number
 
 
-
-### skeleton : [Skeleton](/classes/3.1/Skeleton)
-
+### skeleton : Nullable&lt;[Skeleton](/classes/3.1/Skeleton)&gt;
 
 
 ### renderingGroupId : number
 
 
-
 ### sourceMesh : [Mesh](/classes/3.1/Mesh)
-
-
-
-### Float32Array : undefined
-
 
 
 ## Methods
@@ -61,7 +51,7 @@ Returns the string "[InstancedMesh](/classes/3.1/InstancedMesh)".
 ### getTotalVertices() &rarr; number
 
 Returns the total number of vertices (integer).
-### getVerticesData(kind, copyWhenShared) &rarr; number[]
+### getVerticesData(kind, copyWhenShared) &rarr; Nullable&lt;FloatArray&gt;
 
 Returns a float array or a Float32Array of the requested kind of data : positons, normals, uvs, etc.
 
@@ -70,7 +60,7 @@ Returns a float array or a Float32Array of the requested kind of data : positons
 ---|---|---|---
  | kind | string | 
 optional | copyWhenShared | boolean | 
-### setVerticesData(kind, data, Float32Array, updatable, stride) &rarr; [Mesh](/classes/3.1/Mesh)
+### setVerticesData(kind, data, updatable, stride) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Sets the vertex data of the mesh geometry for the requested `kind`.
 
@@ -118,9 +108,9 @@ If the `kind` is the `PositionKind`, the mesh [BoundingInfo](/classes/3.1/Boundi
  | Name | Type | Description
 ---|---|---|---
  | kind | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
 optional | updatable | boolean | 
-### updateVerticesData(kind, data, Float32Array, updateExtends, makeItUnique) &rarr; [Mesh](/classes/3.1/Mesh)
+### updateVerticesData(kind, data, updateExtends, makeItUnique) &rarr; [Mesh](/classes/3.1/Mesh)
 
 Updates the existing vertex data of the mesh geometry for the requested `kind`.
 
@@ -166,7 +156,7 @@ If the parameter `makeItUnique` is true, a new global geometry is created from t
  | Name | Type | Description
 ---|---|---|---
  | kind | string | 
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
 optional | updateExtends | boolean | 
 ### setIndices(indices, totalVertices) &rarr; [Mesh](/classes/3.1/Mesh)
 
@@ -184,7 +174,7 @@ Returns the [Mesh](/classes/3.1/Mesh).
  | Name | Type | Description
 ---|---|---|---
  | indices | IndicesArray | 
-optional | totalVertices | number | 
+optional | totalVertices | Nullable&lt;number&gt; | 
 ### isVerticesDataPresent(kind) &rarr; boolean
 
 Boolean : True if the mesh owns the requested kind of data.
@@ -194,7 +184,7 @@ Boolean : True if the mesh owns the requested kind of data.
 ---|---|---|---
  | kind | string | 
 
-### getIndices() &rarr; IndicesArray
+### getIndices() &rarr; Nullable&lt;IndicesArray&gt;
 
 Returns an array of indices (IndicesArray).
 ### refreshBoundingInfo() &rarr; [InstancedMesh](/classes/3.1/InstancedMesh)

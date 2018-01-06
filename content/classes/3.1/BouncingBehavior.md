@@ -12,27 +12,21 @@ Add a bouncing effect to an [ArcRotateCamera](/classes/3.1/ArcRotateCamera) when
 ### name : string
 
 
-
 ### static [EasingFunction](/classes/3.1/EasingFunction) : [BackEase](/classes/3.1/BackEase)
 
 The easing function used by animations
-
 ### static EasingMode : number
 
 The easing mode used by animations
-
 ### transitionDuration : number
 
 The duration of the animation, in milliseconds
-
 ### lowerRadiusTransitionRange : number
 
 Length of the distance animated by the transition when lower radius is reached
-
 ### upperRadiusTransitionRange : number
 
 Length of the distance animated by the transition when upper radius is reached
-
 ### autoTransitionRange : boolean
 
 Gets a value indicating if the lowerRadiusTransitionRange and upperRadiusTransitionRange are defined automatically
@@ -40,8 +34,10 @@ Gets a value indicating if the lowerRadiusTransitionRange and upperRadiusTransit
 Sets a value indicating if the lowerRadiusTransitionRange and upperRadiusTransitionRange are defined automatically
 
 Transition ranges will be set to 5% of the bounding box diagonal in world space
-
 ## Methods
+
+### init() &rarr; void
+
 
 ### attach(camera) &rarr; void
 

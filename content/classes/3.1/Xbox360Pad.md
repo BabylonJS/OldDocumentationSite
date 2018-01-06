@@ -28,81 +28,61 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 ### onButtonDownObservable : [Observable](/classes/3.1/Observable)&lt;[Xbox360Button](/classes/3.1/Xbox360Button)&gt;
 
 
-
 ### onButtonUpObservable : [Observable](/classes/3.1/Observable)&lt;[Xbox360Button](/classes/3.1/Xbox360Button)&gt;
-
 
 
 ### onPadDownObservable : [Observable](/classes/3.1/Observable)&lt;[Xbox360Dpad](/classes/3.1/Xbox360Dpad)&gt;
 
 
-
 ### onPadUpObservable : [Observable](/classes/3.1/Observable)&lt;[Xbox360Dpad](/classes/3.1/Xbox360Dpad)&gt;
-
 
 
 ### leftTrigger : number
 
 
-
 ### rightTrigger : number
-
 
 
 ### buttonA : number
 
 
-
 ### buttonB : number
-
 
 
 ### buttonX : number
 
 
-
 ### buttonY : number
-
 
 
 ### buttonStart : number
 
 
-
 ### buttonBack : number
-
 
 
 ### buttonLB : number
 
 
-
 ### buttonRB : number
-
 
 
 ### buttonLeftStick : number
 
 
-
 ### buttonRightStick : number
-
 
 
 ### dPadUp : number
 
 
-
 ### dPadDown : number
-
 
 
 ### dPadLeft : number
 
 
-
 ### dPadRight : number
-
 
 
 ## Methods
@@ -114,8 +94,9 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (value: number) =&gt; void | 
+ | callback |  | value | number | 
 
+ | 
 ### onrighttriggerchanged(callback) &rarr; void
 
 
@@ -123,8 +104,9 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (value: number) =&gt; void | 
+ | callback |  | value | number | 
 
+ | 
 ### onbuttondown(callback) &rarr; void
 
 
@@ -132,8 +114,9 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (buttonPressed: [Xbox360Button](/classes/3.1/Xbox360Button)) =&gt; void | 
+ | callback |  | buttonPressed | [Xbox360Button](/classes/3.1/Xbox360Button) | 
 
+ | 
 ### onbuttonup(callback) &rarr; void
 
 
@@ -141,8 +124,9 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (buttonReleased: [Xbox360Button](/classes/3.1/Xbox360Button)) =&gt; void | 
+ | callback |  | buttonReleased | [Xbox360Button](/classes/3.1/Xbox360Button) | 
 
+ | 
 ### ondpaddown(callback) &rarr; void
 
 
@@ -150,8 +134,9 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (dPadPressed: [Xbox360Dpad](/classes/3.1/Xbox360Dpad)) =&gt; void | 
+ | callback |  | dPadPressed | [Xbox360Dpad](/classes/3.1/Xbox360Dpad) | 
 
+ | 
 ### ondpadup(callback) &rarr; void
 
 
@@ -159,8 +144,12 @@ class [Xbox360Pad](/classes/3.1/Xbox360Pad) extends [Gamepad](/classes/3.1/Gamep
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | callback | (dPadReleased: [Xbox360Dpad](/classes/3.1/Xbox360Dpad)) =&gt; void | 
+ | callback |  | dPadReleased | [Xbox360Dpad](/classes/3.1/Xbox360Dpad) | 
 
+ | 
 ### update() &rarr; void
+
+
+### dispose() &rarr; void
 
 

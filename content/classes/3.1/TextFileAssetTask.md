@@ -27,15 +27,31 @@ class [TextFileAssetTask](/classes/3.1/TextFileAssetTask) extends [AbstractAsset
 ### name : string
 
 
-
 ### url : string
-
 
 
 ### text : string
 
 
+### onSuccess : (task: [TextFileAssetTask](/classes/3.1/TextFileAssetTask)) =&gt; void
 
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [TextFileAssetTask](/classes/3.1/TextFileAssetTask) | 
+
+### onError : (task: [TextFileAssetTask](/classes/3.1/TextFileAssetTask), message: string, exception: any) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [TextFileAssetTask](/classes/3.1/TextFileAssetTask) | 
+optional | message | string | 
+optional | exception | any | 
 ## Methods
 
 ### runTask(scene, onSuccess, onError) &rarr; void
@@ -46,5 +62,7 @@ class [TextFileAssetTask](/classes/3.1/TextFileAssetTask) extends [AbstractAsset
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onSuccess | () =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+ | onError | optional | message | string | 
+optional | exception | any | 
+

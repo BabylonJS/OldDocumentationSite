@@ -12,37 +12,28 @@ class [ArcRotateCameraKeyboardMoveInput](/classes/3.1/ArcRotateCameraKeyboardMov
 ### camera : [ArcRotateCamera](/classes/3.1/ArcRotateCamera)
 
 
-
 ### keysUp : number[]
-
 
 
 ### keysDown : number[]
 
 
-
 ### keysLeft : number[]
-
 
 
 ### keysRight : number[]
 
 
-
 ### keysReset : number[]
-
 
 
 ### panningSensibility : number
 
 
-
 ### zoomingSensibility : number
 
 
-
 ### useAltToZoom : boolean
-
 
 
 ## Methods
@@ -63,7 +54,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### checkInputs() &rarr; void
 

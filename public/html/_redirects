@@ -17,26 +17,8 @@
 /tutorials/07._babylon.js_advanced_features                 /How_To/babylon.js_advanced_features
 /tutorials/08._special_effects                              /How_To/special_effects
 
-/tutorials/advanced_texturing           /How_To/more_materials
-/tutorials/discover_basic_elements      /babylon101/discover_basic_elements
-/tutorials/sprites                      /babylon101/sprites
-/tutorials/particles                    /babylon101/particles
-/tutorials/height_map                   /babylon101/height_map
-/tutorials/shadows                      /babylon101/shadows
-/tutorials/Creating_a_Basic_Scene       /babylon101/first
-
-/tutorials/3d_on_the_web_understanding_the_basics       /How_To/3d_on_the_web_understanding_the_basics
-/tutorials/webgl_basics                                 /How_To/webgl_basics
-/tutorials/using_babylon.js_for_beginners               /How_To/using_babylon.js_for_beginners
-/tutorials/understanding_materials_and_inputs           /How_To/understanding_materials_and_inputs
-/tutorials/game_pipeline_integration_with_babylon.js    /How_To/game_pipeline_integration_with_babylon.js
-/tutorials/loading_assets                               /How_To/loading_assets
-/tutorials/babylon.js_advanced_features                 /How_To/babylon.js_advanced_features
-/tutorials/special_effects                              /How_To/special_effects
-
-
 /overviews/debug_layer_features                         /features/playground_debuglayer
-/overviews/Behaviors                                    /features/Behaviours
+/overviews/Behaviors                                    /features/Behaviour
 /overviews/How_Rotations_and_Translations_Work          /features/Position,_Rotation,_Scaling
 /overviews/OcclusionQuery                               /features/OcclusionQuery
 /overviews/WebGL2                                       /features/WebGL2
@@ -108,9 +90,9 @@
 /tutorials/How_to_use_Procedural_Textures                                         /How_To/How_to_use_Procedural_Textures
 /tutorials/How_to_use_Reflection_probes                                           /How_To/How_to_use_Reflection_probes
 /tutorials/How_to_use_SceneOptimizer                                              /How_To/How_to_use_SceneOptimizer
-/tutorials/How_to_use_the_Tags_System                                             /How_To/How_to_use_the_Tags_System
-/tutorials/How_to_use_VirtualJoysticksCamera                                      /How_To/How_to_use_VirtualJoysticksCamera
-/tutorials/In-Browser_Mesh_Simplification_(Auto-LOD)                              /How_To/In-Browser_Mesh_Simplification_(Auto-LOD)
+/tutorials/How_to_use_the_Tags_System                                             /resources/Tags
+/tutorials/How_to_use_VirtualJoysticksCamera                                      /features/Cameras
+/tutorials/In-Browser_Mesh_Simplification_(Auto-LOD)                              /How_To/In-Browser_Mesh_Simplification
 /tutorials/Layermasks_and_Multi-Cam_Textures                                      /How_To/Layermasks_and_Multi-Cam_Textures
 /tutorials/Loading_Assets                                                         /How_To/Loading_Assets
 /tutorials/Optimizing_your_scene                                                  /How_To/Optimizing_your_scene
@@ -122,7 +104,7 @@
 /tutorials/Special_Effects                                                        /How_To/Special_Effects
 /tutorials/Understanding_Materials_and_Inputs                                     /How_To/Understanding_Materials_and_Inputs
 /tutorials/Using_Babylon.js_for_Beginners                                         /How_To/Using_Babylon.js_for_Beginners
-/tutorials/Using_decals                                                           /How_To/Using_decals
+/tutorials/Using_decals                                                           /How_To/Decals
 /tutorials/Using_Default_Rendering_Pipeline                                       /How_To/Using_Default_Rendering_Pipeline
 /tutorials/Using_depth-of-field_and_other_lens_effects                            /How_To/Using_depth-of-field_and_other_lens_effects
 /tutorials/Using_logarithmic_depth_buffer                                         /How_To/Using_logarithmic_depth_buffer
@@ -169,8 +151,8 @@
 /exporters/Cheetah3D                            /resources/Cheetah3D
 /exporters/Installing__the_Babylon_Exporter     /resources/Installing__the_Babylon_Exporter
 /exporters/Tags                                 /resources/Tags
-/exporters/Unity                                /resources/Unity
-/exporters/WebGL2                               /resources/WebGL2
+/exporters/Unity                                /resources/Intro
+/exporters/WebGL2                               /features/WebGL2
 
 /generals/A_Babylon.js_Primer          /babylon101/About101
 
@@ -191,8 +173,3 @@
 /extensions/Physically_Based_Rendering          /How_To/physically_based_rendering
 
 /How_To/BabylonJS_and_ReactJS                   /resources/BabylonJS_and_ReactJS
-
-
-
- 
-

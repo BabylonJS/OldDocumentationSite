@@ -21,43 +21,40 @@ class [Node](/classes/3.1/Node)
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | scene | [Scene](/classes/3.1/Scene) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
 ## Members
 
 ### name : string
 
 
-
 ### id : string
-
 
 
 ### uniqueId : number
 
 
-
 ### state : string
-
 
 
 ### metadata : any
 
 
-
 ### doNotSerialize : boolean
 
 
-
 ### animations : [Animation](/classes/3.1/Animation)[]
-
 
 
 ### onReady : (node: [Node](/classes/3.1/Node)) =&gt; void
 
 
 
-### parent : Nullable&lt;[Node](/classes/3.1/Node)&gt;
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | node | [Node](/classes/3.1/Node) | 
 
+### parent : Nullable&lt;[Node](/classes/3.1/Node)&gt;
 
 
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[Node](/classes/3.1/Node)&gt;
@@ -65,13 +62,10 @@ class [Node](/classes/3.1/Node)
 An event triggered when the mesh is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ### onDispose : () =&gt; void
 
 
-
 ### behaviors : Behavior&lt;[Node](/classes/3.1/Node)&gt;[]
-
 
 
 ## Methods
@@ -193,16 +187,28 @@ Will return all nodes that have this node as ascendant.
  | Name | Type | Description
 ---|---|---|---
 optional | directDescendantsOnly | boolean | 
-optional | predicate | (node: [Node](/classes/3.1/Node)) =&gt; boolean | : an optional predicate that will be called on every evaluated children, the predicate must return true for a given child to be part of the result, otherwise it will be ignored.
-### getChildMeshes(directDecendantsOnly, predicate) &rarr; [AbstractMesh](/classes/3.1/AbstractMesh)[]
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
+
+### getChildMeshes(directDescendantsOnly, predicate) &rarr; [AbstractMesh](/classes/3.1/AbstractMesh)[]
 
 Get all child-meshes of this node.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | directDecendantsOnly | boolean | 
-optional | predicate | (node: [Node](/classes/3.1/Node)) =&gt; boolean | 
+optional | directDescendantsOnly | boolean | 
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
+
+### getChildTransformNodes(directDescendantsOnly, predicate) &rarr; [TransformNode](/classes/3.1/TransformNode)[]
+
+Get all child-transformNodes of this node.
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | directDescendantsOnly | boolean | 
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
+
 ### getChildren(predicate) &rarr; [Node](/classes/3.1/Node)[]
 
 Get all direct children of this node.
@@ -210,8 +216,9 @@ Get all direct children of this node.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | predicate | (node: [Node](/classes/3.1/Node)) =&gt; boolean | 
+optional | predicate |  | node | [Node](/classes/3.1/Node) | 
 
+ | 
 ### getAnimationByName(name) &rarr; Nullable&lt;[Animation](/classes/3.1/Animation)&gt;
 
 
@@ -261,6 +268,15 @@ optional | loop | boolean |
 optional | speedRatio | number | 
 ### serializeAnimationRanges() &rarr; any
 
+
+### computeWorldMatrix(force) &rarr; [Matrix](/classes/3.1/Matrix)
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+optional | force | boolean | 
 
 ### dispose() &rarr; void
 

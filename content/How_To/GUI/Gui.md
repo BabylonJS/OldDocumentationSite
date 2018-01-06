@@ -45,6 +45,8 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 **Please note that only one fullscreen mode GUI is allowed per scene**
 
+The fullscreen mode is not intented to be used with WebVR as it is a pure 2d rendering. For WebVR scenario you will have to use the texture mode below.
+
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
 ```
@@ -208,6 +210,7 @@ Here are the properties you can define:
 
 Property|Type|Default|Comments
 --------|----|-------|--------
+lineSpacing|valueAndUnit|0px|Can be set to configure vertical spacing between text lines
 text|string|null|Text to display
 textWrapping|boolean|false|Can be set to true to enable text wrapping.
 resizeToFit|boolean|false|Can be set to true to enable resize to fit.
@@ -220,7 +223,15 @@ Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
 
-#### Resize to Fit
+### Line spacing
+
+You can configure vertical line spacing between lines in pixels or percentage values.
+
+**lineSpacing should be used with textWrapping set to true.**
+
+You can try it here: http://www.babylonjs-playground.com/#44KYLP
+
+### Resize to Fit
 
 When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
 
@@ -430,7 +441,7 @@ You can also define which part of the source image you want to use with the foll
 
 Here is an example of an image:  https://www.babylonjs-playground.com/#XCPP9Y#7
 
-You can use animation sheet in the image using properties `image.cellId`, `image.cellWidth`, `image.cellHeight`. [example](https://www.babylonjs-playground.com/#K60448)
+You can use animation sheet in the image using properties `image.cellId`, `image.cellWidth`, `image.cellHeight`. https://www.babylonjs-playground.com/#K60448#10
 You can also apply stretch to animation sheet using `image.stretch` property.
 
 [example 1](https://www.babylonjs-playground.com/#K60448#1)
@@ -497,7 +508,7 @@ The default layout is equivalent to:
 addKeysRow(["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","\u2190"]);
 addKeysRow(["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]);
 addKeysRow(["a", "s", "d", "f", "g", "h", "j", "k", "l",";","'","\u21B5"]);
-addKeysRow(["z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
+addKeysRow(["\u21E7", "z", "x", "c", "v", "b", "n", "m", ",", ".", "/"]);
 addKeysRow([" "], [{ width: "200px"}]);
 ```
 

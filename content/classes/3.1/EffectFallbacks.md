@@ -16,7 +16,6 @@ class [EffectFallbacks](/classes/3.1/EffectFallbacks)
 ### isMoreFallbacks : boolean
 
 
-
 ## Methods
 
 ### unBindMesh() &rarr; void

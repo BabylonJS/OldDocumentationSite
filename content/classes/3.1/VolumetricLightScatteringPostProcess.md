@@ -35,63 +35,52 @@ optional | reusable | boolean |
 If not undefined, the mesh position is computed from the attached node position
 
 @type {{position: [Vector3](/classes/3.1/Vector3)}}
-
 ### customMeshPosition : [Vector3](/classes/3.1/Vector3)
 
 Custom position of the mesh. Used if "useCustomMeshPosition" is set to "true"
 
 @type {[Vector3](/classes/3.1/Vector3)}
-
 ### useCustomMeshPosition : boolean
 
 Set if the post-process should use a custom position for the light source (true) or the internal mesh position (false)
 
 @type {boolean}
-
 ### invert : boolean
 
 If the post-process should inverse the light scattering direction
 
 @type {boolean}
-
 ### mesh : [Mesh](/classes/3.1/Mesh)
 
 The internal mesh used by the post-process
 
 @type {boolean}
-
 ### useDiffuseColor : boolean
-
 
 
 ### excludedMeshes : [AbstractMesh](/classes/3.1/AbstractMesh)[]
 
 Array containing the excluded meshes not rendered in the internal pass
-
 ### exposure : number
 
 Controls the overall intensity of the post-process
 
 @type {number}
-
 ### decay : number
 
 Dissipates each sample's contribution in range [0, 1]
 
 @type {number}
-
 ### weight : number
 
 Controls the overall intensity of each sample
 
 @type {number}
-
 ### density : number
 
 Controls the density of each sample
 
 @type {number}
-
 ## Methods
 
 ### getClassName() &rarr; string

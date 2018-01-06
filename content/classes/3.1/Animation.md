@@ -13,7 +13,7 @@ class [Animation](/classes/3.1/Animation)
 
 ## Constructor
 
-## new [Animation](/classes/3.1/Animation)(name, targetProperty, framePerSecond, dataType, loopMode, enableBlending)
+## new [Animation](/classes/3.1/Animation)(name, targetProperty, framePerSecond, dataType, loopMode, undefined, enableBlending, undefined)
 
 
 
@@ -24,91 +24,76 @@ class [Animation](/classes/3.1/Animation)
  | targetProperty | string | 
  | framePerSecond | number | 
  | dataType | number | 
-optional | loopMode | number | 
+optional | loopMode | number or undefined | 
 ## Members
 
 ### name : string
 
 
-
 ### targetProperty : string
-
 
 
 ### framePerSecond : number
 
 
-
 ### dataType : number
-
 
 
 ### loopMode : number
 
 
+### undefined : undefined
+
 
 ### enableBlending : boolean
 
+
+### undefined : undefined
 
 
 ### static AllowMatricesInterpolation : boolean
 
 
-
 ### targetPropertyPath : string[]
-
 
 
 ### blendingSpeed : number
 
 
-
 ### runtimeAnimations : [RuntimeAnimation](/classes/3.1/RuntimeAnimation)[]
 
 Return the array of runtime animations currently using this animation
-
 ### hasRunningRuntimeAnimations : boolean
-
 
 
 ### static ANIMATIONTYPE_FLOAT : number
 
 
-
 ### static ANIMATIONTYPE_VECTOR3 : number
-
 
 
 ### static ANIMATIONTYPE_VECTOR2 : number
 
 
-
 ### static ANIMATIONTYPE_SIZE : number
-
 
 
 ### static ANIMATIONTYPE_QUATERNION : number
 
 
-
 ### static ANIMATIONTYPE_MATRIX : number
-
 
 
 ### static ANIMATIONTYPE_COLOR3 : number
 
 
-
 ### static ANIMATIONLOOPMODE_RELATIVE : number
-
 
 
 ### static ANIMATIONLOOPMODE_CYCLE : number
 
 
-
 ### static ANIMATIONLOOPMODE_CONSTANT : number
-
 
 
 ## Methods

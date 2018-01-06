@@ -20,5 +20,8 @@ Represent a list of observers registered to multiple Observables object.
  | Name | Type | Description
 ---|---|---|---
  | observables | [Observable](/classes/3.1/Observable)&lt;T&gt;[] | 
- | callback | (eventData: T, eventState: [EventState](/classes/3.1/EventState)) =&gt; void | 
+ | callback |  | eventData | T | 
+ | eventState | [EventState](/classes/3.1/EventState) | 
+
+ | 
 optional | mask | number | 

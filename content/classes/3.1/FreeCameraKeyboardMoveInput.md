@@ -12,21 +12,16 @@ class [FreeCameraKeyboardMoveInput](/classes/3.1/FreeCameraKeyboardMoveInput)
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
 
 
-
 ### keysUp : number[]
-
 
 
 ### keysDown : number[]
 
 
-
 ### keysLeft : number[]
 
 
-
 ### keysRight : number[]
-
 
 
 ## Methods
@@ -47,7 +42,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### checkInputs() &rarr; void
 

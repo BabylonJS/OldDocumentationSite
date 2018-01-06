@@ -26,77 +26,58 @@ optional | threeDExpected | boolean |
 ### arrayBuffer : any
 
 
-
 ### static HEADER_LEN : number
-
 
 
 ### static COMPRESSED_2D : number
 
 
-
 ### static COMPRESSED_3D : number
-
 
 
 ### static TEX_2D : number
 
 
-
 ### static TEX_3D : number
-
 
 
 ### glType : number
 
 
-
 ### glTypeSize : number
-
 
 
 ### glFormat : number
 
 
-
 ### glInternalFormat : number
-
 
 
 ### glBaseInternalFormat : number
 
 
-
 ### pixelWidth : number
-
 
 
 ### pixelHeight : number
 
 
-
 ### pixelDepth : number
-
 
 
 ### numberOfArrayElements : number
 
 
-
 ### numberOfFaces : number
-
 
 
 ### numberOfMipmapLevels : number
 
 
-
 ### bytesOfKeyValueData : number
 
 
-
 ### loadType : number
-
 
 
 ## Methods

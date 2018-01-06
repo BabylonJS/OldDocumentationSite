@@ -29,25 +29,20 @@ Instantiates a new [PBRSpecularGlossinessMaterial](/classes/3.1/PBRSpecularGloss
 ### diffuseColor : [Color3](/classes/3.1/Color3)
 
 Specifies the diffuse color of the material.
-
 ### diffuseTexture : [BaseTexture](/classes/3.1/BaseTexture)
 
 Specifies the diffuse texture of the material. This can also contains the opcity value in its alpha
 
 channel.
-
 ### specularColor : [Color3](/classes/3.1/Color3)
 
 Specifies the specular color of the material. This indicates how reflective is the material (none to mirror).
-
 ### glossiness : number
 
 Specifies the glossiness of the material. This indicates "how sharp is the reflection".
-
 ### specularGlossinessTexture : [BaseTexture](/classes/3.1/BaseTexture)
 
 Specifies both the specular color RGB and the glossiness A of the material per pixels.
-
 ## Methods
 
 ### getClassName() &rarr; string

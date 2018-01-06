@@ -24,25 +24,19 @@ class [GPUParticleSystem](/classes/3.1/GPUParticleSystem)
 ### name : string
 
 
-
 ### id : string
 
 
-
-### emitter : [AbstractMesh](/classes/3.1/AbstractMesh)
-
+### emitter : Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
 
 ### [Vector3](/classes/3.1/Vector3) : undefined
 
 
-
 ### renderingGroupId : number
 
 
-
 ### layerMask : number
-
 
 
 ### onDisposeObservable : [Observable](/classes/3.1/Observable)&lt;[GPUParticleSystem](/classes/3.1/GPUParticleSystem)&gt;
@@ -50,10 +44,15 @@ class [GPUParticleSystem](/classes/3.1/GPUParticleSystem)
 An event triggered when the system is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
-
 ## Methods
 
 ### isStarted() &rarr; boolean
+
+
+### start() &rarr; void
+
+
+### stop() &rarr; void
 
 
 ### animate() &rarr; void
@@ -68,7 +67,7 @@ An event triggered when the system is disposed.
 ### dispose() &rarr; void
 
 
-### clone(name, newEmitter) &rarr; [GPUParticleSystem](/classes/3.1/GPUParticleSystem)
+### clone(name, newEmitter) &rarr; Nullable&lt;[GPUParticleSystem](/classes/3.1/GPUParticleSystem)&gt;
 
 
 

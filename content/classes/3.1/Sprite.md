@@ -27,57 +27,43 @@ class [Sprite](/classes/3.1/Sprite)
 ### name : string
 
 
-
 ### position : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### color : [Color4](/classes/3.1/Color4)
 
 
-
 ### width : number
-
 
 
 ### height : number
 
 
-
 ### angle : number
-
 
 
 ### cellIndex : number
 
 
-
 ### invertU : number
-
 
 
 ### invertV : number
 
 
-
 ### disposeWhenFinishedAnimating : boolean
-
 
 
 ### animations : [Animation](/classes/3.1/Animation)[]
 
 
-
 ### isPickable : boolean
-
 
 
 ### actionManager : [ActionManager](/classes/3.1/ActionManager)
 
 
-
 ### size : number
-
 
 
 ## Methods

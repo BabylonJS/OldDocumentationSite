@@ -28,7 +28,6 @@ class [SetStateAction](/classes/3.1/SetStateAction) extends [Action](/classes/3.
 ### value : string
 
 
-
 ## Methods
 
 ### execute() &rarr; void

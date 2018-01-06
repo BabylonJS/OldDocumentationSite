@@ -36,6 +36,12 @@ The _ellipsoid_ property on babylon.js cameras is default to size (0.5, 1, 0.5),
 camera.ellipsoid = new BABYLON.Vector3(1, 1, 1);
 ```
 
+Please note that the ellipsoid for the camera is offset to always have the view point on top of the ellipsoid. You can control this behavior by updating the `camera.ellipsoidOffset` property.
+
+The computation will be the following:
+
+*finalPosition = position - vec3(0, ellipsoid.y, 0) + ellipsoidOffset*
+
 **3 - Apply collision**
 
 Once you have those previous settings completed, our final step is to declare that we are interested in sensing collisions in our scene:

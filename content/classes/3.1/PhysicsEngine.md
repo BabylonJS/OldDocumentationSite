@@ -27,9 +27,7 @@ optional | _physicsPlugin | IPhysicsEnginePlugin |
 ### gravity : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### static Epsilon : number
-
 
 
 ## Methods
@@ -110,6 +108,9 @@ Add a joint to the physics engine
  | connectedImpostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
  | joint | [PhysicsJoint](/classes/3.1/PhysicsJoint) | 
 ### getPhysicsPlugin() &rarr; IPhysicsEnginePlugin
+
+
+### getImpostors() &rarr; Array&lt;[PhysicsImpostor](/classes/3.1/PhysicsImpostor)&gt;
 
 
 ### getImpostorForPhysicsObject(object) &rarr; Nullable&lt;[PhysicsImpostor](/classes/3.1/PhysicsImpostor)&gt;

@@ -31,29 +31,22 @@ optional | mesh | Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt; |
 ### radius : number
 
 
-
 ### tube : number
-
 
 
 ### radialSegments : number
 
 
-
 ### tubularSegments : number
-
 
 
 ### p : number
 
 
-
 ### q : number
 
 
-
 ### side : number
-
 
 
 ## Methods

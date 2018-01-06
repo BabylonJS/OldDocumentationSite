@@ -25,93 +25,70 @@ optional | cameras | [Camera](/classes/3.1/Camera)[] |
 ### PassPostProcessId : string
 
 
-
 ### HighLightsPostProcessId : string
-
 
 
 ### BlurXPostProcessId : string
 
 
-
 ### BlurYPostProcessId : string
-
 
 
 ### CopyBackPostProcessId : string
 
 
-
 ### ImageProcessingPostProcessId : string
-
 
 
 ### FxaaPostProcessId : string
 
 
-
 ### FinalMergePostProcessId : string
-
 
 
 ### pass : undefined
 
 
-
 ### highlights : undefined
-
 
 
 ### blurX : undefined
 
 
-
 ### blurY : undefined
-
 
 
 ### copyBack : undefined
 
 
-
 ### fxaa : [FxaaPostProcess](/classes/3.1/FxaaPostProcess)
-
 
 
 ### imageProcessing : [ImageProcessingPostProcess](/classes/3.1/ImageProcessingPostProcess)
 
 
-
 ### finalMerge : undefined
-
 
 
 ### animations : [Animation](/classes/3.1/Animation)[]
 
 
-
 ### bloomKernel : number
 
 Specifies the size of the bloom blur kernel, relative to the final output size
-
 ### bloomWeight : number
-
 
 
 ### bloomScale : number
 
 
-
 ### bloomEnabled : boolean
-
 
 
 ### fxaaEnabled : boolean
 
 
-
 ### imageProcessingEnabled : boolean
-
 
 
 ## Methods

@@ -28,4 +28,3 @@ class [VRDistortionCorrectionPostProcess](/classes/3.1/VRDistortionCorrectionPos
 ### aspectRatio : number
 
 
-

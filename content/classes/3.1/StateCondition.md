@@ -28,7 +28,6 @@ class [StateCondition](/classes/3.1/StateCondition) extends [Condition](/classes
 ### value : string
 
 
-
 ## Methods
 
 ### isValid() &rarr; boolean

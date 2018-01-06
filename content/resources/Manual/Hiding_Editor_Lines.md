@@ -232,5 +232,6 @@ The working playground using the above code.
 
 [Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
 [Slider Guide](/resources/PBT_slider)    
-[Intermediate Guide](/resources/PBT_Writing)
+[Intermediate Guide](/resources/PBT_Writing)  
+[Advanced Guide](/resources/PBT_previous_and_next)
 

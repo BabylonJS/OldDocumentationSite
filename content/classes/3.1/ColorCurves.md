@@ -24,7 +24,6 @@ The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green 
 Sets the global Hue value.
 
 The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green and 240=blue. The default value is 30 degrees (orange).
-
 ### globalDensity : number
 
 Gets the global Density value.
@@ -38,7 +37,6 @@ Sets the global Density value.
 The density value is in range [-100,+100] where 0 means the color filter has no effect and +100 means the color filter has maximum effect.
 
 Values less than zero provide a filter of opposite hue.
-
 ### globalSaturation : number
 
 Gets the global Saturation value.
@@ -48,7 +46,6 @@ This is an adjustment value in the range [-100,+100], where the default value of
 Sets the global Saturation value.
 
 This is an adjustment value in the range [-100,+100], where the default value of 0.0 makes no adjustment, positive values increase saturation and negative values decrease saturation.
-
 ### highlightsHue : number
 
 Gets the highlights Hue value.
@@ -58,7 +55,6 @@ The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green 
 Sets the highlights Hue value.
 
 The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green and 240=blue. The default value is 30 degrees (orange).
-
 ### highlightsDensity : number
 
 Gets the highlights Density value.
@@ -72,7 +68,6 @@ Sets the highlights Density value.
 The density value is in range [-100,+100] where 0 means the color filter has no effect and +100 means the color filter has maximum effect.
 
 Values less than zero provide a filter of opposite hue.
-
 ### highlightsSaturation : number
 
 Gets the highlights Saturation value.
@@ -82,7 +77,6 @@ This is an adjustment value in the range [-100,+100], where the default value of
 Sets the highlights Saturation value.
 
 This is an adjustment value in the range [-100,+100], where the default value of 0.0 makes no adjustment, positive values increase saturation and negative values decrease saturation.
-
 ### highlightsExposure : number
 
 Gets the highlights Exposure value.
@@ -92,7 +86,6 @@ This is an adjustment value in the range [-100,+100], where the default value of
 Sets the highlights Exposure value.
 
 This is an adjustment value in the range [-100,+100], where the default value of 0.0 makes no adjustment, positive values increase exposure and negative values decrease exposure.
-
 ### midtonesHue : number
 
 Gets the midtones Hue value.
@@ -102,7 +95,6 @@ The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green 
 Sets the midtones Hue value.
 
 The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green and 240=blue. The default value is 30 degrees (orange).
-
 ### midtonesDensity : number
 
 Gets the midtones Density value.
@@ -116,7 +108,6 @@ Sets the midtones Density value.
 The density value is in range [-100,+100] where 0 means the color filter has no effect and +100 means the color filter has maximum effect.
 
 Values less than zero provide a filter of opposite hue.
-
 ### midtonesSaturation : number
 
 Gets the midtones Saturation value.
@@ -126,7 +117,6 @@ This is an adjustment value in the range [-100,+100], where the default value of
 Sets the midtones Saturation value.
 
 This is an adjustment value in the range [-100,+100], where the default value of 0.0 makes no adjustment, positive values increase saturation and negative values decrease saturation.
-
 ### midtonesExposure : number
 
 Gets the midtones Exposure value.
@@ -136,7 +126,6 @@ This is an adjustment value in the range [-100,+100], where the default value of
 Sets the midtones Exposure value.
 
 This is an adjustment value in the range [-100,+100], where the default value of 0.0 makes no adjustment, positive values increase exposure and negative values decrease exposure.
-
 ### shadowsHue : number
 
 Gets the shadows Hue value.
@@ -146,7 +135,6 @@ The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green 
 Sets the shadows Hue value.
 
 The hue value is a standard HSB hue in the range [0,360] where 0=red, 120=green and 240=blue. The default value is 30 degrees (orange).
-
 ### shadowsDensity : number
 
 Gets the shadows Density value.
@@ -160,7 +148,6 @@ Sets the shadows Density value.
 The density value is in range [-100,+100] where 0 means the color filter has no effect and +100 means the color filter has maximum effect.
 
 Values less than zero provide a filter of opposite hue.
-
 ### shadowsSaturation : number
 
 Gets the shadows Saturation value.
@@ -170,7 +157,6 @@ This is an adjustment value in the range [-100,+100], where the default value of
 Sets the shadows Saturation value.
 
 This is an adjustment value in the range [-100,+100], where the default value of 0.0 makes no adjustment, positive values increase saturation and negative values decrease saturation.
-
 ### shadowsExposure : number
 
 Gets the shadows Exposure value.
@@ -180,7 +166,6 @@ This is an adjustment value in the range [-100,+100], where the default value of
 Sets the shadows Exposure value.
 
 This is an adjustment value in the range [-100,+100], where the default value of 0.0 makes no adjustment, positive values increase exposure and negative values decrease exposure.
-
 ## Methods
 
 ### getClassName() &rarr; string

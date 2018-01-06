@@ -32,29 +32,22 @@ optional | renderingMesh | [Mesh](/classes/3.1/Mesh) |
 ### materialIndex : number
 
 
-
 ### verticesStart : number
-
 
 
 ### verticesCount : number
 
 
-
 ### indexStart : number
-
 
 
 ### indexCount : number
 
 
-
 ### linesIndexCount : number
 
 
-
 ### IsGlobal : boolean
-
 
 
 ## Methods
@@ -73,7 +66,7 @@ optional | renderingMesh | [Mesh](/classes/3.1/Mesh) |
  | indexCount | number | 
  | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 optional | renderingMesh | [Mesh](/classes/3.1/Mesh) | 
-### getBoundingInfo() &rarr; Nullable&lt;[BoundingInfo](/classes/3.1/BoundingInfo)&gt;
+### getBoundingInfo() &rarr; [BoundingInfo](/classes/3.1/BoundingInfo)
 
 Returns the submesh BoudingInfo object.
 ### setBoundingInfo(boundingInfo) &rarr; [SubMesh](/classes/3.1/SubMesh)
@@ -93,7 +86,7 @@ Returns the mesh of the current submesh.
 ### getRenderingMesh() &rarr; [Mesh](/classes/3.1/Mesh)
 
 Returns the rendering mesh of the submesh.
-### getMaterial() &rarr; [Material](/classes/3.1/Material)
+### getMaterial() &rarr; Nullable&lt;[Material](/classes/3.1/Material)&gt;
 
 Returns the submesh material.
 ### refreshBoundingInfo() &rarr; [SubMesh](/classes/3.1/SubMesh)

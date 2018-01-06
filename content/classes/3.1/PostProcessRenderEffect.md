@@ -22,15 +22,19 @@ class [PostProcessRenderEffect](/classes/3.1/PostProcessRenderEffect)
 ---|---|---|---
  | engine | [Engine](/classes/3.1/Engine) | 
  | name | string | 
- | getPostProcess | () =&gt; [PostProcess](/classes/3.1/PostProcess) | 
+ | getPostProcess |  | 
 ## Members
 
 ### applyParameters : (postProcess: [PostProcess](/classes/3.1/PostProcess)) =&gt; void
 
 
 
-### isSupported : boolean
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
 
+### isSupported : boolean
 
 
 ## Methods
@@ -62,7 +66,7 @@ class [PostProcessRenderEffect](/classes/3.1/PostProcessRenderEffect)
 ---|---|---|---
  | renderEffect | [PostProcessRenderEffect](/classes/3.1/PostProcessRenderEffect) | 
 
-### getPass(passName) &rarr; [PostProcessRenderPass](/classes/3.1/PostProcessRenderPass)
+### getPass(passName) &rarr; Nullable&lt;[PostProcessRenderPass](/classes/3.1/PostProcessRenderPass)&gt;
 
 
 
@@ -74,7 +78,7 @@ class [PostProcessRenderEffect](/classes/3.1/PostProcessRenderEffect)
 ### emptyPasses() &rarr; void
 
 
-### getPostProcess(camera) &rarr; [PostProcess](/classes/3.1/PostProcess)
+### getPostProcess(camera) &rarr; Nullable&lt;[PostProcess](/classes/3.1/PostProcess)&gt;
 
 
 

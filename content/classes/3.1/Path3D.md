@@ -36,7 +36,6 @@ optional | raw | boolean |
 ### path : [Vector3](/classes/3.1/Vector3)[]
 
 
-
 ## Methods
 
 ### getCurve() &rarr; [Vector3](/classes/3.1/Vector3)[]

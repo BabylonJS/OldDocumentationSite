@@ -12,8 +12,6 @@ class [KeyboardEventTypes](/classes/3.1/KeyboardEventTypes)
 ### static KEYDOWN : number
 
 
-
 ### static KEYUP : number
-
 
 

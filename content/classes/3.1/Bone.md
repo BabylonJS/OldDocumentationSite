@@ -29,33 +29,25 @@ optional | baseMatrix | Nullable&lt;[Matrix](/classes/3.1/Matrix)&gt; |
 ### name : string
 
 
-
 ### children : [Bone](/classes/3.1/Bone)[]
-
 
 
 ### animations : [Animation](/classes/3.1/Animation)[]
 
 
-
 ### length : number
-
 
 
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### rotation : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### rotationQuaternion : [Quaternion](/classes/3.1/Quaternion)
 
 
-
 ### scaling : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods
@@ -254,14 +246,14 @@ Get the position of the bone in local or world space.
 ---|---|---|---
 optional | space | [Space](/classes/3.1/Space) |  The space that the returned position is in.
 optional | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.  This is only used in world space.
-### getPositionToRef(space, mesh, result) &rarr; void
+### getPositionToRef(space, undefined, mesh, result) &rarr; void
 
 Copy the position of the bone to a vector3 in local or world space.
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | space | [Space](/classes/3.1/Space) |  The space that the returned position is in.
+ | space | [Space](/classes/3.1/Space) |  The space that the returned position is ior undefined n.
  | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.  This is only used in world space.
  | result | [Vector3](/classes/3.1/Vector3) |  The vector3 to copy the position to.
 ### getAbsolutePosition(mesh) &rarr; [Vector3](/classes/3.1/Vector3)
@@ -298,7 +290,7 @@ Get the world direction from an axis that is in the local space of the bone.
 ---|---|---|---
  | localAxis | [Vector3](/classes/3.1/Vector3) |  The local direction that is used to compute the world direction.
 optional | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.
-### getDirectionToRef(localAxis, mesh, result) &rarr; void
+### getDirectionToRef(localAxis, mesh) &rarr; (localAxis, mesh)
 
 Copy the world direction to a vector3 from an axis that is in the local space of the bone.
 
@@ -306,110 +298,4 @@ Copy the world direction to a vector3 from an axis that is in the local space of
  | Name | Type | Description
 ---|---|---|---
  | localAxis | [Vector3](/classes/3.1/Vector3) |  The local direction that is used to compute the world direction.
- | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.
- | result | [Vector3](/classes/3.1/Vector3) |  The vector3 that the world direction will be copied to.
-### getRotation(space, mesh) &rarr; [Vector3](/classes/3.1/Vector3)
-
-Get the euler rotation of the bone in local or world space.
-
-@returns The euler rotation
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-optional | space | [Space](/classes/3.1/Space) |  The space that the rotation should be in.
-optional | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.  This is only used in world space.
-### getRotationToRef(space, mesh, result) &rarr; void
-
-Copy the euler rotation of the bone to a vector3.  The rotation can be in either local or world space.
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | space | [Space](/classes/3.1/Space) |  The space that the rotation should be in.
- | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.  This is only used in world space.
- | result | [Vector3](/classes/3.1/Vector3) |  The vector3 that the rotation should be copied to.
-### getRotationQuaternion(space, mesh) &rarr; [Quaternion](/classes/3.1/Quaternion)
-
-Get the quaternion rotation of the bone in either local or world space.
-
-@returns The quaternion rotation
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
-optional | space | [Space](/classes/3.1/Space) |  The space that the rotation should be in.
-optional | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.  This is only used in world space.
-### getRotationQuaternionToRef(space, mesh, result) &rarr; void
-
-Copy the quaternion rotation of the bone to a quaternion.  The rotation can be in either local or world space.
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | space | [Space](/classes/3.1/Space) |  The space that the rotation should be in.
- | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.  This is only used in world space.
- | result | [Quaternion](/classes/3.1/Quaternion) |  The quaternion that the rotation should be copied to.
-### getRotationMatrix(space, mesh) &rarr; [Matrix](/classes/3.1/Matrix)
-
-Get the rotation matrix of the bone in local or world space.
-
-@returns The rotation matrix
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | space | [Space](/classes/3.1/Space) |  The space that the rotation should be in.
- | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) |  The mesh that this bone is attached to.  This is only used in world space.
-### getRotationMatrixToRef(space, mesh, result) &rarr; void
-
-Copy the rotation matrix of the bone to a matrix.  The rotation can be in either local or world space.
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | space | [Space](/classes/3.1/Space) |  The space that the rotation should be in.
- | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) |  The mesh that this bone is attached to.  This is only used in world space.
- | result | [Matrix](/classes/3.1/Matrix) |  The quaternion that the rotation should be copied to.
-### getAbsolutePositionFromLocal(position, mesh) &rarr; [Vector3](/classes/3.1/Vector3)
-
-Get the world position of a point that is in the local space of the bone.
-
-@returns The world position
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | position | [Vector3](/classes/3.1/Vector3) |  The local position
-optional | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.
-### getAbsolutePositionFromLocalToRef(position, mesh, result) &rarr; void
-
-Get the world position of a point that is in the local space of the bone and copy it to the result param.
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | position | [Vector3](/classes/3.1/Vector3) |  The local position
- | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.
- | result | [Vector3](/classes/3.1/Vector3) |  The vector3 that the world position should be copied to.
-### getLocalPositionFromAbsolute(position, mesh) &rarr; [Vector3](/classes/3.1/Vector3)
-
-Get the local position of a point that is in world space.
-
-@returns The local position
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | position | [Vector3](/classes/3.1/Vector3) |  The world position
-optional | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.
-### getLocalPositionFromAbsoluteToRef(position, mesh, result) &rarr; void
-
-Get the local position of a point that is in world space and copy it to the result param.
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | position | [Vector3](/classes/3.1/Vector3) |  The world position
- | mesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; |  The mesh that this bone is attached to.
- | result | [Vector3](/classes/3.1/Vector3) |  The vector3 that the local position should be copied to.
+ | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) |  The mesh that this bone is attached to.

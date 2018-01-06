@@ -25,7 +25,6 @@ class [OutlineRenderer](/classes/3.1/OutlineRenderer)
 ### zOffset : number
 
 
-
 ## Methods
 
 ### render(subMesh, batch, useOverlay) &rarr; void

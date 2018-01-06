@@ -18,7 +18,7 @@ class [HighlightsPostProcess](/classes/3.1/HighlightsPostProcess) extends [PostP
 ---|---|---|---
  | name | string | 
  | options | number or PostProcessOptions | 
- | camera | [Camera](/classes/3.1/Camera) | 
+ | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
 optional | samplingMode | number | 
 optional | engine | [Engine](/classes/3.1/Engine) | 
 optional | reusable | boolean | 
