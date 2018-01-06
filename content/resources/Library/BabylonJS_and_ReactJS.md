@@ -68,7 +68,7 @@ export default class Scene extends React.Component<SceneProps & React.HTMLAttrib
       this.props.onSceneMount({
         scene,
         engine: this.engine,
-        canvas: this.canvas3d
+        canvas: this.canvas
       });
     } else {
       console.error('onSceneMount function not available');

@@ -22,4 +22,4 @@ class [SceneOptimizer](/classes/3.1/SceneOptimizer)
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | options | [SceneOptimizerOptions](/classes/3.1/SceneOptimizerOptions) | 
-optional | onSuccess | () =&gt; void | 
+optional | onSuccess |  | 

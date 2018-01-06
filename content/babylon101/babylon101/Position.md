@@ -19,7 +19,7 @@ In all diagrams and playgrounds X axis is red, Y axis is Green and Z axis is blu
 
 When meshes are created their center is placed at the origin of the **word axes** and their position is always placed relative to the **word axes**.
 
-The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. The centers of rotation and enlargement for a mesh are at the origin of the **local axes**, however by setting a [pivot point](/How_To/Pivots) they can be changed to that point.
+The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. The centers of rotation and enlargement for a mesh are at the origin of the **local axes**, however by using either a TransformNode or a matrix to set a [pivot point](/How_To/Pivots) they can be changed to that point.
 
 ## Vectors
 

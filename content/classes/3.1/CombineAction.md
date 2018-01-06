@@ -28,7 +28,6 @@ optional | condition | [Condition](/classes/3.1/Condition) |
 ### children : [Action](/classes/3.1/Action)[]
 
 
-
 ## Methods
 
 ### execute(evt) &rarr; void

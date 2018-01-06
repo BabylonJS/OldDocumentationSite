@@ -267,5 +267,36 @@ Here is the list of available workloads:
 | layer | Contains Layer |
 | textureTools | Contains TextureTools |
 | cameraBehaviors | Contains all camera behaviors |
+| instrumentation | Contains instrumentation classes |
+| backgroundMaterial | Contains the backgroundMaterial |
+| environmentHelper | Contains environmentHelper |
 
+## Adding files
+In order to add more files to the codebase you will have to edit the config.json file from /tools/gulp folder.
+If you add files to the core, you will need to reference them in the core workload. Do not forget to also reference your shaders and shaderIncludes.
 
+If you plan to add files to a satellite project (like the postProcessLibrary), you will have to add them to the associated entry, like this one for the postProcessLibrary:
+```
+ "postProcessesLibrary": {
+        "libraries": [
+            {
+                "files": [
+                    "../../postProcessLibrary/src/asciiArt/babylon.asciiArtPostProcess.ts"
+                ],
+                "shaderFiles": [
+                    "../../postProcessLibrary/src/asciiArt/asciiart.fragment.fx"
+                ],
+                "output": "babylon.asciiArtPostProcess.js"
+            },
+            {
+                "files": [
+                    "../../postProcessLibrary/src/digitalRain/babylon.digitalRainPostProcess.ts"
+                ],
+                "shaderFiles": [
+                    "../../postProcessLibrary/src/digitalRain/digitalrain.fragment.fx"
+                ],
+                "output": "babylon.digitalRainPostProcess.js"
+            }
+        ]
+}
+```    

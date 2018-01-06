@@ -28,8 +28,12 @@ optional | priority | number |
 ### priority : number
 
 
-
 ### apply : (scene: [Scene](/classes/3.1/Scene)) =&gt; boolean
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | scene | [Scene](/classes/3.1/Scene) | 
 

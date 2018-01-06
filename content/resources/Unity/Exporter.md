@@ -1,117 +1,166 @@
-1... Editor Window Layout
 
-2... Exporter & Output Windows
+**Note:** The scene exporter panel is the primary toolkit interface. It must be opened or docked to enable the toolkit features during project development.
 
-3... All Babylon Menu Items
 
+# Scene Exporter
 
---- Global Exporter Buttons
+![Scene Exporter](/img/exporters/unity/exporter.jpg)
 
-    Select Project Folder   -
+## Global Export Options
 
-    Save Export Settings    -
+* Project Bin Path        - Specifies the exported project binary path.
 
+* Project Build Path      - Specifies the exported project build path.
 
+* Project Scene Path      - Specifies the exported project scene path.
 
+* Project Script Path     - Specifies the exported project script path.
 
+* Project Index Page      - Specifies the exported project index page.
 
---- Global Builder buttons
 
-    Export Scene            -
+## Default Engine Options
 
-    Build And Preview       -
+![Engine Options](/img/exporters/unity/engine.jpg)
 
-    Start Preview Server    -
+* Enable Engine Antialias - Enables or disables the engine anti alias option.
 
-    Launch Preview Window   -
+* Adapt To Device Ratio   - Sets the engine to adapt to device ratio.
 
+* Enable Physics Engine   - Enables or disables the built-in physics engine.
 
+* Default Physics Engine  - Specifies the default physics engine for the project.
 
+* Default Image Encoding  - Enables or disables default image encoding options.
 
+* Default Texture Format  - Specifies the default image encoding format.
 
---- Global Exporter Options
+* Default Texture Quality - Sets the default texture image quality.
 
-    Project Bin Path        - 
+* Camera Distance Factor  - Set the level of detail camera distance factor.
 
-    Project Build Path      -
+* Static Mesh Vertex Limit - Enables or disables the static mesh vertex limit (65000).
 
-    Project Scene Path      - 
 
-    Project Script Path     - 
+## Terrain Builder Options
 
-    Project Index Page      - 
+![Terrain Options](/img/exporters/unity/terrain.jpg)
 
-    Enable Physics Engine   - 
+* Terrain Scale Factor    - Sets the shader texture scale factor for all terrain splatmaps.
 
-    Default Physics Engine  -
+* Terrain Atlas Size      - Sets the terrain splatmap texture atlas maximum size.
 
-    Default Image Encoding  - 
+* Terrain Image Max       - Sets the maximum texture image splat for each tile in atlas. Default 0 for no maximum.
 
-    Default Texture Format  -
+* Terrain Image Scaling   - Sets the mode when scaling tile images to point or bilinear.
 
-    Default Texture Quality - 
+* Terrain Mesh Colliders  - Sets the number of mesh colliders to use for the terrain surface. Set to mesh for no colliders.
 
+* Terrain Lightmap Index  - Sets the lightmap index channel. Must be 0 or 1.
 
---- Collision System Options
+* Terrain Receive Shadows - Enable terrain surface to receive dynamic shadows.
 
-    Enable Collisions       - Enable built-in collision system
 
-    Generate Colliders      - Auto generate collision meshes for each collider component
+## Collision System Options
 
-    Show Debug Colliders    - Show all collider component collision meshes for debugging 
+![Collision Options](/img/exporters/unity/collision.jpg)
 
-    Proxy Worker Threads    - Enable seperate worker threads for built-in collision system
+* Enable Collisions       - Enable built-in collision mesh system.
 
-    Default Collider Detail - Set the collision mesh goemetry detail level for all generated mesh colliders.
+* Generate Colliders      - Auto generate collision meshes for each collider component.
 
+* Collision Visibilty     - Sets the default collision mesh visibilty level for debugging.
 
---- Terrain Builder Options
+* Show Debug Colliders    - Show all collider component collision meshes for debugging.
 
-    Terrain Scale Factor    - Sets the shader texture scale factor for all terrain splatmaps
+* Show Debug Sockets      - Show all socket component collision meshes for debugging.
 
-    Terrain Atlas Size      - Sets the terrain splatmap texture atlas maximum size
+* Socket Collider Size    - Sets the size of the socket component collision mesh for debugging.
 
-    Terrain Image Max       - Sets the maximum texture image splat for each tile in atlas. Default 0 for no maximum
+* Proxy Worker Threads    - Enable seperate worker threads for built-in collision system.
 
-    Terrain Image Scaling   - Sets the mode when scaling tile images to Point or Bilinear 
+* Default Collider Detail - Set the collision mesh goemetry detail level for all generated mesh colliders.
 
-    Terrain Mesh Colliders  - Sets the number of mesh colliders to use for the terrain surface. Set to mesh for no colliders
 
-    Terrain Lightmap Index  - Sets the lightmap index channel. Must be 0 or 1
+## Lightmap Baking Options
 
-    Terrain Receive Shadows - Enable terrain surface to receive dynamic shadows
+![Lightmap Options](/img/exporters/unity/lightmap.jpg)
 
+* Enable Lightmaps        - Enable built-in shadow lightmap baking system.
 
---- Default Exporter Options
+* Bake Iterative Maps     - Enable built-in final lightmap gather and bake option.
 
-    Host Preview Server     - 
+* Coordinates Index       - Sets the default texture coordinate index for lightmaps.
 
-    Default Server Port     -
+* Shadow Map Factor       - Set default the shadow map factor for shadow map light generators.
 
-    Remote Server Path      - 
+* Use Material Instance   - Enables or disables material instances for shared material lightmaps.
 
-    Attach Unity Editor     -
 
-    Export Http Module      -
+## Project Compiler Options
 
-    Pretty Print Exporter   - 
+![Compiler Options](/img/exporters/unity/compilers.jpg)
 
-    Compress Scene Files    -
+* Build Javascript Files  - Enables or disables the javascript build option.
 
-    Show Debug Controls     -
+* Build Typescript Files  - Enables or disables optional runtime script compiler.
 
-    Export Unity Metadata   -
+* Typescript Compiler     - Specifies the default TypeScript compiler location.
 
-    Default Preview Window  -
+* Node Runtime System     - Specifies the default Node runtime system location.
 
-    Build Javascript Files  -
+* Github Update Version   - Specifies the github library version for updates.
 
-    Build Typescript Files  -
 
-    Typescript Compiler     -
+## Toolkit Exporter Options
 
-    Node Runtime System     -
+![Export Options](/img/exporters/unity/export.jpg)
 
-    Stable Babylon Version  -
+* Scene Packing Type      - Sets the default exported scene file packing type to json or binary.
 
-    Github Update Version   - 
+* Host Preview Server     - Toggle internal and external web server hosting options for project.
+
+* Default Server Port     - Specifies the default web server host port for previewing scene.
+
+* Remote Server Path      - Specifies the remote server host address for external server option.
+
+* Attach Unity Editor     - Enables the built-in toolkit play to build and preview features.
+
+* Export Http Module      - Enables the web server http scene content management module.
+
+* Show Debug Controls     - Enables or disables the debugging html user interface controls.
+
+* Export Unity Metadata   - Enables or disables the default scene object metadata information.
+
+* Minify Project Scripts  - Enables or disables the exported script minification option.
+
+* Precompress Contents    - Enables or disables the exported precompressed content option.
+
+* Debug Exporter Output   - Enables or disables pretty print json and compiler source maps.
+
+
+## Scene Builder Options
+
+![Builder Options](/img/exporters/unity/builder.jpg)
+
+* Export Scene            - Exports scene only content with no scripts or previewing.
+
+* Build And Preview       - Exports a full scene build with optional previewing.
+
+* Rebuild Web Server      - Rebuilds the native web server project code.
+
+* Launch Preview Window   - Launches the current preview build in browser.
+
+
+# Output Window
+
+![Output Window](/img/exporters/unity/output.jpg)
+
+The output window traces the toolkit export progress for every build. Any exported camera, light or mesh detail information will appear in this window. The output window can be docked to the editor during game development for easy access.
+
+
+# Update Libraries
+
+![Update Libraries](/img/exporters/unity/update.jpg)
+
+The update libraries option allows you to change your toolkit engine version. If you are on the bleeding edge, you can update to the current preview release version to try new features. You can select the stable release version to always fallback to the currently supported toolkit engine version.

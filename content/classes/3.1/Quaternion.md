@@ -26,17 +26,13 @@ optional | z | number |
 ### x : number
 
 
-
 ### y : number
-
 
 
 ### z : number
 
 
-
 ### w : number
-
 
 
 ## Methods

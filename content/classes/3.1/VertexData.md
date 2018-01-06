@@ -11,132 +11,61 @@ class [VertexData](/classes/3.1/VertexData)
 
 ## Members
 
-### positions : number[]
+### positions : Nullable&lt;FloatArray&gt;
 
 
+### normals : Nullable&lt;FloatArray&gt;
 
-### Float32Array : undefined
 
+### tangents : Nullable&lt;FloatArray&gt;
 
 
-### normals : number[]
+### uvs : Nullable&lt;FloatArray&gt;
 
 
+### uvs2 : Nullable&lt;FloatArray&gt;
 
-### Float32Array : undefined
 
+### uvs3 : Nullable&lt;FloatArray&gt;
 
 
-### tangents : number[]
+### uvs4 : Nullable&lt;FloatArray&gt;
 
 
+### uvs5 : Nullable&lt;FloatArray&gt;
 
-### Float32Array : undefined
 
+### uvs6 : Nullable&lt;FloatArray&gt;
 
 
-### uvs : number[]
+### colors : Nullable&lt;FloatArray&gt;
 
 
+### matricesIndices : Nullable&lt;FloatArray&gt;
 
-### Float32Array : undefined
 
+### matricesWeights : Nullable&lt;FloatArray&gt;
 
 
-### uvs2 : number[]
+### matricesIndicesExtra : Nullable&lt;FloatArray&gt;
 
 
+### matricesWeightsExtra : Nullable&lt;FloatArray&gt;
 
-### Float32Array : undefined
 
-
-
-### uvs3 : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### uvs4 : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### uvs5 : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### uvs6 : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### colors : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### matricesIndices : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### matricesWeights : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### matricesIndicesExtra : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### matricesWeightsExtra : number[]
-
-
-
-### Float32Array : undefined
-
-
-
-### indices : IndicesArray
-
+### indices : Nullable&lt;IndicesArray&gt;
 
 
 ## Methods
 
-### set(data, Float32Array, kind) &rarr; void
+### set(data, kind) &rarr; void
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | data | number[] or Float32Array | 
+ | data | FloatArray | 
  | kind | string | 
 ### applyToMesh(mesh, updatable) &rarr; [VertexData](/classes/3.1/VertexData)
 
@@ -287,7 +216,7 @@ Creates the [VertexData](/classes/3.1/VertexData) of the LineSystem.
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | options | { lines: [Vector3](/classes/3.1/Vector3)[][] } | 
+ | options | { lines: [Vector3](/classes/3.1/Vector3)[][],  colors: Nullable&lt;[Color4](/classes/3.1/Color4)[][]&gt; } | 
 
 ### static CreateDashedLines(options) &rarr; [VertexData](/classes/3.1/VertexData)
 
@@ -399,6 +328,14 @@ ratio : optional partitioning ratio / bounding box, required for facetPartitioni
 bbSize : optional bounding box size data, required for facetPartitioning computation
 
 bInfo : optional bounding info, required for facetPartitioning computation
+
+useRightHandedSystem: optional boolean to for right handed system computation
+
+depthSort : optional boolean to enable the facet depth sort computation
+
+distanceTo : optional [Vector3](/classes/3.1/Vector3) to compute the facet depth from this location
+
+depthSortedFacets : optional array of depthSortedFacets to store the facet distances from the reference location
 
 #### Parameters
  | Name | Type | Description

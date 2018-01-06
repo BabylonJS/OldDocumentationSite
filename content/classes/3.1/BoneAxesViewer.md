@@ -24,25 +24,19 @@ class [BoneAxesViewer](/classes/3.1/BoneAxesViewer) extends Debug.[AxesViewer](/
 ### mesh : Nullable&lt;[Mesh](/classes/3.1/Mesh)&gt;
 
 
-
 ### bone : Nullable&lt;[Bone](/classes/3.1/Bone)&gt;
-
 
 
 ### pos : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### xaxis : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### yaxis : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### zaxis : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods

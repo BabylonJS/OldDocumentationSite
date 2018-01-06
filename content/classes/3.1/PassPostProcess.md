@@ -22,7 +22,7 @@ class [PassPostProcess](/classes/3.1/PassPostProcess) extends [PostProcess](/cla
 ---|---|---|---
  | name | string | 
  | options | number or PostProcessOptions | 
- | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
+optional | camera | Nullable&lt;[Camera](/classes/3.1/Camera)&gt; | 
 optional | samplingMode | number | 
 optional | engine | [Engine](/classes/3.1/Engine) | 
 optional | reusable | boolean | 

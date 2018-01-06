@@ -6,7 +6,7 @@ PG_TITLE: Rotation Around an Axis About a Center of Rotation
 
 Rotation needs two things specifying, they are an axis and a center of rotation with the axis passing through the center of rotation. An axis is defined by a direction vector and the center of rotation a position vector. In Babylon.js when a mesh is created the center of rotation defaults to the the local origin of the mesh which is the mesh's position. Using [rotation](/babylon101/Position#rotation) the axis is specified through the Euler angles alpha, beta, gamma, and using [rotationQuaternion](/features/Position,_Rotation,_Scaling#rotationquaternion) and [rotate](/features/Position,_Rotation,_Scaling#rotate) it is specified explicitly. 
 
-There are two ways to change a center of rotation different to the local origin, these are using a parent and [setting a pivot](/How_To/Pivots).
+There are three ways to change a center of rotation different to the local origin, these are using a [TransformNode](/How_To/TransformNode), a parent and [setting a pivot](/How_To/Pivots).
 
 Together an axis and a center of rotation define a straight line in space and in the following animated playgrounds this line is shown in white. The asymmetric pilot mesh is used to demonstrate the rotation.
 
@@ -20,6 +20,27 @@ In each of the following examples there is
 * a marker mesh for the center of rotation, a small sphere positioned at CoR_At;
 * an axis to rotate around
 * the pilot mesh at a starting position relative to the center of rotation, pilotStart.
+
+## How to Use TransformNode as a Center of Rotation
+
+A TransformNode is an object that is not rendered but can be used as a center of rotation (in fact the centre of any transformation). This can decrease memory usage and increase rendering speed.
+
+The TransformNode is used as a pivot point by parenting it to the pilot and rotating it.
+
+```javascript
+var pivot = new BABYLON.TransformNode("root");
+pivot.position = CoR_At;
+
+pilot.parent = pivot;
+pilot.position = pilotStart;
+
+pivot.rotate(axis, angle, BABYLON.Space.WORLD);
+```
+In these playgrounds a sphere is created only to show the position of the TransformNode.
+
+[Playground Example - Rotating TransformNode](https://www.babylonjs-playground.com/#1JLGFP#36)
+[Playground Example - Rotating Mesh Moving TransformNode along Axis](https://www.babylonjs-playground.com/#C12LH3#3)
+[Playground Example - Rotating Mesh Moving TransformNode](https://www.babylonjs-playground.com/#C12LH3#4)
 
 ## How To Use a Parent as Center of Rotation
 

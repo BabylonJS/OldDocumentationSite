@@ -27,21 +27,16 @@ class [LensFlare](/classes/3.1/LensFlare)
 ### size : number
 
 
-
 ### position : number
-
 
 
 ### color : [Color3](/classes/3.1/Color3)
 
 
-
 ### texture : Nullable&lt;[Texture](/classes/3.1/Texture)&gt;
 
 
-
 ### alphaMode : number
-
 
 
 ## Methods

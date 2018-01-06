@@ -15,7 +15,7 @@ class [MirrorTexture](/classes/3.1/MirrorTexture) extends [RenderTargetTexture](
 
 ## Constructor
 
-## new [MirrorTexture](/classes/3.1/MirrorTexture)(name, size, scene, generateMipMaps, type, samplingMode, generateDepthBuffer)
+## new [MirrorTexture](/classes/3.1/MirrorTexture)(name, size)
 
 
 
@@ -23,38 +23,24 @@ class [MirrorTexture](/classes/3.1/MirrorTexture) extends [RenderTargetTexture](
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | size | any | 
- | scene | [Scene](/classes/3.1/Scene) | 
-optional | generateMipMaps | boolean | 
-optional | type | number | 
-optional | samplingMode | number | 
+ | size | number | 
 ## Members
 
 ### mirrorPlane : [Plane](/classes/3.1/Plane)
 
 
-
 ### blurRatio : number
 
+
+### adaptiveBlurKernel : number
 
 
 ### blurKernel : number
 
 
-
 ### blurKernelX : number
 
 
-
 ### blurKernelY : number
-
-
-
-## Methods
-
-### clone() &rarr; [MirrorTexture](/classes/3.1/MirrorTexture)
-
-
-### serialize() &rarr; any
 
 

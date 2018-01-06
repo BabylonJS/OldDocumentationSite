@@ -31,45 +31,43 @@ class [FreeCamera](/classes/3.1/FreeCamera) extends [TargetCamera](/classes/3.1/
 ### ellipsoid : [Vector3](/classes/3.1/Vector3)
 
 
+### ellipsoidOffset : [Vector3](/classes/3.1/Vector3)
+
 
 ### checkCollisions : boolean
-
 
 
 ### applyGravity : boolean
 
 
-
 ### inputs : [FreeCameraInputsManager](/classes/3.1/FreeCameraInputsManager)
-
 
 
 ### angularSensibility : number
 
 
-
 ### keysUp : number[]
-
 
 
 ### keysDown : number[]
 
 
-
 ### keysLeft : number[]
 
 
-
 ### keysRight : number[]
-
 
 
 ### onCollide : (collidedMesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void
 
 
 
-### collisionMask : number
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | collidedMesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
 
+### collisionMask : number
 
 
 ## Methods

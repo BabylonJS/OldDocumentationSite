@@ -19,3 +19,8 @@ class [ParticlesOptimization](/classes/3.1/ParticlesOptimization) extends [Scene
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | scene | [Scene](/classes/3.1/Scene) | 
+

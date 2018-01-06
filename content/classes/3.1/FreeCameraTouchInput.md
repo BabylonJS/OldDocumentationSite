@@ -12,13 +12,10 @@ class [FreeCameraTouchInput](/classes/3.1/FreeCameraTouchInput)
 ### camera : [FreeCamera](/classes/3.1/FreeCamera)
 
 
-
 ### touchAngularSensibility : number
 
 
-
 ### touchMoveSensibility : number
-
 
 
 ## Methods
@@ -39,7 +36,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | Nullable&lt;HTMLElement&gt; | 
 
 ### checkInputs() &rarr; void
 

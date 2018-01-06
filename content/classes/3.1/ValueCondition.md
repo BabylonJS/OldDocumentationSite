@@ -29,29 +29,22 @@ class [ValueCondition](/classes/3.1/ValueCondition) extends [Condition](/classes
 ### propertyPath : string
 
 
-
 ### value : any
-
 
 
 ### operator : number
 
 
-
 ### static IsEqual : number
-
 
 
 ### static IsDifferent : number
 
 
-
 ### static IsGreater : number
 
 
-
 ### static IsLesser : number
-
 
 
 ## Methods

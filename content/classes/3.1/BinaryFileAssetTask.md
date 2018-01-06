@@ -25,15 +25,31 @@ class [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask) extends [AbstractA
 ### name : string
 
 
-
 ### url : string
-
 
 
 ### data : ArrayBuffer
 
 
+### onSuccess : (task: [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask)) =&gt; void
 
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask) | 
+
+### onError : (task: [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask), message: string, exception: any) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask) | 
+optional | message | string | 
+optional | exception | any | 
 ## Methods
 
 ### runTask(scene, onSuccess, onError) &rarr; void
@@ -44,5 +60,7 @@ class [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask) extends [AbstractA
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onSuccess | () =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+ | onError | optional | message | string | 
+optional | exception | any | 
+

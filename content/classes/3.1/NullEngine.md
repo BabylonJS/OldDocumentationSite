@@ -22,14 +22,21 @@ optional | options | [NullEngineOptions](/classes/3.1/NullEngineOptions) |
 
 ## Methods
 
-### createVertexBuffer(vertices, Float32Array) &rarr; WebGLBuffer
+### isDeterministicLockStep() &rarr; boolean
+
+
+### getLockstepMaxSteps() &rarr; number
+
+
+### createVertexBuffer(vertices) &rarr; WebGLBuffer
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | vertices | number[] or Float32Array | 
+ | vertices | FloatArray | 
+
 ### createIndexBuffer(indices) &rarr; WebGLBuffer
 
 
@@ -396,7 +403,7 @@ optional | bruteForce | boolean |
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | samplingMode | number | 
 optional | onLoad | Nullable&lt;() =&gt; void&gt; | 
-optional | onError | Nullable&lt;() =&gt; void&gt; | 
+optional | onError | Nullable&lt;(message: string, exception: any) =&gt; void&gt; | 
 optional | buffer | Nullable&lt;ArrayBuffer&gt; or HTMLImageElement | 
 optional | fallBack | [InternalTexture](/classes/3.1/InternalTexture) | 
 ### createRenderTargetTexture(size, options, [RenderTargetCreationOptions](/classes/3.1/RenderTargetCreationOptions)) &rarr; [InternalTexture](/classes/3.1/InternalTexture)
@@ -437,15 +444,16 @@ optional | requiredHeight | number |
 ---|---|---|---
  | texture | [InternalTexture](/classes/3.1/InternalTexture) | 
 optional | disableGenerateMipMaps | boolean | 
-optional | onBeforeUnbind | () =&gt; void | 
-### createDynamicVertexBuffer(vertices, Float32Array) &rarr; WebGLBuffer
+optional | onBeforeUnbind |  | 
+### createDynamicVertexBuffer(vertices) &rarr; WebGLBuffer
 
 
 
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | vertices | number[] or Float32Array | 
+ | vertices | FloatArray | 
+
 ### updateDynamicIndexBuffer(indexBuffer, indices, offset) &rarr; void
 
 
@@ -456,7 +464,7 @@ optional | onBeforeUnbind | () =&gt; void |
  | indexBuffer | WebGLBuffer | 
  | indices | IndicesArray | 
 optional | offset | number | 
-### updateDynamicVertexBuffer(vertexBuffer, vertices, Float32Array, offset, count) &rarr; void
+### updateDynamicVertexBuffer(vertexBuffer, vertices, offset, count) &rarr; void
 
 
 
@@ -464,5 +472,5 @@ optional | offset | number |
  | Name | Type | Description
 ---|---|---|---
  | vertexBuffer | WebGLBuffer | 
- | vertices | number[] or Float32Array | 
+ | vertices | FloatArray | 
 optional | offset | number | 

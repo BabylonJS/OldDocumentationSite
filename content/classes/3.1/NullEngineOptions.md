@@ -12,12 +12,15 @@ class [NullEngineOptions](/classes/3.1/NullEngineOptions)
 ### renderWidth : number
 
 
-
 ### renderHeight : number
-
 
 
 ### textureSize : number
 
+
+### deterministicLockstep : boolean
+
+
+### lockstepMaxSteps : number
 
 

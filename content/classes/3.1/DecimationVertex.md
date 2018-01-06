@@ -25,29 +25,22 @@ class [DecimationVertex](/classes/3.1/DecimationVertex)
 ### position : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### id : number
-
 
 
 ### q : [QuadraticMatrix](/classes/3.1/QuadraticMatrix)
 
 
-
 ### isBorder : boolean
-
 
 
 ### triangleStart : number
 
 
-
 ### triangleCount : number
 
 
-
 ### originalOffsets : Array&lt;number&gt;
-
 
 
 ## Methods

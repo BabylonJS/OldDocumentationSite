@@ -1,7 +1,9 @@
-##new [GUITextarea](#)(id, options, guimanager, append)
+# GUITextarea
+
+## new GUITextarea(id, options, guimanager, append)
 Creates a new GUITextarea
 
-####Parameters
+#### Parameters
 Name | Type | Description
 ---|---|---
 **id** | string | The id and name element
@@ -10,7 +12,7 @@ Name | Type | Description
 **append** | bool | is added to the &lt;body&gt;. =&gt; True by default (optional)
 ---
 
-##Options
+## Options
 * **w**: width of textarea (in pixel)
 * **h**: height of textarea (in pixel)
 * **x**: position left of textarea (in pixel)
@@ -22,19 +24,19 @@ Name | Type | Description
 * **zIndex**: depth of the element (int) =&gt; 1 by default
 * **tabindex**: Tab order of the field.
 
-##Methods
+## Methods
 
-###getValue() → void
+### getValue() → void
 Get the value element
 
-###setValue() → void
+### setValue() → void
 Set the value element
 
-###setVisible(bool, fade) → void
+### setVisible(bool, fade) → void
 Set this GUI element to visible or invisible
 
-###isVisible() → void
+### isVisible() → void
 Returns element if is visible or no
 
-###dispose() → void
+### dispose() → void
 Dispose the GUITextarea, and delete element.

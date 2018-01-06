@@ -28,13 +28,10 @@ optional | b | number |
 ### r : number
 
 
-
 ### g : number
 
 
-
 ### b : number
-
 
 
 ## Methods
@@ -48,7 +45,7 @@ Returns the string "[Color3](/classes/3.1/Color3)".
 ### getHashCode() &rarr; number
 
 Returns the [Color3](/classes/3.1/Color3) hash code.
-### toArray(array, Float32Array, index) &rarr; [Color3](/classes/3.1/Color3)
+### toArray(array, index) &rarr; [Color3](/classes/3.1/Color3)
 
 Stores in the passed array from the passed starting index the red, green, blue values as successive elements.
 
@@ -57,7 +54,7 @@ Returns the [Color3](/classes/3.1/Color3).
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | array | number[] or Float32Array | 
+ | array | FloatArray | 
 optional | index | number | 
 ### toColor4(alpha) &rarr; [Color4](/classes/3.1/Color4)
 

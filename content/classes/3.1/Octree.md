@@ -18,31 +18,40 @@ class [Octree](/classes/3.1/Octree)
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | creationFunc | (entry: T, block: [OctreeBlock](/classes/3.1/OctreeBlock)&lt;T&gt;) =&gt; void | 
+ | creationFunc |  | entry | T | 
+ | block | [OctreeBlock](/classes/3.1/OctreeBlock)&lt;T&gt; | 
+
+ | 
 optional | maxBlockCapacity | number | 
-optional | maxDepth | number | 
 ## Members
 
 ### maxDepth : number
 
 
-
 ### blocks : Array&lt;[OctreeBlock](/classes/3.1/OctreeBlock)&lt;T&gt;&gt;
 
 
-
 ### dynamicContent : T[]
-
 
 
 ### static CreationFuncForMeshes : (entry: [AbstractMesh](/classes/3.1/AbstractMesh), block: [OctreeBlock](/classes/3.1/OctreeBlock)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | entry | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+ | block | [OctreeBlock](/classes/3.1/OctreeBlock)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; | 
 ### static CreationFuncForSubMeshes : (entry: [SubMesh](/classes/3.1/SubMesh), block: [OctreeBlock](/classes/3.1/OctreeBlock)&lt;[SubMesh](/classes/3.1/SubMesh)&gt;) =&gt; void
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | entry | [SubMesh](/classes/3.1/SubMesh) | 
+ | block | [OctreeBlock](/classes/3.1/OctreeBlock)&lt;[SubMesh](/classes/3.1/SubMesh)&gt; | 
 ## Methods
 
 ### update(worldMin, worldMax, entries) &rarr; void

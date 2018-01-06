@@ -45,13 +45,10 @@ Documentation : http://doc.babylonjs.com/tutorials/lights
 ### angle : number
 
 
-
 ### shadowAngleScale : number
 
 Allows scaling the angle of the light for shadow generation only.
-
 ### exponent : number
-
 
 
 ## Methods

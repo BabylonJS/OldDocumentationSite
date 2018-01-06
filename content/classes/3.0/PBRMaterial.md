@@ -224,7 +224,7 @@ A light for instance can be thought as emissive.
 
 ### useAlphaFromAlbedoTexture : boolean
 
-Secifies that the alpha is coming form the albedo channel alpha channel.
+Specifies that the alpha is coming form the albedo channel alpha channel.
 
 ### useSpecularOverAlpha : boolean
 

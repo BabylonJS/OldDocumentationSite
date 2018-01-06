@@ -25,9 +25,7 @@ class [PathCursor](/classes/3.1/PathCursor)
 ### value : number
 
 
-
 ### animations : [Animation](/classes/3.1/Animation)[]
-
 
 
 ## Methods
@@ -69,5 +67,6 @@ optional | step | number |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | f | (cursor: [PathCursor](/classes/3.1/PathCursor)) =&gt; void | 
+ | f |  | cursor | [PathCursor](/classes/3.1/PathCursor) | 
 
+ | 

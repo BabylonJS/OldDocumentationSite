@@ -9,7 +9,7 @@ class [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask) extends [A
 
 ## Constructor
 
-## new [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask)(name, url, size, noMipmap, generateHarmonics, useInGammaSpace, usePMREMGenerator)
+## new [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask)(name, url, size, undefined, noMipmap, generateHarmonics, useInGammaSpace, usePMREMGenerator)
 
 
 
@@ -18,7 +18,7 @@ class [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask) extends [A
 ---|---|---|---
  | name | string | 
  | url | string | 
-optional | size | number | 
+optional | size | number or undefined | 
 optional | noMipmap | boolean | 
 optional | generateHarmonics | boolean | 
 optional | useInGammaSpace | boolean | 
@@ -27,35 +27,49 @@ optional | useInGammaSpace | boolean |
 ### name : string
 
 
-
 ### url : string
-
 
 
 ### size : number
 
 
+### undefined : undefined
+
 
 ### noMipmap : boolean
-
 
 
 ### generateHarmonics : boolean
 
 
-
 ### useInGammaSpace : boolean
-
 
 
 ### usePMREMGenerator : boolean
 
 
-
 ### texture : [HDRCubeTexture](/classes/3.1/HDRCubeTexture)
 
 
+### onSuccess : (task: [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask)) =&gt; void
 
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask) | 
+
+### onError : (task: [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask), message: string, exception: any) =&gt; void
+
+
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask) | 
+optional | message | string | 
+optional | exception | any | 
 ## Methods
 
 ### run(scene, onSuccess, onError) &rarr; void
@@ -66,5 +80,7 @@ optional | useInGammaSpace | boolean |
  | Name | Type | Description
 ---|---|---|---
  | scene | [Scene](/classes/3.1/Scene) | 
- | onSuccess | () =&gt; void | 
- | onError | (message: string, exception: any) =&gt; void | 
+ | onSuccess |  | 
+ | onError | optional | message | string | 
+optional | exception | any | 
+

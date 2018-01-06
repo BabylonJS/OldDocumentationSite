@@ -24,37 +24,67 @@ class [AssetsManager](/classes/3.1/AssetsManager)
 
 ## Members
 
-### onFinish : (tasks: IAssetTask[]) =&gt; void
+### tasks : [AbstractAssetTask](/classes/3.1/AbstractAssetTask)[]
+
+
+### waitingTasksCount : number
+
+
+### onFinish : (tasks: [AbstractAssetTask](/classes/3.1/AbstractAssetTask)[]) =&gt; void
 
 
 
-### onTaskSuccess : (task: IAssetTask) =&gt; void
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | tasks | [AbstractAssetTask](/classes/3.1/AbstractAssetTask)[] | 
+
+### onTaskSuccess : (task: [AbstractAssetTask](/classes/3.1/AbstractAssetTask)) =&gt; void
 
 
 
-### onTaskError : (task: IAssetTask) =&gt; void
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [AbstractAssetTask](/classes/3.1/AbstractAssetTask) | 
+
+### onTaskError : (task: [AbstractAssetTask](/classes/3.1/AbstractAssetTask)) =&gt; void
 
 
 
-### onTaskSuccessObservable : [Observable](/classes/3.1/Observable)&lt;IAssetTask&gt;
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | task | [AbstractAssetTask](/classes/3.1/AbstractAssetTask) | 
+
+### onProgress : (remainingCount: number, totalCount: number, task: [AbstractAssetTask](/classes/3.1/AbstractAssetTask)) =&gt; void
 
 
 
-### onTaskErrorObservable : [Observable](/classes/3.1/Observable)&lt;IAssetTask&gt;
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | remainingCount | number | 
+ | totalCount | number | 
+ | task | [AbstractAssetTask](/classes/3.1/AbstractAssetTask) | 
+### onTaskSuccessObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractAssetTask](/classes/3.1/AbstractAssetTask)&gt;
 
 
+### onTaskErrorObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractAssetTask](/classes/3.1/AbstractAssetTask)&gt;
 
-### onTasksDoneObservable : [Observable](/classes/3.1/Observable)&lt;IAssetTask[]&gt;
 
+### onTasksDoneObservable : [Observable](/classes/3.1/Observable)&lt;[AbstractAssetTask](/classes/3.1/AbstractAssetTask)[]&gt;
+
+
+### onProgressObservable : [Observable](/classes/3.1/Observable)&lt;IAssetsProgressEvent&gt;
 
 
 ### useDefaultLoadingScreen : boolean
 
 
-
 ## Methods
 
-### addMeshTask(taskName, meshesNames, rootUrl, sceneFilename) &rarr; IAssetTask
+### addMeshTask(taskName, meshesNames, rootUrl, sceneFilename) &rarr; [MeshAssetTask](/classes/3.1/MeshAssetTask)
 
 
 
@@ -64,7 +94,7 @@ class [AssetsManager](/classes/3.1/AssetsManager)
  | taskName | string | 
  | meshesNames | any | 
  | rootUrl | string | 
-### addTextFileTask(taskName, url) &rarr; IAssetTask
+### addTextFileTask(taskName, url) &rarr; [TextFileAssetTask](/classes/3.1/TextFileAssetTask)
 
 
 
@@ -73,7 +103,7 @@ class [AssetsManager](/classes/3.1/AssetsManager)
 ---|---|---|---
  | taskName | string | 
  | url | string | 
-### addBinaryFileTask(taskName, url) &rarr; IAssetTask
+### addBinaryFileTask(taskName, url) &rarr; [BinaryFileAssetTask](/classes/3.1/BinaryFileAssetTask)
 
 
 
@@ -82,7 +112,7 @@ class [AssetsManager](/classes/3.1/AssetsManager)
 ---|---|---|---
  | taskName | string | 
  | url | string | 
-### addImageTask(taskName, url) &rarr; IAssetTask
+### addImageTask(taskName, url) &rarr; [ImageAssetTask](/classes/3.1/ImageAssetTask)
 
 
 
@@ -91,7 +121,7 @@ class [AssetsManager](/classes/3.1/AssetsManager)
 ---|---|---|---
  | taskName | string | 
  | url | string | 
-### addTextureTask(taskName, url, noMipmap, invertY, samplingMode) &rarr; ITextureAssetTask
+### addTextureTask(taskName, url, noMipmap, invertY, samplingMode) &rarr; [TextureAssetTask](/classes/3.1/TextureAssetTask)
 
 
 
@@ -102,7 +132,7 @@ class [AssetsManager](/classes/3.1/AssetsManager)
  | url | string | 
 optional | noMipmap | boolean | 
 optional | invertY | boolean | 
-### addCubeTextureTask(name, url, extensions, noMipmap, files) &rarr; IAssetTask
+### addCubeTextureTask(name, url, extensions, noMipmap, files) &rarr; [CubeTextureAssetTask](/classes/3.1/CubeTextureAssetTask)
 
 
 
@@ -113,7 +143,7 @@ optional | invertY | boolean |
  | url | string | 
 optional | extensions | string[] | 
 optional | noMipmap | boolean | 
-### addHDRCubeTextureTask(name, url, size, noMipmap, generateHarmonics, useInGammaSpace, usePMREMGenerator) &rarr; IAssetTask
+### addHDRCubeTextureTask(name, url, size, noMipmap, generateHarmonics, useInGammaSpace, usePMREMGenerator) &rarr; [HDRCubeTextureAssetTask](/classes/3.1/HDRCubeTextureAssetTask)
 
 
 

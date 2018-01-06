@@ -14,7 +14,7 @@ class [LinesMesh](/classes/3.1/LinesMesh) extends [Mesh](/classes/3.1/Mesh)
 
 ## Constructor
 
-## new [LinesMesh](/classes/3.1/LinesMesh)(name, scene, parent, source, doNotCloneChildren, useVertexColor)
+## new [LinesMesh](/classes/3.1/LinesMesh)(name, scene, parent, source, doNotCloneChildren, useVertexColor, undefined, useVertexAlpha, undefined)
 
 
 
@@ -22,22 +22,29 @@ class [LinesMesh](/classes/3.1/LinesMesh) extends [Mesh](/classes/3.1/Mesh)
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | scene | [Scene](/classes/3.1/Scene) | 
-optional | parent | [Node](/classes/3.1/Node) | 
+optional | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
+optional | parent | Nullable&lt;[Node](/classes/3.1/Node)&gt; | 
 optional | source | [LinesMesh](/classes/3.1/LinesMesh) | 
 optional | doNotCloneChildren | boolean | 
+optional | useVertexColor | boolean or undefined | 
 ## Members
 
 ### useVertexColor : boolean
 
 
+### undefined : undefined
+
+
+### useVertexAlpha : boolean
+
+
+### undefined : undefined
+
 
 ### color : [Color3](/classes/3.1/Color3)
 
 
-
 ### alpha : number
-
 
 
 ### intersectionThreshold : number
@@ -53,15 +60,10 @@ Default value is 0.1
 The intersection Threshold is the margin applied when intersection a segment of the [LinesMesh](/classes/3.1/LinesMesh) with a [Ray](/classes/3.1/Ray).
 
 This margin is expressed in world space coordinates, so its value may vary.
-
-@param value the new threshold to apply
-
 ### material : [Material](/classes/3.1/Material)
 
 
-
 ### checkCollisions : boolean
-
 
 
 ## Methods

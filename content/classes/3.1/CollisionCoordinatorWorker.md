@@ -22,17 +22,37 @@ class [CollisionCoordinatorWorker](/classes/3.1/CollisionCoordinatorWorker)
 
 
 
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | mesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
+
 ### static SerializeGeometry : (geometry: [Geometry](/classes/3.1/Geometry)) =&gt; SerializedGeometry
 
 
 
-### onMeshUpdated : (mesh: [AbstractMesh](/classes/3.1/AbstractMesh)) =&gt; void
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | geometry | [Geometry](/classes/3.1/Geometry) | 
+
+### onMeshUpdated : (transformNode: [TransformNode](/classes/3.1/TransformNode)) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | transformNode | [TransformNode](/classes/3.1/TransformNode) | 
 
 ### onGeometryUpdated : (geometry: [Geometry](/classes/3.1/Geometry)) =&gt; void
 
 
+
+#### Parameters
+ | Name | Type | Description
+---|---|---|---
+ | geometry | [Geometry](/classes/3.1/Geometry) | 
 
 ## Methods
 
@@ -48,7 +68,11 @@ class [CollisionCoordinatorWorker](/classes/3.1/CollisionCoordinatorWorker)
  | collider | [Collider](/classes/3.1/Collider) | 
  | maximumRetry | number | 
  | excludedMesh | [AbstractMesh](/classes/3.1/AbstractMesh) | 
- | onNewPosition | (collisionIndex: number, newPosition: [Vector3](/classes/3.1/Vector3), collidedMesh: Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;) =&gt; void | 
+ | onNewPosition |  | collisionIndex | number | 
+ | newPosition | [Vector3](/classes/3.1/Vector3) | 
+ | collidedMesh | Nullable&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt; | 
+
+ | 
 ### init(scene) &rarr; void
 
 

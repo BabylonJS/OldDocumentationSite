@@ -12,12 +12,9 @@ class [DepthSortedParticle](/classes/3.1/DepthSortedParticle)
 ### ind : number
 
 
-
 ### indicesLength : number
 
 
-
 ### sqDistance : number
-
 
 

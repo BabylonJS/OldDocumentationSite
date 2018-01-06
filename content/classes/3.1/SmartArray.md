@@ -25,9 +25,7 @@ class [SmartArray](/classes/3.1/SmartArray)
 ### data : Array&lt;T&gt;
 
 
-
 ### length : number
-
 
 
 ## Methods
@@ -48,17 +46,9 @@ class [SmartArray](/classes/3.1/SmartArray)
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | func | (content: T) =&gt; void | 
+ | func |  | content | T | 
 
-### pushNoDuplicate(value) &rarr; boolean
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | value | T | 
-
+ | 
 ### sort(compareFn) &rarr; void
 
 
@@ -66,7 +56,8 @@ class [SmartArray](/classes/3.1/SmartArray)
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | compareFn | (a: T, b: T) =&gt; number | 
+ | compareFn |  | a | T | 
+ | b | T | 
 
 ### reset() &rarr; void
 
@@ -75,15 +66,6 @@ class [SmartArray](/classes/3.1/SmartArray)
 
 
 ### concat(array) &rarr; void
-
-
-
-#### Parameters
- | Name | Type | Description
----|---|---|---
- | array | any | 
-
-### concatWithNoDuplicate(array) &rarr; void
 
 
 

@@ -14,7 +14,7 @@ class [RawTexture](/classes/3.1/RawTexture) extends [Texture](/classes/3.1/Textu
 
 ## Constructor
 
-## new [RawTexture](/classes/3.1/RawTexture)(data, width, height, format, scene, generateMipMaps, invertY, samplingMode)
+## new [RawTexture](/classes/3.1/RawTexture)(data, width, height, format, scene, generateMipMaps, invertY, samplingMode, type)
 
 
 
@@ -28,10 +28,10 @@ class [RawTexture](/classes/3.1/RawTexture) extends [Texture](/classes/3.1/Textu
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | generateMipMaps | boolean | 
 optional | invertY | boolean | 
+optional | samplingMode | number | 
 ## Members
 
 ### format : number
-
 
 
 ## Methods
@@ -84,7 +84,7 @@ optional | invertY | boolean |
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | generateMipMaps | boolean | 
 optional | invertY | boolean | 
-### static CreateRGBTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/3.1/RawTexture)
+### static CreateRGBTexture(data, width, height, scene, generateMipMaps, invertY, samplingMode, type) &rarr; [RawTexture](/classes/3.1/RawTexture)
 
 
 
@@ -97,7 +97,8 @@ optional | invertY | boolean |
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | generateMipMaps | boolean | 
 optional | invertY | boolean | 
-### static CreateRGBATexture(data, width, height, scene, generateMipMaps, invertY, samplingMode) &rarr; [RawTexture](/classes/3.1/RawTexture)
+optional | samplingMode | number | 
+### static CreateRGBATexture(data, width, height, scene, generateMipMaps, invertY, samplingMode, type) &rarr; [RawTexture](/classes/3.1/RawTexture)
 
 
 
@@ -110,3 +111,4 @@ optional | invertY | boolean |
  | scene | [Scene](/classes/3.1/Scene) | 
 optional | generateMipMaps | boolean | 
 optional | invertY | boolean | 
+optional | samplingMode | number | 

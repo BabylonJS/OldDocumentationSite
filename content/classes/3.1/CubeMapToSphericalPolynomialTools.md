@@ -11,7 +11,7 @@ from a cube map.
 
 ## Methods
 
-### static ConvertCubeMapTextureToSphericalPolynomial(texture) &rarr; [SphericalPolynomial](/classes/3.1/SphericalPolynomial)
+### static ConvertCubeMapTextureToSphericalPolynomial(texture) &rarr; Nullable&lt;[SphericalPolynomial](/classes/3.1/SphericalPolynomial)&gt;
 
 Converts a texture to the according Spherical Polynomial data.
 

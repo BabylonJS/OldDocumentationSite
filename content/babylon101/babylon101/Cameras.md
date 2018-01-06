@@ -6,18 +6,20 @@ PG_TITLE: Cameras
 
 Of the many cameras available in Babylon.js the two most use are probably - the Universal Camera used for First Person Movement and the Arc Rotate Camera which is an orbital camera. Though with the advent of WebVR this may change.
 
-For input control be the user all cameras need to be attached to the canvas once constructed using
+For input control by the user all cameras need to be attached to the canvas once constructed using
 
 ```javascript
 camera.attachControl(canvas, true);
 ```
 The second parameter is optional and defaults to **false**. When **false** then default actions on a canvas event are prevented. Set to true to allow canvas default actions. 
 
-**Reminder** - for touch control either [PEP](https://github.com/jquery/PEP) or [hand.js](https://github.com/Deltakosh/handjs) is needed.
+**Notes** 
+1. A [Gamepad](/How_To/how_to_use_gamepads) may be used a a controller.
+2. For touch control either [PEP](https://github.com/jquery/PEP) or [hand.js](https://github.com/Deltakosh/handjs) is needed.
 
 ## Universal Camera
 
-This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or gamepad depending on the input device used, with no need for the contoller to be specified. This extends and replaces the [Free Camera](/classes/3.0/freecamera), the [Touch Camera](/classes/3.0/touchcamera) and the [Gamepad Camera](classes/3.0/gamepadcamera) which are all still available.
+This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or [gamepad](/How_To/how_to_use_gamepads) depending on the input device used, with no need for the contoller to be specified. This extends and replaces the [Free Camera](/classes/3.0/freecamera), the [Touch Camera](/classes/3.0/touchcamera) and the [Gamepad Camera](classes/3.0/gamepadcamera) which are all still available.
 
 The Universal Camera is now the default camera used by Babylon.js if nothing is specified, and it’s your best choice if you’d like to have a FPS-like control in your scene.  
 All demos on babylonjs.com are based upon that feature. Plug a Xbox controller into your PC and using it you’ll still be able to navigate most of the demos.
@@ -30,7 +32,7 @@ The default actions are
 
 3. touch - swipe left and right to move camera left and right, swipe up and down to move it forward and backwards;
 
-4. gamepad - corresponds to device.
+4. [gamepad](/How_To/how_to_use_gamepads) - corresponds to device.
 
 **Note** - Using keys in the Playground requires you to click inside the rendering area to give it the focus.
 
@@ -71,15 +73,6 @@ Whether using the keyboard, mouse or touch swipes left right directions change _
 ### Constructing an Arc Rotate Camera
 
 ```javascript
-
-// Parameters : name, position, scene
-    var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
-
-// Targets the camera to a particular position. In this case the scene origin
-    camera.setTarget(BABYLON.Vector3.Zero());
-
-// Attach the camera to the canvas
-    camera.attachControl(canvas, true);
 
 // Parameters: alpha, beta, radius, target position, scene
 	var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);

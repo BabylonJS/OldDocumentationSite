@@ -27,13 +27,10 @@ optional | iterations | number |
 ### world : any
 
 
-
 ### name : string
 
 
-
 ### BJSOIMO : any
-
 
 
 ## Methods
@@ -164,7 +161,7 @@ optional | iterations | number |
 ---|---|---|---
  | impostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
  | velocity | [Vector3](/classes/3.1/Vector3) | 
-### getLinearVelocity(impostor) &rarr; [Vector3](/classes/3.1/Vector3)
+### getLinearVelocity(impostor) &rarr; Nullable&lt;[Vector3](/classes/3.1/Vector3)&gt;
 
 
 
@@ -173,7 +170,7 @@ optional | iterations | number |
 ---|---|---|---
  | impostor | [PhysicsImpostor](/classes/3.1/PhysicsImpostor) | 
 
-### getAngularVelocity(impostor) &rarr; [Vector3](/classes/3.1/Vector3)
+### getAngularVelocity(impostor) &rarr; Nullable&lt;[Vector3](/classes/3.1/Vector3)&gt;
 
 
 

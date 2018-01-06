@@ -120,6 +120,79 @@ scene.environmentTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR
 scene.createDefaultSkybox(envTexture);
 ```
 
+#### Skybox and ground
+To simplify even more the creation of your environment, you can use the environmentHelper:
+
+```javascript
+scene.createDefaultEnvironment();
+```
+
+This adds an environment texture in your scene (usefull for pbr materials), creates a ground as well as a skybox. Everything places itself to be around the meshes present in your scene.
+
+If the color is not your favorite choice you can modify it after creation:
+
+```javascript
+var helper = scene.createDefaultEnvironment();
+helper.setMainColor(BABYLON.Color3.Teal());
+```
+
+You can see a [live version here](https://www.babylonjs-playground.com/#10D6YT#33)
+
+The helper is providing a wide range of options during its creation:
+* *createGround*: Specifies wether or not to create a ground.
+* *groundSize*: Specifies the ground size (if sizeAuto is false).
+* *groundTexture*: The texture used on the ground (Default to Babylon CDN).
+* *groundColor*: The color mixed in the ground texture by default.
+* *enableGroundShadow*: Enables the ground to receive shadows.
+* *groundShadowLevel*: Helps preventing the shadow to be fully black on the ground.
+* *enableGroundMirror*: Creates a mirror texture attach to the ground.
+* *createSkybox*: Specifies wether or not to create a skybox.
+* *skyboxSize*: Specifies the skybox size (if sizeAuto is false).
+* *skyboxTexture*: The texture used on the skybox (Default to Babylon CDN).
+* *skyboxColor*: The color mixed in the skybox texture by default.
+* *sizeAuto*: Compute automatically the size of the elements to best fit with the scene.
+* *setupImageProcessing*: Sets up the inmage processing in the scene.
+* *environmentTexture*: The texture used as your environment texture in the scene (Default to Babylon CDN).
+* *cameraExposure*: The value of the exposure to apply to the scene.
+* *cameraContrast*: The value of the contrast to apply to the scene.
+* *toneMappingEnabled*: Specifies wether or not tonemapping should be enabled in the scene.
+
+For instance to prevent the creation of the Skybox, one would use:
+
+```javascript
+var helper = scene.createDefaultEnvironment({
+    createSkybox: false
+});
+```
+
+This is as simple as enabling ground reflection:
+
+```javascript
+var helper = scene.createDefaultEnvironment({
+    enableGroundMirror: true
+});
+```
+
+After creation you can reach all the created elements on the helper:
+* *rotMesh*: A root node used to group the skybox and the ground to allow transforming them both at once.
+* *skybox*: The Skybox Mesh.
+* *skyboxMaterial*: The Skybox Material.
+* *skyboxTexture*: The Skybox Texture.
+* *ground*: The ground Mesh.
+* *groundMaterial*: The ground Material.
+* *groundTexture*: The ground Texture.
+* *groundMirror*: the ground mirror texture.
+
+So for instance dispose the ground after creation of the environment would be:
+```javascript
+var helper = scene.createDefaultEnvironment();
+helper.ground.dispose();
+```
+
+The environment helper is relying exclusively on the [BackgroundMaterial](/How_To/BackgroundMaterial.md) to be as efficient as possible.
+
+You can see a [live version here](https://www.babylonjs-playground.com/#10D6YT#35)
+
 ### Fog
 
 Fog is quite an advanced effect, but fog in Babylon.js has been simplified to the maximum. It’s now very easy to add fog to your scenes.&nbsp; First, we define the fog mode like this:

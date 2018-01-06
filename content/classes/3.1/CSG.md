@@ -14,21 +14,16 @@ class [CSG](/classes/3.1/CSG)
 ### matrix : [Matrix](/classes/3.1/Matrix)
 
 
-
 ### position : [Vector3](/classes/3.1/Vector3)
-
 
 
 ### rotation : [Vector3](/classes/3.1/Vector3)
 
 
-
 ### rotationQuaternion : Nullable&lt;[Quaternion](/classes/3.1/Quaternion)&gt;
 
 
-
 ### scaling : [Vector3](/classes/3.1/Vector3)
-
 
 
 ## Methods
@@ -132,5 +127,5 @@ class [CSG](/classes/3.1/CSG)
  | Name | Type | Description
 ---|---|---|---
  | name | string | 
- | material | [Material](/classes/3.1/Material) | 
+ | material | Nullable&lt;[Material](/classes/3.1/Material)&gt; | 
  | scene | [Scene](/classes/3.1/Scene) | 

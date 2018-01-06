@@ -16,7 +16,6 @@ class [DDSTools](/classes/3.1/DDSTools)
 ### static StoreLODInAlphaChannel : boolean
 
 
-
 ## Methods
 
 ### static GetDDSInfo(arrayBuffer) &rarr; DDSInfo
@@ -28,7 +27,7 @@ class [DDSTools](/classes/3.1/DDSTools)
 ---|---|---|---
  | arrayBuffer | any | 
 
-### static UploadDDSLevels(engine, gl, arrayBuffer, info, loadMipmaps, faces, lodIndex) &rarr; void
+### static UploadDDSLevels(engine, gl, arrayBuffer, info, loadMipmaps, faces, lodIndex, currentFace) &rarr; void
 
 
 
@@ -41,3 +40,4 @@ class [DDSTools](/classes/3.1/DDSTools)
  | info | DDSInfo | 
  | loadMipmaps | boolean | 
  | faces | number | 
+optional | lodIndex | number | 

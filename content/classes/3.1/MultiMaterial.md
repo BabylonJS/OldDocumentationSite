@@ -24,13 +24,12 @@ class [MultiMaterial](/classes/3.1/MultiMaterial) extends [Material](/classes/3.
  | scene | [Scene](/classes/3.1/Scene) | 
 ## Members
 
-### subMaterials : [Material](/classes/3.1/Material)[]
-
+### subMaterials : Nullable&lt;[Material](/classes/3.1/Material)&gt;[]
 
 
 ## Methods
 
-### getSubMaterial(index) &rarr; [Material](/classes/3.1/Material)
+### getSubMaterial(index) &rarr; Nullable&lt;[Material](/classes/3.1/Material)&gt;
 
 
 
