@@ -71,6 +71,20 @@ var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
 vrHelper.enableTeleportation({floorMeshName: "ground"});
 ```
 
+## Enabling / disabling teleportation
+Teleportation can be enabled or disabled on demand by using the property teleportationEnabled:
+
+```javascript
+
+// Enable teleportation
+vrHelper.teleportationEnabled = true;
+
+//Disable teleportation (teleportation mesh will not be displayed)
+vrHelper.teleportationEnabled = false;
+```
+
+
+
 ## Accessing cameras
 
 The VR and non-VR camera can be accessed from the helper to handle any application specific logic.
