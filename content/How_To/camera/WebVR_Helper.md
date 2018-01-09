@@ -168,6 +168,16 @@ vrHelper.onNewMeshSelected.add((mesh)=>{
 
 This will return the single closest mesh that was selected. 
 
+
+Prior to onNewMeshSelected an event called onNewMeshPicked is raised when a mesh is selected based on meshSelectionPredicate successful evaluation. This observable notifies a PickingInfo object to subscribers.
+
+ 
+```javascript
+vrHelper.onNewMeshPicked.add((pickingInfo) => {
+    //Callback receiving ray cast picking info
+});
+```
+
 As the user unselects a mesh with their gaze or controller, the onSelectedMeshUnselected event will occur.
  
 ```javascript
