@@ -200,7 +200,7 @@ mesh.actionManager.registerAction(action).then(action2);
 In this case, the first click will hide the button, the following click will restore it, and so on...
 
 ## Sprites 
-Starting with Babylon.js 2.3, sprites can have an action manager: http://www.babylonjs...nd.com/#9RUHH#5
+Starting with Babylon.js 2.3, sprites can have an action manager: https://www.babylonjs-playground.com/#9RUHH#5
 
 Please note that the SpriteManager must turn picking support on by using `spriteManager.isPickable = true`
 Sprites can also control picking with `sprite.isPickable = false / true` (False by default)
