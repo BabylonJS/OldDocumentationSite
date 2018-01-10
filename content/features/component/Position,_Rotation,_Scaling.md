@@ -4,7 +4,7 @@ PG_TITLE: 04. Position, Rotation, Scaling
 ---
 # Positioning, Rotating and Scaling 
 
-There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/features/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
+There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/resources/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
 
 Prior to the _MeshBuilder_ method of creating a mesh the only way to produce a cuboid or ellipsoid, for example, was to create a cube and sphere and scale them in one dimension or another. This could produce difficulties with subsequent manipulations of a mesh. Since using _MeshBuilder_ allows you to set different sizes for meshes in the x, y and z directions these difficuties with [scaling](/babylon101/position#scaling) no longer arise. 
 
