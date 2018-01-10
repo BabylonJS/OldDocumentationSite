@@ -21,9 +21,9 @@ class [Camera](/classes/3.1/Camera) extends [Node](/classes/3.1/Node)
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | name | string | 
- | position | [Vector3](/classes/3.1/Vector3) | 
- | scene | [Scene](/classes/3.1/Scene) | 
+ | name | string |
+ | position | [Vector3](/classes/3.1/Vector3) |
+ | scene | [Scene](/classes/3.1/Scene) |
 ## Members
 
 ### inputs : [CameraInputsManager](/classes/3.1/CameraInputsManager)&lt;[Camera](/classes/3.1/Camera)&gt;
@@ -37,9 +37,12 @@ class [Camera](/classes/3.1/Camera) extends [Node](/classes/3.1/Node)
 
 ### static FOVMODE_VERTICAL_FIXED : number
 
+This is the default FOV mode for perspective cameras.
+This setting aligns the viewport upper and lower bounds to the camera frustum upper and lower bounds.
 
 ### static FOVMODE_HORIZONTAL_FIXED : number
 
+This setting aligns the viewport left and right bounds to the camera frustum left and right bounds.
 
 ### static RIG_MODE_NONE : number
 
@@ -88,6 +91,8 @@ class [Camera](/classes/3.1/Camera) extends [Node](/classes/3.1/Node)
 
 ### fov : number
 
+default : 0.8
+FOV is set in Radians.
 
 ### minZ : number
 
@@ -109,9 +114,12 @@ class [Camera](/classes/3.1/Camera) extends [Node](/classes/3.1/Node)
 
 ### layerMask : number
 
+Restricts the camera to viewing objects with the same layerMask. A camera with a layerMask of 1 will render meshes with no layerMask and meshes with a layerMask of 1.
 
 ### fovMode : number
 
+default : FOVMODE_VERTICAL_FIXED
+fovMode sets the camera frustum bounds to the viewport bounds.
 
 ### cameraRigMode : number
 
@@ -170,7 +178,7 @@ Restored camera state. You must call storeState() first
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | fullDetails | boolean | 
+optional | fullDetails | boolean |
 
 ### getActiveMeshes() &rarr; [SmartArray](/classes/3.1/SmartArray)&lt;[AbstractMesh](/classes/3.1/AbstractMesh)&gt;
 
@@ -182,7 +190,7 @@ optional | fullDetails | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | mesh | [Mesh](/classes/3.1/Mesh) | 
+ | mesh | [Mesh](/classes/3.1/Mesh) |
 
 ### attachControl(element, noPreventDefault) &rarr; void
 
@@ -191,8 +199,8 @@ optional | fullDetails | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
-optional | noPreventDefault | boolean | 
+ | element | HTMLElement |
+optional | noPreventDefault | boolean |
 ### detachControl(element) &rarr; void
 
 
@@ -200,7 +208,7 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | element | HTMLElement | 
+ | element | HTMLElement |
 
 ### update() &rarr; void
 
@@ -212,8 +220,8 @@ optional | noPreventDefault | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
-optional | insertAt | Nullable&lt;number&gt; | 
+ | postProcess | [PostProcess](/classes/3.1/PostProcess) |
+optional | insertAt | Nullable&lt;number&gt; |
 ### detachPostProcess(postProcess) &rarr; void
 
 
@@ -221,7 +229,7 @@ optional | insertAt | Nullable&lt;number&gt; |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | postProcess | [PostProcess](/classes/3.1/PostProcess) | 
+ | postProcess | [PostProcess](/classes/3.1/PostProcess) |
 
 ### getWorldMatrix() &rarr; [Matrix](/classes/3.1/Matrix)
 
@@ -233,7 +241,7 @@ optional | insertAt | Nullable&lt;number&gt; |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | force | boolean | 
+optional | force | boolean |
 
 ### freezeProjectionMatrix(projection) &rarr; void
 
@@ -242,7 +250,7 @@ optional | force | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | projection | [Matrix](/classes/3.1/Matrix) | 
+optional | projection | [Matrix](/classes/3.1/Matrix) |
 
 ### unfreezeProjectionMatrix() &rarr; void
 
@@ -254,7 +262,7 @@ optional | projection | [Matrix](/classes/3.1/Matrix) |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | force | boolean | 
+optional | force | boolean |
 
 ### getTranformationMatrix() &rarr; [Matrix](/classes/3.1/Matrix)
 
@@ -266,7 +274,7 @@ optional | force | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | target | ICullable | 
+ | target | ICullable |
 
 ### isCompletelyInFrustum(target) &rarr; boolean
 
@@ -275,7 +283,7 @@ optional | force | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | target | ICullable | 
+ | target | ICullable |
 
 ### getForwardRay(length, transform, origin) &rarr; [Ray](/classes/3.1/Ray)
 
@@ -284,9 +292,9 @@ optional | force | boolean |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
-optional | length | number | 
-optional | transform | [Matrix](/classes/3.1/Matrix) | 
-optional | origin | [Vector3](/classes/3.1/Vector3) | 
+optional | length | number |
+optional | transform | [Matrix](/classes/3.1/Matrix) |
+optional | origin | [Vector3](/classes/3.1/Vector3) |
 ### dispose() &rarr; void
 
 
@@ -303,8 +311,8 @@ optional | origin | [Vector3](/classes/3.1/Vector3) |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | mode | number | 
- | rigParams | any | 
+ | mode | number |
+ | rigParams | any |
 ### setCameraRigParameter(name, value) &rarr; void
 
 
@@ -312,8 +320,8 @@ optional | origin | [Vector3](/classes/3.1/Vector3) |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | name | string | 
- | value | any | 
+ | name | string |
+ | value | any |
 ### createRigCamera(name, cameraIndex) &rarr; Nullable&lt;[Camera](/classes/3.1/Camera)&gt;
 
 needs to be overridden by children so sub has required properties to be copied
@@ -321,8 +329,8 @@ needs to be overridden by children so sub has required properties to be copied
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | name | string | 
- | cameraIndex | number | 
+ | name | string |
+ | cameraIndex | number |
 ### serialize() &rarr; any
 
 
@@ -333,7 +341,7 @@ needs to be overridden by children so sub has required properties to be copied
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | name | string | 
+ | name | string |
 
 ### getDirection(localAxis) &rarr; [Vector3](/classes/3.1/Vector3)
 
@@ -342,7 +350,7 @@ needs to be overridden by children so sub has required properties to be copied
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | localAxis | [Vector3](/classes/3.1/Vector3) | 
+ | localAxis | [Vector3](/classes/3.1/Vector3) |
 
 ### getDirectionToRef(localAxis, result) &rarr; void
 
@@ -351,8 +359,8 @@ needs to be overridden by children so sub has required properties to be copied
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | localAxis | [Vector3](/classes/3.1/Vector3) | 
- | result | [Vector3](/classes/3.1/Vector3) | 
+ | localAxis | [Vector3](/classes/3.1/Vector3) |
+ | result | [Vector3](/classes/3.1/Vector3) |
 ### static GetConstructorFromName(type, name, scene, interaxial_distance, isStereoscopicSideBySide) &rarr; () =&gt; [Camera](/classes/3.1/Camera)
 
 
@@ -360,10 +368,10 @@ needs to be overridden by children so sub has required properties to be copied
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | type | string | 
- | name | string | 
- | scene | [Scene](/classes/3.1/Scene) | 
-optional | interaxial_distance | number | 
+ | type | string |
+ | name | string |
+ | scene | [Scene](/classes/3.1/Scene) |
+optional | interaxial_distance | number |
 ### computeWorldMatrix() &rarr; [Matrix](/classes/3.1/Matrix)
 
 
@@ -374,5 +382,5 @@ optional | interaxial_distance | number |
 #### Parameters
  | Name | Type | Description
 ---|---|---|---
- | parsedCamera | any | 
- | scene | [Scene](/classes/3.1/Scene) | 
+ | parsedCamera | any |
+ | scene | [Scene](/classes/3.1/Scene) |
