@@ -14,15 +14,5 @@ To use it you just have to reference it after Babylon.js:
 <script src="babylon.stlFileLoader.js"></script>
 ```
 
-Then you can just call SceneLoader.Load:
-
-```
-
-BABYLON.SceneLoader.Load("/Files/", "ch9.stl", engine, function (newScene) {
-   newScene.activeCamera.attachControl(canvas, false);
-   engine.runRenderLoop(function () {
-       newScene.render();
-   });
-});
-
-```
+Then you can use one of the static functions on the `SceneLoader` to load.
+See [how to load from any file type](/how_to/Load_From_Any_File_Type)

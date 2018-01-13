@@ -39,51 +39,10 @@ This loader supports only glTF 2.0 and will fail to load glTF 1.0.
 
 ## Loading the Scene
 
-Use one of the following static function on the `SceneLoader` to load a glTF asset.
+Use one of the static function on the `SceneLoader` to load a glTF asset.
+See [how to load from any file type](/how_to/Load_From_Any_File_Type).
 
-### Load
 
-This function loads a glTF asset into a new scene.
-```javascript
-BABYLON.SceneLoader.Load("./", "duck.gltf", engine, function (scene) {
-    // do something with the scene
-});
-```
-
-### Append
-
-This function appends a glTF file to an existing scene.
-```javascript
-BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
-    // do something with the scene
-});
-```
-
-### ImportMesh
-
-This function imports specific meshes from a glTF asset to an existing scene and returns the imported meshes and skeletons.
-```javascript
-// The first parameter can be set to null to load all meshes and skeletons
-BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene, function (meshes, particleSystems, skeletons) {
-    // do something with the meshes and skeletons
-    // particleSystems are always null for glTF assets
-});
-```
-
-## Advanced Usage
-
-The SceneLoader returns the glTF loader instance to enable setting properties and calling methods.
-
-```javascript
-var loader = BABYLON.SceneLoader.Load("./", "duck.gltf", engine, function (scene) {
-    // do something with the scene
-});
-
-// do something with the loader
-// loader.<option1> = <...>
-// loader.<option2> = <...>
-// loader.dispose();
-```
 
 ### Common Properties
 
