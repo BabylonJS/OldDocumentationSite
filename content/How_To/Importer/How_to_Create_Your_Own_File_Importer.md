@@ -13,6 +13,7 @@ This object must have three properties:
 * A list of supported file extensions (```extensions```)
 * An ```importMesh``` function to import specific meshes
 * A ```load``` function to import complete scene
+* A ```loadAssets``` function to import all babylon elements from the file but do not add them to the scene
 
 Here is a sample importer object:
 ```javascript
@@ -23,7 +24,11 @@ Here is a sample importer object:
         },
         load: function (scene, data, rootUrl) {
             return true;
-        }
+        },
+        loadAssets(scene, data, rootUrl){
+            var container = new AssetContainer(scene);
+            return container;
+        }
     });
 ```
 
