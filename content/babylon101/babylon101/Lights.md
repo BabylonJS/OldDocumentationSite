@@ -128,6 +128,33 @@ _A blue back-faced plane and a blue front-faced plane, with a spot light and poi
 
 As you can see, the lights only affect the front face and not the back face. 
 
+## Lightmaps
+Complex lighting can be computationally expensive to compute at runtime. To save on computation, lightmaps may be used to store calculated lighting in a texture which will be applied to a given mesh.
+```javascript
+var lightmap = new BABYLON.Texture("lightmap.png", scene);
+var material = new BABYLON.StandardMaterial("material", scene);
+material.lightmapTexture = lightmap;
+```
+Note: To use the texture as a shadowmap instead of lightmap, set the material.useLightmapAsShadowmap field to true.
+
+The way that the scene lights are blended with the lightmap is based on the lightmapMode of the lights in the scene.
+
+```javascript
+light.lightmapMode = BABYLON.Light.LIGHTMAP_DEFAULT;
+```
+This will cause lightmap texture to be blended after the lighting from this light is applied.
+
+```javascript
+light.lightmapMode = BABYLON.Light.LIGHTMAP_SPECULAR;
+```
+This is the same as LIGHTMAP_DEFAULT except only the specular lighting and shadows from the light will be applied.
+
+```javascript
+light.lightmapMode = BABYLON.Light.LIGHTMAP_SHADOWSONLY;
+```
+This is the same as LIGHTMAP_DEFAULT except only the shadows casted from this light will be applied.
+
+[Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
 ## Next step
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!
 

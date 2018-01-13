@@ -314,12 +314,12 @@ include includes/banner.pug
                 yourAwesomeProject
                     |- index.html
                     |- game.ts
-                    |- babylon.2.3.d.ts
+                    |- babylon.d.ts
         p.ts.
             Now compile <code>game.ts</code> which will output <code>game.js</code>:
         pre.ts
             code.github.ts.
-                tsc game.ts babylon.2.3.d.ts
+                tsc game.ts babylon.d.ts
         p.ts.
             You should now see <code>game.js</code> in Your Awesome Project directory:
         pre.ts
@@ -328,7 +328,7 @@ include includes/banner.pug
                     |- index.html
                     |- game.js
                     |- game.ts
-                    |- babylon.2.3.d.ts
+                    |- babylon.d.ts
         p.
             And that's it! Save your files and open <code>index.html</code> with your favorite web browser. You should see the
             following:
@@ -348,7 +348,7 @@ include includes/banner.pug
                     &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
                     &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
                     &lt;!--- link to the last version of babylon ---&gt;
-                    &lt;script src="babylon.2.3.debug.js"&gt;&lt;/script&gt;
+                    &lt;script src="https://cdn.babylonjs.com/babylon.js"&gt;&lt;/script&gt;
                     &lt;style&gt;
                         html, body {
                             overflow: hidden;
@@ -392,13 +392,13 @@ include includes/banner.pug
                                 // create a basic light, aiming 0,1,0 - meaning, to the sky
                                 var light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0,1,0), scene);
 
-                                // create a built-in "sphere" shape; its constructor takes 5 params: name, width, depth, subdivisions, scene
+                                // create a built-in "sphere" shape; its constructor takes 6 params: name, segment, diameter, scene, updatable, sideOrientation 
                                 var sphere = BABYLON.Mesh.CreateSphere('sphere1', 16, 2, scene);
 
                                 // move the sphere upward 1/2 of its height
                                 sphere.position.y = 1;
 
-                                // create a built-in "ground" shape; its constructor takes the same 5 params as the sphere's one
+                                // create a built-in "ground" shape;
                                 var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
 
                                 // return the created scene
@@ -428,7 +428,7 @@ include includes/banner.pug
                     &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
                     &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
                     &lt;!--- link to the last version of babylon ---&gt;
-                    &lt;script src="babylon.2.3.debug.js"&gt;&lt;/script&gt;
+                    &lt;script src="https://cdn.babylonjs.com/babylon.js"&gt;&lt;/script&gt;
                     &lt;script src="game.js"&gt;&lt;/script&gt;
                     &lt;style&gt;
                         html, body {

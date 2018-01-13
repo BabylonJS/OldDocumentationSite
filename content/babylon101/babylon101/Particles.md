@@ -5,12 +5,13 @@ PG_TITLE: 14. Particles
 # Particles
 
 This tutorial is going to talk about the particle system in BabylonJS. Particles are often small sprites used to simulate hard-to-reproduce phenomena like fire, smoke, water, or abstract visual effects like magic glitter and faery dust.
+Particles can take different shapes while emitted like box, sphere, cone or you can write your custom function.
 
 ![Particles](/img/how_to/Particles/12.png)
 
 A picture of [the playground's ParticleSystem demo]( https://www.babylonjs-playground.com/?12)
 
-## How can I do this ?
+## How can I do box shape ?
 
 To perform this magic trick, the first thing to do is to create a new object, which will be the particle emitter. In our case, a box will be our emitting object, representing a particle fountain.
 
@@ -286,6 +287,61 @@ particleSystem.endSpriteCellID = 44;
 particleSystem.spriteCellHeight = 64;
 particleSystem.spriteCellWidth = 64;
 ```
+
+## Particles shapes
+
+Start from Babylonjs 3.2 you will be able to use different shapes for the emitted particles.
+
+1)Box Emitter.
+
+2)Sphere Emitter.
+
+3)Cone Emitter.
+
+### New property particleEmitterType
+
+Start from babylonjs 3.2 we introduced in the particle system new property `particleEmitterType` of type IParticleEmitterType. this interface has 2 methods startDirectionFunction and startPositionFunction, startPositionFunction is responsible for drawing the particles at the start and startDirectionFunction is responsible for the direction.
+
+You can create your own ParticleEmitterType by extending IParticleEmitterType and assign it to `particleEmitterType`. This new way will override directly overriding those method in the particleSystem directly like what described in the custom functions (old way) section in this article.
+
+### Box Emitter
+
+There are 2 ways to do the box emitter the old way which is covered at the top and the new way which we will discuss below.
+
+To create a box emitter you can use call method createBoxEmitter
+```javascript
+
+    var boxEmitter = particleSystem.createBoxEmitter(new BABYLON.Vector3(-7, 8, 3), new BABYLON.Vector3(7, 8, -3), new BABYLON.Vector3(-1, 0, 0), new BABYLON.Vector3(1, 0, 0));
+
+```
+this method takes 4 parameters (direction1: Vector3, direction2: Vector3, minEmitBox: Vector3, maxEmitBox: Vector3) and returns the box emitter object which you change his properties (direction1,direction2,minEmitBox,maxEmitBox) to achieve what you want.
+
+Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#1)
+
+if you want a directed sphere emitter you can use
+
+```javascript
+
+    particleSystem.createDirectedSphereEmitter(1.2, new BABYLON.Vector3(1, 1, 1), new BABYLON.Vector3(2, 8, 2));
+
+```
+
+The first parameter is the radius the second is direction1 and third is direction2. (The direction will be generated randomly between direction1 and direction2)
+
+Check the the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#2)
+
+### Cone Emitter
+
+To create a cone emitter just call method createConeEmitter and this method takes the radius of the cone at the bottom and the angle (In radian) which the particles will be emitted toward and this angle is calculated from the Y axis. \\_/
+
+```javascript
+
+    var coneEmitter = particleSystem.createConeEmitter(2, Math.PI / 3);
+
+```
+
+Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#3)
+
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
