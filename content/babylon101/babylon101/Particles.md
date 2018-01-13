@@ -316,6 +316,20 @@ To create a box emitter you can use call method createBoxEmitter
 ```
 this method takes 4 parameters (direction1: Vector3, direction2: Vector3, minEmitBox: Vector3, maxEmitBox: Vector3) and returns the box emitter object which you change his properties (direction1,direction2,minEmitBox,maxEmitBox) to achieve what you want.
 
+Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G)
+
+### Sphere Emitter
+
+You can create sphere emitter using
+
+```javascript
+
+    particleSystem.createSphereEmitter(1.2);
+
+```
+
+First parameter is the radius of the sphere.
+
 Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#1)
 
 if you want a directed sphere emitter you can use
