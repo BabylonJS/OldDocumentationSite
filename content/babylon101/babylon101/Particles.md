@@ -11,7 +11,7 @@ Particles can take different shapes while emitted like box, sphere, cone or you 
 
 A picture of [the playground's ParticleSystem demo]( https://www.babylonjs-playground.com/?12)
 
-## How can I do box shape ?
+## How Can I Create Particles ?
 
 To perform this magic trick, the first thing to do is to create a new object, which will be the particle emitter. In our case, a box will be our emitting object, representing a particle fountain.
 
@@ -192,7 +192,7 @@ Here is a short comment from Deltakosh... regarding that playground demo linked 
 
 This section of the tutorial is under construction. We will have much more to say, soon.
 
-## Custom functions
+## Custom Functions
 You can get even more control over particles by using custom functions:
 ```startDirectionFunction: (emitPower: number, worldMatrix: Matrix, directionToUpdate: Vector3)```: This function can be defined to specify initial direction for every new particle. By default, this function is defined with the following code:
 
@@ -288,7 +288,7 @@ particleSystem.spriteCellHeight = 64;
 particleSystem.spriteCellWidth = 64;
 ```
 
-## Particles shapes
+## Particles Shapes
 
 Start from Babylonjs 3.2 you will be able to use different shapes for the emitted particles.
 
