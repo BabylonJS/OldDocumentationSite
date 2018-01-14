@@ -135,6 +135,7 @@
 [Follow Camera](/babylon101/Cameras#followcamera)  
 [Frame of Reference](/resources/Frame_Of_Reference)  
 [Framework Versions, BJS](/resources/Framework_versions)  
+[Frame, Window or Picture](/samples/Frame)  
 [FresnelParameters](/How_To/How_to_use_FresnelParameters)  
 [Fur, Material](/extensions/Fur)  
 ********
@@ -182,6 +183,7 @@
 [Lines Mesh Using MeshBuilder](/How_To/Parametric_Shapes#lines)  
 [Lines Mesh with Legacy Method](/How_To/Legacy_Param#lines)  
 [Lines](/babylon101/Parametric_Shapes)  
+[Line2D](/samples/Line2D)  
 [LOD, Auto](/How_To/In-Browser_Mesh_Simplification)  
 [LOD](/How_To/How_to_use_LOD)  
 [Logarithmic Depth Buffer](/How_To/Using_logarithmic_depth_buffer)  

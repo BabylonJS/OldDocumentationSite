@@ -1432,6 +1432,14 @@
                 {
                     "title": "Display World Axes",
                     "filename": "World_Axes"
+                },
+                {
+                    "title": "Line2D of Given Width",
+                    "filename": "Line2D"
+                },
+                {
+                    "title": "Making a Frame",
+                    "filename": "Frame"
                 }
             ]
         }
