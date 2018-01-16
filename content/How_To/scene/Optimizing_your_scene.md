@@ -52,6 +52,29 @@ As soon as you can please use [instances](/How_To/how_to_use_instances) as they 
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
 
+## Reducing calls to gl.clear()
+By default, Babylon.js automatically clears the color, depth, and stencil buffers before rendering the scene. It also clears the depth and stencil buffers after switching to a new camera and before rendering a new RenderingGroup. On systems with poor fill rates, these can add up quickly and have a significant impact on performance.
+
+If your scene is set up in such a way that the viewport is always 100% filled with opaque geometry (if you're always inside a skybox, for instance), you can disable the default scene clearing behavior with:
+
+```
+scene.autoClear = false; // Color buffer
+scene.autoClearDepthAndStencil = false; // Depth and stencil, obviously
+```
+
+If you know that the geometry in a particular RenderingGroup will always be positioned in front of geometry from other groups, you can disable buffer clearing for that group with the following:
+
+```
+scene.setRenderingAutoClearDepthStencil(renderingGroupIdx, autoClear, depth, stencil);
+```
+```autoClear```: ```true``` to enable auto clearing. If ```false```, overrides ```depth``` and ```stencil```
+
+```depth```: Defaults to ```true``` to enable clearing of the depth buffer
+
+```stencil```: Defaults to ```true``` to enable clearing of the stencil buffer
+
+Go ahead and be aggressive with these settings. You'll know if it's not appropriate for your application if you see any smearing!
+
 ## Using depth pre-pass
 When dealing with complex scenes, it could be useful to use depth pre-pass. This technique will render designated meshes only in the depth buffer to leverage early depth test rejection. This could be used for instance when a scene contains meshes with advanced shaders.
 To enable a depth pre-pass for a mesh, just call `mesh.material.needDepthPrePass = true`.
