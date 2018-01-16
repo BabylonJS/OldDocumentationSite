@@ -134,7 +134,7 @@ mesh.actionManager.registerAction(
     )
 );
 ```
-The triggers available for scenses are:
+The triggers available for scenes are:
 
 * `BABYLON.ActionManager.OnEveryFrameTrigger`: Raised once per frame.
 * `BABYLON.ActionManager.OnKeyDownTrigger`: Raised when a key is pressed.
