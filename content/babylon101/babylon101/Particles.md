@@ -320,7 +320,7 @@ Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G)
 
 ### Sphere Emitter
 
-You can create sphere emitter using
+You can create a sphere emitter using:
 
 ```javascript
 
@@ -328,11 +328,11 @@ You can create sphere emitter using
 
 ```
 
-First parameter is the radius of the sphere.
+The first parameter is the radius of the emission sphere. The particles will be emitted alongside the radius direction.
 
 Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#1)
 
-if you want a directed sphere emitter you can use
+If you prefer to chose the emission direction, you can create a directed sphere emitter:
 
 ```javascript
 
@@ -355,7 +355,6 @@ To create a cone emitter just call method createConeEmitter and this method take
 ```
 
 Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#3)
-
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
