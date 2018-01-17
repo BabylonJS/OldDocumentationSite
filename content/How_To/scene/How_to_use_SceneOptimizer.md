@@ -25,6 +25,7 @@ When creating the SceneOptimizer you can provide the following parameters:
 - A ```BABYLON.Scene``` which will defines the scene to work on
 - A ```BABYLON.SceneOptimizerOptions``` which will defines the options to use with the SceneOptimizer
 - A ```boolean``` which will defines if priorities must be generated and not read from SceneOptimization property (true by default)
+- A ```boolean``` which will defines if the optimizer will run in improvement mode (see below) (false by default)
 
 The SceneOptimizer object allows you to set several properties:
 - ```optimizations```: This property contains the list of current optimizations
@@ -163,6 +164,9 @@ function mySceneOptimization(priority) {
   };
 }
 ```
+
+## Improvement mode
+When created in improvement mode (4th parameter of the constructor), the ScenOptimizer object will run all optimization while the current FPS is above the target frame rate. So for instance if, the target FPS is 60, the optimizer will execute all optimizations in its list while the FPS remains at 60. It is a good tool to provide rendering improvements to a given scene.
 
 ## Demo
 A demo can be found here: https://www.babylonjs-playground.com/#3Q8PCL

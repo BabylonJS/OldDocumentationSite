@@ -11,7 +11,7 @@ Particles can take different shapes while emitted like box, sphere, cone or you 
 
 A picture of [the playground's ParticleSystem demo]( https://www.babylonjs-playground.com/?12)
 
-## How can I do box shape ?
+## How Can I Create Particles ?
 
 To perform this magic trick, the first thing to do is to create a new object, which will be the particle emitter. In our case, a box will be our emitting object, representing a particle fountain.
 
@@ -192,7 +192,7 @@ Here is a short comment from Deltakosh... regarding that playground demo linked 
 
 This section of the tutorial is under construction. We will have much more to say, soon.
 
-## Custom functions
+## Custom Functions
 You can get even more control over particles by using custom functions:
 ```startDirectionFunction: (emitPower: number, worldMatrix: Matrix, directionToUpdate: Vector3)```: This function can be defined to specify initial direction for every new particle. By default, this function is defined with the following code:
 
@@ -288,7 +288,7 @@ particleSystem.spriteCellHeight = 64;
 particleSystem.spriteCellWidth = 64;
 ```
 
-## Particles shapes
+## Particles Shapes
 
 Start from Babylonjs 3.2 you will be able to use different shapes for the emitted particles.
 
@@ -316,9 +316,23 @@ To create a box emitter you can use call method createBoxEmitter
 ```
 this method takes 4 parameters (direction1: Vector3, direction2: Vector3, minEmitBox: Vector3, maxEmitBox: Vector3) and returns the box emitter object which you change his properties (direction1,direction2,minEmitBox,maxEmitBox) to achieve what you want.
 
+Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G)
+
+### Sphere Emitter
+
+You can create a sphere emitter using:
+
+```javascript
+
+    particleSystem.createSphereEmitter(1.2);
+
+```
+
+The first parameter is the radius of the emission sphere. The particles will be emitted alongside the radius direction.
+
 Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#1)
 
-if you want a directed sphere emitter you can use
+If you prefer to chose the emission direction, you can create a directed sphere emitter:
 
 ```javascript
 
@@ -341,7 +355,6 @@ To create a cone emitter just call method createConeEmitter and this method take
 ```
 
 Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#3)
-
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.

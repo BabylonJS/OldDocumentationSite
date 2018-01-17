@@ -613,15 +613,19 @@
             "desc": "Files that can be loaded into BJS",
             "files": [
                 {
-                    "title": "Load an STL File",
+                    "title": "Load from any file type - glTF, OBJ, STL, etc.",
+                    "filename": "Load_From_Any_File_Type"
+                },
+                {
+                    "title": "Use the STL File Loader Plugin",
                     "filename": "STL"
                 },
                 {
-                    "title": "Load an OBJ File",
+                    "title": "Use the OBJ File Loader Plugin",
                     "filename": "OBJ"
                 },
                 {
-                    "title": "Load a glTF File",
+                    "title": "Use the glTF File Loader Plugin",
                     "filename": "glTF"
                 },
                 {
@@ -1428,6 +1432,14 @@
                 {
                     "title": "Display World Axes",
                     "filename": "World_Axes"
+                },
+                {
+                    "title": "Line2D of Given Width",
+                    "filename": "Line2D"
+                },
+                {
+                    "title": "Making a Frame",
+                    "filename": "Frame"
                 }
             ]
         }

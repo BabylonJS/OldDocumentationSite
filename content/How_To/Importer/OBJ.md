@@ -13,21 +13,9 @@ To use it, you just have to reference the loader file:
 ```
 You can find it [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview release/loaders)
 
+### Load
+See [how to load from any file type](/how_to/Load_From_Any_File_Type)
 Babylon.js will know how to load the obj file and its mtl file automatically: 
-```
-BABYLON.SceneLoader.Load("/assets/", "batman.obj", engine, function (newScene) { 
-   // ...
-});
-```
-```
-var loader = new BABYLON.AssetsManager(scene);
-var batman = loader.addMeshTask("batman", "", "assets/", "batman.obj");
-```
-```
-BABYLON.SceneLoader.ImportMesh("batmanface", "batman.obj", scene, function (meshes) { 
-   // ...
-});
-```
 
 ## Good things to know
 * Your model doesn't have to be triangulated, as this loader will do it automatically.
