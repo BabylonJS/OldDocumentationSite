@@ -16735,7 +16735,7 @@ declare module BABYLON {
          * It can be a string if the expected behavior is identical in the entire app.
          * Or a callback to be able to set it per url or on a group of them (in case of Video source for instance)
          */
-        static CorsBehavior: string | ((url: string | string[]) => string);
+        static CorsBehavior: string;
         static UseFallbackTexture: boolean;
         /**
          * Use this object to register external classes like custom textures or material
