@@ -639,6 +639,10 @@
                 {
                     "title": "Load Files with Assests Manager",
                     "filename": "How_to_use_AssetsManager"
+                },
+                {
+                    "title": "Use an AssetContainer",
+                    "filename": "How_to_use_AssetContainer"
                 }
             ]
         },
