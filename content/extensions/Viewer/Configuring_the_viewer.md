@@ -282,177 +282,35 @@ And finally, we need to tell the manager which mapper to use:
 <babylon extends="minimal" scene.debug="true" engine.antialiasing="false" model="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration.url="http://example.com/viewerConfig.yaml" configuration.mapper="yaml"></babylon>
 ```
 
+### Using your own payload without downloading a file
+
+The configuration attribute of your html element can contain a url as previously shown, or a payload of type any - in case you already have the configuration in your own format loaded in the page.
+
+This is useful if you want to be responsible to the download or if the data is simply already provided. As best practice you will need to:
+
+1. Create your own mapper
+1. Register the mapper
+1. Set the payload and mapper
+
+For example, let's say we have a predefined JSON configuration loaded in the page already. We could load it this way (notice configuration.payload):
+
+```html
+<babylon configuration.payload='{"scene": {"debug": true}}' model.title="Damaged Helmet" model.subtitle="BabylonJS" model.thumbnail="https://www.babylonjs.com/img/favicon/apple-icon-144x144.png"
+            model.url="https://www.babylonjs.com/Assets/DamagedHelmet/glTF/DamagedHelmet.gltf" camera.behaviors.auto-rotate="0"
+            templates.nav-bar.params.disable-on-fullscreen="true"></babylon>
+```
+
+This will word as the default mapper is the str-to-json mapper. If you define your own type, you could set the mapper (important - after registering it):
+
+```html
+<babylon configuration.payload="scene.debug=true&engine.antialiasing=true" configuration.mapper="form" model.title="Damaged Helmet" model.subtitle="BabylonJS" model.thumbnail="https://www.babylonjs.com/img/favicon/apple-icon-144x144.png"
+            model.url="https://www.babylonjs.com/Assets/DamagedHelmet/glTF/DamagedHelmet.gltf" camera.behaviors.auto-rotate="0"
+            templates.nav-bar.params.disable-on-fullscreen="true"></babylon>
+```
+
+This will use the registered "form" mapper (which doesn't exist in reality - you should implement it) to read the payload and adjust the configuration.
+
 ## The full configuration interface
 
-The configuration interfaces pasted are from version `0.2.0` of the viewer. To see the latest options see [https://github.com/BabylonJS/Babylon.js/blob/master/Viewer/src/configuration/configuration.ts](https://github.com/BabylonJS/Babylon.js/blob/master/Viewer/src/configuration/configuration.ts)
-
-```javascript
-interface ViewerConfiguration {
-
-    version?: string; // configuration version
-    extends?: string; // is this configuration extending an existing configuration?
-
-    pageUrl?: string; // will be used for sharing and other fun stuff. This is the page showing the model (not the model's url!)
-
-    configuration?: string | {
-        url: string;
-        mapper?: string; // json (default), html, yaml, xml, etc'. if not provided, file extension will be used.
-    };
-
-    // names of functions in the window context.
-    observers?: {
-        onEngineInit?: string;
-        onSceneInit?: string;
-        onModelLoaded?: string;
-    }
-
-    canvasElement?: string; // if there is a need to override the standard implementation - ID of HTMLCanvasElement
-
-    model?: {
-        url?: string;
-        loader?: string; // obj, gltf?
-        position?: { x: number, y: number, z: number };
-        rotation?: { x: number, y: number, z: number, w: number };
-        scaling?: { x: number, y: number, z: number };
-        parentObjectIndex?: number; // the index of the parent object of the model in the loaded meshes array.
-
-        title: string;
-        subtitle?: string;
-        thumbnail?: string; // URL or data-url
-
-        [propName: string]: any; // further configuration values
-    } | string;
-
-    scene?: {
-        debug?: boolean;
-        autoRotate?: boolean;
-        rotationSpeed?: number;
-        defaultCamera?: boolean;
-        defaultLight?: boolean;
-        clearColor?: { r: number, g: number, b: number, a: number };
-        imageProcessingConfiguration?: IImageProcessingConfiguration;
-    };
-
-    camera?: {
-        position?: { x: number, y: number, z: number };
-        rotation?: { x: number, y: number, z: number, w: number };
-        fov?: number;
-        fovMode?: number;
-        minZ?: number;
-        maxZ?: number;
-        inertia?: number;
-        behaviors?: {
-            [name: string]: number | {
-                type: number;
-                [propName: string]: any;
-            };
-        };
-
-        [propName: string]: any;
-    };
-
-    skybox?: {
-        cubeTexture: {
-            noMipMap?: boolean;
-            gammaSpace?: boolean;
-            url: string | Array<string>;
-        };
-        pbr?: boolean;
-        scale?: number;
-        blur?: number;
-        material?: {
-            imageProcessingConfiguration?: IImageProcessingConfiguration;
-        };
-        infiniteDIstance?: boolean;
-    };
-
-    ground?: boolean | {
-        size?: number;
-        receiveShadows?: boolean;
-        shadowOnly?: boolean;
-        material?: {
-            [propName: string]: any;
-        }
-    };
-
-    lights?: {
-        [name: string]: {
-            type: number;
-            name?: string;
-            disabled?: boolean;
-            position?: { x: number, y: number, z: number };
-            target?: { x: number, y: number, z: number };
-            direction?: { x: number, y: number, z: number };
-            diffuse?: { r: number, g: number, b: number };
-            specular?: { r: number, g: number, b: number };
-            intensity?: number;
-            radius?: number;
-            shadownEnabled?: boolean; // only on specific lights!
-            shadowConfig?: {
-                useBlurExponentialShadowMap?: boolean;
-                useKernelBlur?: boolean;
-                blurKernel?: number;
-                blurScale?: number;
-                [propName: string]: any;
-            }
-            [propName: string]: any;
-
-            // no behaviors for light at the moment, but allowing configuration for future reference.
-            behaviors?: {
-                [name: string]: number | {
-                    type: number;
-                    [propName: string]: any;
-                };
-            };
-        }
-    },
-    // engine configuration. optional!
-    engine?: {
-        antialiasing?: boolean;
-    },
-    //templateStructure?: ITemplateStructure,
-    templates?: {
-        main: ITemplateConfiguration,
-        [key: string]: ITemplateConfiguration
-    };
-}
-
-interface IImageProcessingConfiguration {
-    colorGradingEnabled?: boolean;
-    colorCurvesEnabled?: boolean;
-    colorCurves?: {
-        globalHue?: number;
-        globalDensity?: number;
-        globalSaturation?: number;
-        globalExposure?: number;
-        highlightsHue?: number;
-        highlightsDensity?: number;
-        highlightsSaturation?: number;
-        highlightsExposure?: number;
-        midtonesHue?: number;
-        midtonesDensity?: number;
-        midtonesSaturation?: number;
-        midtonesExposure?: number;
-        shadowsHue?: number;
-        shadowsDensity?: number;
-        shadowsSaturation?: number;
-        shadowsExposure?: number;
-    };
-    colorGradingWithGreenDepth?: boolean;
-    colorGradingBGR?: boolean;
-    exposure?: number;
-    toneMappingEnabled?: boolean;
-    contrast?: number;
-    vignetteEnabled?: boolean;
-    vignetteStretch?: number;
-    vignetteCentreX?: number;
-    vignetteCentreY?: number;
-    vignetteWeight?: number;
-    vignetteColor?: { r: number, g: number, b: number, a?: number };
-    vignetteCameraFov?: number;
-    vignetteBlendMode?: number;
-    vignetteM?: boolean;
-    applyByPostProcess?: boolean;
-
-}
-```
+Please check the configuration on github, as it is constantly updated:
+[https://github.com/BabylonJS/Babylon.js/blob/master/Viewer/src/configuration/configuration.ts](https://github.com/BabylonJS/Babylon.js/blob/master/Viewer/src/configuration/configuration.ts)
