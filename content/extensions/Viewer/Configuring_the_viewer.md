@@ -300,7 +300,7 @@ For example, let's say we have a predefined JSON configuration loaded in the pag
             templates.nav-bar.params.disable-on-fullscreen="true"></babylon>
 ```
 
-This will word as the default mapper is the str-to-json mapper. If you define your own type, you could set the mapper (important - after registering it):
+This will work as the default mapper converts a JSON string to a configuration object. If you input a different style of configuration, you could set the mapper's type (after registering it):
 
 ```html
 <babylon configuration.payload="scene.debug=true&engine.antialiasing=true" configuration.mapper="form" model.title="Damaged Helmet" model.subtitle="BabylonJS" model.thumbnail="https://www.babylonjs.com/img/favicon/apple-icon-144x144.png"
@@ -308,7 +308,7 @@ This will word as the default mapper is the str-to-json mapper. If you define yo
             templates.nav-bar.params.disable-on-fullscreen="true"></babylon>
 ```
 
-This will use the registered "form" mapper (which doesn't exist in reality - you should implement it) to read the payload and adjust the configuration.
+This will use the preregistered "form" mapper (which doesn't exist in reality - you should implement it) to read the payload and adjust the configuration.
 
 ## The full configuration interface
 
