@@ -131,3 +131,53 @@ To enable the debug layer, simply add scene.debug="true" to your html tag:
 ```html
 <babylon extends="minimal" scene.debug="true" model="https://playground.babylonjs.com/scenes/Rabbit.babylon"></babylon>
 ```
+
+## Loading a model async
+
+In certain cases you would want to load your model using javascript after the viewer was initialized. It is the case if, for example, a user clicks on a button to load a model, or drag & drops a model to be viewed. In this case, your HTML should just contain the configuration for the scene (engine, scene, camera and lights), without defining anything related to the model itself:
+
+```html
+<babylon id="babylon-viewer" camera.behaviors.auto-rotate="0"></babylon>
+```
+
+To do so, the viewer exposes the "loadModel" function. Loading model requires you to wait for the engine to initialize. So in order to get it to work correctly, you will need to wait for the onEngineInit observable to notify you about it:
+
+```javascript
+BabylonViewer.viewerManager.getViewerPromiseById('babylon-viewer').then(function (viewer) {
+    // this will resolve only after the viewer with this specific ID is initialized
+
+    viewer.onEngineInitObservable.add(function (scene) {
+        viewer.loadModel({
+            title: "Helmet",
+            subtitle: "BabylonJS",
+            thumbnail: "https://www.babylonjs.com/img/favicon/apple-icon-144x144.png",
+            url: "https://www.babylonjs.com/Assets/DamagedHelmet/glTF/DamagedHelmet.gltf"
+        });
+
+        // load another model after 20 seconds. Just to show it is possible
+        setTimeout(() => {
+            viewer.loadModel({
+                title: "Rabbit",
+                subtitle: "BabylonJS",
+                thumbnail: "https://www.babylonjs.com/img/favicon/apple-icon-144x144.png",
+                url: "https://playground.babylonjs.com/scenes/Rabbit.babylon"
+            });
+        }, 20000);
+    });
+});
+```
+
+The `loadModel` function will return a Promise<Scene> that is thenable when the model was fully loaded. Helpful when you want to tell the user the model loaded successfully :
+
+```javascript
+viewer.loadModel({
+    title: "Helmet",
+    subtitle: "BabylonJS",
+    thumbnail: "https://www.babylonjs.com/img/favicon/apple-icon-144x144.png",
+    url: "https://www.babylonjs.com/Assets/DamagedHelmet/glTF/DamagedHelmet.gltf"
+}).then(scene => {
+    console.log("model loaded!");
+}).catch(error => {
+    console.log("error loading the model!", error);
+});
+```
