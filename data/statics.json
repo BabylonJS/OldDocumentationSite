@@ -545,6 +545,11 @@
                     "title": "Handle Events with Observables",
                     "level": 2,
                     "filename": "Observables"
+                },
+                {
+                    "title": "Using promises",
+                    "level": 2,
+                    "filename": "Promises"
                 }
             ]
         },
