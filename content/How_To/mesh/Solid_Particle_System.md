@@ -10,7 +10,7 @@ However it is behavior agnostic. This means it has no emitter, no particle physi
 
 The particles can be built from any BJS existing mesh as a model. Actually, each particle is a copy of some BJS mesh geometry : vertices, indices, uvs.    
 
-The expected usage if this one :  
+The expected usage is this one :  
 * First, create your SPS with `new SolidParticleSystem()`.  
 * Then, add particles in the SPS from a mesh model with `addShape(model, number)`.  
 * Redo this as many times as needed with any model.  

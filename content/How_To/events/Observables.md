@@ -58,52 +58,6 @@ scene.onBeforeRenderObservable.remove(observer);
 ```
 [Playground Example Add and Remove](https://www.babylonjs-playground.com/#UP2O8#1)
 
-## Available Observables
-
-* scene.onDisposeObservable
-* scene.onBeforeRenderObservable
-* scene.onAfterRenderObservable
-* scene.onReadyObservable
-* scene.onBeforeCameraRenderObservable
-* scene.onAfterCameraRenderObservable
-* scene.onNewCameraAddedObservable
-* scene.onCameraRemovedObservable
-* scene.onNewLightAddedObservable
-* scene.onLightRemovedObservable
-* scene.onNewGeometryAddedObservable
-* scene.onGeometryRemovedObservable
-* scene.onNewMeshAddedObservable
-* scene.onMeshRemovedObservable
-* scene.onPrePointerObservable
-* scene.onPointerObservable
-* layer.onDisposeObservable
-* layer.onBeforeRenderObservable
-* layer.onAfterRenderObservable
-* material.onDisposeObservable
-* material.onBindObservable
-* baseTexture.onDisposeObservable
-* renderTargetTexture.onAfterUnbindObservable
-* renderTargetTexture.onBeforeRenderObservable
-* renderTargetTexture.onAfterRenderObservable
-* renderTargetTexture.onClearObservable
-* abstractMesh.onDisposeObservable
-* abstractMesh.onCollideObservable
-* abstractMesh.onCollisionPositionChangeObservable
-* abstractMesh.onAfterWorldMatrixUpdateObservable
-* mesh.onBeforeRenderObservable
-* mesh.onAfterRenderObservable
-* mesh.onBeforeDrawObservable
-* particleSystem.onDisposeObservable
-* postProcess.onActivateObservable
-* postProcess.onSizeChangedObservable
-* postProcess.onApplyObservable
-* postProcess.onBeforeRenderObservable
-* postProcess.onAfterRenderObservable.
-* spriteManager.onDisposeObservable
-
-
-
-
 
 
 
