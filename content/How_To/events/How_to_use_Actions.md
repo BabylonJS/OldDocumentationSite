@@ -179,11 +179,12 @@ You can use direct values like `position` or `diffuse`. But you can also provide
 ## Conditions
 There are three kinds of conditions:
 
-* `BABYLON.ValueCondition.IsEqual(actionManager, target, propertyPath, value, operator)`: true when the given property is equal to the given value.
-* `BABYLON.ValueCondition.IsDifferent(actionManager, target, propertyPath, value, operator)`: true when the given property is not equal to the given value.
-* `BABYLON.ValueCondition.IsGreater(actionManager, target, propertyPath, value, operator)`: true when the given property is greater then the given value.
-* `BABYLON.ValueCondition.IsLesser(actionManager, target, propertyPath, value, operator)`: true when the given property is less than the given value.
-* `BABYLON.PredicateCondition(actionManager, predicate)`: true when the given predicate function returns true
+* `BABYLON.ValueCondition(actionManager, target, propertyPath, value, operator)`: true when the given property and value conform to the operator. The following operators are supported:
+   * `BABYLON.ValueCondition.IsEqual`
+   * `BABYLON.ValueCondition.IsDifferent`
+   * `BABYLON.ValueCondition.IsGreater`
+   * `BABYLON.ValueCondition.IsLesser`
+* `BABYLON.PredicateCondition(actionManager, predicate)`: true when the given predicate function returns true.
 * `BABYLON.StateCondition(actionManager, target, value)`: true when the ```state``` property of the target matches the given value.
 
 ## Experimenting with Actions
