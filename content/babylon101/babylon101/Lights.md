@@ -159,7 +159,7 @@ This is the same as LIGHTMAP_DEFAULT except only the shadows casted from this li
 [Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
 
 ## Projection Texture
-In some cases it would be nice to define the diffuse color of the light (Diffuse gives the basic color to an object) not from only one color but from a shape. Imagine that you are trying to simulate the light effects inside of a cathedral. The light going through the stained glasses will be projected on the ground. This is also true for the light coming from a projector or the light effects you can see in a disco.
+In some cases it would be nice to define the diffuse color of the light (Diffuse gives the basic color to an object) from a texture insted of a constant color. Imagine that you are trying to simulate the light effects inside of a cathedral. The light going through the stained glasses will be projected on the ground. This is also true for the light coming from a projector or the light effects you can see in a disco.
 
 In order to support this feature, you can rely on the `projectionTexture` property of the lights. This is only supported by the **SpotLight** so far.
 
@@ -171,11 +171,13 @@ spotLight.projectionTexture = new BABYLON.Texture("textures/stainedGlass.png", s
 
 [Playground Example](https://www.babylonjs-playground.com/#CQNGRK)
 
-In order to control the projection, you can also rely on the following properties:
+In order to control the projection orientation and range, you can also rely on the following properties:
 
 * ```projectionTextureLightNear``` : near range of the texture projection. If a plane is befor the range in light space, there is no texture projection.
 * ```projectionTextureLightFar``` : far range of the texture projection. If a plane is befor the range in light space, there is no texture projection.
 * ```projectionTextureUpDirection``` : helps defining the light space which is oriented towards the light direction and aligned with the up direction.
+
+The projected information is multiplied against the normal light values to better fit in the Babylon JS lighting. It also only impact the diffuse value. So it might be necessary to change the specular color of the light to better fit with the scene.
 
 ## Next step
 With the use of these powerful lights, your scene is likely really starting to 'shine'. And don't forget that you can animate light positions, directions, colors, and therefore create wonderful 'light shows'. We'll talk about that soon, or have fun discovering how to do it on your own. Maybe you could do light property settings inside the scene's render loop function. Its fun and beautiful!
