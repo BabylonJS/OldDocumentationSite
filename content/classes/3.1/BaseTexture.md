@@ -18,9 +18,10 @@ class [BaseTexture](/classes/3.1/BaseTexture)
 
 
 #### Parameters
- | Name | Type | Description
----|---|---|---
- | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | 
+
+| | Name | Type | Description |
+|---|---|---|---|
+| | scene | Nullable&lt;[Scene](/classes/3.1/Scene)&gt; | |
 
 ## Members
 
@@ -41,18 +42,44 @@ class [BaseTexture](/classes/3.1/BaseTexture)
 
 ### coordinatesIndex : number
 
+Assign an UV channel.
+
 
 ### coordinatesMode : number
+
+How a texture is mapped.
+
+| Value | Type                                | Description |
+| ----- | ----------------------------------- | ----------- |
+| 0     | EXPLICIT_MODE                       |             |
+| 1     | SPHERICAL_MODE                      |             |
+| 2     | PLANAR_MODE                         |             |
+| 3     | CUBIC_MODE                          |             |
+| 4     | PROJECTION_MODE                     |             |
+| 5     | SKYBOX_MODE                         |             |
+| 6     | INVCUBIC_MODE                       |             |
+| 7     | EQUIRECTANGULAR_MODE                |             |
+| 8     | FIXED_EQUIRECTANGULAR_MODE          |             |
+| 9     | FIXED_EQUIRECTANGULAR_MIRRORED_MODE |             |
 
 
 ### wrapU : number
 
+Default is 1.
+
+| Value | Type               | Description |
+| ----- | ------------------ | ----------- |
+| 0     | CLAMP_ADDRESSMODE  |             |
+| 1     | WRAP_ADDRESSMODE   |             |
+| 2     | MIRROR_ADDRESSMODE |             |
 
 ### wrapV : number
 
+Default is 1.
 
 ### wrapR : number
 
+Default is 1.
 
 ### anisotropicFilteringLevel : number
 
@@ -65,6 +92,7 @@ class [BaseTexture](/classes/3.1/BaseTexture)
 
 ### gammaSpace : boolean
 
+True by default.
 
 ### invertZ : boolean
 
@@ -92,6 +120,7 @@ class [BaseTexture](/classes/3.1/BaseTexture)
 An event triggered when the texture is disposed.
 
 @type {BABYLON.[Observable](/classes/3.1/Observable)}
+
 ### onDispose : () =&gt; void
 
 
@@ -150,9 +179,9 @@ An event triggered when the texture is disposed.
 
 
 #### Parameters
- | Name | Type | Description
----|---|---|---
- | ratio | number | 
+| | Name | Type | Description |
+|---|---|---|---|
+| | ratio | number | |
 
 ### delayLoad() &rarr; void
 
@@ -165,9 +194,9 @@ An event triggered when the texture is disposed.
 
 
 #### Parameters
- | Name | Type | Description
----|---|---|---
-optional | faceIndex | number | 
+| | Name | Type | Description |
+|---|---|---|---|
+| optional | faceIndex | number | |
 
 ### releaseInternalTexture() &rarr; void
 
@@ -183,7 +212,7 @@ optional | faceIndex | number |
 
 
 #### Parameters
- | Name | Type | Description
----|---|---|---
- | textures | [BaseTexture](/classes/3.1/BaseTexture)[] | 
- | callback |  | 
+| | Name | Type | Description |
+|---|---|---|---|
+| | textures | [BaseTexture](/classes/3.1/BaseTexture)[] | |
+| | callback |  | |
