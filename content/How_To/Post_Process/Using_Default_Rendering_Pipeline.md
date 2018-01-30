@@ -7,6 +7,7 @@ PG_TITLE: How To Use the Default Rendering Pipeline
 You can find a complete example of this pipeline in our playground : [https://www.babylonjs-playground.com/#5XB8YT#1](https://www.babylonjs-playground.com/#5XB8YT#1)
 
 The default rendering pipeline provides visual improvements to enhance the output of your scene:
+* Depth of field
 * Antialiasing
 * Bloom
 * Image processing including:
@@ -30,6 +31,23 @@ var pipeline = new BABYLON.DefaultRenderingPipeline(
 ```
 
 # Customizing
+
+## Depth of field
+You can turn the depth of field effect on and off with:
+
+```
+pipeline.depthOfFieldEnabled = true;
+```
+
+Furthermore, you can control the settings of the effect with the following parameters:
+```
+pipeline.depthOfField.kernelSize  = 32;
+pipeline.depthOfField.focusDistance  = 2000;
+pipeline.depthOfField.focalLength  = 50;
+pipeline.depthOfField.fStop  = 1.4;
+pipeline.depthOfField.lensSize  = 50;
+```
+[Demo](https://www.babylonjs-playground.com/#DS8HSL#1)
 
 ## Antialiasing
 You can turn the antialiasing (fxaa) effect on and off with:

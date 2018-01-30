@@ -18,7 +18,7 @@ We will get back to _fragmentUrl_, _parameters_ and _samplers_ parameters.
 
 The _ratio_ is used to define the size of the postprocess (0.5 means that your postprocess will have a width = canvas.width * 0.5 and a height = canvas.height * 0.5).
 
-The _camera_ parameter is self-explanatory.
+The _camera_ parameter specifies which camera to attach to. If creating a post process to be managed by a render pipeline this should be set to null. See [Post Process Pipeline](/how_to/how_to_use_postprocessrenderpipeline)
 
 The _samplingMode_ can be one of the following:
 * BABYLON.Texture.NEAREST_SAMPLINGMODE
@@ -299,8 +299,8 @@ postProcess.onApply = function (effect) {
 };
 ```
 
-Please note that you can also use the output of a previous postprocess as the source for your own sampler:
-
+To use the output of a previous post process setTextureFromPostProcess can be used.
+Note: This will set sceneSampler to the output of the post process before postProcess0 NOT the output of postProcess0.
 ```javascript
 effect.setTextureFromPostProcess("sceneSampler", postProcess0);
 ```
