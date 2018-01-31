@@ -25,6 +25,7 @@ When creating the SceneOptimizer you can provide the following parameters:
 - A ```BABYLON.Scene``` which will defines the scene to work on
 - A ```BABYLON.SceneOptimizerOptions``` which will defines the options to use with the SceneOptimizer
 - A ```boolean``` which will defines if priorities must be generated and not read from SceneOptimization property (true by default)
+- A ```boolean``` which will defines if the optimizer will run in improvement mode (see below) (false by default)
 
 The SceneOptimizer object allows you to set several properties:
 - ```optimizations```: This property contains the list of current optimizations
@@ -86,13 +87,13 @@ SceneOptimizer comes with some out-of-the-box optimizations:
 
 * ```BABYLON.TextureOptimization(priority, maximumSize)```: This optimization tries to reduce the size of render textures.
 * ```BABYLON.HardwareScalingOptimization(priority, maximumScale)```: This optimization increments or decrements the value of hardware scaling. This is a really aggressive optimization that could really help if you are GPU bound.
-* ```BABYLON.ShadowsOptimization(priority)```: This optimization disables shadows.
-* ```BABYLON.PostProcessesOptimization(priority)```: This optimization disables post-processes.
-* ```BABYLON.LensFlaresOptimization(priority)```: This optimization disables lens flares.
-* ```BABYLON.ParticlesOptimization(priority)```: This optimization disables particles.
-* ```BABYLON.RenderTargetsOptimization(priority)```: This optimization disables render targets.
+* ```BABYLON.ShadowsOptimization(priority)```: This optimization disables shadows (It will turn them on if the optimizer is in improvement mode (see below)).
+* ```BABYLON.PostProcessesOptimization(priority)```: This optimization disables post-processes (It will turn them on if the optimizer is in improvement mode (see below)).
+* ```BABYLON.LensFlaresOptimization(priority)```: This optimization disables lens flares (It will turn them on if the optimizer is in improvement mode (see below)).
+* ```BABYLON.ParticlesOptimization(priority)```: This optimization disables particles (It will turn them on if the optimizer is in improvement mode (see below)).
+* ```BABYLON.RenderTargetsOptimization(priority)```: This optimization disables render targets (It will turn them on if the optimizer is in improvement mode (see below)).
 * ```BABYLON.CustomOptimization(priority)```: This optimization will call two callbacks when required: 
- * ```onApply(scene)```: A custom callback used to apply custom optimizations. It must return true if all optimizations where applied
+ * ```onApply(scene, optimizer)```: A custom callback used to apply custom optimizations. It must return true if all optimizations where applied
  * ```onGetDescription()```: This callback must return a string describing the action of the optimization
 
 Based on these optimizations, the basic sets are configured like this:
@@ -163,6 +164,10 @@ function mySceneOptimization(priority) {
   };
 }
 ```
+
+## Improvement mode
+When created in improvement mode (4th parameter of the constructor), the ScenOptimizer object will run all optimization while the current FPS is above the target frame rate. So for instance if, the target FPS is 60, the optimizer will execute all optimizations in its list while the FPS remains at 60. It is a good tool to provide rendering improvements to a given scene.
+Please note that when in improvement mode, the optimizations will adapt their behavior automatically (for instance, the ShadowsOptimization will turn shadows on instead of off).
 
 ## Demo
 A demo can be found here: https://www.babylonjs-playground.com/#3Q8PCL
