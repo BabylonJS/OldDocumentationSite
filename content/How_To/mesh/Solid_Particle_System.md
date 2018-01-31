@@ -110,13 +110,14 @@ The particle properties that can be set are :
 * **`uvs`** : Vector(4) default = (0,0, 1,1)
 * **`isVisible`** : boolean default = true
 * **`alive`** : boolean  default = true
+* **`translateFromPivot`** : boolean default = false
 
 If you set a particle rotation quaternion, its rotation property will then be ignored.    
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.   
 
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
-The particle `pivot` vector is the translation applied to the particle in its local space before it is rotated. The rotation is always computed around the local space origin. This property is used like a translation matrix that you would apply to some mesh pivot matrix.  
-Example : http://playground.babylonjs.com/#LXXL6Y   
+The particle `pivot` vector is the translation applied to the particle in its local space just before it is rotated. The rotation is always computed around the local space origin. This property is used like a translation matrix that you would apply to some mesh pivot matrix. By default, the particle is translated, then rotated, then translated back to its original location unless you set the particle property `.translateFromPivot` to `true` (default `false`). In this case, it's simply translated, then rotated and let at the translated location.  
+Example : http://playground.babylonjs.com/#LXXL6Y#1     
 1000 tetrahedron satellites orbiting around 1000 rotating boxes.  
 Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.      
 
