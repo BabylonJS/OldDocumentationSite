@@ -29,7 +29,7 @@ videoDome.fovMultiplier = newValue;
 
 As a warning, the further the value gets from 1 the more distortion will be visible. Higher resolutions on the video dome help reduce, but not eliminate, this.
 
-[Playground Example of a VideoDome](https://www.babylonjs-playground.com/#1E9JQ8#2)
+[Playground Example of a VideoDome](https://www.babylonjs-playground.com/#1E9JQ8#4)
 
 # Further Reading
 

@@ -10,7 +10,7 @@ TAGS:
 Display a 360 degree video on an approximately spherical surface, useful for VR applications or skyboxes.
 As a subclass of [Node](/classes/3.1/Node), this allow parenting to the camera or multiple videos with different locations in the scene.
 This class achieves its effect with a [VideoTexture](/classes/3.1/VideoTexture) and a correctly configured [BackgroundMaterial](/classes/3.1/BackgroundMaterial) on an inverted sphere.
-Potential additions to this helper includenon-infinite distance rendering effects for VR.
+Potential additions to this helper include non-infinite distance rendering effects for VR.
 
 
 
