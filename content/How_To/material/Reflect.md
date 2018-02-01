@@ -47,7 +47,7 @@ Using different _coordinatesMode_ with different shapes will reflect the skybox 
 [Playground Example of Ground and PLANAR_MODE](http://www.babylonjs-playground.com/#UU7RQ#5)  
 [Playground Example of Sphere and PLANAR_MODE](http://www.babylonjs-playground.com/#UU7RQ#4)
 
-#### USing local cubemap mode
+#### Using local cubemap mode
 
 Starting with Babylon.js v3.2, you can now use local cubemap mode when using cubemaps (with CUBIC_MODE).
 Please read [this article](https://community.arm.com/graphics/b/blog/posts/reflections-based-on-local-cubemaps-in-unity), to get a precise understanding of what local cubemaps are.
@@ -88,7 +88,7 @@ Not only can a cube texture can be applied to a sphere so can a plane single ima
 
 The above image was applied to each of four spheres, one as a diffuse texture and the other three with _reflectionTexture_ but different _coordinatesMode_. The resuls are below.
 
-![Reflecion on Spheres](/img/how_to/Materials/modes.png)
+![Reflection on Spheres](/img/how_to/Materials/modes.png)
 
 |   |   |
 |-----|-----|
