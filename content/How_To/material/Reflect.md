@@ -61,7 +61,7 @@ material.reflectionTexture.boundingBoxSize = new BABYLON.Vector3(100, 100, 100);
 
 You can also specify a property named `boundingBoxPosition` if you want to define the center of the bounding box used for the cubemap (The place where the camera was set when generating the cubemap).
 
-You can find an demo of local cubemaps here: https://www.babylonjs-playground.com/#RNASML
+You can find an demo of local cubemaps here: https://www.babylonjs-playground.com/#RNASML#2
 
 ### HDRCubeTexture
 High Dynamic Range (HDR) images are panoramic images that cover an entire field of vision.
