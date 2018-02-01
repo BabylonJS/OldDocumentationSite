@@ -2,6 +2,10 @@
 PG_TITLE: How To Use a Pivot
 ---
 
+NOTE: BREAKING CHANGES FROM V3.2 THIS PAGE IS FOR VERSIONS PRIOR TO 3.2
+PLAYGROUNDS ON THIS PAGE WILL NO LONGER GIVE THE EXPECTED RESULTS (they are kept for code reference for those using earlier versions);  
+[Page for v3.2+](/how_to/pivots3.2)
+
 # A Pivot
 
 A pivot in Babylon.js is the center of transformation for a mesh, that is the point used as the center of rotation or the center of enlargement. When a mesh is created the center of transformation is always at its local origin. To illustrate how to set and use a pivot the diagrams will use a small red box to show the pivot point, a grey box shows the intially created box and the green box is a copy of the grey one.
@@ -147,6 +151,9 @@ The following sequence of playgrounds shows setting the first pivot point, rotat
 
 ## More Advanced - L3
 
-[How To Rotate Around an Axis about a Point](/How_To/Pivot)
+[Using a Pivot V3.2+](/How_To/Pivots3.2)  
+
+[How To Rotate Around an Axis about a Point V3.2+](/How_To/Pivot3.2)  
+[How To Rotate Around an Axis about a Point before V3.2](/How_To/Pivot)
 
 
