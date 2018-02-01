@@ -272,12 +272,22 @@
                     "filename": "Rotate"
                 },
                 {
-                    "title": "Set and Use a Pivot",
+                    "title": "Set and Use a Pivot V3.2+",
+                    "level": 3,
+                    "filename": "Pivots3.2"
+                },
+                {
+                    "title": "Set and Use a Pivot - Legacy",
                     "level": 3,
                     "filename": "Pivots"
                 },
                 {
-                    "title": "Rotate Around an Axis About a Point",
+                    "title": "Rotate Around an Axis About a Point V3.2+",
+                    "level": 3,
+                    "filename": "Pivot3.2"
+                },
+                {
+                    "title": "Rotate Around an Axis About a Point - Legacy",
                     "level": 3,
                     "filename": "Pivot"
                 },

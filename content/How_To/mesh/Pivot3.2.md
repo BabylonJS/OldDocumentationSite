@@ -2,9 +2,8 @@
 PG_TITLE: Rotation Around an Axis About a Center of Rotation
 ---
 
-NOTE: BREAKING CHANGES FROM V3.2 PART OF THIS PAGE IS FOR VERSIONS PRIOR TO 3.2
-  
-[Page for v3.2+](/how_to/pivot3.2)
+NOTE: BREAKING CHANGES FROM V3.2 PART OF THIS PAGE IS FOR VERSIONS FROM 3.2  
+[Page for earlier versions](/how_to/pivot)
 
 # How To Rotate Around an Axis About a Point
 
@@ -65,16 +64,13 @@ sphere.rotate(axis, angle, BABYLON.Space.WORLD);
 
 ## How To Use a Pivot as a Center of Rotation
 
-BREAKING CHANGES IN THIS SECTION
-PLAYGROUNDS IN THIS SECTION WILL NO LONGER GIVE THE EXPECTED RESULTS (they are kept for code reference for those using earlier versions);
-
-As described in [How to Set a Pivot](/How_To/Pivots#how-to-set-mesh-and-pivot-position-at-the-same-time) set the pivot and the pilot in their wanted positions by placing the pilot where the pivot is going to be and setting the pivot translation using the displacement of the pilot position from the pivot position.
+THIS SECTION RELATES TO V3.2+
 
 ```javascript
 var CoR_At = new BABYLON.Vector3(1, 3, 2);
 var pilotStart = new BABYLON.Vector3(3, 6, 6);
 
-pilot.position = CoR_At; 
+pilot.position = pilotStart; 
 
 var pivotTranslate = pilotStart.subtract(CoR_At);
 pilot.setPivotMatrix(BABYLON.Matrix.Translation(pivotTranslate.x, pivotTranslate.y, pivotTranslate.z));
@@ -87,13 +83,12 @@ scene.registerAfterRender(function() {
     pilot.rotate(axis, angle, BABYLON.Space.LOCAL);  
 });
 ```
-[Playground Example - Rotating Mesh with Pivot](https://www.babylonjs-playground.com/#C12LH3)
-
-When looking at the next two playgrounds remember that the pivot has become the local origin for the pilot and setting the position of a mesh actually sets the local orign of the mesh. Hence moving the pivot for the pilot is done using _pilot.position_.  
-[Playground Example - Rotating Mesh Moving Pivot along Axis](https://www.babylonjs-playground.com/#C12LH3#1)
+[Playground Example - Rotating Mesh with Pivot](https://www.babylonjs-playground.com/#C12LH3#7)
+  
+[Playground Example - Rotating Mesh Moving Pivot along Axis](https://www.babylonjs-playground.com/#C12LH3#8)
 
 Notice that as the pivot is moved the axis line moves with the pivot, though the axis direction remains the same.  
-[Playground Example - Rotating Mesh Moving Pivot](https://www.babylonjs-playground.com/#C12LH3#2)
+[Playground Example - Rotating Mesh Moving Pivot](https://www.babylonjs-playground.com/#C12LH3#9)
 
 ## How to Use a Parent as a Pivot
 
@@ -123,7 +118,7 @@ Done this way any movement of the pivot is done by moving the parent mesh repres
 [Using a Pivot V3.2+](/How_To/Pivots3.2)  
 [Using a Pivot before V3.2](/How_To/Pivots) 
 
-[How To Rotate Around an Axis about a Point V3.2+](/How_To/Pivot3.2)
+[How To Rotate Around an Axis about a Point before V3.2](/How_To/Pivot)
 
 
 
