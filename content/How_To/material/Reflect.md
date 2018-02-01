@@ -38,7 +38,7 @@ box.material = boxMaterial;
 
 [Playground Example of Different Faces](http://www.babylonjs-playground.com/#UU7RQ#2)
 
-From BS 2.4 it is also possible to use High Dynamic Range Cube Textures 
+From Babylon.js v2.4 it is also possible to use High Dynamic Range Cube Textures 
 
 #### Reflecting on Skybox and a shape
 Using different _coordinatesMode_ with different shapes will reflect the skybox in the shape
@@ -46,6 +46,22 @@ Using different _coordinatesMode_ with different shapes will reflect the skybox 
 [Playground Example of Box and CUBIC_MODE](http://www.babylonjs-playground.com/#UU7RQ#3)  
 [Playground Example of Ground and PLANAR_MODE](http://www.babylonjs-playground.com/#UU7RQ#5)  
 [Playground Example of Sphere and PLANAR_MODE](http://www.babylonjs-playground.com/#UU7RQ#4)
+
+#### USing local cubemap mode
+
+Starting with Babylon.js v3.2, you can now use local cubemap mode when using cubemaps (with CUBIC_MODE).
+Please read [this article](https://community.arm.com/graphics/b/blog/posts/reflections-based-on-local-cubemaps-in-unity), to get a precise understanding of what local cubemaps are.
+
+CubeTexture and RenderTargetTexture (when in cube mode, like when used with [probes](/how_to/how_to_use_reflection_probes) for instance) can be switched to local mode by setting  property named `boundingBoxSize` (by default cubemaps are in infinite mode):
+
+```
+material.reflectionTexture = new BABYLON.CubeTexture("/textures/TropicalSunnyDay", scene);
+material.reflectionTexture.boundingBoxSize = new BABYLON.Vector3(100, 100, 100);
+```    
+
+You can also specify a property named `boundingBoxPosition` if you want to define the center of the bounding box used for the cubemap (The place where the camera was set when generating the cubemap).
+
+You can find an demo of local cubemaps here: https://www.babylonjs-playground.com/#RNASML
 
 ### HDRCubeTexture
 High Dynamic Range (HDR) images are panoramic images that cover an entire field of vision.
