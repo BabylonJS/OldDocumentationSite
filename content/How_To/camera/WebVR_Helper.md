@@ -83,6 +83,10 @@ vrHelper.teleportationEnabled = true;
 vrHelper.teleportationEnabled = false;
 ```
 
+To customize the teleportation target mesh the following property can be set to the mesh you'd like to use:
+```javascript
+vrHelper.teleportationTarget = BABYLON.Mesh.CreateSphere("sphere1", 4, 0.1, scene);
+```
 
 
 ## Accessing cameras
@@ -195,6 +199,11 @@ vrHelper.meshSelectionPredicate = (mesh) => {
     }
     return false;
 };
+```
+
+The gaze tracker can be customized by setting the gazeTrackerMesh. [Example](https://www.babylonjs-playground.com/#ZHYP5K)
+```javascript
+vrHelper.gazeTrackerMesh = BABYLON.Mesh.CreateSphere("sphere1", 4, 0.1, scene);
 ```
 
 ## Examples
