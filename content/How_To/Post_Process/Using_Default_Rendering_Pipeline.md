@@ -39,8 +39,7 @@ You can turn the depth of field effect on and off with:
 pipeline.depthOfFieldEnabled = true;
 ```
 
-Set the level of blur with:
-You can turn the depth of field effect on and off with:
+Set the strength of blur with (Higher may effect performance):
 
 ```
 pipeline.depthOfFieldBlurLevel = BABYLON.DepthOfFieldEffectBlurLevel.Low;
