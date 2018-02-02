@@ -89,4 +89,3 @@ gl.addIncludedOnlyMesh(mesh)
 Using the function will automatically switch mode and only render the included meshes.
 
 [**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#7)
-```
