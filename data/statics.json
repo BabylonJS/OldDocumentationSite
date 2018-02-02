@@ -222,6 +222,11 @@
                     "filename": "Highlight_Layer"
                 },
                 {
+                    "title": "Make Mesh Glow",
+                    "level": 2,
+                    "filename": "Glow_Layer"
+                },
+                {
                     "title": "Use Instances",
                     "level": 3,
                     "filename": "How_to_use_Instances"
