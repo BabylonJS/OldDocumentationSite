@@ -39,15 +39,20 @@ You can turn the depth of field effect on and off with:
 pipeline.depthOfFieldEnabled = true;
 ```
 
+Set the strength of blur with (Higher may affect performance):
+
+```
+pipeline.depthOfFieldBlurLevel = BABYLON.DepthOfFieldEffectBlurLevel.Low;
+```
+
 Furthermore, you can control the settings of the effect with the following parameters:
 ```
-pipeline.depthOfField.kernelSize  = 32;
 pipeline.depthOfField.focusDistance  = 2000;
 pipeline.depthOfField.focalLength  = 50;
 pipeline.depthOfField.fStop  = 1.4;
 pipeline.depthOfField.lensSize  = 50;
 ```
-[Demo](https://www.babylonjs-playground.com/#DS8HSL#1)
+[Demo](https://www.babylonjs-playground.com/index.html#JA1ND3#56)
 
 ## Antialiasing
 You can turn the antialiasing (fxaa) effect on and off with:
@@ -63,7 +68,7 @@ You can turn the bloom effect on and off with:
 pipeline.bloomEnabled = true;
 ```
 
-Furthermore, you can control the impact of bloomin the final compositing with:
+Furthermore, you can control the impact of bloom in the final compositing with:
 ```
 pipeline.bloomWeight = 0.3;
 ```
