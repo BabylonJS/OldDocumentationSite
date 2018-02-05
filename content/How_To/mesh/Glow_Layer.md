@@ -50,6 +50,24 @@ var gl = new BABYLON.GlowLayer("glow", scene, {
 
 [**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#3)
 
+### Controlling glow color per mesh
+By default the glow layer will use emissive texture and emissive color to generate the glow color of every active mesh.
+But you can override this behavior with the following callbacks:
+
+* customEmissiveColorSelector: (mesh: Mesh, subMesh: SubMesh, material: Material, result: Color4) => void: Callback used to let the user override the color selection on a per mesh basis
+* customEmissiveTextureSelector(mesh: Mesh, subMesh: SubMesh, material: Material) => Texture: Callback used to let the user override the texture selection on a per mesh basis
+
+```javascript
+var gl = new BABYLON.GlowLayer("glow", scene);
+gl.customEmissiveColorSelector = function(mesh, subMesh, material, result) {
+  if (mesh.name === "lightsaber") {
+     result.set(1, 0, 1, 1);
+  } else {
+     result.set(0, 0, 0, 0);
+  }
+}
+```
+
 ## Anti Aliasing
 
 Depending on your setup, some aliasing artifacts might appear in the glow. To prevent taht to happen on WebGL 2 only devices, you can specify the number of samples to use for MSAA on the main render target.
