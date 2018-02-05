@@ -60,11 +60,11 @@ But you can override this behavior with the following callbacks:
 ```javascript
 var gl = new BABYLON.GlowLayer("glow", scene);
 gl.customEmissiveColorSelector = function(mesh, subMesh, material, result) {
-  if (mesh.name === "lightsaber") {
-     result.set(1, 0, 1, 1);
-  } else {
-     result.set(0, 0, 0, 0);
-  }
+    if (mesh.name === "lightsaber") {
+        result.set(1, 0, 1, 1);
+    } else {
+        result.set(0, 0, 0, 0);
+    }
 }
 ```
 
