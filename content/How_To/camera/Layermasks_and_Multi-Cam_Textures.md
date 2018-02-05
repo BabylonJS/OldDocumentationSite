@@ -70,8 +70,8 @@ function addGunSight(scene){
     scene.activeCameras.push(secondCamera);
 
     meshes = [];
-    var h = window.innerHeight / 2;
-    var w = window.innerWidth / 2;
+    var h = 250;
+    var w = 250;
 
     var y = BABYLON.Mesh.CreateBox("y", h * .2, scene);
     y.scaling = new BABYLON.Vector3(0.05, 1, 1);
@@ -118,5 +118,5 @@ function addGunSight(scene){
 ```
 
 See it in action:  
- https://www.babylonjs-playground.com/index.html#2GXKNW#18
+ https://www.babylonjs-playground.com/index.html#2GXKNW#22
 
