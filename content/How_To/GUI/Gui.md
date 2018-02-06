@@ -216,6 +216,8 @@ textWrapping|boolean|false|Can be set to true to enable text wrapping.
 resizeToFit|boolean|false|Can be set to true to enable resize to fit.
 textHorizontalAlignment|number|BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER|Can be set to left, right or center
 textVerticalAlignment|number|BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER|Can be set to top, bottom or center
+outlineWidth|number|0|Text outline size, in pixels.
+outlineColor|string|"white"|Text outline color.
 
 The control currently provides 1 observable:
 
