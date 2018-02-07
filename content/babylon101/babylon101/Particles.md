@@ -156,6 +156,9 @@ And naturally stop it:
 particleSystem.stop();
 ```
 
+Please note that stopping a particle system will prevent the creation of new particles but the living ones will continue to be updated. If you want to reset a system to an empty state, you will also have to call `particleSystem.reset()`
+
+
 Feel free to play with this scene... [**at our online playground**]( https://www.babylonjs-playground.com/?12).
 
 ### customEffect (the fourth parameter in the constructor)
