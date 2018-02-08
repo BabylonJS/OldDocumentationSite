@@ -204,10 +204,10 @@ This uses internally a lot of approximation like Tan(theta) is almost theta for 
 Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/babylon101/shadows);
 
 ## Notes
-You can find below a few notes comments which would be helpful during the creation of your scene.
+You can find below a few notes which could be helpful during the creation of your scenes.
 
 ### Environment Irradiance
-A big part of the lighting in PBR is assured by the environment texture. This provides two kind of illumination, **radiance which could be considered alike reflection** and **irrandiance which could be thought as the diffuse component of the Image Based Lighting**.
+A big part of the lighting in PBR is assured by the environment texture. This provides two kinds of light contributions, **radiance which could be considered alike reflection** and **irrandiance which could be thought as the diffuse component of the Image Based Lighting**.
 
 In case you are creating a model **rough** and **not metallic** (in metallic workflow) or **not specular** (in specular glossiness mode), most of the illumination will be provided by both the analyctical lights and the environment texture.
 
