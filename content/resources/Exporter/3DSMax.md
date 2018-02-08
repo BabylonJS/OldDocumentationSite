@@ -191,6 +191,17 @@ The object position will be defined with your object pivot position. In the imag
 
 Using a negative scale will reverse the normal of your objects. These objects will appear correctly in 3DSMax, but incorrectly in a Babylon.js application.
 
+## Mirror by Transform
+
+Using mirror tool affecting __Transform__ will make mirrored object appear correctly in 3DSMax, but incorrectly in a Babylon.js application. Consider using mirror tool affecting __Geometry__ instead.
+
+If mirror by __Transform__ is what you need (or what you got), you can fix this issue doing the following after mirroring:
+- apply a ResetXForm
+- make object editable: add an Edit modifier or collapse Xform modifier
+- flip normals
+
+Be aware animations for this object will likely be incorrect after that.
+
 ## Animations
 
 Cameras, lights and meshes have custom properties (Right-click and select "Babylon properties" menu) to automatically launch animations at startup.
