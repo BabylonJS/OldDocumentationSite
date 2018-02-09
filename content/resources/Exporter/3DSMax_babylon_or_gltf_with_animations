@@ -1,0 +1,23 @@
+
+
+Steps to export any 3D model with animation to .babylon / .gltf format
+
+1.Install 3ds Max 2017
+2.Add Babylon plugin to 3ds MAX 2017 
+        https://doc.babylonjs.com/resources/3dsmax
+3.Open FBX / DAE or any other 3D model with animations in 3ds Max
+4.Check / Apply texture to model
+5.Go to “Time Configuration” window and change “Start Time:”, “End Time” under “Animation” section properly.
+
+![time_configuration_window](https://user-images.githubusercontent.com/714971/36024243-296ae318-0db5-11e8-91c3-53ba8bfb849e.jpg)
+
+6.Right click on the imported 3D model. Navigate “Babylon... > Babylon Properties” and open the “Babylon.js Object Properties” window as below.
+![3ds_babylon_plugin_properties_window](https://user-images.githubusercontent.com/714971/36027052-a4bc1816-0dbf-11e8-8fc7-cc8364ece708.jpg)
+
+7.Update the “From:”, “To:” fields under “Animations” section with expected animation frames to be exported
+8.Open “Babylon Exporter” window from menu “Babylon > Babylon File Exporter ...” as below.
+
+![babylon_exporter](https://user-images.githubusercontent.com/714971/36027124-e9cb5dc2-0dbf-11e8-8a61-4b6909bd5377.jpg)
+
+9.Select checkbox ”Copy textures to output” and export.
+10.Check the exported model with BabylonJS sandbox http://sandbox.babylonjs.com/, animations and model will get exported properly.
