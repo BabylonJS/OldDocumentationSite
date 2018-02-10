@@ -202,3 +202,23 @@ This uses internally a lot of approximation like Tan(theta) is almost theta for 
 
 ## Shadows (as the standard material)
 Shadows are fully equivalent to the Standard material. All the documentation can be found here: [Shadows](/babylon101/shadows);
+
+## Notes
+You can find below a few notes which could be helpful during the creation of your scenes.
+
+### Environment Irradiance
+A big part of the lighting in PBR is assured by the environment texture. This provides two kinds of light contributions, **radiance which could be considered alike reflection** and **irrandiance which could be thought as the diffuse component of the Image Based Lighting**.
+
+In case you are creating a model **rough** and **not metallic** (in metallic workflow) or **not specular** (in specular glossiness mode), most of the illumination will be provided by both the analyctical lights and the environment texture.
+
+In Babylon JS in order to **optimize** the computation of the **irradiance**, it is computed in the **vertex shader** and interpolated in the fragment. Unfortunately, this **prevents us to rely on the normal map** to realize the computation and then might **introduce artifacts** by not emphasizing the bumpiness of the surface. It is most of the time acceptable but with **rough none reflective material** it changes a lot the visual result.
+
+You can see below on the left on rough none reflective model in the default configuration and on the right a model with ```forceIrradianceInFragment``` enabled.
+
+![pbrForceIrradianceInFragment](/img/how_to/Environment/pbrForceIrradianceInFragment.jpg)
+
+In order to force the computation of the irradiance in fragment, one can set to true the according parameter:
+
+```javascript
+    pbr.forceIrradianceInFragment = true;
+```
