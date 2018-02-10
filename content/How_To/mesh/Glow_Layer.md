@@ -70,7 +70,7 @@ gl.customEmissiveColorSelector = function(mesh, subMesh, material, result) {
 
 ## Anti Aliasing
 
-Depending on your setup, some aliasing artifacts might appear in the glow. To prevent taht to happen on WebGL 2 only devices, you can specify the number of samples to use for MSAA on the main render target.
+Depending on your setup, some aliasing artifacts might appear in the glow. To prevent this behavior, you can specify the number of samples to use for MSAA on the main render target. Please note that it will only work on WebGL2 capable browsers.
 
 ```javascript
 var gl = new BABYLON.GlowLayer("glow", scene, { 
@@ -82,7 +82,7 @@ var gl = new BABYLON.GlowLayer("glow", scene, {
 
 ## Mesh Management
 
-As from time to time it might be interesting to exclude or only include some meshes from the scene. Some helper functions have been introduced.
+Some helper functions have been introduced to exclude or only include some meshes from the scene. 
 
 ### Excluded Mesh
 
