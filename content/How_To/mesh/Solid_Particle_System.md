@@ -111,6 +111,7 @@ The particle properties that can be set are :
 * **`isVisible`** : boolean default = true
 * **`alive`** : boolean  default = true
 * **`translateFromPivot`** : boolean default = false
+* **`parentId`** : integer, default = null
 
 If you set a particle rotation quaternion, its rotation property will then be ignored.    
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.   
@@ -393,6 +394,32 @@ Color and UVs example :  https://www.babylonjs-playground.com/#WCDZS#8
 Texture with alpha :  https://www.babylonjs-playground.com/#WCDZS#9  
 
 <br/>
+
+### Particle parenting  
+
+Each particle can be given another particle as a parent.  
+The parent is required to be created before the current particle, this means the parent has to have a lower index Id (`particle.idx`) than the current particle. So the first particle in the pool (`idx = 0`) can't have a parent. To give a parent to a particle, just set its property `.parentId` to the parent index Id value.  
+```javascript
+if (particle.idx > 0) {
+    particle.parentId = particle.idx - 1; // the previous particle becomes the parent of the current one
+}
+```
+To un-parent a particle, just set `.parentId` back to `null` what is the default value.  
+When a particle has got a parent, its position and rotation are then expressed in its parent local space.  
+```javascript
+if (particle.idx > 0) {
+    particle.parentId = particle.idx - 1; // the previous particle becomes the parent of the current one
+    // the particle position and rotation are expressed in the previous particle space, this one being already 
+    // rotated and translated from the yet previous particle. Etc.
+    particle.rotation.z = 0.01;
+    particle.position.x = 1.0;
+}
+```
+Examples :  
+A green box rotating around its pivot parented to a sliding red box : https://playground.babylonjs.com/#KS9V2E  
+2000 boxes parented per 20 segment stems : https://playground.babylonjs.com/#V7V1RS  
+<br/>
+
 ### Update Each Particle Shape
 * `SPS.updateParticleVertex()` _usage_ :  
 It happens before particle scaling, rotation and translation and it allows to update the vertex coordinates of each particle.   
