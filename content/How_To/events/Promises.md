@@ -13,11 +13,36 @@ In a nutshell, the basic idea is to rely on promises instead of having to deal w
 Regarding portability, Babylon.js provides a custom polyfill for browsers where promises are not supported so you can blindly use them.
 
 ## Examples
+Basic usage - [Playground](https://playground.babylonjs.com/#JA1ND3#62)
+```javascript
+BABYLON.SceneLoader.LoadAssetContainerAsync("https://playground.babylonjs.com/scenes/", "skull.babylon", scene)
+.then((container)=>{
+    container.addAllToScene();
+});
+```
 
+Chaining multiple promises together
+```javascript
+var scene = new BABYLON.Scene(engine);
+var helper = scene.createDefaultVRExperience();
+helper.webVRCamera.useStandingMatrixAsync().then((supported)=>{
+    console.log(supported);
+    return BABYLON.SceneLoader.AppendAsync("https://playground.babylonjs.com/scenes/", "skull.babylon", scene);
+}).then(()=>{
+    //added to scene
+});
+```
 
-
-
-
+Using async/await with promises. (Not supported in all browsers)
+```javascript
+var main = async ()=>{
+    var scene = new BABYLON.Scene(engine);
+    var helper = scene.createDefaultVRExperience();
+    var supported = await helper.webVRCamera.useStandingMatrixAsync();
+    console.log(supported);
+    await BABYLON.SceneLoader.AppendAsync("https://playground.babylonjs.com/scenes/", "skull.babylon", scene);
+}
+```
 
 
 
