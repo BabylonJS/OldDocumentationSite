@@ -1,6 +1,6 @@
 
 
-Steps to export any 3D model with animation to .babylon / .gltf format
+# How to export 3D model with animation to .babylon / .gltf format
 
 1.Install 3ds Max 2017
 
