@@ -1,4 +1,6 @@
-# Load from any file type (GLTF, OBJ, STL, etc.)
+# How to Use SceneLoader
+
+## Basic Usage
 
 To load a file of a given type, Babylon must first have a reference to the plugin for that file type.
 
@@ -17,12 +19,14 @@ BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
 });
 ```
 [Demo](http://www.babylonjs-playground.com/#WGZLGJ)
+
 SceneLoader.Load - Loads all babylon assets from the file and creates a new scene
 ```javascript
 BABYLON.SceneLoader.Load("/assets/", "batman.obj", engine, function (newScene) { 
    // ...
 });
 ```
+
 SceneLoader.ImportMesh - Loads the meshes from the file and appends them to the scene
 ```javascript
 // The first parameter can be set to null to load all meshes and skeletons
@@ -32,6 +36,7 @@ BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene,
 });
 ```
 [Demo](http://www.babylonjs-playground.com/#JUKXQD)
+
 SceneLoader.LoadAssetContainer - Loads all babylon assets from the file and does not append them to the scene
 ```javascript
 BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (container) {
@@ -44,6 +49,16 @@ BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (conta
 });
 ```
 [Demo](http://www.babylonjs-playground.com/#JA1ND3#48)
+
+There are also `Async` versions of these functions that return promises:
+```javascript
+BABYLON.SceneLoader.AppendAsync("./", "duck.gltf", scene).then(function (scene) {
+    // do something with the scene
+});
+```
+
+See [How to Use Promises](/How_To/Promises) to learn more about using promises.
+
 ## Advanced Usage
 
 The SceneLoader returns the glTF loader instance to enable setting properties and calling methods.
@@ -61,4 +76,4 @@ var loader = BABYLON.SceneLoader.Load("./", "duck.gltf", engine, function (scene
 
 ## Loading multiple assets
 For assistance when load multiple assets the AssetsManager class can be used.
-See [how to use AssetManager](/How_To/How_to_use_AssetsManager)
+See [Load Files with Assets Manager](/How_To/How_to_use_AssetsManager)
