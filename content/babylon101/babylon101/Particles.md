@@ -295,11 +295,11 @@ particleSystem.spriteCellWidth = 64;
 
 Start from Babylonjs 3.2 you will be able to use different shapes for the emitted particles.
 
-1)Box Emitter.
+* Box Emitter.
 
-2)Sphere Emitter.
+* Sphere Emitter.
 
-3)Cone Emitter.
+* Cone Emitter.
 
 ### New property particleEmitterType
 
@@ -358,6 +358,37 @@ To create a cone emitter just call method createConeEmitter and this method take
 ```
 
 Check the playground [Sample Demo](https://www.babylonjs-playground.com/#6P6U4G#3)
+
+## GPU particles
+
+Starting with Babylon.js v3.2, you can leverage a new WebGL2 feature to drastically boost the performance of particles: The transform feedback buffer.
+This new API allows babylon.js to entirely rely on the GPU to animate and render the particles. Regular particles uses the CPU for animation and the GPU for the rendering.
+
+With GPU particles, everything is offloaded to the GPU.
+
+Unfortunately this feature is only available when WebGL2 is available. You can use `BABYLON.GPUParticleSystem.IsSupported` to detect if GPU particles can be used.
+
+If they are supported, GPU particles can almost be used like regular particles:
+
+```
+var particleSystem = new BABYLON.GPUParticleSystem("particles", { capacity:1000000 }, scene);
+```
+
+As CPU is no more involved, you can go crazy with active particles (1000000 in this example). Also, you can use `particleSystem.activeParticleCount` to define the number of active particle count if you want to limit the GPU usage.
+
+### Random texture
+It is a shame but there is no good way to get random numbers when running on the GPU. To fill this gap, Babylon.js will create a texture filled with thousands of random values. These values will be read by the particle update shader to animate the particles.
+By default the biggest supported texture size is used (16K). You may want to reduce the size of this texture by initializing the system like this:
+
+```
+var particleSystem = new BABYLON.GPUParticleSystem("particles", { capacity:1000000, randomTextureSize: 4096 }, scene);
+```
+
+### Fallback
+As the GPUParticleSystem and the ParticleSystem share almost all their API, it is easy to switch from one to another if WebGL2 is not supported.
+But keep in mind that the CPU cannot animate as much particles as the GPU can. So you will probably have to reduce the capacity of your system in not using the GPU.
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.

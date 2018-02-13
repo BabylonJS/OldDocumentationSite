@@ -81,9 +81,7 @@ Again the size parameter is very versatile and can be a simple number or an obje
 
 ### Examples of Results
 
-Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using CreateScreenshot
-
-Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using CreateScreenshot
+Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using `CreateScreenshotUsingRenderTarget`
 
 ![Actual Screen](/img/how_to/scene/shss.png)  
 View of Part of Screen Showing Canvas Used
