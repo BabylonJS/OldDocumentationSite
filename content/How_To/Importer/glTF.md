@@ -2,15 +2,11 @@
 PG_TITLE: glTF
 ---
 
-# glTF File Import
-
-[Demo](http://www.babylonjs-playground.com/#WGZLGJ)
-
-## Setup
+# Setup
 
 The glTF loader files are located [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release/loaders).
 
-### Full Version
+## Full Version
 
 This loader supports both glTF 1.0 and 2.0 and will use the correct loader based on the glTF version string.
 
@@ -19,7 +15,7 @@ This loader supports both glTF 1.0 and 2.0 and will use the correct loader based
 <script src="babylon.glTFFileLoader.js"></script>
 ```
 
-### Version 1 Only
+## Version 1 Only
 
 This loader supports only glTF 1.0 and will fail to load glTF 2.0.
 
@@ -28,7 +24,7 @@ This loader supports only glTF 1.0 and will fail to load glTF 2.0.
 <script src="babylon.glTF1FileLoader.js"></script>
 ```
 
-### Version 2 Only
+## Version 2 Only
 
 This loader supports only glTF 2.0 and will fail to load glTF 1.0.
 
@@ -37,18 +33,18 @@ This loader supports only glTF 2.0 and will fail to load glTF 1.0.
 <script src="babylon.glTF2FileLoader.js"></script>
 ```
 
-## Loading the Scene
+# Loading the Scene
 
 Use one of the static function on the `SceneLoader` to load a glTF asset.
-See [how to load from any file type](/how_to/Load_From_Any_File_Type).
+See [Load from any file type](/how_to/Load_From_Any_File_Type).
 
+[Demo](http://www.babylonjs-playground.com/#WGZLGJ)
 
+## Common Properties
 
-### Common Properties
+### onParsed
 
-**onParsed**
-
-Raised when the asset has been parsed. The `data.json` property stores the glTF JSON. The `data.bin` property stores the BIN chunk from a glTF binary or null if the input is not a glTF binary.
+Raised when the asset has been parsed. The `data.json` property stores the glTF JSON. The `data.bin` property stores the BIN chunk from a glTF binary or `null` if the input is not a glTF binary.
 
 ```javascript
 loader.onParsed = function (data) {
@@ -56,9 +52,9 @@ loader.onParsed = function (data) {
 };
 ```
 
-### Version 1 Properties
+## Version 1 Properties
 
-**IncrementalLoading**
+### IncrementalLoading
 
 Set this property to false to disable incremental loading which delays the loader from calling the success callback until after loading the meshes and shaders. Textures always loads asynchronously. For example, the success callback can compute the bounding information of the loaded meshes when incremental loading is disabled. Defaults to true.
 
@@ -66,7 +62,7 @@ Set this property to false to disable incremental loading which delays the loade
 BABYLON.GLTFFileLoader.IncrementalLoading = false;
 ```
 
-**HomogeneousCoordinates**
+### HomogeneousCoordinates
 
 Set this property to true in order to work with homogeneous coordinates, available with some converters and exporters. Defaults to false.
 
@@ -74,9 +70,9 @@ Set this property to true in order to work with homogeneous coordinates, availab
 BABYLON.GLTFFileLoader.HomogeneousCoordinates = true;
 ```
 
-### Version 2 Properties
+## Version 2 Properties
 
-**coordinateSystemMode**
+### coordinateSystemMode
 
 The coordinate system mode (AUTO, FORCE_RIGHT_HANDED). Defaults to AUTO.
 
@@ -87,7 +83,7 @@ The coordinate system mode (AUTO, FORCE_RIGHT_HANDED). Defaults to AUTO.
 loader.coordinateSystemMode = BABYLON.GLTFLoaderCoordinateSystemMode.FORCE_RIGHT_HANDED;
 ```
 
-**animationStartMode**
+### animationStartMode
 
 The animation start mode (NONE, FIRST, ALL). Defaults to FIRST.
 
@@ -99,7 +95,7 @@ The animation start mode (NONE, FIRST, ALL). Defaults to FIRST.
 loader.animationStartMode = BABYLON.GLTFLoaderAnimationStartMode.NONE;
 ```
 
-**compileMaterials**
+### compileMaterials
 
 Set to true to compile materials before raising the success callback. Defaults to false.
 
@@ -107,14 +103,15 @@ Set to true to compile materials before raising the success callback. Defaults t
 loader.compileMaterials = true;
 ```
 
-**useClipPlane**
+### useClipPlane
+
 Set to true to also compile materials with clip planes. Defaults to false.
 
 ```javascript
 loader.useClipPlane = true;
 ```
 
-**compileShadowGenerators**
+### compileShadowGenerators
 
 Set to true to compile shadow generators before raising the success callback. Defaults to false.
 
@@ -122,7 +119,7 @@ Set to true to compile shadow generators before raising the success callback. De
 loader.compileShadowGenerators = true;
 ```
 
-**onMeshLoaded**
+### onMeshLoaded
 
 Raised when the loader creates a mesh after parsing the glTF properties of the mesh.
 
@@ -132,7 +129,7 @@ loader.onMeshLoaded = function (mesh) {
 };
 ```
 
-**onTextureLoaded**
+### onTextureLoaded
 
 Raised when the loader creates a texture 
 after parsing the glTF properties of the texture.
@@ -143,7 +140,7 @@ loader.onTextureLoaded = function (texture) {
 };
 ```
 
-**onMaterialLoaded**
+### onMaterialLoaded
 
 Raised when the loader creates a material after parsing the glTF properties of the material.
 
@@ -153,7 +150,7 @@ loader.onMaterialLoaded = function (material) {
 };
 ```
 
-**onComplete**
+### onComplete
 
 Raised when the asset is completely loaded, immediately before the loader is disposed.
 For assets with LODs, raised when all of the LODs are complete.
@@ -165,9 +162,9 @@ loader.onComplete = function () {
 };
 ```
 
-### Version 2 Methods
+## Version 2 Methods
 
-**dispose**
+### dispose
 
 Disposes the loader, releases resources during load, and cancels any outstanding requests.
 
@@ -175,3 +172,27 @@ Disposes the loader, releases resources during load, and cancels any outstanding
 // cancel loading of the current glTF asset
 loader.dispose();
 ```
+
+# Supported Extensions
+
+## Version 1
+
+### KHR_binary_glTF
+https://github.com/KhronosGroup/glTF/tree/master/extensions/1.0/Khronos/KHR_binary_glTF
+
+### KHR_materials_common
+https://github.com/KhronosGroup/glTF/tree/master/extensions/1.0/Khronos/KHR_materials_common
+
+## Version 2
+
+### KHR_draco_mesh_compression
+https://github.com/fanzhanggoogle/glTF/blob/cb478d94bf43980ddf057cdb5596dcd9d4282cb2/extensions/Khronos/KHR_draco_mesh_compression
+
+### KHR_lights
+https://github.com/MiiBond/glTF/blob/72096c4aebe0235ffbe5e146947c234983dd5369/extensions/Khronos/KHR_lights
+
+### KHR_materials_pbrSpecularGlossiness
+https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_pbrSpecularGlossiness 
+
+### MSFT_lod
+https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod
