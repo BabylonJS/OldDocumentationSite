@@ -388,7 +388,7 @@ var particleSystem = new BABYLON.GPUParticleSystem("particles", { capacity:10000
 As the GPUParticleSystem and the ParticleSystem share almost all their API, it is easy to switch from one to another if WebGL2 is not supported.
 But keep in mind that the CPU cannot animate as much particles as the GPU can. So you will probably have to reduce the capacity of your system in not using the GPU.
 
-You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI
+You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI#2
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
