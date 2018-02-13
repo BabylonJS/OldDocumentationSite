@@ -28,6 +28,7 @@ Multiple Render Target (MRT)| Several Render Targets can be rendered in the same
 Occlusion Queries| Occlusion queries detect whether a Mesh is visible in the current scene or not|Yes through an [extension](https://www.khronos.org/opengl/wiki/Query_Object#Occlusion_queries)|[Demo](http://www.babylonjs-playground.com/#QDAZ80#3)|[See below](WebGL2#occlusion-queries)
 3D Textures| 3D textures are textures with a 3rd dimension. You can see them as multiple 2D textures where every texture is a slice in the 3d texture.|No. Cannot be created in WebGL1|This feature will automatically be used when possible.|[See below](WebGL2#3d-textures)
 Power of two textures| In the past, to achieve the best performance and higher quality texture rendering, images with dimensions that are a power of two were required. With support for WebGL2 this is no longer the case, any sized texture will be rendered optimally.|Yes, however Babylon will resize textures to be a power of two causing a hit to performance|N/A. This is done by default|[See below](WebGL2#power-of-two-textures)
+Transform feedback buffer| Transform feedback buffer can be used to update vertex buffers from GPU. Babylon.js uses it to implement GPU particles|No. Not supported on WebGL1|[Demo](https://www.babylonjs-playground.com/#PU4WYI)|[See particles documentation](/babylon101/particles#gpu-particles)
 
 ## Multisample render targets
 
