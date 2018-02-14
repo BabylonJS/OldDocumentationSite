@@ -390,7 +390,7 @@ But keep in mind that the CPU cannot animate as much particles as the GPU can. S
 
 Also custom effect and custom functions are not supported for now due to the inner nature of the GPU particles.
 
-You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI#2
+You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI#4
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
