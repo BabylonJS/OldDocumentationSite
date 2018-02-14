@@ -388,6 +388,8 @@ var particleSystem = new BABYLON.GPUParticleSystem("particles", { capacity:10000
 As the GPUParticleSystem and the ParticleSystem share almost all their API, it is easy to switch from one to another if WebGL2 is not supported.
 But keep in mind that the CPU cannot animate as much particles as the GPU can. So you will probably have to reduce the capacity of your system in not using the GPU.
 
+Also custom effect and custom functions are not supported for now due to the inner nature of the GPU particles.
+
 You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI#2
 
 ## Next step
