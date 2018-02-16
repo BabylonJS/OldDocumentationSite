@@ -157,6 +157,26 @@ To enjoy PBR material rendering, you should have an environmnent texture in your
 
 However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
 
+# How to export 3D model with animation to .babylon / .gltf format
+
+1. Open FBX / DAE or any other 3D model with animations in 3ds Max
+
+2. Check / Apply texture to model
+
+3. Go to “Time Configuration” window and change “Start Time:”, “End Time” under “Animation” section properly.
+
+![3ds Time Configuration Window](/public/html/img/exporters/3DSMax/time_configuration_window.jpg)
+
+4. Right click on the imported 3D model. Navigate “Babylon... > Babylon Properties” and open the “Babylon.js Object Properties” window as below.
+
+![3ds Babylon Plugin Properties Window](/public/html/img/exporters/3DSMax/3ds_babylon_plugin_properties_window.jpg)
+
+5. Update the “From:”, “To:” fields under “Animations” section with expected animation frames to be exported
+
+6. Open “Babylon Exporter” window from menu “Babylon > Babylon File Exporter ...” as below.
+
+![3ds Babylon Exporter](/public/html/img/exporters/3DSMax/babylon_exporter.jpg)
+
 #  Try it out!  #
 
 Export your own scene from 3DS MAX to glTF format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [babylon loader](/how_to/gltf).
