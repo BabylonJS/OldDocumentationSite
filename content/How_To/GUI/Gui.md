@@ -150,6 +150,10 @@ When ideal resolution is set, all values expressed **in pixels** are considered 
 
 Even when ideal size is set, the fullscreen UI will be rendered at the same resolution of your canvas, but you can decide (mostly for performance reason) to force the texture to use the ideal size for resolution as well. To do so, just call `myAdvancedDynamicTexture.renderAtIdealSize = true`.
 
+In order to use both idealWidth and idealHeight, set both of them, and set `myAdvancedDynamicTexture.useSmallestIdeal = true`.
+When window width is smaller than window height - idealWidth will be used, otherwise - idealHeight will be used.
+This is a good solution for when your canvas can be resized to varying width : height ratios.
+
 Here is an example of how to use horizontal adaptive scaling:  https://www.babylonjs-playground.com/#XCPP9Y#39
 
 ### Rotation and Scaling
