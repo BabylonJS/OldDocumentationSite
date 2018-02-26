@@ -4,11 +4,10 @@ PG_TITLE: OBJ Import
 
 # OBJ File Import
 
-[Demo](http://www.babylonjs-playground.com/#28YUR5)
 To use it, you just have to reference the loader file:
 
 ```
-<script src="babylon.2.1.js"></script>
+<script src="babylon.js"></script>
 <script src="babylon.objFileLoader.js"></script>
 ```
 You can find it [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview release/loaders)

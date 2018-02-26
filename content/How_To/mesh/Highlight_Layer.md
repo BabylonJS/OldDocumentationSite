@@ -30,7 +30,20 @@ hl.addMesh(sphere, BABYLON.Color3.Green());
 
 The highlight color is driven by the second parameter of the addMesh method.
 
-[**Playground Demo Scene**]( https://www.babylonjs-playground.com/#1KUJ0A#0)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#1KUJ0A#0)
+
+### Stop highlighting a Mesh
+
+In case one highlighted mesh do not require highlights anymore, you can simply remove it from the layer:
+
+```
+// Add the highlight layer.
+var hl = new BABYLON.HighlightLayer("hl1", scene);
+hl.addMesh(sphere, BABYLON.Color3.Green());
+hl.removeMesh(sphere);
+```
+
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#1KUJ0A#102)
 
 ### Emissive Input
 

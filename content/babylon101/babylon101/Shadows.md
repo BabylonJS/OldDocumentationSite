@@ -181,6 +181,15 @@ Ask the light to not recompute shadow position with:
 ```javascript
 light.autoUpdateExtends = false;
 ```
+### Cleaning bone matrix weights
+
+Wrong or imprecise bone weights of an animated mesh may cause negative or weird shadows. In this case you can clean up the weights automatically when loading with the following code:
+
+```javascript
+BABYLON.SceneLoader.CleanBoneMatrixWeights = true;
+```
+
+(You should set this before loading a scene or meshes.)
 
 ## Next step
 Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [http://www.html5gamedevs.com/forum/16-babylonjs](http://www.html5gamedevs.com/forum/16-babylonjs). See you there.
