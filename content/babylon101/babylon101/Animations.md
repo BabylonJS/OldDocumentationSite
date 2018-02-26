@@ -229,6 +229,24 @@ In the playground demo below, every time you click on the FPS marker, the new an
 
 Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running.
 
+## Overriding properties
+When you have a mesh with multiple animations or a skeleton (where all bones can be animated) you can use an animationPropertiesOverride to specify some general properties for all child animations. These properties will override local animation properties:
+
+```
+var overrides = new BABYLON.AnimationPropertiesOverride();
+
+overrides.enableBlending = true;
+overrides.blendingSpeed = 0.1;
+
+skeleton.animationPropertiesOverride = overrides;
+```
+
+Here is the list of properties that can be overriden:
+* enableBlending
+* blendingSpeed
+* loopMode
+
+
 ## Easing functions
 
 You can add some behaviors to your animations, using easing functions. 
