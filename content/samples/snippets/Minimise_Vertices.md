@@ -90,4 +90,4 @@ If you comment out line 78 and so no longer apply the minimise vertices function
 and 2352 indices. In this case though the image is applied correctly.  
 
 
-[Playground Example Minimising Vertices](http://www.babylonjs-playground.com/#1JBMJ3#17)
+* [Playground Example Minimising Vertices](http://www.babylonjs-playground.com/#1JBMJ3#17)

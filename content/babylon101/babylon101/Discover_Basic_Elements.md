@@ -36,7 +36,7 @@ faceUV|_(Vector4[])_ array of 6 _Vector4_, one per box face| UVs(0, 0, 1, 1) for
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-[Playground Example of a Cuboid](https://www.babylonjs-playground.com/#3QW4J1#1)
+* [Playground Example of a Cuboid](https://www.babylonjs-playground.com/#3QW4J1#1)
 
 ### Sphere
 
@@ -58,7 +58,7 @@ slice|_(number)_ ratio of the height (longitude) between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-[Playground Example of an Ellipsoid](https://www.babylonjs-playground.com/#K6M44R)
+* [Playground Example of an Ellipsoid](https://www.babylonjs-playground.com/#K6M44R)
 
 ### Plane
 
@@ -79,7 +79,7 @@ frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Me
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 sourcePlane|_(Plane)_ source plane (maths) the mesh will be transformed to|null
 
-[Playground Example of a Plane](https://www.babylonjs-playground.com/#LXZPJK)
+* [Playground Example of a Plane](https://www.babylonjs-playground.com/#LXZPJK)
 
 _sourcePlane_ is a unique option for a plane mesh and provides a method to orientate and position it. For now just consider its orientation which on creation is the vector (0, 0, 1). Now should you want the orientation to be the vector (0, -1, 1) then you create a source plane using
 
@@ -89,7 +89,7 @@ sourcePlane.normalize();
 ```
 This creates a mathematical plane which is used as the orientation source. The fourth parameter is a distance moved in the direction of the orientation vector. At this stage leave as 0. 
 
-[Playground Example with Source Plane](https://www.babylonjs-playground.com/#LXZPJK#2)
+* [Playground Example with Source Plane](https://www.babylonjs-playground.com/#LXZPJK#2)
 
 [More Information on Source Plane](LINK)
 
@@ -108,7 +108,7 @@ height|_(number)_ size of the height|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 subdivisions|_(number)_ number of square subdivisions|1
 
-[Playground Example of Ground](https://www.babylonjs-playground.com/#MJ6YSM)
+* [Playground Example of Ground](https://www.babylonjs-playground.com/#MJ6YSM)
 
 A variation on _CreateGround_ is [_CreateGroundFromHeightMap_](/babylon101/Height_map) which lets you form undulating ground rather than a flat plane.
 
@@ -133,8 +133,8 @@ There are four possible values for this option :
   * BABYLON.Mesh.DEFAULT which is the default value and equals FRONTSIDE currently.
 
 By moving your screen pointer left and right to rotate the planes, in the following examples, you can compare between DEFAULT and DOUBLESIDE.   
-[Playground Example of a DEFAULT Plane](https://www.babylonjs-playground.com/#LXZPJK)
-[Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
+* [Playground Example of a DEFAULT Plane](https://www.babylonjs-playground.com/#LXZPJK)
+* [Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
 
 
 ## Front and Back UV

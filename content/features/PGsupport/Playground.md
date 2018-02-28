@@ -8,7 +8,7 @@ The place to try out coding with Babylon.js. Experimenting and changing any code
 
 ## Overview
 
-![Playground Overview](/img/how_to/Introduction/playground.jpg)
+!* [Playground Overview](/img/how_to/Introduction/playground.jpg)
 
 The Playground consists of four areas.
 
@@ -23,7 +23,7 @@ The Playground consists of four areas.
 The space for the coding editor and rendering area can be adjusted by dragging the vertical bar between them.
 
 ## The Menu
-![Playground Menu](/img/how_to/Introduction/pgmenu.jpg)
+!* [Playground Menu](/img/how_to/Introduction/pgmenu.jpg)
 
 ### Large Screen
 

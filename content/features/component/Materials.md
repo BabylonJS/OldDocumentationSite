@@ -31,8 +31,8 @@ var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
 myMaterial.pointsCloud = true;
 ```
 
-[Playground Example - Points Cloud](https://www.babylonjs-playground.com/#PGY5FG)
-[Playground Example - Points Cloud with a Variety of Colors](https://www.babylonjs-playground.com/#PGY5FG#3)
+* [Playground Example - Points Cloud](https://www.babylonjs-playground.com/#PGY5FG)
+* [Playground Example - Points Cloud with a Variety of Colors](https://www.babylonjs-playground.com/#PGY5FG#3)
 
 ### Transparency
 
@@ -49,7 +49,7 @@ material.diffuseTexture.hasAlpha = true;
 material.backFaceCulling = false;
 ```
 
-[Playground Example Transparent Texture](https://www.babylonjs-playground.com/#2Z6EHT);
+* [Playground Example Transparent Texture](https://www.babylonjs-playground.com/#2Z6EHT);
 
 Do you have an image with a transparency gradient then Babylon.js can cater for this as well, using the _opacityTexture_ .
 
@@ -58,7 +58,7 @@ var material = new BABYLON.StandardMaterial("mat", scene);
 mat.opacityTexture = new BABYLON.Texture("URL GRADIENT IMAGE", scene);
 ```
 
-[Playground Example Opacity Texture](https://www.babylonjs-playground.com/#20OAV9#32);
+* [Playground Example Opacity Texture](https://www.babylonjs-playground.com/#20OAV9#32);
 
 Transparency can  adversely affect the drawing of overlapping meshes. To help the correct rendering of transparent overlapping meshes Babylon.js provides access to the depth buffer by enabling the _DepthRenderer_ object.
 
@@ -73,7 +73,7 @@ material.alpha = 0.9999;		// when material is opaque artificially set as alpha b
 material.alphaMode = BABYLON.Engine.ALPHA_COMBINE; //default option
 ```
 
-[Playground Example Blending Modes](https://www.babylonjs-playground.com/#1MSIXB#7)
+* [Playground Example Blending Modes](https://www.babylonjs-playground.com/#1MSIXB#7)
 
 
 ### Tiling
@@ -90,7 +90,7 @@ material.diffuseTexture.uOffset = 0.25;
 material.diffuseTexture.vOffset = 0.5;
 ```
 
-[Playground Example of Tiling and Offset](http://www.babylonjs-playground.com/#20OAV9#25)
+* [Playground Example of Tiling and Offset](http://www.babylonjs-playground.com/#20OAV9#25)
 
 ### Wireframe
 
@@ -101,17 +101,17 @@ material.wireframe = true;
 ```
 does that.
 
-[Playground Example Wireframe](https://www.babylonjs-playground.com/#IUKB9V)
+* [Playground Example Wireframe](https://www.babylonjs-playground.com/#IUKB9V)
 
 ### More Than One Material on a Mesh
 
 Possible? Of course it is. All meshes can use the [multi-material](/How_To/Multi_Materials) approach of dividing the mesh into submeshes and using a different color or texture on each sub-mesh.
 
-[Playground Example Multi-Mesh with Color](https://www.babylonjs-playground.com/#NZ4GG2)
+* [Playground Example Multi-Mesh with Color](https://www.babylonjs-playground.com/#NZ4GG2)
 
 Meshes that have distinct faces or surfaces such as a box or cylinder and are built using the BABYLON.MeshBuilder.Create&lt;Mesh&gt; method can have [color or texture applied to these faces individually]((/How_To/CreateBox_Per_Face_Textures_And_Colors). When using texture material one image file which is composed of multiple images forms the basis for the texture. This is done using arrays  _faceUV_ or _faceColors_.
 
-[Playground Example faceUV on Cylinder](https://www.babylonjs-playground.com/#VA2AC#1)
+* [Playground Example faceUV on Cylinder](https://www.babylonjs-playground.com/#VA2AC#1)
 
 
 ### 3D Surface Effects
@@ -122,21 +122,21 @@ Sometimes you want your material to appear more textured (more 3D than smooth) i
 
 The use of parallax mapping with bump mapping enhances the apparent depth of the texture.
 
-[Playground Example Parallax Mapping](https://www.babylonjs-playground.com/#JHHV3G)
+* [Playground Example Parallax Mapping](https://www.babylonjs-playground.com/#JHHV3G)
 
 ### Reflection and Refraction
 
 Reflection of these can be simulated in Babylon.js using a _reflectionTexture_ with cube, HDR cube, spherical and mirror textures or with Fresnel parameters. Refraction uses the _refractionTexture_ or again Fresnel parameters can be used.
 
-[Playground Example Reflection Texture in Mirror](https://www.babylonjs-playground.com/#1YAIO7#21)  
-[Playground Example Refraction Texture](https://www.babylonjs-playground.com/#22KZUW#15)  
-[Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/?19)
+* [Playground Example Reflection Texture in Mirror](https://www.babylonjs-playground.com/#1YAIO7#21)  
+* [Playground Example Refraction Texture](https://www.babylonjs-playground.com/#22KZUW#15)  
+* [Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/?19)
 
 ### Procedural Textures
 
 These are texture that you can have some control over by changing some parameters. Find out more from the Further Reading list.
 
-[Playground Example Procedural Textures](https://www.babylonjs-playground.com/#24C4KC#17)
+* [Playground Example Procedural Textures](https://www.babylonjs-playground.com/#24C4KC#17)
 
 ### How Materials Work
 

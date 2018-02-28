@@ -49,7 +49,7 @@ mesh.rotate(BABYLON.Axis.Z, 1.45, BABYLON.Space.LOCAL);
 
 In following playground shows a rotation of &pi;/4 first about the Y world axis then about the X world axis. You can have a go at changing WORLD to LOCAL for one or both and changing the order of X and Y to see what happens.
 
-[Playground Animation - Rotate about Two Axes](https://www.babylonjs-playground.com/#Z3W74Y#1)
+* [Playground Animation - Rotate about Two Axes](https://www.babylonjs-playground.com/#Z3W74Y#1)
 
 You do not have to use the X, Y and Z axes. Any vector will determine an axis.
 
@@ -61,7 +61,7 @@ For example the Earth tilts about 23 degrees from the vertical which gives a poi
 earth.rotate(new BABYLON.Vector3(Math.sin(23 * Math.PI/180), Math.cos(23 * Math.PI/180), 0), angle, BABYLON.Space.WORLD);
 ```
 
-[Playground Animation - Earth Rotate](https://www.babylonjs-playground.com/#TLIAXS)
+* [Playground Animation - Earth Rotate](https://www.babylonjs-playground.com/#TLIAXS)
 
 The following playground shows the difference between using rotate with **world space** and **local space**. An axis is defined as (2, 0.2, 0) in yellow in world space and white in local space. To see the affect two pilots are first rotated about the Y axis so that their local axes are no longer in alignment. The purple one is rotated about the given axis in **world space** and the orange one in **local space**.
 
@@ -93,11 +93,9 @@ direction.normalize(); // direction now a unit vector
 pilot.translate(direction, 6, BABYLON.Space.LOCAL);
 ```
 
-[Playground Animation - Translate No Rotation](https://www.babylonjs-playground.com/#1ZMJQV#39)
-
-[Playground Animation - Translate After Rotation](https://www.babylonjs-playground.com/#1ZMJQV#40)
-
-[Playground Example - Translate-Rotate and Rotate-Translate](https://www.babylonjs-playground.com/#1ZMJQV#41)
+* [Playground Animation - Translate No Rotation](https://www.babylonjs-playground.com/#1ZMJQV#39)
+* [Playground Animation - Translate After Rotation](https://www.babylonjs-playground.com/#1ZMJQV#40)
+* [Playground Example - Translate-Rotate and Rotate-Translate](https://www.babylonjs-playground.com/#1ZMJQV#41)
 
 
 ## Add Rotations
@@ -110,7 +108,7 @@ x: 0.6590580358264089, y: 1.1071487177940904, z: 0.8860771237926136
 Checking the console in the following playground will give you these value. The leftmost mesh is the start position, the middle after using rotation with Euler Angles x: &pi;/3, y: &pi;/4, z: 0 and the right most after applying the rotations in order &pi;/3 about the X axis, about the local Y axis.
 
 
-[Playground Example - Rotation and addRotation](https://www.babylonjs-playground.com/#HPKH80)
+* [Playground Example - Rotation and addRotation](https://www.babylonjs-playground.com/#HPKH80)
 
 This playground uses a method from [101 addRotation](/babylon101/position#sequencing-rotations) to add a rotation to any current rotation.
 
@@ -155,7 +153,7 @@ In the following playgrounds the stationary purple plane and red, green and blue
 
 In the initialising playground the arrow plane is also stationary.
 
-[Playground Example - Initialising](https://www.babylonjs-playground.com/#VYM1E#32)
+* [Playground Example - Initialising](https://www.babylonjs-playground.com/#VYM1E#32)
 
 The requirement is for the arrow plane to rotate such that 
 
@@ -166,7 +164,7 @@ keeping its third axis, which lies on the plane, perpendicular to the camera len
 
 In this way the camera always faces the arrow plane as can be seen in the next playground.
 
-[Playground Example - Aligning Axes](https://www.babylonjs-playground.com/#VYM1E#32) 
+* [Playground Example - Aligning Axes](https://www.babylonjs-playground.com/#VYM1E#32) 
 
 This is achieved by forming axis 1 to join the spheres
 

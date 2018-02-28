@@ -226,11 +226,11 @@ pbt.hideMenu();
 # Live Example
 
 The working playground using the above code.
-[Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#Y33LF1)
+* [Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#Y33LF1)
 
 # Further Reading
 
-[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
+* [Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
 [Slider Guide](/resources/PBT_slider)    
 [Intermediate Guide](/resources/PBT_Writing)  
 [Advanced Guide](/resources/PBT_previous_and_next)

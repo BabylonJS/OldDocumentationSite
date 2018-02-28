@@ -41,12 +41,12 @@ The array of points MUST then be passed to _CreateLines_ with the points option
 //creates lines
 var lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myPoints}, scene);
 ```
-[Playground Example of Lines](https://www.babylonjs-playground.com/#165IV6#60)
-[Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#61)
+* [Playground Example of Lines](https://www.babylonjs-playground.com/#165IV6#60)
+* [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#61)
 
 You can use dashed lines with _CreateDashedLines_ and adding the number of dashes _dashNb_ as an option.
 
-[Playground Example of a Spiral from Dashed Lines](https://www.babylonjs-playground.com/#165IV6#62)
+* [Playground Example of a Spiral from Dashed Lines](https://www.babylonjs-playground.com/#165IV6#62)
 
 
 For _CreateLines_ the options are
@@ -87,7 +87,7 @@ var lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myArray, updatable
 // updates the existing instance of lines : no need for the parameter scene here
 lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myNewArray, instance: lines});
 ```
-[Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
+* [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
 
 Most but not all parametric shapes have the _instance_ option and so can have their mesh updated in this way.
 

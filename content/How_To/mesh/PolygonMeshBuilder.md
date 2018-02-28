@@ -31,7 +31,7 @@ var polygon_triangulation = new BABYLON.PolygonMeshBuilder("name", Path2, scene)
 var polygon = polygon_triangulation.build(false, 3);
 ```
 
-[Playground Example - Simple Polygons Using Both Methods]( https://www.babylonjs-playground.com/#PTTMVI#1)
+* [Playground Example - Simple Polygons Using Both Methods]( https://www.babylonjs-playground.com/#PTTMVI#1)
 
 ## Holes
 
@@ -46,4 +46,4 @@ polygon_triangulation.addHole(hole3);
 var polygon = polygon_triangulation.build(true, 1.4);
 ```
 
-[Playground Example - Simple Polygons with a Hole]( https://www.babylonjs-playground.com/#PTTMVI#2)
+* [Playground Example - Simple Polygons with a Hole]( https://www.babylonjs-playground.com/#PTTMVI#2)

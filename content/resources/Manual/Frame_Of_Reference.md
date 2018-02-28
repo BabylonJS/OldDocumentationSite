@@ -30,7 +30,7 @@ var global_position = BABYLON.Vector3.TransformCoordinates(local_position, matri
 
 where 'mesh.getWorldMatrix(true);' forces the calculation of the world matrix for the mesh.
 
-[Playground Example - TransformCoordinates](https://www.babylonjs-playground.com/#TRAIXW)
+* [Playground Example - TransformCoordinates](https://www.babylonjs-playground.com/#TRAIXW)
 
 Should you want to translate the local_position, in the above example, its current local position of (0, 1, 0) by (1, 1, 1) then this must be done to the local position before applying `TransformCoodinates` since this only transforms position vectors not direction vectors.
 
@@ -42,7 +42,7 @@ local_position.addInPlace(new BABYLON.Vector3(1, 1, 1));
 var global_position = BABYLON.Vector3.TransformCoordinates(local_position, matrix);
 ```
 
-[Playground Example - TransformCoordinates with a Translation](https://www.babylonjs-playground.com/#TRAIXW#1)
+* [Playground Example - TransformCoordinates with a Translation](https://www.babylonjs-playground.com/#TRAIXW#1)
 
 Potential uses of `BABYLON.Vector3.TransformCoordinates()` may be:
 

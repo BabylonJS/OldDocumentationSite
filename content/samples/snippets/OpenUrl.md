@@ -16,6 +16,6 @@ window.location = URL
 ```
 to replace the contants of the current window.
 
-[Playground Example One Mesh](https://www.babylonjs-playground.com/#INB624#1)
-[Playground Example Multiple Meshes](https://www.babylonjs-playground.com/#INB624#2)
+* [Playground Example One Mesh](https://www.babylonjs-playground.com/#INB624#1)
+* [Playground Example Multiple Meshes](https://www.babylonjs-playground.com/#INB624#2)
 

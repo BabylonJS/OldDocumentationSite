@@ -43,9 +43,9 @@ In general the parameters for **normalize** are the numbers _beginFrame_ and _en
 The _beginFrame_ number must be less than or equal to the smallest begin frame of all animations, for the above examples not greater than 0.   
 The _endFrame_ number must be greater than or equal to the largest end frame of all animations, for the above examples not less than 100.
 
-[Playground Example 1 - Animation Group](https://www.babylonjs-playground.com/#CBGEQX#1)
-[Playground Example 2 - Animation Group](https://www.babylonjs-playground.com/#CBGEQX#2)
-[Playground Example 3 - Animation Group](https://www.babylonjs-playground.com/#CBGEQX#3)
+* [Playground Example 1 - Animation Group](https://www.babylonjs-playground.com/#CBGEQX#1)
+* [Playground Example 2 - Animation Group](https://www.babylonjs-playground.com/#CBGEQX#2)
+* [Playground Example 3 - Animation Group](https://www.babylonjs-playground.com/#CBGEQX#3)
 
 ## Speed Ratio for the Group
 
@@ -58,7 +58,7 @@ animationGroup2.speedRation = 3;
 
 speeding up or slowing down the animation.
 
-[Playground Example - Group Speed Ratio](https://www.babylonjs-playground.com/#CBGEQX#5)
+* [Playground Example - Group Speed Ratio](https://www.babylonjs-playground.com/#CBGEQX#5)
 
 ## On Group Animation End
 
@@ -70,7 +70,7 @@ animationGroup1.onAnimationEndObservable.add(function(){
 })
 ```
 
-[Playground Example - On Group Animation End](https://www.babylonjs-playground.com/#CBGEQX#4)
+* [Playground Example - On Group Animation End](https://www.babylonjs-playground.com/#CBGEQX#4)
 
 # Further Reading
 

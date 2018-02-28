@@ -41,9 +41,9 @@ pivot.rotate(axis, angle, BABYLON.Space.WORLD);
 ```
 In these playgrounds a sphere is created only to show the position of the TransformNode.
 
-[Playground Example - Rotating TransformNode](https://www.babylonjs-playground.com/#1JLGFP#36)
-[Playground Example - Rotating Mesh Moving TransformNode along Axis](https://www.babylonjs-playground.com/#C12LH3#3)
-[Playground Example - Rotating Mesh Moving TransformNode](https://www.babylonjs-playground.com/#C12LH3#4)
+* [Playground Example - Rotating TransformNode](https://www.babylonjs-playground.com/#1JLGFP#36)
+* [Playground Example - Rotating Mesh Moving TransformNode along Axis](https://www.babylonjs-playground.com/#C12LH3#3)
+* [Playground Example - Rotating Mesh Moving TransformNode](https://www.babylonjs-playground.com/#C12LH3#4)
 
 ## How To Use a Parent as Center of Rotation
 
@@ -60,7 +60,7 @@ sphere.rotate(axis, angle, BABYLON.Space.WORLD);
 
 **Note:** Any movement of the sphere will result in the pilot being moved.
 
-[Playground Example - Rotating Parent](https://www.babylonjs-playground.com/#1JLGFP#31)
+* [Playground Example - Rotating Parent](https://www.babylonjs-playground.com/#1JLGFP#31)
 
 ## How To Use a Pivot as a Center of Rotation
 
@@ -83,12 +83,12 @@ scene.registerAfterRender(function() {
     pilot.rotate(axis, angle, BABYLON.Space.LOCAL);  
 });
 ```
-[Playground Example - Rotating Mesh with Pivot](https://www.babylonjs-playground.com/#C12LH3#7)
+* [Playground Example - Rotating Mesh with Pivot](https://www.babylonjs-playground.com/#C12LH3#7)
   
-[Playground Example - Rotating Mesh Moving Pivot along Axis](https://www.babylonjs-playground.com/#C12LH3#8)
+* [Playground Example - Rotating Mesh Moving Pivot along Axis](https://www.babylonjs-playground.com/#C12LH3#8)
 
 Notice that as the pivot is moved the axis line moves with the pivot, though the axis direction remains the same.  
-[Playground Example - Rotating Mesh Moving Pivot](https://www.babylonjs-playground.com/#C12LH3#9)
+* [Playground Example - Rotating Mesh Moving Pivot](https://www.babylonjs-playground.com/#C12LH3#9)
 
 ## How to Use a Parent as a Pivot
 
@@ -105,11 +105,11 @@ pilot.setPivotMatrix(BABYLON.Matrix.Translation(pilotTranslate.x, pilotTranslate
 pilot.rotate(axis, angle, BABYLON.Space.WORLD);
 ```
 
-[Playground Example - Rotating Mesh as Pivot's Child](https://www.babylonjs-playground.com/#1JLGFP#33)
+* [Playground Example - Rotating Mesh as Pivot's Child](https://www.babylonjs-playground.com/#1JLGFP#33)
 
 Done this way any movement of the pivot is done by moving the parent mesh representing the pivot.  
-[Playground Example - Rotating Mesh Moving Pivot's Parent along Axis](https://www.babylonjs-playground.com/#1JLGFP#34)
-[Playground Example - Rotating Mesh Moving Pivot's Parent](https://www.babylonjs-playground.com/#1JLGFP#35)
+* [Playground Example - Rotating Mesh Moving Pivot's Parent along Axis](https://www.babylonjs-playground.com/#1JLGFP#34)
+* [Playground Example - Rotating Mesh Moving Pivot's Parent](https://www.babylonjs-playground.com/#1JLGFP#35)
 
 # Further Reading
 
