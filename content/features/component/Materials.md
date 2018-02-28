@@ -22,6 +22,18 @@ mesh.material = myMaterial;
 
 ## Properties and Features.
 
+### PointsCloud
+
+Want to render a mesh with vertex points rather than facet triangles then use the _pointscloud_ option.
+
+```javascript
+var myMaterial = new BABYLON.StandardMaterial("myMaterial", scene);
+myMaterial.pointsCloud = true;
+```
+
+[Playground Example - Points Cloud](https://www.babylonjs-playground.com/#PGY5FG)
+[Playground Example - Points Cloud by Adding and Setting ColotKind](https://www.babylonjs-playground.com/#PGY5FG#3)
+
 ### Transparency
 
 Generally set using an _alpha_ value from 0, fully transparent to 1 opaque. 
