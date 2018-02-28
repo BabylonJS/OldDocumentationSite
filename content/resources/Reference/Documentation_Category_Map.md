@@ -358,6 +358,7 @@
 [Unity](/resources/Unity)  
 [Universal Camera](/babylon101/Cameras#universal-camera)  
 [Update Vertices](/How_To/Updating_Vertices)  
+[URL, Open on Mesh Click](samples/OpenUrl)  
 ********
 <a name = "V">**V**</a><span style = "float:right">[top](#top)</span>
 
