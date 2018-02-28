@@ -75,12 +75,14 @@ onPointerEnterObservable|Raised when the cursor enters the control. Only availab
 onPointerOutObservable|Raised when the cursor leaves the control. Only available on fullscreen mode
 onPointerDownObservable|Raised when pointer is down on the control.
 onPointerUpObservable|Raised when pointer is up on the control.
+onPointerClickObservable|Raised when a control is clicked on.
 
-You can also define that a control is invisble to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
+You can also define that a control is invisible to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
-Please note that `onPointerMoveObservable`, `onPointerDownObservable` and `onPointerUpObservable` will receive a Vector2 parameter containing the pointer coordinates. If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
+Please note that `onPointerMoveObservable`, `onPointerDownObservable`,  `onPointerUpObservable`, `onPointerClickObservable` will receive a Vector2 parameter containing the pointer coordinates. If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
 
 Here is an example of how to use observables:  https://www.babylonjs-playground.com/#XCPP9Y#121
+Here is an example of how to use the onPointerClickObservable: http://www.babylonjs-playground.com/#7RH606
 
 ### Alignments
 You can define the alignments used by your control with the following properties:
@@ -287,6 +289,7 @@ Furthermore, please note that due to JavaScript platform limitation, the InputTe
 
 A button can be used to interact with your user.
 Please see the events chapter to see how to connect your events with your buttons.
+The onPointerClickObservable is raised when a button is clicked, meaning both the down and up event happen while the cursor is over the control.
 
 There are three kinds of buttons available out of the box:
 
