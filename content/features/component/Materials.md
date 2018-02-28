@@ -32,7 +32,7 @@ myMaterial.pointsCloud = true;
 ```
 
 [Playground Example - Points Cloud](https://www.babylonjs-playground.com/#PGY5FG)
-[Playground Example - Points Cloud by Adding and Setting ColotKind](https://www.babylonjs-playground.com/#PGY5FG#3)
+[Playground Example - Points Cloud with a Variety of Colors](https://www.babylonjs-playground.com/#PGY5FG#3)
 
 ### Transparency
 
