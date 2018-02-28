@@ -358,11 +358,11 @@
 [Unity](/resources/Unity)  
 [Universal Camera](/babylon101/Cameras#universal-camera)  
 [Update Vertices](/How_To/Updating_Vertices)  
-[Vertex Normals](/resources/Normals)  
-[Video, 3D on the Web Understanding the Basics](/How_To/3D_on_the_Web_Understanding_the_Basics)  
 ********
 <a name = "V">**V**</a><span style = "float:right">[top](#top)</span>
 
+[Vertex Normals](/resources/Normals)  
+[Video, 3D on the Web Understanding the Basics](/How_To/3D_on_the_Web_Understanding_the_Basics)  
 [Video, 3D Programming with WebGL and Babylon.js for Beginners](/How_To/Zenva_course)  
 [Video, Babylon.js Advanced Features](/How_To/Babylon.js_Advanced_Features)  
 [Video, Game Pipeline Integration with Babylon.js](/How_To/Game_Pipeline_Integration_with_Babylon.js)  

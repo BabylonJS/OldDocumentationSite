@@ -53,13 +53,43 @@ See [Example](https://www.babylonjs-playground.com/#H05E9H)
 ```javascript
 vertexData.applyToMesh(customMesh, true);
 ```
+## Adding to the Data
+
+What happens if you want to add to vertexData after creating a mesh? For example many of the set and parametric meshes are created without the ColorKind array so it is not possible to use
+
+```javascript
+mesh.updateVerticesData(BABYLON.VertexBuffer.ColorKind, colors);
+```
+
+since _mesh.getVerticesData(BABYLON.VertexBuffer.ColorKind)_ will return _null_.
+
+In this case after creating a color for each vertex in a color array use
+
+```javascript
+mesh.setVerticesData(BABYLON.VertexBuffer.ColorKind, colors);
+```
+ as an example 
+
+ ```javascript
+var colors = mesh.getVerticesData(BABYLON.VertexBuffer.ColorKind);
+if(!colors) {
+    colors = [];
+
+    var positions = mesh.getVerticesData(BABYLON.VertexBuffer.PositionKind);
+
+    for(var p = 0; p < positions.length / 3; p++) {
+        colors.push(Math.random(), Math.random(), Math.random(), 1);
+    }
+}
+
+mesh.setVerticesData(BABYLON.VertexBuffer.ColorKind, colors);
+ ```
 
 ## Playgrounds
 
 [Playground Example Scaling Positions](http://www.babylonjs-playground.com/#VE6GP#4)
-
 [Playground Example Playing Around with Positions](http://www.babylonjs-playground.com/#VE6GP#2)
-
+[Playground Example Playing Adding Color to Vertices](https://www.babylonjs-playground.com/#ZRZIIZ#2)
 
 # Further Reading
 
