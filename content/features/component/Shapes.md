@@ -42,7 +42,7 @@ For example to create a box which is an unit cube all that is needed is
 var box = BABYLON.MeshBuilder.CreateBox("", {});
 ```
 
-[Playground Example Default Box](https://www.babylonjs-playground.com/#3QW4J1#2)
+* [Playground Example Default Box](https://www.babylonjs-playground.com/#3QW4J1#2)
 
 However, You will find most people will still write
 

@@ -42,7 +42,7 @@ scene.onBeforeRenderObservable.add(function () {
 });
 ```
 
-[Playground Example Add](https://www.babylonjs-playground.com/#UP2O8#0)
+* [Playground Example Add](https://www.babylonjs-playground.com/#UP2O8#0)
 
 When you want to later remove your observer, you just need to store in during creation, then use it with remove:
 
@@ -56,7 +56,7 @@ var observer = scene.onBeforeRenderObservable.add(function () {
 	
 scene.onBeforeRenderObservable.remove(observer);
 ```
-[Playground Example Add and Remove](https://www.babylonjs-playground.com/#UP2O8#1)
+* [Playground Example Add and Remove](https://www.babylonjs-playground.com/#UP2O8#1)
 
 
 

@@ -46,14 +46,14 @@ plane.material = mat;
 
 ## Two Sided Examples
 
-[Playground Example on a Plane](https://www.babylonjs-playground.com/#LXZPJK#3)
-[Playground Example on a Polygon](http://playground.babylonjs.com/#4G18GY#2)
+* [Playground Example on a Plane](https://www.babylonjs-playground.com/#LXZPJK#3)
+* [Playground Example on a Polygon](http://playground.babylonjs.com/#4G18GY#2)
 
 ## Inside and Outside Examples
 
-[Playground Example on a Tube](https://www.babylonjs-playground.com/#165IV6#74)
-[Playground Example Outside a Sphere](https://www.babylonjs-playground.com/#K6M44R#3)
-[Playground Example Inside a Sphere](https://www.babylonjs-playground.com/#K6M44R#4)
+* [Playground Example on a Tube](https://www.babylonjs-playground.com/#165IV6#74)
+* [Playground Example Outside a Sphere](https://www.babylonjs-playground.com/#K6M44R#3)
+* [Playground Example Inside a Sphere](https://www.babylonjs-playground.com/#K6M44R#4)
 
 
 

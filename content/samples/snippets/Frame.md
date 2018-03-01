@@ -45,9 +45,9 @@ path.reverse();
 
 ### Playground Examples
 
-[Playground Example - Window with Rebate](https://www.babylonjs-playground.com/#ZGVYNB)
-[Playground Example - Triangular Frame with L shape Profile](https://www.babylonjs-playground.com/#ZGVYNB#1)
-[Playground Example - Oval Frame](https://www.babylonjs-playground.com/#ZGVYNB#2)
+* [Playground Example - Window with Rebate](https://www.babylonjs-playground.com/#ZGVYNB)
+* [Playground Example - Triangular Frame with L shape Profile](https://www.babylonjs-playground.com/#ZGVYNB#1)
+* [Playground Example - Oval Frame](https://www.babylonjs-playground.com/#ZGVYNB#2)
 
 ## Code
 

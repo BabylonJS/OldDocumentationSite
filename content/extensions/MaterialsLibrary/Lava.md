@@ -2,7 +2,7 @@
 
 ![Screenshot](/img/extensions/materials/lava.jpg)
 
-## [Playground example]( https://www.babylonjs-playground.com/#1BLVWO)
+## * [Playground example]( https://www.babylonjs-playground.com/#1BLVWO)
 
 
 Lava material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.lavaMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.lavaMaterial.js)

@@ -19,10 +19,10 @@ Just copy the code below if you want to use it.
 
 ### Playground Examples
 
-[Playground Example - Open Line](https://www.babylonjs-playground.com/#FA2H7X#3)
-[Playground Example - Closed Line](https://www.babylonjs-playground.com/#FA2H7X#4)
-[Playground Example - Standard UV is True](https://www.babylonjs-playground.com/#FA2H7X#5)
-[Playground Example - Standard UV is False](https://www.babylonjs-playground.com/#FA2H7X#6)
+* [Playground Example - Open Line](https://www.babylonjs-playground.com/#FA2H7X#3)
+* [Playground Example - Closed Line](https://www.babylonjs-playground.com/#FA2H7X#4)
+* [Playground Example - Standard UV is True](https://www.babylonjs-playground.com/#FA2H7X#5)
+* [Playground Example - Standard UV is False](https://www.babylonjs-playground.com/#FA2H7X#6)
 
 ### Line2D Code
 
@@ -218,5 +218,5 @@ var line2D = function(name, options, scene) {
 
 The [lines](/how_to/parametric_shapes#lines) and [line system](/how_to/parametric_shapes#line-system) methods just produce a thin line and you cannot vary the width. The best way to simulate a line with a given width in 3D is to use a [tube](/how_to/parametric_shapes#tube).
 
-[Playground Example - Tube as Line](https://www.babylonjs-playground.com/#MRE78Z)
+* [Playground Example - Tube as Line](https://www.babylonjs-playground.com/#MRE78Z)
 

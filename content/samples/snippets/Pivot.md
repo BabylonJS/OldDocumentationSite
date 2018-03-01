@@ -48,4 +48,4 @@ The parameters are the position of the pivot (centre of enlargemen) as a Vector3
 
 ## Playground
 
-[Playground Example](http://www.babylonjs-playground.com/#1MKHR9#2)
+* [Playground Example](http://www.babylonjs-playground.com/#1MKHR9#2)
