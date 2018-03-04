@@ -25,12 +25,12 @@ var binormals = path3D.getBinormals();
 
 each element of the arrays is a _Vector3_ .
 
-[Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#0)
+* [Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#0)
 
 Please zoom in and rotate : tangents in red, normals in blue, binormal in green.  
 
 Notice, in the next exxample, how the the triplets slightly rotate when the curve goes more into depth.  
-[Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#1)
+* [Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#1)
 
 Whilst at any point on the curve there is only one tangent there can be an infinte number or normals and hence binormals. If the default one does not suit you it is possible to [set the normal direction](#set_the_normal)
 
@@ -95,7 +95,7 @@ As can been in the diagram below, when the parameter is a vertical vector (black
 
 The playground example shows what happens as the vector setting the normal direction is rotated.
 
-[Playground Animation - Path3D with Rotating Normals](https://www.babylonjs-playground.com/#8ICWNU)
+* [Playground Animation - Path3D with Rotating Normals](https://www.babylonjs-playground.com/#8ICWNU)
 
 
 # Further Reading

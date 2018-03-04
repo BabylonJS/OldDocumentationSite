@@ -52,7 +52,7 @@ var tube = BABYLON.Mesh.CreateTube("tube", [V1, V2, ..., Vn], radius, tesselatio
 ```
 While a tube can just be a cyclinder it can be far more than that
   
-[Playground Example with a simple cos/sin path](http://www.babylonjs-playground.com/#LG3GS#8)   
+* [Playground Example with a simple cos/sin path](http://www.babylonjs-playground.com/#LG3GS#8)   
 
 
 Your function must just return a radius value.  

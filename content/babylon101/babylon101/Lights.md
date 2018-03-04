@@ -59,18 +59,18 @@ There are three properties of lights that affect color. Two of these _diffuse_ a
 
 In these playgrounds see how the specular color (green) is combined with the diffuse color (red) to produce a yellow highlight.
 
-[Playground example of a point light](http://www.babylonjs-playground.com/#20OAV9)
+* [Playground example of a point light](http://www.babylonjs-playground.com/#20OAV9)
 
-[Playground example of a directional light](http://www.babylonjs-playground.com/#20OAV9#1)
+* [Playground example of a directional light](http://www.babylonjs-playground.com/#20OAV9#1)
 
-[Playground example of a spot light](http://www.babylonjs-playground.com/#20OAV9#3)
+* [Playground example of a spot light](http://www.babylonjs-playground.com/#20OAV9#3)
 
-[Playground example of a hemispheric light](http://www.babylonjs-playground.com/#20OAV9#5)
+* [Playground example of a hemispheric light](http://www.babylonjs-playground.com/#20OAV9#5)
 
 For a hemispheric light the _groundColor_ is the light in the opposite direction to the one specified during creation.
 You can think of the _diffuse_ and _specular_ light as coming from the centre of the object in the given direction and the _groundColor_ light in the opposite direction.
 
-[Playground example of a hemispheric light on two spheres](http://www.babylonjs-playground.com/#20OAV9#6)
+* [Playground example of a hemispheric light on two spheres](http://www.babylonjs-playground.com/#20OAV9#6)
 
 White hemispheric light with a black groundColor is a useful lighting method.
 
@@ -79,7 +79,7 @@ White hemispheric light with a black groundColor is a useful lighting method.
 _White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
 
 ### Intersecting Lights Colors
-[Playground example of intersecting spot lights](http://www.babylonjs-playground.com/#20OAV9#9)
+* [Playground example of intersecting spot lights](http://www.babylonjs-playground.com/#20OAV9#9)
 
 ## Limitations
 Babylon.js allows you to create and register as many lights as you choose, but know that a single StandardMaterial can only handle a defined number simultaneous lights (by default this value is equal to 4 which means the first four enabled lights of the scene's lights list).
@@ -91,7 +91,7 @@ material.maxsimultaneousLights = 6;
 ```
 But beware! Because with more dynamic lights, Babylon.js will generate bigger shaders which may not be compatible with low end devices like mobiles or small tablets. In this case, babylon.js will try to recompile shaders with less lights.
 
-[Playground example of 6 interacting point lights](https://www.babylonjs-playground.com/#IRVAX#0)
+* [Playground example of 6 interacting point lights](https://www.babylonjs-playground.com/#IRVAX#0)
 
 ## On, Off or Dimmer
 Every light can be switched off using
@@ -118,7 +118,7 @@ light.range = 100;
 when a light is created all current meshes will be lit by it. There are two ways to exclude some meshes from being lit.
 A mesh can be added to the _excludedMeshes_ array or add the ones not to be excluded to the _includedOnlyMeshes_ array. The number of meshes to be excluded can be one factor in deciding which method to use. In the following example two meshes are to be excluded from _light0_ and twenty three from _light1_. Commenting out lines 26 and 27 in turn will show the individual effect.
 
-[Playground Example Excluding Lights](http://www.babylonjs-playground.com/#20OAV9#8)
+* [Playground Example Excluding Lights](http://www.babylonjs-playground.com/#20OAV9#8)
 
 ## Lighting Normals
 How lights react to a mesh depend on values set for each mesh vertex termed _normals_, shown in the picture below as arrows giving the direction of the lighting normals. The picture shows two planes and two lights. One light is a spot light, the other is a point light. The front face of each plane is the one you see when the _normals_ are pointing towards you, the back face the opposite side.
@@ -154,7 +154,7 @@ light.lightmapMode = BABYLON.Light.LIGHTMAP_SHADOWSONLY;
 ```
 This is the same as LIGHTMAP_DEFAULT except only the shadows casted from this light will be applied.
 
-[Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
+* [Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
 
 ## Projection Texture
 In some cases it would be nice to define the diffuse color of the light (Diffuse gives the basic color to an object) from a texture insted of a constant color. Imagine that you are trying to simulate the light effects inside of a cathedral. The light going through the stained glasses will be projected on the ground. This is also true for the light coming from a projector or the light effects you can see in a disco.
@@ -167,7 +167,7 @@ var spotLight = new BABYLON.SpotLight("spot02", new BABYLON.Vector3(30, 40, 30),
 spotLight.projectionTexture = new BABYLON.Texture("textures/stainedGlass.png", scene);
 ```
 
-[Playground Example](https://www.babylonjs-playground.com/#CQNGRK)
+* [Playground Example](https://www.babylonjs-playground.com/#CQNGRK)
 
 In order to control the projection orientation and range, you can also rely on the following properties:
 

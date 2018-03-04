@@ -34,7 +34,7 @@ The following code gives the animation.
     })
 ```
 
-[Playground Animation - TransformCoordinates](https://www.babylonjs-playground.com/#TRAIXW#2)
+* [Playground Animation - TransformCoordinates](https://www.babylonjs-playground.com/#TRAIXW#2)
 
 ## Disc World
 
@@ -55,7 +55,7 @@ The building will be an array of boxes. Leaving the boxes as separate meshes wou
 
     });
 ```
-[Playground Animation - Disc World](https://www.babylonjs-playground.com/#TRAIXW#5)
+* [Playground Animation - Disc World](https://www.babylonjs-playground.com/#TRAIXW#5)
 
 # Further Reading
 

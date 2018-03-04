@@ -47,15 +47,15 @@ instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 colors|_(Color4[])_ array of Color4, each point color|null
 useVertexColor|_(boolean)_ false if the alpha blending is not required (faster)|true
 
-[Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#64)
-[Playground Update of the Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
+* [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#64)
+* [Playground Update of the Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
 
 Lines are colored with a color property
 
 ```javascript
 lines.color = new BABYLON.Color3(1, 0, 0);
 ```
-[Playground Example of Colored Lines](https://www.babylonjs-playground.com/#165IV6#78)
+* [Playground Example of Colored Lines](https://www.babylonjs-playground.com/#165IV6#78)
 
 ## Dashed Lines
 Creates a contiguous series of dashed line segments from a list of points.
@@ -88,7 +88,7 @@ Dashed lines are colored with a color property
 ```javascript
 lines.color = new BABYLON.Color3(1, 0, 0);
 ```
-[Playground Example of Colored Dashed Lines](https://www.babylonjs-playground.com/#165IV6#79)
+* [Playground Example of Colored Dashed Lines](https://www.babylonjs-playground.com/#165IV6#79)
 
 ## Line System  
 A system of non-contiguous lines that are independent of each other and may exist in their own space.
@@ -121,7 +121,7 @@ A line system is colored with a color property
 ```javascript
 linesystem.color = new BABYLON.Color3(1, 0, 0);
 ```
-[Playground Example of Colored Line System](https://www.babylonjs-playground.com/#165IV6#80)
+* [Playground Example of Colored Line System](https://www.babylonjs-playground.com/#165IV6#80)
 
 ## Ribbon
 You must set at least the _pathArray_ option.
@@ -215,11 +215,11 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[Playground Example of an Extrusion in Z direction](https://www.babylonjs-playground.com/#165IV6#69)
-[Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#16)
+* [Playground Example of an Extrusion in Z direction](https://www.babylonjs-playground.com/#165IV6#69)
+* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#16)
 
-[Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
-[Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
+* [Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
+* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
 
 
 ## Custom Extruded Shapes
@@ -251,8 +251,8 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[Playground Example of a Custom Extruded Shape](https://www.babylonjs-playground.com/#165IV6#71)
-[Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](http://www.babylonjs-playground.com/#165IV6#17)
+* [Playground Example of a Custom Extruded Shape](https://www.babylonjs-playground.com/#165IV6#71)
+* [Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](http://www.babylonjs-playground.com/#165IV6#17)
 
 ## Lathe
 You must set at least the _shape_ option.
@@ -276,8 +276,8 @@ frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Me
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#72)
-[Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
+* [Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#72)
+* [Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
 
 ## Non Regular Polygon
 You must set at least the _shape_ option.
@@ -322,7 +322,7 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-[Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
+* [Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
 
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 

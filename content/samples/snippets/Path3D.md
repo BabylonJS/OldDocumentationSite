@@ -27,4 +27,4 @@ function showPath3D(path3d, size) {
 ```
 # Playground
 
-[Playground Example](http://www.babylonjs-playground.com/#2IX4FB)
+* [Playground Example](http://www.babylonjs-playground.com/#2IX4FB)
