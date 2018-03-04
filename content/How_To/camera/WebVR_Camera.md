@@ -1,12 +1,12 @@
 ## Introduction
 
-Since v2.5 Babylon.js support WebVR using the WebVRFreeCamera.
+Since v2.5 Babylon.js supports WebVR using the WebVRFreeCamera.
 
-In Babylon v3.0 we fully support the WebVR 1.1 specifications (https://w3c.github.io/webvr/) which is supported by the latest version of Microsoft Edge, Chromium and Firefox, and planning to support WebVR 1.0 for legacy systems, such as GearVR.
+In Babylon v3.0 we fully support the WebVR 1.1 specifications (https://w3c.github.io/webvr/) which is supported by the latest version of Microsoft Edge, Chromium and Firefox.
 
-The WebVR camera is Babylon's simple interface to interaction with Windows Mixed Reality, HTC Vive and Oculus Rift.
+The WebVR camera is Babylon's simple interface to interaction with Windows Mixed Reality, HTC Vive, Oculus Rift, Google Daydream and Samsung GearVR.
 
-Babylon.js also supports the VR devices' controllers - The Windows Mixed Reality controllers, HTC Vive's controllers and the Oculus touch - using the gamepad extension. Further details below.
+Babylon.js also supports the VR devices' controllers - The Windows Mixed Reality controllers, HTC Vive's controllers, the Oculus touch, GearVR controller and Daydream controller - using the gamepad extension. Further details below.
 
 To quickly get started creating WebVR scene the [WebVR Experience Helper](/how_to/WebVR_Helper) class can be used to automatically setup the WebVR camera and enable other features such as teleportation out of the box. 
 
@@ -112,11 +112,11 @@ webVRCamera.leftController.deviceRotationQuaternion
 ```
 ## The Gamepad Extensions support (WebVR controllers)
 
-Each VR device currently available (Windows Mixed Reality, Oculus Rift and Vive) has controllers that complement its usage. Windows Mixed Reality controllers, Vive controllers and the Oculus touch controllers are supported by using the gamepad extensions.
+Each VR device currently available (Windows Mixed Reality, Oculus Rift, Vive, Daydream and GearVR) has controllers that complement its usage. Windows Mixed Reality controllers, Vive controllers, Oculus touch controllers, Daydream Controller and GearVR Controller are supported by using the gamepad extensions.
 
 ### Init controllers
 
-During the WebVRFreeCamera initialization it will attempt to attach the controllers and detect them if found. If found, the controllers will be located at `camera.controllers` which is an array that will either have a length of 2 or 0. If the controllers are attached and were not detected, you could also try to manually call `camera.initControllers()` at a future time.
+During the WebVRFreeCamera initialization it will attempt to attach the controllers and detect them if found. If found, the controllers will be located at `camera.controllers` which is an array that will either have a length of 2 or 0 (GearVR and Daydream support only 1 controller). If the controllers are attached and were not detected, you could also try to manually call `camera.initControllers()` at a future time.
 
 To fire a callback when the controllers are found you can use the optional `camera.onControllersAttached` callback:
 
@@ -134,9 +134,13 @@ There are a few high level implementations that are automatically assigned to a 
 
 `WindowsMotionController` for the Windows Mixed Reality controllers.
 
-`OculusTouchController` for the Oculus touch
+`OculusTouchController` for the Oculus touch.
 
 `ViveController` for the Vive controllers.
+
+`GearVRController` for the Samsung Gear VR controller.
+
+`DaydreamController` for the Google Daydream controller.
 
 each extends the `WebVRController` class, which extends the `PoseEnabledController`.
 
@@ -147,6 +151,8 @@ export enum PoseEnabledControllerType {
     VIVE,
     OCULUS,
     WINDOWS,
+    GEAR_VR,
+    DAYDREAM,
     GENERIC
 }
 ```
@@ -197,7 +203,6 @@ controller.onTriggerStateChangedObservable.add(function (stateObject) {
 ```
 
 
-
 **Windows Mixed Reality Controller mapping**
 
 The Windows Mixed Reality controller supports:
@@ -229,6 +234,20 @@ The oculus touch supports 6 different buttons:
 4. A (right) X (left) - touch, pressed = value. Mapped to `onMainButtonStateChangedObservable`, `onAButtonStateChangedObservable` on the right hand and `onXButtonStateChangedObservable` on the left hand.
 5. B / Y - touch, pressed = value. Mapped to `onSecondaryButtonStateChangedObservable`, `onBButtonStateChangedObservable` on the right hand and `onYButtonStateChangedObservable` on the left hand.
 6. thumb rest. Mapped to `onThumbRestChangedObservable` .
+
+**Gear VR Controller mapping**
+
+The Gear VR controller supports:
+
+1. trackpad - pressed, touch and axis values. Mapped to `onPadValuesChangedObservable` and `onTrackpadChangedObservable`
+2. trigger - pressed and values.  Mapped to `onTriggerStateChangedObservable`
+
+**Google Daydream Controller mapping**
+
+The Google Daydream controller supports:
+1. touchpad - pressed, touch and axis values. Mapped to `onPadValuesChangedObservable` and `onTriggerStateChangedObservable`
+
+note: The Daydream controller home and app buttons are not mapped in WebVR.
 
 ### Attaching to a mesh
 
@@ -309,5 +328,9 @@ Enjoy!
     3. open your console, search for errors.
     4. type `navigator.getGamepads()` in your console. Is the list empty? are there controllers in the list? what controllers?
     5. make sure the gamepad extensions is enabled in your browser! Check https://mozvr.com/ for installation instructions.
+
+* Gear VR or Daydream controller models are not showing
+
+    These are 3 DoF devices (no position).  The models positions aren't yet determined, but you have the rays from controller orientation and functional trigger buttons.
 
 
