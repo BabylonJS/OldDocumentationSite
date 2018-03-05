@@ -649,7 +649,7 @@ BABYLON.PolygonMeshBuilder.prototype.wallBuilder = function (w0, w1) {
 ```
 
 ## Playground Example
-[Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#2)
+* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#2)
 
 # Further Reading
 

@@ -263,10 +263,10 @@ In block 19:
 # Live Examples
 
 The working playground using the above code.
-[Playground Tutorial - Camera Collisions and Input Customisation](https://www.babylonjs-playground.com/#U825TZ)
+* [Playground Tutorial - Camera Collisions and Input Customisation](https://www.babylonjs-playground.com/#U825TZ)
 
 # Further Reading
 
-[Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
+* [Playground Based Tutorial Writing Overview](/How_To/playground_tutorials)  
 [Starter Guide](/resources/hiding_editor_lines)    
 [Intermediate Guide](/resources/PBT_Writing)

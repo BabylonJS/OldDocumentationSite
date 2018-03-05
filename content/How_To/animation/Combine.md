@@ -36,7 +36,7 @@ yRot.setKeys(keyFramesR);
 
 ```
 
-[Playground Example Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#12)
+* [Playground Example Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#12)
 
 ### Slide and Faster Rotation Rate
 
@@ -67,7 +67,7 @@ yRot.setKeys(keyFramesR);
 
 ```
 
-[Playground Example Slide and Faster Rotate](http://www.babylonjs-playground.com/#9WUJN#13)
+* [Playground Example Slide and Faster Rotate](http://www.babylonjs-playground.com/#9WUJN#13)
 
 ### Slide and Varying Rotation Rate
 
@@ -98,7 +98,7 @@ yRot.setKeys(keyFramesR);
 
 ```
 
-[Playground Example Slide and Varying Rotation Rate](http://www.babylonjs-playground.com/#9WUJN#14)
+* [Playground Example Slide and Varying Rotation Rate](http://www.babylonjs-playground.com/#9WUJN#14)
 
 ## Consecutive Animations
 
@@ -145,7 +145,7 @@ var nextAnimation = function() {
 }
 ```
 
-[Playground Example Consecutive Animations Rotate then Slide](http://www.babylonjs-playground.com/#9WUJN#15)
+* [Playground Example Consecutive Animations Rotate then Slide](http://www.babylonjs-playground.com/#9WUJN#15)
 
 
 In the second example the rotation is continued as the box goes into a looped slide.
@@ -156,7 +156,7 @@ var nextAnimation = function() {
 }
 ```
 
-[Playground Example Consecutive Animations Rotate then Rotate and Slide](http://www.babylonjs-playground.com/#9WUJN#16)
+* [Playground Example Consecutive Animations Rotate then Rotate and Slide](http://www.babylonjs-playground.com/#9WUJN#16)
 
 # Further Reading
 

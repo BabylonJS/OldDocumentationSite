@@ -235,7 +235,7 @@ Finally add this new input method to the camera inputs
     camera.inputs.add(new FreeCameraKeyboardRotateInput());
 ```
 
-[Playground Example Rotate Free Camera](https://www.babylonjs-playground.com/#1WFOOA#2)
+* [Playground Example Rotate Free Camera](https://www.babylonjs-playground.com/#1WFOOA#2)
 
 
 ### With Typescript

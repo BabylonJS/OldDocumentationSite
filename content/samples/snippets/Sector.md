@@ -54,4 +54,4 @@ function showAngleSector(origin, vector1, vector2, radius, sectorType) {
 ```
 # Playground
 
-[Playground Example ](http://www.babylonjs-playground.com/#FUK3S#8)
+* [Playground Example ](http://www.babylonjs-playground.com/#FUK3S#8)

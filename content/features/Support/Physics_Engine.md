@@ -19,7 +19,7 @@ Both need to be enabled before use.
 
 Interactions between objects are achieved by imposters, simple objects that are attached to any complex objects with a scene. To allow interaction between objects, the physics engines use an impostor, which is a simpler representation of a complex object. The imposter can be assigned physical attributes such as mass, friction and a coefficient of restitution.
 
-[Playground Example Physics](https://www.babylonjs-playground.com/#BEFOO)
+* [Playground Example Physics](https://www.babylonjs-playground.com/#BEFOO)
 
 It is also possible to assign linear and angular velocities to an imposter as well as an impulse and in the case of the Cannon Physics Engine a force.
 

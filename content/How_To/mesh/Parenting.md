@@ -24,7 +24,7 @@ The following code gives the animation.
     })
 ```
 
-[Playground Animation - Parent](https://www.babylonjs-playground.com/#XQI4UY#1)
+* [Playground Animation - Parent](https://www.babylonjs-playground.com/#XQI4UY#1)
 
 ## Disc World
 
@@ -42,7 +42,7 @@ The building will be an array of boxes with each box parented to the disc.
         phi +=0.01;
     });
 ```
-[Playground Animation - Disc World](https://www.babylonjs-playground.com/#XQI4UY#3)
+* [Playground Animation - Disc World](https://www.babylonjs-playground.com/#XQI4UY#3)
 
 # Further Reading
 

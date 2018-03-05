@@ -17,11 +17,11 @@ final mesh = original mesh + sum((morph targets - original mesh) * morph targets
 For instance you can use morph targets to simulate the opening of a mouth. The initial mesh has a closed mouth. The morph target can be the same mesh but with an opened mouth. Then by changing the influence of the morph target (from 0 to 1) you can display either a closed or an opened mouth or a mix of both.
 
 You can find live examples here: 
-[Playground Example Animated](https://www.babylonjs-playground.com/#HPV2TZ#8)  
+* [Playground Example Animated](https://www.babylonjs-playground.com/#HPV2TZ#8)  
 
 The following two examples are best seen in the full Playground where sliders can be used to change the influencers
-[Playground Example With Standard Material](http://www.babylonjs-playground.com/#HPV2TZ#2)   
-[Playground Example With PBR Material](http://www.babylonjs-playground.com/#HPV2TZ#4) 
+* [Playground Example With Standard Material](http://www.babylonjs-playground.com/#HPV2TZ#2)   
+* [Playground Example With PBR Material](http://www.babylonjs-playground.com/#HPV2TZ#4) 
 
 ## How to Use Morph Targets
 To use morph targets, you first have to create a `MorphTargetManager` and affect it to a mesh:
