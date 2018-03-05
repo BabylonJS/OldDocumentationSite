@@ -16,7 +16,7 @@
 [Arc Between Vectors, Snippets](/samples/Sector)  
 [Arc Rotate Camera](/babylon101/Cameras#arc-rotate-camera)  
 [Ascii Art, Post Process](/extensions/AsciiArtPostProcess)  
-[Assests Manager, File Loading](/How_To/How_to_use_AssetsManager)  
+[Assets Manager, File Loading](/How_To/How_to_use_AssetsManager)  
 ********
 <a name = "B">**B**</a><span style = "float:right">[top](#top)</span>
 
