@@ -170,7 +170,7 @@ include includes/banner.pug
                     sphere.position.y = 1;
 
                     // create a built-in "ground" shape; 
-                    var ground = BABYLON.Mesh.CreateGround('ground1', {height:6, width:6, subdivisions: 2}, scene);
+                    var ground = BABYLON.MeshBuilder.CreateGround('ground1', {height:6, width:6, subdivisions: 2}, scene);
 
                     // return the created scene
                     return scene;

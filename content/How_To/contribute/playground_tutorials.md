@@ -7,10 +7,10 @@ This type of playground takes a student step by step through a feature of Babylo
 
 Below are three PBT examples to give you an idea of what is possible.
 
-[Playground Tutorial - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
-[Playground Tutorial - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
-[Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
-[Playground Tutorial - Camera Collisions and Input Customization](https://www.babylonjs-playground.com/#U825TZ)
+* [Playground Tutorial - .rotation v .rotate](https://www.babylonjs-playground.com/#KNSQD7)
+* [Playground Tutorial - Sliders](https://www.babylonjs-playground.com/#UL6BCD)
+* [Playground Tutorial - Hiding Lines](https://www.babylonjs-playground.com/#4HA2KK)
+* [Playground Tutorial - Camera Collisions and Input Customization](https://www.babylonjs-playground.com/#U825TZ)
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are below.
 

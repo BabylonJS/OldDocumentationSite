@@ -88,7 +88,7 @@ var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
 
 Parameters are: name, width, depth, subdivs, scene
 
-Our [Playground Demo Scene 01](http://www.babylonjs-playground.com/?1) uses a CreateGround constructor... so you can see one in action by using the above link.
+Our * [Playground Demo Scene 01](http://www.babylonjs-playground.com/?1) uses a CreateGround constructor... so you can see one in action by using the above link.
 
 # Ground From HeightMap
 

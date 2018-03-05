@@ -51,7 +51,7 @@ vertexData.indices = indices;
 vertexData.applyToMesh(customMesh);
 ```
 
-[Playground Example Showing Custom Mesh with Positions and Indices](http://www.babylonjs-playground.com/#VKBJN#2)
+* [Playground Example Showing Custom Mesh with Positions and Indices](http://www.babylonjs-playground.com/#VKBJN#2)
 
 ## Normals 
 
@@ -117,7 +117,7 @@ Clearly the normals for each facet are pointing in the opposite directions, they
 Looking from the origin towards facet 3, 4, 5 then the order in the indices array 3, 4, 5 around the facet is clockwise.
 Looking from the origin towards facet 0, 1, 2 then the order in the indices array 0, 1, 2 around the facet is also clockwise.
 
-[Playground Example Showing Custom Mesh with Normals](http://www.babylonjs-playground.com/#VKBJN#6)
+* [Playground Example Showing Custom Mesh with Normals](http://www.babylonjs-playground.com/#VKBJN#6)
 
 Reversing the order of one or both sets of facet indices in the playground will show how the normals change direction.
 
@@ -163,7 +163,7 @@ mat.backFaceCulling = false;
 
 Comment line 41 out in the following to see back face culling happening.
 
-[Playground Example Both Facets](http://www.babylonjs-playground.com/#VKBJN#7)
+* [Playground Example Both Facets](http://www.babylonjs-playground.com/#VKBJN#7)
 
 ## Color
 
@@ -206,7 +206,7 @@ vertexData.applyToMesh(customMesh);
 ```
 In the playground below see what happens when you make the vertices on the red facet different colors.
 
-[Playground Example Setting Vertex Colors](http://www.babylonjs-playground.com/#VKBJN#8) 
+* [Playground Example Setting Vertex Colors](http://www.babylonjs-playground.com/#VKBJN#8) 
 
 ### Notes on the Playground
 Since a material is no longer being used backFaceCulling cannot be set and so the camera will have to be rotated for the far facet to be seen. The far facet will remain black 
@@ -217,9 +217,9 @@ controlled lighting effects use a [material](/basics/Materials.html) as well as,
 
 Adding a light with direction the reverse of the current one will light both sides.
 
-[Playground Example Both Sides Lit](http://www.babylonjs-playground.com/#VKBJN#104) 
+* [Playground Example Both Sides Lit](http://www.babylonjs-playground.com/#VKBJN#104) 
 
-[Playground Example Both Sides Colour Variation](http://www.babylonjs-playground.com/#VKBJN#105) 
+* [Playground Example Both Sides Colour Variation](http://www.babylonjs-playground.com/#VKBJN#105) 
 
 ## Texture
 
@@ -284,7 +284,7 @@ gives
 
 In the playground below clicking on next will cycle you through a variety of values for the uv coordinates.
 
-[Playground Example Varying UV Values](http://www.babylonjs-playground.com/#VKBJN#14) 
+* [Playground Example Varying UV Values](http://www.babylonjs-playground.com/#VKBJN#14) 
 
 ### Notes on Playground
 The camera has been disabled for this playground. The uv values are shown and the relative index are shown on the texture image. 

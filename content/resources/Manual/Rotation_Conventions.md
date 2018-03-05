@@ -39,7 +39,7 @@ mesh.rotation = new BABYLON.Vector3(pitch, yaw, roll);
 
 which will produce this orientation whatever the orientation of the mesh prior to its application. The playground below demonstrates this by randomly generating angles and then applying these two methods to two different boxes which remain in alignment.
 
-[Playground Example - YXZ yaw, pitch, roll](http://www.babylonjs-playground.com/#1ST43U#50)
+* [Playground Example - YXZ yaw, pitch, roll](http://www.babylonjs-playground.com/#1ST43U#50)
 
 ### ZXY *World Axes*
 
@@ -61,7 +61,7 @@ mesh.rotation = new BABYLON.Vector(alpha, beta, gamma);
 
 which will produce this orientation whatever the orientation of the mesh prior to its application. The playground below demonstrates this by randomly generating angles and then applying these two methods to two different boxes which remain in alignment.
 
-[Playground Example - ZXY](https://www.babylonjs-playground.com/#1ST43U#52)
+* [Playground Example - ZXY](https://www.babylonjs-playground.com/#1ST43U#52)
 
 
 ## Quaternions
@@ -114,7 +114,7 @@ var yprQuaternion = BABYLON.Quaternion.RotationYawPitchRoll(yaw, pitch, roll);
 ``` 
 Applying the above  _rotate_ sequence to a newly created mesh (ie one that has zero rotations) in the order YXZ in **local** space and applying _RotationAlphaBetaGamma_ to a mesh, with any orientation, using the same angles will produce the same orientation. The playground below demonstrates this by randomly generating angles and then applying these two methods to two different boxes which remain in alignment.
 
-[Playground Example - Yaw Pitch Roll to Quaternion](https://www.babylonjs-playground.com/#1ST43U#54)
+* [Playground Example - Yaw Pitch Roll to Quaternion](https://www.babylonjs-playground.com/#1ST43U#54)
 
 ### ZXZ *World Axes* A Standard Convention 
 
@@ -134,7 +134,7 @@ var abcQuaternion = BABYLON.Quaternion.RotationAlphaBetaGamma(alpha, beta, gamma
 
 Applying the above  _rotate_ sequence to a newly created mesh (ie one that has zero rotations) in the order ZXZ in **world** space and applying _RotationAlphaBetaGamma_ to a mesh, with any orientation, using the same angles will produce the same orientation. The playground below demonstrates this by randomly generating angles and then applying these two methods to two different boxes which remain in alignment.
 
-[Playground Example ZXZ to Quaternion](https://www.babylonjs-playground.com/#1ST43U#53)
+* [Playground Example ZXZ to Quaternion](https://www.babylonjs-playground.com/#1ST43U#53)
 
 
 ## Quaternions to Euler Angles
@@ -149,5 +149,5 @@ To illustrate this the following playground generates three random angles, puts 
 and selects at random either to use world or local for all axes. This data is then used to randomise the orientation 
 of a just created box using the _rotate_ method. The _rotate_ method achieves the rotation by generating and using a _rotationQuaternion_  on the box. The _rotationQuaternion_ generated is used to produce the Euler angles to rotate another box, box1, using box1.rotation to obtain the same orientation as the first box.
 
-[Playground Example Random Orientation to Euler Angles for mesh.rotation](http://www.babylonjs-playground.com/#1ST43U#7)
+* [Playground Example Random Orientation to Euler Angles for mesh.rotation](http://www.babylonjs-playground.com/#1ST43U#7)
 

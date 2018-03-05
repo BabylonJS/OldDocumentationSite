@@ -10,7 +10,7 @@ Babylon.JS is a great way to code a 3D environment on the web using the HTML5 ca
 
 This is the quickest and easiest way to make your own scene. Creating a 3D scene is easy, simply add a camera, lights and 3D shapes (meshes) and you are away. 
 
-The [Playground](http://babylonjs-playground.com) is web site which has everything you need to create 
+The * [Playground](http://babylonjs-playground.com) is web site which has everything you need to create 
 your own scene or edit an existing one. [More on the Playground](/features/Playground).
 
 A template for creating a scene within the playground is;
@@ -39,7 +39,7 @@ var createScene = function () {
 
 Everything else you need is taken care of within the Playground.
 
-[Playground Example of Above Code](http://www.babylonjs-playground.com/#WG9OY#1)
+* [Playground Example of Above Code](http://www.babylonjs-playground.com/#WG9OY#1)
 
 ## Your Own HTML
 

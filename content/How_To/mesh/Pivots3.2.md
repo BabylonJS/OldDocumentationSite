@@ -41,18 +41,18 @@ Now when you apply a rotation to the green box it will be about the pivot, which
 
 ![rotated](/img/how_to/Mesh/pivot4.jpg)
 
-[Playground Example - Pivoted Mesh](https://www.babylonjs-playground.com/#AGXDE#23)
+* [Playground Example - Pivoted Mesh](https://www.babylonjs-playground.com/#AGXDE#23)
 
 In the second example the same boxes are positioned at (6, 5, 3) and again the pivot is to be positioned at the lower front right corner. The lower front right corner is still the same position relative to the box and so the required translation is still (-4, -2, -1)
 
-[Playground Example - Pivoted Dsiplaced Mesh](https://www.babylonjs-playground.com/#AGXDE#28)
+* [Playground Example - Pivoted Dsiplaced Mesh](https://www.babylonjs-playground.com/#AGXDE#28)
 
 ## Aligning Pivoted Meshes
 
 Under the breaking change this is simply done by the appropriate aligned values for the positions of the meshes centres.
 
-[Playground Example - Aligned Pivoted Meshes](https://www.babylonjs-playground.com/#AGXDE#26)
-[Playground Example - Aligned Pivoted Meshes Rotated](https://www.babylonjs-playground.com/#AGXDE#27)
+* [Playground Example - Aligned Pivoted Meshes](https://www.babylonjs-playground.com/#AGXDE#26)
+* [Playground Example - Aligned Pivoted Meshes Rotated](https://www.babylonjs-playground.com/#AGXDE#27)
 
 It is worth noting that when positioning a mesh its pivot will move with the same displacement. In the above playgrounds the red pivot markers are moved to the pivot position by adding the position of the mesh to the pivot position. 
 
@@ -75,8 +75,8 @@ mesh.setPivotMatrix(BABYLON.Matrix.Translation(pivotTranslate.x, pivotTranslate.
 ```
 The mesh will now be positioned with its centre at (xc, yc, zc) and all rotations and scaling will take place with reference to the pivot at (xp, yp, zp).
 
-[Playground Example - Rotation about a Pivot](https://www.babylonjs-playground.com/#AGXDE#29)
-[Playground Example - Scaling from a Pivot](https://www.babylonjs-playground.com/#AGXDE#30)
+* [Playground Example - Rotation about a Pivot](https://www.babylonjs-playground.com/#AGXDE#29)
+* [Playground Example - Scaling from a Pivot](https://www.babylonjs-playground.com/#AGXDE#30)
 
 In the above playgrounds the sphere(s) show that rotation and scaling do take place with reference to the pivot.
 
@@ -94,17 +94,17 @@ mesh.setPivotMatrix(BABYLON.Matrix.Translation(pivotTranslate.x, pivotTranslate.
 ```
 The following sequence of playgrounds goes from setting the first pivot position to scaling about the second pivot position
 
-[Playground Example - Set First Pivot](https://www.babylonjs-playground.com/#1MKHR9#23)
-[Playground Example - Set Second Pivot](https://www.babylonjs-playground.com/#1MKHR9#24)
-[Playground Example - Scaling from Second Pivot](https://www.babylonjs-playground.com/#1MKHR9#25)
+* [Playground Example - Set First Pivot](https://www.babylonjs-playground.com/#1MKHR9#23)
+* [Playground Example - Set Second Pivot](https://www.babylonjs-playground.com/#1MKHR9#24)
+* [Playground Example - Scaling from Second Pivot](https://www.babylonjs-playground.com/#1MKHR9#25)
 
 **NOTE:** Resetting the pivot resets it relative to the unrotated mesh. That is if the mesh has been rotated before resetting the pivot the actual order remains reset pivot do rotation. A reset after a rotation will therefore move the mesh.
 
 The following sequence of playgrounds shows setting the first pivot, rotating around the pivot then resetting the pivot.
 
-[Playground Example - Set First Pivot](http://www.babylonjs-playground.com/#1MKHR9#23)
-[Playground Example - Rotate About First Pivot](https://www.babylonjs-playground.com/#1MKHR9#26)
-[Playground Example - Set Second Pivot](https://www.babylonjs-playground.com/#1MKHR9#27)  
+* [Playground Example - Set First Pivot](http://www.babylonjs-playground.com/#1MKHR9#23)
+* [Playground Example - Rotate About First Pivot](https://www.babylonjs-playground.com/#1MKHR9#26)
+* [Playground Example - Set Second Pivot](https://www.babylonjs-playground.com/#1MKHR9#27)  
 
 ## How To Set and Get a Pivot Point
 
@@ -118,17 +118,17 @@ mesh.getAbsolutePivotPoint(); // returns Vector3
 
 The following sequence of playgrounds goes from setting the first pivot point to scaling about the second pivot point
 
-[Playground Example - Set First Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#17)
-[Playground Example - Set Second Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#18)
-[Playground Example - Scaling from Second Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#19)
+* [Playground Example - Set First Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#17)
+* [Playground Example - Set Second Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#18)
+* [Playground Example - Scaling from Second Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#19)
 
 **NOTE:** Resetting the pivot resets it relative to the unrotated mesh. That is if the mesh has been rotated before resetting the pivot the actual order remains reset pivot do rotation. A reset after a rotation will therefore move the mesh.
 
 The following sequence of playgrounds shows setting the first pivot, rotating around the pivot then resetting the pivot.
 
-[Playground Example - Set First Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#17)
-[Playground Example - Rotate About First Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#20)
-[Playground Example - Set Second Pivot Point and Rotate](https://www.babylonjs-playground.com/#1MKHR9#28)
+* [Playground Example - Set First Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#17)
+* [Playground Example - Rotate About First Pivot Point](http://www.babylonjs-playground.com/#1MKHR9#20)
+* [Playground Example - Set Second Pivot Point and Rotate](https://www.babylonjs-playground.com/#1MKHR9#28)
 
 # Further Reading
 

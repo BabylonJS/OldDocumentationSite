@@ -44,7 +44,7 @@ myMaterial.ambientColor = new BABYLON.Color3(0.23, 0.98, 0.53);
 mesh.material = myMaterial;
 ```
 ### Diffuse Color Example
-To give an idea how material diffuse color reacts to diffuse light color the following [Playground Example](http://www.babylonjs-playground.com/#20OAV9#10) shows how
+To give an idea how material diffuse color reacts to diffuse light color the following * [Playground Example](http://www.babylonjs-playground.com/#20OAV9#10) shows how
 
 |     |     |
 |----|----|
@@ -68,7 +68,7 @@ Transparency is achieved by setting a materials _alpha_ property from 0 (invisib
 ```javascript
 var myMaterial.alpha = 0.5;
 ```
-[Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#16)
+* [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#16)
 
 ## Texture
 Textures are formed using a saved image.
@@ -104,7 +104,7 @@ As for colors the transparency is achieved by setting a materials _alpha_ proper
 ```javascript
 var myMaterial.alpha = 0.5;
 ```
-[Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
+* [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
 
 In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
 which has a transparent background;
@@ -116,7 +116,7 @@ In this case we set the _hasAlpha_ property of the **texture** to true.
 var myMaterial.diffuseTexture.hasAlpha = true;
 ```
 
-[Playground Example Transparent Background](http://www.babylonjs-playground.com/#YDO1F#18)
+* [Playground Example Transparent Background](http://www.babylonjs-playground.com/#YDO1F#18)
 
 For the back faces of the cube to be visible through the transparent areas of the front faces we have to deal with back face culling.
 
@@ -132,7 +132,7 @@ When _backFaceCulling_ is false the back faces are not removed during rendering 
 |-----|--------|
 | ![BFC True](/img/how_to/Materials/bfc2.png) | ![BFC False](/img/how_to/Materials/bfc1.png) |
 
-[Playground Example Back Face Culling True](http://www.babylonjs-playground.com/#YDO1F#20)
+* [Playground Example Back Face Culling True](http://www.babylonjs-playground.com/#YDO1F#20)
 
 ## WireFrame
 You can see a mesh in wireframe mode by using:

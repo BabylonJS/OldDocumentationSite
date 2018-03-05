@@ -51,7 +51,7 @@ The local and world axes remain in the same orientation.
 
 ![pilot position](/img/babylon101/pilot1.jpg)
 
-[Playground Example for Position](https://www.babylonjs-playground.com/#UBWFJT#2)
+* [Playground Example for Position](https://www.babylonjs-playground.com/#UBWFJT#2)
 
 ## Rotation
 
@@ -97,7 +97,7 @@ The following sequence of images shows the initial starting position of the pilo
 
 ![start](/img/babylon101/pilotL1.jpg)  ![Y](/img/babylon101/pilotW2.jpg)  ![X](/img/babylon101/pilotW3.jpg)  ![Z](/img/babylon101/pilotW4.jpg) 
 
-[Playground Example - Rotation](http://www.babylonjs-playground.com/#1ZMJQV#2) 
+* [Playground Example - Rotation](http://www.babylonjs-playground.com/#1ZMJQV#2) 
 
 ### Summary
 
@@ -119,7 +119,7 @@ pilot.rotation.z  =  gamma;
 pilot.rotation.x  =  alpha;
 ```
 
-[Playground Example - Positioned, Scaled, and Rotated Boxes](http://www.babylonjs-playground.com/?3)
+* [Playground Example - Positioned, Scaled, and Rotated Boxes](http://www.babylonjs-playground.com/?3)
 
 ## Sequencing Rotations
 

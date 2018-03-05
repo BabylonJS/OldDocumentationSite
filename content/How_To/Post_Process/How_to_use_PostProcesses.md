@@ -158,12 +158,19 @@ You can also use this postprocess to enable a vignette effect. The vignette is p
 * vignetteBlendMode: BABYLON.ImageProcessingPostProcess.VIGNETTEMODE_MULTIPLY or BABYLON.ImageProcessingPostProcess.VIGNETTEMODE_OPAQUE
 
 You can find a demo of the vignette here: https://www.babylonjs-playground.com/#J9H084#11
+Add grain using image processing.
 
+Parameters:
+* grainAnimated - If the grain should be updated every frame
+* grainIntensity - How much grain should be applied to the image
+
+Grain demo: https://www.babylonjs-playground.com/#J9H084#23
 All features can be turned on and off with the following booleans:
 * colorCurvesEnabled
 * vignetteEnabled
 * cameraToneMappingEnabled
 * colorGradingEnabled
+* grainEnabled
 
 #### Configuration
 

@@ -43,7 +43,7 @@ The _length()_ method returns the curve length.
 var path = bezier2.getPoints();
 var l = bezier2.length();
 ```
-[Playground Example - Bezier Quadratic Curve](https://www.babylonjs-playground.com/#W0XSPA)
+* [Playground Example - Bezier Quadratic Curve](https://www.babylonjs-playground.com/#W0XSPA)
 
 ## Cubic Bezier curve
 http://en.wikipedia.org/wiki/B%C3%A9zier_curve# Higher-order_curves
@@ -66,7 +66,7 @@ var path = bezier3.getPoints();
 var l = bezier3.length();
 ```
 
-[Playground Example - Bezier Cubic Curve](https://www.babylonjs-playground.com/#EY3EW4);
+* [Playground Example - Bezier Cubic Curve](https://www.babylonjs-playground.com/#EY3EW4);
 
 
 ## Hermite Spline
@@ -91,7 +91,7 @@ var path = hermite.getPoints();
 var l = hermite.length();
 ```
 
-[Playground Example - Hermite Spline](https://www.babylonjs-playground.com/#P94GHL)
+* [Playground Example - Hermite Spline](https://www.babylonjs-playground.com/#P94GHL)
 
 ## Catmull-Rom Spline  
 https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline  
@@ -114,7 +114,7 @@ var path = catmullRom.getPoints();
 var l = catmullRom.length();
 ```
 
-[Playground example - Catmull-Rom Spline](https://www.babylonjs-playground.com/#1AU0M4)
+* [Playground example - Catmull-Rom Spline](https://www.babylonjs-playground.com/#1AU0M4)
 
 ## Custom Curve3 Object
 You can also make your own Curve3 object from a simple array of successive Vector3.   
@@ -180,7 +180,7 @@ continued = continued.continue(hermite);
 var closedCurve = BABYLON.Mesh.CreateLines("closed", continued.getPoints(), scene);
 ```
 
-[Playground Example - Closed Joined Curves](https://www.babylonjs-playground.com/#2GCEVH)
+* [Playground Example - Closed Joined Curves](https://www.babylonjs-playground.com/#2GCEVH)
 
 The orange and yellow curves are the original Bezier curves.   
 In light blue, these two curves are continued each other and a hermite curve is also added in continuation to close the path.   

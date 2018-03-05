@@ -21,11 +21,11 @@ The most straight forward way is to apply an [height map](/babylon101/Height_Map
 Do you want a very large, or infinite terrain, then Babylon.js provides an extension to do this using a Dynamic Terrain.
 The Dynamic Terrain is a mesh and a 3D data map of geographic positions giving planar and height coordinates. The mesh stays in place and morphs according to the current world camera position and a data map. This gives the illusion of being able to fly around the terrain. 
 
-[Playground Example Early Prototype](https://www.babylonjs-playground.com/#21MVDH#1)
+* [Playground Example Early Prototype](https://www.babylonjs-playground.com/#21MVDH#1)
 
 Now a fully developed extension.
 
-[Playground Example Around the World](https://www.babylonjs-playground.com/#FJNR5#190)
+* [Playground Example Around the World](https://www.babylonjs-playground.com/#FJNR5#190)
 
 Remember to click in display area before using keys. 
 
