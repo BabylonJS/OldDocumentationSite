@@ -39,13 +39,17 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Animations: Position, scaling, rotation
 
 * _Materials_
-    * Base color
+    * Standard material (converted to PBR, see below)
+    * Physical material (PBR)
+    * Base color and alpha
     * Metalness and roughness
     * Emission, ambient occlusion
     * Multi-materials
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)
+    * magFilter, minFilter
+    * Image format conversion to jpg / png
 
 * Hierarchies are exported
 
@@ -53,7 +57,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
 
 The plugin uses core specifications of glTF, i.e. without any extension. This implies that only PBR materials are exported.
 
-To support compatibility with standard materials, they are converted to PBR materials based on their diffuse, specular, opacity and glossiness.
+To support compatibility with 3ds max Standard materials, they are converted to PBR materials based on their diffuse, specular, opacity and glossiness.
 
 [The complete algorithm is detailed here](https://github.com/bghgary/glTF/blob/gh-pages/convert-between-workflows-bjs/js/babylon.pbrUtilities.js)
 
