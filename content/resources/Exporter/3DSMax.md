@@ -22,12 +22,6 @@ Repeat this process for all .dll files. Finally, make sure 3ds Max is not runnin
 
 Congratulations! You did it!
 
-## Extra setup for 3DS MAX 2018
-
-To make the new tab appear in 3DS MAX 2018, you also need to remove (or rename for a backup) the folder `C:\Users\USER_NAME\AppData\Local\Autodesk\3dsMax\2018 - 64bit` where USER_NAME is your current session name.
-
-Be aware this removes all your 3DS MAX 2018 preferences.
-
 # Features  #
 
 ## Exported features
