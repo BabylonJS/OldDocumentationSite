@@ -142,7 +142,7 @@ For Line control, you can also attach the second point to a control with `line.c
 
 With these 2 options, you can create a complete trackable label:  https://www.babylonjs-playground.com/#XCPP9Y#20
 
-** Tracking positions features only work when the AdvancedDynamicTexture is in fullscreen mode **
+**Tracking positions features only work when the AdvancedDynamicTexture is in fullscreen mode**
 
 ### Adaptive scaling
 When in fullscreen UI, you can decide to define your UI with a fixed resolution.
