@@ -103,8 +103,6 @@ The scene properties allow you to do these things:
 * __Export quaternions for all nodes instead of Euler angles__. If this option is selected, an exported model rotation won’t be updated by setting its `rotation` parameter. Instead, you will have to use the `rotationQuaternion` parameter.
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
- 
-You surely noticed the submenu Babylon Actions Builder. This tool allows you to visually design your actions. [More info here](https://medium.com/babylon-js/actions-builder-b05e72aa541a)
 
 ![Scene properties](/img/exporters/3DSMax/6_properties_window.jpg)
 
