@@ -190,6 +190,8 @@
 ********
 <a name = "M">**M**</a><span style = "float:right">[top](#top)</span>
 
+[Maya](/resources/Maya) 
+[Maya_to_glTF](/resources/Maya_to_glTF)  
 [Making a Simple Driven Car](/samples/Car_Driven)  
 [Marble, Procedural Texturel](/extensions/MarbleProceduralTexture)  
 [Material for Library, Contribute](/How_To/How_to_create_a_material_for_materialsLibrary)  
