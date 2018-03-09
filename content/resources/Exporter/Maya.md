@@ -29,7 +29,7 @@ Congratulations! You did it!
 * _Meshes_
     * Visibility
     * Position / rotation / scaling
-    * Geometry (position, normal, color, texture coordinates (2 channels))
+    * Geometry (position, normal, texture coordinates (2 channels))
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn)
@@ -50,7 +50,6 @@ Congratulations! You did it!
 * _Textures_
     * UV offset / scaling / angle
     * Level
-    * Coordinates mode (Spherical, planar, explicit)
     * Wrapping (Clamp, mirror, wrap)
 
 * _Cameras_
@@ -66,7 +65,6 @@ Congratulations! You did it!
     * Intensity
     * Diffuse
     * Specular
-    * Light linking relations (inclusion list)
 
 ## The exporter window 
 
