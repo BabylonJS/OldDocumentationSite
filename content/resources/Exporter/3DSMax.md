@@ -12,11 +12,11 @@ In this folder, you can find the source code of the exporter if you want to upda
 
 ![github download](/img/exporters/3DSMax/2_github_dl.jpg)
 
-Extract the content of the zip file on your computer, and open the directory corresponding to your 3DS Max version. By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the first .dll file, and with a right click select _Properties_, select _Unblock_, and then _OK_. 
+By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the zip file, and with a right click select _Properties_, select _Unblock_, and then _OK_. 
 
 ![dll unblocking](/img/exporters/3DSMax/3_dll_unlocking.jpg)
 
-Repeat this process for all .dll files. Finally, make sure 3ds Max is not running, and move all .dll files into the installation directory of 3DS Max (in `C:/Programs/Autodesk/3ds Max 2015/bin/assemblies`). The next time you will start 3ds Max, the plugin will be automatically launched, and a new tab should appear: 
+Then, extract the content of the zip file on your computer, and open the directory corresponding to your 3DS Max version. Finally, make sure 3ds Max is not running, and move all .dll files into the installation directory of 3DS Max (in `C:/Programs/Autodesk/3ds Max 2015/bin/assemblies`). The next time you will start 3ds Max, the plugin will be automatically launched, and a new tab should appear: 
 
 ![plugin visible](/img/exporters/3DSMax/4_plugin_visible.jpg)
 
