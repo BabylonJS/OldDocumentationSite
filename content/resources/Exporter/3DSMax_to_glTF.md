@@ -169,17 +169,17 @@ However, glTF format does not support this feature and the environment map needs
 
 3. Go to “Time Configuration” window and change “Start Time:”, “End Time” under “Animation” section properly.
 
-![3ds Time Configuration Window](/public/html/img/exporters/3DSMax/time_configuration_window.jpg)
+![3ds Time Configuration Window](/img/exporters/3DSMax/time_configuration_window.jpg)
 
 4. Right click on the imported 3D model. Navigate “Babylon... > Babylon Properties” and open the “Babylon.js Object Properties” window as below.
 
-![3ds Babylon Plugin Properties Window](/public/html/img/exporters/3DSMax/3ds_babylon_plugin_properties_window.jpg)
+![3ds Babylon Plugin Properties Window](/img/exporters/3DSMax/3ds_babylon_plugin_properties_window.jpg)
 
 5. Update the “From:”, “To:” fields under “Animations” section with expected animation frames to be exported
 
 6. Open “Babylon Exporter” window from menu “Babylon > Babylon File Exporter ...” as below.
 
-![3ds Babylon Exporter](/public/html/img/exporters/3DSMax/babylon_exporter.jpg)
+![3ds Babylon Exporter](/img/exporters/3DSMax/babylon_exporter.jpg)
 
 #  Try it out!  #
 
