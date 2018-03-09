@@ -101,6 +101,7 @@ All the available blend modes are listed below:
 The scene properties allow you to do these things:
 * Set the scene gravity
 * __Export quaternions for all nodes instead of Euler angles__. If this option is selected, an exported model rotation won’t be updated by setting its `rotation` parameter. Instead, you will have to use the `rotationQuaternion` parameter.
+* __Do not optimize animations__. You should check this option if animations are not exported correctly.
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
 
@@ -199,6 +200,8 @@ Be aware animations for this object will likely be incorrect after that.
 Cameras, lights and meshes have custom properties (Right-click and select "Babylon properties" menu) to automatically launch animations at startup.
 
 Animations are exported by sampling keyframes which can generate a lot of data. To reduce file size, you can opt to use linear interpolation instead of bezier or TCB.
+
+Also, if animations are not exported correctly, you may want to disable animation optimization by using the Babylon properties menu on the scene (Right-click on the scene and select "Babylon properties" menu).
 
 ## Consideration about bones
 
