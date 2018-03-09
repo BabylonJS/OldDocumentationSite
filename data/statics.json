@@ -880,7 +880,15 @@
                 {
                     "title": "3D Text",
                     "filename": "3Dtext"
-                }
+                },
+                {
+                    "title": "Maya",
+                    "filename": "Maya"
+                },
+                {
+                    "title": "Maya to glTF",
+                    "filename": "Maya_to_glTF"
+				}
             ]
         },
         {

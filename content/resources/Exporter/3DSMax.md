@@ -12,11 +12,11 @@ In this folder, you can find the source code of the exporter if you want to upda
 
 ![github download](/img/exporters/3DSMax/2_github_dl.jpg)
 
-Extract the content of the zip file on your computer, and open the directory corresponding to your 3DS Max version. By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the first .dll file, and with a right click select _Properties_, select _Unblock_, and then _OK_. 
+By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the zip file, and with a right click select _Properties_, select _Unblock_, and then _OK_. 
 
 ![dll unblocking](/img/exporters/3DSMax/3_dll_unlocking.jpg)
 
-Repeat this process for all .dll files. Finally, make sure 3ds Max is not running, and move all .dll files into the installation directory of 3DS Max (in `C:/Programs/Autodesk/3ds Max 2015/bin/assemblies`). The next time you will start 3ds Max, the plugin will be automatically launched, and a new tab should appear: 
+Then, extract the content of the zip file on your computer, and open the directory corresponding to your 3DS Max version. Finally, make sure 3ds Max is not running, and move all .dll files into the installation directory of 3DS Max (in `C:/Programs/Autodesk/3ds Max 2015/bin/assemblies`). The next time you will start 3ds Max, the plugin will be automatically launched, and a new tab should appear: 
 
 ![plugin visible](/img/exporters/3DSMax/4_plugin_visible.jpg)
 
@@ -101,6 +101,7 @@ All the available blend modes are listed below:
 The scene properties allow you to do these things:
 * Set the scene gravity
 * __Export quaternions for all nodes instead of Euler angles__. If this option is selected, an exported model rotation won’t be updated by setting its `rotation` parameter. Instead, you will have to use the `rotationQuaternion` parameter.
+* __Do not optimize animations__. You should check this option if animations are not exported correctly.
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
 
@@ -199,6 +200,8 @@ Be aware animations for this object will likely be incorrect after that.
 Cameras, lights and meshes have custom properties (Right-click and select "Babylon properties" menu) to automatically launch animations at startup.
 
 Animations are exported by sampling keyframes which can generate a lot of data. To reduce file size, you can opt to use linear interpolation instead of bezier or TCB.
+
+Also, if animations are not exported correctly, you may want to disable animation optimization by using the Babylon properties menu on the scene (Right-click on the scene and select "Babylon properties" menu).
 
 ## Consideration about bones
 
