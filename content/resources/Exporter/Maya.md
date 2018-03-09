@@ -8,11 +8,11 @@ In this folder, you can find the source code of the exporter if you want to upda
 
 ![github download](/img/exporters/Maya/2_github_dl.jpg)
 
-Extract the content of the zip file on your computer. By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the first .dll file, and with a right click select _Properties_, select _Unblock_, and then _OK_. 
+By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the zip file, and with a right click select _Properties_, select _Unblock_, and then _OK_.
 
 ![dll unblocking](/img/exporters/Maya/3_dll_unlocking.jpg)
 
-Repeat this process for all .dll files. Finally, move all .dll files into a directory defined in Maya plug-in path (for example `C:/Program Files/Autodesk/Maya2018/bin/plug-ins`). More information on how to install a plug-in in Maya [here](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html). In Maya plug-in Manager you should find the Maya2Babylon.nll.dll.
+Then, extract the content of the zip file on your computer. Finally, move all .dll files into a directory defined in Maya plug-in path (for example `C:/Program Files/Autodesk/Maya2018/bin/plug-ins`). More information on how to install a plug-in in Maya [here](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html). In Maya plug-in Manager you should find the Maya2Babylon.nll.dll.
 
 ![dll unblocking](/img/exporters/Maya/4_maya_plug_in_manager.jpg)
 
