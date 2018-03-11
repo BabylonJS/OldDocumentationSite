@@ -404,13 +404,13 @@ To completely stop a `GPUParticleSystem`, you have to call `dispose()` on it.
 
 ## Sub Emitters
 
-Start from babylonjs 3.2 you can create sub emitter, using this feature you can spawns a new ParticleSystem when the particle dies. every new spawned ParticleSystem is totally independent from the parent and could have different shapes so for example you could have a root ParticleSystem which produces cone shapes and the subEmitters could have a sphere shape or even you can provide more than a ParticleSystem with different shapes and let the engine choose randomly between them.
+Starting from babylonjs 3.2 you can create sub emitter, using this feature you can spawn a new ParticleSystem when the particle dies. Every new spawned ParticleSystem is totally independent from the parent and could have different shapes so for example, you could have a root ParticleSystem which produces cone shape and the subEmitters could have a sphere shape or even you could provide more than a ParticleSystem with different shapes and let the engine choose randomly between them.
 
 ### How to use it
 
 a new property is introduced in the ParticleSystem `subEmitters` which is accepting an array of `ParticleSystem` when the particle dies the engine select a random System from the `subEmitters` array and spawn a new system by cloning the selected ParticleSystem. you can add `subEmitters` property to the `subEmitters` so when the particles of the spawned ParticleSystem dies it will create a new Particle System and so on.
 
-The property `manualEmitCount` would be used in the subEmitters to avoid a infinite loop of creating and spawn new systems unless you're controlling the newly generated ParticleSystem using property `activeSubSystems`.
+The property `manualEmitCount` would be used in the subEmitters to avoid an infinite loop of creating and spawn new systems unless you're controlling the newly generated ParticleSystem using property `activeSubSystems`.
 
 Each `ParticleSystem` with `subEmitters` has property `activeSubSystems` which is an array containing all current active sub `ParticleSystem` generated from particles belong to the current `ParticleSystem`.
 
