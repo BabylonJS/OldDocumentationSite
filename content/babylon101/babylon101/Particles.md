@@ -376,6 +376,8 @@ var particleSystem = new BABYLON.GPUParticleSystem("particles", { capacity:10000
 
 As CPU is no more involved, you can go crazy with active particles (1000000 in this example). Also, you can use `particleSystem.activeParticleCount` to define the number of active particle count if you want to limit the GPU usage.
 
+Note: SubEmitters is not supported in GPU particles.
+
 ### Random texture
 It is a shame but there is no good way to get random numbers when running on the GPU. To fill this gap, Babylon.js will create a texture filled with thousands of random values. These values will be read by the particle update shader to animate the particles.
 By default the biggest supported texture size is used (16K). You may want to reduce the size of this texture by initializing the system like this:
@@ -399,6 +401,23 @@ You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI#
 When calling `system.stop()` on a `GPUParticleSystem` object, you will force the system to stop generating new particles. But particles will still be rendered even if not visible.
 
 To completely stop a `GPUParticleSystem`, you have to call `dispose()` on it.
+
+## Sub Emitters
+
+Starting from babylonjs 3.2 you can create sub emitter, using this feature you can spawn a new ParticleSystem when the particle dies. Every new spawned ParticleSystem is totally independent from the parent and could have different shapes so for example, you could have a root ParticleSystem which produces cone shape and the subEmitters could have a sphere shape or even you could provide more than a ParticleSystem with different shapes and let the engine choose randomly between them.
+
+### How to use it
+
+a new property is introduced in the ParticleSystem `subEmitters` which is accepting an array of `ParticleSystem` when the particle dies the engine select a random System from the `subEmitters` array and spawn a new system by cloning the selected ParticleSystem. you can add `subEmitters` property to the `subEmitters` so when the particles of the spawned ParticleSystem dies it will create a new Particle System and so on.
+
+The property `manualEmitCount` would be used in the subEmitters to avoid an infinite loop of creating and spawn new systems unless you're controlling the newly generated ParticleSystem using property `activeSubSystems`.
+
+Each `ParticleSystem` with `subEmitters` has property `activeSubSystems` which is an array containing all current active sub `ParticleSystem` generated from particles belong to the current `ParticleSystem`.
+
+you can also stop the `ParticleSystem` and all `activeSubSystems` by calling stop function ex
+mySystem.stop(); if you want to stop the current System only without affecting the `activeSubSystems`, you can pass false to the Stop function ex mySystem.stop(false);
+
+Check the playground Particle System SubEmitters [Sample Demo](https://www.babylonjs-playground.com/#9NHBCC#1)
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
