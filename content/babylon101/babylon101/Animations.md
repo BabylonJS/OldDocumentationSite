@@ -49,6 +49,8 @@ Much information is in the parameters:
 * ```BABYLON.Animation.ANIMATIONTYPE_MATRIX```
 * ```BABYLON.Animation.ANIMATIONTYPE_COLOR3```
 
+Please note that by default Matrix values are not interpolated between keys which means that values are only the one from the key values even if we are between two keys. You can turn this feature on by calling `Animation.AllowMatricesInterpolation = true`.
+
 **Parameter 5** - Finally, you have to decide and enter the type of behavior this animation will take at its upper limit (e.g. will it continue on, will it begin again, will it stop at the last key value, etc.):
 
 * Use previous values and increment it: ```BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE```
@@ -139,8 +141,8 @@ scene.beginAnimation(box1, 100, 0, true);
 | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE) | Yes
 | speedRatio | number | default : 1. The speed ratio of this animation | Yes
 | onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE) | Yes
-| animatable | [Animatable](http://doc.babylonjs.com/classes/3.0/animatable) | An optional specific animation | Yes
----
+| animatable | Animatable | An optional specific animation | Yes
+| stopCurrent | boolean | Should we stop the current existing animations if any? Default is yes | Yes
 
 This function returns a ```BABYLON.Animatable``` object that you can use to get access to individual animations (for instance using ```getAnimationByTargetProperty``` function).
 
@@ -228,6 +230,37 @@ In the playground demo below, every time you click on the FPS marker, the new an
  https://www.babylonjs-playground.com/#2BLI9T#174
 
 Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running.
+
+## Animation weights
+
+Starting with Babylon.js 3.2, you can start animations with a specific weight. This means that you can use this API to rung multiple animations simultaneously on the same target. The final value will be a mix of all animations weighted based on their weight value.
+
+To start an animation with a weight, you can use the new `scene.beginWeightedAnimation` API:
+
+```
+var idleAnim = scene.beginWeightedAnimation(skeleton, 0, 89, 1.0, true);
+var walkAnim = scene.beginWeightedAnimation(skeleton, 90, 124, 0, true);
+var runAnim = scene.beginWeightedAnimation(skeleton, 125, 146, 0, true);
+```
+
+This function accepts the following parameters:
+
+| Name | Type | Description | Optional |
+|---|---|---|---|
+| target | any | The target | No
+| from | number | The fps starting frame | No
+| to | number | The fps ending frame | No
+| weight | number | Weight of this animation. 1.0 by default | Yes
+| loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE) | Yes
+| speedRatio | number | default : 1. The speed ratio of this animation | Yes
+| onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE) | Yes
+| animatable | Animatable | An optional specific animation | Yes
+
+Like `beginAnimation`, this function returns an animatable but this time with its `weight` property set to a value.
+
+You can also set the `weight` value of any Animatable at any time to switch to a weighted mode. This value has to be between 0 and 1. You can aslo set it to -1 to turn the weight mode off.
+
+A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#2
 
 ## Overriding properties
 When you have a mesh with multiple animations or a skeleton (where all bones can be animated) you can use an animationPropertiesOverride to specify some general properties for all child animations. These properties will override local animation properties:
