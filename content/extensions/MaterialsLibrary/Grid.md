@@ -18,7 +18,7 @@ The default grid behaviour does not require any setup and displays a black and w
 
 ![](/img/extensions/materials/gridDefault.png)
 
-You can access the live example in the [Playground](https://www.babylonjs-playground.com/#2KKVBH)
+You can access the live example in the * [Playground](https://www.babylonjs-playground.com/#2KKVBH)
 
 The grid is using the local position to outline any of the axis fitting with one unit in black. Only one on ten lines will be fully black, the other lines will be in lighter grey. You can imagine it as a ruler with bigger marks for cm and smaller for millimeters.
 
@@ -47,13 +47,13 @@ For instance a 1 size cube will by default only have one line.
 
 ![Grid Ratio 1](/img/extensions/materials/gridRatio1.png)
 
-[Playground](https://www.babylonjs-playground.com/#5S6MD)
+* [Playground](https://www.babylonjs-playground.com/#5S6MD)
 
 Using a gridRatio of 0.1, will then make appear ten lines on it.
 
 ![Grid Ratio 2](/img/extensions/materials/gridRatio2.png)
 
-[Playground](https://www.babylonjs-playground.com/#5S6MD#1)
+* [Playground](https://www.babylonjs-playground.com/#5S6MD#1)
 
 ** majorUnitFrequency **
 You have now noticed on the previous examples that only one on ten lines is stronger. This is control by the parameter named majorUnitFrequency which gets its default value to 10.
@@ -62,7 +62,7 @@ Setting it to 2, will make appear one strong line each 2 lines. This is only a s
 
 ![Grid MUF](/img/extensions/materials/gridMUF.png)
 
-[Playground](https://www.babylonjs-playground.com/#5S6MD#2)
+* [Playground](https://www.babylonjs-playground.com/#5S6MD#2)
 
 ** minorUnitVisibility **
 After sorting out the frequency of stronger lines, you could wonder how to control the strength of the minor ones. The parameter minorUnitVisibility will help you to control this. Bascially, this value represents level of minor lines compared to the major ones. This value should be smaller than 1 which is the value applied to the main lines. The default value is 0.33 which corresponds to 33% of the lineColor.
@@ -71,6 +71,10 @@ Setting it to 0.1 will then reinforce the effect of the main lines (by dropping 
 
 ![Grid MUV](/img/extensions/materials/gridMUV.png)
 
-[Playground](https://www.babylonjs-playground.com/#5S6MD#3)
+* [Playground](https://www.babylonjs-playground.com/#5S6MD#3)
+
+** gridOffset **
+The offset vector3 will shift the cells of the grid by a set amount.
+* [Playground](https://playground.babylonjs.com/#URSDPL#1)
 
  
