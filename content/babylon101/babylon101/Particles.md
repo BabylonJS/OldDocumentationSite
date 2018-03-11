@@ -404,20 +404,27 @@ To completely stop a `GPUParticleSystem`, you have to call `dispose()` on it.
 
 ## Sub Emitters
 
-Starting from babylonjs 3.2 you can create sub emitter, using this feature you can spawn a new ParticleSystem when the particle dies. Every new spawned ParticleSystem is totally independent from the parent and could have different shapes so for example, you could have a root ParticleSystem which produces cone shape and the subEmitters could have a sphere shape or even you could provide more than a ParticleSystem with different shapes and let the engine choose randomly between them.
+Starting with babylonjs 3.2, you can create sub emitter which let you spawn a new ParticleSystem when a particle dies. Every new spawned ParticleSystem is totally independent from the parent.
 
 ### How to use it
 
-a new property is introduced in the ParticleSystem `subEmitters` which is accepting an array of `ParticleSystem` when the particle dies the engine select a random System from the `subEmitters` array and spawn a new system by cloning the selected ParticleSystem. you can add `subEmitters` property to the `subEmitters` so when the particles of the spawned ParticleSystem dies it will create a new Particle System and so on.
+A new property was introduced in the ParticleSystem: `subEmitters`. This property which is an array of `ParticleSystem` will be used when a particle dies. The engine will use it to select a random System from the `subEmitters` array and will spawn a new system by cloning the selected ParticleSystem. Every "template" from this `subEmitters` array can even have a `subEmitters` property defined to chain subEmitters. In this case the property `manualEmitCount` would be used to avoid an infinite loop of creating and spawning new systems.
 
-The property `manualEmitCount` would be used in the subEmitters to avoid an infinite loop of creating and spawn new systems unless you're controlling the newly generated ParticleSystem using property `activeSubSystems`.
+Each `ParticleSystem` with a `subEmitters` array also has a property `activeSubSystems` which is an array containing all current active sub `ParticleSystem` generated from particles of the current `ParticleSystem`.
 
-Each `ParticleSystem` with `subEmitters` has property `activeSubSystems` which is an array containing all current active sub `ParticleSystem` generated from particles belong to the current `ParticleSystem`.
+You can stop the root `ParticleSystem` and all `activeSubSystems` by calling the stop function on the root system:
 
-you can also stop the `ParticleSystem` and all `activeSubSystems` by calling stop function ex
-mySystem.stop(); if you want to stop the current System only without affecting the `activeSubSystems`, you can pass false to the Stop function ex mySystem.stop(false);
+```
+mySystem.stop(); 
+```
 
-Check the playground Particle System SubEmitters [Sample Demo](https://www.babylonjs-playground.com/#9NHBCC#1)
+if you want to stop the root system only without affecting the `activeSubSystems`, you can pass false to the Stop function:
+
+```
+mySystem.stop(false);
+```
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#9NHBCC#1
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
