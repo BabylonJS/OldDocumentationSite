@@ -376,6 +376,8 @@ var particleSystem = new BABYLON.GPUParticleSystem("particles", { capacity:10000
 
 As CPU is no more involved, you can go crazy with active particles (1000000 in this example). Also, you can use `particleSystem.activeParticleCount` to define the number of active particle count if you want to limit the GPU usage.
 
+Note: SubEmitters is not supported in GPU particles.
+
 ### Random texture
 It is a shame but there is no good way to get random numbers when running on the GPU. To fill this gap, Babylon.js will create a texture filled with thousands of random values. These values will be read by the particle update shader to animate the particles.
 By default the biggest supported texture size is used (16K). You may want to reduce the size of this texture by initializing the system like this:
@@ -399,6 +401,30 @@ You can find a complete demo here: https://www.babylonjs-playground.com/#PU4WYI#
 When calling `system.stop()` on a `GPUParticleSystem` object, you will force the system to stop generating new particles. But particles will still be rendered even if not visible.
 
 To completely stop a `GPUParticleSystem`, you have to call `dispose()` on it.
+
+## Sub Emitters
+
+Starting with babylonjs 3.2, you can create sub emitter which let you spawn a new ParticleSystem when a particle dies. Every new spawned ParticleSystem is totally independent from the parent.
+
+### How to use it
+
+A new property was introduced in the ParticleSystem: `subEmitters`. This property which is an array of `ParticleSystem` will be used when a particle dies. The engine will use it to select a random System from the `subEmitters` array and will spawn a new system by cloning the selected ParticleSystem. Every "template" from this `subEmitters` array can even have a `subEmitters` property defined to chain subEmitters. In this case the property `manualEmitCount` would be used to avoid an infinite loop of creating and spawning new systems.
+
+Each `ParticleSystem` with a `subEmitters` array also has a property `activeSubSystems` which is an array containing all current active sub `ParticleSystem` generated from particles of the current `ParticleSystem`.
+
+You can stop the root `ParticleSystem` and all `activeSubSystems` by calling the stop function on the root system:
+
+```
+mySystem.stop(); 
+```
+
+if you want to stop the root system only without affecting the `activeSubSystems`, you can pass false to the Stop function:
+
+```
+mySystem.stop(false);
+```
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#9NHBCC#1
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.

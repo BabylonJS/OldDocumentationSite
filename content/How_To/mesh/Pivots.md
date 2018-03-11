@@ -82,7 +82,7 @@ In Javascript
 var centreAt = new BABYLON.Vector3(xc, yc, zc);
 var pivotAt = new BABYLON.Vector3(xp, yp, zp);
 mesh.position = pivotAt;
-var pivotTranslate = centreAt.substract(pivotAt);
+var pivotTranslate = centreAt.subtract(pivotAt);
 mesh.setPivotMatrix(BABYLON.Matrix.Translation(pivotTranslate.x, pivotTranslate.y, pivotTranslate.z));
 ```
 The mesh will now be positioned with its centre at (xc, yc, zc) and all rotations and scaling will take place with reference to the pivot at (xp, yp, zp).
@@ -103,7 +103,7 @@ In Javascript
 ```javascript
 pivotAt = new BABYLON.Vector3(xp, yp, zp);
 mesh.position = pivotAt;
-pivotTranslate = centreAt.substract(pivotAt);  //centreAt retained from previous pivot setting
+pivotTranslate = centreAt.subtract(pivotAt);  //centreAt retained from previous pivot setting
 mesh.setPivotMatrix(BABYLON.Matrix.Translation(pivotTranslate.x, pivotTranslate.y, pivotTranslate.z));
 ```
 The following sequence of playgrounds goes from setting the first pivot position to scaling about the second pivot position
