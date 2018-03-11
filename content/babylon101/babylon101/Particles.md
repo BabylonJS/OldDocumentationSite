@@ -376,6 +376,8 @@ var particleSystem = new BABYLON.GPUParticleSystem("particles", { capacity:10000
 
 As CPU is no more involved, you can go crazy with active particles (1000000 in this example). Also, you can use `particleSystem.activeParticleCount` to define the number of active particle count if you want to limit the GPU usage.
 
+Note: SubEmitters is not supported in GPU particles.
+
 ### Random texture
 It is a shame but there is no good way to get random numbers when running on the GPU. To fill this gap, Babylon.js will create a texture filled with thousands of random values. These values will be read by the particle update shader to animate the particles.
 By default the biggest supported texture size is used (16K). You may want to reduce the size of this texture by initializing the system like this:
