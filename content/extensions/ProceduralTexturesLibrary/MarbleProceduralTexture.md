@@ -8,7 +8,7 @@ Marble procedural texture can be found here:
 - Normal: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.js)
 - Minified : [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.min.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/proceduralTexturesLibrary/babylon.marbleProceduralTexture.min.js)
 
-A demo can be found here:  https://www.babylonjs-playground.com/#HS1SK
+A demo can be found here:  https://www.babylonjs-playground.com/#HS1SK#4
 
 This texture has 4 parameters :
 - **numberOfTilesHeight** controls the number of tiles in height (Int)
@@ -20,7 +20,7 @@ This texture has 4 parameters :
 ```
 	var marbleMaterial = new BABYLON.StandardMaterial("torus", scene);
     var marbleTexture = new BABYLON.MarbleProceduralTexture("marble", 512, scene);
-    marbleTexture.numberOfBricksHeight = 5;
-    marbleTexture.numberOfBricksWidth = 5;
+    marbleTexture.numberOfTilesHeight = 5;
+    marbleTexture.numberOfTilesWidth = 5;
     marbleMaterial.ambientTexture = marbleTexture;
 ```
