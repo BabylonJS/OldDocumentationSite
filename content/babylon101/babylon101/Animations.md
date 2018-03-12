@@ -238,8 +238,11 @@ Starting with Babylon.js 3.2, you can start animations with a specific weight. T
 To start an animation with a weight, you can use the new `scene.beginWeightedAnimation` API:
 
 ```
+// Will have a weight of 1.0
 var idleAnim = scene.beginWeightedAnimation(skeleton, 0, 89, 1.0, true);
+// Will have a weight of 0
 var walkAnim = scene.beginWeightedAnimation(skeleton, 90, 124, 0, true);
+// Will have a weight of 0
 var runAnim = scene.beginWeightedAnimation(skeleton, 125, 146, 0, true);
 ```
 
@@ -260,6 +263,15 @@ Like `beginAnimation`, this function returns an animatable but this time with it
 
 You can also set the `weight` value of any Animatable at any time to switch to a weighted mode. This value has to be between 0 and 1. 
 In a same way, you can set it to -1 to turn the weight mode off.
+
+
+```
+var idleAnim = scene.beginWeightedAnimation(skeleton, 0, 89, 1.0, true);
+var runAnim = scene.beginWeightedAnimation(skeleton, 125, 146, 0, true);
+
+idleAnim.weight = 0.5;
+runAnim.weight = 0.5
+```
 
 A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#3
 
