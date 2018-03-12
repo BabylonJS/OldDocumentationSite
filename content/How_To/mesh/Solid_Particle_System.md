@@ -19,7 +19,7 @@ The expected usage is this one :
 Your SPS is then ready to manage particles. So now :   
 * Init all your particles : set their positions, colors, uvs, age, etc with `initParticles()`  
 * Call `setParticles()` to update the SPS mesh and to draw it.  
-* If you particles have to be animated, define their individual behavior in `updateParticle(particle)` and just call `setParticles()` within the render loop.  
+* If your particles have to be animated, define their individual behavior in `updateParticle(particle)` and just call `setParticles()` within the render loop.  
 
 
 ## Basic Usage
