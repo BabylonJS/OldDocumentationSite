@@ -262,7 +262,7 @@ This function accepts the following parameters:
 Like `beginAnimation`, this function returns an animatable but this time with its `weight` property set to a value.
 
 You can also set the `weight` value of any Animatable at any time to switch to a weighted mode. This value has to be between 0 and 1. 
-In a same way, you can set it to -1 to turn the weight mode off.
+In a same way, you can set it to -1 to turn the weight mode off. If you set the weight to 0, the animation will be considered paused.
 
 
 ```
