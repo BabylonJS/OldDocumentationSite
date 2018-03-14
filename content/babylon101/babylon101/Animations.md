@@ -262,7 +262,7 @@ This function accepts the following parameters:
 Like `beginAnimation`, this function returns an animatable but this time with its `weight` property set to a value.
 
 You can also set the `weight` value of any Animatable at any time to switch to a weighted mode. This value has to be between 0 and 1. 
-In a same way, you can set it to -1 to turn the weight mode off.
+In a same way, you can set it to -1 to turn the weight mode off. If you set the weight to 0, the animation will be considered paused.
 
 
 ```
@@ -273,7 +273,7 @@ idleAnim.weight = 0.5;
 runAnim.weight = 0.5
 ```
 
-A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#3
+A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#8
 
 ## Overriding properties
 When you have a mesh with multiple animations or a skeleton (where all bones can be animated) you can use an animationPropertiesOverride to specify some general properties for all child animations. These properties will override local animation properties:
