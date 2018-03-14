@@ -534,6 +534,15 @@ You can find a complete demo here: https://www.babylonjs-playground.com/#S7L7FE
 The containers are controls used to host other controls. Use them to organize your UI.
 Containers has one specific property: `container.background`. Use it to define the background color of your container.
 
+### Adaptative size
+You can decide to have your containers to adapt their size to their children by using one of these properties:
+* adaptWidthToChildren (false by default)
+* adaptHeightToChildren (false by default)
+
+If you set one of these properties to true, the associated dimension (width, height or both) will be computed based on direct children size as long as it is defined in pixel (size cannot be defined in percentage because this will generate an infinite loop as the child will need the parent size and the parent will need the child size)
+
+You can find a demo here: https://www.babylonjs-playground.com/#GL5SIM
+
 ### Rectangle
 The Rectangle is a rectangular container with the following properties:
 
