@@ -273,7 +273,7 @@ idleAnim.weight = 0.5;
 runAnim.weight = 0.5
 ```
 
-A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#3
+A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#8
 
 ## Overriding properties
 When you have a mesh with multiple animations or a skeleton (where all bones can be animated) you can use an animationPropertiesOverride to specify some general properties for all child animations. These properties will override local animation properties:
