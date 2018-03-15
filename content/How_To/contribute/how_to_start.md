@@ -64,6 +64,8 @@ This will make the main commands quicker to access. Do not hesitate to adapt the
 
 
 ## Installation
+As during our local build, firefox is used during our integration tests step. It is strongly advised to install it.
+
 You are now all setup, and only a few steps from debugging. You now need to clone the project from github. Open a command line, move to the folder that will contain bjs and type:
 ```
 git clone https://github.com/BabylonJS/Babylon.js.git
@@ -80,7 +82,10 @@ Then navigate to the BJS folder and install the BJS required node modules throug
 ```
 cd BabylonJS/Tools/Gulp
 npm install
+gulp
 ```
+
+The gulp command needs to be launched once to bootstrap your local files.
 
 You are good to go !!!
 
