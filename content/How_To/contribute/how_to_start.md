@@ -40,7 +40,7 @@ Trying to be Open Source and OS agnostic, we chose to support VSCode which offer
 You can install VSCode from their site: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 Once installed, a few pluggins will help you having the best experience. You can search for them in the extension tab (Ctrl+Shift+d):
-1. Debugger for Chrome (also installing chrome will help but I guess this is already done)
+1. Debugger for Chrome as well as the chrome browser.
 2. Shader language support for VS Code (syntax highlighting and autocompletion in glsl shader)
 3. [This extension](https://marketplace.visualstudio.com/items?itemName=julianchen.babylon-js-viewer) can be used to display the content of a babylon file directly in vscode. It can be useful if you want to quickly check if your artist did a good job with object and their names :)
 
@@ -85,10 +85,9 @@ npm install
 You are good to go !!!
 
 ## Debug
-Open VSCode on the newly created BabylonJS folder and launch the test task. To do so, 3 solutions:
-1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type test. You should be on run test task, so hit enter.
-2. Use the shortcut you previously bind to the command in your keyboard bindings (default is Ctrl+Alt+Shift+t)
-3. Open a terminal on Tools/Gulp and run `gulp run`
+Open VSCode on the newly created BabylonJS folder and launch the test task. To do so, 2 solutions:
+1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type `run`. You should be on `run` task, so hit enter.
+2. Open a terminal on Tools/Gulp and run `gulp run`
 
 This has been hijacked for your convenience and will watch all the files you are modifying as well as web serve the files for development purpose. As you noticed in the VSCode installation you can easily hook it up to a keyboard shortcut.
 
