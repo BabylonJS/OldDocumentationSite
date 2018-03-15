@@ -87,6 +87,28 @@ gulp
 
 The gulp command needs to be launched once to bootstrap your local files.
 
+The /dist folder continuously gets updated after building causing noise when checking git's status and these files should not be modifiied by pull requests. To ignore these files you can run the following in your command prompt:
+```
+git update-index --assume-unchanged "Playground/babylon.d.txt"
+git update-index --assume-unchanged "dist/preview release/babylon.d.ts"
+git update-index --assume-unchanged "dist/preview release/babylon.js"
+git update-index --assume-unchanged "dist/preview release/babylon.max.js"
+git update-index --assume-unchanged "dist/preview release/babylon.worker.js"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.d.ts"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.js"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.max.js"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/es6.js"
+git update-index --assume-unchanged "dist/preview release/es6.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTF2FileLoader.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTF2FileLoader.min.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTFFileLoader.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTFFileLoader.min.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylonjs.loaders.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylonjs.loaders.min.js"
+git update-index --assume-unchanged "dist/preview release/typedocValidationBaseline.json"
+git update-index --assume-unchanged "dist/preview release/viewer/babylon.viewer.js"
+git update-index --assume-unchanged "dist/preview release/viewer/babylon.viewer.max.js"
+```
 You are good to go !!!
 
 ## Debug
