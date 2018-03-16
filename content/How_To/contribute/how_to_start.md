@@ -40,7 +40,7 @@ Trying to be Open Source and OS agnostic, we chose to support VSCode which offer
 You can install VSCode from their site: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 Once installed, a few pluggins will help you having the best experience. You can search for them in the extension tab (Ctrl+Shift+d):
-1. Debugger for Chrome (also installing chrome will help but I guess this is already done)
+1. Debugger for Chrome as well as the chrome browser.
 2. Shader language support for VS Code (syntax highlighting and autocompletion in glsl shader)
 3. [This extension](https://marketplace.visualstudio.com/items?itemName=julianchen.babylon-js-viewer) can be used to display the content of a babylon file directly in vscode. It can be useful if you want to quickly check if your artist did a good job with object and their names :)
 
@@ -64,6 +64,8 @@ This will make the main commands quicker to access. Do not hesitate to adapt the
 
 
 ## Installation
+As during our local build, firefox is used during our integration tests step. It is strongly advised to install it.
+
 You are now all setup, and only a few steps from debugging. You now need to clone the project from github. Open a command line, move to the folder that will contain bjs and type:
 ```
 git clone https://github.com/BabylonJS/Babylon.js.git
@@ -80,15 +82,39 @@ Then navigate to the BJS folder and install the BJS required node modules throug
 ```
 cd BabylonJS/Tools/Gulp
 npm install
+gulp
 ```
 
+The gulp command needs to be launched once to bootstrap your local files.
+
+The /dist folder continuously gets updated after building causing noise when checking git's status and these files should not be modifiied by pull requests. To ignore these files you can run the following in your command prompt:
+```
+git update-index --assume-unchanged "Playground/babylon.d.txt"
+git update-index --assume-unchanged "dist/preview release/babylon.d.ts"
+git update-index --assume-unchanged "dist/preview release/babylon.js"
+git update-index --assume-unchanged "dist/preview release/babylon.max.js"
+git update-index --assume-unchanged "dist/preview release/babylon.worker.js"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.d.ts"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.js"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.max.js"
+git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/es6.js"
+git update-index --assume-unchanged "dist/preview release/es6.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTF2FileLoader.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTF2FileLoader.min.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTFFileLoader.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTFFileLoader.min.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylonjs.loaders.js"
+git update-index --assume-unchanged "dist/preview release/loaders/babylonjs.loaders.min.js"
+git update-index --assume-unchanged "dist/preview release/typedocValidationBaseline.json"
+git update-index --assume-unchanged "dist/preview release/viewer/babylon.viewer.js"
+git update-index --assume-unchanged "dist/preview release/viewer/babylon.viewer.max.js"
+```
 You are good to go !!!
 
 ## Debug
-Open VSCode on the newly created BabylonJS folder and launch the test task. To do so, 3 solutions:
-1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type test. You should be on run test task, so hit enter.
-2. Use the shortcut you previously bind to the command in your keyboard bindings (default is Ctrl+Alt+Shift+t)
-3. Open a terminal on Tools/Gulp and run `gulp run`
+Open VSCode on the newly created BabylonJS folder and launch the test task. To do so, 2 solutions:
+1. Use the shortcut to run a task (Ctrl+Shift+p) and begin to type `run`. You should be on `run` task, so hit enter.
+2. Open a terminal on Tools/Gulp and run `gulp run`
 
 This has been hijacked for your convenience and will watch all the files you are modifying as well as web serve the files for development purpose. As you noticed in the VSCode installation you can easily hook it up to a keyboard shortcut.
 
