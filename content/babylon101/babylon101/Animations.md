@@ -273,7 +273,16 @@ idleAnim.weight = 0.5;
 runAnim.weight = 0.5
 ```
 
-A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#8
+If your animations are not of the same size (same distance between from and to keys) then you will need to turn animation synchronization on with the following code:
+
+```
+// Synchronize animations
+idleAnim.syncWith(runAnim);		
+```
+
+To disable animation synchronization, just call `animation.,syncWith(null)`.
+
+A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#9
 
 ## Overriding properties
 When you have a mesh with multiple animations or a skeleton (where all bones can be animated) you can use an animationPropertiesOverride to specify some general properties for all child animations. These properties will override local animation properties:
