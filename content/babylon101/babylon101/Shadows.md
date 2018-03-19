@@ -123,7 +123,7 @@ As PCSS can require more resources than available on small platform, you can use
 shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_LOW;
 ```
 
-You can also access the following link to better appreciate the impact of the shadow being softer when the blocker is moving further away from the receiver: https://www.babylonjs-playground.com/debug.html#ZT8BKT#2
+You can also access the following link to better appreciate the impact of the shadow being softer when the blocker is moving further away from the receiver: https://playground.babylonjs.com/#ZT8BKT#2
 
 Only Point and Directional lights are currently supported by PCSS.
 
