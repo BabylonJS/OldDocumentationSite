@@ -10,7 +10,7 @@ Writing any PBT involves different sections code. These are
 * **Focus** code that is the focus of the tutorial;
 * **Context** code to give support in understanding code;
 * **GUI** PBT code for the GUI, including functions called by GUI buttons;
-* **Scupt** PBT code to manipulate the editor. 
+* **Sculpt** PBT code to manipulate the editor. 
 
 ## Design for the Tutorial
 
