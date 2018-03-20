@@ -480,6 +480,33 @@
             ]
         },
         {
+            "title": "Particles",
+            "name": "Particles",
+            "desc": "Particles Tutorials.",
+            "files": [
+                {
+                    "title": "Create Animated Particles",
+                    "level": 1,
+                    "filename": "Animate"
+                },
+                {
+                    "title": "Use Sub Emitters",
+                    "level": 1,
+                    "filename": "Sub_Emitters"
+                },
+                {
+                    "title": "Customize Particle System",
+                    "level": 2,
+                    "filename": "Customise"
+                },
+                {
+                    "title": "Solid Particle System",
+                    "level": 1,
+                    "filename": "Solid_Particles"
+                }
+            ]
+        },
+        {
             "title": "Environment",
             "name": "environment",
             "desc": "Environment Tutorials.",
@@ -1524,6 +1551,10 @@
                 {
                     "title": "Animation of Objects",
                     "filename": "Animations"
+                },
+                {
+                    "title": "Particles",
+                    "filename": "Particles"
                 },
                 {
                     "title": "Realistic Environments",

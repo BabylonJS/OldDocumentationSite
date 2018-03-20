@@ -701,7 +701,7 @@ Note that only the function are stored, not their results. This means that if on
 ```javascript
 SPS.rebuildMesh();
 ```
-Except in some very specific cases, you might not need to use this function. 
+Except in some very specific cases, you might not need to use this function.  
 
 # Further Reading
 
@@ -715,6 +715,6 @@ Except in some very specific cases, you might not need to use this function.
 [How to Use Sub Emitters](/how_to/Sub_Emitters)
 
 ## Intermediate - L2
-[How to Customize the Particle System](/how_to/Customise) 
+[How to Customize the Particle System](/how_to/Customise)
 
 
