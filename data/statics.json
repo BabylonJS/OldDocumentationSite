@@ -349,6 +349,11 @@
                     "filename": "Multi_Materials"
                 },
                 {
+                    "title": "Use Dynamic Texture",
+                    "level": 1,
+                    "filename": "DynamicTexture"
+                },
+                {
                     "title": "Apply Material to Individual Faces",
                     "level": 1,
                     "filename": "CreateBox_Per_Face_Textures_And_Colors",
