@@ -142,7 +142,7 @@ module.exports = {
 We support es6 using a single .js file delivered in our package. At the moment it is included in the main package only ('babylonjs'). To use it, use the included 'es6.js' file in babylon's npm package:
 
 ```javascript
-import * as BABYLON from './node_modules/babylonjs/dist/preview release/es6.js'
+import * as BABYLON from './node_modules/babylonjs/es6.js'
 
 const canvas = document.getElementById("canvas");
 
