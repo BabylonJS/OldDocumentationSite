@@ -26,7 +26,7 @@ var marked = require('meta-marked'),
  ************************************************************************/
 
     // the folder where we can find every classes MD files
-var __DOC_ROOT__ = 'content/classes',
+var __DOC_ROOT__ = 'public/html/classes/classes',
     // the name of the JSON file we'll create
     __FILENAME__ = 'data/classes.json';
 
@@ -39,7 +39,7 @@ var __DOC_ROOT__ = 'content/classes',
 module.exports = function(done) {
     async.waterfall([
         async.constant(__DOC_ROOT__),
-        getMdClassesFiles,
+        getClassesFiles,
         createClassesJSON
     ], function (error) {
         if (error){
@@ -60,14 +60,14 @@ module.exports = function(done) {
  * @param docRootPath
  * @param callback
  */
-var getMdClassesFiles = function(docRootPath, callback){
+var getClassesFiles = function(docRootPath, callback){
     var versions        = fs.readdirSync(docRootPath),
         classesLists    = [];
 
     versions.map(function(version){
         this.push(fs.readdirSync(path.join(docRootPath, version)).filter(function(f){
             // returns only md files
-            return f.match(/\.md$/);
+            return f.match(/\.html$/);
         }));
     }, classesLists);
 

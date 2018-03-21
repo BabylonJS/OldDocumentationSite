@@ -18,7 +18,7 @@ var removeMd = require('remove-markdown');
 var rp = require('request-promise');
 
 var statics = require('../../../data/statics.json');
-var classes = require('../../../data/classes.json');
+ var classes = require('../../../data/classes.json');
 
 var __FILES_SOURCE__ = path.join(appRoot, 'content/');
 
