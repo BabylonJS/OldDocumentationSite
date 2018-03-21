@@ -39,7 +39,7 @@ To include Babylon in your npm project, use:
 import * as BABYLON from 'babylonjs';
 ```
 
-YOu can also load specific classes if you need them:
+You can also load specific classes if you need them:
 
 ```javascript
 import { Engine, Scene } from 'babylonjs';
@@ -157,7 +157,7 @@ const engine = new BABYLON.Engine(canvas, true);
 
 Cannon and Oimo (both physics engines) are being delivered as dependencies when installing babylonjs using npm. There is no need to install them on your own.
 
-### Post 3.2.0-beta.1
+### Current version
 
 Cannon and Oimo are both optional dependencies. If you want to use any of them, please install them yourself.
 
