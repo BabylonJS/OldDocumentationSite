@@ -76,13 +76,11 @@ let GUI = require('babylonjs-gui');
 let materials = require('babylonjs-materials'); // unused variable
 ```
 
-
 ## TypeScript support
 
 Being written in TypeScript, Babylon.js will always support TypeScript developers. We provide a declaration file in each package, that either extends the BABYLON namespace or declares a new namespace that can be used during development.
 
-The most important thing to get full TypeScript support in your project is to add the imported packages as types of compilerOptions in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) as follows:
-
+If not detected by your IDE, the most important thing to get full TypeScript support in your project is to add the imported packages as types of compilerOptions in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) as follows:
 
 ```
 {
@@ -134,8 +132,50 @@ module.exports = {
 
 ## External libraries
 
+### Pre 3.2.0-beta.1
+
 Cannon and Oimo (both physics engines) are being delivered as dependencies when installing babylonjs using npm. There is no need to install them on your own.
 
+### Post 3.2.0-beta.1
+
+Cannon and Oimo are both optional dependencies. If you want to use any of them, please install them yourself.
+
+### using the optional dependencies
+
+If you wish to use oimo for example, install Oimo using npm:
+
+```shell
+npm install oimo
+```
+
+This will allow our UMD definition to find oimo in node_modules and use it. If you use AMD you will need to first declare oimo as a module (as oimo uses anonymous AMD definition):
+
+```javascript
+define('oimo', ['path/to/oimo'], function(OIMO) {
+    return OIMO;
+})
+```
+
+Now Babylon will automatically find oimo and will inject it.
+
+### Using Webpack
+
+If you use commonjs and webpack and not use wither cannon or oimo, you might see a warning saying that those dependencies could not be found. To fix that, use webpack's `externals` feature.
+
+In `webpack.config.js` add:
+
+```javascript
+    ...,
+    externals: {
+        oimo: 'OIMO', //or true
+        cannonjs: 'CANNON' //or true
+    },
+    ...
+```
+
+This will define both of those dependencies as external dependencies and will not load them anymore.
+
+You can see an example of that in the Viewer directory of our main repository.
 
 ## Questions and Troubleshooting
 
@@ -146,9 +186,9 @@ Cannon and Oimo (both physics engines) are being delivered as dependencies when 
 
 ### Even thou I use only a few classes from the BABYLON namespace, the entire Babylon module is included
 
-Due to the way BabylonJS is built, Tree-Shaking is currently not quite possible. Babylon's internal objects have deep connections with one another, which is not easy to change. That means, that your built JS file will be at least Babylon.js' minified size.
+Due to the way BabylonJS is built, Tree-shaking is currently not quite possible. Babylon's internal objects have deep connections with one another, which is not easy to change. That means, that your built JS file will be at least Babylon.js' minified size.
 
-### Naming is different than what the documentation states!
+### Naming is different than what the documentation states
 
 Our documentation always refers to the BABYLON namespace. We therefore always use this namespace when talking about objects/classes, and also use this namespace when talking about the GUI.
 
