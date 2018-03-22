@@ -8,7 +8,7 @@ var fs = require('fs');
 var path = require('path');
 var async = require('async');
 var readdirp = require('readdirp');
-
+var htmlToText = require('html-to-text');
 var appRoot = require('app-root-path').path;
 
 var fileSplitter = require('../fileSplitter');
@@ -23,9 +23,16 @@ var __FILES_SOURCE__ = path.join(appRoot, 'content/');
 
 module.exports = function index(done) {
 
-    /*readdirp(
+    if(!process.env.AZURE_API_KEY) {
+        console.log('Skipping azure indexing');       
+        return done();
+    }
+
+    var promises = Object.keys(statics).map(indexCategory);
+
+    readdirp(
         {
-            root: path.join(appRoot, 'content/'),
+            root: path.join(appRoot, 'public/html/classes/classes'),
             depth: 0
         },
         function (err, allFiles) {
@@ -33,44 +40,38 @@ module.exports = function index(done) {
                 console.log(err);
                 return;
             }
-            var promises = allFiles.directories.map(indexDirectory);
+            var values = allFiles.files.map(indexClassVersion);
+            // Send data 10 by 10
+            for (var index = 0; index < values.length; index += 10) {
+                var packet = [];
 
-            
+                for (var packetIndex = index; packetIndex < index + 10 && packetIndex < values.length; packetIndex++) {
+                    packet.push(values[packetIndex]);
+                }
+                promises.push(sendRequestToAzure(packet, true));            
+            }
+            Promise.all(promises).then(function (data) {
+                done();
+            });
         }
-    );*/
-
-    /*
-    var staticCategories = [
-        "resources",
-        "resources",
-        "generals",
-        "How_To",
-        "features"
-    ];
-    */
-
-    if(!process.env.AZURE_API_KEY) {
-        console.log('Skipping azure indexing');
-        return done();
-    }
-
-    var promises = Object.keys(statics).map(indexCategory);
-
-    Promise.all(promises).then(function (data) {
-        done();
-    });
+    );    
 };
 
-// function indexClassVersion() {
-//     console.log(classes);
-//     var values = classes.map(function (name) {
-//         var filePath = path.join(__CLASSES_SOURCE__, "babylon." + name + '.html');
-//         var value = getFileIndexingObject(name, name, filePath, 'classes/');
-//         return value;
-//     });
-
-//     return sendRequestToAzure(values);
-// }
+function indexClassVersion(file) {
+    var filePath = file.fullPath;
+    var fileContent = fs.readFileSync(filePath).toString();
+    var name = file.name.replace("babylon.", "").replace(".html", "");
+    var correctName = fileContent.match(/<h1>.*?<\/h1>/g).toString().replace("<h1>", "").replace("</h1>", "");
+    console.log(correctName);
+    return {
+        "@search.action": "mergeOrUpload",
+        title: correctName,
+        url: '/api.html?' + name,
+        content: htmlToText.fromString(fileContent),
+        id: Buffer.from('/api.html?' + name).toString('base64'),
+        category: 'classes'
+    };
+}
 
 function indexCategory(category) {
     var values = [];
@@ -94,44 +95,6 @@ function indexCategory(category) {
     });
 
     return sendRequestToAzure(values);
-
-    /*return new Promise(function (resolve, reject) {
-        readdirp(
-            {
-                root: directoryObject.fullPath,
-                depth: 10,
-                fileFilter: '*.md'
-            },
-            function (err, allFiles) {
-                if (err) {
-                    return reject(err);
-                }
-
-                var values = allFiles.files.map(function (fileObject) {
-                    return indexFile(fileObject, directoryObject.name);
-                });
-
-                var options = {
-                    method: 'POST',
-                    uri: 'https://babylonjs-doc.search.windows.net/indexes/documents/docs/index?api-version=2016-09-01',
-                    body: {
-                        value: values
-                    },
-                    headers: {
-                        'api-key': '85AAF9CB1904C8E0006D729C78F2CD8A',
-                        'Content-Type': 'application/json'
-                    },
-                    json: true
-                };
-
-                return rp(options)
-                    .catch(function (err) {
-                        // catch errors here, so the entire process wouldn't fail.
-                        console.err(err);
-                    }).then(resolve);
-            }
-        );
-    });*/
 }
 
 function getFileIndexingObject(title, filename, filePath, category) {
@@ -146,7 +109,7 @@ function getFileIndexingObject(title, filename, filePath, category) {
     };
 }
 
-function sendRequestToAzure(values) {
+function sendRequestToAzure(values, isForClasses) {
     var options = {
         method: 'POST',
         uri: 'https://babylonjs-doc.search.windows.net/indexes/documents/docs/index?api-version=2016-09-01',
@@ -161,10 +124,11 @@ function sendRequestToAzure(values) {
     };
 
     return rp(options)
+        .then(function (d) {
+            console.log('success, indexed ' + values.length + (isForClasses ? ' classes' : ' documents'));
+        })
         .catch(function (err) {
             // catch errors here, so the entire process wouldn't fail.
             console.log(err.error, err.response.body);
-        }).then(function (d) {
-            console.log('success, indexed ' + values.length + ' documents');
         });
 }

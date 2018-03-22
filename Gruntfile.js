@@ -164,7 +164,7 @@ module.exports = function (grunt) {
         'clean:indexes',
         'execute:indexer',
         'clean:tmp'
-    ]);
+    ]); 
 };
 
 

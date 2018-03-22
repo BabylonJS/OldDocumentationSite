@@ -37,6 +37,7 @@
     "grunt-express-server": "^0.4.19",
     "grunt-open": "^0.2.3",
     "grunt-typedoc": "^0.2.4",
+    "html-to-text": "^4.0.0",
     "load-grunt-tasks": "^3.5.2",
     "remove-markdown": "^0.1.0",
     "request": "^2.79.0",
