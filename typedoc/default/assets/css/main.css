@@ -807,7 +807,7 @@ footer .tsd-legend { display: inline-block; width: 25%; padding: 0; font-size: 1
 .tsd-panel > .tsd-signatures .tsd-signature.tsd-kind-icon:before { left: 20px; }
 .tsd-panel > a.anchor + .tsd-signatures { border-top-width: 0; margin-top: -20px; }
 
-ul.tsd-descriptions { position: relative; overflow: hidden; transition: height 0.3s; padding: 0; list-style: none; }
+ul.tsd-descriptions { position: relative; overflow: hidden; transition: height 0.3s; padding: 0; list-style: none; margin-top:-20px; margin-bottom: 0px}
 ul.tsd-descriptions.active > .tsd-description { display: none; }
 ul.tsd-descriptions.active > .tsd-description.current { display: block; }
 ul.tsd-descriptions.active > .tsd-description.fade-in { -webkit-animation: fade-in-delayed 0.3s; animation: fade-in-delayed 0.3s; }
