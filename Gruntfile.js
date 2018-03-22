@@ -84,8 +84,8 @@ module.exports = function (grunt) {
                     excludePrivate: true,
                     excludeProtected: true,
                     includeDeclarations: true, 
-                    entryPoint: `\"babylonjs\".BABYLON`,
-                    mode: "modules",
+                    entryPoint: `BABYLON`,
+                    mode: "file",
                     theme: './typedoc/default'
                 },
                 src: './typedoc/babylon.d.ts'
