@@ -64,7 +64,8 @@ sphere.rotate(axis, angle, BABYLON.Space.WORLD);
 
 ## How To Use a Pivot as a Center of Rotation
 
-THIS SECTION RELATES TO V3.2+
+THIS SECTION RELATES TO V3.2+  
+**Technically in v3.2 and later `setPivotMatrix` applies a transformation matrix after setting the pivot whereas earler versions do not. It follows that using code written for earlier version will not give the expected results when using v3.2 or later. To use v3.2 or later with your code and obtain the expected results simply add `false` as a second parameter when using the `setPivotMatrix` method preventing the transformation matrix being applied.** 
 
 ```javascript
 var CoR_At = new BABYLON.Vector3(1, 3, 2);

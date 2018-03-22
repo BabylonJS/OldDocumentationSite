@@ -66,7 +66,7 @@ sphere.rotate(axis, angle, BABYLON.Space.WORLD);
 ## How To Use a Pivot as a Center of Rotation
 
 BREAKING CHANGES IN THIS SECTION
-PLAYGROUNDS IN THIS SECTION WILL NO LONGER GIVE THE EXPECTED RESULTS (they are kept for code reference for those using earlier versions);
+**Technically in v3.2 and later `setPivotMatrix` applies a transformation matrix after setting the pivot whereas earler versions do not. It follows that when used with v3.2 or later the playgrounds in this section will not give the expected results. To obtain the expected results add `false` as a second parameter when using the `setPivotMatrix` method preventing the transformation matrix being applied.** 
 
 As described in [How to Set a Pivot](/How_To/Pivots#how-to-set-mesh-and-pivot-position-at-the-same-time) set the pivot and the pilot in their wanted positions by placing the pilot where the pivot is going to be and setting the pivot translation using the displacement of the pilot position from the pivot position.
 
