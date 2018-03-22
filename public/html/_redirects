@@ -1,5 +1,5 @@
-/classes/:class                             /api.html?class
-/classes/:version/:class                    /api.html?class
+/classes/:class                             /api.html?:class
+/classes/:version/:class                    /api.html?:class
 
 /tutorials                                  /How_To
 /tutorials/01._advanced_texturing           /How_To/more_materials
