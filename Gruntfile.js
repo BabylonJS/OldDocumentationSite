@@ -83,6 +83,7 @@ module.exports = function (grunt) {
                     excludeExternals: true,
                     excludePrivate: true,
                     excludeProtected: true,
+                    includeDeclarations: true, 
                     entryPoint: `\"babylonjs\".BABYLON`,
                     mode: "modules",
                     theme: './typedoc/default'
@@ -160,8 +161,8 @@ module.exports = function (grunt) {
         'execute:compileWhatsNew',
         'typedoc:build',
         'execute:compileHtmlStatics',
-        'clean:indexes',
-        'execute:indexer',
+        // 'clean:indexes',
+        // 'execute:indexer',
         'clean:tmp'
     ]);
 };

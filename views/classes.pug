@@ -1,0 +1,7 @@
+include includes/header.pug
+    include includes/banner.pug
+    script.
+        function resizeIframe(obj) {
+            obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        }
+    iframe(width='100%', scrolling='no', frameborder='no', src="/classes/globals.html" onload="resizeIframe(this)")
