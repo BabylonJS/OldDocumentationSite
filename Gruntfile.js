@@ -161,8 +161,8 @@ module.exports = function (grunt) {
         'execute:compileWhatsNew',
         'typedoc:build',
         'execute:compileHtmlStatics',
-        // 'clean:indexes',
-        // 'execute:indexer',
+        'clean:indexes',
+        'execute:indexer',
         'clean:tmp'
     ]);
 };

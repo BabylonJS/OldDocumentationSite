@@ -3,6 +3,14 @@ include includes/header.pug
     script.
         function resizeIframe(obj) {
             obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-            obj.contentWindow.document.body.scrollIntoView();
+            document.body.scrollIntoView();
         }
-    iframe(width='100%', scrolling='no', frameborder='no', src="/classes/globals.html" onload="resizeIframe(this)")
+    iframe(id="iframe", width='100%', scrolling='no', frameborder='no', src="/classes/globals.html" onload="resizeIframe(this)")
+    script.
+        (function deepLink() {
+            var iframe = document.getElementById("iframe");
+
+            if (location.search) {
+                iframe.src = "/classes/classes/babylon." + location.search.replace("?", "") + ".html";
+            }
+        })()

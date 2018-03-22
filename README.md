@@ -9,6 +9,7 @@ Before beginning, please be sure to have these packages installed:
 
  * [Nodejs](https://nodejs.org/)
  * [grunt-cli](https://www.npmjs.com/package/grunt-cli): just use ```npm install -g grunt-cli```
+ * [typedoc](https://www.npmjs.com/package/typedoc): just use ```npm install -g typedoc```
 
 
 ## Run a local copy of the documentation

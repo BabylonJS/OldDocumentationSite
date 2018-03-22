@@ -18,7 +18,6 @@ var removeMd = require('remove-markdown');
 var rp = require('request-promise');
 
 var statics = require('../../../data/statics.json');
- var classes = require('../../../data/classes.json');
 
 var __FILES_SOURCE__ = path.join(appRoot, 'content/');
 
@@ -57,26 +56,21 @@ module.exports = function index(done) {
 
     var promises = Object.keys(statics).map(indexCategory);
 
-    // now the classes should be indexed:
-    Object.keys(classes).forEach(function (c) {
-        promises.push(indexClassVersion(c));
-    });
-
     Promise.all(promises).then(function (data) {
         done();
     });
 };
 
-function indexClassVersion(version) {
-    console.log('indexing', version);
-    var values = classes[version].map(function (name) {
-        var filePath = path.join(__FILES_SOURCE__, 'classes', version, name + '.md');
-        var value = getFileIndexingObject(name, name, filePath, 'classes/' + version)
-        return value;
-    });
+// function indexClassVersion() {
+//     console.log(classes);
+//     var values = classes.map(function (name) {
+//         var filePath = path.join(__CLASSES_SOURCE__, "babylon." + name + '.html');
+//         var value = getFileIndexingObject(name, name, filePath, 'classes/');
+//         return value;
+//     });
 
-    return sendRequestToAzure(values);
-}
+//     return sendRequestToAzure(values);
+// }
 
 function indexCategory(category) {
     var values = [];
