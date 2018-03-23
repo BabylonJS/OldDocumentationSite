@@ -5,6 +5,7 @@ module.exports = function (grunt) {
 
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
+    var serveStatic = require('serve-static');
 
     grunt.loadNpmTasks('grunt-typedoc');
     grunt.loadNpmTasks('grunt-contrib-connect');
@@ -32,13 +33,7 @@ module.exports = function (grunt) {
             typedoc: {
                 files: './typedoc/babylon.d.ts',
                 tasks: ['typedoc:build'],
-            },
-            //html: {
-            //    options: {
-            //        livereload: true
-            //    },
-            //    files: ['public/html/**/*.html'],
-            //}
+            }
         },
         connect: {
             server: {
@@ -46,7 +41,37 @@ module.exports = function (grunt) {
                     port: 8080,
                     base: 'public/html',
                     livereload: true,
-                    hostname: 'localhost'
+                    hostname: 'localhost',
+                    middleware: function (connect, options) {
+                        var middlewares = [];
+                        middlewares.push(function (req, res) {
+                            //console.log(req);
+                        });
+                        var middlewares = [];
+                        if (!Array.isArray(options.base)) {
+                            options.base = [options.base];
+                        }
+                        var directory = options.directory || options.base[options.base.length - 1];
+                        options.base.forEach(function (base) {
+                            // Serve static files. (use serve-static instead)
+                            middlewares.push(serveStatic(base));
+                        });
+
+                        // not found? do the html magic!
+                        middlewares.push(function (req, res, next) {
+                            for (var file, i = 0; i < options.base.length; i++) {
+                                file = options.base/* './public/html'*/ + req.url + ".html";
+                                if (grunt.file.exists(file)) {
+                                    require('fs').createReadStream(file).pipe(res);
+                                    return;
+                                }
+                            }
+                            //not found ? 
+                            res.statusCode = 404;
+                            res.end(req.url + ' not found');
+                        });
+                        return middlewares;
+                    }
                 }
             }
         },
@@ -131,29 +156,23 @@ module.exports = function (grunt) {
                 call: function (grunt, options, async) {
                     require('./scripts/compile-html/compile-html-statics')(async());
                 }
-            },
-            indexer: {
-                call: function (grunt, options, async) {
-                    require('./scripts/helpers/indexer/azure')(async());
-                }
             }
         }
     });
 
     grunt.registerTask('serve', 'Start working', [
-        'build',
-        'connect',
+        //'build',
+        'connect:server',
         'open:local',
         'watch'
     ]);
 
     grunt.registerTask('build', 'Build content and index it', [
         'clean:json',
+        'typedoc:build',
         'execute:compileIndex',
         'execute:compileWhatsNew',
-        'typedoc:build',
         'execute:compileHtmlStatics',
-        'execute:indexer',
         'clean:tmp'
     ]);
 };
