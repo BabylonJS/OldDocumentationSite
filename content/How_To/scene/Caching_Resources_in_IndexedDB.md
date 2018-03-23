@@ -34,6 +34,14 @@ You have 3 parameters to fill:
 
 **Note:** images are loaded using XHR2 in the blob format. IE11, Firefox and Chrome 37+ support the storing of blob data into the IndexedDB. [More details](http://caniuse.com/#search=indexeddb)
 
+## Exceptions
+If you do not want to enable offline mode, you can set `engine.enableOfflineSupport = false`. This will completely turn off the feature.
+If you want more fine-grained control, you can use the `scene.disableOfflineSupportExceptionRules` array:
+
+```
+scene.disableOfflineSupportExceptionRules.push(/dude\.babylon/gi);
+```
+
 ## Samples
 
 Most of the samples on our website are configured to use offline for their scene and textures: [www.babylonjs.com](http://www.babylonjs.com) . For instance, you can try the Espilit scene. The scene is described in _espilit.babylon_ and the associated manifest file is _espilit.babylon.manifest_.
