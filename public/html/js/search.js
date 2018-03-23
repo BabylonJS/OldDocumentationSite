@@ -97,10 +97,6 @@
                     categories.push(version);
                 }
             });
-
-            classes.forEach(function(val){
-                files.push(val);
-            })
             
             // generate the html. can be nicer but...
             var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + strQuery + '</a></h2></div>';
@@ -109,11 +105,11 @@
             // add filters:
 
             // first add "all":
-            html += '<div class="basicFilter enabled" data-version="all"><span>all</span><span>(' + files.length + ')</span></div>';
+            html += '<div class="basicFilter enabled" data-version="all"><span>all</span><span>(' + (files.length + classes.length) + ')</span></div>';
             // and now the rest
             categories.forEach(function (cat) {
-                var numOfFiles = files.filter(function (f) { return f.version === cat }).length;
-                html += '<div class="basicFilter disabled"  data-version="' + cat + '"><span>' + cat.replace(/_/, " ") + '</span><span>(' + numOfFiles + ')</span></div>';
+                var numOfFiles = files.filter(function (f) { return f.version === cat }).length + classes.filter(function (f) { return f.version === cat }).length;
+                html += '<div class="basicFilter disabled"  data-version="' + cat + '"><span>' + cat.replace(/_/, " ").toLowerCase() + '</span><span>(' + numOfFiles + ')</span></div>';
             });
 
             html += '</div>';
@@ -123,11 +119,26 @@
                 html += '<div class="result" data-version="' + f.version + '">';
                 html += '<div class="resultTitle">';
 
-                html += '<a href="' + f.src + '">' + f.version.replace(/_/, " ") + ' : ' + f.name + '</a>';
+                html += '<a href="' + f.src + '">' + f.version.replace(/_/, " ").toLowerCase() + ': ' + f.name + '</a>';
 
                 html += '</div>';
                 html += '</div>';
             })
+
+            if (files.length >0 && classes.length > 0) {
+                html += '</br><div class="result" data-version="label">';
+                html += 'Classes:</div>';
+            }
+
+            classes.forEach(function (f) {
+                html += '<div class="result" data-version="' + f.version + '">';
+                html += '<div class="resultTitle">';
+
+                html += '<a href="' + f.src + '">' + f.name + '</a>';
+
+                html += '</div>';
+                html += '</div>';
+            })            
 
 
             $('.search-content').html(html);

@@ -11,13 +11,10 @@ include includes/header.pug
                 target = obj.contentWindow.location.href.replace("/classes/globals.html", "/api.html");
             }
 
-            // Faking the URL
-            window.history.pushState({state:""}, "BabylonJS Documentation", target);
-            window.onpopstate = function(e){
-                if(e.state){
-                    window.history.back();
-                }
-            };
+            if (target && location.href !== target) {
+                // Faking the URL
+                window.history.replaceState({state:""}, "Babylon.js Documentation", target);
+            }
         }
     iframe(id="iframe", width='100%', scrolling='no', frameborder='no', src="/classes/globals.html" onload="resizeIframe(this)")
     script.
