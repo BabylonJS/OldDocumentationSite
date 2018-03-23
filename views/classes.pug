@@ -23,7 +23,7 @@ include includes/header.pug
                 var iframe = document.getElementById("iframe");
 
                 if (location.search) {
-                    iframe.src = "/classes/classes/babylon." + location.search.replace("babylon", "").replace("?", "") + ".html";
+                    iframe.src = "/classes/classes/babylon." + location.search.replace("babylon", "").replace("?", "") + ".html" + location.hash;
                 }
             })()
     include includes/footer.pug        
