@@ -116,42 +116,54 @@ var getStaticPagesContent = function (dataObj, category, cb) {
     async.each(dataObj.files, function (file, callback) {
         var filename = path.join(__FILES_SOURCE__, category, file.folder + '', file.filename + '.md');
 
-        fs.exists(filename, function (exists) {
-            if (!exists) {
+        fs.stat(filename, function (err, stats) {
+            if (err) {
                 logger.warn('File ' + filename + ' doesn\'t exist.')
             } else {
-                fs.readFile(filename, {
-                    encoding: 'utf-8',
-                    flag: 'r'
-                }, function (readErr, content) {
-                    if (readErr) {
-                        logger.info(readErr);
-                    } else {
-                        var markedContent = marked(content),
-                            tableOfContent = marked(toc(content, {
-                                omit: ['PG_TITLE'],
-                                clean: ['a', 'href']
-                            })).html;
+                //check if the file needs to be generated:
+                var htmlFilename = path.join(__FILES_DEST__, category, file.filename + '.html');
+                let creationDate = new Date(0);
+                try {
+                    creationDate = (fs.statSync(htmlFilename).mtime);
+                } catch (e) {
+
+                }
+                if (creationDate.getTime() < stats.mtime.getTime()) {
+                    fs.readFile(filename, {
+                        encoding: 'utf-8',
+                        flag: 'r'
+                    }, function (readErr, content) {
+                        if (readErr) {
+                            logger.info(readErr);
+                        } else {
+                            var markedContent = marked(content),
+                                tableOfContent = marked(toc(content, {
+                                    omit: ['PG_TITLE'],
+                                    clean: ['a', 'href']
+                                })).html;
+
+                            // Regexp catching all link to the playground
+                            var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
+                            // Replace all links to the playground with a custom iframe
+                            var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i><br/>' +
+                                '<div class="iframeContainer"></div><br/>';
+
+                            markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
+
+                            staticsContents.push({
+                                "staticName": file.title,
+                                "staticFileName": file.filename,
+                                "staticContent": markedContent.html,
+                                "toc": tableOfContent
+                            });
+                            callback();
+                        }
+                    });
+                } else {
+                    callback();
+                }
 
 
-
-                        // Regexp catching all link to the playground
-                        var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
-                        // Replace all links to the playground with a custom iframe
-                        var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i><br/>' +
-                            '<div class="iframeContainer"></div><br/>';
-
-                        markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
-
-                        staticsContents.push({
-                            "staticName": file.title,
-                            "staticFileName": file.filename,
-                            "staticContent": markedContent.html,
-                            "toc": tableOfContent
-                        });
-                        callback();
-                    }
-                });
             }
         });
     }, function () {
@@ -176,6 +188,7 @@ var createStaticPages = function (staticsContents, category, cb) {
     async.each(staticsContents, function (staticContent, callback) {
         var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
         staticContent['category'] = category;
+        //let creationDateOfContent = fs.statSync(filename)
         var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {
             staticContent: staticContent,
             currentUrl: '/' + category
@@ -186,7 +199,6 @@ var createStaticPages = function (staticsContents, category, cb) {
             if (writeErr) throw writeErr;
             callback();
         });
-
     }, function () {
         cb(null);
     });
