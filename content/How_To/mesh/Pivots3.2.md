@@ -3,6 +3,7 @@ PG_TITLE: How To Use a Pivot
 ---
 
 NOTE: BREAKING CHANGES FROM V3.2 THIS PAGE IS FOR VERSIONS FROM 3.2  
+**Technically in v3.2 and later `setPivotMatrix` applies a transformation matrix after setting the pivot whereas earler versions do not. It follows that using code written for earlier version will not give the expected results when using v3.2 or later. To use v3.2 or later with your code and obtain the expected results simply add `false` as a second parameter when using the `setPivotMatrix` method preventing the transformation matrix being applied.**    
 [Page for earlier versions](/how_to/pivots)
 
 # A Pivot

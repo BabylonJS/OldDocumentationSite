@@ -82,9 +82,9 @@ shadowGenerator.useBlurCloseExponentialShadowMap = true;
 Here is an example of how CESM works: https://www.babylonjs-playground.com/#0TG0TB
 
 ### Percentage Closer Filtering (Webgl2 only)
-Starting with Babylon.js 3.2, we introduced a new way of doing shadow map to greatly improve performances and setup of shadows.
+Starting with Babylon.js 3.2, a new way of dealing with shadow maps was introduced. This greatly improves the performance and setup of shadows.
 
-PCF shadows benefits from new hardware filtering functions available in Webgl2 only and could be assimilate to a smoother version of Poisson sampling. They will then fallback to Poisson Sampling in case Webgl 2 is not available on the target device.
+PCF shadows benefit from the new hardware filtering functions available in Webgl2 and produce a smoother version of Poisson sampling. They fallback to the standard Poisson Sampling when Webgl2 is not available on the target device.
 
 You can enable PCF with:
 ```javascript
@@ -93,7 +93,8 @@ shadowGenerator.usePercentageCloserFiltering = true;
 
 Here is an example of how PCF works: https://playground.babylonjs.com/#B48X7G#1
 
-As PCF can require more resources than available on small platform, you can use the ```filteringQuality``` property to chose the best tradeoff between quality and performances depending on your experience (the lower the quality the better the performances).
+As PCF requires more resources than can be available on small platforms, you can use the ```filteringQuality``` property to chose the best tradeoff between quality and performance depending on your experience (the lower the quality the better the performance).
+
 ```javascript
 shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_LOW;
 ```
@@ -101,15 +102,15 @@ shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_LOW;
 Only Point and Directional lights are currently supported by PCF.
 
 ### Contact hardening shadow (Webgl2 only)
-Starting with Babylon.js 3.2, we introduced contact hardening shadows based on PCSS shadows.
+Starting with Babylon.js 3.2, contact hardening shadows based on PCSS shadows was introduced.
 
-PCSS could be seen as an improved version of PCF but despite looking better they are also more expensive and should be reserver to desktop applications. Like PCF, they will automatically fallback to Poisson Sampling if the code is running on a webgl 1 paltform only.
+PCSS could be seen as an improved version of PCF but despite looking better they are also more processor expensive and should be reserved for desktop applications. Like PCF, they will automatically fallback to Poisson Sampling if the code is running on a webgl1 paltform.
 
-In PCSS, the shadows will get softer when they are further away from there caster simulating what happens in real life.
+In PCSS, the shadows will get softer when they are further away from the object casting them, simulating what happens in real life.
 
-In order to get accurate result  you will need to define additionnal parameters:
+In order to get accurate result  you will need to define additional parameters:
 * You must provide the smallest range of depth values from your light by setting `light.shadowMinZ` and `light.shadowMaxZ`. The smaller the range is, the better the shadow will be.
-* You can also play with the following parameter ```contactHardeningLightSizeUVRatio``` in order to change how fast the shadow is getting softer (between 0 and 1).
+* You can also play with the following parameter ```contactHardeningLightSizeUVRatio``` in order to change how fast the shadow softens (between 0 and 1).
 
 You can enable PCSS with:
 ```javascript
@@ -118,12 +119,13 @@ shadowGenerator.useContactHardeningShadow = true;
 
 Here is an example of how PCSS works: https://playground.babylonjs.com/#B48X7G#2
 
-As PCSS can require more resources than available on small platform, you can use the ```filteringQuality``` property to chose the best tradeoff between quality and performances depending on your experience. (the lower the quality the better the performances).
+As PCSS requires more resources than can be available on small platform, you can use the ```filteringQuality``` property to chose the best tradeoff between quality and performances depending on your experience. (the lower the quality the better the performances).
+
 ```javascript
 shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_LOW;
 ```
 
-You can also access the following link to better appreciate the impact of the shadow being softer when the blocker is moving further away from the receiver: https://playground.babylonjs.com/#ZT8BKT#2
+The following link gives you a good appreciation of the softening of shadows as the shadow caster moves further away from the object receiving the shadow: https://playground.babylonjs.com/#ZT8BKT#2
 
 Only Point and Directional lights are currently supported by PCSS.
 
@@ -248,11 +250,11 @@ BABYLON.SceneLoader.CleanBoneMatrixWeights = true;
 
 ### Self Shadow
 
-Self Shadowing is probably the case that requires the biggest attention in the setup. Let's try to setup self shadowing on the following scene): https://playground.babylonjs.com/#FH3FM2#1
+It is probably the case that Self Shadowing requires the biggest attention during its setup. Let's try to setup self shadowing on the following scene): https://playground.babylonjs.com/#FH3FM2#1
 
 The first step consists in adding a shadow generator in the scene and defining every meshes as both casters and receivers (we also force the bias to 0 to highlight the generated artifacts): https://playground.babylonjs.com/#FH3FM2#4
 
-As you can notice we do see weird patterns appearing everywhwere at the surface of the self shadowed objects. This is called shadow acnea ([more information](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne)).
+As you can notice there are weird patterns appearing everywhere on the surface of the self shadowed objects. This is called shadow acnea ([more information](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne)).
 
 Fortunately in Babylon we do have a way to solve the issue.
 
@@ -268,25 +270,25 @@ This is where you can benefit from a BabylonJS 3.2 feature called normal bias.
 
 #### Normal Bias (Since 3.2)
 
-We first move back the bias to be at the limit of seeing peter panning artifacts: https://playground.babylonjs.com/#FH3FM2#6
+First move back the bias to be at the limit of seeing peter panning artifacts: https://playground.babylonjs.com/#FH3FM2#6
 
 As you notice, there is now a bit of acnea appearing on the object where the surface is parallel to the light direction:
 
 ![ParallelAcnea](/img/how_to/paralellacnea.jpg)
 
-This is where we can add a bit of normal bias. Basically, during the generation of the shadow map, this will inset the geometry in the direction of the normal where the surface is parallel to the light: https://playground.babylonjs.com/#FH3FM2#7
+This is where to add a bit of normal bias. Basically, during the generation of the shadow map, this will inset the geometry in the direction of the normal where the surface is parallel to the light: https://playground.babylonjs.com/#FH3FM2#7
 
 All the artifacts are now gone and it is time to make our shadows look awesome.
 
 #### Soft Shadows
 
-We first try to change the shadow generator to Contact hardening: https://playground.babylonjs.com/#FH3FM2#8
+Try to change the shadow generator to Contact hardening: https://playground.babylonjs.com/#FH3FM2#8
 
-First, we can not see the contact hardening effect and, not only this, but we also see shadow acnea again. Reading upper about PCSS we noticed our light min and max should be set as close as we can: https://playground.babylonjs.com/#FH3FM2#10
+At first, you can not see the contact hardening effect and, not only this, you can see shadow acnea again. Taking note of the section on  PCSS you realsise that the light min and max should be set as close as possible: https://playground.babylonjs.com/#FH3FM2#10
 
-Good step, the contact hardening effect is present but the acnea is even stronger. Unfortunately, the bias is applied on the normalized coordinates depth (0-1) so changing the near and far value of the light impacts how big the bias should be.
+Now the contact hardening effect is present but the acnea is even stronger. Unfortunately, the bias is applied on the normalized coordinates depth (0-1) so changing the near and far value of the light impacts how big the bias should be.
 
-Reapplying the two previous steps to put the bias to its maximum before seeing peter panning and then applying some normal bias to remove the rest of the acnea leads to the following result: https://playground.babylonjs.com/#FH3FM2#11
+So go back and and change the bias to its maximum before seeing peter panning and then apply some normal bias to remove the rest of the acnea leads to the following result: https://playground.babylonjs.com/#FH3FM2#11
 
 Your shadows are now soft without acnea or peter panning.
 

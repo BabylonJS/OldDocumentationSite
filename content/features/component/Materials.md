@@ -113,12 +113,17 @@ Meshes that have distinct faces or surfaces such as a box or cylinder and are bu
 
 * [Playground Example faceUV on Cylinder](https://www.babylonjs-playground.com/#VA2AC#1)
 
+### Dynamic Texture
+
+A dynamic texture allows you to have an active material that you can draw and write on. 
+
+* [Playground Example Dynamic Texture](https://www.babylonjs-playground.com/#1282WV#14)
 
 ### 3D Surface Effects
 
 Sometimes you want your material to appear more textured (more 3D than smooth) in which case bump mapping and parallax mapping are available.
 
-[Plyground Example Bump Map](https://www.babylonjs-playground.com/#20OAV9#33)
+* [Playground Example Bump Map](https://www.babylonjs-playground.com/#20OAV9#33)
 
 The use of parallax mapping with bump mapping enhances the apparent depth of the texture.
 
@@ -162,6 +167,7 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 [Materials 101](/babylon101/Materials)  
 [Bumps, Opacity, Tiling textures](/How_To/More_Materials)  
 [Multi Materials](/How_To/Multi_Materials)  
+[Dynamic Textures](/How_To/DynamicTexture)  
 [Individual Faces](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
 [Video Texture](/How_To/video_texture)
 
