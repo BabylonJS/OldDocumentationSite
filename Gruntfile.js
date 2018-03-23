@@ -156,6 +156,11 @@ module.exports = function (grunt) {
                 call: function (grunt, options, async) {
                     require('./scripts/compile-html/compile-html-statics')(async());
                 }
+            },
+            indexer: {
+                call: function (grunt, options, async) {
+                    require('./scripts/helpers/indexer/azure')(async());
+                }
             }
         }
     });
@@ -173,6 +178,7 @@ module.exports = function (grunt) {
         'execute:compileIndex',
         'execute:compileWhatsNew',
         'execute:compileHtmlStatics',
+        'execute:indexer',
         'clean:tmp'
     ]);
 };
