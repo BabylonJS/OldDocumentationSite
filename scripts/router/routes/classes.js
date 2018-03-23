@@ -129,7 +129,7 @@ router.get('/:version/:className', function(req, res) {
 
 
     } else {
-        var fileName = path.join('./public/html/classes/' + version, className) + '.html';
+        var fileName = path.join('./public/html/classes/classes', "babylon." + className) + '.html';
         fs.exists(fileName, function(exists){
             if(!exists){
                 // 404 class not found
@@ -137,7 +137,7 @@ router.get('/:version/:className', function(req, res) {
                 logger.error('404 error - File not found: '  + fileName);
                 res.render('errorpages/404_class_not_found.pug', {classname:className});
             } else {
-                fileName = path.join('./html/classes/' + version, className) + '.html';
+                fileName = path.join('./html/classes/classes', "babylon." + className) + '.html';
 
                 var options = {
                     root: path.join(appRoot, 'public/')

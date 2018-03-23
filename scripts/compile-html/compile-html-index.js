@@ -37,4 +37,8 @@ module.exports = function(done) {
     htmlRender = pug.renderFile('views/search.pug', { pretty: false, currentUrl: '/' });
     fs.writeFileSync('public/html/search.html', htmlRender);
     logger.info("> search.html compiled.");
+
+    htmlRender = pug.renderFile('views/classes.pug', { pretty: false, currentUrl: '/' });
+    fs.writeFileSync('public/html/api.html', htmlRender);
+    logger.info("> api.html compiled.");    
 };
