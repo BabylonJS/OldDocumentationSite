@@ -62,7 +62,6 @@ function indexClassVersion(file) {
     var fileContent = fs.readFileSync(filePath).toString();
     var name = file.name.replace("babylon.", "").replace(".html", "");
     var correctName = fileContent.match(/<h1>.*?<\/h1>/g).toString().replace("<h1>", "").replace("</h1>", "");
-    console.log(correctName);
     return {
         "@search.action": "mergeOrUpload",
         title: correctName,
