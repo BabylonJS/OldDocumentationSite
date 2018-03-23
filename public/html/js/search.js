@@ -45,20 +45,63 @@
 
         $.getJSON('https://babylonjs-doc.search.windows.net/indexes/documents/docs?api-version=2016-09-01&api-key=DF333E13A6C71B67290E46668C86DD7E&search=' + query).success(function (data) {
             var files = [];
+            var classes = [];
             var categories = [];
 
+            data.value.sort(function(a, b) {
+                var catA = a.category.toLowerCase();
+                var catB = b.category.toLowerCase();
+
+                if (catA === catB) {
+                    if (a.title < b.title) {
+                        return -1;
+                    }  else if (a.title > b.title) {
+                        return 1;
+                    }
+
+                    return 0;
+                }
+
+                // By category
+                if (catA < catB) {
+                    return -1;
+                }  else if(catA > catB) {
+                    return 1;
+                }
+
+                return 0;
+            });
+
             data.value.forEach(function (val) {
-                var version = val.category.indexOf('classes') !== -1 ? val.category.substring(val.category.indexOf("/") + 1) : val.category;
-                files.push({
-                    src: val.url,
-                    version: version,
-                    name: val.title
-                });
+                console.log(val.category);
+                var version = val.category;
+
+                if (version.indexOf("/") !== -1 || val.title[0] === "_") {
+                    return;
+                }
+
+                if (version === "classes") {
+                    classes.push({
+                        src: val.url,
+                        version: version,
+                        name: val.title
+                    });
+                } else {
+                    files.push({
+                        src: val.url,
+                        version: version,
+                        name: val.title
+                    });
+                }
                 if (categories.indexOf(version) === -1) {
                     categories.push(version);
                 }
             });
 
+            classes.forEach(function(val){
+                files.push(val);
+            })
+            
             // generate the html. can be nicer but...
             var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + strQuery + '</a></h2></div>';
 
