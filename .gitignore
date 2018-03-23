@@ -15,3 +15,4 @@ public/html/*
 
 !public/html/img/
 .history/
+log/bjs-doc-error.log
