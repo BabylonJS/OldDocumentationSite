@@ -4,6 +4,9 @@ include includes/header.pug
         function resizeIframe(obj) {
             obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
             document.body.scrollIntoView();
+            if (obj.contentWindow.location.href.indexOf("/classes/classes/babylon.") !== -1) {
+                location.href = obj.contentWindow.location.href.replace("/classes/classes/babylon.", "/api.html?").replace(".html", "");
+            }
         }
     iframe(id="iframe", width='100%', scrolling='no', frameborder='no', src="/classes/globals.html" onload="resizeIframe(this)")
     script.
@@ -11,6 +14,6 @@ include includes/header.pug
             var iframe = document.getElementById("iframe");
 
             if (location.search) {
-                iframe.src = "/classes/classes/babylon." + location.search.replace("?", "") + ".html";
+                iframe.src = "/classes/classes/babylon." + location.search.replace("babylon", "").replace("?", "") + ".html";
             }
         })()
