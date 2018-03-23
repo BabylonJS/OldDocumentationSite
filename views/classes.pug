@@ -4,9 +4,15 @@ include includes/header.pug
         function resizeIframe(obj) {
             obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
             document.body.scrollIntoView();
-            if (obj.contentWindow.location.href.indexOf("/classes/classes/babylon.") !== -1) {
-                location.href = obj.contentWindow.location.href.replace("/classes/classes/babylon.", "/api.html?").replace(".html", "");
-            }
+            //- var target;
+            //- if (obj.contentWindow.location.href.indexOf("/classes/classes/babylon.") !== -1) {
+            //-     target = obj.contentWindow.location.href.replace(".html", "").replace("/classes/classes/babylon.", "/api.html?");
+            //- } else {
+            //-     target = obj.contentWindow.location.href.replace("/classes/globals.html", "/api.html");
+            //- }
+            //- if (location.href !== target) {
+            //-     location.href = target;
+            //- }
         }
     iframe(id="iframe", width='100%', scrolling='no', frameborder='no', src="/classes/globals.html" onload="resizeIframe(this)")
     script.
