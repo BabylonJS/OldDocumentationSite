@@ -12,7 +12,7 @@ var fs = require('fs'),
     marked = require('meta-marked'),
     renderer = new marked.Renderer(),
     slugify = require('uslug'),
-    rimraf = require('rimraf'),
+    //rimraf = require('rimraf'),
     toc = require('marked-toc');
 
 
@@ -102,7 +102,9 @@ var createStaticsPage = function (dataObj, category, cb) {
         currentUrl: '/' + category
     });
 
-    fs.writeFile(path.join(__FILES_DEST__, category + '.html'), statics_page, function (writeErr) {
+    checkDirectorySync(path.join(__FILES_DEST__, category));
+
+    fs.writeFile(path.join(__FILES_DEST__, category + '/index.html'), statics_page, function (writeErr) {
         if (writeErr) throw writeErr;
         cb(null, dataObj, category);
     });
@@ -157,35 +159,37 @@ var getStaticPagesContent = function (dataObj, category, cb) {
     });
 };
 
+function checkDirectorySync(directory) {
+    try {
+        fs.statSync(directory);
+    } catch (e) {
+        fs.mkdirSync(directory);
+    }
+}
+
 var createStaticPages = function (staticsContents, category, cb) {
     // flush public/html/<category> folder
-    rimraf(path.join(__FILES_DEST__, category), function (err) {
-        if (err) {
-            throw err;
-        } else {
+    //rimraf(path.join(__FILES_DEST__, category), function (err) {
+    //if (err) {
+    //    throw err;
+    // } else {
+    async.each(staticsContents, function (staticContent, callback) {
+        var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
+        staticContent['category'] = category;
+        var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {
+            staticContent: staticContent,
+            currentUrl: '/' + category
+        });
 
-            if (!fs.existsSync(path.join(__FILES_DEST__, category))) {
-                //might fail with EPERM, will be shown in the grunt task
-                fs.mkdirSync(path.join(__FILES_DEST__, category));
-            }
+        //logger.info('Page ' + category + '/' + staticContent.staticFileName + '.html about to be compiled.');
+        fs.writeFile(filename, staticPage, function (writeErr) {
+            if (writeErr) throw writeErr;
+            callback();
+        });
 
-            async.each(staticsContents, function (staticContent, callback) {
-                var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
-                staticContent['category'] = category;
-                var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {
-                    staticContent: staticContent,
-                    currentUrl: '/' + category
-                });
-
-                //logger.info('Page ' + category + '/' + staticContent.staticFileName + '.html about to be compiled.');
-                fs.writeFile(filename, staticPage, function (writeErr) {
-                    if (writeErr) throw writeErr;
-                    callback();
-                });
-
-            }, function () {
-                cb(null);
-            });
-        }
+    }, function () {
+        cb(null);
     });
+    //}
+    //});
 };
