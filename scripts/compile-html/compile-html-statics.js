@@ -163,7 +163,11 @@ var createStaticPages = function (staticsContents, category, cb) {
         if (err) {
             throw err;
         } else {
-            fs.mkdirSync(path.join(__FILES_DEST__, category));
+
+            if (!fs.existsSync(path.join(__FILES_DEST__, category))) {
+                //might fail with EPERM, will be shown in the grunt task
+                fs.mkdirSync(path.join(__FILES_DEST__, category));
+            }
 
             async.each(staticsContents, function (staticContent, callback) {
                 var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
