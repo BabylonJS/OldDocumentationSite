@@ -161,7 +161,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('serve', 'Start working', [
-        //'build',
+        'build',
         'connect:server',
         'open:local',
         'watch'

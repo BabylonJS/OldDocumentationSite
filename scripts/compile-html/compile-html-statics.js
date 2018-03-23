@@ -99,7 +99,7 @@ module.exports = function (done) {
 var createStaticsPage = function (dataObj, category, cb) {
     var statics_page = pug.renderFile(__PUG_STATICS__, {
         dataObj: dataObj,
-        currentUrl: '/' + category
+        currentUrl: '/'
     });
 
     checkDirectorySync(path.join(__FILES_DEST__, category));
