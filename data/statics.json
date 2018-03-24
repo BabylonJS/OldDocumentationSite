@@ -740,6 +740,10 @@
                     "filename": "How_to_create_a_proceduralTexture_for_procedutalTexturesLibrary"
                 },
                 {
+                    "title": "Improve API Documentation",
+                    "filename": "contribute_to_api"
+                },
+                {
                     "title": "Write a Playground Based Tutorial",
                     "filename": "playground_tutorials"
                 }
