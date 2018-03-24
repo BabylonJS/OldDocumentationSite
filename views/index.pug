@@ -259,7 +259,7 @@ include includes/banner.pug
             code.javascript.ts.
                 constructor(canvasElement : string) {
                     // Create canvas and engine.
-                    this._canvas = <HTMLCanvasElement>document.getElementById(canvasElement);
+                    this._canvas = document.getElementById(canvasElement) as HTMLCanvasElement;
                     this._engine = new BABYLON.Engine(this._canvas, true);
                 }
         p.ts.
@@ -480,7 +480,7 @@ include includes/banner.pug
 
                     constructor(canvasElement : string) {
                         // Create canvas and engine.
-                        this._canvas = <HTMLCanvasElement>document.getElementById(canvasElement);
+                        this._canvas = document.getElementById(canvasElement) as HTMLCanvasElement;
                         this._engine = new BABYLON.Engine(this._canvas, true);
                     }
 
