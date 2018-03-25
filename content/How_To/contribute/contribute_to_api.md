@@ -4,20 +4,29 @@ PG_TITLE: Contribute To The API Documentation
 
 # Need for Contribution
 
-Many people have asked for the API documentation to be improved. This is a major task with lots of files needing comments added. Comments are very useful for future development and maintenance of the code but now they are even more useful since in the correct format they are can be read by “TYPEDOC” and produce the extra information API documentation for the classes, properties and methods used by Babylon.js. The core team has worked to make this happen as you can see by the new API documentation. Volunteers are needed to add comments so even if you only have time to do a couple of files then please do volunteer. 
+Many people have asked for the API documentation to be improved. This is a major task with lots of files needing comments added. Comments are very useful for future development and maintenance of the code but now they are even more useful since in the correct format they are can be read by “TYPEDOC” and produce the API documentation for the classes, properties and methods used by Babylon.js. The core team has worked to make this happen as you can see by the new API documentation. Volunteers are needed to add comments so even if you only have time to do a couple of files then please do volunteer. 
 
 # How to Contribute
 
+You need to add appropriate comments according to the formats given below. Check the comments for errors and submit a PR when everything is validated.
+
 1. Fork and clone [Babylon.js](https://github.com/BabylonJS/Babylon.js) from github;
-2. Edit a file from within the **src** folder by adding comments;
-3. Create a new folder **outside** the Babylon.js folder;
-4. In the new folder install typedoc using `$ npm install typedoc` (or `npm install --global typedoc` if you want a global install and not just in the one folder);
-5. Copy the **src** folder into the new folder;
-6. Copy the **tsconfig.json** file from the **src** folder into the new folder;
-7. Create a folder called documents in the new folder;
-8. In the new folder use `$ typedoc --out documents src` to create the docs from the src
-9. In the documents folder find and open index.html to check results. Note that this will not be exactly the same as the Babylon.js API documentation web pages but close enough to check.
-10. When happy that changes are working submit PR.
+2. In the folder **Tools/Gulp** install npm with `npm install` and then gulp with `npm install -g gulp`;
+3. Edit files from within the **src** folder by adding comments;
+4. Execute `gulp typedoc-check` to validate the comments;
+5. Do NOT COMMIT any changes to the file **babylon.d.ts**. Use `discard` to remove changes;
+6. When validated submit a PR.
+
+Whilst the above steps will validate the comments it will not allow you to see the results. Since you do not want to affect anything within your local clone of Babylon.js you will need to create a new folder **outside** the Babylon.js folder. You can then follow these steps to produce viewable results of your comments.
+
+After editing and validating files within the **src** folder and before the PR:  
+
+7. In the new folder install typedoc using `$ npm install typedoc`;
+8. Copy the **src** folder into the new folder;
+9. Copy the **tsconfig.json** file from the **src** folder into the new folder;
+10. Create a folder called documents in the new folder;
+11. In the new folder use `$ typedoc --out documents src` to create the documents from the src
+12. In the **documents** folder find and open index.html to check results. Note that these will not appear exactly the same as the Babylon.js API documentation web pages but close enough to check.
 
 
 # Format of Comments
@@ -130,18 +139,64 @@ export class MapperManager {
      * Creates a new MapperManager object to manage the different implemented mappers
      */
     constructor() {
-        this._mappers = {
-            "html": new HTMLMapper(),
-            "json": new JSONMapper(),
-            "dom": new DOMMapper()
-        }
+this._mappers = {
+    "html": new HTMLMapper(),
+    "json": new JSONMapper(),
+    "dom": new DOMMapper()
+}
     }
 }    
 ```
 
 ## With Parameters
 
-A creates comment to describe the CONSTRUCTOR and use @param for each parameter. The first item after @param must be the parameter name then a further comment
+A creates comment to describe the CONSTRUCTOR and use @param for each parameter. The first item after @param must be the parameter name then a further comment. In addition should any members of the constructor be declared as public the comment should be repeated before the member in the parameters list.
+
+### No Public Parameters
+
+Create and @param comments for constructor.
+
+```javascript
+/**
+ * Create a new Model loader
+ * @param _viewer the viewer using this model loader
+ */
+constructor(private _viewer: AbstractViewer) {
+    this._loaders = [];
+    this._loadId = 0;
+}
+```
+
+```javascript
+/**
+ * Creates a Solid Particle object.
+ * Don't create particles manually, use instead the Solid Particle System internal tools like _addParticle()
+ * @param particleIndex (integer) is the particle index in the Solid Particle System pool. It's also the particle identifier.  
+ * @param positionIndex (integer) is the starting index of the particle vertices in the SPS "positions" array.
+ * @param indiceIndex (integer) is the starting index of the particle indices in the SPS "indices" array.
+ * @param model (ModelShape) is a reference to the model shape on what the particle is designed.  
+ * @param shapeId (integer) is the model shape identifier in the SPS.
+ * @param idxInShape (integer) is the index of the particle in the current model (ex: the 10th box of addShape(box, 30))
+ * @param modelBoundingInfo is the reference to the model BoundingInfo used for intersection computations.
+ */
+constructor(particleIndex: number, positionIndex: number, indiceIndex: number, model: Nullable<ModelShape>, shapeId: number, idxInShape: number, sps: SolidParticleSystem, modelBoundingInfo: Nullable<BoundingInfo> = null) {
+    this.idx = particleIndex;
+    this._pos = positionIndex;
+    this._ind = indiceIndex;
+    this._model = <ModelShape>model;
+    this.shapeId = shapeId;
+    this.idxInShape = idxInShape;
+    this._sps = sps;
+    if (modelBoundingInfo) {
+        this._modelBoundingInfo = modelBoundingInfo;
+        this._boundingInfo = new BoundingInfo(modelBoundingInfo.minimum, modelBoundingInfo.maximum);
+    }
+}
+```
+
+### With Public Parameters
+
+Create and @param comments for constructor and copied comments before any public parameter in list
 
 ```javascript
 /**
@@ -149,8 +204,47 @@ A creates comment to describe the CONSTRUCTOR and use @param for each parameter.
  * @param triggerOptions the trigger, with or without parameters, for the action
  * @param condition an optional determinant of action 
  */
-constructor(public triggerOptions: any, condition?: Condition) {
-    // Constructor properties and methods here
+constructor(
+    
+    /**
+     * The trigger, with or without parameters, for the action.
+     */
+    public triggerOptions: any, 
+    
+    condition?: Condition) {
+    
+    if (triggerOptions.parameter) {
+                this.trigger = triggerOptions.trigger;
+                this._triggerParameter = triggerOptions.parameter;
+            } else {
+                this.trigger = triggerOptions;
+            }
+
+            this._nextActiveAction = this;
+            this._condition = condition;
+}
+```
+
+```javascript
+/**
+ * Creates a new instance ConeParticleEmitter
+ * @param radius the radius of the emission cone (1 by default)
+ * @param angles the cone base angle (PI by default)
+ * @param directionRandomizer defines how much to randomize the particle direction [0-1]
+ */
+constructor(
+    radius = 1, 
+    /**
+     * The cone base angle (PI by default).
+     */
+    public angle = Math.PI, 
+    
+    /**
+     * Defines how much to randomize the particle direction [0-1]
+     */
+    public directionRandomizer = 0) {
+    
+    this.radius = radius;
 }
 ```
 
@@ -187,7 +281,7 @@ public _actionManager: ActionManager;
 
 ## Private or Protected
 
-These will be ignored automatically when building the API documentation although plain comments are useful for development 
+These will be ignored automatically when building the API documentation and comments are optional.
 
 ```javascript
 private _worldMatrix: Matrix;
@@ -221,13 +315,13 @@ public clear(): void {
 public skipToNextActiveAction(): void {
     if (this._nextActiveAction._child) {
 
-        if (!this._nextActiveAction._child._actionManager) {
-            this._nextActiveAction._child._actionManager = this._actionManager;
-        }
+if (!this._nextActiveAction._child._actionManager) {
+    this._nextActiveAction._child._actionManager = this._actionManager;
+}
 
-        this._nextActiveAction = this._nextActiveAction._child;
+this._nextActiveAction = this._nextActiveAction._child;
     } else {
-        this._nextActiveAction = this;
+this._nextActiveAction = this;
     }
 }
 ```
@@ -292,9 +386,9 @@ Comments to describe the FUNCTION and use @param for each parameter. The first i
 public run(scene: Scene, onSuccess: () => void, onError: (message?: string, exception?: any) => void) {
     this._taskState = AssetTaskState.RUNNING;
     this.runTask(scene, () => {
-        this.onDoneCallback(onSuccess, onError);
+this.onDoneCallback(onSuccess, onError);
     }, (msg, exception) => {
-        this.onErrorCallback(onError, msg, exception);
+this.onErrorCallback(onError, msg, exception);
     });
 }
 ```
@@ -314,25 +408,25 @@ public run(scene: Scene, onSuccess: () => void, onError: (message?: string, exce
 public drawText(text: string, x: number, y: number, font: string, color: string, clearColor: string, invertY?: boolean, update = true) {
     var size = this.getSize();
     if (clearColor) {
-        this._context.fillStyle = clearColor;
-        this._context.fillRect(0, 0, size.width, size.height);
+this._context.fillStyle = clearColor;
+this._context.fillRect(0, 0, size.width, size.height);
     }
 
     this._context.font = font;
     if (x === null || x === undefined) {
-        var textSize = this._context.measureText(text);
-        x = (size.width - textSize.width) / 2;
+var textSize = this._context.measureText(text);
+x = (size.width - textSize.width) / 2;
     }
     if (y === null || y === undefined) {
-        var fontSize = parseInt((font.replace(/\D/g, '')));;
-        y = (size.height / 2) + (fontSize / 3.65);
+var fontSize = parseInt((font.replace(/\D/g, '')));;
+y = (size.height / 2) + (fontSize / 3.65);
     }
 
     this._context.fillStyle = color;
     this._context.fillText(text, x, y);
 
     if (update) {
-        this.update(invertY);
+this.update(invertY);
     }
 }
 
@@ -340,9 +434,9 @@ public drawText(text: string, x: number, y: number, font: string, color: string,
 
 #### With Return Value
 
-Comments to describe the FUNCTION and use @param for each parameter and @returns to describe what the function returns. The first item after @param must be the parameter name then a further comment
+Comments to describe the FUNCTION and use @param for each parameter and @returns to describe what the function returns. The first item after @param must be the parameter name then a further comment.
 
-```javscript
+```javascript
 /**
  * Add a TextFileAssetTask to the list of active tasks
  * @param taskName defines the name of the new task
@@ -367,11 +461,11 @@ var task = new TextFileAssetTask(taskName, url);
 public transferToEffect(effect: Effect, lightIndex: string): HemisphericLight {
     var normalizeDirection = Vector3.Normalize(this.direction);
     this._uniformBuffer.updateFloat4("vLightData",
-        normalizeDirection.x,
-        normalizeDirection.y,
-        normalizeDirection.z,
-        0.0,
-        lightIndex);
+normalizeDirection.x,
+normalizeDirection.y,
+normalizeDirection.z,
+0.0,
+lightIndex);
     this._uniformBuffer.updateColor3("vLightGround", this.groundColor.scale(this.intensity), lightIndex);
     return this;
 }
@@ -387,7 +481,7 @@ There are occasions when a function should be public for the use of the code but
  */
 public _getWorldMatrix(): Matrix {
     if (!this._worldMatrix) {
-        this._worldMatrix = Matrix.Identity();
+this._worldMatrix = Matrix.Identity();
     }
     return this._worldMatrix;
 }
@@ -399,11 +493,11 @@ public _getWorldMatrix(): Matrix {
  */
 public _onPointerEnter(target: Control): boolean {
     if (!super._onPointerEnter(target)) {
-        return false;
+return false;
     }
 
     if (this.pointerEnterAnimation) {
-        this.pointerEnterAnimation();
+this.pointerEnterAnimation();
     }
 
     return true;
@@ -412,7 +506,7 @@ public _onPointerEnter(target: Control): boolean {
 
 ## Private or Protected
 
-These will be ignored automatically when building the API documentation although plain comments are useful for development 
+These will be ignored automatically when building the API documentation and comments are optional.
 
 ```javascript
 protected _buildUniformLayout(): void {
@@ -424,6 +518,21 @@ protected _buildUniformLayout(): void {
     this._uniformBuffer.addUniform("depthValues", 2);
     this._uniformBuffer.create();
 } 
+```
+
+```javascript
+private follow(): void {
+    if (!this.target) {
+        return;
+    }
+    this._cartesianCoordinates.x = this.radius * Math.cos(this.alpha) * Math.cos(this.beta);
+    this._cartesianCoordinates.y = this.radius * Math.sin(this.beta);
+    this._cartesianCoordinates.z = this.radius * Math.sin(this.alpha) * Math.cos(this.beta);
+
+    var targetPosition = this.target.getAbsolutePosition();
+    this.position = targetPosition.add(this._cartesianCoordinates);
+    this.setTarget(targetPosition);
+}
 ```
 
 ```javascript
