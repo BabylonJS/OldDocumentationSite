@@ -23,15 +23,14 @@ var __FILES_SOURCE__ = path.join(appRoot, 'content/');
 
 module.exports = function index(done) {
 
-    console.log(process.env);
-
-    if(process.env.BRANCH && process.env.BRANCH !== 'deployment') {
+    if (process.env.CONTEXT && process.env.CONTEXT !== 'production') {
+        console.log('Skipping azure indexing');
         return done();
     }
 
 
-    if(!process.env.AZURE_API_KEY) {
-        console.log('Skipping azure indexing');       
+    if (!process.env.AZURE_API_KEY) {
+        console.log('Skipping azure indexing');
         return done();
     }
 
@@ -55,13 +54,13 @@ module.exports = function index(done) {
                 for (var packetIndex = index; packetIndex < index + 10 && packetIndex < values.length; packetIndex++) {
                     packet.push(values[packetIndex]);
                 }
-                promises.push(sendRequestToAzure(packet, true));            
+                promises.push(sendRequestToAzure(packet, true));
             }
             Promise.all(promises).then(function (data) {
                 done();
             });
         }
-    );    
+    );
 };
 
 function indexClassVersion(file) {
