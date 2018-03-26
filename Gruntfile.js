@@ -103,7 +103,7 @@ module.exports = function (grunt) {
             build: {
                 options: {
                     target: 'es5',
-                    out: './public/html/classes',
+                    out: './public/html/api',
                     name: 'Babylon.js classes documentation',
                     excludeExternals: true,
                     excludePrivate: true,
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
                     '!data/statics.json',
                     'public/html/**/*.html',
                     '!public/html',
-                    '!public/html/classes/**/*.*'
+                    '!public/html/api/**/*.*'
                 ]
             },
             tmp: {
@@ -161,12 +161,17 @@ module.exports = function (grunt) {
                 call: function (grunt, options, async) {
                     require('./scripts/helpers/indexer/azure')(async());
                 }
+            },
+            remoteIndexCleanup: {
+                call: function (grunt, options, async) {
+                    require('./scripts/helpers/indexer/azureCleanup')(async());
+                }
             }
         }
     });
 
     grunt.registerTask('serve', 'Start working', [
-        'build',
+        //'build',
         'connect:server',
         'open:local',
         'watch'
@@ -179,6 +184,7 @@ module.exports = function (grunt) {
         'execute:compileWhatsNew',
         'execute:compileHtmlStatics',
         'execute:indexer',
+        'execute:remoteIndexCleanup',
         'clean:tmp'
     ]);
 };

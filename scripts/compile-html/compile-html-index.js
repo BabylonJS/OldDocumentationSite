@@ -40,8 +40,11 @@ module.exports = function (done) {
     fs.writeFileSync('public/html/search/index.html', htmlRender);
     logger.info("> search.html compiled.");
 
-    checkDirectorySync("public/html/classes/");
-    htmlRender = pug.renderFile('views/classes.pug', { pretty: false, currentUrl: '/' });
-    fs.writeFileSync('public/html/classes/index.html', htmlRender);
-    logger.info("> classes.html compiled.");
+    checkDirectorySync("public/html/api/");
+    /*htmlRender = pug.renderFile('views/classes.pug', { pretty: false, currentUrl: '/' });
+    fs.writeFileSync('public/html/api/index.html', htmlRender);
+    logger.info("> api.html compiled.");*/
+    let content = fs.readFileSync('public/html/api/globals.html');
+    fs.writeFileSync('public/html/api/index.html', content);
+    logger.info("> api.html compiled.");
 };

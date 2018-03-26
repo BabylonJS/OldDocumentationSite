@@ -74,12 +74,16 @@ module.exports = function (done) {
                 });
             });
 
-            async.waterfall([
-                async.constant(dataObject, category),
-                createStaticsPage,
+            let tasks = [async.constant(dataObject, category)];
+            //if (category !== "classes") {
+            tasks.push(createStaticsPage,
                 getStaticPagesContent,
-                createStaticPages
-            ], function (error) {
+                createStaticPages);
+            //} else {
+            //    tasks.push(addApiDocuments, createStaticPages);
+            //}
+
+            async.waterfall(tasks, function (error) {
                 if (error) {
                     throw error;
                 } else {
@@ -180,11 +184,6 @@ function checkDirectorySync(directory) {
 }
 
 var createStaticPages = function (staticsContents, category, cb) {
-    // flush public/html/<category> folder
-    //rimraf(path.join(__FILES_DEST__, category), function (err) {
-    //if (err) {
-    //    throw err;
-    // } else {
     async.each(staticsContents, function (staticContent, callback) {
         var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
         staticContent['category'] = category;
@@ -194,7 +193,6 @@ var createStaticPages = function (staticsContents, category, cb) {
             currentUrl: '/' + category
         });
 
-        //logger.info('Page ' + category + '/' + staticContent.staticFileName + '.html about to be compiled.');
         fs.writeFile(filename, staticPage, function (writeErr) {
             if (writeErr) throw writeErr;
             callback();
@@ -202,6 +200,4 @@ var createStaticPages = function (staticsContents, category, cb) {
     }, function () {
         cb(null);
     });
-    //}
-    //});
 };
