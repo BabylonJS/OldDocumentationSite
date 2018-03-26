@@ -23,7 +23,7 @@ var __FILES_SOURCE__ = path.join(appRoot, 'content/');
 
 module.exports = function index(done) {
 
-    console.log(process.env.BRANCH);
+    console.log(process.env);
 
     if(process.env.BRANCH && process.env.BRANCH !== 'deployment') {
         return done();
