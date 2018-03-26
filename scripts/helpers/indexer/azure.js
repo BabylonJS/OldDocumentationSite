@@ -23,6 +23,13 @@ var __FILES_SOURCE__ = path.join(appRoot, 'content/');
 
 module.exports = function index(done) {
 
+    console.log(process.env.BRANCH);
+
+    if(process.env.BRANCH && process.env.BRANCH !== 'deployment') {
+        return done();
+    }
+
+
     if(!process.env.AZURE_API_KEY) {
         console.log('Skipping azure indexing');       
         return done();
@@ -32,7 +39,7 @@ module.exports = function index(done) {
 
     readdirp(
         {
-            root: path.join(appRoot, 'public/html/classes/classes'),
+            root: path.join(appRoot, 'public/html/api'),
             depth: 0
         },
         function (err, allFiles) {
