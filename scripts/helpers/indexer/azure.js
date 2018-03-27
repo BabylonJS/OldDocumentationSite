@@ -65,7 +65,7 @@ module.exports = function index(done) {
 
             //search the search index for files NOT in the files to be indexed:
             searchIndex.forEach(file => {
-                if(!toUpdate.find(f => f.url === file.url)) {
+                if (!toUpdate.find(f => f.url === file.url)) {
                     // push it for deletion!
                     toUpdate.push({
                         "@search.action": "delete",
@@ -75,8 +75,11 @@ module.exports = function index(done) {
             });
             //Now send it to azure 100 files at a time:
             let sendPromises = [];
-            for(let i = 0; i < toUpdate.length; i = i + 100) {
-                sendPromises.push(sendRequestToAzure(toUpdate.slice(i, i+100)));
+            for (let i = 0; i < toUpdate.length + 99; i = i + 100) {
+                let slicedUpdate = toUpdate.slice(i, i + 100);
+                if (slicedUpdate.length) {
+                    sendPromises.push(sendRequestToAzure(slicedUpdate));
+                }
             }
             return Promise.all(sendPromises).then(() => {
                 console.log("Search index updated successfully");
@@ -85,7 +88,7 @@ module.exports = function index(done) {
                 console.log("Error while processing requests", err);
                 done();
             });
-        });        
+        });
     });
 };
 
