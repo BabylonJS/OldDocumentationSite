@@ -1,6 +1,6 @@
-/classes/classes/:class                     /api.html?:class
-/classes/:class                             /api.html?:class
-/classes/:version/:class                    /api.html?:class
+/classes/classes/:class                     /api/classes/babylon.:class
+/classes/:class                             /api/classes/babylon.:class
+/classes/:version/:class                    /api/classes/babylon.:class
 
 /tutorials                                  /How_To
 /tutorials/01._advanced_texturing           /How_To/more_materials
