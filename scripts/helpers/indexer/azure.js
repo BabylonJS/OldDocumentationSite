@@ -204,7 +204,7 @@ function sendRequestToAzure(values, isForClasses) {
 
     return rp(options)
         .then(function (d) {
-            console.log('success, indexed ' + values.length + (isForClasses ? ' classes' : ' documents'));
+            console.log('success, updated ' + values.length + (isForClasses ? ' classes' : ' documents'));
         }).catch(function (err) {
             // catch errors here, so the entire process wouldn't fail.
             console.log("err", err.error, err.response.body);
