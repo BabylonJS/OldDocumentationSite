@@ -76,7 +76,7 @@ module.exports = function index(done) {
             //Now send it to azure 100 files at a time:
             let sendPromises = [];
             for(let i = 0; i < toUpdate.length; i = i + 100) {
-                sendPromises.push(sendRequestToAzure(toUpdate.slice(i, 100)));
+                sendPromises.push(sendRequestToAzure(toUpdate.slice(i, i+100)));
             }
             return Promise.all(sendPromises).then(() => {
                 console.log("Search index updated successfully");
@@ -189,9 +189,6 @@ function getFileIndexingObject(title, filename, filePath, category) {
 }
 
 function sendRequestToAzure(values, isForClasses) {
-    values.forEach(val => {
-        console.log(val["@search.action"]);
-    })
     var options = {
         method: 'POST',
         uri: 'https://babylonjs-doc.search.windows.net/indexes/documents/docs/index?api-version=2016-09-01',
@@ -210,6 +207,6 @@ function sendRequestToAzure(values, isForClasses) {
             console.log('success, indexed ' + values.length + (isForClasses ? ' classes' : ' documents'));
         }).catch(function (err) {
             // catch errors here, so the entire process wouldn't fail.
-            console.log(err.error, err.response.body);
+            console.log("err", err.error, err.response.body);
         });
 }
