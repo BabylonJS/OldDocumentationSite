@@ -73,14 +73,13 @@
             });
 
             data.value.forEach(function (val) {
-                console.log(val.category);
                 var version = val.category;
 
                 if (version.indexOf("/") !== -1 || val.title[0] === "_") {
                     return;
                 }
 
-                if (version === "classes") {
+                if (version === "api") {
                     classes.push({
                         src: val.url,
                         version: version,
@@ -88,7 +87,7 @@
                     });
                 } else {
                     files.push({
-                        src: val.url,
+                        src: "/" + val.url,
                         version: version,
                         name: val.title
                     });
@@ -127,7 +126,7 @@
 
             if (files.length >0 && classes.length > 0) {
                 html += '</br><div class="result" data-version="label">';
-                html += 'Classes:</div>';
+                html += 'API:</div>';
             }
 
             classes.forEach(function (f) {
