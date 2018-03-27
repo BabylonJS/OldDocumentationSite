@@ -48,8 +48,8 @@
                     html: '<i class="fa fa-book"></i>Samples'
                 }),
                 $('<a>', {
-                    href: '/api.html',
-                    html: '<i class="fa fa-files-o"></i>Classes'
+                    href: '/api',
+                    html: '<i class="fa fa-files-o"></i>API'
                 }),
                 $('<a>', {
                     href: '/playground',
