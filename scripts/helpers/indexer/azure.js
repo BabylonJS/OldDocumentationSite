@@ -37,13 +37,13 @@ module.exports = function index(done) {
     /*if (process.env.CONTEXT && process.env.CONTEXT !== 'production') {
         console.log('Skipping azure indexing');
         return done();
-    }
+    }*/
 
     //only index if the key is there
     if (!process.env.AZURE_API_KEY) {
         console.log('Skipping azure indexing');
         return done();
-    }*/
+    }
 
     // step 1 - get azure's index
     getAzureIndex().then((searchIndex) => {
@@ -73,10 +73,10 @@ module.exports = function index(done) {
                     });
                 }
             });
-            //Now send it to azure 50 files at a time:
+            //Now send it to azure 100 files at a time:
             let sendPromises = [];
-            for(let i = 0; i < toUpdate.length; i = i + 50) {
-                sendPromises.push(sendRequestToAzure(toUpdate.slice(i, 50)));
+            for(let i = 0; i < toUpdate.length; i = i + 100) {
+                sendPromises.push(sendRequestToAzure(toUpdate.slice(i, 100)));
             }
             return Promise.all(sendPromises).then(() => {
                 console.log("Search index updated successfully");
@@ -155,8 +155,6 @@ function indexCategory(category) {
     });
 
     return values;
-
-    // return sendRequestToAzure(values);
 }
 
 function indexApi() {
@@ -191,6 +189,9 @@ function getFileIndexingObject(title, filename, filePath, category) {
 }
 
 function sendRequestToAzure(values, isForClasses) {
+    values.forEach(val => {
+        console.log(val["@search.action"]);
+    })
     var options = {
         method: 'POST',
         uri: 'https://babylonjs-doc.search.windows.net/indexes/documents/docs/index?api-version=2016-09-01',
@@ -207,8 +208,7 @@ function sendRequestToAzure(values, isForClasses) {
     return rp(options)
         .then(function (d) {
             console.log('success, indexed ' + values.length + (isForClasses ? ' classes' : ' documents'));
-        })
-        .catch(function (err) {
+        }).catch(function (err) {
             // catch errors here, so the entire process wouldn't fail.
             console.log(err.error, err.response.body);
         });
