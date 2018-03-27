@@ -34,10 +34,10 @@ var __FILES_SOURCE__ = path.join(appRoot, 'content/');
 module.exports = function index(done) {
 
     //only index when running the production update
-    /*if (process.env.CONTEXT && process.env.CONTEXT !== 'production') {
+    if (process.env.CONTEXT && process.env.CONTEXT !== 'production') {
         console.log('Skipping azure indexing');
         return done();
-    }*/
+    }
 
     //only index if the key is there
     if (!process.env.AZURE_API_KEY) {
