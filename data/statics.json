@@ -1394,6 +1394,17 @@
                     "filename": "Viewer_examples"
                 }
             ]
+        },
+        {
+            "title": "glTF Exporter",
+            "name": "glTFExporter",
+            "desc": "Learn how to export glTF models from BabylonJS",
+            "files": [
+                {
+                    "title": "glTF Exporter",
+                    "filename": "glTFExporter"
+                }
+            ]
         }
     ],
     "samples": [
