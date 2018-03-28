@@ -168,7 +168,7 @@ Comment line 41 out in the following to see back face culling happening.
 ## Color
 
 The simplest way to assign a color to the custom mesh is by applying a standard material to the mesh and let BabylonJS do all the work. However 
-color can be set for a facet within the vertex data. For information on how the arrangement of facets used in constructing a mesh can affect how colors are displayed see [Applying Materials to Facets](/advanced/Facets.html).
+color can be set for a facet within the vertex data. For information on how the arrangement of facets used in constructing a mesh can affect how colors are displayed see [Applying Materials to Facets](/resources/Facets.html).
 
 Colors for each vertex are placed in an array as groups of four in the order red, green, blue and alpha for transparency. For the facet 0, 1, 2 to be colored red and the facet 3, 4, 5 to be colored green each vertex 
 on each facet is given the same color.
@@ -288,7 +288,7 @@ In the playground below clicking on next will cycle you through a variety of val
 
 ### Notes on Playground
 The camera has been disabled for this playground. The uv values are shown and the relative index are shown on the texture image. 
-One day this playground might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh the [arrangement of facets](/advanced/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
+One day this playground might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh the [arrangement of facets](/resources/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
 
 # Further Reading
 
