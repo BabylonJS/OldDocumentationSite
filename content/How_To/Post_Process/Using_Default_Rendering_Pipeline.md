@@ -78,10 +78,9 @@ pipeline.depthOfFieldBlurLevel = BABYLON.DepthOfFieldEffectBlurLevel.Low;
 
 Furthermore, you can control the settings of the effect with the following parameters:
 ```
-pipeline.depthOfField.focusDistance  = 2000;
-pipeline.depthOfField.focalLength  = 50;
-pipeline.depthOfField.fStop  = 1.4;
-pipeline.depthOfField.lensSize  = 50;
+pipeline.depthOfField.focusDistance  = 2000; // distance of the current focus point from the camera in millimeters considering 1 scene unit is 1 meter
+pipeline.depthOfField.focalLength  = 50; // focal length of the camera in millimeters
+pipeline.depthOfField.fStop  = 1.4; // aka F number of the camera defined in stops as it would be on a physical device
 ```
 [Demo](https://www.babylonjs-playground.com/#8F5HYV#9)
 
