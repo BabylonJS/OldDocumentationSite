@@ -61,7 +61,20 @@ See [How to Use Promises](/How_To/Promises) to learn more about using promises.
 
 ## Advanced Usage
 
-The SceneLoader returns the glTF loader instance to enable setting properties and calling methods.
+Use the `onPluginActivatedObservable` to set properties and call methods specific to a particular loader.
+
+```javascript
+BABYLON.SceneLoader.OnPluginActivatedObservable.add(function (loader) {
+    if (loader.name === "gltf") {
+        // do something with the loader
+        // loader.<option1> = <...>
+        // loader.<option2> = <...>
+        // loader.dispose();
+    }
+});
+```
+
+Alternatively, the static synchronous SceneLoader functions return the plugin.
 
 ```javascript
 var loader = BABYLON.SceneLoader.Load("./", "duck.gltf", engine, function (scene) {
