@@ -6,6 +6,8 @@ PG_TITLE: How To Use PolygonMeshBuilder
 
 Given the corner points of a polygon in the XoY plane the PolygonMeshBuilder constructs vertices forming a triangulation of the polygon. This is then converted to a mesh using the build() function. It is also possible to add sides to a polygon constructed with PolygonMeshBuilder and to include holes inside it but on doing either a new mesh would need to be built. 
 
+**Please note that the PolygonMeshBuilder uses Earcut, so you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or downloard their [npm package](https://github.com/mapbox/earcut#install)**
+
 ## Constraints
 
 The polygon and any holes inside it must be simple, that is no overlapping sides. Holes should be wholly inside the polygon and should not be too close to the sides of the polygon or to each other.

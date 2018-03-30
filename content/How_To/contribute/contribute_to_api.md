@@ -106,8 +106,8 @@ A defines comment to describe the purpose of the CLASS
 
 ```javascript
 /**
- * Defines a HemisphericLight object that simulates the ambient environment light,
- * so the passed direction is the light reflection direction, not the incoming direction.
+ * Defines a HemisphericLight object that simulates the ambient environment light
+ * so the passed direction is the light reflection direction, not the incoming direction
  */
 export class HemisphericLight extends Light {
     //All the parts defining the class in here
@@ -169,15 +169,15 @@ constructor(private _viewer: AbstractViewer) {
 
 ```javascript
 /**
- * Creates a Solid Particle object.
+ * Creates a Solid Particle object
  * Don't create particles manually, use instead the Solid Particle System internal tools like _addParticle()
- * @param particleIndex (integer) is the particle index in the Solid Particle System pool. It's also the particle identifier.  
- * @param positionIndex (integer) is the starting index of the particle vertices in the SPS "positions" array.
- * @param indiceIndex (integer) is the starting index of the particle indices in the SPS "indices" array.
- * @param model (ModelShape) is a reference to the model shape on what the particle is designed.  
- * @param shapeId (integer) is the model shape identifier in the SPS.
- * @param idxInShape (integer) is the index of the particle in the current model (ex: the 10th box of addShape(box, 30))
- * @param modelBoundingInfo is the reference to the model BoundingInfo used for intersection computations.
+ * @param particleIndex is the particle index in the Solid Particle System pool. It's also the particle identifier  
+ * @param positionIndex is the starting index of the particle vertices in the SPS "positions" array
+ * @param indiceIndex is the starting index of the particle indices in the SPS "indices" array
+ * @param model is a reference to the model shape on what the particle is designed.  
+ * @param shapeId is the model shape identifier in the SPS
+ * @param idxInShape is the index of the particle in the current model (ex: the 10th box of addShape(box, 30))
+ * @param modelBoundingInfo is the reference to the model BoundingInfo used for intersection computations
  */
 constructor(particleIndex: number, positionIndex: number, indiceIndex: number, model: Nullable<ModelShape>, shapeId: number, idxInShape: number, sps: SolidParticleSystem, modelBoundingInfo: Nullable<BoundingInfo> = null) {
     this.idx = particleIndex;
@@ -207,7 +207,7 @@ Create and @param comments for constructor and copied comments before any public
 constructor(
     
     /**
-     * The trigger, with or without parameters, for the action.
+     * The trigger, with or without parameters, for the action
      */
     public triggerOptions: any, 
     
@@ -235,7 +235,7 @@ constructor(
 constructor(
     radius = 1, 
     /**
-     * The cone base angle (PI by default).
+     * The cone base angle (PI by default)
      */
     public angle = Math.PI, 
     
@@ -256,13 +256,13 @@ Plain comments to describe the PROPERTY
 
 ```javascript
 /**
- * The groundColor is the light in the opposite direction to the one specified during creation.
- * You can think of the diffuse and specular light as coming from the centre of the object in the given direction and the groundColor light in the opposite direction.
+ * The groundColor is the light in the opposite direction to the one specified during creation
+ * You can think of the diffuse and specular light as coming from the centre of the object in the given direction and the groundColor light in the opposite direction
  */
 public groundColor = new Color3(0.0, 0.0, 0.0);
 
 /**
- * The light reflection direction, not the incoming direction.
+ * The light reflection direction, not the incoming direction
  */
 public direction: Vector3
 
@@ -349,8 +349,8 @@ public getContext(): CanvasRenderingContext2D {
 
 ```javascript
  /**
- * Serializes the current light into a Serialization object.  
- * @returns the serialized object.
+ * Serializes the current light into a Serialization object 
+ * @returns the serialized object
  */
 public serialize(): any {
     var serializationObject = SerializationHelper.Serialize(this);
@@ -477,7 +477,7 @@ There are occasions when a function should be public for the use of the code but
 
 ```javascript
 /**
- * @ignore internal use only.
+ * @ignore internal use only
  */
 public _getWorldMatrix(): Matrix {
     if (!this._worldMatrix) {
@@ -489,7 +489,7 @@ this._worldMatrix = Matrix.Identity();
 
 ```javascript
 /**
- * @ignore internal use only.
+ * @ignore internal use only
  */
 public _onPointerEnter(target: Control): boolean {
     if (!super._onPointerEnter(target)) {

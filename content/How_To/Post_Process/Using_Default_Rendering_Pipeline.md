@@ -4,7 +4,7 @@ PG_TITLE: How To Use the Default Rendering Pipeline
 
 # Introduction
 
-You can find a complete example of this pipeline in our playground : [https://www.babylonjs-playground.com/#Y3C0HQ#86](https://www.babylonjs-playground.com/#Y3C0HQ#86)
+You can find a complete example of this pipeline in our playground : [https://www.babylonjs-playground.com/#Y3C0HQ#146](https://www.babylonjs-playground.com/#Y3C0HQ#146)
 
 The default rendering pipeline provides visual improvements to enhance the output of your scene:
 * Antialiasing (MSAA and FXAA)
@@ -18,8 +18,8 @@ The default rendering pipeline provides visual improvements to enhance the outpu
  * Color curves
  * Color grading
  * Tone mapping
- * Grain
 * Chromatic Aberration
+* Grain
 
 # Creating the rendering pipeline
 
@@ -36,10 +36,10 @@ var pipeline = new BABYLON.DefaultRenderingPipeline(
 # Customizing
 
 ## Antialiasing
-The MSAA antialiasing (only supported in webGL 2.0 browsers) effect is enabled with:
+The MSAA antialiasing (only supported in webGL 2.0 browsers) effect is off by default (set to 1) but can be turned on to 4x with:
 
 ```
-pipeline.msaaEnabled = true;
+pipeline.samples = 4;
 ```
 
 and the FXAA antialiasing effect can be set using:
@@ -83,7 +83,7 @@ pipeline.depthOfField.focalLength  = 50;
 pipeline.depthOfField.fStop  = 1.4;
 pipeline.depthOfField.lensSize  = 50;
 ```
-[Demo](https://www.babylonjs-playground.com/index.html#JA1ND3#56)
+[Demo](https://www.babylonjs-playground.com/#8F5HYV#9)
 
 ## Bloom
 You can turn the bloom effect on and off with:
@@ -92,9 +92,12 @@ You can turn the bloom effect on and off with:
 pipeline.bloomEnabled = true;
 ```
 
-Furthermore, you can control the impact of bloom in the final compositing with:
+The bloom luminance threshold, impact of the bloom, kernel size and scale can be controlled with the following:
 ```
+pipeline.bloomThreshold = 0.8;
 pipeline.bloomWeight = 0.3;
+pipeline.bloomKernel = 64;
+pipeline.bloomScale = 0.5;
 ```
 
 
@@ -116,18 +119,35 @@ pipeline.chromaticAberrationEnabled = true;
 
 Furthermore, you can control the distance of color channel separation with:
 ```
-defaultPipeline.chromaticAberration.aberrationAmount = 300;
+pipeline.chromaticAberration.aberrationAmount = 300;
 ```
 
 To modify the strength of the effect based on the distance from the center of the screen:
 ```
-defaultPipeline.chromaticAberration.radialIntensity = 3;
+pipeline.chromaticAberration.radialIntensity = 3;
 ```
 
 To modify the direction the aberration the direction can be set:
 ```
 var rotation = Math.PI;
-defaultPipeline.chromaticAberration.direction.x = Math.sin(rotation)
-defaultPipeline.chromaticAberration.direction.y = Math.cos(rotation)
+pipeline.chromaticAberration.direction.x = Math.sin(rotation)
+pipeline.chromaticAberration.direction.y = Math.cos(rotation)
 ```
 Note: If both these values are set to 0 the direction will be towards the center of the screen.
+
+## Grain
+You can turn the effect on and off with:
+
+```
+pipeline.grainEnabled = true;
+```
+
+Furthermore, you can control intensity of the grain with:
+```
+pipeline.grain.intensity = 10;
+```
+
+To set grain to animate on every frame set:
+```
+pipeline.grain.animated = value;
+```

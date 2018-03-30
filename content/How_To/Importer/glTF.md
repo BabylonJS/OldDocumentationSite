@@ -119,6 +119,23 @@ Set to true to compile shadow generators before raising the success callback. De
 loader.compileShadowGenerators = true;
 ```
 
+### loaderState
+The loader state (LOADING, READY, COMPLETE) or null if the loader is not active.
+
+- `LOADING` - The asset is loading
+- `READY` - The asset is ready for rendering
+- `COMPLETE` - The asset is completely loaded
+
+```javascript
+if (loader.loaderState === BABYLON.GLTFLoaderState.LOADING) {
+    // do something when the asset is loading
+}
+```
+
+## Version 2 Events
+
+All events also have `Observable` versions.
+
 ### onMeshLoaded
 
 Raised when the loader creates a mesh after parsing the glTF properties of the mesh.
@@ -152,9 +169,9 @@ loader.onMaterialLoaded = function (material) {
 
 ### onComplete
 
-Raised when the asset is completely loaded, immediately before the loader is disposed.
-For assets with LODs, raised when all of the LODs are complete.
-For assets without LODs, raised when the model is complete, immediately after onSuccess.
+Raised when the asset is completely loaded, immediately before the loader is disposed.  
+For assets with LODs, raised when all of the LODs are complete.  
+For assets without LODs, raised when the model is complete, immediately after the loader resolves the returned promise.
 
 ```javascript
 loader.onComplete = function () {
@@ -162,7 +179,39 @@ loader.onComplete = function () {
 };
 ```
 
+### onDispose
+
+Raised after the loader is disposed.
+
+```javascript
+loader.onDispose = function () {
+    // do something when dispose is called
+};
+```
+
+### onExtensionLoaded
+
+Raised after a loader extension is created.  
+Set additional options for a loader extension in this event.
+
+```javascript
+loader.onExtensionLoaded = function (extension) {
+    if (extension.name === "MSFT_lod") {
+        extension.maxLODsToLoad = 1;
+    }
+};
+```
+
 ## Version 2 Methods
+
+### whenCompleteAsync
+Returns a promise that resolves when the asset is completely loaded.
+
+```javascript
+loader.whenCompleteAsync().then(function () {
+    // do something when loading is complete
+});
+```
 
 ### dispose
 
@@ -186,13 +235,16 @@ https://github.com/KhronosGroup/glTF/tree/master/extensions/1.0/Khronos/KHR_mate
 ## Version 2
 
 ### KHR_draco_mesh_compression
-https://github.com/fanzhanggoogle/glTF/blob/cb478d94bf43980ddf057cdb5596dcd9d4282cb2/extensions/Khronos/KHR_draco_mesh_compression
+https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_draco_mesh_compression
 
 ### KHR_lights
-https://github.com/MiiBond/glTF/blob/72096c4aebe0235ffbe5e146947c234983dd5369/extensions/Khronos/KHR_lights
+https://github.com/MiiBond/glTF/tree/khr_lights_v1/extensions/Khronos/KHR_lights
 
 ### KHR_materials_pbrSpecularGlossiness
-https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_pbrSpecularGlossiness 
+https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_pbrSpecularGlossiness
+
+### KHR_materials_unlit
+https://github.com/donmccurdy/glTF/tree/feat-khr-materials-cmnConstant/extensions/2.0/Khronos/KHR_materials_unlit
 
 ### MSFT_lod
-https://github.com/sbtron/glTF/tree/MSFT_lod/extensions/Vendor/MSFT_lod
+https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Vendor/MSFT_lod

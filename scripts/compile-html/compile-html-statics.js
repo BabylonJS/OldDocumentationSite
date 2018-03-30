@@ -12,7 +12,7 @@ var fs = require('fs'),
     marked = require('meta-marked'),
     renderer = new marked.Renderer(),
     slugify = require('uslug'),
-    rimraf = require('rimraf'),
+    //rimraf = require('rimraf'),
     toc = require('marked-toc');
 
 
@@ -74,12 +74,16 @@ module.exports = function (done) {
                 });
             });
 
-            async.waterfall([
-                async.constant(dataObject, category),
-                createStaticsPage,
+            let tasks = [async.constant(dataObject, category)];
+            //if (category !== "classes") {
+            tasks.push(createStaticsPage,
                 getStaticPagesContent,
-                createStaticPages
-            ], function (error) {
+                createStaticPages);
+            //} else {
+            //    tasks.push(addApiDocuments, createStaticPages);
+            //}
+
+            async.waterfall(tasks, function (error) {
                 if (error) {
                     throw error;
                 } else {
@@ -99,10 +103,12 @@ module.exports = function (done) {
 var createStaticsPage = function (dataObj, category, cb) {
     var statics_page = pug.renderFile(__PUG_STATICS__, {
         dataObj: dataObj,
-        currentUrl: '/' + category
+        currentUrl: '/'
     });
 
-    fs.writeFile(path.join(__FILES_DEST__, category + '.html'), statics_page, function (writeErr) {
+    checkDirectorySync(path.join(__FILES_DEST__, category));
+
+    fs.writeFile(path.join(__FILES_DEST__, category + '/index.html'), statics_page, function (writeErr) {
         if (writeErr) throw writeErr;
         cb(null, dataObj, category);
     });
@@ -114,42 +120,54 @@ var getStaticPagesContent = function (dataObj, category, cb) {
     async.each(dataObj.files, function (file, callback) {
         var filename = path.join(__FILES_SOURCE__, category, file.folder + '', file.filename + '.md');
 
-        fs.exists(filename, function (exists) {
-            if (!exists) {
+        fs.stat(filename, function (err, stats) {
+            if (err) {
                 logger.warn('File ' + filename + ' doesn\'t exist.')
             } else {
-                fs.readFile(filename, {
-                    encoding: 'utf-8',
-                    flag: 'r'
-                }, function (readErr, content) {
-                    if (readErr) {
-                        logger.info(readErr);
-                    } else {
-                        var markedContent = marked(content),
-                            tableOfContent = marked(toc(content, {
-                                omit: ['PG_TITLE'],
-                                clean: ['a', 'href']
-                            })).html;
+                //check if the file needs to be generated:
+                var htmlFilename = path.join(__FILES_DEST__, category, file.filename + '.html');
+                let creationDate = new Date(0);
+                try {
+                    creationDate = (fs.statSync(htmlFilename).mtime);
+                } catch (e) {
+
+                }
+                if (creationDate.getTime() < stats.mtime.getTime()) {
+                    fs.readFile(filename, {
+                        encoding: 'utf-8',
+                        flag: 'r'
+                    }, function (readErr, content) {
+                        if (readErr) {
+                            logger.info(readErr);
+                        } else {
+                            var markedContent = marked(content),
+                                tableOfContent = marked(toc(content, {
+                                    omit: ['PG_TITLE'],
+                                    clean: ['a', 'href']
+                                })).html;
+
+                            // Regexp catching all link to the playground
+                            var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
+                            // Replace all links to the playground with a custom iframe
+                            var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i><br/>' +
+                                '<div class="iframeContainer"></div><br/>';
+
+                            markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
+
+                            staticsContents.push({
+                                "staticName": file.title,
+                                "staticFileName": file.filename,
+                                "staticContent": markedContent.html,
+                                "toc": tableOfContent
+                            });
+                            callback();
+                        }
+                    });
+                } else {
+                    callback();
+                }
 
 
-
-                        // Regexp catching all link to the playground
-                        var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
-                        // Replace all links to the playground with a custom iframe
-                        var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i><br/>' +
-                            '<div class="iframeContainer"></div><br/>';
-
-                        markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
-
-                        staticsContents.push({
-                            "staticName": file.title,
-                            "staticFileName": file.filename,
-                            "staticContent": markedContent.html,
-                            "toc": tableOfContent
-                        });
-                        callback();
-                    }
-                });
             }
         });
     }, function () {
@@ -157,31 +175,29 @@ var getStaticPagesContent = function (dataObj, category, cb) {
     });
 };
 
+function checkDirectorySync(directory) {
+    try {
+        fs.statSync(directory);
+    } catch (e) {
+        fs.mkdirSync(directory);
+    }
+}
+
 var createStaticPages = function (staticsContents, category, cb) {
-    // flush public/html/<category> folder
-    rimraf(path.join(__FILES_DEST__, category), function (err) {
-        if (err) {
-            throw err;
-        } else {
-            fs.mkdirSync(path.join(__FILES_DEST__, category));
+    async.each(staticsContents, function (staticContent, callback) {
+        var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
+        staticContent['category'] = category;
+        //let creationDateOfContent = fs.statSync(filename)
+        var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {
+            staticContent: staticContent,
+            currentUrl: '/' + category
+        });
 
-            async.each(staticsContents, function (staticContent, callback) {
-                var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
-                staticContent['category'] = category;
-                var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {
-                    staticContent: staticContent,
-                    currentUrl: '/' + category
-                });
-
-                //logger.info('Page ' + category + '/' + staticContent.staticFileName + '.html about to be compiled.');
-                fs.writeFile(filename, staticPage, function (writeErr) {
-                    if (writeErr) throw writeErr;
-                    callback();
-                });
-
-            }, function () {
-                cb(null);
-            });
-        }
+        fs.writeFile(filename, staticPage, function (writeErr) {
+            if (writeErr) throw writeErr;
+            callback();
+        });
+    }, function () {
+        cb(null);
     });
 };
