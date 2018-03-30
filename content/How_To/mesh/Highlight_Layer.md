@@ -30,6 +30,8 @@ hl.addMesh(sphere, BABYLON.Color3.Green());
 
 The highlight color is driven by the second parameter of the addMesh method.
 
+> The highlight layer will not highlight transparent meshes.
+
 [**Playground Demo Scene**](https://www.babylonjs-playground.com/#1KUJ0A#0)
 
 ### Stop highlighting a Mesh
