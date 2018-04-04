@@ -51,6 +51,8 @@ Much information is in the parameters:
 
 Please note that by default Matrix values are not interpolated between keys which means that values are only the one from the key values even if we are between two keys. You can turn this feature on by calling `Animation.AllowMatricesInterpolation = true`. If matrix interpolation is enabled you can then either use Matrix.Lerp or Matrix.DecomposeLerp as interpolation tool. You can use `Animation.AllowMatrixDecomposeForInterpolation` to pick the one you want.
 
+You can find a demo here: https://www.babylonjs-playground.com/frame.html#DMLMIP#1
+
 **Parameter 5** - Finally, you have to decide and enter the type of behavior this animation will take at its upper limit (e.g. will it continue on, will it begin again, will it stop at the last key value, etc.):
 
 * Use previous values and increment it: ```BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE```
