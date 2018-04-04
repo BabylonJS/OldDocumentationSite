@@ -96,21 +96,9 @@ You can see a [live version here](https://www.babylonjs-playground.com/#G3HSAW#1
 As from time to time all we need is color, you can use the texture as gray scaled information to mix with a color.
 
 ```javascript
+backgroundMaterial.useRGBColor = false;
 backgroundMaterial.primaryColor = BABYLON.Color3.Magenta();
-backgroundMaterial.primaryLevel = 1;
-backgroundMaterial.secondaryLevel = 0;
-backgroundMaterial.tertiaryLevel = 0;
 ```
-
-In this mode the result color is a mix of:
-
-```javascript
-finalColor = colorBase.r * vPrimaryColor.rgb * vPrimaryColor.a;
-finalColor += colorBase.g * vSecondaryColor.rgb * vSecondaryColor.a;
-finalColor += colorBase.b * vTertiaryColor.rgb * vTertiaryColor.a;
-```
-
-This can help faking light spots color independantly for instance.
 
 You can see a [live version here](https://www.babylonjs-playground.com/#G3HSAW#11)
 
