@@ -282,7 +282,7 @@ If your animations are not of the same size (same distance between from and to k
 idleAnim.syncWith(runAnim);		
 ```
 
-To disable animation synchronization, just call `animation.,syncWith(null)`.
+To disable animation synchronization, just call `animation.syncWith(null)`.
 
 A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#9
 
