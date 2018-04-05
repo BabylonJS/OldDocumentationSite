@@ -303,6 +303,7 @@ Here is the list of properties that can be overriden:
 * blendingSpeed
 * loopMode
 
+Please note that the scene.animationPropertiesOverride will be used if animation target does not contain one.
 
 ## Easing functions
 
