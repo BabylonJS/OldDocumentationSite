@@ -130,16 +130,16 @@ To rotate a bone around an axis, use the rotate function:
 ```
 bone.rotate(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
-rotate world space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#2)
-
-rotate local space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#4)
+* rotate world space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#2)
+* rotate local space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#4)
 
 setAxisAngle, setYawPitchRoll, setRotation, or setRotationMatrix are used to rotate a bone to a specific rotation.
 
 ```
 bone.setAxisAngle(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
-setAxisAngle world space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#8), [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#9)
+* setAxisAngle world space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#8)
+* setAxisAngle world space [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#9)
 
 setAxisAngle local space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#10), [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#11)
 ```
@@ -198,7 +198,8 @@ If you need to set the bone to a specific location, use setPosition.
 ```
 bone.setPosition(pos, BABYLON.Space.WORLD, mesh);
 ```
-[demo 1]( https://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2]( https://www.babylonjs-playground.com/#1BZJVJ#34)
+* [demo 1]( https://www.babylonjs-playground.com/#1BZJVJ#33)
+* [demo 2]( https://www.babylonjs-playground.com/#1BZJVJ#34)
 
 To get the position of a bone, use getPosition or getPositionToRef.
 ```
