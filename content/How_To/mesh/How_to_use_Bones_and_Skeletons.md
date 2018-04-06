@@ -141,7 +141,8 @@ bone.setAxisAngle(axis, angle, BABYLON.Space.WORLD, mesh);
 * setAxisAngle world space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#8)
 * setAxisAngle world space [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#9)
 
-setAxisAngle local space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#10), [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#11)
+* setAxisAngle local space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#10)
+* setAxisAngle local space [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#11)
 ```
 bone.setYawPitchRoll(yaw, pitch, roll, BABYLON.Space.WORLD, mesh);
 ```
