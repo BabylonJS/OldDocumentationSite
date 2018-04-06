@@ -225,22 +225,22 @@ bone.scale(scaleX, scaleY, scaleZ);
 ```
 [demo](https://www.babylonjs-playground.com/#1EVNNB#9)
 
-The setScaling function can be used to set a bone to a certain scale vector value.
+The setScale function can be used to set a bone to a certain scale vector value.
 ```
-bone.setScaling(scaleVector);
+bone.setScale(scaleVector);
 ```
-[demo]( https://www.babylonjs-playground.com/#L6SNZP#0) 
+[demo](https://www.babylonjs-playground.com/#D9U0UW#0) 
 
-setScaling is called on every frame, because the character's animation resets the scale of the bones.
+setScale is called on every frame, because the character's animation resets the scale of the bones.
 
-Use getScaling or getScalingToRef to get the current scale of a bone.
+Use getScale or getScaleToRef to get the current scale of a bone.
 
 ```
-var scale = bone.getScaling();
+var scale = bone.getScale();
 ```
 ```
 var scale = BABYLON.Vector.Zero();
-bone.getScalingToRef(scale);
+bone.getScaleToRef(scale);
 ```
 
 You can also use `bone.scaling` to set and get local space scaling.
