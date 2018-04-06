@@ -83,6 +83,8 @@ As babylon.js script is retrieved directly from the official website directly, y
 
 The log panel indicates in real time which mesh has been exported, which material, and if there are any problems with these objects.
 
+Option _Optimize vertices_: The Babylon exporter will try to optimize the number of vertices to export instead of exporting everything naively (if a vertex is part of two faces, this vertex won’t be exported twice with this option checked).
+
 # What you should know
 
 ## Camera

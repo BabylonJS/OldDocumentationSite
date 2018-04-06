@@ -130,18 +130,19 @@ To rotate a bone around an axis, use the rotate function:
 ```
 bone.rotate(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
-rotate world space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#2)
-
-rotate local space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#4)
+* rotate world space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#2)
+* rotate local space [demo]( https://www.babylonjs-playground.com/#D4ZZ8#4)
 
 setAxisAngle, setYawPitchRoll, setRotation, or setRotationMatrix are used to rotate a bone to a specific rotation.
 
 ```
 bone.setAxisAngle(axis, angle, BABYLON.Space.WORLD, mesh);
 ```
-setAxisAngle world space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#8), [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#9)
+* setAxisAngle world space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#8)
+* setAxisAngle world space [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#9)
 
-setAxisAngle local space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#10), [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#11)
+* setAxisAngle local space [demo 1]( https://www.babylonjs-playground.com/#D4ZZ8#10)
+* setAxisAngle local space [demo 2]( https://www.babylonjs-playground.com/#D4ZZ8#11)
 ```
 bone.setYawPitchRoll(yaw, pitch, roll, BABYLON.Space.WORLD, mesh);
 ```
@@ -184,6 +185,8 @@ bone.getRotationQuaternionToRef(BABYLON.Space.WORLD, mesh, rotationQuaternion);
 ```
 [demo]( https://www.babylonjs-playground.com/#1EVNNB#11)
 
+You can also use `bone.rotation` to set and get local space rotation quaternion.
+
 ### Positioning
 
 To change the position of a bone, you can rotate the parent bone, or you can leave the parent where it is and directly modify the position of the bone.
@@ -198,7 +201,8 @@ If you need to set the bone to a specific location, use setPosition.
 ```
 bone.setPosition(pos, BABYLON.Space.WORLD, mesh);
 ```
-[demo 1]( https://www.babylonjs-playground.com/#1BZJVJ#33), [demo 2]( https://www.babylonjs-playground.com/#1BZJVJ#34)
+* [demo 1]( https://www.babylonjs-playground.com/#1BZJVJ#33)
+* [demo 2]( https://www.babylonjs-playground.com/#1BZJVJ#34)
 
 To get the position of a bone, use getPosition or getPositionToRef.
 ```
@@ -211,23 +215,26 @@ bone.getPositionToRef(BABYLON.Space.WORLD, mesh, pos);
 ```
 [demo]( https://www.babylonjs-playground.com/#1EVNNB#14)
 
+You can also use `bone.position` to set and get local space position.
+
 ### Scaling
 
-You can scale a bone on the local x, y, z axes of the bone.
+You can scale a bone on the local x, y, z axes of the bone (it is a cumulative effect).
 ```
 bone.scale(scaleX, scaleY, scaleZ);
 ```
-[demo]( https://www.babylonjs-playground.com/#1EVNNB#9)
+[demo](https://www.babylonjs-playground.com/#1EVNNB#9)
 
-The setScale function is used to set a bone to a certain scale value.
+The last parameter of scale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone. By default this parameter is off.
+[demo](https://www.babylonjs-playground.com/#1BZJVJ#117)
+
+scale is called on every frame, because the character's animation resets the scale of the bones.
+
+The setScale function can be used to directly set a bone to a certain scale vector value.
 ```
-bone.setScale(scaleX, scaleY, scaleZ);
+bone.setScale(scaleVector);
 ```
-setScale is used in this [demo]( https://www.babylonjs-playground.com/#1EVNNB#10) every frame, because the character's animation resets the scale of the bones.
-
-The last parameter of scale and setScale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone.
-
-[demo]( https://www.babylonjs-playground.com/#1BZJVJ#30)
+[demo](https://www.babylonjs-playground.com/#D9U0UW#1) 
 
 Use getScale or getScaleToRef to get the current scale of a bone.
 
@@ -239,7 +246,7 @@ var scale = BABYLON.Vector.Zero();
 bone.getScaleToRef(scale);
 ```
 
-
+You can also use `bone.scaling` to set and get local space scaling.
 
 ## Bone Controllers
 
@@ -317,4 +324,4 @@ poleTarget.setEnabled(false);
 
 
 ## Performance considerations
-Bones are computed using shaders by default. This allows better performance. But on low end devices shaders could be limited and not able to process bones. You can in this case ask Babylon.js to compute bones using CPU by setting mesh.computeBonesUsingShaders = false.
+Bones are computed using shaders by default. This allows better performance. But on low end devices, shaders could be limited and not able to process bones. You can in this case ask Babylon.js to compute bones using CPU by setting `mesh.computeBonesUsingShaders = false`.

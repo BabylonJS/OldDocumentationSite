@@ -154,13 +154,7 @@ In order to make material opacity relevant, you must specify meshes to not be _O
 
 This Arnold attribute must be unchecked for each mesh you wish material opacity to be taken into account.
 
-Babylon and glTF formats don't have such Mesh attribute. When facing a case where a single transparent material is assigned to both opaque and non opaque meshes, the exporter get round this missing by duplicating the material. One is assigned to opaque meshes, and all its opacity attributes are erased. The other is assigned to non opaque meshes, and all its opacity attributes remain untouched.
-
-However, note that this missing is not overcomed when the material is part of a multi material. When the material is part of a multi material assigned to both opaque and non opaque meshes, all meshes with a multi material will be considered as non opaque.
-
-![glTF multimaterials and Arnold opaque attribute](/img/exporters/Maya_to_glTF/MultiMat_ArnoldOpaque.png)
-
-This image is rendered using exported results and babylon engine. Left box and left sphere are set as _Opaque_, others are not. Red material has a very low _Opacity_, green one is default. Boxes have the same multimaterial (red + green), spheres have the same single material (red). Note that left box multi material has not been duplicated and is considered non opaque.
+Babylon and glTF formats don't have such Mesh attribute. When facing a case where a transparent material is assigned to both opaque and non opaque meshes, the exporter get round this missing by duplicating the material. One is assigned to opaque meshes, and all its opacity attributes are erased. The other is assigned to non opaque meshes, and all its opacity attributes remain untouched.
 
 ### Textures split
 
