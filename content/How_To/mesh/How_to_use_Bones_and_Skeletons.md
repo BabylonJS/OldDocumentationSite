@@ -321,4 +321,4 @@ poleTarget.setEnabled(false);
 
 
 ## Performance considerations
-Bones are computed using shaders by default. This allows better performance. But on low end devices shaders could be limited and not able to process bones. You can in this case ask Babylon.js to compute bones using CPU by setting mesh.computeBonesUsingShaders = false.
+Bones are computed using shaders by default. This allows better performance. But on low end devices, shaders could be limited and not able to process bones. You can in this case ask Babylon.js to compute bones using CPU by setting `mesh.computeBonesUsingShaders = false`.
