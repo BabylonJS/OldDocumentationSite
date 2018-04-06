@@ -219,22 +219,22 @@ You can also use `bone.position` to set and get local space position.
 
 ### Scaling
 
-You can scale a bone on the local x, y, z axes of the bone.
+You can scale a bone on the local x, y, z axes of the bone (it is a cumulative effect).
 ```
 bone.scale(scaleX, scaleY, scaleZ);
 ```
 [demo](https://www.babylonjs-playground.com/#1EVNNB#9)
 
-The setScale function can be used to set a bone to a certain scale vector value.
+The last parameter of scale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone. By default this parameter is off.
+[demo](https://www.babylonjs-playground.com/#1BZJVJ#117)
+
+scale is called on every frame, because the character's animation resets the scale of the bones.
+
+The setScale function can be used to directly set a bone to a certain scale vector value.
 ```
 bone.setScale(scaleVector);
 ```
 [demo](https://www.babylonjs-playground.com/#D9U0UW#1) 
-
-setScale is called on every frame, because the character's animation resets the scale of the bones.
-
-The last parameter of scale and setScale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone.
-[demo](https://www.babylonjs-playground.com/#1BZJVJ#117)
 
 Use getScale or getScaleToRef to get the current scale of a bone.
 
