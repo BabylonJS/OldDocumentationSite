@@ -185,6 +185,8 @@ bone.getRotationQuaternionToRef(BABYLON.Space.WORLD, mesh, rotationQuaternion);
 ```
 [demo]( https://www.babylonjs-playground.com/#1EVNNB#11)
 
+You can also use `bone.rotation` to set and get local space rotation quaternion.
+
 ### Positioning
 
 To change the position of a bone, you can rotate the parent bone, or you can leave the parent where it is and directly modify the position of the bone.
@@ -213,6 +215,8 @@ bone.getPositionToRef(BABYLON.Space.WORLD, mesh, pos);
 ```
 [demo]( https://www.babylonjs-playground.com/#1EVNNB#14)
 
+You can also use `bone.position` to set and get local space position.
+
 ### Scaling
 
 You can scale a bone on the local x, y, z axes of the bone.
@@ -221,27 +225,25 @@ bone.scale(scaleX, scaleY, scaleZ);
 ```
 [demo]( https://www.babylonjs-playground.com/#1EVNNB#9)
 
-The setScale function is used to set a bone to a certain scale value.
+The setScaling function can also be used to set a bone to a certain scale vector value.
 ```
-bone.setScale(scaleX, scaleY, scaleZ);
+bone.setScaling(scaleVector);
 ```
-setScale is used in this [demo]( https://www.babylonjs-playground.com/#1EVNNB#10) every frame, because the character's animation resets the scale of the bones.
+[demo]( https://www.babylonjs-playground.com/#L6SNZP#0) 
 
-The last parameter of scale and setScale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone.
+setScaling is called on every frame, because the character's animation resets the scale of the bones.
 
-[demo]( https://www.babylonjs-playground.com/#1BZJVJ#30)
-
-Use getScale or getScaleToRef to get the current scale of a bone.
+Use getScaling or getScalingToRef to get the current scale of a bone.
 
 ```
-var scale = bone.getScale();
+var scale = bone.getScaling();
 ```
 ```
 var scale = BABYLON.Vector.Zero();
-bone.getScaleToRef(scale);
+bone.getScalingToRef(scale);
 ```
 
-
+You can also use `bone.scaling` to set and get local space scaling.
 
 ## Bone Controllers
 
