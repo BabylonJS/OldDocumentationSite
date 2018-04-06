@@ -223,9 +223,9 @@ You can scale a bone on the local x, y, z axes of the bone.
 ```
 bone.scale(scaleX, scaleY, scaleZ);
 ```
-[demo]( https://www.babylonjs-playground.com/#1EVNNB#9)
+[demo](https://www.babylonjs-playground.com/#1EVNNB#9)
 
-The setScaling function can also be used to set a bone to a certain scale vector value.
+The setScaling function can be used to set a bone to a certain scale vector value.
 ```
 bone.setScaling(scaleVector);
 ```
