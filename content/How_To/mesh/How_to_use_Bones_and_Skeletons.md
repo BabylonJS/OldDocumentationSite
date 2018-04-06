@@ -229,9 +229,12 @@ The setScale function can be used to set a bone to a certain scale vector value.
 ```
 bone.setScale(scaleVector);
 ```
-[demo](https://www.babylonjs-playground.com/#D9U0UW#0) 
+[demo](https://www.babylonjs-playground.com/#D9U0UW#1) 
 
 setScale is called on every frame, because the character's animation resets the scale of the bones.
+
+The last parameter of scale and setScale is scaleChildren.  Set scaleChildren to true if you want the scale to affect all the children / descendants of the bone.
+[demo](https://www.babylonjs-playground.com/#1BZJVJ#117)
 
 Use getScale or getScaleToRef to get the current scale of a bone.
 
