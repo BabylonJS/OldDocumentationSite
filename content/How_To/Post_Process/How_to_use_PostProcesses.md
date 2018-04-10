@@ -299,6 +299,8 @@ postProcess.onApply = function (effect) {
 };
 ```
 
+You can find another example here: https://www.babylonjs-playground.com/#DAC1WM
+
 To use the output of a previous post process setTextureFromPostProcess can be used.
 Note: This will set sceneSampler to the output of the post process before postProcess0 NOT the output of postProcess0.
 ```javascript
