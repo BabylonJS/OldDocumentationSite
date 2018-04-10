@@ -8,6 +8,21 @@ The Blender export plugin can be found on [github repository](https://github.co
 
 An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter. It exports JavaScript modules with in-line geometry and simplifies the loading process. See its readme or that of the [QueuedInterpolation](https://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation) extension, which it is part of, to know more about its functionalities, and access its proper documentation.
 
+## Installation
+
+This add-on use the standard Blender installation procedure:
+
+- Download the [last version from github](https://github.com/BabylonJS/Exporters/tree/master/Blender) (_Blender2Babylon-X.X.zip_, you don't need to unzip).
+- In Blender, go to `File` menu > `User Preferences`.
+- Switch to the `Add-ons` tab.
+- (optionnal) If you already have an old version installed, search for *Babylon.js* into the filter, expand infos of BabylonJS add-on and click `Remove` button.
+- Click the `Install from File...` button at the bottom.
+- Select the zip file and click the `Install Add-on from File...` button.
+- Check the box to enable it.
+- Click `Save User Settings` to enable it at every Blender launch.
+
+![blender user preferences](img/exporters/blender/Blender2BabylonJS-installation.png)
+
 ## Features:
 
 ### Scene
