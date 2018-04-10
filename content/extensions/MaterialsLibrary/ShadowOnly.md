@@ -22,6 +22,8 @@ ground.receiveShadows = true
 
 ```
 
-**Limitation:** Please note that only the first light that can reach the mesh will be used. So if you have multiple lights in your scene you may end up using `light.includedOnlyMeshes` or `light.excludedMeshes` or `light.includeOnlyWithLayerMask` or `light.excludeWithLayerMask`.
+**Limitation:** Please note that only the first light that can reach the mesh will be used. 
+So if you have multiple lights in your scene you may end up using `light.includedOnlyMeshes` or `light.excludedMeshes` or `light.includeOnlyWithLayerMask` or `light.excludeWithLayerMask`.
+You can also force the material to pick a specific light with `material.activeLight = light`.
 
 

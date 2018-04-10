@@ -1,5 +1,0 @@
-{"level":"error","message":"404 Error -  /css/main.css.map","timestamp":"2017-07-03T13:31:20.497Z"}
-{"level":"error","message":"404 Error -  /css/main.css.map","timestamp":"2017-07-03T13:31:21.791Z"}
-{"level":"error","message":"404 Error -  /css/main.css.map","timestamp":"2017-07-03T13:31:36.624Z"}
-{"level":"error","message":"404 Error -  /css/main.css.map","timestamp":"2017-07-03T13:32:56.362Z"}
-{"level":"error","message":"500 Error at D:\\Repos\\Documentation\\public\\html\\tutorials.html - { Error: ENOENT: no such file or directory, stat 'D:\\Repos\\Documentation\\public\\html\\tutorials.html'\n  errno: \u001b[33m-4058\u001b[39m,\n  code: \u001b[32m'ENOENT'\u001b[39m,\n  syscall: \u001b[32m'stat'\u001b[39m,\n  path: \u001b[32m'D:\\\\Repos\\\\Documentation\\\\public\\\\html\\\\tutorials.html'\u001b[39m,\n  expose: \u001b[33mfalse\u001b[39m,\n  statusCode: \u001b[33m404\u001b[39m,\n  status: \u001b[33m404\u001b[39m }","timestamp":"2017-07-06T21:46:44.058Z"}

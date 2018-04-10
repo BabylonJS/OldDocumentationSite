@@ -45,20 +45,58 @@
 
         $.getJSON('https://babylonjs-doc.search.windows.net/indexes/documents/docs?api-version=2016-09-01&api-key=DF333E13A6C71B67290E46668C86DD7E&search=' + query).success(function (data) {
             var files = [];
+            var classes = [];
             var categories = [];
 
+            data.value.sort(function(a, b) {
+                var catA = a.category.toLowerCase();
+                var catB = b.category.toLowerCase();
+
+                if (catA === catB) {
+                    if (a.title < b.title) {
+                        return -1;
+                    }  else if (a.title > b.title) {
+                        return 1;
+                    }
+
+                    return 0;
+                }
+
+                // By category
+                if (catA < catB) {
+                    return -1;
+                }  else if(catA > catB) {
+                    return 1;
+                }
+
+                return 0;
+            });
+
             data.value.forEach(function (val) {
-                var version = val.category.indexOf('classes') !== -1 ? val.category.substring(val.category.indexOf("/") + 1) : val.category;
-                files.push({
-                    src: val.url,
-                    version: version,
-                    name: val.title
-                });
+                var version = val.category;
+
+                if (version.indexOf("/") !== -1 || val.title[0] === "_") {
+                    return;
+                }
+
+                if (version === "api") {
+                    classes.push({
+                        src: val.url,
+                        version: version,
+                        name: val.title
+                    });
+                } else {
+                    files.push({
+                        src: "/" + val.url,
+                        version: version,
+                        name: val.title
+                    });
+                }
                 if (categories.indexOf(version) === -1) {
                     categories.push(version);
                 }
             });
-
+            
             // generate the html. can be nicer but...
             var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + strQuery + '</a></h2></div>';
 
@@ -66,11 +104,11 @@
             // add filters:
 
             // first add "all":
-            html += '<div class="basicFilter enabled" data-version="all"><span>all</span><span>(' + files.length + ')</span></div>';
+            html += '<div class="basicFilter enabled" data-version="all"><span>all</span><span>(' + (files.length + classes.length) + ')</span></div>';
             // and now the rest
             categories.forEach(function (cat) {
-                var numOfFiles = files.filter(function (f) { return f.version === cat }).length;
-                html += '<div class="basicFilter disabled"  data-version="' + cat + '"><span>' + cat + '</span><span>(' + numOfFiles + ')</span></div>';
+                var numOfFiles = files.filter(function (f) { return f.version === cat }).length + classes.filter(function (f) { return f.version === cat }).length;
+                html += '<div class="basicFilter disabled"  data-version="' + cat + '"><span>' + cat.replace(/_/, " ").toLowerCase() + '</span><span>(' + numOfFiles + ')</span></div>';
             });
 
             html += '</div>';
@@ -80,11 +118,26 @@
                 html += '<div class="result" data-version="' + f.version + '">';
                 html += '<div class="resultTitle">';
 
-                html += '<a href="' + f.src + '">' + f.version + ' : ' + f.name + '</a>';
+                html += '<a href="' + f.src + '">' + f.version.replace(/_/, " ").toLowerCase() + ': ' + f.name + '</a>';
 
                 html += '</div>';
                 html += '</div>';
             })
+
+            if (files.length >0 && classes.length > 0) {
+                html += '</br><div class="result" data-version="label">';
+                html += 'API:</div>';
+            }
+
+            classes.forEach(function (f) {
+                html += '<div class="result" data-version="' + f.version + '">';
+                html += '<div class="resultTitle">';
+
+                html += '<a href="' + f.src + '">' + f.name + '</a>';
+
+                html += '</div>';
+                html += '</div>';
+            })            
 
 
             $('.search-content').html(html);

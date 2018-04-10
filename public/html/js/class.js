@@ -131,8 +131,8 @@
           * The options groups are sorted. Note that not <optgroup> element
           * is inserted, only <option>.
           **/
-        $.each($('.classContent h2'), function(i, h2Title){
-            if($(h2Title).text() === 'Methods' || $(h2Title).text() === 'Members' || $(h2Title).text() === 'Functions'){
+        $.each($('.classContent h2'), function (i, h2Title) {
+            if ($(h2Title).text() === 'Methods' || $(h2Title).text() === 'Members' || $(h2Title).text() === 'Functions') {
                 // collect all h3 concerned by the h2 title
                 var h3Elements = $(h2Title).nextUntil("h2", "h3");
 
@@ -145,16 +145,16 @@
                 // sort the h3 titles (alpha)
                 var h3IDs = [];
 
-                $.each(h3Elements, function(i, h3title){
+                $.each(h3Elements, function (i, h3title) {
                     h3IDs.push($(h3title).attr('id'));
                 });
 
                 h3IDs = h3IDs.sort();
 
-                $.each(h3IDs, function(i, titleId){
+                $.each(h3IDs, function (i, titleId) {
                     $('#methodsList').append($('<option>', {
                         value: titleId,
-                        html: $('#'+titleId).text()
+                        html: $('#' + titleId).text()
                     }));
                 });
             }
@@ -171,12 +171,202 @@
             $selectedElement.addClass('highlighted');
 
             var currentPage = window.location.toString().split('#', [0]);
-            window.history.pushState({id: id}, '', currentPage + '#' + id);
+            window.history.pushState({ id: id }, '', currentPage + '#' + id);
 
             window.scrollTo(0, $selectedElement.offset().top - 50);
             $('.classContent').scrollTop($selectedElement.offset().top - 50);
         });
 
+
+
+        /////////////
+        var insideDescription = [];
+        var insideConstructor = [];
+        var insideMembers = [];
+        var insideMethods = [];
+        $("#description").addClass("collapsed");
+        $("#constructor").addClass("collapsed");
+        $("#new-abstractmesh-classes-3-0-abstractmesh-name-scene-").addClass("testtt");
+        $("#members").addClass("collapsed");
+        $("#methods").addClass("collapsed");
+
+        //toggle the description content
+        $("#description").siblings().each(function (i) {
+            var elem = $(this);
+            if (!elem.is('h2')) {
+                insideDescription.push(elem);
+            } else {
+                return false;
+            }
+        });
+
+
+        //control toggle with click
+
+
+        $('#description').click(function () {
+
+            if ($("#description").hasClass("collapsed")) {
+                insideDescription.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#description").removeClass("collapsed");
+                    $("#description").addClass("folded");
+
+                });
+            }
+
+            else if ($("#description").hasClass("folded")) {
+                insideDescription.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#description").removeClass("folded");
+                    $("#description").addClass("collapsed");
+
+                });
+            }
+
+        })
+
+
+
+
+
+        /////////////
+
+        //toggle the constructor content
+        var counter = 0;
+        $("#constructor").nextAll().each(function (i) {
+
+            var elem = $(this);
+
+            if (!elem.is('h2')) {
+                insideConstructor.push(elem);
+            } else {
+                if (counter == 1) {
+                    return false;
+                } else {
+                    insideConstructor.push(elem);
+                    counter++;
+                }
+            }
+
+
+
+        });
+
+
+        //control toggle with click
+        $('#constructor').click(function () {
+
+            if ($("#constructor").hasClass("collapsed")) {
+                insideConstructor.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#constructor").removeClass("collapsed");
+                    $("#constructor").addClass("folded");
+
+                });
+            }
+
+            else if ($("#constructor").hasClass("folded")) {
+                insideConstructor.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#constructor").removeClass("folded");
+                    $("#constructor").addClass("collapsed");
+
+                });
+            }
+        })
+
+        /////////////
+
+        //toggle the members content
+        $("#members").nextAll().each(function (i) {
+            var elem = $(this);
+            if (!elem.is('h2')) {
+                insideMembers.push(elem);
+            } else {
+                return false;
+            }
+        });
+
+
+        //control toggle with click
+        $('#members').click(function () {
+
+            if ($("#members").hasClass("collapsed")) {
+                insideMembers.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#members").removeClass("collapsed");
+                    $("#members").addClass("folded");
+
+                });
+            }
+
+            else if ($("#members").hasClass("folded")) {
+                insideMembers.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#members").removeClass("folded");
+                    $("#members").addClass("collapsed");
+
+                });
+            }
+        })
+
+        /////////////
+
+        //toggle the methods content
+        $("#methods").nextAll().each(function (i) {
+            elem = $(this);
+            if (!elem.is('h2')) {
+                insideMethods.push(elem);
+            } else {
+                return false;
+            }
+        });
+
+
+        //control toggle with click
+        $('#methods').click(function () {
+
+            if ($("#methods").hasClass("collapsed")) {
+                insideMethods.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#methods").removeClass("collapsed");
+                    $("#methods").addClass("folded");
+
+                });
+            }
+
+            else if ($("#methods").hasClass("folded")) {
+                insideMethods.forEach(function (elem) {
+                    elem.toggle();
+
+
+                    $("#methods").removeClass("folded");
+                    $("#methods").addClass("collapsed");
+
+                });
+            }
+        })
+
+
+
+
+
+        // APO
     });
 
     /**
@@ -204,7 +394,7 @@
 
             var id = $(title).attr('id');
             var currentPage = window.location.toString().split('#', [0]);
-            window.history.pushState({id: id}, '', currentPage + '#' + id);
+            window.history.pushState({ id: id }, '', currentPage + '#' + id);
         });
     };
 })();

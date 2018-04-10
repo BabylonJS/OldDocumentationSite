@@ -3,6 +3,7 @@
 @if $border-box-sizing == true {
   html { // http://bit.ly/1qk2tVR
     box-sizing: border-box;
+    height: 100%;
   }
 
   * {
