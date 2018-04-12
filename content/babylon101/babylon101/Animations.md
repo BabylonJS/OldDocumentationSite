@@ -225,11 +225,9 @@ Fast and easy. :)
 
 ## Animation blending
 
-As of Babylon.js 2.3+, you can start an animation with *enableBlending* = true. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
+You can start an animation with *enableBlending* = true to enable blending mode. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
 
-In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position:
-
- https://www.babylonjs-playground.com/#2BLI9T#174
+In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position: https://www.babylonjs-playground.com/#2BLI9T#174
 
 Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running: https://www.babylonjs-playground.com/frame.html#IQN716#9
 
