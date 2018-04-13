@@ -156,6 +156,8 @@ This window is composed of 3 panels:
 * Several options and two buttons Export and Export & Run
 * A log panel 
  
+The _Scale factor_ can be used to rescale the whole world. If you set a scale factor equal to 100, the resulting scene will be 100 times smaller (1%). By default the scale factor is equal to 1, meaning no rescale.
+
 The _Export_ button should be used to create the Babylon file representing your scene. The _Export & Run_ button will also create the Babylon file, but will also launch your default browser and run the newly made Babylon file. This button is very useful if you just want to test the render of your scene in Babylon.js. 
 
 As babylon.js script is retrieved directly from the official website directly, you should have internet access in order to correctly use Export & Run.  

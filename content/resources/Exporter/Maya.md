@@ -85,6 +85,8 @@ The log panel indicates in real time which mesh has been exported, which materia
 
 Option _Optimize vertices_: The Babylon exporter will try to optimize the number of vertices to export instead of exporting everything naively (if a vertex is part of two faces, this vertex won’t be exported twice with this option checked).
 
+The _Scale factor_ can be used to rescale the whole world. If you set a scale factor equal to 100, the resulting scene will be 100 times smaller (1%). By default the scale factor is equal to 1, meaning no rescale.
+
 # What you should know
 
 ## Camera
