@@ -436,7 +436,7 @@ Here is an example of a line:  https://www.babylonjs-playground.com/#XCPP9Y#6
 
 MultiLine will draw lines between any number of meshes, controls and points.
 
-Each item in MultiLine is called MultiLinePoint, which has the following properties:
+Each item in MultiLine is called MultiLinePoint, and has the following properties:
 
 Property|Type|Default|Comments
 --------|----|-------|--------
