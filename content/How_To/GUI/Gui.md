@@ -434,15 +434,16 @@ Here is an example of a line:  https://www.babylonjs-playground.com/#XCPP9Y#6
 
 ### MultiLine
 
-MultiLine will draw lines between any number of MultiLinePoints.
+MultiLine will draw lines between any number of meshes, controls and points.
 
-Each MultiLinePoint can specify:
+Each item in MultiLine is called MultiLinePoint, which has the following properties:
 
-* mesh: Tracks a Mesh
-* control: Tracks a GUI Control
-* x, y: A point, x and y can be specified in px or %
-
-You can change these properties directly on MultiLinePoint instances, or pass them to add() or push()
+Property|Type|Default|Comments
+--------|----|-------|--------
+mesh|AbstractMesh|null|Tracks a Mesh
+control|Control|null|Tracks a Control
+x|number|null|x of a point, can be specified in px or %
+y|number|null|y of a point, can be specified in px or %
 
 Here are the functions you can use:
 
@@ -451,7 +452,7 @@ Here are the functions you can use:
 * remove(): Recives an index or an instance of a MultiLinePoint and removes it
 * getAt(): Recives an index of a MultiLinePoint and returns its instance. If no MultiPoint exists in that index - a new one is created
 
-Here are the properties you can define:
+Here are the properties you can define in MultiLine:
 
 Property|Type|Default|Comments
 --------|----|-------|--------
