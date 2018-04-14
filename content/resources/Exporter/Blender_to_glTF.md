@@ -1,4 +1,6 @@
-# How to export Blender scene as glTF
+# Blender to BJS through glTF
+
+glTF exporter will allow you to export your scene using PBR workflow.
 
 glTF exporter is directly provided from KhronosGroup. You can find the github [repository here](https://github.com/KhronosGroup/glTF-Blender-Exporter) , check their readme to know all you need.
 
@@ -13,20 +15,20 @@ At this moment, the Cycles Principled Shader is not yet directly supported (prob
 A good practice could be to import the default glTF material as fake user, and then assign only a copy of it on your objects, so as to always keep the default gltf materials settings on your hands.
 
 
-#  Try it out!  #
+##  Try it out!
 
 Once your scene is exported, you have multiple solutions to test it:
 
 - load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/)
 - load it via scripts using the [babylon loader](/how_to/gltf)
 
-## Example
+### Example
 
 Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [their repo](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/scenes):
 
 - export to glTF in a folder.
 - the HDR environment [need a little tweak](http://doc.babylonjs.com/how_to/physically_based_rendering#env-map), you can also use the environment from the [BJS repo](https://github.com/BabylonJS/Website/blob/master/Assets/environment.dds). Place the converted environment texture in the glTF folder too.
-- create a file named index.html, and copy the code above:
+- create a file named *index.html*, and copy the code above:
 
 ```html
 <!doctype html>
@@ -90,7 +92,7 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
 
 ![gltf default folder example](img/exporters/blender/gltf/gltf-BJS-default-folder-structure.png)
 
-- double-click on the index.html file... profit!
+- double-click on the *index.html* file... profit!
   - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver (local or not), or try into another browser (e.g.: Firefox, Edge).
   
 
