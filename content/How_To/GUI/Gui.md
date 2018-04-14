@@ -442,10 +442,12 @@ Each MultiLinePoint can specify:
 * control: Tracks a GUI Control
 * x, y: A point, x and y can be specified in px or %
 
+You can change these properties directly on MultiLinePoint instances, or pass them to add() or push()
+
 Here are the functions you can use:
 
-* add(): Receives any number of arguments, each argument can be a mesh, a control, or a point
-* push(): Adds a new MultiLinePoint instance where you can directly change mesh, control, x and y
+* add(): Receives any number of arguments and adds them, each argument can be a mesh, a control, or a point. Returns an array of MultiLinePoint
+* push(): Receives 1 argument and adds it, each argument can be a mesh, a control, or a point. Returns a MultiLinePoint
 * remove(): Recives an index or an instance of a MultiLinePoint and removes it
 * getAt(): Recives an index of a MultiLinePoint and returns its instance. If no MultiPoint exists in that index - a new one is created
 
