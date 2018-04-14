@@ -906,6 +906,10 @@
                     "filename": "Blender_Tips"
                 },
                 {
+                    "title": "Blender to glTF",
+                    "filename": "Blender_to_glTF"
+                },
+                {
                     "title": "Cheetah3D",
                     "filename": "Cheetah3D"
                 },

@@ -92,7 +92,7 @@ This add-on use the standard Blender installation procedure:
 | UV Maps</br>![uv-maps](img/exporters/blender/meshes/uv-maps.png) | <ul><li>UVMap: coordinatesIndex</li><li>limited to 2 channels</li></ul> |
 | Vertex Colors</br>![vertex-colors](img/exporters/blender/meshes/vertex-colors.png) | <ul><li>if multiples layers exist, they will be merge</li></ul> |
 | Exporter panel</br>![exporter-meshes-options](img/exporters/blender/meshes/exporter-meshes-options.png) | <ul><li>Use Flat Shading: [flat shaded mesh](http://doc.babylonjs.com/classes/3.0/mesh#converttoflatshadedmesh-rarr-mesh-classes-3-0-mesh-), [see tip](http://doc.babylonjs.com/exporters/blender_tips#smooth-shading)</li></ul> |
-  
+
 ### Materials
 
 ![Blender materials properties panel](img/exporters/blender/materials/materials-properties-panel.png)
@@ -123,11 +123,11 @@ This add-on use the standard Blender installation procedure:
 
 | Blender | [BJS equivalent](http://doc.babylonjs.com/classes/3.0/standardmaterial) |
 |---|---|
-| Game Settings</br>![game-settings](img/exporters/blender/materials/game-settings.png) | <ul><li>Backface culling: true by default</li><li>Face Orientation:<ul><li>Normal</li><li>Billboard</li></ul></li></ul> | 
+| Game Settings</br>![game-settings](img/exporters/blender/materials/game-settings.png) | <ul><li>Backface culling: true by default</li><li>Face Orientation:<ul><li>Normal</li><li>Billboard</li></ul></li></ul> |
 
 #### Cycles Render
 
-| Blender | BJS equivalent | 
+| Blender | BJS equivalent |
 |---|---|
 | Node Editor</br>![cycles node](img/exporters/blender/materials/cycles-node01.png) | Exporter will do automatic baking, and try to detect some nodes:</br> <ul><li>Diffuse BSDF</li><li>Ambient Occlusion</li></ul> |
 
@@ -142,12 +142,96 @@ This add-on use the standard Blender installation procedure:
 
 #### Blender Render
 
-| Blender | BJS equivalent | 
+| Blender | BJS equivalent |
 |---|---|
 | ![header](img/exporters/blender/textures/header.png) | <ul><li>multiple textures can be assigned<ul><li>if two textures are assigned to the same Influence (see below), automatic baking will be used</li></ul></li><li>this name is only used in Blender</li></ul> |
 | Texture Type</br>![type-image](img/exporters/blender/textures/type-image.png) | <ul><li>as seen above, this name is only used in Blender<li><li>texture type:<ul><li>for image file, choose *Image or Movie*</li><li>for procedural textures, choose any one but *voxel data*, *point density*, *ocean*</li></ul></li></ul> |
-| Image</br>![image](img/exporters/blender/textures/image.png) | <ul><li>texture filename will be texture name in BJS</li></ul> | 
-| Image Sampling</br>![image-sampling](img/exporters/blender/textures/image-sampling.png) | <ul><li>Use Alpha: hasAlpha</li></ul> | 
+| Image</br>![image](img/exporters/blender/textures/image.png) | <ul><li>texture filename will be texture name in BJS</li></ul> |
+| Image Sampling</br>![image-sampling](img/exporters/blender/textures/image-sampling.png) | <ul><li>Use Alpha: hasAlpha</li></ul> |
 | Image Mapping</br>![image-mapping](img/exporters/blender/textures/image-mapping.png) | <ul><li>Extension: choosing *Clip* will set Wrap value to 0</li></ul> |
 | Mapping</br>![mapping](img/exporters/blender/textures/mapping.png) | <ul><li>Coordinates: choosing between <ul><li>UV: [EXPLICIT_MODE](http://doc.babylonjs.com/classes/3.0/texture#static-explicit_mode-number)</li><li>Reflection: by setting *Projection* to *Sphere*, you gain access to spheremaps through [SPHERICAL_MODE](http://doc.babylonjs.com/classes/3.0/texture#static-spherical_mode-number)</li></ul></li><li>Offset X and Y: [uOffset](http://doc.babylonjs.com/classes/3.0/texture#uoffset-number) and [vOffset](http://doc.babylonjs.com/classes/3.0/texture#voffset-number)</li><li>Size X and Y: [uScale](http://doc.babylonjs.com/classes/3.0/texture#uscale-number) and [vScale](http://doc.babylonjs.com/classes/3.0/texture#vscale-number)</li></ul> |
 | Influence</br>![influence](img/exporters/blender/textures/influence.png) | Be sure to enable only one influence by texture, to avoid automatic baking. |
+
+---
+
+## Try it out!
+
+Once your scene is exported, you have multiple solutions to test it:
+
+- load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/)
+- load it into the [Babylon Editor](http://editor.babylonjs.com/)
+- load it via scripts using the [babylon loader](/how_to/load_from_any_file_type)
+
+### Example
+
+Let's say you have exported your first scene. In this example we will use [blend files of the BJS logo](https://github.com/BabylonJS/MeshesLibrary/tree/master/BabylonJS-logo/v3):
+
+- export the babylon into a folder
+- create a file named *index.html*, and copy the code above:
+
+```html
+<!doctype html>
+<html>
+<head>
+    <title>Default .babylon loading scene</title>
+	<meta charset="UTF-8">
+    <!-- this link to the preview online version of BJS -->
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <!-- this is needed for BJS to load scene files -->
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: OpenSans, tahoma, arial, sans-serif;
+            color:white;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var engine = new BABYLON.Engine(canvas, true);
+        
+        // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
+        BABYLON.SceneLoader.Load("", "babylonJS_logo_v3.babylon", engine, function (scene) {
+		
+            //as this .babylon example hasn't camera in it, we have to create one
+            var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);
+            camera.attachControl(canvas, false);
+			
+			scene.clearColor = new BABYLON.Color3(1, 1, 1);
+			scene.ambientColor = new BABYLON.Color3.White;
+			
+            engine.runRenderLoop(function() {
+                scene.render();
+            });
+
+            window.addEventListener("resize", function () {
+                engine.resize();
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
+
+![babylon default folder example](img/exporters/blender/babylon/babylon-BJS-default-folder-structure.png)
+
+- double-click on the *index.html* file... profit!
+  - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver (local or not), or try into another browser (e.g.: Firefox, Edge).
+  
+![blender babylon scene loaded in BJS](img/exporters/blender/babylon/babylon-loaded.png)
+
