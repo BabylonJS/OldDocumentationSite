@@ -432,6 +432,35 @@ lineWidth|number|1|Width in pixel
 
 Here is an example of a line:  https://www.babylonjs-playground.com/#XCPP9Y#6
 
+### MultiLine
+
+MultiLine will draw lines between any number of meshes, controls and points.
+
+Each item in MultiLine is called MultiLinePoint, and has the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+mesh|AbstractMesh|null|Tracks a Mesh
+control|Control|null|Tracks a Control
+x|number|null|x of a point, can be specified in px or %
+y|number|null|y of a point, can be specified in px or %
+
+Here are the functions you can use:
+
+* add(): Receives any number of arguments and adds them, each argument can be a mesh, a control, or a point. Returns an array of MultiLinePoint
+* push(): Receives 1 argument and adds it, each argument can be a mesh, a control, or a point. Returns a MultiLinePoint
+* remove(): Recives an index or an instance of a MultiLinePoint and removes it
+* getAt(): Recives an index of a MultiLinePoint and returns its instance. If no MultiPoint exists in that index - a new one is created
+
+Here are the properties you can define in MultiLine:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+dash|array of numbers|Empty array|Defines the size of the dashes
+lineWidth|number|1|Width in pixel
+
+Here is an example of a MultiLine combining meshes, a control and a point: http://www.babylonjs-playground.com/#H03KNW#2
+
 ### Image
 
 Use the image control to display an image in your UI.
