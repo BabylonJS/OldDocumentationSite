@@ -450,7 +450,7 @@ Here are the functions you can use:
 * add(): Receives any number of arguments and adds them, each argument can be a mesh, a control, or a point. Returns an array of MultiLinePoint
 * push(): Receives 1 argument and adds it, each argument can be a mesh, a control, or a point. Returns a MultiLinePoint
 * remove(): Recives an index or an instance of a MultiLinePoint and removes it
-* getAt(): Recives an index of a MultiLinePoint and returns its instance. If no MultiPoint exists in that index - a new one is created
+* getAt(): Recives an index of a MultiLinePoint and returns its instance. If no MultiLinePoint exists in that index - a new one is created
 
 Here are the properties you can define in MultiLine:
 
