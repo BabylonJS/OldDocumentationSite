@@ -66,7 +66,7 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
         // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
         BABYLON.SceneLoader.Load("", "02_suzanne.gltf", engine, function (scene) {
 		
-            //glTF exporter seens to not export - yet - cameras, so we have to manually create one
+            //BJS seens to not import - yet - glTF cameras, so we have to manually create one
             var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);
             camera.attachControl(canvas, false);
             
