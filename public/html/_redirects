@@ -2,6 +2,9 @@
 /classes/:class                             /api/classes/babylon.:class
 /classes/:version/:class                    /api/classes/babylon.:class
 
+
+
+/tutorials/How_Rotations_and_Translations_Work#baking-transform           /resources/baking_transformations
 /tutorials                                  /How_To
 /tutorials/01._advanced_texturing           /How_To/more_materials
 /tutorials/02._discover_basic_elements      /babylon101/discover_basic_elements
@@ -175,5 +178,3 @@
 /extensions/Physically_Based_Rendering          /How_To/physically_based_rendering
 
 /How_To/BabylonJS_and_ReactJS                   /resources/BabylonJS_and_ReactJS
-
-/tutorials/How_Rotations_and_Translations_Work#baking-transform   /resources/baking_transformations
