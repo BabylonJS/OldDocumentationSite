@@ -2,6 +2,8 @@
 
 glTF exporter will allow you to export your scene using PBR workflow.
 
+## Features
+
 glTF exporter is directly provided from KhronosGroup. You can find the github [repository here](https://github.com/KhronosGroup/glTF-Blender-Exporter) , check their readme to know all you need.
 
 However here some shortcuts to key points of their documentations:

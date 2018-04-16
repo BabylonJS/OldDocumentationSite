@@ -34,6 +34,8 @@ This add-on use the standard Blender installation procedure:
 | Scene</br>![scene](img/exporters/blender/scene/scene.png) | <ul><li>Camera: set scene activeCamera</li></ul> |
 | Exporter panel</br>![exporter-scene-options](img/exporters/blender/scene/exporter-scene-options.png) | <ul><li>Export only selected layers: objects in hidden scene layers will not be taken into account</br>![selected-layers](img/exporters/blender/scene/selected-layers.png)</li><li>Flat shade entire scene: all objects will be exported as [flat shaded meshes](http://doc.babylonjs.com/classes/3.0/mesh#converttoflatshadedmesh-rarr-mesh-classes-3-0-mesh-)</br>[(tip about shading)](http://doc.babylonjs.com/exporters/blender_tips#smooth-shading)</li><li>Force 64k per Mesh Vertex Limit: here to keep compatibility with old or low-cost hardware</li></ul> |
 
+---
+
 ### World 
 
 ![Blender world properties panel](img/exporters/blender/world/world-properties-panel.png)
@@ -45,6 +47,8 @@ This add-on use the standard Blender installation procedure:
 | World</br>![world-br](img/exporters/blender/world/blender-render/world.png) | <ul><li>Horizon Color: scene clearColor</li><li>Ambient Color: scene ambientColor</li></ul> |
 | Exporter panel</br>![mist](img/exporters/blender/world/blender-render/mist.png) | <ul><li>Mist: when Blender Render Mist is enabled, you have access to Fog Mode & Fog Density parameters</li></ul> |
 
+---
+
 ### Object
 
 ![Blender object properties panel](img/exporters/blender/object/object-properties-panel.png)
@@ -55,6 +59,8 @@ This add-on use the standard Blender installation procedure:
 | Transform</br>![transform](img/exporters/blender/object/transform.png) | <ul><li>Position</li><li>Rotation<ul><li>XYZ Euler</li><li>Quaternion</li></ul></li><li>Scale<ul><li>do not forget to apply Scale before exporting: 'Ctrl' + 'A' > 'Scale'</li></ul></li></ul>|
 | Relations</br>![relations](img/exporters/blender/object/relations.png) | <ul><li>parenting is supported</li></ul>|
 
+---
+
 ### Constraints
 
 ![Blender constraints properties panel](img/exporters/blender/constraints/constraints-properties-panel.png)
@@ -62,6 +68,8 @@ This add-on use the standard Blender installation procedure:
 | Blender | BJS equivalent |
 | --- | --- |
 | ![constraints](img/exporters/blender/constraints/constraints.png) | <ul><li>Track To: useful when using ArcRotate camera [(tip)](http://doc.babylonjs.com/exporters/blender_tips#arcrotate)</li></ul>|
+
+---
 
 ### Cameras
 
@@ -71,6 +79,8 @@ This add-on use the standard Blender installation procedure:
 |---|---|
 | Lens</br>![lens](img/exporters/blender/cameras/lens.png) | <ul><li>Field of View: fov</li><li>Clipping: minZ & maxZ</li> |
 | Exporter panel</br>![exporter-cameras-options](img/exporters/blender/cameras/exporter-cameras-options.png) | <ul><li>Camera Type, choose between:<ul><li>Arc Rotate [(tip)](http://doc.babylonjs.com/exporters/blender_tips#arcrotate)</li><li>Device Orientation</li><li>Follow</li><li>Gamepad</li><li>Touch</li><li>Universal</li><li>Virtual Joysticks</li><li>VR Dev Orientation Free</li><li>Web VR Free</li></ul></li></ul> |
+
+---
 
 ### Lights
 
@@ -92,6 +102,8 @@ This add-on use the standard Blender installation procedure:
 | UV Maps</br>![uv-maps](img/exporters/blender/meshes/uv-maps.png) | <ul><li>UVMap: coordinatesIndex</li><li>limited to 2 channels</li></ul> |
 | Vertex Colors</br>![vertex-colors](img/exporters/blender/meshes/vertex-colors.png) | <ul><li>if multiples layers exist, they will be merge</li></ul> |
 | Exporter panel</br>![exporter-meshes-options](img/exporters/blender/meshes/exporter-meshes-options.png) | <ul><li>Use Flat Shading: [flat shaded mesh](http://doc.babylonjs.com/classes/3.0/mesh#converttoflatshadedmesh-rarr-mesh-classes-3-0-mesh-), [see tip](http://doc.babylonjs.com/exporters/blender_tips#smooth-shading)</li></ul> |
+
+---
 
 ### Materials
 
@@ -130,6 +142,8 @@ This add-on use the standard Blender installation procedure:
 | Blender | BJS equivalent |
 |---|---|
 | Node Editor</br>![cycles node](img/exporters/blender/materials/cycles-node01.png) | Exporter will do automatic baking, and try to detect some nodes:</br> <ul><li>Diffuse BSDF</li><li>Ambient Occlusion</li></ul> |
+
+---
 
 ### Textures
 
