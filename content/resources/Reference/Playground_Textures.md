@@ -6,12 +6,12 @@ PG_TITLE: Textures Available To the  Playground
 
 This list of files are in the [textures folder](https://github.com/BabylonJS/Babylon.js/tree/master/Playground/textures) of the Playground and can be loaded as Textures, CubeTextures or HDRCubeTextures.
 
-## Textures PNG and JPG Files
+## Diffuse / Albedo
 
 In the playground use 
 
 ```javascript
-new BABYLON.Texture("textures/name", scene);
+new BABYLON.Texture("textures/filename", scene);
 ```
 
 Filename | Image
@@ -19,7 +19,6 @@ Filename | Image
 albedo.png  | <img src = 'http://www.babylonjs-playground.com/textures/albedo.png  ' width = '64' height = '64'>  
 amiga.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/amiga.jpg  ' width = '64' height = '64'>  
 bloc.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/bloc.jpg  ' width = '64' height = '64'>  
-candleopacity.png  | <img src = 'http://www.babylonjs-playground.com/textures/candleopacity.png  ' width = '64' height = '64'>  
 cloud.png  | <img src = 'http://www.babylonjs-playground.com/textures/cloud.png  ' width = '64' height = '64'>  
 co.png  | <img src = 'http://www.babylonjs-playground.com/textures/co.png  ' width = '64' height = '64'>  
 crate.png  | <img src = 'http://www.babylonjs-playground.com/textures/crate.png  ' width = '64' height = '64'>  
@@ -65,6 +64,12 @@ xStrip.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/xStrip.jp
 yStrip.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/yStrip.jpg  ' width = '64' height = '64'>  
 zStrip.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/zStrip.jpg  ' width = '64' height = '64'>  
 
+## Opacity / Alpha
+
+Filename | Image
+--- | ---
+candleopacity.png  | <img src = 'http://www.babylonjs-playground.com/textures/candleopacity.png  ' width = '64' height = '64'>
+
 
 ## CubeTextures
 
@@ -73,10 +78,10 @@ CubeTextures are in groups of six for each side of the cube, each starting with 
 In the Playground use
 
 ```javascript
-new BABYLON.CubeTexture("textures/common part of names", scene);
+new BABYLON.CubeTexture("textures/common part of filenames", scene);
 ```
 
-## skybox
+### skybox
 
 Filename | Image
 ---|---
@@ -88,7 +93,7 @@ skybox_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox
 skybox_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox_py.jpg  ' width = '64' height = '64'>  
 skybox_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox_pz.jpg' width = '64' height = '64'>  
 
-## skybox2
+### skybox2
 
 Filename | Image
 ---|---
@@ -100,7 +105,7 @@ skybox2_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybo
 skybox2_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox2_py.jpg  ' width = '64' height = '64'>  
 skybox2_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox2_pz.jpg  ' width = '64' height = '64'>  
 
-## skybox3
+### skybox3
 
 Filename | Image
 ---|---
@@ -112,7 +117,7 @@ skybox3_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybo
 skybox3_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox3_py.jpg  ' width = '64' height = '64'>  
 skybox3_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox3_pz.jpg  ' width = '64' height = '64'>  
 
-## skybox4 
+### skybox4 
 
 Filename | Image
 ---|---
@@ -124,8 +129,8 @@ skybox4_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybo
 skybox4_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox4_py.jpg  ' width = '64' height = '64'>  
 skybox4_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox4_pz.jpg  ' width = '64' height = '64'>  
 
-## TropicalSunnyDay  
- 
+### TropicalSunnyDay  
+
 Filename | Image
 ---|---
 TropicalSunnyDay |    
@@ -142,7 +147,7 @@ TropicalSunnyDay_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textu
 In the Playground use
 
 ```javascript
-new BABYLON.HDRCubeTexture("textures/name", scene);
+new BABYLON.HDRCubeTexture("textures/filename", scene);
 ```
 
 - country.hdr  
@@ -157,11 +162,38 @@ new BABYLON.HDRCubeTexture("textures/name", scene);
 In the Playground use
 
 ```javascript
-
 new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/environment.dds", scene);
-
 ```
 
 - environment.dds
 - SpecularHDR.dds
+
+## Videos
+
+In the Playground use
+
+```javascript
+new BABYLON.VideoTexture("name", "textures/video.ext", scene);
+```
+
+- babylonjs.mp4
+- babylonjs.webm
+- big_buck_bunny.mp4
+
+## FX
+
+### LUT
+
+In the Playground use
+
+```javascript
+    var LUTTexture = new BABYLON.Texture("textures/filename", scene);
+    var postProcess = new BABYLON.ColorCorrectionPostProcess("color_correction", LUTTexture, 1.0, universalCamera);
+```
+
+
+
+Filename | Image
+---|---
+colorGrade.png  | <img src = 'http://www.babylonjs-playground.com/textures/colorGrade.png  ' width = '64' height = '64'>
 
