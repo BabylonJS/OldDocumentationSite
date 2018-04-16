@@ -4,9 +4,10 @@ PG_TITLE: Textures Available To the  Playground
 
 # Textures Available To the Playground
 
-This list of files are in the textures folder of the Playground and can be loaded as Textures, CubeTextures or HDRCubeTextures
+This list of files are in the [textures folder](https://github.com/BabylonJS/Babylon.js/tree/master/Playground/textures) of the Playground and can be loaded as Textures, CubeTextures or HDRCubeTextures.
 
 ## Textures PNG and JPG Files
+
 In the playground use 
 
 ```javascript
@@ -75,6 +76,8 @@ In the Playground use
 new BABYLON.CubeTexture("textures/common part of names", scene);
 ```
 
+## skybox
+
 Filename | Image
 ---|---
 skybox |   
@@ -85,7 +88,8 @@ skybox_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox
 skybox_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox_py.jpg  ' width = '64' height = '64'>  
 skybox_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox_pz.jpg' width = '64' height = '64'>  
 
-#    
+## skybox2
+
 Filename | Image
 ---|---
 skybox2 |   
@@ -96,7 +100,8 @@ skybox2_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybo
 skybox2_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox2_py.jpg  ' width = '64' height = '64'>  
 skybox2_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox2_pz.jpg  ' width = '64' height = '64'>  
 
-#    
+## skybox3
+
 Filename | Image
 ---|---
 skybox3 |    
@@ -107,7 +112,8 @@ skybox3_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybo
 skybox3_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox3_py.jpg  ' width = '64' height = '64'>  
 skybox3_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox3_pz.jpg  ' width = '64' height = '64'>  
 
-#    
+## skybox4 
+
 Filename | Image
 ---|---
 skybox4 |    
@@ -118,7 +124,8 @@ skybox4_px.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybo
 skybox4_py.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox4_py.jpg  ' width = '64' height = '64'>  
 skybox4_pz.jpg  | <img src = 'http://www.babylonjs-playground.com/textures/skybox4_pz.jpg  ' width = '64' height = '64'>  
 
-#    
+## TropicalSunnyDay  
+ 
 Filename | Image
 ---|---
 TropicalSunnyDay |    
@@ -138,10 +145,23 @@ In the Playground use
 new BABYLON.HDRCubeTexture("textures/name", scene);
 ```
 
-country.hdr  
-environment.babylon.hdr  
-forest.hdr  
-night.hdr  
-parking.hdr  
-room.hdr  
+- country.hdr  
+- environment.babylon.hdr  
+- forest.hdr  
+- night.hdr  
+- parking.hdr  
+- room.hdr
+
+### HDRCubeTextures as .dds
+
+In the Playground use
+
+```javascript
+
+new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/environment.dds", scene);
+
+```
+
+- environment.dds
+- SpecularHDR.dds
 
