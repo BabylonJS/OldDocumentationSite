@@ -99,9 +99,13 @@ If you have more than one camera, the first one will be set as activeCamera in B
 
 If you don’t have any lights in your scene, the exporter will add an ambient light by default. The log panel will display the warning “No light defined – A default ambient light was added for your convenience”. 
 
-## Materials & textures
+## Textures and intermediate nodes
 
-Maya provides a large range of tools to manipulate connexions between textures and materials (like the Reverse node). Currently none of these tools are supported by the exporter. Only a fileTexture is expected as input to a material. Otherwise the log panel will display the error “Only file texture is supported”. 
+Maya provides a large range of tools to manipulate connexions between textures and materials (like the Reverse node). For the most part, only a fileTexture is expected as input to a material.
+
+Currently the following intermediate nodes are supported by the exporter:
+- Projection node which is only considered for the reflected color texture of a standard material. You can choose the projection type between _Spherical_ or _Planar_. If no projection node is provided, the default projection type is _Spherical_ for the reflected color texture.
+- Bump2d node which is automatically created when assigning a file to a bump attribute.
 
 ## Textures image format
 
