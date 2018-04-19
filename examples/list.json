@@ -5,8 +5,36 @@
             "samples": [
                 {
                     "title": "Animation blending",
-                    "doc": ""
+                    "doc": "https://doc.babylonjs.com/babylon101/Animations#animation-blending",
+                    "icon": "animation_blending.jpg",
+                    "description": "Blend multiple animations together to move from on animation clip to another",
+                    "PGID": "#BCU1XR#0"
                 }
+            ]
+        },
+        {
+            "title": "Lights",
+            "samples": [
+            ]
+        },
+        {
+            "title": "Materials",
+            "samples": [
+            ]
+        }, 
+        {
+            "title": "Physics",
+            "samples": [
+            ]
+        },                
+        {
+            "title": "Shadows",
+            "samples": [
+            ]
+        },                
+        {
+            "title": "Special FX",
+            "samples": [
             ]
         }
     ]
