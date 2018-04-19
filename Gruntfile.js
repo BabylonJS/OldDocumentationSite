@@ -148,10 +148,9 @@ module.exports = function (grunt) {
                 src: ['./scripts/compile-html/compile-html-index.js']
             },
             compileExamples: {
-                options: {
-                    module: true
-                },
-                src: ['./scripts/compile-html/compile-html-examples.js']
+                call: function (grunt, options, async) {
+                    require('./scripts/compile-html/compile-html-examples')(async());
+                }
             },            
             compileWhatsNew: {
                 options: {
