@@ -175,9 +175,3 @@
 /extensions/Physically_Based_Rendering          /How_To/physically_based_rendering
 
 /How_To/BabylonJS_and_ReactJS                   /resources/BabylonJS_and_ReactJS
-
-[[redirects]]
-from = "/tutorials/How_Rotations_and_Translations_Work#baking-transform"
-to = "/resources/baking_transformations"
-status = 301
-force = false

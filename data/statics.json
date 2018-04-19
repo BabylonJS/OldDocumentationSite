@@ -1030,6 +1030,25 @@
                 {
                     "title": "Vertex Normals",
                     "filename": "Normals"
+                }
+            ]
+        },
+        {
+            "title": "PG Aspects",
+            "name": "Playground_Aspects",
+            "desc": "Aspects of Playground Use",
+            "files": [
+                {
+                    "title": "Available Textures in the Playground",
+                    "filename": "Playground_Textures"
+                },
+                {
+                    "title": "Interesting Playgrounds",
+                    "filename": "playgrounds"
+                },
+                {
+                    "title": "Playground Based Tutorials",
+                    "filename": "PBT"
                 },
                 {
                     "title": "Starter Guide for PBT",
@@ -1057,18 +1076,6 @@
                 {
                     "title": "Index",
                     "filename": "Documentation_Category_Map"
-                },
-                {
-                    "title": "Interesting Playgrounds",
-                    "filename": "playgrounds"
-                },
-                {
-                    "title": "Playground Based Tutorials",
-                    "filename": "PBT"
-                },
-                {
-                    "title": "Available Textures in the Playground",
-                    "filename": "Playground_Textures"
                 },
                 {
                     "title": "BJS Code Constants",

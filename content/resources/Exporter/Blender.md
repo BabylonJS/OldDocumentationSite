@@ -32,7 +32,7 @@ This add-on use the standard Blender installation procedure:
 | Blender | [BJS equivalent](http://doc.babylonjs.com/classes/3.0/scene) |
 | --- | --- |
 | Scene</br>![scene](img/exporters/blender/scene/scene.png) | <ul><li>Camera: set scene activeCamera</li></ul> |
-| Exporter panel</br>![exporter-scene-options](img/exporters/blender/scene/exporter-scene-options.png) | <ul><li>Export only selected layers: objects in hidden scene layers will not be taken into account</br>![selected-layers](img/exporters/blender/scene/selected-layers.png)</li><li>Flat shade entire scene: all objects will be exported as [flat shaded meshes](http://doc.babylonjs.com/classes/3.0/mesh#converttoflatshadedmesh-rarr-mesh-classes-3-0-mesh-)</br>[(tip about shading)](http://doc.babylonjs.com/exporters/blender_tips#smooth-shading)</li><li>Force 64k per Mesh Vertex Limit: here to keep compatibility with old or low-cost hardware</li></ul> |
+| Exporter panel</br>![exporter-scene-options](img/exporters/blender/scene/exporter-scene-options.png) | <ul><li>`Export only selected layers`: objects in hidden scene layers will not be taken into account</br>![selected-layers](img/exporters/blender/scene/selected-layers.png)</li><li>`Max Decimal Precision`: how values are rounded during export</li></ul> |
 
 ---
 
@@ -101,7 +101,7 @@ This add-on use the standard Blender installation procedure:
 | Normals</br>![normals](img/exporters/blender/meshes/normals.png) | Auto Smooth is often use by Blender users, but is not supported.</br> Use an edge split modifier instead, see [tip](http://doc.babylonjs.com/exporters/blender_tips#smooth-shading). |
 | UV Maps</br>![uv-maps](img/exporters/blender/meshes/uv-maps.png) | <ul><li>UVMap: coordinatesIndex</li><li>limited to 2 channels</li></ul> |
 | Vertex Colors</br>![vertex-colors](img/exporters/blender/meshes/vertex-colors.png) | <ul><li>if multiples layers exist, they will be merge</li></ul> |
-| Exporter panel</br>![exporter-meshes-options](img/exporters/blender/meshes/exporter-meshes-options.png) | <ul><li>Use Flat Shading: [flat shaded mesh](http://doc.babylonjs.com/classes/3.0/mesh#converttoflatshadedmesh-rarr-mesh-classes-3-0-mesh-), [see tip](http://doc.babylonjs.com/exporters/blender_tips#smooth-shading)</li></ul> |
+| Exporter panel</br>![exporter-meshes-options](img/exporters/blender/meshes/exporter-meshes-options.png) |  |
 
 ---
 
