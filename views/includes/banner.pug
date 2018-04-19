@@ -4,13 +4,10 @@ nav.nav-main(style={position: 'inherit'})
 
     .banner
         .menu
-        
-            .do-not-hover.item(class={homeClassMobile: currentUrl === '/classes/class'})
-                a(href='https://www.babylonjs.com')
-                    | Babylon.js                    
+                       
             .do-not-hover#home(class={homeClassMobile: currentUrl === '/classes/class'})
                 a(href='/')
-                    | DOCUMENTATION
+                    | HOME
             #whatsnew.item(class={active: currentUrl === '/whats-new'})
                 a(href='/whats-new')
                     | What's new
@@ -29,9 +26,9 @@ nav.nav-main(style={position: 'inherit'})
             #extensions.item(class={active: currentUrl === '/extensions'})
                 a(href='/extensions')
                     | Extensions
-            #samples.item(class={active: currentUrl === '/samples'})
-                a(href='/samples')
-                    | Samples        
+            #samples.item(class={active: currentUrl === '/snippets'})
+                a(href='/snippets')
+                    | Snippets        
             #classes.item(class={active: currentUrl === '/api'})
                 a(href='/api')
                     | API

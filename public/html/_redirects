@@ -2,6 +2,8 @@
 /classes/:class                             /api/classes/babylon.:class
 /classes/:version/:class                    /api/classes/babylon.:class
 
+/samples                                    /snippets
+
 /tutorials                                  /How_To
 /tutorials/01._advanced_texturing           /How_To/more_materials
 /tutorials/02._discover_basic_elements      /babylon101/discover_basic_elements
