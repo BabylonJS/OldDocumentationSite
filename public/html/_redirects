@@ -3,6 +3,7 @@
 /classes/:version/:class                    /api/classes/babylon.:class
 
 /samples                                    /snippets
+/samples/:link                              /snippets/:link
 
 /tutorials                                  /How_To
 /tutorials/01._advanced_texturing           /How_To/more_materials
