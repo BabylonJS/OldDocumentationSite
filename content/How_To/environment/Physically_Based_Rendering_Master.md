@@ -206,6 +206,21 @@ Shadows are fully equivalent to the Standard material. All the documentation can
 ## Notes
 You can find below a few notes which could be helpful during the creation of your scenes.
 
+### Specular Aliasing
+Glossy materials are subject to Specular Aliasing artifacts. These artifacts are usually visible as bright dots flickering on meshes when animating the model or moving the camera.
+
+They could be the result of several factors:
+- Sharp Edges in the geometry
+- Bump Map Texture
+- ... For more information, you can consult this page about [anti aliasing techniques](http://blog.selfshadow.com/2011/07/22/specular-showdown/)
+
+Babylon version 3.2 includes a simple way to enable Specular anti aliasing in PBR materials:
+```javascript
+    pbr.enableSpecularAntiAliasing = true;
+```
+
+[Demo](https://www.babylonjs-playground.com/#1XJD4C)
+
 ### Environment Irradiance
 A big part of the lighting in PBR is assured by the environment texture. This provides two kinds of light contributions, **radiance which could be considered alike reflection** and **irrandiance which could be thought as the diffuse component of the Image Based Lighting**.
 
