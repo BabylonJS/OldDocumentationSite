@@ -1414,25 +1414,25 @@
             ]
         }
     ],
-    "samples": [
+    "snippets": [
         {
             "title": "All",
             "name": "All",
-            "desc": "All the Samples."
+            "desc": "All the Snippets."
         },
         {
             "title": "Introduction",
             "name": "introduction",
-            "desc": "Introduction to Samples",
+            "desc": "Introduction to Snippets",
             "files": [
                 {
-                    "title": "Introduction to Samples",
+                    "title": "Introduction to Snippets",
                     "filename": "Introduction"
                 }
             ]
         },
         {
-            "title": "Gamelet",
+            "title": "Gamelets",
             "name": "gamelets",
             "desc": "Gamelets",
             "files": [
@@ -1492,9 +1492,9 @@
             ]
         },
         {
-            "title": "Snippet",
-            "name": "snippets",
-            "desc": "Code Snippets",
+            "title": "Utilities",
+            "name": "utilities",
+            "desc": "Code Utilities",
             "files": [
                 {
                     "title": "Minimise Vertices",

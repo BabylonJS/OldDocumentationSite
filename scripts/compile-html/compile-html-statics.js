@@ -47,7 +47,7 @@ module.exports = function (done) {
         "resources",
         "extensions",
         "How_To",
-        "samples",
+        "snippets",
         "features"
     ];
 
