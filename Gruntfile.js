@@ -19,6 +19,7 @@ module.exports = function (grunt) {
                 //recompiles everything but doesn't reindex the search
                 tasks: [
                     'execute:compileIndex',
+                    'execute:compileExamples',
                     'execute:compileWhatsNew',
                     'execute:compileHtmlStatics'
                 ],
@@ -146,6 +147,12 @@ module.exports = function (grunt) {
                 },
                 src: ['./scripts/compile-html/compile-html-index.js']
             },
+            compileExamples: {
+                options: {
+                    module: true
+                },
+                src: ['./scripts/compile-html/compile-html-examples.js']
+            },            
             compileWhatsNew: {
                 options: {
                     module: true
@@ -181,12 +188,17 @@ module.exports = function (grunt) {
         'clean:json',
         'typedoc:build',
         'execute:compileIndex',
+        'execute:compileExamples',
         'execute:compileWhatsNew',
         'execute:compileHtmlStatics',
         'execute:indexer',
         'execute:remoteIndexCleanup',
         'clean:tmp'
     ]);
+
+    grunt.registerTask('examples', 'Build examples page', [
+        'execute:compileExamples',
+    ]);    
 };
 
 
