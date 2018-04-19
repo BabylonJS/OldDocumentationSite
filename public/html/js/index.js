@@ -44,8 +44,8 @@
                     html: '<i class="fa fa-wrench"></i>Extensions'
                 }),
                 $('<a>', {
-                    href: '/samples',
-                    html: '<i class="fa fa-book"></i>Samples'
+                    href: '/snippets',
+                    html: '<i class="fa fa-book"></i>Snippets'
                 }),
                 $('<a>', {
                     href: '/api',
