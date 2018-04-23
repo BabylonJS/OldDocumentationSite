@@ -4,7 +4,7 @@ The plug-in is designed for Maya 2018. This guide is about the Windows version (
 
 ![github](/img/exporters/Maya/1_github.jpg)
 
-In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Maya2Babylon-XX.zip_ (where XX is the exporter version, currently v0.1). Click on the zip file, and click on the _Download_ button. 
+In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Maya2Babylon-XX.zip_ (where XX is the exporter version, currently v1.0.7). Click on the zip file, and click on the _Download_ button. 
 
 ![github download](/img/exporters/Maya/2_github_dl.jpg)
 
@@ -29,7 +29,7 @@ Congratulations! You did it!
 * _Meshes_
     * Visibility
     * Position / rotation / scaling
-    * Geometry (position, normal, texture coordinates (2 channels))
+    * Geometry (position, normal, tangent, texture coordinates (2 channels))
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn)
@@ -39,7 +39,7 @@ Congratulations! You did it!
         * Bump mapping
         * Specular color and power
         * Reflected color
-    * PBR materials (Stingray PBS)
+    * PBR materials (Stingray PBS, AiStandardSurface)
         * Base color & opacity
         * Normal
         * Metallic
@@ -50,7 +50,8 @@ Congratulations! You did it!
 * _Textures_
     * UV offset / scaling / angle
     * Level
-    * Wrapping (Clamp, mirror, wrap)
+    * Coordinates mode (spherical, planar, explicit)
+    * Wrapping (clamp, mirror, wrap)
 
 * _Cameras_
     * Fov
@@ -98,6 +99,14 @@ If you have more than one camera, the first one will be set as activeCamera in B
 ## Light
 
 If you don’t have any lights in your scene, the exporter will add an ambient light by default. The log panel will display the warning “No light defined – A default ambient light was added for your convenience”. 
+
+## Locator
+
+If you want to have a point in space used only for its transform attributes you can use a Locator. For example, a target camera naturally comes with a locator to indicate the position to look at. They can also be used as parent node when updating the scene at runtime with the Babylon engine.
+
+## Group node
+
+A group node is exported as a dummy, a mesh without vertices, just like a locator. However, only group nodes used as parent for other nodes are exported. If you have an empty group node, you should probably switch to a locator instead or it will be ignored.
 
 ## Textures and intermediate nodes
 

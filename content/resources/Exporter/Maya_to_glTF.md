@@ -22,7 +22,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
 * _Meshes_
     * Visibility
     * Position / rotation / scaling
-    * Geometry (position, normal, texture coordinates (2 channels))
+    * Geometry (position, normal, tangent, texture coordinates (2 channels))
 
 * _Nodes_
     * Hierarchy
@@ -34,7 +34,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
         * Transparency
         * Bump mapping
         * Specular color and power
-    * PBR materials (Stingray PBS)
+    * PBR materials (Stingray PBS, AiStandardSurface)
         * Base color & opacity
         * Normal
         * Metallic
@@ -43,6 +43,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Multi-materials
 
 * _Textures_
+    * Wrap mode (clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
 
