@@ -3,7 +3,14 @@ node_modules
 .svn
 .tmp
 log/exceptions.log
+
+# tmp and examples files from 3D softwares
+.blend1
+.blend2
+basics.log
+
 # Built file that should not be committed
+
 data/search
 data/classes-tags.json
 data/classes.json

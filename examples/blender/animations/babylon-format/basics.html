@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <title>.babylon animations</title>
+    <meta charset="UTF-8">
+    <!-- this link to the preview online version of BJS -->
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <!-- this is needed for BJS to load scene files -->
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: OpenSans, tahoma, arial, sans-serif;
+            color:white;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var engine = new BABYLON.Engine(canvas, true);
+
+        // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
+        BABYLON.SceneLoader.Load("", "basics.babylon", engine, function (scene) {
+
+            //as this .babylon example hasn't camera in it, we have to create one
+            var camera = new BABYLON.ArcRotateCamera("Camera", 3.14, 1, 10, new BABYLON.Vector3.Zero(), scene);
+            camera.attachControl(canvas, false);
+            
+            scene.createDefaultEnvironment({
+                skyboxSize: 500,
+                groundColor: new BABYLON.Color3(0.8,0.8,0.8),
+                skyboxColor: new BABYLON.Color3.White()
+            });
+            scene.ambientColor = new BABYLON.Color3.White();
+            
+            var dirLight = new BABYLON.DirectionalLight("dirLight", new BABYLON.Vector3(1, -1, 1), scene);
+            dirLight.position = new BABYLON.Vector3(-100, 100, -100);
+            
+            var shadowGenerator = new BABYLON.ShadowGenerator(64, dirLight);
+            var logo = scene.getMeshByName("logo");
+            shadowGenerator.addShadowCaster(logo);
+
+            engine.runRenderLoop(function() {
+                scene.render();
+            });
+
+            window.addEventListener("resize", function () {
+                engine.resize();
+            });
+        });
+    </script>
+</body>
+</html>

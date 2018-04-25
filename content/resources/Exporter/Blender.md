@@ -168,6 +168,18 @@ This add-on use the standard Blender installation procedure:
 
 ---
 
+## Animation
+
+### Commons
+
+In order to animate in the simpliest way, you should export one *.babylon* file per animated object. This will make process a lot easier once in BabylonJS.
+
+### Classic Animations
+
+### Armatures
+
+---
+
 ## Try it out!
 
 Once your scene is exported, you have multiple solutions to test it:
