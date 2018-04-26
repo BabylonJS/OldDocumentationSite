@@ -9,6 +9,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-typedoc');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.initConfig({
         // TODO use https://www.npmjs.com/package/grunt-newer to only process updated files
@@ -173,7 +174,18 @@ module.exports = function (grunt) {
                     require('./scripts/helpers/indexer/azureCleanup')(async());
                 }
             }
-        }
+        },
+        copy: {
+            exampleIcons: {
+              files: [
+                // includes files within path and its sub-directories
+                {
+                    expand: true,
+                    src: ['./examples/icons/**'],
+                    dest: './public/html/'}
+              ],
+            },
+          }
     });
 
     grunt.registerTask('serve', 'Start working', [
@@ -188,6 +200,7 @@ module.exports = function (grunt) {
         'typedoc:build',
         'execute:compileIndex',
         'execute:compileExamples',
+        'copy:exampleIcons',
         'execute:compileWhatsNew',
         'execute:compileHtmlStatics',
         'execute:indexer',
