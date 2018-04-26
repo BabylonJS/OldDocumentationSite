@@ -45,7 +45,7 @@
         },         
         {
             "title": "Materials",
-            "samples": [             
+            "samples": [                          
             ]
         }, 
         {
@@ -57,7 +57,21 @@
                     "icon": "icons/gpu_particles.jpg",
                     "description": "Use GPU only to create a massive number of particles",
                     "PGID": "#PU4WYI#14"
-                }                  
+                },                           
+                {
+                    "title": "Low lying fog",
+                    "doc": "http://doc.babylonjs.com/babylon101/particles",
+                    "icon": "icons/lying_fog.jpg",
+                    "description": "Use particle to simulate volumetric fog",
+                    "PGID": "#BHNVUE#1"
+                },                           
+                {
+                    "title": "Particle editor",
+                    "doc": "http://doc.babylonjs.com/babylon101/particles",
+                    "icon": "icons/particle_editor.jpg",
+                    "description": "Online editor to play with particle parameters",
+                    "PGID": "#NNL67B#1"
+                }                     
             ]
         },            
         {
@@ -74,7 +88,14 @@
                     "icon": "icons/pcss.jpg",
                     "description": "Shadows will get softer when they are further away from the object casting them",
                     "PGID": "#EYEPRI#3"
-                }                
+                },
+                {
+                    "title": "Self shadowing",
+                    "doc": "http://doc.babylonjs.com/babylon101/shadows#close-exponential-shadow-map",
+                    "icon": "icons/self_shadows.jpg",
+                    "description": "use shadow close exponential mode to enable self shadowing on animated object",
+                    "PGID": "#4GAHX6#1"
+                }                                
             ]
         },                
         {
@@ -101,6 +122,25 @@
                     "description": "Generates glow around emissive objects",
                     "PGID": "#6ZVKE3#0"
                 }                  
+            ]
+        },
+        {
+            "title": "Textures",
+            "samples": [   
+                {
+                    "title": "360 videos",
+                    "doc": "http://doc.babylonjs.com/how_to/360videodome",
+                    "icon": "icons/360.jpg",
+                    "description": "Easily display and control 360 videos",
+                    "PGID": "#1E9JQ8#7"
+                },
+                {
+                    "title": "Local cubemaps",
+                    "doc": "http://doc.babylonjs.com/how_to/reflect#cubetexture",
+                    "icon": "icons/local_cubemap.jpg",
+                    "description": "Improve cubemaps with local mode",
+                    "PGID": "#RNASML#4"
+                }                                        
             ]
         }
     ]
