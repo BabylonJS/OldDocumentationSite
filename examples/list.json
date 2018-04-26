@@ -4,16 +4,9 @@
             "title": "Animations",
             "samples": [
                 {
-                    "title": "Animation blending2",
-                    "doc": "https://doc.babylonjs.com/babylon101/Animations#animation-blending",
-                    "icon": "icons/animation_blending.jpg",
-                    "description": "Blend multiple animations together to move from on animation clip to another",
-                    "PGID": "#BCU1XR#0"
-                },
-                {
                     "title": "Animation blending",
                     "doc": "https://doc.babylonjs.com/babylon101/Animations#animation-blending",
-                    "icon": "icons/animation_blending.jpg",
+                    "icon": "animation_blending.jpg",
                     "description": "Blend multiple animations together to move from on animation clip to another",
                     "PGID": "#BCU1XR#0"
                 }
