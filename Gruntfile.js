@@ -9,6 +9,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-typedoc');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.initConfig({
         // TODO use https://www.npmjs.com/package/grunt-newer to only process updated files
@@ -19,6 +20,7 @@ module.exports = function (grunt) {
                 //recompiles everything but doesn't reindex the search
                 tasks: [
                     'execute:compileIndex',
+                    'execute:compileExamples',
                     'execute:compileWhatsNew',
                     'execute:compileHtmlStatics'
                 ],
@@ -146,6 +148,11 @@ module.exports = function (grunt) {
                 },
                 src: ['./scripts/compile-html/compile-html-index.js']
             },
+            compileExamples: {
+                call: function (grunt, options, async) {
+                    require('./scripts/compile-html/compile-html-examples')(async());
+                }
+            },            
             compileWhatsNew: {
                 options: {
                     module: true
@@ -167,7 +174,18 @@ module.exports = function (grunt) {
                     require('./scripts/helpers/indexer/azureCleanup')(async());
                 }
             }
-        }
+        },
+        copy: {
+            exampleIcons: {
+              files: [
+                // includes files within path and its sub-directories
+                {
+                    expand: true,
+                    src: ['./examples/icons/**'],
+                    dest: './public/html/'}
+              ],
+            },
+          }
     });
 
     grunt.registerTask('serve', 'Start working', [
@@ -181,12 +199,18 @@ module.exports = function (grunt) {
         'clean:json',
         'typedoc:build',
         'execute:compileIndex',
+        'execute:compileExamples',
+        'copy:exampleIcons',
         'execute:compileWhatsNew',
         'execute:compileHtmlStatics',
         'execute:indexer',
         'execute:remoteIndexCleanup',
         'clean:tmp'
     ]);
+
+    grunt.registerTask('examples', 'Build examples page', [
+        'execute:compileExamples',
+    ]);    
 };
 
 
