@@ -107,7 +107,14 @@
                     "icon": "icons/color_curves.jpg",
                     "description": "Apply color curves to your rendering",
                     "PGID": "#HI65FJ#0"
-                },        
+                },     
+                {
+                    "title": "Default rendering pipeline",
+                    "doc": "http://doc.babylonjs.com/how_to/using_default_rendering_pipeline",
+                    "icon": "icons/default_pipeline.jpg",
+                    "description": "Bloom, FXAA, sharpen, grain, vignette, chromatic aberration and DoF with one single object",
+                    "PGID": "#Y3C0HQ#146"
+                },                      
                 {
                     "title": "Depth of field",
                     "doc": "http://doc.babylonjs.com/how_to/using_default_rendering_pipeline#depth-of-field",
