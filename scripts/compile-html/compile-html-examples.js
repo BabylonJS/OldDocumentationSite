@@ -28,6 +28,7 @@ function checkDirectorySync(directory) {
 
 module.exports = function (done) {
     checkDirectorySync("public/html/");
+    checkDirectorySync("public/html/examples/");
     var content = "";
     let pugContent = 
 `
@@ -53,12 +54,12 @@ include includes/banner.pug
                 pugContent += 
 `
             
-            div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", style="background-color: #ebebeb;height:120px;overflow: hidden;clear: both;margin: 5px;margin-bottom: 10px", onclick="GetPG('`+sample.PGID+`','`+elemCountID+`')")
+            div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", style="background-color: #ebebeb;height:120px;overflow: hidden;clear: both;margin: 5px;margin-bottom: 10px", onclick="load('`+sample.PGID+`')")
                 img(src="`+ sample.icon +`",style="max-height:100%;max-width:120px;display: inline-block")
                 div(style="display: inline-block;width: calc(100% - 120px);vertical-align: top;padding: 5px;", class = "contentDiv`+ elemCountID +`" )
                     h3(style="margin: 0px;font-size: 18px;margin-bottom: 5px",class="itemLineChild") `+ sample.title +`
                     p(style="margin: 0px;font-size: 15px;margin-bottom: 3px",class="itemLineChild") `+ sample.description +`
-                    a(href="`+ sample.doc +`", style="font-size: 15px;text-decoration:underline;text-decoration-color='#000000';color='#000000'",class="itemLineChildLink childLink",) >Documentation `;
+                    a(href="`+ sample.doc +`", style="font-size: 15px;text-decoration:underline;text-decoration-color='#000000';color='#000000'",class="itemLineChildLink childLink",) documentation `;
                     
                     elemCountID++;
             });
