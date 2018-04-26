@@ -4,24 +4,31 @@
             "title": "Animations",
             "samples": [
                 {
-                    "title": "Animation blending2",
+                    "title": "Animation blending",
                     "doc": "https://doc.babylonjs.com/babylon101/Animations#animation-blending",
                     "icon": "icons/animation_blending.jpg",
                     "description": "Blend multiple animations together to move from on animation clip to another",
                     "PGID": "#BCU1XR#0"
                 },
                 {
-                    "title": "Animation blending",
-                    "doc": "https://doc.babylonjs.com/babylon101/Animations#animation-blending",
-                    "icon": "icons/animation_blending.jpg",
-                    "description": "Blend multiple animations together to move from on animation clip to another",
-                    "PGID": "#BCU1XR#0"
+                    "title": "Animation weights",
+                    "doc": "https://doc.babylonjs.com/babylon101/animations#animation-weights",
+                    "icon": "icons/animation_weight.jpg",
+                    "description": "Use weights to blend multiple animations together",
+                    "PGID": "#LL5BIQ#0"
                 }
             ]
         },
         {
             "title": "Lights",
             "samples": [
+                {
+                    "title": "Light projected texture",
+                    "doc": "http://doc.babylonjs.com/babylon101/lights#projection-texture",
+                    "icon": "icons/projected_texture.jpg",
+                    "description": "Project a texture from a spot light",
+                    "PGID": "#CQNGRK#0"
+                }                   
             ]
         },
         {
@@ -37,11 +44,25 @@
         {
             "title": "Shadows",
             "samples": [
+                {
+                    "title": "Contact hardening shadows",
+                    "doc": "https://doc.babylonjs.com/babylon101/shadows#contact-hardening-shadow-webgl2-only",
+                    "icon": "icons/pcss.jpg",
+                    "description": "Shadows will get softer when they are further away from the object casting them",
+                    "PGID": "#EYEPRI#3"
+                }                
             ]
         },                
         {
             "title": "Special FX",
             "samples": [
+                {
+                    "title": "Glow layer",
+                    "doc": "http://doc.babylonjs.com/how_to/glow_layer",
+                    "icon": "icons/glow.jpg",
+                    "description": "Generates glow around emissive objects",
+                    "PGID": "#6ZVKE3#0"
+                }                  
             ]
         }
     ]
