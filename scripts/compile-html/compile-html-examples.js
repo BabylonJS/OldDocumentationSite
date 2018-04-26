@@ -38,7 +38,7 @@ include includes/banner.pug
     div(id='examplePage',style="width:400px;display:inline-block;float:left;")
         h1(style="text-align: center;") Examples
         .horizontal-separator
-        input(id='searchBar',type='text', name='filter', placeholder='Filter examples...',style="margin-left: 15px")
+        input(id='filterBar',type='text', name='filter', placeholder='Filter examples...',style="margin-left: 15px")
         button(onclick="Search()")
             i.fa.fa-search
 `;
