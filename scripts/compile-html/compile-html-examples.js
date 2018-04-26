@@ -40,7 +40,7 @@ include includes/banner.pug
         .horizontal-separator
         div.filterDiv
             input(id='filterBar',type='text', name='filter', placeholder='Filter examples...')
-            button(onclick="Search()")
+            button()
                 i.fa.fa-search
 `;
     
@@ -54,13 +54,12 @@ include includes/banner.pug
             category.samples.forEach(sample => {
                 pugContent += 
 `
-            
             div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`')")
                 img(src="`+ sample.icon +`")
                 div(class = "contentDiv`+ elemCountID +`" )
                     h3(class="itemLineChild") `+ sample.title +`
                     p(class="itemLineChild") `+ sample.description +`
-                    a(href="`+ sample.doc +`", class="itemLineChildLink childLink",) Documentation `;
+                    a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation `;
                     
                     elemCountID++;
             });
@@ -69,7 +68,6 @@ include includes/banner.pug
         pugContent += 
 `    
     div#parentIframe
-        iframe(id='iframeExample', name='iframeExample', src='http://playground.babylonjs.com/frame.html')
 include includes/footer.pug
 script(src='/js/examples.js')
 `;

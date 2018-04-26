@@ -32,10 +32,34 @@
             ]
         },
         {
-            "title": "Materials",
+            "title": "Loaders",
             "samples": [
+                {
+                    "title": "Cornell box",
+                    "doc": "http://doc.babylonjs.com/how_to/load_from_any_file_type",
+                    "icon": "icons/cornell.jpg",
+                    "description": "Load a glTF file and setup the environment",
+                    "PGID": "#J5E230#54"
+                }                  
+            ]
+        },         
+        {
+            "title": "Materials",
+            "samples": [             
             ]
         }, 
+        {
+            "title": "Particles",
+            "samples": [
+                {
+                    "title": "GPU particles",
+                    "doc": "http://doc.babylonjs.com/babylon101/particles#gpu-particles",
+                    "icon": "icons/gpu_particles.jpg",
+                    "description": "Use GPU only to create a massive number of particles",
+                    "PGID": "#PU4WYI#14"
+                }                  
+            ]
+        },            
         {
             "title": "Physics",
             "samples": [
@@ -45,7 +69,7 @@
             "title": "Shadows",
             "samples": [
                 {
-                    "title": "Contact hardening shadows",
+                    "title": "Contact hardening",
                     "doc": "https://doc.babylonjs.com/babylon101/shadows#contact-hardening-shadow-webgl2-only",
                     "icon": "icons/pcss.jpg",
                     "description": "Shadows will get softer when they are further away from the object casting them",
@@ -56,6 +80,20 @@
         {
             "title": "Special FX",
             "samples": [
+                {
+                    "title": "Color curves",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#imageprocessing",
+                    "icon": "icons/color_curves.jpg",
+                    "description": "Apply color curves to your rendering",
+                    "PGID": "#HI65FJ#0"
+                },        
+                {
+                    "title": "Depth of field",
+                    "doc": "http://doc.babylonjs.com/how_to/using_default_rendering_pipeline#depth-of-field",
+                    "icon": "icons/dof.jpg",
+                    "description": "Apply depth of field effect",
+                    "PGID": "#8F5HYV#9"
+                },                           
                 {
                     "title": "Glow layer",
                     "doc": "http://doc.babylonjs.com/how_to/glow_layer",
