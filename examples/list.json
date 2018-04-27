@@ -37,7 +37,14 @@
                     "icon": "icons/instanced_bones.png", 
                     "description": "Animated skeletons of people walking",
                     "PGID": "#0K8EYN#0"
-                }                       
+                },
+                {
+                    "title": "Morph targets",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_morphtargets",
+                    "icon": "icons/morph_targets.jpg", 
+                    "description": "Morph a mesh between multiple targets",
+                    "PGID": "#2JDN66#0"
+                }                         
             ]
         },
         {
@@ -136,7 +143,7 @@
                 {
                     "title": "Load glTF model",
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
-                    "icon": "icons/load_gltf.png", 
+                    "icon": "icons/load_gltf.jpg", 
                     "description": "Show how to easily load a glTF model",
                     "PGID": "#PN1NNI#0"
                 }                
@@ -165,7 +172,14 @@
                     "icon": "icons/cell_shading.jpg", 
                     "description": "Cell shading material",
                     "PGID": "#0ZB1A3#1"
-                }               
+                },
+                {
+                    "title": "Fur",
+                    "doc": "http://doc.babylonjs.com/extensions/fur",
+                    "icon": "icons/fur.jpg", 
+                    "description": "Fur material",
+                    "PGID": "#VABI8A#0"
+                }                
             ]
         },         
         {
@@ -238,11 +252,25 @@
                     "icon": "icons/particle_editor.jpg",
                     "description": "Online editor to play with particle parameters",
                     "PGID": "#NNL67B#1"
-                }                     
+                },
+                {
+                    "title": "Solid Particle System facet collision",
+                    "doc": "http://doc.babylonjs.com/how_to/solid_particle_system",
+                    "icon": "icons/facets.jpg", 
+                    "description": "Use SPS facets to simulate complex mesh collisions",
+                    "PGID": "#6UZDJ9#0"
+                },
+                {
+                    "title": "Solid Particle System collisions",
+                    "doc": "http://doc.babylonjs.com/how_to/solid_particle_system",
+                    "icon": "icons/sps_collisions.jpg", 
+                    "description": "Use basic geometry to simulate SPS collisions",
+                    "PGID": "#2V1C4Z#0"
+                }                      
             ]
         },        
         {
-            "title": "Collisions",
+            "title": "Collisions & intersections",
             "samples": [
                 {
                     "title": "Collisions",
@@ -269,6 +297,13 @@
                     "icon": "icons/physics.png", 
                     "description": "How to use physic engines within Babylon",
                     "PGID": "#7149G4#0"
+                },
+                {
+                    "title": "Cloth",
+                    "doc": "https://doc.babylonjs.com/how_to/using_the_physics_engine",
+                    "icon": "icons/cloth.jpg", 
+                    "description": "Use physic engine to simulate cloth",
+                    "PGID": "#7N1BRU#0"
                 }
             ]
         },                
@@ -283,10 +318,17 @@
                     "PGID": "#EYEPRI#3"
                 },
                 {
-                    "title": "Self shadowing",
+                    "title": "Self shadowing #1",
+                    "doc": "http://doc.babylonjs.com/babylon101/shadows#exponential-shadow-map",
+                    "icon": "icons/self_shadows1.jpg",
+                    "description": "Use shadow exponential mode to enable self shadowing on a rotating object",
+                    "PGID": "#F4XWU2#0"
+                },                
+                {
+                    "title": "Self shadowing #2",
                     "doc": "http://doc.babylonjs.com/babylon101/shadows#close-exponential-shadow-map",
-                    "icon": "icons/self_shadows.jpg",
-                    "description": "use shadow close exponential mode to enable self shadowing on animated object",
+                    "icon": "icons/self_shadows2.jpg",
+                    "description": "Use shadow close exponential mode to enable self shadowing on animated object",
                     "PGID": "#4GAHX6#1"
                 },
                 {
@@ -398,12 +440,26 @@
                     "PGID": "#XH85A9#0"
                 },
                 {
+                    "title": "Relatime refraction",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_reflection_probes",
+                    "icon": "icons/refraction.jpg", 
+                    "description": "use reflection probes to simulate realtime refraction",
+                    "PGID": "#RRYXWN#0"
+                },
+                {
                     "title": "Motion blur",
                     "doc": "http://doc.babylonjs.com/how_to/using_standard_rendering_pipeline#setting-up-the-motion-blur",
                     "icon": "icons/motion_blur.jpg", 
                     "description": "Use the standard rendering pipeline to simulate motion blur",
                     "PGID": "#ZMAJZB#0"
-                }                     
+                },
+                {
+                    "title": "Highlight layer",
+                    "doc": "http://doc.babylonjs.com/how_to/highlight_layer",
+                    "icon": "icons/highlights.jpg", 
+                    "description": "Highlight a mesh",
+                    "PGID": "#7EESGZ#0"
+                }                        
             ]
         },
         {
@@ -438,7 +494,7 @@
                     "title": "WebVR",
                     "doc": "https://doc.babylonjs.com/how_to/webvr_helper",
                     "icon": "icons/webvr.png", 
-                    "description": "View a basic mesh and interact with a gui in webVR",
+                    "description": "View a basic mesh and interact with a gui in WebVR",
                     "PGID": "#TAFSN0#2"
                 } 
             ]
