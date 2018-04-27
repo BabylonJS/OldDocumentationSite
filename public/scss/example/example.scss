@@ -25,9 +25,11 @@
 
         .itemLine:hover {
             background-color: #3B789A;
+            color: white;
         }
         .itemLine:active {
             background-color: #2C5A74;
+            color: white;
         }
         .itemLine {
             cursor: pointer;
@@ -36,7 +38,11 @@
             overflow: hidden;
             clear: both;
             margin: 5px;
-            margin-bottom: 10px
+            margin-bottom: 10px;
+
+            .itemContent {
+                padding-left: 10px;
+            }
 
             img {
                 max-height:100%;

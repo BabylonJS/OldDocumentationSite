@@ -211,5 +211,9 @@ module.exports = function (grunt) {
     grunt.registerTask('examples', 'Build examples page', [
         'execute:compileExamples',
     ]);    
+
+    grunt.registerTask('sass', 'Build examples page', [
+        'sass:dev',
+    ]);       
 };
 
