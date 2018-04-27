@@ -51,11 +51,11 @@
                     "PGID": "#1A3M5C#0"
                 },
                 {
-                    "title": "Webvr",
+                    "title": "WebVR",
                     "doc": "https://doc.babylonjs.com/how_to/webvr_helper",
                     "icon": "icons/webvr.png", 
-                    "description": "Creates a basic scene which you can look around with in babylonjs",
-                    "PGID": "#HUGCDB#0"
+                    "description": "View a basic mesh and interact with a gui in webVR",
+                    "PGID": "#TAFSN0#2"
                 } 
             ]
         },
