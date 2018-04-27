@@ -16,6 +16,237 @@
                     "icon": "icons/animation_weight.jpg",
                     "description": "Use weights to blend multiple animations together",
                     "PGID": "#LL5BIQ#0"
+                },                
+                {
+                    "title": "Basic scene",
+                    "doc": "https://doc.babylonjs.com/how_to/set_shapes",
+                    "icon": "icons/basic_scene.png", 
+                    "description": "Ball and plane",
+                    "PGID": "#TAZ2CB#0"
+                },
+                {
+                    "title": "Basic elements",
+                    "doc": "https://doc.babylonjs.com/how_to/set_shapes",
+                    "icon": "icons/basic_elements.png", 
+                    "description": "Ball, box, plane, line, etc",
+                    "PGID": "#A1210C#0"
+                },
+                {
+                    "title": "Rotation and scaling",
+                    "doc": "https://doc.babylonjs.com/how_to/rotate",
+                    "icon": "icons/rotation_and_scaling.png", 
+                    "description": "Position mesh layout in space",
+                    "PGID": "#CURCZC#0"
+                },
+                {
+                    "title": "Materials",
+                    "doc": "https://doc.babylonjs.com/babylon101/materials",
+                    "icon": "icons/materials.png", 
+                    "description": "Create and add materials to a mesh",
+                    "PGID": "#DXARSP#0"
+                },
+                {
+                    "title": "Cameras",
+                    "doc": "https://doc.babylonjs.com/babylon101/cameras",
+                    "icon": "icons/cameras.png", 
+                    "description": "Types of cameras in babylonjs",
+                    "PGID": "#1A3M5C#0"
+                },
+                {
+                    "title": "Lights",
+                    "doc": "https://doc.babylonjs.com/babylon101/lights",
+                    "icon": "icons/lights.png", 
+                    "description": "Add lights to a scene",
+                    "PGID": "#AQRDKW#0"
+                },
+                {
+                    "title": "Animations",
+                    "doc": "https://doc.babylonjs.com/babylon101/animations",
+                    "icon": "icons/animations.png", 
+                    "description": "How to add animations",
+                    "PGID": "#QYFDDP#0"
+                },
+                {
+                    "title": "Sprites",
+                    "doc": "https://doc.babylonjs.com/babylon101/sprites",
+                    "icon": "icons/sprites.png", 
+                    "description": "Load and display sprites",
+                    "PGID": "#9RI8CG#0"
+                },
+                {
+                    "title": "Collisions",
+                    "doc": "https://doc.babylonjs.com/babylon101/cameras,_mesh_collisions_and_gravity",
+                    "icon": "icons/collisions.png", 
+                    "description": "Handle basic collisions to avoid a camera going through a box",
+                    "PGID": "#U8MEB0#0"
+                },
+                {
+                    "title": "Intersections",
+                    "doc": "https://doc.babylonjs.com/babylon101/intersect_collisions_-_mesh",
+                    "icon": "icons/intersections.png", 
+                    "description": "Detect when meshes intersect each other",
+                    "PGID": "#KQV9SA#0"
+                },
+                {
+                    "title": "Picking",
+                    "doc": "https://doc.babylonjs.com/babylon101/picking_collisions",
+                    "icon": "icons/picking.png", 
+                    "description": "Use mouse or touch to pick meshes on the screen",
+                    "PGID": "#NU4F6Y#0"
+                },
+                {
+                    "title": "Particles",
+                    "doc": "https://doc.babylonjs.com/babylon101/particles",
+                    "icon": "icons/particles.png", 
+                    "description": "Create a particle system and attach it to a moving object",
+                    "PGID": "#EF9X5R#0"
+                },
+                {
+                    "title": "Environment",
+                    "doc": "https://doc.babylonjs.com/babylon101/environment",
+                    "icon": "icons/environment.png", 
+                    "description": "Adding a skybox and fog",
+                    "PGID": "#7G0IQW#0"
+                },
+                {
+                    "title": "Height map",
+                    "doc": "https://doc.babylonjs.com/babylon101/height_map",
+                    "icon": "icons/height_map.png", 
+                    "description": "Use a height map to extrude a plane to create mountains",
+                    "PGID": "#95PXRY#0"
+                },
+                {
+                    "title": "Shadows",
+                    "doc": "https://doc.babylonjs.com/babylon101/shadows",
+                    "icon": "icons/shadows.png", 
+                    "description": "Setup a scene with lights and meshes to cast different types of shadows",
+                    "PGID": "#IFYDRS#0"
+                },
+                {
+                    "title": "Import meshes",
+                    "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
+                    "icon": "icons/import_meshes.png", 
+                    "description": "Load a mesh from a file and add it to the scene",
+                    "PGID": "#UKNERM#0"
+                },
+                {
+                    "title": "Actions",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_actions",
+                    "icon": "icons/actions.png", 
+                    "description": "Actions are a simple way to add interactions in your scenes. An action is launched when its trigger is fired. For instance, you can specify that when the user clicks (or touches) a mesh, an action is executed.",
+                    "PGID": "#J19GYK#0"
+                },
+                {
+                    "title": "Drag and drop",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_actions",
+                    "icon": "icons/drag_and_drop.png", 
+                    "description": "Move meshes around a scene with a mouse",
+                    "PGID": "#UZ23UH#0"
+                },
+                {
+                    "title": "Fresnel",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
+                    "icon": "icons/fresnel.png", 
+                    "description": "Renders spheres to simulate a fresnel lens",
+                    "PGID": "#AQZJ4C#0"
+                },
+                {
+                    "title": "Easing functions",
+                    "doc": "https://doc.babylonjs.com/babylon101/animations",
+                    "icon": "icons/easing_functions.png", 
+                    "description": "Create animations with different easing functions",
+                    "PGID": "#8ZNVGR#0"
+                },
+                {
+                    "title": "ProceduralTexture",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_procedural_textures",
+                    "icon": "icons/procedural_texture.png", 
+                    "description": "Use procedual textures for wood, grass, marble, fire, etc.",
+                    "PGID": "#B2ZXG6#0"
+                },
+                {
+                    "title": "Basic sounds",
+                    "doc": "https://doc.babylonjs.com/how_to/playing_sounds_and_music",
+                    "icon": "icons/basic_sounds.png", 
+                    "description": "Playing sounds with babylon",
+                    "PGID": "#DXAEUY#0"
+                },
+                {
+                    "title": "Sound on mesh",
+                    "doc": "https://doc.babylonjs.com/how_to/playing_sounds_and_music",
+                    "icon": "icons/sound_on_mesh.png", 
+                    "description": "Attach a sound to a mesh which will be modified by the objects position",
+                    "PGID": "#EDVU95#0"
+                },
+                {
+                    "title": "Ssao rendering pipeline",
+                    "doc": "https://doc.babylonjs.com/how_to/using_the_ssao_rendering_pipeline",
+                    "icon": "icons/ssao_1.png", 
+                    "description": "Screen space ambient occlusion",
+                    "PGID": "#N96NXC#0"
+                },
+                {
+                    "title": "Ssao 2",
+                    "doc": "https://doc.babylonjs.com/how_to/using_the_ssao_rendering_pipeline",
+                    "icon": "icons/ssao_2.png", 
+                    "description": "Screen space ambient occlusion",
+                    "PGID": "#7D2QDD#0"
+                },
+                {
+                    "title": "Volumetric Light Scattering",
+                    "doc": "https://doc.babylonjs.com/how_to/using_the_volumetric_lightscattering_post-process",
+                    "icon": "icons/volumetric_light_scattering.png", 
+                    "description": "Simulates light scattering due to light hitting the atmosphere",
+                    "PGID": "#V2DAKC#0"
+                },
+                {
+                    "title": "Refraction and Reflection",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
+                    "icon": "icons/refraction_and_reflection.png", 
+                    "description": "Simulate how light would reflect and refract with a sphere",
+                    "PGID": "#XH85A9#0"
+                },
+                {
+                    "title": "Pbr",
+                    "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering",
+                    "icon": "icons/pbr.png", 
+                    "description": "Physically based rendering materials",
+                    "PGID": "#8MGKWK#0"
+                },
+                {
+                    "title": "Instanced bones",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_bones_and_skeletons",
+                    "icon": "icons/instanced_bones.png", 
+                    "description": "Animated skeletons of people walking",
+                    "PGID": "#0K8EYN#0"
+                },
+                {
+                    "title": "Pointer events handling",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_actions",
+                    "icon": "icons/pointer_events_handling.png", 
+                    "description": "Handle pointer input",
+                    "PGID": "#C245A1#0"
+                },
+                {
+                    "title": "Webvr",
+                    "doc": "https://doc.babylonjs.com/how_to/webvr_helper",
+                    "icon": "icons/webvr.png", 
+                    "description": "Creates a basic scene which you can look around with in babylonjs",
+                    "PGID": "#HUGCDB#0"
+                },
+                {
+                    "title": "Gui",
+                    "doc": "https://doc.babylonjs.com/how_to/gui",
+                    "icon": "icons/gui.png", 
+                    "description": "Babylons graphical user interface provides sliders, buttons, etc.",
+                    "PGID": "#3VMTI9#0"
+                },
+                {
+                    "title": "Physics",
+                    "doc": "https://doc.babylonjs.com/how_to/using_the_physics_engine",
+                    "icon": "icons/physics.png", 
+                    "description": "How to use physics engine within babylon",
+                    "PGID": "#7149G4#0"
                 }
             ]
         },
