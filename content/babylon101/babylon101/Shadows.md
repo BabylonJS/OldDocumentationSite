@@ -182,7 +182,7 @@ You can control also the size of the projection window by modifying one of those
 * `light.shadowOrthoScale`: 0.1 by default which means that the projection window is increase by 10% from the optimal size.
 * `light.shadowFrustumSize`: Off by default with a value of 0. You can specify a value which will be used to define the square size of the frustum to use.
 
-The light's position, as well as the positions of the mesh that you have pushed into the renderlist, determine where the shadows will appear.
+The light's position, as well as the positions of the mesh that you have pushed into the renderlist, determine where the shadows will appear. Note that your light point-of-view from this position have to view all meshes in the renderList; otherwise the shadows may not be rendered (see [this example](http://www.babylonjs-playground.com/#R1EVD0#3)).
 
 ### Customizing the projection matrix
 All lights need to provide a projection matrix to shadow generators in order to build the shadow map. You can define your own version by setting `light.customProjectionMatrixBuilder` value:
