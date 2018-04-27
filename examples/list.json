@@ -26,7 +26,7 @@
                 },
                 {
                     "title": "Easing functions",
-                    "doc": "https://doc.babylonjs.com/babylon101/animations",
+                    "doc": "https://doc.babylonjs.com/babylon101/animations#easing-functions",
                     "icon": "icons/easing_functions.png", 
                     "description": "Create animations with different easing functions",
                     "PGID": "#8ZNVGR#0"
@@ -155,7 +155,7 @@
                     "PGID": "#B2ZXG6#0"
                 },
                 {
-                    "title": "Pbr",
+                    "title": "PBR",
                     "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering",
                     "icon": "icons/pbr.png", 
                     "description": "Physically based rendering materials",
@@ -169,7 +169,7 @@
             "samples": [     
                 {
                     "title": "Basic scene",
-                    "doc": "https://doc.babylonjs.com/how_to/set_shapes",
+                    "doc": "http://doc.babylonjs.com/features/scene",
                     "icon": "icons/basic_scene.png", 
                     "description": "Ball and plane",
                     "PGID": "#TAZ2CB#0"
@@ -199,6 +199,13 @@
                     "icon": "icons/gpu_particles.jpg",
                     "description": "Use GPU only to create a massive number of particles",
                     "PGID": "#PU4WYI#14"
+                },
+                {
+                    "title": "Particles",
+                    "doc": "https://doc.babylonjs.com/babylon101/particles",
+                    "icon": "icons/particles.png", 
+                    "description": "Create a particle system and attach it to a moving object",
+                    "PGID": "#EF9X5R#0"
                 },                           
                 {
                     "title": "Low lying fog",
@@ -305,13 +312,6 @@
                     "icon": "icons/sprites.png", 
                     "description": "Load and display sprites",
                     "PGID": "#9RI8CG#0"
-                },
-                {
-                    "title": "Particles",
-                    "doc": "https://doc.babylonjs.com/babylon101/particles",
-                    "icon": "icons/particles.png", 
-                    "description": "Create a particle system and attach it to a moving object",
-                    "PGID": "#EF9X5R#0"
                 },
                 {
                     "title": "Environment",
