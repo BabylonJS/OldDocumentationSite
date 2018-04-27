@@ -1490,7 +1490,7 @@ p {
 
 #wrapper.example {
   width: 100%;
-  height: calc(90% - 1px);
+  height: calc(100% - 90px);
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -1573,7 +1573,10 @@ p {
   height: 100%;
   width: 100%;
 }
-
+#wrapper.example #parentIframe .Centerer p {
+  margin-top: 35vh;
+  font-size: 30px;
+}
 .slideout-menu {
   display: none;
   margin-top: 50px;
@@ -1999,6 +2002,40 @@ p {
   #wrapper.error a:hover {
     background-color: white;
     color: #00AEEF;
+  }
+}
+/* MEDIUM SCREEN*/
+/* SMALL SCREENS VERSION */
+@media screen and (max-width: 960px) {
+  #wrapper.example {
+    width: 100%;
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+    overflow: auto;
+  }
+  #wrapper.example #parentIframe {
+    position: absolute;
+    left: 5%;
+    width: calc(90%);
+    height: 400px;
+  }
+  #wrapper.example #parentIframe iframe {
+    width: 100%;
+    height: 100%;
+  }
+  #wrapper.example #parentIframe .Centerer {
+    text-align: center;
+    height: 50%;
+    width: 100%;
+  }
+  #wrapper.example #parentIframe .Centerer p {
+    margin-top: 15vh;
+    font-size: 30px;
+  }
+  #wrapper.example #examplePage {
+    margin-top: 400px;
+    width: calc(100% - 2px);
+    overflow-y: visible;
   }
 }
 

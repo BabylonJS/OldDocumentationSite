@@ -1,6 +1,6 @@
 #wrapper.example {
     width: 100%;
-    height: calc(90% - 1px);
+    height: calc(100% - 90px);
     box-sizing: border-box;
     overflow: hidden;
 
@@ -95,6 +95,11 @@
             text-align: center;
             height: 100%;
             width: 100%;
+
+            p {
+                margin-top:35vh;
+                font-size:30px;
+            }
         }
     }
 }

@@ -78,9 +78,10 @@ include includes/banner.pug
         pugContent += 
 `    
     div#parentIframe
-        div(class='Centerer') 
-            p(style='margin-top:35vh;font-size:24px') Please choose an item on the left 
-            img(src='/img/logos/logo-babylonjs.png') 
+        div(class='Centerer')
+            p Please, choose an item in the list.
+            img(src='../img/logos/logo-babylonjs.png')
+
 include includes/footer.pug
 script(src='/js/examples.js')
 `;
