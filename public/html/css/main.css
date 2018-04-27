@@ -1490,7 +1490,7 @@ p {
 
 #wrapper.example {
   width: 100%;
-  height: calc(90% - 15px);
+  height: calc(90% - 1px);
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -1550,6 +1550,9 @@ p {
   text-decoration: underline;
   color: #00AEEF;
 }
+#wrapper.example #examplePage .itemLineActive {
+  background-color: #3B789A;
+}
 #wrapper.example #parentIframe {
   width: calc(100% - 400px);
   height: 100%;
@@ -1558,6 +1561,11 @@ p {
 #wrapper.example #parentIframe iframe {
   width: 100%;
   height: 100%;
+}
+#wrapper.example #parentIframe .Centerer {
+  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .slideout-menu {

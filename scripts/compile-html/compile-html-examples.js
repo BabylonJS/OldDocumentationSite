@@ -40,11 +40,7 @@ include includes/banner.pug
         .horizontal-separator
         div.filterDiv
             input(id='filterBar',type='text', name='filter', placeholder='Filter examples...')
-<<<<<<< HEAD
-            button(onclick="Search()")
-=======
             button()
->>>>>>> 5c1575bb5cd59a2389eeb1dc64bd2a4b5d3e8268
                 i.fa.fa-search
 `;
     
@@ -58,20 +54,12 @@ include includes/banner.pug
             category.samples.forEach(sample => {
                 pugContent += 
 `
-<<<<<<< HEAD
-            
-=======
->>>>>>> 5c1575bb5cd59a2389eeb1dc64bd2a4b5d3e8268
-            div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`')")
+            div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`','`+ elemCountID +`')")
                 img(src="`+ sample.icon +`")
                 div(class = "contentDiv`+ elemCountID +`" )
                     h3(class="itemLineChild") `+ sample.title +`
                     p(class="itemLineChild") `+ sample.description +`
-<<<<<<< HEAD
-                    a(href="`+ sample.doc +`", class="itemLineChildLink childLink",) Documentation `;
-=======
                     a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation `;
->>>>>>> 5c1575bb5cd59a2389eeb1dc64bd2a4b5d3e8268
                     
                     elemCountID++;
             });
@@ -80,10 +68,9 @@ include includes/banner.pug
         pugContent += 
 `    
     div#parentIframe
-<<<<<<< HEAD
-        iframe(id='iframeExample', name='iframeExample', src='http://playground.babylonjs.com/frame.html')
-=======
->>>>>>> 5c1575bb5cd59a2389eeb1dc64bd2a4b5d3e8268
+        div(class='Centerer')
+            p(style='margin-top:35vh;font-size:30px') Please choose an item on the left
+            img(src='logos/logo-babylonjs.png')
 include includes/footer.pug
 script(src='/js/examples.js')
 `;
