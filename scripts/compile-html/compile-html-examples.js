@@ -64,9 +64,9 @@ include includes/banner.pug
             samples.forEach(sample => {
                 pugContent += 
 `
-            div( id='`+ elemCountID +`', class="itemLine `+ sample.title +` contentBlock", onclick="load('`+sample.PGID+`')")
+            div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`','`+ elemCountID +`')")
                 img(src="`+ sample.icon +`")
-                div(class = "contentDiv`+ elemCountID +`" )
+                div(class = "contentDiv`+ elemCountID +` itemContent" )
                     h3(class="itemLineChild") `+ sample.title +`
                     p(class="itemLineChild") `+ sample.description +`
                     a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation `;
@@ -78,6 +78,9 @@ include includes/banner.pug
         pugContent += 
 `    
     div#parentIframe
+        div(class='Centerer') 
+            p(style='margin-top:35vh;font-size:24px') Please choose an item on the left 
+            img(src='/img/logos/logo-babylonjs.png') 
 include includes/footer.pug
 script(src='/js/examples.js')
 `;
