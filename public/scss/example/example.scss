@@ -1,6 +1,6 @@
 #wrapper.example {
     width: 100%;
-    height: calc(90% - 15px);
+    height: calc(100% - 90px);
     box-sizing: border-box;
     overflow: hidden;
 
@@ -70,6 +70,9 @@
                 }
             }
         }
+        .itemLineActive {
+            background-color: #3B789A;
+        }
     }
 
     #parentIframe {
@@ -80,6 +83,17 @@
         iframe {
             width: 100%;
             height: 100%;
+        }
+
+        .Centerer {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+
+            p {
+                margin-top:35vh;
+                font-size:30px;
+            }
         }
     }
 }
