@@ -51,10 +51,20 @@ include includes/banner.pug
             pugContent += 
 `
         p(style="margin-left:5px;font-size:20px; font-weight:200") ` + category.title + "\n";
-            category.samples.forEach(sample => {
+            var samples = category.samples;
+            samples.sort((a, b) => {
+                if (a.title < b.title) {
+                    return -1;
+                }
+                if (a.title > b.title) {
+                    return 1;
+                }
+                return 0;
+            });
+            samples.forEach(sample => {
                 pugContent += 
 `
-            div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`')")
+            div( id='`+ elemCountID +`', class="itemLine `+ sample.title +` contentBlock", onclick="load('`+sample.PGID+`')")
                 img(src="`+ sample.icon +`")
                 div(class = "contentDiv`+ elemCountID +`" )
                     h3(class="itemLineChild") `+ sample.title +`
