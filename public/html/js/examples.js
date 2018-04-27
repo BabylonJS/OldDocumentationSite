@@ -7,6 +7,8 @@ var load = function(pgID, lineID) {
     root.appendChild(iframe);
  
     iframe.src = "https://playground.babylonjs.com/frame.html" + pgID + "?";
+    iframe.style.outline = 'none !important';
+    iframe.style.border = 'none !important';
 
     var lines = document.getElementsByClassName("itemLine");
 
