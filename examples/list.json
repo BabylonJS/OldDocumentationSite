@@ -365,7 +365,14 @@
                     "icon": "icons/shadows.png", 
                     "description": "Setup a scene with lights and meshes to cast different types of shadows",
                     "PGID": "#IFYDRS#0"
-                }                            
+                },
+                {
+                    "title": "Point light shadows",
+                    "doc": "https://doc.babylonjs.com/babylon101/shadows",
+                    "icon": "icons/point_shadows.jpg", 
+                    "description": "Use point light to cast shadows",
+                    "PGID": "#4MC650#0"
+                }                               
             ]
         },            
         {            

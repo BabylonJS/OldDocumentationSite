@@ -20,17 +20,6 @@ var load = function(pgID, lineID) {
     document.getElementById(lineID).classList.add("itemLineActive");
 };
 
-    var lines = document.getElementsByClassName("itemLine");
-
-    for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
-        var line = lines[lineIndex];
-        line.classList.remove("itemLineActive");
-    }
-
-    document.getElementById(lineID).classList.add("itemLineActive");
-
-};
-
 var filterBar = document.querySelector("#filterBar");
 var filter = function() {
     let value = filterBar.value.toLowerCase();
