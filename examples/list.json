@@ -37,7 +37,7 @@
                     "icon": "icons/instanced_bones.png", 
                     "description": "Animated skeletons of people walking",
                     "PGID": "#0K8EYN#0"
-                }                       
+                }                  
             ]
         },
         {
@@ -160,6 +160,34 @@
                     "icon": "icons/pbr.png", 
                     "description": "Physically based rendering materials",
                     "PGID": "#8MGKWK#0"
+                },
+                {
+                    "title": "Saving dynamic texture on disk",
+                    "doc": "https://doc.babylonjs.com/babylon101/materials",
+                    "icon": "icons/savingDynamicTexture.jpg",
+                    "description": "Save a texture generated at runtime",
+                    "PGID": "#CA4SM#1"
+                },
+                {
+                    "title": "Glass wubble ball",
+                    "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering_master",
+                    "icon": "icons/glassWubbleBall.jpg",
+                    "description": "Warped ball effect using a glass material",
+                    "PGID": "#CXOLW#3"
+                },
+                {
+                    "title": "PBR with music analyzer",
+                    "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering_master",
+                    "icon": "icons/musicAnalyzer.jpg",
+                    "description": "Visualize audio using babylon",
+                    "PGID": "#2JOSXE#13"
+                },
+                {
+                    "title": "Glossiness and roughness",
+                    "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering_master",
+                    "icon": "icons/glossinessAndRoughness.jpg",
+                    "description": "Demonstration of glossiness and rouphness features of PBR materials",
+                    "PGID": "#RNBKQ#8"
                 }             
             ]
         }, 
@@ -187,6 +215,27 @@
                     "icon": "icons/rotation_and_scaling.png", 
                     "description": "Position mesh layout in space",
                     "PGID": "#CURCZC#0"
+                },
+                {
+                    "title": "Using mesh.lookAt",
+                    "doc": "https://doc.babylonjs.com/babylon101/position",
+                    "icon": "icons/meshLookAt.jpg",
+                    "description": "Visual effect created by pointing multiple meshes towards a single mesh that is moving around",
+                    "PGID": "#ILRIF#0"
+                },
+                {
+                    "title": "Using BABYLON.Path3D",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_path3d",
+                    "icon": "icons/path3D.jpg",
+                    "description": "Use Path3D to create a curved line",
+                    "PGID": "#7SQDY#1"
+                },
+                {
+                    "title": "Rotating mesh to look at a target",
+                    "doc": "https://doc.babylonjs.com/babylon101/position",
+                    "icon": "icons/meshLook.jpg",
+                    "description": "Make a mesh face towards where the pointer hit a plane",
+                    "PGID": "#23M0G6#1"
                 }                                      
             ]
         },
@@ -220,6 +269,13 @@
                     "icon": "icons/particle_editor.jpg",
                     "description": "Online editor to play with particle parameters",
                     "PGID": "#NNL67B#1"
+                },
+                {
+                    "title": "A lot of triangles with SPS",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "icon": "icons/solidParticleSystem.jpg",
+                    "description": "Use solid particle system to create a colorful cube",
+                    "PGID": "#2FPT1A#5"
                 }                     
             ]
         },            
@@ -272,7 +328,14 @@
                     "icon": "icons/shadows.png", 
                     "description": "Setup a scene with lights and meshes to cast different types of shadows",
                     "PGID": "#IFYDRS#0"
-                }                            
+                },
+                {
+                    "title": "Shadow on transparent textures",
+                    "doc": "https://doc.babylonjs.com/babylon101/shadows",
+                    "icon": "icons/trasnparent_shadow.jpg",
+                    "description": "Create realistic shadows from a transparent texture",
+                    "PGID": "#2DT16W#2"
+                }                              
             ]
         },                
         {
@@ -328,6 +391,13 @@
                     "PGID": "#95PXRY#0"
                 },
                 {
+                    "title": "Raycast on heightmap",
+                    "doc": "https://doc.babylonjs.com/babylon101/raycasts",
+                    "icon": "icons/heightMapRaycast.jpg",
+                    "description": "Raycast to find positions on a heightmap",
+                    "PGID": "#QM57B#0"
+                },
+                {
                     "title": "Fresnel",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
                     "icon": "icons/fresnel.png", 
@@ -375,7 +445,50 @@
                     "icon": "icons/refraction_and_reflection.png", 
                     "description": "Simulate how light would reflect and refract with a sphere",
                     "PGID": "#XH85A9#0"
-                }                  
+                },
+                {
+                    "title": "Portals",
+                    "doc": "https://doc.babylonjs.com/how_to/supporting_fog_with_shadermaterial",
+                    "icon": "icons/portals.jpg",
+                    "description": "Portal effect created using custom shaders",
+                    "PGID": "#EEOWP#7"
+                },
+                {
+                    "title": "X-ray material with Fresnel",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
+                    "icon": "icons/xRayFresnel.jpg",
+                    "description": "Use fresnel parameters to simulate an x-ray effect",
+                    "PGID": "#GK7FK#0"
+                },
+                {
+                    "title": "Warp speed !",
+                    "doc": "https://doc.babylonjs.com/how_to/shader_material",
+                    "icon": "icons/warpSpeed.jpg",
+                    "description": "Fly though stars using a custom shader texture",
+                    "PGID": "#1WBBW0#1"
+                },
+                {
+                    "title": "Hypnotizing infinite loader",
+                    "doc": "https://doc.babylonjs.com/babylon101/position",
+                    "icon": "icons/infiniteLoader.jpg",
+                    "description": "Visually apealing loading animation",
+                    "PGID": "#VUJG1#1"
+                },
+                
+                {
+                    "title": "Equirectangular map as reflection texture",
+                    "doc": "https://doc.babylonjs.com/how_to/reflect",
+                    "icon": "icons/equMapOnReflectionTexture.jpg",
+                    "description": "Using Equirectangular maps as a reflection texture",
+                    "PGID": "#27FN5R#8"
+                },
+                {
+                    "title": "Mirors",
+                    "doc": "https://doc.babylonjs.com/how_to/reflect",
+                    "icon": "icons/mirrors.jpg",
+                    "description": "Shows how to use mirrors in babylon",
+                    "PGID": "#2EP7UB#0"
+                }           
             ]
         },
         {
