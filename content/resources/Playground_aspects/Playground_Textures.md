@@ -118,7 +118,6 @@ new BABYLON.HDRCubeTexture("textures/filename", scene);
 | --- | --- | --- |
 | country.hdr | <img src = 'http://www.babylonjs-playground.com/textures/country.hdr_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F) |
 | environment.hdr | <img src = 'http://www.babylonjs-playground.com/textures/environment.hdr_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#9) |
-| environment.babylon.hdr | <img src = 'http://www.babylonjs-playground.com/textures/cubemap_blank.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#2) |
 | forest.hdr | <img src = 'http://www.babylonjs-playground.com/textures/forest.hdr_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#3) |
 | night.hdr | <img src = 'http://www.babylonjs-playground.com/textures/night.hdr_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#4) |
 | parking.hdr | <img src = 'http://www.babylonjs-playground.com/textures/parking.hdr_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#5) |
@@ -129,13 +128,23 @@ new BABYLON.HDRCubeTexture("textures/filename", scene);
 In the Playground use
 
 ```javascript
-new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/environment.dds", scene);
+new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/filename", scene);
 ```
 
 | Filename | Overview | Viewer |
 | --- | --- | --- |
 | environment.dds | <img src = 'http://www.babylonjs-playground.com/textures/environment.dds_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#7) |
 | SpecularHDR.dds | <img src = 'http://www.babylonjs-playground.com/textures/SpecularHDR.dds_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#8) |
+
+In the Playground use
+
+```javascript
+myMaterial.environmentBRDFTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/filename", scene, true, false);
+```
+
+| Filename | Overview | Viewer | Comment |
+| --- | --- | --- | --- |
+| fullFloatEnvironmentBrdf.dds | <img src = 'http://www.babylonjs-playground.com/textures/environment.dds_thumb.jpg' width = '64' height = '64'>| [take a look](http://playground.babylonjs.com/#CGA05F#11) | [32 bit version](https://github.com/BabylonJS/Babylon.js/issues/4156#issuecomment-382982858) of the environment.dds file|
 
 ## Videos
 
@@ -202,6 +211,7 @@ walk.png | <img src = 'http://www.babylonjs-playground.com/textures/walk.png' wi
 
 Filename | Image
 ---|---
+backgroundGround.png | <img src = 'https://assets.babylonjs.com/environments/backgroundGround.png' width = '64' height = '64'>
 DemageFont.png | <img src = 'http://www.babylonjs-playground.com/textures/DemageFont.png' width = '64' height = '64'>
 invmask.png | <img src = 'http://www.babylonjs-playground.com/textures/invmask.png' width = '64' height = '64'>
 mask.png | <img src = 'http://www.babylonjs-playground.com/textures/mask.png' width = '64' height = '64'>
