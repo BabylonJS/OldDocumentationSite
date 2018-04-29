@@ -1,0 +1,43 @@
+/* MEDIUM SCREEN*/
+@include media($medium-screen) {
+
+}
+
+/* SMALL SCREENS VERSION */
+@include media($small-screen) {
+  #wrapper.example {
+    width: 100%;
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+    overflow: auto;
+    
+    #parentIframe {
+        position: absolute;
+        left: 5%;
+        width: calc(90%);
+        height: 400px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Centerer {
+            text-align: center;
+            height: 50%;
+            width: 100%;
+
+            p {
+                margin-top:15vh;
+                font-size:30px;
+            }
+        }
+    }
+
+    #examplePage {
+        margin-top: 400px;
+        width: calc(100% - 2px);
+        overflow-y: visible;
+    }
+  }
+}
