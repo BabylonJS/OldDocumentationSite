@@ -151,7 +151,14 @@
         },         
         {
             "title": "Materials",
-            "samples": [            
+            "samples": [   
+                {
+                    "title": "X-ray material with Fresnel",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
+                    "icon": "icons/xRayFresnel.jpg",
+                    "description": "Use fresnel parameters to simulate an x-ray effect",
+                    "PGID": "#GK7FK#0"
+                },                         
                 {
                     "title": "Materials",
                     "doc": "https://doc.babylonjs.com/babylon101/materials",
@@ -167,31 +174,10 @@
                     "PGID": "#8MGKWK#0"
                 },
                 {
-                    "title": "Saving dynamic texture on disk",
-                    "doc": "https://doc.babylonjs.com/babylon101/materials",
-                    "icon": "icons/savingDynamicTexture.jpg",
-                    "description": "Save a texture generated at runtime",
-                    "PGID": "#CA4SM#1"
-                },
-                {
-                    "title": "Glass wubble ball",
-                    "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering_master",
-                    "icon": "icons/glassWubbleBall.jpg",
-                    "description": "Warped ball effect using a glass material",
-                    "PGID": "#CXOLW#3"
-                },
-                {
-                    "title": "PBR with music analyzer",
-                    "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering_master",
-                    "icon": "icons/musicAnalyzer.jpg",
-                    "description": "Visualize audio using babylon",
-                    "PGID": "#2JOSXE#13"
-                },
-                {
                     "title": "Glossiness and roughness",
-                    "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering_master",
+                    "doc": "http://doc.babylonjs.com/api/classes/babylon.standardmaterial",
                     "icon": "icons/glossinessAndRoughness.jpg",
-                    "description": "Demonstration of glossiness and rouphness features of PBR materials",
+                    "description": "Demonstration of glossiness and rouphness features of standard material",
                     "PGID": "#RNBKQ#8"
                 },
                 {
@@ -226,7 +212,14 @@
         },         
         {
             "title": "Meshes",
-            "samples": [     
+            "samples": [   
+                {
+                    "title": "Raycast on heightmap",
+                    "doc": "https://doc.babylonjs.com/babylon101/raycasts",
+                    "icon": "icons/heightMapRaycast.jpg",
+                    "description": "Raycast to find positions on a heightmap",
+                    "PGID": "#QM57B#0"
+                },                  
                 {
                     "title": "Basic scene",
                     "doc": "http://doc.babylonjs.com/features/scene",
@@ -249,14 +242,7 @@
                     "PGID": "#CURCZC#0"
                 },
                 {
-                    "title": "Using mesh.lookAt",
-                    "doc": "https://doc.babylonjs.com/babylon101/position",
-                    "icon": "icons/meshLookAt.jpg",
-                    "description": "Visual effect created by pointing multiple meshes towards a single mesh that is moving around",
-                    "PGID": "#ILRIF#0"
-                },
-                {
-                    "title": "Using BABYLON.Path3D",
+                    "title": "Curved lines",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_path3d",
                     "icon": "icons/path3D.jpg",
                     "description": "Use Path3D to create a curved line",
@@ -456,17 +442,31 @@
                     "PGID": "#EDVU95#0"
                 },
                 {
-                    "title": "Audio analyzer",
+                    "title": "Audio analyzer #1",
                     "doc": "https://doc.babylonjs.com/how_to/playing_sounds_and_music#using-the-analyser",
                     "icon": "icons/analyzer.jpg", 
                     "description": "Analyze audio frequencies in realtime",
                     "PGID": "#TUR5GH#0"
+                },
+                {
+                    "title": "PBR with music analyzer #2",
+                    "doc": "http://doc.babylonjs.com/how_to/playing_sounds_and_music#using-the-analyser",
+                    "icon": "icons/musicAnalyzer.jpg",
+                    "description": "Visualize audio frequencies in realtime",
+                    "PGID": "#2JOSXE#21"
                 }
             ]
         },    
         {
             "title": "Special FX",
             "samples": [
+                {
+                    "title": "Glass wubble ball",
+                    "doc": "http://doc.babylonjs.com/api/classes/babylon.abstractmesh#getverticesdata",
+                    "icon": "icons/glassWubbleBall.jpg",
+                    "description": "Warped ball effect",
+                    "PGID": "#CXOLW#3"
+                },                
                 {
                     "title": "Color curves",
                     "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#imageprocessing",
@@ -510,20 +510,6 @@
                     "PGID": "#7G0IQW#0"
                 },
                 {
-                    "title": "Height map",
-                    "doc": "https://doc.babylonjs.com/babylon101/height_map",
-                    "icon": "icons/height_map.png", 
-                    "description": "Use a height map to extrude a plane to create mountains",
-                    "PGID": "#95PXRY#0"
-                },
-                {
-                    "title": "Raycast on heightmap",
-                    "doc": "https://doc.babylonjs.com/babylon101/raycasts",
-                    "icon": "icons/heightMapRaycast.jpg",
-                    "description": "Raycast to find positions on a heightmap",
-                    "PGID": "#QM57B#0"
-                },
-                {
                     "title": "Fresnel",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
                     "icon": "icons/fresnel.png", 
@@ -560,17 +546,10 @@
                 },
                 {
                     "title": "Portals",
-                    "doc": "https://doc.babylonjs.com/how_to/supporting_fog_with_shadermaterial",
+                    "doc": "http://doc.babylonjs.com/resources/shaderintro",
                     "icon": "icons/portals.jpg",
                     "description": "Portal effect created using custom shaders",
                     "PGID": "#EEOWP#7"
-                },
-                {
-                    "title": "X-ray material with Fresnel",
-                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
-                    "icon": "icons/xRayFresnel.jpg",
-                    "description": "Use fresnel parameters to simulate an x-ray effect",
-                    "PGID": "#GK7FK#0"
                 },
                 {
                     "title": "Warp speed !",
@@ -585,24 +564,9 @@
                     "icon": "icons/infiniteLoader.jpg",
                     "description": "Visually apealing loading animation",
                     "PGID": "#VUJG1#1"
-                },
-                
+                },            
                 {
-                    "title": "Equirectangular map as reflection texture",
-                    "doc": "https://doc.babylonjs.com/how_to/reflect",
-                    "icon": "icons/equMapOnReflectionTexture.jpg",
-                    "description": "Using Equirectangular maps as a reflection texture",
-                    "PGID": "#27FN5R#8"
-                },
-                {
-                    "title": "Mirors",
-                    "doc": "https://doc.babylonjs.com/how_to/reflect",
-                    "icon": "icons/mirrors.jpg",
-                    "description": "Shows how to use mirrors in babylon",
-                    "PGID": "#2EP7UB#0"
-                },
-                {
-                    "title": "Relatime refraction",
+                    "title": "Realtime refraction",
                     "doc": "http://doc.babylonjs.com/how_to/how_to_use_reflection_probes",
                     "icon": "icons/refraction.jpg", 
                     "description": "use reflection probes to simulate realtime refraction",
@@ -627,6 +591,13 @@
         {
             "title": "Textures",
             "samples": [   
+                {
+                    "title": "Saving dynamic texture on disk",
+                    "doc": "http://doc.babylonjs.com/how_to/dynamictexture",
+                    "icon": "icons/savingDynamicTexture.jpg",
+                    "description": "Save a texture generated at runtime using DynamicTexture",
+                    "PGID": "#CA4SM#1"
+                },                
                 {
                     "title": "360 videos",
                     "doc": "http://doc.babylonjs.com/how_to/360videodome",
@@ -654,7 +625,21 @@
                     "icon": "icons/starfield.jpg", 
                     "description": "Use the starfield procedual texture to simulate space",
                     "PGID": "#ZQWE4G#0"
-                }                                     
+                },
+                {
+                    "title": "Equirectangular map as reflection texture",
+                    "doc": "https://doc.babylonjs.com/how_to/reflect",
+                    "icon": "icons/equMapOnReflectionTexture.jpg",
+                    "description": "Using Equirectangular maps as a reflection texture",
+                    "PGID": "#23IQHK#2"
+                },
+                {
+                    "title": "Mirrors",
+                    "doc": "https://doc.babylonjs.com/how_to/reflect",
+                    "icon": "icons/mirrors.jpg",
+                    "description": "Shows how to use mirrors in babylon",
+                    "PGID": "#2EP7UB#0"
+                }                         
             ]
         },
         {
