@@ -1,0 +1,29 @@
+include includes/header.pug
+    include includes/banner.pug
+    #wrapper
+        script.
+            function resizeIframe(obj) {
+                obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+                document.body.scrollIntoView();
+                var target;
+                if (obj.contentWindow.location.href.indexOf("/classes/classes/babylon.") !== -1) {
+                    target = obj.contentWindow.location.href.replace(".html", "").replace("/classes/classes/babylon.", "/api.html?");
+                } else {
+                    target = obj.contentWindow.location.href.replace("/classes/globals.html", "/api.html");
+                }
+
+                if (target && location.href !== target) {
+                    // Faking the URL
+                    window.history.replaceState({state:""}, "Babylon.js Documentation", target);
+                }
+            }
+        iframe(id="iframe", width='100%', scrolling='no', frameborder='no', src="/classes/globals.html" onload="resizeIframe(this)")
+        script.
+            (function deepLink() {
+                var iframe = document.getElementById("iframe");
+
+                if (location.search) {
+                    iframe.src = "/classes/classes/babylon." + location.search.replace("babylon", "").replace("?", "") + ".html" + location.hash;
+                }
+            })()
+    include includes/footer.pug        
