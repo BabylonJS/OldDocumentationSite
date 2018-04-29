@@ -21,6 +21,7 @@ $x-small-screen: new-breakpoint(max-width 610px 6);
 @import "search/search";
 @import "playground/playground";
 @import "error/error";
+@import "example/example"; 
 
 @import "common/slideout-menu";
 
@@ -34,3 +35,4 @@ $x-small-screen: new-breakpoint(max-width 610px 6);
 @import "search/mobile_search";
 @import "playground/mobile_playground";
 @import "error/mobile_error";
+@import "example/mobile_example";
