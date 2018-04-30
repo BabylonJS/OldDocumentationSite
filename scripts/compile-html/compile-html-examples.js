@@ -79,7 +79,7 @@ include includes/banner.pug
 `    
     div#parentIframe
         div(class='Centerer')
-            p Please, choose an item in the list.
+            p(style="font-size: 20px") Please, choose an example in the list
             img(src='../img/logos/logo-babylonjs.png')
 
 include includes/footer.pug

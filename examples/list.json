@@ -153,6 +153,13 @@
             "title": "Materials",
             "samples": [   
                 {
+                    "title": "ShaderMaterial",
+                    "doc": "http://doc.babylonjs.com/how_to/shader_material",
+                    "icon": "icons/custom_shader.jpg",
+                    "description": "Use ShaderMaterial to create advanced effects",
+                    "PGID": "#ATDL99#0"
+                },                 
+                {
                     "title": "X-ray material with Fresnel",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_fresnelparameters",
                     "icon": "icons/xRayFresnel.jpg",
@@ -270,17 +277,71 @@
                     "PGID": "#TFLTJJ#0"
                 },        
                 {
+                    "title": "Polygon mesh",
+                    "doc": "http://doc.babylonjs.com/how_to/polygonmeshbuilder",
+                    "icon": "icons/polygon_mesh.jpg", 
+                    "description": "Use PolygonMeshBuilder to create meshes from polygon data",
+                    "PGID": "#0TQAQU#0"
+                },                     
+                {
                     "title": "Look at",
                     "doc": "http://doc.babylonjs.com/api/classes/babylon.abstractmesh#lookat",
                     "icon": "icons/look_at.jpg", 
                     "description": "Use lookAt() function to align meshes on a specific target",
                     "PGID": "#N2K3ZN#0"
-                }                                 
+                },        
+                {
+                    "title": "Ribbons",
+                    "doc": "http://doc.babylonjs.com/how_to/ribbon_tutorial",
+                    "icon": "icons/ribbons.jpg", 
+                    "description": "Use ribbons to create complex meshes",
+                    "PGID": "#29BR2V#1"
+                },        
+                {
+                    "title": "Decals",
+                    "doc": "http://doc.babylonjs.com/how_to/decals",
+                    "icon": "icons/decals.jpg", 
+                    "description": "Create decals to apply additional textures to a portion of a mesh",
+                    "PGID": "#EEUVTY#0"
+                }                                    
             ]
         },
         {
+            "title": "Optimizations",
+            "samples": [
+                {
+                    "title": "Level of detail",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_lod",
+                    "icon": "icons/lod.jpg",
+                    "description": "Use various meshes based on distance to optimize rendering speed",
+                    "PGID": "#7HMHAU#0"
+                },
+                {
+                    "title": "Hardware instancing",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_instances",
+                    "icon": "icons/instances.jpg",
+                    "description": "Use hardware instancing to duplicate meshes at no cost",
+                    "PGID": "#YB006J#0"
+                },
+                {
+                    "title": "Octrees",
+                    "doc": "http://doc.babylonjs.com/how_to/optimizing_your_scene_with_octrees",
+                    "icon": "icons/octree.jpg",
+                    "description": "Use octrees to boost mesh selections when dealing with thousands of objects",
+                    "PGID": "#3YFJ5R#0"
+                }
+            ]
+        },        
+        {
             "title": "Particles",
             "samples": [
+                {
+                    "title": "Particles with custom shader",
+                    "doc": "http://doc.babylonjs.com/how_to/customise#custom-effects",
+                    "icon": "icons/custom_particles.jpg",
+                    "description": "Use custom shader to display CPU particles",
+                    "PGID": "#807QEP#0"
+                },                
                 {
                     "title": "GPU particles",
                     "doc": "http://doc.babylonjs.com/babylon101/particles#gpu-particles",
@@ -421,7 +482,21 @@
                     "icon": "icons/point_shadows.jpg", 
                     "description": "Use point light to cast shadows",
                     "PGID": "#4MC650#0"
-                }                               
+                },
+                {
+                    "title": "Multi directional lights with soft shadows",
+                    "doc": "https://doc.babylonjs.com/babylon101/shadows",
+                    "icon": "icons/multi_shadows.jpg", 
+                    "description": "Use multiple directional lights to cast soft shadows",
+                    "PGID": "#KWS7KD#0"
+                },
+                {
+                    "title": "Different shadow filters",
+                    "doc": "https://doc.babylonjs.com/babylon101/shadows",
+                    "icon": "icons/shadow_filters.jpg", 
+                    "description": "Demonstrate different kind of shadows",
+                    "PGID": "#43T193#0"
+                }                                  
             ]
         },            
         {            
@@ -573,6 +648,13 @@
                     "PGID": "#RRYXWN#0"
                 },
                 {
+                    "title": "Realtime reflection",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_reflection_probes",
+                    "icon": "icons/reflection.jpg", 
+                    "description": "use reflection probes to simulate realtime reflection",
+                    "PGID": "#SF5RCN#0"
+                },                
+                {
                     "title": "Motion blur",
                     "doc": "http://doc.babylonjs.com/how_to/using_standard_rendering_pipeline#setting-up-the-motion-blur",
                     "icon": "icons/motion_blur.jpg", 
@@ -585,7 +667,14 @@
                     "icon": "icons/highlights.jpg", 
                     "description": "Highlight a mesh",
                     "PGID": "#7EESGZ#0"
-                }                        
+                },
+                {
+                    "title": "Lens effects",
+                    "doc": "http://doc.babylonjs.com/how_to/using_depth-of-field_and_other_lens_effects",
+                    "icon": "icons/lens_effect.jpg", 
+                    "description": "Create photographic effect with the LensRenderingPipeline",
+                    "PGID": "#B7JHWD#0"
+                }                           
             ]
         },
         {
@@ -639,7 +728,14 @@
                     "icon": "icons/mirrors.jpg",
                     "description": "Shows how to use mirrors in babylon",
                     "PGID": "#2EP7UB#0"
-                }                         
+                },
+                {
+                    "title": "Custom render targets",
+                    "doc": "http://doc.babylonjs.com/api/classes/babylon.rendertargettexture",
+                    "icon": "icons/custom_rendertarget.jpg",
+                    "description": "Use render target textures to generate procedural data",
+                    "PGID": "#CJWDJR#0"
+                }                            
             ]
         },
         {
