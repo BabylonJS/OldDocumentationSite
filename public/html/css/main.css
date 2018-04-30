@@ -50,7 +50,7 @@ body {
   height: 100%;
   font-weight: 300;
   font-family: "Roboto";
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 code {
@@ -1500,64 +1500,83 @@ p {
   overflow-y: auto;
   float: left;
 }
-#wrapper.example #examplePage h1 {
+#wrapper.example #examplePage #example-banner {
+  background-image: url("/img/pattern_ban_1.png");
+  background-repeat: repeat;
+  text-align: center;
+  padding: 10px 0;
+}
+#wrapper.example #examplePage #example-banner h1 {
   text-align: center;
 }
-#wrapper.example #examplePage .filterDiv {
+#wrapper.example #examplePage #filterBar {
+  width: 80%;
+  margin-left: 10%;
+}
+#wrapper.example #examplePage .categoryContainer p {
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: 200;
+}
+#wrapper.example #examplePage .categoryContainer #noResults {
   width: 100%;
   text-align: center;
 }
-#wrapper.example #examplePage .filterDiv #filterBar {
-  width: 72%;
-}
-#wrapper.example #examplePage .itemLine:hover {
+#wrapper.example #examplePage .categoryContainer .itemLine:hover {
   background-color: #3B789A;
   color: white;
 }
-#wrapper.example #examplePage .itemLine:active {
-  color: white;
+#wrapper.example #examplePage .categoryContainer .itemLine:active {
   background-color: #2C5A74;
+  color: white;
 }
-#wrapper.example #examplePage .itemLine {
+#wrapper.example #examplePage .categoryContainer .itemLine {
   cursor: pointer;
   background-color: #ebebeb;
   height: 120px;
   overflow: hidden;
   clear: both;
   margin: 5px;
-  margin-bottom: 10px img;
-  margin-bottom-max-height: 100%;
-  margin-bottom-max-width: 120px;
-  margin-bottom-display: inline-block;
+  margin-bottom: 10px;
 }
-#wrapper.example #examplePage .itemLine .itemContent {
+#wrapper.example #examplePage .categoryContainer .itemLine .itemContent {
   padding-left: 10px;
 }
-
-#wrapper.example #examplePage .itemLine div {
+#wrapper.example #examplePage .categoryContainer .itemLine img {
+  max-height: 100%;
+  max-width: 120px;
+  display: inline-block;
+}
+#wrapper.example #examplePage .categoryContainer .itemLine div {
   display: inline-block;
   width: calc(100% - 125px);
   vertical-align: top;
   padding: 5px;
   box-sizing: border-box;
 }
-#wrapper.example #examplePage .itemLine div h3 {
+#wrapper.example #examplePage .categoryContainer .itemLine div h3 {
   margin: 0px;
   font-size: 18px;
   margin-bottom: 5px;
 }
-#wrapper.example #examplePage .itemLine div p {
+#wrapper.example #examplePage .categoryContainer .itemLine div p {
   margin: 0px;
   font-size: 15px;
   margin-bottom: 3px;
 }
-#wrapper.example #examplePage .itemLine div a {
+#wrapper.example #examplePage .categoryContainer .itemLine div a {
   font-size: 15px;
   text-decoration: underline;
   color: #00AEEF;
 }
-#wrapper.example #examplePage .itemLineActive {
+#wrapper.example #examplePage .categoryContainer .itemLine div a:nth-of-type(2) {
+  display: none;
+}
+#wrapper.example #examplePage .categoryContainer .itemLineActive {
   background-color: #3B789A;
+}
+#wrapper.example #examplePage #noResultsContainer {
+  display: none;
 }
 #wrapper.example #parentIframe {
   width: calc(100% - 400px);
@@ -1567,6 +1586,7 @@ p {
 #wrapper.example #parentIframe iframe {
   width: 100%;
   height: 100%;
+  border: none;
 }
 #wrapper.example #parentIframe .Centerer {
   text-align: center;
@@ -1577,6 +1597,7 @@ p {
   margin-top: 35vh;
   font-size: 30px;
 }
+
 .slideout-menu {
   display: none;
   margin-top: 50px;
@@ -2014,6 +2035,7 @@ p {
     overflow: auto;
   }
   #wrapper.example #parentIframe {
+    display: none;
     position: absolute;
     left: 5%;
     width: calc(90%);
@@ -2033,7 +2055,6 @@ p {
     font-size: 30px;
   }
   #wrapper.example #examplePage {
-    margin-top: 400px;
     width: calc(100% - 2px);
     overflow-y: visible;
   }

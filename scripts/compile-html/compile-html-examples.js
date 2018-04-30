@@ -36,12 +36,10 @@ include includes/header.pug
 include includes/banner.pug
 #wrapper.example
     div#examplePage
-        h1 Examples
+        div#example-banner
+            h1 Examples
         .horizontal-separator
-        div.filterDiv
-            input(id='filterBar',type='text', name='filter', placeholder='Filter examples...')
-            button()
-                i.fa.fa-search
+        input(id='filterBar',type='text', name='filter', placeholder='Filter examples...')
 `;
     
     fs.readFile(EXAMPLES_PATH_JSON, function (err, listJson) { 
@@ -50,7 +48,8 @@ include includes/banner.pug
         list.examples.forEach(category => {
             pugContent += 
 `
-        p(style="margin-left:5px;font-size:20px; font-weight:200") ` + category.title + "\n";
+        div(class="categoryContainer")
+            p ` + category.title;
             var samples = category.samples;
             samples.sort((a, b) => {
                 if (a.title < b.title) {
@@ -64,17 +63,25 @@ include includes/banner.pug
             samples.forEach(sample => {
                 pugContent += 
 `
-            div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`','`+ elemCountID +`')")
-                img(src="`+ sample.icon +`")
-                div(class = "contentDiv`+ elemCountID +` itemContent" )
-                    h3(class="itemLineChild") `+ sample.title +`
-                    p(class="itemLineChild") `+ sample.description +`
-                    a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation `;
+                div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`','`+ elemCountID +`')")
+                    img(src="`+ sample.icon +`")
+                    div(class = "contentDiv`+ elemCountID +` itemContent" )
+                        h3(class="itemLineChild") `+ sample.title +`
+                        p(class="itemLineChild") `+ sample.description +`
+                        a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation
+                        a(href="https://playground.babylonjs.com/frame.html`+sample.PGID+`", class="itemLineChildLink childLink", target="_blank", id="PGlink_`+sample.PGID+`") Playground link `;
                     
                     elemCountID++;
             });
         });
 
+        // Add the "no results for search" field
+        pugContent += 
+`
+        div(class="categoryContainer" id="noResultsContainer")
+            p(id="noResults") No results found.`;
+
+        // Add the iframe for playground preview
         pugContent += 
 `    
     div#parentIframe

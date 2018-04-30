@@ -1,14 +1,24 @@
 var load = function(pgID, lineID) {
-    var iframe = document.createElement("iframe");
+
     var root = document.querySelector("#parentIframe");
-    if (root.childNodes.length > 0) {
-        root.removeChild(root.childNodes[0]);
+
+    // Mobile version - Don't display the iframe, open the playground in another tab
+    // The condition in the if is a trick, comparing the "display" value always point to a blank field "" !
+    if(root.clientHeight == 0) {
+        document.getElementById("PGlink_" + pgID).click();
     }
-    root.appendChild(iframe);
- 
-    iframe.src = "https://playground.babylonjs.com/frame.html" + pgID;
-    iframe.style.outline = 'none !important';
-    iframe.style.border = 'none !important';
+    // Desktop version - Display the playground in an iframe on the right
+    else {
+        var iframe = document.createElement("iframe");
+        if (root.childNodes.length > 0) {
+            root.removeChild(root.childNodes[0]);
+        }
+        root.appendChild(iframe);
+    
+        iframe.src = "https://playground.babylonjs.com/frame.html" + pgID;
+        iframe.style.outline = 'none !important';
+        iframe.style.border = 'none !important';
+    }
 
     var lines = document.getElementsByClassName("itemLine");
 
@@ -33,8 +43,24 @@ var filter = function() {
             line.style.display = "none";
         }
     }
+
+    var categories = document.getElementsByClassName("categoryContainer");
+    var displayCount = categories.length;
+
+    for(var categoryIndex = 0; categoryIndex < categories.length; categoryIndex++) {
+        var category = categories[categoryIndex];
+        category.style.display = "block";
+        if(category.clientHeight < 25) {
+            category.style.display = "none";
+            displayCount --;
+        }
+    }
+
+    if(displayCount == 0) document.getElementById("noResultsContainer").style.display = "block";
+    else  document.getElementById("noResultsContainer").style.display = "none";
 }
 
 
-filterBar.addEventListener('keyup', filter);
-filterBar.addEventListener('change', filter);
+//filterBar.addEventListener('keyup', filter);
+//filterBar.addEventListener('change', filter);
+filterBar.addEventListener('input', filter); // Necessary for clearing with the "x" on Edge
