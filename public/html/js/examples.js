@@ -2,10 +2,12 @@ var load = function(pgID, lineID) {
 
     var root = document.querySelector("#parentIframe");
 
-    // Mobile version - Don't display the iframe, open the playground in another tab
+    // Mobile version - Don't display the iframe, don't open it on click, display a link instead
     // The condition in the if is a trick, comparing the "display" value always point to a blank field "" !
-    if(root.clientHeight == 0) {
-        document.getElementById("PGlink_" + pgID).click();
+    if(root.clientHeight <= 0) {
+        // After testing, you can't click on documentation link on mobile, so remove the highlight
+        //document.getElementById("PGlink_" + pgID).click()
+        return;
     }
     // Desktop version - Display the playground in an iframe on the right
     else {
@@ -18,16 +20,22 @@ var load = function(pgID, lineID) {
         iframe.src = "https://playground.babylonjs.com/frame.html" + pgID;
         iframe.style.outline = 'none !important';
         iframe.style.border = 'none !important';
+
+        var lines = document.getElementsByClassName("itemLine");
+
+        for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
+            var line = lines[lineIndex];
+            line.classList.remove("itemLineActive");
+        }
+
+        document.getElementById(lineID).classList.add("itemLineActive");
     }
-
-    var lines = document.getElementsByClassName("itemLine");
-
-    for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
-        var line = lines[lineIndex];
-        line.classList.remove("itemLineActive");
+};
+var loadMobile = function(pgID) {
+    var root = document.querySelector("#parentIframe");
+    if(root.clientHeight == 0) {
+        document.getElementById("PGlink_" + pgID).click()
     }
-
-    document.getElementById(lineID).classList.add("itemLineActive");
 };
 
 var filterBar = document.querySelector("#filterBar");

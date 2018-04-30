@@ -38,6 +38,16 @@
     #examplePage {
         width: calc(100% - 2px);
         overflow-y: visible;
+
+        .categoryContainer {
+            .itemLine {
+                div {
+                    h3 {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
     }
   }
 }
