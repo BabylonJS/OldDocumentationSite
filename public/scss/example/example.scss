@@ -21,9 +21,18 @@
             }
         }
 
+        #filterBarClear {
+            display: none;
+            height: 10px;
+            margin-left: -19px;
+            cursor: pointer;
+        }
         #filterBar {
             width: 80%;
             margin-left: 10%;
+        }
+        #filterBar::-ms-clear {
+            display: none;
         }
 
         .categoryContainer {

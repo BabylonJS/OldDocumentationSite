@@ -1509,9 +1509,18 @@ p {
 #wrapper.example #examplePage #example-banner h1 {
   text-align: center;
 }
+#wrapper.example #examplePage #filterBarClear {
+  display: none;
+  height: 10px;
+  margin-left: -19px;
+  cursor: pointer;
+}
 #wrapper.example #examplePage #filterBar {
   width: 80%;
   margin-left: 10%;
+}
+#wrapper.example #examplePage #filterBar::-ms-clear {
+  display: none;
 }
 #wrapper.example #examplePage .categoryContainer p {
   margin-left: 5px;

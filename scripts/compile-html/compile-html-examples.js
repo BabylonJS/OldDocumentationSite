@@ -40,6 +40,7 @@ include includes/banner.pug
             h1 Examples
         .horizontal-separator
         input(id='filterBar',type='text', name='filter', placeholder='Filter examples...')
+        img(id="filterBarClear" src="/img/UI/clear_button.png")
 `;
     
     fs.readFile(EXAMPLES_PATH_JSON, function (err, listJson) { 

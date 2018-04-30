@@ -31,9 +31,14 @@ var load = function(pgID, lineID) {
 };
 
 var filterBar = document.querySelector("#filterBar");
+var filterBarClear = document.querySelector("#filterBarClear");
 var filter = function() {
     let value = filterBar.value.toLowerCase();
     var lines = document.querySelectorAll(".itemLine");
+
+    // Clear button
+    if(value.length > 0) filterBarClear.style.display = "inline-block";
+    else  filterBarClear.style.display = "none";
 
     for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
         var line = lines[lineIndex];
@@ -59,6 +64,11 @@ var filter = function() {
     if(displayCount == 0) document.getElementById("noResultsContainer").style.display = "block";
     else  document.getElementById("noResultsContainer").style.display = "none";
 }
+
+filterBarClear.addEventListener('click', function() {
+    filterBar.value = "";
+    filter();
+});
 
 
 //filterBar.addEventListener('keyup', filter);
