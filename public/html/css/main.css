@@ -1567,6 +1567,7 @@ p {
   margin: 0px;
   font-size: 18px;
   margin-bottom: 5px;
+  text-decoration: none;
 }
 #wrapper.example #examplePage .categoryContainer .itemLine div p {
   margin: 0px;
@@ -2066,6 +2067,9 @@ p {
   #wrapper.example #examplePage {
     width: calc(100% - 2px);
     overflow-y: visible;
+  }
+  #wrapper.example #examplePage .categoryContainer .itemLine div h3 {
+    text-decoration: underline;
   }
 }
 
