@@ -63,6 +63,13 @@
                     "icon": "icons/cameras.png", 
                     "description": "Types of cameras in babylonjs",
                     "PGID": "#1A3M5C#0"
+                },
+                {
+                    "title": "Device orientation camera",
+                    "doc": "https://doc.babylonjs.com/babylon101/cameras#device-orientation-camera",
+                    "icon": "icons/deviceOrientationCamera.jpg",
+                    "description": "Camera that reacts to events such as a mobile device being tilted forward or back",
+                    "PGID": "#12WBC#185"
                 }
             ]
         },
@@ -134,6 +141,34 @@
                     "icon": "icons/sim_lights.jpg", 
                     "description": "Use multiple lights on a single mesh",
                     "PGID": "#ZU5TKG#0"
+                },
+                {
+                    "title": "Point light",
+                    "doc": "https://doc.babylonjs.com/babylon101/lights#the-point-light",
+                    "icon": "icons/pointLight.jpg",
+                    "description": "Light emitting from a single point",
+                    "PGID": "#20OAV9#0"
+                },
+                {
+                    "title": "Directional light",
+                    "doc": "https://doc.babylonjs.com/babylon101/lights#the-directional-light",
+                    "icon": "icons/directionalLight.jpg",
+                    "description": "The light is emitted from everywhere in the specified direction, and has an infinite range",
+                    "PGID": "#20OAV9#1"
+                },
+                {
+                    "title": "Spot lgiht",
+                    "doc": "https://doc.babylonjs.com/babylon101/lights#the-spot-light",
+                    "icon": "icons/spotLight.jpg",
+                    "description": "Defines a cone of light pointing in a direction",
+                    "PGID": "#20OAV9#3"
+                },
+                {
+                    "title": "Hemispheric light",
+                    "doc": "https://doc.babylonjs.com/babylon101/lights#the-hemispheric-light",
+                    "icon": "icons/hemLight.jpg",
+                    "description": "Simulate an ambient environment light",
+                    "PGID": "#20OAV9#5"
                 }      
             ]
         },
@@ -167,6 +202,13 @@
                     "icon": "icons/assets_manager.jpg", 
                     "description": "Use AssetsManager to load multiple assets in a centralized way",
                     "PGID": "#Y7XMAR#0"
+                },
+                {
+                    "title": "Asset container",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_assetcontainer",
+                    "icon": "icons/assetContainer.jpg",
+                    "description": "To add and remove assets from a scene an AssetContainer can be used.",
+                    "PGID": "#17MXFZ#0"
                 }                 
             ]
         },         
