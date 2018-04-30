@@ -12,6 +12,7 @@
     overflow: auto;
     
     #parentIframe {
+        display: none;
         position: absolute;
         left: 5%;
         width: calc(90%);
@@ -35,7 +36,6 @@
     }
 
     #examplePage {
-        margin-top: 400px;
         width: calc(100% - 2px);
         overflow-y: visible;
     }
