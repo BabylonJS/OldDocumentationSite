@@ -1548,9 +1548,6 @@ p {
   margin: 5px;
   margin-bottom: 10px;
 }
-#wrapper.example #examplePage .categoryContainer .itemLine .itemContent {
-  padding-left: 10px;
-}
 #wrapper.example #examplePage .categoryContainer .itemLine img {
   max-height: 100%;
   max-width: 120px;
@@ -2070,6 +2067,17 @@ p {
   }
   #wrapper.example #examplePage .categoryContainer .itemLine div h3 {
     text-decoration: underline;
+    font-size: 1em;
+  }
+  #wrapper.example #examplePage .categoryContainer .itemLine div p {
+    font-size: 0.88em;
+  }
+  #wrapper.example #examplePage .categoryContainer .itemLine div a {
+    font-size: 0.88em;
+  }
+  #wrapper.example #examplePage .categoryContainer .itemLine div a:nth-of-type(2) {
+    display: block;
+    float: right;
   }
 }
 

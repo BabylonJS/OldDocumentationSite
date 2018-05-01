@@ -70,7 +70,7 @@ include includes/banner.pug
                         h3(class="itemLineChild", onclick="loadMobile('`+sample.PGID+`')") `+ sample.title +`
                         p(class="itemLineChild") `+ sample.description +`
                         a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation
-                        a(href="https://playground.babylonjs.com/frame.html`+sample.PGID+`", class="itemLineChildLink childLink", target="_blank", id="PGlink_`+sample.PGID+`") Playground link `;
+                        a(href="https://playground.babylonjs.com/frame.html`+sample.PGID+`", class="itemLineChildLink childLink", target="_blank", id="PGlink_`+sample.PGID+`") Playground`;
                     
                     elemCountID++;
             });
