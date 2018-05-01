@@ -25,8 +25,8 @@ BABYLON.GLTF2Export.GLBAsync(scene, "fileName").then((glb) => {
 glTF Exporter accepts an optional `options` parameter with certain functions and properties defined.
 
 ### Excluding geometry 
-Sometimes you may need to exclude geometry from export, such as the skybox.  You can define a boolean callback called `shouldExportMesh` which accepts a BabylonJS mesh as an argument and returns a boolean, specifying
-if the mesh should be exported or not:
+Sometimes you may need to exclude geometry from export, such as the skybox.  You can define a boolean callback called `shouldExportTransformNode` which accepts a BabylonJS transform node as an argument and returns a boolean, specifying
+if the node should be exported or not:
 
 ```javascript
 // Initializer code...

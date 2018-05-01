@@ -210,6 +210,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('examples', 'Build examples page', [
         'execute:compileExamples',
+        'copy:exampleIcons'
     ]);    
 
     grunt.registerTask('sass', 'Build examples page', [

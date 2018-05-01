@@ -44,6 +44,17 @@
                 div {
                     h3 {
                         text-decoration: underline;
+                        font-size: 1em;
+                    }
+                    p {
+                        font-size: 0.88em;
+                    }
+                    a {
+                        font-size: 0.88em;
+                    }
+                    a:nth-of-type(2) {
+                        display: block;
+                        float: right;
                     }
                 }
             }
