@@ -67,8 +67,9 @@ include includes/banner.pug
                 div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`','`+ elemCountID +`')")
                     img(src="`+ sample.icon +`", onclick="loadMobile('`+sample.PGID+`')")
                     div(class = "contentDiv`+ elemCountID +` itemContent" )
-                        h3(class="itemLineChild", onclick="loadMobile('`+sample.PGID+`')") `+ sample.title +`
-                        p(class="itemLineChild") `+ sample.description +`
+                        div(class="contentDivPlaygrond", onclick="loadMobile('`+sample.PGID+`')")
+                            h3(class="itemLineChild", onclick="loadMobile('`+sample.PGID+`')") `+ sample.title +`
+                            p(class="itemLineChild") `+ sample.description +`
                         a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation
                         a(href="https://playground.babylonjs.com/frame.html`+sample.PGID+`", class="itemLineChildLink childLink", target="_blank", id="PGlink_`+sample.PGID+`") Playground`;
                     
