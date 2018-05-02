@@ -77,17 +77,24 @@
                     padding: 5px;
                     box-sizing: border-box;
 
-                    h3 {
-                        margin: 0px;
-                        font-size: 18px;
-                        margin-bottom: 5px;
-                        text-decoration: none;
-                    }
+                    .contentDivPlaygrond {
+                        display: block;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
 
-                    p {
-                        margin: 0px;
-                        font-size: 15px;
-                        margin-bottom: 3px;
+                        h3 {
+                            margin: 0px;
+                            font-size: 18px;
+                            margin-bottom: 5px;
+                            text-decoration: none;
+                        }
+
+                        p {
+                            margin: 0px;
+                            font-size: 15px;
+                            margin-bottom: 3px;
+                        }
                     }
 
                     a {
