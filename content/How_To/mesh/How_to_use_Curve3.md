@@ -116,7 +116,8 @@ var path = catmullRom.getPoints();
 var l = catmullRom.length();
 ```
 
-* [Playground example - Catmull-Rom Spline](https://www.babylonjs-playground.com/#1AU0M4)
+* [Playground example - Catmull-Rom Spline Open Curve](https://www.babylonjs-playground.com/#1AU0M4)
+* [Playground example - Catmull-Rom Spline Closed Curve](https://www.babylonjs-playground.com/#1AU0M4#18)
 
 ## Custom Curve3 Object
 You can also make your own Curve3 object from a simple array of successive Vector3.   
