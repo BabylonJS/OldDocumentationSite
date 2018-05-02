@@ -7,44 +7,42 @@ PG_TITLE: glTF Exporter
 The glTF Exporter allows BabylonJS models to be exported to the [glTF 2.0 format](https://www.khronos.org/gltf/).
 
 ## Exporting a Scene to glTF
-The exporter expects the scene to be ready before exporting, so it is best called by the scene's [`executeWhenReady` function](https://doc.babylonjs.com/api/classes/babylon.scene#executewhenready):
 ```javascript
-scene.executeWhenReady(function() {
-    let gltf = BABYLON.GLTF2Export.GLTF(scene, "fileName");
+BABYLON.GLTF2Export.GLTFAsync(scene, "fileName").then((gltf) => {
     gltf.downloadFiles();
 });
+
 ```
-
-To download to glb format, simply replace the `GLTF` static function with `GLB`:
+To download to glb format, simply replace the `GLTFAsync` static function with `GLBAsync`:
 
 ```javascript
-scene.executeWhenReady(function() {
-    let gltf = BABYLON.GLTF2Export.GLB(scene, "fileName");
-    gltf.downloadFiles();
-});
+BABYLON.GLTF2Export.GLBAsync(scene, "fileName").then((glb) => {
+    glb.downloadFiles();
+};
 ```
 
 ## Export options
 glTF Exporter accepts an optional `options` parameter with certain functions and properties defined.
 
 ### Excluding geometry 
-Sometimes you may need to exclude geometry from export, such as the skybox.  You can define a boolean callback called `shouldExportMesh` which accepts a BabylonJS mesh as an argument and returns a boolean, specifying
-if the mesh should be exported or not:
+Sometimes you may need to exclude geometry from export, such as the skybox.  You can define a boolean callback called `shouldExportTransformNode` which accepts a BabylonJS transform node as an argument and returns a boolean, specifying
+if the node should be exported or not:
 
 ```javascript
 // Initializer code...
 let skybox = scene.createDefaultSkybox(hdrTexture, true, 100, 0.3);
 // scene setup code...
-scene.executeWhenReady(function() {
-    let options = {
-        shouldExportMesh: function(mesh) {
-            return mesh !== skybox;
-        }
-    }
 
-    let gltf = BABYLON.GLTF2Export.GLB(scene, "fileName", options);
-    gltf.downloadFiles();
-});
+let options = {
+    shouldExportTransformNode: function(transformNode) {
+        return transformNode !== skybox;
+    }
+}
+
+BABYLON.GLTF2Export.GLBAsync(scene, "fileName", options).then((glb) => {
+    glb.downloadFiles();
+});  
+
 ```
 
 ## Supported features

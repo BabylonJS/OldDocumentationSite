@@ -23,3 +23,4 @@ public/html/*
 !public/html/img/
 .history/
 log/bjs-doc-error.log
+package-lock.json

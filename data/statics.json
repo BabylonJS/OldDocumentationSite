@@ -130,6 +130,11 @@
             "desc": "The Scene",
             "files": [
                 {
+                    "title": "Use Multiple Scenes",
+                    "level": 1,
+                    "filename": "Multi_Scenes"
+                },
+                {
                     "title": "Create a custom loading screen",
                     "level": 2,
                     "filename": "Creating_a_custom_loading_screen"
@@ -1041,10 +1046,6 @@
                 {
                     "title": "Available Textures in the Playground",
                     "filename": "Playground_Textures"
-                },
-                {
-                    "title": "Interesting Playgrounds",
-                    "filename": "playgrounds"
                 },
                 {
                     "title": "Playground Based Tutorials",
