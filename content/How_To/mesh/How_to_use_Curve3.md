@@ -101,10 +101,12 @@ https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline
 ```javascript
 var nbPoints = 20;                     // the number of points between each Vector3 control points
 var points = [vec1, vec2, ..., vecN];  // an array of Vector3 the curve must pass through : the control points
-var catmullRom = BABYLON.Curve3.CreateCatmullRomSpline(points, nbPoints);
+var closed = true;                     // closes the curve when true
+var catmullRom = BABYLON.Curve3.CreateCatmullRomSpline(points, nbPoints, closed);
 ```
 * **points** : _Vector3_ an array of Vector3 (the control points) the curve will pass through,
-* **nbPoints** : _number_ the wanted curve number of points between each control point.
+* **nbPoints** : _number_ the wanted curve number of points between each control point,
+* **closed** : _boolean_ optional with default _false_; available from BJS V3.3; when true forms a closed curve.
 
 This static method returns an instance of _Curve3_.    
 Just use the Curve3 _getPoints()_ method to fill your array : _getPoints()_ returns an array of successive _Vector3_.       
