@@ -213,8 +213,14 @@ module.exports = function (grunt) {
         'copy:exampleIcons'
     ]);    
 
-    grunt.registerTask('sass', 'Build examples page', [
-        'sass:dev',
-    ]);       
+    grunt.registerTask('buildCss', 'Compile SCSS into CSS', [
+        'sass'
+        /**
+         * SASS CONFIG
+         * In order to use sass / scss, you need to install ruby,
+         * Then, check your install with "ruby -v"
+         * If it's ok, add sass with "gem install sass"
+         */
+    ]);
 };
 
