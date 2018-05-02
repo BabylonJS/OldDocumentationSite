@@ -23,7 +23,7 @@ Once your scene is exported, you have multiple solutions to test it:
 
 - quick check it into the [sandbox](http://sandbox.babylonjs.com/)
 - use the [viewer](http://doc.babylonjs.com/extensions/the_babylon_viewer)
-- script your own app using the [babylon loader](/how_to/load_from_any_file_type)
+- script your own app using the [loader](/how_to/load_from_any_file_type)
 
 ### Example
 
