@@ -157,7 +157,7 @@
                     "PGID": "#20OAV9#1"
                 },
                 {
-                    "title": "Spot lgiht",
+                    "title": "Spot light",
                     "doc": "https://doc.babylonjs.com/babylon101/lights#the-spot-light",
                     "icon": "icons/spotLight.jpg",
                     "description": "Defines a cone of light pointing in a direction",
