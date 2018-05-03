@@ -145,7 +145,7 @@ These are texture that you can have some control over by changing some parameter
 
 ### How Materials Work
 
-Sometimes in order to use materials more effectively it is good to know what is happening under the Babylon.js hood. Have a look at how color is applied to the vertices of the facets that make up the mesh and their effects. Find out more how materials are chached and compiled and how to improve the user experience. All available from the links in Further Reading.
+Sometimes in order to use materials more effectively it is good to know what is happening under the Babylon.js hood. Have a look at how color is applied to the vertices of the facets that make up the mesh and their effects. Find out more how materials are cached and compiled and how to improve the user experience. All available from the links in Further Reading.
 
 ### Compressed Texture for GPU
 
@@ -173,6 +173,7 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 
 ## Mid Level - L2
 [Using Parallax Mapping](/How_To/Using_parallax_mapping)  
+[Calculating UVs](/How_To/Custom#calculating-uvs)  
 
 ## More Advanced - L3
 [Reflection and Refraction](/How_To/Reflect)  
