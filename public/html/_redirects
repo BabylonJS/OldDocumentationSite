@@ -112,7 +112,7 @@
 /tutorials/Using_decals                                                           /How_To/Decals
 /tutorials/Using_Default_Rendering_Pipeline                                       /How_To/Using_Default_Rendering_Pipeline
 /tutorials/Using_depth-of-field_and_other_lens_effects                            /How_To/Using_depth-of-field_and_other_lens_effects
-/tutorials/Using_logarithmic_depth_buffer                                         /How_To/Using_logarithmic_depth_buffer
+/tutorials/using_logarithmic_depth_buffer                                         /How_To/Using_logarithmic_depth_buffer
 /tutorials/Using_parallax_mapping                                                 /How_To/Using_parallax_mapping
 /tutorials/Using_Standard_Rendering_Pipeline                                      /How_To/Using_Standard_Rendering_Pipeline
 /tutorials/Using_the_Incremental_Loading_System                                   /How_To/Using_the_Incremental_Loading_System
