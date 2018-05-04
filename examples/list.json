@@ -157,7 +157,7 @@
                     "PGID": "#20OAV9#1"
                 },
                 {
-                    "title": "Spot lgiht",
+                    "title": "Spot light",
                     "doc": "https://doc.babylonjs.com/babylon101/lights#the-spot-light",
                     "icon": "icons/spotLight.jpg",
                     "description": "Defines a cone of light pointing in a direction",
@@ -194,7 +194,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/load_gltf.jpg", 
                     "description": "Show how to easily load a glTF model",
-                    "PGID": "#PN1NNI#0"
+                    "PGID": "#PN1NNI#1"
                 },
                 {
                     "title": "Assets manager",

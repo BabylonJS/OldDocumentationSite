@@ -73,6 +73,7 @@
                 div {
                     display: inline-block;
                     width: calc(100% - 125px);
+                    height: 100%;
                     vertical-align: top;
                     padding: 5px;
                     box-sizing: border-box;
@@ -101,6 +102,10 @@
                         font-size: 15px;
                         text-decoration:underline;
                         color: #00AEEF;
+                    }
+                    a:nth-of-type(1) {
+                        position: relative;
+                        bottom: 20px;
                     }
                     a:nth-of-type(2) {
                         display: none;
