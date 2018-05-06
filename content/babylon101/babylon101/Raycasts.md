@@ -30,7 +30,7 @@ ______
 
 ## Detect the first mesh touched by the ray ##
 
- https://www.babylonjs-playground.com/#KNE0O#4
+ https://www.babylonjs-playground.com/#KNE0O#84
 
 ![Raycast simple](/img/how_to/raycast01.jpg)
 
@@ -46,21 +46,23 @@ The most important part is to get the good directional vector (l57) :
 		
 ```
 var forward = new BABYLON.Vector3(0,0,1);		
-	forward = vecToLocal(forward, box);
+forward = vecToLocal(forward, box);
 	
-	var direction = forward.subtract(origin);
-	direction = BABYLON.Vector3.Normalize(direction);
+var direction = forward.subtract(origin);
+direction = BABYLON.Vector3.Normalize(direction);
 ```
 		
 We want the forward vector relative to the box space and orientation. 
 Then, to get the direction, we subtract it from the origin, the box position.
 The function vecToLocal is designed to transform a position from a mesh point of view by multiplicating a vector by the mesh matrix.
 
-Then, we create the ray with all elements given and a length of 100 for example (l65) : 
-*var ray = new BABYLON.Ray(origin, direction, length);*
+Then, we create the ray with all elements given and a length of 100 for example (l65) :
+
+```var ray = new BABYLON.Ray(origin, direction, length);```
 
 Finally, we get the hit point of the ray if it touches a mesh (l68) :
-*var hit = scene.pickWithRay(ray);*
+
+```var hit = scene.pickWithRay(ray);```
 
 And if a mesh is hit, we do what we want with the picking info like getting the mesh name, the position of the point etc...
 Here we change its size because it's funnier ! 
@@ -94,8 +96,9 @@ I added a new function predicate (l54) :
     }
 ```
 
-and in parameter here :  
-*scene.pickWithRay(ray, predicate);*
+and in parameter here :
+
+```scene.pickWithRay(ray, predicate);```
 
 The isPickable false argument becomes irrelevant so we have to avoid box.
 We avoid also box2 for testing and allow the rest (box3 and box4 by default).
@@ -129,11 +132,12 @@ It's like a strong bullet !
 An other method is to use directly the **Ray class**.
 
 To change the ray to a local space :
-*Ray.Transform(ray, matrix) → Ray*
+
+```Ray.Transform(ray, matrix) → Ray```
 
 Checking intersection :
-*Ray.intersectsMesh(mesh, fastCheck) → PickingInfo*
 
+```Ray.intersectsMesh(mesh, fastCheck) → PickingInfo```
 
 -----
 
@@ -155,12 +159,19 @@ rayHelper.show(scene);
 ```
 
 The helper can also be attached to a mesh to track its direction:
+
+```
+var localMeshDirection = new BABYLON.Vector3(0, 0, -1);
+var localMeshOrigin = new BABYLON.Vector3(0, 0, -.4);
+var length = 3;
+rayHelper.attachToMesh(box, localMeshDirection, localMeshOrigin, length);
+```
+
  https://www.babylonjs-playground.com/#ZHDBJ#37
 
 ## Next step
 
 Often it is sufficient to have some 2D shapes in you scene and [**sprites**](/babylon101/Sprites) are next.
-
 
 
 # Further Reading
