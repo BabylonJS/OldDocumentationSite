@@ -99,22 +99,22 @@ Notice that as the pivot is moved the axis line moves with the pivot, though the
 
 Perhaps you would like to think about achieving the positioning of the pivot by changing the pivots position rather than the pilots position. This can be done with parenting as shown in the following example.
 
-The sphere, representing the pivot at the center of rotation, is placed at the pivot position (CoR_At), the sphere is then made the parent of the pilot the pilot position relative to the pivot is set by matrix and the pilot rotated.
+The sphere, representing the pivot at the center of rotation, is placed at the pivot position (CoR_At), the sphere is then made the parent of the pilot. The translation needed to move the pilot starting position to the center of rotation is found and is used to set the pivot using a matrix.  The pilot position is reset to the translation vector and the pilot rotated.
 
 ```javascript
 sphere.position = CoR_At;
-
 pilot.parent = sphere;
+var pilotTranslate = pilotStart.subtract(CoR_At);
 pilot.setPivotMatrix(BABYLON.Matrix.Translation(pilotTranslate.x, pilotTranslate.y, pilotTranslate.z));
-
+pilot.position = pilotTranslate;
 pilot.rotate(axis, angle, BABYLON.Space.WORLD);
 ```
 
-* [Playground Example - Rotating Mesh as Pivot's Child](https://www.babylonjs-playground.com/#1JLGFP#33)
+* [Playground Example - Rotating Mesh as Pivot's Child](https://www.babylonjs-playground.com/#1JLGFP#77)
 
 Done this way any movement of the pivot is done by moving the parent mesh representing the pivot.  
-* [Playground Example - Rotating Mesh Moving Pivot's Parent along Axis](https://www.babylonjs-playground.com/#1JLGFP#34)
-* [Playground Example - Rotating Mesh Moving Pivot's Parent](https://www.babylonjs-playground.com/#1JLGFP#35)
+* [Playground Example - Rotating Mesh Moving Pivot's Parent along Axis](https://www.babylonjs-playground.com/#1JLGFP#78)
+* [Playground Example - Rotating Mesh Moving Pivot's Parent](https://www.babylonjs-playground.com/#1JLGFP#80)
 
 # Further Reading
 
