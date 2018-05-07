@@ -95,7 +95,7 @@ When looking at the next two playgrounds remember that the pivot has become the 
 Notice that as the pivot is moved the axis line moves with the pivot, though the axis direction remains the same.  
 * [Playground Example - Rotating Mesh Moving Pivot](https://www.babylonjs-playground.com/#C12LH3#2)
 
-## How to Use a Parent as a Pivot
+## How to Use a Parent as a Set Pivot
 
 Perhaps you would like to think about achieving the positioning of the pivot by changing the pivots position rather than the pilots position. This can be done with parenting as shown in the following example.
 
