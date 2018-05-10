@@ -749,7 +749,7 @@
                     "title": "Warp speed !",
                     "doc": "https://doc.babylonjs.com/how_to/shader_material",
                     "icon": "icons/warpSpeed.jpg",
-                    "description": "Fly though stars using a custom shader texture",
+                    "description": "Fly through stars using a custom shader texture",
                     "PGID": "#1WBBW0#1"
                 },
                 {
