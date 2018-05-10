@@ -459,7 +459,7 @@
                     "doc": "https://doc.babylonjs.com/babylon101/particles",
                     "icon": "icons/lying_fog.jpg",
                     "description": "Use particle to simulate volumetric fog",
-                    "PGID": "#BHNVUE#1"
+                    "PGID": "#BHNVUE#2"
                 },                           
                 {
                     "title": "Particle editor",
