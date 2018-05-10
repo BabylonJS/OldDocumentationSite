@@ -132,7 +132,7 @@ This will debug all the TS and js in chrome and stop on your breakpoints setup i
 The main entry points in BJS are:
 
 1. [Sandbox]("http://localhost:1338/sandbox/index-local.html"): [http://localhost:1338/sandbox/index-local.html](http://localhost:1338/sandbox/index-local.html)
-2. * [Playground]("http://localhost:1338/Playground/index-local.html"):  [http://localhost:1338/Playground/index-local.html](http://localhost:1338/Playground/index-local.html)
+2. [Playground]("http://localhost:1338/Playground/index-local.html"):  [http://localhost:1338/Playground/index-local.html](http://localhost:1338/Playground/index-local.html)
 3. [Materials Library]("http://localhost:1338/materialsLibrary/index.html"): [http://localhost:1338/materialsLibrary/index.html](http://localhost:1338/materialsLibrary/index.html)
 4. [Post Process Library]("http://localhost:1338/postProcessLibrary/index.html"): [http://localhost:1338/postProcessLibrary/index.html](http://localhost:1338/postProcessLibrary/index.html)
 5. [Procedural Textures Library]("http://localhost:1338/proceduralTexturesLibrary/index.html"): [http://localhost:1338/proceduralTexturesLibrary/index.html](http://localhost:1338/proceduralTexturesLibrary/index.html)
