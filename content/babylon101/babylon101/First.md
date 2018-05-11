@@ -76,6 +76,7 @@ Finally, after these, add code to call the scene, to enable the engine to contin
 	</style>
 	
 	<script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 	<script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
 	
    </head>
