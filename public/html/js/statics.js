@@ -45,21 +45,6 @@
                 line.parentElement.style.display = "none";
             }
         }
-
-        var categories = document.getElementsByClassName("categoryContainer");
-        var displayCount = categories.length;
-
-        for(var categoryIndex = 0; categoryIndex < categories.length; categoryIndex++) {
-            var category = categories[categoryIndex];
-            category.style.display = "block";
-            if(category.clientHeight < 25) {
-                category.style.display = "none";
-                displayCount --;
-            }
-        }
-
-        if(displayCount == 0) document.getElementById("noResultsContainer").style.display = "block";
-        else  document.getElementById("noResultsContainer").style.display = "none";
     }
     filterBar.addEventListener('input', filter);
 })(jQuery);
