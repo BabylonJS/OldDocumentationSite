@@ -6,6 +6,8 @@ include ../includes/header
 
         .horizontal-separator
         .statics-content
+            .search(style="text-align: center; width: 100%;")
+                input(id='filterBar',type='text', name='filter', placeholder='Filter guides...')
             .tagList
                 for folder in dataObj.folders
                     if(!folder.hidden)

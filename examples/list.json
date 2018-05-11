@@ -115,6 +115,13 @@
                     "icon": "icons/pointer_events_handling.png", 
                     "description": "Handle pointer input",
                     "PGID": "#C245A1#0"
+                },
+                {
+                    "title": "Keyboard + game loop",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_actions",
+                    "icon": "icons/keyboard.png", 
+                    "description": "Move a sphere around with the keyboard",
+                    "PGID": "#15EY4F#0"
                 }
             ]
         },
