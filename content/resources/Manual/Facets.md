@@ -28,7 +28,7 @@ Assigning red to vertex 3, green to vertex 2 and blue to vertex 6 results in a g
 
 Applying an image as a texture to the face 3, 2, 6, 7 means assigning image 
 coordinates to each of the vertices; (0, 1) to vertex 3, (1, 1) to vertex 2, (1, 0) to vertex 6 and (0, 0) to vertex 7. 
-These are then used to map the image across the facets.
+These are then used to map the image across the facets. Of course with a mesh consisting of many vertices wrapping an image as texture around the mesh will mean each vertex being assigned a point on the image using fractional values as descibed in [custom meshes](/How_To/Custom#calculating-uvs).
 
 ## Issues with Adjoining Faces
 
@@ -66,5 +66,10 @@ Again correct coincident positioning of vertices leads to a solid looking mesh. 
 
 Some meshes created with the MeshBuilder method use this approach, allowing the faceColors and faceUV options.
 
+# Further Reading
+
+[Calculating UVs](/How_To/Custom#calculating-uvs)  
+[How To Update Vertices](/How_To/Updating_Vertices.html)  
+[Normals in BJS](/resources/Normals.html)
   
     

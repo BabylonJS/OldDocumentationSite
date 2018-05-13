@@ -44,4 +44,4 @@ probe.attachToMesh(root);
 probe.position = new BABYLON.Vector3(0, 1, 0);
 ```
 
-If you want to try it, just click [here]( https://www.babylonjs-playground.com/#KA93U#16)
+If you want to try it, just click [here]( https://www.babylonjs-playground.com/#KA93U#243)

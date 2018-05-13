@@ -729,10 +729,6 @@
                     "filename": "how_to_start"
                 },
                 {
-                    "title": "Setup Visual Studio to Contribute to Babylon.js",
-                    "filename": "setup_visualStudio"
-                },
-                {
                     "title": "Follow Approved Naming Conventions",
                     "filename": "Approved_Naming_Conventions"
                 },

@@ -286,9 +286,22 @@ In the playground below clicking on next will cycle you through a variety of val
 
 * [Playground Example Varying UV Values](http://www.babylonjs-playground.com/#VKBJN#14) 
 
-### Notes on Playground
-The camera has been disabled for this playground. The uv values are shown and the relative index are shown on the texture image. 
+**Notes on Playground**
+The camera has been disabled for the above playground. The uv values are shown and the relative index are shown on the texture image. 
 One day this playground might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh the [arrangement of facets](/resources/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
+
+### Calculating UVs
+
+Calculating the uvs for a custom mesh obviously depends on the shape of the mesh and which parts of the texture you want projected onto the mesh at which position. Here is an example with a relatively simple mesh which is basically a flat surface with a couple of protudences.
+
+* [Playground Example UV Calculation](https://www.babylonjs-playground.com/#I092BE)
+
+The above playground takes the bottom left corner as matching the bottom left corner of the texture image and from the x, z position of each vertex calculates the uv value as the fractional distance of (x, z) from the bottom left corner.
+
+In general if the bottom left corner is at (a, b) and the bounding width and height of the mesh are w and h respectivley then for each (x, z)
+
+u = (x - a) / w and v = (z - b) / h
+
 
 # Further Reading
 
