@@ -38,3 +38,5 @@ If you don't need to use these features, you can call this function to free asso
 ```
 scene.clearCachedVertexData();
 ```
+
+You can find a demo [here](https://www.babylonjs-playground.com/#AS54U8)
