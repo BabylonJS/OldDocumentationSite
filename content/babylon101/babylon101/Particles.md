@@ -337,6 +337,7 @@ To completely stop a `GPUParticleSystem`, you have to call `dispose()` on it.
 
 ### Unsupported Features
 The following features are not supported by GPU particles due to their inner nature:
+- ManualEmitCount
 - Custom effects
 - Animation sheets
 - disposeOnStop

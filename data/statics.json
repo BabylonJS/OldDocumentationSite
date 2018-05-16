@@ -155,6 +155,11 @@
                     "filename": "Optimizing_Your_Scene_with_Octrees"
                 },
                 {
+                    "title": "Reduce memory footprint",
+                    "level": 3,
+                    "filename": "Reduce_memory_footprint"
+                },                
+                {
                     "title": "Optimize using Cached Resources",
                     "level": 3,
                     "filename": "Caching_Resources_in_IndexedDB"

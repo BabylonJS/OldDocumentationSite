@@ -412,7 +412,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_lod",
                     "icon": "icons/lod.jpg",
                     "description": "Use various meshes based on distance to optimize rendering speed",
-                    "PGID": "#7HMHAU#0"
+                    "PGID": "#7HMHAU#1"
                 },
                 {
                     "title": "Hardware instancing",
