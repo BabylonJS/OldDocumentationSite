@@ -640,6 +640,8 @@ Here is the lsit of properties supported by styles so far:
 
 Please note that if a control has a style, then the style values are used instead of values directly defined on the control itself.
 
+You can find a demo here: https://www.babylonjs-playground.com/#5N4JIS
+
 ## Helpers
 
 To reduce the amount of code required to achieve frequent tasks you can use the following helpers:
