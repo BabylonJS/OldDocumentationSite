@@ -170,13 +170,16 @@ This add-on use the standard Blender installation procedure:
 
 ## Animation
 
-### Commons
+### Commons & Good practices
 
-In order to animate in the simpliest way, you should export one *.babylon* file per animated object. This will make process a lot easier once in BabylonJS.
+- you should export one *.babylon* file per animated object to make your life easier once in BJS. See [(tip)](http://doc.babylonjs.com/exporters/blender_tips#Animation) for a basic workflow.
+- be sure, before starting animation in Blender, that your objects have their transformations applied! (3DView > Object > Apply)
 
 ### Classic Animations
 
 ### Armatures
+
+- you can use any Blender rotation mode you want, the animation will be kind of baked during the export
 
 ---
 

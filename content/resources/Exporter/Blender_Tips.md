@@ -53,6 +53,12 @@ If you go to *File* > *export* and right click on babylon, you can select *Creat
 
 ### Commons
 
+#### One file per animated object
+
+Usually, you will have one master scene containing all statics elements, and a blend file for each animated elements.
+
+To easily see your animated element inside the master scene, open your master scene and go to File > Link, then go inside the blend containing the animated element, and import your objects. It can be more simple to link groups instead of objects, to update links in an easier way.
+
 #### Rotation mode
 
 By default, Blender use the `XYZ Euler` rotation mode, which is fine for most of cases, but you have to know that `Quaternion` (which avoid gimbal lock issue) is also supported.
