@@ -125,6 +125,30 @@ If only one of the 2 maps is used, the attribute value is applied to all pixels 
 
 Note that the duration of this process scales with images size and may have a severe impact on export duration.
 
+You can also merge your metallic and roughness maps and use this file for both property in Maya :
+
+![glTF metallic and roughness maps combined](/img/exporters/Maya_to_glTF/3_gltf_Hypershade_MR_Merged.png)
+
+In that way the exporter wont merge the metallic and roughness map and the export duration is going to be faster.
+
+You can see how to get [a merged MR texture here](/resources/Maya_to_glTF#get-a-merged-occlusionroughnessmetallic-texture).
+
+## Metallic, Roughness & Occlusion
+
+As seen before, in glTF format, the metallic and roughness maps are combined together using the blue and green channel.
+
+For the ambient occlusion map, the red channel is going to be used:
+
+![glTF metallic, roughness and ambient occlusion maps combined](/img/exporters/Maya_to_glTF/ManualMergeORM.png)
+
+You can merge the metallic, roughness and occlusion maps in order to use only one texture for the three :
+
+![glTF metallic, roughness and ambient occlusion maps combined](/img/exporters/Maya_to_glTF/3_gltf_Hypershade_OMR_Merged.png)
+
+In that way the result is going to be lighter than with an Ambiant Occlusion map and a Metallic Roughness.
+
+You can see how to get [a merged ORM texture here](/resources/Maya_to_glTF#get-a-merged-occlusionroughnessmetallic-texture).
+
 ## Emission
 
 If _Use Emissive Map_ attribute is checked, the emissive color and the emissive intensity are ignored by the exporter.
@@ -224,16 +248,7 @@ Such texture defines:
 
 The exporter does not merge textures for you, but instead assumes the texture provided is already merged.
 
-To obtain such texture, either:
-* create the image manually, using 1 channel from each of the 3 images, with a software like Photoshop.
-
-![glTF occlusion, roughness and metallic maps combined](/img/exporters/Maya_to_glTF/ManualMergeORM.png)
-
-* export the textures from a 3D painting software using ORM configuration. From Substance Painter:
-
-![glTF susbtance painter export window with ORM configuration](/img/exporters/Maya_to_glTF/SubstancePainterExportORM.png)
-
-Using _Unreal Engine 4 (Packed)_ configuration, the occlusion, roughness and metallic are combined together into a single ORM texture.
+You can see how to get [a merged ORM texture here](/resources/Maya_to_glTF#get-a-merged-occlusionroughnessmetallic-texture).
 
 ## Emission
 
@@ -262,6 +277,19 @@ Note that the exporter also supports textures with bmp, gif, tga, tif and dds fo
 ## Environment texture
 
 To enjoy PBR material rendering, you should have an environmnent texture in your scene. Currently the plugin does not export any environment map and one must be added manually in client implementations. The Babylon Sandbox provides such feature.
+
+## Get a merged occlusion/roughness/metallic texture
+
+To obtain such texture, either:
+* create the image manually, using 1 channel from each of the 3 images, with a software like Photoshop.
+
+![glTF occlusion, roughness and metallic maps combined](/img/exporters/Maya_to_glTF/ManualMergeORM.png)
+
+* export the textures from a 3D painting software using ORM configuration. From Substance Painter:
+
+![glTF susbtance painter export window with ORM configuration](/img/exporters/Maya_to_glTF/SubstancePainterExportORM.png)
+
+Using _Unreal Engine 4 (Packed)_ configuration, the occlusion, roughness and metallic are combined together into a single ORM texture.
 
 #  Try it out!  #
 
