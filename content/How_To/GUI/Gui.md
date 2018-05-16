@@ -615,6 +615,30 @@ size|string or number|"200px"|The size, width, and height property will always b
 
 Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE#1
 
+## Styles
+
+Starting with Babylon.js v3.3, you can create a style object that will be used to share configuration across controls. To do so, you can use this code:
+
+```
+    var style = advancedTexture.createStyle();
+    style.fontSize = 24;
+    style.fontStyle = "bold";
+    style.fontFamily = "Verdana";
+```
+
+Then affect the style to a control:
+
+```
+textControl.style = style;
+```
+
+Here is the lsit of properties supported by styles so far:
+
+* fontSize
+* fontStyle
+* fontFamily
+
+Please note that if a control has a style, then the style values are used instead of values directly defined on the control itself.
 
 ## Helpers
 
