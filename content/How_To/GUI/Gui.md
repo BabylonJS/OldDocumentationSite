@@ -233,6 +233,13 @@ Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
 
+Please note that to get crisp texts you have to ensure that your rendering resolution is aligned with the screen:
+https://www.babylonjs-playground.com/#2ARI2W#10
+
+On this example you can see on line #3 that we force the engine to get the same DPI as the screen.
+Then on lines #10 and #11 we scale the GUI to align with the screen resolution.
+
+
 ### Line spacing
 
 You can configure vertical line spacing between lines in pixels or percentage values.
