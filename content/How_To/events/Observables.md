@@ -58,6 +58,26 @@ scene.onBeforeRenderObservable.remove(observer);
 ```
 * [Playground Example Add and Remove](https://www.babylonjs-playground.com/#UP2O8#1)
 
+## Scene Object Observables
+The BabylonJS Scene Object has over 20 oberservables that 'fire' under various condtions. Most of them are checked EACH frame/render, and in a deterministic/predictable order or sequence.  Below is a list of Scene observables checked during each renderLoop... in the order they are checked:
 
+- onBeforeAnimationsObservable
+- onAfterAnimationsObservable
+- onBeforePhysicsObservable
+- onAfterPhysicsObservable
+- onBeforeRenderObservable
+- onBeforeRenderTargetsRenderObservable
+- onAfterRenderTargetsRenderObservable
+- onBeforeCameraRenderObservable
+- onBeforeActiveMeshesEvaluationObservable
+- onAfterActiveMeshesEvaluationObservable
+- onBeforeParticlesRenderingObservable
+- onAfterParticlesRenderingObservable
+- onBeforeRenderTargetsRenderObservable
+- onAfterRenderTargetsRenderObservable
+- onBeforeDrawPhaseObservable
+- onAfterDrawPhaseObservable
+- onAfterCameraRenderObservable
+- onAfterRenderObservable
 
-
+The Scene Object also has observers: onReady, onDataLoaded, onDispose, but they do not happen within a rendering/frame.  Also, onBeforeStep, onAfterStep, which "are a special option when dealing with deterministic step", according to local experts.
