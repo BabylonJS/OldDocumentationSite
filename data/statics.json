@@ -977,8 +977,12 @@
                     "filename": "09_NavigationMesh"
                 },
                 {
+                    "title": "Windows Platform",
+                    "filename": "10_WindowsPlatform"
+                },
+                {
                     "title": "Babylon Art Tools",
-                    "filename": "10_BabylonArtTools"
+                    "filename": "11_BabylonArtTools"
                 }
             ]
         },

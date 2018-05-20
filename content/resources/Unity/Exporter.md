@@ -18,29 +18,25 @@
 
 * Project Index Page      - Specifies the exported project index page.
 
-
 ## Default Engine Options
 
 ![Engine Options](/img/exporters/unity/engine.jpg)
-
-* Enable Engine Antialias - Enables or disables the engine anti alias option.
-
-* Adapt To Device Ratio   - Sets the engine to adapt to device ratio.
 
 * Enable Physics Engine   - Enables or disables the built-in physics engine.
 
 * Default Physics Engine  - Specifies the default physics engine for the project.
 
-* Default Image Encoding  - Enables or disables default image encoding options.
+* Set Engine Antialias    - Enables or disables the engine anti alias option.
+
+* Adaptive Device Ratio   - Sets the engine to adapt to device ratio.
+
+* Set Image Encoding      - Enables or disables default image encoding options.
 
 * Default Texture Format  - Specifies the default image encoding format.
 
-* Default Texture Quality - Sets the default texture image quality.
+* Set Texture Quality     - Sets the default texture image quality.
 
-* Camera Distance Factor  - Set the level of detail camera distance factor.
-
-* Static Mesh Vertex Limit - Enables or disables the static mesh vertex limit (65000).
-
+* Set Mesh Vertex Limit   - Enables or disables the static mesh vertex limit (65000).
 
 ## Terrain Builder Options
 
@@ -48,18 +44,11 @@
 
 * Terrain Scale Factor    - Sets the shader texture scale factor for all terrain splatmaps.
 
-* Terrain Atlas Size      - Sets the terrain splatmap texture atlas maximum size.
+* Texture Atlas Size      - Sets the terrain splatmap texture atlas maximum size.
 
-* Terrain Image Max       - Sets the maximum texture image splat for each tile in atlas. Default 0 for no maximum.
+* Texture Image Scaling   - Sets the mode when scaling tile images to point or bilinear.
 
-* Terrain Image Scaling   - Sets the mode when scaling tile images to point or bilinear.
-
-* Terrain Mesh Colliders  - Sets the number of mesh colliders to use for the terrain surface. Set to mesh for no colliders.
-
-* Terrain Lightmap Index  - Sets the lightmap index channel. Must be 0 or 1.
-
-* Terrain Receive Shadows - Enable terrain surface to receive dynamic shadows.
-
+* Shadow Lightmap Index   - Sets the lightmap index channel. Must be 0 or 1.
 
 ## Collision System Options
 
@@ -77,31 +66,25 @@
 
 * Socket Collider Size    - Sets the size of the socket component collision mesh for debugging.
 
-* Proxy Worker Threads    - Enable seperate worker threads for built-in collision system.
-
 * Default Collider Detail - Set the collision mesh goemetry detail level for all generated mesh colliders.
-
 
 ## Lightmap Baking Options
 
 ![Lightmap Options](/img/exporters/unity/lightmap.jpg)
 
-* Enable Lightmaps        - Enable built-in shadow lightmap baking system.
+* Export Lightmaps        - Enable built-in shadow lightmap baking system.
 
 * Bake Iterative Maps     - Enable built-in final lightmap gather and bake option.
 
 * Coordinates Index       - Sets the default texture coordinate index for lightmaps.
 
-* Shadow Map Factor       - Set default the shadow map factor for shadow map light generators.
-
 * Use Material Instance   - Enables or disables material instances for shared material lightmaps.
 
+* Area Baking Lights      - Include or exclude lightmap area baking lights into exported scene.
 
 ## Project Compiler Options
 
 ![Compiler Options](/img/exporters/unity/compilers.jpg)
-
-* Build Javascript Files  - Enables or disables the javascript build option.
 
 * Build Typescript Files  - Enables or disables optional runtime script compiler.
 
@@ -109,14 +92,25 @@
 
 * Node Runtime System     - Specifies the default Node runtime system location.
 
-* Github Update Version   - Specifies the github library version for updates.
+## Windows Platform Options
 
+![Windows Options](/img/exporters/unity/windows.jpg)
+
+* Launching Mode          - Specifies UWP Application initial window state.
+
+* Run App Protocol        - Enables and specifies the UWP Application protocol.
+
+* Xbox Live Services      - Enables the toolkit managed Xbox Live Service API.
+
+* Xbox Live Plugin        - Launches the toolkit managed Xbox Live Service API NuGet install info.
+
+* Switch Windows Sandbox  - Launches the toolkit local Windows Sandbox Switcher amdinistrative tool.
 
 ## Toolkit Exporter Options
 
 ![Export Options](/img/exporters/unity/export.jpg)
 
-* Scene Packing Type      - Sets the default exported scene file packing type to json or binary.
+* Attach Unity Editor     - Enables the built-in toolkit play to build and preview features.
 
 * Host Preview Server     - Toggle internal and external web server hosting options for project.
 
@@ -124,30 +118,39 @@
 
 * Remote Server Path      - Specifies the remote server host address for external server option.
 
-* Attach Unity Editor     - Enables the built-in toolkit play to build and preview features.
+* Show Render Stats       - Toggle debug rendering stats default page options for project.
+
+* Set Default Scene       - Set the index page default scene name option for project.
+
+* Enable Main Menu        - Toggle html project main menu page options for project.
+
+* Truevision Graphics     - Toggle the native TARGA image file support options for project.
+
+* Embed Html Pages        - Toggle internal embed html pages into makrup store options for project.
 
 * Export Http Module      - Enables the web server http scene content management module.
 
-* Show Debug Controls     - Enables or disables the debugging html user interface controls.
+* Export Web Assembly     - Enables or disables the exported wasm content option.
 
 * Export Unity Metadata   - Enables or disables the default scene object metadata information.
 
-* Minify Project Scripts  - Enables or disables the exported script minification option.
-
 * Precompress Contents    - Enables or disables the exported precompressed content option.
 
-* Debug Exporter Output   - Enables or disables pretty print json and compiler source maps.
+* Minify Project Scripts  - Enables or disables the exported script minification option.
 
+* Debug Exporter Output   - Enables or disables pretty print json and compiler source maps.
 
 ## Scene Builder Options
 
 ![Builder Options](/img/exporters/unity/builder.jpg)
 
-* Export Scene            - Exports scene only content with no scripts or previewing.
+* Compile Script          - Compiles the projects typescript files only with no previewing
 
-* Build And Preview       - Exports a full scene build with optional previewing.
+* Export Scene File       - Exports scene only content with no compiling or previewing.
 
-* Rebuild Web Server      - Rebuilds the native web server project code.
+* Build And Preview       - Exports a full scene build with compiling and optional previewing.
+
+* Rebuild Editor Project  - Rebuilds the native Unity Editor project source code.
 
 * Launch Preview Window   - Launches the current preview build in browser.
 
@@ -158,9 +161,4 @@
 
 The output window traces the toolkit export progress for every build. Any exported camera, light or mesh detail information will appear in this window. The output window can be docked to the editor during game development for easy access.
 
-
-# Update Libraries
-
-![Update Libraries](/img/exporters/unity/update.jpg)
-
-The update libraries option allows you to change your toolkit engine version. If you are on the bleeding edge, you can update to the current preview release version to try new features. You can select the stable release version to always fallback to the currently supported toolkit engine version.
+.
