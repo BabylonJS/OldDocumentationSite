@@ -1,6 +1,6 @@
 Game object behavior is controlled by the components that are attached to them. Although the toolkit's built-in components can be very versatile, you will soon find you need to go beyond what they can provide to implement your own gameplay features. The toolkit allows you to create your own components using scripts. These allow you to trigger game events, modify component properties over time and respond to user input in any way you like. The toolkit requires two programming languages natively:
 
-* **TypseScript**, a language designed specifically for strong typed JavaScript development. Required for babylon toolkit development;
+* **TypeScript**, a language designed specifically for strong typed JavaScript development. Required for babylon toolkit development;
 
 * **C# (pronounced C-sharp)**, an industry-standard language similar to Java or C++. Required for editor script components only;
 
