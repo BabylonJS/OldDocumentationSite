@@ -80,4 +80,6 @@ The BabylonJS Scene Object has over 20 observables that 'fire' under various con
 - onAfterCameraRenderObservable
 - onAfterRenderObservable
 
-The Scene Object also has observers: onReady, onDataLoaded, onDispose, but they do not happen within a rendering/frame.  Also, onBeforeStep, onAfterStep, which "are a special option when dealing with deterministic step", according to local experts.
+The Scene Object also has observers: onReady, onDataLoaded, onDispose, but they do not happen within a rendering/frame.  
+
+Also, onBeforeStep and onAfterStep are available when using [deterministic lock step](http://doc.babylonjs.com/babylon101/animations#deterministic-lockstep)
