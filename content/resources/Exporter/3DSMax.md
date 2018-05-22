@@ -8,7 +8,7 @@ The plugin is designed for 3DS Max 2015 or later. To download it, go to the Gith
 
 ![github](/img/exporters/3DSMax/1_github.jpg)
 
-In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Max2Babylon-XX.zip_ (where XX is the exporter version, currently 0.20.0). Click on the zip file, and click on the _Download_ button. 
+In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Max2Babylon-XX.zip_ (where XX is the exporter version, currently 1.1.0). Click on the zip file, and click on the _Download_ button. 
 
 ![github download](/img/exporters/3DSMax/2_github_dl.jpg)
 
@@ -163,6 +163,17 @@ The _Export_ button should be used to create the Babylon file representing your 
 As babylon.js script is retrieved directly from the official website directly, you should have internet access in order to correctly use Export & Run.  
 
 The log panel indicates in real time which mesh has been exported, which material, and if there are any problems with these objects. 
+
+## Export with MaxScript
+
+You can also export the scene using MaxScript. A sample script file is available [here](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/Max2Babylon.ms).
+
+You will need to update the path to your babylon dll and the output path.
+
+All parameters are editable. Default values are the same as in the exporter window except for _autoSave3dsMaxFile_ which is false.
+
+Logs are limited to errors, warnings and core messages to avoid excessive amount of prints.
+
 
 # What you should know
 
