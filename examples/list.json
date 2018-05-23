@@ -800,7 +800,28 @@
                     "icon": "icons/lens_effect.jpg", 
                     "description": "Create photographic effect with the LensRenderingPipeline",
                     "PGID": "#B7JHWD#0"
-                }                           
+                },
+                {
+                    "title": "Heatwave",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
+                    "icon": "icons/heatwave.jpg", 
+                    "description": "Use custom post process effect to simulate heat wave effect",
+                    "PGID": "#TZJ0HQ#1"
+                },
+                {
+                    "title": "RGB Shift Glitch",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
+                    "icon": "icons/rgbglitch.jpg", 
+                    "description": "Use custom post process effect to simulate RGB Shift glitch",
+                    "PGID": "#TZJ0HQ#3"
+                },
+                {
+                    "title": "Dawn Bringer",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
+                    "icon": "icons/dawn.jpg", 
+                    "description": "Use custom post process effect to simulate DawnBringer effect",
+                    "PGID": "#TZJ0HQ#6"
+                }                               
             ]
         },
         {
