@@ -190,6 +190,8 @@ alpha|number|1|Between 0 and 1. 0 means completely transparent. 1 means fully op
 color|string|Black|Foreground color
 fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
 fontSize|number|18|Can be inherited
+fontStyle|string|Unset|Can be inherited
+fontWeight|string|Unset|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 shadowBlur|number|0|the amount of blur that is applied to the drop shadow
 shadowOffsetX|number|0|the offset of the shadow on the x axis
@@ -644,6 +646,7 @@ Here is the lsit of properties supported by styles so far:
 * fontSize
 * fontStyle
 * fontFamily
+* fontWeight
 
 Please note that if a control has a style, then the style values are used instead of values directly defined on the control itself.
 
