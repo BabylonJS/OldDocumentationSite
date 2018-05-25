@@ -711,6 +711,10 @@
                 {
                     "title": "Use the Babylon GUI",
                     "filename": "Gui"
+                },
+                {
+                    "title": "Use the Babylon 3D GUI",
+                    "filename": "Gui3D"
                 }
             ]
         },

@@ -2,7 +2,7 @@
 PG_TITLE: How To Use Babylon.GUI
 ---
 
-# How To Use Babylon.GUI
+# How To Use Babylon GUI
 
 The Babylon.js GUI library is an extension you can use to generate interactive user interface.
 It is build on top of the DynamicTexture.
@@ -14,6 +14,8 @@ And the source code is available on the main Babylon.js repo: https://github.com
 You can find a complete demo here: http://www.babylonjs.com/demos/gui/
 
 ![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
+
+Please note that since Babylon.js v3.3, a [3D version is also available](//doc.babylonjs.com//How_To/Gui3D)
 
 ## Introduction
 Babylon.GUI uses a DynamicTexture to generate a fully functional user interface which is flexible and GPU accelerated.
