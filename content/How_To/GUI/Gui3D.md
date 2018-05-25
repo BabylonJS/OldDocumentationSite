@@ -10,10 +10,6 @@ The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tr
 
 And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui.
 
-You can find a complete demo here: http://www.babylonjs.com/demos/gui3D/
-
-![Babylon 3D GUI](http://www.babylonjs.com/screenshots/gui3d.jpg)
-
 ## Introduction
 Babylon.GUI uses a meshes to create an interactive user interface which is fully integrated in your scene.
 
@@ -60,7 +56,7 @@ The panel will automatically arrange its content every time you add a new contro
 
 You can specify the distance between elements with `panel.margin = 0.02`.
 
-Demo [here](https://www.babylonjs-playground.com/#HJZBRG)
+Demo [here](https://www.babylonjs-playground.com/#HJZBRG#0)
 
 ## Controls
 All controls inherit from the `Control3D` class which provides a set of basic features:
@@ -92,11 +88,58 @@ All controls can also be the target of [behaviors ](http://doc.babylonjs.com/fea
 - `removeBehavior()`: Remove an attached behavior
 - `getBehaviorByName()`: Gets an attached behavior by name
 
+All controls can also define a callback when specific event is happening. These callbacks will be called to let the user defines an animation for the control. Here is the list of available callbakcs:
+- `pointerEnterAnimation`: Callback used to start pointer enter animation
+- `pointerOutAnimation`: Callback used to start pointer out animation
+- `pointerDownAnimation`: Callback used to start pointer down animation
+- `pointerUpAnimation`: Callback used to start pointer up animation
+
+All these callbacks are empty by default and will be implemented by specialized controls.
+
 ### Button3D
+
+`Button3D` is a class used to create 3D buttons.
+
+A button is a control with default animations for enter/out/down and up events.
+It is based on a 2D GUI content.
+
+You can specify the content through the `content` property and set it to any regular [2D GUI content](http://doc.babylonjs.com/how_to/gui):
+
+```
+var button = new BABYLON.GUI.Button3D("reset");
+
+var text = new BABYLON.GUI.TextBlock();
+text.text = "reset";
+text.color = "white";
+text.fontSize = 24;
+button.content = text; 
+```
+
+By default the `Button3D` control uses a 512x512 AdvancedDynamicTexture to render its content.
+You can use the following properties to change the texture resolution:
+- `contentResolution`: Gets or sets the texture resolution used to render content (512 by default)
+- `contentScaleRatio`: Gets or sets the texture scale ratio used to render content (2 by default)
+
+Demo [here](https://www.babylonjs-playground.com/#2YZFA0#0)
 
 ### HolographicButton
 
+The `HolographicButton` is a specialized button that mimics the [MRTK holographic button](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/master/Assets/HoloToolkit-Examples/UX/Readme/README_InteractableObjectExample.md#holographic-button).
+
+An `HolographicButton` can be defined with two properties:
+- `text`: Gets or sets text for the button
+- `imageUrl`: Gets or sets the image url for the button
+
+![Babylon.GUI](/img/how_to/gui/MRTK_HolographicButton.jpg)
+
+Demo [here](https://www.babylonjs-playground.com/#2YZFA0#2)
+
 ### Custom controls
+
+You can create your own custom control by inheriting from the `Control3D` class and implementing the following functions:
+
+- `_createNode()`: Called on controls to create a transform node or a mesh to represent the control
+- `_affectMaterial()`: Called on controls to prepare and affect a material if a mesh is used to represent the control
 
 
 
