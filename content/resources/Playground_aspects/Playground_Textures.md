@@ -165,7 +165,7 @@ new BABYLON.VideoTexture("name", "textures/video.ext", scene);
 Filename | Image
 --- | ---
 impact.png | <img src = 'http://www.babylonjs-playground.com/textures/impact.png' width = '64' height = '64'>
-nba.png | <img src = 'http://www.babylonjs-playground.com/textures/nba.png' width = '64' height = '64'>
+nba.png | <img src = 'http://www.babylonjs-playground.com/textures/nba.png' width = '32' height = '128'>
 
 ### LensFlares
 
@@ -189,6 +189,9 @@ In the Playground use
 Filename | Image
 ---|---
 colorGrade.png | <img src = 'http://www.babylonjs-playground.com/textures/colorGrade.png' width = '64' height = '8'>
+colorGrade-highContrast.png | <img src = 'http://www.babylonjs-playground.com/textures/colorGrade-highContrast.png' width = '64' height = '8'>
+colorGrade-inverted.png | <img src = 'http://www.babylonjs-playground.com/textures/colorGrade-inverted.png' width = '64' height = '8'>
+colorGrade-posterize.png | <img src = 'http://www.babylonjs-playground.com/textures/colorGrade-posterize.png' width = '64' height = '8'>
 
 ### Particles
 
@@ -197,13 +200,13 @@ Filename | Image
 fire.jpg | <img src = 'http://www.babylonjs-playground.com/textures/fire.png' width = '64' height = '64'>
 particle.png | <img src = 'http://www.babylonjs-playground.com/textures/particle.png' width = '64' height = '64'>
 sparkle.png | <img src = 'http://www.babylonjs-playground.com/textures/sparkle.png' width = '64' height = '64'>
-sparkle2.png | <img src = 'http://www.babylonjs-playground.com/textures/sparkle2.png' width = '64' height = '64'>
+sparkle2.jpg | <img src = 'http://www.babylonjs-playground.com/textures/sparkle2.jpg' width = '64' height = '64'>
 
 ### Sprites
 
 Filename | Image
 ---|---
-player.png | <img src = 'http://www.babylonjs-playground.com/textures/player.png' width = '64' height = '8'>
+player.png | <img src = 'http://www.babylonjs-playground.com/textures/player.png' width = '256' height = '32'>
 walk.png | <img src = 'http://www.babylonjs-playground.com/textures/walk.png' width = '64' height = '64'>
 
 
@@ -225,5 +228,5 @@ specmap.png | <img src = 'http://www.babylonjs-playground.com/textures/specmap.p
 spectorjsLayer.png | <img src = 'http://www.babylonjs-playground.com/textures/spectorjsLayer.png' width = '64' height = '64'>
 specularglossymap.png | <img src = 'http://www.babylonjs-playground.com/textures/specularglossymap.png' width = '64' height = '64'>
 xStrip.jpg | <img src = 'http://www.babylonjs-playground.com/textures/xStrip.jpg' width = '64' height = '16'>
-yStrip.jpg | <img src = 'http://www.babylonjs-playground.com/textures/yStrip.jpg' width = '64' height = '16'>
+yStrip.jpg | <img src = 'http://www.babylonjs-playground.com/textures/yStrip.jpg' width = '16' height = '64'>
 zStrip.jpg | <img src = 'http://www.babylonjs-playground.com/textures/zStrip.jpg' width = '64' height = '16'>
