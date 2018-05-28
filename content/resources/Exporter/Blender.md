@@ -168,6 +168,45 @@ This add-on use the standard Blender installation procedure:
 
 ---
 
+## Animation
+
+### Commons & Good practices
+
+- you should export one *.babylon* file per animated object to make your life easier (once in BJS, but also to handle the timeline in Blender). See [tip](http://doc.babylonjs.com/exporters/blender_tips#Animation) for a basic workflow.
+- be sure, before starting animation in Blender, that your objects have their transformations applied! (3DView > Object > Apply)
+
+### Classic Animations
+
+You will find an example on this [.zip archive](http://doc.babylonjs.com/examples/blender/animations/babylon-format.zip). 3D sources files are on `sources` folder, BJS app is on `BJS` folder.
+
+In `sources`, we have our master scene, with only static objects (on the layer 1), and just for us to see it, we have the logo linked on the layer 6. When exporting, take care to have only layer 1 active, as we have checked in the [scene panel](http://doc.babylonjs.com/resources/blender#scene) *Export only selected layers*.
+
+Once exported, you can see in `BJS/index.html` that we create our main scene using this `.babylon`: line 36 
+
+```html
+BABYLON.SceneLoader.Load("", "01.master-static-scene.babylon", engine, function (scene) {
+
+});
+```
+
+Same way for out animated object in `sources/02.classic-animation.blend`: layer 1 is for our object, layer 6 is just for us to see the main scene in our *.blend*. *Export only selected layers* is used to help us exporting only the first layer to babylon.
+
+Once exported, we can import our meshes inside the onSuccess of our Loader above. Check on `BJS/index.html`, line 64:
+
+```html
+BABYLON.SceneLoader.ImportMesh("", "", "02.classic-animation.babylon", scene, function (importedMeshes){
+
+});
+```
+
+Now, you already have a basic scene with animations autoplaying in it.
+
+### Armatures
+
+- you can use any Blender rotation mode you want, the animation will be kind of baked during the export
+
+---
+
 ## Try it out!
 
 Once your scene is exported, you have multiple solutions to test it:
@@ -178,6 +217,8 @@ Once your scene is exported, you have multiple solutions to test it:
 - script your own app using the [loader](/how_to/load_from_any_file_type)
 
 ### Example
+
+#### Simple scene
 
 Let's say you have exported your first scene. In this example we will use [blend files of the BJS logo](https://github.com/BabylonJS/MeshesLibrary/tree/master/BabylonJS-logo/v3):
 
@@ -250,3 +291,4 @@ Let's say you have exported your first scene. In this example we will use [blend
   
 ![blender babylon scene loaded in BJS](img/exporters/blender/babylon/babylon-loaded.png)
 
+#### Animated object
