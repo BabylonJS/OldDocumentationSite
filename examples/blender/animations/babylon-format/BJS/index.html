@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <title>.babylon animations</title>
+    <meta charset="UTF-8">
+    <!-- this link to the preview online version of BJS -->
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <!-- this is needed for BJS to load scene files -->
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: OpenSans, tahoma, arial, sans-serif;
+            color:white;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var engine = new BABYLON.Engine(canvas, true);
+
+        // first, we create our scene with the static objects http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
+        BABYLON.SceneLoader.Load("", "01.master-static-scene.babylon", engine, function (scene) {
+
+            //here we create a default camera, but you can also of course create a camera into Blender and use it
+            var camera = new BABYLON.ArcRotateCamera("Camera", -1, 1, 25, new BABYLON.Vector3.Zero(), scene);
+            camera.attachControl(canvas, false);
+            
+            //some little basics tweaks on the scene
+            scene.ambientColor = new BABYLON.Color3(0.1, 0.11, 0.12);
+            scene.clearColor = new BABYLON.Color3.White();
+            
+            //adding a dynamic light
+            var dirLight = new BABYLON.DirectionalLight("dirLight", new BABYLON.Vector3(1, -1, 1), scene);
+            dirLight.diffuse = new BABYLON.Color3(1, 1, 0.98);
+            dirLight.position = new BABYLON.Vector3(-100, 100, -100);
+            
+            //we can now access to our static objects
+            var ground = scene.getMeshByName("ground.000");
+            ground.receiveShadows = true;
+            
+            var monkey = scene.getMeshByName("Suzanne");
+
+            //adding dynamic shadows
+            var shadowGenerator = new BABYLON.ShadowGenerator(64, dirLight);
+            shadowGenerator.useExponentialShadowMap = true;
+            shadowGenerator.setDarkness(0.5);
+            shadowGenerator.addShadowCaster(monkey);
+            
+            //now, we want our animated object to be in this scene  http://doc.babylonjs.com/api/classes/babylon.sceneloader#importmesh
+            BABYLON.SceneLoader.ImportMesh("", "", "02.classic-animation.babylon", scene, function (importedMeshes){
+                //we can now select our new mesh
+                var logo = scene.getMeshByName("logo");
+                //and add it to the shadowCaster
+                shadowGenerator.addShadowCaster(logo);
+            });
+            
+            // this show the inspector, uncomment to use it
+            //scene.debugLayer.show();
+
+            engine.runRenderLoop(function() {
+                scene.render();
+            });
+
+            window.addEventListener("resize", function () {
+                engine.resize();
+            });
+        });
+    </script>
+</body>
+</html>
