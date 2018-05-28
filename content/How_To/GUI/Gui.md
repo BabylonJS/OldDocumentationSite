@@ -2,7 +2,7 @@
 PG_TITLE: How To Use Babylon.GUI
 ---
 
-# How To Use Babylon.GUI
+# How To Use Babylon GUI
 
 The Babylon.js GUI library is an extension you can use to generate interactive user interface.
 It is build on top of the DynamicTexture.
@@ -14,6 +14,8 @@ And the source code is available on the main Babylon.js repo: https://github.com
 You can find a complete demo here: http://www.babylonjs.com/demos/gui/
 
 ![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
+
+Please note that since Babylon.js v3.3, a [3D version is also available](//doc.babylonjs.com//How_To/Gui3D)
 
 ## Introduction
 Babylon.GUI uses a DynamicTexture to generate a fully functional user interface which is flexible and GPU accelerated.
@@ -190,6 +192,8 @@ alpha|number|1|Between 0 and 1. 0 means completely transparent. 1 means fully op
 color|string|Black|Foreground color
 fontFamily|string|Arial|Font family can be inherited. This means that if you set it on a container, it will be transmitted to all children of the container
 fontSize|number|18|Can be inherited
+fontStyle|string|Unset|Can be inherited
+fontWeight|string|Unset|Can be inherited
 zIndex|number|0|the zIndex can be used to reorder controls on the z axis
 shadowBlur|number|0|the amount of blur that is applied to the drop shadow
 shadowOffsetX|number|0|the offset of the shadow on the x axis
@@ -232,6 +236,13 @@ The control currently provides 1 observable:
 Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
+
+Please note that to get crisp texts you have to ensure that your rendering resolution is aligned with the screen:
+https://www.babylonjs-playground.com/#2ARI2W#10
+
+On this example you can see on line #3 that we force the engine to get the same DPI as the screen.
+Then on lines #10 and #11 we scale the GUI to align with the screen resolution.
+
 
 ### Line spacing
 
@@ -615,6 +626,33 @@ size|string or number|"200px"|The size, width, and height property will always b
 
 Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE#1
 
+## Styles
+
+Starting with Babylon.js v3.3, you can create a style object that will be used to share configuration across controls. To do so, you can use this code:
+
+```
+    var style = advancedTexture.createStyle();
+    style.fontSize = 24;
+    style.fontStyle = "bold";
+    style.fontFamily = "Verdana";
+```
+
+Then affect the style to a control:
+
+```
+textControl.style = style;
+```
+
+Here is the lsit of properties supported by styles so far:
+
+* fontSize
+* fontStyle
+* fontFamily
+* fontWeight
+
+Please note that if a control has a style, then the style values are used instead of values directly defined on the control itself.
+
+You can find a demo here: https://www.babylonjs-playground.com/#5N4JIS
 
 ## Helpers
 

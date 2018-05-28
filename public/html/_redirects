@@ -22,6 +22,8 @@
 /tutorials/07._babylon.js_advanced_features                 /how_to/babylon.js_advanced_features
 /tutorials/08._special_effects                              /how_to/special_effects
 
+/how_to/pivots3.2                                       /how_to/pivots
+
 /overviews/debug_layer_features                         /features/playground_debuglayer
 /overviews/behaviors                                    /features/behaviour
 /overviews/how_rotations_and_translations_work          /features/position,_rotation,_scaling

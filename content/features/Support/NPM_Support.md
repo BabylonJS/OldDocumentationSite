@@ -207,9 +207,11 @@ You can see an example of that in the Viewer directory of our main repository.
 * Make sure you have a version higher than 3.1.0-alpha3.4
 * Make sure you added 'babylonjs' to "types" in tsconfig.json
 
-### Even thou I use only a few classes from the BABYLON namespace, the entire Babylon module is included
+### Even though I use only a few classes from the BABYLON namespace, the entire Babylon module is included
 
-Due to the way BabylonJS is built, Tree-Shaking is currently not quite possible. Babylon's internal objects have deep connections with one another, which is not easy to change. That means, that your built JS file will be at least Babylon.js' minified size.
+Due to the way BabylonJS is built, Tree-Shaking is currently not quite possible. Babylon's internal objects have deep connections with one another (for performance reasons). That means, that your built JS file will be at least Babylon.js' minified size.
+
+You can still use custom builds to build you own minimal version: http://doc.babylonjs.com/how_to/how_to_start#custom-builds
 
 ### Naming is different than what the documentation states
 

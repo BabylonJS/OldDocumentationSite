@@ -155,6 +155,11 @@
                     "filename": "Optimizing_Your_Scene_with_Octrees"
                 },
                 {
+                    "title": "Reduce memory footprint",
+                    "level": 3,
+                    "filename": "Reduce_memory_footprint"
+                },
+                {
                     "title": "Optimize using Cached Resources",
                     "level": 3,
                     "filename": "Caching_Resources_in_IndexedDB"
@@ -282,22 +287,12 @@
                     "filename": "Rotate"
                 },
                 {
-                    "title": "Set and Use a Pivot V3.2+",
-                    "level": 3,
-                    "filename": "Pivots3.2"
-                },
-                {
-                    "title": "Set and Use a Pivot - Legacy",
+                    "title": "Set and Use a Pivot",
                     "level": 3,
                     "filename": "Pivots"
                 },
                 {
-                    "title": "Rotate Around an Axis About a Point V3.2+",
-                    "level": 3,
-                    "filename": "Pivot3.2"
-                },
-                {
-                    "title": "Rotate Around an Axis About a Point - Legacy",
+                    "title": "Rotate Around an Axis About a Point",
                     "level": 3,
                     "filename": "Pivot"
                 },
@@ -716,6 +711,10 @@
                 {
                     "title": "Use the Babylon GUI",
                     "filename": "Gui"
+                },
+                {
+                    "title": "Use the Babylon 3D GUI",
+                    "filename": "Gui3D"
                 }
             ]
         },
@@ -878,6 +877,10 @@
                 {
                     "title": "How to use Babylon.js inside React Native",
                     "filename": "BabylonJS_and_React_Native"
+                },
+                {
+                    "title": "How to use Babylon.js in a Facebook Instant Game",
+                    "filename": "BabylonJS_and_Instant_Games"
                 }
             ]
         },
@@ -925,7 +928,7 @@
                 {
                     "title": "Maya to glTF",
                     "filename": "Maya_to_glTF"
-				}
+                }
             ]
         },
         {
@@ -982,8 +985,12 @@
                     "filename": "09_NavigationMesh"
                 },
                 {
+                    "title": "Windows Platform",
+                    "filename": "10_WindowsPlatform"
+                },
+                {
                     "title": "Babylon Art Tools",
-                    "filename": "10_BabylonArtTools"
+                    "filename": "11_BabylonArtTools"
                 }
             ]
         },
