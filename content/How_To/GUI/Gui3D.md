@@ -134,6 +134,20 @@ An `HolographicButton` can be defined with two properties:
 
 Demo [here](https://www.babylonjs-playground.com/#2YZFA0#2)
 
+Please note that you can overwrite the default content but you need to do it after the call to addControl:
+
+```
+var button = new BABYLON.GUI.HolographicButton("reset");
+panel.addControl(button);
+
+// Must be done AFTER addControl in order to overwrite the default content
+var text1 = new BABYLON.GUI.TextBlock();
+text1.text = "Reset";
+text1.color = "Red";
+text1.fontSize = 48;
+button.content = text1;  
+```
+
 ### Custom controls
 
 You can create your own custom control by inheriting from the `Control3D` class and implementing the following functions:
