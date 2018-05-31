@@ -39,6 +39,17 @@ All containers provide the following functions to handle controls:
 - `containsControl()`: Gets a boolean indicating if the given control is in the root child list
 - `removeControl()`: Removes a control from the root child list
 
+By default, all containers will update their layout everytime you add a new control to it. But you can optimize this behavior if you plan to add multiple controls in a row with `container.blockLayout = true`:
+
+```
+panel.blockLayout = true;
+for (var index = 0; index < 30; index++) {
+   var button = new BABYLON.GUI.Button3D("click me");
+   panel.addControl(button); 
+}
+panel.blockLayout = false;
+```
+
 The `Container3D` class will do nothing regarding layout of its controls. You need to use one of its children to get a specialized layout mechanism.
 
 All specialized containers must implement the following function to provide layout mechanism:
