@@ -1183,6 +1183,10 @@
                 {
                     "title": "Cell Shading",
                     "filename": "Cell"
+                },
+                {
+                    "title": "Mix",
+                    "filename": "Mix"
                 }
             ]
         },
