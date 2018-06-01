@@ -17,7 +17,14 @@ videoDome = new BABYLON.VideoDome("testdome", url, {<options>}, scene);
 ```
 
 All of the settings in the options object are optional, but the object itself is not. Please provide an empty object at minimum.
-All the options are based through the corresponding classes, mainly the dome geometry and the VideoTexture. Check out [the docs](/classes/VideoDome) for full information.
+All the options are based through the corresponding classes, mainly the dome geometry and the VideoTexture:
+
+* resolution=12: Integer, lower resolutions have more artifacts at extreme fovs
+* clickToPlay=false: Add a click to play listener to the video, does not prevent autoplay
+* autoPlay=true: Automatically attempt to being playing the video
+* loop=true: Automatically loop video on end
+* size=1000: Physical radius to create the dome at, defaults to approximately half the far clip plane
+   
 
 ## FOV adjustment
 Sometimes 360 Video can feel an uncomfortable distance from the camera, to help with this a material based FOV adjustment is available.
