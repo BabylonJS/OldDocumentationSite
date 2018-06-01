@@ -43,7 +43,7 @@ However even this will not work if the scene is very complex and has not been re
 It's done by simply calling this method: `BABYLON.Tools.CreateScreenshot(engine, camera, size)`.
 You need to provide your BabylonJS engine, the camera you want to use for the rendering, and a size.
 
-Please note that the engine msut be created with `preserveDrawingBuffer` option:
+Please note that the engine must be created with `preserveDrawingBuffer` option:
 ```
 var engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
 ```
