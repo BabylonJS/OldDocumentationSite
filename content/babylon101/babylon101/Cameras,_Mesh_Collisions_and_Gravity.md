@@ -97,7 +97,11 @@ The scene has now a new flag (false per default):
 ```javascript
 scene.workerCollisions = true|false
 ```
-Setting this flag to true will start the worker in the background. The worker will then receive all collision requests from the cameras and meshes. Setting it to false will set the collision to the regular collision calculation as it always was.
+Setting this flag to true will start the worker in the background. 
+
+**Please note that you will need to reference babylon.worker.js and not regular babylon.js to use worker collisions**
+
+The worker will then receive all collision requests from the cameras and meshes. Setting it to false will set the collision to the regular collision calculation as it always was.
 
 To read more about how workers were integrated head to Raanan Weber's blog:
 
