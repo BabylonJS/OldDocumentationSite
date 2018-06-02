@@ -203,6 +203,6 @@ Native JavaScript Libraries (renamed to .bjs) that are included anywhere in the 
  * Tree Component
  * Terrain Component
  * Animator Component
- * Animation Component (Not Supported)
+ * Animation Component
 
 .
