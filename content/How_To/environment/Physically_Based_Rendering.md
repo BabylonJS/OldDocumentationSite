@@ -137,7 +137,7 @@ You'll find more info about how dynamic lighting works in the [Master the PBR](/
 
 
 ## Env map
-As you have seen before, you must provide a HDR ready file (either DDS or ENV containing a cube texture) to define a compatible environment. This is the highly recommended way to setup the environment texture.
+As you have seen before, the highly recommended way to setup an environment texture is through an HDR ready file (either DDS or ENV) containing a cube texture with prefiltered Mip Maps.
 
 We are detailing below the two supported ways of creating such files. The first one rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
 
