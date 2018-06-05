@@ -180,7 +180,7 @@ Finally, in the export window, you can chose the appropriate options:
 You are all set and ready to use the exported texture in the ```CubeTexture.CreateFromPrefilteredData``` function.
 
 ### Creating a compressed environment texture
-As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Instead of a long explanation of the [underlying tech](https://github.com/BabylonJS/Babylon.js/issues/2502), here is the steps to follow to create the .env files used in BabylonJS:
+As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Instead of a long explanation of the [underlying tech](https://github.com/BabylonJS/Babylon.js/issues/2502), here are the steps to follow to create the .env files used in BabylonJS:
 
 First, go to the [Sandbox](https://sandbox.babylonjs.com/?assetUrl=https://models.babylonjs.com/PBR_Spheres.glb) and open the Inspector Menu:
 
