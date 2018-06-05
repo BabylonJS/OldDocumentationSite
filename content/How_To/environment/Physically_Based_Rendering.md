@@ -137,22 +137,66 @@ You'll find more info about how dynamic lighting works in the [Master the PBR](/
 
 
 ## Env map
-As you have seen before, you must provide a DDS file (containing a cube texture) to define a compatible environment. This is the highly recommended way to setup the environment texture.
+As you have seen before, the highly recommended way to setup an environment texture is through an HDR ready file (either DDS or ENV) containing a cube texture with prefiltered Mip Maps.
 
-### Creating a dds environment file from an HDR image
-We recommend using IBLBaker: [https://github.com/derkreature/IBLBaker](https://github.com/derkreature/IBLBaker)
+We are detailing below the two supported ways of creating such files. The first one rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
+
+### Creating a dds environment file from IBL Baker
+You can find IBLBaker on: [https://github.com/derkreature/IBLBaker](https://github.com/derkreature/IBLBaker)
+
 After cloning the repo, you will be able to go to /bin64 folder and launch IBLBaker.exe.
 
 Now use the "Load environment" button to load a HDR image (Try one from [HDRLib](http://hdrlib.com/) or [there](https://github.com/sbtron/BabylonJS-glTFLoader/tree/master/src/images) as well)
 
-We recommend to play with the environment scale to define the correct brightness you want.
-You may also want to reduce the output size by setting the specular resolution to 128 or 256:
+We recommend to play with the environment scale to define the brightness you want.
 
-![iblbaker](/img/iblbaker.jpg)
+You may also want to reduce the output size by setting the specular resolution of 128 to ensure the correctness of the blur dropoff :
+
+![iblbaker](/img/How_To/environment/IBLbaker_DefaultSettings.png)
 
 Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! 
 
 ** Please do not forget to write full name with extension in order to make the save works correctly **
+
+### Creating a dds environment file from LYS
+[Lys](https://www.knaldtech.com/lys/) can be find on the [knaldtech](https://www.knaldtech.com/lys/) website.
+
+Using Lys, the output quality of the generated mip maps will be a higher standard really close in roughness response to the Unity standard materials. You could generate with Lys: 128, 256 or 512 px wide dds cube texture.
+
+Please, follow the steps below to ensure of the physical correctness of the response.
+
+First, you need to choose the following settings in the main window (Adapt the size according to your choices 128, 256, or 512):
+
+![Main Window](/img/How_To/environment/Lys_DefaultSettings_Main.png)
+
+Once done, in the preferences tab, please set the legacy dds mode (Four CC is not supported by BabylonJS):
+
+![Preferences](/img/How_To/environment/Lys_DefaultSettings_Prefs.png)
+
+Finally, in the export window, you can chose the appropriate options:
+
+![Export](/img/How_To/environment/Lys_DefaultSettings_Export.png)
+
+You are all set and ready to use the exported texture in the ```CubeTexture.CreateFromPrefilteredData``` function.
+
+### Creating a compressed environment texture
+As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Instead of a long explanation of the [underlying tech](https://github.com/BabylonJS/Babylon.js/issues/2502), here is the steps to follow to create the .env files used in BabylonJS:
+
+First, go to the [Sandbox](https://sandbox.babylonjs.com/?assetUrl=https://models.babylonjs.com/PBR_Spheres.glb) and open the Inspector Menu:
+
+![InspectorMenu](/img/How_To/environment/InspectorMenu.png)
+
+Once in the Inspector Open the Tools Tab:
+
+![InspectorTools](/img/How_To/environment/InspectorTools.png)
+
+You can now easily chose your previously created DDS files with the browse button and then compress them to a .env file with the "Compress current texture to .env" button.
+
+Finally, loading a .env could not be simpler:
+
+```
+scene.environmentTexture = new BABYLON.CubeTexture("environment.env", scene);
+```
 
 ### Using a pure cube texture
 While using a dds cube texture is the best option, you may want to still rely on classic cube texture (mostly for size reason).

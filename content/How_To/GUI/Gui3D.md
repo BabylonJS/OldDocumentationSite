@@ -84,6 +84,7 @@ You can attach a control to a mesh or tranform node from your scene with:
 control.linkToTransformNode(anchor);
 ```
 This way the control will always follow the linked node or mesh. Please note that in this case, the `position` and `scaling` properties are considered local to the new parent node or mesh.
+When linking a control to a transform node, please make sure that the control was first added to a container or to the root manager.
 
 Some observables are also available to help tracking control state:
 - `onPointerEnterObservable`: An event triggered when pointer enters the control
