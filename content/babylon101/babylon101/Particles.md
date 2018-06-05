@@ -129,6 +129,16 @@ particleSystem.minSize = 0.1;
 particleSystem.maxSize = 0.5;
 ```
 
+If you want to change the particle size to not be a square you can then use the min/max for ScaleX/Y:
+```javascript
+// Scale of each particle (random between...)
+particleSystem.minScaleX = 0.1;
+particleSystem.maxScaleX = 0.5;
+
+particleSystem.minScaleY = 0.2;
+particleSystem.maxScaleY = 0.4;
+```
+
 ### Particle Colors
 There are three colors that can be set for the particle system, two which are combined (or blended) during the lifetime of the particle and a third that it takes on just before it disappears. 
 
