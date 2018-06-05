@@ -180,7 +180,7 @@ Finally, in the export window, you can chose the appropriate options:
 You are all set and ready to use the exported texture in the ```CubeTexture.CreateFromPrefilteredData``` function.
 
 ### Creating a compressed environment texture
-As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Instead of a long explanation of the [underlying tech](https://github.com/BabylonJS/Babylon.js/issues/2502), here are the steps to follow to create the .env files used in BabylonJS:
+As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Here are the steps to follow to create the .env files used in BabylonJS:
 
 First, go to the [Sandbox](https://sandbox.babylonjs.com/?assetUrl=https://models.babylonjs.com/PBR_Spheres.glb) and open the Inspector Menu:
 
@@ -197,6 +197,24 @@ Finally, loading a .env could not be simpler:
 ```
 scene.environmentTexture = new BABYLON.CubeTexture("environment.env", scene);
 ```
+
+### What is a .env (Tech Deep Dive)
+
+The issue we are addressing with .env is the size and quality of our IBL Environment Textures. We decided to implement our custom packing to simplify sharing and downloading those assets. This file needs to work cross paltform for an easy deployment hence why we are not relying directly on compressed textures.
+
+We are then packing in one file (similar to DDS or KTX) a json manifest header, the polynomial infromation and all the faces of the mip maps chain from the prefiltered cube texture in .png format (which compresses more than decently and decode really fast in all browsers.).
+
+In order to keep an HDR support with png, we chose to rely on RGBD as it offers a better distribution of the value in the low range than RGBM by keeping the [0-1] range untouched knowing it is generally used more frequently. It is also less complex to decode at runtime than LogLUV when needed. It seems the like the best tradeoff for us.
+
+RGBD also offers none to low transparency in the lower range preventing browser relying on premultiplication of alpha to loose data in the most visible area. We also introduced a special offset from the max range ensuring that we are not reaching problematic values of alpha in legacy browsers (when alpha is too close from 0 the color quantization is created unacceptable banding artifacts).
+
+In Webgl2 browsers, we are unpacking the data to HalfFloat or FullFloat texture if supported to speedup the runtime and allow correct some interpolations.
+
+The file is also packing the polynomials harmonics vs sphericals to match what Babylon is expected internally speeding up load time by not having to compute or transform them anymore.
+
+As rendering to LOD or even copy to LOD of Half/Fulll float texture does not work consistently on Webgl 1 based browser, we are unpacking in live the data in the fragment shader. As RGBD interpolation is not correct we ensured with different test cases that the generated visual artifacts were worth the transport gain. It looks ok in the sets of textures we have been testing.
+
+As an example of result, we can now rely on 512px cube sized texture with around 3Mb of data vs 32 Mb for the unpacked version without noticing any blocking quality drops. This also speed ups our time to first frame by not requiring the compute of the polynomials anymore.
 
 ### Using a pure cube texture
 While using a dds cube texture is the best option, you may want to still rely on classic cube texture (mostly for size reason).
