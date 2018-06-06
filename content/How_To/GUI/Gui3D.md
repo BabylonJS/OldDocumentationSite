@@ -56,18 +56,96 @@ All specialized containers must implement the following function to provide layo
 - `_arrangeChildren()`: This function will be called everytime a new control is added. This is where children class can decide how to organize controls
 
 ### StackPanel
- The `StackPanel` container can be used to stack items either horizontally or vertically:
+The `StackPanel` container can be used to stack items either horizontally or vertically:
 
- ```
- var panel = new BABYLON.GUI.StackPanel3D();
- panel.isVertical = true;
- ```
+```
+var panel = new BABYLON.GUI.StackPanel3D();
+panel.isVertical = true;
+```
 
 The panel will automatically arrange its content every time you add a new control.
 
 You can specify the distance between elements with `panel.margin = 0.02`.
 
 Demo [here](https://www.babylonjs-playground.com/#HJZBRG#0)
+
+### SpherePanel
+The `SpherePanel` container can be used to dispatch item on the surface of a sphere:
+
+```
+var panel = new BABYLON.GUI.SpherePanel();
+panel.radius = 5;
+```
+  
+The radius property is used to define the radius of the hosting sphere.
+
+The panel will automatically arrange its content every time you add a new control.
+
+The panel can either be row or column first depending on which property you use:
+```
+panel.columns = 5; // The panel will automatically compute the number of rows based on number of child controls
+```
+
+or
+
+```
+panel.rows = 5; // The panel will automatically compute the number of columns based on number of child controls
+```
+
+By default a SpherePanel is set up with panel.columns = 10;
+
+You can specify the distance between elements with `panel.margin = 0.02`.
+
+You can also control how each cell is oriented:
+
+| Value | Type                                | Description |
+| ----- | ----------------------------------- | ----------- |
+| 0     | UNSET_ORIENTATION                   |  Control rotation will remain unchanged |
+| 1     | FACEORIGIN_ORIENTATION              |  Control will rotate to make it look at sphere central axis |
+| 2     | FACEORIGINREVERSED_ORIENTATION      |  Control will rotate to make it look back at sphere central axis |
+| 3     | FACEFORWARD_ORIENTATION             |  Control will rotate to look at z axis (0, 0, 1) |
+| 4     | FACEFORWARDREVERSED_ORIENTATION     |  Control will rotate to look at negative z axis (0, 0, -1) |
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#3)
+
+### CylinderPanel
+The `CylinderPanel` container can be used to dispatch item on the surface of a cylinder:
+
+```
+var panel = new BABYLON.GUI.CylinderPanel();
+panel.radius = 5;
+```
+  
+The radius property is used to define the radius of the hosting sphere.
+
+The panel will automatically arrange its content every time you add a new control.
+
+The panel can either be row or column first depending on which property you use:
+```
+panel.columns = 5; // The panel will automatically compute the number of rows based on number of child controls
+```
+
+or
+
+```
+panel.rows = 5; // The panel will automatically compute the number of columns based on number of child controls
+```
+
+By default a CylinderPanel is set up with panel.columns = 10;
+
+You can specify the distance between elements with `panel.margin = 0.02`.
+
+You can also control how each cell is oriented:
+
+| Value | Type                                | Description |
+| ----- | ----------------------------------- | ----------- |
+| 0     | UNSET_ORIENTATION                   |  Control rotation will remain unchanged |
+| 1     | FACEORIGIN_ORIENTATION              |  Control will rotate to make it look at sphere central axis |
+| 2     | FACEORIGINREVERSED_ORIENTATION      |  Control will rotate to make it look back at sphere central axis |
+| 3     | FACEFORWARD_ORIENTATION             |  Control will rotate to look at z axis (0, 0, 1) |
+| 4     | FACEFORWARDREVERSED_ORIENTATION     |  Control will rotate to look at negative z axis (0, 0, -1) |
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#4)
 
 ## Controls
 All controls inherit from the `Control3D` class which provides a set of basic features:
