@@ -225,7 +225,7 @@ This file starts like this:
 ```    
 
 You can see inside the `buildConfigurations` bucket that two configurations are defined: `all` and `minimal`.
-A configuration is an array of workloads. Workloads are sets of file, shaders and dependencies. They define a set of work. You can use then to cherry pick only feature that you want to use.
+A configuration is an array of workloads. Workloads are sets of file, shaders and dependencies. They define a set of work. You can use then to cherry pick only features that you want to use.
 
 For instance the `minimal` configuration only contains the following workloards: `meshBuilder`, `standardMaterial`, `freeCamera`, `hemisphericLight`.
 
