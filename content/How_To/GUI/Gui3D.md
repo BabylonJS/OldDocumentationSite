@@ -69,19 +69,12 @@ You can specify the distance between elements with `panel.margin = 0.02`.
 
 Demo [here](https://www.babylonjs-playground.com/#HJZBRG#0)
 
-### SpherePanel
-The `SpherePanel` container can be used to dispatch item on the surface of a sphere:
+### VolumeBasedPanel
+VolumeBasedPanel are containers used to dispatch items on the surface of a volume (like sphere or cylinder).
 
-```
-var panel = new BABYLON.GUI.SpherePanel();
-panel.radius = 5;
-```
-  
-The radius property is used to define the radius of the hosting sphere.
+The panels will automatically arrange its content every time you add a new control.
 
-The panel will automatically arrange its content every time you add a new control.
-
-The panel can either be row or column first depending on which property you use:
+The panels can either be row or column first depending on which property you use:
 ```
 panel.columns = 5; // The panel will automatically compute the number of rows based on number of child controls
 ```
@@ -92,7 +85,7 @@ or
 panel.rows = 5; // The panel will automatically compute the number of columns based on number of child controls
 ```
 
-By default a SpherePanel is set up with panel.columns = 10;
+By default a VolumeBasedPanel is set up with panel.columns = 10;
 
 You can specify the distance between elements with `panel.margin = 0.02`.
 
@@ -100,15 +93,25 @@ You can also control how each cell is oriented:
 
 | Value | Type                                | Description |
 | ----- | ----------------------------------- | ----------- |
-| 0     | UNSET_ORIENTATION                   |  Control rotation will remain unchanged |
-| 1     | FACEORIGIN_ORIENTATION              |  Control will rotate to make it look at sphere central axis |
-| 2     | FACEORIGINREVERSED_ORIENTATION      |  Control will rotate to make it look back at sphere central axis |
-| 3     | FACEFORWARD_ORIENTATION             |  Control will rotate to look at z axis (0, 0, 1) |
-| 4     | FACEFORWARDREVERSED_ORIENTATION     |  Control will rotate to look at negative z axis (0, 0, -1) |
+| 0     | BABYLON.Container3D.UNSET_ORIENTATION |  Control rotation will remain unchanged |
+| 1     | BABYLON.Container3D.FACEORIGIN_ORIENTATION |  Control will rotate to make it look at sphere central axis |
+| 2     | BABYLON.Container3D.FACEORIGINREVERSED_ORIENTATION |  Control will rotate to make it look back at sphere central axis |
+| 3     | BABYLON.Container3D.FACEFORWARD_ORIENTATION |  Control will rotate to look at z axis (0, 0, 1) |
+| 4     | BABYLON.Container3D.FACEFORWARDREVERSED_ORIENTATION |  Control will rotate to look at negative z axis (0, 0, -1) |
+
+#### SpherePanel
+The `SpherePanel` container can be used to dispatch items on the surface of a sphere:
+
+```
+var panel = new BABYLON.GUI.SpherePanel();
+panel.radius = 5;
+```
+ 
+The radius property is used to define the radius of the hosting sphere.
 
 Demo [here](https://www.babylonjs-playground.com/#HB4C01#3)
 
-### CylinderPanel
+#### CylinderPanel
 The `CylinderPanel` container can be used to dispatch item on the surface of a cylinder:
 
 ```
@@ -116,34 +119,7 @@ var panel = new BABYLON.GUI.CylinderPanel();
 panel.radius = 5;
 ```
   
-The radius property is used to define the radius of the hosting sphere.
-
-The panel will automatically arrange its content every time you add a new control.
-
-The panel can either be row or column first depending on which property you use:
-```
-panel.columns = 5; // The panel will automatically compute the number of rows based on number of child controls
-```
-
-or
-
-```
-panel.rows = 5; // The panel will automatically compute the number of columns based on number of child controls
-```
-
-By default a CylinderPanel is set up with panel.columns = 10;
-
-You can specify the distance between elements with `panel.margin = 0.02`.
-
-You can also control how each cell is oriented:
-
-| Value | Type                                | Description |
-| ----- | ----------------------------------- | ----------- |
-| 0     | UNSET_ORIENTATION                   |  Control rotation will remain unchanged |
-| 1     | FACEORIGIN_ORIENTATION              |  Control will rotate to make it look at sphere central axis |
-| 2     | FACEORIGINREVERSED_ORIENTATION      |  Control will rotate to make it look back at sphere central axis |
-| 3     | FACEFORWARD_ORIENTATION             |  Control will rotate to look at z axis (0, 0, 1) |
-| 4     | FACEFORWARDREVERSED_ORIENTATION     |  Control will rotate to look at negative z axis (0, 0, -1) |
+The radius property is used to define the radius of the hosting cylinder.
 
 Demo [here](https://www.babylonjs-playground.com/#HB4C01#4)
 
