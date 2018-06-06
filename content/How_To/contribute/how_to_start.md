@@ -296,6 +296,9 @@ Here is the list of available workloads:
 | instrumentation | Contains instrumentation classes |
 | backgroundMaterial | Contains the backgroundMaterial |
 | environmentHelper | Contains environmentHelper |
+| particleHelper | Contains particleHelper |
+| videoDome | Contains videoDome |
+| photoDome | Contains photoDome |
 
 ## Adding files
 In order to add more files to the codebase you will have to edit the config.json file from /tools/gulp folder.
