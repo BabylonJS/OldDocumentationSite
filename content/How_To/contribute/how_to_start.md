@@ -225,7 +225,7 @@ This file starts like this:
 ```    
 
 You can see inside the `buildConfigurations` bucket that two configurations are defined: `all` and `minimal`.
-A configuration is an array of workloads. Workloads are sets of file, shaders and dependencies. They define a set of work. You can use then to cherry pick only feature that you want to use.
+A configuration is an array of workloads. Workloads are sets of file, shaders and dependencies. They define a set of work. You can use then to cherry pick only features that you want to use.
 
 For instance the `minimal` configuration only contains the following workloards: `meshBuilder`, `standardMaterial`, `freeCamera`, `hemisphericLight`.
 
@@ -265,6 +265,7 @@ Here is the list of available workloads:
 | additionalCameras | Contains FollowCamera, UniversalCamera and GamepadCamera |
 | touchCamera | Contains TouchCamera and FreeCameraTouchInput |
 | postProcesses | Contains PostProcess and PassPostProcess |
+| imageProcessing | Contains ImageProcessingConfiguration |
 | renderingPipeline | Contains PostProcessRenderPipelineManager, PostProcessRenderPass, PostProcessRenderEffect and PostProcessRenderPipeline |
 | additionalRenderingPipeline | Contains SSAORenderingPipeline, LensRenderingPipeline, HDRRenderingPipeline, StandardRenderingPipeline |
 | depthRenderer | Contains DepthRenderer |
@@ -292,10 +293,16 @@ Here is the list of available workloads:
 | probes | Contains ReflectionProbe |
 | layer | Contains Layer |
 | textureTools | Contains TextureTools |
+| behaviors | Contains behavior mechanism |
 | cameraBehaviors | Contains all camera behaviors |
+| meshBehaviors | Contains all mesh behaviors |
 | instrumentation | Contains instrumentation classes |
 | backgroundMaterial | Contains the backgroundMaterial |
-| environmentHelper | Contains environmentHelper |
+| environmentHelper | Contains the environmentHelper |
+| particleHelper | Contains the particleHelper |
+| videoDome | Contains the videoDome |
+| photoDome | Contains the photoDome |
+
 
 ## Adding files
 In order to add more files to the codebase you will have to edit the config.json file from /tools/gulp folder.
