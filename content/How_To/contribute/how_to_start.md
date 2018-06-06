@@ -265,6 +265,7 @@ Here is the list of available workloads:
 | additionalCameras | Contains FollowCamera, UniversalCamera and GamepadCamera |
 | touchCamera | Contains TouchCamera and FreeCameraTouchInput |
 | postProcesses | Contains PostProcess and PassPostProcess |
+| imageProcessing | Contains ImageProcessingConfiguration |
 | renderingPipeline | Contains PostProcessRenderPipelineManager, PostProcessRenderPass, PostProcessRenderEffect and PostProcessRenderPipeline |
 | additionalRenderingPipeline | Contains SSAORenderingPipeline, LensRenderingPipeline, HDRRenderingPipeline, StandardRenderingPipeline |
 | depthRenderer | Contains DepthRenderer |
@@ -292,15 +293,16 @@ Here is the list of available workloads:
 | probes | Contains ReflectionProbe |
 | layer | Contains Layer |
 | textureTools | Contains TextureTools |
+| behaviors | Contains behavior mechanism |
 | cameraBehaviors | Contains all camera behaviors |
+| meshBehaviors | Contains all mesh behaviors |
 | instrumentation | Contains instrumentation classes |
 | backgroundMaterial | Contains the backgroundMaterial |
-| environmentHelper | Contains environmentHelper |
-| particleHelper | Contains particleHelper |
-| videoDome | Contains videoDome |
-| photoDome | Contains photoDome |
-| behaviors | Contains behaviors |
-| imageProcessing | Contains imageProcessing |
+| environmentHelper | Contains the environmentHelper |
+| particleHelper | Contains the particleHelper |
+| videoDome | Contains the videoDome |
+| photoDome | Contains the photoDome |
+
 
 ## Adding files
 In order to add more files to the codebase you will have to edit the config.json file from /tools/gulp folder.
