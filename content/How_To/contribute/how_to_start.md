@@ -299,6 +299,8 @@ Here is the list of available workloads:
 | particleHelper | Contains particleHelper |
 | videoDome | Contains videoDome |
 | photoDome | Contains photoDome |
+| behaviors | Contains behaviors |
+| imageProcessing | Contains imageProcessing |
 
 ## Adding files
 In order to add more files to the codebase you will have to edit the config.json file from /tools/gulp folder.
