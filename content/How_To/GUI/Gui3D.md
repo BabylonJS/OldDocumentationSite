@@ -56,18 +56,72 @@ All specialized containers must implement the following function to provide layo
 - `_arrangeChildren()`: This function will be called everytime a new control is added. This is where children class can decide how to organize controls
 
 ### StackPanel
- The `StackPanel` container can be used to stack items either horizontally or vertically:
+The `StackPanel` container can be used to stack items either horizontally or vertically:
 
- ```
- var panel = new BABYLON.GUI.StackPanel3D();
- panel.isVertical = true;
- ```
+```
+var panel = new BABYLON.GUI.StackPanel3D();
+panel.isVertical = true;
+```
 
 The panel will automatically arrange its content every time you add a new control.
 
 You can specify the distance between elements with `panel.margin = 0.02`.
 
 Demo [here](https://www.babylonjs-playground.com/#HJZBRG#0)
+
+### VolumeBasedPanel
+VolumeBasedPanel are containers used to dispatch items on the surface of a volume (like sphere or cylinder).
+
+The panels will automatically arrange its content every time you add a new control.
+
+The panels can either be row or column first depending on which property you use:
+```
+panel.columns = 5; // The panel will automatically compute the number of rows based on number of child controls
+```
+
+or
+
+```
+panel.rows = 5; // The panel will automatically compute the number of columns based on number of child controls
+```
+
+By default a VolumeBasedPanel is set up with panel.columns = 10;
+
+You can specify the distance between elements with `panel.margin = 0.02`.
+
+You can also control how each cell is oriented:
+
+| Value | Type                                | Description |
+| ----- | ----------------------------------- | ----------- |
+| 0     | BABYLON.Container3D.UNSET_ORIENTATION |  Control rotation will remain unchanged |
+| 1     | BABYLON.Container3D.FACEORIGIN_ORIENTATION |  Control will rotate to make it look at sphere central axis |
+| 2     | BABYLON.Container3D.FACEORIGINREVERSED_ORIENTATION |  Control will rotate to make it look back at sphere central axis |
+| 3     | BABYLON.Container3D.FACEFORWARD_ORIENTATION |  Control will rotate to look at z axis (0, 0, 1) |
+| 4     | BABYLON.Container3D.FACEFORWARDREVERSED_ORIENTATION |  Control will rotate to look at negative z axis (0, 0, -1) |
+
+#### SpherePanel
+The `SpherePanel` container can be used to dispatch items on the surface of a sphere:
+
+```
+var panel = new BABYLON.GUI.SpherePanel();
+panel.radius = 5;
+```
+ 
+The radius property is used to define the radius of the hosting sphere.
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#3)
+
+#### CylinderPanel
+The `CylinderPanel` container can be used to dispatch item on the surface of a cylinder:
+
+```
+var panel = new BABYLON.GUI.CylinderPanel();
+panel.radius = 5;
+```
+  
+The radius property is used to define the radius of the hosting cylinder.
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#4)
 
 ## Controls
 All controls inherit from the `Control3D` class which provides a set of basic features:
@@ -84,6 +138,7 @@ You can attach a control to a mesh or tranform node from your scene with:
 control.linkToTransformNode(anchor);
 ```
 This way the control will always follow the linked node or mesh. Please note that in this case, the `position` and `scaling` properties are considered local to the new parent node or mesh.
+When linking a control to a transform node, please make sure that the control was first added to a container or to the root manager.
 
 Some observables are also available to help tracking control state:
 - `onPointerEnterObservable`: An event triggered when pointer enters the control

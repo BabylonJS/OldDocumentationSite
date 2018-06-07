@@ -176,7 +176,7 @@ In both of the following cases the box has then been rotated through 90 degrees,
 | box.position| (6, 1, 2) | Position as set |
 | box.getAbsolutePosition() | (6, 1, 0) | Position of box (yellow sphere) as seen, in world coordinates |
 | box.getPivotPoint() | (-1, -1, -1) | Position of pivot (red sphere) relative to local origin of box, as set |
-| box.GetAbsolutePivotPoint() | (5, 0, 1)| Position of pivot as seen, in world coordinates |
+| box.getAbsolutePivotPoint() | (5, 0, 1)| Position of pivot as seen, in world coordinates |
 
 **Set Pivot Only Method**
 
@@ -187,7 +187,7 @@ In both of the following cases the box has then been rotated through 90 degrees,
 | box.position| (6, 1, 2) | Position as set |
 | box.getAbsolutePosition() | (7, 2, 1) | World coordinate position of the created origin of box (green sphere)|
 | box.getPivotPoint() | (-1, -1, -1) | Position of pivot (red/yellow sphere) relative to the created origin of box |
-| box.GetAbsolutePivotPoint() | (6, 1, 2)| Position of pivot which is the same as the position of the box due to the change in the box's local origin  |
+| box.getAbsolutePivotPoint() | (6, 1, 2)| Position of pivot which is the same as the position of the box due to the change in the box's local origin  |
 
 This table alone shows one good reason not to use the _set pivot with move_ method unless for amending old projects.
 

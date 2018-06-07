@@ -517,7 +517,7 @@
             "desc": "Environment Tutorials.",
             "files": [
                 {
-                    "title": "Start with Physically Based Rendering",
+                    "title": "Start with Physically Based Rendering (PBR)",
                     "level": 2,
                     "filename": "Physically_Based_Rendering"
                 },

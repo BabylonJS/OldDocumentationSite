@@ -244,7 +244,7 @@ On this example you can see on line #3 that we force the engine to get the same 
 Then on lines #10 and #11 we scale the GUI to align with the screen resolution.
 
 
-### Line spacing
+#### Line spacing
 
 You can configure vertical line spacing between lines in pixels or percentage values.
 
@@ -252,7 +252,7 @@ You can configure vertical line spacing between lines in pixels or percentage va
 
 You can try it here: http://www.babylonjs-playground.com/#44KYLP
 
-### Resize to Fit
+#### Resize to Fit
 
 When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
 
@@ -499,6 +499,20 @@ You can also apply stretch to animation sheet using `image.stretch` property.
 [example 1](https://www.babylonjs-playground.com/#K60448#1)
 [example 2](https://www.babylonjs-playground.com/#K60448#2)
 
+### ColorPicker
+
+The color picker control allows users to set colors in your scene.
+
+Whenever a user interacts with the color picker an observable is triggered (`colorPicker.onValueChangedObservable`) which returns the current value (Color3) of the color picker.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+size|string or number|"200px"|The size, width, and height property will always be the same value since the color picker can only be a square.
+
+
+Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE#1
 
 ### VirtualKeyboard
 
@@ -580,7 +594,6 @@ You can decide to have your containers to adapt their size to their children by 
 * adaptHeightToChildren (false by default)
 
 If you set one of these properties to true, the associated dimension (width, height or both) will be computed based on direct children size as long as it is defined in pixel (size cannot be defined in percentage because this will generate an infinite loop as the child will need the parent size and the parent will need the child size)
-
 You can find a demo here: https://www.babylonjs-playground.com/#GL5SIM
 
 ### Rectangle
@@ -591,7 +604,7 @@ Property|Type|Default|Comments
 thickness|number|1|Thickness of the border
 cornerRadius|number|0|Size in pixel of each corner. Used to create rounded rectangles
 
-Here is an example of a rectangle control:  https://www.babylonjs-playground.com/#XCPP9Y#8
+Here is an example of a rectangle control: https://www.babylonjs-playground.com/#XCPP9Y#8
 
 ### Ellipse
 The Ellipse is a ellipsoidal container with the following properties:
@@ -600,7 +613,7 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 thickness|number|1|Thickness of the border
 
-Here is an example of an ellipse control:  https://www.babylonjs-playground.com/#XCPP9Y#10
+Here is an example of an ellipse control: https://www.babylonjs-playground.com/#XCPP9Y#10
 
 ### StackPanel
 
@@ -609,22 +622,62 @@ All children must have a defined width or height (depending on the orientation).
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
-Here is an example of a StackPanel:  https://www.babylonjs-playground.com/#XCPP9Y#11
+Here is an example of a StackPanel: https://www.babylonjs-playground.com/#XCPP9Y#11
 
-### ColorPicker
+### Grid
 
-The color picker control allows users to set colors in your scene.
+The Grid is a control which defines a set of rows and columns and allows children to specify which cell they want to belong to:
 
-Whenever a user interacts with the color picker an observable is triggered (`colorPicker.onValueChangedObservable`) which returns the current value (Color3) of the color picker.
+```
+var grid = new BABYLON.GUI.Grid();   
+grid.addColumnDefinition(100, true);
+grid.addColumnDefinition(0.5);
+grid.addColumnDefinition(0.5);
+grid.addColumnDefinition(100, true);
+grid.addRowDefinition(0.5);
+grid.addRowDefinition(0.5);
 
-The control is rendered using the following properties:
+// This rect will be on first row and second column
+var rect = new BABYLON.GUI.Rectangle();
+rect.background = "green";
+rect.thickness = 0;
+grid.addControl(rect, 0, 1);   
 
-Property|Type|Default|Comments
---------|----|-------|--------
-size|string or number|"200px"|The size, width, and height property will always be the same value since the color picker can only be a square.
+// This rect will be on second row and third column
+rect = new BABYLON.GUI.Rectangle();
+rect.background = "red";
+rect.thickness = 0;
+grid.addControl(rect, 1, 2); 
+```
 
+You can define rows and columns with the following functions:
 
-Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE#1
+* addColumnDefinition(width, isPixel): Use this function to create a new column. Width can be between 0 and 1 if isPixel is false (percentage mode then) or contains an actual width if isPixel is true
+* addRowDefinition(height, isPixel): Use this function to create a new row. Height can be between 0 and 1 if isPixel is false (percentage mode then) or contains an actual width if isPixel is true
+
+Here is an example of a grid made of 4 columns where the first and the last will have a width of 50px and the second and third will each have 50% of the remaining space:
+
+```
+grid.addColumnDefinition(100, true);
+grid.addColumnDefinition(0.5);
+grid.addColumnDefinition(0.5);
+grid.addColumnDefinition(100, true);
+```
+
+You can update or delete columns and rows with the following functions:
+
+* setRowDefinition(index, height, isPixel): Update a row definition
+* setColumnDefinition(index, width, isPixel): Update a column definition
+* removeRowDefinition(index): Remove a row definition at specified index
+* removeColumnDefinition(index): Remove a column definition at specified index
+
+To add a control in a grid, you have to specify the row and column indexes:
+
+```
+grid.addControl(control, 1, 2); // 2nd row, thrid column
+```
+
+Here is an example of a Grid: https://www.babylonjs-playground.com/#KX33X8#1
 
 ## Styles
 
