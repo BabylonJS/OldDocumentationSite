@@ -244,7 +244,7 @@ On this example you can see on line #3 that we force the engine to get the same 
 Then on lines #10 and #11 we scale the GUI to align with the screen resolution.
 
 
-### Line spacing
+#### Line spacing
 
 You can configure vertical line spacing between lines in pixels or percentage values.
 
@@ -252,7 +252,7 @@ You can configure vertical line spacing between lines in pixels or percentage va
 
 You can try it here: http://www.babylonjs-playground.com/#44KYLP
 
-### Resize to Fit
+#### Resize to Fit
 
 When resizeToFit is set to true, the width and height of the rendered text will be automatically measured and applied to the TextBlock.
 
