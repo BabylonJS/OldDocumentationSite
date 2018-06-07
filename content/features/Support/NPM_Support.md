@@ -218,3 +218,279 @@ You can still use custom builds to build you own minimal version: http://doc.bab
 Our documentation always refers to the BABYLON namespace. We therefore always use this namespace when talking about objects/classes, and also use this namespace when talking about the GUI.
 
 When using es-6 imports or require, you are the one responsible to setting the namespace in accordance to your needs. Pay attention when changing it and when copying code from the Playground.
+
+## Example of a webpack project using Babylon modules
+
+Let's see an example of how to setup a Babylon project written in Typescript and bundled using Webpack.
+
+I will be using webpack 4, but the same setup will work with the previous version of webpack.
+
+### Setting up the project
+
+We will be using npm to install dependencies. We first run `npm init` to generate package.json . You can generate package.json in any other way you wish.
+
+After package,json was generated, we will install the needed dev dependencies:
+
+```bash
+npm install --save-dev typescript webpack ts-loader webpack-cli
+```
+
+Now we will need to configure webpack to know what to actually do. This is a simple example of the webpack configuration file, `webpack.config.js`:
+
+```javacsript
+const path = require('path');
+
+module.exports = {
+    entry: './index.ts',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    resolve: {
+        extensions: [".ts"]
+    },
+    module: {
+        rules: [
+            { test: /\.tsx?$/, loader: "ts-loader" }
+        ]
+    }
+    mode: "development"
+};
+```
+
+We will also add `tsconfig.json`:
+
+```javascript
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "noResolve": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "isolatedModules": false,
+        "lib": [
+            "dom",
+            "es2015.promise",
+            "es5"
+        ],
+        "declaration": true,
+        "outDir": "./"
+    },
+    "files": [
+        "./index.ts"
+    ]
+}
+```
+
+We will also add an html file with a canvas (index.html):
+
+```html
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+            html,
+            body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="renderCanvas"></canvas>
+        <script src="dist/index.js"></script>
+    </body>
+
+</html>
+```
+
+After adding `index.ts` we are ready to start developing.
+
+### Adding babylon support
+
+We will start a simple project with Babylon core module, the loaders, and the GUI. 
+
+First - let's install babylon's dependencies:
+
+```bash
+npm install --save babylonjs babylonjs-loaders babylonjs-gui
+```
+
+This will install the latest stable version of Babylon. To install the latest preview version, use the preview stream:
+
+```bash
+npm install --save babylonjs@preview babylonjs-loaders@preview babylonjs-gui@preview
+```
+
+### Writing some code
+
+Our index.ts will show a sphere for now. I will be using a code very similar to the playground, but you can structure your code as you wish:
+
+```javascript
+var canvas: any = document.getElementById("renderCanvas");
+var engine: Engine = new Engine(canvas, true);
+
+function createScene(): Scene {
+    var scene: Scene = new Scene(engine);
+
+    var camera: ArcRotateCamera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, Vector3.Zero(), scene);
+    camera.attachControl(canvas, true);
+
+    var light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
+
+    var sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 1 }, scene);
+
+    return scene;
+}
+
+var scene: Scene = createScene();
+
+engine.runRenderLoop(() => {
+    scene.render();
+});
+```
+
+You will notice that the BABYLON namespace is gone. and that you see a lot of errors, if actually using this file. This is because we haven't yet imported the needed dependencies from babylonjs.
+
+We will use es6 imports for that. To add the dependencies, we have two options. Defining the BABYLON namespace:
+
+```javascript
+import * as BABYLON from 'babylonjs';
+```
+
+This will actually bring back the BABYLON namespace. My preferred option is only loading the dependencies you need:
+
+```javascript
+import { Engine, Scene, ArcRotateCamera, HemisphericLight, Vector3, MeshBuilder, Mesh } from "babylonjs";
+```
+
+Adding this line to the beginning of the file will load all needed dependencies to your project and will eliminate all errors.
+
+### Bundling the project
+
+Compiling index.ts using tsc will work. But it will generate a file that is unusable without babylonjs itself. To get a bundled file we will run webpack. Again, two ways for that:
+
+```bash
+./node_modules/.bin/webpack
+```
+
+Or creating a build task in package.json:
+
+```javascript
+    "scripts": {
+        "build": "webpack"
+    },
+```
+
+And running:
+
+```bash
+npm run build
+```
+
+We will now have an index.js in the dist folder that we can use in our index.html
+
+You will notice there are a few warnings about dependencies. We will deal with that later.
+
+### Checking your project
+
+The best way for you during development would be the webpack dev server (https://github.com/webpack/webpack-dev-server), but it is not a part of the scope of this tutorial.
+
+To check the current project, I use the http-server npm module (installed globally). You can use any web server that will serve the root folder of our project.
+
+If you open out index.html, we will see a sphere. Hooray!
+
+### Adding the GUI
+
+For the sake of learning, we will add a new file, `gui.ts`, even thou it can still be done with a single ts file. Our gui.ts file will look like this:
+
+```javascript
+import { AbstractMesh } from "babylonjs";
+import { AdvancedDynamicTexture, Rectangle, Control, TextBlock } from "babylonjs-gui";
+
+let advancedTexture: AdvancedDynamicTexture;
+
+function init(): void {
+    if (!advancedTexture) {
+        advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI("ui1");
+    }
+}
+
+export function addLabelToMesh(mesh: AbstractMesh): void {
+    if (!advancedTexture) {
+        init();
+    }
+    let label: Rectangle = new Rectangle("label for " + mesh.name);
+    label.background = "black";
+    label.height = "30px";
+    label.alpha = 0.5;
+    label.width = "100px";
+    label.cornerRadius = 20;
+    label.thickness = 1;
+    label.linkOffsetY = 30;
+    label.top = "10%";
+    label.zIndex = 5;
+    label.verticalAlignment = Control.VERTICAL_ALIGNMENT_TOP;
+    advancedTexture.addControl(label);
+
+    const text1: TextBlock = new TextBlock();
+    text1.text = mesh.name;
+    text1.color = "white";
+    label.addControl(text1);
+}
+```
+
+and in our index.js, we will import the function and use it in our createScene function:
+
+```javascript
+import { addLabelToMesh } from "./gui";
+```
+
+and the createScene function looks like this:
+
+```javascript
+function createScene(): Scene {
+    var scene: Scene = new Scene(engine);
+
+    var camera: ArcRotateCamera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, Vector3.Zero(), scene);
+    camera.attachControl(canvas, true);
+
+    var light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
+
+    var sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 1 }, scene);
+
+    addLabelToMesh(sphere);
+
+    return scene;
+}
+```
+
+If we compile now using webpack, we will have our GUI element in our scene.
+
+### Eliminating the dependencies warnings
+
+Babylon is using oimo, cannon and earcut as external, optional dependencies. If you don't use them, you can define them as externals in webpack configuration, and avoid the warnings:
+
+```javascript
+    externals: {
+        "oimo": true,
+        "cannon": true,
+        "earcut": true
+    },  
+```
