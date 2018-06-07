@@ -751,7 +751,11 @@
                 {
                     "title": "Write a Playground Based Tutorial",
                     "filename": "playground_tutorials"
-                }
+                },
+                {
+                    "title": "Workloads",
+                    "filename": "workloads"
+                }                
             ]
         },
         {
