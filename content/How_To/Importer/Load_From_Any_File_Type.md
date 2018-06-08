@@ -10,6 +10,13 @@ Currently plugins can be found for:
  - [.stl](/How_To/STL)
  - .babylon
 
+To quickly add support for all loaders the following script can be added to your page:
+```
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+```
+For NPM usage see: https://www.npmjs.com/package/babylonjs-loaders
+
 Once the plugin is referenced, the SceneLoader class can be used which provides a few loading methods.
 
 SceneLoader.Append - Loads all babylon assets from the file and appends them to the scene

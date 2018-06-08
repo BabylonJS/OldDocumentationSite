@@ -115,6 +115,13 @@
                     "icon": "icons/pointer_events_handling.png", 
                     "description": "Handle pointer input",
                     "PGID": "#C245A1#0"
+                },
+                {
+                    "title": "Keyboard + game loop",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_actions",
+                    "icon": "icons/keyboard.png", 
+                    "description": "Move a sphere around with the keyboard",
+                    "PGID": "#15EY4F#0"
                 }
             ]
         },
@@ -157,7 +164,7 @@
                     "PGID": "#20OAV9#1"
                 },
                 {
-                    "title": "Spot lgiht",
+                    "title": "Spot light",
                     "doc": "https://doc.babylonjs.com/babylon101/lights#the-spot-light",
                     "icon": "icons/spotLight.jpg",
                     "description": "Defines a cone of light pointing in a direction",
@@ -194,7 +201,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/load_gltf.jpg", 
                     "description": "Show how to easily load a glTF model",
-                    "PGID": "#PN1NNI#0"
+                    "PGID": "#PN1NNI#1"
                 },
                 {
                     "title": "Assets manager",
@@ -405,7 +412,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_lod",
                     "icon": "icons/lod.jpg",
                     "description": "Use various meshes based on distance to optimize rendering speed",
-                    "PGID": "#7HMHAU#0"
+                    "PGID": "#7HMHAU#1"
                 },
                 {
                     "title": "Hardware instancing",
@@ -459,7 +466,7 @@
                     "doc": "https://doc.babylonjs.com/babylon101/particles",
                     "icon": "icons/lying_fog.jpg",
                     "description": "Use particle to simulate volumetric fog",
-                    "PGID": "#BHNVUE#1"
+                    "PGID": "#BHNVUE#2"
                 },                           
                 {
                     "title": "Particle editor",
@@ -626,7 +633,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/playing_sounds_and_music#using-the-analyser",
                     "icon": "icons/musicAnalyzer.jpg",
                     "description": "Visualize audio frequencies in realtime",
-                    "PGID": "#2JOSXE#21"
+                    "PGID": "#2JOSXE#22"
                 }
             ]
         },    
@@ -749,7 +756,7 @@
                     "title": "Warp speed !",
                     "doc": "https://doc.babylonjs.com/how_to/shader_material",
                     "icon": "icons/warpSpeed.jpg",
-                    "description": "Fly though stars using a custom shader texture",
+                    "description": "Fly through stars using a custom shader texture",
                     "PGID": "#1WBBW0#1"
                 },
                 {
@@ -771,7 +778,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_reflection_probes",
                     "icon": "icons/reflection.jpg", 
                     "description": "use reflection probes to simulate realtime reflection",
-                    "PGID": "#SF5RCN#0"
+                    "PGID": "#J0D279#0"
                 },                
                 {
                     "title": "Motion blur",
@@ -793,7 +800,28 @@
                     "icon": "icons/lens_effect.jpg", 
                     "description": "Create photographic effect with the LensRenderingPipeline",
                     "PGID": "#B7JHWD#0"
-                }                           
+                },
+                {
+                    "title": "Heatwave",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
+                    "icon": "icons/heatwave.jpg", 
+                    "description": "Use custom post process effect to simulate heat wave effect",
+                    "PGID": "#TZJ0HQ#11"
+                },
+                {
+                    "title": "RGB Shift Glitch",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
+                    "icon": "icons/rgbglitch.jpg", 
+                    "description": "Use custom post process effect to simulate RGB Shift glitch",
+                    "PGID": "#TZJ0HQ#10"
+                },
+                {
+                    "title": "Dawn Bringer",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
+                    "icon": "icons/dawn.jpg", 
+                    "description": "Use custom post process effect to simulate DawnBringer effect",
+                    "PGID": "#TZJ0HQ#9"
+                }                               
             ]
         },
         {

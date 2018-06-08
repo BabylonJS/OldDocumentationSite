@@ -155,6 +155,11 @@
                     "filename": "Optimizing_Your_Scene_with_Octrees"
                 },
                 {
+                    "title": "Reduce memory footprint",
+                    "level": 3,
+                    "filename": "Reduce_memory_footprint"
+                },
+                {
                     "title": "Optimize using Cached Resources",
                     "level": 3,
                     "filename": "Caching_Resources_in_IndexedDB"
@@ -282,22 +287,12 @@
                     "filename": "Rotate"
                 },
                 {
-                    "title": "Set and Use a Pivot V3.2+",
-                    "level": 3,
-                    "filename": "Pivots3.2"
-                },
-                {
-                    "title": "Set and Use a Pivot - Legacy",
+                    "title": "Set and Use a Pivot",
                     "level": 3,
                     "filename": "Pivots"
                 },
                 {
-                    "title": "Rotate Around an Axis About a Point V3.2+",
-                    "level": 3,
-                    "filename": "Pivot3.2"
-                },
-                {
-                    "title": "Rotate Around an Axis About a Point - Legacy",
+                    "title": "Rotate Around an Axis About a Point",
                     "level": 3,
                     "filename": "Pivot"
                 },
@@ -522,7 +517,7 @@
             "desc": "Environment Tutorials.",
             "files": [
                 {
-                    "title": "Start with Physically Based Rendering",
+                    "title": "Start with Physically Based Rendering (PBR)",
                     "level": 2,
                     "filename": "Physically_Based_Rendering"
                 },
@@ -560,6 +555,11 @@
                     "title": "How to use Reflection Probes",
                     "level": 3,
                     "filename": "How_to_use_Reflection_probes"
+                },
+                {
+                    "title": "How to do 360 Photo",
+                    "level": 3,
+                    "filename": "360PhotoDome"
                 },
                 {
                     "title": "How to do 360 Video",
@@ -716,6 +716,10 @@
                 {
                     "title": "Use the Babylon GUI",
                     "filename": "Gui"
+                },
+                {
+                    "title": "Use the Babylon 3D GUI",
+                    "filename": "Gui3D"
                 }
             ]
         },
@@ -727,10 +731,6 @@
                 {
                     "title": "Start Contributing to Babylon.js",
                     "filename": "how_to_start"
-                },
-                {
-                    "title": "Setup Visual Studio to Contribute to Babylon.js",
-                    "filename": "setup_visualStudio"
                 },
                 {
                     "title": "Follow Approved Naming Conventions",
@@ -751,7 +751,11 @@
                 {
                     "title": "Write a Playground Based Tutorial",
                     "filename": "playground_tutorials"
-                }
+                },
+                {
+                    "title": "Workloads",
+                    "filename": "workloads"
+                }                
             ]
         },
         {
@@ -882,6 +886,10 @@
                 {
                     "title": "How to use Babylon.js inside React Native",
                     "filename": "BabylonJS_and_React_Native"
+                },
+                {
+                    "title": "How to use Babylon.js in a Facebook Instant Game",
+                    "filename": "BabylonJS_and_Instant_Games"
                 }
             ]
         },
@@ -929,7 +937,7 @@
                 {
                     "title": "Maya to glTF",
                     "filename": "Maya_to_glTF"
-				}
+                }
             ]
         },
         {
@@ -986,8 +994,12 @@
                     "filename": "09_NavigationMesh"
                 },
                 {
+                    "title": "Windows Platform",
+                    "filename": "10_WindowsPlatform"
+                },
+                {
                     "title": "Babylon Art Tools",
-                    "filename": "10_BabylonArtTools"
+                    "filename": "11_BabylonArtTools"
                 }
             ]
         },
@@ -1180,6 +1192,10 @@
                 {
                     "title": "Cell Shading",
                     "filename": "Cell"
+                },
+                {
+                    "title": "Mix",
+                    "filename": "Mix"
                 }
             ]
         },

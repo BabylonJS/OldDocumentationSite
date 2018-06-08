@@ -66,7 +66,7 @@ ambient color it will have no effect.
 ### Transparent Color Example
 Transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
 ```javascript
-var myMaterial.alpha = 0.5;
+myMaterial.alpha = 0.5;
 ```
 * [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#16)
 
@@ -102,7 +102,7 @@ has material with red diffuse color an an ambient texture.
 ### Transparent Texture Examples
 As for colors the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
 ```javascript
-var myMaterial.alpha = 0.5;
+myMaterial.alpha = 0.5;
 ```
 * [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
 
@@ -113,7 +113,7 @@ which has a transparent background;
 
 In this case we set the _hasAlpha_ property of the **texture** to true.
 ```javascript
-var myMaterial.diffuseTexture.hasAlpha = true;
+myMaterial.diffuseTexture.hasAlpha = true;
 ```
 
 * [Playground Example Transparent Background](http://www.babylonjs-playground.com/#YDO1F#18)

@@ -170,6 +170,19 @@ These commands will apply to every animation object contained in the Animatable'
 
 And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)
 
+## Animations and promises
+Starting with Babylon.js v3.3, you can use promises to wait for an anmatable to end:
+
+```
+var anim = scene.beginAnimation(box1, 0, 100, false);
+
+console.log("before");
+await anim.waitAsync();
+console.log("after");
+```
+
+You can find an example here: https://www.babylonjs-playground.com/#HZBCXR
+
 ## Controlling animations
 
 Each Animation has a property called ```currentFrame``` that indicates the current animation key.

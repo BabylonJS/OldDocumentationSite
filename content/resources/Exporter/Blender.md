@@ -4,7 +4,7 @@ PG_TITLE: Blender
 ---
 # Blender to Babylon.js exporter
 
-The Blender export plugin can be found on [github repository](https://github.com/BabylonJS/Exporters/tree/master/Blender).
+The Blender export plugin can be found on [github repository](https://github.com/BabylonJS/Exporters/tree/master/Blender). We assume your using the last version.
 
 An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter. It exports JavaScript modules with in-line geometry and simplifies the loading process. See its readme or that of the [QueuedInterpolation](https://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation) extension, which it is part of, to know more about its functionalities, and access its proper documentation.
 
@@ -32,11 +32,11 @@ This add-on use the standard Blender installation procedure:
 | Blender | [BJS equivalent](http://doc.babylonjs.com/classes/3.0/scene) |
 | --- | --- |
 | Scene</br>![scene](img/exporters/blender/scene/scene.png) | <ul><li>Camera: set scene activeCamera</li></ul> |
-| Exporter panel</br>![exporter-scene-options](img/exporters/blender/scene/exporter-scene-options.png) | <ul><li>`Export only selected layers`: objects in hidden scene layers will not be taken into account</br>![selected-layers](img/exporters/blender/scene/selected-layers.png)</li><li>`Max Decimal Precision`: how values are rounded during export</li></ul> |
+| Exporter panel</br>![exporter-scene-options](img/exporters/blender/scene/exporter-scene-options.png) | <ul><li>`Export`: <ul><li>`All`: all the file will be exported</li><li>`Selected`: only selection will be exported</li><li>`Layers`: hidden layers will not be exported</li></ul></li><li>`Max Decimal Precision`: how values are rounded during export</li></ul> |
 
 ---
 
-### World 
+### World
 
 ![Blender world properties panel](img/exporters/blender/world/world-properties-panel.png)
 
@@ -168,6 +168,45 @@ This add-on use the standard Blender installation procedure:
 
 ---
 
+## Animation
+
+### Commons & Good practices
+
+- you should export one *.babylon* file per animated object to make your life easier (once in BJS, but also to handle the timeline in Blender). See [tip](http://doc.babylonjs.com/exporters/blender_tips#Animation) for a basic workflow.
+- be sure, before starting animation in Blender, that your objects have their transformations applied! (3DView > Object > Apply)
+
+### Classic Animations
+
+You will find an example on this [.zip archive](http://doc.babylonjs.com/examples/blender/animations/babylon-format.zip). 3D sources files are on `sources` folder, BJS app is on `BJS` folder.
+
+In `sources`, we have our master scene, with only static objects (on the layer 1), and just for us to see it, we have the logo linked on the layer 6. When exporting, take care to have only layer 1 active, as we have checked in the [scene panel](http://doc.babylonjs.com/resources/blender#scene) *Export only selected layers*.
+
+Once exported, you can see in `BJS/index.html` that we create our main scene using this `.babylon`: line 36
+
+```html
+BABYLON.SceneLoader.Load("", "01.master-static-scene.babylon", engine, function (scene) {
+
+});
+```
+
+Same way for out animated object in `sources/02.classic-animation.blend`: layer 1 is for our object, layer 6 is just for us to see the main scene in our *.blend*. *Export only selected layers* is used to help us exporting only the first layer to babylon.
+
+Once exported, we can import our meshes inside the onSuccess of our Loader above. Check on `BJS/index.html`, line 64:
+
+```html
+BABYLON.SceneLoader.ImportMesh("", "", "02.classic-animation.babylon", scene, function (importedMeshes){
+
+});
+```
+
+Now, you already have a basic scene with animations autoplaying in it.
+
+### Armatures
+
+- you can use any Blender rotation mode you want, the animation will be kind of baked during the export
+
+---
+
 ## Try it out!
 
 Once your scene is exported, you have multiple solutions to test it:
@@ -178,6 +217,8 @@ Once your scene is exported, you have multiple solutions to test it:
 - script your own app using the [loader](/how_to/load_from_any_file_type)
 
 ### Example
+
+#### Simple scene
 
 Let's say you have exported your first scene. In this example we will use [blend files of the BJS logo](https://github.com/BabylonJS/MeshesLibrary/tree/master/BabylonJS-logo/v3):
 
@@ -218,17 +259,17 @@ Let's say you have exported your first scene. In this example we will use [blend
     <script type="text/javascript">
         var canvas = document.getElementById("canvas");
         var engine = new BABYLON.Engine(canvas, true);
-        
+
         // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
         BABYLON.SceneLoader.Load("", "babylonJS_logo_v3.babylon", engine, function (scene) {
-		
+
             //as this .babylon example hasn't camera in it, we have to create one
             var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);
             camera.attachControl(canvas, false);
-			
+
 			scene.clearColor = new BABYLON.Color3(1, 1, 1);
 			scene.ambientColor = new BABYLON.Color3.White;
-			
+
             engine.runRenderLoop(function() {
                 scene.render();
             });
@@ -247,6 +288,7 @@ Let's say you have exported your first scene. In this example we will use [blend
 
 - double-click on the *index.html* file... profit!
   - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver (local or not), or try into another browser (e.g.: Firefox, Edge).
-  
+
 ![blender babylon scene loaded in BJS](img/exporters/blender/babylon/babylon-loaded.png)
 
+#### Animated object

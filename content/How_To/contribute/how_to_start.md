@@ -132,7 +132,7 @@ This will debug all the TS and js in chrome and stop on your breakpoints setup i
 The main entry points in BJS are:
 
 1. [Sandbox]("http://localhost:1338/sandbox/index-local.html"): [http://localhost:1338/sandbox/index-local.html](http://localhost:1338/sandbox/index-local.html)
-2. * [Playground]("http://localhost:1338/Playground/index-local.html"):  [http://localhost:1338/Playground/index-local.html](http://localhost:1338/Playground/index-local.html)
+2. [Playground]("http://localhost:1338/Playground/index-local.html"):  [http://localhost:1338/Playground/index-local.html](http://localhost:1338/Playground/index-local.html)
 3. [Materials Library]("http://localhost:1338/materialsLibrary/index.html"): [http://localhost:1338/materialsLibrary/index.html](http://localhost:1338/materialsLibrary/index.html)
 4. [Post Process Library]("http://localhost:1338/postProcessLibrary/index.html"): [http://localhost:1338/postProcessLibrary/index.html](http://localhost:1338/postProcessLibrary/index.html)
 5. [Procedural Textures Library]("http://localhost:1338/proceduralTexturesLibrary/index.html"): [http://localhost:1338/proceduralTexturesLibrary/index.html](http://localhost:1338/proceduralTexturesLibrary/index.html)
@@ -189,117 +189,9 @@ The main gulpfile in Tools/Gulp contains a lot of helpfull tasks. So first open 
 * `gulp inspector` generates the inspector files in the dist/preview release folder.
 * `gulp deployLocalDev` regenerates your localDev/src/index.js from the template.
 
-## Custom builds
-By default, the build process will generate code for all classes in the repo. For size reasons you may want to strip out some classes that you are not using.
-
-To do so, you will have to edit the config.json file from /tools/gulp folder.
-
-This file starts like this:
-
-```
-    "build": {
-        "filename": "babylon.max.js",
-        "minFilename": "babylon.js",
-        "minWorkerFilename": "babylon.worker.js",
-        "declarationFilename": "babylon.d.ts",
-        "declarationModuleFilename": "babylon.module.d.ts",
-        "outputDirectory": "../../dist/preview release",
-        "srcOutputDirectory": "../../src/",
-        "currentConfig": "all"
-    },
-    "buildConfigurations": {
-        "all": [
-                "standardMaterial", "pbrMaterial", "freeCamera", "arcRotateCamera", "hemisphericLight", 
-                "pointLight", "directionalLight", "spotLight", "animations", "actions", "sprites", "picking", "collisions",
-                "particles", "solidParticles", "additionalMeshes", "meshBuilder", "audio", "additionalTextures", "shadows",
-                "loader", "userData", "offline", "fresnel", "multiMaterial", "touchCamera", "procedural", "gamepad",
-                "additionalCameras", "postProcesses", "renderingPipeline", "depthRenderer", "additionalPostProcesses",
-                "bones", "hdr", "polygonMesh", "csg", "lensFlares", "physics", "textureFormats", "debug", "morphTargets",
-                "colorCurves", "octrees", "simd", "vr", "virtualJoystick", "optimizations", "highlights", "assetsManager",
-                "mapTexture", "dynamicFloatArray", "serialization", "probes", "layer", "textureTools", "cameraBehaviors"
-        ],
-        "minimal": ["meshBuilder", "standardMaterial", "freeCamera", "hemisphericLight"]
-    },
-    "workloads" :
-    {
-```    
-
-You can see inside the `buildConfigurations` bucket that two configurations are defined: `all` and `minimal`.
-A configuration is an array of workloads. Workloads are sets of file, shaders and dependencies. They define a set of work. You can use then to cherry pick only feature that you want to use.
-
-For instance the `minimal` configuration only contains the following workloards: `meshBuilder`, `standardMaterial`, `freeCamera`, `hemisphericLight`.
-
-You can change the active configuration by settings the `build.currentConfig` value (set to `all` by default).
-
-Here is the list of available workloads:
-
-| Workload      | Description |
-| ------------- |-------------|
-| standardMaterial | Contains standard material and associated shaders |
-| pbrMaterial | Contains PBR material and associated shaders |
-| freeCamera | Contains FreeCamera |
-| arcRotateCamera | Contains ArcRotateCamera |
-| hemisphericLight | Contains HemisphericLight |
-| pointLight | Contains PointLight |
-| directionalLight | Contains DirectionalLight |
-| spotLight | Contains SpotLight |
-| animations | Contains Animations and Animatables |
-| actions | Contains Actions and ActionManagers |
-| sprites | Contains Sprites and SpriteManager |
-| picking | Contains PickingInfo and Ray |
-| collisions | Contains Collider |
-| particles | Contains Particle and ParticleSystem |
-| solidParticles | Contains SolidParticleSystem |
-| additionalMeshes | Contains GroundMesh, InstanceMesh and LinesMesh |
-| meshBuilder | Contains MeshBuilder |
-| audio | Contains AudioEngine, Sound, Soundtrack and Analyzer |
-| additionalTextures | Contains CubeTexture, RenderTargetTexture, MirrorTexture, RefractionTextures, DynamicTexture, VideoTexture and RawTexture |
-| shadows | Contains ShadowGenerator |
-| loader | Contains SceneLoader, FilesInput and LoadingScreen |
-| userData | Contains StringDictionary, Tags and AndOrNotEvaluator |
-| offline | Contains Database |
-| fresnel | Contains FresnelParameters |
-| multiMaterial | Contains MultiMaterial |
-| procedural | Contains the ProceduralTexture and CustomProceduralTexture |
-| gamepad | Contains FreeCameraGamepadInput, ArcRotateCameraGamepadInput, Gamepads, ExtendedGamepad |
-| additionalCameras | Contains FollowCamera, UniversalCamera and GamepadCamera |
-| touchCamera | Contains TouchCamera and FreeCameraTouchInput |
-| postProcesses | Contains PostProcess and PassPostProcess |
-| renderingPipeline | Contains PostProcessRenderPipelineManager, PostProcessRenderPass, PostProcessRenderEffect and PostProcessRenderPipeline |
-| additionalRenderingPipeline | Contains SSAORenderingPipeline, LensRenderingPipeline, HDRRenderingPipeline, StandardRenderingPipeline |
-| depthRenderer | Contains DepthRenderer |
-| additionalPostProcesses | Contains BlurPostProcess, RefractionPostProcess, BlackAndWhitePostProcess, ConvolutionPostProcess, FilterPostProcess, FxaaPostProcess, VolumetricLightScatteringPostProcess, ColorCorrectionPostProcess, TonemapPostProcess and DisplayPassPostProcess |
-| bones | Contains Bone, BoneIKController, BoneLookController and Skeleton  |
-| hdr | Contains CubemapToSphericalPolynomial, PanoramaToCubemap, HDRTools, PMRemgenerator, HDRCubeTexture |
-| polygonMesh | Contains PolygonMesh |
-| csg | Contains CSG |
-| lensFlares | Contains LensFlare and LensFlareSystem |
-| physics | Contains PhysicsJoint, PhysicsImpostor, PhysicsEngine, CannonJSPlugin and OimoJSPlugin |
-| textureFormats | Contains support for .tga, .dds and .ktc |
-| debug | Contains SkeletonViewer, AxesViewer, BoneAxesViewer, RayHelper, DebugLayer and BoundingBoxRenderer |
-| morphTargets | Contains MorphTarget and MorphTargetManager |
-| colorCurves | Contains ColorGradingTexture and ColorCurves |
-| octrees | Contains Octree and OctreeBlock |
-| simd | Contains SIMD support for Math |
-| vr | Contains VRDistortionCorrectionPostProcess, AnaglyphPostProcess, StereoscopicInterlacePostProcess, FreeCameraDeviceOrientationInput, ArcRotateCameraVRDeviceOrientationInput, VRCameraMetrics, WebVRCamera, DeviceOrientationCamera, VRDeviceOrientationCamera and StereoscopicCameras  |
-| virtualJoystick | Contains VirtualJoystick, VirtualJoysticksCamera and FreeCameraVirtualJoystickInput |
-| optimizations | Contains MeshSimplification, MeshLODLevel and SceneOptimizer |
-| highlights | Contains OutlineRenderer, EdgesRenderer and Highlightlayer |
-| assetsManager | Contains AssetsManager |
-| mapTexture | Contains MapTexture and RectPackingMap |
-| dynamicFloatArray | Contains DynamicFloatArray |
-| serialization | Contains SceneSerializer |
-| probes | Contains ReflectionProbe |
-| layer | Contains Layer |
-| textureTools | Contains TextureTools |
-| cameraBehaviors | Contains all camera behaviors |
-| instrumentation | Contains instrumentation classes |
-| backgroundMaterial | Contains the backgroundMaterial |
-| environmentHelper | Contains environmentHelper |
-
 ## Adding files
 In order to add more files to the codebase you will have to edit the config.json file from /tools/gulp folder.
-If you add files to the core, you will need to reference them in the core workload. Do not forget to also reference your shaders and shaderIncludes.
+If you add files to the core, you will need to reference them in the core [workload](https://doc.babylonjs.com/how_to/workloads). Do not forget to also reference your shaders and shaderIncludes.
 
 If you plan to add files to a satellite project (like the postProcessLibrary), you will have to add them to the associated entry, like this one for the postProcessLibrary:
 ```

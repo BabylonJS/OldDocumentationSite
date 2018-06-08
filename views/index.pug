@@ -88,7 +88,7 @@ include includes/banner.pug
             We will only code in the <code>index.html</code> file to keep it as simple and concise as possible. The HTML
             document begins as follow:
         p.ts.
-            The HTML document begins as follow:
+            The HTML document begins as follows (If you prefer using npm/webpack see https://doc.babylonjs.com/features/npm_support):
         pre
             code.html.
                 &lt;!DOCTYPE html&gt;
@@ -97,7 +97,11 @@ include includes/banner.pug
                     &lt;meta http-equiv="Content-Type" content="text/html" charset="utf-8"/&gt;
                     &lt;title&gt;Babylon - Getting Started&lt;/title&gt;
                     &lt;!-- Link to the last version of BabylonJS --&gt;
-                    &lt;script src="https://cdn.babylonjs.com/babylon.js"&gt;&lt;/script&gt;
+                    &lt;script src="https://preview.babylonjs.com/babylon.js"&gt;&lt;/script&gt;
+                    &lt;!-- Link to the last version of BabylonJS loaders to enable loading filetypes such as .gltf --&gt;
+                    &lt;script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"&gt;&lt;/script&gt;
+                    &lt;!-- Link to pep.js to ensure pointer events work consistently in all browsers --&gt;
+                    &lt;script src="https://code.jquery.com/pep/0.4.1/pep.js"&gt;&lt;/script&gt;
                 &lt;/head&gt;
                 &lt;body&gt;
                     &lt;canvas id="renderCanvas"&gt;&lt;/canvas&gt;
