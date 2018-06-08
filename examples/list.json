@@ -205,7 +205,7 @@
                 },
                 {
                     "title": "Assets manager",
-                    "doc": "http://localhost:8080/How_To/How_to_use_AssetsManager",
+                    "doc": "https://doc.babylonjs.com/How_To/How_to_use_AssetsManager",
                     "icon": "icons/assets_manager.jpg", 
                     "description": "Use AssetsManager to load multiple assets in a centralized way",
                     "PGID": "#Y7XMAR#0"
@@ -299,7 +299,7 @@
             "samples": [   
                 {
                     "title": "Render lines",
-                    "doc": "http://localhost:8080/babylon101/Parametric_Shapes#lines",
+                    "doc": "https://doc.babylonjs.com/babylon101/Parametric_Shapes#lines",
                     "icon": "icons/lines.jpg",
                     "description": "Use LinesMesh to render lines in 3D",
                     "PGID": "#SVZL1I#0"
