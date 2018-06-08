@@ -123,6 +123,15 @@ The radius property is used to define the radius of the hosting cylinder.
 
 Demo [here](https://www.babylonjs-playground.com/#HB4C01#4)
 
+#### PlanePanel
+The `PlanePanel` container can be used to dispatch item on the surface of a plane:
+
+```
+var panel = new BABYLON.GUI.PlanePanel();
+```
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#5)
+
 ## Controls
 All controls inherit from the `Control3D` class which provides a set of basic features:
 
