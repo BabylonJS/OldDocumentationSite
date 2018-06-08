@@ -109,7 +109,9 @@ panel.radius = 5;
  
 The radius property is used to define the radius of the hosting sphere.
 
-Demo [here](https://www.babylonjs-playground.com/#HB4C01#3)
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#9)
+
+![SpherePanel](/img/how_to/gui/SpherePanel.jpg)
 
 #### CylinderPanel
 The `CylinderPanel` container can be used to dispatch item on the surface of a cylinder:
@@ -121,7 +123,34 @@ panel.radius = 5;
   
 The radius property is used to define the radius of the hosting cylinder.
 
-Demo [here](https://www.babylonjs-playground.com/#HB4C01#4)
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#8)
+
+![CylinderPanel](/img/how_to/gui/CylinderPanel.jpg)
+
+#### PlanePanel
+The `PlanePanel` container can be used to dispatch item on the surface of a plane:
+
+```
+var panel = new BABYLON.GUI.PlanePanel();
+```
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#7)
+
+![PlanePanel](/img/how_to/gui/PlanePanel.jpg)
+
+#### ScatterPanel
+The `ScatterPanel` container can be used to dispatch items using a randomized planar mapping:
+
+```
+var panel = new BABYLON.GUI.ScatterPanel();
+panel.iterations = 100;
+```
+
+The iterations property is used to define the number of iteration to use to scatter the controls (100 by default)
+
+![ScatterPanel](/img/how_to/gui/ScatterPanel.jpg)
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#6)
 
 ## Controls
 All controls inherit from the `Control3D` class which provides a set of basic features:
