@@ -132,6 +132,18 @@ var panel = new BABYLON.GUI.PlanePanel();
 
 Demo [here](https://www.babylonjs-playground.com/#HB4C01#5)
 
+#### ScatterPanel
+The `ScatterPanel` container can be used to dispatch items using a randomized planar mapping:
+
+```
+var panel = new BABYLON.GUI.ScatterPanel();
+panel.iterations = 100;
+```
+
+The iterations property is used to define the number of iteration to use to scatter the controls (100 by default)
+
+Demo [here](https://www.babylonjs-playground.com/#HB4C01#6)
+
 ## Controls
 All controls inherit from the `Control3D` class which provides a set of basic features:
 
