@@ -61,6 +61,19 @@ scene.debugLayer.show({
 });
 ```
 
+## Observable
+
+It is possible to attach `Observer` to an `Observable` called when a property is modified in the debug layer.
+You can call it like this :
+```javascript
+scene.debugLayer.onPropertyChangedObservable.add((result) => {});
+```
+The result object contains :
+* `object` : BABYLON.Node - The object modified. It can be a scene, a mesh, a light or any other element that can be modified in the debug layer
+* `property` : string - The modified property name.
+* `value` : any - The new value.
+* `initialValue` : any - The old value, before the modification.
+
 # Further Reading
 
 [The Debug Layer Features](/features/playground_debuglayer)  

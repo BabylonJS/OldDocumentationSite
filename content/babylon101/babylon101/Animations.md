@@ -337,6 +337,7 @@ Here are the predefined easing functions you can use :
 - ```BABYLON.QuarticEase()```
 - ```BABYLON.QuinticEase()```
 - ```BABYLON.SineEase()```
+- ```BABYLON.BezierCurveEase()```
 
 You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates. 
 There are three possible values you can give for EasingMode: 
