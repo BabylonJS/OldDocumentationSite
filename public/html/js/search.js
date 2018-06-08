@@ -27,7 +27,7 @@
     });
 
     function runQuery() {
-        var query = getQueryVariable('q');
+        var query = getQueryVariable('bjsq');
         var strQuery = decodeURIComponent(query).split('+').join(' ');
 
         if (!query) {
