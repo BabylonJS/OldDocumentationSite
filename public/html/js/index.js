@@ -10,7 +10,7 @@
             var divSearchBarMobile =
                 $('<div>', {
                     class: 'searchbar-mobile searchbar',
-                    html: '<form method="get" action="/search"><input type="text" name="q" placeholder="Search..."/>' +
+                    html: '<form method="get" action="/search"><input type="text" name="bjsq" placeholder="Search..."/>' +
                     '<button type="submit"><i class="fa fa-search"></i></button></form>'
                 });
 
