@@ -237,7 +237,7 @@ npm install --save-dev typescript webpack ts-loader webpack-cli
 
 Now we will need to configure webpack to know what to actually do. This is a simple example of the webpack configuration file, `webpack.config.js`:
 
-```javacsript
+```javascript
 const path = require("path");
 
 module.exports = {
