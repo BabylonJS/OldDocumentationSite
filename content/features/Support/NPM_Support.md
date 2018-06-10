@@ -238,12 +238,12 @@ npm install --save-dev typescript webpack ts-loader webpack-cli
 Now we will need to configure webpack to know what to actually do. This is a simple example of the webpack configuration file, `webpack.config.js`:
 
 ```javacsript
-const path = require('path');
+const path = require("path");
 
 module.exports = {
     entry: './index.ts',
     output: {
-        filename: 'bundle.js',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -253,7 +253,7 @@ module.exports = {
         rules: [
             { test: /\.tsx?$/, loader: "ts-loader" }
         ]
-    }
+    },
     mode: "development"
 };
 ```
@@ -320,11 +320,11 @@ We will also add an html file with a canvas (index.html):
 </html>
 ```
 
-After adding `index.ts` we are ready to start developing.
+After adding a new file called `index.ts` we are ready to start developing.
 
 ### Adding babylon support
 
-We will start a simple project with Babylon core module, the loaders, and the GUI. 
+We will start a simple project with Babylon core module, the loaders, and the GUI.
 
 First - let's install babylon's dependencies:
 
