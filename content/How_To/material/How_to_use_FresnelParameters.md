@@ -99,4 +99,4 @@ material.opacityFresnelParameters.rightColor = BABYLON.Color3.Black();
 A complete demo can be found here: http://www.babylonjs.com/?FRESNEL
 You can also see a demo of refraction fresnel here:  https://www.babylonjs-playground.com/#22KZUW#6
 
-If you want to experiment FresnelParameters, just go here: http://www.babylonjs.com/playground/?19
+If you want to experiment FresnelParameters, just go here: https://www.babylonjs-playground.com/#AQZJ4C#0
