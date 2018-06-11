@@ -31,7 +31,7 @@
             finalQuery = strQuery;
             localStorage.setItem("docBabylon_lastSearch_type", "name");
             localStorage.setItem("docBabylon_lastSearch", strQuery);
-            document.getElementsByName('q')[1].value = strQuery;
+            document.getElementsByName('q')[0].value = strQuery;
         }
         else if (strTags != 'false') {
             queryType = 'tags/';
