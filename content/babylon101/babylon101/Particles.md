@@ -265,6 +265,8 @@ The particles are emitted in the directions of the surface normals, ie the lines
 
 * [Playground Example - Sphere Emitter](https://www.babylonjs-playground.com/#MRRGXL#2)
 
+With `sphereEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+
 If you prefer to chose the emission direction, you can create a directed sphere emitter
 
 ```javascript
