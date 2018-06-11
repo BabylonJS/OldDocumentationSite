@@ -248,4 +248,4 @@ Sprites can also control picking with `sprite.isPickable = false / true` (False 
 
 ## Playground
 If you want to play with actions, you can try them at our playground:
-http://www.babylonjs.com/playground/?17
+https://www.babylonjs-playground.com/#J19GYK#0
