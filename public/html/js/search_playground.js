@@ -31,14 +31,15 @@
             finalQuery = strQuery;
             localStorage.setItem("docBabylon_lastSearch_type", "name");
             localStorage.setItem("docBabylon_lastSearch", strQuery);
-            document.getElementsByName('q')[1].value = strQuery;
+            try {document.getElementsByName('q')[0].value = strQuery;} catch(e) {}
+            
         }
         else if (strTags != 'false') {
             queryType = 'tags/';
             finalQuery = strTags;
             localStorage.setItem("docBabylon_lastSearch_type", "tags");
             localStorage.setItem("docBabylon_lastSearch", strTags);
-            document.getElementsByName('tag')[0].value = strTags;
+            try {document.getElementsByName('tag')[0].value = strQuery;} catch(e) {}
         }
         else if (strCode != 'false') {
             queryType = 'code/';
