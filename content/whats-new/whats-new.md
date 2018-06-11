@@ -955,7 +955,7 @@ Changes list
  - New triggers: ```BABYLON.ActionManager.OnIntersectionEnterTrigger```, ```BABYLON.ActionManager.OnIntersectionExitTrigger```. [Documentation](https://github.com/BabylonJS/Babylon.js/wiki/How-to-use-Actions) updated ([deltakosh](http://www.github.com/deltakosh)) 
  - New mesh type: ```BABYLON.LinesMesh```. You can find a [demo here](http://www.babylonjs.com/?LINES) ([deltakosh](http://www.github.com/deltakosh)) 
  - New ```mesh.moveWithCollisions``` function. Used with ```mesh.ellipsoid``` and '''mesh.ellipsoidOffset```, this function can be used to move a mesh and use an ellipsoid around it to [check collisions](https://github.com/BabylonJS/Babylon.js/wiki/09-Collisions-by-gravity) ([deltakosh](http://www.github.com/deltakosh)) 
- - New feature demo: [How to do drag'n'drop](http://www.babylonjs.com/playground/?18) ([deltakosh](http://www.github.com/deltakosh)) 
+ - New feature demo: [How to do drag'n'drop](https://www.babylonjs-playground.com/#UZ23UH#0) ([deltakosh](http://www.github.com/deltakosh)) 
  - New ```BABYLON.PickingInfo.getTextureCoordinates()``` function ([deltakosh](http://www.github.com/deltakosh)) 
  - New ```BABYLON.Scene.cameraToUseForPointers``` property that defines this parameter if you are using multiple cameras and you want to specify which one should be used for pointer position ([deltakosh](http://www.github.com/deltakosh)) 
  - ```BABYLON.OculusOrientedCamera``` was replaced by ```BABYLON.OculusCamera``` for better integration into camera system ([deltakosh](http://www.github.com/deltakosh)) 
