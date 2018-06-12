@@ -588,6 +588,8 @@ You can find a complete demo here: https://www.babylonjs-playground.com/#S7L7FE
 The containers are controls used to host other controls. Use them to organize your UI.
 Containers has one specific property: `container.background`. Use it to define the background color of your container.
 
+By default containers do not block pointer events (ie. the underlying scene will receive the pointer event even if the pointer is over a container). You can prevent this behavior by calling `container.isPointerBlocker = true`.
+
 ### Adaptative size
 You can decide to have your containers to adapt their size to their children by using one of these properties:
 * adaptWidthToChildren (false by default)

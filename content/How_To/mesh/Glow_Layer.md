@@ -95,7 +95,7 @@ var gl = new BABYLON.GlowLayer("glow", scene);
 gl.addExcludedMesh(mesh)
 ```
 
-[**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#6)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#29)
 
 ### Include Only some Meshes
 
@@ -108,4 +108,4 @@ gl.addIncludedOnlyMesh(mesh)
 
 Using the function will automatically switch mode and only render the included meshes.
 
-[**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#7)
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#30)

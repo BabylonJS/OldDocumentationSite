@@ -137,14 +137,14 @@ The third parameter define the exposure adjustement.
 You can find a demo here: https://www.babylonjs-playground.com/debug.html#J9H084#8
 
 ### ImageProcessing
-Apply a complete range of special image treaments:
+Apply a complete range of special image treaments (image processing):
 
 ```javascript
 var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, camera);
 ```
 
 You have several options available:
-* colorGradingTexture: Used to provide a color grading texture applied on your scene. Demo: https://www.babylonjs-playground.com/#J9H084
+* colorGradingTexture: Used to provide a color grading texture applied on your scene. Demo: https://www.babylonjs-playground.com/#17VHYI#5
 * colorCurves: Used to provide several properties to change colors. More [details here](/overviews/physically_based_rendering_master#color-curves). Demo: https://www.babylonjs-playground.com/#J9H084#12
 * contrast: 1.0 by default. Used to change the contrast. Demo: https://www.babylonjs-playground.com/#J9H084#9
 * exposure: 1.0 by default. Used to change the exposure of the image. Demo: https://www.babylonjs-playground.com/#J9H084#10
