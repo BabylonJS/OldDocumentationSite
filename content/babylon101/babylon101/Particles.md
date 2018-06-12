@@ -212,6 +212,11 @@ You can define a range for the power of the emitting particles, and the overall 
   particleSystem.maxEmitPower = 3;
   particleSystem.updateSpeed = 0.005;
   ```
+  
+ ### Alignment
+ By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
+ 
+ You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
 
 ## Adjustable Playground Examples
 
