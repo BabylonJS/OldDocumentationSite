@@ -160,7 +160,8 @@ particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
 `BLENDMODE_ONEONE` is the deault and will be used if `blendMode` is not specified.
 
 * `BLENDMODE_ONEONE` - colors are added without alpha affecting the result;
-* `BLENDMODE_STANDARD` - colors are added using particle’s alpha.
+* `BLENDMODE_STANDARD` - colors are added using particle’s alpha (ie. color * (1 - alpha) + particleColor * alpha).
+* `BLENDMODE_ADD` - colors are added but only particle color uses particle’s alpha (ie. color + particleColor * alpha).
 
 ### Rates
 The `emitRate` determines the number of particles emitted per second. The larger the number the more dense appears the emitted cloud of particles. As particles die they are recycled to be emitted again. If their lifetime is long enough and their emission rate fast enough it is possible for there to be a gap in the emission of particles. 
