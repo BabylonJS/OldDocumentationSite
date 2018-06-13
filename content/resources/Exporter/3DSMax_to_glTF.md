@@ -191,7 +191,7 @@ You can also export multiple animations clips and play one of them depending on 
 
 To setup the animations clips (also named animation groups) right-click on your scene, you will have a menu Babylon -> Babylon Animation Groups, which opens the Animation Groups window.
 
-![3ds Babylon Exporter](/img/exporters/3DSMax/animation_groups_window.jpg)
+![3ds animation groups window](/img/exporters/3DSMax/animation_groups_window.jpg)
 
 Features are explained below:
 
