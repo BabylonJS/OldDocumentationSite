@@ -23,6 +23,11 @@ There are plugins for 3 physics engines:
 
 Each engine has its own features and its own way of calculating the body dynamics. We at Babylon.js tried collecting the common usage of all engines and provide an easy-to-use interface to them.
 
+Once you picked an engine, do not forget to add a reference to the engine code:
+
+1. Cannon: https://cdn.babylonjs.com/cannon.js
+1. Oimo: https://cdn.babylonjs.com/Oimo.js
+
 ## Basic usage
 
 ### Enabling the physics engine
