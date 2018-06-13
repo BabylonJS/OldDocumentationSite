@@ -291,6 +291,26 @@ To obtain such texture, either:
 
 Using _Unreal Engine 4 (Packed)_ configuration, the occlusion, roughness and metallic are combined together into a single ORM texture.
 
+# How to export multiple animation clips to .gltf format
+
+You can export multiple animations clips and play one of them depending on the situation. For example, a character would have "Walk", "Run" and "Jump" animations, each spread along the timeline.
+
+To setup the animations clips (also named animation groups) click on the __Babylon__ tab on the top menu, and click on __Animation groups__.
+
+![Maya animation groups window](/img/exporters/Maya_to_glTF/animation_groups_window.jpg)
+
+Features are explained below:
+
+* Create / delete an animation group
+
+* Set a name
+
+* Set start and end frames. Values out of timeline bounds are automatically clamped at runtime.
+
+* __Export non-animated node targets__ option: when checked, nodes that are actually not animated (no key in the timeline) will have a fake scale animation exported. This option might be useful if you want to add an in-game behaviour to all the nodes of an animation group, like toggle visibilty.
+
+When updating an input field, changes are highlighted in red. Press the _Confirm_ button to submit changes.
+
 #  Try it out!  #
 
 Export your own scene from Maya to glTF format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [Babylon loader](/how_to/gltf).
