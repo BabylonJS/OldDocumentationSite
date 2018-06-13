@@ -163,6 +163,10 @@ However, glTF format does not support this feature and the environment map needs
 
 # How to export 3D model with animation to .babylon / .gltf format
 
+## Single animation clip
+
+You can export all animations of the objects in your scene into a single animation clip following these steps:
+
 1. Open FBX / DAE or any other 3D model with animations in 3ds Max
 
 2. Check / Apply texture to model
@@ -180,6 +184,30 @@ However, glTF format does not support this feature and the environment map needs
 6. Open “Babylon Exporter” window from menu “Babylon > Babylon File Exporter ...” as below.
 
 ![3ds Babylon Exporter](/img/exporters/3DSMax/babylon_exporter.jpg)
+
+## Multiple animation clips
+
+You can also export multiple animations clips and play one of them depending on the situation. For example, a character would have "Walk", "Run" and "Jump" animations, each spread along the timeline.
+
+To setup the animations clips (also named animation groups) right-click on your scene, you will have a menu Babylon -> Babylon Animation Groups, which opens the Animation Groups window.
+
+![3ds Babylon Exporter](/img/exporters/3DSMax/animation_groups_window.jpg)
+
+Features are explained below:
+
+* Create / delete an animation group
+
+* Set a name
+
+* Set start and end frames. Values out of timeline bounds are automatically clamped at runtime.
+
+* Add / remove node selection. This acts as a layer per animation group: only added nodes will be part of the animation group. This is useful when you export a complex scene and want to animate only a small part of it.
+
+* __Export non-animated node targets__ option: when checked, all added nodes will be part of the animation group. Nodes that are actually not animated (no key in the timeline) will have a fake scale animation exported. This option might be useful if you want to add an in-game behaviour to all the nodes of an animation group, like toggle visibilty.
+
+When updating an input field or the animation nodes, changes are highlighted through a color. Press the _Confirm_ button to submit changes.
+
+Note that when updating the scene hierarchy, like deleting a node, while the Animation Group window is opened, the Animation Nodes frame is not updated. Close the Animation Groups window and re-open it to take hierarchy updates into account.
 
 #  Try it out!  #
 
