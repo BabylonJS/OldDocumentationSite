@@ -147,7 +147,29 @@ particleSystem.color1 = new BABYLON.Color4(0.7, 0.8, 1.0, 1.0);
 particleSystem.color2 = new BABYLON.Color4(0.2, 0.5, 1.0, 1.0);
 particleSystem.colorDead = new BABYLON.Color4(0, 0, 0.2, 0.0);
 ```
-There are two different ways that color1 and color2 are blended and these are set with `blendMode`.
+
+Starting with Babylon.js v3.3, you can also define color gradients. If you define color gradients the color1, color2 and colorDead properties will be ignore.
+
+To add a color gradient just call the following code:
+
+```
+particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0));
+```
+
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death).
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 0));
+```
+
+You can add as much gradient as you want as long as the gradient value s between 0 and 1.
+
+To remove a gradient you can call `particleSystem.removeColorGradient(0.5)`.
+
+### Particle blending
+There are different ways that particles are blended with the scene and these are set with `blendMode`.
 
 ```javascript
 particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
