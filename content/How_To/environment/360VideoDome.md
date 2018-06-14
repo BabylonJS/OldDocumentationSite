@@ -24,6 +24,7 @@ All the options are based through the corresponding classes, mainly the dome geo
 * autoPlay=true: Automatically attempt to being playing the video
 * loop=true: Automatically loop video on end
 * size=1000: Physical radius to create the dome at, defaults to approximately half the far clip plane
+* poster: URL of the image displayed during the video loading or until the user interacts with the video
    
 
 ## FOV adjustment
