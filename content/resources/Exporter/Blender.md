@@ -170,6 +170,8 @@ This add-on use the standard Blender installation procedure:
 
 ## Animation
 
+(*Note: this part is under construction. You can also check [this forum thread](http://www.html5gamedevs.com/topic/36596-blender-exporter-doc-needs-feedback/) where some informations are centralised before it is written here.*)
+
 ### Commons & Good practices
 
 - you should export one *.babylon* file per animated object to make your life easier (once in BJS, but also to handle the timeline in Blender). See [tip](http://doc.babylonjs.com/exporters/blender_tips#Animation) for a basic workflow.

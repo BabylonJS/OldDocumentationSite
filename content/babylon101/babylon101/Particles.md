@@ -50,6 +50,24 @@ Once stopped you can dispose of the particle system. Very useful if you want to 
 particleSystem.disposeOnStop = true;
 ```
 
+### Pre-warming
+Starting with Babylon.js v3.3, you can now specify a pre-warming period to make sure your system is in a correst state before rendering.
+
+To do so, you need to setup two properties:
+- `system.preWarmCycles`: Gets or sets a value indicating how many cycles (or frames) must be executed before first rendering (this value has to be set before starting the system). Default is 0 (ie. no pre-warmimg)
+- `system.preWarmStepOffset`: Gets or sets a value indicating the time step multiplier to use in pre-warm mode (default is 1)
+
+So if you set your system like this:
+
+```
+system.preWarmCycles = 100;
+system.preWarmStepOffset = 5;
+system.start();
+```
+
+it will execute the particle animation loop 100 times with a time step set to 5 times faster than realtime. The more cycles you want, the slower the system will be to start. So it could be interesting to increase the time step to have less cycles to run. But keep in mind that a too big time step will introduce issues if the life spam of a particle is smaller than the time step.
+
+
 ### Particle Texture 
 To apply a texture to the particles, such as  
 ![Flare](/img/how_to/Particles/Flare.png)
