@@ -245,6 +245,13 @@ particleSystem.minAngularSpeed = 0;
 particleSystem.maxAngularSpeed = Math.PI;
 ```
 
+You can also define the initial rotation angle with:
+
+```
+particleSystem.minInitialRotation = 0;
+particleSystem.maxInitialRotation = Math.PI;
+```
+
 ### Speed
 You can define a range for the power of the emitting particles, and the overall motion speed (0.01 is default update speed, faster updates = faster animation).
 
