@@ -157,6 +157,26 @@ particleSystem.minScaleY = 0.2;
 particleSystem.maxScaleY = 0.4;
 ```
 
+Starting with Babylon.js v3.3, you can also define size factor gradients.
+
+To add a size gradient just call the following code:
+
+```
+particleSystem.addSizeGradient(0, 0.5);
+```
+
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the factor to apply to particle initial size. In this case the particle will born with half of the initial size (which is computed from minScale and maxScale).
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addSizeGradient(0, 0.5);
+particleSystem.addSizeGradient(1.0, 3);
+```
+
+You can add as much gradient as you want as long as the gradient value is between 0 and 1.
+
+To remove a gradient you can call `particleSystem.removeSizeGradient(0.5)`.
+
 ### Particle Colors
 There are three colors that can be set for the particle system, two which are combined (or blended) during the lifetime of the particle and a third that it takes on just before it disappears. 
 
@@ -182,7 +202,7 @@ particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0));
 particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 0));
 ```
 
-You can add as much gradient as you want as long as the gradient value s between 0 and 1.
+You can add as much gradient as you want as long as the gradient value is between 0 and 1.
 
 To remove a gradient you can call `particleSystem.removeColorGradient(0.5)`.
 
