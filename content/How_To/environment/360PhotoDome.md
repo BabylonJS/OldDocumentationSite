@@ -34,5 +34,5 @@ photoDome.fovMultiplier = newValue;
 
 As a warning, the further the value gets from 1 the more distortion will be visible. Higher resolutions on the photo dome help reduce, but not eliminate, this.
 
-* [Playground Example of a PhotoDome](https://www.babylonjs-playground.com/#14KRGG#0)
+* [Playground Example of a PhotoDome](https://www.babylonjs-playground.com/#14KRGG#2)
 
