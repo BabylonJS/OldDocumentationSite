@@ -839,8 +839,15 @@
                     "doc": "https://doc.babylonjs.com/how_to/360videodome",
                     "icon": "icons/360.jpg",
                     "description": "Easily display and control 360 videos",
-                    "PGID": "#1E9JQ8#7"
-                },                
+                    "PGID": "#SQ5UC1#1"
+                },                 
+                {
+                    "title": "360 photos",
+                    "doc": "https://doc.babylonjs.com/how_to/360photodome",
+                    "icon": "icons/360photo.jpg",
+                    "description": "Easily display and control 360 photos",
+                    "PGID": "#14KRGG#3"
+                },                 
                 {
                     "title": "ProceduralTexture",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_procedural_textures",
