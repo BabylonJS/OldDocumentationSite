@@ -39,5 +39,5 @@ Please note that `fovMultiplier` only works when using `useDirectMapping = false
 
 As a warning, the further the value gets from 1 the more distortion will be visible. Higher resolutions on the photo dome help reduce, but not eliminate, this.
 
-* [Playground Example of a PhotoDome](https://www.babylonjs-playground.com/#14KRGG#2)
+* [Playground Example of a PhotoDome using fovMultiplier](https://www.babylonjs-playground.com/#14KRGG#4)
 
