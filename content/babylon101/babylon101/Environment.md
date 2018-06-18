@@ -145,6 +145,7 @@ The helper is providing a wide range of options during its creation:
 * *groundColor*: The color mixed in the ground texture by default.
 * *enableGroundShadow*: Enables the ground to receive shadows.
 * *groundShadowLevel*: Helps preventing the shadow to be fully black on the ground.
+* *groundYBias*: Specifies a bias applied to the ground vertical position to prevent z-fighting with the shown objects (Default to `0.00001`).
 * *enableGroundMirror*: Creates a mirror texture attach to the ground.
 * *createSkybox*: Specifies wether or not to create a skybox.
 * *skyboxSize*: Specifies the skybox size (if sizeAuto is false).
@@ -170,6 +171,14 @@ This is as simple as enabling ground reflection:
 ```javascript
 var helper = scene.createDefaultEnvironment({
     enableGroundMirror: true
+});
+```
+
+If you see z-fighting with the ground, then you might need to modify the `groundYBias` to a larger number:
+
+```javascript
+var helper = scene.createDefaultEnvironment({
+    groundYBias: 0.01
 });
 ```
 
@@ -201,7 +210,7 @@ Fog is quite an advanced effect, but fog in Babylon.js has been simplified to th
 scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
 ```
 
-Here are the available modes :
+Here are the available modes:
 - `BABYLON.Scene.FOGMODE_NONE` - default one, fog is deactivated.
 - `BABYLON.Scene.FOGMODE_EXP` - the fog density is following an exponential function.
 - `BABYLON.Scene.FOGMODE_EXP2` - same that above but faster.
