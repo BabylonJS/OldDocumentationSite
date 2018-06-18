@@ -30,6 +30,9 @@ Congratulations! You did it!
     * Visibility
     * Position / rotation / scaling
     * Geometry (position, normal, tangent, texture coordinates (2 channels))
+    * Skin
+    * Instances
+    * Animations: Position, scaling, rotation, bones
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn)
@@ -59,13 +62,16 @@ Congratulations! You did it!
     * MaxZ
     * Position
     * Target / Rotation
+    * Animations: Position, Target / Rotation
 
 * _Lights_
     * Point / spot / directional / ambient
+    * Inclusion / exclusion lists
     * Position / direction
     * Intensity
     * Diffuse
     * Specular
+    * Animations: Position, direction
 
 ## The exporter window 
 
