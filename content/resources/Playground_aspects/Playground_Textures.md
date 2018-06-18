@@ -84,7 +84,7 @@ Filename | Image
 --- | ---
 sphereMap.png | <img src = 'http://www.babylonjs-playground.com/textures/sphereMap.png' width = '64' height = '64'>
 
-### Equirectangular maps (360°)
+## Equirectangular maps (360°)
 
 In the Playground use
 
