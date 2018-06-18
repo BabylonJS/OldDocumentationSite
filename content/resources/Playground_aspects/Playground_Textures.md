@@ -84,6 +84,18 @@ Filename | Image
 --- | ---
 sphereMap.png | <img src = 'http://www.babylonjs-playground.com/textures/sphereMap.png' width = '64' height = '64'>
 
+### Equirectangular maps (360°)
+
+In the Playground use
+
+```javascript
+new BABYLON.PhotoDome("textureName", "textures/filename", {resolution: 32, size: 1000}, scene);
+```
+
+| Filename | Overview | Viewer |
+| --- | --- | --- |
+| 360photo.jpg | <img src = 'http://www.babylonjs-playground.com/textures/360photo.jpg' width = '128' height = '64'>| [take a look](https://www.babylonjs-playground.com/#14KRGG#3) |
+
 ## CubeTextures
 
 ### Standard
