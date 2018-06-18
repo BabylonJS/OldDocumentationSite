@@ -29,7 +29,7 @@ Then you can create a multi-material in order to gather them all:
 var multimat = new BABYLON.MultiMaterial("multi", scene);
 multimat.subMaterials.push(material0);
 multimat.subMaterials.push(material1);
-multimat.subMaterials.push(material2);</pre>
+multimat.subMaterials.push(material2);
 ```
 
 You are now able to affect the multi-material to your mesh:
@@ -68,4 +68,18 @@ A submesh is defined with:
 * Index of the first indice to use and indices count
 * The parent mesh
 
-So with the code above, you can use the first material on the top part of the sphere, the second material on the middle part and the last material on the bottom part of the sphere.</p>
+So with the code above, you can use the first material on the top part of the sphere, the second material on the middle part and the last material on the bottom part of the sphere.
+
+* [Playground Example - MultiMaterial](https://www.babylonjs-playground.com/#2Q4S2S#0)
+
+## With Merged Meshes
+
+When you [merge meshes](/how_to/How_to_Merge_Meshes) together with the final parameter (`subdivideWithSubMeshes`) set to true the subMeshes array is automatically created. You must assign the correct subMesh index to the correct material index.
+
+When you form `mergedMesh` by merging meshes in this array order [mesh1, mesh2], and the multiMaterials subMaterials array contains materials in the order [mat1, mat2] then for the subMesh from `mesh2` to have material `mat2` you need to set
+
+```javascript
+mergedMesh.subMeshes[1].materialIndex = 1;
+```
+
+* [Playground Example - MultiMaterial with Merged Meshes](https://playground.babylonjs.com/#INZ0Z0#6)
