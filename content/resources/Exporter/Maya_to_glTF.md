@@ -23,6 +23,9 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Visibility
     * Position / rotation / scaling
     * Geometry (position, normal, tangent, texture coordinates (2 channels))
+    * Skin
+    * Instances
+    * Animations: Position, scaling, rotation, bones
 
 * _Nodes_
     * Hierarchy
@@ -52,6 +55,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * znear
     * yfov (Perspective camera)
     * Position / rotation
+    * Animations: Position, Target / Rotation
 
 # Conversion Standard to PBR materials
 

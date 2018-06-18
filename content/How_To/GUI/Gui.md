@@ -423,6 +423,9 @@ barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
 thumbWidth|valueAndUnit|30px|Width of the thumb
 isThumbCircle|boolean|false|Indicates if the thumb should be a circle (square if false)
 isThumbClamped|boolean|false|Indicates if the thumb should be clamped
+isVertical|boolean|false|Indicates that the slider will be rendered vertically instead of horizontally
+
+When using vertical slider, you have to make sure that height is bigger than width. The opposite has to be true when using `isVertical = false`.
 
 Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
