@@ -199,10 +199,19 @@ It is recommended to at least define a gradient for 0 and 1:
 
 ```
 particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0));
-particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 0));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1));
 ```
 
-You can add as much gradient as you want as long as the gradient value is between 0 and 1.
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two colors per gradient:
+
+```
+particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0), new BABYLON.Color4(1, 0, 1, 0));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1)new BABYLON.Color4(1, 0, 1, 1));
+```
+
+In this case the color of the particle will be randomly picked between the two colors when the gradient will be reached.
 
 To remove a gradient you can call `particleSystem.removeColorGradient(0.5)`.
 
