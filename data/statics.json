@@ -287,6 +287,21 @@
                     "filename": "Rotate"
                 },
                 {
+                    "title": "Use Mesh Behaviors (eg. dragging)",
+                    "level": 3,
+                    "filename": "MeshBehavior"
+                },
+                {
+                    "title": "Use UtilityLayerRenderer",
+                    "level": 3,
+                    "filename": "UtilityLayerRenderer"
+                },
+                {
+                    "title": "Use Gizmos (eg. Drag arrow, Bounding box)",
+                    "level": 3,
+                    "filename": "Gizmo"
+                },
+                {
                     "title": "Set and Use a Pivot",
                     "level": 3,
                     "filename": "Pivots"
