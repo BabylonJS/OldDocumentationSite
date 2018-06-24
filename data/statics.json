@@ -1046,7 +1046,7 @@
             ]
         },
         {
-            "title": "Meshes for Importing",
+            "title": "Mesh Library",
             "name": "Mesh_Samples",
             "desc": "Meshes for Importing",
             "files": [
