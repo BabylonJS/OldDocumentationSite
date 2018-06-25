@@ -199,10 +199,19 @@ It is recommended to at least define a gradient for 0 and 1:
 
 ```
 particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0));
-particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 0));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1));
 ```
 
-You can add as much gradient as you want as long as the gradient value is between 0 and 1.
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two colors per gradient:
+
+```
+particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0), new BABYLON.Color4(1, 0, 1, 0));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1)new BABYLON.Color4(1, 0, 1, 1));
+```
+
+In this case the color of the particle will be randomly picked between the two colors when the gradient will be reached.
 
 To remove a gradient you can call `particleSystem.removeColorGradient(0.5)`.
 
@@ -426,6 +435,7 @@ The following features are not supported by GPU particles due to their inner nat
 - Custom effects
 - Animation sheets
 - disposeOnStop
+- Dual colors per color gradient (only one color is supported)
 
 ### Playground
 
@@ -441,6 +451,7 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 ## Basic - L1
 
 [Particles Overview](/features/Particles)  
+[Particle Helper](/How_To/ParticleHelper)  
 [Mesh Overview](/features/Shapes)
 
 [How to Create Animated Particles](/how_to/Animate)  
@@ -450,4 +461,5 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)
+
 
