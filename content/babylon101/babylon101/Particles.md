@@ -67,6 +67,7 @@ system.start();
 
 It will execute the particle animation loop 100 times with a time step set to 5 times faster than realtime. The more cycles you want, the slower the system will be to start. So it could be interesting to increase the time step to have less cycles to run. But keep in mind that a too big time step will introduce issues if the life spam of a particle is smaller than the time step.
 
+Here is an example of pre-warming: https://www.babylonjs-playground.com/#MX2Z99#8
 
 ### Particle Texture 
 To apply a texture to the particles, such as  
@@ -247,6 +248,8 @@ particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1)new BABYLON.C
 In this case the color of the particle will be randomly picked between the two colors when the gradient will be reached.
 
 To remove a gradient you can call `particleSystem.removeColorGradient(0.5)`.
+
+Here is an example of color gradients: https://www.babylonjs-playground.com/#MX2Z99#8
 
 ### Particle blending
 There are different ways that particles are blended with the scene and these are set with `blendMode`.
