@@ -26,8 +26,8 @@ The default configuration types can be overwritten using many methods described 
 The order in which the configuration is loaded is :
 
 1. The DOM configuration
-1. The `extends` configuration (for example `default` or `minimal`). This is being merged with the DOM configuration, giving the DOM configuration priority
 1. (optional) The extra configuration file provided using the `configuration` keyword.
+1. The `extends` configuration (for example `default` or `minimal`). This is being merged with the DOM configuration, giving the DOM configuration priority
 
 To explain this further, let's look at a simple example:
 
