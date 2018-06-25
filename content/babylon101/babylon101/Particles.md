@@ -450,6 +450,7 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 ## Basic - L1
 
 [Particles Overview](/features/Particles)  
+[Particle Helper](/How_To/ParticleHelper)  
 [Mesh Overview](/features/Shapes)
 
 [How to Create Animated Particles](/how_to/Animate)  
@@ -459,4 +460,5 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)
+
 
