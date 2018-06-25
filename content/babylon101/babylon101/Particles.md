@@ -139,17 +139,17 @@ particleSystem.maxLifeTime = 1.5;
 ```
 
 Starting with Babylon.js v3.3, you can also define the lifetime respectively to the particle system duration.
-For instance, if your call `system.targetStopDuration = 0.5` then you can define particle life time with a gradient liek this:
+For instance, if your call `system.targetStopDuration = 0.5` then you can define particle life time with a gradient like this:
 
 ```
 particleSystem.addLifeTimeGradient(0, 0.5);
 particleSystem.addLifeTimeGradient(1, 0);
 ```
-The first parameter defines the gradient (0 means at the particle system start and 1 means at particle system death). The second parameter is the factor to apply to particle life time. This means that at the beginning of the particle system, particles will receive a life time set to 0.5. And when the system will be close to the `targetStopDuration` the particles will receive a life time close to 0.
+The first parameter defines the gradient (0 means at the particle system start and 1 means at particle system end). The second parameter is the particle life time. This means that at the beginning of the particle system, particles will receive a life time set to 0.5. And when the system will be close to the `targetStopDuration` the particles will receive a life time close to 0.
 
 It is recommended to at least define a gradient for 0 and 1.
 
-You can add as much gradient as you want as long as the gradient value is between 0 and 1.
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
 
 You can also define a more complex construct by providing two values per gradient:
 
@@ -197,7 +197,7 @@ particleSystem.addSizeGradient(0, 0.5);
 particleSystem.addSizeGradient(1.0, 3);
 ```
 
-You can add as much gradient as you want as long as the gradient value is between 0 and 1.
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
 
 You can also define a more complex construct by providing two values per gradient:
 
