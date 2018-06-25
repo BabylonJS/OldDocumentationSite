@@ -13,6 +13,14 @@ BABYLON.ParticleHelper.CreateAsync("sun", scene).then((set) => {
 });
 ```
 
+This will create regular particle systems. If you want to use GPU particle systems instead, just call this code:
+
+```
+BABYLON.ParticleHelper.CreateAsync("sun", scene, true).then((set) => {
+    set.start();
+});
+```
+
 You can find a demo here: https://www.babylonjs-playground.com/#1VGT5D#2
 
 ## ParticleSystemSet
@@ -23,6 +31,8 @@ This class can be used with the following properties and functions:
 * `emitterMesh`: Use this property to get the mesh used as emitter by the particle systems
 * `start(emitter)`: Call this function to start all particle systems associated with the current set. You can use the optional parameter to overwrite the emitter
 * `dispose()`: Call this function to stop and clear all particle systems
+
+You can also get the list of particle systems used by the set with `set.systems`.
 
 
 ## Available effects
