@@ -435,7 +435,7 @@ The following features are not supported by GPU particles due to their inner nat
 - Custom effects
 - Animation sheets
 - disposeOnStop
-- Dual colors per color gradient (only one color is supported)
+- Dual values per gradient (only one value is supported)
 
 ### Playground
 
