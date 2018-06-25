@@ -151,12 +151,11 @@ Nested attributes can be separated using ".". So `scene.debug="true"` will nest 
 
 #### Unidirectional definition
 
-The DOM is read once, and is not being continuously processed, Changing a value of an attribute after the viewer was initialized will nto influence the viewer.
-*this behavior will be changed in future versions of the viewer.*
+The DOM is read once, and is not being continuously processed, Changing a value of an attribute after the viewer was initialized will not influence the viewer.
 
 ### Configuring using nested DOM elements
 
-Another way of using the DOM to configure the viewer is to use nester DOM elements inside the main element. A basic example:
+Another way of using the DOM to configure the viewer is to use nested DOM elements inside the main element. A basic example:
 
 ```html
 <babylon extends="minimal">
