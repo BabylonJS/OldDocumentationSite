@@ -175,6 +175,15 @@ particleSystem.addSizeGradient(1.0, 3);
 
 You can add as much gradient as you want as long as the gradient value is between 0 and 1.
 
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addSizeGradient(0, 0.5, 0.8);
+particleSystem.addSizeGradient(1.0, 3, 4);
+```
+
+In this case the size of the particle will be randomly picked between the two values when the gradient will be reached.
+
 To remove a gradient you can call `particleSystem.removeSizeGradient(0.5)`.
 
 ### Particle Colors
