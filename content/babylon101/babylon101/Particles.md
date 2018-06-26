@@ -211,6 +211,14 @@ In this case the size of the particle will be randomly picked between the two va
 
 To remove a gradient you can call `particleSystem.removeSizeGradient(0.5)`.
 
+When dealing with particle size, you may need to move the pivot (aka the center of the transform). By default the scale will come from the center of the particle but you may want to scale it from the top or the bottom. To change the pivot position, just call:
+
+```
+particleSystem.translationPivot = new BABYLON.Vector2(0, -0.5); // In this case the scale will come from the bottom of the particle
+```
+
+Here is an example with size gradients and a pivot set to bottom: https://www.babylonjs-playground.com/#L9QWZB#0
+
 ### Particle Colors
 There are three colors that can be set for the particle system, two which are combined (or blended) during the lifetime of the particle and a third that it takes on just before it disappears. 
 
