@@ -338,6 +338,14 @@ You can define a range for the power of the emitting particles, and the overall 
  By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
  
  You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
+ 
+ When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
+ 
+ ```
+ system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
+ ```
+ 
+ A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
 
 ## Adjustable Playground Examples
 
