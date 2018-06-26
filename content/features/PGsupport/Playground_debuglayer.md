@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Playground Debuglayer
+PG_TITLE: Playground Inspector
 ---
 
-# Playground Debug Layer
+# Playground Inspector
 
 ## What Is It?
 
@@ -17,29 +17,27 @@ From version 3.0, this debug layer has been replaced by an complete inspector, t
 
 ![debug layer overview](/img/features/debuglayer/debuglayer.jpg)
 
-Features are available from either the Tool Bar or the Tab Bar at the top of the debug layer
+Features are available from either the Tool Bar or the Tab Bar at the top of the Inspector
 
 ## Tool bar
 
 ![toolbar](/img/features/debuglayer/toolbar.jpg)
 
 Several tools are available, from left to right : 
-* Refresh the current tab - *As the debug layer can be created before some information are available, this tool is here to refresh displayed data according to the last version of the game scene*
+* Refresh the current tab - *As the Inspector can be created before some information are available, this tool is here to refresh displayed data according to the last version of the game scene*
 * Display mesh names - *Display mesh names on the screen, using BABYLON.GUI*
 * Pick a mesh - *A click on a tool and a click on a 3D object display the mesh tab, with the selected mesh opened*
-* Popup mode - *Open the debug layer in a popup - Not available on Edge for security reasons*
+* Popup mode - *Open the Inspector in a popup - Not available on Edge for security reasons*
 * Pause mode - *All properties are refreshed automatically every 200ms. This tool pauses and resumes the automatic property refresh.*
-* Close debug layer - *Self explainatory*
+* Close Inspector - *Self explainatory*
+
+If the Inspector window is widened then some tab bar menu items are shown. Alternatively by using the scroll bar the tab bar icon >> will appear, from which you can obtain the full tab bar menu. 
+
+![tab bar icon](/img/features/debuglayer/toolbar2.jpg)
 
 ## Tab Bar Overview
 
 ![tabbar](/img/features/debuglayer/tabbar.jpg)
-
-Each feature is represented on a tab: 
-* Mesh tab
-* Scene tab
-* Material tab
-* ...
 
 
 | Name | Description | Top Panel | Bottom panel | 
@@ -49,14 +47,14 @@ Each feature is represented on a tab:
 | Stats | Display statistics data | Display stats | | 
 | Textures | Display all textures | The list of textures available in the scene (images, render target textures, map textures, font textures and dynamic textures) | The texture image. You can right-click - open in a new tab to have perfect dimensions |
 | Mesh | Display mesh data | The list of mesh, sorted by their names. | The selected mesh properties |
-| Shader |Display vertex and fragment shader | A combo list with all custom shaders | The vertex and fragment shaders |
 | Light | Display light data | The list of light, sorted by their names. | The selected light properties |
 | Material | Display material data | The list of material, sorted by their names. | The selected material properties |
+| GTLF |Display gtlf Information | Import, Extensions and Export data | GTLF data|
 | GUI | Display GUI information. Only displayed if BABYLON.GUI is included in the project | The list of BABYLON.GUI, sorted by their name | The selected BABYLON.GUI primitive properties |
 |Physics |Display physics data|List of physics objects sorted by name|The selected physics object properties|
 | Camera | Display camera data | The list of camera, sorted by their names. | The selected camera properties |
-
 | Audio | Display all sounds | The list of sounds, sorted by their names. | The selected sound properties |
+| Tools | Available Tools| The list of tools | Available Tools |
 
 In some tabs, a search bar is available to look for a specific object.
 
@@ -136,7 +134,7 @@ As for a scene the displayed list of properties for a sound can be updated manua
 
 # Further Reading
 
-[How To Use The Debug Layer in Projects](/How_To/debug_layer)   
-[How To Customize the Debug Layer](/How_To/customize_debug_layer)  
+[How To Use The Inspector in Projects](/How_To/debug_layer)   
+[How To Customize the Inspector](/How_To/customize_debug_layer)  
 
 

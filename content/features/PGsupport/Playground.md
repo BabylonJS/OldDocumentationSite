@@ -27,6 +27,8 @@ The space for the coding editor and rendering area can be adjusted by dragging t
 
 ### Large Screen
 
+**Title and Version** - As stated.
+
 **Run** - Commands the playground to try to render your scene.
 
 **New** - Places a basic createScene() function into the editor along with code to initialise the scene variable and provide a camera.
@@ -54,19 +56,19 @@ which contains everything necessary to run the code in your browser, including l
 
 *Format Code* - Pretty prints the code.
 
-**Debug Layer** - The checkbox toggles the debug layer which shows a multitude of variable values.
+**Inspector** - The checkbox toggles the playground scene inspector which shows a multitude of variable values.
 
 **Metadata** - This is where you describe your playground allowing yourself and other to search the playground database for examples of use.
 
-**Version** - Allows and shows your choice of the BABYLON.js framework, either the current stable one or the latest previe version.
+**Version** - Allows and shows your choice of the BABYLON.js framework, either the current stable one or the latest preview version.
 
-**Scene Selector** - ('basic scene' in the picture above). This selector button is used to choose any of the pre-installed playground demo scenes.  It shows 'Custom' when it is one created by a user.
+**Examples** - A drop down menu giving examples of playgrounds with a search filter.
 
 ### Small Screens
 
 **File** - contains Run, New, Clear, Save and Zip as submenus.
 
-**Settings** - Adds some or all of Debug Layer, Metadata, Version to its submenus.
+**Settings** - Adds some or all of Inspector, Metadata, Version to its submenus.
 
 ## Playground URL formats
 
@@ -100,9 +102,9 @@ Whenever a scene in the playground needs the use of keys to move an object, such
 # Further Reading
  
 [Textures Directly Available to the Playground](/resources/Playground_Textures.html)  
-[The Debug Layer Features](/features/playground_debuglayer)  
-[How to Use The Debug Layer in Projects](/How_To/debug_layer)  
-[How To Customize the Debug Layer](/How_To/customize_debug_layer)  
+[The Inspector Features](/features/playground_debuglayer)  
+[How to Use The Inspector in Projects](/How_To/debug_layer)  
+[How To Customize the Inspector](/How_To/customize_debug_layer)  
 
 
 
