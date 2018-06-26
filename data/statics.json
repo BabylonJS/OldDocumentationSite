@@ -1051,6 +1051,17 @@
             ]
         },
         {
+            "title": "Mesh Library",
+            "name": "Mesh_Samples",
+            "desc": "Meshes for Importing",
+            "files": [
+                {
+                    "title": "Available Meshes to Import",
+                    "filename": "meshes_to_load"
+                }
+            ]
+        },
+        {
             "title": "PG Aspects",
             "name": "Playground_aspects",
             "desc": "Aspects of Playground Use",
