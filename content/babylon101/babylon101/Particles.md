@@ -441,6 +441,12 @@ The `createConeEmitter` method takes two parameters in the following order
 
 The cone is created with its axis along the Y-axis and its vertex at the bottom.
 
+With `coneEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+
+The same applies to `coneEmitter.heightRange`: you can define where along the height the particles should be emitted. A value of 0 means only on the top surface while a value of 1 means all along the height.
+
+Here is an example of a particle system emitted only from the outside of a flat cone: https://www.babylonjs-playground.com/#B9HKG0#1
+
 The returned `coneEmitter` object can be used to change the values of these properties.
 
 ```javascript
