@@ -6,7 +6,7 @@ PG_TITLE: Use Mesh Behaviors
 Mesh behaviors are [Behaviors](/features/behaviour) that can be attached to a mesh.
 
 ## PointerDragBehavior
-This used to drag a mesh around a plane or axis using a mouse or vr controller.
+This is used to drag a mesh around a plane or axis using a mouse or vr controller.
 ```
 var pointerDragBehavior = new BABYLON.PointerDragBehavior({dragAxis: new BABYLON.Vector3(0,1,0)});
 ```
@@ -15,9 +15,13 @@ It can be initialized in 3 different modes
  - planeNormal: Dragging will occur along the plane defined by the normal
  - None: Dragging will occur along the plane facing the camera
 
-By default the dragging plane/axis will be modified by the objects orientation. To keep the specified axis/plane fixed to the world set this to false.
+By default, the dragging plane/axis will be modified by the objects orientation. To keep the specified axis/plane fixed to the world set this to false.
 ```
 pointerDragBehavior.useObjectOrienationForDragging = false;
+```
+By default, the drag plane will update on every frame, to disable this set updateDragPlane to false
+```
+pointerDragBehavior.updateDragPlane = false;
 ```
 To listen to drag events the following can be used.
 ```
@@ -38,23 +42,36 @@ To use the drag behavior without moving the attached mesh set this to false. The
 ```
 pointerDragBehavior.moveAttached = false;
 ```
+To disable all dragging behavior, set enabled to false
+```
+pointerDragBehavior.enabled = false;
+```
+To inspect the current state of the dragged mesh, currentDraggingPointerID, dragging and lastDragPosition can be inspected
+```
+// The id of the pointer that is currently interacting with the behavior (-1 when no pointer is active)
+pointerDragBehavior.currentDraggingPointerID;
+// The last position where the pointer hit the drag plane in world space
+pointerDragBehavior.lastDragPosition;
+// If the behavior is currently in a dragging state
+pointerDragBehavior.dragging;
+```
 
 [Example](https://www.babylonjs-playground.com/#9UFEBE)
 
 ## SixDofDragBehavior
-This used to drag a mesh around in 3D space based on the pointers origin (eg. camera or vr controller position)
+This is used to drag a mesh around in 3D space based on the pointers origin (eg. camera or vr controller position)
 ```
-var sixDofDragBehavior = new BABYLON.SixDofDragBehavior()
+var sixDofDragBehavior = new BABYLON.SixDofDragBehavior();
 ```
-By default pointer jitter is smoothed by slowly moving the mesh to where the pointer is pointing. To remove or modify this behavior the following field can be modified.
-```
-// The distance towards the target drag position to move each frame. This can be useful to avoid jitter. Set this to 1 for no delay. (Default: 0.2)
-sixDofDragBehavior.dragDeltaRatio = 0.2
-```
-By default dragging objects away/towards you will be magnified to make moving objects large distances easier. To avoid/modify this the following can be used.
+By default, pointer jitter is smoothed by slowly moving the mesh to where the pointer is pointing. To remove or modify this behavior the following field can be modified.
 ```
 // The distance towards the target drag position to move each frame. This can be useful to avoid jitter. Set this to 1 for no delay. (Default: 0.2)
-sixDofDragBehavior.zDragFactor = 0.2
+sixDofDragBehavior.dragDeltaRatio = 0.2;
+```
+By default, dragging objects away/towards you will be magnified to make moving objects large distances easier. To avoid/modify this the following can be used.
+```
+// The distance towards the target drag position to move each frame. This can be useful to avoid jitter. Set this to 1 for no delay. (Default: 0.2)
+sixDofDragBehavior.zDragFactor = 0.2;
 ```
 
 [Example](https://www.babylonjs-playground.com/#DEYAQ5#40)
@@ -62,7 +79,7 @@ sixDofDragBehavior.zDragFactor = 0.2
 ## MultiPointerScaleBehavior
 This is used to scale a mesh based on 2 pointers (eg. fingers or vr controllers)
 ```
-var multiPointerScaleBehavior = new BABYLON.MultiPointerScaleBehavior()
+var multiPointerScaleBehavior = new BABYLON.MultiPointerScaleBehavior();
 ```
 
 [Example](https://www.babylonjs-playground.com/#DEYAQ5#40)
