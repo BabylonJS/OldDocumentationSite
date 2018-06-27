@@ -211,6 +211,14 @@ In this case the size of the particle will be randomly picked between the two va
 
 To remove a gradient you can call `particleSystem.removeSizeGradient(0.5)`.
 
+When dealing with particle size, you may need to move the pivot (aka the center of the transform). By default the scale will come from the center of the particle but you may want to scale it from the top or the bottom. To change the pivot position, just call:
+
+```
+particleSystem.translationPivot = new BABYLON.Vector2(0, -0.5); // In this case the scale will come from the bottom of the particle
+```
+
+Here is an example with size gradients and a pivot set to bottom: https://www.babylonjs-playground.com/#L9QWZB#0
+
 ### Particle Colors
 There are three colors that can be set for the particle system, two which are combined (or blended) during the lifetime of the particle and a third that it takes on just before it disappears. 
 
@@ -330,6 +338,14 @@ You can define a range for the power of the emitting particles, and the overall 
  By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
  
  You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
+ 
+ When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
+ 
+ ```
+ system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
+ ```
+ 
+ A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
 
 ## Adjustable Playground Examples
 
@@ -424,6 +440,12 @@ The `createConeEmitter` method takes two parameters in the following order
 * angle: Number, measured in radians, the vertex angle of the cone.
 
 The cone is created with its axis along the Y-axis and its vertex at the bottom.
+
+With `coneEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+
+The same applies to `coneEmitter.heightRange`: you can define where along the height the particles should be emitted. A value of 0 means only on the top surface while a value of 1 means all along the height.
+
+Here is an example of a particle system emitted only from the outside of a flat cone: https://www.babylonjs-playground.com/#B9HKG0#1
 
 The returned `coneEmitter` object can be used to change the values of these properties.
 
