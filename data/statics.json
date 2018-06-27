@@ -115,11 +115,11 @@
             "desc": "Making the most of the playground",
             "files": [
                 {
-                    "title": "Display and Use the Debug Layer",
+                    "title": "Display and Use the Inspector",
                     "filename": "debug_layer"
                 },
                 {
-                    "title": "Customize The Debug Layer",
+                    "title": "Customize The Inspector",
                     "filename": "Customize_debug_layer"
                 }
             ]
@@ -1651,7 +1651,7 @@
                     "filename": "Playground"
                 },
                 {
-                    "title": "The Debug Layer",
+                    "title": "The Inspector",
                     "filename": "Playground_debuglayer"
                 }
             ]

@@ -1,10 +1,10 @@
 ---
-PG_TITLE: Customize The Debug Layer
+PG_TITLE: Customize The Inspector
 ---
 
-# Customize The Debug Layer
+# Customize The Inspector
 
-The debug layer is part of the Babylon.js repository and can be customized in the same way as Babylon.js can. 
+The Inspector is part of the Babylon.js repository and can be customized in the same way as Babylon.js can. 
 
 Before following any of the steps below knowing how to customizing Babylon.js in general is required.
 
@@ -19,7 +19,7 @@ In addition for those using Visual Studio as an IDE you can read
 
 ## Setting the project
 
-As all the code of the debug layer lies in Babylon.js repository, you have first to follow [this tutorial](/generals/how_to_start) to setting up your IDE.
+As all the code of the Inspector lies in Babylon.js repository, you have first to follow [this tutorial](/generals/how_to_start) to setting up your IDE.
 
 
 ## Compile the library
@@ -69,5 +69,5 @@ Where element1 and element2 are two HTML div, and direction is either 'vertical'
 
 # Further Reading
 
-[The Debug Layer Features](/features/playground_debuglayer)  
-[How To use The Debug Layer in Projects](/How_To/debug_layer)     
+[The Inspector Features](/features/playground_debuglayer)  
+[How To use The Inspector in Projects](/How_To/debug_layer)     
