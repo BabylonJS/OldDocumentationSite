@@ -34,3 +34,5 @@ Currently the list of behaviors available in babylon.js core are camera behaviou
 ## Basic - L1
 
 [Camera Behaviours](/How_To/Camera_Behaviors)
+
+[Mesh Behaviours](/How_To/MeshBehavior)

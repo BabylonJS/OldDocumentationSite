@@ -201,6 +201,14 @@ vrHelper.meshSelectionPredicate = (mesh) => {
 };
 ```
 
+The logic order for raySelectionPredicate, meshSelectionPredicate, onNewMeshPicked, onNewMeshSelected are as followed:
+1. Ray is casted from the controller
+2. When the ray hits an object the raySelectionPredicate will be called and if true the ray will collide there and be stopped otherwise the ray will pass through the object
+3. Teleportation target location is updated to where the ray collided if the collision is also a floor mesh
+4. If the collision object was not collided with on the last frame meshSelectionPredicate is checked, if it returns true the onNewMeshPicked event is fired and then onNewMeshSelected is fired
+
+
+
 The gaze tracker can be customized by setting the gazeTrackerMesh. [Example](https://www.babylonjs-playground.com/#ZHYP5K)
 ```javascript
 vrHelper.gazeTrackerMesh = BABYLON.Mesh.CreateSphere("sphere1", 4, 0.1, scene);
