@@ -74,7 +74,7 @@ By default, dragging objects away/towards you will be magnified to make moving o
 sixDofDragBehavior.zDragFactor = 0.2;
 ```
 
-[Example](https://www.babylonjs-playground.com/#DEYAQ5#40)
+[Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
 
 ## MultiPointerScaleBehavior
 This is used to scale a mesh based on 2 pointers (eg. fingers or vr controllers)
@@ -82,4 +82,4 @@ This is used to scale a mesh based on 2 pointers (eg. fingers or vr controllers)
 var multiPointerScaleBehavior = new BABYLON.MultiPointerScaleBehavior();
 ```
 
-[Example](https://www.babylonjs-playground.com/#DEYAQ5#40)
+[Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
