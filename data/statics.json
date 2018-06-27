@@ -115,11 +115,11 @@
             "desc": "Making the most of the playground",
             "files": [
                 {
-                    "title": "Display and Use the Debug Layer",
+                    "title": "Display and Use the Inspector",
                     "filename": "debug_layer"
                 },
                 {
-                    "title": "Customize The Debug Layer",
+                    "title": "Customize The Inspector",
                     "filename": "Customize_debug_layer"
                 }
             ]
@@ -285,6 +285,21 @@
                     "title": "Use Translations and Rotations",
                     "level": 3,
                     "filename": "Rotate"
+                },
+                {
+                    "title": "Use Mesh Behaviors (eg. dragging)",
+                    "level": 3,
+                    "filename": "MeshBehavior"
+                },
+                {
+                    "title": "Use UtilityLayerRenderer",
+                    "level": 3,
+                    "filename": "UtilityLayerRenderer"
+                },
+                {
+                    "title": "Use Gizmos (eg. Drag arrow, Bounding box)",
+                    "level": 3,
+                    "filename": "Gizmo"
                 },
                 {
                     "title": "Set and Use a Pivot",
@@ -1651,7 +1666,7 @@
                     "filename": "Playground"
                 },
                 {
-                    "title": "The Debug Layer",
+                    "title": "The Inspector",
                     "filename": "Playground_debuglayer"
                 }
             ]

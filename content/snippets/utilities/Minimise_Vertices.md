@@ -82,12 +82,11 @@ BABYLON.Mesh.prototype.minimizeVertices = function() {
 
 # Playground
 
-Using the Debug Layer on the Playground below with the minimise vertices function applied you will see that there are 366 vertices and 2184 
+Using the Inspector in the Playground below with the minimise vertices function applied you will see that there are 366 vertices and 2184 
 indices. However you can also see how the texture has been split and it does not seam correctly. This seaming would also happen if you used an image
 of the earth for example.
 
-If you comment out line 78 and so no longer apply the minimise vertices function you can use the Debug Layer to check that there are 435 vertices 
-and 2352 indices. In this case though the image is applied correctly.  
+If you comment out line 78 and so no longer apply the minimise vertices function you can use the Inspector to check that there are 435 vertices and 2352 indices. In this case though the image is applied correctly.  
 
 
 * [Playground Example Minimising Vertices](http://www.babylonjs-playground.com/#1JBMJ3#17)
