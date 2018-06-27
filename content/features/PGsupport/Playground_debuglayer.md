@@ -42,19 +42,20 @@ If the Inspector window is widened then some tab bar menu items are shown. Alter
 
 | Name | Description | Top Panel | Bottom panel | 
 | ---- | --- | --- | ---- |
-| Scene | Display some information about the current scene | Toggle render modes | Display scene properties |
-| Console | Display console messages | Hook all console.log messages | Display all logs related to babylon.js (callled with BABYLON.Tools.Log) |
-| Stats | Display statistics data | Display stats | | 
-| Textures | Display all textures | The list of textures available in the scene (images, render target textures, map textures, font textures and dynamic textures) | The texture image. You can right-click - open in a new tab to have perfect dimensions |
-| Mesh | Display mesh data | The list of mesh, sorted by their names. | The selected mesh properties |
-| Light | Display light data | The list of light, sorted by their names. | The selected light properties |
-| Material | Display material data | The list of material, sorted by their names. | The selected material properties |
-| GTLF |Display gtlf Information | Import, Extensions and Export data | GTLF data|
-| GUI | Display GUI information. Only displayed if BABYLON.GUI is included in the project | The list of BABYLON.GUI, sorted by their name | The selected BABYLON.GUI primitive properties |
-|Physics |Display physics data|List of physics objects sorted by name|The selected physics object properties|
-| Camera | Display camera data | The list of camera, sorted by their names. | The selected camera properties |
+| Tools | Display General Tools| Utilities such as generate videos, generate gif, do a screen capture, etc.. |   |
 | Audio | Display all sounds | The list of sounds, sorted by their names. | The selected sound properties |
-| Tools | Available Tools| The list of tools | Available Tools |
+| Camera | Display camera data | The list of camera, sorted by their names. | The selected camera properties |
+| Physics |Display physics data|List of physics objects sorted by name|The selected physics object properties|
+| GUI | Display GUI information | The list of BABYLON.GUI, sorted by their name | The selected BABYLON.GUI primitive properties |
+| GTLF |Display GTLF Utilities | The tools to help you work with glTF: validators, logs, etc..| |
+| Material | Display material data | The list of material, sorted by their names. | The selected material properties |
+| Light | Display light data | The list of light, sorted by their names. | The selected light properties |
+| Mesh | Display mesh data | The list of mesh, sorted by their names. | The selected mesh properties |
+| Textures | Display all textures | The list of textures available in the scene (images, render target textures, map textures, font textures and dynamic textures) | The texture image. You can right-click - open in a new tab to have perfect dimensions |
+| Stats | Display statistics data | Display stats | |
+| Console | Display console messages | Hook all console.log messages | Display all logs related to babylon.js (called with BABYLON.Tools.Log) |
+| Scene | Display some information about the current scene | Toggle render modes | Display scene properties |
+
 
 In some tabs, a search bar is available to look for a specific object.
 
