@@ -67,6 +67,7 @@ system.start();
 
 It will execute the particle animation loop 100 times with a time step set to 5 times faster than realtime. The more cycles you want, the slower the system will be to start. So it could be interesting to increase the time step to have less cycles to run. But keep in mind that a too big time step will introduce issues if the life spam of a particle is smaller than the time step.
 
+Here is an example of pre-warming: https://www.babylonjs-playground.com/#MX2Z99#8
 
 ### Particle Texture 
 To apply a texture to the particles, such as  
@@ -138,6 +139,30 @@ particleSystem.minLifeTime = 0.3;
 particleSystem.maxLifeTime = 1.5;
 ```
 
+Starting with Babylon.js v3.3, you can also define the lifetime respectively to the particle system duration.
+For instance, if your call `system.targetStopDuration = 0.5` then you can define particle life time with a gradient like this:
+
+```
+particleSystem.addLifeTimeGradient(0, 0.5);
+particleSystem.addLifeTimeGradient(1, 0);
+```
+The first parameter defines the gradient (0 means at the particle system start and 1 means at particle system end). The second parameter is the particle life time. This means that at the beginning of the particle system, particles will receive a life time set to 0.5. And when the system will be close to the `targetStopDuration` the particles will receive a life time close to 0.
+
+It is recommended to at least define a gradient for 0 and 1.
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addLifeTimeGradient(0, 0.5, 0.8);
+particleSystem.addLifeTimeGradient(1.0, 0, 0.1);
+```
+
+In this case the life time of the particle will be randomly picked between the two values when the gradient will be reached.
+
+To remove a gradient you can call `particleSystem.removeLifeTimeGradient(0.5)`.
+
 ### Size
 The size of the particles can also be varied randomly within a given range.
 
@@ -173,9 +198,26 @@ particleSystem.addSizeGradient(0, 0.5);
 particleSystem.addSizeGradient(1.0, 3);
 ```
 
-You can add as much gradient as you want as long as the gradient value is between 0 and 1.
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addSizeGradient(0, 0.5, 0.8);
+particleSystem.addSizeGradient(1.0, 3, 4);
+```
+
+In this case the size of the particle will be randomly picked between the two values when the gradient will be reached.
 
 To remove a gradient you can call `particleSystem.removeSizeGradient(0.5)`.
+
+When dealing with particle size, you may need to move the pivot (aka the center of the transform). By default the scale will come from the center of the particle but you may want to scale it from the top or the bottom. To change the pivot position, just call:
+
+```
+particleSystem.translationPivot = new BABYLON.Vector2(0, -0.5); // In this case the scale will come from the bottom of the particle
+```
+
+Here is an example with size gradients and a pivot set to bottom: https://www.babylonjs-playground.com/#L9QWZB#0
 
 ### Particle Colors
 There are three colors that can be set for the particle system, two which are combined (or blended) during the lifetime of the particle and a third that it takes on just before it disappears. 
@@ -214,6 +256,8 @@ particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1)new BABYLON.C
 In this case the color of the particle will be randomly picked between the two colors when the gradient will be reached.
 
 To remove a gradient you can call `particleSystem.removeColorGradient(0.5)`.
+
+Here is an example of color gradients: https://www.babylonjs-playground.com/#MX2Z99#8
 
 ### Particle blending
 There are different ways that particles are blended with the scene and these are set with `blendMode`.
@@ -294,6 +338,14 @@ You can define a range for the power of the emitting particles, and the overall 
  By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
  
  You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
+ 
+ When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
+ 
+ ```
+ system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
+ ```
+ 
+ A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
 
 ## Adjustable Playground Examples
 
@@ -389,6 +441,12 @@ The `createConeEmitter` method takes two parameters in the following order
 
 The cone is created with its axis along the Y-axis and its vertex at the bottom.
 
+With `coneEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+
+The same applies to `coneEmitter.heightRange`: you can define where along the height the particles should be emitted. A value of 0 means only on the top surface while a value of 1 means all along the height.
+
+Here is an example of a particle system emitted only from the outside of a flat cone: https://www.babylonjs-playground.com/#B9HKG0#1
+
 The returned `coneEmitter` object can be used to change the values of these properties.
 
 ```javascript
@@ -435,7 +493,7 @@ The following features are not supported by GPU particles due to their inner nat
 - Custom effects
 - Animation sheets
 - disposeOnStop
-- Dual colors per color gradient (only one color is supported)
+- Dual values per gradient (only one value is supported)
 
 ### Playground
 
