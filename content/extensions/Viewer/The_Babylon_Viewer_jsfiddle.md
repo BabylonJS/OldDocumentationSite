@@ -42,9 +42,7 @@ All aspects of this experience are configurable. See [Configuring the viewer](//
 </html>
 ```
 
-<div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/babylon-js-viewer?path=index.html&previewSize=100&attributionHidden=true&sidebarCollapsed=true" alt="babylon-js-viewer on glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
+<script async src="//jsfiddle.net/sb_msft/jw16tqy4/embed/result/"></script>
 
 # Getting the viewer
 

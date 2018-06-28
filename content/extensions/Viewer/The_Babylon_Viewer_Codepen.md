@@ -42,9 +42,8 @@ All aspects of this experience are configurable. See [Configuring the viewer](//
 </html>
 ```
 
-<div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/babylon-js-viewer?path=index.html&previewSize=100&attributionHidden=true&sidebarCollapsed=true" alt="babylon-js-viewer on glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
+<p data-height="500" data-theme-id="light" data-slug-hash="zaMemN" data-default-tab="result" data-embed-version="2" data-pen-title="Babylon.js Viewer" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sbtron/pen/zaMemN/">Babylon.js Viewer</a> on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 # Getting the viewer
 
