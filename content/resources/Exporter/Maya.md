@@ -94,6 +94,8 @@ Option _Optimize vertices_: The Babylon exporter will try to optimize the number
 
 The _Scale factor_ can be used to rescale the whole world. If you set a scale factor equal to 100, the resulting scene will be 100 times smaller (1%). By default the scale factor is equal to 1, meaning no rescale.
 
+The _Texture quality_ sets the convertion quality of bitmap to JPEG. At 100 (the maximum value), it gives the highest image quality but no file size reduction. On the contrary at 0 (the minimum value), it gives the lowest image quality but the greatest file size reduction. By default the _Texture quality_ is set to 100.
+
 # What you should know
 
 ## Camera
