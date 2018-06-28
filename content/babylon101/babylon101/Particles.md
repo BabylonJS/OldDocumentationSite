@@ -325,6 +325,36 @@ particleSystem.minInitialRotation = 0;
 particleSystem.maxInitialRotation = Math.PI;
 ```
 
+Starting with Babylon.js v3.3, you can also define angular speed factor gradients.
+
+To add a angular speed gradient just call the following code:
+
+```
+particleSystem.addAngularSpeedGradient(0, 0.5);
+```
+
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the angular speed to use. In this case the particle will born an angular speed set to 0.5 radians per frame.
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addAngularSpeedGradient(0, 0.5);
+particleSystem.addAngularSpeedGradient(1.0, 3);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addAngularSpeedGradient(0, 0.5, 0.8);
+particleSystem.addAngularSpeedGradient(1.0, 3, 4);
+```
+
+In this case the angular speed of the particle will be randomly picked between the two values when the gradient will be reached.
+
+To remove a gradient you can call `particleSystem.removeAngularSpeedGradient(0.5)`.
+
+
 ### Speed
 You can define a range for the power of the emitting particles, and the overall motion speed (0.01 is default update speed, faster updates = faster animation).
 
