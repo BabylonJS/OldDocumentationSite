@@ -53,7 +53,7 @@ var ribbon = BABYLON.MeshBuilder.CreateRibbon("ribbon", { pathArray: paths, clos
 [Now with a texture](http://www.babylonjs-playground.com/#3XMWZ#49).
 
 Notice that the texture isn't stretched on the surface added by the automatic closing but applied independently. 
-The reason of this behavior is that, with ribbon _closeXXX_ parameters, priority is given on normals (the tools that compute light reflection) over textures. 
+The reason for this behavior is that, with ribbon _closeXXX_ parameters, priority is given to the normals (the tools that compute light reflection) over textures. 
 If you don't care about continuous light reflection but you do want your texture to be stretched along the whole surface, 
 you just have to forget automatic closing and close the ribbon by yourself. A simple way to do this is just to re-push the first _path_ at the end of the _pathArray_
 

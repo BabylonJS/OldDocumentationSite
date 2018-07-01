@@ -47,7 +47,7 @@ mesh.rotate(BABYLON.Axis.Y, 0.01, BABYLON.Space.LOCAL);
 mesh.rotate(BABYLON.Axis.Z, 1.45, BABYLON.Space.LOCAL);
 ```
 
-In following playground shows a rotation of &pi;/4 first about the Y world axis then about the X world axis. You can have a go at changing WORLD to LOCAL for one or both and changing the order of X and Y to see what happens.
+In the following playground shows a rotation of &pi;/4 first about the Y world axis then about the X world axis. You can have a go at changing WORLD to LOCAL for one or both and changing the order of X and Y to see what happens.
 
 * [Playground Animation - Rotate about Two Axes](https://www.babylonjs-playground.com/#Z3W74Y#1)
 
