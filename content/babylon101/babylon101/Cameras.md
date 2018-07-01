@@ -4,7 +4,7 @@ PG_TITLE: Cameras
 ---
 # Cameras
 
-Of the many cameras available in Babylon.js the two most use are probably - the Universal Camera used for First Person Movement and the Arc Rotate Camera which is an orbital camera. Though with the advent of WebVR this may change.
+Of the many cameras available in Babylon.js the two most used are probably - the Universal Camera used for First Person Movement and the Arc Rotate Camera which is an orbital camera. Though with the advent of WebVR this may change.
 
 For input control by the user all cameras need to be attached to the canvas once constructed using
 
@@ -14,12 +14,12 @@ camera.attachControl(canvas, true);
 The second parameter is optional and defaults to **false**. When **false** then default actions on a canvas event are prevented. Set to true to allow canvas default actions. 
 
 **Notes** 
-1. A [Gamepad](/How_To/how_to_use_gamepads) may be used a a controller.
+1. A [Gamepad](/How_To/how_to_use_gamepads) may be used a controller.
 2. For touch control either [PEP](https://github.com/jquery/PEP) or [hand.js](https://github.com/Deltakosh/handjs) is needed.
 
 ## Universal Camera
 
-This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or [gamepad](/How_To/how_to_use_gamepads) depending on the input device used, with no need for the contoller to be specified. This extends and replaces the [Free Camera](/classes/3.0/freecamera), the [Touch Camera](/classes/3.0/touchcamera) and the [Gamepad Camera](classes/3.0/gamepadcamera) which are all still available.
+This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or [gamepad](/How_To/how_to_use_gamepads) depending on the input device used, with no need for the controller to be specified. This extends and replaces the [Free Camera](/classes/3.0/freecamera), the [Touch Camera](/classes/3.0/touchcamera) and the [Gamepad Camera](classes/3.0/gamepadcamera) which are all still available.
 
 The Universal Camera is now the default camera used by Babylon.js if nothing is specified, and it’s your best choice if you’d like to have a FPS-like control in your scene.  
 All demos on babylonjs.com are based upon that feature. Plug a Xbox controller into your PC and using it you’ll still be able to navigate most of the demos.
@@ -286,7 +286,7 @@ The new virtual reality camera
     var camera = new BABYLON.WebVRFreeCamera("WVR", new BABYLON.Vector3(0, 1, -15), scene);
 ```
 
-This camera deseves a page to itself so here it is [Using the WebVR Camera](/How_To/WebVR_Camera);
+This camera deserves a page to itself so here it is [Using the WebVR Camera](/How_To/WebVR_Camera);
 
 ## Customizing inputs
 

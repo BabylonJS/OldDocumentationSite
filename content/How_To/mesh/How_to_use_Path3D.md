@@ -5,7 +5,7 @@ PG_TITLE: How to use Path3D
 
 # How To Use Path3D
 
-A _Path3D_ is a mathematical object created from a sequence of position vectors of points on a curve. Once obtained a Path3D can be used to determine the triplet of vectors tangent, normal and binormal of the curve for each of those those points. Each triplet can then be used as a local system coordinate. You could set, for example, the camera direction to the normal as it follows the curve.
+A _Path3D_ is a mathematical object created from a sequence of position vectors of points on a curve. Once obtained a Path3D can be used to determine the triplet of vectors tangent, normal and binormal of the curve for each of those points. Each triplet can then be used as a local system coordinate. You could set, for example, the camera direction to the normal as it follows the curve.
 
   
 A _Path3D_ object is simple to construct as follows
@@ -32,7 +32,7 @@ Please zoom in and rotate : tangents in red, normals in blue, binormal in green.
 Notice, in the next exxample, how the the triplets slightly rotate when the curve goes more into depth.  
 * [Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#1)
 
-Whilst at any point on the curve there is only one tangent there can be an infinte number or normals and hence binormals. If the default one does not suit you it is possible to [set the normal direction](#set_the_normal)
+Whilst at any point on the curve there is only one tangent there can be an infinite number of normals and hence binormals. If the default one does not suit you it is possible to [set the normal direction](#set_the_normal)
 
 
 ## Path3D Methods
@@ -49,7 +49,7 @@ var curvePoints = path3d.getCurve();
 
 ### Get Distances
 
-The _getDistances_ method returns an array of distances from one curve point to the next in order of points and with 0 being th first distance.
+The _getDistances_ method returns an array of distances from one curve point to the next in order of points and with 0 being the first distance.
 
 For the array of points [(1, 2, 1), (4, 8, 3)] the array of distances is [0, 7]. 
 
@@ -71,7 +71,7 @@ Tangents, normals and bi-normals are thus recomputed for this new path.
 
 ## Set The Normal
 
-For any vector there are an infinte number of vectors at right angles to it. 
+For any vector there are an infinite number of vectors at right angles to it. 
 
 ![Multiple Normals](/img/how_to/Mesh/tangentnormals.jpg)
 

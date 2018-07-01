@@ -5,7 +5,7 @@ PG_TITLE: How to use Curve3
 
 # How To Draw Curves
 
-If you want to draw a circular path then it easy enough to generate the points, in the XY plane, for this using
+If you want to draw a circular path then it is easy enough to generate the points, in the XY plane, for this using
 
 ```javascript
 var path = [];
@@ -160,7 +160,7 @@ var l = myFullCurve.length();
 Here is an example where a Hermite Spline is used to close smoothly a concatenation of two Bezier curves. As the spline is closing the curves the first and last points of the open continued curve need to be read from the array.  
 
 * The first and last points of the concatenation are used as last and first point of the Hermite spline.  
-* The first and last segments of the concatenation are used as last and first tangent vectors of the Hermite. Since these segment are quite small, they are scaled according to the concatenation _length_ so the longer the concatenation, the more curved the spline.   
+* The first and last segments of the concatenation are used as last and first tangent vectors of the Hermite. Since these segments are quite small, they are scaled according to the concatenation _length_ so the longer the concatenation, the more curved the spline.   
 
 ```javascript
 // two concatened cubic Bezier
@@ -186,7 +186,7 @@ var closedCurve = BABYLON.Mesh.CreateLines("closed", continued.getPoints(), scen
 * [Playground Example - Closed Joined Curves](https://www.babylonjs-playground.com/#2GCEVH)
 
 The orange and yellow curves are the original Bezier curves.   
-In light blue, these two curves are continued each other and a hermite curve is also added in continuation to close the path.   
+In light blue, these two curves are continued by each other and a hermite curve is also added in continuation to close the path.   
 
 # Further Reading
 

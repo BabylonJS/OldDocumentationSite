@@ -69,7 +69,7 @@ Note that the conversion duration scales with images size and may have a severe 
 
 The physical materials are exported to glTF format as PBR materials.
 
-Involved parameters are highlighted bellow and described in following sections.
+Involved parameters are highlighted bellow and described in the following sections.
 
 ![3DS MAX physical material parameters](/img/exporters/3DSMax/18_3dsmax_physical_materials_parameters.png)
 
