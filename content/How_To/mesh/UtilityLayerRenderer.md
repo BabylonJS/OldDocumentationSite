@@ -62,4 +62,4 @@ utilLayer.onPointerOutObservable.add(function(pointerId){
 ## Examples
 
  - [Overlay scene example](https://www.babylonjs-playground.com/#DEYAQ5#41)
- - [Gizmo example](https://www.babylonjs-playground.com/#31M2AP#3)
+ - [Gizmo example](https://www.babylonjs-playground.com/#31M2AP#9)

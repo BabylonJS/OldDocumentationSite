@@ -23,15 +23,15 @@ By default the gizmo will be updated to match the attached mesh's rotation and p
 gizmo.updateGizmoRotationToMatchAttachedMesh = false;
 gizmo.updateGizmoPositionToMatchAttachedMesh = true;
 ```
-[**Basic example**](https://www.babylonjs-playground.com/#31M2AP#3)
+[**Basic example**](https://www.babylonjs-playground.com/#31M2AP#9)
 
 ## Position, scale and rotation gizmos
 
 Default gizmos for position, rotation and scale on a single axis are supported
 
- - [AxisDragGizmo](https://www.babylonjs-playground.com/#31M2AP#3)
- - [AxisScaleGizmo](https://www.babylonjs-playground.com/#31M2AP#4)
- - [PlaneRotationGizmo](https://www.babylonjs-playground.com/#31M2AP#5)
+ - [AxisDragGizmo](https://www.babylonjs-playground.com/#31M2AP#9)
+ - [AxisScaleGizmo](https://www.babylonjs-playground.com/#31M2AP#10)
+ - [PlaneRotationGizmo](https://www.babylonjs-playground.com/#31M2AP#11)
 
 Snapping can be enabled on any of the single axis gizmos
 
@@ -58,6 +58,6 @@ The enabled rotation axis can be customized with the following:
 gizmo.setEnabledRotationAxis("xy");
 ```
 
-[Example](https://www.babylonjs-playground.com/#DEYAQ5#40)
+[Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
 
 
