@@ -1430,13 +1430,13 @@
             ]
         },
         {
-            "title": "Babylon Viewer",
+            "title": "Babylon.js Viewer",
             "name": "Viewer",
             "img": "img/extensions/editor.png",
-            "desc": "Learn how to use the babylon viewer.",
+            "desc": "Learn how to use the Babylon.js viewer.",
             "files": [
                 {
-                    "title": "The Babylon Viewer",
+                    "title": "The Babylon.js Viewer",
                     "filename": "The_Babylon_Viewer"
                 },
                 {

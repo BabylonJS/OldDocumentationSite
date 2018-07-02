@@ -79,7 +79,7 @@ Currently, two PBR materials are exported:
 
 # Stingray PBS
 
-Involved parameters are highlighted bellow and described in following sections.
+Involved parameters are highlighted bellow and described in the following sections.
 
 ![Maya Stingray PBS material parameters](/img/exporters/Maya_to_glTF/2_gltf_stingray_pbs.jpg)
 
@@ -161,7 +161,7 @@ Thus the emissive map is assumed to be already premultiplied by the emissive int
 
 # AiStandardSurface
 
-Involved parameters are highlighted bellow and described in following sections.
+Involved parameters are highlighted bellow and described in the following sections.
 
 ![glTF AiStandardSurface material parameters](/img/exporters/Maya_to_glTF/4_gltf_aiStandardSurface_material_editor.png)
 

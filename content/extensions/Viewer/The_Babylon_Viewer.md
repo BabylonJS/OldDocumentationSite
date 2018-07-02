@@ -2,62 +2,71 @@
 PG_TITLE: The Babylon.js Viewer
 ---
 
-# The Babylon.js viewer extension
+# Display 3D models on your webpage
 
-## Why do we need the viewer
+The Babylon.js viewer is the simplest way to display 3D content on a web page. 
 
-In many use-cases, a website simply wants to display 3D content to its viewers, without any interactions and with a simple-to-use API. Using Babylon.js is very simple, but still requires coding in order to create the engine, the scene, load the model, handle errors etc'. This is where Babylon's viewer come into play.
+To display a 3D model on you web page:
 
-Babylon's viewer is a wrapper around Babylon, that automatically initializes the needed components in order to display a loaded model. It is easy to use, and require no coding at all.
+1. Add a script reference to the viewer 
 
-## How does it work
+   ```html
+   <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script> 
+   ```
+   
+2. Add a `<babylon>` tag and set the *model* attribute to point to a `.gltf` or `.glb` file
 
-The viewer automatically interacts with the DOM, searching for HTML elements named `babylon`. It will then automatically read the configuration from the DOM element and will create a scene for it.
+   ```html
+   <babylon model="model.gltf"></babylon>
+   ```
 
-The viewer's entire behavior is extendable. It is explained in detail in `Configuration` and `Extending the viewer`.
+   We recommend using the [glTF format](http://github.com/khronosgroup/gltf) (`.gltf` or `.glb`) for displaying 3D models on your webpage. Other formats supported by Babylon.js loaders are also supported by the viewer component including `.babylon`, `.obj`, and `.stl` formats.
 
-The viewer automatically serves all of Babylon's loaders, and currently supports loading models from `.babylon`, `.gltf`, `.glb`, `.obj`, and `.stl` files.
+The Babylon.js viewer automatically provides a default viewing experience for 3D models. All aspects of this experience are configurable. See [Configuring the viewer](//doc.babylonjs.com/extensions/Configuring_the_viewer) for more information on customizing the viewing experience. 
 
-## Getting the viewer
+## Example 
 
-The latest stable viewer version can always be found at [https://viewer.babylonjs.com/viewer.js](https://viewer.babylonjs.com/viewer.js). Minified version at [https://viewer.babylonjs.com/viewer.min.js](https://viewer.babylonjs.com/viewer.min.js).
-The viewer exposes `BabylonViewer` to the window object, which can be used to interact with all viewers on the current page. For further details see [Advanced usage](//doc.babylonjs.com/extensions/Advanced_usage).
+<p data-height="400" data-theme-id="light" data-slug-hash="QxzBPd" data-default-tab="html,result" data-user="BabylonJS" data-embed-version="2" data-pen-title="Babylon.js Viewer - Display a 3D model" class="codepen">See the Pen <a href="https://codepen.io/BabylonJS/pen/QxzBPd/">Babylon.js Viewer - Display a 3D model</a> by Babylon.js (<a href="https://codepen.io/BabylonJS">@BabylonJS</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-It will soon be available on NPM as well for developers wishing to extend it.
 
-## Basic usage
+# Using the viewer in your project
 
-Consider we want to display Babylon's rabbit model on a website. To do that we simply add a new `<babylon>` DOM element to our already-existing HTML:
+The Babylon.js viewer is available on CDN as well as an NPM package. The Babylon.js viewer is a wrapper around the Babylon.js engine and follows the same versioning scheme as the engine.  The currently stable version of the Babylon.js viewer will use the current stable version of Babylon.js engine and the preview version of the Babylon.js viewer will use the preview version of Babylon.js engine.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>BabylonJS Viewer - Basic usage</title>
-        <style>
-            babylon {
-                max-width: 800px;
-                max-height: 500px;
-                width: 100%;
-                height: 600px;
-            }
-        </style>
-    </head>
+## CDN
 
-    <body>
-        <babylon model="https://playground.babylonjs.com/scenes/Rabbit.babylon"></babylon>
-        <script src="https://viewer.babylonjs.com/viewer.min.js"></script>
-    </body>
+Stable versions of the viewer are available on:
 
-</html>
+* https://cdn.babylonjs.com/viewer/babylon.viewer.js (minified)
+* https://cdn.babylonjs.com/viewer/babylon.viewer.max.js 
+
+Preview releases of the viewer are available on:
+
+* https://preview.babylonjs.com/viewer/babylon.viewer.js (minified)
+* https://preview.babylonjs.com/viewer/babylon.viewer.max.js
+
+## NPM
+
+To install the Babylon.js viewer through NPM use
+
+```javascript
+npm install --save babylonjs-viewer
 ```
 
-This will load the model(s) from Rabbit.babylon and will show them using the default configuration.
+Afterwards it can be imported to the project using:
 
-## Further details
+```javascript
+import * as BabylonViewer from 'babylonjs-viewer';
+
+BabylonViewer.InitTags("my-tag");
+```
+
+This will enable the BabylonViewer namespace. 
+
+Using webpack to package your project will use the minified js file.
+
+# Further details
 
 * [Configuring the viewer](//doc.babylonjs.com/extensions/Configuring_the_viewer)
 * [The templating system](//doc.babylonjs.com/extensions/The_templating_system)
