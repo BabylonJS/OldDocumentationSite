@@ -48,30 +48,6 @@
             var classes = [];
             var categories = [];
 
-            data.value.sort(function(a, b) {
-                var catA = a.category.toLowerCase();
-                var catB = b.category.toLowerCase();
-
-                if (catA === catB) {
-                    if (a.title < b.title) {
-                        return -1;
-                    }  else if (a.title > b.title) {
-                        return 1;
-                    }
-
-                    return 0;
-                }
-
-                // By category
-                if (catA < catB) {
-                    return -1;
-                }  else if(catA > catB) {
-                    return 1;
-                }
-
-                return 0;
-            });
-
             data.value.forEach(function (val) {
                 var version = val.category;
 
