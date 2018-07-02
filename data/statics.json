@@ -1440,14 +1440,6 @@
                     "filename": "The_Babylon_Viewer"
                 },
                 {
-                    "title": "The Babylon.js Viewer (codepen)",
-                    "filename": "The_Babylon_Viewer_codepen"
-                },
-                {
-                    "title": "The Babylon.js Viewer (jsfiddle)",
-                    "filename": "The_Babylon_Viewer_jsfiddle"
-                },
-                {
                     "title": "Configuring The Viewer",
                     "filename": "Configuring_the_viewer"
                 },
