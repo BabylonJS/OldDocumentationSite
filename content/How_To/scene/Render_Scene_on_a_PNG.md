@@ -84,6 +84,8 @@ You need to provide your BabylonJS engine, the camera you want to use for the re
 
 Again the size parameter is very versatile and can be a simple number or an object. However you will see differences in the results using the same parameters as before.
 
+> **_HINT:_** When using a camera other than the active camera, only objects located in the viewport of the active camera are visible. As a workaround, all meshes that should be visible can be explicitly set to `alwaysSelectedAsActiveMesh = true`. In case of performance issues, the meshes can be set to `alwaysSelectedAsActiveMesh = true` shortly before taking the screenshot and then to `alwaysSelectedAsActiveMesh = false` again.
+
 ### Examples of Results
 
 Starting with a view of the part of the screen showing the canvas there then follows a sequence of images taken using `CreateScreenshotUsingRenderTarget`
