@@ -22,7 +22,7 @@ To display a 3D model on you web page:
 
    We recommend using the [glTF format](http://github.com/khronosgroup/gltf) (`.gltf` or `.glb`) for displaying 3D models on your webpage. Other formats supported by Babylon.js loaders are also supported by the viewer component including `.babylon`, `.obj`, and `.stl` formats.
 
-The Babylon.js viewer automatically provides a default viewing experience for 3D models. All aspects of this experience are configurable. See [Configuring the viewer](//doc.babylonjs.com/extensions/Configuring_the_viewer) for more information on customizing the viewing experience. 
+The Babylon.js viewer automatically provides a [default viewing experience](#default-viewing-experience) for 3D models. All aspects of this experience are configurable. See [Configuring the viewer](//doc.babylonjs.com/extensions/Configuring_the_viewer) for more information on customizing the viewing experience. 
 
 ## Example 
 
@@ -65,6 +65,49 @@ BabylonViewer.InitTags("my-tag");
 This will enable the BabylonViewer namespace. 
 
 Using webpack to package your project will use the minified js file.
+
+# Default viewing experience
+
+The Babylon.js viewer provides a default viewing experience which includes the following capabilities. 
+
+<table>
+<tr>
+    <td colspan=2>Loading screen </td></tr>
+<tr>
+    <td>![Loading Screen](/img/extensions/viewer/loading-screen.png)</td>
+    <td>The loading screen is displayed while the model is being downloaded. The default experience includes a rotating Babylon.js logo on a black background.<br>
+        See examples for more information customizing the loading screen</td>
+</tr>
+<tr>
+    <td colspan=2>Camera, skybox, ground and shadows</td></tr>
+<tr>
+    <td>![Stage](/img/extensions/viewer/nav-bar.png)</td>
+    <td>Explain in simple words what this is doing with shadow Camera auto-rotates. There is a group, three lights and environment.<br>
+        See examples for more information on customizing these properties.</td>
+</tr>
+<tr>
+    <td colspan=2>Navigation bar</td></tr>
+<tr>
+    <td>![Navigation Bar](/img/extensions/viewer/nav-bar.png)</td>
+    <td>The navigation bar displays various controls including displaying a logo, entering fullscreen mode, controlling animation playback etc. Animation playback controls are only displayed for models that contain animation. The animation controls allow you to select the animation to play if a model contains multiple animations as well as control the speed of the animation.<br>
+        See examples for more information on customizing the navigation bar.</td>
+</tr>
+<tr>
+    <td colspan=2>Interactivity</td></tr>
+<tr>
+    <td>![Interactivity](/img/extensions/viewer/nav-bar.png)</td>
+    <td>Click mouse to rotate camera. You can customize further by enabling things like drag drop etc.<br>
+    See examples for more information on customizing these properties.
+    </td>
+</tr>
+<tr>
+    <td colspan=2>Overlay</td></tr>
+<tr>
+    <td>![Overlay](/img/extensions/viewer/nav-bar.png)</td>
+    <td>What does this do?</td>
+</tr>
+</table>
+
 
 # Further details
 
