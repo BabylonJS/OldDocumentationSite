@@ -1,4 +1,10 @@
-# How to Use SceneLoader
+---
+PG_TITLE: How To Use Scene Loader
+---
+
+# How to Use Scene Loader
+
+The built in file type is `.babylon` and Babylon.js can load these without a plugin.
 
 ## Basic Usage
 
@@ -8,7 +14,6 @@ Currently plugins can be found for:
  - [.glTF](/How_To/glTF)
  - [.obj](/How_To/OBJ)
  - [.stl](/How_To/STL)
- - .babylon
 
 To quickly add support for all loaders the following script can be added to your page:
 ```
@@ -19,7 +24,9 @@ For NPM usage see: https://www.npmjs.com/package/babylonjs-loaders
 
 Once the plugin is referenced, the SceneLoader class can be used which provides a few loading methods.
 
-SceneLoader.Append - Loads all babylon assets from the file and appends them to the scene
+## SceneLoader.Append 
+
+Loads all babylon assets from the file and appends them to the scene
 ```javascript
 BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
     // do something with the scene
@@ -27,14 +34,18 @@ BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
 ```
 [Demo](http://www.babylonjs-playground.com/#WGZLGJ)
 
-SceneLoader.Load - Loads all babylon assets from the file and creates a new scene
+## SceneLoader.Load 
+
+Loads all babylon assets from the file and creates a new scene
 ```javascript
 BABYLON.SceneLoader.Load("/assets/", "batman.obj", engine, function (newScene) { 
    // ...
 });
 ```
 
-SceneLoader.ImportMesh - Loads the meshes from the file and appends them to the scene
+## SceneLoader.ImportMesh 
+
+Loads the meshes from the file and appends them to the scene
 ```javascript
 // The first parameter can be set to null to load all meshes and skeletons
 BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene, function (meshes, particleSystems, skeletons) {
@@ -44,7 +55,9 @@ BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene,
 ```
 [Demo](http://www.babylonjs-playground.com/#JUKXQD)
 
-SceneLoader.LoadAssetContainer - Loads all babylon assets from the file and does not append them to the scene
+## SceneLoader.LoadAssetContainer 
+
+Loads all babylon assets from the file and does not append them to the scene
 ```javascript
 BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (container) {
     var meshes = container.meshes;
@@ -56,6 +69,8 @@ BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (conta
 });
 ```
 [Demo](http://www.babylonjs-playground.com/#JA1ND3#48)
+
+## SceneLoader.AppendAsync
 
 There are also `Async` versions of these functions that return promises:
 ```javascript
