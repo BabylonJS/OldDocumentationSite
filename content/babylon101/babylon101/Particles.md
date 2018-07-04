@@ -333,7 +333,7 @@ To add a angular speed gradient just call the following code:
 particleSystem.addAngularSpeedGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the angular speed to use. In this case the particle will born an angular speed set to 0.5 radians per frame.
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the angular speed to use. In this case the particle will born with an angular speed set to 0.5 radians per frame.
 It is recommended to at least define a gradient for 0 and 1:
 
 ```
@@ -363,6 +363,38 @@ You can define a range for the power of the emitting particles, and the overall 
   particleSystem.maxEmitPower = 3;
   particleSystem.updateSpeed = 0.005;
   ```
+
+### Velocity over time
+You can define velocity over time with gradients. The velocity over time is the energy (or the factor) applied to direction of the particle. A value of 2 will multiply the direction size by two hence multiplying the particle speed by 2.
+
+To add a velocity gradient just call the following code:
+
+```
+particleSystem.addVelocityGradient(0, 0.5);
+```
+
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the velocity to use. In this case the particle will born with velcoity set to 0.5.
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addVelocityGradient(0, 0.5);
+particleSystem.addVelocityGradient(1.0, 3);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addVelocityGradient(0, 0.5, 0.8);
+particleSystem.addVelocityGradient(1.0, 3, 4);
+```
+
+In this case the velocity of the particle will be randomly picked between the two values when the gradient will be reached.
+
+Here is an example of velocity applied to a particle system: https://www.babylonjs-playground.com/#3W04PW#0
+
+To remove a gradient you can call `particleSystem.removeVelocityGradient(0.5)`. 
   
  ### Alignment
  By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
