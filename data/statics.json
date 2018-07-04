@@ -130,6 +130,11 @@
             "desc": "The Scene",
             "files": [
                 {
+                    "title": "Fast Build a World",
+                    "level": 1,
+                    "filename": "Fast_Build"
+                },
+                {
                     "title": "Use Multiple Scenes",
                     "level": 1,
                     "filename": "Multi_Scenes"
