@@ -280,6 +280,9 @@ invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction ti
 * [Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
 
 ## Non Regular Polygon
+
+**Please note that CreatePolygon uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
+
 You must set at least the _shape_ option.
 
 Example :
@@ -303,6 +306,9 @@ All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie o
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
 ## Extruded Non Regular Polygon
+
+**Please note that ExtrudePolygon uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
+
 You must set at least the _shape_ and _depth_ options.
 
 Example :
