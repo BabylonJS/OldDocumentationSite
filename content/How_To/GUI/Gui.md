@@ -502,6 +502,22 @@ You can also apply stretch to animation sheet using `image.stretch` property.
 [example 1](https://www.babylonjs-playground.com/#K60448#1)
 [example 2](https://www.babylonjs-playground.com/#K60448#2)
 
+Start in Babylon.js v3.3, we have supported AtlasTexture.
+
+To create and use AtlasTexture you can use [Texture Packer](https://www.codeandweb.com/texturepacker) - the smart tool generate to AtlasTexture.
+
+**Note:**
+  - Just support **JSON Hash** data format. (will be soon support JSON Array)
+  - **Uncheck** _Allow rotation_ on Layout tab. 
+
+![Babylon.GUI.Image](https://i.imgur.com/RRmfp8T.png)
+
+To manage all atlas textures loaded, you need a instance of AtlasSourceImageManager.
+
+`var atlasSourceImageManager = new BABYLON.GUI.AtlasSourceImageManager();`
+
+Here is an example load atlas and use with Image: https://www.babylonjs-playground.com/#3KPTKE
+    
 ### ColorPicker
 
 The color picker control allows users to set colors in your scene.
