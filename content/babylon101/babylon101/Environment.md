@@ -107,100 +107,9 @@ var envTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", sce
 scene.createDefaultSkybox(envTexture, true, 1000);
 ```
 
-As you can see, the scene has a helper to create a skybox for you. You just need to specify a texture and define if you want to use a PBRMaterial (second parameter to true) or a StandardMaterial (default value).
+* [Playground Example Skybox Helper](https://www.babylonjs-playground.com/#BH23ZD#1)
 
-The third parameter defines the scale of your skybox (this value depends on the scale of your scene). It is set to 1000 by default.
-
-Here is an example: https://www.babylonjs-playground.com/#BH23ZD#1
-
-You can also define your environment texture on the scene itself. THis way the texture will also be used by PBRMaterials as the default environment texture:
-
-```javascript
-scene.environmentTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", scene);
-scene.createDefaultSkybox(envTexture);
-```
-
-#### Skybox and ground
-To simplify even more the creation of your environment, you can use the environmentHelper:
-
-```javascript
-scene.createDefaultEnvironment();
-```
-
-This adds an environment texture in your scene (usefull for pbr materials), creates a ground as well as a skybox. Everything places itself to be around the meshes present in your scene.
-
-If the color is not your favorite choice you can modify it after creation:
-
-```javascript
-var helper = scene.createDefaultEnvironment();
-helper.setMainColor(BABYLON.Color3.Teal());
-```
-
-You can see a [live version here](https://www.babylonjs-playground.com/#10D6YT#33)
-
-The helper is providing a wide range of options during its creation:
-* *createGround*: Specifies wether or not to create a ground.
-* *groundSize*: Specifies the ground size (if sizeAuto is false).
-* *groundTexture*: The texture used on the ground (Default to Babylon CDN).
-* *groundColor*: The color mixed in the ground texture by default.
-* *enableGroundShadow*: Enables the ground to receive shadows.
-* *groundShadowLevel*: Helps preventing the shadow to be fully black on the ground.
-* *groundYBias*: Specifies a bias applied to the ground vertical position to prevent z-fighting with the shown objects (Default to `0.00001`).
-* *enableGroundMirror*: Creates a mirror texture attach to the ground.
-* *createSkybox*: Specifies wether or not to create a skybox.
-* *skyboxSize*: Specifies the skybox size (if sizeAuto is false).
-* *skyboxTexture*: The texture used on the skybox (Default to Babylon CDN).
-* *skyboxColor*: The color mixed in the skybox texture by default.
-* *sizeAuto*: Compute automatically the size of the elements to best fit with the scene.
-* *setupImageProcessing*: Sets up the inmage processing in the scene.
-* *environmentTexture*: The texture used as your environment texture in the scene (Default to Babylon CDN).
-* *cameraExposure*: The value of the exposure to apply to the scene.
-* *cameraContrast*: The value of the contrast to apply to the scene.
-* *toneMappingEnabled*: Specifies wether or not tonemapping should be enabled in the scene.
-
-For instance to prevent the creation of the Skybox, one would use:
-
-```javascript
-var helper = scene.createDefaultEnvironment({
-    createSkybox: false
-});
-```
-
-This is as simple as enabling ground reflection:
-
-```javascript
-var helper = scene.createDefaultEnvironment({
-    enableGroundMirror: true
-});
-```
-
-If you see z-fighting with the ground, then you might need to modify the `groundYBias` to a larger number:
-
-```javascript
-var helper = scene.createDefaultEnvironment({
-    groundYBias: 0.01
-});
-```
-
-After creation you can reach all the created elements on the helper:
-* *rotMesh*: A root node used to group the skybox and the ground to allow transforming them both at once.
-* *skybox*: The Skybox Mesh.
-* *skyboxMaterial*: The Skybox Material.
-* *skyboxTexture*: The Skybox Texture.
-* *ground*: The ground Mesh.
-* *groundMaterial*: The ground Material.
-* *groundTexture*: The ground Texture.
-* *groundMirror*: the ground mirror texture.
-
-So for instance dispose the ground after creation of the environment would be:
-```javascript
-var helper = scene.createDefaultEnvironment();
-helper.ground.dispose();
-```
-
-The environment helper is relying exclusively on the [BackgroundMaterial](/How_To/BackgroundMaterial.md) to be as efficient as possible.
-
-You can see a [live version here](https://www.babylonjs-playground.com/#10D6YT#35)
+Check out [scene helpers](/how_to/fast_build) for more information on this and other helpers.
 
 ### Fog
 
@@ -240,3 +149,5 @@ You should have a beautiful scene now, but except from your 3D models, your worl
 # Further Reading
 
 [Environment Overview](/features/Environment)
+
+[Scene Fast Build](/how_to/fast_build)

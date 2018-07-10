@@ -6,6 +6,28 @@ PG_TITLE: How To Use Gizmos
 
 Gizmo's are objects that can be attached to a mesh to provide interaction.
 
+## GizmoManager
+To get a default gizmo setup, the GizmoManager class can be used.
+```
+var gizmoManager = new BABYLON.GizmoManager(scene);
+```
+The gizmo manager will attach the enabled gizmo to whatever object in the scene that is selected by a pointer. To enable a gizmo, any of the following can be used:
+```
+gizmoManager.positionGizmoEnabled = true;
+gizmoManager.rotationGizmoEnabled = true;
+gizmoManager.scaleGizmoEnabled = true;
+gizmoManager.boundingBoxGizmoEnabled = true;
+```
+To specify the meshes which can have the gizmo attached, the attachableMeshes field can be set.
+```
+gizmoManager.attachableMeshes = [mesh1, mesh2, mesh3];
+```
+To manually change the selected mesh, the gizmo manger's attachToMesh method can be called and the usePointerToAttachGizmos field can be used to disable the manager's default pointer behavior.
+```
+gizmoManager.usePointerToAttachGizmos = false;
+gizmoManager.attachToMesh(mesh);
+```
+[**Example**](https://www.babylonjs-playground.com/#4TBMBR)
 ## Setup
 
 Gizmo's are displayed by a [UtilityLayerRenderer](/How_To/UtilityLayerRenderer) to not disrupt the existing scene state. If not specified, the default utility layer will be used.
@@ -23,8 +45,7 @@ By default the gizmo will be updated to match the attached mesh's rotation and p
 gizmo.updateGizmoRotationToMatchAttachedMesh = false;
 gizmo.updateGizmoPositionToMatchAttachedMesh = true;
 ```
-[**Basic example**](https://www.babylonjs-playground.com/#31M2AP#9)
-
+[GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
 ## Position, scale and rotation gizmos
 
 Default gizmos for position, rotation and scale on a single axis are supported
@@ -58,6 +79,13 @@ The enabled rotation axis can be customized with the following:
 gizmo.setEnabledRotationAxis("xy");
 ```
 
+To drag around objects contained inside a bounding box, [Mesh Behaviors](/How_To/MeshBehavior) can be attached.
+When using with models with complex geometry such as a custom GLTF file, the complex model should be set to not be pickable by pointers and wrapped in a pickable bounding box mesh to save on performance. A helper method to do this is provided.
+```
+var boundingBox = BABYLON.BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox(gltfMesh);
+```
+
+[GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
 [Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
 
 
