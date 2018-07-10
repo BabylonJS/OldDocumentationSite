@@ -173,7 +173,7 @@ Once done, in the preferences tab, please set the legacy dds mode (Four CC is no
 
 ![Preferences](/img/How_To/environment/Lys_DefaultSettings_Prefs.png)
 
-In the export window, you can chose the appropriate options (setting DDS to 32 bit should be done last as we have seen it defaulting back to 8 bits otherwise):
+In the export window, you can chose the appropriate options (setting DDS to 32 bits should be done last as we have seen it defaulting back to 8 bits otherwise):
 
 ![ExportSettings](/img/How_To/environment/Lys_DefaultSettings_Export.png)
 
