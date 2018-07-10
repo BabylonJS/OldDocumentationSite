@@ -154,7 +154,7 @@ You may also want to reduce the output size by setting the specular resolution o
 
 ![iblbaker](/img/How_To/environment/IBLbaker_DefaultSettings.png)
 
-Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! 
+Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! The file to pick is the SpecularHDR one. 
 
 ** Please do not forget to write full name with extension in order to make the save works correctly **
 
