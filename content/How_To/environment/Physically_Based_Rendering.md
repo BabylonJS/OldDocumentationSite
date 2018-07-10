@@ -173,9 +173,13 @@ Once done, in the preferences tab, please set the legacy dds mode (Four CC is no
 
 ![Preferences](/img/How_To/environment/Lys_DefaultSettings_Prefs.png)
 
-Finally, in the export window, you can chose the appropriate options:
+In the export window, you can chose the appropriate options (setting DDS to 32 bit should be done last as we have seen it defaulting back to 8 bits otherwise):
 
-![Export](/img/How_To/environment/Lys_DefaultSettings_Export.png)
+![ExportSettings](/img/How_To/environment/Lys_DefaultSettings_Export.png)
+
+Finally, you can export your texture through the main tab:
+
+![Export](/img/How_To/environment/Lys_DefaultSettings_MainExportButton.png)
 
 You are all set and ready to use the exported texture in the ```CubeTexture.CreateFromPrefilteredData``` function.
 
