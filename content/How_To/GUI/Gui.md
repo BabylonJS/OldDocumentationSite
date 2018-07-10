@@ -298,6 +298,15 @@ Please note that the InputText has pretty limited edition support. Here are the 
 
 Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard. On mobile, the InputText will use the `prompt()` command to get user input. You can define the title of the prompt by setting `control.promptMessage`.
 
+### InputPassword
+
+The InputPassword is a control that shows the entered characters as bullets and is thus suited for entering passwords:
+https://www.babylonjs-playground.com/#UB58DY
+
+Otherwise it behaves the same as the InputText control and has the same properties as shown above.
+
+There are no configuration options available that are specific to this control. For example, it is not possible to show the entered plain text.
+
 ### Button
 
 A button can be used to interact with your user.
