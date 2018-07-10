@@ -415,4 +415,5 @@ This is the full `templates`object, with comments on the navbar definition
 
 ## The full example
 
-The full example can be found on [codepen](https://codepen.io/raananw/pen/XYoVYG).
+<p data-height="400" data-theme-id="light" data-slug-hash="QxzBPd" data-default-tab="html,result" data-user="BabylonJS" data-embed-version="2" data-pen-title="Babylon.js Viewer - Display a 3D model" class="codepen">See the Pen <a href="https://codepen.io/raananw/pen/XYoVYG">Babylon.js Viewer - Display a 3D model</a> by Babylon.js (<a href="https://codepen.io/BabylonJS">@BabylonJS</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
