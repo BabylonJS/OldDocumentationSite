@@ -36,6 +36,8 @@ and stop it with
 particleSystem.stop();
 ```
 
+You can also delay start the particle system with `particleSystem.start(3000);`. The parameter defines the delay in milliseconds.
+
 **Note:** that stopping a particle system will prevent the creation of new particles but the existing ones will continue. If you want to reset a system to an empty state, you will also have to call `particleSystem.reset()`
 
 You can also set the amount of time the particle system is running though live particles may continue after that time.
