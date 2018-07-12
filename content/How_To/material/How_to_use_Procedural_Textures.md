@@ -29,8 +29,8 @@ See more about 'refreshrate' in the Custom Procedural Textures section... far be
 # Procedural Textures in Babylon.js #
 **Babylon.js** offers you an easy out-of-the-box way to use this kind of texture. The engine itself provides you with standard default textures that you can use right now. It also gives you the ability to create custom procedural textures and package them in a simple way.
 
-## Using Standard Procedural Textures ##
-Babylon.js has a number of pre-built procedural textures that are very easy to use. Applying a procedural texture is just the same as using a classic one. Let’s start with a simple mesh (a cylinder in this case) and attach it to your scene:
+## Using a Procedural Texture
+Applying a procedural texture is just the same as using a classic one. Let’s start with a simple mesh (a cylinder in this case) and attach it to your scene:
 
 ```javascript
     var cylinder = BABYLON.Mesh.CreateCylinder("mycylinder", 7, 2, 2, 12, 1, scene);
@@ -62,7 +62,32 @@ You can optionally change the values of special default properties.  Here is an 
     texture.ampScale = new BABYLON.Vector2(1.0, 1.0);
 ```
 
-## All Standard Procedural Textures ##
+## Noise Procedural Texture
+
+The NoiseProceduralTexture is available out of the box with the core Babylon.js engine.
+
+You can create one with the following code:
+
+```
+var noiseTexture = new BABYLON.NoiseProceduralTexture("perlin", 256, scene);
+```
+
+The NoiseProceduralTexture exposes the following properties:
+* brightness: Gets or sets a value between 0 and 1 indicating the overall brightness of the texture (default is 0.2)
+* firstOctave: Defines the first octave to start from (default is 3)
+* octaves: Defines the number of octaves to process
+* persistence: Defines the level of persistence (0.8 by default)
+* animationSpeedFactorX: Gets or sets animation speed factor for X axis (default is 1)
+* animationSpeedFactorY: Gets or sets animation speed factor for Y axis (default is 1)
+
+You can experiment each property in this demo: https://www.babylonjs-playground.com/#K9GLE6
+
+## Using Standard Procedural Textures ##
+Babylon.js also has a number of pre-built procedural textures that are gathered in the Procedural Texture library: https://github.com/BabylonJS/Babylon.js/tree/master/proceduralTexturesLibrary
+
+You can use them in your project:
+* Using npm with `npm install --save babylonjs babylonjs-procedural-textures`
+* With a direct reference to: https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js
 
 All standard procedural textures can be used in the same ways, but they each have specific (special) properties:
 
