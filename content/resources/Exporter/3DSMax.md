@@ -230,6 +230,19 @@ Note that the exporter also supports textures with tif and dds formats. But, tho
 
 About dds format, Babylon engine partially supports this format depending on compression. To avoid any issue with this format, the exporter automatically converts it to png as stated previously. As an exception, the dds format is allowed for the environmnent texture and will not be automatically converted.
 
+## Specular color and specular level
+
+Specular color and specular level are split into two attributes in 3ds Max while merged in Babylon.
+
+For the global value, the specular color and level are multiplied to obtain the resulting specular color in Babylon.
+
+For the texture, the Babylon specular color map is either:
+- directly the specular color map setup in 3ds max when the specular level map is not defined. To ensure backward compatibility, the global specular level is ignored in this case. __It is assumed the specular color map is already pre-multiplied by the desired amount__.
+- a mix between specular color map and specular level map. Maps are multiplied by the exporter.
+- a mix between specular level map and global specular color. The global specular color is multiplied to each pixel of the specular level map.
+
+Even though a specular level map should be a grayscale, its 3 components (RGB) are multiplied individually to the specular color.
+
 ## Physical materials
 
 The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#pbr-materials)

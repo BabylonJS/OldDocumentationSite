@@ -285,6 +285,7 @@ The control provides several observables to track its state:
 Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
+onBeforeKeyAddObservable|Raised just before the entered key is added to the text
 onFocusObservable|Raised when the control loses the focus
 onBlurObservable|Raised when the control gets the focus
 
@@ -297,6 +298,24 @@ Please note that the InputText has pretty limited edition support. Here are the 
 * Left / Right (used to move the cursor)
 
 Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard. On mobile, the InputText will use the `prompt()` command to get user input. You can define the title of the prompt by setting `control.promptMessage`.
+
+#### Using onBeforeKeyAddObservable for extended keyboard layouts and input masks
+
+The onBeforeKeyAddObservable observable can be used to extend or change how the InputText conrol accepts text. For example, it's possible to implement support for different keyboard layouts using this feature where some keys act as modifiers for the next entered key or you can implement an input mask which only accepts numerical keys.
+
+The observable is triggered just before a printable key will be added to the text in the control. The attached handler can then use the following methods to get information on the keyboard state and to modify how the key is handled within the control:
+
+Method|Description
+------|-----------
+currentKey|The key that will be appended to the text
+addKey|If true, the key in currentKey will be added to the text, otherwise it will be skipped
+deadKey|Set to true if the user hit the dead key on the keyboard. Handler must reset to false
+
+For example, if the handler wants to limit the control to only accept numerical keys, then it can set addKey to false if the value of currentKey is not numerical. The key will then not be added to the text. Similarly dead key support can be implemented by checking the deadKey flag and setting currentKey to the appropriate character for the dead key + key combination.
+
+Please note that the observable is only triggered by printable keys, that is, keys that can be added to the text, and not by control keys like backspace and enter.
+
+Here's an example showing two inputs, one which only accepts numerical keys and one which has simple dead key support: https://www.babylonjs-playground.com/#I1Y5YT#1
 
 ### InputPassword
 
