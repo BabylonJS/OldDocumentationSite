@@ -91,31 +91,13 @@ You can use them in your project:
 
 All standard procedural textures can be used in the same ways, but they each have specific (special) properties:
 
-- **WoodProceduralTexture**
- - **woodColor** to modify the color of the wood in the texture (_**BABYLON.Color3/4**_)
- - **ampScale** to change the waves amplitude in the wood (_**Int**_)
-- **MarbleProceduralTexture**
- - **numberOfTilesHeight** controls the number of tiles in height (_**Int**_)
- - **numberOfTilesWidth** controls the number of tiles in width (_**Int**_)
- - **jointColor** changes the color for the joint between tiles (_**BABYLON.Color3/4**_)
- - **marbleColor** changes the color for the tile itself (_**BABYLON.Color3/4**_)
-- **BrickProceduralTexture**
- - **numberOfBricksHeight** controls the number of bricks in height (_**Int**_)
- - **numberOfBricksWidth** controls the number of bricks in width (_**Int**_)
- - **jointColor** changes the color for the joint between bricks (_**BABYLON.Color3/4**_)
- - **brickColor** changes the color for the brick itself (_**BABYLON.Color3/4**_)
-- **FireProceduralTexture**
- - **time** can be set manually(float) if autoGenerateTime(boolean) is set to false. It is used inside the fire shader to animate it
- - **speed** controls the speed of the flames (_**BABYLON.Vector2**_)
- - **fireColors** is an array of 6 (_**BABYLON.Color3/4**_) defining the different color of the fire. You can define them manually of use presets available as static properties of the class (**PurpleFireColors**, **GreenFireColors**, **RedFireColors**, **BlueFireColors**) 
-- **GrassProceduralTexture**
- - **grassColor** is an array of 3 (_**BABYLON.Color3/4**_) for the grass. Should be green but you can create red grass if you want to (_**BABYLON.Color3/4**_)
- - **groundColor** is the base color for the ground (_**BABYLON.Color3/4**_)
-- **RoadProceduralTexture**
- - **roadColor** is the color for the road (_**BABYLON.Color3/4**_)
-- **CloudProceduralTexture**
- - **skyColor** is the color for the sky (_**BABYLON.Color3/4**_)
- - **cloudColor** is the color for the cloud (_**BABYLON.Color3/4**_)
+- **WoodProceduralTexture**: http://doc.babylonjs.com/extensions/woodproceduraltexture
+- **MarbleProceduralTexture**: http://doc.babylonjs.com/extensions/marbleproceduraltexture
+- **BrickProceduralTexture**: http://doc.babylonjs.com/extensions/brickproceduraltexture
+- **FireProceduralTexture**: http://doc.babylonjs.com/extensions/fireproceduraltexture
+- **GrassProceduralTexture**: http://doc.babylonjs.com/extensions/grassproceduraltexture
+- **RoadProceduralTexture**: http://doc.babylonjs.com/extensions/roadproceduraltexture
+- **CloudProceduralTexture**: http://doc.babylonjs.com/extensions/cloudproceduraltexture
 
 ## Creating Custom Procedural Textures ##
 
