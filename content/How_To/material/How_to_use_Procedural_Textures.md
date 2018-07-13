@@ -74,13 +74,11 @@ var noiseTexture = new BABYLON.NoiseProceduralTexture("perlin", 256, scene);
 
 The NoiseProceduralTexture exposes the following properties:
 * brightness: Gets or sets a value between 0 and 1 indicating the overall brightness of the texture (default is 0.2)
-* firstOctave: Defines the first octave to start from (default is 3)
-* octaves: Defines the number of octaves to process
+* octaves: Defines the number of octaves to process (default is 3)
 * persistence: Defines the level of persistence (0.8 by default)
-* animationSpeedFactorX: Gets or sets animation speed factor for X axis (default is 1)
-* animationSpeedFactorY: Gets or sets animation speed factor for Y axis (default is 1)
+* animationSpeedFactor: Gets or sets animation speed factor (default is 1)
 
-You can experiment each property in this demo: https://www.babylonjs-playground.com/#K9GLE6
+You can experiment each property in this demo: https://www.babylonjs-playground.com/#K9GLE6#1
 
 ## Using Standard Procedural Textures ##
 Babylon.js also has a number of pre-built procedural textures that are gathered in the Procedural Texture library: https://github.com/BabylonJS/Babylon.js/tree/master/proceduralTexturesLibrary
