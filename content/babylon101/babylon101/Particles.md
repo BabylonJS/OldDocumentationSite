@@ -521,6 +521,24 @@ coneEmitter.angle = Math.PI / 2;
 * [Playground Example - Cone Emitter](https://www.babylonjs-playground.com/#MRRGXL#4)
 * [Playground Example - Cone Emitter Rotating](https://www.babylonjs-playground.com/#MRRGXL#5)
 
+## Noise texture
+Starting with Babylon.js v3.3, you can now use noise texture to "perturbate" the position of particles. The noise texture is technically used to apply change to the direction of the particles:
+
+```
+var noiseTexture = new BABYLON.NoiseProceduralTexture("perlin", 256, scene);
+noiseTexture.animationSpeedFactor = 5;
+noiseTexture.persistence = 2;
+noiseTexture.brightness = 0.5;
+noiseTexture.octaves = 2;
+
+particleSystem.noiseTexture = noiseTexture;
+particleSystem.noiseStrength = new BABYLON.Vector3(100, 100, 100);
+```
+
+Alongside setting the noiseTexture you can also control the strength applied on each axis with `particleSystem.noiseStrength`.
+
+Demo can be found here: https://www.babylonjs-playground.com/#R1JWLA#3
+
 ## GPU Particles
 
 Starting from Babylon.js v3.2, you can leverage a new WebGL2 feature, the transform feedback buffer, to drastically boost the performance of particles. Whereas regular particles use the CPU for animation and the GPU for rendering the new WebGL2 API allows Babylon.js to use the GPU for both animation and rendering. With GPU particles, everything is offloaded to the GPU.
