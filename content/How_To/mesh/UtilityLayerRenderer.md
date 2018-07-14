@@ -6,7 +6,14 @@ PG_TITLE: Use UtilityLayerRenderer
 
 The UtilityLayerRenderer class overlays objects in a scene without modifying the existing scene. It can be used to enable custom overlays or [Gizmos](/How_To/Gizmo).
 
-It can be created with the following
+Default utilityLayerRenderers are available with the following
+
+```
+UtilityLayerRenderer.DefaultUtilityLayer // for overlays like position/scale gizmos
+UtilityLayerRenderer.DefaultKeepDepthUtilityLayer // for occluded gizmos like bounding box)
+```
+
+but utility layers can be created manually with the following
 
 ```
 var utilLayer = new BABYLON.UtilityLayerRenderer(scene);
