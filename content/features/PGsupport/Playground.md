@@ -4,7 +4,7 @@ PG_TITLE: The Playground
 
 # The Playground
 
-The place to try out coding with Babylon.js. Experimenting and changing any code in the playground and clicking on the **Run** button will not affect any original code in the playground you currently using. Original code can be restored by refreshing the broweser. 
+The place to try out coding with Babylon.js. Experimenting and changing any code in the playground and clicking on the **Run** button will not affect any original code in the playground you currently using. Original code can be restored by refreshing the browser. You can write the code in Javascript or Typescript. In the case of Typescript the URL must contain **ts.html**  after www.babylonjs-playground.com for the code to be recognised as Typescript. The playground software compiles the code to Javascript, in the background, before rendering.
 
 ## Overview
 
@@ -74,18 +74,25 @@ which contains everything necessary to run the code in your browser, including l
 
 Pre-installed demo playgrounds have this URL format
 
-http://www.babylonjs-playground.com/#
+| Javascript | Typscript |
+|---|---|
+| http://www.babylonjs-playground.com/# | http://www.babylonjs-playground.com/ts.html# |
 
 Saved playgrounds have this format on first save
 
-http://www.babylonjs-playground.com/#QKQHS
+| Javascript | Typscript |
+|---|---|
+| http://www.babylonjs-playground.com/#QKQHS | http://www.babylonjs-playground.com/ts.html#H3AF26 |
 
 that is the site name followed by a hash code reference key.
 
 Following saves of the same playground are numbered incremently from one, for example 
 
-http://www.babylonjs-playground.com/#QKQHS#1  
-http://www.babylonjs-playground.com/#QKQHS#2  
+| Javascript | Typscript |
+|---|---|
+| http://www.babylonjs-playground.com/#QKQHS#1 | http://www.babylonjs-playground.com/ts.html#H3AF26#1 |
+| http://www.babylonjs-playground.com/#QKQHS#2 | http://www.babylonjs-playground.com/ts.html#H3AF26#2 |
+  
 etc.
 
 ## Compilation Errors
