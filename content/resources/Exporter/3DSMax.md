@@ -121,6 +121,7 @@ With this window, you can set the following properties:
 * __Show bounding box__: Display the bounding box of this object in the scene. False by default.
 * __Show submeshes bounding boxes__. Same as above. False by default.
 * __Alpha index__: Used to sort transparent meshes. The mesh with the bigger alpha index is rendered first (then the depth is taken into account). Default value is 1000.
+* __Tag__: Used to add a custom tag to this object. Empty by default.
 * __Auto animate__: All animations for this object will start when this object is being added to the scene. True by default.
 * __From/To/Loop__: The starting and ending frame for this object, and if the animation loops. Default values are 0, 100 and true.
 * __Impostor__: Add an impostor to this object. Default is none.
@@ -132,7 +133,7 @@ If you create a standard light and right click on it, select the menu Babylon ->
 
 ![Light properties](/img/exporters/3DSMax/8_light_properties_window.jpg)
 
-The options __Do not export__, and __animations__ are exactly the same as the Object properties window.
+The options __Do not export__, __Tag__ and __animations__ are exactly the same as the Object properties window.
 
 ## Camera properties 
 
@@ -144,6 +145,7 @@ In this window, you can choose the kind of camera you want to create in Babylon.
 * __Ellipsoid__: With collisions enabled, the camera will be wrapped in an ellipsoid, the size of which can be set here.
 * __Speed / inertia__: The speed and inertia of the camera. Default values are 1 and 0.9.
 * __Animations__: Same as in Object properties window. 
+* __Tag__: Same as in Object properties window. 
 
 ## The exporter window 
 
