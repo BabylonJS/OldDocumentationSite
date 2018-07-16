@@ -92,3 +92,9 @@ skyMaterial.mieCoefficient = 0.005; // The mieCoefficient in interval [0, 0.1], 
 ```
 
 ![skyMie](/img/extensions/materials/skyMie.png)
+
+## Using the sky material to create a reflection texture
+
+As a common technique, it would be useful to use the sky material result to reflect the environment. For example, using a PBR material.
+
+The technique consits on creating a reflection probe (which is a cube texture) and render the sky mesh with the sky material assigned to it. As an example, a playground is available here: https://www.babylonjs-playground.com/#4R1H1U
