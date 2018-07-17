@@ -16,7 +16,7 @@
             "title": "Developer Support",
             "samples": [
                 {
-                    "title": "Adding a Class",
+                    "title": "Adding a Class to Babylon",
                     "doc": "http://doc.babylonjs.com/how_to/how_to_start",
                     "icon": "icons/surface.jpg",
                     "description": "Adding a simple class",
