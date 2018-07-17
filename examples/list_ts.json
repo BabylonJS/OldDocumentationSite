@@ -1,0 +1,35 @@
+{
+    "examples": [
+        {
+            "title": " Basic Scene Javascript",
+            "samples": [
+                {
+                    "title": "Link to Javascript Playground",
+                    "doc": "https://doc.babylonjs.com/features/playground",
+                    "icon": "icons/basic_scene.png", 
+                    "description": "Ball and plane",
+                    "PGID": "#TAZ2CB#0"
+                }
+            ]
+        },
+        {
+            "title": "Developer Support",
+            "samples": [
+                {
+                    "title": "Adding a Class",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_start",
+                    "icon": "icons/normals.jpg",
+                    "description": "Adding a simple class",
+                    "PGID": "ts.html#NS23BT"
+                },
+                {
+                    "title": "Adding a Class with Properties and Methods",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_start",
+                    "icon": "icons/surface.jpg",
+                    "description": "Adding a class with properties and methods",
+                    "PGID": "ts.html#H3AF26#1"
+                }                       
+            ]
+        }
+    ]
+}
