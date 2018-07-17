@@ -16,11 +16,11 @@
             "title": "Developer Support",
             "samples": [
                 {
-                    "title": "Adding a Class to Babylon",
+                    "title": "Adding a Class",
                     "doc": "http://doc.babylonjs.com/how_to/how_to_start",
                     "icon": "icons/surface.jpg",
                     "description": "Adding a simple class",
-                    "PGID": "ts.html#H3AF26#1"
+                    "PGID": "ts.html#NS23BT"
                 }                       
             ]
         }
