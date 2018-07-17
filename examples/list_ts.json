@@ -18,9 +18,16 @@
                 {
                     "title": "Adding a Class",
                     "doc": "http://doc.babylonjs.com/how_to/how_to_start",
-                    "icon": "icons/surface.jpg",
+                    "icon": "icons/normals.jpg",
                     "description": "Adding a simple class",
                     "PGID": "ts.html#NS23BT"
+                },
+                {
+                    "title": "Adding a Class with Properties and Methods",
+                    "doc": "http://doc.babylonjs.com/how_to/how_to_start",
+                    "icon": "icons/surface.jpg",
+                    "description": "Adding a class with properties and methods",
+                    "PGID": "ts.html#H3AF26#1"
                 }                       
             ]
         }
