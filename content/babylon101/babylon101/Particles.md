@@ -25,6 +25,8 @@ var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
 
 This sets the number of particles in the system (capacity). The particle system also requires a texture so that the particles can be seen and an emitter which sets the location and spread of the particles from a starting point. 
 
+Please note that you can use the ParticleHelper to create a default configured system with: `BABYLON.ParticleHelper.CreateDefault(emitter)`.
+
 Once completed you set the particle system in motion using
 
 ```javascript
