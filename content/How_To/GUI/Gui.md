@@ -719,7 +719,7 @@ Starting with Babylon.js v3.3, you can create a style object that will be used t
 ```
     var style = advancedTexture.createStyle();
     style.fontSize = 24;
-    style.fontStyle = "bold";
+    style.fontStyle = "italic";
     style.fontFamily = "Verdana";
 ```
 
