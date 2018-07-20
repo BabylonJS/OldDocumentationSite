@@ -542,6 +542,8 @@ coneEmitter.radius = 3.4;
 coneEmitter.angle = Math.PI / 2;    
 ```
 
+With `coneEmitter.emitFromSpawnPointOnly = true` you can force the emitter to only emit particles from the spawn point (the start of the cone).
+
 * [Playground Example - Cone Emitter](https://www.babylonjs-playground.com/#MRRGXL#4)
 * [Playground Example - Cone Emitter Rotating](https://www.babylonjs-playground.com/#MRRGXL#5)
 
