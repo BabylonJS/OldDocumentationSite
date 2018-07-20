@@ -421,11 +421,33 @@ To remove a gradient you can call `particleSystem.removeVelocityGradient(0.5)`.
 ## Shape Emitters
 Starting from Babylonjs 3.2 you can shape the region the particles are emitted from as a
 
-* Box;
-* Sphere;
-* Cone;
+* Point
+* Box
+* Sphere
+* Cone
 
 by the addition of specific emitter function.
+
+### Point Emitter
+
+To create a point emitter, you can run this code:
+
+```javascript
+var pointEmitter = particleSystem.createPointEmitter(new BABYLON.Vector3(-7, 8, 3), new BABYLON.Vector3(7, 8, -3));
+```
+The `createPointEmitter` method takes four parameters in the following order
+
+* direction1: Vector3, 
+* direction2: Vector3
+
+The returned `pointEmitter` object can be used to change the values of these properties.
+
+```javascript
+pointEmitter.direction1 = new BABYLON.Vector3(-5, 2, 1); 
+pointEmitter.direction2 = new BABYLON.Vector3(5, 2, 1);  
+```
+
+* [Playground Example - Point Emitter](https://www.babylonjs-playground.com/#08YT34)
 
 ### Box Emitter
 
