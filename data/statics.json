@@ -1520,6 +1520,11 @@
                     "filename": "House"
                 },
                 {
+                    "title": "Adding a Roof",
+                    "level": 2,
+                    "filename": "roof"
+                },
+                {
                     "title": "Making a Simple Driven Car",
                     "level": 3,
                     "filename": "Car_Driven"
