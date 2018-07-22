@@ -6,6 +6,8 @@ PG_TITLE: Developing Build a House from Plans
 
 Starting with a polygon as the footprint, a house is built by giving the footprint thickness (ply), extruding and adding door and window spaces at given positions.
 
+**Please note that some functions used in this project uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
+
 ## Data Structure
 
 ### Walls
@@ -260,7 +262,8 @@ Applying the plan leads to
 
 # Further Reading
 
-[The Code for Build From Plans](/samples/House_Use)
+[The Code for Build From Plans](/samples/House_Use)  
+[Adding a Roof](/samples/roof)
 
 ## Level 1
 [Extruded Non Regular Polygon](/how_to/parametric_shapes#extruded-non-regular-polygon)  
