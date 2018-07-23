@@ -8,7 +8,11 @@ Starting from Babylon.js v3.1 the particle system will allow animated particles 
 
 * [Playground Example - Animated Particle](http://www.babylonjs-playground.com/#CLN02N#3)
 
-To enable animated particles you pass a fifth Boolean parameter in the `ParticleSystem` constructor with the value `true` (The fourth for the `GPUParticleSystem`). The default value for this parameter is false. You then need to assign a sprite animation map as the `particleTexture` with the parameters as shown below and set some further properties of the `particleSystem`.
+To enable animated particles you pass a fifth Boolean parameter in the `ParticleSystem` constructor with the value `true` (The fourth for the `GPUParticleSystem`). The default value for this parameter is false. 
+
+You can also call `particleSystem.isAnimationSheetEnabled = true` at any time.
+
+You then need to assign a sprite animation map as the `particleTexture` with the parameters as shown below and set some further properties of the `particleSystem`.
 
 ```javascript
 var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
