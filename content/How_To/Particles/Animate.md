@@ -12,7 +12,7 @@ To enable animated particles you pass a fifth Boolean parameter in the `Particle
 
 You can also call `particleSystem.isAnimationSheetEnabled = true` at any time.
 
-You then need to assign a sprite animation map as the `particleTexture` with the parameters as shown below and set some further properties of the `particleSystem`.
+You then need to assign a sprite animation map as the `particleTexture` with the parameters as shown below and set some further properties of the `particleSystem` (please note that the texture as to be loaded with invertY set to false if you want to read texture data from top to bottom).
 
 ```javascript
 var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene, null, true);
