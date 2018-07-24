@@ -104,6 +104,7 @@ The scene properties allow you to do these things:
 * __Do not optimize animations__. You should check this option if animations are not exported correctly.
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
+* __Add a default light, if no light is exported__. If this option is checked and there is no light selected for the export, an hemispheric light is added in the exported scene. By default this option is checked.
 
 ![Scene properties](/img/exporters/3DSMax/6_properties_window.jpg)
 
