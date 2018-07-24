@@ -424,6 +424,7 @@ Starting from Babylonjs 3.2 you can shape the region the particles are emitted f
 * Point
 * Box
 * Sphere
+* Hemisphere
 * Cone
 
 by the addition of specific emitter function.
@@ -483,7 +484,7 @@ var sphereEmitter = particleSystem.createSphereEmitter(1.2);
 ```
 The returned `sphereEmitter` object can be used to change the value of the radius.
 
-The particles are emitted in the directions of the surface normals, ie the lines from the center of the sphere through a surface point.
+The particles are emitted in the direction of the surface normals, ie the lines from the center of the sphere through a surface point.
 
 * [Playground Example - Sphere Emitter](https://www.babylonjs-playground.com/#MRRGXL#2)
 
@@ -513,6 +514,21 @@ sphereEmitter.direction2 = new BABYLON.Vector3(5, 2, -1);
 The first parameter is the radius the second is direction1 and third is direction2. (The direction will be generated randomly between direction1 and direction2)
 
 * [Playground Example - Sphere Emitter with Directions](https://www.babylonjs-playground.com/#MRRGXL#3)
+
+### Hemispheric Emitter
+
+You can create a hemispheric emitter with a given radius, 1.2 for example,  using
+
+```javascript
+var hemisphericEmitter = particleSystem.createHemisphericEmitter(1.2);
+```
+The returned `hemisphericEmitter` object can be used to change the value of the radius.
+
+The particles are emitted in the direction of the surface normals, ie the lines from the center of the hemisphere through a surface point.
+
+* [Playground Example - Hemispheric Emitter](https://www.babylonjs-playground.com/#FHIQYC)
+
+With `hemisphericEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
 
 ### Cone Emitter
 
