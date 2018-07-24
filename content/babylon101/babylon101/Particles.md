@@ -377,7 +377,7 @@ To add a velocity gradient just call the following code:
 particleSystem.addVelocityGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the velocity to use. In this case the particle will born with velcoity set to 0.5.
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the velocity to use. In this case the particle will born with velocity set to 0.5.
 It is recommended to at least define a gradient for 0 and 1:
 
 ```
@@ -399,19 +399,53 @@ In this case the velocity of the particle will be randomly picked between the tw
 Here is an example of velocity applied to a particle system: https://www.babylonjs-playground.com/#3W04PW#0
 
 To remove a gradient you can call `particleSystem.removeVelocityGradient(0.5)`. 
-  
- ### Alignment
- By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
- 
- You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
- 
- When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
- 
- ```
- system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
- ```
- 
- A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
+
+### Limit velocity over time
+You can define a limit for velocity over time with gradients. This limit will be used to check the current speed of the particle and if the limit is reached then a factor will be applied to the speed.
+You can define this factor with `particleSystem.limitVelocityDamping`. 
+
+To add a limitvelocity gradient just call the following code:
+
+```
+particleSystem.addLimitVelocityGradient(0, 0.5);
+```
+
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the limit velocity to use. In this case, the particle speed will be check directly after birth and if it is bigger than 0.5 then the damping parameter will be applied (so velocity will becode velocity * damping).
+
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addLimitVelocityGradient(0, 0.5);
+particleSystem.addLimitVelocityGradient(1.0, 3);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addLimitVelocityGradient(0, 0.5, 0.8);
+particleSystem.addLimitVelocityGradient(1.0, 3, 4);
+```
+
+In this case the limit velocity of the particle will be randomly picked between the two values when the gradient will be reached.
+
+Here is an example of limit velocity applied to a particle system: https://www.babylonjs-playground.com/#9GBBPM#2
+
+To remove a gradient you can call `particleSystem.removeLimitVelocityGradient(0.5)`.
+
+### Alignment
+By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
+
+You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
+
+When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
+
+```
+system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
+```
+
+A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
 
 ## Adjustable Playground Examples
 
