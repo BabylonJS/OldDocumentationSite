@@ -4,6 +4,8 @@ PG_TITLE: Using Build a House from Plans
 
 # Using Build a House from Plans.
 
+**Please note that some functions used in this project uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
+
 The walls, doors and windows of a house can be built using the function 
 
 ```javascript
@@ -653,7 +655,8 @@ BABYLON.PolygonMeshBuilder.prototype.wallBuilder = function (w0, w1) {
 
 # Further Reading
 
-[Developing the Code for Build From Plans](/samples/House)
+[Developing the Code for Build From Plans](/samples/House)  
+[Adding a Roof](/samples/roof)
 
 ## Level 1
 [Extruded Non Regular Polygon](/how_to/parametric_shapes#extruded-non-regular-polygon)  

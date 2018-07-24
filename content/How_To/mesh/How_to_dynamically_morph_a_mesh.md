@@ -221,7 +221,7 @@ var ext = BABYLON.Mesh.ExtrudeShape("ext", shape1, path1, scale1, rotation1, cap
 ext = BABYLON.Mesh.ExtrudeShapeCustom(null, shape2, path2, myScale2, myRotation2, null, null, null, null, null, null, ext);
 ```
 
-Example :  https://www.babylonjs-playground.com/#20IBWW
+Example :  https://www.babylonjs-playground.com/#20IBWW#14
 
 
 ## Other shapes : updateMeshPositions

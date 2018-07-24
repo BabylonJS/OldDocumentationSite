@@ -424,6 +424,7 @@ Starting from Babylonjs 3.2 you can shape the region the particles are emitted f
 * Point
 * Box
 * Sphere
+* Hemisphere
 * Cone
 
 by the addition of specific emitter function.
@@ -483,7 +484,7 @@ var sphereEmitter = particleSystem.createSphereEmitter(1.2);
 ```
 The returned `sphereEmitter` object can be used to change the value of the radius.
 
-The particles are emitted in the directions of the surface normals, ie the lines from the center of the sphere through a surface point.
+The particles are emitted in the direction of the surface normals, ie the lines from the center of the sphere through a surface point.
 
 * [Playground Example - Sphere Emitter](https://www.babylonjs-playground.com/#MRRGXL#2)
 
@@ -514,6 +515,21 @@ The first parameter is the radius the second is direction1 and third is directio
 
 * [Playground Example - Sphere Emitter with Directions](https://www.babylonjs-playground.com/#MRRGXL#3)
 
+### Hemispheric Emitter
+
+You can create a hemispheric emitter with a given radius, 1.2 for example,  using
+
+```javascript
+var hemisphericEmitter = particleSystem.createHemisphericEmitter(1.2);
+```
+The returned `hemisphericEmitter` object can be used to change the value of the radius.
+
+The particles are emitted in the direction of the surface normals, ie the lines from the center of the hemisphere through a surface point.
+
+* [Playground Example - Hemispheric Emitter](https://www.babylonjs-playground.com/#FHIQYC)
+
+With `hemisphericEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+
 ### Cone Emitter
 
 To create a cone emitter you use, for example
@@ -541,6 +557,8 @@ The returned `coneEmitter` object can be used to change the values of these prop
 coneEmitter.radius = 3.4;
 coneEmitter.angle = Math.PI / 2;    
 ```
+
+With `coneEmitter.emitFromSpawnPointOnly = true` you can force the emitter to only emit particles from the spawn point (the start of the cone).
 
 * [Playground Example - Cone Emitter](https://www.babylonjs-playground.com/#MRRGXL#4)
 * [Playground Example - Cone Emitter Rotating](https://www.babylonjs-playground.com/#MRRGXL#5)
