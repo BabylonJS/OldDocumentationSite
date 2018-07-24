@@ -430,7 +430,7 @@ particleSystem.addLimitVelocityGradient(1.0, 3, 4);
 
 In this case the limit velocity of the particle will be randomly picked between the two values when the gradient will be reached.
 
-Here is an example of limit velocity applied to a particle system: https://www.babylonjs-playground.com/#9GBBPM
+Here is an example of limit velocity applied to a particle system: https://www.babylonjs-playground.com/#9GBBPM#2
 
 To remove a gradient you can call `particleSystem.removeLimitVelocityGradient(0.5)`.
 
