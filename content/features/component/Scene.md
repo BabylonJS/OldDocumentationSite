@@ -33,7 +33,8 @@ What else might you expect of your scene? You might expect to be able to
 
 [Using the Scene Optimizer](/How_To/How_to_use_SceneOptimizer)  
 [Ways to Optimize a Scene](/How_To/Optimizing_your_scene)  
-[Using Octrees to Optimize a Scene](/How_To/Optimizing_Your_Scene_with_Octrees)  
-[Optimizing with Cached Resources](/How_To/Caching_Resources_in_IndexedDB)  
+[Using Octrees to Optimize a Scene](/How_To/Optimizing_Your_Scene_with_Octrees)
+[Optimizing with Cached Resources](/How_To/Caching_Resources_in_IndexedDB)
 [Output Scene Capture](/How_To/Render_Scene_on_a_PNG)
+[Record a Video of your Scene](/How_To/Render_Scene_on_a_Video)
 
