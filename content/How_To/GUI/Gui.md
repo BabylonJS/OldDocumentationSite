@@ -545,6 +545,25 @@ size|string or number|"200px"|The size, width, and height property will always b
 
 Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE#1
 
+### DisplayGrid
+
+The display grid control is a simple control used to display grids inside your GUI.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+background|string|"Black"|Defines the color of the grid background
+cellWidth|number|20|Defines the width of each cell
+cellHeight|number|20|Defines the height of each cell
+minorLineTickness|number|1|Defines the tickness of minor lines
+minorLineColor|string|"DarkGray"|Defines the color of the minor lines
+majorLineTickness|number|2|Defines the tickness of major lines
+majorLineColor|string|"White"|Defines the color of the major lines
+majorLineFrequency|number|5|Defines the frequency of major lines
+
+Here is an example of a display grid: https://www.babylonjs-playground.com/#747U9T
+
 ### VirtualKeyboard
 
 The VirtualKeyboard is a control used to display simple onscreen keyboard. This is mostly useful with WebVR scenarios where the user cannot easily use his keyboard.
