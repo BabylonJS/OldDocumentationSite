@@ -1,22 +1,20 @@
 # Record a Scene to a Video
 
-First you may ask why is it better than an external video capture tool?
+First, you may ask why is it better than an external video capture tool?
 
-Thanks to the Html5 standard being always in motion, we can now in modern browsers directly record a stream coming from a canvas. This ensures that no framerate drop will occur during the recording and is happening all auto-magically in the browser.
+Thanks to the Html5 standard being always in motion, we can now, in modern browsers, directly record a stream generated from a canvas. This ensures that no framerate drop will occur during the recording and it is all happening auto-magically in the browser.
 
 ## How to record with the inspector 
 A new action has been added to the Tools tab of the inspector. You can find a Start Recording Video button in compatible browsers.
 
 ![InspectorTools](/img/How_To/scene/inspectorVideoRecorder.png)
 
-This will by default records 7 seconds of video. You can press the button again anytime during recording to stop recording before 7 seconds.
+This will by default records 7 seconds of video. You can press the button again anytime during the recording session to stop it earlier.
 
 ## How to record by code
 
 ### Check support
-As the browser support is still not wide enough. Recording the canvas should always be preceeded by capability check.
-
-In order to record your currently displayed scene, you can simply use this code to ensure the correct availability of the required APIs in your browser:
+As the browser support is still not wide enough, recording the canvas should always be preceeded by a capability check. You can simply use this code to ensure the correct availability of the required APIs in your browser:
 
 ```javascript
 if (BABYLON.VideoRecorder.IsSupported(engine)) {
@@ -39,7 +37,7 @@ You can see a [live version here](https://www.babylonjs-playground.com/#47H64G)
 This will by default record 7 seconds of video to a file name "babylonjs.webm".
 
 ### Changing default File Name
-You can simply pass the file name to the startRecording API:
+You can pass the file name to the startRecording API:
 
 ```javascript
 if (BABYLON.VideoRecorder.IsSupported(engine)) {
@@ -53,7 +51,7 @@ You can see a [live version here](https://www.babylonjs-playground.com/#47H64G#1
 This will by default record 7 seconds of video to a file name "test.webm".
 
 ### Changing default Record Time
-You can simply pass the default time in seconds to the startRecording API:
+You can pass the default time in seconds to the startRecording API:
 
 ```javascript
 if (BABYLON.VideoRecorder.IsSupported(engine)) {
@@ -120,7 +118,4 @@ Video Recording is based on both MediaRecorder and Canvas.captureStream() APIs w
 
 The second limitations is the file format you can record to seems to be curently limited to webm. You can not directly record to .mp4 or .mov with this method so far. 
 
-Let's hope that wider browser and file format support will be added soon. 
-
-
-
+Let's hope that wider browser and file format support will be added soon.
