@@ -1,5 +1,8 @@
+---
+PG_TITLE: Tutorial - Recreating the default configuration for the Babylon.js viewer
+---
 
-# Tutorial - Recreating the viewer's default configuration using HTML only
+# Tutorial - Recreating the default configuration for the Babylon.js viewer
 
 This tutorial is meant to show the advanced usage of the viewer's configuration only. It is meant as an explanation of what can be done and how you can modify the viewer to your needs using HTML only.
 
@@ -97,16 +100,14 @@ The default configuration is already implemented and can be used very easily, by
 }
 ```
 
-## Step 1 - HTML element and viewer script
+## HTML element and viewer script
 
-As a first step we will need to create our basic HTML page and include the viewer script. Since I am creating my own configuration, I will use `extends="none"` so that no configuration will be included at construction time:
+As a first step we will need to create our basic HTML page and include the viewer script. Since I am creating my own configuration, I will use `extends="none"` so that no configuration will be included at construction time. 
 
 ```html
 <html>
 <head>
-    <title>Recreating configuration</title>
-</head>
-<body>
+    <title>Recreating the default configuration for Babylon.js viewer</title>
     <style>
         /* Force the viewer to have a specific size. This can be changed, of course. */
         babylon {
@@ -114,18 +115,20 @@ As a first step we will need to create our basic HTML page and include the viewe
             height: 500px;
         }
     </style>
+</head>
+<body>
     <babylon extends="none">
-
+        
     </babylon>
 
-    <script src="https://viewer.babylonjs.com/viewer.js"></script>
+    <script src="https://preview.babylonjs.com/viewer/babylon.viewer.js"></script>
 </body>
 </html>
 ```
 
 This is the basic foundation of the entire tutorial. From this point I will show only content in the `<body>` tag.
 
-## Step 2 - Engine and camera configuration
+## Engine and camera configuration
 
 To add the engine configuration (adding antialiasing for better image quality) I will add the engine HTML tag to the babylon tag:
 
@@ -159,7 +162,7 @@ The camera configuration is added afterwards, using the camera HTML tag:
 
 The camera configuration includes camera behaviors' configuration, which are a native Babylon.js feature. You can read about it in [Camera behaviors](/extensions/Configuring_the_viewer)
 
-## Step 3 - Adding environment
+## Adding environment
 
 To add the environment we will need to enable the ground and the skybox. There are two options to do that. THe first is to enable them in the `<babylon>` tag. I use it when I don't want to further configure the element I am extending. For example:
 
@@ -201,7 +204,7 @@ The reasons I choose the 2nd way are:
 * It is readable and easy to understand
 * it is extendible. If I want to change the skybox's configuration, I need to change the tag and not add a new one.
 
-## Step 4 - Templates - Main template
+## Templates - Main template
 
 An important part of the viewer is the templating system - it takes predefined HTML elements, adds them where needed and attaches Babylon to the created canvas element and the buttons in the navigation bar. To read about it, visit [The templating system](/extensions/The_templating_system).
 
@@ -315,7 +318,7 @@ will configure handlebars to not escape input (noEscape, https://handlebarsjs.co
 <params no-escape="true" babylon-font="https://viewer.babylonjs.com/babylon.woff" fill-screen="true"></params>
 ```
 
-## Step 5 - further templates
+## Further templates
 
 I continue adding the templates as I added the main template. I will show here two more templates that are important. The one holding the canvas, and the navigation bar - to show how to enable events.
 
@@ -359,7 +362,7 @@ In order to get the pointer input work in all browsers - including iOS devices -
 
 In the case of navigation bar I want to show how to add the navbar's template and enable js-events on specific elements of it. The navbar's html code can be found here - https://github.com/BabylonJS/Babylon.js/blob/master/Viewer/assets/templates/default/navbar.html .
 
-This is the full `templates`object, with comments on the navbar definition
+This is the full `templates` object, with comments on the navbar definition
 
 ```html
 <babylon extends="none">
@@ -409,11 +412,41 @@ This is the full `templates`object, with comments on the navbar definition
             <!-- enable default bouncing behavior -->
             <bouncing type="1"></bouncing>
         </behaviors>
+        <!-- The 3D model to be viewed -->
+        <model url="https://models.babylonjs.com/shark.glb"></model>
     </camera>
 </babylon>
 ```
 
+## Viewing a model
+
+Once the Babylon.js viewer if fully configured, you can specify which 3D model you want to view.
+
+There are two ways to specify a 3D model
+
+1. Add a `model` attribute on the `<babylon>` tag which can point to a 3D model file.
+    ```html
+    <babylon extends="none" model="https://models.babylonjs.com/shark.glb">
+    ```
+
+2. Add a `<model>` HTML tag and set its `url` attribute to a 3D model file. 
+    ```html
+    <babylon extends="none">
+        <model url="https://models.babylonjs.com/shark.glb"></model>
+    </babylon>
+    ```
+The examples point to a sample [shark glTF model](https://github.com/BabylonJS/MeshesLibrary/blob/master/shark.glb). You can also load other formats including `.glTF` , `.babylon`, `.obj`, and `.stl`. Note that the model won't be displayed till the entire configuration is added to the viewer.
+
 ## The full example
 
-<p data-height="400" data-theme-id="light" data-slug-hash="QxzBPd" data-default-tab="html,result" data-user="BabylonJS" data-embed-version="2" data-pen-title="Babylon.js Viewer - Display a 3D model" class="codepen">See the Pen <a href="https://codepen.io/raananw/pen/XYoVYG">Babylon.js Viewer - Display a 3D model</a> by Babylon.js (<a href="https://codepen.io/BabylonJS">@BabylonJS</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="550" data-theme-id="light" data-slug-hash="KBXVdw" data-default-tab="html,result" data-user="BabylonJS" data-pen-title="[Babylon.js Viewer] Recreating default configuration" class="codepen">See the Pen <a href="https://codepen.io/BabylonJS/pen/KBXVdw/">[Babylon.js Viewer] Recreating default configuration</a> by Babylon.js (<a href="https://codepen.io/BabylonJS">@BabylonJS</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+# Further Reading
+
+* [The Babylon.js Viewer](/extensions/The_Babylon_Viewer)
+* [Configuring the viewer](/extensions/Configuring_the_viewer)
+* [The templating system](/extensions/The_templating_system)
+* [Recreating the default configuration for the viewer](/extensions/Recreating_the_default_configuration)
+* [Advanced usage](/extensions/Advanced_usage)
+* [Babylon.js viewer examples](/extensions/Viewer_examples)

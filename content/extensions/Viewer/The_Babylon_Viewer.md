@@ -60,58 +60,16 @@ Afterwards it can be imported to the project using:
 ```javascript
 import * as BabylonViewer from 'babylonjs-viewer';
 
-BabylonViewer.InitTags("my-tag");
+BabylonViewer.InitTags("babylon");
 ```
 
-This will enable the BabylonViewer namespace.
+This will enable the `BabylonViewer` namespace.
 
-For further information regarding developing using the viewer and extending its code, please see [Extending the viewer](//doc.babylonjs.com/extensions/Extending_the_viewer)
+# Further Reading
 
-# Default viewing experience
-
-The Babylon.js viewer provides a default viewing experience which includes the following capabilities.
-
-<table>
-<tr>
-    <td colspan=2>Loading screen </td></tr>
-<tr>
-    <td>![Loading Screen](/img/extensions/viewer/loading-screen.png)</td>
-    <td>The loading screen is displayed while the model is being downloaded. The default experience includes a rotating Babylon.js logo on a black background.<br>
-        See examples for more information customizing the loading screen</td>
-</tr>
-<tr>
-    <td colspan=2>Camera, skybox, ground and shadows</td></tr>
-<tr>
-    <td>![Stage](/img/extensions/viewer/nav-bar.png)</td>
-    <td>Explain in simple words what this is doing with shadow Camera auto-rotates. There is a group, three lights and environment.<br>
-        See examples for more information on customizing these properties.</td>
-</tr>
-<tr>
-    <td colspan=2>Navigation bar</td></tr>
-<tr>
-    <td>![Navigation Bar](/img/extensions/viewer/nav-bar.png)</td>
-    <td>The navigation bar displays various controls including displaying a logo, entering fullscreen mode, controlling animation playback etc. Animation playback controls are only displayed for models that contain animation. The animation controls allow you to select the animation to play if a model contains multiple animations as well as control the speed of the animation.<br>
-        See examples for more information on customizing the navigation bar.</td>
-</tr>
-<tr>
-    <td colspan=2>Interactivity</td></tr>
-<tr>
-    <td>![Interactivity](/img/extensions/viewer/nav-bar.png)</td>
-    <td>Click mouse to rotate camera. You can customize further by enabling things like drag drop etc.<br>
-    See examples for more information on customizing these properties.
-    </td>
-</tr>
-<tr>
-    <td colspan=2>Overlay</td></tr>
-<tr>
-    <td>![Overlay](/img/extensions/viewer/nav-bar.png)</td>
-    <td>The overlay allows the developer to add an HTML layer on top of the viewer and show or hide it using a simple API. For example, the overlay can be used to show further information about the model or a help screen.</td>
-</tr>
-</table>
-
-# Further details
-
-* [Configuring the viewer](//doc.babylonjs.com/extensions/Configuring_the_viewer)
-* [The templating system](//doc.babylonjs.com/extensions/The_templating_system)
-* [Advanced usage](//doc.babylonjs.com/extensions/Advanced_usage)
-* [Further examples](//doc.babylonjs.com/extensions/Viewer_examples)
+* [The Babylon.js Viewer](/extensions/The_Babylon_Viewer)
+* [Configuring the viewer](/extensions/Configuring_the_viewer)
+* [The templating system](/extensions/The_templating_system)
+* [Recreating the default configuration for the viewer](/extensions/Recreating_the_default_configuration)
+* [Advanced usage](/extensions/Advanced_usage)
+* [Babylon.js viewer examples](/extensions/Viewer_examples)

@@ -1457,6 +1457,10 @@
                     "filename": "The_templating_system"
                 },
                 {
+                    "title": "Recreating the default configuration for the viewer",
+                    "filename": "Recreating_the_default_configuration"
+                },
+                {
                     "title": "Advanced usage",
                     "filename": "Advanced_usage"
                 },
