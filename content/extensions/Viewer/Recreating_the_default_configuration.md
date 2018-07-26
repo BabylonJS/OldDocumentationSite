@@ -435,7 +435,7 @@ There are two ways to specify a 3D model
         <model url="https://models.babylonjs.com/shark.glb"></model>
     </babylon>
     ```
-The examples point to a sample [shark glTF model](https://github.com/BabylonJS/MeshesLibrary/blob/master/shark.glb). You can also load other formats including `.glTF` , `.babylon`, `.obj`, and `.stl`. Note that the model won't be displayed till the entire configuration is added to the viewer.
+The examples point to a sample [shark glTF model](https://github.com/BabylonJS/MeshesLibrary/blob/master/shark.glb). You can also load other formats including `.glTF`, `.babylon`, `.obj`, and `.stl`. Note that the model won't be displayed till the entire configuration is added to the viewer.
 
 ## The full example
 
