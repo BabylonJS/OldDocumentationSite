@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 }
             },
             typedoc: {
-                files: './typedoc/babylon.d.ts',
+                files: ['./typedoc/babylon.d.ts', './typedoc/babylon.viewer.module.d.ts'],
                 tasks: ['typedoc:build'],
             }
         },
@@ -111,11 +111,10 @@ module.exports = function (grunt) {
                     excludePrivate: true,
                     excludeProtected: true,
                     includeDeclarations: true,
-                    entryPoint: `BABYLON`,
                     mode: "file",
                     theme: './typedoc/default'
                 },
-                src: './typedoc/babylon.d.ts'
+                src: ['./typedoc/babylon.d.ts', './typedoc/babylon.viewer.d.ts', './typedoc/babylon.gui.d.ts', './typedoc/babylonjs.loaders.d.ts', './typedoc/babylon.glTF2Interface.d.ts', './typedoc/babylonjs.materials.d.ts', './typedoc/babylonjs.postProcess.d.ts', './typedoc/babylonjs.serializers.d.ts']
             }
         },
         clean: {
