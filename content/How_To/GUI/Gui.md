@@ -379,7 +379,8 @@ You can define your own animations with the following callbacks:
 You can also create a complete custom button by manually adding children to the button. Here is how the ImageButton is built:
 
 ```
-var result = new Button(name);
+BABYLON.GUI.Button.CreateMyCustomButton = function(name, text, imageUrl){
+var result = new BABYLON.GUI.Button(name); 
 
 // Adding text
 var textBlock = new BABYLON.GUI.TextBlock(name + "_button", text);
@@ -396,6 +397,7 @@ iconImage.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
 result.addControl(iconImage);            
 
 return result;
+};
 ```  
 
 ### Checkbox
