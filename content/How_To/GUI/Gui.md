@@ -285,6 +285,7 @@ The control provides several observables to track its state:
 Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
+onBeforeKeyAddObservable|Raised just before the entered key is added to the text
 onFocusObservable|Raised when the control loses the focus
 onBlurObservable|Raised when the control gets the focus
 
@@ -297,6 +298,33 @@ Please note that the InputText has pretty limited edition support. Here are the 
 * Left / Right (used to move the cursor)
 
 Furthermore, please note that due to JavaScript platform limitation, the InputText cannot invoke the onscreen keyboard. On mobile, the InputText will use the `prompt()` command to get user input. You can define the title of the prompt by setting `control.promptMessage`.
+
+#### Using onBeforeKeyAddObservable for extended keyboard layouts and input masks
+
+The onBeforeKeyAddObservable observable can be used to extend or change how the InputText conrol accepts text. For example, it's possible to implement support for different keyboard layouts using this feature where some keys act as modifiers for the next entered key or you can implement an input mask which only accepts numerical keys.
+
+The observable is triggered just before a printable key will be added to the text in the control. The attached handler can then use the following methods to get information on the keyboard state and to modify how the key is handled within the control:
+
+Method|Description
+------|-----------
+currentKey|The key that will be appended to the text
+addKey|If true, the key in currentKey will be added to the text, otherwise it will be skipped
+deadKey|Set to true if the user hit the dead key on the keyboard. Handler must reset to false
+
+For example, if the handler wants to limit the control to only accept numerical keys, then it can set addKey to false if the value of currentKey is not numerical. The key will then not be added to the text. Similarly dead key support can be implemented by checking the deadKey flag and setting currentKey to the appropriate character for the dead key + key combination.
+
+Please note that the observable is only triggered by printable keys, that is, keys that can be added to the text, and not by control keys like backspace and enter.
+
+Here's an example showing two inputs, one which only accepts numerical keys and one which has simple dead key support: https://www.babylonjs-playground.com/#I1Y5YT#1
+
+### InputPassword
+
+The InputPassword is a control that shows the entered characters as bullets and is thus suited for entering passwords:
+https://www.babylonjs-playground.com/#UB58DY
+
+Otherwise it behaves the same as the InputText control and has the same properties as shown above.
+
+There are no configuration options available that are specific to this control. For example, it is not possible to show the entered plain text.
 
 ### Button
 
@@ -351,7 +379,8 @@ You can define your own animations with the following callbacks:
 You can also create a complete custom button by manually adding children to the button. Here is how the ImageButton is built:
 
 ```
-var result = new Button(name);
+BABYLON.GUI.Button.CreateMyCustomButton = function(name, text, imageUrl){
+var result = new BABYLON.GUI.Button(name); 
 
 // Adding text
 var textBlock = new BABYLON.GUI.TextBlock(name + "_button", text);
@@ -368,6 +397,7 @@ iconImage.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
 result.addControl(iconImage);            
 
 return result;
+};
 ```  
 
 ### Checkbox
@@ -516,6 +546,25 @@ size|string or number|"200px"|The size, width, and height property will always b
 
 
 Here is an example of a color picker: https://www.babylonjs-playground.com/#91I2RE#1
+
+### DisplayGrid
+
+The display grid control is a simple control used to display grids inside your GUI.
+
+The control is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+background|string|"Black"|Defines the color of the grid background
+cellWidth|number|20|Defines the width of each cell
+cellHeight|number|20|Defines the height of each cell
+minorLineTickness|number|1|Defines the tickness of minor lines
+minorLineColor|string|"DarkGray"|Defines the color of the minor lines
+majorLineTickness|number|2|Defines the tickness of major lines
+majorLineColor|string|"White"|Defines the color of the major lines
+majorLineFrequency|number|5|Defines the frequency of major lines
+
+Here is an example of a display grid: https://www.babylonjs-playground.com/#747U9T
 
 ### VirtualKeyboard
 
@@ -691,7 +740,7 @@ Starting with Babylon.js v3.3, you can create a style object that will be used t
 ```
     var style = advancedTexture.createStyle();
     style.fontSize = 24;
-    style.fontStyle = "bold";
+    style.fontStyle = "italic";
     style.fontFamily = "Verdana";
 ```
 

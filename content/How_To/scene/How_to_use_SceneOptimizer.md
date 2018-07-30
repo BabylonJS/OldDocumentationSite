@@ -85,6 +85,7 @@ Here are the properties available on a ```BABYLON.SceneOptimizerOptions``` objec
 
 SceneOptimizer comes with some out-of-the-box optimizations:
 
+* ```BABYLON.MergeMeshesOptimization(priority)```: This optimization will merge meshes with same material.
 * ```BABYLON.TextureOptimization(priority, maximumSize)```: This optimization tries to reduce the size of render textures.
 * ```BABYLON.HardwareScalingOptimization(priority, maximumScale)```: This optimization increments or decrements the value of hardware scaling. This is a really aggressive optimization that could really help if you are GPU bound.
 * ```BABYLON.ShadowsOptimization(priority)```: This optimization disables shadows (It will turn them on if the optimizer is in improvement mode (see below)).
@@ -99,17 +100,17 @@ SceneOptimizer comes with some out-of-the-box optimizations:
 Based on these optimizations, the basic sets are configured like this:
 
 * BABYLON.SceneOptimizerOptions.LowDegradationAllowed():
- * Level 0: ShadowsOptimization and LensFlaresOptimization
+ * Level 0: MergeMeshesOptimization, ShadowsOptimization and LensFlaresOptimization
  * Level 1: PostProcessesOptimization and ParticlesOptimization
  * Level 2: TextureOptimization(2, 1024)
 * BABYLON.SceneOptimizerOptions.ModerateDegradationAllowed():
- * Level 0: ShadowsOptimization and LensFlaresOptimization
+ * Level 0: MergeMeshesOptimization, ShadowsOptimization and LensFlaresOptimization
  * Level 1: PostProcessesOptimization and ParticlesOptimization
  * Level 2: TextureOptimization(2, 512)
  * Level 3: RenderTargetsOptimization
  * Level 4: HardwareScalingOptimization(4, 2)
 * BABYLON.SceneOptimizerOptions.HighDegradationAllowed():
- * Level 0: ShadowsOptimization and LensFlaresOptimization
+ * Level 0: MergeMeshesOptimization, ShadowsOptimization and LensFlaresOptimization
  * Level 1: PostProcessesOptimization and ParticlesOptimization
  * Level 2: TextureOptimization(2, 256)
  * Level 3: RenderTargetsOptimization

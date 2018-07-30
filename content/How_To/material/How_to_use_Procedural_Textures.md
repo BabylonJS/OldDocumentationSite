@@ -29,8 +29,8 @@ See more about 'refreshrate' in the Custom Procedural Textures section... far be
 # Procedural Textures in Babylon.js #
 **Babylon.js** offers you an easy out-of-the-box way to use this kind of texture. The engine itself provides you with standard default textures that you can use right now. It also gives you the ability to create custom procedural textures and package them in a simple way.
 
-## Using Standard Procedural Textures ##
-Babylon.js has a number of pre-built procedural textures that are very easy to use. Applying a procedural texture is just the same as using a classic one. Let’s start with a simple mesh (a cylinder in this case) and attach it to your scene:
+## Using a Procedural Texture
+Applying a procedural texture is just the same as using a classic one. Let’s start with a simple mesh (a cylinder in this case) and attach it to your scene:
 
 ```javascript
     var cylinder = BABYLON.Mesh.CreateCylinder("mycylinder", 7, 2, 2, 12, 1, scene);
@@ -62,35 +62,40 @@ You can optionally change the values of special default properties.  Here is an 
     texture.ampScale = new BABYLON.Vector2(1.0, 1.0);
 ```
 
-## All Standard Procedural Textures ##
+## Noise Procedural Texture
+
+The NoiseProceduralTexture is available out of the box with the core Babylon.js engine.
+
+You can create one with the following code:
+
+```
+var noiseTexture = new BABYLON.NoiseProceduralTexture("perlin", 256, scene);
+```
+
+The NoiseProceduralTexture exposes the following properties:
+* brightness: Gets or sets a value between 0 and 1 indicating the overall brightness of the texture (default is 0.2)
+* octaves: Defines the number of octaves to process (default is 3)
+* persistence: Defines the level of persistence (0.8 by default)
+* animationSpeedFactor: Gets or sets animation speed factor (default is 1)
+
+You can experiment each property in this demo: https://www.babylonjs-playground.com/#K9GLE6#1
+
+## Using Standard Procedural Textures ##
+Babylon.js also has a number of pre-built procedural textures that are gathered in the Procedural Texture library: https://github.com/BabylonJS/Babylon.js/tree/master/proceduralTexturesLibrary
+
+You can use them in your project:
+* Using npm with `npm install --save babylonjs babylonjs-procedural-textures`
+* With a direct reference to: https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js
 
 All standard procedural textures can be used in the same ways, but they each have specific (special) properties:
 
-- **WoodProceduralTexture**
- - **woodColor** to modify the color of the wood in the texture (_**BABYLON.Color3/4**_)
- - **ampScale** to change the waves amplitude in the wood (_**Int**_)
-- **MarbleProceduralTexture**
- - **numberOfTilesHeight** controls the number of tiles in height (_**Int**_)
- - **numberOfTilesWidth** controls the number of tiles in width (_**Int**_)
- - **jointColor** changes the color for the joint between tiles (_**BABYLON.Color3/4**_)
- - **marbleColor** changes the color for the tile itself (_**BABYLON.Color3/4**_)
-- **BrickProceduralTexture**
- - **numberOfBricksHeight** controls the number of bricks in height (_**Int**_)
- - **numberOfBricksWidth** controls the number of bricks in width (_**Int**_)
- - **jointColor** changes the color for the joint between bricks (_**BABYLON.Color3/4**_)
- - **brickColor** changes the color for the brick itself (_**BABYLON.Color3/4**_)
-- **FireProceduralTexture**
- - **time** can be set manually(float) if autoGenerateTime(boolean) is set to false. It is used inside the fire shader to animate it
- - **speed** controls the speed of the flames (_**BABYLON.Vector2**_)
- - **fireColors** is an array of 6 (_**BABYLON.Color3/4**_) defining the different color of the fire. You can define them manually of use presets available as static properties of the class (**PurpleFireColors**, **GreenFireColors**, **RedFireColors**, **BlueFireColors**) 
-- **GrassProceduralTexture**
- - **grassColor** is an array of 3 (_**BABYLON.Color3/4**_) for the grass. Should be green but you can create red grass if you want to (_**BABYLON.Color3/4**_)
- - **groundColor** is the base color for the ground (_**BABYLON.Color3/4**_)
-- **RoadProceduralTexture**
- - **roadColor** is the color for the road (_**BABYLON.Color3/4**_)
-- **CloudProceduralTexture**
- - **skyColor** is the color for the sky (_**BABYLON.Color3/4**_)
- - **cloudColor** is the color for the cloud (_**BABYLON.Color3/4**_)
+- **WoodProceduralTexture**: http://doc.babylonjs.com/extensions/woodproceduraltexture
+- **MarbleProceduralTexture**: http://doc.babylonjs.com/extensions/marbleproceduraltexture
+- **BrickProceduralTexture**: http://doc.babylonjs.com/extensions/brickproceduraltexture
+- **FireProceduralTexture**: http://doc.babylonjs.com/extensions/fireproceduraltexture
+- **GrassProceduralTexture**: http://doc.babylonjs.com/extensions/grassproceduraltexture
+- **RoadProceduralTexture**: http://doc.babylonjs.com/extensions/roadproceduraltexture
+- **CloudProceduralTexture**: http://doc.babylonjs.com/extensions/cloudproceduraltexture
 
 ## Creating Custom Procedural Textures ##
 

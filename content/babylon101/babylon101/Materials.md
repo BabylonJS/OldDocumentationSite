@@ -56,7 +56,7 @@ react to white, red, green and blue diffuse spot lights. Notice how the viewing 
 ![ Spot Light](/img/how_to/Materials/spots1.png)
 
 ### Ambient Color Example
-In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
+In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has no ambient color, the middle has red ambient color defined on its material and the one on the right 
 has material with green ambient color. The scene ambient color, which must be present, is white. When a scene ambient color component is set to 0, for example red, then whatever the value for red in the material 
 ambient color it will have no effect. 
@@ -93,9 +93,9 @@ mesh.material = myMaterial;
 ```
 Note: When no normals are specified, Babylon's standard material will compute the normals.
 ### Texture Example
-In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
+In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has a diffuse texture, the middle an emissive texture and the one on the right 
-has material with red diffuse color an an ambient texture.
+has material with red diffuse color and an ambient texture.
 
 ![Texture](/img/how_to/Materials/texture1.png)
 
@@ -125,7 +125,7 @@ This is a method for efficiently drawing the 2D screen rendering of the 3D model
 as it will be hidden by the front face. In BabylonJS the default setting is, as you might expect, set to true.
 
 Looking at the images below, when the material propery _backFaceCulling_ is true you can see that the transparent areas around the 
-dog are still transparent, you can see the background through them. However you cannot see the images on the back faces as they have been culled (or removed). 
+dog are still transparent, you can see the background through them. However, you cannot see the images on the back faces as they have been culled (or removed). 
 When _backFaceCulling_ is false the back faces are not removed during rendering so they can be seen through the transparent areas of the front faces. 
 
 | Back Face Culling True | Back Face Culling False |

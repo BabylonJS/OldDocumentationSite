@@ -130,6 +130,11 @@
             "desc": "The Scene",
             "files": [
                 {
+                    "title": "Fast Build a World",
+                    "level": 1,
+                    "filename": "Fast_Build"
+                },
+                {
                     "title": "Use Multiple Scenes",
                     "level": 1,
                     "filename": "Multi_Scenes"
@@ -168,6 +173,11 @@
                     "title": "Render a Scene to a PNG",
                     "level": 3,
                     "filename": "Render_Scene_on_a_PNG"
+                },
+                {
+                    "title": "Render a Scene to a Video",
+                    "level": 3,
+                    "filename": "Render_Scene_on_a_Video"
                 }
             ]
         },
@@ -752,6 +762,10 @@
                     "filename": "Approved_Naming_Conventions"
                 },
                 {
+                    "title": "Use the Playground for Development",
+                    "filename": "use_playground"
+                },
+                {
                     "title": "Create a Material for the Materials Library",
                     "filename": "How_to_create_a_material_for_materialsLibrary"
                 },
@@ -913,6 +927,10 @@
             "name": "Exporter",
             "desc": "Applications that can Export files for BJS",
             "files": [
+                {
+                    "title": "Save Your Scene",
+                    "filename": "Save_Babylon"
+                },
                 {
                     "title": "3DSMax",
                     "filename": "3DSMax"
@@ -1448,6 +1466,10 @@
                     "filename": "The_templating_system"
                 },
                 {
+                    "title": "Recreating the default configuration for the viewer",
+                    "filename": "Recreating_the_default_configuration"
+                },
+                {
                     "title": "Advanced usage",
                     "filename": "Advanced_usage"
                 },
@@ -1505,6 +1527,11 @@
                     "title": "Developing Build a House from a Floorplan",
                     "level": 2,
                     "filename": "House"
+                },
+                {
+                    "title": "Adding a Roof",
+                    "level": 2,
+                    "filename": "roof"
                 },
                 {
                     "title": "Making a Simple Driven Car",

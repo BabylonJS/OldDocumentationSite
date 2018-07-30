@@ -104,6 +104,7 @@ The scene properties allow you to do these things:
 * __Do not optimize animations__. You should check this option if animations are not exported correctly.
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
+* __Add a default light, if no light is exported__. If this option is checked and there is no light selected for the export, an hemispheric light is added in the exported scene. By default this option is checked.
 
 ![Scene properties](/img/exporters/3DSMax/6_properties_window.jpg)
 
@@ -121,6 +122,7 @@ With this window, you can set the following properties:
 * __Show bounding box__: Display the bounding box of this object in the scene. False by default.
 * __Show submeshes bounding boxes__. Same as above. False by default.
 * __Alpha index__: Used to sort transparent meshes. The mesh with the bigger alpha index is rendered first (then the depth is taken into account). Default value is 1000.
+* __Tag__: Used to add a custom tag to this object. Empty by default.
 * __Auto animate__: All animations for this object will start when this object is being added to the scene. True by default.
 * __From/To/Loop__: The starting and ending frame for this object, and if the animation loops. Default values are 0, 100 and true.
 * __Impostor__: Add an impostor to this object. Default is none.
@@ -132,7 +134,7 @@ If you create a standard light and right click on it, select the menu Babylon ->
 
 ![Light properties](/img/exporters/3DSMax/8_light_properties_window.jpg)
 
-The options __Do not export__, and __animations__ are exactly the same as the Object properties window.
+The options __Do not export__, __Tag__ and __animations__ are exactly the same as the Object properties window.
 
 ## Camera properties 
 
@@ -144,6 +146,7 @@ In this window, you can choose the kind of camera you want to create in Babylon.
 * __Ellipsoid__: With collisions enabled, the camera will be wrapped in an ellipsoid, the size of which can be set here.
 * __Speed / inertia__: The speed and inertia of the camera. Default values are 1 and 0.9.
 * __Animations__: Same as in Object properties window. 
+* __Tag__: Same as in Object properties window. 
 
 ## The exporter window 
 
@@ -159,6 +162,8 @@ This window is composed of 3 panels:
 The _Scale factor_ can be used to rescale the whole world. If you set a scale factor equal to 100, the resulting scene will be 100 times smaller (1%). By default the scale factor is equal to 1, meaning no rescale.
 
 The _Texture quality_ sets the convertion quality of bitmap to JPEG. At 100 (the maximum value), it gives the highest image quality but no file size reduction. On the contrary at 0 (the minimum value), it gives the lowest image quality but the greatest file size reduction. By default the _Texture quality_ is set to 100.
+
+The _Merge AO map_ option enables the merging of the Ambient Occlusion shadow map (stored on Diffuse Roughness slot) with the Metalness and Roughness map.
 
 The _Export_ button should be used to create the Babylon file representing your scene. The _Export & Run_ button will also create the Babylon file, but will also launch your default browser and run the newly made Babylon file. This button is very useful if you just want to test the render of your scene in Babylon.js. 
 
@@ -229,6 +234,19 @@ Babylon engine fully supports the following image formats: jpg, bmp, png, gif, t
 Note that the exporter also supports textures with tif and dds formats. But, those textures will be automatically converted to png by the exporter to ensure compatibility with the Babylon engine.
 
 About dds format, Babylon engine partially supports this format depending on compression. To avoid any issue with this format, the exporter automatically converts it to png as stated previously. As an exception, the dds format is allowed for the environmnent texture and will not be automatically converted.
+
+## Specular color and specular level
+
+Specular color and specular level are split into two attributes in 3ds Max while merged in Babylon.
+
+For the global value, the specular color and level are multiplied to obtain the resulting specular color in Babylon.
+
+For the texture, the Babylon specular color map is either:
+- directly the specular color map setup in 3ds max when the specular level map is not defined. To ensure backward compatibility, the global specular level is ignored in this case. __It is assumed the specular color map is already pre-multiplied by the desired amount__.
+- a mix between specular color map and specular level map. Maps are multiplied by the exporter.
+- a mix between specular level map and global specular color. The global specular color is multiplied to each pixel of the specular level map.
+
+Even though a specular level map should be a grayscale, its 3 components (RGB) are multiplied individually to the specular color.
 
 ## Physical materials
 

@@ -311,6 +311,7 @@
 [Scene Ambient Color](/babylon101/Environment#changing-the-ambient-color-sceneambientcolor)  
 [Scene Background Color](/babylon101/Environmentt#changing-the-background-color-sceneclearcolor)  
 [Scene Creation and Optimization](/features/Scene)  
+[Scene Helpers](/how_to/fast_build)  
 [Scenes Multiple](/How_To/Multi_Scenes)  
 [Screenshot a Scene to a PNG](/How_To/Render_Scene_on_a_PNG)  
 [Sequence Animations](/How_To/Sequence)  

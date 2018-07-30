@@ -73,13 +73,32 @@ By default, dragging objects away/towards you will be magnified to make moving o
 // The distance towards the target drag position to move each frame. This can be useful to avoid jitter. Set this to 1 for no delay. (Default: 0.2)
 sixDofDragBehavior.zDragFactor = 0.2;
 ```
-
-[Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
+**Note** - To avoid large performance hits when using with models with complex geometries, the object should be wrapped in a bounding box mesh. See [BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox](/How_To/Gizmo)
+[Example](https://www.babylonjs-playground.com/#8GY6J8#20)
 
 ## MultiPointerScaleBehavior
 This is used to scale a mesh based on 2 pointers (eg. fingers or vr controllers)
 ```
 var multiPointerScaleBehavior = new BABYLON.MultiPointerScaleBehavior();
 ```
+**Note** - To avoid large performance hits when using with models with complex geometries, the object should be wrapped in a bounding box mesh. See [BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox](/How_To/Gizmo)
+[Example](https://www.babylonjs-playground.com/#8GY6J8#20)
 
-[Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
+## AttachToBoxBehavior
+This is used to attach a mesh or UI on top of a meshes bounding box
+```
+var behavior = new BABYLON.AttachToBoxBehavior(appBar);
+boundingBox.addBehavior(behavior);
+```
+
+Adjust the positioning of mesh attached using
+```
+behavior.distanceAwayFromFace = 0.15;
+behavior.distanceAwayFromBottomOfFace = 0.15;
+```
+
+This can be used to attach an app bar to a mesh
+
+![](/img/how_to/gui/appBar.png)
+
+[Example](http://playground.babylonjs.com/#8GY6J8#62)

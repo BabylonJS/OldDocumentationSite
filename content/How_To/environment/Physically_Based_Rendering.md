@@ -61,7 +61,7 @@ pbr.metallic = 1.0;
 pbr.roughness = 0;
 ```
 
-But in this case we need something to reflect. To define this environment, just add this line:
+But in this case, we need something to reflect. To define this environment, just add this line:
 ```javascript
 pbr.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("/textures/environment.dds", scene);
 ```
@@ -126,18 +126,18 @@ You can see a [live version here](https://www.babylonjs-playground.com/#Z1VL3V#4
 
 Dynamic lights are an important part of your PBR setup. You can decide to have no light and only use the environment texture to light your scene or you can decide to add additional light sources to enhance your rendering.
 
-By default light intensities are computed using the inverse squared distance from the source. This is a type of falloff that is pretty close from what light does in real life. So the further you are, the bigger your intensity will need to be to reach a surface.
+By default, light intensities are computed using the inverse squared distance from the source. This is a type of falloff that is pretty close from what light does in real life. So, the further you are, the bigger your intensity will need to be to reach a surface.
 
 To even go further, the intensity you define on the lights follows physics notions:
 
 * Point and Spot lights are defined in luminous intensity (candela, m/sr)
-* Directionnal and Hemispheric lights in illuminance (nit, cd/m2)
+* Directional and Hemispheric lights in illuminance (nit, cd/m2)
 
 You'll find more info about how dynamic lighting works in the [Master the PBR](/how_to/Physically_Based_Rendering_Master#light-setup)
 
 
 ## Env map
-As you have seen before, the highly recommended way to setup an environment texture is through an HDR ready file (either DDS or ENV) containing a cube texture with prefiltered Mip Maps.
+As you have seen before, the highly recommended way to setup an environment texture is through an HDR ready file (either DDS or ENV) containing a cube texture with prefiltered MipMaps.
 
 We are detailing below the two supported ways of creating such files. The first one rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
 
@@ -150,18 +150,18 @@ Now use the "Load environment" button to load a HDR image (Try one from [HDRLib]
 
 We recommend to play with the environment scale to define the brightness you want.
 
-You may also want to reduce the output size by setting the specular resolution of 128 to ensure the correctness of the blur dropoff :
+You may also want to reduce the output size by setting the specular resolution of 128 to ensure the correctness of the blur dropoff:
 
 ![iblbaker](/img/How_To/environment/IBLbaker_DefaultSettings.png)
 
-Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! 
+Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! The file to pick is the SpecularHDR one. 
 
 ** Please do not forget to write full name with extension in order to make the save works correctly **
 
 ### Creating a dds environment file from LYS
 [Lys](https://www.knaldtech.com/lys/) can be find on the [knaldtech](https://www.knaldtech.com/lys/) website.
 
-Using Lys, the output quality of the generated mip maps will be a higher standard really close in roughness response to the Unity standard materials. You could generate with Lys: 128, 256 or 512 px wide dds cube texture.
+Using Lys, the output quality of the generated mipmaps will be a higher standard really close in roughness response to the Unity standard materials. You could generate with Lys: 128, 256 or 512 px wide dds cube texture.
 
 Please, follow the steps below to ensure of the physical correctness of the response.
 
@@ -173,9 +173,13 @@ Once done, in the preferences tab, please set the legacy dds mode (Four CC is no
 
 ![Preferences](/img/How_To/environment/Lys_DefaultSettings_Prefs.png)
 
-Finally, in the export window, you can chose the appropriate options:
+In the export window, you can chose the appropriate options (setting DDS to 32 bits should be done last as we have seen it defaulting back to 8 bits otherwise):
 
-![Export](/img/How_To/environment/Lys_DefaultSettings_Export.png)
+![ExportSettings](/img/How_To/environment/Lys_DefaultSettings_Export.png)
+
+Finally, you can export your texture through the main tab:
+
+![Export](/img/How_To/environment/Lys_DefaultSettings_MainExportButton.png)
 
 You are all set and ready to use the exported texture in the ```CubeTexture.CreateFromPrefilteredData``` function.
 
@@ -200,25 +204,25 @@ scene.environmentTexture = new BABYLON.CubeTexture("environment.env", scene);
 
 ### What is a .env (Tech Deep Dive)
 
-The issue we are addressing with .env is the size and quality of our IBL Environment Textures. We decided to implement our custom packing to simplify sharing and downloading those assets. This file needs to work cross paltform for an easy deployment hence why we are not relying directly on compressed textures.
+The issue we are addressing with .env is the size and quality of our IBL Environment Textures. We decided to implement our custom packing to simplify sharing and downloading those assets. This file needs to work cross platform for an easy deployment hence why we are not relying directly on compressed textures.
 
-We are then packing in one file (similar to DDS or KTX) a json manifest header, the polynomial infromation and all the faces of the mip maps chain from the prefiltered cube texture in .png format (which compresses more than decently and decode really fast in all browsers.).
+We are then packing in one file (similar to DDS or KTX) a json manifest header, the polynomial information and all the faces of the mipmaps chain from the prefiltered cube texture in .png format (which compresses more than decently and decode really fast in all browsers.).
 
 In order to keep an HDR support with png, we chose to rely on RGBD as it offers a better distribution of the value in the low range than RGBM by keeping the [0-1] range untouched knowing it is generally used more frequently. It is also less complex to decode at runtime than LogLUV when needed. It seems the like the best tradeoff for us.
 
 RGBD also offers none to low transparency in the lower range preventing browser relying on premultiplication of alpha to loose data in the most visible area. We also introduced a special offset from the max range ensuring that we are not reaching problematic values of alpha in legacy browsers (when alpha is too close from 0 the color quantization is created unacceptable banding artifacts).
 
-In Webgl2 browsers, we are unpacking the data to HalfFloat or FullFloat texture if supported to speedup the runtime and allow correct some interpolations.
+In WebGL2 browsers, we are unpacking the data to HalfFloat or FullFloat texture if supported to speedup the runtime and allow correct some interpolations.
 
 The file is also packing the polynomials harmonics vs sphericals to match what Babylon is expected internally speeding up load time by not having to compute or transform them anymore.
 
-As rendering to LOD or even copy to LOD of Half/Fulll float texture does not work consistently on Webgl 1 based browser, we are unpacking in live the data in the fragment shader. As RGBD interpolation is not correct we ensured with different test cases that the generated visual artifacts were worth the transport gain. It looks ok in the sets of textures we have been testing.
+As rendering to LOD or even copy to LOD of Half/Fulll float texture does not work consistently on WebGL1 based browser, we are unpacking in live the data in the fragment shader. As RGBD interpolation is not correct we ensured with different test cases that the generated visual artifacts were worth the transport gain. It looks ok in the sets of textures we have been testing.
 
 As an example of result, we can now rely on 512px cube sized texture with around 3Mb of data vs 32 Mb for the unpacked version without noticing any blocking quality drops. This also speed ups our time to first frame by not requiring the compute of the polynomials anymore.
 
 ### Using a pure cube texture
 While using a dds cube texture is the best option, you may want to still rely on classic cube texture (mostly for size reason).
-So you can still do this as well:
+So, you can still do this as well:
 ```javascript
 pbr.environmentTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
 ```

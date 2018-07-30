@@ -25,6 +25,8 @@ var particleSystem = new BABYLON.ParticleSystem("particles", 2000, scene);
 
 This sets the number of particles in the system (capacity). The particle system also requires a texture so that the particles can be seen and an emitter which sets the location and spread of the particles from a starting point. 
 
+Please note that you can use the ParticleHelper to create a default configured system with: `BABYLON.ParticleHelper.CreateDefault(emitter)`.
+
 Once completed you set the particle system in motion using
 
 ```javascript
@@ -35,6 +37,8 @@ and stop it with
 ```javascript
 particleSystem.stop();
 ```
+
+You can also delay start the particle system with `particleSystem.start(3000);`. The parameter defines the delay in milliseconds.
 
 **Note:** that stopping a particle system will prevent the creation of new particles but the existing ones will continue. If you want to reset a system to an empty state, you will also have to call `particleSystem.reset()`
 
@@ -373,7 +377,7 @@ To add a velocity gradient just call the following code:
 particleSystem.addVelocityGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the velocity to use. In this case the particle will born with velcoity set to 0.5.
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the velocity to use. In this case the particle will born with velocity set to 0.5.
 It is recommended to at least define a gradient for 0 and 1:
 
 ```
@@ -395,19 +399,53 @@ In this case the velocity of the particle will be randomly picked between the tw
 Here is an example of velocity applied to a particle system: https://www.babylonjs-playground.com/#3W04PW#0
 
 To remove a gradient you can call `particleSystem.removeVelocityGradient(0.5)`. 
-  
- ### Alignment
- By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
- 
- You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
- 
- When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
- 
- ```
- system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
- ```
- 
- A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
+
+### Limit velocity over time
+You can define a limit for velocity over time with gradients. This limit will be used to check the current speed of the particle and if the limit is reached then a factor will be applied to the speed.
+You can define this factor with `particleSystem.limitVelocityDamping`. 
+
+To add a limitvelocity gradient just call the following code:
+
+```
+particleSystem.addLimitVelocityGradient(0, 0.5);
+```
+
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the limit velocity to use. In this case, the particle speed will be check directly after birth and if it is bigger than 0.5 then the damping parameter will be applied (so velocity will becode velocity * damping).
+
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addLimitVelocityGradient(0, 0.5);
+particleSystem.addLimitVelocityGradient(1.0, 3);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addLimitVelocityGradient(0, 0.5, 0.8);
+particleSystem.addLimitVelocityGradient(1.0, 3, 4);
+```
+
+In this case the limit velocity of the particle will be randomly picked between the two values when the gradient will be reached.
+
+Here is an example of limit velocity applied to a particle system: https://www.babylonjs-playground.com/#9GBBPM#2
+
+To remove a gradient you can call `particleSystem.removeLimitVelocityGradient(0.5)`.
+
+### Alignment
+By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
+
+You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
+
+When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
+
+```
+system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
+```
+
+A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
 
 ## Adjustable Playground Examples
 
@@ -417,11 +455,34 @@ To remove a gradient you can call `particleSystem.removeVelocityGradient(0.5)`.
 ## Shape Emitters
 Starting from Babylonjs 3.2 you can shape the region the particles are emitted from as a
 
-* Box;
-* Sphere;
-* Cone;
+* Point
+* Box
+* Sphere
+* Hemisphere
+* Cone
 
 by the addition of specific emitter function.
+
+### Point Emitter
+
+To create a point emitter, you can run this code:
+
+```javascript
+var pointEmitter = particleSystem.createPointEmitter(new BABYLON.Vector3(-7, 8, 3), new BABYLON.Vector3(7, 8, -3));
+```
+The `createPointEmitter` method takes four parameters in the following order
+
+* direction1: Vector3, 
+* direction2: Vector3
+
+The returned `pointEmitter` object can be used to change the values of these properties.
+
+```javascript
+pointEmitter.direction1 = new BABYLON.Vector3(-5, 2, 1); 
+pointEmitter.direction2 = new BABYLON.Vector3(5, 2, 1);  
+```
+
+* [Playground Example - Point Emitter](https://www.babylonjs-playground.com/#08YT34)
 
 ### Box Emitter
 
@@ -457,7 +518,7 @@ var sphereEmitter = particleSystem.createSphereEmitter(1.2);
 ```
 The returned `sphereEmitter` object can be used to change the value of the radius.
 
-The particles are emitted in the directions of the surface normals, ie the lines from the center of the sphere through a surface point.
+The particles are emitted in the direction of the surface normals, ie the lines from the center of the sphere through a surface point.
 
 * [Playground Example - Sphere Emitter](https://www.babylonjs-playground.com/#MRRGXL#2)
 
@@ -488,6 +549,21 @@ The first parameter is the radius the second is direction1 and third is directio
 
 * [Playground Example - Sphere Emitter with Directions](https://www.babylonjs-playground.com/#MRRGXL#3)
 
+### Hemispheric Emitter
+
+You can create a hemispheric emitter with a given radius, 1.2 for example,  using
+
+```javascript
+var hemisphericEmitter = particleSystem.createHemisphericEmitter(1.2);
+```
+The returned `hemisphericEmitter` object can be used to change the value of the radius.
+
+The particles are emitted in the direction of the surface normals, ie the lines from the center of the hemisphere through a surface point.
+
+* [Playground Example - Hemispheric Emitter](https://www.babylonjs-playground.com/#FHIQYC)
+
+With `hemisphericEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+
 ### Cone Emitter
 
 To create a cone emitter you use, for example
@@ -516,8 +592,28 @@ coneEmitter.radius = 3.4;
 coneEmitter.angle = Math.PI / 2;    
 ```
 
+With `coneEmitter.emitFromSpawnPointOnly = true` you can force the emitter to only emit particles from the spawn point (the start of the cone).
+
 * [Playground Example - Cone Emitter](https://www.babylonjs-playground.com/#MRRGXL#4)
 * [Playground Example - Cone Emitter Rotating](https://www.babylonjs-playground.com/#MRRGXL#5)
+
+## Noise texture
+Starting with Babylon.js v3.3, you can now use noise texture to "perturbate" the position of particles. The noise texture is technically used to apply change to the direction of the particles:
+
+```
+var noiseTexture = new BABYLON.NoiseProceduralTexture("perlin", 256, scene);
+noiseTexture.animationSpeedFactor = 5;
+noiseTexture.persistence = 2;
+noiseTexture.brightness = 0.5;
+noiseTexture.octaves = 2;
+
+particleSystem.noiseTexture = noiseTexture;
+particleSystem.noiseStrength = new BABYLON.Vector3(100, 100, 100);
+```
+
+Alongside setting the noiseTexture you can also control the strength applied on each axis with `particleSystem.noiseStrength`.
+
+Demo can be found here: https://www.babylonjs-playground.com/#R1JWLA#3
 
 ## GPU Particles
 

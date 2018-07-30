@@ -22,6 +22,7 @@ You have the following method/properties:
 * remove(): to remove a previously registered Observer
 * removeCallback(): same as above but giving the callback instead of the Observer instance
 * notifyObservers(): used to notify all the registered Observers (with a little special feature I'll detail further below)
+* notifyObserversWithPromise(): calling this will execute each callback, expecting it to be a promise or return a value. If at any point in the chain one function fails, the promise will fail and the execution will not continue.
 * hasObserver: a property that returns true if at least one Observer is registered
 * hasSpecificMask(mask): a function that returns true if at least one Observer is registered with this mask
 * clear() to remove all Observers
