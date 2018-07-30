@@ -105,15 +105,38 @@ gizmo.scaleBoxSize = 0.1;
 gizmo.rotationSphereSize = false;
 ```
 
+The following events are fired when dragging occurs on either the scale or rotation meshes of the bounding box.
+```
+gizmo.onScaleBoxDragObservable.add(()=>{
+    console.log("scaleDrag");
+});
+gizmo.onScaleBoxDragEndObservable.add(()=>{
+    console.log("scaleEnd");
+});
+gizmo.onRotationSphereDragObservable.add(()=>{
+    console.log("rotDrag");
+});
+gizmo.onRotationSphereDragEndObservable.add(()=>{
+    console.log("rotEnd");
+});
+```
+
 To drag around objects contained inside a bounding box, [Mesh Behaviors](/How_To/MeshBehavior) can be attached.
 When using with models with complex geometry such as a custom GLTF file, the complex model should be set to not be pickable by pointers and wrapped in a pickable bounding box mesh to save on performance. A helper method to do this is provided.
 ```
 var boundingBox = BABYLON.BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox(gltfMesh);
 ```
 
+Additionally, the bounding box can ignore children of the attached mesh to add additional performance gain when needed.
+```
+gizmo.ignoreChildren = true;
+```
+
+
 UI can be attached to the bounding box using the [AttachToBoxBehavior](/How_To/MeshBehavior)
 
 [GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
+[Animated GLTF example](https://playground.babylonjs.com/#6E4LSB#15)
 [Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
 
 ## Gizmo customization
