@@ -34,7 +34,7 @@ module.exports = function (grunt) {
             },
             typedoc: {
                 files: ['./typedoc/babylon.d.ts', './typedoc/babylon.viewer.module.d.ts'],
-                tasks: ['typedoc:build'],
+                tasks: ['typedoc-all'],
             }
         },
         connect: {
@@ -114,7 +114,7 @@ module.exports = function (grunt) {
                     mode: "file",
                     theme: './typedoc/default'
                 },
-                src: ['./typedoc/babylon.d.ts', './typedoc/babylon.viewer.d.ts', './typedoc/babylon.gui.d.ts', './typedoc/babylonjs.loaders.d.ts', './typedoc/babylon.glTF2Interface.d.ts', './typedoc/babylonjs.materials.d.ts', './typedoc/babylonjs.postProcess.d.ts', './typedoc/babylonjs.serializers.d.ts']
+                src: ['./.tmp/babylon.d.ts']
             }
         },
         clean: {
@@ -172,7 +172,15 @@ module.exports = function (grunt) {
                 call: function (grunt, options, async) {
                     require('./scripts/helpers/indexer/azureCleanup')(async());
                 }
-            }
+            },
+            // Should have been in the typedoc object, but impossible due to typedoc plugin
+            typedocPrepare: {
+                call: function (grunt, options, async) {
+                    let files = ['./typedoc/babylon.d.ts', './typedoc/babylon.viewer.d.ts', './typedoc/babylon.gui.d.ts', './typedoc/babylonjs.loaders.d.ts', './typedoc/babylon.glTF2Interface.d.ts', './typedoc/babylonjs.materials.d.ts', './typedoc/babylonjs.postProcess.d.ts', './typedoc/babylonjs.serializers.d.ts']
+                    require('./scripts/helpers/prepareTypedocs')(files, async());
+                }
+            },
+            
         },
         copy: {
             exampleIcons: {
@@ -194,9 +202,14 @@ module.exports = function (grunt) {
         'watch'
     ]);
 
+    grunt.registerTask('typedoc-all', 'generate typedoc', [
+        'execute:typedocPrepare',
+        'typedoc:build'
+    ]);
+
     grunt.registerTask('build', 'Build content and index it', [
         'clean:json',
-        'typedoc:build',
+        'typedoc-all',
         'execute:compileIndex',
         'execute:compileExamples',
         'copy:exampleIcons',
