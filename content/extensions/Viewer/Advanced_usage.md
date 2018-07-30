@@ -181,3 +181,12 @@ viewer.loadModel({
     console.log("error loading the model!", error);
 });
 ```
+
+# Further Reading
+
+* [The Babylon.js Viewer](/extensions/The_Babylon_Viewer)
+* [Configuring the viewer](/extensions/Configuring_the_viewer)
+* [The templating system](/extensions/The_templating_system)
+* [Recreating the default configuration for the viewer](/extensions/Recreating_the_default_configuration)
+* [Advanced usage](/extensions/Advanced_usage)
+* [Babylon.js viewer examples](/extensions/Viewer_examples)

@@ -388,3 +388,12 @@ Well, a canvas is needed, obviously. **and only one!** To avoid creating further
 ## If help is needed
 
 Look at the code or contact us, we will be more than happy to help!
+
+# Further Reading
+
+* [The Babylon.js Viewer](/extensions/The_Babylon_Viewer)
+* [Configuring the viewer](/extensions/Configuring_the_viewer)
+* [The templating system](/extensions/The_templating_system)
+* [Recreating the default configuration for the viewer](/extensions/Recreating_the_default_configuration)
+* [Advanced usage](/extensions/Advanced_usage)
+* [Babylon.js viewer examples](/extensions/Viewer_examples)
