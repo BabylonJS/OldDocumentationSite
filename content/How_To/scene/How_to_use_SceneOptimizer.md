@@ -85,6 +85,7 @@ Here are the properties available on a ```BABYLON.SceneOptimizerOptions``` objec
 
 SceneOptimizer comes with some out-of-the-box optimizations:
 
+* ```BABYLON.MergeMeshesOptimization(priority)```: This optimization will merge meshes with same material.
 * ```BABYLON.TextureOptimization(priority, maximumSize)```: This optimization tries to reduce the size of render textures.
 * ```BABYLON.HardwareScalingOptimization(priority, maximumScale)```: This optimization increments or decrements the value of hardware scaling. This is a really aggressive optimization that could really help if you are GPU bound.
 * ```BABYLON.ShadowsOptimization(priority)```: This optimization disables shadows (It will turn them on if the optimizer is in improvement mode (see below)).
