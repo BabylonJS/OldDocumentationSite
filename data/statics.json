@@ -854,6 +854,26 @@
             "desc": "Learn how to use the official editor",
             "files": [
                 {
+                    "title": "[V2] Getting Started",
+                    "filename": "V2_Getting_Started"
+                },
+                {
+                    "title": "[V2] Loading and Saving Scenes",
+                    "filename": "V2_Loading_Saving"
+                },
+                {
+                    "title": "[V2] Adding Textures",
+                    "filename": "V2_Adding_Textures"
+                },
+                {
+                    "title": "[V2] Adding Materials",
+                    "filename": "V2_Adding_Materials"
+                },
+                {
+                    "title": "[V2] Writing Custom Scripts",
+                    "filename": "V2_Custom_Scripts"
+                },
+                {
                     "title": "Introduction",
                     "filename": "Introduction"
                 },
