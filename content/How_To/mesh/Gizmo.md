@@ -110,13 +110,13 @@ The following events are fired when dragging occurs on either the scale or rotat
 gizmo.onScaleBoxDragObservable.add(()=>{
     console.log("scaleDrag");
 });
-    gizmo.onScaleBoxDragEndObservable.add(()=>{
+gizmo.onScaleBoxDragEndObservable.add(()=>{
     console.log("scaleEnd");
 });
 gizmo.onRotationSphereDragObservable.add(()=>{
     console.log("rotDrag");
 });
-    gizmo.onRotationSphereDragEndObservable.add(()=>{
+gizmo.onRotationSphereDragEndObservable.add(()=>{
     console.log("rotEnd");
 });
 ```
