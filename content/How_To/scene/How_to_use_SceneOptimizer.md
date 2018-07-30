@@ -100,17 +100,17 @@ SceneOptimizer comes with some out-of-the-box optimizations:
 Based on these optimizations, the basic sets are configured like this:
 
 * BABYLON.SceneOptimizerOptions.LowDegradationAllowed():
- * Level 0: ShadowsOptimization and LensFlaresOptimization
+ * Level 0: MergeMeshesOptimization, ShadowsOptimization and LensFlaresOptimization
  * Level 1: PostProcessesOptimization and ParticlesOptimization
  * Level 2: TextureOptimization(2, 1024)
 * BABYLON.SceneOptimizerOptions.ModerateDegradationAllowed():
- * Level 0: ShadowsOptimization and LensFlaresOptimization
+ * Level 0: MergeMeshesOptimization, ShadowsOptimization and LensFlaresOptimization
  * Level 1: PostProcessesOptimization and ParticlesOptimization
  * Level 2: TextureOptimization(2, 512)
  * Level 3: RenderTargetsOptimization
  * Level 4: HardwareScalingOptimization(4, 2)
 * BABYLON.SceneOptimizerOptions.HighDegradationAllowed():
- * Level 0: ShadowsOptimization and LensFlaresOptimization
+ * Level 0: MergeMeshesOptimization, ShadowsOptimization and LensFlaresOptimization
  * Level 1: PostProcessesOptimization and ParticlesOptimization
  * Level 2: TextureOptimization(2, 256)
  * Level 3: RenderTargetsOptimization
