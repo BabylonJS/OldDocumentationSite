@@ -1,14 +1,14 @@
 ---
-PG_TITLE: How To HighLight
+PG_TITLE: How To Highlight
 ---
 
 # How To Highlight a Mesh
 
-How often did you search to highlight some of your meshes in a scene ? Sounds easy at first but quickly becomes an issue dealing with edges, blur and antialiasing.
+How often did you search to highlight some of your meshes in a scene? Sounds easy at first but quickly becomes an issue dealing with edges, blur and antialiasing.
 
 If you ever needed it, this tutorial is made for you.
 
-## How to use ?
+## How to use?
 
 Before anything else, you must ensure that your engine was created with stencil on: 
 
@@ -28,7 +28,7 @@ var hl = new BABYLON.HighlightLayer("hl1", scene);
 hl.addMesh(sphere, BABYLON.Color3.Green());
 ```
 
-The highlight color is driven by the second parameter of the addMesh method.
+The highlight color is driven by the second parameter of the *addMesh* method.
 
 > The highlight layer will not highlight transparent meshes.
 
@@ -141,7 +141,7 @@ hl.addExcludedMesh(skybox1);
 
 ### Multi Camera
 
-By default the highlight layer will apply on all active cameras but it creates extra processing on the camera it is not needed.
+By default, the highlight layer will apply on all active cameras but it creates extra processing on the camera it is not needed.
 
 A chance you can easily specify what camera your highlights are related too in the options:
 
@@ -154,10 +154,10 @@ hl1.addMesh(sphere, BABYLON.Color3.Green());
 
 ## Options
 
-The availables members of the option object are:
+The available members of the option object are:
 
 - mainTextureRatio?: number - Multiplication factor apply to the canvas size to compute the render target size used to generated the glowing objects (the smaller the faster).
-- mainTextureFixedSize?: number - Enforces a fixed size texture to ensure resize independant blur.
+- mainTextureFixedSize?: number - Enforces a fixed size texture to ensure resize independent blur.
 - blurTextureSizeRatio?: number - Multiplication factor apply to the main texture size in the first step of the blur to reduce the size of the picture to blur (the smaller the faster).
 - blurVerticalSize?: number - How big in texel of the blur texture is the vertical blur.
 - blurHorizontalSize?: number - How big in texel of the blur texture is the horizontal blur.

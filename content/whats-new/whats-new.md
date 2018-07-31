@@ -23,8 +23,8 @@ Changes list
 - New [glTF exporter](http://doc.babylonjs.com/resources/3dsmax_to_gltf) for Autodesk 3dsmax ([Noalak](https://github.com/Noalak))
 - New glTF [serializer](http://doc.babylonjs.com/extensions/gltfexporter). You can now export glTF or glb files directly from a Babylon scene ([kcoley](https://github.com/kcoley))
 - Physics - Latest production version of Oimo.js is being used - 1.0.9 ([RaananW](https://github.com/RaananW))
-- Introduces [PCF](https://doc.babylonjs.com/babylon101/shadows#percentage-closer-filtering-webgl2-only) and [PCSS](https://doc.babylonjs.com/babylon101/shadows#contact-hardening-shadow-webgl2-only) shadow support in Webgl 2 ([sebavan](https://github.com/sebavan)))
-- Introduces [PBR Specular Anti Aliasing support](https://doc.babylonjs.com/how_to/physically_based_rendering_master#specular-aliasing). Demoo [here](https://www.babylonjs-playground.com/#1XJD4C) ([sebavan](https://github.com/sebavan)))
+- Introduces [PCF](https://doc.babylonjs.com/babylon101/shadows#percentage-closer-filtering-webgl2-only) and [PCSS](https://doc.babylonjs.com/babylon101/shadows#contact-hardening-shadow-webgl2-only) shadow support in WebGL 2 ([sebavan](https://github.com/sebavan)))
+- Introduces [PBR Specular Anti Aliasing support](https://doc.babylonjs.com/how_to/physically_based_rendering_master#specular-aliasing). Demo [here](https://www.babylonjs-playground.com/#1XJD4C) ([sebavan](https://github.com/sebavan)))
 
 ## Documentation
 
@@ -48,14 +48,14 @@ Changes list
   - `VRExperienceHelper` will create an empty controller model so that controller interactions can be used while the actual model is still loading ([trevordev](https://github.com/trevordev))
   - VRHelper now has `onSelectedMeshUnselected` observable that will notify observers when the current selected mesh gets unselected
   ([carloslanderas](https://github.com/carloslanderas))
-  - VRHelper now has `onBeforeCameraTeleport` and `onAfterCameraTelepor`t observables that will be notified before and after camera teleportation is triggered.
+  - VRHelper now has `onBeforeCameraTeleport` and `onAfterCameraTeleport` observables that will be notified before and after camera teleportation is triggered.
   ([carloslanderas](https://github.com/carloslanderas))
   - VRHelper now has the public property `teleportationEnabled` to enable / disable camera teleportation.
    ([carloslanderas](https://github.com/carloslanderas))
-  - VRHelper now exposes onNewMeshPicked observable that will notify a PickingInfo object after meshSelectionPredicate evaluation
+  - VRHelper now exposes `onNewMeshPicked` observable that will notify a PickingInfo object after meshSelectionPredicate evaluation
    ([carloslanderas](https://github.com/carloslanderas))
   - VRHelper will notify now `onSelectedMeshUnselected` observable to subscribers when the applied ray selection predicate does not produce a hit and a mesh compliant with the meshSelectionPredicate was previously selected  ([carloslanderas](https://github.com/carloslanderas))
-  - Support multiple simultaneous WebVR controller gui interactions in `VRExperienceHelper` ([trevordev](https://github.com/trevordev))
+  - Support multiple simultaneous WebVR controller GUI interactions in `VRExperienceHelper` ([trevordev](https://github.com/trevordev))
   - Ability to set a mesh to customize the WebVR gaze tracker ([trevordev](https://github.com/trevordev))
 - `AssetsManager` will now clear its `tasks` list from all successfully loaded tasks ([deltakosh](https://github.com/deltakosh))
 - Added documentation to `WebVRCamera` and `VRExperienceHelper` ([trevordev](https://github.com/trevordev))
@@ -108,7 +108,7 @@ Changes list
 - Integrates depth texture support in the engine ([sebavan](https://github.com/sebavan))
 - Default fragment shader will clamp negative values to avoid underflow, webVR post processing will render to eye texture size ([trevordev](https://github.com/trevordev))
 - Supports Environment Drag and Drop in Sandbox ([sebavan](https://github.com/sebavan))
-- EnvironmentHelper has no an onError observable to handle errors when loading the textures ([RaananW](https://github.com/RaananW))
+- EnvironmentHelper has no an `onError` observable to handle errors when loading the textures ([RaananW](https://github.com/RaananW))
 - Tests for sharpen, chromatic aberration, default pipeline and enable/disable post processes ([trevordev](https://github.com/trevordev))
 - onPointer* callbacks have now the event type as a 3rd variable ([RaananW](https://github.com/RaananW))
 - Lightmap texture in PBR material follow the gammaSpace Flag of the texture ([sebavan](https://github.com/sebavan))
@@ -127,7 +127,7 @@ Changes list
 
 ## Bug fixes
 
-- `setPivotMatrix` was not setting pivot correctly. This is now fixed. We also introduced a new `setPreTransformMatrix` to reproduce the sometimes needed behavior of the previous `setPivotMatrix` function ([deltakosh](https://github.com/deltakosh))
+- `setPivotMatrix` was not setting pivot correctly. This is now fixed. We also introduced a new `setPreTransformMatrix` to reproduce the sometimes-needed behavior of the previous `setPivotMatrix` function ([deltakosh](https://github.com/deltakosh))
 - SPS solid particle `.pivot` property now also behaves like the standard mesh pivot. Former behavior (particle translation) can be kept with the particle property `.translateFromPivot` set to true ([jbousquie](https://github.com/jbousquie))
 - Texture extension detection in `Engine.CreateTexture` ([sebavan](https://github.com/sebavan))
 - SPS uses internal temporary Vector3 instead of Tmp.Vector3 to avoid possible concurrent uses ([jbousquie](https://github.com/jbousquie))
@@ -168,9 +168,9 @@ Changes list
 - Added VRExperienceHelper to create WebVR experience with 2 lines of code. [Documentation](http://doc.babylonjs.com/how_to/webvr_helper) ([davrous](https://github.com/davrous), [TrevorDev](https://github.com/TrevorDev))
 - Added BackgroundMaterial. [Documentation](https://doc.babylonjs.com/how_to/backgroundmaterial) ([sebavan](https://github.com/sebavan))
 - Added EnvironmentHelper. [Documentation](https://doc.babylonjs.com/babylon101/environment#skybox-and-ground) ([sebavan](https://github.com/sebavan))
-- Added support for webgl context lost and restored events. [Documentation](http://doc.babylonjs.com/tutorials/optimizing_your_scene#handling-webgl-context-lost) ([deltakosh](https://github.com/deltakosh))
+- Added support for WebGL context lost and restored events. [Documentation](http://doc.babylonjs.com/tutorials/optimizing_your_scene#handling-webgl-context-lost) ([deltakosh](https://github.com/deltakosh))
 - Added support for non-pow2 textures when in WebGL2 mode ([deltakosh](https://github.com/deltakosh))
-- Engine can now be initialized with an existing webgl context ([deltakosh](https://github.com/deltakosh))
+- Engine can now be initialized with an existing WebGL context ([deltakosh](https://github.com/deltakosh))
 - Introduced behaviors. [Documentation](http://doc.babylonjs.com/overviews/behaviors) ([deltakosh](https://github.com/deltakosh))
 - Added support for WebGL Occlusion queries. [Documentation](http://doc.babylonjs.com/overviews/occlusionquery) ([Ibraheem Osama](https://github.com/IbraheemOsama))
 - New behaviors for ArcRotateCamera. [Documentation](http://doc.babylonjs.com/overviews/behaviors) 
@@ -192,13 +192,13 @@ Changes list
 
 ### Updates
 
-- Introduced `TransformNode` class as a parent of `AbstractMesh`. This class was extensively asked by the community to hold only tranformation for a node ([deltakosh](https://github.com/deltakosh))
+- Introduced `TransformNode` class as a parent of `AbstractMesh`. This class was extensively asked by the community to hold only transformation for a node ([deltakosh](https://github.com/deltakosh))
 - Collider object is now exposed on meshes. It can be used to get precise information about mesh to mesh collisions (used with mesh.moveWithCollisions function) ([deltakosh](https://github.com/deltakosh))
 - Added `boundingInfo.centerOn` to recreate the bounding info to be centered around a specific point given a specific extend ([deltakosh](https://github.com/deltakosh))
 - Added `mesh.normalizeToUnitCube` to uniformly scales the mesh to fit inside of a unit cube (1 X 1 X 1 units) ([deltakosh](https://github.com/deltakosh))
 - Added `scene.onDataLoadedObservable` which is raised when SceneLoader.Append or SceneLoader.Load or SceneLoader.ImportMesh were successfully executed ([deltakosh](https://github.com/deltakosh))
 - Support for adaptiveKernelBlur on MirrorTexture ([deltakosh](https://github.com/deltakosh))
-- Support for non uniform scaling. Normals are now correctly computed ([deltakosh](https://github.com/deltakosh))
+- Support for non-uniform scaling. Normals are now correctly computed ([deltakosh](https://github.com/deltakosh))
 - Added `MultiObserver`. [Documentation](http://doc.babylonjs.com/overviews/observables#multiobserver) ([deltakosh](https://github.com/deltakosh))
 - Added `shadowGenerator.addShadowCaster` and `shadowGenerator.removeShadowCaster` helper functions ([deltakosh](https://github.com/deltakosh))
 - Several inspector improvements ([temechon](https://github.com/temechon))
@@ -256,7 +256,7 @@ Changes list
 
 ### Major updates
  - WebGL2 context support. WebGL2 is now used instead of WebGL 1 when available. [More info here](http://doc.babylonjs.com/features/webgl2) ([deltakosh](https://github.com/deltakosh))
- - Complete WebVR 1.1 support including controllers for HTC Vive and Occulus. [More info here](http://doc.babylonjs.com/features/webvr_camera) ([raanan](https://github.com/raananw) & [davrous](https://github.com/davrous))
+ - Complete WebVR 1.1 support including controllers for HTC Vive and Oculus. [More info here](http://doc.babylonjs.com/features/webvr_camera) ([raanan](https://github.com/raananw) & [davrous](https://github.com/davrous))
  - Complete rewrite of PBRMaterial. Introduced two new helper materials: `pbrMetallicRoughnessMaterial` and `pbrSpecularGlossinessMaterial`. [Demo](http://www.babylonjs.com/demos/pbrglossy/) - [More info here](http://doc.babylonjs.com/features/physically_based_rendering) ([Sebastien Vandenberghe](https://github.com/sebavan))
  - Support for Morph Targets. [More info here](http://doc.babylonjs.com/How_To/how_to_use_morphtargets) ([deltakosh](https://github.com/deltakosh))
  - New Babylon.GUI to create user interface (compatible with WebVR). [More info here](http://doc.babylonjs.com/features/Gui) ([deltakosh](https://github.com/deltakosh))
