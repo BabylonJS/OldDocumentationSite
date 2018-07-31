@@ -26,7 +26,7 @@ To specify the meshes which can have the gizmo attached, the attachableMeshes fi
 ```
 gizmoManager.attachableMeshes = [mesh1, mesh2, mesh3];
 ```
-To manually change the selected mesh, the gizmo manger's attachToMesh method can be called and the usePointerToAttachGizmos field can be used to disable the manager's default pointer behavior.
+To manually change the selected mesh, the gizmo manager's *attachToMesh* method can be called and the usePointerToAttachGizmos field can be used to disable the manager's default pointer behavior.
 ```
 gizmoManager.usePointerToAttachGizmos = false;
 gizmoManager.attachToMesh(mesh);
@@ -34,9 +34,9 @@ gizmoManager.attachToMesh(mesh);
 [**Example**](https://www.babylonjs-playground.com/#4TBMBR)
 ## Setup
 
-Gizmo's are displayed by a [UtilityLayerRenderer](/How_To/UtilityLayerRenderer) to not disrupt the existing scene state. If not specified, the default utility layer will be used.
+Gizmos are displayed by a [UtilityLayerRenderer](/How_To/UtilityLayerRenderer) to not disrupt the existing scene state. If not specified, the default utility layer will be used.
 
-The utility layer’s are independent of the scene or engine. After creating a gizmo it is exposed off of gizmo.gizmoLayer. If creating a gizmo without specifying a utility layer it will use the default utility layer’s UtilityLayerRenderer.DefaultUtilityLayer (for overlay gizmos like position/scale) and UtilityLayerRenderer.DefaultKeepDepthUtilityLayer (for occluded gizmos like bounding box) It is recommended to use these layers and reuse layers for most cases as every new utility layer comes with additional overhead.
+The utility layers are independent of the scene or engine. After creating a gizmo it is exposed off of gizmo.gizmoLayer. If creating a gizmo without specifying a utility layer it will use the default utility layer’s UtilityLayerRenderer.DefaultUtilityLayer (for overlay gizmos like position/scale) and UtilityLayerRenderer.DefaultKeepDepthUtilityLayer (for occluded gizmos like bounding box) It is recommended to use these layers and reuse layers for most cases as every new utility layer comes with additional overhead.
 
 ```
 var utilLayer = new BABYLON.UtilityLayerRenderer(scene);
@@ -46,7 +46,7 @@ When created, the gizmo will not be attached to a mesh and will not be visible s
 ```
 gizmo.attachedMesh = sphere;
 ```
-By default the gizmo will be updated to match the attached mesh's rotation and position but these can be modified with the following
+By default, the gizmo will be updated to match the attached mesh's rotation and position but these can be modified with the following
 ```
 // Keep the gizmo fixed to world rotation
 gizmo.updateGizmoRotationToMatchAttachedMesh = false;
@@ -105,15 +105,38 @@ gizmo.scaleBoxSize = 0.1;
 gizmo.rotationSphereSize = false;
 ```
 
+The following events are fired when dragging occurs on either the scale or rotation meshes of the bounding box.
+```
+gizmo.onScaleBoxDragObservable.add(()=>{
+    console.log("scaleDrag");
+});
+gizmo.onScaleBoxDragEndObservable.add(()=>{
+    console.log("scaleEnd");
+});
+gizmo.onRotationSphereDragObservable.add(()=>{
+    console.log("rotDrag");
+});
+gizmo.onRotationSphereDragEndObservable.add(()=>{
+    console.log("rotEnd");
+});
+```
+
 To drag around objects contained inside a bounding box, [Mesh Behaviors](/How_To/MeshBehavior) can be attached.
 When using with models with complex geometry such as a custom GLTF file, the complex model should be set to not be pickable by pointers and wrapped in a pickable bounding box mesh to save on performance. A helper method to do this is provided.
 ```
 var boundingBox = BABYLON.BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox(gltfMesh);
 ```
 
+Additionally, the bounding box can ignore children of the attached mesh to add additional performance gain when needed.
+```
+gizmo.ignoreChildren = true;
+```
+
+
 UI can be attached to the bounding box using the [AttachToBoxBehavior](/How_To/MeshBehavior)
 
 [GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
+[Animated GLTF example](https://playground.babylonjs.com/#6E4LSB#15)
 [Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
 
 ## Gizmo customization
