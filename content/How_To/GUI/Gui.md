@@ -766,3 +766,10 @@ You can find a demo here: https://www.babylonjs-playground.com/#5N4JIS
 To reduce the amount of code required to achieve frequent tasks you can use the following helpers:
 
 * `BABYLON.GUI.Control.AddHeader(control, text, size, options { isHorizontal, controlFirst })`: This function will create a StackPanel (horizontal or vertical based on options) and will add your control plus a TextBlock in it. Options can also be used to specify if the control is inserted first of after the header. Depending on the orientation, size will either specify the widht or the height used for the TextBlock.
+
+* `BABYLON.GUI.Checkbox.AddCheckBoxWithHeader(title, onValueChanged)`: This function will create a horizontal StackPanel and will add a checkbox alongside a text block displaying the `title` property. `onValueChanged` defines the callback to call when checkbox state changes.
+
+## Further reading
+
+* [How To Use Babylon GUI3D](Gui3D.md)
+* [How To Use Babylon Chart3D](Chart3D.md)

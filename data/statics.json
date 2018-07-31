@@ -745,6 +745,10 @@
                 {
                     "title": "Use the Babylon 3D GUI",
                     "filename": "Gui3D"
+                },
+                {
+                    "title": "Use the Babylon 3D Charting",
+                    "filename": "Chart3D"
                 }
             ]
         },

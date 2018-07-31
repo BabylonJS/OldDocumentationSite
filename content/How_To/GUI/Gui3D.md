@@ -8,7 +8,7 @@ The Babylon.js 3D GUI library is an extension you can use to generate 3D interac
 
 The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release/gui.
 
-And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui.
+And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui/src/3D.
 
 ## Introduction
 Babylon.GUI uses a meshes to create an interactive user interface which is fully integrated in your scene.
@@ -250,7 +250,10 @@ You can create your own custom control by inheriting from the `Control3D` class 
 - `_createNode()`: Called on controls to create a transform node or a mesh to represent the control
 - `_affectMaterial()`: Called on controls to prepare and affect a material if a mesh is used to represent the control
 
+## Further reading
 
+* [How To Use Babylon GUI](Gui.md)
+* [How To Use Babylon Chart3D](Chart3D.md)
 
 
 
