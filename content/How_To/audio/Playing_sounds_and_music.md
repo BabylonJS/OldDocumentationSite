@@ -55,7 +55,7 @@ Test it on our playground:
 
 ## Playing a sound on mouse click or keydown
 
-This sample code play a gunshot sound if you’re left-clicking or pressing the spacebar:
+This sample code plays a gunshot sound if you’re left-clicking or pressing the spacebar:
 
 ``` javascript
 var gunshot = new BABYLON.Sound("gunshot", "sounds/gunshot.wav", scene);
@@ -84,7 +84,7 @@ Test it on our playground:
 
 You can set the volume of a sound via the options object or via the *setVolume()* function. You can set the play rate in the same manner.
 
-You can also be notified when the sound has finished playing by registering yourself into the onended event.
+You can also be notified when the sound has finished playing by registering yourself into the *onended* event.
 
 Here is a simple sample code mixing all that:
 
@@ -103,7 +103,7 @@ gunshot.onended = function () {
 };
 ```
 
-The sound is first created with a *playbackRate* of 0.5 and a volume of 0.1. Everytime you will play the sound, at its end, the *onended* function will be called and the volume & playbackRate will increase. 
+The sound is first created with a *playbackRate* of 0.5 and a volume of 0.1. Everytime you will play the sound, at its end, the *onended* function will be called and the volume & *playbackRate* will increase. 
 
 Rather than setting the volume on a specific sound, you can also set the global volume of all sounds played by Babylon.js using the *setGlobalVolume()* function of the audio engine. 
 
@@ -321,7 +321,7 @@ var music = new BABYLON.Sound("Music", "music.wav", scene, null, { loop: true, a
 
 You’ll switch to internal Babylon.js math computations. The default custom attenuation function is a linear one. 
 
-To create your own logic you need such code:
+To create your own logic, you need such code:
 
 ``` javascript
 // Creating custom attenuation function. Near the object, volume is almost 0.
