@@ -252,8 +252,8 @@ You can create your own custom control by inheriting from the `Control3D` class 
 
 ## Further reading
 
-* [How To Use Babylon GUI](Gui.md)
-* [How To Use Babylon Chart3D](Chart3D.md)
+* [How To Use Babylon GUI](http://doc.babylonjs.com/how_to/gui)
+* [How To Use Babylon Chart3D](http://doc.babylonjs.com/how_to/chart3d)
 
 
 
