@@ -92,9 +92,23 @@
                     "title": "GUI",
                     "doc": "https://doc.babylonjs.com/how_to/gui",
                     "icon": "icons/gui.png", 
-                    "description": "Babylons graphical user interface provides sliders, buttons, etc.",
+                    "description": "Babylon.js graphical user interface provides sliders, buttons, etc.",
                     "PGID": "#3VMTI9#0"
-                }
+                },
+                {
+                    "title": "3D GUI",
+                    "doc": "https://doc.babylonjs.com/how_to/gui3d",
+                    "icon": "icons/gui3d.jpg", 
+                    "description": "Babylon.js 3D graphical user interface provides 3D buttons, 3D containers etc.",
+                    "PGID": "#HB4C01#9"
+                },
+                {
+                    "title": "Chart3D",
+                    "doc": "https://doc.babylonjs.com/how_to/chart3d",
+                    "icon": "icons/chart3d.jpg", 
+                    "description": "Babylon.js 3D charting provides support for chart controls like bar graphes, etc.",
+                    "PGID": "#NUMA1E#2"
+                }                 
             ]
         },
         {
@@ -445,6 +459,13 @@
         {
             "title": "Particles",
             "samples": [
+                {
+                    "title": "Particle helper",
+                    "doc": "http://doc.babylonjs.com/how_to/particlehelper",
+                    "icon": "icons/particle_helper.jpg",
+                    "description": "Easily create complex particle systems",
+                    "PGID": "#1VGT5D#2"
+                },                 
                 {
                     "title": "Particles and mirrors",
                     "doc": "https://doc.babylonjs.com/babylon101/particles",
