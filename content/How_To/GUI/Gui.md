@@ -771,5 +771,5 @@ To reduce the amount of code required to achieve frequent tasks you can use the 
 
 ## Further reading
 
-* [How To Use Babylon GUI3D](Gui3D.md)
-* [How To Use Babylon Chart3D](Chart3D.md)
+* [How To Use Babylon GUI3D](http://doc.babylonjs.com/how_to/gui3d)
+* [How To Use Babylon Chart3D](http://doc.babylonjs.com/how_to/chart3d)
