@@ -19,6 +19,8 @@ The `DataSeries` object is used to define the data source for charts. It is defi
 - `dimensions`: Defines an array of strings. One per dimension which are used to filter data
 - `data`: Gets or sets the list of values (data to display)
 
+The data array must containing a list of objects with at least a `value` property alongside a property for each dimension.
+
 Here is an example of how to create a DataSeries:
 
 ```
@@ -180,5 +182,5 @@ You can find an example of the BarGraph class here: https://www.babylonjs-playgr
 
 ## Further reading
 
-* [How To Use Babylon GUI](Gui.md)
-* [How To Use Babylon GUI3D](Gui3D.md)
+* [How To Use Babylon GUI](http://doc.babylonjs.com/how_to/gui)
+* [How To Use Babylon GUI3D](http://doc.babylonjs.com/how_to/gui3d)

@@ -243,6 +243,27 @@ text1.fontSize = 48;
 button.content = text1;  
 ```
 
+### MeshButton3D
+
+This class is used to to create an interactable object which will use a mesh coming from the current scene to render.
+
+```
+var pushButton = new BABYLON.GUI.MeshButton3D(mesh, "pushButton");
+```
+
+Once created, you can use the new MeshButton3D to add animations:
+
+```
+pushButton.pointerEnterAnimation = () => {
+   mesh.material.albedoColor = hoverColor;
+};
+pushButton.pointerOutAnimation = () => {
+    mesh.material.albedoColor = new BABYLON.Color3(0.5, 0.19, 0);
+};
+```
+
+You can find a complete demo here: https://www.babylonjs-playground.com/#8Y780Y#20
+
 ### Custom controls
 
 You can create your own custom control by inheriting from the `Control3D` class and implementing the following functions:
@@ -252,8 +273,8 @@ You can create your own custom control by inheriting from the `Control3D` class 
 
 ## Further reading
 
-* [How To Use Babylon GUI](Gui.md)
-* [How To Use Babylon Chart3D](Chart3D.md)
+* [How To Use Babylon GUI](http://doc.babylonjs.com/how_to/gui)
+* [How To Use Babylon Chart3D](http://doc.babylonjs.com/how_to/chart3d)
 
 
 
