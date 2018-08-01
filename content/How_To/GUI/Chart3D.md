@@ -182,5 +182,5 @@ You can find an example of the BarGraph class here: https://www.babylonjs-playgr
 
 ## Further reading
 
-* [How To Use Babylon GUI](Gui.md)
-* [How To Use Babylon GUI3D](Gui3D.md)
+* [How To Use Babylon GUI](http://doc.babylonjs.com/how_to/gui)
+* [How To Use Babylon GUI3D](http://doc.babylonjs.com/how_to/gui3d)
