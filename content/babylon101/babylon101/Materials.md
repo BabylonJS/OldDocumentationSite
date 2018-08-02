@@ -44,14 +44,18 @@ myMaterial.ambientColor = new BABYLON.Color3(0.23, 0.98, 0.53);
 mesh.material = myMaterial;
 ```
 ### Diffuse Color Example
-To give an idea how material diffuse color reacts to diffuse light color the following * [Playground Example](http://www.babylonjs-playground.com/#20OAV9#10) shows how
+To give an idea how material diffuse color reacts to diffuse light color the following playground example shows how different color materials react to white, red, green and blue diffuse spot lights.
+
+* [Playground Example - Material Color Reaction to Light Color _direct click or edit to view_](http://www.babylonjs-playground.com/#20OAV9#206)  
+
+This reaction of 
 
 |     |     |
 |----|----|
 | Yellow Material |  Purple Material |
 | Cyan Material | White Material |
 
-react to white, red, green and blue diffuse spot lights. Notice how the viewing angle adjusts the lighting.
+to white, red, green and blue diffuse spot lights can also be seen in the following image.
 
 ![ Spot Light](/img/how_to/Materials/spots1.png)
 
