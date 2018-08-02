@@ -5,7 +5,7 @@ PG_TITLE: How To Use SceneOptimizer
 
 # How To Use SceneOptimizer
 
-Rendering a scene on a browser is a great experience because you can reach a lot of different users and hardware. But the main associated caveat is that you can encounter very low end devices.
+Rendering a scene on a browser is a great experience because you can reach a lot of different users and hardware. But the main associated caveat is that you can encounter very low-end devices.
 
 The SceneOptimizer tool is designed to help you reach a specific framerate by gracefully degrading rendering quality at runtime.
 
@@ -30,7 +30,7 @@ When creating the SceneOptimizer you can provide the following parameters:
 The SceneOptimizer object allows you to set several properties:
 - ```optimizations```: This property contains the list of current optimizations
 - ```targetFrameRate```: This property defines the target frame rate to reach (60 by default)
-- ```trackerDuration```: This property defines the interval between two checkes (2000ms by default)
+- ```trackerDuration```: This property defines the interval between two checks (2000ms by default)
 - ```currentFrameRate```: This property (read-only) gets the current frame rate checked by the SceneOptimizer
 - ```currentPriorityLevel```: This property (read-only) gets the current priority level (0 at start)
 - ```onSuccessObservable```: This property defines an observable called when the optimizer reaches the target frame rate
@@ -62,10 +62,10 @@ function() {
 ```
 
 As you can see, you can provide success/fail callbacks and a set of options.
-Please note that the ```BABYLON.SceneOptimizer.OptimizeAsync()``` function returns a SceneOptimizer object which is created with autoGeneratePriorities to false.
+Please note that the ```BABYLON.SceneOptimizer.OptimizeAsync()``` function returns a SceneOptimizer object which is created with `autoGeneratePriorities` to false.
 
 ## Options
-A set of options contains a list of optimization to apply in a specific order. As soon as the target FPS is reached, the SceneOptimizer stops. There are different layers (or passes) that are applied one after another. The SceneOptimizer pauses between each layer to ensure a stable FPS, for measuring.
+A set of options contains a list of optimizations to apply in a specific order. As soon as the target FPS is reached, the SceneOptimizer stops. There are different layers (or passes) that are applied one after another. The SceneOptimizer pauses between each layer to ensure a stable FPS, for measuring.
 
 By default, there are 3 sets available:
 
@@ -167,7 +167,7 @@ function mySceneOptimization(priority) {
 ```
 
 ## Improvement mode
-When created in improvement mode (4th parameter of the constructor), the ScenOptimizer object will run all optimization while the current FPS is above the target frame rate. So for instance if, the target FPS is 60, the optimizer will execute all optimizations in its list while the FPS remains at 60. It is a good tool to provide rendering improvements to a given scene.
+When created in improvement mode (4th parameter of the constructor), the SceneOptimizer object will run all optimization while the current FPS is above the target frame rate. So, for instance if, the target FPS is 60, the optimizer will execute all optimizations in its list while the FPS remains at 60. It is a good tool to provide rendering improvements to a given scene.
 Please note that when in improvement mode, the optimizations will adapt their behavior automatically (for instance, the ShadowsOptimization will turn shadows on instead of off).
 
 ## Demo
