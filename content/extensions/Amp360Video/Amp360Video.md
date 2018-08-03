@@ -16,8 +16,10 @@ git clone https://github.com/BabylonJS/Extensions.git
 Once the repository has been cloned, open a command prompt in the Amp360Video folder.
 
 Then, type the following commands:
-```npm install```
-```npm start```
+```
+npm install
+npm start
+```
 
 You can now access your [local test](http://localhost:1337/)
 
@@ -40,8 +42,8 @@ Include the following resources in your html:
 <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
 
 <!-- Link to the AMP resources -->
-<link href="//amp.azure.net/libs/amp/2.1.7/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
-<script src="//amp.azure.net/libs/amp/2.1.7/azuremediaplayer.min.js"></script>
+<link href="https://amp.azure.net/libs/amp/2.1.7/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+<script src="https://amp.azure.net/libs/amp/2.1.7/azuremediaplayer.min.js"></script>
 ```
 
 ### Plugin Resources
