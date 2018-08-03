@@ -18,7 +18,7 @@ Notice that the images match seamlessly at the edges of the box:
 
 ![Seamless Skybox](/img/how_to/skybox1.png)
 
-Skybox images can be found on the web by searching for skybox images. Generally these are single images in the form of a net of a box and you will 
+Skybox images can be found on the web by searching for skybox images. Generally, these are single images in the form of a net of a box and you will 
 need to separate them into individual images and save each.
 
 You can also use [textures available in the playground](/resources/playground_textures#cubetextures).
@@ -37,7 +37,7 @@ skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
 skybox.material = skyboxMaterial;
 ```
 
-More generally the the images are referenced in the following way
+More generally the images are referenced in the following way
 
 ```javascript
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("PATH TO IMAGES FOLDER/COMMON PART OF NAMES", scene);

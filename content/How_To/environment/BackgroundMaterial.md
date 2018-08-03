@@ -30,7 +30,7 @@ backgroundMaterial.shadowLevel = 0.4;
 You can see a [live version here](https://www.babylonjs-playground.com/#G3HSAW#3)
 
 ### Opacity
-As you might want to make a transparent groung, if the diffuse texture contains some transparency information, they will be used by the material.
+As you might want to make a transparent ground, if the diffuse texture contains some transparency information, they will be used by the material.
 
 ```javascript
 backgroundMaterial.diffuseTexture.hasAlpha = true;
