@@ -7,9 +7,9 @@ PG_TITLE: 17. Shadows
 In this tutorial, we are going to learn how to create shadows in Babylon JS. Shadows are now becoming dynamic, and they are now dynamically generated depending upon a light.
 You might want to visit [**the playground scene**]( https://www.babylonjs-playground.com/?15) for this tutorial.
 
-## How can I do this ?
+## How can I do this?
 
-Shadows are easy to generate using the babylon.js “ShadowGenerator”. This function uses a shadow map: a map of your scene generated from the light’s point of view.
+Shadows are easy to generate using the babylon.js `ShadowGenerator`. This function uses a shadow map: a map of your scene generated from the light’s point of view.
 
 The two parameters used by the shadow generator are: the size of the shadow map, and which light is used for the shadow map's computation.
 ```javascript
@@ -47,7 +47,7 @@ If you set this one to _true_, Variance shadow maps will be disabled. This filte
 shadowGenerator.useExponentialShadowMap = true;
 ```
 It is _true_ by default, because it is useful to decrease the aliasing of the shadow.  But if you want to reduce computation time, feel free to turn it off.
-You can also control how the exponential shadow map scales depth values by changing the `shadowGenerator.depthScale`. By default the value is 50.0 but you may want to change it if the depth scale of your world (the distance between minZ and MaxZ) is small.
+You can also control how the exponential shadow map scales depth values by changing the `shadowGenerator.depthScale`. By default, the value is 50.0 but you may want to change it if the depth scale of your world (the distance between MinZ and MaxZ) is small.
 
 ### Blur exponential shadow map 
 ```javascript
@@ -64,8 +64,8 @@ The quality of the blur is defined by the following properties:
 Here is an example of blurred shadows: https://www.babylonjs-playground.com/#IIZ9UU
 
 ### Close exponential shadow map
-Starting with Babylon.js 3.0, we introduced a new way of doing exponential shadow map to deal with self shadowing issues: The Close Exponential Shadow Map (CESM).
-With CESM, you can get accurate self-shadowing but you will need to define additionnal parameters:
+Starting with Babylon.js 3.0, we introduced a new way of doing exponential shadow map to deal with self-shadowing issues: The Close Exponential Shadow Map (CESM).
+With CESM, you can get accurate self-shadowing but you will need to define additional parameters:
 * You must provide the smallest range of depth values from your light by setting `light.shadowMinZ` and `light.shadowMaxZ`. The smaller the range is, the better the shadow will be.
 * You must ensure that the light is as close as possible to the shadow casters.
 
@@ -93,7 +93,7 @@ shadowGenerator.usePercentageCloserFiltering = true;
 
 Here is an example of how PCF works: https://playground.babylonjs.com/#B48X7G#1
 
-As PCF requires more resources than can be available on small platforms, you can use the ```filteringQuality``` property to chose the best tradeoff between quality and performance depending on your experience (the lower the quality the better the performance).
+As PCF requires more resources than can be available on small platforms, you can use the ```filteringQuality``` property to choose the best tradeoff between quality and performance depending on your experience (the lower the quality the better the performance).
 
 ```javascript
 shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_LOW;
@@ -104,11 +104,11 @@ Only Point and Directional lights are currently supported by PCF.
 ### Contact hardening shadow (Webgl2 only)
 Starting with Babylon.js 3.2, contact hardening shadows based on PCSS shadows was introduced.
 
-PCSS could be seen as an improved version of PCF but despite looking better they are also more processor expensive and should be reserved for desktop applications. Like PCF, they will automatically fallback to Poisson Sampling if the code is running on a webgl1 paltform.
+PCSS could be seen as an improved version of PCF but despite looking better they are also more processor expensive and should be reserved for desktop applications. Like PCF, they will automatically fallback to Poisson Sampling if the code is running on a WebGL 1 platform.
 
 In PCSS, the shadows will get softer when they are further away from the object casting them, simulating what happens in real life.
 
-In order to get accurate result  you will need to define additional parameters:
+In order to get accurate result you will need to define additional parameters:
 * You must provide the smallest range of depth values from your light by setting `light.shadowMinZ` and `light.shadowMaxZ`. The smaller the range is, the better the shadow will be.
 * You can also play with the following parameter ```contactHardeningLightSizeUVRatio``` in order to change how fast the shadow softens (between 0 and 1).
 
@@ -119,7 +119,7 @@ shadowGenerator.useContactHardeningShadow = true;
 
 Here is an example of how PCSS works: https://playground.babylonjs.com/#B48X7G#2
 
-As PCSS requires more resources than can be available on small platform, you can use the ```filteringQuality``` property to chose the best tradeoff between quality and performances depending on your experience. (the lower the quality the better the performances).
+As PCSS requires more resources than can be available on small platform, you can use the ```filteringQuality``` property to choose the best tradeoff between quality and performances depending on your experience. (the lower the quality the better the performances).
 
 ```javascript
 shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_LOW;
@@ -169,9 +169,9 @@ Only point, directional and spot lights can cast shadows.
 Point lights use cubemaps rendering so please be cautious when enabling them as this could lead to some performance issues.
 You can also visit the [point light shadow map playground scene]( https://www.babylonjs-playground.com/#LYCSQ#12)
 
-Furthermore BlurExponentialShadowMap and CloseBlurExponentialShadowMap are not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
+Furthermore, `BlurExponentialShadowMap` and `CloseBlurExponentialShadowMap` are not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
 
-TO optimize rendering, you can also decide to use the point light like a unlimited spot light if you are sure that all shadow casters are on the same side of the light. To do so, just specify a direction for your light and automatically Babylon.js will use a simple texture for the shadow map instead of the cubemap.
+To optimize rendering, you can also decide to use the point light like an unlimited spot light if you are sure that all shadow casters are on the same side of the light. To do so, just specify a direction for your light and automatically Babylon.js will use a simple texture for the shadow map instead of the cubemap.
 
 ### Spot lights
 Spot lights use perspective projection to compute the shadow map.
@@ -200,19 +200,19 @@ You may want to reduce shadow acne resulting from not precise enough shadow map.
 ```javascript
 shadowGenerator.bias = 0.01;
 ```
-Shadow generators compare the depth of every pixel with the depth of occluders (shadow casters) seen from the light point of view. As we are dealing with low precision textures (when supported Babylon.js will use float textures but low end devices only support int textures), you may want to boost the depth of occluders to facilitate self shadowing (An object casting shadows on itself).
+Shadow generators compare the depth of every pixel with the depth of occluders (shadow casters) seen from the light point of view. As we are dealing with low precision textures (when supported Babylon.js will use float textures but low-end devices only support int textures), you may want to boost the depth of occluders to facilitate self-shadowing (An object casting shadows on itself).
 
 ### Back face rendering
-You can improve self shadowing issues by setting `shadowGenerator.forceBackFacesOnly` to true. This will force the shadow geneator to render back faces of your mesh to the shadow map. This can clearly improve the overall precision and reduce the need for a bias.
+You can improve self-shadowing issues by setting `shadowGenerator.forceBackFacesOnly` to true. This will force the shadow generator to render back faces of your mesh to the shadow map. This can clearly improve the overall precision and reduce the need for a bias.
 
 ### Improving the projection matrix precision
-By default the projection matrix of a light uses the minZ and maxZ of the main camera. But you may want to control it in order to get a more precise shadow map by reducing the distance between minZ and maxZ. To do so yu can set `light.shadowMinZ` and `light.shadowMaxZ`.
+By default, the projection matrix of a light uses the minZ and maxZ of the main camera. But you may want to control it in order to get a more precise shadow map by reducing the distance between minZ and maxZ. To do so you can set `light.shadowMinZ` and `light.shadowMaxZ`.
 
 ### Use the best option for self-shadowing
 As mentioned earlier, if you want blurred shadows on a self-shadowing object, the best option will probably to go with close exponential shadow map.
 
 ### Frustum edge falloff
-Depending on how you setup your shadow generator, you could face weird falloff when an object is near the edges of the shadow map. To elegantly fix this issue, you can set a property named frustumEdgeFalloff:
+Depending on how you setup your shadow generator, you could face weird falloff when an object is near the edges of the shadow map. To elegantly fix this issue, you can set a property named `frustumEdgeFalloff`:
 
 ```javascript
  shadowGenerator.frustumEdgeFalloff = 1.0;
@@ -250,13 +250,13 @@ BABYLON.SceneLoader.CleanBoneMatrixWeights = true;
 
 ### Self Shadow
 
-It is probably the case that Self Shadowing requires the biggest attention during its setup. Let's try to setup self shadowing on the following scene): https://playground.babylonjs.com/#FH3FM2#1
+It is probably the case that Self-Shadowing requires the biggest attention during its setup. Let's try to setup self-shadowing on the following scene): https://playground.babylonjs.com/#FH3FM2#1
 
 The first step consists in adding a shadow generator in the scene and defining every meshes as both casters and receivers (we also force the bias to 0 to highlight the generated artifacts): https://playground.babylonjs.com/#FH3FM2#4
 
-As you can notice there are weird patterns appearing everywhere on the surface of the self shadowed objects. This is called shadow acnea ([more information](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne)).
+As you can notice there are weird patterns appearing everywhere on the surface of the self-shadowed objects. This is called shadow acnea ([more information](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne)).
 
-Fortunately in Babylon we do have a way to solve the issue.
+Fortunately, in Babylon we do have a way to solve the issue.
 
 #### Bias
 
@@ -284,11 +284,11 @@ All the artifacts are now gone and it is time to make our shadows look awesome.
 
 Try to change the shadow generator to Contact hardening: https://playground.babylonjs.com/#FH3FM2#8
 
-At first, you can not see the contact hardening effect and, not only this, you can see shadow acnea again. Taking note of the section on  PCSS you realsise that the light min and max should be set as close as possible: https://playground.babylonjs.com/#FH3FM2#10
+At first, you cannot see the contact hardening effect and, not only this, you can see shadow acnea again. Taking note of the section on PCSS you realize that the light min and max should be set as close as possible: https://playground.babylonjs.com/#FH3FM2#10
 
 Now the contact hardening effect is present but the acnea is even stronger. Unfortunately, the bias is applied on the normalized coordinates depth (0-1) so changing the near and far value of the light impacts how big the bias should be.
 
-So go back and and change the bias to its maximum before seeing peter panning and then apply some normal bias to remove the rest of the acnea leads to the following result: https://playground.babylonjs.com/#FH3FM2#11
+So, go back and change the bias to its maximum before seeing peter panning and then apply some normal bias to remove the rest of the acnea leads to the following result: https://playground.babylonjs.com/#FH3FM2#11
 
 Your shadows are now soft without acnea or peter panning.
 
