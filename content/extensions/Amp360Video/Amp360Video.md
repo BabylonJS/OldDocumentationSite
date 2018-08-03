@@ -1,16 +1,21 @@
 # Azure Media Player 360 Video Plugin
 
 ## Introduction 
-The [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html) 360 Video is a plugin for AMP using BabylonJS in order to facilitate the integration of 360 videos in your Web App.
+The [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html) 360 Video is a plugin for AMP aka [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html) using BabylonJS in order to facilitate the integration of 360 videos in your Web App.
 
-The plugin supports VR headsets (Windows MR...) natively.
+The plugin supports natively VR headsets (Windows MR...).
 
 [Online Demo of the plugin](http://www.babylonjs.com/Demos/Amp360Video/)
 
 ## How to Run Locally
-Once the repository has been cloned, open the a command prompt in this folder.
+First clone the babylon extensions repository:
+```
+git clone https://github.com/BabylonJS/Extensions.git
+```
 
-Type the following commands:
+Once the repository has been cloned, open the a command prompt in the Amp360Video folder.
+
+Then, tyype the following commands:
 ```npm install```
 ```npm start```
 
@@ -24,7 +29,7 @@ The plugin depends on BabylonJS in order to enable 3D functionalities in AMP.
 For more information about AMP, you can access their [documentation](http://amp.azure.net/libs/amp/latest/docs/index.html).
 
 ## How use in your web site
-After deploying both the js and css from the ```amp-360video``` folder to your WebSite you can follow the following steps:
+After deploying both the js and css from the ```amp-360video``` folder of the [Extension repository](https://github.com/BabylonJS/Extensions/tree/master/Amp360Video) to your WebSite, you can follow the following steps:
 
 ### External Resources
 Include the following resources in you html:
@@ -39,7 +44,7 @@ Include the following resources in you html:
 <script src="//amp.azure.net/libs/amp/2.1.7/azuremediaplayer.min.js"></script>
 ```
 
-## Plugin Resources
+### Plugin Resources
 You can either embed the plugin in your HTML or initialize it by code like specified in the [AMP documentation](http://amp.azure.net/libs/amp/latest/docs/index.html#plugins).
 
 #### Html Initialization
@@ -58,7 +63,7 @@ The only difference with your default AMP initialization is the presence of the 
 "plugins": { "threeSixty": { } }'
 ```
 
-One example can be found in the index.html file located in this folder.
+One example can be found in the index.html file located in the [repo](https://github.com/BabylonJS/Extensions/blob/master/Amp360Video/index.html).
 
 #### Code Initialization
 The following code will initializes the plugin in your amp player:
@@ -90,7 +95,7 @@ myPlayer.src([{
 }]);
 ```
 
-One example can be found in the indexCode.html file located in this folder.
+One example can be found in the indexCode.html file located in the [repo](https://github.com/BabylonJS/Extensions/blob/master/Amp360Video/indexCode.html).
 
 ### Enable/Disable the VR Button
 By default the plugin is delivered with a VR mode avaible through a button shaped like a HMD.
