@@ -1469,6 +1469,17 @@
                     "filename": "glTFExporter"
                 }
             ]
+        },
+        {
+            "title": "Azure Media Player 360 Video",
+            "name": "Amp360Video",
+            "desc": "Watch 360 Videos in Azure Media Player",
+            "files": [
+                {
+                    "title": "Amp 360 Video",
+                    "filename": "Amp360Video"
+                }
+            ]
         }
     ],
     "snippets": [
