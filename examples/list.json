@@ -155,6 +155,13 @@
                     "icon": "icons/keyboard.png", 
                     "description": "Move a sphere around with the keyboard",
                     "PGID": "#15EY4F#0"
+                },
+                {
+                    "title": "Gizmo/Manipulator",
+                    "doc": "https://doc.babylonjs.com/how_to/gizmo",
+                    "icon": "icons/gizmo.jpg", 
+                    "description": "Position, Rotate and Scale meshes with a pointer",
+                    "PGID": "#8MGKWK#25"
                 }
             ]
         },
