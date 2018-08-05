@@ -4,7 +4,7 @@ PG_TITLE: 04 Position, Rotation and Scaling
 
 # Position, Rotation and Scaling
 
-The 101 course only considers the setting of a mesh's _position_, _rotation_ and _scaling_. [Further Reading](#further-reading) will show you a range of methods to translate and rotate a mesh by a given amount.
+The 101 course only considers the setting of a mesh's _position_, _rotation_, and _scaling_. [Further Reading](#further-reading) will show you a range of methods to translate and rotate a mesh by a given amount.
 
 Whatever the methods used they require a frame of reference, a means to describe the position, rotation or scaling and something to help visualize the effects of applying these. The visualization will be helped by the **Pilot** a constructed asymmetric shape.
 
@@ -17,7 +17,7 @@ There are two frames of reference that Babylon.js uses, the **world axes** and t
 
 In all diagrams and playgrounds X axis is red, Y axis is Green and Z axis is blue. 
 
-When meshes are created their center is placed at the origin of the **word axes** and their position is always placed relative to the **word axes**.
+When meshes are created their center is placed at the origin of the **world axes** and their position is always placed relative to the **world axes**.
 
 The **local axes** move with the mesh. The origin of **local axes** is always at the created center of the mesh whatever its position. The centers of rotation and enlargement for a mesh are at the origin of the **local axes**, however by using either a TransformNode or a matrix to set a [pivot point](/How_To/Pivots) they can be changed to that point.
 
@@ -33,7 +33,7 @@ Following its creation the pilot's position is at the world origin with rotation
 
 ## Position
 
-Position places the pilot with reference to the **word axes** using a vector (x, y, z). The **local axes** move with the pilot.
+Position places the pilot with reference to the **world axes** using a vector (x, y, z). The **local axes** move with the pilot.
 
 ```javascript
 pilot.position = new BABYLON.Vector3(2, 3, 4);
@@ -55,9 +55,9 @@ The local and world axes remain in the same orientation.
 
 ## Rotation
 
-WARNING Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon JS see [Applying Rotations Convention BJS](/resources/rotation_conventions).
+WARNING: Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon.js see [Applying Rotations Convention BJS](/resources/rotation_conventions).
 
-In BabylonJS 
+In Babylon.js 
 
 Rotations are set using
 
@@ -71,9 +71,9 @@ pilot.rotation.x  =  alpha; //rotation around x axis
 pilot.rotation.y  =  beta; //rotation around y axis
 pilot.rotation.z  =  gamma; //rotation around z axis
 ```
-where alpha, beta and gamma are angles measured in radians.
+where alpha, beta, and gamma are angles measured in radians.
 
-PAUSE FOR THOUGHT Immediately since three rotations are given about three different axes you need to ask  - "in which order are they applied about which frames of reference and in which direction?"
+PAUSE FOR THOUGHT: Immediately, since three rotations are given about three different axes you need to ask  - "in which order are they applied about which frames of reference and in which direction?"
 
 Either of the following two conventions can be considered as being used by rotation in Babylon.js since both lead to the same outcome.
 
@@ -123,9 +123,9 @@ pilot.rotation.x  =  alpha;
 
 ## Sequencing Rotations
 
-The question now is what to do if you want a sequence of rotations that starts with one about the x axis, then about the y axis then about the z axis?
+The question now is, what to do if you want a sequence of rotations that starts with one about the x axis, then about the y axis then about the z axis?
 
-For **world axes** you use the [rotate method](/features/Position,_Rotation,_Scaling)) For rotations about **local axes** Babylon.js has both the _rotate_ method and _addRotation_ method. 
+For **world axes** you use the [rotate method](/features/Position,_Rotation,_Scaling). For rotations about **local axes**, Babylon.js has both the _rotate_ method and _addRotation_ method. 
 
 You can chain a sequence of rotations using the _addRotation_. This method provides for one rotation value about one axis a series of which can be applied from the first to the last as the following example shows.
 
@@ -143,7 +143,7 @@ In general _mesh.addRotation(alpha, beta, gamma)_ needs at least two of _alpha, 
 
 ## Scaling
 
-Scaling along the x, y and z **local axes** is set using
+Scaling along the x, y, and z **local axes** is set using
 
 ```javascript
 mesh.scaling = new BABYLON.Vector3(scale_x, scale_y, scale_z);
