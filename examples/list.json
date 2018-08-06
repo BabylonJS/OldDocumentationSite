@@ -115,7 +115,14 @@
                     "icon": "icons/chart3d.jpg", 
                     "description": "Babylon.js 3D charting provides support for chart controls like bar graphes, etc.",
                     "PGID": "#NUMA1E#2"
-                }                 
+                },                
+                {
+                    "title": "App Bar (AttachToBoxBehavior)",
+                    "doc": "https://doc.babylonjs.com/how_to/meshbehavior",
+                    "icon": "icons/appBar.jpg", 
+                    "description": "Attach a menu to a bounding box such that it always faces the user",
+                    "PGID": "#8GY6J8#62"
+                }               
             ]
         },
         {
