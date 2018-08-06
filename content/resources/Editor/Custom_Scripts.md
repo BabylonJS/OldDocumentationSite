@@ -60,7 +60,10 @@ class Script implements IScript {
 // Function that exports the script
 exportScript(
     Script, // Constructor of the script. No parameters allowed
-    { customParam: 'Hello' } // Custom parameters accessible from the editor in order to customize the script
+
+    // Custom parameters accessible from the editor in order to customize the script.
+    // These values will be available in the Inspector panel in the folder 'Script'
+    { customParam: 'Hello' }
 );
 ```
 

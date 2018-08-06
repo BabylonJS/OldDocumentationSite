@@ -41,5 +41,7 @@ You can use instances with LOD but one limitation will apply in this case: You w
 Here is an example where LODs reuse instances:
 https://www.babylonjs-playground.com/#0720FC#10
 
+If you want to create an instance from a cloned mesh, you have to first make sure that you call clonedMesh.makeGeometryUnique().
+
 # Demo
 http://www.babylonjs.com/?INSTANCES

@@ -84,7 +84,7 @@ var multiPointerScaleBehavior = new BABYLON.MultiPointerScaleBehavior();
 **Note** - To avoid large performance hits when using with models with complex geometries, the object should be wrapped in a bounding box mesh. See [BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox](/How_To/Gizmo)
 [Example](https://www.babylonjs-playground.com/#8GY6J8#20)
 
-## AttachToBoxBehavior
+## AttachToBoxBehavior (AppBar)
 This is used to attach a mesh or UI on top of a meshes bounding box
 ```
 var behavior = new BABYLON.AttachToBoxBehavior(appBar);

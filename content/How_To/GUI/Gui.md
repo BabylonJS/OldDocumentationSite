@@ -770,6 +770,8 @@ To reduce the amount of code required to achieve frequent tasks you can use the 
 
 * `BABYLON.GUI.Checkbox.AddCheckBoxWithHeader(title, onValueChanged)`: This function will create a horizontal StackPanel and will add a checkbox alongside a text block displaying the `title` property. `onValueChanged` defines the callback to call when checkbox state changes.
 
+* `BABYLON.GUI.RadioButton.AddRadioButtonWithHeader(title, group, isChecked, onValueChanged)`: This function will create a horizontal StackPanel and will add a radio button (set with specified group and isChecked parameters) alongside a text block displaying the `title` property. `onValueChanged` defines the callback to call when radio button state changes.
+
 ## Further reading
 
 * [How To Use Babylon GUI3D](http://doc.babylonjs.com/how_to/gui3d)

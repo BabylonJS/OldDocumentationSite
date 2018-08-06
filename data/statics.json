@@ -881,6 +881,14 @@
                 {
                     "title": "Writing Custom Scripts",
                     "filename": "Custom_Scripts"
+                },
+                {
+                    "title": "Adding Animations",
+                    "filename": "Adding_Animations"
+                },
+                {
+                    "title": "Using Path Finder",
+                    "filename": "Using_PathFinder"
                 }
             ]
         },

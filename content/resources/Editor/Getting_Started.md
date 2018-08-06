@@ -1,10 +1,22 @@
 
 # Getting Started
-
 The V2 of the Babylon.js Editor is now available and comes with new features from the V1. Such as customizable layout, better design, new tools etc.
 
 The editor V2 is available at http://editor.babylonjs.com/.
 The video tutorials are all available on [a Youtube playlist](https://www.youtube.com/watch?v=obEuCI_pPL4&list=PLuZE-0i73Wo-xqfBsgZA531BXeesXQ3Op&index=1)
+
+# Desktop App
+The Babylon.js Editor is also available as a desktop application.
+
+This will allow you to continue working enven in offline mode and save projects directly on your local file system instead of using OneDrive.
+
+Also, when an update is available (new features, bug fixes), you'll get noified and the editor will download the new installer for you.
+
+**Note: in some cases, updating the desktop application can fail, you'll have to re-run the installer to finalize the installation**
+
+Downloading:
+* Windows: [http://editor.babylonjs.com/BabylonJS Editor.exe](http://editor.babylonjs.com/BabylonJS Editor.exe)
+* Mac OS X: [http://editor.babylonjs.com/BabylonJS Editor.dmg](http://editor.babylonjs.com/BabylonJS Editor.dmg)
 
 # Project example
 
