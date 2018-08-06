@@ -178,6 +178,11 @@
                     "title": "Render a Scene to a Video",
                     "level": 3,
                     "filename": "Render_Scene_on_a_Video"
+                },
+                {
+                    "title": "Use clip planes",
+                    "level": 3,
+                    "filename": "Clip_Planes"
                 }
             ]
         },
