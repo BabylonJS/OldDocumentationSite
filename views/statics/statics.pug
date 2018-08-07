@@ -5,10 +5,11 @@ include ../includes/header
             h1=dataObj.category.replace("_"," ")
 
         .horizontal-separator
+        - dataObj.folders.sort((a, b) => { if (a.title === b.title) { return 0;}if (a.title < b.title) { return -1; } return 1;})
         .statics-content
             .search(style="text-align: center; width: 100%;")
                 input(id='filterBar',type='text', name='filter', placeholder='Filter...')
-            .tagList
+            .tagList            
                 for folder in dataObj.folders
                     if(!folder.hidden)
                         .tagWrapper

@@ -179,13 +179,23 @@ Charts also offer a list of observables:
 - `onElementEnterObservable`: Observable raised when the pointer enters an element of the chart
 - `onElementOutObservable`: Observable raised when the pointer leaves an element of the chart
 
-Here are some implementation examples that you can use to learn how to create your own chart controls:
+## Custom charts
+
+To create your own chart, you have to inherit from the BABYLON.GUI.Chart class and then at least provide the following functions:
+
+- `refresh()`: This is the main function used to create the element meshes ([see examples below](#examples))
+- `_clean()`: This could be required to clean your custom data
+
+## Examples
+Here are some implementation examples that you can use to learn how to create your own chart controls.
 
 ### BarGraph
 
 The BarGraph chart will represent data using a list of bars.
 
 ![BarGraph](/img/how_to/gui/barGraph.jpg)
+
+Code can be found here: https://github.com/BabylonJS/Babylon.js/blob/master/gui/src/3D/charting/barGraph.ts
 
 You can set up a BarGraph with the following properties:
 - `displayBackground`: Gets or sets a boolean indicating if the background must be displayed
@@ -215,6 +225,8 @@ The MapGraph chart will represent spatial data on a [mercator](https://en.wikipe
 
 ![MapGraph](/img/how_to/gui/mapGraph.jpg)
 
+Code can be found here: https://github.com/BabylonJS/Babylon.js/blob/master/gui/src/3D/charting/mapGraph.ts
+
 You can set up a MapGraph with the following properties:
 - `xOffset`: Gets or sets the offset (in world unit) on X axis to apply to all elements
 - `yOffset`: Gets or sets the offset (in world unit) on Y axis to apply to all elements
@@ -240,13 +252,6 @@ mapGraph.labelDimension = "Country";
 ```
 
 You can find an example of the MapGraph class here: https://www.babylonjs-playground.com/#72L6VG
-
-## Custom charts
-
-To create your own chart, you have to inherit from the BABYLON.GUI.Chart class and then at least provide the following functions:
-
-- `refresh()`: This is the main function used to create the element meshes
-- `_clean()`: This could be required to clean your custom data
 
 ## Controlling labels
 
