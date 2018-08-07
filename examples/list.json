@@ -474,6 +474,13 @@
                     "icon": "icons/octree.jpg",
                     "description": "Use octrees to boost mesh selections when dealing with thousands of objects",
                     "PGID": "#3YFJ5R#0"
+                },
+                {
+                    "title": "Clip planes",
+                    "doc": "http://doc.babylonjs.com/how_to/clip_planes",
+                    "icon": "icons/clipplanes.jpg",
+                    "description": "You can clip the rendering of a scene by using clip planes",
+                    "PGID": "#Y6W087#0"
                 }
             ]
         },        
