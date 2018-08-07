@@ -73,7 +73,7 @@ module.exports = function (done) {
                     file.folder = folder.name;
                 });
             });
-
+          
             let tasks = [async.constant(dataObject, category)];
             //if (category !== "classes") {
             tasks.push(createStaticsPage,
