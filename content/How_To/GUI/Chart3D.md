@@ -4,7 +4,7 @@ PG_TITLE: How To Use Babylon 3D Charting
 
 # How To Use Babylon 3D Charting
 
-The Babylon.js 3D Charting library is an extension you can use to generate 3D interactive charts. It is part of the GUI module.
+The Babylon.js 3D charting library is an extension you can use to generate 3D interactive charts. It is part of the GUI module. You can see it as a fundation for 3D charts that you could built on top.
 
 The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release/gui.
 
@@ -178,6 +178,8 @@ Charts also offer a list of observables:
 - `onPickedPointChangedObservable`: Observable raised when the point picked by the pointer events changed
 - `onElementEnterObservable`: Observable raised when the pointer enters an element of the chart
 - `onElementOutObservable`: Observable raised when the pointer leaves an element of the chart
+
+Here are some implementation examples that you can use to learn how to create your own chart controls:
 
 ### BarGraph
 
