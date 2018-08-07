@@ -772,6 +772,32 @@ To reduce the amount of code required to achieve frequent tasks you can use the 
 
 * `BABYLON.GUI.RadioButton.AddRadioButtonWithHeader(title, group, isChecked, onValueChanged)`: This function will create a horizontal StackPanel and will add a radio button (set with specified group and isChecked parameters) alongside a text block displaying the `title` property. `onValueChanged` defines the callback to call when radio button state changes.
 
+## GUI and postprocesses
+
+In order to not apply postprocesses to your GUI, you will have to use a multi-cameras approach: one for your main scene and one for your GUI.
+
+You can find an implementation example here: https://www.babylonjs-playground.com/#U9AC0N#58
+
+The key point is to use the camera.layerMask property to isolate your GUI:
+
+```
+var camera2 = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, BABYLON.Vector3.Zero(), scene);
+camera2.layerMask = 2;
+
+// GUI - simply set advancedTexture layerMask to 2
+var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+advancedTexture.layer.layerMask = 2;
+```
+
+Then all meshes of your main scene will have a different layerMask attached to main camera:
+```
+var camera1 = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, BABYLON.Vector3.Zero(), scene);
+camera1.layerMask = 1;
+
+myMesh.layerMask = 1;
+```
+
+
 ## Further reading
 
 * [How To Use Babylon GUI3D](http://doc.babylonjs.com/how_to/gui3d)

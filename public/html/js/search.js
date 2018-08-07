@@ -82,6 +82,19 @@
             // first add "all":
             html += '<div class="basicFilter enabled" data-version="all"><span>all</span><span>(' + (files.length + classes.length) + ')</span></div>';
             // and now the rest
+            categories.sort(function(a, b) {
+                a = a.toLowerCase();
+                b = b.toLowerCase();
+                if (a === b) {
+                    return 0;
+                }
+
+                if (a < b) {
+                    return -1;
+                }
+
+                return 1;
+            });
             categories.forEach(function (cat) {
                 var numOfFiles = files.filter(function (f) { return f.version === cat }).length + classes.filter(function (f) { return f.version === cat }).length;
                 html += '<div class="basicFilter disabled"  data-version="' + cat + '"><span>' + cat.replace(/_/, " ").toLowerCase() + '</span><span>(' + numOfFiles + ')</span></div>';
