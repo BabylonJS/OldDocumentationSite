@@ -750,10 +750,6 @@
                 {
                     "title": "Use the Babylon 3D GUI",
                     "filename": "Gui3D"
-                },
-                {
-                    "title": "Use the Babylon 3D Charting foundation",
-                    "filename": "Chart3D"
                 }
             ]
         },
