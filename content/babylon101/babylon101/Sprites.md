@@ -29,7 +29,7 @@ When creating a sprite manager, you have to decide a few parameters:
 * Name: a name for this manager.
 * The 2D image URL (most of the time, you will want use an image format which contain alpha channel, like .PNG).
 * The capacity of this manager : the maximum number of instances in this manager (in our example, we could create 2000 instances of trees).
-* The cell size, corresponding to the size of your image, like we’ll see below. Please note that cellSize could be a number or an object made of a width and height property (Later on you will be able to also specify `spriteManager.cellWidth` and `spriteManager.cellHeight`)
+* The cell size, corresponding to the size of your image, like we’ll see below. Please note that cellSize could be a number or an object made of a width and height properties (Later on you will be able to also specify `spriteManager.cellWidth` and `spriteManager.cellHeight`)
 * The actual scene, to which we will add this manager.
 
 To give another example, look at this snippet:
