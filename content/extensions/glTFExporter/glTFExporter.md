@@ -6,6 +6,34 @@ PG_TITLE: glTF Exporter
 
 The glTF Exporter allows BabylonJS models to be exported to the [glTF 2.0 format](https://www.khronos.org/gltf/).
 
+## Installation
+### npm
+The glTF Exporter can be installed by using the `babylonjs-serializers` npm module
+
+```npm
+npm install --save babylonjs babylonjs-serializers
+```
+
+### javascript
+To include the BabylonJS serializers in javascript,
+include a script tag in the html `<head>` tag, referencing the non-minified or minified compiled javascript:
+```html
+<!-- links to the latest version of the serializers -->
+<script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.js"></script>
+
+<!-- links to the latest version of the minified serializers -->
+<script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+```
+
+If only the glTF serializer is desired, it can be specifically targeted with this `<head>` tag:
+```html
+<!-- links to the latest version of the glTF serializer -->
+<script src="https://preview.babylonjs.com/serializers/babylonjs.glTF2Serializer.js"></script>
+
+<!-- links to the latest version of the minified glTF serializer -->
+<script src="https://preview.babylonjs.com/serializers/babylonjs.glTF2Serializer.min.js"></script>
+```
+
 ## Exporting a Scene to glTF
 ```javascript
 BABYLON.GLTF2Export.GLTFAsync(scene, "fileName").then((gltf) => {
