@@ -23,20 +23,20 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * zfar
     * znear
     * yfov (Perspective camera)
-    * Position / rotation
-    * Animations: Position
+    * Position / rotation (from nodes)
 
 * _Meshes_
     * Geometry: position, normal, color, texture coordinates (2 channels)
+    * Position / rotation / scaling (from nodes)
     * Skin
     * Instances
     * Morph targets
-    * Position / rotation / scaling
     * Animations: bones, morph weights
 
 * _Nodes_
+    * Hierarchy
     * Position / rotation / scaling
-    * Animations: Position, scaling, rotation
+    * Animations: position, rotation, scaling
 
 * _Materials_
     * Standard material (converted to PBR, see below)
@@ -50,8 +50,6 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Wrap mode (Clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
-
-* Hierarchies are exported
 
 ## Conversion Standard to PBR materials
 
