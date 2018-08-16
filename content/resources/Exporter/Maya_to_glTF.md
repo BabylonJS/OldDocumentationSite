@@ -19,17 +19,24 @@ To export to a single .glb file, choose __glb__ as __Output format__.
 
 Since the plugin first exports to babylon then converts it to glTF, glTF features are a subset of the [babylon ones](/resources/Maya#features).
 
+* _Cameras_
+    * zfar
+    * znear
+    * yfov (Perspective camera)
+    * Position / rotation (from nodes)
+
 * _Meshes_
-    * Visibility
-    * Position / rotation / scaling
-    * Geometry (position, normal, tangent, texture coordinates (2 channels))
+    * Geometry: position, normal, color, texture coordinates (2 channels)
+    * Position / rotation / scaling (from nodes)
     * Skin
     * Instances
-    * Animations: Position, scaling, rotation, bones
+    * Morph targets
+    * Animations: bones, morph weights
 
 * _Nodes_
     * Hierarchy
     * Position / rotation / scaling
+    * Animations: position, rotation, scaling
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn are converted to PBR, see below)
@@ -46,16 +53,9 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Multi-materials
 
 * _Textures_
-    * Wrap mode (clamp, mirror, repeat)
+    * Wrap mode (Clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
-
-* _Cameras_
-    * zfar
-    * znear
-    * yfov (Perspective camera)
-    * Position / rotation
-    * Animations: Position, Target / Rotation
 
 # Conversion Standard to PBR materials
 

@@ -32,7 +32,8 @@ Congratulations! You did it!
     * Geometry (position, normal, tangent, texture coordinates (2 channels))
     * Skin
     * Instances
-    * Animations: Position, scaling, rotation, bones
+    * Morph targets (blend shapes)
+    * Animations: Position, scaling, rotation, bones, morph weights
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn)
