@@ -66,7 +66,7 @@ Congratulations! You did it!
     * Instances
     * Morph targets
     * Show Bounding box and submeshes bounding boxes (*)
-    * Animations: Position, scaling, rotation, visibility, bones
+    * Animations: Position, scaling, rotation, visibility, bones, morph weights
 
 * _Materials_
     * Multi-materials
