@@ -6,7 +6,7 @@ PG_TITLE: How To Fast Build a World
 
 There are a number of helpers that, once you to have put models into a scene, add cameras, light and environment that adjust to the models automatically allowing you to quickly view them. You can then make adjustments as you need.
 
-For beginners to Babylon.js these two sections [Fastest Build](/how_to/fast_build#fastest-build) and [Import and Fastest Build](/how_to/fast_build#import-and-fastest-build) will quickly give you a viewable world and are a good way of getting a look at models. As such they are level 1 material. It is worth considering working through Babylon101 and parts of the level 1 material in order to make the other information and details on this page  more understandable.
+For beginners to Babylon.js these two sections [Fastest Build](/how_to/fast_build#fastest-build) and [Import and Fastest Build](/how_to/fast_build#import-and-fastest-build) will quickly give you a viewable world and are a good way of getting a look at models. As such they are level 1 material. It is worth considering working through Babylon101 and parts of the level 1 material in order to make the other information and details on this page more understandable.
 
 ## Helpers
 
@@ -42,7 +42,7 @@ As can be seen in the _Fastest Build_ section the helper, `createDefaultCameraOr
 
 ## Create Default Camera
 
-The `createDefaultCamera`  takes three boolean parameters, all set to _false_ by default. They are 
+The `createDefaultCamera` takes three boolean parameters, all set to _false_ by default. They are 
 
 - createArcRotateCamera: creates a free camera by default and an arc rotate camera when _true_;
 - replace: when _true_ the created camera will replace the existing active one;
@@ -70,7 +70,7 @@ The camera will adjust depending on the size and position of each mesh in the wo
 
 ### Accessing the Camera
 
-Siince creating the camera this way makes the helper created camera the active camera the simplest way to access it it is using
+Since creating the camera this way makes the helper created camera the active camera the simplest way to access it is using
 
 ```javascript
 scene.createDefaultCamera(true, true, true);
@@ -97,9 +97,9 @@ scene.cameras.push(helperCamera);
 
 ## Create Default Light
 
-The `createDefaultLight`  takes just one boolean parameters, set to _false_ by default: 
+The `createDefaultLight` takes just one boolean parameters, set to _false_ by default: 
 
-- replace: when _true_ the created light will replace all the existing ones; when _false_ and there are no existing lights a hemispherical light is created; when _false_ and lights already exist no change is made to the scene.
+- replace: when _true_ the created light will replace all the existing ones; when _false_ and there are no existing lights a hemispherical light is created; when _false_ and lights already exist, no change is made to the scene.
 
 When this method is used before the creation of any other lights then it is usually sufficient to use
 
@@ -115,7 +115,7 @@ You can obtain it using
 ```javascript
 scene.createDefaultLight();
 
-var helperCamera = scene.lights[scene.lights.length - 1];
+var helperLight = scene.lights[scene.lights.length - 1];
 
 //OR
 
@@ -137,7 +137,7 @@ adds a skybox and ground to the scene, sets a wide range of environmental parame
 
 You will also find below a helper for [just a skybox](/how_to/fast_build#create-default-skybox).
 
-When you look at the the following playground
+When you look at the following playground
 
 * [Playground Example Fast Build](https://www.babylonjs-playground.com/#MJNICE)
 
@@ -154,7 +154,7 @@ You can also see the skybox and ground by using the options parameter and settin
 ### Options Parameters
 As you can see in the above playground the `createDefaultEnvironment` method takes an options parameter. The full range of environmental helper options properties are available from the [API](http://doc.babylonjs.com/api/interfaces/babylon.ienvironmenthelperoptions)
 
-So for example
+So, for example
 
 to prevent the creation of the skybox:
 ```javascript
@@ -179,7 +179,7 @@ var helper = scene.createDefaultEnvironment({
 
 Since the `createDefaultEnvironment` method returns an `environmentalHelper` object then all the properties and methods of this object (as in the [API](http://doc.babylonjs.com/api/classes/babylon.environmenthelper)) are available. 
 
-So for example if the environment color is not your favorite choice you can modify it after creation
+So, for example if the environment color is not your favorite choice you can modify it after creation
 
 ```javascript
 var helper = scene.createDefaultEnvironment();
@@ -220,9 +220,9 @@ var texture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", scene)
 scene.createDefaultSkybox(texture, true, 100);
 ```
 
-In this case the first two parameters used give the texture for the skybox and  specify that [a PBRMaterial](/how_to/physically_based_rendering) is to be used (second parameter, true) as opposed to a standard material (second parameter, false, default value).
+In this case the first two parameters used give the texture for the skybox and specify that [a PBRMaterial](/how_to/physically_based_rendering) is to be used (second parameter, _true_) as opposed to a standard material (second parameter, _false_ - default value).
 
-The third parameter defines the scale of your skybox (this value depends on the scale of your scene), the default value is 1000.
+The third parameter defines the scale of your skybox (this value depends on the scale of your scene), the default value is _1000_.
 
 * [Playground Example Skybox](https://www.babylonjs-playground.com/#MJNICE#14)
 
@@ -237,7 +237,7 @@ The camera adjusts its position automatically to make the world viewable dependi
 
 ## Importing Models for Your World
 
-Since the `createDefault......` helpers take into account any models in the scene they can only be applied after the model is loaded and so are placed in the callback function. For example
+Since the `createDefault...` helpers take into account any models in the scene they can only be applied after the model is loaded and so are placed in the callback function. For example
 
 ```javascript
 BABYLON.SceneLoader.Append("https://www.babylonjs.com/Assets/DamagedHelmet/glTF/", "DamagedHelmet.gltf", scene, function (meshes) {
@@ -246,7 +246,7 @@ BABYLON.SceneLoader.Append("https://www.babylonjs.com/Assets/DamagedHelmet/glTF/
 });
 ```
 
-There is then a problem. When creating a scene  Babylon.js checks for a camera. When importing models the existence of a camera will be checked for before the model has finished loading and so the scene will fail.
+There is then a problem. When creating a scene Babylon.js checks for a camera. When importing models, the existence of a camera will be checked for before the model has finished loading and so the scene will fail.
 
 The solution is to replace the `createScene` function with the `delayCreateScene` function. Whether in a playground or in your own project this is a direct replacement.
 
