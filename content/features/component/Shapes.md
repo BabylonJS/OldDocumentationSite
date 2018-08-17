@@ -94,7 +94,7 @@ To create your own custom mesh requires you to know the internal data structure 
 
 Want to know more about the facets that make up a mesh then enabling _FacetData_ is just for you. You can obtain a facets position and its mathematical normal for example. 
 
-[Further Reading](#further-readin) will show you how to do all of these.
+[Further Reading](#further-reading) will show you how to do all of these.
 
 ## Other Mesh Features
 
