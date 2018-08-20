@@ -14,7 +14,7 @@ Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylo
 
 ## Types
 
-There are two types of predefined meshes, [set shapes](/How_To/Set_Shapes) and [parametric shapes](/How_To/Parametric Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
+There are two types of predefined meshes, [set shapes](/How_To/Set_Shapes) and [parametric shapes](/How_To/Parametric_Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
 
 Mention has already been made of the horizonal plane called the ground which is your common flat everyday surface like a floor. You will be pleased to know that it comes in other varieties to provide an outside terrain with rolling hills and valleys. For a view from a distance terrain you use [GroundFromAHeightMap](/babylon101/Height_Map). If you literally want rolling hills add the extension [dynamic terrain][/Extension/dynamic_terrain] which gives you an infinite landscape to fly over.
 
@@ -94,7 +94,7 @@ To create your own custom mesh requires you to know the internal data structure 
 
 Want to know more about the facets that make up a mesh then enabling _FacetData_ is just for you. You can obtain a facets position and its mathematical normal for example. 
 
-[Further Reading](#further-readin) will show you how to do all of these.
+[Further Reading](#further-reading) will show you how to do all of these.
 
 ## Other Mesh Features
 
