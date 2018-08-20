@@ -2,7 +2,7 @@
 
 ![Screenshot](/img/extensions/materials/lava.jpg)
 
-## * [Playground example]( https://www.babylonjs-playground.com/#1BLVWO)
+## * [Playground example](https://www.babylonjs-playground.com/#1BLVWO#25)
 
 
 Lava material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.lavaMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.lavaMaterial.js)
@@ -25,6 +25,14 @@ ground.material = lavaMaterial;
 The diffuse texture will be the color of your lava, the noise texture will represent the lava deformation.
 Notice that this material will update each vertex position of your object. If there are not enough vertices, 
 some artefacts may appears.
+
+## Lights
+By default, the material is subject to lights. If you wish, you can cancel this by relying on the unlit property.
+```
+material.unlit = true;
+```
+
+[Online Demo](https://www.babylonjs-playground.com/#1BLVWO#22)
 
 ## Customize the lava material
 
