@@ -108,14 +108,7 @@
                     "icon": "icons/meshbutton3d.jpg", 
                     "description": "Uses MeshButton3D to create custom 3D buttons",
                     "PGID": "#8Y780Y#20"
-                },                
-                {
-                    "title": "Chart3D - Bar Graph",
-                    "doc": "https://doc.babylonjs.com/how_to/chart3d",
-                    "icon": "icons/chart3d.jpg", 
-                    "description": "Babylon.js 3D charting provides support for chart controls like bar graphes, etc.",
-                    "PGID": "#NUMA1E#2"
-                },                
+                },
                 {
                     "title": "App Bar (AttachToBoxBehavior)",
                     "doc": "https://doc.babylonjs.com/how_to/meshbehavior",
