@@ -74,7 +74,7 @@
             });
             
             // generate the html. can be nicer but...
-            var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + strQuery + '</a></h2></div>';
+            var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + query + '</a></h2></div>';
 
             html += '<div class="filters">';
             // add filters:
