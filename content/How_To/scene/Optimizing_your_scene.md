@@ -137,6 +137,8 @@ https://www.babylonjs-playground.com/#HH8T00#1
 
 Please note that each counter is *PerfCounter* object which can provide multiple properties like average, total, min, max, count, etc.
 
+GPU timer require a special extension (EXT_DISJOINT_TIMER_QUERY) in order to work. This extension has been disabled due to Spectre and Meltdown on all major browsers. This is still possible to use by enabling the flag gfx.webrender.debug.gpu-time-queries on firefox at the moment. This should be re-enabled soon in the browsers.
+
 ### SceneInstrumentation
 The SceneInstrumentation class allows you to get the following counters (per scene):
 * *activeMeshesEvaluationTimeCounter*: Time (in milliseconds) spent to evaluable active meshes (based on active camra frustum). Must be turned on with `instrumentation.captureActiveMeshesEvaluationTime = true`.
@@ -150,6 +152,8 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 * *spritesRenderTimeCounter*: Time (in milliseconds) spent rendering sprites. Must be turned on with `instrumentation.captureSpritesRenderTime = true`.
 * *physicsTimeCounter*: Time (in milliseconds) spent simulating physics. Must be turned on with `instrumentation.capturePhysicsTime = true`.
 * *cameraRenderTimeCounter*: Time (in milliseconds) spent to render a camera. Must be turned on with `instrumentation.captureCameraRenderTime = true`.
+
+Those counters are all resetted to 0 at the beginning of each frame. Therefore it is easier to access them in the onAfterRender callback or observable.
 
 # Further Reading
 

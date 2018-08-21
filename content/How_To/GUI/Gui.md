@@ -801,4 +801,3 @@ myMesh.layerMask = 1;
 ## Further reading
 
 * [How To Use Babylon GUI3D](http://doc.babylonjs.com/how_to/gui3d)
-* [How To Use Babylon Chart3D](http://doc.babylonjs.com/how_to/chart3d)
