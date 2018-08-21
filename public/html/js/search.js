@@ -74,9 +74,10 @@
             });
             
             // generate the html. can be nicer but...
-            var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + query + '</a></h2></div>';
+            // var html = '<div class="searchHeader"><h2>Results for <a href="/search?q=' + query + '">' + query + '</a></h2></div>';
+            $('#searchHeaderContent').text(strQuery);
 
-            html += '<div class="filters">';
+            var html = '<div class="filters">';
             // add filters:
 
             // first add "all":
@@ -129,7 +130,7 @@
             })            
 
 
-            $('.search-content').html(html);
+            $('.search-content').append(html);
 
             $('.search-content').on('click', '.basicFilter', function (filter) {
                 var version = $(this).data('version');
