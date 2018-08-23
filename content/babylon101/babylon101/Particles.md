@@ -564,6 +564,22 @@ The particles are emitted in the direction of the surface normals, ie the lines 
 
 With `hemisphericEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
 
+### Cylinder Emitter
+
+You can create a cylinder emitter with a given radius, height, radiusRange, directionRandomizer with the following:
+
+```javascript
+var cylinderEmitter = particleSystem.createCylinderEmitter(1,1,0,0);
+```
+The returned `cylinderEmitter` object can be used to change the value of the radius, height, etc.
+
+The particles are emitted in the direction of the surface normals, ie outward from the cylinder
+
+* [Playground Example - Cylinder Emitter](https://www.babylonjs-playground.com/#UL4WC0)
+
+With `cylinderEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+With `cylinderEmitter.directionRandomizer` can change how much to randomize the particles direction.
+
 ### Cone Emitter
 
 To create a cone emitter you use, for example
