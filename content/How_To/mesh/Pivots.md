@@ -41,7 +41,7 @@ box.position.x = 2;
 ![Box Repositioned after pivot added < 3.2](/img/how_to/pivots/pivot5.png)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 5.
 
-From Babylon.js v3.2 there is a breaking change and setting the pivot no longer produces a change in position of the mesh unless the mesh is. 
+From Babylon.js v3.2 there is a breaking change and setting the pivot no longer produces a change in position of the mesh unless the mesh has been scaled. 
 
 ![Box Repositioned after pivot added from 3.2](/img/how_to/pivots/pivot6.png)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 6.
