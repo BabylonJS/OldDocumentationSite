@@ -159,6 +159,14 @@ To enjoy PBR material rendering, you should have an environmnent texture in your
 
 However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
 
+## Draco compression
+
+On the export form, the _Use Draco compression_ option enables the Draco compression. It needs [Node.js](https://nodejs.org) and [gltf-pipeline](https://github.com/AnalyticalGraphicsInc/gltf-pipeline) in order to work.
+
+To install the Node.js, go to the web site download and install it.
+Then to install gltf-pipeline, open et normal shell (cmd.exe or powershell.exe) and run the following command `npm install -g gltf-pipeline`.
+Once they are installed, check the _Use Draco compression_ option and the compression will be automatically done at the export end.
+
 # How to export 3D model with animation to .babylon / .gltf format
 
 ## Single animation clip
