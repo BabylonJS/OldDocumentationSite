@@ -295,6 +295,14 @@ To obtain such texture, either:
 
 Using _Unreal Engine 4 (Packed)_ configuration, the occlusion, roughness and metallic are combined together into a single ORM texture.
 
+## Draco compression
+
+On the export form, the _Use Draco compression_ option enables the Draco compression. It needs [Node.js](https://nodejs.org) and [gltf-pipeline](https://github.com/AnalyticalGraphicsInc/gltf-pipeline) in order to work.
+
+To install the Node.js, go to the web site download and install it.
+Then to install gltf-pipeline, open et normal shell (cmd.exe or powershell.exe) and run the following command `npm install -g gltf-pipeline`.
+Once they are installed, check the _Use Draco compression_ option and the compression will be automatically done at the export end.
+
 # How to export multiple animation clips to .gltf format
 
 You can export multiple animations clips and play one of them depending on the situation. For example, a character would have "Walk", "Run" and "Jump" animations, each spread along the timeline.
