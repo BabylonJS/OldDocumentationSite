@@ -22,7 +22,7 @@ This manager is mandatory, even if you want to create one sprite. You just have 
 
 ```javascript
 // Create a sprite manager
-var spriteManagerTrees = new BABYLON.SpriteManager("treesManagr", "Assets/Palm-arecaceae.png", 2000, 800, scene);
+var spriteManagerTrees = new BABYLON.SpriteManager("treesManager", "Assets/Palm-arecaceae.png", 2000, 800, scene);
 ```
 
 When creating a sprite manager, you have to decide a few parameters:
@@ -34,7 +34,7 @@ When creating a sprite manager, you have to decide a few parameters:
 
 To give another example, look at this snippet:
 ```javascript
-var spriteManagerPlayer = new BABYLON.SpriteManager("playerManagr","Assets/Player.png", 2, {width: 64, height: 64}, scene);
+var spriteManagerPlayer = new BABYLON.SpriteManager("playerManager","Assets/Player.png", 2, {width: 64, height: 64}, scene);
 ```
 
 This time, we only want 2 instances, and we said that our sprite’s size is 64x64. Here is what our image looks like:

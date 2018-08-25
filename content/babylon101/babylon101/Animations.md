@@ -221,7 +221,7 @@ Here is the list of functions that you can change:
 You can use an extended function to create a quick animation:
 
 ```Javascript
-Animation.CreateAndStartAnimation = function(name, mesh, tartgetProperty, framePerSecond, totalFrame, from, to, loopMode);
+Animation.CreateAndStartAnimation = function(name, mesh, targetProperty, framePerSecond, totalFrame, from, to, loopMode);
 ```
 
 To be able to use this function, you need to know that :
@@ -309,7 +309,7 @@ overrides.blendingSpeed = 0.1;
 skeleton.animationPropertiesOverride = overrides;
 ```
 
-Here is the list of properties that can be overriden:
+Here is the list of properties that can be overridden:
 * enableBlending
 * blendingSpeed
 * loopMode
@@ -346,7 +346,7 @@ There are three possible values you can give for EasingMode:
 - ```BABYLON.EasingFunction.EASINGMODE_EASEOUT``` : Interpolation follows 100% interpolation minus the output of the formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEINOUT``` : Interpolation uses EaseIn for the first half of the animation and EaseOut for the second half.
 
-Here is a straightforward sample to animate a torus within a ```CirleEase``` easing function :
+Here is a straightforward sample to animate a torus within a ```CircleEase``` easing function :
 
 ```Javascript
 //Create a Vector3 animation at 30 FPS
@@ -364,7 +364,7 @@ animationTorus.setKeys(keysTorus);
 // Creating an easing function
 var easingFunction = new BABYLON.CircleEase();
 
-// For each easing function, you can choose beetween EASEIN (default), EASEOUT, EASEINOUT
+// For each easing function, you can choose between EASEIN (default), EASEOUT, EASEINOUT
 easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
 
 // Adding the easing function to the animation
