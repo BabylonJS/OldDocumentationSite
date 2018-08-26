@@ -25,7 +25,7 @@ myPoints.push(point2);
 var point3 = new BABYLON.Vector3(0, 1, 0);
 myPoints.push(point3);
 
-//or possible the alternative
+//or the possible alternative
 
 var myPoints =[
     new BABYLON.Vector3(0, 0, 0),
@@ -35,7 +35,7 @@ var myPoints =[
 
 ```
 
-The array of points MUST then be passed to _CreateLines_ with the points option
+The array of points MUST be passed to the _CreateLines_ function as the _points_ option
 
 ```javascript
 //creates lines

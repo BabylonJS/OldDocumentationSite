@@ -157,7 +157,7 @@ This is the same as LIGHTMAP_DEFAULT except only the shadows casted from this li
 * [Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
 
 ## Projection Texture
-In some cases it would be nice to define the diffuse color of the light (Diffuse gives the basic color to an object) from a texture insted of a constant color. Imagine that you are trying to simulate the light effects inside of a cathedral. The light going through the stained glasses will be projected on the ground. This is also true for the light coming from a projector or the light effects you can see in a disco.
+In some cases it would be nice to define the diffuse color of the light (Diffuse gives the basic color to an object) from a texture instead of a constant color. Imagine that you are trying to simulate the light effects inside of a cathedral. The light going through the stained glasses will be projected on the ground. This is also true for the light coming from a projector or the light effects you can see in a disco.
 
 In order to support this feature, you can rely on the `projectionTexture` property of the lights. This is only supported by the **SpotLight** so far.
 
@@ -171,8 +171,8 @@ spotLight.projectionTexture = new BABYLON.Texture("textures/stainedGlass.png", s
 
 In order to control the projection orientation and range, you can also rely on the following properties:
 
-* ```projectionTextureLightNear``` : near range of the texture projection. If a plane is befor the range in light space, there is no texture projection.
-* ```projectionTextureLightFar``` : far range of the texture projection. If a plane is befor the range in light space, there is no texture projection.
+* ```projectionTextureLightNear``` : near range of the texture projection. If a plane is before the range in light space, there is no texture projection.
+* ```projectionTextureLightFar``` : far range of the texture projection. If a plane is before the range in light space, there is no texture projection.
 * ```projectionTextureUpDirection``` : helps defining the light space which is oriented towards the light direction and aligned with the up direction.
 
 The projected information is multiplied against the normal light values to better fit in the Babylon JS lighting. It also only impact the diffuse value. So it might be necessary to change the specular color of the light to better fit with the scene.

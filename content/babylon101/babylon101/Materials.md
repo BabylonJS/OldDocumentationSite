@@ -44,7 +44,7 @@ myMaterial.ambientColor = new BABYLON.Color3(0.23, 0.98, 0.53);
 mesh.material = myMaterial;
 ```
 ### Diffuse Color Example
-To give an idea how material diffuse color reacts to diffuse light color the following playground example shows how different color materials react to white, red, green and blue diffuse spot lights.
+To give an idea on how the material diffuse color reacts to the diffuse light color the following playground example shows how different color materials react to white, red, green and blue diffuse spot lights.
 
 * [Playground Example - Material Color Reaction to Light Color _direct click or edit to view_](http://www.babylonjs-playground.com/#20OAV9#206)  
 
@@ -128,7 +128,7 @@ For the back faces of the cube to be visible through the transparent areas of th
 This is a method for efficiently drawing the 2D screen rendering of the 3D model. Usually there is no need to draw the back face of a cube, or other object, 
 as it will be hidden by the front face. In BabylonJS the default setting is, as you might expect, set to true.
 
-Looking at the images below, when the material propery _backFaceCulling_ is true you can see that the transparent areas around the 
+Looking at the images below, when the material property _backFaceCulling_ is true you can see that the transparent areas around the 
 dog are still transparent, you can see the background through them. However, you cannot see the images on the back faces as they have been culled (or removed). 
 When _backFaceCulling_ is false the back faces are not removed during rendering so they can be seen through the transparent areas of the front faces. 
 

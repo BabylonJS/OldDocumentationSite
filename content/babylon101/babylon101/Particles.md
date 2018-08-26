@@ -58,7 +58,7 @@ particleSystem.disposeOnStop = true;
 Starting with Babylon.js v3.3, you can now specify a pre-warming period to make sure your system is in a correct state before rendering.
 
 To do so, you need to setup two properties:
-- `system.preWarmCycles`: Gets or sets a value indicating how many cycles (or frames) must be executed before first rendering (this value has to be set before starting the system). Default is 0 (ie. no pre-warmimg)
+- `system.preWarmCycles`: Gets or sets a value indicating how many cycles (or frames) must be executed before first rendering (this value has to be set before starting the system). Default is 0 (ie. no pre-warming)
 - `system.preWarmStepOffset`: Gets or sets a value indicating the time step multiplier to use in pre-warm mode (default is 1)
 
 So if you set your system like this:
@@ -129,7 +129,7 @@ particleSystem.maxEmitBox = new BABYLON.Vector3(1, 0, 0);
  * [Playground Example - Basic Creation Small Spread](https://www.babylonjs-playground.com/#TUNZFH)
  * [Playground Example - Basic Creation Larger Spread](https://www.babylonjs-playground.com/#TUNZFH#1)
 
-Fortunately things can be made more interesting very soon with the setting of more propeties. Read on.  
+Fortunately things can be made more interesting very soon with the setting of more properties. Read on.  
 
 ## Fine Tune Particle System
 See how to change the lifetime, size, and color of the particles, their rates of emission, direction of travel (optionally affected by gravity). You can also affect their rotation, speed and cloud shape. Below you can find [playground examples]() where you can alter some of these parameters.
@@ -274,7 +274,7 @@ particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
 particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
 ```
 
-`BLENDMODE_ONEONE` is the deault and will be used if `blendMode` is not specified.
+`BLENDMODE_ONEONE` is the default and will be used if `blendMode` is not specified.
 
 * `BLENDMODE_ONEONE` - colors are added without alpha affecting the result;
 * `BLENDMODE_STANDARD` - colors are added using particle’s alpha (ie. color * (1 - alpha) + particleColor * alpha).
@@ -404,13 +404,13 @@ To remove a gradient you can call `particleSystem.removeVelocityGradient(0.5)`.
 You can define a limit for velocity over time with gradients. This limit will be used to check the current speed of the particle and if the limit is reached then a factor will be applied to the speed.
 You can define this factor with `particleSystem.limitVelocityDamping`. 
 
-To add a limitvelocity gradient just call the following code:
+To add a limit velocity gradient just call the following code:
 
 ```
 particleSystem.addLimitVelocityGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the limit velocity to use. In this case, the particle speed will be check directly after birth and if it is bigger than 0.5 then the damping parameter will be applied (so velocity will becode velocity * damping).
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the limit velocity to use. In this case, the particle speed will be check directly after birth and if it is bigger than 0.5 then the damping parameter will be applied (so velocity will be code velocity * damping).
 
 It is recommended to at least define a gradient for 0 and 1:
 
