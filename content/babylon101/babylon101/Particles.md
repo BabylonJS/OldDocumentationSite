@@ -354,7 +354,7 @@ particleSystem.addAngularSpeedGradient(0, 0.5, 0.8);
 particleSystem.addAngularSpeedGradient(1.0, 3, 4);
 ```
 
-In this case the angular speed of the particle will be randomly picked between the two values when the gradient will be reached.
+In this case the angular speed of the particle will randomly be picked between the two values when the gradient will be reached.
 
 To remove a gradient you can call `particleSystem.removeAngularSpeedGradient(0.5)`.
 
@@ -394,7 +394,7 @@ particleSystem.addVelocityGradient(0, 0.5, 0.8);
 particleSystem.addVelocityGradient(1.0, 3, 4);
 ```
 
-In this case the velocity of the particle will be randomly picked between the two values when the gradient will be reached.
+In this case the velocity of the particle will randomly be picked between the two values when the gradient will be reached.
 
 Here is an example of velocity applied to a particle system: https://www.babylonjs-playground.com/#3W04PW#0
 
@@ -428,11 +428,45 @@ particleSystem.addLimitVelocityGradient(0, 0.5, 0.8);
 particleSystem.addLimitVelocityGradient(1.0, 3, 4);
 ```
 
-In this case the limit velocity of the particle will be randomly picked between the two values when the gradient will be reached.
+In this case the limit velocity of the particle will randomly be picked between the two values when the gradient will be reached.
 
 Here is an example of limit velocity applied to a particle system: https://www.babylonjs-playground.com/#9GBBPM#2
 
 To remove a gradient you can call `particleSystem.removeLimitVelocityGradient(0.5)`.
+
+### Emit rate over time
+You can define particle emit rate with gradients. The emit rate over time will overwrite the value of `system.emitRate` property.
+
+To add an emit rate gradient just call the following code:
+
+```
+particleSystem.addEmitRateGradient(0, 10);
+```
+
+**Please note that emit rate gradient will only work if the system has a determined life time meaning that you must define the `system.targetStopDuration` property**
+
+The first parameter defines the gradient (0 means at system start and 1 means at system end). The second parameter is the emit rate to use. In this case the system will start by emitting 10 particles per frame.
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addEmitRateGradient(0, 10);
+particleSystem.addEmitRateGradient(1.0, 500);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addEmitRateGradient(0, 5, 10);
+particleSystem.addEmitRateGradient(1.0, 800, 1000);
+```
+
+In this case the emit rate will randomly be picked between the two values when the gradient will be reached.
+
+Here is an example of emit rate gradients applied to a particle system: https://www.babylonjs-playground.com/#3NM14X#0
+
+To remove a gradient you can call `particleSystem.removeEmitRateGradient(0.5)`. 
 
 ### Alignment
 By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
