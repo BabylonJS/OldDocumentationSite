@@ -702,6 +702,7 @@ The following features are not supported by GPU particles due to their inner nat
 - Animation sheets
 - disposeOnStop
 - Dual values per gradient (only one value is supported)
+- Emit rate gradients are not supported
 
 ### Playground
 
