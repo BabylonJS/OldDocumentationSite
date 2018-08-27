@@ -97,6 +97,8 @@ The _Scale factor_ can be used to rescale the whole world. If you set a scale fa
 
 The _Texture quality_ sets the convertion quality of bitmap to JPEG. At 100 (the maximum value), it gives the highest image quality but no file size reduction. On the contrary at 0 (the minimum value), it gives the lowest image quality but the greatest file size reduction. By default the _Texture quality_ is set to 100.
 
+The _Use Draco comression_ option is only available for gltf and glb output format. More detail [here](/resources/Maya_to_glTF#draco-compression).
+
 # What you should know
 
 ## Camera
