@@ -20,7 +20,7 @@ If you want to see your scene smoothed as in BJS, you have to select all your ob
 
 ![blender-smooth-shading](/img/exporters/blender/blender-smooth-shading.png)
 
-Now, you're cube looks ugly. You have to set up its sharpness, by adding an *edge split* modifier, and play with edge angle and sharp edges. Jod done!
+Now, you're cube looks ugly. You have to set up its sharpness, by adding an *edge split* modifier, and play with edge angle and sharp edges. Job done!
 
 ![blender-sharp-edges](/img/exporters/blender/blender-smooth-shading-sharpness.png)
 
