@@ -680,6 +680,27 @@ The particles are emitted in the direction of the surface normals, ie outward fr
 With `cylinderEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
 With `cylinderEmitter.directionRandomizer` can change how much to randomize the particles direction.
 
+The `createDirectedCylinderEmitter` method takes three parameters in the following order
+
+* radius: Number,
+* height: Number,
+* radiusRange: Number,
+* direction1: Vector3, 
+* direction2: Vector3, 
+ 
+
+The returned `cylinderEmitter` object can be used to change the values of these properties.
+
+```javascript
+cylinderEmitter.radius = 3.4;
+cylinderEmitter.direction1 = new BABYLON.Vector3(-5, 2, 1); 
+cylinderEmitter.direction2 = new BABYLON.Vector3(5, 2, -1);    
+```
+
+The first parameter is the radius the second is direction1 and third is direction2. (The direction will be generated randomly between direction1 and direction2)
+
+* [Playground Example - Cylinder Emitter with Directions](https://www.babylonjs-playground.com/#UL4WC0#5)
+
 ### Cone Emitter
 
 To create a cone emitter you use, for example
