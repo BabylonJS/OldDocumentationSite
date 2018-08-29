@@ -469,6 +469,38 @@ Here is an example of emit rate gradients applied to a particle system: https://
 
 To remove a gradient you can call `particleSystem.removeEmitRateGradient(0.5)`. 
 
+### Start size over time
+To add an start size gradient just call the following code:
+
+```
+particleSystem.addStartSizeGradient(0, 2);
+```
+
+**Please note that start size gradient will only work if the system has a determined life time meaning that you must define the `system.targetStopDuration` property**
+
+The first parameter defines the gradient (0 means at system start and 1 means at system end). The second parameter is the start size to use. In this case the system will start by emitting particles of size 2 times the original size. (eg. if size is set to 2 and start size is set to 3 the resulting output size will be 6)
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addStartSizeGradient(0, 10);
+particleSystem.addStartSizeGradient(1.0, 500);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addStartSizeGradient(0, 5, 10);
+particleSystem.addStartSizeGradient(1.0, 800, 1000);
+```
+
+In this case the start size will randomly be picked between the two values when the gradient will be reached.
+
+Here is an example of start size gradients applied to a particle system: https://www.babylonjs-playground.com/#3NM14X#14
+
+To remove a gradient you can call `particleSystem.removeStartSizeGradient(0.5)`. 
+
 ### Alignment
 By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
 
@@ -704,6 +736,7 @@ The following features are not supported by GPU particles due to their inner nat
 - disposeOnStop
 - Dual values per gradient (only one value is supported)
 - Emit rate gradients are not supported
+- Start size gradients are not supported
 
 ### Playground
 
