@@ -478,7 +478,7 @@ particleSystem.addStartSizeGradient(0, 2);
 
 **Please note that start size gradient will only work if the system has a determined life time meaning that you must define the `system.targetStopDuration` property**
 
-The first parameter defines the gradient (0 means at system start and 1 means at system end). The second parameter is the start size to use. In this case the system will start by emitting particles of size 2 times the original size. (eg. if size is set to 2 and start size is set to 3 the resulting output size will be 6)
+The first parameter defines the gradient (0 means at system start and 1 means at system end). The second parameter is the start size scale to use. In this case the system will start by emitting particles of size 2 times the original size. (eg. if size is set to 2 and start size is set to 3 the resulting output size will be 6)
 It is recommended to at least define a gradient for 0 and 1:
 
 ```
