@@ -458,8 +458,8 @@ You can add as much gradients as you want as long as the gradient value is betwe
 You can also define a more complex construct by providing two values per gradient:
 
 ```
-particleSystem.addLimitVelocityGradient(0, 0.5, 0.8);
-particleSystem.addLimitVelocityGradient(1.0, 3, 4);
+particleSystem.addDragGradient(0, 0.5, 0.8);
+particleSystem.addDragGradient(1.0, 3, 4);
 ```
 
 In this case the drag factor of the particle will randomly be picked between the two values when the gradient will be reached.
