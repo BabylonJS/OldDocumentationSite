@@ -889,6 +889,10 @@
                 {
                     "title": "Using Path Finder",
                     "filename": "Using_PathFinder"
+                },
+                {
+                    "title": "Creating Prefabs",
+                    "filename": "Creating_Prefabs"
                 }
             ]
         },
