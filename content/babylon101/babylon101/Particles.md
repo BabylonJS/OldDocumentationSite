@@ -436,7 +436,7 @@ Here is an example of limit velocity applied to a particle system: https://www.b
 To remove a gradient you can call `particleSystem.removeLimitVelocityGradient(0.5)`.
 
 ### Drag factor
-You can define a drag factor over time with gradients. This factor will be used to simulate air friction by applying a drag factor to the particle direction. For instance, if your drag factor is set to 0.8 then only 80% of the particle direction will be added to particle position
+You can define a drag factor over time with gradients. This factor will be used to simulate air friction by applying a drag factor to the particle direction. For instance, if your drag factor is set to 0.8 then only 20% of the particle direction will be added to particle position.
 
 To add a drag gradient just call the following code:
 
@@ -444,7 +444,7 @@ To add a drag gradient just call the following code:
 particleSystem.addDragGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the drag factor to use. In this case, the particle position will be `particle.position = particle.direction * 0.5`.
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the drag factor to use. In this case, the particle position will be `particle.position = particle.direction * (1.0 - 0.5)`.
 
 It is recommended to at least define a gradient for 0 and 1:
 
@@ -459,7 +459,7 @@ You can also define a more complex construct by providing two values per gradien
 
 ```
 particleSystem.addDragGradient(0, 0.5, 0.8);
-particleSystem.addDragGradient(1.0, 3, 4);
+particleSystem.addDragGradient(1.0, 0, 0.1);
 ```
 
 In this case the drag factor of the particle will randomly be picked between the two values when the gradient will be reached.
