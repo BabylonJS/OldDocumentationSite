@@ -130,7 +130,7 @@ new BABYLON.HDRCubeTexture("textures/filename", scene);
 ```
 
 | Overview | Filename | Viewer | Size |
-| :---: | --- | --- | |
+| :---: | --- | --- | --- |
 | <img src = 'http://www.babylonjs-playground.com/textures/country.hdr_thumb.jpg' width = '64' height = '64'> | country.hdr | [take a look](http://playground.babylonjs.com/#CGA05F) | 5.8 MB |
 | <img src = 'http://www.babylonjs-playground.com/textures/environment.hdr_thumb.jpg' width = '64' height = '64'> | environment.hdr | [take a look](http://playground.babylonjs.com/#CGA05F#9) | 5.8 MB |
 | <img src = 'http://www.babylonjs-playground.com/textures/forest.hdr_thumb.jpg' width = '64' height = '64'> | forest.hdr | [take a look](http://playground.babylonjs.com/#CGA05F#3) | 7.2 MB |
