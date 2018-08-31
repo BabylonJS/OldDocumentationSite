@@ -51,7 +51,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * magFilter, minFilter
     * Image format conversion to jpg / png
 
-## Conversion Standard to PBR materials
+# Conversion Standard to PBR materials
 
 The plugin uses core specifications of glTF, i.e. without any extension. This implies that only PBR materials are exported.
 
@@ -63,7 +63,7 @@ To support compatibility with 3ds max Standard materials, they are converted to 
 
 Note that the conversion duration scales with images size and may have a severe impact on export duration.
 
-## PBR materials
+# PBR materials
 
 The physical materials are exported to glTF format as PBR materials.
 
@@ -73,7 +73,7 @@ Involved parameters are highlighted bellow and described in the following sectio
 
 Remember that in 3DS MAX, when a map is assigned to a parameter, the basic parameter value is ignored. This behaviour is kept when exporting.
 
-### Base color and Transparency
+## Base color and Transparency
 
 Only the color of base color is used. The weight of base color is ignored.
 
@@ -93,7 +93,7 @@ The basic parameter value is used as default value when binded map is not provid
 
 ![glTF base color map and transparency weight combined](/img/exporters/3DSMax/17_gltf_baseColor_transparencyWeight_combined.jpg)
 
-### Metalness and Roughness
+## Metalness and Roughness
 
 The metalness is used.
 
@@ -113,19 +113,30 @@ Note that the duration of this process scales with images size and may have a se
 
 Like for base color and transparency, the basic parameter value is used as default value when binded map is not provided.
 
-### Emission
+## Emission
 
 The exported emission color value is computed based on all 4 parameters: emission weight, color, luminance and Kelvin.
 
 However, the exported emission color map is identical to the specified one in generic map. This mean that emisson weight, luminance and Kelvin __are not__ used. The emission map is assumed to be precomputed.
 
-### Ambient occlusion
+## Ambient occlusion
 
 The diffuse roughness map is used as ambient occlusion.
 
-### Bump map
+## Bump map
 
 The bump map (or normal map) and its weight are used.
+
+# Standard Surface Arnold material
+
+The Standard Surface Arnold material is exported to glTF format as a PBR material.
+
+Involved parameters are highlighted bellow.
+
+![3DS Max Standard Surface parameters](/img/exporters/3DSMax/standardSurfaceParameters.jpg)
+
+When exporting, if a map is assigned to a parameter, the basic parameter value is ignored.
+The parameter descriptions are the same as above for the PBR materials except that the ambient occlusion is not exported (the diffuse roughness map is not handled).
 
 # What you should know
 
