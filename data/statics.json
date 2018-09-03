@@ -135,6 +135,11 @@
                     "filename": "Fast_Build"
                 },
                 {
+                    "title": "Interact with a Scene",
+                    "level": 1,
+                    "filename": "interactions"
+                },
+                {
                     "title": "Use Multiple Scenes",
                     "level": 1,
                     "filename": "Multi_Scenes"
