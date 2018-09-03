@@ -200,7 +200,7 @@ To get the object's angular velocity (a BABYLON.Quaternion):
 impostor.getAngularVelocity();
 ```
 
-To set the object's linear velocity use:
+To set the object's angular velocity use:
 ```javascript
 impostor.setAngularVelocity(new BABYLON.Quaternion(0,1,0,0));
 ```

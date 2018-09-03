@@ -9,12 +9,12 @@ Morph targets are a new feature introduced with Babylon.js v3.0.
 ![Morph Target Before](/img/how_to/morphtargets0.jpg) ![Morph Target After](/img/how_to/morphtargets.jpg)
 
 ## Basics
-Meshes can be deformed by using morph targets. A morph target must be built from a mesh with the **EXACT** same amount of vertices as the original mesh.
+Meshes can be deformed by using morph targets. A morph target must be built from a mesh with the **EXACT** same number of vertices as the original mesh.
 Morph targets are used by the GPU to create the final geometry by applying the following formula:
 
 final mesh = original mesh + sum((morph targets - original mesh) * morph targets influences)
 
-For instance you can use morph targets to simulate the opening of a mouth. The initial mesh has a closed mouth. The morph target can be the same mesh but with an opened mouth. Then by changing the influence of the morph target (from 0 to 1) you can display either a closed or an opened mouth or a mix of both.
+For instance, you can use morph targets to simulate the opening of a mouth. The initial mesh has a closed mouth. The morph target can be the same mesh but with an opened mouth. Then by changing the influence of the morph target (from 0 to 1) you can display either a closed or an opened mouth or a mix of both.
 
 You can find live examples here: 
 * [Playground Example Animated](https://www.babylonjs-playground.com/#HPV2TZ#8)  
@@ -31,7 +31,7 @@ var manager = new BABYLON.MorphTargetManager();
 sphere.morphTargetManager = manager;
 ```
 
-Then you can create `MorphTarget` either with the FromMesh static function:
+Then you can create `MorphTarget` either with the `FromMesh` static function:
 
 ```
 var target = BABYLON.MorphTarget.FromMesh(sphereTarget, "target", 0.25);

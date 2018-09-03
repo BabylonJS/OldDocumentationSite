@@ -58,7 +58,7 @@ particleSystem.disposeOnStop = true;
 Starting with Babylon.js v3.3, you can now specify a pre-warming period to make sure your system is in a correct state before rendering.
 
 To do so, you need to setup two properties:
-- `system.preWarmCycles`: Gets or sets a value indicating how many cycles (or frames) must be executed before first rendering (this value has to be set before starting the system). Default is 0 (ie. no pre-warmimg)
+- `system.preWarmCycles`: Gets or sets a value indicating how many cycles (or frames) must be executed before first rendering (this value has to be set before starting the system). Default is 0 (ie. no pre-warming)
 - `system.preWarmStepOffset`: Gets or sets a value indicating the time step multiplier to use in pre-warm mode (default is 1)
 
 So if you set your system like this:
@@ -129,7 +129,7 @@ particleSystem.maxEmitBox = new BABYLON.Vector3(1, 0, 0);
  * [Playground Example - Basic Creation Small Spread](https://www.babylonjs-playground.com/#TUNZFH)
  * [Playground Example - Basic Creation Larger Spread](https://www.babylonjs-playground.com/#TUNZFH#1)
 
-Fortunately things can be made more interesting very soon with the setting of more propeties. Read on.  
+Fortunately things can be made more interesting very soon with the setting of more properties. Read on.  
 
 ## Fine Tune Particle System
 See how to change the lifetime, size, and color of the particles, their rates of emission, direction of travel (optionally affected by gravity). You can also affect their rotation, speed and cloud shape. Below you can find [playground examples]() where you can alter some of these parameters.
@@ -274,11 +274,12 @@ particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_ONEONE;
 particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
 ```
 
-`BLENDMODE_ONEONE` is the deault and will be used if `blendMode` is not specified.
+`BLENDMODE_ONEONE` is the default and will be used if `blendMode` is not specified.
 
 * `BLENDMODE_ONEONE` - colors are added without alpha affecting the result;
 * `BLENDMODE_STANDARD` - colors are added using particle’s alpha (ie. color * (1 - alpha) + particleColor * alpha).
 * `BLENDMODE_ADD` - colors are added but only particle color uses particle’s alpha (ie. color + particleColor * alpha).
+* `BLENDMODE_MULTIPLY` - colors are multiplied and added to (1 - alpha) (ie. color * particleColor +  1 - alpha). [Demo here](https://playground.babylonjs.com/#KUDH9F#1)
 
 ### Rates
 The `emitRate` determines the number of particles emitted per second. The larger the number the more dense appears the emitted cloud of particles. As particles die they are recycled to be emitted again. If their lifetime is long enough and their emission rate fast enough it is possible for there to be a gap in the emission of particles. 
@@ -354,7 +355,7 @@ particleSystem.addAngularSpeedGradient(0, 0.5, 0.8);
 particleSystem.addAngularSpeedGradient(1.0, 3, 4);
 ```
 
-In this case the angular speed of the particle will be randomly picked between the two values when the gradient will be reached.
+In this case the angular speed of the particle will randomly be picked between the two values when the gradient will be reached.
 
 To remove a gradient you can call `particleSystem.removeAngularSpeedGradient(0.5)`.
 
@@ -394,7 +395,7 @@ particleSystem.addVelocityGradient(0, 0.5, 0.8);
 particleSystem.addVelocityGradient(1.0, 3, 4);
 ```
 
-In this case the velocity of the particle will be randomly picked between the two values when the gradient will be reached.
+In this case the velocity of the particle will randomly be picked between the two values when the gradient will be reached.
 
 Here is an example of velocity applied to a particle system: https://www.babylonjs-playground.com/#3W04PW#0
 
@@ -404,13 +405,13 @@ To remove a gradient you can call `particleSystem.removeVelocityGradient(0.5)`.
 You can define a limit for velocity over time with gradients. This limit will be used to check the current speed of the particle and if the limit is reached then a factor will be applied to the speed.
 You can define this factor with `particleSystem.limitVelocityDamping`. 
 
-To add a limitvelocity gradient just call the following code:
+To add a limit velocity gradient just call the following code:
 
 ```
 particleSystem.addLimitVelocityGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the limit velocity to use. In this case, the particle speed will be check directly after birth and if it is bigger than 0.5 then the damping parameter will be applied (so velocity will becode velocity * damping).
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the limit velocity to use. In this case, the particle speed will be check directly after birth and if it is bigger than 0.5 then the damping parameter will be applied (so velocity will be code velocity * damping).
 
 It is recommended to at least define a gradient for 0 and 1:
 
@@ -428,11 +429,110 @@ particleSystem.addLimitVelocityGradient(0, 0.5, 0.8);
 particleSystem.addLimitVelocityGradient(1.0, 3, 4);
 ```
 
-In this case the limit velocity of the particle will be randomly picked between the two values when the gradient will be reached.
+In this case the limit velocity of the particle will randomly be picked between the two values when the gradient will be reached.
 
 Here is an example of limit velocity applied to a particle system: https://www.babylonjs-playground.com/#9GBBPM#2
 
 To remove a gradient you can call `particleSystem.removeLimitVelocityGradient(0.5)`.
+
+### Drag factor
+You can define a drag factor over time with gradients. This factor will be used to simulate air friction by applying a drag factor to the particle direction. For instance, if your drag factor is set to 0.8 then only 20% of the particle direction will be added to particle position.
+
+To add a drag gradient just call the following code:
+
+```
+particleSystem.addDragGradient(0, 0.5);
+```
+
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the drag factor to use. In this case, the particle position will be `particle.position = particle.direction * (1.0 - 0.5)`.
+
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addDragGradient(0, 0.5);
+particleSystem.addDragGradient(1.0, 3);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addDragGradient(0, 0.5, 0.8);
+particleSystem.addDragGradient(1.0, 0, 0.1);
+```
+
+In this case the drag factor of the particle will randomly be picked between the two values when the gradient will be reached.
+
+Here is an example of drag factor applied to a particle system: https://www.babylonjs-playground.com/#BDW3BF#0
+
+To remove a gradient you can call `particleSystem.removeDragGradient(0.5)`.
+
+### Emit rate over time
+You can define particle emit rate with gradients. The emit rate over time will overwrite the value of `system.emitRate` property.
+
+To add an emit rate gradient just call the following code:
+
+```
+particleSystem.addEmitRateGradient(0, 10);
+```
+
+**Please note that emit rate gradient will only work if the system has a determined life time meaning that you must define the `system.targetStopDuration` property**
+
+The first parameter defines the gradient (0 means at system start and 1 means at system end). The second parameter is the emit rate to use. In this case the system will start by emitting 10 particles per frame.
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addEmitRateGradient(0, 10);
+particleSystem.addEmitRateGradient(1.0, 500);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addEmitRateGradient(0, 5, 10);
+particleSystem.addEmitRateGradient(1.0, 800, 1000);
+```
+
+In this case the emit rate will randomly be picked between the two values when the gradient will be reached.
+
+Here is an example of emit rate gradients applied to a particle system: https://www.babylonjs-playground.com/#3NM14X#0
+
+To remove a gradient you can call `particleSystem.removeEmitRateGradient(0.5)`. 
+
+### Start size over time
+To add an start size gradient just call the following code:
+
+```
+particleSystem.addStartSizeGradient(0, 2);
+```
+
+**Please note that start size gradient will only work if the system has a determined life time meaning that you must define the `system.targetStopDuration` property**
+
+The first parameter defines the gradient (0 means at system start and 1 means at system end). The second parameter is the start size scale to use. In this case the system will start by emitting particles of size 2 times the original size. (eg. if size is set to 2 and start size is set to 3 the resulting output size will be 6)
+It is recommended to at least define a gradient for 0 and 1:
+
+```
+particleSystem.addStartSizeGradient(0, 10);
+particleSystem.addStartSizeGradient(1.0, 500);
+```
+
+You can add as much gradients as you want as long as the gradient value is between 0 and 1.
+
+You can also define a more complex construct by providing two values per gradient:
+
+```
+particleSystem.addStartSizeGradient(0, 5, 10);
+particleSystem.addStartSizeGradient(1.0, 800, 1000);
+```
+
+In this case the start size will randomly be picked between the two values when the gradient will be reached.
+
+Here is an example of start size gradients applied to a particle system: https://www.babylonjs-playground.com/#3NM14X#14
+
+To remove a gradient you can call `particleSystem.removeStartSizeGradient(0.5)`. 
 
 ### Alignment
 By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
@@ -564,6 +664,43 @@ The particles are emitted in the direction of the surface normals, ie the lines 
 
 With `hemisphericEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
 
+### Cylinder Emitter
+
+You can create a cylinder emitter with a given radius, height, radiusRange, directionRandomizer with the following:
+
+```javascript
+var cylinderEmitter = particleSystem.createCylinderEmitter(1,1,0,0);
+```
+The returned `cylinderEmitter` object can be used to change the value of the radius, height, etc.
+
+The particles are emitted in the direction of the surface normals, ie outward from the cylinder
+
+* [Playground Example - Cylinder Emitter](https://www.babylonjs-playground.com/#UL4WC0)
+
+With `cylinderEmitter.radiusRange` you can define where along the radius the particles should be emitted. A value of 0 means only on the surface while a value of 1 means all along the radius.
+With `cylinderEmitter.directionRandomizer` can change how much to randomize the particles direction.
+
+The `createDirectedCylinderEmitter` method takes three parameters in the following order
+
+* radius: Number,
+* height: Number,
+* radiusRange: Number,
+* direction1: Vector3, 
+* direction2: Vector3, 
+ 
+
+The returned `cylinderEmitter` object can be used to change the values of these properties.
+
+```javascript
+cylinderEmitter.radius = 3.4;
+cylinderEmitter.direction1 = new BABYLON.Vector3(-5, 2, 1); 
+cylinderEmitter.direction2 = new BABYLON.Vector3(5, 2, -1);    
+```
+
+The first parameter is the radius the second is direction1 and third is direction2. (The direction will be generated randomly between direction1 and direction2)
+
+* [Playground Example - Cylinder Emitter with Directions](https://www.babylonjs-playground.com/#UL4WC0#5)
+
 ### Cone Emitter
 
 To create a cone emitter you use, for example
@@ -652,6 +789,8 @@ The following features are not supported by GPU particles due to their inner nat
 - Animation sheets
 - disposeOnStop
 - Dual values per gradient (only one value is supported)
+- Emit rate gradients are not supported
+- Start size gradients are not supported
 
 ### Playground
 

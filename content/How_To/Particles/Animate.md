@@ -33,6 +33,8 @@ The `startSpriteCellID` and `endSpriteCellID` are set based on the cell position
 
 ![sheet](/img/how_to/sprites/08-2.png)
 
+Starting with Babylon.js v3.3, you can also set `particleSystem.spriteRandomStartCell = true` to randomly pick the start cell id of each particles between `startSpriteCellID` and `endSpriteCellID`.
+
 Setting the value of `spriteCellChangeSpeed` to 1 allows the `particleSystem` to match the animation to life time of a particle. The particle will be emitted with the sprite at `startSpriteCellID` and will die displaying the sprite at `endSpriteCellID`.
 
 Giving `spriteCellChangeSpeed` a value above 1 will control the speed of the animation for a particle. The **larger** the number the **faster** the animation. Although the particle will be emitted with the sprite at `startSpriteCellID` the sprite on display when the particle dies will depend on the value of the speed and the life time of the particle and may vary.

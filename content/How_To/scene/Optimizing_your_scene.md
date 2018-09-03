@@ -6,6 +6,14 @@ PG_TITLE: How To Optimize Your Scene
 
 This tutorial will help you find some links and info on how you can improve your scene regarding rendering performance.
 
+## Changing per mesh culling strategy
+
+Starting with Babylon.js v3.3, you can now specify a strategy used to cull a specific mesh with `mesh.cullingStrategy`.
+
+You can set it to:
+- `BABYLON.AbstractMesh.CULLINGSTRATEGY_STANDARD`: This is the default value and it will use a combination of bounding sphere culling, bounding box culling and then frustum culling
+- `BABYLON.AbstractMesh.CULLINGSTRATEGY_BOUNDINGSPHERE_ONLY`: This strategy will use a bounding sphere culling and then frustum culling. This is faster than the standard one but can imply having more meshes sent to the GPU. **Really useful if you are CPU bound**.
+
 ## Reducing Shaders Overhead
 Babylon.js uses an advanced and automatic shaders engine. This system will keep shaders up to date regarding material options. If you are using a static material (ie. an immutable material) then you can let it know to Babylon.js by using the following code:
 
@@ -129,6 +137,8 @@ https://www.babylonjs-playground.com/#HH8T00#1
 
 Please note that each counter is *PerfCounter* object which can provide multiple properties like average, total, min, max, count, etc.
 
+GPU timer require a special extension (EXT_DISJOINT_TIMER_QUERY) in order to work. This extension has been disabled due to Spectre and Meltdown on all major browsers. This is still possible to use by enabling the flag gfx.webrender.debug.gpu-time-queries on firefox at the moment. This should be re-enabled soon in the browsers.
+
 ### SceneInstrumentation
 The SceneInstrumentation class allows you to get the following counters (per scene):
 * *activeMeshesEvaluationTimeCounter*: Time (in milliseconds) spent to evaluable active meshes (based on active camra frustum). Must be turned on with `instrumentation.captureActiveMeshesEvaluationTime = true`.
@@ -142,6 +152,8 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 * *spritesRenderTimeCounter*: Time (in milliseconds) spent rendering sprites. Must be turned on with `instrumentation.captureSpritesRenderTime = true`.
 * *physicsTimeCounter*: Time (in milliseconds) spent simulating physics. Must be turned on with `instrumentation.capturePhysicsTime = true`.
 * *cameraRenderTimeCounter*: Time (in milliseconds) spent to render a camera. Must be turned on with `instrumentation.captureCameraRenderTime = true`.
+
+Those counters are all resetted to 0 at the beginning of each frame. Therefore it is easier to access them in the onAfterRender callback or observable.
 
 # Further Reading
 

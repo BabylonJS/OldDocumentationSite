@@ -8,7 +8,7 @@
                     "doc": "https://doc.babylonjs.com/features/playground",
                     "icon": "icons/basic_scene.png", 
                     "description": "Ball and plane",
-                    "PGID": "ts.html#"
+                    "PGID": "/ts.html#"
                 }
             ]
         },
@@ -108,14 +108,14 @@
                     "icon": "icons/meshbutton3d.jpg", 
                     "description": "Uses MeshButton3D to create custom 3D buttons",
                     "PGID": "#8Y780Y#20"
-                },                
+                },
                 {
-                    "title": "Chart3D - Bar Graph",
-                    "doc": "https://doc.babylonjs.com/how_to/chart3d",
-                    "icon": "icons/chart3d.jpg", 
-                    "description": "Babylon.js 3D charting provides support for chart controls like bar graphes, etc.",
-                    "PGID": "#NUMA1E#2"
-                }                 
+                    "title": "App Bar (AttachToBoxBehavior)",
+                    "doc": "https://doc.babylonjs.com/how_to/meshbehavior",
+                    "icon": "icons/appBar.jpg", 
+                    "description": "Attach a menu to a bounding box such that it always faces the user",
+                    "PGID": "#8GY6J8#62"
+                }               
             ]
         },
         {
@@ -155,6 +155,13 @@
                     "icon": "icons/keyboard.png", 
                     "description": "Move a sphere around with the keyboard",
                     "PGID": "#15EY4F#0"
+                },
+                {
+                    "title": "Gizmo/Manipulator",
+                    "doc": "https://doc.babylonjs.com/how_to/gizmo",
+                    "icon": "icons/gizmo.jpg", 
+                    "description": "Position, Rotate and Scale meshes with a pointer",
+                    "PGID": "#8MGKWK#25"
                 }
             ]
         },
@@ -460,6 +467,13 @@
                     "icon": "icons/octree.jpg",
                     "description": "Use octrees to boost mesh selections when dealing with thousands of objects",
                     "PGID": "#3YFJ5R#0"
+                },
+                {
+                    "title": "Clip planes",
+                    "doc": "http://doc.babylonjs.com/how_to/clip_planes",
+                    "icon": "icons/clipplanes.jpg",
+                    "description": "You can clip the rendering of a scene by using clip planes",
+                    "PGID": "#Y6W087#0"
                 }
             ]
         },        
@@ -673,7 +687,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/playing_sounds_and_music#using-the-analyser",
                     "icon": "icons/musicAnalyzer.jpg",
                     "description": "Visualize audio frequencies in realtime",
-                    "PGID": "#2JOSXE#22"
+                    "PGID": "#2JOSXE#23"
                 }
             ]
         },    

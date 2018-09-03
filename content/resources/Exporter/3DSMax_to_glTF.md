@@ -23,20 +23,20 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * zfar
     * znear
     * yfov (Perspective camera)
-    * Position / rotation
-    * Animations: Position
+    * Position / rotation (from nodes)
 
 * _Meshes_
     * Geometry: position, normal, color, texture coordinates (2 channels)
+    * Position / rotation / scaling (from nodes)
     * Skin
     * Instances
     * Morph targets
-    * Position / rotation / scaling
     * Animations: bones, morph weights
 
 * _Nodes_
+    * Hierarchy
     * Position / rotation / scaling
-    * Animations: Position, scaling, rotation
+    * Animations: position, rotation, scaling
 
 * _Materials_
     * Standard material (converted to PBR, see below)
@@ -50,8 +50,6 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Wrap mode (Clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
-
-* Hierarchies are exported
 
 ## Conversion Standard to PBR materials
 
@@ -160,6 +158,14 @@ Note that the exporter also supports textures with bmp, gif, tga, tif and dds fo
 To enjoy PBR material rendering, you should have an environmnent texture in your scene. The plugin exports the environment map if any is provided in 3DS MAX.
 
 However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
+
+## Draco compression
+
+On the export form, the _Use Draco compression_ option enables the Draco compression. It needs [Node.js](https://nodejs.org) and [gltf-pipeline](https://github.com/AnalyticalGraphicsInc/gltf-pipeline) in order to work.
+
+To install the Node.js, go to the web site download and install it.
+Then to install gltf-pipeline, open et normal shell (cmd.exe or powershell.exe) and run the following command `npm install -g gltf-pipeline`.
+Once they are installed, check the _Use Draco compression_ option and the compression will be automatically done at the export end.
 
 # How to export 3D model with animation to .babylon / .gltf format
 

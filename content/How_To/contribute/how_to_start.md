@@ -175,10 +175,10 @@ It will run several scenes against a reference image to detect any visual change
 ## Gulp
 The main gulpfile in Tools/Gulp contains a lot of helpfull tasks. So first open a terminal (Ctrl+`) in VScode or your favorite terminal. Navigate to the Tools/Gulp folder and you are ready to run the following commands.
 
-* `gulp run` launches all the watchers and a web server (this is map to the test command in VSCode)
+* `gulp run` launches all the watchers and a web server (this is map to the build command in VSCode Ctrl+Shift+b).
 * `gulp webserver` launches the webserver only.
 * `gulp watch` launches the watchers only.
-* `gulp typescript-all` generates all the distribution files in the dist/preview release folder (This is map to the build command in VSCode Ctrl+Shift+b).
+* `gulp typescript-all` generates all the distribution files in the dist/preview release folder 
 * `gulp typescript` generates the BJS distribution files.
 * `gulp typescript-libraries` generates all the library (materials, procedural textures...) files in the dist/preview release folder.
 * `gulp loaders` generates all the loaders files in the dist/preview release folder.

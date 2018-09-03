@@ -11,7 +11,7 @@ In the 101 course you will only meet a limited number of set shapes, starting on
 
 ## MeshBuilder Method
 
-The general form to create a set shape is
+The general form to create a set shape is:
 
 var _shape_ = BABYLON.MeshBuilder.Create<i>Shape</i>(name, options, scene);
 
@@ -132,7 +132,7 @@ There are four possible values for this option :
   * BABYLON.Mesh.DOUBLESIDE,
   * BABYLON.Mesh.DEFAULT which is the default value and equals FRONTSIDE currently.
 
-By moving your screen pointer left and right to rotate the planes, in the following examples, you can compare between DEFAULT and DOUBLESIDE.   
+In the following examples you can compare between DEFAULT and DOUBLESIDE by moving your screen pointer left and right to rotate the planes.
 * [Playground Example of a DEFAULT Plane](https://www.babylonjs-playground.com/#LXZPJK)
 * [Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
 
@@ -143,11 +143,11 @@ When a mesh has a sideOrientation option present and it is set to DOUBLESIDE the
 
 ## Coming Soon 
 
-When you create a mesh it is always centered at the origin and in line with the axes. You will want to give it a different position and rotation. Cannot wait then skip the next step and go off to [How to Change Position and Rotation](/babylon101/Position)
+When you create a mesh it is always centered at the origin and in line with the axes. You will want to give it a different position and rotation. If you can't wait then skip the next step and go to [How to Change Position and Rotation](/babylon101/Position)
 
 # Next Step 
 
-Now you have some of the set shapes under your belt find out about [Shapes Less Set in Their Ways](/babylon101/Parametric_Shapes)
+Now that you have some of the set shapes under your belt its time to find out about [Shapes Less Set in Their Ways](/babylon101/Parametric_Shapes)
 
 # Further Reading
 

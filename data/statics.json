@@ -183,6 +183,11 @@
                     "title": "Render a Scene to a Video",
                     "level": 3,
                     "filename": "Render_Scene_on_a_Video"
+                },
+                {
+                    "title": "Use clip planes",
+                    "level": 3,
+                    "filename": "Clip_Planes"
                 }
             ]
         },
@@ -750,10 +755,6 @@
                 {
                     "title": "Use the Babylon 3D GUI",
                     "filename": "Gui3D"
-                },
-                {
-                    "title": "Use the Babylon 3D Charting",
-                    "filename": "Chart3D"
                 }
             ]
         },
@@ -879,8 +880,24 @@
                     "filename": "Adding_Materials"
                 },
                 {
+                    "title": "Using The Assets Panel",
+                    "filename": "Using_Assets_Panel"
+                },
+                {
                     "title": "Writing Custom Scripts",
                     "filename": "Custom_Scripts"
+                },
+                {
+                    "title": "Adding Animations",
+                    "filename": "Adding_Animations"
+                },
+                {
+                    "title": "Using Path Finder",
+                    "filename": "Using_PathFinder"
+                },
+                {
+                    "title": "Creating Prefabs",
+                    "filename": "Creating_Prefabs"
                 }
             ]
         },
@@ -1472,6 +1489,17 @@
                 {
                     "title": "glTF Exporter",
                     "filename": "glTFExporter"
+                }
+            ]
+        },
+        {
+            "title": "Azure Media Player 360 Video",
+            "name": "Amp360Video",
+            "desc": "Watch 360 Videos in Azure Media Player",
+            "files": [
+                {
+                    "title": "Amp 360 Video",
+                    "filename": "Amp360Video"
                 }
             ]
         }

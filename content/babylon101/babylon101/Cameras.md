@@ -65,7 +65,7 @@ Setting _beta_ to 0 or PI can, for technical reasons, cause problems and in this
 
 Both _alpha_ and _beta_ increase in a clockwise direction. 
 
-The position of the camera can also be set from a vector which will overide any current value for _alpha_, _beta_ and _radius_. 
+The position of the camera can also be set from a vector which will override any current value for _alpha_, _beta_ and _radius_. 
 This can be much easier than calculating the required angles.
 
 Whether using the keyboard, mouse or touch swipes left right directions change _alpha_ and up down directions change _beta_.
@@ -180,7 +180,7 @@ This is a camera specifically designed to react to device orientation events suc
 // Parameters : name, position, scene	
    var camera = new BABYLON.DeviceOrientationCamera("DevOr_camera", new BABYLON.Vector3(0, 0, 0), scene);
 
-    // Targets the camera to a particular positiion
+    // Targets the camera to a particular position
     camera.setTarget(new BABYLON.Vector3(0, 0, -10));
 	
 	// Sets the sensitivity of the camera to movement and rotation
