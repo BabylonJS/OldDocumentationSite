@@ -26,9 +26,10 @@ An Observable - onXChange- is added to the master sphere. The two minion spheres
 The following are available:
 
 * add(): to add an Observer
+* addOnce(): to add an Observer which will be executed once and then removed
 * remove(): to remove a previously registered Observer
 * removeCallback(): same as above but giving the callback instead of the Observer instance
-* notifyObservers(): used to notify all the registered Observers (with a little special feature I'll detail further below)
+* notifyObservers(): used to notify all the registered Observers 
 * notifyObserversWithPromise(): calling this will execute each callback, expecting it to be a promise or return a value. If at any point in the chain one function fails, the promise will fail and the execution will not continue.
 * hasObserver: a property that returns true if at least one Observer is registered
 * hasSpecificMask(mask): a function that returns true if at least one Observer is registered with this mask
