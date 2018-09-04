@@ -11,6 +11,7 @@ Follow the links within Further Reading below for more on these aspects.
 
 What else might you expect of your scene? You might expect to be able to
 
+* have the scene react to clicks and touches;
 * have your own design displayed when your scene is loading;
 * optimise your scene to maintain a good speed;
 * output images of particular views of your scene.
@@ -23,11 +24,14 @@ What else might you expect of your scene? You might expect to be able to
 [Environment](/features/Environment)  
 [Fast Build](/how_to/fast_build#fastest-build)  
 [Import and Fast Build](/how_to/fast_build#import-and-fastest-build)  
-[Multiple Scenes](/How_To/Multi_Scenes)
+[Multiple Scenes](/How_To/Multi_Scenes)  
+[Graphical User Interface](/How_To/Gui)
 
 ## Mid Level - L2
 
-[Custom Loading Screen](/How_To/Creating_a_custom_loading_screen)
+[Custom Loading Screen](/How_To/Creating_a_custom_loading_screen)  
+[Screen Interactions ](/How_To/Interactions)
+
 
 ## More Advanced - L3
 
