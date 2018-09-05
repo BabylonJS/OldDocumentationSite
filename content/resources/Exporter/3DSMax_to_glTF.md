@@ -41,10 +41,13 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
 * _Materials_
     * Standard material (converted to PBR, see below)
     * Physical material (PBR)
+    * Standard Surface Arnold material
     * Base color and alpha
     * Metalness and roughness
     * Emission, ambient occlusion
+    * Bump mapping
     * Multi-materials
+    * Unlit attribute
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)
@@ -219,6 +222,21 @@ Note that the exporter also supports textures with bmp, gif, tga, tif and dds fo
 To enjoy PBR material rendering, you should have an environmnent texture in your scene. The plugin exports the environment map if any is provided in 3DS MAX.
 
 However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
+
+## Unlit attribute
+
+A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: metalness, roughness, emission, ambient occlusion and bump mapping.
+
+Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here.](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)
+
+3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
+
+![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
+
+To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
+
+Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
+
 
 ## Draco compression
 
