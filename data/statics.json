@@ -753,6 +753,10 @@
                     "filename": "Gui"
                 },
                 {
+                    "title": "Use the Selection Panel Helper",
+                    "filename": "Selector"
+                },
+                {
                     "title": "Use the Babylon 3D GUI",
                     "filename": "Gui3D"
                 }
