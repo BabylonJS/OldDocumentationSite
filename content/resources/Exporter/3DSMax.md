@@ -80,6 +80,8 @@ Congratulations! You did it!
     * Reflection texture
     * Fresnel for diffuse, emissive, opacity and reflection
     * Physical materials (PBR)
+    * Standard Surface Arnold material
+    * Unlit attribute
 
 * _Textures_
     * UV offset / scaling / angle
@@ -259,6 +261,18 @@ The handling of physical materials is mimic from glTF format. [Detailed explanat
 Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 
 
 ![texture](/img/exporters/3DSMax/11_texture.jpg)
+
+## Unlit material
+
+A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+
+3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
+
+![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
+
+To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
+
+Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
 
 Now that you know all about the exporter features, it’s time to use it! 
 
