@@ -53,9 +53,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
 
 # Conversion Standard to PBR materials
 
-The plugin uses core specifications of glTF, i.e. without any extension. This implies that only PBR materials are exported.
-
-To support compatibility with 3ds max Standard materials, they are converted to PBR materials based on their diffuse, specular, opacity and glossiness.
+3DS MAX Standard materials are converted to PBR materials based on their diffuse, specular, opacity and glossiness.
 
 [The complete algorithm is detailed here](https://github.com/bghgary/glTF/blob/gh-pages/convert-between-workflows-bjs/js/babylon.pbrUtilities.js)
 
