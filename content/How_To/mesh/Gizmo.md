@@ -132,6 +132,12 @@ Additionally, the bounding box can ignore children of the attached mesh to add a
 gizmo.ignoreChildren = true;
 ```
 
+To only ignore certain children when computing the bounding box, the includeChildPredicate can be set.
+```
+gizmo.includeChildPredicate = (m)=>{return m == sphere2};
+```
+[Example](https://www.babylonjs-playground.com/#SG9ZZB)
+
 
 UI can be attached to the bounding box using the [AttachToBoxBehavior](/How_To/MeshBehavior)
 

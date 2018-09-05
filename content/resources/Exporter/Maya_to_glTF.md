@@ -59,9 +59,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
 
 # Conversion Standard to PBR materials
 
-The plugin uses core specifications of glTF, i.e. without any extension. This implies that only PBR materials are exported.
-
-To support compatibility with Maya Standard materials (Lambert, Phong, PhongE and Blinn), they are converted to PBR materials based on their color, specular, transparency and glossiness (specular power).
+Maya Standard materials (Lambert, Phong, PhongE and Blinn) are converted to PBR materials based on their color, specular, transparency and glossiness (specular power).
 
 [The complete algorithm is detailed here](https://github.com/bghgary/glTF/blob/gh-pages/convert-between-workflows-bjs/js/babylon.pbrUtilities.js)
 
