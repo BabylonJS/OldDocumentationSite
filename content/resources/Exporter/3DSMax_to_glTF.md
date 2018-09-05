@@ -41,21 +41,22 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
 * _Materials_
     * Standard material (converted to PBR, see below)
     * Physical material (PBR)
+    * Standard Surface Arnold material
     * Base color and alpha
     * Metalness and roughness
     * Emission, ambient occlusion
+    * Bump mapping
     * Multi-materials
+    * Unlit attribute
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
 
-## Conversion Standard to PBR materials
+# Conversion Standard to PBR materials
 
-The plugin uses core specifications of glTF, i.e. without any extension. This implies that only PBR materials are exported.
-
-To support compatibility with 3ds max Standard materials, they are converted to PBR materials based on their diffuse, specular, opacity and glossiness.
+3DS MAX Standard materials are converted to PBR materials based on their diffuse, specular, opacity and glossiness.
 
 [The complete algorithm is detailed here](https://github.com/bghgary/glTF/blob/gh-pages/convert-between-workflows-bjs/js/babylon.pbrUtilities.js)
 
@@ -63,7 +64,7 @@ To support compatibility with 3ds max Standard materials, they are converted to 
 
 Note that the conversion duration scales with images size and may have a severe impact on export duration.
 
-## PBR materials
+# PBR materials
 
 The physical materials are exported to glTF format as PBR materials.
 
@@ -73,7 +74,7 @@ Involved parameters are highlighted bellow and described in the following sectio
 
 Remember that in 3DS MAX, when a map is assigned to a parameter, the basic parameter value is ignored. This behaviour is kept when exporting.
 
-### Base color and Transparency
+## Base color and Transparency
 
 Only the color of base color is used. The weight of base color is ignored.
 
@@ -93,7 +94,7 @@ The basic parameter value is used as default value when binded map is not provid
 
 ![glTF base color map and transparency weight combined](/img/exporters/3DSMax/17_gltf_baseColor_transparencyWeight_combined.jpg)
 
-### Metalness and Roughness
+## Metalness and Roughness
 
 The metalness is used.
 
@@ -113,19 +114,82 @@ Note that the duration of this process scales with images size and may have a se
 
 Like for base color and transparency, the basic parameter value is used as default value when binded map is not provided.
 
-### Emission
+## Emission
 
 The exported emission color value is computed based on all 4 parameters: emission weight, color, luminance and Kelvin.
 
 However, the exported emission color map is identical to the specified one in generic map. This mean that emisson weight, luminance and Kelvin __are not__ used. The emission map is assumed to be precomputed.
 
-### Ambient occlusion
+## Ambient occlusion
 
 The diffuse roughness map is used as ambient occlusion.
 
-### Bump map
+## Bump map
 
 The bump map (or normal map) and its weight are used.
+
+# Standard Surface Arnold material
+
+The Standard Surface Arnold material is exported to glTF format as a PBR material.
+
+Involved parameters are highlighted bellow.
+
+![3DS Max Standard Surface parameters](/img/exporters/3DSMax/standardSurfaceParameters.jpg)
+
+When exporting, if a map is assigned to a parameter, the basic parameter value is ignored.
+
+## Base color and Transparency
+
+In the _Basic Parameters_ and _Transparency_ sections, the base color weight, the base color and the transparency weight values are supported.
+And you can use a map for the base color and the transparency weight (the base color weight map is not supported).
+
+If you use a map for the base color, then the base color weight is overrided to 1 for the export.
+Also if the base color map and the transparency map are used, they must have the same size in order to be merged successfully.
+
+_Note:_ it is recommended to always set the base color weight to 1.
+
+## Metalness, Roughness and Occlusion
+
+In the _Specular Reflections_ section, the metalness and the roughness values and maps are supported.
+If both maps are used, they must have the same size to be merged successfully.
+
+In 3DS Max, metalness and roughness maps are black and white images (R=G=B).
+But in glTF format, the metalness is stored in the blue channel and the roughness in the green one (the red channel is for the occlusion).
+So during the export the metalness and roughness maps are merged in one map using their respective channel.
+
+### Metalness and roughness
+
+If you use one of the two maps, then the exporter creates a new map using the provided map and the value of the other parameter.
+
+If you use two different maps, then the exporter merges them in one map.
+
+### Metalness, roughness and occlusion all in one map
+
+Alternatively, you can provide a single texture used in both _Metalness_ and _Roughness_ to set an extra attribut: the Ambient Occlusion.
+
+The Ambient Occlusion cannot be set in the Standard Surface material. Thus you cannot take it into account when rendering with Arnold.
+
+However, such feature is exported and you can hopefully use it in an engine of your choice, provided it does take it into account (Babylon does!). Since there isn't a dedicated channel for Occlusion, the trick is to use a single file for multiple purposes called ORM texture.
+
+Such texture defines:
+* the __O__cclusion in Red channel and is assigned to none of the material attributes
+* the __R__oughness in Green channel and is assigned to the material _Roughness_
+* the __M__etalness in Blue channel and is assigned to the material _Metalness_
+
+![glTF ORM map](/img/exporters/3DSMax/ORM.jpg)
+
+In this case the exporter does not merge textures, but instead assumes the texture provided is already merged.
+
+You can see how to get [a merged ORM texture here](/resources/Maya_to_glTF#get-a-merged-occlusionroughnessmetallic-texture).
+
+## Emission
+
+In the _Emission section_, the emission weight and the emission color values are supported. But only the emission color map is supported.
+If the emission color map is used, then the emission weight and the emission color values are ignored.
+
+## Normal
+
+In the _Special Features_ section, only the normal map is supported.
 
 # What you should know
 
@@ -158,6 +222,21 @@ Note that the exporter also supports textures with bmp, gif, tga, tif and dds fo
 To enjoy PBR material rendering, you should have an environmnent texture in your scene. The plugin exports the environment map if any is provided in 3DS MAX.
 
 However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
+
+## Unlit attribute
+
+A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: metalness, roughness, emission, ambient occlusion and bump mapping.
+
+Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here.](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)
+
+3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
+
+![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
+
+To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
+
+Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
+
 
 ## Draco compression
 
