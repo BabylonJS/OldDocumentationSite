@@ -816,5 +816,6 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)
+[Create animated particles](/how_To/Particles/Animate.md)
 
 
