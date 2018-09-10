@@ -801,6 +801,8 @@ Alongside setting the noiseTexture you can also control the strength applied on 
 
 Demo can be found here: https://www.babylonjs-playground.com/#R1JWLA#3
 
+**Please note that noise texture are not compatible with pre-warming**.
+
 ## GPU Particles
 
 Starting from Babylon.js v3.2, you can leverage a new WebGL2 feature, the transform feedback buffer, to drastically boost the performance of particles. Whereas regular particles use the CPU for animation and the GPU for rendering the new WebGL2 API allows Babylon.js to use the GPU for both animation and rendering. With GPU particles, everything is offloaded to the GPU.
