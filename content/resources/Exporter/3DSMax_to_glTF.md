@@ -237,6 +237,15 @@ To add the desired custom attribute, you are recommended to use the [BabylonMate
 
 Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
 
+## Shell material
+
+In 3DS Max, the _Shell material_ is a container for other materials and controls which material is used in which rendering.
+
+It contains two materials:
+- _Original Material_ used for rendering (for example Arnold, Mental ray, V-Ray)
+- _Baked Material_ exported by the Babylonjs exporter
+
+![3DS Max Shell material parameters](/img/exporters/3DSMax/shellMaterial.png)
 
 ## Draco compression
 
