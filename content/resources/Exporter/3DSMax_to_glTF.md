@@ -211,6 +211,27 @@ To do it simply, a root node named "root" is added to the scene. All nodes are s
 
 In glTF, a skin is binded to a node. The skeleton (root bone) of a skin should be positioned at origin, without rotation or scaling. The node to which is applied the skin is responsible of its transformation (translation, rotation, scale).
 
+## Alpha mode
+
+Alpha mode is _OPAQUE_ when a material doesn't have any attribute or texture related to transparency.
+
+Alpha mode is _BLEND_ when a material has any of the following:
+- its transparency is not 0, or its opacity is not 100
+- has a transparency/opacity texture
+- has a base color/diffuse color texture with _Alpha Source_ set to _Image Alpha_
+
+__IMPORTANT__
+
+There is a known issue where 3DS MAX texture attributes are not initialized correctly when a bitmap is being created: the _Alpha Source_ value is the default one, which is _Image Alpha_.
+
+This means that __materials with a base color/diffuse color texture may be exported as _BLEND_ while you expected them to be _OPAQUE_.__
+
+To fix that, enter the base color/diffuse color texture settings and that's it! Doing this is enough for 3DS MAX to initialize the _Alpha Source_ correctly.
+
+![bitmap texture settings](/img/exporters/3DSMax/bitmap_texture_settings.jpg)
+
+Note that, for an image format with alpha channel, like PNG, if the image provided contains alpha, the default value once initialized correctly is still _Image Alpha_. You may want to change that to _None (Opaque)_.
+
 ## Textures image format
 
 glTF 2.0 only supports the following image formats: jpg and png. You are adviced to use those formats for your textures when exporting to glTF.
