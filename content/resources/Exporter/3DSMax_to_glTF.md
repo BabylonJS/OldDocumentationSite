@@ -211,6 +211,27 @@ To do it simply, a root node named "root" is added to the scene. All nodes are s
 
 In glTF, a skin is binded to a node. The skeleton (root bone) of a skin should be positioned at origin, without rotation or scaling. The node to which is applied the skin is responsible of its transformation (translation, rotation, scale).
 
+## Alpha mode
+
+Alpha mode is _OPAQUE_ when a material doesn't have any attribute or texture related to transparency.
+
+Alpha mode is _BLEND_ when a material has any of the following:
+- its transparency is not 0, or its opacity is not 100
+- has a transparency/opacity texture
+- has a base color/diffuse color texture with _Alpha Source_ set to _Image Alpha_
+
+__IMPORTANT__
+
+There is a known issue where 3DS MAX texture attributes are not initialized correctly when a bitmap is being created: the _Alpha Source_ value is the default one, which is _Image Alpha_.
+
+This means that __materials with a base color/diffuse color texture may be exported as _BLEND_ while you expected them to be _OPAQUE_.__
+
+To fix that, enter the base color/diffuse color texture settings and that's it! Doing this is enough for 3DS MAX to initialize the _Alpha Source_ correctly.
+
+![bitmap texture settings](/img/exporters/3DSMax/bitmap_texture_settings.jpg)
+
+Note that, for an image format with alpha channel, like PNG, if the image provided contains alpha, the default value once initialized correctly is still _Image Alpha_. You may want to change that to _None (Opaque)_.
+
 ## Textures image format
 
 glTF 2.0 only supports the following image formats: jpg and png. You are adviced to use those formats for your textures when exporting to glTF.
@@ -236,6 +257,24 @@ Additionally in gltf, the __KHR_materials_unlit__ extension is added to the mate
 To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
 
 Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
+
+## Shell material
+
+In 3DS Max, the _Shell material_ is a container for other materials and controls which material is used in which rendering.
+
+It contains two materials:
+- _Original Material_ used for rendering (for example Arnold, Mental ray, V-Ray)
+- _Baked Material_ exported by the Babylonjs exporter
+
+![3DS Max Shell material parameters](/img/exporters/3DSMax/shellMaterial.png)
+
+## DirectX Shader material
+
+In 3DS Max the DirectX shader material is used to represent more accurately how the material will render in another application. That is why only the material contained in its _Software Render Style_ section is exported. All other parameters are ignored.
+
+![3DS Max DirectX Shader parameters](/img/exporters/3DSMax/directXShader.png)
+
+More information on how you could use this material in conjunction with the Shell material in the discussion [here](https://github.com/BabylonJS/Exporters/issues/296).
 
 
 ## Draco compression

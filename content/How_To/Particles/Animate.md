@@ -53,5 +53,6 @@ Giving `spriteCellChangeSpeed` a value above 1 will control the speed of the ani
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise) 
+[Create animated particles](/how_to/Animate) 
 
 

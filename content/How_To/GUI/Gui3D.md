@@ -11,24 +11,24 @@ The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tr
 And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui/src/3D.
 
 ## Introduction
-Babylon.GUI uses a meshes to create an interactive user interface which is fully integrated in your scene.
+Babylon.GUI uses meshes to create an interactive user interface, which is fully integrated in your scene.
 
 ## GUI3DManager
-To begin with 3D GUI, you need to instantiate a `GUI3DManager` which will be responsible for connecting all controls together:
+To begin with 3D GUI, you need to instantiate a `GUI3DManager` which will be responsible for connecting all the controls together:
 
 ```
 var manager = new BABYLON.GUI.GUI3DManager(scene);
 ```
 
-The manager only requires the scene to work on. Once instantiated, the manager will create an utility layer which is a specific child scene which will host all meshes used to render the controls. This way, your main scene won't get poluated by the utility meshes.
+The manager only requires the scene to work on. Once instantiated, the manager will create a utility layer which is a specific child scene that will host all the meshes used to render the controls. This way, your main scene won't get populated by the utility meshes.
 
 You can reach the utility layer with `manager.utilityLayer`.
 
-Once you have a manager, you can start adding controls with `manager.addControl(control)`. All controls will be added to the `manager.rootContainer` container.
+Once you have a manager, you can start adding controls with `manager.addControl(control)`. All controls will be added to the `manager.rootContainer`.
 
 Please also note that the following functions are available:
-- `containsControl()`: Gets a boolean indicating if the given control is in the root child list
-- `removeControl()`: Removes a control from the root child list
+- `containsControl()`: Gets a boolean indicating if the given control is in the root child list.
+- `removeControl()`: Removes a control from the root child list.
 
 ## Containers
 

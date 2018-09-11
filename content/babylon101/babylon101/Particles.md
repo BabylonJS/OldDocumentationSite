@@ -107,7 +107,7 @@ particleSystem.emitter = source;
 ```
 
 ### Location and Spread
-The spread of the particles from the emitter is from within a box the size of which is determined by setting the lower, left, front corner and upper, right, back corner of the box relative to the location of th emitter. This is done using `minEmitBox` and `maxEmitBox`
+The spread of the particles from the emitter is from within a box the size of which is determined by setting the lower, left, front corner and upper, right, back corner of the box relative to the location of the emitter. This is done using `minEmitBox` and `maxEmitBox`
 
 ```javascript
 particleSystem.minEmitBox = new BABYLON.Vector3(-2, -3, 4); 
@@ -280,6 +280,7 @@ particleSystem.blendMode = BABYLON.ParticleSystem.BLENDMODE_STANDARD;
 * `BLENDMODE_STANDARD` - colors are added using particle’s alpha (ie. color * (1 - alpha) + particleColor * alpha).
 * `BLENDMODE_ADD` - colors are added but only particle color uses particle’s alpha (ie. color + particleColor * alpha).
 * `BLENDMODE_MULTIPLY` - colors are multiplied and added to (1 - alpha) (ie. color * particleColor +  1 - alpha). [Demo here](https://playground.babylonjs.com/#KUDH9F#1)
+* `BLENDMODE_MULTIPLYADD` - two passes rendering with `BLENDMODE_MULTIPLY` and then `BLENDMODE_ADD`. [Demo here](https://www.babylonjs-playground.com/#VS5XS7#0)
 
 ### Rates
 The `emitRate` determines the number of particles emitted per second. The larger the number the more dense appears the emitted cloud of particles. As particles die they are recycled to be emitted again. If their lifetime is long enough and their emission rate fast enough it is possible for there to be a gap in the emission of particles. 
@@ -533,6 +534,54 @@ In this case the start size will randomly be picked between the two values when 
 Here is an example of start size gradients applied to a particle system: https://www.babylonjs-playground.com/#3NM14X#14
 
 To remove a gradient you can call `particleSystem.removeStartSizeGradient(0.5)`. 
+
+### Ramp gradients
+You can use ramp gradients to change the color of the particle based on alpha.
+
+Ramp gradients are pretty powerful but require a bit of setup.
+
+First you need to declare your ramp gradients:
+```
+system.addRampGradient(0.0, new BABYLON.Color3(1, 1, 1));
+system.addRampGradient(0.09, new BABYLON.Color3(209/255, 204/255, 15/255));
+system.addRampGradient(0.18, new BABYLON.Color3(221/255, 120/255, 14/255));
+system.addRampGradient(0.28, new BABYLON.Color3(200/255, 43/255, 18/255));
+system.addRampGradient(0.47, new BABYLON.Color3(115/255, 22/255, 15/255));
+system.addRampGradient(0.88, new BABYLON.Color3(14/255, 14/255, 14/255));
+system.addRampGradient(1.0, new BABYLON.Color3(14/255, 14/255, 14/255));
+```
+
+These gradients will be use to build a ramp color texture.
+
+Then you need to turn them on:
+```
+system.useRampGradients = true;
+```
+
+By defaut the alpha value of the particle (built from `textureAlpha * particleColorAlpha`) is used to get the ramp color (Alpha is the index in the ramp gradients list) using this formula: `finalColor = textureColor * particleColor * rampColor[alphaIndex]`.
+
+But to give you more control you can use a remap function to change remap this alpha index:
+```
+system.addColorRemapGradient(0, 0, 0.1);
+system.addColorRemapGradient(0.2, 0.1, 0.8);
+system.addColorRemapGradient(0.3, 0.2, 0.85);
+system.addColorRemapGradient(0.35, 0.4, 0.85);
+system.addColorRemapGradient(0.4, 0.5, 0.9);
+system.addColorRemapGradient(0.5, 0.95, 1.0);
+system.addColorRemapGradient(1.0, 0.95, 1.0);
+```
+
+The color remap gradients define a min and max that will vary over time (depending on hoe many gradients you add). The alpha index is then remap from [min, max] to [0, 1] with this formula: `finalAlphaIndex = clamp((alphaIndex - min) / (max - min), 0.0, 1.0)`.
+
+Ultimately you can also remap the alpha value generated per pixel with:
+```
+system.addAlphaRemapGradient(0, 0, 0.1);
+system.addAlphaRemapGradient(1.0, 0.1, 0.8);
+```
+
+The alpha remap will compute the final alpha value using this formula: `finalAlpha = clamp((textureAlpha * particleColorAlpha * rampColor.a - min) / (max - min), 0.0, 1.0)`.
+
+You can find a demo of the here: https://www.babylonjs-playground.com/#VS5XS7#0
 
 ### Alignment
 By default all particles are rendered as billboards. But you can decide to instead align them with particle direction with `system.isBillboardBased = false`.
@@ -816,5 +865,6 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)
+[Create animated particles](/how_To/Particles/Animate.md)
 
 

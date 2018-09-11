@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The SPS is a single updatable mesh. The solid particles are simply separate parts or faces fo this big mesh.  
+The SPS is a single updatable mesh. The solid particles are simply separate parts or faces for this big mesh.  
 As it is just a mesh, the SPS has all the same properties than any other BJS mesh : not more, not less. It can be scaled, rotated, translated, enlighted, textured, moved, etc.  
 
 The SPS is also a particle system. It provides some methods to manage the particles.  

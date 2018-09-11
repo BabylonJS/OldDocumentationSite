@@ -100,6 +100,8 @@ All the available blend modes are listed below:
 
 ![Property button](/img/exporters/3DSMax/5_properties_button.jpg)
 
+![Scene properties](/img/exporters/3DSMax/6_properties_window.jpg)
+
 The scene properties allow you to do these things:
 * Set the scene gravity
 * __Export quaternions for all nodes instead of Euler angles__. If this option is selected, an exported model rotation won’t be updated by setting its `rotation` parameter. Instead, you will have to use the `rotationQuaternion` parameter.
@@ -107,8 +109,7 @@ The scene properties allow you to do these things:
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
 * __Add a default light, if no light is exported__. If this option is checked and there is no light selected for the export, an hemispheric light is added in the exported scene. By default this option is checked.
-
-![Scene properties](/img/exporters/3DSMax/6_properties_window.jpg)
+* __Export normals__ and __Export tangents__ checkboxes allow you to control the morph target export. Note that if you want to export the target morph tangent, you have to check both the __Export tangents__ checkbox and the other __Export tangents__ checkbox of [the exporter window](#the-exporter-window).
 
 ## Object properties 
 
@@ -255,6 +256,18 @@ Even though a specular level map should be a grayscale, its 3 components (RGB) a
 ## Physical materials
 
 The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#pbr-materials)
+
+## Arnold materials
+
+The handling of arnold materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#standard-surface-arnold-material)
+
+## Shell material
+
+The handling of the shell material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#shell-material)
+
+## DirectX Shader
+
+The handling of the directX shader material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#directx-shader-material)
 
 ## Texture transparency 
 
