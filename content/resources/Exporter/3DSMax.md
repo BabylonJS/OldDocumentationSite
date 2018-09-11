@@ -264,6 +264,10 @@ The handling of arnold materials is mimic from glTF format. [Detailed explanatio
 
 The handling of the shell material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#shell-material)
 
+## DirectX Shader
+
+The handling of the directX shader material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#directx-shader-material)
+
 ## Texture transparency 
 
 Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 

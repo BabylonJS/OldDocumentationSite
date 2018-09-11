@@ -268,6 +268,15 @@ It contains two materials:
 
 ![3DS Max Shell material parameters](/img/exporters/3DSMax/shellMaterial.png)
 
+## DirectX Shader material
+
+In 3DS Max the DirectX shader material is used to represent more accurately how the material will render in another application. That is why only the material contained in its _Software Render Style_ section is exported. All other parameters are ignored.
+
+![3DS Max DirectX Shader parameters](/img/exporters/3DSMax/directXShader.png)
+
+More information on how you could use this material in conjunction with the Shell material in the discussion [here](https://github.com/BabylonJS/Exporters/issues/296).
+
+
 ## Draco compression
 
 On the export form, the _Use Draco compression_ option enables the Draco compression. It needs [Node.js](https://nodejs.org) and [gltf-pipeline](https://github.com/AnalyticalGraphicsInc/gltf-pipeline) in order to work.
