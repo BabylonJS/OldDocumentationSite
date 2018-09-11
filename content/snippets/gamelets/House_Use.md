@@ -20,7 +20,8 @@ The parameters are
 _walls_ : an array of wall objects  
 _ply_ : thickness of each wall  
 _height_ : height of each wall  
-_options_ : an object containing 4 optional parameters  
+_options_ : an object containing 5 optional parameters  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interior: a Boolean, default false, when set to true can be used to draw interior walls  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interiorUV: a Vector4(bottom left u, bottom left v, top right u, top right v)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exteriorUV: a Vector4(bottom left u, bottom left v, top right u, top right v)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interiorColor: a Color4(r, g, b, a)  
@@ -60,7 +61,7 @@ The following code should be copied and pasted inside the `createScene` function
 
 ```javascript
 var buildFromPlan = function(walls, ply, height, options, scene) {
-
+        
 	//Arrays for vertex positions and indices
 	var positions = [];
 	var indices = [];
@@ -72,7 +73,10 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 	
 	var interiorColor = options.interiorColor || new BABYLON.Color4(1, 1, 1, 1);
 	var exteriorColor = options.exteriorColor || new BABYLON.Color4(1, 1, 1, 1);		
-	var prime = options.prime;
+	var interior = options.interior || false;
+        if(!interior) {
+            walls.push(walls[0]);
+        }
 	
 	var interiorIndex;
 	
@@ -86,32 +90,57 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 	var innerWindowCorners = [];
 	var outerWindowCorners = [];
 	
-	var outerData = [];
 	var angle = 0;
 	var direction = 0;
-	var line = BABYLON.Vector3.Zero();
-	walls[1].corner.subtractToRef(walls[0].corner, line);
-	var nextLine = BABYLON.Vector3.Zero();
-	walls[2].corner.subtractToRef(walls[1].corner, nextLine);	
-	
-	var nbWalls = walls.length;
-	for(var w = 0; w < nbWalls; w++) {	
-		angle = Math.PI - Math.acos(BABYLON.Vector3.Dot(line, nextLine)/(line.length() * nextLine.length()));			
-		direction = BABYLON.Vector3.Cross(nextLine, line).normalize().y;				
-		lineNormal = new BABYLON.Vector3(line.z, 0, -1 * line.x).normalize();
-		line.normalize();
-		outerData[(w + 1) % nbWalls] = walls[(w + 1) % nbWalls].corner.add(lineNormal.scale(ply)).add(line.scale(direction * ply/Math.tan(angle/2)));		
-		line = nextLine.clone();		
-		walls[(w + 3) % nbWalls].corner.subtractToRef(walls[(w + 2) % nbWalls].corner, nextLine);	
-	}
 
-	for(var w = 0; w < nbWalls; w++) {
-		innerBaseCorners.push(walls[w].corner); // inner corners base
-	}
+        var line = BABYLON.Vector3.Zero();
+        var nextLine = BABYLON.Vector3.Zero();		
 
-	for(var w = 0; w < nbWalls; w++) {
-		outerBaseCorners.push(outerData[w]); // outer corners base
-	}
+        var nbWalls = walls.length;
+        if(nbWalls === 2) {
+            walls[1].corner.subtractToRef(walls[0].corner, line);
+            lineNormal = new BABYLON.Vector3(line.z, 0, -1 * line.x).normalize();
+	    line.normalize();
+            innerBaseCorners[0] = walls[0].corner;
+            outerBaseCorners[0] = walls[0].corner.add(lineNormal.scale(ply));
+            innerBaseCorners[1] = walls[1].corner;
+            outerBaseCorners[1] = walls[1].corner.add(lineNormal.scale(ply));
+        }
+        else if(nbWalls > 2) { 
+            for(var w = 0; w < nbWalls - 1; w++) {
+                walls[w + 1].corner.subtractToRef(walls[w].corner, nextLine);
+                angle = Math.PI - Math.acos(BABYLON.Vector3.Dot(line, nextLine)/(line.length() * nextLine.length()));			
+		    direction = BABYLON.Vector3.Cross(nextLine, line).normalize().y;			
+		    lineNormal = new BABYLON.Vector3(line.z, 0, -1 * line.x).normalize();
+		    line.normalize();
+                innerBaseCorners[w] = walls[w].corner
+                outerBaseCorners[w] = walls[w].corner.add(lineNormal.scale(ply)).add(line.scale(direction * ply/Math.tan(angle/2)));		
+		    line = nextLine.clone();
+            } 
+            if(interior) {
+                lineNormal = new BABYLON.Vector3(line.z, 0, -1 * line.x).normalize();
+	        line.normalize();
+                innerBaseCorners[nbWalls - 1] = walls[nbWalls - 1].corner
+                outerBaseCorners[nbWalls - 1] = walls[nbWalls - 1].corner.add(lineNormal.scale(ply));
+                walls[1].corner.subtractToRef(walls[0].corner, line);
+                lineNormal = new BABYLON.Vector3(line.z, 0, -1 * line.x).normalize();
+	        line.normalize();
+                innerBaseCorners[0] = walls[0].corner;
+                outerBaseCorners[0] = walls[0].corner.add(lineNormal.scale(ply));
+            }
+            else {
+                walls[1].corner.subtractToRef(walls[0].corner, nextLine);
+                angle = Math.PI - Math.acos(BABYLON.Vector3.Dot(line, nextLine)/(line.length() * nextLine.length()));			
+		    direction = BABYLON.Vector3.Cross(nextLine, line).normalize().y;			
+		    lineNormal = new BABYLON.Vector3(line.z, 0, -1 * line.x).normalize();
+		    line.normalize();
+                innerBaseCorners[0] = walls[0].corner
+                outerBaseCorners[0] = walls[0].corner.add(lineNormal.scale(ply)).add(line.scale(direction * ply/Math.tan(angle/2)));
+                innerBaseCorners[nbWalls - 1] = innerBaseCorners[0];
+                outerBaseCorners[nbWalls - 1] = outerBaseCorners[0]
+
+            }       
+        }
 
 	// inner and outer top corners
 	for(var w = 0; w < nbWalls; w++) {
@@ -120,8 +149,8 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 	}
 	
 	var maxL = 0;
-	for(w = 0; w < nbWalls; w++) {
-		maxL = Math.max(innerBaseCorners[(w + 1) % nbWalls].subtract(innerBaseCorners[w]).length(), maxL);
+	for(w = 0; w < nbWalls - 1; w++) {
+		maxL = Math.max(innerBaseCorners[w + 1].subtract(innerBaseCorners[w]).length(), maxL);
 	}
 	
 	var maxH = height; // for when gables introduced
@@ -141,13 +170,13 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 	var uvx, uvy;
 	var wallDiff;
 	
-	for(var w = 0; w < nbWalls; w++) {
-		walls[(w + 1) % nbWalls].corner.subtractToRef(walls[w].corner, wallDirection);
+	for(var w = 0; w < nbWalls - 1; w++) {
+		walls[w + 1].corner.subtractToRef(walls[w].corner, wallDirection);
 		wallLength = wallDirection.length();
 		wallDirection.normalize();
 		wallNormal.x = wallDirection.z;
 		wallNormal.z = -1 * wallDirection.x;
-		exteriorWallLength = outerBaseCorners[(w + 1) % nbWalls].subtract(outerBaseCorners[w]).length();
+		exteriorWallLength = outerBaseCorners[w + 1].subtract(outerBaseCorners[w]).length();
 		wallDiff = exteriorWallLength - wallLength;
 		var gableHeight = 0;
 		
@@ -194,7 +223,7 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 		
 		
 		// wallBuilder produces wall vertex positions array and indices using the current and next wall to rotate and translate vertex positions to correct place
-		wallData = polygonTriangulation.wallBuilder(walls[w], walls[(w + 1) % nbWalls]);	
+		wallData = polygonTriangulation.wallBuilder(walls[w], walls[w + 1]);	
 
 		nbIndices = positions.length/3; // current number of indices
 		
@@ -264,8 +293,8 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 		
 		wallData.positions.push(outerBaseCorners[w].x, outerBaseCorners[w].y, outerBaseCorners[w].z);
 		wallData.positions = wallData.positions.concat(doorData);			
-		wallData.positions.push(outerBaseCorners[(w + 1) % nbWalls].x, outerBaseCorners[(w + 1) % nbWalls].y, outerBaseCorners[(w + 1) % nbWalls].z);
-		wallData.positions.push(outerTopCorners[(w + 1) % nbWalls].x, outerTopCorners[(w + 1) % nbWalls].y, outerTopCorners[(w + 1) % nbWalls].z);
+		wallData.positions.push(outerBaseCorners[w + 1].x, outerBaseCorners[w + 1].y, outerBaseCorners[(w + 1) % nbWalls].z);
+		wallData.positions.push(outerTopCorners[w + 1].x, outerTopCorners[w + 1].y, outerTopCorners[(w + 1) % nbWalls].z);
 		wallData.positions.push(outerTopCorners[w].x, outerTopCorners[w].y, outerTopCorners[w].z);
 		wallData.positions = wallData.positions.concat(windowData);
 		
@@ -438,9 +467,9 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 		//final base
 		if(doors > 0) {
 			positions.push(innerDoorCorners[w][doorNb][3].x, innerDoorCorners[w][doorNb][3].y, innerDoorCorners[w][doorNb][3].z); //bl
-			positions.push(innerBaseCorners[(w + 1) % nbWalls].x, innerBaseCorners[(w + 1) % nbWalls].y, innerBaseCorners[(w + 1) % nbWalls].z); //br
+			positions.push(innerBaseCorners[w + 1].x, innerBaseCorners[w + 1].y, innerBaseCorners[w + 1].z); //br
 			positions.push(outerDoorCorners[w][doorNb][3].x, outerDoorCorners[w][doorNb][3].y, outerDoorCorners[w][doorNb][3].z); //tl
-			positions.push(outerBaseCorners[(w + 1) % nbWalls].x, outerBaseCorners[(w + 1) % nbWalls].y, outerBaseCorners[(w + 1) % nbWalls].z); //tr
+			positions.push(outerBaseCorners[w + 1].x, outerBaseCorners[w + 1].y, outerBaseCorners[w + 1].z); //tr
 			
 			uvs.push(exteriorUV.x, exteriorUV.y); //base Left
 			uvs.push(exteriorUV.x + (exteriorUV.z - exteriorUV.x) * (wallLength - (walls[w].doorSpaces[doorNb].left + walls[w].doorSpaces[doorNb].door.width))/maxL, exteriorUV.y); //base right
@@ -450,9 +479,9 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 		}
 		else {
 			positions.push(innerBaseCorners[w].x, innerBaseCorners[w].y, innerBaseCorners[w].z); //bl
-			positions.push(innerBaseCorners[(w + 1) % nbWalls].x, innerBaseCorners[(w + 1) % nbWalls].y, innerBaseCorners[(w + 1) % nbWalls].z); //br
+			positions.push(innerBaseCorners[w + 1].x, innerBaseCorners[w + 1].y, innerBaseCorners[w + 1].z); //br
 			positions.push(outerBaseCorners[w].x, outerBaseCorners[w].y, outerBaseCorners[w].z); //tl
-			positions.push(outerBaseCorners[(w + 1) % nbWalls].x, outerBaseCorners[(w + 1) % nbWalls].y, outerBaseCorners[(w + 1) % nbWalls].z); //tr
+			positions.push(outerBaseCorners[w + 1].x, outerBaseCorners[w + 1].y, outerBaseCorners[w + 1].z); //tr
 			
 			uvs.push(exteriorUV.x, exteriorUV.y); //base Left
 			uvs.push(exteriorUV.x + (exteriorUV.z - exteriorUV.x) * wallLength/maxL, exteriorUV.y); //base right
@@ -530,9 +559,9 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 		nbIndices = positions.length/3; // current number of indices
 		
 		positions.push(innerTopCorners[w].x, innerTopCorners[w].y, innerTopCorners[w].z); //tl
-		positions.push(innerTopCorners[(w + 1) % nbWalls].x, innerTopCorners[(w + 1) % nbWalls].y, innerTopCorners[(w + 1) % nbWalls].z); //tr
+		positions.push(innerTopCorners[w + 1].x, innerTopCorners[w + 1].y, innerTopCorners[w + 1].z); //tr
 		positions.push(outerTopCorners[w].x, outerTopCorners[w].y, outerTopCorners[w].z); //bl
-		positions.push(outerTopCorners[(w + 1) % nbWalls].x, outerTopCorners[(w + 1) % nbWalls].y, outerTopCorners[(w + 1) % nbWalls].z); //br
+		positions.push(outerTopCorners[w + 1].x, outerTopCorners[w + 1].y, outerTopCorners[w + 1].z); //br
 		
 		uvx = exteriorUV.x + 0.5 * wallDiff * (exteriorUV.z - exteriorUV.x)/maxL;
 		uvs.push(uvx, exteriorUV.y + (exteriorUV.w - exteriorUV.y) * ply/maxH); //top Left
@@ -649,9 +678,20 @@ BABYLON.PolygonMeshBuilder.prototype.wallBuilder = function (w0, w1) {
 	var ply = 0.3;
 	var height = 3.2;
 ```
+### Build Interior Walls
+Really this is a method of building walls that do not form an enclosing shell, i.e. the first and last corners do not produce a wall between them.
 
-## Playground Example
+Add the option interior: true, for example 
+
+```javascript
+var wall = buildFromPlan(walls, ply, height, {interior:true}, scene);
+```
+You can add doors and windows (?hatches) to these walls as well.
+
+## Playground Examples
 * [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#2)
+* [Playground Example of None Enclosing Wall](http://www.babylonjs-playground.com/#1Z71FW#6)
+* [Playground Example of House and Interior Walls](http://www.babylonjs-playground.com/#1Z71FW#5)
 
 # Further Reading
 

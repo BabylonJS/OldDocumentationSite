@@ -173,7 +173,7 @@ Using this data the vertices for the exterior wall corresponding to wall w can b
  4 door outer positions * number of doors, 
  position of base outer right, 
  position of top outer right wall corner,
- position of top outer left wall corrner,
+ position of top outer left wall corner,
  4 window outer positions * number of windows
 ]
 
@@ -184,7 +184,7 @@ The these can be pushed to the house positions array. Since the wall indices arr
 
 All that is left now is to consider each base sections between doors, the side and top edges for the doors and base, top and side edges for the windows for wall w. 
 
-Since the data for all corners for each of these has now been saved it is fairly staighforward to form the correct triangular facets and uv values for each
+Since the data for all corners for each of these has now been saved it is fairly straight forward to form the correct triangular facets and uv values for each
 
 Once all positions are in the house positions array and knowing that the first block only relates to the interior wall it is easy to link the remaining vertices to the exterior colour.
 
