@@ -99,6 +99,8 @@ The _Texture quality_ sets the convertion quality of bitmap to JPEG. At 100 (the
 
 The _Use Draco comression_ option is only available for gltf and glb output format. More detail [here](/resources/Maya_to_glTF#draco-compression).
 
+In the _MorphTarget options_ section, the _Export normal_ and _Export tangent_ checkboxes allow you to customize the morph target export.
+
 # What you should know
 
 ## Camera
