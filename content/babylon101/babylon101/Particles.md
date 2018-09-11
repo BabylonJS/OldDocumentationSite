@@ -107,7 +107,7 @@ particleSystem.emitter = source;
 ```
 
 ### Location and Spread
-The spread of the particles from the emitter is from within a box the size of which is determined by setting the lower, left, front corner and upper, right, back corner of the box relative to the location of th emitter. This is done using `minEmitBox` and `maxEmitBox`
+The spread of the particles from the emitter is from within a box the size of which is determined by setting the lower, left, front corner and upper, right, back corner of the box relative to the location of the emitter. This is done using `minEmitBox` and `maxEmitBox`
 
 ```javascript
 particleSystem.minEmitBox = new BABYLON.Vector3(-2, -3, 4); 
