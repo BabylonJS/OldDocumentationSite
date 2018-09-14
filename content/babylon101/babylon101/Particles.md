@@ -591,10 +591,14 @@ You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
 When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
 
 ```
-system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
+system.billboardMode = BABYLON.ParticleSystem.BILLBOARDMODE_Y;
 ```
 
+You can also use stretched billboard which will be like a full billboard mode but with an additionnal rotation to align particles with their direction.
+
 A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
+
+You can also find a demo of stretched billboard particles: https://www.babylonjs-playground.com/#5A4TP5
 
 ## Adjustable Playground Examples
 

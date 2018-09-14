@@ -119,7 +119,7 @@ At this stage code was written to add in the doors using existing positions. How
 
 To stop this effect a flat shaded mesh is necessary and rather than just converting the existing mesh to a flat shaded one it was decided to re-code for a flat shaded mesh from the start. This simplified the procedures for adding in the edges to doors and windows. Also because the interior and exterior walls were now separate it gave the possibility of applying different materials and colors to these walls.
 
-It was decided that edges to dooors and windows would be exterior.
+It was decided that edges to doors and windows would be exterior.
 
 ## Inner and Outer Walls with Doors and Windows Mesh
 
@@ -129,7 +129,7 @@ Consider inner wall w with one door and one window added as in Fig 6 showing cor
 
 Let V<sub>label</sub> be the position of a corner with the given label in the form of the triple x, y, z.
 
-![Polygon wiith Holes](/img/samples/house6.jpg)  
+![Polygon with Holes](/img/samples/house6.jpg)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 6
 
 Using polygonMeshBuilder would create an interior wall positions array with 
@@ -258,7 +258,7 @@ wall 6 - doorSpace door, left 1
 
 Applying the plan leads to
 
-* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#2)
+* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#99)
 
 # Further Reading
 
