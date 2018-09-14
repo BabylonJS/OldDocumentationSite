@@ -106,6 +106,18 @@ var engine = new BABYLON.Engine(canvas, antialiasing, null, false);
 
 In the same constructor, you may also want to turn off antialiasing support with the second parameter.
 
+## Blocking the dirty mechanism
+
+By default the scene will keep all materials up to date when you change a property that could potentially impact them (alpha, texture update, etc...). To do so the scene needs to go through all materials and flag them as dirty. This could be a potential bottleneck if you have a lot of material.
+
+To prevent this automatic update, you can execute:
+
+```
+scene.blockMaterialDirtyMechanism = true;
+```
+
+Do not forget to restore it to false when you are done with your batch changes.
+
 ## Using Animation Ratio
 Babylon.js processes speed depending on the current frame rate.
 
