@@ -681,13 +681,6 @@
                     "icon": "icons/analyzer.jpg", 
                     "description": "Analyze audio frequencies in realtime",
                     "PGID": "#TUR5GH#0"
-                },
-                {
-                    "title": "PBR with music analyzer #2",
-                    "doc": "https://doc.babylonjs.com/how_to/playing_sounds_and_music#using-the-analyser",
-                    "icon": "icons/musicAnalyzer.jpg",
-                    "description": "Visualize audio frequencies in realtime",
-                    "PGID": "#2JOSXE#23"
                 }
             ]
         },    
