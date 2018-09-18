@@ -47,6 +47,7 @@ Effect name | Image | Playground
 **smoke** | ![smoke](/img/how_to/particles/smoke.jpg) | https://playground.babylonjs.com/#HT18SF#0
 **rain** | ![rain](/img/how_to/particles/rain.jpg) | https://www.babylonjs-playground.com/#XQ8H3C#0
 **fire** | ![fire](/img/how_to/particles/fire.jpg) | https://www.babylonjs-playground.com/#7IM02G#0
+**explosion** | ![explosion](/img/how_to/particles/explosion.jpg) | https://www.babylonjs-playground.com/#X37LS1#1
 
 # Further Reading
 
