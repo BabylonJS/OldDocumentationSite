@@ -12,7 +12,7 @@ A render pipeline can be managed by enabling and disabling some effects and disp
 
 ![](/img/PPArchitecture.png)
 
-Renders Pipelines are composed of serval classes.
+Renders Pipelines are composed of several classes.
 
 | Class | Description |
 |--------|--------|
@@ -24,7 +24,7 @@ Renders Pipelines are composed of serval classes.
 ## Let's play with Render Pipeline
 
 ### Simple Pipeline
-Create pipeline 
+Create pipeline
 ```javascript
 var standardPipeline = new BABYLON.PostProcessRenderPipeline(engine, "standardPipeline");
 ```
