@@ -6,6 +6,12 @@ PG_TITLE: How To Optimize Your Scene
 
 This tutorial will help you find some links and info on how you can improve your scene regarding rendering performance.
 
+## Use TransformNode instead of AbstractMesh or empty meshes
+
+If you need node containers or transform nodes, do not use meshes but TransformNode instead. Use meshes only when associated with content to render.
+
+The meshes need to go through an evaluation process where the camera checks if they are in the frustum. This is an expensive process so reducing the number of candidates by using TransformNode when possible is a good practice. 
+
 ## Changing per mesh culling strategy
 
 Starting with Babylon.js v3.3, you can now specify a strategy used to cull a specific mesh with `mesh.cullingStrategy`.
