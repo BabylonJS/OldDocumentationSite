@@ -258,3 +258,7 @@ In the Playground use
 | <img src = 'http://www.babylonjs-playground.com/textures/xStrip.jpg' width = '64' height = '16'> | xStrip.jpg | 28 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/yStrip.jpg' width = '16' height = '64'> | yStrip.jpg | 17 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/zStrip.jpg' width = '64' height = '16'> | zStrip.jpg | 25 KB |
+
+# Further Reading
+
+[Meshes Available to Import into the Playground](/resources/meshes_to_load)
