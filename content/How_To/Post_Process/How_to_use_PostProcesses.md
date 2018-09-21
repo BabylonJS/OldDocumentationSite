@@ -35,7 +35,7 @@ The _reusable_ paameter indicates if your postprocess can be reused multiple tim
 By default (and if you are not using trilinear sampling) the postprocesses used the size of the screen scaled by the ratio you provide. But you can decide to force them to be rescaled to a power of two size in order to be more efficient. To enable this, just call `mypostprocess.alwaysForcePOT = true`.
 
 You can also control how the size is chosen by setting `mypostprocess.scaleMode` to one of these values:
-* BABYLON.Engine.SCALEMODE_FLOOR: Will fint the next lowest power of two. 
+* BABYLON.Engine.SCALEMODE_FLOOR: Will fint the next lowest power of two.
 * BABYLON.Engine.SCALEMODE_NEAREST: Will fint the nearest power of two.
 * BABYLON.Engine.SCALEMODE_CEILING: Will fint the next highest power of two.
 
@@ -46,7 +46,7 @@ If you turn off autoClear, you will be able to blend the render of the postproce
 This could be really useful when you have multiple postprocesses enabled together. You can even choose to share the output of several postprocesses with `mypostprocess.shareOutputWith(anotherPostprocess)`.
 
 ## Attach postprocess
-Depending on how you have defined a postprocess, it can be attached one or more times to the same camera. 
+Depending on how you have defined a postprocess, it can be attached one or more times to the same camera.
 The same instance can also be attached to multiple cameras.
 
 A camera has two methods:
@@ -144,7 +144,9 @@ var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, came
 ```
 
 You have several options available:
-* colorGradingTexture: Used to provide a color grading texture applied on your scene. Demo: https://www.babylonjs-playground.com/#17VHYI#5
+* colorGradingTexture: Used to provide a color grading texture applied on your scene. You can use:
+    * a [colorGradingTexture](http://doc.babylonjs.com/api/classes/babylon.colorgradingtexture) using a [.3dl](https://en.wikipedia.org/wiki/3D_lookup_table) format. Demo: https://www.babylonjs-playground.com/#17VHYI#5
+    * a standard texture (using .png for example) but with _invertY_ set to _true_, wrap mode as clamp and _imageProcessingConfiguration.colorGradingWithGreenDepth_ set to _false_. Demo: https://www.babylonjs-playground.com/#17VHYI#9
 * colorCurves: Used to provide several properties to change colors. More [details here](/overviews/physically_based_rendering_master#color-curves). Demo: https://www.babylonjs-playground.com/#J9H084#12
 * contrast: 1.0 by default. Used to change the contrast. Demo: https://www.babylonjs-playground.com/#J9H084#9
 * exposure: 1.0 by default. Used to change the exposure of the image. Demo: https://www.babylonjs-playground.com/#J9H084#10
@@ -252,7 +254,7 @@ float highlights(vec3 color)
  return smoothstep(highlightThreshold, 1.0, dot(color, vec3(0.3, 0.59, 0.11)));
 }
 
-void main(void) 
+void main(void)
 {
  vec2 texelSize = vec2(1.0 / screenSize.x, 1.0 / screenSize.y);
  vec4 baseColor = texture2D(textureSampler, vUV + vec2(-1.0, -1.0) * texelSize) * 0.25;
@@ -330,4 +332,3 @@ postProcess4.onApply = function (effect) {
 };
 ```
 You might want to read more about shaders and try our CYOS shader editor [**RIGHT HERE**](https://www.eternalcoding.com/?p=113).
-

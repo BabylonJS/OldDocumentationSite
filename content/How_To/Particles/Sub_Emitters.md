@@ -36,6 +36,11 @@ When a particle dies one of the particle systems in the array is selected at ran
 ### ATTACHED sub emitter type
 When a particle is spawned this emitter will be cloned and attached to the new particle. This can be used to create a trailing particle effect on new particles.
 
+To support attached sub emitter's to have their orientation accounted for when emitting particles, their emitter must be a mesh type:
+```javascript
+subEmitter.particleSystem.emitter = new BABYLON.Mesh("", scene);
+```
+
 ### Active Sub Systems
 Each particle system with that has sub emitters also has a property `activeSubSystems` which is an array containing all currently active sub particle systems.
 

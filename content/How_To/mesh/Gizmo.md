@@ -31,6 +31,21 @@ To manually change the selected mesh, the gizmo manager's *attachToMesh* method 
 gizmoManager.usePointerToAttachGizmos = false;
 gizmoManager.attachToMesh(mesh);
 ```
+
+All the internal gizmo's are accessible through the manager to support scenarios such as listening to drag events.
+```
+gizmoManager.gizmos.scaleGizmo;
+gizmoManager.gizmos.rotationGizmo;
+gizmoManager.gizmos.positionGizmo;
+
+gizmoManager.gizmos.positionGizmo.xGizmo.dragBehavior.onDragStartObservable.add(()=>{
+    console.log("Position gizmo's x axis started to be dragged");
+})
+gizmoManager.gizmos.positionGizmo.xGizmo.dragBehavior.onDragEndObservable.add(()=>{
+    console.log("Position gizmo's x axis drag was ended");
+})
+```
+
 [**Example**](https://www.babylonjs-playground.com/#4TBMBR)
 ## Setup
 
