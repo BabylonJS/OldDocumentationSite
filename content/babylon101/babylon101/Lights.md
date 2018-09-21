@@ -87,7 +87,7 @@ You can change this number with this code:
 
 ```javascript
 var material = new BABYLON.StandardMaterial("mat", scene);
-material.maxsimultaneousLights = 6;
+material.maxSimultaneousLights = 6;
 ```
 But beware! Because with more dynamic lights, Babylon.js will generate bigger shaders which may not be compatible with low end devices like mobiles or small tablets. In this case, babylon.js will try to recompile shaders with less lights.
 
