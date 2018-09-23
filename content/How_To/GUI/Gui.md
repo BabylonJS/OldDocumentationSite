@@ -516,7 +516,7 @@ To manage all atlas textures loaded, you need a instance of AtlasSourceImageMana
 
 `var atlasSourceImageManager = new BABYLON.GUI.AtlasSourceImageManager();`
 
-Here is an example load atlas and use with Image: https://www.babylonjs-playground.com/#3KPTKE#1
+Here is an example load atlas and use with Image: https://www.babylonjs-playground.com/#3KPTKE
     
 ### ColorPicker
 
