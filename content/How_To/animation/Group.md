@@ -53,7 +53,7 @@ The **speedRatio** for all animations in the group can be set, for example
 
 ```javascript
 animationGroup1.speedRatio = 0.25;
-animationGroup2.speedRation = 3;
+animationGroup2.speedRatio = 3;
 ```
 
 speeding up or slowing down the animation.
