@@ -2,6 +2,7 @@
     "examples": [
         {
             "title": " Basic Scene Typescript",
+            "ignoreInDoc": true,
             "samples": [
                 {
                     "title": "Link to Typescript Playground",
@@ -556,7 +557,14 @@
                     "icon": "icons/sps_shadows.jpg", 
                     "description": "Animate SPS with realtime shadows",
                     "PGID": "#ML2LR9#0"
-                }                        
+                },
+                {
+                    "title": "Particle sub emitters",
+                    "doc": "https://doc.babylonjs.com/how_to/sub_emitters",
+                    "icon": "icons/subemitter.jpg", 
+                    "description": "Spawn particles from another particle as it moves or when it dies",
+                    "PGID": "#T0L01N#50"
+                }                            
             ]
         },        
         {
@@ -943,7 +951,21 @@
                     "icon": "icons/bump.jpg",
                     "description": "Use normal map to simulate bump",
                     "PGID": "#RK0W5S#0"
-                }                              
+                },
+                {
+                    "title": "Image texture",
+                    "doc": "https://doc.babylonjs.com/babylon101/materials#transparent-texture-examples",
+                    "icon": "icons/image_texture.jpg",
+                    "description": "Apply an image with transparency to a mesh",
+                    "PGID": "#YDO1F#75"
+                },
+                {
+                    "title": "Video texture",
+                    "doc": "https://doc.babylonjs.com/how_to/video_texture",
+                    "icon": "icons/video_texture.jpg",
+                    "description": "Apply a video as a texture to a mesh",
+                    "PGID": "#CHQ4T#120"
+                }                          
             ]
         },
         {
