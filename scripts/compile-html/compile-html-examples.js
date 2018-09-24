@@ -47,6 +47,10 @@ include includes/banner.pug
         var list = JSON.parse(listJson);
         var elemCountID = 0;
         list.examples.forEach(category => {
+            if (category.ignoreInDoc) {
+                return;
+            }
+            
             pugContent += 
 `
         div(class="categoryContainer")

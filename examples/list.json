@@ -2,6 +2,7 @@
     "examples": [
         {
             "title": " Basic Scene Typescript",
+            "ignoreInDoc": true,
             "samples": [
                 {
                     "title": "Link to Typescript Playground",
