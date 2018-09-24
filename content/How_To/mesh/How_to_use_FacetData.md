@@ -96,7 +96,7 @@ Just click and the ball is positionned at the clicked facet position, not a the 
 ### Mesh partitioning
 The feature `facetData` provides also another tool called the mesh partitioning.  
 The mesh is logically divided in 3D blocks aligned with the X, Y and Z axis in its local space.  
-Here's an illustration about how this logical partitioning looks like (please wait until the skull is downloaded) :  https://www.babylonjs-playground.com/#UZGNA  
+Here's an illustration about how this logical partitioning looks like (please wait until the skull is downloaded) :  https://www.babylonjs-playground.com/#UZGNA#5
 In order to improve the visibility, the planes along the axis Z weren't displayed.  
 As you can see, there are by default 10 subdivisions on each axis.  
 When you call `updateFacetData()`, the indexes of the all the facets are sorted in the partioning array according to the facet belonging to each block.  
