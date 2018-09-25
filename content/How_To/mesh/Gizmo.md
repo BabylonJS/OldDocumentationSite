@@ -46,6 +46,12 @@ gizmoManager.gizmos.positionGizmo.xGizmo.dragBehavior.onDragEndObservable.add(()
 })
 ```
 
+By default gizmo orientation is in local space so it will be rotated to match the rotation of the object that it is attached to. To change to world orientation, the updateGizmoRotationToMatchAttachedMesh property can be set to false:
+```
+gizmoManager.gizmos.positionGizmo.updateGizmoRotationToMatchAttachedMesh = false;
+```
+Note: This is not supported on the scale gizmo
+
 [**Example**](https://www.babylonjs-playground.com/#4TBMBR)
 ## Setup
 
@@ -98,7 +104,7 @@ Classes for 3 axis gizmos are also provided which contain 3 of the single axis g
  - [ScaleGizmo](https://www.babylonjs-playground.com/#31M2AP#8)
  - [RotationGizmo](https://www.babylonjs-playground.com/#31M2AP#7)
 
-The single axis gizmos within these are exposed via the xGizmo, yGizmo and zGizmo properties. 
+The single axis gizmos within these are exposed via the xGizmo, yGizmo and zGizmo properties. The scale gizmo also has a uniformScaleGizmo property which references center gizmo used to uniformly scale.
 
 ## Bounding box Gizmo
 
