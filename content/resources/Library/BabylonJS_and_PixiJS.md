@@ -2,7 +2,7 @@
 
 Author: [SinhNQ](https://github.com/quocsinh)
 
-Pixi.js has full webgl support, a best framework for 2D game and app with rendering speed very fast. Would be great if you want make UI game with Pixi.js and combine with Babylon.js. This is a perfect duo for your web game world. :)
+Pixi.js has full webgl support, a great framework for 2D game and app with rendering speed very fast. Would be great if you want make UI game with Pixi.js and combine with Babylon.js. This is a perfect duo for your web game world. :)
 
 ## When should you use
 
