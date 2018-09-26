@@ -27,7 +27,8 @@ A viewport is defined by the following constructor:
 ```javascript
 BABYLON.Viewport = function (x, y, width, height);
 ```
+where x, y, are the lower left hand corner of the viewport followed by its width and height.  Values for x, y, width and height are given as a number between 0 and 1 representing a fraction of the screen width and height respectively.
 
-x, y, width, height are all absolute values (between 0 and 1)
+* [Playground Example Viewport](https://www.babylonjs-playground.com/#E9IRIF)
 
-Keep in mind that the canvas is similar to a texture.  Its x/y of 0, 0... is in the lower left corner.
+
