@@ -63,7 +63,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_morphtargets",
                     "icon": "icons/morph_targets.jpg", 
                     "description": "Morph a mesh between multiple targets",
-                    "PGID": "#2JDN66#0"
+                    "PGID": "#2JDN66#7"
                 }                         
             ]
         },
@@ -228,7 +228,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/cornell.jpg",
                     "description": "Load a glTF file and setup the environment",
-                    "PGID": "#J5E230#54"
+                    "PGID": "#J5E230#142"
                 },
                 {
                     "title": "Import meshes",
