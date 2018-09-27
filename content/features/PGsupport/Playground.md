@@ -111,6 +111,8 @@ Whenever a scene in the playground needs the use of keys to move an object, such
 # Further Reading
  
 [Textures Directly Available to the Playground](/resources/Playground_Textures.html)  
+[Meshes Available to Import into the Playground](/resources/meshes_to_load) 
+[Using External Assets in the Playground](/resources/External_PG_assets)   
 [The Inspector Features](/features/playground_debuglayer)  
 [How to Use The Inspector in Projects](/How_To/debug_layer)  
 [How To Customize the Inspector](/How_To/customize_debug_layer)  

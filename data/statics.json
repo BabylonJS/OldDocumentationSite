@@ -1090,7 +1090,7 @@
             ]
         },
         {
-            "title": "PG Aspects",
+            "title": "Playground",
             "name": "Playground_aspects",
             "desc": "Aspects of Playground Use",
             "files": [
@@ -1101,6 +1101,10 @@
                 {
                     "title": "Available Meshes to Import",
                     "filename": "meshes_to_load"
+                },
+                {
+                    "title": "Using External Assets",
+                    "filename": "External_PG_assets"
                 },
                 {
                     "title": "Playground Based Tutorials",
