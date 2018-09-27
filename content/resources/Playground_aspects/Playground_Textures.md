@@ -261,4 +261,5 @@ In the Playground use
 
 # Further Reading
 
-[Meshes Available to Import into the Playground](/resources/meshes_to_load)
+[Meshes Available to Import into the Playground](/resources/meshes_to_load)  
+[Using External Resources in the Playground](/resources/External_PG_assets)

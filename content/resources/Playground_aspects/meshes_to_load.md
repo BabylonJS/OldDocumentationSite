@@ -65,4 +65,5 @@ To check the distance of the camera from the displayed mesh find the radius valu
 
 # Further Reading
 
-[Other Assets Available in the Playground](/resources/playground_textures)
+[Textures Available in the Playground](/resources/playground_textures)  
+[Using External Assets in the Playground](/resources/External_PG_assets)
