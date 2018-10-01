@@ -3,7 +3,7 @@
 ## Introduction
 Development Ecosystem in Web is becoming more and more difficult to chose due to the diversity of tools and Frameworks. If you want to get started on BJS, we chose to support a set of tools to simplify your first steps with it. This can also be use on a daily basis for your contribution development.
 
-This document will introduce everything from the tools installation to debugging in BJS. This is meant to be OS agnostic, allowing users to develop the same way on Windows, Mac and Linux. 
+This document will introduce everything from the tools installation to debugging in Babylon.js. This is meant to be OS agnostic, allowing users to develop the same way on Windows, Mac and Linux. 
 
 *NOTE:* If you're looking to contribute to the Documentation, please use [this guide](http://www.html5gamedevs.com/topic/16365-contributing-to-documentation-101/). 
 
@@ -28,11 +28,13 @@ The second step is to install nodejs and its package manager. These will be your
 ### Typescript and Gulp  
 Once both git and npm are installed in your environment, please globally install both major BJS dev dependencies by launching those command lines:
 1. npm install -g typescript
-2. npm install -g gulp
+2. npm install -g gulp@4.0.0
 
 They are respectively for dealing with the Typescript language and the build tools used in the project.
 
 *Hint:* if you are developing on Windows, I would recommand using [cmder](http://cmder.net/) as your command line host (the full install is worth it).
+
+**Please note that you need to use gulp version 4+**
 
 ### Visual Studio Code
 Trying to be Open Source and OS agnostic, we chose to support VSCode which offers the quickest approach to get started. For those amongst you with another choice, it is worth giving it a try to see what it brings as the heavy integration has been managed for you.
