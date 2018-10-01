@@ -43,7 +43,7 @@ Everything else you need is taken care of within the Playground.
 
 ## Your Own HTML
 
-When writing your own HTML you just need to embed the createScene function into an HTML page structure with a &lt; script &gt; tag along with a few other items. You will need to load the BabylonJS javascript code. Also for use on tablets and mobiles BabylonJS uses pointer events rather than mouse events and so the PEP event system needs to be loaded as well. 
+When writing your own HTML you just need to embed the createScene function into an HTML page structure with a &lt; script &gt; tag along with a few other items. You will need to load the BabylonJS JavaScript code. Also for use on tablets and mobiles BabylonJS uses pointer events rather than mouse events and so the PEP event system needs to be loaded as well. 
 
 In addition a canvas element will have to be added to the body as this is where the 3D scene will be rendered and a reference variable *canvas* added to it in the code. You also need to generate the BabylonJS engine before the function for creating the scene.
 
