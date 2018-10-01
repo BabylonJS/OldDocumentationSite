@@ -1,6 +1,3 @@
-Changes list
-============
-
 # 3.3.0
 
 ## Major updates
