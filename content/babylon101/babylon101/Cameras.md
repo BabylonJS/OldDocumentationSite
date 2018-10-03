@@ -294,9 +294,9 @@ This camera imitates free movement in 3D space, think "a ghost in space." It com
 
 Its defaults are:
 
-1. Keyboard - The A and D keys move the camera left and right. The W and S keys move it forward and backward. The E and Q keys move it up and down.
+1. Keyboard - The __A__ and __D__ keys move the camera left and right. The __W__ and __S__ keys move it forward and backward. The __E__ and __Q__ keys move it up and down.
 
-2. Mouse - Rotates the camera about the Pitch and Yaw (X, Y) axes with the camera as origin. Holding the right mouse-button rotates the camera about the Roll (Z) axis with the camera as origin.
+2. Mouse - Rotates the camera about the Pitch and Yaw (X, Y) axes with the camera as origin. Holding the __right mouse-button__ rotates the camera about the Roll (Z) axis with the camera as origin.
 
 ### Constructing a Fly Camera
 
@@ -311,10 +311,10 @@ camera.rollCorrect = 10;
 // Default is false.
 camera.bankedTurn = true;
 // Defaults to 90° in radians in how far banking will roll the camera.
-bankedTurnLimit = Math.PI / 4;
+camera.bankedTurnLimit = Math.PI / 2;
 // How much of the Yawing (turning) will affect the Rolling (banked-turn.)
 // Less than 1 will reduce the Rolling, and more than 1 will increase it.
-bankedTurnMultiplier = 1;
+camera.bankedTurnMultiplier = 1;
 
 // This attaches the camera to the canvas
 camera.attachControl(canvas, true);
