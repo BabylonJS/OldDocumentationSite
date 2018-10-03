@@ -24,13 +24,13 @@ This was introduced with version 2.3 of Babylon.js and is controlled by the keyb
 The Universal Camera is now the default camera used by Babylon.js if nothing is specified, and it’s your best choice if you’d like to have a FPS-like control in your scene.
 All demos on babylonjs.com are based upon that feature. Plug a Xbox controller into your PC and using it you’ll still be able to navigate most of the demos.
 
-The default actions are
+The default actions are:
 
-1. keyboard - left and right arrows move the camera left and right, up and down arrows move it forwards and backwards;
+1. Keyboard - The left and right arrows move the camera left and right, and up and down arrows move it forwards and backwards;
 
-2. mouse - rotates the camera about the axes with the camera as origin;
+2. Mouse - Rotates the camera about the axes with the camera as origin;
 
-3. touch - swipe left and right to move camera left and right, swipe up and down to move it forward and backwards;
+3. Touch - Swipe left and right to move camera left and right, and swipe up and down to move it forward and backwards;
 
 4. [gamepad](/How_To/how_to_use_gamepads) - corresponds to device.
 
@@ -119,7 +119,7 @@ The speed with which the camera moves to a goal position is set through its acce
 // Parameters: name, position, scene
 var camera = new BABYLON.FollowCamera("FollowCam", new BABYLON.Vector3(0, 10, -10), scene);
 
-//The goal distance of camera from target
+// The goal distance of camera from target
 camera.radius = 30;
 
 // The goal height of camera above local origin (centre) of target
@@ -128,17 +128,17 @@ camera.heightOffset = 10;
 // The goal rotation of camera around local origin (centre) of target in x y plane
 camera.rotationOffset = 0;
 
-//Acceleration of camera in moving from current to goal position
+// Acceleration of camera in moving from current to goal position
 camera.cameraAcceleration = 0.005
 
-//The speed at which acceleration is halted
+// The speed at which acceleration is halted
 camera.maxCameraSpeed = 10
 
 // This attaches the camera to the canvas
-   camera.attachControl(canvas, true);
+camera.attachControl(canvas, true);
 
 // NOTE:: SET CAMERA TARGET AFTER THE TARGET'S CREATION AND NOTE CHANGE FROM BABYLONJS V 2.5
-//targetMesh created here
+// targetMesh created here.
 camera.target = targetMesh;   // version 2.4 and earlier
 camera.lockedTarget = targetMesh; //version 2.5 onwards
 ```
@@ -241,7 +241,7 @@ function startGame() {
         }),
       }),
     }, function (progress) {
-    // To do: give progress feedback to user
+    // To do: give progress feedback to user.
     }),
   }
 }
