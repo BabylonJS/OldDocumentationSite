@@ -22,22 +22,22 @@ This manager is mandatory, even if you want to create one sprite. You just have 
 
 ```javascript
 // Create a sprite manager
-var spriteManagerTrees = new BABYLON.SpriteManager("treesManagr", "Assets/Palm-arecaceae.png", 2000, 800, scene);
+var spriteManagerTrees = new BABYLON.SpriteManager("treesManager", "Assets/Palm-arecaceae.png", 2000, 800, scene);
 ```
 
 When creating a sprite manager, you have to decide a few parameters:
 * Name: a name for this manager.
 * The 2D image URL (most of the time, you will want use an image format which contain alpha channel, like .PNG).
 * The capacity of this manager : the maximum number of instances in this manager (in our example, we could create 2000 instances of trees).
-* The cell size, corresponding to the size of your image, like we’ll see below.
+* The cell size, corresponding to the size of your image, like we’ll see below. Please note that cellSize could be a number or an object made of a width and height properties (Later on you will be able to also specify `spriteManager.cellWidth` and `spriteManager.cellHeight`)
 * The actual scene, to which we will add this manager.
 
 To give another example, look at this snippet:
 ```javascript
-var spriteManagerPlayer = new BABYLON.SpriteManager("playerManagr","Assets/Player.png", 2, 64, scene);
+var spriteManagerPlayer = new BABYLON.SpriteManager("playerManager","Assets/Player.png", 2, {width: 64, height: 64}, scene);
 ```
 
-This time, we only want 2 instances, and we said that our sprite’s size is 64. Here is what our image looks like:
+This time, we only want 2 instances, and we said that our sprite’s size is 64x64. Here is what our image looks like:
 
 ![Elements](/img/how_to/Sprites/08-1.png)
 

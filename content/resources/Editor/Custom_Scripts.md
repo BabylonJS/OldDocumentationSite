@@ -9,9 +9,15 @@ This includes:
 * Lights
 * Particle systems
 
-To access the tool, just click on the toolbar **View -> Code Editor...**.
+To access the tool, just click on the toolbar **Tools -> Code Editor...**.
 
-To add a new script to the selected object, just click on **Add New** and give it a name.
+All the scripts you will wirte are standalone and can be attached to objects (by creating links).
+That means you'll first have to add a new script. Then, attach the new script to your object(s).
+
+To add a new script, just click **Add New Script...** in the toolbar and give it a name. If you selected an object before, the script will be automatically attached.
+Once you added the new script, the assets panel will be updated and you able to drag'n'drop the new script on another objects.
+
+To add a new reference to a script to the selected object, just click on **Add New** in the grid and select the script to attach.
 
 Once you select another object in the scene, the tool will refresh and draw the available scripts for the new selected object.
 

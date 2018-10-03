@@ -23,7 +23,7 @@ The **local axes** move with the mesh. The origin of **local axes** is always at
 
 ## Vectors
 
-All positions, rotations and scaling are give as 3 dimensional vectors using _new BABYLON.Vector3(x, y, z)_ and can be set separately.
+All positions, rotations and scaling are given as 3 dimensional vectors using _new BABYLON.Vector3(x, y, z)_ and can be set separately.
 
 ## The Pilot
 
@@ -57,9 +57,7 @@ The local and world axes remain in the same orientation.
 
 WARNING: Rotating in 3D space is always tricky. The order in which rotations are applied to a shape changes the final orientation of the shape and you also need to know which frame of reference is being used. There are many varying conventions for applying rotations in 3D modelling. For more details on these conventions in Babylon.js see [Applying Rotations Convention BJS](/resources/rotation_conventions).
 
-In Babylon.js 
-
-Rotations are set using
+In Babylon.js rotations are set using
 
 ```javascript
  pilot.rotation = new BABYLON.Vector3(alpha, beta, gamma);
@@ -68,7 +66,7 @@ or
 
 ```javascript
 pilot.rotation.x  =  alpha; //rotation around x axis
-pilot.rotation.y  =  beta; //rotation around y axis
+pilot.rotation.y  =  beta;  //rotation around y axis
 pilot.rotation.z  =  gamma; //rotation around z axis
 ```
 where alpha, beta, and gamma are angles measured in radians.
@@ -79,7 +77,7 @@ Either of the following two conventions can be considered as being used by rotat
 
 ### Convention 1 - **Local Axes**
 
-For **local axes** using _rotation_ turns the mesh with the centre of rotation at the origin of the **local axes** in the axes order y, x, z about the **local axes**. All rotations are anticlockwise when looking in the direction of the positive axis. 
+For **local axes** using _rotation_ turns the mesh with the center of rotation at the origin of the **local axes** in the axes order y, x, z about the **local axes**. All rotations are anticlockwise when looking in the direction of the positive axis. 
 
 The following sequence of images shows the initial starting position of the pilot followed by a rotation of &pi;/2 about the local y axis, then &pi;/2 about the local x axis and finally a rotation of &pi;/2 about the local z axis.
 
@@ -101,7 +99,7 @@ The following sequence of images shows the initial starting position of the pilo
 
 ### Summary
 
-For _rotation_ whichever way you think about it the results are the same and the following all produce the same outcome
+For _rotation_ whichever way you think about it the results are always the same. All the following commands produce the same outcome:
 
 ```javascript
 pilot.rotation = new BABYLON.Vector3(alpha, beta, gamma);

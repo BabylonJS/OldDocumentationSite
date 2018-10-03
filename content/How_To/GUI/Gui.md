@@ -47,7 +47,7 @@ var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myU
 
 **Please note that only one fullscreen mode GUI is allowed per scene**
 
-The fullscreen mode is not intented to be used with WebVR as it is a pure 2d rendering. For WebVR scenario you will have to use the texture mode below.
+The fullscreen mode is not intended to be used with WebVR as it is a pure 2d rendering. For WebVR scenario you will have to use the texture mode below.
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
@@ -302,7 +302,7 @@ Furthermore, please note that due to JavaScript platform limitation, the InputTe
 
 #### Using onBeforeKeyAddObservable for extended keyboard layouts and input masks
 
-The onBeforeKeyAddObservable observable can be used to extend or change how the InputText conrol accepts text. For example, it's possible to implement support for different keyboard layouts using this feature where some keys act as modifiers for the next entered key or you can implement an input mask which only accepts numerical keys.
+The onBeforeKeyAddObservable observable can be used to extend or change how the InputText control accepts text. For example, it's possible to implement support for different keyboard layouts using this feature where some keys act as modifiers for the next entered key or you can implement an input mask which only accepts numerical keys.
 
 The observable is triggered just before a printable key will be added to the text in the control. The attached handler can then use the following methods to get information on the keyboard state and to modify how the key is handled within the control:
 
@@ -368,7 +368,7 @@ var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
 
 #### Visual animations
-By default a button will change its opacity on pointerover and will change it scale when clicked.
+By default a button will change its opacity on pointerOver and will change it scale when clicked.
 You can define your own animations with the following callbacks:
 
 * pointerEnterAnimation
@@ -770,7 +770,35 @@ To reduce the amount of code required to achieve frequent tasks you can use the 
 
 * `BABYLON.GUI.Checkbox.AddCheckBoxWithHeader(title, onValueChanged)`: This function will create a horizontal StackPanel and will add a checkbox alongside a text block displaying the `title` property. `onValueChanged` defines the callback to call when checkbox state changes.
 
+* `BABYLON.GUI.RadioButton.AddRadioButtonWithHeader(title, group, isChecked, onValueChanged)`: This function will create a horizontal StackPanel and will add a radio button (set with specified group and isChecked parameters) alongside a text block displaying the `title` property. `onValueChanged` defines the callback to call when radio button state changes.
+
+## GUI and postprocesses
+
+In order to not apply postprocesses to your GUI, you will have to use a multi-cameras approach: one for your main scene and one for your GUI.
+
+You can find an implementation example here: https://www.babylonjs-playground.com/#U9AC0N#58
+
+The key point is to use the camera.layerMask property to isolate your GUI:
+
+```
+var camera2 = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, BABYLON.Vector3.Zero(), scene);
+camera2.layerMask = 2;
+
+// GUI - simply set advancedTexture layerMask to 2
+var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+advancedTexture.layer.layerMask = 2;
+```
+
+Then all meshes of your main scene will have a different layerMask attached to main camera:
+```
+var camera1 = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, BABYLON.Vector3.Zero(), scene);
+camera1.layerMask = 1;
+
+myMesh.layerMask = 1;
+```
+
+
 ## Further reading
 
-* [How To Use Babylon GUI3D](http://doc.babylonjs.com/how_to/gui3d)
-* [How To Use Babylon Chart3D](http://doc.babylonjs.com/how_to/chart3d)
+[How To Use the Selection Panel Helper](/how_to/selector)  
+[How To Use Babylon GUI3D](/how_to/gui3d)

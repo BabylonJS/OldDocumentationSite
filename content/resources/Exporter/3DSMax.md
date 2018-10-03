@@ -66,7 +66,7 @@ Congratulations! You did it!
     * Instances
     * Morph targets
     * Show Bounding box and submeshes bounding boxes (*)
-    * Animations: Position, scaling, rotation, visibility, bones
+    * Animations: Position, scaling, rotation, visibility, bones, morph weights
 
 * _Materials_
     * Multi-materials
@@ -80,6 +80,8 @@ Congratulations! You did it!
     * Reflection texture
     * Fresnel for diffuse, emissive, opacity and reflection
     * Physical materials (PBR)
+    * Standard Surface Arnold material
+    * Unlit attribute
 
 * _Textures_
     * UV offset / scaling / angle
@@ -98,6 +100,8 @@ All the available blend modes are listed below:
 
 ![Property button](/img/exporters/3DSMax/5_properties_button.jpg)
 
+![Scene properties](/img/exporters/3DSMax/6_properties_window.jpg)
+
 The scene properties allow you to do these things:
 * Set the scene gravity
 * __Export quaternions for all nodes instead of Euler angles__. If this option is selected, an exported model rotation won’t be updated by setting its `rotation` parameter. Instead, you will have to use the `rotationQuaternion` parameter.
@@ -105,8 +109,7 @@ The scene properties allow you to do these things:
 * Create a default skybox from the environment texture when scene is being loaded. An environmnent texture must be setup to enable this feature.
 * Set the blur effect intensity applied to the skybox texture. By default it is slightly blurred. Setting value to 0 disables the blur effect.
 * __Add a default light, if no light is exported__. If this option is checked and there is no light selected for the export, an hemispheric light is added in the exported scene. By default this option is checked.
-
-![Scene properties](/img/exporters/3DSMax/6_properties_window.jpg)
+* __Export normals__ and __Export tangents__ checkboxes allow you to control the morph target export. Note that if you want to export the target morph tangent, you have to check both the __Export tangents__ checkbox and the other __Export tangents__ checkbox of [the exporter window](#the-exporter-window).
 
 ## Object properties 
 
@@ -164,6 +167,8 @@ The _Scale factor_ can be used to rescale the whole world. If you set a scale fa
 The _Texture quality_ sets the convertion quality of bitmap to JPEG. At 100 (the maximum value), it gives the highest image quality but no file size reduction. On the contrary at 0 (the minimum value), it gives the lowest image quality but the greatest file size reduction. By default the _Texture quality_ is set to 100.
 
 The _Merge AO map_ option enables the merging of the Ambient Occlusion shadow map (stored on Diffuse Roughness slot) with the Metalness and Roughness map.
+
+The _Use Draco comression_ option is only available for gltf and glb output format. More detail [here](/resources/3DSMax_to_glTF#draco-compression).
 
 The _Export_ button should be used to create the Babylon file representing your scene. The _Export & Run_ button will also create the Babylon file, but will also launch your default browser and run the newly made Babylon file. This button is very useful if you just want to test the render of your scene in Babylon.js. 
 
@@ -252,11 +257,35 @@ Even though a specular level map should be a grayscale, its 3 components (RGB) a
 
 The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#pbr-materials)
 
+## Arnold materials
+
+The handling of arnold materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#standard-surface-arnold-material)
+
+## Shell material
+
+The handling of the shell material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#shell-material)
+
+## DirectX Shader
+
+The handling of the directX shader material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#directx-shader-material)
+
 ## Texture transparency 
 
 Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 
 
 ![texture](/img/exporters/3DSMax/11_texture.jpg)
+
+## Unlit material
+
+A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+
+3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
+
+![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
+
+To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
+
+Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
 
 Now that you know all about the exporter features, it’s time to use it! 
 

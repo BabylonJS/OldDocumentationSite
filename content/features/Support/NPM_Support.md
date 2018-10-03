@@ -11,7 +11,7 @@ All examples in this tutorial will use commonjs / es6 imports. However, since we
 We offer babaylon.js' core and its modules as npm packages. The following are available:
 
 * [babylonjs](https://www.npmjs.com/package/babylonjs) - Babylon's core.
-* [babylonjs-materials](https://www.npmjs.com/package/babylonjs-materials) - a collection of Babylon-supported advanced materials. 
+* [babylonjs-materials](https://www.npmjs.com/package/babylonjs-materials) - a collection of Babylon-supported advanced materials.
 * [babylonjs-loaders](https://www.npmjs.com/package/babylonjs-loaders) -  All of Babylon's official loaders (OBJ, STL, glTF)
 * [babylonjs-post-process](https://www.npmjs.com/package/babylonjs-post-process) - Babylon's post processes.
 * [babylonjs-procedural-textures](https://www.npmjs.com/package/babylonjs-procedural-textures) - Officially supported procedural textures
@@ -33,7 +33,7 @@ npm install --save babylonjs
 
 This will install babylonjs' javascript files and will also include a TypeScript declaration file.
 
-To include Babylon in your npm project, use:
+To include Babylon in a javascript or typescript file, use:
 
 ```javascript
 import * as BABYLON from 'babylonjs';
@@ -44,6 +44,8 @@ You can also load specific classes if you need them:
 ```javascript
 import { Engine, Scene } from 'babylonjs';
 ```
+
+**NOTE:** if you can't make this import method to work, go to the section on typescript and webpack below.
 
 ### Installing other Babylon modules
 
@@ -107,6 +109,11 @@ If not detected by your IDE, the most important thing to get full TypeScript sup
 
 This will load BABYLON's namespace and will allow autocomplete (and of course type safety) correctly.
 
+**NOTE:** to generate a default `tsconfig.json` file that contains useful information about the different settings, run the following in your terminal:
+```
+tsc --init
+```
+
 ### Example using webpack
 
 A very simple webpack configuration to compile a babylon.js TypeScript project can look like this:
@@ -114,7 +121,7 @@ A very simple webpack configuration to compile a babylon.js TypeScript project c
 ```javascript
 module.exports = {
     entry: {
-        'project': './main.ts'
+        app: './mygame.ts'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -128,7 +135,7 @@ module.exports = {
 
     ],
     module: {
-        loaders: [{
+        rules: [{
             test: /\.tsx?$/,
             loader: 'ts-loader',
             exclude: /node_modules/
@@ -136,6 +143,18 @@ module.exports = {
     }
 }
 ```
+
+Simply create a file `webpack.config.js` at the root of your project and copy-paste the above template in it.
+The file `mygame.ts` should the entry point of the project.
+
+**NOTE:** Make sure you've installed the following packages:
+```
+npm install --save-dev webpack
+npm install --save-dev webpack-cli
+npm install --save-dev typescript
+npm install --save-dev ts-loader
+```
+
 
 ## ES6
 
@@ -146,7 +165,7 @@ import * as BABYLON from './node_modules/babylonjs/es6.js'
 
 const canvas = document.getElementById("canvas");
 
-const engine = new BABYLON.Engine(canvas, true); 
+const engine = new BABYLON.Engine(canvas, true);
 
 // code continues....
 ```
@@ -492,5 +511,5 @@ Babylon is using oimo, cannon and earcut as external, optional dependencies. If 
         "oimo": true,
         "cannon": true,
         "earcut": true
-    },  
+    },
 ```

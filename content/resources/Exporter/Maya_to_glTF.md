@@ -19,17 +19,24 @@ To export to a single .glb file, choose __glb__ as __Output format__.
 
 Since the plugin first exports to babylon then converts it to glTF, glTF features are a subset of the [babylon ones](/resources/Maya#features).
 
+* _Cameras_
+    * zfar
+    * znear
+    * yfov (Perspective camera)
+    * Position / rotation (from nodes)
+
 * _Meshes_
-    * Visibility
-    * Position / rotation / scaling
-    * Geometry (position, normal, tangent, texture coordinates (2 channels))
+    * Geometry: position, normal, color, texture coordinates (2 channels)
+    * Position / rotation / scaling (from nodes)
     * Skin
     * Instances
-    * Animations: Position, scaling, rotation, bones
+    * Morph targets
+    * Animations: bones, morph weights
 
 * _Nodes_
     * Hierarchy
     * Position / rotation / scaling
+    * Animations: position, rotation, scaling
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn are converted to PBR, see below)
@@ -46,22 +53,13 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Multi-materials
 
 * _Textures_
-    * Wrap mode (clamp, mirror, repeat)
+    * Wrap mode (Clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
 
-* _Cameras_
-    * zfar
-    * znear
-    * yfov (Perspective camera)
-    * Position / rotation
-    * Animations: Position, Target / Rotation
-
 # Conversion Standard to PBR materials
 
-The plugin uses core specifications of glTF, i.e. without any extension. This implies that only PBR materials are exported.
-
-To support compatibility with Maya Standard materials (Lambert, Phong, PhongE and Blinn), they are converted to PBR materials based on their color, specular, transparency and glossiness (specular power).
+Maya Standard materials (Lambert, Phong, PhongE and Blinn) are converted to PBR materials based on their color, specular, transparency and glossiness (specular power).
 
 [The complete algorithm is detailed here](https://github.com/bghgary/glTF/blob/gh-pages/convert-between-workflows-bjs/js/babylon.pbrUtilities.js)
 
@@ -294,6 +292,14 @@ To obtain such texture, either:
 ![glTF susbtance painter export window with ORM configuration](/img/exporters/Maya_to_glTF/SubstancePainterExportORM.png)
 
 Using _Unreal Engine 4 (Packed)_ configuration, the occlusion, roughness and metallic are combined together into a single ORM texture.
+
+## Draco compression
+
+On the export form, the _Use Draco compression_ option enables the Draco compression. It needs [Node.js](https://nodejs.org) and [gltf-pipeline](https://github.com/AnalyticalGraphicsInc/gltf-pipeline) in order to work.
+
+To install the Node.js, go to the web site download and install it.
+Then to install gltf-pipeline, open et normal shell (cmd.exe or powershell.exe) and run the following command `npm install -g gltf-pipeline`.
+Once they are installed, check the _Use Draco compression_ option and the compression will be automatically done at the export end.
 
 # How to export multiple animation clips to .gltf format
 

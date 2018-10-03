@@ -40,6 +40,7 @@ By default, the overlaid scene will be drawn on top of the existing scene ignori
 ```
 utilLayer.utilityLayerScene.autoClearDepthAndStencil=false;
 ```
+Note: When this is set to false, transparent meshes will always be occluded by objects drawn to the utility layer
 By default, the utility layer's scene will be drawn following every draw of the original scene. To disable this behavior, the shouldRender property can be set to false. If set to false, the utility layer can be rendered manually via the render function.
 ```
 utilLayer.shouldRender=false;

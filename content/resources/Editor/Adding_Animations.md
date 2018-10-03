@@ -6,7 +6,7 @@ Anyway, modelers are not able to access objects such as post-processes (for exam
 **Note: all animations added and edited in the modeler will not be saved in the editor project event if you modify it inside the editor**
 
 # Using the Animations Editor
-To access the tool, just click on the toolbar **View -> Animations Editor...**.
+To access the tool, just click on the toolbar **Tools -> Animations Editor...**.
 
 If the selected object has already animations, the tool will select the first one by default.
 

@@ -27,6 +27,13 @@ The Babylon.js viewer automatically provides a [default viewing experience](#def
 ## Example
 
 <p data-height="400" data-theme-id="light" data-slug-hash="QxzBPd" data-default-tab="html,result" data-user="BabylonJS" data-embed-version="2" data-pen-title="Babylon.js Viewer - Display a 3D model" class="codepen">See the Pen <a href="https://codepen.io/BabylonJS/pen/QxzBPd/">Babylon.js Viewer - Display a 3D model</a> by Babylon.js (<a href="https://codepen.io/BabylonJS">@BabylonJS</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+## Resizing
+
+Controlling the size of the viewer is one of the most common configuration operation. It is rather easy as the viewer in default mode will fill 100% of the width and height of its container. So in order to control the viewer, you can simply style its encclosing container.
+
+<p data-height="400" data-theme-id="light" data-slug-hash="qMBwar" data-default-tab="html,result" data-user="BabylonJS" data-pen-title="Babylon.js Viewer - Resize the viewer" class="codepen">See the Pen <a href="https://codepen.io/BabylonJS/pen/qMBwar/">Babylon.js Viewer - Resize the viewer</a> by Babylon.js (<a href="https://codepen.io/BabylonJS">@BabylonJS</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 # Using the viewer in your project
@@ -50,7 +57,7 @@ Preview releases (nightlies) of the viewer are available on:
 To install the Babylon.js viewer through NPM use:
 
 ```javascript
-npm install --save babylonjs-viewer babylonjs babylonjs-loaders babylonjs-viewer-assets
+npm install --save babylonjs-viewer
 ```
 
 This will install the latest stable version of the viewer, including its needed dependencies.

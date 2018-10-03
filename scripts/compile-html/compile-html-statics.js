@@ -65,7 +65,7 @@ module.exports = function (done) {
                 "category": category,
                 "folders": globalObj[category]
             };
-            dataObject.files = _.flatten(_.pluck(globalObj[category], 'files').filter(Boolean));
+            dataObject.files = _.flatten(_.map(globalObj[category], 'files').filter(Boolean));
 
             //need to get parent folder name in order to build the file path
             dataObject.folders.map(function (folder) {
@@ -73,7 +73,7 @@ module.exports = function (done) {
                     file.folder = folder.name;
                 });
             });
-
+          
             let tasks = [async.constant(dataObject, category)];
             //if (category !== "classes") {
             tasks.push(createStaticsPage,

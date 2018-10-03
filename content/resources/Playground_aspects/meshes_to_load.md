@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Available Meshes for Importing
+PG_TITLE: Available Meshes for Importing into Playground
 ---
 
-# Available Meshes for Importing
+# Available Meshes for Importing into Playground
 
 All the playground examples are loaded using the default environment and default camera methods. All the meshes are different sizes and using the default methods places the camera at a distance where the whole image can be seen clearly. In order to find [values for other cameras](/resources/meshes_to_load/#finding-camera-values) you can use the playground scene inspector. 
 
@@ -12,7 +12,7 @@ Some meshes appear in both file locations.
 
 ## From the Playground Scenes Folder
 
-This list of files is in the [scenes folder](https://github.com/BabylonJS/Babylon.js/tree/master/Playground/scenes) of the Playground and are availble for use. 
+This list of files is in the [scenes folder](https://github.com/BabylonJS/Babylon.js/tree/master/Playground/scenes) of the Playground and are available for use. 
 
 Using a 'scene' method to append or import scenes or meshes the 'rootUrl' parameter has the form '"scenes/"' or '"scenes/folder/"' and the 'filename' parameter is as given below. The playground will show the actual terms required.
 
@@ -62,3 +62,8 @@ ufo.glb | 17 MB | ![ufo](/img/resources/meshes/ufo.png) | [Playground](https://w
 To check the distance of the camera from the displayed mesh find the radius value by accessing the camera menu from the [playground scene inspector](/features/playground_debuglayer) tool bar. Other useful values are angles, position and minZ and maxZ ranges.
 
 ![values](/img/resources/meshes/values.png)
+
+# Further Reading
+
+[Textures Available in the Playground](/resources/playground_textures)  
+[Using External Assets in the Playground](/resources/External_PG_assets)

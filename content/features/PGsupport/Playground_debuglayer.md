@@ -135,7 +135,11 @@ As for a scene the displayed list of properties for a sound can be updated manua
 
 # Further Reading
 
-[How To Use The Inspector in Projects](/How_To/debug_layer)   
+[How To Use The Inspector in Projects](/How_To/debug_layer)  
+[Textures Directly Available to the Playground](/resources/Playground_Textures.html)  
+[Meshes Available to Import into the Playground](/resources/meshes_to_load)  
+[Using External Assets in the Playground](/resources/External_PG_assets)
+
 [How To Customize the Inspector](/How_To/customize_debug_layer)  
 
 

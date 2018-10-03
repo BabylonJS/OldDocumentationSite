@@ -10,10 +10,10 @@ Babylon.JS is a great way to code a 3D environment on the web using the HTML5 ca
 
 This is the quickest and easiest way to make your own scene. Creating a 3D scene is easy, simply add a camera, lights and 3D shapes (meshes) and you are away. 
 
-The [Playground](http://babylonjs-playground.com) is web site which has everything you need to create 
+The [Playground](http://babylonjs-playground.com) is a web site which has everything you need to create 
 your own scene or edit an existing one. [More on the Playground](/features/Playground).
 
-A template for creating a scene within the playground is;
+A template for creating a scene within the playground is:
 
 ```javascript
 var createScene = function () {
@@ -39,15 +39,15 @@ var createScene = function () {
 
 Everything else you need is taken care of within the Playground.
 
-* [Playground Example of Above Code](http://www.babylonjs-playground.com/#WG9OY#1)
+* [Playground example of above code](http://www.babylonjs-playground.com/#WG9OY#1)
 
 ## Your Own HTML
 
-When writing your own HTML you just need to embed the createScene function into an HTML page structure with a &lt; script &gt; tag along with a few other items. You will need to load the BabylonJS javascript code. Also for use on tablets and mobiles BabylonJS uses pointer events rather than mouse events and so the PEP event system needs to be loaded as well. 
+When writing your own HTML you just need to embed the createScene function into an HTML page structure with a &lt; script &gt; tag along with a few other items. You will need to load the BabylonJS JavaScript code. Also for use on tablets and mobiles BabylonJS uses pointer events rather than mouse events and so the PEP event system needs to be loaded as well. 
 
-In addition a canvas element will have to be added to the body as this is where the 3D scene will be rendered and a reference variable *canvas* added to it in the code. Also in the code and before the function for creating the scene, as above, you will need to generate the BabylonJS engine. 
+In addition a canvas element will have to be added to the body as this is where the 3D scene will be rendered and a reference variable *canvas* added to it in the code. You also need to generate the BabylonJS engine before the function for creating the scene.
 
-Finally, after these, add code to call the scene, to enable the engine to continually render the scene in a loop and to resize the scene should the browser be resized.
+Finally, add code to call the scene. This enables the engine to continually render the scene in a loop and to resize it if the browser is ever resized.
 
 ### HTML template
 
@@ -55,76 +55,71 @@ Finally, after these, add code to call the scene, to enable the engine to contin
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <title>Babylon Template</title>
-	  
-	  <style>
-		html, body {
-			overflow: hidden;
-			width: 100%;
-			height: 100%;
-			margin: 0;
-			padding: 0;
-		}
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Babylon Template</title>
 
-		#renderCanvas {
-			width: 100%;
-			height: 100%;
-			touch-action: none;
-		}
-	</style>
-	
-	<script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
         <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-	<script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
-	
-   </head>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    </head>
 
    <body>
    
 	<canvas id="renderCanvas" touch-action="none"></canvas> //touch-action="none" for best results from PEP
 	
 	<script>
-	
-	        var canvas = document.getElementById("renderCanvas"); // Get the canvas element 
+        var canvas = document.getElementById("renderCanvas"); // Get the canvas element 
+        var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
 
-	        var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
-	
-	
-	        /******* Add the create scene function ******/
-	        var createScene = function () {
+        /******* Add the create scene function ******/
+        var createScene = function () {
 
-                        // Create the scene space
-                        var scene = new BABYLON.Scene(engine);
+            // Create the scene space
+            var scene = new BABYLON.Scene(engine);
 
-                        // Add a camera to the scene and attach it to the canvas
-                        var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, BABYLON.Vector3.Zero(), scene);
-                        camera.attachControl(canvas, true);
+            // Add a camera to the scene and attach it to the canvas
+            var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(0,0,5), scene);
+            camera.attachControl(canvas, true);
 
-                        // Add lights to the scene
-                        var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
-                        var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
+            // Add lights to the scene
+            var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
+            var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
 
+            // Add and manipulate meshes in the scene
+            var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter:2}, scene);
 
-                        // Add and manipulate meshes in the scene
-                        var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter:2}, scene);
+            return scene;
+        };
+        /******* End of the create scene function ******/	
 
-                        return scene;
-                };
+        var scene = createScene(); //Call the createScene function
 
-                /******* End of the create scene function ******/	
-        
-                var scene = createScene(); //Call the createScene function
+        // Register a render loop to repeatedly render the scene
+        engine.runRenderLoop(function () { 
+                scene.render();
+        });
 
-	        engine.runRenderLoop(function () { // Register a render loop to repeatedly render the scene
-	                scene.render();
-	        });
-		
-	
-	        window.addEventListener("resize", function () { // Watch for browser/canvas resize events
-	                engine.resize();
-	        });
+        // Watch for browser/canvas resize events
+        window.addEventListener("resize", function () { 
+                engine.resize();
+        });
 	</script>
    
    </body>

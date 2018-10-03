@@ -6,20 +6,26 @@ PG_TITLE: How To Optimize Your Scene
 
 This tutorial will help you find some links and info on how you can improve your scene regarding rendering performance.
 
-## Changing culling strategy
+## Use TransformNode instead of AbstractMesh or empty meshes
 
-Starting with Babylon.js v3.3, you can now specify a strategy for the culling with `scene.cullingStrategy`.
+If you need node containers or transform nodes, do not use meshes but TransformNode instead. Use meshes only when associated with content to render.
+
+The meshes need to go through an evaluation process where the camera checks if they are in the frustum. This is an expensive process so reducing the number of candidates by using TransformNode when possible is a good practice.
+
+## Changing per mesh culling strategy
+
+Starting with Babylon.js v3.3, you can now specify a strategy used to cull a specific mesh with `mesh.cullingStrategy`.
 
 You can set it to:
-- `BABYLON.Scene.CULLINGSTRATEGY_STANDARD`: This is the default value and it will use a combination of bounding sphere culling, bounding box culling and then frustum culling
-- `BABYLON.Scene.CULLINGSTRATEGY_BOUNDINGSPHERE_ONLY`: This strategy will use a bounding sphere culling and then frustum culling. This is faster than the standard one but can imply having more meshes sent to the GPU. Really useful if you are CPU bound
+- `BABYLON.AbstractMesh.CULLINGSTRATEGY_STANDARD`: This is the default value and it will use a combination of bounding sphere culling, bounding box culling and then frustum culling
+- `BABYLON.AbstractMesh.CULLINGSTRATEGY_BOUNDINGSPHERE_ONLY`: This strategy will use a bounding sphere culling and then frustum culling. This is faster than the standard one but can imply having more meshes sent to the GPU. **Really useful if you are CPU bound**.
 
 ## Reducing Shaders Overhead
 Babylon.js uses an advanced and automatic shaders engine. This system will keep shaders up to date regarding material options. If you are using a static material (ie. an immutable material) then you can let it know to Babylon.js by using the following code:
 
 ```
 material.freeze();
-``` 
+```
 
 Once frozen, the shader will remain unchanged even if you change material's properties. You will have to unfreeze it to update the inner shader:
 
@@ -106,6 +112,18 @@ var engine = new BABYLON.Engine(canvas, antialiasing, null, false);
 
 In the same constructor, you may also want to turn off antialiasing support with the second parameter.
 
+## Blocking the dirty mechanism
+
+By default the scene will keep all materials up to date when you change a property that could potentially impact them (alpha, texture update, etc...). To do so the scene needs to go through all materials and flag them as dirty. This could be a potential bottleneck if you have a lot of material.
+
+To prevent this automatic update, you can execute:
+
+```
+scene.blockMaterialDirtyMechanism = true;
+```
+
+Do not forget to restore it to false when you are done with your batch changes.
+
 ## Using Animation Ratio
 Babylon.js processes speed depending on the current frame rate.
 
@@ -124,6 +142,9 @@ As a developer you should not be concerned by this mechanism. However, to suppor
 
 If you created resources that need to be rebuilt (like vertex buffers or index buffers), you can use the `engine.onContextLostObservable` and `engine.onContextRestoredObservable` observables to keep track of the context lost and context restored events.
 
+## Scene with large number of meshes
+If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, you can set the option `useGeometryIdsMap` to `true` in the scene constructor. It will speed-up the addition and removal time against consuming a little bit more memory.
+
 ## Instrumentation
 Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optmize what needs to be optimized.
 
@@ -136,6 +157,8 @@ Here is an example of how to use engine instrumentation:
 https://www.babylonjs-playground.com/#HH8T00#1
 
 Please note that each counter is *PerfCounter* object which can provide multiple properties like average, total, min, max, count, etc.
+
+GPU timer require a special extension (EXT_DISJOINT_TIMER_QUERY) in order to work. This extension has been disabled due to Spectre and Meltdown on all major browsers. This is still possible to use by enabling the flag gfx.webrender.debug.gpu-time-queries on firefox at the moment. This should be re-enabled soon in the browsers.
 
 ### SceneInstrumentation
 The SceneInstrumentation class allows you to get the following counters (per scene):
@@ -151,10 +174,12 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 * *physicsTimeCounter*: Time (in milliseconds) spent simulating physics. Must be turned on with `instrumentation.capturePhysicsTime = true`.
 * *cameraRenderTimeCounter*: Time (in milliseconds) spent to render a camera. Must be turned on with `instrumentation.captureCameraRenderTime = true`.
 
+Those counters are all resetted to 0 at the beginning of each frame. Therefore it is easier to access them in the onAfterRender callback or observable.
+
 # Further Reading
 
 ## More Advanced - L3
 
-[How to Use Scene Optimizer](/How_To/How_to_use_SceneOptimizer)  
+[How to Use Scene Optimizer](/How_To/How_to_use_SceneOptimizer)
 [How To Optimize Your Scene With Octrees](/How_To/optimizing_your_scene_with_octrees)
 

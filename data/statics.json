@@ -135,6 +135,11 @@
                     "filename": "Fast_Build"
                 },
                 {
+                    "title": "Interact with a Scene",
+                    "level": 1,
+                    "filename": "Interactions"
+                },
+                {
                     "title": "Use Multiple Scenes",
                     "level": 1,
                     "filename": "Multi_Scenes"
@@ -178,6 +183,11 @@
                     "title": "Render a Scene to a Video",
                     "level": 3,
                     "filename": "Render_Scene_on_a_Video"
+                },
+                {
+                    "title": "Use clip planes",
+                    "level": 3,
+                    "filename": "Clip_Planes"
                 }
             ]
         },
@@ -743,12 +753,12 @@
                     "filename": "Gui"
                 },
                 {
-                    "title": "Use the Babylon 3D GUI",
-                    "filename": "Gui3D"
+                    "title": "Use the Selection Panel Helper",
+                    "filename": "Selector"
                 },
                 {
-                    "title": "Use the Babylon 3D Charting",
-                    "filename": "Chart3D"
+                    "title": "Use the Babylon 3D GUI",
+                    "filename": "Gui3D"
                 }
             ]
         },
@@ -874,6 +884,10 @@
                     "filename": "Adding_Materials"
                 },
                 {
+                    "title": "Using The Assets Panel",
+                    "filename": "Using_Assets_Panel"
+                },
+                {
                     "title": "Writing Custom Scripts",
                     "filename": "Custom_Scripts"
                 },
@@ -884,6 +898,10 @@
                 {
                     "title": "Using Path Finder",
                     "filename": "Using_PathFinder"
+                },
+                {
+                    "title": "Creating Prefabs",
+                    "filename": "Creating_Prefabs"
                 }
             ]
         },
@@ -1072,24 +1090,21 @@
             ]
         },
         {
-            "title": "Mesh Library",
-            "name": "Mesh_Samples",
-            "desc": "Meshes for Importing",
-            "files": [
-                {
-                    "title": "Available Meshes to Import",
-                    "filename": "meshes_to_load"
-                }
-            ]
-        },
-        {
-            "title": "PG Aspects",
+            "title": "Playground",
             "name": "Playground_aspects",
             "desc": "Aspects of Playground Use",
             "files": [
                 {
                     "title": "Available Textures in the Playground",
                     "filename": "Playground_Textures"
+                },
+                {
+                    "title": "Available Meshes to Import",
+                    "filename": "meshes_to_load"
+                },
+                {
+                    "title": "Using External Assets",
+                    "filename": "External_PG_assets"
                 },
                 {
                     "title": "Playground Based Tutorials",
@@ -1592,6 +1607,10 @@
                 {
                     "title": "Arc Between Vectors",
                     "filename": "Sector"
+                },
+                {
+                    "title": "Mesh Surface Area",
+                    "filename": "area"
                 },
                 {
                     "title": "Display Path3D Curve",

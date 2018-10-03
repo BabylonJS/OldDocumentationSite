@@ -2,13 +2,14 @@
     "examples": [
         {
             "title": " Basic Scene Typescript",
+            "ignoreInDoc": true,
             "samples": [
                 {
                     "title": "Link to Typescript Playground",
                     "doc": "https://doc.babylonjs.com/features/playground",
                     "icon": "icons/basic_scene.png", 
                     "description": "Ball and plane",
-                    "PGID": "ts.html#"
+                    "PGID": "/ts.html#"
                 }
             ]
         },
@@ -62,7 +63,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_morphtargets",
                     "icon": "icons/morph_targets.jpg", 
                     "description": "Morph a mesh between multiple targets",
-                    "PGID": "#2JDN66#0"
+                    "PGID": "#2JDN66#7"
                 }                         
             ]
         },
@@ -108,14 +109,14 @@
                     "icon": "icons/meshbutton3d.jpg", 
                     "description": "Uses MeshButton3D to create custom 3D buttons",
                     "PGID": "#8Y780Y#20"
-                },                
+                },
                 {
-                    "title": "Chart3D - Bar Graph",
-                    "doc": "https://doc.babylonjs.com/how_to/chart3d",
-                    "icon": "icons/chart3d.jpg", 
-                    "description": "Babylon.js 3D charting provides support for chart controls like bar graphes, etc.",
-                    "PGID": "#NUMA1E#2"
-                }                 
+                    "title": "App Bar (AttachToBoxBehavior)",
+                    "doc": "https://doc.babylonjs.com/how_to/meshbehavior",
+                    "icon": "icons/appBar.jpg", 
+                    "description": "Attach a menu to a bounding box such that it always faces the user",
+                    "PGID": "#8GY6J8#62"
+                }               
             ]
         },
         {
@@ -227,7 +228,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/cornell.jpg",
                     "description": "Load a glTF file and setup the environment",
-                    "PGID": "#J5E230#54"
+                    "PGID": "#J5E230#142"
                 },
                 {
                     "title": "Import meshes",
@@ -255,7 +256,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_assetcontainer",
                     "icon": "icons/assetContainer.jpg",
                     "description": "To add and remove assets from a scene an AssetContainer can be used.",
-                    "PGID": "#17MXFZ#0"
+                    "PGID": "#17MXFZ#34"
                 }                 
             ]
         },         
@@ -467,6 +468,13 @@
                     "icon": "icons/octree.jpg",
                     "description": "Use octrees to boost mesh selections when dealing with thousands of objects",
                     "PGID": "#3YFJ5R#0"
+                },
+                {
+                    "title": "Clip planes",
+                    "doc": "http://doc.babylonjs.com/how_to/clip_planes",
+                    "icon": "icons/clipplanes.jpg",
+                    "description": "You can clip the rendering of a scene by using clip planes",
+                    "PGID": "#Y6W087#0"
                 }
             ]
         },        
@@ -549,7 +557,14 @@
                     "icon": "icons/sps_shadows.jpg", 
                     "description": "Animate SPS with realtime shadows",
                     "PGID": "#ML2LR9#0"
-                }                        
+                },
+                {
+                    "title": "Particle sub emitters",
+                    "doc": "https://doc.babylonjs.com/how_to/sub_emitters",
+                    "icon": "icons/subemitter.jpg", 
+                    "description": "Spawn particles from another particle as it moves or when it dies",
+                    "PGID": "#T0L01N#50"
+                }                            
             ]
         },        
         {
@@ -674,13 +689,6 @@
                     "icon": "icons/analyzer.jpg", 
                     "description": "Analyze audio frequencies in realtime",
                     "PGID": "#TUR5GH#0"
-                },
-                {
-                    "title": "PBR with music analyzer #2",
-                    "doc": "https://doc.babylonjs.com/how_to/playing_sounds_and_music#using-the-analyser",
-                    "icon": "icons/musicAnalyzer.jpg",
-                    "description": "Visualize audio frequencies in realtime",
-                    "PGID": "#2JOSXE#22"
                 }
             ]
         },    
@@ -943,7 +951,21 @@
                     "icon": "icons/bump.jpg",
                     "description": "Use normal map to simulate bump",
                     "PGID": "#RK0W5S#0"
-                }                              
+                },
+                {
+                    "title": "Image texture",
+                    "doc": "https://doc.babylonjs.com/babylon101/materials#transparent-texture-examples",
+                    "icon": "icons/image_texture.jpg",
+                    "description": "Apply an image with transparency to a mesh",
+                    "PGID": "#YDO1F#75"
+                },
+                {
+                    "title": "Video texture",
+                    "doc": "https://doc.babylonjs.com/how_to/video_texture",
+                    "icon": "icons/video_texture.jpg",
+                    "description": "Apply a video as a texture to a mesh",
+                    "PGID": "#CHQ4T#120"
+                }                          
             ]
         },
         {

@@ -31,6 +31,27 @@ To manually change the selected mesh, the gizmo manager's *attachToMesh* method 
 gizmoManager.usePointerToAttachGizmos = false;
 gizmoManager.attachToMesh(mesh);
 ```
+
+All the internal gizmo's are accessible through the manager to support scenarios such as listening to drag events.
+```
+gizmoManager.gizmos.scaleGizmo;
+gizmoManager.gizmos.rotationGizmo;
+gizmoManager.gizmos.positionGizmo;
+
+gizmoManager.gizmos.positionGizmo.xGizmo.dragBehavior.onDragStartObservable.add(()=>{
+    console.log("Position gizmo's x axis started to be dragged");
+})
+gizmoManager.gizmos.positionGizmo.xGizmo.dragBehavior.onDragEndObservable.add(()=>{
+    console.log("Position gizmo's x axis drag was ended");
+})
+```
+
+By default gizmo orientation is in local space so it will be rotated to match the rotation of the object that it is attached to. To change to world orientation, the updateGizmoRotationToMatchAttachedMesh property can be set to false:
+```
+gizmoManager.gizmos.positionGizmo.updateGizmoRotationToMatchAttachedMesh = false;
+```
+Note: This is not supported on the scale gizmo
+
 [**Example**](https://www.babylonjs-playground.com/#4TBMBR)
 ## Setup
 
@@ -83,7 +104,7 @@ Classes for 3 axis gizmos are also provided which contain 3 of the single axis g
  - [ScaleGizmo](https://www.babylonjs-playground.com/#31M2AP#8)
  - [RotationGizmo](https://www.babylonjs-playground.com/#31M2AP#7)
 
-The single axis gizmos within these are exposed via the xGizmo, yGizmo and zGizmo properties. 
+The single axis gizmos within these are exposed via the xGizmo, yGizmo and zGizmo properties. The scale gizmo also has a uniformScaleGizmo property which references center gizmo used to uniformly scale.
 
 ## Bounding box Gizmo
 
@@ -131,6 +152,12 @@ Additionally, the bounding box can ignore children of the attached mesh to add a
 ```
 gizmo.ignoreChildren = true;
 ```
+
+To only ignore certain children when computing the bounding box, the includeChildPredicate can be set.
+```
+gizmo.includeChildPredicate = (m)=>{return m == sphere2};
+```
+[Example](https://www.babylonjs-playground.com/#SG9ZZB)
 
 
 UI can be attached to the bounding box using the [AttachToBoxBehavior](/How_To/MeshBehavior)

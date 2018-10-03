@@ -5,7 +5,7 @@ To load a scene (even with a .editorproject file), just drag'n'drop all the file
 
 You can also load a scene using the toolbar **Project -> Import Project**, select all the files and click **Open**.
 
-## Available formats
+## Available scene formats
 * .babylon
 * .gltf
 * .glb (binary GLTF)
@@ -19,6 +19,10 @@ You can also load a scene using the toolbar **Project -> Import Project**, selec
 The editor will not save the entire scene when you want to save your project. Anyway, the editor will save the delta between the original scene file (.babylon, .gltf, etc.) and the editor file (.editorproject).
 
 The editor project file will contain all the user's metadatas such as custom scripts, custom post-processes, custom materials, sounds, nodes, etc.
+
+To save the project, just click on the main toolbar **Project -> Save Project**.
+
+**Note: It is highly recommanded to use the desktop app as you'll get access to the local file system to save your projects. Anyway, on the online version, the editor will try to save the project on OneDrive.**
 
 ## Important
 To properly load your scenes after saving, don't forget to add all the external files (sounds, textures, etc.) in the same folder of the scene.
