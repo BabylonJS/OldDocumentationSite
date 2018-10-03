@@ -1609,6 +1609,10 @@
                     "filename": "Sector"
                 },
                 {
+                    "title": "Mesh Surface Area",
+                    "filename": "area"
+                },
+                {
                     "title": "Display Path3D Curve",
                     "filename": "Path3D"
                 },
