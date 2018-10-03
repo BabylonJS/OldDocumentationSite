@@ -143,7 +143,7 @@ As a developer you should not be concerned by this mechanism. However, to suppor
 If you created resources that need to be rebuilt (like vertex buffers or index buffers), you can use the `engine.onContextLostObservable` and `engine.onContextRestoredObservable` observables to keep track of the context lost and context restored events.
 
 ## Scene with large number of meshes
-If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, you can pass use the option `useGeometryIdsMap` in the scene constructor. It will speed-up the addition and removal time against consuming a little bit more memory.
+If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, you can set the option `useGeometryIdsMap` to `true` in the scene constructor. It will speed-up the addition and removal time against consuming a little bit more memory.
 
 ## Instrumentation
 Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optmize what needs to be optimized.
