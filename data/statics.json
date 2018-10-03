@@ -1610,7 +1610,7 @@
                 },
                 {
                     "title": "Mesh Surface Area",
-                    "filename": "Area"
+                    "filename": "area"
                 },
                 {
                     "title": "Display Path3D Curve",
