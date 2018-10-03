@@ -12,7 +12,7 @@ To enable offline support, the first thing you need to do is create a _**.manife
 
 **Starting with Babylon.js v4.0 you also have to turn the feature on with:**
 ```
-BABYLON.IDBStorageEnabled = false;
+BABYLON.IDBStorageEnabled = true;
 ```
 
 **Note:** by default, the Babylon engine is configured to use online resources. So if you don’t provide any .manifest file, it will assume that you want the resources to be loaded directly from the web all the time.
