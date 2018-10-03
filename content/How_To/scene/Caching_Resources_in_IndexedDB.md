@@ -10,6 +10,11 @@ Starting with the **1.4 release** of Babylon.JS, you can now very easily indicat
 
 To enable offline support, the first thing you need to do is create a _**.manifest**_ file associated with your scene. It should be named _NameOfYourScene.babylon.manifest_.
 
+**Starting with Babylon.js v4.0 you also have to turn the feature on with:**
+```
+BABYLON.IDBStorageEnabled = false;
+```
+
 **Note:** by default, the Babylon engine is configured to use online resources. So if you don’t provide any .manifest file, it will assume that you want the resources to be loaded directly from the web all the time.
 
 Inside this **.manifest** file, insert the following piece of JSON:
