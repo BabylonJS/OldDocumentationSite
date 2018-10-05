@@ -701,6 +701,11 @@
                     "title": "Use depth-of-field and other lens effects",
                     "level": 3,
                     "filename": "Using_depth-of-field_and_other_lens_effects"
+                },
+                {
+                    "title": "Use motion blur post-process",
+                    "level": 3,
+                    "filename": "Using_MotionBlurPostProcess"
                 }
             ]
         },
