@@ -91,7 +91,7 @@ For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent an
 
   keys.push({
     frame: 0,
-    value: BABYLON.Vector3.Zero()
+    value: BABYLON.Vector3.Zero(),
     outTangent: new BABYLON.Vector3(1, 0, 0)
   });
 
