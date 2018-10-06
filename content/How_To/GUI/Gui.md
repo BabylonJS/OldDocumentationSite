@@ -681,7 +681,7 @@ Here is an example of an ellipse control: https://www.babylonjs-playground.com/#
 ### StackPanel
 
 The StackPanel is a control which stacks its children based on its orientation (can be horizontal or vertical).
-All children must have a defined width or height (depending on the orientation).
+All children must have a defined width or height (depending on the orientation) in **pixels**.
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
