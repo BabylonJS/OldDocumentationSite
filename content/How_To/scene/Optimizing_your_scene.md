@@ -143,8 +143,23 @@ As a developer you should not be concerned by this mechanism. However, to suppor
 If you created resources that need to be rebuilt (like vertex buffers or index buffers), you can use the `engine.onContextLostObservable` and `engine.onContextRestoredObservable` observables to keep track of the context lost and context restored events.
 
 ## Scene with large number of meshes
-If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, you can set the option `useGeometryIdsMap` to `true` in the scene constructor. It will speed-up the addition and removal time against consuming a little bit more memory.
+If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, There are several options of the `Scene` constructor that can help :
+ - Setting the option `useGeometryIdsMap` to `true` will speed-up the addition and removal of `Geometry` in the scene.
+ - Setting the option `useMaterialMeshMap` to `true` will speed-up the disposing of `Material` by reducing the time spent to look for bound meshes.
+ - Setting the option `useClonedMeshhMap` to `true` will speed-up the disposing of `Mesh` by reducing the time spent to look for associated cloned meshes.
 
+For each of this options turned on, Babylon.js will need an additional amount of memory.
+
+Also, If you are disposing a large number of meshes in a row, you can save unecessary computation by turnning the scene property `blockfreeActiveMeshesAndRenderingGroups` to true just before disposing the meshes, and set it back to `false` just after, like this :
+````javascript
+
+scene.blockfreeActiveMeshesAndRenderingGroups = true;
+/*
+ * Dispose all the meshes in a row here
+ */
+scene.blockfreeActiveMeshesAndRenderingGroups = false;
+
+````
 ## Instrumentation
 Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optmize what needs to be optimized.
 
