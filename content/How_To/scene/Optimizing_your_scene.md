@@ -10,7 +10,7 @@ This tutorial will help you find some links and info on how you can improve your
 
 If you need node containers or transform nodes, do not use meshes but TransformNode instead. Use meshes only when associated with content to render.
 
-The meshes need to go through an evaluation process where the camera checks if they are in the frustum. This is an expensive process so reducing the number of candidates by using TransformNode when possible is a good practice. 
+The meshes need to go through an evaluation process where the camera checks if they are in the frustum. This is an expensive process so reducing the number of candidates by using TransformNode when possible is a good practice.
 
 ## Changing per mesh culling strategy
 
@@ -25,7 +25,7 @@ Babylon.js uses an advanced and automatic shaders engine. This system will keep 
 
 ```
 material.freeze();
-``` 
+```
 
 Once frozen, the shader will remain unchanged even if you change material's properties. You will have to unfreeze it to update the inner shader:
 
@@ -142,6 +142,24 @@ As a developer you should not be concerned by this mechanism. However, to suppor
 
 If you created resources that need to be rebuilt (like vertex buffers or index buffers), you can use the `engine.onContextLostObservable` and `engine.onContextRestoredObservable` observables to keep track of the context lost and context restored events.
 
+## Scene with large number of meshes
+If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, There are several options of the `Scene` constructor that can help :
+ - Setting the option `useGeometryIdsMap` to `true` will speed-up the addition and removal of `Geometry` in the scene.
+ - Setting the option `useMaterialMeshMap` to `true` will speed-up the disposing of `Material` by reducing the time spent to look for bound meshes.
+ - Setting the option `useClonedMeshhMap` to `true` will speed-up the disposing of `Mesh` by reducing the time spent to look for associated cloned meshes.
+
+For each of this options turned on, Babylon.js will need an additional amount of memory.
+
+Also, If you are disposing a large number of meshes in a row, you can save unecessary computation by turnning the scene property `blockfreeActiveMeshesAndRenderingGroups` to true just before disposing the meshes, and set it back to `false` just after, like this :
+````javascript
+
+scene.blockfreeActiveMeshesAndRenderingGroups = true;
+/*
+ * Dispose all the meshes in a row here
+ */
+scene.blockfreeActiveMeshesAndRenderingGroups = false;
+
+````
 ## Instrumentation
 Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optmize what needs to be optimized.
 
@@ -177,6 +195,6 @@ Those counters are all resetted to 0 at the beginning of each frame. Therefore i
 
 ## More Advanced - L3
 
-[How to Use Scene Optimizer](/How_To/How_to_use_SceneOptimizer)  
+[How to Use Scene Optimizer](/How_To/How_to_use_SceneOptimizer)
 [How To Optimize Your Scene With Octrees](/How_To/optimizing_your_scene_with_octrees)
 

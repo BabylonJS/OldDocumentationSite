@@ -367,6 +367,12 @@ var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
 
+#### Accessing parts
+
+You can use the following properties to get button's parts (if available):
+* image: Returns the image part of the button (if any)
+* textBlock: Returns the image part of the button (if any)
+
 #### Visual animations
 By default a button will change its opacity on pointerOver and will change it scale when clicked.
 You can define your own animations with the following callbacks:
@@ -651,6 +657,14 @@ You can decide to have your containers to adapt their size to their children by 
 If you set one of these properties to true, the associated dimension (width, height or both) will be computed based on direct children size as long as it is defined in pixel (size cannot be defined in percentage because this will generate an infinite loop as the child will need the parent size and the parent will need the child size)
 You can find a demo here: https://www.babylonjs-playground.com/#GL5SIM
 
+### Clipping
+By default containers will clip their children to their bounds. You can disable this option by calling this code:
+```
+container.clipChildren = false;
+```
+
+You can find a demo here: https://www.babylonjs-playground.com/#LBF8S2
+
 ### Rectangle
 The Rectangle is a rectangular container with the following properties:
 
@@ -673,7 +687,7 @@ Here is an example of an ellipse control: https://www.babylonjs-playground.com/#
 ### StackPanel
 
 The StackPanel is a control which stacks its children based on its orientation (can be horizontal or vertical).
-All children must have a defined width or height (depending on the orientation).
+All children must have a defined width or height (depending on the orientation) in **pixels**.
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
