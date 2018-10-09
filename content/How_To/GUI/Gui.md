@@ -367,6 +367,12 @@ var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
 
+#### Accessing parts
+
+You can use the following properties to get button's parts (if available):
+* image: Returns the image part of the button (if any)
+* textBlock: Returns the image part of the button (if any)
+
 #### Visual animations
 By default a button will change its opacity on pointerOver and will change it scale when clicked.
 You can define your own animations with the following callbacks:
@@ -681,7 +687,7 @@ Here is an example of an ellipse control: https://www.babylonjs-playground.com/#
 ### StackPanel
 
 The StackPanel is a control which stacks its children based on its orientation (can be horizontal or vertical).
-All children must have a defined width or height (depending on the orientation).
+All children must have a defined width or height (depending on the orientation) in **pixels**.
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
