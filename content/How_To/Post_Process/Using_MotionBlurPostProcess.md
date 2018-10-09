@@ -36,4 +36,4 @@ motionblur.motionBlurSamples = 16; // divide quality by 2
 ```
 
 # Notes
-The Motion Blur post-process needs at least support of WebGL 2 or WebGL 1 with multiple render targets support. If not available, the post-process will destroy itself.
+The Motion Blur post-process needs at least support of WebGL 2 or WebGL 1 with multiple render targets support. If not available, the post-process will work as a passthrough.
