@@ -146,7 +146,7 @@ If you created resources that need to be rebuilt (like vertex buffers or index b
 If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, There are several options of the `Scene` constructor that can help :
  - Setting the option `useGeometryIdsMap` to `true` will speed-up the addition and removal of `Geometry` in the scene.
  - Setting the option `useMaterialMeshMap` to `true` will speed-up the disposing of `Material` by reducing the time spent to look for bound meshes.
- - Setting the option `useClonedMeshhMap` to `true` will speed-up the disposing of `Mesh` by reducing the time spent to look for associated cloned meshes.
+ - Setting the option `useClonedMeshMap` to `true` will speed-up the disposing of `Mesh` by reducing the time spent to look for associated cloned meshes.
 
 For each of this options turned on, Babylon.js will need an additional amount of memory.
 
