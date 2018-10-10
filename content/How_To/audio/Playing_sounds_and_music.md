@@ -419,8 +419,6 @@ myAnalyser.drawDebugCanvas();
 
 This will connect to the global volume of the audio engine and will draw the frequencies of all sounds played together into a 2D canvas display on top of the screen. 
 
-![Image Analyser Debug Canvas](http://az612410.vo.msecnd.net/wwwbabylonjs/doc/simpleanalyserdebug.png)
-
 You can change the position and size of the debug canvas and use an analyser on a sound track instead of the global audio engine:
 
 ``` javascript
@@ -439,4 +437,3 @@ Here is a full sample:
 
  https://www.babylonjs-playground.com/#PTV7W#1
 
-![Image Analyser Debug Canvas](http://az612410.vo.msecnd.net/wwwbabylonjs/doc/3Danalyser.png)
