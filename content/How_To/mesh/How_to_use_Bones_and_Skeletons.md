@@ -36,6 +36,11 @@ finalMatrix = worldMatrix * (bonesMatrices[index0] * weight0 + bonesMatrices[ind
 
 On low-end hardware, the maximum bones influences per vertex is reduced to 3.
 
+By default the system will try to store the bone matrices into a texture to save shader uniforms. If you still want to use shader uniforms, you can call:
+```
+skeleton.useTextureToStoreBoneMatrices = false;
+```
+
 ## Loading bones
 Skeletons and bones can be loaded from .babylon files.
 
