@@ -1,8 +1,7 @@
 # Combine Babylon.js and Pixi.js
 
-Author: [SinhNQ](https://github.com/quocsinh)
 
-Pixi.js has full webgl support, a great framework for 2D game and app with rendering speed very fast. Would be great if you want make UI game with Pixi.js and combine with Babylon.js. This is a perfect duo for your web game world. :)
+Pixi.js is a fast, lightweight, open source 2D library with full support for webGL with a very fast rendering speed. It is great to use as a UI in combination with Babylon.js, making a perfect duo for your web game world.
 
 ## When should you use
 
@@ -22,7 +21,7 @@ var pixiRenderer = new PIXI.WebGLRenderer({
 });
 ```
 
-The *clearBeforeRender* and *autoStart* are 2 properties important, you must set them to *false*.
+The *clearBeforeRender* and *autoStart* are two very important properties that must be used and set to *false*.
 
 The render sequence of Babylon.js and Pixi.js is also very important, Babylon.js must be rendered first.
 
@@ -36,18 +35,68 @@ engine.runRenderLoop(function() {
 });
 ```
 
-Full example: https://jsfiddle.net/y5q7Lb1v/40/
+[Working JSFiddle Example Pixi.js in Front](https://jsfiddle.net/y5q7Lb1v/40/)
 
-## Problems
+It is possible to place a Pixi.js stage behind a Babylon.js scene provided you use
+
+```
+scene.autoClear = false;
+```
+
+to make the background of the scene transparent. In this case render Pixi.js before Babylon.js.
+
+```
+engine.runRenderLoop(function() {   
+  pixiRenderer.reset();
+  pixiRenderer.render(stage);
+  
+  scene.autoClear = false;
+  scene.render();    	
+  engine.wipeCaches(true);
+   
+});
+```
+
+It is also possible to combine these and have Pixi.js stages behind and in front of a Babylon.js stage.
+
+```
+engine.runRenderLoop(function() {   
+  pixiRenderer.reset();
+  pixiRenderer.render(stage);
+  
+  scene.autoClear = false;
+  scene.render();    	
+  engine.wipeCaches(true);
+  
+  pixiRenderer.reset();
+  pixiRenderer.render(stage1);
+ 
+});
+```
+
+[JSFiddle Example Multiple Stages](https://jsfiddle.net/y5q7Lb1v/42/)
+
+## WebGL1 Problems
 
 The above example working great when your browser support WebGL2 but will have a bit of issues when run on WebGL1.
 
-To fix that, you need reset state context before be rendered.
+When your browser is running webGL1 then you need to reset the Pixi.js context first for each rendering as below.
 
-Lines 14, 34 & 35: https://jsfiddle.net/y5q7Lb1v/21/
+```
+engine.runRenderLoop(function() { 
+    if(engine.webGLVersion === 1) {
+        pixiRenderer.reset();
+    }
+    scene.render();    	
+    engine.wipeCaches(true);
+  
+    pixiRenderer.reset();
+    pixiRenderer.render(stage);
+});
+```
 
-## Notes
+Lines 14, 34 & 35: [JSFiddle](https://jsfiddle.net/y5q7Lb1v/21/)
 
-* You should use Pixi.js v4.8.2, this version working at well with Babylon.js newest version.
+## Pixi.js Versions
 
-* Don't use Pixi.js v5 alpha, them still a few errors. I will update the doc when Pixi.js v5 released.
+Always use the [latest released version of Pixi.js](https://github.com/pixijs/pixi.js/releases)
