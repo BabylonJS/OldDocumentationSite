@@ -458,6 +458,7 @@ color|string|white|Foreground color
 background|string|black|Background color
 barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
 thumbWidth|valueAndUnit|30px|Width of the thumb
+displayThumb|boolean|true|Indicates if the thumb must be rendered (useful to simulate progress bar)
 isThumbCircle|boolean|false|Indicates if the thumb should be a circle (square if false)
 isThumbClamped|boolean|false|Indicates if the thumb should be clamped
 isVertical|boolean|false|Indicates that the slider will be rendered vertically instead of horizontally
