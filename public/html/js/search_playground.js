@@ -69,7 +69,7 @@
         var html = '';
 
         $.ajax({
-            url: 'https://babylonjs-api2.azurewebsites.net/snippets/search/' + queryType,
+            url: 'https://babylonsnippetsv3.azurewebsites.net/api/snippets/search/' + queryType,
             type: "POST",
             data: postData,
             contentType: "application/json; charset=utf-8",
@@ -154,7 +154,7 @@
             }
             html += pageChange;
             $.ajax({
-                url: 'https://babylonjs-api2.azurewebsites.net/snippets/count/' + queryType,
+                url: 'https://babylonsnippetsv3.azurewebsites.net/api/snippets/count/' + queryType,                
                 type: "POST",
                 data: numberData,
                 contentType: "application/json; charset=utf-8",
@@ -163,7 +163,7 @@
                 console.log(error);
             }).success(function (data) {
                 if (data) {
-                    displayPagesInfos(data.count, max, page);
+                    displayPagesInfos(data, max, page);
                 }
                 else {
                     document.getElementById('resultCount').innerText = '0';
