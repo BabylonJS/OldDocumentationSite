@@ -69,7 +69,7 @@
         var html = '';
 
         $.ajax({
-            url: 'snippet.babylonjs.com/search/' + queryType,
+            url: 'https://snippet.babylonjs.com/search/' + queryType,
             type: "POST",
             data: postData,
             contentType: "application/json; charset=utf-8",
