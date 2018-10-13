@@ -69,7 +69,7 @@
         var html = '';
 
         $.ajax({
-            url: 'https://babylonsnippetsv3.azurewebsites.net/snippets/search/' + queryType,
+            url: 'snippet.babylonjs.com/search/' + queryType,
             type: "POST",
             data: postData,
             contentType: "application/json; charset=utf-8",
@@ -154,7 +154,7 @@
             }
             html += pageChange;
             $.ajax({
-                url: 'https://babylonsnippetsv3.azurewebsites.net/snippets/count/' + queryType,                
+                url: 'https://snippet.babylonjs.com/count/' + queryType,                
                 type: "POST",
                 data: numberData,
                 contentType: "application/json; charset=utf-8",
