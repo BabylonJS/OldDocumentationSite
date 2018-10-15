@@ -3,16 +3,9 @@
 
 Pixi.js is a fast, lightweight, open source 2D library with full support for webGL with a very fast rendering speed. It is great to use as a UI in combination with Babylon.js, making a perfect duo for your web game world.
 
-## When should you use
-
-* Create high qual﻿ity games with highest performance.
-    
-* Run on all devices. 
-
-* Don't like use canvas for rendering.
 
 ## Setup Pixi.js rendering
-```
+```javascript
 var pixiRenderer = new PIXI.WebGLRenderer({
     context: engine._gl,
     view: engine.getRenderingCanvas(),
@@ -21,8 +14,19 @@ var pixiRenderer = new PIXI.WebGLRenderer({
 });
 ```
 
+## Add Pixi.js Sprites to Stage
+
+```javascript
+var stage = new PIXI.Container();
+var sprite = PIXI.Sprite.from('https://i.imgur.com/1yLS2b8.jpg');
+sprite.anchor.set(0.5);
+sprite.position.set(canvas.width/2, canvas.height/2);
+stage.addChild(sprite);
+
+```
 The *clearBeforeRender* and *autoStart* are two very important properties that must be used and set to *false*.
 
+## Rendering Sequence
 The render sequence of Babylon.js and Pixi.js is also very important, Babylon.js must be rendered first.
 
 ```
@@ -57,7 +61,7 @@ engine.runRenderLoop(function() {
 });
 ```
 
-It is also possible to combine these and have Pixi.js stages behind and in front of a Babylon.js stage.
+It is also possible to combine these and have Pixi.js stages behind and in front of a Babylon.js scene.
 
 ```
 engine.runRenderLoop(function() {   
@@ -74,11 +78,10 @@ engine.runRenderLoop(function() {
 });
 ```
 
-[JSFiddle Example Multiple Stages](https://jsfiddle.net/y5q7Lb1v/42/)
+[JSFiddle Example Multiple Pixi.js Stages](https://jsfiddle.net/y5q7Lb1v/42/)
 
 ## WebGL1 Problems
 
-The above example working great when your browser support WebGL2 but will have a bit of issues when run on WebGL1.
 
 When your browser is running webGL1 then you need to reset the Pixi.js context first for each rendering as below.
 
@@ -95,7 +98,6 @@ engine.runRenderLoop(function() {
 });
 ```
 
-Lines 14, 34 & 35: [JSFiddle](https://jsfiddle.net/y5q7Lb1v/21/)
 
 ## Pixi.js Versions
 
