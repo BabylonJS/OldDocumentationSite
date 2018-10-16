@@ -930,6 +930,10 @@
                 {
                     "title": "How to use Babylon.js in a Facebook Instant Game",
                     "filename": "BabylonJS_and_Instant_Games"
+                },
+                {
+                    "title": "How to combine Babylon.js and Pixi.js",
+                    "filename": "BabylonJS_and_PixiJS"
                 }
             ]
         },
