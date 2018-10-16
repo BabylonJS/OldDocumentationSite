@@ -467,6 +467,25 @@ When using vertical slider, you have to make sure that height is bigger than wid
 
 Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
 
+### ImageBasedSlider
+
+You can use an ImageBasedSlider to customize a slider using pictures. This control can be configured like the Slider)
+
+It is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+backgroundImage|string|null|Path to the image to use for the background
+valueBarImage|string|null|Path to the image to use for the value bar
+thumbImage|string|null|Path to the image to use for the thumb
+barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
+thumbWidth|valueAndUnit|30px|Width of the thumb
+displayThumb|boolean|true|Indicates if the thumb must be rendered (useful to simulate progress bar)
+isThumbClamped|boolean|false|Indicates if the thumb should be clamped
+isVertical|boolean|false|Indicates that the slider will be rendered vertically instead of horizontally
+
+Here is an example of a sliders and image based sliders :https://www.babylonjs-playground.com/#HATGQZ
+
 ### Line
 
 The line will draw a line (!!) between two points.
