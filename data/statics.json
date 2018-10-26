@@ -533,7 +533,7 @@
                     "title": "Use the Particle Helper",
                     "level": 1,
                     "filename": "ParticleHelper"
-                },                
+                },
                 {
                     "title": "Use Sub Emitters",
                     "level": 1,
@@ -552,15 +552,27 @@
             ]
         },
         {
-            "title": "Environment",
-            "name": "environment",
-            "desc": "Environment Tutorials.",
+            "title": "PBR",
+            "name": "pbr",
+            "desc": "PBR Tutorials.",
             "files": [
                 {
                     "title": "Start with Physically Based Rendering (PBR)",
                     "level": 2,
                     "filename": "Physically_Based_Rendering"
                 },
+                {
+                    "title": "Master Physically Based Rendering",
+                    "level": 3,
+                    "filename": "Physically_Based_Rendering_Master"
+                }
+            ]
+        },
+        {
+            "title": "Environment",
+            "name": "environment",
+            "desc": "Environment Tutorials.",
+            "files": [
                 {
                     "title": "Use a Skybox",
                     "level": 2,
@@ -570,11 +582,6 @@
                     "title": "Background Material",
                     "level": 2,
                     "filename": "BackgroundMaterial"
-                },
-                {
-                    "title": "Master Physically Based Rendering",
-                    "level": 3,
-                    "filename": "Physically_Based_Rendering_Master"
                 },
                 {
                     "title": "Support Fog with ShaderMaterial",
@@ -803,7 +810,7 @@
                 {
                     "title": "Workloads",
                     "filename": "workloads"
-                }                
+                }
             ]
         },
         {
