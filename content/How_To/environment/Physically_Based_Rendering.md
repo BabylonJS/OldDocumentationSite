@@ -9,7 +9,7 @@ After following the [standard material tutorial](/babylon101/materials) and also
 
 PBR rendering techniques aim to simulate **real life lighting**.
 
-PBR is a grouping of techniques; it does not force you to choose one in particular. Among others, we can cite some like: 
+PBR is a grouping of techniques; it does not force you to choose one in particular. Among others, we can cite some like:
 * [Disney](http://blog.selfshadow.com/publications/s2012-shading-course/burley/s2012_pbs_disney_brdf_slides_v2.pdf)
 * [Ashkimin Shirley BRDF](http://www.cs.utah.edu/~shirley/papers/jgtbrdf.pdf)
 * [Ashkimin Shirley Microfacets](http://www.cs.utah.edu/~shirley/papers/facets.pdf).
@@ -70,7 +70,7 @@ This call will create all required data used by the materials to produce final o
 
 You can see a [live version here](https://www.babylonjs-playground.com/#2FDQT5#11)
 
-Perhaps a bit too reflective now, so let's add more roughness to give it a more golden look: 
+Perhaps a bit too reflective now, so let's add more roughness to give it a more golden look:
 ```javascript
 pbr.baseColor = new BABYLON.Color3(1.0, 0.766, 0.336);
 pbr.metallic = 1.0;
@@ -141,6 +141,17 @@ As you have seen before, the highly recommended way to setup an environment text
 
 We are detailing below the two supported ways of creating such files. The first one rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
 
+Note that you can rotate your environmentTexture if needed:
+
+```javascript
+var hdrRotation = 10; // in degrees
+hdrTexture.setReflectionTextureMatrix(
+    BABYLON.Matrix.RotationY(
+        BABYLON.Tools.ToRadians(hdrRotation)
+    )
+);
+```
+
 ### Creating a dds environment file from IBL Baker
 You can find IBLBaker on: [https://github.com/derkreature/IBLBaker](https://github.com/derkreature/IBLBaker)
 
@@ -154,7 +165,7 @@ You may also want to reduce the output size by setting the specular resolution o
 
 ![iblbaker](/img/How_To/environment/IBLbaker_DefaultSettings.png)
 
-Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! The file to pick is the SpecularHDR one. 
+Once you are satisfied with the overall result, just click on "save environment" button and you are good to go! The file to pick is the SpecularHDR one.
 
 ** Please do not forget to write full name with extension in order to make the save works correctly **
 
@@ -186,7 +197,7 @@ You are all set and ready to use the exported texture in the ```CubeTexture.Crea
 ### Creating a compressed environment texture
 As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Here are the steps to follow to create the .env files used in BabylonJS:
 
-First, go to the [Sandbox](https://sandbox.babylonjs.com/?assetUrl=https://models.babylonjs.com/PBR_Spheres.glb) and open the Inspector Menu:
+First, go to this [Sandbox](https://sandbox.babylonjs.com/?assetUrl=https://models.babylonjs.com/PBR_Spheres.glb) and open the Inspector Menu:
 
 ![InspectorMenu](/img/How_To/environment/InspectorMenu.png)
 
