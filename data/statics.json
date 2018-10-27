@@ -470,6 +470,11 @@
                     "title": "Use the WebVR experience helper",
                     "level": 3,
                     "filename": "WebVR_Helper"
+                },
+                {
+                    "title": "Use WebXR (WebVR, WebAR, Magic Window, Etc.)",
+                    "level": 3,
+                    "filename": "WebXR"
                 }
             ]
         },
