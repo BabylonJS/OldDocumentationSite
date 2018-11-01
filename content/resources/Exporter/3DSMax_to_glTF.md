@@ -53,6 +53,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Wrap mode (Clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
+    * Texture transform
 
 # Conversion Standard to PBR materials
 
@@ -200,7 +201,8 @@ Most babylon properties are not used when exporting to glTF format. The only one
 
 ## Lights
 
-Lights are not supported in glTF 2.0. An empty node is exported in place of light only when it is relevant to do so (when a light has a mesh or a camera as descendant).
+Lights are not supported in glTF 2.0. An empty node is exported in place of light only when it is relevant to do so (when a light has a mesh or a camera as descendant).  
+There is a glTF lights extension, (https://github.com/KhronosGroup/glTF/pull/1223)[KHR_lights_punctual] that is in the process of ratification, so should be considered experimental.  It can be enabled by turning on the KHR_lights_punctual extension checkbox.
 
 ## Left to right handed coordinate system
 
@@ -220,6 +222,13 @@ Alpha mode is _BLEND_ when a material has any of the following:
 - has a transparency/opacity texture
 - has a base color/diffuse color texture with _Alpha Source_ set to _Image Alpha_
 
+Alpha mode can be set to _AlphaTest_ by setting a custom attribute on a material.
+![3DS MAX alpha test custom material attribute](/img/exporters/3DSMax/alpha_test_custom_material_attribute.jpg)
+
+To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Alpha Test attribute to all materials used in the scene. The default value is _Alpha Blend_. Run the script again whenever creating/assigning a new material.
+
+Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonAlphaTest_. The visual text (_Alpha Test_) could be whatever you want.
+
 __IMPORTANT__
 
 There is a known issue where 3DS MAX texture attributes are not initialized correctly when a bitmap is being created: the _Alpha Source_ value is the default one, which is _Image Alpha_.
@@ -237,6 +246,9 @@ Note that, for an image format with alpha channel, like PNG, if the image provid
 glTF 2.0 only supports the following image formats: jpg and png. You are adviced to use those formats for your textures when exporting to glTF.
 
 Note that the exporter also supports textures with bmp, gif, tga, tif and dds formats. But, those textures will be automatically converted to png/jpg by the exporter to follow glTF specifications.
+
+## Texture transform
+glTF 2.0 supports the [KHR_texture_transform extension](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_texture_transform).  When enabled during export, it would be set to required, meaning that the loader is expected to support the extension.  Disabling the extension checkbox from the exporter window will export textures without apply the texture transform, which may look visually incorrect when loading into a glTF importer.
 
 ## Environment texture
 
@@ -257,6 +269,8 @@ Additionally in gltf, the __KHR_materials_unlit__ extension is added to the mate
 To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
 
 Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
+
+During export, enable the _KHR_materials_unlit_ checkbox.
 
 ## Shell material
 

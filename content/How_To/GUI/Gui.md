@@ -546,7 +546,8 @@ You may want to have the Image control adapt its size to the source image. To do
 You can change image source at any time with `image.source="myimage.jpg"`.
 
 You can also define which part of the source image you want to use with the following properties:
-* sourceLeft: x coordinate in the source image (in pixel)
+* sourceLeft: x coordinate in 
+the source image (in pixel)
 * sourceTop: y coordinate in the source image (in pixel)
 * sourceWidth: width of the source image you want to use (in pixel)
 * sourceHeight: height of the source image you want to use (in pixel)
@@ -760,10 +761,20 @@ You can update or delete columns and rows with the following functions:
 * removeRowDefinition(index): Remove a row definition at specified index
 * removeColumnDefinition(index): Remove a column definition at specified index
 
+Two properties can also help you getting rows and columns count:
+* rowCount: Will give you the number of rows
+* columnCount: Will give you the number of columns
+
 To add a control in a grid, you have to specify the row and column indexes:
 
 ```
 grid.addControl(control, 1, 2); // 2nd row, thrid column
+```
+
+You can get the list of controls in a specific cell by calling:
+
+```
+var controls = grid.getChildrenAt(2, 3);
 ```
 
 Here is an example of a Grid: https://www.babylonjs-playground.com/#KX33X8#1

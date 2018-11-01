@@ -14,6 +14,7 @@ camera.attachControl(canvas, true);
 The second parameter is optional and defaults to **false**. When **false** then default actions on a canvas event are prevented. Set to true to allow canvas default actions.
 
 **Notes**
+
 1. A [Gamepad](/How_To/how_to_use_gamepads) may be used a controller.
 2. For touch control either [PEP](https://github.com/jquery/PEP) or [hand.js](https://github.com/Deltakosh/handjs) is needed.
 
@@ -34,7 +35,9 @@ The default actions are:
 
 4. [gamepad](/How_To/how_to_use_gamepads) - corresponds to device.
 
-**Note** - Using keys in the Playground requires you to click inside the rendering area to give it the focus.
+**Note**
+
+- Using keys in the Playground requires you to click inside the rendering area to give it the focus.
 
 ### Constructing a Universal Camera
 
@@ -54,11 +57,12 @@ The default actions are:
 
 ## Arc Rotate Camera
 
- This camera always points towards a given target position and can be rotated around that target with the target as the center of rotation.
- It can be controlled with cursors and mouse, or with touch events.
+This camera always points towards a given target position and can be rotated around that target with the target as the center of rotation.
+It can be controlled with cursors and mouse, or with touch events.
 
- Think of this camera as one orbiting its target position, or more imaginatively as a spy satellite orbiting the earth. Its position relative to the target (earth) can be set by three parameters,
-  _alpha_ (radians) the longitudinal rotation, _beta_ (radians) the latitudinal rotation and  _radius_ the distance from the target position. Here is an illustration:
+Think of this camera as one orbiting its target position, or more imaginatively as a spy satellite orbiting the earth. Its position relative to the target (earth) can be set by three parameters, _alpha_ (radians) the longitudinal rotation, _beta_ (radians) the latitudinal rotation and  _radius_ the distance from the target position.
+Here is an illustration:
+
 ![arc rotate camera](/img/how_to/camalphabeta.jpg)
 
 Setting _beta_ to 0 or PI can, for technical reasons, cause problems and in this situation _beta_ is offset by 0.1 radians (about 0.6 degrees).

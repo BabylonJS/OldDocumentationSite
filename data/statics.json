@@ -470,6 +470,11 @@
                     "title": "Use the WebVR experience helper",
                     "level": 3,
                     "filename": "WebVR_Helper"
+                },
+                {
+                    "title": "Use WebXR (WebVR, WebAR, Magic Window, Etc.)",
+                    "level": 3,
+                    "filename": "WebXR"
                 }
             ]
         },
@@ -777,6 +782,14 @@
                     "filename": "how_to_start"
                 },
                 {
+                    "title": "Customize Your Build",
+                    "filename": "workloads"
+                },
+                {
+                    "title": "Add Files",
+                    "filename": "addFiles"
+                },
+                {
                     "title": "Follow Approved Naming Conventions",
                     "filename": "Approved_Naming_Conventions"
                 },
@@ -799,11 +812,8 @@
                 {
                     "title": "Write a Playground Based Tutorial",
                     "filename": "playground_tutorials"
-                },
-                {
-                    "title": "Workloads",
-                    "filename": "workloads"
-                }                
+                } 
+                                
             ]
         },
         {
@@ -1169,6 +1179,10 @@
                 {
                     "title": "How to Use Tags in Babylon.js",
                     "filename": "Tags"
+                },
+                {
+                    "title": "Using VSCode with Babylon.js",
+                    "filename": "vscode"
                 }
             ]
         }
