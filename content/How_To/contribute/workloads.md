@@ -1,11 +1,15 @@
-# Workloads
-By default, the build process will generate code for all classes in the repo. For size reasons you may want to strip out some classes that you are not using.
+---
+PG_TITLE: Customize Your Build
+---
+
+# Customize Your Build
+Whether you are customizing by [adding new files](/How_To/addFiles) or by selecting which modules to build with you will have to edit the ```config.json``` file from the ```/tools/gulp``` folder.  By default, the build process will generate code for all classes and so if you want to strip out some classes you need to change the ```currentConfig```.
 
 ## Custom builds
 
-To do so, you will have to edit the config.json file from /tools/gulp folder.
+To do so, 
 
-This file starts like this:
+This file starts with this format:
 
 ```
     "build": {
@@ -15,8 +19,12 @@ This file starts like this:
         "declarationFilename": "babylon.d.ts",
         "declarationModuleFilename": "babylon.module.d.ts",
         "outputDirectory": "../../dist/preview release",
+        ...
+        ...
         "srcOutputDirectory": "../../src/",
-        "currentConfig": "all"
+        "currentConfig": "all",
+        ...
+        ...
     },
     "buildConfigurations": {
         "all": [
@@ -52,7 +60,19 @@ You can change the active configuration by settings the `build.currentConfig` va
 | minimal | 170 |
 | 360Viewer | 188 |
 
-## Available workloads
+## Available Workloads 
+
+Those below are the ones available at the time of writing.
+
+For a full list of current workloads see the ```all``` array in the ```config.json``` file from ```/tools/gulp folder```
+
+```
+"buildConfigurations": {
+        "all": [
+                ...
+        ],
+```
+
 
 | Workload      | Description |
 | ------------- |-------------|
