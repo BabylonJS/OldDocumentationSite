@@ -308,7 +308,7 @@ To launch index.{number}.js simply append in the url sample={number} so for laun
 This should help playing and debugging locally.
 
 ### Validate changes
-As part of your testing process, it is highly recommended to launch the build validator: http://localhost:1338/tests/validation/index.htm.
+As part of your testing process, it is highly recommended to launch the build validator: http://localhost:1338/tests/validation/index.html.
 It will run several scenes against a reference image to detect any visual changes.
 
 ### Guidelines
