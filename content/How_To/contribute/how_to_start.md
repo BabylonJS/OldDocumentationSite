@@ -200,27 +200,13 @@ In your CLI make sure your are in the directory ```Babylon.js/Tools/Gulp``` and 
 
 ```
 npm install
-gulp
+gulp --max-old-space-size=8192
 ```
 
 The ```npm install``` places a number of files in the current directory (This is different to ```npm -g install``` which makes npm available in any folder)
 
-Gulp builds everything you need to test and debug your code.
+Gulp --max-old-space-size=8192 builds everything you need to test and debug your code.
 
-Should you get the following error
-
-```
-Running typescript-vanilla
-FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
-```
-
-towards the end of the build then you will probably find that the [Gulp tasks](#gulp-tasks) still work. However you can avoid this error by using
-
-```
-gulp --max-old-space-size=8192
-```
-
-rather than just ```gulp```.
 
 **NOTE** It is possible to [customize your build](/How_To/workloads) by choosing sets of classes to build with.
 
@@ -415,7 +401,7 @@ npm install
 ## Local Build
 Babylon.js/Tools/Gulp folder
 ```
-gulp
+gulp --max-old-space-size=8192
 ```
 
 ## Webserver
