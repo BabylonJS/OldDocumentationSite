@@ -46,7 +46,9 @@ The default for rotationQuaternion is _undefined_ . When a _rotationQuaternion_ 
 
 * [Playground Example rotationQuaternion](https://www.babylonjs-playground.com/#EYZE4Q#3) 
 
-**Note** : You MUST set and use rotationQuaternion when creating physics objects because physics engines rely only on them.
+**Note** : 
+1. You MUST set and use rotationQuaternion when creating physics objects because physics engines rely only on them.
+2. Setting a `rotationQuaternion` overwrites the use of `rotation` see [warning](/resources/Rotation_Conventions#warning)
 
 ## Align Axes
 
