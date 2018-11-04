@@ -81,11 +81,11 @@ onPointerClickObservable|Raised when a control is clicked on.
 onClipboardObservable|Raised when a clipboard event is triggered.
 
 
-To use the clipboard events, they first need to be enabled by calling `registerClipboardEvents` on the AdvancedDynamicTexture Instance which will register the `cut`, `copy`, `paste` events onto the canvas. Similarly, they can be disabled by calling `unRegisterClipboardEvents`.
+To use the clipboard events, they first need to be enabled by calling `registerClipboardEvents` on the AdvancedDynamicTexture Instance which will register the `cut`, `copy`, `paste` events onto the canvas. Once enabled, they can be triggered via `ctrl/cmd + c` for copy, `ctrl/cmd + v` for paste and `ctrl/cmd + x` for cut and will always be listening to the canvas. If you have any other action having the same key bindings, you can prevent default triggering of these events by calling `unRegisterClipboardEvents` which will unregister them from the canvas.
 
 Here is an example on how to use clipboard observables:
- - To create new meshes: https://playground.babylonjs.com/#AY28VL#1
- - To create new textblocks from clipboard data: https://playground.babylonjs.com/#AY28VL#3 
+ - To create new meshes: https://playground.babylonjs.com/#S0IW99#1
+ - To create new textblocks from clipboard data: https://playground.babylonjs.com/#AY28VL#4
 
 You can also define that a control is invisible to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
