@@ -278,6 +278,7 @@ autoStretchWidth|boolean|true|The control will resize horizontally to adapt to t
 maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
 margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
 thickness|number|1|Thickness of the border
+onFocusSelectAll|boolean|false|Allows complete selection of text by default when the input is focused.
 
 The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
 
