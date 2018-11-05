@@ -297,8 +297,8 @@ Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
 onBeforeKeyAddObservable|Raised just before the entered key is added to the text
-onFocusObservable|Raised when the control loses the focus
-onBlurObservable|Raised when the control gets the focus
+onFocusObservable|Raised when the control gets the focus
+onBlurObservable|Raised when the control loses the focus
 onTextHighlightObservable|Raised when the text is highlighted
 onTextCopyObservable|Raised when the copy event is triggered
 onTextCutObservable|Raised when the cut event is triggered
