@@ -78,6 +78,14 @@ onPointerOutObservable|Raised when the cursor leaves the control. Only available
 onPointerDownObservable|Raised when pointer is down on the control.
 onPointerUpObservable|Raised when pointer is up on the control.
 onPointerClickObservable|Raised when a control is clicked on.
+onClipboardObservable|Raised when a clipboard event is triggered.
+
+
+To use the clipboard events, they first need to be enabled by calling `registerClipboardEvents` on the AdvancedDynamicTexture Instance which will register the `cut`, `copy`, `paste` events onto the canvas. Once enabled, they can be triggered via `ctrl/cmd + c` for copy, `ctrl/cmd + v` for paste and `ctrl/cmd + x` for cut and will always be listening to the canvas. If you have any other action having the same key bindings, you can prevent default triggering of these events by calling `unRegisterClipboardEvents` which will unregister them from the canvas.
+
+Here is an example on how to use clipboard observables:
+ - To create new meshes: https://playground.babylonjs.com/#S0IW99#1
+ - To create new textblocks from clipboard data: https://playground.babylonjs.com/#AY28VL#4
 
 You can also define that a control is invisible to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
@@ -278,7 +286,12 @@ autoStretchWidth|boolean|true|The control will resize horizontally to adapt to t
 maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
 margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
 thickness|number|1|Thickness of the border
+<<<<<<< HEAD
 onFocusSelectAll|boolean|false|Allows complete selection of text by default when the input is focused.
+=======
+highligherOpacity|number|0.4| Defines the transparency of highlighted text's background
+textHighlightColor|string|#d5e0ff| Background color of highlighted text
+>>>>>>> 46d1f5254dfcc104cb3d89d8cf1cb16caf5f2d45
 
 The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
 
@@ -288,8 +301,12 @@ Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
 onBeforeKeyAddObservable|Raised just before the entered key is added to the text
-onFocusObservable|Raised when the control loses the focus
-onBlurObservable|Raised when the control gets the focus
+onFocusObservable|Raised when the control gets the focus
+onBlurObservable|Raised when the control loses the focus
+onTextHighlightObservable|Raised when the text is highlighted
+onTextCopyObservable|Raised when the copy event is triggered
+onTextCutObservable|Raised when the cut event is triggered
+onTextPasteObservable|Raised when the paste event is triggered
 
 Please note that the InputText has pretty limited edition support. Here are the supported keys:
 * Delete
@@ -318,6 +335,8 @@ For example, if the handler wants to limit the control to only accept numerical 
 Please note that the observable is only triggered by printable keys, that is, keys that can be added to the text, and not by control keys like backspace and enter.
 
 Here's an example showing two inputs, one which only accepts numerical keys and one which has simple dead key support: https://www.babylonjs-playground.com/#I1Y5YT#1
+
+InputText also supports clipboardObservables, here's an example: https://www.babylonjs-playground.com/#UWS0TS#20
 
 ### InputPassword
 
