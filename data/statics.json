@@ -400,9 +400,19 @@
                     "filename": "FrontandBackUV"
                 },
                 {
+                    "title": "Start with Physically Based Rendering (PBR)",
+                    "level": 2,
+                    "filename": "Physically_Based_Rendering"
+                },
+                {
                     "title": "Use Parallax Mapping",
                     "level": 2,
                     "filename": "Using_parallax_mapping"
+                },
+                {
+                    "title": "Master Physically Based Rendering (PBR)",
+                    "level": 3,
+                    "filename": "Physically_Based_Rendering_Master"
                 },
                 {
                     "title": "Obtain Reflections and Refractions",
@@ -548,23 +558,6 @@
                     "title": "Solid Particle System",
                     "level": 1,
                     "filename": "Solid_Particles"
-                }
-            ]
-        },
-        {
-            "title": "PBR",
-            "name": "PBR",
-            "desc": "PBR Tutorials.",
-            "files": [
-                {
-                    "title": "Start with Physically Based Rendering (PBR)",
-                    "level": 2,
-                    "filename": "Physically_Based_Rendering"
-                },
-                {
-                    "title": "Master Physically Based Rendering",
-                    "level": 3,
-                    "filename": "Physically_Based_Rendering_Master"
                 }
             ]
         },
@@ -777,7 +770,7 @@
         {
             "title": "Contribute",
             "name": "contribute",
-            "desc": "Suporting and Developing the Framework",
+            "desc": "Supporting and Developping the Framework",
             "files": [
                 {
                     "title": "Start Contributing to Babylon.js",
