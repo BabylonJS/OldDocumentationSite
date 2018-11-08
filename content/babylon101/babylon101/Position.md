@@ -139,6 +139,9 @@ The smaller axes represent the direction of the **world axes**.
 
 In general _mesh.addRotation(alpha, beta, gamma)_ needs at least two of _alpha, beta, gamma_ to be 0 where _alpha_ is a rotation about the local x axis, _beta_ about the local y axis and _gamma_ about the local z axis.
 
+## RotationQuaternions
+An alternative to _rotations are [_rotationQuaternions_](/resources/rotation_conventions#quaternions) though they can be tricky to use but can overcome some gimbal lock problems. Using both on a mesh is not possible see [warning](/resources/rotation_conventions#warning)
+
 ## Scaling
 
 Scaling along the x, y, and z **local axes** is set using

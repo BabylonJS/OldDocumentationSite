@@ -28,6 +28,7 @@ The global structure of a .babylon file is the following:
     "cameras": array of Cameras (see below),
     "activeCamera_": string,
     "lights": array of Lights (see below),
+    "reflectionProbes": array of ReflectionProbe (see below),
     "materials": array of Materials (see below),
     "geometries": {...} (see below),
     "meshes": array of Meshes (see below),
@@ -189,6 +190,28 @@ A texture is defined by the following JSON:
     "coordinatesIndex": int,
     "animations": array of Animations (see below, can be omitted),
     "base64String": string (can be omitted)
+}
+```
+
+## ReflectionProbe
+A reflection probe is defined by the following JSON which extends the RenderTargetTexture JSON (see below):
+```javascript
+{
+    "_attachedMesh": string (id of the attached mesh),
+	"position": array of floats (position of the reflection probe: x, y, and z),
+    "isReflectionProbe": boolean (indicates that this RenderTargetTexture JSON is a reflection probe)
+}
+```
+
+## RenderTargetTexture
+A render target texture is defined by the following JSON which extends the Texture JSON (see below):
+```javascript
+{
+	"refreshRate": int,
+	"isCube": boolean,
+	"is3D": boolean,
+	"renderTargetSize": int (render size of the render target texture),
+	"renderList": string[] (list of meshes to render identified by their id)
 }
 ```
 
