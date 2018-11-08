@@ -582,6 +582,11 @@
                     "filename": "BackgroundMaterial"
                 },
                 {
+                    "title": "Use a HDR environment (for PBR)",
+                    "level": 2,
+                    "filename": "Use_HDR_Environment"
+                },
+                {
                     "title": "Support Fog with ShaderMaterial",
                     "level": 3,
                     "filename": "Supporting_fog_with_ShaderMaterial"
