@@ -62,5 +62,5 @@ scene.registerBeforeRender(function () {
 }
 ```
 
-* [Playground Example](http://playground.babylonjs.com/#U3XJTB#4)
+* [Playground Example](https://playground.babylonjs.com/#U3XJTB#4)
 

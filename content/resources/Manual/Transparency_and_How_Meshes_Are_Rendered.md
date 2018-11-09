@@ -10,12 +10,12 @@ A general rule of thumb in real-time 3D rendering is that drawing several overla
 
 A depth buffer is a surface using the same dimensions as the screen, and holding for every pixel the following information: how far from the camera was the last pixel drawn here. With this information, we can draw as many objects as we want and always be sure that we will never draw something that was supposed to be hidden by another object. BabylonJS offers access to this information with a special DepthRenderer object.
 
-Rendering objects without a depth buffer would require resorting to an old-school technique called [*Painter's Algorithm*](http://en.wikipedia.org/wiki/Painter's_algorithm), which is extremely simple: draw further objects first. Sky, then backdrop, etc. all the way to foreground objects. This is basically ordering objects by distance from camera (a.k.a. depth), and clearly not enough for most cases.
+Rendering objects without a depth buffer would require resorting to an old-school technique called [*Painter's Algorithm*](https://en.wikipedia.org/wiki/Painter's_algorithm), which is extremely simple: draw further objects first. Sky, then backdrop, etc. all the way to foreground objects. This is basically ordering objects by distance from camera (a.k.a. depth), and clearly not enough for most cases.
 
 Testing against a depth buffer during render is a very common technique, simple to implement and performance-inexpensive. However, things get more complicated for non-opaque objects, as a depth buffer can't be used anymore (since these objects don't completely hide what's behind them).
 
 This is what a depth buffer looks like for a scene which contains only opaque meshes:
-![Opaque only meshes](http://i.imgur.com/2iWCAwT.png)
+![Opaque only meshes](https://i.imgur.com/2iWCAwT.png)
 
 
 # Rendering Order
@@ -88,7 +88,7 @@ These meshes have translucent parts that may have an alpha value of 0.0 (complet
 Also, note that backface culling is pretty much obligatory for alpha blended meshes, otherwise polygons from the front and the back of the objects will be garbled (unless you use a depth pre-pass)
 
 This is what a depth buffer looks like for a scene that contains each of those type of meshes:
-![All kinds of meshes](http://i.imgur.com/l0XIlKv.png)
+![All kinds of meshes](https://i.imgur.com/l0XIlKv.png)
 
 *In this scene, the sphere is alpha tested, the base blocks are opaque and the pillars are alpha blended.*
 
@@ -145,9 +145,9 @@ As you can notice, the transparency rendering rules may lead to some weird thing
 In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` :  https://www.babylonjs-playground.com/#1PLV5Z#2  
 Other option will be to rely on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#16  
 
-At last, if you accept to spend some CPU cycles to get a correct self transparency, you can use the FacetData feature and enable the facet depth sort : http://doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort   
+At last, if you accept to spend some CPU cycles to get a correct self transparency, you can use the FacetData feature and enable the facet depth sort : https://www.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort   
 
-Eaxmple : http://playground.babylonjs.com/#FWKUY0#1  
+Eaxmple : https://playground.babylonjs.com/#FWKUY0#1  
 Depth sorted on the left, standard on the right.  
 
 

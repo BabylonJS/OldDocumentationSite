@@ -8,7 +8,7 @@ Starting with Babylon.js v2.4, we introduced Parallax Mapping.
 
 You can see a demo of this technique [right here](https://www.babylonjs-playground.com/#10I31V#23)
 
-![Screenshot](http://i.imgur.com/8VBDRPe.png)
+![Screenshot](https://i.imgur.com/8VBDRPe.png)
 
 ## What is Parallax Mapping
 Parallax Mapping is an algorithm which, based from a height map, apply an offset on the material's textures in order to accentuate the effect of relief in the geometry's surface.

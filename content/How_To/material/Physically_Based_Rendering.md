@@ -16,7 +16,7 @@ PBR is a grouping of techniques; it does not force you to choose one in particul
 
 In Babylon.js, PBR is done thanks to PBRMaterial. This material contains all features required by modern physically based rendering. For beginners we also created two additional materials to simplify your first contact with PBR. If you want to directly dig into the richer version, please have a read at [Master the PBR](/how_to/physically_based_rendering_master) for more information on how to use the main material.
 
-You can find a complete demo of the PBRMaterial [here](http://www.babylonjs.com/demos/pbrglossy/)
+You can find a complete demo of the PBRMaterial [here](https://www.babylonjs.com/demos/pbrglossy/)
 
 ![pbrsample](/img/pbr.jpg)
 

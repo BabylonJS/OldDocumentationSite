@@ -37,7 +37,7 @@ We are going to talk about the scene above. The first and second sphere (balloon
 
   So think about the collisions details you need before to choose.
 
-  If you want more information about this second parameter, you can have a look at this Wikipedia page, especially about AABB and OBB mode: [http://en.wikipedia.org/wiki/Bounding_volume](http://en.wikipedia.org/wiki/Bounding_volume)
+  If you want more information about this second parameter, you can have a look at this Wikipedia page, especially about AABB and OBB mode: [https://en.wikipedia.org/wiki/Bounding_volume](https://en.wikipedia.org/wiki/Bounding_volume)
 
 * **Intersect point**
   The other function you can use is “intersectsPoint()” with a specific point, like this:

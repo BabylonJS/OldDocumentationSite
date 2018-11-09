@@ -51,4 +51,4 @@ Once you run the editor, you'll see several panels:
 * Inspector: contains all the tools available for the currently selected object in the scene. The inspector is used to modify the properties of the selected object
 * Stats: shows the rendering and scene statistics for information according to the current scene preview
 
-To use the tools and start a new project, it is highly recommanded to read the documentation of each tool available at http://doc.babylonjs.com/resources/ :)
+To use the tools and start a new project, it is highly recommanded to read the documentation of each tool available at https://www.babylonjs.com/resources/ :)

@@ -34,7 +34,7 @@ BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
     // do something with the scene
 });
 ```
-[Demo](http://www.babylonjs-playground.com/#WGZLGJ)
+[Demo](https://www.babylonjs-playground.com/#WGZLGJ)
 
 ## SceneLoader.Load 
 
@@ -55,7 +55,7 @@ BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene,
     // particleSystems are always null for glTF assets
 });
 ```
-[Demo](http://www.babylonjs-playground.com/#JUKXQD)
+[Demo](https://www.babylonjs-playground.com/#JUKXQD)
 
 ## SceneLoader.LoadAssetContainer 
 
@@ -70,7 +70,7 @@ BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (conta
     container.addAllToScene();
 });
 ```
-[Demo](http://www.babylonjs-playground.com/#JA1ND3#48)
+[Demo](https://www.babylonjs-playground.com/#JA1ND3#48)
 
 ## SceneLoader.AppendAsync
 

@@ -141,7 +141,7 @@ See [Example](https://www.babylonjs-playground.com/#VIGXA3#7)
 
 ## Gaze and interaction
 
-Gaze and interactions can be enabled through the enableInteractions method. See [example](http://playground.babylonjs.com/#JA1ND3#40)
+Gaze and interactions can be enabled through the enableInteractions method. See [example](https://playground.babylonjs.com/#JA1ND3#40)
 
 ```javascript
 vrHelper.enableInteractions();

@@ -360,9 +360,9 @@ interface PhysicsJointData {
 }
 ```
 
-* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: http://www.babylonjs-playground.com/#BGUY#3
+* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: https://www.babylonjs-playground.com/#BGUY#3
 * connectedPivot: is the point on the connected mesh (the mesh creating the joint) to which the constraint will be connected.
-* mainAxis: the axis on the main object on which the constraint will work. http://www.babylonjs-playground.com/#BGUY#5
+* mainAxis: the axis on the main object on which the constraint will work. https://www.babylonjs-playground.com/#BGUY#5
 * connectedAxis: the axis on the connected object on which the constraint will work.
 * collision: should the two connected objects also collide with each other. The objects are sometimes forced to be close by and this can prevent constant collisions between them.
 * nativParams: further parameters that will be delivered to the constraint without a filter. Those are native parameters of the specific physics engine you chose.

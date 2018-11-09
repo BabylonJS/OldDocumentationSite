@@ -6,7 +6,7 @@ PG_TITLE: How to use Bones and Skeletons
 # Bones and Skeletons
 Babylon.js supports bones animations for your meshes.
 
-![Bones](http://www.babylonjs.com/Screenshots/bones.jpg)
+![Bones](https://www.babylonjs.com/Screenshots/bones.jpg)
 
 Basically a skeleton (```BABYLON.Skeleton```) contains a hierarchy of bones (```BABYLON.Bone```). A bone is defined by a name, a parent (can be null) and a transformation matrix.
 
@@ -57,7 +57,7 @@ BABYLON.SceneLoader.ImportMesh("him", "Scenes/Dude/", "Dude.babylon", scene, fun
 }),
 ```
 
-A complete running example can be found [here](http://www.babylonjs.com/index.html?BONES)
+A complete running example can be found [here](https://www.babylonjs.com/index.html?BONES)
 
 ## Cloning bones
 Bones and skeletons can be cloned (This is the case with the rabbits in the previous link).

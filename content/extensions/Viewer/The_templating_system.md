@@ -16,7 +16,7 @@ As with the general configuration, the template configuration is based on a Type
 
 ```javascript
 export interface ITemplateConfiguration {
-    location?: string; // #template-id OR http://example.com/loading.html
+    location?: string; // #template-id OR https://example.com/loading.html
     html?: string; // raw html string
     id?: string;
     params?: { [key: string]: string | number | boolean | object };

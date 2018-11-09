@@ -95,7 +95,7 @@ The following sequence of images shows the initial starting position of the pilo
 
 ![start](/img/babylon101/pilotL1.jpg)  ![Y](/img/babylon101/pilotW2.jpg)  ![X](/img/babylon101/pilotW3.jpg)  ![Z](/img/babylon101/pilotW4.jpg) 
 
-* [Playground Example - Rotation](http://www.babylonjs-playground.com/#1ZMJQV#2) 
+* [Playground Example - Rotation](https://www.babylonjs-playground.com/#1ZMJQV#2) 
 
 ### Summary
 
@@ -117,7 +117,7 @@ pilot.rotation.z  =  gamma;
 pilot.rotation.x  =  alpha;
 ```
 
-* [Playground Example - Positioned, Scaled, and Rotated Boxes](http://www.babylonjs-playground.com/?3)
+* [Playground Example - Positioned, Scaled, and Rotated Boxes](https://www.babylonjs-playground.com/?3)
 
 ## Sequencing Rotations
 

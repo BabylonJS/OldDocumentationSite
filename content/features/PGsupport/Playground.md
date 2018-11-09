@@ -78,13 +78,13 @@ Pre-installed demo playgrounds have this URL format
 
 | Javascript | Typscript |
 |---|---|
-| http://www.babylonjs-playground.com/# | http://www.babylonjs-playground.com/ts.html# |
+| https://www.babylonjs-playground.com/# | https://www.babylonjs-playground.com/ts.html# |
 
 Saved playgrounds have this format on first save
 
 | Javascript | Typscript |
 |---|---|
-| http://www.babylonjs-playground.com/#QKQHS | http://www.babylonjs-playground.com/ts.html#H3AF26 |
+| https://www.babylonjs-playground.com/#QKQHS | https://www.babylonjs-playground.com/ts.html#H3AF26 |
 
 that is the site name followed by a hash code reference key.
 
@@ -92,8 +92,8 @@ Following saves of the same playground are numbered incremently from one, for ex
 
 | Javascript | Typscript |
 |---|---|
-| http://www.babylonjs-playground.com/#QKQHS#1 | http://www.babylonjs-playground.com/ts.html#H3AF26#1 |
-| http://www.babylonjs-playground.com/#QKQHS#2 | http://www.babylonjs-playground.com/ts.html#H3AF26#2 |
+| https://www.babylonjs-playground.com/#QKQHS#1 | https://www.babylonjs-playground.com/ts.html#H3AF26#1 |
+| https://www.babylonjs-playground.com/#QKQHS#2 | https://www.babylonjs-playground.com/ts.html#H3AF26#2 |
   
 etc.
 

@@ -43,7 +43,7 @@ More generally the images are referenced in the following way
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("PATH TO IMAGES FOLDER/COMMON PART OF NAMES", scene);
 ```
 
-* [Playground Example of a Skybox](http://www.babylonjs-playground.com/#UU7RQ#1)
+* [Playground Example of a Skybox](https://www.babylonjs-playground.com/#UU7RQ#1)
 
 # Further Reading
 

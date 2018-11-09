@@ -5,7 +5,7 @@ PG_TITLE: How To Optimize Your Scene with Octrees
 
 # How To Optimize Your Scene with Octrees
 Octrees are a really powerful data structure that can quickly select entities based on space coordinates.
-More on wikipedia: http://en.wikipedia.org/wiki/Octree
+More on wikipedia: https://en.wikipedia.org/wiki/Octree
 
 Babylon.js supports octrees through a class named ```BABYLON.Octree```. Dedicated functions are available to help you create these octrees when required:
 
@@ -65,5 +65,5 @@ Here are the helpful functions you can find on an octree:
 These functions return a [SmartArray](https://github.com/BabylonJS/Babylon.js/blob/master/Babylon/Tools/babylon.smartArray.ts) where duplicates are present or not according to ```allowDuplicate``` parameter/
 
 # Demos
-* http://www.babylonjs.com/?OCTREE
-* http://www.babylonjs.com/?INSTANCES
+* https://www.babylonjs.com/?OCTREE
+* https://www.babylonjs.com/?INSTANCES

@@ -1,6 +1,6 @@
 # Save Your Scene or Meshes
 
-This is achieved with the [scene serializer](http://doc.babylonjs.com/api/classes/babylon.sceneserializer)
+This is achieved with the [scene serializer](https://www.babylonjs.com/api/classes/babylon.sceneserializer)
 
 ## Scene
 
@@ -35,7 +35,7 @@ function doDownload(filename, scene) {
 }
 ```
 
-* [Playground Example Save Scene](http://www.babylonjs-playground.com/#1AGCWP#1)
+* [Playground Example Save Scene](https://www.babylonjs-playground.com/#1AGCWP#1)
 
 ## Meshes
 

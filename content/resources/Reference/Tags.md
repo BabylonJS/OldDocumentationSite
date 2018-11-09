@@ -15,7 +15,7 @@ Tag? You may already have heard or read this word before. Let's see some generic
 - as links to other Facebook pages
 ...
 
-(from [Wikipedia](http://en.wikipedia.org/wiki/Tag))
+(from [Wikipedia](https://en.wikipedia.org/wiki/Tag))
 
 ### Tags on forums / Categories
 

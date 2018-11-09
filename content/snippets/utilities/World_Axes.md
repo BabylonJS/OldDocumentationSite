@@ -44,4 +44,4 @@ function showWorldAxis(size) {
 
 # Playground
 
-* [Playground Example](http://www.babylonjs-playground.com/#2EYZPE)
+* [Playground Example](https://www.babylonjs-playground.com/#2EYZPE)

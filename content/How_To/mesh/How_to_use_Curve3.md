@@ -24,7 +24,7 @@ var curve = BABYLON.Curve3.Create.CURVETYPE(parameters);
 ```
 
 ## Quadratic Bezier Curve
-http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_curves
+https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_curves
 
 ![Wikipedia Quadratic Bezier Curve](http://upload.wikimedia.org/wikipedia/commons/3/3d/B%C3%A9zier_2_big.gif)
 
@@ -46,7 +46,7 @@ var l = bezier2.length();
 * [Playground Example - Bezier Quadratic Curve](https://www.babylonjs-playground.com/#W0XSPA)
 
 ## Cubic Bezier curve
-http://en.wikipedia.org/wiki/B%C3%A9zier_curve# Higher-order_curves
+https://en.wikipedia.org/wiki/B%C3%A9zier_curve# Higher-order_curves
 
 ![Wikipedia Cubic Bezier Curve](http://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
 ```javascript
@@ -70,7 +70,7 @@ var l = bezier3.length();
 
 
 ## Hermite Spline
-http://en.wikipedia.org/wiki/Cubic_Hermite_spline
+https://en.wikipedia.org/wiki/Cubic_Hermite_spline
 
 ![Hermite Spline](/img/how_to/Mesh/hermite.jpg)
 

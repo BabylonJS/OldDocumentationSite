@@ -75,5 +75,5 @@ scene.registerBeforeRender(function() {
 
 ## Fireworks
 
-[Guide Example - Shader Material](http://babylonjsguide.github.io/examples/fireworkcode.html)  
-* [Playground Example - Shader Material](http://www.babylonjs-playground.com/#1OH09K#4)
+[Guide Example - Shader Material](https://babylonjsguide.github.io/examples/fireworkcode.html)  
+* [Playground Example - Shader Material](https://www.babylonjs-playground.com/#1OH09K#4)

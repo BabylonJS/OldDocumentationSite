@@ -25,7 +25,7 @@ Babylon.js will know how to load the obj file and its mtl file automatically:
 
 * By default, due to optimization in the code for loading time, UVs problems can appear, like this :
 
-![Batman UVs problem](http://i.imgur.com/vjWKNRK.png)
+![Batman UVs problem](https://i.imgur.com/vjWKNRK.png)
 
 If you meet this problem, set the variable 
 ```
@@ -33,7 +33,7 @@ BABYLON.OBJFileLoader.OPTIMIZE_WITH_UV = true;
 ```
 Then, you'll have a better texture, but with a longer loading.
 
-![Batman UVs ok](http://i.imgur.com/Dajwlvq.png)
+![Batman UVs ok](https://i.imgur.com/Dajwlvq.png)
 
 ## Supported
 * Object/group

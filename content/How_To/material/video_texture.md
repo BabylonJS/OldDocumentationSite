@@ -4,14 +4,14 @@ PG_TITLE: How To Add Video as a Texture
 
 # How To Add Video as a Texture
 
-If you want to display a video in your scene, the Babylon engine has a special texture for that. This special texture works similar to other textures, with the exception of a few parameters. These parameters include video urls (an url array), the size of the video texture (here is 256), the scene, and a final optional boolean that indicates if you want to use [mipmap](http://en.wikipedia.org/wiki/Mipmap) or not.
+If you want to display a video in your scene, the Babylon engine has a special texture for that. This special texture works similar to other textures, with the exception of a few parameters. These parameters include video urls (an url array), the size of the video texture (here is 256), the scene, and a final optional boolean that indicates if you want to use [mipmap](https://en.wikipedia.org/wiki/Mipmap) or not.
 
-Here is an example from our [Flat2009 demo](http://www.babylonjs.com/?9). This plays a video on the demo's ZTV screen (ecran = screen). 
+Here is an example from our [Flat2009 demo](https://www.babylonjs.com/?9). This plays a video on the demo's ZTV screen (ecran = screen). 
 ```javascript
 ecran.material.diffuseTexture = new BABYLON.VideoTexture("video",
 ["Scenes/Flat2009/babylonjs.mp4", "Scenes/Flat2009/babylonjs.webm"], scene, true);
 ```
-The [_VideoTexture_ object](http://doc.babylonjs.com/classes/3.0/VideoTexture) accepts an array of videos (to take into account various codecs). The first video in the array that can be loaded... is the one used as content source. Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
+The [_VideoTexture_ object](https://www.babylonjs.com/classes/3.0/VideoTexture) accepts an array of videos (to take into account various codecs). The first video in the array that can be loaded... is the one used as content source. Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
 
 The internal [video DOM object](http://www.w3.org/wiki/HTML/Elements/video) is accessible via the VideoTexture.video property... which allows you to control some characteristics and monitor the status of the video (things such as play, pause, loop, autoplay, etc). See the link above for the full story.
 

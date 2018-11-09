@@ -101,4 +101,4 @@ This can be used to attach an app bar to a mesh
 
 ![](/img/how_to/gui/appBar.png)
 
-[Example](http://playground.babylonjs.com/#8GY6J8#62)
+[Example](https://playground.babylonjs.com/#8GY6J8#62)

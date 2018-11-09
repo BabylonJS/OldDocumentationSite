@@ -35,7 +35,7 @@ We can't have an infinity of points.
 So we define a path with a certain number of _Vector3_. The more _Vector3_, the more smooth the curve and the more computations too.   
 
 So when you want your path to follow a mathematical curve, you need to compute each path _Vector3_ coordinates.  
-You could choose a known math curve in wikipedia or dedicated sites (http://en.wikipedia.org/wiki/List_of_curves , http://www.mathcurve.com/courbes2d/courbes2d.shtml , http://www.uiowa.edu/~examserv/mathmatters/tutorial_quiz/geometry/commoncurves.html, etc) or, when you feel more comfortable, create you own.  
+You could choose a known math curve in wikipedia or dedicated sites (https://en.wikipedia.org/wiki/List_of_curves , http://www.mathcurve.com/courbes2d/courbes2d.shtml , http://www.uiowa.edu/~examserv/mathmatters/tutorial_quiz/geometry/commoncurves.html, etc) or, when you feel more comfortable, create you own.  
 
 As you can see, curve equations are often like this : _f(x, y) = 0_ or like this : _y = f(x)_.  
 This means _y_ is expressed in function of _x_.  

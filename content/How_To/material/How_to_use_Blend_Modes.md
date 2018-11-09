@@ -49,6 +49,6 @@ Or you can assign an opacity texture to its material (even if the opacity textur
 
 Here is a screenshot showing the previously mentioned blend modes:
 
-![Available Blend Modes](http://i.imgur.com/2KTXUjT.png)
+![Available Blend Modes](https://i.imgur.com/2KTXUjT.png)
 
 This playground scene showcases the available blend modes in action: [ https://www.babylonjs-playground.com/#1MSIXB#4]( https://www.babylonjs-playground.com/#1MSIXB#4)

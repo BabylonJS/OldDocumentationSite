@@ -219,7 +219,7 @@ subdivisions|_( {w: number, h: number} )_ number of subdivisions (tiles) on the 
 precision|_( {w: number, h: number} )_ number of subdivisions on the height and the width of each tile|{w: 2, h: 2}
 updatable|_(boolean)_ true if the mesh is updatable|false
 
-* [Playground Example of Tiled Ground](http://www.babylonjs-playground.com/#1XBLWB#147).
+* [Playground Example of Tiled Ground](https://www.babylonjs-playground.com/#1XBLWB#147).
 
 Full explanation of creating a tiled ground by its original code writer [here](http://makina-corpus.com/blog/metier/2014/how-to-use-multimaterials-with-a-tiled-ground-in-babylonjs). 
 

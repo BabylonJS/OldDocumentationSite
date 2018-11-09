@@ -44,4 +44,4 @@ https://www.babylonjs-playground.com/#0720FC#10
 If you want to create an instance from a cloned mesh, you have to first make sure that you call clonedMesh.makeGeometryUnique().
 
 # Demo
-http://www.babylonjs.com/?INSTANCES
+https://www.babylonjs.com/?INSTANCES

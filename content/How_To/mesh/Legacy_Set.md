@@ -78,7 +78,7 @@ Parameters are: name, radius, tube, radialSegments, tubularSegments, p, q, scene
 ```javascript
 var knot = BABYLON.Mesh.CreateTorusKnot("knot", 2, 0.5, 128, 64, 2, 3, scene);
 ```
-You can learn more about torus knots... [RIGHT HERE](http://en.wikipedia.org/wiki/Torus_knot).
+You can learn more about torus knots... [RIGHT HERE](https://en.wikipedia.org/wiki/Torus_knot).
 
 # Ground
 
@@ -88,7 +88,7 @@ var ground = BABYLON.Mesh.CreateGround("ground", 6, 6, 2, scene);
 
 Parameters are: name, width, depth, subdivs, scene
 
-Our * [Playground Demo Scene 01](http://www.babylonjs-playground.com/?1) uses a CreateGround constructor... so you can see one in action by using the above link.
+Our * [Playground Demo Scene 01](https://www.babylonjs-playground.com/?1) uses a CreateGround constructor... so you can see one in action by using the above link.
 
 # Ground From HeightMap
 

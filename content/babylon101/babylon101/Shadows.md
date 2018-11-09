@@ -182,7 +182,7 @@ You can control also the size of the projection window by modifying one of those
 * `light.shadowOrthoScale`: 0.1 by default which means that the projection window is increase by 10% from the optimal size.
 * `light.shadowFrustumSize`: Off by default with a value of 0. You can specify a value which will be used to define the square size of the frustum to use.
 
-The light's position, as well as the positions of the mesh that you have pushed into the renderlist, determine where the shadows will appear. Note that your light point-of-view from this position have to view all meshes in the renderList; otherwise the shadows may not be rendered. See [this example](http://www.babylonjs-playground.com/#R1EVD0#3).
+The light's position, as well as the positions of the mesh that you have pushed into the renderlist, determine where the shadows will appear. Note that your light point-of-view from this position have to view all meshes in the renderList; otherwise the shadows may not be rendered. See [this example](https://www.babylonjs-playground.com/#R1EVD0#3).
 
 ### Customizing the projection matrix
 All lights need to provide a projection matrix to shadow generators in order to build the shadow map. You can define your own version by setting `light.customProjectionMatrixBuilder` value:
@@ -254,13 +254,13 @@ It is probably the case that Self-Shadowing requires the biggest attention durin
 
 The first step consists in adding a shadow generator in the scene and defining every meshes as both casters and receivers (we also force the bias to 0 to highlight the generated artifacts): https://playground.babylonjs.com/#FH3FM2#4
 
-As you can notice there are weird patterns appearing everywhere on the surface of the self-shadowed objects. This is called shadow acnea ([more information](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne)).
+As you can notice there are weird patterns appearing everywhere on the surface of the self-shadowed objects. This is called shadow acnea ([more information](https://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne)).
 
 Fortunately, in Babylon we do have a way to solve the issue.
 
 #### Bias
 
-As detailed in the previous [opengl tutorial](http://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne), you can increase the value of the bias to make all the acnea disappear: https://playground.babylonjs.com/#FH3FM2#5
+As detailed in the previous [opengl tutorial](https://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/#shadow-acne), you can increase the value of the bias to make all the acnea disappear: https://playground.babylonjs.com/#FH3FM2#5
 
 Unfortunately doing this introduces another side effect called peter panning where the shadows are not attached to their objects anymore.
 

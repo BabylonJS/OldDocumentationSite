@@ -9,7 +9,7 @@ After following the [PBR Introduction](/How_To/Physically_Based_Rendering), it i
 
 ![Title](/img/extensions/materials/PBRMaster.png)
 
-[**Demo Scene - PBR Materials**](http://www.babylonjs.com/demos/pbrrough/)
+[**Demo Scene - PBR Materials**](https://www.babylonjs.com/demos/pbrrough/)
 
 This will be the only picture of the documentation. As a **real sample** would be better than a picture, please, do not hesitate to click on the eye aside of each playground links to see the live examples embedded in the page.
 

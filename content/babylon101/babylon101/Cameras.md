@@ -52,7 +52,7 @@ The default actions are:
 // Attach the camera to the canvas
     camera.attachControl(canvas, true);
 ```
-[A Playground Example of a Universal Camera](http://www.babylonjs-playground.com/#12WBC#68)
+[A Playground Example of a Universal Camera](https://www.babylonjs-playground.com/#12WBC#68)
 
 
 ## Arc Rotate Camera
@@ -87,7 +87,7 @@ Whether using the keyboard, mouse or touch swipes left right directions change _
 // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
 ```
-[A Playground Example of an Arc Rotate Camera](http://www.babylonjs-playground.com/#12WBC#69)
+[A Playground Example of an Arc Rotate Camera](https://www.babylonjs-playground.com/#12WBC#69)
 
 Panning with an ArcRotateCamera is also possible by using CTRL + MouseLeftClick, the default action. You can specify to use MouseRightClick instead, by setting _useCtrlForPanning_ to false in the _attachControl_ call :
 
@@ -146,7 +146,7 @@ camera.attachControl(canvas, true);
 camera.target = targetMesh;   // version 2.4 and earlier
 camera.lockedTarget = targetMesh; //version 2.5 onwards
 ```
-[A Playground Example of a Follow Camera following a moving target](http://www.babylonjs-playground.com/#12WBC#84)
+[A Playground Example of a Follow Camera following a moving target](https://www.babylonjs-playground.com/#12WBC#84)
 
 
 ## AnaglyphCameras
@@ -171,7 +171,7 @@ var camera = new BABYLON.AnaglyphArcRotateCamera("aar_cam", -Math.PI/2, Math.PI/
 
 The _eyeSpace_ parameter sets the amount of shift between the left eye view and the right eye view. Once you are wearing your 3D glasses, you might want to experiment with this float value.
 
-You can learn all about anaglyphs by visiting a [Wikipedia page that explains it thoroughly](http://en.wikipedia.org/wiki/Anaglyph_3D).
+You can learn all about anaglyphs by visiting a [Wikipedia page that explains it thoroughly](https://en.wikipedia.org/wiki/Anaglyph_3D).
 
 ## Device Orientation Camera
 
@@ -195,7 +195,7 @@ This is a camera specifically designed to react to device orientation events suc
     camera.attachControl(canvas, true);
 
 ```
-[A Playground Example of a Device Orientation Camera](http://www.babylonjs-playground.com/#12WBC#81) for those with a correct device.
+[A Playground Example of a Device Orientation Camera](https://www.babylonjs-playground.com/#12WBC#81) for those with a correct device.
 
 ## Virtual Joysticks Camera
 
@@ -257,7 +257,7 @@ If you switch back to another camera, don’t forget to call the dispose() funct
 ## VR Device Orientation Cameras
 
 A new range of cameras.
-[A Playground Example of a VR Device Orientation Camera](http://www.babylonjs-playground.com/#12WBC#80) for those with a correct device.
+[A Playground Example of a VR Device Orientation Camera](https://www.babylonjs-playground.com/#12WBC#80) for those with a correct device.
 
 ### Constructing the VR Device Orientation Free Camera
 

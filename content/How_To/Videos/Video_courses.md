@@ -12,11 +12,11 @@ Instructors | [David Catuhe](http://twitter.com/deltakosh) - Microsoft Principal
 
 <img src="http://az612410.vo.msecnd.net/wwwbabylonjs/doc/agendavideoscourse.jpg" alt="Agenda" style="width: 600px;"/>
 
-1. [3D on the Web: Understanding the Basics](http://doc.babylonjs.com/page.php?p=24827)
-2. [WebGL Basics](http://doc.babylonjs.com/page.php?p=24828)
-3. [Using Babylon.js for Beginners](http://doc.babylonjs.com/page.php?p=24829)
-4. [Understanding Materials and Inputs](http://doc.babylonjs.com/page.php?p=24830)
-5. [Game Pipeline Integration with Babylon.js](http://doc.babylonjs.com/page.php?p=24831)
-6. [Loading Assets](http://doc.babylonjs.com/page.php?p=24832)
-7. [Babylon.js: Advanced Features](http://doc.babylonjs.com/page.php?p=24833)
-8. [Special Effects](http://doc.babylonjs.com/page.php?p=24834)
+1. [3D on the Web: Understanding the Basics](https://www.babylonjs.com/page.php?p=24827)
+2. [WebGL Basics](https://www.babylonjs.com/page.php?p=24828)
+3. [Using Babylon.js for Beginners](https://www.babylonjs.com/page.php?p=24829)
+4. [Understanding Materials and Inputs](https://www.babylonjs.com/page.php?p=24830)
+5. [Game Pipeline Integration with Babylon.js](https://www.babylonjs.com/page.php?p=24831)
+6. [Loading Assets](https://www.babylonjs.com/page.php?p=24832)
+7. [Babylon.js: Advanced Features](https://www.babylonjs.com/page.php?p=24833)
+8. [Special Effects](https://www.babylonjs.com/page.php?p=24834)

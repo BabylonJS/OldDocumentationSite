@@ -11,12 +11,12 @@ For many of you creating Babylon.js projects only [GUI](/how_to/Gui), and [scene
 Babylon.js provides a lot of events (like scene.beforeRender) and before v2.4 there was not a unified way to handle them.
 Starting with v2.4, we introduced (without breaking backward compatibility of course) a new pattern: the Observables.
 
-There are two parts: the Observable and the Observer. The [Observable](http://doc.babylonjs.com/api/classes/babylon.observable) is a property of an object which represents a given event (like beforeRender for instance). 
+There are two parts: the Observable and the Observer. The [Observable](https://www.babylonjs.com/api/classes/babylon.observable) is a property of an object which represents a given event (like beforeRender for instance). 
 Users that want to have their own piece of code running in response to such event will register an Observer to the appropriate Observable. Then it's the duty of the Observable to execute the Observers, when appropriate.
 
 The implementer uses an Observable to create a property which will trigger all the registered observers. The Generic type T is used to communicate a given data type from the Observable to the Observer.
 
-While it is possible to create your own Observable (a simple example of which is below) for most users it will be a case of adding their own Observers to the Observables that Babylon.js provides. For those who want to delve deeper there is more detail in the [API](http://doc.babylonjs.com/api/classes/babylon.observable)  
+While it is possible to create your own Observable (a simple example of which is below) for most users it will be a case of adding their own Observers to the Observables that Babylon.js provides. For those who want to delve deeper there is more detail in the [API](https://www.babylonjs.com/api/classes/babylon.observable)  
 
 * [Playground Example - Simple Custom Observable Example](https://www.babylonjs-playground.com/#6IGFM2)
 An Observable - onXChange- is added to the master sphere. The two minion spheres and the actions they have to undertake form the two Observers which react when a change in the x position of the master is observed.
@@ -36,7 +36,7 @@ The following are available:
 * clear() to remove all Observers
 * clone() to simply clone the object but not the registered Observers.
 
-Many Babylon.js objects have a range of available Observables. Here is an [unordered list](http://doc.babylonjs.com/search/?bjsq=observable) from the search facility of the Documentation with links to the API. 
+Many Babylon.js objects have a range of available Observables. Here is an [unordered list](https://www.babylonjs.com/search/?bjsq=observable) from the search facility of the Documentation with links to the API. 
 
 ## Add An Observer 
 An Observer is formed from an object set to watch the Observable and the objects reaction to the observation.
@@ -110,6 +110,6 @@ The BabylonJS Scene Object has over 20 observables that 'fire' under various con
 
 The Scene Object also has observers: onReady, onDataLoaded, onDispose, but they do not happen within a rendering/frame.  
 
-Also, onBeforeStep and onAfterStep are available when using [deterministic lock step](http://doc.babylonjs.com/babylon101/animations#deterministic-lockstep)
+Also, onBeforeStep and onAfterStep are available when using [deterministic lock step](https://www.babylonjs.com/babylon101/animations#deterministic-lockstep)
 
 However possibly the most useful Observable is the one that checks what is happening to the screen pointer whether with mouse or with finger or controller. [scene.onPointerObservable](/how_to/interactions)

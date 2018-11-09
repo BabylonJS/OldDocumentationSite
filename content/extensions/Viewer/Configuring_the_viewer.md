@@ -34,7 +34,7 @@ The order in which the configuration is loaded is :
 To explain this further, let's look at a simple example:
 
 ```html
-<babylon extends="minimal" scene.debug="true" engine.antialiasing="false" model="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration="http://example.com/viewerConfig.json"></babylon>
+<babylon extends="minimal" scene.debug="true" engine.antialiasing="false" model="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration="https://example.com/viewerConfig.json"></babylon>
 ```
 
 At first, the configuration of the DOM element will be read (represented as JSON for better understanding):
@@ -49,7 +49,7 @@ At first, the configuration of the DOM element will be read (represented as JSON
         antialiasing: false
     },
     model: "https://playground.babylonjs.com/scenes/Rabbit.babylon",
-    configuration="http://example.com/viewerConfig.json"
+    configuration="https://example.com/viewerConfig.json"
 }
 ```
 
@@ -65,7 +65,7 @@ Next, the `minimal`configuration will be loaded and appended to the existing con
         antialiasing: false 
     },
     model: "https://playground.babylonjs.com/scenes/Rabbit.babylon",
-    configuration="http://example.com/viewerConfig.json",
+    configuration="https://example.com/viewerConfig.json",
     version: "0.1",
     templates: {
         main: {
@@ -98,7 +98,7 @@ Next, the `minimal`configuration will be loaded and appended to the existing con
 
 Notice that thou the minimal configuration define antialiasing to be `true`, the configuration provided by the user will be used. It is only extending and not overwriting.
 
-Next, the configuration object will be inspected. If it contains a configuration URL, it will be loaded. In our case, the (non-existing) <http://example.com/viewerConfig.json> will be downloaded and appended to the configuration already provided. Notice that this configuration object will overwrite definitions in the current configuration object. So if the JSON file looks like this:
+Next, the configuration object will be inspected. If it contains a configuration URL, it will be loaded. In our case, the (non-existing) <https://example.com/viewerConfig.json> will be downloaded and appended to the configuration already provided. Notice that this configuration object will overwrite definitions in the current configuration object. So if the JSON file looks like this:
 
 ```javascript
 {
@@ -116,7 +116,7 @@ The viewer will read each attribute on the `<babylon>` DOM element(s) provided a
 So, if the DOM element looks like this:
 
 ```html
-<babylon scene.debug="true" camera.behaviors.auto-rotate="0" model.url="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration="http://example.com/viewerConfig.json"></babylon>
+<babylon scene.debug="true" camera.behaviors.auto-rotate="0" model.url="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration="https://example.com/viewerConfig.json"></babylon>
 ```
 
 The configuration will look like this:
@@ -209,10 +209,10 @@ As previously explained, the viewer configuration has a `configurarion` member, 
 If the following is defined:
 
 ```html
-<babylon scene.debug="true" camera.behaviors.auto-rotate="0" model.url="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration="http://example.com/viewerConfig.json"></babylon>
+<babylon scene.debug="true" camera.behaviors.auto-rotate="0" model.url="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration="https://example.com/viewerConfig.json"></babylon>
 ```
 
-the file <http://example.com/viewerConfig.json> will be loaded into the configuration object. This is a great way of creating a general / global configuration  for a website, while providing the details model data using HTML.
+the file <https://example.com/viewerConfig.json> will be loaded into the configuration object. This is a great way of creating a general / global configuration  for a website, while providing the details model data using HTML.
 
 ### Configuring using JavaScript
 
@@ -280,7 +280,7 @@ BabylonViewer.mapperManager.registerMapper('yaml', yamlMapper);
 And finally, we need to tell the manager which mapper to use:
 
 ```html
-<babylon extends="minimal" scene.debug="true" engine.antialiasing="false" model="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration.url="http://example.com/viewerConfig.yaml" configuration.mapper="yaml"></babylon>
+<babylon extends="minimal" scene.debug="true" engine.antialiasing="false" model="https://playground.babylonjs.com/scenes/Rabbit.babylon" configuration.url="https://example.com/viewerConfig.yaml" configuration.mapper="yaml"></babylon>
 ```
 
 ### Using your own payload without downloading a file

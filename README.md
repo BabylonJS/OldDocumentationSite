@@ -1,8 +1,8 @@
 # Babylon.js - Official documentation website
 
-![](http://www.babylonjs.com/img/layout/logo-babylonjs-v3.svg)
+![](https://www.babylonjs.com/img/layout/logo-babylonjs-v3.svg)
 
-Welcome on the repository of the official documentation of [Babylon.js](http://www.babylonjs.com).
+Welcome on the repository of the official documentation of [Babylon.js](https://www.babylonjs.com).
 
 ## Prerequisites
 Before beginning, please be sure to have these packages installed:
@@ -99,12 +99,12 @@ Categories classify the content.
 
 
 They are implemented and can be seen in:
-    * [Babylon 101](http://doc.babylonjs.com/babylon101)
-    * [How To](http://doc.babylonjs.com/How_To)
-    * [Features](http://doc.babylonjs.com/features)
-    * [resources](http://doc.babylonjs.com/resources)
-    * [extensions](http://doc.babylonjs.com/extensions)
-    * [samples](http://doc.babylonjs.com/samples)
+    * [Babylon 101](https://www.babylonjs.com/babylon101)
+    * [How To](https://www.babylonjs.com/How_To)
+    * [Features](https://www.babylonjs.com/features)
+    * [resources](https://www.babylonjs.com/resources)
+    * [extensions](https://www.babylonjs.com/extensions)
+    * [samples](https://www.babylonjs.com/samples)
     
 
 ### Adding Content
