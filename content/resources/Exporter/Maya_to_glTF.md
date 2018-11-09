@@ -323,4 +323,4 @@ When updating an input field, changes are highlighted in red. Press the _Confirm
 
 #  Try it out!  #
 
-Export your own scene from Maya to glTF format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [Babylon loader](/how_to/gltf).
+Export your own scene from Maya to glTF format and load it into the [Babylon Sandbox](https://sandbox.babylonjs.com/). Or load them via scripts using the [Babylon loader](/how_to/gltf).

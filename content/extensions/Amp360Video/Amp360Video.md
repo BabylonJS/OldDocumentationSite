@@ -1,7 +1,7 @@
 # Azure Media Player 360 Video Plugin
 
 ## Introduction 
-The [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html) 360 Video is a plugin for AMP (aka [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html)) using BabylonJS in order to facilitate the integration of 360 videos in your Web App.
+The [Azure media player](https://amp.azure.net/libs/amp/latest/docs/index.html) 360 Video is a plugin for AMP (aka [Azure media player](https://amp.azure.net/libs/amp/latest/docs/index.html)) using BabylonJS in order to facilitate the integration of 360 videos in your Web App.
 
 The plugin natively supports VR headsets (Windows Mixed Reality, etc.).
 
@@ -28,7 +28,7 @@ The plugin located in the ```amp-360video``` folder contains a [videojs](https:/
 
 The plugin depends on BabylonJS in order to enable 3D functionalities in AMP.
 
-For more information about AMP, you can access their [documentation](http://amp.azure.net/libs/amp/latest/docs/index.html).
+For more information about AMP, you can access their [documentation](https://amp.azure.net/libs/amp/latest/docs/index.html).
 
 ## How use in your web site
 After deploying both the js and css from the ```amp-360video``` folder of the [Extension repository](https://github.com/BabylonJS/Extensions/tree/master/Amp360Video) to your website, you can follow the following steps:
@@ -47,7 +47,7 @@ Include the following resources in your html:
 ```
 
 ### Plugin Resources
-You can either embed the plugin in your HTML or initialize it in code as specified in the [AMP documentation](http://amp.azure.net/libs/amp/latest/docs/index.html#plugins).
+You can either embed the plugin in your HTML or initialize it in code as specified in the [AMP documentation](https://amp.azure.net/libs/amp/latest/docs/index.html#plugins).
 
 #### Html Initialization
 Add the **threeSixty plugin** to your video data-setup:

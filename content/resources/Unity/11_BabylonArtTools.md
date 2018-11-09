@@ -18,7 +18,7 @@ The art tools provided by the toolkit allow you to optimize your game assets for
 
 * **Macintosh** - ~/Library/Preferences/Autodesk/maya/*VERSION*/scripts
 
-Check out the [Maya Arts Tools Tutorial](http://www.babylontoolkit.com/videos/MayaArtTools.mp4) to get started optimizing your geometry for web based game development.
+Check out the [Maya Arts Tools Tutorial](https://www.babylontoolkit.com/videos/MayaArtTools.mp4) to get started optimizing your geometry for web based game development.
 
 ## Babylon Reskin Tool
 

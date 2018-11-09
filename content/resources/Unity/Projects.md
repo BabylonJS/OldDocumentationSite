@@ -64,6 +64,6 @@ To build and preview the current scene, press the **Play** button or the **Build
 
 # How To Get Started
 
-Check out the [Getting Started Video](http://www.babylontoolkit.com/videos/GettingStarted.mp4) to get started with **Babylon Toolkit** style game development.
+Check out the [Getting Started Video](https://www.babylontoolkit.com/videos/GettingStarted.mp4) to get started with **Babylon Toolkit** style game development.
 
 .

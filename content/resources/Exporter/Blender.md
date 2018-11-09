@@ -213,7 +213,7 @@ Now, you already have a basic scene with animations autoplaying in it.
 
 Once your scene is exported, you have multiple solutions to test it:
 
-- quick check it into the [sandbox](http://sandbox.babylonjs.com/)
+- quick check it into the [sandbox](https://sandbox.babylonjs.com/)
 - edit the file through the [editor](http://editor.babylonjs.com/)
 - use the [viewer](https://www.babylonjs.com/extensions/the_babylon_viewer)
 - script your own app using the [loader](/how_to/load_from_any_file_type)

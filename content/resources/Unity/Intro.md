@@ -1,4 +1,4 @@
-The [Babylon Toolkit](http://www.babylontoolkit.com) host a set of tools designed to provide a small subset of the unity editor design time features to export babylon content scene files. You can create your games using a design time component based architecture. Please refer to the [Unity Editor](https://docs.unity3d.com/Manual/index.html) documentation for details. 
+The [Babylon Toolkit](https://www.babylontoolkit.com) host a set of tools designed to provide a small subset of the unity editor design time features to export babylon content scene files. You can create your games using a design time component based architecture. Please refer to the [Unity Editor](https://docs.unity3d.com/Manual/index.html) documentation for details. 
 
 
 # Exportation
@@ -26,7 +26,7 @@ The preferred **Color Space** for realistic rendering is **Linear**. A significa
 
 # Getting Started
 
-The [Project Setup](Projects) section outlines basic project setup, scene configuration and runtime script compiler options. You can auto detect the platform script compiler locations in the **Project Compiler Options** section on the main export panel. Check out the [Getting Started Video](http://www.babylontoolkit.com/videos/GettingStarted.mp4) to get started with **Babylon Toolkit** style game development.
+The [Project Setup](Projects) section outlines basic project setup, scene configuration and runtime script compiler options. You can auto detect the platform script compiler locations in the **Project Compiler Options** section on the main export panel. Check out the [Getting Started Video](https://www.babylontoolkit.com/videos/GettingStarted.mp4) to get started with **Babylon Toolkit** style game development.
 
 
 # Toolkit Features

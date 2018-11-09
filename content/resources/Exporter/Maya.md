@@ -151,4 +151,4 @@ Now that you know all about the exporter features, it’s time to use it!
 
 # Using the exporter
 
-Export your own scene from Maya to babylon format and load it into the [Babylon Sandbox](http://sandbox.babylonjs.com/). Or load them via scripts using the [babylon loader](/how_to/how_to_use_assetsmanager).
+Export your own scene from Maya to babylon format and load it into the [Babylon Sandbox](https://sandbox.babylonjs.com/). Or load them via scripts using the [babylon loader](/how_to/how_to_use_assetsmanager).

@@ -204,17 +204,17 @@ Virtual Joysticks are on-screen 2D graphics that are used to control the camera 
 
 ### Requires
 
-The third-party file [hand.js](http://handjs.codeplex.com/releases/view/119684).
+The third-party file [hand.js](https://handjs.codeplex.com/releases/view/119684).
 
 ### Read
 
-[Virtual Joysticks David Rousset Blog](http://blogs.msdn.com/b/davrous/archive/2013/02/22/creating-an-universal-virtual-touch-joystick-working-for-all-touch-models-thanks-to-hand-js.aspx) on David's blog.
+[Virtual Joysticks David Rousset Blog](https://blogs.msdn.com/b/davrous/archive/2013/02/22/creating-an-universal-virtual-touch-joystick-working-for-all-touch-models-thanks-to-hand-js.aspx) on David's blog.
 
 ### Video
 
 [Virtual Joysticks Camera demo in video](https://www.youtube.com/watch?v=53Piiy71lB0)
 
-![Screenshot of the Virtual Joysticks Camera in action on Espilit](http://david.blob.core.windows.net/babylonjs/VJCBabylon.jpg)
+![Screenshot of the Virtual Joysticks Camera in action on Espilit](https://david.blob.core.windows.net/babylonjs/VJCBabylon.jpg)
 
 ### Complete sample
 

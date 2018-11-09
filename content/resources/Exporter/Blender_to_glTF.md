@@ -21,25 +21,16 @@ A good practice could be to import the default glTF material as fake user, and t
 
 Once your scene is exported, you have multiple solutions to test it:
 
-- quick check it into the [sandbox](http://sandbox.babylonjs.com/)
-<<<<<<< Updated upstream
-- use the [viewer](http://doc.babylonjs.com/extensions/the_babylon_viewer)
-- script your own app using the [loader](/How_To/Load_From_Any_File_Type)
-=======
+- quick check it into the [sandbox](https://sandbox.babylonjs.com/)
 - use the [viewer](https://www.babylonjs.com/extensions/the_babylon_viewer)
 - script your own app using the [loader](/how_to/load_from_any_file_type)
->>>>>>> Stashed changes
 
 ### Example
 
 Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [their repo](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/scenes):
 
 - export to glTF in a folder.
-<<<<<<< Updated upstream
 - the HDR environment [needs a little tweak](/How_To/Use_HDR_Environment), you can also use the environment from the [BJS repo](https://github.com/BabylonJS/Website/blob/master/Assets/environment.dds). Place the converted environment texture in the glTF folder too.
-=======
-- the HDR environment [need a little tweak](https://www.babylonjs.com/how_to/physically_based_rendering#env-map), you can also use the environment from the [BJS repo](https://github.com/BabylonJS/Website/blob/master/Assets/environment.dds). Place the converted environment texture in the glTF folder too.
->>>>>>> Stashed changes
 - create a file named *index.html*, and copy the code above:
 
 ```html
@@ -74,13 +65,8 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
     <script type="text/javascript">
         var canvas = document.getElementById("canvas");
         var engine = new BABYLON.Engine(canvas, true);
-<<<<<<< Updated upstream
-
-        // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
-=======
         
         // here the doc for Load function: https://www.babylonjs.com/api/classes/babylon.sceneloader#load
->>>>>>> Stashed changes
         BABYLON.SceneLoader.Load("", "02_suzanne.gltf", engine, function (scene) {
 
             var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);

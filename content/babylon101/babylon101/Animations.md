@@ -321,7 +321,7 @@ Please note that the scene.animationPropertiesOverride will be used if animation
 You can add some behaviors to your animations, using easing functions. 
 If you want more information about easing functions, here are some useful links : 
 - [MSDN Easing functions documentation](https://msdn.microsoft.com/en-us/library/ee308751.aspx)
-- [Easing functions cheat sheet](http://easings.net/fr)
+- [Easing functions cheat sheet](https://easings.net/fr)
 
 All those easing functions are implemented in BABYLON, allowing you to apply custom mathematical formulas to your animations.
 

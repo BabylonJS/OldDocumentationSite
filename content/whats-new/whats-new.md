@@ -1087,7 +1087,7 @@
  - Support for OES_element_index_uint extension in order to support 32 bits indices and then meshes with more than 65536 vertices ([deltakosh](http://www.github.com/deltakosh))
  - Support for levels of detail (LOD) for meshes. More info [here](https://www.babylonjs.com/page.php?p=22591) ([deltakosh](http://www.github.com/deltakosh))
  - New Scene Optimizer tool. More [here](https://www.babylonjs.com/page.php?p=22581) ([deltakosh](http://www.github.com/deltakosh))
- - Support for [user marks](http://blogs.msdn.com/b/eternalcoding/archive/2015/02/02/using-user-mark-to-analyze-performance-of-your-javascript-code.aspx) ([deltakosh](http://www.github.com/deltakosh))
+ - Support for [user marks](https://blogs.msdn.com/b/eternalcoding/archive/2015/02/02/using-user-mark-to-analyze-performance-of-your-javascript-code.aspx) ([deltakosh](http://www.github.com/deltakosh))
  - Using High Resolution Time for performance and FPS measurement ([deltakosh](http://www.github.com/deltakosh))
  - Easing functions for animations. More info [here](https://www.babylonjs.com/page.php?p=22081) ([mimetis](https://github.com/mimetis)) 
  - New debug layer than can be used to display debug informations. More info [here](https://www.babylonjs.com/page.php?p=22611) ([deltakosh](http://www.github.com/deltakosh))
