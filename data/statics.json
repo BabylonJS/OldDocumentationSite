@@ -400,9 +400,19 @@
                     "filename": "FrontandBackUV"
                 },
                 {
+                    "title": "Start with Physically Based Rendering (PBR)",
+                    "level": 2,
+                    "filename": "Physically_Based_Rendering"
+                },
+                {
                     "title": "Use Parallax Mapping",
                     "level": 2,
                     "filename": "Using_parallax_mapping"
+                },
+                {
+                    "title": "Master Physically Based Rendering (PBR)",
+                    "level": 3,
+                    "filename": "Physically_Based_Rendering_Master"
                 },
                 {
                     "title": "Obtain Reflections and Refractions",
@@ -538,7 +548,7 @@
                     "title": "Use the Particle Helper",
                     "level": 1,
                     "filename": "ParticleHelper"
-                },                
+                },
                 {
                     "title": "Use Sub Emitters",
                     "level": 1,
@@ -562,11 +572,6 @@
             "desc": "Environment Tutorials.",
             "files": [
                 {
-                    "title": "Start with Physically Based Rendering (PBR)",
-                    "level": 2,
-                    "filename": "Physically_Based_Rendering"
-                },
-                {
                     "title": "Use a Skybox",
                     "level": 2,
                     "filename": "Skybox"
@@ -577,9 +582,9 @@
                     "filename": "BackgroundMaterial"
                 },
                 {
-                    "title": "Master Physically Based Rendering",
-                    "level": 3,
-                    "filename": "Physically_Based_Rendering_Master"
+                    "title": "Use a HDR environment (for PBR)",
+                    "level": 2,
+                    "filename": "Use_HDR_Environment"
                 },
                 {
                     "title": "Support Fog with ShaderMaterial",
@@ -812,8 +817,7 @@
                 {
                     "title": "Write a Playground Based Tutorial",
                     "filename": "playground_tutorials"
-                } 
-                                
+                }
             ]
         },
         {
