@@ -692,7 +692,7 @@ SPS.vars.myFloat = 0.01;   // just keep setting float values to myFloat afterwar
 SPS.vars.myInt = 5;        // just keep setting integer values to myInt afterwards
 SPS.vars.myString = "foo"; // just keep setting string values to myString afterwards
 ```
-Example : From this [article](http://gamedevelopment.tutsplus.com/How_To/the-three-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444), here is an implementation of a simple particle IA called "flocking" what a behavior of association, then cohesion and separation. This example uses `SPS.vars` to allocate the memory used for results only once instead of in-function temporary variables.     
+Example : From this [article](https://gamedevelopment.tutsplus.com/How_To/the-three-simple-rules-of-flocking-behaviors-alignment-cohesion-and-separation--gamedev-3444), here is an implementation of a simple particle IA called "flocking" what a behavior of association, then cohesion and separation. This example uses `SPS.vars` to allocate the memory used for results only once instead of in-function temporary variables.     
  https://www.babylonjs-playground.com/#2FPT1A#35   
 
 ### Rebuild the mesh

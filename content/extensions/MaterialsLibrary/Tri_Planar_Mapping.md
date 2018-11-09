@@ -58,5 +58,5 @@ triPlanarMaterial.normalTextureZ = triPlanarMaterial.normalTextureX;
 ```
 
 
-To go further in the theory, you can read this [great article](http://gamedevelopment.tutsplus.com/articles/use-tri-planar-texture-mapping-for-better-terrain--gamedev-13821) about tri-planar mapping.
+To go further in the theory, you can read this [great article](https://gamedevelopment.tutsplus.com/articles/use-tri-planar-texture-mapping-for-better-terrain--gamedev-13821) about tri-planar mapping.
 

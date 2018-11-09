@@ -16,7 +16,7 @@ Using these methods on the above meshes there is no need for submaterials or sub
 
 A texture atlas also know as a _sprite sheet_ or _sprite atlas_ contains a range of images as in the example below.
 
-![Sprite Altlas](http://jerome.bousquie.fr/BJS/images/spriteAtlas.png)
+![Sprite Altlas](https://jerome.bousquie.fr/BJS/images/spriteAtlas.png)
 
 In this atlas there are 24 different images in a 4 rows of 6 a way of mapping each sprite onto an individual face is needed. 
 

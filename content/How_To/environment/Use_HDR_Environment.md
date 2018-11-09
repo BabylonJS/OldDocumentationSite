@@ -43,7 +43,7 @@ You can find IBLBaker on: [https://github.com/derkreature/IBLBaker](https://gith
 
 After cloning the repo, you will be able to go to `/bin64` folder and launch `IBLBaker.exe`.
 
-Now use the `Load environment` button to load a HDR image (Try one from [HDRLib](http://hdrlib.com/) or [there](https://github.com/sbtron/BabylonJS-glTFLoader/tree/master/src/images) as well)
+Now use the `Load environment` button to load a HDR image (Try one from [HDRLib](https://hdrlib.com/) or [there](https://github.com/sbtron/BabylonJS-glTFLoader/tree/master/src/images) as well)
 
 We recommend to play with the environment scale to define the brightness you want.
 

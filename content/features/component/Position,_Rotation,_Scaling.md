@@ -83,7 +83,7 @@ For rotating the most straight forward **move-by** method is [addRotation](/baby
 
 The following playground shows you how to use _addRotation_ to construct wheels.
 
-* [Playground Example - Wheels](https://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
+* [Playground Example - Wheels](https://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](https://jerome.bousquie.fr/BJS/demos/)
 
 The other ways below move by the values given in the parameters.
 

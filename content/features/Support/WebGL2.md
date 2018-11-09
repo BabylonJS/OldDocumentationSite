@@ -48,7 +48,7 @@ When possible (either on WebGL2 context or when extension is available on WebGL1
 
 At rendering time, you just have to define one VAO instead of multiple VBO (vertex buffer object).
 
-You can find more details on [Tojicode's blog](http://blog.tojicode.com/2012/10/oesvertexarrayobject-extension.html).
+You can find more details on [Tojicode's blog](https://blog.tojicode.com/2012/10/oesvertexarrayobject-extension.html).
 
 ## Uniform buffer objets
 On WebGL1 context all uniforms are sent to GPU independently. This means that if your shader uses 16 matrices, you will call WebGL API 16 times to update all matrices before using your shader.

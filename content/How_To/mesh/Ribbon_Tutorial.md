@@ -10,7 +10,7 @@ It is formed using one or more paths. A path is simply an array of at least two 
 
 Below shows the construction of a ribbon using two paths A and B each having five points. 
 
-![Ribbon](http://jerome.bousquie.fr/BJS/images/ribbon.png)
+![Ribbon](https://jerome.bousquie.fr/BJS/images/ribbon.png)
 
 ## Length of Paths
 

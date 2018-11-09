@@ -5,7 +5,7 @@ PG_TITLE: 16. Playing sounds and music
 
 # How To Play Sounds and Music
 
-Babylon.js sound engine is based on the [**Web Audio specification**](http://webaudio.github.io/web-audio-api/). We decided not to offer a fallback on the audio tag or other mechanism. So, to use our sound engine, you need to use a Web Audio compatible browser. Still, if you’re using it on not compatible browser, it won’t break the rest of our engine, it will simply play no sound.
+Babylon.js sound engine is based on the [**Web Audio specification**](https://webaudio.github.io/web-audio-api/). We decided not to offer a fallback on the audio tag or other mechanism. So, to use our sound engine, you need to use a Web Audio compatible browser. Still, if you’re using it on not compatible browser, it won’t break the rest of our engine, it will simply play no sound.
 The sound engine offers **ambient** sound, **spatialized** sound and **directional** sound. It can be created by code or by loading a .babylon file. It follows the simple & powerful philosophy of the rest of the engine as you’re going to see. 
 The sound format supported is the one from the browser. It’s usually at least **.mp3** and **.wav**.
 

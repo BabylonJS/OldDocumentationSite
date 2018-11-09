@@ -51,7 +51,7 @@ Postprocesses are part of the rendering pipeline that allows you to create 2D ef
 
 ### Shaders
 
-A shader is code written for the GPU and is what finally renders your scene. Babylon.js deals with the shader code for you, all you need to do is to set the camera, material and lighting. However should you wish to do so you can write your own shader to produce the effect you want. You can edit and try out any shader code at http://cyos.babylonjs.com/
+A shader is code written for the GPU and is what finally renders your scene. Babylon.js deals with the shader code for you, all you need to do is to set the camera, material and lighting. However should you wish to do so you can write your own shader to produce the effect you want. You can edit and try out any shader code at https://cyos.babylonjs.com/
 
 A range of shaders including fire, water, lava and fur can be found in the materials library section of [Extensions](/extensions).
 
