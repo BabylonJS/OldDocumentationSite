@@ -286,8 +286,9 @@ autoStretchWidth|boolean|true|The control will resize horizontally to adapt to t
 maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
 margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
 thickness|number|1|Thickness of the border
-highligherOpacity|number|0.4| Defines the transparency of highlighted text's background
-textHighlightColor|string|#d5e0ff| Background color of highlighted text
+highligherOpacity|number|0.4|Defines the transparency of highlighted text's background
+textHighlightColor|string|#d5e0ff|Background color of highlighted text
+onFocusSelectAll|boolean|false|Allows complete selection of text by default when the input is focused.
 
 The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
 
@@ -297,8 +298,8 @@ Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
 onBeforeKeyAddObservable|Raised just before the entered key is added to the text
-onFocusObservable|Raised when the control loses the focus
-onBlurObservable|Raised when the control gets the focus
+onFocusObservable|Raised when the control gets the focus
+onBlurObservable|Raised when the control loses the focus
 onTextHighlightObservable|Raised when the text is highlighted
 onTextCopyObservable|Raised when the copy event is triggered
 onTextCutObservable|Raised when the cut event is triggered
