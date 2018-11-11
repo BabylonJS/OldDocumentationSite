@@ -23,14 +23,14 @@ Once your scene is exported, you have multiple solutions to test it:
 
 - quick check it into the [sandbox](http://sandbox.babylonjs.com/)
 - use the [viewer](http://doc.babylonjs.com/extensions/the_babylon_viewer)
-- script your own app using the [loader](/how_to/load_from_any_file_type)
+- script your own app using the [loader](/How_To/Load_From_Any_File_Type)
 
 ### Example
 
 Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [their repo](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/scenes):
 
 - export to glTF in a folder.
-- the HDR environment [need a little tweak](http://doc.babylonjs.com/how_to/physically_based_rendering#env-map), you can also use the environment from the [BJS repo](https://github.com/BabylonJS/Website/blob/master/Assets/environment.dds). Place the converted environment texture in the glTF folder too.
+- the HDR environment [needs a little tweak](/How_To/Use_HDR_Environment), you can also use the environment from the [BJS repo](https://github.com/BabylonJS/Website/blob/master/Assets/environment.dds). Place the converted environment texture in the glTF folder too.
 - create a file named *index.html*, and copy the code above:
 
 ```html
@@ -65,19 +65,19 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
     <script type="text/javascript">
         var canvas = document.getElementById("canvas");
         var engine = new BABYLON.Engine(canvas, true);
-        
+
         // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
         BABYLON.SceneLoader.Load("", "02_suzanne.gltf", engine, function (scene) {
-		
+
             var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);
             camera.attachControl(canvas, false);
-            
+
             //we tell to BJS where to find the environement texture
             var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("environment.dds", scene);
             hdrTexture.name = "envTex";
             hdrTexture.gammaSpace = false;
             scene.createDefaultSkybox(hdrTexture, true, 1000, 0);
-			
+
             engine.runRenderLoop(function() {
                 scene.render();
             });
@@ -96,7 +96,6 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
 
 - double-click on the *index.html* file... profit!
   - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver (local or not), or try into another browser (e.g.: Firefox, Edge).
-  
+
 
 ![blender gltf scene loaded in BJS](img/exporters/blender/gltf/gltf-loaded.png)
-
