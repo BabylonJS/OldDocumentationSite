@@ -2,9 +2,9 @@
 PG_TITLE: The Inspector
 ---
 
-# How to Display and Use The Inspector
+# How to Display and use The Inspector
 
-## Calling
+## Invocation
 
 You can display the Inspector by calling:
 
@@ -38,41 +38,88 @@ https://github.com/BabylonJS/Babylon.js/blob/master/dist/inspector/babylon.inspe
 ## Control
 
 A `config` object can be given to the `show` method in order to control the following parameters of the Inspector : 
-* `popup` : boolean - Should the Inspector open by default in popup mode ? False by default
-* `initialTab` : number - The first tab displayed by default - 0 by default (corresponding to the Scene tab)
-* `parentElement` : HTMLElement - The HTML element where the Inspector should be created - nul by default (will be created along the canvas)
-* `newColors` : An object containing new CSS colors for the Inspector. This object should contain the property `backgroundColor`, `backgroundColorLighter`,`backgroundColorLighter2`,`backgroundColorLighter3`, `color`,`colorBot`,`colorTop`, where color is the text color, color top and bottom are two colors used to display data (properties, mouse hover, tooltip...)
+* `overlay`: boolean - Should the Inspector opens by default in overlay mode? False by default
+* `enablePopup`: boolean - Should the Inspector allows the panes to popup? True by default
+* `globalRoot`: HTMLElement - The HTML element where the Inspector should be created - null by default (will be created alongside the canvas)
+* `showExplorer`: boolean - Should the Inspector opens the scene explorer pane? True by default
+* `showInspector`: boolean - Should the Inspector opens the inspector pane? True by default
+* `embedMode`: boolean - Should the Inspector opens in embedded mode (only one pane)? False by default
+* `handleResize`: boolean - Should the Inspector resize the Babylon.js engine associated with the scene when the canvas is resized due to user moving the panes? False by default
+* `explorerExtensibility`: See below
 
 Example:
 ```javascript
 scene.debugLayer.show({
-    popup:true, 
-    initialTab : 2, 
-    parentElement:document.getElementById('#mydiv'),
-    newColors: {
-        backgroundColor: '#eee',
-        backgroundColorLighter: '#fff',
-        backgroundColorLighter2: '#fff',
-        backgroundColorLighter3: '#fff',
-        color: '#333',
-        colorTop:'red', 
-        colorBottom:'blue'
-    }
+    overlay:false, 
+    globalRoot:document.getElementById('#mydiv')
 });
 ```
 
 ## Observable
 
-It is possible to attach `Observer` to an `Observable` called when a property is modified in the Inspector.
+It is possible to attach an `Observer` to an `Observable` called when a property is modified in the Inspector.
 You can call it like this :
 ```javascript
 scene.debugLayer.onPropertyChangedObservable.add((result) => {});
 ```
+
 The result object contains :
 * `object` : BABYLON.Node - The object modified. It can be a scene, a mesh, a light or any other element that can be modified in the Inspector
 * `property` : string - The modified property name.
 * `value` : any - The new value.
 * `initialValue` : any - The old value, before the modification.
+
+You can also register an `Observer` when the selection changes with
+```javascript
+scene.debugLayer.onSelectionChangedObservable.add((result) => {});
+```
+
+The result object will be the new selected object.
+
+## Extensibility
+
+We know that it would be impossible to provide a tool that will target every single need that a Babylon.js may have. This is why the new inspector supports an extensibility API.
+
+You can use the `explorerExtensibility` property of the config object to define an array of predicates that will add new options to scene explorer actions.:
+
+```javascript
+BABYLON.Inspector.Show(scene, {
+    explorerExtensibility: [
+        {
+            predicate: entity => entity.getClassName && entity.getClassName().indexOf("Material") !== -1,
+            entries: [
+                {
+                    label: "Say hello",
+                    action: (entity) => alert("hello " + entity.name)
+                },
+                {
+                    label: "Do something fun with materials",
+                    action: (entity) => alert("hello " + entity.name)
+                }]
+        },
+        {
+            predicate: entity => entity.getClassName && entity.getClassName().indexOf("Texture") !== -1,
+            entries: [
+                {
+                    label: "Say hello textures!",
+                    action: (entity) => alert("hello " + entity.name)
+                }]
+        },
+        {
+            predicate: entity => entity.getClassName && entity.getClassName().indexOf("Mesh") !== -1,
+            entries: [
+                {
+                    label: "Say hello",
+                    action: (entity) => alert("hello " + entity.name)
+                }]
+        }
+    ]
+});
+```
+
+Each predicate will be evaluated with all entites displayed in the scene explorer. If the predicate returns true, then the entries will be added to the entity's actions:
+
+![explorer extensibility](/img/features/debuglayer/exploreraddons.png)
 
 # Further Reading
 
