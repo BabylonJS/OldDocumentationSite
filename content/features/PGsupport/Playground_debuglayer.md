@@ -116,6 +116,12 @@ This tool (available in the Debug pane) will render your skeletons:
 
 ![bones](/img/features/debuglayer/bones.jpg)
 
+## Physics viewer
+
+This tool (available in the Debug pane) will render your physics impostors:
+
+![physics](/img/features/debuglayer/physics.jpg)
+
 ## Normal painter
 
 This tool (available in the property pane when you select a mesh) will paint the normals on your active mesh:
