@@ -11,7 +11,7 @@ This includes:
 
 To access the tool, just click on the toolbar **Tools -> Code Editor...**.
 
-All the scripts you will wirte are standalone and can be attached to objects (by creating links).
+All the scripts you will write are standalone and can be attached to objects (by creating links).
 That means you'll first have to add a new script. Then, attach the new script to your object(s).
 
 To add a new script, just click **Add New Script...** in the toolbar and give it a name. If you selected an object before, the script will be automatically attached.
@@ -77,3 +77,30 @@ exportScript(
 Once you are happy and want to test your code, just run the scene by clicking in the toolbar **Play and Debug**. The editor will open a new window.
 
 To see errors and debug your code (break points, logs, etc.), just type F12 in the new opened window. To set breakpoints, all the custom scripts are available at **behaviors/**. For instance, sourcemaps are not supported but will come in future versions.
+
+
+# Importing custom classes to your custom scripts
+
+To help you factorizing your code, you can create different kinds of scripts:
+* Scripts that you'll attach to nodes
+* Scripts used to store functionalities
+
+Given this script named `"Maki"` attached to `Sphere Standard`:
+![EditorCodeEditor](/img/extensions/Editor/CodeEditor/maki.png)
+
+We would like to import a class we'll write to create new instances and call methods. To add a new script you'll import, just click the button "Add" in the assets panel and give it a name (here `"Dog"`):
+![EditorCodeEditor](/img/extensions/Editor/CodeEditor/dog.png)
+
+By default, the new class implements a constructor and a function `"log"`.
+
+Let's rename the class to `Dog`:
+
+![EditorCodeEditor](/img/extensions/Editor/CodeEditor/class_dog.png)
+
+Back to our script `"Maki"`, we are now able to import the class `Dog` from the script named `"Dog"`:
+
+![EditorCodeEditor](/img/extensions/Editor/CodeEditor/maki_final.png)
+
+Then, running your project, the `.log` function is called:
+
+![EditorCodeEditor](/img/extensions/Editor/CodeEditor/maki_result.png)
