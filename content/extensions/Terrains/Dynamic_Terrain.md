@@ -797,6 +797,7 @@ We used here the parameters `i`, `j` and the vertex `position` property.
 
 # Further Reading
 
+[Dynamic Terrain with Objects](/extensions/DT_Objects)  
 [Dynamic Terrain Examples](/extensions/DT_Examples)
 
 
