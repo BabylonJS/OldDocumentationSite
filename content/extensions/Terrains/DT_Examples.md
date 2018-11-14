@@ -69,7 +69,7 @@ Finally, we could also choose to extend the terrain visible size by setting some
 By example, `LODLimits = [4, 3, 2, 1, 1]` would mean that :  
 
 * the initial LOD factor (default 1, the one at the camera location) is incremented for all the terrain quads under the 4-th perimetric rows and columns, so it's 1 + 1 = 2 for them, 
-* it's incremented once again for all the terrain quads under the 3-th perimetric rows and colums, so it's 2 + 1 = 3 for them,
+* it's incremented once again for all the terrain quads under the 3-th perimetric rows and columns, so it's 2 + 1 = 3 for them,
 * it's incremented once again for the ones under the 2-nd rows and columns, so it's 4 for them
 * it's incremented finally twice, because there are two `1` in the array, for the quads under the first rows and columns, so 3 + 2 x 1 = 5 for those last ones.  
 
@@ -83,4 +83,5 @@ Let's don't worry if this feature seems complex to understand and let's just rem
 
 # Further Reading
 
-[Dynamic Terrain](/extensions/Dynamic_Terrain) 
+[Dynamic Terrain](/extensions/Dynamic_Terrain)  
+[Dynamic Terrain with Objects](/extensions/DT_Objects)  
