@@ -63,6 +63,15 @@ You can use the light action to turn a light on and off.
 
 You can use the camera action to switch the active camera (when they are multiple cameras in a scene).
 
+## GUI control actions
+
+![gui control actions](/img/features/debuglayer/controlactions.jpg)
+
+You can use the GUI control actions to:
+- Display outline of a control
+- Show / hide a specific control
+
+
 # Inspector pane
 
 The inspector pane contains 4 tabs:
@@ -106,6 +115,12 @@ This tool (available in the Debug pane) will render a grid on the (0,0,0) plane:
 This tool (available in the Debug pane) will render your skeletons:
 
 ![bones](/img/features/debuglayer/bones.jpg)
+
+## Physics viewer
+
+This tool (available in the Debug pane) will render your physics impostors:
+
+![physics](/img/features/debuglayer/physics.jpg)
 
 ## Normal painter
 
