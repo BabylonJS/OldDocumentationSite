@@ -378,7 +378,18 @@ particle.uvs.w = 0.3;   // right upper corner : 30% image width
 ```
 This can be used as well either in the `positionFunction` call at SPS creation time, either in `updateParticle()`.  
 
-Like for the colors, there can be only a UVs value per particle even if the particle model had initially different UVs per face. If you don't set the particle `uvs` property and if the model had UVs per face, they are saved.
+Unlike for the colors, the model UVs are saved whatever the model had per face UVs or not.  
+This allows to use not only a texture atlas for the particles, but also a texture atlas for the model then inside the particle atlas because you use only one texture in final.  
+
+Explanation :   
+
+https://www.babylonjs-playground.com/#ICZEXW#82   
+This example show the standard usage of the box per face texture as described here : https://doc.babylonjs.com/how_to/createbox_per_face_textures_and_colors   
+Note that, in this example,  we set 4 sprites per face, not 1, just because we will use the same texture for particles then. In a real case, we would probably first use a texture for the model, then put this texture in a bigger one.  
+Now let's create a SPS, let's add particles from this box model and let's set each particle some `.uvs` values : half the widht and height size of the initial uvs value.    
+https://www.babylonjs-playground.com/#ICZEXW#81   
+As we can check, each particle is still given a different texture per face.   
+
 
 Like for any other mesh, you can also enable the texture transparency with :
 ```javascript
