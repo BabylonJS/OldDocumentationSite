@@ -48,7 +48,7 @@ Channel9.stl | 1.03 MB | ![channel9](/img/resources/meshes/channel9.png) | [Play
 cornellBox.babylon | 216 kB | ![cornellBox-babylon](/img/resources/meshes/cornellBox-babylon.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#2)
 cornellBox.babylon lightmapped | 343 kB | ![cornellBox-babylon-lightmapped](/img/resources/meshes/cornellBox-babylon-lightmapped.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#5)
 cornellBox.glb | 162 kB | ![cornellBox-glb](/img/resources/meshes/cornellBox-glb.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#3)
-cornellBox.glb lightmapped | 289 kB | ![cornellBox-glb-lightmapped](/img/resources/meshes/cornellBox-glb-lightmapped.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#7)
+cornellBox.glb lightmapped | 289 kB | ![cornellBox-glb-lightmapped](/img/resources/meshes/cornellBox-glb-lightmapped.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#15)
 Dude.babylon | 3.46 MB | ![dude](/img/resources/meshes/dude.png) | [Playground](https://www.babylonjs-playground.com/#WLDCUC#3)
 emoji_heart.glb | 1.08 MB | ![heart](/img/resources/meshes/heart.png) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#1)
 FlightHelmet.glb | 50.4 MB | ![helmet](/img/resources/meshes/helmet.png) | [Playground](https://www.babylonjs-playground.com/#BVK9I0#1)
