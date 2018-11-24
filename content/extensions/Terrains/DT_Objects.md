@@ -107,6 +107,82 @@ Using only the solid particle system 3000 particles are used to render dozens of
 ## Cautionary Note
 The SPMap feature seems to not work correctly with the LOD in some cases.
 
+# Object Colors and Textures
+
+So far, we've declared object settings (positions, rotations, scalings) in the map.  
+We can also pass the terrain two other optional maps about objects : the object colors and the object UVs.  
+
+Exactly the same way we used for the SPMap, the object colors and UVs are stored in arrays of arrays : one array per object type.  
+Each array for a given type then holds series of successive floats related to the colors (r, g, b, a) of each object of this type, or series of successive floats related to the UVs (x, y, z, w) of each object this type.  
+The UVs are simply the bottom left and up right coordinates of the quad to be cropped within the texture as it's used in the SPS for the per particle texture feature.   
+
+The UVs will then be applied to the **SPS material**, not to the terrain one.  
+
+```javascript
+// Object Colors
+var SPColors = [];
+SPColors[0] = [colorHouse1, colorHouse2, ..., colorHouseN];
+SPColors[1] = [colorTree1, colorTree2, ..., colorTreeN];
+...
+SPColors[t] = [colorObject1, colorObject2, ..., colorObjectN];
+
+// Object UVs
+var SPUVs = [];
+SPUVs[0] = [UVHouse1, UVHouse2, ..., UVHouseN];
+SPUVs[1] = [UVTree1, UVTree2, ..., UVTreeN];
+...
+SPUVs[t] = [UVObject1, UVObject2, ..., UVObjectN];
+```
+The data defining each object color or UV is a set of four successive floats : the object color (r, g, b, a) or the object UVs (x, y, z, w).   
+This means that the type array contains simply a long series of successive floats :  
+```javascript
+// Color example, first object type
+SPColor[0] = [
+    house1Col_r, house1Col_g, house1Col_b, house1Col_a,
+    house2Col_r, house2Col_g, house2Col_b, house2Col_a,
+    ...
+]
+// UV example, first object type
+SPUV[0] = [
+    house1UV_x, house1UV_y, house1UV_z, house1UV_w,
+    house2UV_x, house2UV_y, house2UV_z, house2UV_w,
+    ...
+]
+```
+We then pass the object colors and UVs to the DynamicTerrain constructor besides the object map and the sps.  
+We use the parameter `SPcolorData` and `SPuvData`.  
+
+```javascript
+    var terrainSub = 100;        // terrain subdivisions
+    var terrainOptions = {
+        terrainSub: terrainSub, 
+        mapData: mapData, mapSubX: mapSubX, mapSubZ: mapSubZ, 
+        mapColors: mapColors, 
+        SPmapData: SPmapData,         // object map
+        sps: sps,                     // SPS to render the objects on the terrain
+        SPcolorData: SPcolorData,     // object colors
+        SPuvData: SPuvData            // object UVs to apply to the SPS material
+    };
+    var terrain = new BABYLON.DynamicTerrain("dt", terrainOptions, scene);
+    terrain.mesh.material = terrainMaterial;    // terrain material
+    
+    sps.mesh.material = objectMaterial;         // object material !
+
+```
+The objects get more green or more red according to the map areas (north, south, east, west) and more blue when in altitude. 
+* [Playground Example  Color Objects](https://www.babylonjs-playground.com/#FJNR5#267)  
+ 
+
+Each object is given a part of the image file.
+* [Playground Example using UV with Objects](https://www.babylonjs-playground.com/#FJNR5#268)  
+  
+
+**Note :**
+The object map (SPMap) requires a terrain data map to work.  
+The object color map or the object UV map both require an object map (SPMap) to work.  
+Both are optional.  
+Each one (color or UV) can work independently from the other.  
+
 # Further Reading
 
 [Dynamic Terrain](/extensions/Dynamic_Terrain)  

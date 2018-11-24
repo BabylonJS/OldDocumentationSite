@@ -768,6 +768,10 @@
                     "filename": "Gui"
                 },
                 {
+                    "title": "Use the Scroll Viewer",
+                    "filename": "ScrollViewer"
+                },
+                {
                     "title": "Use the Selection Panel Helper",
                     "filename": "Selector"
                 },
