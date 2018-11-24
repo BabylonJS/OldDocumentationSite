@@ -863,4 +863,5 @@ myMesh.layerMask = 1;
 ## Further reading
 
 [How To Use the Selection Panel Helper](/how_to/selector)  
+[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)  
 [How To Use Babylon GUI3D](/how_to/gui3d)
