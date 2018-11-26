@@ -31,7 +31,7 @@ myScrollViewer.addWindow(myWindow);
 
 * [Playground Example - Scroll Viewer](https://www.babylonjs-playground.com/#13CF95)
 
-The default setting for width and depth of the scroll viewer is 0.25 of the hosting advanced texture.
+The default setting for width and depth of the scroll viewer is 0.25 of the parent control.
 
 The following table shows the properties of a scroll viewer that are changed from or added to those of a rectangle container.
 
