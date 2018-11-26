@@ -731,6 +731,10 @@ The height (or width) of the StackPanel is defined automatically based on childr
 
 Here is an example of a StackPanel: https://www.babylonjs-playground.com/#XCPP9Y#11
 
+### ScrollViewer
+
+Due to its rich feature set, the ScrollViewer has its own dedicated page right [here](/how_to/ScrollViewer).
+
 ### Grid
 
 The Grid is a control which defines a set of rows and columns and allows children to specify which cell they want to belong to:
