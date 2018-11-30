@@ -4,6 +4,8 @@ PG_TITLE: How To Use the Scroll Viewer
 
 # The Scroll Viewer
 
+**NOTE This Control is under enhancement and the method addWindow will change to addControl**
+
 When you want to keep your user interface small and the information to present large you can use the **ScrollViewer** to contain the information.
 
 ![ScrollViewer](/img/gui/scroll1.jpg).
@@ -31,7 +33,7 @@ myScrollViewer.addWindow(myWindow);
 
 * [Playground Example - Scroll Viewer](https://www.babylonjs-playground.com/#13CF95)
 
-The default setting for width and depth of the scroll viewer is 0.25 of the hosting advanced texture.
+The default setting for width and depth of the scroll viewer is 0.25 of the parent control.
 
 The following table shows the properties of a scroll viewer that are changed from or added to those of a rectangle container.
 

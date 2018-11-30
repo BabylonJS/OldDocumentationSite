@@ -140,7 +140,9 @@ The following image of the canvas on screen and the resulting screenshot using '
 
 ## Gif Creation
 
-Either of the following set of codes produced a series of images that were turned into the animated gif below.
+In order to create an animated Gif, you will usually need a set of static images to stick together.
+
+Either of the following set of codes produces a series of images that you can turn into an animated gif:
 
 ```javascript
 var imgNm = 0;
@@ -161,6 +163,8 @@ scene.registerAfterRender(function(){
     }
 })
 ```
+
+Here is the result after stitching in your favorite external tool:
 
 ![Gif](/img/how_to/scene/ssanim.gif)
 
