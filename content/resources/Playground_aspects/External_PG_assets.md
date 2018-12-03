@@ -16,7 +16,7 @@ Sometimes you might want to load you own assets into the playground. Should the 
 
 Using the links to textures and models is straightforward 
 * [Playground Example External Texture](https://www.babylonjs-playground.com/#TH16ID#1)
-* [Playground Example External Model](https://www.babylonjs-playground.com/#TH16ID)
+* [Playground Example External Model](https://www.babylonjs-playground.com/#TH16ID#2)
 
 For Javascript files you need to wait for the file to be loaded before attempting to access it.
 ```javascript
