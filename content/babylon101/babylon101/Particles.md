@@ -614,6 +614,7 @@ Starting from Babylonjs 3.2 you can shape the region the particles are emitted f
 * Box
 * Sphere
 * Hemisphere
+* Cylinder
 * Cone
 
 by the addition of specific emitter function.
@@ -870,7 +871,7 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 [Solid Particle System](/How_To/Solid_Particles)
 
 ## Intermediate - L2
-[How to Customize the Particle System](/how_to/Customise)
-[Create animated particles](/how_To/Particles/Animate.md)
+[How to Customize the Particle System](/how_to/Customise)  
+[How to Create animated particles](/how_To/Particles/Animate.md)
 
 
