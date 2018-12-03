@@ -65,6 +65,10 @@ var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane,
 
 Once you have an AdvancedDynamicTexture object, you can start adding controls.
 
+## Debugging
+
+Starting with Babylon.js v4.0, the new inspector can help debugging your GUI by displaying bounding infos and letting you dynamically change properties: https://doc.babylonjs.com/features/playground_debuglayer#gui-control-actions.
+
 ## General properties
 
 ### Events
