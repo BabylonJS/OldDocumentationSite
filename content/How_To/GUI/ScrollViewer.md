@@ -38,8 +38,7 @@ The following table shows the additional properties of a scroll viewer.
 Property|Type|Default|Comments
 --------|----|-------|--------
 barColor|string|grey|Foreground color of the bar and color of the thumb
-barBackground|white|0|Background color of the bar
-barBorderColor|string|light grey|Color used to render the border of the thumb
+barBackground|transparent|0|Background color of the bar
 
 **NOTE** All the padding values for the scroll viewer are set as 0. Any padding should be set on the control added to the scroll viewer. 
 
@@ -54,24 +53,14 @@ When you add a TextBlock of a given size to a scroll viewer both horizontal and 
 
 * [Playground Example - Scroll Viewer with Fixed TextBlock](https://www.babylonjs-playground.com/#FX6KVK#3)
 
-However quite often you need to present text fitting the width of the viewing window and scrolling for the height. This is achieved by not setting a width for the TextBlock and determining the height of the TextBlock using `onLinesReadyObservable` as follows
+However quite often you need to present text fitting the width of the viewing window and scrolling for the height. This is achieved by setting the `textWrapping` and `reSizeToFit` as follows
 
 ```javascript
-myTextBlock.onLinesReadyObservable.add(() => {
-    var tbHeight = myTextBlock.paddingTopInPixels + myTextBlock.paddingBottomInPixels + (myTextBlock.fontOffset.height) * myTextBlock.lines.length;
-    myTextBlock.height = tbHeight + "px";
-});
-```
-
-To ensure that the scroll viewer is adjusted after this is completed use a `setTimeout` after the TextBlock is added to the scroll viewer.
-
-```javascript
-myScrollViewer.addControl(myTextBlock);
-setTimeout(function() {myScrollViewer.height = (myScrollViewer.heightInPixels + 1) + "px"} , 100);
+myTextBlock.textWrapping = BABYLON.GUI.TextWrapping.WordWrap;
+myTextBlock.resizeToFit = true;
 ```
 
 ![Adjusting TextBlock](/img/gui/scroll2.jpg)
-
 
 * [Playground Example - Scroll Viewer with Adjusting TextBlock](https://www.babylonjs-playground.com/#3EF49E#3)
 
