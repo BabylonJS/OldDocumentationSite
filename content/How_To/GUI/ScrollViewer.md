@@ -39,7 +39,6 @@ Property|Type|Default|Comments
 --------|----|-------|--------
 barColor|string|grey|Foreground color of the bar and color of the thumb
 barBackground|white|0|Background color of the bar
-barBorderColor|string|light grey|Color used to render the border of the thumb
 
 **NOTE** All the padding values for the scroll viewer are set as 0. Any padding should be set on the control added to the scroll viewer. 
 
