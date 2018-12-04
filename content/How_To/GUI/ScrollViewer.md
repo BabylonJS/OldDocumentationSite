@@ -38,7 +38,7 @@ The following table shows the additional properties of a scroll viewer.
 Property|Type|Default|Comments
 --------|----|-------|--------
 barColor|string|grey|Foreground color of the bar and color of the thumb
-barBackground|white|0|Background color of the bar
+barBackground|transparent|0|Background color of the bar
 
 **NOTE** All the padding values for the scroll viewer are set as 0. Any padding should be set on the control added to the scroll viewer. 
 
