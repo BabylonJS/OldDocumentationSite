@@ -191,6 +191,10 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 
 Those counters are all resetted to 0 at the beginning of each frame. Therefore it is easier to access them in the onAfterRender callback or observable.
 
+## Inspector
+
+Starting with Babylon.js v4.0 you can use the Inspector to [analyze your scene](https://doc.babylonjs.com/features/playground_debuglayer#inspector-pane) or turn on/off features or [debugging tools](https://doc.babylonjs.com/features/playground_debuglayer#specific-debug-tools).
+
 # Further Reading
 
 ## More Advanced - L3
