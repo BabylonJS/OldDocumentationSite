@@ -62,7 +62,7 @@ myTextBlock.resizeToFit = true;
 
 ![Adjusting TextBlock](/img/gui/scroll2.jpg)
 
-* [Playground Example - Scroll Viewer with Adjusting TextBlock](https://www.babylonjs-playground.com/#3EF49E#3)
+* [Playground Example - Scroll Viewer with Adjusting TextBlock](https://www.babylonjs-playground.com/#3EF49E#5)
 
 ## Further reading
 
