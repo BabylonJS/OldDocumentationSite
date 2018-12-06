@@ -190,6 +190,10 @@ transformCenterY|number|0.5|Define the center of transformation on Y axis. Value
 
 Here is an example of how to use rotation and scaling:  https://www.babylonjs-playground.com/#XCPP9Y#22
 
+### Optimization
+
+For complex controls (like the ColorPicker for instance), you can turn on rendering cache by using `control.useBitmapCache = true`. This will store a cached version of the control image in order to reuse it when the GUI is updated.
+
 ## Controls
 
 A control is an abstraction of a piece of UI. There are two kinds of controls:
