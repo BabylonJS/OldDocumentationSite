@@ -392,7 +392,7 @@ You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
 
 You can use the following properties to get button's parts (if available):
 * image: Returns the image part of the button (if any)
-* textBlock: Returns the image part of the button (if any)
+* textBlock: Returns text related properties of the button
 
 #### Visual animations
 By default a button will change its opacity on pointerOver and will change it scale when clicked.
