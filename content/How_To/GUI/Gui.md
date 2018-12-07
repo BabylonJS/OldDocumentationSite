@@ -190,6 +190,10 @@ transformCenterY|number|0.5|Define the center of transformation on Y axis. Value
 
 Here is an example of how to use rotation and scaling:  https://www.babylonjs-playground.com/#XCPP9Y#22
 
+### Optimization
+
+For complex controls (like the ColorPicker for instance), you can turn on rendering cache by using `control.useBitmapCache = true`. This will store a cached version of the control image in order to reuse it when the GUI is updated.
+
 ## Controls
 
 A control is an abstraction of a piece of UI. There are two kinds of controls:
@@ -308,6 +312,7 @@ onTextHighlightObservable|Raised when the text is highlighted
 onTextCopyObservable|Raised when the copy event is triggered
 onTextCutObservable|Raised when the cut event is triggered
 onTextPasteObservable|Raised when the paste event is triggered
+onKeyboardEventProcessedObservable|Raised when a key event was processed
 
 Please note that the InputText has pretty limited edition support. Here are the supported keys:
 * Delete
@@ -392,7 +397,7 @@ You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
 
 You can use the following properties to get button's parts (if available):
 * image: Returns the image part of the button (if any)
-* textBlock: Returns the image part of the button (if any)
+* textBlock: Returns text related properties of the button
 
 #### Visual animations
 By default a button will change its opacity on pointerOver and will change it scale when clicked.
@@ -561,6 +566,7 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
 * BABYLON.GUI.Image.STRETCH_EXTEND: Scale the container to adapt to the image size.
+* BABYLON.GUI.Image.STRETCH_NINE_PATCH: Scale the image using a [nine patch technique](http://wiresareobsolete.com/2010/06/9-patches/). You have to either define the `sliceLeft`, `sliceRight`, `sliceTop` and `sliceBottom` properties or store data into your image (in the first and last rows and columns) and call `image.populateNinePatchSlicesFromImage = true` to read that data. Demo [here](https://www.babylonjs-playground.com/#G5H9IN#2)
 
 You may want to have the Image control adapt its size to the source image. To do so just call `image.autoScale = true`.
 
