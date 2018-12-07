@@ -566,6 +566,7 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
 * BABYLON.GUI.Image.STRETCH_EXTEND: Scale the container to adapt to the image size.
+* BABYLON.GUI.Image.STRETCH_NINE_PATCH: Scale the image using a [nine patch technique](http://wiresareobsolete.com/2010/06/9-patches/). You have to either define the `sliceLeft`, `sliceRight`, `sliceTop` and `sliceBottom` properties or store data into your image (in the first and last rows and columns) and call `image.populateNinePatchSlicesFromImage = true` to read that data. Demo [here](https://www.babylonjs-playground.com/#G5H9IN#2)
 
 You may want to have the Image control adapt its size to the source image. To do so just call `image.autoScale = true`.
 
