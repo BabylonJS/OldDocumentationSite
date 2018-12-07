@@ -312,6 +312,7 @@ onTextHighlightObservable|Raised when the text is highlighted
 onTextCopyObservable|Raised when the copy event is triggered
 onTextCutObservable|Raised when the cut event is triggered
 onTextPasteObservable|Raised when the paste event is triggered
+onKeyboardEventProcessedObservable|Raised when a key event was processed
 
 Please note that the InputText has pretty limited edition support. Here are the supported keys:
 * Delete
