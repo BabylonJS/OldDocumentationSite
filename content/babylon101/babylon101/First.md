@@ -138,7 +138,7 @@ Finally, add code to call the scene. This enables the engine to continually rend
 Now you are ready to go further and learn how to create more shapes like spheres, cylinders, boxes, etc. by visiting [Set Shapes](/babylon101/Discover_Basic_Elements)
 
 # Further Reading External
-[BabylonJS Forum](http://www.html5gamedevs.com/forum/16-babylonjs)  
+[BabylonJS Forum](https://forum.babylonjs.com)  
 [PEP and hand.js](http://www.html5gamedevs.com/topic/22474-how-does-babylonjs-get-pointer-events-working/#comment-127993)  
 
 # Useful Links External
