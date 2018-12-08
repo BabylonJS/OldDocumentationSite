@@ -81,19 +81,16 @@ Finally, you can export your texture through the main tab:
 You are all set and ready to use the exported texture in the ```CubeTexture.CreateFromPrefilteredData``` function.
 
 ## Creating a compressed environment texture
-As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Here are the steps to follow to create the .env files used in BabylonJS:
+As the generated DDS files can be relatively large (32Mb for a 512px wide file), we introduced in Babylon a special way to pack your texture. Here are the steps to follow to create the `.env` files used in BabylonJS:
 
-First, go to this [Sandbox](https://sandbox.babylonjs.com/?assetUrl=https://models.babylonjs.com/PBR_Spheres.glb) and open the Inspector Menu:
+- go to the [sandbox](https://sandbox.babylonjs.com/)
+- drag &amp; drop a PBR scene file ([example](https://models.babylonjs.com/PBR_Spheres.glb))
+- drag &amp; drop your dds environmentTexture file ([example](https://playground.babylonjs.com/textures/environment.dds))
+- open the Inspector, go to the Tools, and click on `Generate .env texture`
 
-![InspectorMenu](/img/How_To/environment/InspectorMenu.png)
+![inspector env texture tool](/img/How_To/environment/inspector-generate-env-texture.png)
 
-Once in the Inspector Open the Tools Tab:
-
-![InspectorTools](/img/How_To/environment/InspectorTools.png)
-
-You can now easily chose your previously created DDS files with the browse button and then compress them to a .env file with the "Compress current texture to .env" button.
-
-Finally, loading a .env could not be simpler:
+- you can now download and use your `.env` environment, using this bit of code:
 
 ```
 scene.environmentTexture = new BABYLON.CubeTexture("environment.env", scene);
@@ -121,6 +118,6 @@ As an example of result, we can now rely on 512px cube sized texture with around
 While using a dds cube texture is the best option, you may want to still rely on classic cube texture (mostly for size reason).
 So, you can still do this as well:
 ```javascript
-pbr.environmentTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
+scene.environmentTexture = new BABYLON.CubeTexture("textures/TropicalSunnyDay", scene);
 ```
 In this case you won't be able to get HDR rendering and some visual artifacts may appear (mostly when using glossiness or roughness).
