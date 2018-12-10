@@ -45,6 +45,14 @@ barBackground|transparent|0|Background color of the bar
 * [Playground Example - Scroll Viewer of Fixed Size with Grid of Images](https://www.babylonjs-playground.com/#C3RDBS#3)
 * [Playground Example - Scroll Viewer of Relative Size with Grid of Images](https://www.babylonjs-playground.com/#C3RDBS#2)
 
+## Scrollbars
+
+Both scrollbars can be reached with:
+- horizontalBar
+- verticalBar
+
+You can then set the scrollbar position with `scrollViewer.horizontalBar.value`. This value must be between 0 and 1.
+
 ## Adding an Adjustable TextBlock Window
 
 When you add a TextBlock of a given size to a scroll viewer both horizontal and vertical scroll bars are shown as needed. 
