@@ -4,7 +4,7 @@ PG_TITLE: Available Meshes for Importing into Playground
 
 # Available Meshes for Importing into Playground
 
-All the playground examples are loaded using the default environment and default camera methods. All the meshes are different sizes and using the default methods places the camera at a distance where the whole image can be seen clearly. In order to find [values for other cameras](/resources/meshes_to_load/#finding-camera-values) you can use the playground scene inspector.
+All the playground examples are loaded using the default environment and default camera methods. All the meshes are different sizes and using the default methods places the camera at a distance where the whole image can be seen clearly. In order to find [values for other cameras](/resources/meshes_to_load#finding-camera-values) you can use the playground scene inspector.
 
 Meshes with a large file size can take some time to load, please be patient.
 
@@ -12,9 +12,9 @@ Some meshes appear in both file locations.
 
 ## From the Playground Scenes Folder
 
-This list of files is in the [scenes folder](https://github.com/BabylonJS/Babylon.js/tree/master/Playground/scenes) of the Playground and are available for use.
+This list of files is in the github repo [scenes folder](https://github.com/BabylonJS/Babylon.js/tree/master/Playground/scenes) of the Playground and are available for use.
 
-Using a 'scene' method to append or import scenes or meshes the 'rootUrl' parameter has the form '"scenes/"' or '"scenes/folder/"' and the 'filename' parameter is as given below. The playground will show the actual terms required.
+Using a `scene` method to append or import scenes or meshes, the `rootUrl` parameter has the form `scenes/` or `scenes/folder/` and the `filename` parameter is as given below. The playground will show the actual terms required.
 
 
 Filename | Size | Image | Playground
@@ -37,7 +37,7 @@ ufo.glb | 17 MB | ![ufo](/img/resources/meshes/ufo.png) | [Playground](https://w
 
 ## From the Model Library
 
-This list of files is in the model library and using a 'scene' method to append or import scenes or meshes the 'rootUrl' parameter has the form '"https://models.babylonjs.com/"' and the 'filename' parameter is as given below. The playground will show the actual terms required.
+This list of files is in the model library [from the github repo](https://github.com/BabylonJS/MeshesLibrary) and using a `scene` method to append or import scenes or meshes, the `rootUrl` parameter has the form `https://models.babylonjs.com/` and the `filename` parameter is as given below. The playground will show the actual terms required.
 
 Filename | Size | Image | Playground
 ---|---|---|---|---
@@ -55,11 +55,32 @@ FlightHelmet.glb | 50.4 MB | ![helmet](/img/resources/meshes/helmet.png) | [Play
 fish.glb | 45.4 MB | ![fish](/img/resources/meshes/fish.png) | [Playground](https://www.babylonjs-playground.com/#9CMU0F)
 haunted_house.glb | 37.2 MB | ![haunted house](/img/resources/meshes/haunted_house.png) | [Playground](https://www.babylonjs-playground.com/#E8UGIC)
 seagulf.glb | 934 KB | ![seagull](/img/resources/meshes/seagull.png) | [Playground](https://www.babylonjs-playground.com/#8LFTCH#3)
+PBR_Spheres.glb | 3.38 Mo | ![PBR_Spheres](/img/resources/meshes/PBR_Spheres.png) | [Playground](https://www.babylonjs-playground.com/#ISZ7Y2#3)
 shark.glb | 14.7 MB | ![shark](/img/resources/meshes/shark.png) | [Playground](https://www.babylonjs-playground.com/#ISZ7Y2)
 skull.babylon | 3.94 MB | ![skull](/img/resources/meshes/skull.png) | [Playground](https://www.babylonjs-playground.com/#VV935G#3)
 solar_system.glb | 3.94 MB | ![solar system](/img/resources/meshes/solar_system.png) | [Playground](https://www.babylonjs-playground.com/#KILIHT)
 toast_acrobatics.glb | 7.45 MB | ![toast acrobatics](/img/resources/meshes/toast_acrobatics.png) | [Playground](https://www.babylonjs-playground.com/#KM2N07)
 ufo.glb | 17 MB | ![ufo](/img/resources/meshes/ufo.png) | [Playground](https://www.babylonjs-playground.com/#058SEW#4)
+
+## From external storage providers
+
+You can load in the playground scenes coming from storage services. For security reasons, you're not able to load files from your personnal FTP.
+
+### Dropbox
+
+- upload your file
+- click on `Share` button
+- generate a public download link
+- replace `www` in url by `dl`, also remove `?dl=0` at the end
+- use this url in the playground
+
+`https://www.dropbox.com/s/rANdoMGeneR4tedLink/my-file.glb?dl=0` is converted as `https://dl.dropbox.com/s/rANdoMGeneR4tedLink/my-file.glb` and can be used in this way:
+
+```javascript
+BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/rANdoMGeneR4tedLink/", "my-file.glb", scene);
+```
+
+[Playground example](https://www.babylonjs-playground.com/#8LFTCH#14)
 
 ## Finding Camera Values
 
@@ -69,5 +90,5 @@ To check the distance of the camera from the displayed mesh find the radius valu
 
 # Further Reading
 
-[Textures Available in the Playground](/resources/playground_textures)
-[Using External Assets in the Playground](/resources/External_PG_assets)
+- [Textures Available in the Playground](/resources/playground_textures)
+- [Using External Assets in the Playground](/resources/External_PG_assets)

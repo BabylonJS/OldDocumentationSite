@@ -1674,6 +1674,14 @@
                 {
                     "title": "Spherical Panning",
                     "filename": "SphericalPanning"
+                },
+                {
+                    "title": "Check When Point is Inside a Mesh",
+                    "filename": "IsInside"
+                },
+                {
+                    "title": "Create Points Inside a Mesh",
+                    "filename": "InnerMeshPoints"
                 }
             ]
         }
