@@ -2,13 +2,15 @@
 
 ## Introduction
 
-Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout the history of Babylon.js, coders and authors have written How_To and documentation which is stored in places other than at our primary documentation site.  In *this* document, we will attempt to provide links-to and information-about those off-site documents.
+Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout the history of Babylon.js, coders and authors have written How_To and documentation which is stored in places other than at our primary documentation site.
+
+In this document, we will attempt to provide links-to and information-about those off-site documents.
 
 ## Deltakosh - http://eternalcoding.com
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [ **What's New - Babylon.js 2.4** ](https://www.eternalcoding.com/?p=2764) | Canvas2D, RefractionTexture, CubeMap, HDR, Lights, Physics, Unity3D, Parallax, Shader Includes | In this fine document, David Catuhe takes us on a tour of the most exciting new features of Babylon.js version 2.4.  David includes some nice demos, brief features, and tasty illustrations.  Deltakosh knows how to create a great looking document.  I think you will agree.|
 | [ **Going Further - Babylon.js 2.3** ](https://www.eternalcoding.com/?p=2331) | PointLight, Shadow, WebGL2, Sponza | In this info-file, Deltakosh tells us all about Dynamic Point Light Shadows which is a great new feature of Babylon.js 2.3. He also covers aspects of the fantastic Sponza Demo, which demonstrates this new DPLS feature. |
@@ -32,7 +34,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [ **Discovering Sponza** ](https://www.davrous.com/2016/02/05/discovering-sponza-by-babylon-js-and-sharing-tips-on-how-to-build-a-cross-platforms-webgl-game/) | Sponza, WebAudio, IndexedDB, Debug, Cross-Platform | David "Davrous" Rousset chronicles his and his team's activities on the innovative Sponza demo, created with Babylon.js.|
 | [ **Collisions & Physics - Oimo.js** ](https://www.davrous.com/2014/11/18/understanding-collisions-physics-by-building-a-cool-webgl-babylon-js-demo-with-oimo-js/) | Oimo, Physics, Collision, Collider | Davrous continues his great tutorial series with a thorough tutorial about Oimo.js physics, and collider operations. |
@@ -47,7 +49,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [ **Using VertexData/VertexBuffer** ](http://www.pixelcodr.com/tutos/trees/trees.html) | VertexData, VertexBuffer, Indices, Vertices, Normals | [Julian "Temechon" Chenard](http://www.pixelcodr.com/aboutme.html) is a fine game programmer, teacher, OOP-master, and a darned nice guy, too.  In this splendid tutorial, Temechon uses the handy Babylon VertexData object, along with blank/updatable mesh... to make lightweight trees.|
 | [ **Contributing to Babylon.js** ](http://www.pixelcodr.com/tutos/contribute/contribute.html) | Contribute, GitHub | People who are not familiar with source repositories, GitHub, version control, etc... sometimes struggle-with approved methods for open-source contributions. Temechon succeeds in removing those struggles... with this comprehensive tutorial about contributing to Babylon.js. |
@@ -62,7 +64,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [ **Everything Babylon** ](https://blog.raananweber.com/tag/babylonjs/) | Babylon | Raanan Weber came to the Babylon.js world a bit later than other "old dogs", yet he "took-to" our webGL framework like it was his long-time best friend. Shortly after arriving, Raanan was smoothing-out some of Babylon's rougher roads. A great guy with a great tech-brain, and artistically-creative, too. Here's a link to ALL pages on Raanan's site... that have been tagged "Babylon".|
 | [ **Oimo Physics Car** ](https://blog.raananweber.com/2016/09/06/webgl-car-physics-using-babylon-js-and-oimo-js/) | Car, Oimo, Physics, Joint, Wheel | Raanan kindly designed and coded the v2 physics interface/plugins, and did it beautifully, considering he tried to honor both OimoJS and CannonJS third party physics engines.  This is a wonderful tutorial... fantastic explanations, gorgeous illustrations, and meticulously detailed.  It just doesn't get any better than this. Thanks Raanan!|
@@ -80,7 +82,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [**Babylon.js Projects Page**](https://medium.com/babylon-js) | Actions Builder, Editor, Electron | Julien Moreau-Mathis is a French programmer and innovator, and he has become a serious BabylonJS superhero. (He's also a darned nice guy) Luaacro is currently deeply involved in the brand new [BJS online editor](https://medium.com/babylon-js/welcome-to-the-babylon-js-editor-c08dccdcec07#.coyzy5rvi).  Visit this page that summarizes ALL of his projects, and includes many "about/how-to" documents. |
 
@@ -89,7 +91,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [**Babylon.js: Physics and Character Animation**](http://www.spritehand.com/2014/08/babylonjs-physics-and-character.html) | Physics | Andy Beaulieu does some substantial early work with adding physics to player characters.  Thanks for sharing it, Andy!|
 | [**Sharing 3D Scans in WebGL using BabylonJS**](http://www.spritehand.com/2014/01/sharing-3d-scans-in-webgl-using.html) | Scan | Here, Andy takes a trip down Scanner's Lane, and brings us along for the ride.|
@@ -100,7 +102,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [ **Querying for Terrain Data** ](https://translate.google.com/translate?hl=en&sl=fr&tl=en&u=http%3A%2F%2Fmakina-corpus.com%2Fblog%2Fmetier%2F2014%2Faffichage-dun-mnt-avec-babylon-js-a-partir-de-donnees-postgresql) | VertexData, PostgreSQL, PostGIS, SQL | French researcher Célian Garcia (Kostar111) has worked on elevation models and tiled terrain, using Babylon.js as his plotter/renderer.  In this real-time-translated document, Kostar uses DB queries to gather JSON, which he then transforms into a Babylon.js heightMap. |
 | [ **Working with Babylon.js Terrains** ](https://translate.google.com/translate?hl=en&sl=fr&tl=en&u=http%3A%2F%2Fmakina-corpus.com%2Fblog%2Fmetier%2F2014%2Fvisualiser-des-chemins-de-randonnee-en-3d-grace-a-babylonjs) | Terrain, HeightMap | Kostar111 continues his research into terrain generation, in this 3-part translated tutorial. |
@@ -110,7 +112,7 @@ Hello, welcome to Babylon.js  - a webGL game developer's framework. Throughout t
 
 <div class='beforeWideTable'></div>
 
-|______________Title______________ | Keywords | Description |
+| Title | Keywords | Description |
 | :--- | :---: | --- |
 | [ **ShaderBuilder** ](http://cdn.rawgit.com/RNasimiAsl/Extensions/master/ShaderBuilder/Documentation/ShaderBuilderReferences.html) | Shader, Fluent | Rahman is a master of shaders, and a master of assembling shader code... because of his marvelous ShaderBuilder (EASH) extension for Babylon.js.  In this document, Rahman introduces us to the ShaderBuilder magic, and provides some demo scenes.  Be patient with the demo scene loading. |
 | [ **YouTube Tutorials** ](https://www.youtube.com/channel/UC1v47iVFGqTeUJle9viDqKA) | GeometryBuilder, Bandicam | Here is Rahman's YouTube page, where there are 6 videos, all related to Babylon.js. Rahman also introduces us to a very unique mesh generator that he calls Geometry Builder.  We have seen demos, and they are FANTASTIC! |
@@ -127,5 +129,12 @@ Five substantial BabylonJS video How_To which I don't know much about, yet.  Let
 
 Assorted beginner-level text and video How_To... from our forum friend [Serapth](http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx).  Thanks Serapth!
 
-## Everyone/Anyone Else - Coming Soon!
+## Vincent ([V!nc3r](https://forum.babylonjs.com/u/Vinc3r)) Lamy - https://www.nothing-is-3d.com/
 
+<div class='beforeWideTable'></div>
+
+| Title | Keywords | Description |
+| :--- | :---: | --- |
+| [From Blender to BabylonJS](https://nothing-is-3d.com/article27/from-blender-to-babylonjs) | Lightmap, Blender, Export | Help users to use their precomputed lighting from Blender to BabylonJS ([FR version](https://www.nothing-is-3d.com/article25/de-blender-vers-babylonjs) available). |
+
+## Everyone/Anyone Else - Coming Soon!
