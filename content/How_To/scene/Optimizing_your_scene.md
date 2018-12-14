@@ -12,14 +12,6 @@ If you need node containers or transform nodes, do not use meshes but TransformN
 
 The meshes need to go through an evaluation process where the camera checks if they are in the frustum. This is an expensive process so reducing the number of candidates by using TransformNode when possible is a good practice.
 
-## Changing per mesh culling strategy
-
-Starting with Babylon.js v3.3, you can now specify a strategy used to cull a specific mesh with `mesh.cullingStrategy`.
-
-You can set it to:
-- `BABYLON.AbstractMesh.CULLINGSTRATEGY_STANDARD`: This is the default value and it will use a combination of bounding sphere culling, bounding box culling and then frustum culling
-- `BABYLON.AbstractMesh.CULLINGSTRATEGY_BOUNDINGSPHERE_ONLY`: This strategy will use a bounding sphere culling and then frustum culling. This is faster than the standard one but can imply having more meshes sent to the GPU. **Really useful if you are CPU bound**.
-
 ## Reducing Shaders Overhead
 Babylon.js uses an advanced and automatic shaders engine. This system will keep shaders up to date regarding material options. If you are using a static material (ie. an immutable material) then you can let it know to Babylon.js by using the following code:
 
@@ -160,6 +152,32 @@ scene.blockfreeActiveMeshesAndRenderingGroups = true;
 scene.blockfreeActiveMeshesAndRenderingGroups = false;
 
 ````
+## Changing Mesh Culling Strategy
+The culling is the process to select whether a mesh must be passed to the GPU to be rendered or not. It's done CPU side.  
+If a mesh intersects the camera frustum in some way then it's passed to the GPU.  
+Depending on its accuracy (checking mesh bouding boxes or bouding spheres only, trying to include or to exclude fast the mesh from the frustum), this process can be time consuming.   
+In the other hand, reducing this process accuracy to make it faster can lead to some false positives : some meshes are passed to the GPU, are computed there and won't be finally visible in the viewport.   
+By default, BABYLON applies the most accurate test to check if a mesh is in the camera frustum.  
+You can change this behaviour for any mesh of your scene at any time (and change it back then, if needed) this the property `mesh.cullingStrategy`.  
+```javascript 
+/**
+* Possible values : 
+         * - BABYLON.AbstractMesh.CULLINGSTRATEGY_STANDARD  
+         * - BABYLON.AbstractMesh.CULLINGSTRATEGY_BOUNDINGSPHERE_ONLY  
+         * - BABYLON.AbstractMesh.CULLINGSTRATEGY_OPTIMISTIC_INCLUSION  
+         * - BABYLON.AbstractMesh.CULLINGSTRATEGY_OPTIMISTIC_INCLUSION_THEN_BSPHERE_ONLY  
+*/
+
+mesh.cullingStrategy = oneOfThePossibleValues;
+```
+* Standard : the more accurate and standard one (exclusion test)  
+* Bounding Sphere Only : faster but less accurate (exclusion test)  
+* Optimistic Inclusion : mesh center inclusion test then standard exclusion test, for meshes almost always expected in the frustum. Same accuracy than the standard test.  
+* Optimistic Inclusion Then Bounding Sphere Only : mesh center inclusion test, then bounding sphere exclusion test only. Same accuracy than the bSphereOnly test, interesting for almost always in the frustum meshes.  
+
+Optimistic Inclusion modes give a little gain. They keep the same accuracy than the basic mode on what they are applied (standard or bSphereOnly).  
+BoundingSphereOnly modes, because they reduce a lot the accuracy, give a good perf gain. These should not be used with high poly meshes while sending false positives to the GPU has a real rendering cost. These can be very interesting for numerous low poly meshes instead. *Really useful if you are CPU bound**.  
+
 ## Instrumentation
 Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optmize what needs to be optimized.
 
