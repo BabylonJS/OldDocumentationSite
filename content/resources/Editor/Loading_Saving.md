@@ -1,9 +1,15 @@
 # Loading a scene
 
+**Note (with the native electron app):** From the version 2.5.0 of the editor, you are able to open .editorproject files directly (via your OS file explorer or via the toolbar **Project -> Import Project**).
+That means you don't need to drag'n'drop all your files but simply open the .editorproject file.
+
 The editor is able to load BabylonJS scenes but also editor project files (.editorproject).
 To load a scene (even with a .editorproject file), just **drag'n'drop all the files** (scene, textures, sounds, project, etc.) into the canvas (3D preview panel).
 
 You can also load a scene using the toolbar **Project -> Import Project**, select all the files and click **Open**.
+
+**Important:** Loading meshes via the toolbar **Scene -> Import Meshes From...** will save the meshes into the `.editorproject` file. That mean if you drag'n'drop the original .babylon file with the
+.editorproject, the meshes will be doubleness.
 
 ## Available scene formats
 * .babylon

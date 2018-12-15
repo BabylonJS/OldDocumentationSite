@@ -925,6 +925,10 @@
                 {
                     "title": "Creating Prefabs",
                     "filename": "Creating_Prefabs"
+                },
+                {
+                    "title": "Editing Prefabs",
+                    "filename": "Editing_Prefabs"
                 }
             ]
         },
