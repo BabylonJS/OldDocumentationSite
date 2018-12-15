@@ -20,6 +20,7 @@ Also, when an update is available (new features, bug fixes), you'll get notified
 Downloading:
 * Windows: [http://editor.babylonjs.com/BabylonJS Editor.exe](http://editor.babylonjs.com/BabylonJS Editor.exe)
 * Mac OS X: [http://editor.babylonjs.com/BabylonJS Editor.dmg](http://editor.babylonjs.com/BabylonJS Editor.dmg)
+* Linux: [http://editor.babylonjs.com/BabylonJS Editor.zip](http://editor.babylonjs.com/BabylonJS%20Editor.zip)
 
 # Project example
 
