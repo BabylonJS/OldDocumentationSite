@@ -7,7 +7,7 @@ PG_TITLE: 09. Sprites
 
 In this tutorial, we are going to learn how to manipulate Sprites. Sprites are 2D image/animation, and we will use them to display an image with alpha channel. Sprites always face the camera.
 
-Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees. 
+Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees.
 
 ![Elements](/img/how_to/Sprites/08.png)
 
@@ -15,7 +15,7 @@ _Final result_
 
 ## How can I do this ?
 
-### 1 Sprite Manager
+### Sprite Manager
 
 If you want to use sprites, you need to create a “sprite manager” to optimize GPU resources by grouping in one place multiple instances of a sprite.
 This manager is mandatory, even if you want to create one sprite. You just have to write:
@@ -43,7 +43,7 @@ This time, we only want 2 instances, and we said that our sprite’s size is 64x
 
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
-### 2 Create An Instance
+### Create An Instance
 
 Now that we have our manager, we can create instances of our sprite linked to this manager. Creating an instance is as simple as:
 
@@ -73,7 +73,7 @@ player.height = 0.4;
 
 You can keep using ```player.size``` and in this case width and height will just be the same.
 
-### 3 Sprite Animation
+### Sprite Animation
 
 One of the advantages of sprites is animations. You only have to load one large image file which will contain all animation images, one next to another. Just be careful to respect the square pixel size that you have specified in your manager (e.g. 64 pixel).
 
@@ -103,5 +103,3 @@ Having learnt about sprites, so it’s time to move on to use them in a classic 
 # Further Reading
 
 [Mesh Overview](/features/Shapes)
-
-
