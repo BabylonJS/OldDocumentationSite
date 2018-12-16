@@ -188,6 +188,46 @@ new BABYLON.VideoTexture("name", "textures/video.ext", scene);
 | babylonjs.webm | 28.3 MB |
 | big_buck_bunny.mp4 | 5.9 MB |
 
+## GUI
+
+### Icons
+
+Textures are stored on `textures/icons/` folder.
+
+| Overview | Filename | Size |
+| :---: | --- | --- |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Back.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Back.png | 820 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Crop.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Crop.png | 820 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Delete.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Delete.png | 800 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Dot.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Dot.png | 5.2 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Download.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Download.png | 780 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Edit.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Edit.png | 1.25 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/GearIcon.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | GearIcon.png | 7.16 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Icon_Fullscreen.svg' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Icon_Fullscreen.svg | 303 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Open.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Open.png | 1 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Pause.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Pause.png | 480 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Play.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Play.png | 1 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Redo.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Redo.png | 1.25 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Refresh.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Refresh.png | 1.7 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Save.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Save.png | 780 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Settings.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Settings.png | 2.3 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Share.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Share.png | 1.2 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Undo.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Undo.png | 1.2 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Upload.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Upload.png | 780 B |
+| <img src = 'http://www.babylonjs-playground.com/textures/icons/Zoom.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | Zoom.png | 1.5 KB |
+
+### Misc
+
+Textures are stored on `textures/gui/` folder.
+
+| Overview | Filename | Size |
+| :---: | --- | --- |
+| <img src = 'http://www.babylonjs-playground.com/textures/gui/backgroundImage.png' width = '128' height = '16'> | backgroundImage.png | 3.1 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/gui/backgroundImage-vertical.png' width = '16' height = '128'> | backgroundImage-vertical.png | 3.5 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/gui/thumb.png' width = '64' height = '64'> | thumb.png | 4.6 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/gui/valueImage.png' width = '128' height = '16'> | valueImage.png | 1.3 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/gui/valueImage-vertical.png' width = '16' height = '128'> | valueImage-vertical.png | 2.1 KB |
+
 ## FX
 
 ### Decals
