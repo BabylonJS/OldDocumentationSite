@@ -194,6 +194,8 @@ Here is an example of how to use rotation and scaling:  https://www.babylonjs-pl
 
 For complex controls (like the ColorPicker for instance), you can turn on rendering cache by using `control.useBitmapCache = true`. This will store a cached version of the control image in order to reuse it when the GUI is updated.
 
+Starting with Babylon.js v4.0 the GUI system uses the Invalidate Rect optimization which allows the renderer to only update portions of the texture. If you want to turn it off, you can call `adtTexture.useInvalidateRectOptimization = false`
+
 ## Controls
 
 A control is an abstraction of a piece of UI. There are two kinds of controls:
