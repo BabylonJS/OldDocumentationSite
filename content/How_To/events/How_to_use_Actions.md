@@ -94,9 +94,6 @@ The triggers available for meshes are:
 * `BABYLON.ActionManager.OnLongPressTrigger`: Raised when the user touches/clicks up on a mesh for a long period of time in milliseconds (defined by BABYLON.Scene.LongPressDelay). 
 * `BABYLON.ActionManager.OnPointerOverTrigger`: Raised when the pointer is over a mesh. Raised just once.
 * `BABYLON.ActionManager.OnPointerOutTrigger`: Raised when the pointer is no more over a mesh. Raised just once.
-* `BABYLON.ActionManager.OnKeyDownTrigger`: Raised when a key is press.
-* `BABYLON.ActionManager.OnKeyUpTrigger`: Raised when a key is up
-* `BABYLON.ActionManager.OnEveryFrameTrigger`: Raised on every frame
 * `BABYLON.ActionManager.OnIntersectionEnterTrigger`: Raised when the mesh is in intersection with a specific mesh. Raised just once.
 * `BABYLON.ActionManager.OnIntersectionExitTrigger`: Raised when the mesh is no more in intersection with a specific mesh. Raised just once. 
 
