@@ -18,13 +18,7 @@ Babylon.js is maintained on Github, a web-based hosting service for version cont
 # Pre-Requisites
 * Reading the [contribution guidelines](https://github.com/BabylonJS/Babylon.js/blob/master/contributing.md).
 * An ability to code in Typescript. Babylon.js is written in Typescript then compiled and distributed in Javascript.
-* An account with Github, a web-based hosting service for version control using Git. Babylon.js is stored and maintained on Github.
-* A fork (a copy) of Babylon.js as a repository in your Github account.
 * Know how to use a Command Line Interpreter (CLI). Used to issue Git commands.
-* Git installed on your local computer. Used to clone your fork of Babylon.js onto your computer, manage local changes and push (send) committed (finalised) changes back to your fork. From there you can request that your fork can be pulled (fetched and merged) into the Babylon.js repository.
-* Node.js installed on your computer. This also installs NPM (Node Package Manager) on your computer. NPM is used to install a variety of applications that will be used in by Gulp in compiling and building a distribution version on your local computer.
-* Gulp installed on your computer. Gulp provides the build instructions. 
-* An Integrated Design Environment (IDE) that links with Git in which to edit Babylon.js, Visual Studio Code for example.
 
 # Install Git
 
@@ -132,10 +126,6 @@ Once you are sure you have met the guidelines and have thoroughly tested all you
 
 ## Adding files
 
-When rather than just editing a file you add more files to the codebase you will have to edit the ```config.json``` file from the ```/Tools/Gulp``` folder and place a reference to each file in the appropriate section.
-
-See also [How to Add Files to Babylon.js](/How_To/addFiles)
-
 When in doubt about where your files should be referenced then raise an issue in the Babyon.js repository or ask on the forum.
 
 ## Commit
@@ -205,10 +195,7 @@ gulp --max-old-space-size=8192
 
 The ```npm install``` places a number of files in the current directory (This is different to ```npm -g install``` which makes npm available in any folder)
 
-Gulp --max-old-space-size=8192 builds everything you need to test and debug your code.
-
-
-**NOTE** It is possible to [customize your build](/How_To/workloads) by choosing sets of classes to build with.
+Gulp --max-old-space-size=8192 builds everything you need to test.
 
 ### Do Not Commit
 
@@ -218,12 +205,9 @@ git update-index --assume-unchanged "Playground/babylon.d.txt"
 git update-index --assume-unchanged "dist/preview release/babylon.d.ts"
 git update-index --assume-unchanged "dist/preview release/babylon.js"
 git update-index --assume-unchanged "dist/preview release/babylon.max.js"
-git update-index --assume-unchanged "dist/preview release/babylon.worker.js"
 git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.d.ts"
 git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.js"
 git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/babylon.max.js"
-git update-index --assume-unchanged "dist/preview release/customConfigurations/minimalGLTFViewer/es6.js"
-git update-index --assume-unchanged "dist/preview release/es6.js"
 git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTF2FileLoader.js"
 git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTF2FileLoader.min.js"
 git update-index --assume-unchanged "dist/preview release/loaders/babylon.glTFFileLoader.js"
@@ -369,7 +353,6 @@ All the following tasks are available:
 * `gulp proceduralTexturesLibrary` generates all the procedural textures files in the dist/preview release folder.
 * `gulp postProcessesLibrary` generates all the post processes files in the dist/preview release folder.
 * `gulp inspector` generates the inspector files in the dist/preview release folder.
-* `gulp deployLocalDev` regenerates your localDev/src/index.js from the template.
 
 # Summary
 
@@ -414,9 +397,6 @@ gulp run
 ## Repeat
 ### Edit
 Change and save files including comments
-
-### Add
-Add files and update ```/Tools/Gulp/config.json``` file
 
 ### Test
 Check if your code can be used in the local playground
