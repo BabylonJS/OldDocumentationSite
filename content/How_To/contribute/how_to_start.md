@@ -37,6 +37,11 @@ In your CLI configure git globally with your user name and email:
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
+# Install Firefox
+In order to run the Babylon.js tests you will need to have Firefox installed.
+
+Download it from the [Firefox Home Page](https://www.mozilla.org/en-US/firefox/).
+
 # Fork from Github
 
 If you do not have one already open a Github account with your email address and still signed in go to the [Babylon.js repository](https://github.com/BabylonJS/Babylon.js) and fork with button at the top.
