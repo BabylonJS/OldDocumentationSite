@@ -666,6 +666,16 @@
                     "filename": "Using_The_Physics_Engine"
                 },
                 {
+                    "title": "Use Forces",
+                    "level": 1,
+                    "filename": "Forces"
+                },
+                {
+                    "title": "Use Joints",
+                    "level": 1,
+                    "filename": "Joints"
+                },
+                {
                     "title": "Use Advanced Physics Features",
                     "level": 2,
                     "filename": "Using_Advanced_Physics_Features"
