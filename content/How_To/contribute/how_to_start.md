@@ -308,6 +308,11 @@ A reminder to read the [contribution guidelines](https://github.com/BabylonJS/Ba
 
 # Pull-Request
 
+Pull Requests are automatically validated.  One check is for styling and you can check that quickly with `gulp tsLint`.  If you are unsure, you can validate everything with a full build:
+```
+gulp --max-old-space-size=8192
+```
+
 When you are happy that all testing has been validated, guidelines followed, and only necessary files committed then push your local master to your origin github repository with your Git Client or from the CLI with
 
 ```
