@@ -78,7 +78,7 @@ mesh.actionManager.registerAction(
 In this example, the `camera.alpha` property will be animated to 0 in 500ms when the user clicks the mesh only if the `light.diffuse` property is equal to red.
 
 ## Triggers
-Currently, there are 17 different triggers available for meshes, and three for scenes.
+Currently, there are 14 different triggers available for meshes, and three for scenes.
 
 The triggers available for meshes are:
 
