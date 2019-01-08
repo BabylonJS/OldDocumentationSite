@@ -2,7 +2,7 @@
 PG_TITLE: How To Use Forces
 ---
 
-# How To Understand How the Physics' Engines Differe
+# How To Understand How the Physics' Engines Difference
 
 This section considers the difference between basic Newtonian forces in the real world of rigid body physics and its simulation in the three physics engines 
 
@@ -39,8 +39,7 @@ These are gravity, impulses, friction and applied forces.
 In the simulations gravity is a universal force applied throughout the time of the simulation producing a gravitational acceleration. Setting a Vector3 for gravity is in fact setting the gravitational acceleration. The default value being `(0, -9.807, 0)`. Since it is a universal force it is set in the physics' engine either when it is enabled or later. 
 
 ```javascript
-/*When physics is enabled*/ 
-//use default gravity
+/*When physics is enabled use default gravity*/ 
 scene.enablePhysics(null, new BABYLON.CannonJSPlugin());
 scene.enablePhysics(null, new BABYLON.OimoJSPlugin());
 scene.enablePhysics(null, new BABYLON.AmmoJSPlugin());
@@ -146,11 +145,9 @@ _Ammo.js_
 impostor.applyForce(forceDirection.scale(forceMagnitude), contactRefPoint);
 ```
 
-[**Note** - currently in `Ammo.js` you need to ensure the friction is zero by re-setting the friction value to 0 after the body's construction (use the slider bars in the playgrounds below). This should be corrected shortly]
-
 #### Playgrounds
-The following playgrounds are initially set up with zero friction (see note above) and to apply an impulse at the center of mass horizontally in the X direction.
+The following playgrounds are initially set up with zero friction and to apply an impulse at the center of mass horizontally in the X direction.
 
 * [Playground Example Cannon.js and Oimo.js - Applied Force](https://www.babylonjs-playground.com/#YUNAST#11)
-* [Playground Example Cannon.js and Oimo.js - Applied Force](https://www.babylonjs-playground.com/#YUNAST#13)
+* [Playground Example Ammo.js - Applied Force](https://www.babylonjs-playground.com/#YUNAST#13)
 
