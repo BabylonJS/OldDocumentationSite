@@ -37,6 +37,11 @@ In your CLI configure git globally with your user name and email:
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
+# Install Firefox
+In order to run the Babylon.js tests you will need to have Firefox installed.
+
+Download it from the [Firefox Home Page](https://www.mozilla.org/en-US/firefox/).
+
 # Fork from Github
 
 If you do not have one already open a Github account with your email address and still signed in go to the [Babylon.js repository](https://github.com/BabylonJS/Babylon.js) and fork with button at the top.
@@ -302,6 +307,11 @@ It will run several scenes against a reference image to detect any visual change
 A reminder to read the [contribution guidelines](https://github.com/BabylonJS/Babylon.js/blob/master/contributing.md).
 
 # Pull-Request
+
+Pull Requests are automatically validated.  One check is for styling and you can check that quickly with `gulp tsLint`.  If you are unsure, you can validate everything with a full build:
+```
+gulp --max-old-space-size=8192
+```
 
 When you are happy that all testing has been validated, guidelines followed, and only necessary files committed then push your local master to your origin github repository with your Git Client or from the CLI with
 
