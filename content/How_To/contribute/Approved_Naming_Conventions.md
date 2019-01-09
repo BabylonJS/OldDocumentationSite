@@ -19,8 +19,5 @@ if (condition) {
 
 You have to use **TypeScript** to submit a pull request.
 
-If you want to add a new file, please do the following as well:
-
-- Update gulp's [config.json](https://github.com/BabylonJS/Babylon.js/blob/master/Tools/Gulp/config.json)
-- Update [documentation](https://github.com/BabylonJS/Documentation)
+Please, do not forget to update the [documentation](https://github.com/BabylonJS/Documentation).
 

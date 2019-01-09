@@ -39,7 +39,6 @@ The global structure of a .babylon file is the following:
     "lensFlareSystems": array of LensFlareSystems (see below),
     "actions": array of actions (see below),
     "sounds": array of Sounds (see below),
-    "workerCollisions": boolean,
     "collisionsEnabled": boolean,
     "physicsEnabled": boolean,
     "physicsGravity": vector3 (defaults to [0,-9.81,0]),
