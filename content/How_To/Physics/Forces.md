@@ -151,3 +151,18 @@ The following playgrounds are initially set up with zero friction and to apply a
 * [Playground Example Cannon.js and Oimo.js - Applied Force](https://www.babylonjs-playground.com/#YUNAST#11)
 * [Playground Example Ammo.js - Applied Force](https://www.babylonjs-playground.com/#YUNAST#13)
 
+# Further Reading
+
+## Basic - L1
+
+[How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
+[How To Use Joints](/how_to/joints)   
+[How To Use Pivots and Axes](/how_to/pivots)  
+
+## Mid Level - L2
+
+[How To Use Advanced Features](/how_to/Using_Advanced_Physics_Features)
+ 
+## More Advanced - L3
+
+[How To Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)

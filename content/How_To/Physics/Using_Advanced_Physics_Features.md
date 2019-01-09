@@ -157,3 +157,16 @@ Raanan Weber wrote an article about cloth simulation in his blog: <https://blog.
 * Heightmap game - http://www.babylonjs-playground.com/#DLBW7#11
 * Net on a sphere - http://www.babylonjs-playground.com/#1M67K8#7
 * Newton's cradle - http://www.babylonjs-playground.com/#MDMVA#18
+
+# Further Reading
+
+## Basic - L1
+
+[How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
+[How To Use Forces](/how_to/forces)  
+[How to use Joints](/how_to/joints)  
+[How To Use Pivots and Axes](/how_to/pivots)  
+ 
+## More Advanced - L3
+
+[How To Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)

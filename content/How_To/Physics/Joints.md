@@ -6,7 +6,7 @@ PG_TITLE: How To Use Joints
 
 A joint in a physics engine is a constraining feature between two bodies. This area has the largest differences between the physics engine both in the joints available and the names used. Not all native joints are available in some plugins.
 
-This section considers the difference between the way joints behave in the three physics engines 
+This section considers the differences between the way joints behave in the three physics engines 
 
 1. Cannon.js;
 2. Oimo.js;
@@ -318,3 +318,19 @@ The motor rotates the body around the slider axis.
 
 **_MotorEnabledJoint Playgrounds_** 
 * [Playground Example Oimo.js - Slider X axis](https://www.babylonjs-playground.com/#UFVU18#31)
+
+# Further Reading
+
+## Basic - L1
+
+[How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
+[How To Use Forces](/how_to/forces)   
+[How To Use Pivots and Axes](/how_to/pivots)  
+
+## Mid Level - L2
+
+[How To Use Advanced Features](/how_to/Using_Advanced_Physics_Features)
+ 
+## More Advanced - L3
+
+[How To Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)

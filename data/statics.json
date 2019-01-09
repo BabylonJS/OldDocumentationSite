@@ -676,6 +676,11 @@
                     "filename": "Joints"
                 },
                 {
+                    "title": "Use Pivots and Axes",
+                    "level": 1,
+                    "filename": "Pivots"
+                },
+                {
                     "title": "Use Advanced Physics Features",
                     "level": 2,
                     "filename": "Using_Advanced_Physics_Features"
