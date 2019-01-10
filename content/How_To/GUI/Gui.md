@@ -589,6 +589,8 @@ You can also apply stretch to animation sheet using `image.stretch` property.
 [example 1](https://www.babylonjs-playground.com/#K60448#1)
 [example 2](https://www.babylonjs-playground.com/#K60448#2)
 
+Starting with babylon.js v4.0, you can also set `img.detectPointerOnOpaqueOnly = true` to indicate if pointers should only be validated on pixels with alpha > 0.
+
 ### ColorPicker
 
 The color picker control allows users to set colors in your scene.
