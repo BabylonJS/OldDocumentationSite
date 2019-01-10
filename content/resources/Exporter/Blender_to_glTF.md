@@ -22,7 +22,7 @@ A good practice could be to import the default glTF material as fake user, and t
 Once your scene is exported, you have multiple solutions to test it:
 
 - quick check it into the [sandbox](http://sandbox.babylonjs.com/)
-- use the [viewer](http://doc.babylonjs.com/extensions/the_babylon_viewer)
+- use the [viewer](//doc.babylonjs.com/extensions/the_babylon_viewer)
 - script your own app using the [loader](/How_To/Load_From_Any_File_Type)
 
 ### Example
@@ -66,7 +66,7 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
         var canvas = document.getElementById("canvas");
         var engine = new BABYLON.Engine(canvas, true);
 
-        // here the doc for Load function: http://doc.babylonjs.com/api/classes/babylon.sceneloader#load
+        // here the doc for Load function: //doc.babylonjs.com/api/classes/babylon.sceneloader#load
         BABYLON.SceneLoader.Load("", "02_suzanne.gltf", engine, function (scene) {
 
             var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);

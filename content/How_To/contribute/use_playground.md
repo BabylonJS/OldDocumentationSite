@@ -37,8 +37,8 @@ Once you are happy the code works and you have copied it to your local repositor
 
 [Start Contibuting](how to start contributing)  
 [Contributing Read Me](https://github.com/BabylonJS/Babylon.js/blob/master/contributing.md)  
-[Code Guidelines](http://doc.babylonjs.com/how_to/approved_naming_conventions)  
-[Comments in the API](http://doc.babylonjs.com/how_to/contribute_to_api)
+[Code Guidelines](//doc.babylonjs.com/how_to/approved_naming_conventions)  
+[Comments in the API](//doc.babylonjs.com/how_to/contribute_to_api)
 
 On the other hand there is always the possibility that someone in the core team likes your idea and its execution so much they might just copy and add it to Babylon.js directly.
 

@@ -1,6 +1,6 @@
 # Save Your Scene or Meshes
 
-This is achieved with the [scene serializer](http://doc.babylonjs.com/api/classes/babylon.sceneserializer)
+This is achieved with the [scene serializer](//doc.babylonjs.com/api/classes/babylon.sceneserializer)
 
 ## Scene
 
