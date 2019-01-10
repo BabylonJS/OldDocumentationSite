@@ -183,7 +183,7 @@ Install these using your CLI
 npm install -g typescript
 npm install -g gulp@4.0.0
 ```
-At the time of writing the version of Gulp needed was 4.0.0. The current [What's New](http://doc.babylonjs.com/whats-new) should indicate if there have been any changes of version. You can also look in the Babylon.js repository for ```package.json``` in ```Tools/Publisher``` which will give the version number for Gulp and Typescript.
+At the time of writing the version of Gulp needed was 4.0.0. The current [What's New](//doc.babylonjs.com/whats-new) should indicate if there have been any changes of version. You can also look in the Babylon.js repository for ```package.json``` in ```Tools/Publisher``` which will give the version number for Gulp and Typescript.
 
 ### The Build
 

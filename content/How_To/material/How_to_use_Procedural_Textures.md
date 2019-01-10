@@ -89,13 +89,13 @@ You can use them in your project:
 
 All standard procedural textures can be used in the same ways, but they each have specific (special) properties:
 
-- **WoodProceduralTexture**: http://doc.babylonjs.com/extensions/woodproceduraltexture
-- **MarbleProceduralTexture**: http://doc.babylonjs.com/extensions/marbleproceduraltexture
-- **BrickProceduralTexture**: http://doc.babylonjs.com/extensions/brickproceduraltexture
-- **FireProceduralTexture**: http://doc.babylonjs.com/extensions/fireproceduraltexture
-- **GrassProceduralTexture**: http://doc.babylonjs.com/extensions/grassproceduraltexture
-- **RoadProceduralTexture**: http://doc.babylonjs.com/extensions/roadproceduraltexture
-- **CloudProceduralTexture**: http://doc.babylonjs.com/extensions/cloudproceduraltexture
+- **WoodProceduralTexture**: //doc.babylonjs.com/extensions/woodproceduraltexture
+- **MarbleProceduralTexture**: //doc.babylonjs.com/extensions/marbleproceduraltexture
+- **BrickProceduralTexture**: //doc.babylonjs.com/extensions/brickproceduraltexture
+- **FireProceduralTexture**: //doc.babylonjs.com/extensions/fireproceduraltexture
+- **GrassProceduralTexture**: //doc.babylonjs.com/extensions/grassproceduraltexture
+- **RoadProceduralTexture**: //doc.babylonjs.com/extensions/roadproceduraltexture
+- **CloudProceduralTexture**: //doc.babylonjs.com/extensions/cloudproceduraltexture
 
 ## Creating Custom Procedural Textures ##
 
