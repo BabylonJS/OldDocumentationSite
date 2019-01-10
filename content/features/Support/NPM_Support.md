@@ -89,7 +89,7 @@ let materials = require('babylonjs-materials'); // unused variable
 
 Being written in TypeScript, Babylon.js will always support TypeScript developers. We provide a declaration file in each package, that either extends the BABYLON namespace or declares a new namespace that can be used during development.
 
-If not detected by your IDE, the most important thing to get full TypeScript support in your project is to add the imported packages as types of compilerOptions in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) as follows:
+If not detected by your IDE (mostly in case you are not relying on import/export), the most important thing to get full TypeScript support in your project is to add the imported packages as types of compilerOptions in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) as follows:
 
 ```javascript
 {
@@ -157,15 +157,25 @@ npm install --save-dev ts-loader
 
 
 ## ES6
+If you wish to benefit from tree shaking and other nitty gritties, you can now rely on our Babylon.js ES6 packages:
 
-We support es6 using a single .js file delivered in our package. At the moment it is included in the main package only ('babylonjs'). To use it, use the included 'es6.js' file in babylon's npm package:
+* [@babylonjs/core](https://www.npmjs.com/package/@babylonjs/core) - Babylon's core.
+* [@babylonjs/materials](https://www.npmjs.com/package/@babylonjs/materials) - a collection of Babylon-supported advanced materials.
+* [@babylonjs/loaders](https://www.npmjs.com/package/@babylonjs/loaders) -  All of Babylon's official loaders (OBJ, STL, glTF)
+* [@babylonjs/post-process](https://www.npmjs.com/package/@babylonjs/post-process) - Babylon's post processes.
+* [@babylonjs/procedural-textures](https://www.npmjs.com/package/@babylonjs/procedural-textures) - Officially supported procedural textures
+* [@babylonjs/serializers](https://www.npmjs.com/package/@babylonjs/serializers) - Scene / mesh serializers.
+* [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
+* [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The stand-alone BabylonJS Viewer.
+
+Please not that you can not mix ES6 and our legacy packages.
 
 ```javascript
-import * as BABYLON from './node_modules/babylonjs/es6.js'
+import { Engine } from '@babylonjs/core/Engines/engine'
 
 const canvas = document.getElementById("canvas");
 
-const engine = new BABYLON.Engine(canvas, true);
+const engine = new Engine(canvas, true);
 
 // code continues....
 ```

@@ -14,12 +14,9 @@ Then update the config.json file in the tools/gulp and add an entry in the "mate
   "libraries": [
     ...
       {
-        "files": ["../../materialsLibrary/src/gradient/babylon.gradientMaterial.ts"],
-        "shaderFiles": [
-          "../../materialsLibrary/src/gradient/gradient.vertex.fx",
-          "../../materialsLibrary/src/gradient/gradient.fragment.fx"
-        ],
-        "output": "babylon.gradientMaterial.js"
+        "output": "babylon.triPlanarMaterial.min.js",
+        "entry": "./legacy/legacy-triPlanar.ts",
+        "preventLoadLibrary": true
       }
       ...
   ]

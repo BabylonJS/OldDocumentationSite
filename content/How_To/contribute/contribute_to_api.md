@@ -11,7 +11,7 @@ Many people have asked for the API documentation to be improved. This is a major
 You need to add appropriate comments according to the formats given below. Check the comments for errors and submit a PR when everything is validated.
 
 1. Fork and clone [Babylon.js](https://github.com/BabylonJS/Babylon.js) from github;
-2. In the folder **Tools/Gulp** install npm with `npm install` and then gulp with `npm install -g gulp`;
+2. In the folder **Tools/Gulp** install npm with `npm install` and then gulp with `npm install -g gulp@4.0.0`;
 3. Edit files from within the **src** folder by adding comments;
 4. Execute `gulp typedoc-check` to validate the comments;
 5. Do NOT COMMIT any changes to the file **babylon.d.ts**. Use `discard` to remove changes;
