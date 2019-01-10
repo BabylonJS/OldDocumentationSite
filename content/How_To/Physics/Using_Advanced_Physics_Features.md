@@ -166,6 +166,7 @@ Raanan Weber wrote an article about cloth simulation in his blog: <https://blog.
 [How To Use Forces](/how_to/forces)  
 [How to use Joints](/how_to/joints)  
 [How To Use Pivots and Axes](/how_to/pivots)  
+[How To Create Compound Bodies](/how_to/compounds)
  
 ## More Advanced - L3
 

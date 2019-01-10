@@ -53,7 +53,8 @@ Changing the main axis changes the main axis of rotation of the connected body a
 
 [How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
 [How To Use Forces](/how_to/forces)  
-[How to use Joints](/how_to/joints)    
+[How to use Joints](/how_to/joints)   
+[How To Create Compound Bodies](/how_to/compounds) 
 
 ## Mid Level - L2
 

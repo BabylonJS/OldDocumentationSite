@@ -681,6 +681,11 @@
                     "filename": "Pivots"
                 },
                 {
+                    "title": "Create Compund Bodies",
+                    "level": 1,
+                    "filename": "Compounds"
+                },
+                {
                     "title": "Use Advanced Physics Features",
                     "level": 2,
                     "filename": "Using_Advanced_Physics_Features"

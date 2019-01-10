@@ -158,6 +158,7 @@ The following playgrounds are initially set up with zero friction and to apply a
 [How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
 [How To Use Joints](/how_to/joints)   
 [How To Use Pivots and Axes](/how_to/pivots)  
+[How To Create Compound Bodies](/how_to/compounds)
 
 ## Mid Level - L2
 
