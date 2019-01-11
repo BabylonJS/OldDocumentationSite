@@ -192,8 +192,6 @@ var createStaticPages = function(staticsContents, category, cb) {
             staticContent: staticContent,
             currentUrl: '/' + category
         });
-
-        console.log(staticContent);
         staticPage = staticPage.replace("<title>Babylon.js Documentation</title>", "<title>Babylon.js Documentation - " + staticContent.staticName + "</title>");
 
         fs.writeFile(filename, staticPage, function(writeErr) {
