@@ -313,6 +313,8 @@ The shadow map generation is a complex task and requires to take in account seve
 - Vertex:https://github.com/BabylonJS/Babylon.js/blob/master/src/Shaders/shadowMap.vertex.fx
 - Fragment: https://github.com/BabylonJS/Babylon.js/blob/master/src/Shaders/shadowMap.fragment.fx
 
+In order to update your own uniforms, you can rely on `shadowGenerator.onBeforeShadowMapRenderObservable` observable. This will be called for you everytime the shadow map will be rendered and it will give you the current compiled effect.
+
 You can find a complete example here: https://www.babylonjs-playground.com/#IJH4VG#0
 
 ## Next step
