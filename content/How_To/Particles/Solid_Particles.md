@@ -336,8 +336,10 @@ Example 1 : you may want to update your 10K particle mesh only every three frame
 * frame 1 : `setParticles(0, 3300, false)` computes everything for particles from 0 to 3300 and doesn't update the mesh.
 * frame 2 : `setParticles(3301, 6600, false)` computes everything for particles from 3301 to 6600 and doesn't update the mesh.
 * frame 3 : `setParticles(6601, 9999, true)` computes everything for particles from 6601 to 9999 and finally updates the mesh.  
+10,000 boxes updated per bunch of 3500 here : https://www.babylonjs-playground.com/#2V1C4Z#12  
 
 Example 2 : you could keep, say, the first 5000 particles as unused ones and compute the particle behavior only for the 5000 lasts in your global pool.  
+
 
 
 ### Colors and UVs
