@@ -166,7 +166,7 @@ If you wish to benefit from tree shaking and other nitty gritties, you can now r
 * [@babylonjs/procedural-textures](https://www.npmjs.com/package/@babylonjs/procedural-textures) - Officially supported procedural textures
 * [@babylonjs/serializers](https://www.npmjs.com/package/@babylonjs/serializers) - Scene / mesh serializers.
 * [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
-* [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The stand-alone BabylonJS Viewer.
+* [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The BabylonJS Inspector for es 6.
 
 Please not that you can not mix ES6 and our legacy packages.
 
@@ -179,6 +179,8 @@ const engine = new Engine(canvas, true);
 
 // code continues....
 ```
+
+For more information, you can have a look at [the ES6 documentation](https://doc.babylonjs.com/features/ES6_support);
 
 ## External libraries
 

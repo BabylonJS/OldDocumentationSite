@@ -2,6 +2,36 @@
 PG_TITLE: How To Use a Parent
 ---
 
+# Overview of a Parent
+
+Making mesh P a parent of mesh C changes the frame of reference for mesh C to the local axes of mesh P. Re-positioning, rotating or scaling mesh P will apply the same transformations to mesh C. Positioning, rotation and scaling of mesh C will depend on the position and orientation of the local axes of C relative to those of P.
+
+To parent mesh C to mesh P you use any of 
+
+```javascript
+meshC.parent = meshP;
+meshC.setParent(meshP);
+meshP.addChild(meshC);
+```
+The following playground shows that transformations prior to parenting are kept for all three methods
+* [Playground Example - Adding a Parent](https://www.babylonjs-playground.com/#XQI4UY#14)
+ 
+The next tthree playgrounds show that transformations are relative to the parent 
+* [Playground Example - Position Parent](https://www.babylonjs-playground.com/#XQI4UY#15)
+* [Playground Example - Rotate Parent](https://www.babylonjs-playground.com/#XQI4UY#17)
+* [Playground Example - Position and Rotate Child](https://www.babylonjs-playground.com/#XQI4UY#18)
+
+To remove a child, mesh C, from a parent, mesh P you use any of 
+
+```javascript
+meshC.parent = null;
+meshC.setParent(null);
+meshP.removeChild(meshC);
+```
+The following playground shows that setting a child's parent mesh P, directly to null, `meshC.parent = null`, not only removes the parent from the child, mesh C (red), but also removes from mesh C any transformation applied via mesh P leaving only the transformations applied directly to mesh C. Using this method, on the removal of the parent, the position, rotation and scale of mesh C will be seen as changed in the scene view. The other two methods, `meshC.setParent(null)` and `meshP.removeChild(meshC)`, just removes the link to the parent and any transformation to mesh C applied via mesh P up to the point of removal will remain. Using these methods, on the removal of the parent, the position, rotation and scale of mesh C will be seen as as the same in the scene view.
+
+* [Playground Example - Removing a Parent](https://www.babylonjs-playground.com/#XQI4UY#19)
+
 # How To Use a Parent
 
 The parent method for these examples can be directly compared to [transforming coordinates](/How_To/Transform_Coordinates) 
