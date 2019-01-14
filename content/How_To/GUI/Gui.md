@@ -715,6 +715,8 @@ By default containers will clip their children to their bounds. You can disable 
 container.clipChildren = false;
 ```
 
+Please note that not clipping children may generate issues with `adt.useInvalidateRectOptimization` so it is recommended to turn this optimization off if you want to use unclipped children.
+
 You can find a demo here: https://www.babylonjs-playground.com/#LBF8S2
 
 ### Rectangle
