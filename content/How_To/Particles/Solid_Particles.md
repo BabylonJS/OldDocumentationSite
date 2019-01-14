@@ -336,7 +336,7 @@ Example 1 : you may want to update your 10K particle mesh only every three frame
 * frame 1 : `setParticles(0, 3300, false)` computes everything for particles from 0 to 3300 and doesn't update the mesh.
 * frame 2 : `setParticles(3301, 6600, false)` computes everything for particles from 3301 to 6600 and doesn't update the mesh.
 * frame 3 : `setParticles(6601, 9999, true)` computes everything for particles from 6601 to 9999 and finally updates the mesh.  
-14,400 boxes updated per bunch of 3500 here : https://www.babylonjs-playground.com/#2V1C4Z#11  
+10,000 boxes updated per bunch of 3500 here : https://www.babylonjs-playground.com/#2V1C4Z#12  
 
 Example 2 : you could keep, say, the first 5000 particles as unused ones and compute the particle behavior only for the 5000 lasts in your global pool.  
 
@@ -671,6 +671,26 @@ mesh.intersectsMesh(particle);  // won't give the right result
 particle.intersectsMesh(mesh);  // will give the right bounding sphere intersection
 ```
 
+### Particle In Frustum  
+When the SPS is enabled to manage particle intersections, each particle is given a bounding box and a bouding sphere.  
+You can then check whether a particle intersects the camera frustum with the method `particle.isInFrustum(frustumPlanes, [cullingStrategy])` like you would do with meshes.  
+```javascript
+scene.updateTransformMatrix();   // force the plane computation once
+var frustumPlanes = scene.frustumPlanes;
+// then in some loop ...
+if (!particle.isInFrustum(frustumePlanes)) {
+    p.alive = false;
+}
+```
+Contrary to the meshes, you can't use `.isInFrustum()` to cull particles that wouldn't be rendered, because all the particles are always rendered, meaning passed to the GPU (even the invisible ones). You can only use this test to customize the process applied to the particles.  
+Example : you would want to not compute the particles outside the frustum to gain some performance.  
+The test done by `isInFrustum()` has also its own CPU cost, so it's probably not a good idea to run it on thousand particles each frame.   
+Actually, it's up to you to choose if the test is worth it for your own need.  
+Let's imagine a case where each particle computation is really intensive (example : when using `computeParticleVertex`). In this case, the frustum test could be faster than the particle computation, so it would be interesting to use it to disable the particle computation for particles outside the frustum.   
+In this following example, the computation charge is directly related to the number of vertices and shouldn't change whatever the camera direction. But, as we disable the particles outside the frustum, if you rotate the camera to isolate one or two worms in the camera field, you can check the performance gain  
+https://www.babylonjs-playground.com/#BKX11Q   
+Note : the default culling strategy used in the particle frustum test is the fastest (`BoundingSphereOnly`).  
+You can change it at will for each particle by using the same values than the static properties `CULLINGSTRATEGY_XXX` ones of the `AbstractMesh` class.  
 
 ### Garbage Collector Concerns  
 In Javascript, the Garbage Collector is usually your friend : it takes care about cleaning up all the not any longer needed variables you could have declared and thus it sets the memory free.  
