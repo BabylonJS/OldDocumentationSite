@@ -180,6 +180,8 @@ const engine = new Engine(canvas, true);
 // code continues....
 ```
 
+For more information, you can have a look at [the ES6 documentation](https://doc.babylonjs.com/features/ES6_support);
+
 ## External libraries
 
 ### Pre 3.2.0-beta.1

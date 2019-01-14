@@ -1791,6 +1791,10 @@
                 {
                     "title": "NPM",
                     "filename": "NPM_Support"
+                },
+                {
+                    "title": "ES6",
+                    "filename": "ES6_Support"
                 }
             ]
         }
