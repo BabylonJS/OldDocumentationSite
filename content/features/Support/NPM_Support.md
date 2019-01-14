@@ -162,11 +162,11 @@ If you wish to benefit from tree shaking and other nitty gritties, you can now r
 * [@babylonjs/core](https://www.npmjs.com/package/@babylonjs/core) - Babylon's core.
 * [@babylonjs/materials](https://www.npmjs.com/package/@babylonjs/materials) - a collection of Babylon-supported advanced materials.
 * [@babylonjs/loaders](https://www.npmjs.com/package/@babylonjs/loaders) -  All of Babylon's official loaders (OBJ, STL, glTF)
-* [@babylonjs/post-process](https://www.npmjs.com/package/@babylonjs/post-process) - Babylon's post processes.
+* [@babylonjs/post-processes](https://www.npmjs.com/package/@babylonjs/post-processes) - Babylon's post processes.
 * [@babylonjs/procedural-textures](https://www.npmjs.com/package/@babylonjs/procedural-textures) - Officially supported procedural textures
 * [@babylonjs/serializers](https://www.npmjs.com/package/@babylonjs/serializers) - Scene / mesh serializers.
 * [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
-* [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The stand-alone BabylonJS Viewer.
+* [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The BabylonJS Inspector for es 6.
 
 Please not that you can not mix ES6 and our legacy packages.
 
@@ -242,7 +242,7 @@ You can see an example of that in the Viewer directory of our main repository.
 
 Due to the way BabylonJS is built, Tree-Shaking is currently not quite possible. Babylon's internal objects have deep connections with one another (for performance reasons). That means, that your built JS file will be at least Babylon.js' minified size.
 
-You can still use custom builds to build you own minimal version: http://doc.babylonjs.com/how_to/how_to_start#custom-builds
+You can still use custom builds to build you own minimal version: //doc.babylonjs.com/how_to/how_to_start#custom-builds
 
 ### Naming is different than what the documentation states
 
