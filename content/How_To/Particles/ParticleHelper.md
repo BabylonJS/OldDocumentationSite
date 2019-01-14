@@ -49,6 +49,35 @@ Effect name | Image | Playground
 **fire** | ![fire](/img/how_to/particles/fire.jpg) | https://www.babylonjs-playground.com/#7IM02G#0
 **explosion** | ![explosion](/img/how_to/particles/explosion.jpg) | https://www.babylonjs-playground.com/#X37LS1#3
 
+## Custom ParticleSets
+
+It is reasonably simple to create your own custom particleSet.  Each of the particleSets listed above... is stored in a BabylonJS folder currently located [**here**](https://github.com/BabylonJS/Babylon.js/tree/master/assets/particles/systems). For instance, when you use “sun” as the particleSet _type_, the particleHelper will pick [**this json**](https://github.com/BabylonJS/Babylon.js/blob/master/assets/particles/systems/sun.json) (which defines the 'sun' particleSet _type_.
+
+You may store these custom JSON particleSets anywhere you wish. You can set the base URL for the particleHelper with:  ```BABYLON.ParticleHelper.BaseAssetsUrl = “https://yourBaseUrl”;```
+
+This must be done BEFORE you execute the CreateAsync call which loads your particleSet json file:
+
+```
+var myParticleSet = new BABYLON.ParticleHelper.CreateAsync("tornado", scene).then(function(set) {
+    set.start();
+});
+```
+In the above example, 'tornado' is NOT the _name_ of a particle system.  It is the name of a particleSet _TYPE_.  In a moment, we will see how the _type_ string is used.
+
+Let's look at the code-line that loads JSON particleSets into the particleHelper:
+
+```Tools.LoadFile(`${ParticleHelper.BaseAssetsUrl}/systems/${type}.json`, (data) => {```
+
+Notice the _type_ is used as the name of the JSON file.  Using the previous example, your complete filename would be ```tornado.json```.
+
+Also notice the /systems/ subFolder heirarchy.  Your custom particleSet JSON file needs to be located in a subFolder called /systems/.  So, ```yourDomain/systems/tornado.json``` is where your file should be located and how it should be named (for our example).
+
+## Generate Custom ParticleSets
+
+You can automatically generate a new JSON particleSet (into a variable) by creatively configuring your particles systems, and then using the ExportSet option.
+
+https://doc.babylonjs.com/api/classes/babylon.particlehelper#exportset
+
 # Further Reading
 
 ## Basic - L1
