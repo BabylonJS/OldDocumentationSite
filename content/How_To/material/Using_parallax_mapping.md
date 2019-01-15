@@ -40,8 +40,3 @@ You have three properties to work with Parallax:
  - **useParallaxOcclusion**: enables Parallax Occlusion, when setting this property, you must also set **useParallax** to true.
  - **parallaxScaleBias**: apply a scaling factor that determine which "depth" the height map should reprensent. A value between 0.05 and 0.1 is reasonnable in Parallax, you can reach 0.2 using Parallax Occlusion.
 
-## Creating Height map
-
-You will find an interesting [tutorial here](https://www.youtube.com/watch?v=Sd5Avnf_JuU) that explains how to create the height map.
-
-If you happen to have normal map and height map in separated files, you can use this [Windows Tool](https://github.com/BabylonJS/Extensions/tree/master/NormalHeightMapTool) to merge them into a single file.
