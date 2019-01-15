@@ -23,29 +23,19 @@ The yellow sphere marks the position of the main pivot and is the center of rota
 ## Playground Examples
 
 Start with main body (cylinder) vertical and connected body (box) vertical and just touching the cylinder. 
-* [Playground Example Cannon.js - Start](https://www.babylonjs-playground.com/#F15U0G#35)
-* [Playground Example Oimo.js - Start](https://www.babylonjs-playground.com/#F15U0G#36)
-* [Playground Example Ammo.js - Start](https://www.babylonjs-playground.com/#F15U0G#37)
+* [Playground Example - Start](https://www.babylonjs-playground.com/#F15U0G#59)
 
 Changing the position of the connected pivot sets the position of the connected body.
-* [Playground Example Cannon.js - Move Connected Pivot](https://www.babylonjs-playground.com/#F15U0G#38)
-* [Playground Example Oimo.js - Move Connected Pivot](https://www.babylonjs-playground.com/#F15U0G#39)
-* [Playground Example Ammo.js - Move Connected Pivot](https://www.babylonjs-playground.com/#F15U0G#40)
+* [Playground Example - Move Connected Pivot](https://www.babylonjs-playground.com/#F15U0G#60)
 
 Changing the position of the main pivot changes the center of rotation of the connected body and re-positions the connected pivot relative to this.
-* [Playground Example Cannon.js - Move Main Pivot](https://www.babylonjs-playground.com/#F15U0G#41)
-* [Playground Example Oimo.js - Move Main Pivot](https://www.babylonjs-playground.com/#F15U0G#42)
-* [Playground Example Ammo.js - Move Main Pivot](https://www.babylonjs-playground.com/#F15U0G#43)
+* [Playground Example - Move Main Pivot](https://www.babylonjs-playground.com/#F15U0G#61)
 
-Changing the connected axis changes the local axis of rotation of the connected body and re-orientates the connected body.
-* [Playground Example Cannon.js - Move Connected Axis](https://www.babylonjs-playground.com/#F15U0G#45)
-* [Playground Example Oimo.js - Move Connected Axis](https://www.babylonjs-playground.com/#F15U0G#46)
-* [Playground Example Ammo.js - Move Connected Axis](https://www.babylonjs-playground.com/#F15U0G#47)
+Changing the connected axis changes the local axis of rotation of the connected body and re-orientates the connected body. (CANNON DIFF)
+* [Playground Example - Move Connected Axis](https://www.babylonjs-playground.com/#F15U0G#62)
 
 Changing the main axis changes the main axis of rotation of the connected body and re-orientates the connected body.
-* [Playground Example Cannon.js - Move Main Axis](https://www.babylonjs-playground.com/#F15U0G#48)
-* [Playground Example Oimo.js - Move Main Axis](https://www.babylonjs-playground.com/#F15U0G#49)
-* [Playground Example Ammo.js - Move Main Axis](https://www.babylonjs-playground.com/#F15U0G#50)
+* [Playground Example - Move Main Axis](https://www.babylonjs-playground.com/#F15U0G#63)
 
 # Further Reading
 

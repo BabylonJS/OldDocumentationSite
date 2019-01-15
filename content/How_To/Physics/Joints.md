@@ -6,13 +6,7 @@ PG_TITLE: How To Use Joints
 
 A joint in a physics engine is a constraining feature between two bodies. This area has the largest differences between the physics engine both in the joints available and the names used. Not all native joints are available in some plugins.
 
-This section considers the differences between the way joints behave in the three physics engines 
-
-1. Cannon.js;
-2. Oimo.js;
-3. Ammo.js
-
-as well as any differences in using them. Playgrounds are available to check out the coding. In the playgrounds, where appropriate, the physics' engine used can be changed by selecting which ones to comment out.
+Playgrounds are available to check out the coding. In the playgrounds the physics' engine used can be changed by selecting which ones to comment out.
 
 See [How to Use The Physics' Engines](/how_to/using_the_physics_engine) for an overall view of setting up and using the three plugins.
 
@@ -90,9 +84,7 @@ mainImpostor.addJoint(connectedImpostor, joint);
 ```
 where the `jointData` object contains the properties for the joint.
 
-**Note 1** In the following examples the impulse force, as with all forces, in `Ammo.js` the contact point is given in the body's local coordinates and in `Cannon.js` and `Oimo.js` are given world space.
-
-**Note 2** `Ammo.js` for some as yet unexplained reason sometimes does not apply an impulse if triggered through a button. To ensure triggering an added direct impulse with a smallish size (that does not overcome inertia) is applied after joint construction. It is hoped that this issue can be resolved in the future.
+**Note** `Ammo.js` for some as yet unexplained reason sometimes does not apply an impulse if triggered through a button. To ensure triggering an added direct impulse with a smallish size (that does not overcome inertia) is applied after joint construction. It is hoped that this issue can be resolved in the future.
 
 ```javascript
 impostor.applyImpulse(impulseDirection.scale(0.01), contactLocalRefPoint);
@@ -114,70 +106,40 @@ A hinge joint can also be created with a helper class
 var joint1 = new BABYLON.HingeJoint(jointData);
 ```
 **_PhysicsJoint Playgrounds_**  
-* [Playground Example Cannon.js and Oimo.js - Hinge as Sphere - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18)
-* [Playground Example Ammo.js - Hinge as Sphere - Box and  Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#1)
+* [Playground Example - Hinge as Sphere - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#32)
 
 **_Helper Class Playgrounds_**  
-* [Playground Example Cannon.js and Oimo.js - Hinge as Sphere - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#16)
-* [Playground Example Ammo.js - Hinge as Sphere - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#17)
+* [Playground Example - Hinge as Sphere - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#55)
 
 Since a hinge gives movement about only one axis it would seem to make sense to replace the representation of the hinge with a cylinder. Doing this, reshaping the box and keeping the sphere mesh imposter as a sphere does produce changes.
 
 In this case, for all the physics' engines whatever the direction of impulse set it is applied in a direction perpendicular to the hinge axis.
 
 **_PhysicsJoint Playgrounds_**  
-* [Playground Example Cannon.js and Oimo.js - Hinge as Cylinder - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#2)
-* [Playground Example Ammo.js - Hinge as Cylinder - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#3)
+* [Playground Example - Hinge as Cylinder - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#33)
 
 **_Helper Class Playgrounds_**  
-* [Playground Example Cannon.js and Oimo.js - Hinge as Cylinder - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#18)
-* [Playground Example Ammo.js - Hinge as Cylinder - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#19)
+* [Playground Example Cannon.js and Oimo.js - Hinge as Cylinder - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#56)
 
 
-Replacing the sphere mesh imposter with a cylinder imposter produces further changes. 
- 
-For `Cannon.js` you need to swap the y and z values in the mainAxis vector only, for a correct rotation direction
-
-**_PhysicsJoint Playground_**  
-* [Playground Example Cannon.js - Hinge as Cylinder - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#UFVU18#4)
-
-**_Helper Class Playground_**  
-* [Playground Example Cannon.js - Hinge as Cylinder - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#F15U0G#20)
-
-This is not necessary for `Oimo.js` and `Ammo.js`
+You can, of course, use a cylinder impostor for the cylinder mesh
 
 **_PhysicsJoint Playgrounds_**  
-* [Playground Example Oimo.js - Hinge as Cylinder - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#UFVU18#5)
-* [Playground Example Ammo.js - Hinge - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#UFVU18#6)
+* [Playground Example Cannon.js and Oimo.js - Hinge as Cylinder - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#RHBQY9#13)
 
 **_Helper Class Playgrounds_** 
-* [Playground Example Oimo.js - Hinge as Cylinder - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#F15U0G#21)
-* [Playground Example Ammo.js - Hinge as Cylinder - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#F15U0G#22)
+* [Playground Example Cannon and Oimo.js - Hinge as Cylinder - Box and Cylinder Imposters](https://www.babylonjs-playground.com/#RHBQY9#14)
         
 ### Ball And Socket Joint
 For a ball and socket joint a force can produce rotation about all three axes.
 
-`Cannon.js` behaves quite differently from the other two. 
-
-For `Cannon.js` the  `jointData` object for a ball and socket contains the following properties
-
-* mainPivot: Vector3; the center of mass that the connected body rotates around.
-* connectedPivot: Vector3; use yet to be determined.
-
-For BJS Versions before 4.0 in `Cannon.js`, for a ball and socket joint, the initial position of the connected body is moved to the position of the main body. In order for a connected body to appear to orbit a body a dummy (non physics based) mesh should be positioned to represent the body being orbited. The position of the main body's pivot should be the position of the dummy body.
-
-**_PhysicsJoint Playground_**  
-* [Playground Example BJS ver. < 4.0 - Cannon.js - Ball and Socket - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#12)
-
-In `Oimo.js` and `Ammo.js`, (and BJS Versions 4.0 or later `Cannon.js`) for a ball and socket joint, the positioning is determined by the connected pivot. The `jointData` object for a ball and socket contains the following properties
+The positioning of the connected body is determined by the connected pivot. The `jointData` object for a ball and socket contains the following properties
 
 * mainPivot: Vector3; the pivot point for the main body.
 * connectedPivot: vector3; the pivot point for the connected body, the negative of the connected body's position.
 
 **_PhysicsJoint Playground_** 
-* [Playground Example Oimo.js - Ball and Socket - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#10)
-* [Playground Example Ammo.js - Ball and Socket - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#11)
-* [Playground Example BJS ver. >= 4.0 - Cannon.js - Ball and Socket - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#26)
+* [Playground Example - Ball and Socket - Box and Sphere Imposters](https://www.babylonjs-playground.com/#RHBQY9#15)
 
 ### Wheel Joint
 
@@ -190,17 +152,17 @@ The `jointData` object for a hinge contains the following properties
 * mainPivot: Vector3; the pivot point for the main body.
 * connectedPivot: vector3; the pivot point for the connected body, the negative of the connected body's position.
 
-**Note** In the `Oimo.js` playgrounds changing the contact point of the force will not produce a spin around the axis perpendicular to the sphere's surface.  Since the helper class uses the `Point2PointConstraint` in `Ammo.js` a change of contact point can produce a spin around the axis perpendicular to the sphere's surface.
+**Note** In the `Oimo.js` playgrounds changing the contact point of the force will not produce a spin around the axis perpendicular to the sphere's surface.  
 
 **_PhysicsJoint Playground_**  
 * [Playground Example Oimo.js - Wheel - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#7)
 
-The `PhysicsJoint` called `Hinge2Joint` can be used as an alternative. However when using the helper class only
+The `PhysicsJoint` called `Hinge2Joint` can be used as an alternative. Note however that there is no helper call `WheelJoint` and the helper must be
 
 ```javascript
 var joint1 = new BABYLON.Hinge2Joint(jointData);
 ```
-is available. When this helper class is used with `Ammo.js` it forms a `BallAndSocketJoint` not a `WheelJoint`.
+When this helper class is used with `Ammo.js` it forms a `BallAndSocketJoint` not a `WheelJoint`. So a change of contact point can produce a spin around the axis perpendicular to the sphere's surface when using `Ammo.js`.
 
 **_Helper Class Playgrounds_**  
 * [Playground Example Oimo.js - Hinge2 - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#26) 
@@ -233,12 +195,10 @@ The `jointData` object for a slider contains the following properties
 ### Distance Joint
 
 **_PhysicsJoint Playgrounds_**  
-* [Playground Example Cannon.js and Oimo.js - Distance - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#13)
-* [Playground Example Ammo.js - Distance - Both Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#14)
+* [Playground Example - Distance - Box and Sphere Imposters](https://www.babylonjs-playground.com/#UFVU18#34)
 
 **_Helper Class Playgrounds_**  
-* [Playground Example Cannon.js and Oimo.js - Distance - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#14)
-* [Playground Example Ammo.js - Distance - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#15)
+* [Playground Example - Distance - Box and Sphere Imposters](https://www.babylonjs-playground.com/#F15U0G#57)
 
 ### LockJoint
 
@@ -295,22 +255,17 @@ For `Oimo` a large force and a larger maximum force are needed and the size of t
 ### Hinge Motor
 
 **_MotorEnabledJoint Playgrounds_** 
-* [Playground Example Cannon.js - Hinge Small Force - No Maximum](https://www.babylonjs-playground.com/#UFVU18#22)
-* [Playground Example Oimo.js - Hinge Large Force Needed - Large Maximum Needed](https://www.babylonjs-playground.com/#UFVU18#23)
-* [Playground Example Ammo.js - Hinge Small Force - No Maximum](https://www.babylonjs-playground.com/#UFVU18#25)
+* [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#UFVU18#35)
 
 **_Helper Class Playgrounds_** 
-* [Playground Example Cannon.js - Hinge Small Force - No Maximum](https://www.babylonjs-playground.com/#F15U0G#29)
-* [Playground Example Oimo.js - Hinge Large Force Needed - Large Maximum Needed](https://www.babylonjs-playground.com/#F15U0G#30)
-* [Playground Example Ammo.js - Hinge Small Force - No Maximum](https://www.babylonjs-playground.com/#F15U0G#31)
-
+* [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#F15U0G#58)
 
 ### Wheel (Hinge2) Motor
 
 **_MotorEnabledJoint Playgrounds_** 
 * [Playground Example Oimo.js - Wheel Z Axis](https://www.babylonjs-playground.com/#UFVU18#28)
 * [Playground Example Oimo.js - Wheel Y Axis](https://www.babylonjs-playground.com/#UFVU18#29)
-* [Playground Example Oimo.js - Wheel Y Axis](https://www.babylonjs-playground.com/#UFVU18#30)
+* [Playground Example Oimo.js - Wheel X Axis](https://www.babylonjs-playground.com/#UFVU18#30)
 
 ### Slider Motor
 
