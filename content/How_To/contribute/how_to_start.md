@@ -183,7 +183,7 @@ Install these using your CLI
 npm install -g typescript
 npm install -g gulp@4.0.0
 ```
-At the time of writing the version of Gulp needed was 4.0.0. The current [What's New](http://doc.babylonjs.com/whats-new) should indicate if there have been any changes of version. You can also look in the Babylon.js repository for ```package.json``` in ```Tools/Publisher``` which will give the version number for Gulp and Typescript.
+At the time of writing the version of Gulp needed was 4.0.0. The current [What's New](//doc.babylonjs.com/whats-new) should indicate if there have been any changes of version. You can also look in the Babylon.js repository for ```package.json``` in ```Tools/Publisher``` which will give the version number for Gulp and Typescript.
 
 ### The Build
 
@@ -195,12 +195,12 @@ In your CLI make sure your are in the directory ```Babylon.js/Tools/Gulp``` and 
 
 ```
 npm install
-gulp --max-old-space-size=8192
+npm run build
 ```
 
 The ```npm install``` places a number of files in the current directory (This is different to ```npm -g install``` which makes npm available in any folder)
 
-Gulp --max-old-space-size=8192 builds everything you need to test.
+The ```npm run build``` builds everything you need to test.
 
 ### Do Not Commit
 
@@ -294,7 +294,7 @@ A reminder to read the [contribution guidelines](https://github.com/BabylonJS/Ba
 
 Pull Requests are automatically validated.  One check is for styling and you can check that quickly with `gulp tsLint`.  If you are unsure, you can validate everything with a full build:
 ```
-gulp --max-old-space-size=8192
+npm run build
 ```
 
 When you are happy that all testing has been validated, guidelines followed, and only necessary files committed then push your local master to your origin github repository with your Git Client or from the CLI with
@@ -394,7 +394,7 @@ npm install
 ## Local Build
 Babylon.js/Tools/Gulp folder
 ```
-gulp --max-old-space-size=8192
+npm run build
 ```
 
 ## Webserver

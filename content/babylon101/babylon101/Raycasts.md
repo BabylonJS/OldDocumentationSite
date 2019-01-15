@@ -10,20 +10,20 @@ It's used to check collision or intersection in the scene between meshes and thi
 
 In the previous tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
 using the function scene.pick(scene.pointerX, scene.pointerY) : 
-http://doc.babylonjs.com/How_To/picking_collisions
+//doc.babylonjs.com/How_To/picking_collisions
 
 But here we will see that we can throw ray from any point and in any direction. 
 For example in a shooting game at 3rd person view : collisions between our bullets and obstacles.
 
 **Documentation of classes :**
 
-http://doc.babylonjs.com/classes/3.0/ray
+//doc.babylonjs.com/classes/3.0/ray
 You have first to create a ray.
 
-http://doc.babylonjs.com/classes/3.0/scene
+//doc.babylonjs.com/classes/3.0/scene
 The method scene.pickWithRay() throws a ray in your scene to pick a mesh.
 
-http://doc.babylonjs.com/classes/3.0/pickinginfo
+//doc.babylonjs.com/classes/3.0/pickinginfo
 And get the picking info.
 
 ______

@@ -257,6 +257,9 @@ For the texture, the Babylon specular color map is either:
 
 Even though a specular level map should be a grayscale, its 3 components (RGB) are multiplied individually to the specular color.
 
+## Multi-Materials
+Multi-Materials are supported, but __inputting a Multi-Material into another Multi-Material is not supported__.
+
 ## Physical materials
 
 The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#pbr-materials)
