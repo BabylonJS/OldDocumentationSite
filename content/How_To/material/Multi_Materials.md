@@ -49,9 +49,9 @@ To define multiple submeshes, you just have to use this code:
 sphere.subMeshes = [];
 var verticesCount = sphere.getTotalVertices();
 
-sphere.subMeshes.push(new BABYLON.SubMesh(0, 0, verticesCount, 0, 900, sphere));
-sphere.subMeshes.push(new BABYLON.SubMesh(1, 0, verticesCount, 900, 900, sphere));
-sphere.subMeshes.push(new BABYLON.SubMesh(2, 0, verticesCount, 1800, 2088, sphere));
+new BABYLON.SubMesh(0, 0, verticesCount, 0, 900, sphere);
+new BABYLON.SubMesh(1, 0, verticesCount, 900, 900, sphere);
+new BABYLON.SubMesh(2, 0, verticesCount, 1800, 2088, sphere);
 ```
 
 In this case, you will have 3 parts:
