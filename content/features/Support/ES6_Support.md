@@ -291,7 +291,7 @@ From the begining you could wonder why using these ES6 packages vs the default b
 
 This means the previous example is now requiring about 700Kb vs 2.3Mb before.
 
-**Please not we are continuing to improve our min package size by decoupling a bit more our packages until our final 4.0 release.**
+**Please note we are continuing to improve our min package size by decoupling a bit more our packages until our final 4.0 release.**
 
 **As you will see in the next paragraph, you also currently need to target individual files to fully benefit from tree shaking in your app.**
 

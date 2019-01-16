@@ -168,7 +168,7 @@ If you wish to benefit from tree shaking and other nitty gritties, you can now r
 * [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
 * [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The BabylonJS Inspector for es 6.
 
-Please not that you can not mix ES6 and our legacy packages.
+Please note that you can not mix ES6 and our legacy packages.
 
 ```javascript
 import { Engine } from '@babylonjs/core/Engines/engine'
