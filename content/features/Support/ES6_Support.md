@@ -15,7 +15,7 @@ We offer babylon.js' core and its modules as npm packages. The following are ava
 * [@babylonjs/core](https://www.npmjs.com/package/@babylonjs/core) - Babylon's core.
 * [@babylonjs/materials](https://www.npmjs.com/package/@babylonjs/materials) - a collection of Babylon-supported advanced materials.
 * [@babylonjs/loaders](https://www.npmjs.com/package/@babylonjs/loaders) -  All of Babylon's official loaders (OBJ, STL, glTF)
-* [@babylonjs/post-process](https://www.npmjs.com/package/@babylonjs/post-process) - Babylon's post processes.
+* [@babylonjs/post-processes](https://www.npmjs.com/package/@babylonjs/post-processes) - Babylon's post processes.
 * [@babylonjs/procedural-textures](https://www.npmjs.com/package/@babylonjs/procedural-textures) - Officially supported procedural textures
 * [@babylonjs/serializers](https://www.npmjs.com/package/@babylonjs/serializers) - Scene / mesh serializers.
 * [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
