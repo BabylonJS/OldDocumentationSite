@@ -44,3 +44,17 @@ scene.enablePhysics(null, new BABYLON.CannonJSPlugin()),
 ```
 
 The first parameter can be used to define gravity (which is (0, -9.82, 0) by default).
+
+# Further Reading
+
+## Basic - L1
+
+[How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
+[How To Use Forces](/how_to/forces)  
+[How to use Joints](/how_to/joints)  
+[How To Use Pivots and Axes](/how_to/pivots)  
+[How To Create Compound Bodies](/how_to/compounds)
+
+## Mid Level - L2
+
+[How To Use Advanced Features](/how_to/Using_Advanced_Physics_Features)

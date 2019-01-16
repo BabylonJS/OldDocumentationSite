@@ -666,6 +666,26 @@
                     "filename": "Using_The_Physics_Engine"
                 },
                 {
+                    "title": "Use Forces",
+                    "level": 1,
+                    "filename": "Forces"
+                },
+                {
+                    "title": "Use Joints",
+                    "level": 1,
+                    "filename": "Joints"
+                },
+                {
+                    "title": "Use Pivots and Axes",
+                    "level": 1,
+                    "filename": "Pivots"
+                },
+                {
+                    "title": "Create Compound Bodies",
+                    "level": 1,
+                    "filename": "Compounds"
+                },
+                {
                     "title": "Use Advanced Physics Features",
                     "level": 2,
                     "filename": "Using_Advanced_Physics_Features"
