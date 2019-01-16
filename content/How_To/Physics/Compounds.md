@@ -7,7 +7,7 @@ PG_TITLE: How To Create Compound Bodies
 ![Skull](/img/how_to/physics/skull.jpg)
 The skull is an interesting shape to try to compound and you can see it in all its magnificence [here](https://www.babylonjs-playground.com/#UKNERM#0)
 
-It is roughly composed of a sphere for most of it with a box around the jaw area, with a bit of work involved to position the sphere and box as well as possible. The skull is compounded to these two covering meshes.
+It is roughly composed of a sphere for most of it with a box around the jaw area, with a bit of work involved to position the sphere and box as best as possible. The skull is compounded to these two covering meshes.
 
 ![Compound Skull](/img/how_to/physics/greenSkull.jpg)
 

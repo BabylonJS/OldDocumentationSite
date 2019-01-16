@@ -12,13 +12,13 @@ Through the use of playgrounds this section considers how the pivot and axis par
 
 See [How to Use The Physics' Engines](/how_to/using_the_physics_engine) for an overall view of setting up and using the three plugins.
 
-In all playgrounds the gravity is zero, the X axis is red, the Y axis green and the Z axis blue. A `Cannon.js` cylinder imposter is created with the Z axis up rather than the Y axis so for the mainAxis and mainPivot the y and z values need to be swapped in the vector.
+In all playgrounds the gravity is zero, the X axis is red, the Y axis green and the Z axis blue. 
 
 The yellow sphere marks the position of the main pivot and is the center of rotation for the box around the axis of the main body. The origin of the box's local axes marks the connected pivot.
 
 **Note 1** The world position of the box is the negative of the position of the connected pivot.  
 **Note 2** When the start position and rotation of the box does not match that given by the connected pivot and connected axis the box will be re-aligned over several of the starting frames.  
-**Note 3** The box rotates in the opposite direction in `Oimo.js`.
+**Note 3** In some instances pivot and axes changes in `Cannon.js` can result in the movement of the body in the opposite direction to those of `Oimo.js` and `Ammo.js`.
 
 ## Playground Examples
 
@@ -31,7 +31,7 @@ Changing the position of the connected pivot sets the position of the connected 
 Changing the position of the main pivot changes the center of rotation of the connected body and re-positions the connected pivot relative to this.
 * [Playground Example - Move Main Pivot](https://www.babylonjs-playground.com/#F15U0G#61)
 
-Changing the connected axis changes the local axis of rotation of the connected body and re-orientates the connected body. (CANNON DIFF)
+Changing the connected axis changes the local axis of rotation of the connected body and re-orientates the connected body.
 * [Playground Example - Move Connected Axis](https://www.babylonjs-playground.com/#F15U0G#62)
 
 Changing the main axis changes the main axis of rotation of the connected body and re-orientates the connected body.

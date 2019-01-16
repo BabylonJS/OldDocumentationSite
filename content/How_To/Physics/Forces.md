@@ -65,8 +65,8 @@ physicsEngine.setGravity(new BABYLON.Vector3(0, -5, 0))
 
 ### Impulses
 
-An impulse is a force applied to a body in an instance which will change the current linear the impulse acts on the body will affect the change in the velocities. Impulses acting at the center of mass of the body will not change the angular velocity.
-linear velocity and/or the angular velocity of the body. Unless other forces act on it the body will continue with the new velocities. W
+An impulse is a force applied to a body in an instance which will change the current linear velocity and/or the angular velocity of the body. Impulses acting at the center of mass of the body will not change the angular velocity.  Unless other forces act on it the body will continue with the new velocities.
+
 An impulse is applied to a body's physics imposter.
 
 Applying an impulse requires a vector giving the magnitude and direction of the impulse and the position vector of the contact point of the impulse. The contact point of the impulse is given in world coordinates. 
