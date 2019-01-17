@@ -1,14 +1,14 @@
 # Azure Media Player 360 Video Plugin
 
 ## Introduction 
-The [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html) 360 Video is a plugin for AMP (aka [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html)) using BabylonJS in order to facilitate the integration of 360 videos in your Web App.
+The [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html) 360 Video is a plugin for AMP (aka [Azure media player](http://amp.azure.net/libs/amp/latest/docs/index.html)) using Babylon.js in order to facilitate the integration of 360 videos in your Web App.
 
 The plugin natively supports VR headsets (Windows Mixed Reality, etc.).
 
 [Online Demo of the plugin](http://www.babylonjs.com/Demos/Amp360Video/)
 
 ## How to Run Locally
-First, clone the BabylonJS extensions repository:
+First, clone the Babylon.js extensions repository:
 ```
 git clone https://github.com/BabylonJS/Extensions.git
 ```
@@ -21,23 +21,23 @@ npm install
 npm start
 ```
 
-You can now access your [local test](http://localhost:1337/)
+The hosting web page will automatically open (using webpack-dev-server).
 
 ## How it works
-The plugin located in the ```amp-360video``` folder contains a [videojs](https://docs.videojs.com/tutorial-plugins.html) plugin compatible with AMP version 2.1.7.
+The 360 video is a [videojs](https://docs.videojs.com/tutorial-plugins.html) plugin compatible with AMP version 2.1.7.
 
-The plugin depends on BabylonJS in order to enable 3D functionalities in AMP.
+The plugin depends on Babylon.js in order to enable 3D functionalities in AMP.
 
 For more information about AMP, you can access their [documentation](http://amp.azure.net/libs/amp/latest/docs/index.html).
 
 ## How use in your web site
-After deploying both the js and css from the ```amp-360video``` folder of the [Extension repository](https://github.com/BabylonJS/Extensions/tree/master/Amp360Video) to your website, you can follow the following steps:
+After deploying the bundled javascript file [`dist/amp-360video.js`](https://github.com/BabylonJS/Extensions/blob/master/Amp360Video/dist/amp-360video.js) from the dist directory to your WebSite you can follow the steps below.
+
+> Note: if you were using the plugin before, you might have needed to reference Babylon.js in your site. We have now released a bundle ensuring the smallest delivery possible.
 
 ### External Resources
-Include the following resources in your html:
+Include the following resources in you html:
 ```
-<!-- Link to the last version of BabylonJS -->
-<script src="https://preview.babylonjs.com/babylon.js"></script>
 <!-- Link to pep.js to ensure pointer events work consistently in all browsers -->
 <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
 
@@ -46,8 +46,8 @@ Include the following resources in your html:
 <script src="https://amp.azure.net/libs/amp/2.1.7/azuremediaplayer.min.js"></script>
 ```
 
-### Plugin Resources
-You can either embed the plugin in your HTML or initialize it in code as specified in the [AMP documentation](http://amp.azure.net/libs/amp/latest/docs/index.html#plugins).
+### Plugin Setup
+You can either embed the plugin in your HTML or initialize it by code like specified in the [AMP documentation](http://amp.azure.net/libs/amp/latest/docs/index.html#plugins).
 
 #### Html Initialization
 Add the **threeSixty plugin** to your video data-setup:
@@ -121,7 +121,7 @@ plugins: {
 ```
 
 ### Update the camera FOV
-By default the plugin is delivered with a camera of a 1.2 radians field of view.
+By default the plugin is delivered with a camera of a 1.18 radians field of view.
 
 In order to change it if needed, you can specify a different value in your options:
 
@@ -141,18 +141,18 @@ plugins: {
 }
 ```
 
-## Update the default camera orientation
+### Update the default camera orientation
 In case the camera is not looking at what you expect when the video starts, you can use both options defaultCameraOrientationX and defaultCameraOrientationY to adapt the starting point of the camera to your use case. Those properties are angles respectively around the x and y axis defined in radians.
 
 In order to change them, you can specify a different value in your options:
 
-### By HTML configuration
+#### By HTML configuration
 In the data-setup plugin section:
 ```
 "plugins": { "threeSixty": { "defaultCameraOrientationX": 1 } }
 ```
 
-### By code configuration
+#### By code configuration
 This works exactly the same as the previous point. In the options of your plugin:
 ```
 plugins: { 
@@ -161,5 +161,3 @@ plugins: {
     }
 }
 ```
-
-
