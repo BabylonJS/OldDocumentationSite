@@ -745,6 +745,10 @@ All children must have a defined width or height (depending on the orientation) 
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
+Property|Type|Default|Comments
+--------|----|-------|--------
+isVertical|boolean|false|Orientation of the panel
+
 Here is an example of a StackPanel: https://www.babylonjs-playground.com/#XCPP9Y#11
 
 ### ScrollViewer
