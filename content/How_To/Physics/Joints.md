@@ -261,6 +261,17 @@ The helper classes for `HingeJoint` and `Hinge2Joint` are already motorised and 
 
 ## Playground Examples
 
+### Hinge Motor Speed Only
+
+**_MotorEnabledJoint Playground_** 
+* [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#UFVU18#35)
+
+**_Helper Class Playground_** 
+* [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#F15U0G#58)
+
+
+### Hinge Motor Speed and Torque (Force)
+
 Different engines use differing scales for the torque and a little trial and error is often necessary to determine the required effect.
 
 * For Cannon.js try starting with torque values between 1/100 to 1/10 of the mass value;
@@ -268,8 +279,6 @@ Different engines use differing scales for the torque and a little trial and err
 * For Oimo.js try starting with torque values about 1 to 10 times the mass value.
 
 In the hinge motor playgrounds below there are two wheels you can try out different torque values for each wheel to see how they vary. Note that they are in zero gravity, with zero friction and the axel has zero mass. In other situations torque values may need a larger factor than those given above.
-
-### Hinge Motor
 
 **_MotorEnabledJoint Playground_** 
 * [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#WWNQ10#19)
