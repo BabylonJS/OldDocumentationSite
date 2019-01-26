@@ -274,9 +274,9 @@ The helper classes for `HingeJoint` and `Hinge2Joint` are already motorised and 
 
 Different engines use differing scales for the torque and a little trial and error is often necessary to determine the required effect.
 
-* For Cannon.js try starting with torque values between 1/100 to 1/10 of the mass value;
-* For Ammo.js try starting with torque values between 1/100 and 1/10 of mass value;
-* For Oimo.js try starting with torque values about 1 to 10 times the mass value.
+* For Cannon.js try starting with torque values between 1/100 to 1/10 of the total mass value;
+* For Ammo.js try starting with torque values between 1/100 and 1/10 of total mass value;
+* For Oimo.js try starting with torque values about 1 to 10 times the total mass value.
 
 In the hinge motor playgrounds below there are two wheels you can try out different torque values for each wheel to see how they vary. Note that they are in zero gravity, with zero friction and the axel has zero mass. In other situations torque values may need a larger factor than those given above.
 
