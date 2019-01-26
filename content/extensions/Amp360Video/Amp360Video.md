@@ -24,16 +24,16 @@ npm start
 The hosting web page will automatically open (using webpack-dev-server).
 
 ## How it works
-The 360 video is a [videojs](https://docs.videojs.com/tutorial-plugins.html) plugin compatible with AMP version 2.1.7.
+The 360 video is a [videojs](https://docs.videojs.com/tutorial-plugins.html) plugin compatible with from AMP version 2.1.7 to the latest (2.2.3 at time of writing).
 
 The plugin depends on Babylon.js in order to enable 3D functionalities in AMP.
 
 For more information about AMP, you can access their [documentation](http://amp.azure.net/libs/amp/latest/docs/index.html).
 
 ## How use in your web site
-After deploying the bundled javascript file [`dist/amp-360video.js`](https://github.com/BabylonJS/Extensions/blob/master/Amp360Video/dist/amp-360video.js) from the dist directory to your WebSite you can follow the steps below.
+After deploying the bundled javascript file [`dist/amp-360video.js`](https://raw.githubusercontent.com/BabylonJS/Extensions/master/Amp360Video/dist/amp-360video.js) from the dist directory to your WebSite you can follow the steps below.
 
-> Note: if you were using the plugin before, you might have needed to reference Babylon.js in your site. We have now released a bundle ensuring the smallest delivery possible.
+> Note: if you were using the plugin before, you might have needed to reference Babylon.js in your site. We have now released a bundle ensuring the smallest delivery possible so the reference to Babylon.js is not required anymore.
 
 ### External Resources
 Include the following resources in you html:
@@ -42,8 +42,15 @@ Include the following resources in you html:
 <script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
 
 <!-- Link to the AMP resources -->
-<link href="https://amp.azure.net/libs/amp/2.1.7/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
-<script src="https://amp.azure.net/libs/amp/2.1.7/azuremediaplayer.min.js"></script>
+<link href="https://amp.azure.net/libs/amp/2.2.3/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+<script src="https://amp.azure.net/libs/amp/2.2.3/azuremediaplayer.min.js"></script>
+```
+
+### Plugin Script
+Include the link to your previously downloaded plugin script in your HTML:
+```
+<!-- Link to the plugin file -->
+<script src="amp-360video.js"></script>
 ```
 
 ### Plugin Setup
@@ -162,13 +169,13 @@ plugins: {
 }
 ```
 
-### Enable WebGL2
-The default setup disables Webgl2 to enhance the compatibility with all platforms. Would you wish to enable it in your app for better performances, you can rely on the setup below:
+### Disable WebGL2
+The default setup enables Webgl2 to enhance the performances of the application. In case of compatibility issues with all platforms, would you wish to disable it, you can rely on the setup below:
 
 #### By HTML configuration
 In the data-setup plugin section:
 ```
-"plugins": { "threeSixty": { "disableWebGL2Support": false } }
+"plugins": { "threeSixty": { "disableWebGL2Support": true } }
 ```
 
 #### By code configuration
@@ -176,7 +183,28 @@ This works exactly the same as the previous point. In the options of your plugin
 ```
 plugins: { 
     "threeSixty": {
-        disableWebGL2Support: false
+        disableWebGL2Support: true
+    }
+}
+```
+
+### Adapt to native resolution
+To provide the best performances, by default the plugin does not account for you [devicePixelRatio](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio) setup. It renders 1 to 1 with CSS pixels. In case of HiDPI or Retina display the ratio might be pretty high meaning if you want to get the most of your pixels (using physical pixels), the plugin should for instance render 4 times more pixels than the actual CSS number of pixels.
+
+You can use the hardwareScalingLevel settings of the plugin to chose how many times the Physical Pixels of your device are multiplied to define the number of CSS pixels. For instance a value of 0.5 means there would be twice as much pixels on width and height than the number of CSS pixels enhancing a lot the resolution.
+
+#### By HTML configuration
+In the data-setup plugin section:
+```
+"plugins": { "threeSixty": { "hardwareScalingLevel": 0.5 } }
+```
+
+#### By code configuration
+This works exactly the same as the previous point. In the options of your plugin:
+```
+plugins: { 
+    "threeSixty": {
+        hardwareScalingLevel: 0.5
     }
 }
 ```
