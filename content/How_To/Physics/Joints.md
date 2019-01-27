@@ -219,7 +219,7 @@ The `jointData` object for a distance joint contains the following properties
 
 # Motors
 
-A motor requires a target speed (angular velocity) and the maximum force (torque) that can be applied by the motor. It is possible to set a torque that is insufficient for it to reach the target speed. Depending on the shape and mass of the body the torque has to overcome the moment of inertia of the body. A too low value for the torque will make the body struggle and stutter to reach the target speed. Even attempting to simulate a virtual motor in zero gravity with no friction and a zero mass for the axel joint turning a cylinder can make determining an appropriate value for the torque difficult. Adding gravity, friction and further bodies, that the motored body has to move, makes it even more difficult. Sometimes in your project all you will want is for the motor to turn. This can be achieved by just setting the target speed (the motor will be over torqued by default), as in
+A motor requires a target speed (angular velocity) and the maximum force (torque) that can be applied by the motor. It is possible to set a torque that is insufficient for it to reach the target speed. Depending on the shape and mass of the body the torque has to overcome the moment of inertia of the body. A too low value for the torque will make the body struggle and stutter to reach the target speed. Even attempting to simulate a virtual motor in zero gravity with no friction and a zero mass for the axel joint turning a cylinder can make determining an appropriate value for the torque difficult. Since moment of inertia, which determines torque,  also depends on the volume of the body it is a good idea to keep linear dimensions around 10 or less though it is probably worth experimenting to get obtain what you need. Adding gravity, friction and further bodies, that the motored body has to move, makes it even more difficult. Sometimes in your project all you will want is for the motor to turn. This can be achieved by just setting the target speed (the motor will be over torqued by default), as in
 
 ```javascript
 joint.setMotor(speed);
@@ -272,7 +272,7 @@ The helper classes for `HingeJoint` and `Hinge2Joint` are already motorised and 
 
 ### Hinge Motor Speed and Torque (Force)
 
-Different engines use differing scales for the torque and a little trial and error is often necessary to determine the required effect.
+Different engines use differing scales for the torque and a little trial and error is often necessary to determine the required effect. 
 
 * For Cannon.js try starting with torque values between 1/100 to 1/10 of the total mass value;
 * For Ammo.js try starting with torque values between 1/100 and 1/10 of total mass value;
