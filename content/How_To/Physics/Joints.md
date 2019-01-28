@@ -219,6 +219,18 @@ The `jointData` object for a distance joint contains the following properties
 
 # Motors
 
+A motor requires a target speed (angular velocity) and the maximum force (torque) that can be applied by the motor. It is possible to set a torque that is insufficient for it to reach the target speed. Depending on the shape and mass of the body the torque has to overcome the moment of inertia of the body. A too low value for the torque will make the body struggle and stutter to reach the target speed. Even attempting to simulate a virtual motor in zero gravity with no friction and a zero mass for the axel joint turning a cylinder can make determining an appropriate value for the torque difficult. Since moment of inertia, which determines torque,  also depends on the volume of the body it is a good idea to keep linear dimensions around 10 or less though it is probably worth experimenting to get obtain what you need. Adding gravity, friction and further bodies, that the motored body has to move, makes it even more difficult. Sometimes in your project all you will want is for the motor to turn. This can be achieved by just setting the target speed (the motor will be over torqued by default), as in
+
+```javascript
+joint.setMotor(speed);
+```
+
+At other times it will be important to set a value for the torque that limits the motor operation, you can do this with
+
+```javascript
+joint.setMotor(speed, force);
+```
+
 The table below shows the joints that a motor can be added to.
 
 | Babylon.js Joint | Cannon Motor | Oimo Motor | Ammo Motor |
@@ -241,22 +253,38 @@ var joint = new BABYLON.MotorEnabledJoint(BABYLON.PhysicsJoint.TYPE_OF_JOINT, jo
 
 mainImpostor.addJoint(connectedImpostor, joint);
 
-joint.setMotor(force, maximum value of force)
+joint.setMotor(target speed, maximum torque)
 ```
 
-The force and maximum value of force parameters are optional with default 0.
 
 The helper classes for `HingeJoint` and `Hinge2Joint` are already motorised and only `setMotor` is needed.
 
 ## Playground Examples
 
-### Hinge Motor
+### Hinge Motor Speed Only
 
 **_MotorEnabledJoint Playground_** 
 * [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#UFVU18#35)
 
 **_Helper Class Playground_** 
 * [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#F15U0G#58)
+
+
+### Hinge Motor Speed and Torque (Force)
+
+Different engines use differing scales for the torque and a little trial and error is often necessary to determine the required effect. 
+
+* For Cannon.js try starting with torque values between 1/100 to 1/10 of the total mass value;
+* For Ammo.js try starting with torque values between 1/100 and 1/10 of total mass value;
+* For Oimo.js try starting with torque values about 1 to 10 times the total mass value.
+
+In the hinge motor playgrounds below there are two wheels you can try out different torque values for each wheel to see how they vary. Note that they are in zero gravity, with zero friction and the axel has zero mass. In other situations torque values may need a larger factor than those given above.
+
+**_MotorEnabledJoint Playground_** 
+* [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#WWNQ10#19)
+
+**_Helper Class Playground_** 
+* [Playground Example - Hinge Motor](https://www.babylonjs-playground.com/#WWNQ10#20)
 
 ### Wheel (Hinge2) Motor
 
