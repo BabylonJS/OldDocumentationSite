@@ -127,7 +127,7 @@ The diffuse roughness map is used as ambient occlusion.
 
 ## Bump map
 
-The bump map (or normal map) and its weight are used.
+The bump map (or normal map) and its weight are used.  A tangent-space normal map can be directly connected to the Bump input.  Note that glTF does not support height maps.  Connecting a height map may yield to unexpected results.  __Normal Bump map nodes are currently not supported__.
 
 # Standard Surface Arnold material
 
