@@ -424,7 +424,7 @@ Playground demo (click to toggle positive/negative gravity) -  https://www.babyl
 
 [How To Use Forces](/how_to/forces)  
 [How to use Joints](/how_to/joints)  
-[How To Use Pivots and Axes](/how_to/pivots)  
+[How To Use Pivots and Axes](/how_to/joint_pivots)  
 [How To Create Compound Bodies](/how_to/compounds)
 
 ## Mid Level - L2
