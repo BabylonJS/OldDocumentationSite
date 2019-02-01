@@ -42,7 +42,7 @@ It is roughly composed of a sphere for most of it with a box around the jaw area
 [How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
 [How To Use Forces](/how_to/forces)   
 [How To Use Joints](/how_to/joints)   
-[How To Use Pivots and Axes](/how_to/pivots)  
+[How To Use Pivots and Axes](/how_to/joint_pivots)  
 
 ## Mid Level - L2
 

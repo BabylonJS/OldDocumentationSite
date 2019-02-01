@@ -490,6 +490,7 @@ displayThumb|boolean|true|Indicates if the thumb must be rendered (useful to sim
 isThumbCircle|boolean|false|Indicates if the thumb should be a circle (square if false)
 isThumbClamped|boolean|false|Indicates if the thumb should be clamped
 isVertical|boolean|false|Indicates that the slider will be rendered vertically instead of horizontally
+step|number|0|Indicates the degree of precision required for sldier values (0 means full precision where 0.01 means 2 digits precision)
 
 When using vertical slider, you have to make sure that height is bigger than width. The opposite has to be true when using `isVertical = false`.
 
