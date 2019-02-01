@@ -17,16 +17,23 @@ Sometimes you might want to load you own assets into the playground. Should the 
  ```javascript
 myGithubUserName/myRepository/commit/2bd79648e08709145cd9575e6679b2ea360f12f6
  ```
- change the /commit/ part to @
+ replace '/commit/' with '@'
 
  ```javascript
 myGithubUserName/myRepository@2bd79648e08709145cd9575e6679b2ea360f12f6
  ```
-Add at the front _http&#58;s://cdn.jsdelivr.net/gh/_
+Add at the front _https://cdn.jsdelivr.net/gh/_
 
-http&#58;s://cdn.jsdelivr.net/gh/myGithubUserName/myRepository@2bd79648e08709145cd9575e6679b2ea360f12f6
-
+ ```javascript
+https://cdn.jsdelivr.net/gh/myGithubUserName/myRepository@2bd79648e08709145cd9575e6679b2ea360f12f6
+ ```
 This becomes the URL address to the folder containing your file for use in `BABYLON.SceneLoader` for example.
+
+Here is how the example path to _myFile.babylon_ would look like:
+ ```javascript
+https://cdn.jsdelivr.net/gh/myGithubUserName/myRepository@2bd79648e08709145cd9575e6679b2ea360f12f6/myFile.babylon
+ ```
+
 
 ## Examples of External Assets
 
