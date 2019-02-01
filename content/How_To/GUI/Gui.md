@@ -132,7 +132,7 @@ paddingBottom|valueAndUnit|0px|Pixel
 paddingLeft|valueAndUnit|0px|Pixel
 paddingRight|valueAndUnit|0px|Pixel
 
-Please note that paddings are inside the control. This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
+The padding is the space around the control (on the outside) between it and its parent or sibling controls (like CSS margin when box-sizing is set to border-box). This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
 
 All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
