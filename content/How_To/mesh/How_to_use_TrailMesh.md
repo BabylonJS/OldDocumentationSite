@@ -7,7 +7,7 @@ PG_TITLE: How To Use TrailMesh
 `TrailMesh` creates a new `Mesh` that trails another.
 
 ```javascript
-var newTrail = new BABYLON.TrailMesh(name, generator, scene, diameter, length, material, autoStart);
+var newTrail = new BABYLON.TrailMesh(name, generator, scene, diameter, length, autoStart);
 
 newTrail.start();       //Starts the trailing mesh.
 newTrail.stop();        //Stops the trailing mesh.
@@ -20,17 +20,20 @@ newTrail.stop();        //Stops the trailing mesh.
 |scene| The scene to add this mesh to.|
 |diameter| Diameter of trailing mesh. Default is 1.|
 |length| Length of trailing mesh. Default is 60.|
-|material (optional)| Material to apply to trailing mesh. Defaults to scene default.|
 |autoStart (optional)| Automatically start trailing mesh. Default true.|
 
 TrailMesh will be affected by all modifications to the generator mesh. Using `bakeCurrentTransformIntoVertices` on the generator after scaling (and before a position shift) will prevent the TrailMesh from scaling.
 
 ## Example Usage
 ```javascript
+var trail = new BABYLON.TrailMesh('new', cube, scene, .5, 60, true);
+
 var sourceMat = new BABYLON.StandardMaterial('sourceMat', scene);
 sourceMat.emissiveColor = 
 sourceMat.diffuseColor = new BABYLON.Color3.Red();
 sourceMat.specularColor = new BABYLON.Color3.Black();
+
+trail.materail = sourceMat;
 
 var alpha = Math.PI;
 
@@ -40,8 +43,6 @@ cube.bakeCurrentTransformIntoVertices();
 cube.position.x = Math.sin(alpha)*10;
 cube.position.z = Math.cos(alpha)*10;
 cube.computeWorldMatrix(true);
-
-var trail = new BABYLON.TrailMesh('new', cube, scene, .5, 60, sourceMat, true);
 
 observer = scene.onBeforeRenderObservable.add(animate);
 function animate() {
