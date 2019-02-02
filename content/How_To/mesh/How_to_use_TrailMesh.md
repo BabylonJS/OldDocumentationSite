@@ -42,7 +42,7 @@ sourceMat.emissiveColor =
 sourceMat.diffuseColor = new BABYLON.Color3.Red();
 sourceMat.specularColor = new BABYLON.Color3.Black();
 
-trail.materail = sourceMat;
+trail.material = sourceMat;
 
 observer = scene.onBeforeRenderObservable.add(animate);
 function animate() {
