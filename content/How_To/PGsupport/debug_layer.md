@@ -12,11 +12,13 @@ You can display the Inspector by calling:
 scene.debugLayer.show();
 ```
 
+The `show` function will return a promise that you can use to know when the Inspector is loaded and visible.
+
 ## Loading
 
 **Provided** your project is running on a **server** the Inspector is automatically loaded from the BabylonJS server **when** it is called as above. 
 
-By default, this url is : `https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js`
+The latest version of the inspector can be pulled from: `https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js`
 
 You can update this URL by setting the variable:
 
@@ -75,6 +77,16 @@ scene.debugLayer.onSelectionChangedObservable.add((result) => {});
 ```
 
 The result object will be the new selected object.
+
+## Highlighting a specific entity
+
+By calling the following code, you can make sure to select a specific entity and highlight a specific portion of its property grid:
+
+```
+scene.debugLayer.show().then((layer) => {
+    layer.select(pbrmaterial, "ANISOTROPIC");
+});
+```
 
 ## Extensibility
 
