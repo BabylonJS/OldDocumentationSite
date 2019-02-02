@@ -18,8 +18,8 @@ newTrail.stop();        //Stops the trailing mesh.
 |name| The value used by scene.getMeshByName() to do a lookup.|
 |generator| The mesh to generate a trail.|
 |scene| The scene to add this mesh to.|
-|diameter| Diameter of trailing mesh. Default is 1.|
-|length| Length of trailing mesh. Default is 60.|
+|diameter (optional)| Diameter of trailing mesh. Default is 1.|
+|length (optional)| Length of trailing mesh. Default is 60.|
 |autoStart (optional)| Automatically start trailing mesh. Default true.|
 
 TrailMesh will be affected by all modifications to the generator mesh. Using `bakeCurrentTransformIntoVertices` on the generator after scaling (and before a position shift) will prevent the TrailMesh from scaling.
