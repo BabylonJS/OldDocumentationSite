@@ -74,7 +74,9 @@ So with the code above, you can use the first material on the top part of the sp
 
 ## With Merged Meshes
 
-When you [merge meshes](/how_to/How_to_Merge_Meshes) together with the final parameter (`subdivideWithSubMeshes`) set to true the subMeshes array is automatically created. You must assign the correct subMesh index to the correct material index.
+When you [merge meshes](/how_to/How_to_Merge_Meshes) together with the final parameter (`multiMultiMaterial`) set to true the subMeshes array is automatically created with all merging meshes' subMeshes. Each subMesh's material is also included in the resulting mesh's new multiMaterial. This feature ignores the parameter (`subdivideWithSubMeshes`).
+
+When you [merge meshes](/how_to/How_to_Merge_Meshes) together with the second to last parameter (`subdivideWithSubMeshes`) set to true the subMeshes array is automatically created with each merging mesh as a submesh of the new mesh. You must assign the correct subMesh index to the correct material index.
 
 When you form `mergedMesh` by merging meshes in this array order [mesh1, mesh2], and the multiMaterials subMaterials array contains materials in the order [mat1, mat2] then for the subMesh from `mesh2` to have material `mat2` you need to set
 

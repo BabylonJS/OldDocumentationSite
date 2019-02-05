@@ -360,6 +360,11 @@
                     "title": "Update Vertices",
                     "level": 3,
                     "filename": "Updating_Vertices"
+                },
+                {
+                    "title": "Use TrailMesh",
+                    "level": 3,
+                    "filename": "How_to_use_TrailMesh"
                 }
             ]
         },

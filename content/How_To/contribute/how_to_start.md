@@ -268,15 +268,15 @@ Once the test task (gulp run) has been launched, any saved changes in the Typesc
 ### Local Dev with the Playground
 A quick way to test if your code works is to open the [local playground](http://localhost:1338/Playground/index-local.html) and write code that calls on the classes you have created.
 
-It is also possible to copy and paste playgrounds code in the ```/devLocal/src/index.js``` file. The entire ```/devLocal/src``` folder is git ignored and is meant to be your local test folder.
+It is also possible by creating an `index.js` file in the ```/localDev/src/``` folder and copying and pasting playground code into this `index.js` file. The entire ```/localDev/src``` folder is git ignored and is meant to be your local test folder.
 
-You can launch it through: [http://localhost:1338/localDev/index.html](http://localhost:1338/localDev/index.html)
+You launch this code through: [http://localhost:1338/localDev/index.html](http://localhost:1338/localDev/index.html)
 
 From there you can easily add a breakpoint in your playground code or the Typescipt files for debugging.
 
 Adding in the url ?dist=true or ?dist=min will help testing against the built files.
 
-As using only one test file is annoying, feel free to add index.1.js, index.2.js... and so on. In VSCode, copy pasting the file in the same folder results in creating the next available slot in the folder e.g. copy pasting index.1.js will create index.2.js.
+As using only one test file is annoying, feel free to number the files index.1.js, index.2.js... and so on. In VSCode, copy pasting the file in the same folder results in creating the next available slot in the folder e.g. copy pasting index.1.js will create index.2.js.
 
 To launch index.{number}.js simply append in the url sample={number} so for launching index.3.js against the unminified released files, use: http://localhost:1338/localDev/index.html?dist=true&sample=3
 
