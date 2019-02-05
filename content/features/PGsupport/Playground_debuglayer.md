@@ -112,7 +112,7 @@ This tool (available in the Debug pane) will render a grid on the (0,0,0) plane:
 
 ## Bones viewer
 
-This tool (available in the Debug pane) will render your skeletons:
+This tool (available in the skeleton property grid) will render your skeletons:
 
 ![bones](/img/features/debuglayer/bones.jpg)
 
