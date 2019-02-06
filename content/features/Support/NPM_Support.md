@@ -57,22 +57,16 @@ npm install --save babylonjs-materials [other packages]
 
 Same as the babylonjs, this will install (default-minified and non-minified) javascript files and a declaration file.
 
-To import the dependencies, you simply need to import the library (without giving it a namespace):
+To import the dependencies, you will need to import them like for the babylon module:
 
 ```javascript
-import 'babylonjs-materials';
+import * as Materials from 'babylonjs-materials';
 ```
 
-This will extend the BABYLON namespace with the material classes, so you can do the following:
+And use it like below:
 
 ```javascript
-let skyMaterial = new BABYLON.SkyMaterial(.....)
-```
-
-An exception is the GUI library, which has its own namespace. It can therefore be imported as following:
-
-```javascript
-import * as GUI from 'babylonjs-gui';
+let skyMaterial = new Materials.SkyMaterial(.....)
 ```
 
 ### using require()
@@ -82,7 +76,7 @@ If you prefer not to use es6-import syntax, you can use require in order to impo
 ```javascript
 let BABYLON = require('babylonjs');
 let GUI = require('babylonjs-gui');
-let materials = require('babylonjs-materials'); // unused variable
+let materials = require('babylonjs-materials');
 ```
 
 ## TypeScript support
