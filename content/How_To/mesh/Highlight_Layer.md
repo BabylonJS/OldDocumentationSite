@@ -152,6 +152,12 @@ hl1.addMesh(sphere, BABYLON.Color3.Green());
 
 [**Multi Camera Scene**]( https://www.babylonjs-playground.com/#CDHKK#7)
 
+### Rendering Groups
+
+If you rely on rendering groups in your application, be mindful that the highlights requires stencil and depth info of your scene to work accurately.
+
+So you could disable the clear between rendering groups with the command: ```scene.setRenderingAutoClearDepthStencil(1, false, false)``` where the first parameter is the rendering group id, the second to prevent automatically clearing depth between groups and the last to preven automatically clearing stencil information between groups.
+
 ## Options
 
 The available members of the option object are:
