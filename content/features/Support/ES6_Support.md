@@ -302,6 +302,22 @@ This will force you to target your imports on the dedicated modules (vs index on
 
 We are planing to release soon (before 4.0) the side effect portion of the package as well as smaller workload files you could import from. This will avoid you to know our full file hierarchy. Please, bear with us in the mean time and to not hesitate to provide feedback on the workload you would like to see.
 
+## Almighty Inspector
+Due to the modules name changing and other es6 modules differences, the UMD and CDN inspector version is not compatible with ES6. Nevertheless, you can install the ES6 version of the inspector and import it for side effect only in your code. Then the debug layer would work as usual.
+
+First install the inspector package:
+```bash
+npm install --save-dev @babylonjs/inspector
+```
+
+And then in your code:
+```javascript
+import "@babylonjs/core/Debug/debugLayer"; // Augments the scene with the debug methods
+import "@babylonjs/inspector"; // Injects a local ES6 version of the inspector to prevent automatically relying on the none compatible version
+...
+scene.debugLayer.show();
+```
+
 ## Earcut/Oimo/Canon/Ammo
 As we do not want to force by default our user to include any dependencies, we have extended the way users could rely on external dependencies for ES6.
 
