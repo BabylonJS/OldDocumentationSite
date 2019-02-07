@@ -46,7 +46,7 @@ As a warning, the further the value gets from 1 the more distortion will be visi
 ## Video Types
 Several types of 360 video exist today. The most common being Monoscopic Panoramic, Stereoscopic Side by Side panoramic and Top bottom panoramic.
 
-The first one represent a panoramic view which is dedicated to one eye. The second one contains two panoramic views dedicated to each eyes whereas the last one contains both panoramic views respectively on the top and bottom of the video.
+The first one represents a panoramic view which is dedicated to one eye. The second one contains two panoramic views dedicated to each eyes whereas the last one contains both panoramic views respectively on the top and bottom of the video.
 
 In the video Dome you can change adapt to the type of your source video by using :
 
