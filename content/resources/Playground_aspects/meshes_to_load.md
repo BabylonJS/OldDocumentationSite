@@ -51,6 +51,7 @@ cornellBox.glb | 162 kB | ![cornellBox-glb](/img/resources/meshes/cornellBox-glb
 cornellBox.glb lightmapped | 289 kB | ![cornellBox-glb-lightmapped](/img/resources/meshes/cornellBox-glb-lightmapped.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#15)
 Dude.babylon | 3.46 MB | ![dude](/img/resources/meshes/dude.png) | [Playground](https://www.babylonjs-playground.com/#WLDCUC#3)
 emoji_heart.glb | 1.08 MB | ![heart](/img/resources/meshes/heart.png) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#1)
+ExplodingBarrel.glb | 2.9 MB | ![ExplodingBarrel](/img/resources/meshes/ExplodingBarrel.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#23)
 FlightHelmet.glb | 50.4 MB | ![helmet](/img/resources/meshes/helmet.png) | [Playground](https://www.babylonjs-playground.com/#BVK9I0#1)
 fish.glb | 45.4 MB | ![fish](/img/resources/meshes/fish.png) | [Playground](https://www.babylonjs-playground.com/#9CMU0F)
 haunted_house.glb | 37.2 MB | ![haunted house](/img/resources/meshes/haunted_house.png) | [Playground](https://www.babylonjs-playground.com/#E8UGIC)
