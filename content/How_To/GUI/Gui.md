@@ -217,7 +217,8 @@ shadowBlur|number|0|the amount of blur that is applied to the drop shadow
 shadowOffsetX|number|0|the offset of the shadow on the x axis
 shadowOffsetY|number|0|the offset of the shadow on the y axis
 shadowColor|string|"#000"|the color of the shadow
-hoverCursor|string|""|the cursor to use when mouse is over the control ([demo](https://www.babylonjs-playground.com/#XCPP9Y#588))
+isPointerBlocker|boolean|false|make sure gui events are triggered before the scene events
+hoverCursor|string|""|the cursor to use when mouse is over the control, need to have isPointerBlocker set to true ([demo](https://www.babylonjs-playground.com/#XCPP9Y#888))
 
 Controls can be added directly to the AdvancedDynamicTexture or to a container with:
 
