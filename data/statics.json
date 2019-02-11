@@ -973,6 +973,10 @@
                 {
                     "title": "How to combine Babylon.js and Pixi.js",
                     "filename": "BabylonJS_and_PixiJS"
+                },
+                {
+                    "title": "How to setup a local webserver for BabylonJs",
+                    "filename": "Running_a_local_webserver_for_BabylonJs"
                 }
             ]
         },
