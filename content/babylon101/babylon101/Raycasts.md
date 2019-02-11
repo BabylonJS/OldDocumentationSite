@@ -115,6 +115,25 @@ True will return the first mesh that intersects with the ray (in the order of th
 
 -----
 
+## Triangle predicate ## 
+
+Starting with Babylon.js v4.0 you can define a custom predicate to filter the triangles selected to be tested against the incoming ray. The predicate will be called with the 3 vertices of each face and the upcoming ray:
+
+```
+scene.pick(scene.pointerX, scene.pointerY, null, false, null, (p0, p1, p2, ray) => {
+    var p0p1 = p0.subtract(p1);
+    var p2p1 = p2.subtract(p1);
+    var normal = BABYLON.Vector3.Cross(p0p1, p2p1);
+    return (BABYLON.Vector3.Dot(ray.direction, normal) < 0);
+  });
+```
+
+In this example we are filtering out all the triangles that are not facing towards the camera.
+
+Live example: https://www.babylonjs-playground.com/#EES9W5
+
+-----
+
 ## Multi pick ## 
 
 We can use *scene.multiPickWithRay* if we don't want that the ray stops at the first obstacle : 
