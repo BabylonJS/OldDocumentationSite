@@ -19,8 +19,11 @@ var ground = BABYLON.Mesh.CreatePlane('ground', 1000, scene)
 ground.rotation.x = Math.PI / 2
 ground.material = new BABYLON.ShadowOnlyMaterial('shadowOnly', scene)
 ground.receiveShadows = true
-
 ```
+
+By default the shadow color is black but you can force an artificial color with `material.shadowColor = BABYLON.Color3.Red()`.
+
+Demo here: https://www.babylonjs-playground.com/#1KF7V1#19
 
 **Limitation:** Please note that only the first light that can reach the mesh will be used. 
 So if you have multiple lights in your scene you may end up using `light.includedOnlyMeshes` or `light.excludedMeshes` or `light.includeOnlyWithLayerMask` or `light.excludeWithLayerMask`.

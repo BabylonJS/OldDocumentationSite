@@ -120,6 +120,7 @@ example :  https://www.babylonjs-playground.com/#1MSEBT#3
 
 ## Lines and DashedLines
 ### _lines and dashed lines updatable parameter : points_
+### _lines optional updatable parameter : colors_
 _(reminder : only points positions can change, not the number of points. Please see the summary at the bottom of this page for more details)_
 
 Once we got the understanding for ribbons, we can apply it to Lines or DashedLines.
@@ -220,7 +221,7 @@ var ext = BABYLON.Mesh.ExtrudeShape("ext", shape1, path1, scale1, rotation1, cap
 ext = BABYLON.Mesh.ExtrudeShapeCustom(null, shape2, path2, myScale2, myRotation2, null, null, null, null, null, null, ext);
 ```
 
-Example :  https://www.babylonjs-playground.com/#20IBWW
+Example :  https://www.babylonjs-playground.com/#20IBWW#14
 
 
 ## Other shapes : updateMeshPositions

@@ -107,18 +107,9 @@ var envTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", sce
 scene.createDefaultSkybox(envTexture, true, 1000);
 ```
 
-As you can see, the scene has a helper to create a skybox for you. You just need to specify a texture and define if you want to use a PBRMaterial (second parameter to true) or a StandardMaterial (default value).
+* [Playground Example Skybox Helper](https://www.babylonjs-playground.com/#BH23ZD#1)
 
-The third parameter defines the scale of your skybox (this value depends on the scale of your scene). It is set to 1000 by default.
-
-Here is an example: https://www.babylonjs-playground.com/#BH23ZD#1
-
-You can also define your environment texture on the scene itself. THis way the texture will also be used by PBRMaterials as the default environment texture:
-
-```javascript
-scene.environmentTexture = new BABYLON.CubeTexture("/assets/textures/SpecularHDR.dds", scene);
-scene.createDefaultSkybox(envTexture);
-```
+Check out [scene helpers](/how_to/fast_build) for more information on this and other helpers.
 
 ### Fog
 
@@ -128,7 +119,7 @@ Fog is quite an advanced effect, but fog in Babylon.js has been simplified to th
 scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
 ```
 
-Here are the available modes :
+Here are the available modes:
 - `BABYLON.Scene.FOGMODE_NONE` - default one, fog is deactivated.
 - `BABYLON.Scene.FOGMODE_EXP` - the fog density is following an exponential function.
 - `BABYLON.Scene.FOGMODE_EXP2` - same that above but faster.
@@ -158,3 +149,5 @@ You should have a beautiful scene now, but except from your 3D models, your worl
 # Further Reading
 
 [Environment Overview](/features/Environment)
+
+[Scene Fast Build](/how_to/fast_build)

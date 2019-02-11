@@ -83,7 +83,7 @@ mesh.material = shaderMaterial;
 
 Extracting the appropriate sections of Javascript code allows you to transfer them to your own scenes.
 
-[Guide Example From CYOS Zip](/examples/cyoszip.html)
+[Guide Example From CYOS Zip](http://babylonjsguide.github.io/examples/cyoszip.html)
 
 This method can easily be used in the Playground.
 
@@ -144,7 +144,7 @@ var shaderMaterial = new BABYLON.ShaderMaterial("shader", scene, {
 });
 ```
 
-[Guide Example From Script](/examples/scriptcode.html)
+[Guide Example From Script](http://babylonjsguide.github.io/examples/scriptcode.html)
 
 ## Shader Code in fx Files
 Save your code in two files, one for the Vertex Shader and one for the Fragment Shader. 
@@ -170,7 +170,7 @@ var shaderMaterial = new BABYLON.ShaderMaterial("shader", scene, "./COMMON_NAME"
 It is also possible to access the fx files from an URL by giving the full address of the URL, 
 provide CORS is enabled for them.
 
-[Guide Example From Import](/examples/importcode.html)
+[Guide Example From Import](http://babylonjsguide.github.io/examples/importcode.html)
 
 ## Shader Builder
 
@@ -193,12 +193,12 @@ mesh.material = new BABYLONX.ShaderBuilder()
 	.Map({ path: 'textures/amiga.jpg' })
     .BuildMaterial(scene);
 ```
-[Guide Example using ShaderBuilder](/examples/basiccodeSB.html)
+[Guide Example using ShaderBuilder](http://babylonjsguide.github.io/examples/basiccodeSB.html)
 
 This method can be used in the Playground. However it does require the loading of the ShaderBuilder Javascript file and an onLoad 
 function before it can be called.
 
-[Playground Example using ShaderBuilder](http://www.babylonjs-playground.com/#NCY1Q#1)
+* [Playground Example using ShaderBuilder](http://www.babylonjs-playground.com/#NCY1Q#1)
 
 # Further Reading
 

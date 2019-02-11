@@ -9,6 +9,7 @@ Before beginning, please be sure to have these packages installed:
 
  * [Nodejs](https://nodejs.org/)
  * [grunt-cli](https://www.npmjs.com/package/grunt-cli): just use ```npm install -g grunt-cli```
+ * [typedoc](https://www.npmjs.com/package/typedoc): just use ```npm install -g typedoc```
 
 
 ## Run a local copy of the documentation
@@ -98,12 +99,12 @@ Categories classify the content.
 
 
 They are implemented and can be seen in:
-    * [Babylon 101](http://doc.babylonjs.com/babylon101)
-    * [How To](http://doc.babylonjs.com/How_To)
-    * [Features](http://doc.babylonjs.com/features)
-    * [resources](http://doc.babylonjs.com/resources)
-    * [extensions](http://doc.babylonjs.com/extensions)
-    * [samples](http://doc.babylonjs.com/samples)
+    * [Babylon 101](//doc.babylonjs.com/babylon101)
+    * [How To](//doc.babylonjs.com/How_To)
+    * [Features](//doc.babylonjs.com/features)
+    * [resources](//doc.babylonjs.com/resources)
+    * [extensions](//doc.babylonjs.com/extensions)
+    * [samples](//doc.babylonjs.com/samples)
     
 
 ### Adding Content

@@ -19,7 +19,7 @@ Tag? You may already have heard or read this word before. Let's see some generic
 
 ### Tags on forums / Categories
 
-If you spend some time on forums (let's pick one randomly: [forum](http://http://www.html5gamedevs.com/forum/16-babylonjs/) ;)), you may have noticed that tags are attached to topics (and/or posts sometimes).
+If you spend some time on forums (let's pick one randomly: [forum](https://forum.babylonjs.com) ;)), you may have noticed that tags are attached to topics (and/or posts sometimes).
 The author can write words (tags) to shortly describe his/her topic without having to write a gramatically correct sentence. It's kind of a list of words that you could say during a brainstorming after reading the post.
 
 Example of a topic with tags:

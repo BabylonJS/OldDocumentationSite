@@ -11,7 +11,7 @@ Here is an example from our [Flat2009 demo](http://www.babylonjs.com/?9). This p
 ecran.material.diffuseTexture = new BABYLON.VideoTexture("video",
 ["Scenes/Flat2009/babylonjs.mp4", "Scenes/Flat2009/babylonjs.webm"], scene, true);
 ```
-The [_VideoTexture_ object](http://doc.babylonjs.com/classes/3.0/VideoTexture) accepts an array of videos (to take into account various codecs). The first video in the array that can be loaded... is the one used as content source. Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
+The [_VideoTexture_ object](//doc.babylonjs.com/classes/3.0/VideoTexture) accepts an array of videos (to take into account various codecs). The first video in the array that can be loaded... is the one used as content source. Currently, HTML5 supports .mp4, .webm, and .ogv video formats.
 
 The internal [video DOM object](http://www.w3.org/wiki/HTML/Elements/video) is accessible via the VideoTexture.video property... which allows you to control some characteristics and monitor the status of the video (things such as play, pause, loop, autoplay, etc). See the link above for the full story.
 
@@ -29,6 +29,17 @@ scene.onPointerDown = function () {
 }
 ```
 This will start the video on the first tap in the scene. A demo can be found at  https://www.babylonjs-playground.com/#CHQ4T#1
+
+In case you wish to display a texture during the load time, you can provide in the ```poster``` property of the settings the URL of an image displayed during loading or until the user interacts with the video.
+
+An event is also available to detect if you are in browser preventing autoplay by policy:
+```javascript
+texture.onUserActionRequestedObservable.add(() => {
+  scene.onPointerDown = function () { 
+    videoTexture.video.play();
+  }
+});
+```
 
 Starting with v2.6, we introduced the support for WebRTC. So now you can create a specific VideoTexture which will be connected to your default WebCam:
 

@@ -44,19 +44,23 @@ myMaterial.ambientColor = new BABYLON.Color3(0.23, 0.98, 0.53);
 mesh.material = myMaterial;
 ```
 ### Diffuse Color Example
-To give an idea how material diffuse color reacts to diffuse light color the following [Playground Example](http://www.babylonjs-playground.com/#20OAV9#10) shows how
+To give an idea on how the material diffuse color reacts to the diffuse light color the following playground example shows how different color materials react to white, red, green and blue diffuse spot lights.
+
+* [Playground Example - Material Color Reaction to Light Color _direct click or edit to view_](http://www.babylonjs-playground.com/#20OAV9#325)  
+
+This reaction of 
 
 |     |     |
 |----|----|
 | Yellow Material |  Purple Material |
 | Cyan Material | White Material |
 
-react to white, red, green and blue diffuse spot lights. Notice how the viewing angle adjusts the lighting.
+to white, red, green and blue diffuse spot lights can also be seen in the following image.
 
 ![ Spot Light](/img/how_to/Materials/spots1.png)
 
 ### Ambient Color Example
-In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
+In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has no ambient color, the middle has red ambient color defined on its material and the one on the right 
 has material with green ambient color. The scene ambient color, which must be present, is white. When a scene ambient color component is set to 0, for example red, then whatever the value for red in the material 
 ambient color it will have no effect. 
@@ -66,9 +70,9 @@ ambient color it will have no effect.
 ### Transparent Color Example
 Transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
 ```javascript
-var myMaterial.alpha = 0.5;
+myMaterial.alpha = 0.5;
 ```
-[Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#16)
+* [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#16)
 
 ## Texture
 Textures are formed using a saved image.
@@ -91,20 +95,20 @@ myMaterial.ambientTexture = new BABYLON.Texture("PATH TO IMAGE", scene);
 
 mesh.material = myMaterial;
 ```
-
+Note: When no normals are specified, Babylon's standard material will compute the normals.
 ### Texture Example
-In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemisphereic light, with _diffuse_ red and _groundColor_ green. 
+In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has a diffuse texture, the middle an emissive texture and the one on the right 
-has material with red diffuse color an an ambient texture.
+has material with red diffuse color and an ambient texture.
 
 ![Texture](/img/how_to/Materials/texture1.png)
 
 ### Transparent Texture Examples
 As for colors the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
 ```javascript
-var myMaterial.alpha = 0.5;
+myMaterial.alpha = 0.5;
 ```
-[Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
+* [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
 
 In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
 which has a transparent background;
@@ -113,10 +117,10 @@ which has a transparent background;
 
 In this case we set the _hasAlpha_ property of the **texture** to true.
 ```javascript
-var myMaterial.diffuseTexture.hasAlpha = true;
+myMaterial.diffuseTexture.hasAlpha = true;
 ```
 
-[Playground Example Transparent Background](http://www.babylonjs-playground.com/#YDO1F#18)
+* [Playground Example Transparent Background](http://www.babylonjs-playground.com/#YDO1F#18)
 
 For the back faces of the cube to be visible through the transparent areas of the front faces we have to deal with back face culling.
 
@@ -124,15 +128,15 @@ For the back faces of the cube to be visible through the transparent areas of th
 This is a method for efficiently drawing the 2D screen rendering of the 3D model. Usually there is no need to draw the back face of a cube, or other object, 
 as it will be hidden by the front face. In BabylonJS the default setting is, as you might expect, set to true.
 
-Looking at the images below, when the material propery _backFaceCulling_ is true you can see that the transparent areas around the 
-dog are still transparent, you can see the background through them. However you cannot see the images on the back faces as they have been culled (or removed). 
+Looking at the images below, when the material property _backFaceCulling_ is true you can see that the transparent areas around the 
+dog are still transparent, you can see the background through them. However, you cannot see the images on the back faces as they have been culled (or removed). 
 When _backFaceCulling_ is false the back faces are not removed during rendering so they can be seen through the transparent areas of the front faces. 
 
 | Back Face Culling True | Back Face Culling False |
 |-----|--------|
 | ![BFC True](/img/how_to/Materials/bfc2.png) | ![BFC False](/img/how_to/Materials/bfc1.png) |
 
-[Playground Example Back Face Culling True](http://www.babylonjs-playground.com/#YDO1F#20)
+* [Playground Example Back Face Culling True](http://www.babylonjs-playground.com/#YDO1F#20)
 
 ## WireFrame
 You can see a mesh in wireframe mode by using:

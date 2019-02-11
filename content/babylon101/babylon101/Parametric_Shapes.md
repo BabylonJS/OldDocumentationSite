@@ -25,7 +25,7 @@ myPoints.push(point2);
 var point3 = new BABYLON.Vector3(0, 1, 0);
 myPoints.push(point3);
 
-//or possible the alternative
+//or the possible alternative
 
 var myPoints =[
     new BABYLON.Vector3(0, 0, 0),
@@ -35,18 +35,18 @@ var myPoints =[
 
 ```
 
-The array of points MUST then be passed to _CreateLines_ with the points option
+The array of points MUST be passed to the _CreateLines_ function as the _points_ option
 
 ```javascript
 //creates lines
 var lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myPoints}, scene);
 ```
-[Playground Example of Lines](https://www.babylonjs-playground.com/#165IV6#60)
-[Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#61)
+* [Playground Example of Lines](https://www.babylonjs-playground.com/#165IV6#60)
+* [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#61)
 
 You can use dashed lines with _CreateDashedLines_ and adding the number of dashes _dashNb_ as an option.
 
-[Playground Example of a Spiral from Dashed Lines](https://www.babylonjs-playground.com/#165IV6#62)
+* [Playground Example of a Spiral from Dashed Lines](https://www.babylonjs-playground.com/#165IV6#62)
 
 
 For _CreateLines_ the options are
@@ -56,6 +56,8 @@ option|value|default value
 points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
+colors|_(Color4[])_ array of Color4, each point color|null
+useVertexAlpha|_(boolean)_ false if the alpha blending is not required (faster)|true
 
 For _CreateDashedLines_ the options are
 
@@ -64,7 +66,7 @@ options|value|default value
 points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED** |
 dashSize|_(number)_  size of the dashes|3
 gapSize|_(number)_  size of the gaps|1
-dashBn|_(number)_  intended number of dashes|200
+dashNb|_(number)_  intended number of dashes|200
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
@@ -85,7 +87,7 @@ var lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myArray, updatable
 // updates the existing instance of lines : no need for the parameter scene here
 lines = BABYLON.MeshBuilder.CreateLines("lines", {points: myNewArray, instance: lines});
 ```
-[Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
+* [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
 
 Most but not all parametric shapes have the _instance_ option and so can have their mesh updated in this way.
 

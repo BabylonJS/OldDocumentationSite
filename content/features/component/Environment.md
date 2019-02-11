@@ -19,21 +19,21 @@ The most straight forward way is to apply an [height map](/babylon101/Height_Map
 ## Dynamic Terrain
 
 Do you want a very large, or infinite terrain, then Babylon.js provides an extension to do this using a Dynamic Terrain.
-The Dynamic Terrain is a mesh and a 3D data map of geographic positions giving planar and height coordinates. The mesh stays in place and morphs according to the current world camera position and a data map. This gives the illusion of being able to fly around the terrain. 
+The Dynamic Terrain is a mesh and a 3D data map of geographic positions giving planar and height coordinates. The mesh stays in place and morphs according to the current world camera position and a data map. This gives the illusion of being able to fly around the terrain.
 
-[Playground Example Early Prototype](https://www.babylonjs-playground.com/#21MVDH#1)
+* [Playground Example Early Prototype](https://www.babylonjs-playground.com/#21MVDH#1)
 
 Now a fully developed extension.
 
-[Playground Example Around the World](https://www.babylonjs-playground.com/#FJNR5#190)
+* [Playground Example Around the World](https://www.babylonjs-playground.com/#FJNR5#190)
 
-Remember to click in display area before using keys. 
+Remember to click in display area before using keys.
 
 
 ## Shadows
 For [shadows](/babylon101/shadows) a _shadowGenerator_ object is needed. A mesh can then produce a shadow by adding it to a rendering list of the _shadowGenerator_. There is also an extension, [shadows only](/extensions/ShadowOnly),  that allows shadows on a transparent mesh.
 
-## Fog 
+## Fog
 
 Though it can be a complicated procedure to form a fog effect a fairly simple method is described in [Environment 101](/babylon101/Environment#fog). The effect can be extended further by customising a shader.
 
@@ -46,8 +46,8 @@ World objects do not all absorb and reflect light in the same way. A metal scult
 As well as fog, shadows, reflection and reflection it is also possible to give the effects of [light scattering](/How_To/Using_the_Volumetric_LightScattering_post-process) and [lens flare](/How_To/How_to_use_Lens_Flares).
 
 ## Post Processes
- 
-Postprocesses are part of the rendering pipeline that allows you to create 2D effects on top of your scene. A postprocess is linked to a camera and can be part of a chain of postprocesses where each postprocess uses the result of the previous one as input for its own processing. 
+
+Postprocesses are part of the rendering pipeline that allows you to create 2D effects on top of your scene. A postprocess is linked to a camera and can be part of a chain of postprocesses where each postprocess uses the result of the previous one as input for its own processing.
 
 ### Shaders
 
@@ -70,6 +70,7 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 
 [Introduction to Physically Based Rendering Materials](/How_To/Physically_Based_Rendering)  
 [Skybox](/How_To/Skybox)  
+[HDR environment](/How_To/Use_HDR_Environment)
 [Dynamic Terrain](/extensions/Dynamic_Terrain)  
 [Dynamic Terrain Examples](/extensions/DT_Examples)
 
@@ -96,4 +97,3 @@ A range of shaders including fire, water, lava and fur can be found in the mater
 [How To Use ShaderMaterial](/How_To/Shader_Material)  
 [Example A Vertical Wave with Shader Code](/samples/Writing1)  
 [Example Fireworks with Shader Code](/samples/Writing2)
-

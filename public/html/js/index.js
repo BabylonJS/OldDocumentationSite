@@ -10,7 +10,7 @@
             var divSearchBarMobile =
                 $('<div>', {
                     class: 'searchbar-mobile searchbar',
-                    html: '<form method="get" action="/search"><input type="text" name="q" placeholder="Search..."/>' +
+                    html: '<form method="get" action="/search"><input type="text" name="bjsq" placeholder="Search..."/>' +
                     '<button type="submit"><i class="fa fa-search"></i></button></form>'
                 });
 
@@ -28,6 +28,10 @@
                     html: '<i class="fa fa-book"></i>Babylon 101'
                 }), 
                 $('<a>', {
+                    href: '/examples',
+                    html: '<i class="fa fa-slideshare"></i>Examples'
+                }),                 
+                $('<a>', {
                     href: '/How_To',
                     html: '<i class="fa fa-cogs"></i>How To...'
                 }),
@@ -44,12 +48,12 @@
                     html: '<i class="fa fa-wrench"></i>Extensions'
                 }),
                 $('<a>', {
-                    href: '/samples',
-                    html: '<i class="fa fa-book"></i>Samples'
+                    href: '/snippets',
+                    html: '<i class="fa fa-book"></i>Snippets'
                 }),
                 $('<a>', {
-                    href: '/classes',
-                    html: '<i class="fa fa-files-o"></i>Classes'
+                    href: '/api',
+                    html: '<i class="fa fa-files-o"></i>API'
                 }),
                 $('<a>', {
                     href: '/playground',
@@ -74,7 +78,7 @@
                     html: '<i class="fa fa-code-fork"></i>Contribute'
                 }),
                 $('<a>', {
-                    href: 'http://www.html5gamedevs.com/forum/16-babylonjs',
+                    href: 'https://forum.babylonjs.com',
                     target: '_blank',
                     html: '<i class="fa fa-html5"></i>Forum'
                 }),

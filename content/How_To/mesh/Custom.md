@@ -51,7 +51,7 @@ vertexData.indices = indices;
 vertexData.applyToMesh(customMesh);
 ```
 
-[Playground Example Showing Custom Mesh with Positions and Indices](http://www.babylonjs-playground.com/#VKBJN#2)
+* [Playground Example Showing Custom Mesh with Positions and Indices](http://www.babylonjs-playground.com/#VKBJN#2)
 
 ## Normals 
 
@@ -117,7 +117,7 @@ Clearly the normals for each facet are pointing in the opposite directions, they
 Looking from the origin towards facet 3, 4, 5 then the order in the indices array 3, 4, 5 around the facet is clockwise.
 Looking from the origin towards facet 0, 1, 2 then the order in the indices array 0, 1, 2 around the facet is also clockwise.
 
-[Playground Example Showing Custom Mesh with Normals](http://www.babylonjs-playground.com/#VKBJN#6)
+* [Playground Example Showing Custom Mesh with Normals](http://www.babylonjs-playground.com/#VKBJN#6)
 
 Reversing the order of one or both sets of facet indices in the playground will show how the normals change direction.
 
@@ -163,12 +163,12 @@ mat.backFaceCulling = false;
 
 Comment line 41 out in the following to see back face culling happening.
 
-[Playground Example Both Facets](http://www.babylonjs-playground.com/#VKBJN#7)
+* [Playground Example Both Facets](http://www.babylonjs-playground.com/#VKBJN#7)
 
 ## Color
 
 The simplest way to assign a color to the custom mesh is by applying a standard material to the mesh and let BabylonJS do all the work. However 
-color can be set for a facet within the vertex data. For information on how the arrangement of facets used in constructing a mesh can affect how colors are displayed see [Applying Materials to Facets](/advanced/Facets.html).
+color can be set for a facet within the vertex data. For information on how the arrangement of facets used in constructing a mesh can affect how colors are displayed see [Applying Materials to Facets](/resources/Facets.html).
 
 Colors for each vertex are placed in an array as groups of four in the order red, green, blue and alpha for transparency. For the facet 0, 1, 2 to be colored red and the facet 3, 4, 5 to be colored green each vertex 
 on each facet is given the same color.
@@ -206,7 +206,7 @@ vertexData.applyToMesh(customMesh);
 ```
 In the playground below see what happens when you make the vertices on the red facet different colors.
 
-[Playground Example Setting Vertex Colors](http://www.babylonjs-playground.com/#VKBJN#8) 
+* [Playground Example Setting Vertex Colors](http://www.babylonjs-playground.com/#VKBJN#8) 
 
 ### Notes on the Playground
 Since a material is no longer being used backFaceCulling cannot be set and so the camera will have to be rotated for the far facet to be seen. The far facet will remain black 
@@ -217,9 +217,9 @@ controlled lighting effects use a [material](/basics/Materials.html) as well as,
 
 Adding a light with direction the reverse of the current one will light both sides.
 
-[Playground Example Both Sides Lit](http://www.babylonjs-playground.com/#VKBJN#104) 
+* [Playground Example Both Sides Lit](http://www.babylonjs-playground.com/#VKBJN#104) 
 
-[Playground Example Both Sides Colour Variation](http://www.babylonjs-playground.com/#VKBJN#105) 
+* [Playground Example Both Sides Colour Variation](http://www.babylonjs-playground.com/#VKBJN#105) 
 
 ## Texture
 
@@ -284,11 +284,24 @@ gives
 
 In the playground below clicking on next will cycle you through a variety of values for the uv coordinates.
 
-[Playground Example Varying UV Values](http://www.babylonjs-playground.com/#VKBJN#14) 
+* [Playground Example Varying UV Values](http://www.babylonjs-playground.com/#VKBJN#14) 
 
-### Notes on Playground
-The camera has been disabled for this playground. The uv values are shown and the relative index are shown on the texture image. 
-One day this playground might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh the [arrangement of facets](/advanced/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
+**Notes on Playground**
+The camera has been disabled for the above playground. The uv values are shown and the relative index are shown on the texture image. 
+One day this playground might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh the [arrangement of facets](/resources/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.
+
+### Calculating UVs
+
+Calculating the uvs for a custom mesh obviously depends on the shape of the mesh and which parts of the texture you want projected onto the mesh at which position. Here is an example with a relatively simple mesh which is basically a flat surface with a couple of protudences.
+
+* [Playground Example UV Calculation](https://www.babylonjs-playground.com/#I092BE)
+
+The above playground takes the bottom left corner as matching the bottom left corner of the texture image and from the x, z position of each vertex calculates the uv value as the fractional distance of (x, z) from the bottom left corner.
+
+In general if the bottom left corner is at (a, b) and the bounding width and height of the mesh are w and h respectivley then for each (x, z)
+
+u = (x - a) / w and v = (z - b) / h
+
 
 # Further Reading
 

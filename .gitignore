@@ -3,7 +3,13 @@ node_modules
 .svn
 .tmp
 log/exceptions.log
+
+# tmp and examples files from 3D softwares
+.blend1
+.blend2
+
 # Built file that should not be committed
+
 data/search
 data/classes-tags.json
 data/classes.json
@@ -15,3 +21,5 @@ public/html/*
 
 !public/html/img/
 .history/
+log/bjs-doc-error.log
+package-lock.json

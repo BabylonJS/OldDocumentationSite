@@ -3,12 +3,20 @@ ID_PAGE: 22231
 PG_TITLE: 07. Caching Resources in IndexedDB
 ---
 
-# How To Optimize Using Cached Resoures
-Starting with the **1.4 release** of Babylon.JS, you can now very easily indicate that you want to **cache the resources associated with your scene/game** inside the local **IndexedDB** of the browser. It can enhance the gamer experience as the JSON and textures files can be directly loaded from the database rather than from the web.
+# How To Optimize Using Cached Resources
+
+By default, all texture contents are cached by the engine, so if you load the same texture twice, it will be instant (and resource will be shared to save memory).
+
+Starting with the **1.4 release** of Babylon.JS, you can indicate that you want to **cache the resources associated with your scene/game** inside the local **IndexedDB** of the browser. It can enhance the gamer experience as the JSON and textures files can be directly loaded from the database rather than from the web.
 
 ## Usage
 
 To enable offline support, the first thing you need to do is create a _**.manifest**_ file associated with your scene. It should be named _NameOfYourScene.babylon.manifest_.
+
+**Starting with Babylon.js v4.0 you also have to turn the feature on with:**
+```
+BABYLON.Database.IDBStorageEnabled = true;
+```
 
 **Note:** by default, the Babylon engine is configured to use online resources. So if you don’t provide any .manifest file, it will assume that you want the resources to be loaded directly from the web all the time.
 
@@ -34,8 +42,16 @@ You have 3 parameters to fill:
 
 **Note:** images are loaded using XHR2 in the blob format. IE11, Firefox and Chrome 37+ support the storing of blob data into the IndexedDB. [More details](http://caniuse.com/#search=indexeddb)
 
+## Exceptions
+If you do not want to enable offline mode, you can set `engine.enableOfflineSupport = false`. This will completely turn off the feature.
+If you want more fine-grained control, you can use the `scene.disableOfflineSupportExceptionRules` array:
+
+```
+scene.disableOfflineSupportExceptionRules.push(/dude\.babylon/gi);
+```
+
 ## Samples
 
-Most of the samples on our website are configured to use offline for their scene and textures: [www.babylonjs.com](http://www.babylonjs.com) . For instance, you can try the Espilit scene. The scene is described in _espilit.babylon_ and the associated manifest file is _espilit.babylon.manifest_.
+Most of the samples on our [website mainpage](http://www.babylonjs.com) are configured to use offline for their scene and textures. For instance, you can try the [Espilit scene](http://www.babylonjs.com/demos/glowingespilit/). The scene is described in _espilit.babylon_ and the associated manifest file is _espilit.babylon.manifest_.
 
-One of the scenes is configured to only cache the texture. It’s the “The Car” scene. It’s because the JSON file, _TheCar.babylon_, is more than 93 MB. IE11 and Chrome can’t store a big file like that into their DB. I’ve decided to avoid trying to cache it.
+One of the scenes is configured to only cache the texture. It’s the “[The Car](http://www.babylonjs.com/demos/thecar/)” scene. It’s because the JSON file, _TheCar.babylon_, is more than 93 MB. IE11 and Chrome can’t store a big file like that into their DB, so decision was made to avoid trying to cache it.

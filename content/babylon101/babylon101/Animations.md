@@ -49,6 +49,10 @@ Much information is in the parameters:
 * ```BABYLON.Animation.ANIMATIONTYPE_MATRIX```
 * ```BABYLON.Animation.ANIMATIONTYPE_COLOR3```
 
+Please note that by default Matrix values are not interpolated between keys which means that values are only the one from the key values even if we are between two keys. You can turn this feature on by calling `Animation.AllowMatricesInterpolation = true`. If matrix interpolation is enabled you can then either use Matrix.Lerp or Matrix.DecomposeLerp as interpolation tool. You can use `Animation.AllowMatrixDecomposeForInterpolation` to pick the one you want.
+
+You can find a demo here: https://www.babylonjs-playground.com/frame.html#DMLMIP#1
+
 **Parameter 5** - Finally, you have to decide and enter the type of behavior this animation will take at its upper limit (e.g. will it continue on, will it begin again, will it stop at the last key value, etc.):
 
 * Use previous values and increment it: ```BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE```
@@ -87,7 +91,7 @@ For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent an
 
   keys.push({
     frame: 0,
-    value: BABYLON.Vector3.Zero()
+    value: BABYLON.Vector3.Zero(),
     outTangent: new BABYLON.Vector3(1, 0, 0)
   });
 
@@ -139,8 +143,8 @@ scene.beginAnimation(box1, 100, 0, true);
 | loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE) | Yes
 | speedRatio | number | default : 1. The speed ratio of this animation | Yes
 | onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE) | Yes
-| animatable | [Animatable](http://doc.babylonjs.com/classes/3.0/animatable) | An optional specific animation | Yes
----
+| animatable | Animatable | An optional specific animation | Yes
+| stopCurrent | boolean | Should we stop the current existing animations if any? Default is yes | Yes
 
 This function returns a ```BABYLON.Animatable``` object that you can use to get access to individual animations (for instance using ```getAnimationByTargetProperty``` function).
 
@@ -165,6 +169,19 @@ newAnimation.pause();
 These commands will apply to every animation object contained in the Animatable's ._animations array. You can also get access to current running ```BABYLON.Animatable``` objects by using ```scene.getAnimatableByTarget()``` providing the target object.
 
 And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)
+
+## Animations and promises
+Starting with Babylon.js v3.3, you can use promises to wait for an anmatable to end:
+
+```
+var anim = scene.beginAnimation(box1, 0, 100, false);
+
+console.log("before");
+await anim.waitAsync();
+console.log("after");
+```
+
+You can find an example here: https://www.babylonjs-playground.com/#HZBCXR
 
 ## Controlling animations
 
@@ -204,7 +221,7 @@ Here is the list of functions that you can change:
 You can use an extended function to create a quick animation:
 
 ```Javascript
-Animation.CreateAndStartAnimation = function(name, mesh, tartgetProperty, framePerSecond, totalFrame, from, to, loopMode);
+Animation.CreateAndStartAnimation = function(name, mesh, targetProperty, framePerSecond, totalFrame, from, to, loopMode);
 ```
 
 To be able to use this function, you need to know that :
@@ -219,15 +236,85 @@ BABYLON.Animation.CreateAndStartAnimation('boxscale', box1, 'scaling.x', 30, 120
 ```
 Fast and easy. :)
 
-## Animation Blending
+## Animation blending
 
-As of Babylon.js 2.3+, you can start an animation with *enableBlending* = true. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
+You can start an animation with *enableBlending* = true to enable blending mode. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
 
-In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position:
+In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position: https://www.babylonjs-playground.com/#2BLI9T#174
 
- https://www.babylonjs-playground.com/#2BLI9T#174
+Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running: https://www.babylonjs-playground.com/frame.html#IQN716#9
 
-Although this playground is blending the same animation into itself, more often, a different animation will be blended-into the original, such as when a walking character changes to running.
+## Animation weights
+
+Starting with Babylon.js 3.2, you can start animations with a specific weight. This means that you can use this API to rung multiple animations simultaneously on the same target. The final value will be a mix of all animations weighted based on their weight value.
+
+To start an animation with a weight, you can use the new `scene.beginWeightedAnimation` API:
+
+```
+// Will have a weight of 1.0
+var idleAnim = scene.beginWeightedAnimation(skeleton, 0, 89, 1.0, true);
+// Will have a weight of 0
+var walkAnim = scene.beginWeightedAnimation(skeleton, 90, 124, 0, true);
+// Will have a weight of 0
+var runAnim = scene.beginWeightedAnimation(skeleton, 125, 146, 0, true);
+```
+
+This function accepts the following parameters:
+
+| Name | Type | Description | Optional |
+|---|---|---|---|
+| target | any | The target | No
+| from | number | The fps starting frame | No
+| to | number | The fps ending frame | No
+| weight | number | Weight of this animation. 1.0 by default | Yes
+| loop | boolean | If true, the animation will loop (dependent upon BABYLON.Animation.ANIMATIONLOOPMODE) | Yes
+| speedRatio | number | default : 1. The speed ratio of this animation | Yes
+| onAnimationEnd | () => void | The function triggered on the end of the animation, even if the animation is manually stopped (also dependent upon ANIMATIONLOOPMODE) | Yes
+| animatable | Animatable | An optional specific animation | Yes
+
+Like `beginAnimation`, this function returns an animatable but this time with its `weight` property set to a value.
+
+You can also set the `weight` value of any Animatable at any time to switch to a weighted mode. This value has to be between 0 and 1. 
+In a same way, you can set it to -1 to turn the weight mode off. If you set the weight to 0, the animation will be considered paused.
+
+
+```
+var idleAnim = scene.beginWeightedAnimation(skeleton, 0, 89, 1.0, true);
+var runAnim = scene.beginWeightedAnimation(skeleton, 125, 146, 0, true);
+
+idleAnim.weight = 0.5;
+runAnim.weight = 0.5
+```
+
+If your animations are not of the same size (same distance between from and to keys) then you will need to turn animation synchronization on with the following code:
+
+```
+// Synchronize animations
+idleAnim.syncWith(runAnim);		
+```
+
+To disable animation synchronization, just call `animation.syncWith(null)`.
+
+A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#9
+
+## Overriding properties
+When you have a mesh with multiple animations or a skeleton (where all bones can be animated) you can use an animationPropertiesOverride to specify some general properties for all child animations. These properties will override local animation properties:
+
+```
+var overrides = new BABYLON.AnimationPropertiesOverride();
+
+overrides.enableBlending = true;
+overrides.blendingSpeed = 0.1;
+
+skeleton.animationPropertiesOverride = overrides;
+```
+
+Here is the list of properties that can be overridden:
+* enableBlending
+* blendingSpeed
+* loopMode
+
+Please note that the scene.animationPropertiesOverride will be used if animation target does not contain one.
 
 ## Easing functions
 
@@ -250,6 +337,7 @@ Here are the predefined easing functions you can use :
 - ```BABYLON.QuarticEase()```
 - ```BABYLON.QuinticEase()```
 - ```BABYLON.SineEase()```
+- ```BABYLON.BezierCurveEase()```
 
 You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates. 
 There are three possible values you can give for EasingMode: 
@@ -258,7 +346,7 @@ There are three possible values you can give for EasingMode:
 - ```BABYLON.EasingFunction.EASINGMODE_EASEOUT``` : Interpolation follows 100% interpolation minus the output of the formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEINOUT``` : Interpolation uses EaseIn for the first half of the animation and EaseOut for the second half.
 
-Here is a straightforward sample to animate a torus within a ```CirleEase``` easing function :
+Here is a straightforward sample to animate a torus within a ```CircleEase``` easing function :
 
 ```Javascript
 //Create a Vector3 animation at 30 FPS
@@ -276,7 +364,7 @@ animationTorus.setKeys(keysTorus);
 // Creating an easing function
 var easingFunction = new BABYLON.CircleEase();
 
-// For each easing function, you can choose beetween EASEIN (default), EASEOUT, EASEINOUT
+// For each easing function, you can choose between EASEIN (default), EASEOUT, EASEINOUT
 easingFunction.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
 
 // Adding the easing function to the animation

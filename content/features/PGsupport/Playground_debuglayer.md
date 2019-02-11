@@ -1,142 +1,150 @@
 ---
-PG_TITLE: Playground Debuglayer
+PG_TITLE: Playground Inspector
 ---
 
-# Playground Debug Layer
+# What Is It?
 
-## What Is It?
+Babylon.js inspector is a debugging tool created to help pinpoint issues you may have with a scene. It offers multiple tools like:
+- A hierarchical view of your scene
+- Multiple property grids to let you dynamically change object properties
+- Specific helpers like the skeleton viewer, etc.
 
-Before babylon.js version 3.0, the debug layer was a very simple HTML interface helping the developer to retrieve some basic data about his project : mesh list, mesh names, logs, stats...
-
-From version 3.0, this debug layer has been replaced by an complete inspector, that can be used to browser a lot of data:
-* Scene attributes
-* Statistics about performances
-* Mesh list and attributes
-* Material list
-* ... and much more
+Its interface uses two panes:
+- The scene explorer pane
+- The inspector pane
 
 ![debug layer overview](/img/features/debuglayer/debuglayer.jpg)
 
-Features are available from either the Tool Bar or the Tab Bar at the top of the debug layer
+The two panes can also be opened in an embedded mode:
 
-## Tool bar
+![embed mode](/img/features/debuglayer/embedmode.jpg)
 
-![toolbar](/img/features/debuglayer/toolbar.jpg)
+# Scene explorer pane
 
-Several tools are available, from left to right : 
-* Refresh the current tab - *As the debug layer can be created before some information are available, this tool is here to refresh displayed data according to the last version of the game scene*
-* Display mesh names - *Display mesh names on the screen, using BABYLON.GUI*
-* Pick a mesh - *A click on a tool and a click on a 3D object display the mesh tab, with the selected mesh opened*
-* Popup mode - *Open the debug layer in a popup - Not available on Edge for security reasons*
-* Pause mode - *All properties are refreshed automatically every 200ms. This tool pauses and resumes the automatic property refresh.*
-* Close debug layer - *Self explainatory*
+![scene explorer](/img/features/debuglayer/sceneExplorer.jpg)
 
-## Tab Bar Overview
+The scene explorer displays a hierarchical view of your scene. You can filter by name in the filter bar if you want to find a specific entry.
 
-![tabbar](/img/features/debuglayer/tabbar.jpg)
+By clicking on a line you will select it and the inspector will automatically update to reflect the properties of the selected item.
 
-Each feature is represented on a tab: 
-* Mesh tab
-* Scene tab
-* Material tab
-* ...
+Some entities offer shortcuts to contextual actions.
+
+## Scene actions
+
+![scene actions](/img/features/debuglayer/sceneactions.jpg)
+
+The scene shortcuts are the following:
+- The first 3 actions will turn on a specific gizmo mode (translation, rotation, scaling). When you click on one of them you can then click on a node in the Scene explorer or directly in your scene and it will be controllable with a gizmo:
+
+![gizmo](/img/features/debuglayer/gizmo.jpg)
+
+- The fourth action is a picker. Just pick a mesh in your scene and it will be selected in your scene explorer
+- The last one will force the scene explorer to update. For performance reasons, the scene explorer is not listening to all changes that can happen on the scene so you may end up needing to refresh it manually.
+
+## Mesh actions
+![mesh actions](/img/features/debuglayer/meshactions.jpg)
+
+The mesh shortcuts are the following:
+- The first action will enable the bounding box gizmo:
+
+![bounding box gizmo](/img/features/debuglayer/boundingboxgizmo.jpg)
+
+- The second action will show/hide the mesh.
+
+## Light actions
+
+![light actions](/img/features/debuglayer/lightactions.jpg)
+
+You can use the light action to turn a light on and off.
+
+## Camera actions
+
+![camera actions](/img/features/debuglayer/cameraactions.jpg)
+
+You can use the camera action to switch the active camera (when they are multiple cameras in a scene).
+
+## GUI control actions
+
+![gui control actions](/img/features/debuglayer/controlactions.jpg)
+
+You can use the GUI control actions to:
+- Display outline of a control
+- Show / hide a specific control
 
 
-| Name | Description | Top Panel | Bottom panel | 
-| ---- | --- | --- | ---- |
-| Scene | Display some information about the current scene | Toggle render modes | Display scene properties |
-| Console | Display console messages | Hook all console.log messages | Display all logs related to babylon.js (callled with BABYLON.Tools.Log) |
-| Stats | Display statistics data | Display stats | | 
-| Textures | Display all textures | The list of textures available in the scene (images, render target textures, map textures, font textures and dynamic textures) | The texture image. You can right-click - open in a new tab to have perfect dimensions |
-| Mesh | Display mesh data | The list of mesh, sorted by their names. | The selected mesh properties |
-| Shader |Display vertex and fragment shader | A combo list with all custom shaders | The vertex and fragment shaders |
-| Light | Display light data | The list of light, sorted by their names. | The selected light properties |
-| Material | Display material data | The list of material, sorted by their names. | The selected material properties |
-| GUI | Display GUI information. Only displayed if BABYLON.GUI is included in the project | The list of BABYLON.GUI, sorted by their name | The selected BABYLON.GUI primitive properties |
-|Physics |Display physics data|List of physics objects sorted by name|The selected physics object properties|
-| Camera | Display camera data | The list of camera, sorted by their names. | The selected camera properties |
+# Inspector pane
 
-| Audio | Display all sounds | The list of sounds, sorted by their names. | The selected sound properties |
+The inspector pane contains 4 tabs:
 
-In some tabs, a search bar is available to look for a specific object.
+![inspector](/img/features/debuglayer/inspector.jpg)
 
-## Tab Bar Additional Details
+- The property grid which will display configurable controls for the current selected entity:
 
-### Scene
-The displayed list of properties for the scene can updated manually by clicking on it, updating the new value and press 'Enter'.
+![property grid](/img/features/debuglayer/property.jpg)
 
-![scene details](/img/features/debuglayer/scenedetails.jpg)
+- The debug pane will let you turn features on and off. It also let you display a grid and turn viewers (bones or physics) on and off:
 
-### Textures
+![debug pane](/img/features/debuglayer/debugpane.jpg)
 
-![Texture Tools](/img/features/debuglayer/texturetools.jpg)
+- The statistics pane gives information about all metrics captured by the engine:
 
-* Displays the texture - *Works only for images textures*
+![stats pane](/img/features/debuglayer/statspane.jpg)
 
+- The tools pane lets you access utilities (like screen capture or recording as well as several tools related to glTF):
 
-### Mesh
+![tools](/img/features/debuglayer/tools.jpg)
 
-![mesh tools](/img/features/debuglayer/meshtools.jpg)
+# Popup mode
 
-* Toggles display of children if present (>v)
-* Make visible/invisible the selected mesh (eye)
-* Display/remove mesh axis (spanner)
-* Display/remove mesh bounding box (box)
-* Display the number of vertices of the mesh (i)
-* Display mesh properties (name)
+You can move any pane into a popup mode by clicking the icon right left to the close button in the pane header:
 
-![mesh details](/img/features/debuglayer/meshdetails.jpg)
+![popup](/img/features/debuglayer/popup.jpg)
 
-As for a scene the displayed list of properties for a mesh can be updated manually.
+# Specific debug tools
 
- ### Light
- 
-![light tools](/img/features/debuglayer/lighttools.jpg)
+Specific debug tools can be found across the inspector:
 
-* Switch on/off the light (eye)
-* Display properites (name)
+## Render grid
 
-### GUI
+This tool (available in the Debug pane) will render a grid on the (0,0,0) plane:
 
-![GUI tools](/img/features/debuglayer/GUItools.jpg)
+![grid](/img/features/debuglayer/grid.jpg)
 
-* Toggles the display of children of the selected control (> v)
-* Display/hide the selected control (eye)
-* Display the properties of the control
+## Bones viewer
 
-### Material
+This tool (available in the skeleton property grid) will render your skeletons:
 
-![material tools](/img/features/debuglayer/materialdetails.jpg)
+![bones](/img/features/debuglayer/bones.jpg)
 
-* Displays material properties (name)
+## Physics viewer
 
-![material details](/img/features/debuglayer/materialtools.jpg)
+This tool (available in the Debug pane) will render your physics impostors:
 
-As for a scene the displayed list of properties for a material can be updated manually.
+![physics](/img/features/debuglayer/physics.jpg)
 
-* Hover over magnifying glass to display the selected texture - *Works only for images textures*
+## Normal painter
 
-### Camera
+This tool (available in the property pane when you select a mesh) will paint the normals on your active mesh:
 
-![camera tools](/img/features/debuglayer/cameratools.jpg)
+![paint normal](/img/features/debuglayer/paintnormal.jpg)
 
-* Make the selected camera the active camera (camera)
-* Displays camera properties (name)
+## Vertex normal viewer
 
-As for a scene the displayed list of properties for a camera can be updated manually.
+This tool (available in the property pane when you select a mesh) will render the vertex normals of a mesh:
 
-### Audio
+![vertex normal](/img/features/debuglayer/vertexnormal.jpg)
 
-![sound tools](/img/features/debuglayer/soundtools.jpg)
+## Texture painter
 
-* Play the selected sound (&#9658;) 
-* Display Audio Properties (name)
+This tool (available in the property pane when you select a material with textures in it) will render the texture directly as an emissive one:
 
-As for a scene the displayed list of properties for a sound can be updated manually.
+![texture painter](/img/features/debuglayer/texturepainter.jpg)
 
 # Further Reading
 
-[How To Use The Debug Layer in Projects](/How_To/debug_layer)   
-[How To Customize the Debug Layer](/How_To/customize_debug_layer)  
+[How To Use The Inspector in Projects](/How_To/debug_layer)  
+[How To Customize the Inspector](/How_To/customize_debug_layer)  
+[Dev log about the inspector](https://medium.com/@babylonjs/dev-log-creating-the-new-inspector-b15c50900205)
+
 
 

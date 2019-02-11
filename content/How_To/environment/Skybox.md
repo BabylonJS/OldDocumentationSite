@@ -10,15 +10,18 @@ Six jpeg images are necessary to create a skybox, all of them should be square a
 The name for each image should have a common part followed by a position given by _px, _nx, _py, _ny, _pz or _nz corresponding whether 
 it is on the positive (p) or negative (n) x, y or z axis.
 
-Example Images
+Example Images:
+
 ![Skybox](/img/how_to/skybox.png)
 
-Notice that the images match seamlessly at the edges of the box.
+Notice that the images match seamlessly at the edges of the box:
 
 ![Seamless Skybox](/img/how_to/skybox1.png)
 
-Skybox images can be found on the web by searching for skybox images. Generally these are single images in the form of a net of a box and you will 
-need to seperate them into individual images and save each.
+Skybox images can be found on the web by searching for skybox images. Generally, these are single images in the form of a net of a box and you will 
+need to separate them into individual images and save each.
+
+You can also use [textures available in the playground](/resources/playground_textures#cubetextures).
 
 ## Skybox Code 
 Within the playground you can copy and paste the following into your scene.
@@ -34,21 +37,14 @@ skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
 skybox.material = skyboxMaterial;
 ```
 
-More generally the the images are referenced in the following way
+More generally the images are referenced in the following way
 
 ```javascript
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("PATH TO IMAGES FOLDER/COMMON PART OF NAMES", scene);
 ```
 
-[Playground Example of a Skybox](http://www.babylonjs-playground.com/#UU7RQ#1)
-
-## Available Skyboxes in the Playground
-
-1. skybox
-2. TropicalSunnyDay
+* [Playground Example of a Skybox](http://www.babylonjs-playground.com/#UU7RQ#1)
 
 # Further Reading
 
-## Advanced
-
-[Reflections and Refractions](/advanced/Reflect)
+[Reflections and Refractions](/how_to/reflect)

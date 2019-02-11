@@ -34,13 +34,13 @@ The following code gives the animation.
     })
 ```
 
-[Playground Animation - TransformCoordinates](https://www.babylonjs-playground.com/#TRAIXW#2)
+* [Playground Animation - TransformCoordinates](https://www.babylonjs-playground.com/#TRAIXW#2)
 
 ## Disc World
 
 Imagine a disc flying around space with building on it. In fact the following example uses a thin cylinder as the disc since the top circular face is horizontal whilst the face of a disc in Babylon.js is vertical. (OK it does make any real difference but it more natural to start with a horizontal ground).
 
-The building will be an array of boxes. Leaving the boxes as separate meshes would mean applying the _TransformCoorinates_ function to each of them, so instead they will be merged into one mesh. As in the example above the rotation of the disc and the boxes are matched and the coordinate position of the boxes transformed.
+The building will be an array of boxes. Leaving the boxes as separate meshes would mean applying the _TransformCoordinates_ function to each of them, so instead they will be merged into one mesh. As in the example above the rotation of the disc and the boxes are matched and the coordinate position of the boxes transformed.
 
 ```javascript
     var phi = 0;
@@ -55,7 +55,7 @@ The building will be an array of boxes. Leaving the boxes as separate meshes wou
 
     });
 ```
-[Playground Animation - Disc World](https://www.babylonjs-playground.com/#TRAIXW#5)
+* [Playground Animation - Disc World](https://www.babylonjs-playground.com/#TRAIXW#5)
 
 # Further Reading
 

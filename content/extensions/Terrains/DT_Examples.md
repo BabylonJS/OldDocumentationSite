@@ -50,7 +50,7 @@ Now we can set the camera altitude on each frame at a fixed elevation above the 
 ```
 If we move the camera with the keyboard arrow keys, it will follow the terrain ground.   
 
-[Playground Example Follow Terrain](https://www.babylonjs-playground.com/#J6FMJ#6)  
+* [Playground Example Follow Terrain](https://www.babylonjs-playground.com/#J6FMJ#6)  
 
 We could also make a bigger map and a bigger terrain : 
 ```javascript
@@ -69,7 +69,7 @@ Finally, we could also choose to extend the terrain visible size by setting some
 By example, `LODLimits = [4, 3, 2, 1, 1]` would mean that :  
 
 * the initial LOD factor (default 1, the one at the camera location) is incremented for all the terrain quads under the 4-th perimetric rows and columns, so it's 1 + 1 = 2 for them, 
-* it's incremented once again for all the terrain quads under the 3-th perimetric rows and colums, so it's 2 + 1 = 3 for them,
+* it's incremented once again for all the terrain quads under the 3-th perimetric rows and columns, so it's 2 + 1 = 3 for them,
 * it's incremented once again for the ones under the 2-nd rows and columns, so it's 4 for them
 * it's incremented finally twice, because there are two `1` in the array, for the quads under the first rows and columns, so 3 + 2 x 1 = 5 for those last ones.  
 
@@ -78,9 +78,10 @@ terrain.LODLimits = [4, 3, 2, 1, 1];
 ```
 Let's don't worry if this feature seems complex to understand and let's just remember that it extends the terrain visible size on its perimeter and reduces the rendered map details in the same time.  
 
-[Playground Example](https://www.babylonjs-playground.com/#J6FMJ#7)  
+* [Playground Example](https://www.babylonjs-playground.com/#J6FMJ#7)  
 
 
 # Further Reading
 
-[Dynamic Terrain](/extensions/Dynamic_Terrain) 
+[Dynamic Terrain](/extensions/Dynamic_Terrain)  
+[Dynamic Terrain with Objects](/extensions/DT_Objects)  

@@ -1,26 +1,22 @@
-nav.nav-main
+nav.nav-main(style={position: 'inherit'})
     // Hamburger menu : displayed only in small screens
     i#mobilemenu.fa.fa-bars
-    // this button only shows on mobile version of a "class" page
-    if currentUrl === '/classes/class'
-        a(href='/classes/' + currentVersion)
-            i#goBackToClassList.fa.fa-arrow-left
 
     .banner
         .menu
-        
-            .do-not-hover.item(class={homeClassMobile: currentUrl === '/classes/class'})
-                a(href='http://www.babylonjs.com')
-                    | Babylon.js                    
+                       
             .do-not-hover#home(class={homeClassMobile: currentUrl === '/classes/class'})
                 a(href='/')
-                    | DOCUMENTATION
+                    | HOME
             #whatsnew.item(class={active: currentUrl === '/whats-new'})
                 a(href='/whats-new')
                     | What's new
             #feature.item(class={active: currentUrl === '/babylon101'})
                 a(href='/babylon101')
                     | Babylon 101      
+            #feature.item(class={active: currentUrl === '/examples'})
+                a(href='/examples')
+                    | Examples                        
             #How_To.item(class={active: currentUrl === '/How_To'})
                 a(href='/How_To')
                     | How To...
@@ -33,18 +29,18 @@ nav.nav-main
             #extensions.item(class={active: currentUrl === '/extensions'})
                 a(href='/extensions')
                     | Extensions
-            #samples.item(class={active: currentUrl === '/samples'})
-                a(href='/samples')
-                    | Samples        
-            #classes.item(class={active: (currentUrl === '/classes') || (currentUrl === '/classes/class')})
-                a(href='/classes')
-                    | Classes
+            #samples.item(class={active: currentUrl === '/snippets'})
+                a(href='/snippets')
+                    | Snippets        
+            #classes.item(class={active: currentUrl === '/api'})
+                a(href='/api')
+                    | API
             #playground.item(class={active: currentUrl === '/playground'})
                 a(href='/playground')
                     | Playground
         .more
             .searchbar
                 form(method='get', action='/search')
-                    input(type='text', name='q', placeholder='Search...')
+                    input(type='text', name='bjsq', placeholder='Search...')
                     button(type='submit')
                         i.fa.fa-search

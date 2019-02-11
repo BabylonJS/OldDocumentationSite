@@ -4,7 +4,7 @@ PG_TITLE: The Playground
 
 # The Playground
 
-The place to try out coding with Babylon.js. Experimenting and changing any code in the playground and clicking on the **Run** button will not affect any original code in the playground you currently using. Original code can be restored by refreshing the broweser. 
+The place to try out coding with Babylon.js. Experimenting and changing any code in the playground and clicking on the **Run** button will not affect any original code in the playground you currently using. Original code can be restored by refreshing the browser. You can write the code in Javascript or Typescript. In the case of Typescript the URL must contain **ts.html**  after www.babylonjs-playground.com for the code to be recognised as Typescript. The playground software compiles the code to Javascript, in the background, before rendering.
 
 ## Overview
 
@@ -25,7 +25,11 @@ The space for the coding editor and rendering area can be adjusted by dragging t
 ## The Menu
 ![Playground Menu](/img/how_to/Introduction/pgmenu.jpg)
 
+In Typescript mode the menu has a purple color theme ![Playground Typescript Menu](/img/how_to/Introduction/pgmenu_ts.jpg)
+
 ### Large Screen
+
+**Title and Version** - As stated.
 
 **Run** - Commands the playground to try to render your scene.
 
@@ -54,36 +58,43 @@ which contains everything necessary to run the code in your browser, including l
 
 *Format Code* - Pretty prints the code.
 
-**Debug Layer** - The checkbox toggles the debug layer which shows a multitude of variable values.
+**Inspector** - The checkbox toggles the playground scene inspector which shows a multitude of variable values.
 
 **Metadata** - This is where you describe your playground allowing yourself and other to search the playground database for examples of use.
 
-**Version** - Allows and shows your choice of the BABYLON.js framework, either the current stable one or the latest previe version.
+**Version** - Allows and shows your choice of the BABYLON.js framework, either the current stable one or the latest preview version.
 
-**Scene Selector** - ('basic scene' in the picture above). This selector button is used to choose any of the pre-installed playground demo scenes.  It shows 'Custom' when it is one created by a user.
+**Examples** - A drop down menu giving examples of playgrounds with a search filter.
 
 ### Small Screens
 
 **File** - contains Run, New, Clear, Save and Zip as submenus.
 
-**Settings** - Adds some or all of Debug Layer, Metadata, Version to its submenus.
+**Settings** - Adds some or all of Inspector, Metadata, Version to its submenus.
 
 ## Playground URL formats
 
 Pre-installed demo playgrounds have this URL format
 
-http://www.babylonjs-playground.com/#
+| Javascript | Typscript |
+|---|---|
+| http://www.babylonjs-playground.com/# | http://www.babylonjs-playground.com/ts.html# |
 
 Saved playgrounds have this format on first save
 
-http://www.babylonjs-playground.com/#QKQHS
+| Javascript | Typscript |
+|---|---|
+| http://www.babylonjs-playground.com/#QKQHS | http://www.babylonjs-playground.com/ts.html#H3AF26 |
 
 that is the site name followed by a hash code reference key.
 
 Following saves of the same playground are numbered incremently from one, for example 
 
-http://www.babylonjs-playground.com/#QKQHS#1  
-http://www.babylonjs-playground.com/#QKQHS#2  
+| Javascript | Typscript |
+|---|---|
+| http://www.babylonjs-playground.com/#QKQHS#1 | http://www.babylonjs-playground.com/ts.html#H3AF26#1 |
+| http://www.babylonjs-playground.com/#QKQHS#2 | http://www.babylonjs-playground.com/ts.html#H3AF26#2 |
+  
 etc.
 
 ## Compilation Errors
@@ -100,9 +111,11 @@ Whenever a scene in the playground needs the use of keys to move an object, such
 # Further Reading
  
 [Textures Directly Available to the Playground](/resources/Playground_Textures.html)  
-[The Debug Layer Features](/features/playground_debuglayer)  
-[How to Use The Debug Layer in Projects](/How_To/debug_layer)  
-[How To Customize the Debug Layer](/How_To/customize_debug_layer)  
+[Meshes Available to Import into the Playground](/resources/meshes_to_load) 
+[Using External Assets in the Playground](/resources/External_PG_assets)   
+[The Inspector Features](/features/playground_debuglayer)  
+[How to Use The Inspector in Projects](/How_To/debug_layer)  
+[How To Customize the Inspector](/How_To/customize_debug_layer)  
 
 
 

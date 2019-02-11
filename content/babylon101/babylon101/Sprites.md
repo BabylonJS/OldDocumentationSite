@@ -7,7 +7,7 @@ PG_TITLE: 09. Sprites
 
 In this tutorial, we are going to learn how to manipulate Sprites. Sprites are 2D image/animation, and we will use them to display an image with alpha channel. Sprites always face the camera.
 
-Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees. 
+Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees.
 
 ![Elements](/img/how_to/Sprites/08.png)
 
@@ -15,35 +15,35 @@ _Final result_
 
 ## How can I do this ?
 
-**1- Sprite manager**
+### Sprite Manager
 
 If you want to use sprites, you need to create a “sprite manager” to optimize GPU resources by grouping in one place multiple instances of a sprite.
 This manager is mandatory, even if you want to create one sprite. You just have to write:
 
 ```javascript
 // Create a sprite manager
-var spriteManagerTrees = new BABYLON.SpriteManager("treesManagr", "Assets/Palm-arecaceae.png", 2000, 800, scene);
+var spriteManagerTrees = new BABYLON.SpriteManager("treesManager", "Assets/Palm-arecaceae.png", 2000, 800, scene);
 ```
 
 When creating a sprite manager, you have to decide a few parameters:
 * Name: a name for this manager.
 * The 2D image URL (most of the time, you will want use an image format which contain alpha channel, like .PNG).
 * The capacity of this manager : the maximum number of instances in this manager (in our example, we could create 2000 instances of trees).
-* The cell size, corresponding to the size of your image, like we’ll see below.
+* The cell size, corresponding to the size of your image, like we’ll see below. Please note that cellSize could be a number or an object made of a width and height properties (Later on you will be able to also specify `spriteManager.cellWidth` and `spriteManager.cellHeight`)
 * The actual scene, to which we will add this manager.
 
 To give another example, look at this snippet:
 ```javascript
-var spriteManagerPlayer = new BABYLON.SpriteManager("playerManagr","Assets/Player.png", 2, 64, scene);
+var spriteManagerPlayer = new BABYLON.SpriteManager("playerManager","Assets/Player.png", 2, {width: 64, height: 64}, scene);
 ```
 
-This time, we only want 2 instances, and we said that our sprite’s size is 64. Here is what our image looks like:
+This time, we only want 2 instances, and we said that our sprite’s size is 64x64. Here is what our image looks like:
 
 ![Elements](/img/how_to/Sprites/08-1.png)
 
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
-**2- Create an instance**
+### Create An Instance
 
 Now that we have our manager, we can create instances of our sprite linked to this manager. Creating an instance is as simple as:
 
@@ -73,7 +73,7 @@ player.height = 0.4;
 
 You can keep using ```player.size``` and in this case width and height will just be the same.
 
-**3- Sprite animation**
+### Sprite Animation
 
 One of the advantages of sprites is animations. You only have to load one large image file which will contain all animation images, one next to another. Just be careful to respect the square pixel size that you have specified in your manager (e.g. 64 pixel).
 
@@ -103,5 +103,3 @@ Having learnt about sprites, so it’s time to move on to use them in a classic 
 # Further Reading
 
 [Mesh Overview](/features/Shapes)
-
-

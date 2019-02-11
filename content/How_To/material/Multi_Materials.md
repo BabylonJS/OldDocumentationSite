@@ -29,7 +29,7 @@ Then you can create a multi-material in order to gather them all:
 var multimat = new BABYLON.MultiMaterial("multi", scene);
 multimat.subMaterials.push(material0);
 multimat.subMaterials.push(material1);
-multimat.subMaterials.push(material2);</pre>
+multimat.subMaterials.push(material2);
 ```
 
 You are now able to affect the multi-material to your mesh:
@@ -49,9 +49,9 @@ To define multiple submeshes, you just have to use this code:
 sphere.subMeshes = [];
 var verticesCount = sphere.getTotalVertices();
 
-sphere.subMeshes.push(new BABYLON.SubMesh(0, 0, verticesCount, 0, 900, sphere));
-sphere.subMeshes.push(new BABYLON.SubMesh(1, 0, verticesCount, 900, 900, sphere));
-sphere.subMeshes.push(new BABYLON.SubMesh(2, 0, verticesCount, 1800, 2088, sphere));
+new BABYLON.SubMesh(0, 0, verticesCount, 0, 900, sphere);
+new BABYLON.SubMesh(1, 0, verticesCount, 900, 900, sphere);
+new BABYLON.SubMesh(2, 0, verticesCount, 1800, 2088, sphere);
 ```
 
 In this case, you will have 3 parts:
@@ -68,4 +68,20 @@ A submesh is defined with:
 * Index of the first indice to use and indices count
 * The parent mesh
 
-So with the code above, you can use the first material on the top part of the sphere, the second material on the middle part and the last material on the bottom part of the sphere.</p>
+So with the code above, you can use the first material on the top part of the sphere, the second material on the middle part and the last material on the bottom part of the sphere.
+
+* [Playground Example - MultiMaterial](https://www.babylonjs-playground.com/#2Q4S2S#0)
+
+## With Merged Meshes
+
+When you [merge meshes](/how_to/How_to_Merge_Meshes) together with the final parameter (`multiMultiMaterial`) set to true the subMeshes array is automatically created with all merging meshes' subMeshes. Each subMesh's material is also included in the resulting mesh's new multiMaterial. This feature ignores the parameter (`subdivideWithSubMeshes`).
+
+When you [merge meshes](/how_to/How_to_Merge_Meshes) together with the second to last parameter (`subdivideWithSubMeshes`) set to true the subMeshes array is automatically created with each merging mesh as a submesh of the new mesh. You must assign the correct subMesh index to the correct material index.
+
+When you form `mergedMesh` by merging meshes in this array order [mesh1, mesh2], and the multiMaterials subMaterials array contains materials in the order [mat1, mat2] then for the subMesh from `mesh2` to have material `mat2` you need to set
+
+```javascript
+mergedMesh.subMeshes[1].materialIndex = 1;
+```
+
+* [Playground Example - MultiMaterial with Merged Meshes](https://playground.babylonjs.com/#INZ0Z0#6)

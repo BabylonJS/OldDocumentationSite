@@ -5,7 +5,7 @@ PG_TITLE: How to use Curve3
 
 # How To Draw Curves
 
-If you want to draw a circular path then it easy enough to generate the points, in the XY plane, for this using
+If you want to draw a circular path then it is easy enough to generate the points, in the XY plane, for this using
 
 ```javascript
 var path = [];
@@ -43,7 +43,7 @@ The _length()_ method returns the curve length.
 var path = bezier2.getPoints();
 var l = bezier2.length();
 ```
-[Playground Example - Bezier Quadratic Curve](https://www.babylonjs-playground.com/#W0XSPA)
+* [Playground Example - Bezier Quadratic Curve](https://www.babylonjs-playground.com/#W0XSPA)
 
 ## Cubic Bezier curve
 http://en.wikipedia.org/wiki/B%C3%A9zier_curve# Higher-order_curves
@@ -66,7 +66,7 @@ var path = bezier3.getPoints();
 var l = bezier3.length();
 ```
 
-[Playground Example - Bezier Cubic Curve](https://www.babylonjs-playground.com/#EY3EW4);
+* [Playground Example - Bezier Cubic Curve](https://www.babylonjs-playground.com/#EY3EW4);
 
 
 ## Hermite Spline
@@ -91,7 +91,7 @@ var path = hermite.getPoints();
 var l = hermite.length();
 ```
 
-[Playground Example - Hermite Spline](https://www.babylonjs-playground.com/#P94GHL)
+* [Playground Example - Hermite Spline](https://www.babylonjs-playground.com/#P94GHL)
 
 ## Catmull-Rom Spline  
 https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline  
@@ -101,10 +101,12 @@ https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline
 ```javascript
 var nbPoints = 20;                     // the number of points between each Vector3 control points
 var points = [vec1, vec2, ..., vecN];  // an array of Vector3 the curve must pass through : the control points
-var catmullRom = BABYLON.Curve3.CreateCatmullRomSpline(points, nbPoints);
+var closed = true;                     // closes the curve when true
+var catmullRom = BABYLON.Curve3.CreateCatmullRomSpline(points, nbPoints, closed);
 ```
 * **points** : _Vector3_ an array of Vector3 (the control points) the curve will pass through,
-* **nbPoints** : _number_ the wanted curve number of points between each control point.
+* **nbPoints** : _number_ the wanted curve number of points between each control point,
+* **closed** : _boolean_ optional with default _false_; available from BJS V3.3; when true forms a closed curve.
 
 This static method returns an instance of _Curve3_.    
 Just use the Curve3 _getPoints()_ method to fill your array : _getPoints()_ returns an array of successive _Vector3_.       
@@ -114,7 +116,8 @@ var path = catmullRom.getPoints();
 var l = catmullRom.length();
 ```
 
-[Playground example - Catmull-Rom Spline](https://www.babylonjs-playground.com/#1AU0M4)
+* [Playground example - Catmull-Rom Spline Open Curve](https://www.babylonjs-playground.com/#1AU0M4)
+* [Playground example - Catmull-Rom Spline Closed Curve](https://www.babylonjs-playground.com/#1AU0M4#18)
 
 ## Custom Curve3 Object
 You can also make your own Curve3 object from a simple array of successive Vector3.   
@@ -157,7 +160,7 @@ var l = myFullCurve.length();
 Here is an example where a Hermite Spline is used to close smoothly a concatenation of two Bezier curves. As the spline is closing the curves the first and last points of the open continued curve need to be read from the array.  
 
 * The first and last points of the concatenation are used as last and first point of the Hermite spline.  
-* The first and last segments of the concatenation are used as last and first tangent vectors of the Hermite. Since these segment are quite small, they are scaled according to the concatenation _length_ so the longer the concatenation, the more curved the spline.   
+* The first and last segments of the concatenation are used as last and first tangent vectors of the Hermite. Since these segments are quite small, they are scaled according to the concatenation _length_ so the longer the concatenation, the more curved the spline.   
 
 ```javascript
 // two concatened cubic Bezier
@@ -180,10 +183,10 @@ continued = continued.continue(hermite);
 var closedCurve = BABYLON.Mesh.CreateLines("closed", continued.getPoints(), scene);
 ```
 
-[Playground Example - Closed Joined Curves](https://www.babylonjs-playground.com/#2GCEVH)
+* [Playground Example - Closed Joined Curves](https://www.babylonjs-playground.com/#2GCEVH)
 
 The orange and yellow curves are the original Bezier curves.   
-In light blue, these two curves are continued each other and a hermite curve is also added in continuation to close the path.   
+In light blue, these two curves are continued by each other and a hermite curve is also added in continuation to close the path.   
 
 # Further Reading
 

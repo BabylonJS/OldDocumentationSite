@@ -2,10 +2,10 @@
 
 ![Screenshot](/img/extensions/materials/gradient.jpg)
 
-## [~~Playground example - Not yet deployed~~]( https://www.babylonjs-playground.com)
+You can get the gradient material:
 
-
-Gradient material can be found here: [https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.gradientMaterial.js](https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview release/materialsLibrary/babylon.gradientMaterial.js)
+* Using npm with npm install --save babylonjs babylonjs-materials
+* With a direct reference to: https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js
 
 ## Using the gradient material
 
@@ -21,7 +21,13 @@ gradientMaterial.offset = 0.25;
 
 sphere.material = gradientMaterial;
 ```
-`topColor` and `bottomColor` are the two colors used in this gradient material.
-`offset` is a number between -1 and 1 that represent the amount of each color.
 
+The gradient material can be configured with:
+* `topColor` and `bottomColor` are the two colors used in this gradient material
+* `offset` is a number used to offset the color on the Y axis
+* `scale` is a number used to scale the color on the Y axis
+* `smoothness` is a number (between 0 and 10) which can be used to define the speed of the color change along Y axis (1 by default)
 
+## Playground example
+
+You can find a live example here: https://www.babylonjs-playground.com/#2IFRKC#22

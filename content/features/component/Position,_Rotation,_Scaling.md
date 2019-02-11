@@ -4,9 +4,9 @@ PG_TITLE: 04. Position, Rotation, Scaling
 ---
 # Positioning, Rotating and Scaling 
 
-There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/features/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
+There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/resources/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
 
-Prior to the _MeshBuilder_ method of creating a mesh the only way to produce a cuboid or ellipsoid, for example, was to create a cube and sphere and scale them in one dimension or another. This could produce difficulties with subsequent manipulations of a mesh. Since using _MeshBuilder_ allows you to set different sizes for meshes in the x, y and z directions these difficuties with [scaling](/babylon101/position#scaling) no longer arise. 
+Prior to the _MeshBuilder_ method of creating a mesh the only way to produce a cuboid or ellipsoid, for example, was to create a cube and sphere and scale them in one dimension or another. This could produce difficulties with subsequent manipulations of a mesh. Since using _MeshBuilder_ allows you to set different sizes for meshes in the x, y and z directions these difficulties with [scaling](/babylon101/position#scaling) no longer arise. 
 
 There are two types of tactic to position and rotate a mesh; one type is the **set-at** tactic and the other is **move-by**. [Position](/babylon101/position#position) and [rotation](/babylon101/position#rotation) are both of the **set at** type, the values being given set the actual position and rotation of the mesh. On the other hand [addRotation](/babylon101/position#sequencing-rotations) is a **move-by** type since it adds the given rotation around one axis to the current rotation of the mesh. You can read about more **set-at** and **move-by** types below.
 
@@ -21,7 +21,7 @@ This _setPositionWithLocalVector_ method sets the position with reference to **l
 ```javascript
 mesh.setPositionWithLocalVector(new BABYLON.Vector3(x, y, z));
 ```
-[Playground Example setPositionWithLocalVector](https://www.babylonjs-playground.com/#EYZE4Q#2)
+* [Playground Example setPositionWithLocalVector](https://www.babylonjs-playground.com/#EYZE4Q#2)
 
 In order to obtain the current position of the object in **local space** use
 
@@ -44,9 +44,11 @@ mesh.rotationQuaternion = quaternion;
 
 The default for rotationQuaternion is _undefined_ . When a _rotationQuaternion_ is set the value of _rotation_ is set to (0, 0, 0).
 
-[Playground Example rotationQuaternion](https://www.babylonjs-playground.com/#EYZE4Q#3) 
+* [Playground Example rotationQuaternion](https://www.babylonjs-playground.com/#EYZE4Q#3) 
 
-**Note** : You MUST set and use rotationQuaternion when creating physics objects because physics engines rely only on them.
+**Note** : 
+1. You MUST set and use rotationQuaternion when creating physics objects because physics engines rely only on them.
+2. Setting a `rotationQuaternion` overwrites the use of `rotation` see [warning](/resources/Rotation_Conventions#warning)
 
 ## Align Axes
 
@@ -64,24 +66,24 @@ where _axis1_, _axis2_ and _axis3_ are three left-handed orthogonal vectors and 
 
 Using this a plane can be made to follow a curve so it lies parallel or perpendicular to the curve as it does so. In the following example a set of points is used to generate and draw a curve and a [3D path](/How_To/How_to_use_Path3D) is created. Babylon.js provides the way to obtain the normal, tangent and binormal from the _Path3D_ object at each of the points used to generate it. These form a set of orthangonal vectors, and depending on the order they are used, a plane can be made to follow and track the shape of the curve. All six orders are used in the example, the top one [0] has the plane tangental to the curve and the fourth one down [3] is perpendicular to the curve. Others can twist the plane at certain points. 
 
-[Playground Animation - RotationFromAxis](https://www.babylonjs-playground.com/#1PX9G0)
+* [Playground Animation - RotationFromAxis](https://www.babylonjs-playground.com/#1PX9G0)
 
 ## Move-By Methods
 
 These methods add the given value (positive or negative) to the current position or orientation of the mesh. In the case of _position_ and _rotation_ and _rotationQuaternion_. This can be done by actually adding values using '+=' or `-=" to individual components or using vector addition. The following animated playgrounds show examples.
 
-[Playground Animation - Position](https://www.babylonjs-playground.com/#66EBY3)
-[Playground Animation - Rotation](https://www.babylonjs-playground.com/#1ST43U#47)
-[Playground Animation  - Rotation Along Straight Horizontal Path](https://www.babylonjs-playground.com/#92EYG#13)
-[Playground Animation - rotationQuaternion](https://www.babylonjs-playground.com/#1ST43U#44)
+* [Playground Animation - Position](https://www.babylonjs-playground.com/#66EBY3)
+* [Playground Animation - Rotation](https://www.babylonjs-playground.com/#1ST43U#47)
+* [Playground Animation  - Rotation Along Straight Horizontal Path](https://www.babylonjs-playground.com/#92EYG#13)
+* [Playground Animation - rotationQuaternion](https://www.babylonjs-playground.com/#1ST43U#44)
 
 For rotating the most straight forward **move-by** method is [addRotation](/babylon101/position#sequencing-rotations) which increments the orientation of a mesh about one of the **local axes**.
 
-[Playground Animation - addRotation](https://www.babylonjs-playground.com/#EYZE4Q#5)
+* [Playground Animation - addRotation](https://www.babylonjs-playground.com/#EYZE4Q#5)
 
 The following playground shows you how to use _addRotation_ to construct wheels.
 
-[Playground Example - Wheels](http://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
+* [Playground Example - Wheels](http://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
 
 The other ways below move by the values given in the parameters.
 
@@ -92,8 +94,8 @@ This method moves, or more strictly translates, a mesh using the **local axes**
 ```javascript
 mesh.locallyTranslate(new BABYLON.Vector3(x, y, z));
 ```
-[Playground Example locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#1)
-[Playground Animation locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#4)
+* [Playground Example locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#1)
+* [Playground Animation locallyTranslate](https://www.babylonjs-playground.com/#EYZE4Q#4)
 
 ### Translate
 
@@ -146,7 +148,7 @@ pilot.rotate(new BABYLON.Vector3(-1, 3, -10), 7 * Math.PI / 12, BABYLON.Space.LO
 
 **Note:**  `mesh.rotate()` generates a new [quaternion](/resources/Rotation_Conventions#quaternions) and then uses `mesh.rotationQuaternion` while `mesh.rotation` is set to (0, 0, 0).  
 
-[Playground Animation - Rotate](https://www.babylonjs-playground.com/#66EBY3#3)
+* [Playground Animation - Rotate](https://www.babylonjs-playground.com/#66EBY3#3)
 
 ## Change of Origin
 

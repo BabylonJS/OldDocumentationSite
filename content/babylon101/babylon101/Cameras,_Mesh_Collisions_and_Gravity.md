@@ -27,7 +27,7 @@ camera.applyGravity = true;
 
 The next important step is to define the ellipsoid around our camera. This ellipsoid represents our player’s dimensions: a collision event will be raised when a mesh comes in contact with this ellipsoid, preventing our camera from getting too close to this mesh:
 
-![Ellipsoid](https://camo.githubusercontent.com/19931f529e19679a0e2556e23fc94536e6a9b88c/687474703a2f2f7777772e626162796c6f6e6a732e636f6d2f7475746f7269616c732f30392532302d253230436f6c6c6973696f6e73253230477261766974792f30392d312e6a7067)
+![Ellipsoid](/img/babylon101/ellipsoid.png)
 
 The _ellipsoid_ property on babylon.js cameras is default to size (0.5, 1, 0.5), but changing values will make you taller, bigger, smaller, thinner, it depends upon the adjusted axis. In the example below, we will make our camera's ellipsoid a bit bigger than the default one:
 
@@ -35,6 +35,12 @@ The _ellipsoid_ property on babylon.js cameras is default to size (0.5, 1, 0.5),
 //Set the ellipsoid around the camera (e.g. your player's size)
 camera.ellipsoid = new BABYLON.Vector3(1, 1, 1);
 ```
+
+Please note that the ellipsoid for the camera is offset to always have the view point on top of the ellipsoid. You can control this behavior by updating the `camera.ellipsoidOffset` property.
+
+The computation will be the following:
+
+*finalPosition = position - vec3(0, ellipsoid.y, 0) + ellipsoidOffset*
 
 **3 - Apply collision**
 
@@ -82,21 +88,6 @@ character.moveWithCollisions(backwards);
 ```
 
 Demo by Dad72: [**Move character with gravity and collision**](http://www.babylon.actifgames.com/moveCharacter/)
-
-## Web worker based collision system (Since 2.1)
-
-BabylonJS 2.1 allows the user to move the collision calculations to an external web worker thus achieving better rendering time.
-The worker is integrated in the single framework file, and no changes are required by the developer.
-The scene has now a new flag (false per default):
-```javascript
-scene.workerCollisions = true|false
-```
-Setting this flag to true will start the worker in the background. The worker will then receive all collision requests from the cameras and meshes. Setting it to false will set the collision to the regular collision calculation as it always was.
-
-To read more about how workers were integrated head to Raanan Weber's blog:
-
-* https://blog.raananweber.com/2015/05/26/collisions-using-workers-for-babylonjs/
-* https://blog.raananweber.com/2015/06/06/collisions-using-workers-for-babylonjs-part-2/
 
 ## ArcRotateCamera
 The ArcRotateCamera can also check collisions but instead of sliding along obstacles, this camera won't move when a collision appends.

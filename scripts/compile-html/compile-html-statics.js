@@ -12,11 +12,11 @@ var fs = require('fs'),
     marked = require('meta-marked'),
     renderer = new marked.Renderer(),
     slugify = require('uslug'),
-    rimraf = require('rimraf'),
+    //rimraf = require('rimraf'),
     toc = require('marked-toc');
 
 
-renderer.heading = function (text, level, raw) {
+renderer.heading = function(text, level, raw) {
     var escapedText = slugify(text, {
         allowedChars: '-'
     });
@@ -41,45 +41,49 @@ var __STATICS_LIST__ = path.join(appRoot, 'data/statics.json'),
     __FILES_DEST__ = path.join(appRoot, 'public/html/');
 
 
-module.exports = function (done) {
+module.exports = function(done) {
     var staticCategories = [
         "babylon101",
         "resources",
         "extensions",
         "How_To",
-        "samples",
+        "snippets",
         "features"
     ];
 
     var globalObj = {};
 
-    fs.readFile(__STATICS_LIST__, function (err, staticsList) {
+    fs.readFile(__STATICS_LIST__, function(err, staticsList) {
         if (err) logger.log('error', err);
 
         globalObj = JSON.parse(staticsList);
 
         // we have all the data we need in globObj; now we can process these data
-        async.each(staticCategories, function (category, finalCallback) {
+        async.each(staticCategories, function(category, finalCallback) {
 
             var dataObject = {
                 "category": category,
                 "folders": globalObj[category]
             };
-            dataObject.files = _.flatten(_.pluck(globalObj[category], 'files').filter(Boolean));
+            dataObject.files = _.flatten(_.map(globalObj[category], 'files').filter(Boolean));
 
             //need to get parent folder name in order to build the file path
-            dataObject.folders.map(function (folder) {
-                _.each(folder.files, function (file) {
+            dataObject.folders.map(function(folder) {
+                _.each(folder.files, function(file) {
                     file.folder = folder.name;
                 });
             });
 
-            async.waterfall([
-                async.constant(dataObject, category),
-                createStaticsPage,
+            let tasks = [async.constant(dataObject, category)];
+            //if (category !== "classes") {
+            tasks.push(createStaticsPage,
                 getStaticPagesContent,
-                createStaticPages
-            ], function (error) {
+                createStaticPages);
+            //} else {
+            //    tasks.push(addApiDocuments, createStaticPages);
+            //}
+
+            async.waterfall(tasks, function(error) {
                 if (error) {
                     throw error;
                 } else {
@@ -87,7 +91,7 @@ module.exports = function (done) {
                     finalCallback();
                 }
             });
-        }, function () {
+        }, function() {
             // final callback
             logger.info('> ALL EXPORTERS/EXTENSIONS/TUTORIALS PAGES COMPILED.');
             if (done) done();
@@ -96,92 +100,105 @@ module.exports = function (done) {
     });
 };
 
-var createStaticsPage = function (dataObj, category, cb) {
+var createStaticsPage = function(dataObj, category, cb) {
     var statics_page = pug.renderFile(__PUG_STATICS__, {
         dataObj: dataObj,
-        currentUrl: '/' + category
+        currentUrl: '/'
     });
 
-    fs.writeFile(path.join(__FILES_DEST__, category + '.html'), statics_page, function (writeErr) {
+    checkDirectorySync(path.join(__FILES_DEST__, category));
+
+    fs.writeFile(path.join(__FILES_DEST__, category + '/index.html'), statics_page, function(writeErr) {
         if (writeErr) throw writeErr;
         cb(null, dataObj, category);
     });
 };
 
-var getStaticPagesContent = function (dataObj, category, cb) {
+var getStaticPagesContent = function(dataObj, category, cb) {
     var staticsContents = [];
 
-    async.each(dataObj.files, function (file, callback) {
+    async.each(dataObj.files, function(file, callback) {
         var filename = path.join(__FILES_SOURCE__, category, file.folder + '', file.filename + '.md');
 
-        fs.exists(filename, function (exists) {
-            if (!exists) {
+        fs.stat(filename, function(err, stats) {
+            if (err) {
                 logger.warn('File ' + filename + ' doesn\'t exist.')
             } else {
-                fs.readFile(filename, {
-                    encoding: 'utf-8',
-                    flag: 'r'
-                }, function (readErr, content) {
-                    if (readErr) {
-                        logger.info(readErr);
-                    } else {
-                        var markedContent = marked(content),
-                            tableOfContent = marked(toc(content, {
-                                omit: ['PG_TITLE'],
-                                clean: ['a', 'href']
-                            })).html;
+                //check if the file needs to be generated:
+                var htmlFilename = path.join(__FILES_DEST__, category, file.filename + '.html');
+                let creationDate = new Date(0);
+                try {
+                    creationDate = (fs.statSync(htmlFilename).mtime);
+                } catch (e) {
+
+                }
+                if (creationDate.getTime() < stats.mtime.getTime()) {
+                    fs.readFile(filename, {
+                        encoding: 'utf-8',
+                        flag: 'r'
+                    }, function(readErr, content) {
+                        if (readErr) {
+                            logger.info(readErr);
+                        } else {
+                            var markedContent = marked(content),
+                                tableOfContent = marked(toc(content, {
+                                    omit: ['PG_TITLE'],
+                                    clean: ['a', 'href']
+                                })).html;
+
+                            // Regexp catching all link to the playground
+                            var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
+                            // Replace all links to the playground with a custom iframe
+                            var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i><br/>' +
+                                '<div class="iframeContainer"></div><br/>';
+
+                            markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
+
+                            staticsContents.push({
+                                "staticName": file.title,
+                                "staticFileName": file.filename,
+                                "staticContent": markedContent.html,
+                                "toc": tableOfContent
+                            });
+                            callback();
+                        }
+                    });
+                } else {
+                    callback();
+                }
 
 
-
-                        // Regexp catching all link to the playground
-                        var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?babylonjs-playground.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
-                        // Replace all links to the playground with a custom iframe
-                        var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i><br/>' +
-                            '<div class="iframeContainer"></div><br/>';
-
-                        markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
-
-                        staticsContents.push({
-                            "staticName": file.title,
-                            "staticFileName": file.filename,
-                            "staticContent": markedContent.html,
-                            "toc": tableOfContent
-                        });
-                        callback();
-                    }
-                });
             }
         });
-    }, function () {
+    }, function() {
         cb(null, staticsContents, category);
     });
 };
 
-var createStaticPages = function (staticsContents, category, cb) {
-    // flush public/html/<category> folder
-    rimraf(path.join(__FILES_DEST__, category), function (err) {
-        if (err) {
-            throw err;
-        } else {
-            fs.mkdirSync(path.join(__FILES_DEST__, category));
+function checkDirectorySync(directory) {
+    try {
+        fs.statSync(directory);
+    } catch (e) {
+        fs.mkdirSync(directory);
+    }
+}
 
-            async.each(staticsContents, function (staticContent, callback) {
-                var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
-                staticContent['category'] = category;
-                var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {
-                    staticContent: staticContent,
-                    currentUrl: '/' + category
-                });
+var createStaticPages = function(staticsContents, category, cb) {
+    async.each(staticsContents, function(staticContent, callback) {
+        var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
+        staticContent['category'] = category;
+        //let creationDateOfContent = fs.statSync(filename)
+        var staticPage = pug.renderFile(path.join(__PUG_STATIC__), {
+            staticContent: staticContent,
+            currentUrl: '/' + category
+        });
+        staticPage = staticPage.replace("<title>Babylon.js Documentation</title>", "<title>" + staticContent.staticName + " - Babylon.js Documentation</title>");
 
-                //logger.info('Page ' + category + '/' + staticContent.staticFileName + '.html about to be compiled.');
-                fs.writeFile(filename, staticPage, function (writeErr) {
-                    if (writeErr) throw writeErr;
-                    callback();
-                });
-
-            }, function () {
-                cb(null);
-            });
-        }
+        fs.writeFile(filename, staticPage, function(writeErr) {
+            if (writeErr) throw writeErr;
+            callback();
+        });
+    }, function() {
+        cb(null);
     });
 };

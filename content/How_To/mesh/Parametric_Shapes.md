@@ -28,7 +28,7 @@ Where it is possible two playground examples will be given, the first creating a
 ## Lines
 Creates a continguous series of line segments from a list of points.
 You must set at least the _points_ option.
-On update, you must set the _points_ and _instance_ options.
+On update, you must set the _points_ and _instance_ options. You can also set the _colors_ option if previously set at construction time.  
 
 Example :
 ```javascript
@@ -44,16 +44,18 @@ option|value|default value
 points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
+colors|_(Color4[])_ array of Color4, each point color|null
+useVertexAlpha|_(boolean)_ false if the alpha blending is not required (faster)|true
 
-[Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#64)
-[Playground Update of the Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
+* [Playground Example of a Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#64)
+* [Playground Update of the Spiral from Lines](https://www.babylonjs-playground.com/#165IV6#63)
 
 Lines are colored with a color property
 
 ```javascript
 lines.color = new BABYLON.Color3(1, 0, 0);
 ```
-[Playground Example of Colored Lines](https://www.babylonjs-playground.com/#165IV6#78)
+* [Playground Example of Colored Lines](https://www.babylonjs-playground.com/#165IV6#78)
 
 ## Dashed Lines
 Creates a contiguous series of dashed line segments from a list of points.
@@ -74,7 +76,7 @@ option|value|default value
 points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED** |
 dashSize|_(number)_  size of the dashes|3
 gapSize|_(number)_  size of the gaps|1
-dashBn|_(number)_  intended number of dashes|200
+dashNb|_(number)_  intended number of dashes|200
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 
@@ -86,12 +88,12 @@ Dashed lines are colored with a color property
 ```javascript
 lines.color = new BABYLON.Color3(1, 0, 0);
 ```
-[Playground Example of Colored Dashed Lines](https://www.babylonjs-playground.com/#165IV6#79)
+* [Playground Example of Colored Dashed Lines](https://www.babylonjs-playground.com/#165IV6#79)
 
 ## Line System  
 A system of non-contiguous lines that are independent of each other and may exist in their own space.
 You must set at least the _lines_ option.
-On update, you must set the _lines_ and _instance_ options.
+On update, you must set the _lines_ and _instance_ options. You can also set the _colors_ option if previously set at construction time.  
 
 Example :
 ```javascript
@@ -108,6 +110,8 @@ option|value|default value
 lines|_(Vector3[])_  array of lines, each line being an array of successive Vector3 **REQUIRED**
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
+colors|_(Color4[])_ array of Color4, each point color|null
+useVertexAlpha|_(boolean)_ false if the alpha blending is not required (faster)|true
 
 [A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#66)
 [A Playground Update of the Linesystem](http://www.babylonjs-playground.com/#165IV6#10)
@@ -117,7 +121,7 @@ A line system is colored with a color property
 ```javascript
 linesystem.color = new BABYLON.Color3(1, 0, 0);
 ```
-[Playground Example of Colored Line System](https://www.babylonjs-playground.com/#165IV6#80)
+* [Playground Example of Colored Line System](https://www.babylonjs-playground.com/#165IV6#80)
 
 ## Ribbon
 You must set at least the _pathArray_ option.
@@ -211,11 +215,11 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[Playground Example of an Extrusion in Z direction](https://www.babylonjs-playground.com/#165IV6#69)
-[Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#16)
+* [Playground Example of an Extrusion in Z direction](https://www.babylonjs-playground.com/#165IV6#69)
+* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#16)
 
-[Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
-[Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
+* [Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
+* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
 
 
 ## Custom Extruded Shapes
@@ -247,8 +251,8 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[Playground Example of a Custom Extruded Shape](https://www.babylonjs-playground.com/#165IV6#71)
-[Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](http://www.babylonjs-playground.com/#165IV6#17)
+* [Playground Example of a Custom Extruded Shape](https://www.babylonjs-playground.com/#165IV6#71)
+* [Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](http://www.babylonjs-playground.com/#165IV6#17)
 
 ## Lathe
 You must set at least the _shape_ option.
@@ -272,10 +276,13 @@ frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Me
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#72)
-[Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
+* [Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#72)
+* [Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
 
 ## Non Regular Polygon
+
+**Please note that CreatePolygon uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
+
 You must set at least the _shape_ option.
 
 Example :
@@ -299,6 +306,9 @@ All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie o
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
 ## Extruded Non Regular Polygon
+
+**Please note that ExtrudePolygon uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
+
 You must set at least the _shape_ and _depth_ options.
 
 Example :
@@ -318,7 +328,7 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-[Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
+* [Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
 
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 

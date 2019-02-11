@@ -140,7 +140,7 @@ The animation is now fully made and can be applied to the box resulting in a _pe
 scene.beginDirectAnimation(box, [xSlide], 0, 2 * frameRate, true);
 ```
 
-[Playground Example for Above](http://www.babylonjs-playground.com/#9WUJN#11)
+* [Playground Example for Above](http://www.babylonjs-playground.com/#9WUJN#11)
 
 # Functions and Parameters for Animating
 
@@ -173,7 +173,7 @@ number propert such as position.x
 
 ## beginDirectAnimation
 
-scene.beginDirectAnimation(target, animations, start frame, end frame, loop);   
+scene.beginDirectAnimation(target, animations, start frame, end frame, loop, speedRatio, onAnimationEnd);   
 
 * *target* - _BabylonJS Object_, the BabylonJS object to be animated
 
@@ -183,13 +183,18 @@ scene.beginDirectAnimation(target, animations, start frame, end frame, loop);
 
 * *end frame* - _number_, the frame at which to end the animation
 
-* *loop* - _boolean_, true when _loop mode_ of the animation is to be activated, false to run animation just once.
+* *loop* - _boolean_, true when _loop mode_ of the animation is to be activated, false to run animation just once
+
+* *speedRatio* - _number_, the speed ratio to apply to all animations
+
+* *onAnimationEnd* - _function_, the callback to call when an animation ends (will be called once per node)
 
 # Further Reading
 
 ## Basic - L1
 
 [Animation 101](/babylon101/Animations)  
+[Grouping Animations](/How_To/Group)  
 [Combining Animations](/How_To/Combine.html)
 
 ## Mid Level - L2

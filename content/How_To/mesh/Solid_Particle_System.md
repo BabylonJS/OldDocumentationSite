@@ -10,7 +10,7 @@ However it is behavior agnostic. This means it has no emitter, no particle physi
 
 The particles can be built from any BJS existing mesh as a model. Actually, each particle is a copy of some BJS mesh geometry : vertices, indices, uvs.    
 
-The expected usage if this one :  
+The expected usage is this one :  
 * First, create your SPS with `new SolidParticleSystem()`.  
 * Then, add particles in the SPS from a mesh model with `addShape(model, number)`.  
 * Redo this as many times as needed with any model.  
@@ -19,7 +19,7 @@ The expected usage if this one :
 Your SPS is then ready to manage particles. So now :   
 * Init all your particles : set their positions, colors, uvs, age, etc with `initParticles()`  
 * Call `setParticles()` to update the SPS mesh and to draw it.  
-* If you particles have to be animated, define their individual behavior in `updateParticle(particle)` and just call `setParticles()` within the render loop.  
+* If your particles have to be animated, define their individual behavior in `updateParticle(particle)` and just call `setParticles()` within the render loop.  
 
 
 ## Basic Usage
@@ -110,13 +110,15 @@ The particle properties that can be set are :
 * **`uvs`** : Vector(4) default = (0,0, 1,1)
 * **`isVisible`** : boolean default = true
 * **`alive`** : boolean  default = true
+* **`translateFromPivot`** : boolean default = false
+* **`parentId`** : integer, default = null
 
 If you set a particle rotation quaternion, its rotation property will then be ignored.    
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.   
 
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
-The particle `pivot` vector is the translation applied to the particle in its local space before it is rotated. The rotation is always computed around the local space origin. This property is used like a translation matrix that you would apply to some mesh pivot matrix.  
-Example : http://playground.babylonjs.com/#LXXL6Y   
+The particle `pivot` vector is the translation applied to the particle in its local space just before it is rotated. The rotation is always computed around the local space origin. This property is used like a translation matrix that you would apply to some mesh pivot matrix. By default, the particle is translated, then rotated, then translated back to its original location unless you set the particle property `.translateFromPivot` to `true` (default `false`). In this case, it's simply translated, then rotated and left at the translated location.  
+Example : http://playground.babylonjs.com/#LXXL6Y#1     
 1000 tetrahedron satellites orbiting around 1000 rotating boxes.  
 Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.      
 
@@ -392,6 +394,32 @@ Color and UVs example :  https://www.babylonjs-playground.com/#WCDZS#8
 Texture with alpha :  https://www.babylonjs-playground.com/#WCDZS#9  
 
 <br/>
+
+### Particle parenting  
+
+Each particle can be given another particle as a parent.  
+The parent is required to be created before the current particle, this means the parent has to have a lower index Id (`particle.idx`) than the current particle. So the first particle in the pool (`idx = 0`) can't have a parent. To give a parent to a particle, just set its property `.parentId` to the parent index Id value.  
+```javascript
+if (particle.idx > 0) {
+    particle.parentId = particle.idx - 1; // the previous particle becomes the parent of the current one
+}
+```
+To un-parent a particle, just set `.parentId` back to `null` what is the default value.  
+When a particle has got a parent, its position and rotation are then expressed in its parent local space.  
+```javascript
+if (particle.idx > 0) {
+    particle.parentId = particle.idx - 1; // the previous particle becomes the parent of the current one
+    // the particle position and rotation are expressed in the previous particle space, this one being already 
+    // rotated and translated from the yet previous particle. Etc.
+    particle.rotation.z = 0.01;
+    particle.position.x = 1.0;
+}
+```
+Examples :  
+A green box rotating around its pivot parented to a sliding red box : https://playground.babylonjs.com/#KS9V2E  
+2000 boxes parented per 20 segment stems : https://playground.babylonjs.com/#V7V1RS  
+<br/>
+
 ### Update Each Particle Shape
 * `SPS.updateParticleVertex()` _usage_ :  
 It happens before particle scaling, rotation and translation and it allows to update the vertex coordinates of each particle.   
@@ -550,7 +578,7 @@ To enable it, just create your SPS with the parameter `enableDepthSort` to `true
 
 If for some reasons (immobile camera and sps),  you want to stop (or reactivate) the sort on the next calls to `setParticles()`, just set the property `sps.depthSortParticles` to `false` (or `true` to reactivate it) .   
 
-Note well that is better to not enable the particle depth sort and the [facet depth sort](http://doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort) in the same time, else the sort process wil be executed twice with no final gain.  
+Note well that is better to not enable the particle depth sort and the [facet depth sort](//doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort) in the same time, else the sort process wil be executed twice with no final gain.  
 So just choose what kind of sorting you need : at particle level (faster) or at facet level (more accurate).  
 
 Note also that the particle sort **can't work** with the MultiMaterials.  
@@ -673,6 +701,20 @@ Note that only the function are stored, not their results. This means that if on
 ```javascript
 SPS.rebuildMesh();
 ```
-Except in some very specific cases, you might not need to use this function.  
+Except in some very specific cases, you might not need to use this function. 
+
+# Further Reading
+
+## Basic - L1
+
+[Particles Overview](/features/Particles)  
+
+[Particles 101](/babylon101/particles)
+
+[How to Create Animated Particles](/how_to/Animate)  
+[How to Use Sub Emitters](/how_to/Sub_Emitters)
+
+## Intermediate - L2
+[How to Customize the Particle System](/how_to/Customise) 
 
 

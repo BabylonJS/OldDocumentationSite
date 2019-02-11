@@ -5,27 +5,27 @@ PG_TITLE: Behavior
 # Behavior
 
 Babylon.js v3.1 introduced a new component based tools: the behaviors.
-A behavior is a simple class that can be attached to a node where it will provide a specific set of features. Features will be triggered by defined events. 
+A behavior is a simple class that can be attached to a target where it will provide a specific set of features. Features will be triggered by defined events. 
 
 ## General
 
 A behavior is defined by the following interface:
 * `name`: Return the name of the behavior
-* `init()`: This function will be called when a behavior needs to be initialized. This is before the attachment to a node.
-* `attach(node)`: This function will be called when a behavior is attached to a node. This is where the behavior will hook into useful events. Babylon.js will make sure that the scene is not currently loading when this function will be called.
-* `detach(node)`: This function will be called when a behavior is detached from a node. The behavior must clear any associated resources and unhook all events
+* `init()`: This function will be called when a behavior needs to be initialized. This is before the attachment to a target.
+* `attach(target)`: This function will be called when a behavior is attached to a target. This is where the behavior will hook into useful events. Babylon.js will make sure that the scene is not currently loading when this function will be called.
+* `detach(target)`: This function will be called when a behavior is detached from a target. The behavior must clear any associated resources and unhook all events
 
 If behaviors rely on animation, the following **static** properties will be available:
 * `EasingFunction`: Define the easing function used animations
 * `EasingMode`: Define the easing mode used by animations
 
-You can add behaviors to node objects (lights, cameras and meshes). Every node provides the following entry points:
-* `addBehavior(behavior)`: Use this function to attach a behavior to a given node. If the scene is currently loading, this code will be delayed until scene completion.
-* `removeBehavior(behavior)`: Use this function to detach a behavior from a node
+You can add behaviors to any object implementing the IBehaviorAware interface (lights, cameras or meshes for instance). Every IBehaviorAware provides the following entry points:
+* `addBehavior(behavior)`: Use this function to attach a behavior to a given target. If the scene is currently loading, this code will be delayed until scene completion.
+* `removeBehavior(behavior)`: Use this function to detach a behavior from a target
 * `getBehaviorByName(name)`: Return a behavior with the given name or null if not found
-* `behaviors`: This read-only property returns the list of behaviors associated with the node
+* `behaviors`: This read-only property returns the list of behaviors associated with the target
 
-Most of the time, behaviors are designed to deal with a specific kind of nodes. 
+Most of the time, behaviors are designed to deal with a specific kind of targets. 
 
 Currently the list of behaviors available in babylon.js core are camera behaviours.
 
@@ -34,3 +34,5 @@ Currently the list of behaviors available in babylon.js core are camera behaviou
 ## Basic - L1
 
 [Camera Behaviours](/How_To/Camera_Behaviors)
+
+[Mesh Behaviours](/How_To/MeshBehavior)

@@ -15,7 +15,7 @@
     });
 
     function runQuery() {
-        var query = getQueryVariable('q');
+        var query = getQueryVariable('bjsq');
         var tagsQuery = getQueryVariable('tag');
         var codeQuery = getQueryVariable('code');
         var strQuery = decodeURIComponent(query).split('+').join(' ');
@@ -31,14 +31,15 @@
             finalQuery = strQuery;
             localStorage.setItem("docBabylon_lastSearch_type", "name");
             localStorage.setItem("docBabylon_lastSearch", strQuery);
-            document.getElementsByName('q')[1].value = strQuery;
+            try {document.getElementsByName('bjsq')[1].value = strQuery;} catch(e) {}
+            
         }
         else if (strTags != 'false') {
             queryType = 'tags/';
             finalQuery = strTags;
             localStorage.setItem("docBabylon_lastSearch_type", "tags");
             localStorage.setItem("docBabylon_lastSearch", strTags);
-            document.getElementsByName('tag')[0].value = strTags;
+            try {document.getElementsByName('tag')[0].value = strTags;} catch(e) {}
         }
         else if (strCode != 'false') {
             queryType = 'code/';
@@ -68,7 +69,7 @@
         var html = '';
 
         $.ajax({
-            url: 'https://babylonjs-api2.azurewebsites.net/snippets/search/' + queryType,
+            url: 'https://snippet.babylonjs.com/search/' + queryType,
             type: "POST",
             data: postData,
             contentType: "application/json; charset=utf-8",
@@ -81,8 +82,8 @@
             //If we collect data, show our number of results and buttons to change pages
             var pageChange = '';
             if (query) {
-                html = findQuery(query, strQuery, data, page, pageChange, 'q')[0];
-                pageChange = findQuery(query, strQuery, data, page, pageChange, 'q')[1];
+                html = findQuery(query, strQuery, data, page, pageChange, 'bjsq')[0];
+                pageChange = findQuery(query, strQuery, data, page, pageChange, 'bjsq')[1];
             }
             else if (tagsQuery) {
                 html = findQuery(tagsQuery, strTags, data, page, pageChange, 'tag')[0];
@@ -153,7 +154,7 @@
             }
             html += pageChange;
             $.ajax({
-                url: 'https://babylonjs-api2.azurewebsites.net/snippets/count/' + queryType,
+                url: 'https://snippet.babylonjs.com/count/' + queryType,                
                 type: "POST",
                 data: numberData,
                 contentType: "application/json; charset=utf-8",
@@ -162,7 +163,7 @@
                 console.log(error);
             }).success(function (data) {
                 if (data) {
-                    displayPagesInfos(data.count, max, page);
+                    displayPagesInfos(data, max, page);
                 }
                 else {
                     document.getElementById('resultCount').innerText = '0';
@@ -225,7 +226,7 @@
     var updateLinks = function () {
 
         // retrieve current page number
-        var searchTerm = getQueryVariable('q');
+        var searchTerm = getQueryVariable('bjsq');
         var page = getQueryVariable('page') || '1';
         var max = getQueryVariable('max') || '25';
         var bf = getQueryVariable('bf') || 'all';
@@ -470,6 +471,9 @@
 
                 // Size of the substring to extract
                 var size = 500;
+                var lastSpanIndex = originalText.lastIndexOf("</span>"); // Avoid to cut a span and end with weird html things.
+                if(lastSpanIndex > 500)
+                    size = lastSpanIndex + 8;
                 if (size + begIndex > originalText.length) {
                     size = originalText.length - begIndex;
                 }

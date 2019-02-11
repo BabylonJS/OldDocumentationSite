@@ -1,0 +1,146 @@
+#wrapper.example {
+    width: 100%;
+    height: calc(100% - 90px);
+    box-sizing: border-box;
+    overflow: hidden;
+
+    #examplePage {
+        width: 400px;
+        height: 100%;
+        overflow-y: auto;
+        float: left;
+
+        #example-banner {
+            background-image  : url("/img/pattern_ban_1.png");
+            background-repeat : repeat;
+            text-align  : center;
+            padding     : 10px 0;
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+        #filterBarClear {
+            display: none;
+            height: 10px;
+            margin-left: -19px;
+            cursor: pointer;
+        }
+        #filterBar {
+            width: 80%;
+            margin-left: 10%;
+        }
+        #filterBar::-ms-clear {
+            display: none;
+        }
+
+        .categoryContainer {
+
+            p {
+                margin-left:5px;
+                font-size:20px;
+                font-weight:200;
+            }
+            #noResults {
+                width: 100%;
+                text-align: center;
+            }
+
+            .itemLine:hover {
+                background-color: #3B789A;
+                color: white;
+            }
+            .itemLine:active {
+                background-color: #2C5A74;
+                color: white;
+            }
+            .itemLine {
+                cursor: pointer;
+                background-color: #ebebeb;
+                height:120px;
+                overflow: hidden;
+                clear: both;
+                margin: 5px;
+                margin-bottom: 10px;
+
+                img {
+                    max-height:100%;
+                    max-width:120px;
+                    display: inline-block;
+                }
+
+                div {
+                    display: inline-block;
+                    width: calc(100% - 125px);
+                    height: 100%;
+                    vertical-align: top;
+                    padding: 5px;
+                    box-sizing: border-box;
+
+                    .contentDivPlaygrond {
+                        display: block;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+
+                        h3 {
+                            margin: 0px;
+                            font-size: 18px;
+                            margin-bottom: 5px;
+                            text-decoration: none;
+                        }
+
+                        p {
+                            margin: 0px;
+                            font-size: 15px;
+                            margin-bottom: 3px;
+                        }
+                    }
+
+                    a {
+                        font-size: 15px;
+                        text-decoration:underline;
+                        color: #00AEEF;
+                    }
+                    a:nth-of-type(1) {
+                        position: relative;
+                        bottom: 20px;
+                    }
+                    a:nth-of-type(2) {
+                        display: none;
+                    }
+                }
+            }
+            .itemLineActive {
+                background-color: #3B789A;
+            }
+        }
+        #noResultsContainer {
+            display: none;
+        }
+    }
+
+    #parentIframe {
+        width: calc(100% - 400px);
+        height: 100%;
+        display: inline-block;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .Centerer {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+
+            p {
+                margin-top:35vh;
+                font-size:30px;
+            }
+        }
+    }
+}

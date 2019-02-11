@@ -3,11 +3,13 @@ ID_PAGE: 22551
 PG_TITLE: How to use AssetsManager
 ---
 
-# How To Load Files with Assests Manager
+# How To Load Files with Assets Manager
 
 In order to help developers load multiple assets, Babylon.js (starting with version 1.14) introduced the AssetsManager class.
 
 This class can be used to import meshes into a scene or load text and binary files.
+
+**Note:** Since meshes you import can have a _rotationQuaternion_ set applying a _rotation_ to one will have unforeseen consequences as detailed in this [warning](/resources/rotation_conventions#warning).
 
 ## Using AssetsManager
 
