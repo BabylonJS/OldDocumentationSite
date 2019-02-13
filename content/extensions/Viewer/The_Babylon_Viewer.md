@@ -65,9 +65,7 @@ This will install the latest stable version of the viewer, including its needed 
 Afterwards it can be imported to the project using:
 
 ```javascript
-import * as BabylonViewer from 'babylonjs-viewer';
-
-BabylonViewer.InitTags("babylon");
+import 'babylonjs-viewer';
 ```
 
 This will enable the `BabylonViewer` namespace.
