@@ -365,6 +365,11 @@
                     "title": "Use TrailMesh",
                     "level": 3,
                     "filename": "How_to_use_TrailMesh"
+                },
+                {
+                    "title": "Use MeshExploder",
+                    "level": 3,
+                    "filename": "How_to_use_MeshExploder"
                 }
             ]
         },
@@ -1711,6 +1716,10 @@
                 {
                     "title": "Create Points Inside a Mesh",
                     "filename": "InnerMeshPoints"
+                },
+                {
+                    "title": "Deconstruct Mesh",
+                    "filename": "Deconstruct_Mesh"
                 }
             ]
         }
