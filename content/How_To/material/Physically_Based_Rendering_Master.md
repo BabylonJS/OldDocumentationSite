@@ -238,6 +238,14 @@ In order to force the computation of the irradiance in fragment, one can set to 
     pbr.forceIrradianceInFragment = true;
 ```
 
+Another point is that the irradiance or diffuse part of the IBL could cover your shadows if the environment lighting is strong. You could if you wish reduce its intensity separately from the reflection by scaling the polynomials used to create it:
+
+```javascript
+    scene.onReadyObservable.addOnce(() => {
+        hdrTexture.sphericalPolynomial.scale(0.1);
+    });
+```
+ 
 ### Image Based Lighting: Babylon VS RayTracers 
 We spent a lot of time working on the implementation of our IBL environments. We reworked how we generate the DDS prefiltered environments so that we aligned with what perceptual ray tracers and popular game engines like Unity and Unreal are doing with their IBL rendering. We are approximating a perceptual roughness model which drops what is perceived to be 50% rough falls in the middle of middle of the linear ramp for roughness. The GGX algorithm that we use for our lighting calculations has more of a linear roughness scale which loses clarity in reflections quickly (by around 0.3 roughness). We adjusted the falloff to mirror what happens in Arnold ray tracing, which is the renderer we chose as our ground truth for this work:
 

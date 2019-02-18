@@ -41,3 +41,39 @@ As a warning, the further the value gets from 1 the more distortion will be visi
 
 * [Playground Example of a PhotoDome using fovMultiplier](https://www.babylonjs-playground.com/#14KRGG#4)
 
+# How To 360 Photo with WebVR
+You can combine 360 Photo with WebVR. Just add the following code.
+
+```javascript
+ var vrHelper = scene.createDefaultVRExperience();
+```
+It will also create an enterVR button at the bottom right of the screen which will start rendering to the HMD on click.
+
+You can come back to 2D view with adding the following code.
+
+```javascript
+scene.actionManager = new BABYLON.ActionManager(scene);
+
+// From 2D view to fullscreen VR
+scene.actionManager.registerAction(
+new BABYLON.ExecuteCodeAction({
+        trigger: BABYLON.ActionManager.OnKeyDownTrigger,
+        parameter: 's' //press "s" key
+    },
+    function () { vrHelper.enterVR(); }
+));
+
+// From fullscreenVR to 2D view
+scene.actionManager.registerAction(
+new BABYLON.ExecuteCodeAction({
+        trigger: BABYLON.ActionManager.OnKeyDownTrigger,
+        parameter: 'e' //press "e" key
+    },
+    function () { vrHelper.exitVR(); document.exitFullscreen();}
+));
+```
+
+
+# Further Reading
+
+[Action Manager](https://doc.babylonjs.com/how_to/how_to_use_actions)
