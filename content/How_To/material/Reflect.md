@@ -95,7 +95,7 @@ skyboxMaterial.reflectionTexture = new BABYLON.HDRCubeTexture("PATH TO HDR IMAGE
 
 * [Playground Example of HDR Skybox](http://www.babylonjs-playground.com/#114YPX#5)
 
-### EquirectangularCubeTexture
+### EquiRectangularCubeTexture
 Equirectangular images are browser-canvas supported images like jpeg, png, and many more. A list of image support on browsers can be found [here](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support).
 
 Below is an equirectangular image of a shop
