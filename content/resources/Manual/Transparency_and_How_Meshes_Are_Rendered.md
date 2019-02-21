@@ -45,8 +45,7 @@ To use rendering groups, you simply need to set the property `.renderingGroupId`
 
 This property exists on meshes, particle systems and sprite managers.
 
-There can be no more than 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3.
-
+By default, there are 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3. This can be increased by setting the static property BABYLON.RenderingManager.MAX_RENDERINGGROUPS to the max ID you'd like (ex. set to 8 to support 7 rendering groups).
 
 ## Alpha Index
 
