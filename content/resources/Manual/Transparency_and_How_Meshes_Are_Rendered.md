@@ -39,13 +39,13 @@ Categories 5 and 6 are self-explanatory. Note that they are always drawn after a
 
 ## Rendering Groups
 
-Renderable objects can be organized into rendering groups, which act as layers. In each of these rendering groups, the order above will be used.
+Renderable objects can be organized into rendering groups, which act as layers. Layers are rendered in ascending order by ID, starting with the default one (which has the ID of 0). Within each rendering group, the "General Order" above will also be used.
 
-To use rendering groups, you simply need to set the property `.renderingGroupId` on the objects you want to put in other layers than the default one (which has the ID of 0).
+To use rendering groups, you simply need to set the property `.renderingGroupId` on the objects you want to put in other layers than the default one.
 
 This property exists on meshes, particle systems and sprite managers.
 
-Rendering groups are rendered by ascending ID, starting with the default one. There can be no more than 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3.
+There can be no more than 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3.
 
 
 ## Alpha Index
