@@ -75,7 +75,7 @@ Finally, add code to call the scene. This enables the engine to continually rend
             }
         </style>
 
-        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://preview.babylonjs.com/babylon.js"></script>
         <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
         <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
     </head>

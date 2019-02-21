@@ -43,3 +43,37 @@ var newExplosion = new BABYLON.MeshExploder(toExplodeArray);
 
 newExplosion.explode(2);
 ```
+
+## Example With Imported Objects
+```javascript
+var assetsManager = new BABYLON.AssetsManager(scene);
+var meshTask = assetsManager.addMeshTask("model", "", "./", "model.gltf");
+
+var meshes;
+
+meshTask.onSuccess = function(task) {
+    meshes = task.loadedMeshes;
+}
+assetsManager.load();
+var newExplosion;
+scene.executeWhenReady(function() {
+    newExplosion = new BABYLON.MeshExploder(meshes);
+    newExplosion.explode(2);
+});
+```
+
+## Example Using the Babylon.js Viewer
+```javascript
+BabylonViewer.viewerManager.getViewerPromiseById('babylon-viewer').then(function (viewer) {
+    viewerObservables(viewer);
+});
+var newExplosion;
+function viewerObservables(viewer) {
+    viewer.onModelLoadedObservable.add(function (model) {
+        model.rootMesh.getScene().executeWhenReady(function() {
+          newExplosion = new BABYLON.MeshExploder(model.meshes, model.meshes[0]);
+          newExplosion.explode(2);
+        });
+    });
+}
+```
