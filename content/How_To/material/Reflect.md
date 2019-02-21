@@ -5,20 +5,6 @@ PG_TITLE: 04. How To Obtain Reflections and Refractions
 # How To Obtain Reflections and Refractions
 Using reflection textures can simulate mirror like material and refraction textures can simulate looking through glass or water.
 
-# Table of contents
-- [Reflection](#reflrection)
-  - [CubeTexture](#cubetexture)
-    - [Reflecting on Skybox and a shape](#reflecting-on-Skybox-and-a-shape)
-    - [Using local cubemap mode](#using-local-cubemap-mode)
-  - [HDRCubeTexture](#hdrcubetexture)
-  - [EquirectangularCubeTexture](#equirectangularcubetexture)
-  - [Spherical Reflection Texture](#spherical-reflection-texture)
-  - [Mirrors](#mirrors)
-    - [Constructing the Mirror Reflector](#constructing-the-mirror-reflector)
-    - [Constructing the Mirror](#constructing-the-mirror)
-    - [Blurring the Reflection](#blurring-the-reflection)
-- [Refraction](#refraction)
-
 ## Reflection
 Reflections are created using the _relectionTexture_ property  of a material. A first use is in creating a sky using a [skybox](/How_To/Skybox)
 
@@ -110,11 +96,12 @@ skyboxMaterial.reflectionTexture = new BABYLON.HDRCubeTexture("PATH TO HDR IMAGE
 with
 ```javascript
 cubemapDesiredSize = 512; // The cubemap desired size (the more it increases the longer the generation will be)
-skyboxMaterial.reflectionTexture = new BABYLON.EquirectangularCubeTexture("PATH TO EQUIRECTANGULAR IMAGE", scene, cubemapDesiredSize);
+skyboxMaterial.reflectionTexture = new BABYLON.EquiRectangularCubeTexture("PATH TO EQUIRECTANGULAR IMAGE", scene, cubemapDesiredSize);
 ```
 
-* [Playground Example of Equirectangular Skybox](http://www.babylonjs-playground.com/) (will be updated once, the main pr gets merged)
-* [Playground Example of and Equirectangular image on a sphere](http://www.babylonjs-playground.com/) (will be updated once, the main pr gets merged)
+* [Playground Example of an Equirectangular Skybox](https://www.babylonjs-playground.com/ts.html#6YN2X1)
+* [Playground Example of an Equirectangular image on a sphere](https://www.babylonjs-playground.com/ts.html#32H1D4)
+* [Playground Example of both combined](https://www.babylonjs-playground.com/ts.html#RY8LDL)
 
 ### Spherical Reflection Texture
 Not only can a cube texture can be applied to a sphere so can a plane single image.
