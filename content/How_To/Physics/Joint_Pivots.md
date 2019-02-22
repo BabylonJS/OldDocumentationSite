@@ -141,7 +141,7 @@ connectedPivot: new BABYLON.Vector3(0, 5, 0), //adjust main body position and ra
 mainAxis: new BABYLON.Vector3(0, 1, 0), 
 connectedAxis: new BABYLON.Vector3(0, 1, 0)
 ```
-* [Playground Example - D](https://www.babylonjs-playground.com/#8RQJ1R#10)
+* [Playground Example - J](https://www.babylonjs-playground.com/#8RQJ1R#10)
 
 ----
 
@@ -152,7 +152,7 @@ connectedPivot: new BABYLON.Vector3(0, 5, 0), //adjust main body position and ra
 mainAxis: new BABYLON.Vector3(0, 0, 1), //different axes will rotate main body so stated axes align.
 connectedAxis: new BABYLON.Vector3(1, 0, 0)
 ```
-* [Playground Example - E](https://www.babylonjs-playground.com/#8RQJ1R#11)
+* [Playground Example - K](https://www.babylonjs-playground.com/#8RQJ1R#11)
 
 ## Playground Examples  - Connected Axle Has Non-Zero Mass and is at the Origin with No Rotation
 
