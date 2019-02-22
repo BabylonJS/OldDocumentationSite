@@ -75,6 +75,7 @@ Each physics engine has different types of Impostors. The following table shows 
 | Cylinder      | Cylinder  | Cylinder| Cylinder  | Cylinder|         |
 | Mesh          | Mesh      | Box     | Mesh      | Mesh    | Use only when necessary - will lower performance. Cannon's mesh impostor only collides against spheres and planes |
 | Heightmap     | Heightmap | Box     | Mesh      | Mesh    |         |
+| ConvexHull    | N/A       | N/A     | N/A       | Mesh    | Allows physics impostor support convex mesh hull shapes |
 
 Using simple impostors for complex objects will increase performance but decrease the reality of the scene's physics. Consider when complex impostors (like the mesh or the heightmap) is needed, and when the simpler geometries can be used.
 
@@ -135,6 +136,7 @@ BABYLON.PhysicsImpostor.MeshImpostor;
 BABYLON.PhysicsImpostor.CylinderImpostor;
 BABYLON.PhysicsImpostor.ParticleImpostor;
 BABYLON.PhysicsImpostor.HeightmapImpostor;
+BABYLON.PhysicsImpostor.ConvexHullImpostor;
 ```
 
 #### options
