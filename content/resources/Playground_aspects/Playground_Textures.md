@@ -151,10 +151,25 @@ new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/filename", scene);
 
 | Overview | Filename | Viewer | Size |
 | :---: | --- | --- | --- |
+| ![](/img/resources/textures_thumbs/country.hdr.jpg) | country.dds | [take a look](http://playground.babylonjs.com/#CGA05F#34) | 32.77 MB |
 | ![](/img/resources/textures_thumbs/environment.dds.jpg) | environment.dds | [take a look](http://playground.babylonjs.com/#CGA05F#7) | 1 MB |
+| ![](/img/resources/textures_thumbs/forest.hdr.jpg) | forest.dds | [take a look](http://playground.babylonjs.com/#CGA05F#36) | 32.77 MB |
+| ![](/img/resources/textures_thumbs/night.hdr.jpg) | night.dds | [take a look](http://playground.babylonjs.com/#CGA05F#38) | 32.77 MB |
+| ![](/img/resources/textures_thumbs/parking.hdr.jpg) | parking.dds | [take a look](http://playground.babylonjs.com/#CGA05F#40) | 32.77 MB |
+| ![](/img/resources/textures_thumbs/room.hdr.jpg) | room.dds | [take a look](http://playground.babylonjs.com/#CGA05F#41) | 32.77 MB |
 | ![](/img/resources/textures_thumbs/Runyon_Canyon_A_2k_cube_specular.dds.jpg) | Runyon_Canyon_A_2k_cube_specular.dds | [take a look](https://playground.babylonjs.com/#CGA05F#26) | 8 MB |
 | ![](/img/resources/textures_thumbs/SpecularHDR.dds.jpg) | SpecularHDR.dds | [take a look](http://playground.babylonjs.com/#CGA05F#8) | 16 MB |
 | ![](/img/resources/textures_thumbs/Studio_Softbox_2Umbrellas_cube_specular.dds.jpg) | Studio_Softbox_2Umbrellas_cube_specular.dds | [take a look](http://playground.babylonjs.com/#CGA05F#24) | 8 MB |
+
+In the Playground use
+
+```javascript
+myMaterial.environmentBRDFTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/filename", scene, true, false);
+```
+
+| Overview | Filename | Viewer | Size | Comment |
+| :---: | --- | --- | --- | --- |
+| ![](/img/resources/textures_thumbs/environment.dds.jpg) | fullFloatEnvironmentBrdf.dds | [take a look](http://playground.babylonjs.com/#CGA05F#11) | 1.25 MB | [32 bit version](https://github.com/BabylonJS/Babylon.js/issues/4156#issuecomment-382982858) of the environment.dds file |
 
 ### HDR as .env
 
@@ -166,17 +181,16 @@ new BABYLON.CubeTexture("textures/filename", scene);
 
 | Overview | Filename | Viewer | Size |
 | :---: | --- | --- | --- |
+| ![](/img/resources/textures_thumbs/country.hdr.jpg) | country.env | [take a look](http://playground.babylonjs.com/#CGA05F#35) | 3.72 MB |
 | ![](/img/resources/textures_thumbs/environment.dds.jpg) | environment.env | [take a look](http://playground.babylonjs.com/#CGA05F#15) | 350 KB |
+| ![](/img/resources/textures_thumbs/forest.hdr.jpg) | forest.env | [take a look](http://playground.babylonjs.com/#CGA05F#37) | 5.81 MB |
+| ![](/img/resources/textures_thumbs/night.hdr.jpg) | night.env | [take a look](http://playground.babylonjs.com/#CGA05F#39) | 2.74 MB |
+| ![](/img/resources/textures_thumbs/parking.hdr.jpg) | parking.env | [take a look](http://playground.babylonjs.com/#CGA05F#42) | 3.45 MB |
+| ![](/img/resources/textures_thumbs/room.hdr.jpg) | room.env | [take a look](http://playground.babylonjs.com/#CGA05F#43) | 4.92 MB |
+| ![](/img/resources/textures_thumbs/Runyon_Canyon_A_2k_cube_specular.dds.jpg) | Runyon_Canyon_A_2k_cube_specular.env | [take a look](https://playground.babylonjs.com/#CGA05F#31) | 992 KB |
+| ![](/img/resources/textures_thumbs/SpecularHDR.dds.jpg) | SpecularHDR.env | [take a look](http://playground.babylonjs.com/#CGA05F#32) | 6.12 MB |
+| ![](/img/resources/textures_thumbs/Studio_Softbox_2Umbrellas_cube_specular.dds.jpg) | Studio_Softbox_2Umbrellas_cube_specular.env | [take a look](http://playground.babylonjs.com/#CGA05F#33) | 203 KB |
 
-In the Playground use
-
-```javascript
-myMaterial.environmentBRDFTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/filename", scene, true, false);
-```
-
-| Overview | Filename | Viewer | Size | Comment |
-| :---: | --- | --- | --- | --- |
-| ![](/img/resources/textures_thumbs/environment.dds.jpg) | fullFloatEnvironmentBrdf.dds | [take a look](http://playground.babylonjs.com/#CGA05F#11) | 1.25 MB | [32 bit version](https://github.com/BabylonJS/Babylon.js/issues/4156#issuecomment-382982858) of the environment.dds file |
 
 ## Videos
 
