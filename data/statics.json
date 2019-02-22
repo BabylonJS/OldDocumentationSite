@@ -188,6 +188,11 @@
                     "title": "Use clip planes",
                     "level": 3,
                     "filename": "Clip_Planes"
+                },
+                {
+                    "title": "Render a Scene and take a screenshot on a remote server",
+                    "level": 3,
+                    "filename": "Render_Scene_on_a_Server"
                 }
             ]
         },
