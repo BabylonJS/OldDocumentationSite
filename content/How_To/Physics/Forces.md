@@ -127,7 +127,8 @@ The following playground initially set up with zero friction and to apply an imp
 [How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
 [How To Use Joints](/how_to/joints)   
 [How To Use Pivots and Axes](/how_to/joint_pivots)  
-[How To Create Compound Bodies](/how_to/compounds)
+[How To Create Compound Bodies](/how_to/compounds)  
+[How To Create Soft Bodies](/how_to/soft_bodies)
 
 ## Mid Level - L2
 

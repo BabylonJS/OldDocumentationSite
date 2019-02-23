@@ -186,7 +186,8 @@ connectedAxis: new BABYLON.Vector3(0, 1, 0)
 [How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
 [How To Use Forces](/how_to/forces)  
 [How to use Joints](/how_to/joints)   
-[How To Create Compound Bodies](/how_to/compounds) 
+[How To Create Compound Bodies](/how_to/compounds)  
+[How To Create Soft Bodies](/how_to/soft_bodies) 
 
 ## Mid Level - L2
 

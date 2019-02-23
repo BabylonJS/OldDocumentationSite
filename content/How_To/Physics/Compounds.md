@@ -20,9 +20,21 @@ It is roughly composed of a sphere for most of it with a box around the jaw area
 5. Create physics imposters for each standard mesh with zero mass;
 6. Create a physics imposter for the empty mesh, using the NoImposter property, with the total mass of all the standard meshes.
 
-**Note** Step 3 MUST come before step 4.
+**Note** Step 3 MUST come before step 4 and step 5 before step 6.
 
 * [Playground Example 1 - Skull as a Compound Body](https://www.babylonjs-playground.com/#492ZK0#7)
+
+## Compound Covering Meshes to The Complex Mesh 
+
+1. Create a range of appropriately shaped standard meshes to fit over the irregular mesh;
+2. Parent the standard meshes to the irregular mesh;
+3. Calculate or estimate the mass for each standard mesh;
+4. Create physics imposters for each standard mesh with zero mass;
+5. Create a physics imposter for the irregular mesh, using the NoImposter property, with the total mass of all the standard meshes.
+
+**Note** Steps 2, 4 and 5 must be in that order.
+
+* [Playground Example 2 - Skull as a Compound Body](https://www.babylonjs-playground.com/#492ZK0#12)
 
 ## Compound to One of the Covering Meshes
 
@@ -33,7 +45,7 @@ It is roughly composed of a sphere for most of it with a box around the jaw area
 
 **Note** Step 2 MUST come before step 4.
 
-* [Playground Example 2- Skull as a Compound Body](https://www.babylonjs-playground.com/#492ZK0#8)
+* [Playground Example 3- Skull as a Compound Body](https://www.babylonjs-playground.com/#492ZK0#8)
 
 # Further Reading
 
@@ -43,6 +55,7 @@ It is roughly composed of a sphere for most of it with a box around the jaw area
 [How To Use Forces](/how_to/forces)   
 [How To Use Joints](/how_to/joints)   
 [How To Use Pivots and Axes](/how_to/joint_pivots)  
+[How To Create Soft Bodies](/how_to/soft_bodies)
 
 ## Mid Level - L2
 
@@ -51,3 +64,4 @@ It is roughly composed of a sphere for most of it with a box around the jaw area
 ## More Advanced - L3
 
 [How To Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)
+
