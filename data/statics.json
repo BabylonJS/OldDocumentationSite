@@ -701,6 +701,11 @@
                     "filename": "Compounds"
                 },
                 {
+                    "title": "Create Soft Bodies",
+                    "level": 1,
+                    "filename": "Soft_Bodies"
+                },
+                {
                     "title": "Use Advanced Physics Features",
                     "level": 2,
                     "filename": "Using_Advanced_Physics_Features"
