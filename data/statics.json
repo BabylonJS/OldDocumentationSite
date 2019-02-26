@@ -1052,59 +1052,59 @@
             "desc": "Learn how to export from Unity.",
             "files": [
                 {
-                    "title": "Introduction",
+                    "title": "Introduction to Unity exporter",
                     "filename": "Intro"
                 },
                 {
-                    "title": "Export Panels",
+                    "title": "Export Panels (Unity exporter)",
                     "filename": "Exporter"
                 },
                 {
-                    "title": "Getting Started",
+                    "title": "Getting Started (Unity exporter)",
                     "filename": "Projects"
                 },
                 {
-                    "title": "Script Components",
+                    "title": "Script Components (Unity exporter)",
                     "filename": "01_ScriptComponents"
                 },
                 {
-                    "title": "Scene Manager",
+                    "title": "Scene Manager (Unity exporter)",
                     "filename": "02_SceneManager"
                 },
                 {
-                    "title": "Shader Materials",
+                    "title": "Shader Materials (Unity exporter)",
                     "filename": "03_ShaderMaterials"
                 },
                 {
-                    "title": "Collision Meshes",
+                    "title": "Collision Meshes (Unity exporter)",
                     "filename": "04_CollisionMeshes"
                 },
                 {
-                    "title": "Terrain Builder",
+                    "title": "Terrain Builder (Unity exporter)",
                     "filename": "05_TerrainBuilder"
                 },
                 {
-                    "title": "Animation State",
+                    "title": "Animation State (Unity exporter)",
                     "filename": "06_AnimationState"
                 },
                 {
-                    "title": "Runtime Prefabs",
+                    "title": "Runtime Prefabs (Unity exporter)",
                     "filename": "07_RuntimePrefabs"
                 },
                 {
-                    "title": "Static Batching",
+                    "title": "Static Batching (Unity exporter)",
                     "filename": "08_StaticBatching"
                 },
                 {
-                    "title": "Navigation Mesh",
+                    "title": "Navigation Mesh (Unity exporter)",
                     "filename": "09_NavigationMesh"
                 },
                 {
-                    "title": "Windows Platform",
+                    "title": "Windows Platform (Unity exporter)",
                     "filename": "10_WindowsPlatform"
                 },
                 {
-                    "title": "Babylon Art Tools",
+                    "title": "Babylon Art Tools (Unity exporter)",
                     "filename": "11_BabylonArtTools"
                 }
             ]
