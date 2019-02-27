@@ -92,6 +92,8 @@ scene.debugLayer.show().then((layer) => {
 
 We know that it would be impossible to provide a tool that will target every single need that a Babylon.js may have. This is why the new inspector supports an extensibility API.
 
+### Explorer
+
 You can use the `explorerExtensibility` property of the config object to define an array of predicates that will add new options to scene explorer actions.:
 
 ```javascript
@@ -132,6 +134,42 @@ BABYLON.Inspector.Show(scene, {
 Each predicate will be evaluated with all entites displayed in the scene explorer. If the predicate returns true, then the entries will be added to the entity's actions:
 
 ![explorer extensibility](/img/features/debuglayer/exploreraddons.png)
+
+### Inspector
+
+You can also decide to add your own property controls to any property grid. To do so you can declare an array of inspectable properties:
+
+```
+var mesh = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+
+mesh.myProperty = BABYLON.Color3.Red();
+
+mesh.inspectableCustomProperties = [
+    {
+        label: "My property",
+        propertyName: "myProperty",
+        type: BABYLON.InspectableType.Color3
+    }
+]
+```
+
+The `inspectableCustomProperties` property can be found on:
+- Nodes
+- Materials
+- Textures
+- Skeletons
+
+You can set it up to an array of `IInspectable` which are defined by:
+- a label
+- a property name 
+- a type which could be 
+  - BABYLON.InspectableType.Checkbox
+  - BABYLON.InspectableType.Slider
+  - BABYLON.InspectableType.Color3
+  - BABYLON.InspectableType.Vector3
+  - BABYLON.InspectableType.Quaternion
+- For sliders, you can specify `min`, `max` and `step`
+
 
 # Further Reading
 

@@ -71,6 +71,12 @@ You can use the GUI control actions to:
 - Display outline of a control
 - Show / hide a specific control
 
+## Rendering pipeline actions
+
+![Rendering pipeline actions](/img/features/debuglayer/renderpipelineactions.jpg)
+
+When your scene does not contain a default rendering pipeline, you can right-click on the rendering pipelines node to get a context menu letting you create a new default rendering pipeline.
+
 
 # Inspector pane
 

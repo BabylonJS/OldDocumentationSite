@@ -75,6 +75,7 @@ Each physics engine has different types of Impostors. The following table shows 
 | Cylinder      | Cylinder  | Cylinder| Cylinder  | Cylinder|         |
 | Mesh          | Mesh      | Box     | Mesh      | Mesh    | Use only when necessary - will lower performance. Cannon's mesh impostor only collides against spheres and planes |
 | Heightmap     | Heightmap | Box     | Mesh      | Mesh    |         |
+| ConvexHull    | N/A       | N/A     | N/A       | Mesh    | Allows physics impostor support for convex mesh hull shapes |
 
 Using simple impostors for complex objects will increase performance but decrease the reality of the scene's physics. Consider when complex impostors (like the mesh or the heightmap) is needed, and when the simpler geometries can be used.
 
@@ -135,6 +136,7 @@ BABYLON.PhysicsImpostor.MeshImpostor;
 BABYLON.PhysicsImpostor.CylinderImpostor;
 BABYLON.PhysicsImpostor.ParticleImpostor;
 BABYLON.PhysicsImpostor.HeightmapImpostor;
+BABYLON.PhysicsImpostor.ConvexHullImpostor;
 ```
 
 #### options
@@ -275,6 +277,7 @@ var explosionEvent = physicsHelper.applyRadialExplosionImpulse( // or .applyRadi
     strength,
     falloff
 );
+// the second `radius` argument can also act as options: `.applyRadialExplosionImpulse(origin, { radius: radius, strength: strength, falloff: falloff })`
 
 // or
 
@@ -284,6 +287,7 @@ var gravitationalFieldEvent = physicsHelper.gravitationalField(
     strength,
     falloff
 );
+// the second `radius` argument can also act as options: `.gravitationalField(origin, { radius: radius, strength: strength, falloff: falloff })`
 gravitationalFieldEvent.enable(); // need to call, if you want to activate the gravitational field.
 setTimeout(function (gravitationalFieldEvent) { gravitationalFieldEvent.disable(); }, 3000, gravitationalFieldEvent);
 
@@ -296,8 +300,21 @@ var updraftEvent = physicsHelper.updraft(
     height,
     BABYLON.PhysicsUpdraftMode.Center // or BABYLON.PhysicsUpdraftMode.Perpendicular
 );
+// the second `radius` argument can also act as options: `.updraft(origin, { radius: radius, strength: strength, height: height, updraftMode: PhysicsUpdraftMode.Center })`
 updraftEvent.enable();
 setTimeout(function (updraftEvent) { updraftEvent.disable(); }, 5000, updraftEvent);
+
+// or
+
+var vortexEvent = physicsHelper.vortex(
+    origin,
+    radius,
+    strength,
+    height
+);
+// the second `radius` argument can also act as options: `.vortex(origin, { radius: radius, strength: strength, height: height, centripetalForceThreshold: 0.7, centripetalForceMultiplier: 5, centrifugalForceMultiplier: 0.5, updraftForceMultiplier: 0.02 })`
+vortexEvent.enable();
+setTimeout(function (vortexEvent) { vortexEvent.disable(); }, 5000, vortexEvent);
 ```
 
 In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.dispose()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `sphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
@@ -307,6 +324,8 @@ In case you want to do some debug, like visually show the sphere and/or rays, yo
 Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#6
 
 Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#3
+
+Playground example - Vortex -  https://playground.babylonjs.com/index.html#TVUDC1#4
 
 #### Collision callbacks
 
@@ -425,7 +444,8 @@ Playground demo (click to toggle positive/negative gravity) -  https://www.babyl
 [How To Use Forces](/how_to/forces)  
 [How to use Joints](/how_to/joints)  
 [How To Use Pivots and Axes](/how_to/joint_pivots)  
-[How To Create Compound Bodies](/how_to/compounds)
+[How To Create Compound Bodies](/how_to/compounds)  
+[How To Create Soft Bodies](/how_to/soft_bodies)
 
 ## Mid Level - L2
 
