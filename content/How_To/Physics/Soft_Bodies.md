@@ -142,6 +142,53 @@ cloth.physicsImpostor.stiffness = 1;
 
 * [Playground Example - Cloth Over Rigid Box Fixed at 1 + 2 = 3](https://www.babylonjs-playground.com/#480ZBN#6)
 
+### Anchors
+
+As well as being able to fix the corners of a cloth in space it is also possible to anchor points on a cloth to a rigid body.
+
+![Horizontal Cloth](/img/how_to/physics/cloth2.jpg)
+
+Anchor points are given as a fraction across the width and height of the ground forming the cloth as shown in the diagram above.
+
+Rotating the cloth mesh to a vertical position using
+
+```javascript
+cloth.rotate.x = -Math.PI /2
+```
+
+will place (0, 0) as the bottom left corner and (1, 1) as the top right corner.
+
+Using 
+
+```javascript
+cloth.rotate.x = Math.PI /2
+```
+
+will place (0, 1) as the bottom left corner and (1, 0) as the top right corner.
+
+Setting an anchor needs three required parameter plus two optional ones, as in
+
+```
+softImpostor.addAnchor(rigidImpostor, fraction of width, fraction of height, influence, noCollisionBetweenLinkedBodies);
+```
+
+* rigidImpostor, to which the anchor points are attached. The attachments are calculated automatically by Ammo.js and depend on the position of the softImpostor and the anchor points used.
+* fraction of width, from 0 to 1, fraction across width of ground mesh
+* fraction of height, from 0 to 1, fraction up height of ground mesh
+* influence, from 0 to 1, defaults to 1. A value of 1 fixes the distance of the anchor from the rigid body, the closer to 0 the more elastic the distance
+* noCollisionBetweenLinkedBodies, default false. When true the soft body and the rigid body, it is attached to, will not detect collisions to each other.
+
+The width and height fraction coordinates are used to determine the closest vertex within the ground mesh to those fractional coordinates.
+
+You are able to add multiple anchors, for example 
+
+```javascript
+cloth.physicsImpostor.addAnchor(box.physicsImpostor, 0, 1);
+cloth.physicsImpostor.addAnchor(box.physicsImpostor, 1, 1, 0.8);
+```
+
+* [Playground Example - Anchoring a Cloth](https://www.babylonjs-playground.com/#480ZBN#8)
+
 # Further Reading
 
 ## Basic - L1
