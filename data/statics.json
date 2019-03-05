@@ -500,6 +500,11 @@
                     "title": "Use WebXR (WebVR, WebAR, Magic Window, Etc.)",
                     "level": 3,
                     "filename": "WebXR"
+                },
+                {
+                    "title": "Use Multiview",
+                    "level": 3,
+                    "filename": "Multiview"
                 }
             ]
         },
