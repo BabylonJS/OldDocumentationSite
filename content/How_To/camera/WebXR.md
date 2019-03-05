@@ -115,7 +115,9 @@ await xrHelper.enterXRAsync({immersive: true, outputContext: xrOutputCanvas.canv
 
 ## Enter / Exit buttons UI -->
 
+## Multiview
 
+To improve rendering performance by up to 2x, try using [Multiview](/How_To/Multiview) which will render both eyes in a single render pass
 
 ## Examples
 
