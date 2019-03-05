@@ -214,6 +214,10 @@ The gaze tracker can be customized by setting the gazeTrackerMesh. [Example](htt
 vrHelper.gazeTrackerMesh = BABYLON.Mesh.CreateSphere("sphere1", 4, 0.1, scene);
 ```
 
+## Multiview
+
+To improve rendering performance by up to 2x, try using [Multiview](/How_To/Multiview) which will render both eyes in a single render pass
+
 ## Examples
 
 Scenes:
