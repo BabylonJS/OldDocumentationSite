@@ -67,10 +67,11 @@ When the files are downloaded, open a command in this repo. It can be done quick
 
 (*you may have* Open in Command *rather than* Open in PowerShell *, that's not a big deal*)
 
-Just write `npm install`, press enter and wait the operation is done.
-You may need also to install grunt globally. If so, use `npm install -g grunt-cli`.
+Just write `npm install`, press enter and wait the operation to be done.
 
-This fork operation has to be done only once. You're now able to run locally the documentation
+You may also need to install grunt globally. If so, use `npm install -g grunt-cli`.
+
+This fork operation has to be done only once. You're now able to run locally the documentation by following the next section.
 
 ## Running and editing the doc locally
 
@@ -151,3 +152,21 @@ In Github Desktop, you will see all your modifications.
 Add an explicit summary into the required field, and click to *Commit to master*:
 
 ![pushing](/img/contribute/documentation/further-pushing.png)
+
+Then, click on *Push origin* button:
+
+![push](/img/contribute/documentation/further-push.png)
+
+And go to your online github repo. You can use Github Desktop for that:
+
+![github](/img/contribute/documentation/further-github.png)
+
+For now, your fork is updated online, having your last modifications.
+
+Click on *New pull request* button:
+
+![github pull](/img/contribute/documentation/further-github-pull.png)
+
+If no conflicts, you will be able to follow the same steps as we seen above in the [easy way](#the-easy-way) section.
+
+Congratulation again, you're now a documentation master!
