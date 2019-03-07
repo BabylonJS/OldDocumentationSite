@@ -40,7 +40,7 @@ Download it from the [Firefox Home Page](https://www.mozilla.org/en-US/firefox/)
 
 If you do not have one already open a Github account with your email address and still signed in go to the [Babylon.js repository](https://github.com/BabylonJS/Babylon.js) and fork with button at the top.
 
-![Fork](/img/contribute/fork.jpg);
+![Fork](/img/contribute/fork.jpg)
 
 # Clone to Local
 
