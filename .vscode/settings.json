@@ -5,5 +5,6 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "editor.fontFamily": "Hack,Consolas, 'Courier New', monospace"
 }

@@ -9,7 +9,7 @@ Potential contributors to Babylon.js can come from many different backgrounds. F
 
 Hopefully all the steps are included that will enable all those with the appropriate coding skills to contribute. 
 
-*NOTE:* If you're looking to contribute to the Documentation, please use [this guide](http://www.html5gamedevs.com/topic/16365-contributing-to-documentation-101/).
+*NOTE:* If you're looking to contribute to the Documentation, please use [this guide](contribute_to_documentation).
 
 # Introduction
 
