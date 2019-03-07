@@ -8,7 +8,7 @@ Currently, Mulitview is not supported in all browsers. If its supported the mult
 scene.getEngine().getCaps().multiview
 ```
 
-**Note:** Multiview rendering renders to a texture array instead of a standard texture. This may be unexpected issues when applying postprocessing with custom shaders.
+**Note:** Multiview rendering renders to a texture array instead of a standard texture. This may be unexpected issues when applying postprocessing with custom shaders, effects or postprocessing. (e.g. highlight layer will have no effect)
 
 ## Using with the VRExperienceHelper
 
