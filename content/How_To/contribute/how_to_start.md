@@ -231,7 +231,7 @@ Should you be using VSCode then you can open the ```Command Palette``` either fr
 In any CLI make sure you are in the ```Tools/Gulp``` directory and type
 
 ```
-gulp run
+npm run start
 ```
 
 You can kill the task with (Ctrl + C)
@@ -261,7 +261,7 @@ You could also test against the minified version by choosing ?dist=min. this wil
 
 ### Edit Code
 
-Once the test task (gulp run) has been launched, any saved changes in the Typescript or shader files will automatically rebuild the associated Javascript files. Simply refresh your browser to see the changes in effect and begin to debug your new code.
+Once the test task (npm run start) has been launched, any saved changes in the Typescript or shader files will automatically rebuild the associated Javascript files. Simply refresh your browser to see the changes in effect and begin to debug your new code.
 
 *Hint*: You may need to refresh the code before adding back a new breakpoint. 
 
@@ -364,6 +364,8 @@ All the following tasks are available:
 * `gulp postProcessesLibrary` generates all the post processes files in the dist/preview release folder.
 * `gulp inspector` generates the inspector files in the dist/preview release folder.
 
+Most of those tasks should be launch by authorizing node to consume more memory than default by relying on the argument: `--max-old-space-size=8192`
+
 # Summary
 
 ## App Install
@@ -400,7 +402,7 @@ npm run build
 ## Webserver
 Babylon.js/Tools/Gulp folder
 ```
-gulp run
+npm run start
 ```
 [Open Playground](http://localhost:1338/Playground/index-local.html)
 
@@ -413,7 +415,7 @@ Check if your code can be used in the local playground
 
 ## Success
 Update ```/dist/preview release/what's new.md``` file.  
-Commit files you have added or edited but not those built with gulp run
+Commit files you have added or edited but not those built with npm run start
 
 ## Push Pull-Request Check
 
