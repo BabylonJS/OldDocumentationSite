@@ -836,6 +836,10 @@
                     "filename": "how_to_start"
                 },
                 {
+                    "title": "Improve Documentation",
+                    "filename": "contribute_to_documentation"
+                },
+                {
                     "title": "Follow Approved Naming Conventions",
                     "filename": "Approved_Naming_Conventions"
                 },
