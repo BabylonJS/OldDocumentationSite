@@ -862,6 +862,7 @@ To reduce the amount of code required to achieve frequent tasks you can use the 
 
 ## GUI and postprocesses
 
+### LayerMask
 In order to not apply postprocesses to your GUI, you will have to use a multi-cameras approach: one for your main scene and one for your GUI.
 
 You can find an implementation example here: https://www.babylonjs-playground.com/#U9AC0N#58
@@ -884,6 +885,18 @@ camera1.layerMask = 1;
 
 myMesh.layerMask = 1;
 ```
+
+### Multi-scenes
+The other option will be to use a multi scene approach with a renderloop defined like this:
+```
+guiScene.autoClear = false;
+engine.runRenderLoop(function() {
+    mainScene.render();
+    guiScene.render();
+})
+```
+
+In this case the `guiScene` will host your GUI and the `mainScene` will host your scene with your postprocesses.
 
 
 ## Further reading
