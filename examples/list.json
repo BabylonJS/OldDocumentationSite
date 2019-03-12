@@ -332,6 +332,13 @@
                     "icon": "icons/water.jpg",
                     "description": "Water material",
                     "PGID": "#L76FB1#0"
+                },
+                {
+                    "title": "Float on Water",
+                    "doc": "https://doc.babylonjs.com/extensions/water",
+                    "icon": "icons/FloatWater.jpg",
+                    "description": "Float on Water material",
+                    "PGID": "#L76FB1#49"
                 }
             ]
         },
