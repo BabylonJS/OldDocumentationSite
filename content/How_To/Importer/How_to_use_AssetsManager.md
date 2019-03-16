@@ -281,7 +281,7 @@ public texture: HDRCubeTexture;
 Same as the CubeTextureAssetTask, but for Equirectangular cube textures
 
 ```javascript
-constructor(name: string, url: string, size?: number, noMipmap = false, useInGammaSpace = true)
+constructor(name: string, url: string, size: number, noMipmap = false, useInGammaSpace = true)
 ```
 
 Extra properties:
