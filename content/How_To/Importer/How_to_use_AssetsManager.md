@@ -276,6 +276,7 @@ Extra properties:
 ```javascript
 public texture: HDRCubeTexture;
 ```
+
 ### EquiRectangularCubeTextureAssetTask
 
 Same as the CubeTextureAssetTask, but for Equirectangular cube textures
