@@ -1636,6 +1636,11 @@
                     "filename": "roof"
                 },
                 {
+                    "title": "A Carriage Following a Track",
+                    "level": 2,
+                    "filename": "Track"
+                },
+                {
                     "title": "Making a Simple Driven Car",
                     "level": 3,
                     "filename": "Car_Driven"
@@ -1667,10 +1672,12 @@
                 },
                 {
                     "title": "Fireworks with Shader Code",
+                    "level": 3,
                     "filename": "Writing2"
                 },
                 {
                     "title": "A Vertical Wave with Shader Code",
+                    "level": 3,
                     "filename": "Writing1"
                 }
             ]
