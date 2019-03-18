@@ -867,9 +867,9 @@ Here is a simple example of .babylon file:
         "volume": 1,
         "autoplay": true,
         "loop": true,
-        "soundTrackId": 1
+        "soundTrackId": 1,
         "spatialSound": true,
-        "position": [0, 0, 0]
+        "position": [0, 0, 0],
         "refDistance": 1.0,
         "rolloffFactor": 1.0,
         "maxDistance": 100,
