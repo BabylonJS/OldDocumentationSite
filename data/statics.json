@@ -1641,6 +1641,11 @@
                     "filename": "Track"
                 },
                 {
+                    "title": "A Carriage Following a Track",
+                    "level": 2,
+                    "filename": "Track"
+                },
+                {
                     "title": "Making a Simple Driven Car",
                     "level": 3,
                     "filename": "Car_Driven"
