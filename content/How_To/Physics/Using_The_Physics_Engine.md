@@ -321,11 +321,7 @@ In case you want to do some debug, like visually show the sphere and/or rays, yo
 
 *For a more detailed explanation, please take a look at the playground example below.*
 
-Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#6
-
-Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#3
-
-Playground example - Vortex -  https://playground.babylonjs.com/index.html#TVUDC1#4
+Playground example - https://playground.babylonjs.com/index.html#UZHINX
 
 #### Collision callbacks
 
