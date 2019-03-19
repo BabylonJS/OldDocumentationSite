@@ -98,7 +98,7 @@ This creates a mathematical plane which is used as the orientation source. The f
 ```javascript
 var ground = BABYLON.MeshBuilder.CreateGround("ground", {}, scene); //default ground
 
-var myGround = BABYLON.MeshBuilder.CreateGround("myGround", {width: 6, height: 4, subdivsions: 4}, scene);
+var myGround = BABYLON.MeshBuilder.CreateGround("myGround", {width: 6, height: 4, subdivisions: 4}, scene);
 ```
 
 option|value|default value
