@@ -44,9 +44,9 @@ A lean is the rotation of the carriage about the track direction.
 
 ![lean zero track](/img/snippets/track1.jpg)<------initial lean is 0, final lean is zero
 
-![lean at end track](/img/snippets/track2.jpg)<------initial lean is 0, final lean is pi / 2
+![lean at end track](/img/snippets/track2.jpg)<------initial lean is 0, final lean is &pi; / 2
 
-![lean at start track](/img/snippets/track3.jpg)<------initial lean is pi / 2, final lean is 0
+![lean at start track](/img/snippets/track3.jpg)<------initial lean is &pi; / 2, final lean is 0
 
 The value of leanTwists (positive integer, default 0) gives the number of complete rotations about the track over that section of track.
 
@@ -54,7 +54,7 @@ The value of leanTwists (positive integer, default 0) gives the number of comple
 
 The value of waveTwists (positive integer, default 0) gives the number of leans to one side of the track followed by a lean to the other side depending on the lean wave angle over that section of track.
 
-![lean waves track](/img/snippets/track5.jpg)<------initial lean is 0, final lean is 0, leanWaves is 2, leanWaveAngle is pi / 2
+![lean waves track](/img/snippets/track5.jpg)<------initial lean is 0, final lean is 0, leanWaves is 2, leanWaveAngle is &pi; / 2
 
 When both the values of leanWaves and leanWaveAngle or non zero they will override any value given to leanTwists.
 
@@ -66,10 +66,10 @@ A turn is the rotation of the carriage about its local Y axis. (It can alternati
 
 ![turn zero track](/img/snippets/track6.jpg)<------initial turn is 0, final turn is zero
 
-![turn at end track](/img/snippets/track7.jpg)<------initial turn is 0, final turn is pi / 2
+![turn at end track](/img/snippets/track7.jpg)<------initial turn is 0, final turn is &pi; / 2
 
 ![turn at start track](/img/snippets/track8.jpg)
-initial turn is pi / 2, final turn is 0
+initial turn is &pi; / 2, final turn is 0
 
 The value of turnTwists (positive integer, default 0) gives the number of complete rotations about the track over that section of track.
 
@@ -77,7 +77,7 @@ The value of turnTwists (positive integer, default 0) gives the number of comple
 
 The value of waveTwists (positive integer, default 0) gives the number of turns to one side of the track followed by a turn to the other side depending on the turn wave angle over that section of track.
 
-![turn waves track](/img/snippets/track10.jpg)<------initial turn is 0, final turn is 0, turnWaves is 2, turnWaveAngle is pi / 2
+![turn waves track](/img/snippets/track10.jpg)<------initial turn is 0, final turn is 0, turnWaves is 2, turnWaveAngle is &pi; / 2
 
 When both the values of turnWaves and turnWaveAngle or non zero they will override any value given to turnTwists.
 
@@ -390,7 +390,7 @@ lowerPoints.push(lowerPoints[0]); //close path
 var ribbon = BABYLON.MeshBuilder.CreateRibbon("ribbon", {pathArray: [upperPoints, lowerPoints], sideOrientation: BABYLON.Mesh.DOUBLESIDE}, scene);
 ```
 
-Also note that since cylinders are created with their faces horizontal, the wheels are rotated by pi / 2 radians and this transformation is baked into the vertices. This ensures that the wheels maintain their intended orientation as the track rotation data is applied.
+Also note that since cylinders are created with their faces horizontal, the wheels are rotated by &pi; / 2 radians and this transformation is baked into the vertices. This ensures that the wheels maintain their intended orientation as the track rotation data is applied.
 
 
 ### Using Tubes and Instances to Create a Roller Coaster

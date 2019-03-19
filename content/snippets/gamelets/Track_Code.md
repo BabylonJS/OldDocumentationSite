@@ -4,7 +4,17 @@ PG_TITLE: Design for Create Track
 
 # Design for Create Track
  
-This page explains the design behind the 'createTrack' function which you use to [build tracks](/snippets/Track) that provide data for a carriage to follow. A track is built for an array of points (Vector3s) which is split into sections. Each section uses the designated lean, *the rotation of the carriage about the track direction* and turn, *the rotation of the carriage about its local Y axis*, of the carriage following the track to produce arrays of matrices for each point on the track path. These arrays are 
+This page explains the design behind the 'createTrack' function which you use to [build tracks](/snippets/Track) that provide data for a carriage to follow. A track is built for an array of points (Vector3s) which is split into sections. Each section uses the designated lean, *the rotation of the carriage about the track direction* and turn, *the rotation of the carriage about its local Y axis*, of the carriage following the track to produce arrays of matrices for each point on the track path. The direction of a rail is given by the tilt (-&pi;/2 to &pi;/2) of the rail about the z axis and its swivel ( to to 2&pi;) about the y axis. 
+
+## Rotation Matrices
+Matrices are used since they are the fundamental operations needed to combine rotations in a given order. To produce the final rotation of a carriage at any point all the following rotations: tilt; swivel; lean; turn; need to be combined.
+
+![tilt and swivel track](/img/snippets/rail1.jpg)<------track tilt (yellow angle) and swivel (purple angle)
+
+![lean and turn carriage](/img/snippets/rail2.jpg)<------carriage lean and turn
+
+## Obtaining the Track Data
+The track data produce by `createTrack` are the arrays
 
 * directions: directions of travel;
 * rotations: a combination of the lean and turn rotations;
@@ -26,7 +36,7 @@ then the options
 * turnWaves;
 * turnWaveAngle.
 
-are  created using 
+are used with 
 
 ```javascript
 var section = new sectionData(startAt, options)
@@ -101,43 +111,44 @@ function createSection(points, startSection, endSection) {
 		}
 	}
 	
-    /***** Initiate the variables *****/
-    //rail transformation
+    /***** Initiate the variables and their types *****/
+    //rail transformation matrices for swivel and tilt rotations
 	var rotationMatrixY = BABYLON.Matrix.Identity();		
 	var rotationMatrixZ = BABYLON.Matrix.Identity();		
 	var rotationMatrix = BABYLON.Matrix.Identity();
 	
-	var tilt  = 0; //of rail rotation about (0, 0, 1) gives gradient
-	var swivel = 0 //rotation of rail around (0, 1, 0)
-	
-	var deltaPhi = (finalLean  + 2 * leanTwists * Math.PI - initialLean) / (nbRails); //increase in phi per rail for lean twist		
-	var deltaTheta = (finalTurn  + 2 * turnTwists * Math.PI - initialTurn) / (nbRails); //increase in theta per rail for lean twist		
-	var phi = initialLean;
-	var theta = initialTurn;
 	var m = BABYLON.Matrix.Identity();
 	var initialRailDirection = BABYLON.Axis.X;
 	var initialUprightDirection = BABYLON.Axis.Y;
 	var initialLevelDirection = BABYLON.Axis.Z;
 	var railDirection = BABYLON.Vector3.Zero();
-	var uprightDirection = BABYLON.Vector3.Zero();
-	var levelDirection = BABYLON.Vector3.Zero();
-	var leanDirection = BABYLON.Vector3.Zero();
+	var uprightDirection = BABYLON.Vector3.Zero();  //contains vector normal to rail direction after tilt
+	var levelDirection = BABYLON.Vector3.Zero(); //contains vector normal to rail direction after swivel
+	var leanDirection = BABYLON.Vector3.Zero(); // contains vector normal to rail direction after tilt, swivel and lean
 	var turnDirection = BABYLON.Vector3.Zero();
 	var carriageNormal = BABYLON.Vector3.Zero();
 	var rotationMatrixLean = BABYLON.Matrix.Identity();
 	var rotationMatrixTurn = BABYLON.Matrix.Identity();
 	var rotationMatrixPassenger = BABYLON.Matrix.Identity();
 	var initialPosition = BABYLON.Vector3.Zero();
-	
-	var normal = BABYLON.Vector3.Zero();
-	var binormal = BABYLON.Vector3.Zero();
-	
-	var rotation = BABYLON.Matrix.Identity();
+    var rotation = BABYLON.Matrix.Identity(); //Overall rotation after tilt, swivel, lean and turn
+    
+    var tilt  = 0; //tilt angle of rail after rotation about (0, 0, 1)
+    var swivel = 0 //swivel angle of rail after rotation around (0, 1, 0)
+    
+    var railCount = 0; // determines how many rails along a section, used to control wave values
+
+    //Set calculated values for variables
+    var phi = initialLean;
+    var theta = initialTurn;
+    
 	var gradLean = (finalLean - initialLean) / (nbRails - 1); // lean gradient
 	var gradTurn = (finalTurn - initialTurn) / (nbRails - 1); // turn gradient
-    var railCount = 0;
     
-    /***** Main  Loop*****/
+    var deltaPhi = (finalLean  + 2 * leanTwists * Math.PI - initialLean) / (nbRails); //increase in phi per rail for lean twist		
+	var deltaTheta = (finalTurn  + 2 * turnTwists * Math.PI - initialTurn) / (nbRails); //increase in theta per rail for lean twist	
+    
+    /***** Loop over rails in section*****/
 
 	for (var i = railsFrom; i < railsTo; i++) {		
 		points[(i + 1) % points.length].subtractToRef(points[i], railDirection);  //direction of each rail
@@ -148,8 +159,8 @@ function createSection(points, startSection, endSection) {
 		BABYLON.Matrix.RotationAxisToRef(BABYLON.Axis.Y, swivel, rotationMatrixY); //swivel angle to matrix rotation			
 		BABYLON.Matrix.RotationAxisToRef(BABYLON.Axis.Z, tilt, rotationMatrixZ); //tilt angle to matrix rotation			
 		rotationMatrixZ.multiplyToRef(rotationMatrixY, rotationMatrix); // form combined swivel and tilt matrix
-		BABYLON.Vector3.TransformNormalToRef(initialUprightDirection, rotationMatrix, uprightDirection); //apply 
-		BABYLON.Vector3.TransformNormalToRef(initialLevelDirection, rotationMatrix, levelDirection);
+		BABYLON.Vector3.TransformNormalToRef(initialUprightDirection, rotationMatrix, uprightDirection); //swivel, tilt act on carriage upright
+		BABYLON.Vector3.TransformNormalToRef(initialLevelDirection, rotationMatrix, levelDirection); //swivel, tilt act on carriage level 
 		uprightDirection.normalize();
 		levelDirection.normalize();
 		
@@ -166,16 +177,16 @@ function createSection(points, startSection, endSection) {
 			theta += deltaTheta;
 		}	
 		railCount++;
-		BABYLON.Matrix.RotationAxisToRef(railDirection, phi, rotationMatrixLean);
-		BABYLON.Vector3.TransformNormalToRef(uprightDirection, rotationMatrixLean, carriageNormal);
-		BABYLON.Matrix.RotationAxisToRef(carriageNormal, theta, rotationMatrixTurn);
+		BABYLON.Matrix.RotationAxisToRef(railDirection, phi, rotationMatrixLean); // lean matrix
+		BABYLON.Vector3.TransformNormalToRef(uprightDirection, rotationMatrixLean, carriageNormal); // lean applied to upright
+		BABYLON.Matrix.RotationAxisToRef(carriageNormal, theta, rotationMatrixTurn); // turn applied to upright after lean   
 		
-		BABYLON.Matrix.RotationAxisToRef(initialUprightDirection, theta, rotationMatrixPassenger);
+		BABYLON.Matrix.RotationAxisToRef(initialUprightDirection, theta, rotationMatrixPassenger); //just turn applied to upright
 		passengerRotations.push(rotationMatrixPassenger.clone());
 		
-		rotationMatrix.multiplyToRef(rotationMatrixLean, rotation);
+		rotationMatrix.multiplyToRef(rotationMatrixLean, rotation); //rotation from swivel, tilt, and lean only
 		carriageRotations.push(rotation.clone());
-		rotation.multiplyToRef(rotationMatrixTurn, rotation);
+		rotation.multiplyToRef(rotationMatrixTurn, rotation); //complete rotation from swivel, tilt, lean and turn
 		rotations.push(rotation.clone())
 		
 		directions.push(railDirection.clone());
@@ -183,7 +194,57 @@ function createSection(points, startSection, endSection) {
 }
 ```
 
+## Create Track from Sections
 
+The createTrack function requires the points for the path of the track and an array of sections. Checking is carried out on the order of sections.
+
+```javascript
+var createTrack = function(points, sections) {
+    //Data arrays
+    var directions = [];
+	var rotations = [];
+	var carriageRotations = [];
+    var passengerRotations = [];
+        
+	var nbSections = sections.length;
+	
+	var looped = (sections[nbSections - 1].start === 0);
+	for(var i = 1; i < nbSections - looped; i++) {		
+		if (sections[i - 1].start > sections[i].start) {
+			console.log("sections not in order");
+			return;
+		}
+	}
+	if (0 < sections[nbSections - 1].start && sections[nbSections - 2].start > sections[nbSections - 1].start) {
+		console.log("last section not in order");
+			return;
+	}
+	var section = sections[0];
+	if (section.start > 0) {
+		startSection = new sectionData(0, {});
+		sections.unshift(startSection);
+		nbSections = sections.length;
+	}
+			
+	if (0 < sections[nbSections - 1].start && sections[nbSections - 1].start < points.length - 1) { //assume need to close loop
+		var endSection = new sectionData(0, sections[0].options);			
+		sections.push(endSection);
+	}
+    
+    //Store track data per section
+	for (var i = 0; i < sections.length - 1; i++) {            
+		createSection(points, sections[i], sections[i + 1]);		
+	}
+
+    return {directions: directions, rotations:rotations, carriageRotations: carriageRotations, passengerRotations: passengerRotations}
+    
+    /****** createSection function goes here *******/
+
+}
+```
+# Playground
+
+* [Playground Example Using Above Code](https://www.babylonjs-playground.com/#HSMDF2#10)
 
 # Further Reading
 
