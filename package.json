@@ -25,6 +25,7 @@
         "winston": "^1.0.1"
     },
     "devDependencies": {
+        "lodash": "^4.17.11",
         "grunt": "^1.0.2",
         "grunt-cli": "^0.1.13",
         "grunt-contrib-clean": "^0.6.0",
