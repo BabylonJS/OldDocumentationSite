@@ -18,15 +18,15 @@
         var query = getQueryVariable('bjsq');
         var tagsQuery = getQueryVariable('tag');
         var codeQuery = getQueryVariable('code');
-        var strQuery = decodeURIComponent(query).split('+').join(' ');
-        var strTags = decodeURIComponent(tagsQuery).split('+').join(' ');
-        var strCode = decodeURIComponent(codeQuery).split('+').join(' ');
+        var strQuery = query.split('+').join(' ');
+        var strTags = tagsQuery.split('+').join(' ');
+        var strCode = codeQuery.split('+').join(' ');
         var page = +(getQueryVariable('page')) || 0;
         var max = +(getQueryVariable('max')) || 25;
         var numberResults = 0;
         var finalQuery = '';
         var queryType = '';
-        if (strQuery != 'false') {
+        if (strQuery != '') {
             queryType = 'name/';
             finalQuery = strQuery;
             localStorage.setItem("docBabylon_lastSearch_type", "name");
@@ -34,14 +34,14 @@
             try { document.getElementsByName('bjsq')[1].value = strQuery; } catch (e) { }
 
         }
-        else if (strTags != 'false') {
+        else if (strTags != '') {
             queryType = 'tags/';
             finalQuery = strTags;
             localStorage.setItem("docBabylon_lastSearch_type", "tags");
             localStorage.setItem("docBabylon_lastSearch", strTags);
             try { document.getElementsByName('tag')[0].value = strTags; } catch (e) { }
         }
-        else if (strCode != 'false') {
+        else if (strCode != '') {
             queryType = 'code/';
             localStorage.setItem("docBabylon_lastSearch_type", "code");
             localStorage.setItem("docBabylon_lastSearch", strCode);
@@ -253,7 +253,7 @@
     };
 
     var getQueryVariable = function(element) {
-        var query = window.location.search.substring(1);
+        var query = decodeURIComponent(window.location.search.substring(1));
         var lt = /</g,
             gt = />/g,
             ap = /'/g,
@@ -264,7 +264,7 @@
             var pair = vars[i].split("=");
             if (pair[0] == element) { return pair[1]; }
         }
-        return (false);
+        return "";
     };
 
     var displayPagesInfos = function(totalCount, maxResultPerPage, actualPage) {
