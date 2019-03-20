@@ -28,11 +28,6 @@
 
     var reloadPage = function() {
         var searchTerm = getQueryVariable('q');
-        var lt = /</g,
-            gt = />/g,
-            ap = /'/g,
-            ic = /"/g;
-        searchTerm = searchTerm.replace(lt, "&lt;").replace(gt, "&gt;").replace(ap, "&#39;").replace(ic, "&#34;");
 
         var page = getQueryVariable('page') || '1';
         var max = getQueryVariable('max') || 10;
@@ -44,6 +39,11 @@
 
     var getQueryVariable = function(element) {
         var query = window.location.search.substring(1);
+        var lt = /</g,
+            gt = />/g,
+            ap = /'/g,
+            ic = /"/g;
+        query = query.replace(lt, "&lt;").replace(gt, "&gt;").replace(ap, "&#39;").replace(ic, "&#34;");
         var vars = query.split("&");
         for (var i = 0; i < vars.length; i++) {
             var pair = vars[i].split("=");
