@@ -38,7 +38,7 @@
     };
 
     var getQueryVariable = function(element) {
-        var query = window.location.search.substring(1);
+        var query = decodeURIComponent(window.location.search.substring(1));
         var lt = /</g,
             gt = />/g,
             ap = /'/g,
