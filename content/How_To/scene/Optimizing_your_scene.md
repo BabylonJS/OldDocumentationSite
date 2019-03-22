@@ -114,7 +114,13 @@ To prevent this automatic update, you can execute:
 scene.blockMaterialDirtyMechanism = true;
 ```
 
-Do not forget to restore it to false when you are done with your batch changes.
+Do not forget to restore it to false when you are done with your batch changes. Please also note that this boolean will count the number of call made to it so the dirty flag will only be sent when the last call to false is executed e.g.:
+```
+scene.blockMaterialDirtyMechanism = true;
+scene.blockMaterialDirtyMechanism = true;
+scene.blockMaterialDirtyMechanism = false; // Will do nothing
+scene.blockMaterialDirtyMechanism = false; // Will flag all materials that need to be as dirty
+```
 
 ## Using Animation Ratio
 Babylon.js processes speed depending on the current frame rate.
