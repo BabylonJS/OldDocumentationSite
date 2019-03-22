@@ -664,6 +664,11 @@
                     "filename": "How_to_use_Gamepads"
                 },
                 {
+                    "title": "Use Virtual Joysticks",
+                    "level": 2,
+                    "filename": "How_to_use_Virtual_Joysticks"
+                },
+                {
                     "title": "Handle Events with Observables",
                     "level": 2,
                     "filename": "Observables"

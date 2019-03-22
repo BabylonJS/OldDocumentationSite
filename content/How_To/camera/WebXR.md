@@ -1,12 +1,13 @@
-# How to use the WebVR experience helper
+# How to use the WebXR experience helper
+
+## **Note:** The WebXR spec is still under development and this API may not be up to date and will change. For the current status see this [Issue](https://github.com/BabylonJS/Babylon.js/issues/3899)
 
 ## Introduction
 The [WebXR API](https://immersive-web.github.io/webxr/) allows the browser to interact to AR/VR devices. Babylon provides WebXR classes to make it easier to add webXR support to a Babylon scene.
-**Note:** The WebXR spec is still under development and this API may change.
 
 ## Setup
 
-Currently, the version of WebXR Babylon is targetting is in [Chrome Canary](https://www.google.com/chrome/canary/)
+Currently, the version of WebXR Babylon is targetting is in [Chrome Canary](https://www.google.com/chrome/canary/) as of January 18th 2019
  1. Install [Chrome Canary](https://www.google.com/chrome/canary/) on desktop or mobile
  2. If on mobile ensure you have Android 8 or higher and a device that supports AR Core (eg. Pixel XL 2)
  3. In Chrome Canary, enter chrome://flags into the url bar then search for webXR and enable all xr related flags
