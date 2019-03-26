@@ -53,6 +53,13 @@ scene.unfreezeActiveMeshes();
 
 Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
 
+## Not updating the bounding info
+In conjonction with `mesh.alwaysSelectAsActiveMesh` you can also decide to turn off bounding info synchronization. This way the world matrix computation will be faster as the bounding info will not be updated (this could be a problem if you want to use picking or collisions):
+
+```
+mesh.doNotSyncBoundingInfo = true;
+```
+
 ## Reducing draw calls
 As soon as you can please use [instances](/How_To/how_to_use_instances) as they are drawn with one single draw call.
 
