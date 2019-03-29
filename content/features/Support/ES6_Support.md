@@ -58,7 +58,7 @@ You can also load specific classes to help with your code:
 import { Engine, Scene } from '@babylonjs/core';
 ```
 
-**NOTE:** Some of the modules working through side effects you might need for instance to ```import "@babylonjs/core/Meshes/meshBuilder"``` for side effects only in order to rely on any of the Mesh creation static methods like ```Mesh.CreateBox``` for instance. This was the best way to deliver our ES6 version without breaking backward compatibility of the bundled version.
+**NOTE:** Some of the modules working through side effects you might need to ```import "@babylonjs/core/Meshes/meshBuilder"``` for side effects only in order to rely on any of the Mesh creation static methods like ```Mesh.CreateBox``` for instance. This was the best way to deliver our ES6 version without breaking backward compatibility of the bundled version.
 
 ### Installing other Babylon modules
 
@@ -291,16 +291,62 @@ From the begining you could wonder why using these ES6 packages vs the default b
 
 This means the previous example is now requiring about 700Kb vs 2.3Mb before.
 
-**Please note we are continuing to improve our min package size by decoupling a bit more our packages until our final 4.0 release.**
+**Please note we are continuing to improve our min package size by decoupling a bit more our packages so if you spot any unnecessary dependency, please, do not hesitate to create an issue on [GitHub](https://www.github.com/babylonjs/babylonjs).**
 
-**As you will see in the next paragraph, you also currently need to target individual files to fully benefit from tree shaking in your app.**
+**As you will see in the next paragraph, you also need to target individual files to fully benefit from tree shaking in your app.**
 
 ## Side Effects
-At the moment, the side effect portion of our delivered packages is under development and not yet shipped, webpack As a result, webpack can not detect if the provided modules are having side effects or not and it would by default include all of them.
+Due to our attachment to backward compatibililty, we had to make a hard choice between the APIs and the side effects. Actually whilst not working with modules it is easy to not worry about side effects and we relied on this pattern a lot to create a friendlier API surface. For instance, you can directly from the Mesh class create basic shapes like cubes, spheres and so on. Despite being convenient, this means that the full MeshBuilder constructs are then a dependency of Mesh. But what if you are not using any of them ? Why should they be part of the final package ?
 
-This will force you to target your imports on the dedicated modules (vs index ones) if you want to fully benefit from tree shaking.
+Easy call, we could move those functions elsewhere and we did exactly this by creating smaller builder modules dedicated to construct only one type of shapes. But now quid of back compat ? Yup, it is lost so to ensure you could use the same code in both UMD bundle and ES6, when the builder files are being parsed, they are swapping the Mesh builder methods. This implies a **side effect** A module executing code whilst being parsed. This is the tradeoff we had to make, valuing back compatibility and API consistency vs side effect free code.
 
-We are planing to release soon (before 4.0) the side effect portion of the package as well as smaller workload files you could import from. This will avoid you to know our full file hierarchy. Please, bear with us in the mean time and to not hesitate to provide feedback on the workload you would like to see.
+As a result, it is impossible for Webpack and the other bundlers to determine if imports are safe to be removed when not used so if you import directly from index, all the imports will be followed and included in your packages.
+
+The treatment even if a bit annoying is simple: you need to import manually only from the modules you need. This will force you to target your imports on the dedicated modules (vs index ones) if you want to fully benefit from tree shaking. The folder structure should be natural enough and in case you are finding some modules in not intuitive locations, do not hesitate to file an issue on [GitHub](https://www.github.com/babylonjs/babylonjs) and we will be more than happy to document it here.
+
+### FAQ:
+
+*How do I efficiently use the Mesh.Create... methods ?*
+
+The simplest is to load only the builder corresponding to your construction method. If you wish to use the `CreateBox` method, you can simply `import "@babylonjs/core/Meshes/Builders/boxBuilder";` to ensure that the dependant modules have been loaded. **Except if you are relying on all the MeshBuilder methods, we would recommend to not use it directly but favor the smaller builders**.
+
+*How does deserialization work ?*
+
+When you deserialize a Babylon.js object like a Material or Light, it is impossible for the framework to know before hand what kind of entity is enclosed in your file. For instance, are you relying on Standard vs PBRMaterial. We again rely on side effect here and the deserialization will onlly be able to load the kind of entity you have imported in your app. This means if you know you will need to deserialize a PBRMaterial, you can `import "@babylonjs/core/Materials/PBR/pbrMaterial";` before hand.
+
+*How do I know if I am importing a folder or a file ?*
+
+By covention and to simplify the discovery, all folders starts with an upper case character where the files starts with a lower case one.
+
+*How to find what module contains the entity I am trying to import?*
+
+This is actually a pretty good question. It should be intuitive enough and if not, do not hesistate to ping us so we can add it to the documentation.
+
+*The intellisense does not propose the method I normally use in the bundled version and an undefined error is raised at runtime?*
+
+This will be the case for all the methods defined by module augmentation. This means that as long as you are not importing the parent modules, the methods will not even be discoverable. This is the case for all our scene components. For enabling physics on the scene you need `import "@babylonjs\core\Physics\physicsEngineComponent"` to populate the `scene.enablePhysics` function. Please find below the list of those components for their augmented methods:
+
+- scene."animationRelatedMethods like beginAnimation and so on..." are available in the `Animations/animatable` module.
+- scene."audioRelatedMethods" are available in the `Audio/audioSceneComponent` module.
+- Octree functions can be found in the `Culling/Octrees/octreeSceneComponent` module.
+- Ray and Picking functions can be found in the `Culling/ray` module.
+- Debug Layer functions can be found in the `Debug/debugLayer` module.
+- Occlusion Queries can be found in the `Engines/Extensions/engine.occlusionQuery` module.
+- Transform Feedback can be found in the `Engines/Extensions/engine.transformFeedback` module.
+- Gamepad support can be found in the `Gamepad/gamepadSceneComponent` module.
+- Scene Helpers like createDefaultCamera, createDefaultXXX can be found in the `Helpers/sceneHelpers` module.
+- Mesh Simplification functions can be found in the `Meshes/meshSimplicationSceneComponent`.
+- DDS Loader support can be installed from the `Materials/Textures/Loaders/ddsTextureLoader`.
+- Env Loader support can be installed from the `Materials/Textures/Loaders/envTextureLoader`.
+- KTX Loader support can be installed from the `Materials/Textures/Loaders/ktxTextureLoader`.
+- TGA Loader support can be installed from the `Materials/Textures/Loaders/tgaTextureLoader`.
+- Particle support can be found in the `Particles/particleSystemComponent`.
+- Physics Engine support can be found in the `Physics/physicsEngineComponent`.
+
+
+*Why do I have an error in the console inviting me to import some other modules?*
+
+This might happen on some modules where we are heavily relying on side effects and where we can automatically detect the none presence of the dependency.
 
 ## Almighty Inspector
 Due to the modules name changing and other es6 modules differences, the UMD and CDN inspector version is not compatible with ES6. Nevertheless, you can install the ES6 version of the inspector and import it for side effect only in your code. Then the debug layer would work as usual.
