@@ -8,9 +8,22 @@ This method is only available when creating a mesh using the _MeshBuilder_ metho
 
 The following meshes have identifiable faces: box; cylinder; extruded polygon and polyhedron have identifiable faces and have the _faceUV_ and _faceColors_ parameters in the options using the _MeshBuilder_ method  to create them. This means that each of their faces can have a different texture or color. For colors a particular color is mapped to a particular face. For textures part of the image file is mapped to a particular face. This can be done with any image and it is often useful to use a texture atlas containing a number of images combined into one image file.
 
-When you are concerned about the orientation of the images on the faces then it can be necessary to have different orientations of the seperate images in the image file.
+When you are concerned about the orientation of the images on the faces then it can be necessary to have different orientations of the separate images in the image file.
 
 Using these methods on the above meshes there is no need for submaterials or submeshes.
+
+## Face Numbers
+
+The playground below shows that face numbering using `MeshBuilder.CreateBox` is that 
+
+* side 0 faces the positive z direction
+* side 1 faces the negative z direction
+* side 2 faces the positive x direction
+* side 3 faces the negative x direction
+* side 4 faces the positive y direction
+* side 5 faces the negative y direction
+
+* [Playground Example Face Numbers](https://www.babylonjs-playground.com/#ICLXQ8#1)
 
 ## Texture Atlas
 
@@ -219,7 +232,24 @@ which gives another way to swap coordinates. For example to reflect in a vertica
   faceUV[f].z = temp;
 ```
 
-### How To Orientate a Sprite on a Face with the Texture Atlas
+### How To Orientate a Sprite on a Face with the Texture Atlas From Version 4.0
+
+Three new optional parameters were added to `CreateBox` in the V4.0 update, these are
+
+* wrap - boolean (default = false), when true all vertical sides (0, 1, 2, 3) will apply image textures in the correct, upright, direction and the two horizontal sides (4, 5) will apply image textures so that when the box is when rotated around the x axis so that these sides are vertical the applied image textures will be applied in their original orientations;
+* topBaseAt - integer, 0, 1, 2, 3,  (default = 1), the bottom (base) of the image for the top of the box is next the the side with the number given; 
+* bottomBaseAt- integer, 0, 1, 2, 3,  (default = 0), the bottom (base) of the image for the bottom of the box is next the the side with the number given.
+
+In the following playground the two boxes at the top do not use the wrap parameter and the result is backwards compatible with earlier versions of Babylon.js. The lower boxes are with wrap set to true.
+
+* [Playground Example - Not Wrap and Wrap](https://www.babylonjs-playground.com/#ICLXQ8#3)
+
+The next playground shows the use of non-default values for topBaseAt and bottomBaseAt
+
+* [Playground Example - Wrap with Top and Bottom Rotated](https://www.babylonjs-playground.com/#ICLXQ8#4)
+* [Playground Example - Cube Face](https://www.babylonjs-playground.com/#ICLXQ8)
+
+### How To Orientate a Sprite on a Face with the Texture Atlas Before Version 4.0
 
 Here consider just the orientation of the sides as viewed in the playground below. 
 
