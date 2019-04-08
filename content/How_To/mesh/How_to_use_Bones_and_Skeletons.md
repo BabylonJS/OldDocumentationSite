@@ -113,6 +113,18 @@ BABYLON.SceneLoader.ImportMesh("him", "Dude/", "dude.babylon", scene, function (
 }
 ```
 
+## Picking a mesh attached to a skeleton
+Because bones are computed by the GPU, the CPU has no clue where the mesh's vertices are. So picking a mesh with a skeleton will only work on the bind pose which could be sub-optimal.
+
+You can decide to call `mesh.refreshBoundingInfo(true)` to force the CPU to update its local version of the mesh so that you can pick it correctly:
+
+```
+mesh.refreshBoundingInfo(true);
+var pickResult = scene.pick(scene.pointerX, scene.pointerY);
+```
+
+Please keep in mind that this operation is using the CPU so it has to be used wisely as it could impact performance.
+
 ## Attaching a mesh to a specific bone
 Starting with babylon.js v2.2, you can now attach a mesh to a bone (like a sword in the hand of your character for instance). To do so, just specify on which bone with the following code:
 ```
