@@ -87,8 +87,6 @@ var backwards = new BABYLON.Vector3(parseFloat(Math.sin(character.rotation.y)) /
 character.moveWithCollisions(backwards);
 ```
 
-Demo by Dad72: [**Move character with gravity and collision**](http://www.babylon.actifgames.com/moveCharacter/)
-
 ## ArcRotateCamera
 The ArcRotateCamera can also check collisions but instead of sliding along obstacles, this camera won't move when a collision appends.
 
