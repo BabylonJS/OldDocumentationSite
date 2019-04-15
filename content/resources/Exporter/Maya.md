@@ -141,7 +141,7 @@ The handling of physical materials is mimic from glTF format. [Detailed explanat
 
 ## UV sets
 
-Babylon engine supports only 2 UV sets. In Maya the first UV set, created by default, is used as UV1 in Babylon. The second UV set is used as UV2. Other UV sets are ignored and UV2 is used instead.
+Babylon engine supports only 2 UV sets. In Maya the first UV set, created by default (map1), is used as UV1 in Babylon. The second UV set (map2) is used as UV2. Other UV sets are ignored and UV2 is used instead.
 
 ![export window](/img/exporters/Maya/7_uv_set_editor.jpg)
 
