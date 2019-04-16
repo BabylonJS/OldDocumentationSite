@@ -10,7 +10,7 @@
 
   // Mobile search bar
   .searchbar-mobile{
-    display : block;
+    display : flex;
 
     margin  : 10px;
     height  : 30px;
@@ -26,6 +26,8 @@
       height  : 2%;
       border  : none;
 
+      width: calc(100% - 50px);
+
       margin-left       : 10px;
       background-color  : transparent;
 
@@ -37,10 +39,11 @@
 
     // Search icon
     button {
-      font-size: 1.2em;
-      background: transparent;
-      border: none;
-      cursor: pointer;
+        width: 30px;
+        font-size: 1.2em;
+        background: transparent;
+        border: none;
+        cursor: pointer;
     }
 
     // Search icon

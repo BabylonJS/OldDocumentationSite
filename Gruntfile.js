@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     // show elapsed time at the end
     require('time-grunt')(grunt);
@@ -10,6 +10,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-typedoc');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
+
+    const sass = require('node-sass');
 
     grunt.initConfig({
         // TODO use https://www.npmjs.com/package/grunt-newer to only process updated files
@@ -44,9 +46,9 @@ module.exports = function (grunt) {
                     base: 'public/html',
                     livereload: true,
                     hostname: 'localhost',
-                    middleware: function (connect, options) {
+                    middleware: function(connect, options) {
                         var middlewares = [];
-                        middlewares.push(function (req, res) {
+                        middlewares.push(function(req, res) {
                             //console.log(req);
                         });
                         var middlewares = [];
@@ -54,13 +56,13 @@ module.exports = function (grunt) {
                             options.base = [options.base];
                         }
                         var directory = options.directory || options.base[options.base.length - 1];
-                        options.base.forEach(function (base) {
+                        options.base.forEach(function(base) {
                             // Serve static files. (use serve-static instead)
                             middlewares.push(serveStatic(base));
                         });
 
                         // not found? do the html magic!
-                        middlewares.push(function (req, res, next) {
+                        middlewares.push(function(req, res, next) {
                             for (var file, i = 0; i < options.base.length; i++) {
                                 file = options.base/* './public/html'*/ + req.url + ".html";
                                 if (grunt.file.exists(file)) {
@@ -85,20 +87,14 @@ module.exports = function (grunt) {
         },
         // Sass Config
         sass: {
-            options: {
-                cacheLocation: '.tmp/.sass-cache'
-            },
-            dev: {
+            dist: {                            // Target
                 options: {
-                    style: 'compressed'
+                    implementation: sass,
+                    sourceMap: true
                 },
-                files: [{
-                    expand: true,
-                    cwd: 'public/scss',
-                    dest: 'public/html/css',
-                    src: ['main.scss'],
-                    ext: '.css'
-                }]
+                files: {
+                    './public/html/css/main.css': './public/scss/main.scss',
+                }
             }
         },
         typedoc: {
@@ -149,10 +145,10 @@ module.exports = function (grunt) {
                 src: ['./scripts/compile-html/compile-html-index.js']
             },
             compileExamples: {
-                call: function (grunt, options, async) {
+                call: function(grunt, options, async) {
                     require('./scripts/compile-html/compile-html-examples')(async());
                 }
-            },            
+            },
             compileWhatsNew: {
                 options: {
                     module: true
@@ -160,32 +156,33 @@ module.exports = function (grunt) {
                 src: ['./scripts/compile-html/compile-html-whats-new.js']
             },
             compileHtmlStatics: {
-                call: function (grunt, options, async) {
+                call: function(grunt, options, async) {
                     require('./scripts/compile-html/compile-html-statics')(async());
                 }
             },
             indexer: {
-                call: function (grunt, options, async) {
+                call: function(grunt, options, async) {
                     require('./scripts/helpers/indexer/azure')(async());
                 }
             },
             remoteIndexCleanup: {
-                call: function (grunt, options, async) {
+                call: function(grunt, options, async) {
                     require('./scripts/helpers/indexer/azureCleanup')(async());
                 }
             }
         },
         copy: {
             exampleIcons: {
-              files: [
-                // includes files within path and its sub-directories
-                {
-                    expand: true,
-                    src: ['./examples/icons/**'],
-                    dest: './public/html/'}
-              ],
+                files: [
+                    // includes files within path and its sub-directories
+                    {
+                        expand: true,
+                        src: ['./examples/icons/**'],
+                        dest: './public/html/'
+                    }
+                ],
             },
-          }
+        }
     });
 
     grunt.registerTask('serve', 'Start working', [
@@ -211,16 +208,10 @@ module.exports = function (grunt) {
     grunt.registerTask('examples', 'Build examples page', [
         'execute:compileExamples',
         'copy:exampleIcons'
-    ]);    
+    ]);
 
     grunt.registerTask('buildCss', 'Compile SCSS into CSS', [
         'sass'
-        /**
-         * SASS CONFIG
-         * In order to use sass / scss, you need to install ruby,
-         * Then, check your install with "ruby -v"
-         * If it's ok, add sass with "gem install sass"
-         */
     ]);
 };
 
