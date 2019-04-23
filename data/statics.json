@@ -1377,6 +1377,18 @@
             ]
         },
         {
+            "title": "TextureCanvas",
+            "name": "TextureCanvas",
+            "img": "img/extensions/texturecanvas.jpg",
+            "desc": "Draw textures on a texture.",
+            "files": [
+                {
+                    "title": "TextureCanvas",
+                    "filename": "TextureCanvas"
+                }
+            ]
+        },
+        {
             "title": "Post Process library",
             "name": "PostProcessLibrary",
             "img": "img/extensions/postProcess.jpg",
