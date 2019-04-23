@@ -98,6 +98,11 @@
                     "title": "Shadows",
                     "filename": "Shadows",
                     "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
+                },
+                {
+                    "title": "How to get Babylon.js",
+                    "filename": "How_To_Get",
+                    "abstract": "Describe all the way to get Babylon.js"
                 }
             ]
         }
@@ -1368,6 +1373,18 @@
                 {
                     "title": "Wood",
                     "filename": "WoodProceduralTexture"
+                }
+            ]
+        },
+        {
+            "title": "TextureCanvas",
+            "name": "TextureCanvas",
+            "img": "img/extensions/texturecanvas.jpg",
+            "desc": "Draw textures on a texture.",
+            "files": [
+                {
+                    "title": "TextureCanvas",
+                    "filename": "TextureCanvas"
                 }
             ]
         },

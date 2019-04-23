@@ -3,7 +3,7 @@ PG_TITLE: How To Use the Motion Blur post-process
 ---
 
 # Introduction
-You can find an example of the motion blur post-process in our playground: [https://www.babylonjs-playground.com/#E5YGEL#1](https://www.babylonjs-playground.com/#E5YGEL#1)
+You can find an example of the motion blur post-process in our playground: [https://www.babylonjs-playground.com/#E5YGEL#2](https://www.babylonjs-playground.com/#E5YGEL#2)
 
 # Creating the motion blur post-process
 
@@ -34,6 +34,10 @@ takes, for the current pixel, some samples around the current pixel one. More yo
 ```
 motionblur.motionBlurSamples = 16; // divide quality by 2
 ```
+
+# Limitations
+To save performances, the motion blur's velocity map is rendered at the same time than depth buffer and normal buffer using the geometry render buffer.
+The clear color of the render buffer collides with the needed clear color of the velocity map and can generate glitchs like this: [https://www.babylonjs-playground.com/#E5YGEL#3](https://www.babylonjs-playground.com/#E5YGEL#3). As a limitation, your scene must occur in a closed environment OR have at least a skybox to hide the empty space that causes these glitchs.
 
 # Notes
 The Motion Blur post-process needs at least support of WebGL 2 or WebGL 1 with multiple render targets support. If not available, the post-process will work as a passthrough.
