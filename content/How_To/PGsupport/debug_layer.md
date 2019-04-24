@@ -53,7 +53,7 @@ Example:
 ```javascript
 scene.debugLayer.show({
     overlay:false, 
-    globalRoot:document.getElementById('#mydiv')
+    globalRoot:document.getElementById('mydiv')
 });
 ```
 
