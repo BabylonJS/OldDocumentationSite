@@ -210,8 +210,8 @@ mesh.updateFacetData();              // now the internal block area if 5% bigger
 ```
 
 In order to understand, here are two examples :   
-ratio = 1.20 (20% bigger)   https://www.babylonjs-playground.com/#UZGNA#1    
-ratio = 0.80  (20% smaller)  https://www.babylonjs-playground.com/#UZGNA#2    
+ratio = 1.20 (20% bigger)   https://www.babylonjs-playground.com/#UZGNA#6    
+ratio = 0.80  (20% smaller)  https://www.babylonjs-playground.com/#UZGNA#7    
 Those examples aren't pertinent, because the values are too big or too small : the block area is too far from the mesh or inside the mesh.  
 Right values should keep between 1.0 and 1.10.  
 

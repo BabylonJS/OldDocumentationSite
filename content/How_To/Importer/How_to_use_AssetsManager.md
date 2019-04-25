@@ -9,6 +9,8 @@ In order to help developers load multiple assets, Babylon.js (starting with vers
 
 This class can be used to import meshes into a scene or load text and binary files.
 
+**Note:** Since meshes you import can have a _rotationQuaternion_ set applying a _rotation_ to one will have unforeseen consequences as detailed in this [warning](/resources/rotation_conventions#warning).
+
 ## Using AssetsManager
 
 ### Initializing and creating tasks
@@ -113,7 +115,7 @@ assetsManager.onFinish = function(tasks) {
 ```
 
 The manager also allows you to use observers in order to handle onFinish, onProgress, onTaskSuccess and onTaskError:
-* onTaskSuccessObservable - registered observers will be executed when a single task finished successfully. 
+* onTaskSuccessObservable - registered observers will be executed when a single task finished successfully.
 * onTaskErrorObservable - registered observers will be executed when a single task failed.
 * onProgressObservable - registered observers will be executed when a single task finished successfully or failed.
 * onTasksDoneObservable - registered observers will be execute when all tasks' executions are done (success or failed!)
@@ -158,7 +160,7 @@ taskState: AssetTaskState;
 errorObject: { message?: string; exception?: any; };
 ```
 
-Note that the properties required to initialize a task are always corresponding to the object type it creates. Foe example, the constructor signature of the CubeTextureAssetTask takes the same variables as the class BABYLON.CubeTexture . The order of the variables might vary. 
+Note that the properties required to initialize a task are always corresponding to the object type it creates. Foe example, the constructor signature of the CubeTextureAssetTask takes the same variables as the class BABYLON.CubeTexture . The order of the variables might vary.
 
 ### MeshAssetTask
 
@@ -273,6 +275,20 @@ Extra properties:
 
 ```javascript
 public texture: HDRCubeTexture;
+```
+
+### EquiRectangularCubeTextureAssetTask
+
+Same as the CubeTextureAssetTask, but for Equirectangular cube textures
+
+```javascript
+constructor(name: string, url: string, size: number, noMipmap = false, useInGammaSpace = true)
+```
+
+Extra properties:
+
+```javascript
+public texture: EquiRectangularCubeTexture;
 ```
 
 ## Using a loading screen

@@ -168,6 +168,10 @@ The _Texture quality_ sets the convertion quality of bitmap to JPEG. At 100 (the
 
 The _Merge AO map_ option enables the merging of the Ambient Occlusion shadow map (stored on Diffuse Roughness slot) with the Metalness and Roughness map.
 
+The _write textures_ option enables writing the textures to the output directory.  Note that this is *__force enabled__* when exporting glb files.
+
+The _overwrite textures_ option enables overwriting existing textures in the output directory.
+
 The _Use Draco comression_ option is only available for gltf and glb output format. More detail [here](/resources/3DSMax_to_glTF#draco-compression).
 
 The _Export_ button should be used to create the Babylon file representing your scene. The _Export & Run_ button will also create the Babylon file, but will also launch your default browser and run the newly made Babylon file. This button is very useful if you just want to test the render of your scene in Babylon.js. 
@@ -252,6 +256,9 @@ For the texture, the Babylon specular color map is either:
 - a mix between specular level map and global specular color. The global specular color is multiplied to each pixel of the specular level map.
 
 Even though a specular level map should be a grayscale, its 3 components (RGB) are multiplied individually to the specular color.
+
+## Multi-Materials
+Multi-Materials are supported, but __inputting a Multi-Material into another Multi-Material is not supported__.
 
 ## Physical materials
 

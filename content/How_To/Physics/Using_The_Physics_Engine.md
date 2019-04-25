@@ -20,6 +20,7 @@ There are plugins for 3 physics engines:
 1. Cannon.js - a wonderful physics engine written entirely in JavaScript
 1. Oimo.js - a JS port of the lightweight Oimo physics engine
 1. Energy.js - (Not yet publicly available) - a JS port of a C++ physics engine
+1. Ammo.js - a JS port of the C++ Bullet physics engine
 
 Each engine has its own features and its own way of calculating the body dynamics. We at Babylon.js tried collecting the common usage of all engines and provide an easy-to-use interface to them.
 
@@ -27,6 +28,7 @@ Once you picked an engine, do not forget to add a reference to the engine code:
 
 1. Cannon: https://cdn.babylonjs.com/cannon.js
 1. Oimo: https://cdn.babylonjs.com/Oimo.js
+1. Ammo: https://cdn.babylonjs.com/Ammo.js or directly from https://github.com/kripken/ammo.js/blob/master/builds/ammo.js
 
 ## Basic usage
 
@@ -64,17 +66,44 @@ An impostor, as a rule, is a rigid body - meaning it cannot be changed during in
 
 Each physics engine has different types of Impostors. The following table shows what each engine supports, and what it uses to simulate the missing impostors
 
-| Impostor Type | Cannon.js | Oimo.js | Energy.js | Notes   |
-|---------------|-----------|---------|-----------|---------|
-| Box           | Box       | Box     | Box       |         |
-| Sphere        | Sphere    | Sphere  | Sphere    |         |
-| Particle      | Particle  | Sphere  | Unknown   |         |
-| Plane         | Plane     | Box     | Plane     | Simulates an unlimited surface. Like a floor that never ends. Consider using Box |
-| Cylinder      | Cylinder  | Cylinder| Cylinder  |         |
-| Mesh          | Mesh      | Box     | Mesh      | Use only when necessary - will lower performance. Cannon's mesh impostor only collides against spheres and planes |
-| Heightmap     | Heightmap | Box     | Mesh      |         |
+| Impostor Type | Cannon.js | Oimo.js | Energy.js | Ammo.js | Notes   |
+|---------------|-----------|---------|-----------|---------|---------|
+| Box           | Box       | Box     | Box       | Box     |         |
+| Sphere        | Sphere    | Sphere  | Sphere    | Sphere  |         |
+| Particle      | Particle  | Sphere  | Unknown   | Sphere  |         |
+| Plane         | Plane     | Box     | Plane     | Box     | Simulates an unlimited surface. Like a floor that never ends. Consider using Box |
+| Cylinder      | Cylinder  | Cylinder| Cylinder  | Cylinder|         |
+| Mesh          | Mesh      | Box     | Mesh      | Mesh    | Use only when necessary - will lower performance. Cannon's mesh impostor only collides against spheres and planes |
+| Heightmap     | Heightmap | Box     | Mesh      | Mesh    |         |
+| ConvexHull    | N/A       | N/A     | N/A       | Mesh    | Allows physics impostor support for convex mesh hull shapes |
 
 Using simple impostors for complex objects will increase performance but decrease the reality of the scene's physics. Consider when complex impostors (like the mesh or the heightmap) is needed, and when the simpler geometries can be used.
+
+### Authoring and loading a mesh with a collider mesh (Currently works with AmmoJS plugin only)
+
+To get reasonably accurate collisions without overloading the physics engine, a collider mesh is recommended. One way to do this is as followed:
+
+#### Authoring
+1. Model a mesh as usual (eg. in Blender, Babylon, Maya, etc.)
+1. Using impostor primitives (eg. Box or Sphere) create collider meshes outlining the mesh
+1. Label the collider meshes so they can be accessed within Babylon by name
+1. Ensure that the collider mesh nodes do not have their orientation frozen as this info is needed within Babylon to generate the physics imposters
+1. Export to a Babylon supported file format: GLTF, GLB, Babylon, etc.
+
+#### Loading
+1. Import mesh file within Babylon
+1. Create a new Babylon mesh which will be used as the root of physics mesh, the position of this mesh act as the center of mass for the physics object
+1. Iterate over the loaded mesh's children and add the collider meshes (marked by the label during creation) as a child of the root physics mesh, make them non-visible and create physics impostors from each
+1. Iterate over the loaded mesh again and add the parent nodes as a child of the root physics mesh
+1. Scale the root physics mesh to the desired size (Scaling must be uniform)
+1. Create a physics impostor of the root physics mesh of type NoImpostor (The mass of this impostor will override the mass of the child impostors)
+1. Position/rotate the root physics mesh to the desired place within the world
+
+#### Examples
+1. Loading mesh and colliders from file: https://playground.babylonjs.com/#66PS52
+1. Loading and adding colliders manually in Babylon: https://playground.babylonjs.com/#FD65RR
+1. Loading and adding collider with joints and pointer interactions: https://playground.babylonjs.com/#DGEP8N
+1. WebVR grabbing and throwing: https://playground.babylonjs.com/#ZNX043
 
 ### Babylon's physics impostor
 
@@ -107,6 +136,7 @@ BABYLON.PhysicsImpostor.MeshImpostor;
 BABYLON.PhysicsImpostor.CylinderImpostor;
 BABYLON.PhysicsImpostor.ParticleImpostor;
 BABYLON.PhysicsImpostor.HeightmapImpostor;
+BABYLON.PhysicsImpostor.ConvexHullImpostor;
 ```
 
 #### options
@@ -247,6 +277,7 @@ var explosionEvent = physicsHelper.applyRadialExplosionImpulse( // or .applyRadi
     strength,
     falloff
 );
+// the second `radius` argument can also act as options: `.applyRadialExplosionImpulse(origin, { radius: radius, strength: strength, falloff: falloff })`
 
 // or
 
@@ -256,6 +287,7 @@ var gravitationalFieldEvent = physicsHelper.gravitationalField(
     strength,
     falloff
 );
+// the second `radius` argument can also act as options: `.gravitationalField(origin, { radius: radius, strength: strength, falloff: falloff })`
 gravitationalFieldEvent.enable(); // need to call, if you want to activate the gravitational field.
 setTimeout(function (gravitationalFieldEvent) { gravitationalFieldEvent.disable(); }, 3000, gravitationalFieldEvent);
 
@@ -268,17 +300,28 @@ var updraftEvent = physicsHelper.updraft(
     height,
     BABYLON.PhysicsUpdraftMode.Center // or BABYLON.PhysicsUpdraftMode.Perpendicular
 );
+// the second `radius` argument can also act as options: `.updraft(origin, { radius: radius, strength: strength, height: height, updraftMode: PhysicsUpdraftMode.Center })`
 updraftEvent.enable();
 setTimeout(function (updraftEvent) { updraftEvent.disable(); }, 5000, updraftEvent);
+
+// or
+
+var vortexEvent = physicsHelper.vortex(
+    origin,
+    radius,
+    strength,
+    height
+);
+// the second `radius` argument can also act as options: `.vortex(origin, { radius: radius, strength: strength, height: height, centripetalForceThreshold: 0.7, centripetalForceMultiplier: 5, centrifugalForceMultiplier: 0.5, updraftForceMultiplier: 0.02 })`
+vortexEvent.enable();
+setTimeout(function (vortexEvent) { vortexEvent.disable(); }, 5000, vortexEvent);
 ```
 
 In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.dispose()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `sphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
 
 *For a more detailed explanation, please take a look at the playground example below.*
 
-Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#6
-
-Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#3
+Playground example - https://playground.babylonjs.com/index.html#UZHINX
 
 #### Collision callbacks
 
@@ -389,3 +432,22 @@ You can change the scene's gravity using the physics engine's `setGravity(vector
 This can be done in real time, even after setting the gravity:
 
 Playground demo (click to toggle positive/negative gravity) -  https://www.babylonjs-playground.com/#A2WGF
+
+# Further Reading
+
+## Basic - L1
+
+[How To Use Forces](/how_to/forces)  
+[How to use Joints](/how_to/joints)  
+[How To Use Pivots and Axes](/how_to/joint_pivots)  
+[How To Create Compound Bodies](/how_to/compounds)  
+[How To Create Soft Bodies](/how_to/soft_bodies)
+
+## Mid Level - L2
+
+[How To Use Advanced Features](/how_to/Using_Advanced_Physics_Features)
+ 
+## More Advanced - L3
+
+[How To Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)
+   

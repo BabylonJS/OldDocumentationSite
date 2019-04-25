@@ -13,7 +13,7 @@ First you may ask why is it better than "ctrl + prt scr" screenshot or the Snipp
 
 There are two methods available to do this using `BABYLON.Tools` which are `CreateScreenshot` and the more versatile `CreateScreenshotUsingRenderTarget`.
 
-You also need to consider how you will trigger the screenshot. This can be done for example with a timer such as 'window.setTimeout' or by using the [Babylon.js action manager](http://doc.babylonjs.com/how_to/how_to_use_actions) for a keyDown or onPointerDown trigger.
+You also need to consider how you will trigger the screenshot. This can be done for example with a timer such as 'window.setTimeout' or by using the [Babylon.js action manager](//doc.babylonjs.com/how_to/how_to_use_actions) for a keyDown or onPointerDown trigger.
 
 A major difference between `CreateScreenshot` and `CreateScreenshotUsingRenderTarget` is when you try to use them directly after creating a mesh or meshes. This is because they work differently.
 
@@ -140,7 +140,9 @@ The following image of the canvas on screen and the resulting screenshot using '
 
 ## Gif Creation
 
-Either of the following set of codes produced a series of images that were turned into the animated gif below.
+In order to create an animated Gif, you will usually need a set of static images to stick together.
+
+Either of the following set of codes produces a series of images that you can turn into an animated gif:
 
 ```javascript
 var imgNm = 0;
@@ -161,6 +163,8 @@ scene.registerAfterRender(function(){
     }
 })
 ```
+
+Here is the result after stitching in your favorite external tool:
 
 ![Gif](/img/how_to/scene/ssanim.gif)
 

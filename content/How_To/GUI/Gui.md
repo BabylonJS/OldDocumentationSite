@@ -65,6 +65,10 @@ var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane,
 
 Once you have an AdvancedDynamicTexture object, you can start adding controls.
 
+## Debugging
+
+Starting with Babylon.js v4.0, the new inspector can help debugging your GUI by displaying bounding infos and letting you dynamically change properties: https://doc.babylonjs.com/features/playground_debuglayer#gui-control-actions.
+
 ## General properties
 
 ### Events
@@ -78,6 +82,14 @@ onPointerOutObservable|Raised when the cursor leaves the control. Only available
 onPointerDownObservable|Raised when pointer is down on the control.
 onPointerUpObservable|Raised when pointer is up on the control.
 onPointerClickObservable|Raised when a control is clicked on.
+onClipboardObservable|Raised when a clipboard event is triggered.
+
+
+To use the clipboard events, they first need to be enabled by calling `registerClipboardEvents` on the AdvancedDynamicTexture Instance which will register the `cut`, `copy`, `paste` events onto the canvas. Once enabled, they can be triggered via `ctrl/cmd + c` for copy, `ctrl/cmd + v` for paste and `ctrl/cmd + x` for cut and will always be listening to the canvas. If you have any other action having the same key bindings, you can prevent default triggering of these events by calling `unRegisterClipboardEvents` which will unregister them from the canvas.
+
+Here is an example on how to use clipboard observables:
+ - To create new meshes: https://playground.babylonjs.com/#S0IW99#1
+ - To create new textblocks from clipboard data: https://playground.babylonjs.com/#AY28VL#4
 
 You can also define that a control is invisible to events (so you can click through it for instance). To do so, just call `control.isHitTestVisible`.
 
@@ -120,7 +132,7 @@ paddingBottom|valueAndUnit|0px|Pixel
 paddingLeft|valueAndUnit|0px|Pixel
 paddingRight|valueAndUnit|0px|Pixel
 
-Please note that paddings are inside the control. This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
+The padding is the space around the control (on the outside) between it and its parent or sibling controls (like CSS margin when box-sizing is set to border-box). This means that the usableWidth = width - paddingLeft - paddingRight. Same for usableHeight = height - paddingTop - paddingBottom.
 
 All these properties can be defined using pixel or percentage as unit.
 To set value as pixel, use this construct: `control.left = "50px"`
@@ -178,6 +190,12 @@ transformCenterY|number|0.5|Define the center of transformation on Y axis. Value
 
 Here is an example of how to use rotation and scaling:  https://www.babylonjs-playground.com/#XCPP9Y#22
 
+### Optimization
+
+For complex controls (like the ColorPicker for instance), you can turn on rendering cache by using `control.useBitmapCache = true`. This will store a cached version of the control image in order to reuse it when the GUI is updated.
+
+Starting with Babylon.js v4.0 the GUI system uses the Invalidate Rect optimization which allows the renderer to only update portions of the texture. If you want to turn it off, you can call `adtTexture.useInvalidateRectOptimization = false`
+
 ## Controls
 
 A control is an abstraction of a piece of UI. There are two kinds of controls:
@@ -199,7 +217,8 @@ shadowBlur|number|0|the amount of blur that is applied to the drop shadow
 shadowOffsetX|number|0|the offset of the shadow on the x axis
 shadowOffsetY|number|0|the offset of the shadow on the y axis
 shadowColor|string|"#000"|the color of the shadow
-hoverCursor|string|""|the cursor to use when mouse is over the control ([demo](https://www.babylonjs-playground.com/#XCPP9Y#588))
+isPointerBlocker|boolean|false|make sure gui events are triggered before the scene events
+hoverCursor|string|""|the cursor to use when mouse is over the control, need to have isPointerBlocker set to true ([demo](https://www.babylonjs-playground.com/#XCPP9Y#888))
 
 Controls can be added directly to the AdvancedDynamicTexture or to a container with:
 
@@ -278,6 +297,9 @@ autoStretchWidth|boolean|true|The control will resize horizontally to adapt to t
 maxWidth|valueAndUnit|100%|The maximum width allowed if autoStretchWidth is set to true
 margin|valueAndUnit|10px|Margin to use on left and right inside the control itself. This margin is used to determine where the text will be drawn
 thickness|number|1|Thickness of the border
+highligherOpacity|number|0.4|Defines the transparency of highlighted text's background
+textHighlightColor|string|#d5e0ff|Background color of highlighted text
+onFocusSelectAll|boolean|false|Allows complete selection of text by default when the input is focused.
 
 The InputText is a focusable control. This means you can click / touch it in order to give it the focus and control over the keyboard events. You can remove the focus from the control by hitting enter or clicking outside of the control.
 
@@ -287,8 +309,13 @@ Observables|Comments
 -----------|--------
 onTextChangedObservable|Raised when the text has changed
 onBeforeKeyAddObservable|Raised just before the entered key is added to the text
-onFocusObservable|Raised when the control loses the focus
-onBlurObservable|Raised when the control gets the focus
+onFocusObservable|Raised when the control gets the focus
+onBlurObservable|Raised when the control loses the focus
+onTextHighlightObservable|Raised when the text is highlighted
+onTextCopyObservable|Raised when the copy event is triggered
+onTextCutObservable|Raised when the cut event is triggered
+onTextPasteObservable|Raised when the paste event is triggered
+onKeyboardEventProcessedObservable|Raised when a key event was processed
 
 Please note that the InputText has pretty limited edition support. Here are the supported keys:
 * Delete
@@ -317,6 +344,8 @@ For example, if the handler wants to limit the control to only accept numerical 
 Please note that the observable is only triggered by printable keys, that is, keys that can be added to the text, and not by control keys like backspace and enter.
 
 Here's an example showing two inputs, one which only accepts numerical keys and one which has simple dead key support: https://www.babylonjs-playground.com/#I1Y5YT#1
+
+InputText also supports clipboardObservables, here's an example: https://www.babylonjs-playground.com/#UWS0TS#20
 
 ### InputPassword
 
@@ -366,6 +395,12 @@ var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png
 ```
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
+
+#### Accessing parts
+
+You can use the following properties to get button's parts (if available):
+* image: Returns the image part of the button (if any)
+* textBlock: Returns text related properties of the button
 
 #### Visual animations
 By default a button will change its opacity on pointerOver and will change it scale when clicked.
@@ -452,13 +487,34 @@ color|string|white|Foreground color
 background|string|black|Background color
 barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
 thumbWidth|valueAndUnit|30px|Width of the thumb
+displayThumb|boolean|true|Indicates if the thumb must be rendered (useful to simulate progress bar)
 isThumbCircle|boolean|false|Indicates if the thumb should be a circle (square if false)
 isThumbClamped|boolean|false|Indicates if the thumb should be clamped
 isVertical|boolean|false|Indicates that the slider will be rendered vertically instead of horizontally
+step|number|0|Indicates the degree of precision required for sldier values (0 means full precision where 0.01 means 2 digits precision)
 
 When using vertical slider, you have to make sure that height is bigger than width. The opposite has to be true when using `isVertical = false`.
 
 Here is an example of a slider: https://www.babylonjs-playground.com/#U9AC0N#1
+
+### ImageBasedSlider
+
+You can use an ImageBasedSlider to customize a slider using pictures. This control can be configured like the Slider)
+
+It is rendered using the following properties:
+
+Property|Type|Default|Comments
+--------|----|-------|--------
+backgroundImage|string|null|Path to the image to use for the background
+valueBarImage|string|null|Path to the image to use for the value bar
+thumbImage|string|null|Path to the image to use for the thumb
+barOffset|valueAndUnit|5px|Offset used vertically to draw the background bar
+thumbWidth|valueAndUnit|30px|Width of the thumb
+displayThumb|boolean|true|Indicates if the thumb must be rendered (useful to simulate progress bar)
+isThumbClamped|boolean|false|Indicates if the thumb should be clamped
+isVertical|boolean|false|Indicates that the slider will be rendered vertically instead of horizontally
+
+Here is an example of a sliders and image based sliders :https://www.babylonjs-playground.com/#HATGQZ
 
 ### Line
 
@@ -514,13 +570,15 @@ You can control the stretch used by the image with `image.stretch` property. You
 * BABYLON.GUI.Image.STRETCH_FILL: Scale the image to fill the container (This is the default value)
 * BABYLON.GUI.Image.STRETCH_UNIFORM: Scale the image to fill the container but maintain aspect ratio
 * BABYLON.GUI.Image.STRETCH_EXTEND: Scale the container to adapt to the image size.
+* BABYLON.GUI.Image.STRETCH_NINE_PATCH: Scale the image using a [nine patch technique](http://wiresareobsolete.com/2010/06/9-patches/). You have to either define the `sliceLeft`, `sliceRight`, `sliceTop` and `sliceBottom` properties or store data into your image (in the first and last rows and columns) and call `image.populateNinePatchSlicesFromImage = true` to read that data. Demo [here](https://www.babylonjs-playground.com/#G5H9IN#2)
 
 You may want to have the Image control adapt its size to the source image. To do so just call `image.autoScale = true`.
 
 You can change image source at any time with `image.source="myimage.jpg"`.
 
 You can also define which part of the source image you want to use with the following properties:
-* sourceLeft: x coordinate in the source image (in pixel)
+* sourceLeft: x coordinate in 
+the source image (in pixel)
 * sourceTop: y coordinate in the source image (in pixel)
 * sourceWidth: width of the source image you want to use (in pixel)
 * sourceHeight: height of the source image you want to use (in pixel)
@@ -532,6 +590,8 @@ You can also apply stretch to animation sheet using `image.stretch` property.
 
 [example 1](https://www.babylonjs-playground.com/#K60448#1)
 [example 2](https://www.babylonjs-playground.com/#K60448#2)
+
+Starting with babylon.js v4.0, you can also set `img.detectPointerOnOpaqueOnly = true` to indicate if pointers should only be validated on pixels with alpha > 0.
 
 ### ColorPicker
 
@@ -651,6 +711,16 @@ You can decide to have your containers to adapt their size to their children by 
 If you set one of these properties to true, the associated dimension (width, height or both) will be computed based on direct children size as long as it is defined in pixel (size cannot be defined in percentage because this will generate an infinite loop as the child will need the parent size and the parent will need the child size)
 You can find a demo here: https://www.babylonjs-playground.com/#GL5SIM
 
+### Clipping
+By default containers will clip their children to their bounds. You can disable this option by calling this code:
+```
+container.clipChildren = false;
+```
+
+Please note that not clipping children may generate issues with `adt.useInvalidateRectOptimization` so it is recommended to turn this optimization off if you want to use unclipped children.
+
+You can find a demo here: https://www.babylonjs-playground.com/#LBF8S2
+
 ### Rectangle
 The Rectangle is a rectangular container with the following properties:
 
@@ -673,11 +743,19 @@ Here is an example of an ellipse control: https://www.babylonjs-playground.com/#
 ### StackPanel
 
 The StackPanel is a control which stacks its children based on its orientation (can be horizontal or vertical).
-All children must have a defined width or height (depending on the orientation).
+All children must have a defined width or height (depending on the orientation) in **pixels**.
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
+Property|Type|Default|Comments
+--------|----|-------|--------
+isVertical|boolean|false|Orientation of the panel
+
 Here is an example of a StackPanel: https://www.babylonjs-playground.com/#XCPP9Y#11
+
+### ScrollViewer
+
+Due to its rich feature set, the ScrollViewer has its own dedicated page right [here](/how_to/ScrollViewer).
 
 ### Grid
 
@@ -726,10 +804,20 @@ You can update or delete columns and rows with the following functions:
 * removeRowDefinition(index): Remove a row definition at specified index
 * removeColumnDefinition(index): Remove a column definition at specified index
 
+Two properties can also help you getting rows and columns count:
+* rowCount: Will give you the number of rows
+* columnCount: Will give you the number of columns
+
 To add a control in a grid, you have to specify the row and column indexes:
 
 ```
 grid.addControl(control, 1, 2); // 2nd row, thrid column
+```
+
+You can get the list of controls in a specific cell by calling:
+
+```
+var controls = grid.getChildrenAt(2, 3);
 ```
 
 Here is an example of a Grid: https://www.babylonjs-playground.com/#KX33X8#1
@@ -774,6 +862,7 @@ To reduce the amount of code required to achieve frequent tasks you can use the 
 
 ## GUI and postprocesses
 
+### LayerMask
 In order to not apply postprocesses to your GUI, you will have to use a multi-cameras approach: one for your main scene and one for your GUI.
 
 You can find an implementation example here: https://www.babylonjs-playground.com/#U9AC0N#58
@@ -797,8 +886,21 @@ camera1.layerMask = 1;
 myMesh.layerMask = 1;
 ```
 
+### Multi-scenes
+The other option will be to use a multi scene approach with a renderloop defined like this:
+```
+guiScene.autoClear = false;
+engine.runRenderLoop(function() {
+    mainScene.render();
+    guiScene.render();
+})
+```
+
+In this case the `guiScene` will host your GUI and the `mainScene` will host your scene with your postprocesses.
+
 
 ## Further reading
 
 [How To Use the Selection Panel Helper](/how_to/selector)  
+[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)  
 [How To Use Babylon GUI3D](/how_to/gui3d)

@@ -254,4 +254,5 @@ selectBox.removeFromGroupSelector(0, 0);
 ## Further reading
 
 [How To Use Babylon GUI](/how_to/gui)  
+[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)  
 [How To Use Babylon GUI3D](/how_to/gui3d)

@@ -16,8 +16,6 @@ Only one line is needed to make all the emissive parts of a scene glow:
 var gl = new BABYLON.GlowLayer("glow", scene);
 ```
 
-> The glow layer will not highlight transparent meshes.
-
 [**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#1)
 
 ## Intensity Controls

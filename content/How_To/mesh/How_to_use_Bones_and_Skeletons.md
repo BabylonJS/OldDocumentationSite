@@ -36,6 +36,11 @@ finalMatrix = worldMatrix * (bonesMatrices[index0] * weight0 + bonesMatrices[ind
 
 On low-end hardware, the maximum bones influences per vertex is reduced to 3.
 
+By default the system will try to store the bone matrices into a texture to save shader uniforms. If you still want to use shader uniforms, you can call:
+```
+skeleton.useTextureToStoreBoneMatrices = false;
+```
+
 ## Loading bones
 Skeletons and bones can be loaded from .babylon files.
 
@@ -325,3 +330,7 @@ poleTarget.setEnabled(false);
 
 ## Performance considerations
 Bones are computed using shaders by default. This allows better performance. But on low end devices, shaders could be limited and not able to process bones. You can in this case ask Babylon.js to compute bones using CPU by setting `mesh.computeBonesUsingShaders = false`.
+
+## Debugging
+
+Starting with Babylon.js v4.0, you can use the Inspector to turn [skeleton viewer](https://doc.babylonjs.com/features/playground_debuglayer#bones-viewer) on and off.

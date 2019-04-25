@@ -16,7 +16,7 @@ In other words, for example, determine how the light (from sun) is scattered by 
 
 ## Playground example
 
-A Playground example can be found here: [Animate the sky]( https://www.babylonjs-playground.com/#E6OZX#122)
+A Playground example can be found here: [Animate the sky](https://www.babylonjs-playground.com/#E6OZX#221)
 
 Just press the following keys:
 * 1: Set Day
@@ -25,6 +25,8 @@ Just press the following keys:
 * 4: Decrease Luminance
 * 5: Increase Turbidity
 * 6: Decrease Turbidity
+* 7: Move horizon to -50
+* 8: Restore horizon to 0
 
 ## How to use?
 
@@ -92,6 +94,18 @@ skyMaterial.mieCoefficient = 0.005; // The mieCoefficient in interval [0, 0.1], 
 ```
 
 ![skyMie](/img/extensions/materials/skyMie.png)
+
+## Keeping the horizon relative to the camera elevation
+In some cases, you would like to keep the horizon's "position" relative to the camera's position (typically a game where you can flight very high).
+To do that, the material exposes a vector (`.cameraOffset`) that you can customize.
+
+Typically:
+```
+// Set the horizon elevation relative to the camera position
+skyMaterial.cameraOffset.y = scene.activeCamera.globalPosition.y;
+```
+
+**Note**: this will not modify the sun position as it considered enought far, even when camera is really high.
 
 ## Using the sky material to create a reflection texture
 

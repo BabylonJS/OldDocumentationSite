@@ -12,6 +12,14 @@ To use it, you just have to reference the loader file:
 ```
 You can find it [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview release/loaders)
 
+
+If you are using ES6 imports via NPM, you need to reference with side-effects:
+```
+import 'babylonjs-loaders'
+```
+
+You can read more about [NPM support](/features/npm_support)
+
 ### Load
 See [how to load from any file type](/how_to/Load_From_Any_File_Type)
 Babylon.js will know how to load the obj file and its mtl file automatically: 
@@ -27,7 +35,7 @@ Babylon.js will know how to load the obj file and its mtl file automatically:
 
 ![Batman UVs problem](http://i.imgur.com/vjWKNRK.png)
 
-If you meet this problem, set the variable 
+If you meet this problem, set the variable:
 ```
 BABYLON.OBJFileLoader.OPTIMIZE_WITH_UV = true;
 ```
@@ -35,8 +43,35 @@ Then, you'll have a better texture, but with a longer loading.
 
 ![Batman UVs ok](http://i.imgur.com/Dajwlvq.png)
 
+Although not part of Wavefront OBJ file format, some OBJ files include vertex colors. If you are loading such a file and want vertices with colors, set the variable:
+```
+BABYLON.OBJFileLoader.IMPORT_VERTEX_COLORS = true;
+```
+
+If you have an OBJ file without normals or wish to have them calculated for you, set the variable:
+```
+BABYLON.OBJFileLoader.COMPUTE_NORMALS = true;
+```
+
+To have your imported model inverted on the y-axis, set the variable:
+```
+BABYLON.OBJFileLoader.INVERT_Y = true;
+```
+
+By default if a MTL file cannot be loaded (missing/error) it will silently fail.  The model will still be loaded, but if you want to enforce a stricter loading of materials you can use onSuccess() and onError() callbacks accordingly.  Set the variable:
+```
+BABYLON.OBJFileLoader.MATERIAL_LOADING_FAILS_SILENTLY = false;
+```
+
+If a MTL is defined in your OBJ and you wish to have it ignored, set the variable:
+```
+BABYLON.OBJFileLoader.SKIP_MATERIALS = true;
+```
+
 ## Supported
 * Object/group
+* Geometric vertex
+    * colors
 * Faces
     * triangles
     * quads
@@ -58,9 +93,8 @@ Then, you'll have a better texture, but with a longer loading.
 	* The name of the created BABYLON.Mesh follows this syntax: meshName_mmX 
 	* X is the nth BABYLON.Mesh created with this method
 
-    
 ## Not supported currently
 * Smoothing groups (s parameter in OBJ file)
 * Illumination (illum parameter in MTL file)
 * The differents options for loading textures in MTL file.
-* A good description about MTL file and his options could be found here: http://paulbourke.net/dataformats/mtl/
+* A good description about MTL files and their options can be found here: http://paulbourke.net/dataformats/mtl/

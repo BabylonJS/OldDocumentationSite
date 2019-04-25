@@ -39,14 +39,13 @@ Categories 5 and 6 are self-explanatory. Note that they are always drawn after a
 
 ## Rendering Groups
 
-Renderable objects can be organized into rendering groups, which act as layers. In each of these rendering groups, the order above will be used.
+Renderable objects can be organized into rendering groups, which act as layers. Layers are rendered in ascending order by ID, starting with the default one (which has the ID of 0). Within each rendering group, the "General Order" above will also be used.
 
-To use rendering groups, you simply need to set the property `.renderingGroupId` on the objects you want to put in other layers than the default one (which has the ID of 0).
+To use rendering groups, you simply need to set the property `.renderingGroupId` on the objects you want to put in other layers than the default one.
 
 This property exists on meshes, particle systems and sprite managers.
 
-Rendering groups are rendered by ascending ID, starting with the default one. There can be no more than 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3.
-
+By default, there are 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3. This can be increased by setting the static property BABYLON.RenderingManager.MAX_RENDERINGGROUPS to the max ID you'd like (ex. set to 8 to support 7 rendering groups).
 
 ## Alpha Index
 
@@ -145,7 +144,7 @@ As you can notice, the transparency rendering rules may lead to some weird thing
 In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` :  https://www.babylonjs-playground.com/#1PLV5Z#2  
 Other option will be to rely on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#16  
 
-At last, if you accept to spend some CPU cycles to get a correct self transparency, you can use the FacetData feature and enable the facet depth sort : http://doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort   
+At last, if you accept to spend some CPU cycles to get a correct self transparency, you can use the FacetData feature and enable the facet depth sort : //doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort   
 
 Eaxmple : http://playground.babylonjs.com/#FWKUY0#1  
 Depth sorted on the left, standard on the right.  

@@ -12,7 +12,7 @@ var pointerDragBehavior = new BABYLON.PointerDragBehavior({dragAxis: new BABYLON
 ```
 It can be initialized in 3 different modes
  - dragAxis: Dragging will occur along the provided axis
- - planeNormal: Dragging will occur along the plane defined by the normal
+ - dragPlaneNormal: Dragging will occur along the plane defined by the normal
  - None: Dragging will occur along the plane facing the camera
 
 By default, the dragging plane/axis will be modified by the objects orientation. To keep the specified axis/plane fixed to the world set this to false.

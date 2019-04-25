@@ -336,8 +336,10 @@ Example 1 : you may want to update your 10K particle mesh only every three frame
 * frame 1 : `setParticles(0, 3300, false)` computes everything for particles from 0 to 3300 and doesn't update the mesh.
 * frame 2 : `setParticles(3301, 6600, false)` computes everything for particles from 3301 to 6600 and doesn't update the mesh.
 * frame 3 : `setParticles(6601, 9999, true)` computes everything for particles from 6601 to 9999 and finally updates the mesh.  
+10,000 boxes updated per bunch of 3500 here : https://www.babylonjs-playground.com/#2V1C4Z#12  
 
 Example 2 : you could keep, say, the first 5000 particles as unused ones and compute the particle behavior only for the 5000 lasts in your global pool.  
+
 
 
 ### Colors and UVs
@@ -378,7 +380,18 @@ particle.uvs.w = 0.3;   // right upper corner : 30% image width
 ```
 This can be used as well either in the `positionFunction` call at SPS creation time, either in `updateParticle()`.  
 
-Like for the colors, there can be only a UVs value per particle even if the particle model had initially different UVs per face. If you don't set the particle `uvs` property and if the model had UVs per face, they are saved.
+Unlike for the colors, the model UVs are saved whatever the model had per face UVs or not.  
+This allows to use not only a texture atlas for the particles, but also a texture atlas for the model then inside the particle atlas because you use only one texture in final.  
+
+Explanation :   
+
+https://www.babylonjs-playground.com/#ICZEXW#82   
+This example show the standard usage of the box per face texture as described here : https://doc.babylonjs.com/how_to/createbox_per_face_textures_and_colors   
+Note that, in this example,  we set 4 sprites per face, not 1, just because we will use the same texture for particles then. In a real case, we would probably first use a texture for the model, then put this texture in a bigger one.  
+Now let's create a SPS, let's add particles from this box model and let's set each particle some `.uvs` values : half the widht and height size of the initial uvs value.    
+https://www.babylonjs-playground.com/#ICZEXW#81   
+As we can check, each particle is still given a different texture per face.   
+
 
 Like for any other mesh, you can also enable the texture transparency with :
 ```javascript
@@ -578,7 +591,7 @@ To enable it, just create your SPS with the parameter `enableDepthSort` to `true
 
 If for some reasons (immobile camera and sps),  you want to stop (or reactivate) the sort on the next calls to `setParticles()`, just set the property `sps.depthSortParticles` to `false` (or `true` to reactivate it) .   
 
-Note well that is better to not enable the particle depth sort and the [facet depth sort](http://doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort) in the same time, else the sort process wil be executed twice with no final gain.  
+Note well that is better to not enable the particle depth sort and the [facet depth sort](//doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort) in the same time, else the sort process wil be executed twice with no final gain.  
 So just choose what kind of sorting you need : at particle level (faster) or at facet level (more accurate).  
 
 Note also that the particle sort **can't work** with the MultiMaterials.  
@@ -658,6 +671,26 @@ mesh.intersectsMesh(particle);  // won't give the right result
 particle.intersectsMesh(mesh);  // will give the right bounding sphere intersection
 ```
 
+### Particle In Frustum  
+When the SPS is enabled to manage particle intersections, each particle is given a bounding box and a bouding sphere.  
+You can then check whether a particle intersects the camera frustum with the method `particle.isInFrustum(frustumPlanes, [cullingStrategy])` like you would do with meshes.  
+```javascript
+scene.updateTransformMatrix();   // force the plane computation once
+var frustumPlanes = scene.frustumPlanes;
+// then in some loop ...
+if (!particle.isInFrustum(frustumePlanes)) {
+    p.alive = false;
+}
+```
+Contrary to the meshes, you can't use `.isInFrustum()` to cull particles that wouldn't be rendered, because all the particles are always rendered, meaning passed to the GPU (even the invisible ones). You can only use this test to customize the process applied to the particles.  
+Example : you would want to not compute the particles outside the frustum to gain some performance.  
+The test done by `isInFrustum()` has also its own CPU cost, so it's probably not a good idea to run it on thousand particles each frame.   
+Actually, it's up to you to choose if the test is worth it for your own need.  
+Let's imagine a case where each particle computation is really intensive (example : when using `computeParticleVertex`). In this case, the frustum test could be faster than the particle computation, so it would be interesting to use it to disable the particle computation for particles outside the frustum.   
+In this following example, the computation charge is directly related to the number of vertices and shouldn't change whatever the camera direction. But, as we disable the particles outside the frustum, if you rotate the camera to isolate one or two worms in the camera field, you can check the performance gain  
+https://www.babylonjs-playground.com/#BKX11Q   
+Note : the default culling strategy used in the particle frustum test is the fastest (`BoundingSphereOnly`).  
+You can change it at will for each particle by using the same values than the static properties `CULLINGSTRATEGY_XXX` ones of the `AbstractMesh` class.  
 
 ### Garbage Collector Concerns  
 In Javascript, the Garbage Collector is usually your friend : it takes care about cleaning up all the not any longer needed variables you could have declared and thus it sets the memory free.  

@@ -108,6 +108,14 @@ var source = BABYLON.Mesh.CreateBox("source", 1.0, scene);
 particleSystem.emitter = source;
 ```
 
+### World offset
+Starting with Babylon.js v4.0, you can set up a world offset to your particles with:
+```
+particleSystem.worldOffset = new BABYLON.Vector3(100, 20, -453);
+```
+
+This command will shift the particles using the offset (Mostly used when you need to keep the camera at the center of the world to increase precision and then move the world instead).
+
 ### Location and Spread
 The spread of the particles from the emitter is from within a box the size of which is determined by setting the lower, left, front corner and upper, right, back corner of the box relative to the location of the emitter. This is done using `minEmitBox` and `maxEmitBox`
 
@@ -614,6 +622,7 @@ Starting from Babylonjs 3.2 you can shape the region the particles are emitted f
 * Box
 * Sphere
 * Hemisphere
+* Cylinder
 * Cone
 
 by the addition of specific emitter function.
@@ -870,7 +879,7 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 [Solid Particle System](/How_To/Solid_Particles)
 
 ## Intermediate - L2
-[How to Customize the Particle System](/how_to/Customise)
-[Create animated particles](/how_To/Particles/Animate.md)
+[How to Customize the Particle System](/how_to/Customise)  
+[How to Create animated particles](/how_To/Particles/Animate.md)
 
 

@@ -28,6 +28,7 @@ The global structure of a .babylon file is the following:
     "cameras": array of Cameras (see below),
     "activeCamera_": string,
     "lights": array of Lights (see below),
+    "reflectionProbes": array of ReflectionProbe (see below),
     "materials": array of Materials (see below),
     "geometries": {...} (see below),
     "meshes": array of Meshes (see below),
@@ -38,7 +39,6 @@ The global structure of a .babylon file is the following:
     "lensFlareSystems": array of LensFlareSystems (see below),
     "actions": array of actions (see below),
     "sounds": array of Sounds (see below),
-    "workerCollisions": boolean,
     "collisionsEnabled": boolean,
     "physicsEnabled": boolean,
     "physicsGravity": vector3 (defaults to [0,-9.81,0]),
@@ -192,6 +192,28 @@ A texture is defined by the following JSON:
 }
 ```
 
+## ReflectionProbe
+A reflection probe is defined by the following JSON which extends the RenderTargetTexture JSON (see below):
+```javascript
+{
+    "_attachedMesh": string (id of the attached mesh),
+	"position": array of floats (position of the reflection probe: x, y, and z),
+    "isReflectionProbe": boolean (indicates that this RenderTargetTexture JSON is a reflection probe)
+}
+```
+
+## RenderTargetTexture
+A render target texture is defined by the following JSON which extends the Texture JSON (see below):
+```javascript
+{
+	"refreshRate": int,
+	"isCube": boolean,
+	"is3D": boolean,
+	"renderTargetSize": int (render size of the render target texture),
+	"renderList": string[] (list of meshes to render identified by their id)
+}
+```
+
 ## MultiMaterials
 A multiMaterial is defined by the following JSON:
 ```javascript
@@ -318,11 +340,11 @@ A vertexData is defined by the following JSON:
     "positions": array of floats (3 per vertex),
     "normals": array of floats (3 per vertex),
     "uvs": array of floats (2 per vertex),
-    "uv2s": array of floats (2 per vertex) which is the 2nd texture coordinates (can be omitted),
-    "uv3s": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
-    "uv4s": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
-    "uv5s": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
-    "uv6s": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
+    "uvs2": array of floats (2 per vertex) which is the 2nd texture coordinates (can be omitted),
+    "uvs3": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
+    "uvs4": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
+    "uvs5": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
+    "uvs6": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
     "colors": array of floats (3 per vertex) which is the per vertex color (can be omitted),
     "matricesIndices": array of ints (4 per vertex) which is the matrices indices for bones (can be omitted),
     "matricesWeights": array of floats (4 per vertex) which is the matrices weights for bones (can be omitted),
@@ -379,10 +401,10 @@ A mesh is defined by the following JSON:
     "normals": array of floats (3 per vertex),
     "uvs": array of floats (2 per vertex),
     "uvs2": array of floats (2 per vertex) which is the 2nd texture coordinates (can be omitted),
-    "uv3s": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
-    "uv4s": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
-    "uv5s": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
-    "uv6s": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
+    "uvs3": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
+    "uvs4": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
+    "uvs5": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
+    "uvs6": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
     "colors": array of floats (4 per vertex) which is the per vertex color (can be omitted),
     "hasVertexAlpha": boolean to indicate if colors field contains useful alpha value (can be omitted),
     "matricesIndices": array of ints (4 per vertex) which is the matrices indices for bones (can be omitted),
@@ -845,9 +867,9 @@ Here is a simple example of .babylon file:
         "volume": 1,
         "autoplay": true,
         "loop": true,
-        "soundTrackId": 1
+        "soundTrackId": 1,
         "spatialSound": true,
-        "position": [0, 0, 0]
+        "position": [0, 0, 0],
         "refDistance": 1.0,
         "rolloffFactor": 1.0,
         "maxDistance": 100,

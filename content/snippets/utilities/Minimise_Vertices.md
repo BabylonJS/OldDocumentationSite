@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Minimising Vertices in a Mesh
+PG_TITLE: Minimising Vertices By Forcing Sharing
 ---
 
-# Minimising Mesh Vertices
+# Force Shared Vertices
 
 This function will remove some indices and vertices from a mesh. It removes facets where two of its vertices 
 share the same position and forces vertices to share normals. So it will, therefore, also change a flat shaded mesh to a smooth (for the 
@@ -12,7 +12,24 @@ Sometimes the additional facets and vertices are necessary, for example to preve
 
 More information on the need for extra facets, which turn out to be lines, can be found in [Materials and Facets](/resources/Facets.html).
 
-# The Function
+**NOTE** From Babylon.js version 4.0 onwards this utility now exists as a standard method on a mesh.
+
+```javascript
+mesh.forceSharedVertices();
+```
+# Playground
+
+Using the Inspector in the Playground below with the minimise vertices function applied you will see that there are 366 vertices. However you can also see how the texture has been split and it does not seam correctly. This seaming would also happen if you used an image of the earth for example.
+
+If you comment out line 12 and so no longer apply the force shared vertices function you can use the Inspector to check that there are 435 vertices. In this case though the image is applied correctly.
+
+* [Playground Example - Force Shared Vertices](https://www.babylonjs-playground.com/#5ITGBA#2)
+
+# Prior to Version 4.0
+
+Use the function below. Any examples found in the playground then used the term 'minimizeVertices' rather than 'forceSharedVertices'.
+
+## The Function
 
 ```javascript
 BABYLON.Mesh.prototype.minimizeVertices = function() {
@@ -80,13 +97,6 @@ BABYLON.Mesh.prototype.minimizeVertices = function() {
     }	
 ```
 
-# Playground
-
-Using the Inspector in the Playground below with the minimise vertices function applied you will see that there are 366 vertices and 2184 
-indices. However you can also see how the texture has been split and it does not seam correctly. This seaming would also happen if you used an image
-of the earth for example.
-
-If you comment out line 78 and so no longer apply the minimise vertices function you can use the Inspector to check that there are 435 vertices and 2352 indices. In this case though the image is applied correctly.  
-
+## Playground
 
 * [Playground Example Minimising Vertices](http://www.babylonjs-playground.com/#1JBMJ3#17)

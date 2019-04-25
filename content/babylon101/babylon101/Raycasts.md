@@ -10,20 +10,20 @@ It's used to check collision or intersection in the scene between meshes and thi
 
 In the previous tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
 using the function scene.pick(scene.pointerX, scene.pointerY) : 
-http://doc.babylonjs.com/How_To/picking_collisions
+//doc.babylonjs.com/How_To/picking_collisions
 
 But here we will see that we can throw ray from any point and in any direction. 
 For example in a shooting game at 3rd person view : collisions between our bullets and obstacles.
 
 **Documentation of classes :**
 
-http://doc.babylonjs.com/classes/3.0/ray
+//doc.babylonjs.com/classes/3.0/ray
 You have first to create a ray.
 
-http://doc.babylonjs.com/classes/3.0/scene
+//doc.babylonjs.com/classes/3.0/scene
 The method scene.pickWithRay() throws a ray in your scene to pick a mesh.
 
-http://doc.babylonjs.com/classes/3.0/pickinginfo
+//doc.babylonjs.com/classes/3.0/pickinginfo
 And get the picking info.
 
 ______
@@ -112,6 +112,25 @@ There is one other optional argument to the method pickWithRay.
 It's the boolean **fastCheck** (false by default).
 True will return the first mesh that intersects with the ray (in the order of the meshes array), and not the closest mesh to the ray's starting point.
 
+
+-----
+
+## Triangle predicate ## 
+
+Starting with Babylon.js v4.0 you can define a custom predicate to filter the triangles selected to be tested against the incoming ray. The predicate will be called with the 3 vertices of each face and the upcoming ray:
+
+```
+scene.pick(scene.pointerX, scene.pointerY, null, false, null, (p0, p1, p2, ray) => {
+    var p0p1 = p0.subtract(p1);
+    var p2p1 = p2.subtract(p1);
+    var normal = BABYLON.Vector3.Cross(p0p1, p2p1);
+    return (BABYLON.Vector3.Dot(ray.direction, normal) < 0);
+  });
+```
+
+In this example we are filtering out all the triangles that are not facing towards the camera.
+
+Live example: https://www.babylonjs-playground.com/#EES9W5
 
 -----
 

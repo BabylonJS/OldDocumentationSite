@@ -172,7 +172,7 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 A flat horizontal surface parallel to the plane XoZ subdivided into sections.
 Example :
 ```javascript
-var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivsions: 4}, scene);
+var ground = BABYLON.MeshBuilder.CreateGround("gd", {width: 6, subdivisions: 4}, scene);
 ```
 
 option|value|default value
@@ -206,7 +206,7 @@ updatable|_(boolean)_ true if the mesh is updatable|false
 ## Tiled Ground
 Example :
 ```javascript
-var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivsions: {w:4, h:6} }, scene);
+var tiledGround = BABYLON.MeshBuilder.CreateTiledGround("tgd", {subdivisions: {w:4, h:6} }, scene);
 ```
 
 option|value|default value

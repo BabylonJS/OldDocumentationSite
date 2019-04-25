@@ -16,7 +16,7 @@ Unlike image file formats, the data of compressed textures is passed to the grap
 There is more than one format for compressed textures.  Due to the low level implementation for them in hardware,  support for a given format cannot be added like a software driver update.  Support is manufactured right into the circuitry.  This is less of a  problem when building an iOS, Android, or DirectX targeted application.  For a BJS scene which should ideally be able to run on any device / browser, this is a big problem.  Having separate HTML pages for different devices is not really an acceptable solution.
 
 ## The Solution
-Starting with Babylon.js v3.0, the compressed texture formats supported by a browser / device can be [detected](http://renderingpipeline.com/webgl-extension-viewer/).  This is done when ```var engine = new BABLYON.Engine(...);``` is encountered. So now your engine instance knows which compressed formats could be used here.  That does not solve that different devices will report different results though.
+Starting with Babylon.js v3.0, the compressed texture formats supported by a browser / device can be [detected](http://renderingpipeline.com/webgl-extension-viewer/).  This is done when ```var engine = new BABYLON.Engine(...);``` is encountered. So now your engine instance knows which compressed formats could be used here.  That does not solve that different devices will report different results though.
 
 You can also use this [playground](https://www.babylonjs-playground.com/index.html#1SCH7H#5) to test which format is supported on your devices.
 
