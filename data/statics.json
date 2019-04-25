@@ -1849,7 +1849,11 @@
                     "filename": "Playground"
                 },
                 {
-                    "title": "The Inspector",
+                    "title": "Introduction to the Inspector - video series",
+                    "filename": "intro_inspector"
+                },
+                {
+                    "title": "The Inspector overview",
                     "filename": "Playground_debuglayer"
                 }
             ]
