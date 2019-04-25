@@ -244,3 +244,12 @@ We spent a lot of time working on the implementation of our IBL environments. We
 ![RayTracer](/img/how_to/Environment/RayTracer.png)
 
 We were able to largely match the perceptual falloff from the Arnold ray tracer, while using a prefiltered MIP chain in the DDS ignoring the last two MIP levels. We have some deviation from the high roughness in the ray traced ground truth, but since fully rough materials don't really exist in the real world, there is no way to know if Arnold is right in these areas.
+
+### How to Debug
+In order to simplify troubleshooting within the PBR material, a special spection has been added to the inspector:
+
+![Inspector](/img/how_to/materials/PBRDebug.png)
+
+You can choose from the exhaustive list of information what you would like to see. You can also use the split position to choose from which horizontal position the debug mode starts on the screen. This can help looking side by side at the different renders. The output factor can be helpfull if you are looking at values pretty small as it would help seeing different colors on screen.
+
+[Demo](https://www.babylonjs-playground.com/#2FDQT5#104)
