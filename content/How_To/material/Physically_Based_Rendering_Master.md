@@ -122,7 +122,7 @@ A great tutorial on the refraction is available [Here](/How_To/reflect#refractio
 
 As refraction is equivalent to how you can **see through different materials boundaries**, the effect can be controlled via the transparency in BJS. A special property helps you to do it, simply put `pbr.linkRefractionWithTransparency=true;` in your code and then the alpha will control how refractive the material is. Putting it to false leaves the alpha controlling the default transparency. 
 
-[Demo]( https://www.babylonjs-playground.com/#19JGPR#12)
+[Demo](https://www.babylonjs-playground.com/#19JGPR#12)
 ```javascript
 var glass = new BABYLON.PBRMaterial("glass", scene);
 glass.reflectionTexture = hdrTexture;
@@ -133,6 +133,172 @@ glass.alpha = 0; // Fully refractive material
 ```
 
 You can still notice some reflection on your material due to the energy conservation.
+
+## Clear Coat
+Clear coat is a way to simulate the coating you can find in automotive car paint for instance. It usually is a transparent layer of paint that can be used to cover the colored coat. The clear coat is the uppersurface of the material.
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#3)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+pbr.metallic = 0.0;
+pbr.roughness = 1.0;
+
+pbr.clearCoat.isEnabled = true;
+pbr.clearCoat.intensity = 0.5;
+```
+
+As the clear coat is the final interaction layer with the external medium it applies on top of the bump map, which can be amazing to simulate coating above small geometries represented by the bump map:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#5)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+// Ensures irradiance is computed per fragment to make the 
+// Bump visible
+pbr.forceIrradianceInFragment = true;
+pbr.bumpTexture = new BABYLON.Texture("textures/floor_bump.png", scene);
+pbr.metallic = 0.0;
+pbr.roughness = 1.0;
+
+pbr.clearCoat.isEnabled = true;
+```
+
+This goes without saying that sometimes even the coating as some imperfection who can have a different shape than the bump map:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#6)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+// Ensures irradiance is computed per fragment to make the 
+// Bump visible
+pbr.forceIrradianceInFragment = true;
+pbr.bumpTexture = new BABYLON.Texture("textures/floor_bump.png", scene);
+pbr.metallic = 0.0;
+pbr.roughness = 1.0;
+
+pbr.clearCoat.isEnabled = true;
+var coatBump = new BABYLON.Texture("textures/waterbump.png", scene);
+pbr.clearCoat.bumpTexture = coatBump;
+```
+
+This is all great but what about a different color (all coatings are not transparent, think about the coating around candies). You can control the tint of the clear coat through four properties:
+
+* `isTintEnabled`: enables or disables the tint.
+* `tintColor`: defines the main color of the tint.
+* `tintColorAtDistance`: defines at what distance under the surface the color should be the defined one.
+* `tintThickness`: defines the thicness of the coating.
+
+It is intuitive enough to understand the thicker the coat is, the darker the color of the surface under the coating would appear. We are following carefully [Beer Lambert's law](https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law) in order to deduce the final color based off the chosen color, the "at distance" and the thickness.
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#7)
+```javascript
+pbr.clearCoat.isTintEnabled = true;
+pbr.clearCoat.tintColor = BABYLON.Color3.Teal();
+pbr.clearCoat.tintColorAtDistance = 1;
+pbr.clearCoat.tintThickness = 1.5;
+```
+
+By default the clear coat is fully glossy. Yet, you can define a special roughness value for the coating simulating for instance a used coating:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#9)
+```javascript
+pbr.clearCoat.roughness = 0.15;
+```
+
+Finally, you can play with the Index of Refraction of the coating to change the fresnel effect applied to the environment. The default configuration represents a polyurethane layer:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#8)
+```javascript
+pbr.clearCoat.isTintEnabled = true;
+pbr.clearCoat.indiceOfRefraction = 2;
+```
+
+All of the configuration here can also for convenience be stored in textures:
+* `texture`: defines the clear coat basic data. r is an intensity factor, and g is a roughness factor.
+* `bumpTexture`: defines the clear coat specific bump texture.
+* `tintColorAtDistance`: defines at what distance under the surface the color should be the defined one.
+* `tintTexture`:  defines the clear tint values in a texture. rgb is tint and a is a thickness factor.
+
+## Anisotropy
+By default the PBR material is isotropic. This means the shape of the reflection is identical in every direction. Nevertheless, in real life some materials shows really elongated highlights. For instance, looking an old vinyl disc (yes, I am that old), you can see the specular lighting being spread from the center to the border: 
+
+![Inspector](/img/how_to/materials/PBRAnisotropy.png)
+
+In the PBR material, you can enable anisotropy with the following code:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#10)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+pbr.metallic = 1.0;
+pbr.roughness = 0.0;
+
+pbr.anisotropy.isEnabled = true;
+pbr.anisotropy.intensity = 0.5;
+```
+
+Please note that the anisotropic effect follows the tangent space of the material and thus, it requires it to be well defined. As you can notice in the previous demo, I used a highly tesselated sphere to make the effect look right. The best effect would be achieved by defining the tangents of your meshes.
+
+The anisotropic direction is by default along the tangent direction. You can modify it by using the following parameter:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#11)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+pbr.metallic = 1.0;
+pbr.roughness = 0.0;
+
+pbr.anisotropy.isEnabled = true;
+pbr.anisotropy.direction.x = 0.5;
+pbr.anisotropy.direction.y = 1;
+```
+
+As usual, you can control all of those parameters by using a dedicated texture. rg is direction (stored like bump map) b is an intensity factor.
+
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+pbr.metallic = 1.0;
+pbr.roughness = 0.0;
+
+pbr.anisotropy.isEnabled = true;
+pbr.anisotropy.texture = texture;
+```
+
+## Sheen
+Some materials have a totally different shapes for the specular lobe. By default in the PBR, material the specular lobe would for instance not be adapted to define the wide specular lobe we can see on fabric materials like satin. This is the main reason we introduced sheen in the material so that you can since 4.0 represents fabric materials relying on the PBR.
+
+In the PBR material, you can enable sheen with the following code:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#12)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+pbr.metallic = 1.0;
+pbr.roughness = 0.0;
+
+pbr.sheen.isEnabled = true;
+pbr.sheen.intensity = 0.5;
+```
+
+Please note that the sheen effect will only be usefull on rough dielectric materials (metallic = 0). Actually, if the roughness is small, the shape of the specular lobe is so thin that you would not see any differences with the none sheen specular lobe.
+
+To help with multi color material like special kind of satin, you can control the tint of the sheen with the following code:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#13)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+pbr.metallic = 0.0;
+    pbr.roughness = 0.5;    
+
+pbr.sheen.isEnabled = true;
+pbr.sheen.color = BABYLON.Color3.Red();
+```
+
+As usual, you can control all of those parameters by using a dedicated texture. rgb is tint and a is an intensity factor.
+
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+pbr.metallic = 0.0;
+pbr.roughness = 0.5;
+
+pbr.sheen.isEnabled = true;
+pbr.sheen.texture = texture;
+```
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
