@@ -1613,6 +1613,17 @@
                     "filename": "Amp360Video"
                 }
             ]
+        },
+        {
+            "title": "Web GPU",
+            "name": "WebGPU",
+            "desc": "Next Gen Web 3D",
+            "files": [
+                {
+                    "title": "Web GPU",
+                    "filename": "webGPU"
+                }
+            ]
         }
     ],
     "snippets": [
