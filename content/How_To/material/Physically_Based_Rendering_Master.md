@@ -356,7 +356,7 @@ All of the configuration here can also for convenience be stored in textures:
 ## Anisotropy
 By default the PBR material is isotropic. This means the shape of the reflection is identical in every direction. Nevertheless, in real life some materials shows really elongated highlights. For instance, looking an old vinyl disc (yes, I am that old), you can see the specular lighting being spread from the center to the border: 
 
-![Inspector](/img/how_to/materials/PBRAnisotropy.png)
+![Inspector](/img/extensions/PBRAnisotropy.png)
 
 In the PBR material, you can enable anisotropy with the following code:
 
