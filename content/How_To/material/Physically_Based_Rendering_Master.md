@@ -238,6 +238,14 @@ In order to force the computation of the irradiance in fragment, one can set to 
     pbr.forceIrradianceInFragment = true;
 ```
 
+Another point is that the irradiance or diffuse part of the IBL could cover your shadows if the environment lighting is strong. You could if you wish reduce its intensity separately from the reflection by scaling the polynomials used to create it:
+
+```javascript
+    scene.onReadyObservable.addOnce(() => {
+        hdrTexture.sphericalPolynomial.scale(0.1);
+    });
+```
+
 ### Spherical Harmonics
 As we noticed in 4.0, our fast approach to compute the environment irradiance, may have not been accurate enough in certain use cases. We now, by default, have a more accurate representation of the diffuse IBL. In case you would prefer to focus on speed, you can easily revert to our previous method by switching the sphericalHarmonics property to false:
 
