@@ -43,6 +43,11 @@ Then, you'll have a better texture, but with a longer loading.
 
 ![Batman UVs ok](http://i.imgur.com/Dajwlvq.png)
 
+Depending on the modeling program you export your OBJ files from, textures may appear distorted or inverted. As a workaround, you can modify your imported model's UV coordinate scale via setting the variable:
+```
+BABYLON.OBJFileLoader.UV_SCALE = new BABYLON.Vector2(xValue, yValue)
+```
+
 Although not part of Wavefront OBJ file format, some OBJ files include vertex colors. If you are loading such a file and want vertices with colors, set the variable:
 ```
 BABYLON.OBJFileLoader.IMPORT_VERTEX_COLORS = true;
@@ -56,6 +61,11 @@ BABYLON.OBJFileLoader.COMPUTE_NORMALS = true;
 To have your imported model inverted on the y-axis, set the variable:
 ```
 BABYLON.OBJFileLoader.INVERT_Y = true;
+```
+
+To invert your imported textures on the y-axis, set the variable:
+```
+BABYLON.OBJFileLoader.INVERT_TEXTURE_Y = true;
 ```
 
 By default if a MTL file cannot be loaded (missing/error) it will silently fail.  The model will still be loaded, but if you want to enforce a stricter loading of materials you can use onSuccess() and onError() callbacks accordingly.  Set the variable:
