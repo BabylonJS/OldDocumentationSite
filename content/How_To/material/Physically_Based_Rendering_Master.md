@@ -132,7 +132,7 @@ glass.indexOfRefraction = 0.52;
 glass.alpha = 0; // Fully refractive material
 ```
 
-You can still notice some reflection on your material. This is due to the energy conservation detailed later in the document.
+You can still notice some reflection on your material due to the energy conservation.
 
 ## Normal Map / Parallax
 Normal mapping and Parallax are supported in the exact same way than the standard material. Please, refer to the following links for more information:
@@ -245,10 +245,45 @@ Another point is that the irradiance or diffuse part of the IBL could cover your
         hdrTexture.sphericalPolynomial.scale(0.1);
     });
 ```
- 
+
+### Spherical Harmonics
+As we noticed in 4.0, our fast approach to compute the environment irradiance, may have not been accurate enough in certain use cases. We now, by default, have a more accurate representation of the diffuse IBL. In case you would prefer to focus on speed, you can easily revert to our previous method by switching the sphericalHarmonics property to false:
+
+```javascript
+    pbr.brdf.useSphericalHarmonics = false;
+```
+
+Here is how the difference looks like in live:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#1)
+
+If you want to hear the full story behind it, you can have a read at our blog post : [A tale of a bug](https://medium.com/@babylonjs/a-tale-of-a-bug-ce7e84467800).
+
+### Energy Conservation
+As we knew from the beginning, our PBR lighting model was not energy conservative, thanks to a lot of new white papers on this area, we have been able to introduce a way to embrace energy conservation in real time. This basically means that your rough metallic models will look brighter and closer from what nature does.
+
+In case you would like to turn this feature off, to for instance get a closer cross engine rendering look, you can turn off the energy conservation flag on the PBR material.
+
+```javascript
+    pbr.brdf.useEnergyConservation = false;
+```
+
+Here is how the difference looks like in live:
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#2)
+
 ### Image Based Lighting: Babylon VS RayTracers 
 We spent a lot of time working on the implementation of our IBL environments. We reworked how we generate the DDS prefiltered environments so that we aligned with what perceptual ray tracers and popular game engines like Unity and Unreal are doing with their IBL rendering. We are approximating a perceptual roughness model which drops what is perceived to be 50% rough falls in the middle of middle of the linear ramp for roughness. The GGX algorithm that we use for our lighting calculations has more of a linear roughness scale which loses clarity in reflections quickly (by around 0.3 roughness). We adjusted the falloff to mirror what happens in Arnold ray tracing, which is the renderer we chose as our ground truth for this work:
 
 ![RayTracer](/img/how_to/Environment/RayTracer.png)
 
 We were able to largely match the perceptual falloff from the Arnold ray tracer, while using a prefiltered MIP chain in the DDS ignoring the last two MIP levels. We have some deviation from the high roughness in the ray traced ground truth, but since fully rough materials don't really exist in the real world, there is no way to know if Arnold is right in these areas.
+
+### How to Debug
+In order to simplify troubleshooting within the PBR material, a special spection has been added to the inspector:
+
+![Inspector](/img/how_to/materials/PBRDebug.png)
+
+You can choose from the exhaustive list of information what you would like to see. You can also use the split position to choose from which horizontal position the debug mode starts on the screen. This can help looking side by side at the different renders. The output factor can be helpfull if you are looking at values pretty small as it would help seeing different colors on screen.
+
+[Demo](https://www.babylonjs-playground.com/#2FDQT5#104)
