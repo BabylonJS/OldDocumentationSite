@@ -115,7 +115,7 @@ This behaviour can be turned off through the properties:
     useSpecularOverAlpha = false;
 ```
 
-## Refraction
+## Refraction (Back Compat)
 Refraction is a little bit like reflection (Please purists, do not kill me now, I only said a little) because it is heavily relying on the environment to change the way the material looks. Basically, if reflection could be compared to seeing the sun and cloud on the surface of a lake, refraction would be seeing weird shaped fish under the surface (through the water).  
 
 A great tutorial on the refraction is available [Here](/How_To/reflect#refraction)
@@ -132,7 +132,143 @@ glass.indexOfRefraction = 0.52;
 glass.alpha = 0; // Fully refractive material
 ```
 
-You can still notice some reflection on your material due to the energy conservation.
+You can still notice some reflection on your material due to the energy conservation. Please note that you should since 4.0 rely on the next section settings to define every thing impacting what happens under the material surface. But no worries we will keep the current setup in place for backward compatibility.
+
+## Sub Surface
+The sub surface section of the material defines everything happening below the surface. I currently supports Refraction and Translucency.
+
+### Refraction
+
+I will not redefine the refraction component here as it has been addressed in the previous section but only highlights the main differences [Here](/How_To/reflect#refraction)
+
+Enabling the refraction would be done through a flag on the sub surface section:
+
+[Demo](https://www.babylonjs-playground.com/#19JGPR#17)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+pbr.metallic = 0;
+pbr.roughness = 0;
+
+pbr.subSurface.isRefractionEnabled = true;
+pbr.subSurface.refractionIntensity = 0.8;
+```
+
+As before you can control the index of refraction:
+[Demo](https://www.babylonjs-playground.com/#19JGPR#16)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+pbr.metallic = 0;
+pbr.roughness = 0;
+
+pbr.subSurface.isRefractionEnabled = true;
+pbr.subSurface.indexOfRefraction = 1.5;
+```
+
+Please note that here the index of refraction represents the value you can find in the nomenclature and not its inverse like in the legacy setup.
+
+You can control the tint of the material (representing its color below the surface) by configuring two properties:
+
+* `tintColor`: defines the color of the tint.
+* `tintColorAtDistance`: defines at what distance under the surface the color should be the defined one (simulating absorption through beer lambert law).
+
+[Demo](https://www.babylonjs-playground.com/#19JGPR#20)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+pbr.metallic = 0;
+pbr.roughness = 0;
+
+pbr.subSurface.isRefractionEnabled = true;
+pbr.subSurface.indexOfRefraction = 1.5;
+pbr.subSurface.tintColor = BABYLON.Color3.Teal();
+```
+
+By default the thickness of the material is understood to be the `maxThickness` value of the subSurface. You could easily change the thickness by relying on a thickness map:
+
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+pbr.metallic = 0;
+pbr.roughness = 0;
+
+pbr.subSurface.isRefractionEnabled = true;
+pbr.subSurface.indexOfRefraction = 1.5;
+pbr.subSurface.tintColor = BABYLON.Color3.Teal();
+
+pbr.subSurface.thicknessTexture = texture;
+pbr.subSurface.minimumThickness = 1;
+pbr.subSurface.maximumThickness = 10;
+```
+
+The actual thickness per pixel would be then = minimumThickness + thicknessTexture.r * maximumThickness. This helps clamping the actual value between a min and max defined by a texture.
+
+### Translucency
+The refraction is good to represent the light passing through on low density medium such as beer or wine. But what if your material was more dense like milk where the light would be diffused throughout the material ? In this case, you can rely on the translucency properties of the material.
+
+[Demo](https://www.babylonjs-playground.com/#19JGPR#22)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+pbr.metallic = 0;
+pbr.roughness = 0;
+
+pbr.subSurface.isTranslucencyEnabled = true;
+pbr.subSurface.translucencyIntensity = 0.8;
+```
+
+Sharing some setup with the refraction (it actually makes sense as we are speaking about the same material), you can rely upon the tint color to define the color of the material below the surface:
+
+[Demo](https://www.babylonjs-playground.com/#19JGPR#23)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+pbr.metallic = 0;
+pbr.roughness = 0;
+
+pbr.subSurface.isTranslucencyEnabled = true;
+pbr.subSurface.tintColor = BABYLON.Color3.Teal();
+```
+
+The setup will be identical relying on the both previously defined values:
+* `tintColor`: defines the color of the tint.
+* `tintColorAtDistance`: defines at what distance under the surface the color should be the defined one (simulating absorption through beer lambert law).
+
+It also fully respect the previously defined thickness configuration: The actual thickness per pixel would be then = minimumThickness + thicknessTexture.r * maximumThickness.
+
+### Mask
+Would you wish to define the intensity of the different effects (Refraction or Translucency), you can use the left over channels of the thickness map. Actually, as we are trying to limit the overall number of textures used in the materials we decided to pack the mask information in the g channel for the transluency intensity factor and the alpha channel for the refraction intensity (b has been reserved for the next release).
+
+As this might be counter intuitive considering the black and white texture generated by external tools, we put this feature under an opt-in flag to prevent any surprises:
+
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+pbr.metallic = 0;
+pbr.roughness = 0;
+
+pbr.subSurface.isRefractionEnabled = true;
+pbr.subSurface.indexOfRefraction = 1.5;
+
+pbr.subSurface.isTranslucencyEnabled = true;
+pbr.subSurface.translucencyIntensity = 0.8;
+
+pbr.subSurface.tintColor = BABYLON.Color3.Teal();
+
+pbr.subSurface.thicknessTexture = texture;
+pbr.subSurface.minimumThickness = 1;
+pbr.subSurface.maximumThickness = 10;
+
+pbr.subSurface.useMaskFromThicknessTexture = true;
+```
 
 ## Clear Coat
 Clear coat is a way to simulate the coating you can find in automotive car paint for instance. It usually is a transparent layer of paint that can be used to cover the colored coat. The clear coat is the uppersurface of the material.
