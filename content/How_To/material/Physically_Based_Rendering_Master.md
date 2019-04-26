@@ -156,7 +156,7 @@ pbr.subSurface.refractionIntensity = 0.8;
 ```
 
 As before you can control the index of refraction:
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#16)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#24)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -175,7 +175,7 @@ You can control the tint of the material (representing its color below the surfa
 * `tintColor`: defines the color of the tint.
 * `tintColorAtDistance`: defines at what distance under the surface the color should be the defined one (simulating absorption through beer lambert law).
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#20)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#25)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -209,9 +209,13 @@ pbr.subSurface.maximumThickness = 10;
 The actual thickness per pixel would be then = minimumThickness + thicknessTexture.r * maximumThickness. This helps clamping the actual value between a min and max defined by a texture.
 
 ### Translucency
-The refraction is good to represent the light passing through on low density medium such as beer or wine. But what if your material was more dense like milk where the light would be diffused throughout the material ? In this case, you can rely on the translucency properties of the material.
+The refraction is good to represent the light passing through on low density medium such as beer or wine. But what if your material was more dense like milk where the light would be diffused throughout the material ? 
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#22)
+![SubSurface](/img/extensions/PBRSubSurface.png)
+
+In this case, you can rely on the translucency properties of the material.
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#37)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -225,7 +229,7 @@ pbr.subSurface.translucencyIntensity = 0.8;
 
 Sharing some setup with the refraction (it actually makes sense as we are speaking about the same material), you can rely upon the tint color to define the color of the material below the surface:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#23)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#27)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -271,9 +275,13 @@ pbr.subSurface.useMaskFromThicknessTexture = true;
 ```
 
 ## Clear Coat
-Clear coat is a way to simulate the coating you can find in automotive car paint for instance. It usually is a transparent layer of paint that can be used to cover the colored coat. The clear coat is the uppersurface of the material.
+Clear coat is a way to simulate the coating you can find in automotive car paint for instance. It usually is a transparent layer of paint that can be used to cover the colored coat.
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#3)
+![SubSurface](/img/extensions/PBRClearCoat.png)
+
+The clear coat is the uppersurface of the material.
+
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#36)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.metallic = 0.0;
@@ -285,7 +293,7 @@ pbr.clearCoat.intensity = 0.5;
 
 As the clear coat is the final interaction layer with the external medium it applies on top of the bump map, which can be amazing to simulate coating above small geometries represented by the bump map:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#5)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#28)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 // Ensures irradiance is computed per fragment to make the 
@@ -300,7 +308,7 @@ pbr.clearCoat.isEnabled = true;
 
 This goes without saying that sometimes even the coating as some imperfection who can have a different shape than the bump map:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#6)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#30)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 // Ensures irradiance is computed per fragment to make the 
@@ -341,7 +349,7 @@ pbr.clearCoat.roughness = 0.15;
 
 Finally, you can play with the Index of Refraction of the coating to change the fresnel effect applied to the environment. The default configuration represents a polyurethane layer:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#8)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#31)
 ```javascript
 pbr.clearCoat.isTintEnabled = true;
 pbr.clearCoat.indiceOfRefraction = 2;
@@ -356,7 +364,7 @@ All of the configuration here can also for convenience be stored in textures:
 ## Anisotropy
 By default the PBR material is isotropic. This means the shape of the reflection is identical in every direction. Nevertheless, in real life some materials shows really elongated highlights. For instance, looking an old vinyl disc (yes, I am that old), you can see the specular lighting being spread from the center to the border: 
 
-![Inspector](/img/extensions/PBRAnisotropy.png)
+![Anisotropy](/img/extensions/PBRAnisotropy.png)
 
 In the PBR material, you can enable anisotropy with the following code:
 
@@ -374,7 +382,7 @@ Please note that the anisotropic effect follows the tangent space of the materia
 
 The anisotropic direction is by default along the tangent direction. You can modify it by using the following parameter:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#11)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#32)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.metallic = 1.0;
@@ -401,7 +409,7 @@ Some materials have a totally different shapes for the specular lobe. By default
 
 In the PBR material, you can enable sheen with the following code:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#12)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#33)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.metallic = 1.0;
@@ -415,7 +423,7 @@ Please note that the sheen effect will only be usefull on rough dielectric mater
 
 To help with multi color material like special kind of satin, you can control the tint of the sheen with the following code:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#13)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#35)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 pbr.metallic = 0.0;
@@ -555,9 +563,9 @@ As we noticed in 4.0, our fast approach to compute the environment irradiance, m
     pbr.brdf.useSphericalHarmonics = false;
 ```
 
-Here is how the difference looks like in live:
+Here is how the difference looks like in live (toggle the Spherical Harmonics switch on and off to see the difference):
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#1)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#38)
 
 If you want to hear the full story behind it, you can have a read at our blog post : [A tale of a bug](https://medium.com/@babylonjs/a-tale-of-a-bug-ce7e84467800).
 
@@ -570,9 +578,9 @@ In case you would like to turn this feature off, to for instance get a closer cr
     pbr.brdf.useEnergyConservation = false;
 ```
 
-Here is how the difference looks like in live:
+Here is how the difference looks like in live (Left sphere is using energy conservation while the right one does not):
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#2)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#39)
 
 ### Image Based Lighting: Babylon VS RayTracers 
 We spent a lot of time working on the implementation of our IBL environments. We reworked how we generate the DDS prefiltered environments so that we aligned with what perceptual ray tracers and popular game engines like Unity and Unreal are doing with their IBL rendering. We are approximating a perceptual roughness model which drops what is perceived to be 50% rough falls in the middle of middle of the linear ramp for roughness. The GGX algorithm that we use for our lighting calculations has more of a linear roughness scale which loses clarity in reflections quickly (by around 0.3 roughness). We adjusted the falloff to mirror what happens in Arnold ray tracing, which is the renderer we chose as our ground truth for this work:
