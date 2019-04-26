@@ -143,7 +143,7 @@ I will not redefine the refraction component here as it has been addressed in th
 
 Enabling the refraction would be done through a flag on the sub surface section:
 
-[Demo](https://www.babylonjs-playground.com/#19JGPR#17)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#17)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -156,7 +156,7 @@ pbr.subSurface.refractionIntensity = 0.8;
 ```
 
 As before you can control the index of refraction:
-[Demo](https://www.babylonjs-playground.com/#19JGPR#16)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#16)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -175,7 +175,7 @@ You can control the tint of the material (representing its color below the surfa
 * `tintColor`: defines the color of the tint.
 * `tintColorAtDistance`: defines at what distance under the surface the color should be the defined one (simulating absorption through beer lambert law).
 
-[Demo](https://www.babylonjs-playground.com/#19JGPR#20)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#20)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -211,7 +211,7 @@ The actual thickness per pixel would be then = minimumThickness + thicknessTextu
 ### Translucency
 The refraction is good to represent the light passing through on low density medium such as beer or wine. But what if your material was more dense like milk where the light would be diffused throughout the material ? In this case, you can rely on the translucency properties of the material.
 
-[Demo](https://www.babylonjs-playground.com/#19JGPR#22)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#22)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -225,7 +225,7 @@ pbr.subSurface.translucencyIntensity = 0.8;
 
 Sharing some setup with the refraction (it actually makes sense as we are speaking about the same material), you can rely upon the tint color to define the color of the material below the surface:
 
-[Demo](https://www.babylonjs-playground.com/#19JGPR#23)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#23)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -496,7 +496,7 @@ Light Radius has been added as a property of each light and controls the fact th
 
 Why? Simply because if your material is really glossy, each specular highlights (from the direct lights) will only be seen as a simple dot.
 
-Try to spot the dot in the middle of the sphere in the [Demo](https://www.babylonjs-playground.com/#19JGPR#10).
+Try to spot the dot in the middle of the sphere in the [Demo](https://www.babylonjs-playground.com/#19JGPR#10)
 
 Now, increasing the light radius makes this dot wider as you can see on this [Demo](https://www.babylonjs-playground.com/#19JGPR#11) 
 
