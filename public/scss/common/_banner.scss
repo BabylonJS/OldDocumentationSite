@@ -49,7 +49,7 @@ $title_width : 300px;
   .banner {
     @include display(flex);
     width : 100%;
-    background-color: rgb(34, 44, 55);
+    background-color:  #2A2342;
     height : $bh;
 
     // The left menu (title + tabs)
@@ -83,6 +83,8 @@ $title_width : 300px;
           color: white;
           display: inline-block;
           width:100%;
+          font-family: "acumin-pro";
+          font-size: 16px;
         }
         a:hover{
           text-decoration: none;
