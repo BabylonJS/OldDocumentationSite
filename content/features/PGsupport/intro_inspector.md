@@ -1,8 +1,8 @@
 ---
-PG_TITLE: Introduction to Inspector
+PG_TITLE: Introduction to the Inspector
 ---
 
-# Introduction to Inspector
+# Introduction to the Inspector
 
 ## Part 1: Introduction and Scene Explorer
 
@@ -51,6 +51,12 @@ In the seventh video of the "Intro to the Inspector" series, Trevor walks you th
 <iframe style="width:720px;height:405px" src="https://www.youtube.com/embed/imNGaP3VogU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the eighth video of the "Intro to the Inspector" series, Patrick walks you through using render pipelines, taking advantage of post-process effects to create stunning images. 
+
+## Part 9: The Tools Tab
+
+<iframe style="width:720px;height:405px" src="https://www.youtube.com/embed/omSoLMpxUfY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+In the ninth video of the "Intro to the Inspector" series, Saurabh walks you through using the Tools Tab to export screenshots, video, and even "cut and paste code" that you can easily add to your own projects.
 
 # Further Reading
 

@@ -6,7 +6,7 @@ PG_TITLE: Playground Inspector
 
 Babylon.js inspector is a visual debugging tool created to help pinpoint issues you may have with a scene.
 
-For a video overview of the inspector, check out the [Intro to inspector - video series](intro_inspector).
+For a video overview of the inspector, check out [Introduction to the inspector - video series](intro_inspector).
 
 The inspector offers multiple tools like:
 - A hierarchical view of your scene
@@ -154,7 +154,7 @@ This tool (available in the property pane when you select a material with textur
 
 # Further Reading
 
-[Introduction to Inspector - video series](intro_inspector)  
+[Introduction to the Inspector - video series](intro_inspector)  
 [How To Use The Inspector in Projects](/How_To/debug_layer)  
 [How To Customize the Inspector](/How_To/customize_debug_layer)  
 [Dev log about the inspector](https://medium.com/@babylonjs/dev-log-creating-the-new-inspector-b15c50900205)
