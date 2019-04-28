@@ -304,7 +304,7 @@ As a result, it is impossible for Webpack and the other bundlers to determine if
 
 The treatment even if a bit annoying is simple: you need to import manually only from the modules you need. This will force you to target your imports on the dedicated modules (vs index ones) if you want to fully benefit from tree shaking. The folder structure should be natural enough and in case you are finding some modules in not intuitive locations, do not hesitate to file an issue on [GitHub](https://www.github.com/babylonjs/babylonjs) and we will be more than happy to document it here.
 
-### FAQ:
+### FAQ
 
 *How do I efficiently use the Mesh.Create... methods ?*
 

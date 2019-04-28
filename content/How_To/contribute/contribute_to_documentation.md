@@ -67,6 +67,8 @@ When the files are downloaded, open a command in this repo. It can be done quick
 
 (*you may have* Open in Command *rather than* Open in PowerShell *, that's not a big deal*)
 
+You need 'npm', 'grunt' and 'grunt-cli' installed in the directory and you may need to update these from time to time. 
+
 Just write `npm install`, press enter and wait the operation to be done.
 
 You may also need to install grunt globally. If so, use `npm install -g grunt-cli`.
@@ -75,9 +77,9 @@ This fork operation has to be done only once. You're now able to run locally the
 
 ## Running and editing the doc locally
 
-In the powershell window at the root of the documentation repo, send a `grunt build` command and wait.
+In the powershell window at the root of the documentation repo, send a **grunt build** command and wait. Should the build not occur try updating 'npm', 'grunt, and 'grunt-cli'.
 
-When it's done, use `grunt serve`: this will launch the local documentation website on http://localhost:8080
+When it's done, use **grunt serve**: this will launch the local documentation website on http://localhost:8080
 
 Open the project using your favorite code editor. This can be done also from Github Desktop:
 
