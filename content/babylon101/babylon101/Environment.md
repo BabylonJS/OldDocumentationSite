@@ -81,7 +81,7 @@ skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 
 In that `/skybox` directory, we must find 6 sky textures, one for each face of our box. Each image must be named per the corresponding face: “skybox_nx.png”, “skybox_ny.png”, “skybox_nz.png”, “skybox_px.png”, “skybox_py.png”, “skybox_pz.png”.
 
-If you want some free skybox texture samples, point your browser to: http://3delyvisions.co/skf1.htm (look at licenses before use, please.) As you can see by those examples, skybox textures need not be textures of sky alone. Buildings, hills, mountains, trees, lakes, planets, stars, you name it (all can be used nicely) as part of skybox textures.
+Skybox textures need not be textures of sky alone. You can search the Internet for skyboxes and find buildings, hills, mountains, trees, lakes, planets, stars, you name it (all can be used nicely) as part of skybox textures, but some require a payment.
 
 You can also use dds files to specify your skybox. These special files can contain all information required to setup a cube texture:
 

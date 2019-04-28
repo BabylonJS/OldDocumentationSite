@@ -57,7 +57,7 @@ vertexData.applyToMesh(customMesh);
 
 Usually a normal to a plane is a vector that is at right angles to a plane and for the this example this is true. 
 BabylonJS will calculate normals for a facet and for free standing facets not sharing any vertices with another facet 
-the normals will be mathematical normals. For more on how normals affect lighting see [Normals](/advanced/Normals.html).
+the normals will be mathematical normals. For more on how normals affect lighting see [Normals](/resources/Normals.html).
 
 
 
@@ -213,7 +213,7 @@ Since a material is no longer being used backFaceCulling cannot be set and so th
 whatever color is applied since all light is still being absorbed by this facet. When the scene starts the camera is very nearly full face on 
 to the facet and pointing in the direction the light is travelling. With the camera in this position most of the white light is reflected back into the camera as a highlight
 and the facet is seen as almost white. As the camera is rotated around the facet will change from appearing as white to red as the highlight effect disipates. For a more 
-controlled lighting effects use a [material](/basics/Materials.html) as well as, or instead of, setting vertex colors.
+controlled lighting effects use a [material](/babylon101/Materials.html) as well as, or instead of, setting vertex colors.
 
 Adding a light with direction the reverse of the current one will light both sides.
 
@@ -223,7 +223,7 @@ Adding a light with direction the reverse of the current one will light both sid
 
 ## Texture
 
-The simplest method is to just use [materials](/basics/Materials.html) and let BabylonJS apply the given image as a texture. 
+The simplest method is to just use [materials](/babylon101/Materials.html) and let BabylonJS apply the given image as a texture. 
 However should you wish to have more control on how a texture is applied to a facet then you need to create and set the uv array.
 
 Think of any image, to be applied as a texture, as having a pair of axes set at the bottom and left hand side of the image, the u axis and the v axis respectively. 
