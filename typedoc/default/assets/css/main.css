@@ -865,5 +865,13 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 img { max-width: 100%; }
 
 .background-babylon {
-    background-image: url(/img/pattern_ban_1.png);
+    background-color: #151221;
+    height: 100px;
+}
+
+.tsd-page-title h1 {
+    color: #e0684b;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 100;
 }
