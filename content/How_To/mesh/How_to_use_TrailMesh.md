@@ -53,3 +53,7 @@ function animate() {
     cube.rotation.y = alpha;
 }
 ```
+
+## Examples
+
+- [Glowing orbs with trail](https://playground.babylonjs.com/#1F4UET#4)

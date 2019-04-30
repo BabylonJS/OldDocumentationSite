@@ -199,6 +199,8 @@ For complex controls (like the ColorPicker for instance), you can turn on render
 
 Starting with Babylon.js v4.0 the GUI system uses the Invalidate Rect optimization which allows the renderer to only update portions of the texture. If you want to turn it off, you can call `adtTexture.useInvalidateRectOptimization = false`
 
+- [Example](https://playground.babylonjs.com/#GBNTXK)
+
 ## Controls
 
 A control is an abstraction of a piece of UI. There are two kinds of controls:
