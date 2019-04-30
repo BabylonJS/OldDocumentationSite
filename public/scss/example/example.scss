@@ -11,13 +11,36 @@
         float: left;
 
         #example-banner {
-            background-image  : url("/img/pattern_ban_1.png");
-            background-repeat : repeat;
+            background-color: #151221;
             text-align  : center;
-            padding     : 10px 0;
+            display: grid;
+            height: 100px;
+            grid-template-columns: 100%;
+            grid-template-rows: 100%;
+
+            .img-holder {
+                grid-row: 1;
+                grid-column: 1;        
+                height: 100%;
+                width: 56%;
+                margin: 0 auto;
+                display: grid;
+                justify-content: flex-start;
+
+                img {
+                    height: 100%;
+                    margin-left: -25px;
+                }
+            }
 
             h1 {
-                text-align: center;
+                align-self: center;
+                grid-row: 1;
+                grid-column: 1;
+                color: #e0684b;
+                font-size: 28px;
+                text-transform: uppercase;
+                font-weight: 100;
             }
         }
 
@@ -140,6 +163,10 @@
             p {
                 margin-top:35vh;
                 font-size:30px;
+            }
+
+            img {
+                height: 200px;
             }
         }
     }

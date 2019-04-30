@@ -58,6 +58,12 @@ In the eighth video of the "Intro to the Inspector" series, Patrick walks you th
 
 In the ninth video of the "Intro to the Inspector" series, Saurabh walks you through using the Tools Tab to export screenshots, video, and even "cut and paste code" that you can easily add to your own projects.
 
+## Part 10: Control the Inspector Via Code
+
+<iframe style="width:720px;height:405px" src="https://www.youtube.com/embed/1Y7Mwjfxbm8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+In the tenth video of the "Intro to the Inspector" series, Saurabh walks you through how to open up the inspector via code, including how to customize it to your own needs.
+
 # Further Reading
 
 [The Inspector overview](Playground_debuglayer)  
