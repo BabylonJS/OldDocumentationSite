@@ -130,3 +130,4 @@ Kostar111 was also kind enough to give us a fine tutorial about how to use tiled
 [Set Shapes](/How_To/Set_Shapes)  
 [Parametric Shapes](/How_To/Parametric_Shapes)  
 [Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Tiled Planes and Boxes](/How_To/Tiled)  

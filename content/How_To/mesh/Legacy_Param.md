@@ -281,3 +281,4 @@ Easy way to generate strange shapes : http://www.babylonjs-playground.com/#RF9W9
 [Set Shapes](/How_To/Set_Shapes)  
 [Parametric Shapes](/How_To/Parametric_Shapes)  
 [Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Tiled Planes and Boxes](/How_To/Tiled)  

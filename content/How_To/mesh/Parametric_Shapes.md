@@ -348,6 +348,7 @@ Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 [Parametric Shapes 101](/babylon101/Parametric_Shapes)  
 [Set Shapes](/How_To/Set_Shapes)  
 [Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Tiled Planes and Boxes](/How_To/Tiled)  
 [Decals](/How_To/Decals) 
 
 ## Mid Level - L2
