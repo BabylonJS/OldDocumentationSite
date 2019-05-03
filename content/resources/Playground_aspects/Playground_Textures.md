@@ -121,6 +121,7 @@ new BABYLON.CubeTexture("textures/common part of filenames", scene);
 | ![](/img/resources/textures_thumbs/skybox2.jpg) | skybox2 | [take a look](http://www.babylonjs-playground.com/#UU7RQ#92) | 6 x 400 KB |
 | ![](/img/resources/textures_thumbs/skybox3.jpg) | skybox3 | [take a look](http://www.babylonjs-playground.com/#UU7RQ#93) | 6 x 150 KB |
 | ![](/img/resources/textures_thumbs/skybox4.jpg) | skybox4 | [take a look](http://www.babylonjs-playground.com/#UU7RQ#94) | 6 x 150 KB |
+| ![](/img/resources/textures_thumbs/skyboxBlack.jpg) | skyboxBlack | [take a look](https://www.babylonjs-playground.com/#UU7RQ#344) | 6 x 7 KB |
 | ![](/img/resources/textures_thumbs/space.jpg) | space | [take a look](http://www.babylonjs-playground.com/#UU7RQ#245) | 6 x 200 KB |
 | ![](/img/resources/textures_thumbs/TropicalSunnyDay.jpg) | TropicalSunnyDay | [take a look](http://www.babylonjs-playground.com/#UU7RQ#95) | 6 x 600 KB |
 
