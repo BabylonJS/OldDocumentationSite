@@ -232,6 +232,11 @@
                     "filename": "Polyhedra_Shapes"
                 },
                 {
+                    "title": "Create Tiled Planes and Boxes",
+                    "level": 1,
+                    "filename": "Tiled"
+                },
+                {
                     "title": "Use decals",
                     "level": 1,
                     "filename": "Decals"
