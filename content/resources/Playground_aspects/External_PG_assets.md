@@ -10,8 +10,6 @@ It is very likely that the issue you are struggling with can be isolated and pre
 
 Doing this will lead to quicker answers as your question will be more understandable, since few people want to work through long sections of code.  Using the existing assets will also ensure that they remain reachable and the playgrounds you create will still be a useful resource in the future.  However should you still wish to use your own assets then this page describes ways of doing so.
 
-## CORS Compliance
-
  Any site hosting you assets must be [CORS compliant](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) and use the secure [https](https://en.wikipedia.org/wiki/HTTPS) protocol.
 
 ## From github.com
@@ -107,6 +105,29 @@ var texture = new BABYLON.Texture("https://i.imgur.com/yn98ktz.png", scene);
 ```
 
 [Playground example](https://www.babylonjs-playground.com/#UNEWTE)
+
+## Embedded assets 
+
+You can make a raw text copy-paste of your assets, like the content of a .gltf file.
+
+Note that you need to use `Append` so you can define the plugin to use as there is no more file extension.
+
+```javascript
+    var mymodel = {
+        [...]
+    };
+
+    var json = JSON.stringify(mymodel);
+    var blob = new Blob([json]);
+    var url = URL.createObjectURL(blob);
+
+    BABYLON.SceneLoader.Append(url, "", scene, function(scene) {
+        scene.createDefaultCameraOrLight(true, true, true),
+        scene.createDefaultEnvironment();
+    }, null, null, ".gltf");
+```
+
+[Playground example](https://www.babylonjs-playground.com/#KEY4S4)
 
 ## Javascript files
 
