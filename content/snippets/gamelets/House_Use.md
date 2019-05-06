@@ -631,7 +631,7 @@ BABYLON.PolygonMeshBuilder.prototype.wallBuilder = function (w0, w1) {
 		positions.push(p.x * Math.cos(angle) + w0.corner.x, p.y, p.x * Math.sin(angle) + w0.corner.z);
 	});
 	var indices = [];		
-	var res = Earcut.earcut(this._epoints, this._eholes, 2);
+	var res = earcut(this._epoints, this._eholes, 2);
 	for (var i = res.length; i > 0; i--) {
 		indices.push(res[i - 1]);
 	};			
