@@ -10,6 +10,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-typedoc');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-http-download');
 
     const sass = require('node-sass');
 
@@ -96,6 +97,12 @@ module.exports = function(grunt) {
                 files: {
                     './public/html/css/main.css': './public/scss/main.scss',
                 }
+            }
+        },
+        download: {
+            documentation: {
+                src: 'https://cdn.jsdelivr.net/gh/BabylonJS/Babylon.js@master/dist/preview%20release/babylon.d.ts',
+                dest: './typedoc/babylon.d.ts'
             }
         },
         typedoc: {
@@ -195,6 +202,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', 'Build content and index it', [
         'clean:json',
+        'download:documentation',
         'typedoc:build',
         'execute:compileIndex',
         'execute:compileExamples',
