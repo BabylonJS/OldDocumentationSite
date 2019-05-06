@@ -115,7 +115,7 @@ Since for polygonMeshBuilder corners have to be in counter clockwise consecutive
 
 At this stage code was written to add in the doors using existing positions. However as you can see in the following playground sharing vertices and normals made the triangular facets stand out.
 
-* [Playground Example with Shared Vertices](http://www.babylonjs-playground.com/#4GBWI5#1)
+* [Playground Example with Shared Vertices](http://www.babylonjs-playground.com/#4GBWI5#266)
 
 To stop this effect a flat shaded mesh is necessary and rather than just converting the existing mesh to a flat shaded one it was decided to re-code for a flat shaded mesh from the start. This simplified the procedures for adding in the edges to doors and windows. Also because the interior and exterior walls were now separate it gave the possibility of applying different materials and colors to these walls.
 

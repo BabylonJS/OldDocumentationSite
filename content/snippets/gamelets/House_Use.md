@@ -631,7 +631,7 @@ BABYLON.PolygonMeshBuilder.prototype.wallBuilder = function (w0, w1) {
 		positions.push(p.x * Math.cos(angle) + w0.corner.x, p.y, p.x * Math.sin(angle) + w0.corner.z);
 	});
 	var indices = [];		
-	var res = Earcut.earcut(this._epoints, this._eholes, 2);
+	var res = earcut(this._epoints, this._eholes, 2);
 	for (var i = res.length; i > 0; i--) {
 		indices.push(res[i - 1]);
 	};			
@@ -689,9 +689,9 @@ var wall = buildFromPlan(walls, ply, height, {interior:true}, scene);
 You can add doors and windows (?hatches) to these walls as well.
 
 ## Playground Examples
-* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#99)
-* [Playground Example of None Enclosing Wall](http://www.babylonjs-playground.com/#1Z71FW#6)
-* [Playground Example of House and Interior Walls](http://www.babylonjs-playground.com/#1Z71FW#5)
+* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#265)
+* [Playground Example of None Enclosing Wall](http://www.babylonjs-playground.com/#1Z71FW#44)
+* [Playground Example of House and Interior Walls](http://www.babylonjs-playground.com/#1Z71FW#45)
 
 # Further Reading
 
