@@ -11,6 +11,8 @@
         "compression": "^1.7.2",
         "extend": ">=3.0.2",
         "full-text-search": "0.0.16",
+        "grunt-download": "^0.2.0",
+        "grunt-http-download": "^0.1.0",
         "line-by-line": "latest",
         "lodash": "^4.17.11",
         "marked-toc": "^0.3.0",
