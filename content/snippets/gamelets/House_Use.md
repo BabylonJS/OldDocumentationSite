@@ -689,7 +689,7 @@ var wall = buildFromPlan(walls, ply, height, {interior:true}, scene);
 You can add doors and windows (?hatches) to these walls as well.
 
 ## Playground Examples
-* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#99)
+* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#265)
 * [Playground Example of None Enclosing Wall](http://www.babylonjs-playground.com/#1Z71FW#6)
 * [Playground Example of House and Interior Walls](http://www.babylonjs-playground.com/#1Z71FW#5)
 
