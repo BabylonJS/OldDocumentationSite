@@ -364,7 +364,7 @@ import "@babylonjs/inspector"; // Injects a local ES6 version of the inspector t
 scene.debugLayer.show();
 ```
 
-## Earcut/Oimo/Canon/Ammo
+## Earcut/Oimo/Canon
 As we do not want to force by default our user to include any dependencies, we have extended the way users could rely on external dependencies for ES6.
 
 For each of the external dependencies Babylon.js is relying upon, if you are planing on relying on them, you can either provide them as global var in you bundler. For instance if you are willing to use the `PolygonMeshBuilder` class in your app you can add earcut in webpack like this:
@@ -390,6 +390,33 @@ new PolygonMeshBuilder("polytri", corners, scene, MyEarcut);
 ```
 
 It would be the same for physics plugin where you can either provide the underlying engine as a var or inject it in the constructor of the Babylon.js respective plugin.
+
+## Ammo
+Exactly like in the previous paragraph, you can inject your ammo dependency into Babylon.js. Either you can keep as a global script reference thus not including the dependency in your bundle or you could follow the following steps to include ammo as part of your bundled application.
+
+First, install ammo.js from its github build folder (in order to benefit from an up to date version):
+```
+npm install kripken/ammo.js
+```
+
+Then in Webpack, you need to disable the fs dependency to generate a successfull package (obviously if you are targetting web builds):
+```
+module.exports = {
+    context: __dirname,
+...
+    node: {
+        fs: 'empty'
+    }
+}
+```
+
+Finally, in your code, you can setup the AmmoJSPlugin this way:
+
+```
+import * as Ammo from "ammo.js";
+...
+var ammoPlugin = new AmmoJSPlugin(true, Ammo);
+```
 
 ## Loaders
 In Babylon.js the loaders you can install from `@babylonjs-loaders` are actually plugins of the main `SceneLoader` module. In order to use for instance the obj loader in your app, you simply need to import it for side effects only: `import "@babylonjs/loaders/OBJ";`. It would be exactly the same for gltf: `import "@babylonjs/loaders/glTF";`.
