@@ -54,6 +54,8 @@ You can only at the moment build your own version of Chrome to develop locally. 
 
 You can follow the status from the dedicated [Chrome Status Platform Page](https://www.chromestatus.com/feature/6213121689518080).
 
-Here is a link to a simple PBR sphere [Sphere](https://www.babylonjs.com/demos/WebGPU/oneSphereWebGPU.html)
+Here is a link to a simple PBR sphere [Sphere](https://www.babylonjs.com/demos/WebGPU/oneSphereWebGPU.html).
 
-And one to the famous [Damaged Helmet Demo](https://www.babylonjs.com/demos/WebGPU/oneHelmetWebGPU.html)
+And one to the famous [Damaged Helmet Demo](https://www.babylonjs.com/demos/WebGPU/oneHelmetWebGPU.html).
+
+And a performance comparison of a [WebGL Forest](https://www.babylonjs.com/demos/WebGPU/forestWebGL.html) and a a [WebGPU Forest](https://www.babylonjs.com/demos/WebGPU/forestWebGPU.html). Press space once loaded to slowly display to 10 000 none instanced meshes from the scene :-)
