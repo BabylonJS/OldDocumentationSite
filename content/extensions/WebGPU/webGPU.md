@@ -59,3 +59,5 @@ Here is a link to a simple PBR sphere [Sphere](https://www.babylonjs.com/demos/W
 And one to the famous [Damaged Helmet Demo](https://www.babylonjs.com/demos/WebGPU/oneHelmetWebGPU.html).
 
 And a performance comparison of a [WebGL Forest](https://www.babylonjs.com/demos/WebGPU/forestWebGL.html) and a a [WebGPU Forest](https://www.babylonjs.com/demos/WebGPU/forestWebGPU.html). Press space once loaded to slowly display to 10 000 none instanced meshes from the scene :-)
+
+All the demos code is available on [Github](https://github.com/BabylonJS/Website/tree/master/build/Demos/WebGPU) so that you could compare both the webgl and webgpu versions and notice there are currently no differences beside the initialization. We will try to keep it this way :-)
