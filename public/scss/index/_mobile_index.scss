@@ -4,27 +4,26 @@
   // In medium screen, the link to babylon.js disapears
   // The menu bar and the search bar are resized.
   .nav-main {
-    .banner{
+    .banner {
       .menu {
         width: 80%;
-        >div{
+        > div {
           font-size: 0.8em;
         }
-        .item{
-          font-size:0.8em;
+        .item {
+          font-size: 0.8em;
         }  
       }
       // searchbar & link to bjs.com
-      .more{
-        width:20%;
+      .more {
+        width: 20%;
         // link to bjs.com
-        .forward{
-          display : none;
-
+        .forward {
+          display: none;
         }
 
-        .searchbar{
-          input{
+        .searchbar {
+          input {
             width: 77%;
           }
         }
@@ -33,9 +32,9 @@
   }
 
   .bigimage {
-    width:95%;
+    width: 95%;
     max-width: 400px;
-    margin:10px auto;
+    margin: 10px auto;
   }
 }
 
@@ -46,12 +45,12 @@
   // and the menu bar is removed.
   // The forward and search bar are also removed.
   .nav-main {
-    position:fixed;
+    position: fixed;
     z-index: 5;
 
     // Display hamburger menu
     #mobilemenu {
-      display : block !important;
+      display: block !important;
     }
 
     #goBackToClassList{
@@ -59,33 +58,34 @@
     }
 
     // Remove all menu
-    .banner{
-      .menu{
-        width : 100%;
+    .banner {
+      .menu {
+        width: 100%;
 
         #home {
-          padding-left : 50px;
-          width:100%;
+          padding-left: 50px;
+          width: 100%;
           max-width: 100%;
-          text-align:center;
+          text-align: center;
+          font-size: 1em;
 
-          &.homeClassMobile{
-            padding-left : 70px;
+          &.homeClassMobile {
+            padding-left: 70px;
           }
         }
         .item {
-          display : none;
+          display: none;
         }
       }
       // searchbar & link to bjs.com
       .more {
-        display : none;
+        display: none;
       }
     }
   }
 
   .presentation-header{
-    padding-top:$bh;
+    padding-top: $bh;
   }
 
   // Remove footer on mobile
@@ -93,7 +93,7 @@
     margin-bottom: 0;
   }
   .footer {
-    display : none;
+    display: none;
   }
 
   // Text are set in columns
@@ -109,31 +109,32 @@
     @include outer-container(95%);
     padding: 0;
   }
-  
 }
 
 @include media(new-breakpoint(max-width 1350px 6)) {
- .nav-main {
-   .banner{
-     .menu {
-       >div
-         {
-           font-size: 0.8em;
-         }
-       }
-     }
- }
+  .nav-main {
+    .banner{
+      .menu {
+        > div {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
 }
 
 @include media(new-breakpoint(max-width 1100px 6)) {
- .nav-main {
-   .banner{
-     .menu {
-       >div
-         {
-           font-size: 0.65em;
-         }
-       }
-     }
- }
+  .nav-main {
+    .banner{
+      .menu {
+        > div {
+          font-size: 0.65em;
+
+          a {
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+  }
 }

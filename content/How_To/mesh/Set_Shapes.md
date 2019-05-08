@@ -38,6 +38,32 @@ backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mes
 
 * [Playground Example of a Box](https://www.babylonjs-playground.com/#3QW4J1#1)
 
+## Tiled Box
+A [tiled box](/how_to/tiled#tiled-box) is only available with MeshBuilder. The tile size, pattern and alignment of tiles will be the same for each face.  
+Example :
+```javascript
+var tiledBox = BABYLON.MeshBuilder.CreateTiledBox("box", {size:5, tileSize:1}, scene);
+```
+
+option|value|default value
+--------|-----|------------
+size|_(number)_ size of each box side|1
+height|_(number)_ height size, overwrites _size_ option|size
+width|_(number)_ width size, overwrites _size_ option|size
+depth|_(number)_ depth size,  overwrites _size_ option|size
+tileSize|_(number)_ size of each tile side|1
+tileHeight|_(number)_ tile height size, overwrites _tileSize_ option|tileSize
+tileWidth|_(number)_ tile width size, overwrites _tileSize_ option|tileSize
+faceColors|_(Color4[])_ array of 6 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
+faceUV|_(Vector4[])_ array of 6 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
+pattern|_(number)_ how tiles are reflected or rotated on a face|NO_FLIP
+alignVertical| _(number)_ positions whole tiles at top, bottom or center of a face|CENTER
+alignHorizontal| _(number)_ positions whole tiles at left, right or center of a face|CENTER
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE 
+
+* [Playground Example of a Tiled Box](https://www.babylonjs-playground.com/#Z5JFSM#1)
+
 ## Sphere
 Different values for _diameterX_, _diameterY_ and diameterZ_ lead to an ellipsoid.
 Example :
@@ -93,7 +119,7 @@ A flat surface parallel to XoY plane.
 
 Example :
 ```javascript
-var plane = BABYLON.MeshBuilder.CreatePlane("plane", {width: 5}, scene);
+var plane = BABYLON.MeshBuilder.CreatePlane("plane", {width: 5, size:5, tileSize:1}, scene);
 ```
 
 option|value|default value
@@ -108,6 +134,32 @@ frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Me
 backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
 * [Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
+
+## Tiled Plane
+A [tiled plane](/how_to/tiled) is only available with MeshBuilder. The tile size, pattern and alignment of tiles can be set. 
+
+Example :
+```javascript
+var tiledPlane = BABYLON.MeshBuilder.CreateTiledPlane("plane", {width: 5}, scene);
+```
+
+option|value|default value
+--------|-----|-------------
+size|_(number)_ side size of the plane|1
+width|_(number)_ size of the width|size
+height|_(number)_ size of the height|size
+tileSize|_(number)_ size of each tile side|1
+tileHeight|_(number)_ tile height size, overwrites _tileSize_ option|tileSize
+tileWidth|_(number)_ tile width size, overwrites _tileSize_ option|tileSize
+frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1)
+pattern|_(number)_ how tiles are reflected or rotated|NO_FLIP
+alignVertical| _(number)_ positions whole tiles at top, bottom or center of a face|CENTER
+alignHorizontal| _(number)_ positions whole tiles at left, right or center of a face|CENTER
+updatable|_(boolean)_ true if the mesh is updatable|false
+sideOrientation|_(number)_ side orientation|DEFAULTSIDE   
+
+* [Playground Example of a DOUBLESIDE Tiled Plane](https://www.babylonjs-playground.com/#Z5JFSM#4)
 
 ## Disc or Regular Polygon
 You can create any kind of regular polygon with _CreateDisc()_, the number of sides is dependent on the value given to _tessellation_. The larger this value the closer to an actual disc. Using the arc option you can create a sector.
@@ -239,6 +291,7 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 [Parametric Shapes 101](/babylon101/Parametric_Shapes)  
 [Parametric Shapes](/How_To/Parametric_Shapes)  
 [Polyhedra Shapes](/How_To/Polyhedra_Shapes)  
+[Tiled Planes and Boxes](/How_To/Tiled)  
 [Decals](/How_To/Decals) 
 
 ## Mid Level - L2

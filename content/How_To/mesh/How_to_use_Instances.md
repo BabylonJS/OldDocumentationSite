@@ -29,12 +29,12 @@ Instances are supported for collisions, picking, rendering and shadows. Even if 
 # Using Blender to create instances
 Using Blender, you can create instances of a mesh by just creating a linked object:
 
-![](http://www.html5gamedevs.com/uploads/monthly_05_2014/post-7026-0-82151000-1401073383.jpg)
+![](https://www.html5gamedevs.com/uploads/monthly_05_2014/post-7026-0-82151000-1401073383.jpg)
 
 # Using 3DS Max to create instances
 Using 3DS Max, you can create instances of a mesh by just creating a clone instance object with clic right on the object:
 
-![](http://www.html5gamedevs.com/uploads/monthly_11_2014/post-5292-0-54659600-1415793353.jpg)
+![](https://www.html5gamedevs.com/uploads/monthly_11_2014/post-5292-0-54659600-1415793353.jpg)
 
 # Limitations
 You can use instances with LOD but one limitation will apply in this case: You will have to hide the root objects.
@@ -44,4 +44,4 @@ https://www.babylonjs-playground.com/#0720FC#10
 If you want to create an instance from a cloned mesh, you have to first make sure that you call clonedMesh.makeGeometryUnique().
 
 # Demo
-http://www.babylonjs.com/?INSTANCES
+https://www.babylonjs-playground.com/#YB006J#0
