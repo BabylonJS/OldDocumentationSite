@@ -50,7 +50,7 @@ await engine.initEngineAsync();
 FOR SURE :-) There is no change of plans and we will deliver both supports side by side.
 
 ## I want to test it
-You can only at the moment build your own version of Chrome to develop locally. Once there will be easier solutions, we won't hesitate to update this page.
+You can only at the moment test on MacOS Chrome Canary with the enable-unsafe-webgpu flags on. Once there will be other solutions, we won't hesitate to update this page.
 
 You can follow the status from the dedicated [Chrome Status Platform Page](https://www.chromestatus.com/feature/6213121689518080).
 
