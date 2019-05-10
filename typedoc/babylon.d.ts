@@ -1235,6 +1235,7 @@ declare module BABYLON {
          */
         z: number;
         private static _UpReadOnly;
+        private static _ZeroReadOnly;
         /**
          * Creates a new Vector3 object from the given x, y, z (floats) coordinates.
          * @param x defines the first coordinates (on X axis)
@@ -1658,6 +1659,10 @@ declare module BABYLON {
          * Gets a up Vector3 that must not be updated
          */
         static readonly UpReadOnly: DeepImmutable<Vector3>;
+        /**
+         * Gets a zero Vector3 that must not be updated
+         */
+        static readonly ZeroReadOnly: DeepImmutable<Vector3>;
         /**
          * Returns a new Vector3 set to (0.0, -1.0, 0.0)
          * @returns a new down Vector3
@@ -9882,10 +9887,19 @@ declare module BABYLON {
          */
         onBeforeShadowMapRenderObservable: Observable<Effect>;
         /**
+         * Observable triggered after the shadow is rendered. Can be used to restore internal effect state
+         */
+        onAfterShadowMapRenderObservable: Observable<Effect>;
+        /**
          * Observable triggered before a mesh is rendered in the shadow map.
          * Can be used to update internal effect state (that you can get from the onBeforeShadowMapRenderObservable)
          */
         onBeforeShadowMapRenderMeshObservable: Observable<Mesh>;
+        /**
+         * Observable triggered after a mesh is rendered in the shadow map.
+         * Can be used to update internal effect state (that you can get from the onAfterShadowMapRenderObservable)
+         */
+        onAfterShadowMapRenderMeshObservable: Observable<Mesh>;
         private _bias;
         /**
          * Gets the bias: offset applied on the depth preventing acnea (in light direction).
@@ -10045,6 +10059,8 @@ declare module BABYLON {
         */
         contactHardeningLightSizeUVRatio: number;
         private _darkness;
+        /** Gets or sets the actual darkness of a shadow */
+        darkness: number;
         /**
          * Returns the darkness value (float). This can only decrease the actual darkness of a shadow.
          * 0 means strongest and 1 would means no shadow.
@@ -10058,6 +10074,8 @@ declare module BABYLON {
          */
         setDarkness(darkness: number): ShadowGenerator;
         private _transparencyShadow;
+        /** Gets or sets the ability to have transparent shadow  */
+        transparencyShadow: boolean;
         /**
          * Sets the ability to have transparent shadow (boolean).
          * @param transparent True if transparent else False
@@ -10076,6 +10094,11 @@ declare module BABYLON {
          * @returns The render target texture if the shadow map is present otherwise, null
          */
         getShadowMapForRendering(): Nullable<RenderTargetTexture>;
+        /**
+         * Gets the class name of that object
+         * @returns "ShadowGenerator"
+         */
+        getClassName(): string;
         /**
          * Helper function to add a mesh and its descendants to the list of shadow casters.
          * @param mesh Mesh to add
@@ -10598,6 +10621,13 @@ declare module BABYLON {
          * @hidden
          */
         _actionManager: AbstractActionManager;
+        /**
+         * Adds action to chain of actions, may be a DoNothingAction
+         * @param action defines the next action to execute
+         * @returns The action passed in
+         * @see https://www.babylonjs-playground.com/#1T30HR#0
+         */
+        then(action: IAction): IAction;
     }
     /**
      * The action to be carried out following a trigger
@@ -11657,7 +11687,7 @@ declare module BABYLON {
      */
     export interface ISceneSerializableComponent extends ISceneComponent {
         /**
-         * Adds all the element from the container to the scene
+         * Adds all the elements from the container to the scene
          * @param container the container holding the elements
          */
         addFromContainer(container: AbstractScene): void;
@@ -17048,11 +17078,11 @@ declare module BABYLON {
         /**
          * If vertex color should be applied to the mesh
          */
-        useVertexColor?: boolean | undefined;
+        readonly useVertexColor?: boolean | undefined;
         /**
          * If vertex alpha should be applied to the mesh
          */
-        useVertexAlpha?: boolean | undefined;
+        readonly useVertexAlpha?: boolean | undefined;
         /**
          * Color of the line (Default: White)
          */
@@ -17068,6 +17098,7 @@ declare module BABYLON {
          */
         intersectionThreshold: number;
         private _colorShader;
+        private color4;
         /**
          * Creates a new LinesMesh
          * @param name defines the name
@@ -17308,6 +17339,7 @@ declare module BABYLON {
      */
     export class RenderingGroup {
         index: number;
+        private static _zeroVector;
         private _scene;
         private _opaqueSubMeshes;
         private _transparentSubMeshes;
@@ -20947,6 +20979,7 @@ declare module BABYLON {
          * Returns the mesh VertexBuffer object from the requested `kind`
          * @param kind defines which buffer to read from (positions, indices, normals, etc). Possible `kind` values :
          * - VertexBuffer.PositionKind
+         * - VertexBuffer.NormalKind
          * - VertexBuffer.UVKind
          * - VertexBuffer.UV2Kind
          * - VertexBuffer.UV3Kind
@@ -20965,6 +20998,7 @@ declare module BABYLON {
          * Tests if a specific vertex buffer is associated with this mesh
          * @param kind defines which buffer to check (positions, indices, normals, etc). Possible `kind` values :
          * - VertexBuffer.PositionKind
+         * - VertexBuffer.NormalKind
          * - VertexBuffer.UVKind
          * - VertexBuffer.UV2Kind
          * - VertexBuffer.UV3Kind
@@ -21001,6 +21035,7 @@ declare module BABYLON {
          * Returns a string which contains the list of existing `kinds` of Vertex Data associated with this mesh.
          * @param kind defines which buffer to read from (positions, indices, normals, etc). Possible `kind` values :
          * - VertexBuffer.PositionKind
+         * - VertexBuffer.NormalKind
          * - VertexBuffer.UVKind
          * - VertexBuffer.UV2Kind
          * - VertexBuffer.UV3Kind
@@ -31671,6 +31706,11 @@ declare module BABYLON {
          * Target to animate
          */
         target: any;
+        /**
+         * Serialize the object
+         * @returns the JSON object representing the current entity
+         */
+        serialize(): any;
     }
     /**
      * Use this class to create coordinated animations on multiple targets
@@ -31839,6 +31879,11 @@ declare module BABYLON {
          * @returns the new aniamtion group
          */
         clone(newName: string, targetConverter?: (oldTarget: any) => any): AnimationGroup;
+        /**
+         * Serializes the animationGroup to an object
+         * @returns Serialized object
+         */
+        serialize(): any;
         /**
          * Returns a new AnimationGroup object parsed from the source provided.
          * @param parsedAnimationGroup defines the source
@@ -34398,7 +34443,7 @@ declare module BABYLON {
          */
         serialize(serializationObject: any): void;
         /**
-         * Adds all the element from the container to the scene
+         * Adds all the elements from the container to the scene
          * @param container the container holding the elements
          */
         addFromContainer(container: AbstractScene): void;
@@ -35706,7 +35751,10 @@ declare module BABYLON {
      */
     export class PointerDragBehavior implements Behavior<AbstractMesh> {
         private static _AnyMouseID;
-        private _attachedNode;
+        /**
+         * Abstract mesh the behavior is set on
+         */
+        attachedNode: AbstractMesh;
         private _dragPlane;
         private _scene;
         private _pointerObserver;
@@ -39603,6 +39651,7 @@ declare module BABYLON {
          * * The parameter `subdivisions` sets the number of rings along the cylinder height (positive integer, default 1).
          * * The parameter `hasRings` (boolean, default false) makes the subdivisions independent from each other, so they become different faces.
          * * The parameter `enclose`  (boolean, default false) adds two extra faces per subdivision to a sliced cylinder to close it around its height axis.
+         * * The parameter `cap` sets the way the cylinder is capped. Possible values : BABYLON.Mesh.NO_CAP, BABYLON.Mesh.CAP_START, BABYLON.Mesh.CAP_END, BABYLON.Mesh.CAP_ALL (default).
          * * The parameter `arc` (float, default 1) is the ratio (max 1) to apply to the circumference to slice the cylinder.
          * * You can set different colors and different images to each box side by using the parameters `faceColors` (an array of n Color3 elements) and `faceUV` (an array of n Vector4 elements).
          * * The value of n is the number of cylinder faces. If the cylinder has only 1 subdivisions, n equals : top face + cylinder surface + bottom face = 3
@@ -39634,6 +39683,7 @@ declare module BABYLON {
             updatable?: boolean;
             hasRings?: boolean;
             enclose?: boolean;
+            cap?: number;
             sideOrientation?: number;
             frontUVs?: Vector4;
             backUVs?: Vector4;
@@ -45068,7 +45118,7 @@ declare module BABYLON {
      *
      * This offers the main features of a standard PBR material.
      * For more information, please refer to the documentation :
-     * http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+     * https://doc.babylonjs.com/how_to/physically_based_rendering
      */
     export abstract class PBRBaseMaterial extends PushMaterial {
         /**
@@ -45570,7 +45620,7 @@ declare module BABYLON {
      *
      * This offers the main features of a standard PBR material.
      * For more information, please refer to the documentation :
-     * http://doc.babylonjs.com/extensions/Physically_Based_Rendering
+     * https://doc.babylonjs.com/how_to/physically_based_rendering
      */
     export class PBRMaterial extends PBRBaseMaterial {
         /**
@@ -47107,7 +47157,7 @@ declare module BABYLON {
          */
         serialize(serializationObject: any): void;
         /**
-         * Adds all the element from the container to the scene
+         * Adds all the elements from the container to the scene
          * @param container the container holding the elements
          */
         addFromContainer(container: AbstractScene): void;
@@ -47638,6 +47688,17 @@ declare module BABYLON {
         private _drawRenderTargetPredicate;
         private _drawRenderTargetBackground;
         private _drawRenderTargetForeground;
+        /**
+         * Adds all the elements from the container to the scene
+         * @param container the container holding the elements
+         */
+        addFromContainer(container: AbstractScene): void;
+        /**
+         * Removes all the elements in the container from the scene
+         * @param container contains the elements to remove
+         * @param dispose if the removed element should be disposed (default: false)
+         */
+        removeFromContainer(container: AbstractScene, dispose?: boolean): void;
     }
 }
 declare module BABYLON {
@@ -48028,7 +48089,7 @@ declare module BABYLON {
          */
         rebuild(): void;
         /**
-         * Adds all the element from the container to the scene
+         * Adds all the elements from the container to the scene
          * @param container the container holding the elements
          */
         addFromContainer(container: AbstractScene): void;
@@ -48084,7 +48145,7 @@ declare module BABYLON {
          */
         serialize(serializationObject: any): void;
         /**
-         * Adds all the element from the container to the scene
+         * Adds all the elements from the container to the scene
          * @param container the container holding the elements
          */
         addFromContainer(container: AbstractScene): void;
@@ -50769,6 +50830,7 @@ declare module BABYLON {
          * * The parameter `subdivisions` sets the number of rings along the cylinder height (positive integer, default 1).
          * * The parameter `hasRings` (boolean, default false) makes the subdivisions independent from each other, so they become different faces.
          * * The parameter `enclose`  (boolean, default false) adds two extra faces per subdivision to a sliced cylinder to close it around its height axis.
+         * * The parameter `cap` sets the way the cylinder is capped. Possible values : BABYLON.Mesh.NO_CAP, BABYLON.Mesh.CAP_START, BABYLON.Mesh.CAP_END, BABYLON.Mesh.CAP_ALL (default).
          * * The parameter `arc` (float, default 1) is the ratio (max 1) to apply to the circumference to slice the cylinder.
          * * You can set different colors and different images to each box side by using the parameters `faceColors` (an array of n Color3 elements) and `faceUV` (an array of n Vector4 elements).
          * * The value of n is the number of cylinder faces. If the cylinder has only 1 subdivisions, n equals : top face + cylinder surface + bottom face = 3
@@ -50800,6 +50862,7 @@ declare module BABYLON {
             updatable?: boolean;
             hasRings?: boolean;
             enclose?: boolean;
+            cap?: number;
             sideOrientation?: number;
             frontUVs?: Vector4;
             backUVs?: Vector4;
