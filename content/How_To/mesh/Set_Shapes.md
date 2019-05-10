@@ -5,7 +5,7 @@ PG_TITLE: 02. Set Shapes
 
 # Set Shapes
 
-These are shapes that usually already have names in everyday use and their form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.
+These are shapes that usually already have names in everyday use and their form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well known but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.
 
 The _MeshBuilder_ method uses a number of options that you can set or you can just settle for the default values. Whilst some options such as size or diameter have an obvious meaning others such as updatable or faceUV require [Further Reading](#further-reading) to fully understand what they are and how to use them.
 
