@@ -81,7 +81,7 @@ let skyMaterial = new GridMaterial(.....)
 ### Creating our first js APP
 Now we have all the dependencies created, create an index.html file in the `MyAwesomeApp` folder and fill it with the following code:
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -122,7 +122,7 @@ This will only have a fullscreen canvas as well as a reference to our applicatio
 
 Once done you can create a `src` folder containing an index.js file with the following content:
 
-```
+```javascript
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { Scene } from "@babylonjs/core/scene";
 import { Vector3 } from "@babylonjs/core/Maths/math";
@@ -191,7 +191,8 @@ Open the browser and navigate to the url `http://localhost:8080/`. You should se
 Switching the project to typescript is pretty straight forward. First in the previous example `MyAwesomeApp` folder we need to install typescript and one of the module allowing the use of typescript in webpack: `npm install typescript ts-loader --save-dev`
 
 Once done we can replace our previous index.js by its typescript equivalent index.ts:
-```
+
+```javascript
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { Scene } from "@babylonjs/core/scene";
 import { Vector3 } from "@babylonjs/core/Maths/math";
@@ -256,7 +257,7 @@ The only change being the addition of `as HTMLCanvasElement` on the canvas eleme
 
 With that done we need to configure Webpack to allow the use of Typescript. Add a `webpack.config.js` at the root of your project containing the following:
 
-```
+```javascript
 module.exports = {
     resolve: {
         extensions: ['.ts', '.js']
@@ -272,7 +273,7 @@ module.exports = {
 
 We also need to configure typescript in the application folder. The simplest is to add a tsconfig.json file at the root of the project containing:
 
-```
+```javascript
 {
   "compilerOptions": {
       "module": "esNext",
@@ -352,11 +353,13 @@ This might happen on some modules where we are heavily relying on side effects a
 Due to the modules name changing and other es6 modules differences, the UMD and CDN inspector version is not compatible with ES6. Nevertheless, you can install the ES6 version of the inspector and import it for side effect only in your code. Then the debug layer would work as usual.
 
 First install the inspector package:
+
 ```bash
 npm install --save-dev @babylonjs/inspector
 ```
 
 And then in your code:
+
 ```javascript
 import "@babylonjs/core/Debug/debugLayer"; // Augments the scene with the debug methods
 import "@babylonjs/inspector"; // Injects a local ES6 version of the inspector to prevent automatically relying on the none compatible version
@@ -369,7 +372,7 @@ As we do not want to force by default our user to include any dependencies, we h
 
 For each of the external dependencies Babylon.js is relying upon, if you are planing on relying on them, you can either provide them as global var in you bundler. For instance if you are willing to use the `PolygonMeshBuilder` class in your app you can add earcut in webpack like this:
 
-```
+```javascript
 module.exports = {
     context: __dirname,
 ...
@@ -383,7 +386,7 @@ module.exports = {
 
 Or if you do not want to use a global var for earcut, you could simply pass the dependency to the PolygonMeshBuilder class like this:
 
-```
+```javascript
 import * as MyEarcut from "earcut";
 ...
 new PolygonMeshBuilder("polytri", corners, scene, MyEarcut);
@@ -395,12 +398,14 @@ It would be the same for physics plugin where you can either provide the underly
 Exactly like in the previous paragraph, you can inject your ammo dependency into Babylon.js. Either you can keep as a global script reference thus not including the dependency in your bundle or you could follow the following steps to include ammo as part of your bundled application.
 
 First, install ammo.js from its github build folder (in order to benefit from an up to date version):
-```
+
+```javascript
 npm install kripken/ammo.js
 ```
 
 Then in Webpack, you need to disable the fs dependency to generate a successful package (obviously if you are targeting web builds):
-```
+
+```javascript
 module.exports = {
     context: __dirname,
 ...
@@ -412,7 +417,7 @@ module.exports = {
 
 Finally, in your code, you can setup the AmmoJSPlugin this way:
 
-```
+```javascript
 import * as Ammo from "ammo.js";
 ...
 var ammoPlugin = new AmmoJSPlugin(true, Ammo);
