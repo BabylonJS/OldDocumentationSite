@@ -118,7 +118,7 @@ Now we have all the dependencies created, create an index.html file in the `MyAw
 </html>
 ```
 
-This will only have a fullscreen canvas as well as a reference to our application file (by default webpack output during developmetn is "main.js");
+This will only have a fullscreen canvas as well as a reference to our application file (by default webpack output during development is "main.js");
 
 Once done you can create a `src` folder containing an index.js file with the following content:
 
@@ -287,7 +287,7 @@ This will ensure our babylonjs module can be loaded and used in your application
 It is time to run again with the command `npx webpack-dev-server` and open your browser on `http://localhost:8080/`. You should see a sphere and a plane using the Grid Material exactly like in javascript. You are now fully ready to use the Babylon.js ES6 packages in Typescript.
 
 ## Tree Shaking
-From the begining you could wonder why using these ES6 packages vs the default bundled ones. Beside being more "modern" which is not a valuable enough argument to make the switch, you can now fully benefit from [tree shaking](https://webpack.js.org/guides/tree-shaking/).
+From the beginning you could wonder why using these ES6 packages vs the default bundled ones. Beside being more "modern" which is not a valuable enough argument to make the switch, you can now fully benefit from [tree shaking](https://webpack.js.org/guides/tree-shaking/).
 
 This means the previous example is now requiring about 700Kb vs 2.3Mb before.
 
@@ -296,7 +296,7 @@ This means the previous example is now requiring about 700Kb vs 2.3Mb before.
 **As you will see in the next paragraph, you also need to target individual files to fully benefit from tree shaking in your app.**
 
 ## Side Effects
-Due to our attachment to backward compatibililty, we had to make a hard choice between the APIs and the side effects. Actually whilst not working with modules it is easy to not worry about side effects and we relied on this pattern a lot to create a friendlier API surface. For instance, you can directly from the Mesh class create basic shapes like cubes, spheres and so on. Despite being convenient, this means that the full MeshBuilder constructs are then a dependency of Mesh. But what if you are not using any of them ? Why should they be part of the final package ?
+Due to our attachment to backward compatibility, we had to make a hard choice between the APIs and the side effects. Actually whilst not working with modules it is easy to not worry about side effects and we relied on this pattern a lot to create a friendlier API surface. For instance, you can directly from the Mesh class create basic shapes like cubes, spheres and so on. Despite being convenient, this means that the full MeshBuilder constructs are then a dependency of Mesh. But what if you are not using any of them ? Why should they be part of the final package ?
 
 Easy call, we could move those functions elsewhere and we did exactly this by creating smaller builder modules dedicated to construct only one type of shapes. But now quid of back compat ? Yup, it is lost so to ensure you could use the same code in both UMD bundle and ES6, when the builder files are being parsed, they are swapping the Mesh builder methods. This implies a **side effect** A module executing code whilst being parsed. This is the tradeoff we had to make, valuing back compatibility and API consistency vs side effect free code.
 
@@ -312,11 +312,11 @@ The simplest is to load only the builder corresponding to your construction meth
 
 *How does deserialization work ?*
 
-When you deserialize a Babylon.js object like a Material or Light, it is impossible for the framework to know before hand what kind of entity is enclosed in your file. For instance, are you relying on Standard vs PBRMaterial. We again rely on side effect here and the deserialization will onlly be able to load the kind of entity you have imported in your app. This means if you know you will need to deserialize a PBRMaterial, you can `import "@babylonjs/core/Materials/PBR/pbrMaterial";` before hand.
+When you deserialize a Babylon.js object like a Material or Light, it is impossible for the framework to know before hand what kind of entity is enclosed in your file. For instance, are you relying on Standard vs PBRMaterial. We again rely on side effect here and the deserialization will only be able to load the kind of entity you have imported in your app. This means if you know you will need to deserialize a PBRMaterial, you can `import "@babylonjs/core/Materials/PBR/pbrMaterial";` before hand.
 
 *How do I know if I am importing a folder or a file ?*
 
-By covention and to simplify the discovery, all folders starts with an upper case character where the files starts with a lower case one.
+By convention and to simplify the discovery, all folders starts with an upper case character where the files starts with a lower case one.
 
 *How to find what module contains the entity I am trying to import?*
 
@@ -399,7 +399,7 @@ First, install ammo.js from its github build folder (in order to benefit from an
 npm install kripken/ammo.js
 ```
 
-Then in Webpack, you need to disable the fs dependency to generate a successfull package (obviously if you are targetting web builds):
+Then in Webpack, you need to disable the fs dependency to generate a successful package (obviously if you are targeting web builds):
 ```
 module.exports = {
     context: __dirname,
