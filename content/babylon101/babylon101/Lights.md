@@ -8,7 +8,7 @@ Lights are used, as you would expect, to affect how meshes are seen, in terms of
 All meshes allow light to pass through them unless shadow generation is activated. The default number of lights allowed is
 four but this can be increased.
 
-![Elements](http://www.babylonjs.com/Screenshots/testlight.jpg)
+![Elements](http://doc.babylonjs.com/img/testlight.jpg)
 
 _A pretty sphere with multiple lights_
 
