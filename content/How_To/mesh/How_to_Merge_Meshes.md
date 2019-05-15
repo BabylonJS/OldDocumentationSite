@@ -8,7 +8,7 @@ PG_TITLE: How to Merge Meshes
 To easily merge a number of meshes to a single mesh use the static `MergeMeshes` of the `Mesh` class:
 
 ```javascript
-var newMesh = BABYLON.Mesh.MergeMeshes(arrayOfMeshes, disposeSource, allow32BitsIndices, meshSubclass, subdivideWithSubMeshes);
+var newMesh = BABYLON.Mesh.MergeMeshes(arrayOfMeshes, disposeSource, allow32BitsIndices, meshSubclass, subdivideWithSubMeshes, multiMultiMaterials);
 ```
 
 |variable| description|
