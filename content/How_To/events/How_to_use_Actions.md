@@ -167,7 +167,7 @@ You can use direct values like `position` or `diffuse`. But you can also provide
 * `BABYLON.SetParentAction(trigger, target, parent, condition)`: Sets the parent of the target.
 * `BABYLON.PlaySoundAction(trigger, sound, condition)`: Plays a given sound.
 * `BABYLON.StopSoundAction(trigger, sound, condition)`: Stops a given sound
-* `BABYLON.InterpolateValueActiontrigger, target, propertyPath, value, duration, condition, stopOtherAnimations)`: Creates an animation to interpolate the current value of a property to a given target. The following types are supported:
+* `BABYLON.InterpolateValueAction(trigger, target, propertyPath, value, duration, condition, stopOtherAnimations)`: Creates an animation to interpolate the current value of a property to a given target. The following types are supported:
    * `number`
    * `BABYLON.Color3`
    * `BABYLON.Vector3`
