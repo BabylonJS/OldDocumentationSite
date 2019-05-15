@@ -468,7 +468,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_instances",
                     "icon": "icons/instances.jpg",
                     "description": "Use hardware instancing to duplicate meshes at no cost",
-                    "PGID": "#YB006J#0"
+                    "PGID": "#YB006J#75"
                 },
                 {
                     "title": "Octrees",

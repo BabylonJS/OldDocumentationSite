@@ -8,7 +8,7 @@ PG_TITLE: How to Merge Meshes
 To easily merge a number of meshes to a single mesh use the static `MergeMeshes` of the `Mesh` class:
 
 ```javascript
-var newMesh = BABYLON.Mesh.MergeMeshes(arrayOfMeshes, disposeSource, allow32BitsIndices, meshSubclass, subdivideWithSubMeshes);
+var newMesh = BABYLON.Mesh.MergeMeshes(arrayOfMeshes, disposeSource, allow32BitsIndices, meshSubclass, subdivideWithSubMeshes, multiMultiMaterials);
 ```
 
 |variable| description|
@@ -20,9 +20,15 @@ var newMesh = BABYLON.Mesh.MergeMeshes(arrayOfMeshes, disposeSource, allow32Bits
 |subdivideWithSubMeshes (optional) |When true (false default), subdivide mesh to his subMesh array with meshes source. |
 |multiMultiMaterials (optional)| When true (false default), subdivide mesh and accept multiple multi materials, ignores subdivideWithSubMeshes.|
 
-The resulting merged mesh will have only one material applied to it (taken from the first mesh) unless [multi material](/how_to/multi_materials#with-merged-meshes) is used and one of the last two parameters are set to true.
+Since `multiMultiMaterials` defaults to false, the resulting merged mesh will have only one material applied to it (taken from the first mesh):
 
 * [Playground Example - Merged Meshes](https://playground.babylonjs.com/#INZ0Z0#5)
+
+Compare with the following example which sets `multiMultiMaterials` to true:
+
+* [Playground Example - Merged Meshes multiMultiMaterials true](https://playground.babylonjs.com/#INZ0Z0#59)
+
+See [this page](/how_to/multi_materials#with-merged-meshes) for more details on usage of merged meshes.
 
 ## Use your own merge function
 

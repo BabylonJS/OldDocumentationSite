@@ -81,7 +81,7 @@ let skyMaterial = new GridMaterial(.....)
 ### Creating our first js APP
 Now we have all the dependencies created, create an index.html file in the `MyAwesomeApp` folder and fill it with the following code:
 
-```
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -118,11 +118,11 @@ Now we have all the dependencies created, create an index.html file in the `MyAw
 </html>
 ```
 
-This will only have a fullscreen canvas as well as a reference to our application file (by default webpack output during developmetn is "main.js");
+This will only have a fullscreen canvas as well as a reference to our application file (by default webpack output during development is "main.js");
 
 Once done you can create a `src` folder containing an index.js file with the following content:
 
-```
+```javascript
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { Scene } from "@babylonjs/core/scene";
 import { Vector3 } from "@babylonjs/core/Maths/math";
@@ -191,7 +191,8 @@ Open the browser and navigate to the url `http://localhost:8080/`. You should se
 Switching the project to typescript is pretty straight forward. First in the previous example `MyAwesomeApp` folder we need to install typescript and one of the module allowing the use of typescript in webpack: `npm install typescript ts-loader --save-dev`
 
 Once done we can replace our previous index.js by its typescript equivalent index.ts:
-```
+
+```javascript
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { Scene } from "@babylonjs/core/scene";
 import { Vector3 } from "@babylonjs/core/Maths/math";
@@ -256,7 +257,7 @@ The only change being the addition of `as HTMLCanvasElement` on the canvas eleme
 
 With that done we need to configure Webpack to allow the use of Typescript. Add a `webpack.config.js` at the root of your project containing the following:
 
-```
+```javascript
 module.exports = {
     resolve: {
         extensions: ['.ts', '.js']
@@ -272,7 +273,7 @@ module.exports = {
 
 We also need to configure typescript in the application folder. The simplest is to add a tsconfig.json file at the root of the project containing:
 
-```
+```javascript
 {
   "compilerOptions": {
       "module": "esNext",
@@ -287,7 +288,7 @@ This will ensure our babylonjs module can be loaded and used in your application
 It is time to run again with the command `npx webpack-dev-server` and open your browser on `http://localhost:8080/`. You should see a sphere and a plane using the Grid Material exactly like in javascript. You are now fully ready to use the Babylon.js ES6 packages in Typescript.
 
 ## Tree Shaking
-From the begining you could wonder why using these ES6 packages vs the default bundled ones. Beside being more "modern" which is not a valuable enough argument to make the switch, you can now fully benefit from [tree shaking](https://webpack.js.org/guides/tree-shaking/).
+From the beginning you could wonder why using these ES6 packages vs the default bundled ones. Beside being more "modern" which is not a valuable enough argument to make the switch, you can now fully benefit from [tree shaking](https://webpack.js.org/guides/tree-shaking/).
 
 This means the previous example is now requiring about 700Kb vs 2.3Mb before.
 
@@ -296,7 +297,7 @@ This means the previous example is now requiring about 700Kb vs 2.3Mb before.
 **As you will see in the next paragraph, you also need to target individual files to fully benefit from tree shaking in your app.**
 
 ## Side Effects
-Due to our attachment to backward compatibililty, we had to make a hard choice between the APIs and the side effects. Actually whilst not working with modules it is easy to not worry about side effects and we relied on this pattern a lot to create a friendlier API surface. For instance, you can directly from the Mesh class create basic shapes like cubes, spheres and so on. Despite being convenient, this means that the full MeshBuilder constructs are then a dependency of Mesh. But what if you are not using any of them ? Why should they be part of the final package ?
+Due to our attachment to backward compatibility, we had to make a hard choice between the APIs and the side effects. Actually whilst not working with modules it is easy to not worry about side effects and we relied on this pattern a lot to create a friendlier API surface. For instance, you can directly from the Mesh class create basic shapes like cubes, spheres and so on. Despite being convenient, this means that the full MeshBuilder constructs are then a dependency of Mesh. But what if you are not using any of them ? Why should they be part of the final package ?
 
 Easy call, we could move those functions elsewhere and we did exactly this by creating smaller builder modules dedicated to construct only one type of shapes. But now quid of back compat ? Yup, it is lost so to ensure you could use the same code in both UMD bundle and ES6, when the builder files are being parsed, they are swapping the Mesh builder methods. This implies a **side effect** A module executing code whilst being parsed. This is the tradeoff we had to make, valuing back compatibility and API consistency vs side effect free code.
 
@@ -312,11 +313,11 @@ The simplest is to load only the builder corresponding to your construction meth
 
 *How does deserialization work ?*
 
-When you deserialize a Babylon.js object like a Material or Light, it is impossible for the framework to know before hand what kind of entity is enclosed in your file. For instance, are you relying on Standard vs PBRMaterial. We again rely on side effect here and the deserialization will onlly be able to load the kind of entity you have imported in your app. This means if you know you will need to deserialize a PBRMaterial, you can `import "@babylonjs/core/Materials/PBR/pbrMaterial";` before hand.
+When you deserialize a Babylon.js object like a Material or Light, it is impossible for the framework to know before hand what kind of entity is enclosed in your file. For instance, are you relying on Standard vs PBRMaterial. We again rely on side effect here and the deserialization will only be able to load the kind of entity you have imported in your app. This means if you know you will need to deserialize a PBRMaterial, you can `import "@babylonjs/core/Materials/PBR/pbrMaterial";` before hand.
 
 *How do I know if I am importing a folder or a file ?*
 
-By covention and to simplify the discovery, all folders starts with an upper case character where the files starts with a lower case one.
+By convention and to simplify the discovery, all folders starts with an upper case character where the files starts with a lower case one.
 
 *How to find what module contains the entity I am trying to import?*
 
@@ -352,11 +353,13 @@ This might happen on some modules where we are heavily relying on side effects a
 Due to the modules name changing and other es6 modules differences, the UMD and CDN inspector version is not compatible with ES6. Nevertheless, you can install the ES6 version of the inspector and import it for side effect only in your code. Then the debug layer would work as usual.
 
 First install the inspector package:
+
 ```bash
 npm install --save-dev @babylonjs/inspector
 ```
 
 And then in your code:
+
 ```javascript
 import "@babylonjs/core/Debug/debugLayer"; // Augments the scene with the debug methods
 import "@babylonjs/inspector"; // Injects a local ES6 version of the inspector to prevent automatically relying on the none compatible version
@@ -369,7 +372,7 @@ As we do not want to force by default our user to include any dependencies, we h
 
 For each of the external dependencies Babylon.js is relying upon, if you are planing on relying on them, you can either provide them as global var in you bundler. For instance if you are willing to use the `PolygonMeshBuilder` class in your app you can add earcut in webpack like this:
 
-```
+```javascript
 module.exports = {
     context: __dirname,
 ...
@@ -383,7 +386,7 @@ module.exports = {
 
 Or if you do not want to use a global var for earcut, you could simply pass the dependency to the PolygonMeshBuilder class like this:
 
-```
+```javascript
 import * as MyEarcut from "earcut";
 ...
 new PolygonMeshBuilder("polytri", corners, scene, MyEarcut);
@@ -395,12 +398,14 @@ It would be the same for physics plugin where you can either provide the underly
 Exactly like in the previous paragraph, you can inject your ammo dependency into Babylon.js. Either you can keep as a global script reference thus not including the dependency in your bundle or you could follow the following steps to include ammo as part of your bundled application.
 
 First, install ammo.js from its github build folder (in order to benefit from an up to date version):
-```
+
+```javascript
 npm install kripken/ammo.js
 ```
 
-Then in Webpack, you need to disable the fs dependency to generate a successfull package (obviously if you are targetting web builds):
-```
+Then in Webpack, you need to disable the fs dependency to generate a successful package (obviously if you are targeting web builds):
+
+```javascript
 module.exports = {
     context: __dirname,
 ...
@@ -412,7 +417,7 @@ module.exports = {
 
 Finally, in your code, you can setup the AmmoJSPlugin this way:
 
-```
+```javascript
 import * as Ammo from "ammo.js";
 ...
 var ammoPlugin = new AmmoJSPlugin(true, Ammo);
