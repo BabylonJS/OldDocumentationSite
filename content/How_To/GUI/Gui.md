@@ -73,7 +73,7 @@ Starting with Babylon.js v4.0, the new inspector can help debugging your GUI by 
 
 ### Events
 
-**Please note that controls need to have `control.isPointerBlock = true` to correctly handle all the pointer events. This property is set by default on obvious controls like buttons for instance but if you want to have it on controls like images you must turn it on.**
+**Please note that controls need to have `control.isPointerBlocker = true` to correctly handle all the pointer events. This property is set by default on obvious controls like buttons for instance but if you want to have it on controls like images you must turn it on.**
 
 All controls have the following observables:
 
