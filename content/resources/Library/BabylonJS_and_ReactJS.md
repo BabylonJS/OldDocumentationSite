@@ -168,6 +168,8 @@ class PageWithScene extends React.Component<{}, {}> {
 
 ## A few notes on the code
 This will show the basic playground in your website!  Note only that our 'BABYLON.Scene' was already instantiated in componentDidMount() of our component.
+If you would like to see this in action, there is a boilerplate project, which you can clone from
+* [Reactjs + BabylonJS + Electron](https://github.com/blurymind/babylon-react-electron-app)
 
 ## Conclusion
 
@@ -176,3 +178,4 @@ Integrating BabylonJS into a ReactJS website turns out to be not so tough.  Sinc
 If the above component we created does everything you need then that's all you will need and you are all set.  There is an NPM project called 'react-babylonjs' that has additional methods and properties and also has redux middleware.  That NPM is used in a couple of starter kits - One for ES6 and a TypeScript one for create-react-app:
 * [Create React App + TypeScript + BabylonJS (GUI + Physics)](https://github.com/brianzinn/create-react-app-typescript-babylonjs)
 * [ES6 + BabylonJS](https://github.com/brianzinn/react-redux-babylonjs-starter-kit)
+
