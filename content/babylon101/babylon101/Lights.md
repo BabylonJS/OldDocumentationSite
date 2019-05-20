@@ -8,7 +8,7 @@ Lights are used, as you would expect, to affect how meshes are seen, in terms of
 All meshes allow light to pass through them unless shadow generation is activated. The default number of lights allowed is
 four but this can be increased.
 
-![Elements](http://doc.babylonjs.com/img/testlight.jpg)
+![Elements](https://doc.babylonjs.com/img/testlight.jpg)
 
 _A pretty sphere with multiple lights_
 
@@ -73,10 +73,6 @@ You can think of the _diffuse_ and _specular_ light as coming from the centre of
 * [Playground example of a hemispheric light on two spheres](http://www.babylonjs-playground.com/#20OAV9#6)
 
 White hemispheric light with a black groundColor is a useful lighting method.
-
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/4760.image_5F00_thumb_5F00_058CC84D.png)
-
-_White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
 
 ### Intersecting Lights Colors
 * [Playground example of intersecting spot lights](http://www.babylonjs-playground.com/#20OAV9#9)
