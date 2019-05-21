@@ -569,6 +569,18 @@ Here is how the difference looks like in live (toggle the Spherical Harmonics sw
 
 If you want to hear the full story behind it, you can have a read at our blog post : [A tale of a bug](https://medium.com/@babylonjs/a-tale-of-a-bug-ce7e84467800).
 
+### Irradiance Map
+In some special cases where the environment texture is highly dynamic (like a bright sun having a really high exposure value), the spherical representation of the diffuse IBL might not be enough. Actually, we are for performance reasons limiting the representation to the first 3 bands. A highly dynamic texture can not be represented through 3 bands only. In this case you can rely on a texture instead of a spherical representation.
+
+In order to rely on a texture, you can set the `irradianceTexture` field of your `environmentTexture` as follow:
+
+```javascript
+    scene.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("specular.dds", scene);
+    scene.environmentTexture.irradianceTexture = new BABYLON.CubeTexture("irradiance.dds", scene);
+```
+
+Please, note that both textures should have the same properties: Cube vs 2D, Gamma vs Linear, RGBD or the chosen coordinates mode. Those properties do not need to be set on the main `environmentTexture` to prevent redundancy.
+
 ### Energy Conservation
 As we knew from the beginning, our PBR lighting model was not energy conservative, thanks to a lot of new white papers on this area, we have been able to introduce a way to embrace energy conservation in real time. This basically means that your rough metallic models will look brighter and closer from what nature does.
 
