@@ -119,7 +119,8 @@ A mesh can be added to the _excludedMeshes_ array or add the ones not to be excl
 ## Lighting Normals
 How lights react to a mesh depend on values set for each mesh vertex termed _normals_, shown in the picture below as arrows giving the direction of the lighting normals. The picture shows two planes and two lights. One light is a spot light, the other is a point light. The front face of each plane is the one you see when the _normals_ are pointing towards you, the back face the opposite side.
 
-![](http://urbanproductions.com/wingy/babylon/misc/normals03.jpg)
+![Elements](https://doc.babylonjs.com/img/how_to/Mesh/normals6.jpg)
+
 _A blue back-faced plane and a blue front-faced plane, with a spot light and point light_
 
 As you can see, the lights only affect the front face and not the back face.
@@ -148,7 +149,7 @@ This is the same as LIGHTMAP_DEFAULT except only the specular lighting and shado
 ```javascript
 light.lightmapMode = BABYLON.Light.LIGHTMAP_SHADOWSONLY;
 ```
-This is the same as LIGHTMAP_DEFAULT except only the shadows casted from this light will be applied.
+This is the same as LIGHTMAP_DEFAULT except only the shadows cast from this light will be applied.
 
 * [Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
 
