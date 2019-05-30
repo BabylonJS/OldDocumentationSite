@@ -1,8 +1,8 @@
 
 # Getting Started
-The V2 of the Babylon.js Editor is now available and comes with new features from the V1. Such as customizable layout, better design, new tools etc.
+The V3 of the Babylon.js Editor is now available and comes with new features from the V2. Such as multiple scene managements, improved tools and new tools etc.
 
-The editor V2 is available at http://editor.babylonjs.com/.
+The editor V3 is available at http://editor.babylonjs.com/.
 The video tutorials are all available on [a Youtube playlist](https://www.youtube.com/watch?v=obEuCI_pPL4&list=PLuZE-0i73Wo-xqfBsgZA531BXeesXQ3Op&index=1)
 
 # Desktop App
@@ -29,7 +29,8 @@ As an exemple, the following demo has been done 100% in the editor. It includes 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/obEuCI_pPL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 # Available features
-* Create and edit particle systems
+* Create, edit and save particle systems
+* Create, edit and save particle system sets
 * Create and edit animations
 * Create and edit lens flares systems
 * Create and edit physics states on meshes
@@ -51,5 +52,6 @@ Once you run the editor, you'll see several panels:
 * Graph: the current scene's graph showing the nodes configuration
 * Inspector: contains all the tools available for the currently selected object in the scene. The inspector is used to modify the properties of the selected object
 * Stats: shows the rendering and scene statistics for information according to the current scene preview
+* Files: shows all the files that have been loaded in your current project. Just as information.
 
 To use the tools and start a new project, it is highly recommanded to read the documentation of each tool available at //doc.babylonjs.com/resources/ :)

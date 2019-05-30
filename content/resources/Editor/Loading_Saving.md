@@ -1,4 +1,5 @@
-# Loading a scene
+
+## Loading a scene
 
 **Note (with the native electron app):** From the version 2.5.0 of the editor, you are able to open .editorproject files directly (via your OS file explorer or via the toolbar **Project -> Import Project**).
 That means you don't need to drag'n'drop all your files but simply open the .editorproject file.
@@ -20,25 +21,26 @@ You can also load a scene using the toolbar **Project -> Import Project**, selec
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q3ShDnKXt5o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-# Saving project
+From now, you are able to edit/add/remove elements from your scene. To add another scene in your project, just **drag'n'drop** the scene file and its assets.
+A dialog will ask if you want to append the scene or not:
+* Clicking **"Yes"** will append the new scene to the current project.
+* Clicking **"No"** will erase the current project and start a new project with the scene being drag'n'dropped.
 
-The editor will not save the entire scene when you want to save your project. Anyway, the editor will save the delta between the original scene file (.babylon, .gltf, etc.) and the editor file (.editorproject).
+## Saving project
 
-The editor project file will contain all the user's metadatas such as custom scripts, custom post-processes, custom materials, sounds, nodes, etc.
+The editor will not save the entire scene when you want to save your project. Anyway, the editor will save the deltas between the original scene files (.babylon, .gltf, etc.) and the editor file (.editorproject).
 
-To save the project, just click on the main toolbar **Project -> Save Project...** or type **CTRL+S**.
-For instance, the project (.editorproject) must be saved in the same directory than your scene file, textures etc. Then it will be easier for you to **drag'n'drop ALL the files** when you want to load your saved project.
+The editor project file will contain all the user's metadatas such as custom scripts, custom post-processes, custom materials, sounds, nodes, etc. that have been modified/removed/added.
+
+To save the project, just click on the main toolbar **Project -> Save Project...** or type **CTRL+S**. Choose a folder and these files will be created:
+* scene.editorproject: the Editor Project file
+* scene: the folder containing ALL the scene files (textures, scene, sounds, etc.)
 
 **Note: It is highly recommanded to use the desktop app as you'll get access to the local file system to save your projects. Anyway, on the online version, the editor will try to save the project on OneDrive.**
-
-## Important
-To properly load your scenes after saving, don't forget to add all the external files (sounds, textures, etc.) in the same folder of the scene.
-
-When you edit properties in the editor, be careful as all modified objects will not be saved. In fact, all sounds, materials, lights, cameras and geometries coming from the modeler (3ds Max, Blender) will not be saved by the editor as all these objects can be modified in the modeler's properties directly.
-
+Example saving on OneDrive:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dEZ834dv22Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-# Exporting a template
+## Exporting a project template
 
 Exporting a project template means that it is your final step using the Babylon.js Editor. For instance, you worked with the editor to develop, design and/or configure your final project using the editor's tools.
 Once you are ready to finalize your project, you can export a template using ***Project -> Export Template...**.
@@ -133,3 +135,14 @@ Of course, you can ommit all the generated files (except the `scene` folder) and
 The `babylonjs-editor` contains 2 versions:
 * `node_modules/babylonjs-editor/dist/editor.extensions.js`: commonjs module importable using requirejs, systemjs etc. like done in the example above
 * `node_modules/babylonjs-editor/dist/editor.extensions.standalone.js`: global module writing a `EditorExtensions` variable in the `window`. Like `BABYLON` does. So you can type `EditorExtensions.Extensions.Apply(scene, data);`.
+
+## Exporting only the final scene
+I case of you would prefer to manage yourself your project architecture, the Editor allows to export only the final scene files. That means you can export ONLY the `scene` folder content which is the same as when you export a project template.
+
+To export final scene, in the toolbar choose **Scene -> Export Final Scene And Assets**. This will open a save dialog. Choose the target directory and click **"Ok"**.
+
+![EditorExportOnlyScene](/img/extensions/Editor/GettingStarted/ExportOnlyScene.png)
+
+Then, all the files will be written in that directory.
+
+![EditorExportOnlySceneResult](/img/extensions/Editor/GettingStarted/ExportOnlySceneResult.png)
