@@ -15,6 +15,11 @@ The workflow tends to:
 * preview
 * etc. until the set fits the wanted result
 
+# Demo
+Here is a live demo using the Particle System Creator tool:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FyCGTVNchQU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Creating a new set
 To add a new set you'll edit using the **Particle System Creator** tool, you first have to add a new set in the assets library.
 In the assets panel, a tab named **Particles** shows you all the available particle system sets in the current project.
@@ -109,5 +114,11 @@ Example with the explosion preset: [https://www.babylonjs-playground.com/#X37LS1
 
 ![ExplosionPreset](/img/extensions/Editor/CreatingParticleSystemSet/ExplosionPreset.png)
 
-# Demo
+# Adding a set to the current scene
+Once the set is finalized, you can instantiate the set in the scene.
+To instantiate a set in the scene, just drag'n'drop the asset from the assets panel to the scene preview. The set will be created with:
+* An empty mesh containing all the particle systems. The mesh will have the set's name.
+* All particle systems as children of the empty mesh.
+
+**Note: editing a set using the tool will not edit the systems already instanced in the scene.**
 
