@@ -8,7 +8,7 @@ You can find an example of the motion blur post-process in our playground: [http
 # Creating the motion blur post-process
 
 You just have to create an instance of BABYLON.MotionBlurPostProcess
-```
+```javascript
 var motionblur = new BABYLON.MotionBlurPostProcess(
     "mb", // The name of the effect.
     scene, // The scene containing the objects to blur according to their velocity.
@@ -24,15 +24,28 @@ The blur is based on objects velocities. More the object's transformation is cha
 
 # Customizing
 By default, the post-process will blur the scene using a coefficient named `motionStrength`. Its default value is equal to `1` and can be customized:
-```
+```javascript
 motionblur.motionStrength = 2; // double the blur effect
 ```
 Example: [https://www.babylonjs-playground.com/#9LRA3T#10](https://www.babylonjs-playground.com/#9LRA3T#10)
 
 For performances/quality reason, you can also customize the blur quality. To blur an image, the effect
 takes, for the current pixel, some samples around the current pixel one. More you take samples, more the quality of the blur is high. So, you can customize the number of samples using the property `motionBlurSamples`. Its default value is equal to `32`:
-```
+```javascript
 motionblur.motionBlurSamples = 16; // divide quality by 2
+```
+
+# Optimizing your application
+By default, the post-process will blur all objects that generate a velocity (position, rotation and scale). This includes also skinned meshes animated by its bones.
+Sometimes, complex skinned meshes can have too much bones and can generate a drop in framerate. You can decide to exclude a skinned mesh from bones computation while rendering the velocity map and apply blur only on their position/rotation/scale variation. The `MotionBlurPostProcess` provides an helper to add and remove skinned meshes:
+```javascript
+// Now, the mesh "mySkinnedMesh" will not compute bones velocities and will save performances.
+motionblur.excludeSkinnedMesh(mySkinnedMesh);
+```
+
+```javascript
+// Previously excluded, the mesh "mySkinnedMesh" will now compute bones velocities for a better render.
+motionblur.removeExcludedSkinnedMesh(mySkinnedMesh);
 ```
 
 # Limitations

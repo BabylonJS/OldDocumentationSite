@@ -951,7 +951,7 @@
                     "filename": "Getting_Started"
                 },
                 {
-                    "title": "Loading and Saving Scenes",
+                    "title": "Loading and Saving Project",
                     "filename": "Loading_Saving"
                 },
                 {
@@ -985,6 +985,10 @@
                 {
                     "title": "Editing Prefabs",
                     "filename": "Editing_Prefabs"
+                },
+                {
+                    "title": "Creating custom particle system sets",
+                    "filename": "Using_ParticleSystemEditor"
                 }
             ]
         },
