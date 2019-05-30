@@ -985,6 +985,10 @@
                 {
                     "title": "Editing Prefabs",
                     "filename": "Editing_Prefabs"
+                },
+                {
+                    "title": "Creating custom particle system sets",
+                    "filename": "Using_ParticleSystemEditor"
                 }
             ]
         },
