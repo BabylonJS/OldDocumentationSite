@@ -349,7 +349,7 @@ pbr.clearCoat.roughness = 0.15;
 
 Finally, you can play with the Index of Refraction of the coating to change the fresnel effect applied to the environment. The default configuration represents a polyurethane layer:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#49)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#50)
 ```javascript
 pbr.clearCoat.isTintEnabled = true;
 pbr.clearCoat.indexOfRefraction = 2;
