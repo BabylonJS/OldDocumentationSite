@@ -342,17 +342,17 @@ pbr.clearCoat.tintThickness = 1.5;
 
 By default the clear coat is fully glossy. Yet, you can define a special roughness value for the coating simulating for instance a used coating:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#9)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#31)
 ```javascript
 pbr.clearCoat.roughness = 0.15;
 ```
 
 Finally, you can play with the Index of Refraction of the coating to change the fresnel effect applied to the environment. The default configuration represents a polyurethane layer:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#31)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#49)
 ```javascript
 pbr.clearCoat.isTintEnabled = true;
-pbr.clearCoat.indiceOfRefraction = 2;
+pbr.clearCoat.indexOfRefraction = 2;
 ```
 
 All of the configuration here can also for convenience be stored in textures:
