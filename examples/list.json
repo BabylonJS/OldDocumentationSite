@@ -923,7 +923,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/reflect#cubetexture",
                     "icon": "icons/local_cubemap.jpg",
                     "description": "Improve cubemaps with local mode",
-                    "PGID": "#RNASML#4"
+                    "PGID": "#RNASML#37"
                 },
                 {
                     "title": "Starfield procedural texture",
