@@ -27,7 +27,7 @@ The playground below shows that face numbering using `MeshBuilder.CreateBox` is 
 
 ## Texture Atlas
 
-A texture atlas also know as a _sprite sheet_ or _sprite atlas_ contains a range of images as in the example below.
+A texture atlas also known as a _sprite sheet_ or _sprite atlas_ contains a range of images as in the example below.
 
 ![Sprite Altlas](http://jerome.bousquie.fr/BJS/images/spriteAtlas.png)
 
