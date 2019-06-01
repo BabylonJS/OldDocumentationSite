@@ -715,7 +715,7 @@
                     "doc": "https://doc.babylonjs.com/api/classes/babylon.convolutionpostprocess",
                     "icon": "icons/convolution.jpg",
                     "description": "Apply emboss filter to the scene using the ConvolutionPostProcess",
-                    "PGID": "#B0RH9H#0"
+                    "PGID": "#B0RH9H#1"
                 },
                 {
                     "title": "Lens flares",
