@@ -958,7 +958,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/more_materials#bump-map",
                     "icon": "icons/bump.jpg",
                     "description": "Use normal map to simulate bump",
-                    "PGID": "#RK0W5S#0"
+                    "PGID": "#RK0W5S#30"
                 },
                 {
                     "title": "Image texture",
