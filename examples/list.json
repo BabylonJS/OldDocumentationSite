@@ -951,7 +951,7 @@
                     "doc": "https://doc.babylonjs.com/api/classes/babylon.rendertargettexture",
                     "icon": "icons/custom_rendertarget.jpg",
                     "description": "Use render target textures to generate procedural data",
-                    "PGID": "#CJWDJR#0"
+                    "PGID": "#CJWDJR#1"
                 },
                 {
                     "title": "Bump texture",
