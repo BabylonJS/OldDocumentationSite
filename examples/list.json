@@ -834,7 +834,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_reflection_probes",
                     "icon": "icons/refraction.jpg",
                     "description": "use reflection probes to simulate realtime refraction",
-                    "PGID": "#RRYXWN#0"
+                    "PGID": "#RRYXWN#1"
                 },
                 {
                     "title": "Realtime reflection",
