@@ -22,6 +22,24 @@ Then, extract the content of the zip file on your computer, and open the directo
 
 Congratulations! You did it!
 
+# Dependencies #
+## Visual Studio
+Visual Studio is required to build the Max2Babylon project from source.
+
+## .NET Framework
+The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers) needs to be installed in order to run the Max2Babylon plugin properly.
+* Max2Babylon 2015-2016
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2017
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2018
+   * Requires atleast .NET Framework 4.6
+
+* Max2Babylon 2019
+   * Requires atleast .NET Framework 4.7
+
 # Features  #
 
 ## Exported features
