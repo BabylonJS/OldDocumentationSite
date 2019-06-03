@@ -18,8 +18,8 @@ Also, when an update is available (new features, bug fixes), you'll get notified
 **Note: in some cases, updating the desktop application can fail, you'll have to re-run the installer to finalize the installation**
 
 Downloading:
-* Windows: [http://editor.babylonjs.com/BabylonJS Editor.exe](http://editor.babylonjs.com/BabylonJS Editor.exe)
-* Mac OS X: [http://editor.babylonjs.com/BabylonJS Editor.dmg](http://editor.babylonjs.com/BabylonJS Editor.dmg)
+* Windows: [http://editor.babylonjs.com/BabylonJS Editor.exe](http://editor.babylonjs.com/download/win32.html)
+* Mac OS X: [http://editor.babylonjs.com/BabylonJS Editor.dmg](http://editor.babylonjs.com/download/osx.html)
 * Linux: [http://editor.babylonjs.com/BabylonJS Editor.zip](http://editor.babylonjs.com/BabylonJS%20Editor.zip)
 
 # Project example

@@ -66,7 +66,7 @@ You can also watch your code:
 npm run watch
 ```
 
-In `scr` folder you'll find the given file `game.ts` (typescript, comments below):
+In `src` folder you'll find the given file `game.ts` (typescript, comments below):
 ```javascript
 import { Engine, Scene, SceneLoader, Tools } from 'babylonjs';
 
@@ -129,6 +129,25 @@ export default class Game {
         });
     }
 }
+```
+
+**Important: in case of you are exporting your scene using GLTF or GLB, don't forget to import the `babylonjs-loaders` package in your project:**
+```javascript
+import { Engine, Scene, SceneLoader, Tools } from 'babylonjs';
+import 'babylonjs-loaders';
+
+/**
+ * In the package.json file, we reference the "babylonjs-editor" package
+ */
+import { Extensions } from 'babylonjs-editor';
+
+export default class Game {
+    /**
+     * The custom engine we are creating in the constructor
+     */
+    public engine: Engine;
+
+    ...
 ```
 
 Of course, you can ommit all the generated files (except the `scene` folder) and add the "babylonjs-editor" dependency to your main project and import `Extensions` where you want. The file `game.ts` is just an example.
