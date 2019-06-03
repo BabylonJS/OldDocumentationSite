@@ -22,6 +22,18 @@ Check _Loaded_ and _Auto load_, and a new tab should appear:
 
 Congratulations! You did it!
 
+# Dependencies #
+## Visual Studio
+Visual Studio is required to build the Maya2Babylon project from source.
+
+## .NET Framework
+The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers) needs to be installed in order to run the Maya2Babylon plugin properly.
+* Maya2Babylon 2017-2018
+   * Requires atleast .NET Framework 4.6.1
+
+* Max2Babylon 2019
+   * Requires atleast .NET Framework 4.6.1
+
 # Features  #
 
 ## Exported features
