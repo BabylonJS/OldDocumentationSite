@@ -283,7 +283,7 @@ When resizeToFit is set to true, the width and height of the rendered text will 
 
 This property allows you to change the text and font of a TextBlock without having to worry about manually setting the estimated rendered width and height.
 
-**Notice that textWrapping is ignored when resizeToFit is set to true.** It doesn't make sense logically for both properties to be used at the same time as they contradict each other.
+**Warning** When resizeToFit and textWrapping are both set to true the width of the block will not be resized to fit the text, however the height will be. This means that, depending on the font size, parts of the text on each line may be missing and the width of the block may need to be changed manually.
 
 
 ### InputText
