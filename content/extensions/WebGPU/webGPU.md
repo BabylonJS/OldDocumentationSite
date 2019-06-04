@@ -28,6 +28,8 @@ We currently only support a really small subsets of what Babylon.js can do:
 
 This is not much you would say, but it means we have layered all the ground foundation to move forward :-)
 
+You can also follow our progress on out [Github dedicated issue](https://github.com/BabylonJS/Babylon.js/issues/6443).
+
 ## How ?
 The current implementation status is fully available on [Github](https://github.com/BabylonJS/Babylon.js/tree/WebGPU).
 
