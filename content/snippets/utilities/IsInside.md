@@ -130,5 +130,6 @@ Generate random points in a volume around a twelve pointed star mesh. Place a sp
 
 # Further Reading
 
-[How To Create Points Inside a Mesh](/snippets/innerMeshPoints)
+[How To Create Points Inside a Mesh](/snippets/innerMeshPoints)  
+[How To Create Points on a Mesh Surface](/snippets/SurfaceMeshPoints)  
 

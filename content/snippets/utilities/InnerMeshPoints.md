@@ -195,4 +195,5 @@ BABYLON.Mesh.prototype.createInnerPoints = function(pointsNb) {
 
 # Further Reading
 
+[How To Create Points on a Mesh Surface](/snippets/SurfaceMeshPoints)  
 [How To Check When Point is Inside a Mesh](/snippets/isInside)

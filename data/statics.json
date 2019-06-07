@@ -1791,6 +1791,10 @@
                     "filename": "InnerMeshPoints"
                 },
                 {
+                    "title": "Create Points on the Mesh Surface",
+                    "filename": "SurfaceMeshPoints"
+                },
+                {
                     "title": "Deconstruct Mesh",
                     "filename": "Deconstruct_Mesh"
                 }
