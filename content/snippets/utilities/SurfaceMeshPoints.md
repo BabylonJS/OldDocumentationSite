@@ -41,16 +41,11 @@ Set the density for the points and generate the points and store and return them
 
 ```javascript
 BABYLON.Mesh.prototype.createSurfacePoints = function(pointDensity) {
-	var boundInfo = this.getBoundingInfo();
-	var diameter = 2 * boundInfo.boundingSphere.radius;
-	this.updateFacetData();
-
 	var positions = this.getVerticesData(BABYLON.VertexBuffer.PositionKind);
 	var indices = this.getIndices();
 	
 	var point = BABYLON.Vector3.Zero();
 	var points = [];
-	//var directions = [];
 	
 	var randX = 0;
 	var randY = 0;
@@ -123,7 +118,7 @@ BABYLON.Mesh.prototype.createSurfacePoints = function(pointDensity) {
 }
 ```
 
-* [Playground Example - Points on the Surface of a Cylinder](https://www.babylonjs-playground.com/#NFSGWT#1)
+* [Playground Example - Points on the Surface of a Cylinder](https://www.babylonjs-playground.com/#NFSGWT#2)
 
 # Further Reading
 
