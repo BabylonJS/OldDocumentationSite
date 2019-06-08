@@ -973,6 +973,13 @@
                     "icon": "icons/video_texture.jpg",
                     "description": "Apply a video as a texture to a mesh",
                     "PGID": "#CHQ4T#120"
+                },
+                {
+                    "title": "Basis texture loading",
+                    "doc": "https://doc.babylonjs.com/resources/Multi-Platform_Compressed_Textures",
+                    "icon": "icons/basis.jpg",
+                    "description": "Load a basis texture",
+                    "PGID": "#4RN0VF#0"
                 }
             ]
         },
