@@ -53,7 +53,7 @@ For _CreateLines_ the options are
 
 option|value|default value
 --------|-----|-------------
-points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED**
+points|_(Vector3[])_  array of Vector3, the path of the line **REQUIRED** |
 updatable|_(boolean)_ true if the mesh is updatable|false
 instance|_(LineMesh)_ an instance of a line mesh to be updated|null
 colors|_(Color4[])_ array of Color4, each point color|null
