@@ -300,6 +300,8 @@ Babylon supports PNG, DDS and TGA formats for texture transparency. You can choo
 
 ![texture](/img/exporters/3DSMax/11_texture.jpg)
 
+**Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
+
 ## Unlit material
 
 A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
