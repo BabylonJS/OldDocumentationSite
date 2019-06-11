@@ -67,6 +67,7 @@ Marble/marbleTower/marbleTower.gltf | 2.60 MB | ![MarbleTower](/img/resources/me
 seagulf.glb | 934 KB | ![seagull](/img/resources/meshes/seagull.png) | [Playground](https://www.babylonjs-playground.com/#8LFTCH#3)
 shaderBall.glb | 3.95 MB | ![shaderBall](/img/resources/meshes/shaderBall.jpg) | [Playground](https://www.babylonjs-playground.com/#2UPLBH)
 PBR_Spheres.glb | 3.38 Mo | ![PBR_Spheres](/img/resources/meshes/PBR_Spheres.png) | [Playground](https://www.babylonjs-playground.com/#ISZ7Y2#3)
+shaderBall/BabylonShaderBall_Simple.gltf | 1.86 MB | ![BabylonShaderBall_Simple](/img/resources/meshes/BabylonShaderBall_Simple.jpg) | [Playground](https://playground.babylonjs.com/#AE8AA3)
 shark.glb | 14.7 MB | ![shark](/img/resources/meshes/shark.png) | [Playground](https://www.babylonjs-playground.com/#ISZ7Y2)
 Skull/skull.babylon | 3.94 MB | ![skull](/img/resources/meshes/skull.png) | [Playground](https://www.babylonjs-playground.com/#VV935G#3)
 solar_system.glb | 3.94 MB | ![solar system](/img/resources/meshes/solar_system.png) | [Playground](https://www.babylonjs-playground.com/#KILIHT)
