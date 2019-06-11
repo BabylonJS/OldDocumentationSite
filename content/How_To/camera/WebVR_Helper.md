@@ -27,6 +27,23 @@ This will initialize a WebVR camera and a non-WebVR camera in the scene. It will
 - createDeviceOrientationCamera(default: true): If the non-WebVR camera should be created. To use an existing camera, create it and then initialize the helper with this set to false in the constructor.
 - createFallbackVRDeviceOrientationFreeCamera(default: true): When no HMD is connected, this flag specifies if the VR camera should fallback to a VRDeviceOrientationFreeCamera which will render each eye on the screen. This can be set to false to only enable entering VR if an HMD is connected.
 
+## Detect if fallback orientation camera is supported
+If a webVR capable device is not detected Babylon will fallback to using a vrDeviceOrientationCamera however device orientation will only be available if the device has an orientation sensor available. In the latest version of Safari, the orientation sensor is disabled by default and it does not prompt users to enable it in settings so currently this must be done by the app. See https://www.applemust.com/how-and-why-to-use-motion-orientation-settings-in-ios/
+
+```javascript
+vrHelper.onAfterEnteringVRObservable.add(()=>{
+    if(scene.activeCamera === vrHelper.vrDeviceOrientationCamera){
+        BABYLON.FreeCameraDeviceOrientationInput.WaitForOrientationChangeAsync(1000).then(()=>{
+            // Successfully received sensor input
+        }).catch(()=>{
+            alert("Device orientation camera is being used but no sensor is found, prompt user to enable in safari settings");
+        })
+    }
+})
+```
+See https://playground.babylonjs.com/#TAFSN0#230
+
+
 ## Teleportation and Rotation
 
 To enable teleportation in the scene, create a mesh that the user should be able to teleport to and then enable teleportation with that mesh's name.
