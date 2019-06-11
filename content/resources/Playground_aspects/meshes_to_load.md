@@ -72,6 +72,7 @@ Skull/skull.babylon | 3.94 MB | ![skull](/img/resources/meshes/skull.png) | [Pla
 solar_system.glb | 3.94 MB | ![solar system](/img/resources/meshes/solar_system.png) | [Playground](https://www.babylonjs-playground.com/#KILIHT)
 toast_acrobatics.glb | 7.45 MB | ![toast acrobatics](/img/resources/meshes/toast_acrobatics.png) | [Playground](https://www.babylonjs-playground.com/#KM2N07)
 TrailMeshSpell/spellDisk.glb<br>TrailMeshSpell/pinkEnergyBall.glb<br>TrailMeshSpell/greenEnergyBall.glb<br>TrailMeshSpell/yellowEnergyBall.glb | 2.37 MB<br>2.41 MB<br>4.45 MB<br>2.22 MB | ![TrailMeshSpell](/img/resources/meshes/TrailMeshSpell.jpg) | [Playground](https://www.babylonjs-playground.com/#AAP917#1)
+vintageFan_animated.gltf | 3.43 MB | ![vintageFan_animated](/img/resources/meshes/vintageFan_animated.jpg) | [Playground](https://www.babylonjs-playground.com/#YBEKDT)
 ufo.glb | 17 MB | ![ufo](/img/resources/meshes/ufo.png) | [Playground](https://www.babylonjs-playground.com/#058SEW#4)
 
 ## Finding Camera Values
