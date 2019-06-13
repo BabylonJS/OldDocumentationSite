@@ -342,17 +342,17 @@ pbr.clearCoat.tintThickness = 1.5;
 
 By default the clear coat is fully glossy. Yet, you can define a special roughness value for the coating simulating for instance a used coating:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#9)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#31)
 ```javascript
 pbr.clearCoat.roughness = 0.15;
 ```
 
 Finally, you can play with the Index of Refraction of the coating to change the fresnel effect applied to the environment. The default configuration represents a polyurethane layer:
 
-[Demo](https://www.babylonjs-playground.com/#FEEK7G#31)
+[Demo](https://www.babylonjs-playground.com/#FEEK7G#50)
 ```javascript
 pbr.clearCoat.isTintEnabled = true;
-pbr.clearCoat.indiceOfRefraction = 2;
+pbr.clearCoat.indexOfRefraction = 2;
 ```
 
 All of the configuration here can also for convenience be stored in textures:
@@ -568,6 +568,18 @@ Here is how the difference looks like in live (toggle the Spherical Harmonics sw
 [Demo](https://www.babylonjs-playground.com/#FEEK7G#38)
 
 If you want to hear the full story behind it, you can have a read at our blog post : [A tale of a bug](https://medium.com/@babylonjs/a-tale-of-a-bug-ce7e84467800).
+
+### Irradiance Map
+In some special cases where the environment texture is highly dynamic (like a bright sun having a really high exposure value), the spherical representation of the diffuse IBL might not be enough. Actually, we are for performance reasons limiting the representation to the first 3 bands. A highly dynamic texture can not be represented through 3 bands only. In this case you can rely on a texture instead of a spherical representation.
+
+In order to rely on a texture, you can set the `irradianceTexture` field of your `environmentTexture` as follow:
+
+```javascript
+    scene.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("specular.dds", scene);
+    scene.environmentTexture.irradianceTexture = new BABYLON.CubeTexture("irradiance.dds", scene);
+```
+
+Please, note that both textures should have the same properties: Cube vs 2D, Gamma vs Linear, RGBD or the chosen coordinates mode. Those properties do not need to be set on the main `environmentTexture` to prevent redundancy.
 
 ### Energy Conservation
 As we knew from the beginning, our PBR lighting model was not energy conservative, thanks to a lot of new white papers on this area, we have been able to introduce a way to embrace energy conservation in real time. This basically means that your rough metallic models will look brighter and closer from what nature does.

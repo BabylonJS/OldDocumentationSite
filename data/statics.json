@@ -951,8 +951,8 @@
                     "filename": "Getting_Started"
                 },
                 {
-                    "title": "Loading and Saving Scenes",
-                    "filename": "Loading_Saving"
+                    "title": "Explaining the Workflow",
+                    "filename": "Explaining_Workflow"
                 },
                 {
                     "title": "Adding Textures",
@@ -985,6 +985,10 @@
                 {
                     "title": "Editing Prefabs",
                     "filename": "Editing_Prefabs"
+                },
+                {
+                    "title": "Creating custom particle system sets",
+                    "filename": "Using_ParticleSystemEditor"
                 }
             ]
         },
@@ -1785,6 +1789,10 @@
                 {
                     "title": "Create Points Inside a Mesh",
                     "filename": "InnerMeshPoints"
+                },
+                {
+                    "title": "Create Points on the Mesh Surface",
+                    "filename": "SurfaceMeshPoints"
                 },
                 {
                     "title": "Deconstruct Mesh",

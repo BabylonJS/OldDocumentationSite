@@ -97,13 +97,7 @@ Obviously, as usual, try to stay reasonable with kernel size as it will impact t
 Apply a kernel matrix to every pixel:
 
 ```javascript
-var sepiaKernelMatrix = BABYLON.Matrix.FromValues(
-                    0.393, 0.349, 0.272, 0,
-                    0.769, 0.686, 0.534, 0,
-                    0.189, 0.168, 0.131, 0,
-                    0, 0, 0, 0
-                );
-var postProcess = new BABYLON.ConvolutionPostProcess("Sepia", sepiaKernelMatrix, 1.0, camera);
+var postProcess = new BABYLON.ConvolutionPostProcess("Sepia", BABYLON.ConvolutionPostProcess.EmbossKernel, 1.0, camera);
 ```
 
 ### FXAA

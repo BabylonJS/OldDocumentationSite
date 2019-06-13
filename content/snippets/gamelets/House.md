@@ -258,7 +258,7 @@ wall 6 - doorSpace door, left 1
 
 Applying the plan leads to
 
-* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#99)
+* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#272)
 
 # Further Reading
 

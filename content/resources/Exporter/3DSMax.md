@@ -22,6 +22,24 @@ Then, extract the content of the zip file on your computer, and open the directo
 
 Congratulations! You did it!
 
+# Dependencies #
+## Visual Studio
+Visual Studio is required to build the Max2Babylon project from source.
+
+## .NET Framework
+The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers) needs to be installed in order to run the Max2Babylon plugin properly.
+* Max2Babylon 2015-2016
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2017
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2018
+   * Requires atleast .NET Framework 4.6
+
+* Max2Babylon 2019
+   * Requires atleast .NET Framework 4.7
+
 # Features  #
 
 ## Exported features
@@ -281,6 +299,8 @@ The handling of the directX shader material is mimic from glTF format. [Detailed
 Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 
 
 ![texture](/img/exporters/3DSMax/11_texture.jpg)
+
+**Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
 
 ## Unlit material
 
