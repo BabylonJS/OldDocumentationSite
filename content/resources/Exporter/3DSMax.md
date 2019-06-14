@@ -99,6 +99,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Fresnel for diffuse, emissive, opacity and reflection
     * Physical materials (PBR)
     * Standard Surface Arnold material
+    * Coating (Standard Surface Arnold only)
     * Unlit attribute
 
 * _Textures_
@@ -285,6 +286,16 @@ The handling of physical materials is mimic from glTF format. [Detailed explanat
 ## Arnold materials
 
 The handling of arnold materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#standard-surface-arnold-material)
+
+As well as the default supported GLTF parameters, in Babylon format, we support the coating parameters of the material. You can see below the supported parameters:
+
+![texture](/img/exporters/3DSMax/Coating.png)
+
+Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In 3DS MAX, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
+
+In Babylon format, weight is stored in red channel, roughness in green.
+
+The roughness of the coating can be inverted to mean Glossiness - this is controlled by the same parameter than the roughness map.
 
 ## Shell material
 
