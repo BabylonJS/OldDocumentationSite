@@ -151,6 +151,14 @@ Note that the exporter also supports textures with tif and dds formats. But, tho
 
 The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/Maya_to_glTF#pbr-materials)
 
+As well as the default supported GLTF parameters, in Babylon format, we support the coating parameters of Arnold Standard Surface. You can see below the supported parameters:
+
+![texture](/img/exporters/Maya/Coating.png)
+
+Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In 3DS MAX, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
+
+In Babylon format, weight is stored in red channel, roughness in green.
+
 ## UV sets
 
 Babylon engine supports only 2 UV sets. In Maya the first UV set, created by default (map1), is used as UV1 in Babylon. The second UV set (map2) is used as UV2. Other UV sets are ignored and UV2 is used instead.
