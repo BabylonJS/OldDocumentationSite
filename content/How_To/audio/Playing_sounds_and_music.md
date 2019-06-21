@@ -113,7 +113,7 @@ BABYLON.Engine.audioEngine.setGlobalVolume(0.5);
 
 ## Playing a sound sprite
 
-A sound sprite is a portion of a sound file. You can define a sound sprite when creating a sound by defining an offset and a length (in milliseconds):
+A sound sprite is a portion of a sound file. You can define a sound sprite when creating a sound by defining an offset and a length (in seconds):
 
 ```
 var soundSprite = new BABYLON.Sound("Violons", "/sounds/6sounds.mp3", scene, null, { loop: true, autoplay: true, length: 9200, offset: 14000 });
