@@ -3,6 +3,7 @@ node_modules
 .svn
 .tmp
 log/exceptions.log
+.DS_Store
 
 # tmp and examples files from 3D softwares
 .blend1
