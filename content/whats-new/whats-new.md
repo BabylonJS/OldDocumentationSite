@@ -1,4 +1,6 @@
-# 4.0.0
+# 4.0.0 (May 1st 2019)
+
+Associated release: https://github.com/BabylonJS/Babylon.js/releases/tag/4.0.3
 
 ## Major updates
 
