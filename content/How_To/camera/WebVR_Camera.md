@@ -261,7 +261,7 @@ controller.attachToMesh(mesh);
 
 Note that this will create a new quaternion to the mesh .
 
-The default controller mesh can be disappeared by the following code.
+The default controller mesh can be hidden with the following code.
 
 ```javascript
  scene.createDefaultVRExperience({controllerMeshes:true});
