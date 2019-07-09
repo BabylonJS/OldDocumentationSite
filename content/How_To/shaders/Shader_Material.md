@@ -12,16 +12,14 @@ It is called by
 var myShaderMaterial = new BABYLON.ShaderMaterial(name, scene, route, options);
 ```
 
-- name: a string, naming the shader
-
-- scene: the scene in which the shader is to be used 
-
-- route: the route to the shader code in one of three ways:
+- `name`: a string, naming the shader
+- `scene`: the scene in which the shader is to be used
+- `route`: the route to the shader code in one of three ways:
     1. object: `{ vertex: "custom", fragment: "custom" }`, used with `BABYLON.Effect.ShadersStore["customVertexShader"]` and `BABYLON.Effect.ShadersStore["customFragmentShader"]`
     2. object: `{ vertexElement: "vertexShaderCode", fragmentElement: "fragmentShaderCode" }`, used with shader code in `<script>` tags  
     3. string: `"./COMMON_NAME"`, used with external files *COMMON\_NAME.vertex.fx* and *COMMON\_NAME.fragment.fx* in *index.html* folder.
 
-- options: object containing attributes and uniforms arrays containing their names as strings.
+- `options`: object containing attributes and uniforms arrays containing their names as strings.
 
 An example:
 

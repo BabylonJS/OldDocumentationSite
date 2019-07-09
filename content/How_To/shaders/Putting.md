@@ -203,5 +203,5 @@ function before it can be called.
 
 # Further Reading
 
-[Introduction To Shaders in BabylonJS](/advanced/Overview.html)  
-[ShaderMaterial Object](/advanced/Shader_Material.html)
+[Introduction to Shaders in BabylonJS](/resources/shaderintro)  
+[ShaderMaterial Object](/how_to/shader_material)
