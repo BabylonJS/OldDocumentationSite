@@ -111,6 +111,16 @@ Rather than setting the volume on a specific sound, you can also set the global 
 BABYLON.Engine.audioEngine.setGlobalVolume(0.5);
 ```
 
+## Playing a sound sprite
+
+A sound sprite is a portion of a sound file. You can define a sound sprite when creating a sound by defining an offset and a length (in seconds):
+
+```
+var soundSprite = new BABYLON.Sound("Violons", "/sounds/6sounds.mp3", scene, null, { loop: true, autoplay: true, length: 9200, offset: 14000 });
+```
+
+You can find an example here: https://www.babylonjs-playground.com/#6LXPBX
+
 ## Playing several sounds simultaneously and synchronized
 
 For that, you need to call the play method on all sounds only once you’re sure they are all ready to be played. You then need to work with the ready to play callback.

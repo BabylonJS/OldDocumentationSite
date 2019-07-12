@@ -168,6 +168,7 @@ You can set it up to an array of `IInspectable` which are defined by:
   - BABYLON.InspectableType.Color3
   - BABYLON.InspectableType.Vector3
   - BABYLON.InspectableType.Quaternion
+  - BABYLON.InspectableType.String
 - For sliders, you can specify `min`, `max` and `step`
 
 

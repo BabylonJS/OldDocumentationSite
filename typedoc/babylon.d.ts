@@ -4353,6 +4353,10 @@ declare module BABYLON {
         private _eventState;
         private _onObserverAdded;
         /**
+         * Gets the list of observers
+         */
+        readonly observers: Array<Observer<T>>;
+        /**
          * Creates a new observable
          * @param onObserverAdded defines a callback to call when a new observer is added
          */
@@ -5026,7 +5030,7 @@ declare module BABYLON {
         /**
          * Add callback functions in this array to update all the requests before they get sent to the network
          */
-        static CustomRequestModifiers: ((request: XMLHttpRequest) => void)[];
+        static CustomRequestModifiers: ((request: XMLHttpRequest, url: string) => void)[];
         private _injectCustomRequestHeaders;
         /**
          * Gets or sets a function to be called when loading progress changes
@@ -6694,7 +6698,7 @@ declare module BABYLON {
          */
         easeInCore(gradient: number): number;
         /**
-         * Given an input gradient between 0 and 1, this returns the corrseponding value
+         * Given an input gradient between 0 and 1, this returns the corresponding value
          * of the easing function.
          * @param gradient Defines the value between 0 and 1 we want the easing value for
          * @returns the corresponding value on the curve defined by the easing function
@@ -7338,9 +7342,9 @@ declare module BABYLON {
         /** @hidden */
         _canDoCollision(sphereCenter: Vector3, sphereRadius: number, vecMin: Vector3, vecMax: Vector3): boolean;
         /** @hidden */
-        _testTriangle(faceIndex: number, trianglePlaneArray: Array<Plane>, p1: Vector3, p2: Vector3, p3: Vector3, hasMaterial: boolean): void;
+        _testTriangle(faceIndex: number, trianglePlaneArray: Array<Plane>, p1: Vector3, p2: Vector3, p3: Vector3, hasMaterial: boolean, hostMesh: AbstractMesh): void;
         /** @hidden */
-        _collide(trianglePlaneArray: Array<Plane>, pts: Vector3[], indices: IndicesArray, indexStart: number, indexEnd: number, decal: number, hasMaterial: boolean): void;
+        _collide(trianglePlaneArray: Array<Plane>, pts: Vector3[], indices: IndicesArray, indexStart: number, indexEnd: number, decal: number, hasMaterial: boolean, hostMesh: AbstractMesh): void;
         /** @hidden */
         _getResponse(pos: Vector3, vel: Vector3): void;
     }
@@ -7590,7 +7594,11 @@ declare module BABYLON {
         /**
          * Color3
          */
-        Color3 = 4
+        Color3 = 4,
+        /**
+         * String
+         */
+        String = 5
     }
     /**
      * Interface used to define custom inspectable properties.
@@ -7986,7 +7994,6 @@ declare module BABYLON {
         _computeLocalCameraSpeed(): number;
         /**
          * Defines the target the camera should look at.
-         * This will automatically adapt alpha beta and radius to fit within the new target.
          * @param target Defines the new target as a Vector or a mesh
          */
         setTarget(target: Vector3): void;
@@ -10009,7 +10016,7 @@ declare module BABYLON {
         private _useTextureToStoreBoneMatrices;
         /**
          * Gets or sets a boolean indicating that bone matrices should be stored as a texture instead of using shader uniforms (default is true).
-         * Please note that this option is not available when needInitialSkinMatrix === true or if the hardware does not support it
+         * Please note that this option is not available if the hardware does not support it
          */
         useTextureToStoreBoneMatrices: boolean;
         private _animationPropertiesOverride;
@@ -10063,9 +10070,10 @@ declare module BABYLON {
         getTransformMatrices(mesh: AbstractMesh): Float32Array;
         /**
          * Gets the list of transform matrices to send to shaders inside a texture (one matrix per bone)
+         * @param mesh defines the mesh to use to get the root matrix (if needInitialSkinMatrix === true)
          * @returns a raw texture containing the data
          */
-        getTransformMatrixTexture(): Nullable<RawTexture>;
+        getTransformMatrixTexture(mesh: AbstractMesh): Nullable<RawTexture>;
         /**
          * Gets the current hosting scene
          * @returns a scene object
@@ -10208,6 +10216,7 @@ declare module BABYLON {
         private _positions;
         private _normals;
         private _tangents;
+        private _uvs;
         private _influence;
         /**
          * Observable raised when the influence changes
@@ -10250,6 +10259,10 @@ declare module BABYLON {
          */
         readonly hasTangents: boolean;
         /**
+         * Gets a boolean defining if the target contains texture coordinates data
+         */
+        readonly hasUVs: boolean;
+        /**
          * Affects position data to this target
          * @param data defines the position data to use
          */
@@ -10279,6 +10292,16 @@ declare module BABYLON {
          * @returns a FloatArray containing the tangent data (or null if not present)
          */
         getTangents(): Nullable<FloatArray>;
+        /**
+         * Affects texture coordinates data to this target
+         * @param data defines the texture coordinates data to use
+         */
+        setUVs(data: Nullable<FloatArray>): void;
+        /**
+         * Gets the texture coordinates data stored in this target
+         * @returns a FloatArray containing the texture coordinates data (or null if not present)
+         */
+        getUVs(): Nullable<FloatArray>;
         /**
          * Serializes the current target into a Serialization object
          * @returns the serialized object
@@ -10319,9 +10342,22 @@ declare module BABYLON {
         private _influences;
         private _supportsNormals;
         private _supportsTangents;
+        private _supportsUVs;
         private _vertexCount;
         private _uniqueId;
         private _tempInfluences;
+        /**
+         * Gets or sets a boolean indicating if normals must be morphed
+         */
+        enableNormalMorphing: boolean;
+        /**
+         * Gets or sets a boolean indicating if tangents must be morphed
+         */
+        enableTangentMorphing: boolean;
+        /**
+         * Gets or sets a boolean indicating if UV must be morphed
+         */
+        enableUVMorphing: boolean;
         /**
          * Creates a new MorphTargetManager
          * @param scene defines the current scene
@@ -10343,6 +10379,10 @@ declare module BABYLON {
          * Gets a boolean indicating if this manager supports morphing of tangents
          */
         readonly supportsTangents: boolean;
+        /**
+         * Gets a boolean indicating if this manager supports morphing of texture coordinates
+         */
+        readonly supportsUVs: boolean;
         /**
          * Gets the number of targets stored in this manager
          */
@@ -10930,6 +10970,23 @@ declare module BABYLON {
          * Prepares the defines related to the light information passed in parameter
          * @param scene The scene we are intending to draw
          * @param mesh The mesh the effect is compiling for
+         * @param light The light the effect is compiling for
+         * @param lightIndex The index of the light
+         * @param defines The defines to update
+         * @param specularSupported Specifies whether specular is supported or not (override lights data)
+         * @param state Defines the current state regarding what is needed (normals, etc...)
+         */
+        static PrepareDefinesForLight(scene: Scene, mesh: AbstractMesh, light: Light, lightIndex: number, defines: any, specularSupported: boolean, state: {
+            needNormals: boolean;
+            needRebuild: boolean;
+            shadowEnabled: boolean;
+            specularEnabled: boolean;
+            lightmapMode: boolean;
+        }): void;
+        /**
+         * Prepares the defines related to the light information passed in parameter
+         * @param scene The scene we are intending to draw
+         * @param mesh The mesh the effect is compiling for
          * @param defines The defines to update
          * @param specularSupported Specifies whether specular is supported or not (override lights data)
          * @param maxSimultaneousLights Specfies how manuy lights can be added to the effect at max
@@ -10938,10 +10995,18 @@ declare module BABYLON {
          */
         static PrepareDefinesForLights(scene: Scene, mesh: AbstractMesh, defines: any, specularSupported: boolean, maxSimultaneousLights?: number, disableLighting?: boolean): boolean;
         /**
-         * Prepares the uniforms and samplers list to be used in the effect. This can automatically remove from the list uniforms
-         * that won t be acctive due to defines being turned off.
+         * Prepares the uniforms and samplers list to be used in the effect (for a specific light)
+         * @param lightIndex defines the light index
+         * @param uniformsList The uniform list
+         * @param samplersList The sampler list
+         * @param projectedLightTexture defines if projected texture must be used
+         * @param uniformBuffersList defines an optional list of uniform buffers
+         */
+        static PrepareUniformsAndSamplersForLight(lightIndex: number, uniformsList: string[], samplersList: string[], projectedLightTexture?: any, uniformBuffersList?: Nullable<string[]>): void;
+        /**
+         * Prepares the uniforms and samplers list to be used in the effect
          * @param uniformsListOrOptions The uniform names to prepare or an EffectCreationOptions containing the liist and extra information
-         * @param samplersList The samplers list
+         * @param samplersList The sampler list
          * @param defines The defines helping in the list generation
          * @param maxSimultaneousLights The maximum number of simultanous light allowed in the effect
          */
@@ -10955,6 +11020,14 @@ declare module BABYLON {
          * @returns The newly affected rank
          */
         static HandleFallbacksForShadows(defines: any, fallbacks: EffectFallbacks, maxSimultaneousLights?: number, rank?: number): number;
+        private static _TmpMorphInfluencers;
+        /**
+         * Prepares the list of attributes required for morph targets according to the effect defines.
+         * @param attribs The current list of supported attribs
+         * @param mesh The mesh to prepare the morph targets attributes for
+         * @param influencers The number of influencers
+         */
+        static PrepareAttributesForMorphTargetsInfluencers(attribs: string[], mesh: AbstractMesh, influencers: number): void;
         /**
          * Prepares the list of attributes required for morph targets according to the effect defines.
          * @param attribs The current list of supported attribs
@@ -10997,6 +11070,17 @@ declare module BABYLON {
          * @param lightIndex The light index in the effect used to render
          */
         static BindLightProperties(light: Light, effect: Effect, lightIndex: number): void;
+        /**
+         * Binds the lights information from the scene to the effect for the given mesh.
+         * @param light Light to bind
+         * @param lightIndex Light index
+         * @param scene The scene where the light belongs to
+         * @param mesh The mesh we are binding the information to render
+         * @param effect The effect we are binding the data to
+         * @param useSpecular Defines if specular is supported
+         * @param usePhysicalLightFalloff Specifies whether the light falloff is defined physically or not
+         */
+        static BindLight(light: Light, lightIndex: number, scene: Scene, mesh: AbstractMesh, effect: Effect, useSpecular: boolean, usePhysicalLightFalloff?: boolean): void;
         /**
          * Binds the lights information from the scene to the effect for the given mesh.
          * @param scene The scene the lights belongs to
@@ -11042,6 +11126,13 @@ declare module BABYLON {
          */
         static BindClipPlane(effect: Effect, scene: Scene): void;
     }
+}
+declare module BABYLON {
+    /** @hidden */
+    export var packingFunctions: {
+        name: string;
+        shader: string;
+    };
 }
 declare module BABYLON {
     /** @hidden */
@@ -13795,6 +13886,10 @@ declare module BABYLON {
          */
         static MeshImpostor: number;
         /**
+         * Capsule-Impostor type (Ammo.js plugin only)
+         */
+        static CapsuleImpostor: number;
+        /**
          * Cylinder-Imposter type
          */
         static CylinderImpostor: number;
@@ -15910,6 +16005,13 @@ declare module BABYLON {
          */
         intersectsPlane(plane: DeepImmutable<Plane>): Nullable<number>;
         /**
+         * Calculate the intercept of a ray on a given axis
+         * @param axis to check 'x' | 'y' | 'z'
+         * @param offset from axis interception (i.e. an offset of 1y is intercepted above ground)
+         * @returns a vector containing the coordinates where 'axis' is equal to zero (else offset), or null if there is no intercept.
+         */
+        intersectsAxis(axis: string, offset?: number): Nullable<Vector3>;
+        /**
          * Checks if ray intersects a mesh
          * @param mesh the mesh to check
          * @param fastCheck if only the bounding box should checked
@@ -17116,6 +17218,10 @@ declare module BABYLON {
      * Defines the PoseEnabledController object that contains state of a vr capable controller
      */
     export class PoseEnabledController extends Gamepad implements PoseControlled {
+        /**
+         * If the controller is used in a webXR session
+         */
+        isXR: boolean;
         private _deviceRoomPosition;
         private _deviceRoomRotationQuaternion;
         /**
@@ -18530,7 +18636,7 @@ declare module BABYLON {
          * This represents a texture in babylon. It can be easily loaded from a network, base64 or html input.
          * @see http://doc.babylonjs.com/babylon101/materials#texture
          * @param url define the url of the picture to load as a texture
-         * @param scene define the scene the texture will belong to
+         * @param scene define the scene or engine the texture will belong to
          * @param noMipmap define if the texture will require mip maps or not
          * @param invertY define if the texture needs to be inverted on the y axis during loading
          * @param samplingMode define the sampling mode we want for the texture while fectching from it (Texture.NEAREST_SAMPLINGMODE...)
@@ -18540,7 +18646,7 @@ declare module BABYLON {
          * @param deleteBuffer define if the buffer we are loading the texture from should be deleted after load
          * @param format define the format of the texture we are trying to load (Engine.TEXTUREFORMAT_RGBA...)
          */
-        constructor(url: Nullable<string>, scene: Nullable<Scene>, noMipmap?: boolean, invertY?: boolean, samplingMode?: number, onLoad?: Nullable<() => void>, onError?: Nullable<(message?: string, exception?: any) => void>, buffer?: Nullable<string | ArrayBuffer | HTMLImageElement | Blob>, deleteBuffer?: boolean, format?: number);
+        constructor(url: Nullable<string>, sceneOrEngine: Nullable<Scene | Engine>, noMipmap?: boolean, invertY?: boolean, samplingMode?: number, onLoad?: Nullable<() => void>, onError?: Nullable<(message?: string, exception?: any) => void>, buffer?: Nullable<string | ArrayBuffer | HTMLImageElement | Blob>, deleteBuffer?: boolean, format?: number);
         /**
          * Update the url (and optional buffer) of this texture if url was null during construction.
          * @param url the url of the texture
@@ -24722,6 +24828,8 @@ declare module BABYLON {
         };
         /** @hidden */
         _bonesTransformMatrices: Nullable<Float32Array>;
+        /** @hidden */
+        _transformMatrixTexture: Nullable<RawTexture>;
         /**
          * Gets or sets a skeleton to apply skining transformations
          * @see http://doc.babylonjs.com/how_to/how_to_use_bones_and_skeletons
@@ -24867,7 +24975,9 @@ declare module BABYLON {
          */
         isVerticesDataPresent(kind: string): boolean;
         /**
-         * Returns the mesh BoundingInfo object or creates a new one and returns if it was undefined
+         * Returns the mesh BoundingInfo object or creates a new one and returns if it was undefined.
+         * Note that it returns a shallow bounding of the mesh (i.e. it does not include children).
+         * To get the full bounding of all children, call `getHierarchyBoundingVectors` instead.
          * @returns a BoundingInfo
          */
         getBoundingInfo(): BoundingInfo;
@@ -28005,6 +28115,11 @@ declare module BABYLON {
          */
         readonly webGLVersion: number;
         /**
+         * Gets a string idenfifying the name of the class
+         * @returns "Engine" string
+         */
+        getClassName(): string;
+        /**
          * Returns true if the stencil buffer has been enabled through the creation option of the context.
          */
         readonly isStencilEnable: boolean;
@@ -30554,7 +30669,7 @@ declare module BABYLON {
          */
         inertia: number;
         /**
-         * Define the mode of the camera (Camera.PERSPECTIVE_CAMERA or Camera.PERSPECTIVE_ORTHOGRAPHIC)
+         * Define the mode of the camera (Camera.PERSPECTIVE_CAMERA or Camera.ORTHOGRAPHIC_CAMERA)
          */
         mode: number;
         /**
@@ -33479,6 +33594,12 @@ declare module BABYLON {
          */
         getMaterialByID(id: string): Nullable<Material>;
         /**
+         * Gets a the last added material using a given id
+         * @param id defines the material's ID
+         * @return the last material with the given id or null if none found.
+         */
+        getLastMaterialByID(id: string): Nullable<Material>;
+        /**
          * Gets a material using its name
          * @param name defines the material's name
          * @return the material or null if none found.
@@ -34167,6 +34288,70 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
+     * Interface used to define options for Sound class
+     */
+    export interface ISoundOptions {
+        /**
+        * Does the sound autoplay once loaded.
+        */
+        autoplay?: boolean;
+        /**
+         * Does the sound loop after it finishes playing once.
+         */
+        loop?: boolean;
+        /**
+         * Sound's volume
+         */
+        volume?: number;
+        /**
+         * Is it a spatial sound?
+         */
+        spatialSound?: boolean;
+        /**
+         * Maximum distance to hear that sound
+         */
+        maxDistance?: number;
+        /**
+         * Uses user defined attenuation function
+         */
+        useCustomAttenuation?: boolean;
+        /**
+        * Define the roll off factor of spatial sounds.
+        * @see http://doc.babylonjs.com/how_to/playing_sounds_and_music#creating-a-spatial-3d-sound
+        */
+        rolloffFactor?: number;
+        /**
+         * Define the reference distance the sound should be heard perfectly.
+         * @see http://doc.babylonjs.com/how_to/playing_sounds_and_music#creating-a-spatial-3d-sound
+         */
+        refDistance?: number;
+        /**
+         * Define the distance attenuation model the sound will follow.
+         * @see http://doc.babylonjs.com/how_to/playing_sounds_and_music#creating-a-spatial-3d-sound
+         */
+        distanceModel?: string;
+        /**
+         * Defines the playback speed (1 by default)
+         */
+        playbackRate?: number;
+        /**
+         * Defines if the sound is from a streaming source
+         */
+        streaming?: boolean;
+        /**
+         * Defines an optional length (in seconds) inside the sound file
+         */
+        length?: number;
+        /**
+         * Defines an optional offset (in seconds) inside the sound file
+         */
+        offset?: number;
+        /**
+         * If true, URLs will not be required to state the audio file codec to use.
+         */
+        skipCodecCheck?: boolean;
+    }
+    /**
      * Defines a sound that can be played in the application.
      * The sound can either be an ambient track or a simple sound played in reaction to a user action.
      * @see http://doc.babylonjs.com/how_to/playing_sounds_and_music
@@ -34266,6 +34451,8 @@ declare module BABYLON {
         private _isOutputConnected;
         private _htmlAudioElement;
         private _urlType;
+        private _length?;
+        private _offset?;
         /** @hidden */
         static _SceneComponentInitialization: (scene: Scene) => void;
         /**
@@ -34276,7 +34463,7 @@ declare module BABYLON {
         * @param readyToPlayCallback Provide a callback function if you'd like to load your code once the sound is ready to be played
         * @param options Objects to provide with the current available options: autoplay, loop, volume, spatialSound, maxDistance, rolloffFactor, refDistance, distanceModel, panningModel, streaming
         */
-        constructor(name: string, urlOrArrayBuffer: any, scene: Scene, readyToPlayCallback?: Nullable<() => void>, options?: any);
+        constructor(name: string, urlOrArrayBuffer: any, scene: Scene, readyToPlayCallback?: Nullable<() => void>, options?: ISoundOptions);
         /**
          * Release the sound and its associated resources
          */
@@ -34296,7 +34483,7 @@ declare module BABYLON {
          * Updates the current sounds options such as maxdistance, loop...
          * @param options A JSON object containing values named as the object properties
          */
-        updateOptions(options: any): void;
+        updateOptions(options: ISoundOptions): void;
         private _createSpatialParameters;
         private _updateSpatialParameters;
         /**
@@ -34360,9 +34547,10 @@ declare module BABYLON {
         /**
         * Play the sound
         * @param time (optional) Start the sound after X seconds. Start immediately (0) by default.
-        * @param offset (optional) Start the sound setting it at a specific time
+        * @param offset (optional) Start the sound at a specific time in seconds
+        * @param length (optional) Sound duration (in seconds)
         */
-        play(time?: number, offset?: number): void;
+        play(time?: number, offset?: number, length?: number): void;
         private _onended;
         /**
         * Stop the sound
@@ -36092,6 +36280,10 @@ declare module BABYLON {
          *  If the drag behavior will react to drag events (Default: true)
          */
         enabled: boolean;
+        /**
+         * If pointer events should start and release the drag (Default: true)
+         */
+        startAndReleaseDragOnPointerEvents: boolean;
         /**
          * If camera controls should be detached during the drag
          */
@@ -39046,6 +39238,7 @@ declare module BABYLON {
         MORPHTARGETS: boolean;
         MORPHTARGETS_NORMAL: boolean;
         MORPHTARGETS_TANGENT: boolean;
+        MORPHTARGETS_UV: boolean;
         NUM_MORPH_INFLUENCERS: number;
         NONUNIFORMSCALING: boolean;
         PREMULTIPLYALPHA: boolean;
@@ -40300,7 +40493,7 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Manages an XRSession
+     * Manages an XRSession to work with Babylon's engine
      * @see https://doc.babylonjs.com/how_to/webxr
      */
     export class WebXRSessionManager implements IDisposable {
@@ -40313,17 +40506,22 @@ declare module BABYLON {
          * Fires when the xr session is ended either by the device or manually done
          */
         onXRSessionEnded: Observable<any>;
-        /** @hidden */
-        _xrSession: XRSession;
-        /** @hidden */
-        _frameOfReference: XRFrameOfReference;
+        /**
+         * Underlying xr session
+         */
+        session: XRSession;
+        /**
+         * Type of reference space used when creating the session
+         */
+        referenceSpace: XRReferenceSpace;
         /** @hidden */
         _sessionRenderTargetTexture: Nullable<RenderTargetTexture>;
-        /** @hidden */
-        _currentXRFrame: Nullable<XRFrame>;
+        /**
+         * Current XR frame
+         */
+        currentFrame: Nullable<XRFrame>;
         private _xrNavigator;
-        private _xrDevice;
-        private _tmpMatrix;
+        private baseLayer;
         /**
          * Constructs a WebXRSessionManager, this must be initialized within a user action before usage
          * @param scene The scene which the session should be created for
@@ -40336,36 +40534,46 @@ declare module BABYLON {
          */
         initializeAsync(): Promise<void>;
         /**
-         * Enters XR with the desired XR session options, this must be done with a user action (eg. button click event)
-         * @param sessionCreationOptions xr options to create the session with
-         * @param frameOfReferenceType option to configure how the xr pose is expressed
-         * @returns Promise which resolves after it enters XR
+         * Initializes an xr session
+         * @param xrSessionMode mode to initialize
+         * @returns a promise which will resolve once the session has been initialized
          */
-        enterXRAsync(sessionCreationOptions: XRSessionCreationOptions, frameOfReferenceType: string): Promise<void>;
+        initializeSessionAsync(xrSessionMode: XRSessionMode): any;
+        /**
+         * Sets the reference space on the xr session
+         * @param referenceSpace space to set
+         * @returns a promise that will resolve once the reference space has been set
+         */
+        setReferenceSpaceAsync(referenceSpace: XRReferenceSpaceType): Promise<void>;
+        /**
+         * Updates the render state of the session
+         * @param state state to set
+         * @returns a promise that resolves once the render state has been updated
+         */
+        updateRenderStateAsync(state: any): Promise<void>;
+        /**
+         * Starts rendering to the xr layer
+         * @returns a promise that will resolve once rendering has started
+         */
+        startRenderingToXRAsync(): Promise<void>;
         /**
          * Stops the xrSession and restores the renderloop
          * @returns Promise which resolves after it exits XR
          */
-        exitXRAsync(): Promise<void>;
-        /**
-         * Fires a ray and returns the closest hit in the xr sessions enviornment, useful to place objects in AR
-         * @param ray ray to cast into the environment
-         * @returns Promise which resolves with a collision point in the environment if it exists
-         */
-        environmentPointHitTestAsync(ray: Ray): Promise<Nullable<Vector3>>;
+        exitXRAsync(): Promise<unknown>;
         /**
          * Checks if a session would be supported for the creation options specified
-         * @param options creation options to check if they are supported
+         * @param sessionMode session mode to check if supported eg. immersive-vr
          * @returns true if supported
          */
-        supportsSessionAsync(options: XRSessionCreationOptions): Promise<boolean>;
+        supportsSessionAsync(sessionMode: XRSessionMode): any;
         /**
          * @hidden
          * Converts the render layer of xrSession to a render target
          * @param session session to create render target for
          * @param scene scene the new render target should be created for
          */
-        static _CreateRenderTargetTextureFromSession(session: XRSession, scene: Scene): RenderTargetTexture;
+        static _CreateRenderTargetTextureFromSession(session: XRSession, scene: Scene, baseLayer: XRWebGLLayer): RenderTargetTexture;
         /**
          * Disposes of the session manager
          */
@@ -40398,6 +40606,42 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
+     * Creates a canvas that is added/removed from the webpage when entering/exiting XR
+     */
+    export class WebXRManagedOutputCanvas implements IDisposable {
+        private helper;
+        private _canvas;
+        /**
+         * xrpresent context of the canvas which can be used to display/mirror xr content
+         */
+        canvasContext: WebGLRenderingContext;
+        /**
+         * xr layer for the canvas
+         */
+        xrLayer: Nullable<XRWebGLLayer>;
+        /**
+         * Initializes the xr layer for the session
+         * @param xrSession xr session
+         * @returns a promise that will resolve once the XR Layer has been created
+         */
+        initializeXRLayerAsync(xrSession: any): any;
+        /**
+         * Initializes the canvas to be added/removed upon entering/exiting xr
+         * @param helper the xr experience helper used to trigger adding/removing of the canvas
+         * @param canvas The canvas to be added/removed (If not specified a full screen canvas will be created)
+         */
+        constructor(helper: WebXRExperienceHelper, canvas?: HTMLCanvasElement);
+        /**
+         * Disposes of the object
+         */
+        dispose(): void;
+        private _setManagedOutputCanvas;
+        private _addCanvas;
+        private _removeCanvas;
+    }
+}
+declare module BABYLON {
+    /**
      * States of the webXR experience
      */
     export enum WebXRState {
@@ -40419,7 +40663,7 @@ declare module BABYLON {
         NOT_IN_XR = 3
     }
     /**
-     * Helper class used to enable XR
+     * Base set of functionality needed to create an XR experince (WebXRSessionManager, Camera, StateManagement, etc.)
      * @see https://doc.babylonjs.com/how_to/webxr
      */
     export class WebXRExperienceHelper implements IDisposable {
@@ -40442,8 +40686,8 @@ declare module BABYLON {
          * Fires when the state of the experience helper has changed
          */
         onStateChangedObservable: Observable<WebXRState>;
-        /** @hidden */
-        _sessionManager: WebXRSessionManager;
+        /** Session manager used to keep track of xr session */
+        sessionManager: WebXRSessionManager;
         private _nonVRCamera;
         private _originalSceneAutoClear;
         private _supported;
@@ -40462,20 +40706,15 @@ declare module BABYLON {
          * Exits XR mode and returns the scene to its original state
          * @returns promise that resolves after xr mode has exited
          */
-        exitXRAsync(): Promise<void>;
+        exitXRAsync(): Promise<unknown>;
         /**
          * Enters XR mode (This must be done within a user interaction in most browsers eg. button click)
          * @param sessionCreationOptions options for the XR session
-         * @param frameOfReference frame of reference of the XR session
+         * @param referenceSpaceType frame of reference of the XR session
+         * @param outputCanvas the output canvas that will be used to enter XR mode
          * @returns promise that resolves after xr mode has entered
          */
-        enterXRAsync(sessionCreationOptions: XRSessionCreationOptions, frameOfReference: string): Promise<void>;
-        /**
-         * Fires a ray and returns the closest hit in the xr sessions enviornment, useful to place objects in AR
-         * @param ray ray to cast into the environment
-         * @returns Promise which resolves with a collision point in the environment if it exists
-         */
-        environmentPointHitTestAsync(ray: Ray): Promise<Nullable<Vector3>>;
+        enterXRAsync(sessionCreationOptions: XRSessionMode, referenceSpaceType: XRReferenceSpaceType, outputCanvas: WebXRManagedOutputCanvas): any;
         /**
          * Updates the global position of the camera by moving the camera's container
          * This should be used instead of modifying the camera's position as it will be overwritten by an xrSessions's update frame
@@ -40488,12 +40727,6 @@ declare module BABYLON {
          * @param rotation the desired quaternion rotation to apply to the camera
          */
         rotateCameraByQuaternionUsingContainer(rotation: Quaternion): void;
-        /**
-         * Checks if the creation options are supported by the xr session
-         * @param options creation options
-         * @returns true if supported
-         */
-        supportsSessionAsync(options: XRSessionCreationOptions): Promise<boolean>;
         /**
          * Disposes of the experience helper
          */
@@ -40508,17 +40741,22 @@ declare module BABYLON {
         /** button element */
         element: HTMLElement;
         /** XR initialization options for the button */
-        initializationOptions: XRSessionCreationOptions;
+        sessionMode: XRSessionMode;
+        /** Reference space type */
+        referenceSpaceType: XRReferenceSpaceType;
         /**
          * Creates a WebXREnterExitUIButton
          * @param element button element
-         * @param initializationOptions XR initialization options for the button
+         * @param sessionMode XR initialization session mode
+         * @param referenceSpaceType the type of reference space to be used
          */
         constructor(
         /** button element */
         element: HTMLElement, 
         /** XR initialization options for the button */
-        initializationOptions: XRSessionCreationOptions);
+        sessionMode: XRSessionMode, 
+        /** Reference space type */
+        referenceSpaceType: XRReferenceSpaceType);
         /**
          * Overwritable function which can be used to update the button's visuals when the state changes
          * @param activeButton the current active button in the UI
@@ -40532,7 +40770,7 @@ declare module BABYLON {
         /**
          * Context to enter xr with
          */
-        outputCanvasContext?: Nullable<WebGLRenderingContext>;
+        webXRManagedOutputCanvas?: Nullable<WebXRManagedOutputCanvas>;
         /**
          * User provided buttons to enable/disable WebXR. The system will provide default if not set
          */
@@ -40575,6 +40813,10 @@ declare module BABYLON {
      * Represents an XR input
      */
     export class WebXRController {
+        private scene;
+        /** The underlying input source for the controller  */
+        inputSource: XRInputSource;
+        private parentContainer;
         /**
          * Represents the part of the controller that is held. This may not exist if the controller is the head mounted display itself, if thats the case only the pointer from the head will be availible
          */
@@ -40584,32 +40826,33 @@ declare module BABYLON {
          */
         pointer: AbstractMesh;
         /**
+         * Event that fires when the controller is removed/disposed
+         */
+        onDisposeObservable: Observable<{}>;
+        private _tmpMatrix;
+        private _tmpQuaternion;
+        private _tmpVector;
+        /**
          * Creates the controller
          * @see https://doc.babylonjs.com/how_to/webxr
          * @param scene the scene which the controller should be associated to
+         * @param inputSource the underlying input source for the controller
+         * @param parentContainer parent that the controller meshes should be children of
          */
-        constructor(scene: Scene);
+        constructor(scene: Scene, 
+        /** The underlying input source for the controller  */
+        inputSource: XRInputSource, parentContainer?: Nullable<AbstractMesh>);
         /**
-         * Disposes of the object
+         * Updates the controller pose based on the given XRFrame
+         * @param xrFrame xr frame to update the pose with
+         * @param referenceSpace reference space to use
          */
-        dispose(): void;
-    }
-    /**
-     * XR input used to track XR inputs such as controllers/rays
-     */
-    export class WebXRInput implements IDisposable {
-        private helper;
+        updateFromXRFrame(xrFrame: XRFrame, referenceSpace: XRReferenceSpace): void;
         /**
-         * XR controllers being tracked
+         * Gets a world space ray coming from the controller
+         * @param result the resulting ray
          */
-        controllers: Array<WebXRController>;
-        private _tmpMatrix;
-        private _frameObserver;
-        /**
-         * Initializes the WebXRInput
-         * @param helper experience helper which the input should be created for
-         */
-        constructor(helper: WebXRExperienceHelper);
+        getWorldPointerRayToRef(result: Ray): void;
         /**
          * Disposes of the object
          */
@@ -40618,27 +40861,650 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Creates a canvas that is added/removed from the webpage when entering/exiting XR
+     * XR input used to track XR inputs such as controllers/rays
      */
-    export class WebXRManagedOutputCanvas implements IDisposable {
-        private _canvas;
+    export class WebXRInput implements IDisposable {
         /**
-         * xrpresent context of the canvas which can be used to display/mirror xr content
+         * Base experience the input listens to
          */
-        canvasContext: Nullable<WebGLRenderingContext>;
+        baseExperience: WebXRExperienceHelper;
         /**
-         * Initializes the canvas to be added/removed upon entering/exiting xr
-         * @param helper the xr experience helper used to trigger adding/removing of the canvas
-         * @param canvas The canvas to be added/removed (If not specified a full screen canvas will be created)
+         * XR controllers being tracked
          */
-        constructor(helper: WebXRExperienceHelper, canvas?: HTMLCanvasElement);
+        controllers: Array<WebXRController>;
+        private _frameObserver;
+        private _stateObserver;
+        /**
+         * Event when a controller has been connected/added
+         */
+        onControllerAddedObservable: Observable<WebXRController>;
+        /**
+         * Event when a controller has been removed/disconnected
+         */
+        onControllerRemovedObservable: Observable<WebXRController>;
+        /**
+         * Initializes the WebXRInput
+         * @param baseExperience experience helper which the input should be created for
+         */
+        constructor(
+        /**
+         * Base experience the input listens to
+         */
+        baseExperience: WebXRExperienceHelper);
+        private _onInputSourcesChange;
+        private _addAndRemoveControllers;
         /**
          * Disposes of the object
          */
         dispose(): void;
-        private _setManagedOutputCanvas;
-        private _addCanvas;
-        private _removeCanvas;
+    }
+}
+declare module BABYLON {
+    /**
+     * Enables teleportation
+     */
+    export class WebXRControllerTeleportation {
+        private _teleportationFillColor;
+        private _teleportationBorderColor;
+        private _tmpRay;
+        private _tmpVector;
+        /**
+         * Creates a WebXRControllerTeleportation
+         * @param input input manager to add teleportation to
+         * @param floorMeshes floormeshes which can be teleported to
+         */
+        constructor(input: WebXRInput, floorMeshes?: Array<AbstractMesh>);
+    }
+}
+declare module BABYLON {
+    /**
+     * Handles pointer input automatically for the pointer of XR controllers
+     */
+    export class WebXRControllerPointerSelection {
+        private static _idCounter;
+        private _tmpRay;
+        /**
+         * Creates a WebXRControllerPointerSelection
+         * @param input input manager to setup pointer selection
+         */
+        constructor(input: WebXRInput);
+        private _convertNormalToDirectionOfRay;
+        private _updatePointerDistance;
+    }
+}
+declare module BABYLON {
+    /**
+     * Class used to represent data loading progression
+     */
+    export class SceneLoaderProgressEvent {
+        /** defines if data length to load can be evaluated */
+        readonly lengthComputable: boolean;
+        /** defines the loaded data length */
+        readonly loaded: number;
+        /** defines the data length to load */
+        readonly total: number;
+        /**
+         * Create a new progress event
+         * @param lengthComputable defines if data length to load can be evaluated
+         * @param loaded defines the loaded data length
+         * @param total defines the data length to load
+         */
+        constructor(
+        /** defines if data length to load can be evaluated */
+        lengthComputable: boolean, 
+        /** defines the loaded data length */
+        loaded: number, 
+        /** defines the data length to load */
+        total: number);
+        /**
+         * Creates a new SceneLoaderProgressEvent from a ProgressEvent
+         * @param event defines the source event
+         * @returns a new SceneLoaderProgressEvent
+         */
+        static FromProgressEvent(event: ProgressEvent): SceneLoaderProgressEvent;
+    }
+    /**
+     * Interface used by SceneLoader plugins to define supported file extensions
+     */
+    export interface ISceneLoaderPluginExtensions {
+        /**
+         * Defines the list of supported extensions
+         */
+        [extension: string]: {
+            isBinary: boolean;
+        };
+    }
+    /**
+     * Interface used by SceneLoader plugin factory
+     */
+    export interface ISceneLoaderPluginFactory {
+        /**
+         * Defines the name of the factory
+         */
+        name: string;
+        /**
+         * Function called to create a new plugin
+         * @return the new plugin
+         */
+        createPlugin(): ISceneLoaderPlugin | ISceneLoaderPluginAsync;
+        /**
+         * Boolean indicating if the plugin can direct load specific data
+         */
+        canDirectLoad?: (data: string) => boolean;
+    }
+    /**
+     * Interface used to define a SceneLoader plugin
+     */
+    export interface ISceneLoaderPlugin {
+        /**
+         * The friendly name of this plugin.
+         */
+        name: string;
+        /**
+         * The file extensions supported by this plugin.
+         */
+        extensions: string | ISceneLoaderPluginExtensions;
+        /**
+         * Import meshes into a scene.
+         * @param meshesNames An array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
+         * @param scene The scene to import into
+         * @param data The data to import
+         * @param rootUrl The root url for scene and resources
+         * @param meshes The meshes array to import into
+         * @param particleSystems The particle systems array to import into
+         * @param skeletons The skeletons array to import into
+         * @param onError The callback when import fails
+         * @returns True if successful or false otherwise
+         */
+        importMesh(meshesNames: any, scene: Scene, data: any, rootUrl: string, meshes: AbstractMesh[], particleSystems: IParticleSystem[], skeletons: Skeleton[], onError?: (message: string, exception?: any) => void): boolean;
+        /**
+         * Load into a scene.
+         * @param scene The scene to load into
+         * @param data The data to import
+         * @param rootUrl The root url for scene and resources
+         * @param onError The callback when import fails
+         * @returns true if successful or false otherwise
+         */
+        load(scene: Scene, data: string, rootUrl: string, onError?: (message: string, exception?: any) => void): boolean;
+        /**
+         * The callback that returns true if the data can be directly loaded.
+         */
+        canDirectLoad?: (data: string) => boolean;
+        /**
+         * The callback that allows custom handling of the root url based on the response url.
+         */
+        rewriteRootURL?: (rootUrl: string, responseURL?: string) => string;
+        /**
+         * Load into an asset container.
+         * @param scene The scene to load into
+         * @param data The data to import
+         * @param rootUrl The root url for scene and resources
+         * @param onError The callback when import fails
+         * @returns The loaded asset container
+         */
+        loadAssetContainer(scene: Scene, data: string, rootUrl: string, onError?: (message: string, exception?: any) => void): AssetContainer;
+    }
+    /**
+     * Interface used to define an async SceneLoader plugin
+     */
+    export interface ISceneLoaderPluginAsync {
+        /**
+         * The friendly name of this plugin.
+         */
+        name: string;
+        /**
+         * The file extensions supported by this plugin.
+         */
+        extensions: string | ISceneLoaderPluginExtensions;
+        /**
+         * Import meshes into a scene.
+         * @param meshesNames An array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
+         * @param scene The scene to import into
+         * @param data The data to import
+         * @param rootUrl The root url for scene and resources
+         * @param onProgress The callback when the load progresses
+         * @param fileName Defines the name of the file to load
+         * @returns The loaded meshes, particle systems, skeletons, and animation groups
+         */
+        importMeshAsync(meshesNames: any, scene: Scene, data: any, rootUrl: string, onProgress?: (event: SceneLoaderProgressEvent) => void, fileName?: string): Promise<{
+            meshes: AbstractMesh[];
+            particleSystems: IParticleSystem[];
+            skeletons: Skeleton[];
+            animationGroups: AnimationGroup[];
+        }>;
+        /**
+         * Load into a scene.
+         * @param scene The scene to load into
+         * @param data The data to import
+         * @param rootUrl The root url for scene and resources
+         * @param onProgress The callback when the load progresses
+         * @param fileName Defines the name of the file to load
+         * @returns Nothing
+         */
+        loadAsync(scene: Scene, data: string, rootUrl: string, onProgress?: (event: SceneLoaderProgressEvent) => void, fileName?: string): Promise<void>;
+        /**
+         * The callback that returns true if the data can be directly loaded.
+         */
+        canDirectLoad?: (data: string) => boolean;
+        /**
+         * The callback that allows custom handling of the root url based on the response url.
+         */
+        rewriteRootURL?: (rootUrl: string, responseURL?: string) => string;
+        /**
+         * Load into an asset container.
+         * @param scene The scene to load into
+         * @param data The data to import
+         * @param rootUrl The root url for scene and resources
+         * @param onProgress The callback when the load progresses
+         * @param fileName Defines the name of the file to load
+         * @returns The loaded asset container
+         */
+        loadAssetContainerAsync(scene: Scene, data: string, rootUrl: string, onProgress?: (event: SceneLoaderProgressEvent) => void, fileName?: string): Promise<AssetContainer>;
+    }
+    /**
+     * Class used to load scene from various file formats using registered plugins
+     * @see http://doc.babylonjs.com/how_to/load_from_any_file_type
+     */
+    export class SceneLoader {
+        /**
+         * No logging while loading
+         */
+        static readonly NO_LOGGING: number;
+        /**
+         * Minimal logging while loading
+         */
+        static readonly MINIMAL_LOGGING: number;
+        /**
+         * Summary logging while loading
+         */
+        static readonly SUMMARY_LOGGING: number;
+        /**
+         * Detailled logging while loading
+         */
+        static readonly DETAILED_LOGGING: number;
+        /**
+         * Gets or sets a boolean indicating if entire scene must be loaded even if scene contains incremental data
+         */
+        static ForceFullSceneLoadingForIncremental: boolean;
+        /**
+         * Gets or sets a boolean indicating if loading screen must be displayed while loading a scene
+         */
+        static ShowLoadingScreen: boolean;
+        /**
+         * Defines the current logging level (while loading the scene)
+         * @ignorenaming
+         */
+        static loggingLevel: number;
+        /**
+         * Gets or set a boolean indicating if matrix weights must be cleaned upon loading
+         */
+        static CleanBoneMatrixWeights: boolean;
+        /**
+         * Event raised when a plugin is used to load a scene
+         */
+        static OnPluginActivatedObservable: Observable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
+        private static _registeredPlugins;
+        private static _getDefaultPlugin;
+        private static _getPluginForExtension;
+        private static _getPluginForDirectLoad;
+        private static _getPluginForFilename;
+        private static _getDirectLoad;
+        private static _loadData;
+        private static _getFileInfo;
+        /**
+         * Gets a plugin that can load the given extension
+         * @param extension defines the extension to load
+         * @returns a plugin or null if none works
+         */
+        static GetPluginForExtension(extension: string): ISceneLoaderPlugin | ISceneLoaderPluginAsync | ISceneLoaderPluginFactory;
+        /**
+         * Gets a boolean indicating that the given extension can be loaded
+         * @param extension defines the extension to load
+         * @returns true if the extension is supported
+         */
+        static IsPluginForExtensionAvailable(extension: string): boolean;
+        /**
+         * Adds a new plugin to the list of registered plugins
+         * @param plugin defines the plugin to add
+         */
+        static RegisterPlugin(plugin: ISceneLoaderPlugin | ISceneLoaderPluginAsync): void;
+        /**
+         * Import meshes into a scene
+         * @param meshNames an array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
+         * @param scene the instance of BABYLON.Scene to append to
+         * @param onSuccess a callback with a list of imported meshes, particleSystems, and skeletons when import succeeds
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param onError a callback with the scene, a message, and possibly an exception when import fails
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The loaded plugin
+         */
+        static ImportMesh(meshNames: any, rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onSuccess?: Nullable<(meshes: AbstractMesh[], particleSystems: IParticleSystem[], skeletons: Skeleton[], animationGroups: AnimationGroup[]) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
+        /**
+         * Import meshes into a scene
+         * @param meshNames an array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
+         * @param scene the instance of BABYLON.Scene to append to
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The loaded list of imported meshes, particle systems, skeletons, and animation groups
+         */
+        static ImportMeshAsync(meshNames: any, rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<{
+            meshes: AbstractMesh[];
+            particleSystems: IParticleSystem[];
+            skeletons: Skeleton[];
+            animationGroups: AnimationGroup[];
+        }>;
+        /**
+         * Load a scene
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
+         * @param engine is the instance of BABYLON.Engine to use to create the scene
+         * @param onSuccess a callback with the scene when import succeeds
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param onError a callback with the scene, a message, and possibly an exception when import fails
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The loaded plugin
+         */
+        static Load(rootUrl: string, sceneFilename?: string | File, engine?: Nullable<Engine>, onSuccess?: Nullable<(scene: Scene) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
+        /**
+         * Load a scene
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
+         * @param engine is the instance of BABYLON.Engine to use to create the scene
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The loaded scene
+         */
+        static LoadAsync(rootUrl: string, sceneFilename?: string | File, engine?: Nullable<Engine>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<Scene>;
+        /**
+         * Append a scene
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
+         * @param scene is the instance of BABYLON.Scene to append to
+         * @param onSuccess a callback with the scene when import succeeds
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param onError a callback with the scene, a message, and possibly an exception when import fails
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The loaded plugin
+         */
+        static Append(rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onSuccess?: Nullable<(scene: Scene) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
+        /**
+         * Append a scene
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
+         * @param scene is the instance of BABYLON.Scene to append to
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The given scene
+         */
+        static AppendAsync(rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<Scene>;
+        /**
+         * Load a scene into an asset container
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
+         * @param scene is the instance of BABYLON.Scene to append to (default: last created scene)
+         * @param onSuccess a callback with the scene when import succeeds
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param onError a callback with the scene, a message, and possibly an exception when import fails
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The loaded plugin
+         */
+        static LoadAssetContainer(rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onSuccess?: Nullable<(assets: AssetContainer) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
+        /**
+         * Load a scene into an asset container
+         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
+         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene (default: empty string)
+         * @param scene is the instance of Scene to append to
+         * @param onProgress a callback with a progress event for each file being loaded
+         * @param pluginExtension the extension used to determine the plugin
+         * @returns The loaded asset container
+         */
+        static LoadAssetContainerAsync(rootUrl: string, sceneFilename?: string, scene?: Nullable<Scene>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<AssetContainer>;
+    }
+}
+declare module BABYLON {
+    /**
+     * Generic Controller
+     */
+    export class GenericController extends WebVRController {
+        /**
+         * Base Url for the controller model.
+         */
+        static readonly MODEL_BASE_URL: string;
+        /**
+         * File name for the controller model.
+         */
+        static readonly MODEL_FILENAME: string;
+        /**
+         * Creates a new GenericController from a gamepad
+         * @param vrGamepad the gamepad that the controller should be created from
+         */
+        constructor(vrGamepad: any);
+        /**
+         * Implements abstract method on WebVRController class, loading controller meshes and calling this.attachToMesh if successful.
+         * @param scene scene in which to add meshes
+         * @param meshLoaded optional callback function that will be called if the mesh loads successfully.
+         */
+        initControllerMesh(scene: Scene, meshLoaded?: (mesh: AbstractMesh) => void): void;
+        /**
+         * Called once for each button that changed state since the last frame
+         * @param buttonIdx Which button index changed
+         * @param state New state of the button
+         * @param changes Which properties on the state changed since last frame
+         */
+        protected _handleButtonChange(buttonIdx: number, state: ExtendedGamepadButton, changes: GamepadButtonChanges): void;
+    }
+}
+declare module BABYLON {
+    /**
+     * Defines the WindowsMotionController object that the state of the windows motion controller
+     */
+    export class WindowsMotionController extends WebVRController {
+        /**
+         * The base url used to load the left and right controller models
+         */
+        static MODEL_BASE_URL: string;
+        /**
+         * The name of the left controller model file
+         */
+        static MODEL_LEFT_FILENAME: string;
+        /**
+         * The name of the right controller model file
+         */
+        static MODEL_RIGHT_FILENAME: string;
+        /**
+         * The controller name prefix for this controller type
+         */
+        static readonly GAMEPAD_ID_PREFIX: string;
+        /**
+         * The controller id pattern for this controller type
+         */
+        private static readonly GAMEPAD_ID_PATTERN;
+        private _loadedMeshInfo;
+        private readonly _mapping;
+        /**
+         * Fired when the trackpad on this controller is clicked
+         */
+        onTrackpadChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the trackpad on this controller is modified
+         */
+        onTrackpadValuesChangedObservable: Observable<StickValues>;
+        /**
+         * The current x and y values of this controller's trackpad
+         */
+        trackpad: StickValues;
+        /**
+         * Creates a new WindowsMotionController from a gamepad
+         * @param vrGamepad the gamepad that the controller should be created from
+         */
+        constructor(vrGamepad: any);
+        /**
+         * Fired when the trigger on this controller is modified
+         */
+        readonly onTriggerButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the menu button on this controller is modified
+         */
+        readonly onMenuButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the grip button on this controller is modified
+         */
+        readonly onGripButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the thumbstick button on this controller is modified
+         */
+        readonly onThumbstickButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the touchpad button on this controller is modified
+         */
+        readonly onTouchpadButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the touchpad values on this controller are modified
+         */
+        readonly onTouchpadValuesChangedObservable: Observable<StickValues>;
+        private _updateTrackpad;
+        /**
+         * Called once per frame by the engine.
+         */
+        update(): void;
+        /**
+         * Called once for each button that changed state since the last frame
+         * @param buttonIdx Which button index changed
+         * @param state New state of the button
+         * @param changes Which properties on the state changed since last frame
+         */
+        protected _handleButtonChange(buttonIdx: number, state: ExtendedGamepadButton, changes: GamepadButtonChanges): void;
+        /**
+         * Moves the buttons on the controller mesh based on their current state
+         * @param buttonName the name of the button to move
+         * @param buttonValue the value of the button which determines the buttons new position
+         */
+        protected _lerpButtonTransform(buttonName: string, buttonValue: number): void;
+        /**
+         * Moves the axis on the controller mesh based on its current state
+         * @param axis the index of the axis
+         * @param axisValue the value of the axis which determines the meshes new position
+         * @hidden
+         */
+        protected _lerpAxisTransform(axis: number, axisValue: number): void;
+        /**
+         * Implements abstract method on WebVRController class, loading controller meshes and calling this.attachToMesh if successful.
+         * @param scene scene in which to add meshes
+         * @param meshLoaded optional callback function that will be called if the mesh loads successfully.
+         */
+        initControllerMesh(scene: Scene, meshLoaded?: (mesh: AbstractMesh) => void, forceDefault?: boolean): void;
+        /**
+         * Takes a list of meshes (as loaded from the glTF file) and finds the root node, as well as nodes that
+         * can be transformed by button presses and axes values, based on this._mapping.
+         *
+         * @param scene scene in which the meshes exist
+         * @param meshes list of meshes that make up the controller model to process
+         * @return structured view of the given meshes, with mapping of buttons and axes to meshes that can be transformed.
+         */
+        private processModel;
+        private createMeshInfo;
+        /**
+         * Gets the ray of the controller in the direction the controller is pointing
+         * @param length the length the resulting ray should be
+         * @returns a ray in the direction the controller is pointing
+         */
+        getForwardRay(length?: number): Ray;
+        /**
+        * Disposes of the controller
+        */
+        dispose(): void;
+    }
+}
+declare module BABYLON {
+    /**
+     * Oculus Touch Controller
+     */
+    export class OculusTouchController extends WebVRController {
+        /**
+         * Base Url for the controller model.
+         */
+        static MODEL_BASE_URL: string;
+        /**
+         * File name for the left controller model.
+         */
+        static MODEL_LEFT_FILENAME: string;
+        /**
+         * File name for the right controller model.
+         */
+        static MODEL_RIGHT_FILENAME: string;
+        /**
+         * Base Url for the Quest controller model.
+         */
+        static QUEST_MODEL_BASE_URL: string;
+        /**
+         * @hidden
+         * If the controllers are running on a device that needs the updated Quest controller models
+         */
+        static _IsQuest: boolean;
+        /**
+         * Fired when the secondary trigger on this controller is modified
+         */
+        onSecondaryTriggerStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the thumb rest on this controller is modified
+         */
+        onThumbRestChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Creates a new OculusTouchController from a gamepad
+         * @param vrGamepad the gamepad that the controller should be created from
+         */
+        constructor(vrGamepad: any);
+        /**
+         * Implements abstract method on WebVRController class, loading controller meshes and calling this.attachToMesh if successful.
+         * @param scene scene in which to add meshes
+         * @param meshLoaded optional callback function that will be called if the mesh loads successfully.
+         */
+        initControllerMesh(scene: Scene, meshLoaded?: (mesh: AbstractMesh) => void): void;
+        /**
+         * Fired when the A button on this controller is modified
+         */
+        readonly onAButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the B button on this controller is modified
+         */
+        readonly onBButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the X button on this controller is modified
+         */
+        readonly onXButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the Y button on this controller is modified
+         */
+        readonly onYButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+          * Called once for each button that changed state since the last frame
+          * 0) thumb stick (touch, press, value = pressed (0,1)). value is in this.leftStick
+          * 1) index trigger (touch (?), press (only when value > 0.1), value 0 to 1)
+          * 2) secondary trigger (same)
+          * 3) A (right) X (left), touch, pressed = value
+          * 4) B / Y
+          * 5) thumb rest
+          * @param buttonIdx Which button index changed
+          * @param state New state of the button
+          * @param changes Which properties on the state changed since last frame
+          */
+        protected _handleButtonChange(buttonIdx: number, state: ExtendedGamepadButton, changes: GamepadButtonChanges): void;
+    }
+}
+declare module BABYLON {
+    /**
+     * Loads a controller model and adds it as a child of the WebXRControllers grip when the controller is created
+     */
+    export class WebXRControllerModelLoader {
+        /**
+         * Creates the WebXRControllerModelLoader
+         * @param input xr input that creates the controllers
+         */
+        constructor(input: WebXRInput);
     }
 }
 declare module BABYLON {
@@ -41424,15 +42290,11 @@ declare module BABYLON {
         static InspectorURL: string;
         private _scene;
         private BJSINSPECTOR;
+        private _onPropertyChangedObservable?;
         /**
          * Observable triggered when a property is changed through the inspector.
          */
-        onPropertyChangedObservable: Observable<{
-            object: any;
-            property: string;
-            value: any;
-            initialValue: any;
-        }>;
+        readonly onPropertyChangedObservable: any;
         /**
          * Instantiates a new debug layer.
          * The debug layer (aka Inspector) is the go to tool in order to better understand
@@ -42289,339 +43151,6 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Class used to represent data loading progression
-     */
-    export class SceneLoaderProgressEvent {
-        /** defines if data length to load can be evaluated */
-        readonly lengthComputable: boolean;
-        /** defines the loaded data length */
-        readonly loaded: number;
-        /** defines the data length to load */
-        readonly total: number;
-        /**
-         * Create a new progress event
-         * @param lengthComputable defines if data length to load can be evaluated
-         * @param loaded defines the loaded data length
-         * @param total defines the data length to load
-         */
-        constructor(
-        /** defines if data length to load can be evaluated */
-        lengthComputable: boolean, 
-        /** defines the loaded data length */
-        loaded: number, 
-        /** defines the data length to load */
-        total: number);
-        /**
-         * Creates a new SceneLoaderProgressEvent from a ProgressEvent
-         * @param event defines the source event
-         * @returns a new SceneLoaderProgressEvent
-         */
-        static FromProgressEvent(event: ProgressEvent): SceneLoaderProgressEvent;
-    }
-    /**
-     * Interface used by SceneLoader plugins to define supported file extensions
-     */
-    export interface ISceneLoaderPluginExtensions {
-        /**
-         * Defines the list of supported extensions
-         */
-        [extension: string]: {
-            isBinary: boolean;
-        };
-    }
-    /**
-     * Interface used by SceneLoader plugin factory
-     */
-    export interface ISceneLoaderPluginFactory {
-        /**
-         * Defines the name of the factory
-         */
-        name: string;
-        /**
-         * Function called to create a new plugin
-         * @return the new plugin
-         */
-        createPlugin(): ISceneLoaderPlugin | ISceneLoaderPluginAsync;
-        /**
-         * Boolean indicating if the plugin can direct load specific data
-         */
-        canDirectLoad?: (data: string) => boolean;
-    }
-    /**
-     * Interface used to define a SceneLoader plugin
-     */
-    export interface ISceneLoaderPlugin {
-        /**
-         * The friendly name of this plugin.
-         */
-        name: string;
-        /**
-         * The file extensions supported by this plugin.
-         */
-        extensions: string | ISceneLoaderPluginExtensions;
-        /**
-         * Import meshes into a scene.
-         * @param meshesNames An array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
-         * @param scene The scene to import into
-         * @param data The data to import
-         * @param rootUrl The root url for scene and resources
-         * @param meshes The meshes array to import into
-         * @param particleSystems The particle systems array to import into
-         * @param skeletons The skeletons array to import into
-         * @param onError The callback when import fails
-         * @returns True if successful or false otherwise
-         */
-        importMesh(meshesNames: any, scene: Scene, data: any, rootUrl: string, meshes: AbstractMesh[], particleSystems: IParticleSystem[], skeletons: Skeleton[], onError?: (message: string, exception?: any) => void): boolean;
-        /**
-         * Load into a scene.
-         * @param scene The scene to load into
-         * @param data The data to import
-         * @param rootUrl The root url for scene and resources
-         * @param onError The callback when import fails
-         * @returns true if successful or false otherwise
-         */
-        load(scene: Scene, data: string, rootUrl: string, onError?: (message: string, exception?: any) => void): boolean;
-        /**
-         * The callback that returns true if the data can be directly loaded.
-         */
-        canDirectLoad?: (data: string) => boolean;
-        /**
-         * The callback that allows custom handling of the root url based on the response url.
-         */
-        rewriteRootURL?: (rootUrl: string, responseURL?: string) => string;
-        /**
-         * Load into an asset container.
-         * @param scene The scene to load into
-         * @param data The data to import
-         * @param rootUrl The root url for scene and resources
-         * @param onError The callback when import fails
-         * @returns The loaded asset container
-         */
-        loadAssetContainer(scene: Scene, data: string, rootUrl: string, onError?: (message: string, exception?: any) => void): AssetContainer;
-    }
-    /**
-     * Interface used to define an async SceneLoader plugin
-     */
-    export interface ISceneLoaderPluginAsync {
-        /**
-         * The friendly name of this plugin.
-         */
-        name: string;
-        /**
-         * The file extensions supported by this plugin.
-         */
-        extensions: string | ISceneLoaderPluginExtensions;
-        /**
-         * Import meshes into a scene.
-         * @param meshesNames An array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
-         * @param scene The scene to import into
-         * @param data The data to import
-         * @param rootUrl The root url for scene and resources
-         * @param onProgress The callback when the load progresses
-         * @param fileName Defines the name of the file to load
-         * @returns The loaded meshes, particle systems, skeletons, and animation groups
-         */
-        importMeshAsync(meshesNames: any, scene: Scene, data: any, rootUrl: string, onProgress?: (event: SceneLoaderProgressEvent) => void, fileName?: string): Promise<{
-            meshes: AbstractMesh[];
-            particleSystems: IParticleSystem[];
-            skeletons: Skeleton[];
-            animationGroups: AnimationGroup[];
-        }>;
-        /**
-         * Load into a scene.
-         * @param scene The scene to load into
-         * @param data The data to import
-         * @param rootUrl The root url for scene and resources
-         * @param onProgress The callback when the load progresses
-         * @param fileName Defines the name of the file to load
-         * @returns Nothing
-         */
-        loadAsync(scene: Scene, data: string, rootUrl: string, onProgress?: (event: SceneLoaderProgressEvent) => void, fileName?: string): Promise<void>;
-        /**
-         * The callback that returns true if the data can be directly loaded.
-         */
-        canDirectLoad?: (data: string) => boolean;
-        /**
-         * The callback that allows custom handling of the root url based on the response url.
-         */
-        rewriteRootURL?: (rootUrl: string, responseURL?: string) => string;
-        /**
-         * Load into an asset container.
-         * @param scene The scene to load into
-         * @param data The data to import
-         * @param rootUrl The root url for scene and resources
-         * @param onProgress The callback when the load progresses
-         * @param fileName Defines the name of the file to load
-         * @returns The loaded asset container
-         */
-        loadAssetContainerAsync(scene: Scene, data: string, rootUrl: string, onProgress?: (event: SceneLoaderProgressEvent) => void, fileName?: string): Promise<AssetContainer>;
-    }
-    /**
-     * Class used to load scene from various file formats using registered plugins
-     * @see http://doc.babylonjs.com/how_to/load_from_any_file_type
-     */
-    export class SceneLoader {
-        /**
-         * No logging while loading
-         */
-        static readonly NO_LOGGING: number;
-        /**
-         * Minimal logging while loading
-         */
-        static readonly MINIMAL_LOGGING: number;
-        /**
-         * Summary logging while loading
-         */
-        static readonly SUMMARY_LOGGING: number;
-        /**
-         * Detailled logging while loading
-         */
-        static readonly DETAILED_LOGGING: number;
-        /**
-         * Gets or sets a boolean indicating if entire scene must be loaded even if scene contains incremental data
-         */
-        static ForceFullSceneLoadingForIncremental: boolean;
-        /**
-         * Gets or sets a boolean indicating if loading screen must be displayed while loading a scene
-         */
-        static ShowLoadingScreen: boolean;
-        /**
-         * Defines the current logging level (while loading the scene)
-         * @ignorenaming
-         */
-        static loggingLevel: number;
-        /**
-         * Gets or set a boolean indicating if matrix weights must be cleaned upon loading
-         */
-        static CleanBoneMatrixWeights: boolean;
-        /**
-         * Event raised when a plugin is used to load a scene
-         */
-        static OnPluginActivatedObservable: Observable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
-        private static _registeredPlugins;
-        private static _getDefaultPlugin;
-        private static _getPluginForExtension;
-        private static _getPluginForDirectLoad;
-        private static _getPluginForFilename;
-        private static _getDirectLoad;
-        private static _loadData;
-        private static _getFileInfo;
-        /**
-         * Gets a plugin that can load the given extension
-         * @param extension defines the extension to load
-         * @returns a plugin or null if none works
-         */
-        static GetPluginForExtension(extension: string): ISceneLoaderPlugin | ISceneLoaderPluginAsync | ISceneLoaderPluginFactory;
-        /**
-         * Gets a boolean indicating that the given extension can be loaded
-         * @param extension defines the extension to load
-         * @returns true if the extension is supported
-         */
-        static IsPluginForExtensionAvailable(extension: string): boolean;
-        /**
-         * Adds a new plugin to the list of registered plugins
-         * @param plugin defines the plugin to add
-         */
-        static RegisterPlugin(plugin: ISceneLoaderPlugin | ISceneLoaderPluginAsync): void;
-        /**
-         * Import meshes into a scene
-         * @param meshNames an array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
-         * @param scene the instance of BABYLON.Scene to append to
-         * @param onSuccess a callback with a list of imported meshes, particleSystems, and skeletons when import succeeds
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param onError a callback with the scene, a message, and possibly an exception when import fails
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The loaded plugin
-         */
-        static ImportMesh(meshNames: any, rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onSuccess?: Nullable<(meshes: AbstractMesh[], particleSystems: IParticleSystem[], skeletons: Skeleton[], animationGroups: AnimationGroup[]) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
-        /**
-         * Import meshes into a scene
-         * @param meshNames an array of mesh names, a single mesh name, or empty string for all meshes that filter what meshes are imported
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
-         * @param scene the instance of BABYLON.Scene to append to
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The loaded list of imported meshes, particle systems, skeletons, and animation groups
-         */
-        static ImportMeshAsync(meshNames: any, rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<{
-            meshes: AbstractMesh[];
-            particleSystems: IParticleSystem[];
-            skeletons: Skeleton[];
-            animationGroups: AnimationGroup[];
-        }>;
-        /**
-         * Load a scene
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
-         * @param engine is the instance of BABYLON.Engine to use to create the scene
-         * @param onSuccess a callback with the scene when import succeeds
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param onError a callback with the scene, a message, and possibly an exception when import fails
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The loaded plugin
-         */
-        static Load(rootUrl: string, sceneFilename?: string | File, engine?: Nullable<Engine>, onSuccess?: Nullable<(scene: Scene) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
-        /**
-         * Load a scene
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
-         * @param engine is the instance of BABYLON.Engine to use to create the scene
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The loaded scene
-         */
-        static LoadAsync(rootUrl: string, sceneFilename?: string | File, engine?: Nullable<Engine>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<Scene>;
-        /**
-         * Append a scene
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
-         * @param scene is the instance of BABYLON.Scene to append to
-         * @param onSuccess a callback with the scene when import succeeds
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param onError a callback with the scene, a message, and possibly an exception when import fails
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The loaded plugin
-         */
-        static Append(rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onSuccess?: Nullable<(scene: Scene) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
-        /**
-         * Append a scene
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
-         * @param scene is the instance of BABYLON.Scene to append to
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The given scene
-         */
-        static AppendAsync(rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<Scene>;
-        /**
-         * Load a scene into an asset container
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene or a File object (default: empty string)
-         * @param scene is the instance of BABYLON.Scene to append to (default: last created scene)
-         * @param onSuccess a callback with the scene when import succeeds
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param onError a callback with the scene, a message, and possibly an exception when import fails
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The loaded plugin
-         */
-        static LoadAssetContainer(rootUrl: string, sceneFilename?: string | File, scene?: Nullable<Scene>, onSuccess?: Nullable<(assets: AssetContainer) => void>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, onError?: Nullable<(scene: Scene, message: string, exception?: any) => void>, pluginExtension?: Nullable<string>): Nullable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
-        /**
-         * Load a scene into an asset container
-         * @param rootUrl a string that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. http://example.com/test.glb)
-         * @param sceneFilename a string that defines the name of the scene file or starts with "data:" following by the stringified version of the scene (default: empty string)
-         * @param scene is the instance of Scene to append to
-         * @param onProgress a callback with a progress event for each file being loaded
-         * @param pluginExtension the extension used to determine the plugin
-         * @returns The loaded asset container
-         */
-        static LoadAssetContainerAsync(rootUrl: string, sceneFilename?: string, scene?: Nullable<Scene>, onProgress?: Nullable<(event: SceneLoaderProgressEvent) => void>, pluginExtension?: Nullable<string>): Promise<AssetContainer>;
-    }
-}
-declare module BABYLON {
-    /**
      * Google Daydream controller
      */
     export class DaydreamController extends WebVRController {
@@ -42697,106 +43226,6 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Generic Controller
-     */
-    export class GenericController extends WebVRController {
-        /**
-         * Base Url for the controller model.
-         */
-        static readonly MODEL_BASE_URL: string;
-        /**
-         * File name for the controller model.
-         */
-        static readonly MODEL_FILENAME: string;
-        /**
-         * Creates a new GenericController from a gamepad
-         * @param vrGamepad the gamepad that the controller should be created from
-         */
-        constructor(vrGamepad: any);
-        /**
-         * Implements abstract method on WebVRController class, loading controller meshes and calling this.attachToMesh if successful.
-         * @param scene scene in which to add meshes
-         * @param meshLoaded optional callback function that will be called if the mesh loads successfully.
-         */
-        initControllerMesh(scene: Scene, meshLoaded?: (mesh: AbstractMesh) => void): void;
-        /**
-         * Called once for each button that changed state since the last frame
-         * @param buttonIdx Which button index changed
-         * @param state New state of the button
-         * @param changes Which properties on the state changed since last frame
-         */
-        protected _handleButtonChange(buttonIdx: number, state: ExtendedGamepadButton, changes: GamepadButtonChanges): void;
-    }
-}
-declare module BABYLON {
-    /**
-     * Oculus Touch Controller
-     */
-    export class OculusTouchController extends WebVRController {
-        /**
-         * Base Url for the controller model.
-         */
-        static MODEL_BASE_URL: string;
-        /**
-         * File name for the left controller model.
-         */
-        static MODEL_LEFT_FILENAME: string;
-        /**
-         * File name for the right controller model.
-         */
-        static MODEL_RIGHT_FILENAME: string;
-        /**
-         * Fired when the secondary trigger on this controller is modified
-         */
-        onSecondaryTriggerStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the thumb rest on this controller is modified
-         */
-        onThumbRestChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Creates a new OculusTouchController from a gamepad
-         * @param vrGamepad the gamepad that the controller should be created from
-         */
-        constructor(vrGamepad: any);
-        /**
-         * Implements abstract method on WebVRController class, loading controller meshes and calling this.attachToMesh if successful.
-         * @param scene scene in which to add meshes
-         * @param meshLoaded optional callback function that will be called if the mesh loads successfully.
-         */
-        initControllerMesh(scene: Scene, meshLoaded?: (mesh: AbstractMesh) => void): void;
-        /**
-         * Fired when the A button on this controller is modified
-         */
-        readonly onAButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the B button on this controller is modified
-         */
-        readonly onBButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the X button on this controller is modified
-         */
-        readonly onXButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the Y button on this controller is modified
-         */
-        readonly onYButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-          * Called once for each button that changed state since the last frame
-          * 0) thumb stick (touch, press, value = pressed (0,1)). value is in this.leftStick
-          * 1) index trigger (touch (?), press (only when value > 0.1), value 0 to 1)
-          * 2) secondary trigger (same)
-          * 3) A (right) X (left), touch, pressed = value
-          * 4) B / Y
-          * 5) thumb rest
-          * @param buttonIdx Which button index changed
-          * @param state New state of the button
-          * @param changes Which properties on the state changed since last frame
-          */
-        protected _handleButtonChange(buttonIdx: number, state: ExtendedGamepadButton, changes: GamepadButtonChanges): void;
-    }
-}
-declare module BABYLON {
-    /**
      * Vive Controller
      */
     export class ViveController extends WebVRController {
@@ -42843,127 +43272,6 @@ declare module BABYLON {
          * @param changes Which properties on the state changed since last frame
          */
         protected _handleButtonChange(buttonIdx: number, state: ExtendedGamepadButton, changes: GamepadButtonChanges): void;
-    }
-}
-declare module BABYLON {
-    /**
-     * Defines the WindowsMotionController object that the state of the windows motion controller
-     */
-    export class WindowsMotionController extends WebVRController {
-        /**
-         * The base url used to load the left and right controller models
-         */
-        static MODEL_BASE_URL: string;
-        /**
-         * The name of the left controller model file
-         */
-        static MODEL_LEFT_FILENAME: string;
-        /**
-         * The name of the right controller model file
-         */
-        static MODEL_RIGHT_FILENAME: string;
-        /**
-         * The controller name prefix for this controller type
-         */
-        static readonly GAMEPAD_ID_PREFIX: string;
-        /**
-         * The controller id pattern for this controller type
-         */
-        private static readonly GAMEPAD_ID_PATTERN;
-        private _loadedMeshInfo;
-        private readonly _mapping;
-        /**
-         * Fired when the trackpad on this controller is clicked
-         */
-        onTrackpadChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the trackpad on this controller is modified
-         */
-        onTrackpadValuesChangedObservable: Observable<StickValues>;
-        /**
-         * The current x and y values of this controller's trackpad
-         */
-        trackpad: StickValues;
-        /**
-         * Creates a new WindowsMotionController from a gamepad
-         * @param vrGamepad the gamepad that the controller should be created from
-         */
-        constructor(vrGamepad: any);
-        /**
-         * Fired when the trigger on this controller is modified
-         */
-        readonly onTriggerButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the menu button on this controller is modified
-         */
-        readonly onMenuButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the grip button on this controller is modified
-         */
-        readonly onGripButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the thumbstick button on this controller is modified
-         */
-        readonly onThumbstickButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the touchpad button on this controller is modified
-         */
-        readonly onTouchpadButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
-        /**
-         * Fired when the touchpad values on this controller are modified
-         */
-        readonly onTouchpadValuesChangedObservable: Observable<StickValues>;
-        private _updateTrackpad;
-        /**
-         * Called once per frame by the engine.
-         */
-        update(): void;
-        /**
-         * Called once for each button that changed state since the last frame
-         * @param buttonIdx Which button index changed
-         * @param state New state of the button
-         * @param changes Which properties on the state changed since last frame
-         */
-        protected _handleButtonChange(buttonIdx: number, state: ExtendedGamepadButton, changes: GamepadButtonChanges): void;
-        /**
-         * Moves the buttons on the controller mesh based on their current state
-         * @param buttonName the name of the button to move
-         * @param buttonValue the value of the button which determines the buttons new position
-         */
-        protected _lerpButtonTransform(buttonName: string, buttonValue: number): void;
-        /**
-         * Moves the axis on the controller mesh based on its current state
-         * @param axis the index of the axis
-         * @param axisValue the value of the axis which determines the meshes new position
-         * @hidden
-         */
-        protected _lerpAxisTransform(axis: number, axisValue: number): void;
-        /**
-         * Implements abstract method on WebVRController class, loading controller meshes and calling this.attachToMesh if successful.
-         * @param scene scene in which to add meshes
-         * @param meshLoaded optional callback function that will be called if the mesh loads successfully.
-         */
-        initControllerMesh(scene: Scene, meshLoaded?: (mesh: AbstractMesh) => void, forceDefault?: boolean): void;
-        /**
-         * Takes a list of meshes (as loaded from the glTF file) and finds the root node, as well as nodes that
-         * can be transformed by button presses and axes values, based on this._mapping.
-         *
-         * @param scene scene in which the meshes exist
-         * @param meshes list of meshes that make up the controller model to process
-         * @return structured view of the given meshes, with mapping of buttons and axes to meshes that can be transformed.
-         */
-        private processModel;
-        private createMeshInfo;
-        /**
-         * Gets the ray of the controller in the direction the controller is pointing
-         * @param length the length the resulting ray should be
-         * @returns a ray in the direction the controller is pointing
-         */
-        getForwardRay(length?: number): Ray;
-        /**
-        * Disposes of the controller
-        */
-        dispose(): void;
     }
 }
 declare module BABYLON {
@@ -44661,10 +44969,12 @@ declare module BABYLON {
          */
         serialize(): any;
         /**
-         * Parses a Clear Coat Configuration from a serialized object.
+         * Parses a anisotropy Configuration from a serialized object.
          * @param source - Serialized object.
+         * @param scene Defines the scene we are parsing for
+         * @param rootUrl Defines the rootUrl to load from
          */
-        parse(source: any): void;
+        parse(source: any, scene: Scene, rootUrl: string): void;
     }
 }
 declare module BABYLON {
@@ -44796,8 +45106,10 @@ declare module BABYLON {
         /**
          * Parses a anisotropy Configuration from a serialized object.
          * @param source - Serialized object.
+         * @param scene Defines the scene we are parsing for
+         * @param rootUrl Defines the rootUrl to load from
          */
-        parse(source: any): void;
+        parse(source: any, scene: Scene, rootUrl: string): void;
     }
 }
 declare module BABYLON {
@@ -44885,10 +45197,12 @@ declare module BABYLON {
          */
         serialize(): any;
         /**
-         * Parses a BRDF Configuration from a serialized object.
+         * Parses a anisotropy Configuration from a serialized object.
          * @param source - Serialized object.
+         * @param scene Defines the scene we are parsing for
+         * @param rootUrl Defines the rootUrl to load from
          */
-        parse(source: any): void;
+        parse(source: any, scene: Scene, rootUrl: string): void;
     }
 }
 declare module BABYLON {
@@ -45021,10 +45335,12 @@ declare module BABYLON {
          */
         serialize(): any;
         /**
-         * Parses a Sheen Configuration from a serialized object.
+         * Parses a anisotropy Configuration from a serialized object.
          * @param source - Serialized object.
+         * @param scene Defines the scene we are parsing for
+         * @param rootUrl Defines the rootUrl to load from
          */
-        parse(source: any): void;
+        parse(source: any, scene: Scene, rootUrl: string): void;
     }
 }
 declare module BABYLON {
@@ -45263,10 +45579,12 @@ declare module BABYLON {
          */
         serialize(): any;
         /**
-         * Parses a Sub Surface Configuration from a serialized object.
+         * Parses a anisotropy Configuration from a serialized object.
          * @param source - Serialized object.
+         * @param scene Defines the scene we are parsing for
+         * @param rootUrl Defines the rootUrl to load from
          */
-        parse(source: any): void;
+        parse(source: any, scene: Scene, rootUrl: string): void;
     }
 }
 declare module BABYLON {
@@ -45467,6 +45785,7 @@ declare module BABYLON {
         MORPHTARGETS: boolean;
         MORPHTARGETS_NORMAL: boolean;
         MORPHTARGETS_TANGENT: boolean;
+        MORPHTARGETS_UV: boolean;
         NUM_MORPH_INFLUENCERS: number;
         IMAGEPROCESSING: boolean;
         VIGNETTE: boolean;
@@ -46325,9 +46644,9 @@ declare module BABYLON {
         /**
          * Let user defines the brdf lookup texture used for IBL.
          * A default 8bit version is embedded but you could point at :
-         * * Default texture: https://assets.babylonjs.com/environments/correlatedMSBRDF.png
+         * * Default texture: https://assets.babylonjs.com/environments/correlatedMSBRDF_RGBD.png
          * * Default 16bit pixel depth texture: https://assets.babylonjs.com/environments/correlatedMSBRDF.dds
-         * * LEGACY Default None correlated https://assets.babylonjs.com/environments/uncorrelatedBRDF.png
+         * * LEGACY Default None correlated https://assets.babylonjs.com/environments/uncorrelatedBRDF_RGBD.png
          * * LEGACY Default None correlated 16bit pixel depth https://assets.babylonjs.com/environments/uncorrelatedBRDF.dds
          */
         environmentBRDFTexture: Nullable<BaseTexture>;
@@ -46886,6 +47205,62 @@ declare module BABYLON {
     }
 }
 declare module BABYLON {
+    /**
+     * Options for the default xr helper
+     */
+    export class WebXRDefaultExperienceOptions {
+        /**
+         * Floor meshes that should be used for teleporting
+         */
+        floorMeshes: Array<AbstractMesh>;
+    }
+    /**
+     * Default experience which provides a similar setup to the previous webVRExperience
+     */
+    export class WebXRDefaultExperience {
+        /**
+         * Base experience
+         */
+        baseExperience: WebXRExperienceHelper;
+        /**
+         * Input experience extension
+         */
+        input: WebXRInput;
+        /**
+         * Loads the controller models
+         */
+        controllerModelLoader: WebXRControllerModelLoader;
+        /**
+         * Enables laser pointer and selection
+         */
+        pointerSelection: WebXRControllerPointerSelection;
+        /**
+         * Enables teleportation
+         */
+        teleportation: WebXRControllerTeleportation;
+        /**
+         * Enables ui for enetering/exiting xr
+         */
+        enterExitUI: WebXREnterExitUI;
+        /**
+         * Default output canvas xr should render to
+         */
+        outputCanvas: WebXRManagedOutputCanvas;
+        /**
+         * Creates the default xr experience
+         * @param scene scene
+         * @param options options for basic configuration
+         * @returns resulting WebXRDefaultExperience
+         */
+        static CreateAsync(scene: Scene, options: WebXRDefaultExperienceOptions): Promise<WebXRDefaultExperience>;
+        private constructor();
+        /**
+         * DIsposes of the experience helper
+         */
+        dispose(): void;
+    }
+}
+declare module BABYLON {
     /** @hidden */
     export var _forceSceneHelpersToBundle: boolean;
         interface Scene {
@@ -46937,11 +47312,12 @@ declare module BABYLON {
              */
             createDefaultVRExperience(webVROptions?: VRExperienceHelperOptions): VRExperienceHelper;
             /**
-             * Creates a new XREXperienceHelper
+             * Creates a new WebXRDefaultExperience
              * @see http://doc.babylonjs.com/how_to/webxr
-             * @returns a promise for a new XREXperienceHelper
+             * @param options experience options
+             * @returns a promise for a new WebXRDefaultExperience
              */
-            createDefaultXRExperienceAsync(): Promise<WebXRExperienceHelper>;
+            createDefaultXRExperienceAsync(options: WebXRDefaultExperienceOptions): Promise<WebXRDefaultExperience>;
         }
 }
 declare module BABYLON {
@@ -47347,7 +47723,7 @@ declare module BABYLON {
         /**
          * Gets the rendering group id the layer should render in.
          */
-        readonly renderingGroupId: number;
+        renderingGroupId: number;
         /**
          * An event triggered when the effect layer has been disposed.
          */
@@ -48962,13 +49338,14 @@ declare module BABYLON {
         private _fixedTimeStep;
         private _cannonRaycastResult;
         private _raycastResult;
-        private _removeAfterStep;
+        private _physicsBodysToRemoveAfterStep;
         BJSCANNON: any;
         constructor(_useDeltaForWorldStep?: boolean, iterations?: number, cannonInjection?: any);
         setGravity(gravity: Vector3): void;
         setTimeStep(timeStep: number): void;
         getTimeStep(): number;
         executeStep(delta: number): void;
+        private _removeMarkedPhysicsBodiesFromWorld;
         applyImpulse(impostor: PhysicsImpostor, force: Vector3, contactPoint: Vector3): void;
         applyForce(impostor: PhysicsImpostor, force: Vector3, contactPoint: Vector3): void;
         generatePhysicsBody(impostor: PhysicsImpostor): void;
@@ -50105,6 +50482,19 @@ declare module BABYLON {
         }>;
     }
     /**
+     * Result of transcoding a basis file
+     */
+    class TranscodeResult {
+        /**
+         * Info about the .basis file
+         */
+        fileInfo: BasisFileInfo;
+        /**
+         * Format to use when loading the file
+         */
+        format: number;
+    }
+    /**
      * Configuration options for the Basis transcoder
      */
     export class BasisTranscodeConfiguration {
@@ -50168,10 +50558,13 @@ declare module BABYLON {
          * @param config configuration options for the transcoding
          * @returns a promise resulting in the transcoded image
          */
-        static TranscodeAsync(imageData: ArrayBuffer, config: BasisTranscodeConfiguration): Promise<{
-            fileInfo: BasisFileInfo;
-            format: number;
-        }>;
+        static TranscodeAsync(imageData: ArrayBuffer, config: BasisTranscodeConfiguration): Promise<TranscodeResult>;
+        /**
+         * Loads a texture from the transcode result
+         * @param texture texture load to
+         * @param transcodeResult the result of transcoding the basis file to load from
+         */
+        static LoadTextureFromTranscodeResult(texture: InternalTexture, transcodeResult: TranscodeResult): void;
     }
 }
 declare module BABYLON {
@@ -50510,6 +50903,8 @@ declare module BABYLON {
         Vertex = 1,
         /** Fragment shader */
         Fragment = 2,
+        /** Neutral */
+        Neutral = 4,
         /** Vertex and Fragment */
         VertexAndFragment = 3
     }
@@ -50535,10 +50930,6 @@ declare module BABYLON {
         Color4 = 64,
         /** Matrix */
         Matrix = 128,
-        /** Texture */
-        Texture = 256,
-        /** Texture3D */
-        Texture3D = 512,
         /** Vector3 or Color3 */
         Vector3OrColor3 = 40,
         /** Vector3 or Vector4 */
@@ -50547,215 +50938,16 @@ declare module BABYLON {
         Vector4OrColor4 = 80,
         /** Color3 or Color4 */
         Color3OrColor4 = 96,
-        /** Vector3 or Color3 */
+        /** Vector2 or Color3 or Color4 */
+        Vector2OrColor3OrColor4 = 100,
+        /** Vector3 or Color3 or Color4 or Vector4 */
         Vector3OrColor3OrVector4OrColor4 = 120,
+        /** Vector2 or Vector3 or Color3 or Color4 or Vector4 */
+        Vector2OrVector3OrColor3OrVector4OrColor4 = 124,
         /** Detect type based on connection */
         AutoDetect = 1024,
         /** Output type that will be defined by input type */
-        BasedOnInput = 2048,
-        /** Light */
-        Light = 4096
-    }
-}
-declare module BABYLON {
-    /**
-     * Enum used to define well known values e.g. values automatically provided by the system
-     */
-    export enum NodeMaterialWellKnownValues {
-        /** World */
-        World = 1,
-        /** View */
-        View = 2,
-        /** Projection */
-        Projection = 3,
-        /** ViewProjection */
-        ViewProjection = 4,
-        /** WorldView */
-        WorldView = 5,
-        /** WorldViewProjection */
-        WorldViewProjection = 6,
-        /** Will be filled by the block itself */
-        Automatic = 7
-    }
-}
-declare module BABYLON {
-    /**
-     * Enum defining the mode of a NodeMaterialBlockConnectionPoint
-     */
-    export enum NodeMaterialBlockConnectionPointMode {
-        /** Value is an uniform */
-        Uniform = 0,
-        /** Value is a mesh attribute */
-        Attribute = 1,
-        /** Value is a varying between vertex and fragment shaders */
-        Varying = 2,
-        /** Mode is undefined */
-        Undefined = 3
-    }
-}
-declare module BABYLON {
-    /**
-     * Class used to store shared data between 2 NodeMaterialBuildState
-     */
-    export class NodeMaterialBuildStateSharedData {
-        /**
-         * Gets the list of emitted varyings
-         */
-        varyings: string[];
-        /**
-         * Gets the varying declaration string
-         */
-        varyingDeclaration: string;
-        /**
-         * Uniform connection points
-         */
-        uniformConnectionPoints: NodeMaterialConnectionPoint[];
-        /**
-         * Bindable blocks (Blocks that need to set data to the effect)
-         */
-        bindableBlocks: NodeMaterialBlock[];
-        /**
-         * List of blocks that can provide a compilation fallback
-         */
-        blocksWithFallbacks: NodeMaterialBlock[];
-        /**
-         * List of blocks that can provide a define update
-         */
-        blocksWithDefines: NodeMaterialBlock[];
-        /**
-        * List of blocks that can provide a repeatable content
-        */
-        repeatableContentBlocks: NodeMaterialBlock[];
-        /**
-         * List of blocks that can block the isReady function for the material
-         */
-        blockingBlocks: NodeMaterialBlock[];
-        /**
-         * Build Id used to avoid multiple recompilations
-         */
-        buildId: number;
-        /** List of emitted variables */
-        variableNames: {
-            [key: string]: number;
-        };
-        /** List of emitted defines */
-        defineNames: {
-            [key: string]: number;
-        };
-        /** Should emit comments? */
-        emitComments: boolean;
-        /** Emit build activity */
-        verbose: boolean;
-        /**
-         * Gets the compilation hints emitted at compilation time
-         */
-        hints: {
-            needWorldViewMatrix: boolean;
-            needWorldViewProjectionMatrix: boolean;
-            needAlphaBlending: boolean;
-            needAlphaTesting: boolean;
-        };
-        /**
-         * List of compilation checks
-         */
-        checks: {
-            emitVertex: boolean;
-            emitFragment: boolean;
-            notConnectedNonOptionalInputs: NodeMaterialConnectionPoint[];
-        };
-        /** Creates a new shared data */
-        constructor();
-        /**
-         * Emits console errors and exceptions if there is a failing check
-         */
-        emitErrors(): void;
-    }
-}
-declare module BABYLON {
-    /**
-     * Class used to store node based material build state
-     */
-    export class NodeMaterialBuildState {
-        /**
-         * Gets the list of emitted attributes
-         */
-        attributes: string[];
-        /**
-         * Gets the list of emitted uniforms
-         */
-        uniforms: string[];
-        /**
-         * Gets the list of emitted samplers
-         */
-        samplers: string[];
-        /**
-         * Gets the list of emitted functions
-         */
-        functions: {
-            [key: string]: string;
-        };
-        /**
-         * Gets the target of the compilation state
-         */
-        target: NodeMaterialBlockTargets;
-        /**
-         * Shared data between multiple NodeMaterialBuildState instances
-         */
-        sharedData: NodeMaterialBuildStateSharedData;
-        /** @hidden */
-        _vertexState: NodeMaterialBuildState;
-        private _attributeDeclaration;
-        private _uniformDeclaration;
-        private _samplerDeclaration;
-        private _varyingTransfer;
-        private _repeatableContentAnchorIndex;
-        /** @hidden */
-        _builtCompilationString: string;
-        /**
-         * Gets the emitted compilation strings
-         */
-        compilationString: string;
-        /**
-         * Finalize the compilation strings
-         * @param state defines the current compilation state
-         */
-        finalize(state: NodeMaterialBuildState): void;
-        /** @hidden */
-        readonly _repeatableContentAnchor: string;
-        /** @hidden */
-        _getFreeVariableName(prefix: string): string;
-        /** @hidden */
-        _getFreeDefineName(prefix: string): string;
-        /** @hidden */
-        _excludeVariableName(name: string): void;
-        /** @hidden */
-        _getGLType(type: NodeMaterialBlockConnectionPointTypes): string;
-        /** @hidden */
-        _emitFunction(name: string, code: string, comments: string): void;
-        /** @hidden */
-        _emitCodeFromInclude(includeName: string, comments: string, options?: {
-            replaceStrings?: {
-                search: RegExp;
-                replace: string;
-            }[];
-        }): string;
-        /** @hidden */
-        _emitFunctionFromInclude(includeName: string, comments: string, options?: {
-            repeatKey?: string;
-            removeAttributes?: boolean;
-            removeUniforms?: boolean;
-            removeVaryings?: boolean;
-            removeIfDef?: boolean;
-            replaceStrings?: {
-                search: RegExp;
-                replace: string;
-            }[];
-        }): void;
-        /** @hidden */
-        _emitVaryings(point: NodeMaterialConnectionPoint, define?: string, force?: boolean, fromFragment?: boolean, replacementName?: string): void;
-        private _emitDefine;
-        /** @hidden */
-        _emitUniformOrAttributes(point: NodeMaterialConnectionPoint, define?: string): void;
+        BasedOnInput = 2048
     }
 }
 declare module BABYLON {
@@ -50871,6 +51063,7 @@ declare module BABYLON {
         MORPHTARGETS: boolean;
         MORPHTARGETS_NORMAL: boolean;
         MORPHTARGETS_TANGENT: boolean;
+        MORPHTARGETS_UV: boolean;
         NUM_MORPH_INFLUENCERS: number;
         /** IMAGE PROCESSING */
         IMAGEPROCESSING: boolean;
@@ -50911,7 +51104,6 @@ declare module BABYLON {
         private _buildWasSuccessful;
         private _cachedWorldViewMatrix;
         private _cachedWorldViewProjectionMatrix;
-        private _textureConnectionPoints;
         private _optimizers;
         /** Define the URl to load node editor script */
         static EditorURL: string;
@@ -51079,12 +51271,246 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
+     * Block used to read a texture from a sampler
+     */
+    export class TextureBlock extends NodeMaterialBlock {
+        private _defineName;
+        private _samplerName;
+        private _transformedUVName;
+        private _textureTransformName;
+        private _textureInfoName;
+        private _mainUVName;
+        private _mainUVDefineName;
+        /**
+         * Gets or sets the texture associated with the node
+         */
+        texture: Nullable<BaseTexture>;
+        /**
+         * Create a new TextureBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the uv input component
+         */
+        readonly uv: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        autoConfigure(): void;
+        initializeDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): void;
+        prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
+        isReady(): boolean;
+        bind(effect: Effect, nodeMaterial: NodeMaterial, mesh?: Mesh): void;
+        private _injectVertexCode;
+        protected _buildBlock(state: NodeMaterialBuildState): this | undefined;
+    }
+}
+declare module BABYLON {
+    /**
+     * Class used to store shared data between 2 NodeMaterialBuildState
+     */
+    export class NodeMaterialBuildStateSharedData {
+        /**
+         * Gets the list of emitted varyings
+         */
+        varyings: string[];
+        /**
+         * Gets the varying declaration string
+         */
+        varyingDeclaration: string;
+        /**
+         * Input blocks
+         */
+        inputBlocks: InputBlock[];
+        /**
+         * Input blocks
+         */
+        textureBlocks: TextureBlock[];
+        /**
+         * Bindable blocks (Blocks that need to set data to the effect)
+         */
+        bindableBlocks: NodeMaterialBlock[];
+        /**
+         * List of blocks that can provide a compilation fallback
+         */
+        blocksWithFallbacks: NodeMaterialBlock[];
+        /**
+         * List of blocks that can provide a define update
+         */
+        blocksWithDefines: NodeMaterialBlock[];
+        /**
+        * List of blocks that can provide a repeatable content
+        */
+        repeatableContentBlocks: NodeMaterialBlock[];
+        /**
+        * List of blocks that can provide a dynamic list of uniforms
+        */
+        dynamicUniformBlocks: NodeMaterialBlock[];
+        /**
+         * List of blocks that can block the isReady function for the material
+         */
+        blockingBlocks: NodeMaterialBlock[];
+        /**
+         * Build Id used to avoid multiple recompilations
+         */
+        buildId: number;
+        /** List of emitted variables */
+        variableNames: {
+            [key: string]: number;
+        };
+        /** List of emitted defines */
+        defineNames: {
+            [key: string]: number;
+        };
+        /** Should emit comments? */
+        emitComments: boolean;
+        /** Emit build activity */
+        verbose: boolean;
+        /**
+         * Gets the compilation hints emitted at compilation time
+         */
+        hints: {
+            needWorldViewMatrix: boolean;
+            needWorldViewProjectionMatrix: boolean;
+            needAlphaBlending: boolean;
+            needAlphaTesting: boolean;
+        };
+        /**
+         * List of compilation checks
+         */
+        checks: {
+            emitVertex: boolean;
+            emitFragment: boolean;
+            notConnectedNonOptionalInputs: NodeMaterialConnectionPoint[];
+        };
+        /** Creates a new shared data */
+        constructor();
+        /**
+         * Emits console errors and exceptions if there is a failing check
+         */
+        emitErrors(): void;
+    }
+}
+declare module BABYLON {
+    /**
+     * Class used to store node based material build state
+     */
+    export class NodeMaterialBuildState {
+        /** Gets or sets a boolean indicating if the current state can emit uniform buffers */
+        supportUniformBuffers: boolean;
+        /**
+         * Gets the list of emitted attributes
+         */
+        attributes: string[];
+        /**
+         * Gets the list of emitted uniforms
+         */
+        uniforms: string[];
+        /**
+         * Gets the list of emitted uniform buffers
+         */
+        uniformBuffers: string[];
+        /**
+         * Gets the list of emitted samplers
+         */
+        samplers: string[];
+        /**
+         * Gets the list of emitted functions
+         */
+        functions: {
+            [key: string]: string;
+        };
+        /**
+         * Gets the target of the compilation state
+         */
+        target: NodeMaterialBlockTargets;
+        /**
+         * Gets the list of emitted counters
+         */
+        counters: {
+            [key: string]: number;
+        };
+        /**
+         * Shared data between multiple NodeMaterialBuildState instances
+         */
+        sharedData: NodeMaterialBuildStateSharedData;
+        /** @hidden */
+        _vertexState: NodeMaterialBuildState;
+        /** @hidden */
+        _attributeDeclaration: string;
+        /** @hidden */
+        _uniformDeclaration: string;
+        /** @hidden */
+        _samplerDeclaration: string;
+        /** @hidden */
+        _varyingTransfer: string;
+        private _repeatableContentAnchorIndex;
+        /** @hidden */
+        _builtCompilationString: string;
+        /**
+         * Gets the emitted compilation strings
+         */
+        compilationString: string;
+        /**
+         * Finalize the compilation strings
+         * @param state defines the current compilation state
+         */
+        finalize(state: NodeMaterialBuildState): void;
+        /** @hidden */
+        readonly _repeatableContentAnchor: string;
+        /** @hidden */
+        _getFreeVariableName(prefix: string): string;
+        /** @hidden */
+        _getFreeDefineName(prefix: string): string;
+        /** @hidden */
+        _excludeVariableName(name: string): void;
+        /** @hidden */
+        _getGLType(type: NodeMaterialBlockConnectionPointTypes): string;
+        /** @hidden */
+        _emitFunction(name: string, code: string, comments: string): void;
+        /** @hidden */
+        _emitCodeFromInclude(includeName: string, comments: string, options?: {
+            replaceStrings?: {
+                search: RegExp;
+                replace: string;
+            }[];
+            repeatKey?: string;
+        }): string;
+        /** @hidden */
+        _emitFunctionFromInclude(includeName: string, comments: string, options?: {
+            repeatKey?: string;
+            removeAttributes?: boolean;
+            removeUniforms?: boolean;
+            removeVaryings?: boolean;
+            removeIfDef?: boolean;
+            replaceStrings?: {
+                search: RegExp;
+                replace: string;
+            }[];
+        }, storeKey?: string): void;
+        /** @hidden */
+        _emitVaryingFromString(name: string, type: string, define?: string, notDefine?: boolean): void;
+        /** @hidden */
+        _emitUniformFromString(name: string, type: string, define?: string, notDefine?: boolean): void;
+    }
+}
+declare module BABYLON {
+    /**
      * Defines a block that can be used inside a node based material
      */
     export class NodeMaterialBlock {
         private _buildId;
+        private _buildTarget;
         private _target;
         private _isFinalMerger;
+        private _isInput;
         /** @hidden */
         _inputs: NodeMaterialConnectionPoint[];
         /** @hidden */
@@ -51097,6 +51523,10 @@ declare module BABYLON {
          * Gets a boolean indicating that this block is an end block (e.g. it is generating a system value)
          */
         readonly isFinalMerger: boolean;
+        /**
+         * Gets a boolean indicating that this block is an input (e.g. it sends data to the shader)
+         */
+        readonly isInput: boolean;
         /**
          * Gets or sets the build Id
          */
@@ -51128,8 +51558,9 @@ declare module BABYLON {
          * @param name defines the block name
          * @param target defines the target of that block (Vertex by default)
          * @param isFinalMerger defines a boolean indicating that this block is an end block (e.g. it is generating a system value). Default is false
+         * @param isInput defines a boolean indicating that this block is an input (e.g. it sends data to the shader). Default is false
          */
-        constructor(name: string, target?: NodeMaterialBlockTargets, isFinalMerger?: boolean);
+        constructor(name: string, target?: NodeMaterialBlockTargets, isFinalMerger?: boolean, isInput?: boolean);
         /**
          * Initialize the block and prepare the context for build
          * @param state defines the state that will be used for the build
@@ -51192,6 +51623,13 @@ declare module BABYLON {
         }): this | undefined;
         protected _buildBlock(state: NodeMaterialBuildState): void;
         /**
+         * Add uniforms, samplers and uniform buffers at compilation time
+         * @param state defines the state to update
+         * @param nodeMaterial defines the node material requesting the update
+         * @param defines defines the material defines to update
+         */
+        updateUniformsAndSamples(state: NodeMaterialBuildState, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
+        /**
          * Add potential fallbacks if shader compilation fails
          * @param mesh defines the mesh to be rendered
          * @param fallbacks defines the current prioritized list of fallbacks
@@ -51205,6 +51643,14 @@ declare module BABYLON {
          * @param useInstances specifies that instances should be used
          */
         prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): void;
+        /**
+         * Initialize defines for shader compilation
+         * @param mesh defines the mesh to be rendered
+         * @param nodeMaterial defines the node material requesting the update
+         * @param defines defines the material defines to be prepared
+         * @param useInstances specifies that instances should be used
+         */
+        initializeDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): void;
         /**
          * Lets the block try to connect some inputs automatically
          */
@@ -51226,59 +51672,93 @@ declare module BABYLON {
          * @returns true if the block is ready
          */
         isReady(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): boolean;
+        private _processBuild;
         /**
          * Compile the current node and generate the shader code
          * @param state defines the current compilation state (uniforms, samplers, current string)
-         * @returns the current block
+         * @param contextSwitched indicates that the previous block was built for a different context (vertex vs. fragment)
+         * @returns true if already built
          */
-        build(state: NodeMaterialBuildState): this | undefined;
+        build(state: NodeMaterialBuildState, contextSwitched?: boolean): boolean;
     }
 }
 declare module BABYLON {
     /**
-     * Defines a connection point for a block
+     * Enum defining the mode of a NodeMaterialBlockConnectionPoint
      */
-    export class NodeMaterialConnectionPoint {
-        /** @hidden */
-        _ownerBlock: NodeMaterialBlock;
-        /** @hidden */
-        _connectedPoint: Nullable<NodeMaterialConnectionPoint>;
+    export enum NodeMaterialBlockConnectionPointMode {
+        /** Value is an uniform */
+        Uniform = 0,
+        /** Value is a mesh attribute */
+        Attribute = 1,
+        /** Value is a varying between vertex and fragment shaders */
+        Varying = 2,
+        /** Mode is undefined */
+        Undefined = 3
+    }
+}
+declare module BABYLON {
+    /**
+     * Enum used to define well known values e.g. values automatically provided by the system
+     */
+    export enum NodeMaterialWellKnownValues {
+        /** World */
+        World = 1,
+        /** View */
+        View = 2,
+        /** Projection */
+        Projection = 3,
+        /** ViewProjection */
+        ViewProjection = 4,
+        /** WorldView */
+        WorldView = 5,
+        /** WorldViewProjection */
+        WorldViewProjection = 6,
+        /** CameraPosition */
+        CameraPosition = 7,
+        /** Fog Color */
+        FogColor = 8
+    }
+}
+declare module BABYLON {
+    /**
+     * Block used to expose an input value
+     */
+    export class InputBlock extends NodeMaterialBlock {
+        private _mode;
         private _associatedVariableName;
-        private _endpoints;
         private _storedValue;
         private _valueCallback;
-        private _mode;
+        private _type;
         /** @hidden */
         _wellKnownValue: Nullable<NodeMaterialWellKnownValues>;
-        /** @hidden */
-        _typeConnectionSource: Nullable<NodeMaterialConnectionPoint>;
-        /** @hidden */
-        _needToEmitVarying: boolean;
-        /** @hidden */
-        _forceUniformInVertexShaderOnly: boolean;
-        private _type;
         /**
          * Gets or sets the connection point type (default is float)
          */
-        type: NodeMaterialBlockConnectionPointTypes;
+        readonly type: NodeMaterialBlockConnectionPointTypes;
         /**
-         * Gets or sets the connection point name
+         * Creates a new InputBlock
+         * @param name defines the block name
+         * @param target defines the target of that block (Vertex by default)
+         * @param type defines the type of the input (can be set to NodeMaterialBlockConnectionPointTypes.AutoDetect)
          */
-        name: string;
+        constructor(name: string, target?: NodeMaterialBlockTargets, type?: NodeMaterialBlockConnectionPointTypes);
         /**
-         * Gets or sets the swizzle to apply to this connection point when reading or writing
+         * Gets the output component
          */
-        swizzle: string;
+        readonly output: NodeMaterialConnectionPoint;
         /**
-         * Gets or sets a boolean indicating that this connection point can be omitted
+         * Set the source of this connection point to a vertex attribute
+         * @param attributeName defines the attribute name (position, uv, normal, etc...). If not specified it will take the connection point name
+         * @returns the current connection point
          */
-        isOptional: boolean;
+        setAsAttribute(attributeName?: string): InputBlock;
         /**
-         * Gets or sets a string indicating that this uniform must be defined under a #ifdef
+         * Set the source of this connection point to a well known value
+         * @param value define the well known value to use (world, view, etc...) or null to switch to manual value
+         * @returns the current connection point
          */
-        define: string;
-        /** Gets or sets the target of that connection point */
-        target: NodeMaterialBlockTargets;
+        setAsWellKnownValue(value: Nullable<NodeMaterialWellKnownValues>): InputBlock;
         /**
          * Gets or sets the value of that point.
          * Please note that this value will be ignored if valueCallback is defined
@@ -51314,6 +51794,86 @@ declare module BABYLON {
          * Can only be set on exit points
          */
         isVarying: boolean;
+        /**
+         * Gets a boolean indicating that the current connection point is a well known value
+         */
+        readonly isWellKnownValue: boolean;
+        /**
+         * Gets or sets the current well known value or null if not defined as well know value
+         */
+        wellKnownValue: Nullable<NodeMaterialWellKnownValues>;
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        private _emitDefine;
+        /**
+         * Set the input block to its default value (based on its type)
+         */
+        setDefaultValue(): void;
+        private _emit;
+        /** @hidden */
+        _transmitWorld(effect: Effect, world: Matrix, worldView: Matrix, worldViewProjection: Matrix): void;
+        /** @hidden */
+        _transmit(effect: Effect, scene: Scene): void;
+        protected _buildBlock(state: NodeMaterialBuildState): void;
+    }
+}
+declare module BABYLON {
+    /**
+     * Defines a connection point for a block
+     */
+    export class NodeMaterialConnectionPoint {
+        /** @hidden */
+        _ownerBlock: NodeMaterialBlock;
+        /** @hidden */
+        _connectedPoint: Nullable<NodeMaterialConnectionPoint>;
+        private _endpoints;
+        private _associatedVariableName;
+        /** @hidden */
+        _typeConnectionSource: Nullable<NodeMaterialConnectionPoint>;
+        private _type;
+        /** @hidden */
+        _enforceAssociatedVariableName: boolean;
+        /**
+         * Gets or sets the associated variable name in the shader
+         */
+        associatedVariableName: string;
+        /**
+         * Gets or sets the connection point type (default is float)
+         */
+        type: NodeMaterialBlockConnectionPointTypes;
+        /**
+         * Gets or sets the connection point name
+         */
+        name: string;
+        /**
+         * Gets or sets the swizzle to apply to this connection point when reading or writing
+         */
+        swizzle: string;
+        /**
+         * Gets or sets a boolean indicating that this connection point can be omitted
+         */
+        isOptional: boolean;
+        /**
+         * Gets or sets a string indicating that this uniform must be defined under a #ifdef
+         */
+        define: string;
+        /** Gets or sets the target of that connection point */
+        target: NodeMaterialBlockTargets;
+        /**
+         * Gets a boolean indicating that the current point is connected
+         */
+        readonly isConnected: boolean;
+        /**
+         * Gets a boolean indicating that the current point is connected to an input block
+         */
+        readonly isConnectedToInput: boolean;
+        /**
+         * Gets a the connected input block (if any)
+         */
+        readonly connectInputBlock: Nullable<InputBlock>;
         /** Get the other side of the connection (if any) */
         readonly connectedPoint: Nullable<NodeMaterialConnectionPoint>;
         /** Get the block that owns this connection point */
@@ -51322,6 +51882,8 @@ declare module BABYLON {
         readonly sourceBlock: Nullable<NodeMaterialBlock>;
         /** Get the block connected on the endpoints of this connection (if any) */
         readonly connectedBlocks: Array<NodeMaterialBlock>;
+        /** Gets the list of connected endpoints */
+        readonly endpoints: NodeMaterialConnectionPoint[];
         /**
          * Creates a new connection point
          * @param name defines the connection point name
@@ -51333,27 +51895,13 @@ declare module BABYLON {
          * @returns the class name
          */
         getClassName(): string;
-        /**
-         * Set the source of this connection point to a vertex attribute
-         * @param attributeName defines the attribute name (position, uv, normal, etc...). If not specified it will take the connection point name
-         * @returns the current connection point
-         */
-        setAsAttribute(attributeName?: string): NodeMaterialConnectionPoint;
-        /**
-         * Set the source of this connection point to a well known value
-         * @param value define the well known value to use (world, view, etc...) or null to switch to manual value
-         * @returns the current connection point
-         */
-        setAsWellKnownValue(value: Nullable<NodeMaterialWellKnownValues>): NodeMaterialConnectionPoint;
-        /**
-         * Gets a boolean indicating that the current connection point is a well known value
-         */
-        readonly isWellKnownValue: boolean;
-        /**
-         * Gets or sets the current well known value or null if not defined as well know value
-         */
-        wellKnownValue: Nullable<NodeMaterialWellKnownValues>;
         private _getTypeLength;
+        /**
+         * Gets an boolean indicating if the current point can be connected to another point
+         * @param connectionPoint defines the other connection point
+         * @returns true if the connection is possible
+         */
+        canConnectTo(connectionPoint: NodeMaterialConnectionPoint): boolean;
         /**
          * Connect this point to another connection point
          * @param connectionPoint defines the other connection point
@@ -51366,20 +51914,6 @@ declare module BABYLON {
          * @returns the current connection point
          */
         disconnectFrom(endpoint: NodeMaterialConnectionPoint): NodeMaterialConnectionPoint;
-        /**
-         * When connection point is an uniform, this function will send its value to the effect
-         * @param effect defines the effect to transmit value to
-         * @param world defines the world matrix
-         * @param worldView defines the worldxview matrix
-         * @param worldViewProjection defines the worldxviewxprojection matrix
-         */
-        transmitWorld(effect: Effect, world: Matrix, worldView: Matrix, worldViewProjection: Matrix): void;
-        /**
-         * When connection point is an uniform, this function will send its value to the effect
-         * @param effect defines the effect to transmit value to
-         * @param scene defines the hosting scene
-         */
-        transmit(effect: Effect, scene: Scene): void;
     }
 }
 declare module BABYLON {
@@ -51508,6 +52042,10 @@ declare module BABYLON {
          */
         readonly tangent: NodeMaterialConnectionPoint;
         /**
+         * Gets the tangent input component
+         */
+        readonly uv: NodeMaterialConnectionPoint;
+        /**
          * Gets the position output component
          */
         readonly positionOutput: NodeMaterialConnectionPoint;
@@ -51519,6 +52057,10 @@ declare module BABYLON {
          * Gets the tangent output component
          */
         readonly tangentOutput: NodeMaterialConnectionPoint;
+        /**
+         * Gets the tangent output component
+         */
+        readonly uvOutput: NodeMaterialConnectionPoint;
         initialize(state: NodeMaterialBuildState): void;
         autoConfigure(): void;
         prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
@@ -51675,62 +52217,6 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Block used to read a texture from a sampler
-     */
-    export class TextureBlock extends NodeMaterialBlock {
-        private _defineName;
-        /**
-         * Gets or sets a boolean indicating that the block can automatically fetch the texture matrix
-         */
-        autoConnectTextureMatrix: boolean;
-        /**
-         * Gets or sets a boolean indicating that the block can automatically select the uv channel based on texture
-         */
-        autoSelectUV: boolean;
-        /**
-         * Create a new TextureBlock
-         * @param name defines the block name
-         */
-        constructor(name: string);
-        /**
-         * Gets the current class name
-         * @returns the class name
-         */
-        getClassName(): string;
-        /**
-         * Gets the uv input component
-         */
-        readonly uv: NodeMaterialConnectionPoint;
-        /**
-         * Gets the texture information input component
-         */
-        readonly textureInfo: NodeMaterialConnectionPoint;
-        /**
-         * Gets the transformed uv input component
-         */
-        readonly transformedUV: NodeMaterialConnectionPoint;
-        /**
-         * Gets the texture input component
-         */
-        readonly texture: NodeMaterialConnectionPoint;
-        /**
-         * Gets the texture transform input component
-         */
-        readonly textureTransform: NodeMaterialConnectionPoint;
-        /**
-         * Gets the output component
-         */
-        readonly output: NodeMaterialConnectionPoint;
-        autoConfigure(): void;
-        initialize(state: NodeMaterialBuildState): void;
-        prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
-        isReady(): boolean;
-        private _injectVertexCode;
-        protected _buildBlock(state: NodeMaterialBuildState): this;
-    }
-}
-declare module BABYLON {
-    /**
      * Block used to add image processing support to fragment shader
      */
     export class ImageProcessingBlock extends NodeMaterialBlock {
@@ -51765,30 +52251,11 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Block used to add light in the fragment shader
-     */
-    export class LightBlock extends NodeMaterialBlock {
-        /**
-         * Create a new LightBlock
-         * @param name defines the block name
-         */
-        constructor(name: string);
-        /**
-        * Gets the light input component
-        */
-        readonly light: NodeMaterialConnectionPoint;
-        /**
-         * Gets the output component
-         */
-        readonly output: NodeMaterialConnectionPoint;
-        protected _buildBlock(state: NodeMaterialBuildState): this;
-    }
-}
-declare module BABYLON {
-    /**
      * Block used to add support for scene fog
      */
     export class FogBlock extends NodeMaterialBlock {
+        private _fogDistanceName;
+        private _fogParameters;
         /**
          * Create a new FogBlock
          * @param name defines the block name
@@ -51816,10 +52283,6 @@ declare module BABYLON {
          */
         readonly fogColor: NodeMaterialConnectionPoint;
         /**
-         * Gets the for parameter input component
-         */
-        readonly fogParameters: NodeMaterialConnectionPoint;
-        /**
          * Gets the output component
          */
         readonly output: NodeMaterialConnectionPoint;
@@ -51831,7 +52294,55 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Block used to multiply 2 vector4
+     * Block used to add light in the fragment shader
+     */
+    export class LightBlock extends NodeMaterialBlock {
+        private _lightId;
+        /**
+         * Gets or sets the light associated with this block
+         */
+        light: Nullable<Light>;
+        /**
+         * Create a new LightBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the world position input component
+         */
+        readonly worldPosition: NodeMaterialConnectionPoint;
+        /**
+         * Gets the world normal input component
+         */
+        readonly worldNormal: NodeMaterialConnectionPoint;
+        /**
+        * Gets the camera (or eye) position component
+        */
+        readonly cameraPosition: NodeMaterialConnectionPoint;
+        /**
+         * Gets the diffuse output component
+         */
+        readonly diffuseOutput: NodeMaterialConnectionPoint;
+        /**
+         * Gets the specular output component
+         */
+        readonly specularOutput: NodeMaterialConnectionPoint;
+        autoConfigure(): void;
+        prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
+        updateUniformsAndSamples(state: NodeMaterialBuildState, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
+        bind(effect: Effect, nodeMaterial: NodeMaterial, mesh?: Mesh): void;
+        private _injectVertexCode;
+        protected _buildBlock(state: NodeMaterialBuildState): this | undefined;
+    }
+}
+declare module BABYLON {
+    /**
+     * Block used to multiply 2 values
      */
     export class MultiplyBlock extends NodeMaterialBlock {
         /**
@@ -51921,36 +52432,6 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Block used to scale a value
-     */
-    export class ScaleBlock extends NodeMaterialBlock {
-        /**
-         * Creates a new ScaleBlock
-         * @param name defines the block name
-         */
-        constructor(name: string);
-        /**
-         * Gets the current class name
-         * @returns the class name
-         */
-        getClassName(): string;
-        /**
-         * Gets the value operand input component
-         */
-        readonly value: NodeMaterialConnectionPoint;
-        /**
-         * Gets the scale operand input component
-         */
-        readonly scale: NodeMaterialConnectionPoint;
-        /**
-         * Gets the output component
-         */
-        readonly output: NodeMaterialConnectionPoint;
-        protected _buildBlock(state: NodeMaterialBuildState): this;
-    }
-}
-declare module BABYLON {
-    /**
      * Block used to transform a vector2 with a matrix
      */
     export class Vector2TransformBlock extends NodeMaterialBlock {
@@ -52023,32 +52504,79 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Block used to multiply two matrices
+     * Helper class to render one or more effects
      */
-    export class MatrixMultiplicationBlock extends NodeMaterialBlock {
+    export class EffectRenderer {
+        private engine;
+        private static _Vertices;
+        private static _Indices;
+        private _vertexBuffers;
+        private _indexBuffer;
+        private _ringBufferIndex;
+        private _ringScreenBuffer;
+        private _getNextFrameBuffer;
         /**
-         * Creates a new MatrixMultiplicationBlock
-         * @param name defines the block name
+         * Creates an effect renderer
+         * @param engine the engine to use for rendering
          */
-        constructor(name: string);
+        constructor(engine: Engine);
         /**
-         * Gets the left operand
+         * renders one or more effects to a specified texture
+         * @param effectWrappers list of effects to renderer
+         * @param outputTexture texture to draw to, if null it will render to the screen
          */
-        readonly left: NodeMaterialConnectionPoint;
+        render(effectWrappers: Array<EffectWrapper> | EffectWrapper, outputTexture?: Nullable<Texture>): void;
         /**
-         * Gets the right operand
+         * Disposes of the effect renderer
          */
-        readonly right: NodeMaterialConnectionPoint;
+        dispose(): void;
+    }
+    /**
+     * Options to create an EffectWrapper
+     */
+    interface EffectWrapperCreationOptions {
         /**
-         * Gets the output component
+         * Engine to use to create the effect
          */
-        readonly output: NodeMaterialConnectionPoint;
+        engine: Engine;
         /**
-         * Gets the current class name
-         * @returns the class name
+         * Fragment shader for the effect
          */
-        getClassName(): string;
-        protected _buildBlock(state: NodeMaterialBuildState): this;
+        fragmentShader: string;
+        /**
+         * Attributes to use in the shader
+         */
+        attributeNames: Array<string>;
+        /**
+         * Uniforms to use in the shader
+         */
+        uniformNames: Array<string>;
+        /**
+         * Texture sampler names to use in the shader
+         */
+        samplerNames: Array<string>;
+    }
+    /**
+     * Wraps an effect to be used for rendering
+     */
+    export class EffectWrapper {
+        /**
+         * Event that is fired right before the effect is drawn (should be used to update uniforms)
+         */
+        onApplyObservable: Observable<{}>;
+        /**
+         * The underlying effect
+         */
+        effect: Effect;
+        /**
+         * Creates an effect to be renderer
+         * @param creationOptions options to create the effect
+         */
+        constructor(creationOptions: EffectWrapperCreationOptions);
+        /**
+        * Disposes of the effect wrapper
+        */
+        dispose(): void;
     }
 }
 declare module BABYLON {
@@ -57326,6 +57854,10 @@ declare module BABYLON {
         private _scene;
         private _depthMap;
         private _effect;
+        private readonly _storeNonLinearDepth;
+        private readonly _clearColor;
+        /** Get if the depth renderer is using packed depth or not */
+        readonly isPacked: boolean;
         private _cachedDefines;
         private _camera;
         /**
@@ -57341,8 +57873,9 @@ declare module BABYLON {
          * @param scene The scene the renderer belongs to
          * @param type The texture type of the depth map (default: Engine.TEXTURETYPE_FLOAT)
          * @param camera The camera to be used to render the depth map (default: scene's active camera)
+         * @param storeNonLinearDepth Defines whether the depth is stored linearly like in Babylon Shadows or directly like glFragCoord.z
          */
-        constructor(scene: Scene, type?: number, camera?: Nullable<Camera>);
+        constructor(scene: Scene, type?: number, camera?: Nullable<Camera>, storeNonLinearDepth?: boolean);
         /**
          * Creates the depth rendering effect and checks if the effect is ready.
          * @param subMesh The submesh to be used to render the depth map of
@@ -57370,9 +57903,10 @@ declare module BABYLON {
             /**
              * Creates a depth renderer a given camera which contains a depth map which can be used for post processing.
              * @param camera The camera to create the depth renderer on (default: scene's active camera)
+             * @param storeNonLinearDepth Defines whether the depth is stored linearly like in Babylon Shadows or directly like glFragCoord.z
              * @returns the created depth renderer
              */
-            enableDepthRenderer(camera?: Nullable<Camera>): DepthRenderer;
+            enableDepthRenderer(camera?: Nullable<Camera>, storeNonLinearDepth?: boolean): DepthRenderer;
             /**
              * Disables a depth renderer for a given camera
              * @param camera The camera to disable the depth renderer on (default: scene's active camera)
@@ -58232,6 +58766,12 @@ declare module BABYLON {
          * @see http://doc.babylonjs.com/how_to/creating_a_custom_loading_screen
          */
         useDefaultLoadingScreen: boolean;
+        /**
+         * Gets or sets a boolean defining if the AssetsManager should automatically hide the loading screen
+         * when all assets have been downloaded.
+         * If set to false, you need to manually call in hideLoadingUI() once your scene is ready.
+         */
+        autoHideLoadingUI: boolean;
         /**
          * Creates a new AssetsManager
          * @param scene defines the scene to work on
@@ -59126,20 +59666,6 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /** @hidden */
-    export var bones300Declaration: {
-        name: string;
-        shader: string;
-    };
-}
-declare module BABYLON {
-    /** @hidden */
-    export var instances300Declaration: {
-        name: string;
-        shader: string;
-    };
-}
-declare module BABYLON {
-    /** @hidden */
     export var pointCloudVertexDeclaration: {
         name: string;
         shader: string;
@@ -59168,19 +59694,23 @@ interface Window {
     DracoDecoderModule: any;
     setImmediate(handler: (...args: any[]) => void): number;
 }
+
 interface HTMLCanvasElement {
     requestPointerLock(): void;
     msRequestPointerLock?(): void;
     mozRequestPointerLock?(): void;
     webkitRequestPointerLock?(): void;
+
     /** Track wether a record is in progress */
     isRecording: boolean;
     /** Capture Stream method defined by some browsers */
     captureStream(fps?: number): MediaStream;
 }
+
 interface CanvasRenderingContext2D {
     msImageSmoothingEnabled: boolean;
 }
+
 interface MouseEvent {
     mozMovementX: number;
     mozMovementY: number;
@@ -59189,34 +59719,43 @@ interface MouseEvent {
     msMovementX: number;
     msMovementY: number;
 }
+
 interface Navigator {
     mozGetVRDevices: (any: any) => any;
     webkitGetUserMedia(constraints: MediaStreamConstraints, successCallback: NavigatorUserMediaSuccessCallback, errorCallback: NavigatorUserMediaErrorCallback): void;
     mozGetUserMedia(constraints: MediaStreamConstraints, successCallback: NavigatorUserMediaSuccessCallback, errorCallback: NavigatorUserMediaErrorCallback): void;
     msGetUserMedia(constraints: MediaStreamConstraints, successCallback: NavigatorUserMediaSuccessCallback, errorCallback: NavigatorUserMediaErrorCallback): void;
+
     webkitGetGamepads(): Gamepad[];
     msGetGamepads(): Gamepad[];
     webkitGamepads(): Gamepad[];
 }
+
 interface HTMLVideoElement {
     mozSrcObject: any;
 }
+
 interface Math {
     fround(x: number): number;
     imul(a: number, b: number): number;
 }
+
 interface WebGLRenderingContext {
     drawArraysInstanced(mode: number, first: number, count: number, primcount: number): void;
     drawElementsInstanced(mode: number, count: number, type: number, offset: number, primcount: number): void;
     vertexAttribDivisor(index: number, divisor: number): void;
+
     createVertexArray(): any;
     bindVertexArray(vao?: WebGLVertexArrayObject | null): void;
     deleteVertexArray(vao: WebGLVertexArrayObject): void;
+
     blitFramebuffer(srcX0: number, srcY0: number, srcX1: number, srcY1: number, dstX0: number, dstY0: number, dstX1: number, dstY1: number, mask: number, filter: number): void;
     renderbufferStorageMultisample(target: number, samples: number, internalformat: number, width: number, height: number): void;
+
     bindBufferBase(target: number, index: number, buffer: WebGLBuffer | null): void;
     getUniformBlockIndex(program: WebGLProgram, uniformBlockName: string): number;
     uniformBlockBinding(program: WebGLProgram, uniformBlockIndex: number, uniformBlockBinding: number): void;
+
     // Queries
     createQuery(): WebGLQuery;
     deleteQuery(query: WebGLQuery): void;
@@ -59224,11 +59763,13 @@ interface WebGLRenderingContext {
     endQuery(target: number): void;
     getQueryParameter(query: WebGLQuery, pname: number): any;
     getQuery(target: number, pname: number): any;
+
     MAX_SAMPLES: number;
     RGBA8: number;
     READ_FRAMEBUFFER: number;
     DRAW_FRAMEBUFFER: number;
     UNIFORM_BUFFER: number;
+
     HALF_FLOAT_OES: number;
     RGBA16F: number;
     RGBA32F: number;
@@ -59242,24 +59783,30 @@ interface WebGLRenderingContext {
     RG: number;
     R8: number;
     RG8: number;
+
     UNSIGNED_INT_24_8: number;
     DEPTH24_STENCIL8: number;
+
     /* Multiple Render Targets */
     drawBuffers(buffers: number[]): void;
     readBuffer(src: number): void;
+
     readonly COLOR_ATTACHMENT0: number;                             // 0x8CE1
     readonly COLOR_ATTACHMENT1: number;                             // 0x8CE2
     readonly COLOR_ATTACHMENT2: number;                             // 0x8CE3
     readonly COLOR_ATTACHMENT3: number;                             // 0x8CE4
+
     // Occlusion Query
     ANY_SAMPLES_PASSED_CONSERVATIVE: number;
     ANY_SAMPLES_PASSED: number;
     QUERY_RESULT_AVAILABLE: number;
     QUERY_RESULT: number;
 }
+
 interface WebGLProgram {
     __SPECTOR_rebuildProgram?: ((vertexSourceCode: string, fragmentSourceCode: string, onCompiled: (program: WebGLProgram) => void, onError: (message: string) => void) => void) | null;
 }
+
 interface EXT_disjoint_timer_query {
     QUERY_COUNTER_BITS_EXT: number;
     TIME_ELAPSED_EXT: number;
@@ -59274,6 +59821,7 @@ interface EXT_disjoint_timer_query {
     getQueryObjectEXT(query: WebGLQuery, target: number): any;
     deleteQueryEXT(query: WebGLQuery): void;
 }
+
 interface WebGLUniformLocation {
     _currentState: any;
 }
@@ -59281,6 +59829,7 @@ interface WebGLUniformLocation {
 // Project: https://www.khronos.org/registry/webgl/specs/latest/2.0/
 // Definitions by: Nico Kemnitz <https://github.com/nkemnitz/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+
 interface WebGLRenderingContext {
     readonly RASTERIZER_DISCARD: number;
     readonly DEPTH_COMPONENT24: number;
@@ -59332,10 +59881,13 @@ interface WebGLRenderingContext {
     readonly UNSIGNED_INT_10F_11F_11F_REV: number;
     readonly UNSIGNED_INT_5_9_9_9_REV: number;
     readonly FLOAT_32_UNSIGNED_INT_24_8_REV: number;
+
     texImage3D(target: number, level: number, internalformat: number, width: number, height: number, depth: number, border: number, format: number, type: number, pixels: ArrayBufferView | null): void;
     texImage3D(target: number, level: number, internalformat: number, width: number, height: number, depth: number, border: number, format: number, type: number, pixels: ArrayBufferView, offset: number): void;
     texImage3D(target: number, level: number, internalformat: number, width: number, height: number, depth: number, border: number, format: number, type: number, pixels: ImageBitmap | ImageData | HTMLVideoElement | HTMLImageElement | HTMLCanvasElement): void;
+
     compressedTexImage3D(target: number, level: number, internalformat: number, width: number, height: number, depth: number, border: number, data: ArrayBufferView, offset?: number, length?: number): void;
+
     readonly TRANSFORM_FEEDBACK: number;
     readonly INTERLEAVED_ATTRIBS: number;
     readonly TRANSFORM_FEEDBACK_BUFFER: number;
@@ -59345,100 +59897,123 @@ interface WebGLRenderingContext {
     beginTransformFeedback(primitiveMode: number): void;
     endTransformFeedback(): void;
     transformFeedbackVaryings(program: WebGLProgram, varyings: string[], bufferMode: number): void;
+
     clearBufferfv(buffer: number, drawbuffer: number, values: ArrayBufferView, srcOffset: number | null): void;
     clearBufferiv(buffer: number, drawbuffer: number, values: ArrayBufferView, srcOffset: number | null): void;
     clearBufferuiv(buffer: number, drawbuffer: number, values: ArrayBufferView, srcOffset: number | null): void;
     clearBufferfi(buffer: number, drawbuffer: number, depth: number, stencil: number): void;
 }
+
 interface ImageBitmap {
     readonly width: number;
     readonly height: number;
     close(): void;
 }
+
 interface WebGLQuery extends WebGLObject {
 }
+
 declare var WebGLQuery: {
     prototype: WebGLQuery;
     new(): WebGLQuery;
 };
+
 interface WebGLSampler extends WebGLObject {
 }
+
 declare var WebGLSampler: {
     prototype: WebGLSampler;
     new(): WebGLSampler;
 };
+
 interface WebGLSync extends WebGLObject {
 }
+
 declare var WebGLSync: {
     prototype: WebGLSync;
     new(): WebGLSync;
 };
+
 interface WebGLTransformFeedback extends WebGLObject {
 }
+
 declare var WebGLTransformFeedback: {
     prototype: WebGLTransformFeedback;
     new(): WebGLTransformFeedback;
 };
+
 interface WebGLVertexArrayObject extends WebGLObject {
 }
+
 declare var WebGLVertexArrayObject: {
     prototype: WebGLVertexArrayObject;
     new(): WebGLVertexArrayObject;
 };
+
 // Type definitions for WebVR API
 // Project: https://w3c.github.io/webvr/
 // Definitions by: six a <https://github.com/lostfictions>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+
 interface VRDisplay extends EventTarget {
     /**
      * Dictionary of capabilities describing the VRDisplay.
      */
     readonly capabilities: VRDisplayCapabilities;
+
     /**
      * z-depth defining the far plane of the eye view frustum
      * enables mapping of values in the render target depth
      * attachment to scene coordinates. Initially set to 10000.0.
      */
     depthFar: number;
+
     /**
      * z-depth defining the near plane of the eye view frustum
      * enables mapping of values in the render target depth
      * attachment to scene coordinates. Initially set to 0.01.
      */
     depthNear: number;
+
     /**
      * An identifier for this distinct VRDisplay. Used as an
      * association point in the Gamepad API.
      */
     readonly displayId: number;
+
     /**
      * A display name, a user-readable name identifying it.
      */
     readonly displayName: string;
     readonly isConnected: boolean;
     readonly isPresenting: boolean;
+
     /**
      * If this VRDisplay supports room-scale experiences, the optional
      * stage attribute contains details on the room-scale parameters.
      */
     readonly stageParameters: VRStageParameters | null;
+
     /**
      * Passing the value returned by `requestAnimationFrame` to
      * `cancelAnimationFrame` will unregister the callback.
      * @param handle Define the hanle of the request to cancel
      */
     cancelAnimationFrame(handle: number): void;
+
     /**
      * Stops presenting to the VRDisplay.
      * @returns a promise to know when it stopped
      */
     exitPresent(): Promise<void>;
+
     /**
      * Return the current VREyeParameters for the given eye.
      * @param whichEye Define the eye we want the parameter for
      * @returns the eye parameters
      */
     getEyeParameters(whichEye: string): VREyeParameters;
+
     /**
      * Populates the passed VRFrameData with the information required to render
      * the current frame.
@@ -59446,11 +60021,13 @@ interface VRDisplay extends EventTarget {
      * @returns true if ok otherwise false
      */
     getFrameData(frameData: VRFrameData): boolean;
+
     /**
      * Get the layers currently being presented.
      * @returns the list of VR layers
      */
     getLayers(): VRLayer[];
+
     /**
      * Return a VRPose containing the future predicted pose of the VRDisplay
      * when the current frame will be presented. The value returned will not
@@ -59461,12 +60038,14 @@ interface VRDisplay extends EventTarget {
      * @returns the pose object
      */
     getPose(): VRPose;
+
     /**
      * Return the current instantaneous pose of the VRDisplay, with no
      * prediction applied.
      * @returns the current instantaneous pose
      */
     getImmediatePose(): VRPose;
+
     /**
      * The callback passed to `requestAnimationFrame` will be called
      * any time a new frame should be rendered. When the VRDisplay is
@@ -59479,6 +60058,7 @@ interface VRDisplay extends EventTarget {
      * @returns the request handle it
      */
     requestAnimationFrame(callback: FrameRequestCallback): number;
+
     /**
      * Begin presenting to the VRDisplay. Must be called in response to a user gesture.
      * Repeat calls while already presenting will update the VRLayers being displayed.
@@ -59486,6 +60066,7 @@ interface VRDisplay extends EventTarget {
      * @returns a promise to know when the request has been fulfilled
      */
     requestPresent(layers: VRLayer[]): Promise<void>;
+
     /**
      * Reset the pose for this display, treating its current position and
      * orientation as the "origin/zero" values. VRPose.position,
@@ -59494,6 +60075,7 @@ interface VRDisplay extends EventTarget {
      * sitting-space experiences.
      */
     resetPose(): void;
+
     /**
      * The VRLayer provided to the VRDisplay will be captured and presented
      * in the HMD. Calling this function has the same effect on the source
@@ -59503,15 +60085,18 @@ interface VRDisplay extends EventTarget {
      */
     submitFrame(pose?: VRPose): void;
 }
+
 declare var VRDisplay: {
     prototype: VRDisplay;
     new(): VRDisplay;
 };
+
 interface VRLayer {
     leftBounds?: number[] | Float32Array | null;
     rightBounds?: number[] | Float32Array | null;
     source?: HTMLCanvasElement | null;
 }
+
 interface VRDisplayCapabilities {
     readonly canPresent: boolean;
     readonly hasExternalDisplay: boolean;
@@ -59519,6 +60104,7 @@ interface VRDisplayCapabilities {
     readonly hasPosition: boolean;
     readonly maxLayers: number;
 }
+
 interface VREyeParameters {
     /** @deprecated */
     readonly fieldOfView: VRFieldOfView;
@@ -59526,12 +60112,14 @@ interface VREyeParameters {
     readonly renderHeight: number;
     readonly renderWidth: number;
 }
+
 interface VRFieldOfView {
     readonly downDegrees: number;
     readonly leftDegrees: number;
     readonly rightDegrees: number;
     readonly upDegrees: number;
 }
+
 interface VRFrameData {
     readonly leftProjectionMatrix: Float32Array;
     readonly leftViewMatrix: Float32Array;
@@ -59540,6 +60128,7 @@ interface VRFrameData {
     readonly rightViewMatrix: Float32Array;
     readonly timestamp: number;
 }
+
 interface VRPose {
     readonly angularAcceleration: Float32Array | null;
     readonly angularVelocity: Float32Array | null;
@@ -59549,15 +60138,18 @@ interface VRPose {
     readonly position: Float32Array | null;
     readonly timestamp: number;
 }
+
 interface VRStageParameters {
     sittingToStandingTransform?: Float32Array;
     sizeX?: number;
     sizeY?: number;
 }
+
 interface Navigator {
     getVRDisplays(): Promise<VRDisplay[]>;
     readonly activeVRDisplays: ReadonlyArray<VRDisplay>;
 }
+
 interface Window {
     onvrdisplayconnected: ((this: Window, ev: Event) => any) | null;
     onvrdisplaydisconnected: ((this: Window, ev: Event) => any) | null;
@@ -59566,51 +60158,127 @@ interface Window {
     addEventListener(type: "vrdisplaydisconnected", listener: (ev: Event) => any, useCapture?: boolean): void;
     addEventListener(type: "vrdisplaypresentchange", listener: (ev: Event) => any, useCapture?: boolean): void;
 }
+
 interface Gamepad {
     readonly displayId: number;
 }
-interface XRDevice {
-    requestSession(options: XRSessionCreationOptions): Promise<XRSession>;
-    supportsSession(options: XRSessionCreationOptions): Promise<void>;
+type XRSessionMode =
+    | "inline"
+    | "immersive-vr"
+    | "immersive-ar";
+
+type XRReferenceSpaceType =
+    | "viewer"
+    | "local"
+    | "local-floor"
+    | "bounded-floor"
+    | "unbounded";
+
+type XREnvironmentBlendMode =
+    | "opaque"
+    | "additive"
+    | "alpha-blend";
+
+type XRVisibilityState =
+    | "visible"
+    | "visible-blurred"
+    | "hidden";
+
+type XRHandedness =
+    | "none"
+    | "left"
+    | "right";
+
+type XRTargetRayMode =
+    | "gaze"
+    | "tracked-pointer"
+    | "screen";
+
+type XREye =
+    | "none"
+    | "left"
+    | "right";
+
+interface XRSpace extends EventTarget {
+
 }
+
+interface XRRenderState {
+    depthNear: number ;
+    depthFar: number ;
+    inlineVerticalFieldOfView: number | undefined;
+    baseLayer: XRWebGLLayer | undefined;
+}
+
+interface XRInputSource {
+    handedness: XRHandedness;
+    targetRayMode: XRTargetRayMode;
+    targetRaySpace: XRSpace;
+    gripSpace: XRSpace | undefined;
+    gamepad: Gamepad | undefined;
+    profiles: Array<string>;
+}
+
 interface XRSession {
-    getInputSources(): Array<any>;
-    baseLayer: XRWebGLLayer;
-    requestFrameOfReference(type: string): Promise<void>;
-    requestHitTest(origin: Float32Array, direction: Float32Array, frameOfReference: any): any;
-    end(): Promise<void>;
-    requestAnimationFrame: Function;
     addEventListener: Function;
+    requestReferenceSpace(type: XRReferenceSpaceType): Promise<XRReferenceSpace>;
+    updateRenderState(XRRenderStateInit: any): Promise<void>;
+    requestAnimationFrame: Function;
+    end(): Promise<void>;
+    renderState: XRRenderState;
+    inputSources: Array<XRInputSource>;
+
 }
-interface XRSessionCreationOptions {
-    outputContext?: WebGLRenderingContext | null;
-    immersive?: boolean;
-    environmentIntegration?: boolean;
+
+interface XRReferenceSpace extends XRSpace {
+    getOffsetReferenceSpace(originOffset: XRRigidTransform): XRReferenceSpace;
+    onreset: any;
 }
-interface XRLayer {
-    getViewport: Function;
-    framebufferWidth: number;
-    framebufferHeight: number;
-}
-interface XRView {
-    projectionMatrix: Float32Array;
-}
+
 interface XRFrame {
-    getDevicePose: Function;
-    getInputPose: Function;
+    session: XRSession;
+    getViewerPose(referenceSpace: XRReferenceSpace): XRViewerPose | undefined;
+    getPose(space: XRSpace, baseSpace: XRSpace): XRPose | undefined;
+}
+
+interface XRViewerPose extends XRPose {
     views: Array<XRView>;
-    baseLayer: XRLayer;
 }
-interface XRFrameOfReference {
+
+interface XRPose {
+    transform: XRRigidTransform;
+    emulatedPosition: boolean;
 }
-interface XRWebGLLayer extends XRLayer {
-    framebuffer: WebGLFramebuffer;
-}
+
 declare var XRWebGLLayer: {
     prototype: XRWebGLLayer;
-    new(session: XRSession, context?: WebGLRenderingContext): XRWebGLLayer;
+    new(session: XRSession, context: WebGLRenderingContext | undefined): XRWebGLLayer;
 };
+interface XRWebGLLayer {
+    framebuffer: WebGLFramebuffer;
+    framebufferWidth: number;
+    framebufferHeight: number;
+    getViewport: Function;
+}
 
+interface XRRigidTransform {
+    position: DOMPointReadOnly;
+    orientation: DOMPointReadOnly;
+    matrix: Float32Array;
+    inverse: XRRigidTransform;
+}
+
+interface XRView {
+    eye: XREye;
+    projectionMatrix: Float32Array;
+    transform: XRRigidTransform;
+}
+
+interface XRInputSourceChangeEvent {
+    session: XRSession;
+    removed: Array<XRInputSource>;
+    added: Array<XRInputSource>;
+}
 declare module BABYLON.GUI {
     /**
      * Class used to specific a value and its associated unit
@@ -64978,6 +65646,29 @@ declare module BABYLON.GLTF2.Loader.Extensions {
         loadMaterialPropertiesAsync(context: string, material: IMaterial, babylonMaterial: Material): Nullable<Promise<void>>;
     }
 }
+declare module BABYLON.GLTF2.Loader.Extensions {
+    /**
+     * Store glTF extras (if present) in BJS objects' metadata
+     */
+    export class ExtrasAsMetadata implements IGLTFLoaderExtension {
+        /** The name of this extension. */
+        readonly name: string;
+        /** Defines whether this extension is enabled. */
+        enabled: boolean;
+        private _loader;
+        private _assignExtras;
+        /** @hidden */
+        constructor(loader: GLTFLoader);
+        /** @hidden */
+        dispose(): void;
+        /** @hidden */
+        loadNodeAsync(context: string, node: INode, assign: (babylonTransformNode: TransformNode) => void): Nullable<Promise<TransformNode>>;
+        /** @hidden */
+        loadCameraAsync(context: string, camera: ICamera, assign: (babylonCamera: Camera) => void): Nullable<Promise<Camera>>;
+        /** @hidden */
+        createMaterial(context: string, material: IMaterial, babylonDrawMode: number): Nullable<Material>;
+    }
+}
 declare module BABYLON {
     /**
      * Class reading and parsing the MTL file bundled with the obj file.
@@ -65418,11 +66109,11 @@ declare module BABYLON.GLTF2.Exporter {
          */
         static _SolveMetallic(diffuse: number, specular: number, oneMinusSpecularStrength: number): number;
         /**
-         * Gets the glTF alpha mode from the Babylon Material
-         * @param babylonMaterial Babylon Material
-         * @returns The Babylon alpha mode value
+         * Sets the glTF alpha mode to a glTF material from the Babylon Material
+         * @param glTFMaterial glTF material
+         * @param babylonMaterial Babylon material
          */
-        _getAlphaMode(babylonMaterial: Material): MaterialAlphaMode;
+        private static _SetAlphaMode;
         /**
          * Converts a Babylon Standard Material to a glTF Material
          * @param babylonStandardMaterial BJS Standard Material
@@ -65599,6 +66290,12 @@ declare module BABYLON {
          * @returns boolean, which indicates whether the node should be exported (true) or not (false)
          */
         shouldExportNode?(node: Node): boolean;
+        /**
+         * Function used to extract the part of node's metadata that will be exported into glTF node extras
+         * @param metadata source metadata to read from
+         * @returns the data to store to glTF node extras
+         */
+        metadataSelector?(metadata: any): any;
         /**
          * The sample rate to bake animation curves
          */
@@ -65813,10 +66510,7 @@ declare module BABYLON.GLTF2.Exporter {
          * Baked animation sample rate
          */
         private _animationSampleRate;
-        /**
-         * Callback which specifies if a node should be exported or not
-         */
-        private _shouldExportNode;
+        private _options;
         private _localEngine;
         _glTFMaterialExporter: _GLTFMaterialExporter;
         private _extensions;
@@ -66003,7 +66697,6 @@ declare module BABYLON.GLTF2.Exporter {
          * Creates a mapping of Node unique id to node index and handles animations
          * @param babylonScene Babylon Scene
          * @param nodes Babylon transform nodes
-         * @param shouldExportNode Callback specifying if a transform node should be exported
          * @param binaryWriter Buffer to write binary data to
          * @returns Node mapping of unique id to index
          */

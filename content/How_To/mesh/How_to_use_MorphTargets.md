@@ -102,9 +102,17 @@ manager.addTarget(target3);
 
 At any time, you can remove a target with `manager.removeTarget(target)`
 
+## List of morphable properties
+
+You can morph the following mesh attributes:
+- position
+- normal (can be turned of by calling `manager.enableNormalMorphing = false`)
+- tangents (can be turned of by calling `manager.enableTangentMorphing = false`)
+- uvs (can be turned of by calling `manager.enableUVMorphing = false`)
+
 ## Limitations
 
-* Please be aware that most of the browsers are limited to 16 attributes per mesh. Adding a single morph target to a mesh add 2 new attributes (position + normal). This could quickly go beyond the max attributes limitation.
+* Please be aware that most of the browsers are limited to 16 attributes per mesh. Adding a single morph target to a mesh add up to 4 new attributes (position + normal + tangents + uvs). This could quickly go beyond the max attributes limitation.
 * All targets within a same manager must have the same vertices count
 * A mesh and its MorphTargetManager must have the same vertices count
 
