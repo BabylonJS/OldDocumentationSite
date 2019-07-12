@@ -1894,6 +1894,17 @@
             ]
         },
         {
+            "title": "Controls",
+            "name": "controls",
+            "desc": "Babylon.js Controls",
+            "files": [
+                {
+                    "title": "Babylon.js Controls",
+                    "filename": "controls"
+                }
+            ]
+        },
+        {
             "title": "Support",
             "name": "Support",
             "img": "img/How_To/All.png",
