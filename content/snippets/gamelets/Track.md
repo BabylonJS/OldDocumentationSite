@@ -4,7 +4,7 @@ PG_TITLE: Building a track for a Carriage to Follow
 
 # Building a track for a Carriage to Follow
 
-![lean and turn](/img/snippets/rcphoto.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![lean and people turn](/img/snippets/rcphoto2.jpg)
+![lean and turn](/img/snippets/roller.png)
 
 In the first image the carriage leans and turns as it follows the track. In the second image the carriage leans and it is the people inside that turn to look around. The 'createTrack' function can be used to simulate either of these two events.
 
