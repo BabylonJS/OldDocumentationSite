@@ -231,6 +231,42 @@ The gaze tracker can be customized by setting the gazeTrackerMesh. [Example](htt
 vrHelper.gazeTrackerMesh = BABYLON.Mesh.CreateSphere("sphere1", 4, 0.1, scene);
 ```
 
+## Grab
+
+By combining By combining WebVR controller method and add/removeChild method, you can grab objects by pressing trigger button.
+
+```javascript
+webVRController.onTriggerStateChangedObservable.add((stateObject)=>{
+    if(webVRController.hand=="left"){  
+        if(selectedMesh !=null){
+            //grab
+            if(stateObject.value > 0.01){
+                webVRController.mesh.addChild(selectedMesh);
+            //ungrab   
+            }else{
+                webVRController.mesh.removeChild(selectedMesh);
+            }
+        }
+    }
+});
+```
+
+Selected mesh is detected by onNewMeshSelected method.
+
+```javascript
+VRHelper.onNewMeshSelected.add(function(mesh) {
+    selectedMesh = mesh;
+});
+
+VRHelper.onSelectedMeshUnselected.add(function() {
+    selectedMesh=null;
+});
+```
+
+See the example.
+
+* [Playground Example of a grab objects by WebVRController](https://www.babylonjs-playground.com/#B4C2AH)
+
 ## Multiview
 
 To improve rendering performance by up to 2x, try using [Multiview](/How_To/Multiview) which will render both eyes in a single render pass
