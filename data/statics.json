@@ -1901,6 +1901,10 @@
                 {
                     "title": "Babylon.js Controls",
                     "filename": "controls"
+                },
+                {
+                    "title": "Timeline Control",
+                    "filename": "timeline"
                 }
             ]
         },
