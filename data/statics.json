@@ -1445,7 +1445,7 @@
             "files": [
                 {
                     "title": "Create Navigation Mesh",
-                    "filename": "Navigation"
+                    "filename": "NavigationMesh"
                 },
                 {
                     "title": "Crowd agents",
