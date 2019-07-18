@@ -1438,6 +1438,22 @@
             ]
         },
         {
+            "title": "Navigation",
+            "name": "Navigation",
+            "img": "img/How_To/navigation.png",
+            "desc": "Navigation mesh and crowd agents",
+            "files": [
+                {
+                    "title": "Create Navigation Mesh",
+                    "filename": "Navigation"
+                },
+                {
+                    "title": "Crowd agents",
+                    "filename": "Crowd"
+                }
+            ]
+        },
+        {
             "title": "Mesh Writer",
             "name": "Mesh_Writer",
             "img": "img/How_To/meshwriter.png",
