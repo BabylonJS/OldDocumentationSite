@@ -401,6 +401,8 @@ var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
 
+Please also note that by default buttons will handle hit testing based on their bounding info. If you want to have embedded controls to handle the picking you can call `button.delegatePickingToChildren = true`
+
 #### Accessing parts
 
 You can use the following properties to get button's parts (if available):
