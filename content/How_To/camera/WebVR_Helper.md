@@ -166,6 +166,8 @@ vrHelper.enableInteractions();
 
 This will start casting a ray from either the user's camera or controllers. Where this ray intersects a mesh in the scene, a small gaze mesh will be placed to indicate to the user what is currently selected.
 
+Please note the gaze controllers will simulate pointer events so `scene.onPointerObservable` will be raised when gaze is enabled.
+
 To filter which meshes the gaze can intersect with, the raySelectionPredicate can be used:
 
 ```javascript
@@ -230,6 +232,8 @@ The gaze tracker can be customized by setting the gazeTrackerMesh. [Example](htt
 ```javascript
 vrHelper.gazeTrackerMesh = BABYLON.Mesh.CreateSphere("sphere1", 4, 0.1, scene);
 ```
+
+On specific devices like iOS (where fullscreen is not supported), you may want to set `vrHelper.enableGazeEvenWhenNoPointerLock = true` to let the gaze controller run even when not under fullscreen and pointer lock.
 
 ## Grab
 
