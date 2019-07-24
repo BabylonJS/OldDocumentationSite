@@ -2,7 +2,7 @@
   @include outer-container(80%);
 
 
-  p, ul {
+  p, ul, ol {
     max-width: 40em;
   }
 
