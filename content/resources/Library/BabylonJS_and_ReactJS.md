@@ -16,7 +16,7 @@ You could put a canvas right on your page itself using code from this component 
 
 If you are using NPM or Yarn then you need to install the package 'babylonjs'.
 ```bash
-npm install 'babylonjs'
+npm install babylonjs
 ```
 
 ```bash
