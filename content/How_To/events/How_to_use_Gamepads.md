@@ -62,7 +62,7 @@ scene.registerBeforeRender(function () {
 }
 ```
 
-* [Playground Example](http://playground.babylonjs.com/#U3XJTB#4)
+* [Playground Example](http://playground.babylonjs.com/#U3XJTB#30)
 
 # Virtual gamepad
 
