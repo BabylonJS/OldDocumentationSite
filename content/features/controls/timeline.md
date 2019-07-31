@@ -59,6 +59,8 @@ const timeline = new Timeline(timelineCanvas, {
     });
 ```
 
+The main element to provide is a canvas on which we will be able to use a WebGL context to render the timeline. You could as well provide another Babylon.js control in order to share the WebGL context. For instance you could share the context this way with a Resizer in order to allow directly using a resized image as a thumbnail without extra copy.
+
 As we do not want to be opiniated about the UX you prefer or about the thumbnail generation itself it is all left to your implementation. The only information you need to provide are:
 
 * *totalDuration*: the full duration of the video to cover (use to compute when all the thumbnails should be generated).
@@ -66,6 +68,9 @@ As we do not want to be opiniated about the UX you prefer or about the thumbnail
 * *thumbnailHeight*: define the height of your generated thumbnails (use to keep the ratio intact with the width previously defined)
 * *loadingTextureURI*: define the url of an image used as a temporary replacement for not fully loaded thumbnail (this will help handling network latency gracefully)
 * *getThumbnailCallback*: last, but definitely not the least, a callback where you will be able to provide the thumbnail fitting with the requested time in parameter. You can return either a video element set on the right frame (as done in the previous code sample), a canvas element containing for instance some pre processed data or some image URL. More choices will probably be added here to for instance support texture atlas as it might be a nice transport format.
+
+You can also provide some none mandatory options:
+* *useClosestThumbnailAsLoadingTexture*: it is set to true by default and if enabled, it will try to use the closest loaded thumbnail (in time) instead of the loading one as soon as some of them are ready.
 
 ### Render Loop
 

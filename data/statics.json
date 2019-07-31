@@ -1921,6 +1921,10 @@
                 {
                     "title": "Timeline Control",
                     "filename": "timeline"
+                },
+                {
+                    "title": "Resizer Control",
+                    "filename": "resizer"
                 }
             ]
         },
