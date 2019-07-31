@@ -117,6 +117,18 @@ As changing the zoom level does not change the number of visible thumbnails, you
 
 The current time will be automatically bound between 0 and the max available position.
 
+### Cache Warm Up
+
+In case you have some of the thumbnails ready before waiting for the callback, you can submit them into the cache like this:
+
+```
+    timeline.addThumbnail(textureData, time);
+```
+
+The textureData type are the same allowed to be returned in the callback: a texture, a video, a canvas or an image url.
+
+This can help if you generate the thumbnails client side to warm up the cache and thus reduce the thumbnails load time.
+
 ## Full Code Sample
 
 You can find the integrallity of the code sample above on [Github](https://github.com/BabylonJS/Controls/blob/master/www/timeline/index.ts) if you want to see it in action and better see how some of the functionnalities could be used.
