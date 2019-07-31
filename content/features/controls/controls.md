@@ -4,6 +4,8 @@
 
 Babylon.js provides an unified API on top of **WebGL**, **WebGL2** and **WebGPU** that controls can leverage to unleash the raw power of your GPU.
 
+![Resizer](/img/features/controls/resizer.png)
+
 # Available controls
 
 * [Timeline](timeline)
