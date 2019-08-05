@@ -31,6 +31,9 @@ width|_(number)_ width size, overwrites _size_ option|size
 depth|_(number)_ depth size,  overwrites _size_ option|size
 faceColors|_(Color4[])_ array of 6 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
 faceUV|_(Vector4[])_ array of 6 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
+wrap|_(boolean)_ ( BJS 4.0 or >) when true all vertical sides (0, 1, 2, 3) will apply image textures upright | false
+topBaseAt|_(number)_ (BJS 4.0 or >) base of top touches side given 0, 1, 2, 3| 1
+bottomBaseAt|_(number)_ (BJS 4.0 or >) base of bottom touches side given 0, 1, 2, 3| 0
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
@@ -282,7 +285,8 @@ Full explanation of creating a tiled ground by its original code writer [here](h
 [Side Orientation](/babylon101/Discover_Basic_Elements#side-orientation)  
 [Updatable](/How_To/Updating_Vertices)  
 [Face UV and Face Colors](/How_To/CreateBox_Per_Face_Textures_And_Colors)  
-[Front and Back UV](/How_To/FrontandBackUV)
+[Front and Back UV](/How_To/FrontandBackUV)  
+[Face Texture Orientation](/how_to/createbox_per_face_textures_and_colors#how-to-orientate-a-sprite-on-a-face-with-the-texture-atlas-from-version-40)
 
 ## Basic - L1
 
