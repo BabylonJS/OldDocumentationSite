@@ -20,11 +20,11 @@ Also this is brigging new cool toys to the table like Compute Shaders and more t
 
 We currently only support a really small subsets of what Babylon.js can do:
 * Static Meshes and instances (no bones or morph)
-* Basic PBR Materials (only IBL, albedo, specular, roughness, ambient and emissive data, can not change after creation)
-* No other materials so far
-* GLTF/GLB loader for model respecting the following limitations
+* Materials can not change their defines after creation
 * No custom effects or post processes
 * No render targets
+* No Dynamic/Raw/Compressed textures
+* Loaders for model respecting the following limitations
 
 This is not much you would say, but it means we have layered all the ground foundation to move forward :-)
 
@@ -53,6 +53,8 @@ FOR SURE :-) There is no change of plans and we will deliver both supports side 
 
 ## I want to test it
 You can only at the moment test on MacOS Chrome Canary with the enable-unsafe-webgpu flags on. Once there will be other solutions, we won't hesitate to update this page.
+
+Our own [Playground supporting WebGPU](https://playground.babylonjs.com/indexWebGPU.html).
 
 You can follow the status from the dedicated [Chrome Status Platform Page](https://www.chromestatus.com/feature/6213121689518080).
 
