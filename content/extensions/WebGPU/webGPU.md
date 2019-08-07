@@ -45,7 +45,7 @@ As back compat is one of our pillar, the only difference we wish to have is the 
 
 ```javascript
 const engine = new BABYLON.WebGPUEngine(canvas);
-await engine.initEngineAsync();
+await engine.initAsync();
 ```
 
 ## Will WebGL still be supported ?
