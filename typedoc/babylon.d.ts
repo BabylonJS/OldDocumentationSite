@@ -11356,6 +11356,12 @@ declare module BABYLON {
         cellWidth: number;
         /** Defines the default height of a cell in the spritesheet */
         cellHeight: number;
+        /** Associative array from JSON sprite data file */
+        private _cellData;
+        /** Array of sprite names from JSON sprite data file */
+        private _spriteMap;
+        /** True when packed cell data from JSON file is ready*/
+        private _packedAndReady;
         /**
         * An event triggered when the manager is disposed.
         */
@@ -11366,6 +11372,7 @@ declare module BABYLON {
          */
         onDispose: () => void;
         private _capacity;
+        private _fromPacked;
         private _spriteTexture;
         private _epsilon;
         private _scene;
@@ -11388,10 +11395,13 @@ declare module BABYLON {
          * @param scene defines the hosting scene
          * @param epsilon defines the epsilon value to align texture (0.01 by default)
          * @param samplingMode defines the smapling mode to use with spritesheet
+         * @param fromPacked set to false; do not alter
+         * @param spriteJSON null otherwise a JSON object defining sprite sheet data; do not alter
          */
         constructor(
         /** defines the manager's name */
-        name: string, imgUrl: string, capacity: number, cellSize: any, scene: Scene, epsilon?: number, samplingMode?: number);
+        name: string, imgUrl: string, capacity: number, cellSize: any, scene: Scene, epsilon?: number, samplingMode?: number, fromPacked?: boolean, spriteJSON?: string | null);
+        private _makePacked;
         private _appendSpriteVertex;
         /**
          * Intersects the sprites with a ray
@@ -11432,6 +11442,8 @@ declare module BABYLON {
         angle: number;
         /** Gets or sets the cell index in the sprite sheet */
         cellIndex: number;
+        /** Gets or sets the cell reference in the sprite sheet, uses sprite's filename when added to sprite sheet */
+        cellRef: string;
         /** Gets or sets a boolean indicating if UV coordinates should be inverted in U axis */
         invertU: number;
         /** Gets or sets a boolean indicating if UV coordinates should be inverted in B axis */
@@ -51741,6 +51753,7 @@ declare module BABYLON {
         private _cachedWorldViewMatrix;
         private _cachedWorldViewProjectionMatrix;
         private _optimizers;
+        private _animationFrame;
         /** Define the URl to load node editor script */
         static EditorURL: string;
         private BJSNODEMATERIALEDITOR;
@@ -52161,6 +52174,10 @@ declare module BABYLON {
          */
         blockingBlocks: NodeMaterialBlock[];
         /**
+         * Gets the list of animated inputs
+         */
+        animatedInputs: InputBlock[];
+        /**
          * Build Id used to avoid multiple recompilations
          */
         buildId: number;
@@ -52526,6 +52543,17 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
+     * Enum defining the type of animations supported by InputBlock
+     */
+    export enum AnimatedInputBlockTypes {
+        /** No animation */
+        None = 0,
+        /** Time based animation. Will only work for floats */
+        Time = 1
+    }
+}
+declare module BABYLON {
+    /**
      * Block used to expose an input value
      */
     export class InputBlock extends NodeMaterialBlock {
@@ -52534,6 +52562,7 @@ declare module BABYLON {
         private _storedValue;
         private _valueCallback;
         private _type;
+        private _animationType;
         /** @hidden */
         _wellKnownValue: Nullable<NodeMaterialWellKnownValues>;
         /**
@@ -52577,6 +52606,8 @@ declare module BABYLON {
          * Gets or sets the associated variable name in the shader
          */
         associatedVariableName: string;
+        /** Gets or sets the type of animation applied to the input */
+        animationType: AnimatedInputBlockTypes;
         /**
          * Gets a boolean indicating that this connection point not defined yet
          */
@@ -52611,6 +52642,11 @@ declare module BABYLON {
          * @returns the class name
          */
         getClassName(): string;
+        /**
+         * Animate the input if animationType !== None
+         * @param scene defines the rendering scene
+         */
+        animate(scene: Scene): void;
         private _emitDefine;
         /**
          * Set the input block to its default value (based on its type)
@@ -53067,13 +53103,17 @@ declare module BABYLON {
          */
         readonly xyzIn: NodeMaterialConnectionPoint;
         /**
+         * Gets the xy component (input)
+         */
+        readonly xyIn: NodeMaterialConnectionPoint;
+        /**
          * Gets the xyz component (output)
          */
         readonly xyzOut: NodeMaterialConnectionPoint;
         /**
          * Gets the xy component (output)
          */
-        readonly xy: NodeMaterialConnectionPoint;
+        readonly xyOut: NodeMaterialConnectionPoint;
         /**
          * Gets the x component (output)
          */
@@ -53282,6 +53322,36 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
+     * Block used to scale a vector by a float
+     */
+    export class ScaleBlock extends NodeMaterialBlock {
+        /**
+         * Creates a new ScaleBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the input component
+         */
+        readonly input: NodeMaterialConnectionPoint;
+        /**
+         * Gets the factor input component
+         */
+        readonly factor: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        protected _buildBlock(state: NodeMaterialBuildState): this;
+    }
+}
+declare module BABYLON {
+    /**
      * Block used to clamp a float
      */
     export class ClampBlock extends NodeMaterialBlock {
@@ -53411,6 +53481,47 @@ declare module BABYLON {
     export class NormalizeBlock extends NodeMaterialBlock {
         /**
          * Creates a new NormalizeBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the input component
+         */
+        readonly input: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        protected _buildBlock(state: NodeMaterialBuildState): this;
+    }
+}
+declare module BABYLON {
+    /**
+     * Operations supported by the Trigonometry block
+     */
+    export enum TrigonometryBlockOperations {
+        /** Cos */
+        Cos = 0,
+        /** Sin */
+        Sin = 1,
+        /** Abs */
+        Abs = 2
+    }
+    /**
+     * Block used to apply trigonometry operation to floats
+     */
+    export class TrigonometryBlock extends NodeMaterialBlock {
+        /**
+         * Gets or sets the operation applied by the block
+         */
+        operation: TrigonometryBlockOperations;
+        /**
+         * Creates a new TrigonometryBlock
          * @param name defines the block name
          */
         constructor(name: string);
@@ -59386,6 +59497,30 @@ declare module BABYLON {
         isReady(subMesh: SubMesh, useInstances: boolean): boolean;
         private _beforeRenderingMesh;
         private _afterRenderingMesh;
+    }
+}
+declare module BABYLON {
+    /**
+     * Class used to manage multiple sprites of different sizes on the same spritesheet
+     * @see http://doc.babylonjs.com/babylon101/sprites
+     */
+    export class SpritePackedManager extends SpriteManager {
+        /** defines the packed manager's name */
+        name: string;
+        /**
+         * Creates a new sprite manager from a packed sprite sheet
+         * @param name defines the manager's name
+         * @param imgUrl defines the sprite sheet url
+         * @param capacity defines the maximum allowed number of sprites
+         * @param scene defines the hosting scene
+         * @param spriteJSON null otherwise a JSON object defining sprite sheet data
+         * @param epsilon defines the epsilon value to align texture (0.01 by default)
+         * @param samplingMode defines the smapling mode to use with spritesheet
+         * @param fromPacked set to true; do not alter
+         */
+        constructor(
+        /** defines the packed manager's name */
+        name: string, imgUrl: string, capacity: number, scene: Scene, spriteJSON?: string | null, epsilon?: number, samplingMode?: number);
     }
 }
 declare module BABYLON {
