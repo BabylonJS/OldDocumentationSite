@@ -72,6 +72,12 @@ myTextBlock.resizeToFit = true;
 
 * [Playground Example - Scroll Viewer with Adjusting TextBlock](https://www.babylonjs-playground.com/#3EF49E#5)
 
+## Live-Updating and Multiple TextBlocks
+
+The ScrollViewer accepts only ONE textblock child. You can modify its _.text_ property, including \\n linebreaks, to add/remove text content, using that single textBlock's font styles.
+
+The ScrollViewer also accepts a single stackpanel for a child, and you may add/remove textBlocks (and possibly OTHER types of controls) to\from that stackpanel.  You might wish to add ```stackpanel.ignoreLayoutWarnings = true;```
+
 ## Further reading
 
 [How To Use the Selection Panel Helper](/how_to/selector)  
