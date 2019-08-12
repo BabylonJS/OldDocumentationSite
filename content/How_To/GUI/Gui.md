@@ -710,6 +710,8 @@ Containers has one specific property: `container.background`. Use it to define t
 
 By default containers do not block pointer events (ie. the underlying scene will receive the pointer event even if the pointer is over a container). You can prevent this behavior by calling `container.isPointerBlocker = true`.
 
+Containers are responsible for managing their children's layout. To prevent layout cycles, the system will not let the layout being updated during a cycle more than 3 times. This value can be changed with `container.maxLayoutCycle`. You can also turn on console warnings when layout cycles are detected with `container.logLayoutCycleErrors = true`.
+
 ### Adaptative size
 You can decide to have your containers to adapt their size to their children by using one of these properties:
 * adaptWidthToChildren (false by default)
@@ -750,7 +752,7 @@ Here is an example of an ellipse control: https://www.babylonjs-playground.com/#
 ### StackPanel
 
 The StackPanel is a control which stacks its children based on its orientation (can be horizontal or vertical).
-All children must have a defined width or height (depending on the orientation) in **pixels**.
+All children must have a defined width or height (depending on the orientation) in **pixels** (A warning will be written to the console if this is not true. This warning can be turned off with `panel.ignoreLayoutWarnings = true`).
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
