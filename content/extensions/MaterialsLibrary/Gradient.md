@@ -30,4 +30,4 @@ The gradient material can be configured with:
 
 ## Playground example
 
-You can find a live example here: https://www.babylonjs-playground.com/#2IFRKC#22
+You can find a live example here: https://www.babylonjs-playground.com/#2IFRKC#63

@@ -1,6 +1,11 @@
 .static-content{
   @include outer-container(80%);
 
+
+  p, ul, ol {
+    max-width: 40em;
+  }
+
   img {
     max-width: 100%;
   }

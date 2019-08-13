@@ -4,13 +4,57 @@ PG_TITLE: 3DSMax
 ---
 # How To Install the 3DS Max plugin 
 
-The plugin is designed for 3DS Max 2015 or later. To download it, go to the Github project (https://github.com/BabylonJS/Exporters/tree/master/3ds%20Max).  
+## Installer
 
-![github](/img/exporters/3DSMax/1_github.jpg)
+### Installing the installer (so meta...)
+We have recently introduced a new tool to simplify the installation of the plugin for both Max and Maya.
 
-In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Max2Babylon-XX.zip_ (where XX is the exporter version, currently 1.1.0). Click on the zip file, and click on the _Download_ button. 
+First, you can download the latest version of the installer from our [Github Releases](https://github.com/BabylonJS/Exporters/releases). Once on the releases page, you can find all our packages in the assets section of each releases:
 
-![github download](/img/exporters/3DSMax/2_github_dl.jpg)
+![releases](/img/exporters/installer/GithubPreRelease.png)
+
+From there, you can download the Installer.zip file. Chrome is currently warning of potential threat as the installer.exe has currently not been downloaded enough to pass the Chromium checks. In this case, you might see a message like this:
+
+![chrome warning](/img/exporters/installer/ChromeDLWarning.png)
+
+You can nervertheless continue to download by pressing the little arrow and chosing to "Keep" the file:
+
+![chrome warning keep](/img/exporters/installer/ChromeDLWarningKeep.png)
+
+Once downloaded, you can extract the content of the zip in your favorite loaction.
+
+### Using the installer
+Launch the executable file contained in the previous zip. On the first launch Windows like Chrome previously will emit a Smart Screen warning as the application has currently not being launched enough to be trusted.
+
+![smart screen warning](/img/exporters/installer/SmartScreen.png)
+
+As before, you can chose to continue by pressing more info and then Run anyway:
+
+![smart screen warning keep](/img/exporters/installer/SmartScreenKeep.png)
+
+No worries, you are almost there. A second warning is raised by Windows as the installer needs to write files in the program files and therefore run in elevated mode. You can access the User Account Control and finally start using the application.
+
+From this point, it gets simpler:
+
+![smart screen warning keep](/img/exporters/installer/Installer.png)
+
+Once launched the application should auto detect all the installation folders from your Autodesk applications. In case it fails to do so, you could still manually location the targetted software.
+
+You can now easily install or update any of your 3d authoring tools to the latest prerelease available on Github.
+
+Would you want to upgrade to the latest available pre-release of the exporter plugins, you can easily launch back the installer and follow the same exact procedure to update the installed plugins to their latest versions.
+
+Please not that both the software you are trying to install the plugin for should be closed during the installation.
+
+## Manual Install
+
+The plugin is designed for 3DS Max 2015 or later. To download it, go to the [Github project Releases](https://github.com/BabylonJS/Exporters/releases).
+
+![releases](/img/exporters/installer/GithubPreRelease.png)
+
+In the assets section of the release you can find one zip file per supported tool (like max_2019.zip) containing the plugin files.
+
+Click on the zip file, to start Downloading.
 
 By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the zip file, and with a right click select _Properties_, select _Unblock_, and then _OK_. 
 
@@ -21,6 +65,24 @@ Then, extract the content of the zip file on your computer, and open the directo
 ![plugin visible](/img/exporters/3DSMax/4_plugin_visible.jpg)
 
 Congratulations! You did it!
+
+# Dependencies #
+## Visual Studio
+Visual Studio is required to build the Max2Babylon project from source.
+
+## .NET Framework
+The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers) needs to be installed in order to run the Max2Babylon plugin properly.
+* Max2Babylon 2015-2016
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2017
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2018
+   * Requires atleast .NET Framework 4.6
+
+* Max2Babylon 2019
+   * Requires atleast .NET Framework 4.7
 
 # Features  #
 
@@ -81,6 +143,7 @@ Congratulations! You did it!
     * Fresnel for diffuse, emissive, opacity and reflection
     * Physical materials (PBR)
     * Standard Surface Arnold material
+    * Coating (Standard Surface Arnold only)
     * Unlit attribute
 
 * _Textures_
@@ -268,6 +331,16 @@ The handling of physical materials is mimic from glTF format. [Detailed explanat
 
 The handling of arnold materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#standard-surface-arnold-material)
 
+As well as the default supported GLTF parameters, in Babylon format, we support the coating parameters of the material. You can see below the supported parameters:
+
+![texture](/img/exporters/3DSMax/Coating.png)
+
+Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In 3DS MAX, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
+
+In Babylon format, weight is stored in red channel, roughness in green.
+
+The roughness of the coating can be inverted to mean Glossiness - this is controlled by the same parameter than the roughness map.
+
 ## Shell material
 
 The handling of the shell material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#shell-material)
@@ -281,6 +354,8 @@ The handling of the directX shader material is mimic from glTF format. [Detailed
 Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 
 
 ![texture](/img/exporters/3DSMax/11_texture.jpg)
+
+**Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
 
 ## Unlit material
 

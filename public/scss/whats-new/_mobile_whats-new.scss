@@ -11,6 +11,8 @@
   }
 
   .whats-new-banner{
-    padding-top:$bh;
+    .img-holder {
+        display: none;
+    }
   }
 }

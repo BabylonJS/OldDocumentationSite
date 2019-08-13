@@ -18,9 +18,9 @@ new BABYLON.Texture("textures/filename", scene);
 | :---: | --- | --- |
 | ![](/img/resources/textures_thumbs/albedo.png.jpg) | albedo.png | 590 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/amiga.jpg' width = '64' height = '64'> | amiga.jpg | 2 KB |
-| <img src = 'http://www.babylonjs-playground.com/textures/BJS-logo_v3.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | BJS-logo_v3.png | 39 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/BJS-logo_v3.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | BJS-logo_v3.png <br>[(ktx available)](https://doc.babylonjs.com/resources/multi-platform_compressed_textures) | 39 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/bloc.jpg' width = '64' height = '64'> | bloc.jpg | 3 KB |
-| <img src = 'http://www.babylonjs-playground.com/textures/checkerBJS.png' width = '64' height = '64'> | checkerBJS.png | 38 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/checkerBJS.png' width = '64' height = '64'> | checkerBJS.png <br>[(ktx available)](https://doc.babylonjs.com/resources/multi-platform_compressed_textures) | 38 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/cloud.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | cloud.png | 58 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/lava/cloud.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | lava/cloud.png | 81 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/co.png' width = '64' height = '64'> | co.png | 2 KB |
@@ -116,10 +116,12 @@ new BABYLON.CubeTexture("textures/common part of filenames", scene);
 
 | Overview | Filename | Viewer | Size |
 | :---: | --- | --- | --- |
+| ![](/img/resources/textures_thumbs/cubemapDebug.jpg) | cubemapDebug/ <br>[(ktx available)](https://doc.babylonjs.com/resources/multi-platform_compressed_textures) | [take a look](http://www.babylonjs-playground.com/#UU7RQ#322) | 6 x 80 KB |
 | ![](/img/resources/textures_thumbs/skybox.jpg) | skybox | [take a look](http://www.babylonjs-playground.com/#UU7RQ#91) | 6 x 20 KB |
 | ![](/img/resources/textures_thumbs/skybox2.jpg) | skybox2 | [take a look](http://www.babylonjs-playground.com/#UU7RQ#92) | 6 x 400 KB |
 | ![](/img/resources/textures_thumbs/skybox3.jpg) | skybox3 | [take a look](http://www.babylonjs-playground.com/#UU7RQ#93) | 6 x 150 KB |
 | ![](/img/resources/textures_thumbs/skybox4.jpg) | skybox4 | [take a look](http://www.babylonjs-playground.com/#UU7RQ#94) | 6 x 150 KB |
+| ![](/img/resources/textures_thumbs/skyboxBlack.jpg) | skyboxBlack | [take a look](https://www.babylonjs-playground.com/#UU7RQ#344) | 6 x 7 KB |
 | ![](/img/resources/textures_thumbs/space.jpg) | space | [take a look](http://www.babylonjs-playground.com/#UU7RQ#245) | 6 x 200 KB |
 | ![](/img/resources/textures_thumbs/TropicalSunnyDay.jpg) | TropicalSunnyDay | [take a look](http://www.babylonjs-playground.com/#UU7RQ#95) | 6 x 600 KB |
 

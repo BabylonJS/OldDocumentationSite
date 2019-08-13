@@ -202,7 +202,7 @@ var line2D = function(name, options, scene) {
 	BABYLON.VertexData._ComputeSides(BABYLON.Mesh.DOUBLESIDE, positions, indices, normals, uvs);  	
 	console.log(uvs)		
 	//Create a custom mesh  
-	var customMesh = new BABYLON.Mesh("custom", scene);
+	var customMesh = new BABYLON.Mesh(name, scene);
 
 	//Create a vertexData object
 	var vertexData = new BABYLON.VertexData();
@@ -414,7 +414,7 @@ var line2D = function(name, options, scene) {
 	BABYLON.VertexData._ComputeSides(BABYLON.Mesh.DOUBLESIDE, positions, indices, normals, uvs);  	
 	console.log(uvs)		
 	//Create a custom mesh  
-	var customMesh = new BABYLON.Mesh("custom", scene);
+	var customMesh = new BABYLON.Mesh(name, scene);
 
 	//Create a vertexData object
 	var vertexData = new BABYLON.VertexData();
@@ -628,7 +628,7 @@ var line2D = function(name, options, scene) {
 	BABYLON.VertexData._ComputeSides(BABYLON.Mesh.DOUBLESIDE, positions, indices, normals, uvs);  	
 	console.log(uvs)		
 	//Create a custom mesh  
-	var customMesh = new BABYLON.Mesh("custom", scene);
+	var customMesh = new BABYLON.Mesh(name, scene);
 
 	//Create a vertexData object
 	var vertexData = new BABYLON.VertexData();
@@ -677,7 +677,7 @@ Just copy the code below if you want to use it.
 ### Parallel Line Code
 
 ```javascript
-var parallelLines = function(name, options, scene) {
+var parallelLines = function(options, scene) {
 
 	//Arrays for vertex positions and indices
 	var positions = [];

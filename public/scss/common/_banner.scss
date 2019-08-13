@@ -12,10 +12,7 @@ $title_width : 300px;
 }
 
 .nav-main{
-  width       : 100%;
-  height      : $bh;
   font-family: $font-title;
-  background-color : $grey;
 
   /* Remove mobile menu by default*/
   #mobilemenu {
@@ -48,9 +45,8 @@ $title_width : 300px;
 
   .banner {
     @include display(flex);
-    width : 100%;
-    background-color: rgb(34, 44, 55);
-    height : $bh;
+    background-color: $dark;
+    height: $bh;
 
     // The left menu (title + tabs)
     .menu {
@@ -59,54 +55,33 @@ $title_width : 300px;
       height : $bh;
       @include user-select(none);
 
-
       // All items : title and tabs
-      & > div {
-        height : $bh;
+      > div {
+        height: $bh;
         line-height: $bh;
         font-size: $bfs;
-        padding: 0 5px 0 5px;
-        text-align : center;
 
         &.active{
           background-color: $dark;
-
         }
 
         &:hover:not(.do-not-hover) {
           background-color: $dark;
           @include transition(all .2s ease-in);
         }
-      }
-      
-        a{
-          color: white;
-          display: inline-block;
-          width:100%;
-        }
-        a:hover{
-          text-decoration: none;
-        }
 
-      // Title Babylon.js | DOCUMENTATION
-      & > div:first-child {
-        color:white;
-        cursor : pointer;
-        width:100px;
-      }
-
-      // Only tabs
-      .item {
-        width : 130px;
-        text-transform: uppercase;
-        font-size : 0.9em;
-        cursor: pointer;
         a {
-          text-decoration : none;
-          color : white;
-          display: inline-block;
-          width:100%;
-          text-align: center;
+          white-space: nowrap;
+          @include transition(color .2s ease-in);
+          padding: 0 10px;
+          text-transform: uppercase;
+          color: white;
+
+          &:hover,
+          &:focus {
+            color: #E0694B;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -123,19 +98,21 @@ $title_width : 300px;
       .searchbar {
         height : 50px;
         background-color: white;
-        //border-radius: 20px;
-        width : 250px;
+        border: 10px solid $dark;
 
-        margin: 0px 0px 0px 5px;
+        form {
+          display: inline-flex;
+        }
 
         @include display(flex);
         @include align-items(center);
+        
         input {
-          margin-left: 10px;
-          height : 30px;
-          width : 200px;
           border: none;
           background-color: transparent;
+          padding: 5px 10px;
+          font-size: smaller;
+
           &:focus {
             border:none;
             outline: 0;

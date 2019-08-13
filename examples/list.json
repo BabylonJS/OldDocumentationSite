@@ -1,19 +1,6 @@
 {
     "examples": [
         {
-            "title": " Basic Scene Typescript",
-            "ignoreInDoc": true,
-            "samples": [
-                {
-                    "title": "Link to Typescript Playground",
-                    "doc": "https://doc.babylonjs.com/features/playground",
-                    "icon": "icons/basic_scene.png",
-                    "description": "Ball and plane",
-                    "PGID": "/ts.html#"
-                }
-            ]
-        },
-        {
             "title": "Animations",
             "samples": [
                 {
@@ -115,7 +102,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/meshbehavior",
                     "icon": "icons/appBar.jpg",
                     "description": "Attach a menu to a bounding box such that it always faces the user",
-                    "PGID": "#8GY6J8#62"
+                    "PGID": "#8GY6J8#180"
                 }
             ]
         },
@@ -228,7 +215,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/cornell.jpg",
                     "description": "Load a glTF file and setup the environment",
-                    "PGID": "#J5E230#165"
+                    "PGID": "#G3GZA1#7"
                 },
                 {
                     "title": "Import meshes",
@@ -242,7 +229,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/load_gltf.jpg",
                     "description": "Show how to easily load a glTF model",
-                    "PGID": "#PN1NNI#1"
+                    "PGID": "#U5SSCN#0"
                 },
                 {
                     "title": "Assets manager",
@@ -332,7 +319,15 @@
                     "icon": "icons/water.jpg",
                     "description": "Water material",
                     "PGID": "#L76FB1#0"
+                },
+                {
+                    "title": "Float on Water",
+                    "doc": "https://doc.babylonjs.com/extensions/water",
+                    "icon": "icons/FloatWater.jpg",
+                    "description": "Float on Water material",
+                    "PGID": "#L76FB1#49"
                 }
+
             ]
         },
         {
@@ -460,7 +455,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_instances",
                     "icon": "icons/instances.jpg",
                     "description": "Use hardware instancing to duplicate meshes at no cost",
-                    "PGID": "#YB006J#0"
+                    "PGID": "#YB006J#75"
                 },
                 {
                     "title": "Octrees",
@@ -707,14 +702,14 @@
                     "doc": "https://doc.babylonjs.com/api/classes/babylon.convolutionpostprocess",
                     "icon": "icons/convolution.jpg",
                     "description": "Apply emboss filter to the scene using the ConvolutionPostProcess",
-                    "PGID": "#B0RH9H#0"
+                    "PGID": "#B0RH9H#1"
                 },
                 {
                     "title": "Lens flares",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_lens_flares",
                     "icon": "icons/lens_flares.jpg",
                     "description": "Simulate lens flares on the camera",
-                    "PGID": "#ZEB7H6#0"
+                    "PGID": "#ZEB7H6#6"
                 },
                 {
                     "title": "Glass wubble ball",
@@ -826,7 +821,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_reflection_probes",
                     "icon": "icons/refraction.jpg",
                     "description": "use reflection probes to simulate realtime refraction",
-                    "PGID": "#RRYXWN#0"
+                    "PGID": "#RRYXWN#1"
                 },
                 {
                     "title": "Realtime reflection",
@@ -840,14 +835,14 @@
                     "doc": "https://doc.babylonjs.com/how_to/using_standard_rendering_pipeline#setting-up-the-motion-blur",
                     "icon": "icons/motion_blur.jpg",
                     "description": "Use the standard rendering pipeline to simulate motion blur",
-                    "PGID": "#ZMAJZB#0"
+                    "PGID": "#ZMAJZB#7"
                 },
                 {
                     "title": "Highlight layer",
                     "doc": "https://doc.babylonjs.com/how_to/highlight_layer",
                     "icon": "icons/highlights.jpg",
                     "description": "Highlight a mesh",
-                    "PGID": "#7EESGZ#0"
+                    "PGID": "#7EESGZ#8"
                 },
                 {
                     "title": "Lens effects",
@@ -915,7 +910,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/reflect#cubetexture",
                     "icon": "icons/local_cubemap.jpg",
                     "description": "Improve cubemaps with local mode",
-                    "PGID": "#RNASML#4"
+                    "PGID": "#RNASML#37"
                 },
                 {
                     "title": "Starfield procedural texture",
@@ -943,14 +938,14 @@
                     "doc": "https://doc.babylonjs.com/api/classes/babylon.rendertargettexture",
                     "icon": "icons/custom_rendertarget.jpg",
                     "description": "Use render target textures to generate procedural data",
-                    "PGID": "#CJWDJR#0"
+                    "PGID": "#CJWDJR#1"
                 },
                 {
                     "title": "Bump texture",
                     "doc": "https://doc.babylonjs.com/how_to/more_materials#bump-map",
                     "icon": "icons/bump.jpg",
                     "description": "Use normal map to simulate bump",
-                    "PGID": "#RK0W5S#0"
+                    "PGID": "#RK0W5S#30"
                 },
                 {
                     "title": "Image texture",
@@ -965,6 +960,13 @@
                     "icon": "icons/video_texture.jpg",
                     "description": "Apply a video as a texture to a mesh",
                     "PGID": "#CHQ4T#120"
+                },
+                {
+                    "title": "Basis texture loading",
+                    "doc": "https://doc.babylonjs.com/resources/Multi-Platform_Compressed_Textures",
+                    "icon": "icons/basis.jpg",
+                    "description": "Load a basis texture",
+                    "PGID": "#4RN0VF#0"
                 }
             ]
         },

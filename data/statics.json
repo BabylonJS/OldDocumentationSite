@@ -98,6 +98,11 @@
                     "title": "Shadows",
                     "filename": "Shadows",
                     "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
+                },
+                {
+                    "title": "How to get Babylon.js",
+                    "filename": "How_To_Get",
+                    "abstract": "Describe all the way to get Babylon.js"
                 }
             ]
         }
@@ -225,6 +230,11 @@
                     "title": "Create Polyhedra",
                     "level": 1,
                     "filename": "Polyhedra_Shapes"
+                },
+                {
+                    "title": "Create Tiled Planes and Boxes",
+                    "level": 1,
+                    "filename": "Tiled"
                 },
                 {
                     "title": "Use decals",
@@ -500,6 +510,11 @@
                     "title": "Use WebXR (WebVR, WebAR, Magic Window, Etc.)",
                     "level": 3,
                     "filename": "WebXR"
+                },
+                {
+                    "title": "Use Multiview",
+                    "level": 3,
+                    "filename": "Multiview"
                 }
             ]
         },
@@ -657,6 +672,11 @@
                     "title": "Use GamePads",
                     "level": 2,
                     "filename": "How_to_use_Gamepads"
+                },
+                {
+                    "title": "Use Virtual Joysticks",
+                    "level": 2,
+                    "filename": "How_to_use_Virtual_Joysticks"
                 },
                 {
                     "title": "Handle Events with Observables",
@@ -831,6 +851,10 @@
                     "filename": "how_to_start"
                 },
                 {
+                    "title": "Improve Documentation",
+                    "filename": "contribute_to_documentation"
+                },
+                {
                     "title": "Follow Approved Naming Conventions",
                     "filename": "Approved_Naming_Conventions"
                 },
@@ -927,8 +951,8 @@
                     "filename": "Getting_Started"
                 },
                 {
-                    "title": "Loading and Saving Scenes",
-                    "filename": "Loading_Saving"
+                    "title": "Explaining the Workflow",
+                    "filename": "Explaining_Workflow"
                 },
                 {
                     "title": "Adding Textures",
@@ -961,6 +985,10 @@
                 {
                     "title": "Editing Prefabs",
                     "filename": "Editing_Prefabs"
+                },
+                {
+                    "title": "Creating custom particle system sets",
+                    "filename": "Using_ParticleSystemEditor"
                 }
             ]
         },
@@ -1358,6 +1386,18 @@
             ]
         },
         {
+            "title": "TextureCanvas",
+            "name": "TextureCanvas",
+            "img": "img/extensions/texturecanvas.jpg",
+            "desc": "Draw textures on a texture.",
+            "files": [
+                {
+                    "title": "TextureCanvas",
+                    "filename": "TextureCanvas"
+                }
+            ]
+        },
+        {
             "title": "Post Process library",
             "name": "PostProcessLibrary",
             "img": "img/extensions/postProcess.jpg",
@@ -1394,6 +1434,22 @@
                 {
                     "title": "Quick Tree Generator",
                     "filename": "Quick_Tree_Generator"
+                }
+            ]
+        },
+        {
+            "title": "Navigation",
+            "name": "Navigation",
+            "img": "img/How_To/navigation.png",
+            "desc": "Navigation mesh and crowd agents",
+            "files": [
+                {
+                    "title": "Create Navigation Mesh",
+                    "filename": "NavigationMesh"
+                },
+                {
+                    "title": "Crowd agents",
+                    "filename": "Crowd"
                 }
             ]
         },
@@ -1582,6 +1638,17 @@
                     "filename": "Amp360Video"
                 }
             ]
+        },
+        {
+            "title": "Web GPU",
+            "name": "WebGPU",
+            "desc": "Next Gen Web 3D",
+            "files": [
+                {
+                    "title": "Web GPU",
+                    "filename": "webGPU"
+                }
+            ]
         }
     ],
     "snippets": [
@@ -1627,6 +1694,16 @@
                     "filename": "roof"
                 },
                 {
+                    "title": "A Carriage Following a Track",
+                    "level": 2,
+                    "filename": "Track"
+                },
+                {
+                    "title": "Design for Track to Follow",
+                    "level": 3,
+                    "filename": "Track_Code"
+                },
+                {
                     "title": "Making a Simple Driven Car",
                     "level": 3,
                     "filename": "Car_Driven"
@@ -1658,10 +1735,12 @@
                 },
                 {
                     "title": "Fireworks with Shader Code",
+                    "level": 3,
                     "filename": "Writing2"
                 },
                 {
                     "title": "A Vertical Wave with Shader Code",
+                    "level": 3,
                     "filename": "Writing1"
                 }
             ]
@@ -1726,6 +1805,10 @@
                 {
                     "title": "Create Points Inside a Mesh",
                     "filename": "InnerMeshPoints"
+                },
+                {
+                    "title": "Create Points on the Mesh Surface",
+                    "filename": "SurfaceMeshPoints"
                 },
                 {
                     "title": "Deconstruct Mesh",
@@ -1806,7 +1889,11 @@
                     "filename": "Playground"
                 },
                 {
-                    "title": "The Inspector",
+                    "title": "Introduction to the Inspector - video series",
+                    "filename": "intro_inspector"
+                },
+                {
+                    "title": "The Inspector overview",
                     "filename": "Playground_debuglayer"
                 }
             ]
@@ -1819,6 +1906,25 @@
                 {
                     "title": "Graphic User Interfaces",
                     "filename": "gui"
+                }
+            ]
+        },
+        {
+            "title": "Controls",
+            "name": "controls",
+            "desc": "Babylon.js Controls",
+            "files": [
+                {
+                    "title": "Babylon.js Controls",
+                    "filename": "controls"
+                },
+                {
+                    "title": "Timeline Control",
+                    "filename": "timeline"
+                },
+                {
+                    "title": "Resizer Control",
+                    "filename": "resizer"
                 }
             ]
         },

@@ -6,7 +6,7 @@ PG_TITLE: Morph Targets
 
 Morph targets are a new feature introduced with Babylon.js v3.0.
 
-![Morph Target Before](/img/how_to/morphtargets0.jpg) ![Morph Target After](/img/how_to/morphtargets.jpg)
+![Morph Target Before and After](/img/how_to/morphtargets.jpg)
 
 ## Basics
 Meshes can be deformed by using morph targets. A morph target must be built from a mesh with the **EXACT** same number of vertices as the original mesh.
@@ -102,9 +102,17 @@ manager.addTarget(target3);
 
 At any time, you can remove a target with `manager.removeTarget(target)`
 
+## List of morphable properties
+
+You can morph the following mesh attributes:
+- position
+- normal (can be turned of by calling `manager.enableNormalMorphing = false`)
+- tangents (can be turned of by calling `manager.enableTangentMorphing = false`)
+- uvs (can be turned of by calling `manager.enableUVMorphing = false`)
+
 ## Limitations
 
-* Please be aware that most of the browsers are limited to 16 attributes per mesh. Adding a single morph target to a mesh add 2 new attributes (position + normal). This could quickly go beyond the max attributes limitation.
+* Please be aware that most of the browsers are limited to 16 attributes per mesh. Adding a single morph target to a mesh add up to 4 new attributes (position + normal + tangents + uvs). This could quickly go beyond the max attributes limitation.
 * All targets within a same manager must have the same vertices count
 * A mesh and its MorphTargetManager must have the same vertices count
 

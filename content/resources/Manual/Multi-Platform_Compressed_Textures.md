@@ -78,3 +78,14 @@ ktx-batch
 
 ### Node.js script for PVRTexTool
 This is a script that generates PVRTC, ETC1, ETC2, ASTC textures from png and jpg files. It can run on node or as a gulp task. Also it can be configured to generate all texture types or specific ones. More information about how to install and configure the script can be found [here](https://www.npmjs.com/package/babylonjs-texture-generator).
+
+### Basis file format
+
+Another way to store compressed image textures is throught the .basis file format
+
+See: https://github.com/BinomialLLC/basis_universal
+
+Basis Universal is a "supercompressed" GPU texture and texture video compression system that outputs a highly compressed intermediate file format (.basis) that can be quickly transcoded to a wide variety of GPU texture compression formats: PVRTC1 4bpp RGB, BC7 mode 6 RGB, BC1-5, ETC1, and ETC2. We will be adding ASTC RGB or RGBA, BC7 mode 4/5 RGBA, and PVRTC1 4bpp RGBA next. Basis files support non-uniform texture arrays, so cubemaps, volume textures, texture arrays, mipmap levels, video sequences, or arbitrary texture "tiles" can be stored in a single file. The compressor is able to exploit color and pattern correlations across the entire file, so multiple images with mipmaps can be stored very efficiently in a single file.
+
+Basic example https://playground.babylonjs.com/#4RN0VF
+Basis vs png example scene https://playground.babylonjs.com/#E4VDDW
