@@ -11,9 +11,9 @@ The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tr
 
 And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui.
 
-You can find a complete demo here: http://www.babylonjs.com/demos/gui/
+You can find a complete demo here: https://www.babylonjs.com/demos/gui/
 
-![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
+![Babylon.GUI](https://www.babylonjs.com/screenshots/gui.jpg)
 
 Please note that since Babylon.js v3.3, a [3D version is also available](//doc.babylonjs.com//How_To/Gui3D)
 
@@ -51,7 +51,7 @@ The fullscreen mode is not intended to be used with WebVR as it is a pure 2d ren
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
@@ -59,7 +59,7 @@ Here is an example of a simple texture mode GUI:  https://www.babylonjs-playgrou
 
 Please note that handling pointer move events could be costly on complex meshes, so you can turn off supporting pointer move events with a fourth parameter:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024, false);
 ```
 
@@ -710,6 +710,8 @@ Containers has one specific property: `container.background`. Use it to define t
 
 By default containers do not block pointer events (ie. the underlying scene will receive the pointer event even if the pointer is over a container). You can prevent this behavior by calling `container.isPointerBlocker = true`.
 
+Containers are responsible for managing their children's layout. To prevent layout cycles, the system will not let the layout being updated during a cycle more than 3 times. This value can be changed with `container.maxLayoutCycle`. You can also turn on console warnings when layout cycles are detected with `container.logLayoutCycleErrors = true`.
+
 ### Adaptative size
 You can decide to have your containers to adapt their size to their children by using one of these properties:
 * adaptWidthToChildren (false by default)
@@ -750,7 +752,7 @@ Here is an example of an ellipse control: https://www.babylonjs-playground.com/#
 ### StackPanel
 
 The StackPanel is a control which stacks its children based on its orientation (can be horizontal or vertical).
-All children must have a defined width or height (depending on the orientation) in **pixels**.
+All children must have a defined width or height (depending on the orientation) in **pixels** (A warning will be written to the console if this is not true. This warning can be turned off with `panel.ignoreLayoutWarnings = true`).
 
 The height (or width) of the StackPanel is defined automatically based on children.
 

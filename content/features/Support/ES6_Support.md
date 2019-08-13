@@ -331,7 +331,7 @@ This is actually a pretty good question. It should be intuitive enough and if no
 This will be the case for all the methods defined by module augmentation. This means that as long as you are not importing the parent modules, the methods will not even be discoverable. This is the case for all our scene components. For enabling physics on the scene you need `import "@babylonjs\core\Physics\physicsEngineComponent"` to populate the `scene.enablePhysics` function. Please find below the list of those components for their augmented methods:
 
 - scene."animationRelatedMethods like beginAnimation and so on..." are available in the `Animations/animatable` module.
-- scene."audioRelatedMethods" are available in the `Audio/audioSceneComponent` module.
+- scene."audioRelatedMethods" are available in the `Audio/audioSceneComponent` and `Audio/audioEngine` module.
 - Octree functions can be found in the `Culling/Octrees/octreeSceneComponent` module.
 - Ray and Picking functions can be found in the `Culling/ray` module.
 - Debug Layer functions can be found in the `Debug/debugLayer` module.
@@ -340,12 +340,17 @@ This will be the case for all the methods defined by module augmentation. This m
 - Gamepad support can be found in the `Gamepad/gamepadSceneComponent` module.
 - Scene Helpers like createDefaultCamera, createDefaultXXX can be found in the `Helpers/sceneHelpers` module.
 - Mesh Simplification functions can be found in the `Meshes/meshSimplicationSceneComponent`.
-- DDS Loader support can be installed from the `Materials/Textures/Loaders/ddsTextureLoader`.
+- DDS Loader support can be installed from the `Materials/Textures/Loaders/ddsTextureLoader` and you will also need `core/Misc/dds` module.
 - Env Loader support can be installed from the `Materials/Textures/Loaders/envTextureLoader`.
 - KTX Loader support can be installed from the `Materials/Textures/Loaders/ktxTextureLoader`.
 - TGA Loader support can be installed from the `Materials/Textures/Loaders/tgaTextureLoader`.
 - Particle support can be found in the `Particles/particleSystemComponent`.
 - Physics Engine support can be found in the `Physics/physicsEngineComponent`.
+- .babylon file support can be found in the `Loading/Plugins/babylonFileLoader`.
+- shadowGenerator support can be found in the `Lights/Shadows/shadowGeneratorSceneComponent`.
+- depthRendering support can be found in the `Rendering/depthRendererSceneComponent`.
+- screenshot support can be found in the `Misc/screenshotTools`.
+- boundingBox support can be found in the `Rendering/boundingBoxRenderer`.
 
 
 *Why do I have an error in the console inviting me to import some other modules?*
@@ -428,5 +433,3 @@ var ammoPlugin = new AmmoJSPlugin(true, Ammo);
 
 ## Loaders
 In Babylon.js the loaders you can install from `@babylonjs-loaders` are actually plugins of the main `SceneLoader` module. In order to use for instance the obj loader in your app, you simply need to import it for side effects only: `import "@babylonjs/loaders/OBJ";`. It would be exactly the same for gltf: `import "@babylonjs/loaders/glTF";`.
-
-
