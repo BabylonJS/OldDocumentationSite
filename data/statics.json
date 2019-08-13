@@ -409,6 +409,11 @@
                     "filename": "Multi_Materials"
                 },
                 {
+                    "title": "How To use the Node Material",
+                    "level": 1,
+                    "filename": "Node_Material"
+                },
+                {
                     "title": "Use Dynamic Texture",
                     "level": 1,
                     "filename": "DynamicTexture"
