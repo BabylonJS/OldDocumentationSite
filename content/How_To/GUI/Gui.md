@@ -11,9 +11,9 @@ The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tr
 
 And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui.
 
-You can find a complete demo here: http://www.babylonjs.com/demos/gui/
+You can find a complete demo here: https://www.babylonjs.com/demos/gui/
 
-![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
+![Babylon.GUI](https://www.babylonjs.com/screenshots/gui.jpg)
 
 Please note that since Babylon.js v3.3, a [3D version is also available](//doc.babylonjs.com//How_To/Gui3D)
 
@@ -51,7 +51,7 @@ The fullscreen mode is not intended to be used with WebVR as it is a pure 2d ren
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
@@ -59,7 +59,7 @@ Here is an example of a simple texture mode GUI:  https://www.babylonjs-playgrou
 
 Please note that handling pointer move events could be costly on complex meshes, so you can turn off supporting pointer move events with a fourth parameter:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024, false);
 ```
 
