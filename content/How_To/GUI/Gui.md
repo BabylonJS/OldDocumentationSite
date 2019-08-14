@@ -13,8 +13,6 @@ And the source code is available on the main Babylon.js repo: https://github.com
 
 You can find a complete demo here: https://www.babylonjs.com/demos/gui/
 
-![Babylon.GUI](https://www.babylonjs.com/screenshots/gui.jpg)
-
 Please note that since Babylon.js v3.3, a [3D version is also available](//doc.babylonjs.com//How_To/Gui3D)
 
 ## Introduction
