@@ -115,6 +115,7 @@ By default, the node material provides the following blocks:
   * `ClampBlock`: Block to clamp a float between a minimum and a maximum
   * `CrossBlock`: Block used to do a cross product between 2 vectors
   * `DotBlock`: Block used to do a dot product between 2 vectors
+  * `LerpBlock`: Block used to do a mix between 2 values (using a gradient)
   * `MultiplyBlock`: Block used to multiply 2 vectors
   * `NormalizeBlock`: Block used to normalize a vector
   * `RemapBlock`: Block used to remap a float from a range to a new one
@@ -126,6 +127,7 @@ By default, the node material provides the following blocks:
   * `AlphaTestBlock`: Block used to add an alpha test in the fragment shader
   * `BonesBlock`: Block used to add support for vertex skinning (bones)
   * `FogBlock`: Block used to add support for scene fog
+  * `FresnelBlock`: Block used to add a frensel effect
   * `ImageProcessingBlock`: Block used to add image processing support to fragment shader
   * `InstancesBlock`: Block used to add support for instances
   * `LightBlock`: Block used to add light in the fragment shader
