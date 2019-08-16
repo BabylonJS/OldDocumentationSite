@@ -219,4 +219,14 @@ scene.debugLayer.select(nodeMaterial);
 
 When selected in the Inspector, youc an find an edit button in the Node Material property pane.
 
-## Loading from a file saved from the Noda Material Editor
+## Loading from a file saved from the Node Material Editor
+
+You can directly setup a Node Material from a file saved from the Node Material Editor.
+
+Here is the code to use:
+
+```
+nodeMaterial.loadAsync("file-url.json").then(() => {
+    nodeMaterial.build(true);
+});
+```
