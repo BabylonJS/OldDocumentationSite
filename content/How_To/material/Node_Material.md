@@ -208,4 +208,15 @@ nodeMaterial.setToDefault();
 
 ## Using the Node Material Editor
 
-[WIP]
+The Node Material Editor can be used to visually edit / build your Node Material.
+
+To invoke the editor you can call `nodematerial.edit()` but this code must be called inside a user interaction (like a click event). You can also call it through the Inspector:
+
+```
+scene.debugLayer.show();
+scene.debugLayer.select(nodeMaterial);
+```
+
+When selected in the Inspector, youc an find an edit button in the Node Material property pane.
+
+## Loading from a file saved from the Noda Material Editor
