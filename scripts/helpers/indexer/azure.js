@@ -124,7 +124,8 @@ function getAzureIndexResults(link, resultsArray) {
 function indexClassVersion(file) {
     var filePath = file.fullPath;
     var fileContent = fs.readFileSync(filePath).toString();
-    var name = '/api/' + file.parentDir + '/' + file.name.replace(".html", "");
+    var parentDir = path.basename(path.dirname(filePath)).toString();
+    var name = '/api/' + parentDir + '/' + file.basename.replace(".html", "");
     var correctName = fileContent.match(/<h1>.*?<\/h1>/g).toString().replace("<h1>", "").replace("</h1>", "");
     return {
         "@search.action": "mergeOrUpload",
@@ -162,20 +163,17 @@ function indexCategory(category) {
 
 function indexApi() {
     return new Promise((resolve, reject) => {
+        let allFiles = [];
         readdirp(
+            path.join(appRoot, 'public/html/api'),
             {
-                root: path.join(appRoot, 'public/html/api'),
                 fileFilter: '*.html'
-            },
-            function (err, allFiles) {
-                if (err) {
-                    console.log(err);
-                    return reject(error);
-                }
-                var values = allFiles.files.map(indexClassVersion);
-                return resolve(values);
-            }
-        );
+            }).on("data", (entry) => {
+                allFiles.push(entry);
+            }).on("end", () => {
+                var values = allFiles.map(indexClassVersion);
+                resolve(values);
+            });
     });
 }
 
