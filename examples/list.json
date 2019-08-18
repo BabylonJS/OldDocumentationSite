@@ -108,7 +108,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/gui3d#meshbutton3d",
                     "icon": "icons/meshbutton3d.jpg",
                     "description": "Uses MeshButton3D to create custom 3D buttons",
-                    "PGID": "#8Y780Y#20"
+                    "PGID": "#8Y780Y#52"
                 },
                 {
                     "title": "App Bar (AttachToBoxBehavior)",
@@ -421,7 +421,7 @@
                     "doc": "https://doc.babylonjs.com/api/classes/babylon.meshbuilder#extrudepolygon",
                     "icon": "icons/extrude_polygon.jpg",
                     "description": "Use MeshBuilder to generate geometry from extruded data",
-                    "PGID": "#TFLTJJ#0"
+                    "PGID": "#TFLTJJ#184"
                 },
                 {
                     "title": "Polygon mesh",
@@ -649,7 +649,7 @@
                     "doc": "https://doc.babylonjs.com/babylon101/shadows",
                     "icon": "icons/trasnparent_shadow.jpg",
                     "description": "Create realistic shadows from a transparent texture",
-                    "PGID": "#2DT16W#2"
+                    "PGID": "#2DT16W#11"
                 },
                 {
                     "title": "Point light shadows",
@@ -869,21 +869,21 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
                     "icon": "icons/heatwave.jpg",
                     "description": "Use custom post process effect to simulate heat wave effect",
-                    "PGID": "#TZJ0HQ#11"
+                    "PGID": "#TZJ0HQ#18"
                 },
                 {
                     "title": "RGB Shift Glitch",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
                     "icon": "icons/rgbglitch.jpg",
                     "description": "Use custom post process effect to simulate RGB Shift glitch",
-                    "PGID": "#TZJ0HQ#10"
+                    "PGID": "#TZJ0HQ#19"
                 },
                 {
                     "title": "Dawn Bringer",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_use_postprocesses#custom-postprocesses",
                     "icon": "icons/dawn.jpg",
                     "description": "Use custom post process effect to simulate DawnBringer effect",
-                    "PGID": "#TZJ0HQ#9"
+                    "PGID": "#TZJ0HQ#17"
                 }
             ]
         },
@@ -991,7 +991,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/webvr_helper",
                     "icon": "icons/webvr.png",
                     "description": "View a basic mesh and interact with a gui in WebVR",
-                    "PGID": "#TAFSN0#2"
+                    "PGID": "#TAFSN0#260"
                 }
             ]
         },
