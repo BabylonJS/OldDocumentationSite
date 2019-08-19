@@ -16,8 +16,9 @@ var myShaderMaterial = new BABYLON.ShaderMaterial(name, scene, route, options);
 - `scene`: the scene in which the shader is to be used
 - `route`: the route to the shader code in one of three ways:
     1. object: `{ vertex: "custom", fragment: "custom" }`, used with `BABYLON.Effect.ShadersStore["customVertexShader"]` and `BABYLON.Effect.ShadersStore["customFragmentShader"]`
-    2. object: `{ vertexElement: "vertexShaderCode", fragmentElement: "fragmentShaderCode" }`, used with shader code in `<script>` tags  
-    3. string: `"./COMMON_NAME"`, used with external files *COMMON\_NAME.vertex.fx* and *COMMON\_NAME.fragment.fx* in *index.html* folder.
+    2. object: `{ vertexElement: "vertexShaderCode", fragmentElement: "fragmentShaderCode" }`, used with shader code in `<script>` tags
+    3. object: `{ vertexSource: "vertex shader code string", fragmentSource: "vertex shader code string" }` using with strings containing the shaders code
+    4. string: `"./COMMON_NAME"`, used with external files *COMMON\_NAME.vertex.fx* and *COMMON\_NAME.fragment.fx* in *index.html* folder.
 
 - `options`: object containing attributes and uniforms arrays containing their names as strings.
 
@@ -27,16 +28,21 @@ An example:
 var myShaderMaterial = new BABYLON.ShaderMaterial("shader", scene, "./COMMON_NAME",
     {
         attributes: ["position", "normal", "uv"],
-        uniforms: ["world", "worldView", "worldViewProjection", "view", "projection", "time", "direction" ]
+        uniforms: ["world", "worldView", "worldViewProjection", "view", "projection", "time", "direction" ],
+        defines: ["MyDefine"]
+        needAlphaBlending: true,
+        needAlphaTesting: true
 });
 ```
-**Note**: that's the exhaustive list of available attributes and uniforms.
+**Note**: that's the exhaustive list of available attributes, uniforms.
 
 Any attribute in the Vertex Shader code **must** appear in the `attributes` array.
 
 The uniform `worldViewProjection` **must** be declared in the Vertex Shader as type `mat4` and **must** be in the `uniforms` array.
 
 Attributes and uniforms named in the arrays and not used in the shader code are ignored.
+
+if your shader code contains #define values, you can specify the ones you want to activate in the `defines` array.
 
 Uniforms assigned to textures in the shader code need not appear in the uniforms array, all other uniforms must be present.
 
