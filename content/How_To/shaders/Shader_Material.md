@@ -17,7 +17,7 @@ var myShaderMaterial = new BABYLON.ShaderMaterial(name, scene, route, options);
 - `route`: the route to the shader code in one of three ways:
     1. object: `{ vertex: "custom", fragment: "custom" }`, used with `BABYLON.Effect.ShadersStore["customVertexShader"]` and `BABYLON.Effect.ShadersStore["customFragmentShader"]`
     2. object: `{ vertexElement: "vertexShaderCode", fragmentElement: "fragmentShaderCode" }`, used with shader code in `<script>` tags
-    3. object: `{ vertexSource: "vertex shader code string", fragmentSource: "vertex shader code string" }` using with strings containing the shaders code
+    3. object: `{ vertexSource: "vertex shader code string", fragmentSource: "fragment shader code string" }` using with strings containing the shaders code
     4. string: `"./COMMON_NAME"`, used with external files *COMMON\_NAME.vertex.fx* and *COMMON\_NAME.fragment.fx* in *index.html* folder.
 
 - `options`: object containing attributes and uniforms arrays containing their names as strings.
