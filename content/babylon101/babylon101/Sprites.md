@@ -211,6 +211,8 @@ It is also possible to use playAnimation with sprites from a packed spritesheet.
 * [Playground Example JSON File Multiple Sprites](https://www.babylonjs-playground.com/#K5KTWA#4)
 * [Playground Example JSON File Animated Slide Show](https://www.babylonjs-playground.com/#K5KTWA#5)
 
+* [Playground Example Multi Pick Sprites](https://www.babylonjs-playground.com/#5GX5DZ)
+
 ## Next Step
 Having learnt about sprites, so it’s time to move on to use them in a classic effect in 3D : [particles](/babylon101/Particles).
 
