@@ -9,7 +9,7 @@ The place to try out coding with Babylon.js.
 Experimenting and changing any code in the playground and clicking on the **Run** button will not affect any original code in the playground you currently using. 
 Original code can be restored by refreshing the browser.
 
-You can write the code in Javascript or Typescript. In the case of Typescript the URL must contain `ts.html` after `https://www.babylonjs-playground.com/` for the code to be [recognised as Typescript](https://www.babylonjs-playground.com/ts.html). The playground software compiles the code to Javascript, in the background, before rendering.
+You can write the code in Javascript or Typescript. The playground software compiles the code to Javascript, in the background, before rendering.
 
 ## Overview
 
@@ -28,7 +28,7 @@ The space for the coding editor and rendering area can be adjusted by dragging t
 
 ![Playground Menu](/img/how_to/Introduction/pgmenu.jpg)
 
-In Typescript mode the menu has a purple color theme
+In Typescript mode the menu has an orange color theme
 
 ![Playground Typescript Menu](/img/how_to/Introduction/pgmenu_ts.jpg)
 
@@ -36,11 +36,11 @@ In Typescript mode the menu has a purple color theme
 
 - **Title and Version**: As stated.
 - **Run**: Commands the playground to try to render your scene.
+- **Save**: Causes your scene to be permanently stored in the playground's database and it will issue a unique URL for each save. On save you will be asked to comple the metadata so that it can be searched for. Once saved it is a good idea to bookmark the page so you can return to it later. You could then share the URL with others, for example, if it is not working as you expect you can ask a question in the forum along with the link to your playground.
+- **Download**: Allows you to download a zip file named *sample.zip*. Once downloaded and unzipped, you will see a file named `index.html` 
+which contains everything necessary to run the code in your browser, including links to external *babylon.js* and other files.
 - **New**: Places a basic `createScene()` function into the editor along with code to initialise the scene variable and provide a camera.
 - **Clear**: Empties all the code out of the playground editor.  You could then paste in any createScene function you are working on locally.
-- **Save**: Causes your scene to be permanently stored in the playground's database and it will issue a unique URL for each save. On save you will be asked to comple the metadata so that it can be searched for. Once saved it is a good idea to bookmark the page so you can return to it later. You could then share the URL with others, for example, if it is not working as you expect you can ask a question in the forum along with the link to your playground.
-- **Zip**: Allows you to download a zip file named *sample.zip*. Once downloaded and unzipped, you will see a file named `index.html` 
-which contains everything necessary to run the code in your browser, including links to external *babylon.js* and other files.
 - **Settings**: The Settings button has a sub menu with extra options
   - *Theme*: Choose the theme for the playground
   - *Font size*: Set the font size in the editor.
@@ -49,15 +49,16 @@ which contains everything necessary to run the code in your browser, including l
   - *Full Screen*: Makes the render area full screen.
   - *Editor Full Screen*: Makes the editor area full screen.
   - *Format Code*: Pretty prints the code.
-- **Inspector**: The checkbox toggles the playground scene inspector which shows a multitude of variable values.
-- **Metadata**: This is where you describe your playground allowing yourself and other to search the playground database for examples of use.
+  - *Minimap*: Display the minimap of the code editor.
+  - *Inspector*: The checkbox toggles the playground scene inspector which shows a multitude of variable values.
+  - *Metadata*: This is where you describe your playground allowing yourself and other to search the playground database for examples of use.
 - **Version**: Allows and shows your choice of the BABYLON.js framework, either the current stable one or the latest preview version.
 - **Examples**: A drop down menu giving examples of playgrounds with a search filter.
 
 ### Small Screens
 
-- **File**: contains Run, New, Clear, Save and Zip as submenus.
-- **Settings**: Adds some or all of Inspector, Metadata, Version to its submenus.
+- **File**: Contains Run, New, Clear, Save and Zip as submenus.
+- **Editor/View**: Buttons to switch between the code editor and the view.
 
 ## Playground URL formats
 

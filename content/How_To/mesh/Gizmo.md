@@ -52,7 +52,7 @@ gizmoManager.gizmos.positionGizmo.updateGizmoRotationToMatchAttachedMesh = false
 ```
 Note: This is not supported on the scale gizmo
 
-[**Example**](https://www.babylonjs-playground.com/#4TBMBR)
+[**Example**](https://www.babylonjs-playground.com/#4TBMBR#33)
 ## Setup
 
 Gizmos are displayed by a [UtilityLayerRenderer](/How_To/UtilityLayerRenderer) to not disrupt the existing scene state. If not specified, the default utility layer will be used.
