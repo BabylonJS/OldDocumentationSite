@@ -199,7 +199,7 @@ mesh.material = new BABYLONX.ShaderBuilder()
 This method can be used in the Playground. However it does require the loading of the ShaderBuilder Javascript file and an `onLoad` 
 function before it can be called.
 
-* [Playground Example using ShaderBuilder](http://www.babylonjs-playground.com/#NCY1Q#1)
+* [Playground Example using ShaderBuilder](http://www.babylonjs-playground.com/#NCY1Q#36)
 
 # Further Reading
 
