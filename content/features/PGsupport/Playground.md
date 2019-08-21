@@ -9,7 +9,7 @@ The place to try out coding with Babylon.js.
 Experimenting and changing any code in the playground and clicking on the **Run** button will not affect any original code in the playground you currently using. 
 Original code can be restored by refreshing the browser.
 
-You can write the code in Javascript or Typescript. In the case of Typescript the URL must contain `ts.html` after `https://www.babylonjs-playground.com/` for the code to be [recognised as Typescript](https://www.babylonjs-playground.com/ts.html). The playground software compiles the code to Javascript, in the background, before rendering.
+You can write the code in Javascript or Typescript. The playground software compiles the code to Javascript, in the background, before rendering.
 
 ## Overview
 
