@@ -35,7 +35,7 @@ Please also note that the following functions are available:
 A container is used to organize controls in the scene. The base class for all containers is the `Container3D` class. The `manager.rootContainer` is a `Container3D` object.
 
 All containers provide the following functions to handle controls:
-- `addControl()`: Adds a control to the children of this control
+- `addControl()`: Adds a control to the children of this container
 - `containsControl()`: Gets a boolean indicating if the given control is in the root child list
 - `removeControl()`: Removes a control from the root child list
 
@@ -219,7 +219,7 @@ Demo [here](https://www.babylonjs-playground.com/#2YZFA0#0)
 
 ### HolographicButton
 
-The `HolographicButton` is a specialized button that mimics the [MRTK holographic button](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/master/Assets/HoloToolkit-Examples/UX/Readme/README_InteractableObjectExample.md#holographic-button).
+The `HolographicButton` is a specialized button that mimics the Mixed Reality Toolkit holographic button.
 
 An `HolographicButton` can be defined with two properties:
 - `text`: Gets or sets text for the button
