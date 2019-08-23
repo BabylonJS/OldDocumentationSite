@@ -9,7 +9,7 @@ The place to try out coding with Babylon.js.
 Experimenting and changing any code in the playground and clicking on the **Run** button will not affect any original code in the playground you currently using. 
 Original code can be restored by refreshing the browser.
 
-You can write the code in Javascript or Typescript. The playground software compiles the code to Javascript, in the background, before rendering.
+You can write the code in JavaScript or Typescript. The playground software compiles the code to JavaScript, in the background, before rendering.
 
 ## Overview
 
@@ -35,13 +35,14 @@ In Typescript mode the menu has an orange color theme
 ### Large Screen
 
 - **Title and Version**: As stated.
-- **Run**: Commands the playground to try to render your scene.
-- **Save**: Causes your scene to be permanently stored in the playground's database and it will issue a unique URL for each save. On save you will be asked to comple the metadata so that it can be searched for. Once saved it is a good idea to bookmark the page so you can return to it later. You could then share the URL with others, for example, if it is not working as you expect you can ask a question in the forum along with the link to your playground.
-- **Download**: Allows you to download a zip file named *sample.zip*. Once downloaded and unzipped, you will see a file named `index.html` 
+- **Language**: Typescript/JavaScript switch.
+- **Run** ![run](/img/features/PGsupport/run.jpg): Commands the playground to try to render your scene.
+- **Save** ![save](/img/features/PGsupport/save.jpg): Causes your scene to be permanently stored in the playground's database and it will issue a unique URL for each save. On save you will be asked to complete the metadata so that it can be searched for. Once saved it is a good idea to bookmark the page so you can return to it later. You could then share the URL with others, for example, if it is not working as you expect you can ask a question in the forum along with the link to your playground.
+- **Download** ![zip](/img/features/PGsupport/zip.jpg): Allows you to download a zip file named *sample.zip*. Once downloaded and unzipped, you will see a file named `index.html` 
 which contains everything necessary to run the code in your browser, including links to external *babylon.js* and other files.
-- **New**: Places a basic `createScene()` function into the editor along with code to initialise the scene variable and provide a camera.
-- **Clear**: Empties all the code out of the playground editor.  You could then paste in any createScene function you are working on locally.
-- **Settings**: The Settings button has a sub menu with extra options
+- **New** ![new](/img/features/PGsupport/new.jpg): Places a basic `createScene()` function into the editor along with code to initialise the scene variable and provide a camera.
+- **Clear** ![clear](/img/features/PGsupport/clear.jpg): Empties all the code out of the playground editor.  You could then paste in any createScene function you are working on locally.
+- **Settings** ![set](/img/features/PGsupport/set.jpg): The Settings button has a sub menu with extra options
   - *Theme*: Choose the theme for the playground
   - *Font size*: Set the font size in the editor.
   - *Safe Mode*: When the checkbox is ticked the playground issues a "leaving the page?" confirmation warning when you try to unload/reload a freshly-edited, un-saved scene.
@@ -53,39 +54,39 @@ which contains everything necessary to run the code in your browser, including l
   - *Inspector*: The checkbox toggles the playground scene inspector which shows a multitude of variable values.
   - *Metadata*: This is where you describe your playground allowing yourself and other to search the playground database for examples of use.
 - **Version**: Allows and shows your choice of the BABYLON.js framework, either the current stable one or the latest preview version.
-- **Examples**: A drop down menu giving examples of playgrounds with a search filter.
+- **Examples** ![examples](/img/features/PGsupport/ex.jpg): A drop down menu giving examples of playgrounds with a search filter.
 
 ### Small Screens
 
-- **File**: Contains Run, New, Clear, Save and Zip as submenus.
-- **Editor/View**: Buttons to switch between the code editor and the view.
+- **Menu** ![menu](/img/features/PGsupport/menu.jpg): Contains Run, New, Clear, Save and Zip as submenus.
+- **Code** ![code](/img/features/PGsupport/code.jpg): Bottom Left Corner - switch to Code View and Editor.
+- **Scene** ![scene](/img/features/PGsupport/scene.jpg): Bottom Right Corner - switch to Scene View.
 
 ## Playground URL formats
 
-Pre-installed demo playgrounds have this URL format
+New playgrounds have this URL format
 
-| Javascript | Typscript |
+| JavaScript | Typescript |
 |---|---|
-| http://www.babylonjs-playground.com/# | http://www.babylonjs-playground.com/ts.html# |
+| http://www.babylonjs-playground.com/# | [http://www.babylonjs-playground.com/#](http://www.babylonjs-playground.com/#) |
 
-Saved playgrounds have this format on first save
+Saved playgrounds have a hash code reference key added to the URL
 
-| Javascript | Typscript |
+| JavaScript | Typescript |
 |---|---|
-| http://www.babylonjs-playground.com/#6F0LKI | http://www.babylonjs-playground.com/ts.html#6F0LKI |
+| http://www.babylonjs-playground.com/#6F0LKI | [https://www.babylonjs-playground.com/#M1HI7X](https://www.babylonjs-playground.com/ts.html#M1HI7X) |
 
-That is the site name followed by a hash code reference key.
 
-Following saves of the same playground are numbered incremently from one, for example 
+After editing any saves of the playground are numbered incrementally from one, for example 
 
-| Javascript | Typscript |
+| JavaScript | Typescript |
 |---|---|
-| http://www.babylonjs-playground.com/#6F0LKI#1 | http://www.babylonjs-playground.com/ts.html#6F0LKI#1 |
-| http://www.babylonjs-playground.com/#6F0LKI#2 | http://www.babylonjs-playground.com/ts.html#6F0LKI#2 |
+| http://www.babylonjs-playground.com/#6F0LKI#1 | [https://www.babylonjs-playground.com/#M1HI7X#1](https://www.babylonjs-playground.com/ts.html#M1HI7X#1) |
+| http://www.babylonjs-playground.com/#6F0LKI#2 | [https://www.babylonjs-playground.com/#M1HI7X#2](https://www.babylonjs-playground.com/ts.html#M1HI7X#1) |
   
 etc.
 
-You might be interested to know that [some html templates](https://github.com/BabylonJS/Babylon.js/tree/master/Playground) are also availables:
+You might be interested to know that [some html templates](https://github.com/BabylonJS/Babylon.js/tree/master/Playground) are also available:
 
 Template | Description
 --- | ---
@@ -99,7 +100,7 @@ Template | Description
 
 Of course the playground is extremely useful to get help from the community. In the forum, simply paste the link of your playground.
 
-You can have fun showing directly your playground embeded into your message, using iframe. But take note that you have to be sparing with this functionnality: this will slow down the loading of your topic.
+You can have fun showing directly your playground imbedded into your message, using iframe. But take note that you have to be sparing with this functionality: this will slow down the loading of your topic.
 
 ```html
 <iframe src="https://www.babylonjs-playground.com/frame.html#6F0LKI#2" width="400px" height="250px" ></iframe>
