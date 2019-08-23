@@ -81,3 +81,28 @@ maxVertsPerPoly - The maximum number of vertices allowed for polygons generated 
 detailSampleDist - Sets the sampling distance to use when generating the detail mesh. World units.
 
 detailSampleMaxError - The maximum distance the detail mesh surface should deviate from heightfield data. World Units.
+
+## Queries
+
+Basically, query functions help at getting constraint point and vector by the navigation mesh.
+
+```
+getClosestPoint(position: Vector3): Vector3;
+getRandomPointAround(position: Vector3, maxRadius: number): Vector3;
+moveAlong(position: Vector3, destination: Vector3): Vector3;
+```
+
+Respectively: 
+- get a point on the navmesh close to a world position parameter
+- get a random world position, on the navmesh, inside a circle of maxRadius.
+- constraint a segment by the navmesh and returns the ending world position. Like walking on the navmesh and stopping at the edge.
+
+When the query can't find a valid solution, the value (0,0,0) is returned.
+
+Those functions use a bounding box for querying the world. The solution returned is within that bound. To properly set the default box extent to get a finer or broader result, call:
+
+```
+setDefaultQueryExtent(extent: Vector3): void;
+```
+
+If your query returns a point too far from the expected result, use a smaller extent. 
