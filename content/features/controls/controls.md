@@ -10,4 +10,5 @@ Babylon.js provides an unified API on top of **WebGL**, **WebGL2** and **WebGPU*
 
 * [Timeline](timeline)
 * [Resizer](resizer)
+* [ImageFilter](imageFilter)
 
