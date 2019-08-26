@@ -33,18 +33,18 @@ or
 
 ```
 var viewProjectionInput = new BABYLON.InputBlock("viewProjection");
-viewProjectionInput.setAsWellKnownValue(BABYLON.NodeMaterialWellKnownValues.ViewProjection);
+viewProjectionInput.setAsSystemValue(BABYLON.NodeMaterialSystemValues.ViewProjection);
 ```
 
-Well-known values can be:
-* BABYLON.NodeMaterialWellKnownValues.World
-* BABYLON.NodeMaterialWellKnownValues.View
-* BABYLON.NodeMaterialWellKnownValues.WorldView
-* BABYLON.NodeMaterialWellKnownValues.Projection
-* BABYLON.NodeMaterialWellKnownValues.ViewProjection
-* BABYLON.NodeMaterialWellKnownValues.WorldViewProjection
-* BABYLON.NodeMaterialWellKnownValues.CameraPosition
-* BABYLON.NodeMaterialWellKnownValues.FogColor
+System values can be:
+* BABYLON.NodeMaterialSystemValues.World
+* BABYLON.NodeMaterialSystemValues.View
+* BABYLON.NodeMaterialSystemValues.WorldView
+* BABYLON.NodeMaterialSystemValues.Projection
+* BABYLON.NodeMaterialSystemValues.ViewProjection
+* BABYLON.NodeMaterialSystemValues.WorldViewProjection
+* BABYLON.NodeMaterialSystemValues.CameraPosition
+* BABYLON.NodeMaterialSystemValues.FogColor
 
 Input blocks can also take their value from a mesh attribute:
 
@@ -71,7 +71,7 @@ var positionInput = new BABYLON.InputBlock("position");
 positionInput.setAsAttribute("position");
 
 var worldInput = new BABYLON.InputBlock("world");
-worldInput.setAsWellKnownValue(BABYLON.NodeMaterialWellKnownValues.World);
+worldInput.setAsSystemValue(BABYLON.NodeMaterialSystemValues.World);
 
 var worldPos = new BABYLON.TransformBlock("worldPos");
 positionInput.connectTo(worldPos);
@@ -172,14 +172,14 @@ var positionInput = new BABYLON.InputBlock("position");
 positionInput.setAsAttribute("position");
 
 var worldInput = new BABYLON.InputBlock("world");
-worldInput.setAsWellKnownValue(BABYLON.NodeMaterialWellKnownValues.World);
+worldInput.setAsSystemValue(BABYLON.NodeMaterialSystemValues.World);
 
 var worldPos = new BABYLON.TransformBlock("worldPos");
 positionInput.connectTo(worldPos);
 worldInput.connectTo(worldPos);
 
 var viewProjectionInput = new BABYLON.InputBlock("viewProjection");
-viewProjectionInput.setAsWellKnownValue(BABYLON.NodeMaterialWellKnownValues.ViewProjection);
+viewProjectionInput.setAsSystemValue(BABYLON.NodeMaterialSystemValues.ViewProjection);
 
 var worldPosdMultipliedByViewProjection = new BABYLON.TransformBlock("worldPos * viewProjectionTransform");
 worldPos.connectTo(worldPosdMultipliedByViewProjection);
