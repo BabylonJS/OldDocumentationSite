@@ -1930,6 +1930,10 @@
                 {
                     "title": "Resizer Control",
                     "filename": "resizer"
+                },
+                {
+                    "title": "Image Filter",
+                    "filename": "imageFilter"
                 }
             ]
         },

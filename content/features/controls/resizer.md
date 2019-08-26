@@ -61,7 +61,7 @@ The source image will be stretch in both direction to fit in the target canvas.
 Instead of resizing directly to a canvas, you could prefer to only create a Babylon.js texture on the GPU. For this, you can use the following function:
 
 ```
-const texture = resizer.getResizedTexture(imageToResize, { width: 128, height: 100 };
+const texture = resizer.getResizedTexture(imageToResize, { width: 128, height: 100 });
 ```
 
 Like before, imageToResize could be either:
