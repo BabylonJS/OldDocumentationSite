@@ -4,10 +4,10 @@ PG_TITLE: How To Use the Image Filter Control
 
 # Image Filter Control
 
-The Babylon.js Resizer Control is a web control built on top of Babylon.js in order to apply filter to pictures in web pages.
+The Babylon.js Filter Control is a web control built on top of Babylon.js in order to apply filter to pictures in web pages.
 
 ## Introduction
-Filtering images to apply effect might be tedious and slow on the CPU. The best place to do so (for most effects) is on the GPU. But setting up an entire WebGL pipeline simply to process images might be tricky even more if you wish to benefit from WebGL 2 to 1 fallback and workaround famous platform issues.
+Filtering images to apply effect might be tedious and slow on the CPU. The best place to do so (for a wide variety of effects) is on the GPU. But setting up an entire WebGL pipeline simply to process images might be tricky even more if you wish to benefit from WebGL 2 to 1 fallback and workaround famous platform issues.
 
 To greatly simplify this task we introduced the `ImageFilter` Control.
 
