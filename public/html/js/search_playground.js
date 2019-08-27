@@ -102,6 +102,8 @@
             var id = 0;
 
             if (data) {
+                data = data.filter(d => d.nodeMaterial === undefined); // Remove node materials for now
+
                 data.forEach(function(s) {
                     //Code research
                     if (codeQuery) {
@@ -110,6 +112,7 @@
                             // Create html div with Code research
                             var codeToDisplay = JSON.parse(s.jsonPayload);
                             var type = '';
+                            
                             if (codeToDisplay.code) {
                                 type = '';
                                 codeToDisplay = codeToDisplay.code;
