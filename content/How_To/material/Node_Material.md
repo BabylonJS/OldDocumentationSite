@@ -1,5 +1,5 @@
 The Node Material is a new material introduced with Babylon.js v4.1. It lets you create a material based on custom shaders but without having to deal with shader code.
-All the shader creation will be done using either an UI (The Node Material Editor) or by creating and connecting nodes (the Node Material blocks).
+All the shader creation will be done using either an UI (the Node Material Editor) or by creating and connecting nodes (the Node Material blocks).
 
 ## Creating a Node Material using code
 
@@ -114,12 +114,18 @@ By default, the node material provides the following blocks:
   * `AddBlock`: Block used to add 2 vectors
   * `ClampBlock`: Block to clamp a float between a minimum and a maximum
   * `CrossBlock`: Block used to do a cross product between 2 vectors
+  * `DivideBlock`: Block used to divide 2 vectors
   * `DotBlock`: Block used to do a dot product between 2 vectors
-  * `LerpBlock`: Block used to do a mix between 2 values (using a gradient)
+  * `LerpBlock`: Block used to do a mix between 2 values (using a gradient)  
+  * `MaxBlock`: Block used to get the maximum of  2 vectors
+  * `MinBlock`: Block used to get the minimum of 2 vectors
   * `MultiplyBlock`: Block used to multiply 2 vectors
   * `NormalizeBlock`: Block used to normalize a vector
+  * `OppositeBlock`: Block used to get the opposite of a value
   * `RemapBlock`: Block used to remap a float from a range to a new one
   * `ScaleBlock`: Block used to scale a vector by a float
+  * `StepBlock`: Block used to step a value
+  * `SubtractBlock`: Block used to subtract 2 vectors
   * `TransformBlock`: Block used to transform a vector (2, 3 or 4) with a matrix
   * `TrigonometryBlock`: Block used to apply trigonometry operation to floats
 
@@ -131,9 +137,11 @@ By default, the node material provides the following blocks:
   * `ImageProcessingBlock`: Block used to add image processing support to fragment shader
   * `InstancesBlock`: Block used to add support for instances
   * `LightBlock`: Block used to add light in the fragment shader
+  * `LightInformationBlock`: Block used to get data information from a light
   * `MorphTargetsBlock`: Block used to add morph targets support to vertex shader
   * `ReflectionTextureBlock`: Block used to read a reflection texture from a sampler
   * `TextureBlock`: Block used to read a texture from a sampler
+  * `ViewDirectionBlock`: Block used to get the view direction
 
 * Inputs:
   * `InputBlock`: Block used to define an input value (uniform or attribute)
@@ -217,7 +225,9 @@ scene.debugLayer.show();
 scene.debugLayer.select(nodeMaterial);
 ```
 
-When selected in the Inspector, youc an find an edit button in the Node Material property pane.
+When selected in the Inspector, you can find an edit button in the Node Material property pane.
+
+You can also use a standalone version of the editor on https://nme.babylonjs.com
 
 ## Loading from a file saved from the Node Material Editor
 
@@ -230,3 +240,9 @@ nodeMaterial.loadAsync("file-url.json").then(() => {
     nodeMaterial.build(true);
 });
 ```
+
+## Sharing unique URLs
+
+When using https://nme.babylonjs.com, you can have an additional option to save your work using a unique URL (like the Playground for instance). You can then share these urls (which are immutable).
+
+Example: https://nme.babylonjs.com/#2F999G
