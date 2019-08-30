@@ -92,6 +92,79 @@ Where imageToProcess could be either:
 
 This will apply the custom shader in parameter to the picture. By default, `vUV` is available as a varying defining the full ouptput as texture coordinates. `textureSampler` needs to be present and defines the texture corresponding to the input parameter.
 
+Please note that if you need to add custom unifoms or samplers, they should be defined in the effect wrapper list:
+
+```
+const customEffectWrapper = new EffectWrapper({
+    name: "Custom",
+    engine: customFilter.engine,
+    fragmentShader: `
+        varying vec2 vUV;
+        
+        // Default Sampler
+        uniform sampler2D textureSampler;
+
+        // Custom uniforms
+        uniform sampler2D otherTexture;
+        uniform vec3 colorOffset;
+
+        const vec2 scale = vec2(0.25, 1.);
+
+        void main(void) 
+        {
+            gl_FragColor = texture2D(textureSampler, vUV);
+
+            // Swizzle channels
+            float r = gl_FragColor.r;
+            gl_FragColor.r = gl_FragColor.b;
+            gl_FragColor.b = r;
+            gl_FragColor.rgb += clamp(colorOffset, 0., 1.);
+
+            gl_FragColor.rgb *= texture2D(otherTexture, vUV * scale).rgb;
+        }
+    `,
+    // Defines the list of existing samplers (default + customs).
+    samplerNames: ["textureSampler", "otherTexture"],
+    // Defines the list of existing uniform to be bound.
+    uniformNames: ["colorOffset"],
+});
+```
+
+Then you can simply bind them either in `onApply`:
+
+```
+customEffectWrapper.onApplyObservable.add(() => {
+    // Sets the custom values.
+    customEffectWrapper.effect.setTexture("otherTexture", otherTexture);
+    customEffectWrapper.effect.setFloat3("colorOffset", 0.2, 0, 0.2);
+})
+```
+
+Or during the render loop:
+
+```
+// Rely on the underlying engine render loop to update the filter result every frame.
+customFilter.engine.runRenderLoop(() => {
+    // Only render if the custom texture is ready (the default one is 
+    // checked for you by the render function)
+    if (!otherTexture.isReady()) {
+        return;
+    }
+
+    // Sets the custom values.
+    time += customFilter.engine.getDeltaTime() / 1000;
+    customEffectWrapper.effect.setTexture("otherTexture", otherTexture);
+    customEffectWrapper.effect.setFloat3("colorOffset", Math.cos(time) * 0.5 + 0.5, 0, Math.sin(time) * 0.5 + 0.5);
+
+    // Render. Please note we are using render instead of filter to improve 
+    // performances of real time filter. filter is creating a promise and will therefore
+    // generate some lags and garbage.
+    customFilter.render(mainTexture, customEffectWrapper);
+});
+```
+
+Finally, if you are relying on new textures, you need to wait for them to be ready before rendering.
+
 ### Process to the canvas
 This is by far the simplest, if you have a canvas in your page. You simply need to use the following code to fit the provided element to the canvas size:
 
@@ -121,6 +194,32 @@ Like before, imageToResize could be either:
 You also need to provide the size you want your texture to have on the GPU.
 
 Now you are free to use this texture with any other controls.
+
+### Real Time filtering
+Instead of filtering only one time, you might want to create dynamic real time effects. For this, you can simply render the effect during the render loop:
+
+```
+// Rely on the underlying engine render loop to update the filter result every frame.
+customFilter.engine.runRenderLoop(() => {
+    // Only render if the custom texture is ready (the default one is 
+    // checked for you by the render function)
+    if (!otherTexture.isReady()) {
+        return;
+    }
+
+    // Sets the custom values.
+    time += customFilter.engine.getDeltaTime() / 1000;
+    customEffectWrapper.effect.setTexture("otherTexture", otherTexture);
+    customEffectWrapper.effect.setFloat3("colorOffset", Math.cos(time) * 0.5 + 0.5, 0, Math.sin(time) * 0.5 + 0.5);
+
+    // Render. Please note we are using render instead of filter to improve 
+    // performances of real time filter. filter is creating a promise and will therefore
+    // generate some lags and garbage.
+    customFilter.render(mainTexture, customEffectWrapper);
+});
+```
+
+This requires to use the render function instead of the filter one to enhance your experience performances.
 
 ## Full Code Sample
 
