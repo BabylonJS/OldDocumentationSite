@@ -24923,6 +24923,10 @@ declare module BABYLON {
          */
         getDirection(localAxis: Vector3): Vector3;
         /**
+         * Returns the current camera absolute rotation
+         */
+        readonly absoluteRotation: Quaternion;
+        /**
          * Gets the direction of the camera relative to a given local axis into a passed vector.
          * @param localAxis Defines the reference axis to provide a relative direction.
          * @param result Defines the vector to store the result in
@@ -41024,6 +41028,10 @@ declare module BABYLON {
          */
         updateGazeTrackerColor: boolean;
         /**
+         * If the controller laser color should be updated when selecting meshes
+         */
+        updateControllerLaserColor: boolean;
+        /**
          * The gaze tracking mesh corresponding to the left controller
          */
         readonly leftControllerGazeTrackerMesh: Nullable<Mesh>;
@@ -44215,7 +44223,11 @@ declare module BABYLON {
          */
         createCubeTexture(rootUrl: string, scene: Nullable<Scene>, files: Nullable<string[]>, noMipmap?: boolean, onLoad?: Nullable<(data?: any) => void>, onError?: Nullable<(message?: string, exception?: any) => void>, format?: number, forcedExtension?: any, createPolynomials?: boolean, lodScale?: number, lodOffset?: number, fallback?: Nullable<InternalTexture>): InternalTexture;
         private _getSamplingFilter;
-        createRenderTargetTexture(size: any, options: boolean | RenderTargetCreationOptions): InternalTexture;
+        private static _GetNativeTextureFormat;
+        createRenderTargetTexture(size: number | {
+            width: number;
+            height: number;
+        }, options: boolean | RenderTargetCreationOptions): InternalTexture;
         updateTextureSamplingMode(samplingMode: number, texture: InternalTexture): void;
         bindFramebuffer(texture: InternalTexture, faceIndex?: number, requiredWidth?: number, requiredHeight?: number, forceFullscreenViewport?: boolean): void;
         unBindFramebuffer(texture: InternalTexture, disableGenerateMipMaps?: boolean, onBeforeUnbind?: () => void): void;
@@ -45840,6 +45852,10 @@ declare module BABYLON {
          * The surface used for the skybox
          */
         protected _mesh: Mesh;
+        /**
+         * Gets the mesh used for the skybox.
+         */
+        readonly mesh: Mesh;
         /**
          * The current fov(field of view) multiplier, 0.0 - 2.0. Defaults to 1.0. Lower values "zoom in" and higher values "zoom out".
          * Also see the options.resolution property.
@@ -52237,6 +52253,8 @@ declare module BABYLON {
         SAMPLER3DGREENDEPTH: boolean;
         SAMPLER3DBGRMAP: boolean;
         IMAGEPROCESSINGPOSTPROCESS: boolean;
+        /** MISC. */
+        BUMPDIRECTUV: number;
         constructor();
         setValue(name: string, value: boolean): void;
     }
@@ -52700,6 +52718,12 @@ declare module BABYLON {
             [key: string]: string;
         };
         /**
+         * Gets the list of emitted extensions
+         */
+        extensions: {
+            [key: string]: string;
+        };
+        /**
          * Gets the target of the compilation state
          */
         target: NodeMaterialBlockTargets;
@@ -52745,6 +52769,8 @@ declare module BABYLON {
         _excludeVariableName(name: string): void;
         /** @hidden */
         _getGLType(type: NodeMaterialBlockConnectionPointTypes): string;
+        /** @hidden */
+        _emitExtension(name: string, extension: string): void;
         /** @hidden */
         _emitFunction(name: string, code: string, comments: string): void;
         /** @hidden */
@@ -53115,6 +53141,7 @@ declare module BABYLON {
          */
         animate(scene: Scene): void;
         private _emitDefine;
+        initialize(state: NodeMaterialBuildState): void;
         /**
          * Set the input block to its default value (based on its type)
          */
@@ -53496,6 +53523,59 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
+     * Block used to pertub normals based on a normal map
+     */
+    export class PerturbNormalBlock extends NodeMaterialBlock {
+        private _tangentSpaceParameterName;
+        /** Gets or sets a boolean indicating that normal should be inverted on X axis */
+        invertX: boolean;
+        /** Gets or sets a boolean indicating that normal should be inverted on Y axis */
+        invertY: boolean;
+        /**
+         * Create a new PerturbNormalBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the world position input component
+         */
+        readonly worldPosition: NodeMaterialConnectionPoint;
+        /**
+         * Gets the world normal input component
+         */
+        readonly worldNormal: NodeMaterialConnectionPoint;
+        /**
+         * Gets the uv input component
+         */
+        readonly uv: NodeMaterialConnectionPoint;
+        /**
+        * Gets the normal map color input component
+        */
+        readonly normalMapColor: NodeMaterialConnectionPoint;
+        /**
+        * Gets the strength input component
+        */
+        readonly strength: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
+        bind(effect: Effect, nodeMaterial: NodeMaterial, mesh?: Mesh): void;
+        autoConfigure(material: NodeMaterial): void;
+        protected _buildBlock(state: NodeMaterialBuildState): this;
+        protected _dumpPropertiesCode(): string;
+        serialize(): any;
+        _deserialize(serializationObject: any, scene: Scene, rootUrl: string): void;
+    }
+}
+declare module BABYLON {
+    /**
      * Block used to add support for scene fog
      */
     export class FogBlock extends NodeMaterialBlock {
@@ -53797,6 +53877,22 @@ declare module BABYLON {
          * Gets the input component
          */
         readonly input: NodeMaterialConnectionPoint;
+        /**
+         * Gets the source min input component
+         */
+        readonly sourceMin: NodeMaterialConnectionPoint;
+        /**
+         * Gets the source max input component
+         */
+        readonly sourceMax: NodeMaterialConnectionPoint;
+        /**
+         * Gets the target min input component
+         */
+        readonly targetMin: NodeMaterialConnectionPoint;
+        /**
+         * Gets the target max input component
+         */
+        readonly targetMax: NodeMaterialConnectionPoint;
         /**
          * Gets the output component
          */
@@ -54204,11 +54300,11 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Block used to get the opposite of a value
+     * Block used to get the opposite (1 - x) of a value
      */
-    export class OppositeBlock extends NodeMaterialBlock {
+    export class OneMinusBlock extends NodeMaterialBlock {
         /**
-         * Creates a new OppositeBlock
+         * Creates a new OneMinusBlock
          * @param name defines the block name
          */
         constructor(name: string);
