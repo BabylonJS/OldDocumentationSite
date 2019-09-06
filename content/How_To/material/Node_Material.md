@@ -246,3 +246,9 @@ nodeMaterial.loadAsync("file-url.json").then(() => {
 When using https://nme.babylonjs.com, you can have an additional option to save your work using a unique URL (like the Playground for instance). You can then share these urls (which are immutable).
 
 Example: https://nme.babylonjs.com/#2F999G
+
+## Going further
+
+Here is a list of videos related to Node material:
+- https://www.youtube.com/watch?v=B5BO3nFc55s
+- https://www.youtube.com/watch?v=fLXYhGhCejc
