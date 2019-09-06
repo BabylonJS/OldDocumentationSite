@@ -20,6 +20,11 @@
                     "abstract": "Everything in babylon.js is managed inside of a scene. It holds every objects that are going to be used to render your 3D elements."
                 },
                 {
+                    "title": "How to get Babylon.js",
+                    "filename": "How_To_Get",
+                    "abstract": "Describes all the ways to get Babylon.js"
+                },
+                {
                     "title": "Discover Basic Elements",
                     "filename": "Discover_Basic_Elements",
                     "abstract": "With babylon.js you can use a lot of different basic 3D elements. They are available by default to help you create cubes, spheres, etc."
@@ -98,11 +103,6 @@
                     "title": "Shadows",
                     "filename": "Shadows",
                     "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
-                },
-                {
-                    "title": "How to get Babylon.js",
-                    "filename": "How_To_Get",
-                    "abstract": "Describe all the way to get Babylon.js"
                 }
             ]
         }
