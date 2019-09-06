@@ -79,3 +79,8 @@ You can also directly point to [our repo](https://github.com/BabylonJS/Babylon.j
 * For stable release: [/dist/](https://github.com/BabylonJS/Babylon.js/tree/master/dist)
 * For preview release: [/dist/preview release/](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release)
 * For previous versions: [/dist/previous release/](https://github.com/BabylonJS/Babylon.js/tree/master/dist/previous%20releases)
+
+# Further Reading
+[First Steps](/babylon101/first)  
+[NPM Support](/features/NPM_Support)  
+[ESNext Support](/features/ES6_Support)

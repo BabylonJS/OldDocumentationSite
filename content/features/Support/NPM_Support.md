@@ -519,3 +519,7 @@ Babylon is using oimo, cannon and earcut as external, optional dependencies. If 
         "earcut": true
     },
 ```
+
+# Further Reading
+[How To Get Babylon.js](/babylon101/how_to_get)  
+[ESNext Support](/features/ES6_Support)
