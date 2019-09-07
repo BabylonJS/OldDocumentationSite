@@ -4,7 +4,7 @@ All the shader creation will be done using either an UI (the Node Material Edito
 ## Creating a Node Material using code
 
 ### Initial steps
-To start using the Node Material, you just need to instanciate one:
+To start using the Node Material, you just need to instantiating one:
 
 ```
 var nodeMaterial = new BABYLON.NodeMaterial("node material", scene, { emitComments: true });
@@ -16,7 +16,7 @@ Please note that the third parameter will contain optional values that will let 
 
 ### Adding blocks
 
-Blocks can be added by just instanciating them:
+Blocks can be added by just instantiating them:
 
 ```
 var morphTargets = new BABYLON.MorphTargetsBlock("morphTargets");
@@ -94,7 +94,7 @@ if (worldInput.output.canConnectTo(boneBlock.world)) {
 
 The system will throw an exception if you try to connect two incompatible connection points.
 
-When connected, two connection points can be disconnect with:
+When connected, two connection points can be disconnected with:
 
 ```
 worldInput.output.disconnectFrom(boneBlock.world);
@@ -117,7 +117,7 @@ By default, the node material provides the following blocks:
   * `DivideBlock`: Block used to divide 2 vectors
   * `DotBlock`: Block used to do a dot product between 2 vectors
   * `LerpBlock`: Block used to do a mix between 2 values (using a gradient)  
-  * `MaxBlock`: Block used to get the maximum of  2 vectors
+  * `MaxBlock`: Block used to get the maximum of 2 vectors
   * `MinBlock`: Block used to get the minimum of 2 vectors
   * `MultiplyBlock`: Block used to multiply 2 vectors
   * `NormalizeBlock`: Block used to normalize a vector
@@ -133,7 +133,7 @@ By default, the node material provides the following blocks:
   * `AlphaTestBlock`: Block used to add an alpha test in the fragment shader
   * `BonesBlock`: Block used to add support for vertex skinning (bones)
   * `FogBlock`: Block used to add support for scene fog
-  * `FresnelBlock`: Block used to add a frensel effect
+  * `FresnelBlock`: Block used to add a fresnel effect
   * `ImageProcessingBlock`: Block used to add image processing support to fragment shader
   * `InstancesBlock`: Block used to add support for instances
   * `LightBlock`: Block used to add light in the fragment shader
