@@ -14553,7 +14553,7 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
-     * Reprasents a camera frustum
+     * Represents a camera frustum
      */
     export class Frustum {
         /**
@@ -52540,7 +52540,7 @@ declare module BABYLON {
         /**
          * Gets or sets the texture associated with the node
          */
-        texture: Nullable<BaseTexture>;
+        texture: Nullable<Texture>;
         /**
          * Create a new TextureBlock
          * @param name defines the block name
@@ -53054,6 +53054,12 @@ declare module BABYLON {
         private _valueCallback;
         private _type;
         private _animationType;
+        /** Gets or set a value used to limit the range of float values */
+        min: number;
+        /** Gets or set a value used to limit the range of float values */
+        max: number;
+        /** Gets or sets a value used by the Node Material editor to determine how to configure the current value if it is a matrix */
+        matrixMode: number;
         /** @hidden */
         _systemValue: Nullable<NodeMaterialSystemValues>;
         /** Gets or sets a boolean indicating that this input can be edited in the Inspector (false by default) */
@@ -54447,6 +54453,88 @@ declare module BABYLON {
          * Gets the right operand input component
          */
         readonly right: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        protected _buildBlock(state: NodeMaterialBuildState): this;
+    }
+}
+declare module BABYLON {
+    /**
+     * Block used to get the distance between 2 values
+     */
+    export class DistanceBlock extends NodeMaterialBlock {
+        /**
+         * Creates a new DistanceBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the left operand input component
+         */
+        readonly left: NodeMaterialConnectionPoint;
+        /**
+         * Gets the right operand input component
+         */
+        readonly right: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        protected _buildBlock(state: NodeMaterialBuildState): this;
+    }
+}
+declare module BABYLON {
+    /**
+     * Block used to get the length of a vector
+     */
+    export class LengthBlock extends NodeMaterialBlock {
+        /**
+         * Creates a new LengthBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the value input component
+         */
+        readonly value: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        protected _buildBlock(state: NodeMaterialBuildState): this;
+    }
+}
+declare module BABYLON {
+    /**
+     * Block used to get negative version of a value (i.e. x * -1)
+     */
+    export class NegateBlock extends NodeMaterialBlock {
+        /**
+         * Creates a new NegateBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the value input component
+         */
+        readonly value: NodeMaterialConnectionPoint;
         /**
          * Gets the output component
          */
@@ -64219,6 +64307,10 @@ declare module BABYLON.GUI {
          */
         onImageLoadedObservable: BABYLON.Observable<Image>;
         /**
+         * BABYLON.Observable notified when _sourceLeft, _sourceTop, _sourceWidth and _sourceHeight are computed
+         */
+        onSVGAttributesComputedObservable: BABYLON.Observable<Image>;
+        /**
          * Gets a boolean indicating that the content is loaded
          */
         readonly isLoaded: boolean;
@@ -64280,6 +64372,15 @@ declare module BABYLON.GUI {
          * Gets or sets image source url
          */
         source: BABYLON.Nullable<string>;
+        /**
+         * Checks for svg document with icon id present
+         */
+        private _svgCheck;
+        /**
+         * Sets sourceLeft, sourceTop, sourceWidth, sourceHeight automatically
+         * given external svg file and icon id
+         */
+        private _getSVGAttribs;
         /**
          * Gets or sets the cell width to use when animation sheet is enabled
          * @see http://doc.babylonjs.com/how_to/gui#image
