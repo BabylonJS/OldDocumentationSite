@@ -19,7 +19,7 @@ Also this component can come in as a pair with the [Timeline](./timeline) and he
 To begin with the timeline, you first need to install the controls npm package.
 
 ```
-npm install @baylonjs/controls
+npm install @babylonjs/controls
 ```
 
 To reduce the size of your web page, the controls library is based on the es6 version of `@babylonjs/core` used as a peer dependency. Therefore if you are not relying on it so far in you project, you also need to install core:
@@ -28,11 +28,18 @@ To reduce the size of your web page, the controls library is based on the es6 ve
 npm install @babylonjs/core
 ```
 
+Please note, that while the controls are still in preview, it might be preferable to use their latest update with:
+
+```
+npm install @babylonjs/controls@preview
+npm install @babylonjs/core@preview
+```
+
 ### Instantiation
 Once done, you can now import the resizer control in your code:
 
 ```
-import { Resizer } from "@baylonjs/controls/resizer";
+import { Resizer } from "@babylonjs/controls/resizer";
 ```
 
 And simply instantiate it in your page:

@@ -1,6 +1,6 @@
 # Babylon.js - Official documentation website
 
-![](http://www.babylonjs.com/img/layout/logo-babylonjs-v3.svg)
+<img src="https://www.babylonjs.com/assets/img/Page_Logo.svg" alt="BabylonJS logo" width="300px"/>
 
 Welcome on the repository of the official documentation of [Babylon.js](http://www.babylonjs.com).
 

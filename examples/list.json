@@ -215,7 +215,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/cornell.jpg",
                     "description": "Load a glTF file and setup the environment",
-                    "PGID": "#G3GZA1#7"
+                    "PGID": "#G3GZA1#49"
                 },
                 {
                     "title": "Import meshes",
