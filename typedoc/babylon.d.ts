@@ -13885,7 +13885,7 @@ declare module BABYLON {
          * @param newParent defines the new parent to use for the instance (or clone)
          * @returns an instance (or a clone) of the current node with its hiearchy
          */
-        instantiateHierarychy(newParent?: Nullable<TransformNode>): Nullable<TransformNode>;
+        instantiateHierarchy(newParent?: Nullable<TransformNode>): Nullable<TransformNode>;
         /**
          * Prevents the World matrix to be computed any longer
          * @param newWorldMatrix defines an optional matrix to use as world matrix
@@ -15551,6 +15551,10 @@ declare module BABYLON {
      * @see http://doc.babylonjs.com/babylon101/materials#texture
      */
     export class Texture extends BaseTexture {
+        /**
+         * Gets or sets a general boolean used to indicate that textures containing direct data (buffers) must be saved as part of the serialization process
+         */
+        static SerializeBuffers: boolean;
         /** @hidden */
         static _CubeTextureParser: (jsonTexture: any, scene: Scene, rootUrl: string) => CubeTexture;
         /** @hidden */
@@ -23487,7 +23491,7 @@ declare module BABYLON {
          * @param clonePhysicsImpostor When cloning, include cloning mesh physics impostor, default True.
          */
         constructor(name: string, scene?: Nullable<Scene>, parent?: Nullable<Node>, source?: Nullable<Mesh>, doNotCloneChildren?: boolean, clonePhysicsImpostor?: boolean);
-        instantiateHierarychy(newParent?: Nullable<TransformNode>): Nullable<TransformNode>;
+        instantiateHierarchy(newParent?: Nullable<TransformNode>): Nullable<TransformNode>;
         /**
          * Gets the class name
          * @returns the string "Mesh".
@@ -46249,6 +46253,7 @@ declare module BABYLON {
         BRDF_V_HEIGHT_CORRELATED: boolean;
         MS_BRDF_ENERGY_CONSERVATION: boolean;
         SPHERICAL_HARMONICS: boolean;
+        SPECULAR_GLOSSINESS_ENERGY_CONSERVATION: boolean;
         /** @hidden */
         _areMiscDirty: boolean;
     }
@@ -46272,6 +46277,12 @@ declare module BABYLON {
          * less GPU intensive at the drawback of a lower quality.
          */
         static DEFAULT_USE_SPHERICAL_HARMONICS: boolean;
+        /**
+         * Default value used for activating energy conservation for the specular workflow.
+         * If activated, the albedo color is multiplied with (1. - maxChannel(specular color)).
+         * If deactivated, a material is only physically plausible, when (albedo color + specular color) < 1.
+         */
+        static DEFAULT_USE_SPECULAR_GLOSSINESS_INPUT_ENERGY_CONSERVATION: boolean;
         private _useEnergyConservation;
         /**
          * Defines if the material uses energy conservation.
@@ -46296,6 +46307,14 @@ declare module BABYLON {
          * to the ground truth.
          */
         useSphericalHarmonics: boolean;
+        private _useSpecularGlossinessInputEnergyConservation;
+        /**
+         * Defines if the material uses energy conservation, when the specular workflow is active.
+         * If activated, the albedo color is multiplied with (1. - maxChannel(specular color)).
+         * If deactivated, a material is only physically plausible, when (albedo color + specular color) < 1.
+         * In the deactivated case, the material author has to ensure energy conservation, for a physically plausible rendering.
+         */
+        useSpecularGlossinessInputEnergyConservation: boolean;
         /** @hidden */
         private _internalMarkAllSubMeshesAsMiscDirty;
         /** @hidden */
@@ -46959,6 +46978,7 @@ declare module BABYLON {
         ANISOTROPIC_TEXTUREDIRECTUV: number;
         BRDF_V_HEIGHT_CORRELATED: boolean;
         MS_BRDF_ENERGY_CONSERVATION: boolean;
+        SPECULAR_GLOSSINESS_ENERGY_CONSERVATION: boolean;
         SHEEN: boolean;
         SHEEN_TEXTURE: boolean;
         SHEEN_TEXTUREDIRECTUV: number;
@@ -52535,8 +52555,6 @@ declare module BABYLON {
         private _transformedUVName;
         private _textureTransformName;
         private _textureInfoName;
-        private _mainUVName;
-        private _mainUVDefineName;
         /**
          * Gets or sets the texture associated with the node
          */
@@ -52581,7 +52599,6 @@ declare module BABYLON {
         readonly a: NodeMaterialConnectionPoint;
         readonly target: NodeMaterialBlockTargets;
         autoConfigure(material: NodeMaterial): void;
-        initializeDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): void;
         prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
         isReady(): boolean;
         bind(effect: Effect, nodeMaterial: NodeMaterial, mesh?: Mesh): void;
@@ -52663,6 +52680,8 @@ declare module BABYLON {
         emitComments: boolean;
         /** Emit build activity */
         verbose: boolean;
+        /** Gets or sets the hosting scene */
+        scene: Scene;
         /**
          * Gets the compilation hints emitted at compilation time
          */
@@ -52957,14 +52976,6 @@ declare module BABYLON {
          * @param useInstances specifies that instances should be used
          */
         prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): void;
-        /**
-         * Initialize defines for shader compilation
-         * @param mesh defines the mesh to be rendered
-         * @param nodeMaterial defines the node material requesting the update
-         * @param defines defines the material defines to be prepared
-         * @param useInstances specifies that instances should be used
-         */
-        initializeDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): void;
         /**
          * Lets the block try to connect some inputs automatically
          * @param material defines the hosting NodeMaterial
@@ -53955,7 +53966,9 @@ declare module BABYLON {
         /** Floor */
         Floor = 6,
         /** Ceiling */
-        Ceiling = 7
+        Ceiling = 7,
+        /** Square root */
+        Sqrt = 8
     }
     /**
      * Block used to apply trigonometry operation to floats
@@ -54535,6 +54548,36 @@ declare module BABYLON {
          * Gets the value input component
          */
         readonly value: NodeMaterialConnectionPoint;
+        /**
+         * Gets the output component
+         */
+        readonly output: NodeMaterialConnectionPoint;
+        protected _buildBlock(state: NodeMaterialBuildState): this;
+    }
+}
+declare module BABYLON {
+    /**
+     * Block used to get the value of the first parameter raised to the power of the second
+     */
+    export class PowBlock extends NodeMaterialBlock {
+        /**
+         * Creates a new PowBlock
+         * @param name defines the block name
+         */
+        constructor(name: string);
+        /**
+         * Gets the current class name
+         * @returns the class name
+         */
+        getClassName(): string;
+        /**
+         * Gets the value operand input component
+         */
+        readonly value: NodeMaterialConnectionPoint;
+        /**
+         * Gets the power operand input component
+         */
+        readonly power: NodeMaterialConnectionPoint;
         /**
          * Gets the output component
          */
@@ -62864,6 +62907,18 @@ interface XRInputSourceChangeEvent {
     session: XRSession;
     removed: Array<XRInputSource>;
     added: Array<XRInputSource>;
+}
+
+/**
+ * @ignore
+ */
+declare module BABYLON.GLTF2.Exporter {
+}
+
+/**
+ * @ignore
+ */
+declare module BABYLON.GLTF1 {
 }
 declare module BABYLON.GUI {
     /**
