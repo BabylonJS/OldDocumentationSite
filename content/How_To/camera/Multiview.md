@@ -1,9 +1,9 @@
-# How to use Mulitview
+# How to use Multiview
 
 ## Introduction
 The [WebGL Multiview extension](https://www.khronos.org/registry/webgl/extensions/WEBGL_multiview/) allows rendering multiple views (eg. each eye for VR scenarios) in a single render pass. This can make rendering around 1.5 to 2.0 times faster.
 
-Currently, Mulitview is not supported in all browsers. If its supported the multiview capability should be present.
+Currently, Multiview is not supported in all browsers. If its supported the multiview capability should be present.
 ```
 scene.getEngine().getCaps().multiview
 ```
