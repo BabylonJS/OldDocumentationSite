@@ -841,6 +841,10 @@
                     "filename": "Selector"
                 },
                 {
+                    "title": "Use the Xml Loader",
+                    "filename": "XmlLoader"
+                },
+                {
                     "title": "Use the Babylon 3D GUI",
                     "filename": "Gui3D"
                 }
