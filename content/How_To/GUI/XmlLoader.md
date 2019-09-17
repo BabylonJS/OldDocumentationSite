@@ -9,7 +9,7 @@ When you want to create GUI layouts in an easy and structured way you may want t
 
 ## Creating the Xml Loader
 
-The scroll viewer base is a rectangle container holding the scroll bars and the viewing area. You create it with
+The xml Loader is able to load Babylon GUI layouts directly from xml. You create it with
 
 ```javascript
 var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -22,18 +22,18 @@ The XmlLoader might be used as part of a javascript class or function. In order 
 var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 var xmlLoader = new BABYLON.GUI.XmlLoader();
 ```
-You can then proceed to load a layout ysing the **loadLayout** method.
+You can then proceed to load a layout using the **loadLayout** method.
 
 ```javascript
 xmlLoader.loadLayout("layouts/testgui.xml", advancedTexture, null);
 ```
-This is what is needed to initialize and load a layout. There may be cases when you may need to load a layout without attaching it to the advancedTexture. In this case, it suffices to load the layout with the second paramenter null like the following.
+This is what is needed to initialize and load a layout. There may be cases when you may need to load a layout without attaching it to the advancedTexture. In this case, it suffices to set the second paramenter null like the following.
 
 ```javascript
 xmlLoader.loadLayout("layouts/testgui.xml", null, null);
 ```
 
-The third parameter in the loadLayout function, is a callback which is called once the layout has been parsed. in this moment it is possible to retrieve elements and add events to them. This would be an example of how it would be called.
+The third parameter in the loadLayout function, is a callback which is called once the layout has been parsed. Inside the callback, it is possible to retrieve elements and add events to them. This would be an example of how it would be used.
 
 ```javascript
 xmlLoader.loadLayout("layouts/testgui.xml", advancedTexture, function () {
@@ -88,11 +88,11 @@ The Controls names in the layouts follow rigorously the names in the BABYLON.GUI
 </Grid> 
 });
 ```
-In the Grid's case, the rows and the columns are not controls in the babylon GUI.  It is important to add the maximum number of columns in the first row as all the subsequent rows will have the same number of columns. This is because the xml loader creates the column definitions of the Grid from the first row. However, after the first row, it is possible to add less columns but not more. The width and height attributes for Rows and the Columns of the first row are mandatory, for the columns of the subsequent rows the value will not be taken into consideration by the loader. The isPixel attribute is mandatory if the width and height is in Pixels.
+In the Grid's case, the rows and the columns are not controls in the babylon GUI.  It is important to add the maximum number of columns in the first row as all the subsequent rows will have the same number of columns. This is because the xml loader creates the column definitions of the Grid from the first row. However, after the first row, it is possible to add less columns to the subsequent rows. The width and height attributes for Rows and the Columns of the first row are mandatory, for the columns of the subsequent rows the value will not be taken into consideration by the loader. The isPixel attribute is mandatory if the width and height is in Pixels.
 
 # Dynamic Attributes
 
-It is possible to add dynamic attributes to your XML layouts. These attributes can either be class attributes or global variables. The following is how to set a value in your xml layout referencing a class attributes or global variable.
+It is possible to add dynamic attributes to your XML layouts. These attributes can either be class attributes or global variables. The following is how to set a value in your xml layout referencing a class attributes or a global variable.
 
 ```xml
 <?xml version="1.0"?>
@@ -109,11 +109,11 @@ It is possible to add dynamic attributes to your XML layouts. These attributes c
 });
 ```
 
-By wrapping the attributes value with double curly brackets `{{}}`, it is given the value of the class attribute or global variable with that name. 
+By wrapping the attributes value with double curly brackets `{{}}`, it is given the value of the class attribute or global variable with that name.
 
 # Linking Control to Mesh
 
-It is possible to link a control to a mesh directly from Xml. This can be very easily done by setting the attribute `linkWithMesh="meshName"` to the Control you want to add. Even though the curly brackets are not needed, this is also a dynamic attribute. The same rules apply.
+It is possible to link a control to a mesh directly from Xml. This can be very easily done by setting the attribute `linkWithMesh="meshName"` to the Control you want to add. Even though the curly brackets are not needed, this is also a dynamic attribute. If the xml loader has been initiated with a class / function context it will use that context to retrieve the mesh, otherwise it will look for it globally.
 
 # Dynamic Array and Object source
 
