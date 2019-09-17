@@ -111,6 +111,16 @@ Rather than setting the volume on a specific sound, you can also set the global 
 BABYLON.Engine.audioEngine.setGlobalVolume(0.5);
 ```
 
+## Playing a sound sprite
+
+A sound sprite is a portion of a sound file. You can define a sound sprite when creating a sound by defining an offset and a length (in seconds):
+
+```
+var soundSprite = new BABYLON.Sound("Violons", "/sounds/6sounds.mp3", scene, null, { loop: true, autoplay: true, length: 9200, offset: 14000 });
+```
+
+You can find an example here: https://www.babylonjs-playground.com/#6LXPBX
+
 ## Playing several sounds simultaneously and synchronized
 
 For that, you need to call the play method on all sounds only once you’re sure they are all ready to be played. You then need to work with the ready to play callback.
@@ -274,6 +284,29 @@ Calling the *attachToMesh()* function on a sound will transform it automatically
 Put your headphone and launch this sample into our playground:
 
  https://www.babylonjs-playground.com/index.html?23
+ 
+## Setting a position as the audio listener
+
+By default, the "ears" of your scene - or the listener - is always the currently active camera. Sometimes, for example when making a 3rd person game, you may need to set another mesh as the listener - a characters head for example. This can be achieved by setting the `audioListenerPositionProvider` property on your Scene.
+
+The method you create has to return a valid `Vector3` object.
+
+``` javascript
+// Returns a static position
+scene.audioListenerPositionProvider = () => {
+    return new BABYLON.Vector3(0, 0, 10);
+}
+
+// Returns the current position of a mesh
+// !It is recommended to use the 'absolutePosition' property
+// to reflect the position of the mesh in the world
+scene.audioListenerPositionProvider = () => {
+    // Returns a static position
+    return myMesh.absolutePosition;
+}
+```
+
+To switch back to using your camera as the listener, simply set the property to `null`.
 
 ## Creating a spatial directional 3D sound
 

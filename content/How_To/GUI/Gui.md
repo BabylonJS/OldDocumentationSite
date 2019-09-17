@@ -11,9 +11,7 @@ The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tr
 
 And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui.
 
-You can find a complete demo here: http://www.babylonjs.com/demos/gui/
-
-![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
+You can find a complete demo here: https://www.babylonjs.com/demos/gui/
 
 Please note that since Babylon.js v3.3, a [3D version is also available](//doc.babylonjs.com//How_To/Gui3D)
 
@@ -51,7 +49,7 @@ The fullscreen mode is not intended to be used with WebVR as it is a pure 2d ren
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
@@ -59,7 +57,7 @@ Here is an example of a simple texture mode GUI:  https://www.babylonjs-playgrou
 
 Please note that handling pointer move events could be costly on complex meshes, so you can turn off supporting pointer move events with a fourth parameter:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024, false);
 ```
 
@@ -72,6 +70,9 @@ Starting with Babylon.js v4.0, the new inspector can help debugging your GUI by 
 ## General properties
 
 ### Events
+
+**Please note that controls need to have `control.isPointerBlocker = true` to correctly handle all the pointer events. This property is set by default on obvious controls like buttons for instance but if you want to have it on controls like images you must turn it on.**
+
 All controls have the following observables:
 
 Observables|Comments
@@ -196,6 +197,8 @@ For complex controls (like the ColorPicker for instance), you can turn on render
 
 Starting with Babylon.js v4.0 the GUI system uses the Invalidate Rect optimization which allows the renderer to only update portions of the texture. If you want to turn it off, you can call `adtTexture.useInvalidateRectOptimization = false`
 
+- [Example](https://playground.babylonjs.com/#GBNTXK)
+
 ## Controls
 
 A control is an abstraction of a piece of UI. There are two kinds of controls:
@@ -278,7 +281,7 @@ When resizeToFit is set to true, the width and height of the rendered text will 
 
 This property allows you to change the text and font of a TextBlock without having to worry about manually setting the estimated rendered width and height.
 
-**Notice that textWrapping is ignored when resizeToFit is set to true.** It doesn't make sense logically for both properties to be used at the same time as they contradict each other.
+**Warning** When resizeToFit and textWrapping are both set to true the width of the block will not be resized to fit the text, however the height will be. This means that, depending on the font size, parts of the text on each line may be missing and the width of the block may need to be changed manually.
 
 
 ### InputText
@@ -395,6 +398,8 @@ var button = BABYLON.GUI.Button.CreateImageOnlyButton("but", "textures/grass.png
 ```
 
 You can try it here:  https://www.babylonjs-playground.com/#XCPP9Y#28
+
+Please also note that by default buttons will handle hit testing based on their bounding info. If you want to have embedded controls to handle the picking you can call `button.delegatePickingToChildren = true`
 
 #### Accessing parts
 
@@ -703,6 +708,8 @@ Containers has one specific property: `container.background`. Use it to define t
 
 By default containers do not block pointer events (ie. the underlying scene will receive the pointer event even if the pointer is over a container). You can prevent this behavior by calling `container.isPointerBlocker = true`.
 
+Containers are responsible for managing their children's layout. To prevent layout cycles, the system will not let the layout being updated during a cycle more than 3 times. This value can be changed with `container.maxLayoutCycle`. You can also turn on console warnings when layout cycles are detected with `container.logLayoutCycleErrors = true`.
+
 ### Adaptative size
 You can decide to have your containers to adapt their size to their children by using one of these properties:
 * adaptWidthToChildren (false by default)
@@ -743,7 +750,7 @@ Here is an example of an ellipse control: https://www.babylonjs-playground.com/#
 ### StackPanel
 
 The StackPanel is a control which stacks its children based on its orientation (can be horizontal or vertical).
-All children must have a defined width or height (depending on the orientation) in **pixels**.
+All children must have a defined width or height (depending on the orientation) in **pixels** (A warning will be written to the console if this is not true. This warning can be turned off with `panel.ignoreLayoutWarnings = true`).
 
 The height (or width) of the StackPanel is defined automatically based on children.
 
@@ -862,6 +869,7 @@ To reduce the amount of code required to achieve frequent tasks you can use the 
 
 ## GUI and postprocesses
 
+### LayerMask
 In order to not apply postprocesses to your GUI, you will have to use a multi-cameras approach: one for your main scene and one for your GUI.
 
 You can find an implementation example here: https://www.babylonjs-playground.com/#U9AC0N#58
@@ -884,6 +892,18 @@ camera1.layerMask = 1;
 
 myMesh.layerMask = 1;
 ```
+
+### Multi-scenes
+The other option will be to use a multi scene approach with a renderloop defined like this:
+```
+guiScene.autoClear = false;
+engine.runRenderLoop(function() {
+    mainScene.render();
+    guiScene.render();
+})
+```
+
+In this case the `guiScene` will host your GUI and the `mainScene` will host your scene with your postprocesses.
 
 
 ## Further reading

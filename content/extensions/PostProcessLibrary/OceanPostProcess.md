@@ -50,7 +50,7 @@ postProcess.reflectionEnabled = true;
 postProcess.refractionEnabled = true;
 ```
 
-Finally, once reflection or refraction is/are enabled, just populate the render list of each render target. For more information about render targets and render list, you can refer to this playground: https://playground.babylonjs.com/#CJWDJR#0
+Finally, once reflection or refraction is/are enabled, just populate the render list of each render target. For more information about render targets and render list, you can refer to this playground: https://playground.babylonjs.com/#CJWDJR#1
 
 Example:
 ```

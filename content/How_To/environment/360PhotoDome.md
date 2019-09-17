@@ -41,6 +41,27 @@ As a warning, the further the value gets from 1 the more distortion will be visi
 
 * [Playground Example of a PhotoDome using fovMultiplier](https://www.babylonjs-playground.com/#14KRGG#4)
 
+## Image Types
+Several types of 360 image exist today. The most common being Monoscopic Panoramic, Stereoscopic Side by Side panoramic and Top bottom panoramic.
+
+The first one represents a panoramic view which is dedicated to one eye. The second one contains two panoramic views dedicated to each eyes whereas the last one contains both panoramic views respectively on the top and bottom of the image.
+
+In the Photo Dome you can change adapt to the type of your image source by using :
+
+```javascript
+photoDome.imageMode = BABYLON.PhotoDome.MODE_MONOSCOPIC;
+// or
+photoDome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
+// or
+photoDome.imageMode = BABYLON.PhotoDome.MODE_TOPBOTTOM;
+```
+
+Examples:
+
+- Side by side: https://www.babylonjs-playground.com/#WP9WDU
+- Top bottom: https://www.babylonjs-playground.com/#SM3YHE
+
+
 # How To 360 Photo with WebVR
 You can combine 360 Photo with WebVR. Just add the following code.
 

@@ -36,6 +36,14 @@ BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
 ```
 [Demo](http://www.babylonjs-playground.com/#WGZLGJ)
 
+Loads all babylon assets from a string and appends them to the scene
+```javascript
+BABYLON.SceneLoader.Append("", "data:"+ gltfString, scene, function (scene) {
+    // do something with the scene
+});
+```
+[Demo](https://playground.babylonjs.com/#88CB6A#1)
+
 ## SceneLoader.Load 
 
 Loads all babylon assets from the file and creates a new scene

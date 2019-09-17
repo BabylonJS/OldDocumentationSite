@@ -28,7 +28,7 @@ Once you picked an engine, do not forget to add a reference to the engine code:
 
 1. Cannon: https://cdn.babylonjs.com/cannon.js
 1. Oimo: https://cdn.babylonjs.com/Oimo.js
-1. Ammo: https://cdn.babylonjs.com/Ammo.js or directly from https://github.com/kripken/ammo.js/blob/master/builds/ammo.js
+1. Ammo: https://cdn.babylonjs.com/ammo.js or directly from https://github.com/kripken/ammo.js/blob/master/builds/ammo.js
 
 ## Basic usage
 
@@ -321,11 +321,7 @@ In case you want to do some debug, like visually show the sphere and/or rays, yo
 
 *For a more detailed explanation, please take a look at the playground example below.*
 
-Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#6
-
-Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#3
-
-Playground example - Vortex -  https://playground.babylonjs.com/index.html#TVUDC1#4
+Playground example - https://playground.babylonjs.com/index.html#UZHINX
 
 #### Collision callbacks
 

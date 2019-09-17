@@ -264,7 +264,6 @@
 [Playground Template](/babylon101/First#the-playground)  
 [Playground, Available Textures](/resources/Playground_Textures)  
 [Playground, Introduction](/features/Playground)  
-[Playgrounds, Interesting Ones](/resources/playgrounds)  
 [Playgrounds, PBT List](/resources/PBT)  
 [Playgrounds, PBT Starter](/resources/Hiding_Editor_Lines)  
 [Playgrounds, PBT Intermediate](/resources/PBT_Writing)  

@@ -27,6 +27,23 @@ This will initialize a WebVR camera and a non-WebVR camera in the scene. It will
 - createDeviceOrientationCamera(default: true): If the non-WebVR camera should be created. To use an existing camera, create it and then initialize the helper with this set to false in the constructor.
 - createFallbackVRDeviceOrientationFreeCamera(default: true): When no HMD is connected, this flag specifies if the VR camera should fallback to a VRDeviceOrientationFreeCamera which will render each eye on the screen. This can be set to false to only enable entering VR if an HMD is connected.
 
+## Detect if fallback orientation camera is supported
+If a webVR capable device is not detected Babylon will fallback to using a vrDeviceOrientationCamera however device orientation will only be available if the device has an orientation sensor available. In the latest version of Safari, the orientation sensor is disabled by default and it does not prompt users to enable it in settings so currently this must be done by the app. See https://www.applemust.com/how-and-why-to-use-motion-orientation-settings-in-ios/
+
+```javascript
+vrHelper.onAfterEnteringVRObservable.add(()=>{
+    if(scene.activeCamera === vrHelper.vrDeviceOrientationCamera){
+        BABYLON.FreeCameraDeviceOrientationInput.WaitForOrientationChangeAsync(1000).then(()=>{
+            // Successfully received sensor input
+        }).catch(()=>{
+            alert("Device orientation camera is being used but no sensor is found, prompt user to enable in safari settings");
+        })
+    }
+})
+```
+See https://playground.babylonjs.com/#TAFSN0#230
+
+
 ## Teleportation and Rotation
 
 To enable teleportation in the scene, create a mesh that the user should be able to teleport to and then enable teleportation with that mesh's name.
@@ -149,6 +166,8 @@ vrHelper.enableInteractions();
 
 This will start casting a ray from either the user's camera or controllers. Where this ray intersects a mesh in the scene, a small gaze mesh will be placed to indicate to the user what is currently selected.
 
+Please note the gaze controllers will simulate pointer events so `scene.onPointerObservable` will be raised when gaze is enabled.
+
 To filter which meshes the gaze can intersect with, the raySelectionPredicate can be used:
 
 ```javascript
@@ -213,6 +232,44 @@ The gaze tracker can be customized by setting the gazeTrackerMesh. [Example](htt
 ```javascript
 vrHelper.gazeTrackerMesh = BABYLON.Mesh.CreateSphere("sphere1", 4, 0.1, scene);
 ```
+
+On specific devices like iOS (where fullscreen is not supported), you may want to set `vrHelper.enableGazeEvenWhenNoPointerLock = true` to let the gaze controller run even when not under fullscreen and pointer lock.
+
+## Grab
+
+By combining By combining WebVR controller method and add/removeChild method, you can grab objects by pressing trigger button.
+
+```javascript
+webVRController.onTriggerStateChangedObservable.add((stateObject)=>{
+    if(webVRController.hand=="left"){  
+        if(selectedMesh !=null){
+            //grab
+            if(stateObject.value > 0.01){
+                webVRController.mesh.addChild(selectedMesh);
+            //ungrab   
+            }else{
+                webVRController.mesh.removeChild(selectedMesh);
+            }
+        }
+    }
+});
+```
+
+Selected mesh is detected by onNewMeshSelected method.
+
+```javascript
+VRHelper.onNewMeshSelected.add(function(mesh) {
+    selectedMesh = mesh;
+});
+
+VRHelper.onSelectedMeshUnselected.add(function() {
+    selectedMesh=null;
+});
+```
+
+See the example.
+
+* [Playground Example of a grab objects by WebVRController](https://www.babylonjs-playground.com/#B4C2AH)
 
 ## Multiview
 

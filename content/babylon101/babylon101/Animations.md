@@ -84,6 +84,8 @@ var keys = [];
   });
 ```
 
+**Please note that the frame must be in ascending order.**
+
 For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent and outTangent values to use spline interpolations instead of linear interpolations:
 
 ```javascript

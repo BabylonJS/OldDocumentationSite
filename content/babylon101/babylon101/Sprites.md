@@ -9,16 +9,21 @@ In this tutorial, we are going to learn how to manipulate Sprites. Sprites are 2
 
 Nowadays, sprites are often used to display animated characters, and for particles, and to simulate 3D complex objects like trees.
 
+Individual sprites are collected together in a single image file called a spritesheet or texture atlas. 
+
+* A uniform spritesheet is one where all the sprites are exactly the same size and arranged in order in the file. When you read the term spritesheet in the documentation you can usually assume that it is referring to a uniform spritesheet. A uniform spritesheet is overseen by a [Sprite Manager](#sprite-manager).
+* A packed spritesheet is one where the sprites can be of different sizes and often packed in such a way as to minimize the overall size of the file. Usually the full term of _packed spritesheet_ will be used for such a spritesheet. A packed spritesheet is overseen by a [Sprite Packed Manager](#sprite-packed-manager). This is available from BJS version 4.1
+
+For sprites the use of one of these managers is mandatory, even for one sprite. They optimize GPU resources by grouping in one place multiple instances of a sprite.
+
 ![Elements](/img/how_to/Sprites/08.png)
 
 _Final result_
 
-## How can I do this ?
 
-### Sprite Manager
+## Sprite Manager
 
-If you want to use sprites, you need to create a “sprite manager” to optimize GPU resources by grouping in one place multiple instances of a sprite.
-This manager is mandatory, even if you want to create one sprite. You just have to write:
+For sprites of the same size you use
 
 ```javascript
 // Create a sprite manager
@@ -43,59 +48,170 @@ This time, we only want 2 instances, and we said that our sprite’s size is 64x
 
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
-### Create An Instance
+## Sprite Packed Manager
 
-Now that we have our manager, we can create instances of our sprite linked to this manager. Creating an instance is as simple as:
+For sprites of varying sizes you need an image file and a JSON file containing the positional data of the sprites in the packed spritesheet. The image file and the JSON file should have the same name and be in the same folder, eg pack1.png and pack1.json.
+
+For example:
+```javascript
+var spm = new BABYLON.SpritePackedManager("spm", "pack1.png", 4, scene);
+```
+The parameters are:
+* Name: a name for this manager.
+* The 2D image URL (most of the time, you will want use an image format which contain alpha channel, like .PNG).
+* The capacity of this manager : the maximum number of instances in this manager (in our example 4).
+* The scene, to which we will add this manager.
+
+It is also possible to reference an existing JSON object, of the correct format, directly. In this case the JSON object is passed as an additional parameter. For example:
+
+For example:
+```javascript
+var spm = new BABYLON.SpritePackedManager("spm", "pack1.png", 4, scene, JSONObject);
+```
+
+### Packed Format
+
+![Packed Spritesheet](/img/how_to/Sprites/pack1.png);
+
+The JSON format for the above file is based on that produced using the _TexturePacker_ app with output file framework set to JSON(Hash) and Trim to None and Allow Rotation to Off. For the above packed spritesheet _TexturePacker_ outputs
 
 ```javascript
-var player = new BABYLON.Sprite("player", spriteManagerPlayer);
+{   "frames": {
+	
+		"eye.png": {
+			"frame": {"x":0,"y":148,"w":400,"h":400},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":400,"h":400},
+			"sourceSize": {"w":400,"h":400}
+		},
+		"redman.png": {
+			"frame": {"x":0,"y":0,"w":55,"h":97},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":55,"h":97},
+			"sourceSize": {"w":55,"h":97}
+			},
+		"spot.png": {
+			"frame": {"x":199,"y":0,"w":148,"h":148},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":148,"h":148},
+			"sourceSize": {"w":148,"h":148}
+		},
+		"triangle.png": {
+			"frame": {"x":55,"y":0,"w":144,"h":72},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":144,"h":72},
+			"sourceSize": {"w":144,"h":72}
+		}
+	},
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "pack1.png",
+		"format": "RGBA8888",
+		"size": {"w":400,"h":548},
+		"scale": "1",
+		"smartupdate": "$TexturePacker:SmartUpdate:c5944b8d86d99a167f95924d4a62d5c3:3ed0ae95f00621580b477fcf2f6edb75:5d0ff2351eb79b7bb8a91bc3358bcff4$"
+	}
+}
 ```
 
-Voilà, you have got your sprite displayed!
+SpritePackedManager only uses the frame property for each sprite so the minimal JSON format is
 
-If you want to add parameters to this instance, you can manipulate it like any other meshes:
 ```javascript
-player.position.y = -0.3;
+{   "frames": {
+		"eye.png": {
+			"frame": {"x":0,"y":148,"w":400,"h":400}
+		},
+		"redman.png": {
+			"frame": {"x":0,"y":0,"w":55,"h":97}
+			},
+		"spot.png": {
+			"frame": {"x":199,"y":0,"w":148,"h":148}
+		},
+		"triangle.png": {
+			"frame": {"x":55,"y":0,"w":144,"h":72}
+		}
+	}
+}
 ```
 
-But because it’s a sprite, you may use specific parameters: you can change their size, or their orientation:
+## Create A Sprite Instant
+
+For both managers, we can create instances of a sprite linked to a manager. Creating an instance is as simple as:
+
 ```javascript
-player.size = 0.3;
-player.angle = Math.PI/4;
-player.invertU = -1;
+var sprite = new BABYLON.Sprite("sprite", manager);
 ```
 
-Starting with Babylon.js v2.1, you can define sprite's width and height:
+which uses the first sprite on the sheet
+
+Using a uniform spritesheet and SpriteManager you indicate which sprite to use will cellIndex, counting from the top sprite on the left in order right and down.
+
+For example
+
+```javascript
+var sprite = new BABYLON.Sprite("sprite", manager);
+sprite.cellIndex = 2;
 ```
-player.width = 0.3;
-player.height = 0.4;
+
+Using a packed spritesheet and SpritePackedManager you can either use cellIndex, as above, or the cellRef, the name of sprite. 
+
+For example
+```javascript
+var sprite = new BABYLON.Sprite("sprite", manager);
+sprite.cellRef = "spot.png";
 ```
 
-You can keep using ```player.size``` and in this case width and height will just be the same.
+You can change its size, orientation or reflection:
+```javascript
+sprite.size = 0.3;
+sprite.angle = Math.PI/4;
+sprite.invertU = -1;
+```
 
-### Sprite Animation
+Starting with Babylon.js v2.1, you can define the sprite's width and height:
+```
+sprite.width = 0.3;
+sprite.height = 0.4;
+```
 
-One of the advantages of sprites is animations. You only have to load one large image file which will contain all animation images, one next to another. Just be careful to respect the square pixel size that you have specified in your manager (e.g. 64 pixel).
+you can manipulate it like any other meshes:
+```javascript
+sprite.position.y = -0.3;
+```
 
-Here is what a complete sprite image looks like:
+## Sprite Animation
+
+One of the advantages of sprites is animations. The most straight forward way is to use a uniform spritesheet and SpriteManager. You only have to load one large image file which will contain all animation images, one next to another. Just be careful to respect the pixel size that you have specified in the manager.
+For example with this spritesheet of players:
 
 ![Elements](/img/how_to/Sprites/08-2.png)
 
-This will animate our players in more than 40 positions, depending upon the situation (walking, jumping,…). Babylon's engine is automatically reading sprites on more than one line, so the engine does the work for you :)
+We can use this to animate our players in more than 40 positions, depending upon the situation (walking, jumping,…). 
 
 If you want to begin the animation, simply call this function:
 ```javascript
 player.playAnimation(0, 43, true, 100);
 ```
+The player sprite will be animated from frame 0 to frame 43. The third parameter is indicating if this animation will loop or not, true to loop. The last parameter is the delay between the frames (the smaller it is, the faster the animation).
 
-By calling « playAnimation » with those parameters, our player will be animated from frame 0 to frame 43. The third parameter is indicating if this animation will loop or not. And the last parameter is the delay between the frames (the smaller it is, the faster the animation).
+* [Playground Example Animation of Uniform Sprites**]( https://www.babylonjs-playground.com/?8).
 
-Finally, if you want to go to a specific image (e.g. the last one, when the character is not moving), just call:
-```javascript
-player.cellIndex = 44;
-```
+It is also possible to use playAnimation with sprites from a packed spritesheet. It is worth double checking that the sprites to animate are consecutive and in the correct order in the JSON file.
 
-You can play with the scene and code used in this tutorial... by visiting the Babylon.js [**Playground sprites demo**]( https://www.babylonjs-playground.com/?8).
+## Packed SpriteSheet Playground Examples
+
+* [Playground Example Direct JSON Object Full TexturePacker Format](https://www.babylonjs-playground.com/#K5KTWA)
+* [Playground Example Direct JSON Object Minimum Format](https://www.babylonjs-playground.com/#K5KTWA#1)
+* [Playground Example JSON File](https://www.babylonjs-playground.com/#K5KTWA#2)
+* [Playground Example JSON File Multiple Sprites](https://www.babylonjs-playground.com/#K5KTWA#4)
+* [Playground Example JSON File Animated Slide Show](https://www.babylonjs-playground.com/#K5KTWA#5)
+
+* [Playground Example Multi Pick Sprites](https://www.babylonjs-playground.com/#5GX5DZ)
 
 ## Next Step
 Having learnt about sprites, so it’s time to move on to use them in a classic effect in 3D : [particles](/babylon101/Particles).

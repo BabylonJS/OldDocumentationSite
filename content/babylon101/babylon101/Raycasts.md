@@ -186,7 +186,7 @@ var length = 3;
 rayHelper.attachToMesh(box, localMeshDirection, localMeshOrigin, length);
 ```
 
- https://www.babylonjs-playground.com/#ZHDBJ#37
+ https://www.babylonjs-playground.com/#ZHDBJ#48
 
 ## Next step
 

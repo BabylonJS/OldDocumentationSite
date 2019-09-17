@@ -10,9 +10,9 @@ Bump mapping is a technique to simulate bump and dents on a rendered surface. Th
 The means to do this can be found on the web, a search for 'normal map generator' will bring up free and paid for methods of doing this. 
 
 
-![Image](/img/how_to/Materials/bump_photo.png) &nbsp;&nbsp;&nbsp;&nbsp;![normalMap](/img/how_to/Materials/bump_normal.png)
+![Image Bump Map](/img/how_to/Materials/bump.png)
 
-Original Image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Normal Map from Image
+Normal Map from Image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Original Image
 
 A bump map can be used with a color; with its original image or another image as below.
 
