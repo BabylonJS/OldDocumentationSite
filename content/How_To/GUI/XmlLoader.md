@@ -20,7 +20,7 @@ The XmlLoader might be used as part of a javascript class or function. In order 
 
 ```javascript
 var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-var xmlLoader = new BABYLON.GUI.XmlLoader();
+var xmlLoader = new BABYLON.GUI.XmlLoader(this);
 ```
 You can then proceed to load a layout using the **loadLayout** method.
 
@@ -46,7 +46,7 @@ After the layout has been loaded there is a couple of methods available to you.
 ```javascript
 xmlLoader.getNodeById("helloButton"); // Gets a node by ID. Similar to how DOM elements are retrieved.
 xmlLoader.getNodes(); // Gets all parsed nodes. 
-xmlLoader.isLoaded(); // Returns true or false depending if. 
+xmlLoader.isLoaded(); // Returns true or false depending whether the layout has finished loading. 
 });
 ```
 
@@ -117,7 +117,7 @@ It is possible to link a control to a mesh directly from Xml. This can be very e
 
 # Dynamic Array and Object source
 
-It is also possible to connect a structure like an Array or Object directly to XML. This would be handy in a case when we may need to fill a StackPanel from an array of values or object of key value pairs. However, this can be used whenever we need to repeat a specific xml block by filling in values from An Array or an Object. The only not implemented usecase would be the Grid. 
+It is also possible to connect a structure like an Array or Object directly to XML. This would be handy in a case when we may need to fill a StackPanel from an array of values or object of key value pairs. However, this can be used whenever we need to repeat a specific xml block by filling in values from An Array or an Object. The only not implemented usecase would be the Grid.  
 
 Let's suppose we have the following object in your javascript :
 
