@@ -82,6 +82,7 @@ The ScrollViewer also accepts a single CONTAINER (such as a stackpanel) for its 
 
 [How To Use the Selection Panel Helper](/how_to/selector)  
 [How To Use Babylon GUI](/how_to/gui)  
+[How To Use Babylon GUI Xml Loader](/how_to/XmlLoader)  
 [How To Use Babylon GUI3D](/how_to/gui3d)
 
 
