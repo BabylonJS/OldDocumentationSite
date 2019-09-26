@@ -3,14 +3,16 @@
 ## **Note:** The WebXR spec is still under development and this API may not be up to date and will change. For the current status see this [Issue](https://github.com/BabylonJS/Babylon.js/issues/3899)
 
 ## Introduction
+
 The [WebXR API](https://immersive-web.github.io/webxr/) allows the browser to interact to AR/VR devices. The WebVR API is planned to replace WebXR by browser vendors, it is recommended for developers to move from Babylon's [WebVRExperienceHelper](/how_to/webvr_helper) to WebXR once the spec is stable. Babylon provides a WebXR classes to make it easier to add webXR support to a Babylon scene.
 
 ## Setup
 
 Currently, the version of WebXR Babylon is targeting is in [Chrome Canary](https://www.google.com/chrome/canary/) as of June 27th 2019
+
  1. Install [Chrome Canary](https://www.google.com/chrome/canary/) on desktop
  2. If on mobile ensure you have Android 8 or higher and a device that supports AR Core (eg. Pixel XL 2)
- 2. In Chrome Canary, enter chrome://flags into the URL bar then search for webXR and set all XR related flags
+ 3. In Chrome Canary, enter chrome://flags into the URL bar then search for webXR and set all XR related flags
 
     - WebXR Device API: Enabled
     - Oculus hardware support: Enabled
@@ -27,7 +29,8 @@ Currently, the version of WebXR Babylon is targeting is in [Chrome Canary](https
 * https://developers.google.com/web/tools/chrome-devtools/remote-debugging/ 
 
 **Note:** https://github.com/immersive-web/webxr-polyfill can be used in the future to polyfill browsers that don't support webXR
-# QuickStart and Migrating from WebVR to WebXR
+
+## QuickStart and Migrating from WebVR to WebXR
 
 To quickly add XR support to an existing scene, create a default XR experience. This will mirror much of the functionality of the older createDefaultVRExperience method but for more fine grained control manual setup is recommended (See customization below).
 
@@ -38,6 +41,7 @@ var xr = await scene.createDefaultXRExperienceAsync({
 ```
 
 This will:
+
  - Initialize UI to handle entering/exiting XR
  - Create a WebXRExperienceHelper which will manage an XR camera and XR session
  - Initialize XR input to monitor the state of connected XR controllers
@@ -46,10 +50,11 @@ This will:
  - Enable teleportation interactions to allow the user to teleport around a scene
  - Configure output to display on the XR device and mirror the output on the webpage
 
-$mdFormatter$16$mdFormatter$
-# Manual setup and customization
+    alert("immersive-vr xr session not supported")
 
-## WebXRExperienceHelper
+## Manual setup and customization
+
+### WebXRExperienceHelper
 
 WebXRExperienceHelper provides a minimal setup for XR
  - Creates a session manager which will manage creating/modifying/ending XR sessions
@@ -71,7 +76,7 @@ if (!await xrHelper.sessionManager.supportsSessionAsync("immersive-vr")) {
 
 * [Example](https://playground.babylonjs.com/#P2H4VV)
 
-## Entering/exiting XR
+### Entering/exiting XR
 
 When entering XR a managed canvas must be used
 
@@ -101,7 +106,7 @@ Alternatively the WebXREnterExitUI can be used to set these up and provide butto
 
 * [Example](https://playground.babylonjs.com/#AM07G2)
 
-## Moving the camera
+### Moving the camera
 
 The helper's XR Camera is updated by the device every frame. If code is used to overwrite it's position it will just be overwritten on the next frame therefor the helper wraps the XR Camera in a container mesh. Helper methods are provided
 
@@ -130,7 +135,7 @@ xrHelper.camera;
 xrHelper.container;
 ```
 
-## Controller input
+### Controller input
 
 To get basic controller input for webXR
 
