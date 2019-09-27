@@ -43,11 +43,20 @@ const imageFilter = new ImageFilter(filterCanvas);
 
 You simply need to provide a canvas on which we will be able to use a WebGL context. You could as well provide another Babylon.js control in order to share the WebGL context.
 
+Also you, would you need more specific engine configurations, or if you want to use post processes, you should manually use your own engine:
+
+```
+const engine = new Engine(filterCanvas);
+const imageFilter = new ImageFilter(engine);
+```
+
+By default the controls relies on ThinEngine in order to optimize your bundle but it might have some limitations you do not want to have as part of your experiences.
+
 ### Using Post Process
 In order to apply a custom shader as the image filter, you can use the following code:
 
 ```
-const blackAndWhitePostProcess = new BlackAndWhitePostProcess("bw", 1, null, undefined, backAndWhiteFilter.engine);
+const blackAndWhitePostProcess = new BlackAndWhitePostProcess("bw", 1, null, undefined, engine);
 backAndWhiteFilter.filter(imageToProcess, blackAndWhitePostProcess);
 ```
 
@@ -144,7 +153,7 @@ Or during the render loop:
 
 ```
 // Rely on the underlying engine render loop to update the filter result every frame.
-customFilter.engine.runRenderLoop(() => {
+engine.runRenderLoop(() => {
     // Only render if the custom texture is ready (the default one is 
     // checked for you by the render function)
     if (!otherTexture.isReady()) {
@@ -152,7 +161,7 @@ customFilter.engine.runRenderLoop(() => {
     }
 
     // Sets the custom values.
-    time += customFilter.engine.getDeltaTime() / 1000;
+    time += engine.getDeltaTime() / 1000;
     customEffectWrapper.effect.setTexture("otherTexture", otherTexture);
     customEffectWrapper.effect.setFloat3("colorOffset", Math.cos(time) * 0.5 + 0.5, 0, Math.sin(time) * 0.5 + 0.5);
 
@@ -200,7 +209,7 @@ Instead of filtering only one time, you might want to create dynamic real time e
 
 ```
 // Rely on the underlying engine render loop to update the filter result every frame.
-customFilter.engine.runRenderLoop(() => {
+engine.runRenderLoop(() => {
     // Only render if the custom texture is ready (the default one is 
     // checked for you by the render function)
     if (!otherTexture.isReady()) {
@@ -208,7 +217,7 @@ customFilter.engine.runRenderLoop(() => {
     }
 
     // Sets the custom values.
-    time += customFilter.engine.getDeltaTime() / 1000;
+    time += engine.getDeltaTime() / 1000;
     customEffectWrapper.effect.setTexture("otherTexture", otherTexture);
     customEffectWrapper.effect.setFloat3("colorOffset", Math.cos(time) * 0.5 + 0.5, 0, Math.sin(time) * 0.5 + 0.5);
 
