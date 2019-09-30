@@ -299,4 +299,4 @@ Example: https://nme.babylonjs.com/#2F999G
 
 Here is a list of videos related to Node material:
 - Vertex shader: https://www.youtube.com/watch?v=B5BO3nFc55s
-- Lights and textures: https://www.youtube.com/watch?v=fLXYhGhCej
+- Lights and textures: https://www.youtube.com/watch?v=fLXYhGhCejc
