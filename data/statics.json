@@ -242,11 +242,6 @@
                     "filename": "Decals"
                 },
                 {
-                    "title": "Use the Solid Particle System",
-                    "level": 1,
-                    "filename": "Solid_Particle_System"
-                },
-                {
                     "title": "Use PolygonMeshBuilder",
                     "level": 2,
                     "filename": "PolygonMeshBuilder"
