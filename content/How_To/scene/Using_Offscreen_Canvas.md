@@ -42,6 +42,29 @@ The main caveat of using Babylon.js with an offscreen canvas in a worker thread 
 
 Furthermore, Babylon.js will not be able to handle inputs for you and so APIs like `camera.attachControls()` will not work and you will have to message inputs to workers.
 
+Here is an example of communication you will have to setup to support canvas resizing.
+
+On main thread:
+```
+window.addEventListener("resize", () => {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+    worker.postMessage({width: canvas.clientWidth, height:canvas.clientHeight});
+});
+```
+
+On worker thread:
+```
+
+var engine;
+onmessage = function(evt) {
+    if (evt.data.width) {
+        canvas.width = evt.data.width;
+        canvas.height = evt.data.height;
+    }
+}
+```
+
 ## Resources
 - https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas
 - https://developers.google.com/web/updates/2018/08/offscreen-canvas
