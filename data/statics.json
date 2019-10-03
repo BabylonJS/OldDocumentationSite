@@ -158,7 +158,7 @@
                     "title": "Use SceneOptimizer",
                     "level": 3,
                     "filename": "How_to_use_SceneOptimizer"
-                },
+                },                
                 {
                     "title": "Optimize your scene",
                     "level": 3,
@@ -173,6 +173,11 @@
                     "title": "Reduce memory footprint",
                     "level": 3,
                     "filename": "Reduce_memory_footprint"
+                },                
+                {
+                    "title": "Using offscreen canvas",
+                    "level": 3,
+                    "filename": "Using_Offscreen_Canvas"
                 },
                 {
                     "title": "Optimize using Cached Resources",
