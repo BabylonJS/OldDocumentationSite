@@ -27,12 +27,33 @@ BABYLON.SceneLoader.ImportMesh("", "//www.babylonjs.com/assets/Tree/", "tree.bab
 ```
 A mesh can have as many instances as you want.
 
-Each instance has the same material as the root mesh. They can only vary on the following properties:
+Each instance has the same material as the root mesh. They can vary on the following properties:
 * ```position```
 * ```rotation```
 * ```rotationQuaternion```
 * ```setPivotMatrix```
 * ```scaling```
+
+You also have the opportunity to specify per instance values for any attribute. For instance (no pun intended), if you want to have a specific color per instance, you only need to provide a vertex buffer flagged as "instanceable" and fill it with a color per instance:
+
+```
+let instanceCount = 1000;
+let colorData = new Float32Array(4 * instanceCount);
+
+for (var index = 0; index < instanceCount; index++) {
+    colorData[index * 4] = Math.random();
+    colorData[index * 4 + 1] = Math.random();
+    colorData[index * 4 + 2] = Math.random();
+    colorData[index * 4 + 3] = 1.0;
+}
+
+var buffer = new BABYLON.VertexBuffer(engine, colorData, BABYLON.VertexBuffer.ColorKind, false, false, 4, true);
+box.setVerticesBuffer(buffer);
+```
+
+The last parameter of the VertexBuffer constructor is the one to set to true to flag it as instanceable.
+
+Example: https://www.babylonjs-playground.com/#8L50Q3#1
 
 # Support
 Instances are supported for collisions, picking, rendering and shadows. Even if the current hardware does not support hardware accelerated instances, babylon.js will be able to optimize rendering to take instances into account.
