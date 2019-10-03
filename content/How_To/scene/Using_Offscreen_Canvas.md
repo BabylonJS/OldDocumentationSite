@@ -47,8 +47,6 @@ Here is an example of communication you will have to setup to support canvas res
 On main thread:
 ```
 window.addEventListener("resize", () => {
-    canvas.width = canvas.clientWidth;
-    canvas.height = canvas.clientHeight;
     worker.postMessage({width: canvas.clientWidth, height:canvas.clientHeight});
 });
 ```
