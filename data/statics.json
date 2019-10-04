@@ -763,7 +763,7 @@
                     "filename": "Using_the_SSAO_rendering_pipeline"
                 },
                 {
-                    "title": "Use the standard rendering pipeline",
+                    "title": "Use the standard rendering pipeline (deprecated)",
                     "level": 3,
                     "filename": "Using_Standard_Rendering_Pipeline"
                 },
