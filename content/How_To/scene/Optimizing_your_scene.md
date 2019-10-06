@@ -65,6 +65,8 @@ As soon as you can please use [instances](/How_To/how_to_use_instances) as they 
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
 
+One remark regarding instances: If one of the instances has a world matrix with a different determinant (eg. one instance has a negative scale where others don't), babylon.js will be forced to remove the back face culling from their material.
+
 ## Reducing calls to gl.clear()
 By default, Babylon.js automatically clears the color, depth, and stencil buffers before rendering the scene. It also clears the depth and stencil buffers after switching to a new camera and before rendering a new RenderingGroup. On systems with poor fill rates, these can add up quickly and have a significant impact on performance.
 
