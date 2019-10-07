@@ -1,5 +1,5 @@
 ---
-PG_TITLE: How To Use the standard rendering pipeline
+PG_TITLE: How To Use the standard rendering pipeline (deprecated)
 ---
 
 # The standard pipeline is no longer maintained.
