@@ -12,7 +12,12 @@ The expected usage is:
 * Redo the additions as many times as needed. Each addition creates a new group of particles identified by `particle.groupID`.  
 * When done, build the PCS mesh with `buildMeshAsync()`.
 * Changes to particle properties can be achieved with the `initParticles()` or `updateParticle(particle)` methods and a call to `setParticles`.
-* Particle animation can be accomplished by defining their individual behavior in `updateParticle(particle)` and calling `setParticles()` within the render loop. 
+* Particle animation can be accomplished by defining their individual behavior in `updateParticle(particle)` and calling `setParticles()` within the render loop.
+
+## Limitations
+The way the PCS is created using vertex points with a pre-applied material with `PointsCloud` set to true means that:
+1. Particles can not be destroyed and particles off screen are still enabled.;
+2. Transparency does not work on particles. 
 
 ## PCS Creation
 To create an empty PCS requires three parameters; its name, the size for every particle and the scene, for example
@@ -132,10 +137,15 @@ pcs.addSurfacePoints(box, 100000, BABYLON.PointColor.UV);
 * [Playground Example - Surface Color from Mesh Color](https://www.babylonjs-playground.com/#UI95UC#4)
 * [Playground Example - Surface Color from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#5)
 * [Playground Example - Surface UV from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#6)
+* [Playground Example - Volume Random](https://www.babylonjs-playground.com/#UI95UC#7)
+* [Playground Example - Volume Stated](https://www.babylonjs-playground.com/#UI95UC#8)
+* [Playground Example - Volume Color from Mesh Color](https://www.babylonjs-playground.com/#UI95UC#9)
+* [Playground Example - Volume Color from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#10)
+* [Playground Example - Volume UV from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#11)
 
 ### Building the Mesh
 
-The PCS mesh cannot be built until all relevant data is collected. Since this can involve ensuring that the material applied to a model used in adding surface or volume points is fully loaded, building the mesh is an asynchronous process.
+The PCS mesh cannot be built until all relevant data is collected. Since this can involve ensuring that the material, applied to a model used in adding surface or volume points, is fully loaded, building the mesh is an asynchronous process.
 
 For example when a mesh model is used in determining the points the model cannot be disposed of until the process of PCS construction is completed. This is achieved by, for example
 
@@ -223,11 +233,22 @@ scene.registerBeforeRender(() => {
 **Note:** All particle positions are expressed in the *local space* of the PCS mesh. 
 
 The particle `pivot` vector is also in *local space* of the PCS mesh. By default rotations around a pivot are calculated by translating the particle to the pivot point, then rotating it and then the inverse translation applied. By setting the particle method `translateFromPivot` to `true` (default `false`) rotations will only be calculated using the initial translation followed by the rotation leaving the particle at the translated location.  
-    
-1000 tetrahedron satellites orbiting around 1000 rotating boxes.  
-Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not. 
 
-### Particle parenting  
+* [Playground Example - Simple Animation](https://www.babylonjs-playground.com/#UI95UC#12)
+
+In the following playground the particle pivots in the top PCS are set relative to the particle position and in the lower one are set in the same place.
+* [Playground Example - Pivot Animation](https://www.babylonjs-playground.com/#UI95UC#14)
+
+In this playground the only difference is that the lower PCS has`translateFromPivot` set to `true`.
+* [Playground Example - Pivot Animation](https://www.babylonjs-playground.com/#UI95UC#15)
+
+This playground animates the mesh not the particles.
+* [Playground Example - Immutable Animation](https://www.babylonjs-playground.com/#UI95UC#16)
+
+This playground loads meshes from a file, converts to particles and animates
+* [Playground Example - Loaded Mesh Animation](https://www.babylonjs-playground.com/#UI95UC#17)
+
+### Particle Parenting  
 
 Each particle can be given another particle as a parent.  
 The parent must be created before the child particle. This means the parent has to have a lower index Id (`particle.idx`) than the current particle. So the first particle in the pool (`idx = 0`) can't have a parent. To give a parent to a particle, just set its property `.parentId` to the parent index Id value. 
