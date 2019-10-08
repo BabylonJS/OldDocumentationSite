@@ -171,7 +171,7 @@ Anyone who wrote a tutorial is welcome on this page, do not hesitate to [PR in G
 
 - website: https://www.nothing-is-3d.com/
 - forum username: [Vinc3r](https://forum.babylonjs.com/u/Vinc3r)
-- social networks: [Twitter](https://twitter.com/Vinc3r), [Mastodon](https://mamot.fr/@Vinc3r), [Github](https://github.com/Vinc3r)
+- social networks: [Mastodon](https://mamot.fr/@Vinc3r), [Github](https://github.com/Vinc3r)
 
 <div class='beforeWideTable'></div>
 
