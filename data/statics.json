@@ -598,6 +598,11 @@
                     "title": "Solid Particle System",
                     "level": 1,
                     "filename": "Solid_Particles"
+                },
+                {
+                    "title": "Points Cloud Particle System ",
+                    "level": 1,
+                    "filename": "Point_Cloud_Particles"
                 }
             ]
         },
