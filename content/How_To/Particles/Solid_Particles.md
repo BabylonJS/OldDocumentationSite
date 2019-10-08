@@ -747,6 +747,8 @@ Except in some very specific cases, you might not need to use this function.
 [How to Create Animated Particles](/how_to/Animate)  
 [How to Use Sub Emitters](/how_to/Sub_Emitters)
 
+[Points Cloud Particle System](/How_To/point_Cloud_Particles)
+
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)
 
