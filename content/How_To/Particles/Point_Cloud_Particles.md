@@ -16,8 +16,8 @@ The expected usage is:
 
 ## Limitations
 The way the PCS is created using vertex points with a pre-applied material with `PointsCloud` set to true means that:
-1. Particles can not be destroyed and particles off screen are still enabled.;
-2. Transparency does not work on particles. 
+1. Particles cannot be destroyed and particles off screen are still enabled;
+2. Transparency does not work on individual particles. 
 
 ## PCS Creation
 To create an empty PCS requires three parameters; its name, the size for every particle and the scene, for example
@@ -103,8 +103,6 @@ The points are evenly randomly distributed based on the size of the individual t
 
 For both the surface and the volume the default is that the points are randomly colored. For example the following are equivalents for the two surface and two volume additions. 
 
-**Note:** additional calculations in `addVolumePoint` means that it takes longer than `addSurfacePoints` for the same number of points. For a large number of points this can be noticeable.
-
 ```javascript
 pcs.addSurfacePoints(model, 10000);
 pcs.addSurfacePoints(model, 10000, BABYLON.PointColor.Random);
@@ -113,12 +111,14 @@ pcs.addVolumePoints(model, 10000);
 pcs.addVolumePoints(model, 10000, BABYLON.PointColor.Random);
 ```
 
+**Note:** additional calculations in `addVolumePoint` means that it takes longer than `addSurfacePoints` for the same number of points. For a large number of points this can be noticeable.
+
 There are four available methods for coloring the points.
 
 | Method| Effect |
 | ---- | ---- |
 | BABYLON.PointColor.Random | Colors are assigned randomly to each point, default method .|
-| BABYLON.PointColor.Stated | This method requires two extra parameters, the base color to use, default white, plus a range from 0 to 1 to randomize the shade and tone of the stated color. A value of 0, default, gives no variation and 1 the largest variation.|
+| BABYLON.PointColor.Stated | This method requires two extra parameters, the base color to use, default white, plus a range from 0 to 1 to randomize both the shade and tone of the stated color. A value of 0, default, gives no variation and 1 the largest variation.|
 | BABYLON.PointColor.Color | When the model has a texture material applied the color of each point is determined by the texture color of a matching point on a facet. When the material used has color but no texture then the material color is used. When the model has no material applied random coloring is used.|
 | BABYLON.PointColor.UV | The model uv values for each facet corner are used to determine the uv values for the points. An emissive texture can be applied to the pcs.mesh.material to color the PCS mesh|
 
@@ -155,13 +155,13 @@ pcs.addPoints(10000, myFunc);
 pcs.buildMeshAsync().then(() => box.dispose());
 ```
 
-If you want never want the particle properties of your PCS to change, ie you want it to be immutable then you need do more. Alternatively you can set the PCS as immutable on creation by setting the updatable option. (Currently updatable is the only item in the option list that is available but the option list is open for future expansions)
+If you never want the particle properties of your PCS to change, ie you want it to be immutable then you need do no more. Alternatively you can set the PCS as immutable on creation by setting the updatable option. (Currently updatable is the only item in the option list that is available but the option list is open for future expansions)
 
 ```javascript
 var pcs= new BABYLON.PointsCloudSystem("pcs", 5, scene, {updatable: false}); 
 ```
 
-After making updatable false the following methods will no longer have any effect, `initParticles()`, `updateParticle(particle)` and `setParticles`.
+After making updatable false the following methods will no longer have any effect, `initParticles()`, `updateParticle(particle)` and `setParticles()`.
 
 ## Particle Management
 
@@ -177,10 +177,12 @@ Once the PCS mesh is built, unless immutable, it can respond to changes in the p
 | velocity | Vector3 | (0, 0, 0) |
 | color | Vector4 | (1, 1, 1, 1) |
 | pivot | Vector3  | (0, 0, 0) |
-| uvs | Vector(4)  | (0,0, 1,1) |
+| uvs | Vector2  | (0,0) |
 | translateFromPivot | boolean |false |
 | parentId | integer | null |
 | idx | integer (read only) | index of particle |
+| groupId | integer (read only) | group number for a particle |
+
 
 If you set a particle rotation quaternion, its rotation property will then be ignored.
 
@@ -197,7 +199,7 @@ New properties can be initialised.
 
 Using `addPoints` particle properties can be set in the passed function. The `addSurfacePoints` and `addVolumePoints` methods obviously set the position and color properties  of the particles but you may still want to set the initial values of other particle properties.
 
-This can be done using `pcs.initParticles`. With this you must iterate over all the particles by using the `SPS.nbParticles` property and follow a call to this function with a call to `pcs.setParticles`. For example
+This can be done using `initParticles`. With this you must iterate over all the particles by using the `nbParticles` property and follow a call to this function with a call to `setParticles`. For example
 
 ```javascript
 pcs.initParticles = function() {
@@ -217,7 +219,7 @@ pcs.buildMeshAsync().then(() => {
 
 ### Updating Particles
 
-When any appropriate particle properties are initiated the the `pcs.updateParticles` method can be used. Unlike `pcs.initParticles` the function is called by `pcs.setParticles` and already passes a particle as an argument.  The method `pcs.setParticles` will only execute once the PCS mesh has been built and so may safely be placed inside a render loop to produce an animation. For example
+When any appropriate particle properties are initiated the the `updateParticles` method can be used. Unlike `initParticles` the function is called by `setParticles` and already passes a particle as an argument.  The method `setParticles` will only execute after the PCS mesh has been built and so may safely be placed inside a render loop to produce an animation. For example
 
 ```javascript
 pcs.updateParticle = function(particle) {
@@ -239,7 +241,7 @@ The particle `pivot` vector is also in *local space* of the PCS mesh. By default
 In the following playground the particle pivots in the top PCS are set relative to the particle position and in the lower one are set in the same place.
 * [Playground Example - Pivot Animation](https://www.babylonjs-playground.com/#UI95UC#14)
 
-In this playground the only difference is that the lower PCS has`translateFromPivot` set to `true`.
+In this playground the only difference is that the lower PCS has `translateFromPivot` set to `true`.
 * [Playground Example - Pivot Animation](https://www.babylonjs-playground.com/#UI95UC#15)
 
 This playground animates the mesh not the particles.
@@ -248,10 +250,65 @@ This playground animates the mesh not the particles.
 This playground loads meshes from a file, converts to particles and animates
 * [Playground Example - Loaded Mesh Animation](https://www.babylonjs-playground.com/#UI95UC#17)
 
+### UVs
+
+While setting and changing particle colors is straightforward doing this for UVs is a little more complex. Using `BABYLON.PointColor.UV` as a parameter within `addSurfacepoints` or `addVolumePoints` will set the UVs automatically for you based on the passed mesh.
+
+You can also set the uv value for each particle using the passed function for `addPoints`. To make sense of the texture as the image used the uv values should relate in some way to the positional values for each particle. To then apply the texture with these uvs both the emissiveColor and emmissiveTexture for the PCS mesh material must be set after the mesh is built.
+
+**Note:** Only use emissive.
+
+For example
+
+```javascript
+var myfunc = function(particle) { 
+    var x = Math.random();
+    var y = Math.random();
+    var z = 0;
+    particle.position = new BABYLON.Vector3(x, y, z);
+    //Relate uv values to positional values
+    particle.uv.x = x;
+    particle.uv.y = y; 
+    }
+    pcs.addPoints(5000, myfunc);
+
+    pcs.buildMeshAsync().then(() => {
+      pcs.mesh.material.emissiveColor = new BABYLON.Color3(0, 0, 0);
+      pcs.mesh.material.emissiveTexture = myTexture;
+    });
+```
+
+It is possible to use a texture atlas but you need to customize and calculate the more complex relationship between positional and uv values.
+
+* [Playground Example - UV with Add Points](https://www.babylonjs-playground.com/#UI95UC#23)
+* [Playground Example - UV with Texture Atlas](https://www.babylonjs-playground.com/#UI95UC#24)
+
+### Recycling Particles
+
+You can write your own code to recycle particles using `recycleParticle` which can be called from within `updateParticle`. For example,
+
+```javascript
+pcs.recycleParticle = function(particle) {
+    particle.position = BABYLON.Vector3.Zero();
+    particle.velocity = BABYLON.Vector3.Zero();
+    particle.heightLim = 4 + 0.5 * Math.random();
+}
+
+pcs.updateParticle = function(particle) {
+    if (particle.position.y > particle.heightLim) {
+      this.recycleParticle(particle);
+    }
+    particle.velocity.addInPlace(particle.acceleration);
+    particle.position.addInPlace(particle.velocity);
+}
+```
+
+* [Playground Example - Recycle Animation](https://www.babylonjs-playground.com/#UI95UC#19)
+
 ### Particle Parenting  
 
 Each particle can be given another particle as a parent.  
-The parent must be created before the child particle. This means the parent has to have a lower index Id (`particle.idx`) than the current particle. So the first particle in the pool (`idx = 0`) can't have a parent. To give a parent to a particle, just set its property `.parentId` to the parent index Id value. 
+The parent must be created before the child particle. This means the parent has to have a lower index Id (`particle.idx`) than the current particle. So the first particle in the pool (`idx = 0`) can't have a parent. To give a parent to a particle, just set its property `parentId` to the parent index Id value. 
 
 ```javascript
 if (particle.idx > 0) {
@@ -270,6 +327,7 @@ if (particle.idx > 0) {
     particle.position.x = 1.0;
 }
 ```
+ * [Playground Example - Parent Animation](https://www.babylonjs-playground.com/#UI95UC#18)
 
 ### Particle Intersections
      
@@ -290,6 +348,9 @@ if (particle.intersectsMesh(mesh, true) {
 }; 
 ```
 
+* [Playground Example - Recycle Particle Collision](https://www.babylonjs-playground.com/#UI95UC#20)
+* [Playground Example - Mesh Collides into Cloud](https://www.babylonjs-playground.com/#UI95UC#21)
+
 ## PCS Management
 
 As you can see above the `setParticles()` function is used in the BabylonJS render loop to provide behavior to the PCS.  
@@ -299,7 +360,6 @@ Available custom functions of PCS are:
 | Function | Usage |
 | ---- | ---- |
 | initParticles() | sets the initial particle properties. |
-| recycleParticle(particle) | sets a particle to be recycled. It is called per particle. |
 | updateParticle(particle) | sets the particle properties. This function is called per particle by `SPS.setParticles()` |
 | recycleParticle(particle) | re-sets the particle properties. This function is called conditionally per particle by `SPS.updateParticles()` |
 | beforeUpdateParticles() | lets you do things within the call to `SPS.setParticles()` just before iterating over all the particles. |
@@ -345,7 +405,7 @@ For performance reasons you may not want to compute the properties of all  the p
 Parameter|Definition|Default
 ---------|----------|-------------
 start|_(number)_ the index from where to start to iterate in the `particles` array|0
-stop|_(number)_ the index (included) where to stop to iterate in the `particles` array|nbParticles - 1
+stop|_(number)_ the index (included) where to stop to iterate in the<br>`particles` array|nbParticles - 1
 update|_(boolean)_ to force the SPS mesh vertex buffer to be updated|true
 
 If you pass a `end` value greater than `nbParticles` - 1, the iteration will stop at `nbParticles` - 1 to prevent you from trying to access to undefined elements.
@@ -353,40 +413,14 @@ If you pass a `end` value greater than `nbParticles` - 1, the iteration will sto
 Example 1 : to only update 10000 particles mesh every three frames  
 * frame 1 : `setParticles(0, 3300, false)` computes everything for particles from 0 to 3300 and doesn't update the mesh.
 * frame 2 : `setParticles(3301, 6600, false)` computes everything for particles from 3301 to 6600 and doesn't update the mesh.
-* frame 3 : `setParticles(6601, 9999, true)` computes everything for particles from 6601 to 9999 and finally updates the mesh.   
+* frame 3 : `setParticles(6601, 9999, true)` computes everything for particles from 6601 to 9999 and finally updates the mesh. 
+
+In this playground change _invSpeed_ (line 29) to change speed.
+* [Playground Example - Start and End For Animation Speed](https://www.babylonjs-playground.com/#UI95UC#25)
 
 Example 2 : you could keep, say, the first 5000 particles as unused ones and compute the particle behavior only for the last 5000 in your global pool -  `setParticles(5000, 9999, true)` computes everything for particles from 5000 to 9999 and updates the mesh.  
 
-
-### UVs
-
-While setting and changing particle colors is straightforward doing this for UVs is a little more complex. Using `BABYLON.PointColor.UV` as a parameter within `addSurfacepoints` or `addVolumePoints` will set the UVs automatically for you based on the passed mesh.
-
-You can also set the uv value for each particle using the passed function for `addPoints`. To make sense of the texture as the image used the uv values should relate in some way to the positional values for each particle. To then apply the texture with these uvs both the emissiveColor and emmissiveTexture for the PCS mesh material must be set after the mesh is built.
-
-**Note:** Only use emissive.
-
-For example
-
-```javascript
-var myfunc = function(particle) { 
-    var x = Math.random();
-    var y = Math.random();
-    var z = 0;
-    particle.position = new BABYLON.Vector3(x, y, z);
-    //Relate uv values to positional values
-    particle.uv.x = x;
-    particle.uv.y = y; 
-    }
-    pcs.addPoints(5000, myfunc);
-
-    pcs.buildMeshAsync().then(() => {
-      pcs.mesh.material.emissiveColor = new BABYLON.Color3(0, 0, 0);
-      pcs.mesh.material.emissiveTexture = myTexture;
-    });
-```
-
-It is possible to use a texture atlas but you need to customize and calculate the more complex relationship between positional and uv values.
+* [Playground Example - Start and End For Part Animation](https://www.babylonjs-playground.com/#UI95UC#26)
 
 ## Hints and Tips 
 A PCS can iterate over a very large number of particles during a call to `updateParticle` and it would be nice to avoid any apparent pauses in scene generation. The JavaScript Garbage Collector can start its cleaning in the middle of what you want to be a very smooth animation and produce lags. One possibility of lessening these is avoid creating new objects in the loops that execute often, where particles are created or updated.  
@@ -425,10 +459,12 @@ pcs.dispose();  // cleans explicitly all your SPS.vars !
 
 [Particles Overview](/features/Particles)  
 
-[Particles 101](/babylon101/particles)
+[Particles 101](/babylon101/particles)  
 
 [How to Create Animated Particles](/how_to/Animate)  
 [How to Use Sub Emitters](/how_to/Sub_Emitters)
+
+[Solid Particle System](/How_To/Solid_Particles)
 
 ### Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)
