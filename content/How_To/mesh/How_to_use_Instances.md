@@ -34,6 +34,8 @@ Each instance has the same material as the root mesh. They can vary on the follo
 * ```setPivotMatrix```
 * ```scaling```
 
+# Custom buffers
+
 You also have the opportunity to specify per instance values for any attribute. For instance (no pun intended), if you want to have a specific color per instance, you only need to provide a vertex buffer flagged as "instanceable" and fill it with a color per instance:
 
 ```
@@ -54,6 +56,23 @@ box.setVerticesBuffer(buffer);
 The last parameter of the VertexBuffer constructor is the one to set to true to flag it as instanceable.
 
 Example: https://www.babylonjs-playground.com/#8L50Q3#1
+
+The other way is to register a custom buffer with `registerInstancedBuffer`:
+```
+mesh.registerInstancedBuffer("color", 4); // 4 is the stride size eg. 4 floats here
+```
+
+Using this API, you can specify a new buffer that will be instancied. This means that each instance will have its own value. You can specify this value on the root mesh and on every single instance:
+
+```
+box.instancedBuffers.color = new BABYLON.Color4(Math.random(), Math.random(), Math.random(), 1);
+let instance = box.createInstance("box1");
+instance.instancedBuffers.color = new BABYLON.Color4(Math.random(), Math.random(), Math.random(), 1);
+```
+
+The system will take care of updating the internal vertex buffer.
+
+Example: https://www.babylonjs-playground.com/#YPABS1
 
 # Support
 Instances are supported for collisions, picking, rendering and shadows. Even if the current hardware does not support hardware accelerated instances, babylon.js will be able to optimize rendering to take instances into account.
