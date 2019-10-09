@@ -1147,6 +1147,12 @@ declare module BABYLON {
          * @returns The decoded string
          */
         static Decode(buffer: Uint8Array | Uint16Array): string;
+        /**
+         * Encode a buffer to a base64 string
+         * @param buffer defines the buffer to encode
+         * @returns the encoded string
+         */
+        static EncodeArrayBufferToBase64(buffer: ArrayBuffer | ArrayBufferView): string;
     }
 }
 declare module BABYLON {
@@ -1385,7 +1391,6 @@ declare module BABYLON {
         static SetCorsBehavior(url: string | string[], element: {
             crossOrigin: string | null;
         }): void;
-        private static _ArrayBufferToBase64;
         /**
          * Loads an image as an HTMLImageElement.
          * @param input url string, ArrayBuffer, or Blob to load
@@ -20155,6 +20160,19 @@ declare module BABYLON {
 }
 declare module BABYLON {
     /**
+     * Options for compiling materials.
+     */
+    export interface IMaterialCompilationOptions {
+        /**
+         * Defines whether clip planes are enabled.
+         */
+        clipPlane: boolean;
+        /**
+         * Defines whether instances are enabled.
+         */
+        useInstances: boolean;
+    }
+    /**
      * Base class for the main features of a material in Babylon.js
      */
     export class Material implements IAnimatable {
@@ -20631,18 +20649,14 @@ declare module BABYLON {
          * @param options defines the options to configure the compilation
          * @param onError defines a function to execute if the material fails compiling
          */
-        forceCompilation(mesh: AbstractMesh, onCompiled?: (material: Material) => void, options?: Partial<{
-            clipPlane: boolean;
-        }>, onError?: (reason: string) => void): void;
+        forceCompilation(mesh: AbstractMesh, onCompiled?: (material: Material) => void, options?: Partial<IMaterialCompilationOptions>, onError?: (reason: string) => void): void;
         /**
          * Force shader compilation
          * @param mesh defines the mesh that will use this material
          * @param options defines additional options for compiling the shaders
          * @returns a promise that resolves when the compilation completes
          */
-        forceCompilationAsync(mesh: AbstractMesh, options?: Partial<{
-            clipPlane: boolean;
-        }>): Promise<void>;
+        forceCompilationAsync(mesh: AbstractMesh, options?: Partial<IMaterialCompilationOptions>): Promise<void>;
         private static readonly _AllDirtyCallBack;
         private static readonly _ImageProcessingDirtyCallBack;
         private static readonly _TextureDirtyCallBack;
@@ -27499,6 +27513,14 @@ declare module BABYLON {
          */
         color3InterpolateFunction(startValue: Color3, endValue: Color3, gradient: number): Color3;
         /**
+         * Interpolates a Color4 linearly
+         * @param startValue Start value of the animation curve
+         * @param endValue End value of the animation curve
+         * @param gradient Scalar amount to interpolate
+         * @returns Interpolated Color3 value
+         */
+        color4InterpolateFunction(startValue: Color4, endValue: Color4, gradient: number): Color4;
+        /**
          * @hidden Internal use only
          */
         _getKeyValue(value: any): any;
@@ -27533,81 +27555,45 @@ declare module BABYLON {
         /**
          * Float animation type
          */
-        private static _ANIMATIONTYPE_FLOAT;
+        static readonly ANIMATIONTYPE_FLOAT: number;
         /**
          * Vector3 animation type
          */
-        private static _ANIMATIONTYPE_VECTOR3;
+        static readonly ANIMATIONTYPE_VECTOR3: number;
         /**
          * Quaternion animation type
          */
-        private static _ANIMATIONTYPE_QUATERNION;
+        static readonly ANIMATIONTYPE_QUATERNION: number;
         /**
          * Matrix animation type
          */
-        private static _ANIMATIONTYPE_MATRIX;
+        static readonly ANIMATIONTYPE_MATRIX: number;
         /**
          * Color3 animation type
          */
-        private static _ANIMATIONTYPE_COLOR3;
+        static readonly ANIMATIONTYPE_COLOR3: number;
+        /**
+         * Color3 animation type
+         */
+        static readonly ANIMATIONTYPE_COLOR4: number;
         /**
          * Vector2 animation type
          */
-        private static _ANIMATIONTYPE_VECTOR2;
+        static readonly ANIMATIONTYPE_VECTOR2: number;
         /**
          * Size animation type
          */
-        private static _ANIMATIONTYPE_SIZE;
+        static readonly ANIMATIONTYPE_SIZE: number;
         /**
          * Relative Loop Mode
          */
-        private static _ANIMATIONLOOPMODE_RELATIVE;
+        static readonly ANIMATIONLOOPMODE_RELATIVE: number;
         /**
          * Cycle Loop Mode
          */
-        private static _ANIMATIONLOOPMODE_CYCLE;
-        /**
-         * Constant Loop Mode
-         */
-        private static _ANIMATIONLOOPMODE_CONSTANT;
-        /**
-         * Get the float animation type
-         */
-        static readonly ANIMATIONTYPE_FLOAT: number;
-        /**
-         * Get the Vector3 animation type
-         */
-        static readonly ANIMATIONTYPE_VECTOR3: number;
-        /**
-         * Get the Vector2 animation type
-         */
-        static readonly ANIMATIONTYPE_VECTOR2: number;
-        /**
-         * Get the Size animation type
-         */
-        static readonly ANIMATIONTYPE_SIZE: number;
-        /**
-         * Get the Quaternion animation type
-         */
-        static readonly ANIMATIONTYPE_QUATERNION: number;
-        /**
-         * Get the Matrix animation type
-         */
-        static readonly ANIMATIONTYPE_MATRIX: number;
-        /**
-         * Get the Color3 animation type
-         */
-        static readonly ANIMATIONTYPE_COLOR3: number;
-        /**
-         * Get the Relative Loop Mode
-         */
-        static readonly ANIMATIONLOOPMODE_RELATIVE: number;
-        /**
-         * Get the Cycle Loop Mode
-         */
         static readonly ANIMATIONLOOPMODE_CYCLE: number;
         /**
-         * Get the Constant Loop Mode
+         * Constant Loop Mode
          */
         static readonly ANIMATIONLOOPMODE_CONSTANT: number;
         /** @hidden */
@@ -32121,12 +32107,6 @@ declare module BABYLON {
          * @returns the angle in radians
          */
         static ToRadians(angle: number): number;
-        /**
-         * Encode a buffer to a base64 string
-         * @param buffer defines the buffer to encode
-         * @returns the encoded string
-         */
-        static EncodeArrayBufferTobase64(buffer: ArrayBuffer): string;
         /**
          * Returns an array if obj is not an array
          * @param obj defines the object to evaluate as an array
@@ -48200,9 +48180,7 @@ declare module BABYLON {
         /**
          * Force shader compilation
          */
-        forceCompilation(mesh: AbstractMesh, onCompiled?: (material: Material) => void, options?: Partial<{
-            clipPlane: boolean;
-        }>): void;
+        forceCompilation(mesh: AbstractMesh, onCompiled?: (material: Material) => void, options?: Partial<IMaterialCompilationOptions>): void;
         /**
          * Initializes the uniform buffer layout for the shader.
          */
@@ -49859,7 +49837,7 @@ declare module BABYLON {
     /**
      * The glow layer Helps adding a glow effect around the emissive parts of a mesh.
      *
-     * Once instantiated in a scene, simply use the pushMesh or removeMesh method to add or remove
+     * Once instantiated in a scene, simply use the addMesh or removeMesh method to add or remove
      * glowy meshes to your scene.
      *
      * Documentation: https://doc.babylonjs.com/how_to/glow_layer
@@ -50087,7 +50065,7 @@ declare module BABYLON {
     /**
      * The highlight layer Helps adding a glow effect around a mesh.
      *
-     * Once instantiated in a scene, simply use the pushMesh or removeMesh method to add or remove
+     * Once instantiated in a scene, simply use the addMesh or removeMesh method to add or remove
      * glowy meshes to your scene.
      *
      * !!! THIS REQUIRES AN ACTIVE STENCIL BUFFER ON THE CANVAS !!!
@@ -53981,6 +53959,9 @@ declare module BABYLON {
          * Gets or sets a string indicating that this uniform must be defined under a #ifdef
          */
         define: string;
+        /** @hidden */
+        _prioritizeVertex: boolean;
+        private _target;
         /** Gets or sets the target of that connection point */
         target: NodeMaterialBlockTargets;
         /**
@@ -68335,6 +68316,10 @@ declare module BABYLON {
          * Defaults to false.
          */
         useRangeRequests: boolean;
+        /**
+         * Defines if the loader should create instances when multiple glTF nodes point to the same glTF mesh. Defaults to true.
+         */
+        createInstances: boolean;
         /**
          * Function called before loading a url referenced by the asset.
          */
