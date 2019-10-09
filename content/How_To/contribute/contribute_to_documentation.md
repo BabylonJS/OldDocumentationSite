@@ -180,3 +180,7 @@ Click on *New pull request* button:
 If no conflicts, you will be able to follow the same steps as we seen above in the [easy way](#the-easy-way) section.
 
 Congratulation again, you're now a documentation master!
+
+# Further Reading
+
+- [Improve API Documentation](/how_to/contribute_to_api)
