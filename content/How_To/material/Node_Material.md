@@ -104,51 +104,605 @@ worldInput.output.disconnectFrom(boneBlock.world);
 
 By default, the node material provides the following blocks:
 
+* Animation:
+  * `Bones`: Provides a world matrix for each vertex, based on skeletal (bone/joint) animation. mesh.matricesIndices and mesh.matricesWeights are the vertex to bone assignments and weighting, and assume no more than 4 bones influencing any given vertex. If a vertex is influenced by more than 4 bones, then mesh.matricesIndicesExtra and mesh.matricesWeightsExtra can be used for up to 8 bones of influence per vertex.
+    * Inputs: 
+      * matricesIndices: Vector4
+      * matricesWeights: Vector4
+      * matricesIndicesExtra: Vector4
+      * matricesWeightsExtra: Vector4
+      * world: Matrix
+    * Outputs: 
+      * output: Matrix
+
+  * `MorphTargets`: Provides the final positions, normals, tangents, and uvs based on morph targets in a mesh.
+    * Inputs: 
+      * position: Vector3
+      * normal: Vector3
+      * tangent: Vector3
+      * uv: Vector2
+    * Outputs:
+      * positionOutput: Vector3
+      * normalOutput: Vector3
+      * tangentOutput: Vetor3
+      * uvOutput: Vector2
+
+* Basic Math:
+  * `Add`: Adds the left and right inputs together. Left and right inputs have to be of the same type.
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Distance`: Provides a distance vector based on the left and right input vectors. 
+    * Inputs: 
+      * left: Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Divide`: Divides the left input by the right input
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Length`: Outputs the length of an input vector.
+    * Inputs: 
+      * left: Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Max`: Outputs the largest value between the left and right inputs.
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Min`: Outputs the smallest value between the left and right inputs.
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Multiply`: Multiplies the left and right inputs together. 
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Negate`: Multiplies the input by -1.
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `OneMinus`: Subtracts the input value from 1 (1 - input).
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `RandomNumber`: Provides a random number based on an input seed.
+    * Inputs: 
+      * seed: Vector2
+    * Output: 
+      * output: Float
+
+  * `Reciprocal`: Outputs the reciprocal value(s) vased on the input value(s).
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Scale`: Multiplies the input value(s) by the factor. 
+    * Inputs: 
+      * Input: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * Factor: Float
+    * Output: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Subtract`: Subtracts the right input from the left input.
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+* Color Management:
+  * `Posterize`: Reduces the number of colors in an image to the value of input steps.
+    * Inputs: 
+      * value: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * steps: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `ReplaceColor`: Replaces a reference color in input value with a different replacement color. Distance is the tolerance variation of the color.
+    * Inputs: 
+      * value: Vector2, Vector3, Vector4, Color3, or Color4. 
+      * reference: Vector2, Vector3, Vector4, Color3, or Color4. 
+      * distance: Float
+      * replacement: Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
 * Conversion:
-  * `ColorMergerBlock`: Block used to create a Color3/4 out of individual inputs (one for each component)
-  * `ColorSplitterBlock`: Block used to expand a Color3/4 into 4 outputs (one for each component)
-  * `VectorMergerBlock`: Block used to create a Vector2/3/4 out of individual inputs (one for each component)
-  * `VectorSplitterBlock`: Block used to expand a Vector3/4 into 4 outputs (one for each component)
+  * `ColorMerger`: Combines individual color channels into color Vectors.
+    * Inputs: 
+      * r: Float
+      * g: Float
+      * b: Float
+      * a: Float
+    * Outputs:
+      * rgba: Color4
+      * rgb: Color3
 
-* Maths:
-  * `AddBlock`: Block used to add 2 vectors
-  * `ClampBlock`: Block to clamp a float between a minimum and a maximum
-  * `CrossBlock`: Block used to do a cross product between 2 vectors
-  * `DivideBlock`: Block used to divide 2 vectors
-  * `DotBlock`: Block used to do a dot product between 2 vectors
-  * `LerpBlock`: Block used to do a mix between 2 values (using a gradient)  
-  * `MaxBlock`: Block used to get the maximum of 2 vectors
-  * `MinBlock`: Block used to get the minimum of 2 vectors
-  * `MultiplyBlock`: Block used to multiply 2 vectors
-  * `NormalizeBlock`: Block used to normalize a vector
-  * `OppositeBlock`: Block used to get the opposite of a value
-  * `RemapBlock`: Block used to remap a float from a range to a new one
-  * `ScaleBlock`: Block used to scale a vector by a float
-  * `StepBlock`: Block used to step a value
-  * `SubtractBlock`: Block used to subtract 2 vectors
-  * `TransformBlock`: Block used to transform a vector (2, 3 or 4) with a matrix
-  * `TrigonometryBlock`: Block used to apply trigonometry operation to floats
+  * `ColorSplitter`: Separates color Vectors into individual color channels.
+    * Inputs:
+      * rgba: Color4
+      * rgb: Color3
+    * Outputs: 
+      * rgb: Color3
+      * r: Float
+      * g: Float
+      * b: Float
+      * a: Float
 
-* Advanced:
-  * `AlphaTestBlock`: Block used to add an alpha test in the fragment shader
-  * `BonesBlock`: Block used to add support for vertex skinning (bones)
-  * `FogBlock`: Block used to add support for scene fog
-  * `FresnelBlock`: Block used to add a fresnel effect
-  * `ImageProcessingBlock`: Block used to add image processing support to fragment shader
-  * `InstancesBlock`: Block used to add support for instances
-  * `LightBlock`: Block used to add light in the fragment shader
-  * `LightInformationBlock`: Block used to get data information from a light
-  * `MorphTargetsBlock`: Block used to add morph targets support to vertex shader
-  * `ReflectionTextureBlock`: Block used to read a reflection texture from a sampler
-  * `TextureBlock`: Block used to read a texture from a sampler
-  * `ViewDirectionBlock`: Block used to get the view direction
+  * `VectorMerger`: Combines up to 4 input values into Vectors.
+    * Inputs: 
+      * x: Float
+      * y: Float
+      * z: Float
+      * w: Float
+    * Outputs:
+      * xyzw: Vector4
+      * xyz: Vector3
+      * xy: Vector2
+
+  * `VectorSplitter`: Separates Vectors into individual elements.
+    * Inputs:
+      * xyzw: Vector4
+      * xyz: Vector3
+      * xy: Vector2
+    * Outputs: 
+      * xyz: Vector3
+      * xy: Vector2
+      * x: Float
+      * y: Float
+      * z: Float
+      * w: Float
 
 * Inputs:
-  * `InputBlock`: Block used to define an input value (uniform or attribute)
+  * `Color3`: A Vector3 representing combined color values (red, green, and blue).
+    * Output: 
+      * output: Color3
+
+  * `Color4`:A Vector4 representing combined color and alpha values (red, green, blue, and alpha).
+    * Output: 
+      * output: Color4
+
+  * `DeltaTime`: A Float representing the time value that's passed since the last frame has rendered.
+    * Output: 
+      * output: Float
+
+  * `Float`: A Float for a single floating point value.
+    * Output: 
+      * output: Float
+
+  * `Texture`: A container node for a texture (image or url)
+    * Inputs: 
+      * uv: Vector2 (mesh.uv automatically attached). 
+    * Outputs:
+      * rgba: Vector4
+      * rgb: Vector3
+      * r: Float
+      * g: Float
+      * b: Float
+      * a: Float
+
+  * `Time`: A Float of a constantly increasing floating point value, starting when the scene is loaded.
+    * Output: 
+      * output: Float
+
+  * `Vector2`: A Vector2 represneting two values.
+    * Output: 
+      * output: Vector2
+
+  * `Vector3`: A Vector3 represneting three values.
+    * Output: 
+      * output: Vector3
+
+  * `Vector4`: A Vector4 represneting four values.
+    * Output: 
+      * output: Vector4
+
+* Interpolation: 
+  * `Lerp`: Provides linear interpolated value(s) between the left and right inputs, based on the gradient input.
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4.
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4
+      * gradient: Float 
+    * Output: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on left and right input types.
+
+  * `SmoothStep`: Outputs a value based on a the input value's position on a curve between the two edge values.
+    * Inputs: 
+      * value: Float
+      * edge0: Float 
+      * edge1: Float 
+    * Output: 
+      * output: Float
+
+* Matrices:
+  * `Matrix`: A container for a vector transformation.
+    * Output: 
+      * output: Matrix
+
+  * `ProjectionMatrix`: A matrix moving from 3D space to screen space.
+    * Output: 
+      * output: Matrix
+
+  * `ViewMatrix`: A matrix moving from 3D space to camera space.
+    * Output: 
+      * output: Matrix
+
+  * `ViewProjectionMatrix`: A matrix moving from 3D space to camera space, and ending in screen space.
+    * Output: 
+      * output: Matrix
+
+  * `WorldMatrix`: A matrix moving from local space to world space
+    * Output: 
+      * output: Matrix
+
+  * `WorldViewMatrix`: A matrix moving from local space to world space and ending in camera space.
+    * Output: 
+      * output: Matrix
+
+  * `WorldViewProjectionMatrix`: A matrix moving from local space to world space, then to camera space, and ending in screen space.
+    * Output: 
+      * output: Matrix
+
+* Mesh Attributes:
+  * `Color`: A Color4 representing the color of each vertex of the attached mesh.
+    * Output: 
+      * output: Color4
+
+  * `Instances`: Provides the world matrix for each instance. This is used to apply materials to instances as well as original meshes.
+    * Inputs: 
+      * world0: Vector4
+      * world1: Vector4
+      * world2: Vector4
+      * world3: Vector4 
+      * world: worldMatrix 
+    * Output: 
+      * output: Matrix
+
+  * `MatricesIndices`: A Vector4 representing the vertex to bone skinning assignments.
+    * Output: 
+      * output: Vector4
+
+  * `MatricesWeights`: A Vector4 representing the vertex to bone skinning weights.
+    * Output: 
+      * output: Vector4
+
+  * `Normal`: A Vector3 representing the normal of each vertex of the attached mesh.
+    * Output: 
+      * output: Vector3
+
+  * `Position`: A Vector3 representing the position of each vertex of the attached mesh.
+    * Output: 
+      * output: Vector3
+
+  * `Tangent`: A Vector3 representing the tangent of each vertex of the attached mesh.
+    * Output: 
+      * output: Vector3
+
+  * `UV`: A Vector2 representing the UV coordinates of each vertex of the attached mesh.
+    * Output: 
+      * output: Vector2
 
 * Outputs:
-  * `VertexOutputBlock`: Block used to output the vertex position. You must have one per Node Material
-  * `FragmentOutputBlock`: Block used to output the fragment color. You must have one per Node Material
+  * `Discard`: A final output node that will not output a pixel below the cutoff value.
+    * Inputs: 
+      * value: Float
+      * cutoff: Float
+
+  * `FragmentOutput`: The final node for outputing the color of each pixel. This node must be included in every node material.
+    * Inputs: 
+      * rgba: Vector4
+      * rgb: Vector3
+      * a: Float
+
+  * `VertexOutput`: The final node for outputing the position of each vertex. This node must be included in every node material.
+    * Inputs: 
+      * vector: Vector4 
+
+* Range:
+  * `Clamp`: Ignores all values of the input outside of the Minimum and Maximum property values.
+    * Input: 
+      * input: Float
+    * Output:
+      * input: Float
+
+  * `Normalize`: Remaps the length of a vector or color to 1.
+    * Inputs: 
+      * input: Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Remap`: Remaps all input values between sourceMin and sourceMax, to be between targetMin and targetMax. source and target inputs can be static or variable inputs.
+    * Inputs: 
+      * input: Float, Vector2, Vector3, Vector4, Color3, Color4.
+      * sourceMin: Float
+      * sourceMax: Float
+      * targetMin: Float
+      * targetMax: Float 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, Color4. Output varies based on input type.
+
+* Round:
+  * `Ceiling`: Outputs the highest value of the input.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Floor`: Outputs the lowest value of the input.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Round`: Outputs the nearest whole number based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Step`: Outputs 1 for any input value above the edge input, outputs 0 for any input value below the edge input.
+    * Input: 
+      * value: Float
+      * edge: Float
+    * Output: 
+      * output: Float
+
+* Scene Attributes:
+  * `CameraPosition`: A Vector3 position of the active scene camera.
+    * Output: 
+      * output: Vector3
+
+  * `Fog`: Applies fog to a scene. Outputs fog with increasing value based on distance from the camera.
+    * Input: 
+      * worldPosition: Vector4
+      * view: viewMatrix (Matrix)
+      * input: Vector3
+      * fogColor: Color3
+    * Output: 
+      * output: Color3
+
+  * `FogColor`: A Color3 for the fog color.
+    * Output: 
+      * output: Color3
+
+  * `ImageProcessing`: Provides access to all of the Babylon image processing properties https://doc.babylonjs.com/how_to/how_to_use_postprocesses
+    * Input:
+      * color: Color4
+    * Output:
+      * output: Color4
+
+  * `Light`: Returns the individual color values (red, green, and blue) of the diffuse or specular colors of the combined OR individual lighting within the scene.
+    * Input: 
+      * worldPosition: Vector4
+      * worldNormal: Vector4
+      * cameraPosition: Vector3
+      * glossiness: Float
+      * glossPower: Float
+      * diffuseColor: Color3
+      * specularColor: Color3
+    * Output:
+      * diffuseOutput: Color3
+      * specularOutput: Color3
+
+  * `LightInformation`:  Provides the direction, color and intensity of a selected light based on its world position.
+    * Input: 
+      * worldPosition: Vector4
+    * Output:
+      * direction: Vector3
+      * color: Color3
+      * intensity: Float
+
+  * `PerturbNormal`: Creates a new normal direction based on a normal map, the world position, and world normal.
+    * Input: 
+      * worldPosition: Vector4
+      * worldNormal: Vector4
+      * uv: Vector2
+      * normalMap: Color3
+      * strength: Float
+    * Output: 
+      * output: Vector4
+
+  * `ReflectionTexture`: Creates a reflection of the input texture.
+    * Input: 
+      * position: Vector3
+      * worldPosition: Vector4
+      * worldNormal: Vector4
+      * world: Matrix
+      * cameraPosition: Vector3
+      * view: Matrix
+    * Output: 
+      * rgb: Color3
+      * r: Float
+      * g: Float
+      * b: Float
+
+  * `ViewDirection`: Outputs the direction vector of where the camera is aimed.
+    * Input: 
+      * worldPosition: Vector4
+      * cameraPosition: Vector3
+    * Output: 
+      * output: Vector3
+
+* Trigonometry:
+  * `Abs`: Outputs the absolute value of the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `ArcCos`: Outputs the inverse of the cosine value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `ArcSin`: Outputs the inverse of the sine value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `ArcTan2`: Outputs the inverse of the tangent value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+    * `ArcTan`: Outputs the inverse of the tangent value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Cos`: Outputs the cosine value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `DegreesToRadians`: Converts the input value (degrees) to radians.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Exp2`: Outputs the input value multiplied by itself 1 time. (Exponent of 2)
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Exp`: Outputs the input value multiplied by itself 9 time. (Exponent of 10)
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Fract`: everything after the period.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Log`: The logarithm value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Pow`: Outputs the input value multiplied by itself the number of times equal to the power input (Exponent of power)
+    * Input: 
+        * value: Float
+        * power: Float
+    * Output: 
+      * output: Float
+
+  * `RadiansToDegrees`: Converts the input value (radians) to degrees.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `SawToothWave`: Outputs a sawtooth pattern value between -1 and 1 based on the input value. 
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Sign`: returns 1 if 10 or -1 if -10
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Sin`: Outputs the the sine value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Sqrt`: Outputs the the square root of the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `SquareWave`: Outputs a stepped pattern value between -1 and 1 based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `Tan`: Outputs the the tangent value based on the input value.
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+  * `TriangleWave`: Outputs a sawtooth pattern value between 0 and 1 based on the input value. 
+    * Input: 
+      * input: Float
+    * Output: 
+      * output: Float
+
+* Vector Math:
+  * `Cross`: Outputs a vector that is perpendicular to two input vectors.
+    * Inputs: 
+      * left: Vector2, Vector3, Vector4, Color3, or Color4.
+      * right: Vector2, Vector3, Vector4, Color3, or Color4.
+    * Output: 
+      * output: Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on left and right input types.
+
+  * `Dot`: Outputs the cos of the angle between two vectors.
+    * Inputs: 
+      * left: Vector2, Vector3, Vector4, Color3, or Color4.
+      * right: Vector2, Vector3, Vector4, Color3, or Color4.
+    * Output: 
+      * output: Float
+
+  * `Fresnel`: Outputs the grazing angle of the surface of the mesh, relative to a camera. Angle can be influenced by the bias and power inputs.
+    * Input: 
+      * worldNormal: Vector4
+      * viewDirection: Vector3
+      * bias: Float
+      * power: Float
+    * Output: 
+      * fresnel: Float
+
+  * `Transform`: Transforms a input vector based on an input matrix.
+    * Inputs: 
+      * vector: Vector2, Vector3, Vector4, Color3, or Color4
+      * transform: Matrix
+    * Output: 
+      * output: Vector4
 
 ### Building the Node Material
 
