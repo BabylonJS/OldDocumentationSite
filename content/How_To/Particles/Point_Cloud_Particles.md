@@ -360,10 +360,10 @@ Available custom functions of PCS are:
 | Function | Usage |
 | ---- | ---- |
 | initParticles() | sets the initial particle properties. |
-| updateParticle(particle) | sets the particle properties. This function is called per particle by `SPS.setParticles()` |
-| recycleParticle(particle) | re-sets the particle properties. This function is called conditionally per particle by `SPS.updateParticles()` |
-| beforeUpdateParticles() | lets you do things within the call to `SPS.setParticles()` just before iterating over all the particles. |
-| afterUpdateParticles() | lets you do things within the call to `SPS.setParticles()`  just after the iteration over all the particles is done. |
+| updateParticle(particle) | sets the particle properties. This function is called per particle by `PCS.setParticles()` |
+| recycleParticle(particle) | re-sets the particle properties. This function is called conditionally per particle by `PCS.updateParticles()` |
+| beforeUpdateParticles() | lets you do things within the call to `PCS.setParticles()` just before iterating over all the particles. |
+| afterUpdateParticles() | lets you do things within the call to `PCS.setParticles()`  just after the iteration over all the particles is done. |
 
 The pseudo-code for `setParticles` is
 
@@ -384,7 +384,7 @@ Available properties of PCS are
 | Property | Usage | Default |
 | ---- | ---- |
 | particles | An array containing all the particles. You iterate over this array in `initParticles()` function for instance. |  |
-| nbParticles | The number of particles in the SPS. | |
+| nbParticles | The number of particles in the PCS. | |
 | counter | A counter for your own usage | 0 |
 | computeParticleRotation | Allows ( default) or prevents `setParticle` computing particle.rotation |true |
 | computeParticleTexture | Allows ( default) or prevents `setParticle` computing particle.uvs | true | 
@@ -406,7 +406,7 @@ Parameter|Definition|Default
 ---------|----------|-------------
 start|_(number)_ the index from where to start to iterate in the `particles` array|0
 stop|_(number)_ the index (included) where to stop to iterate in the<br>`particles` array|nbParticles - 1
-update|_(boolean)_ to force the SPS mesh vertex buffer to be updated|true
+update|_(boolean)_ to force the PCS mesh vertex buffer to be updated|true
 
 If you pass a `end` value greater than `nbParticles` - 1, the iteration will stop at `nbParticles` - 1 to prevent you from trying to access to undefined elements.
 
@@ -450,7 +450,7 @@ A PCS also has a `vars` property, which is an object that you can use to store a
 ```javascript
 pcs.vars.tempVector = new BABYLON.Vector3(0, 0, 0);
 // ...
-pcs.dispose();  // cleans explicitly all your SPS.vars !
+pcs.dispose();  // cleans explicitly all your PCS.vars !
 ```  
 
 ## Further Reading
