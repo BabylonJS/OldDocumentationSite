@@ -98,7 +98,7 @@ Let's say you have exported [WaterBottle.glb](https://github.com/KhronosGroup/gl
 ```
 
 - double-click on the *index.html* file
-  - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver ([local](resources/running_a_local_webserver_for_babylonjs) or not), or try into another browser (e.g.: Firefox, Edge)
+  - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver ([local](/resources/running_a_local_webserver_for_babylonjs) or not), or try into another browser (e.g.: Firefox, Edge)
 
 - ... profit!
 
