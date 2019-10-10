@@ -90,8 +90,6 @@ animationGroup1.onAnimationGroupLoopObservable.add(function(group){
 })
 ```
 
-* [Playground Example - On Group Animation End](https://www.babylonjs-playground.com/#CBGEQX#4)
-
 # Further Reading
 
 ## Basic
