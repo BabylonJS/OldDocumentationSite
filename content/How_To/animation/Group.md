@@ -72,6 +72,24 @@ animationGroup1.onAnimationEndObservable.add(function(){
 
 * [Playground Example - On Group Animation End](https://www.babylonjs-playground.com/#CBGEQX#4)
 
+## On Group Animation Loop
+
+There is an **onAnimationLoop** observable that can be used to trigger a function when the animation loops.
+
+```javascript
+animationGroup1.onAnimationLoopObservable.add(function(targetAnimation){
+    console.log(targetAnimation.animation.name);
+})
+```
+
+There is also an **onAnimationGroupLoop** observable that can be used to trigger a function when all the animation of the group ahve looped:
+
+```javascript
+animationGroup1.onAnimationGroupLoopObservable.add(function(group){
+    console.log("Group looped!");
+})
+```
+
 # Further Reading
 
 ## Basic
