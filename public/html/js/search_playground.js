@@ -257,13 +257,9 @@
 
     var getQueryVariable = function(element) {
         var query = decodeURIComponent(window.location.search.substring(1));
-        var lt = /</g,
-            gt = />/g,
-            ap = /'/g,
-            ic = /"/g;
-        query = query.replace(lt, "&lt;").replace(gt, "&gt;").replace(ap, "&#39;").replace(ic, "&#34;");
         var vars = query.split("&");
         for (var i = 0; i < vars.length; i++) {
+	    vars[i] = vars[i].replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&#34;");
             var pair = vars[i].split("=");
             if (pair[0] == element) { return pair[1]; }
         }

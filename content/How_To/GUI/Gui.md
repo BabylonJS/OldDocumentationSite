@@ -909,5 +909,6 @@ In this case the `guiScene` will host your GUI and the `mainScene` will host you
 ## Further reading
 
 [How To Use the Selection Panel Helper](/how_to/selector)  
-[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)  
+[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)
+[How To Use Babylon GUI Xml Loader](/how_to/XmlLoader)    
 [How To Use Babylon GUI3D](/how_to/gui3d)

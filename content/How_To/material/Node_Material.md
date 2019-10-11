@@ -45,6 +45,7 @@ System values can be:
 * BABYLON.NodeMaterialSystemValues.WorldViewProjection
 * BABYLON.NodeMaterialSystemValues.CameraPosition
 * BABYLON.NodeMaterialSystemValues.FogColor
+* BABYLON.NodeMaterialSystemValues.DeltaTime
 
 Input blocks can also take their value from a mesh attribute:
 
@@ -61,6 +62,21 @@ Attributes can be:
 * uv2
 * matricesIndices
 * matricesWeights
+* matricesIndicesExtra
+* matricesWeightsExtra
+
+When you manually set the value of an InputNode, you can flag it as `node.isConstant` to indicate that the value will not be dynamically updated and thus the node material will be able to optimize the block by not generating an uniform for this value.
+
+The following functions will let you get information about your InputNode:
+
+* `isSystemValue`
+* `isAttribute`
+* `isUniform`
+* `isConstant`
+
+When an InputNode is an uniform (eg. a manual value that will be sent to the shader) and not a constant, you can set `inputNode.visibleInInspector` to true so users will be able to visually control the value of the node using Babylon.js Inspector.
+
+You can even csutomize the look and feel of the Inspector UI by defining `inputNode.min` and `inputNode.max` to get a slider instead of an input text box.
 
 ### Connecting blocks
 
@@ -98,6 +114,36 @@ When connected, two connection points can be disconnected with:
 
 ```
 worldInput.output.disconnectFrom(boneBlock.world);
+```
+
+### Gettings blocks
+Once a graph is built inside a NodeMaterial, you can use the following API to get a specific node by name:
+
+```
+let block = nodeMaterial.getBlockByName("MyBlock");
+```
+
+You can also get a block using a predicate:
+
+```
+let block = nodeMaterial.getBlockByPredicate((b) => b.getClassName() === "AddBlock" && b.name === "foo");
+```
+
+Or you can also use this API to get an InputNode and use it to setup its value if the node is set manual value:
+
+```
+let block = nodeMaterial.getInputBlockByPredicate((b) => b.name === "foo");
+block.value = 10;
+```
+
+You can access the list of InputBlocks with:
+```
+nodeMaterial.getInputBlocks();
+```
+
+Or you can get all blocks registered with a node material with:
+```
+nodeMaterial.attachedBlocks
 ```
 
 ### List of available blocks
@@ -772,6 +818,8 @@ nodeMaterial.setToDefault();
 
 The Node Material Editor can be used to visually edit / build your Node Material.
 
+![NME](/img/how_to/Materials/nme.jpg)
+
 To invoke the editor you can call `nodematerial.edit()` but this code must be called inside a user interaction (like a click event). You can also call it through the Inspector:
 
 ```
@@ -805,4 +853,6 @@ Example: https://nme.babylonjs.com/#2F999G
 
 Here is a list of videos related to Node material:
 - Vertex shader: https://www.youtube.com/watch?v=B5BO3nFc55s
-- Lights and textures: https://www.youtube.com/watch?v=fLXYhGhCej
+- Lights and textures: https://www.youtube.com/watch?v=fLXYhGhCejc
+
+You can also visit the dedicated forum topic: https://forum.babylonjs.com/t/node-materials-examples/6048
