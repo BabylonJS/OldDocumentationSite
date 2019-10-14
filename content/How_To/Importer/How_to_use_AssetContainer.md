@@ -43,4 +43,4 @@ The return entries object will contain:
 - skeletons: A list of all the skeletons created by the duplication process
 - animationGroups: A list of all the animation groups created by the duplication process
 
-Demo: https://www.babylonjs-playground.com/#S7E00P
+[Demo](https://www.babylonjs-playground.com/#S7E00P)
