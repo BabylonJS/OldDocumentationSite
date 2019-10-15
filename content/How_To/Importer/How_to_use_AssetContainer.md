@@ -44,3 +44,11 @@ The return entries object will contain:
 - animationGroups: A list of all the animation groups created by the duplication process
 
 [Demo](https://www.babylonjs-playground.com/#S7E00P)
+
+You can also set two parameters to the call to `instantiateModelsToScene`:
+- nameFunction: This will let you decide what will be the name of the cloned entities (instead of "Clone of...")
+- cloneMaterials: By default materials are not cloned but shared. With this parameter you can force the system to also clone the materials
+
+```
+var entries = container.instantiateModelsToScene(name => "p" + name, true);
+```
