@@ -188,7 +188,7 @@ FreeCameraKeyboardRotateInput.prototype.attachControl = function (element, noPre
 
         element.addEventListener("keydown", this._onKeyDown, false);
         element.addEventListener("keyup", this._onKeyUp, false);
-        BABYLON.Tools.RegisterTopRootEvents([
+        BABYLON.Tools.RegisterTopRootEvents(canvas, [
             { name: "blur", handler: this._onLostFocus }
         ]);
     }
@@ -199,7 +199,7 @@ FreeCameraKeyboardRotateInput.prototype.detachControl = function (element) {
     if (this._onKeyDown) {
         element.removeEventListener("keydown", this._onKeyDown);
         element.removeEventListener("keyup", this._onKeyUp);
-        BABYLON.Tools.UnregisterTopRootEvents([
+        BABYLON.Tools.UnregisterTopRootEvents(canvas, [
             { name: "blur", handler: this._onLostFocus }
         ]);
         this._keys = [];
@@ -235,7 +235,7 @@ Finally add this new input method to the camera inputs
     camera.inputs.add(new FreeCameraKeyboardRotateInput());
 ```
 
-* [Playground Example Rotate Free Camera](https://www.babylonjs-playground.com/#1WFOOA#2)
+* [Playground Example Rotate Free Camera](https://www.babylonjs-playground.com/#1WFOOA#67)
 
 
 ### With Typescript
