@@ -150,6 +150,11 @@
                     "filename": "Multi_Scenes"
                 },
                 {
+                    "title": "Use Multiple Canvases",
+                    "level": 1,
+                    "filename": "Multi_Canvases"
+                },
+                {
                     "title": "Create a custom loading screen",
                     "level": 2,
                     "filename": "Creating_a_custom_loading_screen"
