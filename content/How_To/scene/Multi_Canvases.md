@@ -1,5 +1,3 @@
-# How to Use Multiple Canvases with one engine
-
 Starting with Babylon.js v4.1, it is now possible to use one engine on several canvases.
 
 To do so, you need to create "views". A view is defined by a canvas (the target) and a camera (the definition of the view).
