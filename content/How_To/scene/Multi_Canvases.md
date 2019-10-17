@@ -25,3 +25,6 @@ engine.unRegisterView(document.getElementById("renderCanvas1"));
 The system will render the scene on the main canvas using the defined camera as the active camera.
 
 A view cannot be rendered if the underlying scene is using multiple active cameras (eg. scene.activeCameras.length > 0)
+
+## Demo
+You can see a live demo here: https://www.babylonjs.com/Demos/Views
