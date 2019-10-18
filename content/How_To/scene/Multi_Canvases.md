@@ -36,12 +36,10 @@ A view cannot be rendered if it has a defined camera and the underlying scene is
 
 You can use views to render multiple cameras from the same scene or from different scenes. As you control the render loop, it is up to you to test the `engine.activeView` to determine which view is currently rendered.
 
-By default `engine.activeView` will be null or undefined for the main frame (the one associated with the master canvas).
-
-So your render loop can look like:
+So your render loop could look like:
 ```
 let myRenderLoop = () => {
-   if (!engine.activeView) {
+   if (engine.activeView.camera === undefined) {
        mainScene.render();
    } else if (engine.activeView.canvas === view1) {
        scene1.render();
