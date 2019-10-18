@@ -1,6 +1,6 @@
 Starting with Babylon.js v4.1, it is now possible to use one engine on several canvases.
 
-To do so, you need to create "views". A view is defined by a canvas (the target) and a camera (the definition of the view).
+To do so, you need to create "views". A view is defined by a canvas (the target) and an optional camera (the definition of the view).
 
 
 ## Creating a view
@@ -11,6 +11,13 @@ To create a view, you need to register the combination of a canvas and a camera 
 let view = engine.registerView(document.getElementById("renderCanvas1"), camera1);
 ```
 
+Please note that you can also call the same code with no camera:
+```
+let view = engine.registerView(document.getElementById("renderCanvas1"));
+```
+
+If the camera is undefined the render loop will be executed to render each canvas without changing anything on the active scenes.
+
 ## Removing a view
 
 To remove a previously activated view, you can run the following code:
@@ -18,15 +25,15 @@ To remove a previously activated view, you can run the following code:
 engine.unRegisterView(document.getElementById("renderCanvas1"));
 ```
 
-## Internals
+## Cameras
 
-The system will render the scene on the main canvas using the defined camera as the active camera.
+If a view is defined with a camera, the system will use it as the active camera to render the scene.
 
-A view cannot be rendered if the underlying scene is using multiple active cameras (eg. scene.activeCameras.length > 0).
+A view cannot be rendered if it has a defined camera and the underlying scene is using multiple active cameras(eg. scene.activeCameras.length > 0).
 
 ## Multi scenes
 
-You can use views to render different cameras from different scenes. As you control the render loop it is up to you to test the `engine.activeView` to determine which view is currently rendered.
+You can use views to render multiple cameras from the same scene or from different scenes. As you control the render loop, it is up to you to test the `engine.activeView` to determine which view is currently rendered.
 
 By default `engine.activeView` will be null or undefined for the main frame (the one associated with the master canvas).
 
