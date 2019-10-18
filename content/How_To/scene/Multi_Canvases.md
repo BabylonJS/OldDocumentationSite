@@ -16,11 +16,11 @@ Please note that you can also call the same code with no camera:
 let view = engine.registerView(document.getElementById("renderCanvas1"));
 ```
 
-If the camera is undefined the render loop will be executed to render each canvas without changing anything on the active scenes.
+If the camera is undefined the render loop will be executed to the view without changing anything on the active scenes.
 
 ## Removing a view
 
-To remove a previously activated view, you can run the following code:
+To remove a previously registered view, you can run the following code:
 ```
 engine.unRegisterView(document.getElementById("renderCanvas1"));
 ```
