@@ -2,6 +2,7 @@ Starting with Babylon.js v4.1, it is now possible to use one engine on several c
 
 To do so, you need to create "views". A view is defined by a canvas (the target) and an optional camera (the definition of the view).
 
+**Please note that when a view is registered, the canvas used to initialized the Engine becomes a "working" canvas and is no more supposed to be displayed directly.**
 
 ## Creating a view
 
@@ -46,6 +47,17 @@ let myRenderLoop = () => {
        scene1.render();
    }
 }
+```
+
+## Events
+
+By default, scenes will capture events from the main rendering canvas (the one used to create the Engine). You can change that behavior by setting the `engine.inputElement` to the DOM element you want to use for events.
+
+This must be done before creating a scene or if you do it after you have to run the following code:
+```
+scene.detachControl();
+engine.inputElement = myNewElement;
+scene.attachControl();
 ```
 
 ## Demo
