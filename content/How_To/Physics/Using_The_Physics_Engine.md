@@ -433,6 +433,10 @@ This can be done in real time, even after setting the gravity:
 
 Playground demo (click to toggle positive/negative gravity) -  https://www.babylonjs-playground.com/#A2WGF
 
+#### See it all working together
+
+Marble Tower Playground -  https://playground.babylonjs.com/#3I55DK#0
+
 # Further Reading
 
 ## Basic - L1

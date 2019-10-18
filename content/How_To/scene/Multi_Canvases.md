@@ -60,3 +60,5 @@ scene.attachControl();
 
 ## Demo
 You can see a live demo here: https://www.babylonjs.com/Demos/Views
+
+The initialization code for this page can be found here: https://github.com/BabylonJS/Website/blob/master/build/Demos/Views/index.html
