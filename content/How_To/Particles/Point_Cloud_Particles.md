@@ -130,18 +130,49 @@ pcs.addVolumePoints(box, 10000, BABYLON.PointColor.Color);
 pcs.addSurfacePoints(box, 100000, BABYLON.PointColor.UV);
 ```
 
-**Note:** Using `BABYLON.PointColor.UV` can be limiting. Several models can be added to the PCS. These models may all have different textures. However only one emissive texture can be applied to a PCS mesh. In this case a separate PCS mesh is needed for each model. This is not a restriction when using `BABYLON.PointColor.Color`.
+**Note:**  Using `BABYLON.PointColor.UV` can be limiting. Several models can be added to the PCS. These models may all have different textures. However only one emissive texture can be applied to a PCS mesh. In this case a separate PCS mesh is needed for each model. This is not a restriction when using `BABYLON.PointColor.Color`.
+
+**Imported Models and Multiple Textures**
+In some cases (for example PBRMaterial) more than one texture can be applied to a model. In which case adding surface or volume points with `BABYLON.PointColor.Color` will, by default, use the first in the model's texture array. Though often it is, the first texture may not be the color map, for example it may be a normal map. To specify which texture to use its position in the texture array can be added as a second parameter. 
+```javascript
+pcs.addSurfacePoints(model, 10000, BABYLON.PointColor.Color, 1);
+
+pcs.addVolumePoints(model, 10000, BABYLON.PointColor.Color, 3);
+```
+Of course when you import a model you may not know how many child meshes the model is made up off nor the order of textures for each mesh. Using the [inspector](/how_to/debug_layer) you can check the loaded textures and see if their names give you a clue. If not then use trial and error from 0 to the number of textures. Alternatively you can check out meshes and textures once loaded along the lines of
+
+```javascript
+BABYLON.SceneLoader.ImportMesh("", "location", "file", scene, function (meshes) {
+  var n = meshes.length;
+  var p;
+  var t;
+  for (var i = 0; i < n; i++) {
+    if (meshes[i].material !== null) {
+      console.log("Mesh", i)
+      t = meshes[i].material.getActiveTextures();
+      p = t.length;
+      for (var j = 0; j < p; j++) {
+        console.log("Texture", j, "Name", t[j].name)
+      }
+    }
+  }
+});
+```
+
+**Examples**
 
 * [Playground Example - Surface Random](https://www.babylonjs-playground.com/#UI95UC#2)
 * [Playground Example - Surface Stated](https://www.babylonjs-playground.com/#UI95UC#3)
 * [Playground Example - Surface Color from Mesh Color](https://www.babylonjs-playground.com/#UI95UC#4)
 * [Playground Example - Surface Color from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#5)
 * [Playground Example - Surface UV from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#6)
+* [Playground Example - Surface Color from Imported Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#28)
 * [Playground Example - Volume Random](https://www.babylonjs-playground.com/#UI95UC#7)
 * [Playground Example - Volume Stated](https://www.babylonjs-playground.com/#UI95UC#8)
 * [Playground Example - Volume Color from Mesh Color](https://www.babylonjs-playground.com/#UI95UC#9)
 * [Playground Example - Volume Color from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#10)
 * [Playground Example - Volume UV from Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#11)
+* [Playground Example - Volume Color from Imported Mesh Texture](https://www.babylonjs-playground.com/#UI95UC#29)
 
 ### Building the Mesh
 
@@ -254,7 +285,7 @@ This playground loads meshes from a file, converts to particles and animates
 
 While setting and changing particle colors is straightforward doing this for UVs is a little more complex. Using `BABYLON.PointColor.UV` as a parameter within `addSurfacepoints` or `addVolumePoints` will set the UVs automatically for you based on the passed mesh.
 
-You can also set the uv value for each particle using the passed function for `addPoints`. To make sense of the texture as the image used the uv values should relate in some way to the positional values for each particle. To then apply the texture with these uvs both the emissiveColor and emmissiveTexture for the PCS mesh material must be set after the mesh is built.
+You can also set the uv value for each particle using the passed function for `addPoints`. To make sense of the texture as the image used the uv values should relate in some way to the positional values for each particle. To then apply the texture with these uvs both the emissiveColor and emissiveTexture for the PCS mesh material must be set after the mesh is built.
 
 **Note:** Only use emissive.
 

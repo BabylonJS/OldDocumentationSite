@@ -13,7 +13,7 @@ The built in file type is `.babylon` and Babylon.js can load these without a plu
 To load a file of a given type, Babylon must first have a reference to the plugin for that file type.
 
 Currently plugins can be found for:
- - [.glTF](/How_To/glTF)
+ - [.glTF also use for binary version .glb](/How_To/glTF)
  - [.obj](/How_To/OBJ)
  - [.stl](/How_To/STL)
 
