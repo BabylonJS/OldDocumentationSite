@@ -622,7 +622,7 @@
                     "doc": "https://doc.babylonjs.com/babylon101/shadows#close-exponential-shadow-map",
                     "icon": "icons/self_shadows2.jpg",
                     "description": "Use shadow close exponential mode to enable self shadowing on animated object",
-                    "PGID": "#4GAHX6#1"
+                    "PGID": "#4GAHX6#14"
                 },
                 {
                     "title": "Shadows 101",

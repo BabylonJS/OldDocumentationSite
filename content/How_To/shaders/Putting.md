@@ -87,7 +87,7 @@ Extracting the appropriate sections of Javascript code allows you to transfer th
 
 This method can easily be used in the Playground.
 
-[Playground Example From CYOS](http://www.babylonjs-playground.com/#1OH09K#1)
+[Playground Example From CYOS](http://www.babylonjs-playground.com/#1OH09K#131)
 
 ## Shader Code in &lt;script&gt; Tags
 

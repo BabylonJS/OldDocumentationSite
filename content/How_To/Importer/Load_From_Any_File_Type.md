@@ -26,7 +26,7 @@ For NPM usage see: https://www.npmjs.com/package/babylonjs-loaders
 
 Once the plugin is referenced, the SceneLoader class can be used which provides a few loading methods.
 
-## SceneLoader.Append 
+## SceneLoader.Append
 
 Loads all babylon assets from the file and appends them to the scene
 ```javascript
@@ -38,22 +38,22 @@ BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
 
 Loads all babylon assets from a string and appends them to the scene
 ```javascript
-BABYLON.SceneLoader.Append("", "data:"+ gltfString, scene, function (scene) {
+BABYLON.SceneLoader.Append("", "data:" + gltfString, scene, function (scene) {
     // do something with the scene
 });
 ```
 [Demo](https://playground.babylonjs.com/#88CB6A#1)
 
-## SceneLoader.Load 
+## SceneLoader.Load
 
 Loads all babylon assets from the file and creates a new scene
 ```javascript
-BABYLON.SceneLoader.Load("/assets/", "batman.obj", engine, function (newScene) { 
-   // ...
+BABYLON.SceneLoader.Load("/assets/", "batman.obj", engine, function (scene) { 
+   // do something with the scene
 });
 ```
 
-## SceneLoader.ImportMesh 
+## SceneLoader.ImportMesh
 
 Loads the meshes from the file and appends them to the scene
 ```javascript
@@ -65,7 +65,7 @@ BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene,
 ```
 [Demo](http://www.babylonjs-playground.com/#JUKXQD)
 
-## SceneLoader.LoadAssetContainer 
+## SceneLoader.LoadAssetContainer
 
 Loads all babylon assets from the file and does not append them to the scene
 ```javascript
@@ -101,7 +101,6 @@ BABYLON.SceneLoader.OnPluginActivatedObservable.add(function (loader) {
         // do something with the loader
         // loader.<option1> = <...>
         // loader.<option2> = <...>
-        // loader.dispose();
     }
 });
 ```
@@ -116,7 +115,6 @@ var loader = BABYLON.SceneLoader.Load("./", "duck.gltf", engine, function (scene
 // do something with the loader
 // loader.<option1> = <...>
 // loader.<option2> = <...>
-// loader.dispose();
 ```
 
 ## Loading multiple assets

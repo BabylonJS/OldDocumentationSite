@@ -153,6 +153,10 @@ var createScene = function() {
 
 [Playground example](https://www.babylonjs-playground.com/#WF3VKZ)
 
+## Going further
+
+- Video tutorial about how to load external assets: https://youtu.be/3D6BtdMnnQI
+
 # Further Reading
  
 [Textures Directly Available to the Playground](/resources/Playground_Textures.html)  

@@ -155,9 +155,11 @@ Notice the filename field, this will be your new page filename (without markdown
 
 ## Sending pull request
 
+A Pull Request (PR) have to be made so as to integrate your modifications on the documentation.
+
 You will first pull your local modifications into your online fork, then ask for merging your fork into the main repo.
 
-In Github Desktop, you will see all your modifications.
+In Github Desktop, you will see all your modifications. Sometimes a file named `babylon.d.ts` will be automatically modified, it's not a problem to PR it.
 
 Add an explicit summary into the required field, and click to *Commit to master*:
 
@@ -180,3 +182,7 @@ Click on *New pull request* button:
 If no conflicts, you will be able to follow the same steps as we seen above in the [easy way](#the-easy-way) section.
 
 Congratulation again, you're now a documentation master!
+
+# Further Reading
+
+- [Improve API Documentation](/how_to/contribute_to_api)

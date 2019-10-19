@@ -8,12 +8,13 @@ Since Blender 2.8, glTF addon comes with Blender enabled by default. You can upd
 
 It should be compatible with Blender 2.79b, but you may also note that the old exporter is  [still available](https://github.com/KhronosGroup/glTF-Blender-Exporter) ([old documentation](https://github.com/KhronosGroup/glTF-Blender-Exporter/blob/master/docs/user.md)).
 
-Axys conventions aren't the same between Blender, BJS & glTF, so you can see below a conversion table to help you about coordinates.
+Axys conventions aren't the same between Blender, BabylonJS (left handed) & glTF (right handed), so you can see below a conversion table to help you about coordinates.
 
-Note that BabylonJS loader will automatically set glTF assets as children of an object:
+To help transforming, note that the BabylonJS loader will automatically set glTF assets as children of an object:
 - named `__root__`
 - rotated by default to 180° on Y axys
 - scaled on Z by -1
+
 
 | Blender asset position | BabylonJS asset absolutePosition |
 | :---: | :---: |
@@ -98,7 +99,7 @@ Let's say you have exported [WaterBottle.glb](https://github.com/KhronosGroup/gl
 ```
 
 - double-click on the *index.html* file
-  - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver ([local](resources/running_a_local_webserver_for_babylonjs) or not), or try into another browser (e.g.: Firefox, Edge)
+  - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver ([local](/resources/running_a_local_webserver_for_babylonjs) or not), or try into another browser (e.g.: Firefox, Edge)
 
 - ... profit!
 
