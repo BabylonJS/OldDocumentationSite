@@ -41,7 +41,7 @@ So your render loop could look like:
 let myRenderLoop = () => {
    if (engine.activeView.camera === undefined) {
        mainScene.render();
-   } else if (engine.activeView.canvas === view1) {
+   } else if (engine.activeView.target === view1) {
        scene1.render();
    }
 }
