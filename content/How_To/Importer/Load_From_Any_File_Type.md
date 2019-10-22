@@ -19,7 +19,7 @@ Currently plugins can be found for:
 
 To quickly add support for all loaders the following script can be added to your page:
 ```
-<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://preview.babylonjs.com/babylon.js"></script>
 <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 ```
 For NPM usage see: https://www.npmjs.com/package/babylonjs-loaders
