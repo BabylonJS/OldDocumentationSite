@@ -88,11 +88,13 @@ Using 3DS Max, you can create instances of a mesh by just creating a clone insta
 ![](https://www.html5gamedevs.com/uploads/monthly_11_2014/post-5292-0-54659600-1415793353.jpg)
 
 # Limitations
-You can use instances with LOD but one limitation will apply in this case: You will have to hide the root objects.
+* You can use instances with LOD but one limitation will apply in this case: You will have to hide the root objects.
 Here is an example where LODs reuse instances:
 https://www.babylonjs-playground.com/#0720FC#10
 
-If you want to create an instance from a cloned mesh, you have to first make sure that you call clonedMesh.makeGeometryUnique().
+* If you want to create an instance from a cloned mesh, you have to first make sure that you call clonedMesh.makeGeometryUnique().
+
+* Instances with a world matrix where determinant is different than root mesh world matrix will be rendered separately (like a regular mesh). This mostly happens when the sign of the scaling vector is different between an instance and the root mesh.
 
 # Demo
 https://www.babylonjs-playground.com/#YB006J#75
