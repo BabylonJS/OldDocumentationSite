@@ -18,6 +18,13 @@ Currently plugins can be found for:
  - [.stl](/How_To/STL)
 
 To quickly add support for all loaders the following script can be added to your page:
+#### Production links
+```
+<script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+```
+
+#### Preview links (useful to test for changes to loaders)
 ```
 <script src="https://preview.babylonjs.com/babylon.js"></script>
 <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
