@@ -74,6 +74,28 @@ The system will take care of updating the internal vertex buffer.
 
 Example: https://www.babylonjs-playground.com/#YPABS1
 
+# Advanced control
+
+You can decide to control the world matrix instanced buffer the same way you control the custom buffers.
+
+To do so, just run the following code:
+```
+mesh.manualUpdateOfWorldMatrixInstancedBuffer = true;
+```
+
+When this mode is activated, you can update the world matrix instanced buffer with this code:
+```
+mesh.worldMatrixInstancedBuffer.set(mat, offset); // mat is the matrix you want to store at the given offset
+offset += 16; (a matrix is composed of 16 floats
+```
+
+It is recommended to freeze the active meshes when controling the world matrix instanced buffer to avoid having a discrepancy between the values you store and the number of active instances:
+```
+scene.freezeActiveMeshes(true);
+```
+
+You can find a complete example here: https://www.babylonjs-playground.com/#HJGC2G
+
 # Support
 Instances are supported for collisions, picking, rendering and shadows. Even if the current hardware does not support hardware accelerated instances, babylon.js will be able to optimize rendering to take instances into account.
 
