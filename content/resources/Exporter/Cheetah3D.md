@@ -32,6 +32,3 @@ Put js script in this folder :
 
 Just load your scene and go to Tools/Scripts/Macro/Babylon file export. Choose a destination, and load your scene inside Babylon.JS!
 
-### License
-
-The Cheetah2Babylon exporter is an open source project. 
