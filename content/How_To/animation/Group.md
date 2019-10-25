@@ -60,10 +60,6 @@ speeding up or slowing down the animation.
 
 * [Playground Example - Group Speed Ratio](https://www.babylonjs-playground.com/#CBGEQX#5)
 
-The **speedRatio** must be negative when reversing the animation.
-
-* [Playground Example - Group Reverse Speed Ratio](https://www.babylonjs-playground.com/#CBGEQX#63)
-
 ## On Group Animation End
 
 There is an **onAnimationEnd** observable that can be used to trigger a function when the animation ends.
