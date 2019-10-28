@@ -29,7 +29,7 @@ each element of the arrays is a _Vector3_ .
 
 Please zoom in and rotate : tangents in red, normals in blue, binormal in green.  
 
-Notice, in the next exxample, how the the triplets slightly rotate when the curve goes more into depth.  
+Notice, in the next example, how the the triplets slightly rotate when the curve goes more into depth.  
 * [Playground Example - tangents, normals and binormals](https://www.babylonjs-playground.com/#2DLXYB#1)
 
 Whilst at any point on the curve there is only one tangent there can be an infinite number of normals and hence binormals. If the default one does not suit you it is possible to [set the normal direction](#set_the_normal)
@@ -37,7 +37,7 @@ Whilst at any point on the curve there is only one tangent there can be an infin
 
 ## Path3D Methods
 
-As well as _getTangents_, _getNormals_ and _getBinormals_ there are three other methods of _Path3D_.
+As well as _getTangents_, _getNormals_ and _getBinormals_ there are some other methods of _Path3D_.
 
 ### Get Curve Points
 
@@ -57,6 +57,16 @@ For the array of points [(1, 2, 1), (4, 8, 3)] the array of distances is [0, 7].
 var distances = path3d.getDistances();
 ```
 
+### Interpolation
+
+You can get info about any virtual point (from 0.0 to 1.0) along the path by functions that interpolate between the path points. Those are the following:
+
+_getPointAt_, _getTangentAt_, _getNormalAt_, _getBinormalAt_, _getDistanceAt_, _getPreviousPointIndexAt_, _getSubPositionAt_
+
+### Copying (part of) the path
+
+The _slice_ method returns a new Path3D that is subpath (slice) of the original path. It takes a _start_ and _end_ position from 0.0 to 1.0, or negative values, which wrap back around from 1.0
+
 ### Update
 
 In order to avoid memory re-allocation (when in the render loop for example) since the given _points_ array is internally copied, you can update an existing _Path3D_ object with its _update()_ method.
@@ -68,6 +78,11 @@ var points2 = [u1, u2, ..., un];          // another array of Vector3
 path3D.update(points2);
 ```
 Tangents, normals and bi-normals are thus recomputed for this new path.
+
+
+### Getting the closest position to a point
+
+The _getClosestPositionTo_ function returns the position, from 0.0 to 1.0, of the closest virtual point along the path to an arbitrary Vector3.
 
 ## Set The Normal
 
@@ -91,12 +106,19 @@ The normal will be the projection of your parameter vector onto the plane orthog
 
 As can been in the diagram below, when the parameter is a vertical vector (black), this is projected onto the plane orthoganal to the tangent vector (red) to form the normal (green).
 
-![Curve Normal](/img/how_to/planenormal.jpg)
+![Curve Normal](/img/how_to/Mesh/planenormal.jpg)
 
 The playground example shows what happens as the vector setting the normal direction is rotated.
 
 * [Playground Animation - Path3D with Rotating Normals](https://www.babylonjs-playground.com/#8ICWNU)
 
+## Normalization and tangent alignment
+
+Apart from the first normal, there are two more parameters:
+
+```raw```, boolean, **false** by default. If true the tangents, normals and binormals aren't normalized. Useful to depict path acceleration or speed.
+
+```alignTangentsWithPath```, boolean, **false** by default. If true the tangents will be aligned with the path.
 
 # Further Reading
 
