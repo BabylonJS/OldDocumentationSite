@@ -598,6 +598,18 @@ You can also apply stretch to animation sheet using `image.stretch` property.
 
 Starting with babylon.js v4.0, you can also set `img.detectPointerOnOpaqueOnly = true` to indicate if pointers should only be validated on pixels with alpha > 0.
 
+#### Batch loading of SVG images from icon sheet
+
+You can now load multiple SVG icons from a single SVG icon sheet without manually defining multiple sourceLeft, sourceTop, sourceWidth, sourceHeight attributes for each image. 
+
+Pre-requisite: a valid single layer SVG document with width, height, viewbox defined and icons grouped via ids. The layer should not have any transform attributes. 
+
+`onSVGAttributesComputedObservable` will trigger when the sourceLeft, sourceTop, sourceWidth, sourceHeight attributes are automatically computed. You can create custom SVG buttons that are built from multiple SVG assets (glow, text, images etc) for even cleaner code.
+
+Here is an example that uses SVG assets for images and buttons:  https://playground.babylonjs.com/#E5CARD
+
+Known issue: The batch loading process requires the entire SVG icon sheet to be loaded as a HTMLObjectElement in the DOM. On certain browsers, you may notice a quick flash of the icon sheet on the canvas as the assets load. To alleviate this, you may employ [a loading screen](https://doc.babylonjs.com/how_to/creating_a_custom_loading_screen).
+
 ### ColorPicker
 
 The color picker control allows users to set colors in your scene.
