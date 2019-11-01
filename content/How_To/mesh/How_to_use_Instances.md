@@ -124,4 +124,4 @@ https://www.babylonjs-playground.com/#YB006J#75
 ## Going further
 
 Check out this video to learn more:
-- Toon Shader Part 1: https://youtu.be/rlODXrsdseA
+- Fun with Instance Buffers: https://youtu.be/rlODXrsdseA
