@@ -120,3 +120,8 @@ https://www.babylonjs-playground.com/#0720FC#10
 
 # Demo
 https://www.babylonjs-playground.com/#YB006J#75
+
+## Going further
+
+Check out this video to learn more:
+- Toon Shader Part 1: https://youtu.be/rlODXrsdseA

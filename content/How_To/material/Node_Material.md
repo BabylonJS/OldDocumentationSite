@@ -854,6 +854,7 @@ Example: https://nme.babylonjs.com/#2F999G
 Here is a list of videos related to Node material:
 - Toon Shader Part 1: https://youtu.be/K0PXzE1hJXg
 - Toon Shader Part 2: https://youtu.be/wtrIbGmuJ2o
+- Toon Shader Part 3: https://youtu.be/YmcZ69xlOjM
 - Step Node Switches: https://youtu.be/FwtFroNMmxw
 - Use Your Node Material in your code: https://youtu.be/F0Lh73I_6Z8
 - Vertex shader: https://www.youtube.com/watch?v=B5BO3nFc55s

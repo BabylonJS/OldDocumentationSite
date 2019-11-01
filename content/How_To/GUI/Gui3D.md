@@ -274,11 +274,9 @@ You can create your own custom control by inheriting from the `Control3D` class 
 ## Further reading
 
 [How To Use Babylon GUI](/how_to/gui)  
-[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)  
-[How To Use Babylon GUI Xml Loader](/how_to/XmlLoader)  
+[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)
+[How To Use Babylon GUI Xml Loader](/how_to/XmlLoader)
 [How To Use the Selection Panel Helper](/how_to/selector)  
-
-
 
 
 
