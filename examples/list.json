@@ -69,7 +69,7 @@
                     "doc": "https://doc.babylonjs.com/babylon101/cameras#device-orientation-camera",
                     "icon": "icons/deviceOrientationCamera.jpg",
                     "description": "Camera that reacts to events such as a mobile device being tilted forward or back",
-                    "PGID": "#12WBC#185"
+                    "PGID": "#SRZRWV#5"
                 }
             ]
         },
@@ -622,7 +622,7 @@
                     "doc": "https://doc.babylonjs.com/babylon101/shadows#close-exponential-shadow-map",
                     "icon": "icons/self_shadows2.jpg",
                     "description": "Use shadow close exponential mode to enable self shadowing on animated object",
-                    "PGID": "#4GAHX6#1"
+                    "PGID": "#4GAHX6#14"
                 },
                 {
                     "title": "Shadows 101",
