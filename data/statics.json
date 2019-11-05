@@ -1806,6 +1806,10 @@
                     "filename": "Line2D"
                 },
                 {
+                    "title": "Extrude Shape with Mitred Corners",
+                    "filename": "Mitred"
+                },
+                {
                     "title": "Making a Frame",
                     "filename": "Frame"
                 },

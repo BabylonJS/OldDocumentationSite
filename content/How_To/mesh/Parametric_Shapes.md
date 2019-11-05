@@ -221,6 +221,7 @@ invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction ti
 * [Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
 * [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
 
+When you need sharp mitred corners there is a utility function available [Extruded Shape with Mitred Corners](/snippets/Mitred)
 
 ## Custom Extruded Shapes
 You must set at least the _shape_ and _path_ options.
