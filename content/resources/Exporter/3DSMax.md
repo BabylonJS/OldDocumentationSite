@@ -84,6 +84,10 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
 * Max2Babylon 2019
    * Requires atleast .NET Framework 4.7
 
+* Max2Babylon 2020
+   * Requires 3ds Max 2020.2 update
+   * Requires atleast .NET Framework 4.7
+
 # Features  #
 
 ## Exported features
