@@ -91,9 +91,9 @@ gizmo.onSnapObservable.add((event)=>{
 })
 ```
 
-A sensibility factor can be customized for AxisScaleGizmo and ScaleGizmo. Default is 1, a higher value means more stretch for the same drag.
+A sensitivity factor can be customized for AxisScaleGizmo and ScaleGizmo. Default is 1, a higher value means more stretch for the same drag.
 ```
-gizmoScale.sensibility = 3;
+gizmoScale.sensitivity = 3;
 ```
 
 These gizmo's internally use a [pointerDragBehavior](/How_To/MeshBehavior), this is exposed and can be used perform tasks before/during/after dragging a gizmo
