@@ -6,6 +6,8 @@ It could be really interesting to do so if your main thread is already heavily u
 
 You can see a page demonstrating this use case here: https://www.babylonjs.com/Demos/Offscreen
 
+Also - here is a video overview: https://youtu.be/zYrZNROQzKQ
+
 ## Setting up the engine
 Starting with Babylon.js v4.1, you can create an engine inside a worker by initializing it with an offscreen canvas.
 
