@@ -26,8 +26,10 @@ A skeleton can be applied to a mesh through the ```mesh.skeleton``` property.
 You should note that babylon.js supports up to **4 bones influences per vertex**.
 
 The mesh must also have additional vertices data:
-* _Matrices weights_: 4 floats to weight bones matrices (```mesh.setVerticesData(matricesWeights, BABYLON.VertexBuffer.MatricesWeightsKind, false)```)
-* _Matrices indices_: 4 floats to index bones matrices (```mesh.setVerticesData(floatIndices, BABYLON.VertexBuffer.MatricesIndicesKind, false)```)
+* _Matrices weights_: 4 floats to weight bones matrices  
+(```mesh.setVerticesData(BABYLON.VertexBuffer.MatricesWeightsKind, matricesWeights, false)```)
+* _Matrices indices_: 4 floats to index bones matrices  
+(```mesh.setVerticesData(BABYLON.VertexBuffer.MatricesIndicesKind, floatIndices, false)```)
 
 The final matrix applied to each vertex is computed as follows:
 ```
