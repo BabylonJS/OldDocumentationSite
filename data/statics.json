@@ -791,6 +791,11 @@
                     "title": "Use motion blur post-process",
                     "level": 3,
                     "filename": "Using_MotionBlurPostProcess"
+                },
+                {
+                    "title": "How to use RenderTargetTexture and run multiple passes",
+                    "level": 3,
+                    "filename": "How_to_use_RenderTargetTexture_and_multiple_passes"
                 }
             ]
         },
