@@ -35,7 +35,9 @@ You can use the rendered image as the texture of an object in your main render. 
     mat.diffuseTexture = renderTarget;
 ```
 
-Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
+In the example we only add half of the spheres to the RTT, showing how you can selectively pick the objects rendered there.
+
+Playground example: [https://www.babylonjs-playground.com/#69DRZ1](https://www.babylonjs-playground.com/#69DRZ1)
 
 ## Making multiple passes and composing them
 
@@ -96,7 +98,10 @@ Playground example: [https://www.babylonjs-playground.com/](https://www.babylonj
 
 TODO
 
-## Optimizations
+Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
+
+
+## Tips
 
 Replacing materials is an expensive operation, as it requires a resync from the CPU. If your meshes use materials, such as ShaderMaterial or a PBRMaterial, this might impact significantly on the FPS rate. There are two basic ways to optimize and avoid this bottleneck.
 
@@ -128,7 +133,35 @@ Playground example: [https://www.babylonjs-playground.com/](https://www.babylonj
 
 ### Using clones
 
-For more general cases, it might be interesting to clone the mesh and apply the RTT shader to the clone. 
+For more general cases, it might be interesting to clone the mesh and apply the RTT shader to the clone. Remember to apply any transformations to both objects to keep them in synchrony.
 
+```
+    // Our base mesh and material
+    let sphereBase = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
+    sphereBase.material = myMaterial;
+
+    // add instances
+    let sphereClone = sphereBase.clone();
+    renderTarget.renderList.push(sphereClone);
+```
 
 Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
+
+### Debugging multiple passes
+
+Your final composer might become a complicated shader, and each pass might be complicated in itself. You certainly will need to debug shaders along the way. One way to easily debug individual passes is to show only that pass to the screen, commenting the rest of the code.
+
+```
+varying vec2 vUV;
+uniform sampler2D somePassTexture;
+
+void main() {
+    // comment other code
+    vec4 debugColor = texture2D(someTexture, vUV);
+    gl_FragColor = debugColor;
+}
+```
+
+Testing passes in separate and then adding them one at a time to the composer will make it easier to debug any issues.
+
+You can also check RT textures with the [Babylon inspector](/how_to/debug_layerEnable).
