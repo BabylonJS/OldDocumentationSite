@@ -92,9 +92,43 @@ scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('pipeline',
 
 Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
 
+## Animations
+
+TODO
+
 ## Optimizations
 
-Replacing materials is an expensive operation, as it requires a resync from the CPU. 
+Replacing materials is an expensive operation, as it requires a resync from the CPU. If your meshes use materials, such as ShaderMaterial or a PBRMaterial, this might impact significantly on the FPS rate. There are two basic ways to optimize and avoid this bottleneck.
 
-If you have a large amount of copies of the same object, one possible solution is to use instances. Note that for mesh instances, the final world matrix is reconstructed from 4 base vectors given through mesh attributes, which is why you a #ifdef INSTANCES check is done in the custom vertex shader.
+### Using instances
 
+If you have a large amount of copies of the same object, one possible solution is to use instances, and only change the material of the base mesh. There's a  Note that for mesh instances, the final world matrix is reconstructed from 4 base vectors given through mesh attributes, which is why you a #ifdef INSTANCES check is done in the custom vertex shader in the example below.
+
+```
+    // Our base mesh and material
+    let sphereBase = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
+    sphereBase.material = myMaterial;
+
+    // add instances
+    sphereBase.setEnabled(false); // disable rendering of the base mesh
+    let spheres = [];
+    for (let i = 0; i < 100; i++) { // create a lot of copies
+        for (let j = 0; j < 10; j++) {
+            let sphere = sphereBase.createInstance(""); // instance of the mesh
+            // reposition etc
+            sphere.position.y = 1;
+            sphere.position.z = i;
+            sphere.position.x = j-5;
+            renderTarget.renderList.push(sphere);
+        }
+    }
+```
+
+Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
+
+### Using clones
+
+For more general cases, it might be interesting to clone the mesh and apply the RTT shader to the clone. 
+
+
+Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
