@@ -73,6 +73,18 @@ From our MeshesLibrary repo, [using PBR_Spheres.glb](https://github.com/BabylonJ
 
 [Playground example](https://www.babylonjs-playground.com/#IX12S2)
 
+## From Gitlab.com
+
+### using GitLab pages
+
+You have to configure your own [Gitlab pages](https://docs.gitlab.com/ee/user/project/pages/).
+
+When done, just use the direct link in the loader:
+
+```javascript
+BABYLON.SceneLoader.ImportMesh("", "https://yourpages.gitlab.io/yourScene/", "myFile.babylon", scene);
+```
+
 ## From dropbox.com
 
 [Dropbox](https://dropbox.com) could be use both for playground debugging and easily sharing assets.
