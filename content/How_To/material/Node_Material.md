@@ -852,6 +852,7 @@ Example: https://nme.babylonjs.com/#2F999G
 ## Going further
 
 Here is a list of videos related to Node material:
+- Add basic lighting: https://youtu.be/BU9BTUkdYDY
 - Toon Shader Part 1: https://youtu.be/K0PXzE1hJXg
 - Toon Shader Part 2: https://youtu.be/wtrIbGmuJ2o
 - Toon Shader Part 3: https://youtu.be/YmcZ69xlOjM
@@ -859,5 +860,6 @@ Here is a list of videos related to Node material:
 - Use Your Node Material in your code: https://youtu.be/F0Lh73I_6Z8
 - Vertex shader: https://www.youtube.com/watch?v=B5BO3nFc55s
 - Lights and textures: https://www.youtube.com/watch?v=fLXYhGhCejc
+
 
 You can also visit the dedicated forum topic: https://forum.babylonjs.com/t/node-materials-examples/6048
