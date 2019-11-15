@@ -454,7 +454,21 @@ By default, the node material provides the following blocks:
 
   * `UV`: A Vector2 representing the UV coordinates of each vertex of the attached mesh.
     * Output: 
-      * output: Vector2
+      * output: Vector2      
+ 
+* Noises:
+  * `SimplexPerlin3D`: A procedural noise will output a value between -1 and 1 depending on an input position. 
+    * Inputs: 
+      * seed: Vector3
+    * Output:
+      * output: Float 
+ 
+   * `WorleyNoise3D`: A procedural noise will output two values between -1 and 1 depending on an input position(F1, F2 respectively).  It has a parameter to change the distance calculation from Euclidean to Manhattan.  Jitter will introduce noise into the sampling equation. 
+     * Inputs: 
+       * seed: Vector3
+       * jitter: Float
+     * Output:
+       * output: Vec2
 
 * Outputs:
   * `Discard`: A final output node that will not output a pixel below the cutoff value.
