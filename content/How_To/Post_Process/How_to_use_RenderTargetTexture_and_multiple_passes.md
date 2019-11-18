@@ -4,7 +4,9 @@ PG_TITLE: How to use RenderTargetTexture and run multiple passes
 
 # How to use RenderTargetTexture and run multiple passes
 
-Sometimes it's interesting to render a scene multiple times and compose the generated passes for the final image. There are multiple uses for that: you can generate a texture in real time, to make a car rearview mirror for example, or you can perform complex effects with multiple renders that are combined together. The PostProcess API doesn't let you render a scene twice, but that's where RenderTargetTexture (RTT) comes into play. Several [games use multiple passes for their graphics](http://www.adriancourreges.com/blog/2016/09/09/doom-2016-graphics-study/).
+Sometimes it's interesting to render a scene multiple times and compose the generated passes for the final image. There are multiple uses for that: you can generate a texture in real time, to make a car rearview mirror for example, or you can perform complex effects with multiple independent renders that are combined together. 
+
+The PostProcess API doesn't let you render a scene twice. That's where RenderTargetTexture (RTT) comes into play. Several [games use multiple passes for their graphics](http://www.adriancourreges.com/blog/2016/09/09/doom-2016-graphics-study/).
 
 ## Creating a RenderTargetTexture
 
@@ -16,7 +18,7 @@ You need to create a RenderTargetTexture and attach it to the scene. It's pretty
         512, // texture size
         scene // the scene
     );
-    scene.customRenderTargets.push(renderTarget);
+    scene.customRenderTargets.push(renderTarget); // add RTT to the scene
 ```
 
 You also need to pick which objects will be rendered to that texture. This enables you to select only a few objects for a particular effect, or use simpler meshes for faster rendering.
@@ -41,7 +43,7 @@ Playground example: [https://www.babylonjs-playground.com/#69DRZ1](https://www.b
 
 ## Making multiple passes and composing them
 
-Another possibility, as mentioned, is making multiple passes of the main camera and compose them. Let's add a simple effect on all meshes and compose it with the original material. One interesting effect to simulate is caustics. We can render the scene applying a material that simulates caustics with a wave generator and mix it with the base texture.
+Another possibility, as mentioned, is making multiple render passes of the main camera and compose them. Let's do that, adding a simple effect on all meshes and compose it with the original material. One interesting effect to simulate with this technique is water caustics. We can render the scene applying a material that simulates caustics with a wave generator and mix it with the base texture.
 
 The trick is to change the texture on the RTT to use our caustic material on all meshes instead of their own material:
 
@@ -92,22 +94,15 @@ scene.postProcessRenderPipelineManager.addPipeline(pipeline);
 scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('pipeline', camera);
 ```
 
-Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
+Playground example: [https://www.babylonjs-playground.com/#TG2B18](https://www.babylonjs-playground.com/#TG2B18). On the left you'll see the base render, on the middle the caustic render, and on the right both combined together.
 
-## Animations
+## Performance
 
-TODO
-
-Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
-
-
-## Tips
-
-Replacing materials is an expensive operation, as it requires a resync from the CPU. If your meshes use materials, such as ShaderMaterial or a PBRMaterial, this might impact significantly on the FPS rate. There are two basic ways to optimize and avoid this bottleneck.
+Remember that you'll be rendering your scene multiple times, one for each pass. This can significantly slow things down if you are not careful. Replacing materials is an expensive operation on Babylon, as it requires a resync from the CPU. If your meshes use materials, such as ShaderMaterial or a PBRMaterial, this might impact significantly on the FPS rate. There are two basic ways to optimize and avoid this bottleneck.
 
 ### Using instances
 
-If you have a large amount of copies of the same object, one possible solution is to use instances, and only change the material of the base mesh. There's a  Note that for mesh instances, the final world matrix is reconstructed from 4 base vectors given through mesh attributes, which is why you a #ifdef INSTANCES check is done in the custom vertex shader in the example below.
+If you have a large amount of copies of the same object, instances are a good optimization. You only change the material of the base mesh.
 
 ```
     // Our base mesh and material
@@ -127,9 +122,18 @@ If you have a large amount of copies of the same object, one possible solution i
             renderTarget.renderList.push(sphere);
         }
     }
-```
 
-Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
+    // replace only the base mesh
+    renderTarget.onBeforeRender = (e) => {
+        // Apply the shader on all meshes
+        sphereBase._material = sphereBase.material;
+        sphereBase.material = shaderMaterial;
+    };
+    renderTarget.onAfterRender = () => {
+        sphereBase.material = sphereBase._material;
+    };
+
+```
 
 ### Using clones
 
@@ -142,10 +146,45 @@ For more general cases, it might be interesting to clone the mesh and apply the 
 
     // add instances
     let sphereClone = sphereBase.clone();
+    sphereClone.material = secondPassMaterial;
     renderTarget.renderList.push(sphereClone);
 ```
 
-Playground example: [https://www.babylonjs-playground.com/](https://www.babylonjs-playground.com/)
+### Notes about your shader
+
+Note that since you replace the material with a shader from the scratch for mesh instances, you need to handle effects such as animation or the instance transformation,and this will affect your vertex shader (and possibly your fragment shader as well). There are several includes in Babylon that help with that. Here's a sample vertex shader with 
+
+```
+precision highp float;
+
+attribute vec3 position;
+attribute vec2 uv;
+
+uniform mat4 view;
+uniform mat4 projection;
+uniform mat4 worldViewProjection;
+
+varying vec2 vUV;
+
+#include<bonesDeclaration>
+#include<instancesDeclaration>
+
+void main() {
+    vec3 positionUpdated = position;
+
+    #include<instancesVertex>
+    #include<bonesVertex>
+
+    vec4 worldPos = finalWorld * vec4(positionUpdated, 1.0);
+
+    vUV = uv;
+
+    gl_Position = projection * view * worldPos;
+}
+```
+
+Playground example: [https://www.babylonjs-playground.com/#69DRZ1](https://www.babylonjs-playground.com/#69DRZ1)
+
 
 ### Debugging multiple passes
 
@@ -165,3 +204,5 @@ void main() {
 Testing passes in separate and then adding them one at a time to the composer will make it easier to debug any issues.
 
 You can also check RT textures with the [Babylon inspector](/how_to/debug_layerEnable).
+
+
