@@ -152,7 +152,7 @@ For more general cases, it might be interesting to clone the mesh and apply the 
 
 ### Notes about your shader
 
-Note that since you replace the material with a shader from the scratch for mesh instances, you need to handle effects such as animation or the instance transformation,and this will affect your vertex shader (and possibly your fragment shader as well). There are several includes in Babylon that help with that. Here's a sample vertex shader with 
+Note that since you replace the material with a shader from the scratch for mesh instances, you need to handle effects such as animation or the instance transformation,and this will affect your vertex shader (and possibly your fragment shader as well). There are several includes in Babylon that help with that. Here's a sample vertex shader with support for bone animations and instances:
 
 ```
 precision highp float;
@@ -183,7 +183,7 @@ void main() {
 }
 ```
 
-Playground example: [https://www.babylonjs-playground.com/#69DRZ1](https://www.babylonjs-playground.com/#69DRZ1)
+Playground example: [https://www.babylonjs-playground.com/#U9YK4H](https://www.babylonjs-playground.com/#U9YK4H)
 
 
 ### Debugging multiple passes
@@ -204,5 +204,3 @@ void main() {
 Testing passes in separate and then adding them one at a time to the composer will make it easier to debug any issues.
 
 You can also check RT textures with the [Babylon inspector](/how_to/debug_layerEnable).
-
-
