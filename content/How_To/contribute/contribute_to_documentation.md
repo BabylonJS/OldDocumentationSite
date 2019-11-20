@@ -99,6 +99,24 @@ You can finally starting to update the markdown files!
 
 ![visual studio](/img/contribute/documentation/further-editing.png)
 
+## Adding new images
+
+In case you have to create new illustrations, you need to send them on the Github repo into a specific folder: [`Documentation/public/html/img/`](https://github.com/BabylonJS/Documentation/tree/master/public/html/img).
+
+So on your local fork, go to this `img` folder. You can see there are already a lot of folders, so try to use existing folders to put your new images if possible.
+
+Let says you just create a new page, linked on `https://doc.babylonjs.com/how_to/my_very_great_page`.
+
+Here, you can create a `my_very_great_page` folder into the `/img/how_to/` one, and put `my-wonderful-image.jpg` into it.
+
+Then, on your markdown page, use this link pattern:
+
+```
+![quick description (for accessibility)](/img/how_to/my_very_great_page/my-wonderful-image.jpg)
+```
+
+Of course, try to keep image size as low as you can (while keeping a good visual quality).
+
 ## Adding new pages
 
 Now that everything is working well, you may want to add new content. To do so, please open `/data/statics.json`.
