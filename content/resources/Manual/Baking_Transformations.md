@@ -18,7 +18,7 @@ Any matrix can be used for this process including the current world matrix.
 Using _bakeTransformIntoVertices_  will bake the provided matrix directly into the mesh vertices changing their values but leaving the world matrix unchanged.
 
 A box is created, rotated and positioned giving the following world matrix and vertex data.
-```
+```javascript
 World Matrix
 -0.01	-0.01	1.00    0.00
 -0.01	 1.00	0.00    0.00
@@ -42,7 +42,7 @@ then _bakeTransformIntoVertices_ is used with the world matrix
 box.bakeTransformIntoVertices(box.getWorldMatrix());
 ```
 resulting in this world matrix and vertex data.
-```	
+```javascript
 World Matrix		
 -0.01	-0.01	1.00    0.00
 -0.01	 1.00	0.00    0.00
@@ -74,7 +74,7 @@ You can set the vertex positions based on any transformations that have been app
 
 A box is created, rotated and positioned giving the following world matrix and vertex data.
 
-```
+```javascript
 World Matrix
 -0.01	-0.01	1.00      0.00
 -0.01	 1.00	0.00      0.00
@@ -97,7 +97,7 @@ then _bakeCurrentTransformIntoVertices_ is applied to the box
 box.bakeCurrentTransformIntoVertices();
 ```
 resulting in this world matrix and vertex data.
-```	
+```javascript
 World Matrix		
 1.00	0.00	0.00	0.00
 0.00	1.00	0.00	0.00
@@ -119,14 +119,14 @@ Vertex Positions
 
 When baking scaling the normals are simply scaled in their current direction and so baking a scale can often give unrealistic results for lighting. To correct this normals need to be recomputed. This is illustrated in the following picture: 
 
-![Normals illustration](http://i.imgur.com/18wDAH7.png) 
+![Normals illustration](/img/resources/baking-transforms/normals.png) 
 
 _In the above picture, you can see an untransformed mesh on the left, the same mesh with a baked scaling along the X axis in the middle and on the right, the mesh with its normals correctly recomputed._
 
 
 You can do a recomputation of your normals like so:
 
-```
+```javascript
 var indices = mesh.getIndices();
 var normals = mesh.getVerticesData(VertexBuffer.NormalKind);
 BABYLON.VertexData.ComputeNormals(positions, indices, normals);
@@ -137,8 +137,10 @@ mesh.updateVerticesData(VertexBuffer.NormalKind, normals, false, false);
 
 # Further Reading
 
-[Vertex Normals](/resources/normals)  
+## How To
 
-##Advanced - Level 3
+- [How To Update Vertex Data](/how_to/updating_vertices)
 
-[How To Update Vertex Data](/How_To/updating_vertices)
+## Resources
+
+- [Vertex Normals](/resources/normals)  

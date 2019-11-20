@@ -209,17 +209,17 @@ The second parameter of the constructor is the URL of the color look-up table (a
 
 Here is what the default (without filter) look-up table looks like:
 
-![LUT](http://udn.epicgames.com/Three/rsrc/Three/ColorGrading/RGBTable16x1.png)
+![LUT](/img/how_to/post-processes/lut-default.png)
 
 Examples of filtered LUT to use for various filters:
 
-![LUT](http://i.imgur.com/gC9vQCz.png)
+![LUT](/img/how_to/post-processes/lut-inverted.png)
  Inverted colors
 
-![LUT](http://i.imgur.com/rupMyVN.png)
+![LUT](/img/how_to/post-processes/lut-highcontrast.png)
  High contrast
 
-![LUT](http://i.imgur.com/IX93hGO.png)
+![LUT](/img/how_to/post-processes/lut-posterized.png)
  Posterize
 
 You can easily create new filters by using a image editing software to alter the look-up table to fit your needs. Copy/paste the default look-up table on a screenshot or picture before altering it to see in real time what the filtered image will look like.
@@ -325,4 +325,4 @@ postProcess4.onApply = function (effect) {
     effect.setFloat("highlightIntensity", 1.0);
 };
 ```
-You might want to read more about shaders and try our CYOS shader editor [**RIGHT HERE**](https://www.eternalcoding.com/?p=113).
+You might want to [read more about shaders](https://www.eternalcoding.com/what-do-you-mean-by-shaders-learn-how-to-create-shaders-with-babylon-js/) and try our [CYOS shader editor](https://cyos.babylonjs.com/).
