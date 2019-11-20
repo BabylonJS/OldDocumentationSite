@@ -15,7 +15,7 @@ Rendering objects without a depth buffer would require resorting to an old-schoo
 Testing against a depth buffer during render is a very common technique, simple to implement and performance-inexpensive. However, things get more complicated for non-opaque objects, as a depth buffer can't be used anymore (since these objects don't completely hide what's behind them).
 
 This is what a depth buffer looks like for a scene which contains only opaque meshes:
-![Opaque only meshes](http://i.imgur.com/2iWCAwT.png)
+![Opaque only meshes](/img/resources/transparency_meshes_rendering/opaque-depth-buffer.jpg)
 
 
 # Rendering Order
@@ -45,7 +45,7 @@ To use rendering groups, you simply need to set the property `.renderingGroupId`
 
 This property exists on meshes, particle systems and sprite managers.
 
-By default, there are 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3. This can be increased by setting the static property BABYLON.RenderingManager.MAX_RENDERINGGROUPS to the max ID you'd like (ex. set to 8 to support 7 rendering groups).
+By default, there are 4 rendering groups in total, meaning that the only valid IDs are 0, 1, 2 and 3. This can be increased by setting the static property `BABYLON.RenderingManager.MAX_RENDERINGGROUPS` to the max ID you'd like (ex. set to 8 to support 7 rendering groups).
 
 ## Alpha Index
 
@@ -67,7 +67,7 @@ How your meshes are categorized may be very important for the final aspect of yo
 
 ### Depth pre-pass meshes
 
-The depth pre-pass meshes define an additional rendering pass for meshes. During this pass, meshes are only rendered to depth buffer. The depth pre-pass meshes are not exclusive. A mesh can have a depth pre-pass and an opaque or alpha blend pass. The enable the depth pre-pass for a mesh, jsut call `mesh.material.needDepthPrePass = true`.
+The depth pre-pass meshes define an additional rendering pass for meshes. During this pass, meshes are only rendered to depth buffer. The depth pre-pass meshes are not exclusive. A mesh can have a depth pre-pass and an opaque or alpha blend pass. The enable the depth pre-pass for a mesh, just call `mesh.material.needDepthPrePass = true`.
 The goal is either to optimize the scene by rendering meshes to the depth buffer to reduce overdraw or to help reducing alpha blending sorting issues.
 
 ### Opaque Meshes
@@ -87,11 +87,11 @@ These meshes have translucent parts that may have an alpha value of 0.0 (complet
 Also, note that backface culling is pretty much obligatory for alpha blended meshes, otherwise polygons from the front and the back of the objects will be garbled (unless you use a depth pre-pass)
 
 This is what a depth buffer looks like for a scene that contains each of those type of meshes:
-![All kinds of meshes](http://i.imgur.com/l0XIlKv.png)
+![All kinds of meshes](/img/resources/transparency_meshes_rendering/alpha-depth-buffer.jpg)
 
 *In this scene, the sphere is alpha tested, the base blocks are opaque and the pillars are alpha blended.*
 
-The following list will help you understand which categories your meshes will be put into. For more information on each of the properties mentioned here, take a look at the [Materials Tutorial](/How_To/Materials).
+The following list will help you understand which categories your meshes will be put into. For more information on each of the properties mentioned here, take a look at the [Materials tutorial](/babylon101/materials).
 
 **Alpha blended meshes:**
 
@@ -123,31 +123,47 @@ You're welcome to use this [playground example]( https://www.babylonjs-playgroun
 - Make sure your alpha blended meshes do not intersect, as this will inevitably lead to render glitches.
 - Avoid having heavily-stretched alpha blended meshes (i.e. large planes); since the center of its bounding sphere is used for depth sorting, doing this may result in a mesh being sorted as far away from the camera but actually closer to many other meshes.
 - Use alpha test as much as possible; this may look perfect for a pixel art style, or if the transparent parts boundaries are straight horizontal or vertical lines.
-- To get rid of jagged edges on your alpha tested meshes, use anti-aliasing for your scene ([FxaaPostProcess](/How_To/How_to_use_PostProcesses)); when using anti-aliasing, you can even disable the built-in smoothing of WebGL when creating the engine object:
+- To get rid of jagged edges on your alpha tested meshes, use anti-aliasing for your scene ([FxaaPostProcess](/how_to/How_to_use_PostProcesses#fxaa)); when using anti-aliasing, you can even disable the built-in smoothing of WebGL when creating the engine object:
 
-`engine = new BABYLON.Engine(canvas, false); // built-in smoothing will be disabled`
+```javascript
+engine = new BABYLON.Engine(canvas, false); // built-in smoothing will be disabled
+```
 
 This may help you with visible seams between meshes and other similar issues.
 
 - Do not forget to enable backface culling with alpha blended meshes!
 - Use rendering groups to have better control over the order in which your meshes are displayed. These are especially useful if you know that some meshes will be above others 100% of the time (for example, an overlayed UI drawn on top of the scene).
-- A mesh's alphaIndex property can be very useful as well, since they allow you to override the depth sorting of alpha-blended meshes. Also this property does not suffer from the same limitation as Rendering Groups (4 layers at most), and only has an effect on alpha-blended meshes.
+- A mesh's `alphaIndex` property can be very useful as well, since they allow you to override the depth sorting of alpha-blended meshes. Also this property does not suffer from the same limitation as Rendering Groups (4 layers at most), and only has an effect on alpha-blended meshes.
 - You can rely on `needDepthPrePass` to help fixing issues with self transparency.
 - You can also use `separateCullingPass` on materials to force the engine to render the transparent objects in 2 passes: first the back faces and then the front faces. This can help a lot with self transparency.
 - To prevent both the cost of either `needDepthPrePass` or `separateCullingPass` if the sum of your alpha stays below 1.0, you can change the alphaMode of the material to either `Engine.ALPHA_PREMULTIPLIED` or `Engine.ALPHA_PREMULTIPLIED_PORTERDUFF` which prevent the need of ordering the triangles.
 
 ## Concave meshes and transparency
 
-The transparent concave meshes render obvisouly with the same rules than explained before :  https://www.babylonjs-playground.com/#1PLV5Z  
-For some reasons (example : camera flying from outside to inside a sphere), you may want to remove the backface culling in order to also render the back side of the mesh :  https://www.babylonjs-playground.com/#1PLV5Z#1  
+The transparent concave meshes render obviously with the same rules than explained before:
+
+https://www.babylonjs-playground.com/#1PLV5Z  
+For some reasons (example : camera flying from outside to inside a sphere), you may want to remove the backface culling in order to also render the back side of the mesh :
+
+https://www.babylonjs-playground.com/#1PLV5Z#1  
 As you can notice, the transparency rendering rules may lead to some weird things making some parts of the mesh geometries visible.  
-In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE` :  https://www.babylonjs-playground.com/#1PLV5Z#2  
-Other option will be to rely on depth pre-pass: https://www.babylonjs-playground.com/#1PLV5Z#16  
+In this very case, an acceptable workaround would then be to enable the backface culling but to build the meshes as double sided with the parameter `sideOrientation` set to `BABYLON.Mesh.DOUBLESIDE`:
 
-At last, if you accept to spend some CPU cycles to get a correct self transparency, you can use the FacetData feature and enable the facet depth sort : //doc.babylonjs.com/how_to/how_to_use_facetdata#facet-depth-sort   
+https://www.babylonjs-playground.com/#1PLV5Z#2  
+Other option will be to rely on depth pre-pass:
 
-Eaxmple : http://playground.babylonjs.com/#FWKUY0#1  
-Depth sorted on the left, standard on the right.  
+https://www.babylonjs-playground.com/#1PLV5Z#16  
+
+At last, if you accept to spend some CPU cycles to get a correct self transparency, you can use the FacetData feature and enable the [facet depth sort](/how_to/how_to_use_facetdata#facet-depth-sort).
+
+Example, depth sorted on the left, standard on the right:
+
+http://playground.babylonjs.com/#FWKUY0#1  
 
 
 
+# Further Reading
+
+## How To
+
+- [Use Facet Data](/how_to/how_to_use_facetdata)
