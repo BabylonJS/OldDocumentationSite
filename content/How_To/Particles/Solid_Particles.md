@@ -881,7 +881,15 @@ sps.computeSubMeshes(); // actually computes the submeshes and materials
 
 Examples : 
 https://playground.babylonjs.com/#RCUHJA#4  
-https://playground.babylonjs.com/#RCUHJA#7   in this example, every 15 frames, the particle above a given altitude are given the next material in turn.
+https://playground.babylonjs.com/#RCUHJA#7   in this example, every 15 frames, the particle above a given altitude are given the next material in turn.  
+
+If you still really want to call `computeSubMeshes() ` each time you call `setParticles()` because your particle materials are updated at this same frequency, you can then set the property `sps.autoUpdateSubMeshes` to `true` (default `false`). In this case, no more need to call `sps.computeSubMeshes()` by hands as `setParticles()` will do it for you internally.
+```javascript
+sps.autoUpdateSubMeshes = true;
+sps.setParticles();   // updates the particle material indexes AND recomputes the subMeshes
+```
+Example : https://playground.babylonjs.com/#RCUHJA#8  
+
 
 In the case you want to make your own MultiMaterial object by hands, then set it to the SPS mesh material property and call `sps.computeSubMeshes()` to internally build the needed SubMesh objects. 
 ```javascript
