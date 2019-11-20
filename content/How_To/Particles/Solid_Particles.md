@@ -801,7 +801,7 @@ sps.buildMesh();
  This enables the multimaterial support, then copies the model geometries and creates automatically the SPS multimaterial from the model materials, with the following rule : 
 - if several models share the same material, this material is used only once in the SPS : particles are sorted in this purpose to minimize the draw call numbers,
 - if a model has no material, a standard material is created,
-- if another following model has also no material, the first rule applies : the newly created standard material is shared among the particles depicting all the model with no material.  
+- if another following model has also no material, the first rule applies : the newly created standard material is shared among the particles depicting all the models with no material.  
 Example : https://playground.babylonjs.com/#RCUHJA  
 
 You can obviously notice that this method associates the model materials to the particles on the particle shape basis : all the particles of a given shape share the same material.  
@@ -831,7 +831,8 @@ This method can be used to build non-updatable meshes with MultiMaterials by ass
 
 #### Intermediate way
 When you set the SPS `useModelMaterial` property to `true`, this enables the support for MultiMaterial.  
-You can also enable this support by just setting the property `enableMultiMaterial` to `true`. The difference is that, in this case, the support is enabled but the model materials aren't copied at construction time.  
+You can also enable this support by just setting the property `enableMultiMaterial` to `true`.  
+In this case, the difference is that the support is enabled but the model materials aren't copied at construction time.  
 
 You may want then to use your own set of materials instead of the model ones. 
 So, whatever the SPS is immutable or not and whatever you're using `enableMultiMaterial` or `useModelMaterial`, you can pass your own materials to the SPS once it's build with the method `sps.setMultiMaterials(arrayOfMaterials)`.  
@@ -881,9 +882,10 @@ sps.computeSubMeshes(); // actually computes the submeshes and materials
 
 Examples : 
 https://playground.babylonjs.com/#RCUHJA#4  
-https://playground.babylonjs.com/#RCUHJA#7   in this example, every 15 frames, the particle above a given altitude are given the next material in turn.  
+In this second example the particles above a given altitude are given the next material in turn every 15 frames.  
+https://playground.babylonjs.com/#RCUHJA#7   
 
-If you still really want to call `computeSubMeshes() ` each time you call `setParticles()` because your particle materials are updated at this same frequency, you can then set the property `sps.autoUpdateSubMeshes` to `true` (default `false`). In this case, no more need to call `sps.computeSubMeshes()` by hands as `setParticles()` will do it for you internally.
+If you still really want to call `computeSubMeshes() ` each time you call `setParticles()` because your particle materials are updated at this same frequency, you can then set the property `sps.autoUpdateSubMeshes` to `true` (default `false`). In this case, no more need for calling `sps.computeSubMeshes()` by hands as `setParticles()` will do it for you internally.
 ```javascript
 sps.autoUpdateSubMeshes = true;
 sps.setParticles();   // updates the particle material indexes AND recomputes the subMeshes
