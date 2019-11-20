@@ -86,7 +86,7 @@ Equirectangular images are browser-canvas supported images like jpeg, png, and m
 
 Below is an equirectangular image of a shop
 
-![Shop](../../../examples/icons/360photo.jpg)
+![Shop](/img/resources/textures_thumbs/360photo.jpg)
 
 Replace any of the following lines
 ```javascript
