@@ -883,6 +883,17 @@ Examples :
 https://playground.babylonjs.com/#RCUHJA#4  
 https://playground.babylonjs.com/#RCUHJA#7   in this example, every 15 frames, the particle above a given altitude are given the next material in turn.
 
+In the case you want to make your own MultiMaterial object by hands, then set it to the SPS mesh material property and call `sps.computeSubMeshes()` to internally build the needed SubMesh objects. 
+```javascript
+var multimat = new BABYLON.MultiMaterial("multi", scene);
+multimat.subMaterials.push(material0);
+multimat.subMaterials.push(material1);
+multimat.subMaterials.push(material2);
+
+sps.mesh.material = multimat;
+sps.computeSubMeshes();
+```
+
 **Note 1 :** By default, the particle `materialIndex` value is `null`.  
 When enabling the MultiMaterial in the SPS, this value is set to zero for every particle until it's overwritten by the user or automatically set to some model material index by `useModelMaterial`.  
 **Note 2 :** The particle depth sort doesn't work with the MultiMaterial support because particles can't be sorted by their distances to the camera and by materials in the same time. So if you enable both modes, it won't crash but it will get to some weird visible results.  
