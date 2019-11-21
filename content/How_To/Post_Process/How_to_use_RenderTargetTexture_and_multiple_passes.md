@@ -145,7 +145,7 @@ renderTarget.onBeforeRender = (e) => {
             // backup effects
             const _orig_subMeshEffects = [];
             mesh.subMeshes.forEach((submesh) => {
-                _orig_subMeshEffects.push([submesh.effect, submesh._materialDefines]);
+                _orig_subMeshEffects.push([submesh.effect, submesh.materialDefines]);
             });
             mesh.material.freeze(); // freeze material so it won't be recomputed onAfter
             // store old material/effects
@@ -176,7 +176,7 @@ renderTarget.onAfterRender = () => {
         if (!mesh._rtt_subMeshEffects) {
             mesh._rtt_subMeshEffects = [];
             mesh.subMeshes.forEach((submesh) => {
-                mesh._rtt_subMeshEffects.push([submesh.effect, submesh._materialDefines]);
+                mesh._rtt_subMeshEffects.push([submesh.effect, submesh.materialDefines]);
             });
         }
         // swap back to original material
