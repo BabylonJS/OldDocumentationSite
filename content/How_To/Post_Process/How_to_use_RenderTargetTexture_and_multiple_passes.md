@@ -199,7 +199,7 @@ engine.runRenderLoop(() => {
 
 The example has the complete code, including animated objects and instances.
 
-Playground example: [https://www.babylonjs-playground.com/#S1W87B](https://www.babylonjs-playground.com/#S1W87B)
+Playground example: [https://www.babylonjs-playground.com/#S1W87B#1](https://www.babylonjs-playground.com/#S1W87B#1)
 
 ### Notes about your shader
 
