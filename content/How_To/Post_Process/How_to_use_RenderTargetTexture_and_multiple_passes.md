@@ -13,19 +13,19 @@ The PostProcess API doesn't let you render a scene twice. That's where RenderTar
 You need to create a RenderTargetTexture and attach it to the scene. It's pretty straightforward:
 
 ```    
-    var renderTarget = new BABYLON.RenderTargetTexture(
-        'render to texture', // name 
-        512, // texture size
-        scene // the scene
-    );
-    scene.customRenderTargets.push(renderTarget); // add RTT to the scene
+var renderTarget = new BABYLON.RenderTargetTexture(
+    'render to texture', // name 
+    512, // texture size
+    scene // the scene
+);
+scene.customRenderTargets.push(renderTarget); // add RTT to the scene
 ```
 
 You also need to pick which objects will be rendered to that texture. This enables you to select only a few objects for a particular effect, or use simpler meshes for faster rendering.
 
 ```
-    let sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene); // create your mesh
-    renderTarget.renderList.push(sphere); // add it to the RTT
+let sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene); // create your mesh
+renderTarget.renderList.push(sphere); // add it to the RTT
 ```
 
 ## Using the RTT in your scene as a regular texture
@@ -33,8 +33,8 @@ You also need to pick which objects will be rendered to that texture. This enabl
 You can use the rendered image as the texture of an object in your main render. Just set it as the texture of a material:
 
 ```
-    var mat = new BABYLON.("RTT mat", scene);
-    mat.diffuseTexture = renderTarget;
+var mat = new BABYLON.("RTT mat", scene);
+mat.diffuseTexture = renderTarget;
 ```
 
 In the example we only add half of the spheres to the RTT, showing how you can selectively pick the objects rendered there.
@@ -96,63 +96,114 @@ scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('pipeline',
 
 Playground example: [https://www.babylonjs-playground.com/#TG2B18](https://www.babylonjs-playground.com/#TG2B18). On the left you'll see the base render, on the middle the caustic render, and on the right both combined together.
 
-## Performance
+## Performance and tips
 
-Remember that you'll be rendering your scene multiple times, one for each pass. This can significantly slow things down if you are not careful. Replacing materials is an expensive operation on Babylon, as it requires a resync from the CPU. If your meshes use materials, such as ShaderMaterial or a PBRMaterial, this might impact significantly on the FPS rate. There are two basic ways to optimize and avoid this bottleneck.
+Remember that you'll be rendering your scene multiple times, one for each pass. This can significantly slow things down if you are not careful. There are a number of strategies to improve performance:
 
-### Using instances
+- reduce the RTT size.
+- render as few objects as you can on the RTT.
+- use a simple shader on the RTT pass.
+- prefer simpler meshes.
+- use instances. If you have a large amount of copies of the same object, instances are a good optimization. You only change the material of the base mesh.
 
-If you have a large amount of copies of the same object, instances are a good optimization. You only change the material of the base mesh.
+Replacing materials is an expensive operation on Babylon, as it requires a resync from the CPU. If your meshes use materials, such as ShaderMaterial or a PBRMaterial, this might impact significantly on the FPS rate. The example above is simple to follow and understand the concept, but there's a way to achieve much better performance,by freezing materials before swapping them. Here's how to do it.
+
+First, create objects that will be in the RTT with a clone of the RTT shader material.
 
 ```
-    // Our base mesh and material
-    let sphereBase = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
-    sphereBase.material = myMaterial;
+// helper function to create clones of the caustic material
+// we need that because we'll have different transforms on the shaders
+let rttMaterials = [];
+const getRTTMaterial = () => {
+    let c = rttMaterial.clone();
+    c.freeze(); // freeze because we'll only update uniforms
+    rttMaterials.push(c);
+    return c;
+};
 
-    // add instances
-    sphereBase.setEnabled(false); // disable rendering of the base mesh
-    let spheres = [];
-    for (let i = 0; i < 100; i++) { // create a lot of copies
-        for (let j = 0; j < 10; j++) {
-            let sphere = sphereBase.createInstance(""); // instance of the mesh
-            // reposition etc
-            sphere.position.y = 1;
-            sphere.position.z = i;
-            sphere.position.x = j-5;
-            renderTarget.renderList.push(sphere);
+// some material for the ground.
+var grass0 = new BABYLON.StandardMaterial("grass0", scene);
+grass0.diffuseTexture = new BABYLON.Texture("textures/grass.png", scene);
+    
+// Our built-in 'ground' shape.
+var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+ground.material = grass0;
+// add caustics
+ground.rttMaterial = getRTTMaterial();
+renderTarget.renderList.push(ground);
+```
+
+Swap materials on the RTT before/after callbacks.
+
+```
+ // before we render the target, swap materials.
+renderTarget.onBeforeRender = (e) => {
+    // Apply the shader on all meshes
+    renderTarget.renderList.forEach((mesh) => {
+        // the PBR material takes some time to be loaded, it's possible that in the first few frames mesh.material is null...
+        if (mesh.material && !mesh.material.isFrozen && ('isReady' in mesh) && mesh.isReady(true)) { 
+            // backup effects
+            const _orig_subMeshEffects = [];
+            mesh.subMeshes.forEach((submesh) => {
+                _orig_subMeshEffects.push([submesh.effect, submesh._materialDefines]);
+            });
+            mesh.material.freeze(); // freeze material so it won't be recomputed onAfter
+            // store old material/effects
+            mesh._saved_orig_material = mesh.material;
+            mesh._orig_subMeshEffects = _orig_subMeshEffects;
         }
-    }
-
-    // replace only the base mesh
-    renderTarget.onBeforeRender = (e) => {
-        // Apply the shader on all meshes
-        sphereBase._material = sphereBase.material;
-        sphereBase.material = shaderMaterial;
-    };
-    renderTarget.onAfterRender = () => {
-        sphereBase.material = sphereBase._material;
-    };
-
+        if (!mesh._orig_subMeshEffects) {
+            return;
+        }
+        // swap the material
+        mesh.material = mesh.rttMaterial;
+        // and swap the effects
+        if (mesh._rtt_subMeshEffects) {
+            for (let s = 0; s < mesh.subMeshes.length; ++s) {
+                mesh.subMeshes[s].setEffect(...mesh._rtt_subMeshEffects[s]);
+            }
+        }
+    });
+};
+renderTarget.onAfterRender = () => {
+    // Set the original shader on all meshes
+    renderTarget.renderList.forEach((mesh) => {
+        // nothing to do, early bail
+        if (!mesh._orig_subMeshEffects) {
+            return;
+        }
+        // backup sub effects on the rtt shader
+        if (!mesh._rtt_subMeshEffects) {
+            mesh._rtt_subMeshEffects = [];
+            mesh.subMeshes.forEach((submesh) => {
+                mesh._rtt_subMeshEffects.push([submesh.effect, submesh._materialDefines]);
+            });
+        }
+        // swap back to original material
+        mesh.material = mesh._saved_orig_material;
+        for (let s = 0; s < mesh.subMeshes.length; ++s) {
+            mesh.subMeshes[s].setEffect(...mesh._orig_subMeshEffects[s]);
+        }
+    });
+};
 ```
 
-### Using clones
-
-For more general cases, it might be interesting to clone the mesh and apply the RTT shader to the clone. Remember to apply any transformations to both objects to keep them in synchrony.
+Apply any uniforms on all material clones:
 
 ```
-    // Our base mesh and material
-    let sphereBase = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
-    sphereBase.material = myMaterial;
-
-    // add instances
-    let sphereClone = sphereBase.clone();
-    sphereClone.material = secondPassMaterial;
-    renderTarget.renderList.push(sphereClone);
+engine.runRenderLoop(() => {
+    // ... 
+    rttMaterials.forEach((c) => {c.setFloat('time', timeDiff)});
+});
 ```
+
+The example has the complete code, including animated objects and instances.
+
+Playground example: [https://www.babylonjs-playground.com/#S1W87B](https://www.babylonjs-playground.com/#S1W87B)
 
 ### Notes about your shader
 
-Note that since you replace the material with a shader from the scratch for mesh instances, you need to handle effects such as animation or the instance transformation,and this will affect your vertex shader (and possibly your fragment shader as well). There are several includes in Babylon that help with that. Here's a sample vertex shader with support for bone animations and instances:
+Note that since you replace the material with a shader from the scratch for mesh instances, you need to handle effects such as animation or the instance transformation,and this will affect your vertex shader (and possibly your fragment shader as well). There are [https://github.com/BabylonJS/Babylon.js/tree/master/src/Shaders/ShadersInclude](several includes in Babylon) that help with that. Here's a sample vertex shader with support for bone animations and instances:
 
 ```
 precision highp float;
@@ -183,9 +234,6 @@ void main() {
 }
 ```
 
-Playground example: [https://www.babylonjs-playground.com/#U9YK4H](https://www.babylonjs-playground.com/#U9YK4H)
-
-
 ### Debugging multiple passes
 
 Your final composer might become a complicated shader, and each pass might be complicated in itself. You certainly will need to debug shaders along the way. One way to easily debug individual passes is to show only that pass to the screen, commenting the rest of the code.
@@ -201,6 +249,6 @@ void main() {
 }
 ```
 
-Testing passes in separate and then adding them one at a time to the composer will make it easier to debug any issues.
+Testing passes in separate and then adding them one at a time to the composer will make it easier to debug any issues. You can use the technique from the playgrounds above, splitting the screen on columns, each with a different pass, as well.
 
-You can also check RT textures with the [Babylon inspector](/how_to/debug_layerEnable).
+Finally you can also check RT textures with the [Babylon inspector](/how_to/debug_layerEnable).
