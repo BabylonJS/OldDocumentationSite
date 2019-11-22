@@ -129,7 +129,7 @@ There are two dialogue boxes that can be created for a PBT.
 
 This consists of an image area, a text area and 'Prev' and 'Next' buttons.
 
-![Standard Dialogue](https://i.imgur.com/NlIGHaD.jpg)
+![Standard Dialogue](/img/how_to/playground-tutorials/informative-dialogue-box.jpg)
 
 Whilst a 'Prev' button is available the difficulty of undoing any actions already done means that this can usually be hidden.
 
