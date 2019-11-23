@@ -10,7 +10,7 @@ However, many meashes have the option _sideOrientation_ and this method applies 
 
 To have different textures front and back the front and back image must be in the same file, like the one below
 
-![front and back images](https://i.imgur.com/ntIgFT6.jpg)
+![front and back images](/img/how_to/different-material-front-back/card.jpg)
 
 This is then split using the _frontUVs_ and _backUVs_ options.
 
