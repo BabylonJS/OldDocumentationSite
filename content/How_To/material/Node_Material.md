@@ -866,6 +866,7 @@ Example: https://nme.babylonjs.com/#2F999G
 ## Going further
 
 Here is a list of videos related to Node material:
+- Add Light Texture: https://youtu.be/n2DLnMa21K0
 - Add basic lighting: https://youtu.be/BU9BTUkdYDY
 - Toon Shader Part 1: https://youtu.be/K0PXzE1hJXg
 - Toon Shader Part 2: https://youtu.be/wtrIbGmuJ2o
