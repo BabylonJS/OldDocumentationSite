@@ -155,6 +155,11 @@ This is useful when the physics update needs more precision. For example, simula
 The substeps can also be used to reduce the physics update. For example, doing an update every 2 frames.
 In the following example, the physics is computed 10 times a second instead of 60. 
 
+```javascript
+var physicsEngine = scene.getPhysicsEngine();
+physicsEngine.setSubTimeStep(100);
+```
+
 https://www.babylonjs-playground.com/#YUNAST#21
 
 ## Cloth simulation
