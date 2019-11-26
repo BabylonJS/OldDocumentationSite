@@ -991,7 +991,7 @@
                     "filename": "Using_Assets_Panel"
                 },
                 {
-                    "title": "Writing Custom Scripts",
+                    "title": "Using Code Editor",
                     "filename": "Custom_Scripts"
                 },
                 {
@@ -999,7 +999,7 @@
                     "filename": "Adding_Animations"
                 },
                 {
-                    "title": "Using Path Finder",
+                    "title": "Using The Path Finder",
                     "filename": "Using_PathFinder"
                 },
                 {
@@ -1011,8 +1011,16 @@
                     "filename": "Editing_Prefabs"
                 },
                 {
-                    "title": "Creating custom particle system sets",
+                    "title": "Using The Particles Creator",
                     "filename": "Using_ParticleSystemEditor"
+                },
+                {
+                    "title": "Using the Graph Editor",
+                    "filename": "Using_GraphEditor"
+                },
+                {
+                    "title": "Using the Photoshop Extension",
+                    "filename": "Using_Photoshop_Extension"
                 }
             ]
         },
