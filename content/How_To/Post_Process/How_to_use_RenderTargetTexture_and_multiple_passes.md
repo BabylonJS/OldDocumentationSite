@@ -140,6 +140,10 @@ Swap materials on the RTT before/after callbacks.
 renderTarget.onBeforeRender = (e) => {
     // Apply the shader on all meshes
     renderTarget.renderList.forEach((mesh) => {
+        // skip InstancedMesh, we'll handle the original mesh
+        if (mesh.getClassName() === 'InstancedMesh') {
+            return;
+        }
         // the PBR material takes some time to be loaded, it's possible that in the first few frames mesh.material is null...
         if (mesh.material && !mesh.isFrozen && ('isReady' in mesh) && mesh.isReady(true)) { 
             // backup effects
@@ -169,6 +173,10 @@ renderTarget.onBeforeRender = (e) => {
 renderTarget.onAfterRender = () => {
     // Set the original shader on all meshes
     renderTarget.renderList.forEach((mesh) => {
+        // skip InstancedMesh, we'll handle the original mesh
+        if (mesh.getClassName() === 'InstancedMesh') {
+            return;
+        }
         // nothing to do, early bail
         if (!mesh._orig_subMeshEffects) {
             return;
