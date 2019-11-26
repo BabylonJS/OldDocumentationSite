@@ -200,7 +200,7 @@ engine.runRenderLoop(() => {
 
 The example has the complete code, including animated objects and instances. You could freeze some meshes with `scene.freezeActiveMeshes()` to improve the performance even further.
 
-Playground example: [https://www.babylonjs-playground.com/#S1W87B#3](https://www.babylonjs-playground.com/#S1W87B#3)
+Playground example: [https://www.babylonjs-playground.com/#S1W87B#5](https://www.babylonjs-playground.com/#S1W87B#5)
 
 ### Notes about your shader
 
