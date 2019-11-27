@@ -117,7 +117,8 @@ module.exports = function(grunt) {
                     includeDeclarations: true,
                     entryPoint: `BABYLON`,
                     mode: "file",
-                    theme: './typedoc/default'
+                    theme: './typedoc/default',
+                    'sourcefile-url-map': './sourcefile-map.json',
                 },
                 src: './typedoc/babylon.d.ts'
             }

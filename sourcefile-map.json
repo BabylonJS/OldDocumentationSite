@@ -1,0 +1,6 @@
+[
+  {
+    "pattern": "^typedoc/babylon.d.ts",
+    "replace": "https://github.com/BabylonJS/Babylon.js/blob/master/dist/preview%20release/documentation.d.ts"
+  }
+]
