@@ -8,7 +8,7 @@ The [WebXR API](https://immersive-web.github.io/webxr/) allows the browser to in
 
 ## Setup
 
-Currently, the version of WebXR Babylon is targeting is in [Chrome Canary](https://www.google.com/chrome/canary/) as of June 27th 2019
+Currently, the version of WebXR Babylon is targeting is in [Chrome Canary](https://www.google.com/chrome/canary/) as of November 2019
 
  1. Install [Chrome Canary](https://www.google.com/chrome/canary/) on desktop
  2. If on mobile ensure you have Android 8 or higher and a device that supports AR Core (eg. Pixel XL 2)
