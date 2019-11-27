@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Website for the Babylon.js documentation",
     "engines": {
-        "node": "6.9.1"
+        "node": ">=6.9.1"
     },
     "dependencies": {
         "app-root-path": "^1.0.0",
