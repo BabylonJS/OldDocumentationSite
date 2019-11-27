@@ -8,7 +8,7 @@ The [WebXR API](https://immersive-web.github.io/webxr/) allows the browser to in
 
 ## Setup
 
-Currently, the version of WebXR Babylon is targeting is in [Chrome Canary](https://www.google.com/chrome/canary/) as of June 27th 2019
+Currently, the version of WebXR Babylon is targeting is in [Chrome Canary](https://www.google.com/chrome/canary/) as of November 2019
 
  1. Install [Chrome Canary](https://www.google.com/chrome/canary/) on desktop
  2. If on mobile ensure you have Android 8 or higher and a device that supports AR Core (eg. Pixel XL 2)
@@ -19,14 +19,15 @@ Currently, the version of WebXR Babylon is targeting is in [Chrome Canary](https
     - OpenVR hardware support: Enabled
     - XR device sandboxing: Disabled
 
-**Currently Not supported**
+## Currently Not supported
 
- - iPhone browsers don't support xr, https://github.com/mozilla-mobile/webxr-ios supports an older version of webXR, once it matches the current spec, it should work.
- - AR features are not yet available (Current version of XR spec only supports webVR parity)
+- iPhone browsers don't support xr, https://github.com/mozilla-mobile/webxr-ios supports an older version of webXR, once it matches the current spec, it should work.
+- AR features are not yet available (Current version of XR spec only supports webVR parity)
 
 **Debugging:**
 
-* https://developers.google.com/web/tools/chrome-devtools/remote-debugging/ 
+- Android chrome remote debugging https://developers.google.com/web/tools/chrome-devtools/remote-debugging/
+- Mozilla WebXR emulator for chrome and firefox (supported by Babylon) https://blog.mozvr.com/webxr-emulator-extension/
 
 **Note:** https://github.com/immersive-web/webxr-polyfill can be used in the future to polyfill browsers that don't support webXR
 
@@ -42,26 +43,40 @@ var xr = await scene.createDefaultXRExperienceAsync({
 
 This will:
 
- - Initialize UI to handle entering/exiting XR
- - Create a WebXRExperienceHelper which will manage an XR camera and XR session
- - Initialize XR input to monitor the state of connected XR controllers
- - Load the correct 3D corresponding to the XR controller
- - Enable pointer selection from the XR controller (For clicking on buttons or gui elements)
- - Enable teleportation interactions to allow the user to teleport around a scene
- - Configure output to display on the XR device and mirror the output on the webpage
+- Initialize UI to handle entering/exiting XR
+- Create a WebXRExperienceHelper which will manage an XR camera and XR session
+- Initialize XR input to monitor the state of connected XR controllers
+- Load the correct 3D corresponding to the XR controller
+- Enable pointer selection from the XR controller (For clicking on buttons or gui elements)
+- Enable teleportation interactions to allow the user to teleport around a scene
+- Configure output to display on the XR device and mirror the output on the webpage
 
     alert("immersive-vr xr session not supported")
+
+### Auto-porting
+
+Not that WebVR is already deprecated and it is not recommended using WebVR for new projects.
+If you have old WebVR projects that you wish to easily port to WebXR you can try using the auto-porter by adding a new flag `useXR` to your webvr init:
+
+```javascript
+var vrHelper = scene.createDefaultVRExperience({createDeviceOrientationCamera:false, useXR: true});
+```
+
+The rest of the code will work as before, but using XR. Some specific VR features will not work, and the VR camera will not be attached.
+
+Note that the flag will be automatically converted to true when WebVR is completely removed from your browser.
 
 ## Manual setup and customization
 
 ### WebXRExperienceHelper
 
 WebXRExperienceHelper provides a minimal setup for XR
- - Creates a session manager which will manage creating/modifying/ending XR sessions
- - Creates a WebXR camera, container space and wires up Babylon's engine to render to an XR session
+
+- Creates a session manager which will manage creating/modifying/ending XR sessions
+- Creates a WebXR camera, container space and wires up Babylon's engine to render to an XR session
 
 ``` javascript
- var xrHelper = await BABYLON.WebXRExperienceHelper.CreateAsync(scene)
+var xrHelper = await BABYLON.WebXRExperienceHelper.CreateAsync(scene)
 ```
 
 To check if a specific XR session type is supported use
@@ -74,7 +89,7 @@ if (!await xrHelper.sessionManager.supportsSessionAsync("immersive-vr")) {
 }
 ```
 
-* [Example](https://playground.babylonjs.com/#P2H4VV)
+- [Example](https://playground.babylonjs.com/#P2H4VV)
 
 ### Entering/exiting XR
 
@@ -100,11 +115,11 @@ scene.onPointerObservable.add(async (e) => {
 })
 ```
 
-* [Example](https://playground.babylonjs.com/#P2H4VV#2)
+- [Example](https://playground.babylonjs.com/#P2H4VV#2)
 
 Alternatively the WebXREnterExitUI can be used to set these up and provide buttons for entering/exiting
 
-* [Example](https://playground.babylonjs.com/#AM07G2)
+- [Example](https://playground.babylonjs.com/#AM07G2#39)
 
 ### Moving the camera
 
@@ -174,7 +189,7 @@ xrInput.onControllerAddedObservable.add((controller) => {
 })
 ```
 
-* [Example](https://playground.babylonjs.com/#AM07G2#2)
+- [Example](https://playground.babylonjs.com/#AM07G2#40)
 
 Like the xr camera, the controller nodes will also be children of the xrHelper.container node. Their positions will be the value coming from the webXR api but since they are a child of the container to get the correct pose in Babylon world space their absolute position/rotation will need to be retrieved from their world matrix.
 
@@ -216,11 +231,11 @@ controller.onDisposeObservable.addOnce(() => {
 })
 ```
 
-* [Example](https://playground.babylonjs.com/#AM07G2#4)
+- [Example](https://playground.babylonjs.com/#AM07G2#39)
 
 Here is an example that combines input with pointer selection, teleportation and loading models
 
-* [Example](https://playground.babylonjs.com/#AM07G2)
+- [Example](https://playground.babylonjs.com/#AM07G2#38)
 
 ## Multiview (Not yet supported with WebXR)
 
@@ -228,9 +243,9 @@ To improve rendering performance by up to 2x, try using [Multiview](/How_To/Mult
 
 ## Examples
 
-* [Custom example](https://playground.babylonjs.com/#AM07G2#4)
-* [Simple example](https://playground.babylonjs.com/#PPM311)
-* [Mansion](https://www.babylonjs-playground.com/#JA1ND3#161)
-* [Hill Valley](https://www.babylonjs-playground.com/#JA1ND3#182)
-* [Espilit](https://www.babylonjs-playground.com/#JA1ND3#164)
-
+- [Custom example](https://playground.babylonjs.com/#AM07G2#4)
+- [Simple example](https://playground.babylonjs.com/#PPM311)
+- [Mansion](https://www.babylonjs-playground.com/#JA1ND3#161)
+- [Hill Valley](https://www.babylonjs-playground.com/#JA1ND3#182)
+- [Espilit](https://www.babylonjs-playground.com/#JA1ND3#164)
+- [Skull-Pickup](https://playground.babylonjs.com/#ZNX043#15)
