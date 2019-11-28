@@ -140,13 +140,18 @@ Swap materials on the RTT before/after callbacks.
 renderTarget.onBeforeRender = (e) => {
     // Apply the shader on all meshes
     renderTarget.renderList.forEach((mesh) => {
+        // skip InstancedMesh, we'll handle the original mesh
+        if (mesh.getClassName() === 'InstancedMesh') {
+            return;
+        }
         // the PBR material takes some time to be loaded, it's possible that in the first few frames mesh.material is null...
-        if (mesh.material && !mesh.material.isFrozen && ('isReady' in mesh) && mesh.isReady(true)) { 
+        if (mesh.material && !mesh.isFrozen && ('isReady' in mesh) && mesh.isReady(true)) { 
             // backup effects
             const _orig_subMeshEffects = [];
             mesh.subMeshes.forEach((submesh) => {
                 _orig_subMeshEffects.push([submesh.effect, submesh.materialDefines]);
             });
+            mesh.isFrozen = true;
             mesh.material.freeze(); // freeze material so it won't be recomputed onAfter
             // store old material/effects
             mesh._saved_orig_material = mesh.material;
@@ -168,6 +173,10 @@ renderTarget.onBeforeRender = (e) => {
 renderTarget.onAfterRender = () => {
     // Set the original shader on all meshes
     renderTarget.renderList.forEach((mesh) => {
+        // skip InstancedMesh, we'll handle the original mesh
+        if (mesh.getClassName() === 'InstancedMesh') {
+            return;
+        }
         // nothing to do, early bail
         if (!mesh._orig_subMeshEffects) {
             return;
@@ -197,9 +206,9 @@ engine.runRenderLoop(() => {
 });
 ```
 
-The example has the complete code, including animated objects and instances.
+The example has the complete code, including animated objects and instances. You could freeze some meshes with `scene.freezeActiveMeshes()` to improve the performance even further.
 
-Playground example: [https://www.babylonjs-playground.com/#S1W87B#1](https://www.babylonjs-playground.com/#S1W87B#1)
+Playground example: [https://www.babylonjs-playground.com/#S1W87B#5](https://www.babylonjs-playground.com/#S1W87B#5)
 
 ### Notes about your shader
 
