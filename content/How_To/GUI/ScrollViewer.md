@@ -79,7 +79,9 @@ scrollBackground|string|grey|background color of scroll bars excluding the botto
 
 You do not have to have a barImage.
 
-* [Playground Example - Image Scroll Bars](https://www.babylonjs-playground.com/#4ZC0G4)
+The images for the vertical bar and thumb are rotated copies of those used for the horizontal bar and thumb. You may want to keep the image sizes small if memory is an issue in your project.
+
+* [Playground Example - Image Scroll Bars](https://www.babylonjs-playground.com/#4ZC0G4#2)
 * [Playground Example - Image Scroll Bars in a Grid](https://www.babylonjs-playground.com/#4ZC0G4#1)
 
 ## Adding an Adjustable TextBlock Window

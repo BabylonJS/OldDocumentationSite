@@ -2265,7 +2265,7 @@ declare module BABYLON {
         static DistanceOfPointFromSegment(p: DeepImmutable<Vector2>, segA: DeepImmutable<Vector2>, segB: DeepImmutable<Vector2>): number;
     }
     /**
-     * Classed used to store (x,y,z) vector representation
+     * Class used to store (x,y,z) vector representation
      * A Vector3 is the main object used in 3D geometry
      * It can represent etiher the coordinates of a point the space, either a direction
      * Reminder: js uses a left handed forward facing system
@@ -2667,10 +2667,10 @@ declare module BABYLON {
         static FromArray(array: DeepImmutable<ArrayLike<number>>, offset?: number): Vector3;
         /**
          * Returns a new Vector3 set from the index "offset" of the given Float32Array
-         * This function is deprecated. Use FromArray instead
          * @param array defines the source array
          * @param offset defines the offset in the source array
          * @returns the new Vector3
+         * @deprecated Please use FromArray instead.
          */
         static FromFloatArray(array: DeepImmutable<Float32Array>, offset?: number): Vector3;
         /**
@@ -2682,10 +2682,10 @@ declare module BABYLON {
         static FromArrayToRef(array: DeepImmutable<ArrayLike<number>>, offset: number, result: Vector3): void;
         /**
          * Sets the given vector "result" with the element values from the index "offset" of the given Float32Array
-         * This function is deprecated.  Use FromArrayToRef instead.
          * @param array defines the source array
          * @param offset defines the offset in the source array
          * @param result defines the Vector3 where to store the result
+         * @deprecated Please use FromArrayToRef instead.
          */
         static FromFloatArrayToRef(array: DeepImmutable<Float32Array>, offset: number, result: Vector3): void;
         /**
@@ -6272,8 +6272,8 @@ declare module BABYLON {
         /**
          * Gets the stride in float32 units (i.e. byte stride / 4).
          * May not be an integer if the byte stride is not divisible by 4.
-         * DEPRECATED. Use byteStride instead.
          * @returns the stride in float32 units
+         * @deprecated Please use byteStride instead.
          */
         getStrideSize(): number;
         /**
@@ -6402,14 +6402,14 @@ declare module BABYLON {
         /**
          * Gets the stride in float32 units (i.e. byte stride / 4).
          * May not be an integer if the byte stride is not divisible by 4.
-         * DEPRECATED. Use byteStride instead.
          * @returns the stride in float32 units
+         * @deprecated Please use byteStride instead.
          */
         getStrideSize(): number;
         /**
          * Returns the offset as a multiple of the type byte length.
-         * DEPRECATED. Use byteOffset instead.
          * @returns the offset in bytes
+         * @deprecated Please use byteOffset instead.
          */
         getOffset(): number;
         /**
@@ -10061,6 +10061,23 @@ declare module BABYLON {
          * @returns The light
          */
         abstract transferToEffect(effect: Effect, lightIndex: string): Light;
+        /**
+         * Sets the passed Effect "effect" with the Light textures.
+         * @param effect The effect to update
+         * @param lightIndex The index of the light in the effect to update
+         * @returns The light
+         */
+        transferTexturesToEffect(effect: Effect, lightIndex: string): Light;
+        /**
+         * Binds the lights information from the scene to the effect for the given mesh.
+         * @param lightIndex Light index
+         * @param scene The scene where the light belongs to
+         * @param effect The effect we are binding the data to
+         * @param useSpecular Defines if specular is supported
+         * @param usePhysicalLightFalloff Specifies whether the light falloff is defined physically or not
+         * @param rebuildInParallel Specifies whether the shader is rebuilding in parallel
+         */
+        bindLight(lightIndex: number, scene: Scene, effect: Effect, useSpecular: boolean, usePhysicalLightFalloff?: boolean, rebuildInParallel?: boolean): void;
         /**
          * Sets the passed Effect "effect" with the Light information.
          * @param effect The effect to update
@@ -16322,7 +16339,7 @@ declare module BABYLON {
          * @param invertY defines the direction for the Y axis (default is true - y increases downwards)
          * @param update defines whether texture is immediately update (default is true)
          */
-        drawText(text: string, x: number, y: number, font: string, color: string, clearColor: string, invertY?: boolean, update?: boolean): void;
+        drawText(text: string, x: number | null | undefined, y: number | null | undefined, font: string, color: string, clearColor: string, invertY?: boolean, update?: boolean): void;
         /**
          * Clones the texture
          * @returns the clone of the texture.
@@ -21044,6 +21061,13 @@ declare module BABYLON {
         /** @hidden */
         _materialEffect: Nullable<Effect>;
         /**
+         * Gets material defines used by the effect associated to the sub mesh
+         */
+        /**
+        * Sets material defines used by the effect associated to the sub mesh
+        */
+        materialDefines: Nullable<MaterialDefines>;
+        /**
          * Gets associated effect
          */
         readonly effect: Nullable<Effect>;
@@ -23060,6 +23084,18 @@ declare module BABYLON {
          */
         getTimeStep(): number;
         /**
+         * Set the sub time step of the physics engine.
+         * Default is 0 meaning there is no sub steps
+         * To increase physics resolution precision, set a small value (like 1 ms)
+         * @param subTimeStep defines the new sub timestep used for physics resolution.
+         */
+        setSubTimeStep(subTimeStep: number): void;
+        /**
+         * Get the sub time step of the physics engine.
+         * @returns the current sub time step
+         */
+        getSubTimeStep(): number;
+        /**
          * Release all resources
          */
         dispose(): void;
@@ -23725,6 +23761,10 @@ declare module BABYLON {
          * ConvexHull-Impostor type (Ammo.js plugin only)
          */
         static ConvexHullImpostor: number;
+        /**
+         * Custom-Imposter type (Ammo.js plugin only)
+         */
+        static CustomImpostor: number;
         /**
          * Rope-Imposter type
          */
@@ -26516,6 +26556,7 @@ declare module BABYLON {
         private _multimaterial;
         private _materialIndexesById;
         private _defaultMaterial;
+        private _autoUpdateSubMeshes;
         /**
          * Creates a SPS (Solid Particle System) object.
          * @param name (String) is the SPS name, this will be the underlying mesh name.
@@ -26866,6 +26907,10 @@ declare module BABYLON {
          * The SPS computed multimaterial object
          */
         multimaterial: MultiMaterial;
+        /**
+         * If the subMeshes must be updated on the next call to setParticles()
+         */
+        autoUpdateSubMeshes: boolean;
         /**
          * This function does nothing. It may be overwritten to set all the particle first values.
          * The SPS doesn't call this function, you may have to call it by your own.
@@ -38448,6 +38493,16 @@ declare module BABYLON {
         useObjectOrienationForDragging: boolean;
         private _options;
         /**
+         * Gets the options used by the behavior
+         */
+        /**
+        * Sets the options used by the behavior
+        */
+        options: {
+            dragAxis?: Vector3;
+            dragPlaneNormal?: Vector3;
+        };
+        /**
          * Creates a pointer drag behavior that can be attached to a mesh
          * @param options The drag axis or normal of the plane that will be dragged across. If no options are specified the drag plane will always face the ray's origin (eg. camera)
          */
@@ -41943,7 +41998,6 @@ declare module BABYLON {
          * Event that fires when the controller is removed/disposed
          */
         onDisposeObservable: Observable<{}>;
-        private _tmpMatrix;
         private _tmpQuaternion;
         private _tmpVector;
         /**
@@ -42435,7 +42489,25 @@ declare module BABYLON {
          */
         private static readonly GAMEPAD_ID_PATTERN;
         private _loadedMeshInfo;
-        private readonly _mapping;
+        protected readonly _mapping: {
+            buttons: string[];
+            buttonMeshNames: {
+                'trigger': string;
+                'menu': string;
+                'grip': string;
+                'thumbstick': string;
+                'trackpad': string;
+            };
+            buttonObservableNames: {
+                'trigger': string;
+                'menu': string;
+                'grip': string;
+                'thumbstick': string;
+                'trackpad': string;
+            };
+            axisMeshNames: string[];
+            pointingPoseMeshName: string;
+        };
         /**
          * Fired when the trackpad on this controller is clicked
          */
@@ -42477,7 +42549,7 @@ declare module BABYLON {
          * Fired when the touchpad values on this controller are modified
          */
         readonly onTouchpadValuesChangedObservable: Observable<StickValues>;
-        private _updateTrackpad;
+        protected _updateTrackpad(): void;
         /**
          * Called once per frame by the engine.
          */
@@ -42527,6 +42599,74 @@ declare module BABYLON {
         /**
         * Disposes of the controller
         */
+        dispose(): void;
+    }
+    /**
+     * This class represents a new windows motion controller in XR.
+     */
+    export class XRWindowsMotionController extends WindowsMotionController {
+        /**
+         * Changing the original WIndowsMotionController mapping to fir the new mapping
+         */
+        protected readonly _mapping: {
+            buttons: string[];
+            buttonMeshNames: {
+                'trigger': string;
+                'menu': string;
+                'grip': string;
+                'thumbstick': string;
+                'trackpad': string;
+            };
+            buttonObservableNames: {
+                'trigger': string;
+                'menu': string;
+                'grip': string;
+                'thumbstick': string;
+                'trackpad': string;
+            };
+            axisMeshNames: string[];
+            pointingPoseMeshName: string;
+        };
+        /**
+         * Construct a new XR-Based windows motion controller
+         *
+         * @param gamepadInfo the gamepad object from the browser
+         */
+        constructor(gamepadInfo: any);
+        /**
+         * holds the thumbstick values (X,Y)
+         */
+        thumbstickValues: StickValues;
+        /**
+         * Fired when the thumbstick on this controller is clicked
+         */
+        onThumbstickStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the thumbstick on this controller is modified
+         */
+        onThumbstickValuesChangedObservable: Observable<StickValues>;
+        /**
+         * Fired when the touchpad button on this controller is modified
+         */
+        onTrackpadChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * Fired when the touchpad values on this controller are modified
+         */
+        onTrackpadValuesChangedObservable: Observable<StickValues>;
+        /**
+         * Fired when the thumbstick button on this controller is modified
+         * here to prevent breaking changes
+         */
+        readonly onThumbstickButtonStateChangedObservable: Observable<ExtendedGamepadButton>;
+        /**
+         * updating the thumbstick(!) and not the trackpad.
+         * This is named this way due to the difference between WebVR and XR and to avoid
+         * changing the parent class.
+         */
+        protected _updateTrackpad(): void;
+        /**
+         * Disposes the class with joy
+         */
         dispose(): void;
     }
 }
@@ -42880,6 +43020,10 @@ declare module BABYLON {
          * The speed of the animation in distance/sec, apply when animationMode is TELEPORTATIONMODE_CONSTANTSPEED. (default 20 units / sec)
          */
         teleportationSpeed?: number;
+        /**
+         * The easing function used in the animation or null for Linear. (default CircleEase)
+         */
+        easingFunction?: EasingFunction;
     }
     /**
      * Options to modify the vr experience helper's behavior.
@@ -42991,6 +43135,7 @@ declare module BABYLON {
         private _teleportationMode;
         private _teleportationTime;
         private _teleportationSpeed;
+        private _teleportationEasing;
         private _rotationAllowed;
         private _teleportBackwardsVector;
         private _teleportationTarget;
@@ -46552,6 +46697,13 @@ declare module BABYLON {
         protected _buildUniformLayout(): void;
         private _computeAngleValues;
         /**
+         * Sets the passed Effect "effect" with the Light textures.
+         * @param effect The effect to update
+         * @param lightIndex The index of the light in the effect to update
+         * @returns The light
+         */
+        transferTexturesToEffect(effect: Effect, lightIndex: string): Light;
+        /**
          * Sets the passed Effect object with the SpotLight transfomed position (or position if not parented) and normalized direction.
          * @param effect The effect to update
          * @param lightIndex The index of the light in the effect to update
@@ -49062,7 +49214,7 @@ declare module BABYLON {
          */
         ambientTextureImpactOnAnalyticalLights: number;
         /**
-         * Stores the alpha values in a texture.
+         * Stores the alpha values in a texture. Use luminance if texture.getAlphaFromRGB is true.
          */
         opacityTexture: BaseTexture;
         /**
@@ -51771,6 +51923,7 @@ declare module BABYLON {
         static Epsilon: number;
         private _impostors;
         private _joints;
+        private _subTimeStep;
         /**
          * Gets the gravity vector used by the simulation
          */
@@ -51804,6 +51957,18 @@ declare module BABYLON {
          * @returns the current time step
          */
         getTimeStep(): number;
+        /**
+         * Set the sub time step of the physics engine.
+         * Default is 0 meaning there is no sub steps
+         * To increase physics resolution precision, set a small value (like 1 ms)
+         * @param subTimeStep defines the new sub timestep used for physics resolution.
+         */
+        setSubTimeStep(subTimeStep?: number): void;
+        /**
+         * Get the sub time step of the physics engine.
+         * @returns the current sub time step
+         */
+        getSubTimeStep(): number;
         /**
          * Release all resources
          */
@@ -52194,6 +52359,10 @@ declare module BABYLON {
          * @returns the current timestep in seconds
          */
         getTimeStep(): number;
+        /**
+         * The create custom shape handler function to be called when using BABYLON.PhysicsImposter.CustomImpostor
+         */
+        onCreateCustomShape: (impostor: PhysicsImpostor) => any;
         private _isImpostorInContact;
         private _isImpostorPairInContact;
         private _stepSimulation;
@@ -52279,6 +52448,11 @@ declare module BABYLON {
          * @param impostor to create the softbody for
          */
         private _createRope;
+        /**
+         * Create a custom physics impostor shape using the plugin's onCreateCustomShape handler
+         * @param impostor to create the custom physics shape for
+         */
+        private _createCustom;
         private _addHullVerts;
         private _createShape;
         /**
@@ -53959,6 +54133,11 @@ declare module BABYLON {
         private _initializeBlock;
         private _resetDualBlocks;
         /**
+         * Remove a block from the current node material
+         * @param block defines the block to remove
+         */
+        removeBlock(block: NodeMaterialBlock): void;
+        /**
          * Build the material and generates the inner effect
          * @param verbose defines if the build should log activity
          */
@@ -54389,6 +54568,10 @@ declare module BABYLON {
          */
         uniqueId: number;
         /**
+         * Gets or sets the comments associated with this block
+         */
+        comments: string;
+        /**
          * Gets a boolean indicating that this block can only be used once per NodeMaterial
          */
         readonly isUnique: boolean;
@@ -54736,6 +54919,15 @@ declare module BABYLON {
         TargetIncompatible = 2
     }
     /**
+     * Defines the direction of a connection point
+     */
+    export enum NodeMaterialConnectionPointDirection {
+        /** Input */
+        Input = 0,
+        /** Output */
+        Output = 1
+    }
+    /**
      * Defines a connection point for a block
      */
     export class NodeMaterialConnectionPoint {
@@ -54745,6 +54937,7 @@ declare module BABYLON {
         _connectedPoint: Nullable<NodeMaterialConnectionPoint>;
         private _endpoints;
         private _associatedVariableName;
+        private _direction;
         /** @hidden */
         _typeConnectionSource: Nullable<NodeMaterialConnectionPoint>;
         /** @hidden */
@@ -54752,6 +54945,8 @@ declare module BABYLON {
         private _type;
         /** @hidden */
         _enforceAssociatedVariableName: boolean;
+        /** Gets the direction of the point */
+        readonly direction: NodeMaterialConnectionPointDirection;
         /**
          * Gets or sets the additional types supported by this connection point
          */
@@ -54821,8 +55016,9 @@ declare module BABYLON {
          * Creates a new connection point
          * @param name defines the connection point name
          * @param ownerBlock defines the block hosting this connection point
+         * @param direction defines the direction of the connection point
          */
-        constructor(name: string, ownerBlock: NodeMaterialBlock);
+        constructor(name: string, ownerBlock: NodeMaterialBlock, direction: NodeMaterialConnectionPointDirection);
         /**
          * Gets the current class name e.g. "NodeMaterialConnectionPoint"
          * @returns the class name
@@ -55717,7 +55913,7 @@ declare module BABYLON {
         readonly rgbOut: NodeMaterialConnectionPoint;
         /**
          * Gets the rgb component (output)
-         * @deprecated Please use rgbOut instead
+         * @deprecated Please use rgbOut instead.
          */
         readonly rgb: NodeMaterialConnectionPoint;
         protected _buildBlock(state: NodeMaterialBuildState): this;
@@ -55776,12 +55972,12 @@ declare module BABYLON {
         readonly xyOut: NodeMaterialConnectionPoint;
         /**
          * Gets the xy component (output)
-         * @deprecated Please use xyOut instead
+         * @deprecated Please use xyOut instead.
          */
         readonly xy: NodeMaterialConnectionPoint;
         /**
          * Gets the xyz component (output)
-         * @deprecated Please use xyzOut instead
+         * @deprecated Please use xyzOut instead.
          */
         readonly xyz: NodeMaterialConnectionPoint;
         protected _buildBlock(state: NodeMaterialBuildState): this;
@@ -59986,6 +60182,8 @@ declare module BABYLON {
         interface Scene {
             /** @hidden (Backing field) */
             _physicsEngine: Nullable<IPhysicsEngine>;
+            /** @hidden */
+            _physicsTimeAccumulator: number;
             /**
              * Gets the current physics engine
              * @returns a IPhysicsEngine or null if none attached
@@ -67162,6 +67360,8 @@ declare module BABYLON.GUI {
         autoScale: boolean;
         /** Gets or sets the streching mode used by the image */
         stretch: number;
+        /** @hidden */
+        _rotate90(n: number): Image;
         /**
          * Gets or sets the internal DOM image used to render the control
          */
@@ -68384,13 +68584,63 @@ declare module BABYLON.GUI {
         name?: string | undefined;
         private _background;
         private _borderColor;
-        private _thumbMeasure;
+        private _tempMeasure;
         /** Gets or sets border color */
         borderColor: string;
         /** Gets or sets background color */
         background: string;
         /**
          * Creates a new Slider
+         * @param name defines the control name
+         */
+        constructor(name?: string | undefined);
+        protected _getTypeName(): string;
+        protected _getThumbThickness(): number;
+        _draw(context: CanvasRenderingContext2D): void;
+        private _first;
+        private _originX;
+        private _originY;
+        /** @hidden */
+        protected _updateValueFromPointer(x: number, y: number): void;
+        _onPointerDown(target: Control, coordinates: BABYLON.Vector2, pointerId: number, buttonIndex: number): boolean;
+    }
+}
+declare module BABYLON.GUI {
+    /**
+     * Class used to create slider controls
+     */
+    export class ImageScrollBar extends BaseSlider {
+        name?: string | undefined;
+        private _backgroundBaseImage;
+        private _backgroundImage;
+        private _thumbImage;
+        private _thumbBaseImage;
+        private _thumbLength;
+        private _thumbHeight;
+        private _barImageHeight;
+        private _tempMeasure;
+        /**
+         * Gets or sets the image used to render the background for horizontal bar
+         */
+        backgroundImage: Image;
+        /**
+         * Gets or sets the image used to render the thumb
+         */
+        thumbImage: Image;
+        /**
+         * Gets or sets the length of the thumb
+         */
+        thumbLength: number;
+        /**
+         * Gets or sets the height of the thumb
+         */
+        thumbHeight: number;
+        /**
+         * Gets or sets the height of the bar image
+         */
+        barImageHeight: number;
+        /**
+         * Creates a new ImageScrollBar
          * @param name defines the control name
          */
         constructor(name?: string | undefined);
@@ -68418,6 +68668,8 @@ declare module BABYLON.GUI {
         private _verticalBar;
         private _barColor;
         private _barBackground;
+        private _barImage;
+        private _barBackgroundImage;
         private _barSize;
         private _endLeft;
         private _endTop;
@@ -68427,14 +68679,18 @@ declare module BABYLON.GUI {
         private _onPointerObserver;
         private _clientWidth;
         private _clientHeight;
+        private _useImageBar;
+        private _thumbLength;
+        private _thumbHeight;
+        private _barImageHeight;
         /**
          * Gets the horizontal scrollbar
          */
-        readonly horizontalBar: ScrollBar;
+        readonly horizontalBar: ScrollBar | ImageScrollBar;
         /**
          * Gets the vertical scrollbar
          */
-        readonly verticalBar: ScrollBar;
+        readonly verticalBar: ScrollBar | ImageScrollBar;
         /**
          * Adds a new control to the current container
          * @param control defines the control to add
@@ -68454,7 +68710,7 @@ declare module BABYLON.GUI {
         * Creates a new ScrollViewer
         * @param name of ScrollViewer
         */
-        constructor(name?: string);
+        constructor(name?: string, isImageBased?: boolean);
         /** Reset the scroll viewer window to initial size */
         resetWindow(): void;
         protected _getTypeName(): string;
@@ -68466,15 +68722,29 @@ declare module BABYLON.GUI {
          * from 0 to 1 with a default value of 0.05
          * */
         wheelPrecision: number;
+        /** Gets or sets the scroll bar container background color */
+        scrollBackground: string;
         /** Gets or sets the bar color */
         barColor: string;
+        /** Gets or sets the bar image */
+        thumbImage: Image;
         /** Gets or sets the size of the bar */
         barSize: number;
+        /** Gets or sets the length of the thumb */
+        thumbLength: number;
+        /** Gets or sets the height of the thumb */
+        thumbHeight: number;
+        /** Gets or sets the height of the bar image */
+        barImageHeight: number;
         /** Gets or sets the bar background */
         barBackground: string;
+        /** Gets or sets the bar background image */
+        barImage: Image;
         /** @hidden */
         private _updateScroller;
         _link(host: AdvancedDynamicTexture): void;
+        /** @hidden */
+        private _addBar;
         /** @hidden */
         private _attachWheel;
         _renderHighlightSpecific(context: CanvasRenderingContext2D): void;
@@ -69206,6 +69476,10 @@ declare module BABYLON.GUI {
         private _tooltipHoverObserver;
         private _tooltipOutObserver;
         private _disposeTooltip;
+        /**
+         * Rendering ground id of all the mesh in the button
+         */
+        renderingGroupId: number;
         /**
          * Text to be displayed on the tooltip shown when hovering on the button. When set to null tooltip is disabled. (Default: null)
          */
@@ -71658,11 +71932,18 @@ declare module BABYLON.GLTF2.Exporter {
         /**
          * Define this method to modify the default behavior before exporting a texture
          * @param context The context when loading the asset
-         * @param babylonTexture The glTF texture info property
+         * @param babylonTexture The Babylon.js texture
          * @param mimeType The mime-type of the generated image
-         * @returns A promise that resolves with the exported glTF texture info when the export is complete, or null if not handled
+         * @returns A promise that resolves with the exported texture
          */
-        preExportTextureAsync?(context: string, babylonTexture: Texture, mimeType: ImageMimeType): Nullable<Promise<Texture>>;
+        preExportTextureAsync?(context: string, babylonTexture: Texture, mimeType: ImageMimeType): Promise<Texture>;
+        /**
+         * Define this method to get notified when a texture info is created
+         * @param context The context when loading the asset
+         * @param textureInfo The glTF texture info
+         * @param babylonTexture The Babylon.js texture
+         */
+        postExportTexture?(context: string, textureInfo: ITextureInfo, babylonTexture: BaseTexture): void;
         /**
          * Define this method to modify the default behavior when exporting texture info
          * @param context The context when loading the asset
@@ -71671,7 +71952,7 @@ declare module BABYLON.GLTF2.Exporter {
          * @param binaryWriter glTF serializer binary writer instance
          * @returns nullable IMeshPrimitive promise
          */
-        postExportMeshPrimitiveAsync?(context: string, meshPrimitive: IMeshPrimitive, babylonSubMesh: SubMesh, binaryWriter: _BinaryWriter): Nullable<Promise<IMeshPrimitive>>;
+        postExportMeshPrimitiveAsync?(context: string, meshPrimitive: IMeshPrimitive, babylonSubMesh: SubMesh, binaryWriter: _BinaryWriter): Promise<IMeshPrimitive>;
         /**
          * Define this method to modify the default behavior when exporting a node
          * @param context The context when exporting the node
@@ -71679,7 +71960,21 @@ declare module BABYLON.GLTF2.Exporter {
          * @param babylonNode BabylonJS node
          * @returns nullable INode promise
          */
-        postExportNodeAsync?(context: string, node: INode, babylonNode: Node): Nullable<Promise<INode>>;
+        postExportNodeAsync?(context: string, node: INode, babylonNode: Node): Promise<INode>;
+        /**
+         * Define this method to modify the default behavior when exporting a material
+         * @param material glTF material
+         * @param babylonMaterial BabylonJS material
+         * @returns nullable IMaterial promise
+         */
+        postExportMaterialAsync?(context: string, node: IMaterial, babylonMaterial: Material): Promise<IMaterial>;
+        /**
+         * Defint this method to return additional textures to export from a material
+         * @param material glTF material
+         * @param babylonMaterial BabylonJS material
+         * @returns List of textures
+         */
+        postExportMaterialAdditionalTextures?(context: string, node: IMaterial, babylonMaterial: Material): BaseTexture[];
         /**
          * Called after the exporter state changes to EXPORTING
          */
@@ -71773,7 +72068,8 @@ declare module BABYLON.GLTF2.Exporter {
          * @param imageData map of image file name to data
          * @param hasTextureCoords specifies if texture coordinates are present on the submesh to determine if textures should be applied
          */
-        _convertStandardMaterialAsync(babylonStandardMaterial: StandardMaterial, mimeType: ImageMimeType, hasTextureCoords: boolean): Promise<void>;
+        _convertStandardMaterialAsync(babylonStandardMaterial: StandardMaterial, mimeType: ImageMimeType, hasTextureCoords: boolean): Promise<IMaterial>;
+        private _finishMaterial;
         /**
          * Converts a Babylon PBR Metallic Roughness Material to a glTF Material
          * @param babylonPBRMetalRoughMaterial BJS PBR Metallic Roughness Material
@@ -71784,7 +72080,7 @@ declare module BABYLON.GLTF2.Exporter {
          * @param imageData map of image file name to data
          * @param hasTextureCoords specifies if texture coordinates are present on the submesh to determine if textures should be applied
          */
-        _convertPBRMetallicRoughnessMaterialAsync(babylonPBRMetalRoughMaterial: PBRMetallicRoughnessMaterial, mimeType: ImageMimeType, hasTextureCoords: boolean): Promise<void>;
+        _convertPBRMetallicRoughnessMaterialAsync(babylonPBRMetalRoughMaterial: PBRMetallicRoughnessMaterial, mimeType: ImageMimeType, hasTextureCoords: boolean): Promise<IMaterial>;
         /**
          * Converts an image typed array buffer to a base64 image
          * @param buffer typed array buffer
@@ -71883,7 +72179,7 @@ declare module BABYLON.GLTF2.Exporter {
          * @param imageData map of image file name to data
          * @param hasTextureCoords specifies if texture coordinates are present on the submesh to determine if textures should be applied
          */
-        _convertPBRMaterialAsync(babylonPBRMaterial: PBRMaterial, mimeType: ImageMimeType, hasTextureCoords: boolean): Promise<void>;
+        _convertPBRMaterialAsync(babylonPBRMaterial: PBRMaterial, mimeType: ImageMimeType, hasTextureCoords: boolean): Promise<IMaterial>;
         private setMetallicRoughnessPbrMaterial;
         private getPixelsFromTexture;
         /**
@@ -72165,10 +72461,14 @@ declare module BABYLON.GLTF2.Exporter {
         private _extensions;
         private static _ExtensionNames;
         private static _ExtensionFactories;
+        private _applyExtension;
         private _applyExtensions;
-        _extensionsPreExportTextureAsync(context: string, babylonTexture: Texture, mimeType: ImageMimeType): Nullable<Promise<BaseTexture>>;
-        _extensionsPostExportMeshPrimitiveAsync(context: string, meshPrimitive: IMeshPrimitive, babylonSubMesh: SubMesh, binaryWriter: _BinaryWriter): Nullable<Promise<IMeshPrimitive>>;
-        _extensionsPostExportNodeAsync(context: string, node: INode, babylonNode: Node): Nullable<Promise<INode>>;
+        _extensionsPreExportTextureAsync(context: string, babylonTexture: Texture, mimeType: ImageMimeType): Promise<Nullable<BaseTexture>>;
+        _extensionsPostExportMeshPrimitiveAsync(context: string, meshPrimitive: IMeshPrimitive, babylonSubMesh: SubMesh, binaryWriter: _BinaryWriter): Promise<Nullable<IMeshPrimitive>>;
+        _extensionsPostExportNodeAsync(context: string, node: INode, babylonNode: Node): Promise<Nullable<INode>>;
+        _extensionsPostExportMaterialAsync(context: string, material: IMaterial, babylonMaterial: Material): Promise<Nullable<IMaterial>>;
+        _extensionsPostExportMaterialAdditionalTextures(context: string, material: IMaterial, babylonMaterial: Material): BaseTexture[];
+        _extensionsPostExportTextures(context: string, textureInfo: ITextureInfo, babylonTexture: BaseTexture): void;
         private _forEachExtensions;
         private _extensionsOnExporting;
         /**
@@ -72181,6 +72481,7 @@ declare module BABYLON.GLTF2.Exporter {
          * @param options Options to modify the behavior of the exporter
          */
         constructor(babylonScene: Scene, options?: IExportOptions);
+        dispose(): void;
         /**
          * Registers a glTF exporter extension
          * @param name Name of the extension to export
@@ -72275,9 +72576,10 @@ declare module BABYLON.GLTF2.Exporter {
         /**
          * Generates data for .gltf and .bin files based on the glTF prefix string
          * @param glTFPrefix Text to use when prefixing a glTF file
+         * @param dispose Dispose the exporter
          * @returns GLTFData with glTF file data
          */
-        _generateGLTFAsync(glTFPrefix: string): Promise<GLTFData>;
+        _generateGLTFAsync(glTFPrefix: string, dispose?: boolean): Promise<GLTFData>;
         /**
          * Creates a binary buffer for glTF
          * @returns array buffer for binary data
@@ -72290,12 +72592,9 @@ declare module BABYLON.GLTF2.Exporter {
          */
         private _getPadding;
         /**
-         * Generates a glb file from the json and binary data
-         * Returns an object with the glb file name as the key and data as the value
-         * @param glTFPrefix
-         * @returns object with glb filename as key and data as value
+         * @hidden
          */
-        _generateGLBAsync(glTFPrefix: string): Promise<GLTFData>;
+        _generateGLBAsync(glTFPrefix: string, dispose?: boolean): Promise<GLTFData>;
         /**
          * Sets the TRS for each node
          * @param node glTF Node for storing the transformation data
@@ -72611,6 +72910,7 @@ declare module BABYLON.GLTF2.Exporter.Extensions {
      * @hidden
      */
     export class KHR_texture_transform implements IGLTFExporterExtensionV2 {
+        private _recordedTextures;
         /** Name of this extension */
         readonly name: string;
         /** Defines whether this extension is enabled */
@@ -72621,7 +72921,7 @@ declare module BABYLON.GLTF2.Exporter.Extensions {
         private _exporter;
         constructor(exporter: _Exporter);
         dispose(): void;
-        preExportTextureAsync(context: string, babylonTexture: Texture, mimeType: ImageMimeType): Nullable<Promise<Texture>>;
+        preExportTextureAsync(context: string, babylonTexture: Texture, mimeType: ImageMimeType): Promise<Texture>;
         /**
          * Transform the babylon texture by the offset, rotation and scale parameters using a procedural texture
          * @param babylonTexture
@@ -72660,7 +72960,32 @@ declare module BABYLON.GLTF2.Exporter.Extensions {
          * @param babylonNode BabylonJS node
          * @returns nullable INode promise
          */
-        postExportNodeAsync(context: string, node: INode, babylonNode: Node): Nullable<Promise<INode>>;
+        postExportNodeAsync(context: string, node: INode, babylonNode: Node): Promise<INode>;
+    }
+}
+declare module BABYLON.GLTF2.Exporter.Extensions {
+    /**
+     * @hidden
+     */
+    export class KHR_materials_sheen implements IGLTFExporterExtensionV2 {
+        /** Name of this extension */
+        readonly name: string;
+        /** Defines whether this extension is enabled */
+        enabled: boolean;
+        /** Defines whether this extension is required */
+        required: boolean;
+        /** Reference to the glTF exporter */
+        private _exporter;
+        private _textureInfo;
+        private _exportedTexture;
+        private _wasUsed;
+        constructor(exporter: _Exporter);
+        dispose(): void;
+        /** @hidden */
+        onExporting(): void;
+        postExportTexture?(context: string, textureInfo: ITextureInfo, babylonTexture: Texture): void;
+        postExportMaterialAdditionalTextures?(context: string, node: IMaterial, babylonMaterial: Material): BaseTexture[];
+        postExportMaterialAsync?(context: string, node: IMaterial, babylonMaterial: Material): Promise<IMaterial>;
     }
 }
 declare module BABYLON {
