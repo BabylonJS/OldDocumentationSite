@@ -46,7 +46,7 @@ alien.glb | 15.1 MB | ![alien](/img/resources/meshes/alien.png) | [Playground](h
 BabylonJS-logo/v1-2/Babylogo.babylon | 510 KB | ![Babylogo](/img/resources/meshes/Babylogo.jpg) | [Playground](https://www.babylonjs-playground.com/#TZTY3Y)
 BabylonJS-logo/v3/babylonJS_logo_solid_v3.babylon<br>BabylonJS-logo/v3/babylonJS_logo_v3.babylon | 59 KB<br>8 KB | ![babylonJS_logo_v3](/img/resources/meshes/babylonJS_logo_v3.jpg) | [Playground](https://www.babylonjs-playground.com/#Q9JFZ1)
 Chair/Chair.obj | 1.09 MB | ![chair](/img/resources/meshes/chair.png) | [Playground](https://www.babylonjs-playground.com/#KJV35B#1)
-Channel9/Channel9.stl | 1.03 MB | ![channel9](/img/resources/meshes/channel9.png) | [Playground](https://www.babylonjs-playground.com/#AJJ8U5#1)
+Channel9/Channel9.stl | 1.03 MB | ![channel9](/img/resources/meshes/channel9.png) | [Playground](https://www.babylonjs-playground.com/#AJJ8U5#2)
 clothFolds.glb | 2.21 MB | ![clothFolds](/img/resources/meshes/clothFolds.jpg) | [Playground](https://www.babylonjs-playground.com/#5NIBE1#2)
 CornellBox/cornellBox.babylon | 216 kB | ![cornellBox-babylon](/img/resources/meshes/cornellBox-babylon.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#2)
 CornellBox/cornellBox.babylon lightmapped | 343 kB | ![cornellBox-babylon-lightmapped](/img/resources/meshes/cornellBox-babylon-lightmapped.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#5)
@@ -83,6 +83,12 @@ To check the distance of the camera from the displayed mesh find the radius valu
 ![values](/img/resources/meshes/values.png)
 
 # Further Reading
+
+## How To
+
+- [Load from any file type - glTF, OBJ, STL, etc.](/how_to/load_from_any_file_type)
+
+## Resources
 
 - [Textures Available in the Playground](/resources/playground_textures)
 - [Using External Assets in the Playground](/resources/External_PG_assets)
