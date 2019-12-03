@@ -12,18 +12,19 @@ You can find a complete example of this pipeline in our playground:
 
 The default rendering pipeline provides visual improvements to enhance the output of your scene:
 * Antialiasing (MSAA and FXAA)
-* Sharpening
-* Depth of field
 * Bloom
+* Chromatic Aberration
+* Depth of field
 * Image processing including:
- * Vignette effect
- * Contrast
- * Exposure
  * Color curves
  * Color grading
+ * Contrast
+ * Exposure
  * Tone mapping
-* Chromatic Aberration
+ * Vignette effect
+* Glow
 * Grain
+* Sharpening
 
 # Creating the rendering pipeline
 
@@ -303,3 +304,4 @@ As usual, a [playground is available](https://www.babylonjs-playground.com/#ECI2
 ## API
 
 - [Babylon.DefaultRenderingPipeline](/api/classes/babylon.defaultrenderingpipeline.html)
+- [Babylon.ImageProcessingPostProcess](/api/classes/babylon.imageprocessingpostprocess.html)
