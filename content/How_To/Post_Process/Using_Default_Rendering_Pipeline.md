@@ -12,18 +12,19 @@ You can find a complete example of this pipeline in our playground:
 
 The default rendering pipeline provides visual improvements to enhance the output of your scene:
 * Antialiasing (MSAA and FXAA)
-* Sharpening
-* Depth of field
 * Bloom
+* Chromatic Aberration
+* Depth of field
 * Image processing including:
- * Vignette effect
- * Contrast
- * Exposure
  * Color curves
  * Color grading
+ * Contrast
+ * Exposure
  * Tone mapping
-* Chromatic Aberration
+ * Vignette effect
+* Glow
 * Grain
+* Sharpening
 
 # Creating the rendering pipeline
 
@@ -31,12 +32,20 @@ You just have to create an instance of `BABYLON.DefaultRenderingPipeline`:
 
 ```javascript
 var pipeline = new BABYLON.DefaultRenderingPipeline(
-    "default", // The name of the pipeline
-    true, // Do you want HDR textures?
+    "defaultPipeline", // The name of the pipeline
+    true, // Do you want the pipeline to use HDR texture?
     scene, // The scene instance
     [camera] // The list of cameras to be attached to
 );
 ```
+
+This will actually create a fullscreen post-process texture.
+
+Notes:
+
+1. The HDR value should be `true` as long as possible, unless you're targetting cheap fallback for low end devices. This value allow one of the half float or float texture type, depending on the GPU. Also, some effects (like bloom) will be more accurate.
+
+2. When enabling a pipeline, you may notice that your scene clearColor will not match the color you have set. This can be fixed using `.toLinearSpace()`, as in this [example](https://www.babylonjs-playground.com/#08A2BS#15)
 
 # Customizing
 
@@ -56,7 +65,7 @@ The FXAA antialiasing effect can be set using:
 pipeline.fxaaEnabled = true;
 ```
 
-Note: without using the pipeline, your scene already use a MSAA antialiasing, which is webGL native. When enabling the pipeline, you’re actually start using a post-process texture. Unfortunatly, webGL 1.0 devices will not be able to apply MSAA outside of render buffers. Still, FXAA is available but not as powerfull as MSAA.
+Note: without using the pipeline, your scene already use a MSAA antialiasing, which is webGL native. As said above, pipeline is running on a post-process texture: unfortunatly, webGL 1.0 devices will not be able to apply MSAA outside of render buffers. Still, FXAA is available but not as powerfull as MSAA.
 
 ## Sharpening
 
@@ -303,3 +312,4 @@ As usual, a [playground is available](https://www.babylonjs-playground.com/#ECI2
 ## API
 
 - [Babylon.DefaultRenderingPipeline](/api/classes/babylon.defaultrenderingpipeline.html)
+- [Babylon.ImageProcessingPostProcess](/api/classes/babylon.imageprocessingpostprocess.html)
