@@ -206,4 +206,12 @@ BABYLON.SceneLoader.ImportMesh(
         document.getElementById("loadingScreenPercent").innerHTML = loadedPercent;
     }
 );
+
+
 ```
+
+
+## Going further
+
+Check out this handy video explaining how to create your own loading screen:
+- Custom Loading Screens: https://youtu.be/cLqK9vgTKBw
