@@ -221,7 +221,7 @@ It is also possible to use playAnimation with sprites from a packed spritesheet.
 ## Sprite Map 
 *This is available from BJS version 4.1*
 
-Certain situations that are outside of the scope of the standard Sprite Manager.   These are generally when you need to render thousands (dare I say millions?) of animated sprites on screen.  Usually situations like this are reserved for 2d game design, but there are other situations where this would be beneficial.  For now we will focus on specifically the topic of 2d and 2.5d level design.  The only current limitation of this system is that the positions of the sprites are static to a specific grid dictated by the Sprite Maps initializing parameters. 
+Certain situations are outside of the scope of the standard Sprite Manager.   These are generally when you need to render thousands (dare I say millions?) of animated sprites on screen.  Usually situations like this are reserved for 2d game design, but there are other situations where this would be beneficial.  For now we will focus on specifically the topic of 2d and 2.5d level design.  The only current limitation of this system is that the positions of the sprites are static to a specific grid dictated by the Sprite Maps initializing parameters. 
 
  The SpriteMap is displayed on a standard Plane Mesh and has the ability to be transformed in 3d space.  Each SpriteMap is one draw call and reserves a minimum of 3 texture buffers in memory, more depending on the number of layers in the system.
 
