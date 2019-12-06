@@ -36,7 +36,9 @@ Congratulations, your modifications are now waiting to be validated and merged i
 
 ![pull now waiting](/img/contribute/documentation/easy-pull-waiting.png)
 
-# Going further
+Do not hesitate to read [Good Practice](#good-practices) section.
+
+# Deeper Changes
 
 Sometimes, quick edits like above are not sufficient. Indeed, you could want to run the documentation locally on your computer before pushing online, just to be sure nothing is broken.
 
@@ -201,6 +203,75 @@ If no conflicts, you will be able to follow the same steps as we seen above in t
 
 Congratulation again, you're now a documentation master!
 
+# Good Practices
+
+## General
+
+- if you're not familiar with markdown, you can read this short [Github guide](https://guides.github.com/features/mastering-markdown/)
+- even if you're seeing just a tiny typo, feel free to do a pull request dedicated to it
+- do one commit per tasks, a pull request can take into account multiple commits if needed
+    - example: if you have two pages to modify, once the first page is edited, do a commit
+- tables can be a great help for readibility
+
+## Images
+
+- use and store images from the documentation FTP as much as possible, read [Adding new images](https://doc.babylonjs.com/how_to/contribute_to_documentation#adding-new-images)
+- be careful about image size (tip: Photoshop have a "Save for the web" export)
+
+## Code
+
+- when showing a javascript bloc of code, tell to markdown that it's javascript to be sure having syntax highlight:
+
+![markdown code](/img/contribute/documentation/markdown-code.png)
+
+- when quoting a property in a sentence, you can use single *\`* char (Alt + numpad 96)
+    - example:  You can set the `roughness` of a PBR material to 1.
+
+## Links
+
+- use lowercases on your url
+    - example: `/how_to/` in place of `/How_To/`
+- use relative links
+    - example: `[Load Files with Assets Manager](/how_to/how_to_use_assetsmanager)` instead of `[Load Files with Assets Manager](https://doc.babylonjs.com/how_to/how_to_use_assetsmanager)`
+
+## Further Reading
+
+- try to always add a *Further Reading* section
+- sort *Further Reading* using main documentation sections (Babylon 101, How to, etc)
+- use markdown list
+- do not hesitate to link API relative to the article
+
+Example:
+```markdown
 # Further Reading
 
+## Babylon 101
+
+- [How to get Babylon.js](/babylon101/how_to_get)
+
+## How To
+
+- [Use the glTF File Loader Plugin](/how_to/gltf)
+- [Use the OBJ File Loader Plugin](/how_to/obj)
+- [Use the STL File Loader Plugin](/how_to/stl)
+- [Load Files with Assets Manager](/how_to/how_to_use_assetsmanager)
+
+## Resources
+
+- [Available Meshes for Importing into Playground](/resources/meshes_to_load)
+- [Using External Assets in the Playground](/resources/external_pg_assets)
+
+## API
+
+- [SceneLoader](/api/classes/babylon.sceneloader.html)
+```
+
+# Further Reading
+
+## How To
+
 - [Improve API Documentation](/how_to/contribute_to_api)
+
+## External
+
+- [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) on Github
