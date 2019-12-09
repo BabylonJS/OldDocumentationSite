@@ -30,11 +30,11 @@ var hl = new BABYLON.HighlightLayer("hl1", scene);
 hl.addMesh(sphere, BABYLON.Color3.Green());
 ```
 
-The highlight color is driven by the second parameter of the *addMesh* method.
+The highlight color is driven by the second parameter of the `addMesh` method:
 
-> The highlight layer will not highlight transparent meshes.
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#1KUJ0A#207)
 
-[**Playground Demo Scene**](https://www.babylonjs-playground.com/#1KUJ0A#0)
+**Note**: The highlight layer will not highlight transparent meshes, whether you're using mesh visibility or material alpha properties.
 
 ### Stop highlighting a Mesh
 
