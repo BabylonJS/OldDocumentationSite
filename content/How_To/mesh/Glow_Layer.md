@@ -8,6 +8,8 @@ Emissive meshes are equivalent to self lit meshes. Both the emissive color and t
 
 But how could we easily make the glow around those self lit areas ?
 
+![illustration](/img/how_to/glow-layer/introduction.jpg)
+
 ## How to use ?
 
 Only one line is needed to make all the emissive parts of a scene glow:
@@ -107,3 +109,14 @@ gl.addIncludedOnlyMesh(mesh)
 Using the function will automatically switch mode and only render the included meshes.
 
 [**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#30)
+
+
+# Further Reading
+
+## How To
+
+- [How To Highlight a Mesh](/how_to/highlight_layer)
+
+## API
+
+- [GlowLayer](/api/classes/babylon.glowlayer)

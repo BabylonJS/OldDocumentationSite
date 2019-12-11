@@ -10,4 +10,13 @@ Babylon.js provides an unified API on top of **WebGL**, **WebGL2** and **WebGPU*
 
 * [Timeline](timeline)
 * [Resizer](resizer)
+* [ImageFilter](imageFilter)
+
+# Code samples
+
+* [Real Time Video Processing](https://github.com/sebavan/BabylonjsVideoProcessingSample)
+
+## Going further
+
+- Video overview of the Babylon Controls: https://youtu.be/dISLIZ4SdAM
 

@@ -56,6 +56,11 @@ photoDome.imageMode = BABYLON.PhotoDome.MODE_SIDEBYSIDE;
 photoDome.imageMode = BABYLON.PhotoDome.MODE_TOPBOTTOM;
 ```
 
+Examples:
+
+- Side by side: https://www.babylonjs-playground.com/#WP9WDU
+- Top bottom: https://www.babylonjs-playground.com/#SM3YHE
+
 
 # How To 360 Photo with WebVR
 You can combine 360 Photo with WebVR. Just add the following code.

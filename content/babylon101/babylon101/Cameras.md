@@ -20,7 +20,7 @@ The second parameter is optional and defaults to **false**. When **false** then 
 
 ## Universal Camera
 
-This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or [gamepad](/How_To/how_to_use_gamepads) depending on the input device used, with no need for the controller to be specified. This extends and replaces the [Free Camera](/classes/3.0/freecamera), the [Touch Camera](/classes/3.0/touchcamera) and the [Gamepad Camera](classes/3.0/gamepadcamera) which are all still available.
+This was introduced with version 2.3 of Babylon.js and is controlled by the keyboard, mouse, touch or [gamepad](/How_To/how_to_use_gamepads) depending on the input device used, with no need for the controller to be specified. This extends and replaces the [Free Camera](/api/classes/babylon.freecamera), the [Touch Camera](/api/classes/babylon.touchcamera) and the [Gamepad Camera](/api/classes/babylon.gamepadcamera) which are all still available.
 
 The Universal Camera is now the default camera used by Babylon.js if nothing is specified, and it’s your best choice if you’d like to have a FPS-like control in your scene.
 All demos on babylonjs.com are based upon that feature. Plug a Xbox controller into your PC and using it you’ll still be able to navigate most of the demos.
@@ -52,7 +52,7 @@ The default actions are:
 // Attach the camera to the canvas
     camera.attachControl(canvas, true);
 ```
-[A Playground Example of a Universal Camera](http://www.babylonjs-playground.com/#12WBC#68)
+[A Playground Example of a Universal Camera](https://www.babylonjs-playground.com/#SRZRWV)
 
 
 ## Arc Rotate Camera
@@ -87,7 +87,7 @@ Whether using the keyboard, mouse or touch swipes left right directions change _
 // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
 ```
-[A Playground Example of an Arc Rotate Camera](http://www.babylonjs-playground.com/#12WBC#69)
+[A Playground Example of an Arc Rotate Camera](https://www.babylonjs-playground.com/#SRZRWV#1)
 
 Panning with an ArcRotateCamera is also possible by using CTRL + MouseLeftClick, the default action. You can specify to use MouseRightClick instead, by setting _useCtrlForPanning_ to false in the _attachControl_ call :
 
@@ -146,7 +146,7 @@ camera.attachControl(canvas, true);
 camera.target = targetMesh;   // version 2.4 and earlier
 camera.lockedTarget = targetMesh; //version 2.5 onwards
 ```
-[A Playground Example of a Follow Camera following a moving target](http://www.babylonjs-playground.com/#12WBC#84)
+[A Playground Example of a Follow Camera following a moving target](https://www.babylonjs-playground.com/#SRZRWV#6)
 
 
 ## AnaglyphCameras
@@ -195,7 +195,7 @@ This is a camera specifically designed to react to device orientation events suc
     camera.attachControl(canvas, true);
 
 ```
-[A Playground Example of a Device Orientation Camera](http://www.babylonjs-playground.com/#12WBC#81) for those with a correct device.
+[A Playground Example of a Device Orientation Camera](https://www.babylonjs-playground.com/#SRZRWV#3) for those with a correct device.
 
 ## Virtual Joysticks Camera
 
@@ -257,7 +257,7 @@ If you switch back to another camera, don’t forget to call the dispose() funct
 ## VR Device Orientation Cameras
 
 A new range of cameras.
-[A Playground Example of a VR Device Orientation Camera](http://www.babylonjs-playground.com/#12WBC#80) for those with a correct device.
+[A Playground Example of a VR Device Orientation Camera](https://www.babylonjs-playground.com/#SRZRWV#4) for those with a correct device.
 
 ### Constructing the VR Device Orientation Free Camera
 

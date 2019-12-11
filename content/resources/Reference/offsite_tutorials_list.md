@@ -18,23 +18,17 @@ Anyone who wrote a tutorial is welcome on this page, do not hesitate to [PR in G
 
 | Title | Keywords | Description |
 | :--- | :---: | --- |
-| [ **What's New - Babylon.js 2.4** ](https://www.eternalcoding.com/?p=2764) | Canvas2D, RefractionTexture, CubeMap, HDR, Lights, Physics, Unity3D, Parallax, Shader Includes | In this fine document, David Catuhe takes us on a tour of the most exciting new features of Babylon.js version 2.4.  David includes some nice demos, brief features, and tasty illustrations.  Deltakosh knows how to create a great looking document.  I think you will agree.|
-| [ **Going Further - Babylon.js 2.3** ](https://www.eternalcoding.com/?p=2331) | PointLight, Shadow, WebGL2, Sponza | In this info-file, Deltakosh tells us all about Dynamic Point Light Shadows which is a great new feature of Babylon.js 2.3. He also covers aspects of the fantastic Sponza Demo, which demonstrates this new DPLS feature. |
-| [ **What's New - Babylon.js 2.1** ](https://www.eternalcoding.com/?p=1901) | Unity5, Decals, SIMD, Collisions, WebWorkers, Shadows, Parametric Shapes, PostProcess | The Babylon.js 2.1 release brought many new  features, and we love them all. Deltakosh introduces us to the very best of them, giving credit to the contributors who made them happen. He often refuses to give himself credit, but we know how much of HIS life is dedicated to contributions - almost all of it. |
-| [ **What's New - Babylon.js 2.0** ](https://www.eternalcoding.com/?p=1883) | WebAudio, Volumetric, VLS, SceneOptimizer, Occlusion, SSAO, Level of Detail, LOD, Instanced Bones | Babylon.js 2.2 was a release chocked-full of new, powerful features. These features have become our new best friends, and you can hear the happiness in Deltakosh's words, as he takes us on a brief tour. |
-| [ **The Train Demo** ](https://www.eternalcoding.com/?p=193) | DrawElements | The Train Demo, which can be viewed on the Babylon.js main web site... is truly a work of art.  It is also a work of technology. In this document, Deltakosh talks about the developing of this _grand_ demo.  |
-| [ **Open-Sourcing the Docs** ](https://www.eternalcoding.com/?p=1962) | Documentation, Community | Deltakosh speaks about core-team documentation philosophies, particularly, community involvement. |
-| [ **Our Move to TypeScript** ](https://www.eternalcoding.com/?p=103) | TypeScript, Source | Here, Deltakosh tells of the thought and activities behind the move from plain JavaScript... to TypeScript. |
-| [ **All About Shaders** ](https://www.eternalcoding.com/?p=113) | Shaders, Vertex Shader, Fragment Shader, GLSL, ShaderMaterial, CYOS | This is a great introduction to shaders, and how they can be used in Babylon.js.  An easy-reading, yet thorough tutorial with great illustrations. Prepare yourself to become excited about shaders, as this document will make you so.|
-| [ **Blender -> Babylon Exporting** ](https://www.eternalcoding.com/?p=313) | Blender, Export, Exporter | Blender is an open-source modeler and scene layout application that compliments BabylonJS beautifully. In this heavily-illustrated tutorial, Deltakosh shows us how to do scene exporting... from Blender... to .babylon files. |
-| [ **Understanding Device Orientation** ](https://www.eternalcoding.com/?p=213) | DeviceOrientation, EventListener | Device Orientation inputs... are the wave of the future. According to Deltakosh, they "rock"... literally. :)  Join David and his friends for this superb exploration of device orientation tech and its uses. |
-| [ **Physics in WebGL Games** ](https://www.eternalcoding.com/?p=153) | CannonJS, OimoJS, Physics | Although this is an older document, it still speaks pertinently about the wonderful world of WebGL physics engine integration. |
-| [ **Creating a Convincing World** ](https://www.eternalcoding.com/?p=263) | Ground, Water, Skybox, Shadows  | In most games, the *environment* sets the mood/feel of the scene. Here, David introduces us to the primary scene-decoration features of Babylon.js.  This is the most-popular, most-read tutorial in all of Babylon land. |
-| [ **Using Multi-Materials** ](https://www.eternalcoding.com/?p=283) | Materials, SubMaterials, SubMeshes | A short introduction to the complex world of multi-materials.  Deltakosh shows that it need not be complex whatsoever. |
-| [ **Lights, Lights, Lights** ](https://www.eternalcoding.com/?p=293) | Light | Although we have a main docs-site tutorial for lights, here is another introductory tutorial that teaches the four main types of lights used in/for Babylon.js. |
-| [ **Unleash the StandardMaterial** ](https://www.eternalcoding.com/?p=303) | StandardMaterial, Material, Texture | Basic StandardMaterial usage/features are the theme in this introductory tutorial.  An easy-read doc, covering the basics. |
-| [ **Babylon.js - The Early Days** ](https://www.eternalcoding.com/?p=323) | Babylon | Take a walk through the early days of the Babylon.js webGL framework.  Possibly, one of the first documents where Deltakosh introduces his wonderful 3D system. Since then, Babylon.js has tripled its levels of wonderful.|
-| [ **Performance Tips - Instances and GC** ](https://www.eternalcoding.com/?p=233) | Performance, Instantiations, Garbage Collection | Here, Deltakosh shows us some performance tips which apply not only to Babylon.js, but to all JavaScript apps. Tweak your performance - the Deltakosh way.  |
+| [ **Open-Sourcing the Docs** ](https://www.eternalcoding.com/babylon-js-open-sourcing-the-documentation/) | Documentation, Community | Deltakosh speaks about core-team documentation philosophies, particularly, community involvement. |
+| [ **Our Move to TypeScript** ](https://www.eternalcoding.com/why-we-decided-to-move-from-plain-javascript-to-typescript-for-babylon-js/) | TypeScript, Source | Here, Deltakosh tells of the thought and activities behind the move from plain JavaScript... to TypeScript. |
+| [ **All About Shaders** ](https://www.eternalcoding.com/what-do-you-mean-by-shaders-learn-how-to-create-shaders-with-babylon-js/3) | Shaders, Vertex Shader, Fragment Shader, GLSL, ShaderMaterial, CYOS | This is a great introduction to shaders, and how they can be used in Babylon.js.  An easy-reading, yet thorough tutorial with great illustrations. Prepare yourself to become excited about shaders, as this document will make you so.|
+| [ **Blender -> Babylon Exporting** ](https://www.eternalcoding.com/babylon-js-how-to-load-a-babylon-file-produced-with-blender/) | Blender, Export, Exporter | Blender is an open-source modeler and scene layout application that compliments BabylonJS beautifully. In this heavily-illustrated tutorial, Deltakosh shows us how to do scene exporting... from Blender... to .babylon files. |
+| [ **Understanding Device Orientation** ](https://www.eternalcoding.com/understanding-deviceorientation-events-by-creating-a-small-3d-game-with-babylon-js/) | DeviceOrientation, EventListener | Device Orientation inputs... are the wave of the future. According to Deltakosh, they "rock"... literally. :)  Join David and his friends for this superb exploration of device orientation tech and its uses. |
+| [ **Physics in WebGL Games** ](https://www.eternalcoding.com/create-wonderful-interactive-games-for-the-web-using-webgl-and-a-physics-engine-babylon-js-cannon-js/) | CannonJS, OimoJS, Physics | Although this is an older document, it still speaks pertinently about the wonderful world of WebGL physics engine integration. |
+| [ **Creating a Convincing World** ](https://www.eternalcoding.com/babylon-js-creating-a-convincing-world-for-your-game-with-custom-shaders-height-maps-and-skyboxes/) | Ground, Water, Skybox, Shadows  | In most games, the *environment* sets the mood/feel of the scene. Here, David introduces us to the primary scene-decoration features of Babylon.js.  This is the most-popular, most-read tutorial in all of Babylon land. |
+| [ **Using Multi-Materials** ](https://www.eternalcoding.com/babylon-js-using-multi-materials/) | Materials, SubMaterials, SubMeshes | A short introduction to the complex world of multi-materials.  Deltakosh shows that it need not be complex whatsoever. |
+| [ **Lights, Lights, Lights** ](https://www.eternalcoding.com/babylon-js-using-lights-in-your-babylon-js-game/) | Light | Although we have a main docs-site tutorial for lights, here is another introductory tutorial that teaches the four main types of lights used in/for Babylon.js. |
+| [ **Unleash the StandardMaterial** ](https://www.eternalcoding.com/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game/) | StandardMaterial, Material, Texture | Basic StandardMaterial usage/features are the theme in this introductory tutorial.  An easy-read doc, covering the basics. |
+| [ **Babylon.js - The Early Days** ](https://www.eternalcoding.com/babylon-js-a-complete-javascript-framework-for-building-3d-games-with-html-5-and-webgl/) | Babylon | Take a walk through the early days of the Babylon.js webGL framework.  Possibly, one of the first documents where Deltakosh introduces his wonderful 3D system. Since then, Babylon.js has tripled its levels of wonderful.|
 
 ## David Rousset
 
@@ -156,13 +150,13 @@ Anyone who wrote a tutorial is welcome on this page, do not hesitate to [PR in G
 
 | Title | Keywords | Description |
 | :--- | :---: | --- |
-| https://pryme8.github.io/NeatFlax/ | snippets | Many excellent How_To are located here. |
+| [**neatFLAX - Tutorial Center**](https://pryme8.github.io/NeatFlax/) | snippets | Many excellent How_To are located here. |
 
 ## Mad Dog Tutorials
 
 | Title | Keywords | Description |
 | :--- | :---: | --- |
-| [youtube tutorials playlist](https://www.youtube.com/playlist?list=PLOGomoq5sDLtJeX81GFAXppi-VbrVwxav) | game, basic | Five substantial BabylonJS video tutorials |
+| [**Youtube tutorials playlist**](https://www.youtube.com/playlist?list=PLOGomoq5sDLtJeX81GFAXppi-VbrVwxav) | game, basic | Five substantial BabylonJS video tutorials |
 
 ## Serapth
 
@@ -171,18 +165,41 @@ Anyone who wrote a tutorial is welcome on this page, do not hesitate to [PR in G
 
 | Title | Keywords | Description |
 | :--- | :---: | --- |
-| [BabylonJS tutorial series](http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx) | beginner, basic | Assorted beginner-level text and video tutorials |
+| [**BabylonJS tutorial series**](http://www.gamefromscratch.com/page/BabylonJS-Tutorial-Series.aspx) | beginner, basic | Assorted beginner-level text and video tutorials |
 
 ## Vincent Lamy
 
 - website: https://www.nothing-is-3d.com/
 - forum username: [Vinc3r](https://forum.babylonjs.com/u/Vinc3r)
-- social networks: [Twitter](https://twitter.com/Vinc3r), [Mastodon](https://mamot.fr/@Vinc3r), [Github](https://github.com/Vinc3r)
+- social networks: [Mastodon](https://mamot.fr/@Vinc3r), [Github](https://github.com/Vinc3r)
 
 <div class='beforeWideTable'></div>
 
 | Title | Keywords | Description |
 | :--- | :---: | --- |
-| [From Blender to BabylonJS](https://nothing-is-3d.com/article27/from-blender-to-babylonjs) | Lightmap, Blender, Export | Help users to use their precomputed lighting from Blender to BabylonJS ([FR version](https://www.nothing-is-3d.com/article25/de-blender-vers-babylonjs) available). |
-| [Use a local webserver](https://www.nothing-is-3d.com/article28/use-a-local-webserver) | development, testing, server | Help users uncomfortable with web dev environment to quickly be able to launch a local webserver instead of using an online FTP ([FR version](https://www.nothing-is-3d.com/article26/utiliser-un-serveur-web-local) available). |
+| [**From Blender to BabylonJS**](https://nothing-is-3d.com/article27/from-blender-to-babylonjs) | Lightmap, Blender, Export | Help users to use their precomputed lighting from Blender to BabylonJS ([FR version](https://www.nothing-is-3d.com/article25/de-blender-vers-babylonjs) available). |
+| [**Use a local webserver**](https://www.nothing-is-3d.com/article28/use-a-local-webserver) | development, testing, server | Help users uncomfortable with web dev environment to quickly be able to launch a local webserver instead of using an online FTP ([FR version](https://www.nothing-is-3d.com/article26/utiliser-un-serveur-web-local) available). |
+
+## Andrija Perusic
+
+- forum username: [Andrija_Perusic](https://forum.babylonjs.com/u/Andrija_Perusic/)
+- social networks: [Github](https://github.com/creationspirit), [Linkedin](https://www.linkedin.com/in/andrija-peru%C5%A1i%C4%87-394733147/)
+
+<div class='beforeWideTable'></div>
+
+| Title | Keywords | Description |
+| :--- | :---: | --- |
+| [ **Realtime multiplayer game with NullEngine starter project** ](https://github.com/creationspirit/multiplayer-browser-game-boilerplate) | React, Colyseus, Typescript, NullEngine, boilerplate, tutorial | Simple starter project for a multiplayer game using authoritative server arhitecture made with Colyseus and BabylonJS NullEngine. Starter includes a simple scene where players can move freely and a lobby. |
+
+## gryff
+
+- forum username: [gryff](https://forum.babylonjs.com/u/gryff)
+
+<div class='beforeWideTable'></div>
+
+| Title | Keywords | Description |
+| :--- | :---: | --- |
+| [**Populate a terrain with custom trees**](https://forum.babylonjs.com/t/realistic-real-time-performant-trees-and-vegetation/6133/9) | terrain, trees, vegetation | Quick & efficient tutorial about populate terrain with custom trees and vegetation, using Blender particle system (logic remains the same between softwares) |
+
+[comment]: <> (this last line is to avoid clipping last table of the page)
 &nbsp;<br>

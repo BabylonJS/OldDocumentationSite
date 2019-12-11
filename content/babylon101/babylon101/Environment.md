@@ -2,6 +2,7 @@
 ID_PAGE: 22131
 PG_TITLE: 15. Environment
 ---
+
 # Environment
 
 You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive How_To that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.
@@ -12,7 +13,7 @@ _A picture showing Babylon.js fog in action_
 
 ## How can I do this?
 
-We will talk about that nice fog effect, shortly. First, I want to introduce you to two interesting properties on the [scene class object](/classes/3.0/Scene):
+We will talk about that nice fog effect, shortly. First, I want to introduce you to two interesting properties on the [scene class object](/api/classes/babylon.scene):
 
 * `scene.clearColor` - changes the 'background' color.
 * `scene.ambientColor` - changes the color used in several effects, including ambient lighting.
@@ -45,7 +46,7 @@ You will find that when there is no `scene.ambientColor`, then `StandardMaterial
 
 By default, `scene.ambientColor` is set to `Color3(0, 0, 0)`, which means there is no `scene.ambientColor`.
 
-(Please see the section on ambientColors in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, for more information.)
+(Please see the section on ambientColors in our [Unleash the Standard Material](https://www.eternalcoding.com/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game/) tutorial, for more information.)
 
 ### Skybox
 
@@ -77,7 +78,7 @@ Next, we apply our special sky texture to it. This texture must have been prepar
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("textures/skybox", scene);
 skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 ```
-(More about reflectionTextures can be found in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial.)
+(More about reflectionTextures can be found in our [Unleash the Standard Material](https://www.eternalcoding.com/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game/) tutorial.)
 
 In that `/skybox` directory, we must find 6 sky textures, one for each face of our box. Each image must be named per the corresponding face: “skybox_nx.png”, “skybox_ny.png”, “skybox_nz.png”, “skybox_px.png”, “skybox_py.png”, “skybox_pz.png”.
 

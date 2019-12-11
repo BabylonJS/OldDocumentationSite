@@ -11,9 +11,7 @@ The latest version can be found here: https://github.com/BabylonJS/Babylon.js/tr
 
 And the source code is available on the main Babylon.js repo: https://github.com/BabylonJS/Babylon.js/tree/master/gui.
 
-You can find a complete demo here: http://www.babylonjs.com/demos/gui/
-
-![Babylon.GUI](http://www.babylonjs.com/screenshots/gui.jpg)
+You can find a complete demo here: https://www.babylonjs.com/demos/gui/
 
 Please note that since Babylon.js v3.3, a [3D version is also available](//doc.babylonjs.com//How_To/Gui3D)
 
@@ -51,7 +49,7 @@ The fullscreen mode is not intended to be used with WebVR as it is a pure 2d ren
 
 * Texture mode: In this mode, BABYLON.GUI will be used as a texture for a given mesh. You will have to define the resolution of your texture. To create an AdvancedDynamicTexture in texture mode, just run this code:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024);
 ```
 
@@ -59,7 +57,7 @@ Here is an example of a simple texture mode GUI:  https://www.babylonjs-playgrou
 
 Please note that handling pointer move events could be costly on complex meshes, so you can turn off supporting pointer move events with a fourth parameter:
 
-```
+```javascript
 var advancedTexture2 = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(myPlane, 1024, 1024, false);
 ```
 
@@ -600,6 +598,18 @@ You can also apply stretch to animation sheet using `image.stretch` property.
 
 Starting with babylon.js v4.0, you can also set `img.detectPointerOnOpaqueOnly = true` to indicate if pointers should only be validated on pixels with alpha > 0.
 
+#### Batch loading of SVG images from icon sheet
+
+You can now load multiple SVG icons from a single SVG icon sheet without manually defining multiple sourceLeft, sourceTop, sourceWidth, sourceHeight attributes for each image. 
+
+Pre-requisite: a valid single layer SVG document with width, height, viewbox defined and icons grouped via ids. The layer should not have any transform attributes. 
+
+`onSVGAttributesComputedObservable` will trigger when the sourceLeft, sourceTop, sourceWidth, sourceHeight attributes are automatically computed. You can create custom SVG buttons that are built from multiple SVG assets (glow, text, images etc) for even cleaner code.
+
+Here is an example that uses SVG assets for images and buttons:  https://playground.babylonjs.com/#E5CARD
+
+Known issue: The batch loading process requires the entire SVG icon sheet to be loaded as a HTMLObjectElement in the DOM. On certain browsers, you may notice a quick flash of the icon sheet on the canvas as the assets load. To alleviate this, you may employ [a loading screen](https://doc.babylonjs.com/how_to/creating_a_custom_loading_screen).
+
 ### ColorPicker
 
 The color picker control allows users to set colors in your scene.
@@ -911,5 +921,6 @@ In this case the `guiScene` will host your GUI and the `mainScene` will host you
 ## Further reading
 
 [How To Use the Selection Panel Helper](/how_to/selector)  
-[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)  
+[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)
+[How To Use Babylon GUI Xml Loader](/how_to/XmlLoader)    
 [How To Use Babylon GUI3D](/how_to/gui3d)

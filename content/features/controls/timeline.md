@@ -19,7 +19,7 @@ In order to increase the reactivity of the web page, we rely here on WebGL throu
 To begin with the timeline, you first need to install the controls npm package.
 
 ```
-npm install @baylonjs/controls
+npm install @babylonjs/controls
 ```
 
 To reduce the size of your web page, the controls library is based on the es6 version of `@babylonjs/core` used as a peer dependency. Therefore if you are not relying on it so far in you project, you also need to install core:
@@ -32,7 +32,7 @@ npm install @babylonjs/core
 Once done, you can now import the timeline in your code:
 
 ```
-import { Timeline } from "@baylonjs/controls/timeline";
+import { Timeline } from "@babylonjs/controls/timeline";
 ```
 
 And simply instantiate it in your page:
@@ -43,18 +43,32 @@ const timeline = new Timeline(timelineCanvas, {
         thumbnailWidth: 128,
         thumbnailHeight: 120,
         loadingTextureURI: "./assets/loading.png",
-        getThumbnailCallback: (time: number) => {
+        getThumbnailCallback: (time: number, done: (input: any) => void) => {
+            // This is strictly for demo purpose and should not be used in prod as it creates as many videos
+            // as there are thumbnails all over the timeline.
             const hiddenVideo = document.createElement("video");
-            hiddenVideo.src = "./assets/test.mp4";
+            document.body.append(hiddenVideo);
+            hiddenVideo.style.display = "none";
 
-            hiddenVideo.setAttribute("muted", "true");
-            hiddenVideo.setAttribute("autoplay", "true");
             hiddenVideo.setAttribute("playsinline", "");
             hiddenVideo.muted = true;
-            hiddenVideo.autoplay = true;
+            hiddenVideo.autoplay = navigator.userAgent.indexOf("Edge") > 0 ? false : true;
+            hiddenVideo.loop = false;
 
-            hiddenVideo.currentTime = time;
-            return hiddenVideo;
+            hiddenVideo.onloadeddata = () => {
+                if (time === 0) {
+                    done(hiddenVideo);
+                }
+                else {
+                    hiddenVideo.onseeked = () => {
+                        done(hiddenVideo);
+                    }
+                    hiddenVideo.currentTime = time;
+                }
+            }
+
+            hiddenVideo.src = "./assets/test.mp4?" + time;
+            hiddenVideo.load();
         }
     });
 ```
@@ -67,7 +81,7 @@ As we do not want to be opiniated about the UX you prefer or about the thumbnail
 * *thumbnailWidth*: define the width of your generated thumbnails (use during the rendering to know how much space they should take in the timeline)
 * *thumbnailHeight*: define the height of your generated thumbnails (use to keep the ratio intact with the width previously defined)
 * *loadingTextureURI*: define the url of an image used as a temporary replacement for not fully loaded thumbnail (this will help handling network latency gracefully)
-* *getThumbnailCallback*: last, but definitely not the least, a callback where you will be able to provide the thumbnail fitting with the requested time in parameter. You can return either a video element set on the right frame (as done in the previous code sample), a canvas element containing for instance some pre processed data or some image URL. More choices will probably be added here to for instance support texture atlas as it might be a nice transport format.
+* *getThumbnailCallback*: last, but definitely not the least, a callback where you will be able to provide the thumbnail fitting with the requested time in parameter. You can return through the done function either a video element set on the right frame (as done in the previous code sample), a canvas element containing for instance some pre processed data or some image URL. More choices will probably be added here to for instance support texture atlas as it might be a nice transport format.
 
 You can also provide some none mandatory options:
 * *useClosestThumbnailAsLoadingTexture*: it is set to true by default and if enabled, it will try to use the closest loaded thumbnail (in time) instead of the loading one as soon as some of them are ready.

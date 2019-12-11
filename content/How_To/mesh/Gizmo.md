@@ -52,7 +52,7 @@ gizmoManager.gizmos.positionGizmo.updateGizmoRotationToMatchAttachedMesh = false
 ```
 Note: This is not supported on the scale gizmo
 
-[**Example**](https://www.babylonjs-playground.com/#4TBMBR)
+[**Example**](https://www.babylonjs-playground.com/#4TBMBR#33)
 ## Setup
 
 Gizmos are displayed by a [UtilityLayerRenderer](/How_To/UtilityLayerRenderer) to not disrupt the existing scene state. If not specified, the default utility layer will be used.
@@ -89,6 +89,11 @@ gizmo.snapDistance = 0.3;
 gizmo.onSnapObservable.add((event)=>{
     console.log(event);
 })
+```
+
+A sensitivity factor can be customized for AxisScaleGizmo and ScaleGizmo. Default is 1, a higher value means more stretch for the same drag.
+```
+gizmoScale.sensitivity = 3;
 ```
 
 These gizmo's internally use a [pointerDragBehavior](/How_To/MeshBehavior), this is exposed and can be used perform tasks before/during/after dragging a gizmo

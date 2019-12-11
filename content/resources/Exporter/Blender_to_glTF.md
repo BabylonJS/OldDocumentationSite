@@ -1,50 +1,58 @@
-# Blender to BJS through glTF
+# Blender to BJS, using glTF
 
 glTF exporter will allow you to export your scene using PBR workflow.
 
 ## Features
 
-glTF exporter is directly provided from KhronosGroup. You can find the github [repository here](https://github.com/KhronosGroup/glTF-Blender-Exporter) , check their readme to know all you need.
+Since Blender 2.8, glTF addon comes with Blender enabled by default. You can update it from the official [Github repo](https://github.com/KhronosGroup/glTF-Blender-IO). Official documentation is on [Blender Manual](https://docs.blender.org/manual/en/latest/addons/io_scene_gltf2.html).
 
-However here some shortcuts to key points of their documentations:
+It should be compatible with Blender 2.79b, but you may also note that the old exporter is  [still available](https://github.com/KhronosGroup/glTF-Blender-Exporter) ([old documentation](https://github.com/KhronosGroup/glTF-Blender-Exporter/blob/master/docs/user.md)).
 
-- [add-on installation](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/scripts)
-- [user documentation](https://github.com/KhronosGroup/glTF-Blender-Exporter/blob/master/docs/user.md)
-- [example and test Blender scenes](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/scenes)
+Axys conventions aren't the same between Blender, BabylonJS (left handed) & glTF (right handed), so you can see below a conversion table to help you about coordinates.
 
-At this moment, the Cycles Principled Shader is not yet directly supported (probably waiting for Blender 2.8 version). As the doc say, you have to append their [custom node group](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/pbr_node) into your blend scene.
+To help transforming, note that the BabylonJS loader will automatically set glTF assets as children of an object:
+- named `__root__`
+- rotated by default to 180° on Y axys
+- scaled on Z by -1
 
-A good practice could be to import the default glTF material as fake user, and then assign only a copy of it on your objects, so as to always keep the default gltf materials settings on your hands.
+
+| Blender asset position | BabylonJS asset absolutePosition |
+| :---: | :---: |
+| X | -X |
+| Y | Z |
+| Z | -Y |
+
 
 
 ##  Try it out!
 
 Once your scene is exported, you have multiple solutions to test it:
 
-- quick check it into the [sandbox](http://sandbox.babylonjs.com/)
+- quick check using the [sandbox](http://sandbox.babylonjs.com/)
 - use the [viewer](//doc.babylonjs.com/extensions/the_babylon_viewer)
 - script your own app using the [loader](/How_To/Load_From_Any_File_Type)
 
 ### Example
 
-Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [their repo](https://github.com/KhronosGroup/glTF-Blender-Exporter/tree/master/scenes):
+Let's say you have exported [WaterBottle.glb](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/WaterBottle/glTF-Binary):
 
-- export to glTF in a folder.
-- the HDR environment [needs a little tweak](/How_To/Use_HDR_Environment), you can also use the environment from the [BJS repo](https://github.com/BabylonJS/Website/blob/master/Assets/environment.dds). Place the converted environment texture in the glTF folder too.
+- export to .gltf or .glb in a folder
 - create a file named *index.html*, and copy the code above:
 
 ```html
 <!doctype html>
 <html>
+
 <head>
     <title>Default .gltf loading scene</title>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <!-- this link to the preview online version of BJS -->
     <script src="https://preview.babylonjs.com/babylon.js"></script>
     <!-- this is needed for BJS to load scene files -->
     <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
     <style>
-        html, body {
+        html,
+        body {
             overflow: hidden;
             width: 100%;
             height: 100%;
@@ -67,18 +75,15 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
         var engine = new BABYLON.Engine(canvas, true);
 
         // here the doc for Load function: //doc.babylonjs.com/api/classes/babylon.sceneloader#load
-        BABYLON.SceneLoader.Load("", "02_suzanne.gltf", engine, function (scene) {
+        BABYLON.SceneLoader.Load("", "WaterBottle.glb", engine, function (scene) {
 
-            var camera = new BABYLON.ArcRotateCamera("Camera", 1, 1, 4, BABYLON.Vector3.Zero(), scene);
-            camera.attachControl(canvas, false);
+            scene.createDefaultCamera(true, true, true);
+            scene.createDefaultEnvironment({
+                createGround: false,
+                createSkybox: false
+            });
 
-            //we tell to BJS where to find the environement texture
-            var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("environment.dds", scene);
-            hdrTexture.name = "envTex";
-            hdrTexture.gammaSpace = false;
-            scene.createDefaultSkybox(hdrTexture, true, 1000, 0);
-
-            engine.runRenderLoop(function() {
+            engine.runRenderLoop(function () {
                 scene.render();
             });
 
@@ -88,14 +93,14 @@ Let's say we want try exporting the KhronosGroup *02_suzanne.blend* scene from [
         });
     </script>
 </body>
+
 </html>
 
 ```
 
-![gltf default folder example](img/exporters/blender/gltf/gltf-BJS-default-folder-structure.png)
+- double-click on the *index.html* file
+  - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver ([local](/resources/running_a_local_webserver_for_babylonjs) or not), or try into another browser (e.g.: Firefox, Edge)
 
-- double-click on the *index.html* file... profit!
-  - some browsers may not want loading the scene, for some security issues (e.g.: Chrome). In this case, you have to open the html file through a webserver (local or not), or try into another browser (e.g.: Firefox, Edge).
+- ... profit!
 
-
-![blender gltf scene loaded in BJS](img/exporters/blender/gltf/gltf-loaded.png)
+![blender gltf scene loaded in BJS](/img/exporters/blender/gltf/gltf-loaded.png)

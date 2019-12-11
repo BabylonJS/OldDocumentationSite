@@ -73,7 +73,7 @@ engine.hideLoadingUI();
 
 Here a playground using a custom loading screen:
 
-https://www.babylonjs-playground.com/#5Y2GIC#29
+https://www.babylonjs-playground.com/#5Y2GIC#39
 
 You might also be interested in a standalone html example:
 
@@ -206,4 +206,12 @@ BABYLON.SceneLoader.ImportMesh(
         document.getElementById("loadingScreenPercent").innerHTML = loadedPercent;
     }
 );
+
+
 ```
+
+
+## Going further
+
+Check out this handy video explaining how to create your own loading screen:
+- Custom Loading Screens: https://youtu.be/cLqK9vgTKBw

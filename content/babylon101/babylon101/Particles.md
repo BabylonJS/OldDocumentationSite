@@ -850,7 +850,6 @@ To completely stop a `GPUParticleSystem`, you have to call `dispose()` on it.
 The following features are not supported by GPU particles due to their inner nature:
 - ManualEmitCount
 - Custom effects
-- Animation sheets
 - disposeOnStop
 - Dual values per gradient (only one value is supported)
 - Emit rate gradients are not supported
@@ -876,7 +875,8 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 [How to Create Animated Particles](/how_to/Animate)  
 [How to Use Sub Emitters](/how_to/Sub_Emitters)
 
-[Solid Particle System](/How_To/Solid_Particles)
+[Solid Particle System](/How_To/Solid_Particles)  
+[Points Cloud Particle System](/How_To/point_Cloud_Particles)
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)  

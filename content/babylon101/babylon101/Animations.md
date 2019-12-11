@@ -84,6 +84,8 @@ var keys = [];
   });
 ```
 
+**Please note that the frame must be in ascending order.**
+
 For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent and outTangent values to use spline interpolations instead of linear interpolations:
 
 ```javascript
@@ -321,7 +323,7 @@ Please note that the scene.animationPropertiesOverride will be used if animation
 You can add some behaviors to your animations, using easing functions. 
 If you want more information about easing functions, here are some useful links : 
 - [MSDN Easing functions documentation](http://msdn.microsoft.com/en-us/library/ee308751.aspx)
-- [Easing functions cheat sheet](http://easings.net/fr)
+- [Easing functions cheat sheet](https://easings.net)
 
 All those easing functions are implemented in BABYLON, allowing you to apply custom mathematical formulas to your animations.
 
@@ -421,11 +423,11 @@ This function can be very useful for complex animation like games, where charact
 
 Don’t hesitate to combine all those types of animations. If well done, it’s very powerful.
 
-Don't forget to [visit our API documentation](/classes/) in order to learn more about the [**Babylon.js Animation**](/classes/3.0/animation) and [**Babylon.js Animatable**](/classes/3.0/animatable) classes.
+Don't forget to [visit our API documentation](/api/) in order to learn more about the [**Babylon.js Animation**](/api/classes/babylon.animation) and [**Babylon.js Animatable**](/api/classes/babylon.animatable) classes.
 
 ## Attach events to animations
 
-From Babylon.js version 2.3, you can attach [animation events](/classes/3.0/animationevent) to specific frames on an animation.
+From Babylon.js version 2.3, you can attach [animation events](/api/classes/babylon.animationevent) to specific frames on an animation.
 
 An event is a function that will be called at a given frame.
 

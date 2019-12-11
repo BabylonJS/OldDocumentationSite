@@ -29,7 +29,7 @@ The playground below shows that face numbering using `MeshBuilder.CreateBox` is 
 
 A texture atlas also known as a _sprite sheet_ or _sprite atlas_ contains a range of images as in the example below.
 
-![Sprite Altlas](http://jerome.bousquie.fr/BJS/images/spriteAtlas.png)
+![Sprite Altlas](/img/how_to/apply-material-to-faces/spriteAtlas.png)
 
 In this atlas there are 24 different images in a 4 rows of 6 a way of mapping each sprite onto an individual face is needed. 
 
@@ -45,11 +45,11 @@ As there are six sprites in a row and four in a column divide the image into a g
 
 ![Sprite Atlas with Grid](/img/how_to/Materials/spritesheet1.jpg)
 
-Consider the sprite in the grid space marked with a *, this has bottom left coordinates of (2/6, 1/4) and top right coordinates of (3/6, 2/4). Counting the columns as 0, 1, 2, 3, 4, 5 and the rows as 0, 1, 2, 3  it is in column 2 and row 1.
+Consider the sprite in the grid space marked with `a *`, this has bottom left coordinates of `(2/6, 1/4)` and top right coordinates of `(3/6, 2/4)`. Counting the columns as `0, 1, 2, 3, 4, 5` and the rows as `0, 1, 2, 3` it is in column 2 and row 1.
 
-Bottom left is (2 * 1/6, 1 * 1/4) and top right is ((2 + 1) * 1/6, (1 + 1) * 1/4)
+Bottom left is `(2 * 1/6, 1 * 1/4)` and top right is `((2 + 1) * 1/6, (1 + 1) * 1/4)`.
 
-In general for this texture atlas a sprite in column c and row r  will have coordinates bottom left (c * 1/6, r * 1/4) and top right ((c + 1) * 1/6, (r + 1) * 1/4).
+In general for this texture atlas a sprite in column `c` and row `r` will have coordinates bottom left `(c * 1/6, r * 1/4)` and top right `((c + 1) * 1/6, (r + 1) * 1/4)`.
 
 With faces of the mesh numbered from 0 when you want to map face f to the sprite at grid (c, r) take an array faceUV and put
 
@@ -318,7 +318,7 @@ A cylinder has three surfaces, the top, the bottom and the tube joining them. Fo
 
 The following texture image is split into two parts, an approximation to a top and the label. The bottom will be colored just using faceColors and so the bottom face uv coordinates will be 0, 0, 0, 0.
 
-![can label and top](https://i.imgur.com/Q6i4ZiX.jpg)
+![can label and top](/img/how_to/apply-material-to-faces/can-texture.jpg)
 
 The label part has width 866 pixels and height 319 pixels.
 

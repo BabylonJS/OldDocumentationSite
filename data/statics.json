@@ -20,6 +20,11 @@
                     "abstract": "Everything in babylon.js is managed inside of a scene. It holds every objects that are going to be used to render your 3D elements."
                 },
                 {
+                    "title": "How to get Babylon.js",
+                    "filename": "How_To_Get",
+                    "abstract": "Describes all the ways to get Babylon.js"
+                },
+                {
                     "title": "Discover Basic Elements",
                     "filename": "Discover_Basic_Elements",
                     "abstract": "With babylon.js you can use a lot of different basic 3D elements. They are available by default to help you create cubes, spheres, etc."
@@ -98,11 +103,6 @@
                     "title": "Shadows",
                     "filename": "Shadows",
                     "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
-                },
-                {
-                    "title": "How to get Babylon.js",
-                    "filename": "How_To_Get",
-                    "abstract": "Describe all the way to get Babylon.js"
                 }
             ]
         }
@@ -150,6 +150,11 @@
                     "filename": "Multi_Scenes"
                 },
                 {
+                    "title": "Use Multiple Canvases with one Engine",
+                    "level": 1,
+                    "filename": "Multi_Canvases"
+                },
+                {
                     "title": "Create a custom loading screen",
                     "level": 2,
                     "filename": "Creating_a_custom_loading_screen"
@@ -158,7 +163,7 @@
                     "title": "Use SceneOptimizer",
                     "level": 3,
                     "filename": "How_to_use_SceneOptimizer"
-                },
+                },                
                 {
                     "title": "Optimize your scene",
                     "level": 3,
@@ -173,6 +178,11 @@
                     "title": "Reduce memory footprint",
                     "level": 3,
                     "filename": "Reduce_memory_footprint"
+                },                
+                {
+                    "title": "Using offscreen canvas",
+                    "level": 3,
+                    "filename": "Using_Offscreen_Canvas"
                 },
                 {
                     "title": "Optimize using Cached Resources",
@@ -240,11 +250,6 @@
                     "title": "Use decals",
                     "level": 1,
                     "filename": "Decals"
-                },
-                {
-                    "title": "Use the Solid Particle System",
-                    "level": 1,
-                    "filename": "Solid_Particle_System"
                 },
                 {
                     "title": "Use PolygonMeshBuilder",
@@ -407,6 +412,11 @@
                     "title": "Use Multi-Materials",
                     "level": 1,
                     "filename": "Multi_Materials"
+                },
+                {
+                    "title": "How To use the Node Material",
+                    "level": 1,
+                    "filename": "Node_Material"
                 },
                 {
                     "title": "Use Dynamic Texture",
@@ -593,6 +603,11 @@
                     "title": "Solid Particle System",
                     "level": 1,
                     "filename": "Solid_Particles"
+                },
+                {
+                    "title": "Points Cloud Particle System ",
+                    "level": 1,
+                    "filename": "Point_Cloud_Particles"
                 }
             ]
         },
@@ -758,7 +773,7 @@
                     "filename": "Using_the_SSAO_rendering_pipeline"
                 },
                 {
-                    "title": "Use the standard rendering pipeline",
+                    "title": "Use the standard rendering pipeline (deprecated)",
                     "level": 3,
                     "filename": "Using_Standard_Rendering_Pipeline"
                 },
@@ -776,6 +791,11 @@
                     "title": "Use motion blur post-process",
                     "level": 3,
                     "filename": "Using_MotionBlurPostProcess"
+                },
+                {
+                    "title": "How to use RenderTargetTexture and run multiple passes",
+                    "level": 3,
+                    "filename": "How_to_use_RenderTargetTexture_and_multiple_passes"
                 }
             ]
         },
@@ -834,6 +854,10 @@
                 {
                     "title": "Use the Selection Panel Helper",
                     "filename": "Selector"
+                },
+                {
+                    "title": "Use the Xml Loader",
+                    "filename": "XmlLoader"
                 },
                 {
                     "title": "Use the Babylon 3D GUI",
@@ -967,7 +991,7 @@
                     "filename": "Using_Assets_Panel"
                 },
                 {
-                    "title": "Writing Custom Scripts",
+                    "title": "Using Code Editor",
                     "filename": "Custom_Scripts"
                 },
                 {
@@ -975,7 +999,7 @@
                     "filename": "Adding_Animations"
                 },
                 {
-                    "title": "Using Path Finder",
+                    "title": "Using The Path Finder",
                     "filename": "Using_PathFinder"
                 },
                 {
@@ -987,8 +1011,16 @@
                     "filename": "Editing_Prefabs"
                 },
                 {
-                    "title": "Creating custom particle system sets",
+                    "title": "Using The Particles Creator",
                     "filename": "Using_ParticleSystemEditor"
+                },
+                {
+                    "title": "Using the Graph Editor",
+                    "filename": "Using_GraphEditor"
+                },
+                {
+                    "title": "Using the Photoshop Extension",
+                    "filename": "Using_Photoshop_Extension"
                 }
             ]
         },
@@ -1787,6 +1819,10 @@
                     "filename": "Line2D"
                 },
                 {
+                    "title": "Extrude Shape with Mitred Corners",
+                    "filename": "Mitred"
+                },
+                {
                     "title": "Making a Frame",
                     "filename": "Frame"
                 },
@@ -1925,6 +1961,10 @@
                 {
                     "title": "Resizer Control",
                     "filename": "resizer"
+                },
+                {
+                    "title": "Image Filter",
+                    "filename": "imageFilter"
                 }
             ]
         },

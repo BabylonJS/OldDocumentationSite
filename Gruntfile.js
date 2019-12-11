@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         },
         download: {
             documentation: {
-                src: 'https://cdn.jsdelivr.net/gh/BabylonJS/Babylon.js@master/dist/preview%20release/documentation.d.ts',
+                src: 'https://raw.githubusercontent.com/BabylonJS/Babylon.js/master/dist/preview%20release/documentation.d.ts',
                 dest: './typedoc/babylon.d.ts'
             }
         },

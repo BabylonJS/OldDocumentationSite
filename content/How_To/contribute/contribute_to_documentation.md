@@ -36,7 +36,9 @@ Congratulations, your modifications are now waiting to be validated and merged i
 
 ![pull now waiting](/img/contribute/documentation/easy-pull-waiting.png)
 
-# Going further
+Do not hesitate to read [Good Practice](#good-practices) section.
+
+# Deeper Changes
 
 Sometimes, quick edits like above are not sufficient. Indeed, you could want to run the documentation locally on your computer before pushing online, just to be sure nothing is broken.
 
@@ -77,9 +79,17 @@ This fork operation has to be done only once. You're now able to run locally the
 
 ## Running and editing the doc locally
 
-In the powershell window at the root of the documentation repo, send a **grunt build** command and wait. Should the build not occur try updating 'npm', 'grunt, and 'grunt-cli'.
+In the powershell window at the root of the documentation repo, send a:
 
-When it's done, use **grunt serve**: this will launch the local documentation website on http://localhost:8080
+`grunt build`
+
+command and wait. Should the build not occur try `npm install`, or updating `npm`, `grunt`, and `grunt-cli`.
+
+When it's done, use:
+
+`grunt serve`
+
+This will launch the local documentation website on http://localhost:8080
 
 Open the project using your favorite code editor. This can be done also from Github Desktop:
 
@@ -90,6 +100,24 @@ Open the project using your favorite code editor. This can be done also from Git
 You can finally starting to update the markdown files!
 
 ![visual studio](/img/contribute/documentation/further-editing.png)
+
+## Adding new images
+
+In case you have to create new illustrations, you need to send them on the Github repo into a specific folder: [`Documentation/public/html/img/`](https://github.com/BabylonJS/Documentation/tree/master/public/html/img).
+
+So on your local fork, go to this `img` folder. You can see there are already a lot of folders, so try to use existing folders to put your new images if possible.
+
+Let says you just create a new page, linked on `https://doc.babylonjs.com/how_to/my_very_great_page`.
+
+Here, you can create a `my_very_great_page` folder into the `/img/how_to/` one, and put `my-wonderful-image.jpg` into it.
+
+Then, on your markdown page, use this link pattern:
+
+```
+![quick description (for accessibility)](/img/how_to/my_very_great_page/my-wonderful-image.jpg)
+```
+
+Of course, try to keep image size as low as you can (while keeping a good visual quality).
 
 ## Adding new pages
 
@@ -147,9 +175,11 @@ Notice the filename field, this will be your new page filename (without markdown
 
 ## Sending pull request
 
+A Pull Request (PR) have to be made so as to integrate your modifications on the documentation.
+
 You will first pull your local modifications into your online fork, then ask for merging your fork into the main repo.
 
-In Github Desktop, you will see all your modifications.
+In Github Desktop, you will see all your modifications. Sometimes a file named `babylon.d.ts` will be automatically modified, it's not a problem to PR it.
 
 Add an explicit summary into the required field, and click to *Commit to master*:
 
@@ -172,3 +202,76 @@ Click on *New pull request* button:
 If no conflicts, you will be able to follow the same steps as we seen above in the [easy way](#the-easy-way) section.
 
 Congratulation again, you're now a documentation master!
+
+# Good Practices
+
+## General
+
+- if you're not familiar with markdown, you can read this short [Github guide](https://guides.github.com/features/mastering-markdown/)
+- even if you're seeing just a tiny typo, feel free to do a pull request dedicated to it
+- do one commit per tasks, a pull request can take into account multiple commits if needed
+    - example: if you have two pages to modify, once the first page is edited, do a commit
+- tables can be a great help for readibility
+
+## Images
+
+- use and store images from the documentation FTP as much as possible, read [Adding new images](https://doc.babylonjs.com/how_to/contribute_to_documentation#adding-new-images)
+- be careful about image size (tip: Photoshop have a "Save for the web" export)
+
+## Code
+
+- when showing a javascript bloc of code, tell to markdown that it's javascript to be sure having syntax highlight:
+
+![markdown code](/img/contribute/documentation/markdown-code.png)
+
+- when quoting a property in a sentence, you can use single *\`* char (Alt + numpad 96)
+    - example:  You can set the `roughness` of a PBR material to 1.
+
+## Links
+
+- use lowercases on your url
+    - example: `/how_to/` in place of `/How_To/`
+- use relative links
+    - example: `[Load Files with Assets Manager](/how_to/how_to_use_assetsmanager)` instead of `[Load Files with Assets Manager](https://doc.babylonjs.com/how_to/how_to_use_assetsmanager)`
+
+## Further Reading
+
+- try to always add a *Further Reading* section
+- sort *Further Reading* using main documentation sections (Babylon 101, How to, etc)
+- use markdown list
+- do not hesitate to link API relative to the article
+
+Example:
+```markdown
+# Further Reading
+
+## Babylon 101
+
+- [How to get Babylon.js](/babylon101/how_to_get)
+
+## How To
+
+- [Use the glTF File Loader Plugin](/how_to/gltf)
+- [Use the OBJ File Loader Plugin](/how_to/obj)
+- [Use the STL File Loader Plugin](/how_to/stl)
+- [Load Files with Assets Manager](/how_to/how_to_use_assetsmanager)
+
+## Resources
+
+- [Available Meshes for Importing into Playground](/resources/meshes_to_load)
+- [Using External Assets in the Playground](/resources/external_pg_assets)
+
+## API
+
+- [SceneLoader](/api/classes/babylon.sceneloader.html)
+```
+
+# Further Reading
+
+## How To
+
+- [Improve API Documentation](/how_to/contribute_to_api)
+
+## External
+
+- [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) on Github
