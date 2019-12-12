@@ -35,7 +35,7 @@ Please also note that the following functions are available:
 A container is used to organize controls in the scene. The base class for all containers is the `Container3D` class. The `manager.rootContainer` is a `Container3D` object.
 
 All containers provide the following functions to handle controls:
-- `addControl()`: Adds a control to the children of this control
+- `addControl()`: Adds a control to the children of this container
 - `containsControl()`: Gets a boolean indicating if the given control is in the root child list
 - `removeControl()`: Removes a control from the root child list
 
@@ -177,7 +177,7 @@ Some observables are also available to help tracking control state:
 - `onPointerClickObservable`: An event triggered when a control is clicked on (with a mouse)
 - `onPointerMoveObservable`: An event triggered when the pointer move over the control
 
-All controls can also be the target of [behaviors ](http://doc.babylonjs.com/features/behaviour) so they expose the associated properties and functions:
+All controls can also be the target of [behaviors ](//doc.babylonjs.com/features/behaviour) so they expose the associated properties and functions:
 - `behaviors`: Gets the list of attached behaviors
 - `addBehavior()`: Attach a behavior to the control
 - `removeBehavior()`: Remove an attached behavior
@@ -198,7 +198,7 @@ All these callbacks are empty by default and will be implemented by specialized 
 A button is a control with default animations for enter/out/down and up events.
 It is based on a 2D GUI content.
 
-You can specify the content through the `content` property and set it to any regular [2D GUI content](http://doc.babylonjs.com/how_to/gui):
+You can specify the content through the `content` property and set it to any regular [2D GUI content](//doc.babylonjs.com/how_to/gui):
 
 ```
 var button = new BABYLON.GUI.Button3D("reset");
@@ -219,7 +219,7 @@ Demo [here](https://www.babylonjs-playground.com/#2YZFA0#0)
 
 ### HolographicButton
 
-The `HolographicButton` is a specialized button that mimics the [MRTK holographic button](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/master/Assets/HoloToolkit-Examples/UX/Readme/README_InteractableObjectExample.md#holographic-button).
+The `HolographicButton` is a specialized button that mimics the Mixed Reality Toolkit holographic button.
 
 An `HolographicButton` can be defined with two properties:
 - `text`: Gets or sets text for the button
@@ -274,8 +274,9 @@ You can create your own custom control by inheriting from the `Control3D` class 
 ## Further reading
 
 [How To Use Babylon GUI](/how_to/gui)  
-[How To Use the Selection Panel Helper](/how_to/selector)
-
+[How To Use Babylon GUI Scroll Viewer](/how_to/ScrollViewer)
+[How To Use Babylon GUI Xml Loader](/how_to/XmlLoader)
+[How To Use the Selection Panel Helper](/how_to/selector)  
 
 
 

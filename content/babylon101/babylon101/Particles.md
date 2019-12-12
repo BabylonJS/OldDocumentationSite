@@ -38,7 +38,9 @@ and stop it with
 particleSystem.stop();
 ```
 
-You can also delay start the particle system with `particleSystem.start(3000);`. The parameter defines the delay in milliseconds.
+To delay a particle systems start, `particleSystem.startDelay = 3000;` can be set. This value defines the delay in milliseconds.
+
+You can also delay start the particle system with `particleSystem.start(3000);`. This value with override the particleSystem.startDelay field if set.
 
 **Note:** that stopping a particle system will prevent the creation of new particles but the existing ones will continue. If you want to reset a system to an empty state, you will also have to call `particleSystem.reset()`
 
@@ -106,8 +108,16 @@ var source = BABYLON.Mesh.CreateBox("source", 1.0, scene);
 particleSystem.emitter = source;
 ```
 
+### World offset
+Starting with Babylon.js v4.0, you can set up a world offset to your particles with:
+```
+particleSystem.worldOffset = new BABYLON.Vector3(100, 20, -453);
+```
+
+This command will shift the particles using the offset (Mostly used when you need to keep the camera at the center of the world to increase precision and then move the world instead).
+
 ### Location and Spread
-The spread of the particles from the emitter is from within a box the size of which is determined by setting the lower, left, front corner and upper, right, back corner of the box relative to the location of th emitter. This is done using `minEmitBox` and `maxEmitBox`
+The spread of the particles from the emitter is from within a box the size of which is determined by setting the lower, left, front corner and upper, right, back corner of the box relative to the location of the emitter. This is done using `minEmitBox` and `maxEmitBox`
 
 ```javascript
 particleSystem.minEmitBox = new BABYLON.Vector3(-2, -3, 4); 
@@ -591,10 +601,14 @@ You can find a demo [here](https://www.babylonjs-playground.com/#EV0SEQ)
 When billboard is enabled you can decide to either have a full billboard (on all axes) or only on Y axis with this code:
 
 ```
-system.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_Y;
+system.billboardMode = BABYLON.ParticleSystem.BILLBOARDMODE_Y;
 ```
 
+You can also use stretched billboard which will be like a full billboard mode but with an additionnal rotation to align particles with their direction.
+
 A demo can explain this billboard mode better than words: https://www.babylonjs-playground.com/#B9HKG0#0
+
+You can also find a demo of stretched billboard particles: https://www.babylonjs-playground.com/#5A4TP5
 
 ## Adjustable Playground Examples
 
@@ -608,6 +622,7 @@ Starting from Babylonjs 3.2 you can shape the region the particles are emitted f
 * Box
 * Sphere
 * Hemisphere
+* Cylinder
 * Cone
 
 by the addition of specific emitter function.
@@ -835,7 +850,6 @@ To completely stop a `GPUParticleSystem`, you have to call `dispose()` on it.
 The following features are not supported by GPU particles due to their inner nature:
 - ManualEmitCount
 - Custom effects
-- Animation sheets
 - disposeOnStop
 - Dual values per gradient (only one value is supported)
 - Emit rate gradients are not supported
@@ -861,10 +875,11 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 [How to Create Animated Particles](/how_to/Animate)  
 [How to Use Sub Emitters](/how_to/Sub_Emitters)
 
-[Solid Particle System](/How_To/Solid_Particles)
+[Solid Particle System](/How_To/Solid_Particles)  
+[Points Cloud Particle System](/How_To/point_Cloud_Particles)
 
 ## Intermediate - L2
-[How to Customize the Particle System](/how_to/Customise)
-[Create animated particles](/how_To/Particles/Animate.md)
+[How to Customize the Particle System](/how_to/Customise)  
+[How to Create animated particles](/how_To/Particles/Animate.md)
 
 

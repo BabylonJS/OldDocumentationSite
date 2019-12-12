@@ -113,17 +113,17 @@ if (particle.age < particle.lifeTime * .35) {
 
 ### Particle Emitter Type
 
-Starting from Babylon.js V3.2 you can create a new object of type `IParticleEmitterType` into the particle system. Examples of this type of object are `sphereParticleEmitter` and `coneParticleEmitter` which are produced by using createSphereEmitter and createConeEmitter. 
+Starting from Babylon.js V3.2 you can create a new object of type `IParticleEmitterType` into the particle system. [Examples](/babylon101/particles#box-emitter) of this type of object are `sphereParticleEmitter` and `coneParticleEmitter` which are produced by using createSphereEmitter and createConeEmitter. 
 
 These objects are assigned to a new property `particleEmitterType` of the particleSystem.
 
 You use the `startDirectionFunction` and `startPositionFunction` as methods for objects of this type to determine the region of space that the particles are emitted from and their direction of travel.
 
-You can create your own ParticleEmitterType by extending IParticleEmitterType and assigning it to `particleEmitterType`, overiding the default methods `startDirectionFunction` and `startPositionFunction`.
+You can create your own ParticleEmitterType by extending IParticleEmitterType and assigning it to `particleEmitterType`, overriding the default methods `startDirectionFunction` and `startPositionFunction`.
 
-Below is an example to create a new cylinder emitter which will send streams of particles out of the top, bottom and sides of the cylindrical region.
+Below is an example to create a new spray emitter which will send streams of particles out of the top, bottom and sides of a cylindrical region.
 
-#### Create Cone Emitter
+#### Create Spray Emitter
 
 In order to determine where a particle is emitted from the cylinder is divided into two regions as in the diagram below.
 
@@ -131,28 +131,28 @@ In order to determine where a particle is emitted from the cylinder is divided i
 
 Any particle with a start position inside the red region is emitted in the direction from the center to the particle. Any particle with a start position inside the blue region is emitted horizontally.
 
-The `createCylinderEmitter` method sets the radius and height of the cylinder, creates a new `CylinderParticleEmitter` object which is assigned to the 'particleEmitterType` property.
+The `createSprayEmitter` method sets the radius and height of the cylinder, creates a new `SprayParticleEmitter` object which is assigned to the 'particleEmitterType` property.
 
 ```javascript
-BABYLON.ParticleSystem.prototype.createCylinderEmitter = function (radius, height) {
+BABYLON.ParticleSystem.prototype.createSprayEmitter = function (radius, height) {
     if (radius === void 0) { 
         radius = 0.5;
     }
     if (height === void 0) { 
         height = 1;
     }
-    var particleEmitter = new BABYLON.CylinderParticleEmitter(radius, height);
+    var particleEmitter = new BABYLON.SprayParticleEmitter(radius, height);
     this.particleEmitterType = particleEmitter;
     return particleEmitter;
-};
+}
 ```
 
-The `CylinderParticleEmitter` class is formed with two methods `startDirectionFunction` and `startPositionFunction` and Babylon.js takes care of the rest. 
+The `SprayParticleEmitter` class is formed with two methods `startDirectionFunction` and `startPositionFunction` and Babylon.js takes care of the rest. 
 
 ```javascript
-var CylinderParticleEmitter = (function () {
+var SprayParticleEmitter = (function () {
 
-    function CylinderParticleEmitter(radius, height, directionRandomizer) {
+    function SprayParticleEmitter(radius, height, directionRandomizer) {
         if (radius === void 0) { radius = 0.5; }
         if (height === void 0) { height = 1; }
         if (directionRandomizer === void 0) { directionRandomizer = 0; }
@@ -161,7 +161,7 @@ var CylinderParticleEmitter = (function () {
         this.radius = radius;
 	}
 
-    CylinderParticleEmitter.prototype.startDirectionFunction = function (emitPower, worldMatrix, directionToUpdate, particle) {
+    SprayParticleEmitter.prototype.startDirectionFunction = function (worldMatrix, directionToUpdate, particle) {	
         var direction = particle.position.subtract(worldMatrix.getTranslation()).normalize();
         var randX = BABYLON.Scalar.RandomRange(0, this.directionRandomizer);
         var randY = BABYLON.Scalar.RandomRange(0, this.directionRandomizer);
@@ -177,10 +177,10 @@ var CylinderParticleEmitter = (function () {
             direction.z += randZ; 
         }
         direction.normalize();
-        BABYLON.Vector3.TransformNormalFromFloatsToRef(direction.x * emitPower, direction.y * emitPower, direction.z * emitPower, worldMatrix, directionToUpdate); 
+        BABYLON.Vector3.TransformNormalFromFloatsToRef(direction.x, direction.y, direction.z, worldMatrix, directionToUpdate); 
     };
 
-    CylinderParticleEmitter.prototype.startPositionFunction = function (worldMatrix, positionToUpdate, particle) {
+    SprayParticleEmitter.prototype.startPositionFunction = function (worldMatrix, positionToUpdate, particle) {
         var s = BABYLON.Scalar.RandomRange(0, Math.PI * 2);
         var h = BABYLON.Scalar.RandomRange(-0.5, 0.5); 			
         var radius = BABYLON.Scalar.RandomRange(0, this.radius);
@@ -189,13 +189,13 @@ var CylinderParticleEmitter = (function () {
         var randY = h * this.height;
         BABYLON.Vector3.TransformCoordinatesFromFloatsToRef(randX, randY, randZ, worldMatrix, positionToUpdate);
     };
-    return CylinderParticleEmitter;
+    return SprayParticleEmitter;
 }());
-BABYLON.CylinderParticleEmitter = CylinderParticleEmitter;
+BABYLON.SprayParticleEmitter = SprayParticleEmitter;
 ```
 
-* [Playground Example - Custom Cylinder Emitter](https://www.babylonjs-playground.com/#V07WF8)
-
+* [Playground Example - Custom Spray Emitter Showing Container](https://www.babylonjs-playground.com/#V07WF8#10)
+* [Playground Example - Custom Spray Emitter Without Container](https://www.babylonjs-playground.com/#V07WF8#11)
 
 ## Custom Effects
 
@@ -218,6 +218,7 @@ var customEffect = engine.createEffectForParticles(fragment, uniforms, samplers)
 * samplers: [strings], array of names of samplers for additional textures!
 
 ### Fragment Shader Assignment
+
 When assigning a fragment shader to the shader store the name should have `FragmentShader` appended. So for example the creation of a custom effect using fragment name `myParticle` would require a `myParticleFragmentShader` added to the shader store
 
 
@@ -228,6 +229,7 @@ BABYLON.Effect.ShadersStore["myParticleFragmentShader"] = [...]
 ```javascript
 var customEffect = engine.createEffectForParticles("myParticle", [...]);
 ```
+
 ### Uniforms Assignment
 
 By default Babylon.js will give you a vUV and a vColor varying parameter. It will also transmit you the particle texture. 
@@ -237,9 +239,10 @@ You can add further uniform variables, for example to pass a `uniform` variable 
 ```javascript
 var customEffect = engine.createEffectForParticles("myParticle", [time]);
 ```
+
 then pass it using `setFloat` with an `onBind` method for `customEffect`.
 
-```javscript
+```javascript
     var time = 0;
     var order = 0.1;
 
@@ -253,25 +256,31 @@ then pass it using `setFloat` with an `onBind` method for `customEffect`.
         }
     };
 ```
+
 you can see an example of the above in this playground  
 * [Playground Example - Custom Effect using Shader Store](https://www.babylonjs-playground.com/#1ASENS#43)
 
 
 ### Particle Effect Object
-The particle effect object is a slightly-modified [Babylon Effect Object](/classes/3.0/Effect). Also notice that the ShadersStore is a namespace upon this special effect-object. 
+
+The particle effect object is a slightly-modified [Babylon Effect Object](/api/classes/babylon.effect). Also notice that the ShadersStore is a namespace upon this special effect-object. 
 
 # Further Reading
 
-## Basic - L1
+## Features
 
-[Particles Overview](/features/Particles)  
+- [Particles Overview](/features/Particles)
 
-[Particles 101](/babylon101/particles)
+## Babylon 101
 
-[How to Create Animated Particles](/how_to/Animate)  
-[How to Use Sub Emitters](/how_to/Sub_Emitters)
+- [Particles 101](/babylon101/particles)  
+- [Shape Emitters](/babylon101/particles#shape-emitters)
 
-[Solid Particle System](/How_To/Solid_Particles)
+## How To
+
+- [How to Create Animated Particles](/how_to/Animate)  
+- [How to Use Sub Emitters](/how_to/Sub_Emitters)
+- [Solid Particle System](/how_to/Solid_Particles)
 
 
 

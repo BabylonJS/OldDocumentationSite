@@ -57,7 +57,7 @@ Preview releases (nightlies) of the viewer are available on:
 To install the Babylon.js viewer through NPM use:
 
 ```javascript
-npm install --save babylonjs-viewer babylonjs babylonjs-loaders babylonjs-viewer-assets
+npm install --save babylonjs-viewer
 ```
 
 This will install the latest stable version of the viewer, including its needed dependencies.
@@ -65,9 +65,7 @@ This will install the latest stable version of the viewer, including its needed 
 Afterwards it can be imported to the project using:
 
 ```javascript
-import * as BabylonViewer from 'babylonjs-viewer';
-
-BabylonViewer.InitTags("babylon");
+import 'babylonjs-viewer';
 ```
 
 This will enable the `BabylonViewer` namespace.

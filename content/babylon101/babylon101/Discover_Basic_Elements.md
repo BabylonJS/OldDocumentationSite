@@ -5,9 +5,9 @@ PG_TITLE: 02. Set Shapes
 
 # Set Shapes 101
 
-These are shapes that usually already have names in everyday use. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well know but also included in set shapes are a torus, a torus knot and the polyhedra. You will have to wait for the next section to learn how to create shapes that have no everyday names but are formed through data sets and parameters. These are termed _parametric shapes_.
+These are shapes that usually already have names in everyday use. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well known but also included in set shapes are a torus, a torus knot and the polyhedra. You will have to wait for the next section to learn how to create shapes that have no everyday names but are formed through data sets and parameters. These are termed _parametric shapes_.
 
-In the 101 course you will only meet a limited number of set shapes, starting on this page with boxes, spheres, planes and ground. Also you will just use the _MeshBuilder_ method of shape creation rather than the older legacy _Mesh_ method. How to create all the set shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further_reading).
+In the 101 course you will only meet a limited number of set shapes, starting on this page with boxes, spheres, planes and ground. Also you will just use the _MeshBuilder_ method of shape creation rather than the older legacy _Mesh_ method. How to create all the set shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further-reading).
 
 ## MeshBuilder Method
 
@@ -98,7 +98,7 @@ This creates a mathematical plane which is used as the orientation source. The f
 ```javascript
 var ground = BABYLON.MeshBuilder.CreateGround("ground", {}, scene); //default ground
 
-var myGround = BABYLON.MeshBuilder.CreateGround("myGround", {width: 6, height: 4, subdivsions: 4}, scene);
+var myGround = BABYLON.MeshBuilder.CreateGround("myGround", {width: 6, height: 4, subdivisions: 4}, scene);
 ```
 
 option|value|default value

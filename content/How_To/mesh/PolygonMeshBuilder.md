@@ -10,7 +10,7 @@ Given the corner points of a polygon in the XoY plane the PolygonMeshBuilder con
 
 ## Constraints
 
-The polygon and any holes inside it must be simple, that is no overlapping sides. Holes should be wholly inside the polygon and should not be too close to the sides of the polygon or to each other.
+The polygon and any holes inside it must be [simple](https://en.wikipedia.org/wiki/Simple_polygon), that is no overlapping sides. Holes should be wholly inside the polygon and should not be too close to the sides of the polygon or to each other otherwise the mesh will be malformed. This [algorithm](http://geomalgorithms.com/a09-_intersect-3.html#Simple-Polygons) is one you can use to check if a polygon is simple.
 
 ![Safe Construction](/img/how_to/PolyMeshBuild/pmberr1.jpg)
 

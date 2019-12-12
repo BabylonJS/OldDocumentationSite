@@ -8,17 +8,15 @@ Then you need to create your files:
 * babylon.**cloudBis**ProceduralTexture.ts (just copy/paste from babylon.woodProceduralTexture.ts )
 * **cloudBis**ProceduralTexture.fragment.fx (just copy/paste from woodProceduralTexture.fragment.fx )
 
-To integrate your new procedural texture to the build process, you have to edit the config.sjonfile in the tools/gulp folder and add an entry in the "proceduralTextureLibrary/libraries" section of the file:
+To integrate your new procedural texture to the build process, you have to edit the config.json file in the tools/gulp folder and add an entry in the "proceduralTextureLibrary/libraries" section of the file:
 
 ```
   "libraries": [
     ...
       {
-        "files": ["../../proceduralTexturesLibrary/src/wood/babylon.woodProceduralTexture.ts"],
-        "shaderFiles": [
-          "../../proceduralTexturesLibrary/src/wood/woodProceduralTexture.fragment.fx"
-        ],
-        "output": "babylon.woodProceduralTexture.js"
+        "output": "babylon.brickProceduralTexture.min.js",
+        "entry": "./legacy/legacy-brick.ts",
+        "preventLoadLibrary": true
       }
     ...
   ]

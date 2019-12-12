@@ -87,27 +87,6 @@ var backwards = new BABYLON.Vector3(parseFloat(Math.sin(character.rotation.y)) /
 character.moveWithCollisions(backwards);
 ```
 
-Demo by Dad72: [**Move character with gravity and collision**](http://www.babylon.actifgames.com/moveCharacter/)
-
-## Web worker based collision system (Since 2.1)
-
-BabylonJS 2.1 allows the user to move the collision calculations to an external web worker thus achieving better rendering time.
-The worker is integrated in the single framework file, and no changes are required by the developer.
-The scene has now a new flag (false per default):
-```javascript
-scene.workerCollisions = true|false
-```
-Setting this flag to true will start the worker in the background. 
-
-**Please note that you will need to reference babylon.worker.js and not regular babylon.js to use worker collisions**
-
-The worker will then receive all collision requests from the cameras and meshes. Setting it to false will set the collision to the regular collision calculation as it always was.
-
-To read more about how workers were integrated head to Raanan Weber's blog:
-
-* https://blog.raananweber.com/2015/05/26/collisions-using-workers-for-babylonjs/
-* https://blog.raananweber.com/2015/06/06/collisions-using-workers-for-babylonjs-part-2/
-
 ## ArcRotateCamera
 The ArcRotateCamera can also check collisions but instead of sliding along obstacles, this camera won't move when a collision appends.
 

@@ -31,7 +31,28 @@ To manually change the selected mesh, the gizmo manager's *attachToMesh* method 
 gizmoManager.usePointerToAttachGizmos = false;
 gizmoManager.attachToMesh(mesh);
 ```
-[**Example**](https://www.babylonjs-playground.com/#4TBMBR)
+
+All the internal gizmo's are accessible through the manager to support scenarios such as listening to drag events.
+```
+gizmoManager.gizmos.scaleGizmo;
+gizmoManager.gizmos.rotationGizmo;
+gizmoManager.gizmos.positionGizmo;
+
+gizmoManager.gizmos.positionGizmo.xGizmo.dragBehavior.onDragStartObservable.add(()=>{
+    console.log("Position gizmo's x axis started to be dragged");
+})
+gizmoManager.gizmos.positionGizmo.xGizmo.dragBehavior.onDragEndObservable.add(()=>{
+    console.log("Position gizmo's x axis drag was ended");
+})
+```
+
+By default gizmo orientation is in local space so it will be rotated to match the rotation of the object that it is attached to. To change to world orientation, the updateGizmoRotationToMatchAttachedMesh property can be set to false:
+```
+gizmoManager.gizmos.positionGizmo.updateGizmoRotationToMatchAttachedMesh = false;
+```
+Note: This is not supported on the scale gizmo
+
+[**Example**](https://www.babylonjs-playground.com/#4TBMBR#33)
 ## Setup
 
 Gizmos are displayed by a [UtilityLayerRenderer](/How_To/UtilityLayerRenderer) to not disrupt the existing scene state. If not specified, the default utility layer will be used.
@@ -70,6 +91,11 @@ gizmo.onSnapObservable.add((event)=>{
 })
 ```
 
+A sensitivity factor can be customized for AxisScaleGizmo and ScaleGizmo. Default is 1, a higher value means more stretch for the same drag.
+```
+gizmoScale.sensitivity = 3;
+```
+
 These gizmo's internally use a [pointerDragBehavior](/How_To/MeshBehavior), this is exposed and can be used perform tasks before/during/after dragging a gizmo
 ```
 gizmo.dragBehavior.onDragObservable.add(()=>{
@@ -83,7 +109,7 @@ Classes for 3 axis gizmos are also provided which contain 3 of the single axis g
  - [ScaleGizmo](https://www.babylonjs-playground.com/#31M2AP#8)
  - [RotationGizmo](https://www.babylonjs-playground.com/#31M2AP#7)
 
-The single axis gizmos within these are exposed via the xGizmo, yGizmo and zGizmo properties. 
+The single axis gizmos within these are exposed via the xGizmo, yGizmo and zGizmo properties. The scale gizmo also has a uniformScaleGizmo property which references center gizmo used to uniformly scale.
 
 ## Bounding box Gizmo
 

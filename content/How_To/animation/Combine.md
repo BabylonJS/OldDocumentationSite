@@ -5,7 +5,7 @@ PG_TITLE: How To Combine Animations
 
 ## Concurrent
 
-Simply set up more animations and add to the BabylonJs object's animations array. 
+Simply set up more animations and add to the BabylonJS object's animations array. 
 
 For example adding a rotation animation to the [very simple slide animation](http://www.babylonjs-playground.com/#9WUJN#11) to get:
 

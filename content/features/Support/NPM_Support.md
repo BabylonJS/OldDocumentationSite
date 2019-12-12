@@ -11,7 +11,7 @@ All examples in this tutorial will use commonjs / es6 imports. However, since we
 We offer babaylon.js' core and its modules as npm packages. The following are available:
 
 * [babylonjs](https://www.npmjs.com/package/babylonjs) - Babylon's core.
-* [babylonjs-materials](https://www.npmjs.com/package/babylonjs-materials) - a collection of Babylon-supported advanced materials. 
+* [babylonjs-materials](https://www.npmjs.com/package/babylonjs-materials) - a collection of Babylon-supported advanced materials.
 * [babylonjs-loaders](https://www.npmjs.com/package/babylonjs-loaders) -  All of Babylon's official loaders (OBJ, STL, glTF)
 * [babylonjs-post-process](https://www.npmjs.com/package/babylonjs-post-process) - Babylon's post processes.
 * [babylonjs-procedural-textures](https://www.npmjs.com/package/babylonjs-procedural-textures) - Officially supported procedural textures
@@ -33,7 +33,7 @@ npm install --save babylonjs
 
 This will install babylonjs' javascript files and will also include a TypeScript declaration file.
 
-To include Babylon in your npm project, use:
+To include Babylon in a javascript or typescript file, use:
 
 ```javascript
 import * as BABYLON from 'babylonjs';
@@ -45,6 +45,8 @@ You can also load specific classes if you need them:
 import { Engine, Scene } from 'babylonjs';
 ```
 
+**NOTE:** if you can't make this import method to work, go to the section on typescript and webpack below.
+
 ### Installing other Babylon modules
 
 After including babylonjs you can add Babylon's extra modules using npm as follows:
@@ -55,22 +57,16 @@ npm install --save babylonjs-materials [other packages]
 
 Same as the babylonjs, this will install (default-minified and non-minified) javascript files and a declaration file.
 
-To import the dependencies, you simply need to import the library (without giving it a namespace):
+To import the dependencies, you will need to import them like for the babylon module:
 
 ```javascript
-import 'babylonjs-materials';
+import * as Materials from 'babylonjs-materials';
 ```
 
-This will extend the BABYLON namespace with the material classes, so you can do the following:
+And use it like below:
 
 ```javascript
-let skyMaterial = new BABYLON.SkyMaterial(.....)
-```
-
-An exception is the GUI library, which has its own namespace. It can therefore be imported as following:
-
-```javascript
-import * as GUI from 'babylonjs-gui';
+let skyMaterial = new Materials.SkyMaterial(.....)
 ```
 
 ### using require()
@@ -80,14 +76,14 @@ If you prefer not to use es6-import syntax, you can use require in order to impo
 ```javascript
 let BABYLON = require('babylonjs');
 let GUI = require('babylonjs-gui');
-let materials = require('babylonjs-materials'); // unused variable
+let materials = require('babylonjs-materials');
 ```
 
 ## TypeScript support
 
 Being written in TypeScript, Babylon.js will always support TypeScript developers. We provide a declaration file in each package, that either extends the BABYLON namespace or declares a new namespace that can be used during development.
 
-If not detected by your IDE, the most important thing to get full TypeScript support in your project is to add the imported packages as types of compilerOptions in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) as follows:
+If not detected by your IDE (mostly in case you are not relying on import/export), the most important thing to get full TypeScript support in your project is to add the imported packages as types of compilerOptions in [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) as follows:
 
 ```javascript
 {
@@ -107,6 +103,11 @@ If not detected by your IDE, the most important thing to get full TypeScript sup
 
 This will load BABYLON's namespace and will allow autocomplete (and of course type safety) correctly.
 
+**NOTE:** to generate a default `tsconfig.json` file that contains useful information about the different settings, run the following in your terminal:
+```
+tsc --init
+```
+
 ### Example using webpack
 
 A very simple webpack configuration to compile a babylon.js TypeScript project can look like this:
@@ -114,7 +115,7 @@ A very simple webpack configuration to compile a babylon.js TypeScript project c
 ```javascript
 module.exports = {
     entry: {
-        'project': './main.ts'
+        app: './mygame.ts'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -128,7 +129,7 @@ module.exports = {
 
     ],
     module: {
-        loaders: [{
+        rules: [{
             test: /\.tsx?$/,
             loader: 'ts-loader',
             exclude: /node_modules/
@@ -137,19 +138,43 @@ module.exports = {
 }
 ```
 
-## ES6
+Simply create a file `webpack.config.js` at the root of your project and copy-paste the above template in it.
+The file `mygame.ts` should the entry point of the project.
 
-We support es6 using a single .js file delivered in our package. At the moment it is included in the main package only ('babylonjs'). To use it, use the included 'es6.js' file in babylon's npm package:
+**NOTE:** Make sure you've installed the following packages:
+```
+npm install --save-dev webpack
+npm install --save-dev webpack-cli
+npm install --save-dev typescript
+npm install --save-dev ts-loader
+```
+
+
+## ES6
+If you wish to benefit from tree shaking and other nitty gritties, you can now rely on our Babylon.js ES6 packages:
+
+* [@babylonjs/core](https://www.npmjs.com/package/@babylonjs/core) - Babylon's core.
+* [@babylonjs/materials](https://www.npmjs.com/package/@babylonjs/materials) - a collection of Babylon-supported advanced materials.
+* [@babylonjs/loaders](https://www.npmjs.com/package/@babylonjs/loaders) -  All of Babylon's official loaders (OBJ, STL, glTF)
+* [@babylonjs/post-processes](https://www.npmjs.com/package/@babylonjs/post-processes) - Babylon's post processes.
+* [@babylonjs/procedural-textures](https://www.npmjs.com/package/@babylonjs/procedural-textures) - Officially supported procedural textures
+* [@babylonjs/serializers](https://www.npmjs.com/package/@babylonjs/serializers) - Scene / mesh serializers.
+* [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
+* [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The BabylonJS Inspector for es 6.
+
+Please note that you can not mix ES6 and our legacy packages.
 
 ```javascript
-import * as BABYLON from './node_modules/babylonjs/es6.js'
+import { Engine } from '@babylonjs/core/Engines/engine'
 
 const canvas = document.getElementById("canvas");
 
-const engine = new BABYLON.Engine(canvas, true); 
+const engine = new Engine(canvas, true);
 
 // code continues....
 ```
+
+For more information, you can have a look at [the ES6 documentation](https://doc.babylonjs.com/features/ES6_support);
 
 ## External libraries
 
@@ -211,7 +236,7 @@ You can see an example of that in the Viewer directory of our main repository.
 
 Due to the way BabylonJS is built, Tree-Shaking is currently not quite possible. Babylon's internal objects have deep connections with one another (for performance reasons). That means, that your built JS file will be at least Babylon.js' minified size.
 
-You can still use custom builds to build you own minimal version: http://doc.babylonjs.com/how_to/how_to_start#custom-builds
+You can still use custom builds to build you own minimal version: //doc.babylonjs.com/how_to/how_to_start#custom-builds
 
 ### Naming is different than what the documentation states
 
@@ -492,5 +517,9 @@ Babylon is using oimo, cannon and earcut as external, optional dependencies. If 
         "oimo": true,
         "cannon": true,
         "earcut": true
-    },  
+    },
 ```
+
+# Further Reading
+[How To Get Babylon.js](/babylon101/how_to_get)  
+[ESNext Support](/features/ES6_Support)

@@ -78,7 +78,7 @@
                     html: '<i class="fa fa-code-fork"></i>Contribute'
                 }),
                 $('<a>', {
-                    href: 'http://www.html5gamedevs.com/forum/16-babylonjs',
+                    href: 'https://forum.babylonjs.com',
                     target: '_blank',
                     html: '<i class="fa fa-html5"></i>Forum'
                 }),

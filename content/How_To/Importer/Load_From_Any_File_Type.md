@@ -6,46 +6,72 @@ PG_TITLE: How To Use Scene Loader
 
 The built in file type is `.babylon` and Babylon.js can load these without a plugin.
 
+**Note:** Since meshes you import can have a _rotationQuaternion_ set applying a _rotation_ to one will have unforeseen consequences as detailed in this [warning](/resources/rotation_conventions#warning).
+
 ## Basic Usage
 
 To load a file of a given type, Babylon must first have a reference to the plugin for that file type.
 
 Currently plugins can be found for:
- - [.glTF](/How_To/glTF)
- - [.obj](/How_To/OBJ)
- - [.stl](/How_To/STL)
+ - [.glTF also use for binary version .glb](/how_to/glTF)
+ - [.obj](/how_to/OBJ)
+ - [.stl](/how_to/STL)
 
 To quickly add support for all loaders the following script can be added to your page:
-```
+
+#### Production links
+
+```javascript
 <script src="https://cdn.babylonjs.com/babylon.js"></script>
+<script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+```
+
+#### Preview links (useful to test for changes to loaders)
+
+```javascript
+<script src="https://preview.babylonjs.com/babylon.js"></script>
 <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 ```
 For NPM usage see: https://www.npmjs.com/package/babylonjs-loaders
 
 Once the plugin is referenced, the SceneLoader class can be used which provides a few loading methods.
 
-## SceneLoader.Append 
+## SceneLoader.Append
 
 Loads all babylon assets from the file and appends them to the scene
+
 ```javascript
 BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
     // do something with the scene
 });
 ```
+
 [Demo](http://www.babylonjs-playground.com/#WGZLGJ)
 
-## SceneLoader.Load 
+Loads all babylon assets from a string and appends them to the scene
 
-Loads all babylon assets from the file and creates a new scene
 ```javascript
-BABYLON.SceneLoader.Load("/assets/", "batman.obj", engine, function (newScene) { 
-   // ...
+BABYLON.SceneLoader.Append("", "data:" + gltfString, scene, function (scene) {
+    // do something with the scene
 });
 ```
 
-## SceneLoader.ImportMesh 
+[Demo](https://playground.babylonjs.com/#88CB6A#1)
+
+## SceneLoader.Load
+
+Loads all babylon assets from the file and creates a new scene
+
+```javascript
+BABYLON.SceneLoader.Load("/assets/", "batman.obj", engine, function (scene) { 
+   // do something with the scene
+});
+```
+
+## SceneLoader.ImportMesh
 
 Loads the meshes from the file and appends them to the scene
+
 ```javascript
 // The first parameter can be set to null to load all meshes and skeletons
 BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene, function (meshes, particleSystems, skeletons) {
@@ -53,11 +79,13 @@ BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene,
     // particleSystems are always null for glTF assets
 });
 ```
+
 [Demo](http://www.babylonjs-playground.com/#JUKXQD)
 
-## SceneLoader.LoadAssetContainer 
+## SceneLoader.LoadAssetContainer
 
 Loads all babylon assets from the file and does not append them to the scene
+
 ```javascript
 BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (container) {
     var meshes = container.meshes;
@@ -68,6 +96,7 @@ BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (conta
     container.addAllToScene();
 });
 ```
+
 [Demo](http://www.babylonjs-playground.com/#JA1ND3#48)
 
 ## SceneLoader.ImportAnimations
@@ -82,13 +111,14 @@ BABYLON.SceneLoader.ImportAnimations("./", "Elf_run.gltf", scene);
 ## SceneLoader.AppendAsync
 
 There are also `Async` versions of these functions that return promises:
+
 ```javascript
 BABYLON.SceneLoader.AppendAsync("./", "duck.gltf", scene).then(function (scene) {
     // do something with the scene
 });
 ```
 
-See [How to Use Promises](/How_To/Promises) to learn more about using promises.
+See [How to Use Promises](/how_to/Promises) to learn more about using promises.
 
 ## Advanced Usage
 
@@ -100,7 +130,6 @@ BABYLON.SceneLoader.OnPluginActivatedObservable.add(function (loader) {
         // do something with the loader
         // loader.<option1> = <...>
         // loader.<option2> = <...>
-        // loader.dispose();
     }
 });
 ```
@@ -115,9 +144,31 @@ var loader = BABYLON.SceneLoader.Load("./", "duck.gltf", engine, function (scene
 // do something with the loader
 // loader.<option1> = <...>
 // loader.<option2> = <...>
-// loader.dispose();
 ```
 
 ## Loading multiple assets
+
 For assistance when load multiple assets the AssetsManager class can be used.
-See [Load Files with Assets Manager](/How_To/How_to_use_AssetsManager)
+See [Load Files with Assets Manager](/how_to/how_to_use_AssetsManager)
+
+# Further Reading
+
+## Babylon 101
+
+- [How to get Babylon.js](/babylon101/how_to_get)
+
+## How To
+
+- [Use the glTF File Loader Plugin](/how_to/gltf)
+- [Use the OBJ File Loader Plugin](/how_to/obj)
+- [Use the STL File Loader Plugin](/how_to/stl)
+- [Load Files with Assets Manager](/how_to/how_to_use_AssetsManager)
+
+## Resources
+
+- [Available Meshes for Importing into Playground](/resources/meshes_to_load)
+- [Using External Assets in the Playground](/resources/external_pg_assets)
+
+## API
+
+- [SceneLoader](/api/classes/babylon.sceneloader.html)

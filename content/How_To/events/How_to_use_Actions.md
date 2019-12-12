@@ -78,7 +78,7 @@ mesh.actionManager.registerAction(
 In this example, the `camera.alpha` property will be animated to 0 in 500ms when the user clicks the mesh only if the `light.diffuse` property is equal to red.
 
 ## Triggers
-Currently, there are 17 different triggers available for meshes, and three for scenes.
+Currently, there are 14 different triggers available for meshes, and three for scenes.
 
 The triggers available for meshes are:
 
@@ -94,9 +94,6 @@ The triggers available for meshes are:
 * `BABYLON.ActionManager.OnLongPressTrigger`: Raised when the user touches/clicks up on a mesh for a long period of time in milliseconds (defined by BABYLON.Scene.LongPressDelay). 
 * `BABYLON.ActionManager.OnPointerOverTrigger`: Raised when the pointer is over a mesh. Raised just once.
 * `BABYLON.ActionManager.OnPointerOutTrigger`: Raised when the pointer is no more over a mesh. Raised just once.
-* `BABYLON.ActionManager.OnKeyDownTrigger`: Raised when a key is press.
-* `BABYLON.ActionManager.OnKeyUpTrigger`: Raised when a key is up
-* `BABYLON.ActionManager.OnEveryFrameTrigger`: Raised on every frame
 * `BABYLON.ActionManager.OnIntersectionEnterTrigger`: Raised when the mesh is in intersection with a specific mesh. Raised just once.
 * `BABYLON.ActionManager.OnIntersectionExitTrigger`: Raised when the mesh is no more in intersection with a specific mesh. Raised just once. 
 
@@ -170,7 +167,7 @@ You can use direct values like `position` or `diffuse`. But you can also provide
 * `BABYLON.SetParentAction(trigger, target, parent, condition)`: Sets the parent of the target.
 * `BABYLON.PlaySoundAction(trigger, sound, condition)`: Plays a given sound.
 * `BABYLON.StopSoundAction(trigger, sound, condition)`: Stops a given sound
-* `BABYLON.InterpolateValueActiontrigger, target, propertyPath, value, duration, condition, stopOtherAnimations)`: Creates an animation to interpolate the current value of a property to a given target. The following types are supported:
+* `BABYLON.InterpolateValueAction(trigger, target, propertyPath, value, duration, condition, stopOtherAnimations)`: Creates an animation to interpolate the current value of a property to a given target. The following types are supported:
    * `number`
    * `BABYLON.Color3`
    * `BABYLON.Vector3`

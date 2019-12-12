@@ -146,6 +146,22 @@ sphere2.physicsImpostor = new BABYLON.PhysicsImpostor(sphere2, BABYLON.PhysicsIm
 
 A simple example can be found here - https://playground.babylonjs.com/#PRHF00#4
 
+## Substeps
+
+It's possible to run the physics ticks at a different frequency than the framerate while keeping consistent display.
+This means it's possible to display at 60 frames per seconds while updating the physics 1000 times a second.
+With substeps, the physics will look like it's running at 60 frames per second but will perform smaller steps.
+This is useful when the physics update needs more precision. For example, simulating a bullet against a wall or more accurate physics for a car.
+The substeps can also be used to reduce the physics update. For example, doing an update every 2 frames.
+In the following example, the physics is computed 10 times a second instead of 60. 
+
+```javascript
+var physicsEngine = scene.getPhysicsEngine();
+physicsEngine.setSubTimeStep(100);
+```
+
+https://www.babylonjs-playground.com/#YUNAST#21
+
 ## Cloth simulation
 
 Raanan Weber wrote an article about cloth simulation in his blog: <https://blog.raananweber.com/2016/04/03/cloth-physics-simulation-for-babylon-js/>
@@ -157,3 +173,18 @@ Raanan Weber wrote an article about cloth simulation in his blog: <https://blog.
 * Heightmap game - http://www.babylonjs-playground.com/#DLBW7#11
 * Net on a sphere - http://www.babylonjs-playground.com/#1M67K8#7
 * Newton's cradle - http://www.babylonjs-playground.com/#MDMVA#18
+
+# Further Reading
+
+## Basic - L1
+
+[How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
+[How To Use Forces](/how_to/forces)  
+[How to use Joints](/how_to/joints)  
+[How To Use Pivots and Axes](/how_to/joint_pivots)  
+[How To Create Compound Bodies](/how_to/compounds)  
+[How To Create Soft Bodies](/how_to/soft_bodies)
+ 
+## More Advanced - L3
+
+[How To Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)

@@ -8,7 +8,7 @@ Lights are used, as you would expect, to affect how meshes are seen, in terms of
 All meshes allow light to pass through them unless shadow generation is activated. The default number of lights allowed is
 four but this can be increased.
 
-![Elements](http://www.babylonjs.com/Screenshots/testlight.jpg)
+![Elements](https://doc.babylonjs.com/img/testlight.jpg)
 
 _A pretty sphere with multiple lights_
 
@@ -74,10 +74,6 @@ You can think of the _diffuse_ and _specular_ light as coming from the centre of
 
 White hemispheric light with a black groundColor is a useful lighting method.
 
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/4760.image_5F00_thumb_5F00_058CC84D.png)
-
-_White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
-
 ### Intersecting Lights Colors
 * [Playground example of intersecting spot lights](http://www.babylonjs-playground.com/#20OAV9#9)
 
@@ -87,7 +83,7 @@ You can change this number with this code:
 
 ```javascript
 var material = new BABYLON.StandardMaterial("mat", scene);
-material.maxsimultaneousLights = 6;
+material.maxSimultaneousLights = 6;
 ```
 But beware! Because with more dynamic lights, Babylon.js will generate bigger shaders which may not be compatible with low end devices like mobiles or small tablets. In this case, babylon.js will try to recompile shaders with less lights.
 
@@ -123,7 +119,8 @@ A mesh can be added to the _excludedMeshes_ array or add the ones not to be excl
 ## Lighting Normals
 How lights react to a mesh depend on values set for each mesh vertex termed _normals_, shown in the picture below as arrows giving the direction of the lighting normals. The picture shows two planes and two lights. One light is a spot light, the other is a point light. The front face of each plane is the one you see when the _normals_ are pointing towards you, the back face the opposite side.
 
-![](http://urbanproductions.com/wingy/babylon/misc/normals03.jpg)
+![Elements](https://doc.babylonjs.com/img/how_to/Mesh/normals6.jpg)
+
 _A blue back-faced plane and a blue front-faced plane, with a spot light and point light_
 
 As you can see, the lights only affect the front face and not the back face.
@@ -152,7 +149,7 @@ This is the same as LIGHTMAP_DEFAULT except only the specular lighting and shado
 ```javascript
 light.lightmapMode = BABYLON.Light.LIGHTMAP_SHADOWSONLY;
 ```
-This is the same as LIGHTMAP_DEFAULT except only the shadows casted from this light will be applied.
+This is the same as LIGHTMAP_DEFAULT except only the shadows cast from this light will be applied.
 
 * [Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
 

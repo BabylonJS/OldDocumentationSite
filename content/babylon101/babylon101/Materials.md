@@ -46,7 +46,7 @@ mesh.material = myMaterial;
 ### Diffuse Color Example
 To give an idea on how the material diffuse color reacts to the diffuse light color the following playground example shows how different color materials react to white, red, green and blue diffuse spot lights.
 
-* [Playground Example - Material Color Reaction to Light Color _direct click or edit to view_](http://www.babylonjs-playground.com/#20OAV9#206)  
+* [Playground Example - Material Color Reaction to Light Color _direct click or edit to view_](http://www.babylonjs-playground.com/#20OAV9#325)  
 
 This reaction of 
 

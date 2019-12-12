@@ -22,7 +22,7 @@ To edit the path finder configuration, just click on the toolbar **Edit**. Now, 
 * Create new...: Create a new path finder configuration
 
 ## Selecting a path finder configuration
-To select a path finder configuration, just click on the toolbar **Paths -> the configuration to editor**.
+To select a path finder configuration, just click on the toolbar **Paths -> the configuration to edit**.
 
 # Programming using path finder configurations
 As a developer, you'll want to use a previously configured path finder. For example, when you add a script to a node, you can use the global instance named **tools** to access all extensions including the path finder extension.

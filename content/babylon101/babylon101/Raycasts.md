@@ -8,23 +8,19 @@ PG_TITLE: 13. Raycasts
 The rays are like sunrays.
 It's used to check collision or intersection in the scene between meshes and thin line.
 
-In the previous tutorial, we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
-using the function scene.pick(scene.pointerX, scene.pointerY) : 
-http://doc.babylonjs.com/How_To/picking_collisions
+In the [previous tutorial](/babylon101/picking_collisions), we used it to select meshes with the mouse (a ray goes from camera to mouse position in 3D),
+using the function `scene.pick(scene.pointerX, scene.pointerY)`.
 
 But here we will see that we can throw ray from any point and in any direction. 
-For example in a shooting game at 3rd person view : collisions between our bullets and obstacles.
+For example in a shooting game at 3rd person view: collisions between our bullets and obstacles.
 
 **Documentation of classes :**
 
-http://doc.babylonjs.com/classes/3.0/ray
-You have first to create a ray.
+You have first to [create a ray](/api/classes/babylon.ray.html).
 
-http://doc.babylonjs.com/classes/3.0/scene
-The method scene.pickWithRay() throws a ray in your scene to pick a mesh.
+The method [scene.pickWithRay()](/api/classes/babylon.scene.html#pickwithray) throws a ray in your scene to pick a mesh.
 
-http://doc.babylonjs.com/classes/3.0/pickinginfo
-And get the picking info.
+And get the [picking info](/api/classes/babylon.pickinginfo.html).
 
 ______
 
@@ -36,15 +32,16 @@ ______
 
 In all our playgrounds, we will imagine that our character is the main box at the center.
 It will shoot laser beams continually forward and detect which enemy (other boxes) is hit.
-So with the mouse, you don't need to click but move to turn the box with this trigonometry function mousemovef (l34). 
-A ray requires when its created : an origin, a direction and a length. 
 
-First, we set *box.isPickable* to false to avoid the ray touching the box from the inside (l16).
+So with the mouse, you don't need to click but move to turn the box with this trigonometry function `mousemovef` *(l.34)*. 
+A ray requires when its created: an origin, a direction and a length. 
+
+First, we set `box.isPickable` to false to avoid the ray touching the box from the inside *(l.16)*.
 Because we set the starting point (origin) of the ray in the center of the box.
 
-The most important part is to get the good directional vector (l57) :
+The most important part is to get the good directional vector *(l.57)*:
 		
-```
+```javascript
 var forward = new BABYLON.Vector3(0,0,1);		
 forward = vecToLocal(forward, box);
 	
@@ -54,23 +51,27 @@ direction = BABYLON.Vector3.Normalize(direction);
 		
 We want the forward vector relative to the box space and orientation. 
 Then, to get the direction, we subtract it from the origin, the box position.
-The function vecToLocal is designed to transform a position from a mesh point of view by multiplicating a vector by the mesh matrix.
+The function `vecToLocal` is designed to transform a position from a mesh point of view by multiplicating a vector by the mesh matrix.
 
-Then, we create the ray with all elements given and a length of 100 for example (l65) :
+Then, we create the ray with all elements given and a length of 100 for example *(.l65)*:
 
-```var ray = new BABYLON.Ray(origin, direction, length);```
+```javascript
+var ray = new BABYLON.Ray(origin, direction, length);
+```
 
-Finally, we get the hit point of the ray if it touches a mesh (l68) :
+Finally, we get the hit point of the ray if it touches a mesh *(l.68)*:
 
-```var hit = scene.pickWithRay(ray);```
+```javascript
+var hit = scene.pickWithRay(ray);
+```
 
 And if a mesh is hit, we do what we want with the picking info like getting the mesh name, the position of the point etc...
 Here we change its size because it's funnier ! 
 
 ---
 
-**You're not forced to set box.isPickable to false**, if you need later to check rays intersection on this box for example. 
-You can set the origin point of the vector in front of the box, the direction a little further and the length that you want (l55) :
+**You're not forced to set `box.isPickable` to false**, if you need later to check rays intersection on this box for example. 
+You can set the origin point of the vector in front of the box, the direction a little further and the length that you want *(l.55)*:
 
  https://www.babylonjs-playground.com/#KNE0O#17
 
@@ -79,53 +80,73 @@ You can set the origin point of the vector in front of the box, the direction a 
 
 ## Predicate function ##
 
-It is a filter to choose which meshes will be selectable :
+It is a filter to choose which meshes will be selectable:
 
- https://www.babylonjs-playground.com/#KNE0O#18
+https://www.babylonjs-playground.com/#KNE0O#18
 
 ![Raycast predicate](/img/how_to/raycast02.jpg)
 
-I added a new function predicate (l54) :
+We added a new function predicate *(l.54)*:
 
-  ```
-  function predicate(mesh){
-        if (mesh == box2 || mesh == box){
-            return false;
-        }
-        return true;
-    }
+```javascript
+function predicate(mesh){
+  if (mesh == box2 || mesh == box){
+    return false;
+  }
+  return true;
+}
 ```
 
-and in parameter here :
+and in parameter here:
 
-```scene.pickWithRay(ray, predicate);```
+```javascript
+scene.pickWithRay(ray, predicate);
+```
 
 The isPickable false argument becomes irrelevant so we have to avoid box.
 We avoid also box2 for testing and allow the rest (box3 and box4 by default).
 
 And the result is, only box3, the second blue one behind, and box4 will grow.
-So it works fine like if box2 was transparent for the ray !  
+So it works fine like if box2 was transparent for the ray!  
 
 ---
 
-There is one other optional argument to the method pickWithRay.
-It's the boolean **fastCheck** (false by default).
-True will return the first mesh that intersects with the ray (in the order of the meshes array), and not the closest mesh to the ray's starting point.
+There is one other optional argument to the method `pickWithRay`, it's the boolean **fastCheck** (`false` by default).
+`True` will return the first mesh that intersects with the ray (in the order of the meshes array), and not the closest mesh to the ray's starting point.
 
+---
 
------
+## Triangle predicate ## 
+
+Starting with Babylon.js v4.0 you can define a custom predicate to filter the triangles selected to be tested against the incoming ray. The predicate will be called with the 3 vertices of each face and the upcoming ray:
+
+```javascript
+scene.pick(scene.pointerX, scene.pointerY, null, false, null, (p0, p1, p2, ray) => {
+    var p0p1 = p0.subtract(p1);
+    var p2p1 = p2.subtract(p1);
+    var normal = BABYLON.Vector3.Cross(p0p1, p2p1);
+    return (BABYLON.Vector3.Dot(ray.direction, normal) < 0);
+  });
+```
+
+In this example we are filtering out all the triangles that are not facing towards the camera.
+
+Live example: https://www.babylonjs-playground.com/#EES9W5
+
+---
 
 ## Multi pick ## 
 
-We can use *scene.multiPickWithRay* if we don't want that the ray stops at the first obstacle : 
+We can use `scene.multiPickWithRay` if we don't want that the ray stops at the first obstacle: 
 
  https://www.babylonjs-playground.com/#KNE0O#19
 
 ![Raycast multipick](/img/how_to/raycast02.jpg)
 
-The picking result will be an array (l68).
+The picking result will be an array *(l.68)*.
+
 So we do a loop to change all meshes hit and you can see that the two blue boxes size change. 
-It's like a strong bullet ! 
+It's like a strong bullet! 
 
 ---
 
@@ -133,13 +154,17 @@ An other method is to use directly the **Ray class**.
 
 To change the ray to a local space :
 
-```Ray.Transform(ray, matrix) → Ray```
+```javascript
+Ray.Transform(ray, matrix) → Ray
+```
 
-Checking intersection :
+Checking intersection:
 
-```Ray.intersectsMesh(mesh, fastCheck) → PickingInfo```
+```javascript
+Ray.intersectsMesh(mesh, fastCheck) → PickingInfo
+```
 
------
+---
 
 ## Debugging 
 
@@ -147,32 +172,31 @@ It could be tough to understand where a ray starts and is its direction. To help
 
 You can either use a static function to create and show one:
 
-```
+```javascript
 BABYLON.RayHelper.CreateAndShow(ray, scene, new BABYLON.Color3(1, 1, 0.1));
 ```
 
 or you can use a more detailled version:
 
-```
+```javascript
 var rayHelper = new BABYLON.RayHelper(ray);
 rayHelper.show(scene);
 ```
 
 The helper can also be attached to a mesh to track its direction:
 
-```
+```javascript
 var localMeshDirection = new BABYLON.Vector3(0, 0, -1);
 var localMeshOrigin = new BABYLON.Vector3(0, 0, -.4);
 var length = 3;
 rayHelper.attachToMesh(box, localMeshDirection, localMeshOrigin, length);
 ```
 
- https://www.babylonjs-playground.com/#ZHDBJ#37
+https://www.babylonjs-playground.com/#ZHDBJ#48
 
 ## Next step
 
-Often it is sufficient to have some 2D shapes in you scene and [**sprites**](/babylon101/Sprites) are next.
-
+Often it is sufficient to have some 2D shapes in your scene and [**sprites**](/babylon101/Sprites) are next.
 
 # Further Reading
 

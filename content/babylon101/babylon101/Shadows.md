@@ -292,5 +292,30 @@ So, go back and change the bias to its maximum before seeing peter panning and t
 
 Your shadows are now soft without acnea or peter panning.
 
+### Custom shadow map shaders
+
+Starting with Babylon.js v4.0, you can specify your own shader to render shadow maps. To define that shader you can use the `shaddowGenerator.customShaderOption` property:
+
+```
+shadowGenerator.customShaderOptions = {  
+  shaderName: "customShadowMap",
+  uniforms: ["customWorld"]
+}
+```
+
+The only required value is shaderName. But you can also add:
+- attributes: used to specify additional attributes you need in your shader
+- uniforms: used to specify additional uniforms you need in your shader
+- samplers: used to specify additional samplers you need in your shader
+- defines: used to specify additional defines you need in your shader
+
+The shadow map generation is a complex task and requires to take in account several defines (like the type of the shadow map between int and float, or the need for alpha test). It is recommended to check the current default shaders here:
+- Vertex:https://github.com/BabylonJS/Babylon.js/blob/master/src/Shaders/shadowMap.vertex.fx
+- Fragment: https://github.com/BabylonJS/Babylon.js/blob/master/src/Shaders/shadowMap.fragment.fx
+
+In order to update your own uniforms, you can rely on `shadowGenerator.onBeforeShadowMapRenderObservable` observable. This will be called for you everytime the shadow map will be rendered and it will give you the current compiled effect.
+
+You can find a complete example here: https://www.babylonjs-playground.com/#IJH4VG#0
+
 ## Next step
-Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [http://www.html5gamedevs.com/forum/16-babylonjs](http://www.html5gamedevs.com/forum/16-babylonjs). See you there.
+Now that you are becoming a real professional about Babylon.js, maybe it’s time to go deeper into the code to manipulate complex shaders, mesh, or textures. Our [home menu for our wiki](/) is your portal to many advanced topics. You can also participate in this project by going to our Github page: [https://github.com/BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) and also by participating in our very active forum: [https://forum.babylonjs.com](https://forum.babylonjs.com). See you there.

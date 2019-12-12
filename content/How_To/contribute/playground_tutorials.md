@@ -129,7 +129,7 @@ There are two dialogue boxes that can be created for a PBT.
 
 This consists of an image area, a text area and 'Prev' and 'Next' buttons.
 
-![Standard Dialogue](https://i.imgur.com/NlIGHaD.jpg)
+![Standard Dialogue](/img/how_to/playground-tutorials/informative-dialogue-box.jpg)
 
 Whilst a 'Prev' button is available the difficulty of undoing any actions already done means that this can usually be hidden.
 
@@ -331,7 +331,7 @@ Change to the Tools/Gulp directory and npm install
 
 To write a tutorial use your favourite IDE (VSCode for example) to open the Playground directory. Inside this there is a `scripts` folder, save your Javascript tutorial code in this folder. Also in this folder is a `scripts.txt` file that lists all the files in the `scripts` folder and makes then accessible to the *Scenes* drop down list at the top right of the playground. Add your file name to the list. Now you can write and edit your file, run a local version of the playground and by choosing it from the list test it. 
 
-To run a local version of the playground make sure you are in the Tools/Gulp directory of your copy of Babylon.js and gulp run
+To run a local version of the playground make sure you are in the Tools/Gulp directory of your copy of Babylon.js and npm run start
 ![gulp run](/img/how_to/pbt4.png)
 
 Once the server is running in your browser type address http://localhost:1338/Playground/index.html to run the playground.

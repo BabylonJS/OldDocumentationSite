@@ -81,7 +81,7 @@ For **local axes** using _rotation_ turns the mesh with the center of rotation a
 
 The following sequence of images shows the initial starting position of the pilot followed by a rotation of &pi;/2 about the local y axis, then &pi;/2 about the local x axis and finally a rotation of &pi;/2 about the local z axis.
 
-![start](/img/babylon101/pilotL0.jpg)  ![Y](/img/babylon101/pilotL2.jpg)  ![X](/img/babylon101/pilotL3.jpg)  ![Z](/img/babylon101/pilotL4.jpg)  
+![Local Rotation](/img/babylon101/pilotL.jpg)
 
 The smaller axes represent the direction of the **world axes**.
 
@@ -93,7 +93,7 @@ For **world axes** using _rotation_ turns the mesh with the centre of rotation a
 
 The following sequence of images shows the initial starting position of the pilot followed by a rotation of &pi;/2 about the world z axis, then &pi;/2 about the world x axis and finally a rotation of &pi;/2 about the world y axis.
 
-![start](/img/babylon101/pilotL1.jpg)  ![Y](/img/babylon101/pilotW2.jpg)  ![X](/img/babylon101/pilotW3.jpg)  ![Z](/img/babylon101/pilotW4.jpg) 
+![World Rotation](/img/babylon101/pilotW.jpg)
 
 * [Playground Example - Rotation](http://www.babylonjs-playground.com/#1ZMJQV#2) 
 
@@ -133,11 +133,14 @@ mesh.addRotation(Math.PI/2, 0, 0).addRotation(0, Math.PI/2, 0).addRotation(0, 0,
 
 The following sequence of images shows the result of adding the individual rotations one after the other for the above playground, starting with the initial position of the pilot followed by a rotation of &pi;/2 about the local x axis, then &pi;/2 about the local y axis and finally a rotation of &pi;/2 about the local z axis.
 
-![start](/img/babylon101/pilotA0.jpg)  ![X](/img/babylon101/pilotA1.jpg)  ![Y](/img/babylon101/pilotA2.jpg)  ![Z](/img/babylon101/pilotA3.jpg) 
+![Added Rotations](/img/babylon101/pilotA.jpg)
 
 The smaller axes represent the direction of the **world axes**.
 
 In general _mesh.addRotation(alpha, beta, gamma)_ needs at least two of _alpha, beta, gamma_ to be 0 where _alpha_ is a rotation about the local x axis, _beta_ about the local y axis and _gamma_ about the local z axis.
+
+## RotationQuaternions
+An alternative to _rotations are [_rotationQuaternions_](/resources/rotation_conventions#quaternions) though they can be tricky to use but can overcome some gimbal lock problems. Using both on a mesh is not possible see [warning](/resources/rotation_conventions#warning)
 
 ## Scaling
 

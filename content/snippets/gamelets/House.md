@@ -115,11 +115,11 @@ Since for polygonMeshBuilder corners have to be in counter clockwise consecutive
 
 At this stage code was written to add in the doors using existing positions. However as you can see in the following playground sharing vertices and normals made the triangular facets stand out.
 
-* [Playground Example with Shared Vertices](http://www.babylonjs-playground.com/#4GBWI5#1)
+* [Playground Example with Shared Vertices](http://www.babylonjs-playground.com/#4GBWI5#266)
 
 To stop this effect a flat shaded mesh is necessary and rather than just converting the existing mesh to a flat shaded one it was decided to re-code for a flat shaded mesh from the start. This simplified the procedures for adding in the edges to doors and windows. Also because the interior and exterior walls were now separate it gave the possibility of applying different materials and colors to these walls.
 
-It was decided that edges to dooors and windows would be exterior.
+It was decided that edges to doors and windows would be exterior.
 
 ## Inner and Outer Walls with Doors and Windows Mesh
 
@@ -129,7 +129,7 @@ Consider inner wall w with one door and one window added as in Fig 6 showing cor
 
 Let V<sub>label</sub> be the position of a corner with the given label in the form of the triple x, y, z.
 
-![Polygon wiith Holes](/img/samples/house6.jpg)  
+![Polygon with Holes](/img/samples/house6.jpg)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fig 6
 
 Using polygonMeshBuilder would create an interior wall positions array with 
@@ -173,7 +173,7 @@ Using this data the vertices for the exterior wall corresponding to wall w can b
  4 door outer positions * number of doors, 
  position of base outer right, 
  position of top outer right wall corner,
- position of top outer left wall corrner,
+ position of top outer left wall corner,
  4 window outer positions * number of windows
 ]
 
@@ -184,7 +184,7 @@ The these can be pushed to the house positions array. Since the wall indices arr
 
 All that is left now is to consider each base sections between doors, the side and top edges for the doors and base, top and side edges for the windows for wall w. 
 
-Since the data for all corners for each of these has now been saved it is fairly staighforward to form the correct triangular facets and uv values for each
+Since the data for all corners for each of these has now been saved it is fairly straight forward to form the correct triangular facets and uv values for each
 
 Once all positions are in the house positions array and knowing that the first block only relates to the interior wall it is easy to link the remaining vertices to the exterior colour.
 
@@ -258,7 +258,7 @@ wall 6 - doorSpace door, left 1
 
 Applying the plan leads to
 
-* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#2)
+* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#272)
 
 # Further Reading
 

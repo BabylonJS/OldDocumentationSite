@@ -16,7 +16,7 @@ var fs = require('fs'),
     toc = require('marked-toc');
 
 
-renderer.heading = function (text, level, raw) {
+renderer.heading = function(text, level, raw) {
     var escapedText = slugify(text, {
         allowedChars: '-'
     });
@@ -41,7 +41,7 @@ var __STATICS_LIST__ = path.join(appRoot, 'data/statics.json'),
     __FILES_DEST__ = path.join(appRoot, 'public/html/');
 
 
-module.exports = function (done) {
+module.exports = function(done) {
     var staticCategories = [
         "babylon101",
         "resources",
@@ -53,27 +53,27 @@ module.exports = function (done) {
 
     var globalObj = {};
 
-    fs.readFile(__STATICS_LIST__, function (err, staticsList) {
+    fs.readFile(__STATICS_LIST__, function(err, staticsList) {
         if (err) logger.log('error', err);
 
         globalObj = JSON.parse(staticsList);
 
         // we have all the data we need in globObj; now we can process these data
-        async.each(staticCategories, function (category, finalCallback) {
+        async.each(staticCategories, function(category, finalCallback) {
 
             var dataObject = {
                 "category": category,
                 "folders": globalObj[category]
             };
-            dataObject.files = _.flatten(_.pluck(globalObj[category], 'files').filter(Boolean));
+            dataObject.files = _.flatten(_.map(globalObj[category], 'files').filter(Boolean));
 
             //need to get parent folder name in order to build the file path
-            dataObject.folders.map(function (folder) {
-                _.each(folder.files, function (file) {
+            dataObject.folders.map(function(folder) {
+                _.each(folder.files, function(file) {
                     file.folder = folder.name;
                 });
             });
-          
+
             let tasks = [async.constant(dataObject, category)];
             //if (category !== "classes") {
             tasks.push(createStaticsPage,
@@ -83,7 +83,7 @@ module.exports = function (done) {
             //    tasks.push(addApiDocuments, createStaticPages);
             //}
 
-            async.waterfall(tasks, function (error) {
+            async.waterfall(tasks, function(error) {
                 if (error) {
                     throw error;
                 } else {
@@ -91,7 +91,7 @@ module.exports = function (done) {
                     finalCallback();
                 }
             });
-        }, function () {
+        }, function() {
             // final callback
             logger.info('> ALL EXPORTERS/EXTENSIONS/TUTORIALS PAGES COMPILED.');
             if (done) done();
@@ -100,7 +100,7 @@ module.exports = function (done) {
     });
 };
 
-var createStaticsPage = function (dataObj, category, cb) {
+var createStaticsPage = function(dataObj, category, cb) {
     var statics_page = pug.renderFile(__PUG_STATICS__, {
         dataObj: dataObj,
         currentUrl: '/'
@@ -108,19 +108,19 @@ var createStaticsPage = function (dataObj, category, cb) {
 
     checkDirectorySync(path.join(__FILES_DEST__, category));
 
-    fs.writeFile(path.join(__FILES_DEST__, category + '/index.html'), statics_page, function (writeErr) {
+    fs.writeFile(path.join(__FILES_DEST__, category + '/index.html'), statics_page, function(writeErr) {
         if (writeErr) throw writeErr;
         cb(null, dataObj, category);
     });
 };
 
-var getStaticPagesContent = function (dataObj, category, cb) {
+var getStaticPagesContent = function(dataObj, category, cb) {
     var staticsContents = [];
 
-    async.each(dataObj.files, function (file, callback) {
+    async.each(dataObj.files, function(file, callback) {
         var filename = path.join(__FILES_SOURCE__, category, file.folder + '', file.filename + '.md');
 
-        fs.stat(filename, function (err, stats) {
+        fs.stat(filename, function(err, stats) {
             if (err) {
                 logger.warn('File ' + filename + ' doesn\'t exist.')
             } else {
@@ -136,7 +136,7 @@ var getStaticPagesContent = function (dataObj, category, cb) {
                     fs.readFile(filename, {
                         encoding: 'utf-8',
                         flag: 'r'
-                    }, function (readErr, content) {
+                    }, function(readErr, content) {
                         if (readErr) {
                             logger.info(readErr);
                         } else {
@@ -170,7 +170,7 @@ var getStaticPagesContent = function (dataObj, category, cb) {
 
             }
         });
-    }, function () {
+    }, function() {
         cb(null, staticsContents, category);
     });
 };
@@ -183,8 +183,8 @@ function checkDirectorySync(directory) {
     }
 }
 
-var createStaticPages = function (staticsContents, category, cb) {
-    async.each(staticsContents, function (staticContent, callback) {
+var createStaticPages = function(staticsContents, category, cb) {
+    async.each(staticsContents, function(staticContent, callback) {
         var filename = path.join(__FILES_DEST__, category, staticContent.staticFileName + '.html');
         staticContent['category'] = category;
         //let creationDateOfContent = fs.statSync(filename)
@@ -192,12 +192,13 @@ var createStaticPages = function (staticsContents, category, cb) {
             staticContent: staticContent,
             currentUrl: '/' + category
         });
+        staticPage = staticPage.replace("<title>Babylon.js Documentation</title>", "<title>" + staticContent.staticName + " - Babylon.js Documentation</title>");
 
-        fs.writeFile(filename, staticPage, function (writeErr) {
+        fs.writeFile(filename, staticPage, function(writeErr) {
             if (writeErr) throw writeErr;
             callback();
         });
-    }, function () {
+    }, function() {
         cb(null);
     });
 };
