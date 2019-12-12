@@ -272,6 +272,24 @@ Alternatively, you can add the custom attribute manually following [3DS MAX guid
 
 During export, enable the _KHR_materials_unlit_ checkbox.
 
+## Custom attributes
+
+Attributes defined by you, the user, are exported as well!
+Almost all types of parameters are supported (_Float_, _Color_, _Boolean_...). The only exceptions are _Texture_, _Node_ and _Material_ types.
+All nodes (meshes, lights...) and materials have their custom attributes exported.
+
+All custom attributes are exported under _extras_:
+![3DS MAX custom attributes pipeline](/img/exporters/3DSMax/CustomAttributesPipeline_glTF_3dsMax.jpg)
+
+Note that the custom attributes are added to the node, not to the mesh or light component itself.
+
+Following types have particularities you should know:
+- _Angle_ : Set in degrees (°) in 3ds Max but exported as radians. Ex: 360° => 3.1416 rads
+- _Array_ : An array in 3ds Max is an enumeration of values. Each value has an incremental index, starting from 1. Only one value can be selected. The index of selection is exported, not the displayed value.
+- _Color_ and _FRGBA_ : Exported in base 1 as all other colors. Ex: Red (255,0,0) => (1,0,0)
+- _Percent_ : Exported in base 1 as well. Ex: 80% => 0.8
+- _Texture_ : __Not supported__. Custom attributes are exported as row values. Thus textures are exported under babylon format instead of glTF format. Bitmaps associated to textures are not exported.
+
 ## Shell material
 
 In 3DS Max, the _Shell material_ is a container for other materials and controls which material is used in which rendering.

@@ -376,6 +376,22 @@ To add the desired custom attribute, you are recommended to use the [BabylonMate
 
 Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
 
+## Custom attributes
+
+Attributes defined by you, the user, are exported as well!
+Almost all types of parameters are supported (_Float_, _Color_, _Boolean_, _TextureMap_...). The only exceptions are _Node_ and _Material_ types.
+All nodes (meshes, lights...) and materials have their custom attributes exported.
+
+All custom attributes are exported under _metadata_:
+![3DS MAX custom attributes pipeline](/img/exporters/3DSMax/CustomAttributesPipeline_babylon_3dsMax.jpg)
+
+Following types have particularities you should know:
+- _Angle_ : Set in degrees (°) in 3ds Max but exported as radians. Ex: 360° => 3.1416 rads
+- _Array_ : An array in 3ds Max is an enumeration of values. Each value has an incremental index, starting from 1. Only one value can be selected. The index of selected item is exported, not the displayed label.
+- _Color_ and _FRGBA_ : Exported in base 1 as all other colors. Ex: Red = (255,0,0) => (1,0,0)
+- _Percent_ : Exported in base 1 as well. Ex: 80% => 0.8
+- _Texture_ : The texture is fully exported, including its bitmap. However, the Babylon loader doesn't interprete the data as a BABYLON.Texture. They are instead row data that can be read or parsed after import.
+
 Now that you know all about the exporter features, it’s time to use it! 
 
 # Using the exporter
