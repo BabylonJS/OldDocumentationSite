@@ -1,5 +1,3 @@
-
-
 ---
 ID_PAGE: 22082
 PG_TITLE: 09. Sprites
@@ -244,7 +242,7 @@ These options are:
 * stageSize: A Vector2 of the number of "tiles" in the system.
 	 - default : Vector2(1,1)
 * outputSize: A Vector2 of size of the output plane in World Units.
- 	 - default : Vector2(1,1)
+	 - default : Vector2(1,1)
 * outputPosition: A Vector3 of position of the output plane in World Units.
 	 - default : Vector3.Zero
 * outputRotation: A Vector3 of rotation of the output plane in World Units.
