@@ -111,6 +111,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Position
     * Target / Rotation
     * Animations: Position, Target, Fov
+    * Custom attributes
 
 * _Lights_
     * Omni / spot / directional / Ambient(Hemispheric)
@@ -121,6 +122,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Diffuse
     * Specular
     * Animations: Position, direction, intensity, diffuse
+    * Custom attributes
 
 * _Meshes_
     * Visibility
@@ -136,6 +138,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Morph targets
     * Show Bounding box and submeshes bounding boxes (*)
     * Animations: Position, scaling, rotation, visibility, bones, morph weights
+    * Custom attributes
 
 * _Materials_
     * Multi-materials
@@ -152,6 +155,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Standard Surface Arnold material
     * Coating (Standard Surface Arnold only)
     * Unlit attribute
+    * Custom attributes
 
 * _Textures_
     * UV offset / scaling / angle
@@ -379,11 +383,15 @@ Alternatively, you can add the custom attribute manually following [3DS MAX guid
 ## Custom attributes
 
 Attributes defined by you, the user, are exported as well!
+
 Almost all types of parameters are supported (_Float_, _Color_, _Boolean_, _TextureMap_...). The only exceptions are _Node_ and _Material_ types.
 All nodes (meshes, lights...) and materials have their custom attributes exported.
 
-All custom attributes are exported under _metadata_:
-![3DS MAX custom attributes pipeline](/img/exporters/3DSMax/CustomAttributesPipeline_babylon_3dsMax.jpg)
+To define custom attributes either use the Parameter Editor window or scripting:
+![3DS MAX custom attributes parameter editor](/img/exporters/3DSMax/CustomAttributesDefinition_3dsMax.jpg)
+
+Custom attributes are exported under _metadata_:
+![3DS MAX custom attributes babylon](/img/exporters/3DSMax/CustomAttributes_babylon.jpg)
 
 Following types have particularities you should know:
 - _Angle_ : Set in degrees (°) in 3ds Max but exported as radians. Ex: 360° => 3.1416 rads

@@ -37,6 +37,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Hierarchy
     * Position / rotation / scaling
     * Animations: position, rotation, scaling
+    * Custom attributes
 
 * _Materials_
     * Standard material (converted to PBR, see below)
@@ -48,6 +49,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Bump mapping
     * Multi-materials
     * Unlit attribute
+    * Custom attributes
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)
@@ -275,11 +277,15 @@ During export, enable the _KHR_materials_unlit_ checkbox.
 ## Custom attributes
 
 Attributes defined by you, the user, are exported as well!
+
 Almost all types of parameters are supported (_Float_, _Color_, _Boolean_...). The only exceptions are _Texture_, _Node_ and _Material_ types.
 All nodes (meshes, lights...) and materials have their custom attributes exported.
 
-All custom attributes are exported under _extras_:
-![3DS MAX custom attributes pipeline](/img/exporters/3DSMax/CustomAttributesPipeline_glTF_3dsMax.jpg)
+To define custom attributes either use the Parameter Editor window or scripting:
+![3DS MAX custom attributes parameter editor](/img/exporters/3DSMax/CustomAttributesDefinition_3dsMax.jpg)
+
+Custom attributes are exported under _extras_:
+![3DS MAX custom attributes glTF](/img/exporters/3DSMax/CustomAttributes_glTF.jpg)
 
 Note that the custom attributes are added to the node, not to the mesh or light component itself.
 
