@@ -90,6 +90,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Instances
     * Morph targets (blend shapes)
     * Animations: Position, scaling, rotation, bones, morph weights
+    * Custom attributes
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn)
@@ -106,6 +107,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
         * Roughness
         * Emissive
     * Multi-materials
+    * Double sided materials
 
 * _Textures_
     * UV offset / scaling / angle
@@ -120,6 +122,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Position
     * Target / Rotation
     * Animations: Position, Target / Rotation
+    * Custom attributes
 
 * _Lights_
     * Point / spot / directional / ambient
@@ -129,6 +132,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Diffuse
     * Specular
     * Animations: Position, direction
+    * Custom attributes
 
 ## The exporter window 
 
@@ -212,6 +216,34 @@ Babylon engine supports only 2 UV sets. In Maya the first UV set, created by def
 Moreover, Babylon engine supports only 1 UV set per texture. If a single texture is linked to UV1 and any other UV set, the log panel will display the warning “Texture is linked to UV1 and UV2. Only one UV set per texture is supported.” and the texture will be linked to UV1 or UV2 but not both.
 
 Now that you know all about the exporter features, it’s time to use it! 
+
+## Double sided materials
+
+To create a double sided material, there is different methods. The ones exported are using two materials and a condition.
+
+![double sided hypershade](/img/exporters/Maya/8_hyperShade_double_sided.jpg)
+
+## Custom user attributes
+
+You can add custom attributes to Mesh, Light and cameras with the attributes window and it add it in the extra attributes of those objects.
+
+![attributes window](/img/exporters/Maya/9_attribute_window.png)
+
+In babylon, the custom attributes are added as metadata, in GLTF, they are added as extras.
+
+![extras metadata](/img/exporters/Maya/10_extras_metadata.png)
+
+## Exporter through MEL script
+
+You can use the exporter through MEL script. To do so you need to generate the exporter parameters with the command 'GenerateExportersParameter' and specify a path and the export type.
+
+![generate export parameter](/img/exporters/Maya/11_generate_export_parameter.jpg)
+
+Then you need to specify the other parameters and export with the command 'ScriptToBabylon'.
+
+![export MEL](/img/exporters/Maya/12_script_to_babylon.jpg)
+
+You can find an exemple script in the Maya\MELScripts folder of the exporter.
 
 # Using the exporter
 
