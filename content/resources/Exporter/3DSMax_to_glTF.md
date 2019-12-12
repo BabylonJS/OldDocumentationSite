@@ -48,6 +48,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Emission, ambient occlusion
     * Bump mapping
     * Multi-materials
+    * Double-sided materials
     * Unlit attribute
     * Custom attributes
 
@@ -257,6 +258,10 @@ glTF 2.0 supports the [KHR_texture_transform extension](https://github.com/Khron
 To enjoy PBR material rendering, you should have an environmnent texture in your scene. The plugin exports the environment map if any is provided in 3DS MAX.
 
 However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
+
+## Double sided material
+
+The handling of the double sided material is mimic from babylon format. [Detailed explanations here](/resources/3DSMax#double-sided-material)
 
 ## Unlit attribute
 

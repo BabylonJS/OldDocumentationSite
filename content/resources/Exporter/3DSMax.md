@@ -154,6 +154,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Physical materials (PBR)
     * Standard Surface Arnold material
     * Coating (Standard Surface Arnold only)
+    * Double sided material
     * Unlit attribute
     * Custom attributes
 
@@ -367,6 +368,24 @@ Babylon supports PNG, DDS and TGA formats for texture transparency. You can choo
 ![texture](/img/exporters/3DSMax/11_texture.jpg)
 
 **Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
+
+## Double sided material
+
+Simply use the _Double Sided_ material natively present in 3ds Max (Materials > General > Double Sided).
+
+![3DS MAX double sided material](/img/exporters/3DSMax/DoubleSidedMaterial.jpg)
+
+From there, you can specify the _Facing_ and _Back_ materials. Those sub-materials are independant from each other. For example, one can be a standard material and the other a physical.
+
+The _Translucency_ parameter is not used.
+
+When exporting, the geometry of all meshes using a double sided material is duplicated:
+- the number of vertices and faces is doubled
+- faces, normals and tangents are inverted for the duplicated geometry
+
+This mean that the exporter is automatically creating a back side. If you already have a back side, you should use a Multi-material instead.
+
+Moreover, the _Double sided_ material should not be confused with the _2-sided_ property of a _Standard_ material. This last property is used to put the same material to the front and back faces.
 
 ## Unlit material
 
