@@ -212,6 +212,9 @@ Congratulation again, you're now a documentation master!
 - do one commit per tasks, a pull request can take into account multiple commits if needed
     - example: if you have two pages to modify, once the first page is edited, do a commit
 - tables can be a great help for readibility
+- avoid the use of first person
+- pay attention to spelling, grammar and punctuation
+- when you're not sure about a point, ask for proof-reading
 
 ## Images
 
