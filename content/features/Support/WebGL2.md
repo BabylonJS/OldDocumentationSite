@@ -31,6 +31,7 @@ Occlusion Queries| Occlusion queries detect whether a Mesh is visible in the cur
 Power of two textures| In the past, to achieve the best performance and higher quality texture rendering, images with dimensions that are a power of two were required. With support for WebGL2 this is no longer the case, any sized texture will be rendered optimally.|Yes, however Babylon will resize textures to be a power of two causing a hit to performance|N/A. This is done by default|[See below](WebGL2#power-of-two-textures)
 Transform feedback buffer| Transform feedback buffer can be used to update vertex buffers from GPU. Babylon.js uses it to implement GPU particles|No. Not supported on WebGL1|[Demo](https://www.babylonjs-playground.com/#PU4WYI)|[See particles documentation](/babylon101/particles#gpu-particles)
 Shadow Samplers| Shadow samplers are used to enable PCF depth comparison on the hardware. Babylon.js uses it to implement PCF and PCSS shadows.|No. Not supported on WebGL1 (shadows fall back to poisson sampling)|[Demo](https://playground.babylonjs.com/#ZT8BKT#1)|[See shadows documentation](/babylon101/shadows)
+More precise shadows| Shadow maps can now use 32 bits depth buffers improving by a large scale the precision of the shadows.|No. Not supported on WebGL1 (shadows precision will fall back to 16 bits)|[Demo](https://playground.babylonjs.com/#ZT8BKT#1)|[See shadows documentation](/babylon101/shadows)
 
 ## Multisample render targets
 
