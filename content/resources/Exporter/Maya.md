@@ -108,6 +108,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
         * Emissive
     * Multi-materials
     * Double sided materials
+    * Custom attributes
 
 * _Textures_
     * UV offset / scaling / angle
@@ -225,13 +226,18 @@ To create a double sided material, there is different methods. The ones exported
 
 ## Custom user attributes
 
-You can add custom attributes to Mesh, Light and cameras with the attributes window and it add it in the extra attributes of those objects.
+You can add custom attributes to Meshes, Materials, Lights and Cameras with the attributes window and it add them in the extra attributes of those objects.
 
 ![attributes window](/img/exporters/Maya/9_attribute_window.png)
 
 In babylon, the custom attributes are added as metadata, in GLTF, they are added as extras.
 
 ![extras metadata](/img/exporters/Maya/10_extras_metadata.png)
+
+Following types have particularities you should know:
+
+- _bool_ : is equal to 0 or 1.
+- _enum_ : correspond to the index of your maya enum. 
 
 ## Exporter through MEL script
 
