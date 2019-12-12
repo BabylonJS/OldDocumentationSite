@@ -353,22 +353,6 @@ In Babylon format, weight is stored in red channel, roughness in green.
 
 The roughness of the coating can be inverted to mean Glossiness - this is controlled by the same parameter than the roughness map.
 
-## Shell material
-
-The handling of the shell material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#shell-material)
-
-## DirectX Shader
-
-The handling of the directX shader material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#directx-shader-material)
-
-## Texture transparency 
-
-Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 
-
-![texture](/img/exporters/3DSMax/11_texture.jpg)
-
-**Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
-
 ## Double sided material
 
 Simply use the _Double Sided_ material natively present in 3ds Max (Materials > General > Double Sided).
@@ -386,6 +370,22 @@ When exporting, the geometry of all meshes using a double sided material is dupl
 This mean that the exporter is automatically creating a back side. If you already have a back side, you should use a Multi-material instead.
 
 Moreover, the _Double sided_ material should not be confused with the _2-sided_ property of a _Standard_ material. This last property is used to put the same material to the front and back faces.
+
+## Shell material
+
+The handling of the shell material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#shell-material)
+
+## DirectX Shader
+
+The handling of the directX shader material is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#directx-shader-material)
+
+## Texture transparency 
+
+Babylon supports PNG, DDS and TGA formats for texture transparency. You can choose to include the transparency directly in your diffuse texture, or create an opacity map. Here are the options to check if you want to have transparency on your diffuse texture: 
+
+![texture](/img/exporters/3DSMax/11_texture.jpg)
+
+**Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
 
 ## Unlit material
 
