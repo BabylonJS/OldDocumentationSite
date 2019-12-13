@@ -222,34 +222,6 @@ To do it simply, a root node named "root" is added to the scene. All nodes are s
 
 In glTF, a skin is binded to a node. The skeleton (root bone) of a skin should be positioned at origin, without rotation or scaling. The node to which is applied the skin is responsible of its transformation (translation, rotation, scale).
 
-## Alpha mode
-
-Alpha mode is _OPAQUE_ when a material doesn't have any attribute or texture related to transparency.
-
-Alpha mode is _BLEND_ when a material has any of the following:
-- its transparency is not 0, or its opacity is not 100
-- has a transparency/opacity texture
-- has a base color/diffuse color texture with _Alpha Source_ set to _Image Alpha_
-
-Alpha mode can be set to _AlphaTest_ by setting a custom attribute on a material.
-![3DS MAX alpha test custom material attribute](/img/exporters/3DSMax/alpha_test_custom_material_attribute.jpg)
-
-To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Alpha Test attribute to all materials used in the scene. The default value is _Alpha Blend_. Run the script again whenever creating/assigning a new material.
-
-Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonAlphaTest_. The visual text (_Alpha Test_) could be whatever you want.
-
-__IMPORTANT__
-
-There is a known issue where 3DS MAX texture attributes are not initialized correctly when a bitmap is being created: the _Alpha Source_ value is the default one, which is _Image Alpha_.
-
-This means that __materials with a base color/diffuse color texture may be exported as _BLEND_ while you expected them to be _OPAQUE_.__
-
-To fix that, enter the base color/diffuse color texture settings and that's it! Doing this is enough for 3DS MAX to initialize the _Alpha Source_ correctly.
-
-![bitmap texture settings](/img/exporters/3DSMax/bitmap_texture_settings.jpg)
-
-Note that, for an image format with alpha channel, like PNG, if the image provided contains alpha, the default value once initialized correctly is still _Image Alpha_. You may want to change that to _None (Opaque)_.
-
 ## Textures image format
 
 glTF 2.0 only supports the following image formats: jpg and png. You are adviced to use those formats for your textures when exporting to glTF.
