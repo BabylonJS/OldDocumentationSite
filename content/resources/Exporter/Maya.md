@@ -222,11 +222,17 @@ Moreover, Babylon engine supports only 1 UV set per texture. If a single texture
 
 Now that you know all about the exporter features, it’s time to use it! 
 
-## Double sided materials
+## Double sided material
 
-To create a double sided material, there is different methods. The ones exported are using two materials and a condition.
+To create a double sided material there are different methods, but the only one exported is using two materials and a condition.
 
 ![double sided hypershade](/img/exporters/Maya/8_hyperShade_double_sided.jpg)
+
+When exporting, the geometry of all meshes using a double sided material is duplicated:
+- the number of vertices and faces is doubled
+- faces, normals and tangents are inverted for the duplicated geometry
+
+This mean that the exporter is automatically creating a back side. If you already have a back side, you should directly apply a material to it.
 
 ## Babylon material attributes
 
@@ -247,20 +253,19 @@ Most Babylon attributes are common to all materials:
     * _Cutoff_: The alpha cutoff value is 0.5. Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
     * _Blend_: This how Maya handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
 
-## Custom user attributes
+## Custom attributes
 
-You can add custom attributes to Meshes, Materials, Lights and Cameras with the attributes window and it add them in the extra attributes of those objects.
+You can add custom attributes to Meshes, Materials, Lights and Cameras with the attributes window (_Modify > Add Attribute..._) and it adds them in the extra attributes of those objects.
 
-![attributes window](/img/exporters/Maya/9_attribute_window.png)
+![native attributes window](/img/exporters/Maya/9_attribute_window.png)
 
-In babylon, the custom attributes are added as metadata, in GLTF, they are added as extras.
+In babylon, the custom attributes are added as metadata.
 
-![extras metadata](/img/exporters/Maya/10_extras_metadata.png)
+![custom attributes as metadata](/img/exporters/Maya/CustomAttributes_Metadata.png)
 
 Following types have particularities you should know:
-
 - _bool_ : is equal to 0 or 1.
-- _enum_ : correspond to the index of your maya enum. 
+- _enum_ : corresponds to the index of your Maya enum. 
 
 ## Exporter through MEL script
 
@@ -272,7 +277,7 @@ Then you need to specify the other parameters and export with the command 'Scrip
 
 ![export MEL](/img/exporters/Maya/12_script_to_babylon.jpg)
 
-You can find an exemple script in the Maya\MELScripts folder of the exporter.
+You can find an exemple script in the [Maya\MELScripts](https://github.com/BabylonJS/Exporters/tree/master/Maya/MELScripts) folder of the exporter.
 
 # Using the exporter
 

@@ -37,6 +37,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Hierarchy
     * Position / rotation / scaling
     * Animations: position, rotation, scaling
+    * Custom attributes
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn are converted to PBR, see below)
@@ -51,9 +52,11 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
         * Roughness
         * Emissive
     * Multi-materials
+    * Double sided materials
     * Unlit
     * Backface culling
     * Opacity/Transparency mode
+    * Custom attributes
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)
@@ -304,6 +307,10 @@ To install the Node.js, go to the web site download and install it.
 Then to install gltf-pipeline, open et normal shell (cmd.exe or powershell.exe) and run the following command `npm install -g gltf-pipeline`.
 Once they are installed, check the _Use Draco compression_ option and the compression will be automatically done at the export end.
 
+## Double sided material
+
+The handling of the double sided material is mimic from babylon format. [Detailed explanations here](/resources/Maya#double-sided-material)
+
 ## Babylon material attributes
 
 Native materials are enhanced to have extra attributes in a dedicated node. A Babylon attribute node is created after the first export using the material.
@@ -321,6 +328,20 @@ Most Babylon attributes are common to all materials:
     * _Opaque_: The alpha color and texture are ignored during export process.
     * _Cutoff_: The alpha cutoff value is 0.5. Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
     * _Blend_: This how Maya handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
+
+## Custom attributes
+
+You can add custom attributes to Meshes, Materials, Lights and Cameras with the attributes window (_Modify > Add Attribute..._) and it adds them in the extra attributes of those objects.
+
+![native attributes window](/img/exporters/Maya/9_attribute_window.png)
+
+In glTF, the custom attributes are added as extras.
+
+![custom attributes as extras](/img/exporters/Maya/CustomAttributes_Extras.png)
+
+Following types have particularities you should know:
+- _bool_ : is equal to 0 or 1.
+- _enum_ : corresponds to the index of your Maya enum. 
 
 # How to export multiple animation clips to .gltf format
 
