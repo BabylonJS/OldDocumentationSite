@@ -34,6 +34,7 @@ skull.babylon | 3.94 MB | ![skull](/img/resources/meshes/skull.png) | [Playgroun
 SSAOcat.babylon | 201 KB | ![cat](/img/resources/meshes/cat.png) | [Playground](https://www.babylonjs-playground.com/#LCUPCU#1)
 StanfordBunny.obj | 4.69 MB | ![bunny](/img/resources/meshes/bunny.png) | [Playground](https://www.babylonjs-playground.com/#95MJI8#1)
 ufo.glb | 17 MB | ![ufo](/img/resources/meshes/ufo.png) | [Playground](https://www.babylonjs-playground.com/#058SEW#3)
+Elf.gltf | 401 KB | ![elf](/img/resources/meshes/elf.png) | [Playground](https://www.babylonjs-playground.com/#XY6QF0)
 
 ## From the Model Library
 
