@@ -166,6 +166,11 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
 
 * Hierarchies are exported
 
+* _Animations_
+    * Animation groups
+    * Export without animations
+    * Export animations only
+
 (*): Through custom UI
 
 ## Scene properties 
@@ -248,6 +253,10 @@ The _write textures_ option enables writing the textures to the output directory
 The _overwrite textures_ option enables overwriting existing textures in the output directory.
 
 The _Use Draco comression_ option is only available for gltf and glb output format. More detail [here](/resources/3DSMax_to_glTF#draco-compression).
+
+The _Export Animations_ option enables you to export only the geometry and materials.
+
+The _Export Animations Only_ option enables you to export only animations. The _Export Animations_ option must be checked as well.
 
 The _Export_ button should be used to create the Babylon file representing your scene. The _Export & Run_ button will also create the Babylon file, but will also launch your default browser and run the newly made Babylon file. This button is very useful if you just want to test the render of your scene in Babylon.js. 
 

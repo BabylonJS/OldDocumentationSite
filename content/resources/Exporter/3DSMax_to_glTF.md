@@ -58,6 +58,10 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Image format conversion to jpg / png
     * Texture transform
 
+* _Animations_
+    * Export without animations
+    * Export animations only
+
 # Conversion Standard to PBR materials
 
 3DS MAX Standard materials are converted to PBR materials based on their diffuse, specular, opacity and glossiness.
