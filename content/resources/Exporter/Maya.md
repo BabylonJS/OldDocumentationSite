@@ -48,7 +48,7 @@ The plug-in is designed for Maya 2017 or later. This guide is about the Windows 
 
 ![releases](/img/exporters/installer/GithubPreRelease.png)
 
-In the assets section of the release you can find one zip file per supported tool (like maya_2019.zip) containing the plugin files.
+In the assets section of the release you can find one zip file per supported tool (like Maya_2019.zip) containing the plugin files.
 
 Click on the zip file, to start Downloading.
 
@@ -58,9 +58,9 @@ By default, Windows blocks all .dll files coming from the web, so we have to unb
 
 Then, extract the content of the zip file on your computer.
 
-Finally, move:
-- all .dll files into a directory defined in Maya plug-in path (for example `C:/Program Files/Autodesk/Maya2018/bin/plug-ins`). More information on how to install a plug-in in Maya [here](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html).
-- and all template files to their respective folders AETemplates and NETemplates. Those files are used for the UI. While not mandatory they are always welcomed!
+Finally:
+- move all .dll files into a directory defined in Maya plug-in path (for example `C:/Program Files/Autodesk/Maya2018/bin/plug-ins`). More information on how to install a plug-in in Maya [here](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html).
+- and move all template files to their respective folders AETemplates and NETemplates. Those files are used for the UI. While not mandatory they are always welcomed!
 
 You should find the _Maya2Babylon.nll.dll_ in the plug-in Manager (_Windows > Settings/Preferences > Plug-in Manager_).
 

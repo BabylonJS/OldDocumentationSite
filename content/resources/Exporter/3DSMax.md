@@ -422,9 +422,11 @@ Almost all types of parameters are supported (_Float_, _Color_, _Boolean_, _Text
 All nodes (meshes, lights...) and materials have their custom attributes exported.
 
 To define custom attributes either use the Parameter Editor window or scripting:
+
 ![3DS MAX custom attributes parameter editor](/img/exporters/3DSMax/CustomAttributesDefinition_3dsMax.jpg)
 
 Custom attributes are exported under _metadata_:
+
 ![3DS MAX custom attributes babylon](/img/exporters/3DSMax/CustomAttributes_babylon.jpg)
 
 Following types have particularities you should know:

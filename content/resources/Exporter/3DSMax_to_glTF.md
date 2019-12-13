@@ -239,7 +239,7 @@ However, glTF format does not support this feature and the environment map needs
 
 ## Double sided material
 
-The handling of the double sided material is mimic from babylon format. [Detailed explanations here](/resources/3DSMax#double-sided-material)
+The handling of the double sided material is mimic from babylon format. [Detailed explanations here](/resources/3DSMax#double-sided-material).
 
 ## Babylon material attributes
 
@@ -248,7 +248,7 @@ Native materials are enhanced to have extra attributes under Babylon attributes 
 ![3DS MAX babylon material attributes](/img/exporters/3DSMax/BabylonMaterialAttributes.jpg)
 
 Most Babylon attributes are common to all materials:
-* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture. Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here.](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit). During export, enable the _KHR_materials_unlit_ checkbox.
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture. Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit). During export, enable the _KHR_materials_unlit_ checkbox.
 * __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces. __This property is native to Standard material and is called _2-Sided_.__
 * __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
     * _Opaque_: The alpha color and texture are ignored during export process.
@@ -263,9 +263,11 @@ Almost all types of parameters are supported (_Float_, _Color_, _Boolean_...). T
 All nodes (meshes, lights...) and materials have their custom attributes exported.
 
 To define custom attributes either use the Parameter Editor window or scripting:
+
 ![3DS MAX custom attributes parameter editor](/img/exporters/3DSMax/CustomAttributesDefinition_3dsMax.jpg)
 
 Custom attributes are exported under _extras_:
+
 ![3DS MAX custom attributes glTF](/img/exporters/3DSMax/CustomAttributes_glTF.jpg)
 
 Note that the custom attributes are added to the node, not to the mesh or light component itself.
