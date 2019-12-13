@@ -75,7 +75,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
 * Maya2Babylon 2017-2018
    * Requires atleast .NET Framework 4.6.1
 
-* Max2Babylon 2019
+* Maya2Babylon 2019
    * Requires atleast .NET Framework 4.6.1
 
 # Features  #
@@ -208,7 +208,7 @@ As well as the default supported GLTF parameters, in Babylon format, we support 
 
 ![texture](/img/exporters/Maya/Coating.png)
 
-Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In 3DS MAX, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
+Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In Maya, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
 
 In Babylon format, weight is stored in red channel, roughness in green.
 
