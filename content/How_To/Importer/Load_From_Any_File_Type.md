@@ -99,6 +99,15 @@ BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (conta
 
 [Demo](http://www.babylonjs-playground.com/#JA1ND3#48)
 
+## SceneLoader.ImportAnimations
+
+Loads the animations from the file and merges them to the scene
+You can customize the import process using options and callbacks
+```javascript
+BABYLON.SceneLoader.ImportAnimations("./", "Elf_run.gltf", scene);
+```
+[Demo](https://www.babylonjs-playground.com/#UGD0Q0#2)
+
 ## SceneLoader.AppendAsync
 
 There are also `Async` versions of these functions that return promises:
