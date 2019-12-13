@@ -108,6 +108,10 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
         * Emissive
     * Multi-materials
     * Double sided materials
+    * Unlit
+    * Backface culling
+    * Max Simultaneous Lights
+    * Opacity/Transparency mode
     * Custom attributes
 
 * _Textures_
@@ -223,6 +227,25 @@ Now that you know all about the exporter features, it’s time to use it!
 To create a double sided material, there is different methods. The ones exported are using two materials and a condition.
 
 ![double sided hypershade](/img/exporters/Maya/8_hyperShade_double_sided.jpg)
+
+## Babylon material attributes
+
+Native materials are enhanced to have extra attributes in a dedicated node. A Babylon attribute node is created after the first export using the material.
+
+Here is an example for 3 different materials:
+
+![Maya babylon material attributes nodes](/img/exporters/Maya/BabylonMaterialAttributes_LargeView.jpg)
+
+![Maya babylon material attributes details](/img/exporters/Maya/BabylonMaterialAttributes_AllNodes.jpg)
+
+Most Babylon attributes are common to all materials:
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+* __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces.
+* __Max Simultaneous Lights__: Number of Simultaneous lights allowed on the material.
+* __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
+    * _Opaque_: The alpha color and texture are ignored during export process.
+    * _Cutoff_: The alpha cutoff value is 0.5. Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
+    * _Blend_: This how Maya handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
 
 ## Custom user attributes
 
