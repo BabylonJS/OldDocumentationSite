@@ -49,7 +49,9 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Bump mapping
     * Multi-materials
     * Double-sided materials
-    * Unlit attribute
+    * Unlit
+    * Backface culling
+    * Opacity/Transparency mode
     * Custom attributes
 
 * _Textures_
@@ -267,21 +269,19 @@ However, glTF format does not support this feature and the environment map needs
 
 The handling of the double sided material is mimic from babylon format. [Detailed explanations here](/resources/3DSMax#double-sided-material)
 
-## Unlit attribute
+## Babylon material attributes
 
-A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: metalness, roughness, emission, ambient occlusion and bump mapping.
+Native materials are enhanced to have extra attributes under Babylon attributes section.
 
-Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here.](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)
+![3DS MAX babylon material attributes](/img/exporters/3DSMax/BabylonMaterialAttributes.jpg)
 
-3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
-
-![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
-
-To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
-
-Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
-
-During export, enable the _KHR_materials_unlit_ checkbox.
+Most Babylon attributes are common to all materials:
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture. Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here.](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit). During export, enable the _KHR_materials_unlit_ checkbox.
+* __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces. __This property is native to Standard material and is called _2-Sided_.__
+* __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
+    * _Opaque_: The alpha color and texture are ignored during export process.
+    * _Cutoff_: The alpha cutoff value is 0.5 (not exported as it is the glTF default value). Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
+    * _Blend_: This how 3ds Max handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
 
 ## Custom attributes
 

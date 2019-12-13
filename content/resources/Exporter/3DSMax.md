@@ -155,7 +155,10 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Standard Surface Arnold material
     * Coating (Standard Surface Arnold only)
     * Double sided material
-    * Unlit attribute
+    * Unlit
+    * Backface culling
+    * Max Simultaneous Lights
+    * Opacity/Transparency mode
     * Custom attributes
 
 * _Textures_
@@ -396,17 +399,20 @@ Babylon supports PNG, DDS and TGA formats for texture transparency. You can choo
 
 **Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
 
-## Unlit material
+## Babylon material attributes
 
-A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+Native materials are enhanced to have extra attributes under Babylon attributes section.
 
-3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
+![3DS MAX babylon material attributes](/img/exporters/3DSMax/BabylonMaterialAttributes.jpg)
 
-![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
-
-To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
-
-Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
+Most Babylon attributes are common to all materials:
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+* __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces. __This property is native to Standard material and is called _2-Sided_.__
+* __Max Simultaneous Lights__: Number of Simultaneous lights allowed on the material.
+* __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
+    * _Opaque_: The alpha color and texture are ignored during export process.
+    * _Cutoff_: The alpha cutoff value is 0.5. Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
+    * _Blend_: This how 3ds Max handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
 
 ## Custom attributes
 
