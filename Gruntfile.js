@@ -108,7 +108,7 @@ module.exports = function(grunt) {
         typedoc: {
             build: {
                 options: {
-                    target: 'es5',
+                    target: 'es2015',
                     out: './public/html/api',
                     name: 'Babylon.js classes documentation',
                     excludeExternals: true,

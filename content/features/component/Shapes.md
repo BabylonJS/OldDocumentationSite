@@ -77,7 +77,7 @@ var options = {
     diameterTop:3, 
     diameterBottom: 6, 
     height: 5, 
-    tessellations: 16, 
+    tessellation: 16, 
     subdivisions: 10
 }
 var cylinder = BABYLON.MeshBuilder.CreateCylinder("myCylinder", options);
