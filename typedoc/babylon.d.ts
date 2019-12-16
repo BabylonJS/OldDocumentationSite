@@ -1461,6 +1461,18 @@ declare module BABYLON {
         private static _PreparePreProcessors;
         private static _ProcessShaderConversion;
         private static _ProcessIncludes;
+        /**
+         * Loads a file from a url
+         * @param url url to load
+         * @param onSuccess callback called when the file successfully loads
+         * @param onProgress callback called while file is loading (if the server supports this mode)
+         * @param offlineProvider defines the offline provider for caching
+         * @param useArrayBuffer defines a boolean indicating that date must be returned as ArrayBuffer
+         * @param onError callback called when the file fails to load
+         * @returns a file request object
+         * @hidden
+         */
+        static _FileToolsLoadFile(url: string, onSuccess: (data: string | ArrayBuffer, responseURL?: string) => void, onProgress?: (ev: ProgressEvent) => void, offlineProvider?: IOfflineProvider, useArrayBuffer?: boolean, onError?: (request?: WebRequest, exception?: LoadFileError) => void): IFileRequest;
     }
 }
 declare module BABYLON {
@@ -26067,6 +26079,8 @@ declare module BABYLON {
         CLIPPLANE2: boolean;
         CLIPPLANE3: boolean;
         CLIPPLANE4: boolean;
+        CLIPPLANE5: boolean;
+        CLIPPLANE6: boolean;
         ALPHATEST: boolean;
         DEPTHPREPASS: boolean;
         ALPHAFROMDIFFUSE: boolean;
@@ -31488,6 +31502,17 @@ declare module BABYLON {
          */
         createTexture(urlArg: Nullable<string>, noMipmap: boolean, invertY: boolean, scene: Nullable<ISceneLike>, samplingMode?: number, onLoad?: Nullable<() => void>, onError?: Nullable<(message: string, exception: any) => void>, buffer?: Nullable<string | ArrayBuffer | ArrayBufferView | HTMLImageElement | Blob | ImageBitmap>, fallback?: Nullable<InternalTexture>, format?: Nullable<number>, forcedExtension?: Nullable<string>, excludeLoaders?: Array<IInternalTextureLoader>, mimeType?: string): InternalTexture;
         /**
+         * Loads an image as an HTMLImageElement.
+         * @param input url string, ArrayBuffer, or Blob to load
+         * @param onLoad callback called when the image successfully loads
+         * @param onError callback called when the image fails to load
+         * @param offlineProvider offline provider for caching
+         * @param mimeType optional mime type
+         * @returns the HTMLImageElement of the loaded image
+         * @hidden
+         */
+        static _FileToolsLoadImage(input: string | ArrayBuffer | ArrayBufferView | Blob, onLoad: (img: HTMLImageElement | ImageBitmap) => void, onError: (message?: string, exception?: any) => void, offlineProvider: Nullable<IOfflineProvider>, mimeType?: string): Nullable<HTMLImageElement>;
+        /**
          * @hidden
          */
         _rescaleTexture(source: InternalTexture, destination: InternalTexture, scene: Nullable<any>, internalFormat: number, onComplete: () => void): void;
@@ -31676,6 +31701,18 @@ declare module BABYLON {
         _getRGBAMultiSampleBufferFormat(type: number): number;
         /** @hidden */
         _loadFile(url: string, onSuccess: (data: string | ArrayBuffer, responseURL?: string) => void, onProgress?: (data: any) => void, offlineProvider?: IOfflineProvider, useArrayBuffer?: boolean, onError?: (request?: IWebRequest, exception?: any) => void): IFileRequest;
+        /**
+         * Loads a file from a url
+         * @param url url to load
+         * @param onSuccess callback called when the file successfully loads
+         * @param onProgress callback called while file is loading (if the server supports this mode)
+         * @param offlineProvider defines the offline provider for caching
+         * @param useArrayBuffer defines a boolean indicating that date must be returned as ArrayBuffer
+         * @param onError callback called when the file fails to load
+         * @returns a file request object
+         * @hidden
+         */
+        static _FileToolsLoadFile(url: string, onSuccess: (data: string | ArrayBuffer, responseURL?: string) => void, onProgress?: (ev: ProgressEvent) => void, offlineProvider?: IOfflineProvider, useArrayBuffer?: boolean, onError?: (request?: WebRequest, exception?: LoadFileError) => void): IFileRequest;
         /**
          * Reads pixels from the current frame buffer. Please note that this function can be slow
          * @param x defines the x coordinate of the rectangle where pixels must be read
@@ -33883,7 +33920,7 @@ declare module BABYLON {
          * @param scriptId defines the id of the script element
          * @returns a promise request object
          */
-        static LoadScriptAsync(scriptUrl: string, scriptId?: string): Promise<boolean>;
+        static LoadScriptAsync(scriptUrl: string, scriptId?: string): Promise<void>;
         /**
          * Loads a file from a blob
          * @param fileToLoad defines the blob to use
@@ -34768,7 +34805,7 @@ declare module BABYLON {
          * Defines that each mesh of the scene should keep up-to-date a map of referencing cloned meshes for fast diposing
          * It will improve performance when the number of mesh becomes important, but might consume a bit more memory
          */
-        useClonedMeshhMap?: boolean;
+        useClonedMeshMap?: boolean;
         /** Defines if the creation of the scene should impact the engine (Eg. UtilityLayer's scene) */
         virtual?: boolean;
     }
@@ -34885,6 +34922,12 @@ declare module BABYLON {
          */
         set forceWireframe(value: boolean);
         get forceWireframe(): boolean;
+        private _skipFrustumClipping;
+        /**
+         * Gets or sets a boolean indicating if we should skip the frustum clipping part of the active meshes selection
+         */
+        set skipFrustumClipping(value: boolean);
+        get skipFrustumClipping(): boolean;
         private _forcePointsCloud;
         /**
          * Gets or sets a boolean indicating if all rendering must be done in point cloud
@@ -34907,6 +34950,14 @@ declare module BABYLON {
          * Gets or sets the active clipplane 4
          */
         clipPlane4: Nullable<Plane>;
+        /**
+         * Gets or sets the active clipplane 5
+         */
+        clipPlane5: Nullable<Plane>;
+        /**
+         * Gets or sets the active clipplane 6
+         */
+        clipPlane6: Nullable<Plane>;
         /**
          * Gets or sets a boolean indicating if animations are enabled
          */
@@ -35479,7 +35530,7 @@ declare module BABYLON {
         /** @hidden */
         readonly useMaterialMeshMap: boolean;
         /** @hidden */
-        readonly useClonedMeshhMap: boolean;
+        readonly useClonedMeshMap: boolean;
         private _externalData;
         private _uid;
         /**
@@ -43860,6 +43911,10 @@ declare module BABYLON {
         private _padSensibilityDown;
         private _leftController;
         private _rightController;
+        private _gazeColor;
+        private _laserColor;
+        private _pickedLaserColor;
+        private _pickedGazeColor;
         /**
          * Observable raised when a new mesh is selected based on meshSelectionPredicate
          */
@@ -44088,6 +44143,18 @@ declare module BABYLON {
         private _convertNormalToDirectionOfRay;
         private _castRayAndSelectObject;
         private _notifySelectedMeshUnselected;
+        /**
+         * Permanently set new colors for the laser pointer
+         * @param color the new laser color
+         * @param pickedColor the new laser color when picked mesh detected
+         */
+        setLaserColor(color: Color3, pickedColor?: Color3): void;
+        /**
+         * Permanently set new colors for the gaze pointer
+         * @param color the new gaze color
+         * @param pickedColor the new gaze color when picked mesh detected
+         */
+        setGazeColor(color: Color3, pickedColor?: Color3): void;
         /**
          * Sets the color of the laser ray from the vr controllers.
          * @param color new color for the ray.
@@ -49794,6 +49861,8 @@ declare module BABYLON {
         CLIPPLANE2: boolean;
         CLIPPLANE3: boolean;
         CLIPPLANE4: boolean;
+        CLIPPLANE5: boolean;
+        CLIPPLANE6: boolean;
         POINTSIZE: boolean;
         FOG: boolean;
         LOGARITHMICDEPTH: boolean;
@@ -56801,6 +56870,10 @@ declare module BABYLON {
          * Gets the specular output component
          */
         get specularOutput(): NodeMaterialConnectionPoint;
+        /**
+         * Gets the shadow output component
+         */
+        get shadow(): NodeMaterialConnectionPoint;
         autoConfigure(material: NodeMaterial): void;
         prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
         updateUniformsAndSamples(state: NodeMaterialBuildState, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, uniformBuffers: string[]): void;
@@ -71491,6 +71564,36 @@ declare module BABYLON.GUI {
 }
 declare module BABYLON {
     /**
+     * Configuration for glTF validation
+     */
+    export interface IGLTFValidationConfiguration {
+        /**
+         * The url of the glTF validator.
+         */
+        url: string;
+    }
+    /**
+     * glTF validation
+     */
+    export class GLTFValidation {
+        /**
+         * The configuration. Defaults to `{ url: "https://preview.babylonjs.com/gltf_validator.js" }`.
+         */
+        static Configuration: IGLTFValidationConfiguration;
+        private static _LoadScriptPromise;
+        /**
+         * Validate a glTF asset using the glTF-Validator.
+         * @param data The JSON of a glTF or the array buffer of a binary glTF
+         * @param rootUrl The root url for the glTF
+         * @param fileName The file name for the glTF
+         * @param getExternalResource The callback to get external resources for the glTF validator
+         * @returns A promise that resolves with the glTF validation results once complete
+         */
+        static ValidateAsync(data: string | ArrayBuffer, rootUrl: string, fileName: string, getExternalResource: (uri: string) => Promise<ArrayBuffer>): Promise<BABYLON.GLTF2.IGLTFValidationResults>;
+    }
+}
+declare module BABYLON {
+    /**
      * Mode that determines the coordinate system to use.
      */
     export enum GLTFLoaderCoordinateSystemMode {
@@ -71799,7 +71902,7 @@ declare module BABYLON {
          * @returns a promise that resolves when the asset is completely loaded.
          */
         whenCompleteAsync(): Promise<void>;
-        private _validateAsync;
+        private _validate;
         private _getLoader;
         private _parseJson;
         private _unpackBinaryAsync;
