@@ -1,7 +1,10 @@
 # CastorGUI V2.0 (ECEMAScript 6)
+
 Library to display a GUI game as a layer on top of the canvas HTML/CSS.
 
+* [Depot](https://github.com/dad72/CastorGUI)
 * [Demo online of this extension](https://www.babylon.actifgames.com/demoCastorGUI/)
+* [Documentation](https://doc.babylonjs.com/extensions/)
 
 ## Features:
 
@@ -41,19 +44,19 @@ let css = "button {cursor:pointer;}";
 let options = {themeRoot: "../style/", themeGUI: "default", pixel: false};
 let guisystem = new GUIManager(canvas, css, options);
 ```
-
 Then we create interfaces items. eg textures and dialog with text:
 
 ```javascript
 let myFunction = function() { alert("Yes, this work!"); };
 let guiTexture = new GUITexture("life", "data/image.png", {w:50,h:50,x:10,y:0}, guisystem, myFunction);
+
 let optionsDialog = {w: (guisystem.getCanvasSize().width - 20), h: 100, x: 8, y: (guisystem.getCanvasSize().height - 110)};
 let dialog = new GUIDialog("dialog", optionsDialog, guisystem);
 dialog.setVisible(true);
+
 let text = new GUIText("textDialog", {size:15, text:"Display text here"}, guisystem, false);
 dialog.add(text);
 ```
-
 That's it. Everything works the same way with the same simplicity.
 
 Demo in the playground : https://www.babylonjs-playground.com/#S34THY#14
@@ -64,9 +67,11 @@ Demo in the playground : https://www.babylonjs-playground.com/#S34THY#14
 let db = new DataBase(false); // true if use sessionStorage else use localStorage (stockage temporary)
 db.addTable("user");// create table
 db.createField("user", "member", {"pseudo":"dad72"});// create field
+
 db.selectItem("user", "member", "pseudo");// return dad72
 db.updateItem("user", "member", "pseudo", "Romeo"); // update pseudo
 db.selectItem("user", "member", "pseudo");// return Romeo
+
 //if delete table:
 db.deleteTable("member");
 // if delete database:
