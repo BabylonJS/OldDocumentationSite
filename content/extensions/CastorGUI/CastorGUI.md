@@ -1,8 +1,7 @@
 # CastorGUI V2.0 (ECEMAScript 6)
 Library to display a GUI game as a layer on top of the canvas HTML/CSS.
 
-* [Demo online of this extension](http://www.babylon.actifgames.com/demoCastorGUI/)
-* [Documentation](https://doc.babylonjs.com/extensions/)
+* [Demo online of this extension](https://www.babylon.actifgames.com/demoCastorGUI/)
 
 ## Features:
 
@@ -28,7 +27,7 @@ Create GUI (element html5 and css3):
 * textarea
 * fieldset
 * select with options
-* systeme of database (localStorage and sessionStorage)
+* system of database (localStorage and sessionStorage)
 
 ## Quick overview of use GUI
 
@@ -57,7 +56,7 @@ dialog.add(text);
 
 That's it. Everything works the same way with the same simplicity.
 
-Demo in the playground : http://www.babylonjs-playground.com/#S34THY#4
+Demo in the playground : https://www.babylonjs-playground.com/#S34THY#14
 
 ## For use Database
 
@@ -74,4 +73,4 @@ db.deleteTable("member");
 db.deleteDataBase();
 ```
 
-Demo in the playground :  http://www.babylonjs-playground.com/#12NLGN#53
+Demo in the playground :  https://www.babylonjs-playground.com/#12NLGN#56
