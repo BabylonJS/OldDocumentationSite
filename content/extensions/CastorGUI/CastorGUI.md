@@ -30,7 +30,7 @@ Create GUI (element html5 and css3):
 * textarea
 * fieldset
 * select with options
-* systeme of database (localStorage and sessionStorage)
+* system of database (localStorage and sessionStorage)
 
 ## Quick overview of use GUI
 
@@ -78,4 +78,4 @@ db.deleteTable("member");
 db.deleteDataBase();
 ```
 
-Demo in the playground : https://www.babylonjs-playground.com/#12NLGN#55
+Demo in the playground :  https://www.babylonjs-playground.com/#12NLGN#56
