@@ -36,7 +36,7 @@ An example on how to load the viewer and use its observers using promises, obser
 
 An example of the animation system of the default viewer
 
-[Live demo](https://viewer.babylonjs.com/eventsexample)
+[Live demo](https://viewer.babylonjs.com/ufoexample)
 
 # Further Reading
 
