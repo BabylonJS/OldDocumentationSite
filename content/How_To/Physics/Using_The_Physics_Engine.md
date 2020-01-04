@@ -15,7 +15,7 @@ This tutorial will show the basic usage of the physics system.
 
 ## What physics engine are integrated
 
-There are plugins for 3 physics engines:
+There are plugins for 4 physics engines:
 
 1. Cannon.js - a wonderful physics engine written entirely in JavaScript
 1. Oimo.js - a JS port of the lightweight Oimo physics engine
