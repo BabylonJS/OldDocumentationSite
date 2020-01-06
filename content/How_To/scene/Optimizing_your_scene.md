@@ -102,16 +102,14 @@ mesh.convertToUnIndexedMesh();
 ```
 For example this works very well for a cube where it is more efficient to send 32 positions instead of 24 positions and 32 indices.
 
-## Turning AdaptToDeviceRatio Off
-By default, Babylon.js will adapt to device ratio in order to produce the best possible quality even on high-DPI devices.
+## Turning AdaptToDeviceRatio Off/On
+By default, Babylon.js does not adapt to device ratio anymore. It by default focuses on perf vs quality after receiving lots of community requests.
 
-The drawback is that this could cost a lot on low-end devices. You can turn it off with the fourth parameter of the Engine constructor:
+The drawback is that this could look low rea. You can turn it on with the fourth parameter of the Engine constructor:
 
 ```
-var engine = new BABYLON.Engine(canvas, antialiasing, null, false);
+var engine = new BABYLON.Engine(canvas, antialiasing, null, true);
 ```
-
-In the same constructor, you may also want to turn off antialiasing support with the second parameter.
 
 ## Blocking the dirty mechanism
 
