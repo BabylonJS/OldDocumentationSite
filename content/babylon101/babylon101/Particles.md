@@ -798,6 +798,34 @@ With `coneEmitter.emitFromSpawnPointOnly = true` you can force the emitter to on
 * [Playground Example - Cone Emitter](https://www.babylonjs-playground.com/#MRRGXL#4)
 * [Playground Example - Cone Emitter Rotating](https://www.babylonjs-playground.com/#MRRGXL#5)
 
+### Custom Emitter
+
+To create a custom emitter you need to provide 2 functions:
+
+```javascript
+ var customEmitter = new BABYLON.CustomParticleEmitter();
+
+ var id = 0;
+ customEmitter.particlePositionGenerator = (index, particle, out) => {
+     out.x = Math.cos(id) * 5;
+     out.y = Math.sin(id) * 5;
+     out.z = 0;
+     id += 0.01;
+ }
+
+ customEmitter.particleDestinationGenerator = (index, particle, out) => {
+     out.x = 0;
+     out.y = 0;
+     out.z = 0;
+ }
+```
+
+A custom emitter will let you define the position and the destination of each particle.
+
+When used with a GPU Particle system the generators(`particlePositionGenerator` and `particleDestinationGenerator`) will provide a particle index whereas when used with a CPU Particle system they will provide the actual particle to update.
+
+Here is an example of a custom particle emitter: https://www.babylonjs-playground.com/#77BKY4
+
 ## Noise texture
 Starting with Babylon.js v3.3, you can now use noise texture to "perturbate" the position of particles. The noise texture is technically used to apply change to the direction of the particles:
 
