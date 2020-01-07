@@ -1103,6 +1103,10 @@
                 {
                     "title": "Maya to glTF",
                     "filename": "Maya_to_glTF"
+                },
+                {
+                    "title": "Mixamo",
+                    "filename": "Mixamo_to_Babylon"
                 }
             ]
         },
