@@ -942,18 +942,41 @@ Example: https://nme.babylonjs.com/#2F999G
 
 ## Going further
 
-Here is a list of videos related to Node material:
+Here is a list of tutorials and informational videos about Node Material:
+
 - Frames and Collapsible Nodes: https://youtu.be/uHjAoHnMwDo
-- Add Light Texture: https://youtu.be/n2DLnMa21K0
-- Add basic lighting: https://youtu.be/BU9BTUkdYDY
+
+[![Frames and Collapsible Nodes](https://img.youtube.com/vi/uHjAoHnMwDo/0.jpg)](https://youtu.be/uHjAoHnMwDo)
+- Adding Light Texture: https://youtu.be/n2DLnMa21K0
+
+[![Add Light Texture](https://img.youtube.com/vi/n2DLnMa21K0/0.jpg)](https://youtu.be/n2DLnMa21K0)
+- Adding basic lighting: https://youtu.be/BU9BTUkdYDY
+
+[![Add basic lighting](https://img.youtube.com/vi/BU9BTUkdYDY/0.jpg)](https://youtu.be/BU9BTUkdYDY)
 - Toon Shader Part 1: https://youtu.be/K0PXzE1hJXg
+
+[![Toon Shader Part 1](https://img.youtube.com/vi/K0PXzE1hJXg/0.jpg)](https://youtu.be/K0PXzE1hJXg)
 - Toon Shader Part 2: https://youtu.be/wtrIbGmuJ2o
+
+[![Toon Shader Part 2](https://img.youtube.com/vi/wtrIbGmuJ2o/0.jpg)](https://youtu.be/wtrIbGmuJ2o)
 - Toon Shader Part 3: https://youtu.be/YmcZ69xlOjM
+
+[![Toon Shader Part 3](https://img.youtube.com/vi/YmcZ69xlOjM/0.jpg)](https://youtu.be/YmcZ69xlOjM)
 - Ink Shader: https://youtu.be/0re82mEd1n8
+
+[![Ink Shader](https://img.youtube.com/vi/0re82mEd1n8/0.jpg)](https://youtu.be/0re82mEd1n8)
 - Step Node Switches: https://youtu.be/FwtFroNMmxw
+
+[![Step Node Switches](https://img.youtube.com/vi/FwtFroNMmxw/0.jpg)](https://youtu.be/FwtFroNMmxw)
 - Use Your Node Material in your code: https://youtu.be/F0Lh73I_6Z8
+
+[![Use Your Node Material in your code](https://img.youtube.com/vi/F0Lh73I_6Z8/0.jpg)](https://youtu.be/F0Lh73I_6Z8)
 - Vertex shader: https://www.youtube.com/watch?v=B5BO3nFc55s
+
+[![Vertex Shader](https://img.youtube.com/vi/B5BO3nFc55s/0.jpg)](https://youtu.be/B5BO3nFc55s)
 - Lights and textures: https://www.youtube.com/watch?v=fLXYhGhCejc
+
+[![Lights and textures](https://img.youtube.com/vi/fLXYhGhCejc/0.jpg)](https://youtu.be/fLXYhGhCejc)
 
 
 You can also visit the dedicated forum topic: https://forum.babylonjs.com/t/node-materials-examples/6048
