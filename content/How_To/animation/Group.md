@@ -60,6 +60,19 @@ speeding up or slowing down the animation.
 
 * [Playground Example - Group Speed Ratio](https://www.babylonjs-playground.com/#CBGEQX#5)
 
+## Creating a group from existing animatables
+
+You can create a new AnimationGroup from an animatable by enumerating the animations contained in the animatable:
+```
+var animationGroup = new BABYLON.AnimationGroup("my-animation-group");
+
+for (anim of idleAnim.getAnimations()) {
+    animationGroup.addTargetedAnimation(anim.animation, anim.target);
+}
+```
+
+Example: https://www.babylonjs-playground.com/#IQN716#85
+
 ## On Group Animation End
 
 There is an **onAnimationEnd** observable that can be used to trigger a function when the animation ends.
