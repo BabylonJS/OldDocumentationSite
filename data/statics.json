@@ -103,6 +103,11 @@
                     "title": "Shadows",
                     "filename": "Shadows",
                     "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
+                },
+                {
+                    "title": "Shadows with Cascaded Shadow Maps",
+                    "filename": "Shadows_csm",
+                    "abstract": "Use Cascaded Shadow Maps to enhance your shadows when using directional lights."
                 }
             ]
         }
