@@ -798,6 +798,11 @@
                     "filename": "Using_MotionBlurPostProcess"
                 },
                 {
+                    "title": "Use the Screen Space Reflections (SSR) post-process",
+                    "level": 3,
+                    "filename": "Using_ScreenSpaceReflectionsPostProcess"
+                },
+                {
                     "title": "How to use RenderTargetTexture and run multiple passes",
                     "level": 3,
                     "filename": "How_to_use_RenderTargetTexture_and_multiple_passes"
