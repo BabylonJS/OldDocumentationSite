@@ -940,6 +940,16 @@ When using https://nme.babylonjs.com, you can have an additional option to save 
 
 Example: https://nme.babylonjs.com/#2F999G
 
+## Loading from a snippet (unique URL)
+
+You can use the following code to load a saved node material from a unique URL:
+
+```
+BABYLON.NodeMaterial.ParseFromSnippetAsync("2F999G", scene).then(nodeMaterial => {
+    sphere.material = nodeMaterial;
+});
+```
+
 ## Going further
 
 Here is a list of tutorials and informational videos about Node Material:
