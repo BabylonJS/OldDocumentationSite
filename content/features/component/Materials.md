@@ -135,7 +135,7 @@ Reflection of these can be simulated in Babylon.js using a _reflectionTexture_ w
 
 * [Playground Example Reflection Texture in Mirror](https://www.babylonjs-playground.com/#1YAIO7#21)  
 * [Playground Example Refraction Texture](https://www.babylonjs-playground.com/#22KZUW#15)  
-* [Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/?19)
+* [Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/#AQZJ4C)
 
 ### Procedural Textures
 
