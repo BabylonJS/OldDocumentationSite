@@ -204,6 +204,27 @@ csmShadowGenerator.penumbraDarkness = 0.7;
 **Figure 11. Value of 0.7 on the left, 0.17 on the right**
 ![penumbraDarkness](/img/babylon101/csm/penumbra-darkness.jpg)
 
+## Culling
+
+There's currently no culling applied on the shadow caster list before rendering the meshes into each of the cascade shadow maps.
+
+However, you can implement your own culling strategy by using this code as a basis:
+```typescript
+let rtt = csmShadowGenerator.getShadowMap()!;
+
+rtt.getCustomRenderList = (layer, renderList) => {
+    let meshList = [];
+    // here do the culling for the cascade with index 'layer' by using the
+    // getCascadeViewMatrix(layer), getCSMTransformMatrix(layer), getCascadeMinExtents(layer), etc
+    // from csmShadowGenerator
+    // note: the renderList entry parameter is the list of all shadow casters defined for the CSM generator,
+    // that is csmShadowGenerator.getShadowMap().renderList
+    return meshList;
+};
+```
+
+`getCustomRenderList` is called by `RenderTargetTexture` each time it must render a mesh list into a cascade. If you return a regular array of meshes, this array will be used for the rendering into the cascade `layer`. If you return `null`, the `RenderTargetTexture` will proceed with the regular mesh list (that is, the `RenderTargetTexture.renderList` property, in CSM case it is the list of shadow casters).
+
 # Using the `CascadedShadowGenerator` class
 
 ## Camera far plane
