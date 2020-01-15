@@ -47,3 +47,20 @@ collisionQueryRange - The agent collision system will take care of others within
 pathOptimizationRange - How the path will be optimized and made more straight.
 
 separationWeight - How hard the system will try to separate the agent. A Value of 0 means it will not try and agents might collide.
+
+You can update any of these parameters, per agent, by calling :
+
+```
+// change speed and max speed
+crowd.updateAgentParameters(agentIndex, {maxSpeed:10, maxAcceleration:200});
+```
+
+# Teleport
+
+You can teleport an agent to any position using this call:
+
+```
+crowd.agentTeleport(agentIndex, navigationPlugin.getClosestPoint(destinationPoint));
+```
+
+Please note the navigation state is reseted when teleporting. You'll have to call ```agentGoto``` to choose a new destination.
