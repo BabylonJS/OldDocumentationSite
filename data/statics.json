@@ -522,11 +522,6 @@
                     "filename": "WebVR_Helper"
                 },
                 {
-                    "title": "Use WebXR (WebVR, WebAR, Magic Window, Etc.)",
-                    "level": 3,
-                    "filename": "WebXR"
-                },
-                {
                     "title": "Use Multiview",
                     "level": 3,
                     "filename": "Multiview"
@@ -873,7 +868,7 @@
         {
             "title": "Contribute",
             "name": "contribute",
-            "desc": "Suporting and Developing the Framework",
+            "desc": "Supporting and Developing the Framework",
             "files": [
                 {
                     "title": "Start Contributing to Babylon.js",
@@ -958,6 +953,23 @@
                 {
                     "title": "Realtime RTS game development series with Babylon.js",
                     "filename": "RTS_game_development_series"
+                }
+            ]
+        },
+        {
+            "title": "WebXR",
+            "name": "WebXR",
+            "desc": "Developing VR and AR experiences using WebXR",
+            "files": [
+                {
+                    "title": "Introduction to WebXR",
+                    "level": 2,
+                    "filename": "Introduction.md"
+                },
+                {
+                    "title": "The WebXR Experience Helpers",
+                    "level": 2,
+                    "filename": "ExperienceHelpers.md"
                 }
             ]
         }
