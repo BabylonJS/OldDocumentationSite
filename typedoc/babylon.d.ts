@@ -33226,6 +33226,8 @@ declare module BABYLON {
         private _deltaTime;
         /** @hidden */
         _drawCalls: PerfCounter;
+        /** Gets or sets the tab index to set to the rendering canvas. 1 is the minimum value to set to be able to capture keyboard events */
+        canvasTabIndex: number;
         /**
          * Turn this value on if you want to pause FPS computation when in background
          */
@@ -42528,16 +42530,16 @@ declare module BABYLON {
         /**
          * Initializes an xr session
          * @param xrSessionMode mode to initialize
-         * @param optionalFeatures defines optional values to pass to the session builder
+         * @param xrSessionInit defines optional and required values to pass to the session builder
          * @returns a promise which will resolve once the session has been initialized
          */
-        initializeSessionAsync(xrSessionMode: XRSessionMode, optionalFeatures?: any): Promise<XRSession>;
+        initializeSessionAsync(xrSessionMode?: XRSessionMode, xrSessionInit?: XRSessionInit): Promise<XRSession>;
         /**
          * Sets the reference space on the xr session
          * @param referenceSpace space to set
          * @returns a promise that will resolve once the reference space has been set
          */
-        setReferenceSpaceAsync(referenceSpace: XRReferenceSpaceType): Promise<void>;
+        setReferenceSpaceAsync(referenceSpace?: XRReferenceSpaceType): Promise<XRReferenceSpace>;
         /**
          * Resets the reference space to the one started the session
          */
@@ -42550,9 +42552,8 @@ declare module BABYLON {
         updateRenderStateAsync(state: XRRenderState): Promise<void>;
         /**
          * Starts rendering to the xr layer
-         * @returns a promise that will resolve once rendering has started
          */
-        startRenderingToXRAsync(): Promise<void>;
+        runXRRenderLoop(): void;
         /**
          * Gets the correct render target texture to be rendered this frame for this eye
          * @param eye the eye for which to get the render target
@@ -42569,7 +42570,7 @@ declare module BABYLON {
          * @param sessionMode session mode to check if supported eg. immersive-vr
          * @returns true if supported
          */
-        supportsSessionAsync(sessionMode: XRSessionMode): Promise<boolean>;
+        isSessionSupportedAsync(sessionMode: XRSessionMode): Promise<boolean>;
         /**
          * Creates a WebXRRenderTarget object for the XR session
          * @param onStateChangedObservable optional, mechanism for enabling/disabling XR rendering canvas, used only on Web
@@ -42829,7 +42830,7 @@ declare module BABYLON {
          * @param renderTarget the output canvas that will be used to enter XR mode
          * @returns promise that resolves after xr mode has entered
          */
-        enterXRAsync(sessionMode: XRSessionMode, referenceSpaceType: XRReferenceSpaceType, renderTarget: WebXRRenderTarget): Promise<WebXRSessionManager>;
+        enterXRAsync(sessionMode: XRSessionMode, referenceSpaceType: XRReferenceSpaceType, renderTarget?: WebXRRenderTarget): Promise<WebXRSessionManager>;
         /**
          * Disposes of the experience helper
          */
@@ -43821,7 +43822,7 @@ declare module BABYLON {
          * Using this object it is possible to get click events and trackpad changes of the
          * webxr controller that is currently being used.
          */
-        gamepadController?: WebXRAbstractMotionController;
+        motionController?: WebXRAbstractMotionController;
         /**
          * Event that fires when the controller is removed/disposed
          */
@@ -43949,13 +43950,13 @@ declare module BABYLON {
         /**
          * attach this feature
          *
-         * @returns true if successful.
+         * @returns true if successful, false is failed or already attached
          */
         attach(): boolean;
         /**
          * detach this feature.
          *
-         * @returns true if successful.
+         * @returns true if successful, false if failed or already detached
          */
         detach(): boolean;
         /**
@@ -44044,6 +44045,14 @@ declare module BABYLON {
          * Default color of the laser pointer
          */
         lasterPointerDefaultColor: Color3;
+        /**
+         * Should the laser pointer be displayed
+         */
+        displayLaserPointer: boolean;
+        /**
+         * Should the selection mesh be displayed (The ring at the end of the laser pointer)
+         */
+        displaySelectionMesh: boolean;
         private static _idCounter;
         private _tmpRay;
         private _controllers;
@@ -44272,8 +44281,9 @@ declare module BABYLON {
          * A list of meshes to use as floor meshes.
          * Meshes can be added and removed after initializing the feature using the
          * addFloorMesh and removeFloorMesh functions
+         * If empty, rotation will still work
          */
-        floorMeshes: AbstractMesh[];
+        floorMeshes?: AbstractMesh[];
         /**
          * Provide your own teleportation mesh instead of babylon's wonderful doughnut.
          * If you want to support rotation, make sure your mesh has a direction indicator.
@@ -44371,6 +44381,7 @@ declare module BABYLON {
         removeFloorMeshByName(name: string): void;
         private _tmpRay;
         private _tmpVector;
+        private _floorMeshes;
         private _controllers;
         /**
          * constructs a new anchor system
@@ -44407,7 +44418,7 @@ declare module BABYLON {
      */
     export class WebXRDefaultExperienceOptions {
         /**
-         * Floor meshes that should be used for teleporting
+         * Floor meshes that will be used for teleporting
          */
         floorMeshes?: Array<AbstractMesh>;
         /**
@@ -44426,6 +44437,10 @@ declare module BABYLON {
          * Disable the controller mesh-loading. Can be used if you want to load your own meshes
          */
         inputOptions?: IWebXRInputOptions;
+        /**
+         * Should teleportation not initialize. defaults to false.
+         */
+        disableTeleportation?: boolean;
     }
     /**
      * Default experience which provides a similar setup to the previous webVRExperience
@@ -54263,6 +54278,10 @@ declare module BABYLON {
     export class CascadedShadowGenerator implements IShadowGenerator {
         private static readonly frustumCornersNDCSpace;
         /**
+         * Name of the CSM class
+         */
+        static readonly CLASSNAME: string;
+        /**
          * Defines the default number of cascades used by the CSM.
          */
         static readonly DEFAULT_CASCADES_COUNT: number;
@@ -57481,7 +57500,6 @@ declare module BABYLON {
         autoConfigure(material: NodeMaterial): void;
         initializeDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines, useInstances?: boolean): void;
         prepareDefines(mesh: AbstractMesh, nodeMaterial: NodeMaterial, defines: NodeMaterialDefines): void;
-        private _getTextureBase;
         isReady(): boolean;
         bind(effect: Effect, nodeMaterial: NodeMaterial, mesh?: Mesh): void;
         private get _isMixed();
@@ -57720,6 +57738,8 @@ declare module BABYLON {
         private _isFinalMerger;
         private _isInput;
         protected _isUnique: boolean;
+        /** Gets or sets a boolean indicating that only one input can be connected at a time */
+        inputsAreExclusive: boolean;
         /** @hidden */
         _codeVariableName: string;
         /** @hidden */
@@ -58348,7 +58368,6 @@ declare module BABYLON {
      */
     export class MorphTargetsBlock extends NodeMaterialBlock {
         private _repeatableContentAnchor;
-        private _repeatebleContentGenerated;
         /**
          * Create a new MorphTargetsBlock
          * @param name defines the block name
@@ -62074,6 +62093,18 @@ declare module BABYLON {
          */
         agentGoto(index: number, destination: Vector3): void;
         /**
+         * Teleport the agent to a new position
+         * @param index agent index returned by addAgent
+         * @param destination targeted world position
+         */
+        agentTeleport(index: number, destination: Vector3): void;
+        /**
+         * Update agent parameters
+         * @param index agent index returned by addAgent
+         * @param parameters agent parameters
+         */
+        updateAgentParameters(index: number, parameters: IAgentParameters): void;
+        /**
          * Set the Bounding box extent for doing spatial queries (getClosestPoint, getRandomPointAround, ...)
          * The queries will try to find a solution within those bounds
          * default is (1,1,1)
@@ -62343,6 +62374,18 @@ declare module BABYLON {
          * @param destination targeted world position
          */
         agentGoto(index: number, destination: Vector3): void;
+        /**
+         * Teleport the agent to a new position
+         * @param index agent index returned by addAgent
+         * @param destination targeted world position
+         */
+        agentTeleport(index: number, destination: Vector3): void;
+        /**
+         * Update agent parameters
+         * @param index agent index returned by addAgent
+         * @param parameters agent parameters
+         */
+        updateAgentParameters(index: number, parameters: IAgentParameters): void;
         /**
          * remove a particular agent previously created
          * @param index agent index returned by addAgent
@@ -69350,6 +69393,11 @@ interface XRInputSource {
     gripSpace: XRSpace | undefined;
     gamepad: Gamepad | undefined;
     profiles: Array<string>;
+}
+
+interface XRSessionInit {
+    optionalFeatures?: XRReferenceSpaceType[];
+    requiredFeatures?: XRReferenceSpaceType[];
 }
 
 interface XRSession extends XRAnchorCreator {
