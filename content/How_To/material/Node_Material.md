@@ -922,6 +922,85 @@ When selected in the Inspector, you can find an edit button in the Node Material
 
 You can also use a standalone version of the editor on https://nme.babylonjs.com
 
+## Recreating the StandardMaterial
+
+As a training exercise and to show what is possible to do with the Node Material Editor, the `StandardMaterial` has been recreated in the NME:
+* Material: http://nme.babylonjs.com/?#AT7YY5#1
+* Material without alpha support: http://nme.babylonjs.com/?#AT7YY5#2
+* Playground to compare the existing `StandardMaterial` and the corresponding Node Material: https://playground.babylonjs.com/#M5VQE9#8.
+
+Note that the only difference between the full material and the material without alpha support is that nothing is wire to the `fragmentOutput.a` input. If you don't need alpha support, you should use the "non alpha" node material as alpha-based materials have some constraints:
+* they don't write to the zbuffer and are only sorted among themselves, so some sorting rendering artifacts can arise
+* they need the `transparencyShadow` property to be `true` for shadow rendering
+
+Let's see how the material has been created and how to use it.
+
+### Main building frames
+
+The material is divided into several frames, mirroring the main features of the standard material:
+* Instances
+* Morphs and bones
+* Ambient
+* Diffuse
+* Specular
+* Reflection
+* Emissive
+* Bump (normal map)
+* Opacity
+* Lightmap
+* Vertex color
+* Fog
+
+In each of these frames, you generally find a boolean float node that enable/disable the feature, and possibly some other properties to fine-tune the feature. Most of these properties are **Constant** properties, meaning they won't consume a _uniform_ in the shaders and won't be visible in the Inspector / be updatable in javascript: you must change their value directly in the material (they correspond to the `#define` you can find in the standard material shader code).
+
+Note that you won't find this enable/disable property in the **Instances**, **Morphs and bones** and **Fog** frames: they are always enabled. That's because they depend on the mesh geometry / settings (or on a scene setting for **Fog**): those frames will be a simple "pass-through" if the corresponding feature doesn't exist on the mesh / scene, so no need to explicitly disable it in that case.
+
+### Additional building frames
+
+There are a number of additional frames that help organizing the graph more cleanly:
+* Final normal. This frame takes the output from the **Bump** frame and builds the final world normal used in subsequent computations (**Reflection** and **Lights**). You can change the `TWOSIDEDLIGHTING` boolean if you want the lighting to be applied whatever the triangle side facing are.
+* Final diffuse computation. It is the frame responsible for computing the final diffuse component, taking into account the ambient, emissive and vertex color components. Here you can modify the `LINKEMISSIVEWITHDIFFUSE` and `EMISSIVEASILLUMINATION` booleans to change the way the diffuse value is computed.
+* Final color computation. Everything is brought together to compute the final rgb color: ambient (texture), specular, reflection and emissive.
+* Final alpha computation. After the opacity (alpha) is generated from the **Opacity** frame, a number of additional computation is performed to produce the final alpha value. You can step in this computation by mean of two booleans, `REFLECTIONOVERALPHA` and `SPECULAROVERALPHA`.
+* Premultiply alpha to color. This one does what its title says and is enabled by the `PREMULTIPLYALPHA` boolean.
+
+### Construction notes
+
+The material itself is not so complicated as each feature is generally restricted to its own frame and has few connections with other frames. That helps to keep each building block manageable and easily understandable.
+
+Below are a few things of note.
+
+#### Working without a `if` statement
+
+As you may know, there's no `if` statement / block in the node material editor, so one must be creative to overcome this. Luckily, the standard material does not use this statement heavily (as it's better to avoid it for performance sake), so it is easy enough to deal with it. Most of the time, it is something like `if boolean is true, use this value in subsequent computation, else use that other value instead`. A **Lerp** block is the tool to use:
+```c
+Lerp(a, b, gradient)
+```
+
+`gradient` is the boolean: if it is 0, `a` is the output, if it is 1, `b` is the output. Then use the output in subsequent computation.
+
+Example:
+
+![Emissive](/img/how_to/Materials/nme_lerp.png)
+
+If `EMISSIVE` is set to 0, the output is `vEmissiveColor`, else it is the color from the emissive map. In effect, the `EMISSIVE` boolean lets you choose to use either the constant `vEmissiveColor` color or the color from the texture map as the emissive color.
+
+#### Discarding the fragment based on alpha cutoff value
+
+This construct is meant to discard the fragment if alpha testing is enabled and if the alpha value is below some threshold value (cutoff value). It looks like this:
+
+![Discard](/img/how_to/Materials/nme_discard.png)
+
+As you can see, the `alphaCutOff` node is not directly connected to the `cutoff` input of **Discard** (the **Discard** block will discard the fragment if the `value` input is lower than the `cutoff` input). That's because we need to let the user enable or disable this feature.
+
+What it does instead is comparing the alpha value from the diffuse texture to `ALPHATEST - 1 + alphaCutOff`, `ALPHATEST` being the boolean value that lets the user enable (1) or disable (0) the feature.
+
+If `ALPHATEST = 1`, the computed value is `alphaCutOff`, which is the expected input for `Discard.cutoff` in that case (alpha testing is enabled).
+
+If `ALPHATEST = 0`, the computed value is `-1 + alphaCutOff`. As `alphaCutOff` is a value between 0 and 1, `-1 + alphaCutOff` will always be lower or equal to 0. So, `Discard.cutoff` <= 0 in that case, meaning the fragment will never be discarded (which is the expected result when alpha testing is disabled).
+
+You could also have used `Lerp(0, alphaCutOff, ALPHATEST)` as the input for `Discard.cutoff`, but it's likely that the addition + subtraction used above is faster than a `Lerp` on GPUs (would need some benchmarking to be sure), even if it's by a small (negligible) margin.
+
 ## Loading from a file saved from the Node Material Editor
 
 You can directly setup a Node Material from a file saved from the Node Material Editor.
