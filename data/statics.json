@@ -1062,6 +1062,10 @@
                 {
                     "title": "How to setup a local webserver for BabylonJs",
                     "filename": "Running_a_local_webserver_for_BabylonJs"
+                },
+                {
+                    "title": "How to use VRM Humanoid in Babylon.js",
+                    "filename": "BabylonJS_and_VRM"
                 }
             ]
         },
