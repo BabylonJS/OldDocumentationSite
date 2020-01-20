@@ -1456,10 +1456,6 @@
                 {
                     "title": "Using the Digital Rain post-process",
                     "filename": "DigitalRainPostProcess"
-                },
-                {
-                    "title": "Using the Ocean post-process",
-                    "filename": "OceanPostProcess"
                 }
             ]
         },
