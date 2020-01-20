@@ -290,9 +290,9 @@ We recommend using the WebXR polyfill instead.
 ## Further reading
 
 1. The WebXR Experience Helper
-2. WebXR Input Sources / Controller support
-3. The WebXR Camera
-4. Features Manager and available features
-5. Augmented Reality
-6. The Session Manager
-7. Advanced usage, troubleshooting, tips and tricks
+1. The Session Manager
+1. The WebXR Camera
+1. WebXR Input Sources / Controller support
+1. Features Manager and available features
+1. Augmented Reality
+1. Advanced usage, troubleshooting, tips and tricks
