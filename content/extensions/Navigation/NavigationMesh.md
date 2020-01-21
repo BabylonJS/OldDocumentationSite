@@ -6,7 +6,7 @@ A Navigation Mesh (or navmesh for short) is a surface topology describing the sp
 Based on parameters like agent radius, agent climbing capability, agent height,... the navmesh generation computes a topology from source meshes (the world geometry).
 Then, this topology can have a debug display (blue mesh on screenshot above) to validate the parameters. 
 
-A demo can be found at:  https://www.babylonjs-playground.com/#HFY257
+A demo can be found at:  https://www.babylonjs-playground.com/#HFY257#4
 
 ## How to use the navigation mesh?
 
@@ -39,7 +39,7 @@ var parameters = {
 Call the navigation mesh generation with the parameters and the list of meshes
 
 ```
-navigationPlugin.createMavMesh([groundMesh, wallMesh1, wallMesh2, stair1, stair2], parameters);
+navigationPlugin.createNavMesh([groundMesh, wallMesh1, wallMesh2, stair1, stair2], parameters);
 ```
 
 And that's it! you can now use the navigation mesh with the crowd system or make queries.
@@ -106,3 +106,11 @@ setDefaultQueryExtent(extent: Vector3): void;
 ```
 
 If your query returns a point too far from the expected result, use a smaller extent. 
+
+It's possible to get a path built for navigation as a point array. It's up to the user to use this array for drawing prediction path, trigger events,...
+
+```
+var pathPoints = navigationPlugin.computePath(crowd.getAgentPosition(agent), navigationPlugin.getClosestPoint(destinationPoint));
+pathLine = BABYLON.MeshBuilder.CreateDashedLines("ribbon", {points: pathPoints, updatable: true, instance: pathLine}, scene);
+```
+
