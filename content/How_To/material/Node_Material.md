@@ -925,7 +925,7 @@ You can also use a standalone version of the editor on https://nme.babylonjs.com
 ## Recreating the StandardMaterial
 
 As a training exercise and to show what is possible to do with the Node Material Editor, the `StandardMaterial` has been recreated in the NME:
-* Material: http://nme.babylonjs.com/?#AT7YY5#1
+* Material: http://nme.babylonjs.com/?#AT7YY5#3
 * Material without alpha support: http://nme.babylonjs.com/?#AT7YY5#2
 * Playground to compare the existing `StandardMaterial` and the corresponding Node Material: https://playground.babylonjs.com/#M5VQE9#8.
 
