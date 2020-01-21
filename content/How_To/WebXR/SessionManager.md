@@ -81,7 +81,7 @@ WebXR coordinate system is based on a reference space object, that defines the u
 Babylon manages the reference space changes for you when you use the teleportation so you don't have to deal with it yourself. If, however, you wish to access and change the reference space on your own, you have full access to three reference space objects that will help you:
 
 1. `xrSession.referenceSpace` is the current reference space, the one being used to render the scene.
-2. `xrSession.baseReferenceSpace` is the initial reference space generated using the `ReferenceSpaceMode` you chose (like `local-fllor` ).
+2. `xrSession.baseReferenceSpace` is the initial reference space generated using the `ReferenceSpaceMode` you chose (like `local-floor` ).
 3. `xrSession.viewerReferenceSpace` is the initial reference space in the `viewer` reference space mode, compensated with the `defaultHeightCompensation` value.
 
 Using the `getOffsetReferenceSpace` function on the Reference Space object you can change the reference space yourself. Don't forget to update the new reference space in the session manager, otherwise it will not be used in the current scene:
@@ -101,7 +101,7 @@ const newReferenceSpace = xrSession.referenceSpace.getOffsetReferenceSpace(heigh
 xrSession.referenceSpace = newReferenceSpace;
 ```
 
-Read more about [ `getOffsetReferenceSpace` ](https://www.w3.org/TR/webxr/#dom-xrreferencespace-getoffsetreferencespace).
+Read more about [`getOffsetReferenceSpace`](https://www.w3.org/TR/webxr/#dom-xrreferencespace-getoffsetreferencespace).
 
 ### Using a new reference space mode
 
