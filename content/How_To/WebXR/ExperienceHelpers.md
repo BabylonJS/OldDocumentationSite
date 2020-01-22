@@ -6,7 +6,7 @@ In order to simplify development for WebXR we offer a WebXR helper that will ini
 
 We offer a basic set of functionalities with the WebXR experience helper, and offer a full XR experience, including UI, teleportation and more, with the Default WebXR experience helper.
 
-We recommend using the [Default Experience Helper]() for ease of use, and the [Basic Experience Helper]() when looking for more control over decisions.
+We recommend using the [Default Experience Helper](#the-webxr-default-experience-helper) for ease of use, and the [Basic Experience Helper](#the-basic-experience-helper) when looking for more control over decisions.
 
 *Note that you don't have to use the experience helper. Everything can be done outside of those helper on your own.*
 
@@ -105,17 +105,17 @@ xrBasicHelper.onInitialXRPoseSetObservable.add((xrCamera) => {
 
 The basic XR experience helper offers direct access to the following:
 
-* An initialized [Session Manager]()
-* A configured [XR Camera]() that will have the non-VR camera's position when entering XR
-* Initialized [Features Manager]()
+* An initialized [Session Manager](./SessionManager)
+* A configured [XR Camera](./WebXRCamera) that will have the non-VR camera's position when entering XR
+* Initialized [Features Manager](./FeaturesManager)
 
 ## The WebXR Default Experience Helper
 
-### Basic usage
+### Basic usage of default experience helper
 
 The default xr experience will:
 
-* Create a [basic experience helper]() and initialize it
+* Create a [basic experience helper](#the-basic-experience-helper) and initialize it
 * Create an HTML UI button to enter XR
 * Init the input source class which will initialize controllers
 * Enable the pointer selection and teleportation features
@@ -187,7 +187,7 @@ Check the code documentation for further details.
 
 The default experience initializes both pointer selection (laser pointer and interaction with the meshes in the scene) and teleportation features automatically. If floor meshes are provided in the options, the teleportation will include it when created. If not you can add meshes later or disable it.
 
-To read more about both features, check the [Features Manager]()
+To read more about both features, check the [Features Manager](./FeaturesManager)
 
 To enable / disable the teleport and pointer selection:
 
@@ -205,7 +205,7 @@ xrHelper.pointerSelection.attach();
 
 ### Configuring the GUI
 
-The GUI is the right way to enter and exit the XR experience. Otherwise you can directly use the `baseExperience` Basic experience helper to enter and exit XR as mentioned [above](). It defaults to a VR immersive session in local-floor reference mode.
+The GUI is the right way to enter and exit the XR experience. Otherwise you can directly use the `baseExperience` Basic experience helper to enter and exit XR as mentioned [above](#the-basic-experience-helper). It defaults to a VR immersive session in local-floor reference mode.
 
 If you want to change the session mode or reference mode (for example to enter an AR session instead of VR):
 
@@ -217,7 +217,7 @@ var xrHelper = await scene.createDefaultXRExperienceAsync({
 });
 ```
 
-Read more about the GUI in the [advanced WebXR tutorial]()
+Read more about the GUI in the [advanced WebXR tutorial](./AdvancedUsage)
 
 ### Available Observables
 
@@ -228,5 +228,5 @@ Apart from those you can find in the `baseExperience` (The Basic XR experience h
 The default experience helper offers direct access to the following:
 
 * `input` - initialized [WebXRInputSource]()
-* `enterExitUI` - initialized [GUI]()
+* `enterExitUI` - initialized [GUI](./AdvancedUsage#GUI)
 * `renderTarget` - The default WebXR render target

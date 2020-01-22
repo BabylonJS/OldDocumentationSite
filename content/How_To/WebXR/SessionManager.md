@@ -1,8 +1,8 @@
 # The WebXR Session Manager
 
-Babylon's [WebXRSessionManager]() class is your direct contact to the browser's native XR session. Each XR experience has a corresponding session that holds the entire XR functionality. A session is initialized with a session mode (the default is `vr-immersive` ) and a reference space mode (default is `local-floor` ) that decides how the scene calculates the user's location and what functionality is available.
+Babylon's [WebXRSessionManager](/api/classes/babylon.webxrsessionmanager) class is your direct contact to the browser's native XR session. Each XR experience has a corresponding session that holds the entire XR functionality. A session is initialized with a session mode (the default is `vr-immersive` ) and a reference space mode (default is `local-floor` ) that decides how the scene calculates the user's location and what functionality is available.
 
-Usually, the Session Manager will be initialized by the [experience helper](), but if you don't use the experience helper, you can create a session manger yourself. The session manager, along with the XR camera, are they only requirement on babylon's side to implement an XR experience.
+Usually, the Session Manager will be initialized by the [experience helper](./ExperienceHelpers), but if you don't use the experience helper, you can create a session manger yourself. The session manager, along with the XR camera, are they only requirement on babylon's side to implement an XR experience.
 
 ## Basic usage and initialization
 
@@ -47,7 +47,7 @@ Right after you will need to initialize the reference space of this session, whi
 const referenceSpace = sessionManager.setReferenceSpaceAsync( /*referenceSpaceType = 'local-floor'*/ );
 ```
 
-The only thing that is left right now is to prepare the render target and the [XR WebGL Layer]():
+The only thing that is left right now is to prepare the render target and the [XR WebGL Layer](https://developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer):
 
 ``` javascript
 const renderTarget = sessionManager.getWebXRRenderTarget( /*outputCanvasOptions: WebXRManagedOutputCanvasOptions*/ );
@@ -137,7 +137,7 @@ Will be triggered after the XRSession has ended and Babylon finished with clean-
 
 ### Manually start rendering the XR session
 
-When creating the experience yourself and not using the [WebXR Experience helper]() you will need to tell the session manager to start rendering. To do that, call the `runXRRenderLoop` function.
+When creating the experience yourself and not using the [WebXR Experience helper](./ExperienceHelpers) you will need to tell the session manager to start rendering. To do that, call the `runXRRenderLoop` function.
 
 The `runXRRenderLoop` will update the render function with the required XR rendering mechanism and run the engine's render loop.
 
