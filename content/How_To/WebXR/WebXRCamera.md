@@ -1,5 +1,3 @@
-# The WebXR Camera
-
 The WebXR Camera is an extension of the `FreeCamera` that includes an update loop from an XRFrame and the ability to create 1 or more rig cameras that will be used to render the XR session.
 
 If not using the [XR Experience helper](), you will need an [XR Session Manager]() to construct a new WebXR Camera:

@@ -1,5 +1,3 @@
-# The WebXR Features Manager
-
 ## WHy is it needed
 
 The Features manager, our XR plugin system, was born out of a simple need - stay backwards compatible, but still deliver cutting edge APIs in a production system.

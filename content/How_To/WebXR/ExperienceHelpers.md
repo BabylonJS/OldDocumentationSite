@@ -1,5 +1,3 @@
-# The WebXR Experience Helper
-
 ## Introduction
 
 In order to simplify development for WebXR we offer a WebXR helper that will initialize WebXR automatically for you and provide an environment with which you can develop your AR and VR experiences. Fully configurable, the WebXR experience helper is very flexible and easy to use.

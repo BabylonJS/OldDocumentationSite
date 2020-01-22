@@ -1,5 +1,3 @@
-# WebXR Introduction
-
 The WebXR API enables developers to create VR and AR experiences for the web. XR (Extended reality) has united both Augmented Reality features and Virtual Reality features into a single API that works across all supported devices.
 
 ## Current state
