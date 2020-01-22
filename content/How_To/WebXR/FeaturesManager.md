@@ -8,7 +8,7 @@ Since APIs like [hit test]() and [anchors]() are constantly changing, and curren
 
 ## How to use
 
-### Create a new features manager
+### Construct a new features manager
 
 If you are using the [base WebXR experience helper]() a features manager will be created for you and will be available in `xrBaseHelper.featuresManager` . If not, you only need to provide an XR session manager object to initialize a new one:
 
