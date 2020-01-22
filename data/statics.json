@@ -954,8 +954,13 @@
                 },
                 {
                     "title": "The WebXR Camera",
-                    "level": 2,
+                    "level": 3,
                     "filename": "WebXRCamera.md"
+                },
+                {
+                    "title": "The WebXR Features Manager",
+                    "level": 3,
+                    "filename": "FeaturesManager.md"
                 }
             ]
         }
