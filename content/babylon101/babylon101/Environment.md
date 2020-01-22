@@ -126,11 +126,11 @@ Here are the available modes:
 - `BABYLON.Scene.FOGMODE_EXP2` - same that above but faster.
 - `BABYLON.Scene.FOGMODE_LINEAR` - the fog density is following a linear function.
 
--> If you choose the `EXP`, or `EXP2` mode, then you can define the density option (default is `0.1`):
+If you choose the `EXP`, or `EXP2` mode, then you can define the density option (default is `0.1`):
 ```javascript
 scene.fogDensity = 0.01;
 ```
--> Otherwise, if you choose `LINEAR` mode, then you can define where fog starts and where fog ends:
+Otherwise, if you choose `LINEAR` mode, then you can define where fog starts and where fog ends:
 ```javascript
 scene.fogStart = 20.0;
 scene.fogEnd = 60.0;
@@ -142,13 +142,17 @@ scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
 ```
 See, we told you it was easy.
 
-If you want to see and play with the playground scene for this tutorial, you can [**click right here**]( https://www.babylonjs-playground.com/?13).
+If you want to see and play with the playground scene for this tutorial, you can [**click right here**](https://www.babylonjs-playground.com/#7G0IQW)
 
 ## Next step
 You should have a beautiful scene now, but except from your 3D models, your world is pretty flat, and that’s a shame for your scene. So, in our next environment tutorial, we are going to transform your flat ground into beautiful mountains. To learn this, go [here!](/babylon101/Height_Map)
 
 # Further Reading
 
-[Environment Overview](/features/Environment)
+## Features
 
-[Scene Fast Build](/how_to/fast_build)
+- [Realistic Environments](/features/Environment)
+
+## How To
+
+- [Fast Build a World](/how_to/fast_build)

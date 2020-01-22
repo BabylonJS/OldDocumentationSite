@@ -6,7 +6,7 @@ Now we have a navmesh, we can create autonomous agents and make them navigate wi
 The agents will find the best path to that destination while avoinding other crowd agents.
 An agent is attach to a Transform. That means that you have to attach a mesh to see them but also that you can attach pretty much anything.
 
-A demo can be found at:  https://www.babylonjs-playground.com/#X5XCVT
+A demo can be found at:  https://www.babylonjs-playground.com/#X5XCVT#29
 
 Click anywhere on the navmesh to make the agents go to that location.
 
@@ -47,3 +47,20 @@ collisionQueryRange - The agent collision system will take care of others within
 pathOptimizationRange - How the path will be optimized and made more straight.
 
 separationWeight - How hard the system will try to separate the agent. A Value of 0 means it will not try and agents might collide.
+
+You can update any of these parameters, per agent, by calling :
+
+```
+// change speed and max speed
+crowd.updateAgentParameters(agentIndex, {maxSpeed:10, maxAcceleration:200});
+```
+
+# Teleport
+
+You can teleport an agent to any position using this call:
+
+```
+crowd.agentTeleport(agentIndex, navigationPlugin.getClosestPoint(destinationPoint));
+```
+
+Please note the navigation state is reseted when teleporting. You'll have to call ```agentGoto``` to choose a new destination.

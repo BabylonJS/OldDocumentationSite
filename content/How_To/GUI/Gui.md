@@ -768,7 +768,7 @@ The height (or width) of the StackPanel is defined automatically based on childr
 
 Property|Type|Default|Comments
 --------|----|-------|--------
-isVertical|boolean|false|Orientation of the panel
+isVertical|boolean|true|Orientation of the panel
 
 Here is an example of a StackPanel: https://www.babylonjs-playground.com/#XCPP9Y#11
 
