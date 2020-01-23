@@ -1,14 +1,14 @@
-The WebXR API enables developers to create VR and AR experiences for the web. XR (Extended reality) has united both Augmented Reality features and Virtual Reality features into a single API that works across all supported devices.
+The WebXR API enables developers to create VR and AR experiences for the web. XR (Extended reality) has unified both Augmented Reality features and Virtual Reality features into a single API that works across all supported devices.
 
 ## Current state
 
 The [WebXR W3C Proposal](https://immersive-web.github.io/webxr/) is currently in its draft phase. It is, however, already implemented in Chrome. Starting with version 79, WebVR has been deprecated and WebXR is enabled by default. Earlier browser versions had WebXR behind a configuration flag.
 
-As the API continuously changes, it is difficult to keep up with feature changes. The latest chrome canary is notably the most XR-feature-complete browser and Google continuously updates the browser with new features. This is the main reason we introduced the [Features Manager](./FeaturesManager), which allows us to implement the newest version of official features with internal versioning without breaking backwards compatibility.
+As the API continuously changes, it is difficult to keep up with feature changes. The latest chrome canary is notably the most XR-feature-complete browser and Google continuously updates the browser with new features. This is the main reason we introduced the [Features Manager](./WebXR_Features_Manager), which allows us to implement the newest version of official features with internal versioning without breaking backwards compatibility.
 
 Note that most of the time when we say WebXR, we actually mean WebXR **in VR immersive mode**. This is currently the most used mode of WebXR.
 
-## Device support
+## Device and browser support
 
 ### PC
 
@@ -20,13 +20,13 @@ WebXR is supported on Google Daydream using Chrome.
 
 WebXR AR features on Android's Chrome Browser (Stable and Canary) can be enabled behind a flag at [chrome://flags](chrome://flags), including AR features such as plane detection, hit-tests and anchors. Note that the AR features' architecture is constantly changing, so expect different results from version to version.
 
-Oculus Quest unofficially supports WebXR VR behind a flag in the latest oculus browser. Browse to [chrome://flags](chrome://flags) to enable WebXR.
+Oculus Quest unofficially supports WebXR (in VR mode) behind a flag in the latest oculus browser. Browse to [chrome://flags](chrome://flags) to enable WebXR. Babylon's specs implementation works well with the quest.
 
 No official iOS/iPhone support is planed at the moment. Mozilla has built the [WebXR iOS Viewer](https://apps.apple.com/us/app/webxr-viewer/id1295998056) which is a (very) limited AR-oriented browser.
 
 ### Polyfill
 
-For older browsers and browsers supporting WebVR but not WebXR you can use the [WebXR Polyfill](https://github.com/immersive-web/webxr-polyfill) which is the API implementation using WebVR features. Some functions will not work (or will simply return without changes) but the basic functionality works well.
+For older browsers that support WebVR but not WebXR you can use the [WebXR Polyfill](https://github.com/immersive-web/webxr-polyfill) which is the WebXR API implementation using WebVR features. Some functions will not work (or will simply return without changes) but the basic functionality works well.
 
 Babylon does not intend on integrating the polyfill in the framework itself. We encourage the developer to offer the polyfill to users not using a WebXR-Supported browser.
 
@@ -42,7 +42,7 @@ The simplest way to get started is using a WebXR-enabled browser and add a singl
 const xr = scene.createDefaultXRExperienceAsync();
 ```
 
-This will enable WebXR **in VR immersive mode**, including session init, input sources, the camera, teleportation and scene interactions. All using our [WebXR Default Experience Helper](./ExperienceHelpers#the-webxr-default-experience-helper).
+This will enable WebXR **in VR immersive mode**, including session init, input sources, the camera, teleportation and scene interactions. All using our [WebXR Default Experience Helper](./WebXR_Experience_Helpers#the-webxr-default-experience-helper).
 
 Note that the `xr` variable is a Promise. Using the async/await pattern will be simpler and more intuitive. It will also make sense to define floor meshes so we can define our ground and move on it. Here is a sphere in XR:
 
@@ -73,7 +73,7 @@ var createScene = async function() {
 
 And that's it!
 
-Make sure to read more on the [WebXR Experience Helper](./ExperienceHelpers) for further tips and tricks.
+Make sure to read more on the [WebXR Experience Helper](./WebXR_Experience_Helpers) for further tips and tricks, and take a look at our [Demos and examples](./WebXR_Demos_and_Examples) page.
 
 ## Migrating from WebVR
 
@@ -95,7 +95,7 @@ var scene = new BABYLON.Scene(engine);
 var xrHelper = scene.createDefaultXRExperienceAsync();
 ```
 
-The XR helper has full controller support per default, including interactions with the scene meshes, pointer events and more. Read more about the [XR Experience helper](./ExperienceHelpers).
+The XR helper has full controller support per default, including interactions with the scene meshes, pointer events and more. Read more about the [XR Experience helper](./WebXR_Experience_Helpers).
 
 ### Migrating controller support
 
@@ -287,11 +287,11 @@ We recommend using the WebXR polyfill instead.
 
 ## Further reading
 
-1. The WebXR Experience Helper
-1. The Session Manager
-1. The WebXR Camera
+1. [Demos and Examples](./WebXR_Demos_and_Examples)
+1. [The WebXR Experience Helper](./WebXR_Experience_Helpers)
+1. [The Session Manager](./WebXR_Session_Manager)
+1. [The WebXR Camera](./WebXR_Camera)
 1. WebXR Input Sources / Controller support
-1. Features Manager and available features
+1. [Features Manager and available features](./WebXR_Features_Manager)
 1. Augmented Reality
 1. Advanced usage, troubleshooting, tips and tricks
-1. Demos and Examples

@@ -945,27 +945,33 @@
             "files": [{
                     "title": "Introduction to WebXR",
                     "level": 2,
-                    "filename": "Introduction"
+                    "filename": "Introduction_To_WebXR"
                 },
                 {
                     "title": "The WebXR Experience Helpers",
                     "level": 2,
-                    "filename": "ExperienceHelpers"
+                    "filename": "WebXR_Experience_Helpers"
                 },
                 {
                     "title": "The WebXR Session Managers",
                     "level": 2,
-                    "filename": "SessionManager"
+                    "filename": "WebXR_Session_Manager"
                 },
                 {
                     "title": "The WebXR Camera",
                     "level": 3,
-                    "filename": "WebXRCamera"
+                    "filename": "WebXR_Camera"
                 },
                 {
                     "title": "The WebXR Features Manager",
                     "level": 3,
-                    "filename": "FeaturesManager"
+                    "filename": "WebXR_Features_Manager"
+                }
+                ,
+                {
+                    "title": "WebXR Demos and Examples",
+                    "level": 3,
+                    "filename": "WebXR_Demos_and_Examples"
                 }
             ]
         }
