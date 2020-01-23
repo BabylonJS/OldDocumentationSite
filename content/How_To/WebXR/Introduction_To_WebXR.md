@@ -1,4 +1,4 @@
-The WebXR API enables developers to create VR and AR experiences for the web. XR (Extended reality) has united both Augmented Reality features and Virtual Reality features into a single API that works across all supported devices.
+The WebXR API enables developers to create VR and AR experiences for the web. XR (Extended reality) has unified both Augmented Reality features and Virtual Reality features into a single API that works across all supported devices.
 
 ## Current state
 
@@ -8,7 +8,7 @@ As the API continuously changes, it is difficult to keep up with feature changes
 
 Note that most of the time when we say WebXR, we actually mean WebXR **in VR immersive mode**. This is currently the most used mode of WebXR.
 
-## Device support
+## Device and browser support
 
 ### PC
 
@@ -20,13 +20,13 @@ WebXR is supported on Google Daydream using Chrome.
 
 WebXR AR features on Android's Chrome Browser (Stable and Canary) can be enabled behind a flag at [chrome://flags](chrome://flags), including AR features such as plane detection, hit-tests and anchors. Note that the AR features' architecture is constantly changing, so expect different results from version to version.
 
-Oculus Quest unofficially supports WebXR VR behind a flag in the latest oculus browser. Browse to [chrome://flags](chrome://flags) to enable WebXR.
+Oculus Quest unofficially supports WebXR (in VR mode) behind a flag in the latest oculus browser. Browse to [chrome://flags](chrome://flags) to enable WebXR. Babylon's specs implementation works well with the quest.
 
 No official iOS/iPhone support is planed at the moment. Mozilla has built the [WebXR iOS Viewer](https://apps.apple.com/us/app/webxr-viewer/id1295998056) which is a (very) limited AR-oriented browser.
 
 ### Polyfill
 
-For older browsers and browsers supporting WebVR but not WebXR you can use the [WebXR Polyfill](https://github.com/immersive-web/webxr-polyfill) which is the API implementation using WebVR features. Some functions will not work (or will simply return without changes) but the basic functionality works well.
+For older browsers that support WebVR but not WebXR you can use the [WebXR Polyfill](https://github.com/immersive-web/webxr-polyfill) which is the WebXR API implementation using WebVR features. Some functions will not work (or will simply return without changes) but the basic functionality works well.
 
 Babylon does not intend on integrating the polyfill in the framework itself. We encourage the developer to offer the polyfill to users not using a WebXR-Supported browser.
 
@@ -73,7 +73,7 @@ var createScene = async function() {
 
 And that's it!
 
-Make sure to read more on the [WebXR Experience Helper](./WebXR_Experience_Helpers) for further tips and tricks.
+Make sure to read more on the [WebXR Experience Helper](./WebXR_Experience_Helpers) for further tips and tricks, and take a look at our [Demos and examples](./WebXR_Demos_and_Examples) page.
 
 ## Migrating from WebVR
 
