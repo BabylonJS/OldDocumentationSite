@@ -1,6 +1,6 @@
 The WebXR Camera is an extension of the `FreeCamera` that includes an update loop from an XRFrame and the ability to create 1 or more rig cameras that will be used to render the XR session.
 
-If not using the [XR Experience helper](./ExperienceHelpers), you will need an [XR Session Manager](./SessionManager) to construct a new WebXR Camera:
+If not using the [XR Experience helper](./WebXR_Experience_Helpers), you will need an [XR Session Manager](./WebXR_Session_Manager) to construct a new WebXR Camera:
 
 ``` javascript
 const xrCamera = new WebXRCamera("nameOfCamera", scene, xrSessionManager);
@@ -8,7 +8,7 @@ const xrCamera = new WebXRCamera("nameOfCamera", scene, xrSessionManager);
 
 ## How positioning works
 
-Just like any Babylon camera, the WebXR camera is an object with its own position and rotation that can be updated between frames. The WebXR camera's transformation is the current position of the device rendering the XR session (such as the HUD or the phone rendering the session) relative to the reference space currently used in the [Session Manager](./SessionManager).
+Just like any Babylon camera, the WebXR camera is an object with its own position and rotation that can be updated between frames. The WebXR camera's transformation is the current position of the device rendering the XR session (such as the HUD or the phone rendering the session) relative to the reference space currently used in the [Session Manager](./WebXR_Session_Manager).
 
 The camera's position will update every frame from the information sent to it by the XRFrame. The XRFrame contains a general position of the device, and, if available, the poses for each screen (or eye) that are used to update the position of the rig cameras (which are the ones actually rendering the scene).
 

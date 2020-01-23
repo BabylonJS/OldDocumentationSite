@@ -4,7 +4,7 @@ The WebXR API enables developers to create VR and AR experiences for the web. XR
 
 The [WebXR W3C Proposal](https://immersive-web.github.io/webxr/) is currently in its draft phase. It is, however, already implemented in Chrome. Starting with version 79, WebVR has been deprecated and WebXR is enabled by default. Earlier browser versions had WebXR behind a configuration flag.
 
-As the API continuously changes, it is difficult to keep up with feature changes. The latest chrome canary is notably the most XR-feature-complete browser and Google continuously updates the browser with new features. This is the main reason we introduced the [Features Manager](./FeaturesManager), which allows us to implement the newest version of official features with internal versioning without breaking backwards compatibility.
+As the API continuously changes, it is difficult to keep up with feature changes. The latest chrome canary is notably the most XR-feature-complete browser and Google continuously updates the browser with new features. This is the main reason we introduced the [Features Manager](./WebXR_Features_Manager), which allows us to implement the newest version of official features with internal versioning without breaking backwards compatibility.
 
 Note that most of the time when we say WebXR, we actually mean WebXR **in VR immersive mode**. This is currently the most used mode of WebXR.
 
@@ -42,7 +42,7 @@ The simplest way to get started is using a WebXR-enabled browser and add a singl
 const xr = scene.createDefaultXRExperienceAsync();
 ```
 
-This will enable WebXR **in VR immersive mode**, including session init, input sources, the camera, teleportation and scene interactions. All using our [WebXR Default Experience Helper](./ExperienceHelpers#the-webxr-default-experience-helper).
+This will enable WebXR **in VR immersive mode**, including session init, input sources, the camera, teleportation and scene interactions. All using our [WebXR Default Experience Helper](./WebXR_Experience_Helpers#the-webxr-default-experience-helper).
 
 Note that the `xr` variable is a Promise. Using the async/await pattern will be simpler and more intuitive. It will also make sense to define floor meshes so we can define our ground and move on it. Here is a sphere in XR:
 
@@ -73,7 +73,7 @@ var createScene = async function() {
 
 And that's it!
 
-Make sure to read more on the [WebXR Experience Helper](./ExperienceHelpers) for further tips and tricks.
+Make sure to read more on the [WebXR Experience Helper](./WebXR_Experience_Helpers) for further tips and tricks.
 
 ## Migrating from WebVR
 
@@ -95,7 +95,7 @@ var scene = new BABYLON.Scene(engine);
 var xrHelper = scene.createDefaultXRExperienceAsync();
 ```
 
-The XR helper has full controller support per default, including interactions with the scene meshes, pointer events and more. Read more about the [XR Experience helper](./ExperienceHelpers).
+The XR helper has full controller support per default, including interactions with the scene meshes, pointer events and more. Read more about the [XR Experience helper](./WebXR_Experience_Helpers).
 
 ### Migrating controller support
 
@@ -287,11 +287,11 @@ We recommend using the WebXR polyfill instead.
 
 ## Further reading
 
-1. The WebXR Experience Helper
-1. The Session Manager
-1. The WebXR Camera
+1. Demos and Examples
+1. [The WebXR Experience Helper](./WebXR_Experience_Helpers)
+1. [The Session Manager](./WebXR_Session_Manager)
+1. [The WebXR Camera](./WebXR_Camera)
 1. WebXR Input Sources / Controller support
-1. Features Manager and available features
+1. [Features Manager and available features](./WebXR_Features_Manager)
 1. Augmented Reality
 1. Advanced usage, troubleshooting, tips and tricks
-1. Demos and Examples

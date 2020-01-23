@@ -8,7 +8,7 @@ Since APIs like [hit test](https://github.com/immersive-web/hit-test) and [ancho
 
 ### Construct a new features manager
 
-If you are using the [base WebXR experience helper](./ExperienceHelpers) a features manager will be created for you and will be available in `xrBaseHelper.featuresManager` . If not, you only need to provide an XR session manager object to initialize a new one:
+If you are using the [base WebXR experience helper](./WebXR_Experience_Helpers) a features manager will be created for you and will be available in `xrBaseHelper.featuresManager` . If not, you only need to provide an XR session manager object to initialize a new one:
 
 ``` javascript
 const fm = new FeaturesManager(xrSessionManager);
