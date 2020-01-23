@@ -1,6 +1,6 @@
 The goal of this article is to clearly explain what is happening with normal textures with some samples to hopefully clear up any confusion about what is happening
 
-## What the normal map formats are and what they look like
+What the normal map formats are and what they look like?
 
 * OpenGL expects the first pixel in the texture to be at the bottom (lower-left pixel) and can be thought of as bottom up
 * DirectX expects the first pixel in the texture to be at the top (upper-left pixel) and can be thought of as top down
