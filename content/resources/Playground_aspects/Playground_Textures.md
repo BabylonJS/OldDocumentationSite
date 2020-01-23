@@ -78,6 +78,7 @@ new BABYLON.Texture("textures/filename", scene);
 | Overview | Filename | Size |
 | :---: | --- | --- |
 | <img src = 'http://www.babylonjs-playground.com/textures/candleopacity.png' width = '64' height = '64'> | candleopacity.png | 18 KB |
+| <img src = 'http://www.babylonjs-playground.com/textures/opacity.png' width = '64' height = '64'> | opacity.png | 26 KB |
 | <img src = 'http://www.babylonjs-playground.com/textures/WhiteTransarentRamp.png' width = '64' height = '64' style="background-image:url('/img/resources/textures_thumbs/alphaBgd.png');"> | WhiteTransarentRamp.png | 223 KB |
 
 ## Sphere maps

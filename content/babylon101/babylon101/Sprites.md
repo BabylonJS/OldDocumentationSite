@@ -202,7 +202,7 @@ player.playAnimation(0, 43, true, 100);
 ```
 The player sprite will be animated from frame 0 to frame 43. The third parameter is indicating if this animation will loop or not, true to loop. The last parameter is the delay between the frames (the smaller it is, the faster the animation).
 
-* [Playground Example Animation of Uniform Sprites**]( https://www.babylonjs-playground.com/?8).
+* [Playground Example Animation of Uniform Sprites](https://www.babylonjs-playground.com/#9RI8CG)
 
 It is also possible to use playAnimation with sprites from a packed spritesheet. It is worth double checking that the sprites to animate are consecutive and in the correct order in the JSON file.
 

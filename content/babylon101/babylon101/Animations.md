@@ -224,7 +224,7 @@ Here is the list of functions that you can change:
 
 You can use an extended function to create a quick animation:
 
-```Javascript
+```javascript
 Animation.CreateAndStartAnimation = function(name, mesh, targetProperty, framePerSecond, totalFrame, from, to, loopMode);
 ```
 
@@ -235,7 +235,7 @@ To be able to use this function, you need to know that :
 
 Here is a straightforward sample using the **CreateAndStartAnimation()** function :
 
-```Javascript
+```javascript
 BABYLON.Animation.CreateAndStartAnimation('boxscale', box1, 'scaling.x', 30, 120, 1.0, 1.5);
 ```
 Fast and easy. :)
@@ -352,7 +352,7 @@ There are three possible values you can give for EasingMode:
 
 Here is a straightforward sample to animate a torus within a ```CircleEase``` easing function :
 
-```Javascript
+```javascript
 //Create a Vector3 animation at 30 FPS
 var animationTorus = new BABYLON.Animation("torusEasingAnimation", "position", 30, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
 
@@ -388,13 +388,13 @@ Here is a pretty cool implementation using the bezier curve algorithm :
 
 ![](/img/how_to/Animations/bezier.jpg)
 
-```Javascript
+```javascript
 var bezierEase = new BABYLON.BezierCurveEase(0.32, -0.73, 0.69, 1.59);
 ```
 
 Finally, you can extend the **EasingFunction** base function to create your own easing function, like this :
 
-```Javascript
+```javascript
 var FunnyEase = (function (_super) {
   __extends(FunnyEase, _super);
   function FunnyEase() {
@@ -409,7 +409,7 @@ var FunnyEase = (function (_super) {
   return FunnyEase;
 })(BABYLON.EasingFunction);
 ```
-You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**]( https://www.babylonjs-playground.com/?20)
+You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](https://www.babylonjs-playground.com/#8ZNVGR)
 
 
 ## Complex animation
