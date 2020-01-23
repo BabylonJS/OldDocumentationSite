@@ -476,6 +476,11 @@
                     "title": "Use Blend Modes",
                     "level": 3,
                     "filename": "How_to_use_Blend_Modes"
+                },
+                {
+                    "title": "Understanding how normal maps work",
+                    "level": 3,
+                    "filename": "Normal_maps"
                 }
             ]
         },
