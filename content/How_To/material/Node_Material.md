@@ -927,7 +927,7 @@ You can also use a standalone version of the editor on https://nme.babylonjs.com
 As a training exercise and to show what is possible to do with the Node Material Editor, the `StandardMaterial` has been recreated in the NME:
 * Material: http://nme.babylonjs.com/?#AT7YY5#3
 * Material without alpha support: http://nme.babylonjs.com/?#AT7YY5#2
-* Playground to compare the existing `StandardMaterial` and the corresponding Node Material: https://playground.babylonjs.com/#M5VQE9#8.
+* Playground to compare the existing `StandardMaterial` and the corresponding Node Material: https://playground.babylonjs.com/#M5VQE9#9.
 
 Note that the only difference between the full material and the material without alpha support is that nothing is wire to the `fragmentOutput.a` input. If you don't need alpha support, you should use the "non alpha" node material as alpha-based materials have some constraints:
 * they don't write to the zbuffer and are only sorted among themselves, so some sorting rendering artifacts can arise
