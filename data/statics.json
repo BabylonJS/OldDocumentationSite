@@ -967,6 +967,12 @@
                     "level": 3,
                     "filename": "WebXR_Features_Manager"
                 }
+                ,
+                {
+                    "title": "WebXR Demos and Examples",
+                    "level": 3,
+                    "filename": "WebXR_Demos_and_Examples"
+                }
             ]
         }
     ],

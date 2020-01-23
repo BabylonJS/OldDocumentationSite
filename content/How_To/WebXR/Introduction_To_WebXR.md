@@ -287,7 +287,7 @@ We recommend using the WebXR polyfill instead.
 
 ## Further reading
 
-1. Demos and Examples
+1. [Demos and Examples](./WebXR_Demos_and_Examples)
 1. [The WebXR Experience Helper](./WebXR_Experience_Helpers)
 1. [The Session Manager](./WebXR_Session_Manager)
 1. [The WebXR Camera](./WebXR_Camera)
