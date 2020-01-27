@@ -109,6 +109,26 @@ The ScrollViewer accepts only ONE child control. If that single child is a textB
 
 The ScrollViewer also accepts a single CONTAINER (such as a stackpanel) for its single child. In that container, you may add/remove any type of control(s). For certain types of containers, you might choose to add ```container.ignoreLayoutWarnings = true;```, and you might need to set a non-percentage _height_ value to certain children within the container(s).
 
+## Rendering optimization
+
+If you have a lot of controls in your scroll viewer window, you may notice a slow down in the rendering time.
+
+To help improving your fps, you can set `myScrollViewer.freezeControls = true`. This will "freeze" the controls in their current position (in the window) and will make their rendering faster when the window is scrolled. When controls are frozen, a change in their position/size may not work, so if you must do it, first set `freezeControls` to `false`, do your changes then revert `freezeControls` back to `true`.
+
+You can further improve the rendering time by using the `setBucketSizes` method:
+```javascript
+myScrollViewer.setBucketSizes(100, 40);
+```
+When `freezeControls` is true, setting a non-zero bucket size will improve performances by updating only controls that are visible. The bucket sizes is used to subdivide (internally) the window area to smaller areas into which controls are dispatched. So, the size should be roughly equals to the average size of all the controls inside the window. To disable the usage of buckets, sets either width or height (or both) to 0.
+
+Please note that using this option will raise the memory usage (the higher the bucket sizes, the less memory used), that's why it is not enabled by default.
+
+You can also use the `ScrollViewer.forceHorizontalBar` and `ScrollViewer.forceVerticalBar` properties.
+
+When set to true, they force the display of the corresponding bars. When you know your scroll viewer will end up with visible bars, you can set those properties to true to save some initialization time, as if it is the scroll viewer control that makes a bar visible in the course of the initialization, it will trigger a children layout rebuild, adding more time to the initialization process.
+
+[Playground Example - Rendering Optimization](https://playground.babylonjs.com/#KPLW9F)
+
 ## Further reading
 
 [How To Use the Selection Panel Helper](/how_to/selector)  
