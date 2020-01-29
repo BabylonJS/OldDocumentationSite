@@ -116,6 +116,8 @@ A variation on _CreateGround_ is [_CreateGroundFromHeightMap_](/babylon101/Heigh
 
 This is only available on a limited number of meshes that have distinct faces such as a box but not a sphere. This allows you to give each face for those meshes an individual color or image. [Find out about Face Colors and UV](/How_To/CreateBox_Per_Face_Textures_And_Colors).
 
+More about UV mapping on [Wikipedia](https://en.wikipedia.org/wiki/UV_mapping).
+
 ## Updatable
 
 Where a mesh has the updatable parameter set to true it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [How to Update Vertices](/How_To/Updating_Vertices.html)
