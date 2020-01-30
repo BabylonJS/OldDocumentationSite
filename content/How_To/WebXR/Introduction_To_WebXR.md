@@ -194,7 +194,7 @@ if (touchpad) {
 }
 ```
 
-Read more about the [XR Controllers system]().
+Read more about the [XR Controllers system](./WebXR_Controllers_Support).
 
 ### Legacy support
 
