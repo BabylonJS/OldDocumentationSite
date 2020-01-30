@@ -2,15 +2,13 @@
 PG_TITLE: About the Course
 ---
 
-# The Course
-
 The Babylon 101 course will lead you on a step by step journey to produce scenes that use some of the basic features of the Babylon Engine. There will be references for more details at each stage.
 
 So you can get started without any fuss the course starts out with the [First Step](/babylon101/First) by showing you how to use the Playground to create a scene. Throughout the course you will find examples built in the Playground ready for you to explore and edit. You can of course write your own code in the Playground, just click on the NEW button, edit and write your code and hit the RUN button. 
 
-In this [playground example](https://www.babylonjs-playground.com/#K6M44R#1)  
+[Playground example](https://www.babylonjs-playground.com/#K6M44R#1)
 
-you will see that this scene contains a camera, lights and a sphere. A sphere being one of the shapes readily available for you to add into your scene. Many more shapes, or meshes as they should be called, are available for you to easily create. In addition to the well known fixed shapes such as boxes, sphere and cylinders it is also possible to create shapes using techniques such as extrusion and lathing. The next two steps of the course show how to add some of these.
+In this playground example, you will see that this scene contains a camera, lights and a sphere. A sphere being one of the shapes readily available for you to add into your scene. Many more shapes, or meshes as they should be called, are available for you to easily create. In addition to the well known fixed shapes such as boxes, sphere and cylinders it is also possible to create shapes using techniques such as extrusion and lathing. The next two steps of the course show how to add some of these.
 
 Having added shapes to your scene you will want to know how to position and rotate them so that is next. So far the shapes are all bland and grey so next it is onto adding color and texture to the meshes in the form of materials.
 
@@ -22,7 +20,5 @@ Sometimes all it takes to enliven your scene is a simple animated 2D character i
 
 Other improvements to your scene environment are next. They include adding sky or fog to your scene followed by enhancing the landscape by producing a ground with hills and valleys and finally how about some shadows for those meshes helping to anchor them to the ground.
 
-# Next
-
-[Take the First Step](/babylon101/First)
+And now let's take [the First Step](/babylon101/First)
 

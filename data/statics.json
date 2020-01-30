@@ -459,7 +459,7 @@
                 },
                 {
                     "title": "Use Procedural Textures",
-                    "level": 3,
+                    "level": 3, 
                     "filename": "How_to_use_Procedural_Textures"
                 },
                 {
@@ -971,12 +971,16 @@
                     "title": "The WebXR Features Manager",
                     "level": 3,
                     "filename": "WebXR_Features_Manager"
-                }
-                ,
+                },
                 {
                     "title": "WebXR Demos and Examples",
                     "level": 3,
                     "filename": "WebXR_Demos_and_Examples"
+                },
+                {
+                    "title": "WebXR Input and Controller support",
+                    "level": 2,
+                    "filename": "WebXR_Controller_Support"
                 }
             ]
         }

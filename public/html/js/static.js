@@ -3,7 +3,7 @@
         $('.tocContent').toggle(600);
 
         $('.tocToggle i').attr('class',
-            $('.tocToggle i').attr('class') === 'fa fa-arrow-up' ? 'fa fa-arrow-down' : 'fa fa-arrow-up'
+            $('.tocToggle i').attr('class') === 'fa fa-chevron-up' ? 'fa fa-chevron-down' : 'fa fa-chevron-up'
         );
     });
 

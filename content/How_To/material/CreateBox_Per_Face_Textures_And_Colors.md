@@ -12,6 +12,8 @@ When you are concerned about the orientation of the images on the faces then it 
 
 Using these methods on the above meshes there is no need for submaterials or submeshes.
 
+As a prerequisite, you may want to learn more about UV mapping on [Wikipedia](https://en.wikipedia.org/wiki/UV_mapping).
+
 ## Face Numbers
 
 The playground below shows that face numbering using `MeshBuilder.CreateBox` is that 

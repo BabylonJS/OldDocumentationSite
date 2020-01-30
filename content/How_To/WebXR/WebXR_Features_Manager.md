@@ -1,4 +1,4 @@
-## WHy is it needed
+## Why is it needed
 
 The Features manager, our XR plugin system, was born out of a simple need - stay backwards compatible, but still deliver cutting edge APIs in a production system.
 
@@ -37,6 +37,18 @@ if (availableFeatures.indexOf(WebXRFeatureName.POINTER_SELECTION)) {
 ```
 
 `WebXRFeatureName` will always contain the list of possible features.
+
+When using ES6, make sure to import the feature you want to use, otherwise it won't be registered:
+
+``` javascript
+import {
+    WebXRControllerPhysics
+} from '@babylonjs/core/XR/features/WebXRControllerPhysics';
+
+// The physics controller support will now be available and can be enabled:
+
+fm.enableFeature(WebXRControllerPhysics.Name, "latest");
+```
 
 ### Versioning
 
@@ -212,3 +224,4 @@ WebXRFeaturesManager.AddWebXRFeature(nameOfFeature, (xrSessionManager, options) 
 ```
 
 This way you can enable the feature using its name whenever you wish to use it.
+
