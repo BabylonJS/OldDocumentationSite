@@ -3,8 +3,10 @@ include ../includes/header
     #wrapper
         .statics-banner
             .img-holder.details
-                img(src="/img/babylonjs_identity_color_dark.svg")
-            h1=staticContent.category.replace("_", " ")
+                a(href="/")
+                    img(src="/img/babylonjs_identity_color_dark.svg")
+                a(href="/" + staticContent.category)
+                    h1=staticContent.category.replace("_", " ")
         .horizontal-separator
         .static-content
             h1!=staticContent.staticName
