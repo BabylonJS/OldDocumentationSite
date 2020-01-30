@@ -145,6 +145,58 @@ materialSphere1.wireframe = true;
  ```
 ![wireframe](/img/how_to/Materials/04-3.png)
 
+### Texture Packer
+Some complex scenes will require a large amount of texture.  A single Material often will use three and often more!  To simplify the loading process sometimes it might be convenient to package the texture from multiple materials into a series of images.  The trade off will be that each texture will be scaled to a set size and might cause some desegregation, there are also webGL limits to take into consideration.  The packer will create a set of "frames" for each unique material and its required texture channels, producing one image for each channel that the materials being packed used.  The process then modifies a target UV# of the meshes passed with the constructor to make them match the frame of the texture sets.  The system assumes textures are 1:1 ratio (square).
+
+Create a TexturePacker series by calling:
+```javascript
+let pack = new BABYLON.TexturePacker(name, targetMeshes, options, scene);
+```
+- name:string, Name of the Texture Pack.
+- targetMeshes:Array<AbstractMesh>, Array of meshes to use as material sources.
+- options:any, Basic object with argument parameters
+- scene:Scene, The scene that everything is scoped to.
+
+The options argument has a few parameters you can use to tweak the result of the texture packing.
+- map:Array<string>, An array that contains the names of the channels to pack on the materials if they exist.  `Default = [ 'ambientTexture', 'bumpTexture', 'diffuseTexture', 'emissiveTexture', 'lightmapTexture', 'opacityTexture', 'specularTexture' ]`
+- uvsIn:number, The target UV channel to use when creating the frames. `Default = BABYLON.VertexBuffer.UVKind`
+- uvsOut:number, The target UV channel to modify on the targetMeshes. `Default = BABYLON.VertexBuffer.UVKind`
+- layout:number, Defines the layout of the packer(LAYOUT_STRIP, LAYOUT_POWER2, LAYOUT_COLNUM). `Default = TexturePacker.LAYOUT_STRIP;`
+- colnum:number, If using LAYOUT_COLNUM will define the number of columns to use. `Default = 8;`
+- frameSize:number, The base size of the frames before padding is added. `Default = 256;`
+- paddingMode:number, Defines the padding style of the packer (SUBUV_WRAP, SUBUV_EXTEND, SUBUV_COLOR). `Default = TexturePacker.SUBUV_WRAP;`
+- paddingColor:Color3|Color4, Custom color of the padding if paddingMode SUBUV_COLOR. `Default = new Color4(0, 0, 0, 1.0);`
+- paddingRatio:number, Ratio of the amount of padding to add to the frames. `Default = 0.0115;`
+- fillBlanks:boolean, Toggle to full blank cell when a material does not use that channel. `Default = true;`
+- customFillColor:string, css color string for what color to fill the blank frames. `Default = 'black';`
+- updateInputMeshes:boolean, Toggle to have the packer automatically update the input meshes to the new packer frames and channels. `Default = true;`
+- disposeSources:boolean, Toggle to dispose the source textures after they are packed. `Default = true;`
+
+For PBR materials you will need to change the map to reflect the channels you want to target.  The Environment map should be handled separately.
+
+* [Texture Packer Example](https://www.babylonjs-playground.com/#G5BWAD#10)
+
+Downloading the pack is simple! When initializing the package through both a JSON load or naturally like in the above mentioned constructor, a Promise Object is created.
+In order to assure that the textures are all packed and ready to go we call any interactions with the texture pack inside the success callback of the `then` method.
+```javascript
+pack.then(()=>{
+    //done
+    pack.download('jpeg', 0.325)
+}, (error)=>{
+    console.log(error)
+});  
+```
+You can tell the downloaded to change between jpeg and png image types depending on if you need an alpha channel.  Due to the fact that the images are stored as base64 you should avoid using png unless absolutely necessary.  You can always download both types and then manually mix and match inside the JSON file.
+
+* [Texture Packer Download Example](https://www.babylonjs-playground.com/#G5BWAD#12)
+
+To load a texture pack back, simple use this command:
+```javascript
+let pack = new BABYLON.TexturePackerLoader('./textures/TestPack_texurePackage.json', scene)
+```
+See this next example for how to update the mesh to the frame data.
+
+* [Texture Packer Load Example](https://www.babylonjs-playground.com/#G5BWAD#11)
 
 ## Next step
 Great, your scene is looking better than ever with those materials! Later we will see how to use advanced techniques with materials. But for now, we have to learn [**how to use cameras**](/babylon101/Cameras).
@@ -152,6 +204,3 @@ Great, your scene is looking better than ever with those materials! Later we wil
 # Further Reading
 
 [Materials Overview](/features/Materials)
-
-
-
