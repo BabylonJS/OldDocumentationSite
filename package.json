@@ -56,7 +56,7 @@
         "typedoc": "^0.15.4"
     },
     "scripts": {
-        "build": "node ./scripts/helpers/builder/main.js",
+        "build": "grunt build",
         "import": "node ./scripts/helpers/importer/main.js"
     },
     "license": "MIT",

@@ -58,6 +58,10 @@ panel.addControl(picker);
 
 [WebXR color picker](https://playground.babylonjs.com/#9K3MRA#2)
 
+## Other demos
+
+* [Goalkeeper training](https://playground.babylonjs.com/#PPM311#63)
+
 ## Babylon.js scenes with XR support
 
 * [Mansion](https://www.babylonjs-playground.com/#JA1ND3#161)
