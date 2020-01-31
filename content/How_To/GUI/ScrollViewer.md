@@ -71,18 +71,21 @@ Additional properties are available
 
 Property|Type|Default|Comments
 --------|----|-------|--------
-thumbImage|GUI Image|none|Image used for the thumb; required for image scroll bars
-barImage|GUI Image|none|Image for the scroll bars
+thumbImage<br>horizontalThumbImage<br>verticalThumbImage|GUI Image|none|Image used for the thumb; required for image scroll bars
+barImage<br>horizontalBarImage<br>verticalBarImage|GUI Image|none|Image for the scroll bars
 thumbHeight|number|1|Proportion of thumb compared to bar height (0 to 1)
 barImageHeight|number|1|Proportion of barImage compared to bar height (0 to 1)
 scrollBackground|string|grey|background color of scroll bars excluding the bottom right square; useful behind a thin or transparent bar image
 
 You do not have to have a barImage.
 
-The images for the vertical bar and thumb are rotated copies of those used for the horizontal bar and thumb. You may want to keep the image sizes small if memory is an issue in your project.
+The images for the vertical bar and thumb are by default rotated copies of those used for the horizontal bar and thumb. You may want to keep the image sizes small if memory is an issue in your project.
+
+You can also choose to have different images for the vertical and horizontal bar / thumb. In that case, use `horizontalThumbImage` / `verticalThumbImage` instead of `thumbImage` and `horizontalBarImage` / `verticalBarImage` instead of `barImage`.
 
 * [Playground Example - Image Scroll Bars](https://www.babylonjs-playground.com/#4ZC0G4#2)
 * [Playground Example - Image Scroll Bars in a Grid](https://www.babylonjs-playground.com/#4ZC0G4#1)
+
 
 ## Adding an Adjustable TextBlock Window
 
