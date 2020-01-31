@@ -624,6 +624,8 @@ Starting from Babylonjs 3.2 you can shape the region the particles are emitted f
 * Hemisphere
 * Cylinder
 * Cone
+* Mesh
+* Custom
 
 by the addition of specific emitter function.
 
@@ -798,6 +800,27 @@ With `coneEmitter.emitFromSpawnPointOnly = true` you can force the emitter to on
 * [Playground Example - Cone Emitter](https://www.babylonjs-playground.com/#MRRGXL#4)
 * [Playground Example - Cone Emitter Rotating](https://www.babylonjs-playground.com/#MRRGXL#5)
 
+
+### Mesh Emitter
+
+You can use the MeshParticleEmitter to emit your particles from the surface of a mesh:
+
+```javascript
+ var meshEmitter = new BABYLON.MeshParticleEmitter(sphere);
+```
+
+By default the direction of the particles will be the normal of the surface of the mesh but you can turn it off and then use a custom direction:
+
+```
+meshEmitter.useMeshNormalsForDirection = false;
+meshEmitter.diection1 = new BABYLON.Vector3(0, 1, 0);
+meshEmitter.diection2 = new BABYLON.Vector3(0, -1, 0);
+```
+
+**Please note that the MeshParticleEmitter is not supported by GPU Particle**
+
+Here is an example of a mesh particle emitter: https://www.babylonjs-playground.com/#N775HF
+
 ### Custom Emitter
 
 To create a custom emitter you need to provide 2 functions:
@@ -882,6 +905,7 @@ The following features are not supported by GPU particles due to their inner nat
 - Dual values per gradient (only one value is supported)
 - Emit rate gradients are not supported
 - Start size gradients are not supported
+- Mesh emitter
 
 ### Playground
 
