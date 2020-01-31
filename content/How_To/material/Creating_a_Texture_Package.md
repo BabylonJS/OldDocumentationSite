@@ -31,9 +31,9 @@ The options argument has a few parameters you can use to tweak the result of the
 
 For PBR materials you will need to change the map to reflect the channels you want to target.  The Environment map should be handled separately.
 
-In order to ensure that the packing proccess does not lock your thread you will have to start the compilation proccess with
+In order to ensure that the packing process does not lock your thread you will have to start the compilation process with
 ```javascript
-pack.proccessAsync( success, error );
+pack.processAsync( success, error );
 ```
 Having all interactions with your pack happening in the success callback. See the below playgrounds for examples.
 
@@ -51,4 +51,19 @@ pack.processAsync(
 ```
 You can tell the downloaded to change between jpeg and png image types depending on if you need an alpha channel.  Due to the fact that the images are stored as base64 you should avoid using png unless absolutely necessary.  You can always download both types and then manually mix and match inside the JSON file.
 
-* [Texture Packer Example](https://www.babylonjs-playground.com/#TQ408M#1)
+* [Texture Packer Download Example](https://www.babylonjs-playground.com/#TQ408M#1)
+
+##Loading From JSON
+To load from a downloaded package is easy! First create a blank Texture Package.
+```javascript
+let pack = new BABYLON.TexturePacker('', [], {}, scene);
+```
+
+Then simply call the loadFromJSON method, with first the url of the JSON file and then the same success/error callback structure as the processAsync.
+
+```javascript
+pack.updateFromJSON(url, success, error);
+```
+
+* [Texture Packer Load Example](https://www.babylonjs-playground.com/#TQ408M#2)
+
