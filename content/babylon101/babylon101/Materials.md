@@ -151,10 +151,11 @@ Some complex scenes will require a large amount of texture.  A single Material o
 Create a TexturePacker series by calling:
 ```javascript
 let pack = new BABYLON.TexturePacker(name, targetMeshes, options, scene);
+pack.processAsync().then(success).catch(error);
 ```
 There are some limitations though that you must consider.  These include texture size limits, transparencies, and refection/refraction materials.  Please go here for more information on [Creating a Texture Package](https://doc.babylonjs.com/how_to/creating_a_texture_package)
 
-* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#TQ408M)
+* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#TQ408M#6)
 
 ## Next step
 Great, your scene is looking better than ever with those materials! Later we will see how to use advanced techniques with materials. But for now, we have to learn [**how to use cameras**](/babylon101/Cameras).
