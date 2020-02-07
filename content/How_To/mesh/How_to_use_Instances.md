@@ -41,7 +41,7 @@ When you instanciate a glTF object, you need to make sure that the new instance 
 This is because every gltf file comes from a right handed world. To get it into Babylon.js left handed world, we are adding an arbitrary parent that is adding a negative scale on z.
 
 So when instancing a glTF object you have to (either):
-- Call `source.setpParent(null)`
+- Call `source.setParent(null)`
 - Or call `newInstance.setParent(source.parent)`
 
 # Custom buffers
