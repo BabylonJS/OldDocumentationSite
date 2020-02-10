@@ -24,7 +24,7 @@ First of all, after creation of a plane representing the wall, and a plane with 
 window.addEventListener("click", function () {
    // We try to pick an object
    var pickResult = scene.pick(scene.pointerX, scene.pointerY);
-}),
+});
 ```
  
 The pickResult object is mainly composed of 4 pieces of information:
