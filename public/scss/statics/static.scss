@@ -1,3 +1,9 @@
+.img-holder {
+  div, a {
+    width: 170px;
+  }
+}
+
 .static-content{
   @include outer-container(80%);
 
