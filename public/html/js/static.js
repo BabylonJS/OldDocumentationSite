@@ -57,7 +57,7 @@ function createIframe(playgroundId, link) {
     var iframeContainer = $(link).parent().next();
     if (!iframeContainer.hasClass('iframeContainer')) {
         // ...but sometimes not.
-        iframeContainer = $(link).next().next();
+        iframeContainer = $(link).next();
     }
 
     iframeContainer.css('display', 'block');
