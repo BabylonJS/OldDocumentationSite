@@ -58,6 +58,11 @@ function createIframe(playgroundId, link) {
     if (!iframeContainer.hasClass('iframeContainer')) {
         // ...but sometimes not.
         iframeContainer = $(link).next().next();
+
+        // ... and when they are in bullet lists
+        if (iframeContainer.length === 0) {
+            iframeContainer = $(link).next();
+        }
     }
 
     iframeContainer.css('display', 'block');
