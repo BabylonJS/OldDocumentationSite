@@ -194,7 +194,7 @@ if (touchpad) {
 }
 ```
 
-Read more about the [XR Controllers system]().
+Read more about the [XR Controllers system](./WebXR_Controllers_Support).
 
 ### Legacy support
 
@@ -291,7 +291,8 @@ We recommend using the WebXR polyfill instead.
 1. [The WebXR Experience Helper](./WebXR_Experience_Helpers)
 1. [The Session Manager](./WebXR_Session_Manager)
 1. [The WebXR Camera](./WebXR_Camera)
-1. [WebXR Input Sources and Controller support](./WebXR_Controller_Support)
+1. [WebXR Input Sources and Controller support](./WebXR_Controllers_Support)
 1. [Features Manager and available features](./WebXR_Features_Manager)
+1. [Selected WebXR Features](./WebXR_Selected_Features)
 1. Augmented Reality
 1. Advanced usage, troubleshooting, tips and tricks
