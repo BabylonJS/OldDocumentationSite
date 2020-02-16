@@ -147,9 +147,9 @@ var getStaticPagesContent = function(dataObj, category, cb) {
                                 })).html;
 
                             // Regexp catching all link to the playground
-                            var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
+                            var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/(?:\#|pg\/)([a-zA-Z0-9]+)(?:(?:\#|\/revision\/)*(\d*)))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
                             // Replace all links to the playground with a custom iframe
-                            var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i>' +
+                            var iframeWithLink = '<a href="$1">$9</a> - <i class="fa fa-eye" onclick="createIframe(\'$3#$4\', this)"></i>' +
                                 '<div class="iframeContainer"></div>';
 
                             markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
