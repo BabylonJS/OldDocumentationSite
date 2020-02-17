@@ -813,8 +813,8 @@ By default the direction of the particles will be the normal of the surface of t
 
 ```
 meshEmitter.useMeshNormalsForDirection = false;
-meshEmitter.diection1 = new BABYLON.Vector3(0, 1, 0);
-meshEmitter.diection2 = new BABYLON.Vector3(0, -1, 0);
+meshEmitter.direction1 = new BABYLON.Vector3(0, 1, 0);
+meshEmitter.direction2 = new BABYLON.Vector3(0, -1, 0);
 ```
 
 **Please note that the MeshParticleEmitter is not supported by GPU Particle**
