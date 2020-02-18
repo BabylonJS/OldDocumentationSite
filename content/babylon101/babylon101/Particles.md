@@ -204,7 +204,7 @@ To add a size gradient just call the following code:
 particleSystem.addSizeGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the factor to apply to particle initial size. In this case the particle will born with half of the initial size (which is computed from minScale and maxScale).
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the size. In this case the particle will be born with size 0.5 and will end its life with size 3.
 It is recommended to at least define a gradient for 0 and 1:
 
 ```
