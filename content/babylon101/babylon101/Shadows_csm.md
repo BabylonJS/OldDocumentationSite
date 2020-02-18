@@ -210,15 +210,16 @@ There's currently no culling applied on the shadow caster list before rendering 
 
 However, you can implement your own culling strategy by using this code as a basis:
 ```typescript
-let rtt = csmShadowGenerator.getShadowMap()!;
+let rtt = csmShadowGenerator.getShadowMap();
 
-rtt.getCustomRenderList = (layer, renderList) => {
+rtt.getCustomRenderList = (layer, renderList, renderListLength) => {
     let meshList = [];
     // here do the culling for the cascade with index 'layer' by using the
     // getCascadeViewMatrix(layer), getCSMTransformMatrix(layer), getCascadeMinExtents(layer), etc
     // from csmShadowGenerator
     // note: the renderList entry parameter is the list of all shadow casters defined for the CSM generator,
-    // that is csmShadowGenerator.getShadowMap().renderList
+    // that is csmShadowGenerator.getShadowMap().renderList. If you need to traverse renderList, use
+    // renderListLength for the length, not renderList.length, as the array may hold dummy elements!
     return meshList;
 };
 ```
