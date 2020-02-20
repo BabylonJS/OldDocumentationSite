@@ -108,6 +108,14 @@ var source = BABYLON.Mesh.CreateBox("source", 1.0, scene);
 particleSystem.emitter = source;
 ```
 
+### Local space
+
+If the emitter is a mesh and you set `particleSystem.isLocal` then all particles will be generated into the mesh local space (so rotation or transforming the mesh will transform the entire particle system).
+
+**Please note that the MeshParticleEmitter is not supported by GPU Particle**
+
+Demo: https://www.babylonjs-playground.com/#LNRAI3
+
 ### World offset
 Starting with Babylon.js v4.0, you can set up a world offset to your particles with:
 ```
@@ -906,6 +914,7 @@ The following features are not supported by GPU particles due to their inner nat
 - Emit rate gradients are not supported
 - Start size gradients are not supported
 - Mesh emitter
+- Local space
 
 ### Playground
 
