@@ -110,7 +110,7 @@ particleSystem.emitter = source;
 
 ### Local space
 
-If the emitter is a mesh and you set `particleSystem.isLocal` then all particles will be generated into the mesh local space (so rotation or transforming the mesh will transform the entire particle system).
+If the emitter is a mesh and you set `particleSystem.isLocal = true` then all particles will be generated into the mesh local space (so rotation or transforming the mesh will transform the entire particle system).
 
 **Please note that the MeshParticleEmitter is not supported by GPU Particle**
 
