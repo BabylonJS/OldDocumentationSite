@@ -20,7 +20,7 @@ To achieve today’s animated scene, we begin by creating our environment:
 ```javascript
 function createScene() {
   //Here... your basic scene as before: [scene, light, camera]
-  
+
   //Create a box
   var box1 = BABYLON.Mesh.CreateBox("Box1", 10.0, scene);
   box1.position.x = -20;
@@ -65,7 +65,7 @@ Now that we have our Animation object, it is time to say how those values will b
 
 ```javascript
 // An array with all animation keys
-var keys = []; 
+var keys = [];
 
 //At the animation key 0, the value of scaling is "1"
   keys.push({
@@ -91,7 +91,7 @@ var keys = [];
 For Vector2, Vector3 and Quaternion, you can also provide keys with inTangent and outTangent values to use spline interpolations instead of linear interpolations:
 
 ```javascript
-  var keys = []; 
+  var keys = [];
 
   keys.push({
     frame: 0,
@@ -242,7 +242,7 @@ Fast and easy. :)
 
 ## Animation blending
 
-You can start an animation with *enableBlending* = true to enable blending mode. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device. 
+You can start an animation with *enableBlending* = true to enable blending mode. This blended animation will interpolate FROM the current object's state. This would be handy for user-controlled walking characters, or reacting to value changes from an input device.
 
 In the playground demo below, every time you click on the FPS marker, the new animation is blended with the box's current position: https://www.babylonjs-playground.com/#2BLI9T#174
 
@@ -278,7 +278,7 @@ This function accepts the following parameters:
 
 Like `beginAnimation`, this function returns an animatable but this time with its `weight` property set to a value.
 
-You can also set the `weight` value of any Animatable at any time to switch to a weighted mode. This value has to be between 0 and 1. 
+You can also set the `weight` value of any Animatable at any time to switch to a weighted mode. This value has to be between 0 and 1.
 In a same way, you can set it to -1 to turn the weight mode off. If you set the weight to 0, the animation will be considered paused.
 
 
@@ -322,14 +322,14 @@ Please note that the scene.animationPropertiesOverride will be used if animation
 
 ## Easing functions
 
-You can add some behaviors to your animations, using easing functions. 
-If you want more information about easing functions, here are some useful links : 
+You can add some behaviors to your animations, using easing functions.
+If you want more information about easing functions, here are some useful links :
 - [MSDN Easing functions documentation](http://msdn.microsoft.com/en-us/library/ee308751.aspx)
 - [Easing functions cheat sheet](https://easings.net)
 
 All those easing functions are implemented in BABYLON, allowing you to apply custom mathematical formulas to your animations.
 
-Here are the predefined easing functions you can use : 
+Here are the predefined easing functions you can use :
 - ```BABYLON.CircleEase()```
 - ```BABYLON.BackEase(amplitude)```
 - ```BABYLON.BounceEase(bounces, bounciness)```
@@ -343,8 +343,8 @@ Here are the predefined easing functions you can use :
 - ```BABYLON.SineEase()```
 - ```BABYLON.BezierCurveEase()```
 
-You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates. 
-There are three possible values you can give for EasingMode: 
+You can use the **EasingMode** property to alter how the easing function behaves, that is, change how the animation interpolates.
+There are three possible values you can give for EasingMode:
 
 - ```BABYLON.EasingFunction.EASINGMODE_EASEIN``` : Interpolation follows the mathematical formula associated with the easing function.
 - ```BABYLON.EasingFunction.EASINGMODE_EASEOUT``` : Interpolation follows 100% interpolation minus the output of the formula associated with the easing function.
@@ -381,7 +381,7 @@ torus.animations.push(animationTorus);
 scene.beginAnimation(torus, 0, 120, true);
 ```
 
-You can play with bezier curve algorithm too, using the **BezierCurveEase(x1, y1, x2, y2)** function. 
+You can play with bezier curve algorithm too, using the **BezierCurveEase(x1, y1, x2, y2)** function.
 For purpose, here is a good reference to create your curve algorithm : [http://cubic-bezier.com](http://cubic-bezier.com)
 
 Here is a pretty cool implementation using the bezier curve algorithm :
@@ -420,6 +420,13 @@ scene.registerBeforeRender(function () {
   //Your code here
 });
 ```
+
+The function set by ```registerBeforeRender()``` is run before every frame (usually
+~60 times per second) so animation is created by making small changes to object
+properties very quickly.
+
+A simple demonstration of complex animation can be found in the playground here:
+[Complex Animation Example](https://playground.babylonjs.com/#YJVTI6)
 
 This function can be very useful for complex animation like games, where characters have to move depending on many parameters.
 
