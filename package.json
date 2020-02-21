@@ -57,6 +57,7 @@
     },
     "scripts": {
         "build": "grunt build",
+        "serve": "grunt serve",
         "import": "node ./scripts/helpers/importer/main.js"
     },
     "license": "MIT",
