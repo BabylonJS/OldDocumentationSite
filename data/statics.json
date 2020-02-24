@@ -481,6 +481,11 @@
                     "title": "Understanding how normal maps work",
                     "level": 3,
                     "filename": "Normal_maps"
+                },
+                {
+                    "title": "Creating a Texture Package",
+                    "level": 3,
+                    "filename": "Creating_a_Texture_Package"
                 }
             ]
         },
