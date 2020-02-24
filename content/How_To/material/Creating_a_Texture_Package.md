@@ -66,5 +66,5 @@ Then simply call the loadFromJSON method, with JSON file as a string and then th
 pack.updateFromJSON( jsonString ).then( success ).catch( error );
 ```
 
-* [Texture Packer Load Example](https://www.babylonjs-playground.com/#TQ408M#5)
+* [Texture Packer Load Example](https://www.babylonjs-playground.com/#TQ408M#9)
 
