@@ -2,7 +2,7 @@
 PG_TITLE: Creating a Texture Package
 ---
 
-#Texture Packer
+# Texture Packer
 
 Create a TexturePacker by calling:
 ```javascript
@@ -54,7 +54,7 @@ You can tell the downloaded to change between jpeg and png image types depending
 
 * [Texture Packer Download Example](https://www.babylonjs-playground.com/#TQ408M#7)
 
-##Loading From JSON
+# Loading From JSON
 To load from a downloaded package is easy! First create a blank Texture Package.
 ```javascript
 let pack = new BABYLON.TexturePacker( '', [], {}, scene );
