@@ -145,7 +145,7 @@ Fortunately things can be made more interesting very soon with the setting of mo
 See how to change the lifetime, size, and color of the particles, their rates of emission, direction of travel (optionally affected by gravity). You can also affect their rotation, speed and cloud shape. Below you can find [playground examples]() where you can alter some of these parameters.
 
 ### Lifetime
-The time taken for particles to disappear (or die) after being emitted can be varied. Once a particle dies a the particle is recycled foe emission. Their lifetime is given as a random range between a low and high value as in 
+The time taken for particles to disappear (or die) after being emitted can be varied. Once a particle dies, the particle is then recycled for reemission. Their lifetime is given as a random range between a low and high value as in 
 
 ```javascript
 // Life time of each particle (random between...)
@@ -264,7 +264,7 @@ You can also define a more complex construct by providing two colors per gradien
 
 ```
 particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0), new BABYLON.Color4(1, 0, 1, 0));
-particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1)new BABYLON.Color4(1, 0, 1, 1));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1), new BABYLON.Color4(1, 0, 1, 1));
 ```
 
 In this case the color of the particle will be randomly picked between the two colors when the gradient will be reached.
