@@ -159,7 +159,7 @@ There are some limitations though that you must consider.  These include texture
 
 ## Local File Access
 
-An important thing to remember, is that for security reasons, web browsers like google chrome don't allow local files to be accessed by default for web pages. This includes any texture files you are using. There are a few ways to work around this in chrome. The quick and dirty way is to close all instances of chrome, and open it in the terminal.
+An important thing to remember, is that for security reasons, web browsers like google chrome don't allow local files to be accessed by default for web pages. This includes any texture files you are using. There are a few ways to work around this in google chrome. The quick and dirty way is to close all instances of chrome, and open it in the terminal.
 
 for windows, you go to the terminal and type,
 
