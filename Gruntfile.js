@@ -202,7 +202,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', 'Build content and index it', [
         'clean:json',
-        'sass',
         'download:documentation',
         'typedoc:build',
         'execute:compileIndex',
