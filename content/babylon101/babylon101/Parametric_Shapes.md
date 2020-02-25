@@ -27,7 +27,7 @@ myPoints.push(point3);
 
 //or the possible alternative
 
-var myPoints =[
+var myPoints = [
     new BABYLON.Vector3(0, 0, 0),
     new BABYLON.Vector3(0, 1, 1),
     new BABYLON.Vector3(0, 1, 0)
