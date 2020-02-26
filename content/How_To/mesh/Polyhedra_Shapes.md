@@ -83,9 +83,9 @@ flat|_(boolean)_ if true, the mesh faces have their own normals|true
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
-An example of an IcoSphere: http://www.babylonjs-playground.com/#24DUYD#1
+An example of an IcoSphere: https://www.babylonjs-playground.com/#24DUYD#1
 
-and one with animation: http://www.babylonjs-playground.com/#E3TVT#1
+and one with animation: https://www.babylonjs-playground.com/#E3TVT#1
 
 ## Updatable
 

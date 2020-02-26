@@ -86,7 +86,7 @@ There will be a collision between *frame n* and *frame n+1* provided b<sup>2</su
 
 Based on the above the following Playground shows two spheres and their paths. Should they collide their positions at first touch are shown. Their start positions and velocities may be set at lines 35 to 38.
 
-* [Playground Example - First Contact](http://www.babylonjs-playground.com/#A4HZTV).
+* [Playground Example - First Contact](https://www.babylonjs-playground.com/#A4HZTV).
 
 ### Reaction
 
@@ -150,19 +150,19 @@ After a collision these values are used to recalculate the  positions of particl
 
 The following Playground shows the first contact position of two particles and their paths before and after collision. Start position and velocities may be set on lines 36 to 39.
 
-* [Playground Example - First Contact Rebound](http://www.babylonjs-playground.com/#A4HZTV#1).
+* [Playground Example - First Contact Rebound](https://www.babylonjs-playground.com/#A4HZTV#1).
 
 This Playground fires particles randomly towards each other to see the effect when they collide.
 
-* [Playground Example - Colliding Particles](http://www.babylonjs-playground.com/#A4HZTV#2).
+* [Playground Example - Colliding Particles](https://www.babylonjs-playground.com/#A4HZTV#2).
 
 ## A Multitude of Particles
 
 Combining all of the above the following Playgrounds put many particles inside a box and have them collide with the box and each other.
 
-* [Playground Example - Slow Moving Particles](http://www.babylonjs-playground.com/#HIM0WS)
+* [Playground Example - Slow Moving Particles](https://www.babylonjs-playground.com/#HIM0WS)
 
-* [Playground Example - Fast Moving Particles](http://www.babylonjs-playground.com/#HIM0WS#1)
+* [Playground Example - Fast Moving Particles](https://www.babylonjs-playground.com/#HIM0WS#1)
 
 Maximum speeds, for both,  can be changed on lines 21 to 23.
 

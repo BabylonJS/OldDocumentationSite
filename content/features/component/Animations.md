@@ -140,7 +140,7 @@ The animation is now fully made and can be applied to the box resulting in a _pe
 scene.beginDirectAnimation(box, [xSlide], 0, 2 * frameRate, true);
 ```
 
-* [Playground Example for Above](http://www.babylonjs-playground.com/#9WUJN#11)
+* [Playground Example for Above](https://www.babylonjs-playground.com/#9WUJN#11)
 
 # Functions and Parameters for Animating
 

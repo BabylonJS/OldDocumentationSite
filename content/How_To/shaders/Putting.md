@@ -87,7 +87,7 @@ Extracting the appropriate sections of Javascript code allows you to transfer th
 
 This method can easily be used in the Playground.
 
-[Playground Example From CYOS](http://www.babylonjs-playground.com/#1OH09K#131)
+[Playground Example From CYOS](https://www.babylonjs-playground.com/#1OH09K#131)
 
 ## Shader Code in &lt;script&gt; Tags
 
@@ -199,7 +199,7 @@ mesh.material = new BABYLONX.ShaderBuilder()
 This method can be used in the Playground. However it does require the loading of the ShaderBuilder Javascript file and an `onLoad` 
 function before it can be called.
 
-* [Playground Example using ShaderBuilder](http://www.babylonjs-playground.com/#NCY1Q#36)
+* [Playground Example using ShaderBuilder](https://www.babylonjs-playground.com/#NCY1Q#36)
 
 # Further Reading
 

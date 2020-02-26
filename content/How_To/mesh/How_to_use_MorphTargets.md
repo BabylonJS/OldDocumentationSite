@@ -20,8 +20,8 @@ You can find live examples here:
 * [Playground Example Animated](https://www.babylonjs-playground.com/#HPV2TZ#8)  
 
 The following two examples are best seen in the full Playground where sliders can be used to change the influencers
-* [Playground Example With Standard Material](http://www.babylonjs-playground.com/#HPV2TZ#2)   
-* [Playground Example With PBR Material](http://www.babylonjs-playground.com/#HPV2TZ#4) 
+* [Playground Example With Standard Material](https://www.babylonjs-playground.com/#HPV2TZ#2)   
+* [Playground Example With PBR Material](https://www.babylonjs-playground.com/#HPV2TZ#4) 
 
 ## How to Use Morph Targets
 To use morph targets, you first have to create a `MorphTargetManager` and affect it to a mesh:

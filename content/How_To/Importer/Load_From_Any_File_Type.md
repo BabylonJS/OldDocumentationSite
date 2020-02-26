@@ -46,7 +46,7 @@ BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
 });
 ```
 
-[Demo](http://www.babylonjs-playground.com/#WGZLGJ)
+[Demo](https://www.babylonjs-playground.com/#WGZLGJ)
 
 Loads all babylon assets from a string and appends them to the scene
 
@@ -80,7 +80,7 @@ BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene,
 });
 ```
 
-[Demo](http://www.babylonjs-playground.com/#JUKXQD)
+[Demo](https://www.babylonjs-playground.com/#JUKXQD)
 
 ## SceneLoader.LoadAssetContainer
 
@@ -97,7 +97,7 @@ BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (conta
 });
 ```
 
-[Demo](http://www.babylonjs-playground.com/#JA1ND3#48)
+[Demo](https://www.babylonjs-playground.com/#JA1ND3#48)
 
 ## SceneLoader.ImportAnimations
 
