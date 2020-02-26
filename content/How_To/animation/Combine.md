@@ -8,7 +8,7 @@ PG_TITLE: How To Combine Animations
 
 Simply set up more animations and add to the BabylonJS object's animations array.
 
-For example adding a rotation animation to the [very simple slide animation](http://www.babylonjs-playground.com/#9WUJN#11) to get:
+For example adding a rotation animation to the [very simple slide animation](https://www.babylonjs-playground.com/#9WUJN#11) to get:
 
 ### Slide and Rotate
 
@@ -41,7 +41,7 @@ keyFramesR.push({
 yRot.setKeys(keyFramesR);
 ```
 
-- [Playground Example Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#12)
+- [Playground Example Slide and Rotate](https://www.babylonjs-playground.com/#9WUJN#12)
 
 ### Slide and Faster Rotation Rate
 
@@ -76,7 +76,7 @@ keyFramesR.push({
 yRot.setKeys(keyFramesR);
 ```
 
-- [Playground Example Slide and Faster Rotate](http://www.babylonjs-playground.com/#9WUJN#13)
+- [Playground Example Slide and Faster Rotate](https://www.babylonjs-playground.com/#9WUJN#13)
 
 ### Slide and Varying Rotation Rate
 
@@ -111,7 +111,7 @@ keyFramesR.push({
 yRot.setKeys(keyFramesR);
 ```
 
-- [Playground Example Slide and Varying Rotation Rate](http://www.babylonjs-playground.com/#9WUJN#14)
+- [Playground Example Slide and Varying Rotation Rate](https://www.babylonjs-playground.com/#9WUJN#14)
 
 ## Consecutive Animations
 
@@ -140,7 +140,7 @@ scene.beginAnimation(target, start frame, end frame, loop, speed, on animation e
 
 ### Examples
 
-The following are alterations to [Slide and Rotate](http://www.babylonjs-playground.com/#9WUJN#12)
+The following are alterations to [Slide and Rotate](https://www.babylonjs-playground.com/#9WUJN#12)
 
 In the first example the box rotates for 5 seconds then goes into a looped slide.
 
@@ -166,7 +166,7 @@ var nextAnimation = function() {
 };
 ```
 
-- [Playground Example Consecutive Animations Rotate then Slide](http://www.babylonjs-playground.com/#9WUJN#15)
+- [Playground Example Consecutive Animations Rotate then Slide](https://www.babylonjs-playground.com/#9WUJN#15)
 
 In the second example the rotation is continued as the box goes into a looped slide.
 
@@ -176,7 +176,7 @@ var nextAnimation = function() {
 };
 ```
 
-- [Playground Example Consecutive Animations Rotate then Rotate and Slide](http://www.babylonjs-playground.com/#9WUJN#16)
+- [Playground Example Consecutive Animations Rotate then Rotate and Slide](https://www.babylonjs-playground.com/#9WUJN#16)
 
 # Further Reading
 

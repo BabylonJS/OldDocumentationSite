@@ -112,7 +112,7 @@ You can also define that a control is invisible to events (so you can click thro
 Please note that `onPointerMoveObservable`, `onPointerDownObservable`, `onPointerUpObservable`, `onPointerClickObservable` will receive a Vector2 parameter containing the pointer coordinates. If you want to get the pointer coordinates in local control space, you have to call `control.getLocalCoordinates(coordinates)`.
 
 Here is an example of how to use observables: https://www.babylonjs-playground.com/#XCPP9Y#121
-Here is an example of how to use the onPointerClickObservable: http://www.babylonjs-playground.com/#7RH606
+Here is an example of how to use the onPointerClickObservable: https://www.babylonjs-playground.com/#7RH606
 
 ### Alignments
 
@@ -294,7 +294,7 @@ You can configure vertical line spacing between lines in pixels or percentage va
 
 **lineSpacing should be used with textWrapping set to true.**
 
-You can try it here: http://www.babylonjs-playground.com/#44KYLP
+You can try it here: https://www.babylonjs-playground.com/#44KYLP
 
 #### Resize to Fit
 
@@ -601,7 +601,7 @@ Here are the properties you can define in MultiLine:
 | dash      | array of numbers | Empty array | Defines the size of the dashes |
 | lineWidth | number           | 1           | Width in pixel                 |
 
-Here is an example of a MultiLine combining meshes, a control and a point: http://www.babylonjs-playground.com/#H03KNW#2
+Here is an example of a MultiLine combining meshes, a control and a point: https://www.babylonjs-playground.com/#H03KNW#2
 
 ### Image
 

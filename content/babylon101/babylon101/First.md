@@ -39,7 +39,7 @@ var createScene = function () {
 
 Everything else you need is taken care of within the Playground.
 
-* [Playground example of above code](http://www.babylonjs-playground.com/#WG9OY#1)
+* [Playground example of above code](https://www.babylonjs-playground.com/#WG9OY#1)
 
 ## Your Own HTML
 

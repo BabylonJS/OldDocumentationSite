@@ -99,4 +99,4 @@ BABYLON.Mesh.prototype.minimizeVertices = function() {
 
 ## Playground
 
-* [Playground Example Minimising Vertices](http://www.babylonjs-playground.com/#1JBMJ3#17)
+* [Playground Example Minimising Vertices](https://www.babylonjs-playground.com/#1JBMJ3#17)

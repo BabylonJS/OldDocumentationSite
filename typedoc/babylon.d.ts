@@ -46372,7 +46372,7 @@ declare module BABYLON {
 declare module BABYLON.Debug {
     /**
          * Class used to render a debug view of a given skeleton
-         * @see http://www.babylonjs-playground.com/#1BZJVJ#8
+         * @see https://www.babylonjs-playground.com/#1BZJVJ#8
          */
     export class SkeletonViewer {
         /** defines the skeleton to render */
@@ -80196,4 +80196,4 @@ declare module BABYLON {
          */
         static Parse(parsedTexture: any, scene: BABYLON.Scene, rootUrl: string): WoodProceduralTexture;
     }
-}
+}

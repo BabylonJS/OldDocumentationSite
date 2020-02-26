@@ -26,4 +26,4 @@ function showNormals(mesh, size, color, sc) {
 ```
 # Playground
 
-* [Playground Example ](http://www.babylonjs-playground.com/#1ENDNT)
+* [Playground Example ](https://www.babylonjs-playground.com/#1ENDNT)

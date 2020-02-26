@@ -113,8 +113,8 @@ instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
 colors|_(Color4[])_ array of Color4, each point color|null
 useVertexAlpha|_(boolean)_ false if the alpha blending is not required (faster)|true
 
-[A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#66)
-[A Playground Update of the Linesystem](http://www.babylonjs-playground.com/#165IV6#10)
+[A Playground Example of a Linesystem](https://www.babylonjs-playground.com/#165IV6#66)
+[A Playground Update of the Linesystem](https://www.babylonjs-playground.com/#165IV6#10)
 
 A line system is colored with a color property
 
@@ -149,8 +149,8 @@ backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an o
 instance|_(LineMesh)_ an instance of a ribbon to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Ribbon](http://www.babylonjs-playground.com/#165IV6#65)
-[A Playground Update of the Ribbon](http://www.babylonjs-playground.com/#165IV6#13)
+[A Playground Example of a Ribbon](https://www.babylonjs-playground.com/#165IV6#65)
+[A Playground Update of the Ribbon](https://www.babylonjs-playground.com/#165IV6#13)
 
 ## Tube
 You must set at least the _path_ option.
@@ -181,8 +181,8 @@ backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an o
 instance|_(LineMesh)_ an instance of a tube to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Tube](http://www.babylonjs-playground.com/#165IV6#68)
-[A Playground Update of the Tube](http://www.babylonjs-playground.com/#165IV6#67)
+[A Playground Example of a Tube](https://www.babylonjs-playground.com/#165IV6#68)
+[A Playground Update of the Tube](https://www.babylonjs-playground.com/#165IV6#67)
 
 ## Extruded Shapes
 You must set at least the _shape_ and _path_ options.
@@ -216,10 +216,10 @@ instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 * [Playground Example of an Extrusion in Z direction](https://www.babylonjs-playground.com/#165IV6#69)
-* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#16)
+* [Playground Update of the Extrusion Changing Scale and Rotation](https://www.babylonjs-playground.com/#165IV6#16)
 
 * [Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
-* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
+* [Playground Update of the Extrusion Changing Scale and Rotation](https://www.babylonjs-playground.com/#165IV6#18)
 
 When you need sharp mitred corners there is a utility function available [Extruded Shape with Mitred Corners](/snippets/Mitred)
 
@@ -253,7 +253,7 @@ instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 * [Playground Example of a Custom Extruded Shape](https://www.babylonjs-playground.com/#165IV6#71)
-* [Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](http://www.babylonjs-playground.com/#165IV6#17)
+* [Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](https://www.babylonjs-playground.com/#165IV6#17)
 
 ## Lathe
 You must set at least the _shape_ option.
@@ -278,7 +278,7 @@ backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an o
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 * [Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#72)
-* [Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
+* [Playground Update of the Lathe](https://www.babylonjs-playground.com/#165IV6#73)
 
 ## Non Regular Polygon
 
