@@ -67,4 +67,4 @@ pack.updateFromJSON( jsonString ).then( success ).catch( error );
 ```
 
 * [Texture Packer Load Example](https://www.babylonjs-playground.com/#TQ408M#9)
-
+* [PBR Texture Packer Load Example](https://playground.babylonjs.com/#96CDLA)
