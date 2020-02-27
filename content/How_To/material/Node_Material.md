@@ -136,6 +136,8 @@ let block = nodeMaterial.getInputBlockByPredicate((b) => b.name === "foo");
 block.value = 10;
 ```
 
+Note that while this API generically works for all input blocks, not all input blocks have a "value" attribute. For example texture blocks would have block.texture instead of block.value. Be sure to check the [API documentation](https://doc.babylonjs.com/api/classes/babylon.nodematerial) for detail.
+
 You can access the list of InputBlocks with:
 ```
 nodeMaterial.getInputBlocks();
@@ -145,6 +147,8 @@ Or you can get all blocks registered with a node material with:
 ```
 nodeMaterial.attachedBlocks
 ```
+
+Be sure to also check out the full [API documentation.](https://doc.babylonjs.com/api/classes/babylon.nodematerial)
 
 ### List of available blocks
 
