@@ -22,7 +22,7 @@ var createScene = function () {
     var scene = new BABYLON.Scene(engine);
 
     // Add a camera to the scene and attach it to the canvas
-    var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Zero(), scene);
+    var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(canvas, true);
 
     // Add lights to the scene
