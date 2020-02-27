@@ -22,7 +22,7 @@ var createScene = function () {
     var scene = new BABYLON.Scene(engine);
 
     // Add a camera to the scene and attach it to the canvas
-    var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, new BABYLON.Vector3(0,0,5), scene);
+    var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(canvas, true);
 
     // Add lights to the scene
@@ -129,7 +129,7 @@ Finally, add code to call the scene. This enables the engine to continually rend
 
 ## Notes
 
-1. The examples above use the newer MeshBuilder method for creating shapes where variables for the shape are set within the options object parameter and has some advantages over the older form of BABYLON.Mesh.Create.... which uses a parameter list for the shape variables. The majority of Playgrounds use the older method as many were created before MeshBuilder existed. 
+1. The examples above uses the newer MeshBuilder method for creating shapes where variables for the shape are set within the options object parameter and has some advantages over the older form of BABYLON.Mesh.Create.... which uses a parameter list for the shape variables. The majority of Playgrounds use the older method as many were created before MeshBuilder existed. 
 
 2. The use of PEP for pointer events is more recent advice, older advice was to use a system called hand.js. Both work, although hand.js is no longer maintained. You may still find references to hand.js in the documentation. 
 
