@@ -116,7 +116,13 @@ BABYLON.Engine.audioEngine.setGlobalVolume(0.5);
 A sound sprite is a portion of a sound file. You can define a sound sprite when creating a sound by defining an offset and a length (in seconds):
 
 ```javascript
-var soundSprite = new BABYLON.Sound("Violons", "/sounds/6sounds.mp3", scene, null, { loop: true, autoplay: true, length: 9200, offset: 14000 });
+var soundSprite = new BABYLON.Sound(
+  "Violons",
+  "/sounds/6sounds.mp3",
+  scene,
+  null,
+  { loop: true, autoplay: true, length: 9200, offset: 14000 }
+);
 ```
 
 You can find an example here: https://www.babylonjs-playground.com/#6LXPBX

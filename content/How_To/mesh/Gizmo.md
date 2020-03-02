@@ -73,7 +73,7 @@ By default, the gizmo will be updated to match the attached mesh's rotation and 
 gizmo.updateGizmoRotationToMatchAttachedMesh = false;
 gizmo.updateGizmoPositionToMatchAttachedMesh = true;
 ```
-[GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
+[GLTF example](https://playground.babylonjs.com/#8GY6J8#20)
 ## Position, scale and rotation gizmos
 
 Default gizmos for position, rotation and scale on a single axis are supported
@@ -167,7 +167,7 @@ gizmo.includeChildPredicate = (m)=>{return m == sphere2};
 
 UI can be attached to the bounding box using the [AttachToBoxBehavior](/How_To/MeshBehavior)
 
-[GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
+[GLTF example](https://playground.babylonjs.com/#8GY6J8#20)
 [Animated GLTF example](https://playground.babylonjs.com/#6E4LSB#15)
 [Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
 
@@ -179,5 +179,5 @@ var customMesh = BABYLON.MeshBuilder.CreateBox("", {size: 0.1}, gizmo.gizmoLayer
 customMesh.material = material
 gizmo.setCustomMesh(customMesh)
 ```
-[Example](http://playground.babylonjs.com/#7KX2R8#133)
+[Example](https://playground.babylonjs.com/#7KX2R8#133)
 
