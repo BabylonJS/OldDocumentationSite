@@ -302,7 +302,7 @@ backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an o
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-[A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#6)
+[A Playground Example of a Polygon](https://playground.babylonjs.com/#4G18GY#6)
 
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
@@ -329,7 +329,7 @@ sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-* [Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
+* [Playground Example of Extruded Polygon](https://playground.babylonjs.com/#4G18GY#7)
 
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
