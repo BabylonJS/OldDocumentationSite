@@ -209,7 +209,7 @@ The dynamic texture can be serialized with the scene using `SceneSerializer.Seri
 
 This playground demonstrates serializing a dynamic texture associated with a material on a mesh:
 
-* [Playground Example Dynamic Texture Serialized Mesh](http://playground.babylonjs.com/#FU0ES5)
+* [Playground Example Dynamic Texture Serialized Mesh](https://playground.babylonjs.com/#FU0ES5)
 
 # Further Reading
 

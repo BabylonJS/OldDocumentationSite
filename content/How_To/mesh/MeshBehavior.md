@@ -56,7 +56,7 @@ pointerDragBehavior.lastDragPosition;
 pointerDragBehavior.dragging;
 ```
 
-[Example](https://www.babylonjs-playground.com/#9UFEBE)
+* [Playground Example - Drag Along an Axis](https://www.babylonjs-playground.com/##YEZPVT)
 
 ## SixDofDragBehavior
 This is used to drag a mesh around in 3D space based on the pointers origin (eg. camera or vr controller position)
@@ -74,7 +74,7 @@ By default, dragging objects away/towards you will be magnified to make moving o
 sixDofDragBehavior.zDragFactor = 0.2;
 ```
 **Note** - To avoid large performance hits when using with models with complex geometries, the object should be wrapped in a bounding box mesh. See [BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox](/How_To/Gizmo)
-[Example](https://www.babylonjs-playground.com/#8GY6J8#20)
+* [Playground Example - Six Directions](https://www.babylonjs-playground.com/##5G9MC5)
 
 ## MultiPointerScaleBehavior
 This is used to scale a mesh based on 2 pointers (eg. fingers or vr controllers)
@@ -82,7 +82,7 @@ This is used to scale a mesh based on 2 pointers (eg. fingers or vr controllers)
 var multiPointerScaleBehavior = new BABYLON.MultiPointerScaleBehavior();
 ```
 **Note** - To avoid large performance hits when using with models with complex geometries, the object should be wrapped in a bounding box mesh. See [BoundingBoxGizmo.MakeNotPickableAndWrapInBoundingBox](/How_To/Gizmo)
-[Example](https://www.babylonjs-playground.com/#8GY6J8#20)
+[Example](https://www.babylonjs-playground.com/##5G9MC5)
 
 ## AttachToBoxBehavior (AppBar)
 This is used to attach a mesh or UI on top of a meshes bounding box
@@ -101,4 +101,4 @@ This can be used to attach an app bar to a mesh
 
 ![](/img/how_to/gui/appBar.png)
 
-[Example](http://playground.babylonjs.com/#8GY6J8#62)
+[Example](https://www.babylonjs-playground.com/#X6MQ1L)

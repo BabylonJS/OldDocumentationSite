@@ -175,7 +175,7 @@ These commands will apply to every animation object contained in the Animatable'
 And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)
 
 ## Animations and promises
-Starting with Babylon.js v3.3, you can use promises to wait for an anmatable to end:
+Starting with Babylon.js v3.3, you can use promises to wait for an animatable to end:
 
 ```
 var anim = scene.beginAnimation(box1, 0, 100, false);
@@ -420,6 +420,13 @@ scene.registerBeforeRender(function () {
   //Your code here
 });
 ```
+
+The function set by ```registerBeforeRender()``` is run before every frame (usually
+~60 times per second) so animation is created by making small changes to object
+properties very quickly.
+
+A simple demonstration of complex animation can be found in the playground here:
+[Complex Animation Example](https://playground.babylonjs.com/#YJVTI6)
 
 This function can be very useful for complex animation like games, where characters have to move depending on many parameters.
 

@@ -158,7 +158,7 @@ At last, if you accept to spend some CPU cycles to get a correct self transparen
 
 Example, depth sorted on the left, standard on the right:
 
-http://playground.babylonjs.com/#FWKUY0#1  
+https://playground.babylonjs.com/#FWKUY0#1  
 
 
 

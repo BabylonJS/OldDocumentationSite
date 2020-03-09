@@ -8,7 +8,7 @@ BabylonJs provides an implementation for Occlusion Queries using property occlus
 
 Babylon.js engine draw a light transparent bounding box on the targeted Mesh before drawing the object and create a query to check with WebGl engine if the bounding box is visible or not. if the box is visible, the object gets drawn if not the object is not drawn, Occlusion Queries is asynchronous and usually the query result of the object is not available in the current frame and because of this the object is drawn based on a query result of previous frame, the user wouldn't notice the difference unless your FPS is too low.
 
-[Occlusion Queries Demo](http://www.babylonjs-playground.com/#QDAZ80#5)
+[Occlusion Queries Demo](https://www.babylonjs-playground.com/#QDAZ80#5)
 
 # Basics
 
@@ -42,4 +42,4 @@ sphere.occlusionType = BABYLON.AbstractMesh.OCCLUSION_TYPE_STRICT;
 
 In Babylon.js you can also set the WebGl Occlusion Queries algorithm type using property `occlusionQueryAlgorithmType` for more into check AbstractMesh Class [documentations](/api/classes/babylon.abstractMesh#occlusionqueryalgorithmtype-number).
 
-You can find a live demo here: http://www.babylonjs-playground.com/#QDAZ80#3
+You can find a live demo here: https://www.babylonjs-playground.com/#QDAZ80#3

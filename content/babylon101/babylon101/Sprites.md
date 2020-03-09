@@ -122,7 +122,7 @@ The JSON format for the above file is based on that produced using the _TextureP
 }
 ```
 
-SpritePackedManager only uses the frame property for each sprite so the minimal JSON format is.  It is recomended that you use the full file format cited above if you plan to use any SpriteMaps in your project.
+SpritePackedManager only uses the frame property for each sprite so the minimal JSON format is:
 
 ```javascript
 {   "frames": {
@@ -141,6 +141,7 @@ SpritePackedManager only uses the frame property for each sprite so the minimal 
 	}
 }
 ```
+However, it is recomended that you use the full file format cited above the previous image if you plan to use any SpriteMaps in your project.
 
 ## Create A Sprite Instant
 
@@ -150,7 +151,7 @@ For both managers, we can create instances of a sprite linked to a manager. Crea
 var sprite = new BABYLON.Sprite("sprite", manager);
 ```
 
-which uses the first sprite on the sheet
+which uses the first sprite on the sheet.
 
 Using a uniform spritesheet and SpriteManager you indicate which sprite to use will cellIndex, counting from the top sprite on the left in order right and down.
 
