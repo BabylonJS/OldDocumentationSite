@@ -114,3 +114,19 @@ var pathPoints = navigationPlugin.computePath(crowd.getAgentPosition(agent), nav
 pathLine = BABYLON.MeshBuilder.CreateDashedLines("ribbon", {points: pathPoints, updatable: true, instance: pathLine}, scene);
 ```
 
+## Baking result
+
+Building a navigation mesh can take a lot of cpu and network resources. In order to lower the download size and cpu needed, it's possible to bake the result of the navigation mesh computation to a byte stream. That byte stream can later be restored to get the navigation mesh back.
+
+To retrieve the binary representation of the computed navigation mesh:
+
+``` 
+var binaryData = navigationPlugin.getNavmeshData();
+```
+
+binaryData is an Uint8Array that you can save to a file for example.
+To restore an UInt8Array to a navigation mesh:
+
+```
+navigationPlugin.buildFromNavmeshData(uint8array);
+```
