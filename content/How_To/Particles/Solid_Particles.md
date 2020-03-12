@@ -119,7 +119,8 @@ The particle properties that can be set are :
 - **`isVisible`** : boolean default = true
 - **`alive`** : boolean default = true
 - **`translateFromPivot`** : boolean default = false
-- **`parentId`** : integer, default = null
+- **`parentId`** : integer, default = null  
+- **`props`**: any, default = null
 
 If you set a particle rotation quaternion, its rotation property will then be ignored.  
 If you set your SPS in billboard mode, you should only set a `rotation.z` value.
@@ -130,7 +131,7 @@ Example : https://playground.babylonjs.com/#LXXL6Y#1
 1000 tetrahedron satellites orbiting around 1000 rotating boxes.  
 Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.
 
-You can obviously also create your own properties like _acceleration: Vector3_ or _age_, in `initParticles()` for instance.
+In JavaScript, you can obviously also create your own properties like _acceleration: Vector3_ or _age_, in `initParticles()` for instance.  
 
 ```javascript
 SPS.initParticles = function() {
@@ -138,6 +139,10 @@ SPS.initParticles = function() {
     particles[p].age = Math.random() * 20;
   }
 };
+```
+If you use TypeScript (or JavaScript), you can associate your own properties to each particle with the property `props` typed `any` and `null` by default :
+```javascript
+particle.props = {myProp1: val1, myProp2: val2};
 ```
 
 You may also access to some read-only properties :
@@ -299,7 +304,9 @@ This _particle_ object has the following properties :
 | color              | Color4     | null                                                        |
 | uvs                | Vector4    | (0,0,1,1)                                                   |
 
-The expected usage is thus for instance:
+You can also read the current particle `shapeId` value with the property
+- **`shapeId`** : integer  
+The expected usage is thus for instance :  
 
 ```javascript
 var myBuilder = function(particle, i, s) {
@@ -553,8 +560,8 @@ You can set your particles as pickable with the parameter `isPickable` (default 
 var SPS = new BABYLON.SolidParticleSystem("SPS", scene, { isPickable: true });
 ```
 
-This will set the underlying mesh as pickable and populate an array called `SPS.pickedParticles`. So, don't set your SPS as pickable if you don't need it to be, this will save much memory.  
-This array has as many elements as the SPS mesh has many faces and each element is an object with these properties :
+This will set the underlying mesh as pickable and populate two arrays called `SPS.pickedParticles` and `SPS.pickebBySubMesh`. So, don't set your SPS as pickable if you don't need it to be, this will save much memory.  
+In order to retrieve the particle picking data from these arrays, use the method `SPS.pickedParticle(pickingInfo)` that returns an object with these properties :
 
 - `idx` : the picked particle idx
 - `faceId` : the face index of the picked particle (counted within this particle)
@@ -568,11 +575,12 @@ SPS.setParticles(); // initial SPS draw
 SPS.refreshVisibleSize(); // force the BBox recomputation
 scene.onPointerDown = function(evt, pickResult) {
   var meshFaceId = pickResult.faceId; // get the mesh picked face
-  if (faceId == -1) {
+  if (meshFaceId == -1) {
     return;
   } // return if nothing picked
-  var idx = SPS.pickedParticles[meshFaceId].idx; // get the picked particle idx from the pickedParticles array
-  var p = SPS.particles[idx]; // get the picked particle
+  var picked = SPS.pickedParticle(pickResult); // get the picked particle data : idx and faceId
+  var idx = picked.idx;                         
+  var p = SPS.particles[idx];                   // get the actual picked particle
   p.color.r = 1; // turn it red
   p.color.b = 0;
   p.color.g = 0;
@@ -582,8 +590,8 @@ scene.onPointerDown = function(evt, pickResult) {
 ```
 
 The SPS pickability is directly related to the size of its bounding box (please read 'SPS Visibility' part). So, in order to make sure your particles will be pickable, don't forget to force, at least once, the bounding box size recomputation once the particles are set in the space with `setParticles()`.  
-Pickable particle example (no SPS update in the render loop) : https://www.babylonjs-playground.com/#2FPT1A#41  
-Pickable particle example (particle rotation) : https://www.babylonjs-playground.com/#2FPT1A#14
+Pickable particle example (no SPS update in the render loop) : https://www.babylonjs-playground.com/#2FPT1A#351    
+Pickable particle example (particle rotation) : https://www.babylonjs-playground.com/#2FPT1A#352  
 
 ### Digest a Mesh
 
