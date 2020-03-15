@@ -52,6 +52,7 @@ This time, we only want 2 instances, and we said that our sprite’s size is 64x
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
 ## Sprite Packed Manager
+*This is available from BJS version 4.1*
 
 For sprites of varying sizes you need an image file and a JSON file containing the positional data of the sprites in the packed spritesheet. The image file and the JSON file should have the same name and be in the same folder, eg pack1.png and pack1.json.
 
