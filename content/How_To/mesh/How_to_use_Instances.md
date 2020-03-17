@@ -136,7 +136,7 @@ https://www.babylonjs-playground.com/#0720FC#10
 
 # Demos
 - Trees: https://www.babylonjs-playground.com/#YB006J#75
-- 10,000 Icospheres: https://playground.babylonjs.com/#c2ynt9#7
+- 10,000 Icospheres: https://playground.babylonjs.com/#c2ynt9#12
 
 ## Going further
 
