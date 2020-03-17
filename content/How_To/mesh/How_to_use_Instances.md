@@ -135,8 +135,8 @@ https://www.babylonjs-playground.com/#0720FC#10
 * Instances with a world matrix where determinant is different than root mesh world matrix will be rendered separately (like a regular mesh). This mostly happens when the sign of the scaling vector is different between an instance and the root mesh.
 
 # Demos
-Trees: https://www.babylonjs-playground.com/#YB006J#75
-10,000 Icospheres: https://playground.babylonjs.com/#c2ynt9#7
+- Trees: https://www.babylonjs-playground.com/#YB006J#75
+- 10,000 Icospheres: https://playground.babylonjs.com/#c2ynt9#7
 
 ## Going further
 
