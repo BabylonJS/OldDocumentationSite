@@ -25,6 +25,22 @@ We offer babylon.js' core and its modules as npm packages. The following are ava
 
 As the ES6 version is composed of many separated files the usual way to consume such packages is through Webpack or other bundlers. The following examples will be done with Webpack but you could rely on any of the tools you are familiar with.
 
+### Application Creation Summary
+
+1. Create new folder **MyAwesomeApp**
+2. Open **GitBash** (or similar) for **MyAwesomeApp**
+3. npm init
+4. npm install webpack webpack-cli webpack-dev-server --save-dev
+5. npm install --save-dev @babylonjs/core
+6. Create **index.html** file in **MyAwesomeApp** as described in `First App Section` below
+7. Create Folder **src** in **MyAwesomeApp**
+8. Create **index.js** file in **src** as described in `First App Section` below
+9. npx webpack-dev-server _to check result in_  `http://localhost:8080/`
+10. npx webpack _to create dist folder
+
+
+Read all the following sections for full description.
+
 ### Using Webpack
 
 First create a new folder where you will develop your app: `mkdir MyAwesomeApp` .
@@ -207,6 +223,8 @@ engine.runRenderLoop(() => {
 Finally you can run the local dev environment through the command `npx webpack-dev-server` .
 
 Open the browser and navigate to the url `http://localhost:8080/` . You should see a sphere and a plane using the Grid Material.
+
+To create the distribution folder `dist` use the command `npx webpack`
 
 ## Typescript
 
