@@ -4,13 +4,14 @@ This tutorial will guide you through the process of creating a material for the 
 
 First of all, you need to create a folder for your shader in the /materialsLibrary/src folder. Let's call it diffuseEmissive.
 Then you need to create your files:
-* babylon.diffuseEmissiveMaterial.ts (just copy/paste from babylon.simpleMaterial.ts)
-* diffuseEmissive.vertex.fx (just copy/paste from simple.vertex.fx)
-* diffuseEmissive.fragment.fx (just copy/paste from simple.fragment.fx)
+
+- babylon.diffuseEmissiveMaterial.ts (just copy/paste from babylon.simpleMaterial.ts)
+- diffuseEmissive.vertex.fx (just copy/paste from simple.vertex.fx)
+- diffuseEmissive.fragment.fx (just copy/paste from simple.fragment.fx)
 
 Then update the config.json file in the tools/gulp and add an entry in the "materialsLibrary/libraries" section of the file:
 
-```
+```javascript
   "libraries": [
     ...
       {
@@ -22,9 +23,9 @@ Then update the config.json file in the tools/gulp and add an entry in the "mate
   ]
 ```
 
-To build all materials and generate the *dist* folder, just run from the tools/gulp folder:
+To build all materials and generate the _dist_ folder, just run from the tools/gulp folder:
 
-```
+```bash
 gulp materialsLibrary
 ```
 
@@ -36,11 +37,11 @@ The simple material already supports diffuse texture.
 To add support for an emissive texture, let's add this code to the header of diffuseEmissive.vertex.fx file:
 
 ```
-#ifdef EMISSIVE 
-varying vec2 vEmissiveUV; 
-uniform mat4 emissiveMatrix; 
-uniform vec2 vEmissiveInfos; 
-#endif 
+#ifdef EMISSIVE
+varying vec2 vEmissiveUV;
+uniform mat4 emissiveMatrix;
+uniform vec2 vEmissiveInfos;
+#endif
 ```
 
 Then add this code in the main function:
@@ -80,56 +81,63 @@ Then add this code at the end of the main function (just before the last line (g
 
 ## Update the material
 
-First of all, rename all occurences of *SimpleMaterialDefines* to *DiffuseEmissiveMaterialDefines* and *SimpleMaterial* to *DiffuseEmissiveMaterial*.
+First of all, rename all occurences of _SimpleMaterialDefines_ to _DiffuseEmissiveMaterialDefines_ and _SimpleMaterial_ to _DiffuseEmissiveMaterial_.
 
-Then add this property to *SimpleMaterialDefines* class:
+Then add this property to _SimpleMaterialDefines_ class:
 
-```
+```javascript
 public EMISSIVE = false;
 ```
 
-Add this property to the *DiffuseEmissiveMaterial* class:
+Add this property to the _DiffuseEmissiveMaterial_ class:
 
-```
+```javascript
 public emissiveTexture: BaseTexture;
 ```
 
-Then go to *isReady* function and add this code in the `if (scene.textureEnabled)` block:
+Then go to _isReady_ function and add this code in the `if (scene.textureEnabled)` block:
 
-```
+```javascript
 if (this.emissiveTexture && StandardMaterial.EmissiveTextureEnabled) {
-	if (!this.emissiveTexture.isReady()) {
-    	return false;
-    } else {
-    	needUVs = true;
-        this._defines.EMISSIVE = true;
-	}
-} 
-```		
-
-The next function to update is *bind*. Add this code after the `//Textures` comment:
-
-```
-if (this.emissiveTexture && StandardMaterial.EmissiveTextureEnabled) {
-	this._effect.setTexture("emissiveSampler", this.emissiveTexture);
-
-    this._effect.setFloat2("vEmissiveInfos", this.emissiveTexture.coordinatesIndex, this.emissiveTexture.level);
-    this._effect.setMatrix("emissiveMatrix", this.emissiveTexture.getTextureMatrix());
+  if (!this.emissiveTexture.isReady()) {
+    return false;
+  } else {
+    needUVs = true;
+    this._defines.EMISSIVE = true;
+  }
 }
 ```
 
-You may also need to add this code to the *clone* function:
+The next function to update is _bind_. Add this code after the `//Textures` comment:
 
+```javascript
+if (this.emissiveTexture && StandardMaterial.EmissiveTextureEnabled) {
+  this._effect.setTexture("emissiveSampler", this.emissiveTexture);
+
+  this._effect.setFloat2(
+    "vEmissiveInfos",
+    this.emissiveTexture.coordinatesIndex,
+    this.emissiveTexture.level
+  );
+  this._effect.setMatrix(
+    "emissiveMatrix",
+    this.emissiveTexture.getTextureMatrix()
+  );
+}
 ```
+
+You may also need to add this code to the _clone_ function:
+
+```javascript
 if (this.emissiveTexture && this.emissiveTexture.clone) {
-	newMaterial.emissiveTexture = this.emissiveTexture.clone();
+  newMaterial.emissiveTexture = this.emissiveTexture.clone();
 }
-```		
-
-For completeness, you will also have to complete the *serialize* and *Parse* functions (This is only required if you want to save/load your material to a .babylon file).
-Please note that *serialize* function needs to output the complete material name to the serializationObject like here:
-
 ```
+
+For completeness, you will also have to complete the _serialize_ and _Parse_ functions (This is only required if you want to save/load your material to a .babylon file).
+Please note that _serialize_ function needs to output the complete material name to the serializationObject like here:
+
+```javascript
 serializationObject.customType = "BABYLON.SimplelMaterial";
 ```
 
@@ -141,50 +149,62 @@ To test your material, open the /materialsLibrary/index.html page. References ar
 
 Then add the material at line 120:
 
-```
-var diffuseEmissive = new BABYLON.DiffuseEmissiveMaterial("diffuseEmissive", scene); 
-diffuseEmissive.diffuseTexture = new BABYLON.Texture("textures/amiga.jpg", scene); 
-diffuseEmissive.diffuseTexture.uScale = 5; 
-diffuseEmissive.diffuseTexture.vScale = 5; 
+```javascript
+var diffuseEmissive = new BABYLON.DiffuseEmissiveMaterial(
+  "diffuseEmissive",
+  scene
+);
+diffuseEmissive.diffuseTexture = new BABYLON.Texture(
+  "textures/amiga.jpg",
+  scene
+);
+diffuseEmissive.diffuseTexture.uScale = 5;
+diffuseEmissive.diffuseTexture.vScale = 5;
 
-diffuseEmissive.emissiveTexture = new BABYLON.Texture("textures/amiga.jpg", scene); 
-diffuseEmissive.emissiveTexture.uScale = 10; 
+diffuseEmissive.emissiveTexture = new BABYLON.Texture(
+  "textures/amiga.jpg",
+  scene
+);
+diffuseEmissive.emissiveTexture.uScale = 10;
 diffuseEmissive.emissiveTexture.vScale = 10;
 ```
 
 Finally update the UI control:
 
-```
-gui.add(options, 'material', ['standard', 'simple', 'diffuseEmissive']).onFinishChange(function () {
-	switch (options.material) {
-		case "diffuseEmissive":
-			currentMaterial = diffuseEmissive;
-			break;
-		case "simple":
-			currentMaterial = simple;
-			break;
-		default:
-			currentMaterial = std;
-			break;
-		}
+```javascript
+gui
+  .add(options, "material", ["standard", "simple", "diffuseEmissive"])
+  .onFinishChange(function() {
+    switch (options.material) {
+      case "diffuseEmissive":
+        currentMaterial = diffuseEmissive;
+        break;
+      case "simple":
+        currentMaterial = simple;
+        break;
+      default:
+        currentMaterial = std;
+        break;
+    }
 
-		currentMesh.material = currentMaterial;
-	});
+    currentMesh.material = currentMaterial;
+  });
 ```
 
 ## Launch the test server
 
 To Launch the server, you can start from the tools/gulp folder:
 
-```
+```bash
 gulp webserver
 ```
+
 ## Using the material with Babylon.js file loader
 
-Babylon.js file format supports the use of custom material. You must provide a `serialize()` and a `Parse()` functions alongside with a `getClassName()` function. 
+Babylon.js file format supports the use of custom material. You must provide a `serialize()` and a `Parse()` functions alongside with a `getClassName()` function.
 To let the loader knows about your material, you will also need to add the following line to the code using your material:
 
-```
+```javascript
 Tools.RegisteredExternalClasses["MyMaterial"] = MyMaterial;
 ```
 

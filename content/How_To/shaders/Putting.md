@@ -87,7 +87,7 @@ Extracting the appropriate sections of Javascript code allows you to transfer th
 
 This method can easily be used in the Playground.
 
-[Playground Example From CYOS](http://www.babylonjs-playground.com/#1OH09K#131)
+[Playground Example From CYOS](https://www.babylonjs-playground.com/#1OH09K#131)
 
 ## Shader Code in &lt;script&gt; Tags
 
@@ -173,6 +173,19 @@ provide CORS is enabled for them.
 
 [Guide Example From Import](http://babylonjsguide.github.io/examples/importcode.html)
 
+## Shader Includes
+When building shaders sometimes you have parts of your code that will be reused between multiple shaders.  This is usually things like reused uniforms, functions, structs etc.  A powerful method that users have at their disposal is to accomplish this task is the 
+```javascript
+BABYLON.Effect.IncludesShadersStore["includeName"] = "..."
+```
+Already loaded in the includes are all the common shader elements for babylons StandardMaterial, PBR Materials, ProceduralTextures and more.  See the github [https://github.com/BabylonJS/Babylon.js/tree/master/src/Shaders/ShadersInclude](https://github.com/BabylonJS/Babylon.js/tree/master/src/Shaders/ShadersInclude) for a complete list of shader includes packaged with BJS.
+
+Additionally you can add anything you want to the IncludesShadersStore pre or post compilation of the scene. To access these includes simply call:
+```glsl
+#include<includeName>
+```
+In the appropriate section of your shader code to have them injected into your shader when it is compiled [see example](https://www.babylonjs-playground.com/#0MAYNY).
+
 ## Shader Builder
 
 This is an extension to BabylonJS. Copy and save the [source code](https://github.com/BabylonJS/Extensions/blob/master/ShaderBuilder/Babylonx.ShaderBuilder.js) for the extension and add as
@@ -199,7 +212,7 @@ mesh.material = new BABYLONX.ShaderBuilder()
 This method can be used in the Playground. However it does require the loading of the ShaderBuilder Javascript file and an `onLoad` 
 function before it can be called.
 
-* [Playground Example using ShaderBuilder](http://www.babylonjs-playground.com/#NCY1Q#36)
+* [Playground Example using ShaderBuilder](https://www.babylonjs-playground.com/#NCY1Q#36)
 
 # Further Reading
 

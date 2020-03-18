@@ -34,6 +34,16 @@ Each instance has the same material as the root mesh. They can vary on the follo
 * ```setPivotMatrix```
 * ```scaling```
 
+# Instancing a glTF object
+
+When you instanciate a glTF object, you need to make sure that the new instance will be under the same parent or you need to remove the parent from the source object.
+
+This is because every gltf file comes from a right handed world. To get it into Babylon.js left handed world, we are adding an arbitrary parent that is adding a negative scale on z.
+
+So when instancing a glTF object you have to (either):
+- Call `source.setParent(null)`
+- Or call `newInstance.setParent(source.parent)`
+
 # Custom buffers
 
 You also have the opportunity to specify per instance values for any attribute. For instance (no pun intended), if you want to have a specific color per instance, you only need to provide a vertex buffer flagged as "instanceable" and fill it with a color per instance:
@@ -124,8 +134,9 @@ https://www.babylonjs-playground.com/#0720FC#10
 
 * Instances with a world matrix where determinant is different than root mesh world matrix will be rendered separately (like a regular mesh). This mostly happens when the sign of the scaling vector is different between an instance and the root mesh.
 
-# Demo
-https://www.babylonjs-playground.com/#YB006J#75
+# Demos
+- Trees: https://www.babylonjs-playground.com/#YB006J#75
+- 10,000 Icospheres: https://playground.babylonjs.com/#c2ynt9#12
 
 ## Going further
 

@@ -90,7 +90,7 @@ material.diffuseTexture.uOffset = 0.25;
 material.diffuseTexture.vOffset = 0.5;
 ```
 
-* [Playground Example of Tiling and Offset](http://www.babylonjs-playground.com/#20OAV9#25)
+* [Playground Example of Tiling and Offset](https://www.babylonjs-playground.com/#20OAV9#25)
 
 ### Wireframe
 
@@ -135,13 +135,19 @@ Reflection of these can be simulated in Babylon.js using a _reflectionTexture_ w
 
 * [Playground Example Reflection Texture in Mirror](https://www.babylonjs-playground.com/#1YAIO7#21)  
 * [Playground Example Refraction Texture](https://www.babylonjs-playground.com/#22KZUW#15)  
-* [Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/?19)
+* [Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/#AQZJ4C)
 
 ### Procedural Textures
 
 These are texture that you can have some control over by changing some parameters. Find out more from the Further Reading list.
 
 * [Playground Example Procedural Textures](https://www.babylonjs-playground.com/#24C4KC#17)
+
+### Texture Packer
+
+A built in method to consolidate multiple textures into images sets.
+
+* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#G5BWAD#10)
 
 ### How Materials Work
 

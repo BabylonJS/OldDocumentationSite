@@ -52,6 +52,7 @@ This time, we only want 2 instances, and we said that our sprite’s size is 64x
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
 ## Sprite Packed Manager
+*This is available from BJS version 4.1*
 
 For sprites of varying sizes you need an image file and a JSON file containing the positional data of the sprites in the packed spritesheet. The image file and the JSON file should have the same name and be in the same folder, eg pack1.png and pack1.json.
 
@@ -122,7 +123,7 @@ The JSON format for the above file is based on that produced using the _TextureP
 }
 ```
 
-SpritePackedManager only uses the frame property for each sprite so the minimal JSON format is.  It is recomended that you use the full file format cited above if you plan to use any SpriteMaps in your project.
+SpritePackedManager only uses the frame property for each sprite so the minimal JSON format is:
 
 ```javascript
 {   "frames": {
@@ -141,6 +142,7 @@ SpritePackedManager only uses the frame property for each sprite so the minimal 
 	}
 }
 ```
+However, it is recomended that you use the full file format cited above the previous image if you plan to use any SpriteMaps in your project.
 
 ## Create A Sprite Instant
 
@@ -150,7 +152,7 @@ For both managers, we can create instances of a sprite linked to a manager. Crea
 var sprite = new BABYLON.Sprite("sprite", manager);
 ```
 
-which uses the first sprite on the sheet
+which uses the first sprite on the sheet.
 
 Using a uniform spritesheet and SpriteManager you indicate which sprite to use will cellIndex, counting from the top sprite on the left in order right and down.
 
@@ -202,7 +204,7 @@ player.playAnimation(0, 43, true, 100);
 ```
 The player sprite will be animated from frame 0 to frame 43. The third parameter is indicating if this animation will loop or not, true to loop. The last parameter is the delay between the frames (the smaller it is, the faster the animation).
 
-* [Playground Example Animation of Uniform Sprites**]( https://www.babylonjs-playground.com/?8).
+* [Playground Example Animation of Uniform Sprites](https://www.babylonjs-playground.com/#9RI8CG)
 
 It is also possible to use playAnimation with sprites from a packed spritesheet. It is worth double checking that the sprites to animate are consecutive and in the correct order in the JSON file.
 

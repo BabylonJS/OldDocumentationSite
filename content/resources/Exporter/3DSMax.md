@@ -160,6 +160,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Max Simultaneous Lights
     * Opacity/Transparency mode
     * Custom attributes
+    * RGB Multiply map
 
 * _Textures_
     * UV offset / scaling / angle
@@ -382,6 +383,18 @@ When exporting, the geometry of all meshes using a double sided material is dupl
 This mean that the exporter is automatically creating a back side. If you already have a back side, you should use a Multi-material instead.
 
 Moreover, the _Double sided_ material should not be confused with the _2-sided_ property of a _Standard_ material. This last property is used to put the same material to the front and back faces.
+
+## RGB Multiply map
+
+The RGB Multiply map can be used as an intermediate node between a bitmap texture and a material.
+
+![bitmap to RGB Multiply map to material](/img/exporters/3DSMax/RGBMultiplyMap.jpg)
+
+The texture is retreived from one channel and the color from the other one.
+
+Limitations:
+- only the diffuse texture (Standard material) and base color texture (Physical and Arnold materials) fields will accept a RGB Multiply map as input.
+- the RGB Multiply map must specify exactly a single texture. Two textures or two colors are not supported.
 
 ## Shell material
 

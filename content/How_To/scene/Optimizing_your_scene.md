@@ -53,6 +53,12 @@ scene.unfreezeActiveMeshes();
 
 Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
 
+Freezing active meshes list may cause some things on the scene to stop updating. One example is [RenderTargetTexture](/how_to/how_to_use_rendertargettexture_and_multiple_passes), if it's used by mesh materials. For that case RTT needs to be explicitly added to the list of active camera's custom render targets, which will guarantee that it ends up in the render list of the scene:
+
+```javascript
+camera.customRenderTargets.push(renderTargetTexture);
+```
+
 ## Not updating the bounding info
 In conjonction with `mesh.alwaysSelectAsActiveMesh` you can also decide to turn off bounding info synchronization. This way the world matrix computation will be faster as the bounding info will not be updated (this could be a problem if you want to use picking or collisions):
 

@@ -75,8 +75,8 @@ width|_(number)_ size of the width|size
 height|_(number)_ size of the height|size
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 sourcePlane|_(Plane)_ source plane (maths) the mesh will be transformed to|null
 
 * [Playground Example of a Plane](https://www.babylonjs-playground.com/#LXZPJK)
@@ -115,6 +115,8 @@ A variation on _CreateGround_ is [_CreateGroundFromHeightMap_](/babylon101/Heigh
 ## Face Colors or UV
 
 This is only available on a limited number of meshes that have distinct faces such as a box but not a sphere. This allows you to give each face for those meshes an individual color or image. [Find out about Face Colors and UV](/How_To/CreateBox_Per_Face_Textures_And_Colors).
+
+More about UV mapping on [Wikipedia](https://en.wikipedia.org/wiki/UV_mapping).
 
 ## Updatable
 

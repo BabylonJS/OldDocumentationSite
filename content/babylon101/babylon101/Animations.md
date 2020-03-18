@@ -51,6 +51,8 @@ Much information is in the parameters:
 
 Please note that by default Matrix values are not interpolated between keys which means that values are only the one from the key values even if we are between two keys. You can turn this feature on by calling `Animation.AllowMatricesInterpolation = true`. If matrix interpolation is enabled you can then either use Matrix.Lerp or Matrix.DecomposeLerp as interpolation tool. You can use `Animation.AllowMatrixDecomposeForInterpolation` to pick the one you want.
 
+Please also note that matrix interpolation will not be used if `animation.loopMode === BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE`.
+
 You can find a demo here: https://www.babylonjs-playground.com/frame.html#DMLMIP#1
 
 **Parameter 5** - Finally, you have to decide and enter the type of behavior this animation will take at its upper limit (e.g. will it continue on, will it begin again, will it stop at the last key value, etc.):
@@ -173,7 +175,7 @@ These commands will apply to every animation object contained in the Animatable'
 And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)
 
 ## Animations and promises
-Starting with Babylon.js v3.3, you can use promises to wait for an anmatable to end:
+Starting with Babylon.js v3.3, you can use promises to wait for an animatable to end:
 
 ```
 var anim = scene.beginAnimation(box1, 0, 100, false);
@@ -222,7 +224,7 @@ Here is the list of functions that you can change:
 
 You can use an extended function to create a quick animation:
 
-```Javascript
+```javascript
 Animation.CreateAndStartAnimation = function(name, mesh, targetProperty, framePerSecond, totalFrame, from, to, loopMode);
 ```
 
@@ -233,7 +235,7 @@ To be able to use this function, you need to know that :
 
 Here is a straightforward sample using the **CreateAndStartAnimation()** function :
 
-```Javascript
+```javascript
 BABYLON.Animation.CreateAndStartAnimation('boxscale', box1, 'scaling.x', 30, 120, 1.0, 1.5);
 ```
 Fast and easy. :)
@@ -350,7 +352,7 @@ There are three possible values you can give for EasingMode:
 
 Here is a straightforward sample to animate a torus within a ```CircleEase``` easing function :
 
-```Javascript
+```javascript
 //Create a Vector3 animation at 30 FPS
 var animationTorus = new BABYLON.Animation("torusEasingAnimation", "position", 30, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
 
@@ -386,13 +388,13 @@ Here is a pretty cool implementation using the bezier curve algorithm :
 
 ![](/img/how_to/Animations/bezier.jpg)
 
-```Javascript
+```javascript
 var bezierEase = new BABYLON.BezierCurveEase(0.32, -0.73, 0.69, 1.59);
 ```
 
 Finally, you can extend the **EasingFunction** base function to create your own easing function, like this :
 
-```Javascript
+```javascript
 var FunnyEase = (function (_super) {
   __extends(FunnyEase, _super);
   function FunnyEase() {
@@ -407,7 +409,7 @@ var FunnyEase = (function (_super) {
   return FunnyEase;
 })(BABYLON.EasingFunction);
 ```
-You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**]( https://www.babylonjs-playground.com/?20)
+You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](https://www.babylonjs-playground.com/#8ZNVGR)
 
 
 ## Complex animation
@@ -418,6 +420,13 @@ scene.registerBeforeRender(function () {
   //Your code here
 });
 ```
+
+The function set by ```registerBeforeRender()``` is run before every frame (usually
+~60 times per second) so animation is created by making small changes to object
+properties very quickly.
+
+A simple demonstration of complex animation can be found in the playground here:
+[Complex Animation Example](https://playground.babylonjs.com/#YJVTI6)
 
 This function can be very useful for complex animation like games, where characters have to move depending on many parameters.
 

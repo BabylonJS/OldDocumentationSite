@@ -12,6 +12,8 @@ When you are concerned about the orientation of the images on the faces then it 
 
 Using these methods on the above meshes there is no need for submaterials or submeshes.
 
+As a prerequisite, you may want to learn more about UV mapping on [Wikipedia](https://en.wikipedia.org/wiki/UV_mapping).
+
 ## Face Numbers
 
 The playground below shows that face numbering using `MeshBuilder.CreateBox` is that 
@@ -338,7 +340,7 @@ Also note that because of how a cylinder's mesh is constructed the horizontal co
 
 An extruded polygon has three surfaces top, bottom and extruded sides, face 0 is the top, face 1 the extruded sides and face 2 the bottom.
 
-* [Playground Example of Extruded Polygons for a House](http://www.babylonjs-playground.com/#RNCYVM#2)
+* [Playground Example of Extruded Polygons for a House](https://www.babylonjs-playground.com/#RNCYVM#2)
 
 ## Polyhedra.
 

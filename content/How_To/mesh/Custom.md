@@ -50,7 +50,7 @@ vertexData.indices = indices;
 vertexData.applyToMesh(customMesh);
 ```
 
-* [Playground Example Showing Custom Mesh with Positions and Indices](http://www.babylonjs-playground.com/#VKBJN#2)
+* [Playground Example Showing Custom Mesh with Positions and Indices](https://www.babylonjs-playground.com/#VKBJN#2)
 
 ## Normals 
 
@@ -116,7 +116,7 @@ Looking from the origin towards facet 3, 4, 5 then the order in the indices arra
 
 Looking from the origin towards facet 0, 1, 2 then the order in the indices array 0, 1, 2 around the facet is also clockwise.
 
-* [Playground Example Showing Custom Mesh with Normals](http://www.babylonjs-playground.com/#VKBJN#6)
+* [Playground Example Showing Custom Mesh with Normals](https://www.babylonjs-playground.com/#VKBJN#6)
 
 Reversing the order of one or both sets of facet indices in the playground will show how the normals change direction.
 
@@ -164,7 +164,7 @@ mat.backFaceCulling = false;
 
 Comment line 41 out in the following to see back face culling happening.
 
-* [Playground Example Both Facets](http://www.babylonjs-playground.com/#VKBJN#7)
+* [Playground Example Both Facets](https://www.babylonjs-playground.com/#VKBJN#7)
 
 ## Color
 
@@ -208,7 +208,7 @@ vertexData.applyToMesh(customMesh);
 ```
 In the playground below see what happens when you make the vertices on the red facet different colors.
 
-* [Playground Example Setting Vertex Colors](http://www.babylonjs-playground.com/#VKBJN#8) 
+* [Playground Example Setting Vertex Colors](https://www.babylonjs-playground.com/#VKBJN#8) 
 
 ### Notes on the Playground
 
@@ -222,9 +222,9 @@ For a more controlled lighting effects use a [material](/babylon101/Materials.ht
 
 Adding a light with direction the reverse of the current one will light both sides.
 
-* [Playground Example Both Sides Lit](http://www.babylonjs-playground.com/#VKBJN#104) 
+* [Playground Example Both Sides Lit](https://www.babylonjs-playground.com/#VKBJN#104) 
 
-* [Playground Example Both Sides Colour Variation](http://www.babylonjs-playground.com/#VKBJN#105) 
+* [Playground Example Both Sides Colour Variation](https://www.babylonjs-playground.com/#VKBJN#105) 
 
 ## Texture
 
@@ -292,7 +292,7 @@ gives:
 
 In the playground below clicking on next will cycle you through a variety of values for the uv coordinates.
 
-* [Playground Example Varying UV Values](http://www.babylonjs-playground.com/#VKBJN#14) 
+* [Playground Example Varying UV Values](https://www.babylonjs-playground.com/#VKBJN#14) 
 
 *Notes about Playground above*: The camera has been disabled for the above playground. The uv values are shown and the relative index are shown on the texture image. 
 One day this playground might improve. You will get some idea of how to achieve reflections and rotations of textures on a facet. However for a mesh the [arrangement of facets](/resources/Facets.html) must be considered when trying to achieve a particular texture mapping on the mesh.

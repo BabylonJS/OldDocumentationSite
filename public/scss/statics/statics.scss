@@ -12,8 +12,8 @@
         height: 100%;
         width: 56%;
         margin: 0 auto;
-        display: grid;
-        justify-content: flex-start;
+        display: flex;
+        justify-content: space-between;
 
         &.details {
             width: 80%;
@@ -22,6 +22,10 @@
         img {
             height: 100%;
             margin-left: -25px;
+        }
+
+        a, div {
+          width: 170px;
         }
     }
 
