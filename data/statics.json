@@ -246,6 +246,11 @@
                     "filename": "Tiled"
                 },
                 {
+                    "title": "Draw Bounding Boxes",
+                    "level": 1,
+                    "filename": "How_to_display_bounding_boxes"
+                },
+                {
                     "title": "Use decals",
                     "level": 1,
                     "filename": "Decals"
