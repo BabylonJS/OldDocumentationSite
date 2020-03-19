@@ -114,28 +114,34 @@ So what happens if you have a whole bunch of objects and you want to get the bou
 
 Like earlier, we'll make sure that we have a parent mesh, and that each object we want to include in the bounding box will be parented to that parent mesh.
 
-The fun technique here is that we can loop through an array of every "child mesh" of the parent. Let's start by declaring two new variables like this:
+The fun technique here is that we can loop through an array of every "child mesh" of the parent. Let's start by declaring a new variable that will be an array of all of the parent's child meshes.
 
 ```javascript
-let min = parent.getChildMeshes()[0].getBoundingInfo().boundingBox.minimumWorld;
-let max = parent.getChildMeshes()[0].getBoundingInfo().boundingBox.maximumWorld;
+let childMeshes = parent.getChildMeshes();
 ```
 
-We're setting the values of these min and max variables to the world min and world max bounding information for the first child mesh of the parent object.
-
-Now we can loop through all of the parent's child meshes and continually update the min and max values with the new bounding information of each comparative mesh. It looks like this:
+Next, let's declare two new variables that will hold the minimum and maximum bounding values.
 
 ```javascript
-for(let i=0; i<parent.getChildMeshes().length; i++){
-        let meshMin = parent.getChildMeshes()[i].getBoundingInfo().boundingBox.minimumWorld;
-        let meshMax = parent.getChildMeshes()[i].getBoundingInfo().boundingBox.maximumWorld;
+let min = childMeshes[0].getBoundingInfo().boundingBox.minimumWorld;
+let max = childMeshes[0].getBoundingInfo().boundingBox.maximumWorld;
+```
+
+We're setting the starting values of these min and max variables to the world min and world max bounding information for the first child mesh.
+
+Now we can loop through all of the child meshes and continually update the min and max values with the new bounding information of each comparative mesh. It looks like this:
+
+```javascript
+for(let i=0; i<childMeshes.length; i++){
+        let meshMin = childMeshes[i].getBoundingInfo().boundingBox.minimumWorld;
+        let meshMax = childMeshes[i].getBoundingInfo().boundingBox.maximumWorld;
 
         min = BABYLON.Vector3.Minimize(min, meshMin);
         max = BABYLON.Vector3.Maximize(max, meshMax);
     }
 ```
 
-SWEET! We did it! Nice job! Here's the playground result of those changes. [playground](https://playground.babylonjs.com/#4F33I3#5)
+SWEET! We did it! Nice job! Here's the playground result of those changes. [playground](https://playground.babylonjs.com/#4F33I3#6)
 
 To dive even further into bounding boxes, make sure to check out the API as well
 
