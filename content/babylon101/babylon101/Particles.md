@@ -920,6 +920,18 @@ The following features are not supported by GPU particles due to their inner nat
 
 * [Playground Example - GPU Particles](https://www.babylonjs-playground.com/#PU4WYI#4)
 
+## Snippet server
+
+Starting with Babylon.js v4.2, you can edit particle systems using the Inspector. You can then save them on Babylon.js snippet server.
+When you have a snippet Id, you can easily load the particle system using the following code:
+
+```
+var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 0.2, segments: 32}, scene);
+BABYLON.ParticleHelper.CreateFromSnippetAsync("T54JV7", scene, false).then(system => {
+    system.emitter = sphere;
+});
+```
+
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
 
