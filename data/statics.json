@@ -1276,26 +1276,6 @@
                 {
                     "title": "Using External Assets",
                     "filename": "External_PG_assets"
-                },
-                {
-                    "title": "Playground Based Tutorials",
-                    "filename": "PBT"
-                },
-                {
-                    "title": "Starter Guide for PBT",
-                    "filename": "Hiding_Editor_Lines"
-                },
-                {
-                    "title": "Using a Slider Guide for PBT",
-                    "filename": "PBT_slider"
-                },
-                {
-                    "title": "Intermediate Guide for PBT",
-                    "filename": "PBT_Writing"
-                },
-                {
-                    "title": "Advanced Guide for PBT",
-                    "filename": "PBT_previous_and_next"
                 }
             ]
         },
