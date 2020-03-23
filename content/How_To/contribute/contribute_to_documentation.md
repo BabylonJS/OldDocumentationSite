@@ -2,7 +2,7 @@
 PG_TITLE: Improve Documentation
 ---
 
-Since the engine is constantly evolving, you may notice some lacks in the documentation. You're going to know how to fix that!
+Since the engine is constantly evolving, you may notice some gaps in the documentation. You're going to know how to fix that!
 
 # The easy way
 
@@ -18,11 +18,11 @@ Then pick a page you want to update and select the edit button:
 
 You can now [use markdown](https://guides.github.com/features/mastering-markdown/) to edit the documentation page.
 
-Once done, try to quickly explain what is your modification for, and click on _Propose file change_ button:
+Once done, try to quickly explain what your modification is for, and click on the _Propose file change_ button:
 
 ![propose file change](/img/contribute/documentation/easy-submit.png)
 
-For now, your modification aren't yet in the main files. You have to ask to BabylonJS core team to validate and merge your work.
+For now, your modification isn't yet in the main files. You have to ask to BabylonJS core team to validate and merge your work.
 
 Press _Create pull request_ button:
 
@@ -40,13 +40,13 @@ Do not hesitate to read [Good Practice](#good-practices) section.
 
 # Deeper Changes
 
-Sometimes, quick edits like above are not sufficient. Indeed, you could want to run the documentation locally on your computer before pushing online, just to be sure nothing is broken.
+Sometimes, quick edits like above are not sufficient. Indeed, you might want to run the documentation locally on your computer before pushing online, just to be sure nothing is broken.
 
 Requirements:
 
 - a [Github](https://github.com) account
 - [git](https://www.git-scm.com/downloads)
-- [Github Desktop](https://desktop.github.com/) (optionnal, but makes local git repositories a lot more easy to use)
+- [Github Desktop](https://desktop.github.com/) (optional, but makes local git repositories easier to use)
 - [node.js](https://nodejs.org/en/)
 
 ## Forking
@@ -150,7 +150,7 @@ For example, let's say we want to add this page. We know that our new page will 
 ]
 ```
 
-Just add necessary informations about your new page:
+Just add necessary information about your new page:
 
 ```javascript
 /* [...] */
@@ -169,17 +169,17 @@ Just add necessary informations about your new page:
 /* [...] */
 ```
 
-Notice the filename field, this will be your new page filename (without markdown extension .md):
+Notice the filename field. This will be your new page filename (without markdown extension .md):
 
 ![new content](/img/contribute/documentation/further-new-content.png)
 
 ## Sending pull request
 
-A Pull Request (PR) have to be made so as to integrate your modifications on the documentation.
+A Pull Request (PR) has to be made to integrate your modifications into the documentation.
 
 You will first pull your local modifications into your online fork, then ask for merging your fork into the main repo.
 
-In Github Desktop, you will see all your modifications. Sometimes a file named `babylon.d.ts` will be automatically modified, it's not a problem to PR it.
+In Github Desktop, you will see all of your modifications. Sometimes a file named `babylon.d.ts` will automatically be modified, but there's no problem to PR with it.
 
 Add an explicit summary into the required field, and click to _Commit to master_:
 
@@ -211,7 +211,7 @@ Congratulation again, you're now a documentation master!
 - even if you're seeing just a tiny typo, feel free to do a pull request dedicated to it
 - do one commit per tasks, a pull request can take into account multiple commits if needed
   - example: if you have two pages to modify, once the first page is edited, do a commit
-- tables can be a great help for readibility
+- tables can be a great help for readability
 - avoid the use of first person
 - pay attention to spelling, grammar and punctuation
 - when you're not sure about a point, ask for proof-reading
@@ -219,11 +219,11 @@ Congratulation again, you're now a documentation master!
 ## Images
 
 - use and store images from the documentation FTP as much as possible, read [Adding new images](https://doc.babylonjs.com/how_to/contribute_to_documentation#adding-new-images)
-- be careful about image size (tip: Photoshop have a "Save for the web" export)
+- be careful about image size (tip: Photoshop has a "Save for the web" export)
 
 ## Code
 
-- when showing a javascript bloc of code, tell to markdown that it's javascript to be sure having syntax highlight:
+- when showing a JavaScript block of code, inform Markdown that it's JavaScript to ensure syntax highlighting:
 
 ![markdown code](/img/contribute/documentation/markdown-code.png)
 
