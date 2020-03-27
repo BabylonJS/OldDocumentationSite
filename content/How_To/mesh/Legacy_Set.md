@@ -90,7 +90,7 @@ Parameters are: name, width, depth, subdivs, scene
 
 Our *Playground Demo Scene 01* uses a CreateGround constructor... so you can see one in action by using the link below:
 
-http://www.babylonjs-playground.com/#TAZ2CB
+https://www.babylonjs-playground.com/#TAZ2CB
 
 # Ground From HeightMap
 

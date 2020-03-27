@@ -4,6 +4,8 @@ The Features manager, our XR plugin system, was born out of a simple need - stay
 
 Since APIs like [hit test](https://github.com/immersive-web/hit-test) and [anchors](https://github.com/immersive-web/anchors) are constantly changing, and currently still have different support in different browser versions, there was a need for "versioning" of the current development to keep up with API modifications over time.
 
+If you are a bit impatient you can check the [selected WebXR features](./WebXR_Selected_Features) section, but it is recommended to at least read this section quickly.
+
 ## How to use
 
 ### Construct a new features manager
@@ -224,4 +226,3 @@ WebXRFeaturesManager.AddWebXRFeature(nameOfFeature, (xrSessionManager, options) 
 ```
 
 This way you can enable the feature using its name whenever you wish to use it.
-

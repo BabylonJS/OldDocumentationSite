@@ -68,9 +68,9 @@ onmessage = function(evt) {
 Note that this feature is new and not yet compatible with every device or browser.
 You can check current support of offscreen canvas here: https://caniuse.com/#feat=offscreencanvas
 
-I you want to test the compatibility, you can add this condition before using offscreen canvas:
+If you want to test the compatibility, you can add this condition before using offscreen canvas:
 ```
-if ("OffscreenCanvas" in window && "transferControlToOffsceen" in canvas) { 
+if ("OffscreenCanvas" in window && "transferControlToOffscreen" in canvas) { 
     // Ok to use offscreen canvas
 }
 ```

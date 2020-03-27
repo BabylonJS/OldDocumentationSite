@@ -108,6 +108,14 @@ var source = BABYLON.Mesh.CreateBox("source", 1.0, scene);
 particleSystem.emitter = source;
 ```
 
+### Local space
+
+If the emitter is a mesh and you set `particleSystem.isLocal = true` then all particles will be generated into the mesh local space (so rotation or transforming the mesh will transform the entire particle system).
+
+**Please note that the MeshParticleEmitter is not supported by GPU Particle**
+
+Demo: https://www.babylonjs-playground.com/#LNRAI3
+
 ### World offset
 Starting with Babylon.js v4.0, you can set up a world offset to your particles with:
 ```
@@ -145,7 +153,7 @@ Fortunately things can be made more interesting very soon with the setting of mo
 See how to change the lifetime, size, and color of the particles, their rates of emission, direction of travel (optionally affected by gravity). You can also affect their rotation, speed and cloud shape. Below you can find [playground examples]() where you can alter some of these parameters.
 
 ### Lifetime
-The time taken for particles to disappear (or die) after being emitted can be varied. Once a particle dies a the particle is recycled foe emission. Their lifetime is given as a random range between a low and high value as in 
+The time taken for particles to disappear (or die) after being emitted can be varied. Once a particle dies, the particle is then recycled for reemission. Their lifetime is given as a random range between a low and high value as in 
 
 ```javascript
 // Life time of each particle (random between...)
@@ -204,7 +212,7 @@ To add a size gradient just call the following code:
 particleSystem.addSizeGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the factor to apply to particle initial size. In this case the particle will born with half of the initial size (which is computed from minScale and maxScale).
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the size. In this case the particle will be born with size 0.5 and will end its life with size 3.
 It is recommended to at least define a gradient for 0 and 1:
 
 ```
@@ -264,7 +272,7 @@ You can also define a more complex construct by providing two colors per gradien
 
 ```
 particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0), new BABYLON.Color4(1, 0, 1, 0));
-particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1)new BABYLON.Color4(1, 0, 1, 1));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1), new BABYLON.Color4(1, 0, 1, 1));
 ```
 
 In this case the color of the particle will be randomly picked between the two colors when the gradient will be reached.
@@ -813,8 +821,8 @@ By default the direction of the particles will be the normal of the surface of t
 
 ```
 meshEmitter.useMeshNormalsForDirection = false;
-meshEmitter.diection1 = new BABYLON.Vector3(0, 1, 0);
-meshEmitter.diection2 = new BABYLON.Vector3(0, -1, 0);
+meshEmitter.direction1 = new BABYLON.Vector3(0, 1, 0);
+meshEmitter.direction2 = new BABYLON.Vector3(0, -1, 0);
 ```
 
 **Please note that the MeshParticleEmitter is not supported by GPU Particle**
@@ -906,10 +914,23 @@ The following features are not supported by GPU particles due to their inner nat
 - Emit rate gradients are not supported
 - Start size gradients are not supported
 - Mesh emitter
+- Local space
 
 ### Playground
 
 * [Playground Example - GPU Particles](https://www.babylonjs-playground.com/#PU4WYI#4)
+
+## Snippet server
+
+Starting with Babylon.js v4.2, you can edit particle systems using the Inspector. You can then save them on Babylon.js snippet server.
+When you have a snippet Id, you can easily load the particle system using the following code:
+
+```
+var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 0.2, segments: 32}, scene);
+BABYLON.ParticleHelper.CreateFromSnippetAsync("T54JV7", scene, false).then(system => {
+    system.emitter = sphere;
+});
+```
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.

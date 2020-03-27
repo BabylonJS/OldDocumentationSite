@@ -90,7 +90,7 @@ material.diffuseTexture.uOffset = 0.25;
 material.diffuseTexture.vOffset = 0.5;
 ```
 
-* [Playground Example of Tiling and Offset](http://www.babylonjs-playground.com/#20OAV9#25)
+* [Playground Example of Tiling and Offset](https://www.babylonjs-playground.com/#20OAV9#25)
 
 ### Wireframe
 

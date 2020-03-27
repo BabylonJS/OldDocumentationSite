@@ -53,6 +53,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Backface culling
     * Opacity/Transparency mode
     * Custom attributes
+    * RGB Multiply map
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)

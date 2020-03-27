@@ -2,7 +2,7 @@ The WebXR API enables developers to create VR and AR experiences for the web. XR
 
 ## Current state
 
-The [WebXR W3C Proposal](https://immersive-web.github.io/webxr/) is currently in its draft phase. It is, however, already implemented in Chrome. Starting with version 79, WebVR has been deprecated and WebXR is enabled by default. Earlier browser versions had WebXR behind a configuration flag.
+The [WebXR W3C Proposal](https://immersive-web.github.io/webxr/) is currently in its draft phase. It is, however, already implemented in Chrome (check [caniuse.com](https://caniuse.com/#feat=webxr) to know about others browsers). Starting with version 79, WebVR has been deprecated and WebXR is enabled by default. Earlier browser versions had WebXR behind a configuration flag. 
 
 As the API continuously changes, it is difficult to keep up with feature changes. The latest chrome canary is notably the most XR-feature-complete browser and Google continuously updates the browser with new features. This is the main reason we introduced the [Features Manager](./WebXR_Features_Manager), which allows us to implement the newest version of official features with internal versioning without breaking backwards compatibility.
 
@@ -194,7 +194,7 @@ if (touchpad) {
 }
 ```
 
-Read more about the [XR Controllers system]().
+Read more about the [XR Controllers system](./WebXR_Controllers_Support).
 
 ### Legacy support
 
@@ -291,7 +291,8 @@ We recommend using the WebXR polyfill instead.
 1. [The WebXR Experience Helper](./WebXR_Experience_Helpers)
 1. [The Session Manager](./WebXR_Session_Manager)
 1. [The WebXR Camera](./WebXR_Camera)
-1. [WebXR Input Sources and Controller support](./WebXR_Controller_Support)
+1. [WebXR Input Sources and Controller support](./WebXR_Controllers_Support)
 1. [Features Manager and available features](./WebXR_Features_Manager)
+1. [Selected WebXR Features](./WebXR_Selected_Features)
 1. Augmented Reality
 1. Advanced usage, troubleshooting, tips and tricks

@@ -10,7 +10,7 @@ Here we just add an environment, a sphere, and XR support
 const xrHelper = await scene.createDefaultXRExperienceAsync();
 ```
 
-[Basic scene with XR support](https://playground.babylonjs.com/#9K3MRA)
+[Basic scene with XR support](https://playground.babylonjs.com/pg/9K3MRA)
 
 ### Adding teleportation
 
@@ -23,7 +23,7 @@ const xrHelper = await scene.createDefaultXRExperienceAsync({
 });
 ```
 
-[Basic example with teleportation](https://playground.babylonjs.com/#9K3MRA#1)
+[Basic example with teleportation](https://playground.babylonjs.com/pg/9K3MRA/revision/1)
 
 ### Adding a color picker to the basic scene
 
@@ -56,11 +56,16 @@ picker.onValueChangedObservable.add(function(value) {
 panel.addControl(picker);
 ```
 
-[WebXR color picker](https://playground.babylonjs.com/#9K3MRA#2)
+[WebXR color picker](https://playground.babylonjs.com/pg/9K3MRA/revision/2)
+
+## Other demos
+
+* [Goalkeeper training](https://playground.babylonjs.com/pg/PPM311/revision/63)
+* [Physics playground (beta)](https://playground.babylonjs.com/pg/B922X8/revision/19)
 
 ## Babylon.js scenes with XR support
 
-* [Mansion](https://www.babylonjs-playground.com/#JA1ND3#161)
-* [Hill Valley](https://www.babylonjs-playground.com/#JA1ND3#182)
-* [Espilit](https://www.babylonjs-playground.com/#JA1ND3#164)
-* [Skull-Pickup](https://playground.babylonjs.com/#ZNX043#15)
+* [Mansion](https://www.babylonjs-playground.com/pg/JA1ND3/revision/161)
+* [Hill Valley](https://www.babylonjs-playground.com/pg/JA1ND3/revision/182)
+* [Espilit](https://www.babylonjs-playground.com/pg/JA1ND3/revision/164)
+* [Skull-Pickup](https://playground.babylonjs.com/pg/ZNX043/revision/15)
