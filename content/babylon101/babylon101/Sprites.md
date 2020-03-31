@@ -51,6 +51,36 @@ This time, we only want 2 instances, and we said that our sprite’s size is 64x
 
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
+## Picking
+
+Sprites can be picked to interact with like in this example: https://www.babylonjs-playground.com/#9RI8CG#0
+
+To do so, you need to:
+- Turn on pikcing on the sprites you want: `sprite.isPickable = true;`
+- Enable SpriteManager to support picking: `spriteManager.isPickable = true;`
+
+To do picking you can use the `scene.pickSprite`:
+
+```
+var pickResult = scene.pickSprite(this.pointerX, this.pointerY);
+if (pickResult.hit) {
+	pickResult.pickedSprite.angle += 0.5;
+}
+```
+
+You can also use `multiPickSprite` to get all the sprites under the mouse:
+
+```
+var pickResult = scene.multiPickSprite(this.pointerX, this.pointerY);
+for (var i = 0; i < pickResult.length; i++) {
+    	pickResult[i].pickedSprite.angle += Math.PI / 4;
+}
+```
+
+By default picking will use the bounding rectangle of a sprite (for performance reason). You can set system to use sprite alpha value instead (coming from its texture). Picking will work in this case only if alpha > 0.5.
+
+Example here: https://www.babylonjs-playground.com/#9RI8CG#122
+
 ## Sprite Packed Manager
 *This is available from BJS version 4.1*
 
