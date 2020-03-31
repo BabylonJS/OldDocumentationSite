@@ -79,7 +79,7 @@ for (var i = 0; i < pickResult.length; i++) {
 
 By default picking will use the bounding rectangle of a sprite (for performance reason). You can set system to use sprite alpha value instead (coming from its texture). Picking will work in this case only if alpha > 0.5.
 
-Example here: https://www.babylonjs-playground.com/#9RI8CG#122
+Example here: https://www.babylonjs-playground.com/#9RI8CG#123
 
 ## Sprite Packed Manager
 *This is available from BJS version 4.1*
