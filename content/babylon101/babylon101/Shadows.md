@@ -190,6 +190,58 @@ You can also set `light.autoCalcShadowZBounds = true` to compute automatically t
 
 Starting with Babylon.js 4.1, Cascaded Shadow Maps are now available for directional lights. Check the [dedicated page](/babylon101/shadows_csm) for details.
 
+#### In-depth analyzing of Directional light position
+
+The light position is set as being `-light.direction` at creation time, and you can change it later on by accessing `light.position`.
+
+You need the light position to build the light view matrix used by the shadow generator to render the scene in the shadow map.
+
+Even if using an orthographic projection in the end (as you do for directional lights), you still need a view matrix to transform the geometry to the light coordinate system (where the "look at" vector corresponds to the light direction for directional lights). To build this matrix, you **really** need a position!
+
+Often you can read explanations about directional lights that says you don't need a position, but if you look at their code, you can see they use a `(0,0,0)` position to build their view matrix... Or in some others they don't explicitly put values in the translation part of the matrix, but it's still 0 values you get there by default.
+
+This position defines where the light frustum is positionned in the world. See [this PG](https://playground.babylonjs.com/#2898XM#3)
+
+![Light frustum](/img/how_to/directional1.png)
+The colored box is the light frustum and you can see the light gizmo representing the light position and direction. Everything in this box (and only things in this box) will be rendered in the shadow map.
+
+It's not very obvious in the screenshot, but the light position lies on the near plane. It's because we set `light.shadowMinZ = 0` (we have also set `light.shadowMaxZ = 3`, which is the distance to the far plane of the light frustum). If we change the value, the near plane (and the light frustum) will be moved accordingly (the light position being still the same):
+
+![ShadowMinZ changed](/img/how_to/directional2.png)
+Here `shadowMinZ = 0.5`. As you can see, a part of the sphere is now outside of the box and so is not rendered in the shadow map, making the shadow wrong. We could also have moved the light without changing the `shadowMinZ` value for the same result.
+
+You can play in the inspector by changing the position/direction of the light as well as the `shadowMinZ` / `shadowMaxZ` values of the shadow generator to better see how it works.
+
+By default, the x and y extents of the light frustum (the position of the left/right/top/bottom planes of the frustum) are automatically computed by Babylon because `light.autoUpdateExtends = true`. You can set this property to `false`, but there's currently no clean way to update the ortho left/right/top/bottom values manually because those properties are private (probably something to work on). So, if you want to set a fixed frustum, use the `shadowFrustumSize` property instead.
+
+The values for the near/far planes are stored in `shadowMinZ` and `shadowMaxZ`, properties that you can change (as in the PG). You can also let Babylon compute them automatically by setting `light.autoCalcShadowZBounds = true` (`false` by default). Note that when Babylon computes the bounds automatically, it does so by taking into account only the objects that are shadow casters! That's why if you activate it in the PG, you will see that the light frustum does not encompass the ground, which is not a shadow caster but only a receiver.
+
+**Important**:
+
+Normally, to know if a point is in shadow, you compute its projection into the light frustum, and if it is inside you compare its depth against the depth corresponding to this position in the shadow map. So, if the point is **NOT** inside the light frustum, it is not considered shadowed and should be fully lit.
+
+Look at this screenshot again:
+
+![Light frustum](/img/how_to/directional3.png)
+According to the explanations above, the points of the ground that are not inside the cube should not be shadowed! They still are because the shadowing code does not apply a rejection based on the depth, only on the x/y coordinates: if the point is inside the frustum according to the left/right/top/bottom planes it's ok, even if the point is farer than the far plane (or nearer than the near plane).
+
+**HOWEVER**, that's not the case for the PCF/PCSS filtering methods, they do take into account the depth for the rejection test (for historical reasons probably). Same screenshot than above but with PCF this time:
+
+![Shadows clipped](/img/how_to/directional4.png)
+As you can see, the shadows stop at the frustum boundaries. To correct the problem, you need to increase the light shadow far plane distance (`light.shadowMaxZ`).
+
+So at this point, you ask: why not setting `shadowMinZ` to a very small value (-1e10) and `shadowMaxZ` to a very big value (1e10) to get rid of those problems? One can even set the left/right/top/bottom properties to very small/big values and call it a day, no problems anymore with directional lights, our frustum is always big enough to contain all the objects of the scene.
+
+The problem is that you loose details/precision in the shadow map. The bigger your frustum (in x/y directions), the more objects will be projected to the same pixels in the shadow map, so the less details. The more stretched your frustum (in z direction), the less precision you have on the depth buffer as bigger ranges of Z values will have to be mapped to the [0, 1] range used for the final rendering.
+
+Here's a screenshot with `shadowMinZ=-50000` and `shadowMaxZ=50000` (PCF filtering):
+
+![Artifacts 1](/img/how_to/directional5.png)
+As you can see the shadow is wrong. The object (sphere) is very simple and the artifacts are not really visible (except that the size is wrong), but with other objects you will get much stronger artifacts. Also:
+
+![Artifacts 2](/img/how_to/directional6.png)
+It's the biggest artifact possible, the shadow disappeared! We have set `shadowMinZ=-100000.000` and `shadowMaxZ=5` without filtering methods.
+
 ### Customizing the projection matrix
 All lights need to provide a projection matrix to shadow generators in order to build the shadow map. You can define your own version by setting `light.customProjectionMatrixBuilder` value:
 ```
