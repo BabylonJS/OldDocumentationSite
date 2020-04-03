@@ -1514,7 +1514,7 @@ Associated release: https://github.com/BabylonJS/Babylon.js/releases/tag/4.0.3
 - [Sponza demo](http://www.babylonjs.com/Demos/Sponza/)
 - Support for procedural cube textures [Demo here](http://www.babylonjs.com/Demos/planet/) ([deltakosh](https://github.com/deltakosh))
 - New UniversalCamera which support keyboard, mouse, touch and gamepad ([davrous](https://github.com/davrous))
-- Point lights shadow mapping. [Demo here]( https://www.babylonjs-playground.com/#LYCSQ#12) ([deltakosh](https://github.com/deltakosh))
+- Point lights shadow mapping. [Demo here]( https://www.babylonjs-playground.com/#XDNVAY#0) ([deltakosh](https://github.com/deltakosh))
 - Introducing [Materials Library](https://github.com/BabylonJS/Babylon.js/tree/master/materialsLibrary) ([deltakosh](https://github.com/deltakosh))
     - Water material: //doc.babylonjs.com/extensions/Water. [Demo here](http://www.babylonjs.com/Demos/WaterMaterial/) ([julien-moreau](https://github.com/julien-moreau))
     - Fire material: //doc.babylonjs.com/extensions/fire. [Demo here](http://www.babylonjs.com/Demos/FireMaterial/) ([julien-moreau](https://github.com/julien-moreau))
