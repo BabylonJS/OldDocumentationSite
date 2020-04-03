@@ -169,7 +169,7 @@ Only point, directional and spot lights can cast shadows.
 
 ### Point lights
 Point lights use cubemaps rendering so please be cautious when enabling them as this could lead to some performance issues.
-You can also visit the [point light shadow map playground scene]( https://www.babylonjs-playground.com/#LYCSQ#12)
+You can also visit the [point light shadow map playground scene]( https://www.babylonjs-playground.com/#XDNVAY#0)
 
 Furthermore, `BlurExponentialShadowMap` and `CloseBlurExponentialShadowMap` are not supported by point lights (mostly because blurring the six faces of the cubemap would be too expensive).
 
