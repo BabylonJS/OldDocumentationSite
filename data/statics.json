@@ -422,6 +422,11 @@
                     "filename": "Node_Material"
                 },
                 {
+                    "title": "How To use the Raw Texture",
+                    "level": 1,
+                    "filename": "rawTexture"
+                },
+                {
                     "title": "Use Dynamic Texture",
                     "level": 1,
                     "filename": "DynamicTexture"
