@@ -305,3 +305,11 @@ interface ICameraInput<TCamera extends BABYLON.Camera> {
     checkInputs?: () => void;
 }
 ```
+# How to Make a Walk and Look Around Camera
+The following example customizes the keyboard and mouse inputs to a universal camera. With this change, using the arrow keys you can walk forwards and backwards in the scene and rotate to look left and right. Using the mouse you can look around and above and below. 
+
+In the example there are two viewports, the upper one gives a first person view as you move and look around. The lower one gives a representation of the camera and the collision volume surrounding it.
+
+Remember to click on the scene before using the arrow keys.
+
+* [Playground Example - Walk and Look Camera](https://www.babylonjs-playground.com/#6PA720)

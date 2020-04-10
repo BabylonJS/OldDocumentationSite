@@ -132,7 +132,7 @@ It's important to note that these categories are evaluated from top to bottom, s
 
 ## The transparencyMode property
 
-This is a property on `StandardMaterial` and `PBR` materials. It exists for PBR materials since they were introduced, and since v4.2 for `StandardMaterial`.
+This is a property on `StandardMaterial` and `PBR` materials. It exists for PBR materials since they were introduced, and since v4.1 for `StandardMaterial`.
 
 As you may see above, categorizing a mesh depends on a number of properties and it is not always easy to infer the right category. The `transparencyMode` property can help in that matter, as well as enabling alpha test + alpha blend modes simultaneously.
 
