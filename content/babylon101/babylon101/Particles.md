@@ -112,8 +112,6 @@ particleSystem.emitter = source;
 
 If the emitter is a mesh and you set `particleSystem.isLocal = true` then all particles will be generated into the mesh local space (so rotation or transforming the mesh will transform the entire particle system).
 
-**Please note that the MeshParticleEmitter is not supported by GPU Particle**
-
 Demo: https://www.babylonjs-playground.com/#LNRAI3
 
 ### World offset
@@ -914,7 +912,6 @@ The following features are not supported by GPU particles due to their inner nat
 - Emit rate gradients are not supported
 - Start size gradients are not supported
 - Mesh emitter
-- Local space
 
 ### Playground
 
