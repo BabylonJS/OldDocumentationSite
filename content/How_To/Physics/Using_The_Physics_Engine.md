@@ -160,6 +160,8 @@ Options is a JSON. The interface is as follows:
 * nativeOptions: is a JSON with native options of the selected physics plugin. More about it in the advanced tutorial.
 * ignoreParent: when using babylon's parenting system, the physics engine will use the compound system. To avoid using the compound system, set this flag to true. More about it in the advanced tutorial.
 * disableBidirectionalTransformation: will disable the bidirectional transformation update. Setting this will make sure the physics engine ignores changes made to the mesh's position and rotation (and will increase performance a bit)
+* group: set the collision group (ammojs only)
+* mask: collision bit mask. Only impostor's group that have at least one bit in the mask will have collisions (ammojs)
 
 #### scene
 
