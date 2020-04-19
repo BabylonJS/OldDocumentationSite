@@ -141,7 +141,7 @@ Now we have all the dependencies created, create an index.html file in the `MyAw
 </html>
 ```
 
-This will only have a fullscreen canvas as well as a reference to our application file (by default webpack output during development is "main.js"); 
+This will only have a fullscreen canvas as well as a reference to our application file (by default webpack output during development is "main.js");
 
 Once done you can create a `src` folder containing an index.js file with the following content:
 
@@ -228,7 +228,7 @@ To create the distribution folder `dist` use the command `npx webpack`
 
 ## Typescript
 
-Switching the project to typescript is pretty straight forward. First in the previous example `MyAwesomeApp` folder we need to install typescript and one of the module allowing the use of typescript in webpack: `npm install typescript ts-loader --save-dev` 
+Switching the project to typescript is pretty straight forward. First in the previous example `MyAwesomeApp` folder we need to install typescript and one of the module allowing the use of typescript in webpack: `npm install typescript ts-loader --save-dev`
 
 Once done we can replace our previous index.js by its typescript equivalent index.ts:
 
@@ -347,7 +347,7 @@ From the beginning you could wonder why using these ES6 packages vs the default 
 
 This means the previous example is now requiring about 700Kb vs 2.3Mb before.
 
-**Please note we are continuing to improve our min package size by decoupling a bit more our packages so if you spot any unnecessary dependency, please, do not hesitate to create an issue on [GitHub](https://www.github.com/babylonjs/babylonjs).**
+**Please note we are continuing to improve our min package size by decoupling a bit more our packages so if you spot any unnecessary dependency, please, do not hesitate to create an issue on [GitHub](https://github.com/BabylonJS/Babylon.js).**
 
 **As you will see in the next paragraph, you also need to target individual files to fully benefit from tree shaking in your app.**
 
@@ -359,7 +359,7 @@ Easy call, we could move those functions elsewhere and we did exactly this by cr
 
 As a result, it is impossible for Webpack and the other bundlers to determine if imports are safe to be removed when not used so if you import directly from index, all the imports will be followed and included in your packages.
 
-The treatment even if a bit annoying is simple: you need to import manually only from the modules you need. This will force you to target your imports on the dedicated modules (vs index ones) if you want to fully benefit from tree shaking. The folder structure should be natural enough and in case you are finding some modules in not intuitive locations, do not hesitate to file an issue on [GitHub](https://www.github.com/babylonjs/babylonjs) and we will be more than happy to document it here.
+The treatment even if a bit annoying is simple: you need to import manually only from the modules you need. This will force you to target your imports on the dedicated modules (vs index ones) if you want to fully benefit from tree shaking. The folder structure should be natural enough and in case you are finding some modules in not intuitive locations, do not hesitate to file an issue on [GitHub](https://github.com/BabylonJS/Babylon.js) and we will be more than happy to document it here.
 
 ### FAQ
 
@@ -497,4 +497,3 @@ In Babylon.js the loaders you can install from `@babylonjs/loaders` are actually
 
 [How To Get Babylon.js](/babylon101/how_to_get)  
 [NPM Support](/features/NPM_Support)
-
