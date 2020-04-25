@@ -99,7 +99,7 @@ Finally, add code to call the scene. This enables the engine to continually rend
 
    <body>
 
-	<canvas id="renderCanvas" touch-action="none"></canvas> //touch-action="none" for best results from PEP
+	<canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
 
 	<script>
         var canvas = document.getElementById("renderCanvas"); // Get the canvas element
