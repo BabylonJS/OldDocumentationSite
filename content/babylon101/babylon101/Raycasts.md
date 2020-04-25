@@ -168,6 +168,32 @@ Ray.intersectsMesh(mesh, fastCheck) → PickingInfo
 
 ---
 
+## Picking Ray ## 
+
+Another handy feature is the createPickingRay. This special ray is cast from a camera, out to infinity, in the direction of the cursor (relative to the virtual lens). Confusing? Basically think of it as a ray that's cast out of the camera and 'aimed' by the cursor. This is another method for picking objects in your scene. Here's a playground and video to check out on the subject. 
+
+ https://playground.babylonjs.com/#AC8XPN
+
+[![](http://img.youtube.com/vi/dgsWKpa7RcY/0.jpg)](http://www.youtube.com/watch?v=dgsWKpa7RcY "Picking Meshes with Rays")
+
+---
+
+An other method is to use directly the **Ray class**.
+
+To change the ray to a local space :
+
+```javascript
+Ray.Transform(ray, matrix) → Ray
+```
+
+Checking intersection:
+
+```javascript
+Ray.intersectsMesh(mesh, fastCheck) → PickingInfo
+```
+
+---
+
 ## Debugging 
 
 It could be tough to understand where a ray starts and is its direction. To help you debug you can then use the RayHelper.
