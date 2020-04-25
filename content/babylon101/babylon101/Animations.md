@@ -250,7 +250,7 @@ Although this playground is blending the same animation into itself, more often,
 
 ## Animation weights
 
-Starting with Babylon.js 3.2, you can start animations with a specific weight. This means that you can use this API to rung multiple animations simultaneously on the same target. The final value will be a mix of all animations weighted based on their weight value.
+Starting with Babylon.js 3.2, you can start animations with a specific weight. This means that you can use this API to run multiple animations simultaneously on the same target. The final value will be a mix of all animations weighted based on their weight value.
 
 To start an animation with a weight, you can use the new `scene.beginWeightedAnimation` API:
 
