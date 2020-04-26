@@ -56,7 +56,7 @@ Each image of a sprite must be contained in a 64 pixel square, no more no less.
 Sprites can be picked to interact with like in this example: https://www.babylonjs-playground.com/#9RI8CG#0
 
 To do so, you need to:
-- Turn on pikcing on the sprites you want: `sprite.isPickable = true;`
+- Turn on picking on the sprites you want: `sprite.isPickable = true;`
 - Enable SpriteManager to support picking: `spriteManager.isPickable = true;`
 
 To do picking you can use the `scene.pickSprite`:
