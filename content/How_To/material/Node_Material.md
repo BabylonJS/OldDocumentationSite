@@ -749,6 +749,112 @@ By default, the node material provides the following blocks:
     * Inputs: 
       * vector: Vector4 
 
+* PBR: (since 4.2)
+  * `AmbientOcclusion`: The ambient occlusion module of the PBR material
+    * Inputs:
+      * texture: Color3
+      * intensity: Float
+      * directLightIntensity: Float
+    * Outputs:
+      * ambientOcclusion: can only be used as input of the `PBRMetallicRoughness` block
+  * `Anisotropy`: The anisotropy module of the PBR material
+    * Inputs:
+      * intensity: Float
+      * direction: Vector2
+      * texture: Color3
+      * uv: Vector2
+      * worldTangent: Vector4
+    * Outputs:
+      * anisotropy: can only be used as input of the `PBRMetallicRoughness` block
+  * `ClearCoat`: The clear coat module of the PBR material
+    * Inputs:
+      * intensity: Float
+      * roughness: Float
+      * ior: Float
+      * texture: Color3
+      * bumpTexture: Color4
+      * uv: Vector2
+      * tintColor: Color3
+      * tintAtDistance: Float
+      * tintThickness: Float
+      * tintTexture: Color4
+      * worldTangent: Vector4
+    * Outputs:
+      * clearcoat: can only be used as input of the `PBRMetallicRoughness` block
+  * `PBRMetallicRoughness`: The PBR material implementing the metallic/roughness model
+    * Inputs:
+      * worldPosition: Vector4
+      * worldNormal: Vector4
+      * perturbedNormal: Vector4
+      * cameraPosition: Vector3
+      * baseColor: Color4
+      * baseTexture: Color4
+      * opacityTexture: Color4
+      * ambientColor: Color3
+      * reflectivity: output of the `Reflectivity` block
+      * ambientOcclusion: output of the `AmbientOcclusion` block
+      * reflection: output of the `Reflection` block
+      * sheen: output of the `Sheen` block
+      * clearcoat: output of the `ClearCoat` block
+      * subsurface: output of the `SubSurface` block
+      * anisotropy: output of the `Anisotropy` block
+    * Outputs:
+      * ambient: Color3
+      * diffuse: Color3
+      * specular: Color3
+      * sheenDir: Color3
+      * clearcoatDir: Color3
+      * diffuseInd: Color3
+      * specularInd: Color3
+      * sheenInd: Color3
+      * clearcoatInd: Color3
+      * refraction: Color3
+      * lighting: Color3
+      * shadow: Float
+      * alpha: Float
+  * `Reflection`: The reflection module of the PBR material
+    * Inputs:
+      * position: Vector3
+      * world: Matrix
+      * view: Matrix
+      * color: Color3
+    * Outputs:
+      * reflection: can only be used as input of the `PBRMetallicRoughness` block
+  * `Reflectivity`: The reflectivity module of the PBR material
+    * Inputs:
+      * metallic: Float
+      * roughness: Float
+      * texture: Color4
+    * Outputs:
+      * reflectivity: can only be used as input of the `PBRMetallicRoughness` block
+  * `Refraction`: The refraction module of the PBR material (used by the `SubSurface` block)
+    * Inputs:
+      * intensity: Float
+      * indexOfRefraction: Float
+      * tintAtDistance: Float
+      * view: Matrix
+    * Outputs:
+      * refraction: can only be used as input of the `SubSurface` block
+  * `Sheen`: The sheen module of the PBR material
+    * Inputs:
+      * intensity: Float
+      * color: Color3
+      * roughness: Float
+      * texture: Color4
+    * Outputs:
+      * sheen: can only be used as input of the `PBRMetallicRoughness` block
+  * `SubSurface`: The sub surface module of the PBR material
+    * Inputs:
+      * minThickness: Float
+      * maxThickness: Float
+      * thicknessTexture: Color4
+      * tintColor: Color3
+      * translucencyIntensity: Float
+      * translucencyDiffusionDistance: Color3
+      * refraction: output of the `Refraction` block
+    * Outputs:
+      * subsurface: can only be used as input of the `PBRMetallicRoughness` block
+
 * Range:
   * `Clamp`: Outputs values above the maximum or below minimum as maximum or minimum values respectively.
     * Input: 
@@ -1004,6 +1110,40 @@ If `ALPHATEST = 1`, the computed value is `alphaCutOff`, which is the expected i
 If `ALPHATEST = 0`, the computed value is `-1 + alphaCutOff`. As `alphaCutOff` is a value between 0 and 1, `-1 + alphaCutOff` will always be lower or equal to 0. So, `Discard.cutoff` <= 0 in that case, meaning the fragment will never be discarded (which is the expected result when alpha testing is disabled).
 
 You could also have used `Lerp(0, alphaCutOff, ALPHATEST)` as the input for `Discard.cutoff`, but it's likely that the addition + subtraction used above is faster than a `Lerp` on GPUs (would need some benchmarking to be sure), even if it's by a small (negligible) margin.
+
+## Creating PBR materials
+
+You can use those playgrounds and materials as starting points for your own experiments to create PBR materials in the NME (note that the node material may take some time to load in the PG - the mesh will stay black until the material is loaded):
+*  Full use of all PBR blocks:
+  * PG: https://playground.babylonjs.com/#D8AK3Z
+  * Material: https://nme.babylonjs.com/#IFJ86Q
+* PBR material with sheen only:
+  * PG: https://playground.babylonjs.com/#MUX769#1
+  * Material: https://nme.babylonjs.com/#IFJ86Q#1
+* PBR material with clear coat only:
+  * PG: https://playground.babylonjs.com/#0XSPF6
+  * Material: https://nme.babylonjs.com/#IFJ86Q#2
+* PBR material with sub surface only:
+  * PG: https://playground.babylonjs.com/#7QAN2T
+  * Material: https://nme.babylonjs.com/#IFJ86Q#3
+
+The inputs of the different PBR blocks are using the same names as in the `PBRMetallicRoughnessMaterial` class, so you can refer to [this doc](https://doc.babylonjs.com/api/classes/babylon.pbrmetallicroughnessmaterial) for explanations about them.
+
+Some of the parameters are available as properties when clicking on the block in the NME.
+
+For eg, for `Reflection`:
+
+![Discard](/img/how_to/Materials/nme_reflection_prop.png)
+
+Or for `PBRMetallicRoughness`:
+
+![Discard](/img/how_to/Materials/nme_pbr_prop.png)
+
+As for the standard `PBRMaterial`, if no texture is provided for the **Reflection** / **Refraction** texture, the one declared at the scene level (`scene.environmentTexture`) is used instead.
+
+By default, if something is connected to the `a` input of the `FragmentOutput` block, alpha blending is enabled. If you don't need alpha blending, don't connect this input.
+
+Regarding the `PBRMetallicRoughness` block, you have access to each output component separately (`ambient`, `diffuse`, `specular`, ...) if you want or you can directly use `lighting` to get the composite output. In the names of the separate outputs, `dir` means `direct` (component from direct lights) and `Ind` means `Indirect` (component from indirect lighting, meaning the environment).
 
 ## Loading from a file saved from the Node Material Editor
 
