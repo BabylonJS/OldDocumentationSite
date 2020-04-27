@@ -508,25 +508,36 @@ if (otherParticle) {
 ### Update Each Particle Shape
 
 - `SPS.updateParticleVertex()` _usage_ :  
-  It happens before particle scaling, rotation and translation and it allows to update the vertex coordinates of each particle.  
-  This function will be called for each vertex of each particle and it will be passed the current particlen the current vertex and its current index in the particle shape.
+  It happens before particle scaling, rotation and translation and it allows to update the vertex coordinates, color and UV of each particle.  
+  This function will be called for each vertex of each particle and it will be passed the current particle, the current vertex and its current index in the particle shape.  
+  The vertex is a SolidParticleVertex object, so you can access or set its properties :
+  ```javascript
+  vertex.position: Vector3 (x, y, z)
+  vertex.color: Color4 (r, g, b, a)
+  vertex.uv: Vector2 (x, y)
+  ```
 
 ```javascript
 SPS.computeParticleVertex = true; // false by default for performance reason
 SPS.updateParticleVertex = function(particle, vertex, v) {
   // particle : the current particle object
-  // vertex : the current vertex, a Vector3
+  // vertex : the current vertex, a solidParticleVertex object
   // the index of the current vertex in the particle shape
   // example :
   if (particle.shapeID == 1) {
-    vertex.x *= Math.random() + 1;
-    vertex.y *= Math.random() + 1;
-    vertex.z *= Math.random() + 1;
+    vertex.position.x *= Math.random() + 1;
+    vertex.position.y *= Math.random() + 1;
+    vertex.position.z *= Math.random() + 1;
+    vertex.color.r = Math.abs(Math.sin(v));
+    vertex.color.g = 1 - vertex.color.r
+    vertex.uv.x = particle.idx + v;
+    vertex.uv.y = vertex.uv.x;
   }
+
 };
 ```
 
-Note well that this vertex update is not stored (the particle shape isn't modified) but just computed in the next call to `setParticles()`. So there is no value accumulation : the vertex coordinates are always the initial ones when entering this function.  
+Note well that this vertex update is not stored (the particle shape isn't modified) but just computed in the next call to `setParticles()`. So there is no value accumulation : the vertex coordinates, colors or UVs are always the initial ones when entering this function.  
 Note also that the shape reference for each particle is the original shape of the mesh model you passed in `addShape()`, even if you had passed also a custom `vertexFunction` (see in the part : "Going furhter in immutable SPS").  
 The good news is that the very same function can be use for `SPS.updateParticleVertex` and for the custom `vertexFunction` expected by `addShape()`.  
 So to better understand how it works, here is another global pseudo-code schema :
@@ -549,8 +560,8 @@ function setParticles() {
 }
 ```
 
-Example : https://www.babylonjs-playground.com/#1X7SUN#5  
-or dancing worms : https://www.babylonjs-playground.com/#1X7SUN#7
+Example : https://www.babylonjs-playground.com/#1X7SUN#11    
+or dancing glow-worms : https://www.babylonjs-playground.com/#1X7SUN#12  
 
 ### Pickable Particles
 
@@ -824,7 +835,7 @@ The test done by `isInFrustum()` has also its own CPU cost, so it's probably not
 Actually, it's up to you to choose if the test is worth it for your own need.  
 Let's imagine a case where each particle computation is really intensive (example : when using `computeParticleVertex`). In this case, the frustum test could be faster than the particle computation, so it would be interesting to use it to disable the particle computation for particles outside the frustum.  
 In this following example, the computation charge is directly related to the number of vertices and shouldn't change whatever the camera direction. But, as we disable the particles outside the frustum, if you rotate the camera to isolate one or two worms in the camera field, you can check the performance gain  
-https://www.babylonjs-playground.com/#BKX11Q  
+https://www.babylonjs-playground.com/#BKX11Q#2    
 Note : the default culling strategy used in the particle frustum test is the fastest (`BoundingSphereOnly`).  
 You can change it at will for each particle by using the same values than the static properties `CULLINGSTRATEGY_XXX` ones of the `AbstractMesh` class.
 
