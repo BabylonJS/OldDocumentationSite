@@ -1173,6 +1173,17 @@ BABYLON.NodeMaterial.ParseFromSnippetAsync("2F999G", scene).then(nodeMaterial =>
 });
 ```
 
+## Node material examples
+
+Here are some node material examples that you can use "as is" or extend with the NME:
+* Standard material with alpha support: http://nme.babylonjs.com/?#AT7YY5#6
+* Standard material without alpha support: http://nme.babylonjs.com/?#AT7YY5#7
+* Full use of all PBR blocks: https://nme.babylonjs.com/#IFJ86Q
+* PBR material with sheen only: https://nme.babylonjs.com/#IFJ86Q#1
+* PBR material with clear coat only: https://nme.babylonjs.com/#IFJ86Q#2
+* PBR material with sub surface only: https://nme.babylonjs.com/#IFJ86Q#3
+* `GridMaterial` recreated as a node material: https://nme.babylonjs.com/#I4DJ9Z
+
 ## Going further
 
 Here is a list of tutorials and informational videos about Node Material:
