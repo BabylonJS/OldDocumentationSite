@@ -131,6 +131,42 @@ The following link gives you a good appreciation of the softening of shadows as 
 
 Only Point and Directional lights are currently supported by PCSS.
 
+## Transparent objects / shadows
+
+For transparent objects to cast shadows, you must set the `transparencyShadow` property to `true` on the shadow generator:
+
+![Transparent objects cast shadows](/img/how_to/shadows/transparencyShadow.jpg)
+
+Playground: https://playground.babylonjs.com/#6PITC0
+
+Starting with Babylonjs v4.2, you can simulate soft transparent shadows for transparent objects. To do this, you need to set the `enableSoftTransparentShadow` property to `true` on the shadow generator:
+
+![Transparent objects cast soft transparent shadows](/img/how_to/shadows/softTransparentShadows.jpg)
+
+Playground: https://playground.babylonjs.com/#LKA8VM
+
+It works by generating some dithering patterns in the shadow map, based on the alpha value of the fragment. This pattern can be visible, depending on your objects (being zoomed or not) and/or on the filtering method used.
+
+Here's for example what it looks like when you don't set a filtering method:
+
+![Transparent objects cast soft transparent shadows - no filtering](/img/how_to/shadows/softTransparentNoFilter.jpg)
+
+The patterns are clearly visible.
+
+Even when using a filtering method, you could still be able to see the patterns if zooming too much (filtering=PCF):
+
+![Transparent objects cast soft transparent shadows - PCF filtering](/img/how_to/shadows/softTransparentPCF.jpg)
+
+With Blur exponential, however, you can zoom quite a lot and still get good shadows:
+
+![Transparent objects cast soft transparent shadows - BlurExp filtering](/img/how_to/shadows/softTransparentBlurExp.jpg)
+
+So, you may need to test different filtering methods to find the best one for your case.
+
+![Transparent objects cast soft transparent shadows - bottles](/img/how_to/shadows/softTransparentBottles.jpg)
+
+This one was generated with PCF, for eg.
+
 ## Examples
 
 You can find a live example here: 
@@ -414,7 +450,7 @@ material.shadowDepthWrapper = shadowDepthWrapper;
 
 It works for any type of materials, being a `CustomMaterial`, `PBRCustomMaterial`, `ShaderMaterial` or `NodeMaterial` instances. There's no point of using this for `StandardMaterial` and `PBRMaterial` materials because the standard shadow map shader already handles the types of deformation / alpha rejection those materials can generate (namely morph targets / bones / alpha testing).
 
-In this demo: https://playground.babylonjs.com/#PNQRY1#4
+In this demo: https://playground.babylonjs.com/#PNQRY1#10
 * the floating cube is using a `ShaderMaterial` for its base material
 * the grounded cube and sphere are using a `CustomMaterial` for their base material: they are both using the same material (thanks to @Wigen for the dissolving effect!)
 * the fire sphere is using a node material for its base material (thanks to @dannybucksch for this node material!)
@@ -450,11 +486,16 @@ The `ShadowDepthWrapper` makes its magic happen by injecting some blocks of code
 The blocks can be injected at any location in your shaders if you use these `#define` in your base material to locate the spots where the code should be injected:
 * **`#define SHADOWDEPTH_NORMALBIAS`** in the vertex shader
 * **`#define SHADOWDEPTH_METRIC`** in the vertex shader
+* **`#define SHADOWDEPTH_SOFTTRANSPARENTSHADOW`** in the fragment shader
 * **`#define SHADOWDEPTH_FRAGMENT`** in the fragment shader
 
-If not used, by default the code is injected just before the end of each shader for the `METRIC` and `FRAGMENT` blocks and at the `#define CUSTOM_VERTEX_UPDATE_WORLDPOS` location for the `CustomMaterial` and `PBRCustomMaterial` materials for the `NORMALBIAS` block.
+If not used, by default the code is injected just before the end of each shader for the `METRIC` and `FRAGMENT` blocks and:
+* at the `#define CUSTOM_VERTEX_UPDATE_WORLDPOS` location for the `NORMALBIAS` block
+* at the `#define CUSTOM_FRAGMENT_BEFORE_FOG` location for the `SOFTTRANSPARENTSHADOW` block
 
-For custom shader written code (through a `ShaderMaterial` class), if you don't declare a `#define SHADOWDEPTH_NORMALBIAS` somewhere in your vertex shader code, the normal bias code **won't** be injected and so the normal bias feature won't work (it won't bug, however, it will simply do nothing).
+for the `CustomMaterial` and `PBRCustomMaterial` materials.
+
+For custom shader written code (through a `ShaderMaterial` class), if you don't declare a `#define SHADOWDEPTH_NORMALBIAS` somewhere in your vertex shader code, the normal bias code **won't** be injected and so the normal bias feature won't work (it won't bug, however, it will simply do nothing). Same thing for the soft transparent shadows: if you don't declare a `#define SHADOWDEPTH_SOFTTRANSPARENTSHADOW` somewhere in your fragment code, the soft transparent shadows won't be available.
 
 **Note**: as said above, normal bias is not supported yet for `NodeMaterial` based materials
 
@@ -467,10 +508,10 @@ If you create a custom `ShaderMaterial` material and needs to support this funct
 To work correctly, this block needs the **vertex final world position** and the **vertex final world normal**. In the `NORMALBIAS` block of code, those variables are named `worldPos` and `vNormalW` respectively. If those are not the names you use in your vertex code, you can instruct `ShadowDepthWrapper` to remap them:
 ```javascript
 shaderMaterial.shadowDepthWrapper = new BABYLON.ShadowDepthWrapper(shaderMaterial, scene, {
-    remappedVariables: ["worldPos", "p", "vNormalW", "normalW"]
+    remappedVariables: ["worldPos", "p", "vNormalW", "normalW", "alpha", "1."]
 });
 ```
-This is the code used in the demo for the shadow depth wrapper of the floating cube. In the vertex code, the final world position is named `p` and the final world normal `normalW`, hence the remapping you can see above.
+This is the code used in the demo for the shadow depth wrapper of the floating cube. In the vertex code, the final world position is named `p` and the final world normal `normalW`, hence the remapping you can see above (the `alpha` remapping is explained below).
 
 The `METRIC` block also needs the **vertex final world position**, as well as the **gl_Position** variable being set with the right value. That's why it's injected by default at the end of the vertex code and normally should be left this way. However, if you need it to be injected somewhere else, use `#define SHADOWDEPTH_METRIC` in your vertex code and make sure to remap the vertex world position if necessary.
 
@@ -487,10 +528,20 @@ In the demo linked above, the custom material created for the grounded sphere an
 mat.Fragment_MainBegin(`
     float n = texture2D( noise, vUv ).x - dissolve;
     if (n < 0.0) { discard; }
+    #define SHADOWDEPTH_SOFTTRANSPARENTSHADOW
     #define SHADOWDEPTH_FRAGMENT
 `);
 ```
 The first two lines are the code that implements the custom discard logic and the `#define SHADOWDEPTH_FRAGMENT` will make the `ShadowDepthWrapper` class inject the shadow depth fragment block of code here. As all of this is injected right at the beginning of the fragment shader (`Fragment_MainBegin`), all the code that comes afterwards won't be executed when the shader is used for shadow depth rendering.
+
+Use `#define SHADOWDEPTH_SOFTTRANSPARENTSHADOW` to indicate where to inject the code handling the soft transparent shadows. By default, the code is injected near the end of the fragment shader because it needs the `alpha` value to be able to generate the soft shadows, but you can generate it anywhere you want with this define, as shown above.
+
+For the code injected by `#define SHADOWDEPTH_SOFTTRANSPARENTSHADOW` to work, a variable named `alpha` must exist (the output transparency of the fragment). If you have this information but in a variable with another name, use the remapping possibility to remap the name of this variable. If you don't have a variable with this information (because your shader does not compute alpha values for eg), you can simply pass `1.` as the remapping value, as we did above:
+```javascript
+shaderMaterial.shadowDepthWrapper = new BABYLON.ShadowDepthWrapper(shaderMaterial, scene, {
+    remappedVariables: ["worldPos", "p", "vNormalW", "normalW", "alpha", "1."]
+});
+```
 
 ##### Optimizing further and standalone shadow depth wrapper
 
