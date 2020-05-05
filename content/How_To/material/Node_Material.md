@@ -1133,17 +1133,42 @@ Some of the parameters are available as properties when clicking on the block in
 
 For eg, for `Reflection`:
 
-![Discard](/img/how_to/Materials/nme_reflection_prop.png)
+![Reflection properties](/img/how_to/Materials/nme_reflection_prop.png)
 
 Or for `PBRMetallicRoughness`:
 
-![Discard](/img/how_to/Materials/nme_pbr_prop.png)
+![PBR properties](/img/how_to/Materials/nme_pbr_prop.png)
 
 As for the standard `PBRMaterial`, if no texture is provided for the **Reflection** / **Refraction** texture, the one declared at the scene level (`scene.environmentTexture`) is used instead.
 
 By default, if something is connected to the `a` input of the `FragmentOutput` block, alpha blending is enabled. If you don't need alpha blending, don't connect this input.
 
 Regarding the `PBRMetallicRoughness` block, you have access to each output component separately (`ambient`, `diffuse`, `specular`, ...) if you want or you can directly use `lighting` to get the composite output. In the names of the separate outputs, `dir` means `direct` (component from direct lights) and `Ind` means `Indirect` (component from indirect lighting, meaning the environment).
+
+## Creating Post Processes
+
+Starting with Babylon.js v4.2, you can now create post processes with the node material editor.
+
+You need simply to change the mode to *Post Process*:
+
+![PostProcess choice](/img/how_to/Materials/postprocessMenu.png)
+
+In this mode, the special block **CurrentScreen** corresponds to the frame buffer that will be passed to your post process when you use this material as a post process in a real scenario. You can load any texture you want, it's simply an helper for you to see how your post process will render in the end.
+
+Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh and animation blocks.
+
+When you have created your post process material in the NME, you can create a regular `BABYLON.PostProcess` instance by calling the `NodeMaterial.createPostProcess` method:
+```javascript
+const postProcess = nodeMaterial.createPostProcess(camera);
+```
+
+PG: https://playground.babylonjs.com/#WB27SW#1
+
+As for regular node materials, you can access the blocks programmatically and change their values:
+
+Base material: https://playground.babylonjs.com/#WB27SW#4
+
+Programmatically updated material: https://playground.babylonjs.com/#WB27SW#3
 
 ## Loading from a file saved from the Node Material Editor
 
@@ -1183,6 +1208,8 @@ Here are some node material examples that you can use "as is" or extend with the
 * PBR material with clear coat only: https://nme.babylonjs.com/#IFJ86Q#2
 * PBR material with sub surface only: https://nme.babylonjs.com/#IFJ86Q#3
 * `GridMaterial` recreated as a node material: https://nme.babylonjs.com/#I4DJ9Z
+* "mist" post process: https://nme.babylonjs.com/#YDGZCJ
+* "dissolve" post process: https://nme.babylonjs.com/#D0USYC
 
 ## Going further
 
