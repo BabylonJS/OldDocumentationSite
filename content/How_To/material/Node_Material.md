@@ -372,6 +372,13 @@ By default, the node material provides the following blocks:
     * Outputs: 
       * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
 
+  * `Mod`: Outputs the value of the left input modulo the right input
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
   * `Multiply`: Multiplies the left and right inputs of the same type together. 
     * Inputs: 
       * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
