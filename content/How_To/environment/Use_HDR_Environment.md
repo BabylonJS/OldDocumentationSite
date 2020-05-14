@@ -27,9 +27,7 @@ We are detailing below the two supported ways of creating such files. As of 4.2 
 
 ## Sandbox
 
-After loading a [pbr model](http://models.babylonjs.com/PBR_Spheres.glb) in the [sandbox](https://sandbox.babylonjs.com):
-
-- go to the [sandbox](https://sandbox.babylonjs.com/)
+First, open the [sandbox](https://sandbox.babylonjs.com/) and then follow the steps:
 - drag &amp; drop a PBR scene file ([example](https://models.babylonjs.com/PBR_Spheres.glb))
 - drag &amp; drop your hdr environmentTexture file ([example](https://playground.babylonjs.com/textures/country.hdr))
 - wait to see the live result (can take a bit of time)
