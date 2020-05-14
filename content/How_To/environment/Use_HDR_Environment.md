@@ -16,15 +16,32 @@ scene.createDefaultEnvironment();
 
 This will load the file *environmentSpecular.env* from *assets.babylonjs.com*.
 
-To load a custom HDR texture, simply set the `scene.environmentTexture`:
+To load a custom env texture, simply set the `scene.environmentTexture`:
 
 ```javascript
-var hdrTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/environment.dds", scene);
-hdrTexture.gammaSpace = false;
+var hdrTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/environment.env", scene);
 scene.environmentTexture = hdrTexture;
 ```
 
-We are detailing below the two supported ways of creating such files. The first one rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
+We are detailing below the two supported ways of creating such files. As of 4.2 we now support prefiltering directly in the Sandbox !!! .hdr files are easy to find on the web so it looks like the most convenient input for filtering.
+
+## Sandbox
+
+After loading a [pbr model](http://models.babylonjs.com/PBR_Spheres.glb) in the [sandbox](https://sandbox.babylonjs.com):
+
+- go to the [sandbox](https://sandbox.babylonjs.com/)
+- drag &amp; drop a PBR scene file ([example](https://models.babylonjs.com/PBR_Spheres.glb))
+- drag &amp; drop your hdr environmentTexture file ([example](https://playground.babylonjs.com/textures/country.hdr))
+- wait to see the live result (can take a bit of time)
+- open the Inspector, go to the Tools, and click on `Generate .env texture`
+
+![inspector env texture tool](/img/How_To/environment/inspector-generate-env-texture.png)
+
+Tada !!! you now have your processed file.
+
+## External tools
+
+The first tool rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
 
 Note that you can rotate your environmentTexture if needed:
 
@@ -37,8 +54,7 @@ hdrTexture.setReflectionTextureMatrix(
 );
 ```
 
-
-## Creating a dds environment file from IBL Baker
+### Creating a dds environment file from IBL Baker
 You can find IBLBaker on: [https://github.com/derkreature/IBLBaker](https://github.com/derkreature/IBLBaker)
 
 After cloning the repo, you will be able to go to `/bin64` folder and launch `IBLBaker.exe`.
@@ -55,7 +71,7 @@ Once you are satisfied with the overall result, just click on `save environment`
 
 **Please do not forget to write full name with extension in order to make the save works correctly**.
 
-## Creating a dds environment file from LYS
+### Creating a dds environment file from LYS
 [Lys](https://www.knaldtech.com/lys/) can be find on the [knaldtech](https://www.knaldtech.com/lys/) website.
 
 Using Lys, the output quality of the generated mipmaps will be a higher standard really close in roughness response to the Unity standard materials. You could generate with Lys: 128, 256 or 512 px wide dds cube texture.
