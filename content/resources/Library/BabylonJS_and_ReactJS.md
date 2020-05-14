@@ -95,7 +95,7 @@ Here is a page using our component:
 ```jsx
 import React from 'react';
 import { FreeCamera, Vector3, HemisphericLight, MeshBuilder } from '@babylonjs/core';
-import BabylonScene from './SceneComponent'; // ^^ point to file we created above or 'babylonjs-hook' NPM.
+import SceneComponent from './SceneComponent'; // ^^ point to file we created above or 'babylonjs-hook' NPM.
 import './App.css';
 
 let box;
