@@ -238,6 +238,19 @@ The player sprite will be animated from frame 0 to frame 43. The third parameter
 
 It is also possible to use playAnimation with sprites from a packed spritesheet. It is worth double checking that the sprites to animate are consecutive and in the correct order in the JSON file.
 
+## Snippet server
+
+tarting with Babylon.js v4.2, you can edit sprite managers using the Inspector. You can then save them on Babylon.js snippet server. When you have a snippet Id, you can easily load the manager using the following code:
+
+```
+var spriteManagerPlayer = BABYLON.SpriteManager.CreateFromSnippetAsync("GN24VF", scene).then(manager => {
+        scene.debugLayer.show();
+        scene.debugLayer.select(manager);
+ });
+```
+
+Live example: https://www.babylonjs-playground.com/#G9VPHQ
+
 ## Packed SpriteSheet Playground Examples
 
 * [Playground Example Direct JSON Object Full TexturePacker Format](https://www.babylonjs-playground.com/#K5KTWA)
