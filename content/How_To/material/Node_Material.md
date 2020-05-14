@@ -1162,11 +1162,19 @@ You need simply to change the mode to *Post Process*:
 
 In this mode, the special block **CurrentScreen** corresponds to the frame buffer that will be passed to your post process when you use this material as a post process in a real scenario. You can load any texture you want, it's simply an helper for you to see how your post process will render in the end.
 
-Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh and animation blocks.
+Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh, particle and animation blocks.
 
 When you have created your post process material in the NME, you can create a regular `BABYLON.PostProcess` instance by calling the `NodeMaterial.createPostProcess` method:
 ```javascript
 const postProcess = nodeMaterial.createPostProcess(camera);
+```
+
+You can also update an existing post process:
+
+```javascript
+const myPostProcess = new BABYLON.PostProcess(...);
+...
+nodeMaterial.createEffectForPostProcess(myPostProcess);
 ```
 
 PG: https://playground.babylonjs.com/#WB27SW#1
@@ -1176,6 +1184,35 @@ As for regular node materials, you can access the blocks programmatically and ch
 Base material: https://playground.babylonjs.com/#WB27SW#4
 
 Programmatically updated material: https://playground.babylonjs.com/#WB27SW#3
+
+## Creating Particle shaders
+
+Starting with Babylon.js v4.2, you can now create particle shaders (to be used with a particle system) with the node material editor.
+
+You need simply to change the mode to *Particle*:
+
+![Particle choice](/img/how_to/Materials/particleMenu.png)
+
+Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh, post process and animation blocks.
+
+Also, in this mode, you can't create a vertex shader, only a fragment shader: the vertex shader is fixed and not updatable.
+
+Note that everything is driven by the parameters of the particle system instance. For eg, if the current particle system displayed in the preview area does not use "ramp gradients", the `ParticleRampGradient` block does nothing (it does not add ramp gradients to the shader), it's just a pass-through. Same thing for the `ParticleBlendMultiply` block. The exception is the `ParticleTexture` block, and only in the preview area of the node editor: if you provide a texture for this block it will be used as the particle texture in the preview area, else the texture defined in the current particle system will be used. In any case, when using the material in a live program, the texture will always be the one defined by the `ParticleSystem.particleTexture` property.
+
+The materials you create in the **Particle** mode can also be used for GPU particle systems, save for these restrictions:
+* GPU particle systems don't support ramp gradients, so the `RampGradientBlock` won't do anything (you can still use it in your material, it will simply do nothing)
+* GPU particle systems don't support the `textureMask` property, so you should not use the `ParticleTextureMask` block in your materials targeted for GPU particle systems, else display artifacts will appear
+
+When you have created your particle shader in the NME, you can link the material to a particle system instance by calling the `NodeMaterial.createEffectForParticles` method:
+```javascript
+nodeMaterial.createEffectForParticles(particleSystem);
+```
+
+PG: https://playground.babylonjs.com/#J9J6CG#1
+
+The full fragment shader used by default by the particle system can be recreated in the NME: https://nme.babylonjs.com/#X3PJMQ#1
+
+As explained above, if you want to use this material for GPU particle systems, you should remove the use of the `ParticleTextureMask` block: https://nme.babylonjs.com/#X3PJMQ#2
 
 ## Loading from a file saved from the Node Material Editor
 
@@ -1217,6 +1254,8 @@ Here are some node material examples that you can use "as is" or extend with the
 * `GridMaterial` recreated as a node material: https://nme.babylonjs.com/#I4DJ9Z
 * "mist" post process: https://nme.babylonjs.com/#YDGZCJ
 * "dissolve" post process: https://nme.babylonjs.com/#D0USYC
+* Default particle shader: https://nme.babylonjs.com/#X3PJMQ#1
+* Default particle shader (GPU particle systems): https://nme.babylonjs.com/#X3PJMQ#2
 
 ## Going further
 
