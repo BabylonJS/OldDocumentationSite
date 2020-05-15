@@ -37,6 +37,18 @@ First, open the [sandbox](https://sandbox.babylonjs.com/) and then follow the st
 
 Tada !!! you now have your processed file.
 
+## Directly use .hdr files
+
+In case you want to directly use a .hdr file and are not able to prefilter it to a .env or a .dds from the sandbox or an external tool, you can do it at the moment your texture is loaded. 
+
+```javascript
+var reflectionTexture = new BABYLON.HDRCubeTexture("./textures/environment.hdr", scene, 128, false, true, false, true);
+```
+
+This method will involve a small delay in the loading of the texture, due to the prefiltering being achieved on-the-fly. Therefore it is preferable to use .env or .dds files for optimal performance.
+Please note that WebGL2 is required for prefiltering on-the-fly.
+
+
 ## External tools
 
 The first tool rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
