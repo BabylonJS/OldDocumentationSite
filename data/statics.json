@@ -286,6 +286,11 @@
                     "filename": "How_to_use_Instances"
                 },
                 {
+                    "title": "Use Thin Instances",
+                    "level": 3,
+                    "filename": "How_to_use_ThinInstances"
+                },
+                {
                     "title": "Merge Meshes",
                     "level": 3,
                     "filename": "How_to_Merge_Meshes"
