@@ -275,6 +275,7 @@ Here are the properties you can define:
 | textVerticalAlignment (2)   | number       | Can be set to top, bottom or center                         |
 | outlineWidth (0)            | number       | Text outline size, in pixels.                               |
 | outlineColor ("white")      | string       | Text outline color.                                         |
+| wordSplittingFunction       | string       | Function to use to split the text into words                |
 
 The control currently provides 1 observable:
 
@@ -287,6 +288,12 @@ https://www.babylonjs-playground.com/#2ARI2W#10
 
 On this example you can see on line #3 that we force the engine to get the same DPI as the screen.
 Then on lines #10 and #11 we scale the GUI to align with the screen resolution.
+
+When in wrapping mode, the text is split into words before being displayed, and words are supposed to be separated by at least one space character. In some languages, however, breaking a text into words should follow some other rules.
+
+For those languages, you can use the `wordSplittingFunction` property to provide your own splitting function: this function takes a string as input and must return an array of strings (the input string broken into words).
+
+Here's an example for japanese: https://jsfiddle.net/3ph9m0cx/
 
 #### Line spacing
 

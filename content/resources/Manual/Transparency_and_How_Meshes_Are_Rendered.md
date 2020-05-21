@@ -29,13 +29,13 @@ Before actually drawing meshes on the screen, BabylonJS puts them in the followi
 
 3. **Alpha tested meshes**
 
-4. **Alpha blended meshes**, sorted by depth (= distance to camera)
+4. **Sprites** (handled by SpriteManager)
 
-5. **Sprites** (handled by SpriteManager)
+5. **Particles** (handled by ParticleSystem)
 
-6. **Particles** (handled by ParticleSystem)
+6. **Alpha blended meshes**, sorted by depth (= distance to camera)
 
-Categories 5 and 6 should be self-explanatory, we won't discuss them further.
+Categories 4 and 5 should be self-explanatory, we won't discuss them further.
 
 ## Rendering Groups
 

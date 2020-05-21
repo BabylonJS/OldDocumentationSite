@@ -34,6 +34,8 @@ Each instance has the same material as the root mesh. They can vary on the follo
 * ```setPivotMatrix```
 * ```scaling```
 
+Note: related are **thin instances**, if you want yet more performances but with less control on each instance. See the [dedicated page](/How_To/How_to_use_ThinInstances) for further information.
+
 # Instancing a glTF object
 
 When you instanciate a glTF object, you need to make sure that the new instance will be under the same parent or you need to remove the parent from the source object.
@@ -142,3 +144,5 @@ https://www.babylonjs-playground.com/#0720FC#10
 
 Check out this video to learn more:
 - Fun with Instance Buffers: https://youtu.be/rlODXrsdseA
+
+[How To Use Thin Instances](/How_To/How_to_use_ThinInstances)
