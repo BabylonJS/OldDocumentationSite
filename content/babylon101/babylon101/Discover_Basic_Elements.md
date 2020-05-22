@@ -91,8 +91,6 @@ This creates a mathematical plane which is used as the orientation source. The f
 
 * [Playground Example with Source Plane](https://www.babylonjs-playground.com/#LXZPJK#2)
 
-[More Information on Source Plane](LINK)
-
 ### Ground
 
 ```javascript
@@ -141,9 +139,9 @@ In the following examples you can compare between DEFAULT and DOUBLESIDE by movi
 
 ## Front and Back UV
 
-When a mesh has a sideOrientation option present and it is set to DOUBLESIDE then it is possible for the front and back to display different images. For more information see [How To Display Front and Back Images](LINK)
+When a mesh has a sideOrientation option present and it is set to DOUBLESIDE then it is possible for the front and back to display different images.
 
-## Coming Soon 
+## Position and Rotation
 
 When you create a mesh it is always centered at the origin and in line with the axes. You will want to give it a different position and rotation. If you can't wait then skip the next step and go to [How to Change Position and Rotation](/babylon101/Position)
 
