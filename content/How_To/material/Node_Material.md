@@ -270,6 +270,16 @@ By default, the node material provides the following blocks:
     * Output: 
       * output: Float
 
+  * `FragCoord`: The gl_FragCoord predefined variable (window relative coordinates (x,y,z,1/w))
+    * Output:
+      * xy: Vector2
+      * xyz: Vector3
+      * xyzw: Vector4
+      * x: Float
+      * y: Float
+      * z: Float
+      * w: Float
+
   * `ReflectionTexture`: Creates a reflection from the input texture.
     * Input: 
       * position: Vector3
@@ -283,6 +293,12 @@ By default, the node material provides the following blocks:
       * r: Float
       * g: Float
       * b: Float
+
+  * `ScreenSize`: The size of the screen window
+    * Output:
+      * xy: Vector2
+      * x: Float
+      * y: Float
 
   * `Texture`: A node for reading a linked or embedded texture file.
     * Inputs: 
@@ -756,6 +772,48 @@ By default, the node material provides the following blocks:
     * Inputs: 
       * vector: Vector4 
 
+* Particle:
+  * `ParticleBlendMultiply`: The "blend/multiply" module of the particle shader
+    * Inputs:
+      * color: Color4
+      * alphaTexture: Float
+      * alphaColor: Float
+    * Outputs:
+      * blendColor: Color4
+
+  * `ParticleColor`: The color of the particle
+    * Outputs:
+      * output: Color4
+    
+  * `ParticlePositionWorld`: The world position of the particle
+    * Outputs:
+      * output: Vector3
+    
+  * `ParticleRampGradient`: The "ramp gradient" module of the particle shader
+    * Inputs:
+      * color: Color4
+    * Outputs:
+      * rampColor: Color4
+    
+  * `ParticleTexture`: The texture of the particle
+    * Inputs:
+      * uv: Vector2
+    * Outputs:
+      * rgba: Color4
+      * rgb: Color3
+      * r: Float
+      * g: Float
+      * b: Float
+      * a: Float
+    
+  * `ParticleTextureMask`: The textureMask property of the particle
+    * Outputs:
+      * output: Color4
+    
+  * `ParticleUV`: the uv coordinates of the particle
+    * Outputs:
+      * output: Vector2
+    
 * PBR: (since 4.2)
   * `AmbientOcclusion`: The ambient occlusion module of the PBR material
     * Inputs:
@@ -764,6 +822,7 @@ By default, the node material provides the following blocks:
       * directLightIntensity: Float
     * Outputs:
       * ambientOcclusion: can only be used as input of the `PBRMetallicRoughness` block
+
   * `Anisotropy`: The anisotropy module of the PBR material
     * Inputs:
       * intensity: Float
@@ -773,6 +832,7 @@ By default, the node material provides the following blocks:
       * worldTangent: Vector4
     * Outputs:
       * anisotropy: can only be used as input of the `PBRMetallicRoughness` block
+
   * `ClearCoat`: The clear coat module of the PBR material
     * Inputs:
       * intensity: Float
@@ -788,6 +848,7 @@ By default, the node material provides the following blocks:
       * worldTangent: Vector4
     * Outputs:
       * clearcoat: can only be used as input of the `PBRMetallicRoughness` block
+
   * `PBRMetallicRoughness`: The PBR material implementing the metallic/roughness model
     * Inputs:
       * worldPosition: Vector4
@@ -819,6 +880,7 @@ By default, the node material provides the following blocks:
       * lighting: Color3
       * shadow: Float
       * alpha: Float
+
   * `Reflection`: The reflection module of the PBR material
     * Inputs:
       * position: Vector3
@@ -827,6 +889,7 @@ By default, the node material provides the following blocks:
       * color: Color3
     * Outputs:
       * reflection: can only be used as input of the `PBRMetallicRoughness` block
+
   * `Reflectivity`: The reflectivity module of the PBR material
     * Inputs:
       * metallic: Float
@@ -834,6 +897,7 @@ By default, the node material provides the following blocks:
       * texture: Color4
     * Outputs:
       * reflectivity: can only be used as input of the `PBRMetallicRoughness` block
+
   * `Refraction`: The refraction module of the PBR material (used by the `SubSurface` block)
     * Inputs:
       * intensity: Float
@@ -842,6 +906,7 @@ By default, the node material provides the following blocks:
       * view: Matrix
     * Outputs:
       * refraction: can only be used as input of the `SubSurface` block
+
   * `Sheen`: The sheen module of the PBR material
     * Inputs:
       * intensity: Float
@@ -850,6 +915,7 @@ By default, the node material provides the following blocks:
       * texture: Color4
     * Outputs:
       * sheen: can only be used as input of the `PBRMetallicRoughness` block
+
   * `SubSurface`: The sub surface module of the PBR material
     * Inputs:
       * minThickness: Float
@@ -861,6 +927,22 @@ By default, the node material provides the following blocks:
       * refraction: output of the `Refraction` block
     * Outputs:
       * subsurface: can only be used as input of the `PBRMetallicRoughness` block
+
+* PostProcess:
+  * `CurrentScreen`: The current screen (texture) used to render the post process
+    * Inputs:
+      * uv: Vector2
+    * Outputs:
+      * rgba: Color4
+      * rgb: Color3
+      * r: Float
+      * g: Float
+      * b: Float
+      * a: Float
+
+  * `Position2D`: The 2D clip coordinates (values between -1 and 1 for both x and y)
+    * Outputs:
+      * output: Vector2
 
 * Range:
   * `Clamp`: Outputs values above the maximum or below minimum as maximum or minimum values respectively.
