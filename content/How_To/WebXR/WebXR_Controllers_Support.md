@@ -34,7 +34,7 @@ Will be triggered when a controller left the experience, right before it is disp
 
 The input source, created by the WebXR input, is your central container for a single input source (or controller). It has a few important members that will allow you to controller your input source.
 
-### Public memeber
+### Public members
 
 As mentioned before the Input source has two reference spaces - `grip` and `target` , which we call `pointer` . Both of those spaces are represented by a mesh, positioned in the orientation and position that is provided by the XRFrame (and the XR session). Which means that if you want to query the current transformation of the user's hand or the direction the user is pointing at.
 

@@ -66,6 +66,5 @@ panel.addControl(picker);
 ## Babylon.js scenes with XR support
 
 * [Mansion](https://www.babylonjs-playground.com/pg/JA1ND3/revision/161)
-* [Hill Valley](https://www.babylonjs-playground.com/pg/JA1ND3/revision/182)
+* [Hill Valley](https://www.babylonjs-playground.com/pg/TJIGQ1/revision/3)
 * [Espilit](https://www.babylonjs-playground.com/pg/JA1ND3/revision/164)
-* [Skull-Pickup](https://playground.babylonjs.com/pg/ZNX043/revision/15)
