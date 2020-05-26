@@ -28,3 +28,12 @@ If you need to turn-off edges rendering:
 box.disableEdgesRendering();
 ```
 You can try edges rendering here:  https://www.babylonjs-playground.com/#TYAHX#10
+
+If your mesh has instances, you can either use a renderer for each instance by enabling the edges rendering for each instance as explained above, or by using the source mesh renderer for all instances.
+
+To do this, just set:
+```javascript
+sourceMesh.edgesShareWithInstances = true;
+```
+
+PG: https://playground.babylonjs.com/#7BY3TM
