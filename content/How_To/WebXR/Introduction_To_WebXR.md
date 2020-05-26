@@ -20,7 +20,7 @@ WebXR is supported on Google Daydream using Chrome.
 
 WebXR AR features on Android's Chrome Browser (Stable and Canary) can be enabled behind a flag at [chrome://flags](chrome://flags), including AR features such as plane detection, hit-tests and anchors. Note that the AR features' architecture is constantly changing, so expect different results from version to version.
 
-Oculus Quest unofficially supports WebXR (in VR mode) behind a flag in the latest oculus browser. Browse to [chrome://flags](chrome://flags) to enable WebXR. Babylon's specs implementation works well with the quest.
+Oculus Quest supports WebXR (in VR mode) in the latest oculus browser. Babylon's specs implementation works well with the quest.
 
 No official iOS/iPhone support is planed at the moment. Mozilla has built the [WebXR iOS Viewer](https://apps.apple.com/us/app/webxr-viewer/id1295998056) which is a (very) limited AR-oriented browser.
 
@@ -117,13 +117,14 @@ webvrCamera.onControllersAttached = (vrController) => {
 
 // WebXR:
 const webXRInput = xr.input; // if using the experience helper, otherwise, an instance of WebXRInput
-input.onControllerAddedObservable.add((xrController /* WebXRController instance */ ) => {
+input.onControllerAddedObservable.add((xrController /* WebXRInputSource instance */ ) => {
     // more fun with the new controller, since we are in XR!
+    inputSource.onMotionControllerInitObservable.add((motionController) => {
+        // get the motionController, which is similar to but NOT a gamepad:
 
-    // get the motionController, which is similar to but NOT a gamepad:
-    const motionController = xrController.motionController;
+    });
     // xr supports all types of inputs, so some won't have a motion controller
-    if (!motionController) {
+    if (!xrController.gamepad) {
         // using touch, hands, gaze, something else?
     }
 });
@@ -154,14 +155,14 @@ mainComponent.onButtonStateChanged.add((component /* WebXRControllerComponent */
         if (component.changes.pressed.current === true) {
             // pressed
         }
-        // or a differend way:
+        // or a different way:
         if (component.pressed) {
             // component is pressed.
         }
     }
 })
 
-// thumbpad / trackpad
+// thumbpad / touchpad
 
 // in WebVR - you had to check what controller is being used, but in general this would work:
 vrController.onPadValuesChangedObservable.add(function(stateObject) {
@@ -197,6 +198,8 @@ if (touchpad) {
 Read more about the [XR Controllers system](./WebXR_Controllers_Support).
 
 ### Legacy support
+
+Thou we always encourage backwards compatibility **We recommend using WebXR directly** and stop using the WebVR experience helper. However:
 
 The latest WebVR Experience helper has a new flag in its init options - `useXR` . This will check for XR support and will launch the VR session in WebXR, if possible. A working example can be found in [the WebVR color-picker demo](https://www.babylonjs-playground.com/#TAFSN0#323):
 
