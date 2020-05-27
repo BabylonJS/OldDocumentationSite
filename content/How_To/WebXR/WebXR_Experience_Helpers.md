@@ -80,7 +80,7 @@ xrHelper.onStateChangedObservable.add((state) => {
             // xr is being initialized, enter XR request was made
         case WebXRState.EXITING_XR:
             // xr exit request was made. not yet done.
-        case WebXRState_NOT_IN_XR:
+        case WebXRState.NOT_IN_XR:
             // self explanatory - either our or not yet in XR
     }
 })
