@@ -103,7 +103,7 @@ Next, the configuration object will be inspected. If it contains a configuration
 ```json
 {
     "scene": {
-        "debug": "false"
+        "debug": false
     }
 }
 ```
