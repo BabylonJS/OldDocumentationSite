@@ -407,7 +407,7 @@
             "name": "material",
             "desc": "Material Tutorials.",
             "files": [{
-                    "title": "Apply Bumps, Opacity and Tiling",
+                    "title": "Apply Bumps, Opacity, Tiling and Detail Maps",
                     "level": 1,
                     "filename": "More_Materials"
                 },
