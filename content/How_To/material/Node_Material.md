@@ -1204,14 +1204,14 @@ You could also have used `Lerp(0, alphaCutOff, ALPHATEST)` as the input for `Dis
 
 You can use those playgrounds and materials as starting points for your own experiments to create PBR materials in the NME (note that the node material may take some time to load in the PG - the mesh will stay black until the material is loaded):
 *  Full use of all PBR blocks:
-  * PG: https://playground.babylonjs.com/#D8AK3Z
-  * Material: https://nme.babylonjs.com/#IFJ86Q
+  * PG: https://playground.babylonjs.com/#D8AK3Z#8
+  * Material: https://nme.babylonjs.com/#IFJ86Q#9
 * PBR material with sheen only:
-  * PG: https://playground.babylonjs.com/#MUX769#1
-  * Material: https://nme.babylonjs.com/#IFJ86Q#1
+  * PG: https://playground.babylonjs.com/#MUX769#3
+  * Material: https://nme.babylonjs.com/#IFJ86Q#10
 * PBR material with clear coat only:
-  * PG: https://playground.babylonjs.com/#0XSPF6
-  * Material: https://nme.babylonjs.com/#IFJ86Q#2
+  * PG: https://playground.babylonjs.com/#0XSPF6#2
+  * Material: https://nme.babylonjs.com/#IFJ86Q#11
 * PBR material with sub surface only:
   * PG: https://playground.babylonjs.com/#7QAN2T
   * Material: https://nme.babylonjs.com/#IFJ86Q#3
