@@ -60,7 +60,7 @@ When loading large assets either using loose files or with range requests, it is
 
 ## Key Notes
 - Gzipped content hosted on server often results in `lengthComputable` equaling `false` which in turn causes the `total` to be zero. When this happens, the only choices are to not show the progress or show the number of bytes downloaded instead.
-- When using HTTP range requests with a GLB, the first thing that is downloaded is the GLB header which downloads very quickly and is almost always 20 bytes loaded and 20 bytes total when the progress event fires. Ignorning it by checking when `total` is exactly 20.
+- When using HTTP range requests with a GLB, the first thing that is downloaded is the GLB header which downloads very quickly and is almost always 20 bytes loaded and 20 bytes total when the progress event fires. Ignore it by checking when `total` is exactly 20.
 
 # Enabling Logging
 
@@ -94,12 +94,12 @@ BJS - [16:31:29]:           /meshes/0 car_lores_gt_lores_lowdetails group1
 BJS - [16:31:29]:             /meshes/0/primitives/0
 BJS - [16:31:29]:               deferred
 BJS - [16:31:30]:               /materials/12/extensions/MSFT_lod
-BJS - [16:31:30]:                 #/materials/0 details_lod2
-BJS - [16:31:30]:                   #/materials/0/normalTexture
+BJS - [16:31:30]:                 /materials/0 details_lod2
+BJS - [16:31:30]:                   /materials/0/normalTexture
 BJS - [16:31:30]:                     /textures/2 tmp_image_pie_10f1_2c55_943e
 BJS - [16:31:30]:                       /images/2 normal
 BJS - [16:31:30]:                         deferred
-BJS - [16:31:30]:                   #/materials/0/occlusionTexture
+BJS - [16:31:30]:                   /materials/0/occlusionTexture
 BJS - [16:31:30]:                     /textures/1 ambient_roughness_metallic
 BJS - [16:31:30]:                       /images/1 ambient_roughness_metallic
 BJS - [16:31:30]:                         deferred
