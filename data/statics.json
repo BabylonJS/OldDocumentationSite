@@ -845,6 +845,10 @@
                 {
                     "title": "Use an AssetContainer",
                     "filename": "How_to_use_AssetContainer"
+                },
+                {
+                    "title": "Progressively Load glTF Assets",
+                    "filename": "Progressively_Load_glTF"
                 }
             ]
         },
