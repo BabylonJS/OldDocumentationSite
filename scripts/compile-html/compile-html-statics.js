@@ -40,6 +40,7 @@ var __STATICS_LIST__ = path.join(appRoot, 'data/statics.json'),
     __FILES_SOURCE__ = path.join(appRoot, 'content/'),
     __FILES_DEST__ = path.join(appRoot, 'public/html/');
 
+var docPlaygrounds = [];
 
 module.exports = function(done) {
     var staticCategories = [
@@ -94,6 +95,14 @@ module.exports = function(done) {
         }, function() {
             // final callback
             logger.info('> ALL EXPORTERS/EXTENSIONS/TUTORIALS PAGES COMPILED.');
+
+            var playgroundsJsonPath = path.join(__FILES_DEST__, "playgrounds.json");
+            if (fs.existsSync(playgroundsJsonPath)) {
+                fs.unlinkSync(playgroundsJsonPath);
+            }
+            fs.writeFileSync(playgroundsJsonPath, JSON.stringify(docPlaygrounds, null, 4));
+            logger.info('> JSON files with all playgrounds has been created.');
+
             if (done) done();
         });
 
@@ -153,6 +162,15 @@ var getStaticPagesContent = function(dataObj, category, cb) {
                                 '<div class="iframeContainer"></div>';
 
                             markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
+
+                            var result = null;
+                            while (result = getPlaygroundLinks.exec(markedContent.html)) {
+                                const pg = result[3];
+                                const revision = result[4] | 0;
+                                docPlaygrounds.push({
+                                    pg, revision
+                                });
+                            }
 
                             staticsContents.push({
                                 "staticName": file.title,
