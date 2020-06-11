@@ -87,7 +87,9 @@ mesh.rotationQuaternion = new BABYLON.Quaternion.RotationAxis(axis, angle);
 where axis is a Vector3 and the angle is the rotation in radians. 
 
 ### Historical Warning 
-When using BabylonJS versions &lt; 4.00 you cannot use both a **rotation** and a **rotationQuaternion** on a mesh. When a **rotationQuaternion** is applied to a mesh this overwrites the current and subsequent use of **rotation** producing the wrong orientation. Should you want to use **rotation** after a **rotationQuaternion** has been applied, for example on an imported mesh, then the **rotationQuaternion** has to be set to _null_. From version 4 onwards this is done automatically.
+When using BabylonJS versions &lt; 4.00 you cannot use both a **rotation** and a **rotationQuaternion** on a mesh. When a **rotationQuaternion** is applied to a mesh this overwrites the current and subsequent use of **rotation** producing the wrong orientation. Should you want to use **rotation** after a **rotationQuaternion** has been applied, for example on an imported mesh, then the **rotationQuaternion** has to be set to _null_. 
+
+From version 4 onwards, in limited situations, the setting of **rotationQuaternion** to _null_ is done automatically on whenever **rotation** is set directly. When using, for example, physics, the NullEngine or even `rotation.set(0.23, 0.17, 1.84)` you find rotation errors it is worth setting **rotationQuaternion** to _null_ before updating **rotation**.
 
 
 ## Euler Angles to Quaternions
