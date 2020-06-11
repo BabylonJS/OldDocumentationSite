@@ -17,7 +17,7 @@ You can nervertheless continue to download by pressing the little arrow and chos
 
 ![chrome warning keep](/img/exporters/installer/ChromeDLWarningKeep.png)
 
-Once downloaded, you can extract the content of the zip in your favorite loaction.
+Once downloaded, you can extract the content of the zip in your favorite location.
 
 ### Using the installer
 Launch the executable file contained in the previous zip. On the first launch Windows like Chrome previously will emit a Smart Screen warning as the application has currently not being launched enough to be trusted.
