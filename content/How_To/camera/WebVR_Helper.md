@@ -1,5 +1,9 @@
 # How to use the WebVR experience helper
 
+## WebVR vs WebXR
+
+While the WebVR experience helper will continue to be supported, it is strongly recommended that projects instead use the [WebXR experience helper](https://doc.babylonjs.com/how_to/webxr_experience_helpers). For more information, check out our [introduction to WebXR](https://doc.babylonjs.com/how_to/introduction_to_webxr).
+
 ## Introduction
 
 The WebVR Experience Helper provides a quick way to add WebVR support to a Babylon scene.
