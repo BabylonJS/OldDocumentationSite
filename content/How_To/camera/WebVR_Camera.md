@@ -1,3 +1,7 @@
+## WebVR vs WebXR
+
+While the WebVR camera will continue to be supported, it is strongly recommended that projects instead use the [WebXR camera](https://doc.babylonjs.com/how_to/webxr_camera). For more information, check out our [introduction to WebXR](https://doc.babylonjs.com/how_to/introduction_to_webxr).
+
 ## Introduction
 
 Since v2.5 Babylon.js supports WebVR using the WebVRFreeCamera.
