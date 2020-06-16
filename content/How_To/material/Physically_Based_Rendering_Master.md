@@ -252,6 +252,38 @@ The setup will be identical relying on the both previously defined values:
 
 It also fully respect the previously defined thickness configuration: The actual thickness per pixel would be then = minimumThickness + thicknessTexture.r * maximumThickness.
 
+### Scattering
+To further add a layer of detail over what really happens beneath the surface of the material, you can add scattering. It simulates the short travel of the light that takes place inside the material and goes out at a different location than where it entered.
+
+It can be really useful on materials like skin, foliage, wax, dense colored liquids, icecubes, gemstones, etc...
+
+You can use this in addition of translucency to accurately represent the spread of the light inside the material.
+
+![SubSurfaceScattering](/img/extensions/PBRSubSurfaceScattering.png)
+
+[Demo](https://www.babylonjs-playground.com/#GTQKYK)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+scene.enablePrePassRenderer().metersPerUnit = 0.01;
+
+pbr.metallic = 0;
+pbr.roughness = 0.2;
+
+pbr.subSurface.isScatteringEnabled = true;
+```
+
+For this effect to be physically accurate, you have to indicate the ratio between scene units and the real world meters equivalent by filling the property `metersPerUnit` of the scene pre-pass renderer. It is set to 1 meter = 1 unit by default.
+
+#### Diffusion profiles
+
+*Performance and compatibility notice*
+
+This effect is using a lot of webgl 2 structures under the hood, therefore it is only compatible with WebGL 2. 
+Furthermore, please note that the use of subsurface scattering is a post-process, and it adds a lot of additionnal work for the GPU. In other terms, use it wisely, and mind smaller GPUs that won't necessarily have the ressources to run this effect.
+
+
 ### Mask
 Would you wish to define the intensity of the different effects (Refraction or Translucency), you can use the left over channels of the thickness map. Actually, as we are trying to limit the overall number of textures used in the materials we decided to pack the mask information in the g channel for the transluency intensity factor and the alpha channel for the refraction intensity (b has been reserved for the next release).
 
