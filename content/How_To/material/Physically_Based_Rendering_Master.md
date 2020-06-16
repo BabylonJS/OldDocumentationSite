@@ -253,7 +253,7 @@ The setup will be identical relying on the both previously defined values:
 It also fully respect the previously defined thickness configuration: The actual thickness per pixel would be then = minimumThickness + thicknessTexture.r * maximumThickness.
 
 ### Scattering
-To further add a layer of detail over what really happens beneath the surface of the material, you can add scattering. It simulates the short travel of the light that takes place inside the material and goes out at a different location than where it entered.
+To further add a layer of detail over what really happens beneath the surface of the material, you can add scattering. It simulates all small bounces of the light that takes place inside the material, causing light to go out at a different location than where it entered.
 
 It can be really useful on materials like skin, foliage, wax, dense colored liquids, icecubes, gemstones, etc...
 
@@ -274,14 +274,25 @@ pbr.roughness = 0.2;
 pbr.subSurface.isScatteringEnabled = true;
 ```
 
-For this effect to be physically accurate, you have to indicate the ratio between scene units and the real world meters equivalent by filling the property `metersPerUnit` of the scene pre-pass renderer. It is set to 1 meter = 1 unit by default.
+For this effect to be physically accurate, you have to indicate the ratio between scene units and the real world distance in meters, by filling the property `metersPerUnit` of the scene pre-pass renderer. It is  by default set to 1 meter = 1 unit.
 
 #### Diffusion profiles
 
-*Performance and compatibility notice*
+Pushing realism even further, material volume albedo affects how far light travels inside the material. Thus you can register your material profile as the average volumic albedo that it is made of.
 
-This effect is using a lot of webgl 2 structures under the hood, therefore it is only compatible with WebGL 2. 
-Furthermore, please note that the use of subsurface scattering is a post-process, and it adds a lot of additionnal work for the GPU. In other terms, use it wisely, and mind smaller GPUs that won't necessarily have the ressources to run this effect.
+Let's say you want a skin tone diffusion profile, you can add this to your subsurface configuration by doing :
+
+```javascript
+	const idx = scene.enablePrePassRenderer().addDiffusionProfile(new BABYLON.Color3(0.750, 0.25, 0.20));
+	pbr.subSurface.scatteringDiffusionProfileIndex = idx;
+```
+
+You can have up to 5 diffusion profiles registered, that you can share between materials.
+
+*Warning ! Performance and compatibility notice*
+
+This effect is using a lot of WebGL 2 structures under the hood, therefore it is only compatible with WebGL 2. 
+Furthermore, please note that the use of subsurface scattering triggers a post-process, and it adds a lot of additionnal work for the GPU. In other terms, use it wisely, and mind smaller GPUs that won't necessarily have the ressources to run this effect.
 
 
 ### Mask
