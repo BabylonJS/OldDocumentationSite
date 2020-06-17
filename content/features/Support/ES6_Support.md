@@ -21,6 +21,10 @@ We offer babylon.js' core and its modules as npm packages. The following are ava
 * [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
 * [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The stand-alone BabylonJS Viewer.
 
+## Basic Example
+
+A boilerplate project with a few examples on how to use the es6 modules can be found here - [Babylon.js, webpack and es6 modules](https://github.com/RaananW/babylonjs-webpack-es6) on GitHub. It is a project skeleton, based on TypeScript, webpack and our es6 modules. The different scenes (Asset loading, physics, simple scene) to show the different aspects of module-loading and Babylon.js
+
 ## Basic usage
 
 As the ES6 version is composed of many separated files the usual way to consume such packages is through Webpack or other bundlers. The following examples will be done with Webpack but you could rely on any of the tools you are familiar with.

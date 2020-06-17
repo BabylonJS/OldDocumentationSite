@@ -28,7 +28,49 @@ No official iOS/iPhone support is planed at the moment. Mozilla has built the [W
 
 For older browsers that support WebVR but not WebXR you can use the [WebXR Polyfill](https://github.com/immersive-web/webxr-polyfill) which is the WebXR API implementation using WebVR features. Some functions will not work (or will simply return without changes) but the basic functionality works well.
 
-Babylon does not intend on integrating the polyfill in the framework itself. We encourage the developer to offer the polyfill to users not using a WebXR-Supported browser.
+Babylon does not intend on integrating the polyfill in the framework itself or in the playground. We encourage the developer to offer the polyfill to users not using a WebXR-Supported browser.
+
+To use the polyfill in the playground, please add the following to your playground (before 'createScene'):
+
+```javascript
+const xrPolyfillPromise = new Promise((resolve) => {
+    if (navigator.xr) {
+        return resolve();
+    }
+    define('polyfill', ['https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'], (polyfill) => { new polyfill(); resolve(); });
+});
+```
+
+afterwards, make sure to `await` it before initializing WebXR:
+
+```javascript
+const xrPolyfillPromise = new Promise((resolve) => {
+    if (navigator.xr) {
+        return resolve();
+    }
+    define('polyfill', ['https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js'], (polyfill) => { new polyfill(); resolve(); });
+});
+
+var createScene = async function () {
+    // wait for the polyfill to kick in
+    await xrPolyfillPromise;
+    console.log(navigator.xr); // should be there!
+    console.log(await BABYLON.WebXRSessionManager.IsSessionSupportedAsync('immersive-vr')) // should be true
+    // create your scene
+    var scene = new BABYLON.Scene(engine);
+    var camera = new BABYLON.DeviceOrientationCamera("DevOr_camera", new BABYLON.Vector3(-30, -30, -30), scene);
+    camera.setTarget(BABYLON.Vector3.Zero());
+    camera.attachControl(canvas, true);
+    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 0, 0), scene);
+    scale = 100;
+    // initialize XR
+    var xr = await scene.createDefaultXRExperienceAsync();
+
+    return scene;
+};
+```
+
+If you experience low-resolution when using the polyfill, make sure to resize the canvas to a higher resolution. This is a limitation of WebVR (that required resizing the canvas) which we didn't integrate for WebXR.
 
 ### The WebXR Emulator
 
