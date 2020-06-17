@@ -259,7 +259,7 @@ It can be really useful on materials like skin, foliage, wax, dense colored liqu
 
 You can use this in addition of translucency to accurately represent the spread of the light inside the material.
 
-![SubSurfaceScattering](/img/extensions/PBRSubSurfaceScattering.png)
+![SubSurfaceScattering](/img/extensions/PBRSubSurfaceScattering.jpg)
 
 [Demo](https://www.babylonjs-playground.com/#GTQKYK)
 ```javascript
@@ -282,17 +282,18 @@ Pushing realism even further, material volume albedo affects how far light trave
 
 Let's say you want a skin tone diffusion profile, you can add this to your subsurface configuration by doing :
 
+[Demo](https://www.babylonjs-playground.com/#W7DYG2#1)
 ```javascript
-	const idx = scene.enablePrePassRenderer().addDiffusionProfile(new BABYLON.Color3(0.750, 0.25, 0.20));
-	pbr.subSurface.scatteringDiffusionProfileIndex = idx;
+	pbr.subSurface.scatteringDiffusionProfile = new BABYLON.Color3(0.750, 0.25, 0.20);
 ```
 
-You can have up to 5 diffusion profiles registered, that you can share between materials.
+You can have up to 5 different colors registered as diffusion profiles.
 
 *Warning ! Performance and compatibility notice*
 
 This effect is using a lot of WebGL 2 structures under the hood, therefore it is only compatible with WebGL 2. 
-Furthermore, please note that the use of subsurface scattering triggers a post-process, and it adds a lot of additionnal work for the GPU. In other terms, use it wisely, and mind smaller GPUs that won't necessarily have the ressources to run this effect.
+Furthermore, please note that the use of subsurface scattering triggers a post-process, and it adds a lot of additionnal work for the GPU.  
+In other terms, use it wisely, and mind smaller GPUs that won't necessarily have the ressources to run this effect.
 
 
 ### Mask
