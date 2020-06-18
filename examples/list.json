@@ -153,9 +153,9 @@
                 },
 				{
                     "title": "Using DeviceSourceManager",
-                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_actions",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_devicesourcemanager",
                     "icon": "icons/dsm_input.png",
-                    "description": "Control input using keyboard or gamepad (Xbox/PS4 DS)",
+                    "description": "Control ship with keyboard or gamepad.",
                     "PGID": "#C7PM2B"
                 }
             ]
