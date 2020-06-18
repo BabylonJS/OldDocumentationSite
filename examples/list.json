@@ -151,7 +151,7 @@
                     "description": "Position, Rotate and Scale meshes with a pointer",
                     "PGID": "#8MGKWK#25"
                 },
-				{
+                {
                     "title": "Using DeviceSourceManager",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_devicesourcemanager",
                     "icon": "icons/dsm_input.png",
