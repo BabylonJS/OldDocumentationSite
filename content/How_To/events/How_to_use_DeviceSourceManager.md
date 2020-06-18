@@ -24,7 +24,7 @@ var deviceSourceManager = new BABYLON.DeviceSourceManager(scene.getEngine());
 Within your scene's render/game loop, you can query the DeviceSourceManager for the current state of a specific input.  First, you will need to get the DeviceSource object.  With this object, you can then query for a specific input's status.
 
 ```javascript
-// If the device has been registered in the DSM
+// If the device has been registered in the DeviceSourceManager
 if (deviceSourceManager.getDeviceSource(BABYLON.DeviceType.Xbox)) {
     // And the A button was pressed
     if (deviceSourceManager.getDeviceSource(BABYLON.DeviceType.Xbox).getInput(BABYLON.XboxInput.A) == 1) {
