@@ -83,6 +83,13 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
 
 * Maya2Babylon 2019
    * Requires atleast .NET Framework 4.6.1
+   
+* Maya2Babylon 2020
+   * Requires atleast .NET Framework 4.6.1
+   
+## Other Dependencies
+* For Maya 2020
+   * Maya2Babylon 2020 requires Maya 2020.1 or newer.
 
 # Features  #
 
