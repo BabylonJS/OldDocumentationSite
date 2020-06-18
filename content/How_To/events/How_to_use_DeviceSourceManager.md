@@ -3,7 +3,16 @@ PG_TITLE: How to use the DeviceSourceManager
 ---
 
 # DeviceSourceManager
-The [DeviceSourceManager](https://doc.babylonjs.com/api/classes/babylon.devicesourcemanager) is a class that will manage the connections for various user input devices and provide methods of querying those devices for their current state.
+The [DeviceSourceManager](https://doc.babylonjs.com/api/classes/babylon.devicesourcemanager) is a class that will manage the connections for various user input devices and provide methods of querying those devices for their current state.  
+This class supports several methods of input:
+- **Keyboard** *(DeviceType: BABYLON.DeviceType.Keyboard, Inputs: number)*
+- **Mouse** *(DeviceType: BABYLON.DeviceType.Mouse, Inputs: BABYLON.PointerInput)*
+- **Touch** *(DeviceType: BABYLON.DeviceType.Pointer, Inputs: BABYLON.PointerInput)*
+- **DualShock Gamepad** *(DeviceType: BABYLON.DeviceType.DualShock, Inputs: BABYLON.DualShockInput)*
+- **Xbox Gamepad, One or 360** *(DeviceType: BABYLON.DeviceType.Xbox, Inputs: BABYLON.XboxInput)*
+- **Switch Gamepad, L+R JoyCon Grip or Pro Controller** *(DeviceType: BABYLON.DeviceType.Switch, Inputs: BABYLON.SwitchInput)*
+- **Generic/Other Gamepad** *(DeviceType: BABYLON.DeviceType.Generic, Inputs: number)*
+
 
 To use this, first create a DeviceSourceManager.  You will need to provide an engine object.
 ```javascript
@@ -64,3 +73,4 @@ deviceSourceManager.getDeviceSource(BABYLON.DeviceType.Keyboard).onInputChangedO
     // device.previousState is the previous value (before activation)
 });
 ```
+* [Playground Example](https://playground.babylonjs.com/#C7PM2B)
