@@ -150,6 +150,13 @@
                     "icon": "icons/gizmo.jpg",
                     "description": "Position, Rotate and Scale meshes with a pointer",
                     "PGID": "#8MGKWK#25"
+                },
+                {
+                    "title": "Using DeviceSourceManager",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_devicesourcemanager",
+                    "icon": "icons/dsm_input.png",
+                    "description": "Control ship with keyboard or gamepad.",
+                    "PGID": "#C7PM2B"
                 }
             ]
         },
