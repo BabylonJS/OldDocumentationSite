@@ -261,12 +261,12 @@ You can use this in addition of translucency to accurately represent the spread 
 
 ![SubSurfaceScattering](/img/extensions/PBRSubSurfaceScattering.jpg)
 
-[Demo](https://www.babylonjs-playground.com/#GTQKYK)
+[Demo](https://www.babylonjs-playground.com/#GTQKYK#1)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
 
-scene.enablePrePassRenderer().metersPerUnit = 0.01;
+scene.enablePrePassRenderer().subSurfaceConfiguration.metersPerUnit = 0.01;
 
 pbr.metallic = 0;
 pbr.roughness = 0.2;
@@ -282,7 +282,7 @@ Pushing realism even further, material volume albedo affects how far light trave
 
 Let's say you want a skin tone diffusion profile, you can add this to your subsurface configuration by doing :
 
-[Demo](https://www.babylonjs-playground.com/#W7DYG2#1)
+[Demo](https://www.babylonjs-playground.com/#W7DYG2#2)
 ```javascript
 	pbr.subSurface.scatteringDiffusionProfile = new BABYLON.Color3(0.750, 0.25, 0.20);
 ```
