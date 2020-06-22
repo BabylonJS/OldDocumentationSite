@@ -10,6 +10,8 @@ The teleportation feature enabled the following ways to interact with the camera
 2) Move backwards
 3) Rotate in place.
 
+Quick note about the **WebXR emulator** - Even thou it doesn't have support for it just yet, the WebXR emulator adds a Thumbstick to the emulated controller, making it impossible to simulate teleportation. To get teleportation working you will need to enable `useMainComponentOnly` (described below) to disable the thumbstick's teleportation. It is recommended to only enable this during development, unless this is the required behavior.
+
 ### Enabling teleportation
 
 The teleportation module is turned on per default when using the [WebXR Default Experience Helper](./WebXR_Experience_Helpers#the-webxr-default-experience-helper). To turn it on or re-enable it use the following code:
@@ -172,7 +174,7 @@ Which looks like this:
 
 ![WebXR Custom landing zone](/img/how_to/xr/xr-landing-zone-custom.png)
 
-The example can be found here: [https://playground.babylonjs.com/pg/B8D5Z6/revision/2](https://playground.babylonjs.com/pg/B8D5Z6/revision/2)
+The example can be found here: [https://playground.babylonjs.com/pg/B8D5Z6/revision/20](https://playground.babylonjs.com/pg/B8D5Z6/revision/20)
 
 #### The ring's material
 
