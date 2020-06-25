@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Create Points on the Mesh Surface
----
-
 # How To Create Points on the Mesh Surface
 
 This utility enables you to create and store Vector3 points each of which is randomly positioned uniformly on the surface of a mesh.

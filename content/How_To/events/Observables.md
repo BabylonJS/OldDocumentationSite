@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Use Observables
----
-
 # How To Use Observables
 
 For many of you creating Babylon.js projects only [GUI](/how_to/Gui), and [scene](#scene-observables) Observables will be needed, particularly [scene.onPointerObservable](/how_to/interactions).

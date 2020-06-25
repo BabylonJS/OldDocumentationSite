@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Playground for Development of BJS
----
-
 # Using the Playground in Development of BJS
 
 During the early stages of developing code to contribute to Babylon.js it can be useful to try out that code in the Playground. Just ensure that the Playground is in Typescript mode by using the link https://www.babylonjs-playground.com/ts.html# . The `New` button will then give you the starting code. 

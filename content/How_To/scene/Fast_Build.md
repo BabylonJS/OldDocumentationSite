@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Fast Build a World
----
-
 # How To Fast Build a World
 
 There are a number of helpers that, once you to have put models into a scene, add cameras, light and environment that adjust to the models automatically allowing you to quickly view them. You can then make adjustments as you need.

@@ -1,7 +1,3 @@
----
-PG_TITLE: Use Mesh Behaviors
----
-
 ## Introduction
 Mesh behaviors are [Behaviors](/features/behaviour) that can be attached to a mesh.
 

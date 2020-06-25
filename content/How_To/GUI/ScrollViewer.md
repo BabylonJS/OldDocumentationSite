@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Scroll Viewer
----
-
 # The Scroll Viewer
 
 When you want to keep your user interface small and the information to present large you can use the **ScrollViewer** to contain the information.

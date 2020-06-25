@@ -1,7 +1,3 @@
----
-PG_TITLE: Facet data
----
-
 # Facet Data
 
 ## What is FacetData ?

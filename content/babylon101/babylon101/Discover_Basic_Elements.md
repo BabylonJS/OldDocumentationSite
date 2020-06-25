@@ -1,8 +1,3 @@
----
-ID_PAGE: 22011
-PG_TITLE: 02. Set Shapes
----
-
 # Set Shapes 101
 
 These are shapes that usually already have names in everyday use. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well known but also included in set shapes are a torus, a torus knot and the polyhedra. You will have to wait for the next section to learn how to create shapes that have no everyday names but are formed through data sets and parameters. These are termed _parametric shapes_.

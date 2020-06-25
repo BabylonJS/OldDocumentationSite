@@ -1,7 +1,3 @@
----
-ID_PAGE: 24832
-PG_TITLE: 06. Loading Assets
----
 Load your scene, meshes, and assets. And take a look at offline mode.
 
 ** Agenda **

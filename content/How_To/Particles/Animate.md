@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Animated Particles
----
-
 # Creating Animated Particles
 
 Starting from Babylon.js v3.1 the particle system will allow animated particles using a sprite animation map as its texture.

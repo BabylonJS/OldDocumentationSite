@@ -1,8 +1,3 @@
----
-ID_PAGE: 22111
-PG_TITLE: 12. Picking Collisions
----
-
 # Picking Collisions
 
 In picking an object with your mouse the main difficulty is to click on a 3D object whereas your screen is a flat 2D display.

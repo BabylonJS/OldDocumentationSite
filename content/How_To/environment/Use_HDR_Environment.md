@@ -1,7 +1,3 @@
----
-PG_TITLE: Use a HDR environment (for PBR)
----
-
 # Use a HDR environment (for PBR)
 
 ## Introduction

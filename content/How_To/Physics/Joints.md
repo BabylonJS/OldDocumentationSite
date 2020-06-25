@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Joints
----
-
 # Joints
 
 A joint in a physics engine is a constraining feature between two bodies. This area has the largest differences between the physics engine both in the joints available and the names used. Not all native joints are available in some plugins.

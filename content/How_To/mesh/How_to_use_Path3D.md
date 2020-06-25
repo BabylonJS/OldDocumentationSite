@@ -1,8 +1,3 @@
----
-ID_PAGE: 25090
-PG_TITLE: How to use Path3D
----
-
 # How To Use Path3D
 
 A ```Path3D``` is a mathematical object created from a sequence of position vectors of points on a curve. Once obtained a Path3D can be used to determine the triplet of vectors tangent, normal and binormal of the curve for each of those points. Each triplet can then be used as a local system coordinate. You could set, for example, the camera direction to the normal as it follows the curve.

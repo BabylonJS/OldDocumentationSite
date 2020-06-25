@@ -1,7 +1,3 @@
----
-PG_TITLE: Advanced Physics Features
----
-
 # How To Use Advanced Physics Features
 
 ## The Heightmap

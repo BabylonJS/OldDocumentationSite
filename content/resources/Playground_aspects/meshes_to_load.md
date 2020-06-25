@@ -1,7 +1,3 @@
----
-PG_TITLE: Available Meshes for Importing into Playground
----
-
 # Available Meshes for Importing into Playground
 
 All the playground examples are loaded using the default environment and default camera methods. All the meshes are different sizes and using the default methods places the camera at a distance where the whole image can be seen clearly. In order to find [values for other cameras](/resources/meshes_to_load#finding-camera-values) you can use the playground scene inspector.

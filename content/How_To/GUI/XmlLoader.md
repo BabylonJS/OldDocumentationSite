@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Xml Loader
----
-
 When you want to create GUI layouts in an easy and structured way you may want to take a look at the Xml Loader.
 
 ## Creating the Xml Loader

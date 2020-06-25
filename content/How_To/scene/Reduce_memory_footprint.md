@@ -1,7 +1,3 @@
----
-PG_TITLE: Reduce memory footprint
----
-
 # How To reduce memory footprint
 
 Babylon.js offers multiple options to reduce the memory usage of a scene:

@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Make a Mesh Glow
----
-
 # How To Make a Mesh Glow
 
 Emissive meshes are equivalent to self lit meshes. Both the emissive color and texture of the material determine how the mesh will self lit. This can for instance helps create a phosphorescent watch dial. Babylon JS supports natively emissive poperties in both the standard and PBR materials.

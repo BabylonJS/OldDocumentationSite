@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Babylon.GUI
----
-
 # How To Use Babylon GUI
 
 The Babylon.js GUI library is an extension you can use to generate interactive user interface.

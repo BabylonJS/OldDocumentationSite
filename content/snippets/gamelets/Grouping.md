@@ -1,7 +1,3 @@
----
-PG_TITLE: Creating Shapes from Groups of Particles
----
-
 # Creating Shapes from Groups of Particles
 
 In order to form complex shapes from particles we need to place sets of particles together and for them to react as one entity.

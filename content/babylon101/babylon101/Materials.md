@@ -1,8 +1,3 @@
----
-ID_PAGE: 22051
-PG_TITLE: 05. Materials
----
-
 # Materials
 Materials allow you to cover your meshes in color and texture and they need light to be seen. One material can be used to cover as many meshes as you wish.
 

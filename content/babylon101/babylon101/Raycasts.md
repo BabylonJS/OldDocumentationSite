@@ -1,8 +1,3 @@
----
-ID_PAGE: 22151
-PG_TITLE: 13. Raycasts
----
-
 # Raycasts 
 
 The rays are like sunrays.

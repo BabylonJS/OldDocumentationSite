@@ -1,8 +1,3 @@
----
-ID_PAGE: 24824
-PG_TITLE: 16. Playing sounds and music
----
-
 # How To Play Sounds and Music
 
 Babylon.js sound engine is based on the [**Web Audio specification**](http://webaudio.github.io/web-audio-api/). We decided not to offer a fallback on the audio tag or other mechanism. So, to use our sound engine, you need to use a Web Audio compatible browser. Still, if you’re using it on not compatible browser, it won’t break the rest of our engine, it will simply play no sound.

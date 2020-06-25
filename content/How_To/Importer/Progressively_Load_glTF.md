@@ -1,7 +1,3 @@
----
-PG_TITLE: Progressively Load glTF assets
----
-
 # Introduction
 
 Downloading large assets is often slow even with a decent internet connection. Progressively loading discrete levels of detail (LODs) is one technique to combat this. The idea is to store multiple LODs in the asset and progressively load them from low to high quality. This method improves the time to first render since the lowest quality LOD is often dramatically smaller than the highest quality LOD.

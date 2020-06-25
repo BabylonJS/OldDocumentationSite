@@ -1,7 +1,3 @@
----
-PG_TITLE: Camera Behaviours
----
-
 # Apply Camera Behaviors
 
 ## Bouncing behavior

@@ -1,7 +1,3 @@
----
-PG_TITLE: Dynamic Terrain
----
-
 # Dynamic Terrain
 
 The Dynamic Terrain is an extension that provides a way to display a large terrain dynamically morphed from a map of 3D data.  

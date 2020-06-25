@@ -1,6 +1,3 @@
----
-PG_TITLE: GUI
----
 # Graphical User Interface
 
 There are a number of options for adding a GUI to Babylon.js.

@@ -1,7 +1,3 @@
----
-PG_TITLE: Increasing Facets of a Mesh
----
-
 # Increasing Vertices of a Mesh
 
 The appearance of a softbody or the effect of a shader depends on the number of facets the mesh has. Some meshes 

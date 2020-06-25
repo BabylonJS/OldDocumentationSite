@@ -1,7 +1,3 @@
----
-PG_TITLE: Using Build a House from Plans
----
-
 # Using Build a House from Plans.
 
 **Please note that some functions used in this project uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**

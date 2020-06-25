@@ -1,7 +1,3 @@
----
-PG_TITLE: Web GPU
----
-
 # Web GPU
 
 ## Introduction

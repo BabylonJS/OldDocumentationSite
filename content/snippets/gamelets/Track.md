@@ -1,7 +1,3 @@
----
-PG_TITLE: Building a track for a Carriage to Follow
----
-
 # Building a track for a Carriage to Follow
 
 ![lean and turn](/img/snippets/roller.png)

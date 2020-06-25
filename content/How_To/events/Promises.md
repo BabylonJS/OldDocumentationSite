@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Use Promises
----
-
 # How To Use Promises
 
 ## Introduction

@@ -1,7 +1,3 @@
----
-PG_TITLE: The Playground
----
-
 # The Playground
 
 The place to try out coding with Babylon.js.

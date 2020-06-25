@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Image Filter Control
----
-
 # Image Filter Control
 
 The Babylon.js Filter Control is a web control built on top of Babylon.js in order to apply filter to pictures in web pages.

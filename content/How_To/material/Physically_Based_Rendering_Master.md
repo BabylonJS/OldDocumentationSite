@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Master the PBR Materials
----
-
 # How To Master the PBR Materials
 
 ## Introduction

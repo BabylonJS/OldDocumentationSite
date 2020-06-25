@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use PolygonMeshBuilder
----
-
 # How To Use PolygonMeshBuilder
 
 Given the corner points of a polygon in the XoY plane the PolygonMeshBuilder constructs vertices forming a triangulation of the polygon. This is then converted to a mesh using the build() function. It is also possible to add sides to a polygon constructed with PolygonMeshBuilder and to include holes inside it but on doing either a new mesh would need to be built. 

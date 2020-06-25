@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Update Vertices
----
-
 # How To Update Vertices
 
 ## Vertex Data

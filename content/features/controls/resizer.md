@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Resizer
----
-
 # Resizer Control
 
 The Babylon.js Resizer Control is a web control built on top of Babylon.js in order to accelerate the resizing of pictures in web pages.

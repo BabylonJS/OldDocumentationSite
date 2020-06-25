@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use Virtual Joysticks
----
-
 # VirtualJoystick
 Create virtual joysticks for the left and right side of the screen
 ```

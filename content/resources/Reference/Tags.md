@@ -1,6 +1,3 @@
----
-PG_TITLE: Tags for Babylon.js Objects
----
 ## Concepts
 
 Tag? You may already have heard or read this word before. Let's see some generic concepts.

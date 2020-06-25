@@ -1,7 +1,3 @@
----
-PG_TITLE: Making a Frame
----
-
 # Making a Frame
 
 ## Using Frame Maker

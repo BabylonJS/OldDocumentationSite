@@ -1,8 +1,3 @@
----
-ID_PAGE: 22421
-PG_TITLE: How to use Bones and Skeletons
----
-
 # Bones and Skeletons
 
 Babylon.js supports bones animations for your meshes.

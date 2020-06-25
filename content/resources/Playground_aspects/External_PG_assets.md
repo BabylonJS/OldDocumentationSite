@@ -1,7 +1,3 @@
----
-PG_TITLE: Using External Assets in the Playground
----
-
 # Using External Assets in the Playground
 
 Sometimes you might want to load you own assets into the playground. Should the reason for doing so be to get help with a feature please think carefully before doing so.

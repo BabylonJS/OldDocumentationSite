@@ -1,7 +1,3 @@
----
-PG_TITLE: glTF
----
-
 # Setup
 
 The glTF loader files are located [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release/loaders).

@@ -1,7 +1,3 @@
----
-PG_TITLE: Putting Shader Code in BabylonJS
----
-
 # Putting Shader Code in BabylonJS
 Here are four ways of putting shader code into your scene:
 

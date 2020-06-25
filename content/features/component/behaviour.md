@@ -1,7 +1,3 @@
----
-PG_TITLE: Behavior
----
-
 # Behavior
 
 Babylon.js v3.1 introduced a new component based tools: the behaviors.

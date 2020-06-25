@@ -1,7 +1,3 @@
----
-PG_TITLE: Event Handling
----
-
 # Event Handling
 
 There are two features of Babylon.js that handle events, actions and observables. It is also possible to use plain Javascript.

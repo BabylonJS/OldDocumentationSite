@@ -1,7 +1,3 @@
----
-PG_TITLE: Apply Material to Faces
----
-
 # How To Map Material to Individual Mesh Faces
 
 This method is only available when creating a mesh using the _MeshBuilder_ method.

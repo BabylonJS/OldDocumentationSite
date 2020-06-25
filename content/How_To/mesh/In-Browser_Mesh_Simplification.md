@@ -1,8 +1,3 @@
----
-ID_PAGE: 24822
-PG_TITLE: In-Browser Mesh Simplification (Auto-LOD)
----
-
 # Simplify a Mesh with Auto-LOD
 
 ## About

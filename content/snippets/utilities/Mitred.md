@@ -1,7 +1,3 @@
----
-PG_TITLE: Extrude Shape with Mitred Corners
----
-
 # Extrude Shape with Mitred Corners
 
 Neither [CreateTube](/how_to/parametric_shapes#tube) nor [ExtrudeShape](/how_to/parametric_shapes#extruded-shapes) were designed to handle sharp corners but to perform well over smooth curves. This can be seen by the tube and extruded shapes narrowing at the corner in the following

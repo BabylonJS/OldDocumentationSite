@@ -1,7 +1,3 @@
----
-PG_TITLE: Textures Available To the Playground
----
-
 # Textures Available To the Playground
 
 This list of files are in the [textures folder](https://github.com/BabylonJS/Babylon.js/tree/master/Playground/textures) of the Playground and can be loaded as Textures, CubeTextures or HDRCubeTextures.

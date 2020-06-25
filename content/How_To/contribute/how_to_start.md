@@ -1,7 +1,3 @@
----
-PG_TITLE: Start Contributing to Babylon.js
----
-
 # Preface
 
 Potential contributors to Babylon.js can come from many different backgrounds. For some of you version controllers, repositories, package managers and task runners are second nature and all you need to know are the requirements set by the Babylon.js core team for a pull-request to be accepted. For other of us, perhaps just wanting to explore the world of 3D, they can start out as a series of confusing hurdles. So this page will contain details that many of you can ignore as obvious. For others those details may be the difference between making a contribution or not.

@@ -1,7 +1,3 @@
----
-PG_TITLE: Introduction to the Inspector
----
-
 # Introduction to the Inspector
 
 ## Part 1: Introduction and Scene Explorer

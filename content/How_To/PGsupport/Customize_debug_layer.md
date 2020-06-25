@@ -1,7 +1,3 @@
----
-PG_TITLE: Customize The Inspector
----
-
 # Customize the Inspector
 
 The Inspector is part of the Babylon.js repository and can be customized in the same way as Babylon.js can. 

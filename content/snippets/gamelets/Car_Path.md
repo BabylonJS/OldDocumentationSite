@@ -1,7 +1,3 @@
----
-PG_TITLE: Making a Simple Car
----
-
 # Making a Simple Car
 This is to show the practical use of rotate. 
 

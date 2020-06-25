@@ -1,8 +1,3 @@
----
-ID_PAGE: 22441
-PG_TITLE: How to use PostProcessRenderPipeline
----
-
 # How to use PostProcessRenderPipeline
 Post Process Renders pipelines allow you to create a chain of post processes and attach it to a camera.
 A render pipeline can be managed by enabling and disabling some effects and displaying a specific pass for debugging.

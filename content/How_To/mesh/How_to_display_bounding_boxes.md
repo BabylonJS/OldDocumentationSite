@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Draw Bounding Boxes
----
-
 # How to Draw Bounding Boxes
 
 It's pretty easy to draw bounding boxes around a mesh in Babylon. You can think of a bounding box as visual box that your object(s) fit inside of perfectly. It encompasses the outer "bounds" of your object.

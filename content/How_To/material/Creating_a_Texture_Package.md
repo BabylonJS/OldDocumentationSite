@@ -1,7 +1,3 @@
----
-PG_TITLE: Creating a Texture Package
----
-
 # Texture Packer
 
 Create a TexturePacker by calling:

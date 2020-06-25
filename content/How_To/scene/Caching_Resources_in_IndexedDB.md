@@ -1,8 +1,3 @@
----
-ID_PAGE: 22231
-PG_TITLE: 07. Caching Resources in IndexedDB
----
-
 # How To Optimize Using Cached Resources
 
 By default, all texture contents are cached by the engine, so if you load the same texture twice, it will be instant (and resource will be shared to save memory).

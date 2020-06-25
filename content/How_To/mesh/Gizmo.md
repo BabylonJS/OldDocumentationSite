@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Gizmos
----
-
 ## Introduction
 
 Gizmo's are objects that can be attached to a mesh to provide interaction.

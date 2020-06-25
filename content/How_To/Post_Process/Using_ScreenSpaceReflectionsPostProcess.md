@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Screen Space Reflections post-process
----
-
 # Introduction
 Rendering reflections in real-time can be done using several methods. Each method contains its own pros and cons. For Web technologies, 2 main methods exist:
 * **Using a Mirror Texture**:

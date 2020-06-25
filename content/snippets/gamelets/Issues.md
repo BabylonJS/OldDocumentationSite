@@ -1,7 +1,3 @@
----
-PG_TITLE: Collision Issues
----
-
 # Collision Issues
 
 ## Checking for an Intersect

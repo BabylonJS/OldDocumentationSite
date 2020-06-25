@@ -1,8 +1,3 @@
----
-ID_PAGE: 22011
-PG_TITLE: 02. Set Shapes
----
-
 # Set Shapes
 
 These are shapes that usually already have names in everyday use and their form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well known but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.

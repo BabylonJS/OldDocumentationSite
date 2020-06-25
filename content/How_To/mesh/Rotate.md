@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Translations and Rotations
----
-
 # How To Use Translations and Rotations
 
 All [positioning, rotating and scaling](/features/Position,_Rotation,_Scaling) take place within a frame of reference determined by the [world matrix](/resources/Frame_Of_Reference). 

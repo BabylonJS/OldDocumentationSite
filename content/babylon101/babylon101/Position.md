@@ -1,7 +1,3 @@
----
-PG_TITLE: 04 Position, Rotation and Scaling
----
-
 # Position, Rotation and Scaling
 
 The 101 course only considers the setting of a mesh's _position_, _rotation_, and _scaling_. [Further Reading](#further-reading) will show you a range of methods to translate and rotate a mesh by a given amount.

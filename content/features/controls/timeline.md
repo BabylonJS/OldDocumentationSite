@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Timeline
----
-
 # Video Timeline Control
 
 The Babylon.js Timeline Control is the first web control built on top of Babylon.js in order to accelerate some of the usual Video Timeline construction on Web Pages.

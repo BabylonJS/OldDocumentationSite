@@ -1,7 +1,3 @@
----
-ID_PAGE: 25088
-PG_TITLE: Ribbons in Detail
----
 # How To Create a Ribbon
 By looking in detail a clearer understanding can be gained.
 

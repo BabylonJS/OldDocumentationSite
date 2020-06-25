@@ -1,7 +1,3 @@
----
-PG_TITLE: Color and texture
----
-
 # Materials
 Materials give your meshes color and texture. Materials can be opaque or have different degrees of transparency. When you form one material in Babylon.js it can be used to cover as many meshes as you wish, the only requirement is a light to be seen by. Their reaction to light can be diffuse, specular, emissive or ambient.
 

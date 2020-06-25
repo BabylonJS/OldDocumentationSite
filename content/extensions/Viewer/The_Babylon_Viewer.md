@@ -1,7 +1,3 @@
----
-PG_TITLE: The Babylon.js Viewer
----
-
 # Display 3D models on your webpage
 
 The Babylon.js viewer is the simplest way to display 3D content on a web page.

@@ -1,7 +1,3 @@
----
-ID_PAGE: 24829
-PG_TITLE: 03. Using Babylon.js for Beginners
----
 Take a look at basic scene components (lights, cameras, and meshes), materials, and inputs (gamepads, touch, WebVR, and orientation), plus get insights on using the Playground.
 
 ** Agenda **

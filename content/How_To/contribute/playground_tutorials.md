@@ -1,7 +1,3 @@
----
-PG_TITLE: Write a PBT
----
-
 # Playground Based Tutorials
 This type of playground takes a student step by step through a feature of Babylon.js at the same time as higlighting the code used by that feature. The whole of the code exists in the playground editor but any distracting code can be hidden from the user. Generally the student should not be given the facility to edit the code or to use all features of the playground since doing so would destroy the tutorial they are trying to follow. 
 

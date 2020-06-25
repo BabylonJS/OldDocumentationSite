@@ -1,8 +1,3 @@
----
-ID_PAGE: 25094
-PG_TITLE: 17. Decals
----
-
 # How to Use Decals
 
 ![Decal](http://www.babylonjs.com/screenshots/decals.jpg)
