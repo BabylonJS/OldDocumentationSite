@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use the DeviceSourceManager
----
-
 # Introduction
 The [DeviceSourceManager](https://doc.babylonjs.com/api/classes/babylon.devicesourcemanager) is a class that will manage the connections for various user input devices and provide methods of querying those devices for their current state.  
 This class supports several methods of input:
