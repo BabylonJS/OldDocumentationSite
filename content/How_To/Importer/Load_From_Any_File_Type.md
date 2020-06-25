@@ -58,6 +58,23 @@ BABYLON.SceneLoader.Append("", "data:" + gltfString, scene, function (scene) {
 
 [Demo](https://playground.babylonjs.com/#88CB6A#1)
 
+You can also load a .glb binary file from a data string as long as the binary data is base64 encoded:
+
+```javascript
+var base64_model_content = "data:base64,BASE 64 ENCODED DATA...";
+BABYLON.SceneLoader.Append("", base64_model_content, scene, function (scene) { 
+    // do something with the scene
+});
+```
+
+Note that two mime types are allowed in the string data:
+```javascript
+var base64_model_content = "data:application/octet-stream;base64,-BASE 64 ENCODED DATA-";
+var base64_model_content = "data:model/gltf-binary;base64,-BASE 64 ENCODED DATA-";
+```
+
+[Demo](https://playground.babylonjs.com/#7F6S08#15)
+
 ## SceneLoader.Load
 
 Loads all babylon assets from the file and creates a new scene
