@@ -153,7 +153,7 @@
                 },
                 {
                     "title": "Using DeviceSourceManager",
-                    "doc": "https://doc.babylonjs.com/how_to/how_to_devicesourcemanager",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_devicesourcemanager",
                     "icon": "icons/dsm_input.png",
                     "description": "Control ship with keyboard or gamepad.",
                     "PGID": "#C7PM2B"
