@@ -1,7 +1,3 @@
----
-PG_TITLE: Tutorial - Recreating the default configuration for the Babylon.js viewer
----
-
 # Tutorial - Recreating the default configuration for the Babylon.js viewer
 
 This tutorial is meant to show the advanced usage of the viewer's configuration only. It is meant as an explanation of what can be done and how you can modify the viewer to your needs using HTML only.

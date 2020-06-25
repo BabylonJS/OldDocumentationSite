@@ -1,7 +1,3 @@
----
-PG_TITLE: How Materials Work
----
-
 # How Materials Work
 
 Materials are an encapsulation on top of shaders. They provide a simple way to configure and share shaders. 

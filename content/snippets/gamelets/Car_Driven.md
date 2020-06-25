@@ -1,7 +1,3 @@
----
-PG_TITLE: Making a Simple Driven Car
----
-
 # Making a Simple Driven Car
 This is to show a practical use of translate, rotate and  using a parent.
 

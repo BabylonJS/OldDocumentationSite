@@ -1,7 +1,3 @@
----
-PG_TITLE: Parametric Shapes Legacy Method
----
-
 # How To Create Parametric Shapes using Legacy Method
 
 ## Ribbon

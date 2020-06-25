@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Create Polyhedra
----
-
 # How To Create Polyhedra
 
 There are fifteen polyhedra that can be created simply by setting its type number from 0 to 14, and one, the icosphere that is created by name to which more variations can be applied. 

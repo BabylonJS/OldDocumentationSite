@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Selection Panel Helper
----
-
 # The Selection Panel Helper
 
 A `SelectionPanel` contains groups of checkboxes, radio buttons and sliders. Though not as versatile as as building your own interface with your own custom arrangement of controls it can be a quick way to construct a method of changing scene parameters for objects within your scene.

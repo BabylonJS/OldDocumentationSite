@@ -1,7 +1,3 @@
----
-PG_TITLE: Creating Custom Meshes
----
-
 # How to Create a Mesh from Scratch
 
 Each and every shape in BabylonJS is built from a mesh of triangles or facets as shown below:

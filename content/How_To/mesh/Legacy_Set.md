@@ -1,7 +1,3 @@
----
-PG_TITLE: Set Shapes Legacy Method
----
-
 # How To Create Set Shapes using Legacy Method
 
 # Box

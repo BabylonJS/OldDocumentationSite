@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Start with Physically Based Rendering
----
-
 # How To Start with Physically Based Rendering
 
 ## Introduction

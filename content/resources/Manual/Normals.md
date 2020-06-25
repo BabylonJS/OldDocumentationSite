@@ -1,8 +1,3 @@
----
-ID_PAGE: 45094
-PG_TITLE: Normals
----
-
 # Vertex Normals
 
 Each triangular facet of a mesh comprises three vertices.

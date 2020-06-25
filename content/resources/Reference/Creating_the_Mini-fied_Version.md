@@ -1,7 +1,3 @@
----
-ID_PAGE: 22641
-PG_TITLE: Creating the Mini-fied Version
----
 To create the minified version of Babylon.js you just have to 
 use [gulp](https://github.com/BabylonJS/Babylon.js/tree/master/Tools/Gulp)
 

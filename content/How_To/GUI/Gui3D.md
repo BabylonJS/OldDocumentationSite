@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Babylon 3D GUI
----
-
 # How To Use Babylon 3D GUI
 
 The Babylon.js 3D GUI library is an extension you can use to generate 3D interactive user interface.

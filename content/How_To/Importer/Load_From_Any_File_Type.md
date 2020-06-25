@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Scene Loader
----
-
 # How to Use Scene Loader
 
 The built in file type is `.babylon` and Babylon.js can load these without a plugin.

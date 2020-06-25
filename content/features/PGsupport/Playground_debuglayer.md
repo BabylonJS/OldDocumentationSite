@@ -1,7 +1,3 @@
----
-PG_TITLE: Playground Inspector
----
-
 # What Is It?
 
 Babylon.js inspector is a visual debugging tool created to help pinpoint issues you may have with a scene.

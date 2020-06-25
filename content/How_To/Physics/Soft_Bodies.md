@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Create Soft Bodies with AmmoJSPlugin
----
-
 # Soft Bodies
 In terms of physics' engines a soft body is a body that can have its shape deformed by interactions with other bodies or forces within the physics world. Out of the three plugins available with Babylon.js soft bodies are only available using Ammo.js. There are three soft bodies you can create, the three dimensional `softbody`, the two dimensional `cloth` and the one dimensional rope. First a number of limitations need to be considered, followed by some aspects particular to soft bodies and then some examples.
 

@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use TrailMesh
----
-
 ## How To Use TrailMesh
 
 `TrailMesh` creates a new `Mesh` that trails another.

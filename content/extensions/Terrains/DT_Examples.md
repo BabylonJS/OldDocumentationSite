@@ -1,7 +1,3 @@
----
-PG_TITLE: Dynamic Terrain Examples
----
-
 # Dynamic Terrain Examples
 
 ## FreeCamera on the Ground

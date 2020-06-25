@@ -1,7 +1,3 @@
----
-PG_TITLE: Morph Targets
----
-
 # Morph targets
 
 Morph targets are a new feature introduced with Babylon.js v3.0.

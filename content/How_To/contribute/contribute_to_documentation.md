@@ -1,7 +1,3 @@
----
-PG_TITLE: Improve Documentation
----
-
 Since the engine is constantly evolving, you may notice some gaps in the documentation. You're going to know how to fix that!
 
 # The easy way

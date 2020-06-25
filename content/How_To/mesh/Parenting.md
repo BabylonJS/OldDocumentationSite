@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use a Parent
----
-
 # Overview of a Parent
 
 Making mesh P a parent of mesh C changes the frame of reference for mesh C to the local axes of mesh P. Re-positioning, rotating or scaling mesh P will apply the same transformations to mesh C. Positioning, rotation and scaling of mesh C will depend on the position and orientation of the local axes of C relative to those of P.

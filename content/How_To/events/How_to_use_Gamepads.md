@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use GamePads
----
-
 # Gamepad Manager
 First create a GamepadManager:
 ```javascript

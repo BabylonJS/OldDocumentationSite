@@ -1,6 +1,3 @@
----
-PG_TITLE: How To Check When Point is Inside a Mesh
----
  
 # How To Check When Point is Inside a Mesh
 

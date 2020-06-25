@@ -1,7 +1,3 @@
----
-ID_PAGE: 25100
-PG_TITLE: Transparency and How Meshes Are Rendered
----
 This article has been written to help you understand how things are drawn on screen, and how transparency is handled in BabylonJS. Feel free to contribute in whatever way seems fit to you!
 
 # General Considerations

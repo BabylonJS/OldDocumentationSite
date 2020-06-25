@@ -1,8 +1,3 @@
----
-ID_PAGE: 25094
-PG_TITLE: 18. Using Parallax Mapping
----
-
 # How To Use Parallax Mapping
 
 Starting with Babylon.js v2.4, we introduced Parallax Mapping.

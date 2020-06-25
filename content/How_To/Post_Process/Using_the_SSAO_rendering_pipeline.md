@@ -1,8 +1,3 @@
----
-ID_PAGE: 24837
-PG_TITLE: How To Use the SSAO rendering pipeline
----
-
 # How To Use the SSAO rendering pipeline
 
 BABYLON.SSAORenderingPipeline is a rendering pipeline (chained post-processes) that will compute the ambient occlusion of a given scene from the screen space.

@@ -1,7 +1,3 @@
----
-PG_TITLE: Parametric Shapes
----
-
 
 # Parametric Shapes
 Unlike set shapes the form of a parametric shape cannot generally be determined by their name as it depends on the parametric values applied to the shape.

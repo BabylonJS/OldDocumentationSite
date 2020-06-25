@@ -1,7 +1,3 @@
----
-PG_TITLE: 04. How To Obtain Reflections and Refractions
----
-
 # How To Obtain Reflections and Refractions
 Using reflection textures can simulate mirror like material and refraction textures can simulate looking through glass or water.
 

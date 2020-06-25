@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Apply Bumps, Opacity, Tiling and Detail Maps
----
-
 # How To Apply Bumps, Opacity, Tiling and Detail Maps
 A range of effects can be achieved with textures using a few extra lines of code.
 

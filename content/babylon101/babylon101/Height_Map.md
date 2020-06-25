@@ -1,7 +1,3 @@
----
-ID_PAGE: 22141
-PG_TITLE: 16. Height Map
----
 ## Introduction
 
 In this tutorial, our goal is to understand height maps, and to learn how to generate realistic grounds.

@@ -1,7 +1,3 @@
----
-ID_PAGE: 22081
-PG_TITLE: 08. Animations
----
 # Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 

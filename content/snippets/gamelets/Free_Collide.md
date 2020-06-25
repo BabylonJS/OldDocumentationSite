@@ -1,7 +1,3 @@
----
-PG_TITLE: Free Particles
----
-
 # Free Particles
 
 After considering the [issues](/samples/Issues.html) involved and slow [slow particles](/samples/Slow_Collide.html) we are now ready to consider **free particles**, ones that move with no restriction to their start position or velocity.

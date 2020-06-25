@@ -1,7 +1,3 @@
----
-ID_PAGE: 21
-PG_TITLE: Blender
----
 # Blender to Babylon.js exporter
 
 The Blender export plugin can be found on [github repository](https://github.com/BabylonJS/BlenderExporter). We assume your using the last version.

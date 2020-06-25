@@ -1,7 +1,3 @@
----
-PG_TITLE: Basic WebVR
----
-
 # Basic WebVR
 A simple WebVR gamelet to show how to implement key VR features. 
 

@@ -1,7 +1,3 @@
----
-PG_TITLE: Snippets
----
-
 # Snippets
 
 Snippets are of two different forms, gamelets and utilities. 

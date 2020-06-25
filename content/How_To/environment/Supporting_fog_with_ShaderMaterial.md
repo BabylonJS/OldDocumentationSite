@@ -1,8 +1,3 @@
----
-ID_PAGE: 25101
-PG_TITLE: Supporting fog with ShaderMaterial
----
-
 # How To Support Fog with ShaderMaterial
 In order to support fog in your custom shaders, you will have to add some lines of code in your vertex and pixel shaders.
 

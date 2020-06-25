@@ -1,7 +1,3 @@
----
-PG_TITLE: Slow Particles
----
-
 # Slow Particles
 
 In the [issues](/samples/Issues.html) we found that it is necessary to keep the speed, the distance moved per frame, of particles to below, twice the radius of a particle, to ensure they intersect with walls or each other. Slow particles are those where the initial speed meets this restriction. 

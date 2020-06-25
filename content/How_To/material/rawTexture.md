@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Use Raw Textures
----
-
 # How to Create Raw RGB Textures
 
 The Raw Texture feature is incredibly simple, but unbelievably powerful! It allows you to create a texture from raw data! This type of thing is perfect for creating procedural textures on the fly. Let's take a look at how to create a simple RBG texture from scratch.

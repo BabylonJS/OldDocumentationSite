@@ -1,8 +1,3 @@
----
-ID_PAGE: 22671
-PG_TITLE: Approved Naming Conventions
----
-
 If you want to contribute to babylon.js (What an _excellent_ idea!), you should attempt to align your code with the following naming conventions:
 
 - Private variables are named starting with \_ : `_myVariable`

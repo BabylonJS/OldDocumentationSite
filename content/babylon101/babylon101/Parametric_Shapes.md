@@ -1,8 +1,3 @@
----
-ID_PAGE: 24847
-PG_TITLE: 03. Parametric Shapes
----
-
 # Parametric Shapes 101
 
 These shapes or meshes are determined by parameters or mathematical data. They include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. In the 101 course you will only meet lines and you will just use the _MeshBuilder_ method rather than the older legacy _Mesh_ method. How to create all the parametric shapes using either method and the advantages and disadvantages of both can be found by doing [Further Reading](#further_reading). 

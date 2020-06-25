@@ -1,7 +1,3 @@
----
-PG_TITLE: Introduction to Developing a System For Collisions
----
-
 # Introduction to Developing a System For Collisions
 
 The aim of this series of tutorials is to consider how a collision system can be built using just BabylonJS code (ie no physics engines). Some of the issues involved in developing such a system are described. The ideas in this tutorial can be used to build a collision system of complex shapes. 

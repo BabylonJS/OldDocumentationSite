@@ -1,7 +1,3 @@
----
-ID_PAGE: 22061
-PG_TITLE: Cameras
----
 # Cameras
 
 Of the many cameras available in Babylon.js the two most used are probably - the Universal Camera used for First Person Movement and the Arc Rotate Camera which is an orbital camera. Though with the advent of WebVR this may change.

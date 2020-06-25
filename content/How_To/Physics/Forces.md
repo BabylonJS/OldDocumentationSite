@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Forces
----
-
 # How To Use Forces
 
 This section gives some terminology needed to discuss the use of forces in the three physics' engines 

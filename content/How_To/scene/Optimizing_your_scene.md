@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Optimize Your Scene
----
-
 # How To Optimize Your Scene
 
 This tutorial will help you find some links and info on how you can improve your scene regarding rendering performance.

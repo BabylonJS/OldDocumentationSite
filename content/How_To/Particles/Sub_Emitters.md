@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Sub Emitters
----
-
 # Sub Emitters
 
 Starting from Babylon.js v3.2, you can create sub emitters which let you spawn a new particle from an existing particle. Each one of these spawned sub particle systems is totally independent from the parent.

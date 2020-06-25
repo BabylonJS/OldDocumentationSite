@@ -1,7 +1,3 @@
----
-PG_TITLE: Minimising Vertices By Forcing Sharing
----
-
 # Force Shared Vertices
 
 This function will remove some indices and vertices from a mesh. It removes facets where two of its vertices 

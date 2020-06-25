@@ -1,7 +1,3 @@
----
-PG_TITLE: A Wide Range of Mesh Types
----
-
 # Meshes
 
 In the 3D virtual world shapes are built from meshes, lots of trangular facets joined together, each facet made from three vertices.

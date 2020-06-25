@@ -1,8 +1,3 @@
----
-ID_PAGE: 22082
-PG_TITLE: 09. Sprites
----
-
 # Sprites
 
 In this tutorial, we are going to learn how to manipulate Sprites. Sprites are 2D image/animation, and we will use them to display an image with alpha channel. Sprites always face the camera.

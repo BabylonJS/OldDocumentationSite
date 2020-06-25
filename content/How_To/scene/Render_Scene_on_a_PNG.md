@@ -1,8 +1,3 @@
----
-ID_PAGE: 22691
-PG_TITLE: Render Scene on a PNG
----
-
 # How To Render a Scene to a PNG
 
 First you may ask why is it better than "ctrl + prt scr" screenshot or the Snippet app?

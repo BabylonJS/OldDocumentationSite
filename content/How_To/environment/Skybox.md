@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use a Skybox
----
-
 # How To Use a Skybox
 A simulated sky can be added to a scene using a skybox. This is created using a large standard box, special reflective textures and a group of six images, one for each face of the cube.
 

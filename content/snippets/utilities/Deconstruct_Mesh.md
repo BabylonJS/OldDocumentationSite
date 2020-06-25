@@ -1,7 +1,3 @@
----
-PG_TITLE: Deconstruct Mesh
----
-
 # Deconstruct Mesh.
 This snippet takes a mesh and splits its subMeshes into individual meshes. Returns array of new meshes.
 

@@ -1,7 +1,3 @@
----
-PG_TITLE: Adding a Roof to a House Built from Plans
----
-
 # Adding a Roof to a House Built from Plans
 
 For any house there is a range of different types of roof that can be added and so there is no automatic way to use the footprint of a house to build a roof directly. However with a little bit of manual design there are methods that can complete the build. Here we present two ways to design and create a hip roof. The example used is based on the [design](/samples/House) and [coding](/samples/House_Use) of this [house](https://www.babylonjs-playground.com/#4GBWI5#265).

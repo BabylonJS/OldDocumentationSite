@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Use a Physics Engine
----
-
 # How to Use a Physics Engine
 
 ## Introduction

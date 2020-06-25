@@ -1,7 +1,3 @@
----
-PG_TITLE: Viewer examples
----
-
 # Viewer examples
 
 This section holds a list of the current demos of the viewer

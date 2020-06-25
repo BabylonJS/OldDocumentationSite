@@ -1,7 +1,3 @@
----
-PG_TITLE: Multiple Scenes
----
-
 # How to Use Multiple Scenes
 
 To use multiple scenes create them with 

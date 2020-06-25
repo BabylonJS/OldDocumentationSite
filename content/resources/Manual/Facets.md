@@ -1,7 +1,3 @@
----
-PG_TITLE: How Materials are Applied to Vertices
----
-
 # Materials and Vertices
 
 BabylonJS allows you to create many meshes and apply material to them quite simply and in a range of ways.

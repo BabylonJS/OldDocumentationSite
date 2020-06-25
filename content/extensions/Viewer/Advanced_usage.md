@@ -1,6 +1,3 @@
----
-PG_TITLE: Viewer - Advanced usage
----
 # Advanced usage, tips and tricks
 
 ## Forcing the type of loader on a model

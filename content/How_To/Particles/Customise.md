@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Customize Particles
----
-
 # How To Customize Particles
 
 As you can find in [Babylon101](/babylon101/particles) there are many properties of the particle system that can be tweaked to control the look of a particle system. Babylon.js allows you even more customization to obtain the system you want. These can be split into into two types custom functions and custom effects. 

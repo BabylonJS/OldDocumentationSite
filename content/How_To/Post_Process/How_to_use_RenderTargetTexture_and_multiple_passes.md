@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use RenderTargetTexture and run multiple passes
----
-
 # How to use RenderTargetTexture and run multiple passes
 
 Sometimes it's interesting to render a scene multiple times and compose the generated passes for the final image. There are multiple uses for that: you can generate a texture in real time, to make a car rearview mirror for example, or you can perform complex effects with multiple independent renders that are combined together. 

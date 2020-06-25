@@ -1,7 +1,3 @@
----
-PG_TITLE: Vertical Wave with Vertex Shader
----
-
 # Vertical Wave with Vertex Shader
 
 As with any code it is important to have a firm idea of what you want to achieve, what is possible to code and 
