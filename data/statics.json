@@ -710,6 +710,11 @@
                     "title": "Use Promises",
                     "level": 2,
                     "filename": "Promises"
+                },
+                {
+                    "title": "Use the DeviceSourceManager for Inputs",
+                    "level": 2,
+                    "filename": "How_to_use_DeviceSourceManager"
                 }
             ]
         },
