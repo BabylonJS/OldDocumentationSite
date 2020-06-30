@@ -63,7 +63,7 @@ Here is an illustration:
 
 Setting _beta_ to 0 or PI can, for technical reasons, cause problems and in this situation _beta_ is offset by 0.1 radians (about 0.6 degrees).
 
-Both _alpha_ and _beta_ increase in a clockwise direction.
+_beta_ increases in a clockwise direction while _alpha_ increases counter clockwise.
 
 The position of the camera can also be set from a vector which will override any current value for _alpha_, _beta_ and _radius_.
 This can be much easier than calculating the required angles.
