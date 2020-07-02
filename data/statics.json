@@ -1015,6 +1015,11 @@
                     "title": "WebXR Selected Features",
                     "level": 2,
                     "filename": "WebXR_Selected_Features"
+                },
+                {
+                    "title": "WebXR Augmented Reality Features",
+                    "level": 3,
+                    "filename": "WebXR_Augmented_Reality"
                 }
             ]
         }
