@@ -414,5 +414,5 @@ const xrBackgroundRemover = featuresManager.enableFeature(BABYLON.WebXRBackgroun
 
 ## Demos
 
-* [XR measurement tape](https://playground.babylonjs.com/#GG06BQ) using hit-test and anchors
+* [XR measurement tape](https://playground.babylonjs.com/#GG06BQ#1) using hit-test and anchors
 * [Place a mesh in space](https://playground.babylonjs.com/#KDWCZY) using hit-test and anchors (including shadows on planes detected)
