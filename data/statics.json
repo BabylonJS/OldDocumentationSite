@@ -1,4 +1,20 @@
 {
+    "beginners": [{
+        "title": "All",
+        "name": "beginners",
+        "desc": "Tester"
+        },
+        {
+            "title": "Beginners",
+            "name": "beginners",
+            "desc": "Start with babylon.js",
+            "files": [{
+                    "title": "Hello World",
+                    "filename": "hello_world"
+                }
+            ]
+        }
+    ],
     "babylon101": [{
             "title": "All",
             "name": "babylon101",
