@@ -435,7 +435,7 @@ You will notice there are a few warnings about dependencies. We will deal with t
 
 ### Checking your project
 
-The best way for you during development would be the webpack dev server (https://github.com/webpack/webpack-dev-server), but it is not a part of the scope of this tutorial.
+The best way for you during development would be the webpack dev server (https://github.com/webpack/webpack-dev-server/), but it is not a part of the scope of this tutorial.
 
 To check the current project, I use the http-server npm module (installed globally). You can use any web server that will serve the root folder of our project.
 
