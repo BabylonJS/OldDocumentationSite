@@ -1,6 +1,6 @@
 ## A bit about augmented reality
 
-The idea behind augmented reality is simple - show the real world, but add information on top of it. As opposed to virtual reality where you are fully immersed in a different scene and have no actual contat to the real world, augmented reality lets you interact with it.
+The idea behind augmented reality is simple - show the real world, but add information on top of it. As opposed to virtual reality where you are fully immersed in a different scene and have no actual contact to the real world, augmented reality lets you interact with it.
 
 ## Getting started with Augmented reality
 
