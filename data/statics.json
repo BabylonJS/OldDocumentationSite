@@ -600,6 +600,11 @@
                     "level": 2,
                     "filename": "Sequence"
                 }
+                {
+                    "title": "Create an animated character and control it via keyboard (Blender-> Mixamo -> GLB -> Babylon.js)",
+                    "level": 1,
+                    "filename": "AnimatedCharacter"
+                }
             ]
         },
         {
