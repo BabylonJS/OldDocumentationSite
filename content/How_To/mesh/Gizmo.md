@@ -1,10 +1,10 @@
 ## Introduction
 
-Gizmo's are objects that can be attached to a mesh to provide interaction.
+Gizmo's are objects that can be attached to a node (mesh, bone, transform) to provide interaction. The GizmoManager and BoundingBox gizmo work with mesh. Whereas Position, scale and rotation gizmos are also usable with TransformNodes and Bones.
 
 ![](/img/how_to/gui/gizmos.png)
 
-Note: Gizmos will set/modify the [rotationQuaternion](/features/Position,_Rotation,_Scaling) of the attached mesh. After attaching, any rotation of the mesh should be done with the rotationQuaternion property instead of rotation.
+Note: Gizmos will set/modify the [rotationQuaternion](/features/Position,_Rotation,_Scaling) of the attached node.
 
 ## GizmoManager
 To get a default gizmo setup, the GizmoManager class can be used.
@@ -59,11 +59,11 @@ The utility layers are independent of the scene or engine. After creating a gizm
 var utilLayer = new BABYLON.UtilityLayerRenderer(scene);
 var gizmo = new BABYLON.AxisDragGizmo(new BABYLON.Vector3(1,0,0), BABYLON.Color3.FromHexString("#00b894"), utilLayer);
 ```
-When created, the gizmo will not be attached to a mesh and will not be visible so the gizmo can be attached to a mesh to become active. Setting this to null will disable/hide the gizmo once again.
+When created, the gizmo will not be attached to a node and will not be visible so the gizmo can be attached to a node to become active. Setting this to null will disable/hide the gizmo once again.
 ```
 gizmo.attachedMesh = sphere;
 ```
-By default, the gizmo will be updated to match the attached mesh's rotation and position but these can be modified with the following
+By default, the gizmo will be updated to match the attached node's rotation and position but these can be modified with the following
 ```
 // Keep the gizmo fixed to world rotation
 gizmo.updateGizmoRotationToMatchAttachedMesh = false;
