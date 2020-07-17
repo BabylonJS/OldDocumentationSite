@@ -4,7 +4,7 @@ Gizmo's are objects that can be attached to a node (mesh, bone, transform) to pr
 
 ![](/img/how_to/gui/gizmos.png)
 
-Note: Gizmos will set/modify the [rotationQuaternion](/features/Position,_Rotation,_Scaling) of the attached node.
+Note: Gizmos will set/modify the [rotationQuaternion](/features/Position,_Rotation,_Scaling) of the attached node. After attaching, any rotation of the mesh should be done with the rotationQuaternion property instead of rotation.
 
 ## GizmoManager
 To get a default gizmo setup, the GizmoManager class can be used.
