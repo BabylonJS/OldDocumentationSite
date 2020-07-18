@@ -1,5 +1,3 @@
-# How To Create a Character and Control it via Keyboard (Blender->Mixamo->GLB->Babylon.js)
-
 This "How To" goes over an end to end workflow from creating a character in Blender, adding animations to it with [**Mixamo**](http://www.mixamo.com) and combining them into a single model, to controlling the movement of the animated character with the keyboard.
 
 ## Detailed workflow
@@ -10,24 +8,24 @@ There are of course different tools and possible workflows to create an animated
 - Load the model in Mixamo to rig it and add animations
 - Download animated models as .FBX files
 - Use Blender to combine the animated models into one
-- Export as .GLB (animation as Group Animations)
-- Load the .GLB in a Babylon.js Playground and control the model movement via the keyboard
+- Export as .GLB (animation as Animation Group)
+- Load the .GLB in a Babylon.js Playground and control the model movement via keyboard
 
 
 ## Create a character with animation
 
-The first step is to create a character (a low poly character in this example). It usually involves starting from the 2D drawing of a character and then model it in 3D from head to toes. This is a quite long but fun experience. [**Blender**](https://www.blender.org) can be used to model a low poly character such as in the Grant Abbitt Tutorial [**Low poly anime Girl**](https://www.youtube.com/playlist?list=PLn3ukorJv4vuOi2Ar-Xt46VFbDFP3c_RE).
+The first step is to create a character (a low poly character in this example). It usually involves starting from the 2D drawing of a character and then model it in 3D from head to toes. This is a quite long but fun experience. [**Blender**](https://www.blender.org) can be used to model a low poly character such as in Grant Abbitt's Tutorial [**Low poly anime Girl**](https://www.youtube.com/playlist?list=PLn3ukorJv4vuOi2Ar-Xt46VFbDFP3c_RE).
 
 ![Create Character in Blender](/img/how_to/animatedCharact/createCharact.jpg)
 
 Once done with the creation of the model, the next step is to bring it to life by adding animations. The easy way to animate a character is with [**Mixamo**](https://www.mixamo.com). Grant Abbit goes over it in details in his [**Animate & Rig Characters the Easy Way**](https://youtu.be/k-ZeLNV4zPw) video. It involves going through the following:
 
 - In Blender, export the model as an .FBX file and upload it on Mixamo
-- In Mixamo, start with auto-rigging the model: after mapping key points of the model (e.g. chin, wrist, elbows etc… ), a rigging algorithm create the skeleton onto which the animations will be applied
+- In Mixamo, start with auto-rigging the model: after mapping key points of the model (e.g. chin, wrist, elbows etc… ), a rigging algorithm creates the skeleton onto which the animations will be applied
 
 ![Rig Character in Mixamo](/img/how_to/animatedCharact/rigCharact.jpg)
 
-- Then pick an animation, "Walk" for instance,  and download the result in a .FBX file
+- Then pick an animation, "Walk" for instance,  and download the result as a .FBX file
 
 ![Anim Character in Mixamo](/img/how_to/animatedCharact/animCharact.jpg)
 
@@ -79,7 +77,7 @@ By default the animationGroups[0] is played when loading a model with an animati
 animationGroups[0].stop();
 ```
 
-### Control animations via the keyboard
+### Control animations via keyboard
 
 The [**Action Manager**](https://doc.babylonjs.com/how_to/how_to_use_actions) can be used to capture the keys pressed on the keyboard:
 
@@ -149,17 +147,17 @@ This simple example can be enhanced:
 - With [**animation blending**](https://doc.babylonjs.com/babylon101/animations#animation-blending) to ensure much more natural transitions between animations
 
 
+## Further Reading
 
-# Further Reading
+### Basic
 
-## Basic
+- [Introduction to Animating](/babylon101/animations)  
+- [Grouping Animations](/How_To/Group)
+- Video: [Using External Assets](https://youtu.be/3D6BtdMnnQI)
+- Video: [Demystifying Animation Groups](https://youtu.be/BSqxoQ-at24)
 
-[Introduction to Animating](/babylon101/animations)  
-[Grouping Animations](/How_To/Group)
-Video: [Using External Assets](https://youtu.be/3D6BtdMnnQI)
-Video: [Demystifying Animation Groups](https://youtu.be/BSqxoQ-at24)
+### Advanced
 
-## Advanced
+- [Combining Animations](/How_to/combine)
+- [A Sequence of Animations](/How_To/sequence)
 
-[Combining Animations](/How_to/combine)
-[A Sequence of Animations](/How_To/sequence)
