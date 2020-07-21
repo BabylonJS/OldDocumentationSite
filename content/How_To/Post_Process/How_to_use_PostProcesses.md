@@ -95,6 +95,17 @@ Apply a kernel matrix to every pixel:
 var postProcess = new BABYLON.ConvolutionPostProcess("Sepia", BABYLON.ConvolutionPostProcess.EmbossKernel, 1.0, camera);
 ```
 
+### Screen Space Curvature
+Apply a nice effect highlightint the ridges and valley of your meshes:
+
+```javascript
+var postProcess = new BABYLON.ScreenSpaceCurvaturePostProcess("", scene, 1, scene.activeCamera);
+```
+
+You can easily define the ridge and valley level you want relying on the respective `postProcess.ridge` and `postProcess.valley` properties.
+
+You can see a live demo here: https://www.babylonjs-playground.com/#YF8D42#4
+
 ### FXAA
 Apply a full screen antialiasing filter:
 
