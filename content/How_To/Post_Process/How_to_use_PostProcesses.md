@@ -104,7 +104,7 @@ var postProcess = new BABYLON.ScreenSpaceCurvaturePostProcess("", scene, 1, scen
 
 You can easily define the ridge and valley level you want relying on the respective `postProcess.ridge` and `postProcess.valley` properties.
 
-You can see a live demo here: https://www.babylonjs-playground.com/#YF8D42#4
+You can see a live demo here: https://www.babylonjs-playground.com/#YF8D42#5
 
 ### FXAA
 Apply a full screen antialiasing filter:
