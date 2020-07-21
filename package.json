@@ -28,7 +28,7 @@
         "html-to-text": "^4.0.0",
         "line-by-line": "latest",
         "load-grunt-tasks": "^4.0.0",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.19",
         "marked-toc": "^0.3.0",
         "meta-marked": "^0.3.3",
         "mkpath": "^0.1.0",
