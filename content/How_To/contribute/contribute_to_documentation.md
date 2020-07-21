@@ -75,15 +75,17 @@ This fork operation has to be done only once. You're now able to run locally the
 
 ## Running and editing the doc locally
 
+** We currently support Node 10 and down. Local build will fail with node 12 and up **
+
 In the powershell window at the root of the documentation repo, send a:
 
-`grunt build`
+`npm run build`
 
 command and wait. Should the build not occur try `npm install`, or updating `npm`, `grunt`, and `grunt-cli`.
 
 When it's done, use:
 
-`grunt serve`
+`npm run serve`
 
 This will launch the local documentation website on http://localhost:8080
 
