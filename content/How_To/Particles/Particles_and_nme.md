@@ -147,6 +147,17 @@ And even better, that code can evolve automagically. If you open the main Playgr
 
 You can see on the GIF that the Snipped Id for the particle system is udpated to version #14 when I hit the save button.
 
+Now that we know about that automatic update,there was another option to create the initial particle. You could have called the CreateFromSnippetAsync with a "__BLANK" id:
+
+```
+BABYLON.ParticleHelper.CreateFromSnippetAsync("_BLANK", scene, false).then(system => {
+    system.emitter = sphere;
+});
+```
+
+And then from there you could have used the Inspector to edit it (The inspector can replace the __BLANK with the right id later on)
+
+
 # Further links
 
 * [Particle 101](/babylon101/particles)
