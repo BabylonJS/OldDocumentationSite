@@ -640,6 +640,11 @@
                     "title": "Points Cloud Particle System ",
                     "level": 1,
                     "filename": "Point_Cloud_Particles"
+                },                
+                {
+                    "title": "How To use the Node Material with particles",
+                    "level": 1,
+                    "filename": "Particles_and_nme"
                 }
             ]
         },
