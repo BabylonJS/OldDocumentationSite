@@ -246,6 +246,12 @@ var spriteManagerPlayer = BABYLON.SpriteManager.CreateFromSnippetAsync("GN24VF",
 
 Live example: https://www.babylonjs-playground.com/#G9VPHQ
 
+You can also specify "_BLANK" for the snippet Id, in this case the system will create an empty one for you to work on:
+
+```
+BABYLON.SpriteManager.CreateFromSnippetAsync("_BLANK", scene);
+```
+
 ## Packed SpriteSheet Playground Examples
 
 * [Playground Example Direct JSON Object Full TexturePacker Format](https://www.babylonjs-playground.com/#K5KTWA)
