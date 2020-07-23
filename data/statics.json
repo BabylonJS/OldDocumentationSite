@@ -649,6 +649,20 @@
             ]
         },
         {
+            "title": "Create A Game",
+            "name": "Create_A_Game",
+            "desc": "Learn how to make a game from scratch!",
+            "files": [{
+                    "title": "Getting Started",
+                    "filename": "page1"
+                },
+                {
+                    "title": "Next Step",
+                    "filename": "page2"
+                }
+            ]
+        },
+        {
             "title": "Environment",
             "name": "environment",
             "desc": "Environment Tutorials.",
