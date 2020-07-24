@@ -171,6 +171,11 @@
                     "filename": "Multi_Canvases"
                 },
                 {
+                    "title": "Apply delta changes to a scene",
+                    "level": 2,
+                    "filename": "delta_file"
+                },
+                {
                     "title": "Create a custom loading screen",
                     "level": 2,
                     "filename": "Creating_a_custom_loading_screen"
