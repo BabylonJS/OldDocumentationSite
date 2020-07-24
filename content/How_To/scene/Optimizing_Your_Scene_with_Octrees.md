@@ -49,6 +49,18 @@ For the specific case of ground meshes, Babylon.js provides a class called ```BA
 By calling ```groundMesh.optimize(chunkSize)``` where chunkSize defines the number of submeshes you want, the mesh will be optimized for rendering, picking and collisions by creating an internal octree (Be sure to select a correct chunkSize).
 
 ## Using Octrees Manually
+
+For your manually created Octree to activate correctly, you will need to register it like so:
+```ts
+let component = scene._getComponent(SceneComponentConstants.NAME_OCTREE);
+if (!component) {
+  component = new OctreeSceneComponent(scene);
+  scene._addComponent(component);
+}
+
+component.register();
+```
+
 You can also use octrees from your code to get a list of meshes or submeshes.
 
 Here are the helpful functions you can find on an octree:
