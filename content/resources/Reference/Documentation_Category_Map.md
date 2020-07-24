@@ -32,7 +32,7 @@
 [Behaviors](/features/behaviour)  
 [Blend Modes](/How_To/How_to_use_Blend_Modes)  
 [Blender Tips](/resources/Blender_Tips)  
-[Blender, Installing the Exporter](/resources/Installing__the_Babylon_Exporter)  
+[Blender, Installing the Exporter](/resources/blender#installation)  
 [Blender](/resources/Blender)  
 [Bones and Skeletons](/How_To/How_to_use_Bones_and_Skeletons)  
 [Box Mesh Using MeshBuilder](/How_To/Set_Shapes#box)  
@@ -118,16 +118,11 @@
 <a name = "E">**E**</a><span style = "float:right">[top](#top)</span>
 
 [Edges Rendering](/How_To/How_to_use_EdgesRenderer)  
-[Editor, Creating Cinematic](/resources/Creating_Cinematic)  
-[Editor, Creating Materials](/resources/Creating_Materials)  
-[Editor, Creating Particle Systems](/resources/Creating_Particle_Systems)  
+[Editor, Creating Materials](resources/adding_materials)  
+[Editor, Creating Particle Systems](/resources/using_particlesystemeditor)  
 [Editor, Getting Started](/resources/Getting_Started)  
-[Editor, Managing Animations](/resources/Managing_Animations)  
-[Editor, Managing Lens Flare Systems](/resources/Managin_Lens_Flare_Systems)  
-[Editor, Managing Materials](/resources/Managing_Materials)  
-[Editor, Using the Actions Builder](/resources/Using_Actions_Builder)  
-[Editor, Using the Materials Builder (for developers)](/resources/Using_Materials_Builder)  
-[Editor, Using the Post-Process Builder (for developers)](/resources/Using_Post_Processes_Builder)  
+[Editor, Managing Animations](/resources/adding_animations)  
+[Editor, Managing Materials](/resources/adding_materials)  
 [Environment, Realism](/features/Environment)  
 [Euler Angles and Quaternions](/resources/Rotation_Conventions)  
 [Events, Overview](/features/Events)  
@@ -142,7 +137,7 @@
 
 [Facet Data](/How_To/How_to_use_FacetData)  
 [File Importer, Own](/How_To/How_to_Create_Your_Own_File_Importer)  
-[FileFormat Map (.babylon)](</resources/File_Format_Map_(.babylon)>)  
+[FileFormat Map (.babylon)](resources/file_format_map_(.babylon))  
 [Fire, Material](/extensions/Fire)  
 [Fire, Procedural Texture](/extensions/FireProceduralTexture)  
 [Fog using ShaderMaterial](/How_To/Supporting_fog_with_ShaderMaterial)  
@@ -315,7 +310,7 @@
 [Reactjs](/resources/BabylonJS_and_ReactJS)
 [Reflection Material](/How_To/Reflect#reflection)  
 [Reflection Probes](/How_To/How_to_use_Reflection_probes)  
-[Refraction, Material](/How_To/Reflec#refractiont)  
+[Refraction, Material](/How_To/Reflect#refraction)  
 [Regular Polygon Mesh Using MeshBuilder](/How_To/Set_Shapes#regular-polygon)  
 [Regular Polygon Mesh with Legacy Method](/How_To/Legacy_Set#regular-polygon)  
 [Render a Scene to a PNG](/How_To/Render_Scene_on_a_PNG)  
@@ -338,7 +333,7 @@
 [Samples, Overview](/samples/Introduction)  
 [Scaling](/babylon101/Position#scaling)  
 [Scene Ambient Color](/babylon101/Environment#changing-the-ambient-color-sceneambientcolor)  
-[Scene Background Color](/babylon101/Environmentt#changing-the-background-color-sceneclearcolor)  
+[Scene Background Color](/babylon101/environment#changing-the-background-color-sceneclearcolor)  
 [Scene Creation and Optimization](/features/Scene)  
 [Scene Helpers](/how_to/fast_build)  
 [Scenes Multiple](/How_To/Multi_Scenes)  
@@ -358,7 +353,7 @@
 [Sky, Material](/extensions/Sky)  
 [Skybox](/babylon101/Environment#skybox)  
 [Skybox](/How_To/Skybox)  
-[Solid Particle System](/How_To/Solid_Particle_System)  
+[Solid Particle System](/How_To/Solid_Particles)  
 [Sphere Mesh Using MeshBuilder](/How_To/Set_Shapes#sphere)  
 [Sphere Mesh with Legacy Method](/How_To/Legacy_Set#sphere)  
 [Sphere Mesh](/babylon101/Discover_Basic_Elements#sphere)  
@@ -399,7 +394,7 @@
 
 <a name = "U">**U**</a><span style = "float:right">[top](#top)</span>
 
-[Unity](/resources/Unity)  
+[Unity](/resources/intro)  
 [Universal Camera](/babylon101/Cameras#universal-camera)  
 [Update Vertices](/How_To/Updating_Vertices)  
 [URL, Open on Mesh Click](samples/OpenUrl)
@@ -421,7 +416,7 @@
 [Video, WebGL Basics](/How_To/WebGL_Basics)  
 [Virtual Joysticks Camera](/babylon101/Cameras#virtual-joysticks-camera)  
 [Virtual Realirty Device Orientation Cameras](/babylon101/Cameras#vr-device-orientation-cameras)  
-[Visual Studio, Setup for Contributing to BJS](/How_To/setup_visualStudio)  
+[Visual Studio, Setup for Contributing to BJS](/how_to/how_to_start#editing-with-visual-studio-code)  
 [Volumetric Light Scattering](/How_To/Using_the_Volumetric_LightScattering_post-process)
 
 ---
