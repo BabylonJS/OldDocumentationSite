@@ -533,6 +533,13 @@
                     "PGID": "#NNL67B#1"
                 },
                 {
+                    "title": "Particles and node material",
+                    "doc": "https://doc.babylonjs.com/How_To/Particles_and_nme",
+                    "icon": "icons/particle_nme.jpg",
+                    "description": "Updating default particle shader with NME",
+                    "PGID": "#RA18GJ#0"
+                },
+                {
                     "title": "A lot of triangles with SPS",
                     "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
                     "icon": "icons/solidParticleSystem.jpg",

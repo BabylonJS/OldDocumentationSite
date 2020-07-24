@@ -640,6 +640,25 @@
                     "title": "Points Cloud Particle System ",
                     "level": 1,
                     "filename": "Point_Cloud_Particles"
+                },                
+                {
+                    "title": "How To use the Node Material with particles",
+                    "level": 1,
+                    "filename": "Particles_and_nme"
+                }
+            ]
+        },
+        {
+            "title": "Create A Game",
+            "name": "Create_A_Game",
+            "desc": "Learn how to make a game from scratch!",
+            "files": [{
+                    "title": "Getting Started",
+                    "filename": "page1"
+                },
+                {
+                    "title": "Next Step",
+                    "filename": "page2"
                 }
             ]
         },

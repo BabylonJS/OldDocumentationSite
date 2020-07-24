@@ -925,6 +925,12 @@ BABYLON.ParticleHelper.CreateFromSnippetAsync("T54JV7", scene, false).then(syste
 });
 ```
 
+You can also specify "_BLANK" for the snippet Id, in this case the system will create an empty one for you to work on:
+
+```
+BABYLON.ParticleHelper.CreateFromSnippetAsync("_BLANK", scene, false);
+```
+
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
 
