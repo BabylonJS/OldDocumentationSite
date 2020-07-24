@@ -100,7 +100,7 @@ To get reasonably accurate collisions without overloading the physics engine, a 
 1. Loading and adding colliders manually in Babylon: https://playground.babylonjs.com/#FD65RR
 1. Loading and adding collider with joints and pointer interactions: https://playground.babylonjs.com/#DGEP8N
 1. WebVR grabbing and throwing: https://playground.babylonjs.com/#ZNX043
-1. Custom engine with [`deterministicLockstep`](https://doc.babylonjs.com/babylon101/animations#deterministic-lockstep): https://www.babylonjs-playground.com/#3ZW889#7
+1. Custom engine with [`deterministicLockstep`](https://doc.babylonjs.com/babylon101/animations#deterministic-lockstep): https://www.babylonjs-playground.com/#3ZW889#8
 
 ### Babylon's physics impostor
 
