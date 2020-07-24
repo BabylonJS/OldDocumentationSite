@@ -8,11 +8,11 @@ Instructors | [David Catuhe](http://twitter.com/deltakosh) - Microsoft Principal
 
 <img src="http://az612410.vo.msecnd.net/wwwbabylonjs/doc/agendavideoscourse.jpg" alt="Agenda" style="width: 600px;"/>
 
-1. [3D on the Web: Understanding the Basics](//doc.babylonjs.com/page.php?p=24827)
-2. [WebGL Basics](//doc.babylonjs.com/page.php?p=24828)
-3. [Using Babylon.js for Beginners](//doc.babylonjs.com/page.php?p=24829)
-4. [Understanding Materials and Inputs](//doc.babylonjs.com/page.php?p=24830)
-5. [Game Pipeline Integration with Babylon.js](//doc.babylonjs.com/page.php?p=24831)
-6. [Loading Assets](//doc.babylonjs.com/page.php?p=24832)
-7. [Babylon.js: Advanced Features](//doc.babylonjs.com/page.php?p=24833)
-8. [Special Effects](//doc.babylonjs.com/page.php?p=24834)
+1. [3D on the Web: Understanding the Basics](//doc.babylonjs.com/how_to/3d_on_the_web_understanding_the_basics)
+2. [WebGL Basics](//doc.babylonjs.com/how_to/webgl_basics)
+3. [Using Babylon.js for Beginners](//doc.babylonjs.com/how_to/using_babylon.js_for_beginners)
+4. [Understanding Materials and Inputs](//doc.babylonjs.com/how_to/understanding_materials_and_inputs)
+5. [Game Pipeline Integration with Babylon.js](//doc.babylonjs.com/how_to/game_pipeline_integration_with_babylon.js)
+6. [Loading Assets](//doc.babylonjs.com/how_to/loading_assets)
+7. [Babylon.js: Advanced Features](//doc.babylonjs.com/how_to/babylon.js_advanced_features)
+8. [Special Effects](//doc.babylonjs.com/how_to/special_effects)

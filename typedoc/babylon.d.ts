@@ -11097,7 +11097,7 @@ declare module BABYLON {
         static ParseFromFileAsync(name: Nullable<string>, url: string, scene: Scene, rootUrl?: string): Promise<SpriteManager>;
         /**
          * Creates a sprite manager from a snippet saved by the sprite editor
-         * @param snippetId defines the snippet to load
+         * @param snippetId defines the snippet to load (can be set to _BLANK to create a default one)
          * @param scene defines the hosting scene
          * @param rootUrl defines the root URL to use to load textures and relative dependencies
          * @returns a promise that will resolve to the new sprite manager
@@ -15045,6 +15045,11 @@ declare module BABYLON {
          * @returns a matrix
          */
         getRestPose(): Matrix;
+        /**
+         * Sets the rest pose matrix
+         * @param matrix the local-space rest pose to set for this bone
+         */
+        setRestPose(matrix: Matrix): void;
         /**
          * Gets a matrix used to store world matrix (ie. the matrix sent to shaders)
          */
@@ -30773,7 +30778,7 @@ declare module BABYLON {
      * The SPS is also a particle system. It provides some methods to manage the particles.
      * However it is behavior agnostic. This means it has no emitter, no particle physics, no particle recycler. You have to implement your own behavior.
      *
-     * Full documentation here : https://doc.babylonjs.com/how_to/Solid_Particle_System
+     * Full documentation here : https://doc.babylonjs.com/how_to/solid_particles
      */
     export class SolidParticleSystem implements IDisposable {
         /**
@@ -30807,7 +30812,7 @@ declare module BABYLON {
         mesh: Mesh;
         /**
          * This empty object is intended to store some SPS specific or temporary values in order to lower the Garbage Collector activity.
-         * Please read : https://doc.babylonjs.com/how_to/Solid_Particle_System#garbage-collector-concerns
+         * Please read : https://doc.babylonjs.com/how_to/solid_particles#garbage-collector-concerns
          */
         vars: any;
         /**
@@ -30819,7 +30824,7 @@ declare module BABYLON {
          * This array is the first element of the pickedBySubMesh array : sps.pickBySubMesh[0].
          * It's not pertinent to use it when using a SPS with the support for MultiMaterial enabled.
          * Use the method SPS.pickedParticle(pickingInfo) instead.
-         * Please read : https://doc.babylonjs.com/how_to/Solid_Particle_System#pickable-particles
+         * Please read : https://doc.babylonjs.com/how_to/solid_particles#pickable-particles
          */
         pickedParticles: {
             idx: number;
@@ -30834,7 +30839,7 @@ declare module BABYLON {
          * `idx` is the picked particle index in the `SPS.particles` array
          * `faceId` is the picked face index counted within this particle.
          * It's better to use the method SPS.pickedParticle(pickingInfo) rather than using directly this array.
-         * Please read : https://doc.babylonjs.com/how_to/Solid_Particle_System#pickable-particles
+         * Please read : https://doc.babylonjs.com/how_to/solid_particles#pickable-particles
          */
         pickedBySubMesh: {
             idx: number;
@@ -31013,7 +31018,7 @@ declare module BABYLON {
         private _addParticle;
         /**
          * Adds some particles to the SPS from the model shape. Returns the shape id.
-         * Please read the doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#create-an-immutable-sps
+         * Please read the doc : https://doc.babylonjs.com/how_to/solid_particles#create-an-immutable-sps
          * @param mesh is any Mesh object that will be used as a model for the solid particles.
          * @param nb (positive integer) the number of particles to be created from this model
          * @param options {positionFunction} is an optional javascript function to called for each particle on SPS creation.
@@ -31150,7 +31155,7 @@ declare module BABYLON {
         private _setDefaultMaterial;
         /**
          * Visibilty helper : Recomputes the visible size according to the mesh bounding box
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
+         * doc : https://doc.babylonjs.com/solid_particles#sps-visibility
          * @returns the SPS.
          */
         refreshVisibleSize(): SolidParticleSystem;
@@ -31158,27 +31163,27 @@ declare module BABYLON {
          * Visibility helper : Sets the size of a visibility box, this sets the underlying mesh bounding box.
          * @param size the size (float) of the visibility box
          * note : this doesn't lock the SPS mesh bounding box.
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#sps-visibility
          */
         setVisibilityBox(size: number): void;
         /**
          * Gets whether the SPS as always visible or not
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#sps-visibility
          */
         get isAlwaysVisible(): boolean;
         /**
          * Sets the SPS as always visible or not
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#sps-visibility
          */
         set isAlwaysVisible(val: boolean);
         /**
          * Sets the SPS visibility box as locked or not. This enables/disables the underlying mesh bounding box updates.
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#sps-visibility
          */
         set isVisibilityBoxLocked(val: boolean);
         /**
          * Gets if the SPS visibility box as locked or not. This enables/disables the underlying mesh bounding box updates.
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#sps-visibility
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#sps-visibility
          */
         get isVisibilityBoxLocked(): boolean;
         /**
@@ -31280,13 +31285,13 @@ declare module BABYLON {
         /**
          * This function does nothing. It may be overwritten to set all the particle first values.
          * The SPS doesn't call this function, you may have to call it by your own.
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#particle-management
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#particle-management
          */
         initParticles(): void;
         /**
          * This function does nothing. It may be overwritten to recycle a particle.
          * The SPS doesn't call this function, you may have to call it by your own.
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#particle-management
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#particle-management
          * @param particle The particle to recycle
          * @returns the recycled particle
          */
@@ -31294,7 +31299,7 @@ declare module BABYLON {
         /**
          * Updates a particle : this function should  be overwritten by the user.
          * It is called on each particle by `setParticles()`. This is the place to code each particle behavior.
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#particle-management
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#particle-management
          * @example : just set a particle position or velocity and recycle conditions
          * @param particle The particle to update
          * @returns the updated particle
@@ -31306,7 +31311,7 @@ declare module BABYLON {
          * @param particle the current particle
          * @param vertex the current vertex of the current particle : a SolidParticleVertex object
          * @param pt the index of the current vertex in the particle shape
-         * doc : https://doc.babylonjs.com/how_to/Solid_Particle_System#update-each-particle-shape
+         * doc : https://doc.babylonjs.com/how_to/solid_particles#update-each-particle-shape
          * @example : just set a vertex particle position or color
          * @returns the sps
          */
@@ -46825,6 +46830,17 @@ declare module BABYLON {
          * @returns true if successful.
          */
         detach(): boolean;
+        /**
+         * This function will be executed during before enabling the feature and can be used to not-allow enabling it.
+         * Note that at this point the session has NOT started, so this is purely checking if the browser supports it
+         *
+         * @returns whether or not the feature is compatible in this environment
+         */
+        isCompatible(): boolean;
+        /**
+         * The name of the native xr feature name, if applicable (like anchor, hit-test, or hand-tracking)
+         */
+        xrNativeFeatureName?: string;
     }
     /**
      * A list of the currently available features without referencing them
@@ -46955,11 +46971,12 @@ declare module BABYLON {
          * @param version optional version to load. if not provided the latest version will be enabled
          * @param moduleOptions options provided to the module. Ses the module documentation / constructor
          * @param attachIfPossible if set to true (default) the feature will be automatically attached, if it is currently possible
+         * @param required is this feature required to the app. If set to true the session init will fail if the feature is not available.
          * @returns a new constructed feature or throws an error if feature not found.
          */
         enableFeature(featureName: string | {
             Name: string;
-        }, version?: number | string, moduleOptions?: any, attachIfPossible?: boolean): IWebXRFeature;
+        }, version?: number | string, moduleOptions?: any, attachIfPossible?: boolean, required?: boolean): IWebXRFeature;
         /**
          * get the implementation of an enabled feature.
          * @param featureName the name of the feature to load
@@ -46971,6 +46988,15 @@ declare module BABYLON {
          * @returns an array of enabled features
          */
         getEnabledFeatures(): string[];
+        /**
+         * This function will exten the session creation configuration object with enabled features.
+         * If, for example, the anchors feature is enabled, it will be automatically added to the optional or required features list,
+         * according to the defined "required" variable, provided during enableFeature call
+         * @param xrSessionInit the xr Session init object to extend
+         *
+         * @returns an extended XRSessionInit object
+         */
+        extendXRSessionInitObject(xrSessionInit: XRSessionInit): XRSessionInit;
     }
 }
 declare module BABYLON {
@@ -48341,6 +48367,10 @@ declare module BABYLON {
          */
         disableAutoAttach: boolean;
         /**
+         * The name of the native xr feature name (like anchor, hit-test, or hand-tracking)
+         */
+        xrNativeFeatureName: string;
+        /**
          * Construct a new (abstract) WebXR feature
          * @param _xrSessionManager the xr session manager for this feature
          */
@@ -48366,6 +48396,13 @@ declare module BABYLON {
          * Dispose this feature and all of the resources attached
          */
         dispose(): void;
+        /**
+         * This function will be executed during before enabling the feature and can be used to not-allow enabling it.
+         * Note that at this point the session has NOT started, so this is purely checking if the browser supports it
+         *
+         * @returns whether or not the feature is compatible in this environment
+         */
+        isCompatible(): boolean;
         /**
          * This is used to register callbacks that will automatically be removed when detach is called.
          * @param observable the observable to which the observer will be attached
@@ -58927,7 +58964,7 @@ declare module BABYLON {
 declare module BABYLON {
     /**
      * A CSM implementation allowing casting shadows on large scenes.
-     * Documentation : https://doc.babylonjs.com/babylon101/cascadedShadows
+     * Documentation : https://doc.babylonjs.com/babylon101/shadows_csm
      * Based on: https://github.com/TheRealMJP/Shadows and https://johanmedestrom.wordpress.com/2016/03/18/opengl-cascaded-shadow-maps/
      */
     export class CascadedShadowGenerator extends ShadowGenerator {
@@ -59146,7 +59183,7 @@ declare module BABYLON {
          * Creates a Cascaded Shadow Generator object.
          * A ShadowGenerator is the required tool to use the shadows.
          * Each directional light casting shadows needs to use its own ShadowGenerator.
-         * Documentation : https://doc.babylonjs.com/babylon101/cascadedShadows
+         * Documentation : https://doc.babylonjs.com/babylon101/shadows_csm
          * @param mapSize The size of the texture what stores the shadows. Example : 1024.
          * @param light The directional light object generating the shadows.
          * @param usefulFloatFirst By default the generator will try to use half float textures but if you need precision (for self shadowing for instance), you can use this option to enforce full float texture.
@@ -67325,7 +67362,7 @@ declare module BABYLON {
         static ParseFromFileAsync(name: Nullable<string>, url: string, scene: Scene, gpu?: boolean, rootUrl?: string): Promise<IParticleSystem>;
         /**
          * Creates a particle system from a snippet saved by the particle system editor
-         * @param snippetId defines the snippet to load
+         * @param snippetId defines the snippet to load (can be set to _BLANK to create a default one)
          * @param scene defines the hosting scene
          * @param gpu If the system will use gpu
          * @param rootUrl defines the root URL to use to load textures and relative dependencies
@@ -85674,4 +85711,4 @@ declare module BABYLON {
          */
         static Parse(parsedTexture: any, scene: BABYLON.Scene, rootUrl: string): WoodProceduralTexture;
     }
-}
+}

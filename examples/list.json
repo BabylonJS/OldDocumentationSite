@@ -541,28 +541,28 @@
                 },
                 {
                     "title": "A lot of triangles with SPS",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/solidParticleSystem.jpg",
                     "description": "Use solid particle system to create a colorful cube",
                     "PGID": "#2FPT1A#5"
                 },
                 {
                     "title": "Solid Particle System facet collision",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/facets.jpg",
                     "description": "Use SPS facets to simulate complex mesh collisions",
                     "PGID": "#6UZDJ9#0"
                 },
                 {
                     "title": "Solid Particle System collisions",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/sps_collisions.jpg",
                     "description": "Use basic geometry to simulate SPS collisions",
                     "PGID": "#2V1C4Z#0"
                 },
                 {
                     "title": "Solid Particle System and shadows",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/sps_shadows.jpg",
                     "description": "Animate SPS with realtime shadows",
                     "PGID": "#ML2LR9#0"

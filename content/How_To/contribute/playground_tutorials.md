@@ -10,10 +10,7 @@ Below are three PBT examples to give you an idea of what is possible.
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are:
 
-[Starter Guide](/resources/hiding_editor_lines)  
-[Slider Guide](/resources/PBT_slider)  
-[Intermediate Guide](/resources/PBT_Writing)  
-[Advanced Guide](/resources/PBT_previous_and_next)
+[Intermediate Guide](/how_to/playground_tutorials)  
 
 
 # Creating a PBT
@@ -334,8 +331,5 @@ Once the server is running in your browser type address http://localhost:1338/Pl
 
 # Further Reading
 
-[Starter Guide](/resources/hiding_editor_lines)  
-[Slider Guide](/resources/PBT_slider)  
-[Intermediate Guide](/resources/PBT_Writing)  
-[Advanced Guide](/resources/PBT_previous_and_next)
+[Intermediate Guide](/how_to/playground_tutorials)  
 

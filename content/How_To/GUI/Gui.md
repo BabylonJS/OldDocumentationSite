@@ -1002,7 +1002,7 @@ In this case the `guiScene` will host your GUI and the `mainScene` will host you
 
 If you are viewing the scene on a high dpi (or "retina") device (such as many mobile devices, or some laptops), you may notice that text on the UI appears "blurry" or "pixelated". This is because, starting in Babylon.js v2.6, the engine no longer defaults to adapting to the device pixel ratio. This was done for performance reasons on mobile devices; turning it on can have a large impact on performance. To improve the rendering of text (at the cost of performance), you will need to enable the `adaptToDeviceRatio` option when constructing your engine.
 
-Please see [Turning AdaptToDeviceRatio Off/On](/how_to/scene/Optimizing_your_scene#turning-adapttodeviceratio-offon) for more information on the trade offs.
+Please see [Turning AdaptToDeviceRatio Off/On](/How_To/Optimizing_your_scene#turning-adapttodeviceratio-offon) for more information on the trade offs.
 
 ## Further reading
 
