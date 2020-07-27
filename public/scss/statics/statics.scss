@@ -42,6 +42,7 @@
 
 .statics-content {
   @include outer-container(80%);
+  padding-bottom: 100px;
 
   .tagList {
     position: relative;

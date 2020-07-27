@@ -6,7 +6,7 @@
 
 .static-content{
   @include outer-container(80%);
-
+  padding-bottom: 100px;
 
   p, ul, ol {
     max-width: 40em;
