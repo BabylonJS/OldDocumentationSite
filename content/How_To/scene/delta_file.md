@@ -34,7 +34,7 @@ Tools.Download(JSON.stringify(delta), "delta.json");
 If you want to apply it to your scene, you can call that static function:
 
 ```
-recorder.applyDelta(delta, scene);
+SceneRecorder.ApplyDelta(delta, scene);
 ```
 
 # Example
@@ -80,7 +80,7 @@ scene.clearColor.r = 0;
 light.intensity = 1.0;
 
 // Apply the delta
-recorder.applyDelta(delta, scene);
+SceneRecorder.ApplyDelta(delta, scene);
 ```
 
 You can play with this code on this Playground: https://www.babylonjs-playground.com/#MPD4TQ
