@@ -665,6 +665,10 @@
                     "filename": "page9"
                 },
                 {
+                    "title": "Simple Game State",
+                    "filename": "page10"
+                },
+                {
                     "title": "Character Movement Part 1",
                     "filename": "page3"
                 },
@@ -687,6 +691,14 @@
                 {
                     "title": "Collisions & Triggers",
                     "filename": "page8"
+                },
+                {
+                    "title": "Game GUI",
+                    "filename": "page11"
+                },
+                {
+                    "title": "Game Timers",
+                    "filename": "page12"
                 }
             ]
         },
