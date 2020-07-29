@@ -658,12 +658,24 @@
             "name": "Create_A_Game",
             "desc": "Learn how to make a game from scratch!",
             "files": [{
-                    "title": "Getting Started",
+                    "title": "Introduction to Games with Babylon.js",
                     "filename": "page1"
                 },
                 {
-                    "title": "Next Step",
+                    "title": "Getting Set Up",
                     "filename": "page2"
+                },
+                {
+                    "title": "Character Movement Part 1",
+                    "filename": "page3"
+                },
+                {
+                    "title": "Character Movement Part 2",
+                    "filename": "page4"
+                },
+                {
+                    "title": "Player Camera",
+                    "filename": "page5"
                 }
             ]
         },
