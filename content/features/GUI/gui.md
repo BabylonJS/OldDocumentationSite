@@ -1,7 +1,7 @@
 # Graphical User Interface
 
 There are a number of options for adding a GUI to Babylon.js.
-1. Babylon.GUI, this allows you to place buttons and labels within in 3D space as well as a 2D front of screen GUI. 
+1. Babylon.GUI, this allows you to place buttons and labels in 3D space as well as a 2D front of screen GUI. 
 2. CastorGUI a Babylon.js extension which overlays the scene
 3. Dat.GUI, an external interface
 4. HTML
