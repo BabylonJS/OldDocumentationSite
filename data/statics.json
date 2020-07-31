@@ -666,6 +666,10 @@
                     "filename": "page2"
                 },
                 {
+                    "title": "State Machine",
+                    "filename": "page9"
+                },
+                {
                     "title": "Character Movement Part 1",
                     "filename": "page3"
                 },
@@ -676,6 +680,18 @@
                 {
                     "title": "Player Camera",
                     "filename": "page5"
+                },
+                {
+                    "title": "Import Meshes",
+                    "filename": "page6"
+                },
+                {
+                    "title": "Lanterns",
+                    "filename": "page7"
+                },
+                {
+                    "title": "Collisions & Triggers",
+                    "filename": "page8"
                 }
             ]
         },
