@@ -11,7 +11,7 @@ The thing about sounds is that they have to be attached to a single scene, so I 
 - **ui.ts**  
 For the GUI related sounds, I created a _loadSounds function and called that in the constructor.
 - **characterController.ts**  
-All of the character related SFX was loaded in the Player constructor.
+All of the character related SFX was loaded when we called _loadSounds in the Player constructor.
 
 # Playing Sounds
 Playing music is really simple, but when it comes to SFX that are short, played during scene switching and paused states, it can get kind of tricky.
@@ -19,6 +19,7 @@ Playing music is really simple, but when it comes to SFX that are short, played 
 I spent a bit of time debugging sound issues and here are some of the tips that I have:
 1. Don't use .ogg sound files. Safari does not support .ogg!
 2. Sounds played when transitioning between scenes will need time to play. Since sounds are attached to a scene, if you instantly switch scenes, there's a chance that the sound won't play at all. I was able to work around this since I included a fade transition post-process. It gave just enough time for the sfx to play before switching scenes.
+3. Be careful when using both looping & non-looping sounds. It's amazing being able to play to many sounds at once, but that also comes with the need for strict sound management since we don't have different channels for SFX / music to just stop all in 1 channel but not the other.
 
 # Sound Usage
 Aside from just playing background music and simple sfx, I had two pretty involved sections of sound.
@@ -41,4 +42,5 @@ There is an extra measure of security in making sure that .stop() would not be c
 In [_animatePlayer]() we notify the onRun observable by passing in a boolean of whether to play or not. 
 
 # Further Reading
-[Extra Features](/how_to/page15)
+**Previous:** [Particle Systems](/how_to/page13)  
+**Next:** [Extra Features](/how_to/page15) 
