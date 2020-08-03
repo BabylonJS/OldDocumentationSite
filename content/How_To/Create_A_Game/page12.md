@@ -1,8 +1,9 @@
 # Summary
-For this game, I made all of the animations myself in blender. In the past, I've had difficulty getting the animations to work correctly in Unity while using my own character rig with mixamo animations. So, I decided to learn how to make them myself. 
+For this game, I made all of the animations myself in blender. In the past, I've had difficulty getting the animations to work correctly in Unity while using my own character rig with mixamo animations. So, I decided to learn how to animate them myself. The meshes are exported as glTF/.glb.
+
+If you'd like to see the animations themselves, you can drag the .glb files into the [Sandbox](https://sandbox.babylonjs.com/).
 
 # Character (Rigged)
-My character mesh was modeled and animated in blender, so I just needed to export a single glTF/.glb into babylon.
 ## Setting up Animations
 When you import a mesh with animations, they will be a part of the result`.animationGroups`. We just need to return this along with the mesh import in [loadCharacter]().
 
@@ -136,5 +137,6 @@ After we're done setting up all the lanterns, we can dispose of the original ani
 Playing the animation is really simple since it's non-looping. Whenever the lantern is lit, we want to play the animation in *setEmissiveTexture* since this is where we're doing all the "lighting" effects.
 
 # Further Reading
-[Particle Systems](/how_to/page13)  
+**Previous:** [Game GUI](/how_to/page11)  
+**Next:** [Particle Systems](/how_to/page13)  
 [Animations](/babylon101/animations)
