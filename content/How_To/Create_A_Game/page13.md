@@ -3,9 +3,12 @@ Particle systems are an awesome way to add more depth to actions & movements in 
 
 # Fireworks
 The most important particle system of my game was the fireworks as it was the only one that was essential to the game. This was supposed to give an awesome ending!
+I used a playground as reference on how to make the fireworks. You can't actually use the exact code that's here in a local project because it uses some properties of the particle system that are only available in the playground. So, I had to make some adjustments to the code to get it to work.
 
-I used a playground as a reference of how to make the fireworks: [Playground](https://www.babylonjs-playground.com/#ZXI9H#4)
-You can't actually use the exact code that's here in a local project because it uses some properties of the particle system that are only available in the playground. So, I had to make some adjustments to the code to get it to work.
+Here's the original [Playground](https://www.babylonjs-playground.com/#ZXI9H#4)
+Here's the modified [Playground](https://playground.babylonjs.com/#IR1S8R#10)
+
+![fireworks](/img/how_to/create-a-game/fireworks.gif)
 
 ## Setting Up the Particle Systems
 Similar to this playground, I made a [Firework class](). There are two parts to a firework:
@@ -176,21 +179,22 @@ I made a function [_createSparkles]() that made the particle system. This is cal
 
 In order to toggle this on/off when the sparkler goes out, I just passed the object into *startSparklerTimer* and *stopSparklerTimer* then called sparkler.start() and sparkler.stop() respectively.
 
-[gif of sparkler turning on/off]
+![sparklerTimeout](/img/how_to/create-a-game/sparklergoingout.gif)
 
-You can look at how I made the particle system in this [Playground Demo]()
+You can look at how I made the particle system in this [Playground Demo](https://playground.babylonjs.com/#6EGCCM)
 # Lantern Stars
 I wanted to give some sort of extra feedback to the player when they lit a lantern so that it felt like an accomplishment. I decided to add this really simple star particle system.
 
-[gif from game]
+![lightlantern](/img/how_to/create-a-game/lightinglantern.gif)
 
 I created a [_loadStars]() function that made the particle system and called it in the Lantern constructor. Then, when *setEmissiveTexture* is called, I started the particle system.
 
-You can look at how I made the particle system in this [Playground Demo]()
+You can look at how I made the particle system in this [Playground Demo](https://playground.babylonjs.com/#YLGJ52)
 
 It took a bit of messing around with to get the exact effect, so this is where the editor can come in super handy as you can just make quick edits to your particle systems. Just remember that if you want there to be a set duration, assign that last as the particle system won't loop in the editor if you have this set.
 
 # Resources
 [Particle Textures](https://mebiusbox.github.io/contents/EffectTextureMaker/)
 # Further Reading
-[Music/SFX](/how_to/page13)
+**Previous:** [Animations](/how_to/page12)  
+**Next:** [Music/SFX](/how_to/page14)  
