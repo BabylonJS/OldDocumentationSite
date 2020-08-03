@@ -156,6 +156,13 @@ To set value as percentage, use this construct: `control.left = "50%"`
 
 You can also not define the unit (In this case the default unit will be used): `control.width = 0.5` (which is equivalent to `control.width = "50%"`)
 
+Since Babylonjs v4.2, you can use the `fixedRatio` property to compute one of the width or height dimension based on the other one. The computation for the second dimension is `first dimension x fixedRatio`. The first dimension is determined as being the one you set last. For eg, if you call:
+```javascript
+myCtrl.width = "40px";
+myCtrl.height = "0.2";
+```
+The first dimension is `height` and `width` will be computed as explained above (so `40px` won't be used). By default, `fixedRatio = 0` and thus is not enabled.
+
 Here is an example of how to use positions and sizes: https://www.babylonjs-playground.com/#XCPP9Y#14
 
 ### Tracking positions
