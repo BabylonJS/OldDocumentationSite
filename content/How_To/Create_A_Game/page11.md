@@ -2,7 +2,10 @@
 The babylon GUI has a ton to offer, and the babylonjs [gui](/how_to/gui) documentation is extremely thorough in explaining how to use the different controls and components. For this tutorial, I'll just be going over features that were specific to my game or involved a little bit of logic to accompany it.
 
 # Game UI
-The most importnant use of the GUI for my game had to be the [Hud class](). This was actually the first thing that I focused on when I started working with the GUI library. What I learned from working with this alone, I applied to all of my other states!
+The most important use of the GUI for my game had to be the [Hud class](). This was actually the first thing that I focused on when I started working with the GUI library. What I learned from working with this alone, I applied to all of my other states!
+
+![gameui](/img/how_to/create-a-game/guitimerspark.gif)
+
 ## HUD
 The ui.ts file contains everything necessary for the game state's UI. Just like how we set up an AdvancedDynamicTexture in goToGame for our [state machine setup](/how_to/page9#gotogame), we want to start with this as the foundation of our Hud class.
 
@@ -35,7 +38,9 @@ if (!this._stopTimer && this._startTime != null) {
 }
 ```
 What this does is:
-1. Calculates the amount of time in milliseconds that has passed since the start time, then divides by 1000 to convert it into seconds. Then adds whatever *_prevTime* is. *_prevTime* is initialized to 0 and only ever updates if the game is paused and when the game resumes, *_startTime* is updated to the current time so that the next time **updateHud** is called, we account for the time we spent paused (the difference in time will be the same as it left off).
+1. Calculates the amount of time in milliseconds that has passed since the start time, then divides by 1000 to convert it into seconds. Then adds whatever *_prevTime* is. 
+    - *_prevTime* is initialized to 0 and only ever updates if the game is paused and when the game resumes
+    - *_startTime* is updated to the current time so that the next time **updateHud** is called, we account for the time we spent paused (the difference in time will be the same as it left off).
 2. Stores the total time elapsed in seconds
 3. Formats the time to match our game's world time
 ### Format Time
@@ -68,7 +73,7 @@ public stopTimer(): void {
 }
 ```
 ### Using the Game Timer
-1. Start the game timer AFTER the [scene is ready]()
+1. Start the game timer AFTER the [scene is ready]() in app.ts.
 ```javascript
 this._ui.startTimer();
 ```
@@ -127,7 +132,7 @@ this._handle = setInterval(() => {
 ```
 This interval controls the actual sparkler's lifetime. The sparkler has 10 energy bars, and every 2 seconds we update the animation. Once we reach the last frame, we stop the spark & clear the interval.
 
-[gif of sparkler bar decreasing]
+![sparklerBar](/img/how_to/create-a-game/sparklerLife.gif)
 
 ```javascript
 this._sparkhandle = setInterval(() => {
@@ -146,7 +151,7 @@ this._sparkhandle = setInterval(() => {
 ```
 This interval controls the little spark animation for the sparkler part of the bar. It will just keep looping for as long as the sparkler still has energy.
 
-[gif of sparkler looping]
+![spark](/img/how_to/create-a-game/spark.gif)
 
 Both of these are affected by whether the game is paused.
 ### Stop Sparkler Timer
@@ -219,14 +224,34 @@ let dialogueTimer = setInterval(() => {
 # Menu Popup
 ## Pause Menu
 I used a [popup menu]() for my pause state that included a page for controls. In order to keep all of the elements together in case of screen resizing, I placed everything in a `Rectangle` control.
+```javascript
+pauseBtn.onPointerDownObservable.add(() => {
+    this._pauseMenu.isVisible = true;
+    playerUI.addControl(this._pauseMenu);
+    this.pauseBtn.isHitTestVisible = false;
 
+    //when game is paused, make sure that the next start time is the time it was when paused
+    this.gamePaused = true;
+    this._prevTime = this.time;
+});
+```
 There are a few things to consider when implementing this:
 1. When you pause the game the menu needs to become visible
-2. You need to add control to the menu. Even if it's not visible, it will be detecting pointer events unless you do this.
+2. You need to add control to the menu.
 2. You need to set the pause button to not detect any pointer events. This is specifically because I had a resume button rather than using the pause button to toggle the menu on/off.
 
 Similarly, you need to make sure that you do the opposite when you press the resume button.
-
+```javascript
+resumeBtn.onPointerDownObservable.add(() => {
+    this._pauseMenu.isVisible = false;
+    this._playerUI.removeControl(pauseMenu);
+    this.pauseBtn.isHitTestVisible = true;
+    
+    //game unpaused, our time is now reset
+    this.gamePaused = false;
+    this._startTime = new Date().getTime();
+});
+```
 ## Controls Menu
 The controls menu uses the same structure as the pause menu. It's a `Rectangle` control with an image. In order to toggle between the two, all you need to do is swap the visibility of the menus like so:
 ```javascript
@@ -243,5 +268,7 @@ When the game is paused we:
 2. Don't allow for player movement. (inputController.ts)
 
 When I got to actually implementing this, it so happened that the different files needed to know about *_ui.gamePaused*. However, it was useful to have this since I could also use this to stop movements when in the "win" state. The win state would then essentially lock the player in a position where they'd be able to see the fireworks.
+
 # Further Reading
-[Animations](/how_to/page12)
+**Previous:** [Collisions & Triggers](/how_to/page8)
+**Next:** [Animations](/how_to/page12)
