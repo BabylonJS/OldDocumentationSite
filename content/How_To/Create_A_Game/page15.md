@@ -8,11 +8,11 @@ Image based lighting is really great if you want to give some ambient light to y
 
 This is what the game scene looks like before using IBL:
 
-[image of game before IBL]
+![without IBL](/img/how_to/create-a-game/withoutIBL.png)
 
 This is what it looks like after we add IBL:
 
-[image after IBL]
+![with IBL](/img/how_to/create-a-game/withIBL.png)
 
 ```javascript
 const envHdri = CubeTexture.CreateFromPrefilteredData("textures/envtext.env", scene);
@@ -21,12 +21,12 @@ envHdri.gammaSpace = false;
 scene.environmentTexture = envHdri;
 scene.environmentIntensity = 0.04;
 ```
-It's a subtle change, but it makes the game look a lot cooler!
+It's especially helpful when you need the player to be able to see areas they can get to in the distance as well as providing light once the player's sparkler runs out.
 
 # Glow Layer
 Another thing I've added for an extra boost of visual effect is a glow layer. The [glow layer](/how_to/glow_layer) is super easy to set up a simple glow layer and can add a lot to a dark scene. I used it primarily with the lanterns since I wanted their light to be emphasized.
 
-[img of lantern without] [img of lantern with]
+![without GL](/img/how_to/create-a-game/withoutGL.png) ![withGL](/img/how_to/create-a-game/withGL.png)
 
 It really only takes 2 lines!
 ```javascript
@@ -91,4 +91,5 @@ Adding custom fonts is really simple. I brought in some google fonts that I thou
 [HDRI image used](https://hdrihaven.com/hdri/?h=kiara_1_dawn)
 
 # Further Reading
-[Cross Platform - Mobile](/how_to/page16)
+**Previous:** [Music/SFX](/how_to/page14)  
+**Next:** [Cross Platform - Mobile](/how_to/page16) 
