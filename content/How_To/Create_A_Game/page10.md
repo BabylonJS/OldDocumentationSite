@@ -1,12 +1,12 @@
 # Summary
-Now that we have our state machine set up, it's time to build a simple scene with a player and ground out of primitives! At this point, we only have an app.ts to deal with setting up scenes, so we're going to need to make some new files and classes.
+Now that we have our state machine set up, it's time to build a simple scene with a player and ground out of primitives! At this point, we only have an app.ts to deal with setting up scenes, so we're going to need to make some new files and classes:
 1. environment.ts
 2. characterController.ts
 
-Feel free to make as many files as you need. I chose to work with only these files as I wanted to separate my code to focus on single aspects of the game.
+I chose to work with only these files as I wanted to separate my code to focus on single aspects of the game. Feel free to make as many files as you need.
 
 # Environment
-This [environment]() class will contain all information necessary for the game scene's world.
+[environment.ts]() will contain all information necessary for the game scene's world.
 ```javascript
 export class Environment {
     private _scene: Scene;
@@ -21,7 +21,7 @@ export class Environment {
     }
 }
 ```
-This is a stripped down version of the environment class. Right now we're just focusing on creating a simple ground mesh. This starting structure is important as it makes importing our final assets much easier.
+This is a stripped down version of the Environment class. Right now we're just focusing on creating a simple ground mesh. This starting structure is important as it makes importing our final assets much easier.
 
 We'll want to create our environment in [_setUpGame](/how_to/page9#setupgame), so now it should look something like:
 ```javascript
@@ -59,14 +59,13 @@ var camera4 = new BABYLON.ArcRotateCamera("arc", -Math.PI/2, Math.PI/2, 40, new 
 ```
 This is also just a simple stationary camera for now, but the setup is necessary for when we work on the camera system.
 
-Notice how in our constructor, we are passing in assets. These assets should be imported AFTER the environment is loaded (in case you have any dependencies between your player and meshes in the environment).
+Notice how in our constructor, we are passing in assets. These assets should be imported AFTER the environment is loaded in **_setUpGame** (in case you have any dependencies between your player and meshes in the environment).
 ```javascript
 //..loaded environment
 await this._loadCharacterAssets(scene); //character
 ```
-We just call *_loadCharacterAssets* at the end of *_setUpGame*.
 ## Loading Assets
-In app.ts, we create [_loadCharacterAssets](). Inside of this function, we have the loadCharacter function, this is where we're setting up the character mesh system.
+In app.ts, we create [_loadCharacterAssets](). Inside of this function, we have the **loadCharacter** function, this is where we're setting up the character mesh system.
 ```javascript
 //collision mesh
 const outer = MeshBuilder.CreateBox("outer", { width: 2, depth: 1, height: 3 }, scene);
@@ -110,12 +109,12 @@ return loadCharacter().then(assets => {
     this.assets = assets;
 });
 ```
-Once we've returned our character mesh, we want to set our assets so we can pass it to our player constructor later.
+We can now pass these assets to the Player constructor.
 
 You'll want this kind of structuring if you plan on importing a character mesh later on because it will ensure that all of the assets are loaded before moving on. 
 
 # Initialize Game Async
-The final steps of our player set up is to actually call the constructor. [_initializeGameAsync]() will do all of the finishing touches to prepare the game scene once everything is imported & meshes are created. At this point this function should only need to look like this:
+The final steps of our player set up is to actually call the constructor in app.ts. [_initializeGameAsync]() will do all of the finishing touches to prepare the game scene once everything is imported & meshes are created. At this point this function should only need to look like this:
 ```javascript
 const light = new PointLight("sparklight", new Vector3(0, 0, 0), scene);
 light.diffuse = new Color3(0.08627450980392157, 0.10980392156862745, 0.15294117647058825);
@@ -128,10 +127,10 @@ shadowGenerator.darkness = 0.4;
 //Create the player
 this._player = new Player(this.assets, scene, shadowGenerator); //dont have inputs yet so we dont need to pass it in
 ```
-Every scene needs at least one light, and that light for my game was the player's light. The shadow generator uses a single light source, but you can have multiple shadow generators. And then, we finally create our player.
+We'll need at least one light to see our meshes, and that light for my game was the player's light. The shadow generator uses a single light source, but you can have multiple shadow generators. And then, we finally create our player.
 
 Now you when you go to the game state, you'll have a player mesh and a ground!
 
 # Further Reading
-[Character Movement Part 1](/how_to/page3)
-
+**Previous:** [State Machine](/how_to/page9)  
+**Next:** [Character Movement Part 1](/how_to/page3)
