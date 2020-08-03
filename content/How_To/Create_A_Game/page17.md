@@ -1,15 +1,14 @@
 # Summary
-The purpose of this performance section is to specifically attack the # of draw calls being made. At the current state of the game, it is a little over 1000. After the changes listed below are made, it drops to about 425. 
+The purpose of this performance section is to specifically attack the # of draw calls being made. At the current state of the game, it is a little over 1000. After the changes listed below are made, it drops to about 460. 
 
 Initially, there were actually some other changes that were made that DRASTICALLY improved performance. The most impactful must have been the removal of all meshes casting shadows. It did a ton of draw calls because of how many different meshes were actually in the scene. When first inspecting the draw calls, there were about 8000 being made. This wasn't noticeable on PC local server, but it severely impacted mobile and web performance. BEWARE!!
 
-You can check draw calls by using [spector.js](https://spector.babylonjs.com/);
+You can check draw calls by using: [spector.js](https://spector.babylonjs.com/).
 # Merging Meshes
 ## Character
 Again, the more meshes you have, the more draw calls you'll have. My character mesh, although a "single mesh" in blender, was split into separate meshes when imported into babylon because I used separate materials for different colors. What I did to reduce this was to use a color palette texture material + UV mapping. This is actually the process I had used for the environment.
 
-[image on what the palette and uv unwrapping]
-
+![character palette](/img/how_to/create-a-game/characteruv.png)
 ## Environment
 The environment consisted of a lot of separate & duplicated meshes since it was the entire game world. I just went back into the blender file and tried to join as many of the meshes as possible into groups that made sense.
 
@@ -17,7 +16,7 @@ The environment consisted of a lot of separate & duplicated meshes since it was 
 The glow layer really only needed to be used with the lanterns to give that extra glowy feel, so limiting what meshes are affected by the glow layer will reduce the amount of draw calls being made since it's only rendering the included meshes. I just added this to when I was [setting up my glow layer](/how_to/page15#glow-layer).
 ```javascript
 this._environment._lanternObjs.forEach(lantern => {
-    gl.addIncludedOnlyMesh(lantern);
+    gl.addIncludedOnlyMesh(lantern.mesh);
 });
 ```
 # Fade Transition Post Process
@@ -60,8 +59,7 @@ light.diffuse = new Color3(0.45, 0.56, 0.80);
 this._light = light;
 ```
 2. Rather than using the lightSphere to find nearby meshes, I decided to just assign the meshes to lights manually in blender. What I did was name empties with the name of the lantern plus "lights". Every mesh lit by a lantern would be a child of this empty. (Empties in blender translate to TransformNodes in babylon)
-
-[image of hierarchy for lanterns in blender]
+![lanterns in blender](/img/how_to/create-a-game/lanternlights.png)
 
 3. _findNearestMeshes would now would push the meshes belonging to the lantern's corresponding light.
 ```javascript
@@ -79,3 +77,8 @@ this._scene.getTransformNodeByName(this.mesh.name + "lights").getChildMeshes().f
 })
 ```
 This became a little tricky in the festival area because there were 2 lanterns on a platform, so for these I had to manually check for the grouped lanterns on the platform. This is why the first part of the function has checks for lanterns 14-21.
+
+# Further Reading
+**Previous:** [Cross Platform - Mobile](/how_to/page16)   
+**Next:** [Outro]()   
+**(BONUS):** [Design Process & 3D Modeling]()
