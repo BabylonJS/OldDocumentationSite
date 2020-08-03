@@ -30,7 +30,8 @@ We can break this up into 3 sections:
 3. There are meshes in the game that automatically control the rotation of the camera, and like the collision meshes, these aren't visible, nor are they pickable; however, because they're meant to just be volumes that are intersected with, we need to remove collision checks on them. 
 
 # Player and Collisions
-When we create our [player class](), we want to set up the interactions the player will have with the environment. The two main ones I have are:
+When we create our [Player class](), we want to set up the interactions the player will have with the environment.
+
 First, in order to start detecting these collisions, we'll need to set up an actionManager:
 ```javascript
 this.mesh.actionManager = new ActionManager(this.scene);
@@ -79,6 +80,8 @@ What we're doing here is setting up to check whenever the player intersects or c
 # Player and Trigger Volumes
 The trigger volumes in the scene are actually specifically for controlling the camera movement in areas of the game. So, respectively, these are located in the [_updateCamera]() function. 
 
+![rotation](/img/how_to/create-a-game/cornerrotation.gif)
+
 There are two types:
 1. Left/Right rotation
 ```javascript
@@ -113,3 +116,7 @@ if (this.mesh.intersectsMesh(this.scene.getMeshByName("destinationTrigger"))) {
 }
 ```
 The two areas where we're rotating the camera up/down is when the character enters and exits the festival stall area. The festival area exits into the destination area. So if they enter the festival, tilt the camera downwards more, and if they leave through that same entrance, rotate it back to the original tilt. Likewise, if they exit to the destination area, return it back to the original camera tilt. (*Player.DOWN_TILT* and *Player.ORIGINAL_TILT* are constants defined at the top of the [Player]() class.)
+
+# Further Reading
+**Previous:** [Lanterns](/how_to/page7)   
+**Next:** [Game GUI](/how_to/page11)
