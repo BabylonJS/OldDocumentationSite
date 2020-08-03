@@ -53,7 +53,7 @@ Once we've gone through and created all of our lanterns, we can dispose of the o
 assets.lantern.dispose();
 ```
 # Lantern Class
-So, what exactly does creating a new lantern do? I've created a lantern class in lantern.ts. This will store the information for each lantern instance.
+So, what exactly does creating a new lantern do? I've created a Lantern class in lantern.ts. This will store the information for each lantern instance.
 
 In order to create a lantern, we need:
 1. The material we're going to swap to when lit
@@ -78,8 +78,8 @@ this._lightSphere = lightSphere;
 //load the lantern mesh
 this._loadLantern(mesh, position);
 ```
-**lightSphere** is an invisible mesh that will be used later to calculate what meshes are affected by the lantern's light.
-[_loadLantern]() takes care of setting the mesh and position of our lantern. We need to set the absolute position instead of local position because this is an imported glTF.
+- **lightSphere** is an invisible mesh that will be used later to calculate what meshes are affected by the lantern's light.
+- [_loadLantern]() takes care of setting the mesh and position of our lantern. We need to set the absolute position instead of local position because this is an imported glTF.
 ```javascript
 this.mesh = mesh;
 this.mesh.scaling = new Vector3(.8, .8, .8);
@@ -128,7 +128,9 @@ this.mesh.material = this._lightmtl;
 ```
 ### Texture Swapping
 This is a super simple process that involves making a material that has a texture of what the lantern looks like when "lit".  
-*[images of lit and unlit lantern]*  
+
+![unlit lantern](/img/how_to/create-a-game/unlit.png) ![lit lantern](/img/how_to/create-a-game/lit.png)
+
 I generated this texture in blender, just giving the mesh an emissive coloring and then baking that into a .png.
 ```javascript
 //create emissive material for when lantern is lit
@@ -158,8 +160,8 @@ this._scene.getMeshByName("__root__").getChildMeshes().forEach(m => {
 //get rid of the sphere
 this._lightSphere.dispose();
 ```
-This goes through the entire scene, looks for what the lightSphere intersects with and pushes those meshes to the list of what our light affects. I was able to achieve this by refering to this [playground](https://playground.babylonjs.com/#WJWSNL)
-**Note: the implemenation for the lights here is what I had before making adjustments during the performance phase. If you'd like to see the final version, take a look at the [performance]() section.**
+This goes through the entire scene, looks for what the lightSphere intersects with and pushes those meshes to the list of what our light affects. I was able to achieve this by refering to what was done in this [playground](https://playground.babylonjs.com/#WJWSNL) **Note: the implemenation for the lights here is what I had before making adjustments during the performance phase. If you'd like to see the final version, take a look at the [performance](/how_to/page17#lights) section.**
 
 # Further Reading
-[Collisions & Triggers](/how_to/page8)
+**Previous:** [Import Meshes](/how_to/page6)   
+**Next:** [Collisions & Triggers](/how_to/page8)
