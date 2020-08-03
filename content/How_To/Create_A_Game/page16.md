@@ -14,7 +14,7 @@ Now, whenever we're using pointerEvents, it will account for touch inputs as wel
 ## GUI
 Now that we're no longer using key presses for our character, we need another way to get them moving around. This is where it gets a little tricky. The joystick class works really well if the main mechanic of the game is to only use the joystick. The joystick class creates an overlay canvas that ends up blocking any other inputs that may be on the screen. Since we need buttons to also jump and dash, I had to find a different way to get player movement. The end layout looked like this:
 
-[img of mobile controls]
+![mobile controls](/img/how_to/create-a-game/mobilecontrols.png)
 
 Since these controls are only visible in the game state, I added them to the [Hud](). Since we only want to see these buttons if we're on mobile, we need to have a check to tell us whether the device is a mobile device.
 ```javascript
@@ -41,6 +41,8 @@ actionGrid.addControl(jumpBtn, 1, 0);
 ```
 If you look at this code above, you can actually see the grid placement of the buttons based off of the location of 0s and 1s (of course this only works for this case since there's just two buttons). But this is how you get the effect of them being stacked and opposite sides of each other!
 
+![grid](/img/how_to/create-a-game/gridbuttons.png)
+
 ## Movement
 Now that we've made the new gui elements for our character movement, we just need to hook this up to our current input system.
 
@@ -58,7 +60,7 @@ if ((this.inputMap["Shift"] || this._mobileDash)) {
 
 We have our character moving! But wait, the running animations don't work? If we return to the [_animatePlayer](/how_to/page12#animate-player) function from the Animation tutorial, you'll see that we were looking at our inputMap for movement detection. We just need to add our mobile inputs to this as well.
 
-[gif of mobile play if possible]
+![mobile gameplay](/img/how_to/create-a-game/mobilegameplay.gif)
 
 Now we have a cross-platform game! Wasn't that easy?
 
@@ -67,6 +69,8 @@ Because the game is on a web browser, we need to make sure that the player knows
 
 This followed a similar structure to how we set up the mobile controls for the game state by first checking whether we were on a mobile device in [_goToStart](). It was just a simple image, text, and button.
 
-[image of notification]
+![image of notification](/img/how_to/create-a-game/rotatedevice.png)
+
 # Further Reading
-[Performance](/how_to/page17)
+**Previous:** [Extra Features](/how_to/page15)  
+**Next:** [Performance](/how_to/page17) 
