@@ -80,5 +80,5 @@ This became a little tricky in the festival area because there were 2 lanterns o
 
 # Further Reading
 **Previous:** [Cross Platform - Mobile](/how_to/page16)   
-**Next:** [Outro]()   
-**(BONUS):** [Design Process & 3D Modeling]()
+**Next:** [Outro](/how_to/page18)   
+**(BONUS):** [Design Process & 3D Modeling](/how_to/page19)
