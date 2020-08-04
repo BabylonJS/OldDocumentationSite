@@ -20,5 +20,5 @@ Starting with setting up a project locally, this series will walk you through ho
 It's important to note that this game only scratches the surface of what Babylon.js has to offer, so feel free to modify and experiment with different features!
 
 # Further Reading
-[Github Codebase](https://github.com/BabylonJS/SummerFestival)  
-**Next:** [Getting set up](/How_To/page2)
+[Github Game Repo](https://github.com/BabylonJS/SummerFestival)  
+**Next:** [Getting Set Up](/How_To/page2)
