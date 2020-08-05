@@ -160,6 +160,9 @@ We want to call this in **goToGame** where we were previously setting up our lig
 ```javascript
 //primitive character and setting
 await this._initializeGameAsync(scene);
+
+//--WHEN SCENE FINISHED LOADING--
+await scene.whenReadyAsync();
 scene.getMeshByName("outer").position = new Vector3(0,3,0);
 ```
 

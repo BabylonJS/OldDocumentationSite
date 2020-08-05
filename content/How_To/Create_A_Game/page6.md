@@ -1,5 +1,7 @@
 Importing meshes is actually a really simple process. It's just what you do with those meshes afterwards that can get tricky!
 
+The meshes for the environment and player will be linked below. We'll make a new folder called models inside of the public folder.
+
 # Environment Mesh
 Previously, we created an [Environment class](/how_to/page10#environment). In order to import our meshes, we'll neeed to add a [_loadAsset](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L100) function. 
 ## _loadAsset
@@ -12,8 +14,8 @@ let allMeshes = env.getChildMeshes();
 We want to first import the mesh for the environment, then grab the root and extract all of the meshes from that root.
 ```javascript
 return {
-env: env, //reference to our entire imported glb (meshes and transform nodes)
-allMeshes: allMeshes // all of the meshes that are in the environment
+    env: env, //reference to our entire imported glb (meshes and transform nodes)
+    allMeshes: allMeshes // all of the meshes that are in the environment
 }
 ```
 Then, we return these objects to complete our environment set up.
@@ -70,6 +72,22 @@ return SceneLoader.ImportMeshAsync(null, "./models/", "player.glb", scene).then(
 ```
 Here is where we actually bring in the character mesh, and the result of this import is what gets returned (the box collider parented to the character mesh). The reason why we loop through the meshes here is because if a glTF has multiple materials used, it will treat them as separate meshes. 
 
+Lastly, since we've brought in our new environment and character mesh, we need to re-position the player. I've created a special TransformNode for this inside of the player mesh itself. So, where we were setting the character position previously, we just need to change it to use this TransformNode:
+```javascript
+scene.getMeshByName("outer").position = scene.getTransformNodeByName("startPosition").getAbsolutePosition(); //move the player to the start position
+```
+
+**Now**, you'll notice that when we run the game, we get an error! This is because we aren't waiting for the meshes to finish loading before going to the game (if we immediately click next). So, this is where we start modifying **goToCutScene** to actually start awaiting **_setUpGame()**:
+```javascript
+await this._setUpGame().then(res =>{
+    finishedLoading = true;
+    this._goToGame();
+});
+```
+Instead of calling _goToGame when we click the next button, we can call it once the assets are done loading! This will now automatically take us to the game state.
+
+When you run the game now, you'll see the environment and character meshes in their raw form: all meshes imported are visible, and the character by default plays its animationGroups.
+
 # Further Reading
 **Previous:** [Character Movement Part 2](/how_to/page4)   
 **Next:** [Lanterns](/how_to/page7)
@@ -78,3 +96,7 @@ Here is where we actually bring in the character mesh, and the result of this im
 **Files Used:**  
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [environment model](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/envSetting.glb)
+- [player model](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/player.glb)
+- [importApp.ts]()
+- [importEnvironment.ts]()
