@@ -19,7 +19,7 @@ if (this.inputMap[" "]) {
 ```
 *this.dashing* and *this.jumpKeyDown* will be used to control the actions based off of conditions being met in characterController.ts.
 ## Jumping
-Here we'll be focusing on [_updateFromGroundDetection](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L355). We'll be adding to what we coded in [part 1's gravity](/how_to/page3#raycasts).
+Here we'll be focusing on [_updateFromGroundDetection](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L355). We'll be adding and updating what we wrote in [part 1's gravity](/how_to/page3#raycasts).
 ### Input
 ```javascript
 //Jump detection
@@ -61,18 +61,22 @@ let predicate = function (mesh) {
 3. For each raycast, we're checking if there's a hit and whether the normal of the hit is not equal to the up vector.
 ```javascript
 if (pick.hit && !pick.getNormal().equals(Vector3.Up())) {
-    //calculate the angle between the normal of the mesh and the up vector
+    //check whether it's stairs or not
 }
 ```
-4. We calculate the angle between the normal of the picked mesh and the up vector.
-```javascript
-let dot = Vector3.Dot(pick.getNormal(), Vector3.Up());
-let angle = Math.acos(dot / (pick.getNormal().length() * Vector3.Up().length()));
-```
-5. If this calculated angle is within a range, it is considered a slope
-```javascript
-return angle > 0.70 && angle < 1.6;
-```
+4. I implemented this calculation for stairs in two ways:
+    - Originally, I calculated the angle between the normal of the picked mesh and the up vector and if the angle was within a range, it was considered a slope.
+    ```javascript
+    let dot = Vector3.Dot(pick.getNormal(), Vector3.Up());
+    let angle = Math.acos(dot / (pick.getNormal().length() * Vector3.Up().length()));
+    return angle > 0.70 && angle < 1.6;
+    ```
+    - However, because there were some other meshes whose normals matched that range, it messed with the character animations in some areas as it detected them as slopes. So, I instead just checked to see if the pickedMesh's name had "stair" in it
+    ```javascript
+    if(pick.pickedMesh.name.includes("stair")) { 
+        return true; 
+    }
+    ```
 This range may be hardcoded and based specifically on the meshes used, so there's definitely a better way to do this. One potential way is to use tags to signify the specific meshes that are stairs and check for whether the raycasts are hitting those. 
 
 Now, we want to update our if not grounded check to take into account slopes:
@@ -98,7 +102,7 @@ This is why we check for whether we're on a slope, and then remove gravity, and 
 ## Dashing
 Dashing was another mechanic that I thought would be useful for a platformer. Since this game is based on time, I wanted to add a limitation on the dash mechanic so that it wouldn't become the main mode of transportation. Thus, the dash move became an air-dash that's limited to being used once until you touch a ground again.
 
-For the dashing implementation, we return to [_updateFromControls](/how_to/page3#basic-movement-setup).
+For the dashing implementation, we return to [_updateFromControls](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L170).
 ### Input
 ```javascript
 if (this._input.dashing && !this._dashPressed && this._canDash && !this._grounded) {
@@ -139,6 +143,8 @@ this._moveDirection = new Vector3((move).normalize().x * dashFactor, 0, (move).n
 ```
 Previously where we just normalized our move vector, we want to multiply by the dashFactor to give it that extra bit of movement in the direction we're currently moving.
 
+Now, if we run the game, we should be able to move, jump, and dash! You will notice that we still have that issue of falling into the ground. I am not sure why this is happening, but it doesn't happen once you import the final mesh. However, early on in the development I had fixed this issue before re-writing the gravity & jumping code. You can take a look at what I did [here](). Essentially, We have re-adjust to account for how much we would fall through. In addition, having more raycasts that are longer will help in detecting the ground earlier.
+
 # Further Reading
 **Previous:** [Character Movement Part 1](/how_to/page3)   
 **Next:** [Import Meshes](/how_to/page6)
@@ -147,6 +153,9 @@ Previously where we just normalized our move vector, we want to multiply by the 
 **Files Used:**  
 - [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+- [movement2App.ts]()
+- [movement2InputController.ts]()
+- [movement2CharacterController.ts]()
 
 ## External
 [AstroKat: Moving Kat 2 (Jumps and Slopes)](https://www.patreon.com/posts/35207209)
