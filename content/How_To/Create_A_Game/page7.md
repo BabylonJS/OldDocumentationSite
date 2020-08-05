@@ -3,7 +3,7 @@ The lanterns in my game have a few different components. In this section, I'll b
 # Lantern Mesh
 The lanterns are duplicates of a single mesh. If a mesh is interactable, it's best to clone it as often as possible if you're going to be using multiple instances. I followed the [Demystifying Animation Groups](https://www.youtube.com/watch?v=BSqxoQ-at24) to learn how to clone the meshes.
 
-In [_loadAsset](), after we've imported our environment, we'll want to also import our single lantern mesh.
+In [_loadAsset](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts#L100), after we've imported our environment, we'll want to also import our single lantern mesh.
 ```javascript
 //loads lantern mesh
 const res = await SceneLoader.ImportMeshAsync("", "./models/", "lantern.glb", this._scene);
@@ -24,7 +24,7 @@ return {
 }
 ```
 ## Creating Lanterns
-Once we've gotten the result of our import (*assets*), the [load]() function is in charge of setting up all of the lanterns in the scene.
+Once we've gotten the result of our import (*assets*), the [load](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L30) function is in charge of setting up all of the lanterns in the scene.
 ```javascript
 assets.lantern.isVisible = false; //original mesh is not visible
 //transform node to hold all lanterns
@@ -53,7 +53,7 @@ Once we've gone through and created all of our lanterns, we can dispose of the o
 assets.lantern.dispose();
 ```
 # Lantern Class
-So, what exactly does creating a new lantern do? I've created a Lantern class in lantern.ts. This will store the information for each lantern instance.
+So, what exactly does creating a new lantern do? I've created a Lantern class in **lantern.ts**. This will store the information for each lantern instance.
 
 In order to create a lantern, we need:
 1. The material we're going to swap to when lit
@@ -88,7 +88,7 @@ this.mesh.isPickable = false;
 ```
 I didn't want the player to be able to jump on the lantern, so I set isPickable to false (default is true). And since I didnt want the player to collide(physically) with the lantern, I kept checkCollisions to false (which is the default value). This way, the player can easily navigate through lanterns while still having a way to check that we've intersected with them.
 # Collisions
-The final setup part of our lanterns is calling [checkLanterns](). This function has 2 main purposes:
+The final setup part of our lanterns is calling [checkLanterns](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L133) in [_initializeGameAsync](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L929). This function has 2 main purposes:
 1. Light the first lantern. It's pre-lit to allow the player to not get stuck if they haven't found the next lantern in time. They can return to this lantern to re-light their sparkler.
 ```javascript
 if (!this._lanternObjs[0].isLit) {
@@ -128,7 +128,6 @@ this.mesh.material = this._lightmtl;
 ```
 ### Texture Swapping
 This is a super simple process that involves making a material that has a texture of what the lantern looks like when "lit".  
-
 ![unlit lantern](/img/how_to/create-a-game/unlit.png) ![lit lantern](/img/how_to/create-a-game/lit.png)
 
 I generated this texture in blender, just giving the mesh an emissive coloring and then baking that into a .png.
@@ -165,3 +164,9 @@ This goes through the entire scene, looks for what the lightSphere intersects wi
 # Further Reading
 **Previous:** [Import Meshes](/how_to/page6)   
 **Next:** [Collisions & Triggers](/how_to/page8)
+
+## Resources
+**Files Used:**  
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [lantern.ts]()
