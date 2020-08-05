@@ -16,13 +16,13 @@ Now that we're no longer using key presses for our character, we need another wa
 
 ![mobile controls](/img/how_to/create-a-game/mobilecontrols.png)
 
-Since these controls are only visible in the game state, I added them to the [Hud](). Since we only want to see these buttons if we're on mobile, we need to have a check to tell us whether the device is a mobile device.
+Since these controls are only visible in the game state, I added them to the [Hud](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L207). Since we only want to see these buttons if we're on mobile, we need to have a check to tell us whether the device is a mobile device.
 ```javascript
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     //make mobile controls
 }
 ```
-The [layout for controls]() took some experimentation, but I ended up creating grids to hold the buttons depending on which side of the screen they were on.
+The [layout for controls](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L214) took some experimentation, but I ended up creating grids to hold the buttons depending on which side of the screen they were on.
 1. Create Rectangles to hold our buttons
 2. Create Grids to manage button placement
 ```javascript
@@ -46,7 +46,7 @@ If you look at this code above, you can actually see the grid placement of the b
 ## Movement
 Now that we've made the new gui elements for our character movement, we just need to hook this up to our current input system.
 
-In [inputController.ts], there's a function _setUpMobile that creates pointer observables for each of the new character movement buttons. These will set flags for whether the button was pressed (similar to how we're storing keyboard inputs in our inputMap).
+In **inputController.ts**, there's a function [_setUpMobile](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L116) that creates pointer observables for each of the new character movement buttons. These will set flags for whether the button was pressed (similar to how we're storing keyboard inputs in our inputMap).
 
 Then all we need to do is add the mobile equivalent of our keypresses to the existing structure in _updateFromKeyboard. For example, dashing would be:
 ```javascript
@@ -67,10 +67,17 @@ Now we have a cross-platform game! Wasn't that easy?
 # Extra Features
 Because the game is on a web browser, we need to make sure that the player knows that the intended orientation is landscape mode. Not all browsers or devices allow for fullscreen mode, so I decided to create a notification that told the player to rotate the device for to get the best experience.
 
-This followed a similar structure to how we set up the mobile controls for the game state by first checking whether we were on a mobile device in [_goToStart](). It was just a simple image, text, and button.
+This followed a similar structure to how we set up the mobile controls for the game state by first checking whether we were on a mobile device in [_goToStart](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L224). It was just a simple image, text, and button.
 
 ![image of notification](/img/how_to/create-a-game/rotatedevice.png)
 
 # Further Reading
 **Previous:** [Extra Features](/how_to/page15)  
 **Next:** [Performance](/how_to/page17) 
+
+## Resources
+**Files Used:**  
+- [index.html](https://github.com/BabylonJS/SummerFestival/blob/master/public/index.html)
+- [ui.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/ui.ts)
+- [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)  
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
