@@ -5,9 +5,10 @@ If you'd like to see the animations themselves, you can drag the .glb files into
 
 # Character (Rigged)
 ## Setting up Animations
-When you import a mesh with animations, they will be a part of the result`.animationGroups`. We just need to return this along with the mesh import in [loadCharacter]().
+When you import a mesh with animations, they will be a part of the result`.animationGroups`. We just need to return this along with the mesh import in [loadCharacter](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L897).
 
 In the constructor of our Player class, we'll be storing each animationGroup that was imported.
+
 ```javascript
 this._idle = assets.animationGroups[1];
 this._jump = assets.animationGroups[2];
@@ -17,7 +18,7 @@ this._dash = assets.animationGroups[0];
 ```
 This way we can access them through the class variables. AnimationGroups are usually sorted alphabetically, but if you're not sure of the order you can check in the inspector.
 
-Once we've done this, we can set up the animations in [_setUpAnimations]() which is also called in the Player constructor.
+Once we've done this, we can set up the animations in [_setUpAnimations](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L236) which is also called in the Player constructor.
 ```javascript
 this.scene.stopAllAnimations();
 this._run.loopAnimation = true;
@@ -31,14 +32,15 @@ this._prevAnim = this._land;
 3. Initialize our current and previous animations.
 
 ## Animating the Player
-In order to actually animate the player, I created an [_animatePlayer]() function that checks for different states of the player.
+In order to actually animate the player, I created an [_animatePlayer](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L247) function that checks for different states of the player.
 ```javascript
 if (!this._dashPressed && !this._isFalling && !this._jumped 
     && (this._input.inputMap["ArrowUp"]
     || this._input.inputMap["ArrowDown"] 
     || this._input.inputMap["ArrowLeft"]
     || this._input.inputMap["ArrowRight"])) {
-this._currentAnim = this._run;
+
+    this._currentAnim = this._run;
 } else if (this._jumped && !this._isFalling && !this._dashPressed) {
     this._currentAnim = this._jump;
 } else if (!this._isFalling && this._grounded) {
@@ -78,7 +80,7 @@ We do this by checking:
     2. That we've jumped, so we're in the air.
 *_jumped* is checked specifically because this falling animation was intended for the landing of the jump, but if you have a falling animation that can be used for any type of falling, then you could probably remove this check.
 5. **Dashing**
-    - You'll notice that the dash animation is not here. This is because it's a lot easier to include it where the [dash action]() takes place.
+    - You'll notice that the dash animation is not here. This is because it's a lot easier to include it where the [dash action](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L170) takes place.
 ```javascript
 if (this._input.dashing && !this._dashPressed && this._canDash && !this._grounded) {
     this._canDash = false;
@@ -105,7 +107,7 @@ The other meshes in my game that used animations were the lanterns.
 
 The setup for these was a little different because I had to somehow clone the animations as well. I used [Demystifying Animation Groups](https://www.youtube.com/watch?v=BSqxoQ-at24&t=802s) to learn how to extract and clone the animationGroups.
 ## Importing
-The animation groups get imported along with the mesh. Returning to [_loadAsset]() in the Environment class, we need to extract the animation from the lantern.
+The animation groups get imported along with the mesh. Returning to [_loadAsset](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L100) in the Environment class, we need to extract the animation from the lantern.
 ```javascript
 const importedAnims = res.animationGroups;
 let animation = [];
@@ -122,7 +124,7 @@ return {
 What we do is, from the imported animationGroup, we extract the animation. Then we create a new animation that sets the mesh to its targeted animation. In the video, this was useful because the cannon mesh had two animations each belonging to a different mesh. Even though we have only 1 animation and 1 mesh, it's good to have this structure in case we wanted to add another animation later on.
 
 ## Cloning & Setting Up
-Similar to how we [cloned our lantern meshes](), we need to clone the animationGroups so that they are paired with their corresponding mesh.
+Similar to how we [cloned our lantern meshes](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L66), we need to clone the animationGroups so that they are paired with their corresponding mesh.
 ```javascript
 //Animation cloning
 let animGroupClone = new AnimationGroup("lanternAnimGroup " + i);
@@ -140,3 +142,9 @@ Playing the animation is really simple since it's non-looping. Whenever the lant
 **Previous:** [Game GUI](/how_to/page11)  
 **Next:** [Particle Systems](/how_to/page13)  
 [Animations](/babylon101/animations)
+
+## Resources
+**Files Used:**  
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
