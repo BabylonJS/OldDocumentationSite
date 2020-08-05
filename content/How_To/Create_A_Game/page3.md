@@ -65,6 +65,17 @@ Inside of **_updateFromKeyBoard** we're checking for whether our arrow keys have
 2. We're keeping track of which axis/direction we were moving in
 3. If we don't detect any inputs in an axis, we set both the direction and value to 0
 
+Now, in order to use this *PlayerInput*, we'll need to create one in **_goToGame**:
+```javascript
+//--INPUT--
+this._input = new PlayerInput(scene); //detect keyboard/mobile inputs
+```
+This means we will also need to update the line where we create our Player to take in the input **_initializeGameAsync**:
+```javascript
+//Create the player
+this._player = new Player(this.assets, scene, shadowGenerator, this._input);
+```
+
 ## Basic Movement Setup
 Now that we can detect our inputs, we need to implement what to do when those inputs are detected. We'll be focusing on the [updateFromControls](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L158) function inside of **characterController.ts**.
 ### Input
@@ -73,7 +84,7 @@ this._moveDirection = Vector3.Zero(); // vector that holds movement information
 this._h = this._input.horizontal; //x-axis
 this._v = this._input.vertical; //z-axis
 ```
-First we set up a vector3 to use as our movement vector. This will be reset every frame. Then we grab our inputs from the PlayerInput class.
+First we set up a Vector3 to use as our movement vector. This will be reset every frame. Then we grab our inputs from the PlayerInput class.
 ```javascript
 //--MOVEMENTS BASED ON CAMERA (as it rotates)--
 let fwd = this._camRoot.forward;
@@ -108,8 +119,38 @@ this._moveDirection = this._moveDirection.scaleInPlace(this._inputAmt * Player.P
 ```
 We then scale our final *_moveDirection* by that amount multiplied by the speed we want the player to move at.
 
+### Updating the Game
+In order to actually see our player move, we'll need to do a few things:
+1. Before each render, we need to make sure that we're updating our character. To do this, we first need to activate our player in **activatePlayerCamera**:
+```javascript
+public activatePlayerCamera(): UniversalCamera {
+    this.scene.registerBeforeRender(() => {
+
+        this._beforeRenderUpdate();
+        this._updateCamera();
+
+    })
+    return this.camera;
+}
+```
+What this does is, before each render, calls our character update function (_beforeRenderUpdate) and calls our camera update function (_updateCamera).
+2. **_beforeRenderUpdate** for now will just involve updating the movement
+```javascript
+private _beforeRenderUpdate(): void {
+    this._updateFromControls();
+    //move our mesh
+    this.mesh.moveWithCollisions(this._moveDirection);
+}
+```
+Here we are also calling `mesh.moveWithCollisions` that uses the _moveDirection Vector3 that we created. We will update this in part 2 to account for gravity.
+3. Call **activatePlayerCamera** in **_initializeGameAsync** after we call our Player Constructor.
+```javascript
+//...player constructor
+const camera = this._player.activatePlayerCamera();
+```
+
 ## Rotation
-Now, how do we get our player to rotate towards the direction it's moving? This is where we're checking our input axes.
+Now, how do we get our player to rotate towards the direction it's moving? This is where we're checking our input axes (**_updateFromControls**).
 ```javascript
 //check if there is movement to determine if rotation is needed
 let input = new Vector3(this._input.horizontalAxis, 0, this._input.verticalAxis); //along which axis is the direction
@@ -125,7 +166,11 @@ angle += this._camRoot.rotation.y;
 let targ = Quaternion.FromEulerAngles(0, angle, 0);
 this.mesh.rotationQuaternion = Quaternion.Slerp(this.mesh.rotationQuaternion, targ, 10 * this._deltaTime);
 ```
-Here we are calculating the angle to move the player to based off of the camera's current angle. Then we are slerping to that new target angle by a value of 10 * this.*_deltaTime* so that we have a smooth transition as we rotate.
+Here we are calculating the angle to move the player to based off of the camera's current angle. Then we are slerping to that new target angle by a value of 10 x *this._deltaTime* so that we have a smooth transition as we rotate.
+- [this._deltaTime](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L159) is the amount of time in between frames (ms), so we divide by 1000 to get seconds.
+
+At this point, if we run the project, we should be able to move around & see our player rotate directions!
+
 ### Raycasts
 **Raycast**
 
@@ -149,13 +194,13 @@ if (pick.hit) {
     return Vector3.Zero();
 }
 ```
-If our ray has hit anything, return the pickedPoint, a vector3. Else, we return the zero vector.
+If our ray has hit anything, return the pickedPoint, a Vector3. Else, we return the zero vector.
 
 **Grounded**
 
 The [_isGrounded](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L298) function checks whether or not the player is on a ground by sending a raycast.
 ```javascript
-if (this._floorRaycast(0, 0, .6).equals(Vector3.Zero())) {
+if (this._floorRaycast(0, 0, 0.6).equals(Vector3.Zero())) {
     return false;
 } else {
     return true;
@@ -189,7 +234,17 @@ if (this._isGrounded()) {
     this._lastGroundPos.copyFrom(this.mesh.position);
 }
 ```
-If the player is grounded, we want to set the gravity to 0 to keep our player grounded and set our _grounded flag to true. In addition, we'll update our *_lastGroundPos* to our current position to keep track of our last safe grounded position (we'll be using this later on).
+If the player is grounded, we want to set the gravity to 0 to keep our player grounded and set our *_grounded* flag to true. In addition, we'll update our *_lastGroundPos* to our current position to keep track of our last safe grounded position (we'll be using this later on).
+
+Lastly, since we're now accounting for gravity and calling `mesh.moveWithCollisions` here, we can remove our call in **_beforeRenderUpdate** and replace it with a call to **_updateGroundDetection**:
+```javascript
+private _beforeRenderUpdate(): void {
+    this._updateFromControls();
+    this._updateGroundDetection();
+}
+```
+
+Now if you run the game, our player falls to the ground, and can move around!
 
 # Further Reading
 **Previous:** [Player Camera](/how_to/page5)  
@@ -199,6 +254,10 @@ If the player is grounded, we want to set the gravity to 0 to keep our player gr
 **Files Used:**  
 - [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+- [app.ts]()
+- [movementApp.ts]()
+- [movementInputController.ts]()
+- [movementCharacterController.ts]()
 
 ## External
 [Unity 3D 8 Directional Character System](https://www.youtube.com/watch?v=cVy-NTjqZR8)  

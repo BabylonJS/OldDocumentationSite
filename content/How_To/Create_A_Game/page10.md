@@ -46,6 +46,7 @@ import { Environment } from "./environment";
 export class Player extends TransformNode {
     public camera;
     public scene: Scene;
+    private _input;
 
     //Player
     public mesh: Mesh; //outer collisionbox of player
@@ -59,6 +60,8 @@ export class Player extends TransformNode {
         this.mesh.parent = this;
 
         shadowGenerator.addShadowCaster(assets.mesh); //the player mesh will cast shadows
+
+        this._input = input; //inputs we will get from inputController.ts
     }
 }
 ```
@@ -83,12 +86,17 @@ const outer = MeshBuilder.CreateBox("outer", { width: 2, depth: 1, height: 3 }, 
 outer.isVisible = false;
 outer.isPickable = false;
 outer.checkCollisions = true;
+
+//move origin of box collider to the bottom of the mesh (to match imported player mesh)
+outer.bakeTransformIntoVertices(Matrix.Translation(0, 1.5, 0))
 ```
-Here we're creating the collider for the collision mesh of the character.
+Here we're creating the collider for the collision mesh of the character. Then, we're moving that origin point to the bottom of the mesh.
 ```javascript
 //for collisions
 outer.ellipsoid = new Vector3(1, 1.5, 1);
 outer.ellipsoidOffset = new Vector3(0, 1.5, 0);
+
+outer.rotationQuaternion = new Quaternion(0, 1, 0, 0); // rotate the player mesh 180 since we want to see the back of the player
 ```
 Then we set up the capsule collider that will be used for collisions.
 ```javascript
@@ -101,6 +109,7 @@ var bodymtl = new StandardMaterial("red",scene);
 bodymtl.diffuseColor = new Color3(.8,.5,.5);
 body.material = bodymtl;
 body.isPickable = false;
+body.bakeTransformIntoVertices(Matrix.Translation(0, 1.5, 0)); // simulates the imported mesh's origin
 
 //parent the meshes
 box.parent = body;
