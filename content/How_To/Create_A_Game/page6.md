@@ -72,6 +72,12 @@ return SceneLoader.ImportMeshAsync(null, "./models/", "player.glb", scene).then(
 ```
 Here is where we actually bring in the character mesh, and the result of this import is what gets returned (the box collider parented to the character mesh). The reason why we loop through the meshes here is because if a glTF has multiple materials used, it will treat them as separate meshes. 
 
+Now that we've got our character mesh imported, we can place our player's light at the right spot!
+```javascript
+this.scene.getLightByName("sparklight").parent = this.scene.getTransformNodeByName("Empty");
+```
+In the Player Constructor, we just need to set its parent to the TransformNode that was placed in the character's blender file.
+
 Lastly, since we've brought in our new environment and character mesh, we need to re-position the player. I've created a special TransformNode for this inside of the player mesh itself. So, where we were setting the character position previously, we just need to change it to use this TransformNode:
 ```javascript
 scene.getMeshByName("outer").position = scene.getTransformNodeByName("startPosition").getAbsolutePosition(); //move the player to the start position
@@ -96,7 +102,9 @@ When you run the game now, you'll see the environment and character meshes in th
 **Files Used:**  
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
 - [environment model](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/envSetting.glb)
 - [player model](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/player.glb)
 - [importApp.ts]()
 - [importEnvironment.ts]()
+- [importCharacterController.ts]()

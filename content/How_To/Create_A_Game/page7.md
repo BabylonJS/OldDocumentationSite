@@ -63,20 +63,22 @@ In order to create a lantern, we need:
 
 In the [constructor]() of our lantern, we want to set all of these up.
 ```javascript
-this._scene = scene;
-this._lightmtl = lightmtl;
+constructor(lightmtl: PBRMetallicRoughnessMaterial, mesh: Mesh, scene: Scene, position: Vector3, animationGroups?: AnimationGroup) {
+    this._scene = scene;
+    this._lightmtl = lightmtl;
 
-//create the lantern's sphere of illumination
-const lightSphere = Mesh.CreateSphere("illum", 4, 20, this._scene);
-lightSphere.scaling.y = 2;
-lightSphere.setAbsolutePosition(position);
-lightSphere.parent = this.mesh;
-lightSphere.isVisible = false;
-lightSphere.isPickable = false;
-this._lightSphere = lightSphere;
+    //create the lantern's sphere of illumination
+    const lightSphere = Mesh.CreateSphere("illum", 4, 20, this._scene);
+    lightSphere.scaling.y = 2;
+    lightSphere.setAbsolutePosition(position);
+    lightSphere.parent = this.mesh;
+    lightSphere.isVisible = false;
+    lightSphere.isPickable = false;
+    this._lightSphere = lightSphere;
 
-//load the lantern mesh
-this._loadLantern(mesh, position);
+    //load the lantern mesh
+    this._loadLantern(mesh, position);
+}
 ```
 - **lightSphere** is an invisible mesh that will be used later to calculate what meshes are affected by the lantern's light.
 - [_loadLantern]() takes care of setting the mesh and position of our lantern. We need to set the absolute position instead of local position because this is an imported glTF.
@@ -88,7 +90,14 @@ this.mesh.isPickable = false;
 ```
 I didn't want the player to be able to jump on the lantern, so I set isPickable to false (default is true). And since I didnt want the player to collide(physically) with the lantern, I kept checkCollisions to false (which is the default value). This way, the player can easily navigate through lanterns while still having a way to check that we've intersected with them.
 # Collisions
-The final setup part of our lanterns is calling [checkLanterns](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L133) in [_initializeGameAsync](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L929). This function has 2 main purposes:
+The final setup part of our lanterns is calling [checkLanterns](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L133) in [_initializeGameAsync](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L929).
+
+The first thing we'll need to do is set up an actionManager inside of the Player Constructor
+```javascript
+//--COLLISIONS--
+this.mesh.actionManager = new ActionManager(this.scene);
+```
+This function has 2 main purposes:
 1. Light the first lantern. It's pre-lit to allow the player to not get stuck if they haven't found the next lantern in time. They can return to this lantern to re-light their sparkler.
 ```javascript
 if (!this._lanternObjs[0].isLit) {
@@ -138,7 +147,9 @@ lightmtl.emissiveTexture = new Texture("/textures/litLantern.png", this._scene, 
 lightmtl.emissiveColor = new Color3(0.8784313725490196, 0.7568627450980392, 0.6235294117647059);
 this._lightmtl = lightmtl;
 ```
-This texture is then used to make a new material that we'll be swapping once _setEmissiveTexture is called. This material is created in the Environment constructor, then passed into the [lantern constructor](#creating-lanterns)
+This texture is then used to make a new material that we'll be swapping once _setEmissiveTexture is called. This material is created in the Environment constructor, then passed into the [lantern constructor](#creating-lanterns).
+
+Here is we create a new folder for textures in the public folder.
 
 3. Dynamically create a point light where the lantern is in order to light up the surroundings.
 ```javascript
@@ -161,6 +172,8 @@ this._lightSphere.dispose();
 ```
 This goes through the entire scene, looks for what the lightSphere intersects with and pushes those meshes to the list of what our light affects. I was able to achieve this by refering to what was done in this [playground](https://playground.babylonjs.com/#WJWSNL) **Note: the implemenation for the lights here is what I had before making adjustments during the performance phase. If you'd like to see the final version, take a look at the [performance](/how_to/page17#lights) section.**
 
+Now, when you run the game and collide with the lanterns, you should see their materials change (except the first one since that one is pre-lit)!
+
 # Further Reading
 **Previous:** [Import Meshes](/how_to/page6)   
 **Next:** [Collisions & Triggers](/how_to/page8)
@@ -169,4 +182,11 @@ This goes through the entire scene, looks for what the lightSphere intersects wi
 **Files Used:**  
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
 - [lantern.ts]()
+- [lantern mesh](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/lantern.glb)
+- [lit lantern texture]()
+- [lanternApp.ts]()
+- [lanternlantern.ts]()
+- [lanternEnvironment.ts]()
+- [lanternCharacterController.ts]()
