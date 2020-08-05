@@ -1,6 +1,6 @@
 Now that we have our character moving around, let's give them the ability to navigate platforms!
 ## Input Controller
-First we'll start by adding in inputs for our jumping and dashing to [inputController.ts]()!
+First we'll start by adding in inputs for our jumping and dashing to [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)!
 Inside of [updateFromKeyboard](/how_to/page3#input-controller) we just need to add:
 ```javascript
 //dash
@@ -19,7 +19,7 @@ if (this.inputMap[" "]) {
 ```
 *this.dashing* and *this.jumpKeyDown* will be used to control the actions based off of conditions being met in characterController.ts.
 ## Jumping
-Here we'll be focusing on [_updateFromGroundDetection](). We'll be adding to what we coded in [part 1's gravity](/how_to/page3#raycasts).
+Here we'll be focusing on [_updateFromGroundDetection](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L355). We'll be adding to what we coded in [part 1's gravity](/how_to/page3#raycasts).
 ### Input
 ```javascript
 //Jump detection
@@ -49,7 +49,7 @@ I specifically added the implementation for detecting slopes because I wanted th
 
 Then I had to differentiate between stairs and non-stairs. The way I did this was by comparing the angles between the normal of the mesh and the up vector (this took some testing to find a good range).
 
-The [_checkSlope]() function can be broken down as follows:
+The [_checkSlope](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L309) function can be broken down as follows:
 1. The predicate is a function that defines what types of meshes are eligible for being picked by a raycast. We define the mesh that we're looking for as being pickable and enabled since we want to include meshes that are not visible.
 ```javascript
 let predicate = function (mesh) {
@@ -98,7 +98,7 @@ This is why we check for whether we're on a slope, and then remove gravity, and 
 ## Dashing
 Dashing was another mechanic that I thought would be useful for a platformer. Since this game is based on time, I wanted to add a limitation on the dash mechanic so that it wouldn't become the main mode of transportation. Thus, the dash move became an air-dash that's limited to being used once until you touch a ground again.
 
-For the dashing implementation, we return to [_updateFromControls]().
+For the dashing implementation, we return to [_updateFromControls](/how_to/page3#basic-movement-setup).
 ### Input
 ```javascript
 if (this._input.dashing && !this._dashPressed && this._canDash && !this._grounded) {
@@ -132,7 +132,7 @@ this.dashTime = 0;
 this._dashPressed = false; 
 ```
 ### Modifying Movement
-We want to update our [_updateFromControls]() to now take into account our dashing.
+We want to update **_updateFromControls** to now take into account our dashing.
 ```javascript
 //clear y so that the character doesnt fly up, normalize for next step, taking into account whether we've DASHED or not
 this._moveDirection = new Vector3((move).normalize().x * dashFactor, 0, (move).normalize().z * dashFactor);
@@ -142,3 +142,11 @@ Previously where we just normalized our move vector, we want to multiply by the 
 # Further Reading
 **Previous:** [Character Movement Part 1](/how_to/page3)   
 **Next:** [Player Camera](/how_to/page5)
+
+## Resources
+**Files Used:**  
+- [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+
+## External
+[AstroKat: Moving Kat 2 (Jumps and Slopes)](https://www.patreon.com/posts/35207209)
