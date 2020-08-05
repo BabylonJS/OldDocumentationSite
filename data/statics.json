@@ -670,6 +670,10 @@
                     "filename": "page9"
                 },
                 {
+                    "title": "Simple Game State",
+                    "filename": "page10"
+                },
+                {
                     "title": "Character Movement Part 1",
                     "filename": "page3"
                 },
@@ -692,6 +696,34 @@
                 {
                     "title": "Collisions & Triggers",
                     "filename": "page8"
+                },
+                {
+                    "title": "Game GUI",
+                    "filename": "page11"
+                },
+                {
+                    "title": "Animations",
+                    "filename": "page12"
+                },
+                {
+                    "title": "Particle Systems",
+                    "filename": "page13"
+                },
+                {
+                    "title": "Music/SFX",
+                    "filename": "page14"
+                },
+                {
+                    "title": "Extra Features",
+                    "filename": "page15"
+                },
+                {
+                    "title": "Cross Platform - Mobile",
+                    "filename": "page16"
+                },
+                {
+                    "title": "Performance",
+                    "filename": "page17"
                 }
             ]
         },

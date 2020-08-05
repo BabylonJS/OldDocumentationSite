@@ -4,13 +4,13 @@ It's definitely possible to use a single scene for the entire application, but f
 Recall from the [Create a Scene](/how_to/page2#creating-a-scene) section of the getting set up tutorial that we made an app.ts file. This is going to be our main file that handles our scene creations and rendering. Starting with the constructor, we're going to break up our scene creation and rendering loop call into separate functions.
 
 # States
-How I went about this was by outlining all of the different scens I would need for the game:
+How I went about this was by outlining all of the different scenes I would need for the game:
 - START
 - CUTSCENE
 - GAME
 - LOSE
 
-The reason why there's no win and pause state is because those are actually still using the game scenes and so it still needs to be able to render the game scene. I've made those two "states" as GUI overlays.
+The reason why there's no win and pause state is because those are actually still using the game scene and so it still needs to be able to render the game scene. I've made those two "states" as GUI overlays.
 Now that we know what states we want we can go ahead and create an enum for them. All the enum does is assign names to the states and encodes them as numbers. We also want to create a class variable **_state** to store the current state that we're in. Now, our app.ts should look something like this:
 
 ```javascript
@@ -80,7 +80,7 @@ scene.clearColor = new Color(0,0,0,1);
 let camera = new FreeCamera("camera1", new Vector3(0, 0, 0), scene);
 camera.setTarget(Vector3.Zero());
 ```
-Create the scene and camera. Any camera should be fine since it'll be fixed at the center of the scene, so going with the default FreeCamera was good in this case.
+Create the scene and camera. Any camera should be fine since it'll be fixed at the center of the scene, so I just went with the FreeCamera.
 
 ```javascript
 //...do gui related stuff
@@ -119,11 +119,11 @@ startBtn.onPointerDownObservable.add(() => {
     scene.detachControl(); //observables disabled
 });
 ```
-Here what we're doing is creating an AdvancedDynamicTexture fullscreenUI. This is what's going to hold all of our gui elements. We then create a simple button and add an observable to detect when we mouseclick down on it. This will trigger our scene to call goToCutScene. We want to make sure that we detach the controls since it's possible that as we hold down the mouse, goToCutScene gets called multiple times.
+Here what we're doing is creating an AdvancedDynamicTexture fullscreenUI. This is what's going to hold all of our gui elements. We then create a simple button and add an observable to detect when we click on it. This will trigger our scene to call goToCutScene. We want to make sure that we detach the controls since it's possible that as we hold down the mouse, goToCutScene gets called multiple times.
 # Other States
 The lose state will follow a similar format, but for organizational and performance purposes, the cutscene and game states have slightly different structures.
 ## goToCutScene
-The cutscene is set up normally along with the gui; however, what we do while in this state is very important. If you take a look at the [_goToCutScene]() function, the [scene setup]() is the same, but [scene finished loading]() is different. Notice how we don't have the hideLoadingUI. For now, you can actually put this in, but in the final version I actually removed it since I hide it once my animations have finished loading and then trigger it to show once we've completed the dialogue, but the game is still loading.
+The cutscene is set up normally along with the gui; however, what we do while in this state is what allows our game to be loaded properly. If you take a look at the [_goToCutScene]() function, the [scene setup]() is the same, but [scene finished loading]() is different. Notice how we don't have the hideLoadingUI. For now, you can actually put this in, but in the final version I actually removed it since I hide it once my animations have finished loading and then trigger it to show once we've completed the dialogue, but the game is still loading.
 
 The most important aspect is what we do after that:
 ```javascript
@@ -132,19 +132,21 @@ await this._setUpGame().then(res =>{
     finishedLoading = true;
 });
 ```
-Essentially what this is doing is telling the code to wait until _setUpGame has completed its tasks and then set *finishedLoading* to true. At this point, it may seem unnecessary to have since we haven't brought in our animation nor are we loading any heavy assets, but it's very important once we've gotten to that stage in the development process. 
+Essentially what this is doing is telling the code to wait until **_setUpGame** has completed its tasks and then set *finishedLoading* to true. At this point, it may seem unnecessary to have since we haven't brought in our animation nor are we loading any heavy assets, but it's very important once we've gotten to that stage in the development process. 
 
 This was an important discovery that ultimately led me to change the structure of importing and loading assets for my game to this. If we don't wait for our assets to finish importing, what the async functions will do is tell our code to continue as we load in the background. This can ultimately break our transitions between scenes as we'd be moving on before things were fully loaded. I discovered this happening when playtesting the web-hosted version of my game:
-1. safari had several issues relating to sounds and scene transitions
-2. assets were taking a long time to load and thus showed the undefined meshes errors
+1. Safari had several issues relating to sounds and scene transitions
+2. Assets were taking a long time to load and thus showed undefined meshes errors
 
 ## _setUpGame
 The only thing here we need to worry about here for now is:
 ```javascript
-let scene = new Scene(this._engine);
-this._gamescene = scene;
+private async _setUpGame() {
+    let scene = new Scene(this._engine);
+    this._gamescene = scene;
 
-//...load assets
+    //...load assets
+}
 ```
 [_setUpGame]() is where we are pre-creating the game scene and where we start to load all of our assets.
 ## goToGame
@@ -154,7 +156,7 @@ If you look at the [_goToGame]() function, we've actually encapsulated the camer
 this._scene.detachControl();
 let scene = this._gamescene;
 scene.clearColor = new Color4(0.01568627450980392, 0.01568627450980392, 0.20392156862745098); // a color that fit the overall color scheme better
-let camera = new FreeCamera("camera1", new Vector3(0, 0, 0), scene);
+let camera4 = new ArcRotateCamera("arc", -Math.PI/2, Math.PI/2, 40, new BABYLON.Vector3(0,0,0), scene);
 camera.setTarget(Vector3.Zero());
 
 //--GUI--
@@ -220,6 +222,8 @@ window.addEventListener('resize', () => {
 ```
 We first call *await _goToStart* to ensure that our scene is ready to be rendered. 
 
-What this switch statement does is it tells our render loop to act differently based on the state that we're in. It might seem a little unnecessary to always be calling this._scene in each state, but this actually holds reference to our current scene. Recall that we dispose of what this._scene was, do other detachments to that scene, create a new scene, and then re-assign this._scene to the new scene. You could definitely use variables that reference your different scenes, but I thought this would be better since we're disposing of the scenes when not in use, and this ensures that we're rendering the right scene in the right state.
+What this switch statement does is it tells our render loop to act differently based on the state that we're in. It might seem a little unnecessary to always be calling *this._scene* in each state, but this actually holds reference to our current scene. Recall that we dispose of what *this._scene* was, do other detachments to that scene, create a new scene, and then re-assign *this._scene* to the new scene. You could definitely use variables that reference your different scenes, but I thought this would be better since we're disposing of the scenes when not in use, and this ensures that we're rendering the right scene in the right state.
 
 # Further Reading
+**Previous:** [Getting Set Up](/how_to/page2)  
+**Next:** [Simple Game State](/how_to/page10)

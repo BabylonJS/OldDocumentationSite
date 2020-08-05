@@ -1,10 +1,7 @@
-# Getting Set Up
-
 ## Introduction
 This setup process is based off of the [NPM-support](/features/NPM_Support) documentation for getting started with Babylon.js and the [babylonjs webpack](https://github.com/RaananW/babylonjs-webpack-es6) sample project, but with a few additions and modifications. The setup of the project will probably be the hardest part!
 
 ## First Steps
-
 ### Creating A Project
 First you'll need to set up where you want the project to be located.
 1. Create a folder where you'll be storing your project files
@@ -161,7 +158,7 @@ Now when we build and run our project, if we make any updates, the browser will 
 ### Creating A Scene
 We'll be setting up the app.ts file to be the main entry point for our project.
 
-** Set up and create the App class **
+**Set up and create the App class**
 
 The App class will serve as our entire game application. This is a very simple example of how to set up a scene and should be separated out into different functions and make use of class variables for your project as you progress.
 
@@ -203,7 +200,6 @@ class App {
     }
 }
 new App();
-
 ```
 At this point, you should be seeing a lot of errors. This is because we haven't imported the babylonjs dependencies. Add to the top of your file:
 ```javascript
@@ -227,17 +223,16 @@ npm run build
 npm run start
 ```
 Then when you visit localhost:8080 in our browser, you should see a sphere!
-
 ### (Optional) Github for Version Control
 If you're working with a large project, you'll most likely want to keep it in a safe place in case your computer breaks, you lose your files, etc. Github is also very useful for keeping track of changes that you make and can make things a lot easier in case you need to bring back a previous version of your project. You can follow this to learn how to [add a project](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-an-existing-project-to-github-using-github-desktop) using Github Desktop.
 
 # Further Reading
-
+**Previous:** [Introduction](/how_to/page1)  
+**Next:** [State Machine](/how_to/page9)
 ## How To
 [First Steps](/babylon101/first)  
 [How To Get Babylon.js](/babylon101/how_to_get)  
 [Npm Support](/features/NPM_Support)  
-
 ## External
 [HTML Webpack Plugin](https://www.npmjs.com/package/html-webpack-plugin)  
 [Clean Webpack Plugin](https://www.npmjs.com/package/clean-webpack-plugin)  

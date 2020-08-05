@@ -10393,6 +10393,8 @@ declare module BABYLON {
         subMeshId: number;
         /** If a sprite was picked, this will be the sprite the pick collided with */
         pickedSprite: Nullable<Sprite>;
+        /** If we are pikcing a mesh with thin instance, this will give you the picked thin instance */
+        thinInstanceIndex: number;
         /**
          * If a mesh was used to do the picking (eg. 6dof controller) this will be populated.
          */
@@ -10426,7 +10428,7 @@ declare module BABYLON {
         direction: Vector3;
         /** length of the ray */
         length: number;
-        private static readonly TmpVector3;
+        private static readonly _TmpVector3;
         private _tmpRay;
         /**
          * Creates a new ray
@@ -10591,6 +10593,8 @@ declare module BABYLON {
             _internalPick(rayFunction: (world: Matrix) => Ray, predicate?: (mesh: AbstractMesh) => boolean, fastCheck?: boolean, onlyBoundingInfo?: boolean, trianglePredicate?: TrianglePickingPredicate): Nullable<PickingInfo>;
             /** @hidden */
             _internalMultiPick(rayFunction: (world: Matrix) => Ray, predicate?: (mesh: AbstractMesh) => boolean, trianglePredicate?: TrianglePickingPredicate): Nullable<PickingInfo[]>;
+            /** @hidden */
+            _internalPickForMesh(pickingInfo: Nullable<PickingInfo>, rayFunction: (world: Matrix) => Ray, mesh: AbstractMesh, world: Matrix, fastCheck?: boolean, onlyBoundingInfo?: boolean, trianglePredicate?: TrianglePickingPredicate): Nullable<PickingInfo>;
         }
 }
 declare module BABYLON {
@@ -27935,6 +27939,7 @@ declare module BABYLON {
         matrixBufferSize: number;
         matrixData: Nullable<Float32Array>;
         boundingVectors: Array<Vector3>;
+        worldMatrices: Nullable<Matrix[]>;
     }
     /**
      * Class used to represent renderable models
@@ -32408,10 +32413,11 @@ declare module BABYLON {
          * @param fastCheck defines if fast mode (but less precise) must be used (false by default)
          * @param trianglePredicate defines an optional predicate used to select faces when a mesh intersection is detected
          * @param onlyBoundingInfo defines a boolean indicating if picking should only happen using bounding info (false by default)
+         * @param worldToUse defines the world matrix to use to get the world coordinate of the intersection point
          * @returns the picking info
          * @see https://doc.babylonjs.com/babylon101/intersect_collisions_-_mesh
          */
-        intersects(ray: Ray, fastCheck?: boolean, trianglePredicate?: TrianglePickingPredicate, onlyBoundingInfo?: boolean): PickingInfo;
+        intersects(ray: Ray, fastCheck?: boolean, trianglePredicate?: TrianglePickingPredicate, onlyBoundingInfo?: boolean, worldToUse?: Matrix): PickingInfo;
         /**
          * Clones the current mesh
          * @param name defines the mesh name
@@ -50120,7 +50126,9 @@ declare module BABYLON {
         protected _interactionsEnabled: boolean;
         protected _attachedNodeChanged(value: Nullable<Node>): void;
         private _beforeRenderObserver;
+        private _tempQuaternion;
         private _tempVector;
+        private _tempVector2;
         /**
          * Creates a gizmo
          * @param gizmoLayer The utility layer the gizmo will be added to
@@ -52413,6 +52421,9 @@ declare module BABYLON {
         clear(color: Nullable<IColor4Like>, backBuffer: boolean, depth: boolean, stencil?: boolean): void;
         createIndexBuffer(indices: IndicesArray, updateable?: boolean): NativeDataBuffer;
         createVertexBuffer(data: DataArray, updateable?: boolean): NativeDataBuffer;
+        bindBuffers(vertexBuffers: {
+            [key: string]: VertexBuffer;
+        }, indexBuffer: Nullable<NativeDataBuffer>, effect: Effect): void;
         recordVertexArrayObject(vertexBuffers: {
             [key: string]: VertexBuffer;
         }, indexBuffer: Nullable<NativeDataBuffer>, effect: Effect): WebGLVertexArrayObject;
@@ -66263,6 +66274,10 @@ declare module BABYLON {
 declare module BABYLON {
         interface Mesh {
             /**
+             * Gets or sets a boolean defining if we want picking to pick thin instances as well
+             */
+            thinInstanceEnablePicking: boolean;
+            /**
              * Creates a new thin instance
              * @param matrix the matrix or array of matrices (position, rotation, scale) of the thin instance(s) to create
              * @param refresh true to refresh the underlying gpu buffer (default: true). If you do multiple calls to this method in a row, set refresh to true only for the last call to save performance
@@ -66308,6 +66323,11 @@ declare module BABYLON {
              * @param staticBuffer indicates that the buffer is static, so that you won't change it after it is set (better performances - false by default)
              */
             thinInstanceSetBuffer(kind: string, buffer: Nullable<Float32Array>, stride: number, staticBuffer: boolean): void;
+            /**
+             * Gets the list of world matrices
+             * @return an array containing all the world matrices from the thin instances
+             */
+            thinInstanceGetWorldMatrices(): Matrix[];
             /**
              * Synchronize the gpu buffers with a thin instance buffer. Call this method if you update later on the buffers passed to thinInstanceSetBuffer
              * @param kind name of the attribute to update. Use "matrix" to update the buffer of matrices
@@ -76244,6 +76264,14 @@ declare module BABYLON.GUI {
         get verticalAlignment(): number;
         set verticalAlignment(value: number);
         /**
+         * Gets or sets a fixed ratio for this control.
+         * When different from 0, the ratio is used to compute the "second" dimension.
+         * The first dimension used in the computation is the last one set (by setting width / widthInPixels or height / heightInPixels), and the
+         * second dimension is computed as first dimension * fixedRatio
+         */
+        fixedRatio: number;
+        private _fixedRatioMasterIsWidth;
+        /**
          * Gets or sets control width
          * @see https://doc.babylonjs.com/how_to/gui#position-and-size
          */
@@ -76912,6 +76940,7 @@ declare module BABYLON.GUI {
         private _sliceTop;
         private _sliceBottom;
         private _detectPointerOnOpaqueOnly;
+        private _imageDataCache;
         /**
          * BABYLON.Observable notified when the content is loaded
          */
@@ -81148,6 +81177,24 @@ declare module BABYLON.GLTF2.Loader.Extensions {
 }
 declare module BABYLON.GLTF2.Loader.Extensions {
     /**
+     * [Specification](https://github.com/KhronosGroup/glTF/blob/master/extensions/2.0/Vendor/EXT_texture_webp/)
+     */
+    export class EXT_texture_webp implements IGLTFLoaderExtension {
+        /** The name of this extension. */
+        readonly name: string;
+        /** Defines whether this extension is enabled. */
+        enabled: boolean;
+        private _loader;
+        /** @hidden */
+        constructor(loader: GLTFLoader);
+        /** @hidden */
+        dispose(): void;
+        /** @hidden */
+        _loadTextureAsync(context: string, texture: ITexture, assign: (babylonTexture: BaseTexture) => void): Nullable<Promise<BaseTexture>>;
+    }
+}
+declare module BABYLON.GLTF2.Loader.Extensions {
+    /**
      * [Specification](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_draco_mesh_compression)
      */
     export class KHR_draco_mesh_compression implements IGLTFLoaderExtension {
@@ -84298,6 +84345,15 @@ declare module BABYLON.GLTF2 {
 
     /** @hidden */
     interface IKHRTextureBasisU {
+        source: number;
+    }
+
+    /**
+     * Interfaces from the EXT_texture_webp extension
+     */
+
+    /** @hidden */
+    interface IEXTTextureWebP {
         source: number;
     }
 
