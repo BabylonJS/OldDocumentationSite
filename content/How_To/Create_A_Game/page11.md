@@ -2,7 +2,7 @@
 The babylon GUI has a ton to offer, and the babylonjs [gui](/how_to/gui) documentation is extremely thorough in explaining how to use the different controls and components. For this tutorial, I'll just be going over features that were specific to my game or involved a little bit of logic to accompany it.
 
 # Game UI
-The most important use of the GUI for my game had to be the [Hud class](). This was actually the first thing that I focused on when I started working with the GUI library. What I learned from working with this alone, I applied to all of my other states!
+The most important use of the GUI for my game had to be the [Hud class](https://github.com/BabylonJS/SummerFestival/blob/master/src/ui.ts). This was actually the first thing that I focused on when I started working with the GUI library. What I learned from working with this alone, I applied to all of my other states!
 
 ![gameui](/img/how_to/create-a-game/guitimerspark.gif)
 
@@ -29,7 +29,7 @@ The first thing I set out to do was to set up:
 
 Each of these timers would need to have some sort of display form. I decided to go with text for the game timer and sprite animation for the sparkler timer (however, I did of course start off with text in order to test out the timing).
 ## Game Timer
-The game timer is just a simple TextBlock called [*clockTime*]() that's updated in updateHud:
+The game timer is just a simple TextBlock called [*clockTime*](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L89) that's updated in [updateHud](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L310):
 ```javascript
 if (!this._stopTimer && this._startTime != null) {
     let curTime = Math.floor((new Date().getTime() - this._startTime) / 1000) + this._prevTime;
@@ -44,7 +44,7 @@ What this does is:
 2. Stores the total time elapsed in seconds
 3. Formats the time to match our game's world time
 ### Format Time
-The [formatting]() of the time is: **4 minutes of real time = 1 hour game time**
+The [formatting](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L332) of the time is: **4 minutes of real time = 1 hour game time**
 ```javascript
 let minsPassed = Math.floor(time / 60); 
 let secPassed = time % 240; // goes back to 0 after 4mins/240sec
@@ -73,7 +73,7 @@ public stopTimer(): void {
 }
 ```
 ### Using the Game Timer
-1. Start the game timer AFTER the [scene is ready]() in app.ts.
+1. Start the game timer AFTER the [scene is ready](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L634) in app.ts.
 ```javascript
 this._ui.startTimer();
 ```
@@ -100,7 +100,7 @@ We can go ahead and remove the [temporary button](/how_to/page9#gotogame) we had
 Now we have a complete game timer! Once the game starts, the timer will begin and update until 4 minutes have passed, then it will take the player to the lose state.
 ## Sparkler Timer
 ### Start Sparkler Timer
-The [startSparklerTimer]() takes a different approach to timing since it's hooked up to an animation. The way I went about doing this was by setting intervals for both the time-related animation & the visual effect animation once the sparkler starts.
+[startSparklerTimer](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L347) takes a different approach to timing since it's hooked up to an animation. The way I went about doing this was by setting intervals for both the time-related animation & the visual effect animation once the sparkler starts.
 ```javascript
 this.stopSpark = false;
 this._sparklerLife.cellId = 0;
@@ -155,7 +155,7 @@ This interval controls the little spark animation for the sparkler part of the b
 
 Both of these are affected by whether the game is paused.
 ### Stop Sparkler Timer
-When we [stop the sparkler](), we decrease the intensity of the light to 0 so that it's not visible.
+When we [stop the sparkler](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L403), we decrease the intensity of the light to 0 so that it's not visible.
 ```javascript
 this.stopSpark = true;
 this._scene.getLightByName("sparklight").intensity = 0;
@@ -178,7 +178,8 @@ else if (this._ui.stopSpark && this._player.sparkLit) {
     this._player.sparkLit = false;
 }
 ```
-Recall that we set **sparkReset** and **sparkLit** to true on [collision with a lantern]().
+Recall that we set **sparkReset** and **sparkLit** to true on [collision with a lantern](/how_to/page7#collisions).
+
 # CutScene Animation
 The cutscene is the last GUI implementation that I focused on since it was more of a polish element to give the game a backstory and the player instructions on what to do. Ideally, the animation portion would be a single animation file, but because of procreate limitations, I had to break it up into different portions and sequence them together. 
 
@@ -193,11 +194,11 @@ I created a variable **anims_loaded** to keep track of how many animations have 
 ```javascript
 beginning_anim.onImageLoadedObservable.add(() => { anims_loaded++; });
 ```
-2. Start the interval timers for the animation once [everything was loaded]().
+2. Start the interval timers for the animation once [everything was loaded](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L450).
 I used a switch statement to help with transitioning to the next animation since I thought it would be the best way to manage all of the different parts. It is a bit hardcoded since there isn't a consistent number of frames for the animations. Additionally, I had to separate it into two different intervals to get the timing to be better because at some parts I wanted the animations to last a bit longer which is why you'll see an **animTimer** and **anim2Timer**.
 
 ## Dialogue
-The dialogue text doesn't automatically progress, but instead waits for an input from the player. When the player presses the [next]() button, we use **transition** to keep track of what dialogue we're on, then progress the dialogue to the next frame.
+The dialogue text doesn't automatically progress, but instead waits for an input from the player. When the player presses the [next](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L533) button, we use **transition** to keep track of what dialogue we're on, then progress the dialogue to the next frame.
 ```javascript
 next.onPointerUpObservable.add(() => {
     if (transition == 8) { //once we reach the last dialogue frame, goToGame
@@ -223,7 +224,7 @@ let dialogueTimer = setInterval(() => {
 ```
 # Menu Popup
 ## Pause Menu
-I used a [popup menu]() for my pause state that included a page for controls. In order to keep all of the elements together in case of screen resizing, I placed everything in a `Rectangle` control.
+I used a [popup menu](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/ui.ts#L413) for my pause state that included a page for controls. In order to keep all of the elements together in case of screen resizing, I placed everything in a `Rectangle` control.
 ```javascript
 pauseBtn.onPointerDownObservable.add(() => {
     this._pauseMenu.isVisible = true;
@@ -270,5 +271,11 @@ When the game is paused we:
 When I got to actually implementing this, it so happened that the different files needed to know about *_ui.gamePaused*. However, it was useful to have this since I could also use this to stop movements when in the "win" state. The win state would then essentially lock the player in a position where they'd be able to see the fireworks.
 
 # Further Reading
-**Previous:** [Collisions & Triggers](/how_to/page8)
+**Previous:** [Collisions & Triggers](/how_to/page8)  
 **Next:** [Animations](/how_to/page12)
+
+## Resources
+**Files Used:**  
+- [ui.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/ui.ts)
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+- [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
