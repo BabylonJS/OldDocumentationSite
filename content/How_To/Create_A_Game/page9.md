@@ -229,4 +229,4 @@ What this switch statement does is it tells our render loop to act differently b
 **Next:** [Simple Game State](/how_to/page10)
 
 ## Resources
-**Files Used:** [App.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+**Files Used:** [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)

@@ -6,7 +6,7 @@ Now that we have our state machine set up, it's time to build a simple scene wit
 I chose to work with only these files as I wanted to separate my code to focus on single aspects of the game. Feel free to make as many files as you need.
 
 # Environment
-[environment.ts]() will contain all information necessary for the game scene's world.
+[environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts) will contain all information necessary for the game scene's world.
 ```javascript
 export class Environment {
     private _scene: Scene;
@@ -34,9 +34,9 @@ const environment = new Envrionment(scene);
 this._environment = environment;
 await this._environment.load(); //environment
 ```
-Before we go to the game state, we're creating our environment and loading the assets needed
+Before we go to the game state, we're creating our environment and loading the assets needed.
 # Character Controller
-characterController.ts is going to contain all of the logic relating to our player and the player's movements.
+[characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts) is going to contain all of the logic relating to our player and the player's movements.
 ```javascript
 export class Player extends TransformNode {
     public camera;
@@ -53,9 +53,11 @@ export class Player extends TransformNode {
     }
 }
 ```
-Now, we 're going to replace the camera we had in [state machine]() with the _setupPlayerCamera function
+Now, we 're going to replace the camera we had in [state machine](/how_to/page9#scene-setup) with the camera made in the **_setupPlayerCamera** function.
 ```javascript
-var camera4 = new BABYLON.ArcRotateCamera("arc", -Math.PI/2, Math.PI/2, 40, new BABYLON.Vector3(0,3,0),scene);
+private _setupPlayerCamera(): UniversalCamera {
+    var camera4 = new BABYLON.ArcRotateCamera("arc", -Math.PI/2, Math.PI/2, 40, new BABYLON.Vector3(0,3,0),scene);
+}
 ```
 This is also just a simple stationary camera for now, but the setup is necessary for when we work on the camera system.
 
@@ -65,7 +67,7 @@ Notice how in our constructor, we are passing in assets. These assets should be 
 await this._loadCharacterAssets(scene); //character
 ```
 ## Loading Assets
-In app.ts, we create [_loadCharacterAssets](). Inside of this function, we have the **loadCharacter** function, this is where we're setting up the character mesh system.
+In app.ts, we create [_loadCharacterAssets](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L868). Inside of this function, we have the **loadCharacter** function, this is where we're setting up the character mesh system.
 ```javascript
 //collision mesh
 const outer = MeshBuilder.CreateBox("outer", { width: 2, depth: 1, height: 3 }, scene);
@@ -114,18 +116,20 @@ We can now pass these assets to the Player constructor.
 You'll want this kind of structuring if you plan on importing a character mesh later on because it will ensure that all of the assets are loaded before moving on. 
 
 # Initialize Game Async
-The final steps of our player set up is to actually call the constructor in app.ts. [_initializeGameAsync]() will do all of the finishing touches to prepare the game scene once everything is imported & meshes are created. At this point this function should only need to look like this:
+The final steps of our player set up is to actually call the constructor in app.ts. **_initializeGameAsync** will do all of the finishing touches to prepare the game scene once everything is imported & meshes are created. At this point this function should only need to look like this:
 ```javascript
-const light = new PointLight("sparklight", new Vector3(0, 0, 0), scene);
-light.diffuse = new Color3(0.08627450980392157, 0.10980392156862745, 0.15294117647058825);
-light.intensity = 35;
-light.radius = 1;
+private async _initializeGameAsync(scene): Promise<void> {
+    const light = new PointLight("sparklight", new Vector3(0, 0, 0), scene);
+    light.diffuse = new Color3(0.08627450980392157, 0.10980392156862745, 0.15294117647058825);
+    light.intensity = 35;
+    light.radius = 1;
 
-const shadowGenerator = new ShadowGenerator(1024, light);
-shadowGenerator.darkness = 0.4;
+    const shadowGenerator = new ShadowGenerator(1024, light);
+    shadowGenerator.darkness = 0.4;
 
-//Create the player
-this._player = new Player(this.assets, scene, shadowGenerator); //dont have inputs yet so we dont need to pass it in
+    //Create the player
+    this._player = new Player(this.assets, scene, shadowGenerator); //dont have inputs yet so we dont need to pass it in
+}
 ```
 We'll need at least one light to see our meshes, and that light for my game was the player's light. The shadow generator uses a single light source, but you can have multiple shadow generators. And then, we finally create our player.
 
@@ -134,3 +138,9 @@ Now you when you go to the game state, you'll have a player mesh and a ground!
 # Further Reading
 **Previous:** [State Machine](/how_to/page9)  
 **Next:** [Character Movement Part 1](/how_to/page3)
+
+## Resources
+**Files Used:**  
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
