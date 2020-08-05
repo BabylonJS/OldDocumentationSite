@@ -4,12 +4,13 @@ This setup process is based off of the [NPM-support](/features/NPM_Support) docu
 ## First Steps
 ### Creating A Project
 First you'll need to set up where you want the project to be located.
-1. Create a folder where you'll be storing your project files
-2. Set up the file folder structure to be something like this:
+1. Using the text editor of your choice, open up your project folder. I will be using Visual Studio Code for this series.
+2. Create a folder where you'll be storing your project files
+3. Set up the file folder structure to be something like this:
     - dist
     - public
     - src
-3. Main files
+4. Main files
     - Go into your src folder and create an app.ts file
     - Go into your public folder and create an index.html file
     - Your html file should look something like:
@@ -27,8 +28,11 @@ First you'll need to set up where you want the project to be located.
 Notice that we currently don't have anything within the body of our html file. We'll be generating a canvas within our app.ts file later on.
 
 ### Installing Babylon.js
-1. Using the text editor of your choice, open up your project folder. I will be using Visual Studio Code for this series.
-
+1. Generate the package.json
+```javascript
+npm init
+```
+You can fill these out now or just keep pressing *Enter* and fill these out in your package.json later.
 2. Open up the terminal (in VSCode you can do this by going to the top bar > Terminal > New Terminal).
 
 3. Install Babylon.js
@@ -61,18 +65,13 @@ This will create a default tsconfig.json. You can replace the contents with:
 }
 ```
 
-5. Generate the package.json
-```javascript
-npm init
-```
-
 ### Setting Up Webpack
 ** Installing Dependencies **  
 Now that we have our package.json generated, we need to install the dev dependencies for using webpack.
 ```javascript
 npm install --save-dev typescript webpack ts-loader webpack-cli
 ```
-
+(if this line doesn't work the first time, try one more time)
 ** Configure Webpack **  
 Now we will need to configure webpack to know what to do. Create a webpack.config.js file within your root directory. This is an example of what my configuration looks like:
 
@@ -210,7 +209,7 @@ import { Engine, Scene, ArcRotateCamera, Vector3, HemisphericLight, Mesh, MeshBu
 ```
 
 ### Bundling the Project and Running Locally
-Now that we have our project set up, how do we run it locally? We need to set up tasks in our package.json. In your package.json add this:
+Now that we have our project set up, how do we run it locally? We need to set up tasks in our package.json. In your package.json replace your "scripts" with this:
 ```javascript
     "scripts": {
         "build": "webpack",

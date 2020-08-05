@@ -16,8 +16,8 @@ export class Environment {
     }
 
     public async load() {
-        var ground = BABYLON.Mesh.CreateBox("ground", 24, scene);
-        ground.scaling = new BABYLON.Vector3(1,.02,1);
+        var ground = Mesh.CreateBox("ground", 24, this._scene);
+        ground.scaling = new Vector3(1,.02,1);
     }
 }
 ```
@@ -30,18 +30,27 @@ let scene = new Scene(this._engine);
 this._gamescene = scene;
 
 //--CREATE ENVIRONMENT--
-const environment = new Envrionment(scene);
-this._environment = environment;
+const environment = new Environment(scene);
+this._environment = environment; //class variable for App
 await this._environment.load(); //environment
 ```
 Before we go to the game state, we're creating our environment and loading the assets needed.
+
+**Remember to include import statement for our Environment class. Imports from our files will look like this:
+```javascript
+import { Environment } from "./environment";
+```
 # Character Controller
 [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts) is going to contain all of the logic relating to our player and the player's movements.
 ```javascript
 export class Player extends TransformNode {
     public camera;
     public scene: Scene;
-    constructor(assets, scene: Scene, shadowGenerator: ShadowGenerator, input?: PlayerInput) {
+
+    //Player
+    public mesh: Mesh; //outer collisionbox of player
+
+    constructor(assets, scene: Scene, shadowGenerator: ShadowGenerator, input?) {
         super("player", scene);
         this.scene = scene;
         this._setupPlayerCamera();
@@ -55,8 +64,8 @@ export class Player extends TransformNode {
 ```
 Now, we're going to replace the camera we had in [state machine](/how_to/page9#scene-setup) with the camera made in the **_setupPlayerCamera** function.
 ```javascript
-private _setupPlayerCamera(): UniversalCamera {
-    var camera4 = new BABYLON.ArcRotateCamera("arc", -Math.PI/2, Math.PI/2, 40, new BABYLON.Vector3(0,3,0),scene);
+private _setupPlayerCamera() {
+    var camera4 = new ArcRotateCamera("arc", -Math.PI/2, Math.PI/2, 40, new Vector3(0,3,0), this.scene);
 }
 ```
 This is also just a simple stationary camera for now, but the setup is necessary for when we work on the camera system.
@@ -83,7 +92,7 @@ outer.ellipsoidOffset = new Vector3(0, 1.5, 0);
 ```
 Then we set up the capsule collider that will be used for collisions.
 ```javascript
-var box = MeshBuilder.CreateBox("Small1", { width: 0.5, depth: 0.5, height: 0.25, faceColors: [0,0,0,0,0,0] }, scene);
+var box = MeshBuilder.CreateBox("Small1", { width: 0.5, depth: 0.5, height: 0.25, faceColors: [new Color4(0,0,0,1), new Color4(0,0,0,1), new Color4(0,0,0,1), new Color4(0,0,0,1),new Color4(0,0,0,1), new Color4(0,0,0,1)] }, scene);
 box.position.y = 1.5;
 box.position.z = 1;
 
@@ -119,6 +128,9 @@ You'll want this kind of structuring if you plan on importing a character mesh l
 The final steps of our player set up is to actually call the constructor in app.ts. **_initializeGameAsync** will do all of the finishing touches to prepare the game scene once everything is imported & meshes are created. At this point this function should only need to look like this:
 ```javascript
 private async _initializeGameAsync(scene): Promise<void> {
+    //temporary light to light the entire scene
+    var light0 = new HemisphericLight("HemiLight", new Vector3(0, 1, 0), scene);
+
     const light = new PointLight("sparklight", new Vector3(0, 0, 0), scene);
     light.diffuse = new Color3(0.08627450980392157, 0.10980392156862745, 0.15294117647058825);
     light.intensity = 35;
@@ -133,7 +145,12 @@ private async _initializeGameAsync(scene): Promise<void> {
 ```
 We'll need at least one light to see our meshes, and that light for my game was the player's light. The shadow generator uses a single light source, but you can have multiple shadow generators. And then, we finally create our player.
 
+You'll notice that I've also created a temporary Hemispheric light. This is just so that we can see everything in the scene while we set things up (this isn't in the actual game).
+
+We want to call this in **goToGame** where we were previously setting up our light and sphere.
+
 Now you when you go to the game state, you'll have a player mesh and a ground!
+![player mesh and ground](/img/how_to/create-a-game/simplegamestate.png)
 
 # Further Reading
 **Previous:** [State Machine](/how_to/page9)  
@@ -144,3 +161,6 @@ Now you when you go to the game state, you'll have a player mesh and a ground!
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+- [simpleGameStateApp.ts]()
+- [simpleEnvironment.ts]()
+- [simpleCharacterController.ts]()
