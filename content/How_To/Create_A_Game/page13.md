@@ -11,7 +11,7 @@ Here's the modified [Playground](https://playground.babylonjs.com/#IR1S8R#10)
 ![fireworks](/img/how_to/create-a-game/fireworks.gif)
 
 ## Setting Up the Particle Systems
-Similar to this playground, I made a [Firework class](). There are two parts to a firework:
+Similar to this playground, I made a [Firework class](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L170). There are two parts to a firework:
 1. **The Rocket**  
 The rocket is a particle system created in the constructor of the Firework. We start off by creating an emitter for the rocket. This is the mesh that's going to have the particle system attached to it so that the particle system moves along with its position.
 ```javascript
@@ -51,7 +51,7 @@ this._rocket = rocket;
 ```
 The particle system itself just uses a simple texture and decreases in size over its lifetime.
 2. **The Explosion**  
-The explosion has its own function [_explosions]() that creates another particle system. It's a bit more involved, but I'll do my best to try and explain what is going on:
+The explosion has its own function [_explosions](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L218) that creates another particle system. It's a bit more involved, but I'll do my best to try and explain what is going on:
 ```javascript
 const explosion = Mesh.CreateSphere("explosion", 4, 1, this._scene);
 explosion.isVisible = false;
@@ -125,7 +125,7 @@ The last step is to make the actual particle system.
 ## Firing the Particle Systems
 Now we have a particle system set up for a firework, but we want to have multiple. In addition, we need to figure out when to trigger the fireworks to start. The explosions start automatically once they're created, but what about the rocket?
 ### Create Instances
-Before we can use the particle systems, we need to create instances of the Firework class. In the [Environment constructor](), I just looped through how many fireworks I wanted and then added them to an array of fireworks.
+Before we can use the particle systems, we need to create instances of the Firework class. In the [Environment constructor](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L83), I just looped through how many fireworks I wanted and then added them to an array of fireworks.
 ```javascript
 //--FIREWORKS--
 for (let i = 0; i < 20; i++) {
@@ -143,7 +143,7 @@ this._scene.onBeforeRenderObservable.add(() => {
 })
 ```
 ### Starting Fireworks
-Once we are in the "win state", we trigger the fireworks to start by setting *_startFireworks* to true. Now, [_startFirework]() should be called for each firework in the environment:
+Once we are in the "win state", we trigger the fireworks to start by setting *_startFireworks* to true. Now, [_startFirework](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L282) should be called for each firework in the environment:
 ```javascript
 if(this._started) { //if it's started, rocket flies up to height & then explodes
     if (this._emitter.position.y >= this._height && !this._exploded) {
@@ -175,7 +175,7 @@ Our complete firework show looks something like this:
 # Player Sparkler
 Creating the player sparkler's particle system made it feel more like a sparkler and brought emphasis to it. Before, you could really only see that there was light by the player but it didn't really stand out as a sparkler. 
 
-I made a function [_createSparkles]() that made the particle system. This is called in the Player constructor (characterController.ts). 
+I made a function [_createSparkles](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L498) that made the particle system. This is called in the Player constructor (characterController.ts). 
 
 In order to toggle this on/off when the sparkler goes out, I just passed the object into *startSparklerTimer* and *stopSparklerTimer* then called sparkler.start() and sparkler.stop() respectively.
 
@@ -187,14 +187,19 @@ I wanted to give some sort of extra feedback to the player when they lit a lante
 
 ![lightlantern](/img/how_to/create-a-game/lightinglantern.gif)
 
-I created a [_loadStars]() function that made the particle system and called it in the Lantern constructor. Then, when *setEmissiveTexture* is called, I started the particle system.
+I created a [_loadStars](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/lantern.ts#L75) function that made the particle system and called it in the Lantern constructor. Then, when *setEmissiveTexture* is called, I started the particle system.
 
 You can look at how I made the particle system in this [Playground Demo](https://playground.babylonjs.com/#YLGJ52)
 
 It took a bit of messing around with to get the exact effect, so this is where the editor can come in super handy as you can just make quick edits to your particle systems. Just remember that if you want there to be a set duration, assign that last as the particle system won't loop in the editor if you have this set.
 
-# Resources
-[Particle Textures](https://mebiusbox.github.io/contents/EffectTextureMaker/)
 # Further Reading
 **Previous:** [Animations](/how_to/page12)  
 **Next:** [Music/SFX](/how_to/page14)  
+
+## Resources
+[Particle Textures](https://mebiusbox.github.io/contents/EffectTextureMaker/)  
+**Files Used:**  
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+- [lantern.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/lantern.ts)
