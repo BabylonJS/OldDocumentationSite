@@ -1,7 +1,7 @@
 Importing meshes is actually a really simple process. It's just what you do with those meshes afterwards that can get tricky!
 
 # Environment Mesh
-Previously, we created an [Environment class](/how_to/page10#environment). In order to import our meshes, we'll neeed to add a [_loadAsset]() function. 
+Previously, we created an [Environment class](/how_to/page10#environment). In order to import our meshes, we'll neeed to add a [_loadAsset](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/environment.ts#L100) function. 
 ## _loadAsset
 ```javascript
 const result = await SceneLoader.ImportMeshAsync(null, "./models/", "envSetting.glb", this._scene);
@@ -73,3 +73,8 @@ Here is where we actually bring in the character mesh, and the result of this im
 # Further Reading
 **Previous:** [Player Camera](/how_to/page5)   
 **Next:** [Lanterns](/how_to/page7)
+
+## Resources
+**Files Used:**  
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
