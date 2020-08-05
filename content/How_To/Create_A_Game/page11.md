@@ -1,5 +1,5 @@
 # Summary
-The babylon GUI has a ton to offer, and the babylonjs [gui](/how_to/gui) documentation is extremely thorough in explaining how to use the different controls and components. For this tutorial, I'll just be going over features that were specific to my game or involved a little bit of logic to accompany it.
+The Babylon GUI has a ton to offer, and the babylonjs [gui](/how_to/gui) documentation is extremely thorough in explaining how to use the different controls and components. For this tutorial, I'll just be going over features that were specific to my game or involved a little bit of logic to accompany it.
 
 # Game UI
 The most important use of the GUI for my game had to be the [Hud class](https://github.com/BabylonJS/SummerFestival/blob/master/src/ui.ts). This was actually the first thing that I focused on when I started working with the GUI library. What I learned from working with this alone, I applied to all of my other states!
@@ -180,7 +180,7 @@ else if (this._ui.stopSpark && this._player.sparkLit) {
 ```
 Recall that we set **sparkReset** and **sparkLit** to true on [collision with a lantern](/how_to/page7#collisions).
 
-# CutScene Animation
+# Cutscene Animation
 The cutscene is the last GUI implementation that I focused on since it was more of a polish element to give the game a backstory and the player instructions on what to do. Ideally, the animation portion would be a single animation file, but because of procreate limitations, I had to break it up into different portions and sequence them together. 
 
 Things I noticed during this process:
