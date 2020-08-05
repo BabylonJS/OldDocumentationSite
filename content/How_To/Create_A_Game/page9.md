@@ -61,13 +61,13 @@ class App {
 new App();
 
 ```
-I've also gone ahead and created a separate function for creating our canvas called [_createCanvas](). Additionally, here is where we'll be starting to include the use of class variables (denoted by the *this* keyword).
+I've also gone ahead and created a separate function for creating our canvas called [_createCanvas](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L103). Additionally, here is where we'll be starting to include the use of class variables (denoted by the *this* keyword).
 
 # GoTo Functions
 ## Scene Setup
 The goTo functions will be in charge of setting up the scene and consist of things that happen only once.
 
-Let's start with [_goToStart]() for a simple example of how to set up a scene.
+Let's start with [_goToStart](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L129) for a simple example of how to set up a scene.
 ```javascript
 this._engine.displayLoadingUI();
 ```
@@ -123,7 +123,7 @@ Here what we're doing is creating an AdvancedDynamicTexture fullscreenUI. This i
 # Other States
 The lose state will follow a similar format, but for organizational and performance purposes, the cutscene and game states have slightly different structures.
 ## goToCutScene
-The cutscene is set up normally along with the gui; however, what we do while in this state is what allows our game to be loaded properly. If you take a look at the [_goToCutScene]() function, the [scene setup]() is the same, but [scene finished loading]() is different. Notice how we don't have the hideLoadingUI. For now, you can actually put this in, but in the final version I actually removed it since I hide it once my animations have finished loading and then trigger it to show once we've completed the dialogue, but the game is still loading.
+The cutscene is set up normally along with the gui; however, what we do while in this state is what allows our game to be loaded properly. If you take a look at the [_goToCutScene](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L292) function, the scene setup is the same, but [scene finished loading](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L557) is slightly different. Notice how we don't have the hideLoadingUI. For now, you can actually put this in, but in the final version I actually removed it since I hide it once my animations have finished loading and then trigger it to show once we've completed the dialogue, but the game is still loading.
 
 The most important aspect is what we do after that:
 ```javascript
@@ -148,9 +148,9 @@ private async _setUpGame() {
     //...load assets
 }
 ```
-[_setUpGame]() is where we are pre-creating the game scene and where we start to load all of our assets.
+[_setUpGame](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L571) is where we are pre-creating the game scene and where we start to load all of our assets.
 ## goToGame
-If you look at the [_goToGame]() function, we've actually encapsulated the camera setup and gui setup into their own functions. For now you can use the default UI and camera like so:
+If you look at the [_goToGame](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L603) function, we've actually encapsulated the camera setup and gui setup into their own functions. For now you can use the default UI and camera like so:
 ```javascript
 //--SETUP SCENE--
 this._scene.detachControl();
@@ -190,7 +190,7 @@ this._scene.attachControl();
 ```
 What we're doing here is setting up the scene normally and adding a simple button to test going to the lose state.
 # Switching States
-Now that we have our scenes set up, how do we actually render and switch between them?! Within our [constructor](), we want to call [main]().
+Now that we have our scenes set up, how do we actually render and switch between them?! Within the constructor of [App.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts), we want to call [main](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L65).
 ## Main
 The main function is where we'll be setting up our state machine.
 ```javascript
@@ -227,3 +227,6 @@ What this switch statement does is it tells our render loop to act differently b
 # Further Reading
 **Previous:** [Getting Set Up](/how_to/page2)  
 **Next:** [Simple Game State](/how_to/page10)
+
+## Resources
+**Files Used:** [App.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
