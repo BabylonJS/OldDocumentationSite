@@ -10,8 +10,9 @@ This prototype underwent a lot of transformations to get to the point that it's 
 
 For part 1 we'll be going over how to detect inputs and how to get simple walking/running movement. Links to the complete files are below, but I'll be referencing certain parts that are important.
 
+In order to achieve certain character movements, I referenced a few different Unity tutorials as well as game dev blog posts that will be linked below.
 ## Input Controller
-For this part of the tutorial, we'll be going over the basics for movement with keyboard controls. You'll want to create a file called inputController.ts. Here we'll be creating a [PlayerInput]() class that will handle all of the inputs for our game.
+For this part of the tutorial, we'll be going over the basics for movement with keyboard controls. You'll want to create a file called **inputController.ts**. Here we'll be creating a [PlayerInput](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L4) class that will handle all of the inputs for our game.
 ```javascript
 scene.actionManager = new ActionManager(scene);
 
@@ -65,13 +66,13 @@ else {
     this.horizontalAxis = 0;
 }
 ```
-Inside of [_updateFromKeyboard()]() we're checking for whether our arrow keys have been pressed by looking at the value that's in our inputMap. The up and down arrows are checking the vertical inputs which correspond to forward and backwards movement. The left and right arrows are checking for horizontal movement. As we press the key, we want to lerp the value so that it has a smoother transition. We are doing a couple different things here:
+Inside of [_updateFromKeyboard](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L69) we're checking for whether our arrow keys have been pressed by looking at the value that's in our inputMap. The up and down arrows are checking the vertical inputs which correspond to forward and backwards movement. The left and right arrows are checking for horizontal movement. As we press the key, we want to lerp the value so that it has a smoother transition. We are doing a couple different things here:
 1. As you hold the key, it gradually increases the value to 1 or -1. 
 2. We're keeping track of which axis/direction we were moving in
 3. If we don't detect any inputs in an axis, we set both the direction and value to 0
 
 ## Basic Movement Setup
-Now that we can detect our inputs, we need to implement what to do when those inputs are detected. We'll be focusing on the [updateFromControls]() function inside of characterController.ts.
+Now that we can detect our inputs, we need to implement what to do when those inputs are detected. We'll be focusing on the [updateFromControls](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L158) function inside of **characterController.ts**.
 ### Input
 ```javascript
 this._moveDirection = Vector3.Zero(); // vector that holds movement information
@@ -134,7 +135,7 @@ Here we are calculating the angle to move the player to based off of the camera'
 ### Raycasts
 **Raycast**
 
-Raycasting is going to be our main method of detecting the ground beneath the character. First, we need a function [_floorRaycast]():
+Raycasting is going to be our main method of detecting the ground beneath the character. First, we need a function [_floorRaycast](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L278):
 ```javascript
 let raycastFloorPos = new Vector3(this.mesh.position.x + offsetx, this.mesh.position.y + 0.5, this.mesh.position.z + offsetz);
 let ray = new Ray(raycastFloorPos, Vector3.Up().scale(-1), raycastlen);
@@ -158,7 +159,7 @@ If our ray has hit anything, return the pickedPoint, a vector3. Else, we return 
 
 **Grounded**
 
-The [_isGrounded]() function checks whether or not the player is on a ground by sending a raycast.
+The [_isGrounded](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L298) function checks whether or not the player is on a ground by sending a raycast.
 ```javascript
 if (this._floorRaycast(0, 0, .6).equals(Vector3.Zero())) {
     return false;
@@ -170,7 +171,7 @@ The raycast that we send is at the center of our character and extends 0.1 past 
 
 **Gravity**
 
-Now that we're able to detect the ground, we need to apply gravity to the player to keep them grounded! The [_updateGroundDetection]() will handle everything that has to do with gravity.
+Now that we're able to detect the ground, we need to apply gravity to the player to keep them grounded! The [_updateGroundDetection](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L355) will handle everything that has to do with gravity.
 ```javascript
 if (!this._isGrounded()) {
     this._gravity = this._gravity.addInPlace(Vector3.Up().scale(this._deltaTime * Player.GRAVITY));
@@ -199,6 +200,12 @@ If the player is grounded, we want to set the gravity to 0 to keep our player gr
 # Further Reading
 **Previous:** [Simple Game State](/how_to/page10)  
 **Next:** [Character Movement Part 2](/how_to/page4)
-# Github Files
-[characterController.ts]()  
-[inputController.ts]()
+## Resources
+**Files Used:**  
+- [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+
+## External
+[Unity 3D 8 Directional Character System](https://www.youtube.com/watch?v=cVy-NTjqZR8)  
+[AstroKat: Moving Kat](https://www.patreon.com/posts/21343562)  
+[How to Make a Dash Move in Unity](https://www.youtube.com/watch?v=w4YV8s9Wi3w)

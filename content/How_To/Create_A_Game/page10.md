@@ -53,7 +53,7 @@ export class Player extends TransformNode {
     }
 }
 ```
-Now, we 're going to replace the camera we had in [state machine](/how_to/page9#scene-setup) with the camera made in the **_setupPlayerCamera** function.
+Now, we're going to replace the camera we had in [state machine](/how_to/page9#scene-setup) with the camera made in the **_setupPlayerCamera** function.
 ```javascript
 private _setupPlayerCamera(): UniversalCamera {
     var camera4 = new BABYLON.ArcRotateCamera("arc", -Math.PI/2, Math.PI/2, 40, new BABYLON.Vector3(0,3,0),scene);
