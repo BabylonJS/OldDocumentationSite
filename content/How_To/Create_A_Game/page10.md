@@ -159,7 +159,7 @@ Now you when you go to the game state, you'll have a player mesh and a ground!
 
 # Further Reading
 **Previous:** [State Machine](/how_to/page9)  
-**Next:** [Character Movement Part 1](/how_to/page3)
+**Next:** [Player Camera](/how_to/page5)
 
 ## Resources
 **Files Used:**  

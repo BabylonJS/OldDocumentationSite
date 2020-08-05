@@ -1,5 +1,5 @@
 ## Summary
-The first step I took towards making the game was to figure out how movement would work. My past experience with 3D games pushed me towards thnking that movement would be the most difficult part of the development process, so I wanted to make sure to focus on that early on. Since I was just getting started, I knew I needed to get some prototyping in for it, so I started off by making a playground to test out simple walking, jumping, and dashing: [early prototype](https://playground.babylonjs.com/#UP84Y8#10)
+The first step I took towards making the game was to figure out how movement would work. My past experience with 3D games pushed me towards thinking that movement would be the most difficult part of the development process, so I wanted to make sure to focus on that early on. Since I was just getting started, I knew I needed to get some prototyping in for it, so I started off by making a playground to test out simple walking, jumping, and dashing: [early prototype](https://playground.babylonjs.com/#UP84Y8#10)
 
 A few things you can see from this is:
 1. The player is able to walk through the platform 
@@ -14,59 +14,53 @@ In order to achieve certain character movements, I referenced a few different Un
 ## Input Controller
 For this part of the tutorial, we'll be going over the basics for movement with keyboard controls. You'll want to create a file called **inputController.ts**. Here we'll be creating a [PlayerInput](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L4) class that will handle all of the inputs for our game.
 ```javascript
-scene.actionManager = new ActionManager(scene);
+constructor(scene: Scene) {
+    scene.actionManager = new ActionManager(scene);
 
-this.inputMap = {};
-scene.actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnKeyDownTrigger, (evt) => {
-    if (!this._ui.gamePaused) {
-
+    this.inputMap = {};
+    scene.actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnKeyDownTrigger, (evt) => {
         this.inputMap[evt.sourceEvent.key] = evt.sourceEvent.type == "keydown";
-
-    } else {
-        this.inputMap[evt.sourceEvent.key] = false;
-    }
-}));
-scene.actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnKeyUpTrigger, (evt) => {
-    if (!this._ui.gamePaused) {
+    }));
+    scene.actionManager.registerAction(new ExecuteCodeAction(ActionManager.OnKeyUpTrigger, (evt) => {
         this.inputMap[evt.sourceEvent.key] = evt.sourceEvent.type == "keydown";
-    } else {
-        this.inputMap[evt.sourceEvent.key] = false;
-    }
-}));
+    }));
 
-scene.onBeforeRenderObservable.add(() => {
-    this._updateFromKeyboard();
-});
+    scene.onBeforeRenderObservable.add(() => {
+        this._updateFromKeyboard();
+    });
+}
 ```
-Within our constructor we're creating an action manager to register keydown and keyup events and using the inputMap to store whether the key was down. We're then telling the scene to call the _updateFromKeyBoard function before the scene renders.
+Within our constructor we're creating an action manager to register keydown and keyup events and using the inputMap to store whether the key was down. We're then telling the scene to call the [_updateFromKeyboard](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L69) function before the scene renders.
 
 ```javascript
-if (this.inputMap["ArrowUp"]) {
-    this.vertical = Scalar.Lerp(this.vertical, 1, 0.2);
-    this.verticalAxis = 1;
+private _updateFromKeyboard(): void {
+    if (this.inputMap["ArrowUp"]) {
+        this.vertical = Scalar.Lerp(this.vertical, 1, 0.2);
+        this.verticalAxis = 1;
 
-} else if (this.inputMap["ArrowDown"]) {
-    this.vertical = Scalar.Lerp(this.vertical, -1, 0.2);
-    this.verticalAxis = -1;
-} else {
-    this.vertical = 0;
-    this.verticalAxis = 0;
-}
+    } else if (this.inputMap["ArrowDown"]) {
+        this.vertical = Scalar.Lerp(this.vertical, -1, 0.2);
+        this.verticalAxis = -1;
+    } else {
+        this.vertical = 0;
+        this.verticalAxis = 0;
+    }
 
-if (this.inputMap["ArrowLeft"]) {
-    this.horizontal = Scalar.Lerp(this.horizontal, -1, 0.2);
-    this.horizontalAxis = -1;
+    if (this.inputMap["ArrowLeft"]) {
+        this.horizontal = Scalar.Lerp(this.horizontal, -1, 0.2);
+        this.horizontalAxis = -1;
 
-} else if (this.inputMap["ArrowRight"]) {
-    this.horizontal = Scalar.Lerp(this.horizontal, 1, 0.2);
-    this.horizontalAxis = 1;
-}
-else {
-    this.horizontal = 0;
-    this.horizontalAxis = 0;
+    } else if (this.inputMap["ArrowRight"]) {
+        this.horizontal = Scalar.Lerp(this.horizontal, 1, 0.2);
+        this.horizontalAxis = 1;
+    }
+    else {
+        this.horizontal = 0;
+        this.horizontalAxis = 0;
+    }
 }
 ```
-Inside of [_updateFromKeyboard](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L69) we're checking for whether our arrow keys have been pressed by looking at the value that's in our inputMap. The up and down arrows are checking the vertical inputs which correspond to forward and backwards movement. The left and right arrows are checking for horizontal movement. As we press the key, we want to lerp the value so that it has a smoother transition. We are doing a couple different things here:
+Inside of **_updateFromKeyBoard** we're checking for whether our arrow keys have been pressed by looking at the value that's in our inputMap. The up and down arrows are checking the vertical inputs which correspond to forward and backwards movement. The left and right arrows are checking for horizontal movement. As we press the key, we want to lerp the value so that it has a smoother transition. We are doing a couple different things here:
 1. As you hold the key, it gradually increases the value to 1 or -1. 
 2. We're keeping track of which axis/direction we were moving in
 3. If we don't detect any inputs in an axis, we set both the direction and value to 0
@@ -198,8 +192,9 @@ if (this._isGrounded()) {
 If the player is grounded, we want to set the gravity to 0 to keep our player grounded and set our _grounded flag to true. In addition, we'll update our *_lastGroundPos* to our current position to keep track of our last safe grounded position (we'll be using this later on).
 
 # Further Reading
-**Previous:** [Simple Game State](/how_to/page10)  
+**Previous:** [Player Camera](/how_to/page5)  
 **Next:** [Character Movement Part 2](/how_to/page4)
+
 ## Resources
 **Files Used:**  
 - [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)

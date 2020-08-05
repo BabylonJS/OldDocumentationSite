@@ -141,7 +141,7 @@ Previously where we just normalized our move vector, we want to multiply by the 
 
 # Further Reading
 **Previous:** [Character Movement Part 1](/how_to/page3)   
-**Next:** [Player Camera](/how_to/page5)
+**Next:** [Import Meshes](/how_to/page6)
 
 ## Resources
 **Files Used:**  

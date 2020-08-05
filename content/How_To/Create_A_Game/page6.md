@@ -71,7 +71,7 @@ return SceneLoader.ImportMeshAsync(null, "./models/", "player.glb", scene).then(
 Here is where we actually bring in the character mesh, and the result of this import is what gets returned (the box collider parented to the character mesh). The reason why we loop through the meshes here is because if a glTF has multiple materials used, it will treat them as separate meshes. 
 
 # Further Reading
-**Previous:** [Player Camera](/how_to/page5)   
+**Previous:** [Character Movement Part 2](/how_to/page4)   
 **Next:** [Lanterns](/how_to/page7)
 
 ## Resources
