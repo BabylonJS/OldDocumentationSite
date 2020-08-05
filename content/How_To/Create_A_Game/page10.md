@@ -147,7 +147,12 @@ We'll need at least one light to see our meshes, and that light for my game was 
 
 You'll notice that I've also created a temporary Hemispheric light. This is just so that we can see everything in the scene while we set things up (this isn't in the actual game).
 
-We want to call this in **goToGame** where we were previously setting up our light and sphere.
+We want to call this in **goToGame** where we were previously setting up our light and sphere. Then, we want to set the position of the character.
+```javascript
+//primitive character and setting
+await this._initializeGameAsync(scene);
+scene.getMeshByName("outer").position = new Vector3(0,3,0);
+```
 
 Now you when you go to the game state, you'll have a player mesh and a ground!
 ![player mesh and ground](/img/how_to/create-a-game/simplegamestate.png)
