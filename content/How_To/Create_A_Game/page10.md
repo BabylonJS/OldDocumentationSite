@@ -178,6 +178,8 @@ Now you when you go to the game state, you'll have a player mesh and a ground!
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
-- [simpleGameStateApp.ts]()
-- [simpleEnvironment.ts]()
-- [simpleCharacterController.ts]()
+
+**Follow Along:** 
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/simpleGameState/app.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/simpleGameState/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/simpleGameState/characterController.ts)

@@ -12,7 +12,7 @@ For part 1 we'll be going over how to detect inputs and how to get simple walkin
 
 In order to achieve certain character movements, I referenced a few different Unity tutorials as well as game dev blog posts that will be linked below.
 ## Input Controller
-For this part of the tutorial, we'll be going over the basics for movement with keyboard controls. You'll want to create a file called **inputController.ts**. Here we'll be creating a [PlayerInput](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L4) class that will handle all of the inputs for our game.
+For this part of the tutorial, we'll be going over the basics for movement with keyboard controls. You'll want to create a file called **inputController.ts**. Here we'll be creating a [PlayerInput](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts#L4) class that will handle all of the inputs for our game.
 ```javascript
 constructor(scene: Scene) {
     scene.actionManager = new ActionManager(scene);
@@ -30,7 +30,7 @@ constructor(scene: Scene) {
     });
 }
 ```
-Within our constructor we're creating an action manager to register keydown and keyup events and using the inputMap to store whether the key was down. We're then telling the scene to call the [_updateFromKeyboard](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/inputController.ts#L69) function before the scene renders.
+Within our constructor we're creating an action manager to register keydown and keyup events and using the inputMap to store whether the key was down. We're then telling the scene to call the [_updateFromKeyboard](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/inputController.ts#L58) function before the scene renders.
 
 ```javascript
 private _updateFromKeyboard(): void {
@@ -254,10 +254,12 @@ Now if you run the game, our player falls to the ground, and can move around!
 **Files Used:**  
 - [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
-- [app.ts]()
-- [movementApp.ts]()
-- [movementInputController.ts]()
-- [movementCharacterController.ts]()
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+
+**Follow Along:** 
+- [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/characterMove1/inputController.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/characterMove1/characterController.ts)
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/characterMove1/app.ts)
 
 ## External
 [Unity 3D 8 Directional Character System](https://www.youtube.com/watch?v=cVy-NTjqZR8)  

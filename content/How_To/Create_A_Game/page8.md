@@ -123,4 +123,7 @@ The two areas where we're rotating the camera up/down is when the character ente
 **Files Used:**  
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
-- [collisionsCharacterController.ts]()
+
+**Follow Along:** 
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/collisionsTriggers/characterController.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/collisionsTriggers/environment.ts)

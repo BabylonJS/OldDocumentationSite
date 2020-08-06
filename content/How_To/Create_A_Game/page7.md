@@ -61,7 +61,7 @@ In order to create a lantern, we need:
 3. The scene it belongs to
 4. A position
 
-In the [constructor]() of our lantern, we want to set all of these up.
+In the [constructor](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/tutorial/oldLantern.ts#L18) of our lantern, we want to set all of these up.
 ```javascript
 constructor(lightmtl: PBRMetallicRoughnessMaterial, mesh: Mesh, scene: Scene, position: Vector3, animationGroups?: AnimationGroup) {
     this._scene = scene;
@@ -81,7 +81,7 @@ constructor(lightmtl: PBRMetallicRoughnessMaterial, mesh: Mesh, scene: Scene, po
 }
 ```
 - **lightSphere** is an invisible mesh that will be used later to calculate what meshes are affected by the lantern's light.
-- [_loadLantern]() takes care of setting the mesh and position of our lantern. We need to set the absolute position instead of local position because this is an imported glTF.
+- [_loadLantern](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/tutorial/oldLantern.ts#L41) takes care of setting the mesh and position of our lantern. We need to set the absolute position instead of local position because this is an imported glTF.
 ```javascript
 this.mesh = mesh;
 this.mesh.scaling = new Vector3(.8, .8, .8);
@@ -126,7 +126,7 @@ if (!this._lanternObjs[0].isLit) {
     ```
 
 ## Setting Emissive Texture
-The [_setEmissiveTexture]() function handles everything that's involved in "lighting" the lantern.
+The [_setEmissiveTexture](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/tutorial/oldLantern.ts#L48) function handles everything that's involved in "lighting" the lantern.
 1. We need to know that the lantern is now lit.
 ```javascript
 this.isLit = true;
@@ -160,7 +160,7 @@ light.diffuse = new Color3(0.45, 0.56, 0.80);
 this._findNearestMeshes(light);
 ```
 ### Multiple Lights
-The most important part of this is the fact that there is a default cap on the number of lights a material can have. This is for performance reasons. If you have a ton of lights, it'll slow everything down. However, it's possible to get good performance if we use small lights and limit the amount of meshes the light affects. This is what [_findNearestMeshes]() does.
+The most important part of this is the fact that there is a default cap on the number of lights a material can have. This is for performance reasons. If you have a ton of lights, it'll slow everything down. However, it's possible to get good performance if we use small lights and limit the amount of meshes the light affects. This is what [_findNearestMeshes](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/tutorial/oldLantern.ts#L67) does.
 ```javascript
 this._scene.getMeshByName("__root__").getChildMeshes().forEach(m => {
     if (this._lightSphere.intersectsMesh(m)) {
@@ -183,10 +183,12 @@ Now, when you run the game and collide with the lanterns, you should see their m
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
-- [lantern.ts]()
+- [lantern.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/oldLantern.ts)
+
+**Follow Along:** 
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/lanterns/app.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/lanterns/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/lanterns/characterController.ts)
+- [lantern.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/lanterns/lantern.ts)
 - [lantern mesh](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/lantern.glb)
-- [lit lantern texture]()
-- [lanternApp.ts]()
-- [lanternlantern.ts]()
-- [lanternEnvironment.ts]()
-- [lanternCharacterController.ts]()
+- [lit lantern texture](https://github.com/BabylonJS/SummerFestival/blob/master/public/textures/litLantern.png)

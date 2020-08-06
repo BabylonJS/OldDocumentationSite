@@ -75,7 +75,7 @@ public stopTimer(): void {
 }
 ```
 ### Using the Game Timer
-1. Start the game timer AFTER the [scene is ready](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L634) in app.ts.
+1. Start the game timer AFTER the [scene is ready](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L634) in app.ts.
 ```javascript
 this._ui.startTimer();
 ```
@@ -164,7 +164,7 @@ this._scene.getLightByName("sparklight").intensity = 0;
 ```
 
 ### Using the Sparkler Timer
-1. Just like how we did with the game timer, we need to start the timer AFTER the [scene is ready](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L634) in app.ts.
+1. Just like how we did with the game timer, we need to start the timer AFTER the [scene is ready](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L635) in app.ts.
 ```javascript
 this._ui.startSparklerTimer();
 ```
@@ -201,11 +201,11 @@ I created a variable **anims_loaded** to keep track of how many animations have 
 ```javascript
 beginning_anim.onImageLoadedObservable.add(() => { anims_loaded++; });
 ```
-2. Start the interval timers for the animation once [everything was loaded](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L450).
+2. Start the interval timers for the animation once [everything was loaded](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L450).
 I used a switch statement to help with transitioning to the next animation since I thought it would be the best way to manage all of the different parts. It is a bit hardcoded since there isn't a consistent number of frames for the animations. Additionally, I had to separate it into two different intervals to get the timing to be better because at some parts I wanted the animations to last a bit longer which is why you'll see an **animTimer** and **anim2Timer**.
 
 ## Dialogue
-The dialogue text doesn't automatically progress, but instead waits for an input from the player. When the player presses the [next](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L533) button, we use **transition** to keep track of what dialogue we're on, then progress the dialogue to the next frame.
+The dialogue text doesn't automatically progress, but instead waits for an input from the player. When the player presses the [next](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L533) button, we use **transition** to keep track of what dialogue we're on, then progress the dialogue to the next frame.
 ```javascript
 next.onPointerUpObservable.add(() => {
     if (transition == 8) { //once we reach the last dialogue frame, goToGame
@@ -289,6 +289,8 @@ Now, we have a timed 3D platformer that takes you to the lose state when 4 minut
 - [ui.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/ui.ts)
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
-- [guiApp.ts]()
-- [guiUi.ts]()
+
+**Follow Along:** 
+- [ui.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/gui/ui.ts)
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/gui/app.ts)
 - [all necessary images](https://github.com/BabylonJS/SummerFestival/tree/master/public/sprites)

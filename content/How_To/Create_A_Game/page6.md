@@ -103,8 +103,10 @@ When you run the game now, you'll see the environment and character meshes in th
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+
+**Follow Along:** 
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/importMeshes/app.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/importMeshes/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/importMeshes/characterController.ts)
 - [environment model](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/envSetting.glb)
 - [player model](https://github.com/BabylonJS/SummerFestival/blob/master/public/models/player.glb)
-- [importApp.ts]()
-- [importEnvironment.ts]()
-- [importCharacterController.ts]()

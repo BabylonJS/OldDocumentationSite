@@ -67,7 +67,7 @@ I've also gone ahead and created a separate function for creating our canvas cal
 ## Scene Setup
 The goTo functions will be in charge of setting up the scene and consist of things that happen only once.
 
-Let's start with [_goToStart](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L129) for a simple example of how to set up a scene.
+Let's start with [_goToStart](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L129) for a simple example of how to set up a scene.
 ```javascript
 this._engine.displayLoadingUI();
 ```
@@ -160,7 +160,7 @@ private async _goToLose(): Promise<void> {
 }
 ```
 ## goToCutScene
-The cutscene is set up normally along with the gui; however, what we do while in this state is what allows our game to be loaded properly. If you take a look at the [_goToCutScene](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L292) function, the scene setup is the same, but [scene finished loading](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L557) is slightly different. Notice how we don't have the hideLoadingUI. For now, we need to put this in, but in the final version I actually removed it since I hide it once my animations have finished loading and then trigger it to show once we've completed the dialogue, but the game is still loading.
+The cutscene is set up normally along with the gui; however, what we do while in this state is what allows our game to be loaded properly. If you take a look at the [_goToCutScene](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L292) function, the scene setup is the same, but [scene finished loading](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L557) is slightly different. Notice how we don't have the hideLoadingUI. For now, we need to put this in, but in the final version I actually removed it since I hide it once my animations have finished loading and then trigger it to show once we've completed the dialogue, but the game is still loading.
 
 The most important aspect is what we do after that:
 ```javascript
@@ -203,9 +203,9 @@ private async _setUpGame() {
     //...load assets
 }
 ```
-[_setUpGame](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L571) is where we are pre-creating the game scene and where we start to load all of our assets.
+[_setUpGame](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L571) is where we are pre-creating the game scene and where we start to load all of our assets.
 ## goToGame
-If you look at the [_goToGame](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L603) function, we've actually encapsulated the camera setup and gui setup into their own functions. For now you can use the default UI and camera like so:
+If you look at the [_goToGame](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L603) function, we've actually encapsulated the camera setup and gui setup into their own functions. For now you can use the default UI and camera like so:
 ```javascript
 private async _goToGame(){
     //--SETUP SCENE--
@@ -254,7 +254,7 @@ What we're doing here is setting up the scene normally and adding a simple butto
 We've also moved our light and sphere objects to this function, using this specific `scene`.
 
 # Switching States
-Now that we have our scenes set up, how do we actually render and switch between them?! Within the constructor of [App.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts), we want to call [main](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L65).
+Now that we have our scenes set up, how do we actually render and switch between them?! Within the constructor of App.ts, we want to call [main](https://github.com/BabylonJS/SummerFestival/blob/fc5435921f3aecdcc84d9d3f44d812ad5a4368a7/src/app.ts#L65).
 ## Main
 The main function is where we'll be setting up our state machine. This will replace our current `this._engine.runRenderLoop` that we set up when we first [created the scene](/how_to/page2#creating-a-scene)
 ```javascript
@@ -290,7 +290,7 @@ We first call *await _goToStart* to ensure that our scene is ready to be rendere
 
 What this switch statement does is it tells our render loop to act differently based on the state that we're in. It might seem a little unnecessary to always be calling *this._scene* in each state, but this actually holds reference to our current scene. Recall that we dispose of what *this._scene* was, do other detachments to that scene, create a new scene, and then re-assign *this._scene* to the new scene. You could definitely use variables that reference your different scenes, but I thought this would be better since we're disposing of the scenes when not in use, and this ensures that we're rendering the right scene in the right state.
 
-Now, when we run our game and progress through the states, we should see our sphere! The app.ts file should look something like [this]() now. This is a simple, working state machine! You can modify it for whatever states you'll need.
+Now, when we run our game and progress through the states, we should see our sphere! The app.ts file should look something like [this](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/stateMachine/sampleApp.ts) now. This is a simple, working state machine! You can modify it for whatever states you'll need.
 
 If you're having trouble getting through the states, open the browser's inspector to see what error is being shown in the console (you might need to comment out the styling of the canvas to be able to open the inspector).
 
@@ -301,4 +301,6 @@ If you're having trouble getting through the states, open the browser's inspecto
 ## Resources
 **Files Used:**
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
-- [sampleApp.ts]()
+
+**Follow Along:**  
+- [sampleApp.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/stateMachine/sampleApp.ts)
