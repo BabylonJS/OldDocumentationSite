@@ -17,6 +17,7 @@ This area was the most new to me, so I spent a lot of time learning through stud
 
 The first time was to get a player model done for animation and movement testing. The main problem I had was with clipping.
 - When animated, the mesh had a lot of clipping since I made the body and clothes separately. The weight painting was a difficult process to try and minimize clipping as much as possible.
+- This model also uses emissive materials rather than PBR (which means it would be self-lit), so in the final version I changed these to PBR since we needed the scene to be dark and lit by the lanterns and player's light only.
 
 ![firstModel](/img/how_to/create-a-game/firstModel.png)
 

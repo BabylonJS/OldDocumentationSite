@@ -66,6 +66,13 @@ if (this._input.jumpKeyDown && this._jumpCount > 0) {
 }
 ```
 Because the jumping and landing animations are separate, so we need to know when exactly the jump phase is and when the landing phase starts.
+
+In the `if(this._isGrounded)` check, we want to reset our animation flags since we're no longer falling and have no longer jumped.
+```javascript
+//jump & falling animation flags
+this._jumped = false;
+this._isFalling = false;
+```
 3. **Idle** 
     - If we're not in any other state and we're grounded, then we're idle.
 4. **Falling**
@@ -91,7 +98,7 @@ if (this._input.dashing && !this._dashPressed && this._canDash && !this._grounde
 ```
 As soon as we detect that the dash has happened, we set the current animation.
 
-To actually play the animation, we need to check to make sure that we're only calling the current animation once. We do this by making sure that the current and previous animations are not the same, so that the animation actually play out its duration. (This is fine because we've already set which ones are looping, so when they play once, they'll keep looping).
+At the end of **_animatePlayer**, we need to check to make sure that we're only calling the current animation once. We do this by making sure that the current and previous animations are not the same, so that the animation actually play out its duration. (This is fine because we've already set which ones are looping, so when they play once, they'll keep looping).
 ```javascript
 if(this._currentAnim != null && this._prevAnim !== this._currentAnim){
     this._prevAnim.stop();
@@ -99,11 +106,11 @@ if(this._currentAnim != null && this._prevAnim !== this._currentAnim){
     this._prevAnim = this._currentAnim;
 }
 ```
+## Playing Animations
+Now that we have the animations hooked up, we need to call **_setUpAnimations** in the *Constructor* and **_animatePlayer** in *_beforeRenderUpdate*
 
 # Mesh
 The other meshes in my game that used animations were the lanterns.
-
-[gif of rotating lantern]
 
 The setup for these was a little different because I had to somehow clone the animations as well. I used [Demystifying Animation Groups](https://www.youtube.com/watch?v=BSqxoQ-at24&t=802s) to learn how to extract and clone the animationGroups.
 ## Importing
@@ -129,14 +136,15 @@ Similar to how we [cloned our lantern meshes](https://github.com/BabylonJS/Summe
 //Animation cloning
 let animGroupClone = new AnimationGroup("lanternAnimGroup " + i);
 animGroupClone.addTargetedAnimation(assets.animationGroups.targetedAnimations[0].animation, lanternInstance);
+let newLantern = new Lantern(this._lightmtl, lanternInstance, this._scene, assets.env.getChildTransformNodes(false).find(m => m.name === "lantern " + i).getAbsolutePosition(), animGroupClone);
 ```
-We create a new animation group for each lantern, and use the animationGroup that we got from the import, then attach it to that specific lantern instance.
+We create a new animation group for each lantern, and use the animationGroup that we got from the import, then attach it to that specific lantern instance. This animGroupClone is what we pass to the Lantern Constructor.
 ```javascript
 assets.animationGroups.dispose();
 ```
 After we're done setting up all the lanterns, we can dispose of the original animationGroup, like how we did for the original lantern mesh.
 ## Playing
-Playing the animation is really simple since it's non-looping. Whenever the lantern is lit, we want to play the animation in *setEmissiveTexture* since this is where we're doing all the "lighting" effects.
+Playing the animation is really simple since it's non-looping. Whenever the lantern is lit, we want to play the animation in [setEmissiveTexture](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/lantern.ts#L47) since this is where we're doing all the "lighting" effects.
 
 # Further Reading
 **Previous:** [Game GUI](/how_to/page11)  
@@ -148,3 +156,4 @@ Playing the animation is really simple since it's non-looping. Whenever the lant
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
 - [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+- [lantern.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/lantern.ts)

@@ -169,9 +169,6 @@ if(this._started) { //if it's started, rocket flies up to height & then explodes
 ```
 Once the delay has reached 0, the rocket will shoot. After the rocket reaches the maximum height, it will explode and the emitter will be disposed of.
 
-Our complete firework show looks something like this:
-
-[gif of fireworks]
 # Player Sparkler
 Creating the player sparkler's particle system made it feel more like a sparkler and brought emphasis to it. Before, you could really only see that there was light by the player but it didn't really stand out as a sparkler. 
 
