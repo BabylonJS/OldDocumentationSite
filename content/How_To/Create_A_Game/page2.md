@@ -233,6 +233,8 @@ If you're working with a large project, you'll most likely want to keep it in a 
 [First Steps](/babylon101/first)  
 [How To Get Babylon.js](/babylon101/how_to_get)  
 [Npm Support](/features/NPM_Support)  
+[Sample Project](https://github.com/RaananW/babylonjs-webpack-es6)
+
 ## External
 [HTML Webpack Plugin](https://www.npmjs.com/package/html-webpack-plugin)  
 [Clean Webpack Plugin](https://www.npmjs.com/package/clean-webpack-plugin)  
