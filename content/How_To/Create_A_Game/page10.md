@@ -98,7 +98,7 @@ outer.ellipsoidOffset = new Vector3(0, 1.5, 0);
 
 outer.rotationQuaternion = new Quaternion(0, 1, 0, 0); // rotate the player mesh 180 since we want to see the back of the player
 ```
-Then we set up the capsule collider that will be used for collisions.
+Then, we set up the capsule collider that will be used for collisions.
 ```javascript
 var box = MeshBuilder.CreateBox("Small1", { width: 0.5, depth: 0.5, height: 0.25, faceColors: [new Color4(0,0,0,1), new Color4(0,0,0,1), new Color4(0,0,0,1), new Color4(0,0,0,1),new Color4(0,0,0,1), new Color4(0,0,0,1)] }, scene);
 box.position.y = 1.5;
