@@ -2,7 +2,7 @@
 This is just a little bonus content if you're curious as to how I went about designing the game assets and what resources I used!
 
 # References
-Before I began any of the art asset creation, I used pinterest to collect all of the resources I'd need. I had a bunch of different boards and made sure to save anything I thought could give me inspiration.
+Before I began any of the art asset creation, I used Pinterest to collect all of the resources I'd need. I had a bunch of different boards and made sure to save anything I thought could give me inspiration.
 
 I made some really rough sketches of how I wanted the character and environment to look. The environment was the most vague as I wasn't sure in the beginning how I wanted the feel of the game to be. I went back in with more detail for the character reference to help with modeling.
 
