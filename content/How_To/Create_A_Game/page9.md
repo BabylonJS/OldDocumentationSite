@@ -95,7 +95,7 @@ this._state = State.START;
 ```
 When the scene is ready, we hide the loading UI, dispose of the current stored scene and then switch scenes and change the state to render the new scene.
 
-**At any point if you see an error for babylon specific components (like Color4 and FreeCamera...) hover over it and you should see a Quick Fix option, this will add it to your imports for you. If you don't see this, you can just manually add it to your imports at the top of the file**
+**VSCode users: At any point if you see an error for babylon specific components (like Color4 and FreeCamera...) hover over it and you should see a Quick Fix option, this will add it to your imports for you. If you don't see this, you can just manually add it to your imports at the top of the file**
 
 ## GUI setup
 For now, we'll make a simple fullscreenUI with a button to transition between scenes. GUI elements will need to be imported `from "@babylonjs/gui"`.
