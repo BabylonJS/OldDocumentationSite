@@ -48,7 +48,7 @@ startBtn.onPointerDownObservable.add(() => {
 # Lights
 Before, when you would collide with the first lantern, and the first lantern after the sparkler went out, there would be a slight lag in the game. This was due to the shaders updating since we were dynamically creating lights.
 
-The solution to this was to: pre-create all lights with intensity 0 -- a constant cost. This led to a restructuring for the [Lantern class](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/lantern.ts#L17).
+The solution to this was to pre-create all lights with intensity 0 -- a constant cost. This led to a restructuring for the [Lantern class](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/lantern.ts#L17).
 
 1. In the constructor, we want to remove the lightSphere mesh and instead create a pointLight with intensity 0.
 ```javascript
