@@ -29,7 +29,7 @@ We can break this up into 3 sections:
 2. There are a couple meshes with either complex geometry or multiple separate parts that needed to be simplified to provide better movement, but still act as the visual mesh that we see. We disable collisions and picking for those so that we can't collide with them as we move or detect them when we raycast. Now, since we've done this, we need to do the opposite for their corresponding collision meshes. All of the collision meshes had "collision" as a part of the name in blender, so I could just refer to all of them as long as it included that. In addition, since we don't want to see these, we need to set them to not visible.
 3. There are meshes in the game that automatically control the rotation of the camera, and like the collision meshes, these aren't visible, nor are they pickable; however, because they're meant to just be volumes that are intersected with, we need to remove collision checks on them. 
 
-![before Setting Up]() ![after Setting Up]()
+![before Setting Up](/img/how_to/create-a-game/beforeCollisionMeshes.png) ![after Setting Up](/img/how_to/create-a-game/afterCollisionMeshes.png)
 
 # Player and Collisions
 When we create our [Player class](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L105), we want to set up the interactions the player will have with the environment.

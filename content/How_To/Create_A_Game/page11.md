@@ -1,4 +1,6 @@
 # Summary
+By the end of this section, the topics we've gone over should have well equipped you with knowledge on how to implement core mechanics for a game! The next few sections will go over adding more to the game in terms of features you can use to enhance the visuals of the game (including animation & sounds).
+
 The Babylon GUI has a ton to offer, and the babylonjs [gui](/how_to/gui) documentation is extremely thorough in explaining how to use the different controls and components. For this tutorial, I'll just be going over features that were specific to my game or involved a little bit of logic to accompany it.
 
 # Game UI
@@ -84,7 +86,7 @@ scene.onBeforeRenderObservable.add(() => {
     if (!this._ui.gamePaused) {
         this._ui.updateHud();
     }
-}
+});
 ```
 We start setting up the game loop.  
 3. In main's **State.Game**:
@@ -161,6 +163,11 @@ this.stopSpark = true;
 this._scene.getLightByName("sparklight").intensity = 0;
 ```
 
+### Using the Sparkler Timer
+1. Just like how we did with the game timer, we need to start the timer AFTER the [scene is ready](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/app.ts#L634) in app.ts.
+```javascript
+this._ui.startSparklerTimer();
+```
 **Note: the sparkler timers in the file links actually pass in a particle system, but since we haven't gone over how to make those yet, you can just ignore that part**
 
 Now that the start & stop functions are set up, how do we know when to use them?  
@@ -270,6 +277,9 @@ When the game is paused we:
 
 When I got to actually implementing this, it so happened that the different files needed to know about *_ui.gamePaused*. However, it was useful to have this since I could also use this to stop movements when in the "win" state. The win state would then essentially lock the player in a position where they'd be able to see the fireworks.
 
+
+Now, we have a timed 3D platformer that takes you to the lose state when 4 minutes have passed and has an animated cutscene in the beginning!
+
 # Further Reading
 **Previous:** [Collisions & Triggers](/how_to/page8)  
 **Next:** [Animations](/how_to/page12)
@@ -279,3 +289,6 @@ When I got to actually implementing this, it so happened that the different file
 - [ui.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/ui.ts)
 - [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
 - [inputController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/inputController.ts)
+- [guiApp.ts]()
+- [guiUi.ts]()
+- [all necessary images](https://github.com/BabylonJS/SummerFestival/tree/master/public/sprites)
