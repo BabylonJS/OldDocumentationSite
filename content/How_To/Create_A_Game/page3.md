@@ -84,7 +84,7 @@ this._moveDirection = Vector3.Zero(); // vector that holds movement information
 this._h = this._input.horizontal; //x-axis
 this._v = this._input.vertical; //z-axis
 ```
-First we set up a Vector3 to use as our movement vector. This will be reset every frame. Then we grab our inputs from the PlayerInput class.
+First, we set up a Vector3 to use as our movement vector. This will be reset every frame. Then we grab our inputs from the PlayerInput class.
 ```javascript
 //--MOVEMENTS BASED ON CAMERA (as it rotates)--
 let fwd = this._camRoot.forward;
