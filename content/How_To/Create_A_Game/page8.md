@@ -29,14 +29,12 @@ We can break this up into 3 sections:
 2. There are a couple meshes with either complex geometry or multiple separate parts that needed to be simplified to provide better movement, but still act as the visual mesh that we see. We disable collisions and picking for those so that we can't collide with them as we move or detect them when we raycast. Now, since we've done this, we need to do the opposite for their corresponding collision meshes. All of the collision meshes had "collision" as a part of the name in blender, so I could just refer to all of them as long as it included that. In addition, since we don't want to see these, we need to set them to not visible.
 3. There are meshes in the game that automatically control the rotation of the camera, and like the collision meshes, these aren't visible, nor are they pickable; however, because they're meant to just be volumes that are intersected with, we need to remove collision checks on them. 
 
-# Player and Collisions
-When we create our [Player class](), we want to set up the interactions the player will have with the environment.
+![before Setting Up](/img/how_to/create-a-game/beforeCollisionMeshes.png) ![after Setting Up](/img/how_to/create-a-game/afterCollisionMeshes.png)
 
-First, in order to start detecting these collisions, we'll need to set up an actionManager:
-```javascript
-this.mesh.actionManager = new ActionManager(this.scene);
-```
-This actionManager will register different actions, but for this case, we want to use the `ActionManager.OnIntersectionEnterTrigger`
+# Player and Collisions
+When we create our [Player class](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L105), we want to set up the interactions the player will have with the environment.
+
+We've already set up our actionManager, so now we will register new `ActionManager.OnIntersectionEnterTrigger` actions.
 
 ```javascript
 //Platform destination
@@ -78,7 +76,7 @@ What we're doing here is setting up to check whenever the player intersects or c
     - If we collide with the world ground, we want to reset our mesh's position to what we've stored in *this._lastGroundPos* (Recall that we actually update this every time we're grounded). This is actually a feature I added to account for world bounds that will basically reset the player's position to the last safe grounded position. That way, the player can never end up falling off or leaving the world and ending up in a "freefall" state.
 
 # Player and Trigger Volumes
-The trigger volumes in the scene are actually specifically for controlling the camera movement in areas of the game. So, respectively, these are located in the [_updateCamera]() function. 
+The trigger volumes in the scene are actually specifically for controlling the camera movement in areas of the game. So, respectively, these are located in the [_updateCamera](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L442) function. 
 
 ![rotation](/img/how_to/create-a-game/cornerrotation.gif)
 
@@ -115,8 +113,17 @@ if (this.mesh.intersectsMesh(this.scene.getMeshByName("destinationTrigger"))) {
     }
 }
 ```
-The two areas where we're rotating the camera up/down is when the character enters and exits the festival stall area. The festival area exits into the destination area. So if they enter the festival, tilt the camera downwards more, and if they leave through that same entrance, rotate it back to the original tilt. Likewise, if they exit to the destination area, return it back to the original camera tilt. (*Player.DOWN_TILT* and *Player.ORIGINAL_TILT* are constants defined at the top of the [Player]() class.)
+The two areas where we're rotating the camera up/down is when the character enters and exits the festival stall area. The festival area exits into the destination area. So if they enter the festival, tilt the camera downwards more, and if they leave through that same entrance, rotate it back to the original tilt. Likewise, if they exit to the destination area, return it back to the original camera tilt. (*Player.DOWN_TILT* and *Player.ORIGINAL_TILT* are constants defined at the top of the [Player](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L29) class.)
 
 # Further Reading
 **Previous:** [Lanterns](/how_to/page7)   
 **Next:** [Game GUI](/how_to/page11)
+
+## Resources
+**Files Used:**  
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/environment.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+
+**Follow Along:** 
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/collisionsTriggers/characterController.ts)
+- [environment.ts](https://github.com/BabylonJS/SummerFestival/blob/master/tutorial/collisionsTriggers/environment.ts)

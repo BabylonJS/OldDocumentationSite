@@ -674,16 +674,16 @@
                     "filename": "page10"
                 },
                 {
+                    "title": "Player Camera",
+                    "filename": "page5"
+                },
+                {
                     "title": "Character Movement Part 1",
                     "filename": "page3"
                 },
                 {
                     "title": "Character Movement Part 2",
                     "filename": "page4"
-                },
-                {
-                    "title": "Player Camera",
-                    "filename": "page5"
                 },
                 {
                     "title": "Import Meshes",
@@ -724,6 +724,14 @@
                 {
                     "title": "Performance",
                     "filename": "page17"
+                },
+                {
+                    "title": "Outro",
+                    "filename": "page18"
+                },
+                {
+                    "title": "Design Process, 3D Modeling, Art Assets",
+                    "filename": "page19"
                 }
             ]
         },

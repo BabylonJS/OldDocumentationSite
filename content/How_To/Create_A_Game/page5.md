@@ -55,5 +55,11 @@ private _updateCamera(): void {
 In order to update our camera's position we want to lerp from its current position to the new position. Lerping allows for a smooth transition between positions rather than an instant repositioning of the camera.
 
 # Further Reading
-**Previous:** [Character Movement Part 2](/how_to/page4)   
-**Next:** [Import Meshes](/how_to/page6)
+**Previous:** [Simple Game State](/how_to/page10)   
+**Next:** [Character Movement Part 1](/how_to/page3)
+
+## Resources
+**Files Used:** [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
+
+## External
+[Suzy Cube's Camera System](http://louardongames.blogspot.com/2016/10/lessons-from-suzy-cube-camera-system.html)

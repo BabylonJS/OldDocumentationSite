@@ -25,7 +25,28 @@ I spent a bit of time debugging sound issues and here are some of the tips that 
 Aside from just playing background music and simple sfx, I had two pretty involved sections of sound.
 1. Warning SFX for the sparkler  
     - I gave the sparkler a looping warning sound that started when the energy was at the 2nd to last bar. Since this was tied to the animation, I had to make sure that if the animation didn't actually complete (the player was able to reset the sparkler before it reached empty), that the sound would still stop. I did this by making sure that I stopped the sound every time *startSparklerTimer* was called.
+    ```javascript
+    if (!this.gamePaused) {
+        if (this._sparklerLife.cellId < 10) {
+            this._sparklerLife.cellId++;
+        }
+        if (this._sparklerLife.cellId == 9) {
+            this._sparkWarningSfx.play();
+        }
+        if (this._sparklerLife.cellId == 10) {
+            this.stopSpark = true;
+            clearInterval(this._handle);
+            //sfx
+            this._sparkWarningSfx.stop();
+        }
+    }
+    ```
     - Additionally, If the game were to pause while the sound was playing, we'd need to pause this as well, which is why the intervals for the sparkler animations check for *gamePaused*.
+    ```javascript
+    else { // if the game is paused, also pause the warning SFX
+        this._sparkWarningSfx.pause();
+    }
+    ```
 2. The character SFX
 The character had a couple different sounds, but the most difficult one to manage was the looping run sfx. I had to create an observable to know when the character was running which would determine when to play/stop the sound.
 ```javascript
@@ -39,8 +60,14 @@ this.onRun.add((play) => {
 })
 ```
 There is an extra measure of security in making sure that .stop() would not be called more than once because Safari gave a lot of audio issues when trying to do things with sounds.  
-In [_animatePlayer]() we notify the onRun observable by passing in a boolean of whether to play or not. 
+In [_animatePlayer](https://github.com/BabylonJS/SummerFestival/blob/a0abccc2efbb7399820efe2e25f53bb5b4a02500/src/characterController.ts#L247) we notify the onRun observable by passing in a boolean of whether to play or not. 
 
 # Further Reading
 **Previous:** [Particle Systems](/how_to/page13)  
 **Next:** [Extra Features](/how_to/page15) 
+
+## Resources
+**Files Used:**  
+- [app.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/app.ts)
+- [ui.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/ui.ts)
+- [characterController.ts](https://github.com/BabylonJS/SummerFestival/blob/master/src/characterController.ts)
