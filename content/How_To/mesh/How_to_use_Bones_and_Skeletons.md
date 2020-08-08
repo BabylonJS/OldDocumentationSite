@@ -128,6 +128,14 @@ var pickResult = scene.pick(scene.pointerX, scene.pointerY);
 
 Please keep in mind that this operation is using the CPU so it has to be used wisely as it could impact performance.
 
+### Instancing meshes with skeletons
+
+Because the CPU has no clue where the vertices are, when you create an instance of a skeleton mesh it will also use the bounding box of the original mesh. This will cause visual bugs where if the original skeleton mesh is out of view of the screen, all its instanced meshes will also dissapear. To fix this, you can cut the mesh bounding info check on the instanced meshes like this:
+
+```javascript
+instance.alwaysSelectAsActiveMesh = true;
+```
+
 ## Attaching a mesh to a specific bone
 
 Starting with babylon.js v2.2, you can now attach a mesh to a bone (like a sword in the hand of your character for instance). To do so, just specify on which bone with the following code:
