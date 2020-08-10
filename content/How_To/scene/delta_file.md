@@ -83,7 +83,7 @@ light.intensity = 1.0;
 BABYLON.SceneRecorder.ApplyDelta(delta, scene);
 ```
 
-You can play with this code on this Playground: https://www.babylonjs-playground.com/#MPD4TQ
+You can play with this code on this Playground: https://www.babylonjs-playground.com/#MPD4TQ#1
 
 # Using the Inspector
 
