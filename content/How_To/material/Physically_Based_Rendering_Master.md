@@ -448,6 +448,8 @@ pbr.roughness = 0.0;
 pbr.anisotropy.isEnabled = true;
 pbr.anisotropy.texture = texture;
 ```
+[Demo](https://playground.babylonjs.com/#1EISUM#3)  
+[Video tutorial](https://youtu.be/Zk0A5UzNLNw)
 
 ## Sheen
 Some materials have a totally different shapes for the specular lobe. By default in the PBR, material the specular lobe would for instance not be adapted to define the wide specular lobe we can see on fabric materials like satin. This is the main reason we introduced sheen in the material so that you can since 4.0 represents fabric materials relying on the PBR.
