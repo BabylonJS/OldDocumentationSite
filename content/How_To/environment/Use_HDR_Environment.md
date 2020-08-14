@@ -19,7 +19,25 @@ var hdrTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData("textures/env
 scene.environmentTexture = hdrTexture;
 ```
 
-We are detailing below the two supported ways of creating such files. As of 4.2 we now support prefiltering directly in the Sandbox !!! .hdr files are easy to find on the web so it looks like the most convenient input for filtering.
+Note that you can rotate your environmentTexture, if needed, in a couple ways. The first is to change the rotation of setReflectionTextureMatrix:
+
+```javascript
+var hdrRotation = 10; // in degrees
+hdrTexture.setReflectionTextureMatrix(
+    BABYLON.Matrix.RotationY(
+        BABYLON.Tools.ToRadians(hdrRotation)
+    )
+);
+```
+  
+The second is to change rotationY for the environmentTexture, the value of which is visible in the inspector under the texture's transform section:
+
+```javascript
+var hdrRotation = 10; // in degrees
+hdrTexture.rotationY = BABYLON.Tools.ToRadians(hdrRotation);
+```
+
+Below are two methods of creating such environments for image-based lighting using external tools. However, as of version 4.2 we now support prefiltering .hdr files by dragging and dropping them directly in the Sandbox!!! It is easy to find .hdr files on the web so this is the most direct path for prefiltering an environment for your scene.
 
 ## Sandbox
 
@@ -48,17 +66,6 @@ Please note that WebGL2 is required for prefiltering on-the-fly.
 ## External tools
 
 The first tool rely on an open source framework named IBL Baker whereas the second one creating higher resolution results is based on a proprietary software named Lys.
-
-Note that you can rotate your environmentTexture if needed:
-
-```javascript
-var hdrRotation = 10; // in degrees
-hdrTexture.setReflectionTextureMatrix(
-    BABYLON.Matrix.RotationY(
-        BABYLON.Tools.ToRadians(hdrRotation)
-    )
-);
-```
 
 ### Creating a dds environment file from IBL Baker
 You can find IBLBaker on: [https://github.com/derkreature/IBLBaker](https://github.com/derkreature/IBLBaker)
