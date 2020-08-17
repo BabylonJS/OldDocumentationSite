@@ -80,7 +80,7 @@ Repeat you texture as tiles across a mesh or even offset your texture on a mesh,
 var material = new BABYLON.StandardMaterial("mat0", scene);
 material.diffuseTexture = new BABYLON.Texture("URL TEXTURE", scene);
 material.diffuseTexture.uScale = 2;
-material1.diffuseTexture.vScale = 4;
+material.diffuseTexture.vScale = 4;
 
 material.diffuseTexture.uOffset = 0.25;
 material.diffuseTexture.vOffset = 0.5;
