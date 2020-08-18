@@ -1,7 +1,3 @@
----
-PG_TITLE: Coordinate Transformation
----
-
 # How To Use Coordinate Transformation
 
 This method for these examples can be directly compared to [the use of a parent](/How_To/Parenting) 

@@ -1,17 +1,16 @@
----
-PG_TITLE: glTF Exporter
----
-
 # glTF Exporter
 
 The glTF Exporter allows BabylonJS models to be exported to the [glTF 2.0 format](https://www.khronos.org/gltf/).
 
 ## Installation
+The glTF Exporter can be installed by using the `babylonjs-serializers` module
 ### npm
-The glTF Exporter can be installed by using the `babylonjs-serializers` npm module
-
 ```npm
 npm install --save babylonjs babylonjs-serializers
+```
+### yarn
+```yarn
+yarn add babylonjs babylonjs-serializers
 ```
 
 ### javascript
@@ -53,8 +52,7 @@ BABYLON.GLTF2Export.GLBAsync(scene, "fileName").then((glb) => {
 glTF Exporter accepts an optional `options` parameter with certain functions and properties defined.
 
 ### Excluding geometry 
-Sometimes you may need to exclude geometry from export, such as the skybox.  You can define a boolean callback called `shouldExportTransformNode` which accepts a BabylonJS transform node as an argument and returns a boolean, specifying
-if the node should be exported or not:
+Sometimes you may need to exclude geometry from export, such as the skybox. You can define a boolean callback called `shouldExportNode` which accepts a BabylonJS node as an argument and returns a boolean, specifying if the node should be exported or not:
 
 ```javascript
 // Initializer code...
@@ -62,8 +60,8 @@ let skybox = scene.createDefaultSkybox(hdrTexture, true, 100, 0.3);
 // scene setup code...
 
 let options = {
-    shouldExportTransformNode: function(transformNode) {
-        return transformNode !== skybox;
+    shouldExportNode: function(node) {
+        return node !== skybox;
     }
 }
 
@@ -87,5 +85,3 @@ BABYLON.GLTF2Export.GLBAsync(scene, "fileName", options).then((glb) => {
 ## Coming soon
 - Skinning animation
 - Morph Targets
-
-

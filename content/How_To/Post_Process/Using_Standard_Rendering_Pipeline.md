@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the standard rendering pipeline
----
-
 # The standard pipeline is no longer maintained.
 [Default pipeline](/how_to/using_default_rendering_pipeline) should be used going forward but the standard pipeline will be kept for backwards compatibility.
 

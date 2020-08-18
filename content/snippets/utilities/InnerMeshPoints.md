@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Create Points Inside a Mesh
----
-
 # How To Create Points Inside a Mesh
 
 This utility enables you to create and store Vector3 points each of which is randomly positioned inside a given mesh.
@@ -195,4 +191,5 @@ BABYLON.Mesh.prototype.createInnerPoints = function(pointsNb) {
 
 # Further Reading
 
+[How To Create Points on a Mesh Surface](/snippets/SurfaceMeshPoints)  
 [How To Check When Point is Inside a Mesh](/snippets/isInside)

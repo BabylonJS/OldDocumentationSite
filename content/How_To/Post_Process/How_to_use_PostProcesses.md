@@ -1,8 +1,3 @@
----
-ID_PAGE: 22431
-PG_TITLE: How to use PostProcesses
----
-
 # How To Use PostProcess
 Postprocesses allow you to create 2D effects on top of your scene.
 A postprocess is linked to a camera and can be part of a chain of postprocesses where each postprocess uses the result of the previous one as input for its own processing.
@@ -97,14 +92,19 @@ Obviously, as usual, try to stay reasonable with kernel size as it will impact t
 Apply a kernel matrix to every pixel:
 
 ```javascript
-var sepiaKernelMatrix = BABYLON.Matrix.FromValues(
-                    0.393, 0.349, 0.272, 0,
-                    0.769, 0.686, 0.534, 0,
-                    0.189, 0.168, 0.131, 0,
-                    0, 0, 0, 0
-                );
-var postProcess = new BABYLON.ConvolutionPostProcess("Sepia", sepiaKernelMatrix, 1.0, camera);
+var postProcess = new BABYLON.ConvolutionPostProcess("Sepia", BABYLON.ConvolutionPostProcess.EmbossKernel, 1.0, camera);
 ```
+
+### Screen Space Curvature
+Apply a nice effect highlightint the ridges and valley of your meshes:
+
+```javascript
+var postProcess = new BABYLON.ScreenSpaceCurvaturePostProcess("", scene, 1, scene.activeCamera);
+```
+
+You can easily define the ridge and valley level you want relying on the respective `postProcess.ridge` and `postProcess.valley` properties.
+
+You can see a live demo here: https://www.babylonjs-playground.com/#YF8D42#5
 
 ### FXAA
 Apply a full screen antialiasing filter:
@@ -145,7 +145,7 @@ var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, came
 
 You have several options available:
 * colorGradingTexture: Used to provide a color grading texture applied on your scene. You can use:
-    * a [colorGradingTexture](//doc.babylonjs.com/api/classes/babylon.colorgradingtexture) using a [.3dl](https://en.wikipedia.org/wiki/3D_lookup_table) format. Demo: https://www.babylonjs-playground.com/#17VHYI#5
+    * a [colorGradingTexture](//doc.babylonjs.com/api/classes/babylon.colorgradingtexture) using a [.3dl](https://en.wikipedia.org/wiki/3D_lookup_table) format. Demo: https://www.babylonjs-playground.com/#17VHYI#15
     * a standard texture (using .png for example) but with _invertY_ set to _true_, wrap mode as clamp and _imageProcessingConfiguration.colorGradingWithGreenDepth_ set to _false_. Demo: https://www.babylonjs-playground.com/#17VHYI#9
 * colorCurves: Used to provide several properties to change colors. More [details here](/overviews/physically_based_rendering_master#color-curves). Demo: https://www.babylonjs-playground.com/#J9H084#12
 * contrast: 1.0 by default. Used to change the contrast. Demo: https://www.babylonjs-playground.com/#J9H084#9
@@ -215,17 +215,17 @@ The second parameter of the constructor is the URL of the color look-up table (a
 
 Here is what the default (without filter) look-up table looks like:
 
-![LUT](http://udn.epicgames.com/Three/rsrc/Three/ColorGrading/RGBTable16x1.png)
+![LUT](/img/how_to/post-processes/lut-default.png)
 
 Examples of filtered LUT to use for various filters:
 
-![LUT](http://i.imgur.com/gC9vQCz.png)
+![LUT](/img/how_to/post-processes/lut-inverted.png)
  Inverted colors
 
-![LUT](http://i.imgur.com/rupMyVN.png)
+![LUT](/img/how_to/post-processes/lut-highcontrast.png)
  High contrast
 
-![LUT](http://i.imgur.com/IX93hGO.png)
+![LUT](/img/how_to/post-processes/lut-posterized.png)
  Posterize
 
 You can easily create new filters by using a image editing software to alter the look-up table to fit your needs. Copy/paste the default look-up table on a screenshot or picture before altering it to see in real time what the filtered image will look like.
@@ -331,4 +331,4 @@ postProcess4.onApply = function (effect) {
     effect.setFloat("highlightIntensity", 1.0);
 };
 ```
-You might want to read more about shaders and try our CYOS shader editor [**RIGHT HERE**](https://www.eternalcoding.com/?p=113).
+You might want to [read more about shaders](https://www.eternalcoding.com/what-do-you-mean-by-shaders-learn-how-to-create-shaders-with-babylon-js/) and try our [CYOS shader editor](https://cyos.babylonjs.com/).

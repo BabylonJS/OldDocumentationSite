@@ -1,8 +1,3 @@
----
-ID_PAGE: 22531
-PG_TITLE: How to use Actions
----
-
 # How to use Actions
 
 Actions are a simple way to add interactions in your scenes. An action is launched when its trigger is fired. For instance, you can specify that when the user clicks (or touches) a mesh, an action is executed.
@@ -167,7 +162,7 @@ You can use direct values like `position` or `diffuse`. But you can also provide
 * `BABYLON.SetParentAction(trigger, target, parent, condition)`: Sets the parent of the target.
 * `BABYLON.PlaySoundAction(trigger, sound, condition)`: Plays a given sound.
 * `BABYLON.StopSoundAction(trigger, sound, condition)`: Stops a given sound
-* `BABYLON.InterpolateValueActiontrigger, target, propertyPath, value, duration, condition, stopOtherAnimations)`: Creates an animation to interpolate the current value of a property to a given target. The following types are supported:
+* `BABYLON.InterpolateValueAction(trigger, target, propertyPath, value, duration, condition, stopOtherAnimations)`: Creates an animation to interpolate the current value of a property to a given target. The following types are supported:
    * `number`
    * `BABYLON.Color3`
    * `BABYLON.Vector3`

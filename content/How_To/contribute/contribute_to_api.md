@@ -1,10 +1,6 @@
----
-PG_TITLE: Contribute To The API Documentation
----
-
 # Need for Contribution
 
-Many people have asked for the API documentation to be improved. This is a major task with lots of files needing comments added. Comments are very useful for future development and maintenance of the code but now they are even more useful since in the correct format they are can be read by “TYPEDOC” and produce the API documentation for the classes, properties and methods used by Babylon.js. The core team has worked to make this happen as you can see by the new API documentation. Volunteers are needed to add comments so even if you only have time to do a couple of files then please do volunteer. 
+Many people have asked for the API documentation to be improved. This is a major task with lots of files needing comments added. Comments are very useful for future development and maintenance of the code but now they are even more useful since in the correct format they are can be read by “TYPEDOC” and produce the API documentation for the classes, properties and methods used by Babylon.js. The core team has worked to make this happen as you can see by the new API documentation. Volunteers are needed to add comments so even if you only have time to do a couple of files then please do volunteer.
 
 # How to Contribute
 
@@ -19,7 +15,7 @@ You need to add appropriate comments according to the formats given below. Check
 
 Whilst the above steps will validate the comments it will not allow you to see the results. Since you do not want to affect anything within your local clone of Babylon.js you will need to create a new folder **outside** the Babylon.js folder. You can then follow these steps to produce viewable results of your comments.
 
-After editing and validating files within the **src** folder and before the PR:  
+After editing and validating files within the **src** folder and before the PR:
 
 7. In the new folder install typedoc using `$ npm install typedoc`;
 8. Copy the **src** folder into the new folder;
@@ -28,8 +24,8 @@ After editing and validating files within the **src** folder and before the PR:
 11. In the new folder use `$ typedoc --out documents src` to create the documents from the src
 12. In the **documents** folder find and open index.html to check results. Note that these will not appear exactly the same as the Babylon.js API documentation web pages but close enough to check.
 
-
 # Format of Comments
+
 Below are descriptions of the format of comment for the various code entities with examples.
 
 Comments go immediately in front of the entity and have the form of plain comments
@@ -40,14 +36,15 @@ Comments go immediately in front of the entity and have the form of plain commen
 * more comments
 */
 ```
-or comments plus key @words 
 
-|@word|followed by|
-|------|--------|
-|@param |parameter name then parameter description|  
-|@returns |description of what a function returns|  
-|@see | URL when it is useful to link to another site or page add one|
-|@ignore| reason why it is ignored|
+or comments plus key @words
+
+| @word    | followed by                                                   |
+| -------- | ------------------------------------------------------------- |
+| @param   | parameter name then parameter description                     |
+| @returns | description of what a function returns                        |
+| @see     | URL when it is useful to link to another site or page add one |
+| @ignore  | reason why it is ignored                                      |
 
 # Enum
 
@@ -76,8 +73,8 @@ export enum AssetTaskState {
      * Error
      */
     ERROR
-}    
-``` 
+}
+```
 
 ```javascript
 /**
@@ -98,6 +95,7 @@ export enum DepthOfFieldEffectBlurLevel {
     High
 };
 ```
+
 # Class
 
 **Template containing the constructor along with the public, private and protected properties and methods defining an object**
@@ -110,7 +108,7 @@ A defines comment to describe the purpose of the CLASS
  * so the passed direction is the light reflection direction, not the incoming direction
  */
 export class HemisphericLight extends Light {
-    //All the parts defining the class in here
+  //All the parts defining the class in here
 }
 ```
 
@@ -133,19 +131,19 @@ A creates comment to describe the CONSTRUCTOR
 
 ```javascript
 export class MapperManager {
-    //class properties
+  //class properties
 
-    /**
-     * Creates a new MapperManager object to manage the different implemented mappers
-     */
-    constructor() {
-this._mappers = {
-    "html": new HTMLMapper(),
-    "json": new JSONMapper(),
-    "dom": new DOMMapper()
+  /**
+   * Creates a new MapperManager object to manage the different implemented mappers
+   */
+  constructor() {
+    this._mappers = {
+      html: new HTMLMapper(),
+      json: new JSONMapper(),
+      dom: new DOMMapper()
+    };
+  }
 }
-    }
-}    
 ```
 
 ## With Parameters
@@ -171,10 +169,10 @@ constructor(private _viewer: AbstractViewer) {
 /**
  * Creates a Solid Particle object
  * Don't create particles manually, use instead the Solid Particle System internal tools like _addParticle()
- * @param particleIndex is the particle index in the Solid Particle System pool. It's also the particle identifier  
+ * @param particleIndex is the particle index in the Solid Particle System pool. It's also the particle identifier
  * @param positionIndex is the starting index of the particle vertices in the SPS "positions" array
  * @param indiceIndex is the starting index of the particle indices in the SPS "indices" array
- * @param model is a reference to the model shape on what the particle is designed.  
+ * @param model is a reference to the model shape on what the particle is designed.
  * @param shapeId is the model shape identifier in the SPS
  * @param idxInShape is the index of the particle in the current model (ex: the 10th box of addShape(box, 30))
  * @param modelBoundingInfo is the reference to the model BoundingInfo used for intersection computations
@@ -202,17 +200,17 @@ Create and @param comments for constructor and copied comments before any public
 /**
  * Creates a new Action
  * @param triggerOptions the trigger, with or without parameters, for the action
- * @param condition an optional determinant of action 
+ * @param condition an optional determinant of action
  */
 constructor(
-    
+
     /**
      * The trigger, with or without parameters, for the action
      */
-    public triggerOptions: any, 
-    
+    public triggerOptions: any,
+
     condition?: Condition) {
-    
+
     if (triggerOptions.parameter) {
                 this.trigger = triggerOptions.trigger;
                 this._triggerParameter = triggerOptions.parameter;
@@ -233,17 +231,17 @@ constructor(
  * @param directionRandomizer defines how much to randomize the particle direction [0-1]
  */
 constructor(
-    radius = 1, 
+    radius = 1,
     /**
      * The cone base angle (PI by default)
      */
-    public angle = Math.PI, 
-    
+    public angle = Math.PI,
+
     /**
      * Defines how much to randomize the particle direction [0-1]
      */
     public directionRandomizer = 0) {
-    
+
     this.radius = radius;
 }
 ```
@@ -267,6 +265,7 @@ public groundColor = new Color3(0.0, 0.0, 0.0);
 public direction: Vector3
 
 ```
+
 ## Public with private variable
 
 There are occasions when a variable should be public for the use of the code but private from a user. Such variables start with an underscore. Plain comments are useful for development but the variable should be ignored when building the API documentation. Hence the use of @ignore
@@ -274,7 +273,7 @@ There are occasions when a variable should be public for the use of the code but
 ```javascript
 /**
  * Internal only - manager for action
- * @ignore 
+ * @ignore
  */
 public _actionManager: ActionManager;
 ```
@@ -286,8 +285,9 @@ These will be ignored automatically when building the API documentation and comm
 ```javascript
 private _worldMatrix: Matrix;
 
-protected _background: string; 
+protected _background: string;
 ```
+
 # Method of Class, Constructor or Function
 
 ## Public with public name
@@ -349,13 +349,13 @@ public getContext(): CanvasRenderingContext2D {
 
 ```javascript
  /**
- * Serializes the current light into a Serialization object 
+ * Serializes the current light into a Serialization object
  * @returns the serialized object
  */
 public serialize(): any {
     var serializationObject = SerializationHelper.Serialize(this);
 
-    // Internal working here            
+    // Internal working here
 
     return serializationObject;
 }
@@ -399,11 +399,11 @@ this.onErrorCallback(onError, msg, exception);
  * @param text defines the text to be drawn
  * @param x defines the placement of the text from the left
  * @param y defines the placement of the text from the top when invertY is true and from the bottom when false
- * @param font defines the font to be used with font-style, font-size, font-name 
+ * @param font defines the font to be used with font-style, font-size, font-name
  * @param color defines the color used for the text
- * @param clearColor defines the color for the canvas, use null to not overwrite canvas 
+ * @param clearColor defines the color for the canvas, use null to not overwrite canvas
  * @param invertY defines the direction for the Y axis (default is true - y increases downwards)
- * @param update defines whether texture is immediately update (default is true)  
+ * @param update defines whether texture is immediately update (default is true)
  */
 public drawText(text: string, x: number, y: number, font: string, color: string, clearColor: string, invertY?: boolean, update = true) {
     var size = this.getSize();
@@ -453,7 +453,7 @@ var task = new TextFileAssetTask(taskName, url);
 
 ```javascript
  /**
- * Sets the passed Effect object with the HemisphericLight normalized direction and color and the passed name (string).  
+ * Sets the passed Effect object with the HemisphericLight normalized direction and color and the passed name (string).
  * @param effect The effect to update
  * @param lightIndex The index of the light in the effect to update
  * @returns The hemispheric light
@@ -517,7 +517,7 @@ protected _buildUniformLayout(): void {
     this._uniformBuffer.addUniform("shadowsInfo", 3);
     this._uniformBuffer.addUniform("depthValues", 2);
     this._uniformBuffer.create();
-} 
+}
 ```
 
 ```javascript

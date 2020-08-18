@@ -1,10 +1,6 @@
----
-PG_TITLE: Adding a Roof to a House Built from Plans
----
-
 # Adding a Roof to a House Built from Plans
 
-For any house there is a range of different types of roof that can be added and so there is no automatic way to use the footprint of a house to build a roof directly. However with a little bit of manual design there are methods that can complete the build. Here we present two ways to design and create a hip roof. The example used is based on the [design](/samples/House) and [coding](/samples/House_Use) of this [house](http://www.babylonjs-playground.com/#4GBWI5#99).
+For any house there is a range of different types of roof that can be added and so there is no automatic way to use the footprint of a house to build a roof directly. However with a little bit of manual design there are methods that can complete the build. Here we present two ways to design and create a hip roof. The example used is based on the [design](/samples/House) and [coding](/samples/House_Use) of this [house](https://www.babylonjs-playground.com/#4GBWI5#265).
 
 **Please note that some functions used in this project uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
 
@@ -29,7 +25,7 @@ The function **roofprint** returns a list of Vector3 representing the corners of
 
 Using the roofprint the floor of the roof (or top ceiling) can be added as a mesh.
 
-* [Playground Example Roof Floor](http://www.babylonjs-playground.com/#1Z71FW#7)
+* [Playground Example Roof Floor](https://www.babylonjs-playground.com/#1Z71FW#41)
 
 ## Plan of Roof
 
@@ -95,7 +91,7 @@ In the example the roof mesh is built using
 var roofSection = roof(wholeRoofprint, apexes, planes, 2, height, 5.6);
 ```
 
-* [Playground Example Roof](http://www.babylonjs-playground.com/#1Z71FW#8)
+* [Playground Example Roof](https://www.babylonjs-playground.com/#1Z71FW#42)
 
 ## Design Roof In Sections
 
@@ -172,7 +168,7 @@ var roofSection = roof(mainRoofprint, apexes, planes, 2, height, 5.1);
 var smallRoofSection = roof(smallRoofprint, smallApexes, smallPlanes, 2, height - 1, 5.1);
 ```
 
-* [Playground Example Roof](http://www.babylonjs-playground.com/#1Z71FW#9)
+* [Playground Example Roof](https://www.babylonjs-playground.com/#1Z71FW#43)
 
 # Further Reading
 

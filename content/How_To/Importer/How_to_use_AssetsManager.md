@@ -1,8 +1,3 @@
----
-ID_PAGE: 22551
-PG_TITLE: How to use AssetsManager
----
-
 # How To Load Files with Assets Manager
 
 In order to help developers load multiple assets, Babylon.js (starting with version 1.14) introduced the AssetsManager class.
@@ -115,7 +110,7 @@ assetsManager.onFinish = function(tasks) {
 ```
 
 The manager also allows you to use observers in order to handle onFinish, onProgress, onTaskSuccess and onTaskError:
-* onTaskSuccessObservable - registered observers will be executed when a single task finished successfully. 
+* onTaskSuccessObservable - registered observers will be executed when a single task finished successfully.
 * onTaskErrorObservable - registered observers will be executed when a single task failed.
 * onProgressObservable - registered observers will be executed when a single task finished successfully or failed.
 * onTasksDoneObservable - registered observers will be execute when all tasks' executions are done (success or failed!)
@@ -160,7 +155,7 @@ taskState: AssetTaskState;
 errorObject: { message?: string; exception?: any; };
 ```
 
-Note that the properties required to initialize a task are always corresponding to the object type it creates. Foe example, the constructor signature of the CubeTextureAssetTask takes the same variables as the class BABYLON.CubeTexture . The order of the variables might vary. 
+Note that the properties required to initialize a task are always corresponding to the object type it creates. Foe example, the constructor signature of the CubeTextureAssetTask takes the same variables as the class BABYLON.CubeTexture . The order of the variables might vary.
 
 ### MeshAssetTask
 
@@ -275,6 +270,20 @@ Extra properties:
 
 ```javascript
 public texture: HDRCubeTexture;
+```
+
+### EquiRectangularCubeTextureAssetTask
+
+Same as the CubeTextureAssetTask, but for Equirectangular cube textures
+
+```javascript
+constructor(name: string, url: string, size: number, noMipmap = false, useInGammaSpace = true)
+```
+
+Extra properties:
+
+```javascript
+public texture: EquiRectangularCubeTexture;
 ```
 
 ## Using a loading screen

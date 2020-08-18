@@ -1,8 +1,3 @@
----
-ID_PAGE: 22511
-PG_TITLE: Adding Your Own Physics Engine Plugin to Babylon.js
----
-
 # How To Add Your Own Physics Engine
 
 ## Define your plugin
@@ -44,3 +39,18 @@ scene.enablePhysics(null, new BABYLON.CannonJSPlugin()),
 ```
 
 The first parameter can be used to define gravity (which is (0, -9.82, 0) by default).
+
+# Further Reading
+
+## Basic - L1
+
+[How To Use The Physics' Engines](/how_to/using_the_physics_engine)  
+[How To Use Forces](/how_to/forces)  
+[How to use Joints](/how_to/joints)  
+[How To Use Pivots and Axes](/how_to/joint_pivots)  
+[How To Create Compound Bodies](/how_to/compounds)  
+[How To Create Soft Bodies](/how_to/soft_bodies)
+
+## Mid Level - L2
+
+[How To Use Advanced Features](/how_to/Using_Advanced_Physics_Features)

@@ -1,8 +1,9 @@
 # Using The Assets Panel
 
-The editor provides a way to manage assets. Assets are element that you can use the customize you objects.
+The editor provides a way to manage assets. Assets are element that you can use the customize your objects.
 
 It includes these categories of assets:
+* Custom particle system sets (using the **Particle System Creator**)
 * Custom scripts (using the **Code Editor**)
 * Custom graphs (using the **Graph Editor**)
 

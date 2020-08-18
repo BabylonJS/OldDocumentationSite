@@ -1,14 +1,9 @@
----
-ID_PAGE: 22071
-PG_TITLE: 06. Lights
----
-
 # Lights
 Lights are used, as you would expect, to affect how meshes are seen, in terms of both illumination and colour.
 All meshes allow light to pass through them unless shadow generation is activated. The default number of lights allowed is
 four but this can be increased.
 
-![Elements](http://www.babylonjs.com/Screenshots/testlight.jpg)
+![Elements](https://doc.babylonjs.com/img/testlight.jpg)
 
 _A pretty sphere with multiple lights_
 
@@ -25,7 +20,7 @@ var light = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(1, 10, 1), 
 
 ### The Directional Light
 A directional light is defined by a direction (what a surprise!). The light is emitted from everywhere in the specified direction, and has an infinite range.
-An example of a directional light is when a distance planet is lit by the apparently parallel lines of light from its sun. Light in a downward direction will light
+An example of a directional light is when a distant planet is lit by the apparently parallel lines of light from its sun. Light in a downward direction will light
 the top of an object.
 
 ```javascript
@@ -59,27 +54,23 @@ There are three properties of lights that affect color. Two of these _diffuse_ a
 
 In these playgrounds see how the specular color (green) is combined with the diffuse color (red) to produce a yellow highlight.
 
-* [Playground example of a point light](http://www.babylonjs-playground.com/#20OAV9)
+* [Playground example of a point light](https://www.babylonjs-playground.com/#20OAV9)
 
-* [Playground example of a directional light](http://www.babylonjs-playground.com/#20OAV9#1)
+* [Playground example of a directional light](https://www.babylonjs-playground.com/#20OAV9#1)
 
-* [Playground example of a spot light](http://www.babylonjs-playground.com/#20OAV9#3)
+* [Playground example of a spot light](https://www.babylonjs-playground.com/#20OAV9#3)
 
-* [Playground example of a hemispheric light](http://www.babylonjs-playground.com/#20OAV9#5)
+* [Playground example of a hemispheric light](https://www.babylonjs-playground.com/#20OAV9#5)
 
 For a hemispheric light the _groundColor_ is the light in the opposite direction to the one specified during creation.
 You can think of the _diffuse_ and _specular_ light as coming from the centre of the object in the given direction and the _groundColor_ light in the opposite direction.
 
-* [Playground example of a hemispheric light on two spheres](http://www.babylonjs-playground.com/#20OAV9#6)
+* [Playground example of a hemispheric light on two spheres](https://www.babylonjs-playground.com/#20OAV9#6)
 
 White hemispheric light with a black groundColor is a useful lighting method.
 
-![](http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-44-73-metablogapi/4760.image_5F00_thumb_5F00_058CC84D.png)
-
-_White/black hemispheric light - upward pixels white (diffuse), downward pixels black (groundColor)_
-
 ### Intersecting Lights Colors
-* [Playground example of intersecting spot lights](http://www.babylonjs-playground.com/#20OAV9#9)
+* [Playground example of intersecting spot lights](https://www.babylonjs-playground.com/#20OAV9#9)
 
 ## Limitations
 Babylon.js allows you to create and register as many lights as you choose, but know that a single StandardMaterial can only handle a defined number simultaneous lights (by default this value is equal to 4 which means the first four enabled lights of the scene's lights list).
@@ -118,12 +109,13 @@ light.range = 100;
 when a light is created all current meshes will be lit by it. There are two ways to exclude some meshes from being lit.
 A mesh can be added to the _excludedMeshes_ array or add the ones not to be excluded to the _includedOnlyMeshes_ array. The number of meshes to be excluded can be one factor in deciding which method to use. In the following example two meshes are to be excluded from _light0_ and twenty three from _light1_. Commenting out lines 26 and 27 in turn will show the individual effect.
 
-* [Playground Example Excluding Lights](http://www.babylonjs-playground.com/#20OAV9#8)
+* [Playground Example Excluding Lights](https://www.babylonjs-playground.com/#20OAV9#8)
 
 ## Lighting Normals
 How lights react to a mesh depend on values set for each mesh vertex termed _normals_, shown in the picture below as arrows giving the direction of the lighting normals. The picture shows two planes and two lights. One light is a spot light, the other is a point light. The front face of each plane is the one you see when the _normals_ are pointing towards you, the back face the opposite side.
 
-![](http://urbanproductions.com/wingy/babylon/misc/normals03.jpg)
+![Elements](https://doc.babylonjs.com/img/how_to/Mesh/normals6.jpg)
+
 _A blue back-faced plane and a blue front-faced plane, with a spot light and point light_
 
 As you can see, the lights only affect the front face and not the back face.
@@ -152,7 +144,7 @@ This is the same as LIGHTMAP_DEFAULT except only the specular lighting and shado
 ```javascript
 light.lightmapMode = BABYLON.Light.LIGHTMAP_SHADOWSONLY;
 ```
-This is the same as LIGHTMAP_DEFAULT except only the shadows casted from this light will be applied.
+This is the same as LIGHTMAP_DEFAULT except only the shadows cast from this light will be applied.
 
 * [Playground Example](https://www.babylonjs-playground.com/#ULACCM#2)
 

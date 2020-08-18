@@ -1,7 +1,3 @@
----
-PG_TITLE: Behavior
----
-
 # Behavior
 
 Babylon.js v3.1 introduced a new component based tools: the behaviors.
@@ -13,7 +9,7 @@ A behavior is defined by the following interface:
 * `name`: Return the name of the behavior
 * `init()`: This function will be called when a behavior needs to be initialized. This is before the attachment to a target.
 * `attach(target)`: This function will be called when a behavior is attached to a target. This is where the behavior will hook into useful events. Babylon.js will make sure that the scene is not currently loading when this function will be called.
-* `detach(target)`: This function will be called when a behavior is detached from a target. The behavior must clear any associated resources and unhook all events
+* `detach()`: This function will be called when a behavior is detached from a target. The behavior must clear any associated resources and unhook all events
 
 If behaviors rely on animation, the following **static** properties will be available:
 * `EasingFunction`: Define the easing function used animations

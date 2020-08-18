@@ -2,7 +2,12 @@ include ../includes/header
     include ../includes/banner
     #wrapper
         .statics-banner
-            h1=dataObj.category.replace("_"," ")
+            .img-holder
+                a(href="/")
+                    img(src="/img/babylonjs_identity_color_dark.svg")
+                a(href="/" + dataObj.category)
+                    h1=dataObj.category.replace("_"," ")
+                div
 
         .horizontal-separator
         - dataObj.folders.sort((a, b) => { if (a.title === b.title) { return 0;}if (a.title < b.title) { return -1; } return 1;})

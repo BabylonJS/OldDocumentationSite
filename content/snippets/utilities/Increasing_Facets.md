@@ -1,17 +1,29 @@
----
-PG_TITLE: Increasing Facets of a Mesh
----
+# Increasing Vertices of a Mesh
 
-# Increasing Facets of a Mesh
-
-The effect that a shader, for example, can have on a mesh depends on the number of facets the mesh has. Some meshes 
+The appearance of a softbody or the effect of a shader depends on the number of facets the mesh has. Some meshes 
 such as a ground or sphere can have smaller or larger numbers of facets depending on the parameters set during their 
 creation. For other meshes such as a box or disc there can be no or little choice. In these circumstances it may 
 be useful to have a function that can increase the facets.
 
 When n is the number of points per side added to each side of a facet the number of facets is increased by (n + 1)<sup>2</sup>.
 
-# The Function
+**NOTE** From Babylon.js version 4.0 onwards this utility now exists as a standard method on a mesh.
+
+```javascript
+mesh.increaseVertices(n);
+```
+
+# The Playground
+
+The disc at the top left has the number of facets made when it was created. The lower right has had the facets increased.
+
+* [Playground Example Increase Facets](https://www.babylonjs-playground.com/#5ITGBA#1)
+
+# Prior to Version 4.0
+
+Use the function below. Any examples found in the playground then used the term 'increaseFacets' rather than 'increaseVertices'.
+
+## The Function
 
 ```javascript
 BABYLON.Mesh.prototype.increaseFacets = function(pps) { //pps points per side        
@@ -136,7 +148,7 @@ BABYLON.Mesh.prototype.increaseFacets = function(pps) { //pps points per side
 
 The disc at the top left has the number of facets made when it was created. The lower right has had the facets increased.
 
-* [Playground Example Increase Facets](http://www.babylonjs-playground.com/#2322Y7#14)
+* [Playground Example Increase Facets](https://www.babylonjs-playground.com/#2322Y7#14)
 
 
  

@@ -1,11 +1,6 @@
----
-ID_PAGE: 22661
-PG_TITLE: File Format Map (.babylon)
----
 **Babylon.js** uses a JSON file format for describing scenes.
 
-You can find the complete loader code here:
-https://github.com/BabylonJS/Babylon.js/blob/master/Babylon/Loading/Plugins/babylon.babylonFileLoader.js
+You can find the complete loader code [here](https://github.com/BabylonJS/Babylon.js/blob/master/src/Loading/Plugins/babylonFileLoader.ts).
 
 ## Basic types
 .babylon files uses the following convention for basic types:
@@ -229,105 +224,7 @@ A multiMaterial is defined by the following JSON:
 The structure of "geometries" is the following:
 ```javascript
 {
-    "boxes": array of Boxes (see below),
-    "spheres": array of Spheres (see below),
-    "cylinders": array of Cylinders (see below),
-    "toruses": array of Toruses (see below),
-    "grounds": array of Grounds (see below),
-    "planes": array of Planes (see below),
-    "torusKnots": array of TorusKnots (see below),
     "vertexData": array of VertexData (see below)
-}
-```
-
-## Boxes
-A box is defined by the following JSON:
-```javascript
-{
-    "id": string,
-    "size": float,
-    "canBeRegenerated": bool,
-    "tags": string
-}
-```
-
-## Spheres
-A sphere is defined by the following JSON:
-```javascript
-{
-    "id": string,
-    "segments": float,
-    "diameter": float,
-    "canBeRegenerated": bool,
-    "tags": string
-}
-```
-
-## Cylinders
-A cylinder is defined by the following JSON:
-```javascript
-{
-    "id": string,
-    "height": float,
-    "diameterTop": float,
-    "diameterBottom": float,
-    "tessellation": float,
-    "subdivisions": integer,
-    "canBeRegenerated": bool,
-    "tags": string
-}
-```
-
-## Toruses
-A torus is defined by the following JSON:
-```javascript
-{
-    "id": string,
-    "diameter": float,
-    "thickness": float,
-    "tessellation": float,
-    "canBeRegenerated": bool,
-    "tags": string
-}
-```
-
-## Grounds
-A ground is defined by the following JSON:
-```javascript
-{
-    "id": string,
-    "width": float,
-    "height": float,
-    "subdivisions": float,
-    "canBeRegenerated": bool,
-    "tags": string
-}
-```
-
-## Planes
-A plane is defined by the following JSON:
-```javascript
-{
-    "id": string,
-    "size": float,
-    "canBeRegenerated": bool,
-    "tags": string
-}
-```
-
-## TorusKnots
-A torusKnot is defined by the following JSON:
-```javascript
-{
-    "id": string,
-    "radius": float,
-    "tube": float,
-    "radialSegments": float,
-    "tubularSegments": float,
-    "p": float,
-    "q": float,
-    "canBeRegenerated": bool,
-    "tags": string
 }
 ```
 
@@ -340,11 +237,11 @@ A vertexData is defined by the following JSON:
     "positions": array of floats (3 per vertex),
     "normals": array of floats (3 per vertex),
     "uvs": array of floats (2 per vertex),
-    "uv2s": array of floats (2 per vertex) which is the 2nd texture coordinates (can be omitted),
-    "uv3s": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
-    "uv4s": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
-    "uv5s": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
-    "uv6s": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
+    "uvs2": array of floats (2 per vertex) which is the 2nd texture coordinates (can be omitted),
+    "uvs3": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
+    "uvs4": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
+    "uvs5": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
+    "uvs6": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
     "colors": array of floats (3 per vertex) which is the per vertex color (can be omitted),
     "matricesIndices": array of ints (4 per vertex) which is the matrices indices for bones (can be omitted),
     "matricesWeights": array of floats (4 per vertex) which is the matrices weights for bones (can be omitted),
@@ -401,10 +298,10 @@ A mesh is defined by the following JSON:
     "normals": array of floats (3 per vertex),
     "uvs": array of floats (2 per vertex),
     "uvs2": array of floats (2 per vertex) which is the 2nd texture coordinates (can be omitted),
-    "uv3s": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
-    "uv4s": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
-    "uv5s": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
-    "uv6s": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
+    "uvs3": array of floats (2 per vertex) which is the 3nd texture coordinates (can be omitted),
+    "uvs4": array of floats (2 per vertex) which is the 4nd texture coordinates (can be omitted),
+    "uvs5": array of floats (2 per vertex) which is the 5nd texture coordinates (can be omitted),
+    "uvs6": array of floats (2 per vertex) which is the 6nd texture coordinates (can be omitted),
     "colors": array of floats (4 per vertex) which is the per vertex color (can be omitted),
     "hasVertexAlpha": boolean to indicate if colors field contains useful alpha value (can be omitted),
     "matricesIndices": array of ints (4 per vertex) which is the matrices indices for bones (can be omitted),
@@ -610,277 +507,250 @@ A property is defined by the following JSON. A property value is always a string
 Here is a simple example of .babylon file:
 ```javascript
 {
-    "autoClear": true,
-    "clearColor": [0, 0, 0],
-    "ambientColor": [0, 0, 0],
-    "gravity": [0, -9.81, 0],
-    "cameras": [{
-        "name": "Camera",
-        "id": "Camera",
-        "position": [7.4811, 5.3437, -6.5076],
-        "target": [-0.3174, 0.8953, 0.3125],
-        "fov": 0.8576,
-        "minZ": 0.1,
-        "maxZ": 100,
-        "speed": 1,
-        "inertia": 0.9,
-        "checkCollisions": false,
-        "applyGravity": false,
-        "ellipsoid": [0.2, 0.9, 0.2]
-    }],
-    "activeCamera": "Camera",
-    "lights": [{
-        "name": "Sun",
-        "id": "Sun",
-        "type": 1,
-        "position": [0.926, 7.3608, 14.1829],
-        "direction": [-0.347, -0.4916, -0.7987],
-        "intensity": 1,
-        "diffuse": [1, 1, 1],
-        "specular": [1, 1, 1]
-    }],
-    "materials": [{
-        "name": "Material",
-        "id": "Material",
-        "ambient": [0.8, 0.8, 0.8],
-        "diffuse": [0.64, 0.64, 0.64],
-        "specular": [0.5, 0.5, 0.5],
-        "specularPower": 50,
-        "emissive": [0, 0, 0],
-        "alpha": 1,
-        "backFaceCulling": true,
-        "diffuseTexture": {
-            "name": "Metal1.png",
-            "level": 1,
-            "hasAlpha": 1,
-            "coordinatesMode": 0,
-            "uOffset": 0,
-            "vOffset": 0,
-            "uScale": 1,
-            "vScale": 1,
-            "uAng": 0,
-            "vAng": 0,
-            "wAng": 0,
-            "wrapU": true,
-            "wrapV": true,
-            "coordinatesIndex": 0
-        }
-    },
-    {
-        "name": "Material.001",
-        "id": "Material.001",
-        "ambient": [0.8, 0.8, 0.8],
-        "diffuse": [0.64, 0.64, 0.64],
-        "specular": [0.5, 0.5, 0.5],
-        "specularPower": 50,
-        "emissive": [0, 0, 0],
-        "alpha": 1,
-        "backFaceCulling": true,
-        "diffuseTexture": {
-            "name": "concrete5.png",
-            "level": 1,
-            "hasAlpha": 1,
-            "coordinatesMode": 0,
-            "uOffset": 0,
-            "vOffset": 0,
-            "uScale": 5,
-            "vScale": 5,
-            "uAng": 0,
-            "vAng": 0,
-            "wAng": 0,
-            "wrapU": true,
-            "wrapV": true,
-            "coordinatesIndex": 0
-        }
-    }],
-    "geometries": {
-        "boxes": [{
-            "id": "BoxPrimitive",
-            "size": 2,
-            "canBeRegenerated": true,
-            "tags": "Box Primitive Cube CanBeRegenerated"
-        }],
-        "vertexData": [{
-            "id": "CubeGeometry",
-            "updatable": false,
-            "positions": [ 1, -1, 1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1],
-            "normals": [0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, -0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, 0.5773, -0.5773, -0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, -0.5773, -0.5773, 0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, -0.5773, 0.5773, 0.5773],
-            "uvs": [0.5, 0.5, 0.5, 0, 0, 0.5, 0.5, 1, 0, 1, 0.5, 0.5, 0.5, 1, 0, 0.5, 0.5, 0.5, 0.5, 1, 0, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 1, 0, 1, 0, 0.5, 0.5, 1, 0, 1, 1, 1, 1, 0.5, 0.5, 0, 0, 0, 0, 0.5],
-            "indices": [0, 1, 2, 3, 4, 5, 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 17, 2, 4, 18, 5, 19, 20, 21, 22, 23, 10, 12, 24, 25, 26, 27, 28]
-        }]
-    },
-    "meshes": [{
-        "name": "Plane",
-        "id": "Plane",
-        "materialId": "Material.001",
-        "position": [0.0172, -2.9787, -0.5184],
-        "rotation": [0, 0, 0],
-        "scaling": [87.1479, 0.8635, 87.1479],
-        "isVisible": true,
-        "isEnabled": true,
-        "checkCollisions": false,
-        "billboardMode": 0,
-        "receiveShadows": true,
-        "positions": [-1, 0, -1, 1, 0, -1, -1, 0, 1, 1, 0, 1],
-        "normals": [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0],
-        "uvs": [0.0001, 0.0001, 0.9999, 0.0001, 0.0001, 0.9999, 0.9999, 0.9999],
-        "indices": [0, 1, 2, 1, 3, 2],
-        "subMeshes": [{
-            "materialIndex": 0,
-            "verticesStart": 0,
-            "verticesCount": 4,
-            "indexStart": 0,
-            "indexCount": 6
-        }]
-    },
-    {
-        "name": "Cube",
-        "id": "Cube",
-        "materialId": "Material",
-        "geometryId": "CubeGeometry",
-        "position": [0, 0, 0],
-        "rotation": [0, 0, 0],
-        "scaling": [1, 1, 1],
-        "isVisible": true,
-        "isEnabled": true,
-        "checkCollisions": false,
-        "billboardMode": 0,
-        "receiveShadows": false,
-        "subMeshes": [{
-            "materialIndex": 0,
-            "verticesStart": 0,
-            "verticesCount": 29,
-            "indexStart": 0,
-            "indexCount": 36
-        }],
-        "animations": [{
-            "dataType": 1,
-            "framePerSecond": 30,
-            "loopBehavior": 1,
-            "name": "position animation",
-            "property": "position",
-            "keys": [{
-                "frame": 0,
-                "values": [0,0,0.0291]
-            },
-            {
-                "frame": 1,
-                "values": [0,0,0.0291]
-            },
-            {
-                "frame": 30,
-                "values": [0,0,10]
-            },
-            {
-                "frame": 60,
-                "values": [0,0,9.975]
-            },
-            {
-                "frame": 90,
-                "values": [0,0,0]
-            },
-            {
-                "frame": 250,
-                "values": [0,0,0]
-            }]
-        },
-        {
-            "dataType": 1,
-            "framePerSecond": 30,
-            "loopBehavior": 1,
-            "name": "rotation animation",
-            "property": "rotation",
-            "keys": [{
-                "frame": 0,
-                "values": [-0.016, 0, 0]
-            },
-            {
-                "frame": 30,
-                "values": [-0.016, 0, 0]
-            },
-            {
-                "frame": 60,
-                "values": [-6.2832, 0, 0]
-            },
-            {
-                "frame": 250,
-                "values": [-6.2832, 0, 0]
-            }]
-        }],
-        "autoAnimate": true,
-        "autoAnimateFrom": 0,
-        "autoAnimateTo": 250,
-        "autoAnimateLoop": true
-    },
-    {
-        "name": "Cube2",
-        "id": "Cube2",
-        "materialId": "Material",
-        "geometryId": "CubeGeometry",
-        "position": [10, 0, 0],
-        "rotation": [0, 0, 0],
-        "scaling": [1, 1, 1],
-        "isVisible": true,
-        "isEnabled": true,
-        "checkCollisions": false,
-        "billboardMode": 0,
-        "receiveShadows": false,
-        "subMeshes": [{
-            "materialIndex": 0,
-            "verticesStart": 0,
-            "verticesCount": 29,
-            "indexStart": 0,
-            "indexCount": 36
-        }]
-    },
-    {
-        "name": "Cube3",
-        "id": "Cube3",
-        "materialId": "Material",
-        "geometryId": "BoxPrimitive",
-        "position": [-10, 0, 0],
-        "rotation": [0, 0, 0],
-        "scaling": [1, 1, 1],
-        "isVisible": true,
-        "isEnabled": true,
-        "checkCollisions": false,
-        "billboardMode": 0,
-        "receiveShadows": false,
-        "subMeshes": [{
-            "materialIndex": 0,
-            "verticesStart": 0,
-            "verticesCount": 29,
-            "indexStart": 0,
-            "indexCount": 36
-        }]
-    }],
-    "multiMaterials": [],
-    "shadowGenerators": [{
-        "useVarianceShadowMap": true,
-        "mapSize": 1024,
-        "lightId": "Sun",
-        "renderList": ["Cube", "Cube2", "Cube3"]
-    }],
-    "skeletons": [],
-    "sounds": [{          
-        "name": "violons11.wav",
-        "volume": 1,
-        "autoplay": true,
-        "loop": true,
-        "soundTrackId": 1
-        "spatialSound": true,
-        "position": [0, 0, 0]
-        "refDistance": 1.0,
-        "rolloffFactor": 1.0,
-        "maxDistance": 100,
-        "distanceModel": "linear",
-        "panningModel": "equalpower",
-        "isDirectional": false,
-        "coneInnerAngle": 90,
-        "coneOuterAngle": 180,
-        "coneOuterGain": 0,
-        "connectedMeshId": 0,
-        "localDirectionToMesh": [1, 0, 0]
-   }]
+    "autoClear": true,
+    "clearColor": [0, 0, 0],
+    "ambientColor": [0, 0, 0],
+    "gravity": [0, -9.81, 0],
+    "cameras": [{
+        "name": "Camera",
+        "id": "Camera",
+        "position": [7.4811, 5.3437, -6.5076],
+        "target": [-0.3174, 0.8953, 0.3125],
+        "fov": 0.8576,
+        "minZ": 0.1,
+        "maxZ": 100,
+        "speed": 1,
+        "inertia": 0.9,
+        "checkCollisions": false,
+        "applyGravity": false,
+        "ellipsoid": [0.2, 0.9, 0.2]
+    }],
+    "activeCamera": "Camera",
+    "lights": [{
+        "name": "Sun",
+        "id": "Sun",
+        "type": 1,
+        "position": [0.926, 7.3608, 14.1829],
+        "direction": [-0.347, -0.4916, -0.7987],
+        "intensity": 1,
+        "diffuse": [1, 1, 1],
+        "specular": [1, 1, 1]
+    }],
+    "materials": [{
+        "name": "Material",
+        "id": "Material",
+        "ambient": [0.8, 0.8, 0.8],
+        "diffuse": [0.64, 0.64, 0.64],
+        "specular": [0.5, 0.5, 0.5],
+        "specularPower": 50,
+        "emissive": [0, 0, 0],
+        "alpha": 1,
+        "backFaceCulling": true,
+        "diffuseTexture": {
+            "name": "Metal1.png",
+            "level": 1,
+            "hasAlpha": 1,
+            "coordinatesMode": 0,
+            "uOffset": 0,
+            "vOffset": 0,
+            "uScale": 1,
+            "vScale": 1,
+            "uAng": 0,
+            "vAng": 0,
+            "wAng": 0,
+            "wrapU": true,
+            "wrapV": true,
+            "coordinatesIndex": 0
+        }
+    },
+    {
+        "name": "Material.001",
+        "id": "Material.001",
+        "ambient": [0.8, 0.8, 0.8],
+        "diffuse": [0.64, 0.64, 0.64],
+        "specular": [0.5, 0.5, 0.5],
+        "specularPower": 50,
+        "emissive": [0, 0, 0],
+        "alpha": 1,
+        "backFaceCulling": true,
+        "diffuseTexture": {
+            "name": "concrete5.png",
+            "level": 1,
+            "hasAlpha": 1,
+            "coordinatesMode": 0,
+            "uOffset": 0,
+            "vOffset": 0,
+            "uScale": 5,
+            "vScale": 5,
+            "uAng": 0,
+            "vAng": 0,
+            "wAng": 0,
+            "wrapU": true,
+            "wrapV": true,
+            "coordinatesIndex": 0
+        }
+    }],
+    "geometries": {
+        "vertexData": [{
+            "id": "CubeGeometry",
+            "updatable": false,
+            "positions": [ 1, -1, 1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1],
+            "normals": [0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, -0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, -0.5773, 0.5773, -0.5773, -0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, -0.5773, -0.5773, 0.5773, -0.5773, 0.5773, 0.5773, 0.5773, 0.5773, 0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, -0.5773, 0.5773, 0.5773, -0.5773, 0.5773, -0.5773, -0.5773, 0.5773, -0.5773, 0.5773, 0.5773],
+            "uvs": [0.5, 0.5, 0.5, 0, 0, 0.5, 0.5, 1, 0, 1, 0.5, 0.5, 0.5, 1, 0, 0.5, 0.5, 0.5, 0.5, 1, 0, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 1, 0, 1, 0, 0.5, 0.5, 1, 0, 1, 1, 1, 1, 0.5, 0.5, 0, 0, 0, 0, 0.5],
+            "indices": [0, 1, 2, 3, 4, 5, 0, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 17, 2, 4, 18, 5, 19, 20, 21, 22, 23, 10, 12, 24, 25, 26, 27, 28]
+        }]
+    },
+    "meshes": [{
+        "name": "Plane",
+        "id": "Plane",
+        "materialId": "Material.001",
+        "position": [0.0172, -2.9787, -0.5184],
+        "rotation": [0, 0, 0],
+        "scaling": [87.1479, 0.8635, 87.1479],
+        "isVisible": true,
+        "isEnabled": true,
+        "checkCollisions": false,
+        "billboardMode": 0,
+        "receiveShadows": true,
+        "positions": [-1, 0, -1, 1, 0, -1, -1, 0, 1, 1, 0, 1],
+        "normals": [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0],
+        "uvs": [0.0001, 0.0001, 0.9999, 0.0001, 0.0001, 0.9999, 0.9999, 0.9999],
+        "indices": [0, 1, 2, 1, 3, 2],
+        "subMeshes": [{
+            "materialIndex": 0,
+            "verticesStart": 0,
+            "verticesCount": 4,
+            "indexStart": 0,
+            "indexCount": 6
+        }]
+    },
+    {
+        "name": "Cube",
+        "id": "Cube",
+        "materialId": "Material",
+        "geometryId": "CubeGeometry",
+        "position": [0, 0, 0],
+        "rotation": [0, 0, 0],
+        "scaling": [1, 1, 1],
+        "isVisible": true,
+        "isEnabled": true,
+        "checkCollisions": false,
+        "billboardMode": 0,
+        "receiveShadows": false,
+        "subMeshes": [{
+            "materialIndex": 0,
+            "verticesStart": 0,
+            "verticesCount": 29,
+            "indexStart": 0,
+            "indexCount": 36
+        }],
+        "animations": [{
+            "dataType": 1,
+            "framePerSecond": 30,
+            "loopBehavior": 1,
+            "name": "position animation",
+            "property": "position",
+            "keys": [{
+                "frame": 0,
+                "values": [0,0,0.0291]
+            },
+            {
+                "frame": 1,
+                "values": [0,0,0.0291]
+            },
+            {
+                "frame": 30,
+                "values": [0,0,10]
+            },
+            {
+                "frame": 60,
+                "values": [0,0,9.975]
+            },
+            {
+                "frame": 90,
+                "values": [0,0,0]
+            },
+            {
+                "frame": 250,
+                "values": [0,0,0]
+            }]
+        },
+        {
+            "dataType": 1,
+            "framePerSecond": 30,
+            "loopBehavior": 1,
+            "name": "rotation animation",
+            "property": "rotation",
+            "keys": [{
+                "frame": 0,
+                "values": [-0.016, 0, 0]
+            },
+            {
+                "frame": 30,
+                "values": [-0.016, 0, 0]
+            },
+            {
+                "frame": 60,
+                "values": [-6.2832, 0, 0]
+            },
+            {
+                "frame": 250,
+                "values": [-6.2832, 0, 0]
+            }]
+        }],
+        "autoAnimate": true,
+        "autoAnimateFrom": 0,
+        "autoAnimateTo": 250,
+        "autoAnimateLoop": true
+    },
+    {
+        "name": "Cube2",
+        "id": "Cube2",
+        "materialId": "Material",
+        "geometryId": "CubeGeometry",
+        "position": [10, 0, 0],
+        "rotation": [0, 0, 0],
+        "scaling": [1, 1, 1],
+        "isVisible": true,
+        "isEnabled": true,
+        "checkCollisions": false,
+        "billboardMode": 0,
+        "receiveShadows": false,
+        "subMeshes": [{
+            "materialIndex": 0,
+            "verticesStart": 0,
+            "verticesCount": 29,
+            "indexStart": 0,
+            "indexCount": 36
+        }]
+    }],
+    "multiMaterials": [],
+    "shadowGenerators": [{
+        "useVarianceShadowMap": true,
+        "mapSize": 1024,
+        "lightId": "Sun",
+        "renderList": ["Cube", "Cube2"]
+    }],
+    "skeletons": [],
+    "sounds": [{          
+        "name": "violons11.wav",
+        "volume": 1,
+        "autoplay": true,
+        "loop": true,
+        "soundTrackId": 1,
+        "spatialSound": true,
+        "position": [0, 0, 0],
+        "refDistance": 1.0,
+        "rolloffFactor": 1.0,
+        "maxDistance": 100,
+        "distanceModel": "linear",
+        "panningModel": "equalpower",
+        "isDirectional": false,
+        "coneInnerAngle": 90,
+        "coneOuterAngle": 180,
+        "coneOuterGain": 0,
+        "connectedMeshId": 0,
+        "localDirectionToMesh": [1, 0, 0]
+   }]
 }
 ```

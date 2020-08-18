@@ -1,12 +1,12 @@
 
-Download the [Babylon Editor Toolkit](https://github.com/BabylonJS/Exporters/tree/master/Unity/EditorToolkit/Redist) and use **Import Package** to install into current project. Once installed, unity will detect the plugin, compile it and add the toolkit [Export Inspector](Exporter) window to your project.
+Download the [Babylon Editor Toolkit](https://github.com/BabylonJS/UnityExporter/tree/master/Redist) and use **Import Package** to install into current project. Once installed, unity will detect the plugin, compile it and add the toolkit [Export Inspector](Exporter) window to your project.
 
 
 # Create New Project
 
 ![New Unity Project](/img/exporters/unity/newproject.jpg)
 
-Create a new unity game project then add the **Babylon Editor Toolkit** to your project. You can download and import the toolkit unity package [distribution](https://github.com/BabylonJS/Exporters/tree/master/Unity/EditorToolkit/Redist) file.
+Create a new unity game project then add the **Babylon Editor Toolkit** to your project. You can download and import the toolkit unity package [distribution](https://github.com/BabylonJS/UnityExporter/tree/master/Redist) file.
 
 ## Set Compiler Options
 

@@ -1,7 +1,3 @@
----
-ID_PAGE: 24830
-PG_TITLE: 04. Understanding Materials and Inputs
----
 Learn about materials, shaders and how to work with inputs.
 
 ** Agenda **

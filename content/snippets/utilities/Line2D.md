@@ -1,10 +1,7 @@
----
-PG_TITLE: A Line with Given Width
----
-
 # Draw a Line of Given Width
 
-Three versions of **Line2D** are given below followed by a suggestion for drawing a line in 3D
+Three versions of **Line2D** are given below followed by a suggestion for drawing a line in 3D.
+In addition the code is adapted as **parallelLines** to produce lines parallel to a central line 
 
 ## Line in XoY Plane Formed from Central Path
 
@@ -201,7 +198,7 @@ var line2D = function(name, options, scene) {
 	BABYLON.VertexData._ComputeSides(BABYLON.Mesh.DOUBLESIDE, positions, indices, normals, uvs);  	
 	console.log(uvs)		
 	//Create a custom mesh  
-	var customMesh = new BABYLON.Mesh("custom", scene);
+	var customMesh = new BABYLON.Mesh(name, scene);
 
 	//Create a vertexData object
 	var vertexData = new BABYLON.VertexData();
@@ -413,7 +410,7 @@ var line2D = function(name, options, scene) {
 	BABYLON.VertexData._ComputeSides(BABYLON.Mesh.DOUBLESIDE, positions, indices, normals, uvs);  	
 	console.log(uvs)		
 	//Create a custom mesh  
-	var customMesh = new BABYLON.Mesh("custom", scene);
+	var customMesh = new BABYLON.Mesh(name, scene);
 
 	//Create a vertexData object
 	var vertexData = new BABYLON.VertexData();
@@ -627,7 +624,7 @@ var line2D = function(name, options, scene) {
 	BABYLON.VertexData._ComputeSides(BABYLON.Mesh.DOUBLESIDE, positions, indices, normals, uvs);  	
 	console.log(uvs)		
 	//Create a custom mesh  
-	var customMesh = new BABYLON.Mesh("custom", scene);
+	var customMesh = new BABYLON.Mesh(name, scene);
 
 	//Create a vertexData object
 	var vertexData = new BABYLON.VertexData();
@@ -652,3 +649,84 @@ The [lines](/how_to/parametric_shapes#lines) and [line system](/how_to/parametri
 
 * [Playground Example - Tube as Line](https://www.babylonjs-playground.com/#MRE78Z)
 
+## Parallel Lines in XoY Plane
+
+Given the path of a central line the function **parallelLines** with return the path points of two lines either side of this line.
+
+```javascript
+var line = line2D("line", options, scene);
+```
+
+option|value|default value
+--------|-----|-------------
+path|_(Vector3[])_  array of Vector3 points forming the centre line of the line2D, **REQUIRED**
+innerWidth|_(number)_ distance from central line | 0.5
+outerWidth|_(number)_ distance from central line | 0.5
+
+
+Just copy the code below if you want to use it.
+
+### Playground Example
+
+* [Playground Example - Dotted Lines Parallel to Central Line](https://www.babylonjs-playground.com/#FA2H7X#18)
+
+### Parallel Line Code
+
+```javascript
+var parallelLines = function(options, scene) {
+
+	//Arrays for vertex positions and indices
+	var positions = [];
+	var indices = [];
+        var normals = [];
+
+        var innerWidth = options.innerWidth || 0.5;
+        var outerWidth = options.outerWidth || 0.5;
+        var path = options.path;
+
+	var interiorIndex;
+	
+	//Arrays to hold wall corner data 
+	var innerBaseCorners = [];
+	var outerBaseCorners = [];
+	
+	var outerData = [];
+        var innerData = [];
+	var angle = 0;
+	
+	var nbPoints = path.length;
+	var line = BABYLON.Vector3.Zero();
+	var nextLine = BABYLON.Vector3.Zero();
+	path[1].subtractToRef(path[0], line);
+
+    	lineNormal = new BABYLON.Vector3(line.y, -1 * line.x, 0).normalize();
+	line.normalize();		
+	innerData[0] = path[0].subtract(lineNormal.scale(innerWidth));
+	outerData[0] = path[0].add(lineNormal.scale(outerWidth));
+
+	for(var p = 0; p < nbPoints - 2; p++) {	
+		path[p + 2].subtractToRef(path[p + 1], nextLine);
+		angle = Math.PI - Math.acos(BABYLON.Vector3.Dot(line, nextLine)/(line.length() * nextLine.length()));			
+		direction = BABYLON.Vector3.Cross(line, nextLine).normalize().z;			
+		lineNormal = new BABYLON.Vector3(line.y, -1 * line.x, 0).normalize();
+		line.normalize();
+		innerData[p + 1] = path[p + 1].subtract(lineNormal.scale(innerWidth)).subtract(line.scale(direction * innerWidth/Math.tan(angle/2)));
+		outerData[p + 1] = path[p + 1].add(lineNormal.scale(outerWidth)).add(line.scale(direction * outerWidth/Math.tan(angle/2)));		
+		line = nextLine.clone();			
+	}
+	if(nbPoints > 2) {
+		path[nbPoints - 1].subtractToRef(path[nbPoints - 2], line);
+		lineNormal = new BABYLON.Vector3(line.y, -1 * line.x, 0).normalize();
+		line.normalize();		
+		innerData[nbPoints - 1] = path[nbPoints - 1].subtract(lineNormal.scale(innerWidth));
+		outerData[nbPoints - 1] = path[nbPoints - 1].add(lineNormal.scale(outerWidth));
+	}
+	else{
+		innerData[1] = path[1].subtract(lineNormal.scale(innerWidth));
+		outerData[1] = path[1].add(lineNormal.scale(outerWidth));
+	}
+
+    return {outerPoints: outerData, innerPoints: innerData};
+
+}
+```

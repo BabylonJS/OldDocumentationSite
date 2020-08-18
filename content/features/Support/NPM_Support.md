@@ -57,22 +57,16 @@ npm install --save babylonjs-materials [other packages]
 
 Same as the babylonjs, this will install (default-minified and non-minified) javascript files and a declaration file.
 
-To import the dependencies, you simply need to import the library (without giving it a namespace):
+To import the dependencies, you will need to import them like for the babylon module:
 
 ```javascript
-import 'babylonjs-materials';
+import * as Materials from 'babylonjs-materials';
 ```
 
-This will extend the BABYLON namespace with the material classes, so you can do the following:
+And use it like below:
 
 ```javascript
-let skyMaterial = new BABYLON.SkyMaterial(.....)
-```
-
-An exception is the GUI library, which has its own namespace. It can therefore be imported as following:
-
-```javascript
-import * as GUI from 'babylonjs-gui';
+let skyMaterial = new Materials.SkyMaterial(.....)
 ```
 
 ### using require()
@@ -82,7 +76,7 @@ If you prefer not to use es6-import syntax, you can use require in order to impo
 ```javascript
 let BABYLON = require('babylonjs');
 let GUI = require('babylonjs-gui');
-let materials = require('babylonjs-materials'); // unused variable
+let materials = require('babylonjs-materials');
 ```
 
 ## TypeScript support
@@ -168,7 +162,7 @@ If you wish to benefit from tree shaking and other nitty gritties, you can now r
 * [@babylonjs/gui](https://www.npmjs.com/package/@babylonjs/gui) - BabylonJS GUI module.
 * [@babylonjs/inspector](https://www.npmjs.com/package/@babylonjs/inspector) - The BabylonJS Inspector for es 6.
 
-Please not that you can not mix ES6 and our legacy packages.
+Please note that you can not mix ES6 and our legacy packages.
 
 ```javascript
 import { Engine } from '@babylonjs/core/Engines/engine'
@@ -441,7 +435,7 @@ You will notice there are a few warnings about dependencies. We will deal with t
 
 ### Checking your project
 
-The best way for you during development would be the webpack dev server (https://github.com/webpack/webpack-dev-server), but it is not a part of the scope of this tutorial.
+The best way for you during development would be the webpack dev server (https://github.com/webpack/webpack-dev-server/), but it is not a part of the scope of this tutorial.
 
 To check the current project, I use the http-server npm module (installed globally). You can use any web server that will serve the root folder of our project.
 
@@ -525,3 +519,7 @@ Babylon is using oimo, cannon and earcut as external, optional dependencies. If 
         "earcut": true
     },
 ```
+
+# Further Reading
+[How To Get Babylon.js](/babylon101/how_to_get)  
+[ESNext Support](/features/ES6_Support)

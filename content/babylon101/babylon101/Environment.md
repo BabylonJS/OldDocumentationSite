@@ -1,7 +1,3 @@
----
-ID_PAGE: 22131
-PG_TITLE: 15. Environment
----
 # Environment
 
 You have come a long way, have learned about shapes, lights, sprites, particles, materials. But there is something missing in your scenes: a proper environment. This is the first of three consecutive How_To that talk about scene environment factors and effects. We will start off with simple scene `clearColor` (background color), then talk briefly about scene `ambientColor`, then on to 6-texture skyboxes, and then fog to give an illusion of depth to your scenes.
@@ -12,7 +8,7 @@ _A picture showing Babylon.js fog in action_
 
 ## How can I do this?
 
-We will talk about that nice fog effect, shortly. First, I want to introduce you to two interesting properties on the [scene class object](/classes/3.0/Scene):
+We will talk about that nice fog effect, shortly. First, I want to introduce you to two interesting properties on the [scene class object](/api/classes/babylon.scene):
 
 * `scene.clearColor` - changes the 'background' color.
 * `scene.ambientColor` - changes the color used in several effects, including ambient lighting.
@@ -45,12 +41,12 @@ You will find that when there is no `scene.ambientColor`, then `StandardMaterial
 
 By default, `scene.ambientColor` is set to `Color3(0, 0, 0)`, which means there is no `scene.ambientColor`.
 
-(Please see the section on ambientColors in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial, for more information.)
+(Please see the section on ambientColors in our [Unleash the Standard Material](https://www.eternalcoding.com/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game/) tutorial, for more information.)
 
 ### Skybox
 
 To give a perfect illusion of a beautiful sunny sky, we are going to create a simple box, but with a special texture.
-There is two ways to create a skybox. Let's start with the manual one to understand how things work under the hood and then we will be able to use the automatic one.
+There are two ways to create a skybox. Let's start with the manual one to understand how things work under the hood and then we will be able to use the automatic one.
 
 #### Manual creation
 First, our box, nothing new, just take notice of the disabled [backface culling](http://en.wikipedia.org/wiki/Back-face_culling):
@@ -77,11 +73,11 @@ Next, we apply our special sky texture to it. This texture must have been prepar
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("textures/skybox", scene);
 skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 ```
-(More about reflectionTextures can be found in our [Unleash the Standard Material](https://www.eternalcoding.com/?p=303) tutorial.)
+(More about reflectionTextures can be found in our [Unleash the Standard Material](https://www.eternalcoding.com/babylon-js-unleash-the-standardmaterial-for-your-babylon-js-game/) tutorial.)
 
-In that `/skybox` directory, we must find 6 sky textures, one for each face of our box. Each image must be named per the corresponding face: “skybox_nx.png”, “skybox_ny.png”, “skybox_nz.png”, “skybox_px.png”, “skybox_py.png”, “skybox_pz.png”.
+In that `/skybox` directory, we must find 6 sky textures, one for each face of our box. Each image must be named per the corresponding face: “skybox_nx.jpg” (left), “skybox_ny.jpg” (down), “skybox_nz.jpg” (back), “skybox_px.jpg” (right), “skybox_py.jpg” (up), “skybox_pz.jpg” (front). The "\_nx.jpg" is added to your path.
 
-If you want some free skybox texture samples, point your browser to: http://3delyvisions.co/skf1.htm (look at licenses before use, please.) As you can see by those examples, skybox textures need not be textures of sky alone. Buildings, hills, mountains, trees, lakes, planets, stars, you name it (all can be used nicely) as part of skybox textures.
+Skybox textures need not be textures of sky alone. You can search the Internet for skyboxes and find buildings, hills, mountains, trees, lakes, planets, stars, you name it (all can be used nicely) as part of skybox textures, but some require a payment.
 
 You can also use dds files to specify your skybox. These special files can contain all information required to setup a cube texture:
 
@@ -125,11 +121,11 @@ Here are the available modes:
 - `BABYLON.Scene.FOGMODE_EXP2` - same that above but faster.
 - `BABYLON.Scene.FOGMODE_LINEAR` - the fog density is following a linear function.
 
--> If you choose the `EXP`, or `EXP2` mode, then you can define the density option (default is `0.1`):
+If you choose the `EXP`, or `EXP2` mode, then you can define the density option (default is `0.1`):
 ```javascript
 scene.fogDensity = 0.01;
 ```
--> Otherwise, if you choose `LINEAR` mode, then you can define where fog starts and where fog ends:
+Otherwise, if you choose `LINEAR` mode, then you can define where fog starts and where fog ends:
 ```javascript
 scene.fogStart = 20.0;
 scene.fogEnd = 60.0;
@@ -141,13 +137,17 @@ scene.fogColor = new BABYLON.Color3(0.9, 0.9, 0.85);
 ```
 See, we told you it was easy.
 
-If you want to see and play with the playground scene for this tutorial, you can [**click right here**]( https://www.babylonjs-playground.com/?13).
+If you want to see and play with the playground scene for this tutorial, you can [**click right here**](https://www.babylonjs-playground.com/#7G0IQW)
 
 ## Next step
 You should have a beautiful scene now, but except from your 3D models, your world is pretty flat, and that’s a shame for your scene. So, in our next environment tutorial, we are going to transform your flat ground into beautiful mountains. To learn this, go [here!](/babylon101/Height_Map)
 
 # Further Reading
 
-[Environment Overview](/features/Environment)
+## Features
 
-[Scene Fast Build](/how_to/fast_build)
+- [Realistic Environments](/features/Environment)
+
+## How To
+
+- [Fast Build a World](/how_to/fast_build)

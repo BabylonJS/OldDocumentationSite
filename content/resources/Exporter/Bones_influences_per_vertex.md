@@ -1,7 +1,3 @@
----
-ID_PAGE: 25089
-PG_TITLE: Bones influences per vertex
----
 This is a common error you may have when working with bones:
 
 *"Too many bones influences per vertex: 5. Babylon.js only support 4 bones influences per vertex."*

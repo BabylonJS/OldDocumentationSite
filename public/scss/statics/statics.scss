@@ -1,16 +1,48 @@
 .statics-banner {
-  background-image: url("/img/pattern_ban_1.png");
-  background-repeat: repeat;
-  text-align: center;
-  padding: 10px 0;
+    background-color: #151221;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    height: 100px;
 
-  h1:first-letter {
-    text-transform: uppercase;
-  }
+    .img-holder {
+        grid-row: 1;
+        grid-column: 1;        
+        height: 100%;
+        width: 56%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        &.details {
+            width: 80%;
+        }
+
+        img {
+            height: 100%;
+            margin-left: -25px;
+        }
+
+        a, div {
+          width: 170px;
+        }
+    }
+
+    h1 {
+        align-self: center;
+        grid-row: 1;
+        grid-column: 1;
+        color: #e0684b;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 100;
+    }
 }
 
 .statics-content {
   @include outer-container(80%);
+  padding-bottom: 100px;
 
   .tagList {
     position: relative;

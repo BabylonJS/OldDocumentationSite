@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use a Skybox
----
-
 # How To Use a Skybox
 A simulated sky can be added to a scene using a skybox. This is created using a large standard box, special reflective textures and a group of six images, one for each face of the cube.
 
@@ -43,7 +39,7 @@ More generally the images are referenced in the following way
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("PATH TO IMAGES FOLDER/COMMON PART OF NAMES", scene);
 ```
 
-* [Playground Example of a Skybox](http://www.babylonjs-playground.com/#UU7RQ#1)
+* [Playground Example of a Skybox](https://www.babylonjs-playground.com/#UU7RQ#1)
 
 # Further Reading
 

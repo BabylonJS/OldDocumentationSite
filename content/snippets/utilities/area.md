@@ -1,7 +1,3 @@
----
-PG_TITLE: Surface Area Of a Mesh
----
-
 # Surface Area Of a Mesh
 
 This functions will together find the surface area of a mesh.

@@ -1,13 +1,8 @@
----
-ID_PAGE: 22111
-PG_TITLE: 12. Picking Collisions
----
 # Picking Collisions
 
 In picking an object with your mouse the main difficulty is to click on a 3D object whereas your screen is a flat 2D display.
 
 Let’s see how we can get your mouse position transposed in your 3D scene by this gun shooting example:
-
 
 ![Picking](/img/how_to/Collisions%20PickResult/11.png)
 
@@ -18,39 +13,43 @@ _Final result_
 Babylon engine lets you do this very easily by giving you useful functions.
 
 First of all, after creation of a plane representing the wall, and a plane with our impact’s picture, we have to detect a click on the UI (User Interface). Once the event is raised, use the function “pick” to get some powerful information about the relation between your click and your scene.
+
 ```javascript
 //When click event is raised
 window.addEventListener("click", function () {
    // We try to pick an object
    var pickResult = scene.pick(scene.pointerX, scene.pointerY);
-}),
+});
 ```
  
 The pickResult object is mainly composed of 4 pieces of information:
 
-1. _hit_ (bool): « True » if your click hits an object in the scene.
-1. _distance_ (float): the “distance” between the active camera and your hit (infinite if no mesh was hit)
-1. _pickedMesh_ (BABYLON.Mesh): if you hit an object, this is the selected mesh. If not, it’s null.
-1. _pickedPoint_ (BABYLON.Vector3): the point you have clicked, transformed in 3D coordinates, depending on the object you’ve clicked. Null if no hit.
+1. `hit` *(bool)*: True if your click hits an object in the scene.
+2. `distance` *(float)*: the distance between the active camera and your hit (infinite if no mesh was hit)
+3. `pickedMesh` *(BABYLON.Mesh)*: if you hit an object, this is the selected mesh. If not, it’s null.
+4. `pickedPoint` *(BABYLON.Vector3)*: the point you have clicked, transformed in 3D coordinates, depending on the object you’ve clicked. Null if no hit.
 
 Now we have all the data we need to build our scene. We just have to position our gun’s impact picture (a plane made earlier... called impact) when the user clicks on the wall plane:
+
 ```javascript
 // if the click hits the wall object, we change the impact picture position
 if (pickResult.hit) {
-            impact.position.x = pickResult.pickedPoint.x;
-            impact.position.y = pickResult.pickedPoint.y;
+   impact.position.x = pickResult.pickedPoint.x;
+   impact.position.y = pickResult.pickedPoint.y;
 }
 ```
+
 Fast, and easy, isn’t it?
 
-Feel free to play with this scene... [at our online playground]( https://www.babylonjs-playground.com/?11).
+Feel free to play with this scene... [at our online playground](https://www.babylonjs-playground.com/#NU4F6Y)
 
 ## Advanced Picking Features
 
 Please note that the pickResult object can provide you with additional information, detailed below:
 
 - `faceId`: this is the position of the picked face's indices in the indices array. These can be accessed like so:
-```
+
+```javascript
 var indices = pickResult.pickedMesh.getIndices();
 var index0 = indices[pickResult.faceId * 3];
 var index1 = indices[pickResult.faceId * 3 + 1];
@@ -76,10 +75,13 @@ Possible uses include:
 
 
 ## Next step
-This collision method is convenient in a lot of situations. Once you understand mouse pick events, you can begin using that functionality to advance your application’s development. Now it is time to learn how to find where a thin line collides or intersects with a mesh using [raycasts](/babylon101/Raycasts)
+
+This collision method is convenient in a lot of situations. Once you understand mouse pick events, you can begin using that functionality to advance your application’s development. Now it is time to learn how to find where a thin line collides or intersects with a mesh using [raycasts](/babylon101/Raycasts).
 
 # Further Reading
 
-[Cameras Overview](/features/Cameras)
+## Features
+
+- [Cameras Overview](/features/Cameras)
 
  

@@ -1,23 +1,24 @@
 <section class="tsd-panel tsd-member {{cssClasses}}">
     <a name="{{anchor}}" class="tsd-anchor"></a>
     {{#if name}}
-        <h3>{{#each flags}}<span class="tsd-flag ts-flag{{this}}">{{this}}</span> {{/each}}{{{wbr name}}}</h3>
-        <a href="/playground/?code={{{name}}}" style="float:right; margin-top:-35px">Find examples in Playground</a>
+    <h3>{{#each flags}}<span class="tsd-flag ts-flag{{this}}">{{this}}</span> {{/each}}{{{wbr name}}}</h3>
+    <a href="/playground/?code={{{name}}}" style="float:right; margin-top:-35px" target="_blank">Find examples in
+        Playground</a>
     {{/if}}
 
     {{#if signatures}}
-        {{> member.signatures}}
+    {{> member.signatures}}
     {{else}}{{#if hasGetterOrSetter}}
-        {{> member.getterSetter}}
+    {{> member.getterSetter}}
     {{else}}
-        {{> member.declaration}}
+    {{> member.declaration}}
     {{/if}}{{/if}}
 
     {{#each groups}}
-        {{#each children}}
-            {{#unless hasOwnDocument}}
-                {{> member}}
-            {{/unless}}
-        {{/each}}
+    {{#each children}}
+    {{#unless hasOwnDocument}}
+    {{> member}}
+    {{/unless}}
+    {{/each}}
     {{/each}}
 </section>

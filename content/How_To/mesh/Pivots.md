@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use a Pivot
----
-
 # A Pivot
 
 The latest pivot in Babylon (v3.2+) is a pre-transformation pivot and behaves differently than in tools like 3DS Max and Maya as the object's position will move if scale is applied prior to setting the pivot. To get pivot behavior that matches these tools it is recommended to set the object as a child of another transform node that will act as the pivot see: https://www.babylonjs-playground.com/#GH4N1R#1
@@ -55,7 +51,7 @@ Compare this with Fig 5.
 
 So there are two ways of setting a pivot, one that does not alter the position of the mesh (_set pivot only_) and one that does alter the mesh position (_set pivot with move_). The _set pivot only_ method is much more straightforward and all playground examples on this page use this method. The [_setPivotPoint_](/how_to/pivots#how-to-set-and-get-a-pivot-point) function, describe later, uses _set pivot only_. 
 
-In fact unless you have an older project coded for versions before 3.2 do not use the _set pivot with move_ method. It is much better to _set pivot only_ and then move the mesh as normal with _mesh.position_ or _mesh.translate_ When you do have an older project there is a simple way to update your project code to work with version 3.2 or later as described in the `Breaking Change` section below.
+In fact unless you have an older project coded for versions before 3.2 or want to [change the local origin to that of the pivot](/features/Position,_Rotation,_Scaling#pivot) do not use the _set pivot with move_ method. It is usually better to _set pivot only_ and then move the mesh as normal with _mesh.position_ or _mesh.translate_ When you do have an older project there is a simple way to update your project code to work with version 3.2 or later as described in the `Breaking Change` section below.
 
  
 ## Breaking Change
@@ -67,13 +63,13 @@ mesh.setPivotMatrix(BABYLON.Matrix.Translation(-x, -y, -z));
 ```
 Before v3.2 this would result in the mesh being moved and the local origin of the mesh being reset to the pivot point.
 
-From v3.2 this results in the pivot point being set without the mesh being moved and the current local origin of the mesh is kept. To maintain the older behaviour of moving the mesh a second parameter, `false` is needed
+From v3.2 this results in the pivot point being set without the mesh being moved and the current local origin of the mesh is kept. Should you want to maintain the older behaviour of moving the mesh a second parameter, `false` is needed
 
 ```javascript
 mesh.setPivotMatrix(BABYLON.Matrix.Translation(-x, -y, -z), false);
 ```
 
-**STRESSED NOTE** For those of you who wrote code using a pivot for versions of Babylon.js before v3.2 and who want to update the version of Babylon.js to a currrent one should change each occurance, in their project code,  of 
+**STRESSED NOTE** For those of you who wrote code using a pivot for versions of Babylon.js before v3.2 and who want to update the version of Babylon.js to a current one should change each occurrence, in their project code,  of 
 
 ```javascript
 mesh.setPivotMatrix(BABYLON.Matrix.Translation(-x, -y, -z));

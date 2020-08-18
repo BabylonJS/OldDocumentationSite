@@ -1,18 +1,13 @@
----
-ID_PAGE: 24841
-PG_TITLE: Using depth-of-field and other lens effects
----
-
 # How To Use Depth-of-field and other Lens Effects
 
-BABYLON.LensRenderingPipeline is a predefined chain of postprocesses that helps achieving photograph-like realism.
+`BABYLON.LensRenderingPipeline` is a predefined chain of postprocesses that helps achieving photograph-like realism.
 
-
-![DoF example](http://imgur.com/I26fggX.png)  
+![DoF example](/img/how_to/depth-of-field/example01.jpg)  
 _An example of what can be achieved with this postprocess pipeline._
 
+You can see a live example of it here:
 
-You can see a live example of it here: [ https://www.babylonjs-playground.com/#DX6AV#4]( https://www.babylonjs-playground.com/#DX6AV#4)
+https://www.babylonjs-playground.com/#DX6AV#4
 
 Three post-processes are used in the pipeline:
 
@@ -29,7 +24,7 @@ Three post-processes are used in the pipeline:
 ## Usage ##
 
 To use it, you must first define a set of parameters that will impact the actual post-processing performed. This is done by defining an object and setting the desired properties:
-```
+```javascript
 var parameters = {
   edge_blur: 1.0,
   chromatic_aberration: 1.0,
@@ -39,11 +34,11 @@ var parameters = {
 ```
 
 And then simply create the object with the parameters you've defined earlier, like so:
-```
+```javascript
 var lensEffect = new BABYLON.LensRenderingPipeline('lensEffects', parameters, scene, 1.0, camera);
 ```
 Note that in the above example, the pipeline is immediately attached to the camera, but this is not mandatory. You can also use it like this:
-```
+```javascript
 var lensEffect = new BABYLON.LensRenderingPipeline('lensEffects', parameters, scene, 1.0);
 // ...
 scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('lensEffects', camera);
@@ -98,3 +93,9 @@ These effects are based on general approximations of real world optics phenomeno
 Keep in mind that the approximation used does not give good results when an object inside focus is rendered on top of a strongly blurred one, or the other way around. Bleeding around one object or the other will probably occur in this case.
 
 Finally, these effects can be pretty intensive on the GPU. A lower blur effect (i.e. smaller blur radius) will be less demanding, so you can try to lower aperture instead of disabling it altogether. Highlight enhancing is also quite intensive, so be sure that this effect contribute to the quality of your render if you have it active.
+
+# Further Reading
+
+## How To
+
+- [Use the default rendering pipeline](/how_to/using_default_rendering_pipeline)

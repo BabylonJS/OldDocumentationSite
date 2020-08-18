@@ -1,7 +1,3 @@
----
-PG_TITLE: Compressed Textures for GPU
----
-
 # Compressed Textures for GPU
 
 There are special formats of textures which are optimized for access by graphics processors.  They differ from formats whose primary mission is to hold / transmit image data for use on a CPU.  Examples of image formats are .JPG & .PNG.  Formats catering to GPUs may not be ones you are likely to have heard of.  The file extensions for some of them are also not well established.
@@ -16,7 +12,7 @@ Unlike image file formats, the data of compressed textures is passed to the grap
 There is more than one format for compressed textures.  Due to the low level implementation for them in hardware,  support for a given format cannot be added like a software driver update.  Support is manufactured right into the circuitry.  This is less of a  problem when building an iOS, Android, or DirectX targeted application.  For a BJS scene which should ideally be able to run on any device / browser, this is a big problem.  Having separate HTML pages for different devices is not really an acceptable solution.
 
 ## The Solution
-Starting with Babylon.js v3.0, the compressed texture formats supported by a browser / device can be [detected](http://renderingpipeline.com/webgl-extension-viewer/).  This is done when ```var engine = new BABLYON.Engine(...);``` is encountered. So now your engine instance knows which compressed formats could be used here.  That does not solve that different devices will report different results though.
+Starting with Babylon.js v3.0, the compressed texture formats supported by a browser / device can be [detected](http://renderingpipeline.com/webgl-extension-viewer/).  This is done when ```var engine = new BABYLON.Engine(...);``` is encountered. So now your engine instance knows which compressed formats could be used here.  That does not solve that different devices will report different results though.
 
 You can also use this [playground](https://www.babylonjs-playground.com/index.html#1SCH7H#5) to test which format is supported on your devices.
 
@@ -78,3 +74,14 @@ ktx-batch
 
 ### Node.js script for PVRTexTool
 This is a script that generates PVRTC, ETC1, ETC2, ASTC textures from png and jpg files. It can run on node or as a gulp task. Also it can be configured to generate all texture types or specific ones. More information about how to install and configure the script can be found [here](https://www.npmjs.com/package/babylonjs-texture-generator).
+
+### Basis file format
+
+Another way to store compressed image textures is throught the .basis file format
+
+See: https://github.com/BinomialLLC/basis_universal
+
+Basis Universal is a "supercompressed" GPU texture and texture video compression system that outputs a highly compressed intermediate file format (.basis) that can be quickly transcoded to a wide variety of GPU texture compression formats: PVRTC1 4bpp RGB, BC7 mode 6 RGB, BC1-5, ETC1, and ETC2. We will be adding ASTC RGB or RGBA, BC7 mode 4/5 RGBA, and PVRTC1 4bpp RGBA next. Basis files support non-uniform texture arrays, so cubemaps, volume textures, texture arrays, mipmap levels, video sequences, or arbitrary texture "tiles" can be stored in a single file. The compressor is able to exploit color and pattern correlations across the entire file, so multiple images with mipmaps can be stored very efficiently in a single file.
+
+Basic example https://playground.babylonjs.com/#4RN0VF
+Basis vs png example scene https://playground.babylonjs.com/#E4VDDW

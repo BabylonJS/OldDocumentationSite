@@ -1,7 +1,3 @@
----
-PG_TITLE: Configuring the viewer
----
-
 # Configuring the viewer
 
 (Almost) every aspect of the viewer can be configured. The configuration is expressed using a TypeScript interface that is a JSON-like object describing the data that can be provided.
@@ -100,10 +96,10 @@ Notice that thou the minimal configuration define antialiasing to be `true`, the
 
 Next, the configuration object will be inspected. If it contains a configuration URL, it will be loaded. In our case, the (non-existing) <http://example.com/viewerConfig.json> will be downloaded and appended to the configuration already provided. Notice that this configuration object will overwrite definitions in the current configuration object. So if the JSON file looks like this:
 
-```javascript
+```json
 {
-    scene: {
-        debug: false
+    "scene": {
+        "debug": false
     }
 }
 ```

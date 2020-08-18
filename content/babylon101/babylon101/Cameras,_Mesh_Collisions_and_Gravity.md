@@ -1,8 +1,3 @@
----
-ID_PAGE: 22091
-PG_TITLE: 10. Cameras, Mesh Collisions and Gravity
----
-
 # Cameras, Mesh Collisions and Gravity
 
 Did you ever play a FPS (First Person Shooter) game? In this tutorial, we are going to simulate the same camera movements: the camera is on the floor, in collision with the ground, and potentially in collision with any objects in the scene.
@@ -86,8 +81,6 @@ character.moveWithCollisions(forwards);
 var backwards = new BABYLON.Vector3(parseFloat(Math.sin(character.rotation.y)) / speedCharacter, -gravity, parseFloat(Math.cos(character.rotation.y)) / speedCharacter);
 character.moveWithCollisions(backwards);
 ```
-
-Demo by Dad72: [**Move character with gravity and collision**](http://www.babylon.actifgames.com/moveCharacter/)
 
 ## ArcRotateCamera
 The ArcRotateCamera can also check collisions but instead of sliding along obstacles, this camera won't move when a collision appends.

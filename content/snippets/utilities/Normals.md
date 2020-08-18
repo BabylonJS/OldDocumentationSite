@@ -1,7 +1,3 @@
----
-PG_TITLE: Show Mesh Vertex Normals
----
-
 # Show Mesh Vertex Normals
 This snippet allows you to add lines showing the normals for each vertex of a mesh. The colour and size of the lines can be set.
 
@@ -26,4 +22,4 @@ function showNormals(mesh, size, color, sc) {
 ```
 # Playground
 
-* [Playground Example ](http://www.babylonjs-playground.com/#1ENDNT)
+* [Playground Example ](https://www.babylonjs-playground.com/#1ENDNT)

@@ -11,8 +11,8 @@ var pug = require('pug'),
     path = require('path'),
     appRoot = require('app-root-path').path,
     logger = require(path.join(appRoot, 'config/logger'));
- 
-var EXAMPLES_PATH_JSON = path.join(appRoot, 'examples/list.json'); 
+
+var EXAMPLES_PATH_JSON = path.join(appRoot, 'examples/list.json');
 
 /*************************************************************************
  *                                 SCRIPT                                *
@@ -26,12 +26,12 @@ function checkDirectorySync(directory) {
     }
 }
 
-module.exports = function (done) {
+module.exports = function(done) {
     checkDirectorySync("public/html/");
     checkDirectorySync("public/html/examples/");
     var content = "";
-    let pugContent = 
-`
+    let pugContent =
+        `
 include includes/header.pug
 include includes/banner.pug
 #wrapper.example
@@ -42,17 +42,17 @@ include includes/banner.pug
         input(id='filterBar',type='text', name='filter', placeholder='Filter examples...')
         img(id="filterBarClear" src="/img/UI/clear_button.png")
 `;
-    
-    fs.readFile(EXAMPLES_PATH_JSON, function (err, listJson) { 
+
+    fs.readFile(EXAMPLES_PATH_JSON, function(err, listJson) {
         var list = JSON.parse(listJson);
         var elemCountID = 0;
         list.examples.forEach(category => {
             if (category.ignoreInDoc) {
                 return;
             }
-            
-            pugContent += 
-`
+
+            pugContent +=
+                `
         div(class="categoryContainer")
             p ` + category.title;
             var samples = category.samples;
@@ -66,40 +66,40 @@ include includes/banner.pug
                 return 0;
             });
             samples.forEach(sample => {
-                pugContent += 
-`
-                div( id='`+ elemCountID +`', class="itemLine `+sample.title+` contentBlock", onclick="load('`+sample.PGID+`','`+ elemCountID +`')")
-                    img(src="`+ sample.icon +`", onclick="loadMobile('`+sample.PGID+`')")
-                    div(class = "contentDiv`+ elemCountID +` itemContent" )
-                        div(class="contentDivPlaygrond", onclick="loadMobile('`+sample.PGID+`')")
-                            h3(class="itemLineChild", onclick="loadMobile('`+sample.PGID+`')") `+ sample.title +`
-                            p(class="itemLineChild") `+ sample.description +`
-                        a(href="`+ sample.doc +`", class="itemLineChildLink childLink", target="_blank") Documentation
-                        a(href="https://playground.babylonjs.com/frame.html`+sample.PGID+`", class="itemLineChildLink childLink", target="_blank", id="PGlink_`+sample.PGID+`") Playground`;
-                    
-                    elemCountID++;
+                pugContent +=
+                    `
+                div( id='`+ elemCountID + `', class="itemLine ` + sample.title + ` contentBlock", onclick="load('` + sample.PGID + `','` + elemCountID + `')")
+                    img(src="`+ sample.icon + `", onclick="loadMobile('` + sample.PGID + `')")
+                    div(class = "contentDiv`+ elemCountID + ` itemContent" )
+                        div(class="contentDivPlaygrond", onclick="loadMobile('`+ sample.PGID + `')")
+                            h3(class="itemLineChild", onclick="loadMobile('`+ sample.PGID + `')") ` + sample.title + `
+                            p(class="itemLineChild") `+ sample.description + `
+                        a(href="`+ sample.doc + `", class="itemLineChildLink childLink", target="_blank") Documentation
+                        a(href="https://playground.babylonjs.com/frame.html`+ sample.PGID + `", class="itemLineChildLink childLink", target="_blank", id="PGlink_` + sample.PGID + `") Playground`;
+
+                elemCountID++;
             });
         });
 
         // Add the "no results for search" field
-        pugContent += 
-`
+        pugContent +=
+            `
         div(class="categoryContainer" id="noResultsContainer")
             p(id="noResults") No results found.`;
 
         // Add the iframe for playground preview
-        pugContent += 
-`    
+        pugContent +=
+            `    
     div#parentIframe
         div(class='Centerer')
             p(style="font-size: 20px") Please, choose an example in the list
-            img(src='../img/logos/logo-babylonjs.png')
+            img(src='../img/babylonjs_identity_color.svg')
 
 include includes/footer.pug
 script(src='/js/examples.js')
 `;
 
-        var htmlRender = pug.render(pugContent, { filename:"views/examples.pug", pretty: false, currentUrl: '/' });
+        var htmlRender = pug.render(pugContent, { filename: "views/examples.pug", pretty: false, currentUrl: '/' });
         fs.writeFileSync('public/html/examples/index.html', htmlRender);
         logger.info("> examples.html compiled.");
         if (done) {

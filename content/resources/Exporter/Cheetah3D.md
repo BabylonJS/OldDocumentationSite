@@ -1,15 +1,11 @@
----
-ID_PAGE: 24441
-PG_TITLE: Cheetah3D
----
 ## Cheetah2Babylon
 
-[Cheetah 3D](http://www.cheetah3d.com/) exporter for [Babylon.JS](http://babylonjs.com/) .babylon scene files. Currently supports the following :
+[Cheetah 3D](http://www.cheetah3d.com/) exporter for [Babylon.JS](http://babylonjs.com/) .babylon scene files. Currently supports the following:
 
 - mesh export with functional transform, naming and parenting
 - multicamera export (only perspective, no support for orthogonal right now)
 - light export with all babylon type managed :
-  - Cheetah3D spot light is a babylon spot (duh)
+  - Cheetah3D spot light is a babylon spot
   - Cheetah3D distant light is a babylon directional light
   - Cheetah3D ambiant light is a babylon hemispheric light
   - every other type is a babylon point light
@@ -32,9 +28,3 @@ Put js script in this folder :
 
 Just load your scene and go to Tools/Scripts/Macro/Babylon file export. Choose a destination, and load your scene inside Babylon.JS!
 
-### License
-
-DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
-0. You just DO WHAT THE FUCK YOU WANT TO.

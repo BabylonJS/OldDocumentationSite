@@ -1,14 +1,10 @@
----
-PG_TITLE: How To Use Gizmos
----
-
 ## Introduction
 
-Gizmo's are objects that can be attached to a mesh to provide interaction.
+Gizmo's are objects that can be attached to a node (mesh, bone, transform) to provide interaction. The GizmoManager and BoundingBox gizmo work with mesh. Whereas Position, scale and rotation gizmos are also usable with TransformNodes and Bones.
 
 ![](/img/how_to/gui/gizmos.png)
 
-Note: Gizmos will set/modify the [rotationQuaternion](/features/Position,_Rotation,_Scaling) of the attached mesh. After attaching, any rotation of the mesh should be done with the rotationQuaternion property instead of rotation.
+Note: Gizmos will set/modify the [rotationQuaternion](/features/Position,_Rotation,_Scaling) of the attached node. After attaching, any rotation of the mesh should be done with the rotationQuaternion property instead of rotation.
 
 ## GizmoManager
 To get a default gizmo setup, the GizmoManager class can be used.
@@ -52,7 +48,7 @@ gizmoManager.gizmos.positionGizmo.updateGizmoRotationToMatchAttachedMesh = false
 ```
 Note: This is not supported on the scale gizmo
 
-[**Example**](https://www.babylonjs-playground.com/#4TBMBR)
+[**Example**](https://www.babylonjs-playground.com/#4TBMBR#33)
 ## Setup
 
 Gizmos are displayed by a [UtilityLayerRenderer](/How_To/UtilityLayerRenderer) to not disrupt the existing scene state. If not specified, the default utility layer will be used.
@@ -63,17 +59,17 @@ The utility layers are independent of the scene or engine. After creating a gizm
 var utilLayer = new BABYLON.UtilityLayerRenderer(scene);
 var gizmo = new BABYLON.AxisDragGizmo(new BABYLON.Vector3(1,0,0), BABYLON.Color3.FromHexString("#00b894"), utilLayer);
 ```
-When created, the gizmo will not be attached to a mesh and will not be visible so the gizmo can be attached to a mesh to become active. Setting this to null will disable/hide the gizmo once again.
+When created, the gizmo will not be attached to a node and will not be visible so the gizmo can be attached to a node to become active. Setting this to null will disable/hide the gizmo once again.
 ```
 gizmo.attachedMesh = sphere;
 ```
-By default, the gizmo will be updated to match the attached mesh's rotation and position but these can be modified with the following
+By default, the gizmo will be updated to match the attached node's rotation and position but these can be modified with the following
 ```
 // Keep the gizmo fixed to world rotation
 gizmo.updateGizmoRotationToMatchAttachedMesh = false;
 gizmo.updateGizmoPositionToMatchAttachedMesh = true;
 ```
-[GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
+[GLTF example](https://playground.babylonjs.com/#8GY6J8#20)
 ## Position, scale and rotation gizmos
 
 Default gizmos for position, rotation and scale on a single axis are supported
@@ -89,6 +85,11 @@ gizmo.snapDistance = 0.3;
 gizmo.onSnapObservable.add((event)=>{
     console.log(event);
 })
+```
+
+A sensitivity factor can be customized for AxisScaleGizmo and ScaleGizmo. Default is 1, a higher value means more stretch for the same drag.
+```
+gizmoScale.sensitivity = 3;
 ```
 
 These gizmo's internally use a [pointerDragBehavior](/How_To/MeshBehavior), this is exposed and can be used perform tasks before/during/after dragging a gizmo
@@ -162,7 +163,7 @@ gizmo.includeChildPredicate = (m)=>{return m == sphere2};
 
 UI can be attached to the bounding box using the [AttachToBoxBehavior](/How_To/MeshBehavior)
 
-[GLTF example](http://playground.babylonjs.com/#8GY6J8#20)
+[GLTF example](https://playground.babylonjs.com/#8GY6J8#20)
 [Animated GLTF example](https://playground.babylonjs.com/#6E4LSB#15)
 [Example](https://www.babylonjs-playground.com/#DEYAQ5#47)
 
@@ -174,5 +175,5 @@ var customMesh = BABYLON.MeshBuilder.CreateBox("", {size: 0.1}, gizmo.gizmoLayer
 customMesh.material = material
 gizmo.setCustomMesh(customMesh)
 ```
-[Example](http://playground.babylonjs.com/#7KX2R8#133)
+[Example](https://playground.babylonjs.com/#7KX2R8#133)
 

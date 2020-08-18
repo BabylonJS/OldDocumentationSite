@@ -1,7 +1,3 @@
----
-PG_TITLE: Arc Between Vectors
----
-
 # Draw an Arc Between Two Vectors
 Given an origin O and two vectors OA and OB this snippet draws an arc between the two vectors with a given radius. The arc can be drawn in three types 0 (default) a solid line, 1 a dashed line, 2 filled between arc and vectors.
 
@@ -54,4 +50,4 @@ function showAngleSector(origin, vector1, vector2, radius, sectorType) {
 ```
 # Playground
 
-* [Playground Example ](http://www.babylonjs-playground.com/#FUK3S#8)
+* [Playground Example ](https://www.babylonjs-playground.com/#FUK3S#8)

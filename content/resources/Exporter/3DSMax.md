@@ -1,16 +1,56 @@
----
-ID_PAGE: 20
-PG_TITLE: 3DSMax
----
 # How To Install the 3DS Max plugin 
 
-The plugin is designed for 3DS Max 2015 or later. To download it, go to the Github project (https://github.com/BabylonJS/Exporters/tree/master/3ds%20Max).  
+## Installer
 
-![github](/img/exporters/3DSMax/1_github.jpg)
+### Installing the installer (so meta...)
+We have recently introduced a new tool to simplify the installation of the plugin for both Max and Maya.
 
-In this folder, you can find the source code of the exporter if you want to update it, and a zip file _Max2Babylon-XX.zip_ (where XX is the exporter version, currently 1.1.0). Click on the zip file, and click on the _Download_ button. 
+First, you can download the latest version of the installer from our [Github Releases](https://github.com/BabylonJS/Exporters/releases). Once on the releases page, you can find all our packages in the assets section of each releases:
 
-![github download](/img/exporters/3DSMax/2_github_dl.jpg)
+![releases](/img/exporters/installer/GithubPreRelease.png)
+
+From there, you can download the Installer.zip file. Chrome is currently warning of potential threat as the installer.exe has currently not been downloaded enough to pass the Chromium checks. In this case, you might see a message like this:
+
+![chrome warning](/img/exporters/installer/ChromeDLWarning.png)
+
+You can nervertheless continue to download by pressing the little arrow and chosing to "Keep" the file:
+
+![chrome warning keep](/img/exporters/installer/ChromeDLWarningKeep.png)
+
+Once downloaded, you can extract the content of the zip in your favorite loaction.
+
+### Using the installer
+Launch the executable file contained in the previous zip. On the first launch Windows like Chrome previously will emit a Smart Screen warning as the application has currently not being launched enough to be trusted.
+
+![smart screen warning](/img/exporters/installer/SmartScreen.png)
+
+As before, you can chose to continue by pressing more info and then Run anyway:
+
+![smart screen warning keep](/img/exporters/installer/SmartScreenKeep.png)
+
+No worries, you are almost there. A second warning is raised by Windows as the installer needs to write files in the program files and therefore run in elevated mode. You can access the User Account Control and finally start using the application.
+
+From this point, it gets simpler:
+
+![smart screen warning keep](/img/exporters/installer/Installer.png)
+
+Once launched the application should auto detect all the installation folders from your Autodesk applications. In case it fails to do so, you could still manually location the targetted software.
+
+You can now easily install or update any of your 3d authoring tools to the latest prerelease available on Github.
+
+Would you want to upgrade to the latest available pre-release of the exporter plugins, you can easily launch back the installer and follow the same exact procedure to update the installed plugins to their latest versions.
+
+Please not that both the software you are trying to install the plugin for should be closed during the installation.
+
+## Manual Install
+
+The plugin is designed for 3DS Max 2015 or later. To download it, go to the [Github project Releases](https://github.com/BabylonJS/Exporters/releases).
+
+![releases](/img/exporters/installer/GithubPreRelease.png)
+
+In the assets section of the release you can find one zip file per supported tool (like max_2019.zip) containing the plugin files.
+
+Click on the zip file, to start Downloading.
 
 By default, Windows blocks all .dll files coming from the web, so we have to unblock them first. Select the zip file, and with a right click select _Properties_, select _Unblock_, and then _OK_. 
 
@@ -21,6 +61,34 @@ Then, extract the content of the zip file on your computer, and open the directo
 ![plugin visible](/img/exporters/3DSMax/4_plugin_visible.jpg)
 
 Congratulations! You did it!
+
+# Dependencies #
+## Visual Studio
+Visual Studio is required to build the Max2Babylon project from source.
+
+## .NET Framework
+The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/framework/install/guide-for-developers) needs to be installed in order to run the Max2Babylon plugin properly.
+* Max2Babylon 2015-2016
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2017
+   * Requires atleast .NET Framework 4.5
+
+* Max2Babylon 2018
+   * Requires atleast .NET Framework 4.6
+
+* Max2Babylon 2019
+   * Requires atleast .NET Framework 4.7
+
+* Max2Babylon 2020
+   * Requires atleast .NET Framework 4.7
+
+* Max2Babylon 2021
+   * Requires atleast .NET Framework 4.7
+
+## Other Dependencies
+* For 3ds Max 2020
+   * Max2Babylon 2020 requires 3dsMax 2020.2 or newer.
 
 # Features  #
 
@@ -42,6 +110,7 @@ Congratulations! You did it!
     * Position
     * Target / Rotation
     * Animations: Position, Target, Fov
+    * Custom attributes
 
 * _Lights_
     * Omni / spot / directional / Ambient(Hemispheric)
@@ -52,6 +121,7 @@ Congratulations! You did it!
     * Diffuse
     * Specular
     * Animations: Position, direction, intensity, diffuse
+    * Custom attributes
 
 * _Meshes_
     * Visibility
@@ -67,6 +137,7 @@ Congratulations! You did it!
     * Morph targets
     * Show Bounding box and submeshes bounding boxes (*)
     * Animations: Position, scaling, rotation, visibility, bones, morph weights
+    * Custom attributes
 
 * _Materials_
     * Multi-materials
@@ -81,7 +152,14 @@ Congratulations! You did it!
     * Fresnel for diffuse, emissive, opacity and reflection
     * Physical materials (PBR)
     * Standard Surface Arnold material
-    * Unlit attribute
+    * Coating (Standard Surface Arnold only)
+    * Double sided material
+    * Unlit
+    * Backface culling
+    * Max Simultaneous Lights
+    * Opacity/Transparency mode
+    * Custom attributes
+    * RGB Multiply map
 
 * _Textures_
     * UV offset / scaling / angle
@@ -90,6 +168,11 @@ Congratulations! You did it!
     * Wrapping (Clamp, mirror, wrap)
 
 * Hierarchies are exported
+
+* _Animations_
+    * Animation groups
+    * Export without animations
+    * Export animations only
 
 (*): Through custom UI
 
@@ -174,6 +257,10 @@ The _overwrite textures_ option enables overwriting existing textures in the out
 
 The _Use Draco comression_ option is only available for gltf and glb output format. More detail [here](/resources/3DSMax_to_glTF#draco-compression).
 
+The _Export Animations_ option enables you to export only the geometry and materials.
+
+The _Export Animations Only_ option enables you to export only animations. The _Export Animations_ option must be checked as well.
+
 The _Export_ button should be used to create the Babylon file representing your scene. The _Export & Run_ button will also create the Babylon file, but will also launch your default browser and run the newly made Babylon file. This button is very useful if you just want to test the render of your scene in Babylon.js. 
 
 As babylon.js script is retrieved directly from the official website directly, you should have internet access in order to correctly use Export & Run.  
@@ -257,6 +344,9 @@ For the texture, the Babylon specular color map is either:
 
 Even though a specular level map should be a grayscale, its 3 components (RGB) are multiplied individually to the specular color.
 
+## Multi-Materials
+Multi-Materials are supported, but __inputting a Multi-Material into another Multi-Material is not supported__.
+
 ## Physical materials
 
 The handling of physical materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#pbr-materials)
@@ -264,6 +354,46 @@ The handling of physical materials is mimic from glTF format. [Detailed explanat
 ## Arnold materials
 
 The handling of arnold materials is mimic from glTF format. [Detailed explanations here](/resources/3DSMax_to_glTF#standard-surface-arnold-material)
+
+As well as the default supported GLTF parameters, in Babylon format, we support the coating parameters of the material. You can see below the supported parameters:
+
+![texture](/img/exporters/3DSMax/Coating.png)
+
+Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In 3DS MAX, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
+
+In Babylon format, weight is stored in red channel, roughness in green.
+
+The roughness of the coating can be inverted to mean Glossiness - this is controlled by the same parameter than the roughness map.
+
+## Double sided material
+
+Simply use the _Double Sided_ material natively present in 3ds Max (Materials > General > Double Sided).
+
+![3DS MAX double sided material](/img/exporters/3DSMax/DoubleSidedMaterial.jpg)
+
+From there, you can specify the _Facing_ and _Back_ materials. Those sub-materials are independant from each other. For example, one can be a standard material and the other a physical.
+
+The _Translucency_ parameter is not used.
+
+When exporting, the geometry of all meshes using a double sided material is duplicated:
+- the number of vertices and faces is doubled
+- faces, normals and tangents are inverted for the duplicated geometry
+
+This mean that the exporter is automatically creating a back side. If you already have a back side, you should use a Multi-material instead.
+
+Moreover, the _Double sided_ material should not be confused with the _2-sided_ property of a _Standard_ material. This last property is used to put the same material to the front and back faces.
+
+## RGB Multiply map
+
+The RGB Multiply map can be used as an intermediate node between a bitmap texture and a material.
+
+![bitmap to RGB Multiply map to material](/img/exporters/3DSMax/RGBMultiplyMap.jpg)
+
+The texture is retreived from one channel and the color from the other one.
+
+Limitations:
+- only the diffuse texture (Standard material) and base color texture (Physical and Arnold materials) fields will accept a RGB Multiply map as input.
+- the RGB Multiply map must specify exactly a single texture. Two textures or two colors are not supported.
 
 ## Shell material
 
@@ -279,17 +409,44 @@ Babylon supports PNG, DDS and TGA formats for texture transparency. You can choo
 
 ![texture](/img/exporters/3DSMax/11_texture.jpg)
 
-## Unlit material
+**Important:** if you are relying on a physically based material, you can chose the transparency mode through a dedicated material attribute. You can refer to the [following documentation](https://doc.babylonjs.com/resources/3dsmax_to_gltf#alpha-mode) to learn more about this feature.
 
-A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+## Babylon material attributes
 
-3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
+Native materials are enhanced to have extra attributes under Babylon attributes section.
 
-![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
+![3DS MAX babylon material attributes](/img/exporters/3DSMax/BabylonMaterialAttributes.jpg)
 
-To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
+Most Babylon attributes are common to all materials:
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+* __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces. __This property is native to Standard material and is called _2-Sided_.__
+* __Max Simultaneous Lights__: Number of Simultaneous lights allowed on the material.
+* __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
+    * _Opaque_: The alpha color and texture are ignored during export process.
+    * _Cutoff_: The alpha cutoff value is 0.5. Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
+    * _Blend_: This how 3ds Max handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
 
-Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
+## Custom attributes
+
+Attributes defined by you, the user, are exported as well!
+
+Almost all types of parameters are supported (_Float_, _Color_, _Boolean_, _TextureMap_...). The only exceptions are _Node_ and _Material_ types.
+All nodes (meshes, lights...) and materials have their custom attributes exported.
+
+To define custom attributes either use the Parameter Editor window or scripting:
+
+![3DS MAX custom attributes parameter editor](/img/exporters/3DSMax/CustomAttributesDefinition_3dsMax.jpg)
+
+Custom attributes are exported under _metadata_:
+
+![3DS MAX custom attributes babylon](/img/exporters/3DSMax/CustomAttributes_babylon.jpg)
+
+Following types have particularities you should know:
+- _Angle_ : Set in degrees (°) in 3ds Max but exported as radians. Ex: 360° => 3.1416 rads
+- _Array_ : An array in 3ds Max is an enumeration of values. Each value has an incremental index, starting from 1. Only one value can be selected. The index of selected item is exported, not the displayed label.
+- _Color_ and _FRGBA_ : Exported in base 1 as all other colors. Ex: Red = (255,0,0) => (1,0,0)
+- _Percent_ : Exported in base 1 as well. Ex: 80% => 0.8
+- _Texture_ : The texture is fully exported, including its bitmap. However, the Babylon loader doesn't interprete the data as a BABYLON.Texture. They are instead row data that can be read or parsed after import.
 
 Now that you know all about the exporter features, it’s time to use it! 
 

@@ -1,7 +1,3 @@
----
-ID_PAGE: 25364
-PG_TITLE: How to use Blend Modes
----
 # Introduction to Blend Modes ##
 
 A *blend mode* determines how, when rendering a mesh, new on-screen pixels will be mixed with existing pixels.
@@ -34,13 +30,13 @@ Using blend modes is done by manipulating the `alphaMode` property of materials,
 **This property will only be used when the rendered mesh is alpha-blended.** This is very important, because since the `alphaMode` property will have absolutely no effect on an opaque mesh, you will need to make sure your mesh is *alpha-blended* to use it.
 
 You can force an opaque mesh to be alpha-blended by making it very slightly transparent, like so:
-```
+```javascript
 mesh.visibility = 0.9999;
 ```
 
 Or you can assign an opacity texture to its material (even if the opacity texture have no alpha channel):
-```
- material_base.opacityTexture = material_base.diffuseTexture;
+```javascript
+material.opacityTexture = material.diffuseTexture;
 ```
 
 
@@ -49,6 +45,6 @@ Or you can assign an opacity texture to its material (even if the opacity textur
 
 Here is a screenshot showing the previously mentioned blend modes:
 
-![Available Blend Modes](http://i.imgur.com/2KTXUjT.png)
+![Available Blend Modes](/img/how_to/blend-modes/blend-modes.jpg)
 
-This playground scene showcases the available blend modes in action: [ https://www.babylonjs-playground.com/#1MSIXB#4]( https://www.babylonjs-playground.com/#1MSIXB#4)
+This playground scene showcases the available blend modes in action: https://www.babylonjs-playground.com/#1MSIXB#4

@@ -1,7 +1,3 @@
----
-PG_TITLE: Spherical Panning
----
-
 # Spherical Panning for 360 Camera Rotation
 This snippet shows a way to add spherical panning behavior to a scene.  The behavior is similar to the interactions from viewing 3D images on Facebook, Google Maps, etc.  The function contains several constants, such as INERTIA_DECAY_FACTOR, which can be tuned to customize the default feel of the interaction.
 

@@ -1,7 +1,3 @@
----
-ID_PAGE: 24834
-PG_TITLE: 08. Special Effects
----
 Get a look at shadows, lens flares, bones, and physics.
 
 ** Agenda **

@@ -1,178 +1,186 @@
-# BabylonJS with ReactJS.
-## A brief example showing how to use BabylonJS with ReactJS ##
+# BabylonJS with React.
+## How to use BabylonJS with React
 
-For anyone interested, it is not difficult to integrate BabylonJS into a ReactJS application. 
-
-## When would you **NOT** want to use React with BabylonJS
-It is very easy to get a BabylonJS scene inside a ReactJS website; that is a valid scenario and this tutorial will show you how.  If you are building a game for mobile devices then probably you would want to keep all interactions in the canvas and avoid DOM.
+For anyone interested, it is not difficult to integrate BabylonJS into a React application. 
 
 ## What you need
-
-It's up to you if you choose Node + NPM/Yarn or static page, so only how to create the component will be discussed here.  Some example projects with ES6/TypeScript are linked at the end.
+It's up to you if you choose Create React App or a custom project; only how to load BabylonJS in a component will be discussed here.  This example uses the newer `@babylonjs/core` ES6 NPM, but can also be modified to work with the `babylonjs` NPM.
 
 ## Component
+We are going to build a reusable React component that takes care of starting up BabylonJS for us!
 
-You could put a canvas right on your page itself using code from this component we are going to build, but it's easy to make a reusable ReactJS component, too!  This is a TypeScript example, so for JavaScript just remove the data types.
-
-If you are using NPM or Yarn then you need to install the package 'babylonjs'.
+In a working React project you first need to install the package `@babylonjs/core` using npm or yarn:
 ```bash
-npm install 'babylonjs'
+npm install @babylonjs/core
 ```
 
 ```bash
-yarn add 'babylonjs'
+yarn add @babylonjs/core
 ```
-
-Here is the code for our component.  Create a .tsx or .jsx file and put this code in it:
+Create a file called `SceneComponent.jsx` and add this:
 ```jsx
-import * as BABYLON from 'babylonjs';
+import { Engine, Scene } from '@babylonjs/core'
+import React, { useEffect, useRef, useState } from 'react'
 
-export type SceneEventArgs = {
-  engine: BABYLON.Engine,
-  scene: BABYLON.Scene,
-  canvas: HTMLCanvasElement
-};
+export default (props) => {
+    const reactCanvas = useRef(null);
+    const { antialias, engineOptions, adaptToDeviceRatio, sceneOptions, onRender, onSceneReady, ...rest } = props;
 
-export type SceneProps = {
-  engineOptions?: BABYLON.EngineOptions,
-  adaptToDeviceRatio?: boolean,
-  onSceneMount?: (args: SceneEventArgs) => void,
-  width?: number,
-  height?: number
-};
+    const [loaded, setLoaded] = useState(false);
+    const [scene, setScene] = useState(null);
 
-export default class Scene extends React.Component<SceneProps & React.HTMLAttributes<HTMLCanvasElement>, {}> {
+    useEffect(() => {
+        if (window) {
+            const resize = () => {
+                if (scene) {
+                    scene.getEngine().resize();
+                }
+            }
+            window.addEventListener('resize', resize);
 
-  private scene: BABYLON.Scene;
-  private engine: BABYLON.Engine;
-  private canvas: HTMLCanvasElement;
+            return () => {
+                window.removeEventListener('resize', resize);
+            }
+        }
+    }, [scene]);
 
-  onResizeWindow = () => {
-    if (this.engine) {
-      this.engine.resize();
-    }
-  }
+    useEffect(() => {
+        if (!loaded) {
+            setLoaded(true);
+            const engine = new Engine(reactCanvas.current, antialias, engineOptions, adaptToDeviceRatio);
+            const scene = new Scene(engine, sceneOptions);
+            setScene(scene);
+            if (scene.isReady()) {
+                props.onSceneReady(scene)
+            } else {
+                scene.onReadyObservable.addOnce(scene => props.onSceneReady(scene));
+            }
 
-  componentDidMount () {
-    this.engine = new BABYLON.Engine(
-        this.canvas,
-        true,
-        this.props.engineOptions,
-        this.props.adaptToDeviceRatio
-    );
+            engine.runRenderLoop(() => {
+                if (typeof onRender === 'function') {
+                    onRender(scene);
+                }
+                scene.render();
+            })
+        }
 
-    let scene = new BABYLON.Scene(this.engine);
-    this.scene = scene;
-
-    if (typeof this.props.onSceneMount === 'function') {
-      this.props.onSceneMount({
-        scene,
-        engine: this.engine,
-        canvas: this.canvas
-      });
-    } else {
-      console.error('onSceneMount function not available');
-    }
-
-    // Resize the babylon engine when the window is resized
-    window.addEventListener('resize', this.onResizeWindow);
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.onResizeWindow);
-  }
-
-  onCanvasLoaded = (c : HTMLCanvasElement) => {
-    if (c !== null) {
-      this.canvas = c;
-    }
-  }
-
-  render () {
-    // 'rest' can contain additional properties that you can flow through to canvas:
-    // (id, className, etc.)
-    let { width, height, ...rest } = this.props;
-
-    let opts: any = {};
-
-    if (width !== undefined && height !== undefined) {
-      opts.width = width;
-      opts.height = height;
-    }
+        return () => {
+            if (scene !== null) {
+                scene.dispose();
+            }
+        }
+    }, [reactCanvas])
 
     return (
-      <canvas
-        {...opts}
-        ref={this.onCanvasLoaded}
-      />
-    )
-  }
+        <canvas ref={reactCanvas} {...rest} />
+    );
 }
 ```
->In 80 lines we have: 
-> * Reusable ReactJS Component for BabylonJS.
-> * Scene will resize the engine when canvas is resized.
-> * We only need to add this component to a page and specify a method to run.
+>In 55 lines we have: 
+> * Reusable React Component for BabylonJS.
+> * Will resize the engine when window is resized.
+> * Any extra props you add to this component will flow to the canvas (ie: style/className)
+> * We only need to add this component to a page and specify a method to run when the scene is ready.  A `<canvas />` element is created and a BabylonJS engine and scene are created and started.
+> * If you want more control of the runRenderLoop, just remove it from here and add it in your `onSceneReady` prop.
+> * TypeScript source can be copied from [here](https://raw.githubusercontent.com/brianzinn/babylonjs-hook/master/src/babylonjs-hook.tsx).
 
-Here is the page using our component.  It will load the default playground scene in our ReactJS website.
+The above component is available in NPM, if you prefer:
+```bash
+npm add babylonjs-hook
+yarn add babylonjs-hook
+```
+
+Here is a page using our component:
 
 ```jsx
-import * as React from 'react';
-import * as BABYLON from 'babylonjs';
-import BabylonScene from './SceneComponent'; // import the component above linking to file we just created.
+import React from 'react';
+import { FreeCamera, Vector3, HemisphericLight, MeshBuilder } from '@babylonjs/core';
+import SceneComponent from './SceneComponent'; // ^^ point to file we created above or 'babylonjs-hook' NPM.
+import './App.css';
 
-class PageWithScene extends React.Component<{}, {}> {
-    onSceneMount = (e: SceneEventArgs) => {
-        const { canvas, scene, engine } = e;
-       
-        // This creates and positions a free camera (non-mesh)
-        var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+let box;
 
-        // This targets the camera to scene origin
-        camera.setTarget(BABYLON.Vector3.Zero());
+const onSceneReady = scene => {
+  // This creates and positions a free camera (non-mesh)
+  var camera = new FreeCamera("camera1", new Vector3(0, 5, -10), scene);
 
-        // This attaches the camera to the canvas
-        camera.attachControl(canvas, true);
+  // This targets the camera to scene origin
+  camera.setTarget(Vector3.Zero());
 
-        // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-        var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+  const canvas = scene.getEngine().getRenderingCanvas();
 
-        // Default intensity is 1. Let's dim the light a small amount
-        light.intensity = 0.7;
+  // This attaches the camera to the canvas
+  camera.attachControl(canvas, true);
 
-        // Our built-in 'sphere' shape. Params: name, subdivs, size, scene
-        var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
+  // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
+  var light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
 
-        // Move the sphere upward 1/2 its height
-        sphere.position.y = 1;
+  // Default intensity is 1. Let's dim the light a small amount
+  light.intensity = 0.7;
 
-        // Our built-in 'ground' shape. Params: name, width, depth, subdivs, scene
-        var ground = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+  // Our built-in 'box' shape.
+  box = MeshBuilder.CreateBox("box", {size: 2}, scene);
 
-        engine.runRenderLoop(() => {
-            if (scene) {
-                scene.render();
-            }
-        });
-    }
+  // Move the box upward 1/2 its height
+  box.position.y = 1;
 
-    render() {               
-        return (
-            <div>
-                <BabylonScene onSceneMount={this.onSceneMount} />
-            </div>
-        )
-    }
+  // Our built-in 'ground' shape.
+  MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
 }
+
+/**
+ * Will run on every frame render.  We are spinning the box on y-axis.
+ */
+const onRender = scene => {
+  if (box !== undefined) {
+    var deltaTimeInMillis = scene.getEngine().getDeltaTime();
+
+    const rpm = 10;
+    box.rotation.y += ((rpm / 60) * Math.PI * 2 * (deltaTimeInMillis / 1000));
+  }
+}
+
+export default () => (
+    <div>
+      <SceneComponent antialias onSceneReady={onSceneReady} onRender={onRender} id='my-canvas' />
+    </div>
+)
 ```
 
 ## A few notes on the code
-This will show the basic playground in your website!  Note only that our 'BABYLON.Scene' was already instantiated in componentDidMount() of our component.
+This will show the basic playground in your website!  A rotation has been added in the render loop (and the sphere changed to a box, so you would notice).
+
+If you would like to see this in action, there is a boilerplate project using the original NPM `babylonjs`, which you can clone from
+* [Reactjs + BabylonJS + Electron](https://github.com/blurymind/babylon-react-electron-app)
+
+There is a boilerplate using above component with ES6 NPM `@babylonjs/core` here
+* [Reactjs + BabylonJS](https://github.com/brianzinn/babylonjs-cra-vanilla-ts)
+
+## Adding other BabylonJS NPMs
+If you start with the `@babylonjs` [ES6 NPMs](https://doc.babylonjs.com/features/es6_support) (as we have done) then add those ones only.  
+> For GUI use `@babylonjs/gui` instead of the NPMs that don't start with `@`.
 
 ## Conclusion
 
-Integrating BabylonJS into a ReactJS website turns out to be not so tough.  Since BabylonJS 3.1 we can now use ES6 imports not only for BabylonJS, but also for GUI and more.
+Integrating BabylonJS into a React site turns out to be not so tough.  Since BabylonJS 3.1 we can use ES6 imports not only for BabylonJS, but also for supported libraries (GUI/loaders/etc).
 
-If the above component we created does everything you need then that's all you will need and you are all set.  There is an NPM project called 'react-babylonjs' that has additional methods and properties and also has redux middleware.  That NPM is used in a couple of starter kits - One for ES6 and a TypeScript one for create-react-app:
-* [Create React App + TypeScript + BabylonJS (GUI + Physics)](https://github.com/brianzinn/create-react-app-typescript-babylonjs)
-* [ES6 + BabylonJS](https://github.com/brianzinn/react-redux-babylonjs-starter-kit)
+If the above component we created does everything you need then that's all you will need and you are all set!  If you want to take it a step further you may want to take the `react-babylonjs` renderer for a spin.
+
+# react-babylonjs renderer
+A renderer is a next-level React integration that lets you use JSX to build your scenes and GUI.  State changes will flow automatically to your BabylonJS components (and persist through HMR) and you can maintain your scene graph in a declarative syntax and through components.
+
+There is an NPM project called `react-babylonjs` that is a react renderer for BabylonJS.
+
+What you are able to easily do is powerful, because inside the Scene component you can declare BabylonJS objects like Cameras/Meshes/Lights/Materials/Textures/3D Models/etc, using familiar JSX.  Meanwhile there are escape hatches that allow you to work imperatively as well.
+
+> BabylonJS ES6 + CRA (Create React App) project examples:
+> * JavaScript (examples for 3D models, GUI, VR, behaviors, props/state management)
+>   * [source](https://github.com/brianzinn/create-react-app-typescript-babylonjs)
+>   * [demo](https://brianzinn.github.io/create-react-app-babylonjs/)
+>* TypeScript (GUI + physics + shadows)
+>   * [source](https://github.com/brianzinn/create-react-app-babylonjs)
+>   * [demo](https://brianzinn.github.io/create-react-app-typescript-babylonjs/)
+>* [Electron](https://github.com/brianzinn/react-babylonjs-electron) (Electron added to above TypeScript project)
+>* [PWA](https://github.com/brianzinn/create-react-app-babylonjs-pwa) (Progressive Web App)
+
+`react-babylonjs` (https://github.com/brianzinn/react-babylonjs) links to many live storybook code examples (skybox, CSG, dynamic terrain, behaviors, GUI, react hooks, integrations (PIXI, react-spring, gsap, chroma-js), 3D models, physics, shadows, layers (glow/highlight), textures, fresnel parameters, PBR, etc.

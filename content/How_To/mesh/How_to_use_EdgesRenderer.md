@@ -1,6 +1,3 @@
----
-PG_TITLE: How to use EdgesRenderer
----
 BABYLON.EdgesRenderer is a tool used to render edges on top of a mesh. Edges are rendered between two faces if the dot product of their normals is less than epsilon.
 
 ![](/img/edgesRenderer.jpg)
@@ -28,3 +25,12 @@ If you need to turn-off edges rendering:
 box.disableEdgesRendering();
 ```
 You can try edges rendering here:  https://www.babylonjs-playground.com/#TYAHX#10
+
+If your mesh has instances, you can either use a renderer for each instance by enabling the edges rendering for each instance as explained above, or by using the source mesh renderer for all instances.
+
+To do this, just set:
+```javascript
+sourceMesh.edgesShareWithInstances = true;
+```
+
+PG: https://playground.babylonjs.com/#7BY3TM

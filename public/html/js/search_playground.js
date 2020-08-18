@@ -1,6 +1,6 @@
-(function () {
+(function() {
 
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         if (localStorage.getItem('docBabylon_lastSearch') != false
             && localStorage.getItem('docBabylon_lastSearch') != null
@@ -18,30 +18,30 @@
         var query = getQueryVariable('bjsq');
         var tagsQuery = getQueryVariable('tag');
         var codeQuery = getQueryVariable('code');
-        var strQuery = decodeURIComponent(query).split('+').join(' ');
-        var strTags = decodeURIComponent(tagsQuery).split('+').join(' ');
-        var strCode = decodeURIComponent(codeQuery).split('+').join(' ');
+        var strQuery = query.split('+').join(' ');
+        var strTags = tagsQuery.split('+').join(' ');
+        var strCode = codeQuery.split('+').join(' ');
         var page = +(getQueryVariable('page')) || 0;
         var max = +(getQueryVariable('max')) || 25;
         var numberResults = 0;
         var finalQuery = '';
         var queryType = '';
-        if (strQuery != 'false') {
+        if (strQuery != '') {
             queryType = 'name/';
             finalQuery = strQuery;
             localStorage.setItem("docBabylon_lastSearch_type", "name");
             localStorage.setItem("docBabylon_lastSearch", strQuery);
-            try {document.getElementsByName('bjsq')[1].value = strQuery;} catch(e) {}
-            
+            try { document.getElementsByName('bjsq')[1].value = strQuery; } catch (e) { }
+
         }
-        else if (strTags != 'false') {
+        else if (strTags != '') {
             queryType = 'tags/';
             finalQuery = strTags;
             localStorage.setItem("docBabylon_lastSearch_type", "tags");
             localStorage.setItem("docBabylon_lastSearch", strTags);
-            try {document.getElementsByName('tag')[0].value = strTags;} catch(e) {}
+            try { document.getElementsByName('tag')[0].value = strTags; } catch (e) { }
         }
-        else if (strCode != 'false') {
+        else if (strCode != '') {
             queryType = 'code/';
             localStorage.setItem("docBabylon_lastSearch_type", "code");
             localStorage.setItem("docBabylon_lastSearch", strCode);
@@ -74,9 +74,9 @@
             data: postData,
             contentType: "application/json; charset=utf-8",
             dataType: "json"
-        }).error(function (error) {
+        }).error(function(error) {
             console.log(error);
-        }).success(function (data) {
+        }).success(function(data) {
             var html = '';
 
             //If we collect data, show our number of results and buttons to change pages
@@ -102,7 +102,9 @@
             var id = 0;
 
             if (data) {
-                data.forEach(function (s) {
+                data = data.filter(d => d.nodeMaterial === undefined); // Remove node materials for now
+
+                data.forEach(function(s) {
                     //Code research
                     if (codeQuery) {
 
@@ -110,6 +112,7 @@
                             // Create html div with Code research
                             var codeToDisplay = JSON.parse(s.jsonPayload);
                             var type = '';
+                            
                             if (codeToDisplay.code) {
                                 type = '';
                                 codeToDisplay = codeToDisplay.code;
@@ -121,7 +124,7 @@
 
                             html += createHTMLResultDiv(s, id, codeToDisplay, strCode, type);
                         }
-                        catch(ex) {
+                        catch (ex) {
                             console.log("A parsing error occured. Please, report this issue on the BabylonJS documentation github with the searched term. Thanks a lot!");
                         }
 
@@ -154,14 +157,14 @@
             }
             html += pageChange;
             $.ajax({
-                url: 'https://snippet.babylonjs.com/count/' + queryType,                
+                url: 'https://snippet.babylonjs.com/count/' + queryType,
                 type: "POST",
                 data: numberData,
                 contentType: "application/json; charset=utf-8",
                 dataType: "json"
-            }).error(function (error) {
+            }).error(function(error) {
                 console.log(error);
-            }).success(function (data) {
+            }).success(function(data) {
                 if (data) {
                     displayPagesInfos(data, max, page);
                 }
@@ -180,10 +183,10 @@
 
                 if (indexResultat) {
                     selectedVersion[indexResultat] = document.getElementById("buttonDropdown" + indexResultat);
-                    selectedVersion.forEach(function (version) {
+                    selectedVersion.forEach(function(version) {
                         if (version) {
                             var versionLink = version.options[version.selectedIndex].value;
-                            version.addEventListener("change", function () {
+                            version.addEventListener("change", function() {
                                 versionLink = version.options[version.selectedIndex].value;
                                 for (var i = 0; i < max; i++) {
                                     if (document.getElementById("linkplayground" + i)) {
@@ -201,7 +204,7 @@
                 var resultCoreDiv = document.getElementById("resultTitleCore" + indexResultat);
                 if (resultCoreDiv) {
 
-                    resultCoreDiv.onclick = function () {
+                    resultCoreDiv.onclick = function() {
                         // Show/Hide resultTitleExtra
                         var index = this.id.replace("resultTitleCore", "");
                         if ((document.getElementById("resultExtra" + index).className) == ("resultHidden")) {
@@ -223,7 +226,7 @@
     /**
      * Update the href of the "Next results" & "Previous results" of the search page
      */
-    var updateLinks = function () {
+    var updateLinks = function() {
 
         // retrieve current page number
         var searchTerm = getQueryVariable('bjsq');
@@ -252,17 +255,18 @@
         };
     };
 
-    var getQueryVariable = function (element) {
-        var query = window.location.search.substring(1);
+    var getQueryVariable = function(element) {
+        var query = decodeURIComponent(window.location.search.substring(1));
         var vars = query.split("&");
         for (var i = 0; i < vars.length; i++) {
+	    vars[i] = vars[i].replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/'/g, "&#39;").replace(/"/g, "&#34;");
             var pair = vars[i].split("=");
             if (pair[0] == element) { return pair[1]; }
         }
-        return (false);
+        return "";
     };
 
-    var displayPagesInfos = function (totalCount, maxResultPerPage, actualPage) {
+    var displayPagesInfos = function(totalCount, maxResultPerPage, actualPage) {
         document.getElementById('resultCount').innerText = totalCount;
 
         var pagesNum = Math.ceil(totalCount / maxResultPerPage);
@@ -274,7 +278,7 @@
             document.getElementById('nextPageButton').style.display = "block";
         }
     };
-    var findQuery = function (TypeQuery, strTypeResultat, data, page, pageChange, linkType) {
+    var findQuery = function(TypeQuery, strTypeResultat, data, page, pageChange, linkType) {
         var htmlFindQuery = '<div class="searchHeader"><h2> <span id="resultCount">...</span> result(s)  for <a href="/playground?' + linkType + '=' + TypeQuery + '">' + strTypeResultat + '</a></h2></div>';
         var pages = 10;
         pageChange = '<div class="pageChangeWrapper" style="margin: 20px;">';
@@ -288,7 +292,7 @@
         return [htmlFindQuery, pageChange];
     };
 
-    var createHTMLResultDiv = function (s, id, codeToDisplay, strTypeResultat, type) {
+    var createHTMLResultDiv = function(s, id, codeToDisplay, strTypeResultat, type) {
         var htmlResultDiv = '<div class="result ' + type + '">';
         htmlResultDiv += '<div class="resultCore">';
 
@@ -308,7 +312,7 @@
         if (s.tags) {
             htmlResultDiv += '<div class="resultTags">'
             var TagTable = s.tags.split(",");
-            TagTable.forEach(function (element) {
+            TagTable.forEach(function(element) {
                 element = element.trim();
                 htmlResultDiv += '<div class="resultTag"> <a href="https://doc.babylonjs.com/playground?tag=' + element + '"target="_blank"> ' + element + '</a></div>';
             }, this);
@@ -374,7 +378,7 @@
         return htmlResultDiv;
     };
 
-    var createLinkToPlayground = function (s, id) {
+    var createLinkToPlayground = function(s, id) {
         var htmlResultExtraDiv = '<div class="resultLink">'
         htmlResultExtraDiv += '<select id="buttonDropdown' + id + '" class="dropbtn">'
         var selected = "";
@@ -411,13 +415,13 @@
 
     };
 
-    var replaceCode = function (str, search, replacement) {
+    var replaceCode = function(str, search, replacement) {
         if (str) {
             return str.replace(new RegExp(search, 'g'), replacement);
         }
     };
 
-    var replaceAll = function (search, originalText, precision) {
+    var replaceAll = function(search, originalText, precision) {
         finalText = "";
         if (originalText) {
             var text = originalText.toLowerCase();
@@ -472,7 +476,7 @@
                 // Size of the substring to extract
                 var size = 500;
                 var lastSpanIndex = originalText.lastIndexOf("</span>"); // Avoid to cut a span and end with weird html things.
-                if(lastSpanIndex > 500)
+                if (lastSpanIndex > 500)
                     size = lastSpanIndex + 8;
                 if (size + begIndex > originalText.length) {
                     size = originalText.length - begIndex;
@@ -486,7 +490,7 @@
     };
 
     // Finds the first occurance of our research
-    Array.prototype.firstOccurance = function (term) {
+    Array.prototype.firstOccurance = function(term) {
         for (var i = 0; i < this.length; i++) {
             if (this[i].indexOf(term) != -1) {
                 return parseInt(i, 10);

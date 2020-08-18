@@ -1,22 +1,33 @@
----
-PG_TITLE: Apply Material to Faces
----
-
 # How To Map Material to Individual Mesh Faces
 
 This method is only available when creating a mesh using the _MeshBuilder_ method.
 
 The following meshes have identifiable faces: box; cylinder; extruded polygon and polyhedron have identifiable faces and have the _faceUV_ and _faceColors_ parameters in the options using the _MeshBuilder_ method  to create them. This means that each of their faces can have a different texture or color. For colors a particular color is mapped to a particular face. For textures part of the image file is mapped to a particular face. This can be done with any image and it is often useful to use a texture atlas containing a number of images combined into one image file.
 
-When you are concerned about the orientation of the images on the faces then it can be necessary to have different orientations of the seperate images in the image file.
+When you are concerned about the orientation of the images on the faces then it can be necessary to have different orientations of the separate images in the image file.
 
 Using these methods on the above meshes there is no need for submaterials or submeshes.
 
+As a prerequisite, you may want to learn more about UV mapping on [Wikipedia](https://en.wikipedia.org/wiki/UV_mapping).
+
+## Face Numbers
+
+The playground below shows that face numbering using `MeshBuilder.CreateBox` is that 
+
+* side 0 faces the positive z direction
+* side 1 faces the negative z direction
+* side 2 faces the positive x direction
+* side 3 faces the negative x direction
+* side 4 faces the positive y direction
+* side 5 faces the negative y direction
+
+* [Playground Example Face Numbers](https://www.babylonjs-playground.com/#ICLXQ8#1)
+
 ## Texture Atlas
 
-A texture atlas also know as a _sprite sheet_ or _sprite atlas_ contains a range of images as in the example below.
+A texture atlas also known as a _sprite sheet_ or _sprite atlas_ contains a range of images as in the example below.
 
-![Sprite Altlas](http://jerome.bousquie.fr/BJS/images/spriteAtlas.png)
+![Sprite Altlas](/img/how_to/apply-material-to-faces/spriteAtlas.png)
 
 In this atlas there are 24 different images in a 4 rows of 6 a way of mapping each sprite onto an individual face is needed. 
 
@@ -32,11 +43,11 @@ As there are six sprites in a row and four in a column divide the image into a g
 
 ![Sprite Atlas with Grid](/img/how_to/Materials/spritesheet1.jpg)
 
-Consider the sprite in the grid space marked with a *, this has bottom left coordinates of (2/6, 1/4) and top right coordinates of (3/6, 2/4). Counting the columns as 0, 1, 2, 3, 4, 5 and the rows as 0, 1, 2, 3  it is in column 2 and row 1.
+Consider the sprite in the grid space marked with `a *`, this has bottom left coordinates of `(2/6, 1/4)` and top right coordinates of `(3/6, 2/4)`. Counting the columns as `0, 1, 2, 3, 4, 5` and the rows as `0, 1, 2, 3` it is in column 2 and row 1.
 
-Bottom left is (2 * 1/6, 1 * 1/4) and top right is ((2 + 1) * 1/6, (1 + 1) * 1/4)
+Bottom left is `(2 * 1/6, 1 * 1/4)` and top right is `((2 + 1) * 1/6, (1 + 1) * 1/4)`.
 
-In general for this texture atlas a sprite in column c and row r  will have coordinates bottom left (c * 1/6, r * 1/4) and top right ((c + 1) * 1/6, (r + 1) * 1/4).
+In general for this texture atlas a sprite in column `c` and row `r` will have coordinates bottom left `(c * 1/6, r * 1/4)` and top right `((c + 1) * 1/6, (r + 1) * 1/4)`.
 
 With faces of the mesh numbered from 0 when you want to map face f to the sprite at grid (c, r) take an array faceUV and put
 
@@ -219,7 +230,24 @@ which gives another way to swap coordinates. For example to reflect in a vertica
   faceUV[f].z = temp;
 ```
 
-### How To Orientate a Sprite on a Face with the Texture Atlas
+### How To Orientate a Sprite on a Face with the Texture Atlas From Version 4.0
+
+Three new optional parameters were added to `CreateBox` in the V4.0 update, these are
+
+* wrap - boolean (default = false), when true all vertical sides (0, 1, 2, 3) will apply image textures in the correct, upright, direction and the two horizontal sides (4, 5) will apply image textures so that when the box is when rotated around the x axis so that these sides are vertical the applied image textures will be applied in their original orientations;
+* topBaseAt - integer, 0, 1, 2, 3,  (default = 1), the bottom (base) of the image for the top of the box is next the the side with the number given; 
+* bottomBaseAt- integer, 0, 1, 2, 3,  (default = 0), the bottom (base) of the image for the bottom of the box is next the the side with the number given.
+
+In the following playground the two boxes at the top do not use the wrap parameter and the result is backwards compatible with earlier versions of Babylon.js. The lower boxes are with wrap set to true.
+
+* [Playground Example - Not Wrap and Wrap](https://www.babylonjs-playground.com/#ICLXQ8#3)
+
+The next playground shows the use of non-default values for topBaseAt and bottomBaseAt
+
+* [Playground Example - Wrap with Top and Bottom Rotated](https://www.babylonjs-playground.com/#ICLXQ8#4)
+* [Playground Example - Cube Face](https://www.babylonjs-playground.com/#ICLXQ8)
+
+### How To Orientate a Sprite on a Face with the Texture Atlas Before Version 4.0
 
 Here consider just the orientation of the sides as viewed in the playground below. 
 
@@ -288,7 +316,7 @@ A cylinder has three surfaces, the top, the bottom and the tube joining them. Fo
 
 The following texture image is split into two parts, an approximation to a top and the label. The bottom will be colored just using faceColors and so the bottom face uv coordinates will be 0, 0, 0, 0.
 
-![can label and top](https://i.imgur.com/Q6i4ZiX.jpg)
+![can label and top](/img/how_to/apply-material-to-faces/can-texture.jpg)
 
 The label part has width 866 pixels and height 319 pixels.
 
@@ -308,7 +336,7 @@ Also note that because of how a cylinder's mesh is constructed the horizontal co
 
 An extruded polygon has three surfaces top, bottom and extruded sides, face 0 is the top, face 1 the extruded sides and face 2 the bottom.
 
-* [Playground Example of Extruded Polygons for a House](http://www.babylonjs-playground.com/#RNCYVM#2)
+* [Playground Example of Extruded Polygons for a House](https://www.babylonjs-playground.com/#RNCYVM#2)
 
 ## Polyhedra.
 

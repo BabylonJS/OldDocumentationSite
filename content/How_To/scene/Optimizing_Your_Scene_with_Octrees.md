@@ -1,8 +1,3 @@
----
-ID_PAGE: 22561
-PG_TITLE: How To Optimize Your Scene with Octrees
----
-
 # How To Optimize Your Scene with Octrees
 Octrees are a really powerful data structure that can quickly select entities based on space coordinates.
 More on wikipedia: http://en.wikipedia.org/wiki/Octree

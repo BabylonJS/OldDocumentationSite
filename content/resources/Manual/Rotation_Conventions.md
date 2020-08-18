@@ -1,7 +1,3 @@
----
-PG_TITLE: Rotation Conventions
----
-
 # Rotation Conventions
 
 There are several methods of achieving rotations within BabylonJS all of which use a particular convention.
@@ -39,7 +35,7 @@ mesh.rotation = new BABYLON.Vector3(pitch, yaw, roll);
 
 which will produce this orientation whatever the orientation of the mesh prior to its application. The playground below demonstrates this by randomly generating angles and then applying these two methods to two different boxes which remain in alignment.
 
-* [Playground Example - YXZ yaw, pitch, roll](http://www.babylonjs-playground.com/#1ST43U#50)
+* [Playground Example - YXZ yaw, pitch, roll](https://www.babylonjs-playground.com/#1ST43U#50)
 
 ### ZXY *World Axes*
 
@@ -86,12 +82,10 @@ mesh.rotationQuaternion = new BABYLON.Quaternion.RotationAxis(axis, angle);
 
 where axis is a Vector3 and the angle is the rotation in radians. 
 
-### Warning
-You cannot use both a **rotation** and a **rotationQuaternion** on a mesh. When a **rotationQuaternion** is applied to a mesh this overwrites the current and subsequent use of **rotation** producing the wrong orientation. Should you want to use **rotation** after a **rotationQuaternion** has been applied, for example on an imported mesh, then the **rotationQuaternion** has to be set to _null_.
+### Historical Warning 
+When using BabylonJS versions &lt; 4.00 you cannot use both a **rotation** and a **rotationQuaternion** on a mesh. When a **rotationQuaternion** is applied to a mesh this overwrites the current and subsequent use of **rotation** producing the wrong orientation. Should you want to use **rotation** after a **rotationQuaternion** has been applied, for example on an imported mesh, then the **rotationQuaternion** has to be set to _null_. 
 
-To see this effect comment out line 48 in the following playground
-
-* [Playground Example re-set rotationQuaternion](https://www.babylonjs-playground.com/#1ST43U#77)
+From version 4 onwards, in limited situations, the setting of **rotationQuaternion** to _null_ is done automatically on whenever **rotation** is set directly. When using, for example, physics, the NullEngine or even `rotation.set(0.23, 0.17, 1.84)` you find rotation errors it is worth setting **rotationQuaternion** to _null_ before updating **rotation**.
 
 
 ## Euler Angles to Quaternions
@@ -156,5 +150,5 @@ To illustrate this the following playground generates three random angles, puts 
 and selects at random either to use world or local for all axes. This data is then used to randomise the orientation 
 of a just created box using the _rotate_ method. The _rotate_ method achieves the rotation by generating and using a _rotationQuaternion_  on the box. The _rotationQuaternion_ generated is used to produce the Euler angles to rotate another box, box1, using box1.rotation to obtain the same orientation as the first box.
 
-* [Playground Example Random Orientation to Euler Angles for mesh.rotation](http://www.babylonjs-playground.com/#1ST43U#7)
+* [Playground Example Random Orientation to Euler Angles for mesh.rotation](https://www.babylonjs-playground.com/#1ST43U#7)
 

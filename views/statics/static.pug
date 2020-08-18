@@ -2,7 +2,13 @@ include ../includes/header
     include ../includes/banner
     #wrapper
         .statics-banner
-            h1=staticContent.category.replace("_", " ")
+            .img-holder.details
+                a(href="/")
+                    img(src="/img/babylonjs_identity_color_dark.svg")
+                a(href="/" + staticContent.category)
+                    h1=staticContent.category.replace("_", " ")
+                div
+                
         .horizontal-separator
         .static-content
             h1!=staticContent.staticName
@@ -14,7 +20,7 @@ include ../includes/header
                             i.tocIcon.fa.fa-book
                             | Table of contents
                         span.tocToggle
-                            i.fa.fa-arrow-up
+                            i.fa.fa-chevron-up
                     .tocContent!=staticContent.toc
             #staticContent!=staticContent.staticContent
     include ../includes/footer

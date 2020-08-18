@@ -1,8 +1,3 @@
----
-ID_PAGE: 25094
-PG_TITLE: 17. Decals
----
-
 # How to Use Decals
 
 ![Decal](http://www.babylonjs.com/screenshots/decals.jpg)
@@ -24,7 +19,7 @@ normal|_(Vector3)_  the normal of the mesh where the decal is applied onto (Worl
 size|_(Vector3)_  the x, y, z sizes of the decal|(1, 1, 1)
 angle|_(number)_ the angle to rotate the decal|0
 
-[A Playground Example of Decals](http://www.babylonjs-playground.com/#1BAPRM#73) click on the cat.
+[A Playground Example of Decals](https://www.babylonjs-playground.com/#1BAPRM#73) click on the cat.
 
 # Further Reading
 

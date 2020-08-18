@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Optimize Your Scene
----
-
 # How To Optimize Your Scene
 
 This tutorial will help you find some links and info on how you can improve your scene regarding rendering performance.
@@ -53,10 +49,25 @@ scene.unfreezeActiveMeshes();
 
 Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
 
+Freezing active meshes list may cause some things on the scene to stop updating. One example is [RenderTargetTexture](/how_to/how_to_use_rendertargettexture_and_multiple_passes), if it's used by mesh materials. For that case RTT needs to be explicitly added to the list of active camera's custom render targets, which will guarantee that it ends up in the render list of the scene:
+
+```javascript
+camera.customRenderTargets.push(renderTargetTexture);
+```
+
+## Not updating the bounding info
+In conjonction with `mesh.alwaysSelectAsActiveMesh` you can also decide to turn off bounding info synchronization. This way the world matrix computation will be faster as the bounding info will not be updated (this could be a problem if you want to use picking or collisions):
+
+```
+mesh.doNotSyncBoundingInfo = true;
+```
+
 ## Reducing draw calls
 As soon as you can please use [instances](/How_To/how_to_use_instances) as they are drawn with one single draw call.
 
 If sharing the same material is a problem, you can then think about using clones which share the same geometry with `mesh.clone("newName")`
+
+One remark regarding instances: If one of the instances has a world matrix with a different determinant (eg. one instance has a negative scale where others don't), babylon.js will be forced to remove the back face culling from their material.
 
 ## Reducing calls to gl.clear()
 By default, Babylon.js automatically clears the color, depth, and stencil buffers before rendering the scene. It also clears the depth and stencil buffers after switching to a new camera and before rendering a new RenderingGroup. On systems with poor fill rates, these can add up quickly and have a significant impact on performance.
@@ -93,16 +104,14 @@ mesh.convertToUnIndexedMesh();
 ```
 For example this works very well for a cube where it is more efficient to send 32 positions instead of 24 positions and 32 indices.
 
-## Turning AdaptToDeviceRatio Off
-By default, Babylon.js will adapt to device ratio in order to produce the best possible quality even on high-DPI devices.
+## Turning AdaptToDeviceRatio Off/On
+By default, Babylon.js does not adapt to device ratio anymore. It by default focuses on perf vs quality after receiving lots of community requests.
 
-The drawback is that this could cost a lot on low-end devices. You can turn it off with the fourth parameter of the Engine constructor:
+The drawback is that this could look low rea. You can turn it on with the fourth parameter of the Engine constructor:
 
 ```
-var engine = new BABYLON.Engine(canvas, antialiasing, null, false);
+var engine = new BABYLON.Engine(canvas, antialiasing, null, true);
 ```
-
-In the same constructor, you may also want to turn off antialiasing support with the second parameter.
 
 ## Blocking the dirty mechanism
 
@@ -135,14 +144,14 @@ As a developer you should not be concerned by this mechanism. However, to suppor
 If you created resources that need to be rebuilt (like vertex buffers or index buffers), you can use the `engine.onContextLostObservable` and `engine.onContextRestoredObservable` observables to keep track of the context lost and context restored events.
 
 ## Scene with large number of meshes
-If you have a large number of meshes in a scene, and need to reduce the time spent in adding/removing thoses meshes to/from the scene, There are several options of the `Scene` constructor that can help :
+If you have a large number of meshes in a scene, and need to reduce the time spent when adding/removing those meshes to/from the scene, There are several options of the `Scene` constructor that can help :
  - Setting the option `useGeometryIdsMap` to `true` will speed-up the addition and removal of `Geometry` in the scene.
  - Setting the option `useMaterialMeshMap` to `true` will speed-up the disposing of `Material` by reducing the time spent to look for bound meshes.
  - Setting the option `useClonedMeshMap` to `true` will speed-up the disposing of `Mesh` by reducing the time spent to look for associated cloned meshes.
 
 For each of this options turned on, Babylon.js will need an additional amount of memory.
 
-Also, If you are disposing a large number of meshes in a row, you can save unecessary computation by turnning the scene property `blockfreeActiveMeshesAndRenderingGroups` to true just before disposing the meshes, and set it back to `false` just after, like this :
+Also, If you are disposing a large number of meshes in a row, you can save unnecessary computation by turning the scene property `blockfreeActiveMeshesAndRenderingGroups` to true just before disposing the meshes, and set it back to `false` just after, like this :
 ````javascript
 
 scene.blockfreeActiveMeshesAndRenderingGroups = true;
@@ -179,7 +188,7 @@ Optimistic Inclusion modes give a little gain. They keep the same accuracy than 
 BoundingSphereOnly modes, because they reduce a lot the accuracy, give a good perf gain. These should not be used with high poly meshes while sending false positives to the GPU has a real rendering cost. These can be very interesting for numerous low poly meshes instead. *Really useful if you are CPU bound**.  
 
 ## Instrumentation
-Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optmize what needs to be optimized.
+Instrumentation is a key tool when you want to optimize a scene. It will help you figure out where are the bottlenecks so you will be able to optimize what needs to be optimized.
 
 ### EngineInstrumentation
 The EngineInstrumentation class allows you to get the following counters:
@@ -195,10 +204,9 @@ GPU timer require a special extension (EXT_DISJOINT_TIMER_QUERY) in order to wor
 
 ### SceneInstrumentation
 The SceneInstrumentation class allows you to get the following counters (per scene):
-* *activeMeshesEvaluationTimeCounter*: Time (in milliseconds) spent to evaluable active meshes (based on active camra frustum). Must be turned on with `instrumentation.captureActiveMeshesEvaluationTime = true`.
+* *activeMeshesEvaluationTimeCounter*: Time (in milliseconds) spent to evaluate active meshes (based on active camera frustum). Must be turned on with `instrumentation.captureActiveMeshesEvaluationTime = true`.
 * *renderTargetsRenderTimeCounter*: Time (in milliseconds) spent to render all render target textures. Must be turned on with `instrumentation.captureRenderTargetsRenderTime = true`.
 * *drawCallsCounter*: Number of draw calls (actual calls to engine.draw) per frame. A good advice is to keep this number as small as possible.
-* *textureCollisionsCounter*: Number of time a texture has to be removed to free a texture slot. Generally, there are 16 texture slots on most recent hardwares. Babylon.js will try to use all of them as the process of binding a texture is expensive. It is a good idea to try to keep this number as low as possible.
 * *frameTimeCounter*: Time (in milliseconds) spent to process an entire frame (including animations, physics, render targets, special fx, etc.). Must be turned on with `instrumentation.captureFrameTime = true`.
 * *renderTimeCounter*: Time (in milliseconds) spent to render a frame. Must be turned on with `instrumentation.captureRenderTime = true`.
 * *interFrameTimeCounter*: Time (in milliseconds) spent between two frames. Must be turned on with `instrumentation.captureInterFrameTime = true`.
@@ -207,11 +215,15 @@ The SceneInstrumentation class allows you to get the following counters (per sce
 * *physicsTimeCounter*: Time (in milliseconds) spent simulating physics. Must be turned on with `instrumentation.capturePhysicsTime = true`.
 * *cameraRenderTimeCounter*: Time (in milliseconds) spent to render a camera. Must be turned on with `instrumentation.captureCameraRenderTime = true`.
 
-Those counters are all resetted to 0 at the beginning of each frame. Therefore it is easier to access them in the onAfterRender callback or observable.
+Those counters are all reset to 0 at the beginning of each frame. Therefore it is easier to access them in the onAfterRender callback or observable.
 
 ## Inspector
 
 Starting with Babylon.js v4.0 you can use the Inspector to [analyze your scene](https://doc.babylonjs.com/features/playground_debuglayer#inspector-pane) or turn on/off features or [debugging tools](https://doc.babylonjs.com/features/playground_debuglayer#specific-debug-tools).
+
+## VR/XR scenarios
+
+When using BabylonJS with WebVR or WebXR, enabling [Multiview](/How_To/Multiview) is a quick way to almost double the rendering speed.
 
 # Further Reading
 
@@ -219,4 +231,5 @@ Starting with Babylon.js v4.0 you can use the Inspector to [analyze your scene](
 
 [How to Use Scene Optimizer](/How_To/How_to_use_SceneOptimizer)
 [How To Optimize Your Scene With Octrees](/How_To/optimizing_your_scene_with_octrees)
+[Multiview VR optimization](/How_To/Multiview)
 

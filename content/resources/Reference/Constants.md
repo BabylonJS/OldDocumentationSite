@@ -1,7 +1,3 @@
----
-PG_TITLE: BabylonJS Constants
----
-
 # BabylonJS Constants
 
 

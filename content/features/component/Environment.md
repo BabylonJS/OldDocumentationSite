@@ -1,7 +1,3 @@
----
-PG_TITLE: Realistic Environments
----
-
 # Realistic Environments
 
 An environment is more than just basic shapes, basic textures and basic lighting in a scene. A realistic environment would have a sky, uneven terrain, shadows and perhaps water, fog and different lighting effects. Some of these effects such as adding a sky, uneven ground and fog are handled quite simply and are described in Environment 101. Others require a shader and some are post processes. Some of these are provided for in the Babylon.js engine itself others have to be loaded separately as extensions.

@@ -1,7 +1,3 @@
----
-PG_TITLE: The Inspector
----
-
 # How to Display and use The Inspector
 
 ## Invocation
@@ -12,11 +8,13 @@ You can display the Inspector by calling:
 scene.debugLayer.show();
 ```
 
+The `show` function will return a promise that you can use to know when the Inspector is loaded and visible.
+
 ## Loading
 
 **Provided** your project is running on a **server** the Inspector is automatically loaded from the BabylonJS server **when** it is called as above. 
 
-By default, this url is : `https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js`
+The latest version of the inspector can be pulled from: `https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js`
 
 You can update this URL by setting the variable:
 
@@ -51,7 +49,7 @@ Example:
 ```javascript
 scene.debugLayer.show({
     overlay:false, 
-    globalRoot:document.getElementById('#mydiv')
+    globalRoot:document.getElementById('mydiv')
 });
 ```
 
@@ -76,9 +74,21 @@ scene.debugLayer.onSelectionChangedObservable.add((result) => {});
 
 The result object will be the new selected object.
 
+## Highlighting a specific entity
+
+By calling the following code, you can make sure to select a specific entity and highlight a specific portion of its property grid:
+
+```
+scene.debugLayer.show().then((layer) => {
+    layer.select(pbrmaterial, "ANISOTROPIC");
+});
+```
+
 ## Extensibility
 
 We know that it would be impossible to provide a tool that will target every single need that a Babylon.js may have. This is why the new inspector supports an extensibility API.
+
+### Explorer
 
 You can use the `explorerExtensibility` property of the config object to define an array of predicates that will add new options to scene explorer actions.:
 
@@ -120,6 +130,43 @@ BABYLON.Inspector.Show(scene, {
 Each predicate will be evaluated with all entites displayed in the scene explorer. If the predicate returns true, then the entries will be added to the entity's actions:
 
 ![explorer extensibility](/img/features/debuglayer/exploreraddons.png)
+
+### Inspector
+
+You can also decide to add your own property controls to any property grid. To do so you can declare an array of inspectable properties:
+
+```
+var mesh = BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, scene);
+
+mesh.myProperty = BABYLON.Color3.Red();
+
+mesh.inspectableCustomProperties = [
+    {
+        label: "My property",
+        propertyName: "myProperty",
+        type: BABYLON.InspectableType.Color3
+    }
+]
+```
+
+The `inspectableCustomProperties` property can be found on:
+- Nodes
+- Materials
+- Textures
+- Skeletons
+
+You can set it up to an array of `IInspectable` which are defined by:
+- a label
+- a property name 
+- a type which could be 
+  - BABYLON.InspectableType.Checkbox
+  - BABYLON.InspectableType.Slider
+  - BABYLON.InspectableType.Color3
+  - BABYLON.InspectableType.Vector3
+  - BABYLON.InspectableType.Quaternion
+  - BABYLON.InspectableType.String
+- For sliders, you can specify `min`, `max` and `step`
+
 
 # Further Reading
 

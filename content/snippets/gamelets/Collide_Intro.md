@@ -1,18 +1,14 @@
----
-PG_TITLE: Introduction to Colliding Complex Shapes
----
+# Introduction to Developing a System For Collisions
 
-# Introduction to Colliding Complex Shapes
+The aim of this series of tutorials is to consider how a collision system can be built using just BabylonJS code (ie no physics engines). Some of the issues involved in developing such a system are described. The ideas in this tutorial can be used to build a collision system of complex shapes. 
 
-In these tutorials a complex shape is one constructed from spheres of the same size in such a way that any one sphere 
+In this case a complex shape is one constructed from spheres of the same size in such a way that any one sphere 
 is always in contact with at least one other sphere in the shape. A complex shape is likely to have concave sections. 
-Multiple shapes will be constructed using the Solid Particle System because of the speed and flexibility if gives to using 
-many similar shapes.
+An example of colliding complex shapes is given below. It has been constructed using the Solid Particle System because of the speed and flexibility when using many repeated shapes.
 
 ![Complex Shape](/img/samples/collide1.jpg)
 
-
-The aim of this series of tutorials is to develop a way of using just BabylonJS code (ie no physics engines) to simulate the the collision of complex shapes. The series will start with looking at the issues involved in collision and (hopefully) end with a full collision system.
+* [Playground Example _ Complex Shapes in Collision](https://www.babylonjs-playground.com/#WLYB9)
 
 To begin with the frame rate will be taken as constant throughout the animation and speed for any shape will be in units per frame.
 

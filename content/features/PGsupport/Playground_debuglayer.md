@@ -1,10 +1,10 @@
----
-PG_TITLE: Playground Inspector
----
-
 # What Is It?
 
-Babylon.js inspector is a debugging tool created to help pinpoint issues you may have with a scene. It offers multiple tools like:
+Babylon.js inspector is a visual debugging tool created to help pinpoint issues you may have with a scene.
+
+For a video overview of the inspector, check out [Introduction to the inspector - video series](intro_inspector).
+
+The inspector offers multiple tools like:
 - A hierarchical view of your scene
 - Multiple property grids to let you dynamically change object properties
 - Specific helpers like the skeleton viewer, etc.
@@ -12,6 +12,8 @@ Babylon.js inspector is a debugging tool created to help pinpoint issues you may
 Its interface uses two panes:
 - The scene explorer pane
 - The inspector pane
+
+
 
 ![debug layer overview](/img/features/debuglayer/debuglayer.jpg)
 
@@ -71,6 +73,12 @@ You can use the GUI control actions to:
 - Display outline of a control
 - Show / hide a specific control
 
+## Rendering pipeline actions
+
+![Rendering pipeline actions](/img/features/debuglayer/renderpipelineactions.jpg)
+
+When your scene does not contain a default rendering pipeline, you can right-click on the rendering pipelines node to get a context menu letting you create a new default rendering pipeline.
+
 
 # Inspector pane
 
@@ -112,7 +120,7 @@ This tool (available in the Debug pane) will render a grid on the (0,0,0) plane:
 
 ## Bones viewer
 
-This tool (available in the Debug pane) will render your skeletons:
+This tool (available in the skeleton property grid) will render your skeletons:
 
 ![bones](/img/features/debuglayer/bones.jpg)
 
@@ -142,6 +150,7 @@ This tool (available in the property pane when you select a material with textur
 
 # Further Reading
 
+[Introduction to the Inspector - video series](intro_inspector)  
 [How To Use The Inspector in Projects](/How_To/debug_layer)  
 [How To Customize the Inspector](/How_To/customize_debug_layer)  
 [Dev log about the inspector](https://medium.com/@babylonjs/dev-log-creating-the-new-inspector-b15c50900205)

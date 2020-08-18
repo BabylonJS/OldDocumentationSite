@@ -4,11 +4,11 @@
 $lightgrey : #f6f6f6;
 $grey : #dcdcdc;
 $darkgrey: #9b9b9b;
-$blue : #00AEEF;
+$blue : #BB464B;
 $black : #333;
 $darker_black : #2D2D2D;
 $yellow: #f8eec7;
-$dark : rgb(24, 34, 45);
+$dark : #2A2342;
 
 //--------------
 // FONTS
@@ -26,7 +26,7 @@ $fa-font-path: "../fonts/font-awesome";
 // Default font for regular text
 $font-regular: "Roboto";
 // Default font for titles
-$font-title: "Open Sans";
+$font-title: "acumin-pro";
 // Defautl font for source code
 $font-code:"Inconsolata";
 
@@ -80,7 +80,7 @@ code {
 .horizontal-separator{
   width       : 80%;
   height      : 0;
-  border-top  : 1px solid $blue;
+  //border-top  : 1px solid $blue;
   font-size   :0;
   margin      : 0 auto 20px auto;
 }
@@ -111,7 +111,6 @@ p {
 
 .iframeContainer {
     $iframeHeight:450px;
-    margin:auto;
     width:50%;
     min-width:450px;
     height:$iframeHeight;

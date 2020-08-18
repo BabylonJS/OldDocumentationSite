@@ -1,6 +1,3 @@
----
-PG_TITLE: How To Check When Point is Inside a Mesh
----
  
 # How To Check When Point is Inside a Mesh
 
@@ -85,7 +82,6 @@ BABYLON.Mesh.prototype.pointIsInside = function (point) {
 		return false;
 	}
 
-	
 	var pointFound = false;
 	var d = 0;
 	var hitCount = 0;
@@ -93,29 +89,23 @@ BABYLON.Mesh.prototype.pointIsInside = function (point) {
 	var distance = 0;
 	var ray = new BABYLON.Ray(BABYLON.Vector3.Zero(), BABYLON.Axis.X, diameter);;
 	var pickInfo;
-	var direction = BABYLON.Vector3.Zero();
+	var direction = point.clone();
+    var refPoint = point.clone();
 
 	
-	while(d < 2 && !pointFound) {
-		hitCount = 0;
-		direction = BABYLON.Axis.X.scale(2 * (0.5 - d));
-		ray.origin = point;
-        ray.direction = direction;
-        ray.distance = diameter;		
+	hitCount = 0;
+	ray.origin = refPoint;
+    ray.direction = direction;
+    ray.distance = diameter;		
+	pickInfo = ray.intersectsMesh(this);
+	while (pickInfo.hit) {	
+		hitCount++;
+		pickInfo.pickedPoint.addToRef(direction.scale(0.00000001), refPoint);
+		ray.origin  = refPoint;
 		pickInfo = ray.intersectsMesh(this);
-		while (pickInfo.hit) {	
-			hitCount++;
-			pickInfo.pickedPoint.addToRef(direction.scale(0.00000001), point);
-			ray.origin  = point;
-			pickInfo = ray.intersectsMesh(this);
-		}	
-		if((hitCount % 2) === 1) {
-			pointFound = true;
-		}
-		else if ((hitCount % 2) === 0 && hitCount > 0) {
-			pointFound = true;
-		}
-		d++;
+	}	
+	if((hitCount % 2) === 1) {
+		pointFound = true;
 	}
 	
 	return pointFound;
@@ -126,9 +116,10 @@ BABYLON.Mesh.prototype.pointIsInside = function (point) {
 
 Generate random points in a volume around a twelve pointed star mesh. Place a sphere at each point and turn it red when inside the star.
 
-* [Playground Example - Twelve Pointed Star](https://www.babylonjs-playground.com/#XJEG9A#2)
+* [Playground Example - Twelve Pointed Star](https://www.babylonjs-playground.com/#XJEG9A#4)
 
 # Further Reading
 
-[How To Create Points Inside a Mesh](/snippets/innerMeshPoints)
+[How To Create Points Inside a Mesh](/snippets/innerMeshPoints)  
+[How To Create Points on a Mesh Surface](/snippets/SurfaceMeshPoints)  
 

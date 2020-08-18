@@ -1,12 +1,9 @@
----
-ID_PAGE: 24837
-PG_TITLE: How To Use the SSAO rendering pipeline
----
-
 # How To Use the SSAO rendering pipeline
 
 BABYLON.SSAORenderingPipeline is a rendering pipeline (chained post-processes) that will compute the ambient occlusion of a given scene from the screen space.
-You can find an example in our playground [here]( https://www.babylonjs-playground.com/?24)
+You can find an example in our playground:
+
+https://www.babylonjs-playground.com/#N96NXC
 
 The post-processes chain is defined by:
 
@@ -18,34 +15,34 @@ The post-processes chain is defined by:
 
 Using it is pretty straightforward:
 
-```
+```javascript
 var ssao = new BABYLON.SSAORenderingPipeline('ssaopipeline', scene, 0.75);
 ```
 
 The third argument is the ratio used by SSAO, Horizontal blur and Vertical blur post-processes
 You can also set an array of Camera as fourth argument, then the constructor will automatically attach the rendering pipeline to the given cameras like:
 
-```
+```javascript
 var ssao = new BABYLON.SSAORenderingPipeline('ssaopipeline', scene, 0.75, [camera1 etc.]);
 ```
 
 If you want to attach manually the rendering pipeline, just use the scene rendering pipeline manager like:
 
-```
+```javascript
 var ssao = new BABYLON.SSAORenderingPipeline('ssaopipeline', scene, 0.75);
 scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline("ssaopipeline", cameras);
 ```
 
 **Warning: To save your performances, you should compute the SSAO/blurH/blurV with a lower ratio than 1.0 **
 
-If you want to detach and destroy the rendering pipeline, you can just call ```dispose()``` method
-```
+If you want to detach and destroy the rendering pipeline, you can just call `dispose()` method
+```javascript
 ssao.dispose();
 ```
 
 You can see the SSAO post-process output by detaching the combine post-process like:
 
-```
+```javascript
 scene.postProcessRenderPipelineManager.disableEffectInPipeline("ssaopipeline", ssao.SSAOCombineRenderEffect, cameras);
 ```
 
@@ -53,6 +50,6 @@ scene.postProcessRenderPipelineManager.disableEffectInPipeline("ssaopipeline", s
 
 For more customization, you can specify the SSAO and Combine post-processes ratios like:
 
-```
+```javascript
 var ssao = new BABYLON.SSAORenderingPipeline('ssaopipeline', scene, { ssaoRatio: 0.5, combineRatio: 1.0 }, [camera1 etc.]);
 ```

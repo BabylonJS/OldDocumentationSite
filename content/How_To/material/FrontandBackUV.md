@@ -1,7 +1,3 @@
----
-PG_TITLE: FrontUV and BackUV
----
-
 # How to Have Different Textures on the Front and Back of a Mesh
 
 Having a front and a back makes most sense when talking about flat meshes such as a plane, a disc or a polygon. All of which have exactly two sides both of which can be seen only when the option _sideOrientation_ is set to **BABYLON.Mesh.DOUBLESIDE**.
@@ -10,7 +6,7 @@ However, many meashes have the option _sideOrientation_ and this method applies 
 
 To have different textures front and back the front and back image must be in the same file, like the one below
 
-![front and back images](https://i.imgur.com/ntIgFT6.jpg)
+![front and back images](/img/how_to/different-material-front-back/card.jpg)
 
 This is then split using the _frontUVs_ and _backUVs_ options.
 
@@ -47,7 +43,7 @@ plane.material = mat;
 ## Two Sided Examples
 
 * [Playground Example on a Plane](https://www.babylonjs-playground.com/#LXZPJK#3)
-* [Playground Example on a Polygon](http://playground.babylonjs.com/#4G18GY#2)
+* [Playground Example on a Polygon](https://playground.babylonjs.com/#4G18GY#2)
 
 ## Inside and Outside Examples
 

@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Customize Particles
----
-
 # How To Customize Particles
 
 As you can find in [Babylon101](/babylon101/particles) there are many properties of the particle system that can be tweaked to control the look of a particle system. Babylon.js allows you even more customization to obtain the system you want. These can be split into into two types custom functions and custom effects. 
@@ -23,7 +19,7 @@ Since Babylon.js V3.2 you can use the first two, `startDirectionFunction` and `s
 The start direction function has the default form
 
 ```javascript
-particleSystem.startDirectionFunction = (emitPower: number, worldMatrix: Matrix, directionToUpdate: Vector3) {
+particleSystem.startDirectionFunction = (emitPower: number, worldMatrix: Matrix, directionToUpdate: Vector3, particle: Particle, isLocal: boolean) {
     var randX = randomNumber(this.direction1.x, this.direction2.x);
     var randY = randomNumber(this.direction1.y, this.direction2.y);
     var randZ = randomNumber(this.direction1.z, this.direction2.z);
@@ -35,7 +31,7 @@ particleSystem.startDirectionFunction = (emitPower: number, worldMatrix: Matrix,
 The start position function has the default form
 
 ```javascript
-particleSystem.startPositionFunction = (worldMatrix: Matrix, positionToUpdate: Vector3): void => {
+particleSystem.startPositionFunction = (worldMatrix: Matrix, positionToUpdate: Vector3, particle: Particle, isLocal: boolean): void => {
     var randX = randomNumber(this.minEmitBox.x, this.maxEmitBox.x);
     var randY = randomNumber(this.minEmitBox.y, this.maxEmitBox.y);
     var randZ = randomNumber(this.minEmitBox.z, this.maxEmitBox.z);
@@ -218,6 +214,7 @@ var customEffect = engine.createEffectForParticles(fragment, uniforms, samplers)
 * samplers: [strings], array of names of samplers for additional textures!
 
 ### Fragment Shader Assignment
+
 When assigning a fragment shader to the shader store the name should have `FragmentShader` appended. So for example the creation of a custom effect using fragment name `myParticle` would require a `myParticleFragmentShader` added to the shader store
 
 
@@ -228,6 +225,7 @@ BABYLON.Effect.ShadersStore["myParticleFragmentShader"] = [...]
 ```javascript
 var customEffect = engine.createEffectForParticles("myParticle", [...]);
 ```
+
 ### Uniforms Assignment
 
 By default Babylon.js will give you a vUV and a vColor varying parameter. It will also transmit you the particle texture. 
@@ -237,9 +235,10 @@ You can add further uniform variables, for example to pass a `uniform` variable 
 ```javascript
 var customEffect = engine.createEffectForParticles("myParticle", [time]);
 ```
+
 then pass it using `setFloat` with an `onBind` method for `customEffect`.
 
-```javscript
+```javascript
     var time = 0;
     var order = 0.1;
 
@@ -253,26 +252,31 @@ then pass it using `setFloat` with an `onBind` method for `customEffect`.
         }
     };
 ```
+
 you can see an example of the above in this playground  
 * [Playground Example - Custom Effect using Shader Store](https://www.babylonjs-playground.com/#1ASENS#43)
 
 
 ### Particle Effect Object
-The particle effect object is a slightly-modified [Babylon Effect Object](/classes/3.0/Effect). Also notice that the ShadersStore is a namespace upon this special effect-object. 
+
+The particle effect object is a slightly-modified [Babylon Effect Object](/api/classes/babylon.effect). Also notice that the ShadersStore is a namespace upon this special effect-object. 
 
 # Further Reading
 
-## Basic - L1
+## Features
 
-[Particles Overview](/features/Particles)  
+- [Particles Overview](/features/Particles)
 
-[Particles 101](/babylon101/particles)  
-[Shape Emitters](/babylon101/particles#shape-emitters)
+## Babylon 101
 
-[How to Create Animated Particles](/how_to/Animate)  
-[How to Use Sub Emitters](/how_to/Sub_Emitters)
+- [Particles 101](/babylon101/particles)  
+- [Shape Emitters](/babylon101/particles#shape-emitters)
 
-[Solid Particle System](/How_To/Solid_Particles)
+## How To
+
+- [How to Create Animated Particles](/how_to/Animate)  
+- [How to Use Sub Emitters](/how_to/Sub_Emitters)
+- [Solid Particle System](/how_to/Solid_Particles)
 
 
 

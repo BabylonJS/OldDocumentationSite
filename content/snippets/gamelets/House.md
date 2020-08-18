@@ -1,7 +1,3 @@
----
-PG_TITLE: Developing Build a House from Plans
----
-
 # Developing Build a House from Plans.
 
 Starting with a polygon as the footprint, a house is built by giving the footprint thickness (ply), extruding and adding door and window spaces at given positions.
@@ -78,7 +74,7 @@ top facets : w + 1 + 3nbWalls, w + 1 + 2nbWalls, w + 2nbWalls, w + 3nbWalls, w +
 
 outer facets : w + 1 + 3nbWalls, w + 3nbWalls, w + nbWalls, w + 1 + nbWalls, w + 1 + 3nbWalls, w + nbWalls
 
-* [Playground Example Walls Only](http://www.babylonjs-playground.com/#4GBWI5)
+* [Playground Example Walls Only](https://www.babylonjs-playground.com/#4GBWI5)
 
 So far fairly straight forward, now to add door and window spaces.
 
@@ -115,7 +111,7 @@ Since for polygonMeshBuilder corners have to be in counter clockwise consecutive
 
 At this stage code was written to add in the doors using existing positions. However as you can see in the following playground sharing vertices and normals made the triangular facets stand out.
 
-* [Playground Example with Shared Vertices](http://www.babylonjs-playground.com/#4GBWI5#1)
+* [Playground Example with Shared Vertices](https://www.babylonjs-playground.com/#4GBWI5#266)
 
 To stop this effect a flat shaded mesh is necessary and rather than just converting the existing mesh to a flat shaded one it was decided to re-code for a flat shaded mesh from the start. This simplified the procedures for adding in the edges to doors and windows. Also because the interior and exterior walls were now separate it gave the possibility of applying different materials and colors to these walls.
 
@@ -258,7 +254,7 @@ wall 6 - doorSpace door, left 1
 
 Applying the plan leads to
 
-* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#99)
+* [Playground Example of a House Built from a FloorPlan](https://www.babylonjs-playground.com/#4GBWI5#272)
 
 # Further Reading
 

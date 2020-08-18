@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Use a Physics Engine
----
-
 # How to Use a Physics Engine
 
 ## Introduction
@@ -15,7 +11,7 @@ This tutorial will show the basic usage of the physics system.
 
 ## What physics engine are integrated
 
-There are plugins for 3 physics engines:
+There are plugins for 4 physics engines:
 
 1. Cannon.js - a wonderful physics engine written entirely in JavaScript
 1. Oimo.js - a JS port of the lightweight Oimo physics engine
@@ -28,7 +24,7 @@ Once you picked an engine, do not forget to add a reference to the engine code:
 
 1. Cannon: https://cdn.babylonjs.com/cannon.js
 1. Oimo: https://cdn.babylonjs.com/Oimo.js
-1. Ammo: https://cdn.babylonjs.com/Ammo.js or directly from https://github.com/kripken/ammo.js/blob/master/builds/ammo.js
+1. Ammo: https://cdn.babylonjs.com/ammo.js or directly from https://github.com/kripken/ammo.js/blob/master/builds/ammo.js
 
 ## Basic usage
 
@@ -75,6 +71,7 @@ Each physics engine has different types of Impostors. The following table shows 
 | Cylinder      | Cylinder  | Cylinder| Cylinder  | Cylinder|         |
 | Mesh          | Mesh      | Box     | Mesh      | Mesh    | Use only when necessary - will lower performance. Cannon's mesh impostor only collides against spheres and planes |
 | Heightmap     | Heightmap | Box     | Mesh      | Mesh    |         |
+| ConvexHull    | N/A       | N/A     | N/A       | Mesh    | Allows physics impostor support for convex mesh hull shapes |
 
 Using simple impostors for complex objects will increase performance but decrease the reality of the scene's physics. Consider when complex impostors (like the mesh or the heightmap) is needed, and when the simpler geometries can be used.
 
@@ -103,6 +100,7 @@ To get reasonably accurate collisions without overloading the physics engine, a 
 1. Loading and adding colliders manually in Babylon: https://playground.babylonjs.com/#FD65RR
 1. Loading and adding collider with joints and pointer interactions: https://playground.babylonjs.com/#DGEP8N
 1. WebVR grabbing and throwing: https://playground.babylonjs.com/#ZNX043
+1. Custom engine with [`deterministicLockstep`](https://doc.babylonjs.com/babylon101/animations#deterministic-lockstep): https://www.babylonjs-playground.com/#3ZW889#8
 
 ### Babylon's physics impostor
 
@@ -135,6 +133,7 @@ BABYLON.PhysicsImpostor.MeshImpostor;
 BABYLON.PhysicsImpostor.CylinderImpostor;
 BABYLON.PhysicsImpostor.ParticleImpostor;
 BABYLON.PhysicsImpostor.HeightmapImpostor;
+BABYLON.PhysicsImpostor.ConvexHullImpostor;
 ```
 
 #### options
@@ -158,6 +157,8 @@ Options is a JSON. The interface is as follows:
 * nativeOptions: is a JSON with native options of the selected physics plugin. More about it in the advanced tutorial.
 * ignoreParent: when using babylon's parenting system, the physics engine will use the compound system. To avoid using the compound system, set this flag to true. More about it in the advanced tutorial.
 * disableBidirectionalTransformation: will disable the bidirectional transformation update. Setting this will make sure the physics engine ignores changes made to the mesh's position and rotation (and will increase performance a bit)
+* group: set the collision group (ammojs only)
+* mask: collision bit mask. Only impostor's group that have at least one bit in the mask will have collisions (ammojs)
 
 #### scene
 
@@ -275,6 +276,7 @@ var explosionEvent = physicsHelper.applyRadialExplosionImpulse( // or .applyRadi
     strength,
     falloff
 );
+// the second `radius` argument can also act as options: `.applyRadialExplosionImpulse(origin, { radius: radius, strength: strength, falloff: falloff })`
 
 // or
 
@@ -284,6 +286,7 @@ var gravitationalFieldEvent = physicsHelper.gravitationalField(
     strength,
     falloff
 );
+// the second `radius` argument can also act as options: `.gravitationalField(origin, { radius: radius, strength: strength, falloff: falloff })`
 gravitationalFieldEvent.enable(); // need to call, if you want to activate the gravitational field.
 setTimeout(function (gravitationalFieldEvent) { gravitationalFieldEvent.disable(); }, 3000, gravitationalFieldEvent);
 
@@ -296,17 +299,28 @@ var updraftEvent = physicsHelper.updraft(
     height,
     BABYLON.PhysicsUpdraftMode.Center // or BABYLON.PhysicsUpdraftMode.Perpendicular
 );
+// the second `radius` argument can also act as options: `.updraft(origin, { radius: radius, strength: strength, height: height, updraftMode: PhysicsUpdraftMode.Center })`
 updraftEvent.enable();
 setTimeout(function (updraftEvent) { updraftEvent.disable(); }, 5000, updraftEvent);
+
+// or
+
+var vortexEvent = physicsHelper.vortex(
+    origin,
+    radius,
+    strength,
+    height
+);
+// the second `radius` argument can also act as options: `.vortex(origin, { radius: radius, strength: strength, height: height, centripetalForceThreshold: 0.7, centripetalForceMultiplier: 5, centrifugalForceMultiplier: 0.5, updraftForceMultiplier: 0.02 })`
+vortexEvent.enable();
+setTimeout(function (vortexEvent) { vortexEvent.disable(); }, 5000, vortexEvent);
 ```
 
 In case you want to do some debug, like visually show the sphere and/or rays, you can do that by calling `event.getData()` *(note that if you do that, you will need to manually call `event.dispose()` to dispose the unused meshes, after you are done debugging)*. The `event.getData()` will return back the `sphere` mesh variable, which you can then use, to apply a semi-transparent material, so you can visualize it. The `explosionEvent.getData()` will also return back the `rays` rays variable, in case you want them for debugging purposes.
 
 *For a more detailed explanation, please take a look at the playground example below.*
 
-Playground example -  https://playground.babylonjs.com/index.html#0LM7CJ#6
-
-Playground example - Updraft -  https://playground.babylonjs.com/index.html#TVUDC1#3
+Playground example - https://playground.babylonjs.com/index.html#UZHINX
 
 #### Collision callbacks
 
@@ -388,9 +402,9 @@ interface PhysicsJointData {
 }
 ```
 
-* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: http://www.babylonjs-playground.com/#BGUY#3
+* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: https://www.babylonjs-playground.com/#BGUY#3
 * connectedPivot: is the point on the connected mesh (the mesh creating the joint) to which the constraint will be connected.
-* mainAxis: the axis on the main object on which the constraint will work. http://www.babylonjs-playground.com/#BGUY#5
+* mainAxis: the axis on the main object on which the constraint will work. https://www.babylonjs-playground.com/#BGUY#5
 * connectedAxis: the axis on the connected object on which the constraint will work.
 * collision: should the two connected objects also collide with each other. The objects are sometimes forced to be close by and this can prevent constant collisions between them.
 * nativParams: further parameters that will be delivered to the constraint without a filter. Those are native parameters of the specific physics engine you chose.
@@ -417,3 +431,26 @@ You can change the scene's gravity using the physics engine's `setGravity(vector
 This can be done in real time, even after setting the gravity:
 
 Playground demo (click to toggle positive/negative gravity) -  https://www.babylonjs-playground.com/#A2WGF
+
+#### See it all working together
+
+Marble Tower Playground -  https://playground.babylonjs.com/#3I55DK#0
+
+# Further Reading
+
+## Basic - L1
+
+[How To Use Forces](/how_to/forces)  
+[How to use Joints](/how_to/joints)  
+[How To Use Pivots and Axes](/how_to/joint_pivots)  
+[How To Create Compound Bodies](/how_to/compounds)  
+[How To Create Soft Bodies](/how_to/soft_bodies)
+
+## Mid Level - L2
+
+[How To Use Advanced Features](/how_to/Using_Advanced_Physics_Features)
+ 
+## More Advanced - L3
+
+[How To Add Your Own Physics Engine](/how_to/Adding_Your_Own_Physics_Engine_Plugin_to_Babylon.js)
+   

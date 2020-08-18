@@ -1,6 +1,21 @@
 {
-    "babylon101": [
+    "beginners": [{
+        "title": "All",
+        "name": "beginners",
+        "desc": "Tester"
+        },
         {
+            "title": "Beginners",
+            "name": "beginners",
+            "desc": "Start with babylon.js",
+            "files": [{
+                    "title": "Hello World",
+                    "filename": "hello_world"
+                }
+            ]
+        }
+    ],
+    "babylon101": [{
             "title": "All",
             "name": "babylon101",
             "desc": "The How To of 101."
@@ -9,8 +24,7 @@
             "title": "Babylon101",
             "name": "babylon101",
             "desc": "Start with babylon",
-            "files": [
-                {
+            "files": [{
                     "title": "About This Course",
                     "filename": "About101"
                 },
@@ -18,6 +32,11 @@
                     "title": "First Steps",
                     "filename": "First",
                     "abstract": "Everything in babylon.js is managed inside of a scene. It holds every objects that are going to be used to render your 3D elements."
+                },
+                {
+                    "title": "How to get Babylon.js",
+                    "filename": "How_To_Get",
+                    "abstract": "Describes all the ways to get Babylon.js"
                 },
                 {
                     "title": "Discover Basic Elements",
@@ -98,12 +117,16 @@
                     "title": "Shadows",
                     "filename": "Shadows",
                     "abstract": "In babylon.js shadows are now becoming dynamic, and they are now dynamically generated depending upon a light."
+                },
+                {
+                    "title": "Shadows with Cascaded Shadow Maps",
+                    "filename": "Shadows_csm",
+                    "abstract": "Use Cascaded Shadow Maps to enhance your shadows when using directional lights."
                 }
             ]
         }
     ],
-    "How_To": [
-        {
+    "How_To": [{
             "title": "All",
             "name": "All",
             "img": "img/How_To/All.png",
@@ -113,8 +136,7 @@
             "title": "Playground",
             "name": "PGsupport",
             "desc": "Making the most of the playground",
-            "files": [
-                {
+            "files": [{
                     "title": "Display and Use the Inspector",
                     "filename": "debug_layer"
                 },
@@ -128,8 +150,7 @@
             "title": "Scene",
             "name": "scene",
             "desc": "The Scene",
-            "files": [
-                {
+            "files": [{
                     "title": "Fast Build a World",
                     "level": 1,
                     "filename": "Fast_Build"
@@ -143,6 +164,16 @@
                     "title": "Use Multiple Scenes",
                     "level": 1,
                     "filename": "Multi_Scenes"
+                },
+                {
+                    "title": "Use Multiple Canvases with one Engine",
+                    "level": 1,
+                    "filename": "Multi_Canvases"
+                },
+                {
+                    "title": "Apply delta changes to a scene",
+                    "level": 2,
+                    "filename": "delta_file"
                 },
                 {
                     "title": "Create a custom loading screen",
@@ -170,6 +201,11 @@
                     "filename": "Reduce_memory_footprint"
                 },
                 {
+                    "title": "Using offscreen canvas",
+                    "level": 3,
+                    "filename": "Using_Offscreen_Canvas"
+                },
+                {
                     "title": "Optimize using Cached Resources",
                     "level": 3,
                     "filename": "Caching_Resources_in_IndexedDB"
@@ -188,6 +224,11 @@
                     "title": "Use clip planes",
                     "level": 3,
                     "filename": "Clip_Planes"
+                },
+                {
+                    "title": "Render a Scene and take a screenshot on a remote server",
+                    "level": 3,
+                    "filename": "Render_Scene_on_a_Server"
                 }
             ]
         },
@@ -195,8 +236,7 @@
             "title": "Mesh",
             "name": "mesh",
             "desc": "Mesh How To",
-            "files": [
-                {
+            "files": [{
                     "title": "Create Set Shapes",
                     "level": 1,
                     "filename": "Set_Shapes"
@@ -222,14 +262,19 @@
                     "filename": "Polyhedra_Shapes"
                 },
                 {
+                    "title": "Create Tiled Planes and Boxes",
+                    "level": 1,
+                    "filename": "Tiled"
+                },
+                {
+                    "title": "Draw Bounding Boxes",
+                    "level": 1,
+                    "filename": "How_to_display_bounding_boxes"
+                },
+                {
                     "title": "Use decals",
                     "level": 1,
                     "filename": "Decals"
-                },
-                {
-                    "title": "Use the Solid Particle System",
-                    "level": 1,
-                    "filename": "Solid_Particle_System"
                 },
                 {
                     "title": "Use PolygonMeshBuilder",
@@ -260,6 +305,11 @@
                     "title": "Use Instances",
                     "level": 3,
                     "filename": "How_to_use_Instances"
+                },
+                {
+                    "title": "Use Thin Instances",
+                    "level": 3,
+                    "filename": "How_to_use_ThinInstances"
                 },
                 {
                     "title": "Merge Meshes",
@@ -360,6 +410,16 @@
                     "title": "Update Vertices",
                     "level": 3,
                     "filename": "Updating_Vertices"
+                },
+                {
+                    "title": "Use TrailMesh",
+                    "level": 3,
+                    "filename": "How_to_use_TrailMesh"
+                },
+                {
+                    "title": "Use MeshExploder",
+                    "level": 3,
+                    "filename": "How_to_use_MeshExploder"
                 }
             ]
         },
@@ -367,9 +427,8 @@
             "title": "Material",
             "name": "material",
             "desc": "Material Tutorials.",
-            "files": [
-                {
-                    "title": "Apply Bumps, Opacity and Tiling",
+            "files": [{
+                    "title": "Apply Bumps, Opacity, Tiling and Detail Maps",
                     "level": 1,
                     "filename": "More_Materials"
                 },
@@ -382,6 +441,16 @@
                     "title": "Use Multi-Materials",
                     "level": 1,
                     "filename": "Multi_Materials"
+                },
+                {
+                    "title": "How To use the Node Material",
+                    "level": 1,
+                    "filename": "Node_Material"
+                },
+                {
+                    "title": "How To use the Raw Texture",
+                    "level": 1,
+                    "filename": "rawTexture"
                 },
                 {
                     "title": "Use Dynamic Texture",
@@ -426,7 +495,7 @@
                 },
                 {
                     "title": "Use Procedural Textures",
-                    "level": 3,
+                    "level": 3, 
                     "filename": "How_to_use_Procedural_Textures"
                 },
                 {
@@ -443,6 +512,16 @@
                     "title": "Use Blend Modes",
                     "level": 3,
                     "filename": "How_to_use_Blend_Modes"
+                },
+                {
+                    "title": "Understanding how normal maps work",
+                    "level": 3,
+                    "filename": "Normal_maps"
+                },
+                {
+                    "title": "Creating a Texture Package",
+                    "level": 3,
+                    "filename": "Creating_a_Texture_Package"
                 }
             ]
         },
@@ -450,8 +529,7 @@
             "title": "Camera",
             "name": "camera",
             "desc": "Camera Tutorials.",
-            "files": [
-                {
+            "files": [{
                     "title": "Apply Camera Behaviors",
                     "level": 1,
                     "filename": "Camera_Behaviors"
@@ -482,9 +560,9 @@
                     "filename": "WebVR_Helper"
                 },
                 {
-                    "title": "Use WebXR (WebVR, WebAR, Magic Window, Etc.)",
+                    "title": "Use Multiview",
                     "level": 3,
-                    "filename": "WebXR"
+                    "filename": "Multiview"
                 }
             ]
         },
@@ -492,32 +570,27 @@
             "title": "Light",
             "name": "light",
             "desc": "Light Tutorials.",
-            "files": [
-                {
-                    "title": "Use the Volumetric LightScattering post-process",
-                    "level": 3,
-                    "filename": "Using_the_Volumetric_LightScattering_post-process"
-                }
-            ]
+            "files": [{
+                "title": "Use the Volumetric LightScattering post-process",
+                "level": 3,
+                "filename": "Using_the_Volumetric_LightScattering_post-process"
+            }]
         },
         {
             "title": "Audio",
             "name": "audio",
             "desc": "Audio Tutorials.",
-            "files": [
-                {
-                    "title": "Play Sounds and Music",
-                    "level": 2,
-                    "filename": "Playing_sounds_and_music"
-                }
-            ]
+            "files": [{
+                "title": "Play Sounds and Music",
+                "level": 2,
+                "filename": "Playing_sounds_and_music"
+            }]
         },
         {
             "title": "Animation",
             "name": "animation",
             "desc": "Animation Tutorials.",
-            "files": [
-                {
+            "files": [{
                     "title": "Combine Animations",
                     "level": 1,
                     "filename": "Combine"
@@ -531,6 +604,11 @@
                     "title": "Sequence Animations",
                     "level": 2,
                     "filename": "Sequence"
+                },
+                {
+                    "title": "Create an Animated Character and Control it via Keyboard (Blender -> Mixamo -> GLB -> Babylon.js)",
+                    "level": 1,
+                    "filename": "AnimatedCharacter"
                 }
             ]
         },
@@ -538,8 +616,7 @@
             "title": "Particles",
             "name": "Particles",
             "desc": "Particles Tutorials.",
-            "files": [
-                {
+            "files": [{
                     "title": "Create Animated Particles",
                     "level": 1,
                     "filename": "Animate"
@@ -563,6 +640,98 @@
                     "title": "Solid Particle System",
                     "level": 1,
                     "filename": "Solid_Particles"
+                },
+                {
+                    "title": "Points Cloud Particle System ",
+                    "level": 1,
+                    "filename": "Point_Cloud_Particles"
+                },                
+                {
+                    "title": "How To use the Node Material with particles",
+                    "level": 1,
+                    "filename": "Particles_and_nme"
+                }
+            ]
+        },
+        {
+            "title": "Create A Game",
+            "name": "Create_A_Game",
+            "desc": "Learn how to make a game from scratch!",
+            "files": [{
+                    "title": "Introduction to Games with Babylon.js",
+                    "filename": "page1"
+                },
+                {
+                    "title": "Getting Set Up",
+                    "filename": "page2"
+                },
+                {
+                    "title": "State Machine",
+                    "filename": "page9"
+                },
+                {
+                    "title": "Simple Game State",
+                    "filename": "page10"
+                },
+                {
+                    "title": "Player Camera",
+                    "filename": "page5"
+                },
+                {
+                    "title": "Character Movement Part 1",
+                    "filename": "page3"
+                },
+                {
+                    "title": "Character Movement Part 2",
+                    "filename": "page4"
+                },
+                {
+                    "title": "Import Meshes",
+                    "filename": "page6"
+                },
+                {
+                    "title": "Lanterns",
+                    "filename": "page7"
+                },
+                {
+                    "title": "Collisions & Triggers",
+                    "filename": "page8"
+                },
+                {
+                    "title": "Game GUI",
+                    "filename": "page11"
+                },
+                {
+                    "title": "Animations",
+                    "filename": "page12"
+                },
+                {
+                    "title": "Particle Systems",
+                    "filename": "page13"
+                },
+                {
+                    "title": "Music/SFX",
+                    "filename": "page14"
+                },
+                {
+                    "title": "Extra Features",
+                    "filename": "page15"
+                },
+                {
+                    "title": "Cross Platform - Mobile",
+                    "filename": "page16"
+                },
+                {
+                    "title": "Performance",
+                    "filename": "page17"
+                },
+                {
+                    "title": "Outro",
+                    "filename": "page18"
+                },
+                {
+                    "title": "Design Process, 3D Modeling, Art Assets",
+                    "filename": "page19"
                 }
             ]
         },
@@ -570,8 +739,7 @@
             "title": "Environment",
             "name": "environment",
             "desc": "Environment Tutorials.",
-            "files": [
-                {
+            "files": [{
                     "title": "Use a Skybox",
                     "level": 2,
                     "filename": "Skybox"
@@ -617,8 +785,7 @@
             "title": "Shaders",
             "name": "shaders",
             "desc": "Using Shaders",
-            "files": [
-                {
+            "files": [{
                     "title": "Put Shader Code in BJS",
                     "filename": "Putting"
                 },
@@ -632,8 +799,7 @@
             "title": "Events",
             "name": "events",
             "desc": "Events",
-            "files": [
-                {
+            "files": [{
                     "title": "Use Actions",
                     "level": 2,
                     "filename": "How_to_use_Actions"
@@ -644,6 +810,11 @@
                     "filename": "How_to_use_Gamepads"
                 },
                 {
+                    "title": "Use Virtual Joysticks",
+                    "level": 2,
+                    "filename": "How_to_use_Virtual_Joysticks"
+                },
+                {
                     "title": "Handle Events with Observables",
                     "level": 2,
                     "filename": "Observables"
@@ -652,6 +823,11 @@
                     "title": "Use Promises",
                     "level": 2,
                     "filename": "Promises"
+                },
+                {
+                    "title": "Use the DeviceSourceManager for Inputs",
+                    "level": 2,
+                    "filename": "How_to_use_DeviceSourceManager"
                 }
             ]
         },
@@ -659,11 +835,35 @@
             "title": "Physics Engines",
             "name": "Physics",
             "desc": "Physic Engines",
-            "files": [
-                {
+            "files": [{
                     "title": "Use a Physics Engine",
                     "level": 1,
                     "filename": "Using_The_Physics_Engine"
+                },
+                {
+                    "title": "Use Forces",
+                    "level": 1,
+                    "filename": "Forces"
+                },
+                {
+                    "title": "Use Joints",
+                    "level": 1,
+                    "filename": "Joints"
+                },
+                {
+                    "title": "Use Pivots and Axes",
+                    "level": 1,
+                    "filename": "Joint_Pivots"
+                },
+                {
+                    "title": "Create Compound Bodies",
+                    "level": 1,
+                    "filename": "Compounds"
+                },
+                {
+                    "title": "Create Soft Bodies",
+                    "level": 1,
+                    "filename": "Soft_Bodies"
                 },
                 {
                     "title": "Use Advanced Physics Features",
@@ -681,8 +881,7 @@
             "title": "Post Processes",
             "name": "Post_Process",
             "desc": "Post Processes",
-            "files": [
-                {
+            "files": [{
                     "title": "Use PostProcesses",
                     "level": 3,
                     "filename": "How_to_use_PostProcesses"
@@ -698,7 +897,7 @@
                     "filename": "Using_the_SSAO_rendering_pipeline"
                 },
                 {
-                    "title": "Use the standard rendering pipeline",
+                    "title": "Use the standard rendering pipeline (deprecated)",
                     "level": 3,
                     "filename": "Using_Standard_Rendering_Pipeline"
                 },
@@ -716,6 +915,16 @@
                     "title": "Use motion blur post-process",
                     "level": 3,
                     "filename": "Using_MotionBlurPostProcess"
+                },
+                {
+                    "title": "Use the Screen Space Reflections (SSR) post-process",
+                    "level": 3,
+                    "filename": "Using_ScreenSpaceReflectionsPostProcess"
+                },
+                {
+                    "title": "How to use RenderTargetTexture and run multiple passes",
+                    "level": 3,
+                    "filename": "How_to_use_RenderTargetTexture_and_multiple_passes"
                 }
             ]
         },
@@ -723,8 +932,7 @@
             "title": "Importer",
             "name": "Importer",
             "desc": "Files that can be loaded into BJS",
-            "files": [
-                {
+            "files": [{
                     "title": "Load from any file type - glTF, OBJ, STL, etc.",
                     "filename": "Load_From_Any_File_Type"
                 },
@@ -755,6 +963,10 @@
                 {
                     "title": "Use an AssetContainer",
                     "filename": "How_to_use_AssetContainer"
+                },
+                {
+                    "title": "Progressively Load glTF Assets",
+                    "filename": "Progressively_Load_glTF"
                 }
             ]
         },
@@ -762,8 +974,7 @@
             "title": "GUI",
             "name": "GUI",
             "desc": "Babylon.GUI",
-            "files": [
-                {
+            "files": [{
                     "title": "Use the Babylon GUI",
                     "filename": "Gui"
                 },
@@ -776,6 +987,10 @@
                     "filename": "Selector"
                 },
                 {
+                    "title": "Use the Xml Loader",
+                    "filename": "XmlLoader"
+                },
+                {
                     "title": "Use the Babylon 3D GUI",
                     "filename": "Gui3D"
                 }
@@ -784,11 +999,14 @@
         {
             "title": "Contribute",
             "name": "contribute",
-            "desc": "Suporting and Developing the Framework",
-            "files": [
-                {
+            "desc": "Supporting and Developing the Framework",
+            "files": [{
                     "title": "Start Contributing to Babylon.js",
                     "filename": "how_to_start"
+                },
+                {
+                    "title": "Improve Documentation",
+                    "filename": "contribute_to_documentation"
                 },
                 {
                     "title": "Follow Approved Naming Conventions",
@@ -821,8 +1039,7 @@
             "name": "Videos",
             "img": "img/How_To/Video.png",
             "desc": "Video courses.",
-            "files": [
-                {
+            "files": [{
                     "title": "3D on the Web Understanding the Basics",
                     "filename": "3D_on_the_Web_Understanding_the_Basics"
                 },
@@ -867,10 +1084,60 @@
                     "filename": "RTS_game_development_series"
                 }
             ]
+        },
+        {
+            "title": "WebXR",
+            "name": "WebXR",
+            "desc": "Developing VR and AR experiences using WebXR",
+            "files": [{
+                    "title": "Introduction to WebXR",
+                    "level": 2,
+                    "filename": "Introduction_To_WebXR"
+                },
+                {
+                    "title": "The WebXR Experience Helpers",
+                    "level": 2,
+                    "filename": "WebXR_Experience_Helpers"
+                },
+                {
+                    "title": "The WebXR Session Managers",
+                    "level": 2,
+                    "filename": "WebXR_Session_Manager"
+                },
+                {
+                    "title": "The WebXR Camera",
+                    "level": 3,
+                    "filename": "WebXR_Camera"
+                },
+                {
+                    "title": "The WebXR Features Manager",
+                    "level": 2,
+                    "filename": "WebXR_Features_Manager"
+                },
+                {
+                    "title": "WebXR Demos and Examples",
+                    "level": 2,
+                    "filename": "WebXR_Demos_and_Examples"
+                },
+                {
+                    "title": "WebXR Input and Controller support",
+                    "level": 3,
+                    "filename": "WebXR_Controllers_Support"
+                },
+                {
+                    "title": "WebXR Selected Features",
+                    "level": 2,
+                    "filename": "WebXR_Selected_Features"
+                },
+                {
+                    "title": "WebXR Augmented Reality Features",
+                    "level": 3,
+                    "filename": "WebXR_Augmented_Reality"
+                }
+            ]
         }
     ],
-    "resources": [
-        {
+    "resources": [{
             "title": "All",
             "name": "All",
             "img": "img/resources/all.jpg",
@@ -881,14 +1148,13 @@
             "name": "Editor",
             "img": "img/extensions/editor.png",
             "desc": "Learn how to use the official editor",
-            "files": [
-                {
+            "files": [{
                     "title": "Getting Started",
                     "filename": "Getting_Started"
                 },
                 {
-                    "title": "Loading and Saving Scenes",
-                    "filename": "Loading_Saving"
+                    "title": "Explaining the Workflow",
+                    "filename": "Explaining_Workflow"
                 },
                 {
                     "title": "Adding Textures",
@@ -903,7 +1169,7 @@
                     "filename": "Using_Assets_Panel"
                 },
                 {
-                    "title": "Writing Custom Scripts",
+                    "title": "Using Code Editor",
                     "filename": "Custom_Scripts"
                 },
                 {
@@ -911,7 +1177,7 @@
                     "filename": "Adding_Animations"
                 },
                 {
-                    "title": "Using Path Finder",
+                    "title": "Using The Path Finder",
                     "filename": "Using_PathFinder"
                 },
                 {
@@ -921,6 +1187,18 @@
                 {
                     "title": "Editing Prefabs",
                     "filename": "Editing_Prefabs"
+                },
+                {
+                    "title": "Using The Particles Creator",
+                    "filename": "Using_ParticleSystemEditor"
+                },
+                {
+                    "title": "Using the Graph Editor",
+                    "filename": "Using_GraphEditor"
+                },
+                {
+                    "title": "Using the Photoshop Extension",
+                    "filename": "Using_Photoshop_Extension"
                 }
             ]
         },
@@ -928,8 +1206,7 @@
             "title": "Library",
             "name": "Library",
             "desc": "External Application for Integration with BJS",
-            "files": [
-                {
+            "files": [{
                     "title": "How to use BabylonJS in an Ionic Angular app",
                     "filename": "BabylonJS_and_Ionic_Angular"
                 },
@@ -948,6 +1225,14 @@
                 {
                     "title": "How to combine Babylon.js and Pixi.js",
                     "filename": "BabylonJS_and_PixiJS"
+                },
+                {
+                    "title": "How to setup a local webserver for BabylonJs",
+                    "filename": "Running_a_local_webserver_for_BabylonJs"
+                },
+                {
+                    "title": "How to use VRM Humanoid in Babylon.js",
+                    "filename": "BabylonJS_and_VRM"
                 }
             ]
         },
@@ -955,8 +1240,7 @@
             "title": "Exporter",
             "name": "Exporter",
             "desc": "Applications that can Export files for BJS",
-            "files": [
-                {
+            "files": [{
                     "title": "Save Your Scene",
                     "filename": "Save_Babylon"
                 },
@@ -999,6 +1283,10 @@
                 {
                     "title": "Maya to glTF",
                     "filename": "Maya_to_glTF"
+                },
+                {
+                    "title": "Mixamo",
+                    "filename": "Mixamo_to_Babylon"
                 }
             ]
         },
@@ -1006,61 +1294,60 @@
             "title": "Unity",
             "name": "Unity",
             "desc": "Learn how to export from Unity.",
-            "files": [
-                {
-                    "title": "Introduction",
+            "files": [{
+                    "title": "Introduction to Unity exporter",
                     "filename": "Intro"
                 },
                 {
-                    "title": "Export Panels",
+                    "title": "Export Panels (Unity exporter)",
                     "filename": "Exporter"
                 },
                 {
-                    "title": "Getting Started",
+                    "title": "Getting Started (Unity exporter)",
                     "filename": "Projects"
                 },
                 {
-                    "title": "Script Components",
+                    "title": "Script Components (Unity exporter)",
                     "filename": "01_ScriptComponents"
                 },
                 {
-                    "title": "Scene Manager",
+                    "title": "Scene Manager (Unity exporter)",
                     "filename": "02_SceneManager"
                 },
                 {
-                    "title": "Shader Materials",
+                    "title": "Shader Materials (Unity exporter)",
                     "filename": "03_ShaderMaterials"
                 },
                 {
-                    "title": "Collision Meshes",
+                    "title": "Collision Meshes (Unity exporter)",
                     "filename": "04_CollisionMeshes"
                 },
                 {
-                    "title": "Terrain Builder",
+                    "title": "Terrain Builder (Unity exporter)",
                     "filename": "05_TerrainBuilder"
                 },
                 {
-                    "title": "Animation State",
+                    "title": "Animation State (Unity exporter)",
                     "filename": "06_AnimationState"
                 },
                 {
-                    "title": "Runtime Prefabs",
+                    "title": "Runtime Prefabs (Unity exporter)",
                     "filename": "07_RuntimePrefabs"
                 },
                 {
-                    "title": "Static Batching",
+                    "title": "Static Batching (Unity exporter)",
                     "filename": "08_StaticBatching"
                 },
                 {
-                    "title": "Navigation Mesh",
+                    "title": "Navigation Mesh (Unity exporter)",
                     "filename": "09_NavigationMesh"
                 },
                 {
-                    "title": "Windows Platform",
+                    "title": "Windows Platform (Unity exporter)",
                     "filename": "10_WindowsPlatform"
                 },
                 {
-                    "title": "Babylon Art Tools",
+                    "title": "Babylon Art Tools (Unity exporter)",
                     "filename": "11_BabylonArtTools"
                 }
             ]
@@ -1069,8 +1356,7 @@
             "title": "Manual",
             "name": "Manual",
             "desc": "Technical Details for BJS",
-            "files": [
-                {
+            "files": [{
                     "title": "Mathematics and Ribbons",
                     "filename": "Maths_Make_Ribbons"
                 },
@@ -1116,8 +1402,7 @@
             "title": "Playground",
             "name": "Playground_aspects",
             "desc": "Aspects of Playground Use",
-            "files": [
-                {
+            "files": [{
                     "title": "Available Textures in the Playground",
                     "filename": "Playground_Textures"
                 },
@@ -1128,26 +1413,6 @@
                 {
                     "title": "Using External Assets",
                     "filename": "External_PG_assets"
-                },
-                {
-                    "title": "Playground Based Tutorials",
-                    "filename": "PBT"
-                },
-                {
-                    "title": "Starter Guide for PBT",
-                    "filename": "Hiding_Editor_Lines"
-                },
-                {
-                    "title": "Using a Slider Guide for PBT",
-                    "filename": "PBT_slider"
-                },
-                {
-                    "title": "Intermediate Guide for PBT",
-                    "filename": "PBT_Writing"
-                },
-                {
-                    "title": "Advanced Guide for PBT",
-                    "filename": "PBT_previous_and_next"
                 }
             ]
         },
@@ -1155,8 +1420,7 @@
             "title": "Reference",
             "name": "Reference",
             "desc": "Useful References",
-            "files": [
-                {
+            "files": [{
                     "title": "Index",
                     "filename": "Documentation_Category_Map"
                 },
@@ -1191,8 +1455,7 @@
             ]
         }
     ],
-    "extensions": [
-        {
+    "extensions": [{
             "title": "All",
             "name": "All",
             "img": "img/extensions/tagImage.png",
@@ -1202,8 +1465,7 @@
             "title": "Dynamic Terrains",
             "name": "Terrains",
             "desc": "Very Large Terrains",
-            "files": [
-                {
+            "files": [{
                     "title": "How to Use Dynamic Terrain",
                     "filename": "Dynamic_Terrain"
                 },
@@ -1222,8 +1484,7 @@
             "name": "MaterialsLibrary",
             "img": "img/extensions/materials.jpg",
             "desc": "Learn how to use materials from Materials library.",
-            "files": [
-                {
+            "files": [{
                     "title": "Fire",
                     "filename": "Fire"
                 },
@@ -1282,8 +1543,7 @@
             "name": "ProceduralTexturesLibrary",
             "img": "img/extensions/proceduraltextures.jpg",
             "desc": "Learn how to use procedural textures from Procedural texture library.",
-            "files": [
-                {
+            "files": [{
                     "title": "Brick",
                     "filename": "BrickProceduralTexture"
                 },
@@ -1314,12 +1574,21 @@
             ]
         },
         {
+            "title": "TextureCanvas",
+            "name": "TextureCanvas",
+            "img": "img/extensions/texturecanvas.jpg",
+            "desc": "Draw textures on a texture.",
+            "files": [{
+                "title": "TextureCanvas",
+                "filename": "TextureCanvas"
+            }]
+        },
+        {
             "title": "Post Process library",
             "name": "PostProcessLibrary",
             "img": "img/extensions/postProcess.jpg",
             "desc": "Learn how to use post processes from Post Process library.",
-            "files": [
-                {
+            "files": [{
                     "title": "Using the Ascii Art post-process",
                     "filename": "AsciiArtPostProcess"
                 },
@@ -1334,8 +1603,7 @@
             "name": "Tree_Generators",
             "img": "img/How_To/trees.png",
             "desc": "How to generate trees.",
-            "files": [
-                {
+            "files": [{
                     "title": "Simple Pine Generator",
                     "filename": "Simple_Pine_Generator"
                 },
@@ -1350,24 +1618,36 @@
             ]
         },
         {
+            "title": "Navigation",
+            "name": "Navigation",
+            "img": "img/How_To/navigation.png",
+            "desc": "Navigation mesh and crowd agents",
+            "files": [{
+                    "title": "Create Navigation Mesh",
+                    "filename": "NavigationMesh"
+                },
+                {
+                    "title": "Crowd agents",
+                    "filename": "Crowd"
+                }
+            ]
+        },
+        {
             "title": "Mesh Writer",
             "name": "Mesh_Writer",
             "img": "img/How_To/meshwriter.png",
             "desc": "How to generate text with meshes",
-            "files": [
-                {
-                    "title": "Mesh Writer Introduction",
-                    "filename": "Mesh_Writer_Introduction"
-                }
-            ]
+            "files": [{
+                "title": "Mesh Writer Introduction",
+                "filename": "Mesh_Writer_Introduction"
+            }]
         },
         {
             "title": "Cloner System",
             "name": "ClonerSystem",
             "img": "images/matrixCloner.jpg",
             "desc": "Cloning meshes systematically",
-            "files": [
-                {
+            "files": [{
                     "title": "Radial Cloner",
                     "filename": "RadialCloner"
                 },
@@ -1394,8 +1674,7 @@
             "name": "CastorGUI",
             "img": "img/extensions/CastorGUI.png",
             "desc": "Learn how to use CastorGUI.",
-            "files": [
-                {
+            "files": [{
                     "title": "CastorGUI",
                     "filename": "CastorGUI"
                 },
@@ -1486,8 +1765,7 @@
             "name": "Viewer",
             "img": "img/extensions/editor.png",
             "desc": "Learn how to use the Babylon.js viewer.",
-            "files": [
-                {
+            "files": [{
                     "title": "The Babylon.js Viewer",
                     "filename": "The_Babylon_Viewer"
                 },
@@ -1517,27 +1795,31 @@
             "title": "glTF Exporter",
             "name": "glTFExporter",
             "desc": "Learn how to export glTF models from BabylonJS",
-            "files": [
-                {
-                    "title": "glTF Exporter",
-                    "filename": "glTFExporter"
-                }
-            ]
+            "files": [{
+                "title": "glTF Exporter",
+                "filename": "glTFExporter"
+            }]
         },
         {
             "title": "Azure Media Player 360 Video",
             "name": "Amp360Video",
             "desc": "Watch 360 Videos in Azure Media Player",
-            "files": [
-                {
-                    "title": "Amp 360 Video",
-                    "filename": "Amp360Video"
-                }
-            ]
+            "files": [{
+                "title": "Amp 360 Video",
+                "filename": "Amp360Video"
+            }]
+        },
+        {
+            "title": "Web GPU",
+            "name": "WebGPU",
+            "desc": "Next Gen Web 3D",
+            "files": [{
+                "title": "Web GPU",
+                "filename": "webGPU"
+            }]
         }
     ],
-    "snippets": [
-        {
+    "snippets": [{
             "title": "All",
             "name": "All",
             "desc": "All the Snippets."
@@ -1546,19 +1828,16 @@
             "title": "Introduction",
             "name": "introduction",
             "desc": "Introduction to Snippets",
-            "files": [
-                {
-                    "title": "Introduction to Snippets",
-                    "filename": "Introduction"
-                }
-            ]
+            "files": [{
+                "title": "Introduction to Snippets",
+                "filename": "Introduction"
+            }]
         },
         {
             "title": "Gamelets",
             "name": "gamelets",
             "desc": "Gamelets",
-            "files": [
-                {
+            "files": [{
                     "title": "Simple Car Following Path",
                     "level": 2,
                     "filename": "Car_Path"
@@ -1577,6 +1856,16 @@
                     "title": "Adding a Roof",
                     "level": 2,
                     "filename": "roof"
+                },
+                {
+                    "title": "A Carriage Following a Track",
+                    "level": 2,
+                    "filename": "Track"
+                },
+                {
+                    "title": "Design for Track to Follow",
+                    "level": 3,
+                    "filename": "Track_Code"
                 },
                 {
                     "title": "Making a Simple Driven Car",
@@ -1610,10 +1899,12 @@
                 },
                 {
                     "title": "Fireworks with Shader Code",
+                    "level": 3,
                     "filename": "Writing2"
                 },
                 {
                     "title": "A Vertical Wave with Shader Code",
+                    "level": 3,
                     "filename": "Writing1"
                 }
             ]
@@ -1622,8 +1913,7 @@
             "title": "Utilities",
             "name": "utilities",
             "desc": "Code Utilities",
-            "files": [
-                {
+            "files": [{
                     "title": "Minimise Vertices",
                     "filename": "Minimise_Vertices"
                 },
@@ -1660,6 +1950,10 @@
                     "filename": "Line2D"
                 },
                 {
+                    "title": "Extrude Shape with Mitred Corners",
+                    "filename": "Mitred"
+                },
+                {
                     "title": "Making a Frame",
                     "filename": "Frame"
                 },
@@ -1678,12 +1972,19 @@
                 {
                     "title": "Create Points Inside a Mesh",
                     "filename": "InnerMeshPoints"
+                },
+                {
+                    "title": "Create Points on the Mesh Surface",
+                    "filename": "SurfaceMeshPoints"
+                },
+                {
+                    "title": "Deconstruct Mesh",
+                    "filename": "Deconstruct_Mesh"
                 }
             ]
         }
     ],
-    "features": [
-        {
+    "features": [{
             "title": "All",
             "name": "All",
             "img": "img/How_To/All.png",
@@ -1693,8 +1994,7 @@
             "title": "Component",
             "name": "component",
             "desc": "Elements of babylon.js",
-            "files": [
-                {
+            "files": [{
                     "title": "Scene Creation and Optimization",
                     "filename": "Scene"
                 },
@@ -1748,13 +2048,16 @@
             "title": "Playground",
             "name": "PGsupport",
             "desc": "The playground and how to use it",
-            "files": [
-                {
+            "files": [{
                     "title": "Introduction to the Playground",
                     "filename": "Playground"
                 },
                 {
-                    "title": "The Inspector",
+                    "title": "Introduction to the Inspector - video series",
+                    "filename": "intro_inspector"
+                },
+                {
+                    "title": "The Inspector overview",
                     "filename": "Playground_debuglayer"
                 }
             ]
@@ -1763,10 +2066,30 @@
             "title": "GUI",
             "name": "GUI",
             "desc": "Graphical User Interfaces",
-            "files": [
+            "files": [{
+                "title": "Graphic User Interfaces",
+                "filename": "gui"
+            }]
+        },
+        {
+            "title": "Controls",
+            "name": "controls",
+            "desc": "Babylon.js Controls",
+            "files": [{
+                    "title": "Babylon.js Controls",
+                    "filename": "controls"
+                },
                 {
-                    "title": "Graphic User Interfaces",
-                    "filename": "gui"
+                    "title": "Timeline Control",
+                    "filename": "timeline"
+                },
+                {
+                    "title": "Resizer Control",
+                    "filename": "resizer"
+                },
+                {
+                    "title": "Image Filter",
+                    "filename": "imageFilter"
                 }
             ]
         },
@@ -1775,8 +2098,7 @@
             "name": "Support",
             "img": "img/How_To/All.png",
             "desc": "First level feature exploration",
-            "files": [
-                {
+            "files": [{
                     "title": "Server Side",
                     "filename": "nullEngine"
                 },

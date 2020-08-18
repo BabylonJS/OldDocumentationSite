@@ -1,12 +1,6 @@
----
-PG_TITLE: Dynamic Terrain
----
-
 # Dynamic Terrain
 
 The Dynamic Terrain is an extension that provides a way to display a large terrain dynamically morphed from a map of 3D data.  
-
-![dynamicTerrain](/img/extensions/dynamicTexture.jpg)  
 
 The dynamic terrain is basically a standard BJS mesh, actually a ribbon. It's linked to a camera and moves with it along the World X and Z axes. It's passed a set of geographic data what are each simply 3D coordinates _(x, y, z)_ in the World. This set of data is called the map. According to the current camera position in the World, the dynamic terrain morphs to depict the map at this location. 
 

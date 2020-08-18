@@ -1,7 +1,3 @@
----
-PG_TITLE: Particles
----
-
 # Particles
 
 Babylon.js supports two types of particles. These are sprites using the `ParticleSystem` and meshes using the `Solid Particle System`
@@ -30,6 +26,18 @@ Normally the particles and the triangular facets that make them up are rendered 
 
 Yet another feature, digest mesh, is to take an existing mesh and turn its triangular facets into particles, allowing a mesh to be 'blown apart' for example.
 
+## Points Cloud Particle System
+
+<img src = "/img/how_to/particles/points4.jpg" width = "40%">
+
+A points cloud particle system (PCS)  is a single updatable mesh with the the `PointsCloud` property of its material set to `true`. The point particles are simply the vertices of the mesh. As a mesh a PCS has most of the properties of a mesh, The exceptions are those related to its material which is already set and cannot be changed and also anything related to its vertex normals and indices as it does not have any set.  
+
+Particles can be added to a PCS with a function or using an existing mesh as a model, where particles are randomly evenly distributed on either the surface of the model or inside the model.
+
+As a particle system the PCS provides some methods to manage the particles. However it is behavior agnostic. This means it has no emitter, no particle physics, no particle recycler. You have to implement your own behavior. You can create your own behaviors through particle properties such as position and color and methods that allow you to update and recycle the particles. 
+
+There are limitations as particles cannot be destroyed or made invisible.
+
 # Further Reading
 
 ## Basic - L1
@@ -41,7 +49,8 @@ Yet another feature, digest mesh, is to take an existing mesh and turn its trian
 [How to Create Animated Particles](/how_to/Animate)  
 [How to Use Sub Emitters](/how_to/Sub_Emitters)
 
-[Solid Particle System](/How_To/Solid_Particles)
+[Solid Particle System](/How_To/Solid_Particles)  
+[Points Cloud Particle System](/How_To/point_Cloud_Particles)
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)
