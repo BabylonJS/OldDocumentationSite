@@ -495,7 +495,8 @@ var ammoPlugin = new AmmoJSPlugin(true, Ammo);
 
 ## Loaders
 
-In Babylon.js the loaders you can install from `@babylonjs/loaders` are actually plugins of the main `SceneLoader` module. In order to use for instance the obj loader in your app, you simply need to import it for side effects only: `import "@babylonjs/loaders/OBJ";` . It would be exactly the same for gltf: `import "@babylonjs/loaders/glTF";` .
+In Babylon.js the loaders you can install from `@babylonjs/loaders` are actually plugins of the main `SceneLoader` module. In order to use for instance the obj loader in your app, you simply need to import it for side effects only: `import "@babylonjs/loaders/OBJ";` . It would be exactly the same for gltf: `import "@babylonjs/loaders/glTF";` .  
+You can even be more specific by having only the GLTF2 loader `import '@babylonjs/loaders/glTF/2.0/glTFLoader';`. In this case, be careful to import the extensions you would need as well. For instance, if you use draco compression `import '@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression`.
 
 # Further Reading
 
