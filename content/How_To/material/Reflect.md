@@ -1,7 +1,3 @@
----
-PG_TITLE: 04. How To Obtain Reflections and Refractions
----
-
 # How To Obtain Reflections and Refractions
 Using reflection textures can simulate mirror like material and refraction textures can simulate looking through glass or water.
 
@@ -36,16 +32,16 @@ boxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
 box.material = boxMaterial;
 ```
 
-* [Playground Example of Different Faces](http://www.babylonjs-playground.com/#UU7RQ#2)
+* [Playground Example of Different Faces](https://www.babylonjs-playground.com/#UU7RQ#2)
 
 From Babylon.js v2.4 it is also possible to use High Dynamic Range Cube Textures
 
 #### Reflecting on Skybox and a shape
 Using different _coordinatesMode_ with different shapes will reflect the skybox in the shape
 
-* [Playground Example of Box and CUBIC_MODE](http://www.babylonjs-playground.com/#UU7RQ#3)
-* [Playground Example of Ground and PLANAR_MODE](http://www.babylonjs-playground.com/#UU7RQ#5)
-* [Playground Example of Sphere and PLANAR_MODE](http://www.babylonjs-playground.com/#UU7RQ#4)
+* [Playground Example of Box and CUBIC_MODE](https://www.babylonjs-playground.com/#UU7RQ#3)
+* [Playground Example of Ground and PLANAR_MODE](https://www.babylonjs-playground.com/#UU7RQ#5)
+* [Playground Example of Sphere and PLANAR_MODE](https://www.babylonjs-playground.com/#UU7RQ#4)
 
 #### Using local cubemap mode
 
@@ -79,7 +75,7 @@ with
 skyboxMaterial.reflectionTexture = new BABYLON.HDRCubeTexture("PATH TO HDR IMAGE", scene);
 ```
 
-* [Playground Example of HDR Skybox](http://www.babylonjs-playground.com/#114YPX#5)
+* [Playground Example of HDR Skybox](https://www.babylonjs-playground.com/#114YPX#5)
 
 ### EquiRectangularCubeTexture
 Equirectangular images are browser-canvas supported images like jpeg, png, and many more. A list of image support on browsers can be found [here](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support).
@@ -117,13 +113,13 @@ The above image was applied to each of four spheres, one as a diffuse texture an
 | Diffuse Texture | SPHERICAL_MODE |
 | PLANAR\_MODE | PROJECTION\_MODE |
 
-* [Playground Example of Coordinates Modes](http://www.babylonjs-playground.com/#20OAV9#26)
+* [Playground Example of Coordinates Modes](https://www.babylonjs-playground.com/#20OAV9#26)
 
 ### Mirrors
 So far reflections have been of images, using _MirrorTexture_ obects within the scene can be reflected as in a mirror. This is simulated by
 by setting the _reflectionTexture_ to a _MirrorTexture_ and applying it to a flat surface.
 
-* [Playground Example of Mirrors](http://www.babylonjs-playground.com/#1YAIO7#5)
+* [Playground Example of Mirrors](https://www.babylonjs-playground.com/#1YAIO7#5)
 
 A real mirror is made of two parts glass and a reflected surface applied to the glass and a mirror simulated within
 BJS also contains to parts; a flat surface and a reflector. (For a reflective surface such as metal or still water - think metal plus shine and water plus air boundary).
@@ -199,7 +195,7 @@ _MirrorTexture_ can support blurred rendering with either:
 ## Refraction
 In this case an object behind glass or under water for example can have its position and size changed by the refraction of light.
 
-* [Playground example of Refraction](http://www.babylonjs-playground.com/#22KZUW#15)
+* [Playground example of Refraction](https://www.babylonjs-playground.com/#22KZUW#15)
 
 Refraction is also achieved by taking a flat surface such as a plane or disc and adding, this this case, a refraction material applied to a flat mesh. The difference is that the object
 that is to be refracted is placed behind the flat surface, that is the normals of the mesh all point away from the object and the refracted normals are in the same direction.
@@ -234,6 +230,6 @@ The two examples below show the effect of changing these.
 *Note* in both examples the surfaces are transparent so that the actual position of the sphere can be identified. It is the refracted
 sphere that changes psoition as the parameters are changed.
 
-* [Playground example of changes in refraction depth from 0 to 50](http://www.babylonjs-playground.com/#1YAIO7#20)
-* [Playground example of changes in index of refraction from 0.1 to 1.5](http://www.babylonjs-playground.com/#1YAIO7#19)
+* [Playground example of changes in refraction depth from 0 to 50](https://www.babylonjs-playground.com/#1YAIO7#20)
+* [Playground example of changes in index of refraction from 0.1 to 1.5](https://www.babylonjs-playground.com/#1YAIO7#19)
 

@@ -136,6 +136,8 @@ let block = nodeMaterial.getInputBlockByPredicate((b) => b.name === "foo");
 block.value = 10;
 ```
 
+Note that while this API generically works for all input blocks, not all input blocks have a "value" attribute. For example texture blocks would have block.texture instead of block.value. Be sure to check the [API documentation](https://doc.babylonjs.com/api/classes/babylon.nodematerial) for detail.
+
 You can access the list of InputBlocks with:
 ```
 nodeMaterial.getInputBlocks();
@@ -145,6 +147,8 @@ Or you can get all blocks registered with a node material with:
 ```
 nodeMaterial.attachedBlocks
 ```
+
+Be sure to also check out the full [API documentation.](https://doc.babylonjs.com/api/classes/babylon.nodematerial)
 
 ### List of available blocks
 
@@ -266,6 +270,16 @@ By default, the node material provides the following blocks:
     * Output: 
       * output: Float
 
+  * `FragCoord`: The gl_FragCoord predefined variable (window relative coordinates (x,y,z,1/w))
+    * Output:
+      * xy: Vector2
+      * xyz: Vector3
+      * xyzw: Vector4
+      * x: Float
+      * y: Float
+      * z: Float
+      * w: Float
+
   * `ReflectionTexture`: Creates a reflection from the input texture.
     * Input: 
       * position: Vector3
@@ -279,6 +293,12 @@ By default, the node material provides the following blocks:
       * r: Float
       * g: Float
       * b: Float
+
+  * `ScreenSize`: The size of the screen window
+    * Output:
+      * xy: Vector2
+      * x: Float
+      * y: Float
 
   * `Texture`: A node for reading a linked or embedded texture file.
     * Inputs: 
@@ -362,6 +382,13 @@ By default, the node material provides the following blocks:
       * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
 
   * `Min`: Outputs the smallest value between the left and right inputs of the same type.
+    * Inputs: 
+      * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+      * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
+    * Outputs: 
+      * output: Float, Vector2, Vector3, Vector4, Color3, or Color4. Output varies based on input types.
+
+  * `Mod`: Outputs the value of the left input modulo the right input
     * Inputs: 
       * left: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
       * right: Float, Vector2, Vector3, Vector4, Color3, or Color4. 
@@ -745,6 +772,178 @@ By default, the node material provides the following blocks:
     * Inputs: 
       * vector: Vector4 
 
+* Particle:
+  * `ParticleBlendMultiply`: The "blend/multiply" module of the particle shader
+    * Inputs:
+      * color: Color4
+      * alphaTexture: Float
+      * alphaColor: Float
+    * Outputs:
+      * blendColor: Color4
+
+  * `ParticleColor`: The color of the particle
+    * Outputs:
+      * output: Color4
+    
+  * `ParticlePositionWorld`: The world position of the particle
+    * Outputs:
+      * output: Vector3
+    
+  * `ParticleRampGradient`: The "ramp gradient" module of the particle shader
+    * Inputs:
+      * color: Color4
+    * Outputs:
+      * rampColor: Color4
+    
+  * `ParticleTexture`: The texture of the particle
+    * Inputs:
+      * uv: Vector2
+    * Outputs:
+      * rgba: Color4
+      * rgb: Color3
+      * r: Float
+      * g: Float
+      * b: Float
+      * a: Float
+    
+  * `ParticleTextureMask`: The textureMask property of the particle
+    * Outputs:
+      * output: Color4
+    
+  * `ParticleUV`: the uv coordinates of the particle
+    * Outputs:
+      * output: Vector2
+    
+* PBR: (since 4.2)
+  * `AmbientOcclusion`: The ambient occlusion module of the PBR material
+    * Inputs:
+      * texture: Color3
+      * intensity: Float
+      * directLightIntensity: Float
+    * Outputs:
+      * ambientOcclusion: can only be used as input of the `PBRMetallicRoughness` block
+
+  * `Anisotropy`: The anisotropy module of the PBR material
+    * Inputs:
+      * intensity: Float
+      * direction: Vector2
+      * texture: Color3
+      * uv: Vector2
+      * worldTangent: Vector4
+    * Outputs:
+      * anisotropy: can only be used as input of the `PBRMetallicRoughness` block
+
+  * `ClearCoat`: The clear coat module of the PBR material
+    * Inputs:
+      * intensity: Float
+      * roughness: Float
+      * ior: Float
+      * texture: Color3
+      * bumpTexture: Color4
+      * uv: Vector2
+      * tintColor: Color3
+      * tintAtDistance: Float
+      * tintThickness: Float
+      * tintTexture: Color4
+      * worldTangent: Vector4
+    * Outputs:
+      * clearcoat: can only be used as input of the `PBRMetallicRoughness` block
+
+  * `PBRMetallicRoughness`: The PBR material implementing the metallic/roughness model
+    * Inputs:
+      * worldPosition: Vector4
+      * worldNormal: Vector4
+      * perturbedNormal: Vector4
+      * cameraPosition: Vector3
+      * baseColor: Color4
+      * baseTexture: Color4
+      * opacityTexture: Color4
+      * ambientColor: Color3
+      * reflectivity: output of the `Reflectivity` block
+      * ambientOcclusion: output of the `AmbientOcclusion` block
+      * reflection: output of the `Reflection` block
+      * sheen: output of the `Sheen` block
+      * clearcoat: output of the `ClearCoat` block
+      * subsurface: output of the `SubSurface` block
+      * anisotropy: output of the `Anisotropy` block
+    * Outputs:
+      * ambient: Color3
+      * diffuse: Color3
+      * specular: Color3
+      * sheenDir: Color3
+      * clearcoatDir: Color3
+      * diffuseInd: Color3
+      * specularInd: Color3
+      * sheenInd: Color3
+      * clearcoatInd: Color3
+      * refraction: Color3
+      * lighting: Color3
+      * shadow: Float
+      * alpha: Float
+
+  * `Reflection`: The reflection module of the PBR material
+    * Inputs:
+      * position: Vector3
+      * world: Matrix
+      * view: Matrix
+      * color: Color3
+    * Outputs:
+      * reflection: can only be used as input of the `PBRMetallicRoughness` block
+
+  * `Reflectivity`: The reflectivity module of the PBR material
+    * Inputs:
+      * metallic: Float
+      * roughness: Float
+      * texture: Color4
+    * Outputs:
+      * reflectivity: can only be used as input of the `PBRMetallicRoughness` block
+
+  * `Refraction`: The refraction module of the PBR material (used by the `SubSurface` block)
+    * Inputs:
+      * intensity: Float
+      * indexOfRefraction: Float
+      * tintAtDistance: Float
+      * view: Matrix
+    * Outputs:
+      * refraction: can only be used as input of the `SubSurface` block
+
+  * `Sheen`: The sheen module of the PBR material
+    * Inputs:
+      * intensity: Float
+      * color: Color3
+      * roughness: Float
+      * texture: Color4
+    * Outputs:
+      * sheen: can only be used as input of the `PBRMetallicRoughness` block
+
+  * `SubSurface`: The sub surface module of the PBR material
+    * Inputs:
+      * minThickness: Float
+      * maxThickness: Float
+      * thicknessTexture: Color4
+      * tintColor: Color3
+      * translucencyIntensity: Float
+      * translucencyDiffusionDistance: Color3
+      * refraction: output of the `Refraction` block
+    * Outputs:
+      * subsurface: can only be used as input of the `PBRMetallicRoughness` block
+
+* PostProcess:
+  * `CurrentScreen`: The current screen (texture) used to render the post process
+    * Inputs:
+      * uv: Vector2
+    * Outputs:
+      * rgba: Color4
+      * rgb: Color3
+      * r: Float
+      * g: Float
+      * b: Float
+      * a: Float
+
+  * `Position2D`: The 2D clip coordinates (values between -1 and 1 for both x and y)
+    * Outputs:
+      * output: Vector2
+
 * Range:
   * `Clamp`: Outputs values above the maximum or below minimum as maximum or minimum values respectively.
     * Input: 
@@ -922,6 +1121,181 @@ When selected in the Inspector, you can find an edit button in the Node Material
 
 You can also use a standalone version of the editor on https://nme.babylonjs.com
 
+## Recreating the StandardMaterial
+
+As a training exercise and to show what is possible to do with the Node Material Editor, the `StandardMaterial` has been recreated in the NME:
+* Material: http://nme.babylonjs.com/?#AT7YY5#6
+* Material without alpha support: http://nme.babylonjs.com/?#AT7YY5#7
+* Playground to compare the existing `StandardMaterial` and the corresponding Node Material: https://playground.babylonjs.com/#M5VQE9#19.
+
+Note that the only difference between the full material and the material without alpha support is that nothing is wire to the `fragmentOutput.a` input. If you don't need alpha support, you should use the "non alpha" node material as alpha-based materials have some constraints:
+* they don't write to the zbuffer and are only sorted among themselves, so some sorting rendering artifacts can arise
+* they need the `transparencyShadow` property to be `true` for shadow rendering
+
+Let's see how the material has been created and how to use it.
+
+### Main building frames
+
+The material is divided into several frames, mirroring the main features of the standard material:
+* Instances
+* Morphs and bones
+* Ambient
+* Diffuse
+* Specular
+* Reflection
+* Emissive
+* Bump (normal map)
+* Opacity
+* Lightmap
+* Vertex color
+* Fog
+
+In each of these frames, you generally find a boolean float node that enable/disable the feature, and possibly some other properties to fine-tune the feature. Most of these properties are **Constant** properties, meaning they won't consume a _uniform_ in the shaders and won't be visible in the Inspector / be updatable in javascript: you must change their value directly in the material (they correspond to the `#define` you can find in the standard material shader code).
+
+Note that you won't find this enable/disable property in the **Instances**, **Morphs and bones** and **Fog** frames: they are always enabled. That's because they depend on the mesh geometry / settings (or on a scene setting for **Fog**): those frames will be a simple "pass-through" if the corresponding feature doesn't exist on the mesh / scene, so no need to explicitly disable it in that case.
+
+### Additional building frames
+
+There are a number of additional frames that help organizing the graph more cleanly:
+* Final normal. This frame takes the output from the **Bump** frame and builds the final world normal used in subsequent computations (**Reflection** and **Lights**). You can change the `TWOSIDEDLIGHTING` boolean if you want the lighting to be applied whatever the triangle side facing are.
+* Final diffuse computation. It is the frame responsible for computing the final diffuse component, taking into account the ambient, emissive and vertex color components. Here you can modify the `LINKEMISSIVEWITHDIFFUSE` and `EMISSIVEASILLUMINATION` booleans to change the way the diffuse value is computed.
+* Final color computation. Everything is brought together to compute the final rgb color: ambient (texture), specular, reflection and emissive.
+* Final alpha computation. After the opacity (alpha) is generated from the **Opacity** frame, a number of additional computation is performed to produce the final alpha value. You can step in this computation by mean of two booleans, `REFLECTIONOVERALPHA` and `SPECULAROVERALPHA`.
+* Premultiply alpha to color. This one does what its title says and is enabled by the `PREMULTIPLYALPHA` boolean.
+
+### Construction notes
+
+The material itself is not so complicated as each feature is generally restricted to its own frame and has few connections with other frames. That helps to keep each building block manageable and easily understandable.
+
+Below are a few things of note.
+
+#### Working without a `if` statement
+
+As you may know, there's no `if` statement / block in the node material editor, so one must be creative to overcome this. Luckily, the standard material does not use this statement heavily (as it's better to avoid it for performance sake), so it is easy enough to deal with it. Most of the time, it is something like `if boolean is true, use this value in subsequent computation, else use that other value instead`. A **Lerp** block is the tool to use:
+```c
+Lerp(a, b, gradient)
+```
+
+`gradient` is the boolean: if it is 0, `a` is the output, if it is 1, `b` is the output. Then use the output in subsequent computation.
+
+Example:
+
+![Emissive](/img/how_to/Materials/nme_lerp.png)
+
+If `EMISSIVE` is set to 0, the output is `vEmissiveColor`, else it is the color from the emissive map. In effect, the `EMISSIVE` boolean lets you choose to use either the constant `vEmissiveColor` color or the color from the texture map as the emissive color.
+
+#### Discarding the fragment based on alpha cutoff value
+
+This construct is meant to discard the fragment if alpha testing is enabled and if the alpha value is below some threshold value (cutoff value). It looks like this:
+
+![Discard](/img/how_to/Materials/nme_discard.png)
+
+As you can see, the `alphaCutOff` node is not directly connected to the `cutoff` input of **Discard** (the **Discard** block will discard the fragment if the `value` input is lower than the `cutoff` input). That's because we need to let the user enable or disable this feature.
+
+What it does instead is comparing the alpha value from the diffuse texture to `ALPHATEST - 1 + alphaCutOff`, `ALPHATEST` being the boolean value that lets the user enable (1) or disable (0) the feature.
+
+If `ALPHATEST = 1`, the computed value is `alphaCutOff`, which is the expected input for `Discard.cutoff` in that case (alpha testing is enabled).
+
+If `ALPHATEST = 0`, the computed value is `-1 + alphaCutOff`. As `alphaCutOff` is a value between 0 and 1, `-1 + alphaCutOff` will always be lower or equal to 0. So, `Discard.cutoff` <= 0 in that case, meaning the fragment will never be discarded (which is the expected result when alpha testing is disabled).
+
+You could also have used `Lerp(0, alphaCutOff, ALPHATEST)` as the input for `Discard.cutoff`, but it's likely that the addition + subtraction used above is faster than a `Lerp` on GPUs (would need some benchmarking to be sure), even if it's by a small (negligible) margin.
+
+## Creating PBR materials
+
+You can use those playgrounds and materials as starting points for your own experiments to create PBR materials in the NME (note that the node material may take some time to load in the PG - the mesh will stay black until the material is loaded):
+*  Full use of all PBR blocks:
+  * PG: https://playground.babylonjs.com/#D8AK3Z#8
+  * Material: https://nme.babylonjs.com/#IFJ86Q#9
+* PBR material with sheen only:
+  * PG: https://playground.babylonjs.com/#MUX769#3
+  * Material: https://nme.babylonjs.com/#IFJ86Q#10
+* PBR material with clear coat only:
+  * PG: https://playground.babylonjs.com/#0XSPF6#2
+  * Material: https://nme.babylonjs.com/#IFJ86Q#11
+* PBR material with sub surface only:
+  * PG: https://playground.babylonjs.com/#7QAN2T
+  * Material: https://nme.babylonjs.com/#IFJ86Q#3
+
+The inputs of the different PBR blocks are using the same names as in the `PBRMetallicRoughnessMaterial` class, so you can refer to [this doc](https://doc.babylonjs.com/api/classes/babylon.pbrmetallicroughnessmaterial) for explanations about them.
+
+Some of the parameters are available as properties when clicking on the block in the NME.
+
+For eg, for `Reflection`:
+
+![Reflection properties](/img/how_to/Materials/nme_reflection_prop.png)
+
+Or for `PBRMetallicRoughness`:
+
+![PBR properties](/img/how_to/Materials/nme_pbr_prop.png)
+
+As for the standard `PBRMaterial`, if no texture is provided for the **Reflection** / **Refraction** texture, the one declared at the scene level (`scene.environmentTexture`) is used instead.
+
+By default, if something is connected to the `a` input of the `FragmentOutput` block, alpha blending is enabled. If you don't need alpha blending, don't connect this input.
+
+Regarding the `PBRMetallicRoughness` block, you have access to each output component separately (`ambient`, `diffuse`, `specular`, ...) if you want or you can directly use `lighting` to get the composite output. In the names of the separate outputs, `dir` means `direct` (component from direct lights) and `Ind` means `Indirect` (component from indirect lighting, meaning the environment).
+
+## Creating Post Processes
+
+Starting with Babylon.js v4.2, you can now create post processes with the node material editor.
+
+You need simply to change the mode to *Post Process*:
+
+![PostProcess choice](/img/how_to/Materials/postprocessMenu.png)
+
+In this mode, the special block **CurrentScreen** corresponds to the frame buffer that will be passed to your post process when you use this material as a post process in a real scenario. You can load any texture you want, it's simply an helper for you to see how your post process will render in the end.
+
+Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh, particle and animation blocks.
+
+When you have created your post process material in the NME, you can create a regular `BABYLON.PostProcess` instance by calling the `NodeMaterial.createPostProcess` method:
+```javascript
+const postProcess = nodeMaterial.createPostProcess(camera);
+```
+
+You can also update an existing post process:
+
+```javascript
+const myPostProcess = new BABYLON.PostProcess(...);
+...
+nodeMaterial.createEffectForPostProcess(myPostProcess);
+```
+
+PG: https://playground.babylonjs.com/#WB27SW#1
+
+As for regular node materials, you can access the blocks programmatically and change their values:
+
+Base material: https://playground.babylonjs.com/#WB27SW#4
+
+Programmatically updated material: https://playground.babylonjs.com/#WB27SW#3
+
+## Creating Particle shaders
+
+Starting with Babylon.js v4.2, you can now create particle shaders (to be used with a particle system) with the node material editor.
+
+You need simply to change the mode to *Particle*:
+
+![Particle choice](/img/how_to/Materials/particleMenu.png)
+
+Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh, post process and animation blocks.
+
+Also, in this mode, you can't create a vertex shader, only a fragment shader: the vertex shader is fixed and not updatable.
+
+Note that everything is driven by the parameters of the particle system instance. For eg, if the current particle system displayed in the preview area does not use "ramp gradients", the `ParticleRampGradient` block does nothing (it does not add ramp gradients to the shader), it's just a pass-through. Same thing for the `ParticleBlendMultiply` block. The exception is the `ParticleTexture` block, and only in the preview area of the node editor: if you provide a texture for this block it will be used as the particle texture in the preview area, else the texture defined in the current particle system will be used. In any case, when using the material in a live program, the texture will always be the one defined by the `ParticleSystem.particleTexture` property.
+
+The materials you create in the **Particle** mode can also be used for GPU particle systems, save for these restrictions:
+* GPU particle systems don't support ramp gradients, so the `RampGradientBlock` won't do anything (you can still use it in your material, it will simply do nothing)
+* GPU particle systems don't support the `textureMask` property, so you should not use the `ParticleTextureMask` block in your materials targeted for GPU particle systems, else display artifacts will appear
+
+When you have created your particle shader in the NME, you can link the material to a particle system instance by calling the `NodeMaterial.createEffectForParticles` method:
+```javascript
+nodeMaterial.createEffectForParticles(particleSystem);
+```
+
+PG: https://playground.babylonjs.com/#J9J6CG#1
+
+The full fragment shader used by default by the particle system can be recreated in the NME: https://nme.babylonjs.com/#X3PJMQ#1
+
+As explained above, if you want to use this material for GPU particle systems, you should remove the use of the `ParticleTextureMask` block: https://nme.babylonjs.com/#X3PJMQ#2
+
 ## Loading from a file saved from the Node Material Editor
 
 You can directly setup a Node Material from a file saved from the Node Material Editor.
@@ -940,18 +1314,68 @@ When using https://nme.babylonjs.com, you can have an additional option to save 
 
 Example: https://nme.babylonjs.com/#2F999G
 
+## Loading from a snippet (unique URL)
+
+You can use the following code to load a saved node material from a unique URL:
+
+```
+BABYLON.NodeMaterial.ParseFromSnippetAsync("2F999G", scene).then(nodeMaterial => {
+    sphere.material = nodeMaterial;
+});
+```
+
+## Node material examples
+
+Here are some node material examples that you can use "as is" or extend with the NME:
+* Standard material with alpha support: http://nme.babylonjs.com/?#AT7YY5#6
+* Standard material without alpha support: http://nme.babylonjs.com/?#AT7YY5#7
+* Full use of all PBR blocks: https://nme.babylonjs.com/#IFJ86Q
+* PBR material with sheen only: https://nme.babylonjs.com/#IFJ86Q#1
+* PBR material with clear coat only: https://nme.babylonjs.com/#IFJ86Q#2
+* PBR material with sub surface only: https://nme.babylonjs.com/#IFJ86Q#3
+* `GridMaterial` recreated as a node material: https://nme.babylonjs.com/#I4DJ9Z
+* "mist" post process: https://nme.babylonjs.com/#YDGZCJ
+* "dissolve" post process: https://nme.babylonjs.com/#D0USYC
+* Default particle shader: https://nme.babylonjs.com/#X3PJMQ#1
+* Default particle shader (GPU particle systems): https://nme.babylonjs.com/#X3PJMQ#2
+
 ## Going further
 
-Here is a list of videos related to Node material:
-- Add Light Texture: https://youtu.be/n2DLnMa21K0
-- Add basic lighting: https://youtu.be/BU9BTUkdYDY
+Here is a list of tutorials and informational videos about Node Material:
+
+- Frames and Collapsible Nodes: https://youtu.be/uHjAoHnMwDo
+
+[![Frames and Collapsible Nodes](https://img.youtube.com/vi/uHjAoHnMwDo/0.jpg)](https://youtu.be/uHjAoHnMwDo)
+- Adding Light Texture: https://youtu.be/n2DLnMa21K0
+
+[![Add Light Texture](https://img.youtube.com/vi/n2DLnMa21K0/0.jpg)](https://youtu.be/n2DLnMa21K0)
+- Adding basic lighting: https://youtu.be/BU9BTUkdYDY
+
+[![Add basic lighting](https://img.youtube.com/vi/BU9BTUkdYDY/0.jpg)](https://youtu.be/BU9BTUkdYDY)
 - Toon Shader Part 1: https://youtu.be/K0PXzE1hJXg
+
+[![Toon Shader Part 1](https://img.youtube.com/vi/K0PXzE1hJXg/0.jpg)](https://youtu.be/K0PXzE1hJXg)
 - Toon Shader Part 2: https://youtu.be/wtrIbGmuJ2o
+
+[![Toon Shader Part 2](https://img.youtube.com/vi/wtrIbGmuJ2o/0.jpg)](https://youtu.be/wtrIbGmuJ2o)
 - Toon Shader Part 3: https://youtu.be/YmcZ69xlOjM
+
+[![Toon Shader Part 3](https://img.youtube.com/vi/YmcZ69xlOjM/0.jpg)](https://youtu.be/YmcZ69xlOjM)
+- Ink Shader: https://youtu.be/0re82mEd1n8
+
+[![Ink Shader](https://img.youtube.com/vi/0re82mEd1n8/0.jpg)](https://youtu.be/0re82mEd1n8)
 - Step Node Switches: https://youtu.be/FwtFroNMmxw
+
+[![Step Node Switches](https://img.youtube.com/vi/FwtFroNMmxw/0.jpg)](https://youtu.be/FwtFroNMmxw)
 - Use Your Node Material in your code: https://youtu.be/F0Lh73I_6Z8
+
+[![Use Your Node Material in your code](https://img.youtube.com/vi/F0Lh73I_6Z8/0.jpg)](https://youtu.be/F0Lh73I_6Z8)
 - Vertex shader: https://www.youtube.com/watch?v=B5BO3nFc55s
+
+[![Vertex Shader](https://img.youtube.com/vi/B5BO3nFc55s/0.jpg)](https://youtu.be/B5BO3nFc55s)
 - Lights and textures: https://www.youtube.com/watch?v=fLXYhGhCejc
+
+[![Lights and textures](https://img.youtube.com/vi/fLXYhGhCejc/0.jpg)](https://youtu.be/fLXYhGhCejc)
 
 
 You can also visit the dedicated forum topic: https://forum.babylonjs.com/t/node-materials-examples/6048

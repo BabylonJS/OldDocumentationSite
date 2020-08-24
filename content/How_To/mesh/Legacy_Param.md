@@ -1,7 +1,3 @@
----
-PG_TITLE: Parametric Shapes Legacy Method
----
-
 # How To Create Parametric Shapes using Legacy Method
 
 ## Ribbon
@@ -52,7 +48,7 @@ var tube = BABYLON.Mesh.CreateTube("tube", [V1, V2, ..., Vn], radius, tesselatio
 ```
 While a tube can just be a cyclinder it can be far more than that
   
-* [Playground Example with a simple cos/sin path](http://www.babylonjs-playground.com/#LG3GS#8)   
+* [Playground Example with a simple cos/sin path](https://www.babylonjs-playground.com/#LG3GS#8)   
 
 
 Your function must just return a radius value.  
@@ -66,8 +62,8 @@ var tube = BABYLON.Mesh.CreateTube("lumps", path, null, 20, myFunction, scene);
 ```
 
 Here is an example with both an _i_ sinusoidal radius function and _x_ sinusoidal incrementing path :
-http://www.babylonjs-playground.com/#LG3GS#9    
-Here's another example with a circular path and varying radius : http://www.babylonjs-playground.com/#LG3GS#10  
+https://www.babylonjs-playground.com/#LG3GS#9    
+Here's another example with a circular path and varying radius : https://www.babylonjs-playground.com/#LG3GS#10  
 
 ## Non Regular Polygon
 
@@ -131,12 +127,12 @@ _dashSize_ and _gapSize_ are relative to each other dash and gap sizes within th
 What is extrusion ?  
 Extrusion is the way to transform a 2D shape into a volumic shape.  
 Let's imagine that you define a star shape by filling an array with successive _Vector3_. In order to have a 2D shape, you only set these points in the xOy plane, so every z coordinate is zero.  
-ex : http://www.babylonjs-playground.com/#RF9W9  
-Let's show the World axis so it is clearer : http://www.babylonjs-playground.com/#RF9W9#1  
-Let's now imagine you could stretch this 2D shape along the Z-axis to give it some volume... this is extrusion :  http://www.babylonjs-playground.com/#RF9W9#30    
+ex : https://www.babylonjs-playground.com/#RF9W9  
+Let's show the World axis so it is clearer : https://www.babylonjs-playground.com/#RF9W9#1  
+Let's now imagine you could stretch this 2D shape along the Z-axis to give it some volume... this is extrusion :  https://www.babylonjs-playground.com/#RF9W9#30    
 
 Let's now imagine you can extrude your star along a 3D path in space, a sinus curve for example, and not only along the z-axis.  
-http://www.babylonjs-playground.com/#RF9W9#31    
+https://www.babylonjs-playground.com/#RF9W9#31    
 
 
 Extrusion can be accomplished with two different methods. A basic one and an advanced or custom one.  
@@ -155,19 +151,19 @@ BABYLON.Mesh.ExtrudeShape(name, shape, path, scale, rotation, cap, scene, updata
 * updatable? : if the mesh is updatable.
 * sideOrientation : the side orientation - _front, back_ or _double_.  
 
-If we change the _scale_ value from 1 to 3 for example (line 84), the initial star is scaled to 3 along the curve : http://www.babylonjs-playground.com/#RF9W9#526 
-If we now change the _rotation_ step value from 0 to _PI / 24_ for example, the curve is twisted this angle at each curve point : http://www.babylonjs-playground.com/#RF9W9#218  
+If we change the _scale_ value from 1 to 3 for example (line 84), the initial star is scaled to 3 along the curve : https://www.babylonjs-playground.com/#RF9W9#526 
+If we now change the _rotation_ step value from 0 to _PI / 24_ for example, the curve is twisted this angle at each curve point : https://www.babylonjs-playground.com/#RF9W9#218  
 
-Of course, even if you define your 2D shape in the xOy plane as described, the extrusion still works along any path direction : http://www.babylonjs-playground.com/#RF9W9#32    
+Of course, even if you define your 2D shape in the xOy plane as described, the extrusion still works along any path direction : https://www.babylonjs-playground.com/#RF9W9#32    
 
-Moreover, the shape doesn't need to be closed. You can have a simple (or complex) open shape : http://www.babylonjs-playground.com/#RF9W9#7  
-Extrusion : http://www.babylonjs-playground.com/#RF9W9#33      
-Extrusion with rotation : http://www.babylonjs-playground.com/#RF9W9#34    
+Moreover, the shape doesn't need to be closed. You can have a simple (or complex) open shape : https://www.babylonjs-playground.com/#RF9W9#7  
+Extrusion : https://www.babylonjs-playground.com/#RF9W9#33      
+Extrusion with rotation : https://www.babylonjs-playground.com/#RF9W9#34    
 
-Remember that your shape doesn't need to be centered on the coordinate system either. Here is an offset simple shape : http://www.babylonjs-playground.com/#RF9W9#10  
-Extrusion (the extrusion path is shown in magenta so the offset is visible) : http://www.babylonjs-playground.com/#RF9W9#35    
-Now rotation... around the path axis : http://www.babylonjs-playground.com/#RF9W9#36    
-As you can see, this is a way to build complex curved helix meshes without handling maths or simpler ones : http://www.babylonjs-playground.com/#RF9W9#37    
+Remember that your shape doesn't need to be centered on the coordinate system either. Here is an offset simple shape : https://www.babylonjs-playground.com/#RF9W9#10  
+Extrusion (the extrusion path is shown in magenta so the offset is visible) : https://www.babylonjs-playground.com/#RF9W9#35    
+Now rotation... around the path axis : https://www.babylonjs-playground.com/#RF9W9#36    
+As you can see, this is a way to build complex curved helix meshes without handling maths or simpler ones : https://www.babylonjs-playground.com/#RF9W9#37    
 As the shape to be extruded is unpredictable, it is assumed that the cap, if want to add it one or two to your extruded mesh, is computed with its center set to the shape barycenter.  
 
 
@@ -205,9 +201,9 @@ var myScale = function(i, distance) {
 };
 ```
 
-Here is an example with an unclosed un-centered simple shape whose scale evolves linearly along the path : http://www.babylonjs-playground.com/#RF9W9#38    
-Now if we use a sinus scaling function instead and as the shape isn't centered, we get interesting results : http://www.babylonjs-playground.com/#RF9W9#39    
-We can even emulate rotation by alternately scaling positive/negative : http://www.babylonjs-playground.com/#RF9W9#40    
+Here is an example with an unclosed un-centered simple shape whose scale evolves linearly along the path : https://www.babylonjs-playground.com/#RF9W9#38    
+Now if we use a sinus scaling function instead and as the shape isn't centered, we get interesting results : https://www.babylonjs-playground.com/#RF9W9#39    
+We can even emulate rotation by alternately scaling positive/negative : https://www.babylonjs-playground.com/#RF9W9#40    
 
 
   _rotateFunction_  
@@ -224,8 +220,8 @@ var myRotation = function(i, distance) {
   return rotation;
 };
 ```
-Here is an example of constant scale and rotation evolving with the distance : http://www.babylonjs-playground.com/#RF9W9#41    
-You can set a non-linear rotation function of course, sinus here : http://www.babylonjs-playground.com/#RF9W9#42    
+Here is an example of constant scale and rotation evolving with the distance : https://www.babylonjs-playground.com/#RF9W9#41    
+You can set a non-linear rotation function of course, sinus here : https://www.babylonjs-playground.com/#RF9W9#42    
 
 
 
@@ -238,7 +234,7 @@ var noRotation = function(i, distance) {
   return 0;
 };
 ```
-If you carefully read the code of this previous example, you can see in line 41 that the _scaleFunction_ returns the constant 1 value : http://www.babylonjs-playground.com/#RF9W9#41      
+If you carefully read the code of this previous example, you can see in line 41 that the _scaleFunction_ returns the constant 1 value : https://www.babylonjs-playground.com/#RF9W9#41      
 
   _ribbonCloseXXX_ parameters
 
@@ -250,13 +246,13 @@ So it may be confusing because : 
 * _ribbonCloseArray_ set to true will close your shape extrusion path,
 * _ribbonClosePath_ set to true will close your shape itself (if unclosed).  
 
-Let's now do this unclosed, un-centered extruded shape : http://www.babylonjs-playground.com/#RF9W9#20  
-And this almost circular path : http://www.babylonjs-playground.com/#RF9W9#21  
-Extrusion with constant scale and no rotation : http://www.babylonjs-playground.com/#RF9W9#43    
-Now let's set the _ribbonCloseArray_ to true :http://www.babylonjs-playground.com/#RF9W9#44    
-As you can see, it closes the extrusion path. Let's set it back to false and let's set the _ribbonClosePath_ to true instead : http://www.babylonjs-playground.com/#RF9W9#45    
+Let's now do this unclosed, un-centered extruded shape : https://www.babylonjs-playground.com/#RF9W9#20  
+And this almost circular path : https://www.babylonjs-playground.com/#RF9W9#21  
+Extrusion with constant scale and no rotation : https://www.babylonjs-playground.com/#RF9W9#43    
+Now let's set the _ribbonCloseArray_ to true :https://www.babylonjs-playground.com/#RF9W9#44    
+As you can see, it closes the extrusion path. Let's set it back to false and let's set the _ribbonClosePath_ to true instead : https://www.babylonjs-playground.com/#RF9W9#45    
 Now the shape is closed.  
-Both together : http://www.babylonjs-playground.com/#RF9W9#46    
+Both together : https://www.babylonjs-playground.com/#RF9W9#46    
 
 
  Summary  
@@ -269,7 +265,7 @@ The shape is to be designed in the local coordinate system knowing that the z-ax
 Finally, shapes don't have to be centered in the local coordinate system.  
 A centered shape will be extruded symmetrically centered along the path axis. An un-centered shape will be extruded offset from the path axis.  
 
-Easy way to generate strange shapes : http://www.babylonjs-playground.com/#RF9W9#47   
+Easy way to generate strange shapes : https://www.babylonjs-playground.com/#RF9W9#47   
 
 # Further Reading
 

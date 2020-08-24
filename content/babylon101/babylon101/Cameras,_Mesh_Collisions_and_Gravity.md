@@ -1,8 +1,3 @@
----
-ID_PAGE: 22091
-PG_TITLE: 10. Cameras, Mesh Collisions and Gravity
----
-
 # Cameras, Mesh Collisions and Gravity
 
 Did you ever play a FPS (First Person Shooter) game? In this tutorial, we are going to simulate the same camera movements: the camera is on the floor, in collision with the ground, and potentially in collision with any objects in the scene.

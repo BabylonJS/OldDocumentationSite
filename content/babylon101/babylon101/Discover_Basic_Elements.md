@@ -1,8 +1,3 @@
----
-ID_PAGE: 22011
-PG_TITLE: 02. Set Shapes
----
-
 # Set Shapes 101
 
 These are shapes that usually already have names in everyday use. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well known but also included in set shapes are a torus, a torus knot and the polyhedra. You will have to wait for the next section to learn how to create shapes that have no everyday names but are formed through data sets and parameters. These are termed _parametric shapes_.
@@ -75,8 +70,8 @@ width|_(number)_ size of the width|size
 height|_(number)_ size of the height|size
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 sourcePlane|_(Plane)_ source plane (maths) the mesh will be transformed to|null
 
 * [Playground Example of a Plane](https://www.babylonjs-playground.com/#LXZPJK)
@@ -90,8 +85,6 @@ sourcePlane.normalize();
 This creates a mathematical plane which is used as the orientation source. The fourth parameter is a distance moved in the direction of the orientation vector. At this stage leave as 0. 
 
 * [Playground Example with Source Plane](https://www.babylonjs-playground.com/#LXZPJK#2)
-
-[More Information on Source Plane](LINK)
 
 ### Ground
 
@@ -116,6 +109,8 @@ A variation on _CreateGround_ is [_CreateGroundFromHeightMap_](/babylon101/Heigh
 
 This is only available on a limited number of meshes that have distinct faces such as a box but not a sphere. This allows you to give each face for those meshes an individual color or image. [Find out about Face Colors and UV](/How_To/CreateBox_Per_Face_Textures_And_Colors).
 
+More about UV mapping on [Wikipedia](https://en.wikipedia.org/wiki/UV_mapping).
+
 ## Updatable
 
 Where a mesh has the updatable parameter set to true it means that it is possible to alter the data associated with each vertex of the mesh and so alter the shape of the mesh. For more information see [How to Update Vertices](/How_To/Updating_Vertices.html)
@@ -139,9 +134,9 @@ In the following examples you can compare between DEFAULT and DOUBLESIDE by movi
 
 ## Front and Back UV
 
-When a mesh has a sideOrientation option present and it is set to DOUBLESIDE then it is possible for the front and back to display different images. For more information see [How To Display Front and Back Images](LINK)
+When a mesh has a sideOrientation option present and it is set to DOUBLESIDE then it is possible for the front and back to display different images.
 
-## Coming Soon 
+## Position and Rotation
 
 When you create a mesh it is always centered at the origin and in line with the axes. You will want to give it a different position and rotation. If you can't wait then skip the next step and go to [How to Change Position and Rotation](/babylon101/Position)
 

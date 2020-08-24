@@ -1,7 +1,3 @@
----
-ID_PAGE: 22081
-PG_TITLE: 08. Animations
----
 # Animation
 Your scene is beginning to look great, but it is very static. To put dynamics in it, we are going to learn how to tell your computer to move your meshes in any way you choose.
 
@@ -50,6 +46,8 @@ Much information is in the parameters:
 * ```BABYLON.Animation.ANIMATIONTYPE_COLOR3```
 
 Please note that by default Matrix values are not interpolated between keys which means that values are only the one from the key values even if we are between two keys. You can turn this feature on by calling `Animation.AllowMatricesInterpolation = true`. If matrix interpolation is enabled you can then either use Matrix.Lerp or Matrix.DecomposeLerp as interpolation tool. You can use `Animation.AllowMatrixDecomposeForInterpolation` to pick the one you want.
+
+Please also note that matrix interpolation will not be used if `animation.loopMode === BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE`.
 
 You can find a demo here: https://www.babylonjs-playground.com/frame.html#DMLMIP#1
 
@@ -173,7 +171,7 @@ These commands will apply to every animation object contained in the Animatable'
 And you are done! We have now completed an Animation for box1.scaling.x. Maybe now you want to build an Animation for box1.scaling.y, and really get box1 moving playfully. Don't hesitate to combine many animations for one mesh object... by creating more Animations and pushing them into the mesh's _animation_ property. ;)
 
 ## Animations and promises
-Starting with Babylon.js v3.3, you can use promises to wait for an anmatable to end:
+Starting with Babylon.js v3.3, you can use promises to wait for an animatable to end:
 
 ```
 var anim = scene.beginAnimation(box1, 0, 100, false);
@@ -222,7 +220,7 @@ Here is the list of functions that you can change:
 
 You can use an extended function to create a quick animation:
 
-```Javascript
+```javascript
 Animation.CreateAndStartAnimation = function(name, mesh, targetProperty, framePerSecond, totalFrame, from, to, loopMode);
 ```
 
@@ -233,7 +231,7 @@ To be able to use this function, you need to know that :
 
 Here is a straightforward sample using the **CreateAndStartAnimation()** function :
 
-```Javascript
+```javascript
 BABYLON.Animation.CreateAndStartAnimation('boxscale', box1, 'scaling.x', 30, 120, 1.0, 1.5);
 ```
 Fast and easy. :)
@@ -248,7 +246,7 @@ Although this playground is blending the same animation into itself, more often,
 
 ## Animation weights
 
-Starting with Babylon.js 3.2, you can start animations with a specific weight. This means that you can use this API to rung multiple animations simultaneously on the same target. The final value will be a mix of all animations weighted based on their weight value.
+Starting with Babylon.js 3.2, you can start animations with a specific weight. This means that you can use this API to run multiple animations simultaneously on the same target. The final value will be a mix of all animations weighted based on their weight value.
 
 To start an animation with a weight, you can use the new `scene.beginWeightedAnimation` API:
 
@@ -298,6 +296,17 @@ idleAnim.syncWith(runAnim);
 To disable animation synchronization, just call `animation.syncWith(null)`.
 
 A complete demo can be find here: https://www.babylonjs-playground.com/#IQN716#9
+
+## Additive animation blending
+So far the type of animation blending we've gone over has been override blending. This means that adding influence to an animation takes influence away from other animations that are playing. The result is always normalized, so the more animations playing at the same time, the smaller amount of influence each individual animation has over the final result. All of the keyframes in override animations are stored relative to the object's parent. Say for example you have an object with 2 override animations. The first animation has a translation value of [0, 0, 0] at frame 0, then it interpolates to [0, 2, 0] on frame 30, then back to [0, 0, 0] on frame 60. The second animation has a translation value of [0, 0, 0] at frame 0, interpolates to [0, 0, 2] on frame 30, and then back to [0, 0, 0] on frame 60. If you played these animations simultaneously at full weight, frame 30 would result in a translation value of [0, 1, 1]. Neither the Y or Z axes would ever be able to fully reach a value of 2 with both animations playing. This behavior works great for transitioning between animations, like blending from a walk to a run, but what if you want the motions to build on top of each other? This is where additive animation becomes useful.
+
+Additive animation is unique because it does not use that type of normalization logic. You can have N-number of additive animations playing simultaneously and each one will have the exact amount of influence specified. To accomplish this, additive animation values are relative to the current result of the override animations, not the parent. So if the second animation in the example above were to be played additively, frame 30 would result in a value of [0, 2, 2] because the second animation’s value adds on top of the first.
+
+There are a few ways you can specify that you want an animation to be evaluated additively. First, an optional boolean `isAdditive` parameter has been added to all of the Scene methods for beginning animations. Check the [Scene API documentation](https://doc.babylonjs.com/api/classes/babylon.scene) to see the most up to date parameter lists for each method. This parameter is false by default and will set the new boolean `isAdditive` property of the resulting [Animatable](https://doc.babylonjs.com/api/classes/babylon.animatable#isadditive). This `isAdditive` property controls whether the Animatable should be evaluated additively and can be changed at any time. [AnimationGroups](https://doc.babylonjs.com/api/classes/babylon.animationgroup#isadditive) also now have an `isAdditive` accessor which is false by default. Setting this accessor will set the `isAdditive` properties of all of the Animatables controlled by the group.
+
+One issue with additive animations is the problem of authoring for hierarchies. Because additive animations are evaluated relative to the result of other animations rather than the object's parent, it is not very intuitive to create them directly. To ease this burden, static `MakeAnimationAdditive` methods have been added to the [AnimationGroup](https://doc.babylonjs.com/api/classes/babylon.animationgroup#makeanimationadditive), [Skeleton](https://doc.babylonjs.com/api/classes/babylon.skeleton#makeanimationadditive) and [Animation](https://doc.babylonjs.com/api/classes/babylon.animation#makeanimationadditive) classes. These methods allow you to specify a frame in an existing animation and subtract it out of the rest of the keyframes in the animation to make them all relative to that specific pose.
+
+[Click here](https://playground.babylonjs.com/#6I67BL#2) for a sample demonstrating how to convert animations to additive and blend them on top of override animations. The UI buttons allow you to blend between several override animations and the sliders blend in additive animations on top.
 
 ## Overriding properties
 When you have a mesh with multiple animations or a skeleton (where all bones can be animated) you can use an animationPropertiesOverride to specify some general properties for all child animations. These properties will override local animation properties:
@@ -350,7 +359,7 @@ There are three possible values you can give for EasingMode:
 
 Here is a straightforward sample to animate a torus within a ```CircleEase``` easing function :
 
-```Javascript
+```javascript
 //Create a Vector3 animation at 30 FPS
 var animationTorus = new BABYLON.Animation("torusEasingAnimation", "position", 30, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
 
@@ -386,13 +395,13 @@ Here is a pretty cool implementation using the bezier curve algorithm :
 
 ![](/img/how_to/Animations/bezier.jpg)
 
-```Javascript
+```javascript
 var bezierEase = new BABYLON.BezierCurveEase(0.32, -0.73, 0.69, 1.59);
 ```
 
 Finally, you can extend the **EasingFunction** base function to create your own easing function, like this :
 
-```Javascript
+```javascript
 var FunnyEase = (function (_super) {
   __extends(FunnyEase, _super);
   function FunnyEase() {
@@ -407,7 +416,7 @@ var FunnyEase = (function (_super) {
   return FunnyEase;
 })(BABYLON.EasingFunction);
 ```
-You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**]( https://www.babylonjs-playground.com/?20)
+You will find a complete demonstration of the easing functions behaviors, in the playground : [**Easing function playground**](https://www.babylonjs-playground.com/#8ZNVGR)
 
 
 ## Complex animation
@@ -418,6 +427,13 @@ scene.registerBeforeRender(function () {
   //Your code here
 });
 ```
+
+The function set by ```registerBeforeRender()``` is run before every frame (usually
+~60 times per second) so animation is created by making small changes to object
+properties very quickly.
+
+A simple demonstration of complex animation can be found in the playground here:
+[Complex Animation Example](https://playground.babylonjs.com/#YJVTI6)
 
 This function can be very useful for complex animation like games, where characters have to move depending on many parameters.
 

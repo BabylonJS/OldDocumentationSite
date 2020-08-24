@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Default Rendering Pipeline
----
-
 # Introduction
 
 You can find a complete example of this pipeline in our playground:

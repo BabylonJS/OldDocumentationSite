@@ -1,7 +1,3 @@
----
-ID_PAGE: 22101
-PG_TITLE: 11. Intersect Collisions - mesh
----
 # Mesh Collisions
 
 In dynamic scenes, objects are moving and interacting with each other. To get the best rendering, you will want to know when your meshes are in contact with each other. In this tutorial, we are going to discover how the collision system works.
@@ -16,42 +12,44 @@ This tutorial is going to show you two ways of collision detection: the first on
 
 We are going to talk about the scene above. The first and second sphere (balloon) will collide on the rotated ground, the last one will be in collision only on a single point. Once you have created this basic scene, continue reading to learn how to check collisions.
 
-* **Intersect mesh**
-  The point here is to check contact between our balloons and the ground. We will use the “intersectsMesh()” function, with two parameters: the mesh to be checked, and the precision of the intersection (boolean).
+### Intersect mesh
 
-  ```javascript
-  if (balloon1.intersectsMesh(plan1, false)) {
-    balloon1.material.emissiveColor = new BABYLON.Color4(1, 0, 0, 1);
-  } else {
-    balloon1.material.emissiveColor = new BABYLON.Color4(1, 1, 1, 1);
-  }
-  ```
+The point here is to check contact between our balloons and the ground. We will use the `intersectsMesh()` function, with two parameters: the mesh to be checked, and the precision of the intersection (boolean).
 
-  To avoid costly calculation by checking many details on a mesh, Babylon engine creates a bounding box around the object, and tests for intersection between this box, and the colliding mesh. Here is an example of a bounding box:
+```javascript
+if (balloon1.intersectsMesh(plan1, false)) {
+  balloon1.material.emissiveColor = new BABYLON.Color4(1, 0, 0, 1);
+} else {
+  balloon1.material.emissiveColor = new BABYLON.Color4(1, 1, 1, 1);
+}
+```
 
-  ![Collisions](/img/how_to/Collisions%20Intersect/10-1.png)
+To avoid costly calculation by checking many details on a mesh, Babylon engine creates a bounding box around the object, and tests for intersection between this box, and the colliding mesh. Here is an example of a bounding box:
 
-  But this bounding box can be more or less precise, and that’s why we have our second parameter. In short, if this parameter is set to true (false by default), then the bounding box is closer to the mesh (OBB bounding type), but it’s a more costly calculation. Be aware that this type of bounding box is especially useful when your mesh is rotated to an angle.
+![Collisions](/img/how_to/Collisions%20Intersect/10-1.png)
 
-  ![Collisions](/img/how_to/Collisions%20Intersect/10-2.png)
+But this bounding box can be more or less precise, and that’s why we have our second parameter. In short, if this parameter is set to true (false by default), then the bounding box is closer to the mesh (OBB bounding type), but it’s a more costly calculation. Be aware that this type of bounding box is especially useful when your mesh is rotated to an angle.
 
-  So think about the collisions details you need before to choose.
+![Collisions](/img/how_to/Collisions%20Intersect/10-2.png)
 
-  If you want more information about this second parameter, you can have a look at this Wikipedia page, especially about AABB and OBB mode: [http://en.wikipedia.org/wiki/Bounding_volume](http://en.wikipedia.org/wiki/Bounding_volume)
+So think about the collisions details you need before to choose.
 
-* **Intersect point**
-  The other function you can use is “intersectsPoint()” with a specific point, like this:
+If you want more information about this second parameter, you can have a look at this Wikipedia page, especially about AABB and OBB mode: [http://en.wikipedia.org/wiki/Bounding_volume](http://en.wikipedia.org/wiki/Bounding_volume)
 
-  ```javascript
-  var pointToIntersect = new BABYLON.Vector3(10, -5, 0);
-  if (balloon3.intersectsPoint(pointToIntersect)){
-    balloon3.material.emissiveColor = new BABYLON.Color4(1, 0, 0, 1);
-  }
-  ```
+### Intersect point
 
-  We defined a precise point in our scene, and if our balloon intersects this point, wherever on the balloon, then the event is raised and we change the color of the balloon.
+The other function you can use is `intersectsPoint()` with a specific point, like this:
 
-You can play with the code used in this tutorial... by visiting [**a demo at our playground**]( https://www.babylonjs-playground.com/?10).
+```javascript
+var pointToIntersect = new BABYLON.Vector3(10, -5, 0);
+if (balloon3.intersectsPoint(pointToIntersect)){
+  balloon3.material.emissiveColor = new BABYLON.Color4(1, 0, 0, 1);
+}
+```
+
+We defined a precise point in our scene, and if our balloon intersects this point, wherever on the balloon, then the event is raised and we change the color of the balloon.
+
+You can play with the code used in this tutorial... by visiting [**a demo at our playground**](https://www.babylonjs-playground.com/#KQV9SA)
 
 ## Next step
 
@@ -61,4 +59,6 @@ In our next tutorial, you will discover how to [check collisions between your sc
 
 # Further Reading
 
-[Cameras Overview](/features/Cameras)
+## Features
+
+- [Cameras Overview](/features/Cameras)

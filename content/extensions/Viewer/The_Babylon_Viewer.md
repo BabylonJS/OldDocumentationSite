@@ -1,7 +1,3 @@
----
-PG_TITLE: The Babylon.js Viewer
----
-
 # Display 3D models on your webpage
 
 The Babylon.js viewer is the simplest way to display 3D content on a web page.
@@ -20,7 +16,7 @@ To display a 3D model on you web page:
    <babylon model="model.gltf"></babylon>
    ```
 
-   We recommend using the [glTF format](http://github.com/khronosgroup/gltf) (`.gltf` or `.glb`) for displaying 3D models on your webpage. Other formats supported by Babylon.js loaders are also supported by the viewer component including `.babylon`, `.obj`, and `.stl` formats.
+   We recommend using the [glTF format](https://github.com/khronosgroup/gltf) (`.gltf` or `.glb`) for displaying 3D models on your webpage. Other formats supported by Babylon.js loaders are also supported by the viewer component including `.babylon`, `.obj`, and `.stl` formats.
 
 The Babylon.js viewer automatically provides a [default viewing experience](#default-viewing-experience) for 3D models. All aspects of this experience are configurable. See [Configuring the viewer](//doc.babylonjs.com/extensions/Configuring_the_viewer) for more information on customizing the viewing experience.
 

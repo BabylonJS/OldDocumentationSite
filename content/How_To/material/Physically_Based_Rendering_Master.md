@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Master the PBR Materials
----
-
 # How To Master the PBR Materials
 
 ## Introduction
@@ -252,6 +248,50 @@ The setup will be identical relying on the both previously defined values:
 
 It also fully respect the previously defined thickness configuration: The actual thickness per pixel would be then = minimumThickness + thicknessTexture.r * maximumThickness.
 
+### Scattering
+To further add a layer of detail over what really happens beneath the surface of the material, you can add scattering. It simulates all small bounces of the light that takes place inside the material, causing light to go out at a different location than where it entered.
+
+It can be really useful on materials like skin, foliage, wax, dense colored liquids, icecubes, gemstones, etc...
+
+You can use this in addition of translucency to accurately represent the spread of the light inside the material.
+
+![SubSurfaceScattering](/img/extensions/PBRSubSurfaceScattering.jpg)
+
+[Demo](https://www.babylonjs-playground.com/#GTQKYK#1)
+```javascript
+var pbr = new BABYLON.PBRMaterial("pbr", scene);
+sphere.material = pbr;
+
+scene.enablePrePassRenderer().subSurfaceConfiguration.metersPerUnit = 0.01;
+
+pbr.metallic = 0;
+pbr.roughness = 0.2;
+
+pbr.subSurface.isScatteringEnabled = true;
+```
+
+For this effect to be physically accurate, you have to indicate the ratio between scene units and the real world distance in meters, by filling the property `metersPerUnit` of the scene pre-pass renderer. It is  by default set to 1 meter = 1 unit.
+
+#### Diffusion profiles
+
+Pushing realism even further, material volume albedo affects how far light travels inside the material. Thus you can register your material profile as the average volumic albedo that it is made of.
+
+Let's say you want a skin tone diffusion profile, you can add this to your subsurface configuration by doing :
+
+[Demo](https://www.babylonjs-playground.com/#W7DYG2#2)
+```javascript
+	pbr.subSurface.scatteringDiffusionProfile = new BABYLON.Color3(0.750, 0.25, 0.20);
+```
+
+You can have up to 5 different colors registered as diffusion profiles.
+
+*Warning ! Performance and compatibility notice*
+
+This effect is using a lot of WebGL 2 structures under the hood, therefore it is only compatible with WebGL 2. 
+Furthermore, please note that the use of subsurface scattering triggers a post-process, and it adds a lot of additionnal work for the GPU.  
+In other terms, use it wisely, and mind smaller GPUs that won't necessarily have the ressources to run this effect.
+
+
 ### Mask
 Would you wish to define the intensity of the different effects (Refraction or Translucency), you can use the left over channels of the thickness map. Actually, as we are trying to limit the overall number of textures used in the materials we decided to pack the mask information in the g channel for the transluency intensity factor and the alpha channel for the refraction intensity (b has been reserved for the next release).
 
@@ -408,6 +448,8 @@ pbr.roughness = 0.0;
 pbr.anisotropy.isEnabled = true;
 pbr.anisotropy.texture = texture;
 ```
+[Demo](https://playground.babylonjs.com/#1EISUM#3)  
+[Video tutorial](https://youtu.be/Zk0A5UzNLNw)
 
 ## Sheen
 Some materials have a totally different shapes for the specular lobe. By default in the PBR, material the specular lobe would for instance not be adapted to define the wide specular lobe we can see on fabric materials like satin. This is the main reason we introduced sheen in the material so that you can since 4.0 represents fabric materials relying on the PBR.

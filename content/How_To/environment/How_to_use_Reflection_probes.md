@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use Reflection probes
----
-
 # How to use Reflection probes
 ![Reflection Probes example](/img/reflectionProbe.jpg)
 
@@ -45,3 +41,23 @@ probe.position = new BABYLON.Vector3(0, 1, 0);
 ```
 
 If you want to try it, just click [here]( https://www.babylonjs-playground.com/#KA93U#243)
+
+## Probes and PBR
+
+If you want to achieve the highest quality for your PBR materials using probes for realtime reflections, the engine needs additionnal processing to achieve the right glossiness / roughness effect.
+Getting it right is really simple, first setup a probe on your mesh with a PBR material, as described in the previous paragraph. Then you need to enable this flag on your material :
+
+```
+mainMaterial.reflectionTexture = probe.cubeTexture;
+mainMaterial.realTimeFiltering = true;
+```
+
+This flag will ensure your PBR material is correctly rendered with the probe. However, this flag involves more GPU processing for your materials, so be sure to use it wisely. In order to keep performance under control, you can set the quality of the filtering process of your material :
+
+```
+mainMaterial.realTimeFilteringQuality = BABYLON.Constants.TEXTURE_FILTERING_QUALITY_MEDIUM;
+```
+
+Default is `TEXTURE_FILTERING_QUALITY_LOW`. Try with different qualities and see what's the best performance / quality tradeoff for your scene.
+
+[Here](https://playground.babylonjs.com/#FEEK7G#116) is a playground example with a reflection probe and PBR material.

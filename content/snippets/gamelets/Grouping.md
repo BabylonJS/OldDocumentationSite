@@ -1,7 +1,3 @@
----
-PG_TITLE: Creating Shapes from Groups of Particles
----
-
 # Creating Shapes from Groups of Particles
 
 In order to form complex shapes from particles we need to place sets of particles together and for them to react as one entity.
@@ -14,19 +10,19 @@ In the following each particle is a sphere of radius r.
 
 One quick way to form a random shape from a set of n particles is to fix the position, s<sub>0</sub>, of the first particle, p<sub>0</sub>, and then for any subsequent particle p<sub>i</sub>, set its position s<sub>i</sub> to be s<sub>i-1</sub> + 2ru, where u is a unit vector chosen from i, j, k, -i, -j, k and i, j and k are the unit vectors in the direction of the axes x, y and z respectively.
 
-* [Playground Example - Form One Shape](http://www.babylonjs-playground.com/#22IYEF#1)
+* [Playground Example - Form One Shape](https://www.babylonjs-playground.com/#22IYEF#1)
 
 The above method can lead to two or more particles occupying the same space. To avoid this the potential position for each particle needs to be checked. You can see that there are not always five particles forming the group in the above Playground.
 
 Each particle will have a unique position relative to the first particle. By storing a key based on their offsets the existance of such a key can be used to prohibit the placing of a particle at that offset. The following Playground uses this method to distribute the particles with a shape.
 
-* [Playground Example - Form One Shape with No Shared Spaces](http://www.babylonjs-playground.com/#22IYEF#2)
+* [Playground Example - Form One Shape with No Shared Spaces](https://www.babylonjs-playground.com/#22IYEF#2)
 
 ## Multiple Shapes
 
 So far we have grouped all the particles into one shape. Now we form the particles into a number of shapes.
 
-* [Playground Example - Multiple Shapes](http://www.babylonjs-playground.com/#22IYEF#3)
+* [Playground Example - Multiple Shapes](https://www.babylonjs-playground.com/#22IYEF#3)
 
 The next step is to be able to move and rotate each shape as an entity. Moving a shape is straight forward, just re-position each particle within the shape by the same amount. To rotate a shape will require a point and an axis to rotate around and an angle of rotation. It is not possible to use setPivotMatrix for particles so a custom built function is required. For a given position this function will calculate the new position after rotation of an angle about an axis through a pivot point.
 
@@ -52,7 +48,7 @@ SPS.updateParticle = function(particle) {
 };
 ```
 
-* [Playground Example - Moving and Rotating Shapes](http://www.babylonjs-playground.com/#22IYEF#5)
+* [Playground Example - Moving and Rotating Shapes](https://www.babylonjs-playground.com/#22IYEF#5)
 
 The next step is to consider what happens when two or more shapes collide.
 

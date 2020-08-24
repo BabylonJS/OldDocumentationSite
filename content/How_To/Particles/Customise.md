@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Customize Particles
----
-
 # How To Customize Particles
 
 As you can find in [Babylon101](/babylon101/particles) there are many properties of the particle system that can be tweaked to control the look of a particle system. Babylon.js allows you even more customization to obtain the system you want. These can be split into into two types custom functions and custom effects. 
@@ -23,7 +19,7 @@ Since Babylon.js V3.2 you can use the first two, `startDirectionFunction` and `s
 The start direction function has the default form
 
 ```javascript
-particleSystem.startDirectionFunction = (emitPower: number, worldMatrix: Matrix, directionToUpdate: Vector3) {
+particleSystem.startDirectionFunction = (emitPower: number, worldMatrix: Matrix, directionToUpdate: Vector3, particle: Particle, isLocal: boolean) {
     var randX = randomNumber(this.direction1.x, this.direction2.x);
     var randY = randomNumber(this.direction1.y, this.direction2.y);
     var randZ = randomNumber(this.direction1.z, this.direction2.z);
@@ -35,7 +31,7 @@ particleSystem.startDirectionFunction = (emitPower: number, worldMatrix: Matrix,
 The start position function has the default form
 
 ```javascript
-particleSystem.startPositionFunction = (worldMatrix: Matrix, positionToUpdate: Vector3): void => {
+particleSystem.startPositionFunction = (worldMatrix: Matrix, positionToUpdate: Vector3, particle: Particle, isLocal: boolean): void => {
     var randX = randomNumber(this.minEmitBox.x, this.maxEmitBox.x);
     var randY = randomNumber(this.minEmitBox.y, this.maxEmitBox.y);
     var randZ = randomNumber(this.minEmitBox.z, this.maxEmitBox.z);

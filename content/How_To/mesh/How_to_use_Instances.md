@@ -1,8 +1,3 @@
----
-ID_PAGE: 22571
-PG_TITLE: How to use Instances
----
-
 # How to use Instances
 Instances are an excellent way to use hardware accelerated rendering to draw a huge number of identical meshes (let's imagine a forest or an army).
 
@@ -33,6 +28,18 @@ Each instance has the same material as the root mesh. They can vary on the follo
 * ```rotationQuaternion```
 * ```setPivotMatrix```
 * ```scaling```
+
+Note: related are **thin instances**, if you want yet more performances but with less control on each instance. See the [dedicated page](/How_To/How_to_use_ThinInstances) for further information.
+
+# Instancing a glTF object
+
+When you instanciate a glTF object, you need to make sure that the new instance will be under the same parent or you need to remove the parent from the source object.
+
+This is because every gltf file comes from a right handed world. To get it into Babylon.js left handed world, we are adding an arbitrary parent that is adding a negative scale on z.
+
+So when instancing a glTF object you have to (either):
+- Call `source.setParent(null)`
+- Or call `newInstance.setParent(source.parent)`
 
 # Custom buffers
 
@@ -124,10 +131,13 @@ https://www.babylonjs-playground.com/#0720FC#10
 
 * Instances with a world matrix where determinant is different than root mesh world matrix will be rendered separately (like a regular mesh). This mostly happens when the sign of the scaling vector is different between an instance and the root mesh.
 
-# Demo
-https://www.babylonjs-playground.com/#YB006J#75
+# Demos
+- Trees: https://www.babylonjs-playground.com/#YB006J#75
+- 10,000 Icospheres: https://playground.babylonjs.com/#c2ynt9#12
 
 ## Going further
 
 Check out this video to learn more:
 - Fun with Instance Buffers: https://youtu.be/rlODXrsdseA
+
+[How To Use Thin Instances](/How_To/How_to_use_ThinInstances)

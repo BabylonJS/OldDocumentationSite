@@ -1,7 +1,3 @@
----
-PG_TITLE: Advanced Physics Features
----
-
 # How To Use Advanced Physics Features
 
 ## The Heightmap
@@ -48,8 +44,8 @@ mesh.physicsImpostor = new BABYLON.PhysicsImpostor(mesh, BABYLON.PhysicsImpostor
 ```
 
 A demo for both of these examples can be found here - 
-* http://www.babylonjs-playground.com/#D3LQD#7
-* http://www.babylonjs-playground.com/#EXL6K#9
+* https://www.babylonjs-playground.com/#D3LQD#7
+* https://www.babylonjs-playground.com/#EXL6K#9
 
 ## Mesh Impostor
 
@@ -168,11 +164,11 @@ Raanan Weber wrote an article about cloth simulation in his blog: <https://blog.
 
 ## Some random demos
 
-* Cannon car demo - http://www.babylonjs-playground.com/#UGMIH#8
-* Oimo car demo - http://www.babylonjs-playground.com/#SFELK#3
-* Heightmap game - http://www.babylonjs-playground.com/#DLBW7#11
-* Net on a sphere - http://www.babylonjs-playground.com/#1M67K8#7
-* Newton's cradle - http://www.babylonjs-playground.com/#MDMVA#18
+* Cannon car demo - https://www.babylonjs-playground.com/#UGMIH#8
+* Oimo car demo - https://www.babylonjs-playground.com/#SFELK#3
+* Heightmap game - https://www.babylonjs-playground.com/#DLBW7#11
+* Net on a sphere - https://www.babylonjs-playground.com/#1M67K8#7
+* Newton's cradle - https://www.babylonjs-playground.com/#MDMVA#18
 
 # Further Reading
 

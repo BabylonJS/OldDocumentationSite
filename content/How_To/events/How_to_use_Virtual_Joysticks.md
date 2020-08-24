@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use Virtual Joysticks
----
-
 # VirtualJoystick
 Create virtual joysticks for the left and right side of the screen
 ```
@@ -23,6 +19,6 @@ Note: This will create an overlay canvas on top of the canvas for the scene. Thi
 
 To create a custom virtual joystick and modify it to suit specific use cases, the Babylon GUI can be used.
 
-* [Playground Example](https://playground.babylonjs.com/#PRQU53)
+* [Playground Example](https://www.babylonjs-playground.com/#C6V6UY#5)
 
 As seen in this example, no overlay canvas is used so other GUI elements will continue to function and the visuals can be modified/positioned if needed.

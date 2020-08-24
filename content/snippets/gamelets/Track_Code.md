@@ -1,7 +1,3 @@
----
-PG_TITLE: Design for Create Track
----
-
 # Design for Create Track
  
 This page explains the design behind the 'createTrack' function which you use to [build tracks](/snippets/Track) that provide data for a carriage to follow. A track is built for an array of points (Vector3s) which is split into sections. Each section uses the designated lean, *the rotation of the carriage about the track direction* and turn, *the rotation of the carriage about its local Y axis*, of the carriage following the track to produce arrays of matrices for each point on the track path. The direction of a rail is given by the tilt (-&pi;/2 to &pi;/2) of the rail about the z axis and its swivel ( to to 2&pi;) about the y axis. 

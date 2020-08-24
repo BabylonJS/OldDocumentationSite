@@ -1,7 +1,5 @@
 An offscreen canvas is a canvas that can be rendered off screen and on a different thread than the main UI thread.
 
-*(You may want to check support of offscreen canvas for your browser as this is a pretty new feature: https://caniuse.com/#feat=offscreencanvas)*
-
 It could be really interesting to do so if your main thread is already heavily used for other tasks.
 
 You can see a page demonstrating this use case here: https://www.babylonjs.com/Demos/Offscreen
@@ -62,6 +60,18 @@ onmessage = function(evt) {
         canvas.width = evt.data.width;
         canvas.height = evt.data.height;
     }
+}
+```
+
+## Compatibility
+
+Note that this feature is new and not yet compatible with every device or browser.
+You can check current support of offscreen canvas here: https://caniuse.com/#feat=offscreencanvas
+
+If you want to test the compatibility, you can add this condition before using offscreen canvas:
+```
+if ("OffscreenCanvas" in window && "transferControlToOffscreen" in canvas) { 
+    // Ok to use offscreen canvas
 }
 ```
 

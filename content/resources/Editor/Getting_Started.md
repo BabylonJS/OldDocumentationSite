@@ -1,9 +1,11 @@
 
-# Getting Started
+# Getting Started with the Editor
 The V3 of the Babylon.js Editor is now available and comes with new features from the V2. Such as multiple scene managements, improved tools and new tools.
 
 The editor V3 is available at http://editor.babylonjs.com/.
 The video tutorials are all available on [a Youtube playlist](https://www.youtube.com/watch?v=obEuCI_pPL4&list=PLuZE-0i73Wo-xqfBsgZA531BXeesXQ3Op&index=1)
+
+Please note that the editor is a communinity project maintained mostly by Julien Moreau.
 
 # Desktop App
 The Babylon.js Editor is firstly available as a desktop application.

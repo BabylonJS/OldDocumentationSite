@@ -1,8 +1,3 @@
----
-ID_PAGE: 22051
-PG_TITLE: 05. Materials
----
-
 # Materials
 Materials allow you to cover your meshes in color and texture and they need light to be seen. One material can be used to cover as many meshes as you wish.
 
@@ -46,7 +41,7 @@ mesh.material = myMaterial;
 ### Diffuse Color Example
 To give an idea on how the material diffuse color reacts to the diffuse light color the following playground example shows how different color materials react to white, red, green and blue diffuse spot lights.
 
-* [Playground Example - Material Color Reaction to Light Color _direct click or edit to view_](http://www.babylonjs-playground.com/#20OAV9#325)  
+* [Playground Example - Material Color Reaction to Light Color _direct click or edit to view_](https://www.babylonjs-playground.com/#20OAV9#325)  
 
 This reaction of 
 
@@ -60,7 +55,7 @@ to white, red, green and blue diffuse spot lights can also be seen in the follow
 ![ Spot Light](/img/how_to/Materials/spots1.png)
 
 ### Ambient Color Example
-In this [playground example](http://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
+In this [playground example](https://www.babylonjs-playground.com/#20OAV9#14) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has no ambient color, the middle has red ambient color defined on its material and the one on the right 
 has material with green ambient color. The scene ambient color, which must be present, is white. When a scene ambient color component is set to 0, for example red, then whatever the value for red in the material 
 ambient color it will have no effect. 
@@ -72,7 +67,7 @@ Transparency is achieved by setting a materials _alpha_ property from 0 (invisib
 ```javascript
 myMaterial.alpha = 0.5;
 ```
-* [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#16)
+* [Playground Example Transparency](https://www.babylonjs-playground.com/#20OAV9#16)
 
 ## Texture
 Textures are formed using a saved image.
@@ -97,7 +92,7 @@ mesh.material = myMaterial;
 ```
 Note: When no normals are specified, Babylon's standard material will compute the normals.
 ### Texture Example
-In this [playground example](http://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
+In this [playground example](https://www.babylonjs-playground.com/#20OAV9#15) all spheres are lit by the same hemispheric light, with _diffuse_ red and _groundColor_ green. 
 The first sphere has a diffuse texture, the middle an emissive texture and the one on the right 
 has material with red diffuse color and an ambient texture.
 
@@ -108,7 +103,7 @@ As for colors the transparency is achieved by setting a materials _alpha_ proper
 ```javascript
 myMaterial.alpha = 0.5;
 ```
-* [Playground Example Transparency](http://www.babylonjs-playground.com/#20OAV9#17)
+* [Playground Example Transparency](https://www.babylonjs-playground.com/#20OAV9#17)
 
 In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
 which has a transparent background;
@@ -120,7 +115,7 @@ In this case we set the _hasAlpha_ property of the **texture** to true.
 myMaterial.diffuseTexture.hasAlpha = true;
 ```
 
-* [Playground Example Transparent Background](http://www.babylonjs-playground.com/#YDO1F#18)
+* [Playground Example Transparent Background](https://www.babylonjs-playground.com/#YDO1F#18)
 
 For the back faces of the cube to be visible through the transparent areas of the front faces we have to deal with back face culling.
 
@@ -136,7 +131,7 @@ When _backFaceCulling_ is false the back faces are not removed during rendering 
 |-----|--------|
 | ![BFC True](/img/how_to/Materials/bfc2.png) | ![BFC False](/img/how_to/Materials/bfc1.png) |
 
-* [Playground Example Back Face Culling True](http://www.babylonjs-playground.com/#YDO1F#20)
+* [Playground Example Back Face Culling True](https://www.babylonjs-playground.com/#YDO1F#20)
 
 ## WireFrame
 You can see a mesh in wireframe mode by using:
@@ -145,6 +140,38 @@ materialSphere1.wireframe = true;
  ```
 ![wireframe](/img/how_to/Materials/04-3.png)
 
+### Texture Packer
+Some complex scenes will require a large amount of texture.  A single Material often will use three and often more!  To simplify the loading process sometimes it might be convenient to package the texture from multiple materials into a series of images.  The trade off will be that each texture will be scaled to a set size and might cause some desegregation, there are also webGL limits to take into consideration.  The packer will create a set of "frames" for each unique material and its required texture channels, producing one image for each channel that the materials being packed used.  The process then modifies a target UV# of the meshes passed with the constructor to make them match the frame of the texture sets.  The system assumes textures are 1:1 ratio (square).
+
+Create a TexturePacker series by calling:
+```javascript
+let pack = new BABYLON.TexturePacker(name, targetMeshes, options, scene);
+pack.processAsync().then(success).catch(error);
+```
+There are some limitations though that you must consider.  These include texture size limits, transparencies, and refection/refraction materials.  Please go here for more information on [Creating a Texture Package](https://doc.babylonjs.com/how_to/creating_a_texture_package)
+
+* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#TQ408M#6)
+
+## Local File Access
+
+An important thing to remember, is that for security reasons, web browsers like google chrome don't allow local files to be accessed by default for web pages. This includes any texture files you are using. There are a few ways to work around this in google chrome. The quick and dirty way is to close all instances of chrome, and open it in the terminal.
+
+for windows, you go to the terminal and type,
+
+```
+start chrome --allow-file-access-from-files
+```
+for macOS, the command looks like this,
+
+```
+open -a "Google Chrome" --args --allow-file-access-from-files
+```
+and for linux, the command looks like this.
+
+```
+google-chrome --allow-file-access-from-files
+```
+Be warned that the above method may introduce a security risk if used for long term projects. For long term projects, you will want to set up an HTTP server to run any required files. Using a server has the benefit of working on any web browser.
 
 ## Next step
 Great, your scene is looking better than ever with those materials! Later we will see how to use advanced techniques with materials. But for now, we have to learn [**how to use cameras**](/babylon101/Cameras).
@@ -152,6 +179,3 @@ Great, your scene is looking better than ever with those materials! Later we wil
 # Further Reading
 
 [Materials Overview](/features/Materials)
-
-
-

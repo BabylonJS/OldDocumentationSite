@@ -37,6 +37,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Hierarchy
     * Position / rotation / scaling
     * Animations: position, rotation, scaling
+    * Custom attributes
 
 * _Materials_
     * Standard material (converted to PBR, see below)
@@ -47,13 +48,22 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Emission, ambient occlusion
     * Bump mapping
     * Multi-materials
-    * Unlit attribute
+    * Double-sided materials
+    * Unlit
+    * Backface culling
+    * Opacity/Transparency mode
+    * Custom attributes
+    * RGB Multiply map
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)
     * magFilter, minFilter
     * Image format conversion to jpg / png
     * Texture transform
+
+* _Animations_
+    * Export without animations
+    * Export animations only
 
 # Conversion Standard to PBR materials
 
@@ -213,34 +223,6 @@ To do it simply, a root node named "root" is added to the scene. All nodes are s
 
 In glTF, a skin is binded to a node. The skeleton (root bone) of a skin should be positioned at origin, without rotation or scaling. The node to which is applied the skin is responsible of its transformation (translation, rotation, scale).
 
-## Alpha mode
-
-Alpha mode is _OPAQUE_ when a material doesn't have any attribute or texture related to transparency.
-
-Alpha mode is _BLEND_ when a material has any of the following:
-- its transparency is not 0, or its opacity is not 100
-- has a transparency/opacity texture
-- has a base color/diffuse color texture with _Alpha Source_ set to _Image Alpha_
-
-Alpha mode can be set to _AlphaTest_ by setting a custom attribute on a material.
-![3DS MAX alpha test custom material attribute](/img/exporters/3DSMax/alpha_test_custom_material_attribute.jpg)
-
-To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Alpha Test attribute to all materials used in the scene. The default value is _Alpha Blend_. Run the script again whenever creating/assigning a new material.
-
-Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonAlphaTest_. The visual text (_Alpha Test_) could be whatever you want.
-
-__IMPORTANT__
-
-There is a known issue where 3DS MAX texture attributes are not initialized correctly when a bitmap is being created: the _Alpha Source_ value is the default one, which is _Image Alpha_.
-
-This means that __materials with a base color/diffuse color texture may be exported as _BLEND_ while you expected them to be _OPAQUE_.__
-
-To fix that, enter the base color/diffuse color texture settings and that's it! Doing this is enough for 3DS MAX to initialize the _Alpha Source_ correctly.
-
-![bitmap texture settings](/img/exporters/3DSMax/bitmap_texture_settings.jpg)
-
-Note that, for an image format with alpha channel, like PNG, if the image provided contains alpha, the default value once initialized correctly is still _Image Alpha_. You may want to change that to _None (Opaque)_.
-
 ## Textures image format
 
 glTF 2.0 only supports the following image formats: jpg and png. You are adviced to use those formats for your textures when exporting to glTF.
@@ -256,21 +238,47 @@ To enjoy PBR material rendering, you should have an environmnent texture in your
 
 However, glTF format does not support this feature and the environment map needs to be added manually in client implementations. The Babylon Sandbox, see bellow, provides such feature.
 
-## Unlit attribute
+## Double sided material
 
-A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: metalness, roughness, emission, ambient occlusion and bump mapping.
+The handling of the double sided material is mimic from babylon format. [Detailed explanations here](/resources/3DSMax#double-sided-material).
 
-Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here.](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)
+## Babylon material attributes
 
-3DS MAX does not provide a simple way to tag a material as Unlit. To do so, you need to add a custom attribute to the material :
+Native materials are enhanced to have extra attributes under Babylon attributes section.
 
-![3DS MAX unlit custom material attribute](/img/exporters/3DSMax/unlit_custom_material_attribute.jpg)
+![3DS MAX babylon material attributes](/img/exporters/3DSMax/BabylonMaterialAttributes.jpg)
 
-To add the desired custom attribute, you are recommended to use the [BabylonMaterialAttributes MAXScript](https://github.com/BabylonJS/Exporters/blob/master/3ds%20Max/MaxScripts/BabylonMaterialAttributes.ms) which adds the Unlit attribute to all materials used in the scene. The default value is _not Unlit_. Run the script again whenever creating/assigning a new material.
+Most Babylon attributes are common to all materials:
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture. Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit). During export, enable the _KHR_materials_unlit_ checkbox.
+* __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces. __This property is native to Standard material and is called _2-Sided_.__
+* __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
+    * _Opaque_: The alpha color and texture are ignored during export process.
+    * _Cutoff_: The alpha cutoff value is 0.5 (not exported as it is the glTF default value). Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
+    * _Blend_: This how 3ds Max handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
 
-Alternatively, you can add the custom attribute manually following [3DS MAX guidelines](https://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/3DSMax/files/GUID-7EAA7D84-5775-4E4C-9936-D874EB7A42BB-htm.html). Note that the exporter is looking for an attribute named _babylonUnlit_. The visual text (_Unlit_) could be whatever you want.
+## Custom attributes
 
-During export, enable the _KHR_materials_unlit_ checkbox.
+Attributes defined by you, the user, are exported as well!
+
+Almost all types of parameters are supported (_Float_, _Color_, _Boolean_...). The only exceptions are _Texture_, _Node_ and _Material_ types.
+All nodes (meshes, lights...) and materials have their custom attributes exported.
+
+To define custom attributes either use the Parameter Editor window or scripting:
+
+![3DS MAX custom attributes parameter editor](/img/exporters/3DSMax/CustomAttributesDefinition_3dsMax.jpg)
+
+Custom attributes are exported under _extras_:
+
+![3DS MAX custom attributes glTF](/img/exporters/3DSMax/CustomAttributes_glTF.jpg)
+
+Note that the custom attributes are added to the node, not to the mesh or light component itself.
+
+Following types have particularities you should know:
+- _Angle_ : Set in degrees (°) in 3ds Max but exported as radians. Ex: 360° => 3.1416 rads
+- _Array_ : An array in 3ds Max is an enumeration of values. Each value has an incremental index, starting from 1. Only one value can be selected. The index of selection is exported, not the displayed value.
+- _Color_ and _FRGBA_ : Exported in base 1 as all other colors. Ex: Red (255,0,0) => (1,0,0)
+- _Percent_ : Exported in base 1 as well. Ex: 80% => 0.8
+- _Texture_ : __Not supported__. Custom attributes are exported as row values. Thus textures are exported under babylon format instead of glTF format. Bitmaps associated to textures are not exported.
 
 ## Shell material
 

@@ -1,7 +1,3 @@
----
-ID_PAGE: 25364
-PG_TITLE: How to use Blend Modes
----
 # Introduction to Blend Modes ##
 
 A *blend mode* determines how, when rendering a mesh, new on-screen pixels will be mixed with existing pixels.

@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Highlight
----
-
 # How To Highlight a Mesh
 
 How often did you search to highlight some of your meshes in a scene? Sounds easy at first but quickly becomes an issue dealing with edges, blur and antialiasing.
@@ -32,9 +28,7 @@ hl.addMesh(sphere, BABYLON.Color3.Green());
 
 The highlight color is driven by the second parameter of the `addMesh` method:
 
-[**Playground Demo Scene**](https://www.babylonjs-playground.com/#1KUJ0A#207)
-
-**Note**: The highlight layer will not highlight transparent meshes, whether you're using mesh visibility or material alpha properties.
+[**Playground Demo Scene**](https://www.babylonjs-playground.com/#1KUJ0A#305)
 
 ### Stop highlighting a Mesh
 
@@ -129,11 +123,11 @@ You can notice on the previous scene the white glowing only inside of the sphere
 
 ### Exclude mesh
 
-As the highlight layer is not dealing with transparency of alpha blended meshes:
+Depending on your scene, transparent meshes may not render correctly with other highlighted meshes:
 
 [**Broken transparency Scene**]( https://www.babylonjs-playground.com/#2FFOYQ#6)
 
-You can exclude some of them from the highlight generation process in order to fix this:
+In that case, try to exclude them from the highlight generation process in order to fix this:
 
 ```javascript
 hl.addExcludedMesh(skybox1);

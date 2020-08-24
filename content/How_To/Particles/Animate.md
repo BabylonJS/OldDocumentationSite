@@ -1,12 +1,8 @@
----
-PG_TITLE: How To Use Animated Particles
----
-
 # Creating Animated Particles
 
 Starting from Babylon.js v3.1 the particle system will allow animated particles using a sprite animation map as its texture.
 
-* [Playground Example - Animated Particle](http://www.babylonjs-playground.com/#CLN02N#3)
+* [Playground Example - Animated Particle](https://www.babylonjs-playground.com/#CLN02N#3)
 
 To enable animated particles you pass a fifth Boolean parameter in the `ParticleSystem` constructor with the value `true` (The fourth for the `GPUParticleSystem`). The default value for this parameter is false. 
 

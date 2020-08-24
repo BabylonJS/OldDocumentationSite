@@ -1,8 +1,3 @@
----
-ID_PAGE: 22551
-PG_TITLE: How to use AssetsManager
----
-
 # How To Load Files with Assets Manager
 
 In order to help developers load multiple assets, Babylon.js (starting with version 1.14) introduced the AssetsManager class.

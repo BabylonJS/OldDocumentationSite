@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use RenderTargetTexture and run multiple passes
----
-
 # How to use RenderTargetTexture and run multiple passes
 
 Sometimes it's interesting to render a scene multiple times and compose the generated passes for the final image. There are multiple uses for that: you can generate a texture in real time, to make a car rearview mirror for example, or you can perform complex effects with multiple independent renders that are combined together. 
@@ -260,4 +256,4 @@ void main() {
 
 Testing passes in separate and then adding them one at a time to the composer will make it easier to debug any issues. You can use the technique from the playgrounds above, splitting the screen on columns, each with a different pass, as well.
 
-Finally you can also check RT textures with the [Babylon inspector](/how_to/debug_layerEnable).
+Finally you can also check RT textures with the [Babylon inspector](/features/Playground_debuglayer).

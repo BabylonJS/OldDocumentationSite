@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use a Pivot
----
-
 # A Pivot
 
 The latest pivot in Babylon (v3.2+) is a pre-transformation pivot and behaves differently than in tools like 3DS Max and Maya as the object's position will move if scale is applied prior to setting the pivot. To get pivot behavior that matches these tools it is recommended to set the object as a child of another transform node that will act as the pivot see: https://www.babylonjs-playground.com/#GH4N1R#1

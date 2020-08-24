@@ -1,7 +1,3 @@
----
-PG_TITLE: Introduction To Shaders in BabylonJS
----
-
 # Introduction to Shaders in BabylonJS
 
 A shader is a program processed by the Graphical Processing Unit (GPU) to produce a screen image by manipulating data to 
@@ -10,11 +6,12 @@ in an extremely fast way.
 
 ## Suggested Pre-Reading
 
-[Custom Meshes](/How_To/Custom.html)
+- How To:
+  - [Custom Meshes](/How_To/Custom.html)
+  - [Updating Vertices](/How_To/Updating_Vertices.html)
+- Resources:
+  - [Normals in BJS](/resources/Normals.html)
 
-[Normals in BJS](/resources/Normals.html)
-
-[Updating Vertices](/How_To/Updating_Vertices.html)
 
 ## An Overview
 
@@ -107,9 +104,29 @@ precision highp float
 
 The GLSL language has a number of built in variables. Two are vital to the operation of the two shaders and are always necessary:
 
-- `gl_Position` which provides positional data for screen coordinates
+Variable | Description
+--- | ---
+gl_Position | provide positional data for screen coordinates
+gl_FragColor | provide colour data for the representation of a facet on screen
 
-- `gl_FragColor` which provides colour data for the representation of a facet on screen.
+## Built In Inputs
+
+Attribute | Type | Description
+--- | --- | ---
+position | vec3 | pixel: vertex position / fragment: face pixel position
+normal | vec3  | pixel: vertex normal / fragment: face pixel normal
+uv | vec2 | texture coordinate
+
+&nbsp;
+
+Uniform | Type | Description
+--- | --- | ---
+world | mat4 | mesh global transforming state (move + rotate + scale)
+worldView | mat4 | global view part of mesh
+worldViewProjection | mat4 | global camera
+view | mat4 | mesh local view part
+projection | mat4 | local camera
+time | float | per each frame
 
 ## Functions
 
@@ -147,5 +164,7 @@ More details on this can be found below.
 
 # Further Reading
 
-[Putting Shader Code in BabylonJS](/How_To/Putting.html)  
-[ShaderMaterial Object](/How_To/Shader_Material.html)
+## How To
+
+- [Putting Shader Code in BabylonJS](/How_To/Putting.html)  
+- [ShaderMaterial Object](/How_To/Shader_Material.html)

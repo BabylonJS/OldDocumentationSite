@@ -1,7 +1,3 @@
----
-PG_TITLE: A Wide Range of Mesh Types
----
-
 # Meshes
 
 In the 3D virtual world shapes are built from meshes, lots of trangular facets joined together, each facet made from three vertices.
@@ -10,7 +6,7 @@ In the 3D virtual world shapes are built from meshes, lots of trangular facets j
 
 Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 
-Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/How_To/Solid_Particle_System) are also available.
+Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/How_To/solid_particles) are also available.
 
 ## Types
 
@@ -77,7 +73,7 @@ var options = {
     diameterTop:3, 
     diameterBottom: 6, 
     height: 5, 
-    tessellations: 16, 
+    tessellation: 16, 
     subdivisions: 10
 }
 var cylinder = BABYLON.MeshBuilder.CreateCylinder("myCylinder", options);
@@ -129,7 +125,7 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 [Ray Casting 101](/babylon101/Raycasts)  
 [Polyhedra](/How_To/Polyhedra_Shapes)   
 [Using Decals](/How_To/Decals)  
-[How to Use the Solid Particle System](/How_To/Solid_Particle_System)  
+[How to Use the Solid Particle System](/How_To/solid_particles)  
 [Set the Position, Rotation and Scale of a Mesh](/features/Position,_Rotation,_Scaling)
 
 ## Mid Level - L2  
@@ -150,7 +146,7 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 [How to use Bones and Skeletons](/How_To/How_to_use_Bones_and_Skeletons)  
 [How to use EdgesRenderer](/How_To/How_to_use_EdgesRenderer)  
 [Creating Custom Meshes](/How_To/Custom)  
-[Facet Normals](/How_To/Normals)  
+[Facet Normals](/how_to/how_to_use_facetdata#facet-normal)  
 [Updating Vertices](/How_To/Updating_Vertices)
 
  

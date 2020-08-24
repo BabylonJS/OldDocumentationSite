@@ -1,7 +1,3 @@
----
-PG_TITLE: OBJ Import
----
-
 # OBJ File Import
 
 To use it, you just have to reference the loader file:

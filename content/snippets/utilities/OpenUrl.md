@@ -1,7 +1,3 @@
----
-PG_TITLE: Open an URL on Mesh Click
----
-
 # Open an URL with Action Manager
 
 Since any Javascript can be called when executing code action with the action manager it is straight forward to open a new web page using 

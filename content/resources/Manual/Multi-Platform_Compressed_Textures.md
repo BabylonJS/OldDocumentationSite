@@ -1,7 +1,3 @@
----
-PG_TITLE: Compressed Textures for GPU
----
-
 # Compressed Textures for GPU
 
 There are special formats of textures which are optimized for access by graphics processors.  They differ from formats whose primary mission is to hold / transmit image data for use on a CPU.  Examples of image formats are .JPG & .PNG.  Formats catering to GPUs may not be ones you are likely to have heard of.  The file extensions for some of them are also not well established.

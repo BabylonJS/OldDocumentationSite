@@ -1,8 +1,3 @@
----
-ID_PAGE: 45094
-PG_TITLE: Normals
----
-
 # Vertex Normals
 
 Each triangular facet of a mesh comprises three vertices.
@@ -15,9 +10,9 @@ Vertex normals are used by the [shader code](/resources/ShaderIntro) in calculat
 
 In the following two playgrounds see how the changing directions within the normals array affect how it is lit:
 
-* [Playground Example Showing Normals Varying in Unison](http://www.babylonjs-playground.com/#VKBJN#18)
+* [Playground Example Showing Normals Varying in Unison](https://www.babylonjs-playground.com/#VKBJN#18)
 
-* [Playground Example Showing Normals Varying](http://www.babylonjs-playground.com/#VKBJN#19)
+* [Playground Example Showing Normals Varying](https://www.babylonjs-playground.com/#VKBJN#19)
 
 # Normals and Minimum Vertices
 
@@ -95,7 +90,7 @@ index | position | normal
 
 # Playground Showing Box Normals
 
-* [Playground Example for Box Normals](http://www.babylonjs-playground.com/#1H7L5C#37)
+* [Playground Example for Box Normals](https://www.babylonjs-playground.com/#1H7L5C#37)
 
 # Advantage of Shared Normals
 
@@ -103,7 +98,7 @@ Sharing normals means that the shader produces a rounder looking sphere since th
 
 Applying the function `converToFlatShadedMesh` shows the individual faces making up the sphere. For a flat shaded sphere the normals of each facet are the mathematical normals of the facet.
 
-* [Playground Example Comparing Shading of Spheres](http://www.babylonjs-playground.com/#1H7L5C#38)
+* [Playground Example Comparing Shading of Spheres](https://www.babylonjs-playground.com/#1H7L5C#38)
 
 # Further Reading
 

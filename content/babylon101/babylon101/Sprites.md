@@ -1,10 +1,3 @@
-
-
----
-ID_PAGE: 22082
-PG_TITLE: 09. Sprites
----
-
 # Sprites
 
 In this tutorial, we are going to learn how to manipulate Sprites. Sprites are 2D image/animation, and we will use them to display an image with alpha channel. Sprites always face the camera.
@@ -53,7 +46,38 @@ This time, we only want 2 instances, and we said that our sprite’s size is 64x
 
 Each image of a sprite must be contained in a 64 pixel square, no more no less.
 
+## Picking
+
+Sprites can be picked to interact with like in this example: https://www.babylonjs-playground.com/#9RI8CG#0
+
+To do so, you need to:
+- Turn on picking on the sprites you want: `sprite.isPickable = true;`
+- Enable SpriteManager to support picking: `spriteManager.isPickable = true;`
+
+To do picking you can use the `scene.pickSprite`:
+
+```
+var pickResult = scene.pickSprite(this.pointerX, this.pointerY);
+if (pickResult.hit) {
+	pickResult.pickedSprite.angle += 0.5;
+}
+```
+
+You can also use `multiPickSprite` to get all the sprites under the mouse:
+
+```
+var pickResult = scene.multiPickSprite(this.pointerX, this.pointerY);
+for (var i = 0; i < pickResult.length; i++) {
+    	pickResult[i].pickedSprite.angle += Math.PI / 4;
+}
+```
+
+By default picking will use the bounding rectangle of a sprite (for performance reason). You can set system to use sprite alpha value instead (coming from its texture). Picking will work in this case only if alpha > 0.5.
+
+Example here: https://www.babylonjs-playground.com/#9RI8CG#123
+
 ## Sprite Packed Manager
+*This is available from BJS version 4.1*
 
 For sprites of varying sizes you need an image file and a JSON file containing the positional data of the sprites in the packed spritesheet. The image file and the JSON file should have the same name and be in the same folder, eg pack1.png and pack1.json.
 
@@ -124,7 +148,7 @@ The JSON format for the above file is based on that produced using the _TextureP
 }
 ```
 
-SpritePackedManager only uses the frame property for each sprite so the minimal JSON format is.  It is recomended that you use the full file format cited above if you plan to use any SpriteMaps in your project.
+SpritePackedManager only uses the frame property for each sprite so the minimal JSON format is:
 
 ```javascript
 {   "frames": {
@@ -143,6 +167,7 @@ SpritePackedManager only uses the frame property for each sprite so the minimal 
 	}
 }
 ```
+However, it is recomended that you use the full file format cited above the previous image if you plan to use any SpriteMaps in your project.
 
 ## Create A Sprite Instant
 
@@ -152,7 +177,7 @@ For both managers, we can create instances of a sprite linked to a manager. Crea
 var sprite = new BABYLON.Sprite("sprite", manager);
 ```
 
-which uses the first sprite on the sheet
+which uses the first sprite on the sheet.
 
 Using a uniform spritesheet and SpriteManager you indicate which sprite to use will cellIndex, counting from the top sprite on the left in order right and down.
 
@@ -204,9 +229,28 @@ player.playAnimation(0, 43, true, 100);
 ```
 The player sprite will be animated from frame 0 to frame 43. The third parameter is indicating if this animation will loop or not, true to loop. The last parameter is the delay between the frames (the smaller it is, the faster the animation).
 
-* [Playground Example Animation of Uniform Sprites**]( https://www.babylonjs-playground.com/?8).
+* [Playground Example Animation of Uniform Sprites](https://www.babylonjs-playground.com/#9RI8CG)
 
 It is also possible to use playAnimation with sprites from a packed spritesheet. It is worth double checking that the sprites to animate are consecutive and in the correct order in the JSON file.
+
+## Snippet server
+
+tarting with Babylon.js v4.2, you can edit sprite managers using the Inspector. You can then save them on Babylon.js snippet server. When you have a snippet Id, you can easily load the manager using the following code:
+
+```
+var spriteManagerPlayer = BABYLON.SpriteManager.CreateFromSnippetAsync("GN24VF", scene).then(manager => {
+        scene.debugLayer.show();
+        scene.debugLayer.select(manager);
+ });
+```
+
+Live example: https://www.babylonjs-playground.com/#G9VPHQ
+
+You can also specify "_BLANK" for the snippet Id, in this case the system will create an empty one for you to work on:
+
+```
+BABYLON.SpriteManager.CreateFromSnippetAsync("_BLANK", scene);
+```
 
 ## Packed SpriteSheet Playground Examples
 
@@ -244,7 +288,7 @@ These options are:
 * stageSize: A Vector2 of the number of "tiles" in the system.
 	 - default : Vector2(1,1)
 * outputSize: A Vector2 of size of the output plane in World Units.
- 	 - default : Vector2(1,1)
+	 - default : Vector2(1,1)
 * outputPosition: A Vector3 of position of the output plane in World Units.
 	 - default : Vector3.Zero
 * outputRotation: A Vector3 of rotation of the output plane in World Units.

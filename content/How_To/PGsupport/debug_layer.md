@@ -1,7 +1,3 @@
----
-PG_TITLE: The Inspector
----
-
 # How to Display and use The Inspector
 
 ## Invocation

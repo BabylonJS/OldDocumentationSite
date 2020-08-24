@@ -1,11 +1,6 @@
----
-ID_PAGE: 22661
-PG_TITLE: File Format Map (.babylon)
----
 **Babylon.js** uses a JSON file format for describing scenes.
 
-You can find the complete loader code here:
-https://github.com/BabylonJS/Babylon.js/blob/master/Babylon/Loading/Plugins/babylon.babylonFileLoader.js
+You can find the complete loader code [here](https://github.com/BabylonJS/Babylon.js/blob/master/src/Loading/Plugins/babylonFileLoader.ts).
 
 ## Basic types
 .babylon files uses the following convention for basic types:

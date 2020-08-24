@@ -1,7 +1,3 @@
----
-PG_TITLE: Using Visual Studio Code with BJS
----
-
 # Visual Studio Code
 
 VSCode is one of several integrated development environments that can be used in the development of projects using Babylon.js. It has the advantage of Git integration built in and a plugin to display .babylon files.

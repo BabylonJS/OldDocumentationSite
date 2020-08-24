@@ -1,7 +1,3 @@
----
-PG_TITLE: glTF Exporter
----
-
 # glTF Exporter
 
 The glTF Exporter allows BabylonJS models to be exported to the [glTF 2.0 format](https://www.khronos.org/gltf/).

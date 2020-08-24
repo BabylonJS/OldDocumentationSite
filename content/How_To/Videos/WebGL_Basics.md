@@ -1,7 +1,3 @@
----
-ID_PAGE: 24828
-PG_TITLE: 02. WebGL Basics
----
 Think of this as a WebGL 101 course, with a look at geometries and shaders, resources, and performance considerations.
 
 ** Agenda **

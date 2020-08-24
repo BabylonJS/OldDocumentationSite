@@ -1,7 +1,3 @@
----
-PG_TITLE: Background Material
----
-
 # Background Material
 
 ## Introduction
@@ -28,6 +24,10 @@ backgroundMaterial.shadowLevel = 0.4;
 ```
 
 You can see a [live version here](https://www.babylonjs-playground.com/#G3HSAW#3)
+
+Starting from Babylonjs v4.2, there's also a new `shadowOnly` property that only renders shadow, making the material behave like the `ShadowOnlyMaterial` material but without the single light restriction.
+
+When `shadowOnly = true`, you can use `primaryColor` to tint the shadow color and `alpha` to make the shadows more or less strong: [live version here](https://www.babylonjs-playground.com/#G3HSAW#33)
 
 ### Opacity
 As you might want to make a transparent ground, if the diffuse texture contains some transparency information, they will be used by the material.

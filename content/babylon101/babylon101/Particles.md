@@ -1,7 +1,3 @@
----
-ID_PAGE: 22121
-PG_TITLE: 14. Particles
----
 # Particles
 
 This tutorial is going to talk about the particle system in BabylonJS. Particles are often small sprites used to simulate hard-to-reproduce phenomena like fire, smoke, water, or abstract visual effects like magic glitter and faery dust. This is done by emitting a cloud of very many particles from a region. From version 3.2 there are specific emitters to constrain this region in the shape of a box, sphere or cone. You can also write your own custom functions to control the cloud and region.
@@ -108,6 +104,12 @@ var source = BABYLON.Mesh.CreateBox("source", 1.0, scene);
 particleSystem.emitter = source;
 ```
 
+### Local space
+
+If the emitter is a mesh and you set `particleSystem.isLocal = true` then all particles will be generated into the mesh local space (so rotation or transforming the mesh will transform the entire particle system).
+
+Demo: https://www.babylonjs-playground.com/#LNRAI3
+
 ### World offset
 Starting with Babylon.js v4.0, you can set up a world offset to your particles with:
 ```
@@ -145,7 +147,7 @@ Fortunately things can be made more interesting very soon with the setting of mo
 See how to change the lifetime, size, and color of the particles, their rates of emission, direction of travel (optionally affected by gravity). You can also affect their rotation, speed and cloud shape. Below you can find [playground examples]() where you can alter some of these parameters.
 
 ### Lifetime
-The time taken for particles to disappear (or die) after being emitted can be varied. Once a particle dies a the particle is recycled foe emission. Their lifetime is given as a random range between a low and high value as in 
+The time taken for particles to disappear (or die) after being emitted can be varied. Once a particle dies, the particle is then recycled for reemission. Their lifetime is given as a random range between a low and high value as in 
 
 ```javascript
 // Life time of each particle (random between...)
@@ -204,7 +206,7 @@ To add a size gradient just call the following code:
 particleSystem.addSizeGradient(0, 0.5);
 ```
 
-The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the factor to apply to particle initial size. In this case the particle will born with half of the initial size (which is computed from minScale and maxScale).
+The first parameter defines the gradient (0 means at the particle birth and 1 means at particle death). The second parameter is the size. In this case the particle will be born with size 0.5 and will end its life with size 3.
 It is recommended to at least define a gradient for 0 and 1:
 
 ```
@@ -264,7 +266,7 @@ You can also define a more complex construct by providing two colors per gradien
 
 ```
 particleSystem.addColorGradient(0, new BABYLON.Color4(1, 1, 1, 0), new BABYLON.Color4(1, 0, 1, 0));
-particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1)new BABYLON.Color4(1, 0, 1, 1));
+particleSystem.addColorGradient(1.0, new BABYLON.Color4(1, 1, 1, 1), new BABYLON.Color4(1, 0, 1, 1));
 ```
 
 In this case the color of the particle will be randomly picked between the two colors when the gradient will be reached.
@@ -624,6 +626,8 @@ Starting from Babylonjs 3.2 you can shape the region the particles are emitted f
 * Hemisphere
 * Cylinder
 * Cone
+* Mesh
+* Custom
 
 by the addition of specific emitter function.
 
@@ -798,6 +802,55 @@ With `coneEmitter.emitFromSpawnPointOnly = true` you can force the emitter to on
 * [Playground Example - Cone Emitter](https://www.babylonjs-playground.com/#MRRGXL#4)
 * [Playground Example - Cone Emitter Rotating](https://www.babylonjs-playground.com/#MRRGXL#5)
 
+
+### Mesh Emitter
+
+You can use the MeshParticleEmitter to emit your particles from the surface of a mesh:
+
+```javascript
+ var meshEmitter = new BABYLON.MeshParticleEmitter(sphere);
+```
+
+By default the direction of the particles will be the normal of the surface of the mesh but you can turn it off and then use a custom direction:
+
+```
+meshEmitter.useMeshNormalsForDirection = false;
+meshEmitter.direction1 = new BABYLON.Vector3(0, 1, 0);
+meshEmitter.direction2 = new BABYLON.Vector3(0, -1, 0);
+```
+
+**Please note that the MeshParticleEmitter is not supported by GPU Particle**
+
+Here is an example of a mesh particle emitter: https://www.babylonjs-playground.com/#N775HF
+
+### Custom Emitter
+
+To create a custom emitter you need to provide 2 functions:
+
+```javascript
+ var customEmitter = new BABYLON.CustomParticleEmitter();
+
+ var id = 0;
+ customEmitter.particlePositionGenerator = (index, particle, out) => {
+     out.x = Math.cos(id) * 5;
+     out.y = Math.sin(id) * 5;
+     out.z = 0;
+     id += 0.01;
+ }
+
+ customEmitter.particleDestinationGenerator = (index, particle, out) => {
+     out.x = 0;
+     out.y = 0;
+     out.z = 0;
+ }
+```
+
+A custom emitter will let you define the position and the destination of each particle.
+
+When used with a GPU Particle system the generators(`particlePositionGenerator` and `particleDestinationGenerator`) will provide a particle index whereas when used with a CPU Particle system they will provide the actual particle to update.
+
+Here is an example of a custom particle emitter: https://www.babylonjs-playground.com/#77BKY4
+
 ## Noise texture
 Starting with Babylon.js v3.3, you can now use noise texture to "perturbate" the position of particles. The noise texture is technically used to apply change to the direction of the particles:
 
@@ -854,10 +907,29 @@ The following features are not supported by GPU particles due to their inner nat
 - Dual values per gradient (only one value is supported)
 - Emit rate gradients are not supported
 - Start size gradients are not supported
+- Mesh emitter
 
 ### Playground
 
 * [Playground Example - GPU Particles](https://www.babylonjs-playground.com/#PU4WYI#4)
+
+## Snippet server
+
+Starting with Babylon.js v4.2, you can edit particle systems using the Inspector. You can then save them on Babylon.js snippet server.
+When you have a snippet Id, you can easily load the particle system using the following code:
+
+```
+var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 0.2, segments: 32}, scene);
+BABYLON.ParticleHelper.CreateFromSnippetAsync("T54JV7", scene, false).then(system => {
+    system.emitter = sphere;
+});
+```
+
+You can also specify "_BLANK" for the snippet Id, in this case the system will create an empty one for you to work on:
+
+```
+BABYLON.ParticleHelper.CreateFromSnippetAsync("_BLANK", scene, false);
+```
 
 ## Next step
 ParticleSystems are very powerful and versatile tools that can help bring realness and movement to your scenes. Don’t hesitate to use them as they are not resource-intensive.
@@ -880,6 +952,6 @@ Stay with us, because we are going to learn a new, very interesting thing: [Conf
 
 ## Intermediate - L2
 [How to Customize the Particle System](/how_to/Customise)  
-[How to Create animated particles](/how_To/Particles/Animate.md)
+[How to Create animated particles](/how_To/animate)
 
 

@@ -1,7 +1,3 @@
----
-ID_PAGE: 24827
-PG_TITLE: 01. 3D on the Web Understanding the Basics
----
 Explore 3D basics, and take a look at 3D without hardware (creating a software engine).
 
 **Agenda**:

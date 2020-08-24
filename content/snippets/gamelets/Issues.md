@@ -1,7 +1,3 @@
----
-PG_TITLE: Collision Issues
----
-
 # Collision Issues
 
 ## Checking for an Intersect
@@ -80,7 +76,7 @@ In the following playground the three spheres are positioned so that for sphere1
 d = 0 and for sphere3  v - 2r &lt; d &lt; v. The radius and speed for each sphere have been set at the same values but can be changed easily should you wish to.
 Sphere1 is at the top, sphere2 the middle and sphere3 at the bottom.
 
-* [Playground Example](http://www.babylonjs-playground.com/#1LOEWK#1)
+* [Playground Example](https://www.babylonjs-playground.com/#1LOEWK#1)
 
 ## Hypotheses
 
@@ -112,7 +108,7 @@ Should a sphere be moving at right angles to a wall a distance 8r units from the
 
 The following Playground shows spheres all starting from a distance of 8r units from two walls, all moving at right angles to the walls with speeds ranging from 20r to 12r units.
 
-* [Playground Example - Strobing](http://www.babylonjs-playground.com/#1LOEWK#2)
+* [Playground Example - Strobing](https://www.babylonjs-playground.com/#1LOEWK#2)
 
 ## Conclusion
 

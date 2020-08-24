@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Dynamic Textures
----
-
 # Dynamic Textures
 A dynamic texture works by creating a canvas onto which you can draw using all the facilities of the [HTML5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). 
 
@@ -209,7 +205,7 @@ The dynamic texture can be serialized with the scene using `SceneSerializer.Seri
 
 This playground demonstrates serializing a dynamic texture associated with a material on a mesh:
 
-* [Playground Example Dynamic Texture Serialized Mesh](http://playground.babylonjs.com/#FU0ES5)
+* [Playground Example Dynamic Texture Serialized Mesh](https://playground.babylonjs.com/#FU0ES5)
 
 # Further Reading
 

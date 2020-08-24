@@ -1,8 +1,3 @@
----
-ID_PAGE: 24824
-PG_TITLE: 16. Playing sounds and music
----
-
 # How To Play Sounds and Music
 
 Babylon.js sound engine is based on the [**Web Audio specification**](http://webaudio.github.io/web-audio-api/). We decided not to offer a fallback on the audio tag or other mechanism. So, to use our sound engine, you need to use a Web Audio compatible browser. Still, if you’re using it on not compatible browser, it won’t break the rest of our engine, it will simply play no sound.
@@ -11,7 +6,7 @@ The sound engine offers **ambient** sound, **spatialized** sound and **direction
 
 The sound format supported is the one from the browser. It’s usually at least **.mp3** and **.wav**.
 
-**Note:** all music samples demonstrated in the playground has been composed by [**David Rousset**](https://soundcloud.com/david-rousset/) 
+**Note:** all music samples demonstrated in the playground has been composed by [**David Rousset**](https://soundcloud.com/david-rousset/)
 
 ## Creating an ambient sound or music
 
@@ -19,18 +14,19 @@ Here is the code to create a sound or music playing as ambient (not spatialized)
 
 ```javascript
 // Load the sound and play it automatically once ready
-var music = new BABYLON.Sound("Music", "music.wav", scene, null, { loop: true, autoplay: true });
+var music = new BABYLON.Sound("Music", "music.wav", scene, null, {
+  loop: true,
+  autoplay: true
+});
 ```
 
-* 1st parameter: the **name** of your sound. 
-* 2nd parameter: **URL** of the sound to load. 
-* 3rd parameter: **scene** to attach the sound to. 
-* 4th parameter: **function** being called-back once the sound is ready to be played, we’ll see that later. 
-* 5th parameter: a **JSON object** providing various options we’ll see in details. But you can already understand the goal of the 2 options provided.
+- 1st parameter: the **name** of your sound.
+- 2nd parameter: **URL** of the sound to load.
+- 3rd parameter: **scene** to attach the sound to.
+- 4th parameter: **function** being called-back once the sound is ready to be played, we’ll see that later.
+- 5th parameter: a **JSON object** providing various options we’ll see in details. But you can already understand the goal of the 2 options provided.
 
-You can test this first sample into our playground: 
-
-https://www.babylonjs-playground.com/#PCY1J
+You can test this first sample in our [music playground example](https://www.babylonjs-playground.com/#PCY1J)
 
 ## Handling the 'ready to play' callback function
 
@@ -42,18 +38,15 @@ Calling the `BABYLON.Sound()` constructor with an URL generates 2 phases:
 Here is a sample code:
 
 ```javascript
-var music = new BABYLON.Sound("Music", "music.wav", scene,
- function () {
-  // Sound has been downloaded & decoded
-  music.play();
- }
-);
+var music = new BABYLON.Sound("Music", "music.wav", scene, function() {
+  // Sound has been downloaded & decoded
+  music.play();
+});
 ```
-This code loads the `music.wav` file from the web server, decode it and play it in the callback function only once using the `play()` function. The play function plays the sound immediately if no parameter is passed. You can provide a parameter of type number to play the sound after x seconds. 
 
-Test it on our playground: 
+This code loads the `music.wav` file from the web server, decode it and play it in the callback function only once using the `play()` function. The play function plays the sound immediately if no parameter is passed. You can provide a parameter of type number to play the sound after x seconds.
 
-https://www.babylonjs-playground.com/#PCY1J#1
+Test it in [this playground](https://www.babylonjs-playground.com/#PCY1J#1)
 
 ## Playing a sound on mouse click or keydown
 
@@ -62,25 +55,22 @@ This sample code plays a gunshot sound if you’re left-clicking or pressing the
 ```javascript
 var gunshot = new BABYLON.Sound("gunshot", "sounds/gunshot.wav", scene);
 
-window.addEventListener("mousedown", function (evt) {
-    // left click to fire
-    if (evt.button === 0) {
-        gunshot.play();
-    }
+window.addEventListener("mousedown", function(evt) {
+  // left click to fire
+  if (evt.button === 0) {
+    gunshot.play();
+  }
 });
 
-window.addEventListener("keydown", function (evt) {
-    // Press space key to fire
-    if (evt.keyCode === 32) {
-        gunshot.play();
-    }
+window.addEventListener("keydown", function(evt) {
+  // Press space key to fire
+  if (evt.keyCode === 32) {
+    gunshot.play();
+  }
 });
-
 ```
 
-Test it on our playground: 
-
-https://www.babylonjs-playground.com/#PCY1J#4
+Test it on our [gunshot sound playground](https://www.babylonjs-playground.com/#PCY1J#4)
 
 ## Some basic properties
 
@@ -93,21 +83,24 @@ Here is a simple sample code mixing all that:
 ```javascript
 var volume = 0.1;
 var playbackRate = 0.5;
-var gunshot = new BABYLON.Sound("Gunshot", "./gunshot-1.wav", scene, null, { playbackRate: playbackRate, volume: volume });
+var gunshot = new BABYLON.Sound("Gunshot", "./gunshot-1.wav", scene, null, {
+  playbackRate: playbackRate,
+  volume: volume
+});
 
-gunshot.onended = function () {
-    if (volume < 1) {
-        volume += 0.1;
-        gunshot.setVolume(volume);
-    }
-    playbackRate += 0.1;
-    gunshot.playbackRate = playbackRate;
+gunshot.onended = function() {
+  if (volume < 1) {
+    volume += 0.1;
+    gunshot.setVolume(volume);
+  }
+  playbackRate += 0.1;
+  gunshot.playbackRate = playbackRate;
 };
 ```
 
-The sound is first created with a `playbackRate` of 0.5 and a `volume` of 0.1. Everytime you will play the sound, at its end, the `onended` function will be called and the `volume` & `playbackRate` will increase. 
+The sound is first created with a `playbackRate` of 0.5 and a `volume` of 0.1. Everytime you will play the sound, at its end, the `onended` function will be called and the `volume` & `playbackRate` will increase.
 
-Rather than setting the volume on a specific sound, you can also set the global volume of all sounds played by Babylon.js using the `setGlobalVolume()` function of the audio engine. 
+Rather than setting the volume on a specific sound, you can also set the global volume of all sounds played by Babylon.js using the `setGlobalVolume()` function of the audio engine.
 
 ```javascript
 BABYLON.Engine.audioEngine.setGlobalVolume(0.5);
@@ -117,8 +110,14 @@ BABYLON.Engine.audioEngine.setGlobalVolume(0.5);
 
 A sound sprite is a portion of a sound file. You can define a sound sprite when creating a sound by defining an offset and a length (in seconds):
 
-```
-var soundSprite = new BABYLON.Sound("Violons", "/sounds/6sounds.mp3", scene, null, { loop: true, autoplay: true, length: 9200, offset: 14000 });
+```javascript
+var soundSprite = new BABYLON.Sound(
+  "Violons",
+  "/sounds/6sounds.mp3",
+  scene,
+  null,
+  { loop: true, autoplay: true, length: 9200, offset: 14000 }
+);
 ```
 
 You can find an example here: https://www.babylonjs-playground.com/#6LXPBX
@@ -128,26 +127,41 @@ You can find an example here: https://www.babylonjs-playground.com/#6LXPBX
 For that, you need to call the play method on all sounds only once you’re sure they are all ready to be played. You then need to work with the ready to play callback.
 
 ```javascript
-var music1 = new BABYLON.Sound("Violons11", "sounds/violons11.wav", scene,
-    soundReady, { loop: true });
-var music2 = new BABYLON.Sound("Violons18", "sounds/violons18.wav", scene,
-    soundReady, { loop: true });
-var music3 = new BABYLON.Sound("Cellolong", "sounds/cellolong.wav", scene,
-    soundReady, { loop: true });
+var music1 = new BABYLON.Sound(
+  "Violons11",
+  "sounds/violons11.wav",
+  scene,
+  soundReady,
+  { loop: true }
+);
+var music2 = new BABYLON.Sound(
+  "Violons18",
+  "sounds/violons18.wav",
+  scene,
+  soundReady,
+  { loop: true }
+);
+var music3 = new BABYLON.Sound(
+  "Cellolong",
+  "sounds/cellolong.wav",
+  scene,
+  soundReady,
+  { loop: true }
+);
 
 var soundsReady = 0;
 
 function soundReady() {
-    soundsReady++;
-    if (soundsReady === 3) {
-        music1.play();
-        music2.play();
-        music3.play();
-    }
+  soundsReady++;
+  if (soundsReady === 3) {
+    music1.play();
+    music2.play();
+    music3.play();
+  }
 }
 ```
 
-Test it on our playground: 
+Test it on our playground:
 
 https://www.babylonjs-playground.com/#PCY1J#6
 
@@ -162,33 +176,38 @@ var gunshotFromAB;
 loadArrayBufferFromURL("sounds/gunshot.wav");
 
 function loadArrayBufferFromURL(urlToSound) {
-    var request = new XMLHttpRequest();
-    request.open('GET', urlToSound, true);
-    request.responseType = "arraybuffer";
-    request.onreadystatechange = function () {
-        if (request.readyState == 4) {
-            if (request.status == 200) {
-                gunshotFromAB = new BABYLON.Sound("FromArrayBuffer", request.response, scene, soundReadyToBePlayed);
-            }
-        }
-    };
-    request.send(null);
+  var request = new XMLHttpRequest();
+  request.open("GET", urlToSound, true);
+  request.responseType = "arraybuffer";
+  request.onreadystatechange = function() {
+    if (request.readyState == 4) {
+      if (request.status == 200) {
+        gunshotFromAB = new BABYLON.Sound(
+          "FromArrayBuffer",
+          request.response,
+          scene,
+          soundReadyToBePlayed
+        );
+      }
+    }
+  };
+  request.send(null);
 }
 
 function soundReadyToBePlayed() {
-    gunshotFromAB.play();
+  gunshotFromAB.play();
 }
 ```
 
-Test it on our playground: 
+Test it on our playground:
 
 https://www.babylonjs-playground.com/#PCY1J#2
- 
-Here is another example where we load the sound from the audio file capture from the microphone: https://playground.babylonjs.com/#MB5S2C#2
+
+Here is another example where we load the sound from the audio file [capture from the microphone](https://playground.babylonjs.com/pg/MB5S2C/revision/2)
 
 ## Loading a sound using the Assets Manager
 
-The assets manager is pretty useful as it handles for you some great features such as a loading screen. 
+The assets manager is pretty useful as it handles for you some great features such as a loading screen.
 
 ```javascript
 var music1, music2, music3;
@@ -196,36 +215,51 @@ var music1, music2, music3;
 // Assets manager
 var assetsManager = new BABYLON.AssetsManager(scene);
 
-var binaryTask = assetsManager.addBinaryFileTask("Violons18 task", "sounds/violons18.wav");
-binaryTask.onSuccess = function (task) {
-    music1 = new BABYLON.Sound("Violons18", task.data, scene, soundReady, { loop: true });
-}
+var binaryTask = assetsManager.addBinaryFileTask(
+  "Violons18 task",
+  "sounds/violons18.wav"
+);
+binaryTask.onSuccess = function(task) {
+  music1 = new BABYLON.Sound("Violons18", task.data, scene, soundReady, {
+    loop: true
+  });
+};
 
-var binaryTask2 = assetsManager.addBinaryFileTask("Violons11 task", "sounds/violons11.wav");
-binaryTask2.onSuccess = function (task) {
-    music2 = new BABYLON.Sound("Violons11", task.data, scene, soundReady, { loop: true });
-}
+var binaryTask2 = assetsManager.addBinaryFileTask(
+  "Violons11 task",
+  "sounds/violons11.wav"
+);
+binaryTask2.onSuccess = function(task) {
+  music2 = new BABYLON.Sound("Violons11", task.data, scene, soundReady, {
+    loop: true
+  });
+};
 
-var binaryTask3 = assetsManager.addBinaryFileTask("Cello task", "sounds/cellolong.wav");
-binaryTask3.onSuccess = function (task) {
-    music3 = new BABYLON.Sound("Cello", task.data, scene, soundReady, { loop: true });
-}
+var binaryTask3 = assetsManager.addBinaryFileTask(
+  "Cello task",
+  "sounds/cellolong.wav"
+);
+binaryTask3.onSuccess = function(task) {
+  music3 = new BABYLON.Sound("Cello", task.data, scene, soundReady, {
+    loop: true
+  });
+};
 
 var soundsReady = 0;
 
 function soundReady() {
-    soundsReady++;
-    if (soundsReady === 3) {
-        music1.play();
-        music2.play();
-        music3.play();
-    }
+  soundsReady++;
+  if (soundsReady === 3) {
+    music1.play();
+    music2.play();
+    music3.play();
+  }
 }
 
 assetsManager.load();
 ```
 
-Test it on our playground: 
+Test it on our playground:
 
 https://www.babylonjs-playground.com/#PCY1J#8
 
@@ -234,26 +268,31 @@ https://www.babylonjs-playground.com/#PCY1J#8
 To transform a sound into a spatial sound, you need to specify that via the options:
 
 ```javascript
-var music = new BABYLON.Sound("music", "music.wav",
-    scene, null, { loop: true, autoplay: true, spatialSound: true });
+var music = new BABYLON.Sound("music", "music.wav", scene, null, {
+  loop: true,
+  autoplay: true,
+  spatialSound: true
+});
 ```
 
 Default properties of a spatial sound are:
 
-* **distanceModel** (the attenuation) is using a “**linear**” equation by default. Other options are “*inverse*” or “*exponential*”. 
-* **maxDistance** is set to **100**. This means that once the listener is farther than 100 units from the sound, the volume will be 0. You can’t hear the sound anymore
-* **panningModel** is set to “**HRTF**”. The specification says it’s: “*a higher quality spatialization algorithm using a convolution with measured impulse responses from human subjects. This panning method renders stereo output*”. This is the best algorithm when using a headphone. The other available option is “*equalpower*”.
+- **distanceModel** (the attenuation) is using a “**linear**” equation by default. Other options are “_inverse_” or “_exponential_”.
+- **maxDistance** is set to **100**. This means that once the listener is farther than 100 units from the sound, the volume will be 0. You can’t hear the sound anymore
+- **panningModel** is set to “**HRTF**”. The specification says it’s: “_a higher quality spatialization algorithm using a convolution with measured impulse responses from human subjects. This panning method renders stereo output_”. This is the best algorithm when using a headphone. The other available option is “_equalpower_”.
 
-**maxDistance** is only used when using the “*linear*” attenuation. Otherwise, you can tune the attenuation of the other models using the **rolloffFactor** and **refDistance** options. Both are set to 1 by default but you can change it of course.
+**maxDistance** is only used when using the “_linear_” attenuation. Otherwise, you can tune the attenuation of the other models using the **rolloffFactor** and **refDistance** options. Both are set to 1 by default but you can change it of course.
 
 For instance:
 
 ```javascript
-var music = new BABYLON.Sound("music", "music.wav",
-    scene, null, {
-        loop: true, autoplay: true, spatialSound: true,
-        distanceModel: "exponential", rolloffFactor: 2
-    });
+var music = new BABYLON.Sound("music", "music.wav", scene, null, {
+  loop: true,
+  autoplay: true,
+  spatialSound: true,
+  distanceModel: "exponential",
+  rolloffFactor: 2
+});
 ```
 
 Default position of sound in the 3D world is `(0,0,0)`. To change that, use the `setPosition()` function:
@@ -262,7 +301,7 @@ Default position of sound in the 3D world is `(0,0,0)`. To change that, use the 
 music.setPosition(new BABYLON.Vector3(100, 0, 0));
 ```
 
-To have a better understanding, please have a look to this sample into our playground: 
+To have a better understanding, please have a look to this sample into our playground:
 
 https://www.babylonjs-playground.com/#2AH4YH
 
@@ -270,12 +309,15 @@ Move into the scene using keyboard & mouse. Each sound is represented by a purpl
 
 ## Attaching a sound to a mesh
 
-This is probably the simplest way to handle 3D sounds in your scene. Simply create a `BABYLON.Sound`, attach it to an existing mesh and you’re done! If the mesh is moving, the sound will move with it. You have nothing to do. 
+This is probably the simplest way to handle 3D sounds in your scene. Simply create a `BABYLON.Sound`, attach it to an existing mesh and you’re done! If the mesh is moving, the sound will move with it. You have nothing to do.
 
 Here’s the code to use:
 
 ```javascript
-var music = new BABYLON.Sound("Violons", "sounds/violons11.wav", scene, null, { loop: true, autoplay: true });
+var music = new BABYLON.Sound("Violons", "sounds/violons11.wav", scene, null, {
+  loop: true,
+  autoplay: true
+});
 
 // Sound will now follow the box mesh position
 music.attachToMesh(box);
@@ -286,7 +328,7 @@ Calling the `attachToMesh()` function on a sound will transform it automatically
 Put your headphone and launch this sample into our playground:
 
 https://www.babylonjs-playground.com/#EDVU95
- 
+
 ## Setting a position as the audio listener
 
 By default, the "ears" of your scene - or the listener - is always the currently active camera. Sometimes, for example when making a 3rd person game, you may need to set another mesh as the listener - a characters head for example. This can be achieved by setting the `audioListenerPositionProvider` property on your scene.
@@ -296,16 +338,16 @@ The method you create has to return a valid `Vector3` object.
 ```javascript
 // Returns a static position
 scene.audioListenerPositionProvider = () => {
-    return new BABYLON.Vector3(0, 0, 10);
-}
+  return new BABYLON.Vector3(0, 0, 10);
+};
 
 // Returns the current position of a mesh
 // !It is recommended to use the 'absolutePosition' property
 // to reflect the position of the mesh in the world
 scene.audioListenerPositionProvider = () => {
-    // Returns a static position
-    return myMesh.absolutePosition;
-}
+  // Returns a static position
+  return myMesh.absolutePosition;
+};
 ```
 
 To switch back to using your camera as the listener, simply set the property to `null`.
@@ -314,12 +356,15 @@ To switch back to using your camera as the listener, simply set the property to 
 
 By default, spatial sounds are omnidirectional. But you can have directional sounds if you’d like to.
 
-**Note:** directional sounds only work for spatial sounds attached to a mesh. 
+**Note:** directional sounds only work for spatial sounds attached to a mesh.
 
 Here is the code to use:
 
 ```javascript
-var music = new BABYLON.Sound("Violons", "violons11.wav", scene, null, { loop: true, autoplay: true });
+var music = new BABYLON.Sound("Violons", "violons11.wav", scene, null, {
+  loop: true,
+  autoplay: true
+});
 music.setDirectionalCone(90, 180, 0);
 music.setLocalDirectionToMesh(new BABYLON.Vector3(1, 0, 0));
 music.attachToMesh(box);
@@ -327,42 +372,52 @@ music.attachToMesh(box);
 
 setDirectionalCone takes 3 parameters:
 
-* **coneInnerAngle**: size of the inner cone in degree
-* **coneOuterAngle**: size of the outer cone in degree
-* **coneOuterGain**: volume of the sound when you’re outside the outer cone (between 0.0 and 1.0)
+- **coneInnerAngle**: size of the inner cone in degree
+- **coneOuterAngle**: size of the outer cone in degree
+- **coneOuterGain**: volume of the sound when you’re outside the outer cone (between 0.0 and 1.0)
 
-Outer angle of the cone must be superior or equal to the inner angle, otherwise an error will be logged and the directional sound won’t work. 
+Outer angle of the cone must be superior or equal to the inner angle, otherwise an error will be logged and the directional sound won’t work.
 
 `setLocalDirectionToMesh()` is simply the orientation of the cone related to the mesh you’re attached to. By default, it’s `(1,0,0)`.
 
-You can play with this sample from our playground to better understand the output: 
+You can play with this sample from our playground to better understand the output:
 
 https://www.babylonjs-playground.com/#1BO0YS
 
-Move into the 3D scene. If you’re inside the space defined by the grey cone, you should hear the music, if not you’ll not hear it as the `coneOuterGain` is set to 0. 
+Move into the 3D scene. If you’re inside the space defined by the grey cone, you should hear the music, if not you’ll not hear it as the `coneOuterGain` is set to 0.
 
 ## Creating your own custom attenuation function
 
 If you want to manage the attenuation (or distance model in Web Audio) using a specific algorithm, you can by-pass the native Web Audio attenuation using Babylon.js custom attenuation function.
 
-**Note:** Web Audio is *hardware accelerated*. It means it’s mainly handled by a dedicated audio chip on your device via native code (the browser). This then almost costs nothing on the performance side for 3D real-time rendering. Switching to custom attenuation will use Babylon.js distance computation based on JavaScript and will be slower. 
+**Note:** Web Audio is _hardware accelerated_. It means it’s mainly handled by a dedicated audio chip on your device via native code (the browser). This then almost costs nothing on the performance side for 3D real-time rendering. Switching to custom attenuation will use Babylon.js distance computation based on JavaScript and will be slower.
 
 Moreover, the custom attenuation will only works on spatial sounds (obviously) but also on sound connected to a Babylon.js mesh. That said, let’s now view the code to do that. First, you must specify it in the options:
 
 ```javascript
 // Create and load the sound async
-var music = new BABYLON.Sound("Music", "music.wav", scene, null, { loop: true, autoplay: true, useCustomAttenuation: true });
+var music = new BABYLON.Sound("Music", "music.wav", scene, null, {
+  loop: true,
+  autoplay: true,
+  useCustomAttenuation: true
+});
 ```
 
-You’ll switch to internal Babylon.js math computations. The default custom attenuation function is a linear one. 
+You’ll switch to internal Babylon.js math computations. The default custom attenuation function is a linear one.
 
 To create your own logic, you need such code:
 
 ```javascript
 // Creating custom attenuation function. Near the object, volume is almost 0.
 // The farest, the louder
-music.setAttenuationFunction(function (currentVolume, currentDistance, maxDistance, refDistance, rolloffFactor) {
-    return currentVolume * currentDistance / maxDistance;
+music.setAttenuationFunction(function(
+  currentVolume,
+  currentDistance,
+  maxDistance,
+  refDistance,
+  rolloffFactor
+) {
+  return (currentVolume * currentDistance) / maxDistance;
 });
 ```
 
@@ -370,48 +425,54 @@ You can play with these 5 parameters and do whatever you’d like with it. Simpl
 
 In this example, the logic is a bit weird as the volume is louder the farther you are from the mesh. ;-)
 
-Play with it in our Playground: 
+Play with it in our Playground:
 
 https://www.babylonjs-playground.com/#1YIXEO
 
 Moreover, Firefox has currently a bug in their Web Audio implementation in handling properly linear attenuation. This can be fixed by using the Babylon.js default linear custom attenuation.
 
-Here’s a previous sample code that now works properly in Firefox: 
+Here’s a previous sample code that now works properly in Firefox:
 
 https://www.babylonjs-playground.com/#2AH4YH#2
 
 ## Manipulating sound loaded from a .babylon file
 
+Currently only our 3DS Max exporter can export sounds directly to _.babylon_.
 
-Currently only our 3DS Max exporter can export sounds directly to *.babylon*. 
+To access to a sound loaded by the Babylon.js _.babylon_ fileloader, you need to use the `getSoundByName()` function on the scene object.
 
-To access to a sound loaded by the Babylon.js *.babylon* fileloader, you need to use the `getSoundByName()` function on the scene object. 
-
-Here is a simple sample loading a *.babylon* scene file embedding some sounds:
+Here is a simple sample loading a _.babylon_ scene file embedding some sounds:
 
 ```javascript
 var canvas = document.getElementById("renderCanvas");
 var engine = new BABYLON.Engine(canvas, true);
-BABYLON.SceneLoader.Load("TestScene/", "testsound.babylon", engine, function (newScene) {
-    newScene.executeWhenReady(function () {
-        newScene.activeCamera.attachControl(canvas);
+BABYLON.SceneLoader.Load(
+  "TestScene/",
+  "testsound.babylon",
+  engine,
+  function(newScene) {
+    newScene.executeWhenReady(function() {
+      newScene.activeCamera.attachControl(canvas);
 
-        var gunshotSound = newScene.getSoundByName("gunshot-1.wav");
-        window.addEventListener("keydown", function (evt) {
-            if (evt.keyCode === 32 && gunshotSound) {
-                    gunshotSound.play();
-            }
-        });
+      var gunshotSound = newScene.getSoundByName("gunshot-1.wav");
+      window.addEventListener("keydown", function(evt) {
+        if (evt.keyCode === 32 && gunshotSound) {
+          gunshotSound.play();
+        }
+      });
 
-        engine.runRenderLoop(function () {
-            newScene.render();
-        });
-    });
-}, function (progress) {
-    // To do: give progress feedback to user
-});
+      engine.runRenderLoop(function() {
+        newScene.render();
+      });
+    });
+  },
+  function(progress) {
+    // To do: give progress feedback to user
+  }
+);
 ```
-Pressing the spacebar will play the gunshot sound. 
+
+Pressing the spacebar will play the gunshot sound.
 
 ## Using Sound Tracks
 
@@ -422,10 +483,10 @@ By default, Babylon.js is creating a `BABYLON.SoundTrack` object to act as its m
 ```javascript
 var soundTrack = new BABYLON.SoundTrack(scene);
 soundTrack.AddSound(cellolong);
-soundTrack.AddSound(violons11); 
+soundTrack.AddSound(violons11);
 ```
 
-Using this code, the *cellolong* and *violons11* sounds will be moved from the main Babylon.js track to this specific sound track. This now means that you change the volume of this track, and thus of these 2 sounds, independently from the main track. 
+Using this code, the _cellolong_ and _violons11_ sounds will be moved from the main Babylon.js track to this specific sound track. This now means that you change the volume of this track, and thus of these 2 sounds, independently from the main track.
 
 The `AddSound()` function will move the sound from its original container (the main track or a specific track) to the new sound track specified. For instance, with this code:
 
@@ -438,11 +499,11 @@ var soundTrack2 = new BABYLON.SoundTrack(scene);
 soundTrack2.AddSound(violons11);
 ```
 
-The *violons11* sound will finally live only in *soundTrack2*.
+The _violons11_ sound will finally live only in _soundTrack2_.
 
 ## Using the Analyser
 
-You can easily analyze in real-time the audio frequencies. 
+You can easily analyze in real-time the audio frequencies.
 
 The easiest code to understand how it works is this one:
 
@@ -452,7 +513,7 @@ BABYLON.Engine.audioEngine.connectToAnalyser(myAnalyser);
 myAnalyser.drawDebugCanvas();
 ```
 
-This will connect to the global volume of the audio engine and will draw the frequencies of all sounds played together into a 2D canvas display on top of the screen. 
+This will connect to the global volume of the audio engine and will draw the frequencies of all sounds played together into a 2D canvas display on top of the screen.
 
 You can change the position and size of the debug canvas and use an analyser on a sound track instead of the global audio engine:
 
@@ -466,11 +527,9 @@ myAnalyser.DEBUGCANVASPOS.y = 30;
 myAnalyser.drawDebugCanvas();
 ```
 
-You can also call yourself the analyser functions to create your own usage of it. 
+You can also call yourself the analyser functions to create your own usage of it.
 
-Here is a full sample: 
-
-https://www.babylonjs-playground.com/#PTV7W#1
+Here is an [audio playground full sample](https://www.babylonjs-playground.com/#PTV7W#1)
 
 # Further Reading
 

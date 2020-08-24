@@ -1,8 +1,3 @@
----
-ID_PAGE: 25091
-PG_TITLE: How to use Curve3
----
-
 # How To Draw Curves
 
 If you want to draw a circular path then it is easy enough to generate the points, in the XY plane, for this using

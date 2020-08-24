@@ -1,8 +1,4 @@
----
-PG_TITLE: Improve Documentation
----
-
-Since the engine is constantly evolving, you may notice some lacks in the documentation. You're going to know how to fix that!
+Since the engine is constantly evolving, you may notice some gaps in the documentation. You're going to know how to fix that!
 
 # The easy way
 
@@ -18,17 +14,17 @@ Then pick a page you want to update and select the edit button:
 
 You can now [use markdown](https://guides.github.com/features/mastering-markdown/) to edit the documentation page.
 
-Once done, try to quickly explain what is your modification for, and click on *Propose file change* button:
+Once done, try to quickly explain what your modification is for, and click on the _Propose file change_ button:
 
 ![propose file change](/img/contribute/documentation/easy-submit.png)
 
-For now, your modification aren't yet in the main files. You have to ask to BabylonJS core team to validate and merge your work.
+For now, your modification isn't yet in the main files. You have to ask to BabylonJS core team to validate and merge your work.
 
-Press *Create pull request* button:
+Press _Create pull request_ button:
 
 ![sending pull](/img/contribute/documentation/easy-pull.png)
 
-If needed, modify your comment, and press again *Create pull request* button:
+If needed, modify your comment, and press again _Create pull request_ button:
 
 ![commenting pull](/img/contribute/documentation/easy-pull2.png)
 
@@ -40,24 +36,24 @@ Do not hesitate to read [Good Practice](#good-practices) section.
 
 # Deeper Changes
 
-Sometimes, quick edits like above are not sufficient. Indeed, you could want to run the documentation locally on your computer before pushing online, just to be sure nothing is broken.
+Sometimes, quick edits like above are not sufficient. Indeed, you might want to run the documentation locally on your computer before pushing online, just to be sure nothing is broken.
 
 Requirements:
 
 - a [Github](https://github.com) account
 - [git](https://www.git-scm.com/downloads)
-- [Github Desktop](https://desktop.github.com/) (optionnal, but makes local git repositories a lot more easy to use)
+- [Github Desktop](https://desktop.github.com/) (optional, but makes local git repositories easier to use)
 - [node.js](https://nodejs.org/en/)
 
 ## Forking
 
-Start by going to the main BabylonJS [Documentation](https://github.com/BabylonJS/Documentation) repository and clicking on the *Fork* button:
+Start by going to the main BabylonJS [Documentation](https://github.com/BabylonJS/Documentation) repository and clicking on the _Fork_ button:
 
 ![fork](/img/contribute/documentation/further-fork-creation.png)
 
 This will make a copy of the repository, but on your account.
 
-Click on *Clone or download* button, and *Open in Desktop*:
+Click on _Clone or download_ button, and _Open in Desktop_:
 
 ![open locally](/img/contribute/documentation/further-open-desktop.png)
 
@@ -67,9 +63,9 @@ When the files are downloaded, open a command in this repo. It can be done quick
 
 ![powershell](/img/contribute/documentation/further-powershell.png)
 
-(*you may have* Open in Command *rather than* Open in PowerShell *, that's not a big deal*)
+(_you may have_ Open in Command _rather than_ Open in PowerShell _, that's not a big deal_)
 
-You need 'npm', 'grunt' and 'grunt-cli' installed in the directory and you may need to update these from time to time. 
+You need 'npm', 'grunt' and 'grunt-cli' installed in the directory and you may need to update these from time to time.
 
 Just write `npm install`, press enter and wait the operation to be done.
 
@@ -79,15 +75,17 @@ This fork operation has to be done only once. You're now able to run locally the
 
 ## Running and editing the doc locally
 
+** We currently support Node 10 and down. Local build will fail with node 12 and up **
+
 In the powershell window at the root of the documentation repo, send a:
 
-`grunt build`
+`npm run build`
 
 command and wait. Should the build not occur try `npm install`, or updating `npm`, `grunt`, and `grunt-cli`.
 
 When it's done, use:
 
-`grunt serve`
+`npm run serve`
 
 This will launch the local documentation website on http://localhost:8080
 
@@ -95,7 +93,7 @@ Open the project using your favorite code editor. This can be done also from Git
 
 ![visual studio](/img/contribute/documentation/further-visual-studio.png)
 
-(*you may have* Open in Atom *rather than* Open in Visual Studio *, that's not a big deal*)
+(_you may have_ Open in Atom _rather than_ Open in Visual Studio _, that's not a big deal_)
 
 You can finally starting to update the markdown files!
 
@@ -125,7 +123,7 @@ Now that everything is working well, you may want to add new content. To do so, 
 
 This file is a catalog where you can reference new files added to the repo.
 
-For example, let's say we want to add this page. We know that our new page will be in the *Contribute* section:
+For example, let's say we want to add this page. We know that our new page will be in the _Contribute_ section:
 
 ```javascript
 "How_To": [
@@ -150,7 +148,7 @@ For example, let's say we want to add this page. We know that our new page will 
 ]
 ```
 
-Just add necessary informations about your new page:
+Just add necessary information about your new page:
 
 ```javascript
 /* [...] */
@@ -169,23 +167,23 @@ Just add necessary informations about your new page:
 /* [...] */
 ```
 
-Notice the filename field, this will be your new page filename (without markdown extension .md):
+Notice the filename field. This will be your new page filename (without markdown extension .md):
 
 ![new content](/img/contribute/documentation/further-new-content.png)
 
 ## Sending pull request
 
-A Pull Request (PR) have to be made so as to integrate your modifications on the documentation.
+A Pull Request (PR) has to be made to integrate your modifications into the documentation.
 
 You will first pull your local modifications into your online fork, then ask for merging your fork into the main repo.
 
-In Github Desktop, you will see all your modifications. Sometimes a file named `babylon.d.ts` will be automatically modified, it's not a problem to PR it.
+In Github Desktop, you will see all of your modifications. Sometimes a file named `babylon.d.ts` will automatically be modified, but there's no problem to PR with it.
 
-Add an explicit summary into the required field, and click to *Commit to master*:
+Add an explicit summary into the required field, and click to _Commit to master_:
 
 ![pushing](/img/contribute/documentation/further-pushing.png)
 
-Then, click on *Push origin* button:
+Then, click on _Push origin_ button:
 
 ![push](/img/contribute/documentation/further-push.png)
 
@@ -195,7 +193,7 @@ And go to your online github repo. You can use Github Desktop for that:
 
 For now, your fork is updated online, having your last modifications.
 
-Click on *New pull request* button:
+Click on _New pull request_ button:
 
 ![github pull](/img/contribute/documentation/further-github-pull.png)
 
@@ -210,38 +208,42 @@ Congratulation again, you're now a documentation master!
 - if you're not familiar with markdown, you can read this short [Github guide](https://guides.github.com/features/mastering-markdown/)
 - even if you're seeing just a tiny typo, feel free to do a pull request dedicated to it
 - do one commit per tasks, a pull request can take into account multiple commits if needed
-    - example: if you have two pages to modify, once the first page is edited, do a commit
-- tables can be a great help for readibility
+  - example: if you have two pages to modify, once the first page is edited, do a commit
+- tables can be a great help for readability
+- avoid the use of first person
+- pay attention to spelling, grammar and punctuation
+- when you're not sure about a point, ask for proof-reading
 
 ## Images
 
 - use and store images from the documentation FTP as much as possible, read [Adding new images](https://doc.babylonjs.com/how_to/contribute_to_documentation#adding-new-images)
-- be careful about image size (tip: Photoshop have a "Save for the web" export)
+- be careful about image size (tip: Photoshop has a "Save for the web" export)
 
 ## Code
 
-- when showing a javascript bloc of code, tell to markdown that it's javascript to be sure having syntax highlight:
+- when showing a JavaScript block of code, inform Markdown that it's JavaScript to ensure syntax highlighting:
 
 ![markdown code](/img/contribute/documentation/markdown-code.png)
 
-- when quoting a property in a sentence, you can use single *\`* char (Alt + numpad 96)
-    - example:  You can set the `roughness` of a PBR material to 1.
+- when quoting a property in a sentence, you can use single _\`_ char (Alt + numpad 96)
+  - example: You can set the `roughness` of a PBR material to 1.
 
 ## Links
 
 - use lowercases on your url
-    - example: `/how_to/` in place of `/How_To/`
+  - example: `/how_to/` in place of `/How_To/`
 - use relative links
-    - example: `[Load Files with Assets Manager](/how_to/how_to_use_assetsmanager)` instead of `[Load Files with Assets Manager](https://doc.babylonjs.com/how_to/how_to_use_assetsmanager)`
+  - example: `[Load Files with Assets Manager](/how_to/how_to_use_assetsmanager)` instead of `[Load Files with Assets Manager](https://doc.babylonjs.com/how_to/how_to_use_assetsmanager)`
 
 ## Further Reading
 
-- try to always add a *Further Reading* section
-- sort *Further Reading* using main documentation sections (Babylon 101, How to, etc)
+- try to always add a _Further Reading_ section
+- sort _Further Reading_ using main documentation sections (Babylon 101, How to, etc)
 - use markdown list
 - do not hesitate to link API relative to the article
 
 Example:
+
 ```markdown
 # Further Reading
 

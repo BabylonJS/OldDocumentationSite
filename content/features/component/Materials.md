@@ -1,7 +1,3 @@
----
-PG_TITLE: Color and texture
----
-
 # Materials
 Materials give your meshes color and texture. Materials can be opaque or have different degrees of transparency. When you form one material in Babylon.js it can be used to cover as many meshes as you wish, the only requirement is a light to be seen by. Their reaction to light can be diffuse, specular, emissive or ambient.
 
@@ -84,13 +80,13 @@ Repeat you texture as tiles across a mesh or even offset your texture on a mesh,
 var material = new BABYLON.StandardMaterial("mat0", scene);
 material.diffuseTexture = new BABYLON.Texture("URL TEXTURE", scene);
 material.diffuseTexture.uScale = 2;
-material1.diffuseTexture.vScale = 4;
+material.diffuseTexture.vScale = 4;
 
 material.diffuseTexture.uOffset = 0.25;
 material.diffuseTexture.vOffset = 0.5;
 ```
 
-* [Playground Example of Tiling and Offset](http://www.babylonjs-playground.com/#20OAV9#25)
+* [Playground Example of Tiling and Offset](https://www.babylonjs-playground.com/#20OAV9#25)
 
 ### Wireframe
 
@@ -135,13 +131,19 @@ Reflection of these can be simulated in Babylon.js using a _reflectionTexture_ w
 
 * [Playground Example Reflection Texture in Mirror](https://www.babylonjs-playground.com/#1YAIO7#21)  
 * [Playground Example Refraction Texture](https://www.babylonjs-playground.com/#22KZUW#15)  
-* [Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/?19)
+* [Playground Example Fresenel Parameters](https://www.babylonjs-playground.com/#AQZJ4C)
 
 ### Procedural Textures
 
 These are texture that you can have some control over by changing some parameters. Find out more from the Further Reading list.
 
 * [Playground Example Procedural Textures](https://www.babylonjs-playground.com/#24C4KC#17)
+
+### Texture Packer
+
+A built in method to consolidate multiple textures into images sets.
+
+* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#G5BWAD#10)
 
 ### How Materials Work
 

@@ -8,14 +8,14 @@
                     "doc": "https://doc.babylonjs.com/how_to/how_to_start",
                     "icon": "icons/normals.jpg",
                     "description": "Adding a simple class",
-                    "PGID": "ts.html#NS23BT"
+                    "PGID": "#NS23BT"
                 },
                 {
                     "title": "Adding a Class with Properties and Methods",
                     "doc": "https://doc.babylonjs.com/how_to/how_to_start",
                     "icon": "icons/surface.jpg",
                     "description": "Adding a class with properties and methods",
-                    "PGID": "ts.html#H3AF26#1"
+                    "PGID": "#H3AF26#1"
                 }
             ]
         }

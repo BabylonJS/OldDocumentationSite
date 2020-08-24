@@ -40,10 +40,12 @@ var __STATICS_LIST__ = path.join(appRoot, 'data/statics.json'),
     __FILES_SOURCE__ = path.join(appRoot, 'content/'),
     __FILES_DEST__ = path.join(appRoot, 'public/html/');
 
+var docPlaygrounds = [];
 
 module.exports = function(done) {
     var staticCategories = [
         "babylon101",
+        "beginners",
         "resources",
         "extensions",
         "How_To",
@@ -94,6 +96,14 @@ module.exports = function(done) {
         }, function() {
             // final callback
             logger.info('> ALL EXPORTERS/EXTENSIONS/TUTORIALS PAGES COMPILED.');
+
+            var playgroundsJsonPath = path.join(__FILES_DEST__, "playgrounds.json");
+            if (fs.existsSync(playgroundsJsonPath)) {
+                fs.unlinkSync(playgroundsJsonPath);
+            }
+            fs.writeFileSync(playgroundsJsonPath, JSON.stringify(docPlaygrounds, null, 4));
+            logger.info('> JSON files with all playgrounds has been created.');
+
             if (done) done();
         });
 
@@ -147,12 +157,21 @@ var getStaticPagesContent = function(dataObj, category, cb) {
                                 })).html;
 
                             // Regexp catching all link to the playground
-                            var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/\#([a-zA-Z0-9#]+))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
+                            var getPlaygroundLinks = /<a\s+(?:[^>]*?\s+)?href="(https?:\/\/(www.)?(?:babylonjs-playground|playground\.babylonjs)\.com\/(?:\#|pg\/)([a-zA-Z0-9]+)(?:(?:\#|\/revision\/)*(\d*)))(&w=([0-9]+))*(&h=([0-9]+))*">(.+?)<\/a>/g;
                             // Replace all links to the playground with a custom iframe
-                            var iframeWithLink = '<a href="$1">$8</a> - <i class="fa fa-eye" onclick="createIframe(\'$3\', this)"></i><br/>' +
-                                '<div class="iframeContainer"></div><br/>';
+                            var iframeWithLink = '<a href="$1">$9</a> - <i class="fa fa-eye" onclick="createIframe(\'$3#$4\', this)"></i>' +
+                                '<div class="iframeContainer"></div>';
 
                             markedContent.html = markedContent.html.replace(getPlaygroundLinks, iframeWithLink);
+
+                            var result = null;
+                            while (result = getPlaygroundLinks.exec(markedContent.html)) {
+                                const pg = result[3];
+                                const revision = result[4] | 0;
+                                docPlaygrounds.push({
+                                    pg, revision
+                                });
+                            }
 
                             staticsContents.push({
                                 "staticName": file.title,

@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Scene Loader
----
-
 # How to Use Scene Loader
 
 The built in file type is `.babylon` and Babylon.js can load these without a plugin.
@@ -46,7 +42,7 @@ BABYLON.SceneLoader.Append("./", "duck.gltf", scene, function (scene) {
 });
 ```
 
-[Demo](http://www.babylonjs-playground.com/#WGZLGJ)
+[Demo](https://www.babylonjs-playground.com/#WGZLGJ)
 
 Loads all babylon assets from a string and appends them to the scene
 
@@ -57,6 +53,23 @@ BABYLON.SceneLoader.Append("", "data:" + gltfString, scene, function (scene) {
 ```
 
 [Demo](https://playground.babylonjs.com/#88CB6A#1)
+
+You can also load a .glb binary file from a data string as long as the binary data is base64 encoded:
+
+```javascript
+var base64_model_content = "data:base64,BASE 64 ENCODED DATA...";
+BABYLON.SceneLoader.Append("", base64_model_content, scene, function (scene) { 
+    // do something with the scene
+});
+```
+
+Note that two mime types are allowed in the string data:
+```javascript
+var base64_model_content = "data:application/octet-stream;base64,-BASE 64 ENCODED DATA-";
+var base64_model_content = "data:model/gltf-binary;base64,-BASE 64 ENCODED DATA-";
+```
+
+[Demo](https://playground.babylonjs.com/#7F6S08#15)
 
 ## SceneLoader.Load
 
@@ -80,7 +93,7 @@ BABYLON.SceneLoader.ImportMesh(["myMesh1", "myMesh2"], "./", "duck.gltf", scene,
 });
 ```
 
-[Demo](http://www.babylonjs-playground.com/#JUKXQD)
+[Demo](https://www.babylonjs-playground.com/#JUKXQD)
 
 ## SceneLoader.LoadAssetContainer
 
@@ -97,7 +110,16 @@ BABYLON.SceneLoader.LoadAssetContainer("./", "duck.gltf", scene, function (conta
 });
 ```
 
-[Demo](http://www.babylonjs-playground.com/#JA1ND3#48)
+[Demo](https://www.babylonjs-playground.com/#JA1ND3#48)
+
+## SceneLoader.ImportAnimations
+
+Loads the animations from the file and merges them to the scene
+You can customize the import process using options and callbacks
+```javascript
+BABYLON.SceneLoader.ImportAnimations("./", "Elf_run.gltf", scene);
+```
+[Demo](https://www.babylonjs-playground.com/#UGD0Q0#2)
 
 ## SceneLoader.AppendAsync
 

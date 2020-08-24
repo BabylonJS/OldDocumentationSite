@@ -1,3 +1,7 @@
+## WebVR vs WebXR
+
+While the WebVR camera will continue to be supported, it is strongly recommended that projects instead use the [WebXR camera](https://doc.babylonjs.com/how_to/webxr_camera). For more information, check out our [introduction to WebXR](https://doc.babylonjs.com/how_to/introduction_to_webxr).
+
 ## Introduction
 
 Since v2.5 Babylon.js supports WebVR using the WebVRFreeCamera.
@@ -8,22 +12,21 @@ The WebVR camera is Babylon's simple interface to interaction with Windows Mixed
 
 Babylon.js also supports the VR devices' controllers - The Windows Mixed Reality controllers, HTC Vive's controllers, the Oculus touch, GearVR controller and Daydream controller - using the gamepad extension. Further details below.
 
-To quickly get started creating WebVR scene the [WebVR Experience Helper](/how_to/WebVR_Helper) class can be used to automatically setup the WebVR camera and enable other features such as teleportation out of the box. 
+To quickly get started creating WebVR scene the [WebVR Experience Helper](/how_to/WebVR_Helper) class can be used to automatically setup the WebVR camera and enable other features such as teleportation out of the box.
 
 ## Browser support
 
 ### WebVR
 
-WebVR 1.1 is enabled in specific versions of Microsoft Edge, Chromium and Firefox. To get constant status updates, please visit WebVR rocks at https://webvr.rocks/ . We support any browser that implements WebVR 1.1. 
+WebVR 1.1 is enabled in specific versions of Microsoft Edge, Chromium and Firefox. To get constant status updates, please visit WebVR rocks at https://webvr.rocks/ . We support any browser that implements WebVR 1.1.
 
 ### WebVR controllers
 
 The WebVR controllers are offered in browsers that support the WebVR gamepad extensions - https://w3c.github.io/gamepad/extensions.html . In Chromium you must enable this API in chrome://flags in order to get it working. Make sure to visit https://mozvr.com/ for full installation instructions.
 
-
 ## The WebVRFreeCamera class
 
-### Getting started 
+### Getting started
 
 The WebVRFreeCamera is being initialized the same as a standard free camera:
 
@@ -38,10 +41,10 @@ Just like any other camera, to get the camera working correctly with user input 
 Most browsers only support attaching the VR device to the scene during a user interaction (a mouse click, for example). To get that working correctly, a simple solution would be:
 
 ```javascript
-scene.onPointerDown = function () {
-    scene.onPointerDown = undefined
-    camera.attachControl(canvas, true);
-}
+scene.onPointerDown = function() {
+  scene.onPointerDown = undefined;
+  camera.attachControl(canvas, true);
+};
 ```
 
 What it does is attach control once the user click on the canvas, and disables the onPointerDown callback.
@@ -51,15 +54,14 @@ This can be done with an HTML or a Canvas2D button as well, and using vanilla ja
 ```javascript
 // after creating a button with vrButton as ID:
 
-let button = document.getElementById('vrButton');
+let button = document.getElementById("vrButton");
 
 function attachWebVR() {
-    camera.attachControl(canvas, true);
-    window.removeEventListener('click', attachWebVR, false);
+  camera.attachControl(canvas, true);
+  window.removeEventListener("click", attachWebVR, false);
 }
 
-button.addEventListener('click', attachWebVR, false );
-
+button.addEventListener("click", attachWebVR, false);
 ```
 
 Don't forget to remove the event listener, other wise any click on the button will trigger the attach function. It won't attach again, but it a waste of function calls and is not needed.
@@ -76,7 +78,7 @@ This is exactly how you should see the WebVR extra transformation - your head po
 
 This allows you to use the same code you use for a game based on the FreeCamera with the WebVR camera. the only difference is that the user will have the ability to rotate the camera locally using the VR device and not the mouse.
 
-This also allows the WebVR to be controlled by the same input devices that control the FreeCamera - keyboard, mouse (with rotation exception), XBOX controller and so on. 
+This also allows the WebVR to be controlled by the same input devices that control the FreeCamera - keyboard, mouse (with rotation exception), XBOX controller and so on.
 
 ### Resetting the device's rotation
 
@@ -88,8 +90,8 @@ This will set the current Y axis (and Y axis direction only!!) to be the current
 
 ### Low level fun
 
-* If you want to use the vrDevice directly, it is exposed using `camera._vrDevice`, a public hidden member in the camera.
-* If you want to use the raw pose data (Right handed data!), it is exposed at `camera.rawPose`. The rawPose has the following interface (a dream for physics lovers!):
+- If you want to use the vrDevice directly, it is exposed using `camera._vrDevice`, a public hidden member in the camera.
+- If you want to use the raw pose data (Right handed data!), it is exposed at `camera.rawPose`. The rawPose has the following interface (a dream for physics lovers!):
 
 ```javascript
 export interface DevicePose {
@@ -104,12 +106,14 @@ export interface DevicePose {
 ```
 
 Note: Raw pose values are not modified based on the webVRCamera's rotation or position. To reference modified position and rotation in Babylon space, use the devicePosition and deviceRotationQuaternion fields.
+
 ```javascript
-webVRCamera.devicePosition
-webVRCamera.deviceRotationQuaternion
-webVRCamera.leftController.devicePosition
-webVRCamera.leftController.deviceRotationQuaternion
+webVRCamera.devicePosition;
+webVRCamera.deviceRotationQuaternion;
+webVRCamera.leftController.devicePosition;
+webVRCamera.leftController.deviceRotationQuaternion;
 ```
+
 ## The Gamepad Extensions support (WebVR controllers)
 
 Each VR device currently available (Windows Mixed Reality, Oculus Rift, Vive, Daydream and GearVR) has controllers that complement its usage. Windows Mixed Reality controllers, Vive controllers, Oculus touch controllers, Daydream Controller and GearVR Controller are supported by using the gamepad extensions.
@@ -122,8 +126,8 @@ To fire a callback when the controllers are found you can use the optional `came
 
 ```javascript
 onControllersAttached = function(controllers) {
-    console.log(controllers.length === 2); // outputs true;
-}
+  console.log(controllers.length === 2); // outputs true;
+};
 ```
 
 Initializing the controllers using the camera will also attach them to the camera, which will allow moving the controllers together with the WebVR camera, if moved by the user.
@@ -175,16 +179,16 @@ These values will be sent to the observers of any specific button when either on
 
 The controllers also have Axes-data, which can be compared to the stick value of an x-box controller. They consist of a 2D vector (with x and y values). Stick values (SHOULD BE) are between -1, -1 and 1, 1, with 0,0 being the default value.
 
-* Not all buttons of each controller support all 3 values, but all 3 will always be provided. For example, the Vive's trigger doesn't support "touched", which will always be false, but will send the value data when pressed (a percentage of the press from 0 to 1). 
-* Having a value does not automatically mean that "pressed" is set to true. The oculus controllers, for example, will only set the trigger's "pressed" to true when the value exceeds 0.15 (15% pressed).
-* The controllers have a "hand" assigned to them, which is a string, either "left" or "right". This can be found at controller.hand .
+- Not all buttons of each controller support all 3 values, but all 3 will always be provided. For example, the Vive's trigger doesn't support "touched", which will always be false, but will send the value data when pressed (a percentage of the press from 0 to 1).
+- Having a value does not automatically mean that "pressed" is set to true. The oculus controllers, for example, will only set the trigger's "pressed" to true when the value exceeds 0.15 (15% pressed).
+- The controllers have a "hand" assigned to them, which is a string, either "left" or "right". This can be found at controller.hand .
 
 **Abstract mapping**
 
 The following observables exist on all types of WebVR controllers, in case you wish to develop an abstract solution to all VR devices and not focus on a specific device:
 
 1. `onTriggerStateChangedObservable` is the main trigger observable
-2. `onMainButtonStateChangedObservable` the main button observable 
+2. `onMainButtonStateChangedObservable` the main button observable
 3. `onSecondaryButtonStateChangedObservable` - you get the point...
 4. `onPadStateChangedObservable` - stick-button observable (NOT the Stick Values)
 5. `onPadValuesChangedObservable` - stick values changed observable
@@ -193,15 +197,14 @@ To use any of them, simple register a new function with the desired observable.
 For example, to monitor the trigger and observe pad value changes:
 
 ```javascript
-controller.onPadValuesChangedObservable.add(function (stateObject) {
-    console.log(stateObject); // {x: 0.1, y: -0.3}
+controller.onPadValuesChangedObservable.add(function(stateObject) {
+  console.log(stateObject); // {x: 0.1, y: -0.3}
 });
-controller.onTriggerStateChangedObservable.add(function (stateObject) {
-    let value = stateObject.value;
-    console.log(value);
+controller.onTriggerStateChangedObservable.add(function(stateObject) {
+  let value = stateObject.value;
+  console.log(value);
 });
 ```
-
 
 **Windows Mixed Reality Controller mapping**
 
@@ -240,11 +243,12 @@ The oculus touch supports 6 different buttons:
 The Gear VR controller supports:
 
 1. trackpad - pressed, touch and axis values. Mapped to `onPadValuesChangedObservable` and `onTrackpadChangedObservable`
-2. trigger - pressed and values.  Mapped to `onTriggerStateChangedObservable`
+2. trigger - pressed and values. Mapped to `onTriggerStateChangedObservable`
 
 **Google Daydream Controller mapping**
 
 The Google Daydream controller supports:
+
 1. touchpad - pressed, touch and axis values. Mapped to `onPadValuesChangedObservable` and `onTriggerStateChangedObservable`
 
 note: The Daydream controller home and app buttons are not mapped in WebVR.
@@ -264,79 +268,71 @@ Note that this will create a new quaternion to the mesh .
 The default controller mesh can be hidden with the following code.
 
 ```javascript
- scene.createDefaultVRExperience({controllerMeshes:true});
+scene.createDefaultVRExperience({ controllerMeshes: true });
 ```
 
+### Low level
 
-### Low level fun
-
-**Controllers without WebVR camera** 
+**Controllers without WebVR camera**
 
 The controllers can also be initialized without using a WebVR camera, which means - you can use them to control your regular WebGL game or 3D application.
 
 To do that, simply initialize the Gamepads Class:
 
 ```javascript
-
-new BABYLON.Gamepads((gp) => {
-    if (gp.type === BABYLON.Gamepad.POSE_ENABLED) {
-        // Do something with the controller!
-    }
+new BABYLON.Gamepads(gp => {
+  if (gp.type === BABYLON.Gamepad.POSE_ENABLED) {
+    // Do something with the controller!
+  }
 });
-
 ```
 
 Note that the position will be relative to the initial VR Device that is related to those controllers.
 
-**Pose data** 
+**Pose data**
 
 Just like the WebVR camera, the controllers export their (right handed!!) raw pose data. The data is updated each frame at `controller.rawPose`.
 
-
 ## A few notes
 
-* The WebVR camera supports both left-handed systems and right-handed systems. 
-* When using the oculus rift, pay attention that the oculus controller (this little )
-* To further read about WebVR try https://mozvr.com/ .
+- The WebVR camera supports both left-handed systems and right-handed systems.
+- When using the oculus rift, pay attention that the oculus controller (this little )
+- To further read about WebVR try https://mozvr.com/ .
 
 ## Examples
 
- - [Helmet](https://www.babylonjs-playground.com/#G46RP6#2)
- - [Basic Scene](https://www.babylonjs-playground.com/#5MV04)
- 
+- [Helmet](https://www.babylonjs-playground.com/#G46RP6#2)
+- [Basic Scene](https://www.babylonjs-playground.com/#5MV04)
 
 Enjoy!
 
-
 ## Troubleshooting
 
-* My WebVR camera is not working!!
+- My WebVR camera is not working!!
 
-    Seems like a very common problem - a WebVRFreeCamera class is initialized, but you can't see a thing in the device.
+  Seems like a very common problem - a WebVRFreeCamera class is initialized, but you can't see a thing in the device.
 
-    1. Check the console - Are you seeing any errors? COuld it be that WebVR is not supported on your browser?
-    2. in your console type `navigator.getVRDevices().then((vrs) => {console.log(vrs.length)})` . If you got 0 or an error, the device is not properly connected.
-    3. If using oculus rift - did you enable "unknown sources" in the oculus rift settings?
-    4. Try following the instructions in https://mozvr.com/ . Does the camera work there?
+  1. Check the console - Are you seeing any errors? COuld it be that WebVR is not supported on your browser?
+  2. in your console type `navigator.getVRDevices().then((vrs) => {console.log(vrs.length)})` . If you got 0 or an error, the device is not properly connected.
+  3. If using oculus rift - did you enable "unknown sources" in the oculus rift settings?
+  4. Try following the instructions in https://mozvr.com/ . Does the camera work there?
 
-* The camera's rotation is changing, but i can't see a thing in my display
+- The camera's rotation is changing, but i can't see a thing in my display
 
-    This error occurs when you didn't attach control to the VR device. 
+  This error occurs when you didn't attach control to the VR device.
 
-    1. Make sure that attach control is called inside a user-interaction callback. Chrome will not allow broadcasting to the VR device without user consent.
+  1. Make sure that attach control is called inside a user-interaction callback. Chrome will not allow broadcasting to the VR device without user consent.
 
-* My (Vive) controllers are not detected!! HELP!!!!
+- My (Vive) controllers are not detected!! HELP!!!!
 
-    Ah, I know this problem. 
+  Ah, I know this problem.
 
-    1. Try pressing the left and right buttons of the vive controller, or the pad button of the oculus touch. This should turn them on and make them visible.
-    2. Make sure you called `camera.initControllers()` !
-    3. open your console, search for errors.
-    4. type `navigator.getGamepads()` in your console. Is the list empty? are there controllers in the list? what controllers?
-    5. make sure the gamepad extensions is enabled in your browser! Check https://mozvr.com/ for installation instructions.
+  1. Try pressing the left and right buttons of the vive controller, or the pad button of the oculus touch. This should turn them on and make them visible.
+  2. Make sure you called `camera.initControllers()` !
+  3. open your console, search for errors.
+  4. type `navigator.getGamepads()` in your console. Is the list empty? are there controllers in the list? what controllers?
+  5. make sure the gamepad extensions is enabled in your browser! Check https://mozvr.com/ for installation instructions.
 
-* Gear VR or Daydream controller models are not showing
+- Gear VR or Daydream controller models are not showing
 
-    These are 3 DoF devices (no position).  The models positions aren't yet determined, but you have the rays from controller orientation and functional trigger buttons.
-
-
+  These are 3 DoF devices (no position). The models positions aren't yet determined, but you have the rays from controller orientation and functional trigger buttons.
