@@ -2,7 +2,7 @@
 
 The Texture Inspector is designed to enable you to debug your textures inside of Babylon. Users often load in textures and find that they do not appear as expected. Unexpected results can be related to transparency, UVs, or unique texture types such as cubemaps. The Texture Inspector allows you to investigate issues and even fix them in-engine.
 ## How to Access
-![Accessing the Inspector](/img/features/debuglayer/access.png)
+![Accessing the Inspector](/img/features/debuglayer/texture/access.png)
 The Texture Inspector can be accessed from the main inspector panel. Simply select a texture from the list, and click the "edit"  button underneath the texture preview.
 ## Properties
 ![Properties Bar](/img/features/debuglayer/texture/properties.png)
@@ -17,7 +17,7 @@ The reset button restores the texture to its original state before it was opened
 ### Faces (Cubemaps only)
 When inspecting a cubemap, you can click through the 6 buttons to view the faces of the cubemap.
 ## Tools
-![Toolbar](/img/features/debuglayer/tools.png)
+![Toolbar](/img/features/debuglayer/texture/tools.png)
 ### Rectangle Select
 Selects a region of the texture. When you have a reigon selected, edits will only be applied to that region. Press Escape to clear the selection.
 ### Paintbrush
@@ -31,7 +31,7 @@ Adjusts the contrast and exposure of the entire texture.
 ### Color Picker
 Manipulates the color and alpha that tools are painting.
 ## Channels
-![Channel Pane](/img/features/debuglayer/channels.png)
+![Channel Pane](/img/features/debuglayer/texture/channels.png)
 This pane is used to control the RGBA channels. Clicking the eye icons on the left will hide individual channels, allowing you to narrow your focus to particular channels. Clicking the letter on the right will lock a channel, meaning that any edits you perform will not affect that channel.
 ## Shortcuts
 -   Mousewheel and the +/- buttons allow you to zoom in and out
