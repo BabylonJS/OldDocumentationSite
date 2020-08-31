@@ -108,6 +108,22 @@ sphere.thinInstanceSetBuffer("matrix", bufferMatrices, 16, true);
 sphere.thinInstanceSetBuffer("color", bufferColors, 4, true);
 ```
 
+You can also update a range of the buffer if only a few (consecutive) thin instances need to be updated with the `thinInstancePartialBufferUpdate` method:
+```typescript
+const tidx = 63960;
+const matrixToUpdate = new Float32Array(16);
+
+const m = BABYLON.Matrix.Identity();
+... // update m
+
+m.copyToArray(matrixToUpdate, 0);
+box.thinInstancePartialBufferUpdate("matrix", matrixToUpdate, tidx * 16);
+```
+
+Note that the buffer located on the CPU is NOT updated! It's up to you to update it (or not) with the same data you pass to `thinInstancePartialBufferUpdate` method.
+
+Here's a playground that demonstrates updating a single thin instance out of 64000: https://playground.babylonjs.com/#KJWXTG
+
 ## Support
 
 Thin instances are supported for collisions, picking, rendering and shadows. However, for collisions, a single bounding info encompassing all the thin instances is used to check intersection: the check is not done for each thin instance separately.
