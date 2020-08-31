@@ -21,15 +21,15 @@ When inspecting a cubemap, you can click through the 6 buttons to view the faces
 ### Rectangle Select
 Selects a region of the texture. When you have a reigon selected, edits will only be applied to that region. Press Escape to clear the selection.
 ### Paintbrush
-Paints onto the texture. The size slider controls the width of the brush. The paintbrush will always apply the exact RGBA value you have selected, rather than blending with what's currently on the canvas.
+Paints the active color onto the texture. The size slider controls the width of the brush. The paintbrush will always apply the exact active RGBA value, rather than blending with what's currently on the canvas.
 ### Eyedropper
-Picks an RGBA value from the canvas to use with other tools.
+Sets the active color to the RGBA value of clicked pixels.
 ### Floodfill
-Floods the entire texture or selected region with the current RGBA value.
+Floods the entire texture or selected region with the active color and alpha.
 ### Contrast/Exposure
 Adjusts the contrast and exposure of the entire texture.
-### Color Picker
-Manipulates the color and alpha that tools are painting.
+### Active Color
+Displays the active color and alpha, which are used by other tools. Clicking opens a panel which allows precise manipulation of the RGBA values.
 ## Channels
 ![Channel Pane](/img/features/debuglayer/texture/channels.png)
 This pane is used to control the RGBA channels. Clicking the eye icons on the left will hide individual channels, allowing you to narrow your focus to particular channels. Clicking the letter on the right will lock a channel, meaning that any edits you perform will not affect that channel.
