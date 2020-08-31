@@ -172,3 +172,4 @@ You can set it up to an array of `IInspectable` which are defined by:
 
 [The Inspector Features](/features/playground_debuglayer)  
 [How To Customize the Inspector](/How_To/customize_debug_layer)  
+[Using the Texture Inspector](/features/texture_inspector)

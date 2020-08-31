@@ -154,6 +154,6 @@ This tool (available in the property pane when you select a material with textur
 [How To Use The Inspector in Projects](/How_To/debug_layer)  
 [How To Customize the Inspector](/How_To/customize_debug_layer)  
 [Dev log about the inspector](https://medium.com/@babylonjs/dev-log-creating-the-new-inspector-b15c50900205)
-
+[Using the Texture Inspector](/features/texture_inspector)
 
 

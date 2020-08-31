@@ -2059,6 +2059,10 @@
                 {
                     "title": "The Inspector overview",
                     "filename": "Playground_debuglayer"
+                },
+                {
+                    "title": "Using the Texture Inspector",
+                    "filename": "texture_inspector"
                 }
             ]
         },
