@@ -121,25 +121,27 @@ The default xr experience will:
 The simplest way to use the default experience is calling the help function of `scene` :
 
 ``` javascript
-var xrHelper = await scene.createDefaultXRExperienceAsync( /* optional configuration options */ );
+var defaultXrExperience = await scene.createDefaultXRExperienceAsync( /* optional configuration options */ );
 ```
 
 This is equivalent to:
 
 ``` javascript
-var xrHelper = await WebXRDefaultExperience.CreateAsync(scene, /* optional configuration options */ )
+var defaultXrExperience = await WebXRDefaultExperience.CreateAsync(scene, /* optional configuration options */ )
 ```
 
 After calling this and assuming the browser supports XR, you will see the Enter-XR GUI on the bottom right of the screen unless the browser **does not support XR**. The GUI will not be displayed. To check if the default experience initialized correctly, make sure the `baseExperience` variable was created:
 
 ``` javascript
-var xrHelper = await scene.createDefaultXRExperienceAsync( /* optional configuration options */ );
+var defaultXrExperience = await scene.createDefaultXRExperienceAsync( /* optional configuration options */ );
 if (!xrHelper.baseExperience) {
     // no xr support
 } else {
     // all good, ready to go
 }
 ```
+
+In case the base experience helper was not initialized you can see the reason logged in the console. 
 
 ### Configuration options
 
