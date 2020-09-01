@@ -134,7 +134,7 @@ After calling this and assuming the browser supports XR, you will see the Enter-
 
 ``` javascript
 var defaultXrExperience = await scene.createDefaultXRExperienceAsync( /* optional configuration options */ );
-if (!xrHelper.baseExperience) {
+if (!defaultXrExperience.baseExperience) {
     // no xr support
 } else {
     // all good, ready to go
@@ -192,15 +192,15 @@ To read more about both features, check the [Features Manager](./WebXR_Features_
 To enable / disable the teleport and pointer selection:
 
 ``` javascript
-// assuming xrHelper initialized correctly!
+// assuming defaultXrExperience initialized correctly!
 
 // disable:
-xrHelper.teleportation.detach();
-xrHelper.pointerSelection.detach();
+defaultXrExperience.teleportation.detach();
+defaultXrExperience.pointerSelection.detach();
 
 // (re)enable:
-xrHelper.teleportation.attach();
-xrHelper.pointerSelection.attach();
+defaultXrExperience.teleportation.attach();
+defaultXrExperience.pointerSelection.attach();
 ```
 
 ### Configuring the GUI
@@ -210,7 +210,7 @@ The GUI is the right way to enter and exit the XR experience. Otherwise you can 
 If you want to change the session mode or reference mode (for example to enter an AR session instead of VR):
 
 ``` javascript
-var xrHelper = await scene.createDefaultXRExperienceAsync({
+var defaultXrExperience = await scene.createDefaultXRExperienceAsync({
     uiOptions: {
         sessionMode: 'ar-immersive'
     }
