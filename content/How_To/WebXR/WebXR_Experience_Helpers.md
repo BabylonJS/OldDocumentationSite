@@ -4,7 +4,7 @@ In order to simplify development for WebXR we offer a WebXR helper that will ini
 
 We offer a basic set of functionalities with the WebXR experience helper, and offer a full XR experience, including UI, teleportation and more, with the Default WebXR experience helper.
 
-We recommend using the [Default Experience Helper](#the-webxr-default-experience-helper) for ease of use, and the [Basic Experience Helper](#the-basic-experience-helper) when looking for more control over decisions.
+We recommend using the [Default Experience](#the-webxr-default-experience) for ease of use, and the [Basic Experience Helper](#the-basic-experience-helper) when looking for more control over decisions.
 
 *Note that you don't have to use the experience helper. Everything can be done outside of those helper on your own.*
 
@@ -107,9 +107,9 @@ The basic XR experience helper offers direct access to the following:
 * A configured [XR Camera](./WebXR_Camera) that will have the non-VR camera's position when entering XR
 * Initialized [Features Manager](./WebXR_Features_Manager)
 
-## The WebXR Default Experience Helper
+## The WebXR Default Experience
 
-### Basic usage of default experience helper
+### Basic usage of default experience
 
 The default xr experience will:
 
@@ -118,7 +118,7 @@ The default xr experience will:
 * Init the input source class which will initialize controllers
 * Enable the pointer selection and teleportation features
 
-The simplest way to use the default experience helper is calling the help function of `scene` :
+The simplest way to use the default experience is calling the help function of `scene` :
 
 ``` javascript
 var xrHelper = await scene.createDefaultXRExperienceAsync( /* optional configuration options */ );
@@ -127,10 +127,10 @@ var xrHelper = await scene.createDefaultXRExperienceAsync( /* optional configura
 This is equivalent to:
 
 ``` javascript
-var xrHelper = await WebXRDefaultExperienceHelper.CreateAsync(scene, /* optional configuration options */ )
+var xrHelper = await WebXRDefaultExperience.CreateAsync(scene, /* optional configuration options */ )
 ```
 
-After calling this and assuming the browser supports XR, you will see the Enter-XR GUI on the bottom right of the screen unless the browser **does not support XR**. The GUI will not be displayed. To check if the default experience helper initialized correctly, make sure the `baseExperience` variable was created:
+After calling this and assuming the browser supports XR, you will see the Enter-XR GUI on the bottom right of the screen unless the browser **does not support XR**. The GUI will not be displayed. To check if the default experience initialized correctly, make sure the `baseExperience` variable was created:
 
 ``` javascript
 var xrHelper = await scene.createDefaultXRExperienceAsync( /* optional configuration options */ );
@@ -219,11 +219,11 @@ Read more about the GUI in the [advanced WebXR tutorial]()
 
 ### Available Observables
 
-Apart from those you can find in the `baseExperience` (The Basic XR experience helper) the default experience helper does not offer any observables.
+Apart from those you can find in the `baseExperience` (The Basic XR experience helper) the default experience does not offer any observables.
 
 ### Further features
 
-The default experience helper offers direct access to the following:
+The default experience offers direct access to the following:
 
 * `input` - initialized [WebXRInputSource]()
 * `enterExitUI` - initialized [GUI]()
