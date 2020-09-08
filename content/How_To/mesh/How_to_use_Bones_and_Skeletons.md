@@ -15,6 +15,14 @@ Inside a skeleton, bones can be found inside the ```skeleton.bones``` array.
 
 A bone can contain animations to animate its ```matrix``` property.
 
+A bone must have its inverted absolute transform matrix set. If you are importing a skeleton this might already be computed. But if you are creating your own skeleton programatically you need to do this in your code.
+
+The easiest way to do it is: 
+
+```javascript
+skeleton.returnToRest();
+```
+
 ## Preparing mesh
 
 A skeleton can be applied to a mesh through the ```mesh.skeleton``` property.
