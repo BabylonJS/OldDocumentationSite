@@ -175,10 +175,10 @@ What you are able to easily do is powerful, because inside the Scene component y
 
 > BabylonJS ES6 + CRA (Create React App) project examples:
 > * JavaScript (examples for 3D models, GUI, VR, behaviors, props/state management)
->   * [source](https://github.com/brianzinn/create-react-app-typescript-babylonjs)
+>   * [source](https://github.com/brianzinn/create-react-app-babylonjs)
 >   * [demo](https://brianzinn.github.io/create-react-app-babylonjs/)
 >* TypeScript (GUI + physics + shadows)
->   * [source](https://github.com/brianzinn/create-react-app-babylonjs)
+>   * [source](https://github.com/brianzinn/create-react-app-typescript-babylonjs)
 >   * [demo](https://brianzinn.github.io/create-react-app-typescript-babylonjs/)
 >* [Electron](https://github.com/brianzinn/react-babylonjs-electron) (Electron added to above TypeScript project)
 >* [PWA](https://github.com/brianzinn/create-react-app-babylonjs-pwa) (Progressive Web App)
