@@ -1267,6 +1267,36 @@ Base material: https://playground.babylonjs.com/#WB27SW#4
 
 Programmatically updated material: https://playground.babylonjs.com/#WB27SW#3
 
+## Creating Procedural textures
+
+Starting with Babylon.js v4.2, you can now create procedural textures with the node material editor.
+
+You need simply to change the mode to *Procedural texture* this time:
+
+Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh, particle and animation blocks.
+
+When you have created your procedural texture in the NME, you can create a regular `BABYLON.ProceduralTexture` instance by calling the `NodeMaterial.createPostProcess` method:
+```javascript
+const postProcess = nodeMaterial.createProceduralTexture(256);
+```
+
+As always, you can also load the NodeMaterial from our snippet server:
+```
+var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+
+BABYLON.NodeMaterial.ParseFromSnippetAsync("#A7A3UB#1", scene).then((nodeMaterial) => {
+    const proceduralTexture = nodeMaterial.createProceduralTexture(256);
+
+    let mat = new BABYLON.StandardMaterial();
+
+    mat.emissiveTexture = proceduralTexture;
+
+    ground.material = mat;
+});
+```
+
+Playground: https://playground.babylonjs.com/#8S19ZC#1
+
 ## Creating Particle shaders
 
 Starting with Babylon.js v4.2, you can now create particle shaders (to be used with a particle system) with the node material editor.
