@@ -103,6 +103,18 @@ has material with red diffuse color and an ambient texture.
 
 ![Texture](/img/how_to/Materials/texture1.png)
 
+### Texture Packer
+Some complex scenes will require a large amount of texture.  A single Material often will use three and often more!  To simplify the loading process sometimes it might be convenient to package the texture from multiple materials into a series of images.  The trade off will be that each texture will be scaled to a set size and might cause some desegregation, there are also webGL limits to take into consideration.  The packer will create a set of "frames" for each unique material and its required texture channels, producing one image for each channel that the materials being packed used.  The process then modifies a target UV# of the meshes passed with the constructor to make them match the frame of the texture sets.  The system assumes textures are 1:1 ratio (square).
+
+Create a TexturePacker series by calling:
+```javascript
+let pack = new BABYLON.TexturePacker(name, targetMeshes, options, scene);
+```
+There are some limitations though that you must consider.  These include texture size limits, transparencies, and refection/refraction materials.  Please go here for more information on [Creating a Texture Package](http://www.babylonjs-playground.com/#20OAV9#17)
+
+* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#TQ408M)
+
+
 ### Transparent Texture Examples
 As for colors the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
 ```javascript

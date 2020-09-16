@@ -143,6 +143,12 @@ These are texture that you can have some control over by changing some parameter
 
 * [Playground Example Procedural Textures](https://www.babylonjs-playground.com/#24C4KC#17)
 
+### Texture Packer
+
+A built in method to consolidate multiple textures into images sets.
+
+* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#G5BWAD#9)
+
 ### How Materials Work
 
 Sometimes in order to use materials more effectively it is good to know what is happening under the Babylon.js hood. Have a look at how color is applied to the vertices of the facets that make up the mesh and their effects. Find out more how materials are cached and compiled and how to improve the user experience. All available from the links in Further Reading.
