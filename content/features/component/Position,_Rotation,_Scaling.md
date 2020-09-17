@@ -1,7 +1,3 @@
----
-ID_PAGE: 22041
-PG_TITLE: 04. Position, Rotation, Scaling
----
 # Positioning, Rotating and Scaling 
 
 There are a variety of ways within Babylon.js to position, rotate and scale a mesh, from simple methods to the use of matrices. All of which depend on you knowing which [frame of reference](/resources/Frame_Of_Reference), either the **world axes** or the **local axes**, is being used. 
@@ -83,7 +79,7 @@ For rotating the most straight forward **move-by** method is [addRotation](/baby
 
 The following playground shows you how to use _addRotation_ to construct wheels.
 
-* [Playground Example - Wheels](http://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
+* [Playground Example - Wheels](https://www.babylonjs-playground.com/#1PON40#12) Author [Jerome Bousquie](http://jerome.bousquie.fr/BJS/demos/)
 
 The other ways below move by the values given in the parameters.
 

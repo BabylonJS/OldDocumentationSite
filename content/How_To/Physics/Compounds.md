@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Create Compound Bodies
----
-
 # The Skull as a Compound Body
 
 ![Skull](/img/how_to/physics/skull.jpg)

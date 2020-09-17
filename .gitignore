@@ -24,3 +24,4 @@ public/html/*
 .history/
 log/bjs-doc-error.log
 package-lock.json
+npm-shrinkwrap.json

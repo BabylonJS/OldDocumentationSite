@@ -1,6 +1,3 @@
----
-PG_TITLE: Cameras
----
 # Cameras
 
 There are a range of cameras to use with Babylon.js, Probably the two most used are the universal and arcRotate cameras. As the use of virtual reality increase so will the use of cameras for this purpose.

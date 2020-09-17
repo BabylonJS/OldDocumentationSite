@@ -150,6 +150,13 @@
                     "icon": "icons/gizmo.jpg",
                     "description": "Position, Rotate and Scale meshes with a pointer",
                     "PGID": "#8MGKWK#25"
+                },
+                {
+                    "title": "Using DeviceSourceManager",
+                    "doc": "https://doc.babylonjs.com/how_to/how_to_use_devicesourcemanager",
+                    "icon": "icons/dsm_input.png",
+                    "description": "Control ship with keyboard or gamepad.",
+                    "PGID": "#C7PM2B"
                 }
             ]
         },
@@ -229,7 +236,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/load_from_any_file_type",
                     "icon": "icons/load_gltf.jpg",
                     "description": "Show how to easily load a glTF model",
-                    "PGID": "#U5SSCN#0"
+                    "PGID": "#SYQW69"
                 },
                 {
                     "title": "Assets manager",
@@ -526,29 +533,36 @@
                     "PGID": "#NNL67B#1"
                 },
                 {
+                    "title": "Particles and node material",
+                    "doc": "https://doc.babylonjs.com/How_To/Particles_and_nme",
+                    "icon": "icons/particle_nme.jpg",
+                    "description": "Updating default particle shader with NME",
+                    "PGID": "#RA18GJ#0"
+                },
+                {
                     "title": "A lot of triangles with SPS",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/solidParticleSystem.jpg",
                     "description": "Use solid particle system to create a colorful cube",
                     "PGID": "#2FPT1A#5"
                 },
                 {
                     "title": "Solid Particle System facet collision",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/facets.jpg",
                     "description": "Use SPS facets to simulate complex mesh collisions",
                     "PGID": "#6UZDJ9#0"
                 },
                 {
                     "title": "Solid Particle System collisions",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/sps_collisions.jpg",
                     "description": "Use basic geometry to simulate SPS collisions",
                     "PGID": "#2V1C4Z#0"
                 },
                 {
                     "title": "Solid Particle System and shadows",
-                    "doc": "https://doc.babylonjs.com/how_to/solid_particle_system",
+                    "doc": "https://doc.babylonjs.com/how_to/solid_particles",
                     "icon": "icons/sps_shadows.jpg",
                     "description": "Animate SPS with realtime shadows",
                     "PGID": "#ML2LR9#0"
@@ -636,7 +650,7 @@
                     "doc": "https://doc.babylonjs.com/babylon101/shadows",
                     "icon": "icons/trasnparent_shadow.jpg",
                     "description": "Create realistic shadows from a transparent texture",
-                    "PGID": "#2DT16W#11"
+                    "PGID": "#1Z89KY#28"
                 },
                 {
                     "title": "Point light shadows",

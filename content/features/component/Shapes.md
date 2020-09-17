@@ -1,7 +1,3 @@
----
-PG_TITLE: A Wide Range of Mesh Types
----
-
 # Meshes
 
 In the 3D virtual world shapes are built from meshes, lots of trangular facets joined together, each facet made from three vertices.
@@ -10,13 +6,13 @@ In the 3D virtual world shapes are built from meshes, lots of trangular facets j
 
 Babylon.js provides for the creation of predefined meshes and of custom meshes. For all meshes the underlying data structure is exposed and can be updated.
 
-Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/How_To/Solid_Particle_System) are also available.
+Specialist meshes such as [sprites](/babylon101/Sprites), [2D particles](/babylon101/Particles) and [3D solid particles](/How_To/solid_particles) are also available.
 
 ## Types
 
 There are two types of predefined meshes, [set shapes](/How_To/Set_Shapes) and [parametric shapes](/How_To/Parametric_Shapes). Set shapes usually already have names in everyday use and their forms are well known and recognized. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well known but also included in set shapes are a torus, a torus knot and the polyhedra. Parametric shapes have no everyday names but are formed through data sets and parameters and most often their shape is unpredictable. These include lines, a system of lines, ribbons, tubes, extrusions, lathed shapes and irregular polygons. 
 
-Mention has already been made of the horizonal plane called the ground which is your common flat everyday surface like a floor. You will be pleased to know that it comes in other varieties to provide an outside terrain with rolling hills and valleys. For a view from a distance terrain you use [GroundFromAHeightMap](/babylon101/Height_Map). If you literally want rolling hills add the extension [dynamic terrain][/Extension/dynamic_terrain] which gives you an infinite landscape to fly over.
+Mention has already been made of the horizonal plane called the ground which is your common flat everyday surface like a floor. You will be pleased to know that it comes in other varieties to provide an outside terrain with rolling hills and valleys. For a view from a distance terrain you use [GroundFromAHeightMap](/babylon101/Height_Map). If you literally want rolling hills add the extension [dynamic terrain](/extensions/dynamic_terrain) which gives you an infinite landscape to fly over.
 
 
 ## Ways of Creating a Predefined Mesh
@@ -77,7 +73,7 @@ var options = {
     diameterTop:3, 
     diameterBottom: 6, 
     height: 5, 
-    tessellations: 16, 
+    tessellation: 16, 
     subdivisions: 10
 }
 var cylinder = BABYLON.MeshBuilder.CreateCylinder("myCylinder", options);
@@ -129,7 +125,7 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 [Ray Casting 101](/babylon101/Raycasts)  
 [Polyhedra](/How_To/Polyhedra_Shapes)   
 [Using Decals](/How_To/Decals)  
-[How to Use the Solid Particle System](/How_To/Solid_Particle_System)  
+[How to Use the Solid Particle System](/How_To/solid_particles)  
 [Set the Position, Rotation and Scale of a Mesh](/features/Position,_Rotation,_Scaling)
 
 ## Mid Level - L2  
@@ -150,7 +146,7 @@ From Babylon.js version 3.0 morphing, or distoring a mesh through a number of tr
 [How to use Bones and Skeletons](/How_To/How_to_use_Bones_and_Skeletons)  
 [How to use EdgesRenderer](/How_To/How_to_use_EdgesRenderer)  
 [Creating Custom Meshes](/How_To/Custom)  
-[Facet Normals](/How_To/Normals)  
+[Facet Normals](/how_to/how_to_use_facetdata#facet-normal)  
 [Updating Vertices](/How_To/Updating_Vertices)
 
  

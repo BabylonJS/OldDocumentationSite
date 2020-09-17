@@ -37,6 +37,7 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
     * Hierarchy
     * Position / rotation / scaling
     * Animations: position, rotation, scaling
+    * Custom attributes
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn are converted to PBR, see below)
@@ -51,6 +52,11 @@ Since the plugin first exports to babylon then converts it to glTF, glTF feature
         * Roughness
         * Emissive
     * Multi-materials
+    * Double sided materials
+    * Unlit
+    * Backface culling
+    * Opacity/Transparency mode
+    * Custom attributes
 
 * _Textures_
     * Wrap mode (Clamp, mirror, repeat)
@@ -300,6 +306,44 @@ On the export form, the _Use Draco compression_ option enables the Draco compres
 To install the Node.js, go to the web site download and install it.
 Then to install gltf-pipeline, open et normal shell (cmd.exe or powershell.exe) and run the following command `npm install -g gltf-pipeline`.
 Once they are installed, check the _Use Draco compression_ option and the compression will be automatically done at the export end.
+
+## Double sided material
+
+The handling of the double sided material is mimic from babylon format. [Detailed explanations here](/resources/Maya#double-sided-material).
+
+## Babylon material attributes
+
+Native materials are enhanced to have extra attributes in a dedicated node. A Babylon attribute node is created after the first export using the material.
+
+Here is an example for 3 different materials:
+
+![Maya babylon material attributes nodes](/img/exporters/Maya/BabylonMaterialAttributes_LargeView.jpg)
+
+![Maya babylon material attributes details](/img/exporters/Maya/BabylonMaterialAttributes_AllNodes.jpg)
+
+Most Babylon attributes are common to all materials:
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture. Additionally in gltf, the __KHR_materials_unlit__ extension is added to the material. [More details on this extension here](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit). During export, enable the _KHR_materials_unlit_ checkbox.
+* __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces.
+* __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
+    * _Opaque_: The alpha color and texture are ignored during export process.
+    * _Cutoff_: The alpha cutoff value is 0.5. Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
+    * _Blend_: This how Maya handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
+
+## Custom attributes
+
+You can add custom attributes to Meshes, Materials, Lights and Cameras with the attributes window (_Modify > Add Attribute..._) and it adds them in the extra attributes of those objects.
+
+![native attributes window](/img/exporters/Maya/9_attribute_window.png)
+
+In glTF, the custom attributes are added as extras.
+
+![custom attributes as extras](/img/exporters/Maya/CustomAttributes_Extras.png)
+
+Note that the custom attributes are added to the node, not to the mesh or light component itself.
+
+Following types have particularities you should know:
+- _bool_ : is equal to 0 or 1.
+- _enum_ : corresponds to the index of your Maya enum. 
 
 # How to export multiple animation clips to .gltf format
 

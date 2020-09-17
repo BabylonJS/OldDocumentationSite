@@ -1,19 +1,32 @@
----
-PG_TITLE: GUI
----
 # Graphical User Interface
 
-There are a number of options for adding a GUI to Babylon.js. 
+There are a number of options for adding a GUI to Babylon.js.
+1. Babylon.GUI, this allows you to place buttons and labels in 3D space as well as a 2D front of screen GUI. 
+2. CastorGUI a Babylon.js extension which overlays the scene
+3. Dat.GUI, an external interface
+4. HTML
 
-The GUI that allows you to place buttons and labels in 3D space is the extension [BABYLON.GUI](/How_To/Gui)  which can also be used as a 2D front of screen GUI. It is integrated into the playground.
+## Babylon.GUI
+When you want a GUI that works in VR or within the 3D space [BABYLON.GUI](/How_To/Gui) the only option. It is integrated within the playground. For your own projects it has to be loaded as well as Babylon.js
 
 * [Playground Example Slider BABYLON.GUI](https://www.babylonjs-playground.com/#NGS9AU)
 
-An alternative 2D GUI is the extension [CastorGUI](/extensions/CastorGUI) which has extensive buttons and you can see an external example [here](http://www.babylon.actifgames.com/demoCastorGUI/). 
+## CastorGUI
+An alternative 2D GUI is the extension [CastorGUI](/extensions/CastorGUI) with [documentation](/extensions/CastorGUI). It has to be loaded both for the playground and for your own projects.
 
-Also in the playgrounds you will come across dat.GUI, an external interface but it is integrated within the Playground. 
+It can be found on [github](https://github.com/dad72/CastorGUI) 
 
-* [Playground Example Slider dat.GUI](https://www.babylonjs-playground.com/#NGS9AU#1)
+* [Playground Example CastorGUI](https://www.babylonjs-playground.com/#S34THY#14) 
+
+## Dat.GUI
+ The external [dat.GUI](https://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage) is integrated within the playground. For your own projects it has to be loaded as well as Babylon.js
+
+ * [Playground Example dat.GUI](https://www.babylonjs-playground.com/#NGS9AU#1)
+
+## HTML
+Since Babylon.js is in JavaScript it is possible to use HTML and CSS to overlay the Babylon.js scene
+
+* [Playground Example Simple HTML](https://www.babylonjs-playground.com/#1AHPN5)
 
 
 # Further Reading

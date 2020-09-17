@@ -1,7 +1,3 @@
----
-PG_TITLE: Increasing Facets of a Mesh
----
-
 # Increasing Vertices of a Mesh
 
 The appearance of a softbody or the effect of a shader depends on the number of facets the mesh has. Some meshes 
@@ -152,7 +148,7 @@ BABYLON.Mesh.prototype.increaseFacets = function(pps) { //pps points per side
 
 The disc at the top left has the number of facets made when it was created. The lower right has had the facets increased.
 
-* [Playground Example Increase Facets](http://www.babylonjs-playground.com/#2322Y7#14)
+* [Playground Example Increase Facets](https://www.babylonjs-playground.com/#2322Y7#14)
 
 
  

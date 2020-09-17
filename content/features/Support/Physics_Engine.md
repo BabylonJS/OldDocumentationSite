@@ -1,7 +1,3 @@
----
-PG_TITLE: Physics Engine Support
----
-
 # Physics Engine Support
 
 Physics engines are third party external programs that can be plugged into Babylon.js. They, depending on their features, emulate "real-life" interactions between objects, which can be meshes, solid particles from the solid particle system or some caameras. One feature of a Physics Engine is the addition of gravity to a scene.

@@ -1,7 +1,3 @@
----
-PG_TITLE: Write a PBT
----
-
 # Playground Based Tutorials
 This type of playground takes a student step by step through a feature of Babylon.js at the same time as higlighting the code used by that feature. The whole of the code exists in the playground editor but any distracting code can be hidden from the user. Generally the student should not be given the facility to edit the code or to use all features of the playground since doing so would destroy the tutorial they are trying to follow. 
 
@@ -14,10 +10,7 @@ Below are three PBT examples to give you an idea of what is possible.
 
 However since they are uneditable it is not possible to see how they are written. Links to guides on writing them are:
 
-[Starter Guide](/resources/hiding_editor_lines)  
-[Slider Guide](/resources/PBT_slider)  
-[Intermediate Guide](/resources/PBT_Writing)  
-[Advanced Guide](/resources/PBT_previous_and_next)
+[Intermediate Guide](/how_to/playground_tutorials)  
 
 
 # Creating a PBT
@@ -129,7 +122,7 @@ There are two dialogue boxes that can be created for a PBT.
 
 This consists of an image area, a text area and 'Prev' and 'Next' buttons.
 
-![Standard Dialogue](https://i.imgur.com/NlIGHaD.jpg)
+![Standard Dialogue](/img/how_to/playground-tutorials/informative-dialogue-box.jpg)
 
 Whilst a 'Prev' button is available the difficulty of undoing any actions already done means that this can usually be hidden.
 
@@ -338,8 +331,5 @@ Once the server is running in your browser type address http://localhost:1338/Pl
 
 # Further Reading
 
-[Starter Guide](/resources/hiding_editor_lines)  
-[Slider Guide](/resources/PBT_slider)  
-[Intermediate Guide](/resources/PBT_Writing)  
-[Advanced Guide](/resources/PBT_previous_and_next)
+[Intermediate Guide](/how_to/playground_tutorials)  
 

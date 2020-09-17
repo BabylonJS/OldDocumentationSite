@@ -1,7 +1,3 @@
----
-PG_TITLE: Slow Particles
----
-
 # Slow Particles
 
 In the [issues](/samples/Issues.html) we found that it is necessary to keep the speed, the distance moved per frame, of particles to below, twice the radius of a particle, to ensure they intersect with walls or each other. Slow particles are those where the initial speed meets this restriction. 
@@ -26,9 +22,9 @@ Given that the dark red particles reaches position (x, y, 0) when its speed reac
 
 The following Playgrounds use four such sets of particles, to produce four particles that combine to give one particle a speed four times that of the original particles. In each case the higher two groups are set in the XY plane and the lower two groups are in the YZ plane. 
 
-* [Playground Example - Increasing Speed](http://www.babylonjs-playground.com/#1DJ7RH)
-* [Playground Example - Increasing Speed With Trail Markers per Frame ](http://www.babylonjs-playground.com/#1DJ7RH#1)
-* [Playground Example - Increasing Speed, More Spacing](http://www.babylonjs-playground.com/#1DJ7RH#2)
+* [Playground Example - Increasing Speed](https://www.babylonjs-playground.com/#1DJ7RH)
+* [Playground Example - Increasing Speed With Trail Markers per Frame ](https://www.babylonjs-playground.com/#1DJ7RH#1)
+* [Playground Example - Increasing Speed, More Spacing](https://www.babylonjs-playground.com/#1DJ7RH#2)
 
 ## Escaping Particles
 
@@ -36,7 +32,7 @@ In the above examples the four fold increase in speed depended on setting the pa
 
 In the Playground below, there are occassions when particles escape the box even though there initial speeds are set to below 2r. You may need to run the code more than once to see the effect.
 
-* [Playground Example - Escaping Particles](http://www.babylonjs-playground.com/#MYGV6#3)
+* [Playground Example - Escaping Particles](https://www.babylonjs-playground.com/#MYGV6#3)
 
 The maximum speed of the particles can be changed on lines 21 to 23. Lowering the values for the speed decreases the probabilty of escape.  
 
@@ -50,7 +46,7 @@ Making no changes to the intersection between particles means there can be times
 
 The following Playground is an example that uses the above method to stop particles escaping. One downside is that particles can be seen breaching the walls.
 
-* [Playground Example - No Escaping Particles](http://www.babylonjs-playground.com/#MYGV6#4)
+* [Playground Example - No Escaping Particles](https://www.babylonjs-playground.com/#MYGV6#4)
 
 The maximum speed of the particles can be changed on lines 21 to 23. 
 

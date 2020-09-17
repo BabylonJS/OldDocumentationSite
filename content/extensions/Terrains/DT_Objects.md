@@ -1,7 +1,3 @@
----
-PG_TITLE: Adding Objects to a Dynamic Terrain 
----
-
 # Adding Objects to a Dynamic Terrain
 
 Having a map depicting the relief is sometimes not enough.  

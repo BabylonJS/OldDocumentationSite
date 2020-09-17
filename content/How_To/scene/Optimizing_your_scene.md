@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Optimize Your Scene
----
-
 # How To Optimize Your Scene
 
 This tutorial will help you find some links and info on how you can improve your scene regarding rendering performance.
@@ -53,6 +49,12 @@ scene.unfreezeActiveMeshes();
 
 Note that you can force a mesh to be in the active meshes before freezing the list with `mesh.alwaysSelectAsActiveMesh = true`.
 
+Freezing active meshes list may cause some things on the scene to stop updating. One example is [RenderTargetTexture](/how_to/how_to_use_rendertargettexture_and_multiple_passes), if it's used by mesh materials. For that case RTT needs to be explicitly added to the list of active camera's custom render targets, which will guarantee that it ends up in the render list of the scene:
+
+```javascript
+camera.customRenderTargets.push(renderTargetTexture);
+```
+
 ## Not updating the bounding info
 In conjonction with `mesh.alwaysSelectAsActiveMesh` you can also decide to turn off bounding info synchronization. This way the world matrix computation will be faster as the bounding info will not be updated (this could be a problem if you want to use picking or collisions):
 
@@ -102,16 +104,14 @@ mesh.convertToUnIndexedMesh();
 ```
 For example this works very well for a cube where it is more efficient to send 32 positions instead of 24 positions and 32 indices.
 
-## Turning AdaptToDeviceRatio Off
-By default, Babylon.js will adapt to device ratio in order to produce the best possible quality even on high-DPI devices.
+## Turning AdaptToDeviceRatio Off/On
+By default, Babylon.js does not adapt to device ratio anymore. It by default focuses on perf vs quality after receiving lots of community requests.
 
-The drawback is that this could cost a lot on low-end devices. You can turn it off with the fourth parameter of the Engine constructor:
+The drawback is that this could look low rea. You can turn it on with the fourth parameter of the Engine constructor:
 
 ```
-var engine = new BABYLON.Engine(canvas, antialiasing, null, false);
+var engine = new BABYLON.Engine(canvas, antialiasing, null, true);
 ```
-
-In the same constructor, you may also want to turn off antialiasing support with the second parameter.
 
 ## Blocking the dirty mechanism
 

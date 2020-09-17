@@ -118,7 +118,7 @@ If you set your SPS in billboard mode, you should only set a `rotation.z` value.
 
 Please note that all positions are expressed in the mesh **local space** and not in the World space.  
 The particle `pivot` vector is the translation applied to the particle in its local space just before it is rotated. The rotation is always computed around the local space origin. This property is used like a translation matrix that you would apply to some mesh pivot matrix. By default, the particle is translated, then rotated, then translated back to its original location unless you set the particle property `.translateFromPivot` to `true` (default `false`). In this case, it's simply translated, then rotated and left at the translated location.  
-Example : http://playground.babylonjs.com/#LXXL6Y#1     
+Example : https://playground.babylonjs.com/#LXXL6Y#1     
 1000 tetrahedron satellites orbiting around 1000 rotating boxes.  
 Please note also that, even a particle is invisible (_isVisible_ set to _false_), its other property values can be updated and `updateParticle()` is called for every particle whatever it is visible or not.      
 
@@ -568,9 +568,9 @@ Applying the transparency to a standard mesh leads to well-known issues, not whe
 Indeed, when passing the mesh geometry to the GPU, this one draws the mesh in the order the mesh facets are sorted in the `indices` array : first triangle, second one then, etc ... whatever the position of the camera.   
 The shader only respects the geometry order and this geometry is fixed.  
 
-As the SPS is a standard mesh, it has the same issue when dealing with transparent particles (rotate the camera) : http://playground.babylonjs.com/#EPBTB7#3
+As the SPS is a standard mesh, it has the same issue when dealing with transparent particles (rotate the camera) : https://playground.babylonjs.com/#EPBTB7#3
 
-A parameter allows to sort the internal mesh geometry live according to the current camera position : http://playground.babylonjs.com/#EPBTB7#2
+A parameter allows to sort the internal mesh geometry live according to the current camera position : https://playground.babylonjs.com/#EPBTB7#2
 
 It sorts the SPS particles only, not all the facets, for performance reasons.
 

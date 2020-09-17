@@ -1,25 +1,24 @@
----
-PG_TITLE: How To Use a Parent
----
-
 # Overview of a Parent
 
 Making mesh P a parent of mesh C changes the frame of reference for mesh C to the local axes of mesh P. Re-positioning, rotating or scaling mesh P will apply the same transformations to mesh C. Positioning, rotation and scaling of mesh C will depend on the position and orientation of the local axes of C relative to those of P.
 
-To parent mesh C to mesh P you use any of 
+To parent mesh C to mesh P you use any of these three methods
 
 ```javascript
-meshC.parent = meshP;
-meshC.setParent(meshP);
-meshP.addChild(meshC);
+meshC.parent = meshP;  //1
+meshC.setParent(meshP); //2
+meshP.addChild(meshC); //3
 ```
-The following playground shows that transformations prior to parenting are kept for all three methods
-* [Playground Example - Adding a Parent](https://www.babylonjs-playground.com/#XQI4UY#14)
- 
-The next tthree playgrounds show that transformations are relative to the parent 
-* [Playground Example - Position Parent](https://www.babylonjs-playground.com/#XQI4UY#15)
-* [Playground Example - Rotate Parent](https://www.babylonjs-playground.com/#XQI4UY#17)
-* [Playground Example - Position and Rotate Child](https://www.babylonjs-playground.com/#XQI4UY#18)
+
+The order you set transformations, such as position or rotation, to the parent mesh will affect the result using methods 2 and 3 above.
+
+The following playgrounds show the different behaviors
+
+* [Playground Example - Transform C and P After Parenting](https://www.babylonjs-playground.com/#NRNBMM)
+* [Playground Example - Transform C Before and P After Parenting](https://www.babylonjs-playground.com/#NRNBMM#1)
+* [Playground Example - Transform P Before and C After Parenting](https://www.babylonjs-playground.com/#NRNBMM#2)
+* [Playground Example - Transform C and P Before Parenting](https://www.babylonjs-playground.com/#NRNBMM#3)
+
 
 To remove a child, mesh C, from a parent, mesh P you use any of 
 

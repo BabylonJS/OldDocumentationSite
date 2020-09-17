@@ -1,14 +1,10 @@
----
-ID_PAGE: 21
-PG_TITLE: Blender
----
 # Blender to Babylon.js exporter
 
 The Blender export plugin can be found on [github repository](https://github.com/BabylonJS/BlenderExporter). We assume your using the last version.
 
 Note that v6 is for Blender 2.8 (currently in beta), v5 for Blender 2.79b or below can be found in the `deprecated` folder.
 
-An extension named [Tower of Babel](http://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter. It exports JavaScript modules with in-line geometry and simplifies the loading process. See its readme or that of the [QueuedInterpolation](https://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation) extension, which it is part of, to know more about its functionalities, and access its proper documentation.
+An extension named [Tower of Babel](https://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation/Blender) can also be used as exporter. It exports JavaScript modules with in-line geometry and simplifies the loading process. See its readme or that of the [QueuedInterpolation](https://github.com/BabylonJS/Extensions/tree/master/QueuedInterpolation) extension, which it is part of, to know more about its functionalities, and access its proper documentation.
 
 ## Installation
 

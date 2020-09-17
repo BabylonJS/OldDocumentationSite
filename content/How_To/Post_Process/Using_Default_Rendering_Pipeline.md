@@ -1,153 +1,185 @@
----
-PG_TITLE: How To Use the Default Rendering Pipeline
----
-
 # Introduction
 
-You can find a complete example of this pipeline in our playground : [https://www.babylonjs-playground.com/#Y3C0HQ#146](https://www.babylonjs-playground.com/#Y3C0HQ#146)
+You can find a complete example of this pipeline in our playground:
+
+[https://www.babylonjs-playground.com/#Y3C0HQ#146](https://www.babylonjs-playground.com/#Y3C0HQ#146)
+
+![default rendering pipeline example](/img/how_to/defaultRenderingPipeline/defaultRenderingPipeline.jpg)
 
 The default rendering pipeline provides visual improvements to enhance the output of your scene:
 * Antialiasing (MSAA and FXAA)
-* Sharpening
-* Depth of field
 * Bloom
+* Chromatic Aberration
+* Depth of field
 * Image processing including:
- * Vignette effect
- * Contrast
- * Exposure
  * Color curves
  * Color grading
+ * Contrast
+ * Exposure
  * Tone mapping
-* Chromatic Aberration
+ * Vignette effect
+* Glow
 * Grain
+* Sharpening
 
 # Creating the rendering pipeline
 
-You just have to create an instance of BABYLON.DefaultRenderingPipeline
-```
+You just have to create an instance of `BABYLON.DefaultRenderingPipeline`:
+
+```javascript
 var pipeline = new BABYLON.DefaultRenderingPipeline(
-    "default", // The name of the pipeline
-    true, // Do you want HDR textures ?
+    "defaultPipeline", // The name of the pipeline
+    true, // Do you want the pipeline to use HDR texture?
     scene, // The scene instance
     [camera] // The list of cameras to be attached to
 );
 ```
 
+This will actually create a fullscreen post-process texture.
+
+Notes:
+
+1. The HDR value should be `true` as long as possible, unless you're targetting cheap fallback for low end devices. This value allow one of the half float or float texture type, depending on the GPU. Also, some effects (like bloom) will be more accurate.
+
+2. When enabling a pipeline, you may notice that your scene clearColor will not match the color you have set. This can be fixed using `.toLinearSpace()`, as in this [example](https://www.babylonjs-playground.com/#08A2BS#15)
+
 # Customizing
 
 ## Antialiasing
-The MSAA antialiasing (only supported in webGL 2.0 browsers) effect is off by default (set to 1) but can be turned on to 4x with:
 
-```
+The MSAA antialiasing (only supported in webGL 2.0 browsers) effect is off by default (set to 1) but can be increased using:
+
+```javascript
 pipeline.samples = 4;
 ```
 
-and the FXAA antialiasing effect can be set using:
+Your value will be clamped by the maxed values allowed by the hardware (queried from the webgl context).
 
-```
+The FXAA antialiasing effect can be set using:
+
+```javascript
 pipeline.fxaaEnabled = true;
 ```
 
+Note: without using the pipeline, your scene already use a MSAA antialiasing, which is webGL native. As said above, pipeline is running on a post-process texture: unfortunatly, webGL 1.0 devices will not be able to apply MSAA outside of render buffers. Still, FXAA is available but not as powerfull as MSAA.
+
 ## Sharpening
+
 Sharpening can be enabled with:
 
-```
+```javascript
 pipeline.sharpenEnabled = true;
 ```
 To increase the intensity of the effect modify:
-```
+
+```javascript
 pipeline.sharpen.edgeAmount = 0.9;
 ```
-The amount of the original image in the output can be set with (Setting this to 0 will produce edge detection output):
-```
+
+The amount of the original image in the output can be set with (setting this to 0 will produce edge detection output):
+
+```javascript
 pipeline.sharpen.colorAmount = 0.0;
 ```
 
 ## Depth of field
+
 You can turn the depth of field effect on and off with:
 
-```
+```javascript
 pipeline.depthOfFieldEnabled = true;
 ```
 
-Set the strength of blur with (Higher may affect performance):
+Set the strength of blur with (higher may affect performance):
 
-```
+```javascript
 pipeline.depthOfFieldBlurLevel = BABYLON.DepthOfFieldEffectBlurLevel.Low;
 ```
 
 Furthermore, you can control the settings of the effect with the following parameters:
-```
+
+```javascript
 pipeline.depthOfField.focusDistance  = 2000; // distance of the current focus point from the camera in millimeters considering 1 scene unit is 1 meter
 pipeline.depthOfField.focalLength  = 50; // focal length of the camera in millimeters
 pipeline.depthOfField.fStop  = 1.4; // aka F number of the camera defined in stops as it would be on a physical device
 ```
+
 [Demo](https://www.babylonjs-playground.com/#8F5HYV#9)
 
 ## Bloom
+
 You can turn the bloom effect on and off with:
 
-```
+```javascript
 pipeline.bloomEnabled = true;
 ```
 
 The bloom luminance threshold, impact of the bloom, kernel size and scale can be controlled with the following:
-```
+
+```javascript
 pipeline.bloomThreshold = 0.8;
 pipeline.bloomWeight = 0.3;
 pipeline.bloomKernel = 64;
 pipeline.bloomScale = 0.5;
 ```
 
-
 ## Image processing effect
+
 You can turn the image processing effect on and off with:
 
-```
+```javascript
 pipeline.imageProcessingEnabled = true;
 ```
 
 You can also control individual image processing subeffects. To get more info about the ImageProcessing postprocess, please read the following [tutorial](/How_To/how_to_use_postprocesses#imageprocessing).
 
 ## Chromatic Aberration
+
 You can turn the effect on and off with:
 
-```
+```javascript
 pipeline.chromaticAberrationEnabled = true;
 ```
 
 Furthermore, you can control the distance of color channel separation with:
-```
+
+```javascript
 pipeline.chromaticAberration.aberrationAmount = 300;
 ```
 
 To modify the strength of the effect based on the distance from the center of the screen:
-```
+
+```javascript
 pipeline.chromaticAberration.radialIntensity = 3;
 ```
 
 To modify the direction the aberration the direction can be set:
-```
+
+```javascript
 var rotation = Math.PI;
 pipeline.chromaticAberration.direction.x = Math.sin(rotation)
 pipeline.chromaticAberration.direction.y = Math.cos(rotation)
 ```
+
 Note: If both these values are set to 0 the direction will be towards the center of the screen.
 
 ## Grain
+
 You can turn the effect on and off with:
 
-```
+```javascript
 pipeline.grainEnabled = true;
 ```
 
 Furthermore, you can control intensity of the grain with:
-```
+
+```javascript
 pipeline.grain.intensity = 10;
 ```
 
 To set grain to animate on every frame set:
-```
+
+```javascript
 pipeline.grain.animated = value;
 ```
 
@@ -164,6 +196,8 @@ You may be interested by this code example using default values, ready to be cop
         scene.cameras
     );
     if (defaultPipeline.isSupported) {
+        /* MSAA */
+        defaultPipeline.samples = 1; // 1 by default
         /* imageProcessing */
         defaultPipeline.imageProcessingEnabled = true; //true by default
         if (defaultPipeline.imageProcessingEnabled) {
@@ -253,8 +287,6 @@ You may be interested by this code example using default values, ready to be cop
             defaultPipeline.grain.animated = false; // false by default
             defaultPipeline.grain.intensity = 30; // 30 by default
         }
-        /* MSAA */
-        defaultPipeline.samples = 1; // 1 by default
         /* sharpen */
         defaultPipeline.sharpenEnabled = false;
         if (defaultPipeline.sharpenEnabled) {
@@ -265,8 +297,15 @@ You may be interested by this code example using default values, ready to be cop
     }
 ```
 
-As usual, a [playground is available](https://www.babylonjs-playground.com/#ECI2Q0#5).
+As usual, a [playground is available](https://www.babylonjs-playground.com/#ECI2Q0#5)
 
 # Further Reading
 
-[How To Use PostProcess](How_To/How_to_use_PostProcesses)
+## How To
+
+- [How To Use PostProcess](/how_to/How_to_use_PostProcesses)
+
+## API
+
+- [Babylon.DefaultRenderingPipeline](/api/classes/babylon.defaultrenderingpipeline.html)
+- [Babylon.ImageProcessingPostProcess](/api/classes/babylon.imageprocessingpostprocess.html)

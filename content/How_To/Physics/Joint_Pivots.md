@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use Pivots and Axes
----
-
 # Pivots and Axes
 
 Through the use of playgrounds this section considers how the pivot and axis parameters of the hinge joint effect the behaviour of the joint in the three physics engines 

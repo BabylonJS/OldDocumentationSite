@@ -1,7 +1,3 @@
----
-PG_TITLE: Facet data
----
-
 # Facet Data
 
 ## What is FacetData ?
@@ -270,7 +266,7 @@ Custom simple physics on a dynamically morphed ribbon :  https://www.babylonjs-p
 
  As you may know, for performance reasons, the facets of a given mesh are always drawn in the same order. This comes to visual issues when the mesh is transparent, concave and is no longer oriented in the right place from the camera :
 
-http://playground.babylonjs.com/#FWKUY0 
+https://playground.babylonjs.com/#FWKUY0 
 
 This new feature solves the self transparency issue by sorting the mesh facets from some location (the camera position by default) just before drawing them.  
 The mesh is **required** to be `updatable`.  
@@ -285,7 +281,7 @@ mesh.mustDepthSortFacets = true;             // enable the depth sort, can be di
 scene.registerBeforeRender(function() {
 mesh.updateFacetData();     // sort the facets each frame
 ```
-Example : http://playground.babylonjs.com/#FWKUY0#1   
+Example : https://playground.babylonjs.com/#FWKUY0#1   
 Depth sorted on the left, standard on the right.  
 
 If don't need the depth sort once enabled, you can simply stop to call `updateFacetData()`.  

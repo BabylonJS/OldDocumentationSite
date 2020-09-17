@@ -1,12 +1,10 @@
----
-PG_TITLE: How To Make a Mesh Glow
----
-
 # How To Make a Mesh Glow
 
 Emissive meshes are equivalent to self lit meshes. Both the emissive color and texture of the material determine how the mesh will self lit. This can for instance helps create a phosphorescent watch dial. Babylon JS supports natively emissive poperties in both the standard and PBR materials.
 
 But how could we easily make the glow around those self lit areas ?
+
+![illustration](/img/how_to/glow-layer/introduction.jpg)
 
 ## How to use ?
 
@@ -107,3 +105,14 @@ gl.addIncludedOnlyMesh(mesh)
 Using the function will automatically switch mode and only render the included meshes.
 
 [**Playground Demo Scene**](https://www.babylonjs-playground.com/#LRFB2D#30)
+
+
+# Further Reading
+
+## How To
+
+- [How To Highlight a Mesh](/how_to/highlight_layer)
+
+## API
+
+- [GlowLayer](/api/classes/babylon.glowlayer)

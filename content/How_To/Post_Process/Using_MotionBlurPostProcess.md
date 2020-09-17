@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Motion Blur post-process
----
-
 # Introduction
 You can find an example of the motion blur post-process in our playground: [https://www.babylonjs-playground.com/#E5YGEL#2](https://www.babylonjs-playground.com/#E5YGEL#2)
 

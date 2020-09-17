@@ -1,7 +1,3 @@
----
-PG_TITLE: World Axes
----
-
 # World Axes.
 This snippet displays the world axes. The X axis is red, the Y axis green and the Z axis blue. The length of the axes may be set with the size parameter.
 
@@ -44,4 +40,4 @@ function showWorldAxis(size) {
 
 # Playground
 
-* [Playground Example](http://www.babylonjs-playground.com/#2EYZPE)
+* [Playground Example](https://www.babylonjs-playground.com/#2EYZPE)

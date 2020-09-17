@@ -1,7 +1,3 @@
----
-PG_TITLE: Available Meshes for Importing into Playground
----
-
 # Available Meshes for Importing into Playground
 
 All the playground examples are loaded using the default environment and default camera methods. All the meshes are different sizes and using the default methods places the camera at a distance where the whole image can be seen clearly. In order to find [values for other cameras](/resources/meshes_to_load#finding-camera-values) you can use the playground scene inspector.
@@ -34,6 +30,7 @@ skull.babylon | 3.94 MB | ![skull](/img/resources/meshes/skull.png) | [Playgroun
 SSAOcat.babylon | 201 KB | ![cat](/img/resources/meshes/cat.png) | [Playground](https://www.babylonjs-playground.com/#LCUPCU#1)
 StanfordBunny.obj | 4.69 MB | ![bunny](/img/resources/meshes/bunny.png) | [Playground](https://www.babylonjs-playground.com/#95MJI8#1)
 ufo.glb | 17 MB | ![ufo](/img/resources/meshes/ufo.png) | [Playground](https://www.babylonjs-playground.com/#058SEW#3)
+Elf.gltf | 401 KB | ![elf](/img/resources/meshes/elf.png) | [Playground](https://www.babylonjs-playground.com/#XY6QF0)
 
 ## From the Model Library
 
@@ -46,7 +43,7 @@ alien.glb | 15.1 MB | ![alien](/img/resources/meshes/alien.png) | [Playground](h
 BabylonJS-logo/v1-2/Babylogo.babylon | 510 KB | ![Babylogo](/img/resources/meshes/Babylogo.jpg) | [Playground](https://www.babylonjs-playground.com/#TZTY3Y)
 BabylonJS-logo/v3/babylonJS_logo_solid_v3.babylon<br>BabylonJS-logo/v3/babylonJS_logo_v3.babylon | 59 KB<br>8 KB | ![babylonJS_logo_v3](/img/resources/meshes/babylonJS_logo_v3.jpg) | [Playground](https://www.babylonjs-playground.com/#Q9JFZ1)
 Chair/Chair.obj | 1.09 MB | ![chair](/img/resources/meshes/chair.png) | [Playground](https://www.babylonjs-playground.com/#KJV35B#1)
-Channel9/Channel9.stl | 1.03 MB | ![channel9](/img/resources/meshes/channel9.png) | [Playground](https://www.babylonjs-playground.com/#AJJ8U5#1)
+Channel9/Channel9.stl | 1.03 MB | ![channel9](/img/resources/meshes/channel9.png) | [Playground](https://www.babylonjs-playground.com/#AJJ8U5#2)
 clothFolds.glb | 2.21 MB | ![clothFolds](/img/resources/meshes/clothFolds.jpg) | [Playground](https://www.babylonjs-playground.com/#5NIBE1#2)
 CornellBox/cornellBox.babylon | 216 kB | ![cornellBox-babylon](/img/resources/meshes/cornellBox-babylon.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#2)
 CornellBox/cornellBox.babylon lightmapped | 343 kB | ![cornellBox-babylon-lightmapped](/img/resources/meshes/cornellBox-babylon-lightmapped.jpg) | [Playground](https://www.babylonjs-playground.com/#4AJ16M#5)
@@ -83,6 +80,12 @@ To check the distance of the camera from the displayed mesh find the radius valu
 ![values](/img/resources/meshes/values.png)
 
 # Further Reading
+
+## How To
+
+- [Load from any file type - glTF, OBJ, STL, etc.](/how_to/load_from_any_file_type)
+
+## Resources
 
 - [Textures Available in the Playground](/resources/playground_textures)
 - [Using External Assets in the Playground](/resources/External_PG_assets)

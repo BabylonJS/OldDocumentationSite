@@ -1,8 +1,10 @@
----
-PG_TITLE: Creating a Texture Package
----
+# Texture Packer
 
-
+Create a TexturePacker by calling:
+```javascript
+let pack = new BABYLON.TexturePacker( name, targetMeshes, options, scene );
+pack.processAsync().then( success ).catch( error );
+```
 
 - name:string, Name of the Texture Pack.
 - targetMeshes:Array<AbstractMesh>, Array of meshes to use as material sources.
@@ -26,26 +28,41 @@ The options argument has a few parameters you can use to tweak the result of the
 
 For PBR materials you will need to change the map to reflect the channels you want to target.  The Environment map should be handled separately.
 
-* [Texture Packer Example](https://www.babylonjs-playground.com/#G5BWAD#10)
+In order to ensure that the packing process does not lock your thread you will have to start the compilation process with
+```javascript
+pack.processAsync().then( success ).catch( error )
+```
+Having all interactions with your pack happening in the success callback on the returned promise. See the below playgrounds for examples.
+
+* [Texture Packer Example](https://www.babylonjs-playground.com/#TQ408M#6)
+
 
 Downloading the pack is simple! When initializing the package through both a JSON load or naturally like in the above mentioned constructor, a Promise Object is created.
 In order to assure that the textures are all packed and ready to go we call any interactions with the texture pack inside the success callback of the `then` method.
 ```javascript
-pack.then(()=>{
-    //done
-    pack.download('jpeg', 0.325)
-}, (error)=>{
-    console.log(error)
-});  
+
+pack.processAsync().then(
+    //Success
+    ()=>{
+        pack.download( type, ?quality);
+    }
+)  
 ```
 You can tell the downloaded to change between jpeg and png image types depending on if you need an alpha channel.  Due to the fact that the images are stored as base64 you should avoid using png unless absolutely necessary.  You can always download both types and then manually mix and match inside the JSON file.
 
-* [Texture Packer Download Example](https://www.babylonjs-playground.com/#G5BWAD#12)
+* [Texture Packer Download Example](https://www.babylonjs-playground.com/#TQ408M#7)
 
-To load a texture pack back, simple use this command:
+# Loading From JSON
+To load from a downloaded package is easy! First create a blank Texture Package.
 ```javascript
-let pack = new BABYLON.TexturePackerLoader('./textures/TestPack_texurePackage.json', scene)
+let pack = new BABYLON.TexturePacker( '', [], {}, scene );
 ```
-See this next example for how to update the mesh to the frame data.
 
-* [Texture Packer Load Example](https://www.babylonjs-playground.com/#G5BWAD#11)
+Then simply call the loadFromJSON method, with JSON file as a string and then the same success/error promise callback structure as the processAsync.
+
+```javascript
+pack.updateFromJSON( jsonString ).then( success ).catch( error );
+```
+
+* [Texture Packer Load Example](https://www.babylonjs-playground.com/#TQ408M#9)
+* [PBR Texture Packer Load Example](https://playground.babylonjs.com/#96CDLA)

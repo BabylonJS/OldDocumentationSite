@@ -1,7 +1,3 @@
----
-PG_TITLE: A Line with Given Width
----
-
 # Draw a Line of Given Width
 
 Three versions of **Line2D** are given below followed by a suggestion for drawing a line in 3D.

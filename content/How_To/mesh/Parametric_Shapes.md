@@ -1,7 +1,3 @@
----
-PG_TITLE: Parametric Shapes
----
-
 
 # Parametric Shapes
 Unlike set shapes the form of a parametric shape cannot generally be determined by their name as it depends on the parametric values applied to the shape.
@@ -26,7 +22,7 @@ Where it is possible two playground examples will be given, the first creating a
 # How To Create Parametric Shapes
 
 ## Lines
-Creates a continguous series of line segments from a list of points.
+Creates a contiguous series of line segments from a list of points.
 You must set at least the _points_ option.
 On update, you must set the _points_ and _instance_ options. You can also set the _colors_ option if previously set at construction time.  
 
@@ -113,8 +109,8 @@ instance|_(LineMesh)_ an instance of a line system mesh to be updated|null
 colors|_(Color4[])_ array of Color4, each point color|null
 useVertexAlpha|_(boolean)_ false if the alpha blending is not required (faster)|true
 
-[A Playground Example of a Linesystem](http://www.babylonjs-playground.com/#165IV6#66)
-[A Playground Update of the Linesystem](http://www.babylonjs-playground.com/#165IV6#10)
+[A Playground Example of a Linesystem](https://www.babylonjs-playground.com/#165IV6#66)
+[A Playground Update of the Linesystem](https://www.babylonjs-playground.com/#165IV6#10)
 
 A line system is colored with a color property
 
@@ -171,13 +167,13 @@ closePath|_(boolean)_  to force each ribbon path to join its last and first poin
 offset|_(number)_  used if the pathArray has one path only|half the path length
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 instance|_(LineMesh)_ an instance of a ribbon to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Ribbon](http://www.babylonjs-playground.com/#165IV6#65)
-[A Playground Update of the Ribbon](http://www.babylonjs-playground.com/#165IV6#13)
+[A Playground Example of a Ribbon](https://www.babylonjs-playground.com/#165IV6#65)
+[A Playground Update of the Ribbon](https://www.babylonjs-playground.com/#165IV6#13)
 
 ## Tube
 You must set at least the _path_ option.
@@ -203,13 +199,13 @@ cap|_(number)_ tube cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 arc|_(number)_ ratio of the tube circumference between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 instance|_(LineMesh)_ an instance of a tube to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
-[A Playground Example of a Tube](http://www.babylonjs-playground.com/#165IV6#68)
-[A Playground Update of the Tube](http://www.babylonjs-playground.com/#165IV6#67)
+[A Playground Example of a Tube](https://www.babylonjs-playground.com/#165IV6#68)
+[A Playground Update of the Tube](https://www.babylonjs-playground.com/#165IV6#67)
 
 ## Extruded Shapes
 You must set at least the _shape_ and _path_ options.
@@ -237,16 +233,16 @@ rotation|_(number)_  the value to rotate the shape each step along the path|0
 cap|_(number)_ extrusion cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 * [Playground Example of an Extrusion in Z direction](https://www.babylonjs-playground.com/#165IV6#69)
-* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#16)
+* [Playground Update of the Extrusion Changing Scale and Rotation](https://www.babylonjs-playground.com/#165IV6#16)
 
 * [Playground Example of an Extrusion in Y direction](https://www.babylonjs-playground.com/#165IV6#70)
-* [Playground Update of the Extrusion Changing Scale and Rotation](http://www.babylonjs-playground.com/#165IV6#18)
+* [Playground Update of the Extrusion Changing Scale and Rotation](https://www.babylonjs-playground.com/#165IV6#18)
 
 When you need sharp mitred corners there is a utility function available [Extruded Shape with Mitred Corners](/snippets/Mitred)
 
@@ -274,13 +270,13 @@ ribbonCloseArray|_(boolean)_ the underlying ribbon _closeArray_ parameter value|
 cap|_(number)_ extrusion cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 instance|_(LineMesh)_ an instance of an extruded shape to be updated|null
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 * [Playground Example of a Custom Extruded Shape](https://www.babylonjs-playground.com/#165IV6#71)
-* [Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](http://www.babylonjs-playground.com/#165IV6#17)
+* [Playground Update of the Custom Extruded Shape Changing Scale and Rotation Functions](https://www.babylonjs-playground.com/#165IV6#17)
 
 ## Lathe
 You must set at least the _shape_ option.
@@ -300,12 +296,12 @@ cap|_(number)_ tube cap : NO_CAP, CAP_START, CAP_END, CAP_ALL|NO_CAP
 closed|_(boolean)_ to open/close the lathe circumference, should be set to `false` when used with `arc`|true
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 invertUV|_(boolean)_ to swap the U and V coordinates at geometry construction time (texture rotation of 90°)|false
 
 * [Playground Example of a Lathe](https://www.babylonjs-playground.com/#165IV6#72)
-* [Playground Update of the Lathe](http://www.babylonjs-playground.com/#165IV6#73)
+* [Playground Update of the Lathe](https://www.babylonjs-playground.com/#165IV6#73)
 
 ## Non Regular Polygon
 
@@ -324,12 +320,12 @@ shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
 holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 | []
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE is an option** | Vector4(0,0, 1,1) 
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-[A Playground Example of a Polygon](http://playground.babylonjs.com/#4G18GY#6)
+[A Playground Example of a Polygon](https://playground.babylonjs.com/#4G18GY#6)
 
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 
@@ -350,13 +346,15 @@ shape|_(Vector3[])_  array of Vector3, the shape you want to turn **REQUIRED** |
 depth|_(number)_  the depth of the extrusion **REQUIRED** |
 faceColors|_(Color4[])_ array of 3 _Color4_, one per box face|Color4(1, 1, 1, 1) for each side
 faceUV|_(Vector4[])_ array of 3 _Vector4_, one per box face| UVs(0, 0, 1, 1) for each side
+wrap|_(boolean)_ maps texture to sides with faceUV[1] when false texture mapped to each individual side, when true wrapped over all sides |false
 holes|_(Vector3[])_  array of holes, each hole being an array of successive Vector3 | [] 
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 
 All vectors for shape and holes are Vector3 and should be in the XoZ plane, ie of the form BABYLON.Vector3(x, 0, z) and in counter clockwise order;
 
-* [Playground Example of Extruded Polygon](http://playground.babylonjs.com/#4G18GY#7)
+* [Playground Example of Extruded Polygon](https://playground.babylonjs.com/#4G18GY#7)
+* [Playground Example of Extruded Polygons using faceUV one with wrap one without](https://www.babylonjs-playground.com/#D3943E#1)
 
 Uses [PolygonMeshBuilder](/How_To/polygonmeshbuilder)
 

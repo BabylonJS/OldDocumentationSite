@@ -1,7 +1,3 @@
----
-PG_TITLE: Making a Simple Driven Car
----
-
 # Making a Simple Driven Car
 This is to show a practical use of translate, rotate and  using a parent.
 
@@ -18,7 +14,7 @@ The ground will be covered in random boxes to give the illusion of movement. For
 no consequences other than perhaps the loss of the sense of motion. 
 
 
-* [Playground - The Car](http://www.babylonjs-playground.com/#1WEZZ7)
+* [Playground - The Car](https://www.babylonjs-playground.com/#1WEZZ7)
 
 ## Steering
 
@@ -165,13 +161,13 @@ The first playground is the gamelet as described above.
 
 NOTE to use the keys with the playground you MUST click on the car after it loads or you use RUN.
 
-* [Playground - The Car Gamelet](http://www.babylonjs-playground.com/#102TBD#31)
+* [Playground - The Car Gamelet](https://www.babylonjs-playground.com/#102TBD#31)
 
 The second playground is similar. The pivot has been made into a sphere so you can see it and the camera position changed to give 
 an overview. The camera is now attached to the canvas so you can change viewing angles. This may help give more insight into 
 the workings of the code.
 
-* [Playground - The Car Overview](http://www.babylonjs-playground.com/#102TBD#33)
+* [Playground - The Car Overview](https://www.babylonjs-playground.com/#102TBD#33)
 
 
 

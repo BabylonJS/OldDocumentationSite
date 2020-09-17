@@ -1,7 +1,3 @@
----
-PG_TITLE: Particles
----
-
 # Particles
 
 Babylon.js supports two types of particles. These are sprites using the `ParticleSystem` and meshes using the `Solid Particle System`

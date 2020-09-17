@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use 360 Video
----
-
 # How To 360 Video
 
 360 Video is a simplex mix of specific geometry, textures, and material properties; however, rather than put the burden on you to figure out how to connect them, we've created the VideoDome.

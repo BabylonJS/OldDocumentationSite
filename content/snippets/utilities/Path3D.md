@@ -1,7 +1,3 @@
----
-PG_TITLE: Displays a Path3D Curve
----
-
 # Displays a Path3D Curve.
 This snippet displays a path3D curve and for on each point its tangent, normal and binormal in red, green and blue respectively. 
 The size parameter, default 0.5, sets the length for the tangents, normals and binormals.
@@ -27,4 +23,4 @@ function showPath3D(path3d, size) {
 ```
 # Playground
 
-* [Playground Example](http://www.babylonjs-playground.com/#2IX4FB)
+* [Playground Example](https://www.babylonjs-playground.com/#2IX4FB)

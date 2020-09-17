@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use MeshExploder
----
-
 ## How To Use MeshExploder
 
 `MeshExploder` takes an array of meshes and increases/decreases distance to a center `Mesh`.

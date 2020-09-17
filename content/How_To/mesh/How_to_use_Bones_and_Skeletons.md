@@ -1,8 +1,3 @@
----
-ID_PAGE: 22421
-PG_TITLE: How to use Bones and Skeletons
----
-
 # Bones and Skeletons
 
 Babylon.js supports bones animations for your meshes.
@@ -19,6 +14,14 @@ Here are the constructors:
 Inside a skeleton, bones can be found inside the ```skeleton.bones``` array.
 
 A bone can contain animations to animate its ```matrix``` property.
+
+A bone must have its inverted absolute transform matrix set. If you are importing a skeleton this might already be computed. But if you are creating your own skeleton programatically you need to do this in your code.
+
+The easiest way to do it is: 
+
+```javascript
+skeleton.returnToRest();
+```
 
 ## Preparing mesh
 

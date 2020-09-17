@@ -1,7 +1,3 @@
----
-PG_TITLE: Make 3D Text
----
-
 # Make 3D Text
 
 Produced by forum user [vinhpt](http://www.html5gamedevs.com/profile/28165-vinhpt/) this [3D Text site](http://grid.vn/3dtext/), together with other apps, acknowledged on site by the author, allows you to make and export Babylon.js ready 3D text like this:

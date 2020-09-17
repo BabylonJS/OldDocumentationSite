@@ -17,7 +17,7 @@ You can nervertheless continue to download by pressing the little arrow and chos
 
 ![chrome warning keep](/img/exporters/installer/ChromeDLWarningKeep.png)
 
-Once downloaded, you can extract the content of the zip in your favorite loaction.
+Once downloaded, you can extract the content of the zip in your favorite location.
 
 ### Using the installer
 Launch the executable file contained in the previous zip. On the first launch Windows like Chrome previously will emit a Smart Screen warning as the application has currently not being launched enough to be trusted.
@@ -44,11 +44,11 @@ Please not that both the software you are trying to install the plugin for shoul
 
 ## Manual Install
 
-The plug-in is designed for Maya 2018. This guide is about the Windows version (a MacOS version is coming soon). To download it, go to the [Github project Releases](https://github.com/BabylonJS/Exporters/releases).
+The plug-in is designed for Maya 2017 or later. This guide is about the Windows version (a MacOS version is coming soon). To download it, go to the [Github project Releases](https://github.com/BabylonJS/Exporters/releases).
 
 ![releases](/img/exporters/installer/GithubPreRelease.png)
 
-In the assets section of the release you can find one zip file per supported tool (like maya_2019.zip) containing the plugin files.
+In the assets section of the release you can find one zip file per supported tool (like Maya_2019.zip) containing the plugin files.
 
 Click on the zip file, to start Downloading.
 
@@ -56,7 +56,13 @@ By default, Windows blocks all .dll files coming from the web, so we have to unb
 
 ![dll unblocking](/img/exporters/Maya/3_dll_unlocking.jpg)
 
-Then, extract the content of the zip file on your computer. Finally, move all .dll files into a directory defined in Maya plug-in path (for example `C:/Program Files/Autodesk/Maya2018/bin/plug-ins`). More information on how to install a plug-in in Maya [here](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html). In Maya plug-in Manager you should find the Maya2Babylon.nll.dll.
+Then, extract the content of the zip file on your computer.
+
+Finally:
+- move all .dll files into a directory defined in Maya plug-in path (for example `C:/Program Files/Autodesk/Maya2018/bin/plug-ins`). More information on how to install a plug-in in Maya [here](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/ENU/Maya/files/GUID-FA51BD26-86F3-4F41-9486-2C3CF52B9E17-htm.html).
+- and move all template files to their respective folders AETemplates and NETemplates. Those files are used for the UI. While not mandatory they are always welcomed!
+
+You should find the _Maya2Babylon.nll.dll_ in the plug-in Manager (_Windows > Settings/Preferences > Plug-in Manager_).
 
 ![dll unblocking](/img/exporters/Maya/4_maya_plug_in_manager.jpg)
 
@@ -75,8 +81,15 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
 * Maya2Babylon 2017-2018
    * Requires atleast .NET Framework 4.6.1
 
-* Max2Babylon 2019
+* Maya2Babylon 2019
    * Requires atleast .NET Framework 4.6.1
+   
+* Maya2Babylon 2020
+   * Requires atleast .NET Framework 4.6.1
+   
+## Other Dependencies
+* For Maya 2020
+   * Maya2Babylon 2020 requires Maya 2020.1 or newer.
 
 # Features  #
 
@@ -90,6 +103,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Instances
     * Morph targets (blend shapes)
     * Animations: Position, scaling, rotation, bones, morph weights
+    * Custom attributes
 
 * _Materials_
     * Standard materials (Lambert, Phong, PhongE and Blinn)
@@ -106,6 +120,12 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
         * Roughness
         * Emissive
     * Multi-materials
+    * Double sided materials
+    * Unlit
+    * Backface culling
+    * Max Simultaneous Lights
+    * Opacity/Transparency mode
+    * Custom attributes
 
 * _Textures_
     * UV offset / scaling / angle
@@ -120,6 +140,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Position
     * Target / Rotation
     * Animations: Position, Target / Rotation
+    * Custom attributes
 
 * _Lights_
     * Point / spot / directional / ambient
@@ -129,6 +150,7 @@ The [.NET Framework Redistributable](https://docs.microsoft.com/en-us/dotnet/fra
     * Diffuse
     * Specular
     * Animations: Position, direction
+    * Custom attributes
 
 ## The exporter window 
 
@@ -199,7 +221,7 @@ As well as the default supported GLTF parameters, in Babylon format, we support 
 
 ![texture](/img/exporters/Maya/Coating.png)
 
-Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In 3DS MAX, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
+Please note that if a map is used for the weight or the roughness parameter, they will be combined in the same way the ORM texture is created in the Detailed explanations. In Maya, metalness and roughness maps are black and white images (R=G=B). The 2 maps must have same sizes to be merged successfully.
 
 In Babylon format, weight is stored in red channel, roughness in green.
 
@@ -212,6 +234,63 @@ Babylon engine supports only 2 UV sets. In Maya the first UV set, created by def
 Moreover, Babylon engine supports only 1 UV set per texture. If a single texture is linked to UV1 and any other UV set, the log panel will display the warning “Texture is linked to UV1 and UV2. Only one UV set per texture is supported.” and the texture will be linked to UV1 or UV2 but not both.
 
 Now that you know all about the exporter features, it’s time to use it! 
+
+## Double sided material
+
+To create a double sided material there are different methods, but the only one exported is using two materials and a condition.
+
+![double sided hypershade](/img/exporters/Maya/8_hyperShade_double_sided.jpg)
+
+When exporting, the geometry of all meshes using a double sided material is duplicated:
+- the number of vertices and faces is doubled
+- faces, normals and tangents are inverted for the duplicated geometry
+
+This mean that the exporter is automatically creating a back side. If you already have a back side, you should directly apply a material to it.
+
+## Babylon material attributes
+
+Native materials are enhanced to have extra attributes in a dedicated node. A Babylon attribute node is created after the first export using the material.
+
+Here is an example for 3 different materials:
+
+![Maya babylon material attributes nodes](/img/exporters/Maya/BabylonMaterialAttributes_LargeView.jpg)
+
+![Maya babylon material attributes details](/img/exporters/Maya/BabylonMaterialAttributes_AllNodes.jpg)
+
+Most Babylon attributes are common to all materials:
+* __Unlit__: A material can be exported as Unlit, meaning independent of lighting. This implies that light-relative attributes or textures are not exported: ambient, specular, emissive, bump mapping and reflection texture.
+* __Backface Culling__: When true, the back faces are not rendered. When false, back faces are rendered using same material as front faces.
+* __Max Simultaneous Lights__: Number of Simultaneous lights allowed on the material.
+* __Opacity/Transparency Mode__: You can select how transparency is handled for this material among 3 choices:
+    * _Opaque_: The alpha color and texture are ignored during export process.
+    * _Cutoff_: The alpha cutoff value is 0.5. Alpha values under this threshold are fully transparent. Alpha values above this threshold are fully opaque.
+    * _Blend_: This how Maya handles transparency when rendering. This is the default mode for any material with an alpha color or texture.
+
+## Custom attributes
+
+You can add custom attributes to Meshes, Materials, Lights and Cameras with the attributes window (_Modify > Add Attribute..._) and it adds them in the extra attributes of those objects.
+
+![native attributes window](/img/exporters/Maya/9_attribute_window.png)
+
+In babylon, the custom attributes are added as metadata.
+
+![custom attributes as metadata](/img/exporters/Maya/CustomAttributes_Metadata.png)
+
+Following types have particularities you should know:
+- _bool_ : is equal to 0 or 1.
+- _enum_ : corresponds to the index of your Maya enum. 
+
+## Exporter through MEL script
+
+You can use the exporter through MEL script. To do so you need to generate the exporter parameters with the command 'GenerateExportersParameter' and specify a path and the export type.
+
+![generate export parameter](/img/exporters/Maya/11_generate_export_parameter.jpg)
+
+Then you need to specify the other parameters and export with the command 'ScriptToBabylon'.
+
+![export MEL](/img/exporters/Maya/12_script_to_babylon.jpg)
+
+You can find an exemple script in the [Maya\MELScripts](https://github.com/BabylonJS/Exporters/tree/master/Maya/MELScripts) folder of the exporter.
 
 # Using the exporter
 

@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Use the Particle Helper
----
-
 # Introducing the Particle Helper
 Starting with Babylon.js v3.3, you can now use the Particle Helper to create complex particle systems without having to deal with individual properties.
 

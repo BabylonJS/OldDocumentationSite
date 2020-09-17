@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     var serveStatic = require('serve-static');
 
-    grunt.loadNpmTasks('grunt-typedoc');
+    grunt.loadNpmTasks('@vamship/grunt-typedoc');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-http-download');
@@ -108,7 +108,7 @@ module.exports = function(grunt) {
         typedoc: {
             build: {
                 options: {
-                    target: 'es5',
+                    target: 'es2015',
                     out: './public/html/api',
                     name: 'Babylon.js classes documentation',
                     excludeExternals: true,

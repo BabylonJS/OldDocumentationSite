@@ -1,8 +1,3 @@
----
-ID_PAGE: 25096
-PG_TITLE: How to dynamically morph a mesh 
----
-
 # What is morphing ?
 
 This part is about the way to morph some kind of meshes.   

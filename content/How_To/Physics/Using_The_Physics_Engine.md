@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Use a Physics Engine
----
-
 # How to Use a Physics Engine
 
 ## Introduction
@@ -15,7 +11,7 @@ This tutorial will show the basic usage of the physics system.
 
 ## What physics engine are integrated
 
-There are plugins for 3 physics engines:
+There are plugins for 4 physics engines:
 
 1. Cannon.js - a wonderful physics engine written entirely in JavaScript
 1. Oimo.js - a JS port of the lightweight Oimo physics engine
@@ -104,6 +100,7 @@ To get reasonably accurate collisions without overloading the physics engine, a 
 1. Loading and adding colliders manually in Babylon: https://playground.babylonjs.com/#FD65RR
 1. Loading and adding collider with joints and pointer interactions: https://playground.babylonjs.com/#DGEP8N
 1. WebVR grabbing and throwing: https://playground.babylonjs.com/#ZNX043
+1. Custom engine with [`deterministicLockstep`](https://doc.babylonjs.com/babylon101/animations#deterministic-lockstep): https://www.babylonjs-playground.com/#3ZW889#8
 
 ### Babylon's physics impostor
 
@@ -160,6 +157,8 @@ Options is a JSON. The interface is as follows:
 * nativeOptions: is a JSON with native options of the selected physics plugin. More about it in the advanced tutorial.
 * ignoreParent: when using babylon's parenting system, the physics engine will use the compound system. To avoid using the compound system, set this flag to true. More about it in the advanced tutorial.
 * disableBidirectionalTransformation: will disable the bidirectional transformation update. Setting this will make sure the physics engine ignores changes made to the mesh's position and rotation (and will increase performance a bit)
+* group: set the collision group (ammojs only)
+* mask: collision bit mask. Only impostor's group that have at least one bit in the mask will have collisions (ammojs)
 
 #### scene
 
@@ -403,9 +402,9 @@ interface PhysicsJointData {
 }
 ```
 
-* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: http://www.babylonjs-playground.com/#BGUY#3
+* mainPivot: is the point on the main mesh (the mesh creating the joint) to which the constraint will be connected. Demo: https://www.babylonjs-playground.com/#BGUY#3
 * connectedPivot: is the point on the connected mesh (the mesh creating the joint) to which the constraint will be connected.
-* mainAxis: the axis on the main object on which the constraint will work. http://www.babylonjs-playground.com/#BGUY#5
+* mainAxis: the axis on the main object on which the constraint will work. https://www.babylonjs-playground.com/#BGUY#5
 * connectedAxis: the axis on the connected object on which the constraint will work.
 * collision: should the two connected objects also collide with each other. The objects are sometimes forced to be close by and this can prevent constant collisions between them.
 * nativParams: further parameters that will be delivered to the constraint without a filter. Those are native parameters of the specific physics engine you chose.

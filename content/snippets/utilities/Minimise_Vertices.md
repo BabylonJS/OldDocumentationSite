@@ -1,7 +1,3 @@
----
-PG_TITLE: Minimising Vertices By Forcing Sharing
----
-
 # Force Shared Vertices
 
 This function will remove some indices and vertices from a mesh. It removes facets where two of its vertices 
@@ -44,7 +40,7 @@ BABYLON.Mesh.prototype.minimizeVertices = function() {
         var _newIdata =[]; //new indices array
 
         var _mapPtr =0; // new index;
-        var _uniquePositions = []; // unique vertex positions
+        var _uniquePositions = {}; // unique vertex positions
         for(var _i=0; _i<_idata.length; _i+=3) {
             var _facet = [_idata[_i], _idata[_i + 1], _idata[_i+2]]; //facet vertex indices
             var _pstring = []; //lists facet vertex positions (x,y,z) as string "xyz""
@@ -57,7 +53,6 @@ BABYLON.Mesh.prototype.minimizeVertices = function() {
                     }
                     _pstring[_j] += Math.round(_pdata[3*_facet[_j] + _k] * _decPlaces)/_decPlaces + "|";
                 }
-                _pstring[_j] = _pstring[_j].slice(0, -1); 			
             }
             //check facet vertices to see that none are repeated
             // do not process any facet that has a repeated vertex, ie is a line
@@ -66,9 +61,9 @@ BABYLON.Mesh.prototype.minimizeVertices = function() {
                 // if not listed add to uniquePositions and set index pointer
                 // if listed use its index in uniquePositions and new index pointer
                 for(var _j = 0; _j<3; _j++) { 
-                    var _ptr = _uniquePositions.indexOf(_pstring[_j])
-                    if(_ptr < 0) {
-                        _uniquePositions.push(_pstring[_j]);
+                    var _ptr = _uniquePositions[_pstring[_j]];
+                    if(_ptr === undefined) {
+                        _uniquePositions[_pstring[_j]] = _mapPtr;
                         _ptr = _mapPtr++;
                         //not listed so add individual x, y, z coordinates to new positions array newPdata
                         //and add matching normal data to new normals array newNdata
@@ -99,4 +94,4 @@ BABYLON.Mesh.prototype.minimizeVertices = function() {
 
 ## Playground
 
-* [Playground Example Minimising Vertices](http://www.babylonjs-playground.com/#1JBMJ3#17)
+* [Playground Example Minimising Vertices](https://www.babylonjs-playground.com/#1JBMJ3#18)

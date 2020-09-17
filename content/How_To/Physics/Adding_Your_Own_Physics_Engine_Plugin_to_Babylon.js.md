@@ -1,8 +1,3 @@
----
-ID_PAGE: 22511
-PG_TITLE: Adding Your Own Physics Engine Plugin to Babylon.js
----
-
 # How To Add Your Own Physics Engine
 
 ## Define your plugin

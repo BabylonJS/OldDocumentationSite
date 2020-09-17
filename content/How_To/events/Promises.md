@@ -1,7 +1,3 @@
----
-PG_TITLE: How to Use Promises
----
-
 # How To Use Promises
 
 ## Introduction
@@ -65,4 +61,4 @@ Promise.all([
     scene.activeCamera.alpha += Math.PI;
 });
 ```
-[Demo](http://playground.babylonjs.com/#U2KKMK#1)
+[Demo](https://playground.babylonjs.com/#U2KKMK#1)

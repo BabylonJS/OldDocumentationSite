@@ -1,8 +1,3 @@
----
-ID_PAGE: 22011
-PG_TITLE: 02. Set Shapes
----
-
 # Set Shapes
 
 These are shapes that usually already have names in everyday use and their form is well known. They are a box (or cuboid), a sphere, a cylinder, a cone, regular polygons, a plane and a specialist horizontal plane called the ground. Slightly less well known but also included in set shapes are ground from height map, tiled ground, a torus, a torus knot and the polyhedra.
@@ -36,8 +31,8 @@ topBaseAt|_(number)_ (BJS 4.0 or >) base of top touches side given 0, 1, 2, 3| 1
 bottomBaseAt|_(number)_ (BJS 4.0 or >) base of bottom touches side given 0, 1, 2, 3| 0
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
 * [Playground Example of a Box](https://www.babylonjs-playground.com/#3QW4J1#1)
 
@@ -85,8 +80,8 @@ arc|_(number)_ ratio of the circumference (latitude) between 0 and 1|1
 slice|_(number)_ ratio of the height (longitude) between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0, 0, 1,1)
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0, 0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0, 0, 1,1)
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0, 0, 1,1) 
 
 * [Playground Example of a Sphere](https://www.babylonjs-playground.com/#K6M44R#2)
 
@@ -111,8 +106,8 @@ faceUV|_(Vector4[])_ array of 3 _Vector4_, 0 : bottom cap, 1 : cylinder tube, 2 
 arc|_(number)_ ratio of the circumference between 0 and 1|1
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
 * [Playground Example of a Cone](https://www.babylonjs-playground.com/#CWPN2T)
 
@@ -133,8 +128,8 @@ height|_(number)_ size of the height|size
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
 sourcePlane|_(Plane)_ source plane (math) the mesh will be transformed to|null
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
 * [Playground Example of a DOUBLESIDE Plane](https://www.babylonjs-playground.com/#LXZPJK#1)
 
@@ -154,8 +149,8 @@ height|_(number)_ size of the height|size
 tileSize|_(number)_ size of each tile side|1
 tileHeight|_(number)_ tile height size, overwrites _tileSize_ option|tileSize
 tileWidth|_(number)_ tile width size, overwrites _tileSize_ option|tileSize
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1)
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1)
 pattern|_(number)_ how tiles are reflected or rotated|NO_FLIP
 alignVertical| _(number)_ positions whole tiles at top, bottom or center of a face|CENTER
 alignHorizontal| _(number)_ positions whole tiles at left, right or center of a face|CENTER
@@ -195,8 +190,8 @@ thickness|_(number)_ thickness of its tube|0.5
 tessellation|_(number)_ number of segments along the circle|16
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
 * [Playground Example Using Thickness to Create a Hoop and a Donut](https://www.babylonjs-playground.com/#A7SVB6)
 
@@ -216,8 +211,8 @@ p|_(number)_ number of windings|2
 q|_(number)_ number of windings|3
 updatable|_(boolean)_ true if the mesh is updatable|false
 sideOrientation|_(number)_ side orientation|DEFAULTSIDE
-frontUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
-backUVs|_(Vector4[])_  array of Vector4, **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+frontUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
+backUVs|_(Vector4)_  **ONLY WHEN sideOrientation:BABYLON.Mesh.DOUBLESIDE set** | Vector4(0,0, 1,1) 
 
 [A Playground Example of a Torus Knot](https://www.babylonjs-playground.com/#K9UC68)
 
@@ -274,7 +269,7 @@ subdivisions|_( {w: number, h: number} )_ number of subdivisions (tiles) on the 
 precision|_( {w: number, h: number} )_ number of subdivisions on the height and the width of each tile|{w: 2, h: 2}
 updatable|_(boolean)_ true if the mesh is updatable|false
 
-* [Playground Example of Tiled Ground](http://www.babylonjs-playground.com/#1XBLWB#147).
+* [Playground Example of Tiled Ground](https://www.babylonjs-playground.com/#1XBLWB#147).
 
 Full explanation of creating a tiled ground by its original code writer [here](http://makina-corpus.com/blog/metier/2014/how-to-use-multimaterials-with-a-tiled-ground-in-babylonjs). 
 

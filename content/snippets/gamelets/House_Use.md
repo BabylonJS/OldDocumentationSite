@@ -1,7 +1,3 @@
----
-PG_TITLE: Using Build a House from Plans
----
-
 # Using Build a House from Plans.
 
 **Please note that some functions used in this project uses Earcut, so, in non playground projects, you will have to add a reference to their [cdn](https://unpkg.com/earcut@2.1.1/dist/earcut.min.js) or download their [npm package](https://github.com/mapbox/earcut#install)**
@@ -577,6 +573,40 @@ var buildFromPlan = function(walls, ply, height, options, scene) {
 		for(var p = interiorIndex; p < positions.length/3; p++) {
 			colors.push(exteriorColor.r, exteriorColor.g, exteriorColor.b, exteriorColor.a);
 		}
+
+		if (interior) {  //close ends of walls
+                nbIndices = positions.length/3; // current number of indices
+                
+                positions.push(innerBaseCorners[0].x, innerBaseCorners[0].y, innerBaseCorners[0].z);
+			    positions.push(outerBaseCorners[0].x, outerBaseCorners[0].y, outerBaseCorners[0].z);
+                positions.push(outerTopCorners[0].x, outerTopCorners[0].y, outerTopCorners[0].z);
+                positions.push(innerTopCorners[0].x, innerTopCorners[0].y, innerTopCorners[0].z);
+			    
+                uvs.push(exteriorUV.x, exteriorUV.y);
+                uvs.push(exteriorUV.x + (exteriorUV.z - exteriorUV.x) * ply / maxL, exteriorUV.y);
+                uvs.push(exteriorUV.x + (exteriorUV.z - exteriorUV.x) * ply / maxL, exteriorUV.z);
+				uvs.push(exteriorUV.x, exteriorUV.z);
+
+                indices.push(nbIndices, nbIndices + 1, nbIndices + 2, nbIndices, nbIndices + 2, nbIndices + 3);
+
+                nbIndices = positions.length/3; // current number of indices
+
+                positions.push(innerBaseCorners[nbWalls -1].x, innerBaseCorners[nbWalls -1].y, innerBaseCorners[nbWalls -1].z);
+			    positions.push(outerBaseCorners[nbWalls -1].x, outerBaseCorners[nbWalls -1].y, outerBaseCorners[nbWalls -1].z);
+                positions.push(outerTopCorners[nbWalls -1].x, outerTopCorners[nbWalls -1].y, outerTopCorners[nbWalls -1].z);
+                positions.push(innerTopCorners[nbWalls -1].x, innerTopCorners[nbWalls -1].y, innerTopCorners[nbWalls -1].z);
+			    
+                uvs.push(exteriorUV.x, exteriorUV.y);
+                uvs.push(exteriorUV.x + (exteriorUV.z - exteriorUV.x) * ply / maxL, exteriorUV.y);
+                uvs.push(exteriorUV.x + (exteriorUV.z - exteriorUV.x) * ply / maxL, exteriorUV.z);
+				uvs.push(exteriorUV.x, exteriorUV.z);
+
+                indices.push(nbIndices + 1, nbIndices, nbIndices + 2, nbIndices + 2, nbIndices, nbIndices + 3);
+			    
+                for(var p = 0; p < 8; p++) {
+				    colors.push(exteriorColor.r, exteriorColor.g, exteriorColor.b, exteriorColor.a);
+			    }
+            }
 	
 		var compareLeft = function(a, b) {
 			return a.left - b.left
@@ -689,9 +719,10 @@ var wall = buildFromPlan(walls, ply, height, {interior:true}, scene);
 You can add doors and windows (?hatches) to these walls as well.
 
 ## Playground Examples
-* [Playground Example of a House Built from a FloorPlan](http://www.babylonjs-playground.com/#4GBWI5#265)
-* [Playground Example of None Enclosing Wall](http://www.babylonjs-playground.com/#1Z71FW#44)
-* [Playground Example of House and Interior Walls](http://www.babylonjs-playground.com/#1Z71FW#45)
+* [Playground Example of a House Built from a FloorPlan](https://www.babylonjs-playground.com/#4GBWI5#265)
+* [Playground Example of None Enclosing Wall](https://www.babylonjs-playground.com/#1Z71FW#103)
+* [Playground Example of None Enclosing Wall with UVs](https://www.babylonjs-playground.com/#1Z71FW#102)
+* [Playground Example of House and Interior Walls](https://www.babylonjs-playground.com/#1Z71FW#45)
 
 # Further Reading
 

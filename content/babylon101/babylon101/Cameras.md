@@ -1,7 +1,3 @@
----
-ID_PAGE: 22061
-PG_TITLE: Cameras
----
 # Cameras
 
 Of the many cameras available in Babylon.js the two most used are probably - the Universal Camera used for First Person Movement and the Arc Rotate Camera which is an orbital camera. Though with the advent of WebVR this may change.
@@ -67,7 +63,7 @@ Here is an illustration:
 
 Setting _beta_ to 0 or PI can, for technical reasons, cause problems and in this situation _beta_ is offset by 0.1 radians (about 0.6 degrees).
 
-Both _alpha_ and _beta_ increase in a clockwise direction.
+_beta_ increases in a clockwise direction while _alpha_ increases counter clockwise.
 
 The position of the camera can also be set from a vector which will override any current value for _alpha_, _beta_ and _radius_.
 This can be much easier than calculating the required angles.
@@ -166,7 +162,7 @@ var camera = new BABYLON.AnaglyphUniversalCamera("af_cam", new BABYLON.Vector3(0
 ```javascript
 
 // Parameters : name, alpha, beta, radius, target, eyeSpace, scene
-var camera = new BABYLON.AnaglyphArcRotateCamera("aar_cam", -Math.PI/2, Math.PI/4, 20, new BABYLON.Vector3.Zero(), 0.033, scene);
+var camera = new BABYLON.AnaglyphArcRotateCamera("aar_cam", -Math.PI/2, Math.PI/4, 20, BABYLON.Vector3.Zero(), 0.033, scene);
 ```
 
 The _eyeSpace_ parameter sets the amount of shift between the left eye view and the right eye view. Once you are wearing your 3D glasses, you might want to experiment with this float value.
@@ -277,7 +273,7 @@ var camera = new BABYLON.VRDeviceOrientationArcRotateCamera ("Camera", Math.PI/2
 
 ```javascript
 //Parameters: name, position, scene, compensateDistortion, vrCameraMetrics
-var camera = new BABYLON.VRDeviceOrientationGamepadCamera("Camera", new BABYLON.Vector3 (-10, 5, 14));
+var camera = new BABYLON.VRDeviceOrientationGamepadCamera("Camera", new BABYLON.Vector3 (-10, 5, 14), scene);
 ```
 
 ## WebVR Free Camera

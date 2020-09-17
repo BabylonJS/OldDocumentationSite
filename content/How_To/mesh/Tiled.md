@@ -1,7 +1,3 @@
----
-PG_TITLE: Create Tiled Planes and Boxes
----
-
 # Tiled Plane
 
 Each tile on the plane uses the same texture source and has the same tile width and tile height.

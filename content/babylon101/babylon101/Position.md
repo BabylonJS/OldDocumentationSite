@@ -1,7 +1,3 @@
----
-PG_TITLE: 04 Position, Rotation and Scaling
----
-
 # Position, Rotation and Scaling
 
 The 101 course only considers the setting of a mesh's _position_, _rotation_, and _scaling_. [Further Reading](#further-reading) will show you a range of methods to translate and rotate a mesh by a given amount.
@@ -9,7 +5,8 @@ The 101 course only considers the setting of a mesh's _position_, _rotation_, an
 Whatever the methods used they require a frame of reference, a means to describe the position, rotation or scaling and something to help visualize the effects of applying these. The visualization will be helped by the **Pilot** a constructed asymmetric shape.
 
 ![The Pilot](/img/how_to/Mesh/pilot.jpg)
-The Pilot
+
+_The Pilot_
 
 ## Frames of Reference
 
@@ -95,7 +92,7 @@ The following sequence of images shows the initial starting position of the pilo
 
 ![World Rotation](/img/babylon101/pilotW.jpg)
 
-* [Playground Example - Rotation](http://www.babylonjs-playground.com/#1ZMJQV#2) 
+* [Playground Example - Rotation](https://www.babylonjs-playground.com/#1ZMJQV#2) 
 
 ### Summary
 
@@ -117,7 +114,7 @@ pilot.rotation.z  =  gamma;
 pilot.rotation.x  =  alpha;
 ```
 
-* [Playground Example - Positioned, Scaled, and Rotated Boxes](http://www.babylonjs-playground.com/?3)
+* [Playground Example - Positioned, Scaled, and Rotated Boxes](https://www.babylonjs-playground.com/#CURCZC)
 
 ## Sequencing Rotations
 
@@ -161,10 +158,13 @@ mesh.scaling = new BABYLON.Vector3(scale_x, scale_y, scale_z);
 
 
 ## Next step
+
 Now you know how to create and move objects in a scene, but all your meshes have the same 'skin'. Not for long, if you read our next tutorial about [materials](/babylon101/materials).
 
 # Further Reading
 
-[Rotate and Translate Overview](/features/Position,_Rotation,_Scaling)  
+## Features
+
+- [Rotate and Translate Overview](/features/Position,_Rotation,_Scaling)  
 
 

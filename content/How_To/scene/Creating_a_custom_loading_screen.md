@@ -1,7 +1,3 @@
----
-PG_TITLE: How To Create a Custom Loading Screen
----
-
 # How To Create a Custom Loading Screen
 
 Starting with Babylon.js 2.3 the loading screen (the screen used when loading assets or a scene) can be changed by the developer.
@@ -177,7 +173,7 @@ You might also be interested in a standalone html example:
 
 # Getting File Loading Rate
 
-When loading files, you can get the [SceneLoaderProgressEvent](https://doc.babylonjs.com/api/classes/babylon.sceneloaderprogressevent) sent in the `onProgress` callback.
+When loading files, you can get the [SceneLoaderProgressEvent](https://doc.babylonjs.com/api/classes/babylon.sceneloader) sent in the `onProgress` callback.
 
 Example using `BABYLON.SceneLoader.ImportMesh`:
 
@@ -206,4 +202,12 @@ BABYLON.SceneLoader.ImportMesh(
         document.getElementById("loadingScreenPercent").innerHTML = loadedPercent;
     }
 );
+
+
 ```
+
+
+## Going further
+
+Check out this handy video explaining how to create your own loading screen:
+- Custom Loading Screens: https://youtu.be/cLqK9vgTKBw

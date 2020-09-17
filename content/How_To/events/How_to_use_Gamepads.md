@@ -1,7 +1,3 @@
----
-PG_TITLE: How to use GamePads
----
-
 # Gamepad Manager
 First create a GamepadManager:
 ```javascript
@@ -62,7 +58,7 @@ scene.registerBeforeRender(function () {
 }
 ```
 
-* [Playground Example](http://playground.babylonjs.com/#U3XJTB#30)
+* [Playground Example](https://playground.babylonjs.com/#U3XJTB#38)
 
 # Virtual gamepad
 

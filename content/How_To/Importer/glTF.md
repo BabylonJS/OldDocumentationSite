@@ -1,7 +1,3 @@
----
-PG_TITLE: glTF
----
-
 # Setup
 
 The glTF loader files are located [here](https://github.com/BabylonJS/Babylon.js/tree/master/dist/preview%20release/loaders).
@@ -38,7 +34,7 @@ This loader supports only glTF 1.0 and will fail to load glTF 2.0.
 Use one of the static function on the `SceneLoader` to load a glTF asset.
 See [Load from any file type](/how_to/Load_From_Any_File_Type).
 
-[Demo](http://www.babylonjs-playground.com/#WGZLGJ)
+[Demo](https://www.babylonjs-playground.com/#WGZLGJ)
 
 # API (Version 2)
 

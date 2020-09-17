@@ -1,7 +1,3 @@
----
-PG_TITLE: The Playground
----
-
 # The Playground
 
 The place to try out coding with Babylon.js.
@@ -68,21 +64,21 @@ New playgrounds have this URL format
 
 | JavaScript | Typescript |
 |---|---|
-| http://www.babylonjs-playground.com/# | [http://www.babylonjs-playground.com/#](http://www.babylonjs-playground.com/#) |
+| https://www.babylonjs-playground.com/# | [https://www.babylonjs-playground.com/#](https://www.babylonjs-playground.com/#) |
 
 Saved playgrounds have a hash code reference key added to the URL
 
 | JavaScript | Typescript |
 |---|---|
-| http://www.babylonjs-playground.com/#6F0LKI | [https://www.babylonjs-playground.com/#M1HI7X](https://www.babylonjs-playground.com/ts.html#M1HI7X) |
+| https://www.babylonjs-playground.com/#6F0LKI | [https://www.babylonjs-playground.com/#M1HI7X](https://www.babylonjs-playground.com/ts.html#M1HI7X) |
 
 
 After editing any saves of the playground are numbered incrementally from one, for example 
 
 | JavaScript | Typescript |
 |---|---|
-| http://www.babylonjs-playground.com/#6F0LKI#1 | [https://www.babylonjs-playground.com/#M1HI7X#1](https://www.babylonjs-playground.com/ts.html#M1HI7X#1) |
-| http://www.babylonjs-playground.com/#6F0LKI#2 | [https://www.babylonjs-playground.com/#M1HI7X#2](https://www.babylonjs-playground.com/ts.html#M1HI7X#1) |
+| https://www.babylonjs-playground.com/#6F0LKI#1 | [https://www.babylonjs-playground.com/#M1HI7X#1](https://www.babylonjs-playground.com/ts.html#M1HI7X#1) |
+| https://www.babylonjs-playground.com/#6F0LKI#2 | [https://www.babylonjs-playground.com/#M1HI7X#2](https://www.babylonjs-playground.com/ts.html#M1HI7X#1) |
   
 etc.
 
