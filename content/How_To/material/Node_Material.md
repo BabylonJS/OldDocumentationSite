@@ -1354,6 +1354,17 @@ BABYLON.NodeMaterial.ParseFromSnippetAsync("2F999G", scene).then(nodeMaterial =>
 });
 ```
 
+When using NME within the Playground, you have the opportunity to edit your material with the Inspector and let the Playground update your snipped id automatically (each time NME will save a new snippet id it will inform the playground to also change the id in your code.
+
+And to begin with you can simply call this code to start a new Node Material from scratch:
+```
+BABYLON.NodeMaterial.ParseFromSnippetAsync("_BLANK", scene).then(nodeMaterial => {
+    sphere.material = nodeMaterial;
+});
+```
+
+And then from there you could have used the Inspector to edit it (The inspector can replace the __BLANK with the right id later on).
+
 ## Node material examples
 
 Here are some node material examples that you can use "as is" or extend with the NME:
