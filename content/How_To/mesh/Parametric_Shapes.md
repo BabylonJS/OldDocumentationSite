@@ -127,7 +127,6 @@ linesystem.color = new BABYLON.Color3(1, 0, 0);
 *Requires BJS version 4.2+*
 Creates a capsule, the sum of the top and bottom radius minus the height must not be <= 0.
 
-
 Example :
 ```javascript
 // creates an instance
