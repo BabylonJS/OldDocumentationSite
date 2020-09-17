@@ -123,6 +123,32 @@ linesystem.color = new BABYLON.Color3(1, 0, 0);
 ```
 * [Playground Example of Colored Line System](https://www.babylonjs-playground.com/#165IV6#80)
 
+## Capsule
+Creates a capsule, the sum of the top and bottom radius minus the height must not be <= 0.
+
+Example :
+```javascript
+// creates an instance
+var capsule = BABYLON.MeshBuilder.CreateCapsule("ribbon", {
+
+}, scene);
+```
+
+option|value|default value
+--------|-----|-------------
+orientation?|_(Vector3)_ Direction of the capsule upon inception. | Vector3.Up
+subdivisions|_(number)_ Number of sub segments on the tube section of the capsule running parallel to orientation.| 2
+tessellation|_(boolean)_  Number of cylindrical segments on the capsule.|16
+height|_(number)_  Height or Length of the capsule.
+radius|_(boolean)_ Radius of the capsule.
+capSubdivisions|_(number)_ Number of sub segments on the cap sections of the capsule running parallel to orientation.| DEFAULTSIDE
+radiusTop?|_(Vector4[])_  Overwrite for the top radius.
+radiusBottom?|_(Vector4[])_  Overwrite for the bottom radius.
+topCapSubdivisions?|_(LineMesh)_ Overwrite for the top capSubdivisions.
+bottomCapSubdivisions?|_(boolean)_ Overwrite for the bottom capSubdivisions.
+
+[A Playground Example of some Capsules](https://www.babylonjs-playground.com/#JAFIIU#3)
+
 ## Ribbon
 You must set at least the _pathArray_ option.
 On update, you must set the _pathArray_ and _instance_ options.
