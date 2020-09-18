@@ -130,8 +130,8 @@ camera.inputs.removeByType("FreeCameraKeyboardMoveInput");
 Your input method is created as a function object. You must them write code for several methods, with required names, that are called by the input function object. The method names and purpose are
 
 ```javascript
-//This function must return the type name of the camera, it could be used for serializing your scene
-getTypeName();
+//This function must return the class name of the input class, it could be used for serializing your scene
+getClassName();
 
 //This function must return the simple name that will be injected in the input manager as short hand
 //for example "mouse" will turn into camera.inputs.attached.mouse
@@ -177,7 +177,7 @@ var FreeCameraKeyboardRotateInput = function() {
 Add get name methods
 
 ```javascript
-FreeCameraKeyboardRotateInput.prototype.getTypeName = function() {
+FreeCameraKeyboardRotateInput.prototype.getClassName = function() {
   return "FreeCameraKeyboardRotateInput";
 };
 FreeCameraKeyboardRotateInput.prototype.getSimpleName = function() {
@@ -282,8 +282,8 @@ interface ICameraInput<TCamera extends BABYLON.Camera> {
     // the input manager will fill the parent camera
     camera: TCamera;
 
-    //this function must return the type name of the camera, it could be used for serializing your scene
-    getTypeName(): string;
+    //this function must return the class name of the input class, it could be used for serializing your scene
+    getClassName(): string;
 
     //this function must return the simple name that will be injected in the input manager as short hand
     //for example "mouse" will turn into camera.inputs.attached.mouse
