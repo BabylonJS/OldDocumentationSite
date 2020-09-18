@@ -99,25 +99,25 @@ has material with red diffuse color and an ambient texture.
 ![Texture](/img/how_to/Materials/texture1.png)
 
 ### Texture Packer
-Some complex scenes will require a large amount of texture.  A single Material often will use three and often more!  To simplify the loading process sometimes it might be convenient to package the texture from multiple materials into a series of images.  The trade off will be that each texture will be scaled to a set size and might cause some desegregation, there are also webGL limits to take into consideration.  The packer will create a set of "frames" for each unique material and its required texture channels, producing one image for each channel that the materials being packed used.  The process then modifies a target UV# of the meshes passed with the constructor to make them match the frame of the texture sets.  The system assumes textures are 1:1 ratio (square).
+Some complex scenes will require a large amount of texturse. A single Material will often use three or more! To simplify the loading process it can be convenient to package the textures from multiple materials into a series of images. The trade-off will be that each texture will be scaled to a set size and might cause some desegregation, there are also WebGL limits to take into consideration as well. The packer will create a set of "frames" for each unique material and its required texture channels. The result produces one image for each channel that is used by the materials that are being packed. The process then modifies a target UV# from the meshes passed into the constructor, making them match the frame of the texture sets. The system assumes textures are 1:1 ratio (square).
 
 Create a TexturePacker series by calling:
 ```javascript
 let pack = new BABYLON.TexturePacker(name, targetMeshes, options, scene);
 ```
-There are some limitations though that you must consider.  These include texture size limits, transparencies, and refection/refraction materials.  Please go here for more information on [Creating a Texture Package](http://www.babylonjs-playground.com/#20OAV9#17)
+There are some limitations that you should consider. These include texture size limits, transparencies, and refection/refraction materials. You can find more information on [Creating a Texture Package](http://www.babylonjs-playground.com/#20OAV9#17)
 
 * [Playground Example Texture Packer](https://www.babylonjs-playground.com/#TQ408M)
 
 
 ### Transparent Texture Examples
-As for colors the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
+For colors, the transparency is achieved by setting a materials _alpha_ property from 0 (invisible) to 1 (opaque).
 ```javascript
 myMaterial.alpha = 0.5;
 ```
 * [Playground Example Transparency](https://www.babylonjs-playground.com/#20OAV9#17)
 
-In addition the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
+In addition, the image used for the texture might already have a transparency setting, such as this picture of a dog from wikimedia commons, 
 which has a transparent background;
 
 ![A dog](/img/how_to/Materials/dog.png)
@@ -129,11 +129,11 @@ myMaterial.diffuseTexture.hasAlpha = true;
 
 * [Playground Example Transparent Background](https://www.babylonjs-playground.com/#YDO1F#18)
 
-For the back faces of the cube to be visible through the transparent areas of the front faces we have to deal with back face culling.
+For the back faces of the cube to be visible through the transparent areas of the front faces we have to deal with back-face culling.
 
-## Back Face Culling
-This is a method for efficiently drawing the 2D screen rendering of the 3D model. Usually there is no need to draw the back face of a cube, or other object, 
-as it will be hidden by the front face. In BabylonJS the default setting is, as you might expect, set to true.
+## Back-Face Culling
+This is a method for efficiently drawing the 2D rendering of the 3D model. Usually there is no need to draw the back face of a cube, or other object, 
+as it will be hidden by the front face. In BabylonJS the default setting is, as you might expect, set to true. In most cases, this is helpful in maintaining the highest possible performance.
 
 Looking at the images below, when the material property _backFaceCulling_ is true you can see that the transparent areas around the 
 dog are still transparent, you can see the background through them. However, you cannot see the images on the back faces as they have been culled (or removed). 
@@ -151,18 +151,6 @@ You can see a mesh in wireframe mode by using:
 materialSphere1.wireframe = true;
  ```
 ![wireframe](/img/how_to/Materials/04-3.png)
-
-### Texture Packer
-Some complex scenes will require a large amount of texture.  A single Material often will use three and often more!  To simplify the loading process sometimes it might be convenient to package the texture from multiple materials into a series of images.  The trade off will be that each texture will be scaled to a set size and might cause some desegregation, there are also webGL limits to take into consideration.  The packer will create a set of "frames" for each unique material and its required texture channels, producing one image for each channel that the materials being packed used.  The process then modifies a target UV# of the meshes passed with the constructor to make them match the frame of the texture sets.  The system assumes textures are 1:1 ratio (square).
-
-Create a TexturePacker series by calling:
-```javascript
-let pack = new BABYLON.TexturePacker(name, targetMeshes, options, scene);
-pack.processAsync().then(success).catch(error);
-```
-There are some limitations though that you must consider.  These include texture size limits, transparencies, and refection/refraction materials.  Please go here for more information on [Creating a Texture Package](https://doc.babylonjs.com/how_to/creating_a_texture_package)
-
-* [Playground Example Texture Packer](https://www.babylonjs-playground.com/#TQ408M#6)
 
 ## Local File Access
 
