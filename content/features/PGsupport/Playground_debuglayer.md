@@ -126,13 +126,13 @@ This tool (available in the skeleton property grid) will render your skeletons:
 
 ## Skeleton Map Shader
 
-This tool (available in the mesh property grid when the mesh has an attached skeleton) will render a unique color on the mesh for each bone showing their total contribution:
+This tool (available in the mesh property grid when the mesh has an attached skeleton) will render a unique color on the mesh, for each bone, showing their total contribution:
 
 ![bones](/img/features/debuglayer/BonesMap.png)
 
 ## Bone Weight Shader
 
-This tool (available in the mesh property grid when the mesh has an attached skeleton) will render heat map showing the selected bones contribution:
+This tool (available in the mesh property grid when the mesh has an attached skeleton) will render a heat map showing the selected bones contribution:
 
 ![bones](/img/features/debuglayer/BonesWeight.png)
 
