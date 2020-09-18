@@ -371,13 +371,13 @@ Starting with Babylon.js v4.0, you can use the Inspector to turn [skeleton viewe
 
 ### Debugging Extras
 
-Now with Babylon.js v4.2, you have a few more options to debug a skeleton with.  We now have incorporated additional bone views, to help visualize the position of the bones which are accessible through the same means as explained in the above sections Inspector link.  Additionally two new methods to construct ShaderMaterials for both a skeleton map and assigned bone weights.
+Starting with Babylon.js v4.2, you have a few more options to debug a skeleton with.  We now have incorporated additional bone views, to help visualize the position of the bones which are accessible through the same means as explained in the above sections' Inspector link. Additionally two new methods have been added to construct ShaderMaterials for both a skeleton map and assigned bone weights.
 
 #### New Viewer Info
 
-There are some requirements to take into consideration when trying to use the new view modes for the skeleton viewer.  First the SkeletonViewer class accepts a new constructor argument of options that will dictate the visual look of the debug mesh.  Through this new argument you have a bunch of new options to configure the outcome, this is not a require parameter and if omitted the debug mesh will be the classic lines system.
+There are some requirements to take into consideration when trying to use the view modes for the skeleton viewer. First the SkeletonViewer class accepts a new constructor argument of options that will dictate the visual look of the debug mesh. Through this new argument there a bunch of new options to configure the outcome. Note that this is not a required parameter and if omitted then the debug mesh will use classic lines system.
 
-There are some differences in with the new views then how the old lines view functions.  With the old method for each bone per frame the points are updated and the line system is redrawn with its buffer being updated all of which happens on the CPU.  The new views are a unified mesh that match the matrices of the skeleton system, which require some impact at creation to properly create the buffers, but once done is in theory offers more performance and less impact as it is handle after inception by the GPU.  Keep in mind to make sure your skeleton has proper restPose Matrices bound and updated otherwise the debug mesh will fail to position it's self correctly.
+There are some differences in with the new views from how the old lines view functioned. With the old method, for each bone per frame the points are updated and the line system is redrawn with its buffer being updated (all of which happens on the CPU). The new views are a unified mesh that match the matrices of the skeleton system. There is some impact at creation time to properly create the buffers, but once that is done it offers more performance and less impact as it is handled after inception by the GPU. Keep in mind to make sure your skeleton has proper restPose Matrices bound and updated, otherwise the debug mesh will fail to position itself correctly.
 
 ```javascript
 let skeletonView = new BABYLON.Debug.SkeletonViewer(
@@ -390,7 +390,7 @@ let skeletonView = new BABYLON.Debug.SkeletonViewer(
         );
 ```
 
-To configure some of how the parsing happens change these values, also the options for the display modes lives here.
+To configure some of how the parsing happens you can change these values. Also take note that the options for the display modes lives here as well.
 ```javascript
 let options {
    pauseAnimations?: boolean, //True or False flag to pause the animations while trying to construct the debugMesh. Default: True
@@ -402,7 +402,7 @@ let options {
 };
 ```
 
-In order to configure the new views display options we have these new parameters.
+In order to configure the new views display options, we have these new parameters.
 ```javascript
 let displayModeOptions {
    sphereBaseSize? : number, //The size of the sphere when scaled by the sphereScaleUnit after determining the longest bone in the system. Default = 0.15
@@ -419,17 +419,17 @@ let displayModeOptions {
 
 #### Debug Shader Usage
 
-Sometimes you will need to actually see what bone is influencing what part of your mesh.  When this need arises we got you covered with some nifty new ShaderMaterials! 
+Sometimes you will need to actually see whart parts of your mesh a certain bone is influencing. When this need arises we've got you covered with some nifty new ShaderMaterials! 
 
 ##### SkeletonMap Shader
 
-The first one which is a color map of the entire skeleton is called a SkeletonMap, this will show you a unique color for each bone and how all their influences interact.  Its static method to create one expects two parameters, options and scene.
+The first one, which is a color map of the entire skeleton, is called a SkeletonMap. This will show you a unique color for each bone and visual feedback of how all of their influences interact. It's static method and when creating one, it expects two parameters, options and scene.
 
 ```javascript
 let mapShader = BABYLON.Debug.SkeletonViewer.CreateSkeletonMapShader( options, scene);
 ```
 
-Inside the options you must pass a skeleton key and value.  A secondary optional argument for generating the color gradient for the bones is called as colorMap.
+Inside the options you must pass a skeleton key and value. A secondary optional argument for generating the color gradient for the bones is called as colorMap.
 
 ```javascript
 let options = {
@@ -438,7 +438,7 @@ let options = {
 };
 ```
 
-In order to leverage the color map you will need to pass an array of objects with this format:
+In order to leverage the color map you will need to pass in an array of objects with this format:
 ```javascript
 let colorMapItem = {
    color : BABYLON.Color3, //The Color to use
@@ -470,7 +470,7 @@ let options = {
 };
 ```
 
-The bone that to be displayed is controlled by setting a uniform on the shader.
+The bone that is to be displayed is controlled by setting a uniform on the shader.
 ```javascript
 boneWeightShader.setFloat(targetBoneIndex, index)
 ```
