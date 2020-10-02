@@ -60,35 +60,9 @@ myShaderMaterial.setVector3("direction", BABYLON.Vector3.Zero());
 
 the set method depending on the type passed.
 
-### Image processing
+### Troubleshoot
 
-In case you are using an `ImageProcessingPostProcess` on your scene, or another post process that may use `ImageProcessingPostProcess` under the hood, like `MotionBlurPostProcess`, you will notice a slightly different color output in the final image, compared to what you want to output with `gl_FragColor`.
-
-This is due to the fact that `ImageProcessingPostProcess` is expecting a linear color input, and therefore converts every pixel to gamma color space. If you want to read more about linear color space versus gamma color space, read ![this](https://en.wikipedia.org/wiki/Gamma_correction).
-
-To spare you the reading, basically, your `gl_FragColor` is put to the power `1 / 2.2`, which we call a standard gamma transformation. In order to counteract that, you should apply the opposite transformation, which is, in GLSL language :  
-
-```
-#ifdef IMAGEPROCESSINGPOSTPROCESS 
-    gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(2.2));
-#endif
-```
-
-Of course you want to only have this additionnal line in your shader in case an `ImageProcessingPostProcess` is active on your scene. That's why you must enclose this in a `#define` statement.  
-For convenience, we added a small shader include that does just that, add this after every `gl_FragColor` output : 
-
-```
-#include<imageProcessingCompatibility>
-```
-
-Now you need to toggle that define based on the presence of an `ImageProcessingPostProcess`.
-In your material code, it should ressemble something like this : 
-
-```
-defines.IMAGEPROCESSINGPOSTPROCESS = scene.imageProcessingConfiguration.applyByPostProcess;
-```
-
-And now, whether you have the post-process active or not, the color should be similar !
+In some specific cases, when you use post-processes, you might notice a slightly brighter color output than what you coded in your shader. Read [this](/how_to/ImageProcessing) if you want to know how to fix that.
 
 # Further Reading
 
