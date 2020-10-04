@@ -60,9 +60,11 @@ myShaderMaterial.setVector3("direction", BABYLON.Vector3.Zero());
 
 the set method depending on the type passed.
 
-### Troubleshoot
+# Troubleshoot
 
-In some specific cases, when you use post-processes, you might notice a slightly brighter color output than what you coded in your shader. Read [this](/how_to/ImageProcessing) if you want to know how to fix that.
+In some specific cases when you use post-processes, you might notice a slightly brighter color output than what you implemented in your shader.
+
+Read [this](/how_to/Image_Processing) if you want to know how to fix it.
 
 # Further Reading
 

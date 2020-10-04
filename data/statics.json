@@ -792,6 +792,10 @@
                 {
                     "title": "Use ShaderMaterial",
                     "filename": "Shader_Material"
+                },
+                {
+                    "title": "Image processing with custom shaders",
+                    "filename": "Image_Processing"
                 }
             ]
         },
