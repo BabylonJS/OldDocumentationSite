@@ -262,7 +262,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/multi_materials",
                     "icon": "icons/multi_material.jpg",
                     "description": "Apply multiple materials to a single mesh using MultiMaterial class",
-                    "PGID": "#2Q4S2S#0"
+                    "PGID": "#2Q4S2S#417"
                 },
                 {
                     "title": "ShaderMaterial",
