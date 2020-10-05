@@ -149,7 +149,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/gizmo",
                     "icon": "icons/gizmo.jpg",
                     "description": "Position, Rotate and Scale meshes with a pointer",
-                    "PGID": "#8MGKWK#25"
+                    "PGID": "#8MGKWK#341"
                 },
                 {
                     "title": "Using DeviceSourceManager",
