@@ -502,7 +502,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/customise#custom-effects",
                     "icon": "icons/custom_particles.jpg",
                     "description": "Use custom shader to display CPU particles",
-                    "PGID": "#807QEP#0"
+                    "PGID": "#807QEP#16"
                 },
                 {
                     "title": "GPU particles",
