@@ -1455,6 +1455,10 @@
                 {
                     "title": "Using VSCode with Babylon.js",
                     "filename": "vscode"
+                },
+                {
+                    "title": "How to quickly get an answer of Babylon.js Forum",
+                    "filename": "Forum"
                 }
             ]
         }
