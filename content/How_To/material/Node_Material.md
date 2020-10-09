@@ -1275,7 +1275,7 @@ You need simply to change the mode to *Procedural texture* this time:
 
 Some blocks are made unavailable in this mode (they are hidden from the block list), as they have no meaning: the mesh, particle and animation blocks.
 
-When you have created your procedural texture in the NME, you can create a regular `BABYLON.ProceduralTexture` instance by calling the `NodeMaterial.createPostProcess` method:
+When you have created your procedural texture in the NME, you can create a regular `BABYLON.ProceduralTexture` instance by calling the `NodeMaterial.createProceduralTexture` method:
 ```javascript
 const postProcess = nodeMaterial.createProceduralTexture(256);
 ```
