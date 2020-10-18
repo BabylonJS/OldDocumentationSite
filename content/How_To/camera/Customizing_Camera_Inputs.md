@@ -185,14 +185,15 @@ FreeCameraKeyboardRotateInput.prototype.getSimpleName = function() {
 };
 ```
 
-and attatch and detach methods
+and attach and detach methods
 
 ```javascript
 FreeCameraKeyboardRotateInput.prototype.attachControl = function(
-  element,
   noPreventDefault
 ) {
   var _this = this;
+  var engine = this.camera.getEngine();
+  var element = engine.getInputElement();
   if (!this._onKeyDown) {
     element.tabIndex = 1;
     this._onKeyDown = function(evt) {
@@ -232,7 +233,9 @@ FreeCameraKeyboardRotateInput.prototype.attachControl = function(
   }
 };
 
-FreeCameraKeyboardRotateInput.prototype.detachControl = function(element) {
+FreeCameraKeyboardRotateInput.prototype.detachControl = function() {
+  var engine = this.camera.getEngine();
+  var element = engine.getInputElement();
   if (this._onKeyDown) {
     element.removeEventListener("keydown", this._onKeyDown);
     element.removeEventListener("keyup", this._onKeyUp);
@@ -307,4 +310,4 @@ In the example there are two viewports, the upper one gives a first person view 
 
 Remember to click on the scene before using the arrow keys.
 
-* [Playground Example - Walk and Look Camera](https://www.babylonjs-playground.com/#6PA720)
+* [Playground Example - Walk and Look Camera](https://www.babylonjs-playground.com/#CTCSWQ#1)
