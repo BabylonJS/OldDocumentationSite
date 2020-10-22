@@ -24044,13 +24044,13 @@ declare module BABYLON {
         private _useSpecularOverAlpha;
         /**
          * Specifies that the material will keep the specular highlights over a transparent surface (only the most limunous ones).
-         * A car glass is a good exemple of that. When sun reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When sun reflects on it you can not see what is behind.
          */
         useSpecularOverAlpha: boolean;
         private _useReflectionOverAlpha;
         /**
          * Specifies that the material will keeps the reflection highlights over a transparent surface (only the most limunous ones).
-         * A car glass is a good exemple of that. When the street lights reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When the street lights reflects on it you can not see what is behind.
          */
         useReflectionOverAlpha: boolean;
         private _disableLighting;
@@ -26349,7 +26349,7 @@ declare module BABYLON {
         protected _useAlphaFromAlbedoTexture: boolean;
         /**
          * Specifies that the material will keeps the specular highlights over a transparent surface (only the most limunous ones).
-         * A car glass is a good exemple of that. When sun reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When sun reflects on it you can not see what is behind.
          */
         protected _useSpecularOverAlpha: boolean;
         /**
@@ -26388,7 +26388,7 @@ declare module BABYLON {
         protected _lightFalloff: number;
         /**
          * Specifies that the material will keeps the reflection highlights over a transparent surface (only the most limunous ones).
-         * A car glass is a good exemple of that. When the street lights reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When the street lights reflects on it you can not see what is behind.
          */
         protected _useRadianceOverAlpha: boolean;
         /**
@@ -26887,7 +26887,7 @@ declare module BABYLON {
         alphaCutOff: number;
         /**
          * Specifies that the material will keep the specular highlights over a transparent surface (only the most limunous ones).
-         * A car glass is a good exemple of that. When sun reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When sun reflects on it you can not see what is behind.
          */
         useSpecularOverAlpha: boolean;
         /**
@@ -26943,7 +26943,7 @@ declare module BABYLON {
         set useGLTFLightFalloff(value: boolean);
         /**
          * Specifies that the material will keeps the reflection highlights over a transparent surface (only the most limunous ones).
-         * A car glass is a good exemple of that. When the street lights reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When the street lights reflects on it you can not see what is behind.
          */
         useRadianceOverAlpha: boolean;
         /**
@@ -65593,12 +65593,12 @@ declare module BABYLON {
         opacityRGB: boolean;
         /**
          * Specifies that the material will keeps the reflection highlights over a transparent surface (only the most luminous ones).
-         * A car glass is a good exemple of that. When the street lights reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When the street lights reflects on it you can not see what is behind.
          */
         useRadianceOverAlpha: boolean;
         /**
          * Specifies that the material will keeps the specular highlights over a transparent surface (only the most luminous ones).
-         * A car glass is a good exemple of that. When sun reflects on it you can not see what is behind.
+         * A car glass is a good example of that. When sun reflects on it you can not see what is behind.
          */
         useSpecularOverAlpha: boolean;
         /**
