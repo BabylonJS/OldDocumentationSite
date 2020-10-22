@@ -21,7 +21,7 @@ Downloading:
 * Linux: [http://editor.babylonjs.com/BabylonJS Editor.zip](http://editor.babylonjs.com/BabylonJS%20Editor.zip)
 
 # Project example
-As an exemple, the following demo has been done 100% in the editor. It includes writing custom scripts, custom post-processes etc.
+As an example, the following demo has been done 100% in the editor. It includes writing custom scripts, custom post-processes etc.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/obEuCI_pPL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
