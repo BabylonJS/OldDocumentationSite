@@ -290,7 +290,7 @@
                     "doc": "https://doc.babylonjs.com/how_to/physically_based_rendering",
                     "icon": "icons/pbr.png",
                     "description": "Physically based rendering materials",
-                    "PGID": "#8MGKWK#0"
+                    "PGID": "#8MGKWK#344"
                 },
                 {
                     "title": "Glossiness and roughness",
