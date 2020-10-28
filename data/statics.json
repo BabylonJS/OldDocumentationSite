@@ -1417,6 +1417,10 @@
                 {
                     "title": "Using External Assets",
                     "filename": "External_PG_assets"
+                },
+                {
+                    "title": "Playground Templates",
+                    "filename": "playgroundTemplates"
                 }
             ]
         },
