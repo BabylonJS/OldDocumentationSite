@@ -257,7 +257,7 @@ You can use this in addition of translucency to accurately represent the spread 
 
 ![SubSurfaceScattering](/img/extensions/PBRSubSurfaceScattering.jpg)
 
-[Demo](https://www.babylonjs-playground.com/#GTQKYK#4)
+[Demo](https://playground.babylonjs.com/#5H0H89#1)
 ```javascript
 var pbr = new BABYLON.PBRMaterial("pbr", scene);
 sphere.material = pbr;
@@ -271,6 +271,8 @@ pbr.subSurface.isScatteringEnabled = true;
 ```
 
 For this effect to be physically accurate, you have to indicate the ratio between scene units and the real world distance in meters, by filling the property `metersPerUnit` of the scene pre-pass renderer. It is  by default set to 1 meter = 1 unit.
+
+> Caution: Scattering is currently not available in Render Targets.
 
 #### Diffusion profiles
 
