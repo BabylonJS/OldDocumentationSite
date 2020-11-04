@@ -1381,6 +1381,10 @@
                     "filename": "Multi-Platform_Compressed_Textures"
                 },
                 {
+                    "title": "Support of KTX2 files and BasisU compression in Babylon.js",
+                    "filename": "ktx2_compressed_textures"
+                },
+                {
                     "title": "Introduction to Shaders",
                     "filename": "ShaderIntro"
                 },
