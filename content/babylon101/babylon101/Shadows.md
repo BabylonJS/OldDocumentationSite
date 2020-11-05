@@ -141,7 +141,22 @@ Starting with Babylonjs v4.2, you can simulate soft transparent shadows for tran
 
 Playground: https://playground.babylonjs.com/#LKA8VM
 
-It works by generating some dithering patterns in the shadow map, based on the alpha value of the fragment. This pattern can be visible, depending on your objects (being zoomed or not) and/or on the filtering method used.
+Note that you also need to enable alpha testing for your material. You will generally set `hasAlpha=true` for the diffuse/albedo texture and `useAlphaFromDiffuseTexture=true` on the material. However, for node materials, those properties are not available. For those materials, alpha testing is automatically enabled if any of these is true:
+* you use a DiscardBlock
+* you switch `Alpha Testing` to `on` on the PBRMetallicRoughness block
+
+You can also enable alpha testing by overriding the `needAlphaTesting` method:
+```javascript
+myNodeMaterial.needAlphaTesting = () => true;
+```
+
+Once alpha testing is enabled, the shadow rendering code still needs to know which is the texture that must be queried for the alpha values. In standard/PBR materials, the diffuse/albedo texture is taken by default. For node materials, there's no default diffuse/albedo textures, so you must instruct the system which texture to use by overriding the `getAlphaTestTexture` method of the material:
+```javascript
+const texture = new BABYLON.Texture("textures/cloud.png", scene);
+myNodeMaterial.getAlphaTestTexture = () => texture;
+```
+
+The algorithm works by generating some dithering patterns in the shadow map, based on the alpha value of the fragment. This pattern can be visible, depending on your objects (being zoomed or not) and/or on the filtering method used.
 
 Here's for example what it looks like when you don't set a filtering method:
 
