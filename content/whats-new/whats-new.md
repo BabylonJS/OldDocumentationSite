@@ -461,6 +461,7 @@
 - Supports clip planes with shadows ([sebavan](https://github.com/sebavan))
 - Added Workbench color scheme for VSCode ([drigax](https://github.com/drigax) & [Patrick Ryan](https://github.com/PatrickRyanMS))
 - Playground switch buttons are more intuitive ([#7601](https://github.com/BabylonJS/Babylon.js/issues/7601)) ([RaananW](https://github.com/RaananW/))
+- Added support of screen based motion blur in `MotionBlurPostProcess` (default mode is object based) to be used as a fallback to save performances on large scenes ([julien-moreau](https://github.com/julien-moreau))
 
 ### Engine
 
